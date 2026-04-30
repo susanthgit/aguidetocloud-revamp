@@ -20,582 +20,230 @@
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="theme-color" content="#030308">
+  <meta name="theme-color" content="#FAFAFA">
 
   <style>
-    @font-face {
-      font-family: 'Inter';
-      src: url('/fonts/inter-400.woff2') format('woff2');
-      font-weight: 400; font-style: normal; font-display: swap;
-    }
-    @font-face {
-      font-family: 'Inter';
-      src: url('/fonts/inter-600.woff2') format('woff2');
-      font-weight: 600; font-style: normal; font-display: swap;
-    }
-    @font-face {
-      font-family: 'Inter';
-      src: url('/fonts/inter-700.woff2') format('woff2');
-      font-weight: 700; font-style: normal; font-display: swap;
-    }
+    @font-face { font-family: 'Inter'; src: url('/fonts/inter-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Inter'; src: url('/fonts/inter-600.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+    :root {
+      --bg: #FAFAFA; --bg-card: #fff; --text: #171717; --text-sub: #525252; --text-muted: #A3A3A3;
+      --border: #E5E5E5; --accent: #6366F1; --accent-hover: #4F46E5; --accent-fg: #fff;
+      --accent-subtle: rgba(99,102,241,0.08); --success: #22C55E; --radius: 10px;
+    }
+    [data-theme="dark"] {
+      --bg: #0A0A0A; --bg-card: #171717; --text: #F5F5F5; --text-sub: #A3A3A3; --text-muted: #525252;
+      --border: #262626; --accent-subtle: rgba(129,140,248,0.12);
+    }
+
     body {
-      background: #030308;
-      color: #fff;
+      background: var(--bg); color: var(--text);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      min-height: 100dvh;
-      display: flex;
-      justify-content: center;
-      overflow-x: hidden;
+      min-height: 100dvh; display: flex; justify-content: center;
     }
 
-    /* ─── Ambient orbs (animated) ─── */
-    .ambient {
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background:
-        radial-gradient(ellipse 500px 400px at 20% 15%, rgba(255,102,255,0.12), transparent 70%),
-        radial-gradient(ellipse 400px 350px at 80% 60%, rgba(102,255,255,0.08), transparent 70%),
-        radial-gradient(ellipse 350px 300px at 50% 90%, rgba(138,43,226,0.05), transparent 70%);
-      animation: ambientShift 20s ease-in-out infinite alternate;
-    }
-    @keyframes ambientShift {
-      0% { filter: hue-rotate(0deg); opacity: 1; }
-      50% { filter: hue-rotate(15deg); opacity: 0.85; }
-      100% { filter: hue-rotate(-10deg); opacity: 1; }
-    }
+    .container { width: 100%; max-width: 480px; padding: 32px 20px 48px; }
 
-    /* ─── SVG background pattern ─── */
-    .bg-pattern {
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      opacity: 0.12;
-    }
-
-    .container {
-      position: relative; z-index: 1;
-      width: 100%;
-      max-width: 480px;
-      padding: 40px 20px 60px;
-    }
-
-    /* ─── Avatar with gradient ring ─── */
-    .identity { text-align: center; margin-bottom: 32px; }
-
-    .avatar-ring {
-      position: relative;
-      width: 100px; height: 100px;
-      margin: 0 auto 16px;
-    }
-
+    /* ── Identity ── */
+    .identity { text-align: center; margin-bottom: 24px; }
     .avatar {
-      position: relative; z-index: 1;
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 2px solid rgba(255,255,255,0.12);
-      box-shadow: 0 0 30px rgba(255,102,255,0.15), 0 0 60px rgba(102,255,255,0.08);
+      width: 88px; height: 88px; border-radius: 50%; overflow: hidden;
+      margin: 0 auto 12px; border: 2px solid var(--border);
     }
-    .avatar img {
-      width: 100%; height: 100%;
-      object-fit: cover; display: block;
-      object-position: center 10%;
-    }
-
-    .name {
-      font-size: 24px; font-weight: 700; letter-spacing: -0.5px;
-      margin-bottom: 4px;
-    }
-
-    .brand {
-      font-size: 14px; font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .brand .gradient {
-      background: linear-gradient(135deg, #66ffff, #ff66ff);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .subtitle {
-      font-size: 13px; font-weight: 400;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.4;
-    }
-
-    /* ─── Stats pill ─── */
+    .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; object-position: center 10%; }
+    .name { font-size: 22px; font-weight: 600; letter-spacing: -0.3px; }
+    .brand { font-size: 14px; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+    .subtitle { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
     .stats-pill {
-      display: inline-flex;
-      gap: 6px;
-      align-items: center;
-      margin-top: 12px;
-      padding: 6px 16px;
-      background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 20px;
-      font-size: 11px; font-weight: 500;
-      color: rgba(255,255,255,0.45);
-      letter-spacing: 0.3px;
+      display: inline-flex; gap: 6px; align-items: center; margin-top: 10px;
+      padding: 4px 14px; background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 20px; font-size: 11px; font-weight: 500; color: var(--text-sub);
     }
-    .stats-pill .stat-dot {
-      width: 3px; height: 3px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      flex-shrink: 0;
-    }
-
-    /* ─── Section Labels with gradient divider ─── */
-    .section-label {
-      font-size: 10px; font-weight: 700;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      margin: 28px 0 12px;
-      padding: 12px 4px 0;
-      border-top: 1px solid transparent;
-      background-image: linear-gradient(#030308, #030308),
-                        linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.08) 70%, transparent 100%);
-      background-origin: padding-box, border-box;
-      background-clip: padding-box, border-box;
-    }
-    .section-label:first-of-type { margin-top: 0; border-top: none; background-image: none; padding-top: 0; }
-
-    /* ─── Link Buttons ─── */
-    .link-btn {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      width: 100%;
-      padding: 16px 20px;
-      margin-bottom: 10px;
-      background: rgba(255,255,255,0.07);
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 14px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 15px; font-weight: 600;
-      transition: all 0.25s ease;
-      position: relative;
-      overflow: hidden;
-      min-height: 56px;
-      opacity: 0;
-      transform: translateY(12px);
-      animation: fadeSlideUp 0.4s ease forwards;
-    }
-
-    .link-btn:hover, .link-btn:focus-visible {
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.20);
-      transform: translateY(-2px);
-      box-shadow:
-        0 4px 25px color-mix(in srgb, var(--btn-accent, #fff) 20%, transparent),
-        0 0 0 1px color-mix(in srgb, var(--btn-accent, #fff) 10%, transparent);
-    }
-
-    .link-btn:focus-visible {
-      outline: 2px solid #66ffff;
-      outline-offset: 2px;
-    }
-
-    .link-btn:active { transform: translateY(0) scale(0.97); }
-
-    /* Accent glow on left edge */
-    .link-btn::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0; width: 3px;
-      background: var(--btn-accent, rgba(255,255,255,0.1));
-      border-radius: 14px 0 0 14px;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-    .link-btn:hover::before { opacity: 1; }
-
-    /* Staggered entrance delays */
-    .link-btn:nth-child(1) { animation-delay: 0.05s; }
-    .link-btn:nth-child(2) { animation-delay: 0.12s; }
-    .link-btn:nth-child(3) { animation-delay: 0.19s; }
-    .link-btn:nth-child(4) { animation-delay: 0.26s; }
-    .link-btn:nth-child(5) { animation-delay: 0.33s; }
-    .link-btn:nth-child(6) { animation-delay: 0.40s; }
-
-    @keyframes fadeSlideUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .link-icon {
-      font-size: 20px;
-      width: 28px;
-      text-align: center;
-      flex-shrink: 0;
-    }
-
-    .link-text { flex: 1; }
-    .link-text .label { display: block; line-height: 1.3; }
-    .link-text .meta {
-      font-size: 11px; font-weight: 400;
-      color: rgba(255,255,255,0.50);
-      margin-top: 2px;
-    }
-
-    .link-arrow {
-      font-size: 14px;
-      color: rgba(255,255,255,0.2);
-      flex-shrink: 0;
-      transition: transform 0.2s ease, color 0.2s ease;
-    }
-    .link-btn:hover .link-arrow { transform: translateX(3px); color: rgba(255,255,255,0.5); }
-
-    /* Featured link */
-    .link-btn.featured {
-      background: rgba(255,255,255,0.09);
-      border-color: rgba(102,255,255,0.18);
-    }
-    .link-btn.featured::before { opacity: 0.5; }
-
-    /* ─── NEW badge ─── */
-    .badge-new {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 2px 8px;
-      border-radius: 6px;
-      background: rgba(102,255,255,0.1);
-      border: 1px solid rgba(102,255,255,0.2);
-      font-size: 9px; font-weight: 700;
-      letter-spacing: 1px;
-      color: #66ffff;
-      text-transform: uppercase;
-      margin-left: 8px;
-      flex-shrink: 0;
-      animation: badge-pulse 2s ease-in-out infinite;
-    }
-    .badge-new::before {
-      content: '';
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: #66ffff;
-      animation: dot-pulse 2s ease-in-out infinite;
-    }
-    @keyframes badge-pulse {
-      0%, 100% { opacity: 0.8; }
-      50% { opacity: 1; }
-    }
-    @keyframes dot-pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(102,255,255,0.4); }
-      50% { box-shadow: 0 0 0 4px rgba(102,255,255,0); }
-    }
-
-    /* ─── Social Icons ─── */
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      margin-top: 32px;
-      opacity: 0;
-      animation: fadeSlideUp 0.4s ease 0.5s forwards;
-    }
-
-    .social-icon {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      color: rgba(255,255,255,0.5);
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    .social-icon:hover {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
-    .social-icon:focus-visible {
-      outline: 2px solid #66ffff;
-      outline-offset: 2px;
-    }
-    .social-icon svg { width: 20px; height: 20px; fill: currentColor; }
-
-    /* ─── Share Button ─── */
-    .share-row {
-      display: flex;
-      justify-content: center;
-      margin-top: 24px;
-      opacity: 0;
-      animation: fadeSlideUp 0.4s ease 0.6s forwards;
-    }
-    .share-btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 8px 20px;
-      background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 20px;
-      color: rgba(255,255,255,0.4);
-      font-family: inherit; font-size: 12px; font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .share-btn:hover {
-      background: rgba(255,255,255,0.08);
-      color: rgba(255,255,255,0.7);
-      border-color: rgba(255,255,255,0.12);
-    }
-    .share-btn:focus-visible {
-      outline: 2px solid #66ffff;
-      outline-offset: 2px;
-    }
-    .share-btn svg { width: 14px; height: 14px; fill: currentColor; }
-    .share-btn.copied { color: #66ffff; border-color: rgba(102,255,255,0.3); }
-
-    /* ─── What's New banner ─── */
-    .whats-new {
-      text-align: center;
-      padding: 8px 16px;
-      margin-bottom: 20px;
-      background: rgba(255,102,255,0.08);
-      border: 1px solid rgba(255,102,255,0.15);
-      border-radius: 10px;
-      font-size: 12px; font-weight: 500;
-      color: rgba(255,255,255,0.7);
-      overflow: hidden;
-      position: relative;
-      opacity: 0;
-      animation: fadeSlideUp 0.4s ease 0.1s forwards;
-    }
-    .whats-new a {
-      color: #ff99ff;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .whats-new a:hover { text-decoration: underline; }
-    .whats-new-item { display: none; }
-    .whats-new-item.active { display: block; }
-
-    /* ─── Live counter ─── */
+    .stat-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0; }
     .live-counter {
-      display: none;
-      justify-content: center;
-      align-items: center;
-      gap: 6px;
-      margin-top: 8px;
-      font-size: 11px;
-      color: rgba(255,255,255,0.35);
+      display: none; justify-content: center; align-items: center; gap: 6px;
+      margin-top: 8px; font-size: 11px; color: var(--text-muted);
     }
     .live-counter.visible { display: flex; }
-    .live-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: #4ade80;
-      animation: livePulse 2s ease-in-out infinite;
+    .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success); animation: livePulse 2s ease-in-out infinite; }
+    @keyframes livePulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); } 50% { box-shadow: 0 0 0 4px rgba(34,197,94,0); } }
+
+    /* ── Theme Toggle ── */
+    .theme-toggle {
+      position: absolute; top: 16px; right: 16px;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 50%;
+      width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: var(--text-sub); transition: border-color 150ms ease-out;
     }
-    @keyframes livePulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
-      50% { box-shadow: 0 0 0 4px rgba(74,222,128,0); }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .theme-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+    /* ── Section Labels ── */
+    .section-label {
+      font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--text-muted); margin: 24px 0 10px; padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .section-label:first-of-type { margin-top: 0; border-top: none; padding-top: 0; }
+
+    /* ── Link Buttons ── */
+    .link-btn {
+      display: flex; align-items: center; gap: 10px;
+      width: 100%; padding: 10px 14px; margin-bottom: 6px;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      color: var(--text); text-decoration: none; font-size: 14px; font-weight: 600;
+      transition: border-color 150ms ease-out; min-height: 48px;
+      opacity: 0; transform: translateY(8px); animation: fadeUp 0.3s ease forwards;
+    }
+    .link-btn:hover { border-color: var(--accent); }
+    .link-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .link-btn.featured { border-left: 3px solid var(--accent); }
+    .link-btn:nth-child(1) { animation-delay: 0.03s; }
+    .link-btn:nth-child(2) { animation-delay: 0.08s; }
+    .link-btn:nth-child(3) { animation-delay: 0.13s; }
+    .link-btn:nth-child(4) { animation-delay: 0.18s; }
+    .link-btn:nth-child(5) { animation-delay: 0.23s; }
+    .link-btn:nth-child(6) { animation-delay: 0.28s; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    .link-icon { width: 24px; text-align: center; flex-shrink: 0; color: var(--accent); }
+    .link-icon svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .link-text { flex: 1; }
+    .link-text .label { display: block; line-height: 1.3; }
+    .link-text .meta { font-size: 11px; font-weight: 400; color: var(--text-muted); margin-top: 2px; }
+    .link-arrow { font-size: 13px; color: var(--text-muted); flex-shrink: 0; }
+
+    .badge-new {
+      display: inline-flex; align-items: center; gap: 3px; padding: 1px 6px;
+      border-radius: 4px; background: var(--accent-subtle); font-size: 9px;
+      font-weight: 600; letter-spacing: 0.5px; color: var(--accent);
+      text-transform: uppercase; margin-left: 6px;
     }
 
-    /* ─── Testimonial ─── */
+    /* ── Social Icons ── */
+    .socials {
+      display: flex; justify-content: center; gap: 10px; margin-top: 24px;
+      opacity: 0; animation: fadeUp 0.3s ease 0.4s forwards;
+    }
+    .social-icon {
+      width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      background: var(--bg-card); border: 1px solid var(--border); color: var(--text-sub);
+      text-decoration: none; transition: border-color 150ms ease-out, color 150ms ease-out;
+    }
+    .social-icon:hover { border-color: var(--accent); color: var(--accent); }
+    .social-icon svg { width: 18px; height: 18px; fill: currentColor; }
+
+    /* ── Share + Footer ── */
+    .share-row { display: flex; justify-content: center; margin-top: 20px; opacity: 0; animation: fadeUp 0.3s ease 0.5s forwards; }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
+      color: var(--text-muted); font-family: inherit; font-size: 12px; font-weight: 500;
+      cursor: pointer; transition: border-color 150ms ease-out, color 150ms ease-out;
+    }
+    .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .share-btn.copied { color: var(--accent); border-color: var(--accent); }
+    .share-btn svg { width: 14px; height: 14px; fill: currentColor; }
+
+    .footer-note { text-align: center; margin-top: 24px; font-size: 11px; color: var(--text-muted); opacity: 0; animation: fadeUp 0.3s ease 0.6s forwards; }
+    .footer-note a { color: var(--accent); text-decoration: none; }
+
+    /* ── Testimonial ── */
     .testimonial {
-      text-align: center;
-      padding: 12px 20px;
-      margin-bottom: 20px;
-      font-size: 12px;
-      font-style: italic;
-      color: rgba(255,255,255,0.35);
-      line-height: 1.5;
-      opacity: 0;
-      animation: fadeSlideUp 0.4s ease 0.15s forwards;
+      text-align: center; padding: 10px 16px; margin-bottom: 16px;
+      font-size: 12px; font-style: italic; color: var(--text-muted); line-height: 1.5;
+      opacity: 0; animation: fadeUp 0.3s ease 0.1s forwards; transition: opacity 150ms ease-out;
     }
-    .testimonial-author { font-style: normal; color: rgba(255,255,255,0.25); margin-top: 4px; }
+    .testimonial-author { font-style: normal; color: var(--text-muted); margin-top: 4px; font-size: 11px; }
 
-    /* ─── Latest Video ─── */
-    .latest-video {
-      margin-top: 24px;
-      opacity: 0;
-      animation: fadeSlideUp 0.4s ease 0.45s forwards;
-    }
-    .latest-video-label {
-      font-size: 10px; font-weight: 700;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 12px;
-      padding: 12px 4px 0;
-      border-top: 1px solid transparent;
-      background-image: linear-gradient(#030308, #030308),
-                        linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.08) 70%, transparent 100%);
-      background-origin: padding-box, border-box;
-      background-clip: padding-box, border-box;
-    }
+    /* ── Latest Video ── */
+    .latest-video { margin-top: 20px; opacity: 0; animation: fadeUp 0.3s ease 0.35s forwards; }
     .video-card {
-      display: block;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 14px;
-      overflow: hidden;
-      text-decoration: none;
-      color: #fff;
-      transition: all 0.25s ease;
+      display: block; background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden; text-decoration: none; color: var(--text);
+      transition: border-color 150ms ease-out;
     }
-    .video-card:hover {
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,68,68,0.3);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 25px rgba(255,68,68,0.15);
-    }
-    .video-card:active { transform: scale(0.97); }
-    .video-card:focus-visible { outline: 2px solid #66ffff; outline-offset: 2px; }
-    .video-thumb {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: #111;
-    }
+    .video-card:hover { border-color: var(--accent); }
+    .video-thumb { position: relative; width: 100%; aspect-ratio: 16/9; background: var(--border); }
     .video-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .video-play {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 48px; height: 48px;
-      background: rgba(255,0,0,0.85);
-      border-radius: 50%;
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 44px; height: 44px; background: rgba(255,0,0,0.85); border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
     }
-    .video-play svg { width: 20px; height: 20px; fill: #fff; margin-left: 2px; }
-    .video-info { padding: 12px 16px; }
-    .video-title { font-size: 14px; font-weight: 600; line-height: 1.4; margin-bottom: 4px; }
-    .video-meta { font-size: 11px; color: rgba(255,255,255,0.4); }
+    .video-play svg { width: 18px; height: 18px; fill: #fff; margin-left: 2px; }
+    .video-info { padding: 10px 14px; }
+    .video-title { font-size: 13px; font-weight: 600; line-height: 1.4; margin-bottom: 2px; }
+    .video-meta { font-size: 11px; color: var(--text-muted); }
 
-    /* ─── Footer ─── */
-    .footer-note {
-      text-align: center;
-      margin-top: 32px;
-      font-size: 11px;
-      color: rgba(255,255,255,0.15);
-      opacity: 0;
-      animation: fadeSlideUp 0.4s ease 0.7s forwards;
-    }
-    .footer-note a {
-      color: rgba(102,255,255,0.3);
-      text-decoration: none;
-    }
-    .footer-note a:hover { color: rgba(102,255,255,0.6); }
-
-    /* ─── Reduced Motion ─── */
     @media (prefers-reduced-motion: reduce) {
-      .link-btn, .social-icon, .share-btn, .video-card { transition: none; }
-      .link-btn:hover, .social-icon:hover, .video-card:hover { transform: none; }
-      .link-btn:active, .video-card:active { transform: none; }
-      .badge-new, .badge-new::before, .live-dot { animation: none; opacity: 1; }
-      .ambient { animation: none; }
-      .link-btn, .socials, .share-row, .footer-note, .whats-new, .testimonial, .latest-video {
-        opacity: 1; transform: none; animation: none;
-      }
+      .link-btn, .socials, .share-row, .footer-note, .testimonial, .latest-video, .live-dot { opacity: 1; transform: none; animation: none; }
     }
   </style>
 
-  <!-- GA4 -->
   {{ partial "analytics.html" . }}
 
-  <!-- Person Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Susanth Sutheesh",
-    "url": "https://www.aguidetocloud.com",
+    "@context": "https://schema.org", "@type": "Person",
+    "name": "Susanth Sutheesh", "url": "https://www.aguidetocloud.com",
     "image": "https://www.aguidetocloud.com/images/about/headshot.webp",
-    "jobTitle": "Cloud & AI Educator",
-    "description": {{ .Description | jsonify }},
-    "sameAs": [
-      "https://www.youtube.com/@SusanthSutheesh",
-      "https://www.youtube.com/@AGuideToCloud",
-      "https://www.linkedin.com/in/susanthsutheesh/",
-      "https://github.com/susanthgit",
-      "https://ko-fi.com/aguidetocloud"
-    ]
+    "jobTitle": "Cloud & AI Educator", "description": {{ .Description | jsonify }},
+    "sameAs": ["https://www.youtube.com/@SusanthSutheesh","https://www.youtube.com/@AGuideToCloud","https://www.linkedin.com/in/susanthsutheesh/","https://github.com/susanthgit","https://ko-fi.com/aguidetocloud"]
   }
   </script>
 </head>
 <body>
-  <div class="ambient"></div>
+  <div class="container" style="position:relative">
 
-  <!-- SVG background pattern -->
-  <svg class="bg-pattern" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-    <defs>
-      <pattern id="grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-        <path d="M60 0 L60 60 M0 60 L60 60" fill="none" stroke="white" stroke-width="0.5"/>
-        <circle cx="60" cy="60" r="1.5" fill="white" opacity="0.5"/>
-      </pattern>
-      <pattern id="circuit" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
-        <rect width="120" height="120" fill="url(#grid)"/>
-        <path d="M20 0 L20 30 L50 30 M70 60 L70 90 L100 90" fill="none" stroke="white" stroke-width="0.5" opacity="0.4"/>
-        <circle cx="50" cy="30" r="2" fill="white" opacity="0.3"/>
-        <circle cx="100" cy="90" r="2" fill="white" opacity="0.3"/>
-      </pattern>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#circuit)"/>
-  </svg>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
 
-  <div class="container">
     <!-- Identity -->
     <div class="identity">
-      <div class="avatar-ring">
-        <div class="avatar">
-          <img src="/images/about/headshot.webp" alt="Susanth Sutheesh" width="94" height="94" loading="eager">
-        </div>
+      <div class="avatar">
+        <img src="/images/about/headshot.webp" alt="Susanth Sutheesh" width="88" height="88" loading="eager">
       </div>
       <h1 class="name">Susanth Sutheesh</h1>
-      <p class="brand">A Guide to <span class="gradient">Cloud & AI</span></p>
+      <p class="brand">A Guide to Cloud & AI</p>
       <p class="subtitle">Free tools, study guides & tutorials for IT pros</p>
       <div class="stats-pill">
-        <span>30+ tools</span>
-        <span class="stat-dot" aria-hidden="true"></span>
-        <span>800+ videos</span>
-        <span class="stat-dot" aria-hidden="true"></span>
-        <span>50+ guides</span>
+        <span>54 tools</span><span class="stat-dot" aria-hidden="true"></span>
+        <span>800+ videos</span><span class="stat-dot" aria-hidden="true"></span>
+        <span>52 guides</span>
       </div>
       <div class="live-counter" id="live-counter">
         <span class="live-dot" aria-hidden="true"></span>
-        <span><span id="live-num">0</span> people here now</span>
+        <span><span id="live-num">0</span> here now</span>
       </div>
     </div>
 
-    <!-- What's New -->
-    <div class="whats-new" id="whats-new">
-      <div class="whats-new-item active">🔥 New: <a href="/security-toolkit/" data-link-id="banner_security" data-link-section="banner">M365 Security Toolkit</a> just launched</div>
-      <div class="whats-new-item">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Just launched: <a href="https://chat.whatsapp.com/KpiSMbE8i1n60KLgI4lFal" data-link-id="banner_whatsapp" data-link-section="banner" target="_blank" rel="noopener noreferrer">WhatsApp Community</a> — join the conversation</div>
-      <div class="whats-new-item">{{ partial "icon.html" (dict "name" "newspaper" "size" 14 "stroke" 1.5) }} <a href="/ai-news/" data-link-id="banner_ainews" data-link-section="banner">AI News</a> — updated 4× daily from 33 sources</div>
-    </div>
+    <!-- TOP — Revenue + High-Value -->
+    <div class="section-label">Start Here</div>
 
-    <!-- Primary Links -->
-    <div class="section-label">Free Resources</div>
-
-    <a href="/free-tools/" class="link-btn featured" style="--btn-accent: #66ffff;"
-       data-link-id="free_tools" data-link-section="primary">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }}</span>
+    <a href="/guided/explore/" class="link-btn featured" data-link-id="practice_exams" data-link-section="primary">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "graduation-cap" "size" 18 "stroke" 1.5) }}</span>
       <span class="link-text">
-        <span class="label">Free Cloud & AI Tools<span class="badge-new">New</span></span>
-        <span class="meta">30+ tools — zero cost, zero login</span>
+        <span class="label">Practice Exams<span class="badge-new">Popular</span></span>
+        <span class="meta">Azure, M365, Security & GCP — from $9</span>
       </span>
       <span class="link-arrow">→</span>
     </a>
 
-    <a href="/ai-news/" class="link-btn featured" style="--btn-accent: #ff66ff;"
-       data-link-id="ai_news" data-link-section="primary">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "newspaper" "size" 14 "stroke" 1.5) }}</span>
+    <a href="/free-tools/" class="link-btn featured" data-link-id="free_tools" data-link-section="primary">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "wrench" "size" 18 "stroke" 1.5) }}</span>
       <span class="link-text">
-        <span class="label">AI News — Updated Daily</span>
-        <span class="meta">Real-time from 33 sources · 20 categories</span>
+        <span class="label">54 Free Cloud & AI Tools</span>
+        <span class="meta">Zero cost, zero login — prompt polisher, cost calculators, builders</span>
       </span>
       <span class="link-arrow">→</span>
     </a>
 
-    <a href="/cert-tracker/" class="link-btn" style="--btn-accent: #10B981;"
-       data-link-id="cert_guides" data-link-section="primary">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }}</span>
+    <a href="/cert-tracker/" class="link-btn" data-link-id="study_guides" data-link-section="primary">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "scroll" "size" 18 "stroke" 1.5) }}</span>
       <span class="link-text">
         <span class="label">Cert Study Guides</span>
         <span class="meta">52 free Microsoft exam guides</span>
@@ -603,45 +251,8 @@
       <span class="link-arrow">→</span>
     </a>
 
-    <a href="/blog/" class="link-btn" style="--btn-accent: #0EA5E9;"
-       data-link-id="blog" data-link-section="primary">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }}</span>
-      <span class="link-text">
-        <span class="label">Blog</span>
-        <span class="meta">Deep dives on Copilot, licensing & security</span>
-      </span>
-      <span class="link-arrow">→</span>
-    </a>
-
-    <!-- Watch -->
-    <div class="section-label">Watch</div>
-
-    <a href="https://www.youtube.com/@SusanthSutheesh" class="link-btn" style="--btn-accent: #ff4444;"
-       data-link-id="youtube_main" data-link-section="watch" target="_blank" rel="noopener noreferrer">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "clapperboard" "size" 14 "stroke" 1.5) }}</span>
-      <span class="link-text">
-        <span class="label">YouTube — Full Courses</span>
-        <span class="meta">74 videos · Azure, M365, Copilot & Security</span>
-      </span>
-      <span class="link-arrow">↗</span>
-    </a>
-
-    <a href="https://www.youtube.com/@AGuideToCloud" class="link-btn" style="--btn-accent: #ff4444;"
-       data-link-id="youtube_bites" data-link-section="watch" target="_blank" rel="noopener noreferrer">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }}</span>
-      <span class="link-text">
-        <span class="label">YouTube — Quick Bites</span>
-        <span class="meta">730+ short exam prep clips</span>
-      </span>
-      <span class="link-arrow">↗</span>
-    </a>
-
-    <!-- Connect -->
-    <div class="section-label">Connect</div>
-
-    <a href="https://ko-fi.com/aguidetocloud/shop" class="link-btn" style="--btn-accent: #FBBF24;"
-       data-link-id="kofi_shop" data-link-section="connect" target="_blank" rel="noopener noreferrer">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }}</span>
+    <a href="https://ko-fi.com/aguidetocloud/shop" class="link-btn" data-link-id="downloads" data-link-section="primary" target="_blank" rel="noopener noreferrer">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "download" "size" 18 "stroke" 1.5) }}</span>
       <span class="link-text">
         <span class="label">Downloads</span>
         <span class="meta">Study guides, flash cards & practice tests</span>
@@ -649,31 +260,90 @@
       <span class="link-arrow">↗</span>
     </a>
 
-    <a href="https://chat.whatsapp.com/KpiSMbE8i1n60KLgI4lFal" class="link-btn" style="--btn-accent: #25D366;"
-       data-link-id="whatsapp" data-link-section="connect" target="_blank" rel="noopener noreferrer">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }}</span>
+    <!-- Learn -->
+    <div class="section-label">Learn</div>
+
+    <a href="/videos/" class="link-btn" data-link-id="videos" data-link-section="learn">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "video" "size" 18 "stroke" 1.5) }}</span>
       <span class="link-text">
-        <span class="label">Community<span class="badge-new">New</span></span>
-        <span class="meta">Join the WhatsApp community</span>
+        <span class="label">Video Tutorials</span>
+        <span class="meta">78 videos — Azure, M365, Copilot & Security</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a href="/blog/" class="link-btn" data-link-id="blog" data-link-section="learn">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "edit-3" "size" 18 "stroke" 1.5) }}</span>
+      <span class="link-text">
+        <span class="label">Blog</span>
+        <span class="meta">Deep dives on Copilot, licensing & security</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a href="/licensing-docs/" class="link-btn" data-link-id="licensing" data-link-section="learn">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "book-open" "size" 18 "stroke" 1.5) }}</span>
+      <span class="link-text">
+        <span class="label">M365 Licensing Wiki</span>
+        <span class="meta">50 plans explained in plain English</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <!-- Featured Tools -->
+    <div class="section-label">Featured Tools</div>
+
+    <a href="/prompt-polisher/" class="link-btn" data-link-id="polisher" data-link-section="tools">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "sparkles" "size" 18 "stroke" 1.5) }}</span>
+      <span class="link-text">
+        <span class="label">Prompt Polisher</span>
+        <span class="meta">Score & rewrite any AI prompt instantly</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a href="/token-calculator/" class="link-btn" data-link-id="token_calc" data-link-section="tools">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 18 "stroke" 1.5) }}</span>
+      <span class="link-text">
+        <span class="label">AI Token Calculator<span class="badge-new">New</span></span>
+        <span class="meta">Compare GPT, Claude, Gemini pricing</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a href="/ai-news/" class="link-btn" data-link-id="ai_news" data-link-section="tools">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "newspaper" "size" 18 "stroke" 1.5) }}</span>
+      <span class="link-text">
+        <span class="label">AI News</span>
+        <span class="meta">Updated 4x daily from 33 sources</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <!-- Watch -->
+    <div class="section-label">YouTube</div>
+
+    <a href="https://www.youtube.com/@SusanthSutheesh" class="link-btn" data-link-id="yt_main" data-link-section="watch" target="_blank" rel="noopener noreferrer">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "video" "size" 18 "stroke" 1.5) }}</span>
+      <span class="link-text">
+        <span class="label">Full Courses</span>
+        <span class="meta">74 videos · Azure, M365, Copilot & Security</span>
       </span>
       <span class="link-arrow">↗</span>
     </a>
 
-    <a href="https://ko-fi.com/aguidetocloud" class="link-btn" style="--btn-accent: #FF5E5B;"
-       data-link-id="donate" data-link-section="connect" target="_blank" rel="noopener noreferrer">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "coffee" "size" 14 "stroke" 1.5) }}</span>
+    <a href="https://www.youtube.com/@AGuideToCloud" class="link-btn" data-link-id="yt_bites" data-link-section="watch" target="_blank" rel="noopener noreferrer">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "bolt" "size" 18 "stroke" 1.5) }}</span>
       <span class="link-text">
-        <span class="label">Support My Work</span>
-        <span class="meta">Buy me a coffee on Ko-fi</span>
+        <span class="label">Quick Bites</span>
+        <span class="meta">730+ short exam prep clips</span>
       </span>
       <span class="link-arrow">↗</span>
     </a>
 
     <!-- Latest Video -->
     <div class="latest-video" id="latest-video" style="display:none">
-      <div class="latest-video-label">Latest Video</div>
-      <a id="video-link" class="video-card" target="_blank" rel="noopener noreferrer"
-         data-link-id="latest_video" data-link-section="watch">
+      <a id="video-link" class="video-card" target="_blank" rel="noopener noreferrer" data-link-id="latest_video" data-link-section="watch">
         <div class="video-thumb">
           <img id="video-img" src="" alt="" loading="lazy" width="480" height="270">
           <div class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
@@ -685,15 +355,36 @@
       </a>
     </div>
 
+    <!-- Connect -->
+    <div class="section-label">Connect</div>
+
+    <a href="https://chat.whatsapp.com/KpiSMbE8i1n60KLgI4lFal" class="link-btn" data-link-id="whatsapp" data-link-section="connect" target="_blank" rel="noopener noreferrer">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "message-square" "size" 18 "stroke" 1.5) }}</span>
+      <span class="link-text">
+        <span class="label">Community</span>
+        <span class="meta">Join the WhatsApp group</span>
+      </span>
+      <span class="link-arrow">↗</span>
+    </a>
+
+    <a href="https://ko-fi.com/aguidetocloud" class="link-btn" data-link-id="donate" data-link-section="connect" target="_blank" rel="noopener noreferrer">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "coffee" "size" 18 "stroke" 1.5) }}</span>
+      <span class="link-text">
+        <span class="label">Support My Work</span>
+        <span class="meta">Buy me a coffee on Ko-fi</span>
+      </span>
+      <span class="link-arrow">↗</span>
+    </a>
+
     <!-- Testimonial -->
     <div class="testimonial" id="testimonial">
-      <div>"I work at Microsoft and I have passed many of my exams using your videos, thank you for such a great content my friend!"</div>
+      <div>"I work at Microsoft and I have passed many of my exams using your videos, thank you!"</div>
       <div class="testimonial-author">— @pablonleon · YouTube</div>
     </div>
 
     <!-- Social Icons -->
     <div class="socials">
-      <a href="https://www.youtube.com/@SusanthSutheesh" class="social-icon" aria-label="YouTube Main Channel" target="_blank" rel="noopener noreferrer" data-link-id="social_youtube" data-link-section="social">
+      <a href="https://www.youtube.com/@SusanthSutheesh" class="social-icon" aria-label="YouTube" target="_blank" rel="noopener noreferrer" data-link-id="social_youtube" data-link-section="social">
         <svg viewBox="0 0 24 24"><path d="M23.5 6.2c-.3-1-1-1.8-2-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.5.6c-1 .3-1.7 1.1-2 2.1C0 8.1 0 12 0 12s0 3.9.5 5.8c.3 1 1 1.8 2 2.1 1.9.6 9.5.6 9.5.6s7.6 0 9.5-.6c1-.3 1.7-1.1 2-2.1.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
       </a>
       <a href="https://www.linkedin.com/in/susanthsutheesh/" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" data-link-id="social_linkedin" data-link-section="social">
@@ -703,7 +394,7 @@
         <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .3z"/></svg>
       </a>
       <a href="https://ko-fi.com/aguidetocloud" class="social-icon" aria-label="Ko-fi" target="_blank" rel="noopener noreferrer" data-link-id="social_kofi" data-link-section="social">
-        <svg viewBox="0 0 24 24"><path d="M23.9 8.1c-.3-1.5-1.6-2.5-3.3-2.7H3.1C1.4 5.4 0 6.7 0 8.4v5.3c0 3.6 2.9 6.5 6.5 6.5h5.4c2.7 0 5.1-1.7 6-4.2.1-.1.1-.3.2-.4 2.6.2 4.8-1.3 5.4-3.7.3-1.3.3-2.5.4-3.8zm-2.2 3.2c-.3 1.3-1.3 2.1-2.7 2.1v-5c1.3 0 2.4.8 2.7 2.1v.8zM12.7 16h-6c-1.3 0-2.3-1.1-2.3-2.3V7.8h10.3c.1 0 .1 0 .2.1V14c0 1.1-.9 2-2.2 2z"/><path d="M10.2 9.8c-.5-.3-1.2-.2-1.6.2-.4.3-.4.9-.1 1.2l.9.9c.2.2.3.5.1.8-.2.3-.4.5-.7.6-.5.2-1 0-1.3-.4l-.6-.9c-.3-.5-.2-1.2.2-1.6.1-.1.1-.2 0-.3-.3-.3-.6-.3-.9 0-.7.7-.8 1.9-.2 2.7l.7.9c.6.8 1.7 1.1 2.6.7.9-.4 1.4-1.2 1.3-2.2 0-.5-.3-1-.7-1.3l-.5-.4c-.1-.1-.1-.2 0-.3.1-.1.2-.1.3 0l.5.3c.2.1.4.1.5-.1.2-.3.1-.5-.5-.8z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M23.9 8.1c-.3-1.5-1.6-2.5-3.3-2.7H3.1C1.4 5.4 0 6.7 0 8.4v5.3c0 3.6 2.9 6.5 6.5 6.5h5.4c2.7 0 5.1-1.7 6-4.2.1-.1.1-.3.2-.4 2.6.2 4.8-1.3 5.4-3.7.3-1.3.3-2.5.4-3.8zm-2.2 3.2c-.3 1.3-1.3 2.1-2.7 2.1v-5c1.3 0 2.4.8 2.7 2.1v.8z"/></svg>
       </a>
     </div>
 
@@ -715,116 +406,85 @@
       </button>
     </div>
 
-    <p class="footer-note">
-      <a href="/">aguidetocloud.com</a>
-    </p>
+    <p class="footer-note"><a href="/">aguidetocloud.com</a></p>
   </div>
 
   <script>
+    /* Theme toggle */
+    (function() {
+      var toggle = document.getElementById('theme-toggle');
+      var theme = 'light';
+      try { theme = localStorage.getItem('theme') || 'light'; } catch(e) {}
+      if (theme === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark'); theme = 'dark';
+      }
+      if (toggle) toggle.addEventListener('click', function() {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        try { localStorage.setItem('theme', theme); } catch(e) {}
+      });
+    })();
+
     /* Click tracking */
     document.addEventListener('click', function(e) {
       var link = e.target.closest('[data-link-id]');
       if (!link) return;
-      var id = link.getAttribute('data-link-id');
-      var section = link.getAttribute('data-link-section') || 'unknown';
-      var href = link.getAttribute('href') || '';
-      var isExternal = href.startsWith('http');
       if (typeof gtag === 'function') {
         gtag('event', 'bio_link_click', {
-          link_id: id,
-          link_section: section,
-          link_type: isExternal ? 'external' : 'internal',
+          link_id: link.getAttribute('data-link-id'),
+          link_section: link.getAttribute('data-link-section') || 'unknown',
+          link_type: (link.getAttribute('href') || '').startsWith('http') ? 'external' : 'internal',
           transport_type: 'beacon'
         });
       }
     });
 
-    /* Share button: Web Share API → clipboard fallback */
+    /* Share */
     var shareBtn = document.getElementById('share-btn');
-    if (shareBtn) {
-      shareBtn.addEventListener('click', function() {
-        var url = window.location.href;
-        if (navigator.share) {
-          navigator.share({ title: 'Susanth Sutheesh — A Guide to Cloud & AI', url: url }).catch(function(){});
-        } else if (navigator.clipboard) {
-          navigator.clipboard.writeText(url).then(function() {
-            shareBtn.classList.add('copied');
-            shareBtn.querySelector('span').textContent = 'Link copied!';
-            setTimeout(function() {
-              shareBtn.classList.remove('copied');
-              shareBtn.querySelector('span').textContent = 'Share this page';
-            }, 2000);
-          }).catch(function(){});
-        }
-        if (typeof gtag === 'function') {
-          gtag('event', 'bio_link_click', { link_id: 'share', link_section: 'footer', transport_type: 'beacon' });
-        }
-      });
-    }
+    if (shareBtn) shareBtn.addEventListener('click', function() {
+      var url = window.location.href;
+      if (navigator.share) { navigator.share({ title: 'Susanth Sutheesh — A Guide to Cloud & AI', url: url }).catch(function(){}); }
+      else if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(function() {
+          shareBtn.classList.add('copied'); shareBtn.querySelector('span').textContent = 'Link copied!';
+          setTimeout(function() { shareBtn.classList.remove('copied'); shareBtn.querySelector('span').textContent = 'Share this page'; }, 2000);
+        }).catch(function(){});
+      }
+    });
 
-    /* Live visitor count */
-    (function() {
-      fetch('/api/stats?realtime=1').then(function(r) { return r.json(); }).then(function(d) {
-        if (d.active > 0) {
-          document.getElementById('live-num').textContent = d.active;
-          document.getElementById('live-counter').classList.add('visible');
-        }
-      }).catch(function(){});
-    })();
-
-    /* What's New banner rotation */
-    (function() {
-      var items = document.querySelectorAll('.whats-new-item');
-      if (items.length < 2) return;
-      var idx = 0;
-      setInterval(function() {
-        items[idx].classList.remove('active');
-        idx = (idx + 1) % items.length;
-        items[idx].classList.add('active');
-      }, 5000);
-    })();
+    /* Live visitors */
+    fetch('/api/stats?realtime=1').then(function(r) { return r.json(); }).then(function(d) {
+      if (d.active > 0) { document.getElementById('live-num').textContent = d.active; document.getElementById('live-counter').classList.add('visible'); }
+    }).catch(function(){});
 
     /* Testimonial rotation */
     (function() {
       var quotes = [
-        { text: '"I work at Microsoft and I have passed many of my exams using your videos, thank you for such a great content my friend!"', author: '— @pablonleon · YouTube' },
-        { text: '"You have made a difference in the lives of hundreds of people (myself included). May God reward your generous heart."', author: '— @waldirpaulino · YouTube' },
+        { text: '"I work at Microsoft and I have passed many of my exams using your videos, thank you!"', author: '— @pablonleon · YouTube' },
         { text: '"Even the paid courses do not organize and say the stuff this way. Clarity and depth are more than the other tutors."', author: '— @lalitds · YouTube' },
         { text: '"This course for AZ-104 is still the best out there. I just cleared the exam with 954/1000."', author: '— @stewarthoward · YouTube' },
         { text: '"Your videos have helped me pass AZ-900, AZ-104, and PL-900 — thank you!!"', author: '— @Stazmartinez · YouTube' }
       ];
-      var el = document.getElementById('testimonial');
-      if (!el) return;
+      var el = document.getElementById('testimonial'); if (!el) return;
       var idx = 0;
       setInterval(function() {
         idx = (idx + 1) % quotes.length;
         el.style.opacity = '0';
-        setTimeout(function() {
-          el.innerHTML = '<div>' + quotes[idx].text + '</div><div class="testimonial-author">' + quotes[idx].author + '</div>';
-          el.style.opacity = '';
-        }, 300);
+        setTimeout(function() { el.innerHTML = '<div>' + quotes[idx].text + '</div><div class="testimonial-author">' + quotes[idx].author + '</div>'; el.style.opacity = ''; }, 200);
       }, 8000);
     })();
 
-    /* Latest video (API with hardcoded fallback) */
+    /* Latest video */
     (function() {
-      var fallback = { id: 'FHD3Sez_MeU', title: 'Microsoft 365 Copilot — March 2026 Updates', published: '2026-03-17' };
+      var fb = { id: 'FHD3Sez_MeU', title: 'Microsoft 365 Copilot — March 2026 Updates', published: '2026-03-17' };
       function show(d) {
-        var wrap = document.getElementById('latest-video');
-        var link = document.getElementById('video-link');
-        var img = document.getElementById('video-img');
-        var title = document.getElementById('video-title');
-        var meta = document.getElementById('video-meta');
-        link.href = 'https://www.youtube.com/watch?v=' + d.id;
-        img.src = 'https://i.ytimg.com/vi/' + d.id + '/hqdefault.jpg';
-        img.alt = d.title || 'Latest video';
-        title.textContent = d.title || '';
-        meta.textContent = d.published || '';
-        wrap.style.display = '';
+        var w = document.getElementById('latest-video'), l = document.getElementById('video-link');
+        var i = document.getElementById('video-img'), t = document.getElementById('video-title'), m = document.getElementById('video-meta');
+        l.href = 'https://www.youtube.com/watch?v=' + d.id;
+        i.src = 'https://i.ytimg.com/vi/' + d.id + '/hqdefault.jpg'; i.alt = d.title || '';
+        t.textContent = d.title || ''; m.textContent = d.published || ''; w.style.display = '';
       }
-      fetch('/api/stats?latestvideo=1').then(function(r) { return r.json(); }).then(function(d) {
-        show(d.error || !d.id ? fallback : d);
-      }).catch(function() { show(fallback); });
+      fetch('/api/stats?latestvideo=1').then(function(r) { return r.json(); }).then(function(d) { show(d.error || !d.id ? fb : d); }).catch(function() { show(fb); });
     })();
   </script>
 </body>
