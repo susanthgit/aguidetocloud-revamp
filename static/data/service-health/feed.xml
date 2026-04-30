@@ -5,25 +5,25 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 30 Apr 2026 19:46:56 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2026 21:14:48 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft OneDrive] Users may not be able to load the search bar in Microsoft OneDrive</title>
       <link>https://www.aguidetocloud.com/service-health/#OD1296516</link>
-      <description>[Microsoft OneDrive] Users may not be able to load the search bar in Microsoft OneDrive.</description>
+      <description>[Microsoft OneDrive] Users may not have been able to load the search bar in OneDrive.</description>
       <category>Microsoft OneDrive</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">OD1296516</guid>
-      <pubDate>Thu, 30 Apr 2026 17:13:19 +0000</pubDate>
+      <pubDate>Thu, 30 Apr 2026 07:30:00 +0000</pubDate>
     </item>
     <item>
       <title>[SharePoint Online] Users may not be able to load the search bar in SharePoint Online sites</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1296487</link>
-      <description>[SharePoint Online] Users may not be able to load the search bar in SharePoint Online sites.</description>
+      <description>[SharePoint Online] Users may not have been able to load the search bar in SharePoint Online sites.</description>
       <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">SP1296487</guid>
-      <pubDate>Thu, 30 Apr 2026 16:20:50 +0000</pubDate>
+      <pubDate>Thu, 30 Apr 2026 07:30:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users in the North America and Asia Pacific regions may see stale data in some Microsoft 365 Copilot usage reports</title>

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T19:46:55.846647+00:00",
+  "generated_at": "2026-04-30T21:14:47.820773+00:00",
   "total_incidents_tracked": 104,
   "services": [
     {
@@ -46,9 +46,9 @@
       "short_name": "SharePoint",
       "icon": "📄",
       "total_incidents": 7,
-      "active_incidents": 1,
-      "avg_duration_minutes": 20620,
-      "last_incident": "2026-04-30T16:20:50+00:00",
+      "active_incidents": 0,
+      "avg_duration_minutes": 17770,
+      "last_incident": "2026-04-30T07:30:00+00:00",
       "classifications": {
         "incident": 2,
         "advisory": 5
@@ -147,9 +147,9 @@
       "short_name": "OneDrive",
       "icon": "☁️",
       "total_incidents": 2,
-      "active_incidents": 1,
-      "avg_duration_minutes": 23946,
-      "last_incident": "2026-04-30T17:13:19+00:00",
+      "active_incidents": 0,
+      "avg_duration_minutes": 12310,
+      "last_incident": "2026-04-30T07:30:00+00:00",
       "classifications": {
         "incident": 1,
         "advisory": 1
