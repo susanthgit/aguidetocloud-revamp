@@ -428,4 +428,166 @@ body { background: var(--bg-page) !important; }
 }
 .cc-bio-insight strong { color: var(--text-primary); }
 
+/* ══════════════════════════════════════════════
+   Guided BI Dashboard Styles
+   ══════════════════════════════════════════════ */
+
+/* View divider */
+.cc-view-divider {
+  width: 1px; height: 18px; background: var(--border);
+  margin: 0 0.15rem; align-self: center;
+}
+
+/* Auth modal */
+.cc-guided-auth {
+  position: fixed; inset: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.5);
+}
+.cc-guided-auth-card {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 2rem; max-width: 360px; width: 90%; text-align: center;
+}
+.cc-guided-auth-card h3 { color: var(--text-primary); margin: 0 0 0.5rem; font-size: 1.1rem; }
+.cc-guided-auth-card p { color: var(--text-muted); font-size: 0.82rem; margin: 0 0 1rem; }
+
+/* KPI cards */
+.cc-guided-kpis {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem;
+}
+.cc-kpi {
+  background: var(--bg-surface); border: 1px solid var(--border); border-radius: 8px;
+  padding: 1rem; text-align: center;
+}
+.cc-kpi-value {
+  display: block; font-family: var(--cc-mono); font-size: 1.4rem;
+  font-weight: 700; color: var(--text-primary); line-height: 1.2;
+}
+.cc-kpi-label {
+  display: block; font-size: 0.72rem; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.3rem;
+}
+.cc-kpi-change {
+  display: block; font-family: var(--cc-mono); font-size: 0.72rem; margin-top: 0.2rem;
+}
+.cc-kpi-up { color: var(--cc-green); }
+.cc-kpi-down { color: var(--cc-red); }
+
+/* Controls bar */
+.cc-guided-controls {
+  display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;
+}
+.cc-select {
+  background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 6px;
+  color: var(--text-primary); font-family: var(--cc-mono); font-size: 0.75rem;
+  padding: 0.35rem 0.6rem; cursor: pointer; outline: none;
+}
+.cc-select:focus { border-color: var(--cc-green); }
+.cc-search {
+  background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 6px;
+  color: var(--text-primary); font-family: var(--cc-mono); font-size: 0.75rem;
+  padding: 0.35rem 0.6rem; outline: none; min-width: 160px;
+}
+.cc-search:focus { border-color: var(--cc-green); }
+.cc-search::placeholder { color: var(--text-muted); }
+
+/* Data tables */
+.cc-table { font-family: var(--cc-mono); font-size: 0.75rem; overflow-x: auto; }
+.cc-table-header {
+  display: flex; gap: 0; padding: 0.5rem 0.6rem;
+  border-bottom: 2px solid var(--border); color: var(--text-muted);
+  font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.68rem;
+}
+.cc-table-row {
+  display: flex; gap: 0; padding: 0.55rem 0.6rem; cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.15s ease-out;
+}
+.cc-table-row:hover { background: var(--bg-elevated); }
+.cc-table-row.cc-expanded { background: var(--bg-elevated); border-bottom-color: transparent; }
+.cc-th, .cc-td { flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cc-th-date { width: 100px; }
+.cc-th-name { flex: 1; min-width: 100px; }
+.cc-th-cert { width: 72px; }
+.cc-th-type { width: 105px; }
+.cc-th-amount { width: 68px; text-align: right; }
+.cc-th-key { width: 140px; }
+.cc-th-key-wide { width: 170px; }
+.cc-th-email { width: 40px; text-align: center; }
+.cc-th-status { width: 56px; text-align: center; }
+.cc-th-act { width: 48px; text-align: center; }
+.cc-th-num { width: 72px; text-align: right; }
+
+.cc-cert-badge {
+  color: var(--accent); font-weight: 600;
+}
+.cc-mono { font-family: var(--cc-mono); }
+
+/* Expandable detail */
+.cc-expand-detail {
+  padding: 0.75rem 0.6rem 0.75rem 1.2rem;
+  background: var(--bg-elevated); border-bottom: 1px solid var(--border);
+  font-size: 0.78rem;
+}
+.cc-detail-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.5rem 1.5rem;
+}
+.cc-detail-grid strong { color: var(--text-muted); font-weight: 600; }
+.cc-detail-grid a { color: var(--accent); }
+.cc-detail-grid code {
+  background: var(--bg-page); padding: 0.1rem 0.3rem; border-radius: 3px;
+  font-size: 0.72rem;
+}
+
+/* Bar charts (revenue breakdown) */
+.cc-bar-item { margin-bottom: 0.6rem; }
+.cc-bar-head {
+  display: flex; justify-content: space-between; font-family: var(--cc-mono);
+  font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 0.25rem;
+}
+.cc-bar-head small { color: var(--text-muted); }
+.cc-bar-track {
+  height: 6px; background: var(--bg-elevated); border-radius: 3px; overflow: hidden;
+}
+.cc-bar-fill {
+  height: 100%; background: var(--accent); border-radius: 3px;
+  transition: width 0.3s ease-out;
+}
+
+/* Funnel */
+.cc-funnel-step { margin-bottom: 0.15rem; }
+.cc-funnel-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--accent); border-radius: 4px;
+  padding: 0.5rem 0.75rem; min-width: 20%;
+  transition: width 0.3s ease-out;
+}
+.cc-funnel-label { color: #fff; font-family: var(--cc-mono); font-size: 0.75rem; font-weight: 600; }
+.cc-funnel-value { color: rgba(255,255,255,0.85); font-family: var(--cc-mono); font-size: 0.82rem; font-weight: 700; }
+.cc-funnel-conv {
+  display: block; text-align: center; font-family: var(--cc-mono);
+  font-size: 0.68rem; color: var(--text-muted); padding: 0.15rem 0;
+}
+
+/* Analytics message */
+.cc-analytics-msg {
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: 8px; padding: 0.75rem 1rem;
+  font-size: 0.78rem; color: var(--cc-amber);
+}
+
+/* Error / empty states */
+.cc-err { color: var(--cc-red); font-size: 0.82rem; font-family: var(--cc-mono); }
+p.cc-muted { color: var(--text-muted); font-size: 0.82rem; font-family: var(--cc-mono); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cc-guided-kpis { grid-template-columns: repeat(2, 1fr); }
+  .cc-table-header, .cc-table-row { font-size: 0.68rem; }
+  .cc-th-type, .cc-th-key { display: none; }
+  .cc-guided-controls { flex-direction: column; align-items: stretch; }
+  .cc-detail-grid { grid-template-columns: 1fr; }
+}
+
 @media print { #cc-gate { display: none !important; } .cc-views { display: none; } .cc-panel { display: block !important; } }

@@ -102,6 +102,10 @@
     <button class="cc-view" data-view="seo">SEO</button>
     <button class="cc-view" data-view="strategy">Strategy</button>
     <button class="cc-view" data-view="biolinks">Bio Links</button>
+    <span class="cc-view-divider"></span>
+    <button class="cc-view" data-view="guided-sales">💰 Sales</button>
+    <button class="cc-view" data-view="guided-licences">🔑 Licences</button>
+    <button class="cc-view" data-view="guided-analytics">📈 Analytics</button>
   </div>
 
   <!-- VIEW: Dashboard -->
@@ -274,8 +278,141 @@
     </section>
   </div>
 
+  <!-- Guided Auth Modal -->
+  <div class="cc-guided-auth" id="cc-guided-auth" style="display:none">
+    <div class="cc-guided-auth-card">
+      <h3>🎓 Guided Admin Access</h3>
+      <p>Enter the admin password to view business data.</p>
+      <div class="cc-gate-form">
+        <input type="password" id="cc-guided-pass" placeholder="Admin password" autocomplete="off" aria-label="Admin password">
+        <button id="cc-guided-login">Authenticate</button>
+      </div>
+      <p class="cc-gate-error" id="cc-guided-error" style="display:none">Authentication failed</p>
+    </div>
+  </div>
+
+  <!-- VIEW: Guided Sales & Revenue -->
+  <div class="cc-panel" id="cc-guided-sales">
+    <section class="cc-section">
+      <div class="cc-guided-kpis" id="cc-sales-kpis"></div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Revenue (Daily)</h2>
+      <canvas id="cc-sales-chart" height="160"></canvas>
+    </section>
+    <section class="cc-section">
+      <div class="cc-dual">
+        <div class="cc-half">
+          <h3 class="cc-label">By Product Type</h3>
+          <div id="cc-sales-by-type"></div>
+        </div>
+        <div class="cc-half">
+          <h3 class="cc-label">By Cert</h3>
+          <div id="cc-sales-by-cert"></div>
+        </div>
+      </div>
+    </section>
+    <section class="cc-section">
+      <div class="cc-section-head">
+        <h2 class="cc-section-title">Transactions</h2>
+        <div class="cc-guided-controls">
+          <select id="cc-sales-days" class="cc-select" aria-label="Date range">
+            <option value="7">7 days</option>
+            <option value="30" selected>30 days</option>
+            <option value="90">90 days</option>
+            <option value="365">All time</option>
+          </select>
+          <select id="cc-sales-type" class="cc-select" aria-label="Product type filter">
+            <option value="">All types</option>
+            <option value="cert">Cert ($9)</option>
+            <option value="vendor">Vendor ($59)</option>
+            <option value="all">All Access ($149)</option>
+          </select>
+          <button class="cc-export-btn" id="cc-sales-csv" title="Export CSV">CSV</button>
+        </div>
+      </div>
+      <div id="cc-sales-table"></div>
+    </section>
+  </div>
+
+  <!-- VIEW: Guided Licences -->
+  <div class="cc-panel" id="cc-guided-licences">
+    <section class="cc-section">
+      <div class="cc-guided-kpis" id="cc-lic-kpis"></div>
+    </section>
+    <section class="cc-section">
+      <div class="cc-section-head">
+        <h2 class="cc-section-title">Licence Records</h2>
+        <div class="cc-guided-controls">
+          <input type="text" id="cc-lic-search" class="cc-search" placeholder="Search key, email, cert..." aria-label="Search licences">
+          <select id="cc-lic-status" class="cc-select" aria-label="Status filter">
+            <option value="all">All</option>
+            <option value="active">Active</option>
+            <option value="expired">Expired</option>
+          </select>
+        </div>
+      </div>
+      <div id="cc-lic-table"></div>
+    </section>
+  </div>
+
+  <!-- VIEW: Guided Analytics -->
+  <div class="cc-panel" id="cc-guided-analytics">
+    <section class="cc-section">
+      <div class="cc-guided-kpis" id="cc-analytics-kpis"></div>
+    </section>
+    <section class="cc-section">
+      <div class="cc-section-head">
+        <h2 class="cc-section-title">Cert Performance</h2>
+        <select id="cc-analytics-days" class="cc-select" aria-label="Date range">
+          <option value="7">7 days</option>
+          <option value="30" selected>30 days</option>
+          <option value="90">90 days</option>
+          <option value="365">All time</option>
+        </select>
+      </div>
+      <div id="cc-cert-table"></div>
+    </section>
+    <section class="cc-section">
+      <h2 class="cc-section-title">Conversion Funnel</h2>
+      <div id="cc-funnel"></div>
+    </section>
+    <section class="cc-section">
+      <div class="cc-dual">
+        <div class="cc-half">
+          <h3 class="cc-label">Mode Breakdown</h3>
+          <div id="cc-mode-breakdown"></div>
+        </div>
+        <div class="cc-half">
+          <h3 class="cc-label">Quiz Trend</h3>
+          <canvas id="cc-quiz-trend" height="120"></canvas>
+        </div>
+      </div>
+    </section>
+    <section class="cc-section" id="cc-analytics-msg-section" style="display:none">
+      <div id="cc-analytics-msg" class="cc-analytics-msg"></div>
+    </section>
+  </div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" crossorigin="anonymous" integrity="sha384-vsrfeLOOY6KuIYKDlmVH5UiBmgIdB1oEf7p01YgWHuqmOHfZr374+odEv96n9tNC"></script>
 <script src="/js/command-centre.js?v={{ site.Params.cache_version }}"></script>
+<script>
+// Lazy-load Guided dashboard JS when a Guided tab is first clicked
+(function(){
+  var loaded = false;
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest && e.target.closest('.cc-view');
+    if (!btn || loaded) return;
+    var v = btn.dataset.view;
+    if (v && v.indexOf('guided-') === 0) {
+      loaded = true;
+      var s = document.createElement('script');
+      s.src = '/js/command-centre-guided.js?v={{ site.Params.cache_version }}';
+      document.body.appendChild(s);
+    }
+  });
+})();
+</script>
 <script>
 (function(){
   var H='0579d11899d8171a96c04302aa2f2f7250adfce591e1a118f332f40c70027be8';
