@@ -698,7 +698,7 @@
       return '<div class="pwgen-history-item">' +
         '<span class="pwgen-history-item-strength" style="background:' + a.color + '"></span>' +
         '<span class="pwgen-history-item-text">' + esc(h.pw) + '</span>' +
-        '<button class="pwgen-history-item-copy" data-idx="' + i + '" title="Copy" aria-label="Copy password">📋</button>' +
+        '<button class="pwgen-history-item-copy" data-idx="' + i + '" title="Copy" aria-label="Copy password">Copy</button>' +
       '</div>';
     }).join('');
   }
@@ -799,7 +799,7 @@
       const c = a.composition;
       const maxComp = Math.max(c.upper, c.lower, c.numbers, c.symbols, 1);
       $('#pwgen-composition').innerHTML = [
-        compBar('Length', c.length, 128, '#D946EF'),
+        compBar('Length', c.length, 128, 'var(--accent)'),
         compBar('Uppercase', c.upper, c.length, '#818CF8'),
         compBar('Lowercase', c.lower, c.length, '#60A5FA'),
         compBar('Numbers', c.numbers, c.length, '#34D399'),
@@ -966,7 +966,7 @@
     listEl.innerHTML = results.map((pw, i) =>
       '<div class="pwgen-bulk-item">' +
         '<span class="pwgen-bulk-item-text">' + esc(pw) + '</span>' +
-        '<button class="pwgen-bulk-item-copy" data-pw="' + esc(pw).replace(/"/g, '&quot;') + '" title="Copy" aria-label="Copy">📋</button>' +
+        '<button class="pwgen-bulk-item-copy" data-pw="' + esc(pw).replace(/"/g, '&quot;') + '" title="Copy" aria-label="Copy">Copy</button>' +
       '</div>'
     ).join('');
 
@@ -1077,9 +1077,9 @@
     function updateWordHint(hintId, count) {
       const hint = $('#' + hintId);
       if (!hint) return;
-      if (count < 4) { hint.textContent = '⚠️ ' + count + ' words is weak — use 5+ for strong security'; hint.className = 'pwgen-word-hint warning'; }
-      else if (count === 4) { hint.textContent = '💡 4 words is borderline — consider 5+ for better security'; hint.className = 'pwgen-word-hint warning'; }
-      else { hint.textContent = '✅ ' + count + ' words = ' + (count * 12.9).toFixed(0) + ' bits of entropy — strong!'; hint.className = 'pwgen-word-hint ok'; }
+      if (count < 4) { hint.textContent = count + ' words is weak — use 5+ for strong security'; hint.className = 'pwgen-word-hint warning'; }
+      else if (count === 4) { hint.textContent = '4 words is borderline — consider 5+ for better security'; hint.className = 'pwgen-word-hint warning'; }
+      else { hint.textContent = count + ' words = ' + (count * 12.9).toFixed(0) + ' bits of entropy — strong!'; hint.className = 'pwgen-word-hint ok'; }
     }
 
     // Character toggles
@@ -1144,7 +1144,7 @@
     // Eye toggle
     $('#pwgen-eye-btn').addEventListener('click', () => {
       S.passwordVisible = !S.passwordVisible;
-      $('#pwgen-eye-btn').textContent = S.passwordVisible ? '👁️' : '🔒';
+      $('#pwgen-eye-btn').textContent = S.passwordVisible ? 'Hide' : 'Show';
       displayPassword();
     });
 
@@ -1195,7 +1195,7 @@
     $('#pwgen-check-eye').addEventListener('click', () => {
       S.checkVisible = !S.checkVisible;
       checkInput.type = S.checkVisible ? 'text' : 'password';
-      $('#pwgen-check-eye').textContent = S.checkVisible ? '🔒' : '👁️';
+      $('#pwgen-check-eye').textContent = S.checkVisible ? 'Hide' : 'Show';
     });
 
     // ── Breach toggle opt-in ──

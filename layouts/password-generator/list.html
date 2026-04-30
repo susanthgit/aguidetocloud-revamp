@@ -30,11 +30,10 @@
 
 {{ partial "tool-header.html" (dict "page" . "title" "Password Generator") }}
 
-  {{/* ── Tabs ── */}}
+  {{/* ── 3 Tabs ── */}}
   <div class="pwgen-tabs" role="tablist">
     <button class="pwgen-tab active" role="tab" data-tab="generate" aria-selected="true" id="tab-generate" aria-controls="panel-generate">Generate</button>
-    <button class="pwgen-tab" role="tab" data-tab="check" aria-selected="false" id="tab-check" aria-controls="panel-check">Check My Password</button>
-    <button class="pwgen-tab" role="tab" data-tab="passphrase" aria-selected="false" id="tab-passphrase" aria-controls="panel-passphrase">Word Builder</button>
+    <button class="pwgen-tab" role="tab" data-tab="check" aria-selected="false" id="tab-check" aria-controls="panel-check">Check</button>
     <button class="pwgen-tab" role="tab" data-tab="faq" aria-selected="false" id="tab-faq" aria-controls="panel-faq">FAQ</button>
   </div>
 
@@ -218,11 +217,45 @@
       </div>
     </div>
 
+    {{/* ── Word Builder (merged from former tab) ── */}}
+    <div class="pwgen-section">
+      <div class="pwgen-section-title">Word Builder (Passphrase)</div>
+      <p class="pwgen-pp-intro-text">Click any word to reroll it. Each word from the EFF Diceware list adds ~12.9 bits of entropy.</p>
+      <div class="pwgen-pp-display-card">
+        <div class="pwgen-pp-chips" id="pwgen-pp-chips" aria-label="Passphrase words"></div>
+        <div class="pwgen-pp-full" id="pwgen-pp-full" aria-live="polite"></div>
+        <div class="pwgen-pp-entropy" id="pwgen-pp-entropy"></div>
+        <div class="pwgen-word-hint" id="pwgen-pp-word-hint">5+ words recommended for strong security</div>
+        <div class="pwgen-pp-actions">
+          <button class="pwgen-btn pwgen-btn-primary" id="pwgen-pp-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy</button>
+          <button class="pwgen-btn" id="pwgen-pp-reroll">{{ partial "icon.html" (dict "name" "dice" "size" 14 "stroke" 1.5) }} Reroll</button>
+          <button class="pwgen-btn" id="pwgen-pp-add-word">+ Word</button>
+          <button class="pwgen-btn" id="pwgen-pp-remove-word">− Word</button>
+        </div>
+      </div>
+      <div class="pwgen-pp-options">
+        <div class="pwgen-field">
+          <label class="pwgen-label" for="pwgen-pp-sep">Separator</label>
+          <select class="pwgen-select" id="pwgen-pp-sep">
+            <option value="-">Hyphen (-)</option>
+            <option value=" ">Space</option>
+            <option value=".">Dot (.)</option>
+            <option value="_">Underscore (_)</option>
+            <option value="">None</option>
+          </select>
+        </div>
+        <label class="pwgen-toggle"><input type="checkbox" id="pwgen-pp-cap" checked><span class="pwgen-toggle-slider"></span><span>Capitalise</span></label>
+        <label class="pwgen-toggle"><input type="checkbox" id="pwgen-pp-num"><span class="pwgen-toggle-slider"></span><span>Add number</span></label>
+        <label class="pwgen-toggle"><input type="checkbox" id="pwgen-pp-symbol"><span class="pwgen-toggle-slider"></span><span>Add symbol</span></label>
+      </div>
+      <div class="pwgen-pp-strength" id="pwgen-pp-strength"></div>
+    </div>
+
     {{/* ── History ── */}}
     <div class="pwgen-section pwgen-history-section">
       <div class="pwgen-section-title-row">
         <span class="pwgen-section-title" style="margin-bottom:0">History</span>
-        <button class="pwgen-btn pwgen-btn-small" id="pwgen-clear-history">🗑️ Clear</button>
+        <button class="pwgen-btn pwgen-btn-small" id="pwgen-clear-history">Clear</button>
       </div>
       <div class="pwgen-history" id="pwgen-history">
         <p class="pwgen-muted">No passwords generated yet</p>
@@ -252,7 +285,7 @@
         <div class="pwgen-check-score-ring">
           <svg viewBox="0 0 120 120" class="pwgen-score-svg">
             <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
-            <circle cx="60" cy="60" r="52" fill="none" stroke="#D946EF" stroke-width="8" stroke-dasharray="327" stroke-dashoffset="327" stroke-linecap="round" transform="rotate(-90 60 60)" id="pwgen-score-ring"/>
+            <circle cx="60" cy="60" r="52" fill="none" stroke="var(--accent)" stroke-width="8" stroke-dasharray="327" stroke-dashoffset="327" stroke-linecap="round" transform="rotate(-90 60 60)" id="pwgen-score-ring"/>
           </svg>
           <div class="pwgen-check-score-num" id="pwgen-check-score-num">0</div>
         </div>
@@ -283,7 +316,7 @@
 
       {{/* Breach check */}}
       <div class="pwgen-section" id="pwgen-breach-section" style="display:none">
-        <div class="pwgen-section-title">🔓 Breach Database Check</div>
+        <div class="pwgen-section-title">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }} Breach Database Check</div>
         <div class="pwgen-breach-result" id="pwgen-breach-result"></div>
       </div>
 
@@ -297,60 +330,13 @@
 
   </div>{{/* end panel-check */}}
 
-  {{/* ══════════════ TAB 3: PASSPHRASE BUILDER ══════════════ */}}
-  <div class="pwgen-panel" id="panel-passphrase" role="tabpanel" aria-labelledby="tab-passphrase">
-
-    <div class="pwgen-pp-intro">
-      <p>Craft your passphrase word by word. Click any chip to reroll just that word — keep the ones you like, swap the rest. Each word from the <strong>EFF Diceware</strong> list adds ~12.9 bits of entropy.</p>
-    </div>
-
-    {{/* Word chips area */}}
-    <div class="pwgen-pp-display-card">
-      <div class="pwgen-pp-chips" id="pwgen-pp-chips" aria-label="Passphrase words"></div>
-      <div class="pwgen-pp-full" id="pwgen-pp-full" aria-live="polite"></div>
-      <div class="pwgen-pp-entropy" id="pwgen-pp-entropy"></div>
-      <div class="pwgen-word-hint" id="pwgen-pp-word-hint">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} 5+ words recommended for strong security</div>
-      <div class="pwgen-pp-actions">
-        <button class="pwgen-btn pwgen-btn-primary" id="pwgen-pp-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Passphrase</button>
-        <button class="pwgen-btn" id="pwgen-pp-reroll">{{ partial "icon.html" (dict "name" "dice" "size" 14 "stroke" 1.5) }} Reroll All</button>
-        <button class="pwgen-btn" id="pwgen-pp-add-word">+ Add Word</button>
-        <button class="pwgen-btn" id="pwgen-pp-remove-word">− Remove Word</button>
-      </div>
-    </div>
-
-    {{/* Passphrase options */}}
-    <div class="pwgen-section">
-      <div class="pwgen-section-title">Options</div>
-      <div class="pwgen-field">
-        <label class="pwgen-label" for="pwgen-pp-sep">Separator</label>
-        <select class="pwgen-select" id="pwgen-pp-sep">
-          <option value="-">Hyphen (-)</option>
-          <option value=" ">Space</option>
-          <option value=".">Dot (.)</option>
-          <option value="_">Underscore (_)</option>
-          <option value="">None</option>
-        </select>
-      </div>
-      <label class="pwgen-toggle" style="margin-top:0.5rem"><input type="checkbox" id="pwgen-pp-cap" checked><span class="pwgen-toggle-slider"></span><span>Capitalise each word</span></label>
-      <label class="pwgen-toggle"><input type="checkbox" id="pwgen-pp-num"><span class="pwgen-toggle-slider"></span><span>Append random number</span></label>
-      <label class="pwgen-toggle"><input type="checkbox" id="pwgen-pp-symbol"><span class="pwgen-toggle-slider"></span><span>Add random symbol at end</span></label>
-    </div>
-
-    {{/* Strength breakdown */}}
-    <div class="pwgen-section">
-      <div class="pwgen-section-title">Strength Breakdown</div>
-      <div class="pwgen-pp-strength" id="pwgen-pp-strength"></div>
-    </div>
-
-  </div>{{/* end panel-passphrase */}}
-
   {{/* ── FAQ Tab Panel ── */}}
   <div class="pwgen-panel" id="panel-faq" role="tabpanel" aria-labelledby="tab-faq">
   {{ if .Params.faq }}
   <div class="zt-faq-wrap">
     <h2 class="pwgen-faq-title">Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
-    <details open class="pwgen-faq-item">
+    <details {{ if eq $i 0 }}open{{ end }} class="pwgen-faq-item">
       <summary class="pwgen-faq-q">{{ $q.question }}</summary>
       <div class="pwgen-faq-a">{{ $q.answer }}</div>
     </details>
@@ -360,7 +346,7 @@
   </div>
 
   {{/* ── Pagefind searchable block ── */}}
-  <div class="pwgen-searchable" data-pagefind-body style="display:none" aria-hidden="true">
+  <div class="pwgen-searchable" data-pagefind-body hidden aria-hidden="true">
     <h2>Password Generator</h2>
     <p>Generate strong secure passwords passphrases PINs. Free online password generator with strength meter, crack time estimates, and passphrase builder. Privacy-first, 100% client-side, no data sent to servers. EFF diceware word list. Pronounceable passwords.</p>
   </div>
