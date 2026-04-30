@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
           svg.innerHTML = '<polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>';
         }
       }
-      try { localStorage.setItem('tool-fullscreen', isFullscreen ? '1' : ''); } catch(e) {}
+      try { localStorage.removeItem('tool-fullscreen'); } catch(e) {}
     }
 
     fsBtn.addEventListener('click', toggleFullscreen);
@@ -117,10 +117,5 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && isFullscreen) toggleFullscreen();
     });
-
-    // Restore preference
-    try {
-      if (localStorage.getItem('tool-fullscreen') === '1') toggleFullscreen();
-    } catch(e) {}
   }
 });

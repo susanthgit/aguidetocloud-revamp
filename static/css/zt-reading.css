@@ -4343,7 +4343,7 @@ pre:hover .code-copy-btn { opacity: 1; }
 
 .zt-header-row {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 12px;
   flex-wrap: wrap;
 }
