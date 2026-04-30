@@ -75,9 +75,9 @@
             <button class="qrgen-type-pill active" data-type="url">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} URL</button>
             <button class="qrgen-type-pill" data-type="text">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Text</button>
             <button class="qrgen-type-pill" data-type="wifi">{{ partial "icon.html" (dict "name" "wifi" "size" 14 "stroke" 1.5) }} WiFi</button>
-            <button class="qrgen-type-pill" data-type="email">✉️ Email</button>
-            <button class="qrgen-type-pill" data-type="phone">📞 Phone</button>
-            <button class="qrgen-type-pill" data-type="vcard">👤 vCard</button>
+            <button class="qrgen-type-pill" data-type="email">{{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }} Email</button>
+            <button class="qrgen-type-pill" data-type="phone">{{ partial "icon.html" (dict "name" "phone" "size" 14 "stroke" 1.5) }} Phone</button>
+            <button class="qrgen-type-pill" data-type="vcard">{{ partial "icon.html" (dict "name" "user" "size" 14 "stroke" 1.5) }} vCard</button>
           </div>
 
           {{/* URL form */}}
@@ -119,7 +119,7 @@
             </div>
             <div class="qrgen-field" style="flex-direction:row; align-items:center; gap:0.5rem;">
               <input type="checkbox" id="qrgen-wifi-hidden" style="width:auto;">
-              <label for="qrgen-wifi-hidden" style="font-size:0.85rem; color:rgba(255,255,255,0.6); text-transform:none; letter-spacing:0;">Hidden network</label>
+              <label for="qrgen-wifi-hidden" class="qrgen-label" style="text-transform:none; letter-spacing:0;">Hidden network</label>
             </div>
           </div>
 
@@ -188,7 +188,7 @@
             <span class="qrgen-label" style="margin-bottom:0.25rem">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Quick Start</span>
             <div class="qrgen-try-grid">
               <button class="qrgen-try-card" data-try="website">
-                <span class="qrgen-try-icon">🌐</span>
+                <span class="qrgen-try-icon">{{ partial "icon.html" (dict "name" "globe" "size" 14 "stroke" 1.5) }}</span>
                 <span class="qrgen-try-name">My Website</span>
               </button>
               <button class="qrgen-try-card" data-try="wifi">
@@ -196,7 +196,7 @@
                 <span class="qrgen-try-name">Share WiFi</span>
               </button>
               <button class="qrgen-try-card" data-try="vcard">
-                <span class="qrgen-try-icon">👤</span>
+                <span class="qrgen-try-icon">{{ partial "icon.html" (dict "name" "user" "size" 14 "stroke" 1.5) }}</span>
                 <span class="qrgen-try-name">Business Card</span>
               </button>
             </div>
@@ -205,11 +205,11 @@
 
         {{/* Style Section — Collapsible */}}
         <div class="qrgen-section">
-          <button class="qrgen-style-toggle" id="qrgen-style-toggle" aria-expanded="true" aria-controls="qrgen-style-body">
-            <span>{{ partial "icon.html" (dict "name" "palette" "size" 14 "stroke" 1.5) }}</span> <span>Customise Style</span> <span id="qrgen-style-chevron">▼</span>
+          <button class="qrgen-style-toggle" id="qrgen-style-toggle" aria-expanded="false" aria-controls="qrgen-style-body">
+            <span>{{ partial "icon.html" (dict "name" "palette" "size" 14 "stroke" 1.5) }}</span> <span>Customise Style</span> <span id="qrgen-style-chevron">▶</span>
           </button>
 
-          <div class="qrgen-style-body open" id="qrgen-style-body">
+          <div class="qrgen-style-body" id="qrgen-style-body">
 
             {{/* Presets */}}
             <div>
@@ -321,8 +321,8 @@
           </div>
           {{/* Dark/Light preview toggle */}}
           <div class="qrgen-preview-bg-toggle">
-            <button class="qrgen-bg-btn active" data-bg="dark" title="Dark background">🌙</button>
-            <button class="qrgen-bg-btn" data-bg="light" title="Light background (print preview)">☀️</button>
+            <button class="qrgen-bg-btn active" data-bg="dark" title="Dark background">Dark</button>
+            <button class="qrgen-bg-btn" data-bg="light" title="Light background (print preview)">Light</button>
             <button class="qrgen-bg-btn" data-bg="transparent" title="Transparent (checkerboard)">{{ partial "icon.html" (dict "name" "qr-code" "size" 14 "stroke" 1.5) }}</button>
           </div>
           <div class="qrgen-preview-box" id="qrgen-preview-box">
@@ -382,7 +382,7 @@ Hello World,text,Greeting
       <div class="qrgen-section">
         <div class="qrgen-section-title">Scan a QR Code</div>
         <div class="qrgen-scan-drop" id="qrgen-scan-drop" tabindex="0" role="button" aria-label="Upload an image to scan for QR codes">
-          <div class="qrgen-scan-icon">📷</div>
+          <div class="qrgen-scan-icon">{{ partial "icon.html" (dict "name" "camera" "size" 32 "stroke" 1.5) }}</div>
           <div class="qrgen-scan-text">Drop an image here, click to upload, or paste from clipboard</div>
           <div class="qrgen-scan-subtext">Supports PNG, JPG, GIF, WebP</div>
           <input type="file" id="qrgen-scan-file" accept="image/*" style="display:none">
@@ -407,25 +407,13 @@ Hello World,text,Greeting
     <div class="zt-faq-wrap">
       <h2 class="zt-faq-heading">Frequently Asked Questions</h2>
         {{ range $i, $q := .Params.faq }}
-        <details open class="zt-faq-detail">
+        <details {{ if eq $i 0 }}open{{ end }} class="zt-faq-detail">
           <summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary>
           <p class="zt-faq-answer">{{ $q.answer }}</p>
         </details>
         {{ end }}
     </div>
     {{ end }}
-  </div>
-
-  {{/* ── Cross-links — Community Tools ── */}}
-  <div class="tool-eco" style="--eco-accent: #EC4899">
-    <h2 class="tool-eco-title">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} More Handy Tools</h2>
-    <div class="tool-eco-grid tool-eco-4">
-      <a href="/world-clock/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "globe" "size" 14 "stroke" 1.5) }}</span><strong>Meeting Planner</strong><p>Find the best time across zones</p></a>
-      <a href="/prompt-polisher/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "sparkles" "size" 14 "stroke" 1.5) }}</span><strong>Prompt Polisher</strong><p>Improve any AI prompt</p></a>
-      <a href="/prompts/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }}</span><strong>Prompt Library</strong><p>Ready-made prompts</p></a>
-      <a href="/cert-tracker/" class="tool-eco-card"><span>{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }}</span><strong>Cert Guides</strong><p>Study for Microsoft certs</p></a>
-    </div>
-    <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>
   </div>
 
   {{/* ── Back nav ── */}}

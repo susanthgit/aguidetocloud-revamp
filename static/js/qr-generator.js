@@ -23,7 +23,7 @@
     size: 400,
     logoSize: 0.3,
     preset: 'classic',
-    fgColor: '#EC4899',
+    fgColor: '#6366F1',
     bgColor: '#0a0a14',
     dotType: 'rounded',
     cornerSquareType: 'extra-rounded',
@@ -32,7 +32,7 @@
 
   /* ── Style Presets ── */
   const PRESETS = {
-    classic: { fg: '#EC4899', bg: '#0a0a14', dot: 'rounded', corner: 'extra-rounded' },
+    classic: { fg: '#6366F1', bg: '#0a0a14', dot: 'rounded', corner: 'extra-rounded' },
     neon:    { fg: '#00ff88', bg: '#0a0a0a', dot: 'dots', corner: 'dot' },
     gradient:{ fg: '#8B5CF6', bg: '#1e1b4b', dot: 'classy-rounded', corner: 'extra-rounded' },
     minimal: { fg: '#ffffff', bg: '#111111', dot: 'square', corner: 'square' }
@@ -481,7 +481,7 @@
     passToggle.addEventListener('click', () => {
       const showing = passInput.type === 'text';
       passInput.type = showing ? 'password' : 'text';
-      passToggle.textContent = showing ? '👁️' : '🙈';
+      passToggle.textContent = showing ? 'Hide' : 'Show';
       passToggle.title = showing ? 'Show password' : 'Hide password';
     });
   }
