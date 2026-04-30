@@ -2,6 +2,7 @@
 title: "20 M365 Copilot Features You're Probably Not Using (But Should Be)"
 description: "The complete guide to 20 Microsoft 365 Copilot features every user should know — organised as a journey from quick wins to game-changing power moves. Sample prompts for 6 personas, custom summary templates, Outlook instructions, and a 4-week challenge to build the habit."
 date: 2026-04-21
+lastmod: 2026-04-21
 card_tag: "Guide"
 tag_class: "ai"
 images: ["images/og/blog/20-copilot-features-you-should-be-using.jpg"]
