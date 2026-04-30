@@ -1,12 +1,12 @@
 /* ═══════════════════════════════════════════════════
-   Typing Speed Test — typing-test.css
+   Typing Speed Test — uses Zen accent (indigo)
    Accent: #34D399 (Spring Green)
    Namespace: .typist-*
    ═══════════════════════════════════════════════════ */
 
 /* ── Page wrapper ── */
 .typist-page {
-  max-width: 900px;
+  
   margin: 0 auto;
   padding: 0 1rem 3rem;
 }
@@ -26,15 +26,15 @@
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.8rem;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
 }
 .typist-tool-btn:hover {
   background: var(--bg-elevated);
   color: var(--text-primary);
 }
 .typist-tool-btn.active {
-  background: rgba(52,211,153,0.12);
-  border-color: rgba(52,211,153,0.3);
+  background: var(--accent-subtle);
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
   color: var(--accent);
 }
 
@@ -45,7 +45,7 @@
   padding: 0.5rem 2rem 0.5rem 0.75rem;
   background: rgba(251,191,36,0.1);
   border: 1px solid rgba(251,191,36,0.2);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   color: var(--text-primary);
   font-size: 0.82rem;
   margin-bottom: 1rem;
@@ -75,7 +75,7 @@
   padding: 0.75rem 1rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   margin-bottom: 1rem;
 }
 .typist-stat {
@@ -86,7 +86,7 @@
 }
 .typist-stat-val {
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
   font-variant-numeric: tabular-nums;
   min-width: 3ch;
@@ -104,21 +104,21 @@
   position: relative;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   padding: 1.5rem;
   min-height: 180px;
   max-height: 220px;
   overflow: hidden;
   cursor: text;
-  transition: border-color 0.3s;
+  transition: border-color 150ms ease-out;
   margin-bottom: 0.5rem;
 }
 .typist-text-area:focus-within {
-  border-color: rgba(52,211,153,0.3);
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
 }
 .typist-text-area.typist-active {
   border-color: rgba(52,211,153,0.4);
-  box-shadow: 0 0 20px rgba(52,211,153,0.06);
+  box-shadow: 0 0 20px var(--accent-subtle);
 }
 .typist-text {
   font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Consolas', monospace;
@@ -155,7 +155,7 @@
   color: var(--text-muted);
   font-size: 1rem;
   pointer-events: none;
-  transition: opacity 0.3s;
+  transition: opacity 150ms ease-out;
 }
 .typist-text-area.typist-active .typist-focus-hint,
 .typist-text-area.typist-has-text .typist-focus-hint {
@@ -223,41 +223,27 @@
 }
 
 /* ── Tabs ── */
+/* ── Zen Underline Tabs ── */
 .typist-tabs {
-  display: flex;
-  gap: 0.5rem;
-  padding: 0.35rem;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  margin-bottom: 1.25rem;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  display: flex; gap: 0; padding: 0;
+  background: transparent; border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0; margin-bottom: 1.25rem;
+  overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
 }
 .typist-tab {
-  flex: 1;
-  padding: 0.6rem 1rem;
-  background: none;
-  border: 1px solid transparent;
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
-  border-radius: var(--radius-md, 10px);
-  text-align: center;
-  white-space: nowrap;
+  flex: 1; background: transparent; border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-tertiary); font-size: 0.875rem; font-weight: 500;
+  padding: 0.5rem 1rem; cursor: pointer; border-radius: 0;
+  transition: color 150ms ease-out, border-color 150ms ease-out;
+  text-align: center; white-space: nowrap;
 }
-.typist-tab:hover {
-  color: var(--text-secondary);
-  background: var(--bg-elevated);
-}
+.typist-tab:hover { color: var(--text-primary); }
 .typist-tab.active {
-  color: var(--accent-foreground, #fff);
-  background: var(--accent);
-  border-color: var(--accent);
-  box-shadow: 0 2px 8px rgba(52, 211, 153, 0.3);
+  color: var(--accent); background: transparent;
+  border-bottom-color: var(--accent);
+  box-shadow: none; font-weight: 600;
 }
 .typist-panel {
   display: none;
@@ -299,16 +285,16 @@
 }
 .typist-pill {
   padding: 0.45rem 1.2rem;
-  border-radius: var(--radius-lg, 16px);
+  border-radius: var(--radius-md);
   border: 1px solid var(--border);
   background: var(--bg-elevated);
   color: var(--text-secondary);
   font-size: 0.88rem;
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
 }
 .typist-pill:hover {
-  border-color: rgba(52,211,153,0.3);
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
   color: var(--text-primary);
 }
 .typist-pill.active {
@@ -327,16 +313,16 @@
 }
 .typist-mode {
   padding: 0.45rem 1rem;
-  border-radius: var(--radius-lg, 16px);
+  border-radius: var(--radius-md);
   border: 1px solid var(--border);
   background: var(--bg-elevated);
   color: var(--text-secondary);
   font-size: 0.85rem;
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
 }
 .typist-mode:hover {
-  border-color: rgba(52,211,153,0.3);
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
   color: var(--text-primary);
 }
 .typist-mode.active {
@@ -360,7 +346,7 @@
   color: var(--text-secondary);
   font-size: 0.8rem;
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
 }
 .typist-lang.active {
   background: rgba(52,211,153,0.1);
@@ -377,7 +363,7 @@
   width: 100%;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   padding: 1rem;
   color: var(--text-primary);
   font-family: inherit;
@@ -387,19 +373,19 @@
 }
 .typist-custom-textarea:focus {
   outline: none;
-  border-color: rgba(52,211,153,0.3);
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 /* ── Buttons ── */
 .typist-btn {
   padding: 0.5rem 1.2rem;
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   border: 1px solid var(--border);
   background: var(--bg-elevated);
   color: var(--text-secondary);
   font-size: 0.88rem;
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
 }
 .typist-btn:hover {
   background: var(--bg-elevated);
@@ -407,7 +393,7 @@
 }
 .typist-btn-primary {
   background: rgba(52,211,153,0.15);
-  border-color: rgba(52,211,153,0.3);
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
   color: var(--accent);
 }
 .typist-btn-primary:hover {
@@ -444,7 +430,7 @@
 .typist-results-card {
   background: var(--bg-surface);
   border: 1px solid rgba(52,211,153,0.2);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   padding: 2rem;
   max-width: 560px;
   width: 100%;
@@ -474,7 +460,7 @@
 }
 .typist-results-wpm-num {
   font-size: 4.5rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--accent);
   line-height: 1;
   font-variant-numeric: tabular-nums;
@@ -499,12 +485,12 @@
   align-items: center;
   padding: 0.6rem;
   background: var(--bg-elevated);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   border: 1px solid var(--border);
 }
 .typist-result-val {
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   font-variant-numeric: tabular-nums;
 }
@@ -529,7 +515,7 @@
 #typist-sparkline {
   width: 100%;
   height: 100px;
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   background: var(--bg-elevated);
 }
 
@@ -545,7 +531,7 @@
   padding: 0.5rem;
   background: rgba(251,191,36,0.1);
   border: 1px solid rgba(251,191,36,0.2);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   color: var(--text-primary);
   font-size: 0.82rem;
   margin-top: 1rem;
@@ -565,11 +551,11 @@
   padding: 1rem 0.5rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
 }
 .typist-overview-val {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
   font-variant-numeric: tabular-nums;
 }
@@ -599,7 +585,7 @@
 #typist-trend-chart {
   width: 100%;
   height: 200px;
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   background: var(--bg-elevated);
 }
 
@@ -629,7 +615,7 @@
   text-transform: uppercase;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
   cursor: default;
 }
 .typist-key:hover {
@@ -671,7 +657,7 @@
 }
 .typist-history .typist-wpm-cell {
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* ── Toast notification ── */
@@ -681,8 +667,8 @@
   left: 50%;
   transform: translateX(-50%);
   background: var(--bg-surface);
-  border: 1px solid rgba(52,211,153,0.3);
-  border-radius: var(--radius-md, 10px);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  border-radius: var(--radius-md);
   padding: 0.6rem 1.2rem;
   color: var(--text-primary);
   font-size: 0.85rem;
@@ -733,10 +719,10 @@
   font-size: 0.8rem;
   font-family: 'JetBrains Mono', monospace;
   cursor: pointer;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
 }
 .typist-toggle:hover {
-  border-color: rgba(52,211,153,0.3);
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
   color: var(--text-secondary);
 }
 .typist-toggle.active {
@@ -751,7 +737,7 @@
   padding: 0.5rem;
   background: rgba(52,211,153,0.1);
   border: 1px solid rgba(52,211,153,0.25);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md);
   color: var(--accent);
   font-size: 0.9rem;
   font-weight: 600;
@@ -861,7 +847,7 @@
     rgba(0,0,0,0.12) 4px
   );
   pointer-events: none;
-  border-radius: 16px;
+  border-radius: var(--radius-md);
 }
 
 /* CRT flicker */
@@ -903,3 +889,7 @@
   .typist-results, .typist-results-card, .typist-toast { animation: none; }
   .typist-page.typist-retro .typist-text-area { animation: none; }
 }
+
+/* ── Inline color helpers ── */
+.typist-green { color: var(--success, #22C55E); }
+.typist-red { color: #f87171; }
