@@ -23,6 +23,20 @@
   function fmtDateTime(iso) { if (!iso) return ''; var d = new Date(iso); return d.toLocaleDateString('en-NZ', { day:'numeric', month:'short' }) + ' ' + d.toLocaleTimeString('en-NZ', { hour:'2-digit', minute:'2-digit' }); }
   function pct(a, b) { return b > 0 ? Math.round((a / b) * 1000) / 10 : 0; }
 
+  // Loading spinner
+  var SPINNER = '<div class="cc-loading"><div class="cc-spinner"></div><span>Loading…</span></div>';
+  function showLoading(ids) { ids.forEach(function(id) { var el = document.getElementById(id); if (el && !el.innerHTML.trim()) el.innerHTML = SPINNER; }); }
+
+  // Fetch with timeout (15s default)
+  function fetchWithTimeout(url, opts, timeoutMs) {
+    timeoutMs = timeoutMs || 15000;
+    var controller = new AbortController();
+    var timer = setTimeout(function() { controller.abort(); }, timeoutMs);
+    opts = opts || {};
+    opts.signal = controller.signal;
+    return fetch(url, opts).finally(function() { clearTimeout(timer); });
+  }
+
   var TYPE_LABELS = { cert: 'Cert ($9)', vendor: 'Vendor ($59)', all: 'All Access ($149)' };
   var EMAIL_ICONS = { sent: '✅', no_record: '⚠️', unknown: '❓' };
   var EMAIL_LABELS = { sent: 'Sent', no_record: 'No record', unknown: 'Unknown' };
@@ -126,12 +140,14 @@
     var params = '?days=' + (days ? days.value : '30');
     if (type && type.value) params += '&type=' + type.value;
 
-    fetch('/guided/api/cc/sales' + params, { credentials: 'include' })
+    showLoading(['cc-sales-kpis', 'cc-sales-table']);
+    fetchWithTimeout('/guided/api/cc/sales' + params, { credentials: 'include' }, 20000)
       .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function(data) { salesData = data; renderSales(data); })
       .catch(function(e) {
+        var msg = e.name === 'AbortError' ? 'Request timed out — try a shorter date range' : 'Failed to load: ' + e.message;
         var el = document.getElementById('cc-sales-table');
-        if (el) el.innerHTML = '<p class="cc-err">Failed to load sales data: ' + esc(e.message) + '</p>';
+        if (el) el.innerHTML = '<p class="cc-err">' + esc(msg) + '</p>';
       });
   }
 
@@ -297,12 +313,14 @@
     var params = '?status=' + (status ? status.value : 'all');
     if (search && search.value.trim()) params += '&search=' + encodeURIComponent(search.value.trim());
 
-    fetch('/guided/api/cc/licences' + params, { credentials: 'include' })
+    showLoading(['cc-lic-kpis', 'cc-lic-table']);
+    fetchWithTimeout('/guided/api/cc/licences' + params, { credentials: 'include' }, 20000)
       .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function(data) { licenceData = data; renderLicences(data); })
       .catch(function(e) {
+        var msg = e.name === 'AbortError' ? 'Request timed out — KV may have many records' : 'Failed to load: ' + e.message;
         var el = document.getElementById('cc-lic-table');
-        if (el) el.innerHTML = '<p class="cc-err">Failed to load licence data: ' + esc(e.message) + '</p>';
+        if (el) el.innerHTML = '<p class="cc-err">' + esc(msg) + '</p>';
       });
   }
 
@@ -373,12 +391,14 @@
     var days = document.getElementById('cc-analytics-days');
     var params = '?days=' + (days ? days.value : '30');
 
-    fetch('/guided/api/cc/analytics' + params, { credentials: 'include' })
+    showLoading(['cc-analytics-kpis', 'cc-cert-table', 'cc-funnel']);
+    fetchWithTimeout('/guided/api/cc/analytics' + params, { credentials: 'include' }, 20000)
       .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function(data) { analyticsData = data; renderAnalytics(data); })
       .catch(function(e) {
+        var msg = e.name === 'AbortError' ? 'Request timed out — try a shorter date range' : 'Failed to load: ' + e.message;
         var el = document.getElementById('cc-cert-table');
-        if (el) el.innerHTML = '<p class="cc-err">Failed to load analytics: ' + esc(e.message) + '</p>';
+        if (el) el.innerHTML = '<p class="cc-err">' + esc(msg) + '</p>';
       });
   }
 

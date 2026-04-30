@@ -581,6 +581,19 @@ body { background: var(--bg-page) !important; }
 .cc-err { color: var(--cc-red); font-size: 0.82rem; font-family: var(--cc-mono); }
 p.cc-muted { color: var(--text-muted); font-size: 0.82rem; font-family: var(--cc-mono); }
 
+/* Loading spinner */
+.cc-loading {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 1.5rem; justify-content: center;
+  color: var(--text-muted); font-family: var(--cc-mono); font-size: 0.78rem;
+}
+.cc-spinner {
+  width: 18px; height: 18px; border: 2px solid var(--border);
+  border-top-color: var(--accent); border-radius: 50%;
+  animation: cc-spin 0.6s linear infinite;
+}
+@keyframes cc-spin { to { transform: rotate(360deg); } }
+
 /* Responsive */
 @media (max-width: 768px) {
   .cc-guided-kpis { grid-template-columns: repeat(2, 1fr); }
