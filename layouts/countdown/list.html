@@ -93,7 +93,7 @@
       <div class="cdown-field">
         <label class="cdown-label">Banner Image <span class="cdown-hint-text">(optional — shows in full screen)</span></label>
         <div class="cdown-banner-upload" id="cdown-banner-upload">
-          <div class="cdown-banner-preview" id="cdown-banner-preview" hidden>
+          <div class="cdown-banner-preview" id="cdown-banner-preview" style="display:none">
             <img id="cdown-banner-img" alt="Banner preview">
             <button type="button" class="cdown-btn cdown-btn-sm cdown-btn-danger" id="cdown-banner-remove">✕ Remove</button>
           </div>
@@ -112,7 +112,7 @@
     </div>
 
     {{/* Sort */}}
-    <div class="cdown-sort" id="cdown-sort" hidden>
+    <div class="cdown-sort" id="cdown-sort" style="display:none">
       <span class="cdown-sort-label">Sort:</span>
       <button class="cdown-sort-btn active" data-sort="soonest">Soonest</button>
       <button class="cdown-sort-btn" data-sort="newest">Newest</button>
@@ -173,7 +173,7 @@
       <div class="cdown-field" style="max-width:400px;margin:0.5rem auto 0">
         <label class="cdown-label">Banner Image <span class="cdown-hint-text">(shows in full screen)</span></label>
         <div class="cdown-banner-upload">
-          <div class="cdown-banner-preview" id="cdown-timer-banner-preview" hidden>
+          <div class="cdown-banner-preview" id="cdown-timer-banner-preview" style="display:none">
             <img id="cdown-timer-banner-img" alt="Banner preview">
             <button type="button" class="cdown-btn cdown-btn-sm cdown-btn-danger" id="cdown-timer-banner-remove">✕ Remove</button>
           </div>
@@ -193,7 +193,7 @@
     </div>
 
     {{/* Laps */}}
-    <div class="cdown-laps" id="cdown-laps" hidden>
+    <div class="cdown-laps" id="cdown-laps" style="display:none">
       <div class="cdown-label">Laps</div>
       <div class="cdown-laps-list" id="cdown-laps-list"></div>
     </div>
@@ -228,10 +228,10 @@
 </div>
 
 {{/* ── Fullscreen overlay ── */}}
-<div class="cdown-fs" id="cdown-fs" hidden>
+<div class="cdown-fs" id="cdown-fs" style="display:none">
   <canvas class="cdown-fs-canvas" id="cdown-fs-canvas"></canvas>
   <div class="cdown-fs-body">
-    <div class="cdown-fs-banner" id="cdown-fs-banner" hidden>
+    <div class="cdown-fs-banner" id="cdown-fs-banner" style="display:none">
       <img id="cdown-fs-banner-img" alt="">
     </div>
     <div class="cdown-fs-icon" id="cdown-fs-icon"></div>
@@ -243,13 +243,13 @@
     <div class="cdown-fs-msg" id="cdown-fs-msg"></div>
     <div class="cdown-fs-tz" id="cdown-fs-tz"></div>
     {{/* Timer controls in fullscreen */}}
-    <div class="cdown-fs-timer-ctrls" id="cdown-fs-timer-ctrls" hidden>
+    <div class="cdown-fs-timer-ctrls" id="cdown-fs-timer-ctrls" style="display:none">
       <button class="cdown-btn" id="cdown-fs-pause">Pause</button>
       <button class="cdown-btn" id="cdown-fs-reset">Reset</button>
       <button class="cdown-btn" id="cdown-fs-plus1">+1 min</button>
     </div>
   </div>
-  <div class="cdown-fs-done" id="cdown-fs-done" hidden>
+  <div class="cdown-fs-done" id="cdown-fs-done" style="display:none">
     <div class="cdown-fs-done-icon">🎉</div>
     <div class="cdown-fs-done-text">It's time!</div>
   </div>
