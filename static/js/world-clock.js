@@ -225,10 +225,10 @@ function findCity(name) {
 }
 
 function getPeriod(hour) {
-  if (hour >= 6 && hour < 9) return { label: '🌅 Morning', cls: 'morning', period: 'morning' };
-  if (hour >= 9 && hour < 17) return { label: '☀️ Daytime', cls: 'day', period: 'day' };
-  if (hour >= 17 && hour < 21) return { label: '🌆 Evening', cls: 'evening', period: 'evening' };
-  return { label: '🌙 Night', cls: 'night', period: 'night' };
+  if (hour >= 6 && hour < 9) return { label: 'Morning', cls: 'morning', period: 'morning' };
+  if (hour >= 9 && hour < 17) return { label: 'Daytime', cls: 'day', period: 'day' };
+  if (hour >= 17 && hour < 21) return { label: 'Evening', cls: 'evening', period: 'evening' };
+  return { label: 'Night', cls: 'night', period: 'night' };
 }
 
 function formatHourAmPm(hour) {
@@ -374,6 +374,23 @@ function initWorldClock() {
     });
   }
 
+  // Auto-populate on first visit: detect user's timezone → add their city + London + New York
+  if (S.clocks.length === 0 && !urlCities) {
+    var initialized = false;
+    try { initialized = localStorage.getItem('wclk_initialized') === '1'; } catch(e) {}
+    if (!initialized) {
+      var userCity = CITIES.find(function(c) { return c.tz === S.localTz; });
+      var defaults = ['London', 'New York'];
+      if (userCity) S.clocks.push(userCity);
+      defaults.forEach(function(name) {
+        var c = findCity(name);
+        if (c && !S.clocks.find(function(x) { return x.city === c.city; })) S.clocks.push(c);
+      });
+      try { localStorage.setItem('wclk_initialized', '1'); } catch(e) {}
+      saveState();
+    }
+  }
+
   // Format toggle
   const toggle = document.getElementById('wclk-format-toggle');
   if (toggle) {
@@ -453,10 +470,10 @@ function renderClocks() {
 
   if (S.clocks.length === 0) {
     grid.innerHTML = '';
-    if (hint) hint.style.display = '';
+    if (hint) hint.hidden = false;
     return;
   }
-  if (hint) hint.style.display = 'none';
+  if (hint) hint.hidden = true;
 
   const now = new Date();
   grid.innerHTML = S.clocks.map((c, i) => {
@@ -473,7 +490,7 @@ function renderClocks() {
       <div class="wclk-card-meta">
         <span class="wclk-card-badge">${esc(getUtcOffset(c.tz))}</span>
         <span class="wclk-card-badge">${esc(offset)}</span>
-        ${dst !== null ? `<span class="wclk-card-badge dst-active">${dst ? '🌞 DST' : '⏰ Standard'}</span>` : ''}
+        ${dst !== null ? `<span class="wclk-card-badge dst-active">${dst ? 'DST' : 'Standard'}</span>` : ''}
         <span class="wclk-card-badge ${rel.cls}">${rel.text}</span>
       </div>
     </div>`;
@@ -503,17 +520,8 @@ function startTicking() {
     if (localEl) localEl.textContent = formatTime(now, S.localTz, S.use24h);
     if (localDet) {
       const dst = isDstActive(S.localTz);
-      localDet.textContent = `${formatDate(now, S.localTz)} · ${getUtcOffset(S.localTz)}${dst !== null ? (dst ? ' · 🌞 DST Active' : ' · ⏰ Standard Time') : ''}`;
+      localDet.textContent = `${formatDate(now, S.localTz)} \u00B7 ${getUtcOffset(S.localTz)}${dst !== null ? (dst ? ' \u00B7 DST Active' : ' \u00B7 Standard Time') : ''}`;
     }
-    // Mirror to World Clock tab
-    const localEl2 = document.getElementById('wclk-local-time-2');
-    const localDet2 = document.getElementById('wclk-local-details-2');
-    if (localEl2) localEl2.textContent = localEl ? localEl.textContent : '';
-    if (localDet2) localDet2.textContent = localDet ? localDet.textContent : '';
-    // Update World Clock tab cards
-    document.querySelectorAll('#wclk-wc-grid .wclk-card-time[data-tz]').forEach(el => {
-      el.textContent = formatTime(now, el.dataset.tz, S.use24h);
-    });
     // Clock cards — update time every second
     document.querySelectorAll('.wclk-card-time[data-tz]').forEach(el => {
       el.textContent = formatTime(now, el.dataset.tz, S.use24h);
@@ -600,10 +608,10 @@ function renderConvertResults() {
 
   if (S.targets.length === 0) {
     container.innerHTML = '';
-    if (hint) hint.style.display = '';
+    if (hint) hint.hidden = false;
     return;
   }
-  if (hint) hint.style.display = 'none';
+  if (hint) hint.hidden = true;
 
   const dtInput = document.getElementById('wclk-conv-datetime');
   const sourceSelect = document.getElementById('wclk-conv-source');
@@ -628,7 +636,7 @@ function renderConvertResults() {
       <div style="text-align:right;display:flex;align-items:center;gap:0.5rem">
         <div>
           <div class="wclk-result-time">${formatTimeShort(adjusted, c.tz, S.use24h)}</div>
-          <div style="font-size:0.72rem;color:var(--wclk-text-dim)">${esc(getUtcOffset(c.tz, adjusted))}</div>
+          <div style="font-size:0.72rem;color:var(--text-muted)">${esc(getUtcOffset(c.tz, adjusted))}</div>
         </div>
         <button class="wclk-result-remove" data-idx="${i}" title="Remove">✕</button>
       </div>
@@ -672,11 +680,15 @@ function initMeetingPlanner() {
     });
   }
 
-  // Time slider
+  // Time slider — only show results when user actively drags
   const slider = document.getElementById('wclk-time-slider');
+  const sliderResults = document.getElementById('wclk-slider-results');
   if (slider) {
-    slider.addEventListener('input', () => renderSliderResults());
-    renderSliderResults();
+    if (sliderResults) sliderResults.hidden = true;
+    slider.addEventListener('input', () => {
+      if (sliderResults) sliderResults.hidden = false;
+      renderSliderResults();
+    });
   }
 
   // Preset buttons
@@ -692,8 +704,8 @@ function initPresets() {
   if (saveBtn) {
     saveBtn.addEventListener('click', () => {
       if (S.clocks.length < 2) {
-        saveBtn.textContent = '⚠️ Add 2+ cities first';
-        setTimeout(() => { saveBtn.textContent = '💾 Save Team'; }, 2000);
+        saveBtn.textContent = 'Add 2+ cities first';
+        setTimeout(() => { saveBtn.textContent = 'Save Team'; }, 2000);
         return;
       }
       const name = prompt('Name this team preset:');
@@ -773,7 +785,7 @@ function renderSliderResults() {
   }
 
   if (S.clocks.length === 0) {
-    container.innerHTML = '<div class="wclk-hint" style="padding:0.5rem 0">👆 Add cities above — their times will appear here as you drag</div>';
+    container.innerHTML = '<div class="wclk-hint">Add cities above \u2014 their times will appear here as you drag</div>';
     return;
   }
 
@@ -830,10 +842,10 @@ function renderMeetingTimeline() {
     container.innerHTML = '';
     if (goldenContainer) goldenContainer.innerHTML = '';
     if (summaryContainer) summaryContainer.innerHTML = '';
-    if (hint) hint.style.display = '';
+    if (hint) hint.hidden = false;
     return;
   }
-  if (hint) hint.style.display = 'none';
+  if (hint) hint.hidden = true;
 
   const dateInput = document.getElementById('wclk-meeting-date');
   const baseDate = new Date(dateInput.value + 'T00:00:00');
@@ -858,11 +870,11 @@ function renderMeetingTimeline() {
 
   // Legend — period-based
   html += `<div class="wclk-timeline-legend">
-    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(34,197,94,0.5)"></div> ☀️ Daytime (9-5)</div>
-    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(251,191,36,0.35)"></div> 🌅 Morning (6-9)</div>
-    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(249,115,22,0.3)"></div> 🌆 Evening (5-9)</div>
-    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(139,92,246,0.25)"></div> 🌙 Night</div>
-    ${S.duration !== 60 ? `<div class="wclk-legend-item">⏱️ ${S.duration} min meeting</div>` : ''}
+    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(34,197,94,0.5)"></div> Daytime (9-5)</div>
+    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(251,191,36,0.35)"></div> Morning (6-9)</div>
+    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(249,115,22,0.3)"></div> Evening (5-9)</div>
+    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(139,92,246,0.25)"></div> Night</div>
+    ${S.duration !== 60 ? `<div class="wclk-legend-item">${S.duration} min meeting</div>` : ''}
   </div>`;
 
   // Timeline rows
@@ -935,48 +947,51 @@ function renderMeetingTimeline() {
       }
       ranges.push({ start, end: prev + 1 });
 
+      // Identify user's city name for clearer labels
+      const userCity = CITIES.find(c => c.tz === S.localTz);
+      const userLabel = userCity ? userCity.city : 'local';
+
       const bestRange = ranges.reduce((a, b) => (b.end - b.start) > (a.end - a.start) ? b : a);
       let details = S.clocks.map(p => {
         const testDate = new Date(baseDate.getTime());
         testDate.setHours(bestRange.start, 0, 0, 0);
         return `${p.flag} ${p.city}: ${formatTimeShort(testDate, p.tz, S.use24h)}`;
-      }).join(' · ');
+      }).join(' \u00B7 ');
       const totalHours = goldenHours.length;
       const rangeText = ranges.length === 1
-        ? `${bestRange.start}:00 – ${bestRange.end}:00 (your time)`
-        : ranges.map(r => `${r.start}:00–${r.end}:00`).join(', ') + ' (your time)';
+        ? `${bestRange.start}:00 \u2013 ${bestRange.end}:00 (${esc(userLabel)} time)`
+        : ranges.map(r => `${r.start}:00\u2013${r.end}:00`).join(', ') + ` (${esc(userLabel)} time)`;
       goldenContainer.innerHTML = `<div class="wclk-golden-box">
-        <div class="wclk-golden-title">✅ Golden Window Found</div>
+        <div class="wclk-golden-title">Golden Window Found</div>
         <div class="wclk-golden-time">${rangeText}</div>
         <div class="wclk-golden-details">${totalHours} slot${totalHours > 1 ? 's' : ''} where everyone is in business hours<br>${esc(details)}</div>
       </div>`;
     } else if (S.clocks.length >= 2) {
-      // Best compromise — rank top 3 slots
+      // Best compromise — rank top 3 slots as compact table rows
       const sorted = hourScores.filter(s => s.hour + durationHours <= 24).sort((a, b) => b.score - a.score);
       const top3 = sorted.slice(0, 3);
+      const userCity2 = CITIES.find(c => c.tz === S.localTz);
+      const userLabel2 = userCity2 ? userCity2.city : 'local';
       let compHtml = `<div class="wclk-golden-box wclk-no-golden">
-        <div class="wclk-golden-title">⚠️ No Perfect Overlap — Here Are the Best Options</div>
-        <div class="wclk-compromise-list">`;
+        <div class="wclk-golden-title">No Perfect Overlap \u2014 Best Options</div>
+        <div class="wclk-comp-table">`;
       top3.forEach((slot, idx) => {
         const endH = slot.hour + durationHours;
-        let whoAffected = [];
         const testDate = new Date(baseDate.getTime());
         testDate.setHours(slot.hour, 0, 0, 0);
-        S.clocks.forEach(p => {
+        const medal = idx === 0 ? '1st' : idx === 1 ? '2nd' : '3rd';
+        let cityBadges = S.clocks.map(p => {
           const pHour = getHourInTz(testDate, p.tz);
           const wh = getWorkHours(p.city);
           const cls = getBizClass(pHour, wh.start, wh.end);
-          if (cls === 'off') whoAffected.push(`${p.flag} ${p.city} (${pHour}:00 — outside hours)`);
-          else if (cls === 'ext') whoAffected.push(`${p.flag} ${p.city} (${pHour}:00 — extended)`);
-        });
-        const medal = idx === 0 ? '🥇' : idx === 1 ? '🥈' : '🥉';
-        const affectedText = whoAffected.length > 0 ? whoAffected.join(', ') : 'Everyone in business hours';
-        compHtml += `<div class="wclk-compromise-slot">
-          <div class="wclk-compromise-rank">${medal}</div>
-          <div class="wclk-compromise-info">
-            <strong>${slot.hour}:00 – ${endH}:00 (your time)</strong>
-            <div class="wclk-compromise-affected">${esc(affectedText)}</div>
-          </div>
+          const badgeCls = cls === 'biz' ? 'cb-ok' : cls === 'ext' ? 'cb-ext' : 'cb-off';
+          const pad = h => String(h).padStart(2, '0');
+          return `<span class="wclk-cb ${badgeCls}">${p.flag} ${pad(pHour)}:00</span>`;
+        }).join('');
+        compHtml += `<div class="wclk-comp-row">
+          <span class="wclk-comp-rank">${medal}</span>
+          <span class="wclk-comp-time">${slot.hour}:00\u2013${endH}:00 ${esc(userLabel2)}</span>
+          <span class="wclk-comp-cities">${cityBadges}</span>
         </div>`;
       });
       compHtml += '</div></div>';
@@ -988,25 +1003,36 @@ function renderMeetingTimeline() {
 
   // Copy + Share buttons
   if (summaryContainer && S.clocks.length >= 2) {
-    summaryContainer.innerHTML = `<button class="wclk-copy-btn" id="wclk-copy-meeting">📋 Copy Summary</button> <button class="wclk-copy-btn" id="wclk-share-link">🔗 Share Link</button>`;
+    // Build calendar link for the best time
+    const bestHour = goldenHours.length > 0 ? goldenHours[0] : (hourScores.sort((a,b) => b.score - a.score)[0] || { hour: 9 }).hour;
+    const calStart = new Date(baseDate.getTime());
+    calStart.setHours(bestHour, 0, 0, 0);
+    const calEnd = new Date(calStart.getTime() + S.duration * 60000);
+    const pad2 = n => String(n).padStart(2, '0');
+    const toCalStr = d => `${d.getFullYear()}${pad2(d.getMonth()+1)}${pad2(d.getDate())}T${pad2(d.getHours())}${pad2(d.getMinutes())}00`;
+    const calTitle = encodeURIComponent('Meeting: ' + S.clocks.map(c => c.city).join(', '));
+    const calDetails = encodeURIComponent(S.clocks.map(c => `${c.flag} ${c.city}: ${formatTimeShort(calStart, c.tz, S.use24h)}`).join('\n'));
+    const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${calTitle}&dates=${toCalStr(calStart)}/${toCalStr(calEnd)}&details=${calDetails}`;
+
+    summaryContainer.innerHTML = `<button class="wclk-copy-btn" id="wclk-copy-meeting">Copy Summary</button> <button class="wclk-copy-btn" id="wclk-share-link">Share Link</button> <a class="wclk-copy-btn" href="${gcalUrl}" target="_blank" rel="noopener">Add to Google Calendar</a>`;
     document.getElementById('wclk-copy-meeting').addEventListener('click', () => {
       let text = `Meeting Time Comparison (${dateInput.value}, ${S.duration} min):\n`;
       const bestHour = goldenHours.length > 0 ? goldenHours[0] : (hourScores.sort((a,b) => b.score - a.score)[0] || { hour: 9 }).hour;
-      text += `\n${goldenHours.length > 0 ? '✅ Best' : '⚠️ Least painful'}: ${bestHour}:00 – ${bestHour + Math.ceil(S.duration/60)}:00 (${S.clocks[0].city} time)\n`;
+      text += `\n${goldenHours.length > 0 ? 'Best' : 'Least painful'}: ${bestHour}:00 – ${bestHour + Math.ceil(S.duration/60)}:00 (${S.clocks[0].city} time)\n`;
       S.clocks.forEach(p => {
         const testDate = new Date(baseDate.getTime());
         testDate.setHours(bestHour, 0, 0, 0);
         const pHour = getHourInTz(testDate, p.tz);
         const wh = getWorkHours(p.city);
         const cls = getBizClass(pHour, wh.start, wh.end);
-        const icon = cls === 'biz' ? '✅' : cls === 'ext' ? '⚠️' : '🔴';
+        const icon = cls === 'biz' ? '[OK]' : cls === 'ext' ? '[EXT]' : '[OFF]';
         text += `${p.flag} ${p.city}: ${formatTimeShort(testDate, p.tz, S.use24h)} ${icon} (${getUtcOffset(p.tz, baseDate)})\n`;
       });
-      text += `\n🔗 ${window.location.href}`;
+      text += `\n${window.location.href}`;
       navigator.clipboard.writeText(text).then(() => {
         const btn = document.getElementById('wclk-copy-meeting');
-        btn.textContent = '✅ Copied!';
-        setTimeout(() => { btn.textContent = '📋 Copy Summary'; }, 2000);
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = 'Copy Summary'; }, 2000);
       }).catch(() => {
         prompt('Copy this meeting summary:', text);
       });
@@ -1015,8 +1041,8 @@ function renderMeetingTimeline() {
       saveUrlState();
       navigator.clipboard.writeText(window.location.href).then(() => {
         const btn = document.getElementById('wclk-share-link');
-        btn.textContent = '✅ Link Copied!';
-        setTimeout(() => { btn.textContent = '🔗 Share Link'; }, 2000);
+        btn.textContent = 'Link Copied!';
+        setTimeout(() => { btn.textContent = 'Share Link'; }, 2000);
       }).catch(() => {
         prompt('Copy this link:', window.location.href);
       });
@@ -1051,10 +1077,10 @@ function showDstInfo(city) {
   html += `<p><strong>Time Zone:</strong> ${esc(city.tz)} (${esc(offset)})</p>`;
 
   if (dst === null) {
-    html += `<p>🚫 <strong>${esc(city.city)} does not observe Daylight Saving Time.</strong></p>`;
+    html += `<p><strong>${esc(city.city)} does not observe Daylight Saving Time.</strong></p>`;
     html += `<p>The UTC offset stays at ${esc(offset)} all year round. No clock changes — ever. This makes scheduling easier!</p>`;
   } else {
-    html += `<p>${dst ? '🌞' : '⏰'} <strong>Currently in ${dst ? 'Daylight Saving Time (summer time)' : 'Standard Time (winter time)'}.</strong></p>`;
+    html += `<p>${dst ? '' : ''} <strong>Currently in ${dst ? 'Daylight Saving Time (summer time)' : 'Standard Time (winter time)'}.</strong></p>`;
 
     // Find next DST transition by checking month boundaries
     const now = new Date();
@@ -1080,8 +1106,8 @@ function showDstInfo(city) {
     if (transitionDate) {
       const daysUntil = Math.ceil((transitionDate - now) / 86400000);
       const willSpring = !dst;
-      html += `<p>📅 <strong>Next change:</strong> around ${formatDate(transitionDate, city.tz)} (${daysUntil} days from now)</p>`;
-      html += `<p>Clocks will ${willSpring ? '⏩ spring forward (lose 1 hour)' : '⏪ fall back (gain 1 hour)'}.</p>`;
+      html += `<p><strong>Next change:</strong> around ${formatDate(transitionDate, city.tz)} (${daysUntil} days from now)</p>`;
+      html += `<p>Clocks will ${willSpring ? 'spring forward (lose 1 hour)' : 'fall back (gain 1 hour)'}.</p>`;
     }
   }
 
@@ -1164,10 +1190,10 @@ function initWorldClockTab() {
   function renderWcGrid() {
     if (wcClocks.length === 0) {
       grid.innerHTML = '';
-      if (hint) hint.style.display = '';
+      if (hint) hint.hidden = false;
       return;
     }
-    if (hint) hint.style.display = 'none';
+    if (hint) hint.hidden = true;
     const now = new Date();
     grid.innerHTML = wcClocks.map(c => {
       const time = formatTime(now, c.tz, S.use24h);
@@ -1194,7 +1220,7 @@ function initWorldClockTab() {
     const q = search.value.trim().toLowerCase();
     if (q.length < 2) { results.innerHTML = ''; results.hidden = true; return; }
     const matches = CITIES.filter(c => c.city.toLowerCase().includes(q) || c.country.toLowerCase().includes(q) || c.tz.toLowerCase().includes(q)).slice(0, 8);
-    results.innerHTML = matches.map(c => `<button class="wclk-search-item" data-tz="${c.tz}">${c.flag} ${c.city} <span style="color:var(--wclk-text-dim);font-size:0.75rem">${getUtcOffset(c.tz)}</span></button>`).join('');
+    results.innerHTML = matches.map(c => `<button class="wclk-search-item" data-tz="${c.tz}">${c.flag} ${c.city} <span style="color:var(--text-muted);font-size:0.75rem">${getUtcOffset(c.tz)}</span></button>`).join('');
     results.hidden = false;
     results.querySelectorAll('.wclk-search-item').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1217,7 +1243,6 @@ function initWorldClockTab() {
 document.addEventListener('DOMContentLoaded', () => {
   initTabs();
   initWorldClock();
-  initWorldClockTab();
   initConvert();
   initMeetingPlanner();
   initDstGuide();
