@@ -2,6 +2,7 @@
 title: "What's New in Microsoft 365 Copilot – January 2026 | 30 Updates You Shouldn't Miss"
 description: "All 30 Microsoft 365 Copilot updates for January 2026 — Writing Coaching in Word, Model Selector, Agent Mode in Excel, video creation upgrades, and more."
 date: 2026-01-18
+lastmod: 2026-04-30
 youtube_id: "iDKpW_F18YI"
 card_tag: "What's New"
 tag_class: "ai"
@@ -10,6 +11,15 @@ tags:
   - microsoft-365
   - copilot
   - news
+faq:
+  - question: "What's new in Microsoft 365 Copilot in January 2026?"
+    answer: "January 2026 brings 30 updates including Writing Coaching in Word, a Model Selector with GPT-5, Agent Mode in Excel, video creation from prompts, Calendar Search, GPT-5 in Agent Builder, Copilot Notebooks sharing, and voice support in Word and PowerPoint."
+  - question: "How do I use the Model Selector in Microsoft 365 Copilot?"
+    answer: "The Model Selector gives you three modes: Auto (default — system decides), Quick response (answers right away), and Think deeper (reasons longer for better answers). It is part of the GPT-5 experience in Microsoft 365 Copilot."
+  - question: "Can I use Agent Mode in Excel without a Copilot licence?"
+    answer: "Agent Mode in Excel was initially rolling out for paid Copilot users in January 2026. It later became available for Copilot Chat users without a paid licence in subsequent months."
+  - question: "What is the Library in the Microsoft 365 Copilot app?"
+    answer: "Library is a central, visual-first space in the Microsoft 365 Copilot app where you can access Copilot-generated content like images and pages, as well as content shared with you by colleagues."
 ---
 
 January 2026 opens with **30 Microsoft 365 Copilot updates** — from **Writing Coaching in Word** and a new **Model Selector**, to **Agent Mode in Excel**, richer **video creation**, smarter **Copilot Search**, and better sharing across notebooks and pages. Most features are available now, while a second wave is currently rolling out.

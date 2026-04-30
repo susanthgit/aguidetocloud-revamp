@@ -2,6 +2,7 @@
 title: "What's New in Microsoft 365 Copilot – March 2026 | 36 Updates You Shouldn't Miss"
 description: "All 36 Microsoft 365 Copilot updates for March 2026 — Excel editing for Copilot Chat users, scheduling from chat, PowerPoint editing, new connectors, admin controls, and more."
 date: 2026-03-17
+lastmod: 2026-04-30
 youtube_id: "FHD3Sez_MeU"
 card_tag: "What's New"
 tag_class: "ai"
@@ -10,6 +11,15 @@ tags:
   - microsoft-365
   - copilot
   - news
+faq:
+  - question: "What's new in Microsoft 365 Copilot in March 2026?"
+    answer: "March 2026 brings 36 updates including Edit with Copilot (Agent Mode) in Excel for all users, scheduling meetings from chat, Copilot editing PowerPoint presentations, Word Agent, SharePoint List Agent, voice support, audio meeting overviews, and five new Copilot Connectors."
+  - question: "How do I schedule a meeting with Copilot?"
+    answer: "Ask Copilot to schedule a meeting with colleagues directly from chat. It will find available times, book rooms, draft agendas, and send invites — all within the chat experience."
+  - question: "Can Copilot edit my PowerPoint presentation?"
+    answer: "Yes. Copilot in PowerPoint lets you create, edit, and refine presentations through natural conversation directly in the presentation. It connects to your brand kit for templates, images, and compliance checking. Available to Microsoft 365 Copilot-licensed users."
+  - question: "What is the Word Agent in Microsoft 365 Copilot?"
+    answer: "Word Agent helps you create Word files directly from the M365 Copilot app. It handles research, structure, and formatting for long-form work like strategic plans, policy documents, and technical papers. Available with or without a paid licence."
 ---
 
 March 2026 is a huge month for Microsoft 365 Copilot with **36 updates** — from **Edit with Copilot in Excel** for Copilot Chat users, to **meeting scheduling**, **PowerPoint editing**, **voice and memory improvements**, **new connectors**, and **admin controls**. Some features are available now, while others are still rolling out.

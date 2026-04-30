@@ -2,6 +2,7 @@
 title: "What's New in Microsoft 365 Copilot – February 2026 | 45 Updates You Shouldn't Miss"
 description: "All 45 Microsoft 365 Copilot updates for February 2026 — Agent Mode in Excel for Copilot Chat users, Copilot Pages upgrades, Outlook expansion, new connectors, and more."
 date: 2026-02-23
+lastmod: 2026-04-30
 youtube_id: "TKr-WB38ixQ"
 card_tag: "What's New"
 tag_class: "ai"
@@ -10,6 +11,15 @@ tags:
   - microsoft-365
   - copilot
   - news
+faq:
+  - question: "What's new in Microsoft 365 Copilot in February 2026?"
+    answer: "February 2026 brings 45 updates including Agent Mode in Excel for all users, Copilot Pages that auto-generate and can be modified from chat, Facilitator in Teams meetings, Designer in M365 Copilot, voice Q&A during Read Aloud in Word, eight new Copilot Connectors, and more."
+  - question: "Can I summarise emails in Outlook without a Copilot licence?"
+    answer: "Yes. Starting February 2026, users without a paid Microsoft 365 Copilot licence can summarise emails in a single click using Copilot Chat in both Classic and New Outlook for Windows."
+  - question: "What is the Facilitator agent in Microsoft Teams?"
+    answer: "Facilitator helps meeting participants manage tasks and create documents during meetings. It captures action items automatically, lets you assign tasks that sync to Planner, and can draft documents based on the meeting discussion."
+  - question: "What Copilot Connectors were added in February 2026?"
+    answer: "Eight new connectors: Dropbox, Miro, ServiceNow Knowledge templates, ServiceNow Tickets status updates, Aha!, Shortcut, GitLab Merge Requests, and Bitbucket Pull Requests."
 ---
 
 February 2026 is a huge month for Microsoft 365 Copilot with **45 updates** — from **Agent Mode in Excel** reaching Copilot Chat users without a paid licence, to **Copilot Pages getting much smarter**, **Outlook expanding to full inbox and calendar grounding**, and **eight new Copilot Connectors**. Some features are available now, while others are currently rolling out.

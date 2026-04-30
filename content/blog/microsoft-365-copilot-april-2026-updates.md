@@ -2,6 +2,7 @@
 title: "What's New in Microsoft 365 Copilot – April 2026 | 41 Updates You Shouldn't Miss"
 description: "All 41 Microsoft 365 Copilot updates for April 2026 — PowerPoint Agent, Excel Agent, Hey Copilot wake word, MCP connectors, Planner Agent, and more."
 date: 2026-04-29
+lastmod: 2026-04-30
 youtube_id: ""
 card_tag: "What's New"
 tag_class: "ai"
@@ -10,6 +11,17 @@ tags:
   - microsoft-365
   - copilot
   - news
+faq:
+  - question: "What's new in Microsoft 365 Copilot in April 2026?"
+    answer: "April 2026 brings 41 updates including PowerPoint Agent, Excel Agent, Word Agent, Planner Agent, Hey Copilot wake word on Windows, custom MCP connectors, Purview DLP for prompts, eight new third-party Copilot Connectors, and broader Copilot Dashboard access for smaller tenants."
+  - question: "What is the Hey Copilot wake word?"
+    answer: "Say 'Hey Copilot' to activate real-time voice conversations with the M365 Copilot app on Windows. It activates only when called, respects your organisation's compliance settings, and lets you draft content, analyse data, and get insights without switching windows."
+  - question: "What are MCP connectors in Microsoft 365 Copilot?"
+    answer: "MCP (Model Context Protocol) connectors allow admins to configure custom, real-time federated connections in the Microsoft 365 admin center. Unlike traditional Graph connectors that index data, MCP connectors query external systems on the fly with users authenticating directly."
+  - question: "Do I need a paid licence for the new Copilot agents?"
+    answer: "The PowerPoint Agent, Excel Agent, and Word Agent are available to Microsoft 365 users with or without a paid Copilot licence, though your admin must enable them. The Planner Agent requires a Copilot licence."
+  - question: "What Copilot Connectors were added in April 2026?"
+    answer: "Eight new connectors: GitLab Issues, Asana, Monday.com, Guru, Coda, Zendesk Help Center, Egnyte, and Amazon S3."
 ---
 
 April 2026 is a massive month for Microsoft 365 Copilot with **41 updates** — including three brand-new productivity agents, a wake word for hands-free access, MCP connector support for admins, and a wave of new third-party Copilot Connectors. Some features first appeared in earlier months and are now broadly available or expanded.
