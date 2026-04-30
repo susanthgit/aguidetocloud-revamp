@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T14:22:17.748338+00:00",
+  "generated_at": "2026-04-30T17:42:06.651552+00:00",
   "total_incidents_tracked": 104,
   "services": [
     {
@@ -19,12 +19,12 @@
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 19,
+      "total_incidents": 18,
       "active_incidents": 3,
-      "avg_duration_minutes": 18482,
+      "avg_duration_minutes": 15245,
       "last_incident": "2026-04-14T11:37:00+00:00",
       "classifications": {
-        "advisory": 15,
+        "advisory": 14,
         "incident": 4
       }
     },
@@ -39,6 +39,19 @@
       "classifications": {
         "advisory": 9,
         "incident": 9
+      }
+    },
+    {
+      "service": "SharePoint Online",
+      "short_name": "SharePoint",
+      "icon": "📄",
+      "total_incidents": 7,
+      "active_incidents": 1,
+      "avg_duration_minutes": 20620,
+      "last_incident": "2026-04-30T16:20:50+00:00",
+      "classifications": {
+        "incident": 2,
+        "advisory": 5
       }
     },
     {
@@ -67,19 +80,6 @@
       }
     },
     {
-      "service": "SharePoint Online",
-      "short_name": "SharePoint",
-      "icon": "📄",
-      "total_incidents": 6,
-      "active_incidents": 0,
-      "avg_duration_minutes": 20620,
-      "last_incident": "2026-04-24T12:30:00+00:00",
-      "classifications": {
-        "advisory": 5,
-        "incident": 1
-      }
-    },
-    {
       "service": "Microsoft Viva",
       "short_name": "Viva",
       "icon": "🌱",
@@ -90,19 +90,6 @@
       "classifications": {
         "advisory": 4,
         "incident": 1
-      }
-    },
-    {
-      "service": "Microsoft 365 Copilot Chat",
-      "short_name": "Copilot Chat",
-      "icon": "💭",
-      "total_incidents": 5,
-      "active_incidents": 0,
-      "avg_duration_minutes": 13837,
-      "last_incident": "2026-04-10T06:00:00+00:00",
-      "classifications": {
-        "advisory": 3,
-        "incident": 2
       }
     },
     {
@@ -130,6 +117,19 @@
       }
     },
     {
+      "service": "Microsoft 365 Copilot Chat",
+      "short_name": "Copilot Chat",
+      "icon": "💭",
+      "total_incidents": 4,
+      "active_incidents": 0,
+      "avg_duration_minutes": 2467,
+      "last_incident": "2026-04-10T06:00:00+00:00",
+      "classifications": {
+        "advisory": 2,
+        "incident": 2
+      }
+    },
+    {
       "service": "Microsoft Intune",
       "short_name": "Intune",
       "icon": "📱",
@@ -143,6 +143,19 @@
       }
     },
     {
+      "service": "Microsoft OneDrive",
+      "short_name": "OneDrive",
+      "icon": "☁️",
+      "total_incidents": 2,
+      "active_incidents": 1,
+      "avg_duration_minutes": 23946,
+      "last_incident": "2026-04-30T17:13:19+00:00",
+      "classifications": {
+        "incident": 1,
+        "advisory": 1
+      }
+    },
+    {
       "service": "Universal Print",
       "short_name": "Print",
       "icon": "🖨️",
@@ -152,18 +165,6 @@
       "last_incident": "2026-04-14T04:00:00+00:00",
       "classifications": {
         "incident": 1
-      }
-    },
-    {
-      "service": "Microsoft OneDrive",
-      "short_name": "OneDrive",
-      "icon": "☁️",
-      "total_incidents": 1,
-      "active_incidents": 0,
-      "avg_duration_minutes": 23946,
-      "last_incident": "2026-03-29T23:00:00+00:00",
-      "classifications": {
-        "advisory": 1
       }
     },
     {
@@ -218,8 +219,8 @@
   "monthly": [
     {
       "month": "2026-04",
-      "incident_count": 42,
-      "services_affected": 11
+      "incident_count": 44,
+      "services_affected": 12
     },
     {
       "month": "2026-03",
@@ -228,8 +229,8 @@
     },
     {
       "month": "2026-02",
-      "incident_count": 19,
-      "services_affected": 13
+      "incident_count": 17,
+      "services_affected": 12
     }
   ]
 }
