@@ -265,19 +265,19 @@
   margin-top: 0.5rem;
 }
 
-/* ── Card Themes ── */
+/* ── Card Themes (hardcoded colors — these are physical card designs, not UI chrome) ── */
 .wifiqr-card.theme-home {
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  color: var(--text-primary);
+  color: #f5f5f5;
   border: 1px solid var(--border);
 }
 .wifiqr-card.theme-home .wifiqr-card-qr {
-  background: var(--text-primary);
+  background: #ffffff;
 }
 
 .wifiqr-card.theme-cafe {
   background: linear-gradient(135deg, #451a03 0%, #78350f 100%);
-  color: var(--text-primary);
+  color: #fef3c7;
   border: 1px solid rgba(254,243,199,0.15);
 }
 .wifiqr-card.theme-cafe .wifiqr-card-qr {
@@ -286,11 +286,11 @@
 
 .wifiqr-card.theme-hotel {
   background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
-  color: var(--text-primary);
+  color: #e0e7ff;
   border: 1px solid rgba(224,231,255,0.12);
 }
 .wifiqr-card.theme-hotel .wifiqr-card-qr {
-  background: var(--text-primary);
+  background: #ffffff;
 }
 
 .wifiqr-card.theme-office {
