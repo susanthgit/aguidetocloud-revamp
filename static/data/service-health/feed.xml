@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Apr 2026 23:08:24 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2026 04:00:51 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users in the North America and Asia Pacific regions may see stale data in some Microsoft 365 Copilot usage reports</title>
@@ -21,7 +21,7 @@
       <link>https://www.aguidetocloud.com/service-health/#CP1293219</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access Copilot.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CP1293219</guid>
       <pubDate>Mon, 27 Apr 2026 16:19:46 +0000</pubDate>
     </item>
