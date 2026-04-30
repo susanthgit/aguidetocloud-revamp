@@ -85,4 +85,42 @@ document.addEventListener('DOMContentLoaded', function() {
       if (meta) meta.content = next === 'dark' ? '#0A0A0A' : '#FAFAFA';
     });
   }
+
+  // ── Tool Fullscreen Toggle ──
+  var fsBtn = document.getElementById('zt-fullscreen-toggle');
+  if (fsBtn) {
+    var wrapper = document.querySelector('.zt-reading--tool-detail');
+    var isFullscreen = false;
+
+    function toggleFullscreen() {
+      isFullscreen = !isFullscreen;
+      if (wrapper) wrapper.classList.toggle('zt-tool-fullscreen', isFullscreen);
+      // Swap label text
+      var label = fsBtn.querySelector('.zt-fs-label');
+      if (label) label.textContent = isFullscreen ? 'Exit Focus' : 'Focus Mode';
+      fsBtn.setAttribute('aria-label', isFullscreen ? 'Exit focus mode' : 'Enter focus mode');
+      // Swap icon
+      var svg = fsBtn.querySelector('svg');
+      if (svg) {
+        if (isFullscreen) {
+          svg.innerHTML = '<polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/>';
+        } else {
+          svg.innerHTML = '<polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>';
+        }
+      }
+      try { localStorage.setItem('tool-fullscreen', isFullscreen ? '1' : ''); } catch(e) {}
+    }
+
+    fsBtn.addEventListener('click', toggleFullscreen);
+
+    // Escape key exits fullscreen
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && isFullscreen) toggleFullscreen();
+    });
+
+    // Restore preference
+    try {
+      if (localStorage.getItem('tool-fullscreen') === '1') toggleFullscreen();
+    } catch(e) {}
+  }
 });

@@ -28,7 +28,6 @@ tags:
   - guide
 sitemap:
   priority: 0.8
-lastmod: 2026-04-21
 ---
 
 <div class="living-doc-banner">

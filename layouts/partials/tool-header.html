@@ -38,6 +38,7 @@
     </div>
     <span class="sr-only">{{ lang.FormatNumberCustom 0 $counterBase }} {{ $counterVerb }}</span>
     {{ end }}
+    <button class="zt-fullscreen-btn" id="zt-fullscreen-toggle" aria-label="Toggle focus mode"><span class="zt-fs-label">Focus Mode</span> {{ partial "icon.html" (dict "name" "maximize" "size" 14 "stroke" 1.5) }}</button>
   </div>
   {{ with $subtitle }}<p class="zt-subtitle">{{ . }}</p>{{ end }}
 </header>

@@ -4390,6 +4390,46 @@ pre:hover .code-copy-btn { opacity: 1; }
   margin-left: 0;
 }
 
+/* ── Focus Mode Toggle Button ── */
+.zt-fullscreen-btn {
+  margin-left: auto;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm, 6px);
+  color: var(--accent-foreground, #fff);
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: color 150ms ease-out, border-color 150ms ease-out, background-color 150ms ease-out;
+  display: inline-flex; align-items: center; gap: 6px;
+  flex-shrink: 0;
+  font-size: 0.78rem; font-weight: 600; font-family: inherit;
+}
+.zt-fullscreen-btn:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+/* ── Focus Mode State ── */
+.zt-reading--tool-detail.zt-tool-fullscreen {
+  display: block;
+}
+.zt-reading--tool-detail.zt-tool-fullscreen > .zt-sidebar,
+.zt-reading--tool-detail.zt-tool-fullscreen > .zt-companion {
+  display: none;
+}
+.zt-reading--tool-detail.zt-tool-fullscreen > .zt-reading-content {
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.zt-tool-fullscreen .zt-reading-content .zt-page {
+  max-width: none;
+}
+.zt-tool-fullscreen .zt-reading-content [class*="-container"],
+.zt-tool-fullscreen .zt-reading-content [class*="-page"] {
+  max-width: none;
+}
+
 /* ── Tabs — underline style via ARIA selectors ──
    Specificity 0,3,0 beats per-tool class selectors (0,1,0). */
 .zt-page [role="tablist"] {
