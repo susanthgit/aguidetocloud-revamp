@@ -439,46 +439,237 @@
     });
   }
 
-  /* ═══ COMPARE SCENARIOS ═══ */
-  function renderCompare() {
-    var selA = document.getElementById('cdf-compare-a');
-    var selB = document.getElementById('cdf-compare-b');
-    var result = document.getElementById('cdf-compare-result');
-    if (!selA || !selB || !result) return;
+  /* ═══ ARCHITECTURE TAB ═══ */
+  var archLayers = D.archLayers || [];
 
-    var optHtml = '';
-    scenarios.forEach(function (s) { optHtml += '<option value="' + esc(s.id) + '">' + esc(s.short || s.name) + '</option>'; });
-    selA.innerHTML = optHtml;
-    selB.innerHTML = optHtml;
-    if (scenarios.length > 2) selB.selectedIndex = 2;
-    else if (scenarios.length > 1) selB.selectedIndex = 1;
+  function renderArchitecture() {
+    var stack = document.getElementById('cdf-arch-stack');
+    if (!stack || !archLayers.length) return;
 
-    function showCompare() {
-      var a = scenarios.find(function (s) { return s.id === selA.value; });
-      var b = scenarios.find(function (s) { return s.id === selB.value; });
-      if (!a || !b) return;
-      var rA = riskRatings[a.id] || {};
-      var rB = riskRatings[b.id] || {};
+    /* Sort by order */
+    var sorted = archLayers.slice().sort(function (a, b) { return (a.order || 0) - (b.order || 0); });
 
-      var html = '';
-      [a, b].forEach(function (s) {
-        var r = riskRatings[s.id] || {};
-        html += '<div class="cdf-scn-card">';
-        html += '<h3>' + esc(s.short || s.name) + ' <span class="cdf-risk-badge cdf-risk-' + esc(r.level || 'low') + '">' + esc(r.level || '?') + ' risk</span></h3>';
-        html += '<div class="cdf-scn-row"><strong>Steps</strong><span>' + (s.steps || []).length + '</span></div>';
-        html += '<div class="cdf-scn-row"><strong>Uses web</strong><span>' + (s.uses_web ? '🌐 Yes' : '❌ No') + '</span></div>';
-        html += '<div class="cdf-scn-row"><strong>Uses Anthropic</strong><span>' + (s.uses_anthropic ? '🔮 Yes (sub-processor)' : '❌ No') + '</span></div>';
-        html += '<div class="cdf-scn-row"><strong>Boundary</strong><span>' + esc(boundaryLabels[s.boundary] || s.boundary) + '</span></div>';
-        html += '<div class="cdf-scn-row"><strong>Risk reason</strong><span>' + esc(r.reason || '—') + '</span></div>';
-        if (s.narrative) html += '<div class="cdf-scn-narrative">' + esc(s.narrative) + '</div>';
+    var html = '';
+    sorted.forEach(function (layer, i) {
+      var typeClass = layer.type === 'cross-cutting' ? 'cdf-arch-type-cross-cutting' : 'cdf-arch-type-core';
+      var typeLabel = layer.type === 'cross-cutting' ? 'Cross-cutting' : 'Core';
+
+      /* Arrow between layers */
+      if (i > 0) {
+        html += '<div class="cdf-arch-arrow"><svg viewBox="0 0 20 20" fill="none"><path d="M10 4v12M5 11l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>';
+      }
+
+      html += '<div class="cdf-arch-layer" data-layer="' + esc(layer.id) + '">';
+
+      /* Header */
+      html += '<div class="cdf-arch-header" role="button" tabindex="0" aria-expanded="false">';
+      html += '<div class="cdf-arch-number">' + (i + 1) + '</div>';
+      html += '<div class="cdf-arch-titles">';
+      html += '<div class="cdf-arch-title">' + esc(layer.title) + '</div>';
+      html += '<div class="cdf-arch-subtitle">' + esc(layer.subtitle) + '</div>';
+      html += '</div>';
+      if (layer.prompt_stage) {
+        html += '<div class="cdf-arch-prompt-pill" title="' + esc(layer.prompt_stage) + '">' + esc(truncate(layer.prompt_stage, 40)) + '</div>';
+      }
+      html += '<span class="cdf-arch-type-badge ' + typeClass + '">' + typeLabel + '</span>';
+      html += '<svg class="cdf-arch-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      html += '</div>';
+
+      /* Body */
+      html += '<div class="cdf-arch-body">';
+      html += '<div class="cdf-arch-content">';
+
+      /* Summary */
+      html += '<p class="cdf-arch-desc"><strong>' + esc(layer.summary) + '</strong></p>';
+
+      /* Full description */
+      html += '<p class="cdf-arch-desc">' + esc(layer.description) + '</p>';
+
+      /* Prompt transformation */
+      if (layer.prompt_stage) {
+        html += '<div class="cdf-arch-prompt-stage"><strong>Prompt at this stage:</strong> ' + esc(layer.prompt_stage) + '</div>';
+      }
+
+      /* Detail grid */
+      html += '<div class="cdf-arch-detail-grid">';
+      if (layer.inputs) {
+        html += '<div class="cdf-arch-detail-card"><h4>What enters</h4><p>' + esc(layer.inputs) + '</p></div>';
+      }
+      if (layer.outputs) {
+        html += '<div class="cdf-arch-detail-card"><h4>What leaves</h4><p>' + esc(layer.outputs) + '</p></div>';
+      }
+      if (layer.security) {
+        html += '<div class="cdf-arch-detail-card"><h4>Security at this layer</h4><p>' + esc(layer.security) + '</p></div>';
+      }
+      if (layer.admin_takeaway) {
+        html += '<div class="cdf-arch-detail-card cdf-arch-admin-card"><h4>IT Admin takeaway</h4><p>' + esc(layer.admin_takeaway) + '</p></div>';
+      }
+      html += '</div>';
+
+      /* Sub-components */
+      var subs = layer.subcomponents || [];
+      if (subs.length) {
+        html += '<div class="cdf-arch-subs-heading">Components</div>';
+        html += '<div class="cdf-arch-subs">';
+        subs.forEach(function (sub) {
+          html += '<div class="cdf-arch-sub">';
+          html += '<div class="cdf-arch-sub-name">' + esc(sub.name) + '</div>';
+          html += '<div class="cdf-arch-sub-detail">' + esc(sub.detail) + '</div>';
+          html += '</div>';
+        });
         html += '</div>';
+      }
+
+      /* Deep dive (grounding layer) */
+      var dd = layer.deep_dive;
+      if (dd) {
+        html += '<div class="cdf-arch-deep-dive">';
+        html += '<div class="cdf-arch-deep-dive-title">' + esc(dd.title || 'Deep Dive') + '</div>';
+        html += '<p>' + esc(dd.content) + '</p>';
+        if (dd.analogy) {
+          html += '<em>' + esc(dd.analogy) + '</em>';
+        }
+        html += '</div>';
+      }
+
+      /* Source links */
+      var sources = layer.source_urls || [];
+      if (sources.length) {
+        html += '<div class="cdf-arch-sources">';
+        sources.forEach(function (url) {
+          var domain = 'Microsoft Docs';
+          try { domain = new URL(url).hostname.replace('learn.microsoft.com', 'Microsoft Learn'); } catch (e) {}
+          html += '<a href="' + esc(url) + '" class="cdf-arch-source" target="_blank" rel="noopener">' + esc(domain) + ' →</a>';
+        });
+        html += '</div>';
+      }
+
+      html += '</div>'; /* content */
+      html += '</div>'; /* body */
+      html += '</div>'; /* layer */
+    });
+
+    stack.innerHTML = html;
+
+    /* Prompt evolution strip labels */
+    var evoLabels = ['Raw prompt', 'Authenticated', 'Planned', 'Grounded', 'Generated', 'Filtered', 'Delivered'];
+
+    /* Render prompt evolution strip */
+    var evoTrack = document.getElementById('cdf-arch-evo-track');
+    if (evoTrack) {
+      var evoHtml = '';
+      evoLabels.forEach(function (label, i) {
+        evoHtml += '<div class="cdf-arch-evo-step' + (i === 0 ? ' active' : '') + '" data-evo="' + i + '">' + esc(label) + '</div>';
       });
-      result.innerHTML = html;
+      evoTrack.innerHTML = evoHtml;
     }
 
-    selA.addEventListener('change', showCompare);
-    selB.addEventListener('change', showCompare);
-    showCompare();
+    function updateEvoStrip(layerIdx) {
+      if (!evoTrack) return;
+      var steps = evoTrack.querySelectorAll('.cdf-arch-evo-step');
+      steps.forEach(function (s, i) {
+        s.classList.remove('active', 'passed');
+        if (i < layerIdx) s.classList.add('passed');
+        else if (i === layerIdx) s.classList.add('active');
+      });
+    }
+
+    /* Overview mini-map */
+    var overview = document.getElementById('cdf-arch-overview');
+    var ovLayers = overview ? overview.querySelectorAll('.cdf-arch-ov-layer') : [];
+
+    function updateOverview(layerId) {
+      ovLayers.forEach(function (ov) {
+        ov.classList.toggle('active', ov.dataset.target === layerId);
+      });
+    }
+
+    /* Accordion: one layer open at a time */
+    var layers = stack.querySelectorAll('.cdf-arch-layer');
+
+    function activateLayer(el, layerIdx) {
+      var isActive = el.classList.contains('active');
+      layers.forEach(function (l) {
+        l.classList.remove('active');
+        var h = l.querySelector('.cdf-arch-header');
+        if (h) h.setAttribute('aria-expanded', 'false');
+      });
+      if (!isActive) {
+        el.classList.add('active');
+        var header = el.querySelector('.cdf-arch-header');
+        if (header) header.setAttribute('aria-expanded', 'true');
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        updateEvoStrip(layerIdx);
+        updateOverview(el.dataset.layer);
+      }
+    }
+
+    layers.forEach(function (el, idx) {
+      var header = el.querySelector('.cdf-arch-header');
+      header.addEventListener('click', function () { activateLayer(el, idx); });
+      header.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateLayer(el, idx); }
+      });
+    });
+
+    /* Overview click → scroll to layer */
+    ovLayers.forEach(function (ov) {
+      ov.addEventListener('click', function () {
+        var targetId = ov.dataset.target;
+        var targetLayer = stack.querySelector('[data-layer="' + targetId + '"]');
+        if (targetLayer) {
+          var idx = Array.from(layers).indexOf(targetLayer);
+          activateLayer(targetLayer, idx);
+        }
+      });
+    });
+
+    /* Auto-expand first layer */
+    if (layers.length) {
+      layers[0].classList.add('active');
+      var firstH = layers[0].querySelector('.cdf-arch-header');
+      if (firstH) firstH.setAttribute('aria-expanded', 'true');
+      updateOverview(sorted[0].id);
+      updateEvoStrip(0);
+    }
+  }
+
+  /* Copy Architecture Summary */
+  var copyArch = document.getElementById('cdf-copy-arch');
+  if (copyArch) {
+    copyArch.addEventListener('click', function () {
+      var sorted = archLayers.slice().sort(function (a, b) { return (a.order || 0) - (b.order || 0); });
+      var lines = [
+        'Microsoft 365 Copilot — Architecture Summary',
+        '='.repeat(48),
+        ''
+      ];
+      sorted.forEach(function (layer, i) {
+        lines.push('LAYER ' + (i + 1) + ': ' + layer.title.toUpperCase());
+        lines.push(layer.summary);
+        lines.push('');
+        if (layer.inputs) lines.push('  What enters:   ' + layer.inputs);
+        if (layer.outputs) lines.push('  What leaves:   ' + layer.outputs);
+        if (layer.security) lines.push('  Security:      ' + layer.security);
+        if (layer.admin_takeaway) lines.push('  Admin action:  ' + layer.admin_takeaway);
+        lines.push('');
+      });
+      lines.push('Source: aguidetocloud.com/copilot-data-flow/');
+      lines.push('Generated: ' + new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }));
+
+      var summary = lines.join('\n');
+      navigator.clipboard.writeText(summary).then(function () {
+        copyArch.textContent = '✓ Copied — paste into your assessment';
+        setTimeout(function () { copyArch.textContent = 'Copy Architecture Summary'; }, 3000);
+      }).catch(function () {
+        var ta = document.createElement('textarea');
+        ta.value = summary;
+        ta.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:80%;height:400px;z-index:9999;font-family:monospace;font-size:12px;padding:16px;border:2px solid var(--accent);border-radius:8px;background:var(--bg-surface);color:var(--text-primary);';
+        document.body.appendChild(ta);
+        ta.select();
+        ta.addEventListener('blur', function () { document.body.removeChild(ta); });
+      });
+    });
   }
 
   /* ═══ DOCS HUB ═══ */
@@ -512,6 +703,7 @@
     return d.innerHTML;
   }
   function capitalise(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : ''; }
+  function truncate(s, len) { return s && s.length > len ? s.substring(0, len) + '…' : s || ''; }
 
   /* ── Init ── */
   renderScenarios();
@@ -520,7 +712,7 @@
   renderAccess();
   renderResidency();
   renderChecklist();
-  renderCompare();
+  renderArchitecture();
   renderDocsHub();
 
 })();

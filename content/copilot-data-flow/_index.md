@@ -1,6 +1,6 @@
 ---
 title: "Copilot Data Flow Map — Where Does Your Data Go?"
-description: "Interactive data flow visualisation showing exactly where your data goes when using M365 Copilot. See security boundaries, sub-processor paths, admin controls, and compliance certifications."
+description: "Interactive data flow and architecture explorer for M365 Copilot. Layer-by-layer breakdown of how Copilot works, where your data goes, security boundaries, grounding, and admin controls."
 type: "copilot-data-flow"
 layout: "list"
 sitemap:
@@ -21,4 +21,8 @@ faq:
     answer: "Yes. All Copilot interactions are logged in Microsoft Purview Audit — including prompts, responses, and web searches. Admins can search and review these logs."
   - question: "What compliance certifications does Copilot have?"
     answer: "M365 Copilot inherits Microsoft 365 compliance and also holds ISO/IEC 42001 (AI management system) certification. It is SOC 1/2, ISO 27001/27018, GDPR, and HIPAA compliant."
+  - question: "What is grounding and why does it matter?"
+    answer: "Grounding is the process of enriching your prompt with your organisation's actual data (emails, documents, chats) before sending it to the AI model. This is what makes Copilot give you specific, relevant answers instead of generic AI responses. It uses the Semantic Index and Microsoft Graph to find relevant context."
+  - question: "How many layers does the Copilot architecture have?"
+    answer: "M365 Copilot processes prompts through seven key layers: Microsoft 365 Apps, Identity and Access (Entra ID), the Copilot Orchestrator, the Grounding layer (Semantic Index and Microsoft Graph), LLM Processing (Azure OpenAI and optional Anthropic), Responsible AI controls, and Response and Governance (delivery, audit, retention)."
 ---

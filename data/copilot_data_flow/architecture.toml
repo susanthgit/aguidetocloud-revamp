@@ -1,0 +1,232 @@
+# Copilot Data Flow Map — Architecture Layers
+# Layer-by-layer breakdown of how M365 Copilot works
+# Each layer has: core path info, sub-components, security, admin takeaways
+
+[[layers]]
+id = "apps"
+title = "Microsoft 365 Apps"
+subtitle = "Where prompts begin"
+order = 1
+type = "core"
+summary = "Copilot lives inside the apps you already use — Word, Excel, PowerPoint, Outlook, Teams, and Microsoft 365 Chat. Your prompt starts here."
+description = "When you type a prompt, it originates inside a Microsoft 365 app on your device. The Copilot experience is embedded directly in the app — there's no separate portal or website. The app sends your prompt to the Copilot service over an encrypted HTTPS connection."
+inputs = "Your natural language prompt (text)"
+outputs = "Prompt text + app context (which app, current document, conversation thread)"
+security = "Encrypted in transit (TLS 1.2+). Device compliance enforced by Intune if configured. App-level DLP policies may apply."
+admin_takeaway = "Copilot is not a separate app to secure — it inherits the security posture of your existing Microsoft 365 apps. If your apps are secured, Copilot is secured."
+prompt_stage = "Raw prompt: 'Summarise the Q3 sales report'"
+source_urls = ["https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview"]
+
+  [[layers.subcomponents]]
+  name = "Word, Excel, PowerPoint"
+  detail = "Copilot can draft, summarise, analyse, and create content within documents, spreadsheets, and presentations."
+
+  [[layers.subcomponents]]
+  name = "Outlook"
+  detail = "Copilot summarises email threads, drafts replies, and coaches your writing tone."
+
+  [[layers.subcomponents]]
+  name = "Teams"
+  detail = "Copilot summarises meetings, catches you up on chats, and generates meeting notes from transcripts."
+
+  [[layers.subcomponents]]
+  name = "Microsoft 365 Chat (BizChat)"
+  detail = "The cross-app experience — ask questions that span your emails, files, chats, and calendar in one place."
+
+
+[[layers]]
+id = "identity"
+title = "Identity & Access"
+subtitle = "Who are you?"
+order = 2
+type = "core"
+summary = "Before Copilot does anything, Microsoft Entra ID verifies who you are and what you're allowed to access."
+description = "Every Copilot interaction starts with authentication. Microsoft Entra ID (formerly Azure AD) checks your identity using single sign-on (SSO). If Conditional Access policies are configured, your device compliance, location, and risk level are also evaluated. Only after you pass these checks does Copilot proceed."
+inputs = "User credentials + device state + location"
+outputs = "Authenticated session token (scoped to user's permissions)"
+security = "Multi-factor authentication (MFA). Conditional Access policies. Device compliance via Intune. Risk-based access evaluation. Token-based authorisation — no passwords sent to Copilot."
+admin_takeaway = "Copilot honours every Conditional Access policy you already have. If a user is blocked from M365 apps, they're blocked from Copilot too. No extra configuration needed."
+prompt_stage = "Prompt is now authenticated: Copilot knows WHO is asking"
+source_urls = ["https://learn.microsoft.com/en-us/entra/identity/conditional-access/", "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture"]
+
+  [[layers.subcomponents]]
+  name = "Microsoft Entra ID"
+  detail = "Verifies user identity via SSO. Issues access tokens scoped to the user's permissions."
+
+  [[layers.subcomponents]]
+  name = "Conditional Access"
+  detail = "Evaluates device compliance, location, sign-in risk, and app sensitivity before granting access."
+
+  [[layers.subcomponents]]
+  name = "Multi-Factor Authentication"
+  detail = "Requires additional verification (phone, authenticator app) beyond just a password."
+
+
+[[layers]]
+id = "orchestrator"
+title = "Copilot Orchestrator"
+subtitle = "The brain"
+order = 3
+type = "core"
+summary = "The orchestrator is Copilot's central coordinator — it decides what data is needed, plans the grounding strategy, and assembles the final response."
+description = "Think of the orchestrator as a skilled project manager. When your prompt arrives, the orchestrator analyses what you're asking, determines what context is needed to answer well, plans which data sources to query, constructs the grounded prompt for the LLM, and post-processes the response before sending it back. It also injects the metaprompt — a set of system instructions that tell the LLM how to behave responsibly."
+inputs = "Authenticated prompt + app context"
+outputs = "Grounded prompt (your question enriched with relevant data from your tenant)"
+security = "Runs inside the Microsoft 365 service boundary. All processing encrypted. User security context maintained throughout — the orchestrator never escalates permissions."
+admin_takeaway = "The orchestrator is invisible to admins — you don't configure it directly. But it respects every policy you set: permissions, DLP, sensitivity labels, and web search settings."
+prompt_stage = "Orchestrator plans: 'I need the Q3 sales report from SharePoint + recent emails about Q3 performance'"
+source_urls = ["https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture"]
+
+  [[layers.subcomponents]]
+  name = "Prompt Analysis"
+  detail = "Parses your question, identifies intent, and determines what context is needed."
+
+  [[layers.subcomponents]]
+  name = "Grounding Planner"
+  detail = "Decides which data sources to query — Microsoft Graph, Semantic Index, web search — based on your prompt."
+
+  [[layers.subcomponents]]
+  name = "Metaprompt Injection"
+  detail = "Adds system instructions that tell the LLM to be helpful, safe, and honest. Includes responsible AI guardrails."
+
+  [[layers.subcomponents]]
+  name = "Response Assembly"
+  detail = "Combines the LLM output with citations, formats it for the app, and applies post-processing filters."
+
+
+[[layers]]
+id = "grounding"
+title = "Grounding"
+subtitle = "Making it relevant to YOU"
+order = 4
+type = "core"
+summary = "Grounding is what makes Copilot useful — instead of giving generic AI answers, it enriches your prompt with YOUR organisation's data before sending it to the AI model."
+description = "Without grounding, Copilot would just be a generic chatbot. Grounding is the process of fetching relevant data from your Microsoft 365 tenant and combining it with your prompt. This is called Retrieval-Augmented Generation (RAG). The Semantic Index creates vector representations of your documents and emails, enabling conceptual search (not just keyword matching). Microsoft Graph provides structured access to your files, emails, chats, and calendar. Together, they give the LLM the context it needs to generate a genuinely useful answer — not a generic one."
+inputs = "User's prompt + orchestrator's data plan"
+outputs = "Grounded prompt: your question + relevant documents, emails, and context from your tenant"
+security = "User-level permissions enforced via Microsoft Graph — Copilot can ONLY access data the user already has permission to see. Sensitivity labels and DLP policies are respected. Encrypted documents stay encrypted."
+admin_takeaway = "Grounding is where oversharing becomes a risk. If users have overly broad SharePoint permissions, Copilot will surface that data. Review your sharing settings and sensitivity labels before rollout."
+prompt_stage = "Grounded prompt: 'Summarise the Q3 sales report' + [Q3 Sales Report.docx content] + [3 related emails about Q3 targets]"
+source_urls = ["https://learn.microsoft.com/en-us/microsoftsearch/semantic-index-for-copilot", "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy"]
+
+  [[layers.subcomponents]]
+  name = "Semantic Index"
+  detail = "Creates vector representations (embeddings) of your organisation's documents and emails. Enables conceptual search — finds 'praised the vendor's design work' even if you search for 'positive feedback about design'. Automatically maintained, no admin setup required."
+
+  [[layers.subcomponents]]
+  name = "Microsoft Graph"
+  detail = "The structured data layer — provides access to your emails, files, chats, calendar, people, and org chart. Every query is scoped to the signed-in user's permissions."
+
+  [[layers.subcomponents]]
+  name = "Web Search (Optional)"
+  detail = "When enabled, Copilot can send a SHORT derived search query to a private Bing service for public web data. Only a derived query is sent — not your full prompt, documents, or identity. Admins can disable this entirely."
+
+  [[layers.subcomponents]]
+  name = "SharePoint & OneDrive"
+  detail = "Files and documents stored in SharePoint and OneDrive are the primary grounding source. Column metadata from document libraries can improve retrieval when users scope queries to specific libraries."
+
+[layers.deep_dive]
+title = "What is Grounding? (Plain English)"
+content = "Imagine you ask a friend to summarise a report. If they haven't read it, they'll give you a vague, generic answer. But if you hand them the report first, they can give you a specific, accurate summary. That's exactly what grounding does — it 'hands' the AI model your actual data before it generates a response. The technical term is Retrieval-Augmented Generation (RAG), but the concept is simple: fetch relevant data first, then generate."
+analogy = "It's like giving a new employee a briefing pack before asking them to write a report. Without the briefing, they'd guess. With it, they're informed."
+
+
+[[layers]]
+id = "llm"
+title = "LLM Processing"
+subtitle = "The AI models"
+order = 5
+type = "core"
+summary = "The grounded prompt is sent to a large language model (LLM) that generates the response. Microsoft uses Azure OpenAI models by default, with Anthropic Claude available as an optional sub-processor."
+description = "The LLM receives your grounded prompt — your question combined with relevant context from your tenant — and generates a response. The model doesn't 'remember' your data after processing; it's transient. Microsoft hosts OpenAI models (GPT) within Azure, inside the Microsoft 365 service boundary. Anthropic Claude is available as an optional sub-processor for specific features, meaning data crosses to Anthropic's infrastructure but remains under Microsoft's contractual control."
+inputs = "Grounded prompt (your question + tenant context + metaprompt instructions)"
+outputs = "Generated response text"
+security = "Azure OpenAI: processed inside Microsoft boundary. Anthropic: sub-processor, data crosses boundary but under Microsoft DPA. Neither provider trains on your data. Processing is transient — no persistent storage of your prompts or responses at the model layer."
+admin_takeaway = "You control the model providers. Anthropic is disabled by default in EU/EFTA/UK and requires explicit admin opt-in. Azure OpenAI is always available and can't be disabled."
+prompt_stage = "LLM generates: 'The Q3 sales report shows revenue of $4.2M, up 12% from Q2. Key highlights include...'"
+source_urls = ["https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy", "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor"]
+
+  [[layers.subcomponents]]
+  name = "Azure OpenAI (GPT)"
+  detail = "The default model provider. Hosted inside Microsoft's Azure infrastructure, within the M365 service boundary. Supports EU Data Boundary. Processing is transient — no data stored."
+
+  [[layers.subcomponents]]
+  name = "Anthropic Claude (Optional)"
+  detail = "Available for specific features like Copilot Cowork and custom Studio agents. Data crosses to Anthropic as a sub-processor. Under Microsoft's DPA — Anthropic cannot use your data for training. Disabled by default in EU/EFTA/UK."
+
+  [[layers.subcomponents]]
+  name = "Model Selection"
+  detail = "The orchestrator automatically routes to the appropriate model. For custom agents in Copilot Studio, creators can choose which model to use."
+
+
+[[layers]]
+id = "responsible-ai"
+title = "Responsible AI"
+subtitle = "Safety guardrails"
+order = 6
+type = "cross-cutting"
+summary = "Microsoft applies responsible AI principles throughout the entire Copilot pipeline — not just at the end. Content safety filters, grounding checks, and the metaprompt work together to keep responses safe and accurate."
+description = "Responsible AI is not a single layer — it's woven throughout the entire process. The metaprompt (system instructions) tells the LLM to behave helpfully and safely. Content safety filters detect and block harmful, offensive, or inappropriate content in both prompts and responses. Grounding checks help reduce hallucination by ensuring responses are based on retrieved data rather than fabricated information. Microsoft continuously monitors and improves these controls."
+inputs = "Applied throughout: to user prompts, grounded context, and LLM outputs"
+outputs = "Filtered, safe, grounded responses"
+security = "Content safety classifiers for hate, violence, self-harm, and sexual content. Jailbreak detection. Prompt injection defence. Output grounding validation. All under Microsoft's Responsible AI Standard."
+admin_takeaway = "Responsible AI controls are built in and always on — you don't need to configure them. For additional control, use Microsoft Purview DLP to add your own content policies on top."
+prompt_stage = "Cross-cutting: safety filters check both the input prompt AND the generated response"
+source_urls = ["https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy"]
+
+  [[layers.subcomponents]]
+  name = "Metaprompt (System Instructions)"
+  detail = "A set of instructions prepended to every prompt that tells the LLM how to behave — be helpful, be accurate, cite sources, don't make things up, respect content policies."
+
+  [[layers.subcomponents]]
+  name = "Content Safety Filters"
+  detail = "Classifiers that detect and block harmful content categories: hate speech, violence, self-harm, sexual content, and jailbreak attempts."
+
+  [[layers.subcomponents]]
+  name = "Grounding Validation"
+  detail = "Post-generation checks that verify the response is based on retrieved data rather than fabricated information. Helps reduce hallucination by cross-referencing citations."
+
+  [[layers.subcomponents]]
+  name = "Microsoft Responsible AI Standard"
+  detail = "The overarching framework — accountability, transparency, fairness, reliability, safety, privacy, and inclusiveness. Applied to all Copilot features."
+
+[layers.deep_dive]
+title = "What is Responsible AI? (Plain English)"
+content = "Think of Responsible AI as a team of invisible editors reviewing every conversation. Before your prompt reaches the AI model, one editor checks it for harmful content or manipulation attempts. After the AI writes its response, another editor fact-checks it against your actual data and removes anything harmful, fabricated, or inappropriate. A third editor makes sure the AI stays in its lane — helpful, honest, and professional. These editors are always on duty and you can't disable them. They're the reason Copilot won't help you write phishing emails or make up fake data."
+analogy = "It's like having a compliance officer sitting between you and the AI — they don't slow things down, but they make sure nothing dangerous gets through in either direction."
+
+
+[[layers]]
+id = "response"
+title = "Response & Governance"
+subtitle = "Delivery, logging, and compliance"
+order = 7
+type = "core"
+summary = "The response is delivered back to the user in their app. Every interaction is logged for compliance. The data is stored according to your tenant's retention policies."
+description = "After the LLM generates a response and safety filters are applied, the orchestrator formats the output for the originating app and delivers it to the user. The interaction — including the prompt, response, and any web searches — is logged in Microsoft Purview Audit. The chat history is stored in the user's Exchange mailbox, subject to your retention policies. Users can view and delete their own interaction history."
+inputs = "Filtered LLM response + citations"
+outputs = "Formatted response displayed in the user's app"
+security = "Encrypted in transit (TLS) and at rest (AES-256). Logged in Purview Audit. Subject to eDiscovery. Retention policies apply. Users can delete their own chat history."
+admin_takeaway = "All Copilot interactions are auditable. Use Purview Audit to search and review what users asked and what Copilot returned. Set retention policies to control how long interaction data is kept."
+prompt_stage = "User sees: formatted summary in Word with citations linking to the original Q3 report"
+source_urls = ["https://learn.microsoft.com/en-us/purview/audit-search", "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy"]
+
+  [[layers.subcomponents]]
+  name = "Response Delivery"
+  detail = "The formatted response appears in the user's app — as a draft in Word, a summary in Outlook, meeting notes in Teams, or an answer in M365 Chat."
+
+  [[layers.subcomponents]]
+  name = "Purview Audit Logging"
+  detail = "Every Copilot interaction is logged: prompts, responses, web searches, and model provider used. Admins can search and export these logs."
+
+  [[layers.subcomponents]]
+  name = "Interaction History"
+  detail = "Chat history is stored in the user's Exchange Online mailbox. Users can view past prompts, reuse them, or delete their history."
+
+  [[layers.subcomponents]]
+  name = "Retention & eDiscovery"
+  detail = "Copilot interaction data is subject to Microsoft 365 retention policies and is discoverable through eDiscovery for legal and compliance investigations."
+
+  [[layers.subcomponents]]
+  name = "DLP Post-Processing"
+  detail = "Microsoft Purview DLP policies can inspect Copilot responses and prevent sensitive data from being surfaced or copied."

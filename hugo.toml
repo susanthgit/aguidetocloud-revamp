@@ -3,6 +3,7 @@ languageCode = "en-nz"
 title = "A Guide to Cloud & AI"
 summaryLength = 20
 enableRobotsTXT = true
+buildFuture = true
 
 [sitemap]
   changefreq = "weekly"
@@ -16,7 +17,7 @@ enableRobotsTXT = true
   author = "Susanth Sutheesh"
   tagline = "Free Cloud, AI & Microsoft 365 Tools for IT Pros"
   subtitle = "Hands-on tutorials for beginners — by Susanth Sutheesh"
-  cache_version = "2026050119"
+  cache_version = "2026050201"
   youtube_channel = "https://www.youtube.com/susanthsutheesh"
   youtube_bites = "https://www.youtube.com/aguidetocloud"
   linkedin = "https://www.linkedin.com/in/susanthsutheesh/"

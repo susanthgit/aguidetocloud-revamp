@@ -17,6 +17,8 @@
 {{ $riskRatings := $readiness.risk_ratings | default dict }}
 {{ $graphAccess := $readiness.graph_access | default slice }}
 {{ $docsHub := ($dataDir.docs_hub).docs | default slice }}
+{{ $archData := $dataDir.architecture | default dict }}
+{{ $archLayers := $archData.layers | default slice }}
 
 <script>
   window.__cdfData = {
@@ -27,7 +29,8 @@
     regions: {{ $regions | jsonify | safeJS }},
     riskRatings: {{ $riskRatings | jsonify | safeJS }},
     graphAccess: {{ $graphAccess | jsonify | safeJS }},
-    docsHub: {{ $docsHub | jsonify | safeJS }}
+    docsHub: {{ $docsHub | jsonify | safeJS }},
+    archLayers: {{ $archLayers | jsonify | safeJS }}
   };
 </script>
 
@@ -64,11 +67,11 @@
 
   <div class="cdf-tabs zen-tabs" role="tablist" aria-label="Copilot Data Flow Map sections">
     <button class="cdf-tab zen-tab active" data-tab="flow" role="tab" id="tab-flow" aria-selected="true" aria-controls="panel-flow" tabindex="0">Data Flow</button>
+    <button class="cdf-tab zen-tab" data-tab="arch" role="tab" id="tab-arch" aria-selected="false" aria-controls="panel-arch" tabindex="-1">Architecture</button>
     <button class="cdf-tab zen-tab" data-tab="compare" role="tab" id="tab-compare" aria-selected="false" aria-controls="panel-compare" tabindex="-1">OpenAI vs Anthropic</button>
     <button class="cdf-tab zen-tab" data-tab="access" role="tab" id="tab-access" aria-selected="false" aria-controls="panel-access" tabindex="-1">What Can Copilot See?</button>
     <button class="cdf-tab zen-tab" data-tab="controls" role="tab" id="tab-controls" aria-selected="false" aria-controls="panel-controls" tabindex="-1">Admin Controls</button>
     <button class="cdf-tab zen-tab" data-tab="checklist" role="tab" id="tab-checklist" aria-selected="false" aria-controls="panel-checklist" tabindex="-1">Readiness</button>
-    <button class="cdf-tab zen-tab" data-tab="comparescn" role="tab" id="tab-comparescn" aria-selected="false" aria-controls="panel-comparescn" tabindex="-1">Compare</button>
     <button class="cdf-tab zen-tab" data-tab="docs" role="tab" id="tab-docs" aria-selected="false" aria-controls="panel-docs" tabindex="-1">Official Docs</button>
     <button class="cdf-tab zen-tab" data-tab="faq" role="tab" id="tab-faq" aria-selected="false" aria-controls="panel-faq" tabindex="-1">FAQ</button>
   </div>
@@ -190,22 +193,47 @@
     </div>
   </div>
 
-  {{/* ═══ TAB: COMPARE SCENARIOS ═══ */}}
-  <div class="cdf-panel" id="panel-comparescn" style="display:none;" role="tabpanel" aria-labelledby="tab-comparescn">
-    <p class="cdf-section-intro">Compare two scenarios side-by-side to see exactly how the data flow differs.</p>
-    <div class="cdf-compare-picker">
-      <div class="cdf-compare-pick">
-        <label>Scenario A:</label>
-        <select class="zen-input" id="cdf-compare-a"></select>
-      </div>
-      <span class="cdf-compare-vs">vs</span>
-      <div class="cdf-compare-pick">
-        <label>Scenario B:</label>
-        <select class="zen-input" id="cdf-compare-b"></select>
+  {{/* ═══ TAB: ARCHITECTURE ═══ */}}
+  <div class="cdf-panel" id="panel-arch" style="display:none;" role="tabpanel" aria-labelledby="tab-arch">
+    <p class="cdf-section-intro">How does M365 Copilot actually work? Explore each layer of the architecture.</p>
+
+    {{/* TL;DR key facts */}}
+    <div class="cdf-arch-tldr">
+      <div class="cdf-arch-tldr-title">Key facts for your security assessment</div>
+      <div class="cdf-arch-tldr-grid">
+        <div class="cdf-arch-fact"><span class="cdf-arch-fact-icon">&#x1F512;</span><span>Your data stays inside the Microsoft 365 boundary <em>(exceptions: Bing search queries, Anthropic sub-processor)</em></span></div>
+        <div class="cdf-arch-fact"><span class="cdf-arch-fact-icon">&#x1F441;</span><span>Copilot only sees what YOU can see &mdash; it inherits your Microsoft Graph permissions</span></div>
+        <div class="cdf-arch-fact"><span class="cdf-arch-fact-icon">&#x1F6AB;</span><span>No data is used to train AI models &mdash; not by Microsoft, OpenAI, or Anthropic</span></div>
+        <div class="cdf-arch-fact"><span class="cdf-arch-fact-icon">&#x1F4CB;</span><span>Every interaction is logged in Microsoft Purview Audit &mdash; prompts, responses, and web searches</span></div>
       </div>
     </div>
-    <div class="cdf-compare-result" id="cdf-compare-result">
-      <!-- JS renders -->
+
+    {{/* Visual stack overview */}}
+    <div class="cdf-arch-overview" id="cdf-arch-overview">
+      <div class="cdf-arch-ov-layer" data-target="apps"><span class="cdf-arch-ov-num">1</span><span class="cdf-arch-ov-name">Apps</span></div>
+      <div class="cdf-arch-ov-arrow">&#x2193;</div>
+      <div class="cdf-arch-ov-layer" data-target="identity"><span class="cdf-arch-ov-num">2</span><span class="cdf-arch-ov-name">Identity</span></div>
+      <div class="cdf-arch-ov-arrow">&#x2193;</div>
+      <div class="cdf-arch-ov-layer" data-target="orchestrator"><span class="cdf-arch-ov-num">3</span><span class="cdf-arch-ov-name">Orchestrator</span></div>
+      <div class="cdf-arch-ov-arrow">&#x2193;</div>
+      <div class="cdf-arch-ov-layer" data-target="grounding"><span class="cdf-arch-ov-num">4</span><span class="cdf-arch-ov-name">Grounding</span></div>
+      <div class="cdf-arch-ov-arrow">&#x2193;</div>
+      <div class="cdf-arch-ov-layer" data-target="llm"><span class="cdf-arch-ov-num">5</span><span class="cdf-arch-ov-name">AI Models</span></div>
+      <div class="cdf-arch-ov-arrow">&#x2193;</div>
+      <div class="cdf-arch-ov-layer cdf-arch-ov-crosscut" data-target="responsible-ai"><span class="cdf-arch-ov-num">6</span><span class="cdf-arch-ov-name">Responsible AI</span></div>
+      <div class="cdf-arch-ov-arrow">&#x2193;</div>
+      <div class="cdf-arch-ov-layer" data-target="response"><span class="cdf-arch-ov-num">7</span><span class="cdf-arch-ov-name">Response</span></div>
+    </div>
+
+    {{/* Prompt evolution strip */}}
+    <div class="cdf-arch-prompt-evo" id="cdf-arch-prompt-evo">
+      <div class="cdf-arch-evo-label">How your prompt transforms</div>
+      <div class="cdf-arch-evo-track" id="cdf-arch-evo-track"></div>
+    </div>
+
+    <div class="cdf-arch-stack" id="cdf-arch-stack"></div>
+    <div class="cdf-arch-actions">
+      <button class="btn-secondary" id="cdf-copy-arch">Copy Architecture Summary</button>
     </div>
   </div>
 
