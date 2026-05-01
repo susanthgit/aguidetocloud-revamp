@@ -417,12 +417,12 @@ function toast(msg) {
 
 function copyText(text) {
   if (!navigator.clipboard) {
-    toast('⚠ Copy not supported in this browser');
+    toast('Copy not supported in this browser');
     return;
   }
   navigator.clipboard.writeText(text).then(
     () => toast('✓ Copied: ' + text),
-    () => toast('⚠ Copy failed — try manually')
+    () => toast('Copy failed — try manually')
   );
 }
 
@@ -1153,7 +1153,7 @@ function initContrast() {
         fgHex.value = tryHex;
         fgPicker.value = tryHex;
         update();
-        toast('💡 Adjusted foreground to pass AA');
+        toast('Adjusted foreground to pass AA');
         return;
       }
       const tryLight2 = fl > 50 ? Math.max(0, fl - delta) : Math.min(100, fl + delta);
@@ -1162,7 +1162,7 @@ function initContrast() {
         fgHex.value = tryHex2;
         fgPicker.value = tryHex2;
         update();
-        toast('💡 Adjusted foreground to pass AA');
+        toast('Adjusted foreground to pass AA');
         return;
       }
     }
@@ -1200,7 +1200,7 @@ function renderBlindness() {
     card.className = 'palette-blindness-card';
     const simColors = S.colors.map(c => simulateColorBlindness(c, key));
     card.innerHTML = `
-      <div class="palette-blindness-card-title">${key === 'normal' ? '👁️' : '🔍'} ${esc(name)} <span class="palette-blindness-card-subtitle">${esc(desc)}</span></div>
+      <div class="palette-blindness-card-title">${key === 'normal' ? 'Normal' : 'Sim'} ${esc(name)} <span class="palette-blindness-card-subtitle">${esc(desc)}</span></div>
       <div class="palette-blindness-swatches">${simColors.map(c => `<div class="palette-blindness-swatch" style="background:${c}"></div>`).join('')}</div>
     `;
     grid.appendChild(card);
@@ -1218,7 +1218,7 @@ function renderBlindness() {
       for (let j = i + 1; j < simColors.length; j++) {
         if (colorDistance(simColors[i], simColors[j]) < threshold) {
           const typeName = type.charAt(0).toUpperCase() + type.slice(1);
-          warnings.push(`⚠️ <strong>${esc(typeName)}</strong>: Colours ${i+1} (${esc(S.colors[i])}) and ${j+1} (${esc(S.colors[j])}) may be indistinguishable.`);
+          warnings.push(`<strong>${esc(typeName)}</strong>: Colours ${i+1} (${esc(S.colors[i])}) and ${j+1} (${esc(S.colors[j])}) may be indistinguishable.`);
         }
       }
     }
