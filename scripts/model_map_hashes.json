@@ -1,0 +1,58 @@
+{
+  "copilot-model-choice": {
+    "hash": "35cee0f2de863b44",
+    "keywords": {
+      "claude": 10,
+      "anthropic": 14,
+      "gpt": 0,
+      "model": 64,
+      "multi-model": 1,
+      "openai": 4
+    },
+    "last_checked": "2026-05-01T07:53:01.405658+00:00"
+  },
+  "copilot-studio-models": {
+    "hash": "02a1b172e3485844",
+    "keywords": {
+      "claude": 4,
+      "gpt": 9,
+      "anthropic": 2,
+      "model selection": 3,
+      "choose model": 0
+    },
+    "last_checked": "2026-05-01T07:53:02.198896+00:00"
+  },
+  "copilot-privacy": {
+    "hash": "86167d8ffb1c5965",
+    "keywords": {
+      "model": 17,
+      "sub-processor": 0,
+      "anthropic": 6,
+      "openai": 5,
+      "data processing": 0
+    },
+    "last_checked": "2026-05-01T07:53:02.940130+00:00"
+  },
+  "copilot-overview": {
+    "hash": "b358bd8f21493156",
+    "keywords": {
+      "model": 3,
+      "gpt": 0,
+      "claude": 0,
+      "phi": 0,
+      "reasoning": 0
+    },
+    "last_checked": "2026-05-01T07:53:04.009815+00:00"
+  },
+  "copilot-admin": {
+    "hash": "d0882eb5ccd0cba7",
+    "keywords": {
+      "model": 1,
+      "anthropic": 0,
+      "claude": 0,
+      "multi-model": 0,
+      "frontier": 0
+    },
+    "last_checked": "2026-05-01T07:53:05.033227+00:00"
+  }
+}
