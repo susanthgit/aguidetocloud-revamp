@@ -48,12 +48,6 @@ That sentence is technically correct. It's also completely useless if you're try
 
 So let me try something different. Let me walk you through what happens — step by step, layer by layer — from the moment you type a prompt to the moment you get a response. No marketing language. No hand-waving. Just the actual mechanics, explained in a way that sticks.
 
-> 🔗 **Tools you might want open alongside this:**
-> - [Copilot Data Flow Map](/copilot-data-flow/) — interactive version of everything in this blog, with clickable scenarios
-> - [Copilot Model Map](/copilot-model-map/) — see which AI models power which Copilot features
-> - [Copilot Readiness Assessment](/copilot-readiness/) — check if your tenant is ready
-> - [Copilot Control System guide](/blog/microsoft-365-copilot-control-system-complete-guide/) — how the governance framework works
-
 **Quick links:** [The big picture](#the-big-picture) · [Layer 1: Apps](#layer-1--your-apps) · [Layer 2: Identity](#layer-2--identity--access) · [Layer 3: Orchestrator](#layer-3--the-orchestrator) · [Layer 4: Grounding](#layer-4--grounding) · [Layer 5: AI Models](#layer-5--the-ai-models) · [Layer 6: Responsible AI](#layer-6--responsible-ai) · [Layer 7: Response](#layer-7--response--governance) · [The full picture](#putting-it-all-together) · [What to check first](#your-security-checklist) · [FAQ](#questions-people-ask-me)
 
 <div class="living-doc-banner">
@@ -102,6 +96,11 @@ Think of it like ordering food at a restaurant:
 | The waiter serves your meal and logs the order | Response delivered, interaction audited |
 
 The key thing to notice: **your data is the ingredients, not the recipe.** The AI model doesn't memorise your ingredients for the next customer. It uses them, serves the dish, and moves on.
+
+> 🔗 **Want to explore this interactively?** Open these alongside this blog:
+> - [Copilot Data Flow Map](/copilot-data-flow/) — clickable scenarios + Architecture explorer
+> - [Copilot Model Map](/copilot-model-map/) — which AI models power which features
+> - [Copilot Readiness Assessment](/copilot-readiness/) — is your tenant ready?
 
 Now let's look at each layer properly.
 
@@ -220,11 +219,11 @@ The Orchestrator is invisible. You'll never see it, configure it, or interact wi
 
 ## Layer 4 — Grounding {#layer-4--grounding}
 
-**This is where Copilot becomes useful. Without grounding, it's just another chatbot.**
+**Now the Orchestrator knows what it needs. Time to go get it.**
 
 Here's the thing about AI models: they're incredibly good at generating text. They're also incredibly bad at knowing anything about *your* organisation. An AI model doesn't know what your Q3 sales report says. It doesn't know who your CEO is. It doesn't know what project you're working on.
 
-Grounding fixes this.
+Grounding fixes this. And it's what makes Copilot fundamentally different from ChatGPT — I'm spending more time on this layer because it's the one most people get wrong.
 
 Grounding is the process of fetching relevant data from your Microsoft 365 tenant and combining it with your prompt *before* sending it to the AI model. The technical term is **Retrieval-Augmented Generation (RAG)**, but the concept is dead simple:
 
@@ -422,7 +421,24 @@ flowchart TD
 
 ## Putting It All Together {#putting-it-all-together}
 
-Let's trace a real prompt through all seven layers. You're sitting in Word and you type: *"Summarise the Q3 sales report."*
+Now that you know the seven layers, let's see why they matter. Here's what happens when you ask the **same question** to ChatGPT and to M365 Copilot:
+
+**The prompt:** *"Summarise the Q3 sales report."*
+
+| | ChatGPT | Microsoft 365 Copilot |
+|---|---|---|
+| **Identity check** | None — anyone with an account | Entra ID + MFA + Conditional Access |
+| **Data source** | Has no idea what your Q3 report says | Fetches YOUR Q3 report from SharePoint via Graph |
+| **Grounding** | None — generates based on general training data | RAG via Semantic Index + Microsoft Graph |
+| **Response** | Generic: *"A typical Q3 sales report includes revenue, margins..."* | Specific: *"Q3 revenue was $4.2M, up 12% from Q2. Top performer was..."* |
+| **Citations** | None | Links back to the actual Q3 report and related emails |
+| **Audit trail** | No organisational logging | Every interaction logged in Purview Audit |
+| **Data boundary** | Your data goes to OpenAI's servers | Your data stays inside Microsoft's boundary |
+| **Training** | OpenAI may use your data for training (unless opted out) | Never used for training — contractual guarantee |
+
+**That's the architecture in action.** Seven layers of security, grounding, and governance — working together to give you a specific, accurate, auditable answer instead of a generic guess.
+
+Let's trace it one more time as a visual:
 
 ```mermaid
 flowchart TD
@@ -434,17 +450,22 @@ flowchart TD
     F --> G["7️⃣ Summary appears in Word<br/>With citations · Logged in Purview Audit"]
 ```
 
-| Layer | What Happens | Security | Your Data Goes... |
-|:---:|-------------|----------|-------------------|
-| 1 | You type a prompt in Word | Encrypted (TLS 1.2+) | From your device to Microsoft |
-| 2 | Entra ID checks who you are | MFA, Conditional Access | Nowhere — just authentication |
-| 3 | Orchestrator plans the query | Inside Microsoft boundary | Stays inside Microsoft |
-| 4 | Graph fetches your documents | User permissions enforced | Stays inside Microsoft |
-| 5 | AI model generates response | Transient processing, no training | Inside Microsoft (Azure OpenAI) |
-| 6 | Safety filters check everything | Always on, can't be disabled | Stays inside Microsoft |
-| 7 | Response delivered, interaction logged | Audit trail, retention policies | Stays in your app + Exchange mailbox |
+**For a standard Copilot interaction (no web search, no Anthropic), your data never leaves the Microsoft 365 service boundary. Not once.**
 
-**Notice the pattern?** For a standard Copilot interaction (no web search, no Anthropic), your data never leaves the Microsoft 365 service boundary. Not once.
+---
+
+## What Copilot Does NOT Do {#what-copilot-does-not-do}
+
+Before the checklist, let's clear up the misconceptions I hear most often. Pin this to your Teams channel.
+
+| Misconception | Reality |
+|--------------|---------|
+| "Copilot crawls the internet by default" | ❌ Web search is **optional** and admin-controlled. By default, Copilot only uses your tenant data. When web search IS enabled, only a short derived query goes to Bing — not your prompt, documents, or identity. |
+| "Copilot can see everything in my tenant" | ❌ Copilot can only access data **the signed-in user** has permission to see. It never escalates privileges. A junior employee and a CEO get different results for the same prompt. |
+| "OpenAI/Anthropic store my data" | ❌ Processing is **transient**. Neither provider persistently stores your prompts, responses, or tenant data. It's processed, the response is generated, and the data is discarded at the model layer. |
+| "Copilot remembers previous conversations" | ⚠️ Within a session, yes — Copilot maintains conversation context. But it doesn't learn from your data permanently. Next session, it starts fresh. Chat history is stored in your Exchange mailbox, not in the AI model. |
+| "I need a special security setup for Copilot" | ❌ Copilot inherits your existing M365 security stack — Conditional Access, MFA, DLP, sensitivity labels. If your M365 environment is secured, Copilot is secured. No separate setup needed. |
+| "Copilot works without a licence" | ❌ Users need a **Microsoft 365 Copilot licence** ($30/user/month). No licence = no Copilot. The Semantic Index is only generated for licenced users. |
 
 ---
 
@@ -486,20 +507,7 @@ For the compliance team, M365 Copilot holds these certifications:
 
 > 🛠️ **Want the interactive version?** The [Copilot Data Flow Map](/copilot-data-flow/) has a clickable readiness checklist with progress tracking, a "Copy Security Brief" button for assessments, and the full Architecture tab we built from this research.
 
----
-
-## What Copilot Does NOT Do {#what-copilot-does-not-do}
-
-I hear these misconceptions so often that they deserve their own section. Pin this to your Teams channel.
-
-| Misconception | Reality |
-|--------------|---------|
-| "Copilot crawls the internet by default" | ❌ Web search is **optional** and admin-controlled. By default, Copilot only uses your tenant data. When web search IS enabled, only a short derived query goes to Bing — not your prompt, documents, or identity. |
-| "Copilot can see everything in my tenant" | ❌ Copilot can only access data **the signed-in user** has permission to see. It never escalates privileges. A junior employee and a CEO get different results for the same prompt. |
-| "OpenAI/Anthropic store my data" | ❌ Processing is **transient**. Neither provider persistently stores your prompts, responses, or tenant data. It's processed, the response is generated, and the data is discarded at the model layer. |
-| "Copilot remembers previous conversations" | ⚠️ Within a session, yes — Copilot maintains conversation context. But it doesn't learn from your data permanently. Next session, it starts fresh. Chat history is stored in your Exchange mailbox, not in the AI model. |
-| "I need a special security setup for Copilot" | ❌ Copilot inherits your existing M365 security stack — Conditional Access, MFA, DLP, sensitivity labels. If your M365 environment is secured, Copilot is secured. No separate setup needed. |
-| "Copilot works without a licence" | ❌ Users need a **Microsoft 365 Copilot licence** ($30/user/month). No licence = no Copilot. The Semantic Index is only generated for licenced users. |
+📤 **Share this guide** — the TL;DR and Security Checklist sections are designed to be forwarded to your leadership team and CISO.
 
 ---
 
@@ -536,6 +544,12 @@ I maintain a curated list of every official security and privacy document in the
 *This post is based on the research behind our [Copilot Data Flow Map](/copilot-data-flow/) and [Copilot Model Map](/copilot-model-map/) tools. If you find it useful, those interactive tools let you explore specific scenarios, compare model providers, and generate copy-pasteable security briefs for your assessments.*
 
 *Got a question I didn't cover? [Let me know](/feedback/) — I read every message and update this guide regularly.*
+
+---
+
+Next time someone in your organisation asks *"but where does my data go when I use Copilot?"* — you've got the answer. It goes through seven layers of security, grounding, and governance. The restaurant checks your reservation, the chef uses YOUR ingredients, quality control inspects the plate, and the order is logged. And for a standard interaction, your data never once leaves Microsoft's kitchen.
+
+That's the architecture. No magic. Just good engineering.
 
 ---
 
