@@ -52,6 +52,7 @@ So let me try something different. Let me walk you through what happens — step
 > - [Copilot Data Flow Map](/copilot-data-flow/) — interactive version of everything in this blog, with clickable scenarios
 > - [Copilot Model Map](/copilot-model-map/) — see which AI models power which Copilot features
 > - [Copilot Readiness Assessment](/copilot-readiness/) — check if your tenant is ready
+> - [Copilot Control System guide](/blog/microsoft-365-copilot-control-system-complete-guide/) — how the governance framework works
 
 **Quick links:** [The big picture](#the-big-picture) · [Layer 1: Apps](#layer-1--your-apps) · [Layer 2: Identity](#layer-2--identity--access) · [Layer 3: Orchestrator](#layer-3--the-orchestrator) · [Layer 4: Grounding](#layer-4--grounding) · [Layer 5: AI Models](#layer-5--the-ai-models) · [Layer 6: Responsible AI](#layer-6--responsible-ai) · [Layer 7: Response](#layer-7--response--governance) · [The full picture](#putting-it-all-together) · [What to check first](#your-security-checklist) · [FAQ](#questions-people-ask-me)
 
@@ -60,6 +61,17 @@ So let me try something different. Let me walk you through what happens — step
 🔄 This is a living document. Microsoft updates Copilot's architecture regularly — most recently adding Anthropic Claude as an optional sub-processor and expanding the Semantic Index. If something here becomes outdated, please [let me know](/feedback/) and I'll update it.
 
 </div>
+
+### TL;DR — The Four Things Your CISO Needs to Know
+
+If you only have 30 seconds, here's the answer to "is Copilot safe?":
+
+1. **Your data stays inside Microsoft's boundary** — for standard Copilot interactions (no web search, no Anthropic), your data never leaves the Microsoft 365 service boundary. Not once.
+2. **Copilot only sees what YOU can see** — it inherits your Microsoft Graph permissions. If you can't access a file, neither can Copilot. The risk isn't Copilot — it's overshared SharePoint permissions.
+3. **No data trains AI models** — this is contractual (Microsoft DPA), not just a promise. Applies to both OpenAI and Anthropic. Processing is transient.
+4. **Every interaction is auditable** — prompts, responses, and web searches are logged in Microsoft Purview Audit. Chat history lives in Exchange. eDiscovery works.
+
+Now let's understand *why* these four things are true — by looking at each layer.
 
 ---
 
@@ -131,14 +143,17 @@ Every Copilot interaction starts with authentication. Microsoft Entra ID (former
 Only after you pass all these checks does Copilot proceed. This isn't optional. This isn't configurable. It's built in.
 
 ```mermaid
-flowchart LR
-    A["👤 You Type a Prompt"] --> B{"🔐 Entra ID"}
-    B -->|"✅ Identity verified"| C{"📱 Conditional Access"}
-    C -->|"✅ Device compliant"| D{"🔑 MFA"}
-    D -->|"✅ Verified"| E["✅ Proceed to Orchestrator"]
-    B -->|"❌ Unknown user"| F["🚫 Blocked"]
-    C -->|"❌ Non-compliant device"| F
-    D -->|"❌ MFA failed"| F
+flowchart TD
+    A["👤 You Type a Prompt"] --> B["🔐 Entra ID<br/>Verifies your identity via SSO"]
+    B --> C{"✅ Identity OK?"}
+    C -->|"Yes"| D["📱 Conditional Access<br/>Checks device · location · risk"]
+    C -->|"No"| H["🚫 Blocked"]
+    D --> E{"✅ Device compliant?"}
+    E -->|"Yes"| F["🔑 MFA<br/>Additional verification"]
+    E -->|"No"| H
+    F --> G{"✅ MFA passed?"}
+    G -->|"Yes"| I["✅ Proceed to Orchestrator"]
+    G -->|"No"| H
 ```
 
 Here's what most people miss: **Copilot doesn't have its own access control system.** It rides on top of everything you've already set up. Every Conditional Access policy you've configured? Copilot honours it. Every MFA requirement? Copilot enforces it. Every location-based restriction? Copilot respects it.
@@ -219,11 +234,10 @@ Grounding is the process of fetching relevant data from your Microsoft 365 tenan
 
 ```mermaid
 flowchart TD
-    A["📝 Your Prompt:<br/>'Summarise the Q3 sales report'"] --> B["🔍 Semantic Index<br/>Conceptual search across your tenant"]
-    A --> C["📊 Microsoft Graph<br/>Structured access to your data"]
-    B --> D["📄 Finds: Q3 Sales Report.docx<br/>+ 3 related emails about Q3 targets"]
-    C --> D
-    D --> E["📦 Grounded Prompt:<br/>Your question + relevant documents + email context"]
+    A["📝 Your Prompt:<br/>'Summarise the Q3 sales report'"] --> B["🔍 Semantic Index<br/>Searches your tenant by meaning — not just keywords"]
+    B --> C["📊 Microsoft Graph<br/>Fetches files, emails, chats you have access to"]
+    C --> D["📄 Relevant Data Found<br/>Q3 Sales Report.docx + 3 related emails"]
+    D --> E["📦 Grounded Prompt Built<br/>Your question + relevant documents + email context"]
 ```
 
 Two systems work together to fetch the right data:
@@ -281,9 +295,9 @@ The grounded prompt — your question, combined with the relevant context from y
 Microsoft uses two model providers:
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["📦 Grounded Prompt"] --> B{"🔀 Model Router"}
-    B -->|"Default path"| C["Azure OpenAI (GPT)<br/>Inside Microsoft boundary"]
+    B -->|"Default path"| C["Azure OpenAI — GPT<br/>Inside Microsoft boundary"]
     B -->|"Optional path"| D["Anthropic Claude<br/>Sub-processor · Outside boundary"]
     C --> E["📝 Generated Response"]
     D --> E
@@ -389,12 +403,11 @@ Copilot interaction data follows your existing Microsoft 365 retention policies:
 - **DLP post-processing** can inspect responses and prevent sensitive data from being surfaced
 
 ```mermaid
-flowchart LR
-    A["✅ AI Response"] --> B["📱 Delivered to Your App"]
-    A --> C["📋 Purview Audit Log"]
-    A --> D["📧 Exchange Mailbox<br/>Chat History"]
-    C --> E["🔍 eDiscovery<br/>Legal Hold"]
-    D --> F["⏱️ Retention Policy"]
+flowchart TD
+    A["✅ AI Response Ready"] --> B["📱 Delivered to Your App<br/>Word · Outlook · Teams · Chat"]
+    B --> C["📋 Logged in Purview Audit<br/>Prompt + response + web searches"]
+    C --> D["📧 Stored in Exchange Mailbox<br/>User's chat history"]
+    D --> E["⏱️ Retention Policy Applied<br/>eDiscovery · Legal Hold · Deletion"]
 ```
 
 <div class="living-doc-banner">
@@ -475,6 +488,21 @@ For the compliance team, M365 Copilot holds these certifications:
 
 ---
 
+## What Copilot Does NOT Do {#what-copilot-does-not-do}
+
+I hear these misconceptions so often that they deserve their own section. Pin this to your Teams channel.
+
+| Misconception | Reality |
+|--------------|---------|
+| "Copilot crawls the internet by default" | ❌ Web search is **optional** and admin-controlled. By default, Copilot only uses your tenant data. When web search IS enabled, only a short derived query goes to Bing — not your prompt, documents, or identity. |
+| "Copilot can see everything in my tenant" | ❌ Copilot can only access data **the signed-in user** has permission to see. It never escalates privileges. A junior employee and a CEO get different results for the same prompt. |
+| "OpenAI/Anthropic store my data" | ❌ Processing is **transient**. Neither provider persistently stores your prompts, responses, or tenant data. It's processed, the response is generated, and the data is discarded at the model layer. |
+| "Copilot remembers previous conversations" | ⚠️ Within a session, yes — Copilot maintains conversation context. But it doesn't learn from your data permanently. Next session, it starts fresh. Chat history is stored in your Exchange mailbox, not in the AI model. |
+| "I need a special security setup for Copilot" | ❌ Copilot inherits your existing M365 security stack — Conditional Access, MFA, DLP, sensitivity labels. If your M365 environment is secured, Copilot is secured. No separate setup needed. |
+| "Copilot works without a licence" | ❌ Users need a **Microsoft 365 Copilot licence** ($30/user/month). No licence = no Copilot. The Semantic Index is only generated for licenced users. |
+
+---
+
 ## Questions People Ask Me {#questions-people-ask-me}
 
 These are the questions I get most often in customer demos and security reviews. I've collected them here so you can share this section with your team.
@@ -508,3 +536,15 @@ I maintain a curated list of every official security and privacy document in the
 *This post is based on the research behind our [Copilot Data Flow Map](/copilot-data-flow/) and [Copilot Model Map](/copilot-model-map/) tools. If you find it useful, those interactive tools let you explore specific scenarios, compare model providers, and generate copy-pasteable security briefs for your assessments.*
 
 *Got a question I didn't cover? [Let me know](/feedback/) — I read every message and update this guide regularly.*
+
+---
+
+## Related Reading {#related-reading}
+
+If you found this useful, these guides go deeper into specific areas:
+
+- **[Copilot Data Flow Map](/copilot-data-flow/)** — Interactive tool with clickable scenarios, Architecture explorer, and security assessment features
+- **[Copilot Model Map](/copilot-model-map/)** — Which AI models power which Copilot features — GPT, Claude, Phi mapped across 16 features
+- **[The Copilot Control System](/blog/microsoft-365-copilot-control-system-complete-guide/)** — How the governance framework works for managing Copilot across your organisation
+- **[Agent 365 Security & Governance](/blog/agent-365-security-governance-complete-guide/)** — When you go beyond Copilot into AI agents, this is how you govern them
+- **[Copilot Deployment Checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/)** — Step-by-step deployment guide with everything you need before, during, and after rollout
