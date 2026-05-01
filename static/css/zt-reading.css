@@ -1708,15 +1708,15 @@ pre:hover .code-copy-btn { opacity: 1; }
    Stripe Docs style: light canvas, white nodes, soft lines.
    ═══════════════════════════════════════════════════════════ */
 
-/* Dot-grid container — light canvas like Stripe Docs */
+/* Dot-grid container — always dark canvas for maximum contrast */
 .zt-reading-body .mermaid {
   margin: 2rem 0;
   padding: 2rem;
   background:
-    radial-gradient(circle, #D4D4D4 1px, transparent 1px);
+    radial-gradient(circle, #404040 1px, transparent 1px);
   background-size: 24px 24px;
-  background-color: #FAFAFA;
-  border: 1px solid #E5E5E5;
+  background-color: #1A1A1A;
+  border: 1px solid #262626;
   border-radius: 10px;
   text-align: center;
   overflow: hidden;
@@ -1732,11 +1732,13 @@ pre:hover .code-copy-btn { opacity: 1; }
   width: auto;
   height: auto;
 }
-/* Rounded node corners */
+/* Rounded node corners + solid dark fill */
 .zt-reading-body .mermaid .node rect,
 .zt-reading-body .mermaid .node polygon {
   rx: 12 !important;
   ry: 12 !important;
+  fill: #111111 !important;
+  stroke: #333333 !important;
 }
 
 /* SVG always fits container */
@@ -1757,8 +1759,8 @@ pre:hover .code-copy-btn { opacity: 1; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #FFFFFF;
-  border: 1px solid #E5E5E5;
+  background: #262626;
+  border: 1px solid #404040;
   border-radius: 6px;
   color: #A3A3A3;
   font-size: 0.875rem;
@@ -1775,20 +1777,20 @@ pre:hover .code-copy-btn { opacity: 1; }
 }
 
 .zt-diagram-fs:hover {
-  color: #414552;
-  border-color: #D4D4D4;
+  color: #E2E8F0;
+  border-color: #525252;
 }
 
-/* Fullscreen — light canvas fills screen */
+/* Fullscreen — dark canvas fills screen */
 .mermaid:fullscreen {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 32px;
   background:
-    radial-gradient(circle, #D4D4D4 1px, transparent 1px);
+    radial-gradient(circle, #404040 1px, transparent 1px);
   background-size: 24px 24px;
-  background-color: #FAFAFA;
+  background-color: #1A1A1A;
 }
 
 .mermaid:fullscreen svg {
@@ -1820,9 +1822,9 @@ pre:hover .code-copy-btn { opacity: 1; }
   justify-content: center;
   padding: 32px;
   background:
-    radial-gradient(circle, #D4D4D4 1px, transparent 1px);
+    radial-gradient(circle, #404040 1px, transparent 1px);
   background-size: 24px 24px;
-  background-color: #FAFAFA;
+  background-color: #1A1A1A;
 }
 
 .mermaid.zt-diagram-fullscreen svg {
@@ -1838,31 +1840,7 @@ pre:hover .code-copy-btn { opacity: 1; }
   right: 24px;
 }
 
-/* ── Dark mode diagrams ── */
-[data-theme="dark"] .zt-reading-body .mermaid,
-[data-theme="dark"] .content-body .mermaid {
-  background:
-    radial-gradient(circle, #404040 1px, transparent 1px);
-  background-size: 24px 24px;
-  background-color: #1A1A1A;
-  border-color: #262626;
-}
-[data-theme="dark"] .zt-diagram-fs {
-  background: #262626;
-  border-color: #404040;
-  color: #A3A3A3;
-}
-[data-theme="dark"] .zt-diagram-fs:hover {
-  color: #D4D4D4;
-  border-color: #525252;
-}
-[data-theme="dark"] .mermaid:fullscreen,
-[data-theme="dark"] .mermaid.zt-diagram-fullscreen {
-  background:
-    radial-gradient(circle, #404040 1px, transparent 1px);
-  background-size: 24px 24px;
-  background-color: #1A1A1A;
-}
+/* Dark mode — diagrams already on dark canvas, no overrides needed */
 
 /* Diagram shared — bold edge labels, transparent clusters */
 .zt-reading-body .mermaid .edgeLabel,

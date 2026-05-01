@@ -106,8 +106,8 @@ CCS provides governance for:
 When I explain CCS to customers, I break it into three buckets. Each one answers a different question your leadership team will ask.
 
 ```mermaid
-flowchart LR
-    A["Security &<br/>Governance"] --- B["️ Management<br/>Controls"]
+flowchart TD
+    A["Security &<br/>Governance"] --- B["Management<br/>Controls"]
     B --- C["Measurement<br/>& Reporting"]
     
 ```
