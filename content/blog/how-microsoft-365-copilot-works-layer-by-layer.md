@@ -1,8 +1,10 @@
 ---
-title: "How Microsoft 365 Copilot Works — A Layer-by-Layer Guide for IT Pros"
+title: "How Microsoft 365 Copilot Works — Layer by Layer"
 description: "The 7 layers inside M365 Copilot explained in plain English. Grounding, Semantic Index, Orchestrator, and Responsible AI — with diagrams and analogies."
 date: 2026-05-01
 lastmod: 2026-05-01
+sitemap:
+  priority: 0.9
 card_tag: "Copilot Architecture"
 tag_class: "ai"
 faq:
@@ -48,7 +50,7 @@ That sentence is technically correct. It's also completely useless if you're try
 
 So let me try something different. Let me walk you through what happens — step by step, layer by layer — from the moment you type a prompt to the moment you get a response. No marketing language. No hand-waving. Just the actual mechanics, explained in a way that sticks.
 
-**Quick links:** [The big picture](#the-big-picture) · [Layer 1: Apps](#layer-1--your-apps) · [Layer 2: Identity](#layer-2--identity--access) · [Layer 3: Orchestrator](#layer-3--the-orchestrator) · [Layer 4: Grounding](#layer-4--grounding) · [Layer 5: AI Models](#layer-5--the-ai-models) · [Layer 6: Responsible AI](#layer-6--responsible-ai) · [Layer 7: Response](#layer-7--response--governance) · [The full picture](#putting-it-all-together) · [What to check first](#your-security-checklist) · [FAQ](#questions-people-ask-me)
+**Quick links:** [TL;DR](#tldr) · [The big picture](#the-big-picture) · [Layer 1: Apps](#layer-1--your-apps) · [Layer 2: Identity](#layer-2--identity--access) · [Layer 3: Orchestrator](#layer-3--the-orchestrator) · [Layer 4: Grounding](#layer-4--grounding) · [Layer 5: AI Models](#layer-5--the-ai-models) · [Layer 6: Responsible AI](#layer-6--responsible-ai) · [Layer 7: Response](#layer-7--response--governance) · [The full picture](#putting-it-all-together) · [Myths busted](#what-copilot-does-not-do) · [Security checklist](#your-security-checklist) · [FAQ](#questions-people-ask-me)
 
 <div class="living-doc-banner">
 
@@ -56,7 +58,7 @@ So let me try something different. Let me walk you through what happens — step
 
 </div>
 
-### TL;DR — The Four Things Your CISO Needs to Know
+## TL;DR — The Four Things Your CISO Needs to Know {#tldr}
 
 If you only have 30 seconds, here's the answer to "is Copilot safe?":
 
