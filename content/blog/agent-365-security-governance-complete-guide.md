@@ -58,13 +58,40 @@ This guide is my breakdown of what Agent 365 actually does, how it works under t
 > - [M365 E7 deep dive](/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know/) — Agent 365 is included in E7
 > - [Agent 365 Governance Planner](/agent-365-planner/) — our interactive tool to plan your governance framework
 
-**Quick links:** [The story](#the-new-hire-analogy) · [What Agent 365 does](#the-four-things-every-agent-needs) · [ID badges (Entra)](#id-badges--entra-agent-id) · [Data rules (Purview)](#data-rules--purview) · [Security cameras (Defender)](#security-cameras--defender) · [What to do first](#what-to-do-this-week) · [FAQ](#questions-people-ask-me)
+**Quick links:** [Are you ready?](#are-you-ready) · [The story](#the-new-hire-analogy) · [What Agent 365 does](#the-four-things-every-agent-needs) · [ID badges (Entra)](#id-badges--entra-agent-id) · [Data rules (Purview)](#data-rules--purview) · [Security cameras (Defender)](#security-cameras--defender) · [What to do first](#what-to-do-this-week) · [FAQ](#questions-people-ask-me)
 
 <div class="living-doc-banner">
 
 🔄 This is a living document. Agent 365 just hit GA today (May 1, 2026) and features are rolling out fast. If something here becomes outdated, please [let me know](/feedback/) and I'll update it.
 
 </div>
+
+---
+
+## Not All Agents Are Equal — Why This Matters {#are-you-ready}
+
+Before we dive in, let's get one thing straight: not every agent needs the same level of governance. The level of risk depends on how much autonomy the agent has.
+
+I think of it as three levels — like hiring different types of workers:
+
+| Level | Type | What It Does | Governance Needed | Example |
+|:---:|-------|-------------|------------------|---------|
+| 🟢 | **Interactive** | Single, specific tasks. Only acts when you ask. | Basic — like a temp worker | "Summarise this document" FAQ agent |
+| 🟡 | **Autonomous** | Complex, goal-oriented. Creates plans. Acts on your behalf and on a schedule. | Serious — like a full-time employee | Procurement agent that processes POs daily |
+| 🔴 | **Digital Teammate** | Learning-driven. Makes decisions. Has its own access and resources. | Maximum — like a contractor with admin access | Agent that monitors security alerts and takes remediation actions |
+
+Most organisations today are at the green level — simple interactive agents. But the moment you build something that runs on a schedule, accesses sensitive data, or calls external APIs? You've jumped to yellow or red. And that's where Agent 365 becomes essential.
+
+### Four Questions to Ask Yourself Right Now
+
+These come straight from the Microsoft briefing, and I think every IT admin should be able to answer them:
+
+1. **Can you discover and manage agent sprawl?** — Do you even know how many agents exist in your tenant right now? (Most admins I talk to can't answer this.)
+2. **Are your agents governed and audited?** — Who built them? What do they cost? Who approved their access?
+3. **Are agents behaving correctly?** — Is the procurement agent only doing procurement things, or is it being used for something else entirely?
+4. **Who are your agents sharing data with?** — When an agent reads a confidential document and summarises it, where does that summary go?
+
+If you answered "I don't know" to even one of these — keep reading. That's exactly what Agent 365 fixes.
 
 ---
 
@@ -218,6 +245,31 @@ A few things to notice:
 
 This section is where it gets real. I've got screenshots from Microsoft's own demo environments showing exactly what happens when an agent tries to leak data.
 
+But first — to understand *why* agent data protection is harder than user data protection, you need to see how data actually flows through an agent. This was one of the most useful slides in the briefing:
+
+```mermaid
+flowchart TD
+    A["👤 User sends a prompt"] --> B["🤖 Agent receives it"]
+    B --> C["Agent queries Data Sources<br/>(SharePoint, databases, files)"]
+    C --> D["Agent sends to LLM<br/>for inference"]
+    D --> E["Agent gets response"]
+    E --> F{"What does the agent<br/>do with the response?"}
+    F --> G["Replies to user<br/>(Teams, email)"]
+    F --> H["Calls a tool<br/>(MCP, API, app)"]
+    F --> I["Talks to another agent<br/>(agent-to-agent)"]
+```
+
+Every single arrow in that diagram is a point where sensitive data could leak. Think about it:
+
+- **User → Agent (prompt):** The user might paste confidential data into the prompt
+- **Agent → Data Sources:** The agent might read documents it shouldn't have access to
+- **Agent → LLM:** The data goes to the model for processing — is that model within your compliance boundary?
+- **Agent → User (response):** The response might contain sensitive info the user shouldn't see
+- **Agent → Tools/APIs:** The agent calls an external API and sends data outside your tenant
+- **Agent → Agent:** One agent passes data to another — and that second agent has different permissions
+
+This is where Purview comes in. It monitors **every one of these data flows** and applies your DLP policies, sensitivity labels, and compliance controls at each step.
+
 ### The Scenario
 
 Imagine a procurement agent. Someone asks it to review three purchase orders and email a summary to an external supplier. Sounds harmless, right?
@@ -322,7 +374,24 @@ That's not theoretical. That's a concrete attack path you can remediate today. F
 
 ### Catch Trouble — Real-Time Threat Protection
 
-Here's where it gets dramatic. An attacker tried to jailbreak a customer support agent — sending crafted prompts to make it ignore its instructions and call tools it shouldn't:
+Here's where it gets dramatic. This is my favourite part of the whole briefing — because it shows Defender actually *stopping* an attack mid-execution, not just logging it after the fact.
+
+Here's how it works:
+
+```mermaid
+flowchart TD
+    A["User sends prompt to agent"] --> B["🤖 Agent processes request"]
+    B --> C["Agent prepares to call a tool"]
+    C --> D{"🛡️ Defender evaluates<br/>the tool invocation"}
+    D -->|"Safe"| E["✅ Tool executes normally"]
+    D -->|"Jailbreak detected"| F["🚫 Tool invocation BLOCKED"]
+    F --> G["Alert raised in Defender"]
+    G --> H["Agent flow cancelled"]
+```
+
+The key thing: Defender sits **between the agent and its tools**. It evaluates every tool call in real-time — before the tool actually runs. If the call looks malicious (like an agent trying to send data to an external endpoint after being jailbroken), Defender blocks it before any damage is done.
+
+Here's a real incident from the demo. An attacker tried to jailbreak a customer support agent:
 
 <p><img src="/images/blog/agent-365-security/defender-incident-graph.webp" alt="Defender incident showing jailbreak attempts detected and a malicious tool invocation blocked in real-time on a customer support agent" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
