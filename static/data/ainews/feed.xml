@@ -5,407 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Fri, 01 May 2026 12:01:31 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2026 17:59:25 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>OpenAI locks GPT-5.5-Cyber behind velvet rope despite slamming Anthropic for doing exactly that</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/05/01/openai_locks_gpt55cyber_behind_velvet/</link>
-      <description>OpenAI is preparing a limited release of its GPT-5.5-Cyber model for select 'cyber defenders,' despite previously criticizing Anthropic for similar practices. This move highlights the competitive landscape in AI development and the ongoing debate over accessibility.</description>
+      <title>A2UI v0.9: The New Standard for Portable, Framework-Agnostic Generative UI</title>
+      <link>https://developers.googleblog.com/a2ui-v0-9-generative-ui/</link>
+      <description>A2UI v0.9 introduces a new standard for generating UI widgets that works across different frameworks, enhancing developer experience with a new SDK and support for popular renderers. This allows for faster, more flexible UI development for web and mobile applications.</description>
+      <category>Google</category>
+      <pubDate>Fri, 01 May 2026 17:57:23 +0000</pubDate>
+      <guid>https://developers.googleblog.com/a2ui-v0-9-generative-ui/</guid>
+    </item>
+    <item>
+      <title>Google Maps vs. Waze: I compared the two best navigation apps, and this one wins</title>
+      <link>https://www.zdnet.com/article/google-maps-vs-waze/</link>
+      <description>A comparison of Waze and Google Maps highlights Waze's strengths in real-time rerouting and alerts, while Google Maps offers deeper integration and features. The article concludes with a recommendation based on extensive testing.</description>
+      <category>Google</category>
+      <pubDate>Fri, 01 May 2026 17:46:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/google-maps-vs-waze/</guid>
+    </item>
+    <item>
+      <title>Did you know you can’t steal a charity? Don’t worry. Elon Musk will remind you.</title>
+      <link>https://techcrunch.com/podcast/did-you-know-you-cant-steal-a-charity-dont-worry-elon-musk-will-remind-you/</link>
+      <description>Elon Musk's lawsuit against OpenAI reveals contentious details about the company's shift to a for-profit model, with Musk arguing it betrays its original nonprofit mission. The trial has brought forth various communications and witnesses.</description>
       <category>OpenAI</category>
-      <pubDate>Fri, 01 May 2026 11:42:01 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/05/01/openai_locks_gpt55cyber_behind_velvet/</guid>
+      <pubDate>Fri, 01 May 2026 17:44:29 +0000</pubDate>
+      <guid>https://techcrunch.com/podcast/did-you-know-you-cant-steal-a-charity-dont-worry-elon-musk-will-remind-you/</guid>
     </item>
     <item>
-      <title>My home Wi-Fi was full of dead zones - here are 6 solutions that actually worked</title>
-      <link>https://www.zdnet.com/article/how-i-fix-home-wifi-dead-zones/</link>
-      <description>After struggling with Wi-Fi dead zones, the author shares six effective solutions that improved connectivity throughout their home. This practical advice can help others facing similar issues.</description>
+      <title>How we test AI at ZDNET</title>
+      <link>https://www.zdnet.com/article/how-we-test-ai-at-zdnet/</link>
+      <description>ZDNET outlines its testing process for new AI models and products, emphasizing the rapid evolution of AI technology and the importance of thorough evaluation.</description>
       <category>Industry</category>
-      <pubDate>Fri, 01 May 2026 11:30:41 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/how-i-fix-home-wifi-dead-zones/</guid>
+      <pubDate>Fri, 01 May 2026 17:39:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/how-we-test-ai-at-zdnet/</guid>
     </item>
     <item>
-      <title>SpaceX rocket set for unintentional Moon landing – well, a piece of it anyway</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/05/01/spacex_debris_landing/</link>
-      <description>A piece of SpaceX's Falcon 9 upper stage is expected to unintentionally land on the Moon, traveling at high speeds. This event underscores the increasing amount of space debris and its unpredictable impacts.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 01 May 2026 11:15:10 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/05/01/spacex_debris_landing/</guid>
-    </item>
-    <item>
-      <title>Pro-Iran crew turns DDoS into shakedown as Ubuntu.com stays down</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/05/01/canonical_confirms_ubuntu_infrastructure_under/</link>
-      <description>Canonical's Ubuntu.com is under a DDoS attack orchestrated by a pro-Iran hacktivist group, which is demanding payment to cease the attack. This incident raises concerns about cybersecurity threats facing open-source platforms.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 01 May 2026 11:05:59 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/05/01/canonical_confirms_ubuntu_infrastructure_under/</guid>
-    </item>
-    <item>
-      <title>Best AirPods of 2026: Expert tested and reviewed</title>
-      <link>https://www.zdnet.com/article/best-airpods/</link>
-      <description>An expert reviews the best AirPods available in 2026, providing insights based on extensive testing of Apple's headphone lineup. This guide helps consumers make informed purchasing decisions.</description>
+      <title>This portable computer is the Raspberry Pi alternative I didn't know I needed</title>
+      <link>https://www.zdnet.com/article/m5stack-cardputer-adv-review/</link>
+      <description>The M5Stack Cardputer Adv is introduced as a compact, self-contained pocket computer, presenting a promising alternative to the Raspberry Pi for portable computing needs.</description>
       <category>Industry</category>
-      <pubDate>Fri, 01 May 2026 11:00:48 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/best-airpods/</guid>
+      <pubDate>Fri, 01 May 2026 17:09:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/m5stack-cardputer-adv-review/</guid>
     </item>
     <item>
-      <title>UK pensions dept goes shopping for spy-van tech with £2M surveillance tender</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/05/01/dwp_goes_shopping_for_spyvan/</link>
-      <description>The UK's Department for Work and Pensions is seeking to enhance surveillance capabilities with a £2 million tender for covert cameras and live-streaming technology to combat fraud. This reflects a growing trend in government surveillance.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 01 May 2026 10:43:07 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/05/01/dwp_goes_shopping_for_spyvan/</guid>
+      <title>Mythos complicates the breakup, says Pentagon CTO, but Anthropic is still barred</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/05/01/mythos_complicates_anthropic_us_gov_breakup/</link>
+      <description>Pentagon CTO Emil Michael clarifies that despite interest in the Mythos cybersecurity model, the Pentagon's relationship with Anthropic remains strained and no collaboration is expected.</description>
+      <category>Anthropic</category>
+      <pubDate>Fri, 01 May 2026 16:57:17 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/05/01/mythos_complicates_anthropic_us_gov_breakup/</guid>
     </item>
     <item>
-      <title>I ditched my laptop for XR headsets, tablets, and phones - and learned an important lesson</title>
+      <title>I spent 30 days working without a laptop - here's what it taught me about real productivity</title>
       <link>https://www.zdnet.com/article/i-ditched-laptop-for-xr-headset-tablet-phone-what-i-learned/</link>
-      <description>The author shares their experience of replacing a laptop with XR headsets, tablets, and phones for content creation, discovering new ways to enhance creativity. This shift illustrates the evolving landscape of digital tools.</description>
+      <description>An exploration of productivity without a laptop reveals alternative devices that can enhance content creation, emphasizing the shift in how work is done today.</description>
       <category>Industry</category>
-      <pubDate>Fri, 01 May 2026 10:30:38 +0000</pubDate>
+      <pubDate>Fri, 01 May 2026 16:30:26 +0000</pubDate>
       <guid>https://www.zdnet.com/article/i-ditched-laptop-for-xr-headset-tablet-phone-what-i-learned/</guid>
     </item>
     <item>
-      <title>Moving from AI pilots to business-wide value requires a superhighway - how to ramp up</title>
-      <link>https://www.zdnet.com/article/moving-from-ai-pilots-to-business-wide-value-accenture-research/</link>
-      <description>Accenture's research emphasizes the need for companies to achieve early wins with AI investments to transition from isolated AI projects to broader business value. This approach is crucial for sustainable AI integration.</description>
-      <category>Industry</category>
-      <pubDate>Fri, 01 May 2026 10:00:45 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/moving-from-ai-pilots-to-business-wide-value-accenture-research/</guid>
-    </item>
-    <item>
-      <title>Who needs ghost train scares when Windows is such a fright?</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/05/01/ghost_train_bork/</link>
-      <description>An exploration of common tech issues that can cause frustration among IT professionals, likening them to horror stories. This light-hearted take reflects the challenges of working with technology.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 01 May 2026 10:00:06 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/05/01/ghost_train_bork/</guid>
-    </item>
-    <item>
-      <title>Inexpensive seafloor-hopping submersibles could stoke deep-sea science—and mining</title>
-      <link>https://www.technologyreview.com/2026/05/01/1136734/inexpensive-seafloor-hopping-submersibles-could-stoke-deep-sea-science-and-mining/</link>
-      <description>NOAA's research vessel Rainier is mapping the Pacific seafloor to identify critical mineral deposits, utilizing inexpensive submersibles to enhance deep-sea exploration. This initiative could advance both science and mining efforts.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 01 May 2026 10:00:00 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/05/01/1136734/inexpensive-seafloor-hopping-submersibles-could-stoke-deep-sea-science-and-mining/</guid>
-    </item>
-    <item>
-      <title>Passport to £££: Home Office adds £216M to travel doc contract before a single bid's been placed</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/05/01/passport_to_home_office_adds/</link>
-      <description>The UK's Home Office has increased its passport production contract to £576 million, delaying the start date by a year and raising annual costs by a third. This change comes as the UK issues eight million passports annually, indicating a significant investment in travel documentation.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 01 May 2026 09:15:06 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/05/01/passport_to_home_office_adds/</guid>
-    </item>
-    <item>
-      <title>4 interior designers told us what smart tech you should actually buy</title>
-      <link>https://www.zdnet.com/article/4-interior-designers-told-us-what-smart-tech-you-should-actually-buy/</link>
-      <description>Interior designers recommend smart home products that combine aesthetics with functionality, emphasizing the importance of choosing tech that enhances home design. Their insights aim to guide consumers in making informed purchases.</description>
-      <category>Industry</category>
-      <pubDate>Fri, 01 May 2026 09:01:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/4-interior-designers-told-us-what-smart-tech-you-should-actually-buy/</guid>
-    </item>
-    <item>
-      <title>Forget productivity: Here are 5 strategic shifts that drive real AI value</title>
-      <link>https://www.zdnet.com/article/strategic-shifts-drive-real-ai-value/</link>
-      <description>Instead of merely focusing on productivity, experts suggest strategic shifts that can unlock real value from AI tools. This approach emphasizes the need for organizations to rethink their AI strategies for meaningful outcomes.</description>
-      <category>Industry</category>
-      <pubDate>Fri, 01 May 2026 09:00:44 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/strategic-shifts-drive-real-ai-value/</guid>
-    </item>
-    <item>
-      <title>Trump’s mass firing just dealt another blow to American science</title>
-      <link>https://www.technologyreview.com/2026/05/01/1136722/mass-firing-trump-fresh-blow-american-science-nsf-nsb/</link>
-      <description>The mass firing of the National Science Foundation's board, which oversees $9 billion in research funding, poses a significant threat to scientific progress in the US. This event raises concerns about the future of federal support for scientific research.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 01 May 2026 09:00:00 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/05/01/1136722/mass-firing-trump-fresh-blow-american-science-nsf-nsb/</guid>
-    </item>
-    <item>
-      <title>A new US phone network for Christians aims to block porn and gender-related content</title>
-      <link>https://www.technologyreview.com/2026/05/01/1136739/a-new-t-mobile-network-for-christians-aims-to-block-porn-and-gender-related-content/</link>
-      <description>A new US cell phone network aimed at Christians will block porn and gender-related content at the network level, marking a significant shift in mobile service offerings. This initiative raises questions about censorship and user control.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 01 May 2026 09:00:00 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/05/01/1136739/a-new-t-mobile-network-for-christians-aims-to-block-porn-and-gender-related-content/</guid>
-    </item>
-    <item>
-      <title>DVLA's 14-week driving license fiasco – the tech, people and chatbot trying to clear it</title>
-      <link>https://go.theregister.com/feed/www.theregister.com/2026/05/01/dvlas_14week_driving_licence_fiasco/</link>
-      <description>The DVLA is facing a backlog in driving license applications due to medical checks, with processing times exceeding 14 weeks. New technology and a chatbot have been introduced to help clear the backlog.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 01 May 2026 08:30:15 +0000</pubDate>
-      <guid>https://go.theregister.com/feed/www.theregister.com/2026/05/01/dvlas_14week_driving_licence_fiasco/</guid>
-    </item>
-    <item>
-      <title>Microsoft wants lawyers to trust its new AI agent in Word documents</title>
-      <link>https://www.theverge.com/news/921944/microsoft-word-legal-agent-ai</link>
-      <description>Microsoft is introducing a specialized AI agent in Word for legal teams, designed to streamline document management and negotiation processes. This tool aims to enhance trust and efficiency in legal workflows.</description>
-      <category>Top Stories</category>
-      <pubDate>Fri, 01 May 2026 07:18:54 -0400</pubDate>
-      <guid>https://www.theverge.com/news/921944/microsoft-word-legal-agent-ai</guid>
-    </item>
-    <item>
-      <title>India in talks with US, Anthropic for Mythos access; no Indian firms in Project Glasswing yet</title>
-      <link>https://www.medianama.com/2026/04/223-india-anthropic-claude-mythos-project-glasswing-access/</link>
-      <description>India is negotiating with the US and Anthropic for access to advanced AI technologies while facing compliance issues. This highlights the country's efforts to bolster its cybersecurity capabilities amid emerging AI threats.</description>
-      <category>OpenAI</category>
-      <pubDate>Thu, 30 Apr 2026 11:59:53 +0000</pubDate>
-      <guid>https://www.medianama.com/2026/04/223-india-anthropic-claude-mythos-project-glasswing-access/</guid>
-    </item>
-    <item>
-      <title>The Secret Weapon Against AI Dominance</title>
-      <link>https://www.theatlantic.com/ideas/2026/04/creative-labor-ai-copyright/687000/</link>
-      <description>The future of creative labor hinges on the ability to copyright AI-generated work, raising significant legal and ethical questions. This issue is crucial for artists and industries impacted by AI advancements.</description>
-      <category>OpenAI</category>
-      <pubDate>Thu, 30 Apr 2026 11:58:29 +0000</pubDate>
-      <guid>https://www.theatlantic.com/ideas/2026/04/creative-labor-ai-copyright/687000/</guid>
-    </item>
-    <item>
-      <title>SPRIND opens applications for €125M competition to build Europe’s first frontier AI labs</title>
-      <link>https://thenextweb.com/news/sprind-opens-applications-for-e125m-competition-to-build-europes-first-frontier-ai-labs/</link>
-      <description>SPRIND has launched a €125 million competition to establish Europe's first frontier AI labs, encouraging applicants to innovate beyond current AI models. This initiative aims to foster groundbreaking advancements in AI technology.</description>
-      <category>OpenAI</category>
-      <pubDate>Thu, 30 Apr 2026 11:58:29 +0000</pubDate>
-      <guid>https://thenextweb.com/news/sprind-opens-applications-for-e125m-competition-to-build-europes-first-frontier-ai-labs/</guid>
-    </item>
-    <item>
-      <title>autoclaude-cli 2.5.1</title>
-      <link>https://pypi.org/project/autoclaude-cli/2.5.1/</link>
-      <description>The release of autoclaude-cli 2.5.1 allows users to run orchestration plans locally with their Claude Max/Pro subscription, enhancing user control and flexibility.</description>
+      <title>Pentagon inks deals with Nvidia, Microsoft, and AWS to deploy AI on classified networks</title>
+      <link>https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/</link>
+      <description>The Pentagon has secured deals with Nvidia, Microsoft, and AWS to implement AI on classified networks, reflecting a strategic move to diversify AI vendor partnerships amid past disputes.</description>
       <category>Anthropic</category>
-      <pubDate>Thu, 30 Apr 2026 11:58:23 +0000</pubDate>
-      <guid>https://pypi.org/project/autoclaude-cli/2.5.1/</guid>
+      <pubDate>Fri, 01 May 2026 16:02:36 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/</guid>
     </item>
     <item>
-      <title>hf 1.13.0</title>
-      <link>https://pypi.org/project/hf/1.13.0/</link>
-      <description>The Hugging Face Hub has released version 1.13.0 of its CLI, enabling easier interaction with the platform for developers and researchers.</description>
-      <category>Open Source</category>
-      <pubDate>Thu, 30 Apr 2026 11:57:23 +0000</pubDate>
-      <guid>https://pypi.org/project/hf/1.13.0/</guid>
-    </item>
-    <item>
-      <title>Tech sector is cutting jobs but this time it feels much different</title>
-      <link>https://www.irishtimes.com/your-money/2026/04/30/tech-sector-is-cutting-jobs-but-this-time-it-feels-much-different/</link>
-      <description>The tech sector is experiencing job cuts despite high profits, as AI is both consuming investment and displacing workers, indicating a shift in the industry landscape.</description>
-      <category>OpenAI</category>
-      <pubDate>Thu, 30 Apr 2026 11:56:53 +0000</pubDate>
-      <guid>https://www.irishtimes.com/your-money/2026/04/30/tech-sector-is-cutting-jobs-but-this-time-it-feels-much-different/</guid>
-    </item>
-    <item>
-      <title>torchlens 2.16.0</title>
-      <link>https://pypi.org/project/torchlens/2.16.0/</link>
-      <description>Torchlens 2.16.0 has been released, allowing users to extract activations from PyTorch models and save them in portable formats, enhancing model usability.</description>
+      <title>How Meta Is Strengthening End-to-End Encrypted Backups</title>
+      <link>https://engineering.fb.com/2026/05/01/security/meta-strengthening-end-to-end-encrypted-backups/</link>
+      <description>Meta is enhancing its end-to-end encrypted backups for WhatsApp and Messenger with a new Backup Key Vault, ensuring user data is protected and inaccessible to Meta.</description>
       <category>Meta</category>
-      <pubDate>Thu, 30 Apr 2026 11:56:39 +0000</pubDate>
-      <guid>https://pypi.org/project/torchlens/2.16.0/</guid>
+      <pubDate>Fri, 01 May 2026 16:00:58 +0000</pubDate>
+      <guid>https://engineering.fb.com/2026/05/01/security/meta-strengthening-end-to-end-encrypted-backups/</guid>
     </item>
     <item>
-      <title>WATCH: Artemis II crew discusses historic mission on 'GMA'</title>
-      <link>https://abcnews.com/video/132527342/</link>
-      <description>The Artemis II crew discussed their historic mission around the moon on 'GMA', marking a significant milestone in human space exploration.</description>
-      <category>OpenAI</category>
-      <pubDate>Thu, 30 Apr 2026 11:54:31 +0000</pubDate>
-      <guid>https://abcnews.com/video/132527342/</guid>
+      <title>Artemis III aims for 'late 2027' for Earth orbit demonstration</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/05/01/artemis_iii_aims_for_late/</link>
+      <description>NASA Administrator Jared Isaacman has updated the Artemis III launch timeline to 'late 2027', amidst budget cut discussions, assuring that SpaceX and Blue Origin will meet the schedule.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 01 May 2026 16:00:07 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/05/01/artemis_iii_aims_for_late/</guid>
     </item>
     <item>
-      <title>CVE MCP Server Turns Claude Into a Fully Capable Security Analyst With 27 Tools Across 21 APIs</title>
-      <link>https://cybersecuritynews.com/cve-mcp-server-and-claude/</link>
-      <description>The CVE MCP Server project transforms Claude AI into a security analyst by integrating it with 27 intelligence tools, enhancing vulnerability management for security teams.</description>
-      <category>Anthropic</category>
-      <pubDate>Thu, 30 Apr 2026 11:54:30 +0000</pubDate>
-      <guid>https://cybersecuritynews.com/cve-mcp-server-and-claude/</guid>
-    </item>
-    <item>
-      <title>WATCH: Never-before-seen views from the Sagrada Familia</title>
-      <link>https://abcnews.com/video/132527306/</link>
-      <description>Michael Strahan shared exclusive views from the Sagrada Familia on 'GMA', highlighting the architectural marvel's long construction history.</description>
-      <category>OpenAI</category>
-      <pubDate>Thu, 30 Apr 2026 11:54:26 +0000</pubDate>
-      <guid>https://abcnews.com/video/132527306/</guid>
-    </item>
-    <item>
-      <title>aiui-mcp 0.4.25</title>
-      <link>https://pypi.org/project/aiui-mcp/0.4.25/</link>
-      <description>The aiui-mcp 0.4.25 release introduces a server for native macOS dialogs in Claude Code sessions, enhancing user experience for developers.</description>
-      <category>Anthropic</category>
-      <pubDate>Thu, 30 Apr 2026 11:54:00 +0000</pubDate>
-      <guid>https://pypi.org/project/aiui-mcp/0.4.25/</guid>
-    </item>
-    <item>
-      <title>KIEFER AI Open Hackathon 2026: Seven teams, global open-source launch, and Greece’s first sovereign AI infrastructure</title>
-      <link>https://en.protothema.gr/2026/04/30/kiefer-ai-open-hackathon-2026-seven-teams-global-open-source-launch-and-greeces-first-sovereign-ai-infrastructure/</link>
-      <description>The KIEFER AI Open Hackathon 2026 aims to launch Greece’s first sovereign AI infrastructure, fostering international collaboration and innovation in AI.</description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Thu, 30 Apr 2026 11:52:57 +0000</pubDate>
-      <guid>https://en.protothema.gr/2026/04/30/kiefer-ai-open-hackathon-2026-seven-teams-global-open-source-launch-and-greeces-first-sovereign-ai-infrastructure/</guid>
-    </item>
-    <item>
-      <title>The next Galaxy Book could be a flagship Aluminium OS laptop powered by One UI 9</title>
-      <link>https://www.androidauthority.com/samsung-android-galaxy-book-aluminium-os-leak-3662390/</link>
-      <description>Samsung is reportedly developing a new Galaxy Book laptop series powered by Aluminium OS and featuring Galaxy AI, indicating a shift towards integrated AI solutions.</description>
-      <category>Google</category>
-      <pubDate>Thu, 30 Apr 2026 11:52:31 +0000</pubDate>
-      <guid>https://www.androidauthority.com/samsung-android-galaxy-book-aluminium-os-leak-3662390/</guid>
-    </item>
-    <item>
-      <title>jupyterlab-claude-code-extension 1.0.29</title>
-      <link>https://pypi.org/project/jupyterlab-claude-code-extension/1.0.29/</link>
-      <description>The JupyterLab Claude Code extension 1.0.29 allows users to manage Claude Code CLI sessions easily from a side panel, enhancing workflow efficiency.</description>
-      <category>Anthropic</category>
-      <pubDate>Thu, 30 Apr 2026 11:52:31 +0000</pubDate>
-      <guid>https://pypi.org/project/jupyterlab-claude-code-extension/1.0.29/</guid>
-    </item>
-    <item>
-      <title>How Good Is Google’s Gemini AI at Making Travel Plans? - The New York Times</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=183071972</link>
-      <description>A New York Times article evaluates Google's Gemini AI's capabilities in planning travel, highlighting its potential and limitations in real-world applications.</description>
-      <category>Google</category>
-      <pubDate>Thu, 30 Apr 2026 11:52:20 +0000</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=183071972</guid>
-    </item>
-    <item>
-      <title>pycastle 0.1.1.7</title>
-      <link>https://pypi.org/project/pycastle/0.1.1.7/</link>
-      <description>The pycastle 0.1.1.7 release introduces a Python orchestrator designed for managing autonomous Claude Code agents within Docker environments.</description>
-      <category>Anthropic</category>
-      <pubDate>Thu, 30 Apr 2026 11:51:13 +0000</pubDate>
-      <guid>https://pypi.org/project/pycastle/0.1.1.7/</guid>
-    </item>
-    <item>
-      <title>Android Auto doesn’t let you dismiss alarms, but Google is working on a solution</title>
-      <link>https://www.androidauthority.com/android-auto-dismiss-alarms-apk-teardown-3662381/</link>
-      <description>Google is reportedly working on a solution to allow users to dismiss alarms in Android Auto, addressing a long-standing user complaint.</description>
-      <category>Google</category>
-      <pubDate>Thu, 30 Apr 2026 11:48:51 +0000</pubDate>
-      <guid>https://www.androidauthority.com/android-auto-dismiss-alarms-apk-teardown-3662381/</guid>
-    </item>
-    <item>
-      <title>Thursday: Hili dialogue</title>
-      <link>https://whyevolutionistrue.com/2026/04/30/thursday-hili-dialogue-586/</link>
-      <description>An article discusses the significance of April 30, 2026, marking National Bugs Bunny Day, but lacks relevance to AI or tech.</description>
-      <category>xAI</category>
-      <pubDate>Thu, 30 Apr 2026 11:45:00 +0000</pubDate>
-      <guid>https://whyevolutionistrue.com/2026/04/30/thursday-hili-dialogue-586/</guid>
-    </item>
-    <item>
-      <title>Managing the Machines: How AI Intensifies Work</title>
-      <link>https://www.psychologytoday.com/us/blog/our-invisible-work/202604/managing-the-machines-how-ai-intensifies-work</link>
-      <description>The article explores how AI, while intended to boost productivity, often complicates work processes, leading to increased workloads.</description>
+      <title>I've tested robot mowers for years - here's my expert advice for every yard type</title>
+      <link>https://www.zdnet.com/article/how-to-choose-robot-mower-for-yard-expert-advice/</link>
+      <description>The article provides expert advice on selecting robot mowers based on yard type, emphasizing that yard characteristics are more important than the mower itself.</description>
       <category>Industry</category>
-      <pubDate>Thu, 30 Apr 2026 11:39:10 +0000</pubDate>
-      <guid>https://www.psychologytoday.com/us/blog/our-invisible-work/202604/managing-the-machines-how-ai-intensifies-work</guid>
+      <pubDate>Fri, 01 May 2026 16:00:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/how-to-choose-robot-mower-for-yard-expert-advice/</guid>
     </item>
     <item>
-      <title>agent-recall-ai added to PyPI</title>
-      <link>https://pypi.org/project/agent-recall-ai/</link>
-      <description>The agent-recall-ai tool added to PyPI offers structured session checkpointing for AI agents, helping them manage context limits and session interruptions.</description>
+      <title>Cyber-Insecurity in the AI Era</title>
+      <link>https://www.technologyreview.com/2026/05/01/1136779/cyber-insecurity-in-the-ai-era/</link>
+      <description>A session from MIT's EmTech AI conference discusses the urgent need to rethink cybersecurity strategies as AI complicates the threat landscape.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 01 May 2026 15:54:01 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/05/01/1136779/cyber-insecurity-in-the-ai-era/</guid>
+    </item>
+    <item>
+      <title>Operationalizing AI for Scale and Sovereignty</title>
+      <link>https://www.technologyreview.com/2026/05/01/1136772/operationalizing-ai-for-scale-and-sovereignty/</link>
+      <description>This discussion at MIT's EmTech AI conference focuses on how companies can operationalize AI while ensuring data ownership and quality for reliable insights.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 01 May 2026 15:31:09 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/05/01/1136772/operationalizing-ai-for-scale-and-sovereignty/</guid>
+    </item>
+    <item>
+      <title>Best Buy just slashed up to $2,000 off our favorite TCL Mini LED TV - no strings attached</title>
+      <link>https://www.zdnet.com/article/tcl-qm8k-best-buy-deal/</link>
+      <description>Best Buy is offering significant discounts on the TCL QM8 Mini LED TV, making it an attractive option for consumers seeking high-quality displays.</description>
+      <category>Industry</category>
+      <pubDate>Fri, 01 May 2026 15:30:14 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/tcl-qm8k-best-buy-deal/</guid>
+    </item>
+    <item>
+      <title>Where to buy a non-Apple, non-Google smartphone</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/05/01/buy_a_foss_fondleslab/</link>
+      <description>The article discusses alternatives to Apple and Google smartphones as both companies implement stricter controls on their devices.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 01 May 2026 15:24:14 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/05/01/buy_a_foss_fondleslab/</guid>
+    </item>
+    <item>
+      <title>Mini LED vs. OLED: I've tested dozens of TV with both display types, and this one's better</title>
+      <link>https://www.zdnet.com/article/mini-led-vs-oled-tv/</link>
+      <description>After testing various TVs, the article compares Mini LED and OLED technologies, concluding that while OLED is superior, Mini LED is a strong contender.</description>
+      <category>Industry</category>
+      <pubDate>Fri, 01 May 2026 15:00:44 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/mini-led-vs-oled-tv/</guid>
+    </item>
+    <item>
+      <title>CIOs ready for another role-change as AI becomes agent of chaos</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/05/01/cios_ready_for_another_rolechange/</link>
+      <description>Forrester predicts that the rise of agentic AI will force CIOs to adapt to a new role focused on maintaining order amidst increasing chaos.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 01 May 2026 14:54:13 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/05/01/cios_ready_for_another_rolechange/</guid>
+    </item>
+    <item>
+      <title>That old phone in the kitchen drawer could save an industry</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/05/01/preowned_phones_fill_the_gap/</link>
+      <description>The article discusses the growing market for secondhand phones, driven by inflation and consumer reluctance to buy new, expensive models.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 01 May 2026 14:16:56 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/05/01/preowned_phones_fill_the_gap/</guid>
+    </item>
+    <item>
+      <title>Musk v. Altman is just getting started</title>
+      <link>https://techcrunch.com/video/musk-v-altman-is-just-getting-started/</link>
+      <description>Elon Musk's lawsuit against OpenAI is intensifying, with revealing evidence surfacing as he argues that the company's for-profit shift betrayed its original mission.</description>
+      <category>OpenAI</category>
+      <pubDate>Fri, 01 May 2026 14:00:00 +0000</pubDate>
+      <guid>https://techcrunch.com/video/musk-v-altman-is-just-getting-started/</guid>
+    </item>
+    <item>
+      <title>After using the $1,900 Motorola Razr Fold again, I'm doubling down on my buying advice</title>
+      <link>https://www.zdnet.com/article/motorola-razr-fold-hands-on/</link>
+      <description>The article reviews the latest Motorola Razr Fold, noting its advantages over competitors but advising consumers to wait before purchasing.</description>
+      <category>Industry</category>
+      <pubDate>Fri, 01 May 2026 13:30:45 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/motorola-razr-fold-hands-on/</guid>
+    </item>
+    <item>
+      <title>First reports come in of victims of critical cPanel vuln as 'millions' of sites potentially exposed</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/05/01/critical_cpanel_vuln_hits_cisa/</link>
+      <description>A critical vulnerability in cPanel has been exploited before patches were released, with reports of ransomware demands from victims. This highlights the urgency for web hosting services to address security flaws promptly.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 01 May 2026 13:10:15 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/05/01/critical_cpanel_vuln_hits_cisa/</guid>
+    </item>
+    <item>
+      <title>Microsoft releases first big update after Nadella's vow to 'win back fans'</title>
+      <link>https://go.theregister.com/feed/www.theregister.com/2026/05/01/microsoft_release_first_big_update/</link>
+      <description>Microsoft has released a significant update aimed at improving Windows stability, following CEO Satya Nadella's commitment to regain user trust. The update includes numerous fixes and performance enhancements.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 01 May 2026 12:42:39 +0000</pubDate>
+      <guid>https://go.theregister.com/feed/www.theregister.com/2026/05/01/microsoft_release_first_big_update/</guid>
+    </item>
+    <item>
+      <title>The Download: a new Christian phone network, and debugging LLMs</title>
+      <link>https://www.technologyreview.com/2026/05/01/1136762/the-download-christian-phone-network-debugging-llms/</link>
+      <description>A new Christian phone network is set to launch, designed to block adult content and promote family-friendly usage. This initiative reflects a growing trend of niche services catering to specific community values.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 01 May 2026 12:10:00 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/05/01/1136762/the-download-christian-phone-network-debugging-llms/</guid>
+    </item>
+    <item>
+      <title>Pentagon strikes classified AI deals with OpenAI, Google, and Nvidia — but not Anthropic</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/922113/pentagon-ai-classified-openai-google-nvidia</link>
+      <description>The Pentagon has secured AI contracts with major tech companies, including OpenAI and Google, for classified applications, while excluding Anthropic. This move emphasizes the military's reliance on advanced AI technologies.</description>
+      <category>OpenAI</category>
+      <pubDate>Fri, 01 May 2026 10:09:56 -0400</pubDate>
+      <guid>https://www.theverge.com/ai-artificial-intelligence/922113/pentagon-ai-classified-openai-google-nvidia</guid>
+    </item>
+    <item>
+      <title>Elon Musk had a bad week in court</title>
+      <link>https://www.theverge.com/podcast/922009/musk-openai-trial-testimony-vergecast</link>
+      <description>Elon Musk is facing challenges in his court case against OpenAI, where he claims the company misappropriated his nonprofit vision. The proceedings reveal Musk's contentious relationship with the AI firm.</description>
+      <category>OpenAI</category>
+      <pubDate>Fri, 01 May 2026 09:33:15 -0400</pubDate>
+      <guid>https://www.theverge.com/podcast/922009/musk-openai-trial-testimony-vergecast</guid>
+    </item>
+    <item>
+      <title>Christian content creators are outsourcing AI slop to gig workers on Fiverr</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/920881/ai-generated-bible-videos-christian-creators-fiverr-slop</link>
+      <description>Christian content creators are increasingly outsourcing AI-generated work to gig workers on platforms like Fiverr, showcasing a shift in how creative labor is approached in the age of generative AI.</description>
+      <category>Top Stories</category>
+      <pubDate>Fri, 01 May 2026 09:25:25 -0400</pubDate>
+      <guid>https://www.theverge.com/ai-artificial-intelligence/920881/ai-generated-bible-videos-christian-creators-fiverr-slop</guid>
+    </item>
+    <item>
+      <title>Reinforced Agent: Inference-Time Feedback for Tool-Calling Agents</title>
+      <link>https://machinelearning.apple.com/research/reinforced-agent-inference-feedback</link>
+      <description>A new research paper discusses the limitations of current evaluations for tool-calling agents in AI, proposing a method for real-time feedback to improve their performance. This could enhance the effectiveness of AI in dynamic environments.</description>
+      <category>Apple</category>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://machinelearning.apple.com/research/reinforced-agent-inference-feedback</guid>
+    </item>
+    <item>
+      <title>RIA Marketing Growth Insights From Industry Leaders</title>
+      <link>https://gregoryagency.com/news-insights/ria-marketing-growth-strategies/</link>
+      <description>Industry leaders share insights on how Registered Investment Advisors (RIAs) can leverage marketing strategies and AI to drive growth beyond initial success. The article emphasizes the importance of innovation in the financial sector.</description>
+      <category>OpenAI</category>
+      <pubDate>Thu, 30 Apr 2026 17:54:53 +0000</pubDate>
+      <guid>https://gregoryagency.com/news-insights/ria-marketing-growth-strategies/</guid>
+    </item>
+    <item>
+      <title>Musk calls himself ‘a fool’ on the stand as OpenAI’s lawyer dismantles his nonprofit narrative</title>
+      <link>https://thenextweb.com/news/musk-openai-trial-cross-examination-fool-nonprofit/</link>
+      <description>During the Musk v. Altman trial, OpenAI's attorney dismantled Musk's claims about his nonprofit involvement, using evidence from emails and texts. Musk's admission of being 'a fool' reflects the trial's tension.</description>
+      <category>OpenAI</category>
+      <pubDate>Thu, 30 Apr 2026 17:54:26 +0000</pubDate>
+      <guid>https://thenextweb.com/news/musk-openai-trial-cross-examination-fool-nonprofit/</guid>
+    </item>
+    <item>
+      <title>New ways to customize AI-generated meeting notes</title>
+      <link>https://workspaceupdates.googleblog.com/2026/04/new-ways-to-customize-ai-generated-meeting-notes.html</link>
+      <description>New methods for customizing AI-generated meeting notes are being explored, aiming to enhance their relevance and usability for users. This development could improve productivity in professional settings.</description>
+      <category>Google</category>
+      <pubDate>Thu, 30 Apr 2026 17:54:00 +0000</pubDate>
+      <guid>https://workspaceupdates.googleblog.com/2026/04/new-ways-to-customize-ai-generated-meeting-notes.html</guid>
+    </item>
+    <item>
+      <title>AI won’t fix broken systems: India needs secure-by-design approach</title>
+      <link>https://economictimes.indiatimes.com/opinion/et-commentary/ai-wont-fix-broken-systems-india-needs-secure-by-design-approach/articleshow/130646449.cms</link>
+      <description>India's digital infrastructure is vulnerable due to weak system design, which AI cannot fix alone. A secure-by-design approach is essential for effective security.</description>
+      <category>Anthropic</category>
+      <pubDate>Thu, 30 Apr 2026 17:53:53 +0000</pubDate>
+      <guid>https://economictimes.indiatimes.com/opinion/et-commentary/ai-wont-fix-broken-systems-india-needs-secure-by-design-approach/articleshow/130646449.cms</guid>
+    </item>
+    <item>
+      <title>runwhen-platform-mcp 2026.4.30.2</title>
+      <link>https://pypi.org/project/runwhen-platform-mcp/2026.4.30.2/</link>
+      <description>The RunWhen Platform MCP Server facilitates workspace chat and tool management for various clients, enhancing collaboration and productivity.</description>
+      <category>Anthropic</category>
+      <pubDate>Thu, 30 Apr 2026 17:53:47 +0000</pubDate>
+      <guid>https://pypi.org/project/runwhen-platform-mcp/2026.4.30.2/</guid>
+    </item>
+    <item>
+      <title>coderouter-cli 1.10.0</title>
+      <link>https://pypi.org/project/coderouter-cli/1.10.0/</link>
+      <description>Coderouter-cli 1.10.0 is a local-first, free LLM router compatible with Claude Code and OpenAI, promoting accessibility in AI development.</description>
+      <category>OpenAI</category>
+      <pubDate>Thu, 30 Apr 2026 17:52:21 +0000</pubDate>
+      <guid>https://pypi.org/project/coderouter-cli/1.10.0/</guid>
+    </item>
+    <item>
+      <title>sage-ai-cli 1.16.92</title>
+      <link>https://pypi.org/project/sage-ai-cli/1.16.92/</link>
+      <description>Sage-ai-cli 1.16.92 offers a local-first AI coding command line interface, utilizing free and open models for coding tasks.</description>
+      <category>Anthropic</category>
+      <pubDate>Thu, 30 Apr 2026 17:51:11 +0000</pubDate>
+      <guid>https://pypi.org/project/sage-ai-cli/1.16.92/</guid>
+    </item>
+    <item>
+      <title>Gemini Has Access to More Than You Think. Change These 6 Settings Now to Protect Your Privacy</title>
+      <link>https://uk.pcmag.com/ai/164639/protect-privacy-when-using-google-gemini</link>
+      <description>Users of Google Gemini are advised to change six settings to enhance privacy and prevent the AI from collecting excessive personal data.</description>
+      <category>AI Foundry</category>
+      <pubDate>Thu, 30 Apr 2026 17:46:01 +0000</pubDate>
+      <guid>https://uk.pcmag.com/ai/164639/protect-privacy-when-using-google-gemini</guid>
+    </item>
+    <item>
+      <title>Omnea brings procurement data to Claude, Cohere North, and ChatGPT with industry-first MCP</title>
+      <link>https://www.globenewswire.com/news-release/2026/04/30/3285322/0/en/Omnea-brings-procurement-data-to-Claude-Cohere-North-and-ChatGPT-with-industry-first-MCP.html</link>
+      <description>Omnea's MCP Server integrates procurement data with AI tools like Claude and ChatGPT, streamlining supplier access for teams.</description>
       <category>Microsoft</category>
-      <pubDate>Thu, 30 Apr 2026 11:35:46 +0000</pubDate>
-      <guid>https://pypi.org/project/agent-recall-ai/</guid>
+      <pubDate>Thu, 30 Apr 2026 17:45:00 +0000</pubDate>
+      <guid>https://www.globenewswire.com/news-release/2026/04/30/3285322/0/en/Omnea-brings-procurement-data-to-Claude-Cohere-North-and-ChatGPT-with-industry-first-MCP.html</guid>
     </item>
     <item>
-      <title>HPE expands ProLiant edge network portfolio</title>
-      <link>https://www.computerweekly.com/news/366642633/HPE-expands-ProLiant-edge-network-portfolio</link>
-      <description>HPE has expanded its ProLiant edge network portfolio with new chassis and servers optimized for use in harsh environments, targeting various industries.</description>
+      <title>Scaling Biomolecular Modeling Using Context Parallelism in NVIDIA BioNeMo</title>
+      <link>https://developer.nvidia.com/blog/scaling-biomolecular-modeling-using-context-parallelism-in-nvidia-bionemo/</link>
+      <description>NVIDIA BioNeMo is enhancing biomolecular modeling by utilizing context parallelism, addressing memory limitations of single GPUs.</description>
       <category>NVIDIA</category>
-      <pubDate>Thu, 30 Apr 2026 11:30:00 +0000</pubDate>
-      <guid>https://www.computerweekly.com/news/366642633/HPE-expands-ProLiant-edge-network-portfolio</guid>
+      <pubDate>Thu, 30 Apr 2026 17:41:44 +0000</pubDate>
+      <guid>https://developer.nvidia.com/blog/scaling-biomolecular-modeling-using-context-parallelism-in-nvidia-bionemo/</guid>
     </item>
     <item>
-      <title>China launches months-long campaign against AI misuse targeting deepfakes, fraud, and disinformation</title>
-      <link>https://thenextweb.com/news/china-ai-misuse-campaign-2026/</link>
-      <description>China has launched a campaign against AI misuse, focusing on deepfakes and fraud, amid allegations of large-scale AI theft by the U.S.</description>
-      <category>DeepSeek</category>
-      <pubDate>Thu, 30 Apr 2026 11:23:42 +0000</pubDate>
-      <guid>https://thenextweb.com/news/china-ai-misuse-campaign-2026/</guid>
+      <title>Speed Up Unreal Engine NNE Inference with NVIDIA TensorRT for RTX Runtime</title>
+      <link>https://developer.nvidia.com/blog/speed-up-unreal-engine-nne-inference-with-nvidia-tensorrt-for-rtx-runtime/</link>
+      <description>NVIDIA TensorRT is optimizing Unreal Engine's neural network inference, enhancing image quality and performance in graphics.</description>
+      <category>NVIDIA</category>
+      <pubDate>Thu, 30 Apr 2026 17:41:40 +0000</pubDate>
+      <guid>https://developer.nvidia.com/blog/speed-up-unreal-engine-nne-inference-with-nvidia-tensorrt-for-rtx-runtime/</guid>
     </item>
     <item>
-      <title>AI Code Review Only Catches Half of Your Bugs</title>
-      <link>https://www.oreilly.com/radar/ai-code-review-only-catches-half-of-your-bugs/#BlogPosting</link>
-      <description>An article reveals that AI code review tools only catch about half of coding bugs, emphasizing the need for human oversight in AI-driven development.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>Thu, 30 Apr 2026 11:14:49 +0000</pubDate>
-      <guid>https://www.oreilly.com/radar/ai-code-review-only-catches-half-of-your-bugs/#BlogPosting</guid>
+      <title>Microsoft Earnings Analysis: Pay No Attention to the Capex Behind the AI ⭐️</title>
+      <link>https://www.thurrott.com/microsoft/335554/microsoft-earnings-analysis-pay-no-attention-to-the-capex-behind-the-ai</link>
+      <description>Microsoft's earnings report highlights the focus on AI and capital expenditures, reflecting Wall Street's priorities despite underlying business complexities.</description>
+      <category>M365 Copilot</category>
+      <pubDate>Thu, 30 Apr 2026 17:37:36 +0000</pubDate>
+      <guid>https://www.thurrott.com/microsoft/335554/microsoft-earnings-analysis-pay-no-attention-to-the-capex-behind-the-ai</guid>
     </item>
     <item>
-      <title>residual added to PyPI</title>
-      <link>https://pypi.org/project/residual/</link>
-      <description>A new implementation of Residual Networks (ResNet) has been added to PyPI, enhancing PyTorch's capabilities for deep learning. This addition allows developers to utilize a more configurable version of ResNet for their projects.</description>
-      <category>Meta</category>
-      <pubDate>Thu, 30 Apr 2026 11:00:22 +0000</pubDate>
-      <guid>https://pypi.org/project/residual/</guid>
+      <title>Apple execs to talk China and tariffs, but will avoid discussing foldable iPhone, per bettors on Kalshi</title>
+      <link>https://www.cnbc.com/2026/04/30/what-bettors-think-apple-will-talk-about-on-its-earnings-call.html</link>
+      <description>Apple executives will discuss earnings and tariffs in an upcoming call but will avoid the topic of a foldable iPhone, according to market speculation.</description>
+      <category>Apple</category>
+      <pubDate>Thu, 30 Apr 2026 17:35:55 +0000</pubDate>
+      <guid>https://www.cnbc.com/2026/04/30/what-bettors-think-apple-will-talk-about-on-its-earnings-call.html</guid>
     </item>
     <item>
-      <title>Who Trusts the Money Queen?</title>
-      <link>http://www.thecut.com/article/money-queen-amanda-frances-manifestation.html</link>
-      <description>Amanda Frances, known for helping women manifest their dreams, faces scrutiny from former clients who feel misled about her financial success. This raises questions about the ethics of her business practices.</description>
-      <category>Meta</category>
-      <pubDate>Thu, 30 Apr 2026 11:00:10 +0000</pubDate>
-      <guid>http://www.thecut.com/article/money-queen-amanda-frances-manifestation.html</guid>
-    </item>
-    <item>
-      <title>Stop asking AI to read your mind. Use this prompt to get better answers</title>
-      <link>https://www.pcworld.com/article/3126779/this-prompt-turns-vague-ai-requests-into-clear-instructions.html</link>
-      <description>Experts advise against vague prompts when using AI tools like ChatGPT, suggesting that clearer, more specific instructions yield better results. This guidance aims to improve user interactions with AI.</description>
+      <title>Insider trading backlash forces Polymarket to step up surveillance</title>
+      <link>https://cointelegraph.com/news/polymarket-chainalysis-insider-betting-detection-prediction-markets</link>
+      <description>Polymarket has partnered with Chainalysis to enhance surveillance and address insider trading concerns as regulatory scrutiny on prediction markets increases.</description>
       <category>Google</category>
-      <pubDate>Thu, 30 Apr 2026 11:00:00 +0000</pubDate>
-      <guid>https://www.pcworld.com/article/3126779/this-prompt-turns-vague-ai-requests-into-clear-instructions.html</guid>
+      <pubDate>Thu, 30 Apr 2026 17:33:07 +0000</pubDate>
+      <guid>https://cointelegraph.com/news/polymarket-chainalysis-insider-betting-detection-prediction-markets</guid>
     </item>
     <item>
-      <title>Your Horoscope for the Full Flower Moon in Scorpio</title>
-      <link>https://www.cosmopolitan.com/lifestyle/a71140570/full-moon-in-scorpio-horoscope-may-2026/</link>
-      <description>The Full Flower Moon in Scorpio will occur on May 1, presenting as a micromoon. Astrological insights are provided for this lunar event.</description>
-      <category>Google</category>
-      <pubDate>Thu, 30 Apr 2026 11:00:00 +0000</pubDate>
-      <guid>https://www.cosmopolitan.com/lifestyle/a71140570/full-moon-in-scorpio-horoscope-may-2026/</guid>
-    </item>
-    <item>
-      <title>YouTube Premium is quietly winning the war against ad blockers</title>
-      <link>https://www.androidauthority.com/youtube-winning-war-against-ad-blockers-3662287/</link>
-      <description>YouTube has seen a rise in Premium subscribers, attributed to its ongoing efforts against ad blockers. This trend indicates a shift in user preferences towards ad-free experiences.</description>
-      <category>Google</category>
-      <pubDate>Thu, 30 Apr 2026 10:58:58 +0000</pubDate>
-      <guid>https://www.androidauthority.com/youtube-winning-war-against-ad-blockers-3662287/</guid>
-    </item>
-    <item>
-      <title>hf 1.13.0rc0</title>
-      <link>https://pypi.org/project/hf/1.13.0rc0/</link>
-      <description>A new command-line interface (CLI) has been extracted from the huggingface_hub library, facilitating interaction with the Hugging Face Hub. This tool aims to streamline AI model management.</description>
-      <category>Open Source</category>
-      <pubDate>Thu, 30 Apr 2026 10:56:13 +0000</pubDate>
-      <guid>https://pypi.org/project/hf/1.13.0rc0/</guid>
-    </item>
-    <item>
-      <title>Italy’s antitrust authority closes probes into DeepSeek, Mistral, and Nova AI over AI hallucination disclosures</title>
-      <link>https://thenextweb.com/news/agcm-deepseek-mistral-nova-ai-hallucination-probes/</link>
-      <description>Italy's antitrust authority has closed investigations into DeepSeek, Mistral, and Nova AI after they agreed to transparency commitments regarding AI hallucinations. This sets a standard for AI accountability in the industry.</description>
-      <category>Google</category>
-      <pubDate>Thu, 30 Apr 2026 10:55:52 +0000</pubDate>
-      <guid>https://thenextweb.com/news/agcm-deepseek-mistral-nova-ai-hallucination-probes/</guid>
-    </item>
-    <item>
-      <title>litert-torch-nightly 0.10.0.dev20260430</title>
-      <link>https://pypi.org/project/litert-torch-nightly/0.10.0.dev20260430/</link>
-      <description>The LiteRT library has introduced support for PyTorch model conversion, enhancing the efficiency of deploying models. This update is aimed at improving performance in AI applications.</description>
+      <title>Meta abandons open-source Llama for proprietary Muse Spark</title>
+      <link>https://thenewstack.io/meta-abandons-llama-spark/</link>
+      <description>Meta has transitioned from its open-source Llama model to the proprietary Muse Spark, leaving developers seeking alternatives and migration strategies.</description>
       <category>Meta</category>
-      <pubDate>Thu, 30 Apr 2026 10:51:01 +0000</pubDate>
-      <guid>https://pypi.org/project/litert-torch-nightly/0.10.0.dev20260430/</guid>
+      <pubDate>Thu, 30 Apr 2026 17:32:02 +0000</pubDate>
+      <guid>https://thenewstack.io/meta-abandons-llama-spark/</guid>
     </item>
     <item>
-      <title>llama-index-tools-swiss-truth 0.1.0</title>
-      <link>https://pypi.org/project/llama-index-tools-swiss-truth/0.1.0/</link>
-      <description>LlamaIndex has released tools for Swiss Truth, a certified knowledge base designed for AI agents. This aims to improve the reliability of AI interactions.</description>
-      <category>Meta</category>
-      <pubDate>Thu, 30 Apr 2026 10:45:53 +0000</pubDate>
-      <guid>https://pypi.org/project/llama-index-tools-swiss-truth/0.1.0/</guid>
+      <title>Blue Owl made 10x its money on SpaceX and has already sold half its position</title>
+      <link>https://thenextweb.com/news/blue-owl-spacex-10x-return-ipo-1-75-trillion/</link>
+      <description>Blue Owl's co-CEO revealed that the firm made ten times its investment in SpaceX, selling half its position as a hedge against AI-related credit losses.</description>
+      <category>xAI</category>
+      <pubDate>Thu, 30 Apr 2026 17:28:29 +0000</pubDate>
+      <guid>https://thenextweb.com/news/blue-owl-spacex-10x-return-ipo-1-75-trillion/</guid>
     </item>
     <item>
-      <title>openagentd added to PyPI</title>
-      <link>https://pypi.org/project/openagentd/</link>
-      <description>The openagentd package has been added to PyPI, enabling self-hosted AI agents with features like streaming chat and persistent memory. This development supports more complex AI interactions.</description>
-      <category>GitHub Copilot</category>
-      <pubDate>Thu, 30 Apr 2026 10:39:09 +0000</pubDate>
-      <guid>https://pypi.org/project/openagentd/</guid>
+      <title>Elon Musk Clashes with OpenAI's Lawyer in Trial to Define Future of AI</title>
+      <link>https://www.breitbart.com/tech/2026/04/30/elon-musk-clashes-with-openais-lawyer-in-trial-to-define-future-of-ai/</link>
+      <description>Elon Musk faced off against OpenAI's lawyer in a pivotal trial that could influence future AI regulations and development paths.</description>
+      <category>xAI</category>
+      <pubDate>Thu, 30 Apr 2026 17:27:28 +0000</pubDate>
+      <guid>https://www.breitbart.com/tech/2026/04/30/elon-musk-clashes-with-openais-lawyer-in-trial-to-define-future-of-ai/</guid>
+    </item>
+    <item>
+      <title>Meet the AI Family Butler That Google Play Story Featured Just Two Months After Launch</title>
+      <link>https://www.globenewswire.com/news-release/2026/04/30/3285313/0/en/Meet-the-AI-Family-Butler-That-Google-Play-Story-Featured-Just-Two-Months-After-Launch.html</link>
+      <description>An AI family assistant application gained attention on Google Play shortly after its launch, showcasing its utility in managing household tasks.</description>
+      <category>Google</category>
+      <pubDate>Thu, 30 Apr 2026 17:27:00 +0000</pubDate>
+      <guid>https://www.globenewswire.com/news-release/2026/04/30/3285313/0/en/Meet-the-AI-Family-Butler-That-Google-Play-Story-Featured-Just-Two-Months-After-Launch.html</guid>
+    </item>
+    <item>
+      <title>Sam Altman’s ChatGPT Couldn’t Stop Obsessing Over Goblins</title>
+      <link>https://www.motherjones.com/politics/2026/04/sam-altmans-chatgpt-couldnt-stop-obsessing-over-goblins/</link>
+      <description>OpenAI disclosed that it had to implement specific instructions in ChatGPT to prevent it from obsessively referencing fantastical creatures like goblins.</description>
+      <category>xAI</category>
+      <pubDate>Thu, 30 Apr 2026 17:24:20 +0000</pubDate>
+      <guid>https://www.motherjones.com/politics/2026/04/sam-altmans-chatgpt-couldnt-stop-obsessing-over-goblins/</guid>
+    </item>
+    <item>
+      <title>LiveOne (Nasdaq: LVO) and Subsidiary PodcastOne (Nasdaq: PODC) Launch PodcastOneAI, Unlocking 200,000+ Hours Across $20B+ AI Training and $40B+ Data Monetization Markets</title>
+      <link>https://www.globenewswire.com/news-release/2026/04/30/3285310/0/en/LiveOne-Nasdaq-LVO-and-Subsidiary-PodcastOne-Nasdaq-PODC-Launch-PodcastOneAI-Unlocking-200-000-Hours-Across-20B-AI-Training-and-40B-Data-Monetization-Markets.html</link>
+      <description>LiveOne and PodcastOne have launched PodcastOneAI, aiming to monetize over 200,000 hours of content in the AI training and data markets.</description>
+      <category>AI Foundry</category>
+      <pubDate>Thu, 30 Apr 2026 17:19:00 +0000</pubDate>
+      <guid>https://www.globenewswire.com/news-release/2026/04/30/3285310/0/en/LiveOne-Nasdaq-LVO-and-Subsidiary-PodcastOne-Nasdaq-PODC-Launch-PodcastOneAI-Unlocking-200-000-Hours-Across-20B-AI-Training-and-40B-Data-Monetization-Markets.html</guid>
+    </item>
+    <item>
+      <title>Google AI is creeping into every app on your phone. Here is how to disable it</title>
+      <link>https://www.androidcentral.com/apps-software/disable-google-ai-across-apps-on-your-phone</link>
+      <description>Users can learn how to disable Gemini AI features integrated into various Google apps, reflecting concerns over AI's pervasive presence.</description>
+      <category>Google</category>
+      <pubDate>Thu, 30 Apr 2026 17:17:23 +0000</pubDate>
+      <guid>https://www.androidcentral.com/apps-software/disable-google-ai-across-apps-on-your-phone</guid>
+    </item>
+    <item>
+      <title>gemcli 2.0.0</title>
+      <link>https://pypi.org/project/gemcli/2.0.0/</link>
+      <description>GemCLI 2.0.0 introduces an autonomous AI coding agent with a local web UI and Telegram control, enhancing user access to AI tools.</description>
+      <category>Google</category>
+      <pubDate>Thu, 30 Apr 2026 17:15:53 +0000</pubDate>
+      <guid>https://pypi.org/project/gemcli/2.0.0/</guid>
+    </item>
+    <item>
+      <title>Wall Street Analyst Warns Hyperscaler Custom Chips Pose ‘Significant Risk’ to NVIDIA’s Dominance</title>
+      <link>https://247wallst.com/investing/2026/04/30/wall-street-analyst-warns-hyperscaler-custom-chips-pose-significant-risk-to-nvidias-dominance/</link>
+      <description>An analyst warns that custom chips from hyperscalers could pose a significant risk to NVIDIA's market dominance in the semiconductor industry.</description>
+      <category>NVIDIA</category>
+      <pubDate>Thu, 30 Apr 2026 17:15:12 +0000</pubDate>
+      <guid>https://247wallst.com/investing/2026/04/30/wall-street-analyst-warns-hyperscaler-custom-chips-pose-significant-risk-to-nvidias-dominance/</guid>
     </item>
   </channel>
 </rss>
