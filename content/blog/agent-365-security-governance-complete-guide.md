@@ -399,7 +399,15 @@ flowchart TD
     F --> G["Compromised agent identities"]
 ```
 
-And here's the part that really keeps me up at night: agent building is now **democratised**. It's not just developers anymore. Anyone with a Copilot Studio licence can build an agent that has real permissions and touches real data.
+And here's the part that really keeps me up at night: agents are coming from **everywhere**. Not just one platform — at least five different places, each with different skill levels and security awareness:
+
+- **[Agent Builder](/blog/agent-builder-vs-copilot-studio-vs-foundry/#agent-builder)** — business users building FAQ agents in minutes, no code at all
+- **[Copilot Studio](/blog/agent-builder-vs-copilot-studio-vs-foundry/#copilot-studio)** — makers building workflow agents with low-code, real connectors, real data
+- **[Azure AI Foundry](/blog/agent-builder-vs-copilot-studio-vs-foundry/#foundry)** — developers building enterprise-grade agents with custom models
+- **First-party agents** — Microsoft's own prebuilt agents (Sales, Finance, IT) that ship with M365
+- **Third-party agents** — vendor agents from ServiceNow, SAP, Salesforce and others connecting to your tenant
+
+Every single one of these creates agents with real permissions and real data access. And your security team needs to see **all of them** — not just the ones built in-house. That's exactly what Defender does.
 
 ### Know What You Have — Agent Inventory
 
