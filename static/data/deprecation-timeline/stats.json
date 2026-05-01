@@ -1,30 +1,30 @@
 {
-  "generated": "2026-04-30T07:40:42.711652+00:00",
+  "generated": "2026-05-01T07:40:12.029190+00:00",
   "total": 52,
-  "active": 37,
-  "passed": 15,
-  "action_required": 36,
+  "active": 36,
+  "passed": 16,
+  "action_required": 35,
   "urgency": {
-    "critical": 2,
+    "critical": 1,
     "warning": 29,
     "watch": 6
   },
   "categories": {
-    "sharepoint": 4,
     "azure": 18,
     "windows": 6,
+    "sharepoint": 3,
     "office-apps": 6,
     "exchange": 2,
     "entra": 1
   },
   "types": {
-    "retirement": 17,
-    "end-of-support": 20
+    "end-of-support": 20,
+    "retirement": 16
   },
   "next_deadline": {
-    "title": "SharePoint Online Legacy Information Management Features Retirement",
-    "deadline": "2026-04-30",
-    "days_remaining": 0,
+    "title": ".NET 9 End of Support",
+    "deadline": "2026-05-12",
+    "days_remaining": 11,
     "urgency": "critical"
   },
   "category_meta": {
