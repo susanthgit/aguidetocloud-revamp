@@ -319,9 +319,9 @@
     <div class="sectool-panel" id="panel-faq" role="tabpanel">
     {{ if .Params.faq }}
     <div class="zt-faq-wrap">
-      <h2 style="color:var(--sectool-accent);margin-bottom:1rem">Frequently Asked Questions</h2>
+      <h2 class="zt-faq-heading">Frequently Asked Questions</h2>
       {{ range $i, $q := .Params.faq }}
-      <details open class="zt-faq-detail"><summary style="color:var(--sectool-accent);font-size:0.95rem;font-weight:700;padding:1rem 1.25rem;cursor:pointer">{{ add $i 1 }}. {{ $q.question }}</summary><p class="zt-faq-answer">{{ $q.answer }}</p></details>
+      <details {{ if eq $i 0 }}open{{ end }} class="zt-faq-detail"><summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary><p class="zt-faq-answer">{{ $q.answer }}</p></details>
       {{ end }}
     </div>
     {{ end }}
@@ -330,24 +330,12 @@
   </div>{{/* end sectool-container */}}
 </div>{{/* end sectool-page */}}
 
-{{/* ── Cross-tool ecosystem links ── */}}
-<div style="max-width:900px;margin:2rem auto;padding:0 1.5rem">
-  <h2 style="color:var(--text-secondary);font-size:1.1rem;text-align:center;margin-bottom:1.5rem">More Security & Admin Tools</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem">
-    <a href="/ca-builder/" style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }}</span><span style="color:var(--text-primary);font-weight:600;font-size:0.9rem">CA Policy Builder</span><br><small style="color:var(--text-tertiary)">Design Entra ID Conditional Access policies</small></a>
-    <a href="/ps-builder/" style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">{{ partial "icon.html" (dict "name" "laptop" "size" 14 "stroke" 1.5) }}</span><span style="color:var(--text-primary);font-weight:600;font-size:0.9rem">PowerShell Builder</span><br><small style="color:var(--text-tertiary)">Generate M365 admin scripts</small></a>
-    <a href="/purview-starter/" style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">{{ partial "icon.html" (dict "name" "tag" "size" 14 "stroke" 1.5) }}</span><span style="color:var(--text-primary);font-weight:600;font-size:0.9rem">Purview Starter Kit</span><br><small style="color:var(--text-tertiary)">Plan sensitivity labels & DLP</small></a>
-    <a href="/copilot-readiness/" style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:12px;padding:1.2rem;text-decoration:none;transition:border-color 0.2s"><span style="font-size:1.5rem;display:block;margin-bottom:0.5rem">{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }}</span><span style="color:var(--text-primary);font-weight:600;font-size:0.9rem">Copilot Readiness</span><br><small style="color:var(--text-tertiary)">Check Copilot deployment readiness</small></a>
-  </div>
-  <p style="text-align:center;margin-top:1.5rem;color:var(--text-muted);font-size:0.85rem">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/" style="color:var(--accent)">Share it here →</a></p>
-</div>
-
   <nav class="zt-nav" aria-label="Tools navigation">
     <a href="/free-tools/">← All Tools</a>
   </nav>
 
 {{/* ── Pagefind searchable block ── */}}
-<div data-pagefind-body aria-hidden="true" style="display:none">
+<div data-pagefind-body aria-hidden="true" hidden>
   <h2>M365 Security Toolkit</h2>
   <p>Free M365 security assessment tool aligned to CIS benchmarks. Generate SPF DKIM DMARC email DNS records. Plan admin roles. Get prioritised remediation scripts with PowerShell. Map to CIS NIST ISO 27001 Essential Eight compliance frameworks. No tenant access no admin credentials needed. Security hardening self-assessment for Microsoft 365 tenants.</p>
 </div>

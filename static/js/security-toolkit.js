@@ -884,7 +884,7 @@
         var cardsHtml = '';
         findings.forEach(function (f, fi) {
           var q = f.q;
-          var effortLabel = f.effortKey === 'quick' ? '⚡ Quick Win' : f.effortKey === 'halfday' ? '🔧 Half-Day' : '📋 Project';
+          var effortLabel = f.effortKey === 'quick' ? 'Quick Win' : f.effortKey === 'halfday' ? 'Half-Day' : 'Project';
           var impactClass = f.severity;
 
           cardsHtml += '<div class="sectool-action-card ' + f.severity + '">'
@@ -1197,7 +1197,7 @@
       + '<tr style="border-bottom:1px solid rgba(255,255,255,0.1)"><th style="text-align:left;padding:0.5rem;color:rgba(255,255,255,0.5)">Category</th><th style="text-align:right;padding:0.5rem;color:rgba(255,255,255,0.5)">Score</th><th style="text-align:left;padding:0.5rem;color:rgba(255,255,255,0.5)">Status</th></tr>';
     CATEGORIES.forEach(function (cat) {
       var cs = scores.categories[cat.id];
-      var status = cs.pct >= 80 ? '✅ Good' : cs.pct >= 60 ? '🟡 Needs work' : cs.pct >= 40 ? '🟠 At risk' : '🔴 Critical';
+      var status = cs.pct >= 80 ? 'Good' : cs.pct >= 60 ? 'Needs work' : cs.pct >= 40 ? 'At risk' : 'Critical';
       var color = cs.pct >= 80 ? '#22C55E' : cs.pct >= 60 ? '#EAB308' : cs.pct >= 40 ? '#F97316' : '#EF4444';
       html += '<tr style="border-bottom:1px solid rgba(255,255,255,0.04)"><td style="padding:0.5rem;color:rgba(255,255,255,0.7)">'
         + cat.icon + ' ' + esc(cat.name) + '</td><td style="text-align:right;padding:0.5rem;font-weight:700;color:' + color + '">'
