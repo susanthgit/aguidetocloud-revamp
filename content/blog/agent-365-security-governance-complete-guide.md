@@ -44,7 +44,9 @@ The agent happily compiled a summary — including supplier bank account numbers
 
 That's the moment the room went quiet.
 
-Here's the thing: **we've spent 20 years building security frameworks for people**. Identity. Access control. Data protection. Threat detection. Then AI agents arrived and we're essentially back to square one. Your agents can read emails, access SharePoint, call external APIs, and even talk to *other* agents. And most organisations have zero governance for any of it.
+I see this all the time with customers. Someone in Marketing builds an agent that reads SharePoint. Someone in Finance builds one that processes invoices. Someone in HR builds one that answers policy questions. Nobody told IT. Nobody checked what data these agents can access. And nobody has a plan for when the person who built them moves to a different team — or leaves the company entirely.
+
+That's the gap. We've got Entra for people, Intune for devices — but until now, nothing for agents.
 
 **Agent 365 went live today** (May 1, 2026), and it's Microsoft's answer to this problem. Think of it as the HR department, security team, and compliance office — all rolled into one — but for your AI agents. It ties together Entra, Purview, and Defender into a unified governance layer.
 
@@ -148,6 +150,36 @@ This is the bit I love. Every agent **must** have a human sponsor — like a lin
 - What data the agent accesses
 - Whether the agent should keep running
 
+Here's what it actually looks like in Entra. This is the Procurement Agent — notice it has two sponsors assigned:
+
+<p><img src="/images/blog/agent-365-security/entra-agent-sponsors.webp" alt="Microsoft Entra admin center showing the Procurement Agent's Owners and sponsors page — two users assigned as sponsors with their names, type, and email addresses" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+See the left nav? There's a dedicated **"Agent identities"** section in Entra now. And for each agent, you get an "Owners and sponsors" page — just like you'd see managers on a user profile. The sponsors here are Hohepa and Alice. If either of them leaves the company, the lifecycle policy kicks in (more on that in a second).
+
+**Why two sponsors?** Same reason critical systems have backup admins. If one sponsor is on holiday or leaves, the other keeps the agent governed. No single point of failure.
+
+> 💡 **Real-world scenario:** Your Finance team builds a "Budget Reconciliation Agent" that reads every department's spending data. Without a sponsor, nobody is accountable when that agent starts pulling data it shouldn't. With a sponsor, you have a human who gets the call when something goes wrong — and who has to justify the agent's access in quarterly reviews.
+
+### 3. Automate Lifecycle — What Happens When People Leave
+
+Here's the question every IT admin should be asking: *"What happens to the agent when its creator leaves?"*
+
+Without lifecycle policies, the answer is: nothing. The agent keeps running. With its old permissions. Indefinitely. That's terrifying.
+
+Entra's **Lifecycle Workflows** now handle agents. Here's the actual configuration:
+
+<p><img src="/images/blog/agent-365-security/entra-lifecycle-workflows.webp" alt="Entra ID Governance Lifecycle Workflows showing an Employee job profile change workflow with three automated tasks — notify manager, notify about sponsorship changes, and notify co-sponsors" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+This is a lifecycle workflow triggered by an **"Employee job profile change"** — which includes leaving the company. Look at the three automated tasks:
+
+1. **Send email to notify manager of user move** — the sponsor's manager gets alerted
+2. **Send email to manager about sponsorship changes** — the new manager is told they've inherited agent responsibility
+3. **Send email to co-sponsors about sponsor changes** — the backup sponsor knows they're now the primary
+
+No human has to remember to do this. It's automated. The moment someone's profile changes in Entra, the agent governance follows.
+
+> 💡 **Think of it like this:** When an employee leaves your company, their Entra account gets disabled and their devices get wiped by Intune. Now, their agents get reassigned or deactivated by lifecycle workflows. Same principle, extended to agents.
+
 ```mermaid
 flowchart TD
     A["Agent Created"] --> B["Sponsor Assigned<br/>(human owner)"]
@@ -161,13 +193,24 @@ flowchart TD
     H["⚠️ Sponsor Leaves Company"] -.->|"Automated policy"| I["Reassign Sponsor<br/>or Deactivate Agent"]
 ```
 
-> 💡 **Why sponsors matter so much:** Without them, you get "orphaned agents" — their creator left the company six months ago, but the agent still runs every morning at 6am with full SharePoint access. I've seen this in real tenants. It's terrifying.
+### 4. Access Packages — Time-Limited, Auditable Permissions
 
-### 3. Protect — Time-Limited Access
+This is Entra ID Governance's **access packages** extended to agents. If you've used these for guest users or contractors before, it's the exact same concept — but for agents.
 
-Agent access is governed through **access packages** — the same Entra ID Governance feature you might already use for guest users. An agent can get access to a SharePoint site for 90 days. When it expires, access is automatically revoked. No human needs to remember.
+Here's what it looks like when a sponsor requests access for their agent:
 
-Think of it like a contractor badge. It has an expiry date printed on it.
+<p><img src="/images/blog/agent-365-security/entra-access-packages.webp" alt="Entra My Access portal showing a ServiceNow Access Package being requested for a Sponsored agent — the Procurement Agent — with options for Sponsored agent or Service principal" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+A few things to notice:
+
+- The sponsor (Chirag) is requesting a **"ServiceNow Access Package"** for the Procurement Agent
+- There's a choice between **"Sponsored agent"** and **"Service principal"** — agents get their own category
+- This goes through an **approval workflow** before the agent gets access
+- The access has an **expiry date** — it's not permanent
+
+> 💡 **Real-world scenario:** Your IT team builds a "Helpdesk Triage Agent" that needs access to ServiceNow to create tickets. Instead of giving it permanent API access, the sponsor requests a 90-day access package. After 90 days, access expires automatically. If the agent still needs it, the sponsor requests a renewal — which goes through approval again. Every access decision is logged and auditable.
+
+**Why this matters for compliance:** Every access package request creates an audit trail. You can show auditors exactly *who* approved *which* agent to access *what resource* and *for how long*. Try doing that with a manually created service account.
 
 ---
 
