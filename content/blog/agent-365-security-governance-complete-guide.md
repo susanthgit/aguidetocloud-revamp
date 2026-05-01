@@ -1,5 +1,5 @@
 ---
-title: "Agent 365 Security & Governance — A Plain-English Guide"
+title: "Agent 365 Security & Governance — Simplified for IT Pros"
 description: "Agent 365 just went GA. Here's how Entra, Purview, and Defender secure your AI agents — with real screenshots, scenarios, and no marketing fluff."
 date: 2026-04-30
 lastmod: 2026-05-01
