@@ -2322,11 +2322,11 @@ pre:hover .code-copy-btn { opacity: 1; }
 }
 
 .zt-cert-btn--buy {
-  background: var(--success, #22C55E);
+  background: #16a34a;
   color: #fff;
 }
 .zt-cert-btn--buy:hover {
-  opacity: 0.85;
+  background: #15803d;
 }
 
 .zt-cert-exam-features {
