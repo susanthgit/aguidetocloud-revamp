@@ -153,7 +153,40 @@ Before we go deep, here's the mental model. Agent 365 gives every agent four thi
 
 That's it. Four capabilities. The genius of Agent 365 is that it doesn't reinvent the wheel — it extends Entra, Purview, and Defender to cover agents. If you already know those tools, you're 80% of the way there.
 
-Let me walk through each one with real screenshots.
+Here's how they all fit together. Agent 365 sits across the top as the governance layer, with each security product handling its specialty underneath:
+
+```mermaid
+flowchart TD
+    A["Agent 365 — The Governance Layer"] --> B["M365 Admin Center<br/>Registry · Approval · ROI"]
+    A --> C["Microsoft Entra<br/>Agent ID · Sponsors · Lifecycle"]
+    A --> D["Microsoft Purview<br/>DLP · Labels · Compliance"]
+    A --> E["Microsoft Defender<br/>Inventory · Posture · Threats"]
+    
+    B --> F["IT Teams"]
+    C --> G["Security Teams"]
+    D --> G
+    E --> H["SOC Teams"]
+```
+
+And it's not just for Microsoft agents. Agent 365 connects to **Foundry** (for dev teams building custom agents) and **Copilot Studio** (for makers building no-code agents) — bringing them all under one governance umbrella.
+
+Let me walk through each capability with real screenshots.
+
+---
+
+## The M365 Admin Center — Your Starting Point {#admin-center}
+
+Before we get into Entra, Purview, and Defender, there's a simpler starting point that every IT admin should know about: the **M365 Admin Center**.
+
+This is where you get the "big picture" view of agents in your organisation. Three principles guide how it works:
+
+**1. Secure by Default** — When someone creates a new agent, it doesn't get a blank cheque. You set policies that define who can create agents, who can publish them, and what approval workflow they go through. Every agent starts governed — not open by default.
+
+**2. IT-Led Guardrails** — Agents only get access to the apps and resources they actually need. No more "let's give it Global Reader to make it work." You enforce least privilege from day one.
+
+**3. Visibility** — You can see every agent's usage, performance, and cost. Are agents delivering ROI? Which ones are being used? Which ones are sitting idle but still consuming resources? This is the data you need for budget conversations.
+
+> 💡 **Real-world scenario:** Your CEO asks: "We spent $50,000 on agent infrastructure this quarter. What did we get for it?" Without the Admin Center dashboards, you're scrambling for anecdotes. With them, you pull up usage metrics, task completion rates, and time saved per agent. That's not a cost — that's an investment with receipts.
 
 ---
 
@@ -243,9 +276,19 @@ A few things to notice:
 
 ## Data Rules — Purview for Agents {#data-rules--purview}
 
-This section is where it gets real. I've got screenshots from Microsoft's own demo environments showing exactly what happens when an agent tries to leak data.
+If you work in data security or compliance, your day probably looks something like this:
 
-But first — to understand *why* agent data protection is harder than user data protection, you need to see how data actually flows through an agent. This was one of the most useful slides in the briefing:
+1. Investigate and respond to data incidents
+2. Classify and protect sensitive data
+3. Evaluate and strengthen DLP policies
+4. Continuously improve data protection posture
+5. Advise on secure data use for new projects
+
+Now add "agents" to every single one of those tasks. That's what just happened. Every workflow your data security team already runs for *people* now needs to cover *agents* too. The good news: Purview handles both with the same tools.
+
+I've got screenshots from Microsoft's own demo environments showing exactly what happens when an agent tries to leak data.
+
+But first — to understand *why* agent data protection is harder than user data protection, you need to see how data actually flows through an agent:
 
 ```mermaid
 flowchart TD
@@ -333,7 +376,17 @@ Look at what got flagged: someone asking an agent to *"rewrite this expense desc
 
 If Purview is the "rules" (what agents can and can't do with data), Defender is the "security cameras" (watching for people trying to break in or agents behaving strangely).
 
-Here's something that scares me: AI agents create **entirely new attack surfaces** that didn't exist before.
+Here's what scares me about the current landscape: **anyone can build an agent now**. It's not just developers with Azure Foundry. Your Marketing team can build agents in Copilot Studio. Your finance analyst can build one in Agent Builder. Both platforms give agents real permissions and real data access — but neither platform requires security training.
+
+| Who's Building Agents | Platform | Skill Level | Risk |
+|----------------------|----------|-------------|------|
+| **Developers** | Azure AI Foundry | Pro-code (Python, C#) | Know about security but can still misconfigure |
+| **Makers / Power Users** | Copilot Studio | Low-code / no-code | May not think about security at all |
+| **Business Users** | Agent Builder | No-code | Rarely aware of data sensitivity implications |
+
+This is the "AI democratisation" problem. The more people who can build agents, the more agents exist without governance. And Defender is the safety net.
+
+AI agents also create **entirely new attack surfaces** that didn't exist before.
 
 ```mermaid
 flowchart TD
