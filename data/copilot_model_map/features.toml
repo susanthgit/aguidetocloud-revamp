@@ -1,0 +1,130 @@
+# Copilot Model Map — Feature Definitions
+# Each M365 Copilot feature/experience that uses AI models
+
+[copilot-app]
+name = "M365 Copilot App"
+short = "Copilot App"
+category = "core"
+icon = "brain"
+description = "The standalone Microsoft 365 Copilot app — available at copilot.microsoft.com and as a Teams/mobile app. The primary Copilot surface for most users."
+doc_url = "https://copilot.microsoft.com"
+
+[bizchat]
+name = "Copilot Chat (BizChat)"
+short = "Copilot Chat"
+category = "core"
+icon = "message-square"
+description = "The main Copilot chat surface across M365. Q&A, summaries, reasoning across Microsoft Graph and web."
+doc_url = "https://support.microsoft.com/copilot"
+
+[copilot-word]
+name = "Copilot in Word"
+short = "Word"
+category = "apps"
+icon = "file-text"
+description = "Draft documents, rewrite sections, summarise content, and transform text in Microsoft Word."
+doc_url = "https://support.microsoft.com/copilot-word"
+
+[copilot-excel]
+name = "Copilot in Excel"
+short = "Excel"
+category = "apps"
+icon = "chart-bar"
+description = "Analyse data, create formulas, generate charts, and get insights from spreadsheets."
+doc_url = "https://support.microsoft.com/copilot-excel"
+
+[copilot-powerpoint]
+name = "Copilot in PowerPoint"
+short = "PowerPoint"
+category = "apps"
+icon = "monitor"
+description = "Create presentations, design slides, summarise decks, and organise content."
+doc_url = "https://support.microsoft.com/copilot-powerpoint"
+
+[copilot-outlook]
+name = "Copilot in Outlook"
+short = "Outlook"
+category = "apps"
+icon = "mail"
+description = "Draft emails, summarise threads, catch up on conversations, and schedule meetings."
+doc_url = "https://support.microsoft.com/copilot-outlook"
+
+[copilot-teams]
+name = "Copilot in Teams"
+short = "Teams"
+category = "apps"
+icon = "message-square"
+description = "Meeting summaries, chat recaps, action items, and real-time assistance during calls."
+doc_url = "https://support.microsoft.com/copilot-teams"
+
+[researcher]
+name = "Researcher Agent"
+short = "Researcher"
+category = "agents"
+icon = "search"
+description = "Built-in agent for deep research. Searches web and enterprise data, synthesises findings, and cites sources. Uses multi-model critique."
+doc_url = "https://www.microsoft.com/en-us/microsoft-365/blog/2025/03/25/introducing-researcher-and-analyst-in-microsoft-365-copilot/"
+
+[analyst]
+name = "Analyst Agent"
+short = "Analyst"
+category = "agents"
+icon = "chart-bar"
+description = "Built-in agent for data analysis. Step-by-step analytical reasoning with Python execution and spreadsheet-heavy workloads."
+doc_url = "https://www.microsoft.com/en-us/microsoft-365/blog/2025/03/25/introducing-researcher-and-analyst-in-microsoft-365-copilot/"
+
+[cowork]
+name = "Copilot Cowork"
+short = "Cowork"
+category = "agents"
+icon = "brain"
+description = "Long-running, goal-based agent that plans, executes, and tracks work across M365 apps. Handles multi-step business workflows."
+doc_url = "https://www.microsoft.com/en-us/microsoft-365/blog/2025/11/18/introducing-copilot-actions-and-new-agents/"
+
+[copilot-studio]
+name = "Copilot Studio"
+short = "Studio"
+category = "studio"
+icon = "settings"
+description = "Build custom agents and automations. The only place where creators explicitly choose which AI model to use."
+doc_url = "https://learn.microsoft.com/microsoft-copilot-studio/authoring-select-agent-model"
+
+[agent-mode]
+name = "Agent Mode (General)"
+short = "Agent Mode"
+category = "agents"
+icon = "brain"
+description = "The agentic orchestration layer that powers autonomous multi-step actions across Office apps."
+doc_url = "https://support.microsoft.com/copilot"
+
+[word-agent]
+name = "Word Agent"
+short = "Word Agent"
+category = "agents"
+icon = "file-text"
+description = "Autonomous agent in Word that drafts, rewrites, and edits entire documents with multi-step reasoning. Can use Claude when Anthropic is enabled."
+doc_url = "https://support.microsoft.com/copilot-word"
+
+[excel-agent]
+name = "Excel Agent"
+short = "Excel Agent"
+category = "agents"
+icon = "chart-bar"
+description = "Autonomous agent in Excel that analyses data, builds formulas, and creates charts through multi-step reasoning. Claude can be selected."
+doc_url = "https://support.microsoft.com/copilot-excel"
+
+[ppt-agent]
+name = "PowerPoint Agent"
+short = "PPT Agent"
+category = "agents"
+icon = "monitor"
+description = "Autonomous agent in PowerPoint that creates and redesigns entire presentations through multi-step reasoning."
+doc_url = "https://support.microsoft.com/copilot-powerpoint"
+
+[copilot-pages]
+name = "Copilot Pages"
+short = "Pages"
+category = "core"
+icon = "file-text"
+description = "Collaborative AI canvas for sharing and refining Copilot responses with colleagues."
+doc_url = "https://support.microsoft.com/copilot-pages"

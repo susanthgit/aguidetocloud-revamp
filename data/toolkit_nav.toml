@@ -114,6 +114,18 @@ visual = "grid"
 is_tool = true
 
 [[tools]]
+url = "/copilot-model-map/"
+emoji = "🧠"
+icon = "brain"
+name = "Copilot Model Map"
+short = "Model Map"
+desc = "Which AI model powers each M365 Copilot feature — GPT, Claude, Phi"
+color = "#6366F1"
+category = "copilot-ai"
+visual = "scatter"
+is_tool = true
+
+[[tools]]
 url = "/roi-calculator/"
 emoji = "💰"
 icon = "dollar-sign"

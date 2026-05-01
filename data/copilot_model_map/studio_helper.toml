@@ -1,0 +1,74 @@
+# Copilot Studio Model Picker — Decision Helper
+# Interactive questionnaire to recommend which model to use in Copilot Studio
+
+[[questions]]
+id = "task-type"
+text = "What will your agent primarily do?"
+options = [
+  { label = "Answer questions from enterprise data", value = "qa", weights = { "gpt-5-4" = 3, "gpt-5-3" = 2, "claude-opus-4-6" = 2, "claude-sonnet-4" = 1 } },
+  { label = "Analyse data and create reports", value = "analysis", weights = { "gpt-5-4" = 3, "claude-opus-4-6" = 2, "gpt-5-3" = 1 } },
+  { label = "Draft and review documents", value = "writing", weights = { "gpt-5-4" = 2, "claude-opus-4-6" = 3, "claude-sonnet-4" = 2, "gpt-5-3" = 1 } },
+  { label = "Automate multi-step workflows", value = "automation", weights = { "claude-opus-4-6" = 3, "gpt-5-4" = 2, "claude-sonnet-4" = 1 } },
+  { label = "Handle images, audio, or files", value = "multimodal", weights = { "gpt-4o" = 3, "gpt-5-4" = 2 } },
+  { label = "Quick lookups and simple tasks", value = "simple", weights = { "gpt-5-3" = 3, "claude-sonnet-4" = 2 } },
+]
+
+[[questions]]
+id = "speed-priority"
+text = "How important is response speed?"
+options = [
+  { label = "Speed is critical — users expect instant answers", value = "fast", weights = { "gpt-5-3" = 3, "claude-sonnet-4" = 2, "gpt-4o" = 1 } },
+  { label = "Balanced — quality matters more than milliseconds", value = "balanced", weights = { "gpt-5-4" = 2, "claude-opus-4-6" = 2, "claude-sonnet-4" = 1 } },
+  { label = "Accuracy is everything — take the time needed", value = "quality", weights = { "claude-opus-4-6" = 3, "gpt-5-4" = 2 } },
+]
+
+[[questions]]
+id = "accuracy-need"
+text = "How critical is factual accuracy?"
+options = [
+  { label = "Mission-critical — errors have real consequences", value = "critical", weights = { "claude-opus-4-6" = 3, "gpt-5-4" = 1 } },
+  { label = "Important but drafts are reviewed by humans", value = "important", weights = { "gpt-5-4" = 2, "claude-sonnet-4" = 2, "claude-opus-4-6" = 1 } },
+  { label = "Low stakes — creative or brainstorming use", value = "low", weights = { "gpt-5-3" = 2, "claude-sonnet-4" = 2, "gpt-5-4" = 1 } },
+]
+
+[[questions]]
+id = "context-size"
+text = "How much context does the agent need to process?"
+options = [
+  { label = "Large documents or long conversations (50K+ tokens)", value = "large", weights = { "claude-opus-4-6" = 3, "gpt-5-4" = 2 } },
+  { label = "Medium — typical business emails and docs", value = "medium", weights = { "gpt-5-4" = 2, "gpt-5-3" = 2, "claude-sonnet-4" = 2 } },
+  { label = "Short inputs — forms, quick lookups", value = "short", weights = { "gpt-5-3" = 3, "claude-sonnet-4" = 2 } },
+]
+
+# Model recommendation blurbs
+[recommendations]
+
+  [recommendations.gpt-5-4]
+  headline = "GPT-5.4 — The All-Rounder"
+  why = "Best general-purpose choice. Strong at everything from Q&A to analysis. Good balance of speed and quality."
+  best_for = "Most enterprise agents, data analysis, general Q&A"
+  consider = "If accuracy is mission-critical, consider pairing with Claude for review."
+
+  [recommendations.gpt-5-3]
+  headline = "GPT-5.3 — The Speed Champion"
+  why = "Fastest responses at lowest cost. Great when users expect instant answers for simpler tasks."
+  best_for = "High-volume simple agents, quick lookups, FAQ bots"
+  consider = "Not ideal for complex reasoning or long documents."
+
+  [recommendations.claude-opus-4-6]
+  headline = "Claude Opus 4.6 — The Precision Expert"
+  why = "Excels at careful reasoning, fact-checking, and working with large documents. Best when accuracy matters most."
+  best_for = "Document review, compliance agents, research assistants"
+  consider = "Slower than GPT options. Best paired with GPT for speed-sensitive fallbacks."
+
+  [recommendations.claude-sonnet-4]
+  headline = "Claude Sonnet 4 — The Balanced Choice"
+  why = "Good quality at faster speeds than Opus. Strong instruction-following makes it reliable for structured workflows."
+  best_for = "Balanced agents, structured output, moderate complexity tasks"
+  consider = "For heavy reasoning, step up to Opus. For pure speed, GPT-5.3 may be better."
+
+  [recommendations.gpt-4o]
+  headline = "GPT-4o — The Multimodal Specialist"
+  why = "Best choice when your agent needs to process images, audio, or other non-text inputs."
+  best_for = "Vision agents, document scanning, audio processing"
+  consider = "For text-only tasks, newer GPT-5.x models are generally better."

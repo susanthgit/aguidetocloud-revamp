@@ -91,6 +91,16 @@ css_namespace = "readiness-*"
 body_class = "page-readiness"
 
 [[tools]]
+name = "Copilot Model Map"
+slug = "copilot-model-map"
+hex = "#6366F1"
+hue = 239
+name_friendly = "Indigo"
+category = "Copilot"
+css_namespace = "cmm-*"
+body_class = "page-copilot-model-map"
+
+[[tools]]
 name = "Copilot Feature Matrix"
 slug = "copilot-matrix"
 hex = "#60A5FA"

@@ -1,0 +1,314 @@
+{{ define "main" }}
+<!-- Pagefind: hidden searchable content for this JS-rendered page -->
+<div data-pagefind-body style="display:none" aria-hidden="true">
+  <h2>Copilot Model Map — Which AI Model Powers Each M365 Copilot Feature</h2>
+  <p>Interactive map showing which AI models (GPT-5, Claude, Phi-4, o3-mini) power each Microsoft 365 Copilot feature. See multi-model orchestration patterns, admin controls, and routing logic.</p>
+  <p>Features: BizChat, Copilot in Word, Excel, PowerPoint, Outlook, Teams, Researcher Agent, Analyst Agent, Copilot Cowork, Copilot Studio, Agent Mode, Copilot Pages.</p>
+  <p>Models: OpenAI GPT-5.4, GPT-5.3, GPT-4o, Anthropic Claude Opus 4.6, Claude Sonnet 4, Microsoft Phi-4, OpenAI o3-mini.</p>
+</div>
+<link rel="stylesheet" href="/css/copilot-model-map.css?v={{ site.Params.cache_version }}">
+
+{{/* ── Load TOML data ── */}}
+{{ $dataDir := hugo.Data.copilot_model_map }}
+{{ $modelsRaw := $dataDir.models | default dict }}
+{{ $featuresRaw := $dataDir.features | default dict }}
+{{ $relsData := $dataDir.relationships | default dict }}
+{{ $relationships := $relsData.relationships | default slice }}
+{{ $patterns := $relsData.patterns | default dict }}
+{{ $changelog := ($dataDir.changelog).entries | default slice }}
+{{ $studioHelper := $dataDir.studio_helper | default dict }}
+
+{{/* Compute max last_verified date from relationships */}}
+{{ $maxDate := "" }}
+{{ range $relationships }}
+  {{ if gt (.last_verified | default "") $maxDate }}{{ $maxDate = .last_verified }}{{ end }}
+{{ end }}
+
+{{/* Convert model map to array with IDs */}}
+{{ $models := slice }}
+{{ range $key, $val := $modelsRaw }}
+  {{ $models = $models | append (merge $val (dict "id" $key)) }}
+{{ end }}
+
+{{/* Convert feature map to array with IDs */}}
+{{ $features := slice }}
+{{ range $key, $val := $featuresRaw }}
+  {{ $features = $features | append (merge $val (dict "id" $key)) }}
+{{ end }}
+
+{{/* Inject data for JS */}}
+<script>
+  window.__cmmData = {
+    models: {{ $models | jsonify | safeJS }},
+    features: {{ $features | jsonify | safeJS }},
+    relationships: {{ $relationships | jsonify | safeJS }},
+    patterns: {{ $patterns | jsonify | safeJS }},
+    changelog: {{ $changelog | jsonify | safeJS }},
+    studioHelper: {{ $studioHelper | jsonify | safeJS }}
+  };
+  window.__cmmIcons = {
+    {{- range $features -}}
+      {{- if .icon -}}
+        "{{ .id }}": {{ (partial "icon.html" (dict "name" .icon "size" 16 "stroke" 1.5)) | jsonify | safeJS }},
+      {{- end -}}
+    {{- end -}}
+  };
+</script>
+
+{{/* ── SEO: JSON-LD ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Copilot Model Map",
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $faq := .Params.faq }}{{ if $i }},{{ end }}
+    { "@type": "Question", "name": {{ $faq.question | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $faq.answer | jsonify }} } }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+<div class="cmm-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Copilot Model Map") }}
+
+  {{/* ── Tabs ── */}}
+  <div class="cmm-tabs zen-tabs" role="tablist" aria-label="Copilot Model Map sections">
+    <button class="cmm-tab zen-tab active" data-tab="map" role="tab" id="tab-map" aria-selected="true" aria-controls="panel-map" tabindex="0">Model Map</button>
+    <button class="cmm-tab zen-tab" data-tab="models" role="tab" id="tab-models" aria-selected="false" aria-controls="panel-models" tabindex="-1">Models</button>
+    <button class="cmm-tab zen-tab" data-tab="patterns" role="tab" id="tab-patterns" aria-selected="false" aria-controls="panel-patterns" tabindex="-1">How It Works</button>
+    <button class="cmm-tab zen-tab" data-tab="admin" role="tab" id="tab-admin" aria-selected="false" aria-controls="panel-admin" tabindex="-1">Admin Guide</button>
+    <button class="cmm-tab zen-tab" data-tab="studio" role="tab" id="tab-studio" aria-selected="false" aria-controls="panel-studio" tabindex="-1">Studio Picker</button>
+    <button class="cmm-tab zen-tab" data-tab="timeline" role="tab" id="tab-timeline" aria-selected="false" aria-controls="panel-timeline" tabindex="-1">Timeline</button>
+    <button class="cmm-tab zen-tab" data-tab="faq" role="tab" id="tab-faq" aria-selected="false" aria-controls="panel-faq" tabindex="-1">FAQ</button>
+  </div>
+
+  {{/* ═══ TAB 1: MODEL MAP ═══ */}}
+  <div class="cmm-panel" id="panel-map" role="tabpanel" aria-labelledby="tab-map">
+    <div class="cmm-map-controls">
+      <div class="cmm-filter-row">
+        <span class="cmm-filter-label">Filter by:</span>
+        <button class="cmm-filter-btn active" data-filter="all">All</button>
+        <button class="cmm-filter-btn" data-filter="core">Core</button>
+        <button class="cmm-filter-btn" data-filter="apps">Office Apps</button>
+        <button class="cmm-filter-btn" data-filter="agents">Agents</button>
+        <button class="cmm-filter-btn" data-filter="studio">Studio</button>
+      </div>
+      <div class="cmm-controls-right">
+        <button class="cmm-export-btn btn-secondary" id="cmm-export-png" title="Download as PNG">↓ PNG</button>
+        <button class="cmm-export-btn btn-secondary" id="cmm-export-table" title="Copy as text table for Word/email">⎘ Copy as Table</button>
+        <div class="cmm-view-toggle">
+          <button class="cmm-view-btn" data-view="matrix" title="Matrix view">Matrix</button>
+          <button class="cmm-view-btn active" data-view="visual" title="Visual map">Visual</button>
+        </div>
+      </div>
+    </div>
+
+    {{/* Matrix view — secondary, scannable */}}
+    <div class="cmm-matrix-view" id="cmm-matrix" style="display:none;">
+      <div class="cmm-matrix-wrap">
+        <table class="cmm-matrix-table">
+          <thead>
+            <tr>
+              <th class="cmm-matrix-corner">Feature</th>
+              <th class="cmm-matrix-th" id="cmm-matrix-models"><!-- JS fills model columns --></th>
+            </tr>
+          </thead>
+          <tbody id="cmm-matrix-body">
+            <!-- JS renders rows -->
+          </tbody>
+        </table>
+      </div>
+      <p class="cmm-matrix-hint">Click any cell to see details. Hover a column header to highlight all features using that model.</p>
+    </div>
+
+    {{/* Visual connection map — default view */}}
+    <div class="cmm-visual-view" id="cmm-visual">
+      <div class="cmm-visual-topbar">
+        <p class="cmm-visual-cta">👆 Click any feature or model to highlight its connections</p>
+        <div class="cmm-visual-legend">
+          <span class="cmm-visual-legend-item"><span class="cmm-vl-line cmm-vl-primary"></span> Primary model</span>
+          <span class="cmm-visual-legend-item"><span class="cmm-vl-line cmm-vl-other"></span> Secondary / Fallback / Reviewer</span>
+        </div>
+      </div>
+      <div class="cmm-visual-container">
+        <div class="cmm-visual-col cmm-features-col" id="cmm-vis-features">
+          <!-- JS renders feature nodes -->
+        </div>
+        <svg class="cmm-visual-svg" id="cmm-vis-svg" aria-hidden="true">
+          <!-- JS draws connection lines -->
+        </svg>
+        <div class="cmm-visual-col cmm-models-col" id="cmm-vis-models">
+          <!-- JS renders model nodes -->
+        </div>
+      </div>
+    </div>
+
+    {{/* Detail panel — slides in on selection */}}
+    <div class="cmm-detail" id="cmm-detail" style="display:none;" role="complementary" aria-label="Selection details">
+      <button class="cmm-detail-close" id="cmm-detail-close" aria-label="Close details">&times;</button>
+      <div class="cmm-detail-content" id="cmm-detail-content">
+        <!-- JS fills this -->
+      </div>
+    </div>
+
+    {{/* Legend — below both views */}}
+    <div class="cmm-legend">
+      <div class="cmm-legend-group">
+        <span class="cmm-legend-label">Roles:</span>
+        <span class="cmm-role-badge cmm-role-primary">Primary</span>
+        <span class="cmm-role-badge cmm-role-secondary">Secondary</span>
+        <span class="cmm-role-badge cmm-role-reviewer">Reviewer</span>
+        <span class="cmm-role-badge cmm-role-fallback">Fallback</span>
+        <span class="cmm-role-badge cmm-role-selectable">Selectable</span>
+      </div>
+      <div class="cmm-legend-group">
+        <span class="cmm-legend-label">Source:</span>
+        <span class="cmm-legend-item"><span class="cmm-source-dot cmm-source-official"></span> Official (Microsoft confirmed)</span>
+        <span class="cmm-legend-item"><span class="cmm-source-dot cmm-source-inferred"></span> Inferred (public reports)</span>
+      </div>
+    </div>
+  </div>
+
+  {{/* ═══ TAB 2: MODELS ═══ */}}
+  <div class="cmm-panel" id="panel-models" style="display:none;" role="tabpanel" aria-labelledby="tab-models">
+    <div class="cmm-models-grid" id="cmm-models-grid">
+      <!-- JS renders model cards -->
+    </div>
+  </div>
+
+  {{/* ═══ TAB 3: HOW IT WORKS (PATTERNS) ═══ */}}
+  <div class="cmm-panel" id="panel-patterns" style="display:none;" role="tabpanel" aria-labelledby="tab-patterns">
+    <p class="cmm-section-intro">Microsoft 365 Copilot doesn't rely on a single AI model. It uses multiple models together in sophisticated patterns. Here's how.</p>
+    <div class="cmm-patterns-grid" id="cmm-patterns-grid">
+      <!-- JS renders pattern cards -->
+    </div>
+  </div>
+
+  {{/* ═══ TAB 4: ADMIN GUIDE ═══ */}}
+  <div class="cmm-panel" id="panel-admin" style="display:none;" role="tabpanel" aria-labelledby="tab-admin">
+    <p class="cmm-section-intro">What can you actually control as an M365 admin? Here's the truth — most model routing is automatic, but there are key levers you can pull.</p>
+
+    <div class="cmm-admin-grid">
+
+      <div class="cmm-admin-card">
+        <div class="cmm-admin-card-header">
+          <span class="cmm-admin-badge cmm-badge-full">Full Control</span>
+          <h3>Copilot Studio — Model Selection</h3>
+        </div>
+        <p>Agent creators can explicitly choose which AI model powers their custom agent. Options include OpenAI GPT-5.x, Claude Opus, Claude Sonnet, and GPT-4o.</p>
+        <div class="cmm-admin-action">
+          <strong>How:</strong> Copilot Studio → Agent settings → Model selection
+        </div>
+        <a href="https://learn.microsoft.com/microsoft-copilot-studio/authoring-select-agent-model" class="cmm-admin-link" target="_blank" rel="noopener">Microsoft Learn docs →</a>
+      </div>
+
+      <div class="cmm-admin-card">
+        <div class="cmm-admin-card-header">
+          <span class="cmm-admin-badge cmm-badge-limited">Limited Control</span>
+          <h3>Multi-Model Opt-In</h3>
+        </div>
+        <p>Tenant admins can enable or disable Anthropic Claude models for Copilot Chat and Researcher. When enabled, Copilot can auto-route to Claude for suitable tasks.</p>
+        <div class="cmm-admin-action">
+          <strong>How:</strong> Microsoft 365 admin centre → Copilot settings → Model providers
+        </div>
+        <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2025/09/24/expanding-model-choice-in-microsoft-365-copilot/" class="cmm-admin-link" target="_blank" rel="noopener">Announcement blog →</a>
+      </div>
+
+      <div class="cmm-admin-card">
+        <div class="cmm-admin-card-header">
+          <span class="cmm-admin-badge cmm-badge-limited">Limited Control</span>
+          <h3>Frontier Programme</h3>
+        </div>
+        <p>Opt-in programme for advanced multi-model features like Researcher's Critique and Council modes. Requires admin approval.</p>
+        <div class="cmm-admin-action">
+          <strong>How:</strong> Microsoft 365 admin centre → Copilot → Frontier settings
+        </div>
+      </div>
+
+      <div class="cmm-admin-card">
+        <div class="cmm-admin-card-header">
+          <span class="cmm-admin-badge cmm-badge-limited">Limited Control</span>
+          <h3>In-App Copilot (Word, Excel, PowerPoint, etc.)</h3>
+        </div>
+        <p>Microsoft manages per-request model routing automatically. However, admins control whether Anthropic models are enabled at tenant level — which affects Agent Mode and advanced features in Office apps.</p>
+        <div class="cmm-admin-action">
+          <strong>What you control:</strong> Anthropic provider enablement, user/group scoping. <strong>What you don't:</strong> Per-request model selection within a feature.
+        </div>
+      </div>
+
+      <div class="cmm-admin-card">
+        <div class="cmm-admin-card-header">
+          <span class="cmm-admin-badge cmm-badge-limited">Limited Control</span>
+          <h3>Cowork & Analyst</h3>
+        </div>
+        <p>These built-in agents use fixed model assignments (Claude for Cowork, o3-mini for Analyst). Admins can control availability — deploy Cowork to all users, specific groups, or block it entirely.</p>
+        <div class="cmm-admin-action">
+          <strong>What you control:</strong> Feature availability and user/group scoping. <strong>What you don't:</strong> Which model the agent uses internally.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {{/* ═══ TAB: STUDIO PICKER ═══ */}}
+  <div class="cmm-panel" id="panel-studio" style="display:none;" role="tabpanel" aria-labelledby="tab-studio">
+    <p class="cmm-section-intro">Building a custom agent in Copilot Studio? Answer 4 quick questions and we'll recommend the best model for your use case.</p>
+    <div class="cmm-quiz-container" id="cmm-quiz">
+      <div class="cmm-quiz-progress" id="cmm-quiz-progress"></div>
+      <div class="cmm-quiz-body" id="cmm-quiz-body">
+        <!-- JS renders questions -->
+      </div>
+      <div class="cmm-quiz-result" id="cmm-quiz-result" style="display:none;">
+        <!-- JS renders recommendation -->
+      </div>
+    </div>
+  </div>
+
+  {{/* ═══ TAB: TIMELINE ═══ */}}
+  <div class="cmm-panel" id="panel-timeline" style="display:none;" role="tabpanel" aria-labelledby="tab-timeline">
+    <p class="cmm-section-intro">When did Microsoft change the AI models behind Copilot? A timeline of key model changes and milestones.</p>
+    <div class="cmm-timeline" id="cmm-timeline">
+      <!-- JS renders timeline -->
+    </div>
+  </div>
+
+  {{/* ═══ TAB 5: FAQ ═══ */}}
+  <div class="cmm-panel" id="panel-faq" style="display:none;" role="tabpanel" aria-labelledby="tab-faq">
+    {{ if .Params.faq }}
+    <div class="cmm-faq-list">
+      {{ range .Params.faq }}
+      <details class="cmm-faq-item">
+        <summary class="cmm-faq-q">{{ .question }}</summary>
+        <div class="cmm-faq-a">
+          <p>{{ .answer }}</p>
+        </div>
+      </details>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+  {{/* Data freshness notice */}}
+  <div class="cmm-freshness">
+    <p>Data last verified: <strong>{{ if $maxDate }}{{ time.Format "2 January 2006" (time.AsTime $maxDate) }}{{ else }}Unknown{{ end }}</strong>. Sources: <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2025/09/24/expanding-model-choice-in-microsoft-365-copilot/" target="_blank" rel="noopener">Microsoft Blog</a>, <a href="https://learn.microsoft.com/microsoft-copilot-studio/authoring-select-agent-model" target="_blank" rel="noopener">Microsoft Learn</a>, <a href="https://techcommunity.microsoft.com/blog/microsoftmechanicsblog/claude--gpt--multi-model-intelligence-in-copilot/4509773" target="_blank" rel="noopener">Tech Community</a>. See something outdated? <a href="/feedback/">Let us know</a>.</p>
+  </div>
+
+</div>
+
+<script src="/js/copilot-model-map.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

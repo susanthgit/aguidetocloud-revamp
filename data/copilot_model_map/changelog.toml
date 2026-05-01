@@ -1,0 +1,59 @@
+# Copilot Model Map — Changelog
+# Track when Microsoft changed model assignments
+# Each entry: date, change description, features affected, source
+
+[[entries]]
+date = "2026-04-29"
+title = "Copilot reaches 20M paid users"
+description = "Microsoft confirms multi-model auto-routing is now default across all M365 Copilot experiences."
+features = ["bizchat"]
+source = "https://techcrunch.com/2026/04/29/microsoft-says-it-has-over-20m-paid-copilot-users-and-they-really-are-using-it/"
+type = "milestone"
+
+[[entries]]
+date = "2026-03-31"
+title = "Copilot Cowork launches with Claude"
+description = "Copilot Cowork officially launches as a Claude-first agent for long-running business workflows."
+features = ["cowork"]
+source = "https://winbuzzer.com/2026/03/31/microsoft-copilot-cowork-claude-review-gpt-multi-model-xcxwbn/"
+type = "launch"
+
+[[entries]]
+date = "2026-01-15"
+title = "Anthropic Claude enabled by default"
+description = "Claude models become available by default in many tenant setups, no longer requiring separate opt-in for basic access."
+features = ["bizchat", "researcher"]
+source = "https://www.geekwire.com/2026/gpt-drafts-claude-critiques-microsoft-blends-rival-ai-models-in-new-copilot-upgrade/"
+type = "change"
+
+[[entries]]
+date = "2025-11-18"
+title = "Researcher & Analyst agents announced"
+description = "Microsoft introduces Researcher (multi-model critique/council) and Analyst (o3-mini reasoning) as built-in agents."
+features = ["researcher", "analyst"]
+source = "https://www.microsoft.com/en-us/microsoft-365/blog/2025/03/25/introducing-researcher-and-analyst-in-microsoft-365-copilot/"
+type = "launch"
+
+[[entries]]
+date = "2025-09-24"
+title = "Multi-model choice expanded"
+description = "Microsoft announces expanding model choice in M365 Copilot — Anthropic Claude and Google Gemini available alongside OpenAI models."
+features = ["bizchat", "copilot-studio", "researcher"]
+source = "https://www.microsoft.com/en-us/microsoft-365/blog/2025/09/24/expanding-model-choice-in-microsoft-365-copilot/"
+type = "milestone"
+
+[[entries]]
+date = "2025-06-01"
+title = "Copilot Studio model selection"
+description = "Agent creators in Copilot Studio can now explicitly choose between OpenAI and Anthropic models for their custom agents."
+features = ["copilot-studio"]
+source = "https://learn.microsoft.com/microsoft-copilot-studio/authoring-select-agent-model"
+type = "change"
+
+[[entries]]
+date = "2025-03-25"
+title = "Agent Mode rolls out to Office apps"
+description = "Copilot gains agentic capabilities in Word, Excel, and PowerPoint — executing multi-step edits autonomously."
+features = ["agent-mode"]
+source = "https://support.microsoft.com/copilot"
+type = "launch"

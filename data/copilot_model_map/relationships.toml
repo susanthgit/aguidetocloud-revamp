@@ -1,0 +1,470 @@
+# Copilot Model Map — Feature ↔ Model Relationships
+# Separates the mapping from feature/model definitions for easier updates
+# role: primary | secondary | fallback | reviewer | selectable
+# routing: auto | fixed | user-selectable
+# admin_control: full | limited | none
+# source: official | announced | inferred
+# last_verified: date of last verification against public sources
+
+# ─────────────────────────────────────────────
+# M365 COPILOT APP (standalone app)
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "copilot-app"
+model = "gpt-5-4"
+role = "primary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "The Copilot App uses multi-model auto-routing. Admins can enable/disable Anthropic models at tenant level via M365 admin centre."
+source = "official"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "copilot-app"
+model = "gpt-5-3"
+role = "secondary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Used for simpler queries where full reasoning isn't needed. Routing is automatic."
+source = "official"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "copilot-app"
+model = "claude-opus-4-6"
+role = "secondary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Available when multi-model is enabled at tenant level. Copilot auto-routes to Claude for suitable tasks."
+source = "official"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "copilot-app"
+model = "phi-4"
+role = "fallback"
+routing = "auto"
+admin_control = "none"
+admin_notes = "Used for simple lookups and quick classifications. Routing is fully automatic."
+source = "inferred"
+last_verified = "2026-04-29"
+
+# ─────────────────────────────────────────────
+# COPILOT CHAT (BIZCHAT)
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "bizchat"
+model = "gpt-5-4"
+role = "primary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Multi-model routing is automatic. Admins can enable/disable Anthropic models at tenant level via Microsoft 365 admin centre."
+source = "official"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "bizchat"
+model = "gpt-5-3"
+role = "secondary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Used for simpler queries where full reasoning isn't needed. Routing is automatic."
+source = "official"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "bizchat"
+model = "claude-opus-4-6"
+role = "secondary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Available via multi-model opt-in. Copilot auto-routes to Claude for certain tasks."
+source = "official"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "bizchat"
+model = "phi-4"
+role = "fallback"
+routing = "auto"
+admin_control = "none"
+admin_notes = "Used for simple lookups and quick classifications. Routing is fully automatic."
+source = "inferred"
+last_verified = "2026-04-29"
+
+# ─────────────────────────────────────────────
+# COPILOT IN WORD
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "copilot-word"
+model = "gpt-5-4"
+role = "primary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Microsoft manages per-request model routing, but admins control Anthropic enablement at tenant level — which affects whether Claude is available for Agent Mode in Word."
+source = "inferred"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "copilot-word"
+model = "gpt-5-3"
+role = "secondary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Used for faster, simpler tasks like short rewrites. Anthropic models may also be used when Agent Mode is active and Anthropic is enabled."
+source = "inferred"
+last_verified = "2026-04-29"
+
+# ─────────────────────────────────────────────
+# COPILOT IN EXCEL
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "copilot-excel"
+model = "gpt-5-4"
+role = "primary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Microsoft manages per-request routing. Admins control Anthropic enablement which affects Agent Mode availability in Excel. Claude can be selected for agents in Excel."
+source = "inferred"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "copilot-excel"
+model = "gpt-5-3"
+role = "secondary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Used for formula suggestions and quick data insights."
+source = "inferred"
+last_verified = "2026-04-29"
+
+# ─────────────────────────────────────────────
+# COPILOT IN POWERPOINT
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "copilot-powerpoint"
+model = "gpt-5-4"
+role = "primary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Microsoft manages per-request routing. Admins control Anthropic enablement at tenant level."
+source = "inferred"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "copilot-powerpoint"
+model = "gpt-5-3"
+role = "secondary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Used for slide summarisation and simpler tasks."
+source = "inferred"
+last_verified = "2026-04-29"
+
+# ─────────────────────────────────────────────
+# COPILOT IN OUTLOOK
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "copilot-outlook"
+model = "gpt-5-3"
+role = "primary"
+routing = "auto"
+admin_control = "none"
+admin_notes = "Email drafting and summarisation use faster models. Microsoft manages selection."
+source = "inferred"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "copilot-outlook"
+model = "phi-4"
+role = "fallback"
+routing = "auto"
+admin_control = "none"
+admin_notes = "Quick email summaries may use lightweight models for speed."
+source = "inferred"
+last_verified = "2026-04-29"
+
+# ─────────────────────────────────────────────
+# COPILOT IN TEAMS
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "copilot-teams"
+model = "gpt-5-3"
+role = "primary"
+routing = "auto"
+admin_control = "none"
+admin_notes = "Meeting recaps and chat summaries use fast models. Microsoft manages selection."
+source = "inferred"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "copilot-teams"
+model = "gpt-5-4"
+role = "secondary"
+routing = "auto"
+admin_control = "none"
+admin_notes = "Complex meeting analysis may route to more capable models."
+source = "inferred"
+last_verified = "2026-04-29"
+
+# ─────────────────────────────────────────────
+# RESEARCHER AGENT
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "researcher"
+model = "gpt-5-4"
+role = "primary"
+routing = "fixed"
+admin_control = "limited"
+admin_notes = "GPT drafts the research response. Requires Frontier programme / admin opt-in for multi-model features."
+source = "official"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "researcher"
+model = "claude-opus-4-6"
+role = "reviewer"
+routing = "fixed"
+admin_control = "limited"
+admin_notes = "Claude independently reviews GPT's draft for accuracy, completeness, and citation quality (Critique mode). In Council mode, both models run in parallel."
+source = "official"
+last_verified = "2026-04-29"
+
+# ─────────────────────────────────────────────
+# ANALYST AGENT
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "analyst"
+model = "o3-mini"
+role = "primary"
+routing = "fixed"
+admin_control = "none"
+admin_notes = "Analyst uses OpenAI's reasoning model for step-by-step data analysis. Model choice is fixed by Microsoft."
+source = "official"
+last_verified = "2026-04-29"
+
+# ─────────────────────────────────────────────
+# COPILOT COWORK
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "cowork"
+model = "claude-opus-4-6"
+role = "primary"
+routing = "fixed"
+admin_control = "limited"
+admin_notes = "Cowork is Claude-first for deep planning and execution. Admins can control availability — deploy to all users, specific groups, or block entirely."
+source = "official"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "cowork"
+model = "gpt-5-4"
+role = "secondary"
+routing = "fixed"
+admin_control = "limited"
+admin_notes = "GPT may handle specific sub-tasks within Cowork workflows. Admin controls Cowork availability at user/group level."
+source = "inferred"
+last_verified = "2026-04-29"
+
+# ─────────────────────────────────────────────
+# COPILOT STUDIO
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "copilot-studio"
+model = "gpt-5-4"
+role = "selectable"
+routing = "user-selectable"
+admin_control = "full"
+admin_notes = "Agent creators can choose from available models. OpenAI models are the default option."
+source = "official"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "copilot-studio"
+model = "gpt-5-3"
+role = "selectable"
+routing = "user-selectable"
+admin_control = "full"
+admin_notes = "Available as a faster, lower-cost option for simpler agents."
+source = "official"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "copilot-studio"
+model = "claude-opus-4-6"
+role = "selectable"
+routing = "user-selectable"
+admin_control = "full"
+admin_notes = "Anthropic Claude Opus available for agents requiring strong critique and reasoning."
+source = "official"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "copilot-studio"
+model = "claude-sonnet-4"
+role = "selectable"
+routing = "user-selectable"
+admin_control = "full"
+admin_notes = "Anthropic Claude Sonnet available as a balanced speed/quality option."
+source = "official"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "copilot-studio"
+model = "gpt-4o"
+role = "selectable"
+routing = "user-selectable"
+admin_control = "full"
+admin_notes = "GPT-4o available for multimodal agents with vision/audio needs."
+source = "official"
+last_verified = "2026-04-29"
+
+# ─────────────────────────────────────────────
+# AGENT MODE (GENERAL)
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "agent-mode"
+model = "gpt-5-4"
+role = "primary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Agent Mode uses the same multi-model agentic stack as Researcher/Cowork. Admins control Anthropic enablement at tenant level."
+source = "inferred"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "agent-mode"
+model = "claude-opus-4-6"
+role = "secondary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Available when Anthropic is enabled. Used for review and critique within agentic workflows."
+source = "inferred"
+last_verified = "2026-04-29"
+
+# ─────────────────────────────────────────────
+# WORD AGENT
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "word-agent"
+model = "gpt-5-4"
+role = "primary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Primary model for document drafting and editing. Admins control Anthropic enablement."
+source = "official"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "word-agent"
+model = "claude-opus-4-6"
+role = "secondary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Available as a secondary model when Anthropic is enabled at tenant level. Used for document review and critique."
+source = "official"
+last_verified = "2026-04-29"
+
+# ─────────────────────────────────────────────
+# EXCEL AGENT
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "excel-agent"
+model = "gpt-5-4"
+role = "primary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Primary model for data analysis. Admins control Anthropic enablement."
+source = "official"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "excel-agent"
+model = "claude-opus-4-6"
+role = "selectable"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Claude can be selected for agents in Excel. Requires Anthropic enablement at tenant level."
+source = "official"
+last_verified = "2026-04-29"
+
+# ─────────────────────────────────────────────
+# POWERPOINT AGENT
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "ppt-agent"
+model = "gpt-5-4"
+role = "primary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Primary model for presentation creation and redesign."
+source = "inferred"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "ppt-agent"
+model = "claude-opus-4-6"
+role = "secondary"
+routing = "auto"
+admin_control = "limited"
+admin_notes = "Available when Anthropic is enabled at tenant level."
+source = "inferred"
+last_verified = "2026-04-29"
+
+# ─────────────────────────────────────────────
+# COPILOT PAGES
+# ─────────────────────────────────────────────
+[[relationships]]
+feature = "copilot-pages"
+model = "gpt-5-3"
+role = "primary"
+routing = "auto"
+admin_control = "none"
+admin_notes = "Pages uses the same model routing as BizChat for generating and refining content."
+source = "inferred"
+last_verified = "2026-04-29"
+
+[[relationships]]
+feature = "copilot-pages"
+model = "gpt-5-4"
+role = "secondary"
+routing = "auto"
+admin_control = "none"
+admin_notes = "Complex content generation may route to more capable models."
+source = "inferred"
+last_verified = "2026-04-29"
+
+
+# ─────────────────────────────────────────────
+# MULTI-MODEL PATTERNS
+# ─────────────────────────────────────────────
+
+[patterns]
+
+  [patterns.critique]
+  name = "Critique Mode"
+  description = "One model drafts, another independently reviews for accuracy and completeness."
+  how_it_works = "GPT generates the initial response → Claude reviews it for factual accuracy, citation quality, and completeness → The reviewed version is delivered to the user."
+  features_using = ["researcher"]
+  benefit = "Catches errors that a single model would miss. Similar to peer review in academic publishing."
+
+  [patterns.council]
+  name = "Council Mode"
+  description = "Multiple models receive the same prompt in parallel, and a judge model selects or synthesises the best response."
+  how_it_works = "Both GPT and Claude process the prompt simultaneously → A judge evaluates both outputs → The best response (or a synthesis) is presented to the user."
+  features_using = ["researcher"]
+  benefit = "Higher quality through diversity of reasoning approaches. Reduces single-model bias."
+
+  [patterns.auto-routing]
+  name = "Auto-Routing"
+  description = "Copilot automatically selects the best model based on task complexity, latency requirements, and context."
+  how_it_works = "Copilot's orchestration layer analyses each prompt → Routes to the most appropriate model based on complexity, speed needs, and context length → User sees a seamless experience."
+  features_using = ["copilot-app", "bizchat", "copilot-word", "copilot-excel", "copilot-powerpoint", "copilot-outlook", "copilot-teams", "agent-mode", "copilot-pages"]
+  benefit = "Optimises cost and speed without user intervention. Simple queries get fast, cheap responses; complex ones get powerful models."
+
+  [patterns.fallback]
+  name = "Fallback"
+  description = "A lightweight model handles simple tasks, with escalation to more capable models when needed."
+  how_it_works = "Simple queries (classification, quick lookups) → Phi-4 or GPT-5.3 → If the task needs deeper reasoning, escalates to GPT-5.4 or Claude."
+  features_using = ["bizchat", "copilot-outlook", "copilot-teams"]
+  benefit = "Reduces cost and latency for simple tasks while maintaining quality for complex ones."

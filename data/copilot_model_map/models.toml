@@ -1,0 +1,94 @@
+# Copilot Model Map — AI Model Definitions
+# Each model that powers M365 Copilot features
+# Sources: Microsoft official blog, Microsoft Learn, public announcements
+
+[gpt-5-4]
+name = "GPT-5.4"
+short = "GPT-5.4"
+provider = "OpenAI"
+type = "flagship"
+description = "OpenAI's latest flagship model. Handles complex reasoning, deep analysis, long-form content generation, and multi-step planning."
+strengths = ["Deep reasoning", "Complex analysis", "Long-form writing", "Multi-step planning"]
+context_window = "1M tokens"
+multimodal = true
+speed = "medium"
+launched = "2026"
+learn_more = "https://learn.microsoft.com/azure/ai-services/openai/concepts/models"
+
+[gpt-5-3]
+name = "GPT-5.3"
+short = "GPT-5.3"
+provider = "OpenAI"
+type = "general"
+description = "Fast, capable general-purpose model. Balances quality and speed for everyday Copilot tasks like email drafting, summarisation, and Q&A."
+strengths = ["Fast responses", "Email drafting", "Summarisation", "General Q&A"]
+context_window = "128K tokens"
+multimodal = true
+speed = "fast"
+launched = "2025"
+learn_more = "https://learn.microsoft.com/azure/ai-services/openai/concepts/models"
+
+[claude-opus-4-6]
+name = "Claude Opus 4.6"
+short = "Claude Opus"
+provider = "Anthropic"
+type = "reasoning"
+description = "Anthropic's most capable model. Excels at fact-checking, critique, nuanced judgment, long-context reasoning, and safety-sensitive tasks."
+strengths = ["Fact-checking", "Critique & review", "Long-context reasoning", "Nuanced judgment"]
+context_window = "200K tokens"
+multimodal = true
+speed = "medium"
+launched = "2026"
+learn_more = "https://www.anthropic.com/claude"
+
+[claude-sonnet-4]
+name = "Claude Sonnet 4"
+short = "Claude Sonnet"
+provider = "Anthropic"
+type = "general"
+description = "Anthropic's balanced model. Good quality at faster speeds and lower cost. Available in Copilot Studio for custom agents."
+strengths = ["Balanced speed/quality", "Custom agent building", "Instruction following", "Structured output"]
+context_window = "200K tokens"
+multimodal = true
+speed = "fast"
+launched = "2025"
+learn_more = "https://www.anthropic.com/claude"
+
+[o3-mini]
+name = "o3-mini"
+short = "o3-mini"
+provider = "OpenAI"
+type = "reasoning"
+description = "OpenAI's specialised reasoning model. Optimised for step-by-step analysis, mathematical reasoning, and code execution tasks."
+strengths = ["Step-by-step analysis", "Mathematical reasoning", "Code execution", "Data analysis"]
+context_window = "128K tokens"
+multimodal = false
+speed = "slow"
+launched = "2025"
+learn_more = "https://learn.microsoft.com/azure/ai-services/openai/concepts/models"
+
+[phi-4]
+name = "Phi-4"
+short = "Phi-4"
+provider = "Microsoft"
+type = "lightweight"
+description = "Microsoft's compact in-house model. Used for fast, low-cost tasks where full-scale models aren't needed — quick summaries, simple lookups, classification."
+strengths = ["Ultra-fast responses", "Low cost per query", "Simple classification", "Quick summaries"]
+context_window = "16K tokens"
+multimodal = false
+speed = "very-fast"
+launched = "2025"
+learn_more = "https://azure.microsoft.com/blog/introducing-phi-4-microsoft-s-newest-small-language-model/"
+
+[gpt-4o]
+name = "GPT-4o"
+short = "GPT-4o"
+provider = "OpenAI"
+type = "multimodal"
+description = "OpenAI's omni model with strong multimodal capabilities. Used as a fallback for vision, audio, and image input tasks in Copilot."
+strengths = ["Vision & image input", "Audio processing", "Multimodal understanding", "Broad capability"]
+context_window = "128K tokens"
+multimodal = true
+speed = "fast"
+launched = "2024"
+learn_more = "https://learn.microsoft.com/azure/ai-services/openai/concepts/models"
