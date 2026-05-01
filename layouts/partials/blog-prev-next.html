@@ -3,8 +3,8 @@
   Uses Hugo's built-in page ordering (by date, newest first).
   Automatically includes new blogs — no manual config needed.
 
-  Latest blog: prev → /start/ (Start Here page), next → oldest blog
-  Oldest blog: prev → second oldest, next → newest blog
+  Latest blog: prev → oldest blog (wraps around)
+  Oldest blog: next → newest blog (wraps around)
   All others: prev → newer post, next → older post
 
   Usage: {{ partial "blog-prev-next.html" . }}
@@ -28,11 +28,12 @@
 
     <nav class="blog-pn" aria-label="Browse blog posts">
       {{ if $isNewest }}
-        {{/* Latest blog: prev → Start Here */}}
-        <a href="/start/" class="blog-pn-link blog-pn-prev" title="Start Here">
+        {{/* Latest blog: prev → oldest blog (circular) */}}
+        {{ $oldest := index $pages (sub $count 1) }}
+        <a href="{{ $oldest.RelPermalink }}" class="blog-pn-link blog-pn-prev" title="{{ $oldest.Title }}">
           <span class="blog-pn-arrow">←</span>
-          <span class="blog-pn-label">Start</span>
-          <span class="blog-pn-title">Start Here</span>
+          <span class="blog-pn-label">Oldest</span>
+          <span class="blog-pn-title">{{ $oldest.Title | truncate 45 }}</span>
         </a>
       {{ else }}
         {{ $prev := index $pages (sub $idx 1) }}
@@ -44,7 +45,7 @@
       {{ end }}
 
       {{ if $isOldest }}
-        {{/* Oldest blog: next → newest blog */}}
+        {{/* Oldest blog: next → newest blog (circular) */}}
         {{ $newest := index $pages 0 }}
         <a href="{{ $newest.RelPermalink }}" class="blog-pn-link blog-pn-next" title="{{ $newest.Title }}">
           <span class="blog-pn-title">{{ $newest.Title | truncate 45 }}</span>
