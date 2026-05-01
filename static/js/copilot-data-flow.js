@@ -439,19 +439,6 @@
     });
   }
 
-  /* ═══ STAKEHOLDER TOGGLE ═══ */
-  var stakeholderBtns = document.querySelectorAll('.cdf-stakeholder-btn');
-  var pageEl = document.querySelector('.cdf-page');
-  stakeholderBtns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      stakeholderBtns.forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      var role = btn.dataset.role;
-      if (role === 'all') pageEl.removeAttribute('data-stakeholder');
-      else pageEl.setAttribute('data-stakeholder', role);
-    });
-  });
-
   /* ═══ COMPARE SCENARIOS ═══ */
   function renderCompare() {
     var selA = document.getElementById('cdf-compare-a');

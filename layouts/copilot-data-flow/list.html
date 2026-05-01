@@ -62,16 +62,6 @@
 
 {{ partial "tool-header.html" (dict "page" . "title" "Copilot Data Flow Map") }}
 
-  {{/* Stakeholder toggle */}}
-  <div class="cdf-stakeholder" id="cdf-stakeholder">
-    <span class="cdf-stakeholder-label">I am a:</span>
-    <button class="cdf-stakeholder-btn active" data-role="all">Everyone</button>
-    <button class="cdf-stakeholder-btn" data-role="ciso">CISO</button>
-    <button class="cdf-stakeholder-btn" data-role="admin">IT Admin</button>
-    <button class="cdf-stakeholder-btn" data-role="compliance">Compliance</button>
-    <button class="cdf-stakeholder-btn" data-role="enduser">End User</button>
-  </div>
-
   <div class="cdf-tabs zen-tabs" role="tablist" aria-label="Copilot Data Flow Map sections">
     <button class="cdf-tab zen-tab active" data-tab="flow" role="tab" id="tab-flow" aria-selected="true" aria-controls="panel-flow" tabindex="0">Data Flow</button>
     <button class="cdf-tab zen-tab" data-tab="compare" role="tab" id="tab-compare" aria-selected="false" aria-controls="panel-compare" tabindex="-1">OpenAI vs Anthropic</button>

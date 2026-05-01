@@ -829,49 +829,6 @@
   gap: var(--space-3);
 }
 
-/* ═══ STAKEHOLDER TOGGLE ═══ */
-.cdf-stakeholder {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  margin-bottom: var(--space-2);
-  flex-wrap: wrap;
-}
-.cdf-stakeholder-label {
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--text-tertiary);
-}
-.cdf-stakeholder-btn {
-  padding: var(--space-1) var(--space-3);
-  font-size: var(--text-caption);
-  font-weight: 500;
-  color: var(--text-tertiary);
-  background: none;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-full);
-  cursor: pointer;
-  transition: color 150ms ease-out, border-color 150ms ease-out, background-color 150ms ease-out;
-}
-.cdf-stakeholder-btn:hover { color: var(--text-primary); border-color: var(--border-emphasis); }
-.cdf-stakeholder-btn.active {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: var(--accent-subtle);
-  font-weight: 600;
-}
-
-/* Stakeholder-driven visibility */
-[data-stakeholder="ciso"] .cdf-sh-admin,
-[data-stakeholder="ciso"] .cdf-sh-enduser { display: none; }
-[data-stakeholder="admin"] .cdf-sh-ciso,
-[data-stakeholder="admin"] .cdf-sh-enduser { display: none; }
-[data-stakeholder="compliance"] .cdf-sh-admin,
-[data-stakeholder="compliance"] .cdf-sh-enduser { display: none; }
-[data-stakeholder="enduser"] .cdf-sh-ciso,
-[data-stakeholder="enduser"] .cdf-sh-admin,
-[data-stakeholder="enduser"] .cdf-sh-compliance { display: none; }
-
 /* ═══ COMPARE SCENARIOS ═══ */
 .cdf-compare-picker {
   display: flex;
@@ -996,7 +953,7 @@
 
 /* ═══ PRINT STYLESHEET ═══ */
 @media print {
-  .cdf-tabs, .cdf-stakeholder, .cdf-print-btn, .cdf-freshness,
+  .cdf-tabs, .cdf-print-btn, .cdf-freshness,
   .cdf-packet, .cdf-scenario-picker, .cdf-narrative-copy,
   .cdf-checklist-actions, .cdf-compare-picker { display: none !important; }
   .cdf-panel { display: block !important; page-break-inside: avoid; margin-bottom: 24px; }
