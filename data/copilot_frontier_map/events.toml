@@ -1,0 +1,172 @@
+# ============================================================================
+# Copilot Frontier Map — Event History
+# ============================================================================
+# Chronological record of feature status changes.
+# Powers the "What's New" changelog and Timeline tab.
+# Each event records a single status transition with public source.
+# Last updated: 2026-05-02
+# ============================================================================
+
+[[events]]
+feature_id = "scheduled-prompting"
+date = "2025-11-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "One of the first Copilot features to enter the Frontier programme."
+source_url = "https://m365admin.handsontek.net/microsoft-365-copilot-new-scheduled-prompt-features-frontier-tenants/"
+
+[[events]]
+feature_id = "scheduled-prompting"
+date = "2026-01-15"
+event_type = "graduated_ga"
+from_status = "frontier"
+to_status = "ga"
+note = "First Frontier feature to graduate to general availability."
+source_url = "https://m365admin.handsontek.net/microsoft-365-copilot-new-scheduled-prompt-features-frontier-tenants/"
+
+[[events]]
+feature_id = "notebooks-enhanced"
+date = "2025-12-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Enhanced Notebooks with persistent navigation, expanded references."
+source_url = "https://mc.merill.net/message/MC1187387"
+
+[[events]]
+feature_id = "notebooks-enhanced"
+date = "2026-03-01"
+event_type = "graduated_ga"
+from_status = "frontier"
+to_status = "ga"
+note = "Graduated with SharePoint and OneNote reference support."
+source_url = "https://mc.merill.net/message/MC1187387"
+
+[[events]]
+feature_id = "copilot-cowork"
+date = "2026-03-31"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Autonomous execution agent launches in Frontier — the biggest Copilot feature since launch."
+source_url = "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/"
+
+[[events]]
+feature_id = "researcher-multi-model"
+date = "2026-03-31"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Researcher gains multi-model intelligence with Critique and Model Council."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "email-from-chat"
+date = "2026-03-31"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Draft and send emails end-to-end from Copilot Chat without switching to Outlook."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "planner-ai"
+date = "2026-03-31"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "AI collaborator in Planner — generate tasks from goals, write status reports."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "legal-agent-word"
+date = "2026-04-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Specialised Legal Agent for Word enters Frontier — contract review, clause verification."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "agentic-outlook"
+date = "2026-04-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Outlook gains agentic email triage and calendar conflict resolution."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "call-delegation"
+date = "2026-04-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Teams Phone call delegation — AI answers and triages incoming calls."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "enhanced-word"
+date = "2026-04-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Enhanced Word capabilities for legal, finance, and compliance workflows."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+# ── Pre-Frontier era graduates ────────────────────────────────────────────────
+
+[[events]]
+feature_id = "narrative-builder"
+date = "2024-09-16"
+event_type = "graduated_ga"
+from_status = "preview"
+to_status = "ga"
+note = "Narrative Builder goes GA as part of Wave 2 — structured storytelling for presentations."
+source_url = "https://www.microsoft.com/en-us/microsoft-365/blog/2024/09/16/microsoft-365-copilot-wave-2-pages-python-in-excel-and-agents/"
+
+[[events]]
+feature_id = "excel-python"
+date = "2024-09-16"
+event_type = "graduated_ga"
+from_status = "preview"
+to_status = "ga"
+note = "Python in Excel goes GA — advanced data analysis without coding."
+source_url = "https://www.microsoft.com/en-us/microsoft-365/blog/2024/09/16/microsoft-365-copilot-wave-2-pages-python-in-excel-and-agents/"
+
+[[events]]
+feature_id = "copilot-pages"
+date = "2025-03-01"
+event_type = "graduated_ga"
+from_status = "preview"
+to_status = "ga"
+note = "Copilot Pages goes GA — persistent, collaborative AI canvas."
+source_url = "https://www.microsoft.com/en-us/microsoft-365/blog/2024/09/16/microsoft-365-copilot-wave-2-pages-python-in-excel-and-agents/"
+
+[[events]]
+feature_id = "copilot-studio-ga"
+date = "2025-05-01"
+event_type = "graduated_ga"
+from_status = "preview"
+to_status = "ga"
+note = "Copilot Studio custom agents become GA with real-time knowledge sources."
+source_url = "https://learn.microsoft.com/en-us/power-platform/release-plan/2025wave1/microsoft-copilot-studio/planned-features"
+
+[[events]]
+feature_id = "work-iq-memory"
+date = "2025-12-01"
+event_type = "graduated_ga"
+from_status = "preview"
+to_status = "ga"
+note = "Work IQ (Copilot Memory) goes GA — personalised, context-aware responses."
+source_url = "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--november--december-2025/4469738"
+
+[[events]]
+feature_id = "agent-mode-apps"
+date = "2026-01-01"
+event_type = "graduated_ga"
+from_status = "preview"
+to_status = "ga"
+note = "Agent Mode in Word, Excel, and PowerPoint goes GA — iterative AI collaboration."
+source_url = "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--november--december-2025/4469738"

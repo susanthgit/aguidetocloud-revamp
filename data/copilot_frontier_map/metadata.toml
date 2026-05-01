@@ -1,0 +1,92 @@
+# ============================================================================
+# Copilot Frontier Map — Programme Metadata
+# ============================================================================
+# Overview of the Frontier programme and the three-tier release model.
+# All content must be sourced from public Microsoft documentation.
+# Last updated: 2026-05-02
+# ============================================================================
+
+[programme]
+name = "Microsoft 365 Copilot Frontier Programme"
+tagline = "Early access to the next wave of Copilot AI capabilities"
+last_updated = "2026-05-02"
+description = "The Frontier programme is Microsoft's opt-in early-access programme that lets organisations trial experimental and upcoming Copilot AI capabilities before general availability. Features in Frontier are production-quality but may evolve, change, or be withdrawn based on real-world feedback."
+how_to_enrol = "Tenant admins enable Frontier via the Microsoft 365 Admin Centre → Settings → Org settings → Copilot → Frontier programme."
+key_facts = [
+  "Requires explicit tenant enrolment by an admin",
+  "Features can change, pause, or be withdrawn at any time",
+  "GA timing is never guaranteed for Frontier features",
+  "Some features require additional sub-processor approvals (e.g. Anthropic)",
+  "EU/EFTA/UK tenants may have additional controls or defaults disabled",
+  "Some features are English-only during Frontier"
+]
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-program"
+
+# ── Three-Tier Release Model (new in 2026) ────────────────────────────────────
+
+[tiers]
+description = "In 2026, Microsoft introduced a three-tier release model for Microsoft 365 Copilot features. This replaces the previous preview/GA binary model."
+
+[[tiers.levels]]
+id = "frontier"
+name = "Frontier"
+emoji = "🔬"
+description = "Early access to experimental AI features. Organisations opt in to try cutting-edge capabilities before broad release. Features may evolve or be withdrawn."
+who = "Organisations willing to test and provide feedback on new AI capabilities"
+admin_action = "Opt-in via M365 Admin Centre"
+risk_level = "Higher — features may change"
+
+[[tiers.levels]]
+id = "standard"
+name = "Standard"
+emoji = "✅"
+description = "Features that have reached General Availability. Available to all licensed users as soon as they ship. This is the default tier."
+who = "All Microsoft 365 Copilot licensed users"
+admin_action = "No action needed — features arrive automatically"
+risk_level = "Low — production-ready"
+
+[[tiers.levels]]
+id = "deferred"
+name = "Deferred"
+emoji = "⏸️"
+description = "Organisations can delay major Copilot changes for approximately 30 days after GA. Gives IT teams time for internal testing, training, and change management."
+who = "Organisations that need more time to prepare for new features"
+admin_action = "Configure deferred channel in M365 Admin Centre"
+risk_level = "Low — same features, just delayed"
+
+# ── Status Definitions ────────────────────────────────────────────────────────
+
+[[statuses]]
+id = "frontier"
+label = "In Frontier"
+emoji = "🔬"
+color_token = "accent"
+description = "Currently available to organisations enrolled in the Frontier programme"
+
+[[statuses]]
+id = "expected"
+label = "Expected"
+emoji = "📅"
+color_token = "warning"
+description = "Announced or roadmapped but not yet available in Frontier (public source required)"
+
+[[statuses]]
+id = "ga"
+label = "Generally Available"
+emoji = "✅"
+color_token = "success"
+description = "Graduated from Frontier to general availability — available to all Copilot users"
+
+[[statuses]]
+id = "paused"
+label = "Paused"
+emoji = "⏸️"
+color_token = "warning"
+description = "Temporarily unavailable — Microsoft has paused rollout"
+
+[[statuses]]
+id = "withdrawn"
+label = "Withdrawn"
+emoji = "🚫"
+color_token = "error"
+description = "Removed from the Frontier programme — feature cancelled or significantly redesigned"

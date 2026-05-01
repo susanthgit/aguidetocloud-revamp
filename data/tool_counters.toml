@@ -87,6 +87,11 @@ base = 50
 verb = "models explored"
 
 [[tools]]
+url = "/copilot-frontier-map/"
+base = 50
+verb = "features tracked"
+
+[[tools]]
 url = "/deprecation-timeline/"
 base = 900
 verb = "timelines viewed"

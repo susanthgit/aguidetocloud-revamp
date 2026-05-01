@@ -1,0 +1,158 @@
+# ============================================================================
+# Copilot Frontier Map — CIO Mode, Competitor, Prerequisites
+# ============================================================================
+# Supplementary data merged client-side by feature ID.
+# Keeps features.toml focused on core data.
+# Last updated: 2026-05-02
+# ============================================================================
+
+# ── CIO-friendly descriptions (non-technical business language) ───────────
+
+[cio_descriptions]
+copilot-cowork = "Instead of your team manually coordinating projects across email, documents, and meetings, Cowork does it for them. Give it a goal — it creates a plan, executes the steps, and reports back. Think of it as a virtual project coordinator that works 24/7."
+researcher-multi-model = "When your team needs deep research on a topic, Copilot now uses two different AI engines to cross-check each other's work — producing more accurate, trustworthy research reports with proper citations."
+legal-agent-word = "Your legal team can review contracts and compliance documents faster with an AI assistant that understands legal context. It catches issues, suggests edits, and verifies clauses — all within Word."
+agentic-outlook = "Copilot proactively manages your team's inbox and calendar — triaging emails by priority, resolving meeting conflicts, and following up on threads. Less time on email admin, more time on strategic work."
+call-delegation = "When your team is in meetings, AI answers their phone calls, gathers context from the caller, and schedules follow-ups. No more missed calls or playing phone tag."
+enhanced-word = "Copilot in Word now has specialised capabilities for finance, legal, and compliance teams — faster document creation, industry-aware editing, and context-aware drafting that pulls from your company's data."
+email-from-chat = "Your team can draft and send polished emails directly from the Copilot chat — no need to switch between apps. AI pulls in the right context automatically."
+planner-ai = "Turn high-level goals into actionable task lists automatically. AI generates tasks, helps execute them, and writes status reports — keeping teams aligned without the busywork."
+scheduled-prompting = "Set recurring AI tasks that run on schedule — like weekly email summaries every Monday morning. Set it once, get results automatically."
+notebooks-enhanced = "A persistent AI workspace for long-form projects — with better navigation, richer data sources (SharePoint, OneNote), and personalised suggestions."
+copilot-pages = "A shared workspace where your team can turn AI conversations into living documents — edit together in real time, like a Google Doc powered by AI."
+excel-python = "Your analysts can now do advanced data science directly in Excel — forecasting, modelling, custom charts — without needing to learn Python or leave the spreadsheet."
+agent-mode-apps = "Copilot in Office apps now works like a real collaborator — you go back and forth refining documents, spreadsheets, and presentations until they're exactly right."
+copilot-studio-ga = "Your team can build custom AI assistants — an HR policy bot, an IT help desk, a sales coach — without writing code. Deploy to Teams, web, or any channel."
+work-iq-memory = "Copilot learns your preferences over time — your writing style, your projects, your role. It gets smarter the more your team uses it."
+narrative-builder = "Give Copilot a rough idea, and it creates a complete presentation with a storyline, speaker notes, and design suggestions. Great for quarterly reviews and sales pitches."
+
+# ── Competitor equivalents ────────────────────────────────────────────────
+
+[competitor_equivalents]
+copilot-cowork = { vendor = "Google", feature = "No direct equivalent", note = "Google Workspace has Gemini for individual tasks but no autonomous multi-step execution agent." }
+researcher-multi-model = { vendor = "Google", feature = "Gemini Deep Research", note = "Gemini offers research but single-model only — no cross-model validation like Critique/Council." }
+legal-agent-word = { vendor = "Google", feature = "No equivalent", note = "No specialised legal AI agent in Google Docs." }
+agentic-outlook = { vendor = "Google", feature = "Gemini in Gmail (limited)", note = "Gmail has AI drafting but not autonomous multi-step inbox/calendar management." }
+call-delegation = { vendor = "Google", feature = "No equivalent", note = "Google Meet has AI summaries but no call delegation or triage." }
+enhanced-word = { vendor = "Google", feature = "Gemini in Docs", note = "Gemini drafts content but lacks industry-specific (legal/finance) specialisation." }
+email-from-chat = { vendor = "Google", feature = "Gemini in Gmail", note = "Similar concept — draft from chat. Microsoft adds Work IQ context grounding." }
+planner-ai = { vendor = "Google", feature = "No direct equivalent", note = "Google Tasks lacks AI task generation, execution, or status reporting." }
+scheduled-prompting = { vendor = "Google", feature = "No equivalent", note = "No scheduled prompt capability in Google Workspace." }
+notebooks-enhanced = { vendor = "Google", feature = "Gemini in NotebookLM", note = "NotebookLM is similar but separate from Workspace. Copilot Notebooks are integrated." }
+copilot-pages = { vendor = "Google", feature = "No direct equivalent", note = "Google Docs has Gemini drafting but no persistent AI canvas concept." }
+excel-python = { vendor = "Google", feature = "No equivalent", note = "Google Sheets has no native Python integration with AI." }
+agent-mode-apps = { vendor = "Google", feature = "Gemini side panel", note = "Gemini has a side panel in Docs/Sheets but no iterative agent mode." }
+copilot-studio-ga = { vendor = "Google", feature = "Dialogflow CX", note = "Google has Dialogflow but it requires developer skills. Studio is no-code." }
+work-iq-memory = { vendor = "Google", feature = "Gemini memory (limited)", note = "Gemini has early memory features but not enterprise-grade with org context." }
+narrative-builder = { vendor = "Google", feature = "Gemini in Slides", note = "Gemini can help with slides but lacks the structured narrative/storyline engine." }
+
+# ── Prerequisites chains (ordered steps to enable each feature) ───────────
+
+[[prerequisites]]
+feature_id = "copilot-cowork"
+steps = [
+  { step = 1, label = "Microsoft 365 E3/E5 licence", required = true },
+  { step = 2, label = "Microsoft 365 Copilot add-on licence", required = true },
+  { step = 3, label = "Enable Frontier programme (Admin Centre)", required = true },
+  { step = 4, label = "Approve Anthropic as sub-processor", required = true },
+  { step = 5, label = "EU/UK: Explicitly opt in to Anthropic", required = false, condition = "EU/EFTA/UK tenants only" }
+]
+
+[[prerequisites]]
+feature_id = "researcher-multi-model"
+steps = [
+  { step = 1, label = "Microsoft 365 E3/E5 licence", required = true },
+  { step = 2, label = "Microsoft 365 Copilot add-on licence", required = true },
+  { step = 3, label = "Enable Frontier programme (Admin Centre)", required = true },
+  { step = 4, label = "Approve Anthropic as sub-processor (for Claude features)", required = true }
+]
+
+[[prerequisites]]
+feature_id = "legal-agent-word"
+steps = [
+  { step = 1, label = "Microsoft 365 E3/E5 licence", required = true },
+  { step = 2, label = "Microsoft 365 Copilot add-on licence", required = true },
+  { step = 3, label = "Enable Frontier programme (Admin Centre)", required = true }
+]
+
+[[prerequisites]]
+feature_id = "agentic-outlook"
+steps = [
+  { step = 1, label = "Microsoft 365 E3/E5 licence", required = true },
+  { step = 2, label = "Microsoft 365 Copilot add-on licence", required = true },
+  { step = 3, label = "Enable Frontier programme (Admin Centre)", required = true }
+]
+
+[[prerequisites]]
+feature_id = "call-delegation"
+steps = [
+  { step = 1, label = "Microsoft 365 E3/E5 licence", required = true },
+  { step = 2, label = "Microsoft 365 Copilot add-on licence", required = true },
+  { step = 3, label = "Teams Phone licence", required = true },
+  { step = 4, label = "Teams Phone configured and working", required = true },
+  { step = 5, label = "Enable Frontier programme (Admin Centre)", required = true }
+]
+
+[[prerequisites]]
+feature_id = "enhanced-word"
+steps = [
+  { step = 1, label = "Microsoft 365 E3/E5 licence", required = true },
+  { step = 2, label = "Microsoft 365 Copilot add-on licence", required = true },
+  { step = 3, label = "Enable Frontier programme (Admin Centre)", required = true }
+]
+
+[[prerequisites]]
+feature_id = "email-from-chat"
+steps = [
+  { step = 1, label = "Microsoft 365 E3/E5 licence", required = true },
+  { step = 2, label = "Microsoft 365 Copilot add-on licence", required = true },
+  { step = 3, label = "Enable Frontier programme (Admin Centre)", required = true }
+]
+
+[[prerequisites]]
+feature_id = "planner-ai"
+steps = [
+  { step = 1, label = "Microsoft 365 E3/E5 licence", required = true },
+  { step = 2, label = "Microsoft 365 Copilot add-on licence", required = true },
+  { step = 3, label = "Enable Frontier programme (Admin Centre)", required = true }
+]
+
+[[prerequisites]]
+feature_id = "scheduled-prompting"
+steps = [
+  { step = 1, label = "Microsoft 365 E3/E5 licence", required = true },
+  { step = 2, label = "Microsoft 365 Copilot add-on licence", required = true }
+]
+
+[[prerequisites]]
+feature_id = "notebooks-enhanced"
+steps = [
+  { step = 1, label = "Microsoft 365 E3/E5 licence", required = true },
+  { step = 2, label = "Microsoft 365 Copilot add-on licence", required = true }
+]
+
+# ── Ask Your Admin email template ─────────────────────────────────────────
+
+[admin_email]
+subject_template = "Request: Enable Copilot Frontier Programme for {feature_name}"
+body_template = """Hi {admin_name},
+
+I'd like to request access to {feature_name}, a new Microsoft 365 Copilot capability currently available through the Frontier early-access programme.
+
+What it does:
+{cio_description}
+
+Prerequisites:
+{prerequisites_list}
+
+Business value for our team:
+{value_prop}
+
+You can learn more at: {source_url}
+
+The Frontier programme can be enabled in the Microsoft 365 Admin Centre under Settings → Org settings → Copilot.
+
+Would you be able to look into enabling this for our team?
+
+Thanks,
+{user_name}"""

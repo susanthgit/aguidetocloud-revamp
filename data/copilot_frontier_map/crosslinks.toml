@@ -1,0 +1,46 @@
+# ============================================================================
+# Copilot Frontier Map — Cross-Links to Related Tools
+# ============================================================================
+# Maps features to related tools on aguidetocloud.com
+# Last updated: 2026-05-02
+# ============================================================================
+
+[[links]]
+id = "model-map"
+name = "Model Map"
+url = "/copilot-model-map/"
+icon = "brain"
+desc = "See which AI model powers this feature"
+match_field = "ai_models"
+
+[[links]]
+id = "data-flow"
+name = "Data Flow"
+url = "/copilot-data-flow/"
+icon = "shield"
+desc = "Where does your data go?"
+match_all = true
+
+[[links]]
+id = "licence-picker"
+name = "Licence Picker"
+url = "/licence-picker/"
+icon = "shopping-cart"
+desc = "Find the cheapest licence combo"
+match_field = "licensing_prereqs"
+
+[[links]]
+id = "readiness"
+name = "Readiness Check"
+url = "/copilot-readiness/"
+icon = "target"
+desc = "Is your tenant ready?"
+match_all = true
+
+[[links]]
+id = "feature-matrix"
+name = "Feature Matrix"
+url = "/copilot-matrix/"
+icon = "chart-bar"
+desc = "Compare all Copilot features"
+match_all = true

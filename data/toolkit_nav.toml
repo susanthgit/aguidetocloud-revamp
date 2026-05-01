@@ -138,6 +138,18 @@ visual = "scatter"
 is_tool = true
 
 [[tools]]
+url = "/copilot-frontier-map/"
+emoji = "🗺️"
+icon = "map"
+name = "Copilot Frontier Map"
+short = "Frontier"
+desc = "Track Copilot features in the Frontier programme — status, GA dates, AI models, admin actions"
+color = "#6366F1"
+category = "copilot-ai"
+visual = "timeline"
+is_tool = true
+
+[[tools]]
 url = "/roi-calculator/"
 emoji = "💰"
 icon = "dollar-sign"

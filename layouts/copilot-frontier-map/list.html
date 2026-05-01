@@ -1,0 +1,256 @@
+{{ define "main" }}
+{{/* Load data — MUST be first for SEO block and data injection */}}
+{{ $dataDir := hugo.Data.copilot_frontier_map }}
+{{ $features := $dataDir.features.features | default slice }}
+{{ $meta := $dataDir.metadata | default dict }}
+{{ $programme := $meta.programme | default dict }}
+{{ $tiers := $meta.tiers | default dict }}
+{{ $tierLevels := $tiers.levels | default slice }}
+{{ $statuses := $meta.statuses | default slice }}
+{{ $events := $dataDir.events.events | default slice }}
+{{ $crosslinks := $dataDir.crosslinks.links | default slice }}
+{{ $enhancements := $dataDir.enhancements | default dict }}
+{{ $cioDescs := $enhancements.cio_descriptions | default dict }}
+{{ $competitors := $enhancements.competitor_equivalents | default dict }}
+{{ $prereqs := $enhancements.prerequisites | default slice }}
+{{ $adminEmail := $enhancements.admin_email | default dict }}
+
+<div data-pagefind-body style="display:none" aria-hidden="true">
+  <h2>Copilot Frontier Map — Track M365 Copilot Early-Access Features</h2>
+  <p>Interactive tracker for Microsoft 365 Copilot features in the Frontier early-access programme. See what's available now, what's graduating to GA, AI models used, admin actions needed, and licensing prerequisites.</p>
+  {{/* SEO: Server-rendered feature list for search engines */}}
+  {{ range $features }}
+  <div>
+    <h3>{{ .name }} — {{ .app }}</h3>
+    <p>Status: {{ .status }}. {{ .description }}</p>
+    <p>AI Models: {{ delimit .ai_models ", " }}. Frontier date: {{ .frontier_date }}. Expected GA: {{ .expected_ga }}.</p>
+    {{ with .licensing_prereqs }}<p>Licensing: {{ . }}</p>{{ end }}
+    {{ with .admin_action_required }}<p>Admin action: {{ . }}</p>{{ end }}
+  </div>
+  {{ end }}
+</div>
+<link rel="stylesheet" href="/css/copilot-frontier-map.css?v={{ site.Params.cache_version }}">
+
+<script>
+  window.__cfmData = {
+    features: {{ $features | jsonify | safeJS }},
+    programme: {{ $programme | jsonify | safeJS }},
+    tierLevels: {{ $tierLevels | jsonify | safeJS }},
+    statuses: {{ $statuses | jsonify | safeJS }},
+    events: {{ $events | jsonify | safeJS }},
+    crosslinks: {{ $crosslinks | jsonify | safeJS }},
+    cioDescs: {{ $cioDescs | jsonify | safeJS }},
+    competitors: {{ $competitors | jsonify | safeJS }},
+    prereqs: {{ $prereqs | jsonify | safeJS }},
+    adminEmail: {{ $adminEmail | jsonify | safeJS }}
+  };
+</script>
+
+{{/* JSON-LD: WebApplication */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Copilot Frontier Map",
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+{{/* JSON-LD: FAQPage */}}
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $faq := .Params.faq }}{{ if $i }},{{ end }}
+    { "@type": "Question", "name": {{ $faq.question | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $faq.answer | jsonify }} } }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+<div class="cfm-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Copilot Frontier Map") }}
+
+  {{/* Toolbar: stats + CIO toggle — compact, one line */}}
+  <div class="cfm-toolbar">
+    <div class="cfm-stats" id="cfm-stats"></div>
+    <label class="cfm-cio-toggle" title="Simplify descriptions for executives">
+      <input type="checkbox" id="cfm-cio-mode">
+      <span class="cfm-cio-label">👔 CIO Mode</span>
+    </label>
+  </div>
+
+  {{/* Tabs */}}
+  <div class="cfm-tabs zen-tabs" role="tablist" aria-label="Copilot Frontier Map sections">
+    <button class="cfm-tab zen-tab active" data-tab="pipeline" role="tab" id="tab-pipeline" aria-selected="true" aria-controls="panel-pipeline" tabindex="0">Pipeline</button>
+    <button class="cfm-tab zen-tab" data-tab="explorer" role="tab" id="tab-explorer" aria-selected="false" aria-controls="panel-explorer" tabindex="-1">Explorer</button>
+    <button class="cfm-tab zen-tab" data-tab="timeline" role="tab" id="tab-timeline" aria-selected="false" aria-controls="panel-timeline" tabindex="-1">Timeline</button>
+    <button class="cfm-tab zen-tab" data-tab="compare" role="tab" id="tab-compare" aria-selected="false" aria-controls="panel-compare" tabindex="-1">Compare</button>
+    <button class="cfm-tab zen-tab" data-tab="faq" role="tab" id="tab-faq" aria-selected="false" aria-controls="panel-faq" tabindex="-1">FAQ</button>
+  </div>
+
+  {{/* ═══ TAB: PIPELINE ═══ */}}
+  <div class="cfm-panel" id="panel-pipeline" role="tabpanel" aria-labelledby="tab-pipeline">
+
+    {{/* What's New — compact banner, not a section */}}
+    <div class="cfm-whats-new" id="cfm-whats-new">
+      <div class="cfm-wn-list" id="cfm-wn-list"></div>
+    </div>
+
+    {{/* Chart — subtle, inside pipeline */}}
+    <div class="cfm-chart" id="cfm-chart"></div>
+
+    <div class="cfm-pipeline" id="cfm-pipeline">
+      <div class="cfm-pipeline-col" data-status="frontier">
+        <div class="cfm-col-header">
+          <span class="cfm-col-emoji">🔬</span>
+          <span class="cfm-col-title">In Frontier</span>
+          <span class="cfm-col-count" id="cfm-count-frontier">0</span>
+        </div>
+        <div class="cfm-col-cards" id="cfm-cards-frontier"></div>
+      </div>
+
+      <div class="cfm-pipeline-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+
+      <div class="cfm-pipeline-col cfm-col-expected" data-status="expected">
+        <div class="cfm-col-header">
+          <span class="cfm-col-emoji">📅</span>
+          <span class="cfm-col-title">Expected</span>
+          <span class="cfm-col-count" id="cfm-count-expected">0</span>
+        </div>
+        <div class="cfm-col-cards" id="cfm-cards-expected"></div>
+      </div>
+
+      <div class="cfm-pipeline-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+
+      <div class="cfm-pipeline-col cfm-col-ga" data-status="ga">
+        <div class="cfm-col-header">
+          <span class="cfm-col-emoji">✅</span>
+          <span class="cfm-col-title">Generally Available</span>
+          <span class="cfm-col-count" id="cfm-count-ga">0</span>
+        </div>
+        <div class="cfm-col-cards" id="cfm-cards-ga"></div>
+      </div>
+    </div>
+
+    <div class="cfm-offramps" id="cfm-offramps">
+      <div class="cfm-offramp" data-status="paused">
+        <span class="cfm-offramp-label">⏸️ Paused</span>
+        <div class="cfm-offramp-cards" id="cfm-cards-paused"></div>
+      </div>
+      <div class="cfm-offramp" data-status="withdrawn">
+        <span class="cfm-offramp-label">🚫 Withdrawn</span>
+        <div class="cfm-offramp-cards" id="cfm-cards-withdrawn"></div>
+      </div>
+    </div>
+  </div>
+
+  {{/* ═══ TAB: EXPLORER ═══ */}}
+  <div class="cfm-panel" id="panel-explorer" style="display:none;" role="tabpanel" aria-labelledby="tab-explorer">
+    <div class="cfm-filters">
+      <div class="cfm-filter-group">
+        <label class="cfm-filter-label" for="cfm-filter-status">Status</label>
+        <select class="cfm-filter-select zen-input" id="cfm-filter-status">
+          <option value="all">All statuses</option>
+          <option value="frontier">🔬 In Frontier</option>
+          <option value="ga">✅ Generally Available</option>
+        </select>
+      </div>
+      <div class="cfm-filter-group">
+        <label class="cfm-filter-label" for="cfm-filter-app">App</label>
+        <select class="cfm-filter-select zen-input" id="cfm-filter-app">
+          <option value="all">All apps</option>
+        </select>
+      </div>
+      <div class="cfm-filter-group">
+        <label class="cfm-filter-label" for="cfm-filter-model">AI Model</label>
+        <select class="cfm-filter-select zen-input" id="cfm-filter-model">
+          <option value="all">All models</option>
+        </select>
+      </div>
+      <button class="cfm-filter-reset btn-secondary" id="cfm-filter-reset">Reset</button>
+    </div>
+
+    <div class="cfm-explorer-count" id="cfm-explorer-count"></div>
+    <div class="cfm-explorer-grid" id="cfm-explorer-grid"></div>
+  </div>
+
+  {{/* ═══ TAB: TIMELINE ═══ */}}
+  <div class="cfm-panel" id="panel-timeline" style="display:none;" role="tabpanel" aria-labelledby="tab-timeline">
+    <div class="cfm-timeline" id="cfm-timeline"></div>
+  </div>
+
+  {{/* ═══ TAB: COMPARE ═══ */}}
+  <div class="cfm-panel" id="panel-compare" style="display:none;" role="tabpanel" aria-labelledby="tab-compare">
+    <div class="cfm-compare-selectors">
+      <div class="cfm-compare-pick">
+        <label class="cfm-filter-label" for="cfm-compare-a">Feature A</label>
+        <select class="cfm-filter-select zen-input" id="cfm-compare-a">
+          <option value="">Select a feature...</option>
+        </select>
+      </div>
+      <span class="cfm-compare-vs">vs</span>
+      <div class="cfm-compare-pick">
+        <label class="cfm-filter-label" for="cfm-compare-b">Feature B</label>
+        <select class="cfm-filter-select zen-input" id="cfm-compare-b">
+          <option value="">Select a feature...</option>
+        </select>
+      </div>
+    </div>
+    <div class="cfm-compare-result" id="cfm-compare-result"></div>
+  </div>
+
+  {{/* ═══ TAB: FAQ ═══ */}}
+  <div class="cfm-panel" id="panel-faq" style="display:none;" role="tabpanel" aria-labelledby="tab-faq">
+    {{/* Three-tier explainer — lives here, not above fold */}}
+    <details class="cfm-faq-item" open>
+      <summary class="cfm-faq-q">What is the three-tier release model (Frontier, Standard, Deferred)?</summary>
+      <div class="cfm-faq-a">
+        <div class="cfm-tier-grid">
+          {{ range $tierLevels }}
+          <div class="cfm-tier-card">
+            <div class="cfm-tier-label">{{ .emoji }} {{ .name }}</div>
+            <p class="cfm-tier-desc">{{ .description }}</p>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </details>
+    {{ if .Params.faq }}
+    <div class="cfm-faq-list">
+      {{ range .Params.faq }}
+      <details class="cfm-faq-item">
+        <summary class="cfm-faq-q">{{ .question }}</summary>
+        <div class="cfm-faq-a"><p>{{ .answer }}</p></div>
+      </details>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+  {{/* Cross-links — once at page level, not per card */}}
+  <div class="cfm-crosslinks-footer" id="cfm-crosslinks-footer">
+    <span class="cfm-crosslinks-label">Related tools:</span>
+    <a href="/copilot-model-map/" class="cfm-crosslink">Model Map →</a>
+    <a href="/copilot-data-flow/" class="cfm-crosslink">Data Flow →</a>
+    <a href="/copilot-matrix/" class="cfm-crosslink">Feature Matrix →</a>
+    <a href="/licence-picker/" class="cfm-crosslink">Licence Picker →</a>
+    <a href="/copilot-readiness/" class="cfm-crosslink">Readiness Check →</a>
+  </div>
+
+  {{/* Footer — clean single line */}}
+  <div class="cfm-freshness">
+    <p>Last verified: <strong id="cfm-last-updated">{{ $programme.last_updated }}</strong> · <button class="cfm-print-btn" id="cfm-export-cio">📊 Export for CIO</button> · <button class="cfm-print-btn" onclick="window.print()">🖨️ Print</button> · <a href="https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features" target="_blank" rel="noopener">Sources</a> · <a href="/feedback/">Report an issue</a></p>
+  </div>
+
+</div>
+
+<script src="/js/copilot-frontier-map.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

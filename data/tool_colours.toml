@@ -111,6 +111,17 @@ css_namespace = "cmm-*"
 body_class = "page-copilot-model-map"
 
 [[tools]]
+name = "Copilot Frontier Map"
+slug = "copilot-frontier-map"
+hex = "#6366F1"
+hue = 239
+name_friendly = "Indigo"
+category = "Copilot"
+css_namespace = "cfm-*"
+body_class = "page-copilot-frontier-map"
+# NOTE: Shares Indigo with Data Flow Map and Model Map — intentional Copilot family matching
+
+[[tools]]
 name = "Copilot Feature Matrix"
 slug = "copilot-matrix"
 hex = "#60A5FA"
