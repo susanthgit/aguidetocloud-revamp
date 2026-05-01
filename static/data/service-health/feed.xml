@@ -5,8 +5,35 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 01 May 2026 17:11:27 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2026 19:36:02 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Some admins may see an error when removing blocked users from the Restricted entities page in Microsoft 365 suite.</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1297784</link>
+      <description>[Microsoft 365 suite] Admins may see an error when removing blocked users from the Restricted entities page in Microsoft 365 suite.</description>
+      <category>Microsoft 365 suite</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">MO1297784</guid>
+      <pubDate>Fri, 01 May 2026 18:52:43 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users may be experiencing high latency when performing searches in Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1297752</link>
+      <description>[Exchange Online] Users may be experiencing high latency when performing searches in Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1297752</guid>
+      <pubDate>Fri, 01 May 2026 17:47:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Some users may not receive results when performing searches in SharePoint Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1297751</link>
+      <description>[Microsoft 365 suite] Users may not receive results when performing searches in SharePoint Online.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1297751</guid>
+      <pubDate>Fri, 01 May 2026 17:31:58 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft OneDrive] Users may not be able to load the search bar in Microsoft OneDrive</title>
       <link>https://www.aguidetocloud.com/service-health/#OD1296516</link>
@@ -430,33 +457,6 @@ The issue initially began with impact to a subset of custom</description>
       <category>serviceRestored</category>
       <guid isPermaLink="false">MP1269923</guid>
       <pubDate>Mon, 30 Mar 2026 13:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft OneDrive] Some users may be missing options to open files using custom file handlers in Microsoft OneDrive</title>
-      <link>https://www.aguidetocloud.com/service-health/#OD1281099</link>
-      <description>[Microsoft OneDrive] Users may be missing options to open files using custom file handlers in OneDrive.</description>
-      <category>Microsoft OneDrive</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">OD1281099</guid>
-      <pubDate>Sun, 29 Mar 2026 23:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Some users may be missing options to open files using custom file handlers in SharePoint Online </title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1280824</link>
-      <description>[SharePoint Online] Some users may be missing options to open files using custom file handlers in SharePoint Online </description>
-      <category>SharePoint Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">SP1280824</guid>
-      <pubDate>Sun, 29 Mar 2026 23:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Admins may see stale or delayed data in ProPlusUsage reports within the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1263631</link>
-      <description>[Microsoft 365 suite] Admins may have seen stale or delayed data in ProPlusUsage reports within the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1263631</guid>
-      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

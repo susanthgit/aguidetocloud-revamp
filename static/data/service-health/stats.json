@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-05-01T17:11:26.689918+00:00",
+  "generated_at": "2026-05-01T19:36:01.479978+00:00",
   "total_incidents_tracked": 104,
   "services": [
     {
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 21,
-      "active_incidents": 0,
-      "avg_duration_minutes": 5650,
-      "last_incident": "2026-04-17T00:00:00+00:00",
+      "total_incidents": 22,
+      "active_incidents": 2,
+      "avg_duration_minutes": 4119,
+      "last_incident": "2026-05-01T18:52:43.697000+00:00",
       "classifications": {
         "advisory": 9,
-        "incident": 12
+        "incident": 13
       }
     },
     {
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 18,
-      "active_incidents": 3,
+      "total_incidents": 19,
+      "active_incidents": 4,
       "avg_duration_minutes": 15245,
-      "last_incident": "2026-04-14T11:37:00+00:00",
+      "last_incident": "2026-05-01T17:47:13.330000+00:00",
       "classifications": {
-        "advisory": 14,
+        "advisory": 15,
         "incident": 4
       }
     },
@@ -190,33 +190,14 @@
       "classifications": {
         "advisory": 1
       }
-    },
-    {
-      "service": "Microsoft Power Automate in Microsoft 365",
-      "short_name": "Automate (M365)",
-      "icon": "🔄",
-      "total_incidents": 1,
-      "active_incidents": 0,
-      "avg_duration_minutes": 2085,
-      "last_incident": "2026-02-16T10:00:00+00:00",
-      "classifications": {
-        "advisory": 1
-      }
-    },
-    {
-      "service": "Microsoft 365 apps",
-      "short_name": "M365 Apps",
-      "icon": "💼",
-      "total_incidents": 1,
-      "active_incidents": 0,
-      "avg_duration_minutes": 12570,
-      "last_incident": "2026-02-16T06:30:00+00:00",
-      "classifications": {
-        "advisory": 1
-      }
     }
   ],
   "monthly": [
+    {
+      "month": "2026-05",
+      "incident_count": 3,
+      "services_affected": 2
+    },
     {
       "month": "2026-04",
       "incident_count": 44,
@@ -229,8 +210,8 @@
     },
     {
       "month": "2026-02",
-      "incident_count": 17,
-      "services_affected": 12
+      "incident_count": 14,
+      "services_affected": 10
     }
   ]
 }
