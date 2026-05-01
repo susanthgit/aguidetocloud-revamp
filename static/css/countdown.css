@@ -311,13 +311,13 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
 }
 .cdown-d-top {
   top: 0;
-  background: linear-gradient(180deg, #2d2937 0%, #242030 100%);
-  border-radius: 14px 8px 0 0;
-  border-bottom: 1px solid rgba(0,0,0,0.5);
+  background: var(--bg-elevated);
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid var(--border);
 }
 .cdown-d-btm {
   bottom: 0;
-  background: linear-gradient(180deg, #1c1828 0%, #201c2a 100%);
+  background: var(--bg-surface);
   border-radius: 0 0 8px 8px;
 }
 /* Text spans stretch the full card height so each half clips correctly */
@@ -363,16 +363,16 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
 .cdown-flap-fold {
   top: 0;
   transform-origin: bottom center;
-  background: linear-gradient(180deg, #2d2937 0%, #242030 100%);
-  border-radius: 14px 8px 0 0;
-  border-bottom: 1px solid rgba(0,0,0,0.5);
+  background: var(--bg-elevated);
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid var(--border);
   animation: cdownFold 0.3s ease-in forwards;
 }
 .cdown-flap-unfold {
   bottom: 0;
   transform-origin: top center;
   transform: rotateX(90deg);
-  background: linear-gradient(180deg, #1c1828 0%, #201c2a 100%);
+  background: var(--bg-surface);
   border-radius: 0 0 8px 8px;
   animation: cdownUnfold 0.3s 0.25s ease-out forwards;
 }
@@ -411,14 +411,14 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
 }
 .cdown-mode-btn.active {
   background: var(--accent);
-  color: var(--accent-foreground, #fff);
+  color: #fff;
   font-weight: 600;
 }
 .cdown-timer-display {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
-  padding: 1.5rem 0;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -512,28 +512,29 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
 .cdown-lap-item span:first-child { color: var(--accent); font-weight: 600; }
 .cdown-lap-item span:last-child { font-family: 'SF Mono', 'Fira Mono', monospace; color: var(--text-primary); }
 
-/* ── Templates ── */
+/* ── Templates (compact pills — one row) ── */
 .cdown-tpl-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
 }
 .cdown-tpl-card {
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 1rem 1.25rem;
-  display: flex;
+  padding: 6px 10px;
+  display: inline-flex;
   align-items: center;
-  gap: 1rem;
+  gap: 6px;
   transition: border-color 150ms ease-out;
   cursor: pointer;
 }
 .cdown-tpl-card:hover { border-color: var(--accent); }
-.cdown-tpl-icon { font-size: 1.8rem; }
-.cdown-tpl-info { flex: 1; min-width: 0; }
-.cdown-tpl-name { font-weight: 600; color: var(--text-primary); font-size: 0.95rem; }
-.cdown-tpl-days { color: var(--accent); font-size: 0.82rem; margin-top: 0.2rem; }
+.cdown-tpl-icon { font-size: 1rem; }
+.cdown-tpl-info { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.cdown-tpl-name { font-weight: 600; color: var(--text-primary); font-size: 0.82rem; white-space: nowrap; }
+.cdown-tpl-days { color: var(--text-muted); font-size: 0.72rem; white-space: nowrap; }
 .cdown-tpl-btn {
   background: var(--accent-subtle);
   border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
@@ -813,3 +814,36 @@ body.page-countdown .site-nav { border-bottom-color: var(--accent); }
 }
 
 .cdown-hint-text { opacity: 0.5; }
+
+/* ── Collapsible create form ── */
+.cdown-create-details {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+}
+.cdown-create-toggle {
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  list-style: none;
+}
+.cdown-create-toggle::-webkit-details-marker { display: none; }
+.cdown-create-toggle::before { content: '+ '; }
+.cdown-create-details[open] .cdown-create-toggle::before { content: '- '; }
+.cdown-create-body {
+  padding: 0 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cdown-pickers-row {
+  display: flex;
+  gap: 1rem;
+}
+.cdown-pickers-row .cdown-field { flex: 1; }
+/* Tighter icon + colour buttons */
+.cdown-icon-btn { font-size: 1.1rem; width: 28px; height: 28px; padding: 0; }
+.cdown-color-btn { width: 20px; height: 20px; }

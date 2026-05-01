@@ -63,53 +63,55 @@
   {{/* ══════════════ TAB 1: EVENT COUNTDOWN ══════════════ */}}
   <div class="cdown-panel active" id="panel-events" role="tabpanel">
 
-    {{/* Quick Start Templates — first */}}
+    {{/* Quick Start Templates — compact pills */}}
     <div class="cdown-tpl-section" id="cdown-tpl-section">
-      <div class="cdown-section-title">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Quick Start Templates</div>
       <div class="cdown-tpl-grid" id="cdown-tpl-grid"></div>
     </div>
 
-    {{/* Create Form — below templates */}}
-    <div class="cdown-create" id="cdown-create">
-      <div class="cdown-section-title">Create a Countdown</div>
-      <div class="cdown-create-grid">
-        <div class="cdown-field">
-          <label class="cdown-label" for="cdown-name">Event Name</label>
-          <input type="text" class="cdown-input" id="cdown-name" placeholder="e.g. My Birthday" maxlength="60" autocomplete="off">
-        </div>
-        <div class="cdown-field">
-          <label class="cdown-label" for="cdown-date">Date &amp; Time</label>
-          <input type="datetime-local" class="cdown-input" id="cdown-date">
-        </div>
-      </div>
-      <div class="cdown-field">
-        <label class="cdown-label">Category Icon</label>
-        <div class="cdown-icon-grid" id="cdown-icon-grid"></div>
-      </div>
-      <div class="cdown-field">
-        <label class="cdown-label">Theme Colour</label>
-        <div class="cdown-color-grid" id="cdown-color-grid"></div>
-      </div>
-      <div class="cdown-field">
-        <label class="cdown-label">Banner Image <span class="cdown-hint-text">(optional — shows in full screen)</span></label>
-        <div class="cdown-banner-upload" id="cdown-banner-upload">
-          <div class="cdown-banner-preview" id="cdown-banner-preview" style="display:none">
-            <img id="cdown-banner-img" alt="Banner preview">
-            <button type="button" class="cdown-btn cdown-btn-sm cdown-btn-danger" id="cdown-banner-remove">✕ Remove</button>
+    {{/* Create Form — collapsed by default (templates are the primary action) */}}
+    <details class="cdown-create-details" id="cdown-create" open>
+      <summary class="cdown-create-toggle">Create Custom Countdown</summary>
+      <div class="cdown-create-body">
+        <div class="cdown-create-grid">
+          <div class="cdown-field">
+            <label class="cdown-label" for="cdown-name">Event Name</label>
+            <input type="text" class="cdown-input" id="cdown-name" placeholder="e.g. My Birthday" maxlength="60" autocomplete="off">
           </div>
-          <label class="cdown-banner-drop" id="cdown-banner-drop">
-            <span>Click or drag an image (max 200 KB)</span>
-            <input type="file" accept="image/*" id="cdown-banner-file" hidden>
-          </label>
-          <div class="cdown-banner-hint">Image too large? <a href="/image-compressor/" target="_blank" rel="noopener noreferrer" class="cdown-compress-link">Compress it free →</a></div>
+          <div class="cdown-field">
+            <label class="cdown-label" for="cdown-date">Date &amp; Time</label>
+            <input type="datetime-local" class="cdown-input" id="cdown-date">
+          </div>
         </div>
+        <div class="cdown-pickers-row">
+          <div class="cdown-field">
+            <label class="cdown-label">Icon</label>
+            <div class="cdown-icon-grid" id="cdown-icon-grid"></div>
+          </div>
+          <div class="cdown-field">
+            <label class="cdown-label">Colour</label>
+            <div class="cdown-color-grid" id="cdown-color-grid"></div>
+          </div>
+        </div>
+        <div class="cdown-field">
+          <label class="cdown-label">Banner <span class="cdown-hint-text">(optional)</span></label>
+          <div class="cdown-banner-upload" id="cdown-banner-upload">
+            <div class="cdown-banner-preview" id="cdown-banner-preview" style="display:none">
+              <img id="cdown-banner-img" alt="Banner preview">
+              <button type="button" class="cdown-btn cdown-btn-sm cdown-btn-danger" id="cdown-banner-remove">Remove</button>
+            </div>
+            <label class="cdown-banner-drop" id="cdown-banner-drop">
+              <span>Click or drag (max 200 KB)</span>
+              <input type="file" accept="image/*" id="cdown-banner-file" hidden>
+            </label>
+          </div>
+        </div>
+        <div class="cdown-field">
+          <label class="cdown-label" for="cdown-message">Message <span class="cdown-hint-text">(optional)</span></label>
+          <input type="text" class="cdown-input" id="cdown-message" placeholder="e.g. Welcome to our wedding!" maxlength="120">
+        </div>
+        <button class="cdown-btn cdown-btn-primary" id="cdown-create-btn">{{ partial "icon.html" (dict "name" "hourglass" "size" 14 "stroke" 1.5) }} Create</button>
       </div>
-      <div class="cdown-field">
-        <label class="cdown-label" for="cdown-message">Custom Message <span class="cdown-hint-text">(optional — shows in full screen)</span></label>
-        <input type="text" class="cdown-input" id="cdown-message" placeholder="e.g. Welcome to our wedding!" maxlength="120">
-      </div>
-      <button class="cdown-btn cdown-btn-primary" id="cdown-create-btn">{{ partial "icon.html" (dict "name" "hourglass" "size" 14 "stroke" 1.5) }} Create Countdown</button>
-    </div>
+    </details>
 
     {{/* Sort */}}
     <div class="cdown-sort" id="cdown-sort" style="display:none">
@@ -156,40 +158,42 @@
 
     {{/* Controls */}}
     <div class="cdown-timer-ctrls">
-      <button class="cdown-btn cdown-btn-primary" id="cdown-start">▶ Start</button>
+      <button class="cdown-btn cdown-btn-primary" id="cdown-start">Start</button>
       <button class="cdown-btn" id="cdown-pause" disabled>Pause</button>
       <button class="cdown-btn" id="cdown-reset">Reset</button>
       <button class="cdown-btn" id="cdown-plus1">+1 min</button>
-      <button class="cdown-btn" id="cdown-lap">🏁 Lap</button>
-      <button class="cdown-btn" id="cdown-timer-fs">🖥️ Full Screen</button>
+      <button class="cdown-btn" id="cdown-lap">Lap</button>
+      <button class="cdown-btn" id="cdown-timer-fs">Full Screen</button>
     </div>
 
-    {{/* Timer display name + message for fullscreen */}}
-    <div class="cdown-timer-extras">
-      <div class="cdown-field" style="max-width:400px;margin:0 auto">
-        <label class="cdown-label" for="cdown-timer-label">Display Name <span class="cdown-hint-text">(shows in full screen)</span></label>
-        <input type="text" class="cdown-input" id="cdown-timer-label" placeholder="e.g. Presentation Timer" maxlength="60">
-      </div>
-      <div class="cdown-field" style="max-width:400px;margin:0.5rem auto 0">
-        <label class="cdown-label">Banner Image <span class="cdown-hint-text">(shows in full screen)</span></label>
-        <div class="cdown-banner-upload">
-          <div class="cdown-banner-preview" id="cdown-timer-banner-preview" style="display:none">
-            <img id="cdown-timer-banner-img" alt="Banner preview">
-            <button type="button" class="cdown-btn cdown-btn-sm cdown-btn-danger" id="cdown-timer-banner-remove">✕ Remove</button>
+    {{/* Timer extras — collapsible */}}
+    <details class="cdown-create-details">
+      <summary class="cdown-create-toggle">Full Screen Options</summary>
+      <div class="cdown-create-body">
+        <div class="cdown-field">
+          <label class="cdown-label" for="cdown-timer-label">Display Name</label>
+          <input type="text" class="cdown-input" id="cdown-timer-label" placeholder="e.g. Presentation Timer" maxlength="60">
+        </div>
+        <div class="cdown-field">
+          <label class="cdown-label">Banner Image</label>
+          <div class="cdown-banner-upload">
+            <div class="cdown-banner-preview" id="cdown-timer-banner-preview" style="display:none">
+              <img id="cdown-timer-banner-img" alt="Banner preview">
+              <button type="button" class="cdown-btn cdown-btn-sm cdown-btn-danger" id="cdown-timer-banner-remove">Remove</button>
+            </div>
+            <label class="cdown-banner-drop" id="cdown-timer-banner-drop">
+              <span>Click or drag (max 200 KB)</span>
+              <input type="file" accept="image/*" id="cdown-timer-banner-file" hidden>
+            </label>
           </div>
-          <label class="cdown-banner-drop" id="cdown-timer-banner-drop">
-            <span>Click or drag an image (max 200 KB)</span>
-            <input type="file" accept="image/*" id="cdown-timer-banner-file" hidden>
-          </label>
-          <div class="cdown-banner-hint">Image too large? <a href="/image-compressor/" target="_blank" rel="noopener noreferrer" class="cdown-compress-link">Compress it free →</a></div>
         </div>
       </div>
-    </div>
+    </details>
 
     {{/* Options */}}
     <div class="cdown-timer-opts">
       <label class="cdown-check-label"><input type="checkbox" id="cdown-loop"> Loop when finished</label>
-      <label class="cdown-check-label"><input type="checkbox" id="cdown-sound" checked> 🔔 Sound alert</label>
+      <label class="cdown-check-label"><input type="checkbox" id="cdown-sound" checked> Sound alert</label>
     </div>
 
     {{/* Laps */}}
