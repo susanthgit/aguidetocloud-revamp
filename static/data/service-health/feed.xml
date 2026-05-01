@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 01 May 2026 21:05:57 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2026 23:05:24 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[SharePoint Online] Users may not be able to load the search bar in SharePoint Online sites</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1297967</link>
+      <description>[SharePoint Online] Users may not be able to load the search bar in SharePoint Online sites.</description>
+      <category>SharePoint Online</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">SP1297967</guid>
+      <pubDate>Fri, 01 May 2026 22:13:22 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Users may be experiencing high latency when performing searches in Exchange Online</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1297752</link>
@@ -209,9 +218,9 @@ The issue initially began with impact to a subset of custom</description>
     <item>
       <title>[Exchange Online] Users may be unable to reply to email messages from a pop-up window in Outlook on the web</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1281449</link>
-      <description>[Exchange Online] Users may be unable reply to email messages from a pop-up window in Outlook on the web.</description>
+      <description>[Exchange Online] Users may have been unable reply to email messages from a pop-up window in Outlook on the web.</description>
       <category>Exchange Online</category>
-      <category>restoringService</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">EX1281449</guid>
       <pubDate>Tue, 14 Apr 2026 02:00:00 +0000</pubDate>
     </item>
@@ -448,15 +457,6 @@ The issue initially began with impact to a subset of custom</description>
       <category>serviceRestored</category>
       <guid isPermaLink="false">MP1269923</guid>
       <pubDate>Mon, 30 Mar 2026 13:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft OneDrive] Some users may be missing options to open files using custom file handlers in Microsoft OneDrive</title>
-      <link>https://www.aguidetocloud.com/service-health/#OD1281099</link>
-      <description>[Microsoft OneDrive] Users may be missing options to open files using custom file handlers in OneDrive.</description>
-      <category>Microsoft OneDrive</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">OD1281099</guid>
-      <pubDate>Sun, 29 Mar 2026 23:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
