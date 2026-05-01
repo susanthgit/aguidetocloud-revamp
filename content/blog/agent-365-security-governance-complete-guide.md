@@ -1,6 +1,6 @@
 ---
-title: "Agent 365 Security & Governance — What IT Admins Actually Need to Know"
-description: "Agent 365 just went live. Here's how it works with Entra, Purview, and Defender to secure your AI agents — explained like a conversation over coffee, not a Microsoft pitch deck. Real screenshots, real scenarios, no fluff."
+title: "Agent 365 Security & Governance — A Plain-English Guide"
+description: "Agent 365 just went GA. Here's how Entra, Purview, and Defender secure your AI agents — with real screenshots, scenarios, and no marketing fluff."
 date: 2026-04-30
 lastmod: 2026-05-01
 card_tag: "Agent 365"
