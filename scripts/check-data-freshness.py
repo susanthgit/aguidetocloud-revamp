@@ -169,6 +169,76 @@ def check_pipeline_data_ages():
             ISSUES.append(f"🔴 **{name}** data file missing: {path}")
 
 
+def check_frontier_map():
+    """Check Copilot Frontier Map data freshness and Frontier Features page for changes."""
+    print("\nChecking Copilot Frontier Map...")
+
+    # 1. Check last_verified dates in features.toml
+    features_path = ROOT / "data" / "copilot_frontier_map" / "features.toml"
+    if not features_path.exists():
+        ISSUES.append("🔴 **Frontier Map** features.toml not found")
+        return
+
+    content = features_path.read_text()
+    last_verified_dates = re.findall(r'last_verified\s*=\s*"(\d{4}-\d{2}-\d{2})"', content)
+
+    if last_verified_dates:
+        oldest = min(last_verified_dates)
+        oldest_dt = datetime.strptime(oldest, '%Y-%m-%d').replace(tzinfo=timezone.utc)
+        age_days = (datetime.now(timezone.utc) - oldest_dt).days
+        print(f"  Oldest last_verified: {oldest} ({age_days} days ago)")
+        if age_days > 30:
+            ISSUES.append(f"🔴 **Frontier Map** data is {age_days} days old (oldest: {oldest}). Check Microsoft Frontier Features page for updates.")
+        elif age_days > 14:
+            ISSUES.append(f"🟡 **Frontier Map** data is {age_days} days old. Consider verifying against Frontier Features page.")
+        else:
+            print(f"  ✅ Data is fresh ({age_days} days)")
+
+    # 2. Check Frontier Features page for new content
+    try:
+        url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+        resp = requests.get(url, timeout=15, headers={'User-Agent': 'Mozilla/5.0 (aguidetocloud-freshness-check)'})
+        page_text = resp.text.lower()
+
+        # Check for current month mentions (new features announced this month)
+        months = ['january', 'february', 'march', 'april', 'may', 'june',
+                  'july', 'august', 'september', 'october', 'november', 'december']
+        now = datetime.now(timezone.utc)
+        current_month = months[now.month - 1]
+        current_year = str(now.year)
+
+        has_current_month = f"{current_month} {current_year}" in page_text
+        print(f"  Frontier page mentions '{current_month} {current_year}': {'✅ Yes' if has_current_month else '⚠️ No'}")
+
+        # Count feature keywords in page and compare to our data
+        feature_names = re.findall(r'name\s*=\s*"([^"]+)"', content)
+        missing = []
+        # Known keywords that should be on the Frontier page if still active
+        frontier_keywords = ['cowork', 'researcher', 'legal agent', 'call delegation', 'planner']
+        for kw in frontier_keywords:
+            if kw not in page_text:
+                print(f"  ⚠️ '{kw}' not found on Frontier page — may have graduated or been removed")
+
+        print(f"  Page fetched OK ({len(resp.text) // 1024} KB)")
+
+    except Exception as e:
+        print(f"  ⚠️ Could not fetch Frontier page: {e}")
+        ISSUES.append(f"🟡 **Frontier Map** could not reach Frontier Features page: {e}")
+
+    # 3. Check metadata last_updated
+    meta_path = ROOT / "data" / "copilot_frontier_map" / "metadata.toml"
+    if meta_path.exists():
+        meta_content = meta_path.read_text()
+        m = re.search(r'last_updated\s*=\s*"(\d{4}-\d{2}-\d{2})"', meta_content)
+        if m:
+            meta_date = m.group(1)
+            meta_dt = datetime.strptime(meta_date, '%Y-%m-%d').replace(tzinfo=timezone.utc)
+            meta_age = (datetime.now(timezone.utc) - meta_dt).days
+            print(f"  Metadata last_updated: {meta_date} ({meta_age} days ago)")
+            if meta_age > 30:
+                ISSUES.append(f"🔴 **Frontier Map** metadata.toml last_updated is {meta_age} days old. Update the last_updated date after verifying features.")
+
+
 def main():
     print("=== Data Freshness Check ===\n")
 
@@ -177,6 +247,7 @@ def main():
     check_roi_consistency()
     check_ai_vendors()
     check_pipeline_data_ages()
+    check_frontier_map()
 
     print(f"\n{'='*50}")
     print(f"Issues found: {len(ISSUES)}")

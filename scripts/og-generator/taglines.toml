@@ -42,6 +42,9 @@ tagline = "Where does your data go in M365 Copilot? Interactive security flows."
 [tools.copilot-model-map]
 tagline = "Which AI model powers each M365 Copilot feature? GPT, Claude, Phi — mapped."
 
+[tools.copilot-frontier-map]
+tagline = "Track every Copilot Frontier feature — status, GA dates, AI models, admin actions."
+
 [tools.copilot-matrix]
 tagline = "Compare Copilot features across Free, Chat, Pro & M365 tiers."
 
