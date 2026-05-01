@@ -114,6 +114,18 @@ visual = "grid"
 is_tool = true
 
 [[tools]]
+url = "/copilot-data-flow/"
+emoji = "🔒"
+icon = "shield"
+name = "Copilot Data Flow Map"
+short = "Data Flow"
+desc = "Where does your data go in M365 Copilot? Interactive security & privacy flows"
+color = "#6366F1"
+category = "copilot-ai"
+visual = "lines"
+is_tool = true
+
+[[tools]]
 url = "/copilot-model-map/"
 emoji = "🧠"
 icon = "brain"

@@ -1,0 +1,251 @@
+{{ define "main" }}
+<div data-pagefind-body style="display:none" aria-hidden="true">
+  <h2>Copilot Data Flow Map — Where Does Your Data Go in M365 Copilot</h2>
+  <p>Interactive data flow showing where your data goes when using Microsoft 365 Copilot. Security boundaries, sub-processor paths, OpenAI vs Anthropic, admin controls, compliance certifications.</p>
+</div>
+<link rel="stylesheet" href="/css/copilot-data-flow.css?v={{ site.Params.cache_version }}">
+
+{{/* Load data */}}
+{{ $dataDir := hugo.Data.copilot_data_flow }}
+{{ $scenariosRaw := ($dataDir.scenarios).scenarios | default slice }}
+{{ $compData := $dataDir.compliance | default dict }}
+{{ $certifications := $compData.certifications | default slice }}
+{{ $controls := $compData.controls | default slice }}
+{{ $readiness := $dataDir.readiness | default dict }}
+{{ $checklist := $readiness.checklist | default slice }}
+{{ $regions := $readiness.regions | default slice }}
+{{ $riskRatings := $readiness.risk_ratings | default dict }}
+{{ $graphAccess := $readiness.graph_access | default slice }}
+{{ $docsHub := ($dataDir.docs_hub).docs | default slice }}
+
+<script>
+  window.__cdfData = {
+    scenarios: {{ $scenariosRaw | jsonify | safeJS }},
+    certifications: {{ $certifications | jsonify | safeJS }},
+    controls: {{ $controls | jsonify | safeJS }},
+    checklist: {{ $checklist | jsonify | safeJS }},
+    regions: {{ $regions | jsonify | safeJS }},
+    riskRatings: {{ $riskRatings | jsonify | safeJS }},
+    graphAccess: {{ $graphAccess | jsonify | safeJS }},
+    docsHub: {{ $docsHub | jsonify | safeJS }}
+  };
+</script>
+
+{{/* JSON-LD */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Copilot Data Flow Map",
+  "description": {{ .Description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $faq := .Params.faq }}{{ if $i }},{{ end }}
+    { "@type": "Question", "name": {{ $faq.question | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $faq.answer | jsonify }} } }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+<div class="cdf-page zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Copilot Data Flow Map") }}
+
+  {{/* Stakeholder toggle */}}
+  <div class="cdf-stakeholder" id="cdf-stakeholder">
+    <span class="cdf-stakeholder-label">I am a:</span>
+    <button class="cdf-stakeholder-btn active" data-role="all">Everyone</button>
+    <button class="cdf-stakeholder-btn" data-role="ciso">CISO</button>
+    <button class="cdf-stakeholder-btn" data-role="admin">IT Admin</button>
+    <button class="cdf-stakeholder-btn" data-role="compliance">Compliance</button>
+    <button class="cdf-stakeholder-btn" data-role="enduser">End User</button>
+  </div>
+
+  <div class="cdf-tabs zen-tabs" role="tablist" aria-label="Copilot Data Flow Map sections">
+    <button class="cdf-tab zen-tab active" data-tab="flow" role="tab" id="tab-flow" aria-selected="true" aria-controls="panel-flow" tabindex="0">Data Flow</button>
+    <button class="cdf-tab zen-tab" data-tab="compare" role="tab" id="tab-compare" aria-selected="false" aria-controls="panel-compare" tabindex="-1">OpenAI vs Anthropic</button>
+    <button class="cdf-tab zen-tab" data-tab="access" role="tab" id="tab-access" aria-selected="false" aria-controls="panel-access" tabindex="-1">What Can Copilot See?</button>
+    <button class="cdf-tab zen-tab" data-tab="controls" role="tab" id="tab-controls" aria-selected="false" aria-controls="panel-controls" tabindex="-1">Admin Controls</button>
+    <button class="cdf-tab zen-tab" data-tab="checklist" role="tab" id="tab-checklist" aria-selected="false" aria-controls="panel-checklist" tabindex="-1">Readiness</button>
+    <button class="cdf-tab zen-tab" data-tab="comparescn" role="tab" id="tab-comparescn" aria-selected="false" aria-controls="panel-comparescn" tabindex="-1">Compare</button>
+    <button class="cdf-tab zen-tab" data-tab="docs" role="tab" id="tab-docs" aria-selected="false" aria-controls="panel-docs" tabindex="-1">Official Docs</button>
+    <button class="cdf-tab zen-tab" data-tab="faq" role="tab" id="tab-faq" aria-selected="false" aria-controls="panel-faq" tabindex="-1">FAQ</button>
+  </div>
+
+  {{/* ═══ TAB: DATA FLOW ═══ */}}
+  <div class="cdf-panel" id="panel-flow" role="tabpanel" aria-labelledby="tab-flow">
+    <p class="cdf-section-intro">Pick a scenario to see exactly where your data goes — step by step.</p>
+
+    <div class="cdf-scenario-picker" id="cdf-scenarios">
+      <!-- JS renders scenario buttons -->
+    </div>
+
+    <div class="cdf-boundary-legend">
+      <span class="cdf-bl-item"><span class="cdf-bl-dot cdf-b-microsoft"></span> Inside Microsoft</span>
+      <span class="cdf-bl-item"><span class="cdf-bl-dot cdf-b-external"></span> External (Bing)</span>
+      <span class="cdf-bl-item"><span class="cdf-bl-dot cdf-b-sub-processor"></span> Sub-processor (Anthropic)</span>
+    </div>
+
+    <div class="cdf-flow-container" id="cdf-flow">
+      <p class="cdf-flow-empty">👆 Select a scenario above to see the data flow</p>
+    </div>
+
+    <div class="cdf-step-detail" id="cdf-step-detail" style="display:none;">
+      <!-- JS fills on step click -->
+    </div>
+  </div>
+
+  {{/* ═══ TAB: OPENAI VS ANTHROPIC ═══ */}}
+  <div class="cdf-panel" id="panel-compare" style="display:none;" role="tabpanel" aria-labelledby="tab-compare">
+    <p class="cdf-section-intro">When Copilot uses OpenAI models, your data stays inside Microsoft's boundary. When it uses Anthropic Claude, data crosses to a sub-processor. Here's exactly what's different.</p>
+
+    <div class="cdf-compare-grid">
+      <div class="cdf-compare-card">
+        <div class="cdf-compare-header cdf-compare-openai">
+          <h3>OpenAI Models (GPT)</h3>
+          <span class="cdf-compare-badge">Default</span>
+        </div>
+        <div class="cdf-compare-body">
+          <div class="cdf-compare-row"><strong>Hosted by</strong><span>Microsoft (Azure OpenAI)</span></div>
+          <div class="cdf-compare-row"><strong>Data boundary</strong><span>Inside Microsoft 365 service boundary</span></div>
+          <div class="cdf-compare-row"><strong>EU Data Boundary</strong><span>✅ Supported</span></div>
+          <div class="cdf-compare-row"><strong>Data residency</strong><span>Your tenant's region</span></div>
+          <div class="cdf-compare-row"><strong>Training on your data</strong><span>❌ Never</span></div>
+          <div class="cdf-compare-row"><strong>Contractual cover</strong><span>Microsoft Product Terms + DPA</span></div>
+          <div class="cdf-compare-row"><strong>Admin opt-in needed</strong><span>No — enabled by default</span></div>
+          <div class="cdf-compare-row"><strong>Data retention</strong><span>Transient processing only. No persistent LLM storage.</span></div>
+        </div>
+      </div>
+
+      <div class="cdf-compare-card">
+        <div class="cdf-compare-header cdf-compare-anthropic">
+          <h3>Anthropic Models (Claude)</h3>
+          <span class="cdf-compare-badge cdf-badge-sub">Sub-processor</span>
+        </div>
+        <div class="cdf-compare-body">
+          <div class="cdf-compare-row"><strong>Hosted by</strong><span>Anthropic (under Microsoft contractual control)</span></div>
+          <div class="cdf-compare-row"><strong>Data boundary</strong><span>Crosses Microsoft boundary → Anthropic infrastructure</span></div>
+          <div class="cdf-compare-row"><strong>EU Data Boundary</strong><span>❌ Excluded — disabled by default in EU/EFTA/UK</span></div>
+          <div class="cdf-compare-row"><strong>Data residency</strong><span>Processed in US-based infrastructure</span></div>
+          <div class="cdf-compare-row"><strong>Training on your data</strong><span>❌ Never — covered by Microsoft DPA</span></div>
+          <div class="cdf-compare-row"><strong>Contractual cover</strong><span>Microsoft Product Terms + DPA (not Anthropic's own terms)</span></div>
+          <div class="cdf-compare-row"><strong>Admin opt-in needed</strong><span>Yes (disabled by default in EU/UK, enabled elsewhere)</span></div>
+          <div class="cdf-compare-row"><strong>Data retention</strong><span>Transient processing only. No persistent storage at Anthropic.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cdf-compare-callout">
+      <strong>Key takeaway:</strong> Both providers are contractually bound by Microsoft's DPA. Neither trains on your data. The difference is WHERE processing happens — OpenAI stays inside Microsoft, Anthropic crosses to a sub-processor.
+    </div>
+
+    <h2 class="cdf-section-heading">Data Residency by Region</h2>
+    <p class="cdf-section-intro">Where your data is processed depends on your tenant's region.</p>
+    <div class="cdf-residency-picker">
+      <label class="cdf-residency-label" for="cdf-region-select">Your tenant region:</label>
+      <select class="cdf-residency-select zen-input" id="cdf-region-select">
+        <!-- JS fills -->
+      </select>
+    </div>
+    <div class="cdf-residency-result" id="cdf-residency-result">
+      <!-- JS renders -->
+    </div>
+  </div>
+
+  {{/* ═══ TAB: WHAT CAN COPILOT SEE? ═══ */}}
+  <div class="cdf-panel" id="panel-access" style="display:none;" role="tabpanel" aria-labelledby="tab-access">
+    <p class="cdf-section-intro">Copilot can only access data YOU have permission to see via Microsoft Graph. But if your permissions are too broad, so is Copilot's view.</p>
+    <div class="cdf-access-grid" id="cdf-access-grid">
+      <!-- JS renders -->
+    </div>
+  </div>
+
+  {{/* ═══ TAB: ADMIN CONTROLS ═══ */}}
+  <div class="cdf-panel" id="panel-controls" style="display:none;" role="tabpanel" aria-labelledby="tab-controls">
+    <p class="cdf-section-intro">These are the security levers you can pull as an M365 admin to control Copilot's data access and behaviour.</p>
+    <div class="cdf-controls-grid" id="cdf-controls-grid">
+      <!-- JS renders controls -->
+    </div>
+  </div>
+
+  {{/* ═══ TAB: READINESS ═══ */}}
+  <div class="cdf-panel" id="panel-checklist" style="display:none;" role="tabpanel" aria-labelledby="tab-checklist">
+    <p class="cdf-section-intro">Is your tenant ready for Copilot? Check off each item to see your readiness score.</p>
+    <div class="cdf-checklist-score" id="cdf-checklist-score">
+      <div class="cdf-score-bar"><div class="cdf-score-fill" id="cdf-score-fill" style="width:0%"></div></div>
+      <span class="cdf-score-text" id="cdf-score-text">0 / 0 complete</span>
+    </div>
+    <div class="cdf-checklist-items" id="cdf-checklist-items">
+      <!-- JS renders -->
+    </div>
+    <div class="cdf-checklist-actions">
+      <button class="btn-secondary" id="cdf-copy-brief">📋 Copy Security Brief</button>
+    </div>
+
+    <h2 class="cdf-section-heading">Compliance Certifications</h2>
+    <p class="cdf-section-intro">M365 Copilot inherits Microsoft 365 compliance and has AI-specific certifications including ISO/IEC 42001.</p>
+    <div class="cdf-cert-grid" id="cdf-cert-grid">
+      <!-- JS renders -->
+    </div>
+  </div>
+
+  {{/* ═══ TAB: COMPARE SCENARIOS ═══ */}}
+  <div class="cdf-panel" id="panel-comparescn" style="display:none;" role="tabpanel" aria-labelledby="tab-comparescn">
+    <p class="cdf-section-intro">Compare two scenarios side-by-side to see exactly how the data flow differs.</p>
+    <div class="cdf-compare-picker">
+      <div class="cdf-compare-pick">
+        <label>Scenario A:</label>
+        <select class="zen-input" id="cdf-compare-a"></select>
+      </div>
+      <span class="cdf-compare-vs">vs</span>
+      <div class="cdf-compare-pick">
+        <label>Scenario B:</label>
+        <select class="zen-input" id="cdf-compare-b"></select>
+      </div>
+    </div>
+    <div class="cdf-compare-result" id="cdf-compare-result">
+      <!-- JS renders -->
+    </div>
+  </div>
+
+  {{/* ═══ TAB: OFFICIAL DOCS ═══ */}}
+  <div class="cdf-panel" id="panel-docs" style="display:none;" role="tabpanel" aria-labelledby="tab-docs">
+    <p class="cdf-section-intro">Every official Microsoft document about Copilot security and privacy — in one place. No more searching.</p>
+    <div class="cdf-docs-grid" id="cdf-docs-grid">
+      <!-- JS renders -->
+    </div>
+  </div>
+
+  {{/* ═══ TAB: FAQ ═══ */}}
+  <div class="cdf-panel" id="panel-faq" style="display:none;" role="tabpanel" aria-labelledby="tab-faq">
+    {{ if .Params.faq }}
+    <div class="cdf-faq-list">
+      {{ range .Params.faq }}
+      <details class="cdf-faq-item">
+        <summary class="cdf-faq-q">{{ .question }}</summary>
+        <div class="cdf-faq-a"><p>{{ .answer }}</p></div>
+      </details>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+  <div class="cdf-freshness">
+    <p><button class="cdf-print-btn" onclick="window.print()">🖨️ Print this page</button> · Sources: <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy" target="_blank" rel="noopener">Microsoft Learn — Privacy</a>, <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor" target="_blank" rel="noopener">Anthropic Sub-processor</a>, <a href="https://servicetrust.microsoft.com/" target="_blank" rel="noopener">Service Trust Portal</a>. See something outdated? <a href="/feedback/">Let us know</a></p>
+  </div>
+
+</div>
+
+<script src="/js/copilot-data-flow.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}

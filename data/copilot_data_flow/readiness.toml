@@ -1,0 +1,196 @@
+# Copilot Data Flow Map — Readiness Checklist & Data Residency
+
+# ─────────────────────────────────────────────
+# SECURITY READINESS CHECKLIST
+# ─────────────────────────────────────────────
+[[checklist]]
+id = "dlp"
+name = "Data Loss Prevention configured"
+category = "data-protection"
+description = "Purview DLP policies inspect Copilot prompts and prevent sensitive data leaks."
+doc_url = "https://learn.microsoft.com/en-us/purview/dlp-learn-about-dlp"
+priority = "critical"
+
+[[checklist]]
+id = "sensitivity-labels"
+name = "Sensitivity labels deployed"
+category = "data-protection"
+description = "Copilot respects encryption and usage rights from sensitivity labels on documents."
+doc_url = "https://learn.microsoft.com/en-us/purview/sensitivity-labels"
+priority = "critical"
+
+[[checklist]]
+id = "conditional-access"
+name = "Conditional Access policies set"
+category = "identity"
+description = "MFA, device compliance, and location restrictions enforce who can access Copilot."
+doc_url = "https://learn.microsoft.com/en-us/entra/identity/conditional-access/"
+priority = "critical"
+
+[[checklist]]
+id = "audit-logging"
+name = "Purview Audit logging enabled"
+category = "monitoring"
+description = "All Copilot prompts, responses, and web searches are logged for compliance review."
+doc_url = "https://learn.microsoft.com/en-us/purview/audit-search"
+priority = "important"
+
+[[checklist]]
+id = "anthropic-decision"
+name = "Anthropic sub-processor decision made"
+category = "data-protection"
+description = "Decide whether to enable Claude models. Disabled by default in EU/UK. Enabling sends data outside Microsoft boundary."
+doc_url = "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor"
+priority = "important"
+
+[[checklist]]
+id = "web-search-decision"
+name = "Web search grounding configured"
+category = "data-protection"
+description = "Decide whether Copilot can search the web via Bing. Enable Zero Query Logging if on."
+doc_url = "https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access"
+priority = "important"
+
+[[checklist]]
+id = "oversharing-remediated"
+name = "SharePoint oversharing reviewed"
+category = "data-protection"
+description = "Copilot surfaces anything the user can access. Review broad sharing links, site permissions, and 'Everyone except external users' access."
+doc_url = "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy"
+priority = "critical"
+
+[[checklist]]
+id = "permissions-reviewed"
+name = "Microsoft Graph permissions audited"
+category = "identity"
+description = "Review what data each user can access via Graph — Copilot inherits these permissions."
+doc_url = "https://learn.microsoft.com/en-us/graph/permissions-overview"
+priority = "important"
+
+# ─────────────────────────────────────────────
+# DATA RESIDENCY REGIONS
+# ─────────────────────────────────────────────
+[[regions]]
+id = "us"
+name = "United States"
+openai_processing = "US (Azure regions)"
+anthropic_processing = "US"
+eu_data_boundary = false
+anthropic_default = "enabled"
+notes = ""
+
+[[regions]]
+id = "eu"
+name = "European Union"
+openai_processing = "EU (Azure EU regions)"
+anthropic_processing = "US (outside EU boundary)"
+eu_data_boundary = true
+anthropic_default = "disabled"
+notes = "Anthropic is excluded from EU Data Boundary. Must explicitly opt-in. Data will leave EU."
+
+[[regions]]
+id = "uk"
+name = "United Kingdom"
+openai_processing = "UK (Azure UK regions)"
+anthropic_processing = "US (outside UK boundary)"
+eu_data_boundary = false
+anthropic_default = "disabled"
+notes = "Anthropic disabled by default. Opt-in required."
+
+[[regions]]
+id = "au"
+name = "Australia"
+openai_processing = "Australia (Azure AU regions)"
+anthropic_processing = "US"
+eu_data_boundary = false
+anthropic_default = "enabled"
+notes = "OpenAI processing stays in AU. Anthropic processing occurs in US."
+
+[[regions]]
+id = "ca"
+name = "Canada"
+openai_processing = "Canada (Azure CA regions)"
+anthropic_processing = "US"
+eu_data_boundary = false
+anthropic_default = "enabled"
+notes = "OpenAI processing stays in CA. Anthropic processing occurs in US."
+
+[[regions]]
+id = "jp"
+name = "Japan"
+openai_processing = "Japan (Azure JP regions)"
+anthropic_processing = "US"
+eu_data_boundary = false
+anthropic_default = "enabled"
+notes = "OpenAI processing stays in JP. Anthropic processing occurs in US."
+
+[[regions]]
+id = "in"
+name = "India"
+openai_processing = "India (Azure IN regions)"
+anthropic_processing = "US"
+eu_data_boundary = false
+anthropic_default = "enabled"
+notes = "OpenAI processing stays in IN. Anthropic processing occurs in US."
+
+[[regions]]
+id = "nz"
+name = "New Zealand"
+openai_processing = "Australia (nearest Azure region)"
+anthropic_processing = "US"
+eu_data_boundary = false
+anthropic_default = "enabled"
+notes = "NZ tenants use AU Azure regions for OpenAI. Anthropic in US."
+
+# ─────────────────────────────────────────────
+# SCENARIO RISK RATINGS
+# ─────────────────────────────────────────────
+[risk_ratings]
+email-summary = { level = "low", reason = "All data stays inside Microsoft 365 boundary. Standard Graph permissions apply." }
+web-search = { level = "medium", reason = "A derived search query leaves the tenant to Bing. No tenant data is sent, but query content could be sensitive." }
+claude-agent = { level = "medium", reason = "Data crosses to Anthropic sub-processor. Still under Microsoft DPA, but leaves the Microsoft boundary." }
+word-draft = { level = "low", reason = "All data stays inside Microsoft 365 boundary. Document permissions and sensitivity labels apply." }
+researcher = { level = "medium", reason = "Multi-model: data goes to both Azure OpenAI and Anthropic. Web search also used. Multiple external touchpoints." }
+
+# ─────────────────────────────────────────────
+# GRAPH DATA ACCESS (What Can Copilot See?)
+# ─────────────────────────────────────────────
+[[graph_access]]
+id = "files"
+name = "Files & Documents"
+icon = "📄"
+description = "OneDrive files, SharePoint documents, shared files — anything you have access to"
+how_to_restrict = "Review SharePoint site permissions, remove 'Everyone except external users' access, use sensitivity labels with encryption"
+risk = "High risk of oversharing if permissions are too broad"
+
+[[graph_access]]
+id = "emails"
+name = "Emails"
+icon = "📧"
+description = "Your Outlook inbox, sent items, and shared mailboxes you have access to"
+how_to_restrict = "Mailbox permissions, delegate access reviews, DLP policies on email content"
+risk = "Low — typically limited to user's own mailbox"
+
+[[graph_access]]
+id = "chats"
+name = "Teams Chats & Channels"
+icon = "💬"
+description = "Teams messages, channel conversations, meeting chats you participated in"
+how_to_restrict = "Teams channel permissions, private channel access, information barriers"
+risk = "Medium — channel membership can be broad"
+
+[[graph_access]]
+id = "calendar"
+name = "Calendar & Meetings"
+icon = "📅"
+description = "Calendar events, meeting details, attendee lists, meeting transcripts"
+how_to_restrict = "Calendar sharing settings, meeting policy controls, transcript retention"
+risk = "Low — typically user's own calendar"
+
+[[graph_access]]
+id = "people"
+name = "People & Org"
+icon = "👥"
+description = "Org chart, contact info, working relationships, collaboration patterns"
+how_to_restrict = "Entra ID visibility settings, address book policies"
+risk = "Low — public directory information"

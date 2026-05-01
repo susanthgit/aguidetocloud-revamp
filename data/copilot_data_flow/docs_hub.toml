@@ -1,0 +1,42 @@
+# Copilot Data Flow Map — Official Documentation Hub
+# All Microsoft security/privacy docs in one place
+
+[[docs]]
+category = "Core Security & Privacy"
+links = [
+  { name = "Data, Privacy & Security for M365 Copilot", url = "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy", description = "The primary security reference — covers data handling, training, storage, and privacy commitments" },
+  { name = "M365 Copilot Architecture", url = "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-architecture", description = "How Copilot works — orchestration, Graph integration, LLM processing" },
+  { name = "Anthropic as a Sub-processor", url = "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor", description = "Anthropic Claude sub-processor details, data boundary implications, admin controls" },
+]
+
+[[docs]]
+category = "Data Residency"
+links = [
+  { name = "Data Residency for Copilot", url = "https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-service-copilot", description = "Where Copilot data is stored at rest — by region" },
+  { name = "EU Data Boundary", url = "https://learn.microsoft.com/en-us/privacy/eudb/eu-data-boundary-learn", description = "EU Data Boundary overview — what's included, what's excluded (Anthropic)" },
+]
+
+[[docs]]
+category = "Admin Controls"
+links = [
+  { name = "Web Search & Grounding Controls", url = "https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access", description = "Enable/disable Bing web grounding, Zero Query Logging" },
+  { name = "Copilot Studio Model Selection", url = "https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model", description = "How to choose models for custom agents" },
+  { name = "Sensitivity Labels", url = "https://learn.microsoft.com/en-us/purview/sensitivity-labels", description = "How labels protect data from Copilot access" },
+  { name = "DLP for Copilot", url = "https://learn.microsoft.com/en-us/purview/dlp-learn-about-dlp", description = "Data Loss Prevention policies for Copilot prompts" },
+  { name = "Conditional Access", url = "https://learn.microsoft.com/en-us/entra/identity/conditional-access/", description = "MFA, device compliance, location-based access" },
+]
+
+[[docs]]
+category = "Compliance & Trust"
+links = [
+  { name = "Service Trust Portal", url = "https://servicetrust.microsoft.com/", description = "SOC reports, ISO certificates, audit reports, compliance guides" },
+  { name = "ISO/IEC 42001 Certification", url = "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/microsoft-365-copilot-achieves-isoiec-420012023-certification/4397144", description = "M365 Copilot's AI management system certification" },
+  { name = "Microsoft DPA (Data Protection Addendum)", url = "https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA", description = "The contractual data protection agreement covering Copilot" },
+]
+
+[[docs]]
+category = "Monitoring & Audit"
+links = [
+  { name = "Purview Audit for Copilot", url = "https://learn.microsoft.com/en-us/purview/audit-search", description = "How to search Copilot interaction logs" },
+  { name = "Copilot Dashboard & Analytics", url = "https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard", description = "Usage analytics and adoption metrics" },
+]

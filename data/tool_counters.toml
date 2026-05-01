@@ -77,6 +77,11 @@ base = 1200
 verb = "feature comparisons made"
 
 [[tools]]
+url = "/copilot-data-flow/"
+base = 50
+verb = "flows explored"
+
+[[tools]]
 url = "/copilot-model-map/"
 base = 50
 verb = "models explored"

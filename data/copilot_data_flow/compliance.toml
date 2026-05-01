@@ -1,0 +1,142 @@
+# Copilot Data Flow Map — Compliance Matrix
+# Certifications applicable to M365 Copilot
+
+[[certifications]]
+id = "iso-27001"
+name = "ISO/IEC 27001"
+category = "security"
+description = "Information security management system standard"
+status = "certified"
+scope = "All M365 Copilot features"
+url = "https://servicetrust.microsoft.com/"
+
+[[certifications]]
+id = "iso-27018"
+name = "ISO/IEC 27018"
+category = "privacy"
+description = "Protection of personally identifiable information (PII) in public clouds"
+status = "certified"
+scope = "All M365 Copilot features"
+url = "https://servicetrust.microsoft.com/"
+
+[[certifications]]
+id = "iso-42001"
+name = "ISO/IEC 42001"
+category = "ai"
+description = "AI management system standard — responsible AI governance"
+status = "certified"
+scope = "M365 Copilot AI features"
+notes = "First major AI product certified to this standard"
+url = "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/microsoft-365-copilot-achieves-isoiec-420012023-certification/4397144"
+
+[[certifications]]
+id = "soc-1"
+name = "SOC 1 Type II"
+category = "security"
+description = "Financial reporting controls"
+status = "certified"
+scope = "All M365 Copilot features"
+url = "https://servicetrust.microsoft.com/"
+
+[[certifications]]
+id = "soc-2"
+name = "SOC 2 Type II"
+category = "security"
+description = "Security, availability, processing integrity, confidentiality, privacy"
+status = "certified"
+scope = "All M365 Copilot features"
+url = "https://servicetrust.microsoft.com/"
+
+[[certifications]]
+id = "gdpr"
+name = "GDPR"
+category = "privacy"
+description = "EU General Data Protection Regulation"
+status = "compliant"
+scope = "All M365 Copilot features"
+notes = "Anthropic Claude excluded from EU Data Boundary — disabled by default in EU/EFTA/UK"
+url = "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy"
+
+[[certifications]]
+id = "hipaa"
+name = "HIPAA"
+category = "privacy"
+description = "US health data protection"
+status = "compliant"
+scope = "Via Microsoft 365 BAA controls"
+url = "https://servicetrust.microsoft.com/"
+
+[[certifications]]
+id = "fedramp"
+name = "FedRAMP"
+category = "government"
+description = "US Federal cloud security"
+status = "partial"
+scope = "Commercial Copilot. Not available in GCC High / DoD."
+notes = "FedRAMP High not yet available for Copilot features"
+url = "https://servicetrust.microsoft.com/"
+
+
+# Admin security controls
+[[controls]]
+id = "dlp"
+name = "Microsoft Purview DLP"
+category = "data-protection"
+description = "Inspect Copilot prompts and restrict what data Copilot can access or surface."
+admin_action = "Microsoft Purview → Data loss prevention → Policies"
+impact = "Prevents sensitive data (credit cards, SSNs, custom patterns) from appearing in Copilot responses."
+url = "https://learn.microsoft.com/en-us/purview/dlp-learn-about-dlp"
+
+[[controls]]
+id = "sensitivity-labels"
+name = "Sensitivity Labels"
+category = "data-protection"
+description = "Copilot respects encryption and usage rights from sensitivity labels. If a document is labelled 'Confidential — Encrypt', Copilot can only access it if the user has decrypt rights."
+admin_action = "Microsoft Purview → Information protection → Labels"
+impact = "Controls what Copilot can read. Encrypted docs stay protected."
+url = "https://learn.microsoft.com/en-us/purview/sensitivity-labels"
+
+[[controls]]
+id = "conditional-access"
+name = "Conditional Access"
+category = "identity"
+description = "Enforce MFA, device compliance, location restrictions, and risk-based access before users can access Copilot."
+admin_action = "Microsoft Entra admin centre → Conditional Access → Policies"
+impact = "Blocks Copilot access from untrusted devices, locations, or risky sign-ins."
+url = "https://learn.microsoft.com/en-us/entra/identity/conditional-access/"
+
+[[controls]]
+id = "audit-logs"
+name = "Microsoft Purview Audit"
+category = "monitoring"
+description = "All Copilot interactions (prompts, responses, web searches) are logged in Purview Audit."
+admin_action = "Microsoft Purview → Audit → Search"
+impact = "Full visibility into what users asked Copilot and what it returned."
+url = "https://learn.microsoft.com/en-us/purview/audit-search"
+
+[[controls]]
+id = "web-search-toggle"
+name = "Web Search Controls"
+category = "data-protection"
+description = "Admins can disable web search entirely or enable Zero Query Logging (ZQL) to prevent Bing from storing search queries."
+admin_action = "M365 admin centre → Copilot → Web search settings"
+impact = "Controls whether any data flows to Bing for web grounding."
+url = "https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access"
+
+[[controls]]
+id = "anthropic-toggle"
+name = "Anthropic Model Toggle"
+category = "data-protection"
+description = "Enable or disable Anthropic Claude models at tenant level. Disabled by default in EU/EFTA/UK."
+admin_action = "M365 admin centre → Copilot → Model providers"
+impact = "Controls whether data can be sent to Anthropic's sub-processor infrastructure."
+url = "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor"
+
+[[controls]]
+id = "oversharing"
+name = "Oversharing Remediation"
+category = "data-protection"
+description = "Tools to identify and fix overshared content that Copilot might surface — SharePoint permissions, site access, broad sharing links."
+admin_action = "SharePoint admin centre → Access reviews + Microsoft Purview → Data governance"
+impact = "Reduces the surface area of what Copilot can access. If users shouldn't see it, Copilot can't either."
+url = "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy"

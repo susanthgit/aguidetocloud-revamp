@@ -1,0 +1,322 @@
+# Copilot Data Flow Map — Scenarios
+# Each scenario describes a user action and the step-by-step data flow
+
+[[scenarios]]
+id = "email-summary"
+name = "Summarise my email"
+short = "Email Summary"
+icon = "mail"
+description = "User asks Copilot to summarise an email thread in Outlook"
+boundary = "microsoft"
+uses_web = false
+uses_anthropic = false
+not_sent = ["Your full email content is NOT sent outside Microsoft", "No data goes to Anthropic or Bing", "No tenant data leaves the Microsoft 365 boundary"]
+narrative = "Your prompt travels from your device, is authenticated by Entra ID, the Copilot orchestrator queries Microsoft Graph for your emails (only ones you can access), sends the grounded prompt to Azure OpenAI inside Microsoft's boundary, and returns the summary to you. Your data never leaves Microsoft."
+
+  [[scenarios.steps]]
+  id = "user"
+  label = "You"
+  detail = "You type a prompt in Outlook: 'Summarise this email thread'"
+  data_passed = "Your prompt text"
+  security = "Authenticated via Microsoft Entra ID (SSO + MFA)"
+  boundary = "your-device"
+
+  [[scenarios.steps]]
+  id = "entra"
+  label = "Entra ID"
+  detail = "Your identity is verified. Conditional Access policies are checked (device compliance, location, risk level)."
+  data_passed = "Auth token (no prompt data)"
+  security = "MFA, Conditional Access, device compliance"
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "orchestrator"
+  label = "Copilot Orchestrator"
+  detail = "Copilot receives your prompt and determines what data is needed to answer it."
+  data_passed = "Your prompt + session context"
+  security = "Encrypted in transit (TLS). Runs in your tenant's security context."
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "graph"
+  label = "Microsoft Graph"
+  detail = "Copilot queries Graph to fetch the email thread — only emails YOU have permission to access."
+  data_passed = "Email content, metadata (subject, sender, date)"
+  security = "User-level permissions enforced. Sensitivity labels respected. DLP policies applied."
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "llm"
+  label = "Azure OpenAI"
+  detail = "Your prompt + email context are sent to the LLM. The model generates a summary."
+  data_passed = "Grounded prompt (your question + email content)"
+  security = "Encrypted in transit. No data stored after processing. NOT used for model training."
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "response"
+  label = "Response"
+  detail = "The summary is returned to you in Outlook. Logged in Microsoft Purview Audit."
+  data_passed = "Generated summary text"
+  security = "Safety filters applied. Audit log entry created. Encrypted in transit."
+  boundary = "microsoft"
+
+
+[[scenarios]]
+id = "web-search"
+name = "Search the web with Copilot"
+short = "Web Search"
+icon = "search"
+description = "User asks Copilot a question that requires web data"
+boundary = "partial-external"
+uses_web = true
+uses_anthropic = false
+not_sent = ["Your full prompt is NOT sent to Bing — only a short derived search query", "No documents, emails, or tenant data goes to Bing", "No user identity, tenant ID, or email address is shared with Bing"]
+narrative = "Your prompt is authenticated and processed by Copilot. When web data is needed, Copilot generates a SHORT derived search query (not your full prompt) and sends it to a private Bing service. No user identity or tenant data is shared. Results return to Copilot for synthesis with your original prompt."
+
+  [[scenarios.steps]]
+  id = "user"
+  label = "You"
+  detail = "You ask Copilot: 'What are the latest Azure pricing changes?'"
+  data_passed = "Your prompt text"
+  security = "Authenticated via Microsoft Entra ID"
+  boundary = "your-device"
+
+  [[scenarios.steps]]
+  id = "entra"
+  label = "Entra ID"
+  detail = "Identity verified, Conditional Access checked."
+  data_passed = "Auth token"
+  security = "MFA, Conditional Access"
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "orchestrator"
+  label = "Copilot Orchestrator"
+  detail = "Copilot determines web search is needed. Generates a SHORT derived search query — NOT your full prompt."
+  data_passed = "Derived search query (e.g. 'Azure pricing changes 2026')"
+  security = "Only a derived query is sent to Bing, not your full prompt or any tenant data."
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "bing"
+  label = "Bing Search"
+  detail = "A private, curated Bing service processes the search query. No user identity or tenant data is sent."
+  data_passed = "Derived search query ONLY"
+  security = "Zero Query Logging (ZQL) available. No tenant ID, user ID, or email sent. Admins can disable web search entirely."
+  boundary = "external"
+
+  [[scenarios.steps]]
+  id = "llm"
+  label = "Azure OpenAI"
+  detail = "Search results + your original prompt are combined and sent to the LLM for synthesis."
+  data_passed = "Your prompt + Bing search results"
+  security = "Encrypted. No training on your data."
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "response"
+  label = "Response"
+  detail = "Web-grounded answer returned to you with source citations."
+  data_passed = "Generated response with web citations"
+  security = "Audit logged. Safety filters applied."
+  boundary = "microsoft"
+
+
+[[scenarios]]
+id = "claude-agent"
+name = "Use a Claude-powered agent"
+short = "Claude Agent"
+icon = "brain"
+description = "User interacts with a Copilot feature that routes to Anthropic Claude"
+boundary = "sub-processor"
+uses_web = false
+uses_anthropic = true
+not_sent = ["Anthropic CANNOT use your data for model training — covered by Microsoft DPA", "Your data is still encrypted in transit", "Anthropic does not store your data persistently"]
+narrative = "Your prompt is authenticated and grounded with Graph data inside Microsoft. The grounded prompt then crosses to Anthropic Claude as a sub-processor — this means data leaves the Microsoft boundary but remains under Microsoft's contractual control and DPA. Claude processes and returns the response through Microsoft back to you."
+
+  [[scenarios.steps]]
+  id = "user"
+  label = "You"
+  detail = "You use Copilot Cowork or a Studio agent configured with Claude."
+  data_passed = "Your prompt text"
+  security = "Authenticated via Microsoft Entra ID"
+  boundary = "your-device"
+
+  [[scenarios.steps]]
+  id = "entra"
+  label = "Entra ID"
+  detail = "Identity verified, Conditional Access checked."
+  data_passed = "Auth token"
+  security = "MFA, Conditional Access"
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "orchestrator"
+  label = "Copilot Orchestrator"
+  detail = "Copilot determines Claude is the right model for this task (Cowork, or creator-selected in Studio)."
+  data_passed = "Your prompt + context"
+  security = "Encrypted in transit. Tenant-level Anthropic opt-in required."
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "graph"
+  label = "Microsoft Graph"
+  detail = "Copilot queries Graph for relevant data — same permission model as OpenAI path."
+  data_passed = "Relevant documents, emails, or data"
+  security = "User permissions enforced. Sensitivity labels respected."
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "anthropic"
+  label = "Anthropic Claude"
+  detail = "Your grounded prompt is sent to Anthropic's Claude model. This is a SUB-PROCESSOR — data crosses the Microsoft boundary but remains under Microsoft's contractual control."
+  data_passed = "Grounded prompt (your question + Graph context)"
+  security = "Under Microsoft DPA. NOT used for Anthropic model training. Excluded from EU Data Boundary. Disabled by default in EU/UK."
+  boundary = "sub-processor"
+
+  [[scenarios.steps]]
+  id = "response"
+  label = "Response"
+  detail = "Claude's response returns through Microsoft to you. Logged in Purview Audit."
+  data_passed = "Generated response"
+  security = "Safety filters applied. Audit logged. Encrypted in transit."
+  boundary = "microsoft"
+
+
+[[scenarios]]
+id = "word-draft"
+name = "Draft a document in Word"
+short = "Word Draft"
+icon = "file-text"
+description = "User asks Copilot to draft content in Word based on existing files"
+boundary = "microsoft"
+uses_web = false
+uses_anthropic = false
+not_sent = ["Your documents are NOT sent outside Microsoft", "No data goes to Anthropic, Bing, or any external service", "Document sensitivity labels and encryption are preserved"]
+narrative = "Your prompt and document context stay entirely inside the Microsoft 365 boundary. Copilot queries Graph for referenced documents (only ones you can access), sends the grounded prompt to Azure OpenAI, and returns the draft to Word. Nothing leaves Microsoft."
+
+  [[scenarios.steps]]
+  id = "user"
+  label = "You"
+  detail = "You ask Copilot in Word: 'Draft a proposal based on last quarter's report'"
+  data_passed = "Your prompt text"
+  security = "Authenticated via Microsoft Entra ID"
+  boundary = "your-device"
+
+  [[scenarios.steps]]
+  id = "entra"
+  label = "Entra ID"
+  detail = "Identity verified, Conditional Access checked."
+  data_passed = "Auth token"
+  security = "MFA, Conditional Access"
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "orchestrator"
+  label = "Copilot Orchestrator"
+  detail = "Copilot understands you need data from another document and prepares to query Graph."
+  data_passed = "Your prompt + current document context"
+  security = "Encrypted in transit. User security context."
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "graph"
+  label = "Microsoft Graph"
+  detail = "Copilot finds and reads 'last quarter's report' — only if YOU have access to it."
+  data_passed = "Referenced document content"
+  security = "User permissions enforced. SharePoint/OneDrive access controls apply. Sensitivity labels respected."
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "llm"
+  label = "Azure OpenAI"
+  detail = "Your prompt + document context are sent to the LLM. It generates the proposal draft."
+  data_passed = "Grounded prompt (your request + document content)"
+  security = "Encrypted. No data stored. NOT used for training."
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "response"
+  label = "Response"
+  detail = "Draft appears in Word. You review, edit, and decide whether to keep it."
+  data_passed = "Generated document text"
+  security = "Audit logged. Safety filters. Inherits document's sensitivity label."
+  boundary = "microsoft"
+
+
+[[scenarios]]
+id = "researcher"
+name = "Researcher agent (multi-model)"
+short = "Researcher"
+icon = "search"
+description = "Researcher uses GPT to draft and Claude to review — multi-model critique"
+boundary = "sub-processor"
+uses_web = true
+uses_anthropic = true
+not_sent = ["Only derived search queries go to Bing, not your full prompt or documents", "Anthropic review is under Microsoft DPA — no training on your data", "Internal documents are grounded but not sent raw to external services"]
+narrative = "This is the most complex flow. Your prompt is authenticated, Graph fetches internal data, Bing searches for public data (derived query only). GPT drafts a response inside Microsoft. Then Claude reviews the draft as a sub-processor (data crosses boundary). The reviewed response returns through Microsoft to you. Two external touchpoints: Bing (query only) and Anthropic (draft review)."
+
+  [[scenarios.steps]]
+  id = "user"
+  label = "You"
+  detail = "You ask Researcher: 'Analyse the competitive landscape for our product'"
+  data_passed = "Your prompt text"
+  security = "Authenticated via Entra ID. Frontier opt-in required."
+  boundary = "your-device"
+
+  [[scenarios.steps]]
+  id = "entra"
+  label = "Entra ID"
+  detail = "Identity verified."
+  data_passed = "Auth token"
+  security = "MFA, Conditional Access"
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "orchestrator"
+  label = "Copilot Orchestrator"
+  detail = "Researcher activates multi-model Critique mode: GPT drafts, Claude reviews."
+  data_passed = "Prompt + research plan"
+  security = "Encrypted. Both model providers under Microsoft DPA."
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "graph"
+  label = "Microsoft Graph"
+  detail = "Copilot queries your SharePoint, emails, and Teams for internal competitive intel."
+  data_passed = "Internal documents, emails"
+  security = "User permissions. Sensitivity labels."
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "bing"
+  label = "Bing Search"
+  detail = "Researcher searches the web for public competitive data."
+  data_passed = "Derived search queries"
+  security = "ZQL available. No tenant data sent."
+  boundary = "external"
+
+  [[scenarios.steps]]
+  id = "llm"
+  label = "Azure OpenAI (GPT)"
+  detail = "GPT generates the initial research draft combining internal + web data."
+  data_passed = "Grounded prompt + Graph data + web results"
+  security = "Inside Microsoft boundary. No training."
+  boundary = "microsoft"
+
+  [[scenarios.steps]]
+  id = "anthropic"
+  label = "Anthropic Claude (Review)"
+  detail = "Claude independently reviews GPT's draft for accuracy, completeness, and citation quality."
+  data_passed = "GPT's draft for review"
+  security = "Sub-processor. Under Microsoft DPA. Excluded from EU Data Boundary."
+  boundary = "sub-processor"
+
+  [[scenarios.steps]]
+  id = "response"
+  label = "Response"
+  detail = "Reviewed, fact-checked research report returned to you."
+  data_passed = "Final reviewed response"
+  security = "Audit logged. Multi-model provenance tracked."
+  boundary = "microsoft"

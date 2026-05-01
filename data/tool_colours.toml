@@ -91,6 +91,16 @@ css_namespace = "readiness-*"
 body_class = "page-readiness"
 
 [[tools]]
+name = "Copilot Data Flow Map"
+slug = "copilot-data-flow"
+hex = "#6366F1"
+hue = 239
+name_friendly = "Indigo"
+category = "Copilot"
+css_namespace = "cdf-*"
+body_class = "page-copilot-data-flow"
+
+[[tools]]
 name = "Copilot Model Map"
 slug = "copilot-model-map"
 hex = "#6366F1"
