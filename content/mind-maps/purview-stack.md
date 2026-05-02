@@ -3,6 +3,7 @@ title: "Microsoft Purview — Which Tool For Which Problem"
 description: "Visual map of Microsoft Purview's compliance and data security solutions — Information Protection, DLP, Insider Risk, Communication Compliance, eDiscovery, Audit, and Lifecycle & Records management."
 intro: "Purview has seven major solutions. Each solves a specific problem. Here's which tool you reach for when."
 category: "security"
+format: "reference"
 renderer: "static"
 data_file: "purview_stack"
 lastmod: 2026-05-03

@@ -3,6 +3,7 @@ title: "Copilot Licensing at a Glance"
 description: "Visual map of Microsoft 365 Copilot licensing — SKUs, pricing, base licence requirements, what's included, and what isn't."
 intro: "Which Copilot SKU do I buy, what does it cost, and what base licence do I need first?"
 category: "copilot"
+format: "reference"
 renderer: "static"
 data_file: "copilot_licensing"
 lastmod: 2026-05-01

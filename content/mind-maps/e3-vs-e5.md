@@ -3,6 +3,7 @@ title: "E3 vs E5 — What's the Difference?"
 description: "Visual comparison of Microsoft 365 E3 and E5 — identity, security, compliance, analytics, voice, and cost. When to upgrade."
 intro: "What does E5 actually give me over E3 — and is it worth the price jump?"
 category: "licensing"
+format: "comparison"
 renderer: "static"
 data_file: "e3_vs_e5"
 lastmod: 2026-05-01

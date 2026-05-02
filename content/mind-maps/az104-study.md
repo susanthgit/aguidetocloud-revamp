@@ -3,6 +3,7 @@ title: "AZ-104 Study Topics"
 description: "Visual map of AZ-104 Microsoft Azure Administrator domains — identities & governance, storage, compute, virtual networking, and monitoring. Updated for the April 17, 2026 skills measured."
 intro: "What's actually on the AZ-104 exam — and how much weight does each domain carry? Based on the April 17, 2026 skills measured."
 category: "certifications"
+format: "reference"
 renderer: "static"
 data_file: "az104_study"
 lastmod: 2026-05-03

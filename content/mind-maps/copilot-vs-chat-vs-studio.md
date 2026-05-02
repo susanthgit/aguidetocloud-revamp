@@ -3,6 +3,7 @@ title: "M365 Copilot vs Chat vs Studio vs GitHub Copilot"
 description: "Microsoft calls four very different products 'Copilot'. This map disambiguates them — who they're for, what they cost, what data they see, and which one fits your need."
 intro: "There are four 'Copilots' and they are not interchangeable. Pick the right one in 30 seconds."
 category: "copilot"
+format: "comparison"
 renderer: "static"
 data_file: "copilot_vs_chat_vs_studio"
 lastmod: 2026-05-03

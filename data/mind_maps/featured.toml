@@ -1,0 +1,16 @@
+# Mind Maps gallery — Featured strip
+# 3 hero cards rendered at the top of /mind-maps/.
+# Order matters — first one is the "hero" with strongest visual.
+# Rotate periodically based on what's freshest or most-shared.
+
+[[featured]]
+slug = "copilot-7-layers"
+tagline = "The hidden architecture between your prompt and the answer"
+
+[[featured]]
+slug = "conditional-access-flow"
+tagline = "Every M365 sign-in goes through this five-stage gate"
+
+[[featured]]
+slug = "defender-family"
+tagline = "Microsoft has six products called Defender. Here's who does what"

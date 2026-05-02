@@ -3,6 +3,7 @@ title: "Defender Product Family — Who Does What"
 description: "Microsoft has six products called Defender. This map shows what each one protects, how they fit together, and which licence includes which."
 intro: "Endpoint, Identity, Office 365, Cloud Apps, XDR, Cloud — six products, all called 'Defender'. Here's who covers what."
 category: "security"
+format: "comparison"
 renderer: "static"
 data_file: "defender_family"
 lastmod: 2026-05-03

@@ -3,6 +3,7 @@ title: "AZ-900 Study Topics"
 description: "Visual map of AZ-900 Microsoft Azure Fundamentals study domains — cloud concepts, architecture, services, governance, cost, and SLAs."
 intro: "What's actually on the AZ-900 exam — and how much weight does each domain carry?"
 category: "certifications"
+format: "reference"
 renderer: "static"
 data_file: "az900_study"
 lastmod: 2026-05-01

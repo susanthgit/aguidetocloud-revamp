@@ -3,6 +3,7 @@ title: "Copilot Deployment Checklist"
 description: "Visual checklist for rolling out M365 Copilot — prerequisites, licensing, data readiness, identity, and rollout phases."
 intro: "What do I need to have in place before turning on Copilot for my organisation?"
 category: "copilot"
+format: "reference"
 renderer: "static"
 data_file: "copilot_deployment"
 lastmod: 2026-05-01

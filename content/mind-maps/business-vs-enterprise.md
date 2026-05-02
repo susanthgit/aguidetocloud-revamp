@@ -3,6 +3,7 @@ title: "Business vs Enterprise Plans"
 description: "Microsoft 365 Business vs Enterprise plans — user cap, included features, and which family is right for your organisation."
 intro: "Should I buy Business or Enterprise plans — and what happens when I pass 300 users?"
 category: "licensing"
+format: "comparison"
 renderer: "static"
 data_file: "business_vs_enterprise"
 lastmod: 2026-05-01

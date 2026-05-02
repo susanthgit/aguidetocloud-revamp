@@ -3,6 +3,7 @@ title: "Security Cert Paths"
 description: "Visual map of Microsoft security certifications — SC-900, SC-200, SC-300, SC-400, SC-100, and the new SC-500 beta. Find your specialty."
 intro: "Which Microsoft security certification matches my role — and where do I start?"
 category: "certifications"
+format: "roadmap"
 renderer: "static"
 data_file: "security_cert_paths"
 lastmod: 2026-05-01

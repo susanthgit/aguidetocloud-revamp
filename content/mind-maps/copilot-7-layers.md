@@ -3,6 +3,7 @@ title: "How M365 Copilot Works in 7 Layers"
 description: "Visual walkthrough of M365 Copilot's hidden architecture — apps, identity, orchestrator, grounding (RAG), AI models, responsible AI, and response governance."
 intro: "Where does your prompt actually go? The 7 invisible layers between 'Summarise this' and the answer that comes back."
 category: "copilot"
+format: "architecture"
 renderer: "static"
 data_file: "copilot_7_layers"
 lastmod: 2026-05-03

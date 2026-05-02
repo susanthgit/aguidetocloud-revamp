@@ -3,6 +3,7 @@ title: "Azure Cert Paths"
 description: "Visual map of Microsoft Azure certifications — Fundamentals, Associate, Expert, Specialty, and the newest exams. Find your path."
 intro: "Where do I start with Azure certs — and which path matches my role?"
 category: "certifications"
+format: "roadmap"
 renderer: "static"
 data_file: "azure_cert_paths"
 lastmod: 2026-05-01

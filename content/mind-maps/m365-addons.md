@@ -3,6 +3,7 @@ title: "M365 Add-ons Worth Knowing"
 description: "The Microsoft 365 add-ons every IT team should know — AI, security, device management, collaboration, productivity, and compliance."
 intro: "Beyond the base licence, which Microsoft 365 add-ons are actually worth paying for?"
 category: "licensing"
+format: "reference"
 renderer: "static"
 data_file: "m365_addons"
 lastmod: 2026-05-01

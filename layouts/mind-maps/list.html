@@ -5,7 +5,27 @@
 
 {{ $maps := .Pages }}
 
-<div class="mm-list-view">
+{{/* ── Build counts: per category and per format ── */}}
+{{ $cats := slice }}
+{{ range $maps }}
+  {{ $c := .Params.category | default "general" }}
+  {{ if not (in $cats $c) }}{{ $cats = $cats | append $c }}{{ end }}
+{{ end }}
+{{ $catCounts := dict }}
+{{ range $maps }}
+  {{ $c := .Params.category | default "general" }}
+  {{ $catCounts = merge $catCounts (dict $c (add (index $catCounts $c | default 0) 1)) }}
+{{ end }}
+{{ $formats := slice "architecture" "comparison" "decision-tree" "roadmap" "reference" }}
+{{ $fmtCounts := dict }}
+{{ range $maps }}
+  {{ $f := .Params.format | default "" }}
+  {{ if $f }}
+    {{ $fmtCounts = merge $fmtCounts (dict $f (add (index $fmtCounts $f | default 0) 1)) }}
+  {{ end }}
+{{ end }}
+
+<div class="mm-list-view" data-view="list">
 
   {{/* Header — minimal, breathing */}}
   <header class="mm-list-header">
@@ -13,20 +33,57 @@
     <p class="mm-list-lede">Visual knowledge maps — one concept per map. Click any map to expand, download a branded PNG to share.</p>
   </header>
 
-  {{/* Tabs — Linear-style underline, not pill buttons */}}
-  {{ $cats := slice }}
-  {{ range $maps }}
-    {{ $c := .Params.category | default "general" }}
-    {{ if not (in $cats $c) }}{{ $cats = $cats | append $c }}{{ end }}
+  {{/* Featured strip — 3 hero cards */}}
+  {{ $featured := (index hugo.Data.mind_maps "featured").featured }}
+  {{ if $featured }}
+  <div class="mm-featured" aria-label="Featured mind maps">
+    {{ range $featured }}
+      {{ $slug := .slug }}
+      {{ $tagline := .tagline }}
+      {{ $page := false }}
+      {{ range where site.RegularPages "Section" "mind-maps" }}
+        {{ if eq .File.BaseFileName $slug }}{{ $page = . }}{{ end }}
+      {{ end }}
+      {{ if $page }}
+        {{ $dataFile := $page.Params.data_file | default "" }}
+        {{ $mmData := false }}
+        {{ if $dataFile }}{{ $mmData = index hugo.Data.mind_maps $dataFile }}{{ end }}
+        {{ $dotColor := "#6366F1" }}
+        {{ if and $mmData $mmData.palette }}{{ $dotColor = index $mmData.palette 0 }}{{ end }}
+        <a href="{{ $page.RelPermalink }}" class="mm-featured-card" style="--card-accent:{{ $dotColor }}">
+          <div class="mm-featured-thumb">
+            <img src="/images/og/mind-maps/{{ $slug }}.jpg" alt="" loading="lazy" width="640" height="336">
+          </div>
+          <div class="mm-featured-body">
+            <span class="mm-featured-eyebrow">Featured · {{ $page.Params.category | default "" | title }}</span>
+            <h3 class="mm-featured-title">{{ $page.Title }}</h3>
+            <p class="mm-featured-tagline">{{ $tagline }}</p>
+            <span class="mm-featured-cta">Explore →</span>
+          </div>
+        </a>
+      {{ end }}
+    {{ end }}
+  </div>
   {{ end }}
 
-  {{/* Count maps per category for tab counters */}}
-  {{ $catCounts := dict }}
-  {{ range $maps }}
-    {{ $c := .Params.category | default "general" }}
-    {{ $catCounts = merge $catCounts (dict $c (add (index $catCounts $c | default 0) 1)) }}
-  {{ end }}
+  {{/* Search + view-mode toolbar */}}
+  <div class="mm-toolbar2">
+    <div class="mm-search-wrap">
+      <span class="mm-search-icon" aria-hidden="true">{{ partial "icon.html" (dict "name" "search" "size" 16 "stroke" 1.6) }}</span>
+      <input type="search" class="mm-search-input" id="mm-search-input" placeholder="Search by topic, branch, or term (e.g. DLP, RAG, AZ-104)" aria-label="Search mind maps" autocomplete="off">
+      <button class="mm-search-clear" id="mm-search-clear" aria-label="Clear search" hidden>×</button>
+    </div>
+    <div class="mm-view-toggle" role="group" aria-label="View mode">
+      <button class="mm-view-btn active" data-view="list" type="button" aria-label="List view" title="List">
+        {{ partial "icon.html" (dict "name" "list" "size" 16 "stroke" 1.6) }}
+      </button>
+      <button class="mm-view-btn" data-view="grid" type="button" aria-label="Grid view" title="Grid">
+        {{ partial "icon.html" (dict "name" "grid" "size" 16 "stroke" 1.6) }}
+      </button>
+    </div>
+  </div>
 
+  {{/* Category tabs — Linear-style underline */}}
   <nav class="mm-list-tabs" id="mm-list-tabs" aria-label="Filter mind maps by category">
     <button class="mm-list-tab active" data-cat="all" type="button">All <span class="mm-list-tab-count">{{ len $maps }}</span></button>
     {{ range $cats }}
@@ -34,7 +91,24 @@
     {{ end }}
   </nav>
 
-  {{/* Grouped index — quiet, dense, scannable */}}
+  {{/* Format facet chips */}}
+  <div class="mm-format-chips" id="mm-format-chips" aria-label="Filter by format">
+    <button class="mm-format-chip active" data-format="all" type="button">All formats</button>
+    {{ range $formats }}
+      {{ $count := index $fmtCounts . | default 0 }}
+      {{ if $count }}
+      <button class="mm-format-chip" data-format="{{ . }}" type="button">{{ replace . "-" " " | title }} <span class="mm-format-chip-count">{{ $count }}</span></button>
+      {{ end }}
+    {{ end }}
+  </div>
+
+  {{/* Empty state — shown when no rows match */}}
+  <div class="mm-list-empty" id="mm-list-empty" hidden>
+    <p class="mm-list-empty-title">No maps match your filters</p>
+    <button type="button" class="mm-list-empty-btn" id="mm-list-empty-clear">Clear all filters</button>
+  </div>
+
+  {{/* Grouped index */}}
   {{ range $cat := $cats }}
     {{ $catMaps := slice }}
     {{ range $maps }}
@@ -60,11 +134,20 @@
 
         {{/* Branch names = "what's actually inside" preview */}}
         {{ $branchNames := slice }}
+        {{ $leafNames := slice }}
         {{ if $mmData }}
-          {{ range $mmData.children }}{{ $branchNames = $branchNames | append .name }}{{ end }}
+          {{ range $mmData.children }}
+            {{ $branchNames = $branchNames | append .name }}
+            {{ if .children }}
+              {{ range .children }}{{ $leafNames = $leafNames | append .name }}{{ end }}
+            {{ end }}
+          {{ end }}
         {{ end }}
 
-        <li class="mm-list-row" data-cat="{{ .Params.category | default "general" }}">
+        {{ $fmt := .Params.format | default "" }}
+        {{ $searchHaystack := printf "%s %s %s %s %s %s" .Title (.Params.category | default "") $fmt (delimit $branchNames " ") (delimit $leafNames " ") (.Description | default "") | lower }}
+
+        <li class="mm-list-row" data-cat="{{ .Params.category | default "general" }}" data-format="{{ $fmt }}" data-search="{{ $searchHaystack }}">
           <a href="{{ .RelPermalink }}" class="mm-list-row-link">
             <span class="mm-list-row-dot" style="background:{{ $dotColor }}" aria-hidden="true"></span>
             <span class="mm-list-row-main">
@@ -74,6 +157,7 @@
               {{ else if .Description }}
                 <span class="mm-list-row-branches">{{ .Description | truncate 90 }}</span>
               {{ end }}
+              {{ if $fmt }}<span class="mm-list-row-format">{{ replace $fmt "-" " " | title }}</span>{{ end }}
             </span>
             {{ with .Lastmod }}<span class="mm-list-row-date">{{ .Format "Jan 2006" }}</span>{{ end }}
             <span class="mm-list-row-arrow" aria-hidden="true">→</span>
@@ -111,18 +195,110 @@
 
 <script>
 (function () {
-  var tabs = document.querySelectorAll('.mm-list-tab');
-  var sections = document.querySelectorAll('.mm-list-section');
-  tabs.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      tabs.forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      var cat = btn.getAttribute('data-cat');
-      sections.forEach(function (s) {
-        s.style.display = (cat === 'all' || s.getAttribute('data-cat') === cat) ? '' : 'none';
-      });
+  /* Unified state — gallery filter / view machinery.
+     State persists view in localStorage; search/category/format are session-only.
+     Re-evaluates row visibility on every state change. */
+  var STORAGE_KEY = 'mindmaps:view:v1';
+  var listView = document.querySelector('.mm-list-view');
+  var rows = Array.from(document.querySelectorAll('.mm-list-row'));
+  var sections = Array.from(document.querySelectorAll('.mm-list-section'));
+  var catTabs = Array.from(document.querySelectorAll('.mm-list-tab'));
+  var fmtChips = Array.from(document.querySelectorAll('.mm-format-chip'));
+  var viewBtns = Array.from(document.querySelectorAll('.mm-view-btn'));
+  var searchInput = document.getElementById('mm-search-input');
+  var searchClear = document.getElementById('mm-search-clear');
+  var emptyState = document.getElementById('mm-list-empty');
+  var emptyClear = document.getElementById('mm-list-empty-clear');
+
+  var state = {
+    cat: 'all',
+    format: 'all',
+    search: '',
+    view: localStorage.getItem(STORAGE_KEY) || 'list'
+  };
+
+  function applyView(v) {
+    listView.setAttribute('data-view', v);
+    viewBtns.forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-view') === v);
+    });
+    localStorage.setItem(STORAGE_KEY, v);
+  }
+
+  function applyFilters() {
+    var q = state.search.trim().toLowerCase();
+    var visibleCount = 0;
+    rows.forEach(function (r) {
+      var rowCat = r.getAttribute('data-cat') || '';
+      var rowFmt = r.getAttribute('data-format') || '';
+      var rowSearch = r.getAttribute('data-search') || '';
+      var matchCat = state.cat === 'all' || rowCat === state.cat;
+      var matchFmt = state.format === 'all' || rowFmt === state.format;
+      var matchQ = !q || rowSearch.indexOf(q) !== -1;
+      var visible = matchCat && matchFmt && matchQ;
+      r.style.display = visible ? '' : 'none';
+      if (visible) visibleCount++;
+    });
+    sections.forEach(function (s) {
+      var anyVisible = s.querySelectorAll('.mm-list-row:not([style*="display: none"])').length > 0;
+      s.style.display = anyVisible ? '' : 'none';
+    });
+    emptyState.hidden = visibleCount > 0;
+  }
+
+  /* Wire view toggle */
+  viewBtns.forEach(function (b) {
+    b.addEventListener('click', function () { applyView(b.getAttribute('data-view')); });
+  });
+
+  /* Wire category tabs */
+  catTabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      catTabs.forEach(function (x) { x.classList.remove('active'); });
+      t.classList.add('active');
+      state.cat = t.getAttribute('data-cat');
+      applyFilters();
     });
   });
+
+  /* Wire format chips */
+  fmtChips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      fmtChips.forEach(function (x) { x.classList.remove('active'); });
+      c.classList.add('active');
+      state.format = c.getAttribute('data-format');
+      applyFilters();
+    });
+  });
+
+  /* Wire search */
+  if (searchInput) {
+    searchInput.addEventListener('input', function () {
+      state.search = searchInput.value;
+      searchClear.hidden = !state.search;
+      applyFilters();
+    });
+    searchClear.addEventListener('click', function () {
+      searchInput.value = '';
+      state.search = '';
+      searchClear.hidden = true;
+      applyFilters();
+      searchInput.focus();
+    });
+  }
+
+  /* Empty-state clear-all */
+  if (emptyClear) {
+    emptyClear.addEventListener('click', function () {
+      catTabs[0].click();
+      fmtChips[0].click();
+      if (searchInput) { searchInput.value = ''; state.search = ''; searchClear.hidden = true; applyFilters(); }
+    });
+  }
+
+  /* Initialise */
+  applyView(state.view);
+  applyFilters();
 })();
 </script>
 {{ end }}

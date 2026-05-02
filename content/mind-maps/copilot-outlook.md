@@ -3,6 +3,7 @@ title: "Copilot in Outlook"
 description: "What can M365 Copilot do in Outlook? Visual map of drafting, summarising, coaching, scheduling, and search features."
 intro: "What can Copilot actually do in Outlook — and which features matter most for my inbox?"
 category: "copilot"
+format: "reference"
 renderer: "static"
 data_file: "copilot_outlook"
 lastmod: 2026-05-01

@@ -3,6 +3,7 @@ title: "Copilot in Excel"
 description: "Visual guide to Copilot in Excel — analyse data, generate formulas, build charts, format tables, and run Python with natural language."
 intro: "What can Copilot do in Excel — and when is Python in Excel actually useful?"
 category: "copilot"
+format: "reference"
 renderer: "static"
 data_file: "copilot_excel"
 lastmod: 2026-05-01

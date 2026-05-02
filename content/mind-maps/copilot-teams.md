@@ -3,6 +3,7 @@ title: "Copilot in Teams"
 description: "What can M365 Copilot do in Teams? Visual guide to every feature — meetings, chat, channels, and compose."
 intro: "What can M365 Copilot do in Teams — and when would I use each feature?"
 category: "copilot"
+format: "reference"
 renderer: "static"
 data_file: "copilot_teams"
 lastmod: 2026-05-02

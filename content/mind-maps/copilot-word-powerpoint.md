@@ -3,6 +3,7 @@ title: "Copilot in Word & PowerPoint"
 description: "Visual guide to every Copilot feature in Word and PowerPoint — drafting, summarising, creating decks, design tools, and pro tips."
 intro: "What can Copilot do in Word and PowerPoint — and which feature should I reach for first?"
 category: "copilot"
+format: "reference"
 renderer: "static"
 data_file: "copilot_word_powerpoint"
 lastmod: 2026-05-01
