@@ -1135,6 +1135,7 @@
     -webkit-overflow-scrolling: touch;
   }
   .cmm-filter-btn { white-space: nowrap; flex-shrink: 0; }
+  .cmm-filter-label { display: none; }
   /* Models grid: single column */
   .cmm-models-grid {
     grid-template-columns: 1fr;

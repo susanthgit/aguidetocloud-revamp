@@ -1515,8 +1515,15 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     padding-bottom: var(--space-2);
+    margin: 0 -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
-  .cdf-flow-step { min-width: 100px; }
+  .cdf-flow-step { min-width: 80px; }
+  .cdf-flow-node { width: 48px; height: 48px; }
+  .cdf-flow-icon svg { width: 20px; height: 20px; }
+  .cdf-flow-label { font-size: 0.65rem; }
+  .cdf-flow-boundary { font-size: 0.55rem; }
   /* Architecture tab */
   .cdf-arch-header { padding: var(--space-3) var(--space-4); gap: var(--space-3); }
   .cdf-arch-content { padding: 0 var(--space-4) var(--space-4); }
