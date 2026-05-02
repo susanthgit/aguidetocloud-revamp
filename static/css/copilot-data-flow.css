@@ -1496,12 +1496,10 @@
     justify-content: center;
   }
   .cdf-scenario-btn svg { width: 14px; height: 14px; }
-  /* Boundary legend: wrap */
-  .cdf-boundary-legend {
-    gap: var(--space-3);
-    flex-wrap: wrap;
-    font-size: 0.65rem;
-  }
+  /* Hide noise on mobile */
+  .cdf-section-intro { display: none; }
+  .cdf-boundary-legend { display: none; }
+  .cdf-compare-callout { font-size: var(--text-sm); padding: var(--space-3); }
   /* Grids: single column */
   .cdf-compare-grid { grid-template-columns: 1fr; }
   .cdf-step-detail-grid { grid-template-columns: 1fr; }

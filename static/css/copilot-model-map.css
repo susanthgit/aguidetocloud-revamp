@@ -1123,9 +1123,24 @@
     width: 100%;
     justify-content: space-between;
   }
-  /* Hide PNG export and view toggle on mobile — force matrix view via JS */
+  /* Hide export PNG button on mobile — can't generate PNG on mobile usefully */
   .cmm-export-btn[id="cmm-export-png"] { display: none; }
+  /* Hide view toggle — forced to matrix via CSS */
   .cmm-view-toggle { display: none; }
+  /* Hide visual topbar CTA + legend — not relevant for matrix */
+  .cmm-visual-topbar { display: none; }
+  /* Hide the legend bar — too much noise above the table */
+  .cmm-legend { display: none; }
+  /* Hide "Copy as Table" — keep only the filter pills */
+  .cmm-export-btn { display: none; }
+  /* Controls: just filter pills, compact */
+  .cmm-map-controls {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .cmm-controls-right { display: none; }
   /* Filter pills: horizontal scroll */
   .cmm-filter-row {
     overflow-x: auto;
@@ -1171,7 +1186,7 @@
     max-width: 160px;
     white-space: normal;
   }
-  .cmm-matrix-hint { font-size: var(--text-xs); }
+  .cmm-matrix-hint { display: none; }
   /* Visual connection map: completely hidden (SVG doesn't work on touch) */
   .cmm-visual-svg { display: none; }
   .cmm-visual-container {
