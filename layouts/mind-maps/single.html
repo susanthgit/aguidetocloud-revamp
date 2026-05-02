@@ -33,7 +33,7 @@
   </div>
 
   {{/* Static canvas — click to expand */}}
-  <div class="mm-canvas mm-canvas--static" id="mm-canvas"></div>
+  <div class="mm-canvas mm-canvas--static" id="mm-canvas" data-category="{{ .Params.category | default "general" }}"></div>
 
   {{/* Click hint */}}
   <div class="mm-hint">Click the map to expand · Download to share</div>

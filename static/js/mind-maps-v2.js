@@ -155,17 +155,37 @@
     var filter = defs.append('filter').attr('id', 'mm-shadow').attr('x', '-20%').attr('y', '-20%').attr('width', '140%').attr('height', '140%');
     filter.append('feDropShadow').attr('dx', 0).attr('dy', 1).attr('stdDeviation', 2.5).attr('flood-color', 'rgba(0,0,0,0.06)');
 
-    /* Dot-grid pattern — whiteboard canvas feel */
-    var dotPattern = defs.append('pattern').attr('id', 'mm-dots')
-      .attr('width', 20).attr('height', 20).attr('patternUnits', 'userSpaceOnUse');
-    dotPattern.append('circle').attr('cx', 10).attr('cy', 10).attr('r', 0.7).attr('fill', '#D4D4D8');
+    /* Read category to pick background pattern */
+    var category = (container.getAttribute('data-category') || 'general').toLowerCase();
+
+    /* Define category-specific background patterns. Each pattern lives inside <defs>
+       so it travels with the SVG when exported as PNG. */
+    var patternId = 'mm-bg-' + category;
+    if (category === 'licensing') {
+      /* Graph paper — warm cream lines, notebook feel */
+      var gp = defs.append('pattern').attr('id', patternId)
+        .attr('width', 24).attr('height', 24).attr('patternUnits', 'userSpaceOnUse');
+      gp.append('path').attr('d', 'M 24 0 L 0 0 L 0 24').attr('fill', 'none')
+        .attr('stroke', '#E8DFCD').attr('stroke-width', 0.6);
+    } else if (category === 'certifications') {
+      /* Isometric diamonds — blueprint feel */
+      var iso = defs.append('pattern').attr('id', patternId)
+        .attr('width', 28).attr('height', 16).attr('patternUnits', 'userSpaceOnUse');
+      iso.append('path').attr('d', 'M 0 8 L 14 0 L 28 8 L 14 16 Z').attr('fill', 'none')
+        .attr('stroke', '#D8E0EC').attr('stroke-width', 0.5);
+    } else {
+      /* Default — dot grid (Copilot + general) */
+      var dp = defs.append('pattern').attr('id', patternId)
+        .attr('width', 20).attr('height', 20).attr('patternUnits', 'userSpaceOnUse');
+      dp.append('circle').attr('cx', 10).attr('cy', 10).attr('r', 0.7).attr('fill', '#D4D4D8');
+    }
 
     var g = svg.append('g');
 
-    /* ── Dot-grid canvas background ── */
+    /* ── Category-specific canvas background ── */
     g.append('rect')
       .attr('x', minX).attr('y', minY).attr('width', vw).attr('height', vh)
-      .attr('fill', 'url(#mm-dots)');
+      .attr('fill', 'url(#' + patternId + ')');
 
     /* ── Heading banner at top (like Merill's title bar) ── */
     var headingY = minY + 20;
