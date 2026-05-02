@@ -1,36 +1,13 @@
 {{/*
-  licence-companion.html — Right companion sidebar for licensing plan pages.
-  Shows related tools, compare links, official links, and CTAs.
-
-  Usage: {{ partial "licence-companion.html" . }}
+  licence-companion.html — Right companion for /licensing/{plan}/ pages.
+  Cross-pollination engine.
 */}}
 
 {{ $currentCat := .Params.plan_category }}
 {{ $currentPermalink := .RelPermalink }}
 {{ $allPlans := where site.RegularPages "Section" "licensing" }}
 
-{{/* Related tools */}}
-<div class="zt-companion-section">
-  <p class="zt-companion-title">Licensing tools</p>
-  <a href="/licensing/" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }}</span>
-    <span class="zt-companion-link-title">Licensing Simplifier</span>
-  </a>
-  <a href="/licence-picker/" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
-    <span class="zt-companion-link-title">Licence Picker</span>
-  </a>
-  <a href="/roi-calculator/" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }}</span>
-    <span class="zt-companion-link-title">ROI Calculator</span>
-  </a>
-  <a href="/ai-cost-calculator/" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "dollar" "size" 14 "stroke" 1.5) }}</span>
-    <span class="zt-companion-link-title">AI Cost Calculator</span>
-  </a>
-</div>
-
-{{/* Compare with — other plans in same category */}}
+{{/* 1. PEERS — same plan category */}}
 {{ if $currentCat }}
 {{ $sameCat := slice }}
 {{ range $allPlans }}
@@ -51,7 +28,53 @@
 {{ end }}
 {{ end }}
 
-{{/* Official links from front matter */}}
+{{/* 2. TOOLS */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">🛠️ Tools to try</p>
+  <a href="/licence-picker/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">Licence Picker</span>
+  </a>
+  <a href="/licensing/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">Licensing Simplifier</span>
+  </a>
+  <a href="/roi-calculator/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">ROI Calculator</span>
+  </a>
+</div>
+
+{{/* 3. MIND MAPS */}}
+{{ $allMaps := where site.RegularPages "Section" "mind-maps" }}
+{{ $licMaps := where $allMaps "Params.category" "licensing" }}
+{{ if $licMaps }}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">🧠 Mind maps</p>
+  {{ range first 3 $licMaps }}
+    {{ $dataFile := .Params.data_file | default "" }}
+    {{ $mmData := false }}
+    {{ if $dataFile }}{{ $mmData = index (index hugo.Data "mind_maps") $dataFile }}{{ end }}
+    {{ $dotColor := "#6366F1" }}
+    {{ if and $mmData $mmData.palette }}{{ $dotColor = index $mmData.palette 0 }}{{ end }}
+    <a href="{{ .RelPermalink }}" class="zt-companion-link zt-companion-link--inline">
+      <span class="zt-companion-link-tag" style="background:{{ $dotColor }};border-radius:50%;width:10px;height:10px;display:inline-block;flex:0 0 10px"></span>
+      <span class="zt-companion-link-title">{{ .Title }}</span>
+    </a>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* 4. PRACTICE EXAM */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">📝 Practice exam</p>
+  <a href="/guided/ms-900/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">MS-900 Practice Exam</span>
+  </a>
+</div>
+
+{{/* 5. OFFICIAL LINKS */}}
 {{ if or .Params.ms_official .Params.m365maps }}
 <div class="zt-companion-section">
   <p class="zt-companion-title">Official resources</p>
@@ -70,13 +93,13 @@
 </div>
 {{ end }}
 
-{{/* Recent blog posts */}}
-{{ $recentPosts := first 3 (where site.RegularPages "Section" "blog") }}
-{{ if $recentPosts }}
+{{/* 6. BLOG */}}
+{{ $recentBlog := first 2 (sort (where site.RegularPages "Section" "blog") "Date" "desc") }}
+{{ if $recentBlog }}
 <div class="zt-companion-section">
-  <p class="zt-companion-title">Recent articles</p>
-  {{ range $recentPosts }}
-  <a href="{{ .Permalink }}" class="zt-companion-link">
+  <p class="zt-companion-title">📰 From the blog</p>
+  {{ range $recentBlog }}
+  <a href="{{ .RelPermalink }}" class="zt-companion-link">
     <span class="zt-companion-link-tag">{{ with .Params.card_tag }}{{ . }}{{ else }}Blog{{ end }}</span>
     <span class="zt-companion-link-title">{{ .Title | truncate 55 }}</span>
   </a>
@@ -84,12 +107,28 @@
 </div>
 {{ end }}
 
-{{/* CTAs */}}
+{{/* 7. WATCH */}}
 <div class="zt-companion-section">
-  <p class="zt-companion-title">Explore more</p>
+  <p class="zt-companion-title">🎥 Watch</p>
+  <a href="{{ site.Params.youtube_channel }}" target="_blank" rel="noopener noreferrer" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">YouTube tutorials</span>
+  </a>
+</div>
+
+{{/* 8. BROWSE */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Browse</p>
+  <a href="/licensing-docs/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">Licensing wiki</span>
+  </a>
+</div>
+
+{{/* 9. CTA */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Suggest</p>
   <div class="zt-companion-cta">
-    <a href="/guided/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Practice Exams</a>
-    <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} YouTube</a>
-    <a href="/feedback/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Feedback</a>
+    <a href="/feedback/?topic=licensing" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Share feedback</a>
   </div>
 </div>

@@ -1,0 +1,183 @@
+{{/*
+  mindmaps-companion.html — Right companion for /mind-maps/{slug}/ detail pages.
+
+  PURPOSE: Cross-pollination engine.
+  Every page surfaces a mix of content types so users discover what they
+  wouldn't otherwise find: tools, certs, study guides, blogs, videos, peers.
+
+  Sections (1-3 items each, omit empty):
+    1. PEERS    — Other maps in same category
+    2. TOOLS    — Related tool(s) for this category
+    3. STUDY    — Related cert / study guide (only when relevant)
+    4. PRACTICE — Practice exam (only when relevant)
+    5. BLOG     — Related blog post (curated by category)
+    6. WATCH    — YouTube link
+    7. CTA      — Single Feedback button
+*/}}
+
+{{ $current := .RelPermalink }}
+{{ $currentCat := .Params.category | default "general" }}
+{{ $allMaps := where site.RegularPages "Section" "mind-maps" }}
+
+{{/* ─────────── Per-category curated cross-references ─────────── */}}
+{{ $catLinks := dict
+  "copilot" (dict
+    "tools"    (slice
+      (dict "url" "/copilot-readiness/"     "name" "Copilot Readiness"   "icon" "shield")
+      (dict "url" "/copilot-frontier-map/"  "name" "Copilot Frontier Map" "icon" "map")
+      (dict "url" "/copilot-data-flow/"     "name" "Copilot Data Flow"    "icon" "satellite")
+    )
+    "blogs"    (slice "how-microsoft-365-copilot-works-layer-by-layer" "20-copilot-features-you-should-be-using" "microsoft-365-copilot-control-system-complete-guide")
+    "cert"     ""
+    "practice" ""
+  )
+  "licensing" (dict
+    "tools"    (slice
+      (dict "url" "/licence-picker/"   "name" "Licence Picker"        "icon" "target")
+      (dict "url" "/licensing/"        "name" "Licensing Simplifier"  "icon" "chart-bar")
+      (dict "url" "/roi-calculator/"   "name" "ROI Calculator"        "icon" "dollar-sign")
+    )
+    "blogs"    (slice)
+    "cert"     "ms-900"
+    "practice" "ms-900"
+  )
+  "certifications" (dict
+    "tools"    (slice
+      (dict "url" "/cert-compass/"     "name" "Cert Compass"          "icon" "compass")
+      (dict "url" "/study-guides/"     "name" "All Study Guides"      "icon" "book-open")
+    )
+    "blogs"    (slice)
+    "cert"     ""
+    "practice" "explore"
+  )
+}}
+{{ $links := index $catLinks $currentCat | default (index $catLinks "copilot") }}
+
+{{/* ─────────── 1. PEERS ─────────── */}}
+{{ $peers := slice }}
+{{ range $allMaps }}
+  {{ if and (eq (.Params.category | default "general") $currentCat) (ne .RelPermalink $current) (not .Params.draft) }}
+    {{ $peers = $peers | append . }}
+  {{ end }}
+{{ end }}
+{{ if $peers }}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">More {{ $currentCat | title }} maps</p>
+  {{ range first 3 $peers }}
+    {{ $dataFile := .Params.data_file | default "" }}
+    {{ $mmData := false }}
+    {{ if $dataFile }}{{ $mmData = index (index hugo.Data "mind_maps") $dataFile }}{{ end }}
+    {{ $dotColor := "#6366F1" }}
+    {{ if and $mmData $mmData.palette }}{{ $dotColor = index $mmData.palette 0 }}{{ end }}
+    <a href="{{ .RelPermalink }}" class="zt-companion-link zt-companion-link--inline">
+      <span class="zt-companion-link-tag" style="background:{{ $dotColor }};border-radius:50%;width:10px;height:10px;display:inline-block;flex:0 0 10px"></span>
+      <span class="zt-companion-link-title">{{ .Title }}</span>
+    </a>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* ─────────── 2. TOOLS ─────────── */}}
+{{ with index $links "tools" }}
+{{ if . }}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">🛠️ Tools to try</p>
+  {{ range . }}
+  <a href="{{ .url }}" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" .icon "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">{{ .name }}</span>
+  </a>
+  {{ end }}
+</div>
+{{ end }}
+{{ end }}
+
+{{/* ─────────── 3. STUDY GUIDE (cert-relevant maps only) ─────────── */}}
+{{ $certCode := index $links "cert" }}
+{{ if $certCode }}
+{{ $certPage := false }}
+{{ range (where site.RegularPages "Section" "cert-tracker") }}
+  {{ if eq (.Params.exam_code | default "" | lower) $certCode }}{{ $certPage = . }}{{ end }}
+{{ end }}
+{{ if $certPage }}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">📖 Study guide</p>
+  <a href="{{ $certPage.RelPermalink }}" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">{{ $certPage.Params.exam_code | upper }} Study Guide</span>
+  </a>
+</div>
+{{ end }}
+{{ end }}
+
+{{/* ─────────── 4. PRACTICE EXAM ─────────── */}}
+{{ $practice := index $links "practice" }}
+{{ if $practice }}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">📝 Practice exam</p>
+  {{ if eq $practice "explore" }}
+  <a href="/guided/explore/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">Browse all practice exams</span>
+  </a>
+  {{ else }}
+  <a href="/guided/{{ $practice }}/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">{{ $practice | upper }} Practice Exam</span>
+  </a>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* ─────────── 5. BLOG ─────────── */}}
+{{ $blogSlugs := index $links "blogs" }}
+{{ $blogPages := slice }}
+{{ if $blogSlugs }}
+  {{ range $blogSlugs }}
+    {{ $slug := . }}
+    {{ range (where site.RegularPages "Section" "blog") }}
+      {{ if eq .File.BaseFileName $slug }}{{ $blogPages = $blogPages | append . }}{{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if not $blogPages }}
+  {{/* Fallback: most recent 2 blog posts if no curated list */}}
+  {{ $blogPages = first 2 (sort (where site.RegularPages "Section" "blog") "Date" "desc") }}
+{{ end }}
+{{ if $blogPages }}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">📰 From the blog</p>
+  {{ range first 2 $blogPages }}
+  <a href="{{ .RelPermalink }}" class="zt-companion-link">
+    <span class="zt-companion-link-tag">{{ with .Params.card_tag }}{{ . }}{{ else }}Blog{{ end }}</span>
+    <span class="zt-companion-link-title">{{ .Title | truncate 55 }}</span>
+  </a>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* ─────────── 6. WATCH ─────────── */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">🎥 Watch</p>
+  <a href="{{ site.Params.youtube_channel }}" target="_blank" rel="noopener noreferrer" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">YouTube tutorials</span>
+  </a>
+</div>
+
+{{/* ─────────── 7. BROWSE ALL ─────────── */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Browse</p>
+  <a href="/mind-maps/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">All mind maps</span>
+  </a>
+</div>
+
+{{/* ─────────── 8. CTA — single ─────────── */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Suggest</p>
+  <div class="zt-companion-cta">
+    <a href="/feedback/?topic=mind-maps" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Suggest a topic</a>
+  </div>
+</div>

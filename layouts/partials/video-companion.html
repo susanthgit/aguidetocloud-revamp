@@ -1,37 +1,38 @@
 {{/*
-  video-companion.html — Right companion sidebar for video pages.
-  Practice exam CTAs, free tools, related blog posts.
-
-  Usage: {{ partial "video-companion.html" . }}
+  video-companion.html — Right companion for /videos/{slug}/ pages.
+  Cross-pollination engine.
 */}}
 
-{{/* Practice exams */}}
-<div class="zt-companion-section">
-  <p class="zt-companion-title">Practice exams</p>
-  <a href="/guided/explore/" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
-    <span class="zt-companion-link-title">Browse 126 practice exams</span>
-  </a>
-  <a href="/guided/az-900/" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "bookmark" "size" 14 "stroke" 1.5) }}</span>
-    <span class="zt-companion-link-title">AZ-900 Practice Exam</span>
-  </a>
-  <a href="/guided/sc-900/" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "bookmark" "size" 14 "stroke" 1.5) }}</span>
-    <span class="zt-companion-link-title">SC-900 Practice Exam</span>
-  </a>
-</div>
+{{ $current := .RelPermalink }}
 
-{{/* Free tools */}}
+{{/* 1. PEERS — recent videos */}}
+{{ $videos := where site.RegularPages "Section" "videos" }}
+{{ $otherVideos := slice }}
+{{ range $videos }}
+  {{ if ne .RelPermalink $current }}{{ $otherVideos = $otherVideos | append . }}{{ end }}
+{{ end }}
+{{ if $otherVideos }}
 <div class="zt-companion-section">
-  <p class="zt-companion-title">Free tools</p>
-  <a href="/licensing/" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }}</span>
-    <span class="zt-companion-link-title">Licensing Simplifier</span>
+  <p class="zt-companion-title">More videos</p>
+  {{ range first 4 (sort $otherVideos "Date" "desc") }}
+  <a href="{{ .RelPermalink }}" class="zt-companion-link">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">{{ .Title | truncate 55 }}</span>
   </a>
-  <a href="/prompts/" class="zt-companion-link zt-companion-link--inline">
-    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }}</span>
-    <span class="zt-companion-link-title">AI Prompt Library</span>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* 2. TOOLS */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">🛠️ Tools to try</p>
+  <a href="/copilot-readiness/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">Copilot Readiness</span>
+  </a>
+  <a href="/licence-picker/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">Licence Picker</span>
   </a>
   <a href="/roi-calculator/" class="zt-companion-link zt-companion-link--inline">
     <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }}</span>
@@ -39,13 +40,50 @@
   </a>
 </div>
 
-{{/* Recent blog posts (sorted by date desc) */}}
-{{ $recentPosts := first 3 (sort (where site.RegularPages "Section" "blog") "Date" "desc") }}
-{{ if $recentPosts }}
+{{/* 3. MIND MAPS */}}
+{{ $allMaps := where site.RegularPages "Section" "mind-maps" }}
+{{ if $allMaps }}
 <div class="zt-companion-section">
-  <p class="zt-companion-title">Recent articles</p>
-  {{ range $recentPosts }}
-  <a href="{{ .Permalink }}" class="zt-companion-link">
+  <p class="zt-companion-title">🧠 Mind maps</p>
+  {{ range first 3 $allMaps }}
+    {{ $dataFile := .Params.data_file | default "" }}
+    {{ $mmData := false }}
+    {{ if $dataFile }}{{ $mmData = index (index hugo.Data "mind_maps") $dataFile }}{{ end }}
+    {{ $dotColor := "#6366F1" }}
+    {{ if and $mmData $mmData.palette }}{{ $dotColor = index $mmData.palette 0 }}{{ end }}
+    <a href="{{ .RelPermalink }}" class="zt-companion-link zt-companion-link--inline">
+      <span class="zt-companion-link-tag" style="background:{{ $dotColor }};border-radius:50%;width:10px;height:10px;display:inline-block;flex:0 0 10px"></span>
+      <span class="zt-companion-link-title">{{ .Title }}</span>
+    </a>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* 4. PRACTICE EXAM */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">📝 Practice exam</p>
+  <a href="/guided/explore/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">Browse practice exams</span>
+  </a>
+</div>
+
+{{/* 5. STUDY GUIDES */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">📖 Study guides</p>
+  <a href="/study-guides/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">All study guides</span>
+  </a>
+</div>
+
+{{/* 6. BLOG */}}
+{{ $recentBlog := first 2 (sort (where site.RegularPages "Section" "blog") "Date" "desc") }}
+{{ if $recentBlog }}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">📰 From the blog</p>
+  {{ range $recentBlog }}
+  <a href="{{ .RelPermalink }}" class="zt-companion-link">
     <span class="zt-companion-link-tag">{{ with .Params.card_tag }}{{ . }}{{ else }}Blog{{ end }}</span>
     <span class="zt-companion-link-title">{{ .Title | truncate 55 }}</span>
   </a>
@@ -53,12 +91,23 @@
 </div>
 {{ end }}
 
-{{/* CTAs */}}
+{{/* 7. BROWSE */}}
 <div class="zt-companion-section">
-  <p class="zt-companion-title">Explore more</p>
+  <p class="zt-companion-title">Browse</p>
+  <a href="/videos/" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">All videos</span>
+  </a>
+  <a href="{{ site.Params.youtube_channel }}" target="_blank" rel="noopener noreferrer" class="zt-companion-link zt-companion-link--inline">
+    <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" "play" "size" 14 "stroke" 1.5) }}</span>
+    <span class="zt-companion-link-title">YouTube channel</span>
+  </a>
+</div>
+
+{{/* 8. CTA */}}
+<div class="zt-companion-section">
+  <p class="zt-companion-title">Suggest</p>
   <div class="zt-companion-cta">
-    <a href="/study-guides/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }} Study Guides</a>
-    <a href="{{ site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" (dict "name" "video" "size" 14 "stroke" 1.5) }} YouTube Channel</a>
-    <a href="/free-tools/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} All Tools</a>
+    <a href="/feedback/?topic=videos" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Share feedback</a>
   </div>
 </div>
