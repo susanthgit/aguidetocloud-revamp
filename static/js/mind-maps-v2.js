@@ -50,9 +50,23 @@
     var branchGap = 24;      /* extra gap between branches */
     var rootX = 0;
     var rootY = 0;
-    var levelGap = 200;      /* horizontal distance root→branch */
     var childGap = 190;      /* horizontal distance branch→children */
     var childSpacing = 32;   /* vertical space between children */
+
+    /* Compute root pill width (matches the root rendering math below) */
+    var rootTextLenForGap = data.name.length * 10 + 48;
+    var rootWForGap = Math.max(180, rootTextLenForGap);
+
+    /* Compute the widest branch pill (matches branch rendering math below) */
+    var maxBranchPillW = 100;
+    branches.forEach(function (b) {
+      var bw = Math.max(100, b.data.name.length * 8 + 28);
+      if (bw > maxBranchPillW) maxBranchPillW = bw;
+    });
+
+    /* Dynamic levelGap: keep at least 24px breathing room between root edge and nearest branch edge.
+       Without this, long titles (large root pill) collide with branches sitting at the default 200px. */
+    var levelGap = Math.max(200, rootWForGap / 2 + maxBranchPillW / 2 + 24);
 
     /* Split branches: first half right, second half left */
     var rightCount = Math.ceil(n / 2);
