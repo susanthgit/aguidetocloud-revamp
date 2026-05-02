@@ -1,0 +1,57 @@
+{
+  "id": "teams-phone-licensing",
+  "name": "Teams Phone — Pick Your Path",
+  "palette": ["#92400E", "#7C2D12", "#5B21B6", "#155E75", "#3F6212"],
+  "children": [
+    {
+      "id": "start",
+      "name": "Already have E5?",
+      "color": 0,
+      "children": [
+        { "id": "s-yes", "name": "Phone Standard included", "tag": "Free" },
+        { "id": "s-need-pstn", "name": "Still need PSTN choice" },
+        { "id": "s-no", "name": "If not E5 → add-on" }
+      ]
+    },
+    {
+      "id": "addon",
+      "name": "Need the add-on?",
+      "color": 1,
+      "children": [
+        { "id": "a-standard", "name": "Phone Standard add-on" },
+        { "id": "a-bundle", "name": "Phone + Calling bundle" },
+        { "id": "a-features", "name": "PBX, voicemail, queues" }
+      ]
+    },
+    {
+      "id": "pstn-ms",
+      "name": "PSTN via Microsoft",
+      "color": 2,
+      "children": [
+        { "id": "m-domestic", "name": "Domestic Calling Plan", "tag": "Easiest" },
+        { "id": "m-intl", "name": "International Plan" },
+        { "id": "m-payg", "name": "Pay-as-you-go" }
+      ]
+    },
+    {
+      "id": "pstn-op",
+      "name": "PSTN via Operator",
+      "color": 3,
+      "children": [
+        { "id": "o-connect", "name": "Operator Connect", "tag": "Carrier" },
+        { "id": "o-mobile", "name": "Operator Connect Mobile" },
+        { "id": "o-india", "name": "Op Connect for India" }
+      ]
+    },
+    {
+      "id": "pstn-dr",
+      "name": "PSTN via Direct Routing",
+      "color": 4,
+      "children": [
+        { "id": "d-sbc", "name": "Your own SBC" },
+        { "id": "d-control", "name": "Full carrier control", "tag": "Complex" },
+        { "id": "d-existing", "name": "Keep existing telco" }
+      ]
+    }
+  ]
+}

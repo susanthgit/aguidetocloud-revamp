@@ -1,0 +1,73 @@
+{
+  "id": "zero-trust-pillars",
+  "name": "Zero Trust — 6 Pillars",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C", "#6B21A8"],
+  "children": [
+    {
+      "id": "identities",
+      "name": "Identities",
+      "color": 0,
+      "children": [
+        { "id": "i-verify", "name": "Verify explicitly", "tag": "Principle" },
+        { "id": "i-mfa", "name": "Strong MFA" },
+        { "id": "i-ca", "name": "Conditional Access" },
+        { "id": "i-tool", "name": "Microsoft Entra ID" }
+      ]
+    },
+    {
+      "id": "endpoints",
+      "name": "Endpoints",
+      "color": 1,
+      "children": [
+        { "id": "e-health", "name": "Device health" },
+        { "id": "e-comply", "name": "Compliance policies" },
+        { "id": "e-tool", "name": "Microsoft Intune", "tag": "MS tool" },
+        { "id": "e-mdfe", "name": "Defender Endpoint" }
+      ]
+    },
+    {
+      "id": "apps",
+      "name": "Applications",
+      "color": 2,
+      "children": [
+        { "id": "a-shadow", "name": "Shadow IT discovery" },
+        { "id": "a-perms", "name": "In-app permissions" },
+        { "id": "a-tool", "name": "Defender Cloud Apps", "tag": "MS tool" },
+        { "id": "a-secops", "name": "Unified SecOps" }
+      ]
+    },
+    {
+      "id": "data",
+      "name": "Data",
+      "color": 3,
+      "children": [
+        { "id": "d-classify", "name": "Classification" },
+        { "id": "d-encrypt", "name": "Encryption" },
+        { "id": "d-tool", "name": "Microsoft Purview", "tag": "MS tool" },
+        { "id": "d-dlp", "name": "DLP policies" }
+      ]
+    },
+    {
+      "id": "infra",
+      "name": "Infrastructure",
+      "color": 4,
+      "children": [
+        { "id": "in-least", "name": "Least privilege" },
+        { "id": "in-detect", "name": "Anomaly detection" },
+        { "id": "in-tool", "name": "Defender for Cloud", "tag": "MS tool" },
+        { "id": "in-jit", "name": "Just-in-time access" }
+      ]
+    },
+    {
+      "id": "network",
+      "name": "Networks",
+      "color": 5,
+      "children": [
+        { "id": "n-segment", "name": "Microsegmentation" },
+        { "id": "n-encrypt", "name": "End-to-end encryption" },
+        { "id": "n-tool", "name": "Azure Firewall + WAF" },
+        { "id": "n-private", "name": "Private endpoints" }
+      ]
+    }
+  ]
+}

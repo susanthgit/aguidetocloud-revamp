@@ -1,0 +1,71 @@
+{
+  "id": "azure-compute-decision",
+  "name": "Azure Compute — Pick the Right Service",
+  "palette": ["#2563EB", "#059669", "#D97706", "#7C3AED", "#DC2626", "#DB2777"],
+  "children": [
+    {
+      "id": "vm",
+      "name": "Need full OS control?",
+      "color": 0,
+      "children": [
+        { "id": "vm-yes", "name": "→ Azure VMs", "tag": "IaaS" },
+        { "id": "vm-lift", "name": "Lift-and-shift" },
+        { "id": "vm-custom", "name": "Custom kernel / drivers" },
+        { "id": "vm-az104", "name": "Heavy on AZ-104" }
+      ]
+    },
+    {
+      "id": "containers",
+      "name": "Running containers?",
+      "color": 1,
+      "children": [
+        { "id": "c-aks", "name": "→ AKS", "tag": "Orchestrate" },
+        { "id": "c-aca", "name": "→ Container Apps" },
+        { "id": "c-aci", "name": "→ ACI (single tasks)" },
+        { "id": "c-acr", "name": "Stored in ACR" }
+      ]
+    },
+    {
+      "id": "events",
+      "name": "Event-driven only?",
+      "color": 2,
+      "children": [
+        { "id": "ev-fn", "name": "→ Azure Functions", "tag": "Serverless" },
+        { "id": "ev-logic", "name": "→ Logic Apps" },
+        { "id": "ev-queue", "name": "Triggered by queues / HTTP" }
+      ]
+    },
+    {
+      "id": "web",
+      "name": "Standard web app?",
+      "color": 3,
+      "children": [
+        { "id": "w-app", "name": "→ App Service", "tag": "PaaS" },
+        { "id": "w-slots", "name": "Deployment slots" },
+        { "id": "w-scale", "name": "Auto-scale built-in" },
+        { "id": "w-az204", "name": "Heavy on AZ-204" }
+      ]
+    },
+    {
+      "id": "batch",
+      "name": "HPC or batch jobs?",
+      "color": 4,
+      "children": [
+        { "id": "b-batch", "name": "→ Azure Batch" },
+        { "id": "b-hpc", "name": "Massive parallel" },
+        { "id": "b-render", "name": "Rendering / sims" }
+      ]
+    },
+    {
+      "id": "exam",
+      "name": "Exam coverage",
+      "color": 5,
+      "children": [
+        { "id": "x-az900", "name": "AZ-900 — concepts" },
+        { "id": "x-az104", "name": "AZ-104 — VMs + ACA + AKS", "tag": "Most" },
+        { "id": "x-az204", "name": "AZ-204 — Functions + App Service" },
+        { "id": "x-az305", "name": "AZ-305 — choose by SLA + cost" }
+      ]
+    }
+  ]
+}

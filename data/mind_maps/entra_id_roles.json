@@ -1,0 +1,70 @@
+{
+  "id": "entra-id-roles",
+  "name": "Entra ID Admin Roles by Function",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C", "#6B21A8"],
+  "children": [
+    {
+      "id": "identity",
+      "name": "Identity & Access",
+      "color": 0,
+      "children": [
+        { "id": "id-user", "name": "User Administrator" },
+        { "id": "id-auth", "name": "Authentication Admin" },
+        { "id": "id-passw", "name": "Password Administrator" },
+        { "id": "id-groups", "name": "Groups Administrator" }
+      ]
+    },
+    {
+      "id": "security",
+      "name": "Security & Compliance",
+      "color": 1,
+      "children": [
+        { "id": "se-secadm", "name": "Security Administrator", "tag": "High impact" },
+        { "id": "se-ca", "name": "Conditional Access Admin" },
+        { "id": "se-comp", "name": "Compliance Administrator" },
+        { "id": "se-audit", "name": "Security Reader" }
+      ]
+    },
+    {
+      "id": "collab",
+      "name": "Collab Workloads",
+      "color": 2,
+      "children": [
+        { "id": "co-exch", "name": "Exchange Administrator" },
+        { "id": "co-sp", "name": "SharePoint Administrator" },
+        { "id": "co-teams", "name": "Teams Administrator" },
+        { "id": "co-intune", "name": "Intune Administrator" }
+      ]
+    },
+    {
+      "id": "support",
+      "name": "Service Desk",
+      "color": 3,
+      "children": [
+        { "id": "su-help", "name": "Helpdesk Administrator" },
+        { "id": "su-billing", "name": "Billing Administrator" },
+        { "id": "su-license", "name": "License Administrator" }
+      ]
+    },
+    {
+      "id": "workload",
+      "name": "Apps & Workloads",
+      "color": 4,
+      "children": [
+        { "id": "w-app", "name": "Application Administrator" },
+        { "id": "w-cloudapp", "name": "Cloud App Administrator" },
+        { "id": "w-dev", "name": "Application Developer" }
+      ]
+    },
+    {
+      "id": "topdog",
+      "name": "Highest Impact",
+      "color": 5,
+      "children": [
+        { "id": "t-global", "name": "Global Administrator", "tag": "Avoid" },
+        { "id": "t-priv", "name": "Privileged Role Admin", "tag": "Avoid" },
+        { "id": "t-pim", "name": "Use PIM for these" }
+      ]
+    }
+  ]
+}

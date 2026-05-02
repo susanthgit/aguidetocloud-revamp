@@ -1,0 +1,58 @@
+{
+  "id": "m365-files-where",
+  "name": "Where Does That File Live?",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981"],
+  "children": [
+    {
+      "id": "onedrive",
+      "name": "Saved to OneDrive",
+      "color": 0,
+      "children": [
+        { "id": "od-mine", "name": "Your personal files", "tag": "Private" },
+        { "id": "od-shared", "name": "Shared via link" },
+        { "id": "od-1to1", "name": "Files in 1:1 Teams chat" },
+        { "id": "od-group", "name": "Files in Teams group chat" }
+      ]
+    },
+    {
+      "id": "channel",
+      "name": "Posted to Teams channel",
+      "color": 1,
+      "children": [
+        { "id": "ch-sp", "name": "Team SharePoint site" },
+        { "id": "ch-folder", "name": "Channel folder", "tag": "Per channel" },
+        { "id": "ch-meeting", "name": "Channel meeting recordings" }
+      ]
+    },
+    {
+      "id": "outlook",
+      "name": "Sent in Outlook",
+      "color": 2,
+      "children": [
+        { "id": "ol-modern", "name": "Modern link → OneDrive", "tag": "Default" },
+        { "id": "ol-classic", "name": "Classic file copy" },
+        { "id": "ol-tracked", "name": "Permissions stay yours" }
+      ]
+    },
+    {
+      "id": "loop",
+      "name": "Created in Loop",
+      "color": 3,
+      "children": [
+        { "id": "lp-embedded", "name": "SharePoint Embedded", "tag": "New container" },
+        { "id": "lp-chat", "name": "Teams chat note → SP Embedded" },
+        { "id": "lp-quota", "name": "Counts against SP quota" }
+      ]
+    },
+    {
+      "id": "meeting",
+      "name": "Recorded a meeting",
+      "color": 4,
+      "children": [
+        { "id": "mt-private", "name": "Recorder's OneDrive" },
+        { "id": "mt-channel", "name": "Channel SharePoint" },
+        { "id": "mt-transcript", "name": "Transcript with recording" }
+      ]
+    }
+  ]
+}
