@@ -1,0 +1,140 @@
+{
+  "id": "copilot",
+  "name": "M365 Copilot",
+  "children": [
+    {
+      "id": "what",
+      "name": "What It Is",
+      "children": [
+        { "id": "w1", "name": "AI in M365 apps" },
+        { "id": "w2", "name": "GPT-4 powered" },
+        { "id": "w3", "name": "Uses Graph data" },
+        { "id": "w4", "name": "Permission-aware" }
+      ]
+    },
+    {
+      "id": "apps",
+      "name": "Apps",
+      "children": [
+        { "id": "word", "name": "Word", "children": [
+          { "id": "w-d", "name": "Draft" },
+          { "id": "w-r", "name": "Rewrite" },
+          { "id": "w-s", "name": "Summarise" }
+        ]},
+        { "id": "excel", "name": "Excel", "children": [
+          { "id": "e-a", "name": "Analyse" },
+          { "id": "e-f", "name": "Formulas" },
+          { "id": "e-c", "name": "Charts" }
+        ]},
+        { "id": "teams", "name": "Teams", "children": [
+          { "id": "t-s", "name": "Summaries" },
+          { "id": "t-c", "name": "Catch-up" },
+          { "id": "t-t", "name": "Translate" }
+        ]},
+        { "id": "ppt", "name": "PowerPoint", "children": [
+          { "id": "p-c", "name": "Create" },
+          { "id": "p-d", "name": "Design" }
+        ]},
+        { "id": "outlook", "name": "Outlook", "children": [
+          { "id": "o-d", "name": "Draft" },
+          { "id": "o-s", "name": "Summarise" }
+        ]},
+        { "id": "onenote", "name": "OneNote", "children": [
+          { "id": "on-s", "name": "Summarise" },
+          { "id": "on-t", "name": "To-dos" }
+        ]},
+        { "id": "loop", "name": "Loop", "children": [
+          { "id": "l-c", "name": "Co-create" },
+          { "id": "l-s", "name": "Summarise" }
+        ]},
+        { "id": "wb", "name": "Whiteboard", "children": [
+          { "id": "wb-i", "name": "Ideate" },
+          { "id": "wb-o", "name": "Organise" }
+        ]}
+      ]
+    },
+    {
+      "id": "licence",
+      "name": "Licensing",
+      "children": [
+        { "id": "l1", "name": "$30/user/mo" },
+        { "id": "l2", "name": "E3 base" },
+        { "id": "l3", "name": "E5 base" },
+        { "id": "l4", "name": "Biz Standard" },
+        { "id": "l5", "name": "Biz Premium" },
+        { "id": "l6", "name": "Annual commit" }
+      ]
+    },
+    {
+      "id": "deploy",
+      "name": "Deploy",
+      "children": [
+        { "id": "pre", "name": "Prerequisites", "children": [
+          { "id": "d-e", "name": "Entra ID" },
+          { "id": "d-l", "name": "Base licence" },
+          { "id": "d-s", "name": "Semantic Index" }
+        ]},
+        { "id": "config", "name": "Configure", "children": [
+          { "id": "d-a", "name": "Admin Centre" },
+          { "id": "d-u", "name": "User groups" }
+        ]},
+        { "id": "data", "name": "Data Readiness", "children": [
+          { "id": "d-sp", "name": "SharePoint" },
+          { "id": "d-od", "name": "OneDrive" },
+          { "id": "d-tm", "name": "Teams hygiene" }
+        ]}
+      ]
+    },
+    {
+      "id": "eco",
+      "name": "Ecosystem",
+      "children": [
+        { "id": "studio", "name": "Copilot Studio", "children": [
+          { "id": "cs-a", "name": "Agents" },
+          { "id": "cs-p", "name": "Plugins" }
+        ]},
+        { "id": "graph", "name": "Graph", "children": [
+          { "id": "g-d", "name": "Data source" },
+          { "id": "g-p", "name": "Permissions" }
+        ]},
+        { "id": "semidx", "name": "Semantic Index", "children": [
+          { "id": "si-s", "name": "AI search" },
+          { "id": "si-i", "name": "Auto-index" }
+        ]}
+      ]
+    },
+    {
+      "id": "adopt",
+      "name": "Adoption",
+      "children": [
+        { "id": "plan", "name": "Plan", "children": [
+          { "id": "a-e", "name": "Exec sponsor" },
+          { "id": "a-c", "name": "Champions" },
+          { "id": "a-p", "name": "Phased rollout" }
+        ]},
+        { "id": "train", "name": "Train", "children": [
+          { "id": "a-l", "name": "Learning paths" },
+          { "id": "a-w", "name": "Workshops" },
+          { "id": "a-pr", "name": "Prompting" }
+        ]},
+        { "id": "measure", "name": "Measure", "children": [
+          { "id": "a-u", "name": "Usage data" },
+          { "id": "a-m", "name": "Productivity" },
+          { "id": "a-s", "name": "Satisfaction" }
+        ]}
+      ]
+    },
+    {
+      "id": "security",
+      "name": "Security",
+      "children": [
+        { "id": "s1", "name": "Tenant-bound" },
+        { "id": "s2", "name": "RBAC" },
+        { "id": "s3", "name": "Sensitivity labels" },
+        { "id": "s4", "name": "No data training" },
+        { "id": "s5", "name": "SOC 2" },
+        { "id": "s6", "name": "ISO 27001" }
+      ]
+    }
+  ]
+}

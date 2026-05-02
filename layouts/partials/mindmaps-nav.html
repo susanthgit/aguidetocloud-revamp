@@ -1,0 +1,55 @@
+{{/*
+  mindmaps-nav.html — Left sidebar for Mind Maps section.
+  Matches tools-nav.html structure exactly: same classes, sizing, style.
+*/}}
+
+{{ $currentURL := .RelPermalink }}
+{{ $isLanding := eq .RelPermalink "/mind-maps/" }}
+{{ $allMaps := where site.RegularPages "Section" "mind-maps" }}
+
+{{/* Collect unique categories */}}
+{{ $cats := slice }}
+{{ range $allMaps }}
+  {{ $c := .Params.category | default "general" }}
+  {{ if not (in $cats $c) }}{{ $cats = $cats | append $c }}{{ end }}
+{{ end }}
+
+{{/* Find current map's category */}}
+{{ $currentCat := "" }}
+{{ range $allMaps }}
+  {{ if eq .RelPermalink $currentURL }}{{ $currentCat = .Params.category | default "general" }}{{ end }}
+{{ end }}
+
+<nav class="zt-lic-nav" aria-label="Mind Maps navigation">
+
+<a href="/mind-maps/" class="zt-lic-nav-header">{{ partial "icon.html" (dict "name" "brain" "size" 16 "stroke" 1.5) }} All Mind Maps</a>
+
+{{ range $cat := $cats }}
+  {{ $catMaps := slice }}
+  {{ range $allMaps }}
+    {{ if eq (.Params.category | default "general") $cat }}
+      {{ $catMaps = $catMaps | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $catMaps }}
+  {{ $isCurrentCat := eq $cat $currentCat }}
+  {{ $isFirst := eq $cat (index $cats 0) }}
+  <details class="zt-lic-nav-group"{{ if or $isCurrentCat (and $isLanding $isFirst) }} open{{ end }}>
+    <summary class="zt-lic-nav-cat">
+      <span>{{ $cat | title }}</span>
+      <span class="zt-lic-nav-count">{{ len $catMaps }}</span>
+    </summary>
+    <div class="zt-lic-nav-links">
+      {{ range $catMaps }}
+      <a href="{{ .RelPermalink }}" class="zt-lic-nav-link{{ if eq .RelPermalink $currentURL }} active{{ end }}"
+         title="{{ .Title }}">
+        <span class="zt-lic-nav-link-name">{{ .Title | replaceRE " Mind Map$" "" }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </details>
+  {{ end }}
+{{ end }}
+
+</nav>

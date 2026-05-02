@@ -54,10 +54,11 @@
 {{ else if eq $group "cert" }}
 <div class="tool-eco" style="--eco-accent: #10B981">
   <h2 class="tool-eco-title">Your Certification Toolkit</h2>
-  <div class="tool-eco-grid tool-eco-4">
+  <div class="tool-eco-grid tool-eco-5">
     <a href="/cert-tracker/" class="tool-eco-card{{ if eq $active "certs" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }}</span><strong>Study Guides</strong><p>52 Microsoft exams</p></a>
     <a href="/guided/explore/" class="tool-eco-card{{ if eq $active "guided" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }}</span><strong>Guided Platform</strong><p>126 certs · Interactive</p></a>
     <a href="/cert-compass/" class="tool-eco-card{{ if eq $active "cert-compass" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "compass" "size" 14 "stroke" 1.5) }}</span><strong>Cert Compass</strong><p>Multi-cloud navigator</p></a>
+    <a href="/mind-maps/" class="tool-eco-card{{ if eq $active "mind-maps" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "brain" "size" 14 "stroke" 1.5) }}</span><strong>Mind Maps</strong><p>Visual knowledge</p></a>
     <a href="/licensing/" class="tool-eco-card{{ if eq $active "licensing" }} tool-eco-active{{ end }}"><span>{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }}</span><strong>Licensing</strong><p>Know the plans</p></a>
   </div>
   <p class="tool-eco-feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Got feedback? <a href="/feedback/">Share it here →</a></p>

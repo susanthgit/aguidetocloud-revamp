@@ -1,0 +1,149 @@
+{
+  "id": "azure-certs",
+  "name": "Azure Certs",
+  "children": [
+    {
+      "id": "fund",
+      "name": "Fundamentals",
+      "children": [
+        { "id": "az900", "name": "AZ-900", "children": [
+          { "id": "az9-c", "name": "Cloud concepts" },
+          { "id": "az9-s", "name": "Azure services" },
+          { "id": "az9-p", "name": "Pricing" }
+        ]},
+        { "id": "ai900", "name": "AI-900", "children": [
+          { "id": "ai9-m", "name": "ML concepts" },
+          { "id": "ai9-v", "name": "Vision" },
+          { "id": "ai9-n", "name": "NLP" }
+        ]},
+        { "id": "dp900", "name": "DP-900", "children": [
+          { "id": "dp9-r", "name": "Relational" },
+          { "id": "dp9-n", "name": "Non-relational" },
+          { "id": "dp9-a", "name": "Analytics" }
+        ]},
+        { "id": "sc900", "name": "SC-900", "children": [
+          { "id": "sc9-i", "name": "Identity" },
+          { "id": "sc9-s", "name": "Security" },
+          { "id": "sc9-c", "name": "Compliance" }
+        ]}
+      ]
+    },
+    {
+      "id": "assoc",
+      "name": "Associate",
+      "children": [
+        { "id": "az104", "name": "AZ-104", "children": [
+          { "id": "104-i", "name": "Identity" },
+          { "id": "104-s", "name": "Storage" },
+          { "id": "104-c", "name": "Compute" },
+          { "id": "104-n", "name": "Networking" },
+          { "id": "104-m", "name": "Monitor" }
+        ]},
+        { "id": "az204", "name": "AZ-204", "children": [
+          { "id": "204-c", "name": "Compute" },
+          { "id": "204-s", "name": "Storage" },
+          { "id": "204-a", "name": "Auth" },
+          { "id": "204-api", "name": "API Mgmt" }
+        ]},
+        { "id": "az500", "name": "AZ-500", "children": [
+          { "id": "500-i", "name": "Identity" },
+          { "id": "500-p", "name": "Platform" },
+          { "id": "500-o", "name": "Operations" }
+        ]},
+        { "id": "az700", "name": "AZ-700", "children": [
+          { "id": "700-v", "name": "VNets" },
+          { "id": "700-l", "name": "Load balance" },
+          { "id": "700-s", "name": "Security" }
+        ]},
+        { "id": "dp300", "name": "DP-300", "children": [
+          { "id": "300-s", "name": "SQL Azure" },
+          { "id": "300-h", "name": "HA/DR" },
+          { "id": "300-p", "name": "Performance" }
+        ]}
+      ]
+    },
+    {
+      "id": "expert",
+      "name": "Expert",
+      "children": [
+        { "id": "az305", "name": "AZ-305", "children": [
+          { "id": "305-i", "name": "Identity" },
+          { "id": "305-d", "name": "Data" },
+          { "id": "305-n", "name": "Infrastructure" },
+          { "id": "305-b", "name": "Continuity" }
+        ]},
+        { "id": "az400", "name": "AZ-400", "children": [
+          { "id": "400-c", "name": "CI/CD" },
+          { "id": "400-i", "name": "IaC" },
+          { "id": "400-d", "name": "Dependencies" }
+        ]}
+      ]
+    },
+    {
+      "id": "paths",
+      "name": "Career Paths",
+      "children": [
+        { "id": "admin", "name": "Admin", "children": [
+          { "id": "pa-1", "name": "AZ-900" },
+          { "id": "pa-2", "name": "AZ-104" },
+          { "id": "pa-3", "name": "AZ-305" }
+        ]},
+        { "id": "dev", "name": "Developer", "children": [
+          { "id": "pd-1", "name": "AZ-900" },
+          { "id": "pd-2", "name": "AZ-204" },
+          { "id": "pd-3", "name": "AZ-400" }
+        ]},
+        { "id": "sec", "name": "Security", "children": [
+          { "id": "ps-1", "name": "SC-900" },
+          { "id": "ps-2", "name": "AZ-500" },
+          { "id": "ps-3", "name": "SC-200" }
+        ]},
+        { "id": "datapath", "name": "Data", "children": [
+          { "id": "pda-1", "name": "DP-900" },
+          { "id": "pda-2", "name": "DP-300" }
+        ]},
+        { "id": "aipath", "name": "AI", "children": [
+          { "id": "pai-1", "name": "AI-900" },
+          { "id": "pai-2", "name": "AI-102" }
+        ]}
+      ]
+    },
+    {
+      "id": "specialty",
+      "name": "Specialty",
+      "children": [
+        { "id": "ai-eng", "name": "AI Engineer", "children": [
+          { "id": "sp-ai1", "name": "AI-102" },
+          { "id": "sp-ai2", "name": "Azure AI" },
+          { "id": "sp-ai3", "name": "OpenAI" }
+        ]},
+        { "id": "data-eng", "name": "Data Engineer", "children": [
+          { "id": "sp-de1", "name": "DP-203" },
+          { "id": "sp-de2", "name": "Synapse" },
+          { "id": "sp-de3", "name": "Data Lake" }
+        ]},
+        { "id": "secops", "name": "SecOps", "children": [
+          { "id": "sp-so1", "name": "SC-200" },
+          { "id": "sp-so2", "name": "Sentinel" },
+          { "id": "sp-so3", "name": "Defender XDR" }
+        ]}
+      ]
+    },
+    {
+      "id": "tips",
+      "name": "Exam Tips",
+      "children": [
+        { "id": "format", "name": "Format", "children": [
+          { "id": "tf-q", "name": "40-60 questions" },
+          { "id": "tf-t", "name": "120 minutes" },
+          { "id": "tf-p", "name": "Pass: 700/1000" }
+        ]},
+        { "id": "cost", "name": "Cost", "children": [
+          { "id": "tc-s", "name": "$165 standard" },
+          { "id": "tc-f", "name": "$99 fundamentals" },
+          { "id": "tc-r", "name": "Free retake 30d" }
+        ]}
+      ]
+    }
+  ]
+}

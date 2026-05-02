@@ -1,0 +1,123 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/mind-maps.css?v={{ site.Params.cache_version }}">
+
+{{ $isStatic := eq (.Params.renderer | default "radial") "static" }}
+
+{{ if $isStatic }}
+{{/* ═══ V2: Static mind map — clean, no chrome ═══ */}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+{{/* Simple header — no Focus Mode button (mind maps have click-to-expand) */}}
+<header class="zt-header">
+  <div class="zt-header-row">
+    <h1 class="zt-title">{{ .Title }}</h1>
+  </div>
+  {{ with .Description }}<p class="zt-subtitle">{{ . }}</p>{{ end }}
+</header>
+
+{{ with .Params.intro }}
+<p class="mm-intro">{{ . }}</p>
+{{ end }}
+
+<div class="mm-viewer mm-viewer--static" id="mm-viewer">
+  {{/* Minimal toolbar — just download + close */}}
+  <div class="mm-toolbar mm-toolbar--minimal">
+    <span class="mm-toolbar-title">{{ .Title }}</span>
+    <button class="mm-btn" id="mm-download-png" title="Download as PNG">
+      {{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} Download PNG
+    </button>
+    <button class="mm-btn mm-btn--close" id="mm-close" title="Close fullscreen">
+      ✕ Close
+    </button>
+  </div>
+
+  {{/* Static canvas — click to expand */}}
+  <div class="mm-canvas mm-canvas--static" id="mm-canvas"></div>
+
+  {{/* Click hint */}}
+  <div class="mm-hint">Click the map to expand · Download to share</div>
+</div>
+
+{{ else }}
+{{/* ═══ V1: Interactive mind map (legacy) ═══ */}}
+{{ partial "tool-header.html" (dict "page" . "title" .Title) }}
+
+{{ with .Params.intro }}
+<p class="mm-intro">{{ . }}</p>
+{{ end }}
+
+<div class="mm-viewer" id="mm-viewer">
+  <div class="mm-toolbar">
+    <input type="search" class="mm-search" id="mm-search" placeholder="Search nodes…" aria-label="Search mind map">
+    <button class="mm-btn" id="mm-download-svg" title="Download as SVG">
+      {{ partial "icon.html" (dict "name" "download" "size" 14 "stroke" 1.5) }} SVG
+    </button>
+    <button class="mm-btn" id="mm-download-png" title="Download as PNG">
+      {{ partial "icon.html" (dict "name" "image" "size" 14 "stroke" 1.5) }} PNG
+    </button>
+    <button class="mm-btn" id="mm-fullscreen" title="Toggle fullscreen">
+      {{ partial "icon.html" (dict "name" "maximize" "size" 14 "stroke" 1.5) }} Fullscreen
+    </button>
+  </div>
+  <div class="mm-breadcrumb" id="mm-breadcrumb" style="display:none"></div>
+  <div class="mm-mobile-tip">Rotate to landscape or use fullscreen for the best experience</div>
+  <div class="mm-canvas" id="mm-canvas" data-renderer="{{ .Params.renderer | default "radial" }}"></div>
+  <div class="mm-hint">Scroll to zoom · Drag to pan · Click a branch to focus</div>
+</div>
+{{ end }}
+
+{{/* Mind map data from Hugo data files */}}
+{{ $dataFile := .Params.data_file | default "" }}
+{{ $mmData := false }}
+{{ if $dataFile }}
+  {{ $mmData = index (index hugo.Data "mind_maps") $dataFile }}
+{{ end }}
+
+<script id="mm-data" type="application/json">
+{{ if $mmData }}{{ $mmData | jsonify | safeJS }}{{ else }}{}{{ end }}
+</script>
+
+{{/* FAQ */}}
+{{ with .Params.faq }}
+<div class="mm-faq">
+  <h2>Frequently Asked Questions</h2>
+  {{ range . }}
+  <details>
+    <summary>{{ .question }}</summary>
+    <p>{{ .answer }}</p>
+  </details>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* FAQPage JSON-LD */}}
+{{ with .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := . }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $q.answer | jsonify }}
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{/* Load correct renderer based on type */}}
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+{{ if $isStatic }}
+<script src="/js/mind-maps-v2.js?v={{ site.Params.cache_version }}"></script>
+{{ else }}
+<script src="/js/mind-maps.js?v={{ site.Params.cache_version }}"></script>
+{{ end }}
+{{ end }}

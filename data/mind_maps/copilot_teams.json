@@ -1,0 +1,57 @@
+{
+  "id": "copilot-teams",
+  "name": "Copilot in Teams",
+  "palette": ["#6366F1", "#14B8A6", "#F43F5E", "#F59E0B", "#10B981"],
+  "children": [
+    {
+      "id": "during",
+      "name": "During Meetings",
+      "color": 0,
+      "children": [
+        { "id": "d-summary", "name": "Live summary", "tag": "Most used" },
+        { "id": "d-actions", "name": "Action items" },
+        { "id": "d-followup", "name": "Follow-up tasks" },
+        { "id": "d-highlights", "name": "Transcript highlights" }
+      ]
+    },
+    {
+      "id": "after",
+      "name": "After Meetings",
+      "color": 1,
+      "children": [
+        { "id": "a-recap", "name": "Recap", "tag": "Popular" },
+        { "id": "a-decisions", "name": "Key decisions" },
+        { "id": "a-notes", "name": "Shared notes" }
+      ]
+    },
+    {
+      "id": "chat",
+      "name": "In Chat",
+      "color": 2,
+      "children": [
+        { "id": "c-catchup", "name": "Catch up on threads", "tag": "Try this" },
+        { "id": "c-summarise", "name": "Summarise conversation" },
+        { "id": "c-draft", "name": "Draft replies" }
+      ]
+    },
+    {
+      "id": "channels",
+      "name": "In Channels",
+      "color": 3,
+      "children": [
+        { "id": "ch-highlights", "name": "Channel highlights" },
+        { "id": "ch-topics", "name": "Topic summaries" }
+      ]
+    },
+    {
+      "id": "compose",
+      "name": "Compose Box",
+      "color": 4,
+      "children": [
+        { "id": "co-rewrite", "name": "Rewrite messages" },
+        { "id": "co-tone", "name": "Adjust tone", "tag": "New" },
+        { "id": "co-length", "name": "Expand or shorten" }
+      ]
+    }
+  ]
+}

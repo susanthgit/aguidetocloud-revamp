@@ -1,0 +1,141 @@
+{
+  "id": "licensing",
+  "name": "M365 Licensing",
+  "children": [
+    {
+      "id": "business",
+      "name": "Business",
+      "children": [
+        { "id": "basic", "name": "Basic", "children": [
+          { "id": "b-web", "name": "Web apps" },
+          { "id": "b-email", "name": "Exchange" },
+          { "id": "b-teams", "name": "Teams" },
+          { "id": "b-od", "name": "OneDrive 1TB" }
+        ]},
+        { "id": "std", "name": "Standard", "children": [
+          { "id": "s-desk", "name": "Desktop apps" },
+          { "id": "s-web", "name": "Webinars" },
+          { "id": "s-book", "name": "Bookings" }
+        ]},
+        { "id": "prem", "name": "Premium", "children": [
+          { "id": "p-intune", "name": "Intune" },
+          { "id": "p-dlp", "name": "DLP" },
+          { "id": "p-mfa", "name": "Entra P1" }
+        ]},
+        { "id": "b-cap", "name": "Max 300 users" }
+      ]
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "children": [
+        { "id": "e1", "name": "E1", "children": [
+          { "id": "e1-web", "name": "Web apps" },
+          { "id": "e1-ex", "name": "Exchange" },
+          { "id": "e1-teams", "name": "Teams" },
+          { "id": "e1-sp", "name": "SharePoint" }
+        ]},
+        { "id": "e3", "name": "E3", "children": [
+          { "id": "e3-desk", "name": "Desktop apps" },
+          { "id": "e3-intune", "name": "Intune" },
+          { "id": "e3-ip", "name": "Info Protection" },
+          { "id": "e3-dlp", "name": "DLP" },
+          { "id": "e3-ed", "name": "eDiscovery" }
+        ]},
+        { "id": "e5", "name": "E5", "children": [
+          { "id": "e5-def", "name": "Defender 365" },
+          { "id": "e5-edr", "name": "Endpoint P2" },
+          { "id": "e5-purv", "name": "Purview" },
+          { "id": "e5-pbi", "name": "Power BI Pro" },
+          { "id": "e5-ph", "name": "Phone System" },
+          { "id": "e5-ac", "name": "Audio Conf" }
+        ]},
+        { "id": "e-unlim", "name": "Unlimited users" }
+      ]
+    },
+    {
+      "id": "education",
+      "name": "Education",
+      "children": [
+        { "id": "a1", "name": "A1", "children": [
+          { "id": "a1-f", "name": "Free" },
+          { "id": "a1-w", "name": "Web apps" }
+        ]},
+        { "id": "a3", "name": "A3", "children": [
+          { "id": "a3-d", "name": "Desktop apps" },
+          { "id": "a3-s", "name": "Security" }
+        ]},
+        { "id": "a5", "name": "A5", "children": [
+          { "id": "a5-a", "name": "Analytics" },
+          { "id": "a5-p", "name": "Phone System" }
+        ]}
+      ]
+    },
+    {
+      "id": "addons",
+      "name": "Add-ons",
+      "children": [
+        { "id": "copilot", "name": "Copilot", "children": [
+          { "id": "co-p", "name": "$30/user/mo" },
+          { "id": "co-r", "name": "Needs E3/E5" }
+        ]},
+        { "id": "def-p2", "name": "Defender P2", "children": [
+          { "id": "dp-t", "name": "Threat protection" },
+          { "id": "dp-i", "name": "Investigation" }
+        ]},
+        { "id": "intune-s", "name": "Intune Suite", "children": [
+          { "id": "is-a", "name": "Advanced mgmt" },
+          { "id": "is-r", "name": "Remote help" }
+        ]},
+        { "id": "teams-p", "name": "Teams Premium", "children": [
+          { "id": "tp-ai", "name": "AI meetings" },
+          { "id": "tp-br", "name": "Custom branding" }
+        ]},
+        { "id": "viva", "name": "Viva Suite", "children": [
+          { "id": "v-i", "name": "Insights" },
+          { "id": "v-l", "name": "Learning" },
+          { "id": "v-e", "name": "Engage" }
+        ]}
+      ]
+    },
+    {
+      "id": "choose",
+      "name": "How to Choose",
+      "children": [
+        { "id": "smb", "name": "Small Biz", "children": [
+          { "id": "sb-s", "name": "Start Standard" },
+          { "id": "sb-u", "name": "Upgrade Premium" }
+        ]},
+        { "id": "ent", "name": "Enterprise", "children": [
+          { "id": "en-e3", "name": "E3 most needs" },
+          { "id": "en-e5", "name": "E5 for security" },
+          { "id": "en-mix", "name": "Mix E3 + E5" }
+        ]},
+        { "id": "q", "name": "Key Questions", "children": [
+          { "id": "q1", "name": "User count?" },
+          { "id": "q2", "name": "Desktop apps?" },
+          { "id": "q3", "name": "Security level?" },
+          { "id": "q4", "name": "Compliance?" }
+        ]}
+      ]
+    },
+    {
+      "id": "concepts",
+      "name": "Concepts",
+      "children": [
+        { "id": "per-user", "name": "Per-user", "children": [
+          { "id": "pu-1", "name": "1 licence/person" },
+          { "id": "pu-5", "name": "Up to 5 devices" }
+        ]},
+        { "id": "shared", "name": "Shared", "children": [
+          { "id": "sh-s", "name": "SCA activation" },
+          { "id": "sh-k", "name": "Kiosks & labs" }
+        ]},
+        { "id": "guest", "name": "Guest Access", "children": [
+          { "id": "ga-f", "name": "Free B2B" },
+          { "id": "ga-n", "name": "No extra licence" }
+        ]}
+      ]
+    }
+  ]
+}

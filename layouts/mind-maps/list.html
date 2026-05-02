@@ -1,0 +1,156 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/mind-maps.css?v={{ site.Params.cache_version }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+{{ $maps := .Pages }}
+
+{{/* Compact header */}}
+<header class="zt-blog-header">
+  <div class="zt-blog-header-row">
+    <h1 class="zt-blog-header-title">Mind Maps</h1>
+    <span class="zt-blog-header-count">{{ len $maps }} maps</span>
+  </div>
+  <p class="zt-blog-header-desc">Visual knowledge maps — purpose-built for each topic. Click to expand, download to share.</p>
+</header>
+
+{{/* Category filter pills */}}
+<div class="mm-filters" id="mm-filters">
+  <button class="mm-filter active" data-cat="all">All</button>
+  {{ $cats := slice }}
+  {{ range $maps }}
+    {{ $c := .Params.category | default "general" }}
+    {{ if not (in $cats $c) }}{{ $cats = $cats | append $c }}{{ end }}
+  {{ end }}
+  {{ range $cats }}
+  <button class="mm-filter" data-cat="{{ . }}">{{ . | title }}</button>
+  {{ end }}
+</div>
+
+{{/* Cards grouped by category */}}
+{{ range $cat := $cats }}
+  {{ $catMaps := slice }}
+  {{ range $maps }}
+    {{ if eq (.Params.category | default "general") $cat }}
+      {{ $catMaps = $catMaps | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $catMaps }}
+  <section class="mm-category" data-cat="{{ $cat }}">
+    <h2 class="mm-category-title">{{ $cat | title }}</h2>
+    <div class="mm-grid">
+      {{ range $catMaps }}
+      {{ $dataFile := .Params.data_file | default "" }}
+      {{ $mmData := false }}
+      {{ if $dataFile }}{{ $mmData = index (index hugo.Data "mind_maps") $dataFile }}{{ end }}
+      <a href="{{ .RelPermalink }}" class="mm-card" data-cat="{{ .Params.category | default "general" }}">
+        {{/* Mini horizontal mind map preview */}}
+        <div class="mm-card-preview">
+          {{ if $mmData }}
+          {{ $palette := $mmData.palette | default (slice "#6366F1" "#14B8A6" "#F43F5E" "#F59E0B" "#10B981") }}
+          <svg viewBox="-120 -60 240 120" class="mm-mini-svg">
+            {{/* Dot grid hint */}}
+            <defs><pattern id="mini-dots-{{ $dataFile }}" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="6" cy="6" r="0.4" fill="#D4D4D8"/></pattern></defs>
+            <rect x="-120" y="-60" width="240" height="120" fill="url(#mini-dots-{{ $dataFile }})"/>
+            {{/* Root */}}
+            <rect x="-28" y="-10" width="56" height="20" rx="6" fill="#1E293B"/>
+            <text x="0" y="4" text-anchor="middle" fill="#fff" font-size="6" font-weight="700" font-family="Plus Jakarta Sans, sans-serif">{{ .Title | replaceRE " Mind Map$" "" | truncate 12 }}</text>
+            {{/* Branches */}}
+            {{ $branches := $mmData.children }}
+            {{ $count := len $branches }}
+            {{ $rightN := div (add $count 1) 2 }}
+            {{ range $i, $b := $branches }}
+              {{ $colIdx := index $b "color" | default $i }}
+              {{ $col := index $palette (mod $colIdx (len $palette)) }}
+              {{ $isRight := lt $i $rightN }}
+              {{ $ySlot := 0 }}
+              {{ if $isRight }}
+                {{ $ySlot = sub (mul (float $i) (div 100.0 (float $rightN))) (mul (sub (float $rightN) 1.0) (div 50.0 (float $rightN))) }}
+              {{ else }}
+                {{ $leftI := sub $i $rightN }}
+                {{ $leftN := sub $count $rightN }}
+                {{ $ySlot = sub (mul (float $leftI) (div 100.0 (float (math.Max 1 $leftN)))) (mul (sub (float (math.Max 1 $leftN)) 1.0) (div 50.0 (float (math.Max 1 $leftN)))) }}
+              {{ end }}
+              {{ $bx := cond $isRight 60.0 -60.0 }}
+              {{ $by := $ySlot }}
+              {{/* Curve from root to branch */}}
+              {{ $mx := cond $isRight 30.0 -30.0 }}
+              <path d="M0,0 C{{ $mx }},0 {{ $mx }},{{ $by }} {{ $bx }},{{ $by }}" fill="none" stroke="{{ $col }}" stroke-width="1" stroke-opacity="0.4" stroke-linecap="round"/>
+              {{/* Branch pill */}}
+              <rect x="{{ cond $isRight (sub $bx 2.0) (sub $bx 22.0) }}" y="{{ sub $by 6.0 }}" width="24" height="12" rx="6" fill="{{ $col }}"/>
+              {{/* Leaf dots */}}
+              {{ range $j, $l := $b.children }}
+                {{ $lx := cond $isRight (add $bx 30.0) (sub $bx 30.0) }}
+                {{ $ly := add $by (mul (sub (float $j) (div (sub (float (len $b.children)) 1.0) 2.0)) 10.0) }}
+                <line x1="{{ $bx }}" y1="{{ $by }}" x2="{{ $lx }}" y2="{{ $ly }}" stroke="{{ $col }}" stroke-width="0.5" stroke-opacity="0.3"/>
+                <circle cx="{{ $lx }}" cy="{{ $ly }}" r="1.5" fill="{{ $col }}" fill-opacity="0.5"/>
+              {{ end }}
+            {{ end }}
+          </svg>
+          {{ else }}
+          <svg viewBox="-100 -60 200 120" class="mm-mini-svg">
+            <rect x="-24" y="-8" width="48" height="16" rx="5" fill="#1E293B"/>
+          </svg>
+          {{ end }}
+        </div>
+        <div class="mm-card-body">
+          <h3 class="mm-card-title">{{ .Title }}</h3>
+          <p class="mm-card-desc">{{ .Description }}</p>
+          <div class="mm-card-meta">
+            {{ if $mmData }}
+            {{ $nodeCount := 0 }}
+            {{ range $mmData.children }}{{ $nodeCount = add $nodeCount 1 }}{{ with .children }}{{ range . }}{{ $nodeCount = add $nodeCount 1 }}{{ with .children }}{{ range . }}{{ $nodeCount = add $nodeCount 1 }}{{ end }}{{ end }}{{ end }}{{ end }}{{ end }}
+            <span class="mm-card-stat">{{ $nodeCount }} topics</span>
+            <span class="mm-card-stat">{{ len $mmData.children }} branches</span>
+            {{ end }}
+            {{ with .Lastmod }}<span class="mm-card-date">Updated {{ .Format "Jan 2006" }}</span>{{ end }}
+          </div>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+{{ end }}
+
+{{/* FAQPage JSON-LD */}}
+{{ with .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := . }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $q.answer | jsonify }}
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+<script>
+/* Category filter */
+document.addEventListener('DOMContentLoaded', function() {
+  var btns = document.querySelectorAll('.mm-filter');
+  var sections = document.querySelectorAll('.mm-category');
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var cat = btn.getAttribute('data-cat');
+      sections.forEach(function(s) {
+        s.style.display = (cat === 'all' || s.getAttribute('data-cat') === cat) ? '' : 'none';
+      });
+    });
+  });
+});
+</script>
+{{ end }}

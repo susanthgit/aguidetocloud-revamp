@@ -357,6 +357,17 @@ css_namespace = "compass-*"
 body_class = "page-cert-compass"
 # NOTE: Hue 239° is 5° from Periwinkle (234°) — accepted, different category + saturation
 
+[[tools]]
+name = "Mind Maps"
+slug = "mind-maps"
+hex = "#6366F1"
+hue = 239
+name_friendly = "Indigo"
+category = "Learn"
+css_namespace = "mm-*"
+body_class = "page-mind-maps"
+# NOTE: Shares indigo accent — section page, not a coloured tool
+
 # ── Community ─────────────────────────────────────────────────────────────────
 
 [[tools]]

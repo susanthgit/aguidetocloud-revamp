@@ -27,6 +27,11 @@ base = 320
 verb = "paths explored"
 
 [[tools]]
+url = "/mind-maps/"
+base = 50
+verb = "mind maps explored"
+
+[[tools]]
 url = "/copilot-readiness/"
 base = 2100
 verb = "readiness checks completed"

@@ -1,0 +1,649 @@
+/* ═══════════════════════════════════════════════════════
+   Mind Maps — Zen Design System
+   Colours are deliberate: 8 soft, muted branch tones
+   with equal saturation (~40%) and lightness (~60%).
+   Dot-grid canvas echoes our Mermaid diagram style.
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Zen branch palette (light mode) ── */
+:root {
+  --mm-c1: #7B7FF2;   /* Soft indigo — echoes accent family */
+  --mm-c2: #4DB8A4;   /* Soft teal */
+  --mm-c3: #D48594;   /* Soft rose */
+  --mm-c4: #C0A24E;   /* Muted gold */
+  --mm-c5: #5CAED0;   /* Soft sky */
+  --mm-c6: #5FB584;   /* Soft sage */
+  --mm-c7: #A087C4;   /* Soft lavender */
+  --mm-c8: #C08E60;   /* Warm terracotta */
+
+  /* Canvas dot grid (light) */
+  --mm-dot: #D4D4D4;
+  --mm-canvas-bg: #F7F7F8;
+}
+
+/* ── Zen branch palette (dark mode — same hues, lifted lightness) ── */
+[data-theme="dark"] {
+  --mm-c1: #9B9EF5;
+  --mm-c2: #6AD0B8;
+  --mm-c3: #E8A0AE;
+  --mm-c4: #D8BE6A;
+  --mm-c5: #7CC4E4;
+  --mm-c6: #7ECBA0;
+  --mm-c7: #BAA5D8;
+  --mm-c8: #D8A87C;
+
+  --mm-dot: #333333;
+  --mm-canvas-bg: #111114;
+}
+
+/* ── Landing page ── */
+.mm-landing-intro {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  max-width: var(--max-reading);
+  margin-bottom: var(--space-6);
+}
+
+/* ── Category filters ── */
+.mm-filters {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+
+.mm-filter {
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 200ms ease-out, color 200ms ease-out, border-color 200ms ease-out;
+}
+
+.mm-filter:hover {
+  border-color: var(--border-emphasis);
+  color: var(--text-primary);
+}
+
+.mm-filter.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ── Category sections (gallery) ── */
+.mm-category {
+  margin-bottom: var(--space-6);
+}
+
+.mm-category-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-3) 0;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Card grid ── */
+.mm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.mm-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--text-primary);
+  overflow: hidden;
+  transition: border-color 200ms ease-out, transform 200ms ease-out;
+}
+
+.mm-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.mm-card:hover .mm-mini-svg {
+  transform: scale(1.05);
+}
+
+/* ── Mini radial SVG preview ── */
+.mm-card-preview {
+  background: #FAFAFA;
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-4) var(--space-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+}
+
+[data-theme="dark"] .mm-card-preview {
+  background: #F5F5F5;
+}
+
+.mm-mini-svg {
+  width: 130px;
+  height: 130px;
+  transition: transform 200ms ease-out;
+}
+
+/* ── Card body ── */
+.mm-card-body {
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+}
+
+.mm-card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.mm-card-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.mm-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: var(--space-1);
+  flex-wrap: wrap;
+}
+
+.mm-card-stat {
+  background: var(--accent-subtle);
+  color: var(--accent);
+  padding: 1px var(--space-1);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+/* ── Single page intro ── */
+.mm-intro {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  max-width: var(--max-reading);
+  margin-bottom: var(--space-4);
+}
+
+/* ── Mind map viewer ── */
+.mm-viewer {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  margin-bottom: var(--space-6);
+  overflow: hidden;
+}
+
+/* ── Mind map canvas (immersive light, no dark/light clash) ── */
+.mm-canvas {
+  background: #FFFFFF;
+  min-height: 700px;
+  width: 100%;
+}
+
+/* Force light canvas even in dark mode — mind maps are visual content */
+[data-theme="dark"] .mm-viewer {
+  background: #FAFAFA;
+  border-color: #E5E5E5;
+}
+
+[data-theme="dark"] .mm-toolbar {
+  background: #F5F5F5;
+  border-bottom-color: #E5E5E5;
+}
+
+[data-theme="dark"] .mm-toolbar .mm-btn {
+  color: #525252;
+  border-color: #D4D4D4;
+}
+
+[data-theme="dark"] .mm-toolbar .mm-btn:hover {
+  background: #E5E5E5;
+  color: #1F2937;
+}
+
+[data-theme="dark"] .mm-toolbar .mm-search {
+  background: #FFFFFF;
+  border-color: #D4D4D4;
+  color: #1F2937;
+}
+
+[data-theme="dark"] .mm-breadcrumb {
+  background: #F5F5F5;
+  border-bottom-color: #E5E5E5;
+  color: #6B7280;
+}
+
+/* ── Onboarding hint ── */
+.mm-hint {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(17, 24, 39, 0.85);
+  color: #F9FAFB;
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 600ms ease-out;
+}
+
+.mm-hint.mm-hint--hidden {
+  opacity: 0;
+}
+
+/* ── Mobile: helpful message ── */
+@media (max-width: 640px) {
+  .mm-canvas {
+    min-height: 400px;
+  }
+
+  .mm-canvas svg {
+    height: 400px;
+  }
+
+  .mm-mobile-tip {
+    display: block;
+    text-align: center;
+    padding: var(--space-2) var(--space-3);
+    font-size: 0.75rem;
+    color: #6B7280;
+    background: #F0F0F0;
+    border-bottom: 1px solid #E5E5E5;
+  }
+}
+
+.mm-mobile-tip {
+  display: none;
+}
+
+.mm-toolbar {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elevated);
+  flex-wrap: wrap;
+}
+
+.mm-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 200ms ease-out, color 200ms ease-out;
+}
+
+.mm-btn:hover {
+  background: var(--bg-page);
+  color: var(--text-primary);
+}
+
+.mm-btn--outline {
+  margin-left: auto;
+}
+
+/* ── Loading state ── */
+.mm-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.mm-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: mm-spin 0.8s linear infinite;
+  margin-bottom: var(--space-2);
+}
+
+@keyframes mm-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── SVG inside canvas ── */
+.mm-canvas svg {
+  width: 100%;
+  height: 700px;
+}
+
+/* Fullscreen mode */
+.mm-viewer.mm-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  border-radius: 0;
+  border: none;
+  margin: 0;
+}
+
+.mm-viewer.mm-fullscreen .mm-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mm-viewer.mm-fullscreen .mm-canvas {
+  min-height: calc(100vh - 48px);
+}
+
+.mm-viewer.mm-fullscreen .mm-canvas svg {
+  height: calc(100vh - 48px);
+}
+
+/* ── Outline view ── */
+.mm-outline {
+  padding: var(--space-4);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+}
+
+.mm-outline-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-3) 0;
+  color: var(--text-primary);
+}
+
+.mm-outline h1,
+.mm-outline h2,
+.mm-outline h3 {
+  color: var(--text-primary);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-1);
+}
+
+.mm-outline h1 { font-size: 1.15rem; }
+.mm-outline h2 { font-size: 1rem; }
+.mm-outline h3 { font-size: 0.9rem; }
+
+.mm-outline ul {
+  padding-left: var(--space-4);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.mm-outline li {
+  margin-bottom: 2px;
+}
+
+.mm-outline a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.mm-outline a:hover {
+  text-decoration: underline;
+}
+
+/* ── FAQ ── */
+.mm-faq {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-6);
+  max-width: var(--max-reading);
+}
+
+.mm-faq h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+  color: var(--text-primary);
+}
+
+.mm-faq details {
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-3) 0;
+}
+
+.mm-faq summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.mm-faq details p {
+  margin-top: var(--space-2);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* ── Search input ── */
+.mm-search {
+  flex: 1;
+  max-width: 200px;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  outline: none;
+  transition: border-color 200ms ease-out;
+}
+
+.mm-search:focus {
+  border-color: var(--accent);
+}
+
+.mm-search::placeholder {
+  color: var(--text-muted);
+}
+
+/* ── Breadcrumb ── */
+.mm-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: var(--space-1) var(--space-3);
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  overflow-x: auto;
+}
+
+.mm-bc-item {
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.mm-bc-item:last-child {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.mm-bc-sep {
+  color: var(--text-muted);
+  margin: 0 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .mm-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mm-canvas {
+    min-height: 350px;
+  }
+
+  .mm-canvas svg {
+    height: 350px;
+  }
+
+  .mm-toolbar {
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .mm-btn {
+    font-size: 0.75rem;
+    padding: 4px var(--space-1);
+  }
+
+  .mm-btn--outline {
+    margin-left: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   V2: Static Mind Maps — lightbox, minimal chrome
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Static viewer — clean container ── */
+.mm-viewer--static {
+  cursor: pointer;
+  transition: border-color 200ms ease-out;
+}
+
+.mm-viewer--static:hover {
+  border-color: var(--accent);
+}
+
+/* ── Minimal toolbar ── */
+.mm-toolbar--minimal {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
+.mm-toolbar-title {
+  flex: 1;
+  font-family: 'Plus Jakarta Sans', Inter, sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.mm-btn--close {
+  display: none;
+}
+
+/* ── Static canvas — readable by default ── */
+.mm-canvas--static {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.mm-canvas--static svg {
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+}
+
+/* ── Lightbox expanded state ── */
+.mm-viewer--static.mm-expanded {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  border-radius: 0;
+  border: none;
+  margin: 0;
+  cursor: default;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+
+.mm-viewer--static.mm-expanded .mm-toolbar--minimal {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #FAFAFA;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.mm-viewer--static.mm-expanded .mm-btn--close {
+  display: inline-flex;
+}
+
+.mm-viewer--static.mm-expanded .mm-canvas--static {
+  flex: 1;
+  min-height: 0;
+  padding: var(--space-6);
+}
+
+.mm-viewer--static.mm-expanded .mm-canvas--static svg {
+  max-height: none;
+  height: 100%;
+}
+
+.mm-viewer--static.mm-expanded .mm-hint {
+  display: none;
+}
+
+/* Force light mode in expanded too */
+[data-theme="dark"] .mm-viewer--static.mm-expanded {
+  background: #FFFFFF;
+}
+
+[data-theme="dark"] .mm-viewer--static .mm-toolbar--minimal {
+  background: #F5F5F5;
+  border-bottom-color: #E5E5E5;
+}
+
+[data-theme="dark"] .mm-viewer--static .mm-toolbar-title {
+  color: #525252;
+}
+
+[data-theme="dark"] .mm-viewer--static .mm-btn {
+  color: #525252;
+  border-color: #D4D4D4;
+}
+
+[data-theme="dark"] .mm-viewer--static .mm-btn:hover {
+  background: #E5E5E5;
+  color: #1F2937;
+}
