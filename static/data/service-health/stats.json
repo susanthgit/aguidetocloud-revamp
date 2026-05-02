@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-02T06:19:15.475190+00:00",
+  "generated_at": "2026-05-02T09:18:35.814137+00:00",
   "total_incidents_tracked": 104,
   "services": [
     {
@@ -32,12 +32,12 @@
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 18,
+      "total_incidents": 17,
       "active_incidents": 0,
-      "avg_duration_minutes": 3010,
+      "avg_duration_minutes": 2760,
       "last_incident": "2026-04-28T00:00:00+00:00",
       "classifications": {
-        "advisory": 9,
+        "advisory": 8,
         "incident": 9
       }
     },
@@ -93,6 +93,19 @@
       }
     },
     {
+      "service": "Microsoft Intune",
+      "short_name": "Intune",
+      "icon": "📱",
+      "total_incidents": 4,
+      "active_incidents": 1,
+      "avg_duration_minutes": 5059,
+      "last_incident": "2026-04-28T12:30:00+00:00",
+      "classifications": {
+        "advisory": 3,
+        "incident": 1
+      }
+    },
+    {
       "service": "Power BI",
       "short_name": "Power BI",
       "icon": "📊",
@@ -127,19 +140,6 @@
       "classifications": {
         "advisory": 2,
         "incident": 2
-      }
-    },
-    {
-      "service": "Microsoft Intune",
-      "short_name": "Intune",
-      "icon": "📱",
-      "total_incidents": 3,
-      "active_incidents": 0,
-      "avg_duration_minutes": 5059,
-      "last_incident": "2026-04-15T14:43:06+00:00",
-      "classifications": {
-        "incident": 1,
-        "advisory": 2
       }
     },
     {
@@ -188,7 +188,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 44,
+      "incident_count": 45,
       "services_affected": 12
     },
     {
@@ -198,8 +198,8 @@
     },
     {
       "month": "2026-02",
-      "incident_count": 13,
-      "services_affected": 9
+      "incident_count": 12,
+      "services_affected": 8
     }
   ]
 }

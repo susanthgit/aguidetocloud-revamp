@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 02 May 2026 06:19:16 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 May 2026 09:18:36 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Some admins may be unable to remove blocked users from the Restricted entities page in Microsoft 365 suite</title>
@@ -60,6 +60,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">SP1296487</guid>
       <pubDate>Thu, 30 Apr 2026 07:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Intune] Some users' Windows Intune devices may intermittently drop device policy assignments</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1298282</link>
+      <description>[Microsoft Intune] Users' Windows Intune devices may intermittently drop specific policy assignments.</description>
+      <category>Microsoft Intune</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">IT1298282</guid>
+      <pubDate>Tue, 28 Apr 2026 12:30:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users in the North America and Asia Pacific regions may see stale data in some Microsoft 365 Copilot usage reports</title>
@@ -448,15 +457,6 @@ The issue initially began with impact to a subset of custom</description>
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1266855</guid>
       <pubDate>Tue, 31 Mar 2026 03:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Purview] We’ve detected an issue with required subscriptions for Microsoft Purview inline data protections in Edge for Business</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1266046</link>
-      <description>[Microsoft Purview] If not addressed, collection and Data Loss Prevention policies for user data uploads to unmanaged apps may not work.</description>
-      <category>Microsoft Purview</category>
-      <category>investigationSuspended</category>
-      <guid isPermaLink="false">MP1266046</guid>
-      <pubDate>Mon, 30 Mar 2026 22:21:33 +0000</pubDate>
     </item>
   </channel>
 </rss>
