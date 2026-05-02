@@ -4838,3 +4838,64 @@ pre:hover .code-copy-btn { opacity: 1; }
   .zt-hub-intro { font-size: 0.9375rem; }
   .zt-hub-voice-quote { font-size: 1rem; }
 }
+/* ──────────────────────────────────────────
+   📱 Hub pages — mobile refinement (3 May 2026)
+   Casual mobile visitor sees: belief + voice + featured + simple list.
+   Power-user filter clutter scrolls horizontally instead of wrapping.
+   ────────────────────────────────────────── */
+
+/* Tighter voice quote on narrow viewports — reclaim left padding */
+@media (max-width: 640px) {
+  .zt-hub-voice {
+    padding-left: var(--space-4, 16px);
+    margin-bottom: var(--space-6, 24px);
+  }
+  .zt-hub-voice-quote {
+    font-size: 0.9375rem;
+    line-height: 1.45;
+  }
+  .zt-hub-intro {
+    margin-bottom: var(--space-4, 16px);
+  }
+  .zt-hub-featured {
+    margin-bottom: var(--space-6, 24px);
+    padding-bottom: var(--space-4, 16px);
+  }
+  .zt-hub-featured-label {
+    margin-bottom: var(--space-2, 8px);
+  }
+}
+
+/* Blog filter pills — horizontal scroll on mobile (matches .zt-lic-pills behaviour) */
+@media (max-width: 640px) {
+  .zt-blog-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: var(--space-3, 12px);
+  }
+  .zt-blog-filters::-webkit-scrollbar { display: none; }
+  .zt-blog-filter {
+    flex-shrink: 0;
+  }
+}
+
+/* Newsletter form — stack input + button on narrow */
+@media (max-width: 480px) {
+  .zh-newsletter-form {
+    flex-direction: column;
+    gap: var(--space-2, 8px);
+  }
+  .zh-newsletter-input,
+  .zh-newsletter-btn {
+    width: 100%;
+  }
+}
+
+/* Featured row video grid — single column on narrowest (mirrors regular .zt-vid-grid mobile rule) */
+@media (max-width: 480px) {
+  .zt-hub-featured .zt-vid-grid {
+    grid-template-columns: 1fr;
+  }
+}
