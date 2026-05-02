@@ -88,44 +88,33 @@
       '<div class="cfm-stat"><span class="cfm-stat-num">' + total + '</span> total tracked</div>';
   }
 
-  /* ── What's New — compact banner ── */
+  /* ── What's New — single inline line ── */
   function renderWhatsNew() {
     var el = $('#cfm-wn-list');
     if (!el || !events.length) { var p = $('#cfm-whats-new'); if (p) p.style.display = 'none'; return; }
     var sorted = events.slice().sort(function (a, b) { return b.date.localeCompare(a.date); });
-    var recent = sorted.slice(0, 3);
-    el.innerHTML = recent.map(function (ev) {
-      var f = featureById(ev.feature_id);
-      var fname = f ? f.name : ev.feature_id;
-      return '<div class="cfm-wn-item">' +
-        '<span class="cfm-wn-date">' + formatDate(ev.date) + '</span>' +
-        '<span class="cfm-wn-badge" data-type="' + esc(ev.event_type) + '">' + esc(eventTypeLabels[ev.event_type] || ev.event_type) + '</span>' +
-        '<span class="cfm-wn-text"><span class="cfm-wn-feature">' + esc(fname) + '</span></span>' +
-        '</div>';
-    }).join('');
+    var latest = sorted[0];
+    var sameDay = sorted.filter(function (ev) { return ev.date === latest.date && ev.event_type === latest.event_type; });
+    var names = sameDay.map(function (ev) { var f = featureById(ev.feature_id); return f ? f.name : ev.feature_id; });
+    var label = eventTypeLabels[latest.event_type] || latest.event_type;
+    el.innerHTML = '<div class="cfm-wn-item">' +
+      '<span class="cfm-wn-badge" data-type="' + esc(latest.event_type) + '">' + esc(label) + '</span>' +
+      '<span class="cfm-wn-text">' + esc(names.join(', ')) + ' <span class="cfm-wn-date">(' + formatDate(latest.date) + ')</span></span>' +
+      '</div>';
   }
 
   /* ── Pipeline Tab ── */
   function renderPipelineCard(f) {
-    var models = (f.ai_models || []).map(function (m) {
-      return '<span class="cfm-model-badge">' + esc(m) + '</span>';
-    }).join('');
-    var dateLabel = f.status === 'ga'
-      ? 'GA: ' + formatDate(f.actual_ga)
-      : 'Since: ' + formatDate(f.frontier_date);
+    var newBadge = isNew(f.last_status_change) ? '<span class="cfm-new-badge">NEW</span>' : '';
     var days = daysSince(f.frontier_date);
     var daysHtml = days !== null && f.status === 'frontier'
-      ? '<div class="cfm-days-badge">' + days + ' days in Frontier</div>'
+      ? '<span class="cfm-days-badge">' + days + 'd</span>'
       : '';
-    var newBadge = isNew(f.last_status_change) ? '<span class="cfm-new-badge">NEW</span>' : '';
     var preview = '<div class="cfm-pipe-preview">' + esc((isCioMode && cioDescs[f.id]) ? cioDescs[f.id] : f.value_prop || f.description) + '</div>';
     return '<div class="cfm-pipe-card" data-id="' + esc(f.id) + '" tabindex="0" role="button" aria-label="View details for ' + esc(f.name) + '">' +
       preview +
-      '<div class="cfm-pipe-card-name">' + esc(f.name) + newBadge + '</div>' +
+      '<div class="cfm-pipe-card-name">' + esc(f.name) + newBadge + daysHtml + '</div>' +
       '<div class="cfm-pipe-card-app">' + esc(f.app) + '</div>' +
-      '<div class="cfm-pipe-card-date">' + dateLabel + ' <span class="cfm-relative-time">(' + relativeTime(f.status === 'ga' ? f.actual_ga : f.frontier_date) + ')</span></div>' +
-      daysHtml +
-      (models ? '<div class="cfm-pipe-card-models">' + models + '</div>' : '') +
       '</div>';
   }
 
@@ -136,17 +125,23 @@
       if (buckets[s]) buckets[s].push(f);
     });
 
+    // Hide Expected column + its arrow if empty
+    var expectedCol = document.querySelector('.cfm-pipeline-col[data-status="expected"]');
+    var arrows = $$('.cfm-pipeline-arrow');
+    if (expectedCol && buckets.expected.length === 0) {
+      expectedCol.style.display = 'none';
+      if (arrows[0]) arrows[0].style.display = 'none';
+      // Switch to 2-column layout
+      var pipeline = $('#cfm-pipeline');
+      if (pipeline) pipeline.style.gridTemplateColumns = '1fr auto 1fr';
+    }
+
     Object.keys(buckets).forEach(function (status) {
       var container = $('#cfm-cards-' + status);
       if (!container) return;
-      // Sort newest first
       buckets[status].sort(function (a, b) { return (b.last_status_change || b.frontier_date || '').localeCompare(a.last_status_change || a.frontier_date || ''); });
       if (buckets[status].length === 0) {
-        container.innerHTML = '<div class="cfm-col-empty">' +
-          (status === 'expected' ? '🎯 No features currently announced for Frontier — check back soon!' :
-           status === 'paused' ? 'Nothing paused — all systems go' :
-           status === 'withdrawn' ? 'Nothing withdrawn' :
-           'None currently') + '</div>';
+        if (status !== 'expected') container.innerHTML = '<div class="cfm-col-empty">None currently</div>';
       } else {
         container.innerHTML = buckets[status].map(renderPipelineCard).join('');
       }

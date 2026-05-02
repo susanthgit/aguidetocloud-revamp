@@ -78,16 +78,7 @@
 
 {{ partial "tool-header.html" (dict "page" . "title" "Copilot Frontier Map") }}
 
-  {{/* Toolbar: stats + CIO toggle — compact, one line */}}
-  <div class="cfm-toolbar">
-    <div class="cfm-stats" id="cfm-stats"></div>
-    <label class="cfm-cio-toggle" title="Simplify descriptions for executives">
-      <input type="checkbox" id="cfm-cio-mode">
-      <span class="cfm-cio-label">👔 CIO Mode</span>
-    </label>
-  </div>
-
-  {{/* Tabs */}}
+  {{/* Tabs — nothing above, straight to content */}}
   <div class="cfm-tabs zen-tabs" role="tablist" aria-label="Copilot Frontier Map sections">
     <button class="cfm-tab zen-tab active" data-tab="pipeline" role="tab" id="tab-pipeline" aria-selected="true" aria-controls="panel-pipeline" tabindex="0">Pipeline</button>
     <button class="cfm-tab zen-tab" data-tab="explorer" role="tab" id="tab-explorer" aria-selected="false" aria-controls="panel-explorer" tabindex="-1">Explorer</button>
@@ -103,9 +94,6 @@
     <div class="cfm-whats-new" id="cfm-whats-new">
       <div class="cfm-wn-list" id="cfm-wn-list"></div>
     </div>
-
-    {{/* Chart — subtle, inside pipeline */}}
-    <div class="cfm-chart" id="cfm-chart"></div>
 
     <div class="cfm-pipeline" id="cfm-pipeline">
       <div class="cfm-pipeline-col" data-status="frontier">
@@ -245,9 +233,13 @@
     <a href="/copilot-readiness/" class="cfm-crosslink">Readiness Check →</a>
   </div>
 
-  {{/* Footer — clean single line */}}
+  {{/* Footer — clean single line + CIO mode */}}
   <div class="cfm-freshness">
     <p>Last verified: <strong id="cfm-last-updated">{{ $programme.last_updated }}</strong> · <button class="cfm-print-btn" id="cfm-export-cio">📊 Export for CIO</button> · <button class="cfm-print-btn" onclick="window.print()">🖨️ Print</button> · <a href="https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features" target="_blank" rel="noopener">Sources</a> · <a href="/feedback/">Report an issue</a></p>
+    <label class="cfm-cio-toggle" title="Simplify descriptions for executives">
+      <input type="checkbox" id="cfm-cio-mode">
+      <span class="cfm-cio-label">👔 CIO Mode</span>
+    </label>
   </div>
 
 </div>
