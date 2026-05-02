@@ -1,6 +1,6 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">
-{{/* 🌸 Zen Homepage — The river. One truth per screen. */}}
+{{/* 🌸 Zen Homepage — Belief-led. "What overflows lands here." */}}
 
 {{ $toolCount := 0 }}
 {{ range (index hugo.Data "toolkit_nav").tools }}{{ if .is_tool }}{{ $toolCount = add $toolCount 1 }}{{ end }}{{ end }}
@@ -9,67 +9,85 @@
 
 <div class="zh">
 
-  {{/* ── THE WELCOME ── */}}
+  {{/* ── HERO — belief + intern mindset + overflow ── */}}
   <section class="zh-welcome">
-    <h1 class="zh-title">A Guide to Cloud & AI</h1>
-    <p class="zh-subtitle">Everything I learn about cloud & AI at work — and in my own time — I share here. Sometimes as a study guide. Sometimes as a tool. Sometimes as a video or a blog post. Six ways to learn, one honest source.</p>
-    <span class="zh-badge">Built by a Microsoft Engineer</span>
-    <p class="zh-audience">For IT pros, students, and anyone studying for cloud & AI certifications.</p>
+    <h1 class="zh-title">Cloud &amp; AI shouldn't feel <span class="zh-title-accent">this hard.</span></h1>
+    <p class="zh-supporting">I work in cloud and AI at <strong>Microsoft NZ</strong>. In my head, I'm still the curious intern — figuring it out for myself first, simplifying it until it actually clicks. <em>What overflows lands here.</em> Guides, practice exams, free tools, videos. <strong>For people like us.</strong></p>
+    <a href="/about/" class="zh-badge">More about me →</a>
   </section>
 
-  {{/* ── THE 6 PATHWAYS ── */}}
+  <div class="zh-divider"></div>
+
+  {{/* ── PULL QUOTE — trust signal in someone else's voice ── */}}
+  <section class="zh-pull">
+    <p class="zh-pull-quote">Even the paid courses do not organize the stuff this way. Clarity and depth are more than other tutors.</p>
+    <cite class="zh-pull-cite">@lalitds &middot; YouTube</cite>
+  </section>
+
+  {{/* ── DOORS ── */}}
+  <p class="zh-doors-intro">Where the overflow goes</p>
+
   <section class="zh-pathways">
 
     <a href="/study-guides/" class="zh-path">
-      <span class="zh-path-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+      <span class="zh-path-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
       <div class="zh-path-text">
-        <span class="zh-path-label">Study Guides</span>
-        <span class="zh-path-desc">Handcrafted guides for every exam objective — linked to <em class="zh-hl">official resources</em>. Covers Microsoft, AWS, Google Cloud & more.</span>
+        <span class="zh-path-label">Cert Study Guides</span>
+        <span class="zh-path-desc">Every exam objective with links to <span class="zh-hl">official Microsoft, AWS &amp; GCP resources</span>.</span>
       </div>
       <span class="zh-path-go">→</span>
     </a>
 
     <a href="/guided/explore/" class="zh-path">
-      <span class="zh-path-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></span>
+      <span class="zh-path-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></span>
       <div class="zh-path-text">
         <span class="zh-path-label">Practice Exams</span>
-        <span class="zh-path-desc">Interactive exams with handcrafted questions. Instant feedback, domain breakdown. <em class="zh-hl">All certs from $9</em>.</span>
-      </div>
-      <span class="zh-path-go">→</span>
-    </a>
-
-    <a href="/free-tools/" class="zh-path">
-      <span class="zh-path-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
-      <div class="zh-path-text">
-        <span class="zh-path-label">Free Tools</span>
-        <span class="zh-path-desc">Tools for everyday IT challenges — prompt builders, policy generators, calculators. <em class="zh-hl">No sign-up</em>, runs in your browser.</span>
-      </div>
-      <span class="zh-path-go">→</span>
-    </a>
-
-    <a href="/licensing-docs/" class="zh-path">
-      <span class="zh-path-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
-      <div class="zh-path-text">
-        <span class="zh-path-label">Licensing Wiki</span>
-        <span class="zh-path-desc">50 M365 plans explained in <em class="zh-hl">plain English</em>. Stop guessing, start understanding.</span>
+        <span class="zh-path-desc">Real questions, instant feedback, domain breakdown. <span class="zh-hl">From $9 USD per cert</span>.</span>
       </div>
       <span class="zh-path-go">→</span>
     </a>
 
     <a href="/videos/" class="zh-path">
-      <span class="zh-path-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></span>
+      <span class="zh-path-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></span>
       <div class="zh-path-text">
         <span class="zh-path-label">Video Tutorials</span>
-        <span class="zh-path-desc">Certification courses, Copilot tutorials, hands-on labs. <em class="zh-hl">Free forever</em> on YouTube.</span>
+        <span class="zh-path-desc">Cert courses, Copilot deep-dives, hands-on labs. <span class="zh-hl">Free on YouTube</span>.</span>
+      </div>
+      <span class="zh-path-go">→</span>
+    </a>
+
+    <a href="/free-tools/" class="zh-path">
+      <span class="zh-path-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+      <div class="zh-path-text">
+        <span class="zh-path-label">Free Tools</span>
+        <span class="zh-path-desc">Prompt builders, policy generators, calculators. <span class="zh-hl">No sign-up</span>, runs in your browser.</span>
+      </div>
+      <span class="zh-path-go">→</span>
+    </a>
+
+    <a href="/mind-maps/" class="zh-path">
+      <span class="zh-path-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19 12h2M3 12h2M12 3v2M12 19v2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg></span>
+      <div class="zh-path-text">
+        <span class="zh-path-label">Mind Maps <span class="zh-new">New</span></span>
+        <span class="zh-path-desc">Visual maps that show the <span class="zh-hl">whole picture</span> at a glance — Copilot, licensing, cert paths.</span>
+      </div>
+      <span class="zh-path-go">→</span>
+    </a>
+
+    <a href="/licensing-docs/" class="zh-path">
+      <span class="zh-path-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+      <div class="zh-path-text">
+        <span class="zh-path-label">Licensing Wiki</span>
+        <span class="zh-path-desc">50 M365 plans in <span class="zh-hl">plain English</span>. Stop guessing.</span>
       </div>
       <span class="zh-path-go">→</span>
     </a>
 
     <a href="/blog/" class="zh-path">
-      <span class="zh-path-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="17" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="17" y1="18" x2="3" y2="18"/></svg></span>
+      <span class="zh-path-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="17" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="17" y1="18" x2="3" y2="18"/></svg></span>
       <div class="zh-path-text">
         <span class="zh-path-label">Blog</span>
-        <span class="zh-path-desc">Deep-dive articles on what I work on day to day — the questions customers ask me, answered <em class="zh-hl">in detail</em>.</span>
+        <span class="zh-path-desc">Deep-dives on what I work on day to day — answered <span class="zh-hl">in detail</span>.</span>
       </div>
       <span class="zh-path-go">→</span>
     </a>
@@ -78,10 +96,10 @@
 
   <p class="zh-nudge">Not sure where to start? <a href="/study-guides/">Browse study guides →</a> or <a href="/free-tools/">explore free tools →</a></p>
 
-  {{/* ── LATEST ── */}}
+  {{/* ── RECENTLY ── */}}
   {{ if $blogPosts }}
   <section class="zh-latest">
-    <h2 class="zh-section-title">Latest</h2>
+    <h2 class="zh-section-title">Recently</h2>
     <div class="zh-latest-list">
       {{ range $blogPosts }}
       <a href="{{ .RelPermalink }}" class="zh-latest-item">
@@ -93,20 +111,21 @@
   </section>
   {{ end }}
 
-  {{/* ── VOICES (no heading — let them speak) ── */}}
+  {{/* ── MORE FROM LEARNERS ── */}}
   <section class="zh-voices">
+    <h2 class="zh-section-title">More from learners</h2>
     <div class="zh-voices-grid">
       <blockquote class="zh-voice">
-        <p>"I work at Microsoft and I have passed many of my exams using your videos. <strong>Thank you for such great content.</strong>"</p>
+        <p>"I work at Microsoft and I have <strong>passed many of my exams using your videos</strong>, thank you for such a great content my friend!"</p>
         <cite>— @pablonleon · YouTube</cite>
       </blockquote>
       <blockquote class="zh-voice">
-        <p>"Even the paid courses do not organize the stuff this way. <strong>Clarity and depth are more than other tutors.</strong>"</p>
-        <cite>— @lalitds · YouTube</cite>
+        <p>"I just <strong>passed with a 777</strong> (Yes, Seriously). This video helped me tremendously."</p>
+        <cite>— @yourdream8 · YouTube</cite>
       </blockquote>
       <blockquote class="zh-voice">
-        <p>"Your videos have helped me pass <strong>AZ-900, AZ-104, and PL-900</strong> — thank you!!"</p>
-        <cite>— @Stazmartinez · YouTube</cite>
+        <p>"Sir thank you so much for this awesome course. Although <strong>I and many of us already owe you a coffee</strong>."</p>
+        <cite>— @maestus6 · YouTube</cite>
       </blockquote>
     </div>
   </section>
@@ -114,7 +133,7 @@
   {{/* ── NEWSLETTER ── */}}
   <section class="zh-newsletter">
     <h2 class="zh-section-title">Stay in the loop</h2>
-    <p class="zh-newsletter-desc">Cloud & AI insights, every Sunday — in 2 minutes. Free.</p>
+    <p class="zh-newsletter-desc">Cloud &amp; AI insights, every Sunday — in 2 minutes. Free.</p>
     <form class="zh-newsletter-form" id="zh-newsletter-form" aria-label="Newsletter signup">
       <input type="email" id="zh-newsletter-email" placeholder="your@email.com" required autocomplete="email" aria-label="Email address" class="zh-newsletter-input">
       <button type="submit" class="zh-newsletter-btn">Subscribe</button>
@@ -122,7 +141,7 @@
     <div class="zh-newsletter-success" id="zh-newsletter-success" hidden>
       <p>You're in — check your inbox to confirm.</p>
     </div>
-    <p class="zh-newsletter-trust">Join cloud professionals worldwide. No spam, unsubscribe anytime.</p>
+    <p class="zh-newsletter-trust">No spam. Unsubscribe anytime.</p>
   </section>
 
   {{/* ── WHO ── */}}

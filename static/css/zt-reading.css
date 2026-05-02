@@ -3807,27 +3807,37 @@ pre:hover .code-copy-btn { opacity: 1; }
   padding: 0 var(--space-6, 24px);
 }
 
-/* Welcome */
+/* Welcome — belief-led, left-aligned */
 .zh-welcome {
-  padding: var(--space-16, 64px) 0 var(--space-12, 48px);
-  text-align: center;
+  padding: var(--space-24, 96px) 0 var(--space-12, 48px);
+  text-align: left;
 }
 .zh-title {
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: 2.75rem;
+  font-weight: 700;
   color: var(--text-primary, #171717);
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  margin: 0 0 var(--space-4, 16px);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  margin: 0 0 var(--space-6, 24px);
+  max-width: 620px;
 }
-.zh-subtitle {
-  font-size: var(--text-lg, 1.125rem);
+.zh-title-accent {
+  color: var(--accent, #6366F1);
+}
+.zh-supporting {
+  font-size: 1.0625rem;
   color: var(--text-secondary, #525252);
   line-height: 1.7;
-  margin: 0 0 var(--space-4, 16px);
-  max-width: 540px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 0 var(--space-6, 24px);
+  max-width: 620px;
+}
+.zh-supporting strong {
+  color: var(--text-primary, #171717);
+  font-weight: 600;
+}
+.zh-supporting em {
+  font-style: italic;
+  color: var(--text-primary, #171717);
 }
 .zh-badge {
   display: inline-block;
@@ -3838,11 +3848,77 @@ pre:hover .code-copy-btn { opacity: 1; }
   background: var(--bg-elevated, #F5F5F5);
   border: 1px solid var(--border, #E5E5E5);
   border-radius: var(--radius-full, 9999px);
+  text-decoration: none;
+  transition: border-color 200ms ease-out, color 200ms ease-out;
+}
+.zh-badge:hover {
+  border-color: var(--border-emphasis, #D4D4D4);
+  color: var(--text-primary, #171717);
 }
 .zh-audience {
   font-size: var(--text-sm, 0.875rem);
   color: var(--text-muted, #A3A3A3);
   margin: var(--space-3, 12px) 0 0;
+}
+
+/* Soft divider between hero and pull-quote */
+.zh-divider {
+  height: 1px;
+  background: var(--border, #E5E5E5);
+  margin: 0 0 var(--space-12, 48px);
+}
+
+/* Pull-quote — trust signal in someone else's voice */
+.zh-pull {
+  margin: 0 0 var(--space-16, 64px);
+  padding: 0 0 0 var(--space-6, 24px);
+  border-left: 2px solid var(--accent, #6366F1);
+}
+.zh-pull-quote {
+  font-size: 1.375rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.45;
+  color: var(--text-primary, #171717);
+  margin: 0 0 var(--space-3, 12px);
+  max-width: 620px;
+}
+.zh-pull-quote::before {
+  content: "\201C";
+  color: var(--accent, #6366F1);
+  font-weight: 700;
+  margin-right: var(--space-1, 4px);
+}
+.zh-pull-quote::after {
+  content: "\201D";
+  color: var(--accent, #6366F1);
+  font-weight: 700;
+  margin-left: var(--space-1, 4px);
+}
+.zh-pull-cite {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-tertiary, #737373);
+  font-style: normal;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+}
+.zh-pull-cite::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--border, #E5E5E5);
+  display: inline-block;
+}
+
+/* Doors intro — small uppercase label above pathways */
+.zh-doors-intro {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-tertiary, #737373);
+  margin: 0 0 var(--space-6, 24px);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
 }
 
 /* Pathways — individual cards with gaps */
@@ -3862,11 +3938,11 @@ pre:hover .code-copy-btn { opacity: 1; }
   border-radius: var(--radius-md, 10px);
   text-decoration: none;
   color: inherit;
-  transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
+  transition: border-color 200ms ease-out, transform 200ms ease-out;
 }
 .zh-path:hover {
   border-color: var(--accent, #6366F1);
-  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.08);
+  transform: translateY(-1px);
 }
 .zh-path-icon {
   display: flex;
@@ -3912,6 +3988,15 @@ pre:hover .code-copy-btn { opacity: 1; }
   color: var(--accent, #6366F1);
   font-weight: 600;
 }
+/* "New" tag */
+.zh-new {
+  color: var(--accent, #6366F1);
+  font-weight: 600;
+  font-size: 0.7rem;
+  margin-left: var(--space-2, 8px);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 
 /* Nudge — "not sure where to start?" */
 .zh-nudge {
@@ -3928,18 +4013,18 @@ pre:hover .code-copy-btn { opacity: 1; }
   text-decoration: underline;
 }
 
-/* Practice Exams card — subtle distinction as the paid offering */
-.zh-path[href*="guided"] {
-  border-left: 3px solid var(--accent, #6366F1);
-}
+/* Practice Exams card — left border removed; design system says no per-card accents */
 
 /* Section titles */
 .zh-section-title {
-  font-size: var(--text-lg, 1.125rem);
+  font-size: var(--text-caption, 0.75rem);
   font-weight: 600;
-  color: var(--text-primary, #171717);
+  color: var(--text-tertiary, #737373);
   margin: 0 0 var(--space-6, 24px);
-  letter-spacing: -0.01em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-bottom: var(--space-2, 8px);
+  border-bottom: 1px solid var(--border, #E5E5E5);
 }
 
 /* Latest */
@@ -4020,6 +4105,11 @@ pre:hover .code-copy-btn { opacity: 1; }
   background: var(--bg-surface, #FAFAFA);
   border: 1px solid var(--border, #E5E5E5);
   border-radius: var(--radius-md, 10px);
+}
+.zh-newsletter .zh-section-title {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: var(--space-3, 12px);
 }
 .zh-newsletter-desc {
   font-size: var(--text-sm, 0.875rem);
@@ -4104,8 +4194,10 @@ pre:hover .code-copy-btn { opacity: 1; }
 
 /* Mobile */
 @media (max-width: 640px) {
-  .zh-title { font-size: 1.75rem; }
-  .zh-welcome { padding: var(--space-12, 48px) 0 var(--space-8, 32px); }
+  .zh-title { font-size: 2rem; }
+  .zh-welcome { padding: var(--space-16, 64px) 0 var(--space-8, 32px); }
+  .zh-supporting { font-size: 1rem; }
+  .zh-pull-quote { font-size: 1.125rem; }
   .zh-path {
     flex-wrap: wrap;
     gap: var(--space-3, 12px);
