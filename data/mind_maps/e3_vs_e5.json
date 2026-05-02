@@ -1,0 +1,67 @@
+{
+  "id": "e3-vs-e5",
+  "name": "E3 vs E5 — What's the Difference?",
+  "palette": ["#10B981", "#F43F5E", "#8B5CF6", "#0EA5E9", "#F59E0B", "#6366F1"],
+  "children": [
+    {
+      "id": "identity",
+      "name": "Identity",
+      "color": 0,
+      "children": [
+        { "id": "i-entra-p1", "name": "Entra ID P1 (E3)" },
+        { "id": "i-entra-p2", "name": "Entra ID P2 (E5)", "tag": "E5 only" },
+        { "id": "i-pim", "name": "PIM (E5)" }
+      ]
+    },
+    {
+      "id": "security",
+      "name": "Security",
+      "color": 1,
+      "children": [
+        { "id": "s-mdo-p1", "name": "Defender for O365 P1 (E3)" },
+        { "id": "s-mdo-p2", "name": "Defender for O365 P2 (E5)" },
+        { "id": "s-mde", "name": "Defender for Endpoint P2 (E5)" },
+        { "id": "s-mdi", "name": "Defender for Identity (E5)" }
+      ]
+    },
+    {
+      "id": "compliance",
+      "name": "Compliance",
+      "color": 2,
+      "children": [
+        { "id": "c-audit", "name": "Audit Premium (E5)", "tag": "E5 only" },
+        { "id": "c-disc", "name": "eDiscovery Premium (E5)" },
+        { "id": "c-irm", "name": "Insider Risk Mgmt (E5)" },
+        { "id": "c-records", "name": "Records management (E5)" }
+      ]
+    },
+    {
+      "id": "analytics",
+      "name": "Analytics",
+      "color": 3,
+      "children": [
+        { "id": "a-pbi", "name": "Power BI Pro (E5)" },
+        { "id": "a-viva", "name": "Viva Insights advanced" }
+      ]
+    },
+    {
+      "id": "voice",
+      "name": "Voice",
+      "color": 4,
+      "children": [
+        { "id": "v-phone", "name": "Teams Phone Std (E5)" },
+        { "id": "v-audio", "name": "Audio Conferencing" }
+      ]
+    },
+    {
+      "id": "cost",
+      "name": "Cost (USD)",
+      "color": 5,
+      "children": [
+        { "id": "co-e3", "name": "E3: ~$36/user/mo" },
+        { "id": "co-e5", "name": "E5: ~$57/user/mo" },
+        { "id": "co-diff", "name": "Diff: ~$252/yr", "tag": "Annual" }
+      ]
+    }
+  ]
+}

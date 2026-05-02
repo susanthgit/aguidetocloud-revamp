@@ -1,0 +1,58 @@
+{
+  "id": "copilot-excel",
+  "name": "Copilot in Excel",
+  "palette": ["#10B981", "#0EA5E9", "#F59E0B", "#8B5CF6", "#F43F5E"],
+  "children": [
+    {
+      "id": "analyse",
+      "name": "Analyse",
+      "color": 0,
+      "children": [
+        { "id": "a-trends", "name": "Find trends & outliers", "tag": "Most used" },
+        { "id": "a-summary", "name": "Summarise data" },
+        { "id": "a-text", "name": "Summarise text columns" },
+        { "id": "a-ask", "name": "Ask about any cell" }
+      ]
+    },
+    {
+      "id": "formulas",
+      "name": "Formulas",
+      "color": 1,
+      "children": [
+        { "id": "f-suggest", "name": "Suggest formula" },
+        { "id": "f-explain", "name": "Explain a formula" },
+        { "id": "f-column", "name": "Add formula column" }
+      ]
+    },
+    {
+      "id": "charts",
+      "name": "Charts & Pivots",
+      "color": 2,
+      "children": [
+        { "id": "c-suggest", "name": "Suggest chart type" },
+        { "id": "c-custom", "name": "Custom X/Y axes" },
+        { "id": "c-pivot", "name": "Build a PivotTable" }
+      ]
+    },
+    {
+      "id": "tables",
+      "name": "Tables & Format",
+      "color": 3,
+      "children": [
+        { "id": "t-format", "name": "Format as table" },
+        { "id": "t-conditional", "name": "Conditional formatting" },
+        { "id": "t-edit", "name": "Edit with Copilot", "tag": "New" }
+      ]
+    },
+    {
+      "id": "python",
+      "name": "Python in Excel",
+      "color": 4,
+      "children": [
+        { "id": "p-forecast", "name": "Forecasting" },
+        { "id": "p-ml", "name": "Machine learning" },
+        { "id": "p-visual", "name": "Rich visualisations", "tag": "Popular" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "copilot-outlook",
+  "name": "Copilot in Outlook",
+  "palette": ["#2563EB", "#14B8A6", "#F59E0B", "#8B5CF6", "#EC4899"],
+  "children": [
+    {
+      "id": "drafting",
+      "name": "Drafting",
+      "color": 0,
+      "children": [
+        { "id": "d-prompt", "name": "Draft email from prompt" },
+        { "id": "d-reply", "name": "Reply with Copilot", "tag": "Most used" },
+        { "id": "d-tone", "name": "Adjust tone" },
+        { "id": "d-length", "name": "Make it longer or shorter" }
+      ]
+    },
+    {
+      "id": "reading",
+      "name": "Reading",
+      "color": 1,
+      "children": [
+        { "id": "r-summarise", "name": "Summarise long thread", "tag": "Popular" },
+        { "id": "r-actions", "name": "Pull out action items" },
+        { "id": "r-highlight", "name": "Key points" }
+      ]
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "color": 2,
+      "children": [
+        { "id": "c-clarity", "name": "Improve clarity" },
+        { "id": "c-sentiment", "name": "Sentiment check", "tag": "Try this" },
+        { "id": "c-suggest", "name": "Suggested edits" }
+      ]
+    },
+    {
+      "id": "scheduling",
+      "name": "Scheduling",
+      "color": 3,
+      "children": [
+        { "id": "s-meeting", "name": "Schedule with Copilot" },
+        { "id": "s-prep", "name": "Meeting prep brief", "tag": "New" },
+        { "id": "s-time", "name": "Find a time that works" }
+      ]
+    },
+    {
+      "id": "search",
+      "name": "Find & Search",
+      "color": 4,
+      "children": [
+        { "id": "f-emails", "name": "Find that email" },
+        { "id": "f-attach", "name": "Locate attachments" },
+        { "id": "f-calendar", "name": "Search calendar" }
+      ]
+    }
+  ]
+}

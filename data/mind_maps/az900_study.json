@@ -1,0 +1,62 @@
+{
+  "id": "az900-study",
+  "name": "AZ-900 Study Topics",
+  "palette": ["#0EA5E9", "#10B981", "#F97316", "#8B5CF6", "#F43F5E"],
+  "children": [
+    {
+      "id": "concepts",
+      "name": "Cloud Concepts",
+      "color": 0,
+      "children": [
+        { "id": "c-models", "name": "IaaS / PaaS / SaaS", "tag": "25-30%" },
+        { "id": "c-deploy", "name": "Public / Private / Hybrid" },
+        { "id": "c-benefits", "name": "HA, scalability, reliability" },
+        { "id": "c-shared", "name": "Shared responsibility" }
+      ]
+    },
+    {
+      "id": "architecture",
+      "name": "Azure Architecture",
+      "color": 1,
+      "children": [
+        { "id": "a-regions", "name": "Regions & AZs", "tag": "35-40%" },
+        { "id": "a-rg", "name": "Resource groups" },
+        { "id": "a-sub", "name": "Subscriptions & MGs" },
+        { "id": "a-arm", "name": "ARM hierarchy" }
+      ]
+    },
+    {
+      "id": "services",
+      "name": "Azure Services",
+      "color": 2,
+      "children": [
+        { "id": "s-compute", "name": "Compute (VM, AKS, ACI)" },
+        { "id": "s-net", "name": "Networking & VNet" },
+        { "id": "s-storage", "name": "Storage tiers" },
+        { "id": "s-identity", "name": "Entra ID, MFA, RBAC" }
+      ]
+    },
+    {
+      "id": "manage",
+      "name": "Mgmt & Governance",
+      "color": 3,
+      "children": [
+        { "id": "m-portal", "name": "Portal, CLI, Cloud Shell", "tag": "30-35%" },
+        { "id": "m-iac", "name": "ARM & IaC" },
+        { "id": "m-policy", "name": "Azure Policy" },
+        { "id": "m-arc", "name": "Azure Arc" }
+      ]
+    },
+    {
+      "id": "cost",
+      "name": "Cost & Support",
+      "color": 4,
+      "children": [
+        { "id": "co-calc", "name": "Pricing calculator" },
+        { "id": "co-tco", "name": "TCO calculator" },
+        { "id": "co-sla", "name": "SLAs" },
+        { "id": "co-monitor", "name": "Monitor & Advisor" }
+      ]
+    }
+  ]
+}

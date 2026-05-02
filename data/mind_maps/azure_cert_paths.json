@@ -1,0 +1,66 @@
+{
+  "id": "azure-cert-paths",
+  "name": "Azure Cert Paths",
+  "palette": ["#0EA5E9", "#10B981", "#F97316", "#8B5CF6", "#F43F5E", "#84CC16"],
+  "children": [
+    {
+      "id": "fundamentals",
+      "name": "Fundamentals",
+      "color": 0,
+      "children": [
+        { "id": "f-az900", "name": "AZ-900 Azure", "tag": "Start here" },
+        { "id": "f-ai900", "name": "AI-900 AI" },
+        { "id": "f-dp900", "name": "DP-900 Data" },
+        { "id": "f-sc900", "name": "SC-900 Security" }
+      ]
+    },
+    {
+      "id": "infra",
+      "name": "Associate — Infra",
+      "color": 1,
+      "children": [
+        { "id": "i-az104", "name": "AZ-104 Admin", "tag": "Most jobs" },
+        { "id": "i-az204", "name": "AZ-204 Developer" },
+        { "id": "i-az500", "name": "AZ-500 Security" }
+      ]
+    },
+    {
+      "id": "data-ai",
+      "name": "Associate — Data & AI",
+      "color": 2,
+      "children": [
+        { "id": "d-ai102", "name": "AI-102 AI Engineer" },
+        { "id": "d-dp203", "name": "DP-203 Data Engineer" },
+        { "id": "d-dp300", "name": "DP-300 DB Admin" }
+      ]
+    },
+    {
+      "id": "expert",
+      "name": "Expert",
+      "color": 3,
+      "children": [
+        { "id": "e-az305", "name": "AZ-305 Architect", "tag": "Top tier" },
+        { "id": "e-az400", "name": "AZ-400 DevOps" },
+        { "id": "e-sc100", "name": "SC-100 Cyber Architect" }
+      ]
+    },
+    {
+      "id": "specialty",
+      "name": "Specialty",
+      "color": 4,
+      "children": [
+        { "id": "sp-az700", "name": "AZ-700 Networking" },
+        { "id": "sp-az140", "name": "AZ-140 AVD" }
+      ]
+    },
+    {
+      "id": "new",
+      "name": "New & Hot",
+      "color": 5,
+      "children": [
+        { "id": "n-dp700", "name": "DP-700 Fabric", "tag": "New" },
+        { "id": "n-ai200", "name": "AI-200 Beta", "tag": "Coming" }
+      ]
+    }
+  ]
+}

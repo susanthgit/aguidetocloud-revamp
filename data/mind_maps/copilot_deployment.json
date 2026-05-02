@@ -1,0 +1,60 @@
+{
+  "id": "copilot-deployment",
+  "name": "Copilot Deployment Checklist",
+  "palette": ["#6366F1", "#10B981", "#F43F5E", "#0EA5E9", "#F59E0B"],
+  "children": [
+    {
+      "id": "prereqs",
+      "name": "Prerequisites",
+      "color": 0,
+      "children": [
+        { "id": "p-apps", "name": "Microsoft 365 Apps" },
+        { "id": "p-onedrive", "name": "OneDrive provisioned" },
+        { "id": "p-exchange", "name": "Exchange Online mailbox" },
+        { "id": "p-entra", "name": "Microsoft Entra ID" }
+      ]
+    },
+    {
+      "id": "licensing",
+      "name": "Licensing",
+      "color": 1,
+      "children": [
+        { "id": "l-addon", "name": "M365 Copilot add-on" },
+        { "id": "l-base", "name": "Eligible base SKU" },
+        { "id": "l-assign", "name": "Assign per user" }
+      ]
+    },
+    {
+      "id": "data",
+      "name": "Data Readiness",
+      "color": 2,
+      "children": [
+        { "id": "d-labels", "name": "Sensitivity labels", "tag": "Critical" },
+        { "id": "d-perm", "name": "Review SP permissions" },
+        { "id": "d-search", "name": "Restricted SharePoint Search" },
+        { "id": "d-dlp", "name": "DLP policies" }
+      ]
+    },
+    {
+      "id": "identity",
+      "name": "Identity & Security",
+      "color": 3,
+      "children": [
+        { "id": "i-mfa", "name": "MFA enforced" },
+        { "id": "i-ca", "name": "Conditional Access" },
+        { "id": "i-audit", "name": "Audit logging on" }
+      ]
+    },
+    {
+      "id": "rollout",
+      "name": "Rollout",
+      "color": 4,
+      "children": [
+        { "id": "r-pilot", "name": "Pilot group first" },
+        { "id": "r-champs", "name": "Champions network", "tag": "Try this" },
+        { "id": "r-train", "name": "Training & prompts" },
+        { "id": "r-measure", "name": "Measure adoption" }
+      ]
+    }
+  ]
+}

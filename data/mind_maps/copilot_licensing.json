@@ -1,0 +1,60 @@
+{
+  "id": "copilot-licensing",
+  "name": "Copilot Licensing at a Glance",
+  "palette": ["#6366F1", "#F59E0B", "#10B981", "#F43F5E", "#8B5CF6"],
+  "children": [
+    {
+      "id": "skus",
+      "name": "Copilot SKUs",
+      "color": 0,
+      "children": [
+        { "id": "s-m365", "name": "M365 Copilot", "tag": "Most used" },
+        { "id": "s-chat", "name": "Copilot Chat (free)" },
+        { "id": "s-sales", "name": "Copilot for Sales" },
+        { "id": "s-service", "name": "Copilot for Service" }
+      ]
+    },
+    {
+      "id": "pricing",
+      "name": "Pricing",
+      "color": 1,
+      "children": [
+        { "id": "p-monthly", "name": "$30/user/month" },
+        { "id": "p-annual", "name": "Annual commitment" },
+        { "id": "p-region", "name": "Varies by region" }
+      ]
+    },
+    {
+      "id": "base",
+      "name": "Eligible Base",
+      "color": 2,
+      "children": [
+        { "id": "b-e3", "name": "Microsoft 365 E3" },
+        { "id": "b-e5", "name": "Microsoft 365 E5" },
+        { "id": "b-bs", "name": "Business Standard" },
+        { "id": "b-bp", "name": "Business Premium" }
+      ]
+    },
+    {
+      "id": "included",
+      "name": "What's Included",
+      "color": 3,
+      "children": [
+        { "id": "i-apps", "name": "Copilot in all apps" },
+        { "id": "i-chat", "name": "Copilot Chat (work)", "tag": "Popular" },
+        { "id": "i-pages", "name": "Copilot Pages" },
+        { "id": "i-agents", "name": "Studio agents" }
+      ]
+    },
+    {
+      "id": "notincluded",
+      "name": "Not Included",
+      "color": 4,
+      "children": [
+        { "id": "n-frontline", "name": "F1/F3 frontline" },
+        { "id": "n-edu", "name": "EDU (limited)" },
+        { "id": "n-gcch", "name": "GCC High limited" }
+      ]
+    }
+  ]
+}

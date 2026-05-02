@@ -1,0 +1,67 @@
+{
+  "id": "m365-addons",
+  "name": "M365 Add-ons Worth Knowing",
+  "palette": ["#6366F1", "#F43F5E", "#0EA5E9", "#10B981", "#F59E0B", "#8B5CF6"],
+  "children": [
+    {
+      "id": "ai",
+      "name": "AI",
+      "color": 0,
+      "children": [
+        { "id": "ai-copilot", "name": "M365 Copilot $30", "tag": "Popular" },
+        { "id": "ai-sales", "name": "Copilot for Sales" },
+        { "id": "ai-service", "name": "Copilot for Service" }
+      ]
+    },
+    {
+      "id": "security",
+      "name": "Security",
+      "color": 1,
+      "children": [
+        { "id": "se-mde", "name": "Defender for Endpoint P2" },
+        { "id": "se-mdi", "name": "Defender for Identity" },
+        { "id": "se-mdca", "name": "Defender for Cloud Apps" },
+        { "id": "se-id", "name": "Entra ID P2" }
+      ]
+    },
+    {
+      "id": "mgmt",
+      "name": "Management",
+      "color": 2,
+      "children": [
+        { "id": "mg-suite", "name": "Intune Suite", "tag": "New" },
+        { "id": "mg-rcm", "name": "Remote help" },
+        { "id": "mg-mem", "name": "Privilege Mgmt" }
+      ]
+    },
+    {
+      "id": "collab",
+      "name": "Collaboration",
+      "color": 3,
+      "children": [
+        { "id": "co-prem", "name": "Teams Premium", "tag": "Popular" },
+        { "id": "co-phone", "name": "Teams Phone Std" },
+        { "id": "co-rooms", "name": "Teams Rooms Pro" }
+      ]
+    },
+    {
+      "id": "productivity",
+      "name": "Productivity",
+      "color": 4,
+      "children": [
+        { "id": "pr-viva", "name": "Viva Suite" },
+        { "id": "pr-insights", "name": "Viva Insights" },
+        { "id": "pr-goals", "name": "Viva Goals" }
+      ]
+    },
+    {
+      "id": "compliance",
+      "name": "Compliance",
+      "color": 5,
+      "children": [
+        { "id": "cm-disc", "name": "eDiscovery Premium" },
+        { "id": "cm-irm", "name": "Insider Risk Mgmt" }
+      ]
+    }
+  ]
+}

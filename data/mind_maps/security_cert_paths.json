@@ -1,0 +1,65 @@
+{
+  "id": "security-cert-paths",
+  "name": "Security Cert Paths",
+  "palette": ["#F43F5E", "#0EA5E9", "#8B5CF6", "#10B981", "#F97316", "#84CC16"],
+  "children": [
+    {
+      "id": "fundamentals",
+      "name": "Fundamentals",
+      "color": 0,
+      "children": [
+        { "id": "f-sc900", "name": "SC-900 SCI", "tag": "Start here" },
+        { "id": "f-az900", "name": "AZ-900 Azure" },
+        { "id": "f-ms900", "name": "MS-900 M365" }
+      ]
+    },
+    {
+      "id": "secops",
+      "name": "Security Ops",
+      "color": 1,
+      "children": [
+        { "id": "so-sc200", "name": "SC-200 SecOps", "tag": "Most jobs" },
+        { "id": "so-defender", "name": "Defender XDR" },
+        { "id": "so-sentinel", "name": "Sentinel & KQL" }
+      ]
+    },
+    {
+      "id": "identity",
+      "name": "Identity",
+      "color": 2,
+      "children": [
+        { "id": "id-sc300", "name": "SC-300 Identity Admin" },
+        { "id": "id-entra", "name": "Entra ID skills" },
+        { "id": "id-ca", "name": "Conditional Access" }
+      ]
+    },
+    {
+      "id": "infoprotect",
+      "name": "Info Protection",
+      "color": 3,
+      "children": [
+        { "id": "ip-sc400", "name": "SC-400 IP Admin" },
+        { "id": "ip-purview", "name": "Purview" },
+        { "id": "ip-dlp", "name": "DLP & MIP" }
+      ]
+    },
+    {
+      "id": "expert",
+      "name": "Expert",
+      "color": 4,
+      "children": [
+        { "id": "e-sc100", "name": "SC-100 Cyber Architect", "tag": "Top tier" },
+        { "id": "e-az500", "name": "AZ-500 Azure Security" },
+        { "id": "e-zero", "name": "Zero Trust strategy" }
+      ]
+    },
+    {
+      "id": "coming",
+      "name": "Coming Soon",
+      "color": 5,
+      "children": [
+        { "id": "c-sc500", "name": "SC-500 Beta May", "tag": "New" }
+      ]
+    }
+  ]
+}

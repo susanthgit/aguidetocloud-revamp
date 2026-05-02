@@ -1,0 +1,60 @@
+{
+  "id": "business-vs-enterprise",
+  "name": "Business vs Enterprise Plans",
+  "palette": ["#F43F5E", "#10B981", "#8B5CF6", "#F59E0B", "#0EA5E9"],
+  "children": [
+    {
+      "id": "cap",
+      "name": "User Cap",
+      "color": 0,
+      "children": [
+        { "id": "ca-biz", "name": "Business: 300 max", "tag": "Critical" },
+        { "id": "ca-ent", "name": "Enterprise: unlimited" },
+        { "id": "ca-grow", "name": "Growing past 300?" }
+      ]
+    },
+    {
+      "id": "biz-plans",
+      "name": "Business Plans",
+      "color": 1,
+      "children": [
+        { "id": "bp-basic", "name": "Business Basic" },
+        { "id": "bp-std", "name": "Business Standard" },
+        { "id": "bp-prem", "name": "Business Premium", "tag": "Best value" },
+        { "id": "bp-apps", "name": "Apps for Business" }
+      ]
+    },
+    {
+      "id": "ent-plans",
+      "name": "Enterprise Plans",
+      "color": 2,
+      "children": [
+        { "id": "ep-f1", "name": "F1 frontline" },
+        { "id": "ep-f3", "name": "F3 frontline" },
+        { "id": "ep-e3", "name": "E3" },
+        { "id": "ep-e5", "name": "E5" }
+      ]
+    },
+    {
+      "id": "features",
+      "name": "Key Features",
+      "color": 3,
+      "children": [
+        { "id": "fe-defender", "name": "Defender in Premium/E5" },
+        { "id": "fe-intune", "name": "Intune in Premium/E3+" },
+        { "id": "fe-pbi", "name": "Power BI Pro in E5" },
+        { "id": "fe-voice", "name": "Voice in E5/F3 add-on" }
+      ]
+    },
+    {
+      "id": "best",
+      "name": "Best For",
+      "color": 4,
+      "children": [
+        { "id": "be-smb", "name": "SMB → Business" },
+        { "id": "be-large", "name": "300+ → Enterprise" },
+        { "id": "be-mix", "name": "Frontline → mix F+E", "tag": "Common" }
+      ]
+    }
+  ]
+}

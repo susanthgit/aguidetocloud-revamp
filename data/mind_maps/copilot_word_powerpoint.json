@@ -1,0 +1,61 @@
+{
+  "id": "copilot-word-powerpoint",
+  "name": "Copilot in Word & PowerPoint",
+  "palette": ["#2563EB", "#0EA5E9", "#F97316", "#EC4899", "#10B981"],
+  "children": [
+    {
+      "id": "word-draft",
+      "name": "Word — Drafting",
+      "color": 0,
+      "children": [
+        { "id": "wd-create", "name": "Draft from prompt", "tag": "Most used" },
+        { "id": "wd-rewrite", "name": "Rewrite a section" },
+        { "id": "wd-tone", "name": "Adjust tone" },
+        { "id": "wd-shorten", "name": "Expand or shorten" }
+      ]
+    },
+    {
+      "id": "word-review",
+      "name": "Word — Reading",
+      "color": 1,
+      "children": [
+        { "id": "wr-summary", "name": "Document summary" },
+        { "id": "wr-detail", "name": "Brief or detailed", "tag": "New" },
+        { "id": "wr-ask", "name": "Ask about content" },
+        { "id": "wr-ground", "name": "Ground on a Word file" }
+      ]
+    },
+    {
+      "id": "ppt-create",
+      "name": "PPT — Create",
+      "color": 2,
+      "children": [
+        { "id": "pc-prompt", "name": "From a prompt" },
+        { "id": "pc-word", "name": "From a Word file", "tag": "Popular" },
+        { "id": "pc-add", "name": "Add slides" },
+        { "id": "pc-narrative", "name": "Narrative Builder" }
+      ]
+    },
+    {
+      "id": "ppt-design",
+      "name": "PPT — Design",
+      "color": 3,
+      "children": [
+        { "id": "pd-designer", "name": "Designer suggestions" },
+        { "id": "pd-image", "name": "Edit images on slide", "tag": "New" },
+        { "id": "pd-restyle", "name": "Restyle deck" },
+        { "id": "pd-notes", "name": "Speaker notes" }
+      ]
+    },
+    {
+      "id": "tips",
+      "name": "Pro Tips",
+      "color": 4,
+      "children": [
+        { "id": "t-ref", "name": "Reference files with /" },
+        { "id": "t-specific", "name": "Be specific" },
+        { "id": "t-iterate", "name": "Iterate on results" }
+      ]
+    }
+  ]
+}
