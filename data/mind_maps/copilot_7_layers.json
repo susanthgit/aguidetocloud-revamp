@@ -1,0 +1,84 @@
+{
+  "id": "copilot-7-layers",
+  "name": "Copilot in 7 Layers",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981", "#F59E0B", "#EC4899"],
+  "children": [
+    {
+      "id": "apps",
+      "name": "1. Your Apps",
+      "color": 0,
+      "children": [
+        { "id": "a-word", "name": "Word, Excel, PPT", "tag": "Embedded" },
+        { "id": "a-outlook", "name": "Outlook" },
+        { "id": "a-teams", "name": "Teams" },
+        { "id": "a-chat", "name": "M365 Chat (BizChat)" }
+      ]
+    },
+    {
+      "id": "identity",
+      "name": "2. Identity & Access",
+      "color": 1,
+      "children": [
+        { "id": "i-entra", "name": "Entra ID + SSO", "tag": "Required" },
+        { "id": "i-ca", "name": "Conditional Access" },
+        { "id": "i-mfa", "name": "MFA enforcement" },
+        { "id": "i-token", "name": "Scoped tokens" }
+      ]
+    },
+    {
+      "id": "orchestrator",
+      "name": "3. Orchestrator",
+      "color": 2,
+      "children": [
+        { "id": "o-analyse", "name": "Prompt analysis" },
+        { "id": "o-plan", "name": "Grounding planner", "tag": "Brain" },
+        { "id": "o-meta", "name": "Metaprompt injection" },
+        { "id": "o-assemble", "name": "Response assembly" }
+      ]
+    },
+    {
+      "id": "grounding",
+      "name": "4. Grounding (RAG)",
+      "color": 3,
+      "children": [
+        { "id": "g-graph", "name": "Microsoft Graph", "tag": "Your data" },
+        { "id": "g-index", "name": "Semantic Index" },
+        { "id": "g-web", "name": "Web search (opt)" },
+        { "id": "g-perms", "name": "Permission-trim" }
+      ]
+    },
+    {
+      "id": "models",
+      "name": "5. AI Models",
+      "color": 4,
+      "children": [
+        { "id": "m-gpt", "name": "GPT-4 / GPT-4o" },
+        { "id": "m-claude", "name": "Anthropic Claude", "tag": "New" },
+        { "id": "m-azure", "name": "Azure OpenAI" },
+        { "id": "m-private", "name": "Stays in tenant" }
+      ]
+    },
+    {
+      "id": "responsible",
+      "name": "6. Responsible AI",
+      "color": 5,
+      "children": [
+        { "id": "r-classifier", "name": "Content classifiers" },
+        { "id": "r-jailbreak", "name": "Jailbreak filters" },
+        { "id": "r-cite", "name": "Citation enforcement" },
+        { "id": "r-logging", "name": "Audit logging" }
+      ]
+    },
+    {
+      "id": "response",
+      "name": "7. Response & Govern",
+      "color": 6,
+      "children": [
+        { "id": "rs-format", "name": "App-aware format" },
+        { "id": "rs-dlp", "name": "DLP applied" },
+        { "id": "rs-labels", "name": "Sensitivity labels" },
+        { "id": "rs-purview", "name": "Purview audit" }
+      ]
+    }
+  ]
+}

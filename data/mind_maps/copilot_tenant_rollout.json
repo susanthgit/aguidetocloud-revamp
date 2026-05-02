@@ -1,0 +1,71 @@
+{
+  "id": "copilot-tenant-rollout",
+  "name": "Copilot Rollout to Tenants",
+  "palette": ["#6366F1", "#10B981", "#F59E0B", "#06B6D4", "#8B5CF6", "#EC4899"],
+  "children": [
+    {
+      "id": "frontier",
+      "name": "Frontier Tier",
+      "color": 0,
+      "children": [
+        { "id": "f-optin", "name": "Tenant opt-in", "tag": "Admin" },
+        { "id": "f-experimental", "name": "Experimental features" },
+        { "id": "f-evolves", "name": "May change or pause" },
+        { "id": "f-feedback", "name": "Provide feedback" }
+      ]
+    },
+    {
+      "id": "standard",
+      "name": "Standard Tier",
+      "color": 1,
+      "children": [
+        { "id": "s-default", "name": "Default for everyone", "tag": "Default" },
+        { "id": "s-ga", "name": "GA features only" },
+        { "id": "s-auto", "name": "Auto-arrives" }
+      ]
+    },
+    {
+      "id": "deferred",
+      "name": "Deferred Tier",
+      "color": 2,
+      "children": [
+        { "id": "d-30day", "name": "~30 day delay", "tag": "Buy time" },
+        { "id": "d-test", "name": "Time to test" },
+        { "id": "d-train", "name": "Time to train users" },
+        { "id": "d-config", "name": "M365 Admin Centre" }
+      ]
+    },
+    {
+      "id": "statuses",
+      "name": "Feature Statuses",
+      "color": 3,
+      "children": [
+        { "id": "st-frontier", "name": "In Frontier" },
+        { "id": "st-expected", "name": "Expected" },
+        { "id": "st-ga", "name": "GA", "tag": "Live" },
+        { "id": "st-paused", "name": "Paused" },
+        { "id": "st-withdrawn", "name": "Withdrawn" }
+      ]
+    },
+    {
+      "id": "geo",
+      "name": "Geo Carve-outs",
+      "color": 4,
+      "children": [
+        { "id": "g-eu", "name": "EU/EFTA controls" },
+        { "id": "g-uk", "name": "UK defaults" },
+        { "id": "g-english", "name": "English-only first" }
+      ]
+    },
+    {
+      "id": "control",
+      "name": "Admin Control",
+      "color": 5,
+      "children": [
+        { "id": "c-admin", "name": "M365 Admin Centre" },
+        { "id": "c-policy", "name": "Copilot settings" },
+        { "id": "c-subprocessor", "name": "Sub-processor approval" }
+      ]
+    }
+  ]
+}

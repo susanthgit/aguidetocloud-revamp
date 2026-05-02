@@ -137,6 +137,16 @@
     "cert"     ""
     "practice" "explore"
   )
+  "security" (dict
+    "tools"    (slice
+      (dict "url" "/ca-builder/"        "name" "CA Policy Builder"  "icon" "shield")
+      (dict "url" "/purview-starter/"   "name" "Purview Starter"    "icon" "key")
+      (dict "url" "/security-toolkit/"  "name" "Security Toolkit"   "icon" "shield")
+    )
+    "blogs"    (slice "agent-365-security-governance-complete-guide" "microsoft-365-copilot-control-system-complete-guide")
+    "cert"     "sc-900"
+    "practice" "sc-900"
+  )
 }}
 {{ $links := index $catLinks $currentCat | default (index $catLinks "copilot") }}
 

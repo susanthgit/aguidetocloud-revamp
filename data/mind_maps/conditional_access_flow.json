@@ -1,0 +1,67 @@
+{
+  "id": "conditional-access-flow",
+  "name": "How Conditional Access Decides",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C"],
+  "children": [
+    {
+      "id": "who",
+      "name": "Who (assignments)",
+      "color": 0,
+      "children": [
+        { "id": "w-all", "name": "All users", "tag": "Common" },
+        { "id": "w-guests", "name": "Guests & external" },
+        { "id": "w-roles", "name": "Directory roles" },
+        { "id": "w-groups", "name": "Specific groups" },
+        { "id": "w-workload", "name": "Workload identities" }
+      ]
+    },
+    {
+      "id": "what",
+      "name": "What (apps)",
+      "color": 1,
+      "children": [
+        { "id": "wh-all", "name": "All cloud apps" },
+        { "id": "wh-office", "name": "Office 365 suite" },
+        { "id": "wh-azure", "name": "Azure Management" },
+        { "id": "wh-admin", "name": "Admin portals", "tag": "Critical" },
+        { "id": "wh-actions", "name": "User actions" }
+      ]
+    },
+    {
+      "id": "signals",
+      "name": "Signals (conditions)",
+      "color": 2,
+      "children": [
+        { "id": "s-platform", "name": "Device platform" },
+        { "id": "s-location", "name": "Location" },
+        { "id": "s-client", "name": "Client app" },
+        { "id": "s-signrisk", "name": "Sign-in risk" },
+        { "id": "s-userrisk", "name": "User risk", "tag": "Identity Prot" },
+        { "id": "s-filter", "name": "Device filter" }
+      ]
+    },
+    {
+      "id": "grant",
+      "name": "Grant controls",
+      "color": 3,
+      "children": [
+        { "id": "g-block", "name": "Block access", "tag": "Hard stop" },
+        { "id": "g-mfa", "name": "Require MFA" },
+        { "id": "g-strength", "name": "Auth strength" },
+        { "id": "g-compliant", "name": "Compliant device" },
+        { "id": "g-protect", "name": "App protection" }
+      ]
+    },
+    {
+      "id": "session",
+      "name": "Session controls",
+      "color": 4,
+      "children": [
+        { "id": "se-frequency", "name": "Sign-in frequency" },
+        { "id": "se-persist", "name": "Persistent browser" },
+        { "id": "se-mcas", "name": "Defender CA App Control" },
+        { "id": "se-cae", "name": "Continuous evaluation", "tag": "CAE" }
+      ]
+    }
+  ]
+}

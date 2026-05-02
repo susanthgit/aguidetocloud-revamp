@@ -1,0 +1,79 @@
+{
+  "id": "purview-stack",
+  "name": "Purview — Pick a Tool",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C", "#6B21A8", "#92400E"],
+  "children": [
+    {
+      "id": "info",
+      "name": "Information Protection",
+      "color": 0,
+      "children": [
+        { "id": "i-labels", "name": "Sensitivity labels", "tag": "Core" },
+        { "id": "i-encrypt", "name": "Encryption + RMS" },
+        { "id": "i-mark", "name": "Auto-marking" },
+        { "id": "i-trainable", "name": "Trainable classifiers" }
+      ]
+    },
+    {
+      "id": "dlp",
+      "name": "Data Loss Prevention",
+      "color": 1,
+      "children": [
+        { "id": "d-policies", "name": "DLP policies", "tag": "Email + files" },
+        { "id": "d-endpoint", "name": "Endpoint DLP" },
+        { "id": "d-teams", "name": "Teams DLP" },
+        { "id": "d-adaptive", "name": "Adaptive Protection" }
+      ]
+    },
+    {
+      "id": "insider",
+      "name": "Insider Risk Mgmt",
+      "color": 2,
+      "children": [
+        { "id": "ir-leavers", "name": "Departing user leaks" },
+        { "id": "ir-policy", "name": "Risk-tuned policies", "tag": "ML" },
+        { "id": "ir-cases", "name": "Case management" }
+      ]
+    },
+    {
+      "id": "comms",
+      "name": "Comms Compliance",
+      "color": 3,
+      "children": [
+        { "id": "c-harass", "name": "Harassment detection" },
+        { "id": "c-regulatory", "name": "Regulatory (FINRA, SEC)" },
+        { "id": "c-confid", "name": "Confidential leaks" }
+      ]
+    },
+    {
+      "id": "ediscovery",
+      "name": "eDiscovery",
+      "color": 4,
+      "children": [
+        { "id": "e-hold", "name": "Legal holds", "tag": "Litigation" },
+        { "id": "e-search", "name": "Cross-content search" },
+        { "id": "e-export", "name": "Review + export" }
+      ]
+    },
+    {
+      "id": "audit",
+      "name": "Audit",
+      "color": 5,
+      "children": [
+        { "id": "a-standard", "name": "Standard audit" },
+        { "id": "a-premium", "name": "Audit Premium", "tag": "Long retain" },
+        { "id": "a-search", "name": "Activity search" }
+      ]
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle & Records",
+      "color": 6,
+      "children": [
+        { "id": "l-retain", "name": "Retention policies" },
+        { "id": "l-records", "name": "Records management", "tag": "Immutable" },
+        { "id": "l-disposition", "name": "Disposition reviews" }
+      ]
+    }
+  ]
+}

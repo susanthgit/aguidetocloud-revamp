@@ -173,6 +173,13 @@
         .attr('width', 28).attr('height', 16).attr('patternUnits', 'userSpaceOnUse');
       iso.append('path').attr('d', 'M 0 8 L 14 0 L 28 8 L 14 16 Z').attr('fill', 'none')
         .attr('stroke', '#D8E0EC').attr('stroke-width', 0.5);
+    } else if (category === 'security') {
+      /* Single-direction diagonal lines — vault / blueprint feel.
+         Lighter than cross-hatch by design (rubber-duck flagged density). */
+      var diag = defs.append('pattern').attr('id', patternId)
+        .attr('width', 18).attr('height', 18).attr('patternUnits', 'userSpaceOnUse');
+      diag.append('path').attr('d', 'M 0 18 L 18 0').attr('fill', 'none')
+        .attr('stroke', '#DDE2EA').attr('stroke-width', 0.5);
     } else {
       /* Default — dot grid (Copilot + general) */
       var dp = defs.append('pattern').attr('id', patternId)

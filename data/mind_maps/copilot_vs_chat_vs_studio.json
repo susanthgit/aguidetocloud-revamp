@@ -1,0 +1,56 @@
+{
+  "id": "copilot-vs-chat-vs-studio",
+  "name": "Which Copilot is Which?",
+  "palette": ["#6366F1", "#06B6D4", "#8B5CF6", "#10B981"],
+  "children": [
+    {
+      "id": "m365",
+      "name": "M365 Copilot",
+      "color": 0,
+      "children": [
+        { "id": "m-who", "name": "Information workers" },
+        { "id": "m-cost", "name": "$30/user/month", "tag": "Paid" },
+        { "id": "m-where", "name": "In Word, Teams, etc." },
+        { "id": "m-data", "name": "Grounded in your data" },
+        { "id": "m-agents", "name": "Build lightweight agents" }
+      ]
+    },
+    {
+      "id": "chat",
+      "name": "Copilot Chat",
+      "color": 1,
+      "children": [
+        { "id": "c-who", "name": "Anyone with M365" },
+        { "id": "c-cost", "name": "Free", "tag": "Free" },
+        { "id": "c-where", "name": "copilot.microsoft.com" },
+        { "id": "c-data", "name": "Web data only" },
+        { "id": "c-payg", "name": "Pay-as-you-go agents" }
+      ]
+    },
+    {
+      "id": "studio",
+      "name": "Copilot Studio",
+      "color": 2,
+      "children": [
+        { "id": "s-who", "name": "Makers & developers" },
+        { "id": "s-cost", "name": "Per-msg or capacity", "tag": "Per use" },
+        { "id": "s-where", "name": "copilotstudio.com" },
+        { "id": "s-flows", "name": "Multi-step workflows" },
+        { "id": "s-connect", "name": "External connectors" },
+        { "id": "s-publish", "name": "Publish to Teams, web" }
+      ]
+    },
+    {
+      "id": "github",
+      "name": "GitHub Copilot",
+      "color": 3,
+      "children": [
+        { "id": "g-who", "name": "Developers" },
+        { "id": "g-cost", "name": "$10-39/user/month" },
+        { "id": "g-where", "name": "VS Code, IDEs, CLI" },
+        { "id": "g-code", "name": "Code completion + chat", "tag": "Code" },
+        { "id": "g-agent", "name": "Coding Agent (PRs)" }
+      ]
+    }
+  ]
+}

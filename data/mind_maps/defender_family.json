@@ -1,0 +1,73 @@
+{
+  "id": "defender-family",
+  "name": "Defender Product Family",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C", "#6B21A8"],
+  "children": [
+    {
+      "id": "endpoint",
+      "name": "Defender Endpoint",
+      "color": 0,
+      "children": [
+        { "id": "e-protects", "name": "Devices (Win, Mac, mobile)" },
+        { "id": "e-edr", "name": "EDR + antivirus", "tag": "Core" },
+        { "id": "e-attack", "name": "Attack surface reduction" },
+        { "id": "e-licence", "name": "M365 E5 / E5 Security" }
+      ]
+    },
+    {
+      "id": "identity",
+      "name": "Defender for Identity",
+      "color": 1,
+      "children": [
+        { "id": "id-protects", "name": "On-prem AD + Entra" },
+        { "id": "id-signals", "name": "AD signal correlation", "tag": "Hybrid" },
+        { "id": "id-insiders", "name": "Compromised + insider threats" },
+        { "id": "id-licence", "name": "M365 E5 / EMS E5" }
+      ]
+    },
+    {
+      "id": "office",
+      "name": "Defender Office 365",
+      "color": 2,
+      "children": [
+        { "id": "o-protects", "name": "Email, SharePoint, OneDrive" },
+        { "id": "o-phish", "name": "Anti-phish + Safe Links", "tag": "Email" },
+        { "id": "o-attach", "name": "Safe Attachments" },
+        { "id": "o-plan2", "name": "Plan 1 / Plan 2" }
+      ]
+    },
+    {
+      "id": "cloudapps",
+      "name": "Defender Cloud Apps",
+      "color": 3,
+      "children": [
+        { "id": "ca-protects", "name": "SaaS apps + Shadow IT" },
+        { "id": "ca-discovery", "name": "App discovery" },
+        { "id": "ca-cas", "name": "CASB + DLP", "tag": "CASB" },
+        { "id": "ca-licence", "name": "M365 E5 / standalone" }
+      ]
+    },
+    {
+      "id": "xdr",
+      "name": "Defender XDR",
+      "color": 4,
+      "children": [
+        { "id": "x-unifies", "name": "Unifies the four", "tag": "Portal" },
+        { "id": "x-incidents", "name": "Cross-domain incidents" },
+        { "id": "x-disrupt", "name": "Attack disruption" },
+        { "id": "x-portal", "name": "security.microsoft.com" }
+      ]
+    },
+    {
+      "id": "cloud",
+      "name": "Defender for Cloud",
+      "color": 5,
+      "children": [
+        { "id": "c-protects", "name": "Azure, AWS, GCP workloads" },
+        { "id": "c-cspm", "name": "CSPM + CWPP", "tag": "Multi-cloud" },
+        { "id": "c-secure", "name": "Secure Score" },
+        { "id": "c-azure", "name": "Per-resource pricing" }
+      ]
+    }
+  ]
+}

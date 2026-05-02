@@ -1,0 +1,66 @@
+{
+  "id": "az104-study",
+  "name": "AZ-104 Study Topics",
+  "palette": ["#2563EB", "#059669", "#D97706", "#7C3AED", "#DC2626"],
+  "children": [
+    {
+      "id": "identity",
+      "name": "Identities & Govern.",
+      "color": 0,
+      "children": [
+        { "id": "i-users", "name": "Entra users & groups", "tag": "20-25%" },
+        { "id": "i-rbac", "name": "Built-in RBAC roles" },
+        { "id": "i-policy", "name": "Azure Policy" },
+        { "id": "i-locks", "name": "Locks, tags, RGs" },
+        { "id": "i-mg", "name": "Management groups" }
+      ]
+    },
+    {
+      "id": "storage",
+      "name": "Storage",
+      "color": 1,
+      "children": [
+        { "id": "s-accounts", "name": "Storage accounts", "tag": "15-20%" },
+        { "id": "s-redundancy", "name": "Redundancy (LRS-GRS)" },
+        { "id": "s-blob", "name": "Blob containers + tiers" },
+        { "id": "s-files", "name": "Azure Files + SAS" },
+        { "id": "s-azcopy", "name": "AzCopy + Explorer" }
+      ]
+    },
+    {
+      "id": "compute",
+      "name": "Compute",
+      "color": 2,
+      "children": [
+        { "id": "c-arm", "name": "ARM & Bicep", "tag": "20-25%" },
+        { "id": "c-vm", "name": "VMs + scale sets" },
+        { "id": "c-disks", "name": "Managed disks" },
+        { "id": "c-containers", "name": "ACI + ACA + ACR" },
+        { "id": "c-app", "name": "App Service + slots" }
+      ]
+    },
+    {
+      "id": "network",
+      "name": "Virtual Networking",
+      "color": 3,
+      "children": [
+        { "id": "n-vnet", "name": "VNets + peering", "tag": "15-20%" },
+        { "id": "n-nsg", "name": "NSGs + ASGs" },
+        { "id": "n-bastion", "name": "Bastion + endpoints" },
+        { "id": "n-dns", "name": "Azure DNS" },
+        { "id": "n-lb", "name": "Load balancers" }
+      ]
+    },
+    {
+      "id": "monitor",
+      "name": "Monitor & Maintain",
+      "color": 4,
+      "children": [
+        { "id": "m-monitor", "name": "Azure Monitor + KQL", "tag": "10-15%" },
+        { "id": "m-alerts", "name": "Alerts + action groups" },
+        { "id": "m-watcher", "name": "Network Watcher" },
+        { "id": "m-backup", "name": "Backup + Site Recovery" }
+      ]
+    }
+  ]
+}
