@@ -4567,6 +4567,10 @@ pre:hover .code-copy-btn { opacity: 1; }
     gap: 8px;
   }
 
+  .zt-fullscreen-btn {
+    display: none;
+  }
+
   .zt-page [role="tablist"] > [role="tab"] {
     padding: 8px 12px;
     font-size: 0.8125rem;
