@@ -1113,40 +1113,123 @@
   .cmm-page {
     padding: var(--space-4) var(--space-4) var(--space-12);
   }
+  /* Controls: stack vertically, hide export PNG (useless on mobile) */
   .cmm-map-controls {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: var(--space-2);
   }
   .cmm-controls-right {
     width: 100%;
     justify-content: space-between;
   }
+  /* Hide PNG export and view toggle on mobile — force matrix view via JS */
+  .cmm-export-btn[id="cmm-export-png"] { display: none; }
+  .cmm-view-toggle { display: none; }
+  /* Filter pills: horizontal scroll */
   .cmm-filter-row {
     overflow-x: auto;
     flex-wrap: nowrap;
     width: 100%;
     padding-bottom: var(--space-2);
+    -webkit-overflow-scrolling: touch;
   }
+  .cmm-filter-btn { white-space: nowrap; flex-shrink: 0; }
+  /* Models grid: single column */
   .cmm-models-grid {
     grid-template-columns: 1fr;
   }
   .cmm-model-meta {
     grid-template-columns: 1fr;
   }
-  /* Visual view on mobile: stacked layout instead of side-by-side */
+  /* Force hide visual view on mobile — matrix only */
+  .cmm-visual-view { display: none !important; }
+  .cmm-matrix-view { display: block !important; }
+  /* Matrix: horizontally scrollable with sticky first column */
+  .cmm-matrix-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 calc(-1 * var(--space-4));
+    padding: 0 var(--space-4);
+  }
+  .cmm-matrix-table {
+    font-size: var(--text-xs);
+    min-width: 500px;
+  }
+  .cmm-matrix-table th,
+  .cmm-matrix-table td {
+    padding: var(--space-2) var(--space-2);
+  }
+  .cmm-matrix-table th:first-child,
+  .cmm-matrix-table td:first-child {
+    position: sticky;
+    left: 0;
+    background: var(--bg-surface);
+    z-index: 1;
+    min-width: 120px;
+    max-width: 160px;
+    white-space: normal;
+  }
+  .cmm-matrix-hint { font-size: var(--text-xs); }
+  /* Visual connection map: completely hidden (SVG doesn't work on touch) */
+  .cmm-visual-svg { display: none; }
   .cmm-visual-container {
     grid-template-columns: 1fr;
     min-height: auto;
   }
-  .cmm-visual-svg { display: none; }
   .cmm-features-col {
     border-bottom: 1px solid var(--border);
     padding-bottom: var(--space-4);
   }
+  /* Visual topbar: compact */
+  .cmm-visual-topbar {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .cmm-visual-cta { font-size: var(--text-xs); }
+  .cmm-visual-legend { font-size: var(--text-xs); gap: var(--space-2); }
+  /* Detail panel: full-width, more compact */
+  .cmm-detail {
+    padding: var(--space-4);
+    margin-top: var(--space-4);
+  }
+  .cmm-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .cmm-detail-section {
+    padding: var(--space-3);
+  }
+  /* Legend: stack vertically, smaller */
+  .cmm-legend {
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    font-size: 0.65rem;
+  }
+  .cmm-legend-group { flex-wrap: wrap; gap: var(--space-1); }
+  /* Search bar: full width */
   .cmm-search { max-width: 100%; }
+  /* Timeline: tighter */
   .cmm-timeline { padding-left: var(--space-6); }
   .cmm-timeline-dot { left: calc(-1 * var(--space-6) + 4px); }
   .cmm-timeline::before { left: 7px; }
+  /* Admin guide cards */
+  .cmm-admin-cards {
+    grid-template-columns: 1fr;
+  }
+  .cmm-admin-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+  /* Studio picker */
+  .cmm-studio-result {
+    grid-template-columns: 1fr;
+  }
+  /* Patterns/How it Works */
+  .cmm-patterns-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1154,8 +1237,13 @@
     padding: var(--space-2) var(--space-3);
     font-size: var(--text-caption);
   }
-  .cmm-admin-card-header {
-    flex-direction: column;
-    align-items: flex-start;
+  .cmm-vis-node {
+    padding: var(--space-2);
+    gap: var(--space-1);
   }
+  .cmm-vis-node-name { font-size: var(--text-xs); }
+  .cmm-vis-node-meta { font-size: 10px; }
+  /* Hide role badges on very small screens — too cramped */
+  .cmm-legend .cmm-role-badge { display: none; }
+  .cmm-legend .cmm-legend-label { display: none; }
 }

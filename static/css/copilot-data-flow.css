@@ -1486,20 +1486,67 @@
 /* ═══ RESPONSIVE ═══ */
 @media (max-width: 768px) {
   .cdf-page { padding: var(--space-4) var(--space-4) var(--space-12); }
+  /* Scenario picker: smaller buttons, tighter gap */
+  .cdf-scenario-picker { gap: var(--space-2); }
+  .cdf-scenario-btn {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
+    flex: 1 1 calc(50% - var(--space-2));
+    min-width: 0;
+    justify-content: center;
+  }
+  .cdf-scenario-btn svg { width: 14px; height: 14px; }
+  /* Boundary legend: wrap */
+  .cdf-boundary-legend {
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    font-size: 0.65rem;
+  }
+  /* Grids: single column */
   .cdf-compare-grid { grid-template-columns: 1fr; }
   .cdf-step-detail-grid { grid-template-columns: 1fr; }
-  .cdf-flow-pipeline { overflow-x: auto; }
-  .cdf-flow-step { min-width: 100px; }
   .cdf-cert-grid { grid-template-columns: 1fr; }
   .cdf-access-grid { grid-template-columns: 1fr; }
   .cdf-residency-result { grid-template-columns: 1fr; }
+  .cdf-arch-detail-grid { grid-template-columns: 1fr; }
+  .cdf-arch-tldr-grid { grid-template-columns: 1fr; }
+  /* Flow pipeline: horizontal scroll */
+  .cdf-flow-pipeline {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--space-2);
+  }
+  .cdf-flow-step { min-width: 100px; }
+  /* Architecture tab */
   .cdf-arch-header { padding: var(--space-3) var(--space-4); gap: var(--space-3); }
   .cdf-arch-content { padding: 0 var(--space-4) var(--space-4); }
-  .cdf-arch-detail-grid { grid-template-columns: 1fr; }
   .cdf-arch-number { width: 30px; height: 30px; font-size: var(--text-caption); }
+  /* Overview mini-map: wrap layers, hide arrows */
   .cdf-arch-overview { flex-wrap: wrap; gap: var(--space-1); justify-content: center; }
   .cdf-arch-ov-arrow { display: none; }
-  .cdf-arch-tldr-grid { grid-template-columns: 1fr; }
-  .cdf-arch-evo-step { font-size: 9px; padding: var(--space-1); }
+  .cdf-arch-ov-item { font-size: 0.6rem; padding: 3px 6px; }
+  /* TL;DR and evolution strip */
   .cdf-arch-tldr { padding: var(--space-3) var(--space-4); }
+  .cdf-arch-evo-step { font-size: 9px; padding: var(--space-1); }
+  /* Checklist */
+  .cdf-checklist-items { font-size: var(--text-sm); }
+  /* Controls grid */
+  .cdf-controls-grid { grid-template-columns: 1fr; }
+  /* Residency picker */
+  .cdf-residency-select { max-width: 100%; width: 100%; }
+  .cdf-residency-picker { flex-direction: column; }
+  /* Residency cards */
+  .cdf-residency-card { padding: var(--space-4); }
+  /* Compare cards */
+  .cdf-compare-card { margin-bottom: var(--space-4); }
+  .cdf-compare-callout { font-size: var(--text-sm); padding: var(--space-3); }
+  /* Docs grid */
+  .cdf-docs-grid { grid-template-columns: 1fr; }
+  /* Section heading and intro: tighter */
+  .cdf-section-heading { font-size: var(--text-body); margin: var(--space-8) 0 var(--space-2); }
+  .cdf-section-intro { font-size: var(--text-sm); }
+  /* Access grid items */
+  .cdf-access-card { padding: var(--space-3); }
+  /* Print button area */
+  .cdf-freshness { font-size: 0.65rem; }
 }
