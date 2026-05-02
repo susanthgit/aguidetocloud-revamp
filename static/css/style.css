@@ -476,28 +476,47 @@ a:hover {
 
 .nav-links {
   display: flex;
-  gap: 0.3rem;
+  gap: var(--space-5, 20px);
   list-style: none;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: nowrap;
+  height: 100%;
+}
+.nav-links li {
+  display: flex;
+  align-items: stretch;
 }
 .nav-links a {
-  color: var(--text-secondary);
-  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
   font-weight: 500;
-  padding: 0.4rem 0.9rem;
+  padding: 0 2px;
   white-space: nowrap;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color var(--transition, 150ms ease-out), border-color var(--transition, 150ms ease-out);
   font-family: var(--font-heading);
 }
-.nav-links a:hover,
+.nav-links a:hover {
+  color: var(--text-primary);
+}
 .nav-links a.active,
 .nav-links a.nav-active {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: var(--accent-subtle);
+  color: var(--text-primary);
+  font-weight: 600;
+  border-bottom-color: var(--accent);
+}
+/* Group divider — earns its place by signalling category change (Learn · Reference · Personal) */
+.nav-links li.nav-group-divider {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  user-select: none;
+  pointer-events: none;
+  font-size: 0.875rem;
 }
 .nav-cta {
   display: inline-flex;

@@ -10,16 +10,23 @@
     </div>
 
     {{/* ═══════ DESKTOP NAV — clean direct links (no mega-menus) ═══════ */}}
+    {{/* Three groups: Learn (3) · Reference (3) · Personal (2) */}}
     <ul class="nav-links" id="nav-links">
 
-      <li><a href="/study-guides/"{{ if or (hasPrefix $.RelPermalink "/study-guides/") (hasPrefix $.RelPermalink "/cert-tracker/") }} class="nav-active"{{ end }}>Cert Study Guides</a></li>
-      <li><a href="/guided/explore/"{{ if hasPrefix $.RelPermalink "/guided/" }} class="nav-active"{{ end }}>Cert Practice Exams</a></li>
-      <li><a href="/videos/"{{ if or (hasPrefix $.RelPermalink "/videos/") (hasPrefix $.RelPermalink "/ai-hub/") (hasPrefix $.RelPermalink "/cloud-labs/") (hasPrefix $.RelPermalink "/certifications/") (hasPrefix $.RelPermalink "/exam-qa/") (hasPrefix $.RelPermalink "/interview-prep/") (hasPrefix $.RelPermalink "/music/") }} class="nav-active"{{ end }}>Video Tutorials</a></li>
-      <li><a href="/free-tools/"{{ if eq $.RelPermalink "/free-tools/" }} class="nav-active"{{ end }}>Free Tools</a></li>
-      <li><a href="/mind-maps/"{{ if hasPrefix $.RelPermalink "/mind-maps/" }} class="nav-active"{{ end }}>Mind Maps</a></li>
-      <li><a href="/licensing-docs/"{{ if or (hasPrefix $.RelPermalink "/licensing-docs/") (hasPrefix $.RelPermalink "/licensing/") }} class="nav-active"{{ end }}>M365 Licensing Wiki</a></li>
-      <li><a href="/blog/"{{ if hasPrefix $.RelPermalink "/blog/" }} class="nav-active"{{ end }}>Blog</a></li>
-      <li><a href="/about/"{{ if eq $.RelPermalink "/about/" }} class="nav-active"{{ end }}>About</a></li>
+      <li><a href="/study-guides/"{{ if or (hasPrefix $.RelPermalink "/study-guides/") (hasPrefix $.RelPermalink "/cert-tracker/") }} class="nav-active" aria-current="page"{{ end }}>Cert Study Guides</a></li>
+      <li><a href="/guided/explore/"{{ if hasPrefix $.RelPermalink "/guided/" }} class="nav-active" aria-current="page"{{ end }}>Cert Practice Exams</a></li>
+      <li><a href="/videos/"{{ if or (hasPrefix $.RelPermalink "/videos/") (hasPrefix $.RelPermalink "/ai-hub/") (hasPrefix $.RelPermalink "/cloud-labs/") (hasPrefix $.RelPermalink "/certifications/") (hasPrefix $.RelPermalink "/exam-qa/") (hasPrefix $.RelPermalink "/interview-prep/") (hasPrefix $.RelPermalink "/music/") }} class="nav-active" aria-current="page"{{ end }}>Video Tutorials</a></li>
+
+      <li class="nav-group-divider" aria-hidden="true">·</li>
+
+      <li><a href="/free-tools/"{{ if eq $.RelPermalink "/free-tools/" }} class="nav-active" aria-current="page"{{ end }}>Free Tools</a></li>
+      <li><a href="/mind-maps/"{{ if hasPrefix $.RelPermalink "/mind-maps/" }} class="nav-active" aria-current="page"{{ end }}>Mind Maps</a></li>
+      <li><a href="/licensing-docs/"{{ if or (hasPrefix $.RelPermalink "/licensing-docs/") (hasPrefix $.RelPermalink "/licensing/") }} class="nav-active" aria-current="page"{{ end }}>M365 Licensing Wiki</a></li>
+
+      <li class="nav-group-divider" aria-hidden="true">·</li>
+
+      <li><a href="/blog/"{{ if hasPrefix $.RelPermalink "/blog/" }} class="nav-active" aria-current="page"{{ end }}>Blog</a></li>
+      <li><a href="/about/"{{ if eq $.RelPermalink "/about/" }} class="nav-active" aria-current="page"{{ end }}>About</a></li>
     </ul>
 
     {{/* ═══════ RIGHT ZONE: theme toggle + CTA ═══════ */}}
@@ -41,11 +48,11 @@
         <a href="/study-guides/" class="drawer-link">Cert Study Guides</a>
         <a href="/guided/explore/" class="drawer-link">Cert Practice Exams</a>
         <a href="/videos/" class="drawer-link">Video Tutorials</a>
-        <a href="/free-tools/" class="drawer-link">Free Tools</a>
+        <a href="/free-tools/" class="drawer-link drawer-link--divider">Free Tools</a>
         <a href="/mind-maps/" class="drawer-link">Mind Maps</a>
         <a href="/licensing-docs/" class="drawer-link">M365 Licensing Wiki</a>
-        <a href="/blog/" class="drawer-link">Blog</a>
-        <a href="/about/" class="drawer-link drawer-link--divider">About</a>
+        <a href="/blog/" class="drawer-link drawer-link--divider">Blog</a>
+        <a href="/about/" class="drawer-link">About</a>
       </div>
       <a href="/guided/explore/" class="drawer-cta">Start Free →</a>
     </div>

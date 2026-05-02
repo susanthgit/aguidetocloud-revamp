@@ -647,3 +647,220 @@
   background: #E5E5E5;
   color: #1F2937;
 }
+
+
+/* ═══════════════════════════════════════════════════════
+   List view — Linear-style index (Zen rethink)
+   Replaces card grid for the gallery page only.
+   Uses semantic Zen tokens; no hardcoded colours.
+   ═══════════════════════════════════════════════════════ */
+
+.mm-list-view {
+  max-width: var(--max-reading, 760px);
+  margin: 0 auto;
+  padding: 0 var(--space-2, 0.5rem);
+  font-family: 'Plus Jakarta Sans', 'DM Sans', system-ui, sans-serif;
+}
+
+.mm-list-header {
+  margin-bottom: var(--space-8, 2rem);
+}
+
+.mm-list-h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2, 0.5rem);
+}
+
+.mm-list-lede {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 60ch;
+}
+
+/* Linear-style tab bar — underline active, no pills */
+.mm-list-tabs {
+  display: flex;
+  gap: var(--space-2, 0.5rem);
+  border-bottom: 1px solid var(--border, #E5E7EB);
+  margin-bottom: var(--space-8, 2rem);
+  flex-wrap: wrap;
+}
+
+.mm-list-tab {
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+  margin-bottom: -1px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary, #6B7280);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 200ms ease-out, border-color 200ms ease-out;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  border-radius: 0;
+}
+
+.mm-list-tab:hover {
+  color: var(--text-primary);
+}
+
+.mm-list-tab.active {
+  color: var(--text-primary);
+  border-bottom-color: var(--accent, #6366F1);
+  font-weight: 600;
+}
+
+.mm-list-tab-count {
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-tertiary, #9CA3AF);
+  font-weight: 500;
+}
+
+.mm-list-tab.active .mm-list-tab-count {
+  color: var(--accent, #6366F1);
+}
+
+/* Section header — small caps label, quiet */
+.mm-list-section {
+  margin-bottom: var(--space-12, 3rem);
+}
+
+.mm-list-section-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-tertiary, #9CA3AF);
+  margin: 0 0 var(--space-2, 0.5rem);
+}
+
+/* Rows */
+.mm-list-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border, #E5E7EB);
+}
+
+.mm-list-row {
+  border-bottom: 1px solid var(--border, #E5E7EB);
+  margin: 0;
+}
+
+.mm-list-row-link {
+  display: grid;
+  grid-template-columns: 12px 1fr auto auto;
+  align-items: center;
+  gap: var(--space-3, 0.75rem) var(--space-4, 1rem);
+  padding: var(--space-4, 1rem) var(--space-2, 0.5rem);
+  text-decoration: none;
+  color: inherit;
+  transition: background 150ms ease-out;
+  border-radius: var(--radius-sm, 4px);
+}
+
+.mm-list-row-link:hover {
+  background: var(--bg-elevated, rgba(99, 102, 241, 0.04));
+}
+
+.mm-list-row-link:hover .mm-list-row-arrow {
+  transform: translateX(2px);
+  opacity: 1;
+}
+
+.mm-list-row-link:hover .mm-list-row-title {
+  color: var(--accent, #6366F1);
+}
+
+.mm-list-row-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.mm-list-row-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.mm-list-row-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  line-height: 1.3;
+  transition: color 150ms ease-out;
+}
+
+.mm-list-row-branches {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.825rem;
+  color: var(--text-secondary, #6B7280);
+  line-height: 1.4;
+  /* Truncate gracefully when very long */
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mm-list-row-date {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-tertiary, #9CA3AF);
+  white-space: nowrap;
+}
+
+.mm-list-row-arrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  color: var(--text-tertiary, #9CA3AF);
+  opacity: 0.5;
+  transition: transform 150ms ease-out, opacity 150ms ease-out;
+}
+
+/* Hide the right companion sidebar on the LIST page only.
+   :has() targets list page (which contains .mm-list-view); single map pages don't. */
+body.page-mind-maps:has(.mm-list-view) .zt-companion {
+  display: none;
+}
+
+/* On list page, also widen the main column since companion is gone */
+body.page-mind-maps:has(.mm-list-view) .zt-content {
+  max-width: 880px;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .mm-list-row-link {
+    grid-template-columns: 10px 1fr auto;
+  }
+  .mm-list-row-arrow {
+    display: none;
+  }
+  .mm-list-row-date {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 0.7rem;
+  }
+}
