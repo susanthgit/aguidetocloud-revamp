@@ -37,8 +37,15 @@
         <h1 class="zt-blog-header-title">M365 Licensing Guides</h1>
         <span class="zt-blog-header-count">{{ len $allPlans }} plans</span>
       </div>
-      <p class="zt-blog-header-desc">Every plan in plain English, with pricing. <a href="/feedback/">Report issues</a>.</p>
     </header>
+
+    {{/* Belief intro — why this page exists */}}
+    <p class="zt-hub-intro">
+      I got tired of the 200-page Microsoft PDF. So I wrote one page per licence — <em>plain English, real pricing, no marketing fluff</em>. Updated as Microsoft updates.
+    </p>
+
+    {{/* Disclosure — be honest about prices */}}
+    <p class="zt-hub-disclosure">Prices in USD per user/month, retail (no enterprise discounts). Last refreshed monthly. <a href="/feedback/">Report issues →</a></p>
 
     {{/* Search */}}
     <div class="zt-sg-search-wrap">
@@ -113,11 +120,17 @@
       </a>
     </div>
 
-    {{/* Recent blog posts */}}
-    {{ $recentPosts := first 3 (where site.RegularPages "Section" "blog") }}
+    {{/* Recent licensing-tagged blog posts only (filtered to remove cross-topic noise) */}}
+    {{ $licPosts := slice }}
+    {{ range where site.RegularPages "Section" "blog" }}
+      {{ if findRE `(?i)licens|m365 plan|copilot.*licen|e3|e5|business.*premium` (printf "%s %s" .Title (.Params.card_tag | default "")) }}
+        {{ $licPosts = $licPosts | append . }}
+      {{ end }}
+    {{ end }}
+    {{ $recentPosts := first 3 $licPosts }}
     {{ if $recentPosts }}
     <div class="zt-companion-section">
-      <p class="zt-companion-title">Recent articles</p>
+      <p class="zt-companion-title">Licensing reads</p>
       {{ range $recentPosts }}
       <a href="{{ .Permalink }}" class="zt-companion-link">
         <span class="zt-companion-link-tag">{{ with .Params.card_tag }}{{ . }}{{ else }}Blog{{ end }}</span>

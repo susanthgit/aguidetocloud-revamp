@@ -21,8 +21,43 @@
         <h1 class="zt-blog-header-title">Study Guides</h1>
         <span class="zt-blog-header-count">{{ len $certPages }} guides</span>
       </div>
-      <p class="zt-blog-header-desc">Objective-by-objective, linked to official docs. <a href="/feedback/">Report issues</a>.</p>
     </header>
+
+    {{/* Belief intro — why this exists, in plain English */}}
+    <p class="zt-hub-intro">
+      Cert prep shouldn't feel like reading a phonebook. <strong>Every objective, linked to the official doc</strong> — so you read once, in the right place. <em>For people like us.</em>
+    </p>
+
+    {{/* Voice — one real learner */}}
+    <blockquote class="zt-hub-voice">
+      <p class="zt-hub-voice-quote">I work at Microsoft and I have passed many of my exams using your videos, thank you for such a great content my friend!</p>
+      <cite class="zt-hub-voice-cite">@pablonleon · YouTube</cite>
+    </blockquote>
+
+    {{/* Featured — fundamentals row for first-time visitors */}}
+    {{ $featuredCodes := slice "AZ-900" "AI-900" "SC-900" }}
+    {{ $featuredCerts := slice }}
+    {{ range $code := $featuredCodes }}
+      {{ range $certPages }}
+        {{ if eq .Params.exam_code $code }}{{ $featuredCerts = $featuredCerts | append . }}{{ end }}
+      {{ end }}
+    {{ end }}
+    {{ if $featuredCerts }}
+    <div class="zt-hub-featured">
+      <p class="zt-hub-featured-label">Where to start</p>
+      <div class="zt-sg-grid">
+        {{ range $featuredCerts }}
+        <a href="{{ .RelPermalink }}" class="zt-sg-card" data-code="{{ .Params.exam_code }}" data-title="{{ .Params.exam_title }}" data-level="{{ .Params.exam_level }}" data-status="{{ .Params.exam_status | default "active" }}">
+          <div class="zt-sg-card-top">
+            <span class="zt-sg-card-code">{{ .Params.exam_code }}</span>
+            <span class="zt-cert-badge zt-cert-badge--{{ .Params.exam_level }}">Fund.</span>
+          </div>
+          <span class="zt-sg-card-title">{{ .Params.exam_title }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
 
     {{/* Search */}}
     <div class="zt-sg-search-wrap">

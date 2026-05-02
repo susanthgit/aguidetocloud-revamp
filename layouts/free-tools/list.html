@@ -18,8 +18,33 @@
     <h1 class="zt-blog-header-title">Free Tools</h1>
     <span class="zt-blog-header-count">{{ len $tools }} tools</span>
   </div>
-  <p class="zt-blog-header-desc">Cloud & AI tools — no sign-up, just open and use.</p>
 </header>
+
+<p class="zt-hub-intro">
+  Built one tool at a time, every time I needed one and couldn't find one that wasn't $19/month.
+  <em>No sign-up, no upsell, no cookie banner.</em> Runs entirely in your browser.
+</p>
+
+{{/* Featured row — hand-picked first stop */}}
+<div class="zt-hub-featured">
+  <p class="zt-hub-featured-label">Most useful</p>
+  <div class="ft-mini-grid">
+    {{ $featuredSlugs := slice "prompts" "licence-picker" "cert-compass" "ca-builder" "copilot-readiness" }}
+    {{ range $slug := $featuredSlugs }}
+      {{ range $tools }}
+        {{ if and .is_tool (eq (.url | strings.TrimSuffix "/" | strings.TrimPrefix "/") $slug) }}
+        <a href="{{ .url }}" class="ft-mini-card" data-name="{{ .name | lower }} {{ .desc | lower }}">
+          <div class="ft-mini-head">
+            <span class="ft-mini-icon">{{ partial "icon.html" (dict "name" (.icon | default "") "size" 18 "stroke" 1.5 "fallback" .emoji) }}</span>
+            <span class="ft-mini-name">{{ .name }}</span>
+          </div>
+          <span class="ft-mini-desc">{{ .desc }}</span>
+        </a>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
 
 <div class="zt-sg-search-wrap">
   <input type="search" class="zt-sg-search" id="ft-search" placeholder="Search tools... (e.g. prompt, policy, licence)" aria-label="Search tools">
@@ -33,7 +58,7 @@
     "copilot-ai" "AI Tools"
     "admin-security" "Admin Tools"
     "certs" "Study Tools"
-    "utilities" "Everyday Tools"
+    "utilities" "Quick Utilities"
   }}
   {{ $catOrder := slice "copilot-ai" "admin-security" "certs" "utilities" }}
 
@@ -65,384 +90,6 @@
 
 </div>
 
-{{/* Old hardcoded cards hidden for Concept 1 prototype */}}
-{{/*
-
-  <div class="ft-category" id="copilot-ai">
-    <h2 class="ft-cat-title">AI Tools</h2>
-    <p class="ft-cat-desc">Prompt engineering, agent builders, AI comparisons, readiness checks, and dashboards to stay informed.</p>
-    <div class="free-tools-grid">
-      <a href="/prompts/" class="free-tool-card" style="--card-accent: #A78BFA">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "lightbulb" "size" 20) }}</span><h3>Prompt Library</h3></div>
-        <p>500 tested prompts across 5 AI platforms — M365 Copilot, ChatGPT, Claude, Gemini, and Perplexity. Copy and use instantly.</p>
-
-
-      </a>
-      <a href="/prompt-polisher/" class="free-tool-card" style="--card-accent: #EC4899">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "sparkles" "size" 20) }}</span><h3>Prompt Polisher</h3></div>
-        <p>Paste any AI prompt and get it instantly scored, analysed & rewritten using the CRAFTS framework. 100% free, runs in your browser.</p>
-
-
-      </a>
-      <a href="/prompt-guide/" class="free-tool-card" style="--card-accent: #84CC16">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "graduation-cap" "size" 20) }}</span><h3>Prompt Guide</h3></div>
-        <p>Learn 8 essential prompt techniques with hands-on practice, before/after examples, and a step-by-step Prompt Builder.</p>
-
-
-      </a>
-      <a href="/prompt-lab/" class="free-tool-card" style="--card-accent: #2DD4BF">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "flask" "size" 20) }}</span><h3>Prompt Lab</h3></div>
-        <p>Master 12 advanced prompting techniques like Tree of Thought, Prompt Chaining, and Meta Prompting — with hands-on exercises.</p>
-
-
-      </a>
-      <a href="/prompt-tester/" class="free-tool-card" style="--card-accent: #F97316">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "microscope" "size" 20) }}</span><h3>Prompt Tester</h3></div>
-        <p>Paste two prompts side-by-side and see which is more CRAFTS-complete. Per-criterion scoring, diff view, and auto-improvement.</p>
-
-
-      </a>
-      <a href="/instruct-builder/" class="free-tool-card" style="--card-accent: #2DD4BF">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "edit-3" "size" 20) }}</span><h3>Instruction Builder</h3></div>
-        <p>Generate platform-optimised AI agent instructions in seconds. 5 fields, 10 templates, 5 platforms — best practices baked in.</p>
-
-
-      </a>
-      <a href="/agent-builder-guide/" class="free-tool-card" style="--card-accent: #00A4EF">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "vendor-hashicorp" "size" 20) }}</span><h3>Agent Builder</h3></div>
-        <p>Figure out what you CAN build in M365 Copilot Agent Builder, HOW to build it, and WHEN to graduate to Copilot Studio. 15 assessed scenarios.</p>
-
-
-      </a>
-      <a href="/cs-companion/" class="free-tool-card" style="--card-accent: #9055E3">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "settings" "size" 20) }}</span><h3>Copilot Studio Guide</h3></div>
-        <p>Your comprehensive guide to Copilot Studio — evaluate scenarios, explore capabilities, navigate governance, and design agent architectures.</p>
-
-
-      </a>
-      <a href="/agent-365-planner/" class="free-tool-card" style="--card-accent: #00A4EF">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "robot" "size" 20) }}</span><h3>Agent Governance</h3></div>
-        <p>Plan your AI agent governance strategy — readiness assessment, best practices checklist, agent decision tree, and downloadable governance plan.</p>
-
-
-      </a>
-      <a href="/copilot-readiness/" class="free-tool-card" style="--card-accent: #3B82F6">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "target" "size" 20) }}</span><h3>Copilot Readiness</h3></div>
-        <p>Interactive assessment that scores your org's Microsoft 365 Copilot readiness across 7 pillars — licensing, identity, data, security, network, change management & monitoring.</p>
-
-
-      </a>
-      <a href="/copilot-matrix/" class="free-tool-card" style="--card-accent: #60A5FA">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "chart-bar" "size" 20) }}</span><h3>Copilot Features</h3></div>
-        <p>Interactive feature comparison across every M365 app and Copilot tier. See exactly what's free, what needs a licence, and what changed.</p>
-
-
-      </a>
-      <a href="/copilot-data-flow/" class="free-tool-card" style="--card-accent: #6366F1">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "shield" "size" 20) }}</span><h3>Copilot Data Flow Map</h3></div>
-        <p>Where does your data go when you use M365 Copilot? Interactive flows showing security boundaries, sub-processors, and admin controls.</p>
-      </a>
-      <a href="/copilot-model-map/" class="free-tool-card" style="--card-accent: #6366F1">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "brain" "size" 20) }}</span><h3>Copilot Model Map</h3></div>
-        <p>Which AI model powers each M365 Copilot feature? See GPT, Claude, and Phi routing, admin controls, and multi-model patterns.</p>
-      </a>
-      <a href="/copilot-frontier-map/" class="free-tool-card" style="--card-accent: #6366F1">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "map" "size" 20) }}</span><h3>Copilot Frontier Map</h3></div>
-        <p>Track Copilot features in the Frontier programme — what's available now, what's graduating to GA, AI models used, and admin actions needed.</p>
-      </a>
-      <a href="/roi-calculator/"class="free-tool-card" style="--card-accent: #14B8A6">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 20) }}</span><h3>Copilot ROI</h3></div>
-        <p>Estimate your Microsoft 365 Copilot ROI by role, with realistic adoption curves. Backed by Forrester TEI data — instant, no sign-up.</p>
-
-
-      </a>
-      <a href="/demo-scripts/" class="free-tool-card" style="--card-accent: #F97316">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "clapperboard" "size" 20) }}</span><h3>Copilot Demos</h3></div>
-        <p>Generate complete, ready-to-deliver M365 Copilot demo scripts. Pick a scenario, configure audience &amp; duration, and get step-by-step prompts with talking points.</p>
-
-
-      </a>
-      <a href="/ai-mapper/" class="free-tool-card" style="--card-accent: #38BDF8">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "map" "size" 20) }}</span><h3>AI Mapper</h3></div>
-        <p>Find the right AI service for your use case. Compare 25+ services across Azure, AWS, Google, OpenAI, and more — pricing, capabilities, compliance.</p>
-
-
-      </a>
-      <a href="/ai-showdown/" class="free-tool-card" style="--card-accent: #D4A853">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "boxing" "size" 20) }}</span><h3>AI Showdown</h3></div>
-        <p>Compare ChatGPT, Claude, Gemini, Grok, Mistral &amp; more — plans, pricing, strengths, enterprise compliance. Find the best AI for you.</p>
-
-
-      </a>
-      <a href="/ai-cost-calculator/" class="free-tool-card" style="--card-accent: #66C559">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "dollar" "size" 20) }}</span><h3>AI Cost Calculator</h3></div>
-        <p>Calculate the TOTAL cost of AI adoption — licensing, implementation, training, governance, operations. Compare token costs, optimize M365 bundles.</p>
-
-
-      </a>
-      <a href="/ai-news/" class="free-tool-card" style="--card-accent: #ff66ff">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "newspaper" "size" 20) }}</span><h3>AI News</h3></div>
-        <p>Daily AI news digest with 3-tier layout, 20 vendor categories, and AI summaries. Updated 4× daily.</p>
-
-
-      </a>
-      <a href="/m365-roadmap/" class="free-tool-card" style="--card-accent: #E5A00D">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "map" "size" 20) }}</span><h3>M365 Roadmap</h3></div>
-        <p>Track every Microsoft 365 feature across 11 products with AI summaries, change detection, and delay flagging.</p>
-
-
-      </a>
-      <a href="/service-health/" class="free-tool-card" style="--card-accent: #EA580C">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "hospital" "size" 20) }}</span><h3>M365 Health</h3></div>
-        <p>Searchable timeline of Microsoft 365 service incidents — 32 services tracked every 2 hours with full communication history.</p>
-
-
-      </a>
-      <a href="/deprecation-timeline/" class="free-tool-card" style="--card-accent: #DC2626">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "timer" "size" 20) }}</span><h3>M365 Deprecation Timeline</h3></div>
-        <p>Interactive timeline of every M365 deprecation, retirement, and end-of-support — urgency-scored with countdown timers and migration guides.</p>
-
-
-      </a>
-      <a href="/feature-roulette/" class="free-tool-card" style="--card-accent: #F39C12">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "dice" "size" 20) }}</span><h3>M365 Roulette</h3></div>
-        <p>Discover M365 features you never knew existed. Spin from 1,800+ roadmap items — track what you know vs what's new to you.</p>
-
-
-      </a>
-      <a href="/rename-tracker/" class="free-tool-card" style="--card-accent: #B07D4F">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "refresh-cw" "size" 20) }}</span><h3>Rename Tracker</h3></div>
-        <p>Search any Microsoft product name — old or new — and see the full rename history timeline. 41 products, 65+ name changes.</p>
-
-
-      </a>
-    </div>
-  </div>
-
-  <div class="ft-category" id="admin-security">
-    <h2 class="ft-cat-title">Admin Tools</h2>
-    <p class="ft-cat-desc">Policy builders, security checks, compliance tools, PowerShell recipes, and licensing — the stuff I reach for during customer engagements.</p>
-    <div class="free-tools-grid">
-      <a href="/ca-builder/" class="free-tool-card" style="--card-accent: #7C3AED">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "shield" "size" 20) }}</span><h3>CA Policy Builder</h3></div>
-        <p>Design Conditional Access policies for Microsoft Entra ID. Browse Zero Trust templates, build custom policies, lint for safety risks, export PowerShell &amp; JSON.</p>
-
-
-      </a>
-      <a href="/purview-starter/" class="free-tool-card" style="--card-accent: #84CC16">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "key" "size" 20) }}</span><h3>Purview Starter</h3></div>
-        <p>Plan Microsoft Purview sensitivity labels &amp; DLP policies with pre-built starter kits. Get deploy-ready PowerShell, change management emails, and licence checks.</p>
-
-
-      </a>
-      <a href="/security-toolkit/" class="free-tool-card" style="--card-accent: #41A235">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "shield" "size" 20) }}</span><h3>Security Toolkit</h3></div>
-        <p>CIS-aligned security assessment with 50 questions, SPF/DKIM/DMARC generator, prioritised remediation scripts, and compliance framework mapping.</p>
-
-
-      </a>
-      <a href="/compliance-passport/" class="free-tool-card" style="--card-accent: #2ECC71">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "file-text" "size" 20) }}</span><h3>Compliance Passport</h3></div>
-        <p>Answer 8 questions about your org — get a visual passport showing which compliance frameworks likely apply. GDPR, HIPAA, SOC 2, ISO 27001 and more.</p>
-
-
-      </a>
-      <a href="/policy-tester/" class="free-tool-card" style="--card-accent: #26A69A">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "key" "size" 20) }}</span><h3>Password Policy</h3></div>
-        <p>Score your password policy against NIST, CIS, Microsoft, and Essential Eight. Real-time scoring, comparison table, and actionable recommendations.</p>
-
-
-      </a>
-      <a href="/phishing-test/" class="free-tool-card" style="--card-accent: #E74C3C">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "fishing" "size" 20) }}</span><h3>Phishing Test</h3></div>
-        <p>30 realistic email scenarios — spot the phishing, trust the legit, verify the ambiguous. Detailed red flag explanations and post-game report.</p>
-
-
-      </a>
-      <a href="/ps-builder/" class="free-tool-card" style="--card-accent: #4ADE80">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "bolt" "size" 20) }}</span><h3>PowerShell Builder</h3></div>
-        <p>Build M365, Azure, AD, GPO & Windows admin commands visually. 68 ready-to-run recipes, guided parameters, zero syntax memorisation.</p>
-
-
-      </a>
-      <a href="/migration-planner/" class="free-tool-card" style="--card-accent: #6478CC">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "rocket" "size" 20) }}</span><h3>M365 Migration</h3></div>
-        <p>Plan your M365 migration end-to-end — adaptive wizard, workload readiness, risk scoring, timeline, tool recommendations, and a printable executive summary.</p>
-
-
-      </a>
-      <a href="/admin-comms/" class="free-tool-card" style="--card-accent: #5B9BD5">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "mail" "size" 20) }}</span><h3>Email Templates</h3></div>
-        <p>20 ready-made email templates for maintenance notices, security alerts, Copilot rollouts, onboarding, and more. Customise and copy in seconds.</p>
-
-
-      </a>
-      <a href="/sla-calculator/" class="free-tool-card" style="--card-accent: #4ECDC4">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "ruler" "size" 20) }}</span><h3>SLA Calculator</h3></div>
-        <p>Enter your SLA percentage and see exact downtime budgets. Reverse calculator, incident impact checker, and M365 SLA reference table.</p>
-
-
-      </a>
-      <a href="/incident-comms/" class="free-tool-card" style="--card-accent: #FF8F66">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "megaphone" "size" 20) }}</span><h3>Incident Comms</h3></div>
-        <p>Generate professional incident status updates for any outage. Pick type, severity, audience — get initial, investigating, and resolved messages instantly.</p>
-
-
-      </a>
-      <a href="/licence-picker/" class="free-tool-card" style="--card-accent: #5AA830">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "shopping-cart" "size" 20) }}</span><h3>Licence Picker</h3></div>
-        <p>Pick the features you need — Copilot, Defender, Intune, Teams Phone — and instantly see the cheapest M365 plan combination. Like a shopping cart for licences.</p>
-
-
-      </a>
-      <a href="/licensing/" class="free-tool-card" style="--card-accent: #F43F5E">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "scroll" "size" 20) }}</span><h3>Licensing Guide</h3></div>
-        <p>Compare Microsoft 365 plans in plain English. Take a quiz to find your ideal licence. Track licensing changes — all with pricing.</p>
-
-
-      </a>
-    </div>
-  </div>
-
-  <div class="ft-category" id="certs">
-    <h2 class="ft-cat-title">Study Tools</h2>
-    <p class="ft-cat-desc">The study tools I wish I had when I started certifying.</p>
-    <div class="free-tools-grid">
-      <a href="/cert-tracker/" class="free-tool-card" style="--card-accent: #10B981">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "chart-bar" "size" 20) }}</span><h3>Cert Study Guides</h3></div>
-        <p>Free study guides for every Microsoft certification exam — current objectives deep-linked to Microsoft Learn, updated weekly.</p>
-
-
-      </a>
-      <a href="/cert-compass/" class="free-tool-card" style="--card-accent: #6366F1">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "compass" "size" 20) }}</span><h3>Cert Compass</h3></div>
-        <p>Navigate certifications across Azure, AWS & Google Cloud. Find closest matches, plan career paths, and compare certs side-by-side.</p>
-
-
-      </a>
-    </div>
-  </div>
-
-  <div class="ft-category" id="utilities">
-    <h2 class="ft-cat-title">Everyday Tools</h2>
-    <p class="ft-cat-desc">Side projects, useful utilities, and IT games — because not everything has to be serious.</p>
-    <div class="free-tools-grid">
-      <a href="/world-clock/" class="free-tool-card" style="--card-accent: #0EA5E9">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "globe" "size" 20) }}</span><h3>Meeting Planner</h3></div>
-        <p>Live multi-city clocks, instant time zone conversion, visual meeting planner, and a DST guide. Never miss a meeting across time zones again.</p>
-        <div class="free-tool-features">
-          <span>Live world clocks</span>
-          <span>Instant conversion</span>
-          <span>Meeting planner</span>
-          <span>DST guide</span>
-        </div>
-
-      </a>
-      <a href="/qr-generator/" class="free-tool-card" style="--card-accent: #EC4899">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "qr-code" "size" 20) }}</span><h3>QR Generator</h3></div>
-        <p>Create stunning QR codes for URLs, WiFi, email & more. Custom colours, dot styles, logos, batch generation & built-in scanner.</p>
-        <div class="free-tool-features">
-          <span>Custom styling</span>
-          <span>Logo support</span>
-          <span>Batch generate</span>
-          <span>QR scanner</span>
-        </div>
-
-      </a>
-      <a href="/wifi-qr/" class="free-tool-card" style="--card-accent: #22D3EE">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "wifi" "size" 20) }}</span><h3>WiFi Cards</h3></div>
-        <p>Create beautiful printable WiFi cards your guests scan to connect instantly. Choose from Home, Café, Hotel & Office designs.</p>
-
-
-      </a>
-      <a href="/password-generator/" class="free-tool-card" style="--card-accent: #D946EF">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "key" "size" 20) }}</span><h3>Password Generator</h3></div>
-        <p>Generate unbreakable passwords, passphrases & PINs instantly. Real-time strength analysis, crack-time estimates & bulk generation.</p>
-
-
-      </a>
-      <a href="/image-compressor/" class="free-tool-card" style="--card-accent: #818CF8">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "image" "size" 20) }}</span><h3>Image Compressor</h3></div>
-        <p>Compress, resize & convert images up to 90% smaller. Batch processing, before/after comparison, EXIF stripping. 100% private.</p>
-
-
-      </a>
-      <a href="/typing-test/" class="free-tool-card" style="--card-accent: #34D399">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "keyboard" "size" 20) }}</span><h3>Typing Test</h3></div>
-        <p>Test your WPM, accuracy & consistency. Practice with quotes, code snippets & custom text. Track progress with a problem key heatmap.</p>
-
-
-      </a>
-      <a href="/countdown/" class="free-tool-card" style="--card-accent: #FB923C">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "hourglass" "size" 20) }}</span><h3>Countdown Timer</h3></div>
-        <p>Beautiful flip-clock countdowns for events, deadlines & milestones. Full-screen presentation mode, quick timer, stopwatch & shareable links.</p>
-
-
-      </a>
-      <a href="/color-palette/" class="free-tool-card" style="--card-accent: #F472B6">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "palette" "size" 20) }}</span><h3>Colour Palette</h3></div>
-        <p>Generate stunning palettes with harmony modes, extract from images, check WCAG contrast & simulate colour blindness.</p>
-
-
-      </a>
-      <a href="/pomodoro/" class="free-tool-card" style="--card-accent: #EF4444">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "tomato" "size" 20) }}</span><h3>Pomodoro Timer</h3></div>
-        <p>Beautiful focus timer with customisable sessions, ambient sounds (rain, café, forest), task tracking & productivity stats.</p>
-
-
-      </a>
-      <a href="/admin-bingo/" class="free-tool-card" style="--card-accent: #E91E8E">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "target" "size" 20) }}</span><h3>Admin Bingo</h3></div>
-        <p>75 relatable IT admin scenarios on a bingo card. Theme packs, daily & weekly challenges, confetti on win, print & share.</p>
-
-
-      </a>
-      <a href="/acronym-battle/" class="free-tool-card" style="--card-accent: #9B59B6">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "brain" "size" 20) }}</span><h3>Acronym Battle</h3></div>
-        <p>Flash an IT acronym, pick the correct answer. 90+ acronyms, timed quiz, Learn mode, category mastery tracker.</p>
-
-
-      </a>
-      <a href="/cli-quiz/" class="free-tool-card" style="--card-accent: #7E57C2">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "laptop" "size" 20) }}</span><h3>CLI Quiz</h3></div>
-        <p>See an IT task, guess the PowerShell or CLI command. 30 commands across 6 categories. Timed quiz, hard mode, daily challenge.</p>
-
-
-      </a>
-      <a href="/it-day-sim/" class="free-tool-card" style="--card-accent: #C27BA0">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "gamepad" "size" 20) }}</span><h3>IT Day Sim</h3></div>
-        <p>Choose-your-own-adventure as an IT admin. Make decisions, face consequences, earn your score. From "Chaos Agent" to "Legendary Admin".</p>
-
-
-      </a>
-      <a href="/admin-badges/" class="free-tool-card" style="--card-accent: #FFD54F">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "medal" "size" 20) }}</span><h3>Admin Badges</h3></div>
-        <p>Unlock 50 achievement badges for real IT admin milestones. Survival, Security, Migration, Governance, Teaching, and Legendary categories.</p>
-
-
-      </a>
-      <a href="/feedback/" class="free-tool-card" style="--card-accent: #FBBF24">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "message-square" "size" 20) }}</span><h3>Feedback</h3></div>
-        <p>Ask questions, suggest features, request videos, or report bugs — your feedback shapes what I build next.</p>
-
-
-      </a>
-      <a href="/site-analytics/" class="free-tool-card" style="--card-accent: #64748B">
-        <div class="free-tool-head"><span class="free-tool-icon">{{ partial "icon.html" (dict "name" "chart-bar" "size" 20) }}</span><h3>Site Analytics</h3></div>
-        <p>Live, transparent usage statistics — see which tools are most popular, daily trends, and top search queries. All data anonymous and open.</p>
-
-
-      </a>
-    </div>
-  </div>
-
-
-
-
-  </div>
-</div>
-
-*/}}
 
   </div>{{/* end .zt-reading-content */}}
 

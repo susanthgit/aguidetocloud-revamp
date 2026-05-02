@@ -1667,7 +1667,23 @@ pre:hover .code-copy-btn { opacity: 1; }
   color: var(--accent, #818CF8);
 }
 
-/* "New" badge */
+/* New row indicator — subtle dot before title (replaces the loud "New" word badge) */
+.zt-blog-row--new {
+  position: relative;
+}
+.zt-blog-row--new .zt-blog-row-title::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--accent, #6366F1);
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+/* "New" badge (legacy — kept for any partials still using it; phased out in blog list) */
 .zt-blog-row-new {
   color: var(--success, #22C55E);
   font-weight: 600;
@@ -4729,4 +4745,96 @@ pre:hover .code-copy-btn { opacity: 1; }
 .zt-reading--tool-detail .zt-reading-content [class*="-page"],
 .zt-reading--tool-detail .zt-reading-content [class*="-wrap"] {
   max-width: none;
+}
+
+/* ──────────────────────────────────────────
+   🌸 Hub pages — shared Zen patterns (added 3 May 2026)
+   Belief intro + voice + featured row + disclosure.
+   Used by: study-guides, licensing-docs, blog, free-tools, videos, /guided/explore/
+   ────────────────────────────────────────── */
+
+/* Belief subtitle — the warmth-before-the-catalog line */
+.zt-hub-intro {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin: var(--space-2, 8px) 0 var(--space-6, 24px);
+  max-width: 640px;
+}
+.zt-hub-intro em {
+  font-style: normal;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.zt-hub-intro strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.zt-hub-intro a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-subtle);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 150ms ease-out;
+}
+.zt-hub-intro a:hover { text-decoration-color: var(--accent); }
+
+/* Voice — testimonial pull-quote (echoes homepage .zh-pull) */
+.zt-hub-voice {
+  margin: 0 0 var(--space-8, 32px);
+  padding: 0 0 0 var(--space-6, 24px);
+  border-left: 2px solid var(--accent);
+  max-width: 640px;
+}
+.zt-hub-voice-quote {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2, 8px);
+  letter-spacing: -0.01em;
+}
+.zt-hub-voice-quote::before { content: "\201C"; color: var(--accent); margin-right: 2px; }
+.zt-hub-voice-quote::after  { content: "\201D"; color: var(--accent); margin-left: 2px; }
+.zt-hub-voice-cite {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-tertiary);
+  font-style: normal;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+}
+.zt-hub-voice-cite::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--border);
+  display: inline-block;
+}
+
+/* Featured row — "Where to start" / "Most useful" / "Most watched" pinned above the catalog */
+.zt-hub-featured {
+  margin: 0 0 var(--space-8, 32px);
+  padding-bottom: var(--space-6, 24px);
+  border-bottom: 1px solid var(--border);
+}
+.zt-hub-featured-label {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 var(--space-3, 12px);
+  font-weight: 500;
+}
+
+/* Small disclosure / footnote line under header */
+.zt-hub-disclosure {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-muted);
+  margin: var(--space-2, 8px) 0 var(--space-4, 16px);
+}
+
+@media (max-width: 768px) {
+  .zt-hub-intro { font-size: 0.9375rem; }
+  .zt-hub-voice-quote { font-size: 1rem; }
 }

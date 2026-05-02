@@ -27,8 +27,39 @@
         <h1 class="zt-blog-header-title">Video Tutorials</h1>
         <span class="zt-blog-header-count">{{ len $allVideos }} videos</span>
       </div>
-      <p class="zt-blog-header-desc">Cert courses, Copilot demos, hands-on labs — all free on YouTube.</p>
     </header>
+
+    {{/* Belief intro */}}
+    <p class="zt-hub-intro">
+      Tutorials I record while figuring something out — so the simplification is real. <em>No scripts, no studio.</em> Just what worked, written into a video. <strong>All free on YouTube.</strong>
+    </p>
+
+    {{/* Voice — learner who watched a course */}}
+    <blockquote class="zt-hub-voice">
+      <p class="zt-hub-voice-quote">Sir thank you so much for this awesome course. Although I and many of us already owe you a coffee.</p>
+      <cite class="zt-hub-voice-cite">@maestus6 · YouTube</cite>
+    </blockquote>
+
+    {{/* Most-watched row — top 4 by views (no view counts displayed; just the picks) */}}
+    {{ $topVideos := first 4 (sort $allVideos "Params.views" "desc") }}
+    {{ if $topVideos }}
+    <div class="zt-hub-featured">
+      <p class="zt-hub-featured-label">Most watched</p>
+      <div class="zt-vid-grid">
+        {{ range $topVideos }}
+        <a href="{{ .RelPermalink }}" class="zt-vid-card" data-title="{{ lower .Title }}">
+          {{ with .Params.youtube_id }}
+          <img class="zt-vid-card-thumb" src="https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg" alt="" loading="lazy">
+          {{ end }}
+          <div class="zt-vid-card-body">
+            <span class="zt-vid-card-name">{{ .Title | truncate 65 }}</span>
+            <span class="zt-vid-card-tagline">{{ with .Params.card_tag }}{{ . }}{{ end }}</span>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
 
     {{/* Category quick-jump pills */}}
     <nav class="zt-lic-pills" aria-label="Jump to category">
@@ -40,7 +71,7 @@
       {{ end }}
     </nav>
 
-    {{/* Video cards grouped by category */}}
+    {{/* Video cards grouped by category — view counts removed from card meta (Zen brag-allergy: numbers don't earn trust, content does) */}}
     {{ range $cat := $categories }}
       {{ $catPages := where site.RegularPages "Section" $cat.section }}
       {{ if $catPages }}
@@ -57,7 +88,7 @@
             {{ end }}
             <div class="zt-vid-card-body">
               <span class="zt-vid-card-name">{{ .Title | truncate 65 }}</span>
-              <span class="zt-vid-card-tagline">{{ with .Params.card_tag }}{{ . }}{{ end }}{{ with .Params.views }}{{ if ge . 1000 }} · {{ lang.FormatNumberCustom 0 (div . 1000) }}K views{{ else }} · {{ . }} views{{ end }}{{ end }}</span>
+              <span class="zt-vid-card-tagline">{{ with .Params.card_tag }}{{ . }}{{ end }}</span>
             </div>
           </a>
           {{ end }}

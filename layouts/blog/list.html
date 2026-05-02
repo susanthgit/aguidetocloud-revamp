@@ -12,14 +12,24 @@
   {{/* ── CENTER: Blog listing ── */}}
   <div class="zt-reading-content zt-blog-landing">
 
-    {{/* Compact header — content visible within 200px */}}
+    {{/* Compact header */}}
     <header class="zt-blog-header">
       <div class="zt-blog-header-row">
         <h1 class="zt-blog-header-title">Blog</h1>
         <span class="zt-blog-header-count">{{ len .Pages }} articles</span>
       </div>
-      <p class="zt-blog-header-desc">Copilot, Azure, licensing, and AI — explained.</p>
     </header>
+
+    {{/* Belief intro */}}
+    <p class="zt-hub-intro">
+      What I'm working on, simplified. <strong>Long-form deep-dives, no clickbait</strong>, no SEO listicles. <em>For people like us.</em>
+    </p>
+
+    {{/* Voice — quality / depth signal */}}
+    <blockquote class="zt-hub-voice">
+      <p class="zt-hub-voice-quote">Even the paid courses do not organize the stuff this way. Clarity and depth are more than other tutors.</p>
+      <cite class="zt-hub-voice-cite">@lalitds · YouTube</cite>
+    </blockquote>
 
     {{/* Inline category filters */}}
     {{ $tags := dict }}
@@ -42,14 +52,28 @@
     {{/* Article listing — River Rows */}}
     <div class="zt-blog-list zt-blog-list--river" id="blog-list">
       {{ range .Pages.ByDate.Reverse }}
-      <a href="{{ .RelPermalink }}" class="zt-blog-row" data-tag="{{ .Params.card_tag }}">
+      <a href="{{ .RelPermalink }}" class="zt-blog-row{{ if and (gt (div (sub now.Unix .Date.Unix) 86400) 0) (le (div (sub now.Unix .Date.Unix) 86400) 14) }} zt-blog-row--new{{ end }}" data-tag="{{ .Params.card_tag }}">
         <div class="zt-blog-row-meta">
-          <span class="zt-blog-row-date">{{ with .Params.card_tag }}<span class="zt-blog-row-tag-wrap"><span class="zt-blog-row-tag">{{ . }}</span> · </span>{{ end }}{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min{{ if gt (div (sub now.Unix .Date.Unix) 86400) 0 }}{{ if le (div (sub now.Unix .Date.Unix) 86400) 14 }} · <span class="zt-blog-row-new">New</span>{{ end }}{{ end }}</span>
+          <span class="zt-blog-row-date">{{ with .Params.card_tag }}<span class="zt-blog-row-tag-wrap"><span class="zt-blog-row-tag">{{ . }}</span> · </span>{{ end }}{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min</span>
         </div>
         <h2 class="zt-blog-row-title">{{ .Title }}</h2>
       </a>
       {{ end }}
     </div>
+
+    {{/* Newsletter — readers who scrolled to the end are most likely to subscribe */}}
+    <section class="zh-newsletter" style="margin-top: 64px;">
+      <h2 class="zh-section-title">Stay in the loop</h2>
+      <p class="zh-newsletter-desc">Cloud &amp; AI insights, every Sunday — in 2 minutes. Free.</p>
+      <form class="zh-newsletter-form" id="blog-newsletter-form" aria-label="Newsletter signup">
+        <input type="email" id="blog-newsletter-email" placeholder="your@email.com" required autocomplete="email" aria-label="Email address" class="zh-newsletter-input">
+        <button type="submit" class="zh-newsletter-btn">Subscribe</button>
+      </form>
+      <div class="zh-newsletter-success" id="blog-newsletter-success" hidden>
+        <p>You're in — check your inbox to confirm.</p>
+      </div>
+      <p class="zh-newsletter-trust">No spam. Unsubscribe anytime.</p>
+    </section>
 
   </div>
 
@@ -112,6 +136,26 @@
 
   // Apply initial filter
   if (currentTag) setFilter(currentTag);
+})();
+</script>
+
+{{/* Newsletter signup JS — mirrors homepage pattern */}}
+<script>
+(function() {
+  var form = document.getElementById('blog-newsletter-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = document.getElementById('blog-newsletter-email').value.trim();
+    if (!email) return;
+    var btn = form.querySelector('button');
+    if (btn) { btn.disabled = true; btn.textContent = 'Subscribing...'; }
+    window.open('https://guided-weekly.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank', 'width=500,height=600');
+    setTimeout(function() {
+      form.hidden = true;
+      document.getElementById('blog-newsletter-success').hidden = false;
+    }, 1500);
+  });
 })();
 </script>
 
