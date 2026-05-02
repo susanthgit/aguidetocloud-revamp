@@ -104,6 +104,18 @@
       </aside>
     </div>
     {{ else if $isToolPage }}
+    <div class="zt-reading zt-reading--tool-detail">
+      <aside class="zt-sidebar zt-sidebar--tools" aria-label="Tool navigation" data-pagefind-ignore>
+        {{ partial "tools-nav.html" . }}
+      </aside>
+      <div class="zt-reading-content zt-tool-center">
+        {{ block "main" . }}{{ end }}
+      </div>
+      <aside class="zt-companion" aria-label="Related content" data-pagefind-ignore>
+        {{ partial "tool-companion.html" . }}
+      </aside>
+    </div>
+    {{ else }}
       {{ block "main" . }}{{ end }}
     {{ end }}
   </main>
