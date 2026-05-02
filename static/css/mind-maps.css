@@ -839,16 +839,8 @@
   transition: transform 150ms ease-out, opacity 150ms ease-out;
 }
 
-/* Hide the right companion sidebar on the LIST page only.
-   :has() targets list page (which contains .mm-list-view); single map pages don't. */
-body.page-mind-maps:has(.mm-list-view) .zt-companion {
-  display: none;
-}
-
-/* On list page, also widen the main column since companion is gone */
-body.page-mind-maps:has(.mm-list-view) .zt-content {
-  max-width: 880px;
-}
+/* Companion sidebar shows on LIST page too — cross-pollination engine.
+   Removed the previous :has() rule that hid it. */
 
 /* Mobile */
 @media (max-width: 640px) {
