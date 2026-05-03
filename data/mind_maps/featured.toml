@@ -1,16 +1,64 @@
-# Mind Maps gallery — Featured strip
-# 3 hero cards rendered at the top of /mind-maps/.
-# Order matters — first one is the "hero" with strongest visual.
-# Rotate periodically based on what's freshest or most-shared.
+# Mind Maps gallery — Featured strip with auto-rotation
+#
+# How it works:
+# - Hugo picks 3 sequential candidates per week from the pool below
+# - Each weekly build (cache version bump or content change) advances the rotation
+# - Pool of ~12 means full rotation in ~4 weeks
+# - To override the rotation manually for a launch, fill [pinned] with 3 slugs
+#   (template prefers pinned over candidates if pinned has 3+ entries)
 
-[[featured]]
+# ── Manual override (optional) ─────────────────────────────
+# Uncomment + fill if you want to pin specific featured maps.
+# pinned = []  # e.g. ["copilot-7-layers", "zero-trust-pillars", "cert-renewal-timeline"]
+
+# ── Rotation pool ──────────────────────────────────────────
+# Curated featurable maps. Order is preserved — rotation walks the pool
+# 3-at-a-time and wraps. Each tagline ≤ ~70 chars for visual balance.
+
+[[candidates]]
 slug = "copilot-7-layers"
 tagline = "The hidden architecture between your prompt and the answer"
 
-[[featured]]
+[[candidates]]
 slug = "conditional-access-flow"
 tagline = "Every M365 sign-in goes through this five-stage gate"
 
-[[featured]]
+[[candidates]]
 slug = "defender-family"
 tagline = "Microsoft has six products called Defender. Here's who does what"
+
+[[candidates]]
+slug = "zero-trust-pillars"
+tagline = "Six pillars, vendor-neutral framework, Microsoft tools as examples"
+
+[[candidates]]
+slug = "azure-compute-decision"
+tagline = "VM, AKS, Container Apps, Functions, App Service — when to pick what"
+
+[[candidates]]
+slug = "m365-files-where"
+tagline = "Where does that file actually live? Storage by creation context"
+
+[[candidates]]
+slug = "purview-stack"
+tagline = "Seven Purview solutions — which tool covers which problem"
+
+[[candidates]]
+slug = "copilot-vs-chat-vs-studio"
+tagline = "Four products called Copilot. Pick the right one in 30 seconds"
+
+[[candidates]]
+slug = "teams-phone-licensing"
+tagline = "PBX add-on plus three PSTN options — pick your path"
+
+[[candidates]]
+slug = "entra-id-roles"
+tagline = "Admin roles by function, with PIM guidance for highest-impact roles"
+
+[[candidates]]
+slug = "az104-study"
+tagline = "AZ-104 study domains and weights, current April 2026 skills measured"
+
+[[candidates]]
+slug = "copilot-tenant-rollout"
+tagline = "Why doesn't my tenant have feature X yet? Frontier vs Standard vs Deferred"

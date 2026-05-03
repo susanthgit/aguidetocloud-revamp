@@ -1,0 +1,62 @@
+{
+  "id": "tenant-migration-phases",
+  "name": "Tenant-to-Tenant Migration",
+  "palette": ["#92400E", "#7C2D12", "#5B21B6", "#155E75", "#3F6212"],
+  "children": [
+    {
+      "id": "discovery",
+      "name": "1. Discovery",
+      "color": 0,
+      "children": [
+        { "id": "d-users", "name": "User + mailbox inventory", "tag": "Start" },
+        { "id": "d-sp", "name": "SharePoint audit + size" },
+        { "id": "d-apps", "name": "Apps + integrations" },
+        { "id": "d-compliance", "name": "Compliance scope" }
+      ]
+    },
+    {
+      "id": "planning",
+      "name": "2. Planning",
+      "color": 1,
+      "children": [
+        { "id": "p-approach", "name": "Big bang vs phased" },
+        { "id": "p-tenant", "name": "Target tenant ready" },
+        { "id": "p-tool", "name": "Tool selection" },
+        { "id": "p-rollback", "name": "Rollback plan", "tag": "Critical" }
+      ]
+    },
+    {
+      "id": "pilot",
+      "name": "3. Pilot",
+      "color": 2,
+      "children": [
+        { "id": "pi-5pct", "name": "5–10% of users", "tag": "Validate" },
+        { "id": "pi-feedback", "name": "Collect feedback" },
+        { "id": "pi-runbook", "name": "Update runbook" },
+        { "id": "pi-gono", "name": "Go / no-go" }
+      ]
+    },
+    {
+      "id": "prod",
+      "name": "4. Production",
+      "color": 3,
+      "children": [
+        { "id": "pr-waves", "name": "Migrate in waves" },
+        { "id": "pr-mx", "name": "MX / DNS cutover" },
+        { "id": "pr-comms", "name": "User comms cadence" },
+        { "id": "pr-support", "name": "Support hyper-care" }
+      ]
+    },
+    {
+      "id": "post",
+      "name": "5. Post-migration",
+      "color": 4,
+      "children": [
+        { "id": "po-decom", "name": "Decommission source" },
+        { "id": "po-licence", "name": "Reclaim licences" },
+        { "id": "po-docs", "name": "Doc lessons learned" },
+        { "id": "po-bau", "name": "Hand off to BAU" }
+      ]
+    }
+  ]
+}

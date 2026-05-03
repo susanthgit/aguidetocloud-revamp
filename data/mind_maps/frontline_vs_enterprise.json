@@ -1,0 +1,62 @@
+{
+  "id": "frontline-vs-enterprise",
+  "name": "Frontline vs Enterprise",
+  "palette": ["#92400E", "#7C2D12", "#5B21B6", "#155E75", "#3F6212"],
+  "children": [
+    {
+      "id": "f1",
+      "name": "F1 — Lightweight",
+      "color": 0,
+      "children": [
+        { "id": "f1-cost", "name": "$2.25 / user / mo", "tag": "Cheapest" },
+        { "id": "f1-web", "name": "Web Office only" },
+        { "id": "f1-2gb", "name": "2 GB Exchange (no email)" },
+        { "id": "f1-teams", "name": "Teams web/mobile" }
+      ]
+    },
+    {
+      "id": "f3",
+      "name": "F3 — Full Frontline",
+      "color": 1,
+      "children": [
+        { "id": "f3-cost", "name": "$8 / user / mo" },
+        { "id": "f3-mail", "name": "2 GB email + 2 GB OneDrive" },
+        { "id": "f3-web", "name": "Web + mobile Office" },
+        { "id": "f3-shifts", "name": "Shifts, Walkie Talkie", "tag": "Frontline tools" }
+      ]
+    },
+    {
+      "id": "e3",
+      "name": "E3 — Standard Office",
+      "color": 2,
+      "children": [
+        { "id": "e3-cost", "name": "$36 / user / mo" },
+        { "id": "e3-desktop", "name": "Desktop Office apps" },
+        { "id": "e3-50gb", "name": "50 GB email + 1 TB OneDrive" },
+        { "id": "e3-basic-sec", "name": "Basic security" }
+      ]
+    },
+    {
+      "id": "e5",
+      "name": "E5 — Premium Suite",
+      "color": 3,
+      "children": [
+        { "id": "e5-cost", "name": "$57 / user / mo" },
+        { "id": "e5-defender", "name": "Full Defender stack", "tag": "Adv security" },
+        { "id": "e5-purview", "name": "Purview Premium" },
+        { "id": "e5-phone", "name": "Teams Phone Standard" }
+      ]
+    },
+    {
+      "id": "who",
+      "name": "Who's frontline?",
+      "color": 4,
+      "children": [
+        { "id": "w-retail", "name": "Retail / hospitality" },
+        { "id": "w-health", "name": "Healthcare / nurses" },
+        { "id": "w-mfg", "name": "Manufacturing / field" },
+        { "id": "w-rule", "name": "Shared device + shifts" }
+      ]
+    }
+  ]
+}

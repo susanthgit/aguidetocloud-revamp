@@ -34,8 +34,29 @@
     <p class="mm-list-disclosure">Free to view, download as a branded PNG, or share. No sign-up.</p>
   </header>
 
-  {{/* Featured strip — 3 hero cards */}}
-  {{ $featured := (index hugo.Data.mind_maps "featured").featured }}
+  {{/* Featured strip — 3 hero cards, weekly rotation from candidate pool */}}
+  {{ $featuredData := index hugo.Data.mind_maps "featured" }}
+  {{ $featured := slice }}
+  {{ if and $featuredData.pinned (ge (len $featuredData.pinned) 3) }}
+    {{/* Manual override — convert pinned slugs to {slug, tagline} dicts */}}
+    {{ range first 3 $featuredData.pinned }}
+      {{ $featured = $featured | append (dict "slug" . "tagline" "") }}
+    {{ end }}
+  {{ else if $featuredData.candidates }}
+    {{ $pool := $featuredData.candidates }}
+    {{ $n := len $pool }}
+    {{ if ge $n 3 }}
+      {{/* Weekly rotation: (week × 3) mod n gives the start index, then 3 sequential */}}
+      {{ $week := div (sub now.YearDay 1) 7 }}
+      {{ $start := mod (mul $week 3) $n }}
+      {{ range $i, $_ := seq 0 2 }}
+        {{ $idx := mod (add $start $i) $n }}
+        {{ $featured = $featured | append (index $pool $idx) }}
+      {{ end }}
+    {{ else }}
+      {{ $featured = $pool }}
+    {{ end }}
+  {{ end }}
   {{ if $featured }}
   <div class="mm-featured" aria-label="Featured mind maps">
     {{ range $featured }}

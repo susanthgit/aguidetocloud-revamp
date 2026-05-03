@@ -1,0 +1,60 @@
+{
+  "id": "cert-renewal-timeline",
+  "name": "MS Cert Renewal Cycle",
+  "palette": ["#2563EB", "#059669", "#D97706", "#7C3AED", "#DC2626"],
+  "children": [
+    {
+      "id": "expire",
+      "name": "When they expire",
+      "color": 0,
+      "children": [
+        { "id": "ex-role", "name": "Role-based: 1 year", "tag": "Annual" },
+        { "id": "ex-special", "name": "Specialty: 1 year" },
+        { "id": "ex-fund", "name": "Fundamentals: never" },
+        { "id": "ex-mta", "name": "MTA: legacy / no renewal" }
+      ]
+    },
+    {
+      "id": "window",
+      "name": "Renewal window",
+      "color": 1,
+      "children": [
+        { "id": "w-six", "name": "Open 6 months before", "tag": "Eligible" },
+        { "id": "w-email", "name": "Email reminders" },
+        { "id": "w-buffer", "name": "Renew well before" },
+        { "id": "w-utc", "name": "UTC dates / times" }
+      ]
+    },
+    {
+      "id": "assess",
+      "name": "Renewal assessment",
+      "color": 2,
+      "children": [
+        { "id": "a-free", "name": "Free on Microsoft Learn", "tag": "Free" },
+        { "id": "a-online", "name": "Online, unproctored" },
+        { "id": "a-time", "name": "About 45 minutes" },
+        { "id": "a-updates", "name": "Covers exam updates only" }
+      ]
+    },
+    {
+      "id": "retake",
+      "name": "If you fail",
+      "color": 3,
+      "children": [
+        { "id": "r-instant", "name": "Instant first retake" },
+        { "id": "r-24h", "name": "24h wait after 2nd" },
+        { "id": "r-unlimited", "name": "Unlimited retakes" }
+      ]
+    },
+    {
+      "id": "after",
+      "name": "After you pass",
+      "color": 4,
+      "children": [
+        { "id": "af-update", "name": "Profile updates instantly" },
+        { "id": "af-extend", "name": "+1 year from previous expiry" },
+        { "id": "af-share", "name": "Re-share badge" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "microsoft-ai-stack",
+  "name": "Microsoft AI Stack",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981"],
+  "children": [
+    {
+      "id": "models",
+      "name": "1. Models layer",
+      "color": 0,
+      "children": [
+        { "id": "m-gpt", "name": "OpenAI GPT-4 / GPT-4o" },
+        { "id": "m-claude", "name": "Anthropic Claude" },
+        { "id": "m-llama", "name": "Llama / Mistral" },
+        { "id": "m-private", "name": "Azure OpenAI in tenant", "tag": "Private" }
+      ]
+    },
+    {
+      "id": "platform",
+      "name": "2. Platform layer",
+      "color": 1,
+      "children": [
+        { "id": "p-foundry", "name": "Microsoft Foundry", "tag": "Build" },
+        { "id": "p-azureai", "name": "Azure AI Services" },
+        { "id": "p-search", "name": "Azure AI Search" },
+        { "id": "p-eval", "name": "Eval + safety tools" }
+      ]
+    },
+    {
+      "id": "apps",
+      "name": "3. App layer",
+      "color": 2,
+      "children": [
+        { "id": "a-m365", "name": "M365 Copilot", "tag": "Paid" },
+        { "id": "a-chat", "name": "Copilot Chat (free)" },
+        { "id": "a-github", "name": "GitHub Copilot" },
+        { "id": "a-security", "name": "Security Copilot" },
+        { "id": "a-sales", "name": "Sales / Service Copilot" }
+      ]
+    },
+    {
+      "id": "agents",
+      "name": "4. Agent layer",
+      "color": 3,
+      "children": [
+        { "id": "ag-builder", "name": "Agent Builder (in M365)" },
+        { "id": "ag-studio", "name": "Copilot Studio", "tag": "Maker" },
+        { "id": "ag-foundry", "name": "Foundry Agent Service" },
+        { "id": "ag-365", "name": "Agent 365 governance" }
+      ]
+    },
+    {
+      "id": "ground",
+      "name": "Cross-cutting",
+      "color": 4,
+      "children": [
+        { "id": "c-graph", "name": "Microsoft Graph (data)" },
+        { "id": "c-purview", "name": "Purview (governance)" },
+        { "id": "c-entra", "name": "Entra (identity)" },
+        { "id": "c-rai", "name": "Responsible AI" }
+      ]
+    }
+  ]
+}

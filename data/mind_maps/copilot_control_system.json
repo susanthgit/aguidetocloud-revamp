@@ -1,0 +1,50 @@
+{
+  "id": "copilot-control-system",
+  "name": "Copilot Control System",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6"],
+  "children": [
+    {
+      "id": "security",
+      "name": "Pillar 1 — Security",
+      "color": 0,
+      "children": [
+        { "id": "se-purview", "name": "Purview labels + DLP", "tag": "Data" },
+        { "id": "se-perms", "name": "SharePoint perms hygiene" },
+        { "id": "se-restrict", "name": "Restricted SharePoint Search" },
+        { "id": "se-audit", "name": "Audit + eDiscovery" }
+      ]
+    },
+    {
+      "id": "manage",
+      "name": "Pillar 2 — Manage",
+      "color": 1,
+      "children": [
+        { "id": "m-rollout", "name": "Phased rollout policies", "tag": "Deploy" },
+        { "id": "m-tenant", "name": "Frontier / Standard / Deferred" },
+        { "id": "m-extensions", "name": "Agent + plugin allow-list" },
+        { "id": "m-ai-ag", "name": "AI Admin in Entra" }
+      ]
+    },
+    {
+      "id": "measure",
+      "name": "Pillar 3 — Measure",
+      "color": 2,
+      "children": [
+        { "id": "me-analytics", "name": "Copilot Analytics", "tag": "Adoption" },
+        { "id": "me-viva", "name": "Viva Insights tie-in" },
+        { "id": "me-licence", "name": "Licence usage report" },
+        { "id": "me-feedback", "name": "End-user feedback" }
+      ]
+    },
+    {
+      "id": "agents",
+      "name": "Plus Agent 365",
+      "color": 3,
+      "children": [
+        { "id": "ag-govern", "name": "Agent governance layer", "tag": "Adjacent" },
+        { "id": "ag-discover", "name": "Discover shadow agents" },
+        { "id": "ag-lifecycle", "name": "Lifecycle + retirement" }
+      ]
+    }
+  ]
+}
