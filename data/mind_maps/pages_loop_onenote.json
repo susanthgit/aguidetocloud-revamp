@@ -1,0 +1,51 @@
+{
+  "id": "pages-loop-onenote",
+  "name": "Pages, Loop, OneNote, Word — Pick One",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6"],
+  "children": [
+    {
+      "id": "copilotpages",
+      "name": "Copilot Pages",
+      "color": 0,
+      "children": [
+        { "id": "cp-ai", "name": "AI-first canvas", "tag": "From Copilot" },
+        { "id": "cp-iterate", "name": "Iterate the AI answer" },
+        { "id": "cp-share", "name": "Share with team" },
+        { "id": "cp-storage", "name": "Stored in SP Embedded" }
+      ]
+    },
+    {
+      "id": "looppages",
+      "name": "Loop pages",
+      "color": 1,
+      "children": [
+        { "id": "lp-collab", "name": "Real-time collab", "tag": "From Loop app" },
+        { "id": "lp-components", "name": "Loop components inside" },
+        { "id": "lp-blank", "name": "Start blank, build together" },
+        { "id": "lp-storage", "name": "Stored in SP Embedded" }
+      ]
+    },
+    {
+      "id": "onenote",
+      "name": "OneNote",
+      "color": 2,
+      "children": [
+        { "id": "on-personal", "name": "Personal notes", "tag": "Notebook" },
+        { "id": "on-ink", "name": "Handwriting + ink" },
+        { "id": "on-hierarchy", "name": "Sections + pages" },
+        { "id": "on-edu", "name": "Strong in education" }
+      ]
+    },
+    {
+      "id": "word",
+      "name": "Word",
+      "color": 3,
+      "children": [
+        { "id": "w-formal", "name": "Formal documents", "tag": "Print" },
+        { "id": "w-track", "name": "Track changes / redline" },
+        { "id": "w-layout", "name": "Strict page layout" },
+        { "id": "w-mail", "name": "Mail merge / templates" }
+      ]
+    }
+  ]
+}

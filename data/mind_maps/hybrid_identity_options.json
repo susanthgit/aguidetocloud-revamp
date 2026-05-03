@@ -1,0 +1,61 @@
+{
+  "id": "hybrid-identity-options",
+  "name": "Hybrid Identity — Pick a Path",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C"],
+  "children": [
+    {
+      "id": "cloud",
+      "name": "Cloud-only?",
+      "color": 0,
+      "children": [
+        { "id": "c-greenfield", "name": "→ No sync needed", "tag": "Easiest" },
+        { "id": "c-newco", "name": "Greenfield orgs" },
+        { "id": "c-cloudonly", "name": "M365 + Azure only" }
+      ]
+    },
+    {
+      "id": "connect",
+      "name": "Have on-prem AD?",
+      "color": 1,
+      "children": [
+        { "id": "co-cloudsync", "name": "→ Cloud Sync (preferred)", "tag": "Modern" },
+        { "id": "co-light", "name": "Lightweight, agent-based" },
+        { "id": "co-multif", "name": "Multi-forest from one tenant" },
+        { "id": "co-feature", "name": "Most workloads supported" }
+      ]
+    },
+    {
+      "id": "legacy",
+      "name": "Need legacy features?",
+      "color": 2,
+      "children": [
+        { "id": "l-connect", "name": "→ Entra Connect Sync (legacy)" },
+        { "id": "l-pwh", "name": "Pass-through auth + PHS" },
+        { "id": "l-deprecation", "name": "Long-tail, deprecation looming" },
+        { "id": "l-migrate", "name": "Plan migration to Cloud Sync" }
+      ]
+    },
+    {
+      "id": "federation",
+      "name": "Need federation?",
+      "color": 3,
+      "children": [
+        { "id": "f-adfs", "name": "→ AD FS (rarely now)", "tag": "Last resort" },
+        { "id": "f-mfa3p", "name": "3rd-party MFA / SSO requirement" },
+        { "id": "f-sunset", "name": "Sunset by 2027" },
+        { "id": "f-modern", "name": "Move to Entra MFA + CA" }
+      ]
+    },
+    {
+      "id": "rules",
+      "name": "Rules of thumb 2026",
+      "color": 4,
+      "children": [
+        { "id": "r-cloud", "name": "Greenfield → cloud-only" },
+        { "id": "r-cloudsync", "name": "Have AD → Cloud Sync" },
+        { "id": "r-no-adfs", "name": "Avoid new AD FS deployments" },
+        { "id": "r-end-game", "name": "End-game = cloud-only" }
+      ]
+    }
+  ]
+}

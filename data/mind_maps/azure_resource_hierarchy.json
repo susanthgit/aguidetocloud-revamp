@@ -1,0 +1,59 @@
+{
+  "id": "azure-resource-hierarchy",
+  "name": "Azure Resource Hierarchy",
+  "palette": ["#2563EB", "#059669", "#D97706", "#7C3AED", "#DC2626"],
+  "children": [
+    {
+      "id": "tenant",
+      "name": "1. Tenant (root)",
+      "color": 0,
+      "children": [
+        { "id": "t-entra", "name": "Microsoft Entra tenant", "tag": "Identity" },
+        { "id": "t-billing", "name": "Billing account ties here" },
+        { "id": "t-rootmg", "name": "Root Management Group" }
+      ]
+    },
+    {
+      "id": "mg",
+      "name": "2. Management Groups",
+      "color": 1,
+      "children": [
+        { "id": "m-tree", "name": "Tree, max 6 levels deep" },
+        { "id": "m-policy", "name": "Apply Policy + RBAC at scale", "tag": "Inherits" },
+        { "id": "m-org", "name": "Org / BU / Env structure" }
+      ]
+    },
+    {
+      "id": "sub",
+      "name": "3. Subscriptions",
+      "color": 2,
+      "children": [
+        { "id": "s-billing", "name": "Billing boundary" },
+        { "id": "s-quota", "name": "Quota / limit boundary" },
+        { "id": "s-prod", "name": "Per env (Prod / Dev / Test)" },
+        { "id": "s-mca", "name": "MCA = invoice sections" }
+      ]
+    },
+    {
+      "id": "rg",
+      "name": "4. Resource Groups",
+      "color": 3,
+      "children": [
+        { "id": "r-life", "name": "Lifecycle boundary" },
+        { "id": "r-region", "name": "Region tag (resources can vary)" },
+        { "id": "r-rbac", "name": "RBAC scope point", "tag": "Common" },
+        { "id": "r-locks", "name": "Resource locks here" }
+      ]
+    },
+    {
+      "id": "resource",
+      "name": "5. Resources",
+      "color": 4,
+      "children": [
+        { "id": "re-vm", "name": "VMs, storage, DBs..." },
+        { "id": "re-tags", "name": "Tags inherit from RG (with policy)" },
+        { "id": "re-link", "name": "Linked but not nested" }
+      ]
+    }
+  ]
+}

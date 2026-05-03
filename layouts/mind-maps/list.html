@@ -88,6 +88,34 @@
   </div>
   {{ end }}
 
+  {{/* Curated collections — themed bundles */}}
+  {{ $collections := (index hugo.Data.mind_maps "collections").collections }}
+  {{ if $collections }}
+  <section class="mm-collections" aria-label="Curated collections">
+    <div class="mm-collections-header">
+      <h2 class="mm-collections-title">Curated collections</h2>
+      <p class="mm-collections-lede">Themed bundles for specific journeys — click to filter the list.</p>
+    </div>
+    <div class="mm-collections-grid">
+      {{ range $collections }}
+      <button class="mm-collection-tile" data-collection="{{ .id }}" data-slugs="{{ delimit .slugs "," }}" type="button">
+        <span class="mm-collection-emoji" aria-hidden="true">{{ .emoji }}</span>
+        <span class="mm-collection-name">{{ .name }}</span>
+        <span class="mm-collection-count">{{ len .slugs }} maps</span>
+        <span class="mm-collection-tagline">{{ .tagline }}</span>
+      </button>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* Active collection chip — visible only when a collection is selected */}}
+  <div class="mm-active-collection" id="mm-active-collection" hidden>
+    <span class="mm-active-collection-label">Showing collection:</span>
+    <span class="mm-active-collection-name" id="mm-active-collection-name"></span>
+    <button class="mm-active-collection-clear" id="mm-active-collection-clear" type="button" aria-label="Clear collection filter">× Clear</button>
+  </div>
+
   {{/* Search + view-mode toolbar */}}
   <div class="mm-toolbar2">
     <div class="mm-search-wrap">
@@ -169,7 +197,7 @@
         {{ $fmt := .Params.format | default "" }}
         {{ $searchHaystack := printf "%s %s %s %s %s %s" .Title (.Params.category | default "") $fmt (delimit $branchNames " ") (delimit $leafNames " ") (.Description | default "") | lower }}
 
-        <li class="mm-list-row" data-cat="{{ .Params.category | default "general" }}" data-format="{{ $fmt }}" data-search="{{ $searchHaystack }}">
+        <li class="mm-list-row" data-slug="{{ .File.BaseFileName }}" data-cat="{{ .Params.category | default "general" }}" data-format="{{ $fmt }}" data-search="{{ $searchHaystack }}">
           <a href="{{ .RelPermalink }}" class="mm-list-row-link">
             <span class="mm-list-row-dot" style="background:{{ $dotColor }}" aria-hidden="true"></span>
             <span class="mm-list-row-main">
@@ -227,6 +255,10 @@
   var catTabs = Array.from(document.querySelectorAll('.mm-list-tab'));
   var fmtChips = Array.from(document.querySelectorAll('.mm-format-chip'));
   var viewBtns = Array.from(document.querySelectorAll('.mm-view-btn'));
+  var collectionTiles = Array.from(document.querySelectorAll('.mm-collection-tile'));
+  var activeCollectionEl = document.getElementById('mm-active-collection');
+  var activeCollectionName = document.getElementById('mm-active-collection-name');
+  var activeCollectionClear = document.getElementById('mm-active-collection-clear');
   var searchInput = document.getElementById('mm-search-input');
   var searchClear = document.getElementById('mm-search-clear');
   var emptyState = document.getElementById('mm-list-empty');
@@ -236,6 +268,9 @@
     cat: 'all',
     format: 'all',
     search: '',
+    collection: null,         /* string id or null */
+    collectionSlugs: null,    /* Set of slugs in active collection */
+    collectionName: '',
     view: localStorage.getItem(STORAGE_KEY) || 'list'
   };
 
@@ -254,10 +289,12 @@
       var rowCat = r.getAttribute('data-cat') || '';
       var rowFmt = r.getAttribute('data-format') || '';
       var rowSearch = r.getAttribute('data-search') || '';
+      var rowSlug = r.getAttribute('data-slug') || '';
       var matchCat = state.cat === 'all' || rowCat === state.cat;
       var matchFmt = state.format === 'all' || rowFmt === state.format;
       var matchQ = !q || rowSearch.indexOf(q) !== -1;
-      var visible = matchCat && matchFmt && matchQ;
+      var matchColl = !state.collectionSlugs || state.collectionSlugs.has(rowSlug);
+      var visible = matchCat && matchFmt && matchQ && matchColl;
       r.style.display = visible ? '' : 'none';
       if (visible) visibleCount++;
     });
@@ -266,6 +303,32 @@
       s.style.display = anyVisible ? '' : 'none';
     });
     emptyState.hidden = visibleCount > 0;
+    /* Sync active-collection chip */
+    if (activeCollectionEl) {
+      activeCollectionEl.hidden = !state.collection;
+      if (state.collection && activeCollectionName) {
+        activeCollectionName.textContent = state.collectionName;
+      }
+    }
+  }
+
+  function setCollection(id, slugs, name) {
+    state.collection = id;
+    state.collectionSlugs = slugs ? new Set(slugs) : null;
+    state.collectionName = name || '';
+    collectionTiles.forEach(function (t) {
+      t.classList.toggle('active', t.getAttribute('data-collection') === id);
+    });
+    applyFilters();
+    /* Scroll list into view so the user sees the filtered result */
+    if (id) {
+      var listEl = document.querySelector('.mm-list-section');
+      if (listEl) listEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function clearCollection() {
+    setCollection(null, null, '');
   }
 
   /* Wire view toggle */
@@ -293,6 +356,25 @@
     });
   });
 
+  /* Wire collection tiles — click toggles, second click clears */
+  collectionTiles.forEach(function (t) {
+    t.addEventListener('click', function () {
+      var id = t.getAttribute('data-collection');
+      if (state.collection === id) {
+        clearCollection();
+      } else {
+        var slugs = (t.getAttribute('data-slugs') || '').split(',').filter(Boolean);
+        var name = t.querySelector('.mm-collection-name')?.textContent.trim() || id;
+        setCollection(id, slugs, name);
+      }
+    });
+  });
+
+  /* Wire active-collection clear button */
+  if (activeCollectionClear) {
+    activeCollectionClear.addEventListener('click', clearCollection);
+  }
+
   /* Wire search */
   if (searchInput) {
     searchInput.addEventListener('input', function () {
@@ -314,6 +396,7 @@
     emptyClear.addEventListener('click', function () {
       catTabs[0].click();
       fmtChips[0].click();
+      clearCollection();
       if (searchInput) { searchInput.value = ''; state.search = ''; searchClear.hidden = true; applyFilters(); }
     });
   }

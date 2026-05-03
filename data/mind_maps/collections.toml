@@ -1,0 +1,92 @@
+# Mind Maps gallery — Curated Collections
+#
+# How it works:
+# - Each collection is a themed bundle of map slugs
+# - Rendered as tiles below the Featured strip (above search + tabs)
+# - Click a tile → filter the gallery to just those maps
+# - Click again or × to clear
+#
+# Each collection: id (URL-safe slug), name, emoji, tagline, slugs[]
+# Edit / reorder / add — Hugo rebuilds on save.
+
+[[collections]]
+id = "crisis-playbooks"
+name = "Crisis Playbooks"
+emoji = "🚨"
+tagline = "Five SOC incident-response maps for when things break"
+slugs = [
+  "phishing-response-playbook",
+  "ransomware-response-playbook",
+  "data-leak-response-playbook",
+  "insider-threat-response",
+  "service-outage-runbook",
+]
+
+[[collections]]
+id = "az104-study-pack"
+name = "AZ-104 Study Pack"
+emoji = "📘"
+tagline = "Visual cheat sheets for Azure Administrator"
+slugs = [
+  "az104-study",
+  "azure-resource-hierarchy",
+  "azure-compute-decision",
+  "azure-networking-blocks",
+  "azure-storage-decision",
+  "azure-database-options",
+  "cert-renewal-timeline",
+]
+
+[[collections]]
+id = "modern-soc"
+name = "Modern SOC"
+emoji = "🛡️"
+tagline = "Build a defensible Microsoft security stack"
+slugs = [
+  "defender-family",
+  "defender-for-cloud",
+  "microsoft-sentinel",
+  "conditional-access-flow",
+  "ca-canonical-policies",
+  "mfa-methods",
+  "zero-trust-pillars",
+]
+
+[[collections]]
+id = "copilot-architecture"
+name = "Copilot Architecture"
+emoji = "🧩"
+tagline = "How M365 Copilot actually works under the hood"
+slugs = [
+  "copilot-7-layers",
+  "copilot-tenant-rollout",
+  "copilot-control-system",
+  "microsoft-ai-stack",
+  "agent-365",
+]
+
+[[collections]]
+id = "ai-engineer-track"
+name = "AI Engineer Track"
+emoji = "🤖"
+tagline = "Designing and operating AI agents at production scale"
+slugs = [
+  "microsoft-ai-stack",
+  "ai-agent-patterns",
+  "ai-cost-tactics",
+  "agent-365",
+]
+
+[[collections]]
+id = "licensing-explainer"
+name = "Licensing Explainer"
+emoji = "💼"
+tagline = "Pick the right Microsoft 365 plan without the headache"
+slugs = [
+  "e3-vs-e5",
+  "business-vs-enterprise",
+  "frontline-vs-enterprise",
+  "m365-e7",
+  "m365-addons",
+  "teams-phone-licensing",
+]

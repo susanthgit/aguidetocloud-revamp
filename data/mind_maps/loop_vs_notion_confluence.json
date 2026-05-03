@@ -1,0 +1,54 @@
+{
+  "id": "loop-vs-notion-confluence",
+  "name": "Loop vs Notion vs Confluence",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6"],
+  "children": [
+    {
+      "id": "loop",
+      "name": "Microsoft Loop",
+      "color": 0,
+      "children": [
+        { "id": "l-cost", "name": "Included in M365", "tag": "Free if M365" },
+        { "id": "l-real", "name": "Real-time co-edit native" },
+        { "id": "l-embed", "name": "Embeds in Teams, Outlook" },
+        { "id": "l-purview", "name": "Purview governance" },
+        { "id": "l-young", "name": "Newer, fewer features" }
+      ]
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "color": 1,
+      "children": [
+        { "id": "n-cost", "name": "Free tier + paid plans" },
+        { "id": "n-flex", "name": "Most flexible blocks" },
+        { "id": "n-db", "name": "Database-as-document", "tag": "Power" },
+        { "id": "n-ai", "name": "Notion AI add-on" },
+        { "id": "n-saas", "name": "Standalone SaaS" }
+      ]
+    },
+    {
+      "id": "confluence",
+      "name": "Atlassian Confluence",
+      "color": 2,
+      "children": [
+        { "id": "c-cost", "name": "Per-seat paid" },
+        { "id": "c-mature", "name": "Most mature, enterprise-heavy" },
+        { "id": "c-jira", "name": "Tight Jira integration", "tag": "Atlassian" },
+        { "id": "c-template", "name": "Heavy template library" },
+        { "id": "c-hierarchy", "name": "Strong page hierarchy" }
+      ]
+    },
+    {
+      "id": "pick",
+      "name": "Pick by",
+      "color": 3,
+      "children": [
+        { "id": "p-m365", "name": "Already have M365 → Loop" },
+        { "id": "p-flex", "name": "Need flexibility → Notion" },
+        { "id": "p-jira", "name": "Have Jira → Confluence" },
+        { "id": "p-mix", "name": "Many orgs run a mix" }
+      ]
+    }
+  ]
+}

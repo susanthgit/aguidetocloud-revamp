@@ -1,0 +1,72 @@
+{
+  "id": "microsoft-sentinel",
+  "name": "Microsoft Sentinel",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C", "#6B21A8"],
+  "children": [
+    {
+      "id": "what",
+      "name": "What it is",
+      "color": 0,
+      "children": [
+        { "id": "w-siem", "name": "SIEM (logs + correlation)", "tag": "Cloud SIEM" },
+        { "id": "w-soar", "name": "SOAR (automation)" },
+        { "id": "w-cloud", "name": "Cloud-native, scales auto" },
+        { "id": "w-azure", "name": "Built on Log Analytics" }
+      ]
+    },
+    {
+      "id": "ingest",
+      "name": "Data connectors",
+      "color": 1,
+      "children": [
+        { "id": "in-microsoft", "name": "M365, Defender, Entra (free)" },
+        { "id": "in-azure", "name": "Azure resources native" },
+        { "id": "in-cloud", "name": "AWS / GCP connectors" },
+        { "id": "in-onprem", "name": "Syslog / CEF for legacy" }
+      ]
+    },
+    {
+      "id": "detect",
+      "name": "Analytics rules",
+      "color": 2,
+      "children": [
+        { "id": "d-builtin", "name": "Built-in templates", "tag": "Quick win" },
+        { "id": "d-mitre", "name": "MITRE ATT&CK mapping" },
+        { "id": "d-fusion", "name": "Fusion (ML correlation)" },
+        { "id": "d-custom", "name": "Custom KQL rules" }
+      ]
+    },
+    {
+      "id": "investigate",
+      "name": "Hunting + investigate",
+      "color": 3,
+      "children": [
+        { "id": "i-hunt", "name": "KQL hunting queries" },
+        { "id": "i-graph", "name": "Investigation graph" },
+        { "id": "i-bookmarks", "name": "Bookmarks for findings" },
+        { "id": "i-notebooks", "name": "Jupyter notebooks" }
+      ]
+    },
+    {
+      "id": "respond",
+      "name": "Automation",
+      "color": 4,
+      "children": [
+        { "id": "r-playbook", "name": "Logic Apps playbooks" },
+        { "id": "r-auto", "name": "Auto-disable user" },
+        { "id": "r-ticket", "name": "Open ticket in ITSM" },
+        { "id": "r-block", "name": "Block IPs on firewall" }
+      ]
+    },
+    {
+      "id": "vs-xdr",
+      "name": "vs Defender XDR",
+      "color": 5,
+      "children": [
+        { "id": "v-xdr", "name": "XDR = M365 stack only" },
+        { "id": "v-sent", "name": "Sentinel = everything", "tag": "SIEM" },
+        { "id": "v-both", "name": "Most use both together" }
+      ]
+    }
+  ]
+}
