@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 03 May 2026 15:03:45 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2026 17:05:39 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Defender XDR] Some users may receive false positive alerts from Microsoft Defender Antivirus for specific certificates</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1299600</link>
+      <description>[Microsoft Defender XDR] Users may receive false positive alerts from Defender Antivirus and see legitimate files or certificates quarantined.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">DZ1299600</guid>
+      <pubDate>Sun, 03 May 2026 16:11:06 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Some admins may be unable to remove blocked users from the Restricted entities page in Microsoft 365 suite</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1298081</link>
@@ -448,15 +457,6 @@ The issue initially began with impact to a subset of custom</description>
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1266855</guid>
       <pubDate>Tue, 31 Mar 2026 03:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Purview] We’ve detected an issue with required subscriptions for Microsoft Purview inline data protections in Edge for Business</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1266046</link>
-      <description>[Microsoft Purview] If not addressed, collection and Data Loss Prevention policies for user data uploads to unmanaged apps may not work.</description>
-      <category>Microsoft Purview</category>
-      <category>investigationSuspended</category>
-      <guid isPermaLink="false">MP1266046</guid>
-      <pubDate>Mon, 30 Mar 2026 22:21:33 +0000</pubDate>
     </item>
   </channel>
 </rss>
