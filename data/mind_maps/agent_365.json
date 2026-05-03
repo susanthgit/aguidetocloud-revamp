@@ -1,0 +1,73 @@
+{
+  "id": "agent-365",
+  "name": "Agent 365 — Govern Your AI Agents",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C", "#6B21A8"],
+  "children": [
+    {
+      "id": "needs",
+      "name": "Every agent needs",
+      "color": 0,
+      "children": [
+        { "id": "n-id", "name": "An identity (badge)", "tag": "Like a hire" },
+        { "id": "n-rules", "name": "Data rules (what it can see)" },
+        { "id": "n-monitor", "name": "Monitoring (what it does)" },
+        { "id": "n-lifecycle", "name": "Lifecycle (when to retire)" }
+      ]
+    },
+    {
+      "id": "entra",
+      "name": "Entra Agent ID",
+      "color": 1,
+      "children": [
+        { "id": "e-register", "name": "Register all agents", "tag": "No shadows" },
+        { "id": "e-sponsor", "name": "Sponsor (human owner)" },
+        { "id": "e-lifecycle", "name": "Lifecycle automation" },
+        { "id": "e-access", "name": "Access packages (time-limited)" }
+      ]
+    },
+    {
+      "id": "purview",
+      "name": "Purview for Agents",
+      "color": 2,
+      "children": [
+        { "id": "p-dlp", "name": "DLP applies to agents" },
+        { "id": "p-labels", "name": "Sensitivity labels honoured" },
+        { "id": "p-comms", "name": "Comms compliance scope" },
+        { "id": "p-audit", "name": "Audit every prompt + tool call" }
+      ]
+    },
+    {
+      "id": "defender",
+      "name": "Defender for Agents",
+      "color": 3,
+      "children": [
+        { "id": "d-inventory", "name": "Agent inventory" },
+        { "id": "d-attack", "name": "Attack path analysis" },
+        { "id": "d-realtime", "name": "Real-time threat protection", "tag": "Live" },
+        { "id": "d-kql", "name": "KQL hunting for agents" }
+      ]
+    },
+    {
+      "id": "admin",
+      "name": "M365 Admin Center",
+      "color": 4,
+      "children": [
+        { "id": "ad-portal", "name": "Single starting point" },
+        { "id": "ad-builder", "name": "Agent Builder (M365)" },
+        { "id": "ad-studio", "name": "Copilot Studio (makers)" },
+        { "id": "ad-foundry", "name": "Foundry agents (devs)" }
+      ]
+    },
+    {
+      "id": "scenarios",
+      "name": "When you need it",
+      "color": 5,
+      "children": [
+        { "id": "s-many", "name": "Many makers building agents" },
+        { "id": "s-shadow", "name": "Shadow agents popping up" },
+        { "id": "s-data", "name": "Agents touch sensitive data" },
+        { "id": "s-regulated", "name": "Regulated industry" }
+      ]
+    }
+  ]
+}

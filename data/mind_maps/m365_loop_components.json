@@ -1,0 +1,62 @@
+{
+  "id": "m365-loop-components",
+  "name": "Microsoft Loop Components",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981"],
+  "children": [
+    {
+      "id": "components",
+      "name": "Loop components",
+      "color": 0,
+      "children": [
+        { "id": "co-table", "name": "Table" },
+        { "id": "co-task", "name": "Task list" },
+        { "id": "co-checklist", "name": "Checklist" },
+        { "id": "co-text", "name": "Text / poll / agenda" }
+      ]
+    },
+    {
+      "id": "embed",
+      "name": "Where they live",
+      "color": 1,
+      "children": [
+        { "id": "e-teams", "name": "In Teams chat / meeting" },
+        { "id": "e-outlook", "name": "In Outlook email" },
+        { "id": "e-onenote", "name": "In OneNote / Whiteboard" },
+        { "id": "e-loopapp", "name": "In Loop app workspaces" }
+      ]
+    },
+    {
+      "id": "pages",
+      "name": "Loop pages + workspaces",
+      "color": 2,
+      "children": [
+        { "id": "p-pages", "name": "Pages = collab docs" },
+        { "id": "p-work", "name": "Workspaces = projects", "tag": "Loop app" },
+        { "id": "p-share", "name": "Share with team" },
+        { "id": "p-copilot", "name": "Copilot Pages on top" }
+      ]
+    },
+    {
+      "id": "storage",
+      "name": "Where data lives",
+      "color": 3,
+      "children": [
+        { "id": "s-loopapp", "name": "Loop app → SP Embedded", "tag": "New container" },
+        { "id": "s-teams", "name": "Teams chat → SP Embedded" },
+        { "id": "s-outlook", "name": "Outlook/OneNote → OneDrive" },
+        { "id": "s-channel", "name": "Teams channel → SP site" }
+      ]
+    },
+    {
+      "id": "govern",
+      "name": "Governance",
+      "color": 4,
+      "children": [
+        { "id": "g-perms", "name": "Permissions follow container" },
+        { "id": "g-quota", "name": "Counts vs SP storage quota" },
+        { "id": "g-purview", "name": "Purview labels supported" },
+        { "id": "g-disable", "name": "Can disable per tenant" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "zero-trust-implementation-order",
+  "name": "Zero Trust — Where to Start",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C"],
+  "children": [
+    {
+      "id": "stage1",
+      "name": "Stage 1 — Identity first",
+      "color": 0,
+      "children": [
+        { "id": "s1-mfa", "name": "MFA for everyone", "tag": "Day 1" },
+        { "id": "s1-block", "name": "Block legacy auth" },
+        { "id": "s1-ca", "name": "Baseline CA policies" },
+        { "id": "s1-pim", "name": "PIM for admins" }
+      ]
+    },
+    {
+      "id": "stage2",
+      "name": "Stage 2 — Endpoints + Apps",
+      "color": 1,
+      "children": [
+        { "id": "s2-compliant", "name": "Require compliant device" },
+        { "id": "s2-intune", "name": "Intune enrollment" },
+        { "id": "s2-mam", "name": "MAM for BYOD" },
+        { "id": "s2-cae", "name": "CAE on for fast revoke" }
+      ]
+    },
+    {
+      "id": "stage3",
+      "name": "Stage 3 — Data",
+      "color": 2,
+      "children": [
+        { "id": "s3-labels", "name": "Sensitivity labels rolled out" },
+        { "id": "s3-dlp", "name": "DLP across channels", "tag": "Email + endpoint" },
+        { "id": "s3-restrict", "name": "Restricted SP Search (Copilot)" },
+        { "id": "s3-records", "name": "Records / retention" }
+      ]
+    },
+    {
+      "id": "stage4",
+      "name": "Stage 4 — Network + Workloads",
+      "color": 3,
+      "children": [
+        { "id": "s4-private", "name": "Private endpoints / Private Link" },
+        { "id": "s4-segment", "name": "Microsegmentation" },
+        { "id": "s4-defender", "name": "Defender for Cloud" },
+        { "id": "s4-jit", "name": "Just-in-time + PAW" }
+      ]
+    },
+    {
+      "id": "ongoing",
+      "name": "Ongoing (every stage)",
+      "color": 4,
+      "children": [
+        { "id": "o-monitor", "name": "Visibility + analytics" },
+        { "id": "o-auto", "name": "Automation + orchestration", "tag": "SOAR" },
+        { "id": "o-govern", "name": "Governance reviews" },
+        { "id": "o-mature", "name": "Mature → Advanced → Optimal" }
+      ]
+    }
+  ]
+}

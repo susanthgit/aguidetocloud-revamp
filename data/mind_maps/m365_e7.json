@@ -1,0 +1,63 @@
+{
+  "id": "m365-e7",
+  "name": "Microsoft 365 E7 Frontier Suite",
+  "palette": ["#92400E", "#7C2D12", "#5B21B6", "#155E75", "#3F6212"],
+  "children": [
+    {
+      "id": "e5",
+      "name": "1. M365 E5 (foundation)",
+      "color": 0,
+      "children": [
+        { "id": "e-office", "name": "Office apps + cloud" },
+        { "id": "e-defender", "name": "Defender suite" },
+        { "id": "e-purview", "name": "Purview Premium" },
+        { "id": "e-intune", "name": "Intune + Phone" }
+      ]
+    },
+    {
+      "id": "copilot",
+      "name": "2. M365 Copilot",
+      "color": 1,
+      "children": [
+        { "id": "c-apps", "name": "In Word/Excel/Teams/Outlook" },
+        { "id": "c-chat", "name": "Copilot Chat" },
+        { "id": "c-builder", "name": "Agent Builder" },
+        { "id": "c-saved", "name": "Saves $30/u/mo add-on", "tag": "Bundle" }
+      ]
+    },
+    {
+      "id": "entra",
+      "name": "3. Entra Suite (full)",
+      "color": 2,
+      "children": [
+        { "id": "en-p2", "name": "Entra ID P2 + PIM" },
+        { "id": "en-internet", "name": "Internet Access" },
+        { "id": "en-private", "name": "Private Access (ZTNA)" },
+        { "id": "en-govern", "name": "ID Governance" },
+        { "id": "en-saved", "name": "Saves $12/u/mo", "tag": "Bundle" }
+      ]
+    },
+    {
+      "id": "agent",
+      "name": "4. Agent 365 (the reason)",
+      "color": 3,
+      "children": [
+        { "id": "ag-id", "name": "Entra Agent ID" },
+        { "id": "ag-purview", "name": "Purview for agents" },
+        { "id": "ag-defender", "name": "Defender for agents" },
+        { "id": "ag-only", "name": "Only via E7 today", "tag": "Exclusive" }
+      ]
+    },
+    {
+      "id": "vs",
+      "name": "vs E3 / E5",
+      "color": 4,
+      "children": [
+        { "id": "v-e3", "name": "E3 — $39/u/mo" },
+        { "id": "v-e5", "name": "E5 — $60/u/mo" },
+        { "id": "v-e7", "name": "E7 — $99/u/mo", "tag": "List" },
+        { "id": "v-bundle", "name": "$42 saved vs à la carte" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "backup-vs-site-recovery",
+  "name": "Backup vs Site Recovery vs Soft-Delete",
+  "palette": ["#2563EB", "#059669", "#D97706", "#7C3AED", "#DC2626"],
+  "children": [
+    {
+      "id": "backup",
+      "name": "Azure Backup",
+      "color": 0,
+      "children": [
+        { "id": "b-files", "name": "Files, VMs, SQL, SAP", "tag": "Restore data" },
+        { "id": "b-rpo", "name": "Hours/days RPO" },
+        { "id": "b-retain", "name": "Long-term retention" },
+        { "id": "b-fixes", "name": "Fixes: data loss / corruption" }
+      ]
+    },
+    {
+      "id": "asr",
+      "name": "Azure Site Recovery",
+      "color": 1,
+      "children": [
+        { "id": "s-replica", "name": "Replicates whole VM" },
+        { "id": "s-rpo", "name": "Seconds-minutes RPO", "tag": "DR" },
+        { "id": "s-failover", "name": "Failover to other region" },
+        { "id": "s-fixes", "name": "Fixes: regional outage" }
+      ]
+    },
+    {
+      "id": "softdelete",
+      "name": "Storage Soft Delete",
+      "color": 2,
+      "children": [
+        { "id": "sd-blob", "name": "Blob, file share level" },
+        { "id": "sd-recycle", "name": "Recycle-bin behaviour" },
+        { "id": "sd-days", "name": "7-365 day retention" },
+        { "id": "sd-fixes", "name": "Fixes: accidental delete" }
+      ]
+    },
+    {
+      "id": "m365backup",
+      "name": "Microsoft 365 Backup",
+      "color": 3,
+      "children": [
+        { "id": "m-exchange", "name": "Exchange, OneDrive, SharePoint" },
+        { "id": "m-restore", "name": "Bulk restore" },
+        { "id": "m-paid", "name": "Microsoft-native, paid", "tag": "GA" },
+        { "id": "m-third", "name": "Or third-party (Veeam, Druva)" }
+      ]
+    },
+    {
+      "id": "decide",
+      "name": "Pick by problem",
+      "color": 4,
+      "children": [
+        { "id": "p-data", "name": "Lost data → Backup" },
+        { "id": "p-region", "name": "Region down → ASR" },
+        { "id": "p-recent", "name": "Just deleted → Soft delete" },
+        { "id": "p-m365", "name": "M365 mailbox/files → M365 Backup" }
+      ]
+    }
+  ]
+}

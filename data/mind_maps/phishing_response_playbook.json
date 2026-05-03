@@ -1,0 +1,73 @@
+{
+  "id": "phishing-response-playbook",
+  "name": "Phishing Response Playbook",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C", "#6B21A8"],
+  "children": [
+    {
+      "id": "detect",
+      "name": "1. Detect",
+      "color": 0,
+      "children": [
+        { "id": "d-mdo", "name": "Defender for O365 alert", "tag": "Auto" },
+        { "id": "d-report", "name": "User Report Phishing button" },
+        { "id": "d-aitm", "name": "AiTM session detection" },
+        { "id": "d-sentinel", "name": "Sentinel correlation" }
+      ]
+    },
+    {
+      "id": "contain",
+      "name": "2. Contain (minutes)",
+      "color": 1,
+      "children": [
+        { "id": "c-disable", "name": "Disable user in Entra", "tag": "First action" },
+        { "id": "c-revoke", "name": "Revoke refresh tokens" },
+        { "id": "c-cae", "name": "CAE forces re-auth fast" },
+        { "id": "c-zap", "name": "Zero-hour Auto Purge (ZAP)" }
+      ]
+    },
+    {
+      "id": "investigate",
+      "name": "3. Investigate",
+      "color": 2,
+      "children": [
+        { "id": "i-trail", "name": "Sign-in logs trail" },
+        { "id": "i-aip", "name": "What did they access?" },
+        { "id": "i-mailbox", "name": "Mailbox rules planted?" },
+        { "id": "i-blast", "name": "Blast radius analysis" }
+      ]
+    },
+    {
+      "id": "recover",
+      "name": "4. Recover",
+      "color": 3,
+      "children": [
+        { "id": "r-password", "name": "Forced password change" },
+        { "id": "r-mfa", "name": "Re-register MFA methods" },
+        { "id": "r-clean", "name": "Remove planted rules" },
+        { "id": "r-restore", "name": "Restore deleted email" }
+      ]
+    },
+    {
+      "id": "improve",
+      "name": "5. Learn",
+      "color": 4,
+      "children": [
+        { "id": "im-train", "name": "Targeted training" },
+        { "id": "im-attack", "name": "Attack Simulator drill" },
+        { "id": "im-policies", "name": "Tighten CA / auth strength" }
+      ]
+    },
+    {
+      "id": "stack",
+      "name": "Microsoft tools",
+      "color": 5,
+      "children": [
+        { "id": "st-mdo", "name": "Defender for Office 365" },
+        { "id": "st-mdi", "name": "Defender for Identity" },
+        { "id": "st-entra", "name": "Entra ID + Identity Protection" },
+        { "id": "st-purview", "name": "Purview for evidence" },
+        { "id": "st-sentinel", "name": "Sentinel for hunting" }
+      ]
+    }
+  ]
+}
