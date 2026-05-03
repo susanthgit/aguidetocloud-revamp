@@ -64,6 +64,7 @@ slugs = [
   "copilot-rollout-playbook",
   "copilot-control-system",
   "microsoft-ai-stack",
+  "microsoft-foundry",
   "agent-365",
 ]
 
@@ -74,6 +75,7 @@ emoji = "🤖"
 tagline = "Designing and operating AI agents at production scale"
 slugs = [
   "microsoft-ai-stack",
+  "microsoft-foundry",
   "ai-agent-patterns",
   "copilot-prompt-patterns",
   "ai-cost-tactics",

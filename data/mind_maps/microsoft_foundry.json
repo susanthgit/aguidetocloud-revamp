@@ -1,0 +1,76 @@
+{
+  "id": "microsoft-foundry",
+  "name": "Microsoft Foundry",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981", "#F59E0B"],
+  "children": [
+    {
+      "id": "models",
+      "name": "1. Models layer",
+      "color": 0,
+      "children": [
+        { "id": "m-catalog", "name": "Model catalog", "tag": "100s of models" },
+        { "id": "m-azureopenai", "name": "Azure OpenAI (GPT-4, o-series)" },
+        { "id": "m-claude", "name": "Anthropic Claude" },
+        { "id": "m-llama", "name": "Llama / Mistral / open weights" },
+        { "id": "m-byom", "name": "Bring your own model" }
+      ]
+    },
+    {
+      "id": "build",
+      "name": "2. Build",
+      "color": 1,
+      "children": [
+        { "id": "b-portal", "name": "Foundry portal (web)" },
+        { "id": "b-flow", "name": "Prompt flow", "tag": "Visual" },
+        { "id": "b-agent", "name": "Agent Service" },
+        { "id": "b-finetune", "name": "Fine-tuning workflows" },
+        { "id": "b-tools", "name": "Tool use / function calling" }
+      ]
+    },
+    {
+      "id": "ground",
+      "name": "3. Ground (data + RAG)",
+      "color": 2,
+      "children": [
+        { "id": "g-search", "name": "Azure AI Search" },
+        { "id": "g-blob", "name": "Blob / SharePoint sources" },
+        { "id": "g-vector", "name": "Vector + hybrid retrieval" },
+        { "id": "g-private", "name": "Private endpoint to data" }
+      ]
+    },
+    {
+      "id": "evaluate",
+      "name": "4. Evaluate",
+      "color": 3,
+      "children": [
+        { "id": "e-builtin", "name": "Built-in evaluators", "tag": "Quality + safety" },
+        { "id": "e-custom", "name": "Custom metrics" },
+        { "id": "e-ab", "name": "A/B vs production" },
+        { "id": "e-continuous", "name": "Continuous eval (post-deploy)" }
+      ]
+    },
+    {
+      "id": "deploy",
+      "name": "5. Deploy",
+      "color": 4,
+      "children": [
+        { "id": "d-endpoint", "name": "Managed endpoints" },
+        { "id": "d-router", "name": "Model router (auto-pick)" },
+        { "id": "d-throughput", "name": "PTU + pay-as-you-go" },
+        { "id": "d-zones", "name": "Multi-region failover" }
+      ]
+    },
+    {
+      "id": "monitor",
+      "name": "6. Monitor + Govern",
+      "color": 5,
+      "children": [
+        { "id": "mo-tracing", "name": "Trace every call" },
+        { "id": "mo-safety", "name": "Content Safety filters", "tag": "Always on" },
+        { "id": "mo-cost", "name": "Cost dashboards" },
+        { "id": "mo-rbac", "name": "RBAC + private networking" },
+        { "id": "mo-cmk", "name": "Customer-managed keys" }
+      ]
+    }
+  ]
+}
