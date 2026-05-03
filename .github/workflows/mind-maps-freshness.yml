@@ -40,6 +40,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # Ensure labels exist (idempotent — ignore failures if already present)
+          gh label create "mind-maps" --color "8B5CF6" --description "Mind maps catalog work" 2>/dev/null || true
+          gh label create "refresh" --color "F59E0B" --description "Periodic refresh / freshness audit" 2>/dev/null || true
+
           DATE=$(date -u +%Y-%m-%d)
           gh issue create \
             --title "🧠 Mind Maps freshness — $DATE" \
