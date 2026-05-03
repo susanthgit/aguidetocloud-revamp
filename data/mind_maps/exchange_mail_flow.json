@@ -1,0 +1,62 @@
+{
+  "id": "exchange-mail-flow",
+  "name": "Exchange Online Mail Flow",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981"],
+  "children": [
+    {
+      "id": "inbound",
+      "name": "Inbound mail",
+      "color": 0,
+      "children": [
+        { "id": "i-mx", "name": "MX records → EOP", "tag": "Entry" },
+        { "id": "i-eop", "name": "EOP filters (SPF/DKIM/DMARC)" },
+        { "id": "i-mdo", "name": "Defender for Office 365" },
+        { "id": "i-mailbox", "name": "Land in mailbox" }
+      ]
+    },
+    {
+      "id": "outbound",
+      "name": "Outbound mail",
+      "color": 1,
+      "children": [
+        { "id": "o-mailbox", "name": "From mailbox / app" },
+        { "id": "o-eop", "name": "EOP outbound checks" },
+        { "id": "o-relay", "name": "Connector or direct to internet" },
+        { "id": "o-dmarc", "name": "DMARC alignment", "tag": "Crucial" }
+      ]
+    },
+    {
+      "id": "hybrid",
+      "name": "Hybrid mail flow",
+      "color": 2,
+      "children": [
+        { "id": "h-onprem", "name": "On-prem Exchange + EXO" },
+        { "id": "h-conn", "name": "Hybrid connectors" },
+        { "id": "h-routing", "name": "Centralised mail transport" },
+        { "id": "h-coex", "name": "Coexistence period" }
+      ]
+    },
+    {
+      "id": "transport",
+      "name": "Transport rules",
+      "color": 3,
+      "children": [
+        { "id": "tr-disclaimer", "name": "Disclaimers / footers" },
+        { "id": "tr-dlp", "name": "DLP-based blocks" },
+        { "id": "tr-route", "name": "Force route through gateway" },
+        { "id": "tr-quarantine", "name": "Quarantine / hold" }
+      ]
+    },
+    {
+      "id": "auth",
+      "name": "Email auth (essential)",
+      "color": 4,
+      "children": [
+        { "id": "a-spf", "name": "SPF — who can send" },
+        { "id": "a-dkim", "name": "DKIM — sign + verify" },
+        { "id": "a-dmarc", "name": "DMARC — policy + reporting", "tag": "p=reject" },
+        { "id": "a-arc", "name": "ARC — for forwarders" }
+      ]
+    }
+  ]
+}

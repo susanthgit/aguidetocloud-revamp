@@ -1,0 +1,62 @@
+{
+  "id": "service-outage-runbook",
+  "name": "M365 Service Outage Runbook",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981"],
+  "children": [
+    {
+      "id": "detect",
+      "name": "1. Detect",
+      "color": 0,
+      "children": [
+        { "id": "d-health", "name": "Service Health Dashboard", "tag": "Source" },
+        { "id": "d-status", "name": "status.office.com" },
+        { "id": "d-rss", "name": "RSS / API alerts" },
+        { "id": "d-users", "name": "Helpdesk ticket surge" }
+      ]
+    },
+    {
+      "id": "triage",
+      "name": "2. Triage",
+      "color": 1,
+      "children": [
+        { "id": "t-scope", "name": "Tenant-only or Microsoft-wide?" },
+        { "id": "t-service", "name": "Which service / region?" },
+        { "id": "t-msid", "name": "Note Microsoft incident ID" },
+        { "id": "t-eta", "name": "Capture ETA from MS" }
+      ]
+    },
+    {
+      "id": "comms",
+      "name": "3. Comms cadence",
+      "color": 2,
+      "children": [
+        { "id": "c-internal", "name": "First message <15 min", "tag": "Fast" },
+        { "id": "c-channels", "name": "All channels (Teams, intranet, email)" },
+        { "id": "c-update", "name": "Update every 30-60 min" },
+        { "id": "c-noisy", "name": "Don't go silent — escalates panic" }
+      ]
+    },
+    {
+      "id": "escalate",
+      "name": "4. Escalate",
+      "color": 3,
+      "children": [
+        { "id": "e-msft", "name": "Premier / Unified support" },
+        { "id": "e-account", "name": "Account team / CSM" },
+        { "id": "e-csa", "name": "CSA for technical depth" },
+        { "id": "e-internal", "name": "Internal incident commander" }
+      ]
+    },
+    {
+      "id": "recover",
+      "name": "5. Recover + RCA",
+      "color": 4,
+      "children": [
+        { "id": "r-resolve", "name": "Confirm resolution + verify" },
+        { "id": "r-pir", "name": "Get PIR from Microsoft" },
+        { "id": "r-runbook", "name": "Update runbook with lessons" },
+        { "id": "r-comms", "name": "Final all-clear comm" }
+      ]
+    }
+  ]
+}

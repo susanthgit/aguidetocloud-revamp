@@ -1,0 +1,61 @@
+{
+  "id": "ai-agent-patterns",
+  "name": "AI Agent Patterns — Pick Yours",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981"],
+  "children": [
+    {
+      "id": "qa",
+      "name": "Just answers questions?",
+      "color": 0,
+      "children": [
+        { "id": "q-direct", "name": "→ Direct LLM call", "tag": "Simplest" },
+        { "id": "q-system", "name": "Just a good system prompt" },
+        { "id": "q-fast", "name": "Fastest, cheapest" }
+      ]
+    },
+    {
+      "id": "rag",
+      "name": "Needs your data?",
+      "color": 1,
+      "children": [
+        { "id": "r-rag", "name": "→ RAG pattern", "tag": "Most common" },
+        { "id": "r-vector", "name": "Vector store + retrieval" },
+        { "id": "r-rerank", "name": "Add reranker for quality" },
+        { "id": "r-cite", "name": "Cite sources" }
+      ]
+    },
+    {
+      "id": "tools",
+      "name": "Needs to act?",
+      "color": 2,
+      "children": [
+        { "id": "t-tools", "name": "→ Tool use / function calling" },
+        { "id": "t-api", "name": "API calls (CRM, ticketing, etc)" },
+        { "id": "t-confirm", "name": "Confirm destructive actions", "tag": "Safety" },
+        { "id": "t-audit", "name": "Audit every tool call" }
+      ]
+    },
+    {
+      "id": "multistep",
+      "name": "Multi-step task?",
+      "color": 3,
+      "children": [
+        { "id": "m-planner", "name": "→ Planner-executor", "tag": "Multi-call" },
+        { "id": "m-react", "name": "ReAct loop (think-act)" },
+        { "id": "m-state", "name": "Manage state across steps" },
+        { "id": "m-cost", "name": "Watch token cost" }
+      ]
+    },
+    {
+      "id": "review",
+      "name": "Quality matters?",
+      "color": 4,
+      "children": [
+        { "id": "re-reflect", "name": "→ Reflection / critique" },
+        { "id": "re-judge", "name": "LLM-as-judge eval" },
+        { "id": "re-multi", "name": "Multi-agent debate" },
+        { "id": "re-human", "name": "Human in loop for high stakes" }
+      ]
+    }
+  ]
+}

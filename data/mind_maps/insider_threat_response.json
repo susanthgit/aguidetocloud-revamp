@@ -1,0 +1,73 @@
+{
+  "id": "insider-threat-response",
+  "name": "Insider Threat Response",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C", "#6B21A8"],
+  "children": [
+    {
+      "id": "signals",
+      "name": "1. Signals to watch",
+      "color": 0,
+      "children": [
+        { "id": "s-departing", "name": "Departing employee notice", "tag": "HR signal" },
+        { "id": "s-download", "name": "Mass download spike" },
+        { "id": "s-sensitive", "name": "Access to sensitive labels" },
+        { "id": "s-external", "name": "External sharing surge" },
+        { "id": "s-tone", "name": "Comm tone change" }
+      ]
+    },
+    {
+      "id": "investigate",
+      "name": "2. Investigate (carefully)",
+      "color": 1,
+      "children": [
+        { "id": "i-irm", "name": "Purview IRM cases" },
+        { "id": "i-priv", "name": "Privacy + legal first", "tag": "Critical" },
+        { "id": "i-evidence", "name": "Preserve evidence" },
+        { "id": "i-anon", "name": "Anonymise during triage" }
+      ]
+    },
+    {
+      "id": "confirm",
+      "name": "3. Confirm + qualify",
+      "color": 2,
+      "children": [
+        { "id": "c-malicious", "name": "Malicious vs negligent?" },
+        { "id": "c-context", "name": "Business justification?" },
+        { "id": "c-scope", "name": "What data exactly?" }
+      ]
+    },
+    {
+      "id": "contain",
+      "name": "4. Contain",
+      "color": 3,
+      "children": [
+        { "id": "co-disable", "name": "Disable account + revoke" },
+        { "id": "co-block", "name": "Block exfil channels" },
+        { "id": "co-recall", "name": "Revoke external links" },
+        { "id": "co-device", "name": "Wipe / hold device" }
+      ]
+    },
+    {
+      "id": "people",
+      "name": "5. People process",
+      "color": 4,
+      "children": [
+        { "id": "p-hr", "name": "HR engagement" },
+        { "id": "p-legal", "name": "Legal review" },
+        { "id": "p-action", "name": "Disciplinary / termination" },
+        { "id": "p-lessons", "name": "Org-wide lessons" }
+      ]
+    },
+    {
+      "id": "prevent",
+      "name": "Reduce future risk",
+      "color": 5,
+      "children": [
+        { "id": "pr-policy", "name": "Departing-employee policy" },
+        { "id": "pr-jit", "name": "Just-in-time access" },
+        { "id": "pr-labels", "name": "Sensitivity label coverage" },
+        { "id": "pr-train", "name": "Manager training" }
+      ]
+    }
+  ]
+}
