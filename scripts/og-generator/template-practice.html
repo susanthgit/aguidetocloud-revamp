@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  /* Practice Exam OG template (V1, May 2026)
+     Sutheesh's brief: "Big text fills almost the entire space."
+     Cert code dominates. 'Practice Exam' subtitle below. One indigo accent line.
+     Designed for social-share scannability — title visible at thumbnail size. */
+
+  @font-face {
+    font-family: 'Inter';
+    src: url('{{FONT_PATH}}') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #0A0A0A;
+    font-family: 'Inter', sans-serif;
+    color: #F5F5F5;
+  }
+
+  .frame {
+    width: 1200px; height: 630px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+  }
+
+  /* Subtle indigo glow behind the code — premium without flashy */
+  .frame::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px; height: 500px;
+    background: radial-gradient(ellipse at center, rgba(99,102,241,0.18) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .content { position: relative; z-index: 1; text-align: center; }
+
+  /* Cert code — fills most of the frame. Font-size scales by length via class. */
+  .code {
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+  }
+  .code--xs { font-size: 96px;  letter-spacing: -0.02em; }   /* 14+ chars */
+  .code--sm { font-size: 132px; letter-spacing: -0.03em; }  /* 11-13 chars */
+  .code--md { font-size: 180px; }                            /* 8-10 chars */
+  .code--lg { font-size: 240px; }                            /* 6-7 chars */
+  .code--xl { font-size: 280px; letter-spacing: -0.05em; }  /* <=5 chars */
+
+  /* Indigo accent line — Zen brand mark */
+  .accent {
+    width: 80px; height: 3px;
+    background: #818CF8;
+    margin: 0 auto 28px;
+    border-radius: 2px;
+  }
+
+  /* Subtitle — 'Practice Exam' */
+  .subtitle {
+    font-size: 56px;
+    font-weight: 500;
+    color: #A3A3A3;
+    letter-spacing: 0.02em;
+  }
+
+  /* Footer — quiet brand strip, bottom-left + bottom-right */
+  .footer {
+    position: absolute;
+    bottom: 36px; left: 60px; right: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    font-size: 22px;
+    color: #737373;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+  }
+  .footer-brand { color: #A3A3A3; }
+  .footer-price { color: #818CF8; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="content">
+      <div class="code code--{{CODE_SIZE}}">{{EXAM_CODE}}</div>
+      <div class="accent"></div>
+      <div class="subtitle">Practice Exam</div>
+    </div>
+    <div class="footer">
+      <span class="footer-brand">aguidetocloud.com</span>
+      <span class="footer-price">from $9 · 20 free questions</span>
+    </div>
+  </div>
+</body>
+</html>

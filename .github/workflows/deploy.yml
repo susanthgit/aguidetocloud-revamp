@@ -47,11 +47,21 @@ jobs:
           playwright install chromium --with-deps
           python scripts/og-generator/generate_og.py --stale
 
+      - name: Generate stale practice-exam OG images
+        run: |
+          pip install playwright==1.58.0 --quiet
+          # Playwright/chromium already installed by previous step; install if not
+          playwright install chromium --with-deps 2>/dev/null || true
+          # Repo checkout includes guided/ as sibling — script reads from there
+          # If guided isn't a sibling in CI, the generator will skip with a warning
+          python scripts/og-generator/generate_practice_og.py --stale || \
+            echo "Practice OG generation skipped — guided sibling repo not present in this CI checkout"
+
       - name: Commit generated OG images
         if: steps.og-check.outputs.needs_generation == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add static/images/og/ scripts/og-generator/og_hashes.json
+          git add static/images/og/ scripts/og-generator/og_hashes.json scripts/og-generator/og_practice_hashes.json
           git diff --cached --quiet || git commit -m "🖼️ Auto-generate stale OG images"
           git push
