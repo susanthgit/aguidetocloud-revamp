@@ -1,0 +1,61 @@
+{
+  "id": "m365-groups-taxonomy",
+  "name": "M365 Group Types — Pick Yours",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981"],
+  "children": [
+    {
+      "id": "m365",
+      "name": "Microsoft 365 Group",
+      "color": 0,
+      "children": [
+        { "id": "m-team", "name": "Backs Teams + SP site", "tag": "Modern" },
+        { "id": "m-mail", "name": "Has shared mailbox" },
+        { "id": "m-planner", "name": "Has Planner + OneNote" },
+        { "id": "m-cross", "name": "Cross-app collab" }
+      ]
+    },
+    {
+      "id": "dl",
+      "name": "Distribution List",
+      "color": 1,
+      "children": [
+        { "id": "d-mail", "name": "Email only" },
+        { "id": "d-legacy", "name": "Legacy AD heritage", "tag": "Old" },
+        { "id": "d-noteams", "name": "No Teams / files" },
+        { "id": "d-upgrade", "name": "Upgrade to M365 Group" }
+      ]
+    },
+    {
+      "id": "sec",
+      "name": "Security Group",
+      "color": 2,
+      "children": [
+        { "id": "s-perms", "name": "Permission assignment", "tag": "RBAC" },
+        { "id": "s-ca", "name": "Conditional Access targeting" },
+        { "id": "s-licence", "name": "Licence assignment" },
+        { "id": "s-app", "name": "App role membership" }
+      ]
+    },
+    {
+      "id": "msec",
+      "name": "Mail-Enabled Security",
+      "color": 3,
+      "children": [
+        { "id": "ms-both", "name": "Email AND permissions", "tag": "Hybrid" },
+        { "id": "ms-static", "name": "Static membership only" },
+        { "id": "ms-rare", "name": "Niche use case" }
+      ]
+    },
+    {
+      "id": "rules",
+      "name": "Quick rules",
+      "color": 4,
+      "children": [
+        { "id": "r-collab", "name": "Need Teams? → M365 Group" },
+        { "id": "r-perm", "name": "Permissions only? → Sec Group" },
+        { "id": "r-broadcast", "name": "Email only? → DL or M365" },
+        { "id": "r-dynamic", "name": "Dynamic membership = P1" }
+      ]
+    }
+  ]
+}

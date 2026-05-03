@@ -1,0 +1,67 @@
+{
+  "id": "ca-canonical-policies",
+  "name": "Conditional Access — Canonical 8",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C", "#6B21A8"],
+  "children": [
+    {
+      "id": "block",
+      "name": "Block first",
+      "color": 0,
+      "children": [
+        { "id": "b-legacy", "name": "Block legacy auth", "tag": "Day 1" },
+        { "id": "b-unknown", "name": "Block unknown platforms" },
+        { "id": "b-locations", "name": "Block from blocked locations" }
+      ]
+    },
+    {
+      "id": "admin",
+      "name": "Protect admins",
+      "color": 1,
+      "children": [
+        { "id": "a-mfa", "name": "MFA for admin roles", "tag": "Critical" },
+        { "id": "a-portal", "name": "MFA for MS admin portals" },
+        { "id": "a-strength", "name": "Phishing-resistant strength" }
+      ]
+    },
+    {
+      "id": "users",
+      "name": "Protect all users",
+      "color": 2,
+      "children": [
+        { "id": "u-mfa", "name": "MFA for all users", "tag": "Baseline" },
+        { "id": "u-guest", "name": "MFA for guests" },
+        { "id": "u-azuremgmt", "name": "MFA for Azure mgmt" }
+      ]
+    },
+    {
+      "id": "device",
+      "name": "Device + app posture",
+      "color": 3,
+      "children": [
+        { "id": "d-compliant", "name": "Compliant or hybrid OR MFA" },
+        { "id": "d-app", "name": "App protection or approved app" },
+        { "id": "d-mam", "name": "Mobile MAM enforcement" }
+      ]
+    },
+    {
+      "id": "risk",
+      "name": "Risk-based (P2)",
+      "color": 4,
+      "children": [
+        { "id": "r-signin", "name": "MFA for risky sign-ins", "tag": "P2" },
+        { "id": "r-user", "name": "Password change for risky users" },
+        { "id": "r-insider", "name": "Block on insider risk (Purview)" }
+      ]
+    },
+    {
+      "id": "must",
+      "name": "Always do",
+      "color": 5,
+      "children": [
+        { "id": "m-emergency", "name": "Exclude break-glass accounts", "tag": "Required" },
+        { "id": "m-report", "name": "Test in report-only" },
+        { "id": "m-allapps", "name": "Target ALL resources" }
+      ]
+    }
+  ]
+}

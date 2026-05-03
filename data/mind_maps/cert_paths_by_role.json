@@ -1,0 +1,70 @@
+{
+  "id": "cert-paths-by-role",
+  "name": "Microsoft Certs by Role",
+  "palette": ["#2563EB", "#059669", "#D97706", "#7C3AED", "#DC2626", "#DB2777"],
+  "children": [
+    {
+      "id": "admin",
+      "name": "Cloud Administrator",
+      "color": 0,
+      "children": [
+        { "id": "ad-az900", "name": "AZ-900", "tag": "Start" },
+        { "id": "ad-ms900", "name": "MS-900" },
+        { "id": "ad-az104", "name": "AZ-104 Azure Admin" },
+        { "id": "ad-ms102", "name": "MS-102 M365 Admin" }
+      ]
+    },
+    {
+      "id": "architect",
+      "name": "Cloud Architect",
+      "color": 1,
+      "children": [
+        { "id": "ar-az104", "name": "AZ-104 first" },
+        { "id": "ar-az305", "name": "AZ-305 Architect", "tag": "Expert" },
+        { "id": "ar-sc100", "name": "SC-100 (security arch)" }
+      ]
+    },
+    {
+      "id": "secops",
+      "name": "Security Analyst / SecOps",
+      "color": 2,
+      "children": [
+        { "id": "se-sc900", "name": "SC-900" },
+        { "id": "se-sc200", "name": "SC-200 Sentinel + XDR", "tag": "Core" },
+        { "id": "se-az500", "name": "AZ-500 Azure Security" },
+        { "id": "se-sc500", "name": "SC-500 (new beta)" }
+      ]
+    },
+    {
+      "id": "identity",
+      "name": "Identity Admin",
+      "color": 3,
+      "children": [
+        { "id": "id-sc900", "name": "SC-900" },
+        { "id": "id-sc300", "name": "SC-300 Identity Admin", "tag": "Core" },
+        { "id": "id-ms102", "name": "MS-102 (overlap)" }
+      ]
+    },
+    {
+      "id": "ai",
+      "name": "AI Engineer",
+      "color": 4,
+      "children": [
+        { "id": "ai-ai900", "name": "AI-900" },
+        { "id": "ai-ai102", "name": "AI-102 Azure AI Engineer" },
+        { "id": "ai-ai200", "name": "AI-200 (new — copilot)" }
+      ]
+    },
+    {
+      "id": "data",
+      "name": "Data Engineer",
+      "color": 5,
+      "children": [
+        { "id": "da-dp900", "name": "DP-900" },
+        { "id": "da-dp203", "name": "DP-203 Data Engineer", "tag": "Core" },
+        { "id": "da-dp700", "name": "DP-700 Fabric (new)" },
+        { "id": "da-dp300", "name": "DP-300 DB Admin" }
+      ]
+    }
+  ]
+}

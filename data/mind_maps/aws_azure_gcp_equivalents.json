@@ -1,0 +1,70 @@
+{
+  "id": "aws-azure-gcp-equivalents",
+  "name": "AWS ↔ Azure ↔ GCP",
+  "palette": ["#2563EB", "#059669", "#D97706", "#7C3AED", "#DC2626", "#DB2777"],
+  "children": [
+    {
+      "id": "compute",
+      "name": "Compute",
+      "color": 0,
+      "children": [
+        { "id": "c-vm", "name": "EC2 ⇆ VM ⇆ Compute Engine", "tag": "VMs" },
+        { "id": "c-k8s", "name": "EKS ⇆ AKS ⇆ GKE" },
+        { "id": "c-fn", "name": "Lambda ⇆ Functions ⇆ Cloud Functions" },
+        { "id": "c-paas", "name": "Beanstalk ⇆ App Service ⇆ App Engine" }
+      ]
+    },
+    {
+      "id": "storage",
+      "name": "Storage",
+      "color": 1,
+      "children": [
+        { "id": "s-blob", "name": "S3 ⇆ Blob ⇆ Cloud Storage", "tag": "Object" },
+        { "id": "s-file", "name": "EFS ⇆ Files ⇆ Filestore" },
+        { "id": "s-block", "name": "EBS ⇆ Managed Disks ⇆ PD" }
+      ]
+    },
+    {
+      "id": "database",
+      "name": "Databases",
+      "color": 2,
+      "children": [
+        { "id": "d-sql", "name": "RDS ⇆ SQL DB ⇆ Cloud SQL" },
+        { "id": "d-nosql", "name": "DynamoDB ⇆ Cosmos ⇆ Firestore", "tag": "NoSQL" },
+        { "id": "d-cache", "name": "ElastiCache ⇆ Redis ⇆ Memorystore" },
+        { "id": "d-warehouse", "name": "Redshift ⇆ Synapse ⇆ BigQuery" }
+      ]
+    },
+    {
+      "id": "identity",
+      "name": "Identity & Security",
+      "color": 3,
+      "children": [
+        { "id": "i-iam", "name": "IAM ⇆ Entra ID + RBAC ⇆ Cloud IAM" },
+        { "id": "i-secret", "name": "Secrets Mgr ⇆ Key Vault ⇆ Secret Mgr" },
+        { "id": "i-waf", "name": "WAF ⇆ Front Door WAF ⇆ Cloud Armor" }
+      ]
+    },
+    {
+      "id": "network",
+      "name": "Networking",
+      "color": 4,
+      "children": [
+        { "id": "n-vpc", "name": "VPC ⇆ VNet ⇆ VPC", "tag": "Same name!" },
+        { "id": "n-lb", "name": "ELB ⇆ Load Balancer ⇆ Cloud LB" },
+        { "id": "n-cdn", "name": "CloudFront ⇆ Front Door ⇆ Cloud CDN" },
+        { "id": "n-dx", "name": "Direct Connect ⇆ ExpressRoute ⇆ Interconnect" }
+      ]
+    },
+    {
+      "id": "ai",
+      "name": "AI / ML",
+      "color": 5,
+      "children": [
+        { "id": "a-ml", "name": "SageMaker ⇆ Azure ML ⇆ Vertex AI" },
+        { "id": "a-llm", "name": "Bedrock ⇆ Azure OpenAI ⇆ Vertex / Gemini" },
+        { "id": "a-cog", "name": "Comprehend etc ⇆ AI Services ⇆ AI APIs" }
+      ]
+    }
+  ]
+}

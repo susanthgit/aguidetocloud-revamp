@@ -1,0 +1,71 @@
+{
+  "id": "azure-database-options",
+  "name": "Azure Database — Pick Yours",
+  "palette": ["#2563EB", "#059669", "#D97706", "#7C3AED", "#DC2626", "#DB2777"],
+  "children": [
+    {
+      "id": "sql",
+      "name": "Need SQL Server compatibility?",
+      "color": 0,
+      "children": [
+        { "id": "s-db", "name": "→ Azure SQL Database", "tag": "PaaS" },
+        { "id": "s-mi", "name": "→ SQL Managed Instance" },
+        { "id": "s-vm", "name": "→ SQL Server on VM" },
+        { "id": "s-pick", "name": "PaaS first, MI for full T-SQL" }
+      ]
+    },
+    {
+      "id": "opensource",
+      "name": "Open-source SQL?",
+      "color": 1,
+      "children": [
+        { "id": "o-postgres", "name": "→ Postgres Flexible", "tag": "Default" },
+        { "id": "o-mysql", "name": "→ MySQL Flexible" },
+        { "id": "o-cosmospg", "name": "Cosmos for Postgres" }
+      ]
+    },
+    {
+      "id": "nosql",
+      "name": "Need NoSQL / global?",
+      "color": 2,
+      "children": [
+        { "id": "n-cosmos", "name": "→ Cosmos DB", "tag": "5 APIs" },
+        { "id": "n-table", "name": "Or Storage Table (cheap KV)" },
+        { "id": "n-redis", "name": "Or Azure Managed Redis" }
+      ]
+    },
+    {
+      "id": "cosmos",
+      "name": "Cosmos APIs",
+      "color": 3,
+      "children": [
+        { "id": "c-nosql", "name": "NoSQL (default)" },
+        { "id": "c-mongo", "name": "MongoDB API" },
+        { "id": "c-cassandra", "name": "Cassandra API" },
+        { "id": "c-gremlin", "name": "Gremlin (graph)" },
+        { "id": "c-table", "name": "Table API" }
+      ]
+    },
+    {
+      "id": "warehouse",
+      "name": "Analytics / warehouse?",
+      "color": 4,
+      "children": [
+        { "id": "w-fabric", "name": "→ Microsoft Fabric", "tag": "Modern" },
+        { "id": "w-synapse", "name": "→ Synapse Dedicated SQL" },
+        { "id": "w-data", "name": "→ Data Explorer (KQL)" }
+      ]
+    },
+    {
+      "id": "exam",
+      "name": "Exam coverage",
+      "color": 5,
+      "children": [
+        { "id": "e-dp900", "name": "DP-900 — concepts" },
+        { "id": "e-dp300", "name": "DP-300 — SQL admin" },
+        { "id": "e-dp203", "name": "DP-203 — pipeline / Synapse" },
+        { "id": "e-az204", "name": "AZ-204 — Cosmos basics" }
+      ]
+    }
+  ]
+}
