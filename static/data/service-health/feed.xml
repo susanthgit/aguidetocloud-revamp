@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 03 May 2026 17:05:39 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2026 19:15:35 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Defender XDR] Some users may receive false positive alerts from Microsoft Defender Antivirus for specific certificates</title>
@@ -14,7 +14,7 @@
       <category>Microsoft Defender XDR</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">DZ1299600</guid>
-      <pubDate>Sun, 03 May 2026 16:11:06 +0000</pubDate>
+      <pubDate>Sun, 03 May 2026 08:52:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some admins may be unable to remove blocked users from the Restricted entities page in Microsoft 365 suite</title>
