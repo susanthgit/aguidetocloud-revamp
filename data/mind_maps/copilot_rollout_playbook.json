@@ -1,0 +1,72 @@
+{
+  "id": "copilot-rollout-playbook",
+  "name": "M365 Copilot Rollout Playbook",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981", "#F59E0B"],
+  "children": [
+    {
+      "id": "ready",
+      "name": "1. Readiness assessment",
+      "color": 0,
+      "children": [
+        { "id": "r-perms", "name": "SharePoint perms hygiene", "tag": "Critical" },
+        { "id": "r-labels", "name": "Sensitivity label coverage" },
+        { "id": "r-dlp", "name": "DLP policies in place" },
+        { "id": "r-network", "name": "Network bandwidth check" }
+      ]
+    },
+    {
+      "id": "pilot",
+      "name": "2. Pilot (5-10%)",
+      "color": 1,
+      "children": [
+        { "id": "p-execs", "name": "Champions + execs first" },
+        { "id": "p-feedback", "name": "Bi-weekly feedback loop" },
+        { "id": "p-metrics", "name": "Define success metrics" },
+        { "id": "p-restrict", "name": "Restricted SP Search on" }
+      ]
+    },
+    {
+      "id": "train",
+      "name": "3. Train trainers",
+      "color": 2,
+      "children": [
+        { "id": "t-tot", "name": "Train-the-trainers" },
+        { "id": "t-prompts", "name": "Prompt library" },
+        { "id": "t-by-role", "name": "By-role scenarios" },
+        { "id": "t-comms", "name": "Comms cadence" }
+      ]
+    },
+    {
+      "id": "scale",
+      "name": "4. Departmental scale",
+      "color": 3,
+      "children": [
+        { "id": "s-waves", "name": "Department by department" },
+        { "id": "s-help", "name": "Helpdesk readiness" },
+        { "id": "s-feedback", "name": "Per-dept feedback" },
+        { "id": "s-success", "name": "Internal showcases" }
+      ]
+    },
+    {
+      "id": "measure",
+      "name": "5. Measure + iterate",
+      "color": 4,
+      "children": [
+        { "id": "m-analytics", "name": "Copilot Analytics", "tag": "Adoption" },
+        { "id": "m-roi", "name": "Time-saved estimates" },
+        { "id": "m-licence", "name": "Licence utilisation" },
+        { "id": "m-iterate", "name": "Quarterly review" }
+      ]
+    },
+    {
+      "id": "watch",
+      "name": "Watch out for",
+      "color": 5,
+      "children": [
+        { "id": "w-overshare", "name": "Oversharing surfaces" },
+        { "id": "w-shadow", "name": "Shadow agents (use Agent 365)" },
+        { "id": "w-hallucin", "name": "Hallucination training" }
+      ]
+    }
+  ]
+}

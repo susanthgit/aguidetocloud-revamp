@@ -1,0 +1,62 @@
+{
+  "id": "copilot-prompt-patterns",
+  "name": "Copilot Prompt Patterns",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981"],
+  "children": [
+    {
+      "id": "rtcf",
+      "name": "The R-T-C-F formula",
+      "color": 0,
+      "children": [
+        { "id": "rt-role", "name": "Role: 'Act as a...'", "tag": "Tone" },
+        { "id": "rt-task", "name": "Task: be specific" },
+        { "id": "rt-context", "name": "Context: who/what/why" },
+        { "id": "rt-format", "name": "Format: list / table / etc" }
+      ]
+    },
+    {
+      "id": "summarise",
+      "name": "Summarise patterns",
+      "color": 1,
+      "children": [
+        { "id": "s-meeting", "name": "Recap last meeting" },
+        { "id": "s-thread", "name": "Catch me up on [chat]" },
+        { "id": "s-doc", "name": "TL;DR this document" },
+        { "id": "s-action", "name": "Pull action items" }
+      ]
+    },
+    {
+      "id": "draft",
+      "name": "Draft patterns",
+      "color": 2,
+      "children": [
+        { "id": "d-email", "name": "Draft a polite reply..." },
+        { "id": "d-meeting", "name": "Agenda from these notes" },
+        { "id": "d-doc", "name": "Write a one-pager on..." },
+        { "id": "d-tone", "name": "Adjust tone: warmer / firmer" }
+      ]
+    },
+    {
+      "id": "analyse",
+      "name": "Analyse patterns",
+      "color": 3,
+      "children": [
+        { "id": "a-compare", "name": "Compare these two docs" },
+        { "id": "a-trend", "name": "What changed quarter on quarter?" },
+        { "id": "a-risk", "name": "What are the risks here?" },
+        { "id": "a-pivot", "name": "Pivot this Excel by..." }
+      ]
+    },
+    {
+      "id": "anti",
+      "name": "Anti-patterns",
+      "color": 4,
+      "children": [
+        { "id": "an-vague", "name": "'Help me' (no task)", "tag": "Bad" },
+        { "id": "an-noctx", "name": "No context for routine" },
+        { "id": "an-trust", "name": "Trusting first answer blindly" },
+        { "id": "an-secret", "name": "Pasting secrets in prompts" }
+      ]
+    }
+  ]
+}

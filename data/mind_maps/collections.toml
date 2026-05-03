@@ -46,6 +46,7 @@ slugs = [
   "defender-family",
   "defender-for-cloud",
   "microsoft-sentinel",
+  "xdr-vs-sentinel",
   "conditional-access-flow",
   "ca-canonical-policies",
   "mfa-methods",
@@ -60,6 +61,7 @@ tagline = "How M365 Copilot actually works under the hood"
 slugs = [
   "copilot-7-layers",
   "copilot-tenant-rollout",
+  "copilot-rollout-playbook",
   "copilot-control-system",
   "microsoft-ai-stack",
   "agent-365",
@@ -73,6 +75,7 @@ tagline = "Designing and operating AI agents at production scale"
 slugs = [
   "microsoft-ai-stack",
   "ai-agent-patterns",
+  "copilot-prompt-patterns",
   "ai-cost-tactics",
   "agent-365",
 ]
@@ -86,6 +89,7 @@ slugs = [
   "e3-vs-e5",
   "business-vs-enterprise",
   "frontline-vs-enterprise",
+  "education-licensing",
   "m365-e7",
   "m365-addons",
   "teams-phone-licensing",

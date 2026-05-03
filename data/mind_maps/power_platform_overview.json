@@ -1,0 +1,73 @@
+{
+  "id": "power-platform-overview",
+  "name": "Microsoft Power Platform",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981", "#F59E0B"],
+  "children": [
+    {
+      "id": "apps",
+      "name": "Power Apps",
+      "color": 0,
+      "children": [
+        { "id": "a-canvas", "name": "Canvas apps (drag-drop)", "tag": "Citizen" },
+        { "id": "a-model", "name": "Model-driven (Dataverse)" },
+        { "id": "a-pages", "name": "Pages (formerly Portals)" },
+        { "id": "a-mobile", "name": "Web + iOS + Android" }
+      ]
+    },
+    {
+      "id": "automate",
+      "name": "Power Automate",
+      "color": 1,
+      "children": [
+        { "id": "au-cloud", "name": "Cloud flows (workflows)" },
+        { "id": "au-desktop", "name": "Desktop flows (RPA)", "tag": "RPA" },
+        { "id": "au-business", "name": "Business process flows" },
+        { "id": "au-trigger", "name": "1000+ connectors" }
+      ]
+    },
+    {
+      "id": "bi",
+      "name": "Power BI",
+      "color": 2,
+      "children": [
+        { "id": "b-desktop", "name": "Power BI Desktop (free)" },
+        { "id": "b-pro", "name": "Power BI Pro / Premium" },
+        { "id": "b-fabric", "name": "Now part of Microsoft Fabric" },
+        { "id": "b-embed", "name": "Embed in apps" }
+      ]
+    },
+    {
+      "id": "studio",
+      "name": "Copilot Studio",
+      "color": 3,
+      "children": [
+        { "id": "s-build", "name": "Build agents", "tag": "AI" },
+        { "id": "s-flow", "name": "Multi-step workflows" },
+        { "id": "s-publish", "name": "Publish to Teams + web" },
+        { "id": "s-makers", "name": "For makers / developers" }
+      ]
+    },
+    {
+      "id": "verse",
+      "name": "Dataverse",
+      "color": 4,
+      "children": [
+        { "id": "v-store", "name": "Backing data store", "tag": "Backbone" },
+        { "id": "v-relational", "name": "Tables + relationships" },
+        { "id": "v-rbac", "name": "Row-level security" },
+        { "id": "v-d365", "name": "Powers Dynamics 365 too" }
+      ]
+    },
+    {
+      "id": "govern",
+      "name": "Governance",
+      "color": 5,
+      "children": [
+        { "id": "g-envs", "name": "Environments (dev / test / prod)" },
+        { "id": "g-dlp", "name": "DLP for connectors" },
+        { "id": "g-coe", "name": "Center of Excellence kit" },
+        { "id": "g-licence", "name": "Per-app vs per-user licensing" }
+      ]
+    }
+  ]
+}

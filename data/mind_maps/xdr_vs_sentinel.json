@@ -1,0 +1,62 @@
+{
+  "id": "xdr-vs-sentinel",
+  "name": "Defender XDR vs Sentinel",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C"],
+  "children": [
+    {
+      "id": "xdr",
+      "name": "Defender XDR",
+      "color": 0,
+      "children": [
+        { "id": "x-scope", "name": "M365 stack only", "tag": "Native" },
+        { "id": "x-included", "name": "Free with E5 / E5 Sec" },
+        { "id": "x-prebuilt", "name": "Pre-built incidents" },
+        { "id": "x-portal", "name": "security.microsoft.com" }
+      ]
+    },
+    {
+      "id": "sentinel",
+      "name": "Microsoft Sentinel",
+      "color": 1,
+      "children": [
+        { "id": "s-scope", "name": "Everything (multi-cloud)", "tag": "SIEM" },
+        { "id": "s-priced", "name": "Pay per GB ingested" },
+        { "id": "s-kql", "name": "Custom KQL detections" },
+        { "id": "s-azure", "name": "Azure portal" }
+      ]
+    },
+    {
+      "id": "overlap",
+      "name": "Overlap area",
+      "color": 2,
+      "children": [
+        { "id": "o-investigate", "name": "Both have hunting" },
+        { "id": "o-cases", "name": "Both have incidents" },
+        { "id": "o-defender-conn", "name": "Sentinel free-ingests XDR data" },
+        { "id": "o-unified", "name": "Unified portal merging both" }
+      ]
+    },
+    {
+      "id": "pick",
+      "name": "Pick by",
+      "color": 3,
+      "children": [
+        { "id": "p-only-m365", "name": "Only M365 → XDR alone" },
+        { "id": "p-multicloud", "name": "Multi-cloud → Sentinel" },
+        { "id": "p-soc", "name": "Real SOC → both", "tag": "Most common" },
+        { "id": "p-budget", "name": "Tight budget → start XDR" }
+      ]
+    },
+    {
+      "id": "together",
+      "name": "Used together",
+      "color": 4,
+      "children": [
+        { "id": "t-xdr-tier1", "name": "XDR for tier-1 M365 alerts" },
+        { "id": "t-sent-correlate", "name": "Sentinel correlates everything" },
+        { "id": "t-soar", "name": "Sentinel SOAR for response" },
+        { "id": "t-copilot", "name": "Security Copilot on top" }
+      ]
+    }
+  ]
+}

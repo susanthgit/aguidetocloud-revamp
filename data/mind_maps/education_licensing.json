@@ -1,0 +1,63 @@
+{
+  "id": "education-licensing",
+  "name": "M365 Education — A Plans",
+  "palette": ["#92400E", "#7C2D12", "#5B21B6", "#155E75", "#3F6212"],
+  "children": [
+    {
+      "id": "free",
+      "name": "M365 A1 — Free for Edu",
+      "color": 0,
+      "children": [
+        { "id": "f-online", "name": "Online apps only" },
+        { "id": "f-teams", "name": "Teams for Education", "tag": "Free" },
+        { "id": "f-mail", "name": "Exchange + OneDrive (limited)" },
+        { "id": "f-no-desktop", "name": "No desktop apps" }
+      ]
+    },
+    {
+      "id": "a3",
+      "name": "M365 A3 — $3.30/u/mo",
+      "color": 1,
+      "children": [
+        { "id": "a3-cost", "name": "$3.30 (faculty) / FREE (student)" },
+        { "id": "a3-desktop", "name": "Desktop Office apps" },
+        { "id": "a3-intune", "name": "Intune for Education" },
+        { "id": "a3-defender", "name": "Defender for Endpoint P1" }
+      ]
+    },
+    {
+      "id": "a5",
+      "name": "M365 A5 — $7.25/u/mo",
+      "color": 2,
+      "children": [
+        { "id": "a5-cost", "name": "$7.25 (faculty) / lower (student)" },
+        { "id": "a5-defender", "name": "Full Defender suite" },
+        { "id": "a5-purview", "name": "Purview Premium" },
+        { "id": "a5-phone", "name": "Teams Phone Standard" },
+        { "id": "a5-equiv", "name": "Roughly = E5 with edu pricing" }
+      ]
+    },
+    {
+      "id": "vs",
+      "name": "vs Enterprise (E plans)",
+      "color": 3,
+      "children": [
+        { "id": "v-cheaper", "name": "10-20x cheaper than E" },
+        { "id": "v-eligibility", "name": "Eligibility: accredited edu", "tag": "Verified" },
+        { "id": "v-mix", "name": "Faculty + student mix" },
+        { "id": "v-classroom", "name": "Adds Class Notebook, Insights" }
+      ]
+    },
+    {
+      "id": "watch",
+      "name": "Watch out",
+      "color": 4,
+      "children": [
+        { "id": "w-copilot", "name": "Copilot is paid add-on" },
+        { "id": "w-gov", "name": "Edu vs Gov tenants different" },
+        { "id": "w-eligibility", "name": "Microsoft audits eligibility" },
+        { "id": "w-grad", "name": "Students lose access on grad" }
+      ]
+    }
+  ]
+}
