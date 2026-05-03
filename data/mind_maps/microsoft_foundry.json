@@ -1,17 +1,18 @@
 {
   "id": "microsoft-foundry",
-  "name": "Microsoft Foundry",
+  "name": "Azure AI Foundry",
   "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981", "#F59E0B"],
   "children": [
     {
       "id": "models",
-      "name": "1. Models layer",
+      "name": "1. Model catalog",
       "color": 0,
       "children": [
-        { "id": "m-catalog", "name": "Model catalog", "tag": "100s of models" },
-        { "id": "m-azureopenai", "name": "Azure OpenAI (GPT-4, o-series)" },
+        { "id": "m-multivendor", "name": "Multi-vendor by design", "tag": "Core USP" },
+        { "id": "m-azureopenai", "name": "OpenAI (GPT-4, o-series)" },
         { "id": "m-claude", "name": "Anthropic Claude" },
-        { "id": "m-llama", "name": "Llama / Mistral / open weights" },
+        { "id": "m-meta", "name": "Meta Llama / Mistral" },
+        { "id": "m-open", "name": "Open-weights + Hugging Face" },
         { "id": "m-byom", "name": "Bring your own model" }
       ]
     },

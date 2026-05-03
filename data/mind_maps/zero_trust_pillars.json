@@ -65,7 +65,7 @@
       "children": [
         { "id": "n-segment", "name": "Microsegmentation" },
         { "id": "n-encrypt", "name": "End-to-end encryption" },
-        { "id": "n-tool", "name": "Azure Firewall + WAF" },
+        { "id": "n-gsa", "name": "Global Secure Access", "tag": "MS tool" },
         { "id": "n-private", "name": "Private endpoints" }
       ]
     }

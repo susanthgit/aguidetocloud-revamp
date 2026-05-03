@@ -63,7 +63,7 @@
       "name": "vs Defender XDR",
       "color": 5,
       "children": [
-        { "id": "v-xdr", "name": "XDR = M365 stack only" },
+        { "id": "v-xdr", "name": "XDR = native MS stack" },
         { "id": "v-sent", "name": "Sentinel = everything", "tag": "SIEM" },
         { "id": "v-both", "name": "Most use both together" }
       ]

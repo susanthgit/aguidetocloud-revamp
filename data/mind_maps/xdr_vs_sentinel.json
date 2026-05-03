@@ -8,7 +8,7 @@
       "name": "Defender XDR",
       "color": 0,
       "children": [
-        { "id": "x-scope", "name": "M365 stack only", "tag": "Native" },
+        { "id": "x-scope", "name": "Native MS Defender stack", "tag": "Native" },
         { "id": "x-included", "name": "Free with E5 / E5 Sec" },
         { "id": "x-prebuilt", "name": "Pre-built incidents" },
         { "id": "x-portal", "name": "security.microsoft.com" }
@@ -41,7 +41,7 @@
       "name": "Pick by",
       "color": 3,
       "children": [
-        { "id": "p-only-m365", "name": "Only M365 → XDR alone" },
+        { "id": "p-only-m365", "name": "Only MS stack → XDR alone" },
         { "id": "p-multicloud", "name": "Multi-cloud → Sentinel" },
         { "id": "p-soc", "name": "Real SOC → both", "tag": "Most common" },
         { "id": "p-budget", "name": "Tight budget → start XDR" }
@@ -52,7 +52,7 @@
       "name": "Used together",
       "color": 4,
       "children": [
-        { "id": "t-xdr-tier1", "name": "XDR for tier-1 M365 alerts" },
+        { "id": "t-xdr-tier1", "name": "XDR for tier-1 MS alerts" },
         { "id": "t-sent-correlate", "name": "Sentinel correlates everything" },
         { "id": "t-soar", "name": "Sentinel SOAR for response" },
         { "id": "t-copilot", "name": "Security Copilot on top" }

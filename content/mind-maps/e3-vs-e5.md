@@ -15,7 +15,7 @@ faq:
   - question: "Can I mix E3 and E5 across my users?"
     answer: "Yes. Common pattern: E5 for security, compliance, and exec users; E3 for general workforce. Some E5 features (like Defender for Endpoint P2) need the licence on every device user — check feature licensing rules before mixing."
   - question: "Does E5 include M365 Copilot?"
-    answer: "No. M365 Copilot is a separate $30/user/month add-on. Both E3 and E5 are eligible base licences, so you can add Copilot to either. E5 users get more security/compliance signals that Copilot can ground on, but the Copilot price is the same."
+    answer: "No. M365 Copilot is a separate $30/user/month add-on. Eligible bases include M365 E3/E5/F1/F3, Office 365 E1/E3/E5, Business Standard/Premium, and M365 A3/A5 (faculty only). E5 users get more security/compliance signals that Copilot can ground on, but the Copilot price is the same regardless of base."
   - question: "What about Teams in E3 vs E5?"
-    answer: "Teams is included in both. E5 adds Teams Phone Standard (PSTN calling capabilities) and Audio Conferencing as part of the SKU. E3 customers can buy these as separate add-ons if needed."
+    answer: "Teams is included in both. E5 adds Teams Phone Standard (PSTN calling capabilities) as part of the SKU. Audio Conferencing is no longer E5-exclusive — Microsoft made it a free add-on for all paid M365/Office 365 commercial plans in 2024. E3 customers can buy Teams Phone Standard as a separate add-on if needed."
 ---

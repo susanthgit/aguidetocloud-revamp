@@ -29,10 +29,11 @@
       "name": "Eligible Base",
       "color": 2,
       "children": [
-        { "id": "b-e3", "name": "Microsoft 365 E3" },
-        { "id": "b-e5", "name": "Microsoft 365 E5" },
-        { "id": "b-bs", "name": "Business Standard" },
-        { "id": "b-bp", "name": "Business Premium" }
+        { "id": "b-e35", "name": "M365 E3 / E5" },
+        { "id": "b-f13", "name": "M365 F1 / F3", "tag": "Eligible" },
+        { "id": "b-biz", "name": "Business Std / Premium" },
+        { "id": "b-o365", "name": "Office 365 E1/E3/E5" },
+        { "id": "b-edu", "name": "M365 A3 / A5 (faculty)" }
       ]
     },
     {
@@ -48,12 +49,13 @@
     },
     {
       "id": "notincluded",
-      "name": "Not Included",
+      "name": "Watch-outs",
       "color": 4,
       "children": [
-        { "id": "n-frontline", "name": "F1/F3 frontline" },
-        { "id": "n-edu", "name": "EDU (limited)" },
-        { "id": "n-gcch", "name": "GCC High limited" }
+        { "id": "n-students", "name": "A3/A5 students no" },
+        { "id": "n-gcch", "name": "GCC High GA 2025", "tag": "Sovereign" },
+        { "id": "n-dod", "name": "DoD coming" },
+        { "id": "n-standalone", "name": "No standalone SKUs" }
       ]
     }
   ]

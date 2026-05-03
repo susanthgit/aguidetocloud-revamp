@@ -20,7 +20,7 @@
       "color": 1,
       "children": [
         { "id": "l-addon", "name": "M365 Copilot add-on" },
-        { "id": "l-base", "name": "Eligible base SKU" },
+        { "id": "l-base", "name": "E3/E5/F1/F3/Business/A3/A5" },
         { "id": "l-assign", "name": "Assign per user" }
       ]
     },

@@ -13,7 +13,7 @@ faq:
   - question: "Do I have to start with AZ-900?"
     answer: "Not required, but recommended for newcomers to Azure. AZ-900 covers cloud concepts, Azure architecture, and pricing — solid foundations that show up in every Associate exam. Experienced engineers can skip straight to AZ-104 or AZ-204."
   - question: "What's the highest-paid Azure certification?"
-    answer: "Salary surveys consistently put Expert-level certs (AZ-305 Solutions Architect, SC-100 Cybersecurity Architect, AZ-400 DevOps) at the top — typically $140k–$180k+ in mature markets. Specialty certs (AZ-700 Networking) also command premium rates."
+    answer: "Salary surveys consistently put Expert-level certs (AZ-305 Solutions Architect, SC-100 Cybersecurity Architect, AZ-400 DevOps) at the top — typically $140k–$180k+ in mature markets. AZ-700 Networking is now an Associate (it was reclassified from Specialty) and pays well alongside AZ-104."
   - question: "What's DP-700 Fabric Engineer?"
     answer: "Microsoft's newest data certification, launched in 2024. It validates skills in Microsoft Fabric — the unified data platform combining Power BI, Data Factory, Synapse, and OneLake. Hot path for data engineers in 2026."
   - question: "Do Microsoft certs expire?"

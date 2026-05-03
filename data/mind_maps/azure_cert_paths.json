@@ -11,7 +11,8 @@
         { "id": "f-az900", "name": "AZ-900 Azure", "tag": "Start here" },
         { "id": "f-ai900", "name": "AI-900 AI" },
         { "id": "f-dp900", "name": "DP-900 Data" },
-        { "id": "f-sc900", "name": "SC-900 Security" }
+        { "id": "f-sc900", "name": "SC-900 Security" },
+        { "id": "f-pl900", "name": "PL-900 Power Platform" }
       ]
     },
     {
@@ -21,7 +22,8 @@
       "children": [
         { "id": "i-az104", "name": "AZ-104 Admin", "tag": "Most jobs" },
         { "id": "i-az204", "name": "AZ-204 Developer" },
-        { "id": "i-az500", "name": "AZ-500 Security" }
+        { "id": "i-az500", "name": "AZ-500 Security" },
+        { "id": "i-az700", "name": "AZ-700 Networking" }
       ]
     },
     {
@@ -30,7 +32,8 @@
       "color": 2,
       "children": [
         { "id": "d-ai102", "name": "AI-102 AI Engineer" },
-        { "id": "d-dp203", "name": "DP-203 Data Engineer" },
+        { "id": "d-dp700", "name": "DP-700 Fabric Engineer" },
+        { "id": "d-dp600", "name": "DP-600 Fabric Analytics" },
         { "id": "d-dp300", "name": "DP-300 DB Admin" }
       ]
     },
@@ -49,7 +52,6 @@
       "name": "Specialty",
       "color": 4,
       "children": [
-        { "id": "sp-az700", "name": "AZ-700 Networking" },
         { "id": "sp-az140", "name": "AZ-140 AVD" }
       ]
     },
@@ -58,8 +60,8 @@
       "name": "New & Hot",
       "color": 5,
       "children": [
-        { "id": "n-dp700", "name": "DP-700 Fabric", "tag": "New" },
-        { "id": "n-ai200", "name": "AI-200 Beta", "tag": "Coming" }
+        { "id": "n-dp700", "name": "DP-700 Fabric", "tag": "GA" },
+        { "id": "n-watch", "name": "Watch MS Learn" }
       ]
     }
   ]

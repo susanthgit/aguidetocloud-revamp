@@ -10,7 +10,7 @@
       "children": [
         { "id": "f-sc900", "name": "SC-900 SCI", "tag": "Start here" },
         { "id": "f-az900", "name": "AZ-900 Azure" },
-        { "id": "f-ms900", "name": "MS-900 M365" }
+        { "id": "f-ai900", "name": "AI-900 AI" }
       ]
     },
     {
@@ -58,7 +58,7 @@
       "name": "Coming Soon",
       "color": 5,
       "children": [
-        { "id": "c-sc500", "name": "SC-500 Beta May", "tag": "New" }
+        { "id": "c-watch", "name": "Watch MS Learn", "tag": "New roles" }
       ]
     }
   ]

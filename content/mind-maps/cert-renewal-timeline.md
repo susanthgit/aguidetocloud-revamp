@@ -11,7 +11,7 @@ images:
   - images/og/mind-maps/cert-renewal-timeline.jpg
 faq:
   - question: "Which Microsoft certs expire?"
-    answer: "Role-based certifications (AZ-104, AZ-204, AZ-305, AI-102, SC-200, SC-300, SC-400, MS-102, etc.) and Specialty certifications (AZ-140, AZ-700, etc.) expire one year after you earn them. Fundamentals certifications (AZ-900, AI-900, DP-900, SC-900, MS-900, PL-900, MB-910/920) DO NOT expire — earn once, keep forever."
+    answer: "Role-based certifications (AZ-104, AZ-204, AZ-305, AI-102, SC-200, SC-300, SC-400, MS-102, etc.) and Specialty certifications (AZ-140, AZ-700, etc.) expire one year after you earn them. Fundamentals certifications (AZ-900, AI-900, DP-900, SC-900, PL-900, MB-910/920) DO NOT expire — earn once, keep forever. Note: MS-900 was retired on March 31, 2026 and is no longer available to take, but anyone who earned it before retirement keeps it for life."
   - question: "How does the renewal assessment differ from the original exam?"
     answer: "The renewal is shorter (~45 minutes vs ~120 minutes), free (vs $165 USD per exam), unproctored, and covers ONLY the changes since the last exam update — not the whole syllabus. It's online via Microsoft Learn. You take it inside your Learn profile, pass once and your certification extends for another year from the previous expiry date."
   - question: "What if I miss the renewal window?"

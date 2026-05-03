@@ -42,7 +42,7 @@
       "children": [
         { "id": "f-adfs", "name": "→ AD FS (rarely now)", "tag": "Last resort" },
         { "id": "f-mfa3p", "name": "3rd-party MFA / SSO requirement" },
-        { "id": "f-sunset", "name": "Sunset by 2027" },
+        { "id": "f-sunset", "name": "No new deployments" },
         { "id": "f-modern", "name": "Move to Entra MFA + CA" }
       ]
     },

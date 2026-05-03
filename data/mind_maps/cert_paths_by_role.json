@@ -9,7 +9,6 @@
       "color": 0,
       "children": [
         { "id": "ad-az900", "name": "AZ-900", "tag": "Start" },
-        { "id": "ad-ms900", "name": "MS-900" },
         { "id": "ad-az104", "name": "AZ-104 Azure Admin" },
         { "id": "ad-ms102", "name": "MS-102 M365 Admin" }
       ]
@@ -32,7 +31,7 @@
         { "id": "se-sc900", "name": "SC-900" },
         { "id": "se-sc200", "name": "SC-200 Sentinel + XDR", "tag": "Core" },
         { "id": "se-az500", "name": "AZ-500 Azure Security" },
-        { "id": "se-sc500", "name": "SC-500 (new beta)" }
+        { "id": "se-sc100", "name": "SC-100 architect" }
       ]
     },
     {
@@ -51,8 +50,8 @@
       "color": 4,
       "children": [
         { "id": "ai-ai900", "name": "AI-900" },
-        { "id": "ai-ai102", "name": "AI-102 Azure AI Engineer" },
-        { "id": "ai-ai200", "name": "AI-200 (new — copilot)" }
+        { "id": "ai-ai102", "name": "AI-102 Azure AI Engineer", "tag": "Core" },
+        { "id": "ai-az204", "name": "AZ-204 (helps)" }
       ]
     },
     {
@@ -61,8 +60,8 @@
       "color": 5,
       "children": [
         { "id": "da-dp900", "name": "DP-900" },
-        { "id": "da-dp203", "name": "DP-203 Data Engineer", "tag": "Core" },
-        { "id": "da-dp700", "name": "DP-700 Fabric (new)" },
+        { "id": "da-dp700", "name": "DP-700 Fabric Engineer", "tag": "Core" },
+        { "id": "da-dp600", "name": "DP-600 Fabric Analytics" },
         { "id": "da-dp300", "name": "DP-300 DB Admin" }
       ]
     }

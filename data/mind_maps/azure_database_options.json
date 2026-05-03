@@ -29,7 +29,7 @@
       "name": "Need NoSQL / global?",
       "color": 2,
       "children": [
-        { "id": "n-cosmos", "name": "→ Cosmos DB", "tag": "5 APIs" },
+        { "id": "n-cosmos", "name": "→ Cosmos DB", "tag": "6 APIs" },
         { "id": "n-table", "name": "Or Storage Table (cheap KV)" },
         { "id": "n-redis", "name": "Or Azure Managed Redis" }
       ]
@@ -43,7 +43,8 @@
         { "id": "c-mongo", "name": "MongoDB API" },
         { "id": "c-cassandra", "name": "Cassandra API" },
         { "id": "c-gremlin", "name": "Gremlin (graph)" },
-        { "id": "c-table", "name": "Table API" }
+        { "id": "c-table", "name": "Table API" },
+        { "id": "c-postgres", "name": "PostgreSQL API" }
       ]
     },
     {
@@ -63,7 +64,7 @@
       "children": [
         { "id": "e-dp900", "name": "DP-900 — concepts" },
         { "id": "e-dp300", "name": "DP-300 — SQL admin" },
-        { "id": "e-dp203", "name": "DP-203 — pipeline / Synapse" },
+        { "id": "e-dp700", "name": "DP-700 — Fabric pipeline" },
         { "id": "e-az204", "name": "AZ-204 — Cosmos basics" }
       ]
     }

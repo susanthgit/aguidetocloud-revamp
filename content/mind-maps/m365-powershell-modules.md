@@ -11,7 +11,7 @@ images:
   - images/og/mind-maps/m365-powershell-modules.jpg
 faq:
   - question: "Why migrate off AzureAD and MSOnline modules?"
-    answer: "MSOnline was retired in March 2025. AzureAD was deprecated in 2024 and stops working in 2026. Both used legacy Azure AD Graph endpoints that Microsoft has deprecated. The replacement is the Microsoft.Graph PowerShell module which uses Microsoft Graph API. If you have scripts referencing Get-MsolUser, Get-AzureADUser, Connect-MsolService — they're on borrowed time. Migrate now or your automation breaks."
+    answer: "MSOnline reached end-of-support on **May 30, 2025**. The legacy AzureAD module was retired on **August 31, 2025** — it no longer works in production. Both used legacy Azure AD Graph endpoints that Microsoft has deprecated. The replacement is the Microsoft.Graph PowerShell module which uses Microsoft Graph API. If you have scripts referencing Get-MsolUser, Get-AzureADUser, Connect-MsolService — they're already broken. Microsoft also released the new **Microsoft.Entra** module in 2025 which provides a cmdlet experience closer to the old AzureAD module while using Graph under the hood."
   - question: "Why is Microsoft.Graph split into so many sub-modules?"
     answer: "The full Microsoft.Graph module is huge (gigabytes). To save load time and disk, Microsoft splits it into per-resource sub-modules: Microsoft.Graph.Users, Microsoft.Graph.Groups, Microsoft.Graph.Identity.SignIns, Microsoft.Graph.DeviceManagement, etc. You install only the sub-modules your scripts use. The 'Microsoft.Graph' meta-module pulls in everything (handy for ad-hoc PowerShell sessions, painful for production runners)."
   - question: "What's PnP.PowerShell and when do I need it?"

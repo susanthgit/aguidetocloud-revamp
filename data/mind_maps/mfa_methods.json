@@ -53,7 +53,7 @@
       "children": [
         { "id": "co-cmmc", "name": "CMMC / NIST: phishing-resistant only" },
         { "id": "co-eo14028", "name": "US Exec Order 14028" },
-        { "id": "co-fedramp", "name": "FedRAMP High = FIDO2" }
+        { "id": "co-fedramp", "name": "FedRAMP High = phish-resistant" }
       ]
     }
   ]

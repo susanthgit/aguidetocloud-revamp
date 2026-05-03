@@ -50,16 +50,16 @@
       "color": 4,
       "children": [
         { "id": "v-phone", "name": "Teams Phone Std (E5)" },
-        { "id": "v-audio", "name": "Audio Conferencing" }
+        { "id": "v-audio", "name": "Audio Conf (now free)" }
       ]
     },
     {
       "id": "cost",
-      "name": "Cost (USD)",
+      "name": "Cost (USD list)",
       "color": 5,
       "children": [
-        { "id": "co-e3", "name": "E3: ~$36/user/mo" },
-        { "id": "co-e5", "name": "E5: ~$57/user/mo" },
+        { "id": "co-e3", "name": "E3: ~$39/user/mo" },
+        { "id": "co-e5", "name": "E5: ~$60/user/mo" },
         { "id": "co-diff", "name": "Diff: ~$252/yr", "tag": "Annual" }
       ]
     }

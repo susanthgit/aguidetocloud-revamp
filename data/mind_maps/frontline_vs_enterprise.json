@@ -30,9 +30,9 @@
       "name": "E3 — Standard Office",
       "color": 2,
       "children": [
-        { "id": "e3-cost", "name": "$36 / user / mo" },
+        { "id": "e3-cost", "name": "$39 / user / mo" },
         { "id": "e3-desktop", "name": "Desktop Office apps" },
-        { "id": "e3-50gb", "name": "50 GB email + 1 TB OneDrive" },
+        { "id": "e3-100gb", "name": "100 GB email + 1 TB OneDrive" },
         { "id": "e3-basic-sec", "name": "Basic security" }
       ]
     },
@@ -41,7 +41,7 @@
       "name": "E5 — Premium Suite",
       "color": 3,
       "children": [
-        { "id": "e5-cost", "name": "$57 / user / mo" },
+        { "id": "e5-cost", "name": "$60 / user / mo" },
         { "id": "e5-defender", "name": "Full Defender stack", "tag": "Adv security" },
         { "id": "e5-purview", "name": "Purview Premium" },
         { "id": "e5-phone", "name": "Teams Phone Standard" }
