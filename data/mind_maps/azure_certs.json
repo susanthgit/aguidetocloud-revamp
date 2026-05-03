@@ -118,9 +118,9 @@
           { "id": "sp-ai3", "name": "OpenAI" }
         ]},
         { "id": "data-eng", "name": "Data Engineer", "children": [
-          { "id": "sp-de1", "name": "DP-203" },
-          { "id": "sp-de2", "name": "Synapse" },
-          { "id": "sp-de3", "name": "Data Lake" }
+          { "id": "sp-de1", "name": "DP-700" },
+          { "id": "sp-de2", "name": "Fabric" },
+          { "id": "sp-de3", "name": "OneLake" }
         ]},
         { "id": "secops", "name": "SecOps", "children": [
           { "id": "sp-so1", "name": "SC-200" },

@@ -1,0 +1,80 @@
+# Mind Maps Refresh Watchlist
+#
+# Add explicit "verify by date" items here for things that:
+#   - Will need re-checking on a known date (e.g., a price hike, a beta GA, a retirement)
+#   - Aren't easy for the heuristic linter to catch automatically
+#
+# The monthly freshness pipeline reads this file and surfaces items as their
+# verify_by date approaches or passes.
+#
+# Schema per item:
+#   slug        — the mind map slug (kebab-case, matches content/mind-maps/<slug>.md)
+#   what        — what to verify (one line, plain English)
+#   verify_by   — ISO date YYYY-MM-DD; pipeline flags 14 days before and after
+#   source      — Microsoft Learn URL or other authoritative source
+
+[[items]]
+slug = "e3-vs-e5"
+what = "Microsoft 365 list price increase: E3 $36→$39, E5 $57→$60 takes effect — confirm rolled out and update any contradicting maps"
+verify_by = "2026-07-15"
+source = "https://www.microsoft.com/en-us/licensing/news/2026-M365-Packaging-Pricing-Updates"
+
+[[items]]
+slug = "frontline-vs-enterprise"
+what = "Same price hike — verify all licensing maps reflect post-July-2026 prices uniformly"
+verify_by = "2026-07-15"
+source = "https://www.microsoft.com/en-us/licensing/news/2026-M365-Packaging-Pricing-Updates"
+
+[[items]]
+slug = "m365-e7"
+what = "E7 launch promotions end Dec 31, 2026 — update FAQ to reflect post-promo pricing"
+verify_by = "2027-01-15"
+source = "https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-enterprise-overview"
+
+[[items]]
+slug = "security-cert-paths"
+what = "SC-500 — community-discussed but no Microsoft Learn confirmation yet. Verify if Microsoft has published the study guide."
+verify_by = "2026-08-01"
+source = "https://learn.microsoft.com/en-us/credentials/"
+
+[[items]]
+slug = "cert-paths-by-role"
+what = "SC-500 ditto — and add DevOps Engineer (AZ-400) track once the data layout is ready"
+verify_by = "2026-08-01"
+source = "https://learn.microsoft.com/en-us/credentials/"
+
+[[items]]
+slug = "agent-365"
+what = "Agent 365 GA — verify launch claims, Entra Agent ID + Defender for Agents wording, update if any features moved post-GA"
+verify_by = "2026-06-01"
+source = "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agents-overview"
+
+[[items]]
+slug = "microsoft-foundry"
+what = "Azure AI Foundry rebrand stabilisation — verify product name still 'Azure AI Foundry' (not yet rebranded again) and model catalog vendor list current"
+verify_by = "2026-08-01"
+source = "https://learn.microsoft.com/en-us/azure/ai-foundry/"
+
+[[items]]
+slug = "azure-database-options"
+what = "DP-203 retirement was March 2025 — verify exam fully removed from MS Learn; confirm DP-700 is current Fabric exam"
+verify_by = "2026-09-01"
+source = "https://learn.microsoft.com/en-us/credentials/certifications/azure-data-engineer/"
+
+[[items]]
+slug = "hybrid-identity-options"
+what = "Cloud Sync vs Connect Sync — Microsoft is moving features over time; verify Cloud Sync supports the latest scenarios listed"
+verify_by = "2026-09-01"
+source = "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/what-is-cloud-sync"
+
+[[items]]
+slug = "mfa-methods"
+what = "Phishing-resistant guidance — Microsoft updates the auth methods policy occasionally; verify FIDO2 / passkey / cert-based wording matches current docs"
+verify_by = "2026-09-01"
+source = "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-strengths"
+
+[[items]]
+slug = "xdr-vs-sentinel"
+what = "Unified portal — Defender + Sentinel + Defender for Cloud + Exposure Management consolidation; verify scope wording stays current"
+verify_by = "2026-09-01"
+source = "https://learn.microsoft.com/en-us/unified-secops-platform/overview-unified-security"

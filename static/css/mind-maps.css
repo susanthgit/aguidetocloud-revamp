@@ -189,6 +189,25 @@
   margin-bottom: var(--space-4);
 }
 
+/* ── Last reviewed badge — small, unobtrusive, builds trust ── */
+.mm-lastmod {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 4px 10px;
+  margin: 0 0 var(--space-4);
+  font-weight: 500;
+}
+.mm-lastmod time {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
 /* ── Mind map viewer ── */
 .mm-viewer {
   position: relative;

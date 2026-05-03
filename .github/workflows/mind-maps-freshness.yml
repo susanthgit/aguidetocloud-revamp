@@ -1,0 +1,47 @@
+name: 🧠 Monthly Mind Maps Freshness Check
+
+on:
+  schedule:
+    # 1st of each month at 21:00 UTC = 9 AM NZST (next day in NZ)
+    - cron: '0 21 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check-freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
+        with:
+          python-version: '3.12'
+
+      - name: 🔍 Run mind maps freshness check
+        id: check
+        run: python scripts/check-mind-maps-freshness.py
+
+      - name: 📤 Upload report as artifact (always)
+        if: always()
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+        with:
+          name: mind-maps-freshness-report
+          path: mind-maps-freshness-report.md
+          if-no-files-found: ignore
+          retention-days: 90
+
+      - name: 📝 Create issue if maps need attention
+        if: steps.check.outputs.issues_found == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          gh issue create \
+            --title "🧠 Mind Maps freshness — $DATE" \
+            --label "mind-maps,refresh" \
+            --body-file mind-maps-freshness-report.md

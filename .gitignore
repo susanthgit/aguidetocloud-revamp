@@ -19,3 +19,7 @@ scripts/thumbnail-generator/fonts/
 scripts/thumbnail-generator/badges/
 scripts/thumbnail-generator/*.json
 ~$*
+
+# Generated freshness reports (created by GH Actions or local runs)
+freshness-report.md
+mind-maps-freshness-report.md
