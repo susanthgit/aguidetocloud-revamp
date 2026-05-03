@@ -1,0 +1,72 @@
+{
+  "id": "azure-networking-blocks",
+  "name": "Azure Networking Building Blocks",
+  "palette": ["#2563EB", "#059669", "#D97706", "#7C3AED", "#DC2626", "#DB2777"],
+  "children": [
+    {
+      "id": "vnet",
+      "name": "Virtual Network",
+      "color": 0,
+      "children": [
+        { "id": "v-vnet", "name": "VNet + subnets", "tag": "Foundation" },
+        { "id": "v-peer", "name": "VNet peering" },
+        { "id": "v-cidr", "name": "CIDR planning" },
+        { "id": "v-udr", "name": "User-defined routes" }
+      ]
+    },
+    {
+      "id": "filters",
+      "name": "Traffic Filtering",
+      "color": 1,
+      "children": [
+        { "id": "f-nsg", "name": "NSG (subnet/NIC)", "tag": "Stateful" },
+        { "id": "f-asg", "name": "App Security Group" },
+        { "id": "f-fw", "name": "Azure Firewall" },
+        { "id": "f-waf", "name": "WAF on Front Door" }
+      ]
+    },
+    {
+      "id": "secure",
+      "name": "Secure Access",
+      "color": 2,
+      "children": [
+        { "id": "s-bastion", "name": "Azure Bastion", "tag": "No public IP" },
+        { "id": "s-jit", "name": "Just-in-time VM" },
+        { "id": "s-priv", "name": "Private endpoint" },
+        { "id": "s-link", "name": "Private Link service" }
+      ]
+    },
+    {
+      "id": "hybrid",
+      "name": "Hybrid Connectivity",
+      "color": 3,
+      "children": [
+        { "id": "h-vpn", "name": "Site-to-site VPN" },
+        { "id": "h-p2s", "name": "Point-to-site VPN" },
+        { "id": "h-er", "name": "ExpressRoute", "tag": "Private circuit" },
+        { "id": "h-vwan", "name": "Virtual WAN" }
+      ]
+    },
+    {
+      "id": "global",
+      "name": "Global Delivery",
+      "color": 4,
+      "children": [
+        { "id": "g-fd", "name": "Azure Front Door", "tag": "Global LB" },
+        { "id": "g-tm", "name": "Traffic Manager (DNS)" },
+        { "id": "g-cdn", "name": "Azure CDN" },
+        { "id": "g-app", "name": "App Gateway (regional)" }
+      ]
+    },
+    {
+      "id": "naming",
+      "name": "DNS & Naming",
+      "color": 5,
+      "children": [
+        { "id": "d-azdns", "name": "Azure DNS public" },
+        { "id": "d-priv", "name": "Private DNS zones" },
+        { "id": "d-link", "name": "DNS auto-link to VNet" }
+      ]
+    }
+  ]
+}

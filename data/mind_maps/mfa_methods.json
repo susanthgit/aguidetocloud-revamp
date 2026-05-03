@@ -1,0 +1,60 @@
+{
+  "id": "mfa-methods",
+  "name": "MFA Methods — Phishing Resistance",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C"],
+  "children": [
+    {
+      "id": "best",
+      "name": "Phishing-resistant",
+      "color": 0,
+      "children": [
+        { "id": "be-passkey", "name": "Passkey (FIDO2)", "tag": "Best" },
+        { "id": "be-yubi", "name": "Hardware key (FIDO2)" },
+        { "id": "be-platform", "name": "Platform (Windows Hello)" },
+        { "id": "be-cert", "name": "Cert-based auth" }
+      ]
+    },
+    {
+      "id": "good",
+      "name": "Strong (with care)",
+      "color": 1,
+      "children": [
+        { "id": "g-numbermatch", "name": "Authenticator + number match", "tag": "Default" },
+        { "id": "g-context", "name": "Push with context" },
+        { "id": "g-totp", "name": "Software TOTP code" }
+      ]
+    },
+    {
+      "id": "weak",
+      "name": "Avoid for sensitive apps",
+      "color": 2,
+      "children": [
+        { "id": "w-push-noctx", "name": "Push without context" },
+        { "id": "w-sms", "name": "SMS code" },
+        { "id": "w-voice", "name": "Voice call" },
+        { "id": "w-email", "name": "Email link / OTP" }
+      ]
+    },
+    {
+      "id": "checklist",
+      "name": "Deployment Checklist",
+      "color": 3,
+      "children": [
+        { "id": "c-strength", "name": "Use Auth Strength policy" },
+        { "id": "c-disable", "name": "Disable SMS for admins", "tag": "Critical" },
+        { "id": "c-baseline", "name": "Baseline: Authenticator" },
+        { "id": "c-passwordless", "name": "Path to passwordless" }
+      ]
+    },
+    {
+      "id": "compliance",
+      "name": "Compliance Notes",
+      "color": 4,
+      "children": [
+        { "id": "co-cmmc", "name": "CMMC / NIST: phishing-resistant only" },
+        { "id": "co-eo14028", "name": "US Exec Order 14028" },
+        { "id": "co-fedramp", "name": "FedRAMP High = FIDO2" }
+      ]
+    }
+  ]
+}

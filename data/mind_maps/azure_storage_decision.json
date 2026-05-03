@@ -1,0 +1,59 @@
+{
+  "id": "azure-storage-decision",
+  "name": "Azure Storage — Pick the Right One",
+  "palette": ["#2563EB", "#059669", "#D97706", "#7C3AED", "#DC2626"],
+  "children": [
+    {
+      "id": "blob",
+      "name": "Unstructured / objects?",
+      "color": 0,
+      "children": [
+        { "id": "b-blob", "name": "→ Blob Storage", "tag": "Most common" },
+        { "id": "b-hot", "name": "Hot tier (frequent)" },
+        { "id": "b-cool", "name": "Cool / Cold (rarely)" },
+        { "id": "b-archive", "name": "Archive (yearly)" }
+      ]
+    },
+    {
+      "id": "files",
+      "name": "Need a file share?",
+      "color": 1,
+      "children": [
+        { "id": "f-files", "name": "→ Azure Files", "tag": "SMB / NFS" },
+        { "id": "f-sync", "name": "+ Azure File Sync (hybrid)" },
+        { "id": "f-premium", "name": "Premium (SSD, low latency)" }
+      ]
+    },
+    {
+      "id": "disks",
+      "name": "VM disks?",
+      "color": 2,
+      "children": [
+        { "id": "d-disk", "name": "→ Managed Disks" },
+        { "id": "d-tiers", "name": "Standard / Premium / Ultra" },
+        { "id": "d-snap", "name": "Snapshots + images" }
+      ]
+    },
+    {
+      "id": "tables",
+      "name": "Key-value / NoSQL?",
+      "color": 3,
+      "children": [
+        { "id": "t-table", "name": "→ Table Storage", "tag": "Cheap KV" },
+        { "id": "t-cosmos", "name": "Or Cosmos DB Table API" },
+        { "id": "t-decide", "name": "Cosmos = global + SLA" }
+      ]
+    },
+    {
+      "id": "redundancy",
+      "name": "Redundancy options",
+      "color": 4,
+      "children": [
+        { "id": "r-lrs", "name": "LRS — same DC", "tag": "Cheapest" },
+        { "id": "r-zrs", "name": "ZRS — across AZs" },
+        { "id": "r-grs", "name": "GRS — paired region" },
+        { "id": "r-gzrs", "name": "GZRS — best of both" }
+      ]
+    }
+  ]
+}

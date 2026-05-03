@@ -1,0 +1,61 @@
+{
+  "id": "sharepoint-permissions",
+  "name": "SharePoint Permissions Decoded",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981"],
+  "children": [
+    {
+      "id": "inheritance",
+      "name": "Inheritance chain",
+      "color": 0,
+      "children": [
+        { "id": "i-site", "name": "Site (top)", "tag": "Default" },
+        { "id": "i-lib", "name": "Library / List" },
+        { "id": "i-folder", "name": "Folder" },
+        { "id": "i-item", "name": "Item / File (deepest)" }
+      ]
+    },
+    {
+      "id": "groups",
+      "name": "Default site groups",
+      "color": 1,
+      "children": [
+        { "id": "g-owner", "name": "Owners — Full Control" },
+        { "id": "g-member", "name": "Members — Edit", "tag": "Most users" },
+        { "id": "g-visitor", "name": "Visitors — Read" }
+      ]
+    },
+    {
+      "id": "break",
+      "name": "When inheritance breaks",
+      "color": 2,
+      "children": [
+        { "id": "b-share", "name": "User clicks Share", "tag": "Common" },
+        { "id": "b-restrict", "name": "Stop sharing on item" },
+        { "id": "b-explicit", "name": "Adding explicit permission" },
+        { "id": "b-cost", "name": "→ Audit complexity rises" }
+      ]
+    },
+    {
+      "id": "external",
+      "name": "External sharing",
+      "color": 3,
+      "children": [
+        { "id": "e-anyone", "name": "Anyone link", "tag": "Risky" },
+        { "id": "e-specific", "name": "Specific people" },
+        { "id": "e-existing", "name": "Existing guests" },
+        { "id": "e-tenant", "name": "Tenant + site overrides" }
+      ]
+    },
+    {
+      "id": "copilot",
+      "name": "Copilot impact",
+      "color": 4,
+      "children": [
+        { "id": "c-sees", "name": "Sees what user sees" },
+        { "id": "c-overshare", "name": "Oversharing → leaks" },
+        { "id": "c-restricted", "name": "Restricted SP Search" },
+        { "id": "c-clean", "name": "Permissions hygiene first" }
+      ]
+    }
+  ]
+}

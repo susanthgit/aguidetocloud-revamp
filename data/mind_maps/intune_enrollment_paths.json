@@ -1,0 +1,68 @@
+{
+  "id": "intune-enrollment-paths",
+  "name": "Intune Enrollment — Pick a Path",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C", "#6B21A8"],
+  "children": [
+    {
+      "id": "windows",
+      "name": "Windows device — IT-issued?",
+      "color": 0,
+      "children": [
+        { "id": "w-autopilot", "name": "→ Autopilot (zero-touch)", "tag": "Modern" },
+        { "id": "w-cloud", "name": "Entra-joined cloud-only" },
+        { "id": "w-hybrid", "name": "Hybrid Entra Join" },
+        { "id": "w-bulk", "name": "Bulk PPKG (legacy)" }
+      ]
+    },
+    {
+      "id": "mac",
+      "name": "Mac / Apple",
+      "color": 1,
+      "children": [
+        { "id": "m-abm", "name": "Apple Business Manager", "tag": "Mac + iPad" },
+        { "id": "m-userauth", "name": "User-affinity ADE" },
+        { "id": "m-companyportal", "name": "Manual Company Portal" }
+      ]
+    },
+    {
+      "id": "android",
+      "name": "Android",
+      "color": 2,
+      "children": [
+        { "id": "a-zero", "name": "Zero Touch Enrolment" },
+        { "id": "a-ent", "name": "Android Enterprise" },
+        { "id": "a-byod", "name": "BYOD work profile" }
+      ]
+    },
+    {
+      "id": "byod",
+      "name": "Personal device (BYOD)?",
+      "color": 3,
+      "children": [
+        { "id": "b-mam", "name": "→ MAM-only (no enrol)", "tag": "Lightweight" },
+        { "id": "b-app", "name": "App protection policies" },
+        { "id": "b-portal", "name": "Or full Company Portal" }
+      ]
+    },
+    {
+      "id": "shared",
+      "name": "Shared / kiosk?",
+      "color": 4,
+      "children": [
+        { "id": "s-multi", "name": "Multi-user shared mode" },
+        { "id": "s-kiosk", "name": "Kiosk mode / MultiApp" },
+        { "id": "s-frontline", "name": "Frontline scenarios" }
+      ]
+    },
+    {
+      "id": "rules",
+      "name": "Rules of thumb",
+      "color": 5,
+      "children": [
+        { "id": "r-corp", "name": "Corporate = Autopilot" },
+        { "id": "r-byod", "name": "BYOD = MAM-only", "tag": "Best" },
+        { "id": "r-avoid", "name": "Avoid Hybrid for new" }
+      ]
+    }
+  ]
+}
