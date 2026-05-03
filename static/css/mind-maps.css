@@ -683,6 +683,23 @@
   margin: 0;
   max-width: 60ch;
 }
+.mm-list-lede strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.mm-list-lede em {
+  font-style: normal;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.mm-list-disclosure {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-muted, #9CA3AF);
+  margin: var(--space-2, 0.5rem) 0 0;
+  max-width: 60ch;
+}
 
 /* Linear-style tab bar — underline active, no pills */
 .mm-list-tabs {
@@ -1214,4 +1231,35 @@
 @media (max-width: 768px) {
   .mm-featured { grid-template-columns: 1fr; }
   .mm-featured-card:nth-child(n+2) { display: none; }
+}
+
+/* ──────────────────────────────────────────
+   📱 Mind Maps hub — mobile refinement (3 May 2026)
+   Brings the hub into Layer 1 mobile pattern: filter pills
+   horizontal-scroll instead of wrap (matches .zt-lic-pills).
+   ────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .mm-list-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: var(--space-3, 0.75rem);
+  }
+  .mm-list-tabs::-webkit-scrollbar { display: none; }
+  .mm-list-tab { flex-shrink: 0; }
+
+  .mm-format-chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: var(--space-2, 0.5rem);
+  }
+  .mm-format-chips::-webkit-scrollbar { display: none; }
+  .mm-format-chip { flex-shrink: 0; }
+
+  /* Tighter spacing for the new lede + disclosure stack on phones */
+  .mm-list-header { margin-bottom: var(--space-6, 1.5rem); }
+  .mm-list-lede { font-size: 0.9rem; }
 }
