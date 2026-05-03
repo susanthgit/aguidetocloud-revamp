@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-03T19:15:34.750982+00:00",
-  "total_incidents_tracked": 104,
+  "generated_at": "2026-05-03T20:59:47.702610+00:00",
+  "total_incidents_tracked": 103,
   "services": [
     {
       "service": "Microsoft 365 suite",
@@ -119,18 +119,6 @@
       }
     },
     {
-      "service": "Azure",
-      "short_name": "Azure",
-      "icon": "☁️",
-      "total_incidents": 4,
-      "active_incidents": 0,
-      "avg_duration_minutes": 836,
-      "last_incident": "2026-04-25T00:15:00+00:00",
-      "classifications": {
-        "incident": 4
-      }
-    },
-    {
       "service": "Microsoft 365 Copilot Chat",
       "short_name": "Copilot Chat",
       "icon": "💭",
@@ -141,6 +129,18 @@
       "classifications": {
         "advisory": 2,
         "incident": 2
+      }
+    },
+    {
+      "service": "Azure",
+      "short_name": "Azure",
+      "icon": "☁️",
+      "total_incidents": 3,
+      "active_incidents": 0,
+      "avg_duration_minutes": 875,
+      "last_incident": "2026-04-25T00:15:00+00:00",
+      "classifications": {
+        "incident": 3
       }
     },
     {
@@ -199,7 +199,7 @@
     },
     {
       "month": "2026-02",
-      "incident_count": 12,
+      "incident_count": 11,
       "services_affected": 8
     }
   ]
