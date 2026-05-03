@@ -3,7 +3,7 @@
 # How it works:
 # - Hugo picks 3 sequential candidates per week from the pool below
 # - Each weekly build (cache version bump or content change) advances the rotation
-# - Pool of ~12 means full rotation in ~4 weeks
+# - Pool of 22 = full rotation in ~7 weeks (3 per week, wrap)
 # - To override the rotation manually for a launch, fill [pinned] with 3 slugs
 #   (template prefers pinned over candidates if pinned has 3+ entries)
 
@@ -14,6 +14,8 @@
 # ── Rotation pool ──────────────────────────────────────────
 # Curated featurable maps. Order is preserved — rotation walks the pool
 # 3-at-a-time and wraps. Each tagline ≤ ~70 chars for visual balance.
+# Mix of architecture / decision-tree / comparison / reference / roadmap
+# across copilot / security / certifications / licensing categories.
 
 [[candidates]]
 slug = "copilot-7-layers"
@@ -62,3 +64,44 @@ tagline = "AZ-104 study domains and weights, current April 2026 skills measured"
 [[candidates]]
 slug = "copilot-tenant-rollout"
 tagline = "Why doesn't my tenant have feature X yet? Frontier vs Standard vs Deferred"
+
+[[candidates]]
+slug = "agent-365"
+tagline = "Govern your AI agents — Entra Agent ID, Purview, Defender on one map"
+
+[[candidates]]
+slug = "m365-e7"
+tagline = "The Frontier Suite — what's inside E7 and whether the maths works"
+
+[[candidates]]
+slug = "mfa-methods"
+tagline = "MFA phishing-resistance ranked — passkey to SMS"
+
+[[candidates]]
+slug = "ca-canonical-policies"
+tagline = "Microsoft's recommended Conditional Access baseline on one map"
+
+[[candidates]]
+slug = "sharepoint-permissions"
+tagline = "SharePoint inheritance + why Copilot makes hygiene urgent"
+
+[[candidates]]
+slug = "intune-enrollment-paths"
+tagline = "Six Intune enrollment paths — Autopilot, Hybrid, BYOD, kiosk"
+
+[[candidates]]
+slug = "aws-azure-gcp-equivalents"
+tagline = "Cross-cloud Rosetta Stone — service equivalents at a glance"
+
+[[candidates]]
+slug = "azure-database-options"
+tagline = "Eleven Azure database services on one decision tree"
+
+[[candidates]]
+slug = "cert-paths-by-role"
+tagline = "Microsoft certifications by role — six tracks, clear progression"
+
+[[candidates]]
+slug = "frontline-vs-enterprise"
+tagline = "F1/F3 vs E3/E5 — who's frontline and where Copilot fits"
+

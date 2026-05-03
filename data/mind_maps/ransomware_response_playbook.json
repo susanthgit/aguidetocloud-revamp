@@ -1,0 +1,73 @@
+{
+  "id": "ransomware-response-playbook",
+  "name": "Ransomware Response Playbook",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C", "#6B21A8"],
+  "children": [
+    {
+      "id": "detect",
+      "name": "1. Detect",
+      "color": 0,
+      "children": [
+        { "id": "d-mde", "name": "Defender Endpoint behaviour" },
+        { "id": "d-xdr", "name": "Defender XDR auto-disrupt", "tag": "Auto" },
+        { "id": "d-encrypt", "name": "Mass file encryption alerts" },
+        { "id": "d-honey", "name": "Honey-token tripped" }
+      ]
+    },
+    {
+      "id": "isolate",
+      "name": "2. Isolate (minutes)",
+      "color": 1,
+      "children": [
+        { "id": "i-network", "name": "Network-isolate endpoints", "tag": "First" },
+        { "id": "i-disable", "name": "Disable user accounts" },
+        { "id": "i-revoke", "name": "Revoke tokens (CAE)" },
+        { "id": "i-firewall", "name": "Block C2 IPs" }
+      ]
+    },
+    {
+      "id": "investigate",
+      "name": "3. Investigate",
+      "color": 2,
+      "children": [
+        { "id": "in-blast", "name": "Map blast radius" },
+        { "id": "in-pat", "name": "Identify patient zero" },
+        { "id": "in-c2", "name": "Find command + control" },
+        { "id": "in-data", "name": "Confirm data exfiltration" }
+      ]
+    },
+    {
+      "id": "recover",
+      "name": "4. Recover",
+      "color": 3,
+      "children": [
+        { "id": "r-immutable", "name": "Restore from immutable backup", "tag": "Air-gap" },
+        { "id": "r-rotate", "name": "Rotate all secrets" },
+        { "id": "r-rebuild", "name": "Rebuild compromised hosts" },
+        { "id": "r-creds", "name": "Force tenant-wide password reset" }
+      ]
+    },
+    {
+      "id": "decision",
+      "name": "5. The hard decisions",
+      "color": 4,
+      "children": [
+        { "id": "de-pay", "name": "Don't pay (FBI guidance)" },
+        { "id": "de-disclose", "name": "Notify regulators / legal" },
+        { "id": "de-comms", "name": "Customer + media comms" },
+        { "id": "de-ir", "name": "Engage IR retainer" }
+      ]
+    },
+    {
+      "id": "prevent",
+      "name": "Prevent next time",
+      "color": 5,
+      "children": [
+        { "id": "p-immutable", "name": "Immutable + air-gapped backups" },
+        { "id": "p-mfa", "name": "MFA on backup admin" },
+        { "id": "p-segment", "name": "Network segmentation" },
+        { "id": "p-tabletop", "name": "Tabletop exercises" }
+      ]
+    }
+  ]
+}

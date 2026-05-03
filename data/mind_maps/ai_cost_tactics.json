@@ -1,0 +1,62 @@
+{
+  "id": "ai-cost-tactics",
+  "name": "AI Cost Tactics",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981"],
+  "children": [
+    {
+      "id": "math",
+      "name": "Token math",
+      "color": 0,
+      "children": [
+        { "id": "t-input", "name": "Input + output tokens" },
+        { "id": "t-pricing", "name": "Per-1k-token pricing", "tag": "Per call" },
+        { "id": "t-context", "name": "Long context = more $" },
+        { "id": "t-cap", "name": "Set max-tokens cap" }
+      ]
+    },
+    {
+      "id": "model",
+      "name": "Model selection",
+      "color": 1,
+      "children": [
+        { "id": "m-cheap", "name": "GPT-4o mini for simple", "tag": "Cheap" },
+        { "id": "m-mid", "name": "GPT-4o for general" },
+        { "id": "m-reason", "name": "o-series for reasoning only" },
+        { "id": "m-route", "name": "Route by intent" }
+      ]
+    },
+    {
+      "id": "prompt",
+      "name": "Prompt optimisation",
+      "color": 2,
+      "children": [
+        { "id": "p-compress", "name": "Compress system prompts" },
+        { "id": "p-fewshot", "name": "Few-shot only when needed" },
+        { "id": "p-summarise", "name": "Summarise context aggressively" },
+        { "id": "p-delete", "name": "Delete dead chat history" }
+      ]
+    },
+    {
+      "id": "rag",
+      "name": "RAG vs fine-tune",
+      "color": 3,
+      "children": [
+        { "id": "r-rag", "name": "RAG: cheap, current" },
+        { "id": "r-ft", "name": "Fine-tune: $$$, baked-in" },
+        { "id": "r-hybrid", "name": "Hybrid for niche jargon" },
+        { "id": "r-default", "name": "Default to RAG", "tag": "Right answer" }
+      ]
+    },
+    {
+      "id": "cache",
+      "name": "Caching",
+      "color": 4,
+      "children": [
+        { "id": "c-prompt", "name": "Prompt cache (Anthropic)" },
+        { "id": "c-vector", "name": "Vector store hits" },
+        { "id": "c-semantic", "name": "Semantic similarity reuse" },
+        { "id": "c-static", "name": "Cache static answers" }
+      ]
+    }
+  ]
+}

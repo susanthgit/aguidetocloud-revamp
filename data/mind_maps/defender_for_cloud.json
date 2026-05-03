@@ -1,0 +1,71 @@
+{
+  "id": "defender-for-cloud",
+  "name": "Defender for Cloud — CSPM + CWPP",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C", "#6B21A8"],
+  "children": [
+    {
+      "id": "free",
+      "name": "Foundational (free)",
+      "color": 0,
+      "children": [
+        { "id": "f-score", "name": "Secure Score", "tag": "Always on" },
+        { "id": "f-recommend", "name": "Recommendations" },
+        { "id": "f-inventory", "name": "Asset inventory" },
+        { "id": "f-compliance", "name": "Regulatory dashboards" }
+      ]
+    },
+    {
+      "id": "cspm",
+      "name": "Defender CSPM",
+      "color": 1,
+      "children": [
+        { "id": "c-attack", "name": "Attack path analysis", "tag": "Premium" },
+        { "id": "c-graph", "name": "Cloud Security Graph" },
+        { "id": "c-data", "name": "Data-aware (sensitive in cloud)" },
+        { "id": "c-ai", "name": "AI workload posture" }
+      ]
+    },
+    {
+      "id": "cwpp",
+      "name": "Defender plans (CWPP)",
+      "color": 2,
+      "children": [
+        { "id": "w-server", "name": "Servers (VMs, on-prem)" },
+        { "id": "w-storage", "name": "Storage" },
+        { "id": "w-sql", "name": "SQL + Cosmos + open-source DBs" },
+        { "id": "w-app", "name": "App Service" },
+        { "id": "w-aks", "name": "Containers + AKS" }
+      ]
+    },
+    {
+      "id": "multi",
+      "name": "Multi-cloud",
+      "color": 3,
+      "children": [
+        { "id": "m-aws", "name": "AWS connector", "tag": "Native" },
+        { "id": "m-gcp", "name": "GCP connector" },
+        { "id": "m-onprem", "name": "On-prem via Arc" }
+      ]
+    },
+    {
+      "id": "integrate",
+      "name": "Integrates with",
+      "color": 4,
+      "children": [
+        { "id": "in-xdr", "name": "Defender XDR portal" },
+        { "id": "in-sentinel", "name": "Sentinel SIEM" },
+        { "id": "in-policy", "name": "Azure Policy" }
+      ]
+    },
+    {
+      "id": "pricing",
+      "name": "Pricing model",
+      "color": 5,
+      "children": [
+        { "id": "p-resource", "name": "Per resource per hour" },
+        { "id": "p-tier", "name": "P1 / P2 tiers per plan" },
+        { "id": "p-trial", "name": "30-day free trial" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "m365-powershell-modules",
+  "name": "M365 PowerShell Modules",
+  "palette": ["#6366F1", "#14B8A6", "#06B6D4", "#8B5CF6", "#10B981"],
+  "children": [
+    {
+      "id": "graph",
+      "name": "Microsoft.Graph",
+      "color": 0,
+      "children": [
+        { "id": "g-everything", "name": "Users, groups, devices", "tag": "The future" },
+        { "id": "g-replaces", "name": "Replaces AzureAD + MSOnline" },
+        { "id": "g-scoped", "name": "Sub-modules per area" },
+        { "id": "g-auth", "name": "Connect-MgGraph" }
+      ]
+    },
+    {
+      "id": "exo",
+      "name": "ExchangeOnlineManagement",
+      "color": 1,
+      "children": [
+        { "id": "e-mail", "name": "Mailbox + transport rules" },
+        { "id": "e-rest", "name": "REST API based (modern)" },
+        { "id": "e-mfa", "name": "Connect-ExchangeOnline" }
+      ]
+    },
+    {
+      "id": "teams",
+      "name": "MicrosoftTeams",
+      "color": 2,
+      "children": [
+        { "id": "t-policies", "name": "Policies + voice config" },
+        { "id": "t-cs", "name": "Replaces Skype legacy" },
+        { "id": "t-connect", "name": "Connect-MicrosoftTeams" }
+      ]
+    },
+    {
+      "id": "pnp",
+      "name": "PnP.PowerShell",
+      "color": 3,
+      "children": [
+        { "id": "p-sp", "name": "SharePoint at scale", "tag": "Community" },
+        { "id": "p-templates", "name": "Site templates / provisioning" },
+        { "id": "p-permissions", "name": "Permissions reporting" }
+      ]
+    },
+    {
+      "id": "deprecated",
+      "name": "Deprecated — migrate off",
+      "color": 4,
+      "children": [
+        { "id": "d-msol", "name": "MSOnline (gone 2025)", "tag": "Dead" },
+        { "id": "d-azuread", "name": "AzureAD (deprecated)" },
+        { "id": "d-skype", "name": "SkypeOnlineConnector" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "data-leak-response-playbook",
+  "name": "Data Leak Response Playbook",
+  "palette": ["#475569", "#1E3A8A", "#0D9488", "#B45309", "#B91C1C"],
+  "children": [
+    {
+      "id": "detect",
+      "name": "1. Detect signals",
+      "color": 0,
+      "children": [
+        { "id": "d-dlp", "name": "DLP alert in Purview", "tag": "Auto" },
+        { "id": "d-insider", "name": "Insider Risk alert" },
+        { "id": "d-mda", "name": "Defender Cloud Apps unusual" },
+        { "id": "d-tip", "name": "External tip / customer report" }
+      ]
+    },
+    {
+      "id": "scope",
+      "name": "2. Scope the leak",
+      "color": 1,
+      "children": [
+        { "id": "s-what", "name": "What data exactly?", "tag": "Critical" },
+        { "id": "s-volume", "name": "How many records?" },
+        { "id": "s-where", "name": "Where did it go?" },
+        { "id": "s-when", "name": "Time window?" }
+      ]
+    },
+    {
+      "id": "contain",
+      "name": "3. Contain",
+      "color": 2,
+      "children": [
+        { "id": "co-disable", "name": "Disable accounts / agents" },
+        { "id": "co-revoke", "name": "Revoke external links" },
+        { "id": "co-block", "name": "Block exfil channel" },
+        { "id": "co-preserve", "name": "Preserve evidence" }
+      ]
+    },
+    {
+      "id": "notify",
+      "name": "4. Notify",
+      "color": 3,
+      "children": [
+        { "id": "n-legal", "name": "Engage legal first", "tag": "Hours" },
+        { "id": "n-regulator", "name": "GDPR 72h / HIPAA 60d" },
+        { "id": "n-customer", "name": "Affected individuals" },
+        { "id": "n-board", "name": "Board + insurer" }
+      ]
+    },
+    {
+      "id": "prevent",
+      "name": "5. Close the gap",
+      "color": 4,
+      "children": [
+        { "id": "p-labels", "name": "Sensitivity label expansion" },
+        { "id": "p-dlp", "name": "Tighten DLP policy" },
+        { "id": "p-share", "name": "External share policy" },
+        { "id": "p-train", "name": "Targeted training" }
+      ]
+    }
+  ]
+}
