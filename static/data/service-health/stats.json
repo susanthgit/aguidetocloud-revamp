@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T19:53:41.082366+00:00",
+  "generated_at": "2026-05-04T21:18:06.153683+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -120,18 +120,6 @@
       }
     },
     {
-      "service": "Power BI",
-      "short_name": "Power BI",
-      "icon": "📊",
-      "total_incidents": 3,
-      "active_incidents": 1,
-      "avg_duration_minutes": 17374,
-      "last_incident": "2026-03-19T13:30:00+00:00",
-      "classifications": {
-        "advisory": 3
-      }
-    },
-    {
       "service": "Azure",
       "short_name": "Azure",
       "icon": "☁️",
@@ -141,6 +129,18 @@
       "last_incident": "2026-04-25T00:15:00+00:00",
       "classifications": {
         "incident": 3
+      }
+    },
+    {
+      "service": "Power BI",
+      "short_name": "Power BI",
+      "icon": "📊",
+      "total_incidents": 3,
+      "active_incidents": 0,
+      "avg_duration_minutes": 37971,
+      "last_incident": "2026-03-19T13:30:00+00:00",
+      "classifications": {
+        "advisory": 3
       }
     },
     {
