@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 04 May 2026 04:04:58 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 May 2026 06:52:41 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Defender XDR] Some users may receive false positive alerts from Microsoft Defender Antivirus for specific certificates</title>
@@ -24,6 +24,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1298081</guid>
       <pubDate>Sat, 02 May 2026 00:54:51 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Viva] Users may be unable to access Community Analytics in Microsoft Viva Engage</title>
+      <link>https://www.aguidetocloud.com/service-health/#MV1300072</link>
+      <description>[Microsoft Viva] Users may have been unable to access Community Analytics in Microsoft Viva Engage.</description>
+      <category>Microsoft Viva</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MV1300072</guid>
+      <pubDate>Fri, 01 May 2026 21:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Users may be experiencing high latency when performing searches in Exchange Online</title>
@@ -448,15 +457,6 @@ The issue initially began with impact to a subset of custom</description>
       <category>serviceRestored</category>
       <guid isPermaLink="false">MP1274841</guid>
       <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Most users’ prompts in GPT 5.4 Think Deeper mode in Microsoft 365 Copilot may return a failure response</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1266855</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users’ prompts in GPT 5.4 Think Deeper mode in Microsoft 365 Copilot may have returned a failure response.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1266855</guid>
-      <pubDate>Tue, 31 Mar 2026 03:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
