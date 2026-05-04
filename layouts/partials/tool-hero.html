@@ -34,10 +34,6 @@
       {{ $counterVerb = $.counter_verb }}
     {{ end }}
     <div class="tool-hero-badges">
-      <span class="tool-hero-live" id="th-live" style="display:none" aria-hidden="true">
-        <span class="tool-hero-live-dot"></span>
-        <span id="th-live-num">0</span> live
-      </span>
       {{ if gt $counterBase 0 }}
       <div class="tool-counter" data-base="{{ $counterBase }}" aria-hidden="true">
         <span class="tool-counter-num">{{ lang.FormatNumberCustom 0 $counterBase }}</span>

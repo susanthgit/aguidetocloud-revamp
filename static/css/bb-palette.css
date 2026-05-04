@@ -9,22 +9,22 @@
    atmosphere — the only place that visual identity bleeds into Earth.
    ════════════════════════════════════════════════════════════════════════ */
 
-/* ── The trigger button (in navbar) ─────────────────────────────────── */
+/* The trigger button (next to the logo on the left) */
 
 .bb-launch-btn {
   display: inline-flex;
   align-items: baseline;
   gap: 1px;
-  padding: 6px 8px;
-  margin-right: 8px;
+  padding: 6px 10px;
+  margin-left: 12px;
   background: transparent;
   border: 1px solid transparent;
   border-radius: 6px;
   cursor: pointer;
   font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, Menlo, Consolas, monospace;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
-  color: #34D399;            /* phosphor green — same as Brain Bar */
+  color: #34D399;
   letter-spacing: -0.02em;
   transition: background 100ms ease-out, border-color 100ms ease-out, color 100ms ease-out;
 }
