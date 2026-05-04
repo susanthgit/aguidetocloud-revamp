@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 04 May 2026 17:50:18 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 May 2026 19:53:41 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Defender XDR] Some users may receive false positive alerts from Microsoft Defender Antivirus for specific certificates</title>
@@ -15,15 +15,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1299600</guid>
       <pubDate>Sun, 03 May 2026 08:52:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some admins may be unable to remove blocked users from the Restricted entities page in Microsoft 365 suite</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1298081</link>
-      <description>[Microsoft 365 suite] Admins may be unable to remove blocked users from the Restricted entities page in Microsoft 365 suite.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MO1298081</guid>
-      <pubDate>Sat, 02 May 2026 00:54:51 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Viva] Users may be unable to access Community Analytics in Microsoft Viva Engage</title>
@@ -60,6 +51,24 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">SP1296487</guid>
       <pubDate>Thu, 30 Apr 2026 07:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Some users may be unable to access links to other apps provided by Microsoft 365 Copilot Chat prompts</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1300750</link>
+      <description>[Microsoft 365 Copilot Chat] Users may be unable to access links to other apps provided by Copilot Chat prompts.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CW1300750</guid>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] We're looking into a potential problem impacting Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1300681</link>
+      <description>[Microsoft Copilot (Microsoft 365)] We're checking for potential impact to your users.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>falsePositive</category>
+      <guid isPermaLink="false">CP1300681</guid>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Intune] Some users' Windows Intune devices may intermittently drop device policy assignments</title>
@@ -448,15 +457,6 @@ The issue initially began with impact to a subset of custom</description>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">EX1297752</guid>
       <pubDate>Wed, 01 Apr 2026 07:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Purview] Some admins may be unable to access Activity Explorer in the Microsoft Purview portal</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1274841</link>
-      <description>[Microsoft Purview] Admins may have been unable to access Activity Explorer in the Microsoft Purview portal.</description>
-      <category>Microsoft Purview</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MP1274841</guid>
-      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
