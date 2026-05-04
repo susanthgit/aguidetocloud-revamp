@@ -2,13 +2,6 @@
 # Tools have their own circular nav (toolkit_nav.toml) and are NOT included here.
 
 [[sections]]
-url = "/start/"
-emoji = "🚀"
-icon = "rocket"
-name = "Start Here"
-short = "Start"
-
-[[sections]]
 url = "/ai-hub/"
 emoji = "🤖"
 icon = "robot"

@@ -1,0 +1,27 @@
+# Cloudflare Pages redirects (301 unless noted)
+# Format: from  to  [status]
+# Docs: https://developers.cloudflare.com/pages/configuration/redirects/
+
+# ─────────────────────────────────────────────
+# Dead-weight cleanup — 5 May 2026
+# Removed 4 stub pages; redirect to nearest live equivalent.
+# ─────────────────────────────────────────────
+
+# /labs/ — was a "Coming Soon" placeholder. Cloud Labs is the real lab content.
+/labs/             /cloud-labs/      301
+/labs/*            /cloud-labs/      301
+
+# /events/ — was a "Coming Soon" placeholder. Blog covers Microsoft news/events.
+/events/           /blog/            301
+/events/*          /blog/            301
+
+# /azure-status/ — was a "Coming Soon" placeholder. /service-health/ is the real
+# tracker (32 Microsoft + Azure services, refreshed every 2 hours).
+/azure-status/     /service-health/  301
+/azure-status/*    /service-health/  301
+
+# /start/ + /start-here/ — homepage already does the "where to start" job via the
+# Zen "Where the overflow goes" doors section. The old /start/ page was a meta-
+# refresh stub anyway.
+/start/            /                 301
+/start-here/       /                 301

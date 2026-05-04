@@ -108,18 +108,6 @@ PAGES = [
      "tagline": "Lo-fi beats & ambient playlists for focused study sessions",
      "accent": "#F472B6"},
 
-    {"slug": "events", "title": "Microsoft Events", "pill": "Events",
-     "tagline": "Upcoming Microsoft conferences, webinars & community events",
-     "accent": "#60A5FA"},
-
-    {"slug": "labs", "title": "One-Click Azure Labs", "pill": "Labs",
-     "tagline": "Deploy Azure lab environments with one click",
-     "accent": "#14B8A6"},
-
-    {"slug": "start", "title": "Start Here", "pill": "Welcome",
-     "tagline": "New to the site? Here's everything you need to get started",
-     "accent": "#66ffff"},
-
     {"slug": "azure-status", "title": "Azure Outage Timeline", "pill": "Status",
      "tagline": "Track Azure outages, incidents & service disruptions",
      "accent": "#EA580C"},

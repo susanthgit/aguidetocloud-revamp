@@ -4,6 +4,36 @@
   Eliminates 6× duplication.
 
   Usage: {{ partial "video-category-list.html" (dict "page" . "title" "AI & Copilot Tutorials" "icon" "robot") }}
+
+  ─────────────────────────────────────────────────────────────────────
+  📌 Strategic context (audited 5 May 2026 — see audit plan in session)
+  ─────────────────────────────────────────────────────────────────────
+  This partial powers 6 video category landings, all 2022-vintage YouTube
+  collections that overlap with the unified /videos/ hub:
+
+    /cloud-labs/      — 19 hands-on Azure lab walkthroughs
+    /exam-qa/         — 19 mock-exam videos  ⚠️ paid-product risk (see below)
+    /certifications/  — 13 full-course videos
+    /interview-prep/  — 3 interview Q&A videos
+    /music/           — 5 study music videos
+    /ai-hub/          — 17 AI tutorials (has alias redirects — preserve!)
+
+  Decision (5 May 2026): KEEP all six. Individual video pages still drive
+  SEO + YouTube traffic. Section landings duplicate /videos/ but are cheap
+  to maintain (this single partial). Sunsetting deferred until Layer 2
+  Zen-alignment pass adds belief copy/voice to the landings.
+
+  ⚠️ /exam-qa/ paid-product risk:
+  Pages like /exam-qa/az-900-mock-exam-... target the same SEO query as
+  /guided/az-900/practice/ (the $9 paid product). Free 2022 YouTube content
+  may cannibalise paid checkout conversions. Worth measuring conversion
+  impact before deciding to noindex or 301 these to /guided/{cert}/practice/.
+
+  Coming-soon stubs deleted in same audit (with 301s in static/_redirects):
+    /labs/         → /cloud-labs/
+    /events/       → /blog/
+    /azure-status/ → /service-health/
+    /start/        → /
 */}}
 
 {{ $page := .page }}
