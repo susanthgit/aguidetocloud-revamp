@@ -658,3 +658,24 @@ name_friendly = "Yellow"
 category = "Community"
 css_namespace = "feedback-*"
 body_class = "page-feedback"
+
+
+# ── 🪐 Cosmic exception (4 May 2026) ──────────────────────────────────────
+# Brain Bar (cmd.aguidetocloud.com) lives on its own subdomain with its own
+# CSS namespace (bb-*). The 30°-hue rule is for INTERNAL tool CSS accent
+# uniqueness on aguidetocloud.com itself. Brain Bar's #34D399 phosphor
+# matches Cert Study Guides' #10B981 emerald (both hue 160) — accepted
+# because Brain Bar is an external planet. The hex differs (#34D399 is a
+# brighter phosphor) so the homepage tile is still visually distinct from
+# the Cert Study Guides tile.
+
+[[tools]]
+name = "Brain Bar"
+slug = "brain-bar"
+hex = "#34D399"
+hue = 160
+name_friendly = "Phosphor"
+category = "External / Cosmic"
+css_namespace = "bb-* (on cmd.aguidetocloud.com only)"
+body_class = "(external — not applied)"
+external = true

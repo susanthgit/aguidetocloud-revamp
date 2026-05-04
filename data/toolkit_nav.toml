@@ -712,3 +712,17 @@ color = "#FBBF24"
 category = "utilities"
 visual = "circles"
 is_tool = false
+
+
+[[tools]]
+url = "https://cmd.aguidetocloud.com/"
+external = true
+emoji = "⌘"
+icon = "command"
+name = "Brain Bar"
+short = "Brain Bar"
+desc = "Microsoft jargon decoder — type any acronym, license, portal, or product"
+color = "#34D399"
+category = "utilities"
+visual = "keys"
+is_tool = true

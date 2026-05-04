@@ -33,7 +33,7 @@
     {{ range $slug := $featuredSlugs }}
       {{ range $tools }}
         {{ if and .is_tool (eq (.url | strings.TrimSuffix "/" | strings.TrimPrefix "/") $slug) }}
-        <a href="{{ .url }}" class="ft-mini-card" data-name="{{ .name | lower }} {{ .desc | lower }}">
+        <a href="{{ .url }}" class="ft-mini-card" data-name="{{ .name | lower }} {{ .desc | lower }}"{{ if .external }} target="_blank" rel="noopener"{{ end }}>
           <div class="ft-mini-head">
             <span class="ft-mini-icon">{{ partial "icon.html" (dict "name" (.icon | default "") "size" 18 "stroke" 1.5 "fallback" .emoji) }}</span>
             <span class="ft-mini-name">{{ .name }}</span>
@@ -75,7 +75,7 @@
       <h2 class="ft-cat-title">{{ $catName }}</h2>
       <div class="ft-mini-grid">
         {{ range $catTools }}
-        <a href="{{ .url }}" class="ft-mini-card" data-name="{{ .name | lower }} {{ .desc | lower }}">
+        <a href="{{ .url }}" class="ft-mini-card" data-name="{{ .name | lower }} {{ .desc | lower }}"{{ if .external }} target="_blank" rel="noopener"{{ end }}>
           <div class="ft-mini-head">
             <span class="ft-mini-icon">{{ partial "icon.html" (dict "name" (.icon | default "") "size" 18 "stroke" 1.5 "fallback" .emoji) }}</span>
             <span class="ft-mini-name">{{ .name }}</span>
