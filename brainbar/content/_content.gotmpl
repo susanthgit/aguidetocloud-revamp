@@ -1,0 +1,45 @@
+{{/* ═══════════════════════════════════════════════════════════════════════════
+     Brain Bar — Content Adapter
+     ═══════════════════════════════════════════════════════════════════════════
+     Generates one Hugo page per entry in `data/cmd_entries.toml`.
+     Each page is rendered at the canonical URL `/<slug>/` (i.e.
+     cmd.aguidetocloud.com/<slug>/).
+
+     The full entry (including nested .terms) is exposed via .Page.Params.
+     Voice overlay (cmd_voice.toml) is looked up by slug inside the template
+     and merged into Params.voice.
+
+     Hugo content adapters require Hugo v0.126+. Confirmed on v0.159.1.
+═══════════════════════════════════════════════════════════════════════════ */}}
+
+{{ $voice := index hugo.Data "cmd_voice" }}
+
+{{ range (index hugo.Data "cmd_entries").entries }}
+  {{ $entry := . }}
+  {{ $slug := $entry.slug }}
+  {{ $voiceData := index $voice $slug | default dict }}
+  {{ $params := merge $entry (dict "voice" $voiceData) }}
+
+  {{ $content := dict
+    "mediaType" "text/markdown"
+    "value" $entry.plain_english
+  }}
+
+  {{/* Disambiguation entries use the disambiguation.html layout via the
+       `layout` param. Hugo's lookup order picks `_default/disambiguation.html`
+       when `layout = "disambiguation"`. Other entries use single.html. */}}
+  {{ $layout := "single" }}
+  {{ if eq $entry.kind "disambiguation" }}
+    {{ $layout = "disambiguation" }}
+  {{ end }}
+
+  {{ $page := dict
+    "content" $content
+    "kind" "page"
+    "path" $slug
+    "title" $entry.name
+    "params" (merge $params (dict "layout" $layout))
+  }}
+
+  {{ $.AddPage $page }}
+{{ end }}

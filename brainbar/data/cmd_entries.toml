@@ -1,0 +1,873 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# BRAIN BAR — ENTRY REGISTRY
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# This is the single source of truth for every Brain Bar entry. The Hugo
+# content adapter at `content/_content.gotmpl` generates one page per entry
+# at the canonical URL `cmd.aguidetocloud.com/<slug>/`.
+#
+# DESIGN RULES:
+# 1. `slug` MUST be globally unique across all `slug` values AND all
+#    `terms.aliases` values (validator enforces).
+# 2. `learn_url` is REQUIRED for kind = product | portal | feature.
+# 3. `last_verified` MUST be within 365 days at deploy time.
+# 4. Sush's voice (mascot, sush_take) lives in `cmd_voice.toml` — keyed by
+#    slug. The entity layer here is reusable for Shift / MCP / Grandma.
+# 5. Neutral-by-default voice; spicy take only when there is genuine
+#    conviction. Silence > forced fit.
+#
+# WHEN ADDING A NEW ENTRY:
+#   1. Add the entry block here (validator catches collisions on next build)
+#   2. Optionally add a voice block to cmd_voice.toml
+#   3. Run `cd brainbar && hugo` — the page is auto-generated
+#
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ── 1. MDE — Microsoft Defender for Endpoint ─────────────────────────────
+[[entries]]
+slug = "mde"
+name = "Microsoft Defender for Endpoint"
+kind = "product"
+domain = "security"
+plain_english = "The endpoint security layer that watches for malicious behaviour on company devices and lets admins investigate, isolate, or remediate from one console."
+official = "An enterprise endpoint security platform for preventing, detecting, investigating, and responding to advanced threats on Windows, macOS, Linux, iOS, and Android."
+plans = ["Plan 1 — preventative controls + basic EDR (E3, Business Premium)", "Plan 2 — full EDR, automated investigation, threat intelligence, vulnerability management (E5, M365 A5/G5)"]
+portal_url = "https://security.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/defender-endpoint/"
+related_tools = ["copilot-feature-matrix"]
+related_certs = ["sc-200", "ms-500"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = ["MDE"]
+aliases = ["mdatp", "defender-endpoint", "microsoft-defender-for-endpoint"]
+old_names = ["Windows Defender ATP", "Microsoft Defender ATP"]
+
+# ── 2. PIM — Privileged Identity Management ──────────────────────────────
+[[entries]]
+slug = "pim"
+name = "Privileged Identity Management"
+kind = "feature"
+domain = "identity"
+plain_english = "Time-boxed activation of admin roles with approval and MFA gates, so high-privilege roles are 'eligible' by default and only 'active' when needed."
+official = "A Microsoft Entra ID feature that enables you to manage, control, and monitor access to important resources by providing time-based and approval-based role activation."
+plans = ["Requires Microsoft Entra ID P2 or Microsoft Entra ID Governance"]
+portal_url = "https://entra.microsoft.com/#view/Microsoft_Azure_PIMCommon/CommonMenuBlade"
+learn_url = "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+related_tools = []
+related_certs = ["sc-300", "ms-500"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = ["PIM"]
+aliases = ["privileged-identity-management", "pim-roles"]
+old_names = []
+
+# ── 3. E3 — Microsoft 365 E3 license ─────────────────────────────────────
+[[entries]]
+slug = "m365-e3"
+name = "Microsoft 365 E3"
+kind = "license"
+domain = "productivity"
+plain_english = "The mainstream enterprise plan — Office apps + Windows + a baseline set of Entra, Intune, and Defender capabilities. Good for most enterprises; jumps to E5 for advanced security."
+official = "Microsoft 365 E3 combines the productivity apps and services in Office 365 E3 with Windows 11 Enterprise, Enterprise Mobility + Security E3, and Intune."
+plans = ["List price: USD $36/user/month (current). Increases to USD $39/user/month effective 1 July 2026."]
+portal_url = ""
+learn_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/e3"
+related_tools = ["licence-picker", "copilot-feature-matrix"]
+related_certs = ["ms-900", "ms-100"]
+related_blogs = []
+status = "ga"
+watch = "price-change-2026-07-01"
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = ["E3"]
+aliases = ["microsoft-365-e3", "m365e3"]
+old_names = []
+
+# ── 4. Intune — Microsoft Intune ─────────────────────────────────────────
+[[entries]]
+slug = "intune"
+name = "Microsoft Intune"
+kind = "portal"
+domain = "endpoint"
+plain_english = "Microsoft's cloud service for managing devices and apps — push policies, deploy software, enforce compliance, wipe lost devices, and protect company data on personal devices."
+official = "A cloud-based endpoint management solution that simplifies app and device management across many devices, including mobile devices, desktop computers, and virtual endpoints."
+plans = ["Included in M365 E3/E5/F1/F3, M365 Business Premium, and standalone Intune Plan 1", "Intune Plan 2 + Intune Suite add advanced features (Endpoint Privilege Management, Remote Help, Advanced Analytics, etc.)"]
+portal_url = "https://intune.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/mem/intune/"
+related_tools = ["compliance-passport"]
+related_certs = ["md-102", "ms-100"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["microsoft-intune", "endpoint-manager", "mem"]
+old_names = ["Microsoft Endpoint Manager"]
+
+# ── 5. Azure AI Foundry — flagship rebrand example ───────────────────────
+[[entries]]
+slug = "azure-ai-foundry"
+name = "Azure AI Foundry"
+kind = "product"
+domain = "ai"
+plain_english = "Microsoft's unified AI development platform — pick from a multi-vendor model catalog (OpenAI, Anthropic, Meta, Mistral, Hugging Face, custom) and build, evaluate, and deploy AI applications in one place."
+official = "An integrated platform for designing, customizing, and managing AI applications and agents. Includes a multi-vendor model catalog, agent service, evaluation tools, and content safety."
+plans = ["Pay-as-you-go for inference, fine-tuning, and storage. No platform fee."]
+portal_url = "https://ai.azure.com/"
+learn_url = "https://learn.microsoft.com/en-us/azure/ai-foundry/"
+related_tools = ["copilot-frontier-map"]
+related_certs = ["ai-102"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["foundry", "ai-foundry", "microsoft-foundry"]
+old_names = ["Azure AI Studio", "Azure Machine Learning Studio (legacy)"]
+
+# ── 6. Conditional Access (CA) ───────────────────────────────────────────
+[[entries]]
+slug = "conditional-access"
+name = "Conditional Access"
+kind = "feature"
+domain = "identity"
+plain_english = "Policy-driven access gates that decide who can sign in, from where, on what device, and under what conditions — applied dynamically based on signals like risk, location, and device health."
+official = "An Microsoft Entra ID feature that brings together signals (user, location, device, application, risk) into policy decisions to allow, block, or require additional controls (MFA, compliant device) for access."
+plans = ["Microsoft Entra ID P1 (included in M365 E3, F3, Business Premium)", "Risk-based CA requires Entra ID P2"]
+portal_url = "https://entra.microsoft.com/#view/Microsoft_AAD_ConditionalAccess/ConditionalAccessBlade"
+learn_url = "https://learn.microsoft.com/en-us/entra/identity/conditional-access/"
+related_tools = ["ca-builder"]
+related_certs = ["sc-300", "ms-500"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = ["CA"]
+aliases = ["entra-ca", "ca-policy", "conditional-access-policies"]
+old_names = []
+
+# ── 7. MFA — Multi-factor Authentication ─────────────────────────────────
+[[entries]]
+slug = "mfa"
+name = "Multi-factor Authentication"
+kind = "feature"
+domain = "identity"
+plain_english = "Sign-in that requires more than just a password — a second factor like a phone notification, authenticator app code, or hardware key — so a stolen password alone can't get in."
+official = "An identity verification method that requires more than one form of evidence to prove identity, typically combining something you know (password) with something you have (phone, key) or something you are (biometric)."
+plans = ["Free baseline (Security Defaults or per-user MFA)", "Granular control via Conditional Access (Entra ID P1+)"]
+portal_url = "https://entra.microsoft.com/#view/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade"
+learn_url = "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
+related_tools = []
+related_certs = ["sc-300", "ms-900"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = ["MFA"]
+aliases = ["multi-factor-auth", "two-factor", "2fa"]
+old_names = []
+
+# ── 8. SSPR — Self-Service Password Reset ────────────────────────────────
+[[entries]]
+slug = "sspr"
+name = "Self-Service Password Reset"
+kind = "feature"
+domain = "identity"
+plain_english = "Lets users reset their own passwords via verified phone, email, or authenticator app — without calling the helpdesk. Optionally writes the new password back to on-prem AD."
+official = "An Microsoft Entra ID capability that allows users to reset their cloud passwords using pre-registered authentication methods. Combined with password writeback for hybrid environments."
+plans = ["Self-service for cloud accounts: Entra ID P1 or M365 Business Premium", "Hybrid writeback to AD: same"]
+portal_url = "https://entra.microsoft.com/#view/Microsoft_AAD_IAM/PasswordResetMenuBlade"
+learn_url = "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+related_tools = []
+related_certs = ["sc-300"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = ["SSPR"]
+aliases = ["self-service-password-reset", "password-reset"]
+old_names = []
+
+# ── 9. Entra ID P1 ───────────────────────────────────────────────────────
+[[entries]]
+slug = "entra-p1"
+name = "Microsoft Entra ID P1"
+kind = "license"
+domain = "identity"
+plain_english = "The mainstream identity license — adds Conditional Access, group-based licensing, password writeback, dynamic groups, and MFA-via-CA on top of the free Entra tier."
+official = "A premium tier of Microsoft Entra ID providing advanced identity and access management features for enterprise environments."
+plans = ["Standalone: USD /user/month", "Included in: M365 E3, M365 F3, M365 Business Premium, EMS E3"]
+portal_url = ""
+learn_url = "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+related_tools = ["licence-picker"]
+related_certs = ["sc-300"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["entra-id-p1", "aad-p1", "azure-ad-p1"]
+old_names = ["Azure AD Premium P1"]
+
+# ── 10. Entra ID P2 ──────────────────────────────────────────────────────
+[[entries]]
+slug = "entra-p2"
+name = "Microsoft Entra ID P2"
+kind = "license"
+domain = "identity"
+plain_english = "P1 plus the risk-based identity tools — Identity Protection, PIM, Access Reviews. The license you need if you take the principle of least privilege seriously."
+official = "Adds advanced identity protection and governance capabilities on top of P1, including risk-based Conditional Access, Privileged Identity Management, and Access Reviews."
+plans = ["Standalone: USD /user/month", "Included in: M365 E5, EMS E5"]
+portal_url = ""
+learn_url = "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+related_tools = ["licence-picker"]
+related_certs = ["sc-300"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["entra-id-p2", "aad-p2", "azure-ad-p2"]
+old_names = ["Azure AD Premium P2"]
+
+# ── 11. MDCA — Microsoft Defender for Cloud Apps ─────────────────────────
+[[entries]]
+slug = "mdca"
+name = "Microsoft Defender for Cloud Apps"
+kind = "product"
+domain = "security"
+plain_english = "The Cloud Access Security Broker (CASB) — discovers shadow IT, controls how data flows into and out of SaaS apps, and applies policies on third-party clouds your users actually use."
+official = "A Cloud Access Security Broker (CASB) that supports various deployment modes including log collection, API connectors, and reverse proxy. Provides rich visibility, control over data travel, and analytics for cyberthreat identification."
+plans = ["Standalone (a la carte)", "Included in: M365 E5, M365 E5 Security, EMS E5"]
+portal_url = "https://security.microsoft.com/cloudapps/"
+learn_url = "https://learn.microsoft.com/en-us/defender-cloud-apps/"
+related_tools = []
+related_certs = ["sc-200"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = ["MDCA", "MDA"]
+aliases = ["defender-cloud-apps", "defender-for-cloud-apps"]
+old_names = ["Microsoft Cloud App Security", "MCAS"]
+
+# ── 12. MDO — Microsoft Defender for Office 365 ──────────────────────────
+[[entries]]
+slug = "mdo"
+name = "Microsoft Defender for Office 365"
+kind = "product"
+domain = "security"
+plain_english = "The email and collaboration security layer — Safe Links, Safe Attachments, anti-phishing with impersonation protection, attack simulation training. Sits on top of EOP."
+official = "Safeguards organizations against malicious threats posed by email messages, links (URLs), and collaboration tools (Teams, SharePoint, OneDrive). Extends Exchange Online Protection."
+plans = ["Plan 1 — Safe Links + Safe Attachments + anti-phishing (M365 Business Premium, included in some E3 paths)", "Plan 2 — adds Threat Explorer, Attack Simulation Training, Automated Investigation (M365 E5)"]
+portal_url = "https://security.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/defender-office-365/"
+related_tools = []
+related_certs = ["sc-200"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = ["MDO"]
+aliases = ["defender-office-365", "defender-for-office", "atp"]
+old_names = ["Office 365 ATP", "Office 365 Advanced Threat Protection"]
+
+# ── 13. MDI — Microsoft Defender for Identity ────────────────────────────
+[[entries]]
+slug = "mdi"
+name = "Microsoft Defender for Identity"
+kind = "product"
+domain = "security"
+plain_english = "Watches your on-prem Active Directory and Entra ID for identity-based attacks — pass-the-hash, golden ticket, reconnaissance, lateral movement. Sensor on each domain controller."
+official = "A cloud-based security solution that leverages on-premises Active Directory signals to identify, detect, and investigate advanced threats, compromised identities, and malicious insider actions."
+plans = ["Standalone", "Included in: M365 E5, M365 E5 Security, EMS E5"]
+portal_url = "https://security.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/defender-for-identity/"
+related_tools = []
+related_certs = ["sc-200"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = ["MDI"]
+aliases = ["defender-identity", "defender-for-identity"]
+old_names = ["Azure ATP", "Azure Advanced Threat Protection"]
+
+# ── 14. EOP — Exchange Online Protection ─────────────────────────────────
+[[entries]]
+slug = "eop"
+name = "Exchange Online Protection"
+kind = "feature"
+domain = "security"
+plain_english = "The baseline email security layer in every Exchange Online plan — anti-spam, anti-malware, basic phishing filtering, and zero-hour auto-purge (ZAP) for email already delivered."
+official = "A cloud-based filtering service that helps protect organizations against spam, malware, and other email threats. EOP is included with any Microsoft 365 plan that includes Exchange Online mailboxes."
+plans = ["Included in every Exchange Online plan", "Standalone EOP available for hybrid/non-EXO deployments"]
+portal_url = "https://security.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/defender-office-365/eop-about"
+related_tools = []
+related_certs = ["sc-200", "ms-203"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = ["EOP"]
+aliases = ["exchange-online-protection"]
+old_names = []
+
+# ── 15. Windows Autopilot ────────────────────────────────────────────────
+[[entries]]
+slug = "autopilot"
+name = "Windows Autopilot"
+kind = "feature"
+domain = "endpoint"
+plain_english = "Zero-touch device provisioning — out-of-box Windows hardware enrolls itself in Intune, gets your apps, configs, and policies, and lands the user at their desktop. No imaging."
+official = "A collection of technologies used to set up and pre-configure new devices, getting them ready for productive use. It can also be used to reset, repurpose, and recover devices."
+plans = ["Requires Intune Plan 1 (M365 E3/E5/F3, Business Premium, EMS E3+)"]
+portal_url = "https://intune.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/autopilot/"
+related_tools = []
+related_certs = ["md-102"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["windows-autopilot"]
+old_names = []
+
+# ── 16. LAPS — Local Administrator Password Solution ─────────────────────
+[[entries]]
+slug = "laps"
+name = "Windows LAPS"
+kind = "feature"
+domain = "endpoint"
+plain_english = "Automatically rotates the local admin password on every domain-joined / Entra-joined Windows device — different password per machine, stored securely in AD or Entra."
+official = "An automated solution that randomizes and rotates local administrator account passwords on Windows devices and stores them securely in Active Directory or Microsoft Entra ID, providing a way to recover credentials when needed."
+plans = ["Built into Windows (no license required)", "Entra-joined LAPS requires Entra ID P1+"]
+portal_url = "https://entra.microsoft.com/#view/Microsoft_AAD_DevicesMenuBlade/Devices/menuId/Devices"
+learn_url = "https://learn.microsoft.com/en-us/windows-server/identity/laps/laps-overview"
+related_tools = []
+related_certs = ["md-102", "sc-300"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = ["LAPS"]
+aliases = ["windows-laps", "local-admin-password-solution", "entra-laps"]
+old_names = ["Microsoft LAPS (legacy)"]
+
+# ── 17. Compliance Policies (Intune) ─────────────────────────────────────
+[[entries]]
+slug = "compliance-policies"
+name = "Intune Compliance Policies"
+kind = "feature"
+domain = "endpoint"
+plain_english = "Rules that say what makes a device 'compliant' — encryption on, screen lock set, OS patched, no jailbreak. Conditional Access uses this signal to allow or block access."
+official = "Rules and settings that devices must meet to be considered compliant. Compliance policies are paired with Conditional Access to control access to corporate resources."
+plans = ["Requires Intune Plan 1"]
+portal_url = "https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/compliance"
+learn_url = "https://learn.microsoft.com/en-us/mem/intune/protect/device-compliance-get-started"
+related_tools = ["ca-builder", "compliance-passport"]
+related_certs = ["md-102"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["intune-compliance", "compliance"]
+old_names = []
+
+# ── 18. M365 E5 ──────────────────────────────────────────────────────────
+[[entries]]
+slug = "m365-e5"
+name = "Microsoft 365 E5"
+kind = "license"
+domain = "productivity"
+plain_english = "The full enterprise plan — everything in E3 plus advanced security (MDE Plan 2, MDI, MDCA, MDO Plan 2), advanced compliance (Purview), Teams Phone, Power BI Pro, and Audio Conferencing."
+official = "Microsoft 365 E5 combines the productivity apps of Office 365 E5 with Windows 11 Enterprise, Enterprise Mobility + Security E5, and advanced Microsoft 365 security, compliance, voice, and analytics capabilities."
+plans = ["List price: USD /user/month (current). Increases to USD /user/month effective 1 July 2026."]
+portal_url = ""
+learn_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/e5"
+related_tools = ["licence-picker"]
+related_certs = ["ms-900", "ms-100"]
+related_blogs = []
+status = "ga"
+watch = "price-change-2026-07-01"
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["microsoft-365-e5", "m365e5"]
+old_names = []
+
+# ── 19. M365 F3 — frontline ──────────────────────────────────────────────
+[[entries]]
+slug = "m365-f3"
+name = "Microsoft 365 F3"
+kind = "license"
+domain = "productivity"
+plain_english = "The frontline worker plan — web/mobile Office (no desktop), 2 GB mailbox, Teams, Intune, Entra P1, Defender. Built for shift workers, retail, healthcare staff."
+official = "An affordable solution for firstline workers. Provides cloud-based productivity, security, identity, and device management capabilities optimized for frontline roles."
+plans = ["List price: USD /user/month", "Copilot eligible (since June 2024)"]
+portal_url = ""
+learn_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-f3"
+related_tools = ["licence-picker"]
+related_certs = ["ms-900"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = ["F3"]
+aliases = ["microsoft-365-f3", "m365f3", "frontline-f3"]
+old_names = []
+
+# ── 20. M365 Business Premium ────────────────────────────────────────────
+[[entries]]
+slug = "m365-business-premium"
+name = "Microsoft 365 Business Premium"
+kind = "license"
+domain = "productivity"
+plain_english = "The SMB sweet-spot plan (≤300 users) — Office desktop, Exchange/SharePoint/Teams, Intune, Entra P1, Defender for Business, Defender for Office Plan 1. Most enterprise security features at a quarter of E5 cost."
+official = "An integrated solution for businesses with up to 300 employees. Includes the productivity apps and services in Microsoft 365 Business Standard, plus advanced security and device management."
+plans = ["List price: USD /user/month", "≤300 user cap (organizations larger than this need an enterprise plan)"]
+portal_url = ""
+learn_url = "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-premium"
+related_tools = ["licence-picker"]
+related_certs = ["ms-900"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = ["BP"]
+aliases = ["microsoft-365-business-premium", "m365-bp", "business-premium"]
+old_names = ["Microsoft 365 Business"]
+
+# ── 21. Microsoft 365 Copilot ────────────────────────────────────────────
+[[entries]]
+slug = "m365-copilot"
+name = "Microsoft 365 Copilot"
+kind = "product"
+domain = "ai"
+plain_english = "Generative AI woven into Word, Excel, PowerPoint, Outlook, Teams — drafts, summarizes, analyses, designs, recaps. Grounded in your tenant's content via the Microsoft Graph and Semantic Index."
+official = "An AI-powered productivity tool that uses large language models and integrates with Microsoft 365 apps and your data to enhance creativity, productivity, and skills."
+plans = ["USD /user/month add-on", "Requires a qualifying base license (E3/E5, Business Standard/Premium, F1/F3, A3/A5)"]
+portal_url = "https://copilot.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/copilot/microsoft-365/"
+related_tools = ["copilot-feature-matrix", "copilot-frontier-map", "readiness"]
+related_certs = ["mb-800", "ms-100"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["m365-copilot", "microsoft-365-copilot", "copilot-for-m365"]
+old_names = []
+
+# ── 22. Copilot Studio ───────────────────────────────────────────────────
+[[entries]]
+slug = "copilot-studio"
+name = "Microsoft Copilot Studio"
+kind = "product"
+domain = "ai"
+plain_english = "Low-code agent builder — drag-drop topics, knowledge sources, generative answers, MCP plugins, and connect to data via Power Platform connectors. Sits next to (or inside) M365 Copilot."
+official = "A low-code platform for building, customizing, and deploying conversational AI agents. Extends Microsoft 365 Copilot, builds standalone agents, and integrates with the Microsoft Power Platform."
+plans = ["Pay-as-you-go via Copilot Studio messages", "Pre-paid capacity packs", "Included tenants for some M365 Copilot scenarios"]
+portal_url = "https://copilotstudio.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/microsoft-copilot-studio/"
+related_tools = ["agent-builder-guide", "agent-365-planner"]
+related_certs = ["mb-800"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["copilot-studio", "ms-copilot-studio"]
+old_names = ["Power Virtual Agents", "PVA"]
+
+# ── 23. Agent 365 ────────────────────────────────────────────────────────
+[[entries]]
+slug = "agent-365"
+name = "Microsoft Agent 365"
+kind = "product"
+domain = "ai"
+plain_english = "Microsoft's agentic AI offering — gives every user their own set of personal and team agents that can act, reason, and use tools across the M365 surface and beyond."
+official = "An evolution of Microsoft 365 Copilot toward agentic experiences — autonomous agents that can plan, act, and learn across the Microsoft 365 surface and integrated services."
+plans = ["Bundling and pricing finalising — refer to current Microsoft licensing announcements"]
+portal_url = ""
+learn_url = "https://learn.microsoft.com/en-us/copilot/"
+related_tools = ["agent-365-planner", "copilot-frontier-map"]
+related_certs = []
+related_blogs = []
+status = "ga"
+watch = "post-ga-pricing-bundling"
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["agent365", "microsoft-agent-365"]
+old_names = []
+
+# ── 24. Microsoft Purview ────────────────────────────────────────────────
+[[entries]]
+slug = "purview"
+name = "Microsoft Purview"
+kind = "product"
+domain = "governance"
+plain_english = "The unified data governance + compliance suite — data classification, sensitivity labels, DLP, eDiscovery, insider risk, communication compliance, audit, records management."
+official = "A comprehensive set of solutions to help govern, protect, and manage data across the entire data estate, on-premises, multicloud, and SaaS environments."
+plans = ["Capabilities split across multiple SKUs (M365 E3, M365 E5, M365 E5 Compliance, A la carte)", "Use the licensing matrix on Microsoft Learn to plan"]
+portal_url = "https://purview.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/purview/"
+related_tools = ["purview-starter", "compliance-passport"]
+related_certs = ["sc-401", "sc-400"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["microsoft-purview"]
+old_names = ["Microsoft Compliance Center", "Microsoft 365 Compliance"]
+
+# ── 25. PIM for Groups ───────────────────────────────────────────────────
+[[entries]]
+slug = "pim-for-groups"
+name = "PIM for Groups"
+kind = "feature"
+domain = "identity"
+plain_english = "Apply PIM-style time-bound activation to membership in security groups (not just role assignments) — useful for app access, RBAC roles assigned to groups, and SaaS app group membership."
+official = "Extends Privileged Identity Management to enable just-in-time, approval-based, and time-bound activation of group membership for security groups, including those used for role assignments and app access."
+plans = ["Requires Microsoft Entra ID P2 or Microsoft Entra ID Governance"]
+portal_url = "https://entra.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/concept-pim-for-groups"
+related_tools = []
+related_certs = ["sc-300"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["pim-groups", "privileged-identity-management-for-groups"]
+old_names = []
+
+# ── 26. Access Reviews ───────────────────────────────────────────────────
+[[entries]]
+slug = "access-reviews"
+name = "Access Reviews"
+kind = "feature"
+domain = "identity"
+plain_english = "Periodically (or one-off) ask reviewers to confirm that users still need their group memberships, role assignments, app access, or guest accounts. Automate the deprovisioning when they don't."
+official = "An Microsoft Entra ID Governance feature that helps organizations efficiently manage group memberships, access to enterprise applications, and role assignments through periodic reviews."
+plans = ["Microsoft Entra ID P2 or Microsoft Entra ID Governance"]
+portal_url = "https://entra.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview"
+related_tools = []
+related_certs = ["sc-300"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["access-review", "entra-access-reviews"]
+old_names = []
+
+# ── 27. Sign-in logs ─────────────────────────────────────────────────────
+[[entries]]
+slug = "sign-in-logs"
+name = "Microsoft Entra Sign-in Logs"
+kind = "feature"
+domain = "identity"
+plain_english = "Where you go to debug 'why can't this user sign in?' — every sign-in attempt with conditional access policy decisions, MFA outcomes, location, and device telemetry."
+official = "Reports that provide insights into who signs in, when, from where, and how — including all interactive and non-interactive sign-in attempts and the policies that evaluated them."
+plans = ["Free tier — 7 day retention", "Entra ID P1 — 30 day retention", "Entra ID P2 — 30 day retention with risk fields"]
+portal_url = "https://entra.microsoft.com/#view/Microsoft_AAD_IAM/SignInsBlade"
+learn_url = "https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins"
+related_tools = []
+related_certs = ["sc-300"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["sign-ins", "entra-sign-in-logs", "signin-logs"]
+old_names = ["Azure AD Sign-in logs"]
+
+# ── 28. Defender for Cloud ───────────────────────────────────────────────
+[[entries]]
+slug = "defender-for-cloud"
+name = "Microsoft Defender for Cloud"
+kind = "product"
+domain = "security"
+plain_english = "Cloud security posture management (CSPM) and cloud workload protection (CWPP) for Azure, AWS, GCP — finds misconfigurations, unhealthy resources, and active threats across your multi-cloud."
+official = "A cloud-native application protection platform (CNAPP) with a set of security measures and practices designed to protect cloud-based applications from various cyber threats and vulnerabilities."
+plans = ["Free CSPM (basic)", "Defender CSPM (advanced posture, agentless scanning)", "Defender for Servers/Storage/SQL/etc. (per-workload Plans 1 and 2)"]
+portal_url = "https://portal.azure.com/#view/Microsoft_Azure_Security/SecurityMenuBlade"
+learn_url = "https://learn.microsoft.com/en-us/azure/defender-for-cloud/"
+related_tools = []
+related_certs = ["sc-200", "az-500"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["defender-cloud", "microsoft-defender-for-cloud"]
+old_names = ["Azure Security Center", "Azure Defender"]
+
+# ── 29. XDR — Extended Detection and Response ───────────────────────────
+[[entries]]
+slug = "xdr"
+name = "Extended Detection and Response"
+kind = "acronym-only"
+domain = "security"
+plain_english = "Security tooling that correlates signals across endpoints, identities, email, cloud apps, and cloud workloads — instead of one alert per silo, you get one stitched-together incident."
+official = "A unified security incident detection and response platform that automatically collects and correlates data from multiple proprietary security components."
+plans = ["In Microsoft's stack, XDR is delivered by Microsoft Defender XDR (security.microsoft.com) — combines MDE, MDI, MDO, MDCA"]
+portal_url = "https://security.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/defender-xdr/"
+related_tools = []
+related_certs = ["sc-200"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = ["XDR"]
+aliases = ["defender-xdr", "microsoft-defender-xdr"]
+old_names = ["Microsoft 365 Defender"]
+
+# ── 30. Microsoft Sentinel ───────────────────────────────────────────────
+[[entries]]
+slug = "sentinel"
+name = "Microsoft Sentinel"
+kind = "product"
+domain = "security"
+plain_english = "Cloud-native SIEM + SOAR — collect logs from anywhere (Microsoft, AWS, GCP, on-prem, third-party SaaS), hunt threats with KQL, and automate response with playbooks."
+official = "A scalable, cloud-native security information and event management (SIEM) solution with built-in security orchestration, automation, and response (SOAR) capabilities, powered by AI."
+plans = ["Pay-as-you-go (per GB ingested) or commitment tiers", "Some Microsoft data sources free (sign-in logs, etc.)"]
+portal_url = "https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.SecurityInsights%2FSentinel"
+learn_url = "https://learn.microsoft.com/en-us/azure/sentinel/"
+related_tools = []
+related_certs = ["sc-200", "az-500"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = ["microsoft-sentinel"]
+old_names = ["Azure Sentinel"]
+
+# ═══════════════════════════════════════════════════════════════════════════
+# DISAMBIGUATION ENTRIES — for ambiguous short terms used by multiple Microsoft
+# products. These render via layouts/_default/disambiguation.html (the chooser).
+# When a user types "p1", "defender", "copilot" etc., they land on a chooser
+# page rather than being auto-redirected to one of the candidates.
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ── 31. P1 (license tier code disambiguation) ───────────────────────────
+[[entries]]
+slug = "p1"
+name = "P1 — multiple Microsoft products use this code"
+kind = "disambiguation"
+domain = "licensing"
+plain_english = "\"P1\" is a Microsoft plan-tier code used by several products. Pick the one you meant:"
+official = ""
+plans = []
+portal_url = ""
+learn_url = ""
+related_tools = []
+related_certs = []
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = []
+old_names = []
+[[entries.disambiguation_options]]
+slug = "entra-p1"
+label = "Microsoft Entra ID P1"
+hint = "identity · SSO · Conditional Access · most common P1"
+[[entries.disambiguation_options]]
+slug = "mde"
+label = "Defender for Endpoint Plan 1"
+hint = "endpoint security — preventative controls (E3, Business Premium)"
+[[entries.disambiguation_options]]
+slug = "mdo"
+label = "Defender for Office 365 Plan 1"
+hint = "email security — Safe Links, Safe Attachments, anti-phishing"
+
+# ── 32. P2 (license tier code disambiguation) ───────────────────────────
+[[entries]]
+slug = "p2"
+name = "P2 — multiple Microsoft products use this code"
+kind = "disambiguation"
+domain = "licensing"
+plain_english = "\"P2\" is a Microsoft plan-tier code used by several products. Pick the one you meant:"
+official = ""
+plans = []
+portal_url = ""
+learn_url = ""
+related_tools = []
+related_certs = []
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = []
+old_names = []
+[[entries.disambiguation_options]]
+slug = "entra-p2"
+label = "Microsoft Entra ID P2"
+hint = "identity governance — PIM, Identity Protection, Access Reviews"
+[[entries.disambiguation_options]]
+slug = "mde"
+label = "Defender for Endpoint Plan 2"
+hint = "endpoint security — full EDR, automated investigation, threat intel (E5)"
+[[entries.disambiguation_options]]
+slug = "mdo"
+label = "Defender for Office 365 Plan 2"
+hint = "email security — adds Threat Explorer, Attack Simulation Training (E5)"
+
+# ── 33. E5 (multiple bundle SKUs share this code) ───────────────────────
+[[entries]]
+slug = "e5"
+name = "E5 — Microsoft has several E5 bundles"
+kind = "disambiguation"
+domain = "licensing"
+plain_english = "\"E5\" is a tier marker used in several Microsoft enterprise SKUs. Pick the one you meant:"
+official = ""
+plans = []
+portal_url = ""
+learn_url = ""
+related_tools = []
+related_certs = []
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = []
+old_names = []
+[[entries.disambiguation_options]]
+slug = "m365-e5"
+label = "Microsoft 365 E5"
+hint = "the full bundle — apps + Windows + EMS E5 + advanced security/compliance/voice"
+[[entries.disambiguation_options]]
+slug = "entra-p2"
+label = "EMS E5 component — Entra ID P2"
+hint = "the identity portion of EMS E5 / M365 E5"
+
+# ── 34. Defender (umbrella term for multiple products) ──────────────────
+[[entries]]
+slug = "defender"
+name = "Defender — Microsoft's family of security products"
+kind = "disambiguation"
+domain = "security"
+plain_english = "\"Defender\" is Microsoft's umbrella security brand — there are several products. Pick the one you meant:"
+official = ""
+plans = []
+portal_url = ""
+learn_url = ""
+related_tools = []
+related_certs = []
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = []
+old_names = ["Microsoft 365 Defender (umbrella term, now Defender XDR)"]
+[[entries.disambiguation_options]]
+slug = "mde"
+label = "Microsoft Defender for Endpoint"
+hint = "endpoint security — Windows / macOS / Linux / mobile devices"
+[[entries.disambiguation_options]]
+slug = "mdo"
+label = "Microsoft Defender for Office 365"
+hint = "email + Teams + SharePoint security"
+[[entries.disambiguation_options]]
+slug = "mdi"
+label = "Microsoft Defender for Identity"
+hint = "on-prem Active Directory + Entra ID attack detection"
+[[entries.disambiguation_options]]
+slug = "mdca"
+label = "Microsoft Defender for Cloud Apps"
+hint = "Cloud Access Security Broker (CASB) — was MCAS"
+[[entries.disambiguation_options]]
+slug = "defender-for-cloud"
+label = "Microsoft Defender for Cloud"
+hint = "Azure / AWS / GCP cloud workload protection — was Azure Security Center"
+[[entries.disambiguation_options]]
+slug = "xdr"
+label = "Microsoft Defender XDR"
+hint = "the unified portal that stitches the Defender family together"
+
+# ── 35. Copilot (multiple Microsoft Copilot products) ───────────────────
+[[entries]]
+slug = "copilot"
+name = "Copilot — Microsoft has several Copilots"
+kind = "disambiguation"
+domain = "ai"
+plain_english = "\"Copilot\" is Microsoft's AI brand and there are several products under it. Pick the one you meant:"
+official = ""
+plans = []
+portal_url = ""
+learn_url = ""
+related_tools = []
+related_certs = []
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-04"
+[entries.terms]
+abbreviations = []
+aliases = []
+old_names = []
+[[entries.disambiguation_options]]
+slug = "m365-copilot"
+label = "Microsoft 365 Copilot"
+hint = "AI inside Word/Excel/PowerPoint/Outlook/Teams · grounded in your tenant"
+[[entries.disambiguation_options]]
+slug = "copilot-studio"
+label = "Microsoft Copilot Studio"
+hint = "low-code agent builder · was Power Virtual Agents"
+[[entries.disambiguation_options]]
+slug = "agent-365"
+label = "Microsoft Agent 365"
+hint = "agentic AI · personal + team agents that act and reason across M365"
+[[entries.disambiguation_options]]
+slug = "azure-ai-foundry"
+label = "Azure AI Foundry"
+hint = "the platform behind it all — multi-vendor model catalog · was AI Studio"

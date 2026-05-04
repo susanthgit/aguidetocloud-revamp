@@ -1,0 +1,49 @@
+{{ define "main" }}
+<article class="bb-entry">
+
+  <header class="bb-entry-header">
+    <p class="bb-entry-prompt"><code>ls</code></p>
+    <h1 class="bb-entry-title">// the full catalogue</h1>
+    <p class="bb-entry-meta">
+      {{ $count := len (index hugo.Data "cmd_entries").entries }}
+      <span class="bb-pill-bracket">{{ $count }} entries</span>
+      <span class="bb-pill-bracket">last verified rolling</span>
+    </p>
+  </header>
+
+  {{/* Group entries by kind for browsable structure */}}
+  {{ $entries := (index hugo.Data "cmd_entries").entries }}
+  {{ $kinds := slice "product" "portal" "feature" "license" "cert" "tool" "acronym-only" "disambiguation" }}
+
+  {{ range $kind := $kinds }}
+    {{ $matched := slice }}
+    {{ range $entries }}
+      {{ if eq .kind $kind }}{{ $matched = $matched | append . }}{{ end }}
+    {{ end }}
+    {{ if gt (len $matched) 0 }}
+      <section class="bb-section">
+        <h2 class="bb-section-title">// {{ $kind | humanize | lower }} <span style="color: var(--text-dim); font-weight: 400;">({{ len $matched }})</span></h2>
+        <ul class="bb-catalogue">
+          {{ range (sort $matched "slug") }}
+            <li class="bb-catalogue-row">
+              <a href="/{{ .slug }}/" class="bb-catalogue-link">
+                <span class="bb-catalogue-prompt">$</span>
+                <span class="bb-catalogue-slug">{{ .slug }}</span>
+                <span class="bb-catalogue-name">{{ .name }}</span>
+                <span class="bb-catalogue-domain">{{ .domain }}</span>
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+      </section>
+    {{ end }}
+  {{ end }}
+
+  <p class="bb-verified" style="margin-top: var(--s-12);">
+    <a href="/" style="color: var(--text-muted);">← back to launcher</a>
+    <span style="color: var(--text-dim); margin: 0 var(--s-3);">·</span>
+    <a href="/wishlist/" style="color: var(--text-muted);">missing one? → wishlist</a>
+  </p>
+
+</article>
+{{ end }}

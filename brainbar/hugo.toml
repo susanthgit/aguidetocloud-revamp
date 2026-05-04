@@ -1,0 +1,75 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# Brain Bar — `cmd.aguidetocloud.com`
+# Standalone Hugo sub-project. Separate Cloudflare Pages project.
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Why standalone (not nested in main site Hugo build):
+#   1. Practice Exam SLA — zero shared failure domain with the paid
+#      practice-exam pipeline that lives in the main site project.
+#   2. Faster builds — ~30s vs main site ~100s for 1,774 pages.
+#   3. Independent deploys — ship Brain Bar without rebuilding everything.
+#
+# Build:    cd brainbar && hugo --gc --minify
+# Preview:  cd brainbar && hugo server --port 1316
+# Deploy:   Cloudflare Pages project `aguidetocloud-brainbar` (separate from
+#           main `aguidetocloud` project).
+#
+# ⚠️ One Body Two Organs rule: Zen tokens in static/css/zen-tokens.css
+#    MUST stay in sync with main site `static/css/style.css` lines 1-170.
+#    Update both when tokens change.
+# ═══════════════════════════════════════════════════════════════════════════
+
+baseURL = "https://cmd.aguidetocloud.com/"
+languageCode = "en-nz"
+title = "Brain Bar"
+enableRobotsTXT = true
+buildFuture = true
+
+# Disable taxonomies — Brain Bar entries are flat (one URL per slug)
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+[params]
+  description = "stop googling microsoft. just type. plain-english explainers, rebrand history, and the right portal — for every microsoft acronym, license, and feature."
+  tagline = "stop googling microsoft. just type."
+  author = "Susanth Sutheesh"
+  parent_site = "https://www.aguidetocloud.com/"
+  cache_version = "2026050402"
+
+[outputs]
+  home = ["HTML", "CMD_INDEX", "REDIRECTS"]
+  page = ["HTML"]
+  section = ["HTML"]
+
+# ── Custom output formats ─────────────────────────────────────────────────
+# CMD_INDEX → public/cmd-index.json — search index for the launcher (Phase 3)
+#             AND vendored into the Astro Guided organ at build time (Phase 6).
+# REDIRECTS → public/_redirects — Cloudflare Pages reads this and serves
+#             HTTP 301s for every alias and slugified old-name.
+[outputFormats]
+  [outputFormats.CMD_INDEX]
+    mediaType = "application/json"
+    baseName = "cmd-index"
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.REDIRECTS]
+    mediaType = "text/plain"
+    baseName = "_redirects"
+    isPlainText = true
+    notAlternative = true
+
+# Bind text/plain to a .txt suffix so Hugo doesn't choke when rendering
+# REDIRECTS — Hugo names the output file from baseName + the format's first
+# suffix. We use empty suffix in the lookup template name.
+[mediaTypes]
+  [mediaTypes."text/plain"]
+    suffixes = [""]
+  [mediaTypes."application/json"]
+    suffixes = ["json"]
+
+[security]
+  [security.funcs]
+    getenv = ['^HUGO_', '^CI$']

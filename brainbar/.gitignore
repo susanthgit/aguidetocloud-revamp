@@ -1,0 +1,15 @@
+# Build artefacts
+public/
+resources/
+.hugo_build.lock
+
+# Playwright UX audit artifacts (local-only)
+qa/node_modules/
+qa/screenshots/
+qa/report.json
+qa/package-lock.json
+
+# Editor
+.vscode/
+*.swp
+.DS_Store

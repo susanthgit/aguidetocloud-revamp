@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+  <!-- Anti-FOUC: theme via .aguidetocloud.com cookie. Brain Bar defaults to DARK
+       (terminal atmosphere). Light mode is the after-hours courtesy. -->
+  <script>
+    (function(){
+      try{
+        var m = document.cookie.match(/(?:^|; )aguidetocloud_theme=([^;]+)/);
+        var t = m ? decodeURIComponent(m[1]) : null;
+        if (!t) { try { t = localStorage.getItem('theme'); } catch(e) {} }
+        if (!t) t = 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch(e){
+        document.documentElement.setAttribute('data-theme','dark');
+      }
+    })();
+  </script>
+
+  <!-- JetBrains Mono — Brain Bar's only font. Self-hosted (no third-party CDN). -->
+  <link rel="stylesheet" href="/css/fonts.css?v={{ site.Params.cache_version }}">
+
+  <link rel="stylesheet" href="/css/tokens.css?v={{ site.Params.cache_version }}">
+  <link rel="stylesheet" href="/css/cmd.css?v={{ site.Params.cache_version }}">
+
+  <!-- Browser address-bar custom search engine (auto-detected by Chrome/Edge/Firefox) -->
+  <link rel="search" type="application/opensearchdescription+xml" title="Brain Bar" href="/opensearch.xml">
+
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:locale" content="en_NZ">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@aguidetocloud">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+  <header class="bb-header">
+    <a class="bb-brand" href="/">
+      <span class="bb-prompt">$_</span>
+      <span class="bb-brand-name">brainbar</span>
+    </a>
+    <div style="display:flex; gap: var(--s-3); align-items:center;">
+      <button class="bb-theme-toggle" type="button" aria-label="Toggle theme" data-bb-theme>[ theme ]</button>
+      <a class="bb-back" href="{{ .Site.Params.parent_site }}" rel="noopener">// aguidetocloud.com</a>
+    </div>
+  </header>
+
+  <main class="bb-shell">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="bb-footer">
+    <p>// brainbar v{{ site.Params.cache_version }} · part of the <a href="{{ .Site.Params.parent_site }}" rel="noopener">aguidetocloud universe</a> · plain-english microsoft, for people like us</p>
+  </footer>
+
+  <script>
+    /* Tiny inline theme toggler — no framework. Writes the .aguidetocloud.com
+       cookie so the choice carries across the universe. */
+    (function(){
+      var btn = document.querySelector('[data-bb-theme]');
+      if (!btn) return;
+      btn.addEventListener('click', function(){
+        var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+        var next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try {
+          var maxAge = 60 * 60 * 24 * 365;
+          var d = location.hostname.endsWith('aguidetocloud.com') ? '; domain=.aguidetocloud.com' : '';
+          document.cookie = 'aguidetocloud_theme=' + next + '; path=/; max-age=' + maxAge + d + '; SameSite=Lax';
+          localStorage.setItem('theme', next);
+        } catch(e) {}
+      });
+    })();
+  </script>
+</body>
+</html>
+

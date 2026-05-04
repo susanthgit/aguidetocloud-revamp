@@ -1,0 +1,119 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# BRAIN BAR — VOICE OVERLAY (Sush-takes)
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Brain-Bar-specific presentation. Kept SEPARATE from cmd_entries.toml so
+# that Shift / MCP / Grandma can reuse the entity layer without inheriting
+# Brain Bar voice.
+#
+# RULES (from session 4 May 2026):
+# - Neutral by default. Spicy only when there is genuine conviction.
+# - Silence > forced fit. Skip the take entirely if there's no honest one.
+# - Mascot/analogy is optional — only if it adds clarity.
+#
+# Keys are the slug from cmd_entries.toml.
+# ═══════════════════════════════════════════════════════════════════════════
+
+[mde]
+mascot = "🛡️ Office CCTV"
+sush_take = "If you've got E5 and you're not turning Plan 2 on, you're paying for a Ferrari and driving it in first gear."
+sush_take_status = "spicy"
+
+[pim]
+mascot = "🔑 Key cabinet with a timer"
+# No spicy take here — PIM is just useful. Skip rather than force.
+sush_take_status = "neutral"
+
+[m365-e3]
+# E3 is a mainstream plan — neutral take. Sush can add spice later if there's
+# a genuine licensing conviction worth surfacing.
+sush_take_status = "neutral"
+
+[intune]
+mascot = "📱 Mobile remote control"
+sush_take_status = "neutral"
+
+[azure-ai-foundry]
+sush_take = "The headline isn't 'Microsoft has a model' — it's the multi-vendor catalog. That's the actual differentiation."
+sush_take_status = "spicy"
+
+[conditional-access]
+mascot = "🚦 Identity traffic light"
+sush_take_status = "neutral"
+
+[mfa]
+sush_take_status = "neutral"
+
+[entra-p1]
+sush_take = "Without P1, you don't really have Conditional Access. It's the line between cloud SSO and cloud security."
+sush_take_status = "spicy"
+
+[entra-p2]
+sush_take_status = "neutral"
+
+[mdca]
+mascot = "🛒 The shadow-IT detective"
+sush_take_status = "neutral"
+
+[mdo]
+mascot = "📧 The email bouncer"
+sush_take_status = "neutral"
+
+[mdi]
+mascot = "🕵️ Identity attack canary"
+sush_take_status = "neutral"
+
+[eop]
+sush_take_status = "neutral"
+
+[autopilot]
+mascot = "📦 Out-of-the-box → at-the-desk"
+sush_take_status = "neutral"
+
+[laps]
+sush_take_status = "neutral"
+
+[compliance-policies]
+sush_take_status = "neutral"
+
+[m365-e5]
+sush_take_status = "neutral"
+
+[m365-f3]
+sush_take = "F1/F3 ARE Copilot-eligible since June 2024. Frontline doesn't mean second-class anymore — that myth dies hard."
+sush_take_status = "spicy"
+
+[m365-business-premium]
+sush_take = "BP is the most underused license in the catalog. Sub-300-user orgs paying for E3 should run the math — BP gets you 80% of E5's security at 40% of E3's price."
+sush_take_status = "spicy"
+
+[m365-copilot]
+sush_take_status = "neutral"
+
+[copilot-studio]
+sush_take_status = "neutral"
+
+[agent-365]
+sush_take_status = "neutral"
+
+[purview]
+sush_take_status = "neutral"
+
+[pim-for-groups]
+sush_take_status = "neutral"
+
+[access-reviews]
+sush_take_status = "neutral"
+
+[sign-in-logs]
+sush_take_status = "neutral"
+
+[defender-for-cloud]
+sush_take_status = "neutral"
+
+[xdr]
+sush_take_status = "neutral"
+
+[sentinel]
+mascot = "🌐 The all-seeing log lake"
+sush_take_status = "neutral"

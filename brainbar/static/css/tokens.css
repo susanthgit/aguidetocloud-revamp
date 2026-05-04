@@ -1,0 +1,165 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   🪐 BRAIN BAR — DESIGN TOKENS  ·  Atmosphere: "The Terminal"
+   ═══════════════════════════════════════════════════════════════════════════
+   Per the Cosmos Philosophy (4 May 2026), Brain Bar is its own planet. These
+   tokens are NOT a parity file with Earth. Phosphor green on deep ink. Mono
+   everywhere. Dark by default — light mode is the after-hours courtesy.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Atmosphere: dark (default) ──────────────────────────────────────── */
+  --bg:                 #0B0E14;
+  --bg-surface:         #0F1218;
+  --bg-elevated:        #14181F;
+  --bg-card:            #181C24;
+
+  --text:               #E6EDF3;
+  --text-secondary:     #B1BAC4;
+  --text-muted:         #7D8590;
+  --text-dim:           #545D68;
+
+  --border:             #21262D;
+  --border-emphasis:    #30363D;
+  --border-bright:      #484F58;
+
+  /* Phosphor green — the Brain Bar accent */
+  --accent:             #34D399;
+  --accent-dim:         #10B981;
+  --accent-bright:      #6EE7B7;
+  --accent-soft:        rgba(52, 211, 153, 0.10);
+  --accent-glow:        rgba(52, 211, 153, 0.20);
+
+  /* Spicy amber — reserved for Sush-takes that earn it */
+  --spicy:              #F5A623;
+  --spicy-soft:         rgba(245, 166, 35, 0.10);
+
+  /* Status (terminal-style) */
+  --status-ok:          #4ADE80;
+  --status-warn:        #FACC15;
+  --status-err:         #F87171;
+  --status-info:        #93C5FD;
+
+  /* Domain accent strip (subtle hue per domain — not full per-domain colour) */
+  --d-security:         #F87171;
+  --d-identity:         #C4B5FD;
+  --d-endpoint:         #FB923C;
+  --d-productivity:     #86EFAC;
+  --d-ai:               #67E8F9;
+  --d-data:             #FCD34D;
+  --d-governance:       #F0ABFC;
+  --d-dev:              #A5B4FC;
+
+  /* Type — monospace everywhere (cursor, prompt, body) */
+  --font-mono:          'JetBrains Mono', 'IBM Plex Mono', 'Fira Code', 'Cascadia Code', ui-monospace, Menlo, Consolas, monospace;
+  --font:               var(--font-mono);
+
+  /* Sizes — terminal scale (compact) */
+  --t-display:          clamp(2rem, 4vw + 1rem, 3.5rem);
+  --t-h1:               1.75rem;
+  --t-h2:               1.125rem;
+  --t-h3:               1rem;
+  --t-body:             0.9375rem;       /* 15px — terminal-ish */
+  --t-sm:               0.8125rem;       /* 13px */
+  --t-xs:               0.75rem;         /* 12px */
+
+  /* Spacing — strict 4/8 grid */
+  --s-1:                4px;
+  --s-2:                8px;
+  --s-3:                12px;
+  --s-4:                16px;
+  --s-6:                24px;
+  --s-8:                32px;
+  --s-12:               48px;
+  --s-16:               64px;
+  --s-24:               96px;
+
+  /* Layout */
+  --max-shell:          1080px;
+  --max-reading:        680px;
+
+  /* Geometry — terminals are rectilinear */
+  --r-sm:               2px;
+  --r-md:               4px;
+  --r-lg:               6px;
+
+  /* Motion — Brain Bar can have its own motion language. Snappy. */
+  --t-fast:             100ms ease-out;
+  --t-mid:              180ms ease-out;
+}
+
+/* ── Light mode: after-hours courtesy (paper) ─────────────────────────── */
+[data-theme="light"] {
+  --bg:                 #FAFAF7;
+  --bg-surface:         #FFFFFF;
+  --bg-elevated:        #F4F2EC;
+  --bg-card:            #FFFFFF;
+
+  --text:               #0F1218;
+  --text-secondary:     #2F3640;
+  --text-muted:         #5C6470;
+  --text-dim:           #94A0AB;
+
+  --border:             #E5E2DA;
+  --border-emphasis:    #C9C5BA;
+  --border-bright:      #93897A;
+
+  --accent:             #047857;          /* darker phosphor for AA contrast */
+  --accent-dim:         #065F46;
+  --accent-bright:      #059669;
+  --accent-soft:        rgba(4, 120, 87, 0.10);
+  --accent-glow:        rgba(4, 120, 87, 0.18);
+
+  --spicy:              #B45309;
+  --spicy-soft:         rgba(180, 83, 9, 0.08);
+
+  --status-ok:          #15803D;
+  --status-warn:        #A16207;
+  --status-err:         #B91C1C;
+  --status-info:        #1D4ED8;
+}
+
+/* ── Body baseline ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { background: var(--bg); }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: var(--t-body);
+  color: var(--text-secondary);
+  background: var(--bg);
+  line-height: 1.55;
+  font-feature-settings: 'liga' 0, 'calt' 0;     /* terminals don't ligate */
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+a:hover { color: var(--accent-bright); }
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Phosphor scan-line vibe — subtle static gradient overlay (dark only) */
+[data-theme="dark"] body::before,
+:root:not([data-theme="light"]) body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.01) 0,
+      rgba(255, 255, 255, 0.01) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  z-index: 1;
+}

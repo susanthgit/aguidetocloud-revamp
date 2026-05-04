@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Brain Bar</ShortName>
+  <LongName>Brain Bar — Microsoft jargon decoder</LongName>
+  <Description>Plain-English explainers, rebrand history, and the right portal — for every Microsoft acronym, license, and feature.</Description>
+  <Tags>microsoft 365 azure intune defender entra copilot jargon glossary</Tags>
+  <Image height="32" width="32" type="image/svg+xml">https://cmd.aguidetocloud.com/favicon.svg</Image>
+  <Url type="text/html" method="get" template="https://cmd.aguidetocloud.com/?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://cmd.aguidetocloud.com/opensearch.xml"/>
+  <Language>en-NZ</Language>
+  <InputEncoding>UTF-8</InputEncoding>
+  <OutputEncoding>UTF-8</OutputEncoding>
+  <Developer>Susanth Sutheesh — A Guide to Cloud</Developer>
+  <Contact>hello@aguidetocloud.com</Contact>
+  <SyndicationRight>open</SyndicationRight>
+  <AdultContent>false</AdultContent>
+</OpenSearchDescription>

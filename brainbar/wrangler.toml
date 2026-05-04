@@ -1,0 +1,30 @@
+# ─────────────────────────────────────────────────────────────────────────
+# Brain Bar — Cloudflare Pages bindings
+#
+# This file is OPTIONAL and only used when running locally with `wrangler
+# pages dev`. Production bindings are configured in the Cloudflare Pages
+# dashboard.
+#
+# To enable missed-term tracking in production:
+#   1. wrangler d1 create brainbar-misses
+#   2. wrangler d1 execute brainbar-misses --command \
+#      "CREATE TABLE IF NOT EXISTS missed (term TEXT NOT NULL, day TEXT NOT NULL, count INTEGER NOT NULL DEFAULT 1, first_seen TEXT NOT NULL, last_seen TEXT NOT NULL, PRIMARY KEY(term, day));"
+#   3. In Pages dashboard: Settings → Functions → D1 database bindings →
+#      add binding name MISSES → database brainbar-misses
+#
+# Without the D1 binding the Pages Functions short-circuit gracefully:
+#   POST /api/log-miss        → 204 No Content (logged to console)
+#   GET  /api/popular-misses  → { ok: false, results: [] }
+# ─────────────────────────────────────────────────────────────────────────
+
+name = "aguidetocloud-brainbar"
+compatibility_date = "2026-05-01"
+pages_build_output_dir = "public"
+
+# Production D1 binding — uncomment + paste your database_id after running
+# `wrangler d1 create brainbar-misses`. Sush enables this step at deploy.
+#
+# [[d1_databases]]
+# binding = "MISSES"
+# database_name = "brainbar-misses"
+# database_id = "REPLACE_WITH_ID_FROM_WRANGLER_OUTPUT"

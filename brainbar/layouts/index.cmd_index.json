@@ -1,0 +1,33 @@
+{{- /* ════════════════════════════════════════════════════════════════════
+   Brain Bar — Search Index (cmd-index.json)
+   Output format: CMD_INDEX  ·  Lookup: index.CMD_INDEX (home only)
+   Consumed by:
+     1. The launcher on / (client-side fuzzy search) — Phase 3
+     2. The Astro Guided <BrainBarLauncher> web-component (vendored) — Phase 6
+   ════════════════════════════════════════════════════════════════════ */ -}}
+{{- $items := slice -}}
+{{- range (index hugo.Data "cmd_entries").entries -}}
+  {{- $voice := index (index hugo.Data "cmd_voice") .slug | default dict -}}
+  {{- $terms := .terms | default dict -}}
+  {{- $item := dict
+    "slug"          .slug
+    "name"          .name
+    "kind"          .kind
+    "domain"        .domain
+    "abbreviations" ($terms.abbreviations | default slice)
+    "aliases"       ($terms.aliases | default slice)
+    "old_names"     ($terms.old_names | default slice)
+    "plain_english" .plain_english
+    "status"        (.status | default "ga")
+    "url"           (printf "/%s/" .slug)
+    "has_take"      (and (eq (default "neutral" $voice.sush_take_status) "spicy") (ne ($voice.sush_take | default "") ""))
+  -}}
+  {{- $items = $items | append $item -}}
+{{- end -}}
+{{- $payload := dict
+  "version"      site.Params.cache_version
+  "generated_at" (now.Format "2006-01-02T15:04:05Z07:00")
+  "count"        (len $items)
+  "entries"      $items
+-}}
+{{- $payload | jsonify (dict "indent" "  ") | safeJS -}}

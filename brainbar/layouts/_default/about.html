@@ -1,0 +1,119 @@
+{{ define "main" }}
+<article class="bb-entry">
+
+  <p class="bb-entry-back">
+    <a href="/">← launcher</a>
+    <span class="bb-divider">·</span>
+    <a href="/all/">browse all</a>
+  </p>
+
+  <header class="bb-entry-header">
+    <p class="bb-entry-prompt"><code>about</code></p>
+    <h1 class="bb-entry-title">// brain bar — the microsoft jargon decoder</h1>
+    <p class="bb-entry-meta">
+      <span class="bb-pill-bracket">part of the aguidetocloud universe</span>
+    </p>
+  </header>
+
+  <section class="bb-section">
+    <h2 class="bb-section-title">what this is</h2>
+    <p class="bb-plain">
+      brain bar turns the microsoft acronym soup into a typed shortcut. type
+      a term — <code>mde</code>, <code>e3</code>, <code>foundry</code>, <code>p1</code> —
+      get a plain-english explainer, the official microsoft definition,
+      rebrand history, the right portal link, and what cert covers it.
+    </p>
+    <p class="bb-plain">
+      no fluff, no gatekeeping, no five paragraphs of seo. just the answer.
+    </p>
+  </section>
+
+  <section class="bb-section">
+    <h2 class="bb-section-title">why it exists</h2>
+    <p class="bb-plain">
+      microsoft has ~700 products and ~200 acronyms that change names every
+      year. mcas became mdca. azure ad became entra id. azure ai studio
+      became azure ai foundry. atp became defender. studying for an exam,
+      writing a sow, or just reading a kb article means constantly googling
+      <em>"what does X mean now?"</em>
+    </p>
+    <p class="bb-plain">
+      brain bar is the answer i kept needing for myself. once it existed,
+      it overflowed naturally into something other people could use too —
+      that's the pattern across every tool on
+      <a href="https://www.aguidetocloud.com/" rel="noopener">a guide to cloud</a>.
+    </p>
+  </section>
+
+  <section class="bb-section">
+    <h2 class="bb-section-title">who's behind it</h2>
+    <p class="bb-plain">
+      built by <strong style="color: var(--text);">susanth sutheesh (sush)</strong> —
+      microsoft copilot solution engineer at microsoft new zealand. infra
+      admin background. not a developer by training. the same "for people
+      like us" voice that runs through
+      <a href="https://www.aguidetocloud.com/" rel="noopener">aguidetocloud.com</a>,
+      the youtube channel, and the cert study guides — applied here in url-bar form.
+    </p>
+    <p class="bb-plain">
+      <em>{{/* TODO sush: add a sentence or two of personal voice here when you're ready — what brain bar means to you, who it's for, anything you want first-time visitors to know */}}</em>
+    </p>
+  </section>
+
+  <section class="bb-section">
+    <h2 class="bb-section-title">how the universe is laid out</h2>
+    <p class="bb-plain">
+      brain bar is one planet. there are others.
+    </p>
+    <pre class="bb-cosmos-map">
+🌍 <a href="https://www.aguidetocloud.com/" rel="noopener">aguidetocloud.com</a>             earth · the home base
+   ├── tools, mind maps, blogs, cert paths
+   └── 🌑 <a href="https://www.aguidetocloud.com/guided/" rel="noopener">/guided/</a>                     moon · cert prep platform
+
+🪐 <strong>cmd.aguidetocloud.com</strong>          ← you are here
+   the microsoft jargon decoder · 35 entries and counting
+
+⭐ mcp.aguidetocloud.com           the mcp move
+   brain bar inside claude / chatgpt / cursor (when deployed)
+
+🌌 next planets in orbit
+   shift                            how ai is changing your role
+   ai for grandma                   non-technical ai explainers</pre>
+    <p class="bb-plain">
+      each planet has its own atmosphere — own font, palette, voice, tech
+      choice. they don't try to look like each other. the only contracts
+      between them are data feeds (this site publishes
+      <a href="/cmd-index.json"><code>cmd-index.json</code></a>) and a
+      back-link to earth. read the
+      <a href="https://learn.aguidetocloud.com/reference/cosmos-philosophy/" rel="noopener">cosmos philosophy</a>
+      if that frame intrigues you.
+    </p>
+  </section>
+
+  <section class="bb-section">
+    <h2 class="bb-section-title">what brain bar isn't</h2>
+    <ul class="bb-honest-list">
+      <li>not a substitute for microsoft learn — every entry links to the source</li>
+      <li>not exam answers — that's the practice exam product on aguidetocloud.com</li>
+      <li>not legal or compliance advice — license details may change at any time</li>
+      <li>not exhaustive — start with the most-asked terms; growing each week</li>
+      <li>not microsoft-affiliated — this is independent, community-aimed work</li>
+    </ul>
+  </section>
+
+  <section class="bb-section">
+    <h2 class="bb-section-title">suggest · contribute · find me</h2>
+    <ul class="bb-honest-list">
+      <li>missing a term? check the <a href="/wishlist/">wishlist</a> or <a href="https://github.com/susanthgit/aguidetocloud-revamp/issues/new?labels=brain-bar%2Csuggestion&title=Brain%20Bar%3A%20suggest%20a%20term" target="_blank" rel="noopener">open a github issue</a></li>
+      <li>fact-check correction? same channel — every entry has a <code>last_verified</code> date</li>
+      <li>youtube: <a href="https://www.youtube.com/susanthsutheesh" target="_blank" rel="noopener">youtube.com/susanthsutheesh</a></li>
+      <li>linkedin: <a href="https://www.linkedin.com/in/susanthsutheesh/" target="_blank" rel="noopener">linkedin.com/in/susanthsutheesh</a></li>
+    </ul>
+  </section>
+
+  <p class="bb-verified" style="margin-top: var(--s-12);">
+    last updated 2026-05-04
+  </p>
+
+</article>
+{{ end }}

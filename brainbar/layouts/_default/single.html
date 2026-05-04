@@ -1,0 +1,177 @@
+{{ define "main" }}
+{{ if eq .Params.kind "disambiguation" }}
+{{/* ──────────────────────────────────────────────────────────────────────
+     DISAMBIGUATION RENDER PATH
+     For kind=disambiguation entries (P1, P2, E5, Defender, Copilot, etc.)
+   ────────────────────────────────────────────────────────────────────── */}}
+<article class="bb-entry bb-disambig">
+
+  <p class="bb-entry-back">
+    <a href="/">← launcher</a>
+    <span class="bb-divider">·</span>
+    <a href="/all/">browse all</a>
+  </p>
+
+  <header class="bb-entry-header">
+    <p class="bb-entry-prompt"><code>{{ .Params.slug | default (path.Base .RelPermalink) }}</code></p>
+    <h1 class="bb-entry-title">{{ .Title }}</h1>
+    <p class="bb-entry-meta">
+      <span class="bb-pill-bracket">disambiguation</span>
+      <span class="bb-pill-bracket">{{ .Params.domain }}</span>
+    </p>
+    {{ with .Params.terms.old_names }}
+      <p class="bb-entry-formerly">{{ delimit . " · " }}</p>
+    {{ end }}
+  </header>
+
+  <section class="bb-section">
+    <h2 class="bb-section-title">heads up — this term is ambiguous</h2>
+    <p class="bb-plain">{{ .Params.plain_english }}</p>
+  </section>
+
+  <section class="bb-section">
+    <h2 class="bb-section-title">pick one →</h2>
+    <ul class="bb-disambig-options">
+      {{ range .Params.disambiguation_options }}
+        <li class="bb-disambig-option">
+          <a href="/{{ .slug }}/" class="bb-disambig-link">
+            <span class="bb-disambig-prompt">$</span>
+            <span class="bb-disambig-slug">{{ .slug }}</span>
+            <span class="bb-disambig-label">{{ .label }}</span>
+            {{ with .hint }}<span class="bb-disambig-hint">// {{ . }}</span>{{ end }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <p class="bb-verified" title="microsoft renames things often — this entry was last fact-checked on the date below.">
+    verified <time datetime="{{ .Params.last_verified }}">{{ .Params.last_verified }}</time>
+  </p>
+
+</article>
+{{ else }}
+{{/* ──────────────────────────────────────────────────────────────────────
+     STANDARD ENTRY RENDER PATH
+   ────────────────────────────────────────────────────────────────────── */}}
+<article class="bb-entry">
+
+  <p class="bb-entry-back">
+    <a href="/">← launcher</a>
+    <span class="bb-divider">·</span>
+    <a href="/all/">browse all</a>
+  </p>
+
+  {{/* Status banner — only when NOT generally available */}}
+  {{ with .Params.status }}
+    {{ if eq . "retired" }}
+      <aside class="bb-banner bb-banner-error" role="alert"><div><strong>Retired.</strong>{{ with $.Params.watch }} {{ . }}{{ end }}</div></aside>
+    {{ else if eq . "preview" }}
+      <aside class="bb-banner bb-banner-warning" role="status"><div><strong>Preview.</strong> Behaviour and naming may change before GA.</div></aside>
+    {{ else if eq . "rebranded" }}
+      <aside class="bb-banner bb-banner-info" role="status"><div><strong>Rebranded.</strong>{{ with $.Params.watch }} {{ . }}{{ end }}</div></aside>
+    {{ end }}
+  {{ end }}
+
+  {{/* Watch banner for GA entries */}}
+  {{ if and .Params.watch (or (not .Params.status) (eq .Params.status "ga")) }}
+    <aside class="bb-banner bb-banner-watch" role="status"><div><strong>Watch:</strong> {{ replaceRE "-" " " .Params.watch | humanize }}</div></aside>
+  {{ end }}
+
+  <header class="bb-entry-header">
+    <p class="bb-entry-prompt"><code>{{ .Params.slug | default (path.Base .RelPermalink) }}</code></p>
+    <h1 class="bb-entry-title">
+      {{ .Title }}{{ with .Params.terms.abbreviations }}{{ with index . 0 }}<span class="bb-entry-abbr">:: {{ . }}</span>{{ end }}{{ end }}
+    </h1>
+    <p class="bb-entry-meta">
+      <span class="bb-pill-bracket">{{ .Params.kind }}</span>
+      <span class="bb-pill-bracket">{{ .Params.domain }}</span>
+    </p>
+    {{ with .Params.terms.old_names }}
+      <p class="bb-entry-formerly">{{ delimit . " · " }}</p>
+    {{ end }}
+  </header>
+
+  {{/* Voice card — only if there's a mascot OR a spicy sush_take */}}
+  {{ $voice := .Params.voice }}
+  {{ $hasSpicyTake := and (eq (default "neutral" $voice.sush_take_status) "spicy") $voice.sush_take }}
+  {{ if or $voice.mascot $hasSpicyTake }}
+    <aside class="bb-voice">
+      {{ with $voice.mascot }}<p class="bb-voice-mascot">{{ . }}</p>{{ end }}
+      {{ if $hasSpicyTake }}
+        <p class="bb-voice-take">{{ $voice.sush_take }}</p>
+      {{ end }}
+    </aside>
+  {{ end }}
+
+  <section class="bb-section">
+    <h2 class="bb-section-title">in plain english</h2>
+    <p class="bb-plain">{{ .Params.plain_english }}</p>
+  </section>
+
+  <section class="bb-section">
+    <h2 class="bb-section-title">official microsoft definition</h2>
+    <p class="bb-official">{{ .Params.official }}</p>
+  </section>
+
+  {{ with .Params.plans }}
+    <section class="bb-section">
+      <h2 class="bb-section-title">plans &amp; eligibility</h2>
+      <ul class="bb-plans">
+        {{ range . }}<li>{{ . }}</li>{{ end }}
+      </ul>
+    </section>
+  {{ end }}
+
+  <section class="bb-actions">
+    {{ with .Params.portal_url }}
+      <a class="bb-btn bb-btn-primary" href="{{ . }}" rel="noopener" target="_blank">$ open portal →</a>
+    {{ end }}
+    {{ with .Params.learn_url }}
+      <a class="bb-btn bb-btn-secondary" href="{{ . }}" rel="noopener" target="_blank">microsoft learn docs →</a>
+    {{ end }}
+  </section>
+
+  {{ if or .Params.related_tools .Params.related_certs .Params.related_blogs }}
+    <section class="bb-section">
+      <h2 class="bb-section-title">related on aguidetocloud</h2>
+      <div class="bb-related">
+        {{ with .Params.related_tools }}
+          <div class="bb-related-col">
+            <h3>tools</h3>
+            <ul>{{ range . }}<li><a href="https://www.aguidetocloud.com/{{ . }}/" rel="noopener">{{ . }}</a></li>{{ end }}</ul>
+          </div>
+        {{ end }}
+        {{ with .Params.related_certs }}
+          <div class="bb-related-col">
+            <h3>certs</h3>
+            <ul>{{ range . }}<li><a href="https://www.aguidetocloud.com/cert-tracker/{{ . }}/" rel="noopener">{{ . | upper }}</a></li>{{ end }}</ul>
+          </div>
+        {{ end }}
+        {{ with .Params.related_blogs }}
+          <div class="bb-related-col">
+            <h3>reading</h3>
+            <ul>{{ range . }}<li><a href="https://www.aguidetocloud.com{{ . }}" rel="noopener">{{ . | humanize | title }}</a></li>{{ end }}</ul>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+  {{ with .Params.terms.aliases }}
+    {{ $aliases := . }}
+    <p class="bb-aliases">
+      {{ range $i, $a := $aliases }}<code>/{{ $a }}</code>{{ if (lt (add $i 1) (len $aliases)) }}<span class="bb-alias-sep"> · </span>{{ end }}{{ end }}
+    </p>
+  {{ end }}
+
+  <p class="bb-verified" title="microsoft renames things often — this entry was last fact-checked on the date below.">
+    verified <time datetime="{{ .Params.last_verified }}">{{ .Params.last_verified }}</time>
+  </p>
+
+</article>
+{{ end }}
+{{ end }}
+
+
+
