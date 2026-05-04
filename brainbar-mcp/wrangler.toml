@@ -1,0 +1,20 @@
+name = "brainbar-mcp"
+main = "src/index.ts"
+compatibility_date = "2026-05-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Will be activated by Sush when deploying:
+# 1. wrangler login
+# 2. wrangler deploy
+# 3. In Cloudflare dashboard, add custom domain mcp.aguidetocloud.com to this Worker
+
+# [vars] — none required for v1; data is fetched from public Brain Bar JSON.
+
+# Future: bind a KV namespace for analytics / agent telemetry
+# [[kv_namespaces]]
+# binding = "STATS"
+# id = "..."
+
+# observability — keep request logs for debugging agent connections
+[observability]
+enabled = true
