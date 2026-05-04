@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 04 May 2026 14:27:55 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 May 2026 17:50:18 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Defender XDR] Some users may receive false positive alerts from Microsoft Defender Antivirus for specific certificates</title>
@@ -33,15 +33,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MV1300072</guid>
       <pubDate>Fri, 01 May 2026 21:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be experiencing high latency when performing searches in Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1297752</link>
-      <description>[Exchange Online] Users may be experiencing high latency when performing searches in Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1297752</guid>
-      <pubDate>Fri, 01 May 2026 17:47:13 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some users may not receive results when performing searches in SharePoint Online</title>
@@ -448,6 +439,15 @@ The issue initially began with impact to a subset of custom</description>
       <category>serviceRestored</category>
       <guid isPermaLink="false">MV1269743</guid>
       <pubDate>Thu, 02 Apr 2026 02:37:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users may be experiencing high latency when performing searches in Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1297752</link>
+      <description>[Exchange Online] Users may be experiencing high latency when performing searches in Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1297752</guid>
+      <pubDate>Wed, 01 Apr 2026 07:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Purview] Some admins may be unable to access Activity Explorer in the Microsoft Purview portal</title>
