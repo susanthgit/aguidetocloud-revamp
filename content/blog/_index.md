@@ -4,4 +4,5 @@ description: "In-depth articles, guides, and tutorials on Microsoft 365 Copilot,
 images: ["images/og/sections/blog.jpg"]
 aliases:
   - "/blog/azure-ai-fundamentals/"
+  - "/events/"
 ---

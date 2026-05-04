@@ -1,9 +1,0 @@
-/redirect-test/    /blog/            301
-/labs/             /cloud-labs/      301
-/labs/*            /cloud-labs/      301
-/events/           /blog/            301
-/events/*          /blog/            301
-/azure-status/     /service-health/  301
-/azure-status/*    /service-health/  301
-/start/            /                 301
-/start-here/       /                 301

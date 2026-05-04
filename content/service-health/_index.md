@@ -8,6 +8,8 @@ sitemap:
   changefreq: "daily"
 lastmod: 2026-04-16
 images: ["images/og/service-health.jpg"]
+aliases:
+  - "/azure-status/"
 faq:
   - question: "How do I use the Service Health Tracker?"
     answer: "Open the page to see a live status overview of all 32 Microsoft services. Click any service card for incident details, or use the Active Incidents section to see what's currently affected with severity indicators and communication timelines."

@@ -1,4 +1,6 @@
-/redirect-test/    /blog/            301
+# Cloudflare Pages redirects (currently not being applied — kept as backup).
+# Hugo aliases on the destination pages do the actual redirecting (meta-refresh).
+# See: content/{cloud-labs,blog,service-health,_index}.md aliases sections.
 /labs/             /cloud-labs/      301
 /labs/*            /cloud-labs/      301
 /events/           /blog/            301
