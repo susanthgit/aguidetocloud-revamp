@@ -1,0 +1,253 @@
+/* ════════════════════════════════════════════════════════════════════════
+   🪐 Brain Bar Command Palette — Earth's portal to the planet
+   ────────────────────────────────────────────────────────────────────────
+   Two parts:
+     1. The .bb-launch-btn — subtle $_ icon in the navbar
+     2. The .bb-palette — modal overlay activated by click or "/"
+   Atmosphere: phosphor green on deep ink (Brain Bar's signature).
+   The icon lives quietly inside Earth's nav. The modal carries Brain Bar's
+   atmosphere — the only place that visual identity bleeds into Earth.
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* ── The trigger button (in navbar) ─────────────────────────────────── */
+
+.bb-launch-btn {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 1px;
+  padding: 6px 8px;
+  margin-right: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, Menlo, Consolas, monospace;
+  font-size: 14px;
+  font-weight: 600;
+  color: #34D399;            /* phosphor green — same as Brain Bar */
+  letter-spacing: -0.02em;
+  transition: background 100ms ease-out, border-color 100ms ease-out, color 100ms ease-out;
+}
+.bb-launch-btn:hover {
+  background: rgba(52, 211, 153, 0.10);
+  border-color: rgba(52, 211, 153, 0.30);
+  color: #6EE7B7;
+}
+.bb-launch-btn:focus-visible {
+  outline: 2px solid #34D399;
+  outline-offset: 2px;
+}
+
+.bb-launch-prompt { color: inherit; }
+.bb-launch-cursor {
+  display: inline-block;
+  color: inherit;
+  animation: bb-launch-blink 1.05s step-end infinite;
+  margin-left: 1px;
+}
+@keyframes bb-launch-blink {
+  0%, 49%   { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bb-launch-cursor { animation: none; }
+}
+
+/* ── The palette overlay ─────────────────────────────────────────────── */
+
+.bb-palette {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12vh;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, Menlo, Consolas, monospace;
+}
+.bb-palette[hidden] { display: none; }
+
+.bb-palette-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 14, 20, 0.72);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  animation: bb-fade-in 120ms ease-out;
+}
+
+@keyframes bb-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.bb-palette-modal {
+  position: relative;
+  width: min(640px, 92vw);
+  max-height: 70vh;
+  background: #0F1218;
+  border: 1px solid #30363D;
+  border-radius: 8px;
+  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(52, 211, 153, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: bb-pop-in 140ms ease-out;
+  color: #E6EDF3;
+}
+
+@keyframes bb-pop-in {
+  from { opacity: 0; transform: translateY(-6px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Search row */
+.bb-palette-form {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #21262D;
+}
+.bb-palette-prompt {
+  color: #34D399;
+  font-weight: 700;
+  font-size: 18px;
+  user-select: none;
+}
+.bb-palette-input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: #E6EDF3;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0;
+  caret-color: #34D399;
+}
+.bb-palette-input::placeholder { color: #545D68; font-weight: 400; }
+.bb-palette-input::selection { background: #34D399; color: #0F1218; }
+
+.bb-palette-kbd-esc,
+.bb-palette kbd {
+  font-family: inherit;
+  font-size: 11px;
+  color: #7D8590;
+  background: #181C24;
+  border: 1px solid #30363D;
+  border-radius: 4px;
+  padding: 2px 6px;
+  user-select: none;
+}
+
+/* Results list */
+.bb-palette-results {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  overflow-y: auto;
+  flex: 1 1 auto;
+}
+.bb-palette-results:empty { display: none; }
+.bb-palette-results::-webkit-scrollbar { width: 6px; }
+.bb-palette-results::-webkit-scrollbar-thumb {
+  background: #30363D;
+  border-radius: 3px;
+}
+
+.bb-palette-result {
+  border-radius: 6px;
+  margin-bottom: 1px;
+  cursor: pointer;
+}
+.bb-palette-result.is-selected {
+  background: rgba(52, 211, 153, 0.12);
+  outline: 1px solid rgba(52, 211, 153, 0.30);
+}
+.bb-palette-result-link {
+  display: grid;
+  grid-template-columns: 16px 200px 1fr auto;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 10px;
+  text-decoration: none;
+  color: #B1BAC4;
+  font-size: 13px;
+}
+.bb-palette-result-link:hover { color: #E6EDF3; }
+
+.bb-palette-tier {
+  color: #34D399;
+  font-weight: 700;
+  text-align: center;
+  font-size: 14px;
+}
+.bb-palette-slug {
+  color: #34D399;
+  font-weight: 600;
+}
+.bb-palette-slug em {
+  color: #545D68;
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 4px;
+}
+.bb-palette-name { color: #E6EDF3; font-weight: 400; }
+.bb-palette-meta {
+  color: #545D68;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.bb-palette-hint {
+  grid-column: 2 / -1;
+  font-size: 11px;
+  color: #7D8590;
+  margin-top: 2px;
+}
+
+/* Empty / hello / footer */
+.bb-palette-empty,
+.bb-palette-hello,
+.bb-palette-footer {
+  margin: 0;
+  padding: 10px 16px;
+  font-size: 12px;
+  color: #7D8590;
+  border-top: 1px solid #21262D;
+}
+.bb-palette-empty code {
+  color: #34D399;
+  background: rgba(52, 211, 153, 0.10);
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin: 0 4px;
+}
+.bb-palette-empty a {
+  color: #34D399;
+  text-decoration: none;
+  margin-left: 8px;
+}
+.bb-palette-empty a:hover { text-decoration: underline; }
+.bb-palette-footer { padding: 8px 16px; font-size: 11px; }
+.bb-palette-footer a { color: #B1BAC4; text-decoration: none; }
+.bb-palette-footer a:hover { color: #34D399; }
+
+.bb-palette .bb-dim { color: #545D68; }
+
+/* Mobile */
+@media (max-width: 720px) {
+  .bb-palette { padding-top: 6vh; }
+  .bb-palette-modal { width: 96vw; max-height: 85vh; }
+  .bb-palette-result-link {
+    grid-template-columns: 16px 1fr;
+    grid-template-rows: auto auto;
+  }
+  .bb-palette-name, .bb-palette-meta { grid-column: 2 / -1; }
+}
+
+/* Theme toggle margin tweak — give the $_ button breathing room */
+.nav-right .bb-launch-btn + .theme-toggle { margin-left: 0; }

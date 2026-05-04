@@ -1,0 +1,33 @@
+{{/* ═══════════════════════════════════════════════════════════════════════
+     Brain Bar Command Palette — overlay markup (rendered once per page in <body>)
+     Hidden by default. Activated by clicking #bb-launch-btn or pressing "/".
+     Atmosphere: terminal (phosphor on ink) — the only visual portal to the
+     Brain Bar planet from anywhere on Earth.
+     ═════════════════════════════════════════════════════════════════════════ */}}
+<div class="bb-palette" id="bb-palette" hidden role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="bb-palette-backdrop" data-bb-close></div>
+  <div class="bb-palette-modal" role="combobox" aria-haspopup="listbox" aria-expanded="true">
+    <form class="bb-palette-form" autocomplete="off" onsubmit="return false;">
+      <span class="bb-palette-prompt" aria-hidden="true">$</span>
+      <input type="text" id="bb-palette-input" class="bb-palette-input"
+             placeholder="decode a microsoft term — try mde · pim · e3 · foundry"
+             aria-label="Decode a Microsoft term"
+             autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <kbd class="bb-palette-kbd-esc">esc</kbd>
+    </form>
+    <ul class="bb-palette-results" id="bb-palette-results" role="listbox" aria-label="Results"></ul>
+    <p class="bb-palette-empty" id="bb-palette-empty" hidden>
+      <span class="bb-dim">// no entry yet for </span><code id="bb-palette-empty-term"></code>
+      <a href="#" id="bb-palette-suggest" target="_blank" rel="noopener">— suggest →</a>
+    </p>
+    <p class="bb-palette-hello" id="bb-palette-hello">
+      <span class="bb-dim">// </span>type a term ·
+      <kbd>↵</kbd> open · <kbd>↑↓</kbd> nav · <kbd>esc</kbd> close ·
+      <kbd>/</kbd> from anywhere
+    </p>
+    <p class="bb-palette-footer">
+      <span class="bb-dim">// </span>powered by
+      <a href="https://cmd.aguidetocloud.com/" target="_blank" rel="noopener">brain bar</a>
+    </p>
+  </div>
+</div>

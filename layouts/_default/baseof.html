@@ -63,6 +63,7 @@
   <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/css/style.css?v={{ site.Params.cache_version }}">
   <link rel="stylesheet" href="/css/sections.css?v={{ site.Params.cache_version }}">
+  <link rel="stylesheet" href="/css/bb-palette.css?v={{ site.Params.cache_version }}">
   {{ if hasPrefix .RelPermalink "/guided/" }}<link rel="stylesheet" href="/css/guided.css?v={{ site.Params.cache_version }}">{{ end }}
   {{ $videoSections := slice "ai-hub" "cloud-labs" "certifications" "exam-qa" "interview-prep" "music" "videos" }}
   {{ $isVideoSection := in $videoSections .Section }}
@@ -211,5 +212,9 @@
     (function(){var b=document.getElementById('global-btt');if(!b)return;window.addEventListener('scroll',function(){b.classList.toggle('global-btt-show',window.scrollY>400)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
   </script>
   <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(function(e){console.warn('SW:',e)})}</script>
+
+  {{/* 🪐 Brain Bar command palette — Earth's portal to the planet */}}
+  {{ partial "bb-palette.html" . }}
+  <script src="/js/bb-palette.js?v={{ site.Params.cache_version }}" defer></script>
 </body>
 </html>
