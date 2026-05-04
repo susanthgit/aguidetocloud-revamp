@@ -21,6 +21,7 @@
   border: 1px solid transparent;
   border-radius: 6px;
   cursor: pointer;
+  text-decoration: none;
   font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, Menlo, Consolas, monospace;
   font-size: 15px;
   font-weight: 600;

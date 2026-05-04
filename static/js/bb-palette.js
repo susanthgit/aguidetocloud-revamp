@@ -192,7 +192,10 @@
     var palette = $('#bb-palette');
     if (!btn || !input || !palette) return;
 
-    btn.addEventListener('click', function () { open(); });
+    /* Click on the $_ icon NAVIGATES to cmd.aguidetocloud.com (new tab).
+       The icon is now an <a> — browser handles the navigation natively
+       (middle-click, right-click → open in new window all work).
+       Keyboard shortcuts ('/', Cmd+K, Ctrl+K) still open the inline palette. */
 
     palette.addEventListener('click', function (ev) {
       if (ev.target && ev.target.matches('[data-bb-close]')) close();
