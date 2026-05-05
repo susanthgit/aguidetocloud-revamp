@@ -33,11 +33,11 @@ disableKinds = ["taxonomy", "term", "RSS"]
   priority = 0.5
 
 [params]
-  description = "stop googling microsoft. just type. plain-english explainers, rebrand history, and the right portal — for every microsoft acronym, license, and feature."
+  description = "stop googling microsoft. just type. plain-english explainers, rebrand history, the right portal, and the fix path — for every microsoft acronym, license, feature, and error code."
   tagline = "stop googling microsoft. just type."
   author = "Susanth Sutheesh"
   parent_site = "https://www.aguidetocloud.com/"
-  cache_version = "2026050509"
+  cache_version = "2026050510"
 
 [outputs]
   home = ["HTML", "CMD_INDEX", "REDIRECTS"]
