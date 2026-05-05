@@ -52,20 +52,32 @@
 
 .bb-theme-toggle {
   font-family: var(--font-mono);
-  font-size: var(--t-xs);
+  font-size: var(--t-md);
+  line-height: 1;
   color: var(--text-muted);
   background: transparent;
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
-  padding: 4px 8px;
+  padding: 4px 10px;
   cursor: pointer;
   transition: all var(--t-fast);
   white-space: nowrap;
+  /* Each icon is in its own span; CSS shows the one that hints at the next
+     state. In dark mode show the sun (clicking switches to light); in light
+     mode show the moon (clicking switches to dark). */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
 }
 .bb-theme-toggle:hover {
   color: var(--accent);
   border-color: var(--accent-dim);
 }
+.bb-theme-toggle .bb-theme-icon-dark { display: none; }
+.bb-theme-toggle .bb-theme-icon-light { display: inline; }
+[data-theme='light'] .bb-theme-toggle .bb-theme-icon-dark { display: inline; }
+[data-theme='light'] .bb-theme-toggle .bb-theme-icon-light { display: none; }
 
 /* ── Hero / homepage launcher ───────────────────────────────────────── */
 
@@ -1585,3 +1597,117 @@ button:focus-visible {
     padding-left: var(--s-2);
   }
 }
+
+/* ── /changelog/ page — release log ───────────────────────────────────── */
+.bb-changelog {
+  /* Inherits .bb-entry */
+}
+
+.bb-changelog-list {
+  display: grid;
+  gap: var(--s-6);
+}
+
+.bb-release {
+  padding: var(--s-5);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r-md);
+}
+
+.bb-release-head {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin-bottom: var(--s-2);
+  flex-wrap: wrap;
+}
+
+.bb-release-date {
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.bb-release-tag {
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  padding: 1px 8px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  background: transparent;
+}
+.bb-release-tag-feature  { color: var(--accent); border-color: var(--accent-dim); }
+.bb-release-tag-content  { color: var(--accent-bright, var(--accent)); border-color: var(--accent-dim); }
+.bb-release-tag-polish   { color: var(--text-muted); }
+.bb-release-tag-infra    { color: var(--text); border-color: var(--border); }
+.bb-release-tag-launch   { color: var(--accent); border-color: var(--accent); background: var(--accent-soft, transparent); }
+
+.bb-release-title {
+  font-family: var(--font-mono);
+  font-size: var(--t-lg);
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 var(--s-2);
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+
+.bb-release-summary {
+  font-size: var(--t-body);
+  line-height: 1.55;
+  color: var(--text-secondary, var(--text));
+  margin: 0 0 var(--s-3);
+}
+
+.bb-release-highlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--s-2);
+}
+.bb-release-highlights li {
+  font-family: var(--font-mono);
+  font-size: var(--t-sm);
+  line-height: 1.5;
+  color: var(--text-secondary, var(--text));
+  padding-left: var(--s-4);
+  position: relative;
+}
+.bb-release-highlights li::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.bb-release-commit {
+  margin: var(--s-3) 0 0;
+  font-size: var(--t-xs);
+  color: var(--text-dim);
+}
+.bb-release-commit code {
+  background: transparent;
+  padding: 0;
+  color: var(--text-muted);
+}
+
+.bb-changelog-foot {
+  margin-top: var(--s-7);
+  padding-top: var(--s-5);
+  border-top: 1px dashed var(--border);
+  color: var(--text-muted);
+}
+
+@media (max-width: 720px) {
+  .bb-release { padding: var(--s-4); }
+  .bb-release-title { font-size: var(--t-md); }
+}
+

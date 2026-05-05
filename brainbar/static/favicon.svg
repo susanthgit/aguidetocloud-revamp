@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Brain Bar favicon — phosphor-green block cursor on terminal-black,
+       rounded square so it reads on circular browser-tab badges. -->
+  <rect width="32" height="32" rx="6" fill="#0E1410"/>
+  <!-- Prompt: $ -->
+  <text x="6" y="22" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="18" font-weight="700" fill="#7EE787">$</text>
+  <!-- Block cursor (CRT phosphor green, blinking via CSS won't run in favicon
+       — keep it static, slightly translucent for visual depth) -->
+  <rect x="18" y="9" width="10" height="14" fill="#7EE787" rx="1"/>
+</svg>

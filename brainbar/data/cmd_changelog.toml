@@ -1,0 +1,89 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# BRAIN BAR — RELEASE CHANGELOG
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Newest first. Rendered by layouts/_default/changelog.html at /changelog/.
+#
+# ENTRY SHAPE:
+#   date         = "YYYY-MM-DD"
+#   title        = "short release headline"
+#   tag          = "feature" | "polish" | "content" | "infra" | "launch"
+#   summary      = "1–3 sentence plain-English description"
+#   highlights   = ["bullet", "bullet", ...]   (optional)
+#   commit       = "git short SHA(s)"          (optional)
+#
+# Each release is one [[releases]] block. Add new releases at the top.
+# ═══════════════════════════════════════════════════════════════════════════
+
+[[releases]]
+date    = "2026-05-05"
+title   = "quality round — changelog, favicon, voice"
+tag     = "polish"
+summary = "Public changelog (this page!), custom favicon, theme toggle gets sun/moon icons, and a handful of new spicy editorial takes. Analytics infrastructure verified — popular-misses endpoint is ready to start populating the wishlist once D1 is wired."
+highlights = [
+  "Public changelog at /changelog/ — release log you can link to",
+  "Custom favicon (phosphor-green block cursor on terminal black)",
+  "Theme toggle: ☀ / ☾ icons replace the [ theme ] text label",
+  "5 new spicy voice takes on high-volume entries",
+  "Search analytics endpoint verified end-to-end (D1 dashboard step pending)",
+]
+
+[[releases]]
+date    = "2026-05-05"
+title   = "catalogue doubles — 35 → 55 entries"
+tag     = "content"
+summary = "Twenty high-search-volume Microsoft terms added in one push. Brain Bar now has the depth to back up the 'stop googling Microsoft' tagline."
+highlights = [
+  "New: entra-id, teams, sharepoint, azure, m365, office-365, ems",
+  "New: exchange-online, onedrive, viva",
+  "New: defender-for-business, defender-for-servers, secure-score",
+  "New: bitlocker, azure-virtual-desktop, windows-365",
+  "New: microsoft-graph, kql, azure-openai, windows-hello-for-business",
+  "v1 tagline (55 entries and growing) + feedback wiring across 4 surfaces",
+]
+
+[[releases]]
+date    = "2026-05-05"
+title   = "top-8 UX polish"
+tag     = "polish"
+summary = "Eight findings from a Playwright-driven design audit (52 screenshots × desktop+mobile × dark+light) — fixed in one push."
+highlights = [
+  "Compacted hero so the launcher is visible higher on mobile",
+  "Bookmarklet + URL-bar setup moved to /about/#power-user",
+  "Light-mode page background darkened so cards actually pop",
+  "Mobile touch targets bumped (boot links 17px → 28px)",
+  "Help overlay calmed (no green-pill mosaic on example terms)",
+  "Spicy-take light contrast lifted to AA",
+  "Empty-state pill no longer reads like a success match",
+  "'decode this' button now outlined — no longer steals focus from results",
+]
+
+[[releases]]
+date    = "2026-05-05"
+title   = "search got smart"
+tag     = "feature"
+summary = "Search expanded from 6 to 9 ranking tiers. Brain Bar now understands what you mean even when you type something Microsoft doesn't call it."
+highlights = [
+  "Synonym tier — type 'antivirus' → MDE, 'sso' → Entra P1, 'mdm' → Intune (27 entries seeded)",
+  "Multi-token AND-match — 'defender for endpoint' parses across word boundaries",
+  "Did-you-mean — Levenshtein distance ≤ 2 on queries 4+ chars",
+  "Match highlighting on result rows",
+  "Recent searches (localStorage, max 5, dedupe)",
+  "Full ? help overlay (keyboard map + search smarts)",
+  "Freshness badge on every entry page (fresh ≤90d, amber ≤270d, stale older)",
+  "Random entry link in the boot block",
+  "21-test regression suite (Playwright)",
+]
+
+[[releases]]
+date    = "2026-05-04"
+title   = "v1 launch"
+tag     = "launch"
+summary = "First public release at cmd.aguidetocloud.com. 35 plain-English Microsoft entries across identity, endpoint, security, productivity, data, governance, and licensing — each with a Microsoft Learn link, plan eligibility, and aliases."
+highlights = [
+  "35 entries published at /<slug>/ with full term aliases",
+  "Wildcard subdomains live — mde.cmd.aguidetocloud.com → /mde/",
+  "36 Open Graph cards (one per entry + home)",
+  "MCP server at mcp.aguidetocloud.com — brainbar_search, brainbar_get, brainbar_list_kinds",
+  "Theme cookie carries across the cosmos (.aguidetocloud.com scope)",
+]

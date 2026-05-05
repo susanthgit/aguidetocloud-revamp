@@ -61,7 +61,10 @@
       <span class="bb-brand-name">brainbar</span>
     </a>
     <div style="display:flex; gap: var(--s-3); align-items:center;">
-      <button class="bb-theme-toggle" type="button" aria-label="Toggle theme" data-bb-theme>[ theme ]</button>
+      <button class="bb-theme-toggle" type="button" aria-label="Toggle theme — switch between dark and light mode" data-bb-theme>
+        <span class="bb-theme-icon-dark" aria-hidden="true">☾</span>
+        <span class="bb-theme-icon-light" aria-hidden="true">☀</span>
+      </button>
       <a class="bb-back" href="{{ .Site.Params.parent_site }}" rel="noopener">// aguidetocloud.com</a>
     </div>
   </header>

@@ -1,0 +1,57 @@
+{{ define "main" }}
+{{/* ──────────────────────────────────────────────────────────────────────
+     /changelog/ — release log. Renders entries from data/cmd_changelog.toml
+     newest-first. Each release shows a date, a tag pill, a title, a summary
+     paragraph, and an optional highlights list.
+   ────────────────────────────────────────────────────────────────────── */}}
+{{ $releases := (index hugo.Data "cmd_changelog").releases }}
+
+<article class="bb-entry bb-changelog">
+
+  <p class="bb-entry-back">
+    <a href="/">← launcher</a>
+    <span class="bb-divider">·</span>
+    <a href="/all/">browse all</a>
+  </p>
+
+  <header class="bb-entry-header">
+    <p class="bb-entry-prompt"><code>changelog</code></p>
+    <h1 class="bb-entry-title">// changelog</h1>
+    <p class="bb-entry-meta">
+      <span class="bb-pill-bracket">{{ len $releases }} releases</span>
+      <span class="bb-pill-bracket">newest first</span>
+    </p>
+  </header>
+
+  <section class="bb-section">
+    <p class="bb-plain">
+      every shipped feature, content expansion, and polish round. brain bar moves fast —
+      this is the public log so you can tell what's recent and what changed.
+    </p>
+  </section>
+
+  <section class="bb-section bb-changelog-list">
+    {{ range $releases }}
+      <article class="bb-release">
+        <header class="bb-release-head">
+          <time class="bb-release-date" datetime="{{ .date }}">{{ .date }}</time>
+          {{ with .tag }}<span class="bb-release-tag bb-release-tag-{{ . }}">{{ . }}</span>{{ end }}
+        </header>
+        <h2 class="bb-release-title">{{ .title }}</h2>
+        {{ with .summary }}<p class="bb-release-summary">{{ . }}</p>{{ end }}
+        {{ with .highlights }}
+          <ul class="bb-release-highlights">
+            {{ range . }}<li>{{ . | safeHTML }}</li>{{ end }}
+          </ul>
+        {{ end }}
+        {{ with .commit }}<p class="bb-release-commit">// commit <code>{{ . }}</code></p>{{ end }}
+      </article>
+    {{ end }}
+  </section>
+
+  <p class="bb-plain bb-changelog-foot">
+    suggest a feature or report a bug → <a href="https://www.aguidetocloud.com/feedback/" target="_blank" rel="noopener">/feedback/</a>
+  </p>
+
+</article>
+{{ end }}

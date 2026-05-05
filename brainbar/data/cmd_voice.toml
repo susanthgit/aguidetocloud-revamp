@@ -117,3 +117,28 @@ sush_take_status = "neutral"
 [sentinel]
 mascot = "🌐 The all-seeing log lake"
 sush_take_status = "neutral"
+
+[bitlocker]
+mascot = "🔐 The default laptop lock"
+sush_take = "Free in Windows 11 Pro. If your fleet ships without it on in 2026, that's a process gap, not a license one."
+sush_take_status = "spicy"
+
+[secure-score]
+mascot = "📊 The hygiene scoreboard"
+sush_take = "A number, not a strategy. Watching it climb is satisfying; mistaking it for security is dangerous. The score is a checklist — the strategy is which boxes are worth ticking."
+sush_take_status = "spicy"
+
+[kql]
+mascot = "🔭 The security telescope"
+sush_take = "If you're in security in 2026 and you don't read KQL, you're working blindfolded. Sentinel speaks it, Defender speaks it, M365 audit speaks it. An hour a week for a quarter and you'll wonder how you ever lived without."
+sush_take_status = "spicy"
+
+[exchange-online]
+mascot = "📬 The mail engine room"
+sush_take = "Outlook is the front-end you see. Exchange Online is the engine, and you don't manage it the same way. Get familiar with EAC and PowerShell or you'll be blocked by basic things."
+sush_take_status = "spicy"
+
+[windows-365]
+mascot = "🖥️ The fixed-price Cloud PC"
+sush_take = "AVD is a power tool — you build the multi-session host, you size it, you optimise it. Windows 365 is a fixed-price contract — Microsoft hands you a Cloud PC. Different shape, different bill, different audience. Pick on audience first, price second."
+sush_take_status = "spicy"

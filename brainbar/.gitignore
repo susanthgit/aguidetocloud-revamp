@@ -3,12 +3,19 @@ public/
 resources/
 .hugo_build.lock
 
+# Node deps for Playwright audit scripts
+node_modules/
+package-lock.json
+
 # Playwright UX audit artifacts (local-only)
 qa/node_modules/
 qa/screenshots/
 qa/audit-*/
 qa/report.json
 qa/package-lock.json
+qa/r7__*.png
+qa/palette-debug.mjs
+qa/palette-test.mjs
 
 # Editor
 .vscode/
