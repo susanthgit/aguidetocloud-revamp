@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 04 May 2026 23:08:45 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2026 03:47:00 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Defender XDR] Some users may receive false positive alerts from Microsoft Defender Antivirus for specific certificates</title>
@@ -73,9 +73,9 @@
     <item>
       <title>[Microsoft Intune] Some users' Windows Intune devices may intermittently drop device policy assignments</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1298282</link>
-      <description>[Microsoft Intune] Users' Windows Intune devices may intermittently drop specific policy assignments.</description>
+      <description>[Microsoft Intune] Users' Windows Intune devices may have intermittently dropped specific policy assignments.</description>
       <category>Microsoft Intune</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">IT1298282</guid>
       <pubDate>Tue, 28 Apr 2026 12:30:00 +0000</pubDate>
     </item>
