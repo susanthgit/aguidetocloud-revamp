@@ -1429,7 +1429,7 @@ body.is-home .section {
   border: none;
   cursor: pointer;
   padding: 0.5rem;
-  z-index: 200;
+  z-index: 10000; /* Above .nav-drawer-backdrop (9998) and .nav-drawer (9999) so the X icon stays clickable when drawer is open */
   position: relative;
   width: 44px;
   height: 44px;
@@ -3175,4 +3175,184 @@ pre.mermaid {
     page-break-inside: avoid;
   }
   img { max-width: 100% !important; page-break-inside: avoid; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COSMOS NAV — Browse popover + Planet rail + Drawer additions (5 May 2026)
+   ─────────────────────────────────────────────────────────────────────────
+   Adds the "Browse ▾" popover (collapses 6 secondary links) and the planet
+   rail (Shift / Plain AI chips) grouped LEFT next to $_, separated from the
+   logo by a hairline divider. Brain Bar $_ stays as an <a> link (existing).
+   ═════════════════════════════════════════════════════════════════════════ */
+
+/* ── Cosmos group: $_ + planet chips, hairline-separated from logo ── */
+.cosmos-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-left: 10px;
+  margin-left: 4px;
+  border-left: 1px solid var(--border);
+}
+.cosmos-group .bb-launch-btn {
+  margin-left: 0; /* Override the default 12px in bb-palette.css when inside cosmos group */
+}
+
+/* ── Planet chip (36px circle, 20px SVG) ── */
+.planet-chip {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-tertiary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color var(--transition, 150ms ease-out), color var(--transition, 150ms ease-out), background-color var(--transition, 150ms ease-out);
+  flex-shrink: 0;
+  padding: 0;
+}
+.planet-chip:hover,
+.planet-chip:focus-visible {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+  background: var(--bg-elevated, var(--bg-surface));
+  outline: none;
+}
+.planet-chip svg { display: block; }
+
+/* ── Browse popover ── */
+.nav-browse-wrap {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+.nav-browse-trigger {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0 2px;
+  white-space: nowrap;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  transition: color var(--transition, 150ms ease-out), border-color var(--transition, 150ms ease-out);
+}
+.nav-browse-trigger:hover {
+  color: var(--text-primary);
+}
+.nav-browse-trigger[aria-expanded="true"] {
+  color: var(--text-primary);
+  border-bottom-color: var(--accent);
+}
+.nav-browse-trigger .chevron {
+  display: inline-block;
+  transition: transform 150ms ease-out;
+  font-size: 0.7em;
+}
+.nav-browse-trigger[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+.nav-browse-panel {
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 8px 0 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 8px);
+  padding: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  min-width: 240px;
+  max-inline-size: min(320px, 100vw - 16px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 150ms ease-out, visibility 150ms ease-out;
+  z-index: 110;
+  list-style: none;
+}
+.nav-browse-panel[data-open="true"] {
+  opacity: 1;
+  visibility: visible;
+}
+.nav-browse-panel li {
+  list-style: none;
+}
+.nav-browse-panel a {
+  display: block;
+  padding: 10px 14px;
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm, 6px);
+  text-decoration: none;
+  transition: background-color 100ms ease-out, color 100ms ease-out;
+  white-space: nowrap;
+  font-family: var(--font-heading);
+}
+.nav-browse-panel a:hover,
+.nav-browse-panel a:focus-visible {
+  background: var(--accent-subtle, rgba(99, 102, 241, 0.08));
+  color: var(--text-primary);
+  outline: none;
+}
+
+/* ── Mobile: hide cosmos group + show planet rail in drawer footer ── */
+@media (max-width: 1024px) {
+  .nav-left .cosmos-group { display: none; }
+  .nav-browse-wrap { display: none; } /* Browse links go inline in drawer instead */
+
+  .drawer-section-label {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 1rem 0 0.5rem 0.4rem;
+  }
+  .drawer-planet-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 0.25rem;
+  }
+  .drawer-planet-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.7rem 0.4rem;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    border-radius: var(--radius-sm, 6px);
+    transition: background-color 100ms, color 100ms;
+  }
+  .drawer-planet-link:hover {
+    background: var(--accent-subtle, rgba(99, 102, 241, 0.08));
+    color: var(--text-primary);
+  }
+  .drawer-planet-link svg { flex-shrink: 0; }
+  .drawer-planet-link .planet-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .drawer-planet-link .planet-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .drawer-planet-link .planet-tagline {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
 }

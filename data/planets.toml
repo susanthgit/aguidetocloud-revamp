@@ -1,0 +1,50 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# PLANETS MANIFEST — Cosmos Single Source of Truth
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Lists every "planet" (subdomain or sibling product) in the A Guide to Cloud
+# universe. Consumed by:
+#   - layouts/partials/nav.html → renders Earth's planet rail (right side)
+#   - layouts/partials/planet-icon.html → renders the SVG for a given planet
+#
+# Mirrored at: guided/src/data/planets.json (Astro Moon)
+#               shift/src/data/planets.json (Phase 2)
+#               plainai/content/planets.json (Phase 2)
+#               brainbar/data/planets.toml (Phase 2)
+#
+# DATA-SHAPED CONTRACT — per Cosmos Philosophy 4 May 2026:
+# Each planet renders THIS list in its OWN visual register (icons, text pills,
+# ASCII chips, gradient cards — whatever fits its atmosphere). The manifest
+# itself has NO visual fields. Only: slug, name, url, tagline.
+#
+# WHEN ADDING A NEW PLANET:
+#   1. Add entry here with all 4 fields
+#   2. Mirror the entry in every other planet's manifest file (paths above)
+#   3. Each planet's nav code filters out itself from this list
+#   4. Bump cache_version in hugo.toml
+#
+# ═══════════════════════════════════════════════════════════════════════════
+
+[[planets]]
+slug    = "earth"
+name    = "A Guide to Cloud"
+url     = "https://www.aguidetocloud.com/"
+tagline = "the home — certs, tools, mind maps"
+
+[[planets]]
+slug    = "brainbar"
+name    = "Brain Bar"
+url     = "https://cmd.aguidetocloud.com/"
+tagline = "Microsoft jargon decoder"
+
+[[planets]]
+slug    = "shift"
+name    = "Shift"
+url     = "https://shift.aguidetocloud.com/"
+tagline = "the AI job-change wire"
+
+[[planets]]
+slug    = "plainai"
+name    = "Plain AI"
+url     = "https://plainai.aguidetocloud.com/"
+tagline = "museum of AI, in plain English"
