@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 05 May 2026 21:12:39 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2026 23:09:23 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to create or use SharePoint Online Copilot embedded agents within Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1301811</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to create or use SharePoint Online Copilot embedded agents within Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1301811</guid>
+      <pubDate>Tue, 05 May 2026 22:20:10 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Intune] Users may experience failures when enrolling Apple devices in Microsoft Intune</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1301759</link>
+      <description>[Microsoft Intune] Users may have experienced failures when enrolling Apple devices in Microsoft Intune.</description>
+      <category>Microsoft Intune</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">IT1301759</guid>
+      <pubDate>Tue, 05 May 2026 19:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Defender XDR] Some users may receive false positive alerts from Microsoft Defender Antivirus for specific certificates</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1299600</link>
@@ -439,24 +457,6 @@ The issue initially began with impact to a subset of custom</description>
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1272653</guid>
       <pubDate>Thu, 02 Apr 2026 03:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Viva] Users may be unable to load the Data Quality page in Microsoft Viva Insights and receive an error</title>
-      <link>https://www.aguidetocloud.com/service-health/#MV1269743</link>
-      <description>[Microsoft Viva] Users may have been unable to load the Data Quality page in Microsoft Viva Insights and received an error.</description>
-      <category>Microsoft Viva</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MV1269743</guid>
-      <pubDate>Thu, 02 Apr 2026 02:37:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be experiencing high latency when performing searches in Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1297752</link>
-      <description>[Exchange Online] Users may have experienced high latency when performing searches in Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1297752</guid>
-      <pubDate>Wed, 01 Apr 2026 07:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
