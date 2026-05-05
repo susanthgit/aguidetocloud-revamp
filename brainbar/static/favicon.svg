@@ -1,10 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- Brain Bar favicon — phosphor-green block cursor on terminal-black,
-       rounded square so it reads on circular browser-tab badges. -->
-  <rect width="32" height="32" rx="6" fill="#0E1410"/>
-  <!-- Prompt: $ -->
-  <text x="6" y="22" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="18" font-weight="700" fill="#7EE787">$</text>
-  <!-- Block cursor (CRT phosphor green, blinking via CSS won't run in favicon
-       — keep it static, slightly translucent for visual depth) -->
-  <rect x="18" y="9" width="10" height="14" fill="#7EE787" rx="1"/>
+  <!-- Brain Bar favicon — phosphor-green "$_" mark on terminal-black bg.
+       Adapts to light mode via prefers-color-scheme. Designed to read at
+       16x16 (browser tab) and 180x180 (Apple home screen). -->
+  <style>
+    .bb-bg { fill: #0E1410; }
+    .bb-fg { fill: #34D399; }
+    @media (prefers-color-scheme: light) {
+      .bb-bg { fill: #F4F2EC; }
+      .bb-fg { fill: #047857; }
+    }
+  </style>
+  <rect width="32" height="32" rx="6" class="bb-bg"/>
+  <text x="6" y="23" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Code', Consolas, monospace" font-size="20" font-weight="700" class="bb-fg">$</text>
+  <rect x="20" y="11" width="9" height="13" rx="1" class="bb-fg"/>
 </svg>
