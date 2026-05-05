@@ -244,6 +244,55 @@ expect(logsFinal > logsAfter,
   'T10b true miss DOES trigger log-miss',
   `logs: ${logsFinal} (was ${logsAfter})`);
 
+// ── Test 12: /watch/ page renders + lists entries ──────────────────────
+await page.goto(`${BASE}/watch/`, { waitUntil: 'domcontentloaded' });
+const watchItems = await page.$$eval('.bb-watch-item', els => els.length);
+expect(watchItems >= 5,
+  'T12 /watch/ lists ≥5 entries with watch values',
+  `count: ${watchItems}`);
+
+const watchHasPriceRise = await page.evaluate(() =>
+  !!document.body.textContent.match(/list price rises/i));
+expect(watchHasPriceRise,
+  'T12 /watch/ shows price-rise watch text');
+
+// ── Test 13: JSON-LD on entry pages ─────────────────────────────────────
+await page.goto(`${BASE}/mde/`, { waitUntil: 'domcontentloaded' });
+const ldRaw = await page.$eval('script[type="application/ld+json"]', el => el.textContent).catch(() => '');
+let ld = null;
+try { ld = JSON.parse(ldRaw); } catch (e) { /* */ }
+expect(ld && ld['@type'] === 'DefinedTerm' && ld.termCode === 'mde',
+  'T13 mde has DefinedTerm JSON-LD with termCode',
+  `parsed: ${ld ? JSON.stringify({ type: ld['@type'], termCode: ld.termCode }) : 'parse failed'}`);
+expect(ld && Array.isArray(ld.alternateName) && ld.alternateName.includes('MDE'),
+  'T13 alternateName array includes MDE');
+expect(ld && ld.sameAs && ld.sameAs.includes('defender-endpoint'),
+  'T13 sameAs links to MS Learn');
+
+// ── Test 14: JSON-LD on disambiguation page ─────────────────────────────
+await page.goto(`${BASE}/defender/`, { waitUntil: 'domcontentloaded' });
+const disambigLdRaw = await page.$eval('script[type="application/ld+json"]', el => el.textContent).catch(() => '');
+let disambigLd = null;
+try { disambigLd = JSON.parse(disambigLdRaw); } catch (e) { /* */ }
+expect(disambigLd && disambigLd['@type'] === 'WebPage' && Array.isArray(disambigLd.mentions),
+  'T14 defender disambig has WebPage JSON-LD with mentions',
+  `parsed: ${disambigLd ? JSON.stringify({ type: disambigLd['@type'], mentions: disambigLd.mentions?.length }) : 'parse failed'}`);
+
+// ── Test 15: Boot block has //what's coming link ────────────────────────
+await page.goto(`${BASE}/`, { waitUntil: 'domcontentloaded' });
+await page.waitForFunction(() => !!document.querySelector('#bb-input'));
+const bootHasWatch = await page.$$eval('a', els =>
+  els.some(a => a.getAttribute('href') === '/watch/'));
+expect(bootHasWatch,
+  'T15 boot block has /watch/ link');
+
+// ── Test 16: watch banner uses raw text (no humanize) ──────────────────
+await page.goto(`${BASE}/m365-e3/`, { waitUntil: 'domcontentloaded' });
+const watchBannerText = await page.$eval('.bb-banner-watch', el => el.textContent.trim()).catch(() => '');
+expect(watchBannerText.includes('List price rises'),
+  'T16 m365-e3 watch banner shows raw human-readable text',
+  `text: ${watchBannerText.slice(0, 100)}`);
+
 // ── Test 11: only ignorable console errors (favicon 404 acceptable) ────
 // Chromium logs a generic "Failed to load resource: 404" for any 404,
 // without the URL. Use the response listener to filter out favicon-only.

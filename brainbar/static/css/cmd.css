@@ -1478,3 +1478,110 @@ button:focus-visible {
     margin-top: var(--s-1);
   }
 }
+
+/* ── /watch/ page — surfaces entries with non-empty watch field ───────── */
+.bb-watch {
+  /* Inherits from .bb-entry layout */
+}
+
+.bb-watch-domain {
+  font-size: var(--t-xs);
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: var(--s-8) 0 var(--s-3);
+  padding-bottom: var(--s-1);
+  border-bottom: 1px dashed var(--border);
+}
+.bb-watch-domain:first-child { margin-top: var(--s-3); }
+
+.bb-watch-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bb-watch-item {
+  margin: 0 0 var(--s-6);
+  padding: var(--s-4);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg-surface);
+  border-left: 3px solid var(--accent);
+}
+
+.bb-watch-row {
+  margin: 0 0 var(--s-2);
+  font-family: var(--font-mono);
+}
+.bb-watch-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--s-2);
+  color: var(--text);
+  text-decoration: none;
+  flex-wrap: wrap;
+}
+.bb-watch-link:hover {
+  color: var(--accent);
+}
+.bb-watch-link:hover .bb-watch-slug { color: var(--accent-bright); }
+
+.bb-watch-prompt {
+  color: var(--accent);
+  font-weight: 700;
+}
+.bb-watch-slug {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: var(--t-body);
+  font-weight: 600;
+  background: transparent;
+  padding: 0;
+}
+.bb-watch-name {
+  color: var(--text);
+  font-size: var(--t-body);
+}
+
+.bb-watch-summary {
+  margin: 0 0 var(--s-2);
+  padding-left: var(--s-4);
+  color: var(--text-secondary);
+  font-size: var(--t-sm);
+  line-height: 1.5;
+}
+.bb-watch-marker {
+  color: var(--accent);
+  margin-right: var(--s-1);
+  font-size: var(--t-xs);
+}
+
+.bb-watch-meta {
+  margin: 0;
+  padding-left: var(--s-4);
+  font-size: var(--t-xs);
+  color: var(--text-muted);
+}
+.bb-watch-meta-key {
+  color: var(--text-dim);
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+}
+.bb-watch-meta-key::before { content: "// "; }
+.bb-watch-meta-sep { color: var(--text-dim); }
+.bb-watch-meta em {
+  font-style: normal;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 720px) {
+  .bb-watch-item {
+    padding: var(--s-3);
+  }
+  .bb-watch-summary,
+  .bb-watch-meta {
+    padding-left: var(--s-2);
+  }
+}

@@ -1,0 +1,102 @@
+{{ define "main" }}
+{{/* ──────────────────────────────────────────────────────────────────────
+     /watch/ — surfaces every entry with a non-empty `watch` field. Grouped
+     by domain. Each row links to the full entry page.
+   ────────────────────────────────────────────────────────────────────── */}}
+<article class="bb-entry bb-watch">
+
+  <p class="bb-entry-back">
+    <a href="/">← launcher</a>
+    <span class="bb-divider">·</span>
+    <a href="/all/">browse all</a>
+  </p>
+
+  <header class="bb-entry-header">
+    <p class="bb-entry-prompt"><code>watch</code></p>
+    <h1 class="bb-entry-title">// what's coming</h1>
+    <p class="bb-entry-meta">
+      <span class="bb-pill-bracket">microsoft moves fast</span>
+    </p>
+  </header>
+
+  <section class="bb-section">
+    <p class="bb-plain">
+      microsoft renames things, raises prices, retires features, and adds new ones — often quietly.
+      brain bar tracks the changes worth watching: rebrands in flight, pricing shifts coming up,
+      ga timelines slipping or accelerating, and product evolution that affects real licensing
+      decisions. one place to scan before a renewal conversation or a project plan.
+    </p>
+    <p class="bb-plain">
+      missing something we should be watching? <a href="https://www.aguidetocloud.com/feedback/" target="_blank" rel="noopener">tell us →</a>
+    </p>
+  </section>
+
+  {{/* Build a list of entries with a non-empty watch field */}}
+  {{ $allEntries := (index hugo.Data "cmd_entries").entries }}
+  {{ $watching := slice }}
+  {{ range $allEntries }}
+    {{ if and .watch (ne .watch "") }}
+      {{ $watching = $watching | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Group by domain — sort keys alphabetically for predictability */}}
+  {{ $byDomain := dict }}
+  {{ range $watching }}
+    {{ $d := .domain | default "other" }}
+    {{ $bucket := index $byDomain $d | default slice }}
+    {{ $bucket = $bucket | append . }}
+    {{ $byDomain = merge $byDomain (dict $d $bucket) }}
+  {{ end }}
+
+  {{ $domainsOrdered := slice "ai" "identity" "endpoint" "security" "productivity" "data" "governance" "dev" "licensing" "multi" "other" }}
+
+  <section class="bb-section">
+    <h2 class="bb-section-title">{{ len $watching }} entries currently being watched</h2>
+
+    {{ range $domainsOrdered }}
+      {{ $d := . }}
+      {{ with index $byDomain $d }}
+        <h3 class="bb-watch-domain">// {{ $d }}</h3>
+        <ul class="bb-watch-list">
+          {{ range . }}
+            <li class="bb-watch-item">
+              <p class="bb-watch-row">
+                <a href="/{{ .slug }}/" class="bb-watch-link">
+                  <span class="bb-watch-prompt">$</span>
+                  <code class="bb-watch-slug">{{ .slug }}</code>
+                  <span class="bb-watch-name">{{ .name }}</span>
+                </a>
+              </p>
+              <p class="bb-watch-summary">
+                <span class="bb-watch-marker">◉</span>
+                {{ .watch }}
+              </p>
+              <p class="bb-watch-meta">
+                <span class="bb-watch-meta-key">verified</span>
+                <time datetime="{{ .last_verified }}">{{ .last_verified }}</time>
+                {{ with .terms.old_names }}
+                  {{ if gt (len .) 0 }}
+                    <span class="bb-watch-meta-sep"> · </span>
+                    <span class="bb-watch-meta-key">formerly</span>
+                    <em>{{ index . 0 }}</em>
+                  {{ end }}
+                {{ end }}
+              </p>
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    {{ end }}
+  </section>
+
+  <section class="bb-section">
+    <p class="bb-plain" style="color: var(--text-muted);">
+      // brain bar's watch page is a public snapshot of microsoft's current shifts
+      that affect licensing, pricing, and product strategy. every entry was last
+      verified within the last few months. updated as the world changes.
+    </p>
+  </section>
+
+</article>
+{{ end }}

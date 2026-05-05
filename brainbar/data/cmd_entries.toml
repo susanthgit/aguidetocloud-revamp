@@ -84,7 +84,7 @@ related_tools = ["licence-picker", "copilot-feature-matrix"]
 related_certs = ["ms-900", "ms-100"]
 related_blogs = []
 status = "ga"
-watch = "price-change-2026-07-01"
+watch = "List price rises from USD $36 → $39/user/month on 1 July 2026"
 last_verified = "2026-05-04"
 [entries.terms]
 abbreviations = ["E3"]
@@ -129,7 +129,7 @@ related_tools = ["copilot-frontier-map"]
 related_certs = ["ai-102"]
 related_blogs = []
 status = "ga"
-watch = ""
+watch = "Model catalog expands roughly monthly — recent additions include Anthropic Claude Sonnet, OpenAI GPT-5, Mistral Large"
 last_verified = "2026-05-04"
 [entries.terms]
 abbreviations = []
@@ -427,7 +427,7 @@ related_tools = ["licence-picker"]
 related_certs = ["ms-900", "ms-100"]
 related_blogs = []
 status = "ga"
-watch = "price-change-2026-07-01"
+watch = "List price rises from USD $57 → $61/user/month on 1 July 2026"
 last_verified = "2026-05-04"
 [entries.terms]
 abbreviations = []
@@ -495,7 +495,7 @@ related_tools = ["copilot-feature-matrix", "copilot-frontier-map", "readiness"]
 related_certs = ["mb-800", "ms-100"]
 related_blogs = []
 status = "ga"
-watch = ""
+watch = "Frontline F1/F3 became Copilot-eligible June 2024 — Researcher and Analyst agents added late 2025/early 2026"
 last_verified = "2026-05-04"
 [entries.terms]
 abbreviations = []
@@ -518,7 +518,7 @@ related_tools = ["agent-builder-guide", "agent-365-planner"]
 related_certs = ["mb-800"]
 related_blogs = []
 status = "ga"
-watch = ""
+watch = "MCP plugin support shipped late 2025 — agent-builder paradigm continues evolving"
 last_verified = "2026-05-04"
 [entries.terms]
 abbreviations = []
@@ -541,7 +541,7 @@ related_tools = ["agent-365-planner", "copilot-frontier-map"]
 related_certs = []
 related_blogs = []
 status = "ga"
-watch = "post-ga-pricing-bundling"
+watch = "Post-GA bundling and pricing still finalising — refer to current Microsoft licensing announcements"
 last_verified = "2026-05-04"
 [entries.terms]
 abbreviations = []
@@ -1024,7 +1024,7 @@ related_tools = []
 related_certs = ["md-102"]
 related_blogs = []
 status = "ga"
-watch = ""
+watch = "Frontline (shared) plan added 2025 for shift workers — same Cloud PC, time-shared by multiple users"
 last_verified = "2026-05-05"
 [entries.terms]
 abbreviations = ["W365"]
@@ -1070,7 +1070,7 @@ related_tools = []
 related_certs = ["ms-100"]
 related_blogs = []
 status = "ga"
-watch = ""
+watch = "Viva Topics retired during 2025 — knowledge surfacing now lives inside M365 Copilot grounding"
 last_verified = "2026-05-05"
 [entries.terms]
 abbreviations = []
@@ -1139,7 +1139,7 @@ related_tools = ["copilot-frontier-map"]
 related_certs = ["ai-102"]
 related_blogs = []
 status = "ga"
-watch = ""
+watch = "Provisioned Throughput Units (PTUs) increasingly recommended for predictable latency — pay-per-token still default"
 last_verified = "2026-05-05"
 [entries.terms]
 abbreviations = ["AOAI"]

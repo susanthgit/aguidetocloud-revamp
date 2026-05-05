@@ -1,4 +1,59 @@
 {{ define "main" }}
+{{/* ── JSON-LD structured data — DefinedTerm for entries, WebPage for disambig ──
+     Helps Google render rich snippets for "what is X" queries.
+   ──────────────────────────────────────────────────────────────────────── */}}
+{{ $isDisambig := eq .Params.kind "disambiguation" }}
+{{ $aliases := slice }}
+{{ with .Params.terms }}
+  {{ range .abbreviations }}{{ $aliases = $aliases | append . }}{{ end }}
+  {{ range .aliases }}{{ $aliases = $aliases | append . }}{{ end }}
+  {{ range .old_names }}{{ $aliases = $aliases | append . }}{{ end }}
+{{ end }}
+{{ $canonicalUrl := printf "%s%s" site.BaseURL (strings.TrimPrefix "/" .RelPermalink) }}
+
+{{ if $isDisambig }}
+  {{/* Disambiguation page — light WebPage schema with mentions */}}
+  {{ $mentions := slice }}
+  {{ range .Params.disambiguation_options }}
+    {{ $optUrl := printf "%s%s/" site.BaseURL .slug }}
+    {{ $mentions = $mentions | append (dict "@type" "Thing" "name" .label "url" $optUrl) }}
+  {{ end }}
+  {{ $ld := dict
+    "@context"      "https://schema.org"
+    "@type"         "WebPage"
+    "name"          .Title
+    "url"           $canonicalUrl
+    "description"   .Params.plain_english
+    "dateModified"  .Params.last_verified
+    "mentions"      $mentions
+    "isPartOf"      (dict "@type" "WebSite" "name" "Brain Bar" "url" site.BaseURL)
+  }}
+  <script type="application/ld+json">{{ $ld | jsonify (dict "indent" "  ") | safeJS }}</script>
+{{ else }}
+  {{/* Standard entry — DefinedTerm schema */}}
+  {{ $ld := dict
+    "@context"          "https://schema.org"
+    "@type"             "DefinedTerm"
+    "name"              .Title
+    "termCode"          .Params.slug
+    "description"       .Params.plain_english
+    "url"               $canonicalUrl
+    "dateModified"      .Params.last_verified
+    "inDefinedTermSet"  (dict
+      "@type" "DefinedTermSet"
+      "name"  "Brain Bar"
+      "url"   site.BaseURL
+    )
+  }}
+  {{ if gt (len $aliases) 0 }}
+    {{ $ld = merge $ld (dict "alternateName" $aliases) }}
+  {{ end }}
+  {{ with .Params.learn_url }}
+    {{ $ld = merge $ld (dict "sameAs" .) }}
+  {{ end }}
+  <script type="application/ld+json">{{ $ld | jsonify (dict "indent" "  ") | safeJS }}</script>
+{{ end }}
+
 {{ if eq .Params.kind "disambiguation" }}
 {{/* ──────────────────────────────────────────────────────────────────────
      DISAMBIGUATION RENDER PATH
@@ -83,7 +138,7 @@
 
   {{/* Watch banner for GA entries */}}
   {{ if and .Params.watch (or (not .Params.status) (eq .Params.status "ga")) }}
-    <aside class="bb-banner bb-banner-watch" role="status"><div><strong>Watch:</strong> {{ replaceRE "-" " " .Params.watch | humanize }}</div></aside>
+    <aside class="bb-banner bb-banner-watch" role="status"><div><strong>Watch:</strong> {{ .Params.watch }}</div></aside>
   {{ end }}
 
   <header class="bb-entry-header">
