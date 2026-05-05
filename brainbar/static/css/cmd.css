@@ -1903,3 +1903,106 @@ button:focus-visible {
   .bb-decode-fix li::before { font-size: var(--t-xs); }
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   HOME — mode chips (jargon · errno)  ·  Round 2 discoverability fix
+   ═══════════════════════════════════════════════════════════════════════════
+   Both modes visible at first glance. Single prompt swaps placeholder + index
+   + result tint based on which chip is active. Default = jargon. URL stays /.
+   Mobile: chips wrap; one input always full-width.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.bb-mode-chips {
+  display: flex;
+  gap: var(--s-3);
+  margin: 0 0 var(--s-3);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.bb-mode-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-1) var(--s-3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  font-family: var(--font-mono);
+  font-size: var(--t-sm);
+  color: var(--text-muted);
+  background: transparent;
+  cursor: pointer;
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+  transition: border-color var(--t-fast), color var(--t-fast), background-color var(--t-fast);
+}
+.bb-mode-chip:hover {
+  border-color: var(--border-bright);
+  color: var(--text);
+}
+.bb-mode-chip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.bb-mode-chip-glyph {
+  font-weight: 700;
+}
+
+/* Jargon chip — green */
+.bb-mode-chip-jargon .bb-mode-chip-glyph { color: var(--accent); }
+.bb-mode-chip-jargon.bb-mode-chip-active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+}
+.bb-mode-chip-jargon.bb-mode-chip-active .bb-mode-chip-glyph { color: var(--bg); }
+
+/* Errno chip — red severity glyph */
+.bb-mode-chip-errno .bb-mode-chip-glyph { color: var(--status-err); }
+.bb-mode-chip-errno.bb-mode-chip-active {
+  border-color: var(--status-err);
+  background: var(--status-err);
+  color: var(--bg);
+}
+.bb-mode-chip-errno.bb-mode-chip-active .bb-mode-chip-glyph { color: var(--bg); }
+
+/* Tiny mode-explanation caption under chips — for the readers */
+.bb-mode-caption {
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  color: var(--text-dim);
+  margin: 0 0 var(--s-4);
+  letter-spacing: 0.02em;
+}
+.bb-mode-caption strong {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Boot-block visibility by mode (data-bb-mode lives on .bb-shell) */
+.bb-boot-decode { display: none; }
+[data-bb-mode="errno"] .bb-boot-jargon { display: none; }
+[data-bb-mode="errno"] .bb-boot-decode { display: block; }
+
+/* Smart-suggest hint row — appears at top of jargon results when input
+   matches a known error-code pattern but jargon has 0 hits. Visually
+   distinct (red severity glyph) so it's clearly NOT a jargon result. */
+.bb-result-suggest {
+  border-top: 1px dashed var(--status-err);
+  border-bottom: 1px dashed var(--status-err);
+  background: rgba(248, 113, 113, 0.04);
+  margin-bottom: var(--s-3);
+}
+.bb-result-suggest .bb-result-link {
+  color: var(--text);
+}
+.bb-result-suggest .bb-result-tier {
+  color: var(--status-err);
+}
+.bb-result-suggest .bb-result-slug {
+  color: var(--status-err) !important;
+}
+.bb-result-suggest .bb-result-meta {
+  color: var(--status-err);
+  border-color: var(--status-err);
+}
+

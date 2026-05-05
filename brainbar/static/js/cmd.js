@@ -24,6 +24,9 @@
     ready: false,
     recent: [],          // [{q, slug, ts}, ...] max 5
     lastQuery: '',       // For highlight rendering
+    mode: MODE_JARGON,   // Round 2 — current launcher mode
+    decodeEntries: [],   // Round 2 — lazy-loaded errno index
+    decodeReady: false,  // Round 2 — set true after first successful load
   };
 
   const RECENT_KEY = 'bb:recent';
@@ -32,6 +35,17 @@
   const LEVENSHTEIN_MIN_QUERY_LEN = 4;
   const TOKEN_MIN_LEN = 2;
   const MISS_RE = /^[a-z0-9][a-z0-9-]{0,49}$/;
+
+  // Round 2 — mode chips + smart suggest
+  const MODE_JARGON = 'jargon';
+  const MODE_ERRNO  = 'errno';
+  // Strict patterns ONLY — must NOT collide with any existing brainbar slug,
+  // abbreviation, alias, or synonym. Verified against cmd_entries.toml.
+  const SUGGEST_PATTERNS = [
+    /^0x[0-9a-fA-F]{8}$/,   // HRESULT (Win32 / COM error)
+    /^AADSTS\d+$/i,         // Entra error code
+    /^KB\d+$/i,             // KB article
+  ];
 
   function $(sel, root) { return (root || document).querySelector(sel); }
   function $$(sel, root) { return Array.from((root || document).querySelectorAll(sel)); }
@@ -197,7 +211,8 @@
   const KIND_LABEL = {
     product: 'product', portal: 'portal', feature: 'feature',
     license: 'license', tool: 'tool', cert: 'cert',
-    'acronym-only': 'acronym', 'disambiguation': 'disambiguation'
+    'acronym-only': 'acronym', 'disambiguation': 'disambiguation',
+    errno: 'errno',
   };
 
   // Tiers where row 0 should be visually preselected (Enter still gated by
@@ -241,7 +256,7 @@
         if (term) term.textContent = query;
       }
       STATE.selected = -1;
-      logMiss(query);
+      if (STATE.mode === MODE_JARGON) logMiss(query);
       return;
     }
 
@@ -265,10 +280,10 @@
         ? ' <em>(' + escapeHtml(abbr.toLowerCase()) + ')</em>' : '';
 
       return `
-        <li class="bb-result" data-idx="${i}" data-url="${escapeHtml(e.url)}" role="option" aria-selected="${i === STATE.selected}">
+        <li class="bb-result${r._suggest ? ' bb-result-suggest' : ''}" data-idx="${i}" data-url="${escapeHtml(e.url)}" role="option" aria-selected="${i === STATE.selected}">
           <a href="${escapeHtml(e.url)}" class="bb-result-link">
             ${tier}
-            <span class="bb-result-slug">${slugMarkup}${abbrMarkup}</span>
+            <span class="bb-result-slug${(STATE.mode === MODE_ERRNO || r._suggest) ? ' bb-result-slug-decode' : ''}">${slugMarkup}${abbrMarkup}</span>
             <span class="bb-result-name">${nameMarkup}</span>
             <span class="bb-result-meta">[ ${KIND_LABEL[e.kind] || e.kind} :: ${escapeHtml(e.domain)} ]</span>
             ${status}
@@ -423,6 +438,195 @@
     items[idx].scrollIntoView({ block: 'nearest' });
   }
 
+  // ══════════════════════════════════════════════════════════════════════
+  // Round 2 — mode chips + decode dispatch + smart suggest
+  // ══════════════════════════════════════════════════════════════════════
+
+  // Load the decode index once. Cache forever (entries move only on deploy).
+  function loadDecodeIndex() {
+    if (STATE.decodeReady || STATE._decodeLoading) return Promise.resolve();
+    STATE._decodeLoading = true;
+    return fetch('/decode/decode-index.json', { cache: 'force-cache' })
+      .then(r => r.json())
+      .then(data => {
+        STATE.decodeEntries = (data && data.entries) || [];
+        STATE.decodeReady = true;
+        STATE._decodeLoading = false;
+      })
+      .catch(err => {
+        STATE._decodeLoading = false;
+        console.error('[brainbar] failed to load decode-index.json', err);
+      });
+  }
+
+  // Adapter — turn a decode index row into the same shape as a jargon row,
+  // so renderResults() doesn't need a second render path.
+  function decodeToResultEntry(d) {
+    return {
+      slug: d.code,                  // shown in the slug column (uppercase code)
+      name: d.short,
+      kind: 'errno',
+      domain: d.namespace,
+      abbreviations: [],
+      aliases: [],
+      old_names: [],
+      synonyms: [],
+      url: d.url,
+      status: 'ga',
+      last_verified: d.last_verified,
+    };
+  }
+
+  // Errno-mode search — deterministic, no Levenshtein. Codes are pasted, not
+  // typed in casual English; fuzzy isn't useful here.
+  function searchDecode(query) {
+    const q = lc(query.trim());
+    if (!q) return [];
+    const exact = [];
+    const prefix = [];
+    const subCode = [];
+    const subText = [];
+    const seen = new Set();
+
+    for (const d of STATE.decodeEntries) {
+      const code = lc(d.code);
+      const slug = lc(d.slug);
+      if (seen.has(slug)) continue;
+      const e = decodeToResultEntry(d);
+      if (code === q || slug === q) {
+        exact.push({ e, tier: 1, reason: 'exact code', hint: '' });
+        seen.add(slug);
+        continue;
+      }
+      if (code.startsWith(q) || slug.startsWith(q)) {
+        prefix.push({ e, tier: 6, reason: 'prefix on code', hint: '' });
+        seen.add(slug);
+        continue;
+      }
+      if (code.indexOf(q) !== -1) {
+        subCode.push({ e, tier: 7, reason: 'substring on code', hint: '' });
+        seen.add(slug);
+        continue;
+      }
+      const short = lc(d.short);
+      const body = lc(d.plain_english);
+      if (short.indexOf(q) !== -1 || body.indexOf(q) !== -1) {
+        subText.push({ e, tier: 7, reason: 'substring on description', hint: '' });
+        seen.add(slug);
+      }
+    }
+    return exact.concat(prefix, subCode, subText).slice(0, 12);
+  }
+
+  // Smart suggest — strict regex hit + 0 jargon results = prepend a single
+  // "looks like an error code → /decode/<slug>/" row in the result list.
+  function matchSuggestPattern(query) {
+    const q = String(query || '').trim();
+    if (!q) return null;
+    for (const re of SUGGEST_PATTERNS) {
+      if (re.test(q)) return q;
+    }
+    return null;
+  }
+
+  function smartSuggestEntry(query) {
+    const matched = matchSuggestPattern(query);
+    if (!matched) return null;
+    const slug = matched.toLowerCase();
+    // Prefer a real curated decode entry if one exists.
+    let target = null;
+    if (STATE.decodeReady) {
+      target = STATE.decodeEntries.find(d => lc(d.slug) === slug || lc(d.code) === lc(matched));
+    }
+    if (target) {
+      return {
+        e: decodeToResultEntry(target),
+        tier: 1,
+        reason: 'looks like an error code',
+        hint: 'switch to errno mode',
+        _suggest: true,
+      };
+    }
+    // Pattern matched but we don't have it curated yet — still surface the hint
+    // and route to /decode/ so the user lands somewhere useful.
+    return {
+      e: {
+        slug: matched.toUpperCase(),
+        name: 'looks like an error code — search /decode/',
+        kind: 'errno',
+        domain: 'unknown',
+        abbreviations: [],
+        url: '/decode/?q=' + encodeURIComponent(matched),
+        status: 'ga',
+        last_verified: '',
+      },
+      tier: 1,
+      reason: 'looks like an error code',
+      hint: 'open /decode/',
+      _suggest: true,
+    };
+  }
+
+  // Single dispatcher used by every input handler — picks the right brain.
+  function runSearch(query) {
+    if (STATE.mode === MODE_ERRNO) {
+      if (!STATE.decodeReady) {
+        loadDecodeIndex();
+        return [];
+      }
+      return searchDecode(query);
+    }
+    const jargon = search(query);
+    if (jargon.length === 0) {
+      const sugg = smartSuggestEntry(query);
+      if (sugg) return [sugg];
+    }
+    return jargon;
+  }
+
+  // Switch between jargon ↔ errno. Updates chip aria, placeholder, container
+  // attribute (drives boot-block CSS swap), re-runs current query.
+  function setMode(newMode) {
+    if (newMode !== MODE_JARGON && newMode !== MODE_ERRNO) return;
+    if (STATE.mode === newMode) return;
+    STATE.mode = newMode;
+    const hero = document.querySelector('.bb-hero');
+    if (hero) hero.setAttribute('data-bb-mode', newMode);
+    const input = $('#bb-input');
+    if (input) {
+      input.setAttribute('placeholder', newMode === MODE_ERRNO
+        ? 'paste an error code — try: AADSTS50105, 0x80070005, KB5034441'
+        : 'type a microsoft term — try: mde, pim, e3, intune, foundry');
+    }
+    document.querySelectorAll('.bb-mode-chip').forEach(btn => {
+      const isActive = btn.dataset.bbModeTarget === newMode;
+      btn.classList.toggle('bb-mode-chip-active', isActive);
+      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+    if (newMode === MODE_ERRNO && !STATE.decodeReady) loadDecodeIndex();
+    // Recents are jargon-only — hide them when in errno mode to avoid
+    // confusion (clicking a jargon recent in errno mode = empty results).
+    if (newMode === MODE_ERRNO) {
+      hideRecent();
+    } else {
+      renderRecent();
+    }
+    // Re-run the current query in the new mode (preserves user's typing).
+    if (input && input.value) {
+      STATE.results = runSearch(input.value);
+      renderResults(STATE.results, input.value);
+    } else {
+      // Empty input — reveal the boot block (which CSS now flips by mode).
+      const list = $('#bb-results');
+      const empty = $('#bb-empty');
+      const boot = $('#bb-boot');
+      if (list) list.innerHTML = '';
+      if (empty) empty.hidden = true;
+      if (boot) boot.hidden = false;
+      STATE.selected = -1;
+    }
+  }
+
   // ── Init / wiring ─────────────────────────────────────────────────────
   function init() {
     const input = $('#bb-input');
@@ -463,8 +667,26 @@
         console.error('[brainbar] failed to load cmd-index.json', err);
       });
 
+    // Round 2 — load decode index in parallel so smart-suggest + errno mode
+    // are immediately responsive on first interaction. Tiny payload (~6KB).
+    loadDecodeIndex();
+
+    // Round 2 — bind mode chip click handlers
+    document.querySelectorAll('.bb-mode-chip').forEach(btn => {
+      btn.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        const target = btn.dataset.bbModeTarget;
+        if (target) setMode(target);
+        // Refocus the input so the user can keep typing without reaching for it
+        const inp = $('#bb-input');
+        if (inp) {
+          try { inp.focus({ preventScroll: true }); } catch (e) { inp.focus(); }
+        }
+      });
+    });
+
     function handleInput() {
-      STATE.results = search(input.value);
+      STATE.results = runSearch(input.value);
       renderResults(STATE.results, input.value);
     }
 

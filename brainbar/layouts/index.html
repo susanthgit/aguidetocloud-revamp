@@ -1,8 +1,25 @@
 {{ define "main" }}
-<section class="bb-hero">
-  <p class="bb-hero-prompt">brainbar — the microsoft jargon decoder</p>
+<section class="bb-hero" data-bb-mode="jargon">
+  <p class="bb-hero-prompt">brainbar — the microsoft jargon AND error code decoder</p>
   <h1 class="bb-hero-title">stop googling microsoft.</h1>
   <p class="bb-hero-tagline">{{ .Site.Params.description }}</p>
+
+  {{/* ── Mode chips (Round 2 discoverability) ────────────────────────────
+       Both modes visible at first glance. Click to swap mode in place
+       (placeholder + index + result colour). URL stays /. */}}
+  <div class="bb-mode-chips" role="tablist" aria-label="Search mode">
+    <button type="button" class="bb-mode-chip bb-mode-chip-jargon bb-mode-chip-active" data-bb-mode-target="jargon" role="tab" aria-selected="true" aria-controls="bb-input">
+      <span class="bb-mode-chip-glyph" aria-hidden="true">$</span><span>jargon</span>
+    </button>
+    <button type="button" class="bb-mode-chip bb-mode-chip-errno" data-bb-mode-target="errno" role="tab" aria-selected="false" aria-controls="bb-input">
+      <span class="bb-mode-chip-glyph" aria-hidden="true">!</span><span>errno</span>
+    </button>
+  </div>
+  <p class="bb-mode-caption">
+    <strong>jargon</strong> — acronyms · licences · portals · products
+    <span style="color: var(--text-dim); margin: 0 var(--s-2);">·</span>
+    <strong>errno</strong> — error codes · KB articles · MDM enrolment failures
+  </p>
 
   {{/* ── Live launcher ───────────────────────────────────────────────────── */}}
   <form class="bb-launcher" role="search" aria-label="Brain Bar search" autocomplete="off" onsubmit="return false;">
@@ -12,7 +29,7 @@
       id="bb-input"
       class="bb-launcher-input"
       placeholder="type a microsoft term — try: mde, pim, e3, intune, foundry"
-      aria-label="Type a Microsoft term"
+      aria-label="Type a Microsoft term or paste an error code"
       aria-controls="bb-results"
       autocomplete="off"
       autocorrect="off"
@@ -36,28 +53,38 @@
   {{/* ── Boot block (default state — hidden once user types) ─────────────── */}}
   <div class="bb-boot" id="bb-boot">
     {{ $allEntries := (index hugo.Data "cmd_entries").entries }}
-    <div class="bb-boot-line"><span class="bb-boot-key">version</span><span class="bb-boot-val">brainbar v1 · {{ len $allEntries }} entries and growing</span></div>
-    <div class="bb-boot-line"><span class="bb-boot-key">type</span><span class="bb-boot-val">a microsoft acronym, license, portal, or product</span></div>
+    {{ $allDecode  := (index hugo.Data "cmd_decode").entries }}
+    <div class="bb-boot-line"><span class="bb-boot-key">version</span><span class="bb-boot-val">brainbar v1 · {{ len $allEntries }} jargon entries · {{ len $allDecode }} error codes · growing</span></div>
+    <div class="bb-boot-line"><span class="bb-boot-key">type</span><span class="bb-boot-val">an acronym, license, portal, product — <strong style="color: var(--status-err);">or</strong> an error code (AADSTS, 0x..., KB...)</span></div>
     <div class="bb-boot-line bb-boot-missing"><span class="bb-boot-key">missing?</span><span class="bb-boot-val">we're building something ambitious — tell us what to add → <a href="https://www.aguidetocloud.com/feedback/" target="_blank" rel="noopener" class="bb-boot-feedback">/feedback/</a></span></div>
     <div class="bb-boot-line bb-boot-hotkey"><span class="bb-boot-key">hotkey</span><span class="bb-boot-val"><span class="bb-cmd">/</span> from anywhere · <span class="bb-cmd">enter</span> to open · <span class="bb-cmd">↑↓</span> to nav · <span class="bb-cmd">esc</span> to clear · <span class="bb-cmd">?</span> for help</span></div>
 
     <div class="bb-boot-divider"></div>
 
-    {{/* Sample 5 entries from the catalogue — picked at build time so the
-         homepage feels alive and shows the breadth of what's covered.
-         Filters out disambiguation entries (less interesting as examples). */}}
-    {{ $samplePool := slice }}
-    {{ range $allEntries }}
-      {{ if ne .kind "disambiguation" }}
-        {{ $samplePool = $samplePool | append . }}
+    {{/* ── Jargon-mode samples (default visible) ──────────────────────── */}}
+    <div class="bb-boot-jargon">
+      {{ $samplePool := slice }}
+      {{ range $allEntries }}
+        {{ if ne .kind "disambiguation" }}
+          {{ $samplePool = $samplePool | append . }}
+        {{ end }}
       {{ end }}
-    {{ end }}
-    {{ $picked := first 5 (shuffle $samplePool) }}
+      {{ $picked := first 5 (shuffle $samplePool) }}
 
-    <p class="bb-boot-eg" style="color: var(--text-muted); margin: 0 0 var(--s-3); padding-left: 0;"><span style="color: var(--text-dim);">// {{ len $allEntries }} entries live · 5 picked at random ↻</span></p>
-    {{ range $picked }}
-      <p class="bb-boot-eg"><a href="/{{ .slug }}/"><span class="bb-eg-cmd">{{ .slug }}</span></a> {{ .name | lower }}{{ with .terms.old_names }}{{ if gt (len .) 0 }} (formerly {{ index . 0 | lower }}){{ end }}{{ end }}</p>
-    {{ end }}
+      <p class="bb-boot-eg" style="color: var(--text-muted); margin: 0 0 var(--s-3); padding-left: 0;"><span style="color: var(--text-dim);">// {{ len $allEntries }} jargon entries live · 5 picked at random ↻</span></p>
+      {{ range $picked }}
+        <p class="bb-boot-eg"><a href="/{{ .slug }}/"><span class="bb-eg-cmd">{{ .slug }}</span></a> {{ .name | lower }}{{ with .terms.old_names }}{{ if gt (len .) 0 }} (formerly {{ index . 0 | lower }}){{ end }}{{ end }}</p>
+      {{ end }}
+    </div>
+
+    {{/* ── Errno-mode samples (visible only when errno chip is active) ─ */}}
+    <div class="bb-boot-decode">
+      {{ $pickedDecode := first 5 (shuffle $allDecode) }}
+      <p class="bb-boot-eg" style="color: var(--text-muted); margin: 0 0 var(--s-3); padding-left: 0;"><span style="color: var(--text-dim);">// {{ len $allDecode }} error codes live · 5 picked at random ↻</span></p>
+      {{ range $pickedDecode }}
+        <p class="bb-boot-eg"><a href="/decode/{{ .slug }}/"><span class="bb-eg-cmd" style="color: var(--status-err);">{{ .code }}</span></a> {{ .short | lower }}</p>
+      {{ end }}
+    </div>
 
     <p class="bb-boot-eg" style="margin: var(--s-4) 0 0; padding-left: 0;">
       <a href="/all/" style="color: var(--text-muted);">// see all {{ len $allEntries }} entries →</a>
