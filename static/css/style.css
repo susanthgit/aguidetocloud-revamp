@@ -2397,6 +2397,7 @@ pre.mermaid {
   }
   .drawer-cta:hover { background: var(--accent-hover); }
   /* Mobile: dropdown menus stack inline */
+}
 
 /* ── RESPONSIVE ─────────────────────────── */
 @media (max-width: 768px) {
