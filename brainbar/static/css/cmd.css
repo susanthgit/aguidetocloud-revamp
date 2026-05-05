@@ -48,6 +48,18 @@
 }
 .bb-back:hover { color: var(--accent); }
 
+/* Cosmos rail — sibling planets in terminal register (5 May 2026) */
+.bb-cosmos-rail {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+}
+@media (max-width: 540px) {
+  /* On narrow viewports, drop the cosmos rail (it's secondary navigation —
+     the primary surface IS Brain Bar itself). The theme toggle stays. */
+  .bb-cosmos-rail { display: none; }
+}
+
 /* ── Theme toggle (terminal pill button) ─────────────────────────────── */
 
 .bb-theme-toggle {

@@ -69,7 +69,16 @@
         <span class="bb-theme-icon-dark" aria-hidden="true">☾</span>
         <span class="bb-theme-icon-light" aria-hidden="true">☀</span>
       </button>
-      <a class="bb-back" href="{{ .Site.Params.parent_site }}" rel="noopener">// aguidetocloud.com</a>
+      {{/* ═══ COSMOS RAIL — sibling planets in terminal register ═══ */}}
+      {{/* Each rendered as // comment-style link to match existing .bb-back style.
+           Filters out 'brainbar' (current planet). */}}
+      <span class="bb-cosmos-rail" aria-label="The cosmos — sibling planets">
+        {{ range (index hugo.Data "planets").planets }}
+          {{ if ne .slug "brainbar" }}
+            <a class="bb-back" href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }} — {{ .tagline }}">// {{ if eq .slug "earth" }}aguidetocloud.com{{ else }}{{ .slug }}.aguidetocloud.com{{ end }}</a>
+          {{ end }}
+        {{ end }}
+      </span>
     </div>
   </header>
 

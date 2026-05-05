@@ -1,0 +1,37 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# PLANETS MANIFEST — Brain Bar's vendor copy
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Mirror of aguidetocloud-revamp/data/planets.toml. Per Cosmos Philosophy:
+# data-only schema (slug/name/url/tagline ONLY). Brain Bar renders this rail
+# in its OWN terminal register (// comment-style links matching existing
+# .bb-back styling).
+#
+# When adding a planet, sync this file with the other 4 manifests in the
+# same commit.
+#
+# ═══════════════════════════════════════════════════════════════════════════
+
+[[planets]]
+slug    = "earth"
+name    = "A Guide to Cloud"
+url     = "https://www.aguidetocloud.com/"
+tagline = "the home — certs, tools, mind maps"
+
+[[planets]]
+slug    = "brainbar"
+name    = "Brain Bar"
+url     = "https://cmd.aguidetocloud.com/"
+tagline = "Microsoft jargon decoder"
+
+[[planets]]
+slug    = "shift"
+name    = "Shift"
+url     = "https://shift.aguidetocloud.com/"
+tagline = "the AI job-change wire"
+
+[[planets]]
+slug    = "plainai"
+name    = "Plain AI"
+url     = "https://plainai.aguidetocloud.com/"
+tagline = "museum of AI, in plain English"
