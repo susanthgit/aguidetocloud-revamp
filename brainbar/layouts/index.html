@@ -1,7 +1,7 @@
 {{ define "main" }}
 <section class="bb-hero">
   <p class="bb-hero-prompt">brainbar — the microsoft jargon decoder</p>
-  <h1 class="bb-hero-title">stop googling microsoft.<br><span class="bb-cursor">▮</span></h1>
+  <h1 class="bb-hero-title">stop googling microsoft.</h1>
   <p class="bb-hero-tagline">{{ .Site.Params.description }}</p>
 
   {{/* ── Live launcher ───────────────────────────────────────────────────── */}}
@@ -28,11 +28,14 @@
     <a id="bb-empty-suggest" class="bb-empty-suggest" href="#" target="_blank" rel="noopener">suggest it →</a>
   </p>
 
+  {{/* ── Recent searches (localStorage) ─────────────────────────────────── */}}
+  <div id="bb-recent" class="bb-recent" hidden></div>
+
   {{/* ── Boot block (default state — hidden once user types) ─────────────── */}}
   <div class="bb-boot" id="bb-boot">
-    <div class="bb-boot-line"><span class="bb-boot-key">version</span><span class="bb-boot-val">brainbar v0.1 · phase 1 + launcher</span></div>
+    <div class="bb-boot-line"><span class="bb-boot-key">version</span><span class="bb-boot-val">brainbar v0.2 · synonyms + did-you-mean</span></div>
     <div class="bb-boot-line"><span class="bb-boot-key">type</span><span class="bb-boot-val">a microsoft acronym, license, portal, or product</span></div>
-    <div class="bb-boot-line"><span class="bb-boot-key">hotkey</span><span class="bb-boot-val"><span class="bb-cmd">/</span> from anywhere · <span class="bb-cmd">enter</span> to open · <span class="bb-cmd">↑↓</span> to nav · <span class="bb-cmd">esc</span> to clear</span></div>
+    <div class="bb-boot-line bb-boot-hotkey"><span class="bb-boot-key">hotkey</span><span class="bb-boot-val"><span class="bb-cmd">/</span> from anywhere · <span class="bb-cmd">enter</span> to open · <span class="bb-cmd">↑↓</span> to nav · <span class="bb-cmd">esc</span> to clear · <span class="bb-cmd">?</span> for help</span></div>
 
     <div class="bb-boot-divider"></div>
 
@@ -55,95 +58,52 @@
 
     <p class="bb-boot-eg" style="margin: var(--s-4) 0 0; padding-left: 0;">
       <a href="/all/" style="color: var(--text-muted);">// see all {{ len $allEntries }} entries →</a>
+      <span class="bb-divider" style="color: var(--text-dim); margin: 0 var(--s-2);">·</span>
+      <a href="#" id="bb-random" style="color: var(--text-muted);">// 🎲 random entry</a>
+      <span class="bb-divider" style="color: var(--text-dim); margin: 0 var(--s-2);">·</span>
+      <a href="#" id="bb-help-trigger" style="color: var(--text-muted);">// help</a>
+      <span class="bb-divider" style="color: var(--text-dim); margin: 0 var(--s-2);">·</span>
+      <a href="/about/#power-user" style="color: var(--text-muted);">// power-user setup</a>
     </p>
   </div>
 
-  {{/* ── Bookmarklet ─────────────────────────────────────────────────────── */}}
-  <section class="bb-tool" id="bb-bookmarklet">
-    <h2 class="bb-tool-title">// drag this to your bookmarks bar</h2>
-    <p class="bb-tool-lede">
-      highlight a microsoft term anywhere on the web — click the bookmark — brain bar opens.
-    </p>
-    <div class="bb-tool-row">
-      <a
-        class="bb-bookmarklet-btn"
-        draggable="true"
-        title="Drag me to your bookmarks bar"
-        href="javascript:(function(){var s=String(getSelection()).trim()||prompt('brain bar — type a microsoft term:','');s&&(location.href='https://cmd.aguidetocloud.com/?q='+encodeURIComponent(s.slice(0,200)))})();"
-      ><span class="bb-prompt">$</span>&nbsp;decode this</a>
-      <button class="bb-tool-copy" type="button" data-copy-bookmarklet>// copy as snippet</button>
-    </div>
-    <p class="bb-tool-hint">
-      <span class="bb-tool-key">tip:</span>
-      can't drag? right-click the button → <em>add bookmark</em>.
-      browsers may strip the <code>javascript:</code> prefix from a paste — drag is safer.
-    </p>
-  </section>
-
-  {{/* ── Address-bar custom search engine ─────────────────────────────────── */}}
-  <section class="bb-tool" id="bb-search-engine">
-    <h2 class="bb-tool-title">// turn your url bar into a brain bar shortcut</h2>
-    <p class="bb-tool-lede">
-      most browsers will auto-detect brain bar as a search engine on first visit.
-      after that, type <code class="bb-keyword">bb mde</code> + enter and you're there.
-    </p>
-
-    <details class="bb-search-engine-help">
-      <summary class="bb-search-engine-summary">// can't get it to work? manual setup ↓</summary>
-      <div class="bb-search-engine-grid">
-        <div>
-          <h3>chrome / edge / brave</h3>
-          <ol class="bb-search-engine-steps">
-            <li>settings → search engine → manage</li>
-            <li>add a new search engine:
-              <code class="bb-mono-block">name:    Brain Bar
-keyword: bb
-url:     https://cmd.aguidetocloud.com/?q=%s</code>
-            </li>
-            <li>save · type <code class="bb-keyword">bb &lt;term&gt;</code> in the url bar</li>
-          </ol>
-        </div>
-        <div>
-          <h3>firefox</h3>
-          <ol class="bb-search-engine-steps">
-            <li>visit this page (firefox auto-detects via <code>opensearch.xml</code>)</li>
-            <li>right-click the address bar → <em>add brain bar</em></li>
-            <li>type <code class="bb-keyword">@bb &lt;term&gt;</code> in the url bar</li>
-          </ol>
-        </div>
-        <div>
-          <h3>safari</h3>
-          <ol class="bb-search-engine-steps">
-            <li>safari doesn't support custom keywords natively</li>
-            <li>use the <strong>bookmarklet</strong> above instead, or install
-              <em>smart keyword search</em> (extension)</li>
-          </ol>
-        </div>
+  {{/* ── Help overlay (toggled by ? key) ─────────────────────────────────── */}}
+  <div id="bb-help" class="bb-help" hidden role="dialog" aria-modal="true" aria-labelledby="bb-help-title">
+    <div class="bb-help-backdrop" aria-hidden="true"></div>
+    <div class="bb-help-card">
+      <button class="bb-help-close" type="button" aria-label="Close help">×</button>
+      <h2 id="bb-help-title" class="bb-help-title">// brain bar — keyboard &amp; search smarts</h2>
+      <div class="bb-help-grid">
+        <section>
+          <h3 class="bb-help-h3">keyboard</h3>
+          <dl class="bb-help-dl">
+            <dt><kbd>/</kbd></dt><dd>focus search from anywhere</dd>
+            <dt><kbd>↵</kbd></dt><dd>open top result (exact match) or selected row</dd>
+            <dt><kbd>↑</kbd> <kbd>↓</kbd></dt><dd>navigate results</dd>
+            <dt><kbd>esc</kbd></dt><dd>clear input · close this help</dd>
+            <dt><kbd>?</kbd></dt><dd>show this help (when input not focused)</dd>
+          </dl>
+        </section>
+        <section>
+          <h3 class="bb-help-h3">search smarts</h3>
+          <dl class="bb-help-dl">
+            <dt>exact slug</dt><dd><code>mde</code> · <code>pim</code> · <code>e3</code></dd>
+            <dt>abbreviation</dt><dd><code>MDE</code> · <code>SSPR</code></dd>
+            <dt>alias</dt><dd><code>mdatp</code> → mde</dd>
+            <dt>rebrand</dt><dd><code>azure ad premium p1</code> → entra-p1</dd>
+            <dt>synonym</dt><dd><code>antivirus</code> → mde · <code>sso</code> → entra-p1</dd>
+            <dt>did you mean</dt><dd><code>intuune</code> → intune (typo correction)</dd>
+            <dt>multi-word</dt><dd><code>defender for endpoint</code></dd>
+          </dl>
+        </section>
       </div>
-    </details>
-  </section>
+      <p class="bb-help-foot">
+        <span class="bb-help-prompt">$</span> recent searches stored in your browser only · never sent to a server.
+      </p>
+    </div>
+  </div>
 </section>
 
 <script src="/js/cmd.js?v={{ site.Params.cache_version }}" defer></script>
-<script>
-(function(){
-  var btn = document.querySelector('[data-copy-bookmarklet]');
-  if (!btn) return;
-  var src = document.querySelector('.bb-bookmarklet-btn');
-  btn.addEventListener('click', function(){
-    if (!src) return;
-    var snippet = src.getAttribute('href');
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(snippet).then(function(){
-        btn.textContent = '// copied — paste into a new bookmark';
-        setTimeout(function(){ btn.textContent = '// copy as snippet'; }, 2200);
-      }, function(){ btn.textContent = '// copy failed — drag instead'; });
-    } else {
-      btn.textContent = '// no clipboard api — drag the button';
-    }
-  });
-})();
-</script>
 {{ end }}
-
 

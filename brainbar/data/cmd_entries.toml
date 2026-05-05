@@ -44,6 +44,7 @@ last_verified = "2026-05-04"
 abbreviations = ["MDE"]
 aliases = ["mdatp", "defender-endpoint", "microsoft-defender-for-endpoint"]
 old_names = ["Windows Defender ATP", "Microsoft Defender ATP"]
+synonyms = ["antivirus", "av", "edr", "endpoint security", "anti-malware", "microsoft antivirus"]
 
 # ── 2. PIM — Privileged Identity Management ──────────────────────────────
 [[entries]]
@@ -66,6 +67,7 @@ last_verified = "2026-05-04"
 abbreviations = ["PIM"]
 aliases = ["privileged-identity-management", "pim-roles"]
 old_names = []
+synonyms = ["jit", "just-in-time access", "role activation", "privileged access management", "elevated access"]
 
 # ── 3. E3 — Microsoft 365 E3 license ─────────────────────────────────────
 [[entries]]
@@ -110,6 +112,7 @@ last_verified = "2026-05-04"
 abbreviations = []
 aliases = ["microsoft-intune", "endpoint-manager", "mem"]
 old_names = ["Microsoft Endpoint Manager"]
+synonyms = ["mdm", "mam", "mobile device management", "mobile application management", "device management"]
 
 # ── 5. Azure AI Foundry — flagship rebrand example ───────────────────────
 [[entries]]
@@ -154,6 +157,7 @@ last_verified = "2026-05-04"
 abbreviations = ["CA"]
 aliases = ["entra-ca", "ca-policy", "conditional-access-policies"]
 old_names = []
+synonyms = ["access policy", "zero trust access", "location-based access", "risk-based access"]
 
 # ── 7. MFA — Multi-factor Authentication ─────────────────────────────────
 [[entries]]
@@ -176,6 +180,7 @@ last_verified = "2026-05-04"
 abbreviations = ["MFA"]
 aliases = ["multi-factor-auth", "two-factor", "2fa"]
 old_names = []
+synonyms = ["two-step verification", "two-step", "multifactor", "second factor", "authenticator"]
 
 # ── 8. SSPR — Self-Service Password Reset ────────────────────────────────
 [[entries]]
@@ -198,6 +203,7 @@ last_verified = "2026-05-04"
 abbreviations = ["SSPR"]
 aliases = ["self-service-password-reset", "password-reset"]
 old_names = []
+synonyms = ["forgot password", "reset password", "password writeback"]
 
 # ── 9. Entra ID P1 ───────────────────────────────────────────────────────
 [[entries]]
@@ -220,6 +226,7 @@ last_verified = "2026-05-04"
 abbreviations = []
 aliases = ["entra-id-p1", "aad-p1", "azure-ad-p1"]
 old_names = ["Azure AD Premium P1"]
+synonyms = ["sso", "saml", "single sign-on", "conditional access licence", "identity p1"]
 
 # ── 10. Entra ID P2 ──────────────────────────────────────────────────────
 [[entries]]
@@ -242,6 +249,7 @@ last_verified = "2026-05-04"
 abbreviations = []
 aliases = ["entra-id-p2", "aad-p2", "azure-ad-p2"]
 old_names = ["Azure AD Premium P2"]
+synonyms = ["identity governance", "pim licence", "identity protection licence", "identity p2"]
 
 # ── 11. MDCA — Microsoft Defender for Cloud Apps ─────────────────────────
 [[entries]]
@@ -264,6 +272,7 @@ last_verified = "2026-05-04"
 abbreviations = ["MDCA", "MDA"]
 aliases = ["defender-cloud-apps", "defender-for-cloud-apps"]
 old_names = ["Microsoft Cloud App Security", "MCAS"]
+synonyms = ["casb", "shadow it", "saas security", "cloud app security", "discovery"]
 
 # ── 12. MDO — Microsoft Defender for Office 365 ──────────────────────────
 [[entries]]
@@ -286,6 +295,7 @@ last_verified = "2026-05-04"
 abbreviations = ["MDO"]
 aliases = ["defender-office-365", "defender-for-office", "atp"]
 old_names = ["Office 365 ATP", "Office 365 Advanced Threat Protection"]
+synonyms = ["email security", "anti-phishing", "safe links", "safe attachments", "phishing protection"]
 
 # ── 13. MDI — Microsoft Defender for Identity ────────────────────────────
 [[entries]]
@@ -308,6 +318,7 @@ last_verified = "2026-05-04"
 abbreviations = ["MDI"]
 aliases = ["defender-identity", "defender-for-identity"]
 old_names = ["Azure ATP", "Azure Advanced Threat Protection"]
+synonyms = ["identity threat detection", "ad attack detection", "lateral movement detection"]
 
 # ── 14. EOP — Exchange Online Protection ─────────────────────────────────
 [[entries]]
@@ -330,6 +341,7 @@ last_verified = "2026-05-04"
 abbreviations = ["EOP"]
 aliases = ["exchange-online-protection"]
 old_names = []
+synonyms = ["anti-spam", "spam filter", "mail filter", "exchange protection", "zap"]
 
 # ── 15. Windows Autopilot ────────────────────────────────────────────────
 [[entries]]
@@ -352,6 +364,7 @@ last_verified = "2026-05-04"
 abbreviations = []
 aliases = ["windows-autopilot"]
 old_names = []
+synonyms = ["zero touch", "oobe", "device provisioning", "out of box", "windows provisioning"]
 
 # ── 16. LAPS — Local Administrator Password Solution ─────────────────────
 [[entries]]
@@ -374,6 +387,7 @@ last_verified = "2026-05-04"
 abbreviations = ["LAPS"]
 aliases = ["windows-laps", "local-admin-password-solution", "entra-laps"]
 old_names = ["Microsoft LAPS (legacy)"]
+synonyms = ["local admin password", "admin password rotation", "lapsv2"]
 
 # ── 17. Compliance Policies (Intune) ─────────────────────────────────────
 [[entries]]
@@ -396,6 +410,7 @@ last_verified = "2026-05-04"
 abbreviations = []
 aliases = ["intune-compliance", "compliance"]
 old_names = []
+synonyms = ["device compliance", "endpoint compliance", "compliance rules"]
 
 # ── 18. M365 E5 ──────────────────────────────────────────────────────────
 [[entries]]
@@ -440,6 +455,7 @@ last_verified = "2026-05-04"
 abbreviations = ["F3"]
 aliases = ["microsoft-365-f3", "m365f3", "frontline-f3"]
 old_names = []
+synonyms = ["frontline", "firstline", "frontline worker", "firstline worker", "shift worker plan"]
 
 # ── 20. M365 Business Premium ────────────────────────────────────────────
 [[entries]]
@@ -462,6 +478,7 @@ last_verified = "2026-05-04"
 abbreviations = ["BP"]
 aliases = ["microsoft-365-business-premium", "m365-bp", "business-premium"]
 old_names = ["Microsoft 365 Business"]
+synonyms = ["smb plan", "business plan", "business security plan", "small business plan"]
 
 # ── 21. Microsoft 365 Copilot ────────────────────────────────────────────
 [[entries]]
@@ -484,6 +501,7 @@ last_verified = "2026-05-04"
 abbreviations = []
 aliases = ["m365-copilot", "microsoft-365-copilot", "copilot-for-m365"]
 old_names = []
+synonyms = ["m365 ai", "office ai", "productivity ai", "office copilot", "ms365 copilot"]
 
 # ── 22. Copilot Studio ───────────────────────────────────────────────────
 [[entries]]
@@ -506,6 +524,7 @@ last_verified = "2026-05-04"
 abbreviations = []
 aliases = ["copilot-studio", "ms-copilot-studio"]
 old_names = ["Power Virtual Agents", "PVA"]
+synonyms = ["agent builder", "low-code copilot", "chatbot builder"]
 
 # ── 23. Agent 365 ────────────────────────────────────────────────────────
 [[entries]]
@@ -528,6 +547,7 @@ last_verified = "2026-05-04"
 abbreviations = []
 aliases = ["agent365", "microsoft-agent-365"]
 old_names = []
+synonyms = ["entra agent id", "copilot agents", "personal agents", "agentic ai"]
 
 # ── 24. Microsoft Purview ────────────────────────────────────────────────
 [[entries]]
@@ -550,6 +570,7 @@ last_verified = "2026-05-04"
 abbreviations = []
 aliases = ["microsoft-purview"]
 old_names = ["Microsoft Compliance Center", "Microsoft 365 Compliance"]
+synonyms = ["dlp", "data loss prevention", "data classification", "data governance", "sensitivity labels"]
 
 # ── 25. PIM for Groups ───────────────────────────────────────────────────
 [[entries]]
@@ -572,6 +593,7 @@ last_verified = "2026-05-04"
 abbreviations = []
 aliases = ["pim-groups", "privileged-identity-management-for-groups"]
 old_names = []
+synonyms = ["group jit", "group activation", "group elevation"]
 
 # ── 26. Access Reviews ───────────────────────────────────────────────────
 [[entries]]
@@ -594,6 +616,7 @@ last_verified = "2026-05-04"
 abbreviations = []
 aliases = ["access-review", "entra-access-reviews"]
 old_names = []
+synonyms = ["entitlement reviews", "access certification", "membership review", "guest review"]
 
 # ── 27. Sign-in logs ─────────────────────────────────────────────────────
 [[entries]]
@@ -616,6 +639,7 @@ last_verified = "2026-05-04"
 abbreviations = []
 aliases = ["sign-ins", "entra-sign-in-logs", "signin-logs"]
 old_names = ["Azure AD Sign-in logs"]
+synonyms = ["login logs", "sign in audit", "authentication logs", "login audit"]
 
 # ── 28. Defender for Cloud ───────────────────────────────────────────────
 [[entries]]
@@ -638,6 +662,7 @@ last_verified = "2026-05-04"
 abbreviations = []
 aliases = ["defender-cloud", "microsoft-defender-for-cloud"]
 old_names = ["Azure Security Center", "Azure Defender"]
+synonyms = ["cspm", "cwpp", "cnapp", "cloud security posture", "multicloud security"]
 
 # ── 29. XDR — Extended Detection and Response ───────────────────────────
 [[entries]]
@@ -660,6 +685,7 @@ last_verified = "2026-05-04"
 abbreviations = ["XDR"]
 aliases = ["defender-xdr", "microsoft-defender-xdr"]
 old_names = ["Microsoft 365 Defender"]
+synonyms = ["extended detection and response", "threat correlation", "unified incident"]
 
 # ── 30. Microsoft Sentinel ───────────────────────────────────────────────
 [[entries]]
@@ -682,6 +708,7 @@ last_verified = "2026-05-04"
 abbreviations = []
 aliases = ["microsoft-sentinel"]
 old_names = ["Azure Sentinel"]
+synonyms = ["siem", "soar", "security monitoring", "log aggregation security", "threat hunting"]
 
 # ═══════════════════════════════════════════════════════════════════════════
 # DISAMBIGUATION ENTRIES — for ambiguous short terms used by multiple Microsoft

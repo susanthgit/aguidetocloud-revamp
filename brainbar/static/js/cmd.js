@@ -1,18 +1,37 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   🪐 BRAIN BAR — Launcher (cmd.js)
+   🪐 BRAIN BAR — Launcher (cmd.js)  ·  v2b: synonyms, did-you-mean, recents
    Vanilla. Keyboard-first. Layered search ranking. No framework.
-   Tiers (deterministic, never auto-opens on fuzzy matches):
-     1 exact slug          → auto-open on Enter
-     2 exact abbreviation  → auto-open on Enter
-     3 exact alias         → auto-open on Enter (with "did you mean" hint)
-     4 exact old name      → auto-open on Enter (with rebrand hint)
-     5 prefix on slug/name → list only, click to open
-     6 substring           → list only, click to open
+
+   Tiers (deterministic):
+     1 exact slug          → preselect, Enter auto-opens top
+     2 exact abbreviation  → preselect, Enter auto-opens top
+     3 exact alias         → preselect, Enter auto-opens + "redirects to canonical"
+     4 exact old name      → preselect, Enter auto-opens + "rebranded — was X"
+     5 exact synonym       → preselect, Enter opens selected + "matches synonym: X"
+     6 prefix on slug/name → preselect, Enter opens selected
+     7 substring           → preselect, Enter opens selected
+     8 multi-token AND     → preselect, Enter opens selected (only if ≥2 tokens)
+     9 Levenshtein ≤2      → NO preselect, must arrow ↓ first ("did you mean: X?")
+                             (only if tiers 1-8 returned 0 AND query length ≥4)
    ═══════════════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
-  const STATE = { entries: [], results: [], selected: -1, ready: false };
+  const STATE = {
+    entries: [],
+    results: [],
+    selected: -1,
+    ready: false,
+    recent: [],          // [{q, slug, ts}, ...] max 5
+    lastQuery: '',       // For highlight rendering
+  };
+
+  const RECENT_KEY = 'bb:recent';
+  const RECENT_MAX = 5;
+  const LEVENSHTEIN_MAX = 2;
+  const LEVENSHTEIN_MIN_QUERY_LEN = 4;
+  const TOKEN_MIN_LEN = 2;
+  const MISS_RE = /^[a-z0-9][a-z0-9-]{0,49}$/;
 
   function $(sel, root) { return (root || document).querySelector(sel); }
   function $$(sel, root) { return Array.from((root || document).querySelectorAll(sel)); }
@@ -24,6 +43,76 @@
   }
   function eq(a, b) { return String(a || '').toLowerCase() === String(b || '').toLowerCase(); }
   function lc(s) { return String(s || '').toLowerCase(); }
+
+  function escapeHtml(s) {
+    return String(s || '').replace(/[&<>"']/g, c => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+  }
+
+  // ── Match highlighting ────────────────────────────────────────────────
+  // Segment-escape: find indices on RAW text, then escape prefix/match/suffix
+  // separately and wrap only the escaped middle in <mark>. Never regex over
+  // already-escaped HTML (that breaks on &amp;/&lt;/etc.).
+  function highlightMatch(value, needle) {
+    if (!needle || !value) return escapeHtml(value);
+    const lcVal = String(value).toLowerCase();
+    const lcNeedle = String(needle).toLowerCase();
+    const idx = lcVal.indexOf(lcNeedle);
+    if (idx < 0) return escapeHtml(value);
+    const before = String(value).slice(0, idx);
+    const hit    = String(value).slice(idx, idx + lcNeedle.length);
+    const after  = String(value).slice(idx + lcNeedle.length);
+    return escapeHtml(before) + '<mark class="bb-mark">' + escapeHtml(hit) + '</mark>' + escapeHtml(after);
+  }
+
+  // ── Levenshtein distance (capped, with early exit) ────────────────────
+  function levenshtein(a, b, max) {
+    a = String(a); b = String(b);
+    if (a === b) return 0;
+    const m = a.length, n = b.length;
+    if (Math.abs(m - n) > max) return max + 1;
+    if (m === 0) return n;
+    if (n === 0) return m;
+    let prev = new Array(n + 1);
+    let curr = new Array(n + 1);
+    for (let j = 0; j <= n; j++) prev[j] = j;
+    for (let i = 1; i <= m; i++) {
+      curr[0] = i;
+      let rowMin = i;
+      for (let j = 1; j <= n; j++) {
+        const cost = a.charCodeAt(i - 1) === b.charCodeAt(j - 1) ? 0 : 1;
+        curr[j] = Math.min(curr[j - 1] + 1, prev[j] + 1, prev[j - 1] + cost);
+        if (curr[j] < rowMin) rowMin = curr[j];
+      }
+      if (rowMin > max) return max + 1;
+      const tmp = prev; prev = curr; curr = tmp;
+    }
+    return prev[n];
+  }
+
+  // Find the closest term across all entries (slug/abbr/alias/synonym).
+  // Returns { entry, term, distance } or null if nothing within threshold.
+  function closestTerm(query) {
+    let best = null;
+    let bestDist = LEVENSHTEIN_MAX + 1;
+    for (const e of STATE.entries) {
+      const candidates = [];
+      candidates.push(e.slug);
+      for (const a of (e.abbreviations || [])) candidates.push(a.toLowerCase());
+      for (const a of (e.aliases || []))       candidates.push(a.toLowerCase());
+      for (const s of (e.synonyms || []))      candidates.push(slugify(s));
+      for (const c of candidates) {
+        if (!c) continue;
+        const d = levenshtein(query, c, LEVENSHTEIN_MAX);
+        if (d < bestDist) {
+          bestDist = d;
+          best = { entry: e, term: c, distance: d };
+        }
+      }
+    }
+    return best;
+  }
 
   // ── Search ────────────────────────────────────────────────────────────
   function search(query) {
@@ -37,7 +126,9 @@
       seen.add(e.slug);
       out.push({ e, tier, reason, hint: hint || '' });
     };
+    const qSlug = slugify(q);
 
+    // Pass 1: exact matches (Tiers 1-5)
     for (const e of STATE.entries) {
       if (eq(e.slug, q)) { push(e, 1, 'exact slug'); continue; }
       if ((e.abbreviations || []).some(a => eq(a, q))) { push(e, 2, 'abbreviation'); continue; }
@@ -46,22 +137,59 @@
         continue;
       }
       const oldSlugs = (e.old_names || []).map(slugify);
-      if (oldSlugs.some(s => s === q)) {
-        const oldName = e.old_names[oldSlugs.indexOf(q)];
-        push(e, 4, 'old name', 'rebranded — was ' + oldName);
+      const oldHit = oldSlugs.findIndex(s => s === q || s === qSlug);
+      if (oldHit >= 0) {
+        push(e, 4, 'old name', 'rebranded — was ' + e.old_names[oldHit]);
+        continue;
+      }
+      const syns = e.synonyms || [];
+      const synHit = syns.find(s => eq(s, q) || slugify(s) === qSlug);
+      if (synHit) {
+        push(e, 5, 'synonym', 'matches synonym: ' + synHit);
         continue;
       }
     }
+
+    // Pass 2: prefix on slug/name (Tier 6)
     for (const e of STATE.entries) {
       if (seen.has(e.slug)) continue;
-      if (e.slug.startsWith(q) || lc(e.name).startsWith(q)) push(e, 5, 'prefix');
+      if (e.slug.startsWith(q) || lc(e.name).startsWith(q)) push(e, 6, 'prefix');
     }
+
+    // Pass 3: substring (Tier 7)
     for (const e of STATE.entries) {
       if (seen.has(e.slug)) continue;
       if (e.slug.includes(q) || lc(e.name).includes(q) || lc(e.plain_english || '').includes(q)) {
-        push(e, 6, 'fuzzy');
+        push(e, 7, 'fuzzy');
       }
     }
+
+    // Pass 4: multi-token AND-match (Tier 8)
+    const tokens = q.split(/\s+/).filter(t => t.length >= TOKEN_MIN_LEN);
+    if (tokens.length >= 2) {
+      for (const e of STATE.entries) {
+        if (seen.has(e.slug)) continue;
+        const hay = [
+          e.slug,
+          lc(e.name),
+          lc(e.plain_english || ''),
+          ...(e.abbreviations || []).map(lc),
+          ...(e.aliases || []).map(lc),
+          ...(e.synonyms || []).map(lc),
+          ...(e.old_names || []).map(lc),
+        ].join(' ');
+        if (tokens.every(t => hay.includes(t))) push(e, 8, 'multi-token');
+      }
+    }
+
+    // Pass 5: Levenshtein did-you-mean (Tier 9) — only if NOTHING else hit
+    if (out.length === 0 && q.length >= LEVENSHTEIN_MIN_QUERY_LEN) {
+      const best = closestTerm(q);
+      if (best) {
+        push(best.entry, 9, 'did-you-mean', 'did you mean: ' + best.term + '?');
+      }
+    }
+
     return out.sort((a, b) => a.tier - b.tier);
   }
 
@@ -71,6 +199,17 @@
     license: 'license', tool: 'tool', cert: 'cert',
     'acronym-only': 'acronym', 'disambiguation': 'disambiguation'
   };
+
+  // Tiers where row 0 should be visually preselected (Enter still gated by
+  // the existing `top.tier <= 4` auto-open logic for safety).
+  function shouldPreselectTopRow(topTier) {
+    return topTier >= 1 && topTier <= 8;
+  }
+
+  // Tiers where we highlight the matched substring within slug/name.
+  function highlightTier(tier) {
+    return tier === 1 || tier === 2 || tier === 6 || tier === 7;
+  }
 
   function renderResults(results, query) {
     const list = $('#bb-results');
@@ -82,10 +221,12 @@
       list.innerHTML = '';
       if (empty) empty.hidden = true;
       if (boot) boot.hidden = false;
+      renderRecent();
       STATE.selected = -1;
       return;
     }
     if (boot) boot.hidden = true;
+    hideRecent();
 
     if (!results.length) {
       list.innerHTML = '';
@@ -100,49 +241,149 @@
         if (term) term.textContent = query;
       }
       STATE.selected = -1;
-      logMiss(query);                     // ← privacy-safe aggregate, deduped per session
+      logMiss(query);
       return;
     }
 
     if (empty) empty.hidden = true;
+    STATE.lastQuery = query;
 
     const html = results.map((r, i) => {
       const e = r.e;
       const abbr = (e.abbreviations || [])[0];
       const status = e.status && e.status !== 'ga'
         ? `<span class="bb-result-status bb-status-${e.status}">${e.status}</span>` : '';
-      const tier = `<span class="bb-result-tier" title="${r.reason}${r.hint ? ' — ' + r.hint : ''}">${r.tier <= 4 ? '↵' : '·'}</span>`;
-      const hint = r.hint ? `<span class="bb-result-hint">// ${r.hint}</span>` : '';
+      const tier = `<span class="bb-result-tier" title="${escapeHtml(r.reason + (r.hint ? ' — ' + r.hint : ''))}">${r.tier <= 4 ? '↵' : '·'}</span>`;
+      const hint = r.hint ? `<span class="bb-result-hint">// ${escapeHtml(r.hint)}</span>` : '';
+      const stale = freshnessClass(e.last_verified);
+      const staleDot = stale === 'stale' ? '<span class="bb-result-stale" title="Last verified more than 9 months ago — info may be out of date.">●</span>' : '';
+
+      const hl = highlightTier(r.tier) ? lc(query) : '';
+      const slugMarkup = hl ? highlightMatch(e.slug, hl) : escapeHtml(e.slug);
+      const nameMarkup = hl ? highlightMatch(e.name, hl) : escapeHtml(e.name);
+      const abbrMarkup = (abbr && abbr.toLowerCase() !== e.slug.toLowerCase())
+        ? ' <em>(' + escapeHtml(abbr.toLowerCase()) + ')</em>' : '';
+
       return `
-        <li class="bb-result" data-idx="${i}" data-url="${e.url}" role="option" aria-selected="${i === STATE.selected}">
-          <a href="${e.url}" class="bb-result-link">
+        <li class="bb-result" data-idx="${i}" data-url="${escapeHtml(e.url)}" role="option" aria-selected="${i === STATE.selected}">
+          <a href="${escapeHtml(e.url)}" class="bb-result-link">
             ${tier}
-            <span class="bb-result-slug">${e.slug}${abbr && abbr.toLowerCase() !== e.slug.toLowerCase() ? ' <em>(' + abbr.toLowerCase() + ')</em>' : ''}</span>
-            <span class="bb-result-name">${escapeHtml(e.name)}</span>
-            <span class="bb-result-meta">[ ${KIND_LABEL[e.kind] || e.kind} :: ${e.domain} ]</span>
+            <span class="bb-result-slug">${slugMarkup}${abbrMarkup}</span>
+            <span class="bb-result-name">${nameMarkup}</span>
+            <span class="bb-result-meta">[ ${KIND_LABEL[e.kind] || e.kind} :: ${escapeHtml(e.domain)} ]</span>
             ${status}
+            ${staleDot}
             ${hint}
           </a>
         </li>
       `;
     }).join('');
     list.innerHTML = html;
-    STATE.selected = 0;
-    setSelected(0);
+
+    const topTier = results[0].tier;
+    if (shouldPreselectTopRow(topTier)) {
+      STATE.selected = 0;
+      setSelected(0);
+    } else {
+      // Tier 9 (Levenshtein) — require explicit arrow nav before Enter opens
+      STATE.selected = -1;
+      // Visually no row selected; aria already false from initial markup.
+    }
   }
 
-  function escapeHtml(s) {
-    return String(s || '').replace(/[&<>"']/g, c => ({
-      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-    }[c]));
+  // ── Recent searches (localStorage) ────────────────────────────────────
+  function loadRecent() {
+    try {
+      const raw = localStorage.getItem(RECENT_KEY);
+      if (!raw) return [];
+      const arr = JSON.parse(raw);
+      if (!Array.isArray(arr)) return [];
+      return arr
+        .filter(x => x && typeof x === 'object' && typeof x.slug === 'string' && typeof x.q === 'string')
+        .slice(0, RECENT_MAX);
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveRecent(query, slug) {
+    if (!slug || !query) return;
+    try {
+      const trimmed = String(query).trim().slice(0, 80);
+      if (!trimmed) return;
+      // Dedupe by slug (most recent wins)
+      const filtered = STATE.recent.filter(r => r.slug !== slug);
+      const next = [{ q: trimmed, slug, ts: Date.now() }, ...filtered].slice(0, RECENT_MAX);
+      STATE.recent = next;
+      localStorage.setItem(RECENT_KEY, JSON.stringify(next));
+    } catch (e) { /* private mode — ignore */ }
+  }
+
+  function clearRecent() {
+    STATE.recent = [];
+    try { localStorage.removeItem(RECENT_KEY); } catch (e) { /* ignore */ }
+    renderRecent();
+  }
+
+  function renderRecent() {
+    const wrap = $('#bb-recent');
+    if (!wrap) return;
+    if (!STATE.recent.length) { wrap.hidden = true; return; }
+    const items = STATE.recent.map(r =>
+      `<li><a class="bb-recent-chip" href="${escapeHtml('/' + r.slug + '/')}" data-recent-slug="${escapeHtml(r.slug)}"><span class="bb-recent-prompt">$</span> ${escapeHtml(r.slug)}</a></li>`
+    ).join('');
+    wrap.innerHTML = `
+      <p class="bb-recent-label">// recent · stored in your browser only</p>
+      <ul class="bb-recent-list">
+        ${items}
+        <li><button type="button" class="bb-recent-clear" data-recent-clear>// clear</button></li>
+      </ul>
+    `;
+    wrap.hidden = false;
+  }
+
+  function hideRecent() {
+    const wrap = $('#bb-recent');
+    if (wrap) wrap.hidden = true;
+  }
+
+  // ── Freshness ─────────────────────────────────────────────────────────
+  // Returns 'fresh' | 'amber' | 'stale' | '' (unknown)
+  function freshnessClass(lastVerified) {
+    if (!lastVerified) return '';
+    const ms = Date.parse(lastVerified);
+    if (!Number.isFinite(ms)) return '';
+    const ageDays = Math.floor((Date.now() - ms) / 86400000);
+    if (ageDays <= 90) return 'fresh';
+    if (ageDays <= 270) return 'amber';
+    return 'stale';
+  }
+
+  // ── Help overlay ──────────────────────────────────────────────────────
+  function openHelp() {
+    const help = $('#bb-help');
+    if (!help) return;
+    help.hidden = false;
+    const closeBtn = $('.bb-help-close', help);
+    if (closeBtn) closeBtn.focus({ preventScroll: true });
+  }
+
+  function closeHelp() {
+    const help = $('#bb-help');
+    if (!help) return;
+    help.hidden = true;
+    const input = $('#bb-input');
+    if (input) input.focus({ preventScroll: true });
+  }
+
+  function isHelpOpen() {
+    const help = $('#bb-help');
+    return !!(help && !help.hidden);
   }
 
   // ── Privacy-safe miss tracking ────────────────────────────────────────
-  // Fire-and-forget POST to /api/log-miss when a search returns zero hits.
-  // De-dupe per (term, session) via sessionStorage so backspace-retyping
-  // doesn't multiply the count. Term shape gated by the same regex the
-  // server uses (slug-shaped, 1..50 chars).
-  const MISS_RE = /^[a-z0-9][a-z0-9-]{0,49}$/;
+  // Same-shape rules as v1 (slug-shaped, dedupe per session). Server-side
+  // also re-checks against the index AND synonyms before recording.
   function logMiss(rawTerm) {
     if (typeof rawTerm !== 'string') return;
     const term = rawTerm.trim().toLowerCase();
@@ -151,7 +392,6 @@
       const key = 'bb_miss:' + term;
       if (sessionStorage.getItem(key)) return;
       sessionStorage.setItem(key, '1');
-      // keepalive: true → request survives the page navigating away.
       fetch('/api/log-miss', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -159,15 +399,21 @@
         keepalive: true,
         credentials: 'omit',
       }).catch(() => {});
-    } catch (e) {
-      /* sessionStorage may be unavailable in private modes — silently ignore */
-    }
+    } catch (e) { /* private mode — ignore */ }
   }
 
+  // ── Selection / keyboard ──────────────────────────────────────────────
   function setSelected(idx) {
     const items = $$('#bb-results .bb-result');
     if (!items.length) { STATE.selected = -1; return; }
-    if (idx < 0) idx = items.length - 1;
+    if (idx < 0) {
+      STATE.selected = -1;
+      items.forEach(el => {
+        el.setAttribute('aria-selected', 'false');
+        el.classList.remove('is-selected');
+      });
+      return;
+    }
     if (idx >= items.length) idx = 0;
     STATE.selected = idx;
     items.forEach((el, i) => {
@@ -177,19 +423,19 @@
     items[idx].scrollIntoView({ block: 'nearest' });
   }
 
-  // ── Wire up ───────────────────────────────────────────────────────────
+  // ── Init / wiring ─────────────────────────────────────────────────────
   function init() {
     const input = $('#bb-input');
     if (!input) return;
 
-    // Auto-focus the launcher on page load (unless user has already
-    // started typing or focused another field). The deep-link branch
-    // below also handles ?q= prefill.
+    STATE.recent = loadRecent();
+    renderRecent();
+
     try {
       if (!document.activeElement || document.activeElement === document.body) {
         input.focus({ preventScroll: true });
       }
-    } catch (e) { /* older browsers — silently ignore */ }
+    } catch (e) { /* older browsers — ignore */ }
 
     fetch('/cmd-index.json', { cache: 'force-cache' })
       .then(r => r.json())
@@ -199,15 +445,15 @@
         const status = $('#bb-input-status');
         if (status) status.textContent = String(STATE.entries.length) + ' entries';
 
-        // ?q= deep-link
         const params = new URLSearchParams(location.search);
         const initialQ = params.get('q');
         if (initialQ) {
           input.value = initialQ;
           handleInput();
-          // Auto-open on tier 1/2 exact-match deep-links
           if (STATE.results.length && STATE.results[0].tier <= 2) {
-            location.href = STATE.results[0].e.url;
+            const top = STATE.results[0];
+            saveRecent(initialQ, top.e.slug);
+            location.href = top.e.url;
           }
         }
       })
@@ -226,19 +472,32 @@
 
     input.addEventListener('keydown', (ev) => {
       if (ev.key === 'ArrowDown') {
-        ev.preventDefault(); setSelected(STATE.selected + 1);
+        ev.preventDefault();
+        const items = $$('#bb-results .bb-result');
+        if (!items.length) return;
+        const next = STATE.selected < 0 ? 0 : (STATE.selected + 1) % items.length;
+        setSelected(next);
       } else if (ev.key === 'ArrowUp') {
-        ev.preventDefault(); setSelected(STATE.selected - 1);
+        ev.preventDefault();
+        const items = $$('#bb-results .bb-result');
+        if (!items.length) return;
+        const next = STATE.selected <= 0 ? items.length - 1 : STATE.selected - 1;
+        setSelected(next);
       } else if (ev.key === 'Enter') {
         ev.preventDefault();
         if (!STATE.results.length) return;
         const top = STATE.results[0];
         if (top.tier <= 4 && STATE.selected <= 0) {
-          // Tier 1-4: exact match (slug/abbr/alias/old-name) → open
+          // Tier 1-4: exact match — auto-open top
+          saveRecent(input.value, top.e.slug);
           location.href = top.e.url;
         } else if (STATE.selected >= 0) {
-          location.href = STATE.results[STATE.selected].e.url;
+          // User navigated OR top tier 5-8 with preselect 0
+          const r = STATE.results[STATE.selected];
+          saveRecent(input.value, r.e.slug);
+          location.href = r.e.url;
         }
+        // else: tier 9 (did-you-mean) with no preselect — do nothing.
       } else if (ev.key === 'Escape') {
         if (input.value) {
           input.value = '';
@@ -249,15 +508,95 @@
       }
     });
 
-    // "/" global hotkey to focus input (Spotlight-style)
+    // Save recent when user clicks a result link
+    const resultsList = $('#bb-results');
+    if (resultsList) {
+      resultsList.addEventListener('click', (ev) => {
+        const link = ev.target.closest('.bb-result-link');
+        if (!link) return;
+        const li = link.closest('.bb-result');
+        if (!li) return;
+        const idx = parseInt(li.dataset.idx, 10);
+        const r = STATE.results[idx];
+        if (r) saveRecent(input.value, r.e.slug);
+      });
+    }
+
+    // Recent searches: clear button (delegated)
+    const recentWrap = $('#bb-recent');
+    if (recentWrap) {
+      recentWrap.addEventListener('click', (ev) => {
+        if (ev.target && ev.target.matches('[data-recent-clear]')) {
+          ev.preventDefault();
+          clearRecent();
+        }
+        // Recent chip clicks are native <a> navigations; no JS needed
+      });
+    }
+
+    // Random entry link (in boot block)
+    const randomLink = $('#bb-random');
+    if (randomLink) {
+      randomLink.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        if (!STATE.entries.length) return;
+        const pool = STATE.entries.filter(e => e.kind !== 'disambiguation');
+        if (!pool.length) return;
+        const pick = pool[Math.floor(Math.random() * pool.length)];
+        location.href = pick.url;
+      });
+    }
+
+    // Help-trigger link (visible alternative to `?` keyboard — needed on mobile
+    // where the launcher auto-focuses and the keyboard handler never fires).
+    const helpTrigger = $('#bb-help-trigger');
+    if (helpTrigger) {
+      helpTrigger.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        openHelp();
+      });
+    }
+
+    // Help overlay close handlers
+    const helpOverlay = $('#bb-help');
+    if (helpOverlay) {
+      helpOverlay.addEventListener('click', (ev) => {
+        if (ev.target === helpOverlay || ev.target.classList.contains('bb-help-backdrop')) {
+          closeHelp();
+        }
+      });
+      const closeBtn = $('.bb-help-close', helpOverlay);
+      if (closeBtn) closeBtn.addEventListener('click', closeHelp);
+    }
+
+    // Global hotkeys
     document.addEventListener('keydown', (ev) => {
-      if (ev.key !== '/') return;
-      const tag = (document.activeElement && document.activeElement.tagName) || '';
-      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+      // Esc closes help even when focused inside it
+      if (ev.key === 'Escape' && isHelpOpen()) {
+        ev.preventDefault();
+        closeHelp();
+        return;
+      }
+
       if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
-      ev.preventDefault();
-      input.focus();
-      input.select();
+
+      const tag = (document.activeElement && document.activeElement.tagName) || '';
+      const inField = tag === 'INPUT' || tag === 'TEXTAREA';
+
+      // "/" → focus input (Spotlight-style)
+      if (ev.key === '/' && !inField && !isHelpOpen()) {
+        ev.preventDefault();
+        input.focus();
+        input.select();
+        return;
+      }
+
+      // "?" → open help (only when input not focused, mirrors GitHub)
+      if (ev.key === '?' && !inField && !isHelpOpen()) {
+        ev.preventDefault();
+        openHelp();
+        return;
+      }
     });
   }
 

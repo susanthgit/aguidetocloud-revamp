@@ -17,9 +17,13 @@
     "abbreviations" ($terms.abbreviations | default slice)
     "aliases"       ($terms.aliases | default slice)
     "old_names"     ($terms.old_names | default slice)
+    "synonyms"      ($terms.synonyms | default slice)
     "plain_english" .plain_english
     "status"        (.status | default "ga")
     "url"           (printf "/%s/" .slug)
+    "last_verified" (.last_verified | default "")
+    "related_tools" (.related_tools | default slice)
+    "related_certs" (.related_certs | default slice)
     "has_take"      (and (eq (default "neutral" $voice.sush_take_status) "spicy") (ne ($voice.sush_take | default "") ""))
   -}}
   {{- $items = $items | append $item -}}

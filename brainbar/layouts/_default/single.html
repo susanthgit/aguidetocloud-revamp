@@ -46,6 +46,14 @@
   </section>
 
   <p class="bb-verified" title="microsoft renames things often — this entry was last fact-checked on the date below.">
+    {{- $fresh := "" -}}
+    {{- with .Params.last_verified -}}
+      {{- $ageDays := div (sub now.Unix (time.AsTime .).Unix) 86400 -}}
+      {{- if le $ageDays 90 -}}{{- $fresh = "fresh" -}}
+      {{- else if le $ageDays 270 -}}{{- $fresh = "amber" -}}
+      {{- else -}}{{- $fresh = "stale" -}}{{- end -}}
+    {{- end -}}
+    {{ with $fresh }}<span class="bb-fresh-dot bb-fresh-{{ . }}" aria-hidden="true" title="{{ if eq . "fresh" }}fresh — verified within 90 days{{ else if eq . "amber" }}getting old — verified 91-270 days ago{{ else }}stale — verified over 9 months ago{{ end }}">●</span>{{ end }}
     verified <time datetime="{{ .Params.last_verified }}">{{ .Params.last_verified }}</time>
   </p>
 
@@ -166,6 +174,14 @@
   {{ end }}
 
   <p class="bb-verified" title="microsoft renames things often — this entry was last fact-checked on the date below.">
+    {{- $fresh := "" -}}
+    {{- with .Params.last_verified -}}
+      {{- $ageDays := div (sub now.Unix (time.AsTime .).Unix) 86400 -}}
+      {{- if le $ageDays 90 -}}{{- $fresh = "fresh" -}}
+      {{- else if le $ageDays 270 -}}{{- $fresh = "amber" -}}
+      {{- else -}}{{- $fresh = "stale" -}}{{- end -}}
+    {{- end -}}
+    {{ with $fresh }}<span class="bb-fresh-dot bb-fresh-{{ . }}" aria-hidden="true" title="{{ if eq . "fresh" }}fresh — verified within 90 days{{ else if eq . "amber" }}getting old — verified 91-270 days ago{{ else }}stale — verified over 9 months ago{{ end }}">●</span>{{ end }}
     verified <time datetime="{{ .Params.last_verified }}">{{ .Params.last_verified }}</time>
   </p>
 

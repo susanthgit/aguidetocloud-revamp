@@ -6,6 +6,7 @@ resources/
 # Playwright UX audit artifacts (local-only)
 qa/node_modules/
 qa/screenshots/
+qa/audit-*/
 qa/report.json
 qa/package-lock.json
 

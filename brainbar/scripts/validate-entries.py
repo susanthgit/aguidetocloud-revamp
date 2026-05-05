@@ -14,6 +14,10 @@ Rules enforced:
   R7  domain enum          — domain must be a known value
   R8  voice keys           — every key in cmd_voice.toml must reference a real entry slug
   R9  spicy takes have text — sush_take_status="spicy" requires sush_take to be set
+  R10 alias/old-name overlap — warn when an alias is also a slugified old_name (redundant)
+  R11 synonyms hygiene     — synonyms must be lowercase strings, max 8 per entry, must
+                             not collide with any slug/abbreviation/alias/old-name in the
+                             global namespace (cross-entry synonym duplicates are warnings)
 
 Wire into Cloudflare Pages build command:
     python scripts/validate-entries.py && hugo --gc --minify
@@ -49,6 +53,7 @@ VALID_DOMAINS = {"security", "identity", "endpoint", "productivity", "ai", "data
 VALID_STATUS = {"ga", "preview", "retired", "rebranded", "planned"}
 LEARN_REQUIRED_KINDS = {"product", "portal", "feature"}
 MAX_AGE_DAYS = 365
+MAX_SYNONYMS_PER_ENTRY = 8
 
 # ANSI for terminal-feel output. Disabled if not a TTY.
 TTY = sys.stdout.isatty()
@@ -84,8 +89,10 @@ def main() -> int:
     errors: list[str] = []
     warnings: list[str] = []
 
-    # Build the global slug + alias namespace
-    namespace: dict[str, str] = {}                                 # token → entry slug
+    # ─── Pass 1: build the reserved namespace ────────────────────────────
+    # token (lowercase, slugified for multi-word) → owning entry slug.
+    # Used by R2 (alias collision) AND R11 (synonym collision).
+    namespace: dict[str, str] = {}
     today = date.today()
 
     for i, e in enumerate(entries):
@@ -105,8 +112,6 @@ def main() -> int:
         aliases = list(terms.get("aliases", []))
         old_names = [_slugify(n) for n in terms.get("old_names", [])]
         # R10 — warn if alias and slugified old-name overlap within same entry
-        # (harmless for routing — dedupe template handles it — but signals
-        # redundant data; old_names is the canonical home for rebrand history)
         for a in aliases:
             if a in old_names:
                 warnings.append(
@@ -114,13 +119,21 @@ def main() -> int:
                     f"slugified old_names — drop it from aliases (old_names "
                     f"is canonical for rebrand history)"
                 )
-        all_redirects = aliases + old_names
+        # Reserve aliases + slugified old_names + slugified abbreviations.
+        # Abbreviations are NOW reserved (v2b — was a gap in v1). This is
+        # required so R11 can detect when a synonym would shadow an existing
+        # exact-match abbreviation in the launcher's tier-2 lookup.
+        abbreviations = [_slugify(a) for a in terms.get("abbreviations", [])]
+        all_redirects = aliases + old_names + abbreviations
 
         for a in all_redirects:
             if not a:
                 continue
             if a in namespace and namespace[a] != slug:
-                errors.append(f"R2  alias collision: '{a}' (in entry '{slug}') already maps to '{namespace[a]}'")
+                errors.append(
+                    f"R2  alias/abbr collision: '{a}' (in entry '{slug}') "
+                    f"already maps to '{namespace[a]}'"
+                )
             else:
                 namespace[a] = slug
 
@@ -157,6 +170,60 @@ def main() -> int:
         domain = e.get("domain")
         if domain and domain not in VALID_DOMAINS:
             warnings.append(f"R7  '{slug}' domain='{domain}' not in {sorted(VALID_DOMAINS)} (will still build)")
+
+    # ─── Pass 2: synonyms hygiene (R11) — needs full namespace ───────────
+    synonym_owners: dict[str, list[str]] = {}     # slugified synonym → [owning slugs]
+    for e in entries:
+        slug = e.get("slug")
+        if not slug:
+            continue
+        terms = e.get("terms", {}) or {}
+        synonyms = terms.get("synonyms", []) or []
+
+        if not isinstance(synonyms, list):
+            errors.append(f"R11 '{slug}' synonyms must be an array, got {type(synonyms).__name__}")
+            continue
+
+        if len(synonyms) > MAX_SYNONYMS_PER_ENTRY:
+            errors.append(
+                f"R11 '{slug}' has {len(synonyms)} synonyms (max {MAX_SYNONYMS_PER_ENTRY}) "
+                f"— editorial discipline: keep synonyms tight, not exhaustive"
+            )
+
+        seen_in_entry: set[str] = set()
+        for syn in synonyms:
+            if not isinstance(syn, str) or not syn.strip():
+                errors.append(f"R11 '{slug}' has an empty/non-string synonym")
+                continue
+            if syn != syn.lower():
+                warnings.append(f"R11 '{slug}' synonym '{syn}' should be lowercase")
+            syn_slug = _slugify(syn)
+            if not syn_slug:
+                errors.append(f"R11 '{slug}' synonym '{syn}' slugifies to empty")
+                continue
+            if syn_slug in seen_in_entry:
+                warnings.append(f"R11 '{slug}' has duplicate synonym '{syn}' (slugifies to '{syn_slug}')")
+                continue
+            seen_in_entry.add(syn_slug)
+            # Collide with the EXACT-MATCH namespace? Hard error — would shadow
+            # a higher-tier match in the launcher.
+            if syn_slug in namespace and namespace[syn_slug] != slug:
+                errors.append(
+                    f"R11 '{slug}' synonym '{syn}' (→ '{syn_slug}') collides with "
+                    f"slug/alias/abbr/old-name of '{namespace[syn_slug]}' — "
+                    f"this would shadow the exact match"
+                )
+                continue
+            # Cross-entry synonym duplicates → warning (multiple entries can
+            # reasonably claim the same concept; Tier 5 lists all).
+            synonym_owners.setdefault(syn_slug, []).append(slug)
+
+    for syn_slug, owners in synonym_owners.items():
+        if len(owners) > 1:
+            warnings.append(
+                f"R11 synonym '{syn_slug}' is claimed by multiple entries "
+                f"({', '.join(owners)}) — Tier 5 will list all of them"
+            )
 
     # R8 — voice keys must reference real entry slugs
     entry_slugs = {e.get("slug") for e in entries}

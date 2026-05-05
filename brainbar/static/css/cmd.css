@@ -60,6 +60,7 @@
   padding: 4px 8px;
   cursor: pointer;
   transition: all var(--t-fast);
+  white-space: nowrap;
 }
 .bb-theme-toggle:hover {
   color: var(--accent);
@@ -69,14 +70,14 @@
 /* ── Hero / homepage launcher ───────────────────────────────────────── */
 
 .bb-hero {
-  padding: var(--s-16) 0 var(--s-12);
+  padding: var(--s-8) 0 var(--s-6);   /* compacted from s-16/s-12 — launcher visible higher */
 }
 
 .bb-hero-prompt {
   color: var(--text-muted);
   font-size: var(--t-sm);
   letter-spacing: 0.05em;
-  margin: 0 0 var(--s-4);
+  margin: 0 0 var(--s-3);
 }
 .bb-hero-prompt::before {
   content: "> ";
@@ -88,9 +89,10 @@
   font-weight: 700;
   color: var(--text);
   letter-spacing: -0.02em;
-  line-height: 1.05;
+  line-height: 1.1;
   margin: 0 0 var(--s-3);
 }
+/* Cursor block kept for back-compat (used elsewhere) — animation only */
 .bb-hero-title .bb-cursor {
   color: var(--accent);
   font-weight: 400;
@@ -103,8 +105,9 @@
 
 .bb-hero-tagline {
   color: var(--text-secondary);
-  font-size: var(--t-h2);
-  margin: 0 0 var(--s-12);
+  font-size: var(--t-body);    /* dropped from t-h2 — it's a tagline, not a heading */
+  margin: 0 0 var(--s-6);      /* tightened from s-12 */
+  max-width: 56ch;             /* better line length on desktop */
 }
 
 /* Boot-style help block on homepage (Phase 3 enriches with live launcher) */
@@ -617,11 +620,12 @@ button:focus-visible {
 }
 .bb-empty-prefix { color: var(--text-dim); }
 .bb-empty code {
-  color: var(--accent);
-  background: var(--accent-soft);
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
   padding: 1px 6px;
   border-radius: var(--r-sm);
   margin: 0 var(--s-2);
+  border: 1px solid var(--border);
 }
 .bb-empty-suggest {
   margin-left: var(--s-3);
@@ -675,28 +679,26 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: var(--s-2);
-  padding: var(--s-3) var(--s-4);
-  background: var(--accent);
-  color: var(--bg);
+  padding: var(--s-2) var(--s-4);
+  background: transparent;                       /* demoted: was solid accent fill */
+  color: var(--accent);
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: var(--t-body);
+  font-size: var(--t-sm);
   border-radius: var(--r-md);
   text-decoration: none;
   cursor: grab;
   user-select: none;
-  border: 1px solid var(--accent);
-  box-shadow: 0 0 0 0 var(--accent-soft);
-  transition: box-shadow var(--t-fast), transform var(--t-fast);
+  border: 1px solid var(--accent-dim);
+  transition: background var(--t-fast), color var(--t-fast), transform var(--t-fast);
 }
 .bb-bookmarklet-btn:hover {
-  background: var(--accent-bright);
-  color: var(--bg);
-  box-shadow: 0 0 0 4px var(--accent-soft);
+  background: var(--accent-soft);
+  color: var(--accent-bright);
   transform: translateY(-1px);
 }
 .bb-bookmarklet-btn:active { cursor: grabbing; }
-.bb-bookmarklet-btn .bb-prompt { color: var(--bg); }
+.bb-bookmarklet-btn .bb-prompt { color: var(--accent); }
 
 .bb-tool-copy {
   background: transparent;
@@ -1117,3 +1119,315 @@ button:focus-visible {
 
 /* Make the entry-back nav also feel native on /about/ and /all/ */
 .bb-entry-back a:hover { text-decoration: underline; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   v2b additions — match highlight, recent searches, help overlay, freshness
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ── Match highlighting in launcher results ──────────────────────────── */
+.bb-mark {
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 0 1px;
+  border-radius: 2px;
+  font-weight: 700;
+}
+
+/* ── Freshness dots — entry header + result row tail ─────────────────── */
+.bb-fresh-dot {
+  display: inline-block;
+  font-size: 0.7em;
+  margin-right: 4px;
+  vertical-align: middle;
+  line-height: 1;
+}
+.bb-fresh-fresh { color: var(--status-ok); }
+.bb-fresh-amber { color: var(--status-warn); }
+.bb-fresh-stale { color: var(--status-err); }
+
+.bb-result-stale {
+  color: var(--status-warn);
+  font-size: 0.7em;
+  margin-left: var(--s-2);
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* ── Recent searches (above boot block, when input empty) ────────────── */
+.bb-recent {
+  margin: var(--s-4) 0 var(--s-6);
+  padding: var(--s-3) var(--s-4);
+  border: 1px dashed var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg-surface);
+}
+.bb-recent[hidden] { display: none; }
+
+.bb-recent-label {
+  font-size: var(--t-xs);
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  margin: 0 0 var(--s-2);
+}
+
+.bb-recent-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  align-items: center;
+}
+.bb-recent-list li { margin: 0; padding: 0; }
+
+.bb-recent-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--s-1);
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  text-decoration: none;
+  transition: all var(--t-fast);
+}
+.bb-recent-chip:hover {
+  border-color: var(--accent-dim);
+  color: var(--accent);
+}
+.bb-recent-prompt {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.bb-recent-clear {
+  background: transparent;
+  border: 0;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  cursor: pointer;
+  padding: 4px 6px;
+  letter-spacing: 0.02em;
+  transition: color var(--t-fast);
+}
+.bb-recent-clear:hover { color: var(--text); }
+
+/* ── Help overlay (? key) ────────────────────────────────────────────── */
+.bb-help {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s-6);
+}
+.bb-help[hidden] { display: none; }
+
+.bb-help-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+}
+
+.bb-help-card {
+  position: relative;
+  max-width: 720px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-emphasis);
+  border-radius: var(--r-lg);
+  padding: var(--s-8) var(--s-8) var(--s-6);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--accent-soft);
+  font-family: var(--font-mono);
+}
+
+.bb-help-close {
+  position: absolute;
+  top: var(--s-3);
+  right: var(--s-3);
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.4rem;
+  line-height: 1;
+  font-family: var(--font-mono);
+  transition: all var(--t-fast);
+}
+.bb-help-close:hover {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}
+
+.bb-help-title {
+  font-size: var(--t-h2);
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 var(--s-6);
+  letter-spacing: -0.01em;
+}
+
+.bb-help-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-8);
+}
+@media (max-width: 600px) {
+  .bb-help-grid { grid-template-columns: 1fr; gap: var(--s-6); }
+  .bb-help-card { padding: var(--s-6); }
+}
+
+.bb-help-h3 {
+  font-size: var(--t-xs);
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin: 0 0 var(--s-3);
+  font-weight: 500;
+}
+.bb-help-h3::before {
+  content: "// ";
+  color: var(--text-dim);
+}
+
+.bb-help-dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(80px, auto) 1fr;
+  gap: var(--s-2) var(--s-4);
+  align-items: baseline;
+}
+.bb-help-dl dt {
+  color: var(--text);
+  font-size: var(--t-sm);
+}
+.bb-help-dl dd {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--t-sm);
+}
+.bb-help-dl code {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: var(--t-xs);
+  /* Calmed down from the green-pill mosaic — plain inline code, no bg/padding */
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+.bb-help-dl kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px solid var(--border-emphasis);
+  border-radius: var(--r-sm);
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  line-height: 1.4;
+  margin-right: 2px;
+}
+
+.bb-help-foot {
+  margin: var(--s-6) 0 0;
+  padding-top: var(--s-4);
+  border-top: 1px dashed var(--border);
+  font-size: var(--t-xs);
+  color: var(--text-muted);
+}
+.bb-help-prompt {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ── Polish: related chips on entry pages ────────────────────────────── */
+.bb-related-col ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bb-related-col li { margin: 0; padding: 0; }
+.bb-related-col li a {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  font-size: var(--t-xs);
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  background: var(--bg);
+  text-decoration: none;
+  transition: all var(--t-fast);
+}
+.bb-related-col li a:hover {
+  border-color: var(--accent-dim);
+  color: var(--accent);
+}
+.bb-related-col h3 {
+  font-size: var(--t-xs);
+  font-weight: 500;
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin: 0 0 var(--s-2);
+}
+.bb-related-col h3::before { content: "// "; color: var(--text-dim); }
+
+/* ── Mobile touch-target padding — boot links, footer, header (Top-8 fix #5) ── */
+@media (max-width: 720px) {
+  /* Header brand + back link + theme toggle: ensure ≥36px tap area */
+  .bb-brand,
+  .bb-back {
+    padding: var(--s-2) 0;
+    display: inline-flex;
+    align-items: center;
+  }
+  .bb-theme-toggle {
+    padding: 8px 12px;     /* was 4px 8px */
+  }
+
+  /* Boot block example links — were 17px tall, hard to tap */
+  .bb-boot-eg {
+    padding: var(--s-2) 0;
+  }
+  .bb-boot-eg a {
+    display: inline-block;
+    padding: 4px 0;
+  }
+
+  /* Footer link — was 16px tall */
+  .bb-footer a {
+    display: inline-block;
+    padding: var(--s-2) 0;
+  }
+
+  /* Recent searches clear button */
+  .bb-recent-clear {
+    padding: 8px 10px;
+  }
+
+  /* Hide the dense hotkey reference on mobile — `?` overlay is the right place */
+  .bb-boot-line.bb-boot-hotkey {
+    display: none;
+  }
+}

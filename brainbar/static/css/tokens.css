@@ -54,7 +54,7 @@
   --font:               var(--font-mono);
 
   /* Sizes — terminal scale (compact) */
-  --t-display:          clamp(2rem, 4vw + 1rem, 3.5rem);
+  --t-display:          clamp(1.75rem, 3.5vw + 0.5rem, 2.75rem);
   --t-h1:               1.75rem;
   --t-h2:               1.125rem;
   --t-h3:               1rem;
@@ -89,9 +89,9 @@
 
 /* ── Light mode: after-hours courtesy (paper) ─────────────────────────── */
 [data-theme="light"] {
-  --bg:                 #FAFAF7;
+  --bg:                 #F4F2EC;          /* darkened from #FAFAF7 — cards pop now */
   --bg-surface:         #FFFFFF;
-  --bg-elevated:        #F4F2EC;
+  --bg-elevated:        #EDEAE0;          /* one step darker than page */
   --bg-card:            #FFFFFF;
 
   --text:               #0F1218;
@@ -99,7 +99,7 @@
   --text-muted:         #5C6470;
   --text-dim:           #94A0AB;
 
-  --border:             #E5E2DA;
+  --border:             #D9D5C8;          /* slightly darker for cleaner card edges */
   --border-emphasis:    #C9C5BA;
   --border-bright:      #93897A;
 
@@ -110,7 +110,7 @@
   --accent-glow:        rgba(4, 120, 87, 0.18);
 
   --spicy:              #B45309;
-  --spicy-soft:         rgba(180, 83, 9, 0.08);
+  --spicy-soft:         rgba(180, 83, 9, 0.16);   /* bumped from 0.08 — AA contrast for spicy take body */
 
   --status-ok:          #15803D;
   --status-warn:        #A16207;

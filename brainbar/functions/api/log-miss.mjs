@@ -76,19 +76,21 @@ export const onRequestPost = async (ctx) => {
   const term = String(body?.term || '').trim().toLowerCase();
   if (!term || !TERM_RE.test(term)) return noContent(cors);
 
-  // Ignore terms that resolve in the index (not actually a miss)
+  // Ignore terms that resolve in the index (not actually a miss).
+  // Includes synonyms in v2b — Tier 5 hits aren't misses.
   try {
     const indexUrl = new URL('/cmd-index.json', ctx.request.url).toString();
     const r = await fetch(indexUrl, { cf: { cacheEverything: true, cacheTtl: 300 } });
     if (r.ok) {
       const data = await r.json();
+      const slugify = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+      const termSlug = slugify(term);
       for (const e of data.entries || []) {
         if (e.slug?.toLowerCase() === term) return noContent(cors);
         if ((e.abbreviations || []).some(a => a.toLowerCase() === term)) return noContent(cors);
         if ((e.aliases || []).some(a => a.toLowerCase() === term)) return noContent(cors);
-        if ((e.old_names || []).some(o =>
-          String(o).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') === term
-        )) return noContent(cors);
+        if ((e.synonyms || []).some(s => slugify(s) === termSlug)) return noContent(cors);
+        if ((e.old_names || []).some(o => slugify(o) === termSlug)) return noContent(cors);
       }
     }
   } catch {

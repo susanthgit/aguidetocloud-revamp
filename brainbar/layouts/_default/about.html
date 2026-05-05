@@ -90,6 +90,79 @@
     </p>
   </section>
 
+  <section class="bb-section" id="power-user">
+    <h2 class="bb-section-title">power-user setup</h2>
+    <p class="bb-plain">
+      two ways to make brain bar a one-keystroke habit. set it up once, never
+      think about it again.
+    </p>
+
+    {{/* ── Bookmarklet ─────────────────────────────────────────────────── */}}
+    <section class="bb-tool" id="bb-bookmarklet">
+      <h3 class="bb-tool-title">// drag this to your bookmarks bar</h3>
+      <p class="bb-tool-lede">
+        highlight a microsoft term anywhere on the web — click the bookmark — brain bar opens.
+      </p>
+      <div class="bb-tool-row">
+        <a
+          class="bb-bookmarklet-btn"
+          draggable="true"
+          title="Drag me to your bookmarks bar"
+          href="javascript:(function(){var s=String(getSelection()).trim()||prompt('brain bar — type a microsoft term:','');s&&(location.href='https://cmd.aguidetocloud.com/?q='+encodeURIComponent(s.slice(0,200)))})();"
+        ><span class="bb-prompt">$</span>&nbsp;decode this</a>
+        <button class="bb-tool-copy" type="button" data-copy-bookmarklet>// copy as snippet</button>
+      </div>
+      <p class="bb-tool-hint">
+        <span class="bb-tool-key">tip:</span>
+        can't drag? right-click the button → <em>add bookmark</em>.
+        browsers may strip the <code>javascript:</code> prefix from a paste — drag is safer.
+      </p>
+    </section>
+
+    {{/* ── Address-bar custom search engine ─────────────────────────────── */}}
+    <section class="bb-tool" id="bb-search-engine">
+      <h3 class="bb-tool-title">// turn your url bar into a brain bar shortcut</h3>
+      <p class="bb-tool-lede">
+        most browsers will auto-detect brain bar as a search engine on first visit.
+        after that, type <code class="bb-keyword">bb mde</code> + enter and you're there.
+      </p>
+
+      <details class="bb-search-engine-help">
+        <summary class="bb-search-engine-summary">// can't get it to work? manual setup ↓</summary>
+        <div class="bb-search-engine-grid">
+          <div>
+            <h3>chrome / edge / brave</h3>
+            <ol class="bb-search-engine-steps">
+              <li>settings → search engine → manage</li>
+              <li>add a new search engine:
+                <code class="bb-mono-block">name:    Brain Bar
+keyword: bb
+url:     https://cmd.aguidetocloud.com/?q=%s</code>
+              </li>
+              <li>save · type <code class="bb-keyword">bb &lt;term&gt;</code> in the url bar</li>
+            </ol>
+          </div>
+          <div>
+            <h3>firefox</h3>
+            <ol class="bb-search-engine-steps">
+              <li>visit this page (firefox auto-detects via <code>opensearch.xml</code>)</li>
+              <li>right-click the address bar → <em>add brain bar</em></li>
+              <li>type <code class="bb-keyword">@bb &lt;term&gt;</code> in the url bar</li>
+            </ol>
+          </div>
+          <div>
+            <h3>safari</h3>
+            <ol class="bb-search-engine-steps">
+              <li>safari doesn't support custom keywords natively</li>
+              <li>use the <strong>bookmarklet</strong> above instead, or install
+                <em>smart keyword search</em> (extension)</li>
+            </ol>
+          </div>
+        </div>
+      </details>
+    </section>
+  </section>
+
   <section class="bb-section">
     <h2 class="bb-section-title">what brain bar isn't</h2>
     <ul class="bb-honest-list">
@@ -116,4 +189,26 @@
   </p>
 
 </article>
+
+{{/* Bookmarklet "copy as snippet" handler — moved here from index.html
+     when the power-user section was relocated to /about/. */}}
+<script>
+(function(){
+  var btn = document.querySelector('[data-copy-bookmarklet]');
+  if (!btn) return;
+  var src = document.querySelector('.bb-bookmarklet-btn');
+  btn.addEventListener('click', function(){
+    if (!src) return;
+    var snippet = src.getAttribute('href');
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(snippet).then(function(){
+        btn.textContent = '// copied — paste into a new bookmark';
+        setTimeout(function(){ btn.textContent = '// copy as snippet'; }, 2200);
+      }, function(){ btn.textContent = '// copy failed — drag instead'; });
+    } else {
+      btn.textContent = '// no clipboard api — drag the button';
+    }
+  });
+})();
+</script>
 {{ end }}
