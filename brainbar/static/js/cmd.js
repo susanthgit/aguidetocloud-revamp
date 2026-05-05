@@ -17,6 +17,18 @@
 (function () {
   'use strict';
 
+  // Round 2 — mode chips + smart suggest
+  // (Declared first so STATE.mode can reference MODE_JARGON below — TDZ-safe.)
+  const MODE_JARGON = 'jargon';
+  const MODE_ERRNO  = 'errno';
+  // Strict patterns ONLY — must NOT collide with any existing brainbar slug,
+  // abbreviation, alias, or synonym. Verified against cmd_entries.toml.
+  const SUGGEST_PATTERNS = [
+    /^0x[0-9a-fA-F]{8}$/,   // HRESULT (Win32 / COM error)
+    /^AADSTS\d+$/i,         // Entra error code
+    /^KB\d+$/i,             // KB article
+  ];
+
   const STATE = {
     entries: [],
     results: [],
@@ -35,17 +47,6 @@
   const LEVENSHTEIN_MIN_QUERY_LEN = 4;
   const TOKEN_MIN_LEN = 2;
   const MISS_RE = /^[a-z0-9][a-z0-9-]{0,49}$/;
-
-  // Round 2 — mode chips + smart suggest
-  const MODE_JARGON = 'jargon';
-  const MODE_ERRNO  = 'errno';
-  // Strict patterns ONLY — must NOT collide with any existing brainbar slug,
-  // abbreviation, alias, or synonym. Verified against cmd_entries.toml.
-  const SUGGEST_PATTERNS = [
-    /^0x[0-9a-fA-F]{8}$/,   // HRESULT (Win32 / COM error)
-    /^AADSTS\d+$/i,         // Entra error code
-    /^KB\d+$/i,             // KB article
-  ];
 
   function $(sel, root) { return (root || document).querySelector(sel); }
   function $$(sel, root) { return Array.from((root || document).querySelectorAll(sel)); }
