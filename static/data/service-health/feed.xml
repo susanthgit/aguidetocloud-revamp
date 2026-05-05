@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 05 May 2026 11:37:13 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2026 17:46:05 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Defender XDR] Some users may receive false positive alerts from Microsoft Defender Antivirus for specific certificates</title>
@@ -51,6 +51,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">SP1296487</guid>
       <pubDate>Thu, 30 Apr 2026 07:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Some users may have been unable to successfully invoke Power Automate flows from their SharePoint (SPFx) applications </title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1301507</link>
+      <description>[SharePoint Online] Users may have been unable to successfully invoke Power Automate flows from their SPFx applications.</description>
+      <category>SharePoint Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">SP1301507</guid>
+      <pubDate>Wed, 29 Apr 2026 23:30:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users may be unable to access links to other apps provided by Microsoft 365 Copilot Chat prompts</title>
@@ -448,15 +457,6 @@ The issue initially began with impact to a subset of custom</description>
       <category>serviceRestored</category>
       <guid isPermaLink="false">MV1269743</guid>
       <pubDate>Thu, 02 Apr 2026 02:37:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be experiencing high latency when performing searches in Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1297752</link>
-      <description>[Exchange Online] Users may be experiencing high latency when performing searches in Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1297752</guid>
-      <pubDate>Wed, 01 Apr 2026 07:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

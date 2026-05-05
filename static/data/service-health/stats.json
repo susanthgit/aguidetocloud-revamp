@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-05T11:37:13.051694+00:00",
+  "generated_at": "2026-05-05T17:46:05.038511+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -20,8 +20,8 @@
       "short_name": "Exchange",
       "icon": "📧",
       "total_incidents": 19,
-      "active_incidents": 3,
-      "avg_duration_minutes": 15859,
+      "active_incidents": 2,
+      "avg_duration_minutes": 17432,
       "last_incident": "2026-04-14T11:37:00+00:00",
       "classifications": {
         "advisory": 15,
@@ -42,29 +42,29 @@
       }
     },
     {
-      "service": "Microsoft Defender XDR",
-      "short_name": "Defender",
-      "icon": "🛡️",
-      "total_incidents": 8,
-      "active_incidents": 0,
-      "avg_duration_minutes": 8684,
-      "last_incident": "2026-05-03T08:52:00+00:00",
-      "classifications": {
-        "incident": 1,
-        "advisory": 7
-      }
-    },
-    {
       "service": "SharePoint Online",
       "short_name": "SharePoint",
       "icon": "📄",
-      "total_incidents": 7,
+      "total_incidents": 8,
       "active_incidents": 0,
-      "avg_duration_minutes": 17770,
+      "avg_duration_minutes": 16550,
       "last_incident": "2026-04-30T07:30:00+00:00",
       "classifications": {
         "incident": 2,
-        "advisory": 5
+        "advisory": 6
+      }
+    },
+    {
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
+      "total_incidents": 7,
+      "active_incidents": 0,
+      "avg_duration_minutes": 9357,
+      "last_incident": "2026-05-03T08:52:00+00:00",
+      "classifications": {
+        "incident": 1,
+        "advisory": 6
       }
     },
     {
@@ -189,7 +189,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 48,
+      "incident_count": 49,
       "services_affected": 12
     },
     {
@@ -199,8 +199,8 @@
     },
     {
       "month": "2026-02",
-      "incident_count": 9,
-      "services_affected": 7
+      "incident_count": 8,
+      "services_affected": 6
     }
   ]
 }
