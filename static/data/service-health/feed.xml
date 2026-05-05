@@ -5,14 +5,14 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 05 May 2026 17:46:05 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2026 19:50:57 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Defender XDR] Some users may receive false positive alerts from Microsoft Defender Antivirus for specific certificates</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1299600</link>
       <description>[Microsoft Defender XDR] Users received false positive alerts from Defender Antivirus and see legitimate files or certificates quarantined.</description>
       <category>Microsoft Defender XDR</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">DZ1299600</guid>
       <pubDate>Sun, 03 May 2026 08:52:00 +0000</pubDate>
     </item>
@@ -24,15 +24,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MV1300072</guid>
       <pubDate>Fri, 01 May 2026 21:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some users may not receive results when performing searches in SharePoint Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1297751</link>
-      <description>[Microsoft 365 suite] Users may not receive results when performing searches in SharePoint Online.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MO1297751</guid>
-      <pubDate>Fri, 01 May 2026 17:31:58 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft OneDrive] Users may not be able to load the search bar in Microsoft OneDrive</title>
@@ -68,15 +59,6 @@
       <category>Microsoft 365 Copilot Chat</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CW1300750</guid>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] We're looking into a potential problem impacting Microsoft 365 Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1300681</link>
-      <description>[Microsoft Copilot (Microsoft 365)] We're checking for potential impact to your users.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">CP1300681</guid>
       <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -151,6 +133,15 @@ The issue initially began with impact to a subset of custom</description>
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1286586</guid>
       <pubDate>Tue, 21 Apr 2026 02:25:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Some users may not receive results when performing searches in SharePoint Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1297751</link>
+      <description>[Microsoft 365 suite] Users may not receive results when performing searches in SharePoint Online.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1297751</guid>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may experience issues accessing or using Microsoft Copilot (Microsoft 365)</title>
@@ -457,6 +448,15 @@ The issue initially began with impact to a subset of custom</description>
       <category>serviceRestored</category>
       <guid isPermaLink="false">MV1269743</guid>
       <pubDate>Thu, 02 Apr 2026 02:37:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users may be experiencing high latency when performing searches in Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1297752</link>
+      <description>[Exchange Online] Users may have experienced high latency when performing searches in Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">EX1297752</guid>
+      <pubDate>Wed, 01 Apr 2026 07:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-05T17:46:05.038511+00:00",
+  "generated_at": "2026-05-05T19:50:56.576187+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -9,7 +9,7 @@
       "total_incidents": 20,
       "active_incidents": 1,
       "avg_duration_minutes": 3432,
-      "last_incident": "2026-05-01T17:31:58.353000+00:00",
+      "last_incident": "2026-04-20T00:00:00+00:00",
       "classifications": {
         "incident": 13,
         "advisory": 7
@@ -32,13 +32,26 @@
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 18,
+      "total_incidents": 17,
       "active_incidents": 0,
-      "avg_duration_minutes": 3071,
-      "last_incident": "2026-04-29T00:00:00+00:00",
+      "avg_duration_minutes": 2760,
+      "last_incident": "2026-04-28T00:00:00+00:00",
       "classifications": {
-        "incident": 10,
-        "advisory": 8
+        "advisory": 8,
+        "incident": 9
+      }
+    },
+    {
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
+      "total_incidents": 8,
+      "active_incidents": 0,
+      "avg_duration_minutes": 8684,
+      "last_incident": "2026-05-03T08:52:00+00:00",
+      "classifications": {
+        "incident": 1,
+        "advisory": 7
       }
     },
     {
@@ -51,19 +64,6 @@
       "last_incident": "2026-04-30T07:30:00+00:00",
       "classifications": {
         "incident": 2,
-        "advisory": 6
-      }
-    },
-    {
-      "service": "Microsoft Defender XDR",
-      "short_name": "Defender",
-      "icon": "🛡️",
-      "total_incidents": 7,
-      "active_incidents": 0,
-      "avg_duration_minutes": 9357,
-      "last_incident": "2026-05-03T08:52:00+00:00",
-      "classifications": {
-        "incident": 1,
         "advisory": 6
       }
     },
@@ -184,8 +184,8 @@
   "monthly": [
     {
       "month": "2026-05",
-      "incident_count": 3,
-      "services_affected": 3
+      "incident_count": 2,
+      "services_affected": 2
     },
     {
       "month": "2026-04",
@@ -199,8 +199,8 @@
     },
     {
       "month": "2026-02",
-      "incident_count": 8,
-      "services_affected": 6
+      "incident_count": 9,
+      "services_affected": 7
     }
   ]
 }
