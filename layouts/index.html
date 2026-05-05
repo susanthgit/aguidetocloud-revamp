@@ -131,9 +131,13 @@
   </section>
 
   {{/* ── NEWSLETTER ── */}}
-  <section class="zh-newsletter">
+  {{/* Newsletter URL + copy come from data/planets.toml [cosmos] block.
+       When switching platform (Beehiiv → Buttondown / etc), update the
+       manifest in this repo + the 4 sibling repos in the same commit. */}}
+  {{ $cosmos := (index hugo.Data "planets").cosmos }}
+  <section class="zh-newsletter" data-newsletter-url="{{ $cosmos.newsletter_url }}">
     <h2 class="zh-section-title">Stay in the loop</h2>
-    <p class="zh-newsletter-desc">Cloud &amp; AI insights, every Sunday — in 2 minutes. Free.</p>
+    <p class="zh-newsletter-desc">{{ $cosmos.newsletter_pitch }}</p>
     <form class="zh-newsletter-form" id="zh-newsletter-form" aria-label="Newsletter signup">
       <input type="email" id="zh-newsletter-email" placeholder="your@email.com" required autocomplete="email" aria-label="Email address" class="zh-newsletter-input">
       <button type="submit" class="zh-newsletter-btn">Subscribe</button>
@@ -180,15 +184,20 @@
 
 <script>
 (function() {
+  var section = document.querySelector('.zh-newsletter');
   var form = document.getElementById('zh-newsletter-form');
-  if (!form) return;
+  if (!form || !section) return;
+  // Newsletter URL is rendered from data/planets.toml [cosmos] block
+  // and stored on the section's data-newsletter-url attribute. Single source.
+  var newsletterUrl = section.dataset.newsletterUrl || 'https://guided-weekly.beehiiv.com/subscribe';
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     var email = document.getElementById('zh-newsletter-email').value.trim();
     if (!email) return;
     var btn = form.querySelector('button');
     if (btn) { btn.disabled = true; btn.textContent = 'Subscribing...'; }
-    window.open('https://guided-weekly.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank', 'width=500,height=600');
+    var separator = newsletterUrl.indexOf('?') >= 0 ? '&' : '?';
+    window.open(newsletterUrl + separator + 'email=' + encodeURIComponent(email), '_blank', 'width=500,height=600');
     setTimeout(function() {
       form.hidden = true;
       document.getElementById('zh-newsletter-success').hidden = false;
