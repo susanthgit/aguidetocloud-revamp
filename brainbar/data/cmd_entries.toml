@@ -710,6 +710,466 @@ aliases = ["microsoft-sentinel"]
 old_names = ["Azure Sentinel"]
 synonyms = ["siem", "soar", "security monitoring", "log aggregation security", "threat hunting"]
 
+# ── 31. Microsoft Entra ID — the identity umbrella ───────────────────────
+[[entries]]
+slug = "entra-id"
+name = "Microsoft Entra ID"
+kind = "product"
+domain = "identity"
+plain_english = "Microsoft's cloud identity service — the directory of users, groups, and apps that powers sign-in across M365, Azure, and thousands of SaaS apps. The free tier handles cloud identity; P1 adds Conditional Access, P2 adds risk-based policies and PIM."
+official = "A cloud-based identity and access management service that helps employees access external resources, such as Microsoft 365, the Azure portal, and SaaS applications, as well as internal resources like apps on a corporate intranet."
+plans = ["Free tier (included with any M365 / Azure subscription)", "P1 — Conditional Access, group-based licensing (M365 E3, F3, Business Premium)", "P2 — risk-based CA, PIM, Identity Protection, Access Reviews (M365 E5)"]
+portal_url = "https://entra.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/entra/fundamentals/whatis"
+related_tools = ["licence-picker"]
+related_certs = ["sc-300", "ms-100"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = []
+aliases = ["entra", "microsoft-entra", "microsoft-entra-id"]
+old_names = ["Azure Active Directory", "Azure AD", "AAD"]
+synonyms = ["identity provider", "idp", "directory service", "user directory"]
+
+# ── 32. Microsoft Azure — the cloud platform ─────────────────────────────
+[[entries]]
+slug = "azure"
+name = "Microsoft Azure"
+kind = "product"
+domain = "dev"
+plain_english = "Microsoft's public cloud platform — virtual machines, storage, databases, networking, AI, and 200+ other services. Pay-as-you-go pricing. The infrastructure layer beneath Microsoft 365 and Microsoft's own AI products."
+official = "A cloud computing platform and online portal that allows you to access and manage cloud services and resources provided by Microsoft. Includes IaaS, PaaS, and SaaS offerings."
+plans = ["Pay-as-you-go (consumption-based)", "Reserved instances and savings plans for committed workloads", "Free tier — popular services with limits, plus a $200 credit for new accounts"]
+portal_url = "https://portal.azure.com/"
+learn_url = "https://learn.microsoft.com/en-us/azure/"
+related_tools = []
+related_certs = ["az-900", "az-104", "az-305"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = []
+aliases = ["microsoft-azure", "azure-cloud"]
+old_names = ["Windows Azure"]
+synonyms = ["microsoft cloud", "azure platform"]
+
+# ── 33. Microsoft 365 — the suite ────────────────────────────────────────
+[[entries]]
+slug = "microsoft-365"
+name = "Microsoft 365"
+kind = "product"
+domain = "productivity"
+plain_english = "Microsoft's productivity suite — Office apps (Word, Excel, PowerPoint, Outlook, Teams) bundled with cloud services (Exchange, SharePoint, OneDrive), security (Defender, Entra ID, Intune), and Windows. Sold per-user/month in tiers (E3, E5, F3, Business Premium)."
+official = "A cloud-based subscription service that brings together Office desktop and web apps, cloud-based productivity services, intelligent security, and device management for businesses and individuals."
+plans = ["Enterprise: E3, E5, F3 (per-user/month)", "Business: Basic, Standard, Premium (≤300 users)", "Education: A1, A3, A5", "Personal/Family for consumers"]
+portal_url = "https://admin.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/"
+related_tools = ["licence-picker", "copilot-feature-matrix"]
+related_certs = ["ms-900", "ms-100"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = ["M365"]
+aliases = ["m365", "ms365"]
+old_names = []
+synonyms = ["microsoft 365 suite", "office suite"]
+
+# ── 34. Office 365 — the productivity sub-bundle ─────────────────────────
+[[entries]]
+slug = "office-365"
+name = "Office 365"
+kind = "product"
+domain = "productivity"
+plain_english = "The productivity-only sub-bundle inside Microsoft 365 — Office apps + Exchange + SharePoint + Teams, but WITHOUT Windows or EMS. Still sold as Office 365 E1/E3/E5 SKUs. People often say 'Office 365' when they mean 'Microsoft 365' — they're related but not the same."
+official = "A subscription service that includes the Office productivity applications and other cloud-based services. Sold as Office 365 E1, E3, and E5 SKUs alongside Microsoft 365 plans."
+plans = ["E1 — web/mobile Office + cloud services", "E3 — adds desktop Office, basic compliance", "E5 — adds advanced security/compliance, Power BI Pro, Audio Conferencing"]
+portal_url = "https://admin.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/microsoft-365/enterprise/o365-plan-options"
+related_tools = ["licence-picker"]
+related_certs = ["ms-900"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = []
+aliases = ["o365", "office365"]
+old_names = ["BPOS (Business Productivity Online Suite)"]
+synonyms = ["productivity suite"]
+
+# ── 35. Microsoft Teams ─────────────────────────────────────────────────
+[[entries]]
+slug = "teams"
+name = "Microsoft Teams"
+kind = "product"
+domain = "productivity"
+plain_english = "The chat, meetings, calling, and collaboration app — replaces Skype for Business. Sits at the centre of M365 for messaging, video calls, file sharing, and external guest collaboration. Has its own apps platform and is the front-end for many Copilot interactions."
+official = "A persistent chat-based collaboration platform complete with document sharing, online meetings, calling, and many more useful features for business communications."
+plans = ["Included in: M365 E3/E5, Business Standard/Premium, F3, Office 365 E1/E3/E5", "Teams Phone — separate add-on for calling (PSTN)", "Teams Essentials — standalone for SMB without M365"]
+portal_url = "https://admin.teams.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/microsoftteams/teams-overview"
+related_tools = []
+related_certs = ["ms-700", "ms-100"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = []
+aliases = ["microsoft-teams", "ms-teams"]
+old_names = ["Skype for Business"]
+synonyms = ["video conferencing", "ms collaboration"]
+
+# ── 36. SharePoint Online ────────────────────────────────────────────────
+[[entries]]
+slug = "sharepoint"
+name = "SharePoint Online"
+kind = "product"
+domain = "productivity"
+plain_english = "Microsoft's intranet, document management, and team-sites platform — where organisations store internal pages, files, lists, and workflows. The storage backbone for OneDrive (your files) and Teams (team files). On-prem versions also exist (2013/2016/2019 SE) but most orgs are cloud-first."
+official = "A web-based collaborative platform that integrates with Microsoft 365 and is primarily used as a document management and storage system. Powers intranet sites, team sites, and provides the foundation for Microsoft 365 collaboration."
+plans = ["Included in: M365 E3/E5, Business Basic/Standard/Premium, F3", "SharePoint Plan 1/Plan 2 — standalone tiers", "SharePoint Server 2019 / SE — on-prem (separately licensed)"]
+portal_url = "https://admin.microsoft.com/sharepoint"
+learn_url = "https://learn.microsoft.com/en-us/sharepoint/sharepoint-online"
+related_tools = []
+related_certs = ["ms-203", "ms-100"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = ["SPO"]
+aliases = ["sharepoint-online"]
+old_names = ["SharePoint Server"]
+synonyms = ["intranet", "team sites", "document libraries"]
+
+# ── 37. Exchange Online ──────────────────────────────────────────────────
+[[entries]]
+slug = "exchange-online"
+name = "Exchange Online"
+kind = "product"
+domain = "productivity"
+plain_english = "Microsoft's cloud-hosted email and calendar service. Every M365 user with a mailbox is on Exchange Online. EOP (Exchange Online Protection) sits in front of every mailbox by default; MDO Plan 1/2 adds advanced threat protection."
+official = "A hosted messaging solution that delivers email, calendar, contacts, and tasks accessed from desktops, laptops, web, and mobile devices. Provides enterprise-grade email management as part of Microsoft 365."
+plans = ["Plan 1 — 50GB mailbox, included in M365 E3/F3, Business Premium", "Plan 2 — 100GB mailbox + archive + DLP, included in M365 E5", "Kiosk plan — 2GB, included in M365 F3"]
+portal_url = "https://admin.exchange.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/exchange/exchange-online"
+related_tools = []
+related_certs = ["ms-203", "ms-100"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = ["EXO"]
+aliases = ["online-exchange"]
+old_names = ["BPOS (legacy hosted Exchange)"]
+synonyms = ["company email", "hosted email", "cloud mailbox"]
+
+# ── 38. OneDrive for Business ────────────────────────────────────────────
+[[entries]]
+slug = "onedrive"
+name = "OneDrive for Business"
+kind = "product"
+domain = "productivity"
+plain_english = "Personal cloud file storage for each Microsoft 365 user — sync files between devices, share with colleagues, and roll back to earlier versions. Backed by SharePoint under the hood (each user gets a hidden personal SharePoint site)."
+official = "A cloud-based file storage and sharing service that lets users store and share files securely from any device. Part of the Microsoft 365 productivity suite."
+plans = ["Plan 1 — 1TB, included in M365 Business Basic/Standard/Premium, E3", "Plan 2 — 5TB+ scaling, included in E5", "Kiosk — 2GB, included in M365 F3"]
+portal_url = "https://admin.microsoft.com/onedrive"
+learn_url = "https://learn.microsoft.com/en-us/onedrive/plan-onedrive-enterprise"
+related_tools = []
+related_certs = ["ms-100"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = ["ODFB"]
+aliases = ["one-drive", "onedrive-for-business"]
+old_names = ["SkyDrive Pro", "SkyDrive"]
+synonyms = ["file sync", "cloud storage", "personal drive"]
+
+# ── 39. BitLocker — Windows disk encryption ──────────────────────────────
+[[entries]]
+slug = "bitlocker"
+name = "BitLocker"
+kind = "feature"
+domain = "endpoint"
+plain_english = "Windows' built-in full-disk encryption. Protects data at rest if a laptop is lost or stolen. Free to use on Windows Pro/Enterprise/Education. Manage and recover keys via Intune (cloud) or Active Directory (on-prem)."
+official = "A data protection feature that integrates with the operating system and addresses the threats of data theft or exposure from lost, stolen, or inappropriately decommissioned computers. Provides volume encryption and integrity checking via TPM."
+plans = ["Built into Windows Pro/Enterprise/Education editions (no extra licence)", "Recovery key management requires Intune (with Entra ID) or Active Directory + MBAM/SCCM"]
+portal_url = "https://intune.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/"
+related_tools = []
+related_certs = ["md-102"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = []
+aliases = ["windows-bitlocker"]
+old_names = []
+synonyms = ["disk encryption", "drive encryption", "full disk encryption"]
+
+# ── 40. Windows Hello for Business ───────────────────────────────────────
+[[entries]]
+slug = "windows-hello-for-business"
+name = "Windows Hello for Business"
+kind = "feature"
+domain = "identity"
+plain_english = "Passwordless sign-in for Windows devices — uses a PIN, fingerprint, face, or hardware key tied to the device's TPM. Different from consumer Windows Hello: WHfB is enterprise-managed, certificate-backed, and integrates with Entra ID and Active Directory."
+official = "Windows Hello for Business replaces passwords with strong two-factor authentication on PCs and mobile devices. Provides enterprise-grade biometric and PIN authentication tied to the device's TPM."
+plans = ["Built into Windows Pro/Enterprise/Education (no extra licence)", "Cloud trust deployment requires Entra ID; hybrid trust requires AD + Entra Connect"]
+portal_url = "https://intune.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/"
+related_tools = []
+related_certs = ["sc-300", "md-102"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = ["WHfB"]
+aliases = ["windows-hello", "whfb"]
+old_names = ["Microsoft Passport"]
+synonyms = ["passwordless sign-in", "biometric sign-in", "pin sign-in"]
+
+# ── 41. Microsoft Defender for Business (SMB) ────────────────────────────
+[[entries]]
+slug = "defender-for-business"
+name = "Microsoft Defender for Business"
+kind = "product"
+domain = "security"
+plain_english = "MDE's little sibling — endpoint detection and response built specifically for businesses with up to 300 employees. Same Defender engine, simpler admin experience, lower price point. Included in Microsoft 365 Business Premium; standalone for SMB without BP."
+official = "An enterprise-grade device security solution for small and medium-sized businesses (up to 300 employees). Provides next-generation antivirus, endpoint detection and response, threat and vulnerability management, and cyberthreat intelligence."
+plans = ["Included in M365 Business Premium", "Standalone — USD $3/user/month (up to 300 users)", "Defender for Business servers — separate per-server add-on"]
+portal_url = "https://security.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/defender-business/"
+related_tools = ["licence-picker"]
+related_certs = ["sc-200", "ms-900"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = ["MDB"]
+aliases = ["defender-business", "microsoft-defender-for-business"]
+old_names = []
+synonyms = ["smb endpoint security", "small business antivirus"]
+
+# ── 42. Microsoft Defender for Servers ───────────────────────────────────
+[[entries]]
+slug = "defender-for-servers"
+name = "Microsoft Defender for Servers"
+kind = "product"
+domain = "security"
+plain_english = "Server protection for Azure VMs, on-prem servers, and AWS/GCP servers — sits inside Microsoft Defender for Cloud. Plan 1 covers basic threat detection; Plan 2 adds full MDE capabilities, vulnerability assessment, and just-in-time access."
+official = "A plan within Microsoft Defender for Cloud that adds threat detection and advanced defenses for Windows and Linux machines that run in Azure, AWS, GCP, and on-premises environments."
+plans = ["Plan 1 — basic threat detection (foundational EDR)", "Plan 2 — full MDE Plan 2 + vulnerability assessment + JIT VM access + file integrity monitoring", "Pricing per server/month, billed via Azure"]
+portal_url = "https://portal.azure.com/#view/Microsoft_Azure_Security/SecurityMenuBlade"
+learn_url = "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-servers-introduction"
+related_tools = []
+related_certs = ["sc-200", "az-500"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = []
+aliases = ["defender-servers", "microsoft-defender-for-servers"]
+old_names = ["Azure Defender for Servers"]
+synonyms = ["server protection", "vm threat protection"]
+
+# ── 43. Azure Virtual Desktop ────────────────────────────────────────────
+[[entries]]
+slug = "azure-virtual-desktop"
+name = "Azure Virtual Desktop"
+kind = "product"
+domain = "endpoint"
+plain_english = "Microsoft's flexible desktop-as-a-service on Azure — full Windows desktops or apps streamed from the cloud. You manage the host pools, sizing, and image. Different from Windows 365 (which is a fixed Cloud PC per user)."
+official = "A desktop and app virtualization service that runs on the cloud. Provides a Windows experience for users with Windows 11, Windows 10, Windows Server, and Linux VMs delivered from Azure."
+plans = ["Per-user access licence included in: M365 E3/E5/F3, Business Premium", "Compute, storage, and networking billed via Azure consumption", "Windows Enterprise multi-session OS — exclusive to AVD"]
+portal_url = "https://portal.azure.com/"
+learn_url = "https://learn.microsoft.com/en-us/azure/virtual-desktop/"
+related_tools = []
+related_certs = ["az-140", "md-102"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = ["AVD"]
+aliases = ["avd"]
+old_names = ["Windows Virtual Desktop", "WVD"]
+synonyms = ["daas", "desktop as a service", "virtual desktop infrastructure"]
+
+# ── 44. Windows 365 (Cloud PC) ───────────────────────────────────────────
+[[entries]]
+slug = "windows-365"
+name = "Windows 365"
+kind = "product"
+domain = "endpoint"
+plain_english = "Microsoft's fixed-cost Cloud PC — a personal Windows 11 desktop in the cloud, per-user/month price, managed via Intune. Simpler than AVD (no Azure infrastructure to size) but less flexible. Comes in Business and Enterprise tiers."
+official = "A cloud-based service that automatically creates a new type of Windows virtual machine (Cloud PC) for end users. Provides each user a personalized Windows desktop, apps, settings, and content from the Microsoft cloud across any device."
+plans = ["Windows 365 Business — per-user/month, simpler admin, ≤300 users", "Windows 365 Enterprise — per-user/month, Intune-managed, scales to enterprise", "Frontline (shared) — for shift-worker scenarios"]
+portal_url = "https://windows365.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/windows-365/"
+related_tools = []
+related_certs = ["md-102"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = ["W365"]
+aliases = ["w365", "win365", "cloud-pc"]
+old_names = []
+synonyms = ["personal cloud pc", "managed windows desktop"]
+
+# ── 45. Microsoft Graph — the unified API ────────────────────────────────
+[[entries]]
+slug = "microsoft-graph"
+name = "Microsoft Graph"
+kind = "product"
+domain = "dev"
+plain_english = "The single API gateway to all Microsoft 365 data — users, groups, emails, files, calendar, Teams, devices, security signals. Apps, scripts, and Copilot all use it. Authenticate with Entra ID, scope permissions, query via REST or SDK."
+official = "The gateway to data and intelligence in Microsoft 365, Windows, and Enterprise Mobility + Security. Provides a unified programmability model that you can use to access vast amounts of data."
+plans = ["No licence required — included with any M365 / Azure tenant", "Some endpoints require specific licences (e.g. Defender, Purview)", "Permissions: delegated (user) or application (service)"]
+portal_url = "https://developer.microsoft.com/en-us/graph/graph-explorer"
+learn_url = "https://learn.microsoft.com/en-us/graph/overview"
+related_tools = []
+related_certs = ["ms-100", "ai-102"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = []
+aliases = ["graph-api", "ms-graph"]
+old_names = ["Office 365 Unified API"]
+synonyms = ["m365 api", "microsoft 365 api"]
+
+# ── 46. Microsoft Viva — employee experience ─────────────────────────────
+[[entries]]
+slug = "viva"
+name = "Microsoft Viva"
+kind = "product"
+domain = "productivity"
+plain_english = "Microsoft's employee-experience suite — a collection of apps inside Teams covering wellbeing (Insights), communications (Connections, Engage), learning (Learning), goals (Goals), and discovery (Topics, Pulse). Most modules need Viva Suite or specific add-ons."
+official = "An integrated employee experience platform that brings together communications, knowledge, learning, resources, and insights, embedded in the apps and services people use every day, like Microsoft Teams."
+plans = ["Viva Suite — full bundle (Insights, Goals, Pulse, Glint, Learning, Topics, etc.)", "Individual modules — Insights, Connections, Engage available standalone or via specific bundles", "Some entry-level Viva features included in M365 E3/E5"]
+portal_url = "https://admin.microsoft.com/"
+learn_url = "https://learn.microsoft.com/en-us/viva/microsoft-viva-overview"
+related_tools = []
+related_certs = ["ms-100"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = []
+aliases = ["microsoft-viva"]
+old_names = []
+synonyms = ["employee experience", "ee platform", "people platform"]
+
+# ── 47. KQL — Kusto Query Language ───────────────────────────────────────
+[[entries]]
+slug = "kql"
+name = "Kusto Query Language"
+kind = "acronym-only"
+domain = "data"
+plain_english = "The query language behind Azure Data Explorer, Sentinel, Defender XDR Advanced Hunting, Log Analytics, and Application Insights. SQL-ish but log-focused — pipe operators, time-series functions, and built-in security/operations helpers."
+official = "A read-only query language for processing data and returning results. Designed to be easy to read and author, especially for users with experience with SQL or other query languages."
+plans = ["Free to learn and use — included anywhere KQL is exposed (Azure Data Explorer, Sentinel, Log Analytics, Defender, App Insights)"]
+portal_url = "https://dataexplorer.azure.com/"
+learn_url = "https://learn.microsoft.com/en-us/kusto/query/"
+related_tools = []
+related_certs = ["sc-200", "az-500"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = ["KQL"]
+aliases = ["kusto-query-language", "kusto"]
+old_names = []
+synonyms = ["log query language", "azure query language"]
+
+# ── 48. Microsoft Secure Score ───────────────────────────────────────────
+[[entries]]
+slug = "secure-score"
+name = "Microsoft Secure Score"
+kind = "feature"
+domain = "security"
+plain_english = "A measurement of your tenant's security posture across Microsoft 365 and Azure — the more recommended controls you've configured, the higher your score. Lives in the Defender portal. Shows points-by-action and ranks against orgs of similar size."
+official = "A measurement of an organization's security posture, with a higher number indicating more improvement actions taken. Shows recommendations for Identity, Devices, Apps, Data, and Infrastructure."
+plans = ["Free — included with any M365 / Defender / Entra subscription", "Coverage depends on which Defender / Purview / Entra products are licensed in the tenant"]
+portal_url = "https://security.microsoft.com/securescore"
+learn_url = "https://learn.microsoft.com/en-us/defender-xdr/microsoft-secure-score"
+related_tools = []
+related_certs = ["sc-200", "sc-900"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = []
+aliases = ["microsoft-secure-score", "m365-secure-score"]
+old_names = ["Office 365 Secure Score"]
+synonyms = ["security posture score", "security recommendations"]
+
+# ── 49. Azure OpenAI Service ─────────────────────────────────────────────
+[[entries]]
+slug = "azure-openai"
+name = "Azure OpenAI Service"
+kind = "product"
+domain = "ai"
+plain_english = "OpenAI's models (GPT-4, GPT-5, o-series, embeddings, DALL·E, Whisper) running inside Azure with enterprise networking, data isolation, RBAC, and regional residency. Separate from M365 Copilot — this is for building your own AI apps."
+official = "Provides REST API access to OpenAI's powerful language models, including the GPT-4o family, GPT-5, the o-series, and embedding models. With Azure OpenAI, customers get the security capabilities of Microsoft Azure while running the same models as OpenAI."
+plans = ["Pay-as-you-go per 1K tokens (input + output, varies by model)", "Provisioned throughput units (PTUs) for predictable latency at higher cost", "Free tier — limited evaluation quota"]
+portal_url = "https://oai.azure.com/"
+learn_url = "https://learn.microsoft.com/en-us/azure/ai-services/openai/overview"
+related_tools = ["copilot-frontier-map"]
+related_certs = ["ai-102"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = ["AOAI"]
+aliases = ["azure-openai-service", "aoai"]
+old_names = []
+synonyms = ["openai on azure", "gpt on azure", "enterprise openai"]
+
+# ── 50. EMS — Enterprise Mobility + Security ─────────────────────────────
+[[entries]]
+slug = "ems"
+name = "Enterprise Mobility + Security"
+kind = "license"
+domain = "licensing"
+plain_english = "Microsoft's standalone identity-and-device-management bundle — Entra ID, Intune, Azure Information Protection, MDI. Sold separately for orgs that don't want full M365. EMS E3 and E5 align with M365 E3/E5 security tiers."
+official = "A comprehensive cloud solution to address consumerization of IT, BYOD, and SaaS challenges. Combines identity management, device management, and information protection. Includes Microsoft Entra ID, Microsoft Intune, Azure Information Protection, and Microsoft Defender for Identity."
+plans = ["EMS E3 — Entra ID P1, Intune, AIP P1, MDI", "EMS E5 — adds Entra ID P2, MDCA, AIP P2"]
+portal_url = ""
+learn_url = "https://www.microsoft.com/en-us/security/business/microsoft-enterprise-mobility-security"
+related_tools = ["licence-picker"]
+related_certs = ["ms-900"]
+related_blogs = []
+status = "ga"
+watch = ""
+last_verified = "2026-05-05"
+[entries.terms]
+abbreviations = ["EMS"]
+aliases = ["enterprise-mobility-security", "ems-bundle"]
+old_names = []
+synonyms = ["security and identity bundle", "ems e3", "ems e5"]
+
 # ═══════════════════════════════════════════════════════════════════════════
 # DISAMBIGUATION ENTRIES — for ambiguous short terms used by multiple Microsoft
 # products. These render via layouts/_default/disambiguation.html (the chooser).

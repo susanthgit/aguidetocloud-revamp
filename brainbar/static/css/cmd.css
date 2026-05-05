@@ -1431,3 +1431,50 @@ button:focus-visible {
     display: none;
   }
 }
+
+/* ── v1 tagline + feedback link styles ───────────────────────────────── */
+.bb-boot-line.bb-boot-missing {
+  /* Subtle highlight — this is the "tell us what's missing" call to action */
+  position: relative;
+  padding: var(--s-1) 0;
+  border-left: 2px solid var(--accent-soft);
+  padding-left: var(--s-2);
+  margin-left: -10px;
+}
+.bb-boot-line.bb-boot-missing .bb-boot-key {
+  color: var(--accent);
+}
+.bb-boot-feedback {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--accent-soft);
+}
+.bb-boot-feedback:hover {
+  color: var(--accent-bright);
+  text-decoration-color: var(--accent);
+}
+.bb-empty-divider {
+  color: var(--text-dim);
+  margin: 0 var(--s-1);
+}
+.bb-empty-feedback {
+  color: var(--text-muted);
+  font-size: var(--t-sm);
+}
+.bb-empty-feedback:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .bb-boot-line.bb-boot-missing {
+    /* Stack nicely on mobile — message wraps under the key */
+    margin-left: -8px;
+    padding-left: var(--s-2);
+  }
+  .bb-empty-feedback,
+  .bb-empty-divider {
+    display: inline-block;
+    margin-top: var(--s-1);
+  }
+}

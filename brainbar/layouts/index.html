@@ -26,6 +26,8 @@
   <p id="bb-empty" class="bb-empty" hidden>
     <span class="bb-empty-prefix">// no entry yet for </span><code id="bb-empty-term"></code>
     <a id="bb-empty-suggest" class="bb-empty-suggest" href="#" target="_blank" rel="noopener">suggest it →</a>
+    <span class="bb-empty-divider"> · </span>
+    <a class="bb-empty-feedback" href="https://www.aguidetocloud.com/feedback/" target="_blank" rel="noopener">share other feedback →</a>
   </p>
 
   {{/* ── Recent searches (localStorage) ─────────────────────────────────── */}}
@@ -33,8 +35,10 @@
 
   {{/* ── Boot block (default state — hidden once user types) ─────────────── */}}
   <div class="bb-boot" id="bb-boot">
-    <div class="bb-boot-line"><span class="bb-boot-key">version</span><span class="bb-boot-val">brainbar v0.2 · synonyms + did-you-mean</span></div>
+    {{ $allEntries := (index hugo.Data "cmd_entries").entries }}
+    <div class="bb-boot-line"><span class="bb-boot-key">version</span><span class="bb-boot-val">brainbar v1 · {{ len $allEntries }} entries and growing</span></div>
     <div class="bb-boot-line"><span class="bb-boot-key">type</span><span class="bb-boot-val">a microsoft acronym, license, portal, or product</span></div>
+    <div class="bb-boot-line bb-boot-missing"><span class="bb-boot-key">missing?</span><span class="bb-boot-val">we're building something ambitious — tell us what to add → <a href="https://www.aguidetocloud.com/feedback/" target="_blank" rel="noopener" class="bb-boot-feedback">/feedback/</a></span></div>
     <div class="bb-boot-line bb-boot-hotkey"><span class="bb-boot-key">hotkey</span><span class="bb-boot-val"><span class="bb-cmd">/</span> from anywhere · <span class="bb-cmd">enter</span> to open · <span class="bb-cmd">↑↓</span> to nav · <span class="bb-cmd">esc</span> to clear · <span class="bb-cmd">?</span> for help</span></div>
 
     <div class="bb-boot-divider"></div>
@@ -42,7 +46,6 @@
     {{/* Sample 5 entries from the catalogue — picked at build time so the
          homepage feels alive and shows the breadth of what's covered.
          Filters out disambiguation entries (less interesting as examples). */}}
-    {{ $allEntries := (index hugo.Data "cmd_entries").entries }}
     {{ $samplePool := slice }}
     {{ range $allEntries }}
       {{ if ne .kind "disambiguation" }}
