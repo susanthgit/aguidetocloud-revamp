@@ -1723,3 +1723,183 @@ button:focus-visible {
   .bb-release-title { font-size: var(--t-md); }
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   /decode/ — errno mode (May 2026)
+   ═══════════════════════════════════════════════════════════════════════════
+   The terminal stays Brain Bar green. Red is used only as a SEVERITY GLYPH
+   (the way stderr is red in a real shell) — on the ERROR pill and on the
+   article's top accent strip. Page chrome, prompt, links: all stay green.
+   This honours the Cosmos rule "differentiate by feature, not chrome".
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Decode mode landing — slightly tighter hero copy */
+.bb-decode-hero .bb-hero-prompt { color: var(--status-err); }
+
+/* Article-wide red severity strip — single glyph, top of article */
+.bb-decode {
+  position: relative;
+  padding-top: var(--s-6);
+}
+.bb-decode::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--status-err);
+  border-radius: var(--r-sm) var(--r-sm) 0 0;
+}
+
+/* ERROR pill — the severity label */
+.bb-decode-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin: 0 0 var(--s-3);
+  padding: 2px var(--s-2);
+  border: 1px solid var(--status-err);
+  border-radius: var(--r-sm);
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--status-err);
+  background: transparent;
+}
+.bb-decode-pill .bb-decode-pill-label {
+  font-weight: 700;
+}
+.bb-decode-pill .bb-decode-pill-ns {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.bb-decode-pill .bb-decode-pill-ns::before {
+  content: "· ";
+  color: var(--text-dim);
+  margin-right: 2px;
+}
+
+/* Decode entry title — slightly relaxed (it's a sentence, not a slug) */
+.bb-decode-title {
+  font-size: var(--t-display);
+  line-height: 1.25;
+  font-weight: 600;
+  color: var(--text);
+  margin: var(--s-2) 0 var(--s-3);
+}
+
+/* Cause list — bullet with subtle red prompt */
+.bb-decode-causes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.bb-decode-causes li {
+  position: relative;
+  padding: var(--s-2) 0 var(--s-2) var(--s-6);
+  border-bottom: 1px dashed var(--border);
+}
+.bb-decode-causes li:last-child { border-bottom: none; }
+.bb-decode-causes li::before {
+  content: "!";
+  position: absolute;
+  left: var(--s-2);
+  top: var(--s-2);
+  color: var(--status-err);
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+/* Fix path — numbered ordered list, terminal-style step counter */
+.bb-decode-fix {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: bb-step;
+}
+.bb-decode-fix li {
+  position: relative;
+  padding: var(--s-3) 0 var(--s-3) var(--s-8);
+  border-bottom: 1px solid var(--border);
+  counter-increment: bb-step;
+}
+.bb-decode-fix li:last-child { border-bottom: none; }
+.bb-decode-fix li::before {
+  content: "$ " counter(bb-step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: var(--s-3);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--t-sm);
+  letter-spacing: 0.04em;
+}
+
+/* Seen-in — small inline tag list */
+.bb-decode-seen {
+  font-family: var(--font-mono);
+  font-size: var(--t-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+.bb-decode-seen-item {
+  color: var(--text);
+}
+.bb-decode-seen-sep {
+  color: var(--text-dim);
+}
+
+/* Related — list of cross-references with kind marker */
+.bb-decode-related {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.bb-decode-related li {
+  display: inline-flex;
+}
+.bb-decode-related a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-1) var(--s-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  font-family: var(--font-mono);
+  font-size: var(--t-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: border-color var(--t-fast), color var(--t-fast);
+}
+.bb-decode-related a:hover {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}
+.bb-decode-related code {
+  font-family: var(--font-mono);
+  color: inherit;
+}
+.bb-decode-related-marker {
+  font-size: var(--t-xs);
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Result row — code highlighted in red severity colour for decode searches */
+.bb-result-slug-decode {
+  color: var(--status-err) !important;
+}
+
+/* Mobile — keep the severity pill readable */
+@media (max-width: 720px) {
+  .bb-decode-title { font-size: var(--t-h1); }
+  .bb-decode-fix li { padding-left: var(--s-6); }
+  .bb-decode-fix li::before { font-size: var(--t-xs); }
+}
+

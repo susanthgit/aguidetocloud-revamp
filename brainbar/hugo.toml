@@ -37,22 +37,29 @@ disableKinds = ["taxonomy", "term", "RSS"]
   tagline = "stop googling microsoft. just type."
   author = "Susanth Sutheesh"
   parent_site = "https://www.aguidetocloud.com/"
-  cache_version = "2026050506"
+  cache_version = "2026050507"
 
 [outputs]
   home = ["HTML", "CMD_INDEX", "REDIRECTS"]
   page = ["HTML"]
-  section = ["HTML"]
+  section = ["HTML", "DECODE_INDEX"]
 
 # ── Custom output formats ─────────────────────────────────────────────────
-# CMD_INDEX → public/cmd-index.json — search index for the launcher (Phase 3)
-#             AND vendored into the Astro Guided organ at build time (Phase 6).
-# REDIRECTS → public/_redirects — Cloudflare Pages reads this and serves
-#             HTTP 301s for every alias and slugified old-name.
+# CMD_INDEX    → public/cmd-index.json — jargon search index (home, Phase 3)
+#                AND vendored into the Astro Guided organ at build time.
+# DECODE_INDEX → public/decode/decode-index.json — errno search index
+#                (/decode/ section, May 2026 errno mode)
+# REDIRECTS    → public/_redirects — Cloudflare Pages reads this and serves
+#                HTTP 301s for every alias and slugified old-name.
 [outputFormats]
   [outputFormats.CMD_INDEX]
     mediaType = "application/json"
     baseName = "cmd-index"
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.DECODE_INDEX]
+    mediaType = "application/json"
+    baseName = "decode-index"
     isPlainText = true
     notAlternative = true
   [outputFormats.REDIRECTS]

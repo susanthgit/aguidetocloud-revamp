@@ -1,0 +1,281 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# BRAIN BAR — DECODE REGISTRY  (errno mode)
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Single source of truth for every Brain Bar /decode/ entry. The Hugo content
+# adapter at `content/decode/_content.gotmpl` generates one page per entry at
+# the canonical URL `cmd.aguidetocloud.com/decode/<slug>/`.
+#
+# WHY THIS LIVES IN A SEPARATE FILE FROM cmd_entries.toml:
+#   Per the parallel-session decision (cosmos-todo.md § P2, 5 May 2026):
+#   "Brain Bar is currently a synonym translator. Error codes are a sibling
+#   job. Mixing them into one search dilutes both." → /decode/ is a separate
+#   subsection with its own data + render path. Same planet, different surface.
+#
+# DESIGN RULES:
+#   1. `code` is the display form (preserves case, e.g. "AADSTS50105" or
+#      "0x80070005"). `slug` is the URL form (lowercase, hyphenated).
+#   2. `slug` MUST be globally unique across this file (validator enforces).
+#   3. `namespace` is one of: AADSTS · HRESULT · INTUNE · KB · GRAPH.
+#   4. `last_verified` MUST be within 365 days at deploy time.
+#   5. `related` may reference OTHER decode slugs OR brainbar entry slugs in
+#      cmd_entries.toml — the renderer detects which.
+#   6. NO spicy editorial voice on decode entries. Error codes earn their
+#      keep by being right, not opinionated. (Voice mismatch — see P2 doc.)
+#
+# WHEN ADDING A NEW ENTRY:
+#   1. Add the entry block here (validator runs on next build)
+#   2. Bump cache_version in hugo.toml so the new entry shows up in the index
+#   3. Run `cd brainbar && hugo` — the page is auto-generated at /decode/<slug>/
+#
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ── 1. AADSTS50105 — User not assigned to role ────────────────────────────
+[[entries]]
+code          = "AADSTS50105"
+slug          = "aadsts50105"
+namespace     = "AADSTS"
+short         = "User not assigned to the app or role"
+plain_english = "Sign-in worked, but this user account isn't assigned to the application (or its role). Microsoft Entra returns AADSTS50105 when an enterprise app has 'User assignment required' set to Yes and the signed-in user — or a group they're in — isn't on the Users and groups list for that app."
+likely_cause  = [
+  "Enterprise application has 'Assignment required' = Yes and the user (or their group) is not assigned",
+  "App role exists but the user is assigned to a different role than the one the app is requesting",
+  "Group-based assignment relies on a dynamic group rule that hasn't evaluated the user yet",
+  "Conditional Access App Filter excluded the user from the assigned scope",
+]
+fix = [
+  "Entra portal → Identity → Applications → Enterprise applications → <app> → Users and groups → Add user/group",
+  "If the app uses roles: assign the user to the specific role the app expects (check the app's documentation for which role to use)",
+  "If group-based: confirm the user is a member, and that any dynamic group rule has evaluated (Members tab shows the user)",
+  "Check Sign-in logs → Failure → AADSTS50105 to see the exact app and user that failed",
+]
+seen_in       = ["Entra ID interactive sign-in", "Enterprise application launch", "Microsoft Graph", "OAuth 2.0 / OpenID Connect token requests"]
+related       = ["aadsts65001", "entra-p1", "pim"]
+learn_url     = "https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes"
+last_verified = "2026-05-05"
+
+# ── 2. AADSTS65001 — Admin consent not granted ────────────────────────────
+[[entries]]
+code          = "AADSTS65001"
+slug          = "aadsts65001"
+namespace     = "AADSTS"
+short         = "User or admin has not consented to the application"
+plain_english = "The app is asking for permissions that nobody has consented to — usually because the app needs admin consent and only an admin can grant it on behalf of users. Until consent is granted, every sign-in to that app fails with AADSTS65001."
+likely_cause  = [
+  "App requests delegated permissions that require admin consent (e.g. Directory.Read.All, Group.ReadWrite.All)",
+  "Tenant has 'Users can consent to apps' set to No, so users can't self-consent even for low-risk scopes",
+  "App permissions (application-only) requested but never admin-consented",
+  "Consent was previously revoked from the Enterprise application's Permissions tab",
+]
+fix = [
+  "Open the consent URL with an admin account: https://login.microsoftonline.com/<tenant>/adminconsent?client_id=<app-id>",
+  "OR: Entra portal → Enterprise applications → <app> → Security → Permissions → Grant admin consent for <tenant>",
+  "If users should self-consent for low-risk scopes: Identity → Enterprise apps → Consent and permissions → User consent settings → 'Allow user consent for apps from verified publishers, for selected permissions'",
+  "Confirm the app registration's API permissions match what the app actually requests at runtime — mismatched scopes also surface as 65001",
+]
+seen_in       = ["Entra ID interactive sign-in", "Microsoft Graph", "Custom app first-run", "Power Platform connectors"]
+related       = ["aadsts50105", "entra-p1"]
+learn_url     = "https://learn.microsoft.com/en-us/entra/identity-platform/application-consent-experience"
+last_verified = "2026-05-05"
+
+# ── 3. AADSTS50158 — External security challenge required ─────────────────
+[[entries]]
+code          = "AADSTS50158"
+slug          = "aadsts50158"
+namespace     = "AADSTS"
+short         = "Conditional Access requires step-up auth that didn't happen"
+plain_english = "A Conditional Access policy is requiring something extra — multi-factor auth, a compliant device, a managed app, a known network — and the user's session hasn't satisfied it. The sign-in is interrupted, not denied: complete the challenge and try again."
+likely_cause  = [
+  "Conditional Access policy requires MFA but the user's session has no recent MFA claim",
+  "Policy requires a compliant or hybrid-joined device, and Intune hasn't reported the device as compliant yet",
+  "Policy requires an approved client app (e.g. Outlook Mobile) but the user is signing in via a browser",
+  "Policy requires a specific authentication strength (e.g. phishing-resistant) the user hasn't completed",
+]
+fix = [
+  "Have the user complete the prompted MFA / device check / approved-app sign-in and retry",
+  "Entra portal → Protection → Conditional Access → Sign-in logs → find the failure → expand 'Conditional Access' to see exactly which policy interrupted",
+  "If the device should be compliant: Intune → Devices → All devices → check Compliance state. Force a sync if needed.",
+  "If the failure is repeated: use the What If tool (Conditional Access → What If) to verify the policy fires only when intended",
+]
+seen_in       = ["Entra ID interactive sign-in", "Conditional Access policy evaluation", "Microsoft 365 sign-in"]
+related       = ["aadsts50105", "entra-p1", "pim"]
+learn_url     = "https://learn.microsoft.com/en-us/entra/identity/conditional-access/troubleshoot-conditional-access"
+last_verified = "2026-05-05"
+
+# ── 4. AADSTS50034 — User not found in directory ──────────────────────────
+[[entries]]
+code          = "AADSTS50034"
+slug          = "aadsts50034"
+namespace     = "AADSTS"
+short         = "User account doesn't exist in this directory"
+plain_english = "The username doesn't resolve to any account in the tenant the app is signing into. Almost always a wrong-tenant problem (B2B guest expected but missing, personal account hitting work tenant, deleted account, or typo)."
+likely_cause  = [
+  "User typed the wrong UPN or signed in to the wrong tenant entirely",
+  "External user expected as a B2B guest but no guest invitation was redeemed",
+  "User account was deleted or soft-deleted (still in the recycle bin)",
+  "User has a personal Microsoft Account but the app only accepts work/school accounts",
+]
+fix = [
+  "Confirm the UPN — Entra portal → Identity → Users → search the UPN. If absent, check Deleted users.",
+  "For external collaborators: Entra → External Identities → All users → invite as guest, then have them redeem the invitation email",
+  "If the user has both a personal and work account: have them choose 'Work or school account' on the account picker",
+  "Check Sign-in logs to confirm the correct tenant ID was hit — wrong-tenant typos surface here as 50034 every time",
+]
+seen_in       = ["Entra ID interactive sign-in", "B2B guest first-time access", "Microsoft 365 sign-in"]
+related       = ["aadsts50105"]
+learn_url     = "https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes"
+last_verified = "2026-05-05"
+
+# ── 5. AADSTS900971 — No reply address provided ───────────────────────────
+[[entries]]
+code          = "AADSTS900971"
+slug          = "aadsts900971"
+namespace     = "AADSTS"
+short         = "App registration is missing a redirect URI"
+plain_english = "The OAuth/OIDC flow needs to know where to send the user back after authentication. The app didn't send a redirect_uri in the request and there isn't a default one configured on the app registration. App-reg config error, not a user error."
+likely_cause  = [
+  "App registration has zero redirect URIs configured for the platform being used (Web / SPA / Mobile)",
+  "App is sending a redirect_uri that doesn't match any registered URI (case-sensitive after the host)",
+  "Custom app doesn't include redirect_uri in the request (some libraries require it explicitly)",
+  "Redirect URI was registered on the wrong platform tab (e.g. SPA URI registered under Web)",
+]
+fix = [
+  "Entra portal → Identity → App registrations → <app> → Authentication → add the platform (Web / SPA / Mobile) and the redirect URI",
+  "Confirm the URI matches EXACTLY what the app sends (including https vs http, trailing slash, port number)",
+  "For SPA apps using MSAL.js: the URI must be on the Single-page application platform, NOT Web",
+  "Check the app's code/config for the redirect_uri value — that's the literal string Entra expects to find on the registration",
+]
+seen_in       = ["Custom app first run", "App registration setup", "Postman or local development against Entra"]
+related       = ["aadsts65001"]
+learn_url     = "https://learn.microsoft.com/en-us/entra/identity-platform/reply-url"
+last_verified = "2026-05-05"
+
+# ── 6. 0x80070005 — Access denied ─────────────────────────────────────────
+[[entries]]
+code          = "0x80070005"
+slug          = "0x80070005"
+namespace     = "HRESULT"
+short         = "E_ACCESSDENIED — the calling process doesn't have permission"
+plain_english = "Win32 facility-7 (Win32 errors) error 5 — ACCESS_DENIED — wrapped in HRESULT form. The thread doesn't have rights to do what it tried to do: open a file, write to a registry key, modify a service, call an API, anything. UAC, ACL, or token elevation is the usual cause."
+likely_cause  = [
+  "UAC: process needs to run elevated and isn't (Run as administrator)",
+  "DACL on the target file/folder/registry key denies the user's SID",
+  "Endpoint protection or Defender ASR rule blocking the action",
+  "Service account lacks the right ('Log on as a service', 'Replace process-level token', etc.)",
+  "GPO 'User Rights Assignment' has revoked the privilege the action needs",
+]
+fix = [
+  "Re-run the action elevated (right-click → Run as administrator)",
+  "Inspect effective permissions: Get-Acl <path> | Format-List, or icacls <path>",
+  "Check Defender ASR rules: Get-MpPreference | Select AttackSurfaceReductionRules_Ids",
+  "If a service: confirm the service account has the required user right (secpol.msc → Local Policies → User Rights Assignment)",
+  "Event Viewer → Security → audit-failure events around the time of the error often name the exact missing right",
+]
+seen_in       = ["Win32 file/registry/service operations", "PowerShell module loading", "MSI installs", "Group Policy processing"]
+related       = ["0x80004005"]
+learn_url     = "https://learn.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-"
+last_verified = "2026-05-05"
+
+# ── 7. 0x80004005 — Unspecified failure ───────────────────────────────────
+[[entries]]
+code          = "0x80004005"
+slug          = "0x80004005"
+namespace     = "HRESULT"
+short         = "E_FAIL — generic 'something went wrong'"
+plain_english = "The most useless of useful error codes. E_FAIL is 'unspecified error' — it tells you a COM/Win32 call failed but not why. The cause is somewhere in the calling component's logs (Outlook OST, network share, COM activation, COM automation, Hyper-V, MSI). Treat this code as a starting point, not an answer."
+likely_cause  = [
+  "Outlook: OST/PST corruption or a SharePoint/share with broken auth",
+  "Network share: SMB signing mismatch, NTLM blocked, or Kerberos delegation failure",
+  "COM/DCOM: activation permission denied, server unreachable, or port blocked",
+  "Hyper-V: VM config mismatch, integration services missing, or storage driver fault",
+  "MSI installs: a custom action returned the wrong code or a prerequisite isn't installed",
+]
+fix = [
+  "Find the component that raised it: Event Viewer → Application + System logs filtered to the time of the error",
+  "For Outlook: scanpst.exe on the OST/PST, or recreate the profile",
+  "For COM: Component Services (dcomcnfg) → check launch/access permissions on the failing CLSID",
+  "For network shares: \\\\server\\share over UNC vs DNS name, capture an SMB trace if reproducible",
+  "Always pair this code with the calling component's own log — Outlook ETL, Hyper-V Worker log, MSI verbose log, etc.",
+]
+seen_in       = ["Outlook send/receive", "Network share access", "COM/DCOM activation", "Hyper-V VM start", "MSI installer custom actions"]
+related       = ["0x80070005"]
+learn_url     = "https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/0642cb2f-2075-4469-918c-4441e69c548a"
+last_verified = "2026-05-05"
+
+# ── 8. 0x800F0922 — Windows Update install failed ─────────────────────────
+[[entries]]
+code          = "0x800F0922"
+slug          = "0x800f0922"
+namespace     = "HRESULT"
+short         = "Windows Update install/cleanup failed (often: WinRE partition full)"
+plain_english = "Windows Update couldn't complete component-store install or cleanup. The most common modern cause is a too-small WinRE recovery partition (the KB5034441 incident in 2024 made this famous), but it also covers component-store corruption, .NET install failures, and storage / connectivity blips during install."
+likely_cause  = [
+  "WinRE recovery partition is too small for the update (need ~250MB free for safety updates)",
+  "Component store (WinSxS) is corrupted",
+  "Free disk space too low on system drive",
+  "Network blocking access to WSUS/Microsoft Update during install",
+  ".NET Framework install failed inside the update payload",
+]
+fix = [
+  "Check WinRE partition size: reagentc /info — note the partition. If it's <750MB, follow KB5028997 to expand it.",
+  "Run DISM repairs: DISM /Online /Cleanup-Image /RestoreHealth then sfc /scannow",
+  "Check disk space: at least 20GB free on C: for feature updates, 5GB for security updates",
+  "Review the CBS log at C:\\Windows\\Logs\\CBS\\CBS.log around the failure timestamp for the actual blocking error",
+  "If repeated on a single device: try Microsoft's Show or hide updates troubleshooter, or skip the update via WSUS/Intune for that ring",
+]
+seen_in       = ["Windows Update", "WSUS deployments", "Intune Update Rings", "Feature update installs"]
+related       = ["kb5034441"]
+learn_url     = "https://support.microsoft.com/en-us/topic/kb5028997-instructions-to-manually-resize-your-partition-to-install-the-winre-update-400faa27-9343-461c-ada9-24c8229763bf"
+last_verified = "2026-05-05"
+
+# ── 9. 0x80180014 — Intune MDM enrollment failed ──────────────────────────
+[[entries]]
+code          = "0x80180014"
+slug          = "0x80180014"
+namespace     = "INTUNE"
+short         = "MDM enrollment failed — device data invalid or already enrolled"
+plain_english = "Intune (or another MDM) refused to enrol the device. The 'provided device data is not valid' wording is generic — in practice this is almost always a device that's already enrolled in another MDM, a missing UPN at enrolment time, or an Autopilot config that's pointing the device at the wrong tenant."
+likely_cause  = [
+  "Device is already enrolled in a different MDM (only one MDM can manage a device at once)",
+  "The user signing in doesn't have an Intune licence",
+  "MDM auto-enrolment scope in Entra excludes this user/group",
+  "Autopilot profile assignment doesn't match this device's hardware hash",
+  "Device clock is off by more than 5 minutes, breaking the enrolment certificate request",
+]
+fix = [
+  "Confirm the device isn't already enrolled: Settings → Accounts → Access work or school. If a previous enrolment is listed, disconnect it first.",
+  "Verify the user has an Intune licence (Microsoft 365 admin centre → user → Licences and apps)",
+  "Entra portal → Identity → Mobility (MDM and MAM) → Microsoft Intune → MDM user scope = All (or includes this user)",
+  "If Autopilot: confirm the hardware hash is registered AND assigned a deployment profile (Intune → Devices → Enrollment → Devices)",
+  "Sync the device clock with time.windows.com and retry enrolment",
+  "Pull the MDM diagnostics log: Settings → Accounts → Access work or school → Info → Export",
+]
+seen_in       = ["Intune device enrolment", "Autopilot first-run experience", "BYOD self-enrolment via Company Portal"]
+related       = ["mde"]
+learn_url     = "https://learn.microsoft.com/en-us/intune/intune-service/enrollment/troubleshoot-windows-enrollment-errors"
+last_verified = "2026-05-05"
+
+# ── 10. KB5034441 — January 2024 WinRE update (CVE-2024-20666) ────────────
+[[entries]]
+code          = "KB5034441"
+slug          = "kb5034441"
+namespace     = "KB"
+short         = "January 2024 WinRE update — fails with 0x80070643 if WinRE partition is too small"
+plain_english = "A Windows 10 security update from January 2024 that patched a BitLocker bypass (CVE-2024-20666). It became infamous because installation fails with 0x80070643 on most existing devices — the WinRE recovery partition shipped on millions of OEM laptops is too small for the update payload. Microsoft eventually published a manual workaround (KB5028997) to expand the partition."
+likely_cause  = [
+  "WinRE recovery partition is smaller than 250MB free space",
+  "Recovery partition placement on disk prevents extending it from disk-management UI",
+  "WinRE is disabled (reagentc /info shows Windows RE status = Disabled)",
+  "Third-party recovery solution has replaced or moved the WinRE partition",
+]
+fix = [
+  "Run reagentc /info — note WinRE status, location, and partition",
+  "If WinRE is disabled: reagentc /enable",
+  "If partition is too small: follow KB5028997 to manually shrink the OS partition by 250MB and extend WinRE",
+  "If you can't expand it (e.g. recovery partition is in the wrong place): disable WinRE, install the update, re-enable WinRE",
+  "For fleets: deploy the KB5028997 PowerShell script via Intune Win32 app or Configuration Manager package before the update lands",
+]
+seen_in       = ["Windows Update", "WSUS catalogue", "Intune Update Rings (Windows 10)", "Manual MSU install"]
+related       = ["0x800f0922"]
+learn_url     = "https://support.microsoft.com/en-us/topic/kb5034441-windows-recovery-environment-update-for-windows-10-version-21h2-and-22h2-january-9-2024-62c04204-aaa5-4fee-a02a-2fdea17075a8"
+last_verified = "2026-05-05"

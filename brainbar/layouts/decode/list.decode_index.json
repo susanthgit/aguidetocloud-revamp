@@ -1,0 +1,28 @@
+{{- /* ════════════════════════════════════════════════════════════════════
+   Brain Bar — Decode Search Index (decode-index.json)
+   Output format: DECODE_INDEX  ·  Lookup: section/decode list.decode_index.json
+   Consumed by:
+     1. The /decode/ launcher (client-side filter) via decode.js
+     2. (Future) MCP tool brainbar_decode_error
+   ════════════════════════════════════════════════════════════════════ */ -}}
+{{- $items := slice -}}
+{{- range (index hugo.Data "cmd_decode").entries -}}
+  {{- $item := dict
+    "code"          .code
+    "slug"          .slug
+    "namespace"     .namespace
+    "short"         .short
+    "plain_english" .plain_english
+    "url"           (printf "/decode/%s/" .slug)
+    "last_verified" (.last_verified | default "")
+    "seen_in"       (.seen_in | default slice)
+  -}}
+  {{- $items = $items | append $item -}}
+{{- end -}}
+{{- $payload := dict
+  "version"      site.Params.cache_version
+  "generated_at" (now.Format "2006-01-02T15:04:05Z07:00")
+  "count"        (len $items)
+  "entries"      $items
+-}}
+{{- $payload | jsonify (dict "indent" "  ") | safeJS -}}

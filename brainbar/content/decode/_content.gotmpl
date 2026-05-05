@@ -1,0 +1,36 @@
+{{/* ═══════════════════════════════════════════════════════════════════════════
+     Brain Bar — Decode Content Adapter
+     ═══════════════════════════════════════════════════════════════════════════
+     Generates one Hugo page per entry in `data/cmd_decode.toml`.
+     Each page is rendered at the canonical URL `/decode/<slug>/`.
+
+     Mirrors the pattern of `content/_content.gotmpl` (jargon adapter), but
+     scoped to the /decode/ section and using a separate data file. The
+     parallel-session decision (cosmos-todo.md § P2) was explicit: subsection
+     not entry-mix.
+
+     Layout resolution: pages emit under section "decode" so Hugo looks up
+     `layouts/decode/single.html` first.
+═══════════════════════════════════════════════════════════════════════════ */}}
+
+{{ range (index hugo.Data "cmd_decode").entries }}
+  {{ $entry := . }}
+  {{ $slug := $entry.slug }}
+
+  {{ $content := dict
+    "mediaType" "text/markdown"
+    "value" $entry.plain_english
+  }}
+
+  {{/* path is RELATIVE to the section dir (content/decode/), so passing
+       just the slug emits at /decode/<slug>/. */}}
+  {{ $page := dict
+    "content" $content
+    "kind" "page"
+    "path" $slug
+    "title" (printf "%s — %s" $entry.code $entry.short)
+    "params" $entry
+  }}
+
+  {{ $.AddPage $page }}
+{{ end }}

@@ -1,0 +1,124 @@
+{{ define "main" }}
+{{/* ── JSON-LD: TechArticle schema for error-code entries ──────────────────
+     Helps Google render "what does X mean" rich snippets for technical
+     troubleshooting queries.
+   ──────────────────────────────────────────────────────────────────────── */}}
+{{ $canonicalUrl := printf "%s%s" site.BaseURL (strings.TrimPrefix "/" .RelPermalink) }}
+{{ $jsonLd := dict
+  "@context"     "https://schema.org"
+  "@type"        "TechArticle"
+  "headline"     .Title
+  "name"         .Params.code
+  "description"  .Params.plain_english
+  "url"          $canonicalUrl
+  "dateModified" .Params.last_verified
+  "articleSection" "Microsoft error codes"
+  "proficiencyLevel" "Expert"
+  "isPartOf"     (dict "@type" "WebSite" "name" "Brain Bar" "url" site.BaseURL)
+}}
+{{ with .Params.learn_url }}
+  {{ $jsonLd = merge $jsonLd (dict "sameAs" .) }}
+{{ end }}
+<script type="application/ld+json">{{ $jsonLd | jsonify (dict "indent" "  ") | safeJS }}</script>
+
+{{/* ── Helpers for related-link routing ──────────────────────────────────
+     A `related` slug may reference another decode entry OR a brainbar
+     jargon entry. Build the lookup sets at template render time.
+   ──────────────────────────────────────────────────────────────────────── */}}
+{{ $decodeSlugs := dict }}
+{{ range (index hugo.Data "cmd_decode").entries }}
+  {{ $decodeSlugs = merge $decodeSlugs (dict .slug (printf "/decode/%s/" .slug)) }}
+{{ end }}
+{{ $jargonSlugs := dict }}
+{{ range (index hugo.Data "cmd_entries").entries }}
+  {{ $jargonSlugs = merge $jargonSlugs (dict .slug (printf "/%s/" .slug)) }}
+{{ end }}
+
+<article class="bb-entry bb-decode">
+
+  <p class="bb-entry-back">
+    <a href="/decode/">← decode</a>
+    <span class="bb-divider">·</span>
+    <a href="/">jargon mode</a>
+  </p>
+
+  {{/* The decode card — red top border + ERROR pill = severity glyph,
+       chrome stays Brain Bar green. */}}
+  <header class="bb-entry-header bb-decode-header">
+    <p class="bb-decode-pill" aria-label="error severity"><span class="bb-decode-pill-label">ERROR</span> <span class="bb-decode-pill-ns">{{ .Params.namespace }}</span></p>
+    <p class="bb-entry-prompt"><code>{{ .Params.code }}</code></p>
+    <h1 class="bb-entry-title bb-decode-title">{{ .Params.short }}</h1>
+  </header>
+
+  <section class="bb-section">
+    <h2 class="bb-section-title">in plain english</h2>
+    <p class="bb-plain">{{ .Params.plain_english }}</p>
+  </section>
+
+  {{ with .Params.likely_cause }}
+    <section class="bb-section">
+      <h2 class="bb-section-title">most likely causes</h2>
+      <ul class="bb-decode-causes">
+        {{ range . }}<li>{{ . }}</li>{{ end }}
+      </ul>
+    </section>
+  {{ end }}
+
+  {{ with .Params.fix }}
+    <section class="bb-section">
+      <h2 class="bb-section-title">fix path</h2>
+      <ol class="bb-decode-fix">
+        {{ range . }}<li>{{ . }}</li>{{ end }}
+      </ol>
+    </section>
+  {{ end }}
+
+  {{ with .Params.seen_in }}
+    <section class="bb-section">
+      <h2 class="bb-section-title">seen in</h2>
+      <p class="bb-decode-seen">
+        {{ range $i, $s := . }}{{ if gt $i 0 }}<span class="bb-decode-seen-sep"> · </span>{{ end }}<span class="bb-decode-seen-item">{{ $s }}</span>{{ end }}
+      </p>
+    </section>
+  {{ end }}
+
+  <section class="bb-actions">
+    {{ with .Params.learn_url }}
+      <a class="bb-btn bb-btn-secondary" href="{{ . }}" rel="noopener" target="_blank">microsoft learn docs →</a>
+    {{ end }}
+  </section>
+
+  {{ with .Params.related }}
+    <section class="bb-section">
+      <h2 class="bb-section-title">related</h2>
+      <ul class="bb-decode-related">
+        {{ range . }}
+          {{ $slug := . }}
+          {{ $decodeUrl := index $decodeSlugs $slug }}
+          {{ $jargonUrl := index $jargonSlugs $slug }}
+          {{ if $decodeUrl }}
+            <li><a href="{{ $decodeUrl }}"><span class="bb-decode-related-marker">errno</span> <code>{{ $slug | upper }}</code></a></li>
+          {{ else if $jargonUrl }}
+            <li><a href="{{ $jargonUrl }}"><span class="bb-decode-related-marker">jargon</span> <code>{{ $slug }}</code></a></li>
+          {{ else }}
+            <li><code>{{ $slug }}</code></li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </section>
+  {{ end }}
+
+  <p class="bb-verified" title="microsoft renames things often — this entry was last fact-checked on the date below.">
+    {{- $fresh := "" -}}
+    {{- with .Params.last_verified -}}
+      {{- $ageDays := div (sub now.Unix (time.AsTime .).Unix) 86400 -}}
+      {{- if le $ageDays 90 -}}{{- $fresh = "fresh" -}}
+      {{- else if le $ageDays 270 -}}{{- $fresh = "amber" -}}
+      {{- else -}}{{- $fresh = "stale" -}}{{- end -}}
+    {{- end -}}
+    {{ with $fresh }}<span class="bb-fresh-dot bb-fresh-{{ . }}" aria-hidden="true" title="{{ if eq . "fresh" }}fresh — verified within 90 days{{ else if eq . "amber" }}getting old — verified 91-270 days ago{{ else }}stale — verified over 9 months ago{{ end }}">●</span>{{ end }}
+    verified <time datetime="{{ .Params.last_verified }}">{{ .Params.last_verified }}</time>
+  </p>
+
+</article>
+{{ end }}

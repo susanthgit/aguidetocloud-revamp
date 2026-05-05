@@ -17,6 +17,19 @@
 
 [[releases]]
 date    = "2026-05-05"
+title   = "errno mode — /decode/ launches"
+tag     = "feature"
+summary = "Brain Bar gains a sibling surface for Microsoft error codes. Paste an AADSTS code, an HRESULT (0x...), an Intune MDM error, or a KB number, and get a plain-english explainer plus the most-likely fix path. Same terminal, same green prompt — red is used only as a severity glyph on the result card."
+highlights = [
+  "/decode/ landing — instant client-side filter over the curated error catalogue",
+  "10 seed codes covering AADSTS · HRESULT · INTUNE · KB",
+  "Each entry: in-plain-english · most likely causes · fix path · seen in · related",
+  "Cross-links: related lists detect whether the slug points to a decode entry or an existing brain bar entry, and route accordingly",
+  "Boot block on home gets // decode error as a new utility link",
+]
+
+[[releases]]
+date    = "2026-05-05"
 title   = "quality round — changelog, favicon, voice"
 tag     = "polish"
 summary = "Public changelog (this page!), custom favicon, theme toggle gets sun/moon icons, and a handful of new spicy editorial takes. Analytics infrastructure verified — popular-misses endpoint is ready to start populating the wishlist once D1 is wired."
