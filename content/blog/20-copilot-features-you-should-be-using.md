@@ -1,26 +1,28 @@
 ---
-title: "20 M365 Copilot Features You're Probably Not Using (But Should Be)"
-description: "The complete guide to 20 Microsoft 365 Copilot features every user should know — organised as a journey from quick wins to game-changing power moves. Sample prompts for 6 personas, custom summary templates, Outlook instructions, and a 4-week challenge to build the habit."
+title: "22 M365 Copilot Features You're Probably Not Using (2026 Update)"
+description: "The honest, plain-English guide to Microsoft 365 Copilot — 22 features organised as a journey from quick wins to power moves. Sample prompts, real customer case studies, custom templates, and a 4-week challenge to actually build the habit."
 date: 2026-04-21
-lastmod: 2026-04-21
+lastmod: 2026-05-06
 card_tag: "Guide"
 tag_class: "ai"
 images: ["images/og/blog/20-copilot-features-you-should-be-using.jpg"]
 faq:
   - question: "Do I need a special licence for these M365 Copilot features?"
-    answer: "Features 1 to 19 work with your standard Microsoft 365 Copilot licence. Copilot Cowork is currently in preview and expected to require the upcoming M365 E7 tier."
-  - question: "How many Researcher and Analyst queries do I get per month?"
-    answer: "Researcher and Analyst share a monthly query allowance. Save them for high-value work like customer research and data analysis. Regular Copilot chat handles quick questions just fine."
+    answer: "Most features work with the standard Microsoft 365 Copilot licence your organisation has likely already provisioned. Some (model choice, third-party connectors, image input, image generation) may need your admin to switch them on. Cowork (#22) is currently in early-access preview via the Microsoft Frontier programme and is expected to require an upcoming higher M365 tier."
+  - question: "How many Researcher queries do I get per month?"
+    answer: "Microsoft documents 25 Researcher queries per user per month. Analyst has its own usage limit (check the latest Microsoft Learn docs for the current number). Save these agents for high-value work like customer research, deal prep and data analysis — regular Copilot chat handles quick questions just fine."
   - question: "Can I use Agent Builder without Copilot Studio?"
-    answer: "Yes. The Agent Builder inside Microsoft 365 Copilot Chat is a separate simpler experience designed for personal productivity agents. For complex workflows with custom integrations you would move to Copilot Studio."
+    answer: "Yes. The Agent Builder inside Microsoft 365 Copilot Chat is a separate, simpler experience designed for personal and small-team productivity agents. For complex workflows with custom integrations you would move to Copilot Studio."
   - question: "Which AI model should I pick in M365 Copilot?"
-    answer: "For most tasks let Copilot auto-choose. For deep reasoning try Claude. For creative work try GPT models. Model choice is available in Researcher and Edit with Copilot in PowerPoint and requires admin enablement."
-  - question: "Does M365 Copilot access other peoples data?"
-    answer: "No. Copilot respects your existing Microsoft 365 permissions. It can only see data you already have access to. It does not bypass your organisation security policies."
+    answer: "For most tasks, let Copilot auto-choose. For deep reasoning try Claude. For creative work try GPT models. Model choice is available in Researcher and across the agentic capabilities in Word, Excel and PowerPoint — your admin needs to enable Anthropic models for your organisation."
+  - question: "Does M365 Copilot access other people's data?"
+    answer: "No. Copilot respects your existing Microsoft 365 permissions. It can only see data you already have access to. It does not bypass your organisation's security policies."
   - question: "Can Copilot make mistakes?"
-    answer: "Yes. Like any AI Copilot can get things wrong. Always double-check important facts figures and recommendations before acting on them. Think of Copilot as a very capable first draft not a final answer."
+    answer: "Yes. Like any AI, Copilot can get things wrong. Always double-check important facts, figures and recommendations before acting on them. Treat Copilot's output as a strong first draft, not a final answer."
   - question: "Where should a complete beginner start with M365 Copilot?"
-    answer: "Start with Meeting Recap and the Prompt Gallery. Recap gives you an instant win after your next Teams meeting. The Gallery teaches you how to ask better questions. Then set up your Copilot personalisation instructions."
+    answer: "Start with Meeting Recap (#1), Personalisation (#6) and the Prompt Gallery (#24). Recap gives you an instant win after your next Teams meeting. Personalisation makes every later feature work better. The Gallery teaches you how to ask better questions."
+  - question: "Can I paste a screenshot into M365 Copilot Chat?"
+    answer: "Yes — image input is supported in M365 Copilot Chat (paste a screenshot, photo of a whiteboard or a chart and ask questions about it). Note: this is different from 'Copilot Vision' on Windows, which is a separate consumer feature where Copilot can see your open screen. Some tenants may need admin enablement for image input."
 tags:
   - microsoft-365
   - copilot
@@ -28,27 +30,33 @@ tags:
   - guide
 sitemap:
   priority: 0.8
+aliases:
+  - /blog/20-copilot-features-you-should-be-using/
 ---
 
 <div class="living-doc-banner">
 
-🔄 This is a living document. The AI world changes fast — features ship, names change, and new capabilities appear. If you spot anything out of date, please [send me feedback](/feedback/) and I'll update it. Last verified: April 2026.
+🔄 This is a living document. The AI world changes fast — features ship, names change, new ones land every month. If you spot something out of date, please [send me feedback](/feedback/) and I'll update it. **Last verified: May 2026** — added 5 new features (Loop, Planner, Image creation, Image input, Connectors), woven in real customer case studies, fact-checked every product claim against Microsoft Learn, and compressed the persona prompts into collapsible blocks.
 
 </div>
 
-Let me paint a picture.
+Let me paint the picture I see most weeks.
 
-Your company has invested in M365 Copilot for you. It's part of your toolkit now — sitting right there in Teams, Outlook, Word, Excel, PowerPoint. You've tried it a few times. Typed "summarise this." Maybe "draft an email." And honestly? It was... fine. Not life-changing. Just fine.
+Your company has bought M365 Copilot for you. It's sitting right there — in Teams, Outlook, Word, Excel, PowerPoint. You've tried it a few times. Typed *"summarise this"*. Maybe *"draft an email"*. And honestly? It was… fine. Not life-changing. Just fine.
 
 I get it. I was there too.
 
-Then one afternoon, I asked Copilot to pull together everything from my last 3 client meetings — emails, action items, what was agreed, what was still open — and it did it in about 30 seconds. That's when something clicked. My company had given me this powerful tool, and I wasn't using 80% of it.
+Then one afternoon I asked Copilot to pull together everything from my last three customer meetings — emails, action items, what was agreed, what was still open. It did it in about 30 seconds. That's when something clicked. My company had handed me a powerful tool and I was barely using it.
 
-This blog is the guide I wish someone had given me on day one. Not a feature dump. Not a Microsoft marketing deck. Just 20 things that actually change how you work — organised as a journey you can take at your own pace.
+This blog is the guide I wish someone had handed me on day one. Not a feature dump. Not a Microsoft slide deck. Just 22 things that actually change how you work — organised as a journey you can take at your own pace.
+
+📊 **The proof this isn't hype:** Microsoft Research ran a controlled study across 56 firms and 6,000+ workers. People with Copilot finished documents **12% faster** and reclaimed **about 30 minutes a week from email**. Modest claims, properly measured, by Microsoft's own research arm — not Microsoft marketing. ([Read the study](https://www.microsoft.com/en-us/research/publication/early-impacts-of-m365-copilot/))
+
+💡 **Quick tip before you go any further:** Bookmark Microsoft's official [Copilot Prompt Gallery](https://copilot.cloud.microsoft/prompts). It's the single fastest way to get better prompts — filtered by your role and your app. We come back to it properly at the end (feature #21), but it's the resource I wish I'd known about on day one.
 
 **Here's the deal.** I've organised these from easiest to most powerful. Start at the top. Try one or two this week. Come back next week for the next level. By the time you reach the end, you'll wonder how you ever worked without them.
 
-Almost everything in this guide is **generally available today** with the M365 Copilot licence your organisation has already provisioned for you. I've included one preview feature at the end — clearly marked — because it shows where everything is heading.
+Almost everything in this guide is **generally available today** with the M365 Copilot licence your organisation has already provisioned. There's one early-access feature at the end — clearly marked — because it shows where things are heading.
 
 Ready? Let's start small.
 
@@ -56,37 +64,55 @@ Ready? Let's start small.
 
 ## TL;DR
 
-**Who this is for:** Anyone whose company has given them M365 Copilot — whether you're in sales, account management, strategy, HR, project management, marketing, or anywhere in between.
+**Who this is for:** Anyone whose company has handed them M365 Copilot — sales, account management, strategy, HR, project management, marketing, anywhere in between. People like us. Not power users. Not developers.
 
-**Where to start:** Feature #1 (Meeting Recap), Feature #3 (Copilot in Outlook), and Feature #19 (Prompt Gallery). Those three alone will change your week.
+**Where to start:** Feature #1 (Meeting Recap), Feature #5 (Personalisation) and Feature #21 (Prompt Gallery). Personalisation makes every other feature smarter. Recap gives you the first "wow". The Gallery gives you better prompts to keep going.
 
-**The bottom line:** Most people use 20% of Copilot. This guide covers the other 80% — organised so you can learn one feature at a time and actually build the habit.
+**The bottom line:** Most people stick to *"summarise this email"* and never go further. This guide covers the rest.
 
-**⚡ Quick start by role** — if you only try 3 things this week:
+---
 
-| Your Role | Start with these 3 |
-|-----------|-------------------|
-| **Account Executives** | #1 Meeting Recap, #5 Past Meeting Prompts, #13 Researcher |
-| **Account Managers** | #1 Meeting Recap, #3 Outlook + Custom Instructions, #2 Custom Summary Templates |
-| **Project Managers** | #1 Meeting Recap, #8 Edit with Copilot in Excel, #16 Scheduled Prompts |
-| **HR Leaders** | #3 Copilot in Outlook, #6 Personalisation, #4 Enterprise Search |
-| **Tech Strategists** | #13 Researcher, #14 Analyst, #18 Model Choice |
-| **Marketing / Comms** | #7 Edit with Copilot in Word, #9 Edit with Copilot in PowerPoint, #19 Prompt Gallery |
+## Quick Reference (start here, jump anywhere)
+
+| # | Feature | Level | Time |
+|---|---------|-------|------|
+| 1 | Teams Meeting Recap (with Custom Templates) | 🟢 Quick Win | 5 min |
+| 2 | Copilot in Outlook + Custom Email Instructions | 🟢 Quick Win | 5 min |
+| 3 | Enterprise Search | 🟢 Quick Win | 2 min |
+| 4 | Past Meeting Mining | 🟢 Quick Win | 2 min |
+| 5 | Personalisation — Instructions, Memory + Voice | 🟢 Quick Win | 10 min |
+| 6 | Agentic Copilot in Word | 🔵 Superpower | 10 min |
+| 7 | Agentic Copilot in Excel | 🔵 Superpower | 10 min |
+| 8 | Agentic Copilot in PowerPoint | 🔵 Superpower | 10 min |
+| 9 | Copilot in OneNote | 🔵 Superpower | 5 min |
+| 10 | Copilot in Loop | 🔵 Superpower | 10 min |
+| 11 | Copilot in Planner | 🔵 Superpower | 10 min |
+| 12 | Image Generation in Copilot | 🔵 Superpower | 5 min |
+| 13 | Copilot Pages | 🔵 Superpower | 10 min |
+| 14 | Researcher Agent (with Model Choice) | 🟣 Power Move | 15 min |
+| 15 | Analyst Agent | 🟣 Power Move | 15 min |
+| 16 | Copilot Notebooks (+ Audio Overviews) | 🟣 Power Move | 10 min |
+| 17 | Scheduled Prompts | 🟣 Power Move | 10 min |
+| 18 | Agent Builder (+ SharePoint agents) | 🟣 Power Move | 30 min |
+| 19 | Image Input in Copilot Chat | 🟣 Power Move | 5 min |
+| 20 | Connectors (Salesforce, ServiceNow, Jira…) | 🟣 Power Move | varies |
+| 21 | Prompt Gallery | 🟡 Secret Weapon | 5 min |
+| 22 | Copilot Cowork *(preview)* | 🟡 What's Next | coming soon |
 
 ---
 
 ## Your Journey Map
 
-Think of this like a video game. You start with the easy levels to build confidence, then unlock progressively more powerful abilities. Each level builds on the last.
+Think of this like a video game. Easy levels first to build confidence, then progressively more powerful abilities. Each level builds on the last.
 
 | Level | What You'll Learn | Time to Try | Vibe |
 |-------|------------------|-------------|------|
-| [🟢 Level 1](#level-1--the-two-minute-wins) | 6 features you can try right now | 2 min each | "Wait, it can do THAT?" |
-| [🔵 Level 2](#level-2--your-apps-just-got-superpowers) | 6 features that upgrade your daily apps | 10 min each | "Why didn't I know this sooner?" |
-| [🟣 Level 3](#level-3--the-power-moves) | 6 features that change the game | 15 min each | "OK, this is seriously impressive." |
-| [🟡 Level 4](#level-4--the-secret-weapon--whats-next) | 2 features for the adventurous | varies | "I need to tell my team about this." |
+| [🟢 Level 1](#level-1--the-two-minute-wins) | 5 quick wins | 2-10 min each | "Wait, it can do THAT?" |
+| [🔵 Level 2](#level-2--your-apps-just-got-superpowers) | 8 app upgrades | 10 min each | "Why didn't I know this sooner?" |
+| [🟣 Level 3](#level-3--the-power-moves) | 7 power moves | 15 min each | "OK, this is seriously impressive." |
+| [🟡 Level 4](#level-4--the-secret-weapon--whats-next) | 2 features for the brave | varies | "I need to tell my team about this." |
 
-**My challenge to you:** Try one feature from Level 1 today. Just one. If it saves you even 5 minutes, come back tomorrow and try the next one. That's how this works — small wins that compound into something big.
+**The challenge:** Try one feature from Level 1 today. Just one. If it saves you even five minutes, come back tomorrow for the next one. That's how this works — small wins that compound into something big.
 
 ---
 
@@ -94,21 +120,21 @@ Think of this like a video game. You start with the easy levels to build confide
 
 You know that feeling when someone shows you a keyboard shortcut you didn't know existed? That "how did I not know this?!" moment? That's this entire level.
 
-These features take literally 2 minutes to try. Zero learning curve. And you'll use them every single day.
+These features take literally two minutes to try. Zero learning curve. You'll use them every day.
 
 ---
 
-### 1. Teams Meeting Recap
+### 1. Teams Meeting Recap (with Custom Summary Templates)
 
-Here's the thing most people get wrong about Meeting Recap — they think it's for meetings you *missed*.
+Most people think Meeting Recap is for meetings they missed. Honest take? It's better for the ones you actually sat through.
 
-Nope. It's actually most powerful for meetings you **attended**.
-
-Think about it. You just sat through a 60-minute strategy discussion. How much do you actually remember? The first 10 minutes? The bit where someone mentioned your project? That one decision that might have been a decision or might have been a suggestion?
+I had to be told this twice before it clicked. You've been in the room for 60 minutes. You remember the first 10 minutes, the bit where someone said your name, and one decision that might've been a decision or might've been a passing comment. The transcript is sitting there. Recap reads it for you.
 
 For any Teams meeting with recording and transcription enabled, Copilot creates a full recap — AI-generated summary, discussion points, decisions, action items with owners, and a scrubbable timeline.
 
-**🎯 Your first mission:** After your next recorded meeting, open the recap and try this:
+📊 **Real-world:** World Wide Technology rolled Copilot out to 941 staff. Across the team they reported **446 hours saved every week** — Meeting Recap and email drafting were the biggest contributors, alongside the wider Copilot suite. ([WWT case study](https://www.wwt.com/case-study/enhancing-productivity-and-efficiency-with-copilot-for-microsoft-365))
+
+**🎯 The one prompt to start with:**
 
 <div class="prompt-cards">
 
@@ -116,9 +142,10 @@ For any Teams meeting with recording and transcription enabled, Copilot creates 
 
 </div>
 
-That's it. One prompt. You'll immediately see the value.
+That's it. One prompt. Try it after your next call.
 
-**Once you're hooked, try these:**
+<details>
+<summary>👥 <strong>Your role's twist</strong> — click to open</summary>
 
 <div class="prompt-cards">
 
@@ -135,27 +162,25 @@ That's it. One prompt. You'll immediately see the value.
 > **For Marketing/Comms:** "What messaging or positioning feedback was given? Any brand-related decisions?"
 
 </div>
+</details>
 
-**✅ You've unlocked:** Never losing track of a meeting outcome again. Ready for the next one?
+#### 🪄 Level up — Custom Summary Templates
 
----
+Once you're hooked on Recap, here's the move that makes it stick.
 
-### 2. Custom Summary Templates in Recap
+Inside the Recap tab there's an option to write your own summary template. Copilot follows it every single recap. For recurring meetings, Teams remembers your template.
 
-Now that you know about Recap, here's the level-up.
-
-Most people don't realise this: inside the Recap tab, there's a **Custom Summary** feature. Instead of the generic AI summary, you can choose built-in summary styles — like **Speaker summary** or **Executive report** — or even better, you can **create your own custom summary template** with specific instructions that Copilot follows every time.
-
-Think of it like this: the default recap is the full newspaper. A custom template is your personalised news brief, tailored to exactly what you care about.
+The default recap is the full newspaper. A custom template is your personalised news brief.
 
 **🎯 How to set it up:**
 
 1. Open a meeting recap in Teams
-2. Go to the **Recap** tab → look for **Custom summary**
-3. Choose a built-in style (Speaker summary, Executive report) or click **Create template**
-4. Write your own instructions — Copilot follows them for every recap, and for recurring meetings Teams can remember your template
+2. Open the Recap tab → look for the summary options (UI labels may vary slightly across versions — look for "Custom summary" or similar)
+3. Pick a built-in style or create your own template
+4. Write your own instructions — Copilot follows them every time
 
-**Here are custom summary templates you can save — one for each role:**
+<details>
+<summary>📋 <strong>Templates by role</strong> — copy, paste, save</summary>
 
 <div class="instruction-cards">
 
@@ -172,20 +197,24 @@ Think of it like this: the default recap is the full newspaper. A custom templat
 > **For Marketing/Comms:** "Create a summary covering: (1) brand or messaging decisions, (2) campaign feedback or results discussed, (3) content requests or deadlines, (4) audience insights shared, (5) creative direction agreed."
 
 </div>
-
-**✅ You've unlocked:** Every meeting summary tailored exactly to your role. Now let's tackle the thing eating most of your day...
+</details>
 
 ---
 
-### 3. Copilot in Outlook + Custom Email Instructions
+### 2. Copilot in Outlook + Custom Email Instructions
 
-Let me ask you something. What percentage of your workday do you spend on email?
+What percentage of your workday do you spend on email?
 
-If you're like most knowledge workers, it's around 28%. That's more than a quarter of your life at work spent reading, writing, and sorting messages.
+For most knowledge workers it's around 28%. More than a quarter of your life at work, reading and replying. Microsoft Research found Copilot users reclaim about 30 minutes a week from email alone. That's a solid coffee break, every week, back in your pocket.
 
-Copilot in Outlook doesn't just help you write emails. It summarises long threads so you don't have to read 47 messages to figure out what happened. It drafts replies in your tone. It can help you prioritise your inbox. And — this is the hidden gem — it **coaches you on tone** before you hit send.
+Copilot in Outlook does four useful things:
 
-**🎯 Start with the simplest win:**
+1. **Summarises long threads** so you don't read 47 messages to figure out what happened.
+2. **Drafts replies** in your tone.
+3. **Coaches you on tone** before you hit send — the underrated gem.
+4. **Finds things in your inbox** in plain English ("show me emails I haven't replied to" / "purple-category mail" / "external emails from last week").
+
+**🎯 Start with the simplest wins:**
 
 <div class="prompt-cards">
 
@@ -197,17 +226,22 @@ Copilot in Outlook doesn't just help you write emails. It summarises long thread
 
 > "What's the tone of this email? Anything I should watch out for before replying?"
 
+> "Show me emails I need to reply to — hide threads I've already closed."
+
 </div>
 
-💡 **The tone coaching gem:** Got a sensitive email to send? Paste your draft and ask Copilot to review the tone first. It's like having a diplomat proofread your messages.
+💡 **The tone-coaching gem:** Got a sensitive email to send? Paste your draft and ask Copilot to review the tone first. It's like having a diplomat proofread your message.
 
 **🔧 Hidden power: Custom Email Draft Instructions**
 
-You can set **persistent Copilot instructions for email drafting** that apply every time Copilot helps you write or reply. Find them via the **dropdown arrow next to the Copilot icon → Settings → Draft Instructions**. Copilot will follow these instructions across all your email drafts.
+You can set **persistent Copilot instructions for email drafting** that apply every time Copilot helps you write or reply. Find them via the **dropdown arrow next to the Copilot icon → Settings → Draft Instructions**. Copilot follows them across every email draft from then on.
 
-*(Separately, Outlook also has **Calendar Instructions** under Outlook Settings → Copilot, which helps Copilot understand your scheduling preferences.)*
+*(Outlook also has separate **Calendar Instructions** under Outlook Settings → Copilot for scheduling preferences.)*
 
-**Here are sample email draft instructions by role — paste one into your Draft Instructions settings:**
+**Email draft instructions by role — paste one into Draft Instructions:**
+
+<details>
+<summary>👥 <strong>Pick yours and customise</strong> — click to open</summary>
 
 <div class="instruction-cards">
 
@@ -224,22 +258,32 @@ You can set **persistent Copilot instructions for email drafting** that apply ev
 > **For Marketing/Comms:** "Write in our brand voice — conversational, confident, and clear. Use active voice. Lead with the headline, then context. For internal emails, keep them scannable with headers and bullets. For external, match the audience's level of formality."
 
 </div>
+</details>
 
-**✅ You've unlocked:** An inbox that works for you, not against you. Feel the momentum building?
+**✅ You've unlocked:** An inbox that works for you, not against you.
 
 ---
 
-### 4. Enterprise Search — Find Anything
+### 3. Enterprise Search — Find Anything
 
-We've all been there. "I know that document exists. Someone shared it. In Teams. Or was it email? Maybe SharePoint?"
+We've all been there. *"I know that document exists. Someone shared it. In Teams. Or was it email? Maybe SharePoint?"*
 
-Copilot can search across the files, emails, chats, and meetings you have access to — using plain English. No more opening five different apps and searching each one separately.
+Copilot can search across the files, emails, chats and meetings you have access to — using plain English. No more opening five different apps and searching each one.
 
-**🎯 Next time you're looking for something, try this instead of manual searching:**
+📊 **Real-world:** The Australian Government trialled the full Copilot suite across 7,500 staff in 50+ agencies. Across all uses (search, drafting, summarising, meetings) they reported **about an hour saved per person per day** and **60% felt their work quality went up**. Search and document discovery were among the biggest day-to-day wins.
+
+**🎯 Try this instead of manual searching:**
 
 <div class="prompt-cards">
 
 > "Find the latest version of the [Project] proposal that [Person] shared last month."
+
+</div>
+
+<details>
+<summary>👥 <strong>Your role's twist</strong> — click to open</summary>
+
+<div class="prompt-cards">
 
 > **For AEs:** "Find all documents and emails related to [prospect company] from the last 3 months."
 
@@ -252,26 +296,34 @@ Copilot can search across the files, emails, chats, and meetings you have access
 > **For Marketing/Comms:** "Find all campaign briefs shared in the last month across Teams and email."
 
 </div>
-
-**✅ You've unlocked:** Never playing "hunt the document" again.
+</details>
 
 ---
 
-### 5. Mining Gold from Past Meeting Recordings
+### 4. Mining Gold from Past Meetings
 
-This one blew my mind when I first tried it.
+This one quietly blew my mind.
 
-You know all those past Teams recordings sitting there collecting digital dust? The strategy session from 3 weeks ago. The client call from last month. The quarterly review from January.
+You know all those past Teams recordings sitting there collecting digital dust? The strategy session from three weeks ago. The customer call from last month. The quarterly review from January.
 
 You can go back and **ask Copilot questions about any recorded meeting you have access to**. Every meeting with a transcript becomes a searchable knowledge base.
 
-**🎯 Try this right now — think of a recent client or project:**
+**🎯 Try this — pick a recent customer or project:**
 
 <div class="prompt-cards">
 
-> **For AEs:** "Across my last 3 calls with [Prospect], what objections came up and what did I say in response? What's still unresolved?"
+> "Across my last 3 calls with [Person/Customer], what objections came up and what did I say in response? What's still unresolved?"
 
-> **For AMs:** "In our last 3 meetings with [Client], what were the main concerns raised and have we addressed them?"
+</div>
+
+<details>
+<summary>👥 <strong>Your role's twist</strong> — click to open</summary>
+
+<div class="prompt-cards">
+
+> **For AEs:** "Across my last 3 calls with [Prospect], what objections came up and what's still unresolved?"
+
+> **For AMs:** "In our last 3 meetings with [Client], what concerns were raised and have we addressed them?"
 
 > **For Project Managers:** "Summarise how the [Project] discussion has evolved across the last 4 weekly standups. Are we on track?"
 
@@ -282,31 +334,34 @@ You can go back and **ask Copilot questions about any recorded meeting you have 
 > **For Marketing/Comms:** "What feedback was given on our latest campaign across the last 3 review meetings?"
 
 </div>
+</details>
 
-💡 **The pro move:** Before any client call, ask Copilot to summarise your last 3 conversations with them. You'll walk in with perfect context. Your clients will think you have a photographic memory.
+💡 **The pro move:** Before any customer call, ask Copilot to summarise your last 3 conversations with them. You walk in with the kind of context you could only get if you had time to actually re-read everything — the kind that makes the conversation easier for them, too.
+
+🎬 **While we're here — Copilot in Stream/Clipchamp:** If your video is in Stream or Clipchamp (not just Teams meetings), Copilot does the same thing — full transcript-based summaries, jump-to-topic, identify action items. Useful for recorded training, customer demos, or anything not in your Teams calendar.
 
 **✅ You've unlocked:** Organisational memory. The past doesn't disappear anymore.
 
 ---
 
-### 6. Copilot Personalisation — Instructions & Memory
+### 5. Personalisation — Instructions, Memory + Voice
 
-Here's the set-it-once, benefit-forever feature most people completely miss.
+This is the set-it-once, benefit-forever feature most people completely miss.
 
-Copilot can learn about you. In the M365 Copilot app, you can set **personal instructions** that tell Copilot about your role, your preferences, and how you like to work. Once set, Copilot uses these instructions across your interactions — making every response more relevant and more *you*.
+Copilot can learn about you. In the M365 Copilot app you can set **personal instructions** — your role, your preferences, how you like to work. Once set, Copilot uses them across every interaction. Every response gets a bit more *you*.
 
-On top of that, **Copilot Memory** remembers key facts from your conversations — your ongoing projects, preferences, and working patterns. Memory is on by default (if your admin has enabled Enhanced Personalisation), and you're in control: you can view, edit, or delete what Copilot remembers at any time.
+On top of that, **Copilot Memory** remembers key facts from your conversations — ongoing projects, preferences, working patterns. Memory is on by default if your admin has enabled Enhanced Personalisation. You're in control: view, edit or delete what Copilot remembers any time.
 
-⚠️ **Note:** Personalisation features may still be rolling out in some organisations. If you don't see these options, check with your IT admin.
+⚠️ **Note:** Personalisation may still be rolling out in some organisations. If you don't see these options, check with your IT admin. UI paths can vary across Outlook / web / Windows — if a menu doesn't match exactly, look for a *Personalisation* or *Settings* option around your Copilot profile.
 
-**🎯 How to set up your instructions:**
+**🎯 How to set it up:**
 
 1. Open M365 Copilot ([microsoft365.com/chat](https://microsoft365.com/chat))
-2. Click **… (menu)** → **Settings** → **Personalization**
-3. You'll see three controls: **Custom instructions**, **Saved memories**, and **Chat history**
-4. Write your custom instructions — Copilot uses this context going forward
+2. Click **… (menu) → Settings → Personalization**
+3. You'll see three controls: **Custom instructions**, **Saved memories**, **Chat history**
+4. Write your custom instructions — Copilot uses them going forward
 
-**Here are sample instructions by role — pick yours and customise:**
+**Sample instructions by role — pick yours and customise:**
 
 <div class="instruction-cards">
 
@@ -324,37 +379,52 @@ On top of that, **Copilot Memory** remembers key facts from your conversations �
 
 </div>
 
-💡 **The Memory bonus:** As you use Copilot, it saves key facts about your work — ongoing projects, preferences, and context. You can see and manage what it remembers under **Settings → Personalization → Saved memories**. You're always in control of what stays and what gets deleted.
+💡 **The Memory bonus:** As you use Copilot, it saves key facts about your work — projects, preferences, context. View and manage them under **Settings → Personalization → Saved memories**. You're always in control of what stays and what gets deleted.
 
-**✅ You've completed Level 1!** 🎉
+🎙️ **Bonus — Voice chat:** Open the M365 Copilot app, hit the mic, talk. Long-form, free-flowing — great for thinking out loud on a walk between meetings. Try: *"I just got out of a meeting and want to process what I heard. Let me talk through it and you help me identify what needs action."* (Hands-free *"Hey Copilot"* wake-word is currently a Windows consumer-Copilot feature, not part of M365 work Copilot — for work Copilot, use the mic button.)
 
-If you've tried even 2-3 of these, you're already ahead of most Copilot users. Bookmark this page and come back when you're ready for Level 2 — where things get seriously powerful.
+**✅ You've unlocked:** A Copilot that knows you. Every other feature gets smarter from this point.
+
+---
+
+**🎉 You've completed Level 1!**
+
+If you've tried even two or three of these, you're ahead of most Copilot users. Bookmark this page and come back when you're ready for Level 2 — where things get seriously powerful.
 
 ---
 
 ## 🔵 Level 2 — Your Apps Just Got Superpowers
 
-Welcome back. Level 1 was about quick wins in the Copilot chat and meetings. Level 2 is about the apps you already use every day — Word, Excel, PowerPoint, OneNote — and the AI upgrade they've quietly received.
+Welcome back. Level 1 was about quick wins in Copilot chat and meetings. Level 2 is about the apps you already use every day — Word, Excel, PowerPoint, OneNote, Loop, Planner — and the AI upgrade they've quietly received.
 
 If Level 1 was "wait, it can do that?" — Level 2 is "why didn't I know this sooner?"
 
 ---
 
-### 7. Edit with Copilot in Word
+### 6. Agentic Copilot in Word (formerly "Edit with Copilot")
 
-Forget everything you know about "Copilot drafts a document."
+Forget what you know about *"Copilot drafts a document".*
 
-Edit with Copilot (also known as Agent Mode) is completely different. Instead of generating text and walking away, Copilot now **works alongside you**— like a skilled editor sitting next to you. It rewrites sections, restructures paragraphs, checks for consistency, and explains every change it makes. You review, give feedback, and it iterates.
+**Agentic capabilities in Word** went GA in April 2026. Instead of generating text and walking away, Copilot now **works alongside you** — like an editor sitting next to you. It rewrites sections, restructures paragraphs, checks consistency, takes multi-step actions in the doc, and explains every change. You review, give feedback, it iterates.
 
-The difference? Old Copilot was like handing work to an intern. Agent Mode is like collaborating with a senior editor.
+Old Copilot was like handing work to an intern. Agentic Copilot is collaborating with a senior editor.
 
-**🎯 Open a document you're working on and try this:**
+📊 **Real-world:** TAL Insurance, one of Australia's largest insurers, has been cited as reporting around **6 hours saved per employee per week** across their Copilot rollout. Take that as one signal among others — the underlying pattern (drafting work shifts from solo grind to AI-assisted iteration) is widely observed across organisations using these capabilities.
+
+**🎯 Open a document and try this:**
 
 <div class="prompt-cards">
 
-> "Review this document for consistency, clarity, and tone. Suggest improvements section by section."
+> "Review this document for consistency, clarity and tone. Suggest improvements section by section."
 
-> **For AEs:** "Turn these meeting notes into a professional client-ready proposal. Highlight the value proposition and ROI."
+</div>
+
+<details>
+<summary>👥 <strong>Your role's twist</strong> — click to open</summary>
+
+<div class="prompt-cards">
+
+> **For AEs:** "Turn these meeting notes into a customer-ready proposal. Highlight the value proposition and ROI."
 
 > **For AMs:** "Rewrite this QBR report to be more concise and impactful for a C-suite audience."
 
@@ -367,20 +437,30 @@ The difference? Old Copilot was like handing work to an intern. Agent Mode is li
 > **For Marketing/Comms:** "Rewrite this internal announcement for an external audience. Match our brand voice and add a compelling headline."
 
 </div>
-
-**✅ You've unlocked:** A co-editor who never gets tired, never gets offended by feedback, and is available at 2am.
+</details>
 
 ---
 
-### 8. Edit with Copilot in Excel
+### 7. Agentic Copilot in Excel
 
 If Excel formulas make your eyes glaze over, this one's for you.
 
-Edit with Copilot in Excel means you can describe what you want to see in plain Englishand Copilot builds it. Analysis, charts, pivot tables, data cleaning — all through conversation, not formulas.
+You describe what you want in plain English — and Copilot builds it. Analysis, charts, pivot tables, data cleaning, all through conversation, not formulas.
 
-And here's the trick most people miss: you can ask Copilot to **explain** those complex formulas someone else built. The ones with nested VLOOKUPs that nobody dares to touch. Copilot will break them down in plain English and suggest simpler alternatives.
+The trick most people miss: you can ask Copilot to **explain** complex formulas someone else built. The ones with nested VLOOKUPs that nobody dares touch. Copilot breaks them down in plain English and suggests simpler alternatives.
 
 **🎯 Open a spreadsheet and try:**
+
+<div class="prompt-cards">
+
+> "This spreadsheet is messy — clean it up, remove duplicates, standardise the dates, and flag anomalies."
+
+> "Explain what this formula does in plain English and suggest a simpler version."
+
+</div>
+
+<details>
+<summary>👥 <strong>Your role's twist</strong> — click to open</summary>
 
 <div class="prompt-cards">
 
@@ -396,25 +476,31 @@ And here's the trick most people miss: you can ask Copilot to **explain** those 
 
 > **For Marketing/Comms:** "Analyse campaign performance data by channel. Which ones are delivering the best ROI?"
 
-> **For everyone:** "This spreadsheet is messy — clean it up, remove duplicates, standardise the dates, and flag anomalies."
-
 </div>
-
-**✅ You've unlocked:** Excel without the fear. Data analysis without a data science degree.
+</details>
 
 ---
 
-### 9. Edit with Copilot in PowerPoint
+### 8. Agentic Copilot in PowerPoint
 
-Raise your hand if you've spent 3 hours formatting slides when the actual content took 20 minutes. 🙋
+Every slide deck you've ever sent had one slide you spent 80% of the time on. You know the one.
 
-Edit with Copilot in PowerPoint doesn't just dump text on slides.It designs layouts, suggests visuals, adapts content for your audience, and refines iteratively with your feedback. Give it a Word document, a brief, or even a conversation — and get a presentation back.
+Agentic Copilot in PowerPoint doesn't just dump text on slides. It designs layouts, suggests visuals, adapts content for your audience, and refines iteratively with your feedback. Give it a Word document, a brief, or a meeting transcript — get a presentation back.
 
 **🎯 Try this for your next presentation:**
 
 <div class="prompt-cards">
 
 > "Create a 10-slide presentation on [topic]. Make it executive-friendly with key insights on each slide."
+
+> "Add speaker notes to every slide that I can use during the presentation."
+
+</div>
+
+<details>
+<summary>👥 <strong>Your role's twist</strong> — click to open</summary>
+
+<div class="prompt-cards">
 
 > **For AEs:** "Turn this proposal document into a customer-facing pitch deck. Focus on their pain points, our solution, and ROI."
 
@@ -424,19 +510,18 @@ Edit with Copilot in PowerPoint doesn't just dump text on slides.It designs layo
 
 > **For Marketing/Comms:** "Create a campaign results presentation. Lead with the headline metrics, then drill into channel performance."
 
-> **For everyone:** "Add speaker notes to every slide that I can use during the presentation."
-
 </div>
+</details>
 
-**✅ You've unlocked:** Presentations in minutes, not hours. Spend your time on storytelling, not formatting.
+**✅ You've unlocked:** Presentations in minutes, not hours. Spend your time on the story, not formatting.
 
 ---
 
-### 10. Copilot in OneNote
+### 9. Copilot in OneNote
 
-Here's a truth nobody talks about: most of us have a graveyard of unorganised notes in OneNote. Meeting notes, brainstorms, random ideas, half-finished plans — all dumped in there and never looked at again.
+A truth nobody talks about: most of us have a graveyard of unorganised notes in OneNote. Meeting notes, brainstorms, random ideas, half-finished plans — all dumped in there and never looked at again.
 
-Copilot in OneNote changes that. It summarises, extracts action items, organises chaos into structure, and even searches across your old notebooks to surface forgotten gold.
+Copilot in OneNote changes that. It summarises, extracts action items, organises chaos into structure, and even searches across old notebooks to surface forgotten gold.
 
 **🎯 Open your messiest OneNote section and try:**
 
@@ -452,148 +537,201 @@ Copilot in OneNote changes that. It summarises, extracts action items, organises
 
 </div>
 
-**✅ You've unlocked:** OneNote goes from "dumping ground" to "second brain."
-
 ---
 
-### 11. Copilot Pages — Your Collaborative AI Canvas
+### 10. Copilot in Loop — Co-create Live with Your Team
 
-This is one of the most underrated features in the entire Copilot ecosystem.
+*Skip if your team doesn't use Loop. If you do — read on.*
 
-**What is a Page?** When Copilot gives you a great response in chat, you can click **"Edit in Pages"** and it becomes a living, collaborative document. Not a saved chat — a proper, editable, shareable workspace where you and Copilot (and your colleagues) can keep refining together.
+Loop is Microsoft's collaborative canvas — components that sync everywhere. Copilot in Loop is what makes it interesting.
 
-Think of it as the bridge between "chat response" and "real deliverable."
+Instead of one person drafting and emailing around for feedback, your whole team brainstorms in the same Loop page **at the same time**, with Copilot helping everyone — drafting, rewriting, pulling in tables, summarising, generating lists from a prompt.
 
-**🎯 How to create a Page:**
+The shift is subtle but big: it's not "I asked Copilot, then I shared the answer". It's *"we're working with Copilot together"*.
 
-1. Ask Copilot anything in chat — research, a draft, an analysis
-2. Love the output? Click the **"Edit in Pages"** button on the response
-3. The response opens as a full Page — editable and expandable
-4. Continue chatting with Copilot inside the Page to refine, add sections, or go deeper
-
-**🎯 How to share and collaborate:**
-
-- Click **Share** at the top of any Page to invite colleagues
-- Everyone with access can see and edit the Page in real time — just like a shared Word doc
-- Copilot is available to all collaborators — anyone can ask it to expand, rewrite, or analyse sections
-- Comments and suggestions work the way you'd expect
-
-**🎯 How to export a Page:**
-
-When your Page is ready to become a formal deliverable:
-- Export to **Word** — turns your Page into a formatted .docx document
-- Export to **PDF** — for sharing externally or archiving
-- *PowerPoint export may be available depending on your rollout — check the export menu*
-
-This means your workflow can become: **Chat → Page → Collaborate → Export**. One smooth pipeline from idea to deliverable.
-
-**A note on collaboration:** Real-time co-editing works well, though Copilot may need a quick refresh to pick up changes others make simultaneously — just like re-engaging it in a shared Word doc.
-
-**The workflow that changed how I work:**
-
-1. Ask Researcher (Level 3 feature) to do deep research on a topic
-2. Click "Edit in Pages" on the output
-3. Share with my team — they add their insights and expertise
-4. Ask Copilot to polish and expand specific sections
-5. Export to PowerPoint for the client presentation
+**🎯 Open a Loop workspace and try:**
 
 <div class="prompt-cards">
 
-> "Research the top 5 market trends in [industry] for 2026. Create a comprehensive briefing." *(then click Edit in Pages)*
+> "We're planning [project]. Generate a kick-off agenda, a stakeholder map, and a risks/mitigations table — leave space for the team to add."
 
-> "Draft a project charter for [initiative] including objectives, scope, stakeholders, and success criteria." *(then share with your team for input)*
+> "Summarise everything on this page so the people joining late can get up to speed in 30 seconds."
 
-> "Create a competitive analysis of [Product A] vs [Product B]." *(then export to PowerPoint for the meeting)*
+> "Turn this messy brainstorm into three clean themes with bullet points under each."
 
 </div>
 
-**✅ You've unlocked:** Turning AI outputs into team assets — and formal deliverables.
+🪄 **Bonus — Copilot in Whiteboard:** When the team needs to ideate visually instead of in text, jump to Whiteboard. Copilot generates ideas as sticky notes, organises them into themes, and summarises the session. Same idea, different surface.
 
 ---
 
-### 12. Voice Chat — Think Out Loud
+### 11. Copilot in Planner — Turn Meetings into Tasks
 
-Here's a completely different way to use Copilot that most people never try.
+*Skip if your team doesn't use Planner. If you do — this saves your post-meeting hour.*
 
-Instead of typing prompts, **talk to Copilot**. Have a voice conversation. Brainstorm out loud. It feels less like using a tool and more like bouncing ideas off a smart colleague.
+How often do you leave a meeting with a Word doc full of action items, and then spend the next hour copying them into Planner / DevOps / Jira / wherever?
 
-This is especially powerful when you're on the go, taking a walk, or just need to think without staring at a screen.
+Copilot in Planner can build the plan for you. Describe the goal, paste in the meeting notes, point at a project document — Copilot generates tasks, suggests assignees where it can infer them, sets rough due dates and groups tasks into buckets. You tweak, you publish.
 
-**🎯 Next time you need to prepare for something, try saying:**
+**🎯 Try this after your next planning meeting:**
 
 <div class="prompt-cards">
 
-> "I need to brainstorm ideas for [topic]. Let's think through this together — what angles should I consider?"
+> "Here are my meeting notes. Generate a Planner plan with tasks grouped by workstream, suggested owners and rough due dates."
 
-> "Help me prepare for my presentation tomorrow. I'll talk through the key points and you help me structure them."
+> "Look at the action items in this meeting recap and add them to my [Plan] as new tasks."
 
-> "I just got out of a meeting and want to process what I heard. Let me talk through the key takeaways and you help me identify what needs action."
+> "Status check: which tasks in this plan are at risk of slipping based on assignee load and due dates?"
+
+</div>
+
+---
+
+### 12. Image Generation Inside Copilot
+
+This is the one I forgot existed for the first six months.
+
+You don't need any extra tools — right inside M365 Copilot, you can ask for an image and it generates one. Concept art, infographics, slide visuals, social tiles, banner backgrounds — all from a prompt, ready to drop straight into your Word doc, slide or Loop page.
+
+⚠️ **Note:** Image generation may need admin enablement in some tenants — if you don't see the option, it may be turned off at the tenant level. Always check your organisation's policy on AI-generated images — some industries (financial services, healthcare, government) have rules about how generated content can be used externally.
+
+**🎯 Try one of these:**
+
+<div class="prompt-cards">
+
+> "Create a clean, modern banner image showing a team collaborating around a digital whiteboard. Wide aspect ratio, professional style."
+
+> "Generate a simple infographic-style image showing 'before and after' for a process improvement story."
+
+> "Make a friendly, abstract background for a Teams channel about employee wellbeing — soft colours, no faces."
+
+</div>
+
+💡 **The pro move:** Pair this with PowerPoint. Generate an image, drop it on the slide, ask Copilot to "design this slide around the image". Faster than searching stock libraries.
+
+---
+
+### 13. Copilot Pages — Your Collaborative AI Canvas
+
+This is one of the most underrated features in the whole Copilot lineup.
+
+**What is a Page?** When Copilot gives you a great response in chat, click **Edit in Pages** and it becomes a living, collaborative document. Not a saved chat — a proper editable, shareable workspace where you and Copilot (and your colleagues) keep refining together.
+
+Think of it as the bridge between *chat response* and *real deliverable*.
+
+**🎯 How to use Pages:**
+
+1. Ask Copilot anything in chat — research, a draft, an analysis
+2. Like the output? Click **Edit in Pages** on the response
+3. The response opens as a full Page — editable and expandable
+4. Keep chatting with Copilot inside the Page to refine, expand or go deeper
+5. **Share** the Page — colleagues edit live alongside you
+6. **Export** to Word or PDF when it's ready to go out
+
+The workflow that changed how I work:
+
+1. Ask Researcher (Level 3) for deep research on a topic
+2. Click **Edit in Pages** on the output
+3. Share with the team — they add their context and expertise
+4. Ask Copilot to polish and expand specific sections
+5. Export to Word or PDF for the customer
+
+**🎯 Try one of these (then click Edit in Pages):**
+
+<div class="prompt-cards">
+
+> "Research the top 5 market trends in [industry] for 2026. Create a comprehensive briefing."
+
+> "Draft a project charter for [initiative] including objectives, scope, stakeholders, and success criteria."
+
+> "Create a competitive analysis of [Product A] vs [Product B]."
 
 </div>
 
 **✅ You've completed Level 2!** 🎉
 
-By now you're using Copilot across your daily apps — meetings, email, documents, spreadsheets, presentations, and notes. You're not just chatting with AI. You're working with it.
+You're now using Copilot across meetings, email, documents, spreadsheets, presentations, notes, real-time team docs, plans and visuals. Not just chatting with AI. Working with it.
 
-Ready to go deeper? Level 3 is where Copilot goes from "helpful" to "I can't work without this."
+Ready to go deeper? Level 3 is where Copilot becomes a genuine team member.
 
 ---
 
 ## 🟣 Level 3 — The Power Moves
 
-Welcome to the big leagues.
+Level 1 was quick wins. Level 2 was app upgrades. Level 3 is where Copilot researches for you, analyses your data, automates your routine, talks to your screenshots, and pulls in data from outside Microsoft 365.
 
-Level 1 was quick wins. Level 2 was app superpowers. Level 3 is where Copilot becomes a genuine team member — one that researches, analyses data, automates your routine, and builds custom tools for your team.
-
-These features take a bit more effort to learn. But the payoff is massive.
+These take a bit more effort to learn. The payoff is worth it.
 
 ---
 
-### 13. Researcher Agent — Your Personal Research Team
+### 14. Researcher Agent — Your Personal Research Team
 
 This is the feature that made me rethink what Copilot actually is.
 
-Researcher isn't just a better version of Copilot chat. It's a specialised reasoning agent that does **multi-step research** combining the web AND your M365 data — emails, files, meetings, messages — all at once. It explores multiple angles, cross-checks its reasoning, and shows you the sources so you can verify everything.
+Researcher isn't a better Copilot chat. It's a specialised reasoning agent that does **multi-step research** combining the web AND your M365 data — emails, files, meetings, messages — all at once. It explores multiple angles, cross-checks itself, and shows you the sources so you can verify everything.
 
-Translation? It thinks harder. It's more thorough. And it tells you where it got the information.
+It thinks harder. It's more thorough. It tells you where it got the information.
 
-**🎯 Think of a big task you've been putting off because the research would take forever:**
+📊 **Real-world:** Microsoft's own HR team built Copilot into their Dynamics 365 Customer Service case management. Result: **20% faster case throughput**. The pattern is the same one Researcher unlocks for the rest of us — pulling context together so people stop spending time on boilerplate summaries and focus on the actual problem in front of them. ([Microsoft customer story](https://www.microsoft.com/en/customers/story/25046-microsoft-dynamics-365-customer-service))
+
+**🎯 Pick a big task you've been putting off:**
 
 <div class="prompt-cards">
 
-> **For AEs:** "Prepare an executive briefing for my meeting with [Prospect]. Pull from our recent emails, past meetings, and any relevant public news about their company. Suggest 3 talking points and potential objections."
+> "Prepare an executive briefing for my meeting with [Customer/Stakeholder]. Pull from our recent emails, past meetings, and any relevant public news. Suggest 3 talking points and likely objections."
 
-> **For AMs:** "Build a QBR briefing for [Client] — summarise our engagement over the past quarter, highlight wins, flag any risks, and suggest expansion opportunities."
+</div>
+
+<details>
+<summary>👥 <strong>Your role's twist</strong> — click to open</summary>
+
+<div class="prompt-cards">
+
+> **For AEs:** "Prepare an executive briefing for my meeting with [Prospect]. Pull from emails, past meetings, and public news. Suggest 3 talking points and likely objections."
+
+> **For AMs:** "Build a QBR briefing for [Client] — summarise our engagement over the past quarter, highlight wins, flag risks, and suggest expansion opportunities."
 
 > **For Project Managers:** "Research best practices for [methodology/framework]. Compare 3 approaches with pros, cons, and recommendations for our context."
 
 > **For HR Leaders:** "Research the latest trends in employee retention for [industry]. Include data, practical strategies, and examples from similar-sized organisations."
 
-> **For Tech Strategists:** "Create a comparison of [Platform A] vs [Platform B] for our cloud migration. Include total cost of ownership, migration complexity, and risk factors."
+> **For Tech Strategists:** "Compare [Platform A] vs [Platform B] for our cloud migration. Include total cost of ownership, migration complexity, and risk factors."
 
-> **For Marketing/Comms:** "Research competitor positioning in [space]. Analyse their messaging, content strategy, and social presence. Identify gaps we can exploit."
+> **For Marketing/Comms:** "Research competitor positioning in [space]. Analyse their messaging, content strategy, and social presence. Identify gaps we can use."
 
 </div>
+</details>
 
-⚠️ **One thing to know:** Researcher and Analyst (next feature) share a monthly query allowance. Use them for your highest-value work — not quick questions that regular Copilot chat handles fine.
+⚠️ **Two things to know:** (1) Microsoft documents a limit of **25 Researcher queries per user per month** — save them for your highest-value work, not quick questions that regular Copilot chat handles fine. (2) Researcher lets you **pick the AI model** (Anthropic Claude or OpenAI GPT) from a model selector — different models have different strengths. For deep analysis, Claude often does well; for creative phrasing, GPT models. Let it auto-choose if you're not sure. (Model choice has expanded into the agentic capabilities in Word, Excel and PowerPoint as well — admin needs to enable Anthropic models for your tenant.)
 
 **✅ You've unlocked:** Work that used to take 2-3 hours now takes minutes.
 
 ---
 
-### 14. Analyst Agent — Your Personal Data Scientist
+### 15. Analyst Agent — Your Personal Data Scientist
 
 If Researcher is your research team, Analyst is your data scientist.
 
-Analyst doesn't just make charts from your data. It cleans messy spreadsheets, does advanced analysis behind the scenes, spots trends, does segmentation, builds forecasts, and — here's the crucial part — **explains its working step by step** so you can verify and trust the results.
+Analyst doesn't just make charts. It cleans messy spreadsheets, runs advanced analysis behind the scenes, spots trends, does segmentation, builds forecasts and — the crucial part — **explains its working step by step** so you can verify and trust the results.
 
-If you've ever stared at a spreadsheet thinking "I know there's an insight hiding in here somewhere" — Analyst is your answer.
+If you've ever stared at a spreadsheet thinking *"I know there's an insight hiding in here somewhere"* — Analyst is your answer.
 
-**🎯 Upload a dataset you've been meaning to analyse and try:**
+📊 **Real-world:** Lumen Technologies has been widely cited as estimating **$50M in annual savings** after rolling Copilot out across their sales and operations teams — faster pipeline reviews, less admin, better data work. Worth taking as one signal alongside others, not the only number that matters. ([C5 Insight summary](https://c5insight.com/3-microsoft-365-copilot-case-studies/))
+
+**🎯 How to actually use it — and a starter prompt:**
+
+In M365 Copilot Chat, click the attachment icon, upload your spreadsheet (Excel or CSV), then try:
 
 <div class="prompt-cards">
 
 > "Analyse this data. Show me the top 3 trends, which areas are underperforming, and what's driving the change. Visualise the key findings."
+
+</div>
+
+<details>
+<summary>👥 <strong>Your role's twist</strong> — click to open</summary>
+
+<div class="prompt-cards">
 
 > **For AEs:** "Analyse my sales pipeline. Which deals are at risk? What's the common pattern among stalled opportunities? Suggest recovery actions."
 
@@ -608,58 +746,61 @@ If you've ever stared at a spreadsheet thinking "I know there's an insight hidin
 > **For Marketing/Comms:** "Analyse website traffic and campaign data. Which content pieces are driving the most qualified leads? Visualise the funnel."
 
 </div>
+</details>
 
-💡 **The perception shift:** If someone in your organisation still thinks "Copilot isn't that smart" — sit them down and show them Analyst. It changes the conversation every time.
-
-**✅ You've unlocked:** Data-driven decisions without needing a data science team.
+💡 **The perception shift:** If someone in your organisation still thinks *"Copilot isn't that smart"* — sit them down and show them Analyst. It changes the conversation every time.
 
 ---
 
-### 15. Copilot Notebooks — Your AI Project Workspace
+### 16. Copilot Notebooks — Your AI Project Workspace
 
-Regular Copilot chat is like a text conversation — great in the moment, but scattered and hard to find later.
+Regular Copilot chat is like a text conversation — great in the moment, scattered and hard to find later. Copilot Pages (#13) are great when you want one polished output to share. Notebooks are different again.
 
-Notebooks are completely different. They're designed for **ongoing projects**, not one-off questions. They keep your prompts, context, references, and outputs together in a three-column workspace. Add files — Word, Excel, PowerPoint, PDFs — as references, and Copilot reasons across all of them together.
+Notebooks are designed for **ongoing projects** — multi-day, multi-week, evolving. They keep your prompts, context, references and outputs together in a three-column workspace. Add files — Word, Excel, PowerPoint, PDFs — as references, and Copilot reasons across all of them together.
 
 The magic? Copilot remembers the project context, so every response gets smarter as you add more material.
 
-**🎯 Think of an ongoing project you're working on. Create a Notebook for it:**
+**The simple rule:** *Pages are for one output you polish and share. Notebooks are for projects that span days or weeks, where you keep feeding Copilot more material over time.*
+
+**🎯 Pick an ongoing project. Create a Notebook:**
 
 <div class="prompt-cards">
 
-> "I'm working on a [project/proposal/strategy] for [client/initiative]. Over the next few weeks, I'll add meeting notes, requirements, and research. Let's start with an outline based on what I know so far."
+> "I'm working on a [project/proposal/strategy] for [customer/initiative]. Over the next few weeks I'll add meeting notes, requirements and research. Let's start with an outline based on what I know so far."
 
 </div>
 
-**When to use Notebooks vs Chat:**
+**Chat vs Notebooks — when to use which:**
 
-| Use Chat when... | Use Notebooks when... |
-|---|---|
+| Use Chat when… | Use Notebooks when… |
+|----------------|---------------------|
 | Quick one-off question | Multi-day or multi-week project |
 | Simple draft or summary | Research that builds over time |
-| Finding a file or email | Proposals, strategies, or plans |
+| Finding a file or email | Proposals, strategies, plans |
 
-💡 **Bonus:** Notebooks can generate an **Audio Overview** — a conversational audio summary of your Notebook content. Like a personalised podcast of your own work. Great for commutes or catching up on the go.
+🎧 **Bonus — Audio Overviews:** Notebooks can generate a conversational audio summary of your content. Like a personalised podcast of your own work. Great for the commute or catching up on the go. The same Audio Overview feature is starting to appear in OneDrive too — summarise up to five files at once without opening them.
 
-💡 **Who this is gold for:** Consultants managing multiple clients. Strategists building proposals. Account managers doing quarterly reviews. Project managers coordinating across workstreams. Anyone doing work that evolves over days, not minutes.
+💡 **Who this is gold for:** Consultants juggling multiple customers. Strategists building proposals. Account managers doing quarterly reviews. Project managers across workstreams. Anyone whose work evolves over days, not minutes.
 
 **✅ You've unlocked:** Copilot with long-term memory. Projects that get smarter over time.
 
 ---
 
-### 16. Scheduled Prompts — Copilot Works While You Sleep
+### 17. Scheduled Prompts — Copilot Works While You Sleep
 
-This is the one that turns Copilot from a chatbot into an automation engine.
+This is the one that turns Copilot from a chatbot into something closer to an automation engine.
 
-You can schedule prompts to run automatically — daily, weekly, or one-off. Copilot runs the work on your chosen cadence and delivers the results to you. Set it and forget it.
+You can schedule prompts to run automatically — daily, weekly, one-off. Copilot runs the work on your cadence and delivers the results. Set it. Forget it.
 
-No more remembering to check something every Monday. No more manually pulling together a weekly summary. Copilot just... does it.
+No more remembering to check something every Monday. No more manually pulling together a weekly summary. Copilot just… does it.
 
-**🎯 Set up your first scheduled prompt today:**
+⚠️ **Note:** Scheduled Prompts are generally available in M365 Copilot Chat (Teams, Outlook and microsoft365.com/chat). Microsoft documents a limit of **10 scheduled prompts per user**. Your admin can disable the feature via the *Optional Connected Experiences* policy — if you don't see the *Schedule* option, that's the place to ask.
+
+**🎯 Set up your first scheduled prompt today (or save these for when it lands):**
 
 <div class="prompt-cards">
 
-> **Every Monday at 8am:** "Summarise the key emails, meetings, and action items from last week. Highlight anything urgent for this week."
+> **Every Monday at 8am:** "Summarise the key emails, meetings and action items from last week. Highlight anything urgent for this week."
 
 > **Every Friday at 4pm:** "Create my week-in-review — key decisions, outstanding items, and priorities for next week."
 
@@ -669,87 +810,129 @@ No more remembering to check something every Monday. No more manually pulling to
 
 </div>
 
-💡 **The insight:** This is the moment Copilot stops being something you use and starts being something that works *for* you.
-
-**✅ You've unlocked:** Automation. Copilot running on your schedule, not just when you remember to ask.
+💡 **The honest insight:** This is the moment Copilot stops being something you *use* and starts being something that *works for you*.
 
 ---
 
-### 17. Agent Builder in M365 Copilot — Build Your Own AI Experts
+### 18. Agent Builder — Build Your Own AI Experts
 
 Now we're cooking.
 
-Right inside the M365 Copilot app, there's a no-code **Agent Builder**. This isn't Copilot Studio — it's a simpler experience built right into Copilot Chat for personal productivity. You describe what your agent should do in plain English, point it at your knowledge sources (like a SharePoint site), test it, publish it. Done.
+Right inside the M365 Copilot app there's a no-code **Agent Builder**. Not Copilot Studio — a simpler experience built into Copilot Chat for personal and small-team productivity. Describe what your agent should do in plain English. Point it at your knowledge sources (a SharePoint site, a folder, FAQs). Test it. Publish it. Done.
 
-Your team then @mentions the agent in Copilot chat, and it answers based on YOUR data. It's like building a custom expert for your team in 30 minutes.
+Your team @mentions the agent in Copilot chat, and it answers based on YOUR data. It's like building a custom expert for your team in 30 minutes.
 
 **🎯 Think about the questions your team asks over and over:**
 
-"What's our leave policy?" "Where's the latest pricing?" "How do I submit an expense?" "What's the process for...?"
+*"What's our leave policy?"* / *"Where's the latest pricing?"* / *"How do I submit an expense?"* / *"What's the process for…?"*
 
-**Build an agent for it:**
+Build an agent for it.
+
+**Quick steps:**
 
 1. Open M365 Copilot ([microsoft365.com/chat](https://microsoft365.com/chat))
 2. Find the Agent Builder option
 3. Describe what the agent should know and do
 4. Add knowledge sources (SharePoint URLs, documents, FAQs)
-5. Test it, refine it, publish it
+5. Test, refine, publish
 
-**Quick win agent ideas:**
-- **Team FAQ bot** — point it at your SharePoint team site
-- **Client knowledge agent** — point it at a client folder
-- **Process guide** — point it at your standard operating procedures
-- **New starter buddy** — point it at your onboarding docs
+**Quick-win agent ideas:**
+
+- **Team FAQ bot** — pointed at your SharePoint team site
+- **Customer knowledge agent** — pointed at a customer folder
+- **Process guide** — pointed at your standard operating procedures
+- **New starter buddy** — pointed at your onboarding docs
+
+🪄 **Bonus — SharePoint agents:** Every SharePoint site now comes with a ready-made agent that answers questions over the content of that site. No build needed. Customise it if you want, or just use it as-is. Easiest 5-minute win in this whole guide.
 
 💡 **The impact:** One 30-minute build can save your team hours of "who do I ask about this?" every single week.
 
-**✅ You've unlocked:** Building custom AI tools for your team. No code required.
+---
+
+### 19. Image Input in Copilot Chat — Talk to a Screenshot
+
+Most people still treat Copilot as text in, text out. Image input changes that.
+
+⚠️ **Note up-front:** Image input in M365 Copilot Chat is rolling out and may need admin enablement in some tenants. (Don't confuse this with *"Copilot Vision"* — that's a Windows-Copilot feature where the AI can see your open screen, which is separate.) If you don't see the image-attach button, check with IT.
+
+You can paste a screenshot, photo of a whiteboard, chart, or diagram into Copilot Chat and **ask it questions about the image**. It reads what's there visually — no need to retype, no need to copy data out manually.
+
+Things I use this for almost weekly:
+
+- A messy dashboard screenshot → *"What's the headline trend? What's missing?"*
+- A photo of a whiteboard from a workshop → *"Type these up as bullet points and group them into themes."*
+- A complicated PowerPoint slide someone sent → *"Explain this in plain English."*
+- A receipt → *"Pull the line items into a table."*
+
+**🎯 Try one of these — paste in an image:**
+
+<div class="prompt-cards">
+
+> "What's in this chart? Summarise the trend in one paragraph and highlight anything that looks unusual."
+
+> "Type up this photo of our whiteboard as a structured list with headings."
+
+> "Explain what this dashboard is showing as if I was new to the company."
+
+</div>
+
+⚠️ **Privacy reminder:** Don't paste customer-sensitive screenshots if your organisation hasn't enabled the appropriate data protection controls. Vision respects your existing M365 boundary, but image-based content can be easy to over-share by accident.
+
+**✅ You've unlocked:** Copilot finally understands the half of your work that isn't text.
 
 ---
 
-### 18. Model Choice — Pick the Right Brain
+### 20. Connectors — Bring Outside Data In
 
-Here's a subtle one that packs more punch than you'd expect.
+⚠️ **Heads-up:** Connectors need your IT admin to enable them. Once they're on, here's what becomes possible.
 
-In certain Copilot experiences — specifically **Researcher** and **Edit with Copilot in PowerPoint** — you can choose between different AI models. This includes Anthropic's Claude and OpenAI's GPT models. Different models have different strengths, just like different colleagues are good at different things.
+Most knowledge work doesn't live entirely in Microsoft 365. You've got tasks in Asana or Jira. Tickets in ServiceNow. Customer data in Salesforce or Dynamics. Files in Box or S3.
 
-Think of it like a law firm. You wouldn't send a property lawyer to argue a criminal case. Same idea.
+**Connectors** let Copilot reason across that data too — without you copy-pasting between tabs. Once your admin enables a connector, Copilot can pull context from those external sources and combine it with your M365 data in one answer.
 
-**When to try switching models (where available):**
+**A note on what's first-party vs partner:** Microsoft ships first-party connectors for the big ones — **Salesforce, ServiceNow, Jira Cloud, Confluence Cloud**, and more. Other tools (**Asana, GitLab, Box, Amazon S3** etc.) are typically available as **partner-built connectors** in the connector gallery — same idea, different support and SLA. Either way, your admin enables them.
 
-| Task | What to try |
-|------|-----------|
-| Deep analysis or complex reasoning | Claude |
-| Creative writing or brainstorming | GPT models |
-| Not sure | Let Copilot auto-choose |
+**🎯 Once a connector is enabled, try:**
 
-⚠️ **Note:** Model choice requires your admin to enable Anthropic models for your organisation. If you don't see the model switcher, it may not be turned on yet. Check with IT.
+<div class="prompt-cards">
 
-💡 **The simple way to explain this to anyone:** *"Copilot can now pick the right brain for the job — or you can choose manually."*
+> "Across our Salesforce account [Customer] and our last 3 Teams meetings, where are we right now and what's next?"
 
-**✅ You've completed Level 3!** 🎉
+> "Summarise all my open Jira tickets assigned to me, grouped by priority. Tell me which one to do first based on what's blocking the team."
 
-If you're here, you're well ahead of most Copilot users. You're using Copilot as a researcher, data scientist, automation engine, and custom agent builder. That's not just using AI — that's working with it.
+> "Pull this week's high-priority ServiceNow tickets and draft a Monday-morning status update for the team channel."
 
-One more level to go...
+</div>
+
+⚠️ **Note:** If you don't see your tool listed, it's an admin question, not a feature question.
+
+**✅ You've unlocked:** One Copilot, all your data — not just the Microsoft bits.
+
+---
+
+**🎉 You've completed Level 3!**
+
+If you're here, you're well ahead of most Copilot users. You've got Copilot as a researcher, data scientist, automation engine, custom-agent builder, image-reader and multi-source connector. That's not just *using* AI — that's *working with* it.
+
+One more level to go.
 
 ---
 
 ## 🟡 Level 4 — The Secret Weapon + What's Next
 
-These last two are for the adventurous — your secret weapon for better prompting, and a sneak peek at where Copilot is heading.
+Two final features — your secret weapon for better prompting, and a peek at where Copilot is heading next.
 
 ---
 
-### 19. The Prompt Gallery — Your Secret Weapon
+### 21. The Prompt Gallery — Your Secret Weapon
 
-I put this near the end on purpose, but honestly? This might be the feature with the highest long-term impact.
+I've put this near the end on purpose. Honestly? It might be the feature with the highest long-term impact.
 
-The #1 reason people don't get value from Copilot isn't the technology. It's the prompts. They ask vague questions and get vague answers. Then they blame the tool.
+The number-one reason people don't get value from Copilot isn't the technology. It's the prompts. Vague questions get vague answers. Then they blame the tool.
 
-Microsoft maintains an official [**Copilot Prompt Gallery**](https://copilot.cloud.microsoft/prompts) with hundreds of ready-to-use prompts, organised by role (Sales, HR, Marketing, IT, Finance, Leadership) and by app. These aren't generic suggestions — they're proven, refined prompts you can copy-paste and customise in seconds.
+Microsoft maintains an official [**Copilot Prompt Gallery**](https://copilot.cloud.microsoft/prompts) with hundreds of ready-to-use prompts, organised by role (Sales, HR, Marketing, IT, Finance, Leadership) and by app. Not generic suggestions — proven, refined prompts you can copy-paste and customise in seconds.
 
-**🎯 Your mission:**
+**🎯 Your move:**
 
 1. Visit the [Prompt Gallery](https://copilot.cloud.microsoft/prompts)
 2. Filter by **your role** and the **app you use most**
@@ -757,127 +940,103 @@ Microsoft maintains an official [**Copilot Prompt Gallery**](https://copilot.clo
 4. Try them this week
 5. Save the ones that work
 
-💡 **The team multiplier:** Have someone curate a "Top 10 Copilot prompts for our team" list from the Gallery and share it. This single action can accelerate adoption across your team faster than any training session I've seen. It takes the guesswork out of "what do I even ask?"
-
-**✅ You've unlocked:** The master key to better Copilot results — better prompts.
+💡 **The team multiplier:** Have someone curate a *"Top 10 Copilot prompts for our team"* list from the Gallery and share it. This single move accelerates adoption across your team faster than any training session I've seen. Takes the guesswork out of *"what do I even ask?"*
 
 ---
 
-### 20. What's Coming — Copilot Cowork *(Preview)*
+### 22. What's Coming — Copilot Cowork *(Preview)*
 
-I'm including this because it shows where everything is heading, and you'll want to be ready when it lands.
+I'm including this because it shows where Copilot is heading, and you'll want to be ready when it lands.
 
-**Copilot Cowork** is the next leap — from "AI assistant" to "AI coworker." You describe a goal, and Cowork autonomously plans the steps, works across your apps (Outlook, Teams, SharePoint, Word, Excel), executes the work, and checks in with you at key milestones.
+**Copilot Cowork** is the next step from where Researcher (#14) gets you today. Researcher *finds and synthesises* — pulls everything together so you can decide what to do. Cowork goes further: it actually *takes the actions*. You describe a goal, and it plans the steps, works across your apps (Outlook, Teams, SharePoint, Word, Excel), executes the work, and checks in with you at key milestones.
 
-It's the difference between asking someone a question and handing them a project.
+It's the difference between asking someone a question and handing them a whole project to run.
 
-**Example scenarios being tested in Frontier early access:**
-- "Prepare a complete briefing for my meeting with [Client] tomorrow" — finds emails, gathers files, checks past discussions, creates talking points
-- "Clean up my calendar for next week — find conflicts, suggest what to decline, block focus time"
-- "Track down the status of [Project] across emails, Teams, and shared files — give me a one-page update"
+**Example scenarios in early access:**
 
-⚠️ **Availability:** Cowork is currently available through the **Microsoft Frontier preview programme** for selected enterprises. Broader availability is expected as part of new M365 licensing tiers — watch the Microsoft 365 roadmap for updates.
+- *"Prepare a complete briefing for my meeting with [Customer] tomorrow"* — finds emails, gathers files, checks past discussions, creates talking points.
+- *"Clean up my calendar for next week — find conflicts, suggest what to decline, block focus time."*
+- *"Track down the status of [Project] across emails, Teams, and shared files — give me a one-page update."*
 
-**✅ You've completed the journey!** 🎉🎉🎉
+⚠️ **Availability:** Cowork is currently in **early-access preview** for selected enterprises. Broader availability is expected as part of new M365 licensing tiers — watch the [Microsoft 365 roadmap](https://www.microsoft.com/en-us/microsoft-365/roadmap) for confirmed dates and licensing.
+
+**That's the end of the list.** 🎉
 
 ---
 
 ## Your 4-Week Challenge
 
-Don't try all 20 at once. That's a recipe for overwhelm. Here's a simple plan:
+Don't try all 22 at once. That's a recipe for overwhelm. Each week below has *one specific outcome to land*, not a category to explore.
 
-**🗓️ Week 1 — Quick Wins (Level 1)**
-Pick 3 features from Level 1. Try them in real work — not just testing. My picks: Meeting Recap (#1), Copilot in Outlook (#3), and Personalisation (#6). Setting up your personal instructions first makes everything else work better.
+📊 **The pattern:** A small apparel manufacturer's Copilot pilot has been written up showing that within about a month Copilot had become one of the most-used apps after Outlook — driven by drafting and meeting work ([Citrin Cooperman case study](https://www.citrincooperman.com/In-Focus-Resource-Center/Ensuring-Microsoft-365-Copilot-Success-with-the-Right-Use-Cases---Case-Study)). The interesting part isn't the number — it's the pattern. Try a few features, find the two or three that fit your work, build the habit.
 
-**🗓️ Week 2 — App Superpowers (Level 2)**
-Pick 2-3 from Level 2. Try Edit with Copilot in the app you use most — Word, Excel, or PowerPoint. Also try Pages — create one from a good Copilot response and share it with a colleague.
+**🗓️ Week 1 — One template that runs forever**
+Set up your **Personalisation** instructions (#5) AND a **Custom Summary template** for your most common meeting type (inside #1). By Friday, every recap from your weekly customer call is automatically structured the way *you* want it — once, forever.
 
-**🗓️ Week 3 — Power Moves (Level 3)**
-Use Researcher for your next big meeting prep. Set up one Scheduled Prompt (the Monday morning briefing is a great starter). Try Analyst if you have data to explore.
+**🗓️ Week 2 — One app where Copilot saves you an hour**
+Pick the app you use most — Word, Excel, or PowerPoint (#6, #7 or #8). Use it on real work, not a test doc. The outcome by Friday: one document/sheet/deck you finish faster than usual *and you'd be happy to send*.
 
-**🗓️ Week 4 — Share & Build**
-Visit the Prompt Gallery and find 5 prompts for your role. Share your favourite feature with a colleague — teaching others cements your own learning. If you're feeling adventurous, build an Agent using Agent Builder.
+**🗓️ Week 3 — One automation, one research deep-dive**
+Set up one **Scheduled Prompt** (#17) — the Monday morning briefing is a great starter. Then use **Researcher** (#14) to prep for your single highest-stakes meeting that week. By Friday: an automation that runs on its own, and one meeting you walked into more prepared than usual.
 
-**By the end of 4 weeks,** you'll have gone from "I sometimes use Copilot" to "I can't imagine working without it." And you'll have the prompts, habits, and confidence to keep discovering new tricks on your own.
+**🗓️ Week 4 — Share what worked**
+Visit the **Prompt Gallery** (#21), find 3 prompts for your role, and share your favourite feature with a colleague. Teaching cements your own learning. By Friday: someone else on your team is using something you taught them.
 
----
-
-## The Quick Reference
-
-| # | Feature | Level | Try it in... |
-|---|---------|-------|-------------|
-| 1 | Teams Meeting Recap | 🟢 Quick Win | 2 minutes |
-| 2 | Custom Summary Templates | 🟢 Quick Win | 5 minutes |
-| 3 | Copilot in Outlook + Custom Instructions | 🟢 Quick Win | 5 minutes |
-| 4 | Enterprise Search | 🟢 Quick Win | 2 minutes |
-| 5 | Past Meeting Prompts | 🟢 Quick Win | 2 minutes |
-| 6 | Personalisation — Instructions & Memory | 🟢 Quick Win | 10 minutes |
-| 7 | Edit with Copilot in Word | 🔵 Superpower | 10 minutes |
-| 8 | Edit with Copilot in Excel | 🔵 Superpower | 10 minutes |
-| 9 | Edit with Copilot in PowerPoint | 🔵 Superpower | 10 minutes |
-| 10 | Copilot in OneNote | 🔵 Superpower | 5 minutes |
-| 11 | Copilot Pages | 🔵 Superpower | 10 minutes |
-| 12 | Voice Chat | 🔵 Superpower | 2 minutes |
-| 13 | Researcher Agent | 🟣 Power Move | 15 minutes |
-| 14 | Analyst Agent | 🟣 Power Move | 15 minutes |
-| 15 | Copilot Notebooks | 🟣 Power Move | 10 minutes |
-| 16 | Scheduled Prompts | 🟣 Power Move | 10 minutes |
-| 17 | Agent Builder | 🟣 Power Move | 30 minutes |
-| 18 | Model Choice | 🟣 Power Move | 5 minutes |
-| 19 | Prompt Gallery | 🟡 Secret Weapon | 5 minutes |
-| 20 | Copilot Cowork *(preview)* | 🟡 What's Next | Coming soon |
+By the end, you'll have more than the AI features in your toolkit. You'll have a few small habits that don't go away.
 
 ---
 
 ## FAQ
 
-<div class="blog-faq">
+**Do I need a special licence for these M365 Copilot features?**
+Most features here work with the standard Microsoft 365 Copilot licence your organisation has likely already provisioned. Some — model choice, third-party connectors, image input, image generation — may need your admin to switch them on. Cowork (#22) is in early-access preview via the Microsoft Frontier programme and is expected to require an upcoming higher M365 tier. If a feature isn't appearing for you, check with IT first.
 
-**Do I need a special licence for these?**
-Features 1-19 work with the M365 Copilot licence your organisation has already provisioned. Copilot Cowork (#20) is currently in preview and expected to require the upcoming M365 E7 tier.
-
-**How many Researcher/Analyst queries do I get?**
-They share a monthly query allowance. Save them for high-value work — regular Copilot chat handles quick questions just fine.
+**How many Researcher queries do I get per month?**
+Microsoft documents 25 Researcher queries per user per month. Analyst has its own usage limit (check Microsoft Learn for the latest number). Save them for high-value work — regular Copilot chat handles quick questions just fine.
 
 **Can I use Agent Builder without Copilot Studio?**
-Yes! The Agent Builder inside M365 Copilot (BizChat) is a separate, simpler experience designed for personal productivity agents. For complex workflows with custom integrations, you'd move to Copilot Studio.
+Yes. Agent Builder inside M365 Copilot is a simpler, no-code experience for personal and small-team agents. For complex workflows with custom integrations, you'd move to Copilot Studio.
 
 **Which AI model should I pick?**
-For most tasks, let Copilot auto-choose. For deep reasoning, try Claude. For creative work, try GPT models. Experiment and you'll quickly develop a feel for what works. Note that model choice requires admin enablement in some organisations.
+For most tasks, let Copilot auto-choose. For deep reasoning, try Claude. For creative work, try GPT models. Model choice is available in Researcher and across the agentic capabilities in Word, Excel and PowerPoint (admin enablement required). Experiment a couple of times and you'll develop a feel.
 
 **Does Copilot access other people's data?**
-No. Copilot respects your existing M365 permissions. It can only see data you already have access to. It doesn't bypass your organisation's security policies.
-
-**Can I set custom instructions for the whole team?**
-Individual Copilot instructions are personal. For team-wide customisation, your admin can configure organisational settings, and you can build shared Agents via Agent Builder that encode team knowledge.
-
-**Where should a complete beginner start?**
-Feature #1 (Meeting Recap), Feature #6 (Personalisation), and Feature #19 (Prompt Gallery). Set up your personalisation first, then use the Gallery to find great prompts for your role. Everything else follows naturally.
+No. Copilot respects your existing M365 permissions. It only sees data you already have access to. It does not bypass your organisation's security policies.
 
 **Can Copilot make mistakes?**
-Yes — like any AI, Copilot can get things wrong. Always double-check important facts, figures, and recommendations before acting on them. Think of Copilot as a very capable first draft, not a final answer.
+Yes. Like any AI, it can get things wrong. Always double-check important facts, figures and recommendations before acting on them. Treat Copilot as a strong first draft, not a final answer.
+
+**Can I paste a screenshot into M365 Copilot Chat?**
+Yes — image input is supported in M365 Copilot Chat (paste a screenshot, photo of a whiteboard or a chart and ask questions about it). This is different from *Copilot Vision* on Windows, which is a separate consumer feature where the AI sees your open screen. Some tenants may need admin enablement for image input.
+
+**Are Connectors the same as plugins?**
+Same broad idea — they let Copilot reach data outside Microsoft 365. Some connectors are first-party Microsoft (Salesforce, ServiceNow, Jira Cloud, Confluence Cloud). Others are partner-built (Asana, GitLab, Box, S3, etc.) — both kinds need admin enablement. The plugin and skill experiences from earlier rollouts are folding into this connector model.
+
+**Can I set custom instructions for the whole team?**
+Personal Copilot instructions are personal. For team-wide customisation, your admin can configure organisational settings, and you can build shared Agents (#18) that encode team knowledge.
+
+**Where should a complete beginner start?**
+Feature #1 (Meeting Recap), #5 (Personalisation), #21 (Prompt Gallery). Set up Personalisation first, then use the Gallery to find great prompts for your role. Everything else follows naturally.
 
 **Is what I type into Copilot private?**
 Your Copilot conversations are private to you. They're not shared with colleagues or used to train AI models. Your organisation's data protection policies apply.
 
 **What's the difference between Copilot in Teams/Outlook vs the main Copilot chat?**
-Copilot in Teams and Outlook works within those apps — it knows the meeting context or email thread you're looking at. The main Copilot chat (at microsoft365.com/chat) can search across everything and is where you'll find Researcher, Analyst, Notebooks, and Agent Builder.
-
-</div>
+Copilot in Teams and Outlook works *within* those apps — it knows the meeting context or the email thread you're looking at. The main Copilot chat (at [microsoft365.com/chat](https://microsoft365.com/chat)) can search across everything and is where you'll find Researcher, Analyst, Notebooks, Agent Builder and Pages.
 
 ---
 
 ## One Last Thing
 
-Here's what I've learned from watching hundreds of people adopt Copilot:
+Here's what I've learned watching hundreds of people adopt Copilot.
 
-The people who get the most value aren't the most technical. They're not the ones who write the most complex prompts. They're the ones who **built a habit**. They try one new thing, find it useful, and add it to their routine. Then they try the next thing. And the next.
+The people who get the most value aren't the most technical. They're not writing the most complex prompts. They're the ones who **built a habit**. They try one new thing, find it useful, add it to their routine. Then the next thing. And the next.
 
-That's why this guide is a journey, not a list. Start where you are. Try one feature. If it helps, come back for the next one. Small wins compound into something extraordinary.
+That's why this guide is a journey, not a list. Start where you are. Try one feature. If it helps, come back for the next one. Small wins compound into something bigger than the sum of the parts.
 
-And when you find that feature that makes you go "how did I ever work without this?" — share it. Send this page to a colleague. Bookmark it for your team. Because the best way to get value from Copilot is to have the people around you getting value from it too.
+When you find a feature that makes you go *"how did I ever work without this?"* — share it with a colleague. Honestly, the best way to keep getting value from Copilot is to have the people around you getting value from it too.
 
-Your company invested in this tool for you. Now it's your turn to make the most of it.
+The tool is already there. The only thing left is the first try.
 
 Feature #1. Right after your next meeting.
 
@@ -885,8 +1044,8 @@ Go. 🚀
 
 ---
 
-*This is a living document. I'll update it as new features roll out and as I discover better prompts. Got a Copilot tip I missed? Reach out — I'd love to add it.*
+*This is a living document. I'll keep updating as new features ship and as I find better prompts. Got a Copilot tip I missed? [Send me feedback](/feedback/) — I'd love to add it.*
 
 ---
 
-**Disclaimer:** Feature availability depends on your Microsoft 365 licence and your organisation's admin settings. Some features may still be rolling out regionally. GA status confirmed as of April 2026 unless marked as preview. If something isn't appearing for you, check with your IT admin — it might just need enabling.
+**Disclaimer:** Feature availability depends on your Microsoft 365 licence and your organisation's admin settings. Some features may still be rolling out regionally. GA status confirmed as of May 2026 unless marked as preview. If something isn't appearing for you, check with IT — it might just need enabling.
