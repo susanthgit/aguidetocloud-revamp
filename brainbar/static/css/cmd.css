@@ -48,13 +48,20 @@
 }
 .bb-back:hover { color: var(--accent); }
 
-/* Cosmos rail — sibling planets as icon chips (6 May 2026)
-   Icons stand on their own shape — no chip frame. Each icon's native silhouette
-   (Earth circle badge, Shift dial, Plain AI bubble) carries identity. */
+/* Cosmos rail — sibling planets as icon chips (6 May 2026 v2)
+   Sits LEFT-aligned in a .bb-header-left wrapper next to the brand, mirroring
+   the home planet pattern. Each icon's native silhouette carries identity. */
+.bb-header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+}
 .bb-cosmos-rail {
   display: inline-flex;
   align-items: center;
   gap: var(--s-3);
+  padding-left: var(--s-3);
+  border-left: 1px solid var(--border);
 }
 .bb-cosmos-chip {
   display: inline-flex;

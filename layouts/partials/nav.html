@@ -11,7 +11,7 @@
           <span class="bb-launch-prompt">$</span><span class="bb-launch-cursor">_</span>
         </a>
         <a href="https://shift.aguidetocloud.com/" class="planet-chip" data-slug="shift" target="_blank" rel="noopener" aria-label="Shift — the AI job-change wire (opens in new tab)" title="Shift — the AI job-change wire">
-          {{ partial "planet-icon.html" (dict "slug" "shift" "size" 28 "scope" "nav") }}
+          {{ partial "planet-icon.html" (dict "slug" "shift" "size" 24 "scope" "nav") }}
         </a>
         <a href="https://plainai.aguidetocloud.com/" class="planet-chip" data-slug="plainai" target="_blank" rel="noopener" aria-label="Plain AI — AI explained plainly, for everyone (opens in new tab)" title="Plain AI — AI explained plainly">
           {{ partial "planet-icon.html" (dict "slug" "plainai" "scope" "nav") }}
@@ -31,7 +31,7 @@
     {{ $isLicensing := or (hasPrefix $rp "/licensing-docs/") (hasPrefix $rp "/licensing/") }}
     {{ $isGuides := or (hasPrefix $rp "/study-guides/") (hasPrefix $rp "/cert-tracker/") }}
     <ul class="nav-links" id="nav-links">
-      <li><a href="/guided/explore/"{{ if hasPrefix $rp "/guided/" }} class="nav-active" aria-current="page"{{ end }}>Cert Practice Exams</a></li>
+      <li><a href="/guided/explore/"{{ if hasPrefix $rp "/guided/" }} class="nav-active" aria-current="page"{{ end }}>Exams</a></li>
       <li><a href="/study-guides/"{{ if $isGuides }} class="nav-active" aria-current="page"{{ end }}>Guides</a></li>
       <li><a href="/free-tools/"{{ if or $isTool (eq $rp "/free-tools/") }} class="nav-active" aria-current="page"{{ end }}>Tools</a></li>
       <li><a href="/mind-maps/"{{ if hasPrefix $rp "/mind-maps/" }} class="nav-active" aria-current="page"{{ end }}>Maps</a></li>
@@ -57,7 +57,7 @@
     {{/* ═══════ MOBILE DRAWER — all 8 links flat · cosmos rail ═══════ */}}
     <div class="nav-drawer" id="nav-drawer">
       <div class="drawer-panel active">
-        <a href="/guided/explore/" class="drawer-link drawer-link--primary">Cert Practice Exams</a>
+        <a href="/guided/explore/" class="drawer-link drawer-link--primary">Exams</a>
         <a href="/study-guides/" class="drawer-link">Guides</a>
         <a href="/free-tools/" class="drawer-link">Tools</a>
         <a href="/mind-maps/" class="drawer-link">Maps</a>

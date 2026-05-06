@@ -60,18 +60,13 @@
 </head>
 <body>
   <header class="bb-header">
-    <a class="bb-brand" href="/">
-      <span class="bb-prompt">$_</span>
-      <span class="bb-brand-name">brainbar</span>
-    </a>
-    <div style="display:flex; gap: var(--s-3); align-items:center;">
-      <button class="bb-theme-toggle" type="button" aria-label="Toggle theme — switch between dark and light mode" data-bb-theme>
-        <span class="bb-theme-icon-dark" aria-hidden="true">☾</span>
-        <span class="bb-theme-icon-light" aria-hidden="true">☀</span>
-      </button>
-      {{/* ═══ COSMOS RAIL — sibling planets as icon chips (6 May 2026)
-           Each icon's native shape carries identity; no chip frame around
-           them. Filters out 'brainbar' (current planet). */}}
+    <div class="bb-header-left">
+      <a class="bb-brand" href="/">
+        <span class="bb-prompt">$_</span>
+        <span class="bb-brand-name">brainbar</span>
+      </a>
+      {{/* ═══ COSMOS RAIL — sibling planets as icon chips, LEFT-aligned next
+           to brand (matches the home planet pattern). 6 May 2026 v2. */}}
       <span class="bb-cosmos-rail" aria-label="The cosmos — sibling planets">
         {{ range (index hugo.Data "planets").planets }}
           {{ if ne .slug "brainbar" }}
@@ -81,6 +76,12 @@
           {{ end }}
         {{ end }}
       </span>
+    </div>
+    <div style="display:flex; gap: var(--s-3); align-items:center;">
+      <button class="bb-theme-toggle" type="button" aria-label="Toggle theme — switch between dark and light mode" data-bb-theme>
+        <span class="bb-theme-icon-dark" aria-hidden="true">☾</span>
+        <span class="bb-theme-icon-light" aria-hidden="true">☀</span>
+      </button>
     </div>
   </header>
 
