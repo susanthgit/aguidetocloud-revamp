@@ -251,8 +251,8 @@ select option {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-full);
   border: 1px solid var(--border);
   background: transparent;
@@ -429,8 +429,8 @@ a:hover {
   flex-shrink: 0;
 }
 .site-logo-img-wrap {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -3208,7 +3208,8 @@ pre.mermaid {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 36px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0 4px;
   color: var(--text-tertiary);
   text-decoration: none;

@@ -67,7 +67,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 36px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0 4px;
   color: var(--text-muted);
   text-decoration: none;
@@ -99,6 +100,8 @@
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
   padding: 4px 10px;
+  min-width: 44px;
+  min-height: 44px;
   cursor: pointer;
   transition: all var(--t-fast);
   white-space: nowrap;

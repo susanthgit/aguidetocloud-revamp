@@ -37,7 +37,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
   tagline = "stop googling microsoft. just type."
   author = "Susanth Sutheesh"
   parent_site = "https://www.aguidetocloud.com/"
-  cache_version = "2026050601"
+  cache_version = "2026050602"
 
 [outputs]
   home = ["HTML", "CMD_INDEX", "REDIRECTS"]
