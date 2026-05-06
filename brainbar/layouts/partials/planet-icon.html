@@ -1,37 +1,32 @@
 {{/* ═══════════════════════════════════════════════════════════════════════════
-     PLANET ICON — Hugo partial
+     PLANET ICON — Brain Bar vendored partial
      ═══════════════════════════════════════════════════════════════════════════
-     Renders the SVG icon for a planet in the cosmos.
+     Vendored copy of aguidetocloud-revamp/layouts/partials/planet-icon.html
+     for Brain Bar's terminal atmosphere. Same SVG palette must stay in sync
+     across all 5 planets (visual contract for cosmos sibling icons).
 
      Parameters:
        slug   — required. One of: earth, brainbar, shift, plainai
-       size   — optional. Pixel size (default 28).
+       size   — optional. Pixel size (default 24).
                 For plainai: ignored — bubble has intrinsic 38×30 dimensions.
        scope  — optional. Unique ID suffix for gradient defs (default "default").
-                Pass a different scope when rendering the same icon in
-                multiple places on one page (e.g. "nav" + "footer").
 
      Usage:
-       {{ partial "planet-icon.html" (dict "slug" "shift" "size" 28 "scope" "nav") }}
-       {{ partial "planet-icon.html" (dict "slug" "plainai" "scope" "nav") }}
+       {{ partial "planet-icon.html" (dict "slug" "shift" "size" 24 "scope" "header") }}
+       {{ partial "planet-icon.html" (dict "slug" "plainai" "scope" "header") }}
 
-     Returns currentColor where possible so the icon inherits the surrounding
-     text colour. Hard-coded accents only where they ARE the planet's identity
-     (Shift's red needle; Plain AI's gradient).
+     6 May 2026 — icons no longer wrapped in chip frame (each shape carries
+     identity). Plain AI flipped from polaroid to speech-bubble outline.
 
-     6 May 2026 — icons no longer wrapped in circular .planet-chip frame; each
-     icon's native shape carries identity. Plain AI flipped from polaroid to
-     speech-bubble-as-chip (38×30 outline + gradient AI text).
-
-     MIRRORS (same SVG palette must stay in sync — visual contract):
-       - aguidetocloud-revamp/layouts/partials/planet-icon.html (this file)
+     MIRRORS (visual contract — keep in sync):
+       - aguidetocloud-revamp/layouts/partials/planet-icon.html
        - guided/src/components/layout/PlanetIcon.astro
-       - aguidetocloud-revamp/brainbar/layouts/partials/planet-icon.html
+       - aguidetocloud-revamp/brainbar/layouts/partials/planet-icon.html (this file)
        - shift/src/components/PlanetIcon.astro
        - plainai/planet-helpers.mjs (planetIcon function)
      ═══════════════════════════════════════════════════════════════════════════ */}}
 {{- $slug := .slug -}}
-{{- $size := .size | default 28 -}}
+{{- $size := .size | default 24 -}}
 {{- $scope := .scope | default "default" -}}
 {{- $gradId := printf "pa-grad-%s-%s" $scope $slug -}}
 
@@ -62,21 +57,18 @@
 </svg>
 
 {{- else if eq $slug "brainbar" -}}
-{{/* Terminal $_ chip — used by NON-Earth planets when they want a Brain Bar chip.
-     On Earth itself, the existing #bb-launch-btn palette launcher takes its place. */}}
 <svg viewBox="0 0 24 24" width="{{ $size }}" height="{{ $size }}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
   <text x="6" y="16" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700" fill="currentColor">$</text>
   <line x1="14" y1="14" x2="20" y2="14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
 </svg>
 
 {{- else if eq $slug "earth" -}}
-{{/* Indigo A badge — matches the existing site logo monogram. */}}
+{{/* Indigo A badge — matches the home site's logo monogram. */}}
 <svg viewBox="0 0 24 24" width="{{ $size }}" height="{{ $size }}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
   <circle cx="12" cy="12" r="11" fill="#6366F1"/>
   <text x="12" y="16.5" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="900" fill="white" letter-spacing="-0.04em">A</text>
 </svg>
 
 {{- else -}}
-{{/* Unknown slug — fail loudly during development, render nothing in prod. */}}
 {{- warnf "planet-icon.html: unknown slug %q (expected: earth, brainbar, shift, plainai)" $slug -}}
 {{- end -}}

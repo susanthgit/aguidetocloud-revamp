@@ -48,12 +48,33 @@
 }
 .bb-back:hover { color: var(--accent); }
 
-/* Cosmos rail — sibling planets in terminal register (5 May 2026) */
+/* Cosmos rail — sibling planets as icon chips (6 May 2026)
+   Icons stand on their own shape — no chip frame. Each icon's native silhouette
+   (Earth circle badge, Shift dial, Plain AI bubble) carries identity. */
 .bb-cosmos-rail {
   display: inline-flex;
   align-items: center;
   gap: var(--s-3);
 }
+.bb-cosmos-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 4px;
+  color: var(--text-muted);
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  transition: color 150ms ease-out;
+  flex-shrink: 0;
+}
+.bb-cosmos-chip:hover,
+.bb-cosmos-chip:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+.bb-cosmos-chip svg { display: block; }
 @media (max-width: 540px) {
   /* On narrow viewports, drop the cosmos rail (it's secondary navigation —
      the primary surface IS Brain Bar itself). The theme toggle stays. */
@@ -1419,9 +1440,8 @@ button:focus-visible {
 
 /* ── Mobile touch-target padding — boot links, footer, header (Top-8 fix #5) ── */
 @media (max-width: 720px) {
-  /* Header brand + back link + theme toggle: ensure ≥36px tap area */
-  .bb-brand,
-  .bb-back {
+  /* Header brand + theme toggle: ensure ≥36px tap area */
+  .bb-brand {
     padding: var(--s-2) 0;
     display: inline-flex;
     align-items: center;

@@ -69,13 +69,15 @@
         <span class="bb-theme-icon-dark" aria-hidden="true">☾</span>
         <span class="bb-theme-icon-light" aria-hidden="true">☀</span>
       </button>
-      {{/* ═══ COSMOS RAIL — sibling planets in terminal register ═══ */}}
-      {{/* Each rendered as // comment-style link to match existing .bb-back style.
-           Filters out 'brainbar' (current planet). */}}
+      {{/* ═══ COSMOS RAIL — sibling planets as icon chips (6 May 2026)
+           Each icon's native shape carries identity; no chip frame around
+           them. Filters out 'brainbar' (current planet). */}}
       <span class="bb-cosmos-rail" aria-label="The cosmos — sibling planets">
         {{ range (index hugo.Data "planets").planets }}
           {{ if ne .slug "brainbar" }}
-            <a class="bb-back" href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }} — {{ .tagline }}">// {{ if eq .slug "earth" }}aguidetocloud.com{{ else }}{{ .slug }}.aguidetocloud.com{{ end }}</a>
+            <a class="bb-cosmos-chip" data-slug="{{ .slug }}" href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }} — {{ .tagline }}" aria-label="{{ .name }} — {{ .tagline }} (opens in new tab)">
+              {{ partial "planet-icon.html" (dict "slug" .slug "size" 24 "scope" "header") }}
+            </a>
           {{ end }}
         {{ end }}
       </span>

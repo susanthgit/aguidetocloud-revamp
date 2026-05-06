@@ -2332,7 +2332,7 @@ pre.mermaid {
 .nav-drawer-backdrop.active { opacity: 1; pointer-events: auto; }
 
 /* ── RESPONSIVE: NAV COLLAPSE ───────────── */
-@media (max-width: 1024px) {
+@media (max-width: 1180px) {
   .nav-inner {
     display: flex;
     justify-content: space-between;
@@ -3180,14 +3180,17 @@ pre.mermaid {
 
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   COSMOS NAV — Browse popover + Planet rail + Drawer additions (5 May 2026)
+   COSMOS NAV — Cosmos icons + Drawer additions
    ─────────────────────────────────────────────────────────────────────────
-   Adds the "Browse ▾" popover (collapses 6 secondary links) and the planet
-   rail (Shift / Plain AI chips) grouped LEFT next to $_, separated from the
-   logo by a hairline divider. Brain Bar $_ stays as an <a> link (existing).
+   Icons sit grouped LEFT next to $_, separated from the logo by a hairline
+   divider. Each icon's NATIVE shape carries identity — no chip frame around
+   them. Brain Bar $_ stays as an <a> link (existing); Shift's circular dial
+   IS already a circle in the SVG; Plain AI's bubble shape is the chip.
+
+   6 May 2026 — flat nav (no Browse popover) + no chip frames + new bubble icon.
    ═════════════════════════════════════════════════════════════════════════ */
 
-/* ── Cosmos group: $_ + planet chips, hairline-separated from logo ── */
+/* ── Cosmos group: $_ + planet icons, hairline-separated from logo ── */
 .cosmos-group {
   display: flex;
   align-items: center;
@@ -3200,119 +3203,32 @@ pre.mermaid {
   margin-left: 0; /* Override the default 12px in bb-palette.css when inside cosmos group */
 }
 
-/* ── Planet chip (36px circle, 20px SVG) ── */
+/* ── Planet icon wrapper — bare click target, no frame ── */
 .planet-chip {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text-tertiary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  height: 36px;
+  padding: 0 4px;
+  color: var(--text-tertiary);
   text-decoration: none;
-  transition: border-color var(--transition, 150ms ease-out), color var(--transition, 150ms ease-out), background-color var(--transition, 150ms ease-out);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  transition: color var(--transition, 150ms ease-out);
   flex-shrink: 0;
-  padding: 0;
 }
 .planet-chip:hover,
 .planet-chip:focus-visible {
-  border-color: var(--text-primary);
   color: var(--text-primary);
-  background: var(--bg-elevated, var(--bg-surface));
+  background: transparent;
   outline: none;
 }
 .planet-chip svg { display: block; }
 
-/* ── Browse popover ── */
-.nav-browse-wrap {
-  position: relative;
-  display: flex;
-  align-items: stretch;
-}
-.nav-browse-trigger {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  color: var(--text-tertiary);
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 0 2px;
-  white-space: nowrap;
-  background: transparent;
-  border: 0;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-  cursor: pointer;
-  font-family: var(--font-heading);
-  transition: color var(--transition, 150ms ease-out), border-color var(--transition, 150ms ease-out);
-}
-.nav-browse-trigger:hover {
-  color: var(--text-primary);
-}
-.nav-browse-trigger[aria-expanded="true"] {
-  color: var(--text-primary);
-  border-bottom-color: var(--accent);
-}
-.nav-browse-trigger .chevron {
-  display: inline-block;
-  transition: transform 150ms ease-out;
-  font-size: 0.7em;
-}
-.nav-browse-trigger[aria-expanded="true"] .chevron {
-  transform: rotate(180deg);
-}
-.nav-browse-panel {
-  position: absolute;
-  top: calc(100% - 1px);
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 8px 0 0;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md, 8px);
-  padding: 8px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  min-width: 240px;
-  max-inline-size: min(320px, 100vw - 16px);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 150ms ease-out, visibility 150ms ease-out;
-  z-index: 110;
-  list-style: none;
-}
-.nav-browse-panel[data-open="true"] {
-  opacity: 1;
-  visibility: visible;
-}
-.nav-browse-panel li {
-  list-style: none;
-}
-.nav-browse-panel a {
-  display: block;
-  padding: 10px 14px;
-  color: var(--text-tertiary);
-  font-size: 0.875rem;
-  font-weight: 500;
-  border-radius: var(--radius-sm, 6px);
-  text-decoration: none;
-  transition: background-color 100ms ease-out, color 100ms ease-out;
-  white-space: nowrap;
-  font-family: var(--font-heading);
-}
-.nav-browse-panel a:hover,
-.nav-browse-panel a:focus-visible {
-  background: var(--accent-subtle, rgba(99, 102, 241, 0.08));
-  color: var(--text-primary);
-  outline: none;
-}
-
 /* ── Mobile: hide cosmos group + show planet rail in drawer footer ── */
-@media (max-width: 1024px) {
+@media (max-width: 1180px) {
   .nav-left .cosmos-group { display: none; }
-  .nav-browse-wrap { display: none; } /* Browse links go inline in drawer instead */
 
   .drawer-section-label {
     font-family: var(--font-mono, ui-monospace, monospace);
