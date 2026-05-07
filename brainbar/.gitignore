@@ -21,3 +21,6 @@ qa/palette-test.mjs
 .vscode/
 *.swp
 .DS_Store
+
+# Pre-subset font originals (kept locally, not deployed)
+static/fonts/_full-backup/

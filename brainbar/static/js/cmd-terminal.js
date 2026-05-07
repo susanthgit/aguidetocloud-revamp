@@ -295,9 +295,72 @@
       ],
       note: 'List price: ~$36/user/mo (E3) → ~$57/user/mo (E5). E5 bundles ~$25/mo of standalone security + voice add-ons that you can also buy a la carte.',
     },
+    'entra-p1:entra-p2': {
+      title: 'Microsoft Entra ID P1 vs P2',
+      cols: ['feature', 'P1', 'P2'],
+      rows: [
+        ['Conditional Access (rules-based)', 'yes', 'yes'],
+        ['Group-based licence assignment', 'yes', 'yes'],
+        ['SSPR with on-prem writeback', 'yes', 'yes'],
+        ['Dynamic groups', 'yes', 'yes'],
+        ['MFA + Conditional Access policies', 'yes', 'yes'],
+        ['Identity Protection (risk-based CA · sign-in/user risk)', 'no', 'yes'],
+        ['PIM — Privileged Identity Management', 'no', 'yes'],
+        ['PIM for Groups', 'no', 'yes'],
+        ['Access Reviews', 'no', 'yes'],
+        ['Entitlement Management (access packages)', 'no', 'yes'],
+      ],
+      note: 'P1 included in M365 E3/F3/Business Premium. P2 in M365 E5 + add-ons. Standalone P1 ~$6/user/mo, P2 ~$9/user/mo.',
+    },
+    'm365-business-premium:m365-f3': {
+      title: 'Microsoft 365 Business Premium vs M365 F3 (Frontline)',
+      cols: ['feature', 'BizPrem', 'F3'],
+      rows: [
+        ['Office desktop apps (full Word/Excel/PowerPoint)', 'yes', 'no'],
+        ['Office web + mobile only', 'no', 'yes'],
+        ['Email — mailbox storage', '50 GB', '2 GB'],
+        ['OneDrive', '1 TB', '2 GB'],
+        ['Windows 11 Enterprise', 'yes', 'no'],
+        ['Windows 10/11 Enterprise E3 (kiosk)', 'no', 'yes'],
+        ['Entra ID P1', 'yes', 'yes'],
+        ['Intune (full)', 'yes', 'yes'],
+        ['Defender for Business', 'yes', 'no'],
+        ['Defender XDR (basic threat protection)', 'no', 'yes'],
+        ['Teams Phone', 'no', 'no (add-on)'],
+        ['Compliance — DLP, Information Protection', 'partial', 'partial'],
+      ],
+      note: 'Business Premium ~$22/user/mo (max 300 seats). F3 ~$8/user/mo (frontline workers — shift workers, retail, manufacturing — typically without dedicated PCs).',
+    },
   };
   function compareKey(a, b) {
     return [a, b].sort().join(':');
+  }
+
+  // ─── Dynamic auto-compare (when no curated pair exists) ─────────────
+  // Builds a diff table from each entry's normalized fields. Less detailed
+  // than curated but better than just showing both man pages.
+  function buildAutoCompare(a, b) {
+    const rows = [];
+    function row(label, va, vb) {
+      const av = String(va || '—').slice(0, 80);
+      const bv = String(vb || '—').slice(0, 80);
+      rows.push([label, av, bv]);
+    }
+    row('name',          a.name, b.name);
+    row('kind',          a.kind, b.kind);
+    row('domain',        a.domain, b.domain);
+    row('formerly',      a.oldNames.join(', '), b.oldNames.join(', '));
+    row('abbreviations', a.abbreviations.join(', '), b.abbreviations.join(', '));
+    row('plans',         a.plans.join(' · '), b.plans.join(' · '));
+    row('portal',        a.portalUrl ? a.portalUrl.replace(/^https?:\/\//,'').replace(/\/$/,'') : '—',
+                         b.portalUrl ? b.portalUrl.replace(/^https?:\/\//,'').replace(/\/$/,'') : '—');
+    row('watch',         a.watch, b.watch);
+    return {
+      title: a.slug + ' vs ' + b.slug + ' (auto-built from data)',
+      cols: ['field', a.slug, b.slug],
+      rows,
+      note: 'Auto-compare from each entry\'s fields. For a curated diff with feature-by-feature checkmarks, ask Sush to add a CURATED_COMPARES entry.',
+    };
   }
 
   function cmdCompare(args) {
@@ -328,11 +391,13 @@
         { type: 'dim', text: '// ' + curated.note },
       ];
     }
+
+    // Auto-built fallback — diff table from entry data
+    const auto = buildAutoCompare(a.entry, b.entry);
     return [
-      { type: 'warn', text: '// compare not yet curated for ' + esc(a.entry.slug) + ' vs ' + esc(b.entry.slug) },
-      { type: 'dim',  text: '// opening both entries side-by-side instead:' },
-      { type: 'man', entry: a.entry },
-      { type: 'man', entry: b.entry },
+      { type: 'heading', text: '// ' + auto.title },
+      { type: 'compare', cols: auto.cols, rows: auto.rows },
+      { type: 'dim', text: '// ' + auto.note },
     ];
   }
 
