@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-07T14:46:58.505481+00:00",
+  "generated_at": "2026-05-07T17:56:54.329783+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -68,28 +68,15 @@
       }
     },
     {
-      "service": "Microsoft Purview",
-      "short_name": "Purview",
-      "icon": "🔍",
-      "total_incidents": 6,
-      "active_incidents": 0,
-      "avg_duration_minutes": 11849,
-      "last_incident": "2026-04-24T15:04:41.097000+00:00",
-      "classifications": {
-        "advisory": 5,
-        "incident": 1
-      }
-    },
-    {
       "service": "Microsoft 365 Copilot Chat",
       "short_name": "Copilot Chat",
       "icon": "💭",
-      "total_incidents": 5,
+      "total_incidents": 6,
       "active_incidents": 1,
-      "avg_duration_minutes": 2467,
+      "avg_duration_minutes": 3533,
       "last_incident": "2026-04-29T00:00:00+00:00",
       "classifications": {
-        "incident": 3,
+        "incident": 4,
         "advisory": 2
       }
     },
@@ -117,6 +104,18 @@
       "classifications": {
         "advisory": 4,
         "incident": 1
+      }
+    },
+    {
+      "service": "Microsoft Purview",
+      "short_name": "Purview",
+      "icon": "🔍",
+      "total_incidents": 5,
+      "active_incidents": 0,
+      "avg_duration_minutes": 11305,
+      "last_incident": "2026-04-24T15:04:41.097000+00:00",
+      "classifications": {
+        "advisory": 5
       }
     },
     {
@@ -189,7 +188,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 49,
+      "incident_count": 50,
       "services_affected": 12
     },
     {
@@ -199,8 +198,8 @@
     },
     {
       "month": "2026-02",
-      "incident_count": 8,
-      "services_affected": 6
+      "incident_count": 7,
+      "services_affected": 5
     }
   ]
 }

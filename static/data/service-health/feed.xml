@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 07 May 2026 14:46:59 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 17:56:54 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to create or use SharePoint Online Copilot embedded agents within Microsoft 365 Copilot</title>
@@ -133,6 +133,15 @@ The issue initially began with impact to a subset of custom</description>
       <category>serviceRestored</category>
       <guid isPermaLink="false">SP1295361</guid>
       <pubDate>Fri, 24 Apr 2026 12:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users are intermittently unable to access Microsoft 365 Copilot Chat using the Microsoft Edge browser</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1293760</link>
+      <description>[Microsoft 365 Copilot Chat] Users were intermittently unable to access Microsoft 365 Copilot Chat using the Microsoft Edge browser.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1293760</guid>
+      <pubDate>Thu, 23 Apr 2026 12:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Admins may have encountered delays of up to 10 hours for grading results on Microsoft Defender for Office 365 submission</title>
@@ -448,15 +457,6 @@ The issue initially began with impact to a subset of custom</description>
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1268725</guid>
       <pubDate>Thu, 02 Apr 2026 12:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Intune] Users may be unable to install user targeted apps that have been made available in the Intune Company Portal</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1272653</link>
-      <description>[Microsoft Intune] Users may have been unable to install user targeted apps that have been made available in the Intune Company Portal.</description>
-      <category>Microsoft Intune</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">IT1272653</guid>
-      <pubDate>Thu, 02 Apr 2026 03:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
