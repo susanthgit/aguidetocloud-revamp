@@ -49,8 +49,14 @@ url     = "https://www.aguidetocloud.com/"
 tagline = "the home — certs, tools, mind maps"
 
 [[planets]]
+slug    = "guided"
+name    = "Guided"
+url     = "https://www.aguidetocloud.com/guided/"
+tagline = "cert prep — affordable practice exams"
+
+[[planets]]
 slug    = "brainbar"
-name    = "Brain Bar"
+name    = "CMD"
 url     = "https://cmd.aguidetocloud.com/"
 tagline = "Microsoft jargon decoder"
 
@@ -65,3 +71,15 @@ slug    = "plainai"
 name    = "Plain AI"
 url     = "https://plainai.aguidetocloud.com/"
 tagline = "museum of AI, in plain English"
+
+[[planets]]
+slug    = "agentic"
+name    = "Agentic"
+url     = "https://agents.aguidetocloud.com/"
+tagline = "agent cockpit — for techies building with agents"
+
+[[planets]]
+slug    = "claw"
+name    = "Claw"
+url     = "https://claw.aguidetocloud.com/"
+tagline = "OpenClaw study reference — plain English"
