@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div class="cmd-buffer" id="cmd-buffer" tabindex="-1">
+      <div class="cmd-buffer" id="cmd-buffer" tabindex="-1" role="log" aria-live="polite" aria-atomic="false" aria-relevant="additions">
         {{/* SSR fallback — visible if JS fails. Replaced by cmd-terminal.js on first interaction. */}}
         <noscript>
           <div class="cmd-line dim">// cmd needs JavaScript for terminal mode.</div>

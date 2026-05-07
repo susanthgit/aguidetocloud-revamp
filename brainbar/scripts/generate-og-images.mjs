@@ -176,7 +176,7 @@ function renderCardHtml(entry, voiceData) {
 </style></head>
 <body>
   <div class="top">
-    <div class="brand"><span class="prompt">$_</span> <span class="brand-name">brainbar</span></div>
+    <div class="brand"><span class="prompt">$_</span> <span class="brand-name">cmd</span></div>
     <div class="meta-tag"><span class="accent">//</span> ${escapeHtml(kind)} · ${escapeHtml(domain)}${mascot ? ' · ' + escapeHtml(mascot) : ''}</div>
   </div>
 

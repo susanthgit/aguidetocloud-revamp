@@ -767,9 +767,15 @@
 
   // ─── Boot sequence + banner ────────────────────────────────────────────
   function asciiLogo() {
-    writeRaw('<span class="cmd-boot-ascii"> █▀▀ █▄ ▄█ █▀▄ </span>', 'cmd-line cmd-boot-line-in');
-    writeRaw('<span class="cmd-boot-ascii"> █   █▀▄▀█ █ █ </span>', 'cmd-line cmd-boot-line-in');
-    writeRaw('<span class="cmd-boot-ascii"> ▀▀▀ ▀   ▀ ▀▀  </span>', 'cmd-line cmd-boot-line-in');
+    const lines = [
+      '<span class="cmd-boot-ascii"> █▀▀ █▄ ▄█ █▀▄ </span>',
+      '<span class="cmd-boot-ascii"> █   █▀▄▀█ █ █ </span>',
+      '<span class="cmd-boot-ascii"> ▀▀▀ ▀   ▀ ▀▀  </span>',
+    ];
+    for (const html of lines) {
+      const d = writeRaw(html, 'cmd-line cmd-boot-line-in');
+      if (d) d.setAttribute('aria-hidden', 'true'); // decorative for screen readers
+    }
   }
   function clickableSuggestions() {
     writeRaw('<span class="dim">// click any of these to run:</span>', 'cmd-line');
@@ -802,7 +808,8 @@
     ];
     for (const ln of lines) {
       if (skipped) break;
-      writeRaw(ln.html, 'cmd-line cmd-boot-line-in');
+      const d = writeRaw(ln.html, 'cmd-line cmd-boot-line-in');
+      if (d) d.setAttribute('aria-hidden', 'true'); // BIOS/[OK] noise hidden from SR
       if (ln.delay) await new Promise(r => setTimeout(r, ln.delay));
     }
     document.removeEventListener('click', skip);
@@ -842,6 +849,13 @@
   // ─── Boot ──────────────────────────────────────────────────────────────
   loadTrail();
   updateStatus();
+
+  // Auto-open express <details> on mobile so search is reachable without scrolling/tapping
+  if (window.innerWidth < 720) {
+    const expr = document.getElementById('cmd-express');
+    if (expr) expr.open = true;
+  }
+
   loadIndex().then(() => {
     updateStatus();
     const q = loadFromUrl();

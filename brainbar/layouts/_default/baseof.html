@@ -22,6 +22,10 @@
     })();
   </script>
 
+  <!-- JetBrains Mono — preload critical weights for faster FCP/LCP -->
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/JetBrainsMono-Regular.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/JetBrainsMono-Bold.woff2" crossorigin>
+
   <!-- JetBrains Mono — cmd's only font. Self-hosted (no third-party CDN). -->
   <link rel="stylesheet" href="/css/fonts.css?v={{ site.Params.cache_version }}">
 
