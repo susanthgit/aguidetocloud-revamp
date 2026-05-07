@@ -5,7 +5,7 @@
   <p class="bb-hero-tagline">paste a microsoft error code — what it means, why it happens, what to try.</p>
 
   {{/* ── Live launcher (decode mode) ──────────────────────────────────── */}}
-  <form class="bb-launcher bb-launcher-decode" role="search" aria-label="Brain Bar decode" autocomplete="off" onsubmit="return false;">
+  <form class="bb-launcher bb-launcher-decode" role="search" aria-label="cmd decode" autocomplete="off" onsubmit="return false;">
     <label class="bb-launcher-label" for="bb-input"><span class="bb-launcher-prompt">$</span></label>
     <input
       type="text"
@@ -33,7 +33,7 @@
   {{/* ── Boot block (default state — hidden once user types) ─────────────── */}}
   <div class="bb-boot" id="bb-boot">
     {{ $allEntries := (index hugo.Data "cmd_decode").entries }}
-    <div class="bb-boot-line"><span class="bb-boot-key">mode</span><span class="bb-boot-val">errno · {{ len $allEntries }} codes decoded · brain bar v{{ site.Params.cache_version }}</span></div>
+    <div class="bb-boot-line"><span class="bb-boot-key">mode</span><span class="bb-boot-val">errno · {{ len $allEntries }} codes decoded · cmd v{{ site.Params.cache_version }}</span></div>
     <div class="bb-boot-line"><span class="bb-boot-key">type</span><span class="bb-boot-val">an AADSTS code, an HRESULT (0x...), an INTUNE code, or a KB number</span></div>
     <div class="bb-boot-line bb-boot-missing"><span class="bb-boot-key">missing?</span><span class="bb-boot-val">we curate by hand — tell us which code to add → <a href="https://www.aguidetocloud.com/feedback/" target="_blank" rel="noopener" class="bb-boot-feedback">/feedback/</a></span></div>
     <div class="bb-boot-line bb-boot-hotkey"><span class="bb-boot-key">hotkey</span><span class="bb-boot-val"><span class="bb-cmd">/</span> from anywhere · <span class="bb-cmd">enter</span> to open · <span class="bb-cmd">↑↓</span> to nav · <span class="bb-cmd">esc</span> to clear</span></div>

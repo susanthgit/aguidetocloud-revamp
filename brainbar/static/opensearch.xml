@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
-  <ShortName>Brain Bar</ShortName>
-  <LongName>Brain Bar — Microsoft jargon decoder</LongName>
+  <ShortName>cmd</ShortName>
+  <LongName>cmd — Microsoft jargon &amp; error code decoder</LongName>
   <Description>Plain-English explainers, rebrand history, and the right portal — for every Microsoft acronym, license, and feature.</Description>
   <Tags>microsoft 365 azure intune defender entra copilot jargon glossary</Tags>
   <Image height="32" width="32" type="image/svg+xml">https://cmd.aguidetocloud.com/favicon.svg</Image>

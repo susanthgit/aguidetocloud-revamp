@@ -1,5 +1,5 @@
 /**
- * Offline tests for the Brain Bar MCP server.
+ * Offline tests for the cmd MCP server.
  *
  * Mocks Cloudflare's runtime (the index fetch is patched to read a local
  * copy of brainbar/public/cmd-index.json) and exercises the JSON-RPC
@@ -76,11 +76,11 @@ test('tools/list returns 3 tools', async () => {
   const r = await rpc('tools/list');
   assert.equal(r.result.tools.length, 3);
   const names = r.result.tools.map(t => t.name);
-  assert.deepEqual(names.sort(), ['brainbar_get', 'brainbar_list_kinds', 'brainbar_search']);
+  assert.deepEqual(names.sort(), ['cmd_get', 'cmd_list_kinds', 'cmd_search']);
 });
 
-test('brainbar_search returns exact slug match (tier 1)', async () => {
-  const r = await rpc('tools/call', { name: 'brainbar_search', arguments: { query: 'mde' } });
+test('cmd_search returns exact slug match (tier 1)', async () => {
+  const r = await rpc('tools/call', { name: 'cmd_search', arguments: { query: 'mde' } });
   const hits = JSON.parse(r.result.content[0].text);
   assert.ok(Array.isArray(hits));
   assert.ok(hits.length >= 1);
@@ -89,49 +89,49 @@ test('brainbar_search returns exact slug match (tier 1)', async () => {
   assert.equal(hits[0].match_reason, 'exact slug');
 });
 
-test('brainbar_search resolves alias (tier 3) — mdatp → mde', async () => {
-  const r = await rpc('tools/call', { name: 'brainbar_search', arguments: { query: 'mdatp' } });
+test('cmd_search resolves alias (tier 3) — mdatp → mde', async () => {
+  const r = await rpc('tools/call', { name: 'cmd_search', arguments: { query: 'mdatp' } });
   const hits = JSON.parse(r.result.content[0].text);
   assert.equal(hits[0].slug, 'mde');
   assert.equal(hits[0].tier, 3);
 });
 
-test('brainbar_search resolves old name (tier 4) — azure-ai-studio → foundry', async () => {
-  const r = await rpc('tools/call', { name: 'brainbar_search', arguments: { query: 'azure-ai-studio' } });
+test('cmd_search resolves old name (tier 4) — azure-ai-studio → foundry', async () => {
+  const r = await rpc('tools/call', { name: 'cmd_search', arguments: { query: 'azure-ai-studio' } });
   const hits = JSON.parse(r.result.content[0].text);
   assert.equal(hits[0].slug, 'azure-ai-foundry');
   assert.equal(hits[0].tier, 4);
 });
 
-test('brainbar_search returns substring matches', async () => {
-  const r = await rpc('tools/call', { name: 'brainbar_search', arguments: { query: 'defender' } });
+test('cmd_search returns substring matches', async () => {
+  const r = await rpc('tools/call', { name: 'cmd_search', arguments: { query: 'defender' } });
   const hits = JSON.parse(r.result.content[0].text);
   assert.ok(hits.length >= 3);
   assert.equal(hits[0].slug, 'defender');
 });
 
-test('brainbar_get returns full record', async () => {
-  const r = await rpc('tools/call', { name: 'brainbar_get', arguments: { slug: 'mde' } });
+test('cmd_get returns full record', async () => {
+  const r = await rpc('tools/call', { name: 'cmd_get', arguments: { slug: 'mde' } });
   const entry = JSON.parse(r.result.content[0].text);
   assert.equal(entry.slug, 'mde');
   assert.equal(entry.kind, 'product');
   assert.equal(entry.domain, 'security');
 });
 
-test('brainbar_get follows abbreviation', async () => {
-  const r = await rpc('tools/call', { name: 'brainbar_get', arguments: { slug: 'MDE' } });
+test('cmd_get follows abbreviation', async () => {
+  const r = await rpc('tools/call', { name: 'cmd_get', arguments: { slug: 'MDE' } });
   const entry = JSON.parse(r.result.content[0].text);
   assert.equal(entry.slug, 'mde');
 });
 
-test('brainbar_get returns error for unknown slug', async () => {
-  const r = await rpc('tools/call', { name: 'brainbar_get', arguments: { slug: 'nonexistent' } });
+test('cmd_get returns error for unknown slug', async () => {
+  const r = await rpc('tools/call', { name: 'cmd_get', arguments: { slug: 'nonexistent' } });
   const out = JSON.parse(r.result.content[0].text);
   assert.match(out.error, /no entry/);
 });
 
-test('brainbar_list_kinds returns groupings', async () => {
-  const r = await rpc('tools/call', { name: 'brainbar_list_kinds', arguments: {} });
+test('cmd_list_kinds returns groupings', async () => {
+  const r = await rpc('tools/call', { name: 'cmd_list_kinds', arguments: {} });
   const groups = JSON.parse(r.result.content[0].text);
   assert.ok(Array.isArray(groups));
   const kinds = groups.map(g => g.kind);
@@ -140,8 +140,8 @@ test('brainbar_list_kinds returns groupings', async () => {
   assert.ok(kinds.includes('disambiguation'));
 });
 
-test('brainbar_list_kinds filters by kind', async () => {
-  const r = await rpc('tools/call', { name: 'brainbar_list_kinds', arguments: { kind: 'license' } });
+test('cmd_list_kinds filters by kind', async () => {
+  const r = await rpc('tools/call', { name: 'cmd_list_kinds', arguments: { kind: 'license' } });
   const groups = JSON.parse(r.result.content[0].text);
   assert.equal(groups.length, 1);
   assert.equal(groups[0].kind, 'license');

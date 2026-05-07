@@ -6,7 +6,7 @@
   <title>{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
-  <!-- Anti-FOUC: theme via .aguidetocloud.com cookie. Brain Bar defaults to DARK
+  <!-- Anti-FOUC: theme via .aguidetocloud.com cookie. cmd defaults to DARK
        (terminal atmosphere). Light mode is the after-hours courtesy. -->
   <script>
     (function(){
@@ -22,14 +22,14 @@
     })();
   </script>
 
-  <!-- JetBrains Mono — Brain Bar's only font. Self-hosted (no third-party CDN). -->
+  <!-- JetBrains Mono — cmd's only font. Self-hosted (no third-party CDN). -->
   <link rel="stylesheet" href="/css/fonts.css?v={{ site.Params.cache_version }}">
 
   <link rel="stylesheet" href="/css/tokens.css?v={{ site.Params.cache_version }}">
   <link rel="stylesheet" href="/css/cmd.css?v={{ site.Params.cache_version }}">
 
   <!-- Browser address-bar custom search engine (auto-detected by Chrome/Edge/Firefox) -->
-  <link rel="search" type="application/opensearchdescription+xml" title="Brain Bar" href="/opensearch.xml">
+  <link rel="search" type="application/opensearchdescription+xml" title="cmd" href="/opensearch.xml">
 
   <link rel="canonical" href="{{ .Permalink }}">
 
@@ -43,7 +43,7 @@
   <meta property="og:image" content="https://cmd.aguidetocloud.com{{ $ogPath }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}Brain Bar entry: {{ .Title }}{{ end }}">
+  <meta property="og:image:alt" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}cmd entry: {{ .Title }}{{ end }}">
   <meta name="twitter:image" content="https://cmd.aguidetocloud.com{{ $ogPath }}">
   <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
   <meta property="og:url" content="{{ .Permalink }}">

@@ -1,33 +1,33 @@
 /**
  * ════════════════════════════════════════════════════════════════════════════
- * 🪐 Brain Bar MCP Server — first endpoint on the MCP Move planet
+ * 🪐 cmd MCP Server — first endpoint on the MCP Move planet
  * ────────────────────────────────────────────────────────────────────────────
  * 🔒 PAID-CONTENT FIREWALL (cosmos universal law #6)
  * ────────────────────────────────────────────────────────────────────────────
  * This server is allowed to fetch ONE upstream URL: cmd.aguidetocloud.com's
- * public cmd-index.json (free Brain Bar entries — Microsoft jargon decoder).
+ * public cmd-index.json (free cmd entries — Microsoft jargon decoder).
  *
  * It MUST NEVER:
  *   ❌ Fetch from aguidetocloud.com/guided/data/questions/* (paid practice exams)
  *   ❌ Fetch any URL the user can authenticate against (Stripe, account APIs)
- *   ❌ Expose any data Brain Bar itself wouldn't expose at its public URL
+ *   ❌ Expose any data cmd itself wouldn't expose at its public URL
  *   ❌ Add tools that could be used to extract practice-exam content
  *
  * Adding any new fetch URL here requires verifying it points to free, public
- * Brain Bar (or future free planet) data only. When in doubt, do not add it.
+ * cmd (or future free planet) data only. When in doubt, do not add it.
  *
  * The hard-coded INDEX_URL constant below is the only network egress allowed.
  * If you add another, add it to a documented allowlist with a justification.
  * ────────────────────────────────────────────────────────────────────────────
  *
  * A Cloudflare Worker that speaks the Model Context Protocol (MCP) over HTTP,
- * exposing Brain Bar as a knowledge tool for AI agents (Claude Desktop,
+ * exposing cmd as a knowledge tool for AI agents (Claude Desktop,
  * Cursor, Cline, Continue, ChatGPT with MCP support, etc.).
  *
  * Tools:
- *   1. brainbar_search(query)     — search entries by slug, alias, name, kind
- *   2. brainbar_get(slug)         — fetch a single entry's full record
- *   3. brainbar_list_kinds(kind)  — list all entries of a kind (or all)
+ *   1. cmd_search(query)     — search entries by slug, alias, name, kind
+ *   2. cmd_get(slug)         — fetch a single entry's full record
+ *   3. cmd_list_kinds(kind)  — list all entries of a kind (or all)
  *
  * Transports:
  *   - Streamable HTTP (POST /mcp) — current spec, March 2025+
@@ -35,7 +35,7 @@
  *
  * Data:
  *   - Fetched from https://cmd.aguidetocloud.com/cmd-index.json (the same
- *     index the Brain Bar launcher uses).
+ *     index the cmd launcher uses).
  *   - Cached in module scope for the lifetime of the isolate (Cloudflare
  *     reuses isolates across many requests). 5-minute TTL.
  *
@@ -114,7 +114,7 @@ async function loadIndex(): Promise<BrainBarIndex> {
     cf: { cacheEverything: true, cacheTtl: 300 },
   });
   if (!r.ok) {
-    throw new Error(`failed to fetch brain bar index: ${r.status} ${r.statusText}`);
+    throw new Error(`failed to fetch cmd index: ${r.status} ${r.statusText}`);
   }
   const data = (await r.json()) as BrainBarIndex;
   CACHED_INDEX = data;
@@ -209,9 +209,9 @@ async function tool_list_kinds(kind?: string): Promise<{ kind: string; count: nu
 
 const TOOLS = [
   {
-    name: 'brainbar_search',
+    name: 'cmd_search',
     description:
-      'Search Brain Bar for Microsoft cloud terminology — products, licenses, portals, features, certifications. Returns ranked matches with metadata. Use this when an agent encounters an ambiguous Microsoft acronym, license code, or product name and needs context.',
+      'Search cmd for Microsoft cloud terminology — products, licenses, portals, features, certifications. Returns ranked matches with metadata. Use this when an agent encounters an ambiguous Microsoft acronym, license code, or product name and needs context.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -230,9 +230,9 @@ const TOOLS = [
     },
   },
   {
-    name: 'brainbar_get',
+    name: 'cmd_get',
     description:
-      'Fetch a single Brain Bar entry by slug, alias, abbreviation, or old name. Returns full record including plain-English explainer, official Microsoft definition, plans, portal URL, learn URL, related certs, status, and rebrand history. Use after brainbar_search to get the authoritative answer.',
+      'Fetch a single cmd entry by slug, alias, abbreviation, or old name. Returns full record including plain-English explainer, official Microsoft definition, plans, portal URL, learn URL, related certs, status, and rebrand history. Use after cmd_search to get the authoritative answer.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -245,9 +245,9 @@ const TOOLS = [
     },
   },
   {
-    name: 'brainbar_list_kinds',
+    name: 'cmd_list_kinds',
     description:
-      'List Brain Bar entries grouped by kind (product, portal, feature, license, cert, tool, disambiguation). Optionally filter to a single kind. Useful for discovery — "show me all Microsoft licenses Brain Bar covers".',
+      'List cmd entries grouped by kind (product, portal, feature, license, cert, tool, disambiguation). Optionally filter to a single kind. Useful for discovery — "show me all Microsoft licenses cmd covers".',
     inputSchema: {
       type: 'object',
       properties: {
@@ -275,7 +275,7 @@ async function handleRpc(req: JsonRpcRequest): Promise<JsonRpcResponse> {
             capabilities: { tools: {}, logging: {} },
             serverInfo: { name: SERVER_NAME, version: SERVER_VERSION },
             instructions:
-              'Brain Bar — Microsoft jargon decoder (cmd.aguidetocloud.com). Use brainbar_search to find a term, then brainbar_get to fetch its full record. Use brainbar_list_kinds for discovery. All entries are Sush-curated, citation-backed (Microsoft Learn URLs), and freshness-validated.',
+              'cmd — Microsoft jargon decoder (cmd.aguidetocloud.com). Use cmd_search to find a term, then cmd_get to fetch its full record. Use cmd_list_kinds for discovery. All entries are Sush-curated, citation-backed (Microsoft Learn URLs), and freshness-validated.',
           },
         };
       }
@@ -292,16 +292,16 @@ async function handleRpc(req: JsonRpcRequest): Promise<JsonRpcResponse> {
 
         let payload: unknown;
         switch (name) {
-          case 'brainbar_search':
+          case 'cmd_search':
             payload = await tool_search(
               String(args.query ?? ''),
               typeof args.limit === 'number' ? args.limit : 10
             );
             break;
-          case 'brainbar_get':
+          case 'cmd_get':
             payload = await tool_get(String(args.slug ?? ''));
             break;
-          case 'brainbar_list_kinds':
+          case 'cmd_list_kinds':
             payload = await tool_list_kinds(
               typeof args.kind === 'string' ? args.kind : undefined
             );
@@ -370,7 +370,7 @@ function jsonResponse(body: unknown, init: ResponseInit = {}): Response {
 }
 
 const HOMEPAGE_HTML = `<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>Brain Bar MCP Server</title>
+<html lang="en"><head><meta charset="utf-8"><title>cmd MCP Server</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
   body{background:#0B0E14;color:#E6EDF3;font-family:'JetBrains Mono',ui-monospace,monospace;margin:0;padding:48px 24px;line-height:1.55}
@@ -387,16 +387,16 @@ const HOMEPAGE_HTML = `<!doctype html>
 </head><body><main>
   <p style="color:#7D8590;margin:0 0 8px"><span class="tag">running</span><span class="tag">cosmos: mcp move</span></p>
   <h1>$_ brainbar-mcp</h1>
-  <p>Brain Bar exposed as a remote Model Context Protocol server. Connect from Claude Desktop, Cursor, Cline, Continue, or any MCP-aware AI agent.</p>
+  <p>cmd exposed as a remote Model Context Protocol server. Connect from Claude Desktop, Cursor, Cline, Continue, or any MCP-aware AI agent.</p>
 
   <h2>endpoint</h2>
   <pre>POST https://mcp.aguidetocloud.com/mcp
 Content-Type: application/json</pre>
 
   <h2>tools</h2>
-  <pre>brainbar_search(query, limit?)
-brainbar_get(slug)
-brainbar_list_kinds(kind?)</pre>
+  <pre>cmd_search(query, limit?)
+cmd_get(slug)
+cmd_list_kinds(kind?)</pre>
 
   <h2>connect from claude desktop</h2>
   <pre>{

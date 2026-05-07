@@ -14,7 +14,7 @@
   "dateModified" .Params.last_verified
   "articleSection" "Microsoft error codes"
   "proficiencyLevel" "Expert"
-  "isPartOf"     (dict "@type" "WebSite" "name" "Brain Bar" "url" site.BaseURL)
+  "isPartOf"     (dict "@type" "WebSite" "name" "cmd" "url" site.BaseURL)
 }}
 {{ with .Params.learn_url }}
   {{ $jsonLd = merge $jsonLd (dict "sameAs" .) }}
@@ -43,7 +43,7 @@
   </p>
 
   {{/* The decode card — red top border + ERROR pill = severity glyph,
-       chrome stays Brain Bar green. */}}
+       chrome stays cmd green. */}}
   <header class="bb-entry-header bb-decode-header">
     <p class="bb-decode-pill" aria-label="error severity"><span class="bb-decode-pill-label">ERROR</span> <span class="bb-decode-pill-ns">{{ .Params.namespace }}</span></p>
     <p class="bb-entry-prompt"><code>{{ .Params.code }}</code></p>

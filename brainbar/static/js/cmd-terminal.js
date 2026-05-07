@@ -273,13 +273,63 @@
     return [{ type: 'errno', entry: e }];
   }
 
+  // ─── Curated comparisons (real data) ─────────────────────────────────
+  const CURATED_COMPARES = {
+    'm365-e3:m365-e5': {
+      title: 'Microsoft 365 E3 vs E5',
+      cols: ['feature', 'E3', 'E5'],
+      rows: [
+        ['Office apps + Windows 11 Enterprise', 'yes', 'yes'],
+        ['Entra ID P1 (Conditional Access · group licensing)', 'yes', 'yes'],
+        ['Entra ID P2 (PIM · Identity Protection · risk-based CA)', 'no', 'yes'],
+        ['Defender for Endpoint P1 (preventative)', 'yes', 'yes'],
+        ['Defender for Endpoint P2 (EDR + auto-investigate)', 'no', 'yes'],
+        ['Defender for Identity', 'no', 'yes'],
+        ['Defender for Office 365 P2', 'no', 'yes'],
+        ['Defender for Cloud Apps', 'no', 'yes'],
+        ['Power BI Pro', 'no', 'yes'],
+        ['Audio Conferencing + Phone System', 'no', 'yes'],
+        ['Insider Risk Management + eDiscovery Premium', 'no', 'yes'],
+        ['Information Protection — auto-labeling + records mgmt', 'no', 'yes'],
+        ['Customer Lockbox + Privileged Access Mgmt', 'no', 'yes'],
+      ],
+      note: 'List price: ~$36/user/mo (E3) → ~$57/user/mo (E5). E5 bundles ~$25/mo of standalone security + voice add-ons that you can also buy a la carte.',
+    },
+  };
+  function compareKey(a, b) {
+    return [a, b].sort().join(':');
+  }
+
   function cmdCompare(args) {
     if (args.length < 2) return [{ type: 'err', text: 'usage: compare <a> <b>' }];
+    if (!STATE.ready) return [{ type: 'warn', text: '// loading — try again' }];
     const a = findEntry(args[0]);
     const b = findEntry(args[1]);
-    if (!a || !b) return [{ type: 'err', text: 'compare: one or both entries not found (' + args[0] + ', ' + args[1] + ')' }];
+    if (!a || !b) return [{ type: 'err', text: 'compare: one or both entries not found (' + esc(args[0]) + ', ' + esc(args[1]) + ')' }];
+    if (a.entry.slug === b.entry.slug) return [{ type: 'err', text: 'compare: pick two different entries' }];
+
+    const key = compareKey(a.entry.slug, b.entry.slug);
+    const curated = CURATED_COMPARES[key];
+
+    if (curated) {
+      // Map columns to the actual slug order requested by the user
+      const userOrder = [a.entry.slug, b.entry.slug];
+      const fixtureOrder = key.split(':');
+      const isReversed = userOrder[0] !== fixtureOrder[0];
+      let cols = curated.cols.slice();
+      let rows = curated.rows.map(r => r.slice());
+      if (isReversed) {
+        cols = [cols[0], cols[2], cols[1]];
+        rows = rows.map(r => [r[0], r[2], r[1]]);
+      }
+      return [
+        { type: 'heading', text: '// ' + curated.title },
+        { type: 'compare', cols: cols, rows: rows },
+        { type: 'dim', text: '// ' + curated.note },
+      ];
+    }
     return [
-      { type: 'warn', text: '// compare not yet curated for ' + a.entry.slug + ' vs ' + b.entry.slug },
+      { type: 'warn', text: '// compare not yet curated for ' + esc(a.entry.slug) + ' vs ' + esc(b.entry.slug) },
       { type: 'dim',  text: '// opening both entries side-by-side instead:' },
       { type: 'man', entry: a.entry },
       { type: 'man', entry: b.entry },
@@ -461,6 +511,25 @@
                     + '<span class="dim">  ·  </span>' + esc(b.text);
       return div;
     }
+    if (b.type === 'compare') {
+      div.className = 'cmd-line';
+      let html = '<table class="cmd-cmp"><thead><tr>';
+      for (const c of b.cols) html += '<th>' + esc(c) + '</th>';
+      html += '</tr></thead><tbody>';
+      for (const r of b.rows) {
+        html += '<tr>';
+        r.forEach((cell, i) => {
+          if (i === 0) html += '<td class="ok">' + esc(cell) + '</td>';
+          else if (cell === 'yes') html += '<td class="yes">✓</td>';
+          else if (cell === 'no')  html += '<td class="no">—</td>';
+          else html += '<td>' + esc(cell) + '</td>';
+        });
+        html += '</tr>';
+      }
+      html += '</tbody></table>';
+      div.innerHTML = html;
+      return div;
+    }
     if (b.type === 'plain') {
       div.className = 'cmd-line';
       div.innerHTML = b.html || '';
@@ -626,16 +695,16 @@
       const t = e.target.closest('.cmd-quick-cmd'); if (!t) return;
       e.preventDefault();
       const cmd = t.dataset.cmd || t.textContent.trim(); if (!cmd) return;
-      wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setTimeout(() => { input.focus(); execute(cmd); }, 280);
+      input.focus();
+      execute(cmd);
     });
   }
   document.querySelectorAll('.cmd-topnav-cmd').forEach(a => {
     a.addEventListener('click', (e) => {
       e.preventDefault();
       const cmd = a.dataset.cmd; if (!cmd) return;
-      wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setTimeout(() => { input.focus(); execute(cmd); }, 280);
+      input.focus();
+      execute(cmd);
     });
   });
   let stickyTicking = false;

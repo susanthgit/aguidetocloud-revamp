@@ -26,7 +26,7 @@
     "description"   .Params.plain_english
     "dateModified"  .Params.last_verified
     "mentions"      $mentions
-    "isPartOf"      (dict "@type" "WebSite" "name" "Brain Bar" "url" site.BaseURL)
+    "isPartOf"      (dict "@type" "WebSite" "name" "cmd" "url" site.BaseURL)
   }}
   <script type="application/ld+json">{{ $ld | jsonify (dict "indent" "  ") | safeJS }}</script>
 {{ else }}
@@ -41,7 +41,7 @@
     "dateModified"      .Params.last_verified
     "inDefinedTermSet"  (dict
       "@type" "DefinedTermSet"
-      "name"  "Brain Bar"
+      "name"  "cmd"
       "url"   site.BaseURL
     )
   }}

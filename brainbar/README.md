@@ -1,9 +1,9 @@
-# Brain Bar — `cmd.aguidetocloud.com`
+# cmd — `cmd.aguidetocloud.com`
 
 > *Stop Googling Microsoft. Just type.*
 
-🪐 **Brain Bar is its own planet.** Per the Cosmos Philosophy (4 May 2026),
-Brain Bar is **not** styled to match the home site. It has its own font, its
+🪐 **cmd is its own planet.** Per the Cosmos Philosophy (4 May 2026),
+cmd is **not** styled to match the home site. It has its own font, its
 own palette, its own voice, and its own atmosphere. The only contracts it
 honours with the rest of the universe are:
 
@@ -15,7 +15,7 @@ honours with the rest of the universe are:
   footer. That's the only visual nod to Earth.
 - 🍪 **Theme cookie parity** — `aguidetocloud_theme` cookie scoped to
   `.aguidetocloud.com` so a dark/light toggle anywhere on the universe carries
-  to every planet that respects the cookie. Optional per-planet — Brain Bar
+  to every planet that respects the cookie. Optional per-planet — cmd
   uses it.
 
 Universal cosmos laws still apply: **quality, value, usability, honesty.**
@@ -25,18 +25,18 @@ Universal cosmos laws still apply: **quality, value, usability, honesty.**
 ## Why this is a sub-project (not part of the main Hugo build)
 
 1. **Practice Exam SLA** — practice exams are a paid product on the main
-   `aguidetocloud` Cloudflare Pages project. Brain Bar deploys to a separate
+   `aguidetocloud` Cloudflare Pages project. cmd deploys to a separate
    project so a routing bug in one cannot take down the other.
-2. **Build speed** — main site is ~1,774 pages / ~100s. Brain Bar is ~150 pages
+2. **Build speed** — main site is ~1,774 pages / ~100s. cmd is ~150 pages
    / ~5s. Independent deploys = faster iteration on each.
-3. **Independent rollback** — break Brain Bar without affecting Earth.
-4. **Visual independence** — Brain Bar's aesthetic system is free to evolve
+3. **Independent rollback** — break cmd without affecting Earth.
+4. **Visual independence** — cmd's aesthetic system is free to evolve
    without dragging Earth along.
 
 ## Local dev
 
 ```pwsh
-cd brainbar
+cd cmd
 hugo server --port 1316 --noHTTPCache
 # → http://localhost:1316/
 ```
@@ -44,21 +44,21 @@ hugo server --port 1316 --noHTTPCache
 ## Build
 
 ```pwsh
-cd brainbar
+cd cmd
 hugo --gc --minify
-# → output in brainbar/public/
+# → output in cmd/public/
 ```
 
 ## Deploy
 
-Cloudflare Pages project: **`aguidetocloud-brainbar`** (separate from the main
+Cloudflare Pages project: **`aguidetocloud-cmd`** (separate from the main
 `aguidetocloud` project).
 
-- Build command: `cd brainbar && hugo --gc --minify`
-- Build output: `brainbar/public`
+- Build command: `cd cmd && hugo --gc --minify`
+- Build output: `cmd/public`
 - Custom domain: `cmd.aguidetocloud.com`
 
-## Brain Bar's planet identity
+## cmd's planet identity
 
 🌱 **Defined in `static/css/cmd.css` and `static/css/zen-tokens.css`.**
 
@@ -67,13 +67,13 @@ foundation* (8px grid, radii, transition timings — the structural primitives).
 The visual layer (palette, fonts, accent, voice register) is owned by Brain
 Bar and may diverge freely from Earth.
 
-When you change Brain Bar's design tokens, **do not** propagate them back to
+When you change cmd's design tokens, **do not** propagate them back to
 Earth. Earth has its own Zen system. They're separate worlds.
 
 ## Architecture
 
 ```
-brainbar/
+cmd/
 ├── hugo.toml                  # Own config — baseURL = cmd.aguidetocloud.com
 ├── content/
 │   ├── _index.md              # Root launcher (homepage)
@@ -89,9 +89,9 @@ brainbar/
 │   └── cmd_voice.toml         # Brain-Bar-specific Sush-takes
 ├── static/
 │   ├── css/
-│   │   ├── zen-tokens.css     # Brain Bar's design tokens (NOT a parity file —
+│   │   ├── zen-tokens.css     # cmd's design tokens (NOT a parity file —
 │   │   │                       # free to diverge from Earth's style.css)
-│   │   └── cmd.css            # Brain Bar component styles
+│   │   └── cmd.css            # cmd component styles
 │   └── js/
 │       └── cmd.js             # [Phase 3] Launcher JS
 └── scripts/
