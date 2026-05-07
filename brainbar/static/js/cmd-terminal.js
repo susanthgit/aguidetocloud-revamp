@@ -421,8 +421,11 @@
     }
     const e = findErrno(code);
     if (!e) return [
-      { type: 'warn', text: '// no decode for "' + code + '"' },
-      { type: 'dim',  text: '// covers AADSTS, 0x HRESULT, KB articles, MDM enrolment failures' },
+      { type: 'warn', text: '// no curated decode for "' + code + '" yet' },
+      { type: 'dim',  text: '// cmd has 10 hand-curated codes today (AADSTS · 0x HRESULT · KB · MDM enrolment failures). 3 ways forward:' },
+      { type: 'plain', html: '   <span class="dim">1.</span> <a class="cmd-rerun accent" data-cmd="' + esc('ask ' + code) + '">ask ' + esc(code) + '</a><span class="dim">  \u2014 try a synthesised answer (model may know it)</span>' },
+      { type: 'plain', html: '   <span class="dim">2.</span> <a class="cmd-link" href="https://learn.microsoft.com/search/?terms=' + encodeURIComponent(code) + '" target="_blank" rel="noopener">search Microsoft Learn for ' + esc(code) + '<span class="ext">\u2197</span></a>' },
+      { type: 'plain', html: '   <span class="dim">3.</span> <a class="cmd-link" href="https://www.aguidetocloud.com/feedback/" target="_blank" rel="noopener">report ' + esc(code) + ' so we add it to cmd<span class="ext">\u2197</span></a>' },
       { type: 'dim',  text: '// other decode kinds: decode guid <id>  ·  decode resource-id <id>  ·  decode graph <url>  ·  decode sku <guid>  ·  decode mc <id>' },
     ];
     return [{ type: 'errno', entry: e }];

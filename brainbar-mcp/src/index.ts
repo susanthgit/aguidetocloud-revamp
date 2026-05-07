@@ -237,22 +237,25 @@ const ASK_SYSTEM_PROMPT = `You are cmd — a Microsoft cloud terminology decoder
 
 Rules:
 1. Keep your answer to 120 words or less.
-2. Cite EVERY entry you reference by its slug in [square-brackets]. Use the slug literally — write [mde], [m365-e5], [entra-p2] — NEVER write the full name "Microsoft Defender for Endpoint" without [mde] next to it.
-3. If the provided entries don't cover the question, respond exactly: "I don't have a cmd entry covering that — try \`search <term>\` or browse \`all\`."
-4. No marketing fluff. No "Microsoft offers..." preambles. Sysadmin tone.
-5. Don't invent Microsoft features that aren't in the provided entries.
-6. When the question is about pricing or licensing, surface real numbers from the entries when present.
-7. When comparing entries, structure as a tight bulleted list, not prose paragraphs.
+2. Cite EVERY entry you reference by its slug in [square-brackets]. Use the slug LITERALLY — copy character-for-character from the entry header.
+3. CRITICAL: The user message contains an "ALLOWED CITATIONS" line listing the only slugs you may put in [brackets]. Do NOT invent new slugs. If you need to mention a Microsoft product NOT in the allowed list, mention it in plain English WITHOUT brackets. NEVER guess slug variants like [entra-id-p1] — the real slug might be [entra-p1].
+4. If the provided entries don't cover the question, respond exactly: "I don't have a cmd entry covering that — try \`search <term>\` or browse \`all\`."
+5. No marketing fluff. No "Microsoft offers..." preambles. Sysadmin tone.
+6. Don't invent Microsoft features that aren't in the provided entries.
+7. When the question is about pricing or licensing, surface real numbers from the entries when present.
+8. When comparing entries, structure as a tight bulleted list, not prose paragraphs.
+9. Do NOT include hyperlinks or URLs. Do NOT recommend external sites (microsoft.com, learn.microsoft.com, docs.microsoft.com, etc). The user has cmd open already — citations route them to cmd entries.
 
-EXAMPLE — note the [slug] citations on EVERY referenced entry:
+EXAMPLE — note that EVERY [slug] is from the ALLOWED CITATIONS list, none are invented:
 
 Q: "What's the difference between MDE Plan 1 and Plan 2?"
+ALLOWED CITATIONS: [mde] [m365-e3] [m365-f3] [m365-e5]
 A: "[mde] ships in two plans:
 - Plan 1 — preventative antimalware. Bundled in [m365-e3] and [m365-f3].
-- Plan 2 — Plan 1 plus full EDR (threat hunting, automated investigation, forensics timeline). Bundled in [m365-e5] only.
+- Plan 2 — Plan 1 plus full EDR (threat hunting, automated investigation). Bundled in [m365-e5] only.
 If you only have [m365-e3], you can add [mde] Plan 2 as an add-on for ~$5.20/user/mo."
 
-Notice every product/license name is followed by its [slug] in brackets. Do this for every entry you reference.`;
+Notice: every product/license/feature followed by its slug, drawn ONLY from the allowed list. Plain text for anything else. Never invent variants.`;
 
 async function tool_ask(
   question: string,
@@ -298,6 +301,14 @@ async function tool_ask(
   }
 
   const entries_used = candidates.map(c => ({ slug: c.slug, name: c.name }));
+
+  // Build the explicit allowlist of slugs the model is permitted to cite.
+  // Anti-hallucination measure (#2): models tend to invent plausible-sounding
+  // slug variants like [entra-id-p1] when the real slug is [entra-p1]. Giving
+  // them the literal allowlist + post-generation validation prevents this.
+  const allowlistSlugs = candidates.map(c => c.slug);
+  const allowlistDisplay = allowlistSlugs.map(s => `[${s}]`).join(' ');
+
   const contextBlocks = candidates.map(c => {
     const lines: string[] = [];
     lines.push(`[${c.slug}] ${c.name}`);
@@ -310,7 +321,7 @@ async function tool_ask(
     return lines.join('\n');
   }).join('\n\n');
 
-  const userPrompt = `QUESTION:\n${question}\n\nENTRIES:\n${contextBlocks}`;
+  const userPrompt = `QUESTION:\n${question}\n\nALLOWED CITATIONS (use ONLY these — copy character-for-character):\n${allowlistDisplay}\n\nENTRIES (each starts with its slug in [brackets] — that's the citation token):\n${contextBlocks}`;
 
   const model = '@cf/meta/llama-3.1-8b-instruct';
   let answer = '';
@@ -335,14 +346,30 @@ async function tool_ask(
     answer = "I don't have a cmd entry covering that — try `search <term>` or browse `all`.";
   }
 
-  // Extract cited slugs from the answer.
+  // Post-generation slug-bracket validation. Defence-in-depth against the
+  // model inventing slug variants. Strips brackets from ANY [content] that
+  // isn't an exact match for a real entry slug. Catches both:
+  //   - Plausible-looking variants: [entra-id-p1] when [entra-p1] is real
+  //   - Multi-word "slugs" with spaces: [microsoft entra id p1]
+  //   - Random made-up names: [defender-everywhere]
+  // Real slugs pass through unchanged.
+  const realSlugSet = new Set(idx.entries.map(e => e.slug));
+  answer = answer.replace(/\[([^\]\n]+)\]/g, (_match, content: string) => {
+    const trimmed = content.trim();
+    return realSlugSet.has(trimmed) ? `[${trimmed}]` : trimmed;
+  });
+  // Strip leading/trailing quote-wrapping (model sometimes copies the
+  // example format which had quotes around the answer).
+  answer = answer.replace(/^"\s*|\s*"$/g, '').trim();
+
+  // Extract validated cited slugs from the cleaned answer.
   const citedSlugs: string[] = [];
   const seenCited = new Set<string>();
   const citeRe = /\[([a-z0-9][a-z0-9\-]*)\]/g;
   let m: RegExpExecArray | null;
   while ((m = citeRe.exec(answer)) !== null) {
     const slug = m[1];
-    if (!seenCited.has(slug) && idx.entries.some(e => e.slug === slug)) {
+    if (!seenCited.has(slug) && realSlugSet.has(slug)) {
       citedSlugs.push(slug);
       seenCited.add(slug);
     }

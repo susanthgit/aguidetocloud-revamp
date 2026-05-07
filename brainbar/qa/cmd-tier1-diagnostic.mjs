@@ -183,6 +183,23 @@ async function main() {
   txt = await lastGroupText(page);
   assert('decode mc links to m365-roadmap', /m365-roadmap/i.test(txt));
 
+  // Legacy errno path (AADSTS / 0x HRESULT / KB) — uses real codes from cmd_decode.toml
+  await runTerminalCommand(page, 'decode AADSTS50105');
+  txt = await lastGroupText(page);
+  assert('decode AADSTS50105 returns plain-english entry', /User not assigned/i.test(txt));
+
+  await runTerminalCommand(page, 'decode 0x80070005');
+  txt = await lastGroupText(page);
+  assert('decode 0x80070005 returns E_ACCESSDENIED', /access.{0,15}denied|E_ACCESSDENIED/i.test(txt));
+
+  // Graceful fallback for unknown errno code — must surface 3 ways forward
+  await runTerminalCommand(page, 'decode AADSTS99999');
+  txt = await lastGroupText(page);
+  assert('unknown decode shows "no curated decode" message', /no curated decode/i.test(txt));
+  assert('unknown decode offers `ask` chip', /ask AADSTS99999/.test(txt));
+  assert('unknown decode links to Microsoft Learn search', /learn\.microsoft\.com.+search/i.test(await lastGroupHtml(page)));
+  assert('unknown decode links to feedback', /feedback/i.test(await lastGroupHtml(page)));
+
   // ─── XSS / injection guards ──────────────────────────────────────────
   log.section('8. XSS guards');
   // Force a dump containing a script tag — verify it's NOT executed.

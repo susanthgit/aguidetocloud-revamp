@@ -192,6 +192,33 @@ test('cmd_ask: empty question returns usage error', async () => {
   assert.match(payload.answer, /usage:/);
 });
 
+test('cmd_ask: post-generation filter strips fake slug brackets', async () => {
+  const mockAi = {
+    async run() {
+      // Simulate two failure modes the bug exhibited:
+      //   1. Plausible-looking variant: [entra-id-p1]  (real slug is [entra-p1])
+      //   2. Multi-word "slug" with spaces: [microsoft entra id p1]
+      //   3. Quote-wrapped answer (model copies example format)
+      return { response: '"Conditional Access requires [entra-id-p1] which is bundled in [m365-e5]. Risk-based CA needs [microsoft entra id p2]."' };
+    },
+  };
+  const r = await rpc('tools/call', { name: 'cmd_ask', arguments: { question: 'what about conditional access?' } }, 1, { AI: mockAi });
+  const payload = JSON.parse(r.result.content[0].text);
+  // Real slug retains brackets
+  assert.match(payload.answer, /\[m365-e5\]/, 'real slug retained as [m365-e5]');
+  // Fake slug variants have brackets stripped
+  assert.doesNotMatch(payload.answer, /\[entra-id-p1\]/, 'fake hyphen-variant brackets stripped');
+  assert.doesNotMatch(payload.answer, /\[microsoft entra id p2\]/, 'multi-word fake brackets stripped');
+  // The plain-text version of the fake slug remains (so the answer is still readable)
+  assert.match(payload.answer, /entra-id-p1/, 'fake slug text remains as plain text');
+  assert.match(payload.answer, /microsoft entra id p2/, 'multi-word fake remains as plain text');
+  // Leading/trailing quote-wrapping is stripped
+  assert.doesNotMatch(payload.answer, /^"/, 'leading quote stripped');
+  assert.doesNotMatch(payload.answer, /"$/, 'trailing quote stripped');
+  // Cited_slugs only contains real slugs
+  assert.deepEqual(payload.cited_slugs, ['m365-e5'], 'only real slug in cited_slugs');
+});
+
 test('POST /ask HTTP endpoint works directly', async () => {
   const mockAi = {
     async run() { return { response: 'Conditional Access [conditional-access] requires Entra ID P1 [entra-p1].' }; },
