@@ -1,0 +1,173 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# cmd · License SKU GUID → slug map
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Microsoft's published licensing reference assigns a stable GUID to each
+# subscription SKU. When admins paste a SKU GUID into cmd (e.g., from
+# `Get-MgSubscribedSku` or a CSV), the smart-suggest matcher resolves it to
+# the cmd entry slug via this table.
+#
+# Source of truth (Microsoft published list):
+# https://learn.microsoft.com/en-us/entra/identity/users/licensing-service-plan-reference
+#
+# Top-30 most common SKUs seeded for v1. Add more as needed — adapter exposes
+# the whole table via /cmd-index.json under the `skus` field.
+#
+# Schema:
+#   guid: the GUID Microsoft uses to identify the SKU
+#   sku:  Microsoft's own SKU partNumber (the human-readable code)
+#   slug: the cmd_entries.toml slug this resolves to (or "" if no entry yet)
+#
+# Validation: validate-cmd-tree.mjs checks every non-empty `slug` references
+# an existing entry in cmd_entries.toml.
+# ═══════════════════════════════════════════════════════════════════════════
+
+[[skus]]
+guid = "05e9a617-0261-4cee-bb44-138d3ef5d965"
+sku  = "SPE_E3"
+slug = "m365-e3"
+
+[[skus]]
+guid = "06ebc4ee-1bb5-47dd-8120-11324bc54e06"
+sku  = "SPE_E5"
+slug = "m365-e5"
+
+[[skus]]
+guid = "66b55226-6b4f-492c-910c-a3b7a3c9d993"
+sku  = "SPE_F1"
+slug = "m365-f3"
+
+[[skus]]
+guid = "18181a46-0d4e-45cd-891e-60aabd171b4e"
+sku  = "STANDARDPACK"
+slug = "office-365"
+
+[[skus]]
+guid = "6fd2c87f-b296-42f0-b197-1e91e994b900"
+sku  = "ENTERPRISEPACK"
+slug = "office-365"
+
+[[skus]]
+guid = "c7df2760-2c81-4ef7-b578-5b5392b571df"
+sku  = "ENTERPRISEPREMIUM"
+slug = "office-365"
+
+[[skus]]
+guid = "3b555118-da6a-4418-894f-7df1e2096870"
+sku  = "O365_BUSINESS_ESSENTIALS"
+slug = ""
+
+[[skus]]
+guid = "f245ecc8-75af-4f8e-b61f-27d8114de5f3"
+sku  = "O365_BUSINESS_PREMIUM"
+slug = ""
+
+[[skus]]
+guid = "cbdc14ab-d96c-4c30-b9f4-6ada7cdc1d46"
+sku  = "SPB"
+slug = "m365-business-premium"
+
+[[skus]]
+guid = "cdd28e44-67e3-425e-be4c-737fab2899d3"
+sku  = "O365_BUSINESS"
+slug = ""
+
+[[skus]]
+guid = "c2273bd0-dff7-4215-9ef5-2c7bcfb06425"
+sku  = "OFFICESUBSCRIPTION"
+slug = ""
+
+[[skus]]
+guid = "efccb6f7-5641-4e0e-bd10-b4976e1bf68e"
+sku  = "EMS"
+slug = "ems"
+
+[[skus]]
+guid = "b05e124f-c7cc-45a0-a6aa-8cf78c946968"
+sku  = "EMSPREMIUM"
+slug = "ems"
+
+[[skus]]
+guid = "078d2b04-f1bd-4111-bbd4-b4b1b354cef4"
+sku  = "AAD_PREMIUM"
+slug = "entra-p1"
+
+[[skus]]
+guid = "84a661c4-e949-4bd2-a560-ed7766fcaf2b"
+sku  = "AAD_PREMIUM_P2"
+slug = "entra-p2"
+
+[[skus]]
+guid = "639dec6b-bb19-468b-871c-c5c441c4b0cb"
+sku  = "Microsoft_365_Copilot"
+slug = "m365-copilot"
+
+[[skus]]
+guid = "16a55f2f-ff35-4cd5-9146-fb784e3761a5"
+sku  = "DEFENDER_ENDPOINT_P1"
+slug = "mde"
+
+[[skus]]
+guid = "871d91ec-ec1a-452b-a83f-bd76c7d770ef"
+sku  = "MDATP_XPLAT"
+slug = "mde"
+
+[[skus]]
+guid = "f8a1db68-be16-40ed-86d5-cb42ce701560"
+sku  = "POWER_BI_PRO"
+slug = ""
+
+[[skus]]
+guid = "061f9ace-7d42-4136-88ac-31dc755f143f"
+sku  = "INTUNE_A"
+slug = "intune"
+
+[[skus]]
+guid = "1f2f344a-700d-42c9-9427-5cea1d5d7ba6"
+sku  = "INTUNE_SUITE"
+slug = ""
+
+[[skus]]
+guid = "8a0116f1-6385-4a59-a3d1-9c9d72e2e3a1"
+sku  = "DEFENDER_FOR_OFFICE_365_P1"
+slug = "mdo"
+
+[[skus]]
+guid = "3dd6cf57-d688-4eed-ba52-9e40b5468c3e"
+sku  = "DEFENDER_FOR_OFFICE_365_P2"
+slug = "mdo"
+
+[[skus]]
+guid = "26124093-3d78-432b-b5dc-48bf992543d5"
+sku  = "IDENTITY_THREAT_PROTECTION"
+slug = "mdi"
+
+[[skus]]
+guid = "184efa21-98c3-4e5d-95ab-d07053a96e67"
+sku  = "INFORMATION_PROTECTION_COMPLIANCE"
+slug = "purview"
+
+[[skus]]
+guid = "f30db892-07e9-47e9-837c-80727f46fd3d"
+sku  = "FLOW_FREE"
+slug = ""
+
+[[skus]]
+guid = "a403ebcc-fae0-4ca2-8c8c-7a907fd6c235"
+sku  = "POWER_BI_STANDARD"
+slug = ""
+
+[[skus]]
+guid = "f8a1db68-be16-40ed-86d5-cb42ce701560"
+sku  = "POWER_BI_PRO_OLD"
+slug = ""
+
+[[skus]]
+guid = "ea126fc5-a19e-42e2-a731-da9d437bffcf"
+sku  = "DYN365_ENTERPRISE_PLAN1"
+slug = ""
+
+[[skus]]
+guid = "111046dd-295b-4d6d-9724-d52ac90bd1f2"
+sku  = "WIN_DEF_ATP"
+slug = "mde"

@@ -1,0 +1,78 @@
+[
+  {
+    "note": "100 GB mailbox",
+    "slug": "exchange-online"
+  },
+  {
+    "note": "+ Phone System + Audio Conferencing",
+    "slug": "teams"
+  },
+  {
+    "note": "",
+    "slug": "sharepoint"
+  },
+  {
+    "note": "",
+    "slug": "onedrive"
+  },
+  {
+    "note": "P1 baseline (CA/MFA/SSO)",
+    "slug": "entra-p1"
+  },
+  {
+    "note": "PIM, risk-based access, identity protection",
+    "slug": "entra-p2"
+  },
+  {
+    "note": "via Entra ID P1",
+    "slug": "mfa"
+  },
+  {
+    "note": "via Entra ID P1",
+    "slug": "conditional-access"
+  },
+  {
+    "note": "Plan 2 — full EDR, threat hunting, automated investigation",
+    "slug": "mde"
+  },
+  {
+    "note": "Plan 2 — attack simulation, auto-remediation, threat trackers",
+    "slug": "mdo"
+  },
+  {
+    "note": "credential theft + lateral movement detection",
+    "slug": "mdi"
+  },
+  {
+    "note": "CASB, shadow IT discovery, SaaS app control",
+    "slug": "mdca"
+  },
+  {
+    "note": "Plan 1",
+    "slug": "intune"
+  },
+  {
+    "note": "",
+    "slug": "autopilot"
+  },
+  {
+    "note": "via Windows 11 Enterprise E5",
+    "slug": "bitlocker"
+  },
+  {
+    "note": "",
+    "slug": "eop"
+  },
+  {
+    "note": "via Intune",
+    "slug": "compliance-policies"
+  },
+  {
+    "note": "via Entra ID P2",
+    "slug": "pim"
+  },
+  {
+    "note": "advanced compliance — Insider Risk, eDiscovery Premium, Audit Premium",
+    "slug": "purview"
+  }
+]

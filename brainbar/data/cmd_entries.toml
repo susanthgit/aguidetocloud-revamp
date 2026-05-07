@@ -86,6 +86,23 @@ related_blogs = []
 status = "ga"
 watch = "List price rises from USD $36 → $39/user/month on 1 July 2026"
 last_verified = "2026-05-04"
+includes_source = "https://www.aguidetocloud.com/licensing/microsoft-365-e3/"
+includes = [
+  {slug = "exchange-online", note = "100 GB mailbox"},
+  {slug = "teams", note = ""},
+  {slug = "sharepoint", note = ""},
+  {slug = "onedrive", note = ""},
+  {slug = "entra-p1", note = "Conditional Access, MFA, SSO"},
+  {slug = "mfa", note = "via Entra ID P1"},
+  {slug = "conditional-access", note = "via Entra ID P1"},
+  {slug = "mde", note = "Plan 1 only — basic antimalware (full EDR is Plan 2 in E5)"},
+  {slug = "mdo", note = "Plan 1 — Safe Links, Safe Attachments (Plan 2 features in E5)"},
+  {slug = "intune", note = "Plan 1"},
+  {slug = "autopilot", note = ""},
+  {slug = "bitlocker", note = "via Windows 11 Enterprise E3"},
+  {slug = "eop", note = ""},
+  {slug = "compliance-policies", note = "via Intune"},
+]
 [entries.terms]
 abbreviations = ["E3"]
 aliases = ["microsoft-365-e3", "m365e3"]
@@ -429,6 +446,28 @@ related_blogs = []
 status = "ga"
 watch = "List price rises from USD $57 → $61/user/month on 1 July 2026"
 last_verified = "2026-05-04"
+includes_source = "https://www.aguidetocloud.com/licensing/microsoft-365-e5/"
+includes = [
+  {slug = "exchange-online", note = "100 GB mailbox"},
+  {slug = "teams", note = "+ Phone System + Audio Conferencing"},
+  {slug = "sharepoint", note = ""},
+  {slug = "onedrive", note = ""},
+  {slug = "entra-p1", note = "P1 baseline (CA/MFA/SSO)"},
+  {slug = "entra-p2", note = "PIM, risk-based access, identity protection"},
+  {slug = "mfa", note = "via Entra ID P1"},
+  {slug = "conditional-access", note = "via Entra ID P1"},
+  {slug = "mde", note = "Plan 2 — full EDR, threat hunting, automated investigation"},
+  {slug = "mdo", note = "Plan 2 — attack simulation, auto-remediation, threat trackers"},
+  {slug = "mdi", note = "credential theft + lateral movement detection"},
+  {slug = "mdca", note = "CASB, shadow IT discovery, SaaS app control"},
+  {slug = "intune", note = "Plan 1"},
+  {slug = "autopilot", note = ""},
+  {slug = "bitlocker", note = "via Windows 11 Enterprise E5"},
+  {slug = "eop", note = ""},
+  {slug = "compliance-policies", note = "via Intune"},
+  {slug = "pim", note = "via Entra ID P2"},
+  {slug = "purview", note = "advanced compliance — Insider Risk, eDiscovery Premium, Audit Premium"},
+]
 [entries.terms]
 abbreviations = []
 aliases = ["microsoft-365-e5", "m365e5"]
@@ -451,6 +490,19 @@ related_blogs = []
 status = "ga"
 watch = ""
 last_verified = "2026-05-04"
+includes_source = "https://www.aguidetocloud.com/licensing/microsoft-365-f3/"
+includes = [
+  {slug = "exchange-online", note = "2 GB mailbox · web/mobile only · no desktop apps"},
+  {slug = "teams", note = ""},
+  {slug = "sharepoint", note = ""},
+  {slug = "onedrive", note = "2 GB per user"},
+  {slug = "entra-p1", note = "Conditional Access, MFA, SSO"},
+  {slug = "mfa", note = "via Entra ID P1"},
+  {slug = "conditional-access", note = "via Entra ID P1"},
+  {slug = "mde", note = "Plan 1 only"},
+  {slug = "intune", note = "Plan 1"},
+  {slug = "eop", note = ""},
+]
 [entries.terms]
 abbreviations = ["F3"]
 aliases = ["microsoft-365-f3", "m365f3", "frontline-f3"]
@@ -474,6 +526,22 @@ related_blogs = []
 status = "ga"
 watch = ""
 last_verified = "2026-05-04"
+includes_source = "https://www.aguidetocloud.com/licensing/microsoft-365-business-premium/"
+includes = [
+  {slug = "exchange-online", note = "50 GB mailbox"},
+  {slug = "teams", note = ""},
+  {slug = "sharepoint", note = ""},
+  {slug = "onedrive", note = "1 TB per user"},
+  {slug = "entra-p1", note = "Conditional Access, MFA, SSO"},
+  {slug = "mfa", note = "via Entra ID P1"},
+  {slug = "conditional-access", note = "via Entra ID P1"},
+  {slug = "defender-for-business", note = "SMB-tier EDR (lighter than MDE Plan 2)"},
+  {slug = "mdo", note = "Plan 1 only — Safe Links, Safe Attachments"},
+  {slug = "intune", note = "Plan 1"},
+  {slug = "autopilot", note = ""},
+  {slug = "eop", note = ""},
+  {slug = "compliance-policies", note = "via Intune"},
+]
 [entries.terms]
 abbreviations = ["BP"]
 aliases = ["microsoft-365-business-premium", "m365-bp", "business-premium"]
@@ -1164,6 +1232,17 @@ related_blogs = []
 status = "ga"
 watch = ""
 last_verified = "2026-05-05"
+includes_source = "https://www.aguidetocloud.com/licensing/ems-e3-e5/"
+includes = [
+  {slug = "entra-p1", note = "EMS E3 baseline (CA/MFA/SSO)"},
+  {slug = "entra-p2", note = "EMS E5 only — PIM, risk-based access, identity protection"},
+  {slug = "intune", note = "Plan 1"},
+  {slug = "mfa", note = "via Entra ID P1"},
+  {slug = "conditional-access", note = "via Entra ID P1"},
+  {slug = "mdca", note = "EMS E5 only — CASB"},
+  {slug = "mdi", note = "EMS E5 only — Defender for Identity (originally part of EMS suite)"},
+  {slug = "compliance-policies", note = "via Intune"},
+]
 [entries.terms]
 abbreviations = ["EMS"]
 aliases = ["enterprise-mobility-security", "ems-bundle"]

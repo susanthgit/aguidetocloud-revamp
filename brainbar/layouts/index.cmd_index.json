@@ -4,11 +4,58 @@
    Consumed by:
      1. The launcher on / (client-side fuzzy search) — Phase 3
      2. The Astro Guided <BrainBarLauncher> web-component (vendored) — Phase 6
+     3. The terminal-mode home (cmd-terminal.js) — needs voice + skus
    ════════════════════════════════════════════════════════════════════ */ -}}
+{{- $entries := (index hugo.Data "cmd_entries").entries -}}
+
+{{- /* Build inverse `included_in` map: childSlug → [{slug,note}, ...] */ -}}
+{{- $includedInMap := dict -}}
+{{- range $entries -}}
+  {{- $parent := .slug -}}
+  {{- range (.includes | default slice) -}}
+    {{- $childSlug := "" -}}
+    {{- $note := "" -}}
+    {{- if reflect.IsMap . -}}
+      {{- $childSlug = .slug -}}
+      {{- $note = .note | default "" -}}
+    {{- else -}}
+      {{- $childSlug = . -}}
+    {{- end -}}
+    {{- if $childSlug -}}
+      {{- $existing := index $includedInMap $childSlug | default slice -}}
+      {{- $existing = $existing | append (dict "slug" $parent "note" $note) -}}
+      {{- $includedInMap = merge $includedInMap (dict $childSlug $existing) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Build SKU GUID → slug lookup map */ -}}
+{{- $skusMap := dict -}}
+{{- range (index hugo.Data "cmd_skus").skus -}}
+  {{- if .slug -}}
+    {{- $skusMap = merge $skusMap (dict (lower .guid) .slug) -}}
+  {{- end -}}
+{{- end -}}
+
 {{- $items := slice -}}
-{{- range (index hugo.Data "cmd_entries").entries -}}
+{{- range $entries -}}
   {{- $voice := index (index hugo.Data "cmd_voice") .slug | default dict -}}
   {{- $terms := .terms | default dict -}}
+  {{- /* Normalise includes[]: bare strings → {slug, note: ""}; objects pass through */ -}}
+  {{- $normalisedIncludes := slice -}}
+  {{- range (.includes | default slice) -}}
+    {{- if reflect.IsMap . -}}
+      {{- $normalisedIncludes = $normalisedIncludes | append (dict "slug" .slug "note" (.note | default "")) -}}
+    {{- else -}}
+      {{- $normalisedIncludes = $normalisedIncludes | append (dict "slug" . "note" "") -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $derivedIncludedIn := index $includedInMap .slug | default slice -}}
+  {{- $voiceObj := dict
+    "sush_take"        ($voice.sush_take | default "")
+    "sush_take_status" ($voice.sush_take_status | default "")
+    "mascot"           ($voice.mascot | default "")
+  -}}
   {{- $item := dict
     "slug"          .slug
     "name"          .name
@@ -29,6 +76,10 @@
     "last_verified" (.last_verified | default "")
     "related_tools" (.related_tools | default slice)
     "related_certs" (.related_certs | default slice)
+    "includes"      $normalisedIncludes
+    "included_in"   $derivedIncludedIn
+    "includes_source" (.includes_source | default "")
+    "voice"         $voiceObj
     "has_take"      (and (eq (default "neutral" $voice.sush_take_status) "spicy") (ne ($voice.sush_take | default "") ""))
   -}}
   {{- $items = $items | append $item -}}
@@ -37,6 +88,7 @@
   "version"      site.Params.cache_version
   "generated_at" (now.Format "2006-01-02T15:04:05Z07:00")
   "count"        (len $items)
+  "skus"         $skusMap
   "entries"      $items
 -}}
 {{- $payload | jsonify (dict "indent" "  ") | safeJS -}}

@@ -1,0 +1,14 @@
+[
+  {
+    "note": "Plan 1 only — basic antimalware (full EDR is Plan 2 in E5)",
+    "slug": "m365-e3"
+  },
+  {
+    "note": "Plan 2 — full EDR, threat hunting, automated investigation",
+    "slug": "m365-e5"
+  },
+  {
+    "note": "Plan 1 only",
+    "slug": "m365-f3"
+  }
+]
