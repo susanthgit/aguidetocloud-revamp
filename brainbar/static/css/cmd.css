@@ -2062,11 +2062,29 @@ body.cmd-v2-home-page::before {
   );
 }
 
+/* Top-nav links (about/help) — show on every page, scoped to bb-header */
+.bb-header .bb-topnav-link {
+  color: var(--text-muted, #6272a4);
+  font-size: 13px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 150ms ease-out;
+}
+.bb-header .bb-topnav-link:hover {
+  color: #50fa7b;
+  border-color: #2d3548;
+  text-shadow: 0 0 4px rgba(80, 250, 123, 0.4);
+}
+
 /* Fully scoped from here down */
 .cmd-v2-home {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 16px 24px 80px;
+  padding: 16px 32px 80px;
   position: relative;
   z-index: 1;
   font: 15px/1.6 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Menlo, Consolas, monospace;

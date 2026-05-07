@@ -78,6 +78,13 @@
       </span>
     </div>
     <div style="display:flex; gap: var(--s-3); align-items:center;">
+      {{ if .IsHome }}
+      <a class="bb-topnav-link cmd-topnav-cmd" data-cmd="about" href="/about/">about</a>
+      <a class="bb-topnav-link cmd-topnav-cmd" data-cmd="?" href="#">help</a>
+      {{ else }}
+      <a class="bb-topnav-link" href="/">terminal</a>
+      <a class="bb-topnav-link" href="/about/">about</a>
+      {{ end }}
       <button class="bb-theme-toggle" type="button" aria-label="Toggle theme — switch between dark and light mode" data-bb-theme>
         <span class="bb-theme-icon-dark" aria-hidden="true">☾</span>
         <span class="bb-theme-icon-light" aria-hidden="true">☀</span>
@@ -85,9 +92,14 @@
     </div>
   </header>
 
+  {{/* On homepage, .cmd-v2-home provides its own wrapper — bypass bb-shell to allow wider terminal */}}
+  {{ if .IsHome }}
+    {{ block "main" . }}{{ end }}
+  {{ else }}
   <main class="bb-shell">
     {{ block "main" . }}{{ end }}
   </main>
+  {{ end }}
 
   <footer class="bb-footer">
     <p>// cmd v{{ site.Params.cache_version }} · part of the <a href="{{ .Site.Params.parent_site }}" rel="noopener">aguidetocloud universe</a> · plain-english microsoft, for people like us · <a href="https://www.aguidetocloud.com/feedback/" rel="noopener">feedback →</a> · <a class="cmd-mcp" href="https://mcp.aguidetocloud.com" target="_blank" rel="noopener">+ MCP for Claude/ChatGPT ↗</a></p>
