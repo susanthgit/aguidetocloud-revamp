@@ -341,8 +341,10 @@
       });
       const err = findErrno(term);
       if (err) return cmdDecode([term]);
+      // No-result fallback: nudge toward `ask` for natural-language synthesis.
       return [
         { type: 'warn', text: '// no entry yet for "' + term + '"' },
+        { type: 'plain', html: '<span class="dim">// not finding it? try </span><a class="cmd-rerun accent" data-cmd="' + esc('ask ' + term) + '">ask ' + esc(term) + '</a><span class="dim"> for a natural-language answer (grounded in cmd entries)</span>' },
         { type: 'plain', html: '<span class="dim">// </span><a class="cmd-link" href="https://www.aguidetocloud.com/feedback/" target="_blank" rel="noopener">tell us what to add<span class="ext">↗</span></a>' },
       ];
     }
@@ -352,6 +354,11 @@
       blocks.push({ type: 'dim', text: '// "' + term + '" matched ' + hit.via + ' → ' + hit.entry.slug });
     }
     blocks.push({ type: 'man', entry: hit.entry });
+    // Weak-match nudge: when the only match is a substring (tier 6), the answer
+    // may not be what the user actually wanted. Offer `ask` as a synthesis path.
+    if (hit.via === 'substring') {
+      blocks.push({ type: 'plain', html: '<span class="dim">// substring match. for a synthesised answer try </span><a class="cmd-rerun accent" data-cmd="' + esc('ask ' + term) + '">ask ' + esc(term) + '</a>' });
+    }
     return blocks;
   }
 
@@ -711,6 +718,7 @@
     if (topic === 'why')        return cmdHelpWhy();
     const features = [
       { title: 'man pages',  cmd: 'man mde',          desc: 'full entry as a unix manual' },
+      { title: 'samples',    cmd: 'samples',          desc: 'feature catalogue \u2014 click any line' },
       { title: 'ask',        cmd: 'ask whats in m365 e5', desc: 'natural-language question \u2014 grounded answer with citations' },
       { title: 'tree',       cmd: 'tree m365-e5',     desc: 'what\u2019s included / what includes this' },
       { title: 'why',        cmd: 'why mde',          desc: 'sush\u2019s honest take (when there is one)' },
@@ -806,7 +814,77 @@
     ];
   }
 
-  // ─── tree: bidirectional includes graph (Tier 1 Batch 2) ───────────────
+  // ─── samples: discoverable feature catalogue (Tier 1 onboarding) ──────
+  // First-time visitors won't read `help`. They'll glance at the prompt and
+  // either type or leave. `samples` is the discoverable "everything cmd can
+  // do" menu — categorised, click-to-run, no chrome.
+  function cmdSamples() {
+    const sections = [
+      {
+        title: '\ud83d\udcd6  Decode an acronym',
+        rows: [
+          { cmd: 'mde',                desc: 'Microsoft Defender for Endpoint' },
+          { cmd: 'pim',                desc: 'Privileged Identity Management' },
+          { cmd: 'man entra-p2',       desc: 'full record for Entra ID P2' },
+        ],
+      },
+      {
+        title: '\ud83c\udf33  Explore a license',
+        rows: [
+          { cmd: 'tree m365-e5',       desc: 'what\'s bundled in E5 \u2014 every component clickable' },
+          { cmd: 'tree mde',           desc: 'reverse \u2014 what licenses include MDE' },
+          { cmd: 'compare e3 e5',      desc: 'side-by-side feature diff' },
+        ],
+      },
+      {
+        title: '\ud83e\udd16  Ask in plain english (NEW)',
+        rows: [
+          { cmd: 'ask whats included in m365 e5',                       desc: 'grounded answer with citations' },
+          { cmd: 'ask difference between mde plan 1 and plan 2',        desc: 'comparison-style answer' },
+          { cmd: 'ask what license do i need for conditional access',   desc: 'licensing recommendation' },
+        ],
+      },
+      {
+        title: '\ud83d\udd0d  Decode error codes & ids',
+        rows: [
+          { cmd: 'decode AADSTS50058',                desc: 'sign-in error \u2014 plain english + fix' },
+          { cmd: 'decode 0xC0000005',                 desc: 'HRESULT' },
+          { cmd: 'decode resource-id /subscriptions/06ebc4ee-1bb5-47dd-8120-11324bc54e06/resourceGroups/rg-prod/providers/Microsoft.Web/sites/myapp', desc: 'parse Azure resource ID into segments' },
+        ],
+      },
+      {
+        title: '\ud83d\udd27  Power pipes (UNIX-style)',
+        rows: [
+          { cmd: 'search defender | json',     desc: 'structured JSON dump' },
+          { cmd: 'ls jargon | sort | head 5',  desc: 'alphabetical top-5' },
+          { cmd: 'ls jargon | wc',             desc: 'count by type' },
+        ],
+      },
+      {
+        title: '\ud83d\udc40  Sush\'s take + freshness',
+        rows: [
+          { cmd: 'why mde',           desc: 'Sush\'s honest take on MDE (when there is one)' },
+          { cmd: 'freshness',         desc: 'which entries need re-verifying' },
+          { cmd: 'help',              desc: 'full reference + progressive sub-helps' },
+        ],
+      },
+    ];
+    const blocks = [
+      { type: 'heading', text: '// cmd \u2014 samples  (click any line to run)' },
+      { type: 'dim',     text: '// 6 categories. tap whichever interests you. when done, just type to search.' },
+    ];
+    for (const sec of sections) {
+      blocks.push({ type: 'heading', text: '   ' + sec.title });
+      for (const row of sec.rows) {
+        blocks.push({
+          type: 'plain',
+          html: '      <span class="dim">$</span> <a class="cmd-rerun accent cmd-samples-cmd" data-cmd="' + esc(row.cmd) + '"><code>' + esc(row.cmd.length > 78 ? row.cmd.slice(0, 75) + '\u2026' : row.cmd) + '</code></a><span class="cmd-samples-desc dim">  \u00b7  ' + esc(row.desc) + '</span>',
+        });
+      }
+    }
+    blocks.push({ type: 'dim', text: '// keys \u2191\u2193 cycle history \u00b7 tab to complete \u00b7 esc to clear input \u00b7 \u26a1 just type and press enter' });
+    return blocks;
+  }
   function cmdTree(args) {
     if (!args.length) return [{ type: 'err', text: 'usage: tree <slug>' }];
     if (!STATE.ready) return [{ type: 'warn', text: '// loading — try again' }];
@@ -969,6 +1047,7 @@
     why:    cmdWhy,
     freshness: cmdFreshness, fresh: cmdFreshness,
     ask:    cmdAsk,
+    samples: cmdSamples, examples: cmdSamples, demo: cmdSamples, tour: cmdSamples,
     history:cmdHistory, hist: cmdHistory,
     whoami: cmdWhoami, who: cmdWhoami,
     clear:  cmdClear, cls: cmdClear,
@@ -1153,6 +1232,7 @@
     if (!line) return;
     STATE.history.push(line);
     STATE.histIdx = -1;
+    const wasFirstThisSession = !STATE.firstCommandRun;
     STATE.firstCommandRun = true;
     updateStatus();
     showQuickStrip();
@@ -1173,6 +1253,17 @@
     }
     for (const f of filters) blocks = applyPipe(blocks, f);
     renderBlocks(blocks);
+
+    // Post-first-command nudge — appears once per session, after the very
+    // first user command. Skip if their first command was already discovery
+    // (samples / help / ? / about) so we don't double-up.
+    if (wasFirstThisSession) {
+      const discoveryVerbs = new Set(['samples', 'examples', 'demo', 'tour', 'help', '?', 'about', 'clear', 'cls']);
+      if (!discoveryVerbs.has(verb)) {
+        writeBlank();
+        writeRaw('<span class="cmd-nudge dim">// nice. cmd does a lot more \u2014 try </span><a class="cmd-rerun key cmd-nudge-link" data-cmd="samples">samples</a><span class="cmd-nudge dim"> for the full feature catalogue.</span>', 'cmd-line cmd-first-nudge');
+      }
+    }
 
     updateTitleBar(line);
     try {
@@ -1207,6 +1298,26 @@
         else if (m.kind === 'mc')     matches.push('decode mc ' + v);
         else if (m.kind === 'guid')   matches.push('decode guid ' + v);
         else                          matches.push('decode ' + v); // aadsts / hresult / kb
+      }
+    }
+    // Natural-language detection — fires "ask <input>" when the input looks
+    // like a question rather than a slug. Catches users who type "what is X"
+    // expecting an answer, without knowing the `ask` verb exists.
+    {
+      const tokens = v.split(/\s+/);
+      const lc = v.toLowerCase();
+      const KNOWN_VERBS = new Set(['search','s','man','ls','list','decode','d','compare','cmp','diff','tree','why','freshness','fresh','ask','samples','examples','demo','tour','history','hist','whoami','who','clear','cls','cowsay','about','all','help','watch','changelog','log']);
+      const startsWithVerb = KNOWN_VERBS.has(tokens[0].toLowerCase()) || lc.startsWith('?');
+      const QUESTION_WORDS = /^(what|how|why|when|which|can|should|is|are|does|do|will|would|could)\b/i;
+      const hasQuestionWord = QUESTION_WORDS.test(lc);
+      const endsWithQuestion = lc.endsWith('?');
+      const hasComparator = /\b(vs|versus|difference|compare)\b/i.test(lc);
+      const looksLikeQuestion =
+        !startsWithVerb &&
+        tokens.length >= 4 &&
+        (hasQuestionWord || endsWithQuestion || hasComparator);
+      if (looksLikeQuestion) {
+        matches.push('ask ' + v);
       }
     }
     const tokens = v.split(/\s+/);
@@ -1397,8 +1508,14 @@
     }
   }
   function clickableSuggestions() {
-    writeRaw('<span class="dim">// click any of these to run:</span>', 'cmd-line');
-    writeRaw('<span class="dim">//   <a class="cmd-rerun key" data-cmd="mde">mde</a> · <a class="cmd-rerun key" data-cmd="pim">pim</a> · <a class="cmd-rerun key" data-cmd="all">all</a> · <a class="cmd-rerun key" data-cmd="?">?</a> · <a class="cmd-rerun key" data-cmd="about">about</a></span>', 'cmd-line');
+    writeRaw('<span class="dim">// new here? \u00bb </span><a class="cmd-rerun key cmd-suggest-headline" data-cmd="samples">samples</a><span class="dim"> for the full feature catalogue, or click any below:</span>', 'cmd-line');
+    writeRaw('<span class="dim">//   </span>' +
+      '<a class="cmd-rerun key" data-cmd="mde">mde</a><span class="dim"> \u00b7 </span>' +
+      '<a class="cmd-rerun key" data-cmd="tree m365-e5">tree m365-e5</a><span class="dim"> \u00b7 </span>' +
+      '<a class="cmd-rerun key" data-cmd="ask whats in m365 e5">ask whats in m365 e5</a><span class="dim"> \u00b7 </span>' +
+      '<a class="cmd-rerun key" data-cmd="all">all</a><span class="dim"> \u00b7 </span>' +
+      '<a class="cmd-rerun key" data-cmd="?">?</a>',
+      'cmd-line');
     writeBlank();
   }
   function bootBannerFast() {
@@ -1465,6 +1582,35 @@
     return null;
   }
 
+  // ─── Placeholder rotation (onboarding hint cycle) ─────────────────────
+  // Silently rotates the input placeholder through 5 hints while the input
+  // is empty + unfocused. Pauses the moment the user types. No animation,
+  // no chrome, no surprise — just a passing nudge that broader use cases
+  // exist beyond "type a slug".
+  const PLACEHOLDER_HINTS = [
+    'type a Microsoft acronym \u2014 try: mde \u00b7 pim \u00b7 aadsts50011 \u00b7 ?',
+    'or paste an error code \u2014 try: 0xC0000005 \u00b7 KB5028166',
+    "or `ask whats included in m365 e5` \u2014 grounded answer with citations",
+    'or `tree m365-e5` \u2014 see what\'s bundled in a license',
+    'or paste an Azure resource id \u2014 cmd parses every segment',
+    "type `samples` for the full feature catalogue",
+  ];
+  function startPlaceholderRotation() {
+    if (!input) return;
+    let i = 0;
+    let stopped = false;
+    function stop() { stopped = true; }
+    input.addEventListener('input', stop, { once: true });
+    input.addEventListener('keydown', stop, { once: true });
+    setInterval(function () {
+      if (stopped) return;
+      if (input.value.length > 0) return; // user has typed something
+      if (document.activeElement === input) return; // user is composing
+      i = (i + 1) % PLACEHOLDER_HINTS.length;
+      input.placeholder = PLACEHOLDER_HINTS[i];
+    }, 5000);
+  }
+
   // ─── Boot ──────────────────────────────────────────────────────────────
   loadTrail();
   updateStatus();
@@ -1481,6 +1627,7 @@
     if (q) execute(q);
     else bootBanner();
     input.focus();
+    startPlaceholderRotation();
     // Lazy-load decode in background
     setTimeout(() => loadDecode(), 1500);
   });

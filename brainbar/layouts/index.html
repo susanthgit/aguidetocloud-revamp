@@ -53,7 +53,7 @@
 
       <div class="cmd-term-prompt">
         <span class="glyph">$</span>
-        <input id="cmd-input" type="text" placeholder="type a microsoft term — try: mde · pim · aadsts50011 · ?" autocomplete="off" autocorrect="off" spellcheck="false">
+        <input id="cmd-input" type="text" placeholder="type a Microsoft acronym, paste an error code, or `ask` cmd a question" autocomplete="off" autocorrect="off" spellcheck="false">
         <span class="blinker" aria-hidden="true">▍</span>
         <span class="cmd-first-hint" id="cmd-first-hint">type · click anything · ? for help</span>
       </div>
@@ -76,8 +76,10 @@
   {{/* Quick-command strip — appears after first command */}}
   <div class="cmd-quick-strip" id="cmd-quick-strip">
     <span class="label">// quick:</span>
+    <a class="cmd-quick-cmd cmd-quick-headline" data-cmd="samples">samples</a>
+    <a class="cmd-quick-cmd" data-cmd="ask whats in m365 e5">ask whats in m365 e5</a>
+    <a class="cmd-quick-cmd" data-cmd="tree m365-e5">tree m365-e5</a>
     <a class="cmd-quick-cmd" data-cmd="mde">mde</a>
-    <a class="cmd-quick-cmd" data-cmd="pim">pim</a>
     <a class="cmd-quick-cmd" data-cmd="all">all</a>
     <a class="cmd-quick-cmd" data-cmd="ls errno">ls errno</a>
     <a class="cmd-quick-cmd" data-cmd="?">?</a>

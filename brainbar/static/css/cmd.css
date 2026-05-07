@@ -2866,3 +2866,68 @@ body.cmd-v2-home-page .bb-brand-name { font-weight: 700; }
   margin-top: 8px;
   font-size: 11px;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   cmd onboarding (Tier 1 follow-up · 7 May 2026)
+   - samples verb output styling
+   - first-command nudge
+   - quick-strip headline highlight (samples)
+   - boot suggestion headline highlight
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Highlight `samples` chip in the quick-strip + boot suggestions so first-time
+   visitors are drawn to the entry-point command. Subtle phosphor glow. */
+.cmd-v2-home .cmd-quick-cmd.cmd-quick-headline,
+.cmd-v2-home .cmd-suggest-headline {
+  background: rgba(52, 211, 153, 0.16);
+  color: #6ee7b7;
+  border-color: rgba(52, 211, 153, 0.55);
+  text-shadow: 0 0 4px rgba(52, 211, 153, 0.45);
+  font-weight: 600;
+}
+.cmd-v2-home .cmd-quick-cmd.cmd-quick-headline:hover,
+.cmd-v2-home .cmd-suggest-headline:hover {
+  background: rgba(52, 211, 153, 0.28);
+  color: #cce4d4;
+}
+
+/* Samples view — categorised feature catalogue. Section headings get more
+   breathing room than other cmd output, since this is the "menu". */
+.cmd-v2-home .cmd-samples-cmd {
+  display: inline-block;
+  min-width: 12ch;
+  font-family: ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+}
+.cmd-v2-home .cmd-samples-cmd code {
+  background: rgba(52, 211, 153, 0.06);
+  padding: 0 4px;
+  border-radius: 2px;
+}
+.cmd-v2-home .cmd-samples-desc {
+  font-style: italic;
+}
+
+/* First-command nudge — a single dim line that appears once after the user
+   runs their first command. Faintly highlighted by a left rule so it reads
+   as "the system speaking", not part of the command output. */
+.cmd-v2-home .cmd-first-nudge {
+  margin-top: 10px;
+  padding-left: 8px;
+  border-left: 2px solid rgba(52, 211, 153, 0.35);
+  opacity: 0;
+  animation: cmd-nudge-fade-in 600ms ease-out 300ms forwards;
+}
+.cmd-v2-home .cmd-nudge-link {
+  color: #6ee7b7 !important;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(110, 231, 183, 0.5);
+  font-weight: 500;
+}
+@keyframes cmd-nudge-fade-in {
+  from { opacity: 0; transform: translateY(-2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* The dim placeholder rotation needs no extra styling — it inherits the
+   existing input placeholder colour. Pause animation if user prefers reduced
+   motion (honoured by JS check on prefers-reduced-motion in startPlaceholderRotation). */

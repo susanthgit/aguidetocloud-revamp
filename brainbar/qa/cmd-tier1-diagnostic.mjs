@@ -234,6 +234,38 @@ async function main() {
   txt = await lastGroupText(page);
   assert('help decode documents 5 kinds', /guid/i.test(txt) && /resource-id/i.test(txt) && /graph/i.test(txt) && /sku/i.test(txt) && /mc/i.test(txt));
 
+  // ─── Onboarding (Tier 1 follow-up — added 7 May 2026) ─────────────────
+  log.section('11. onboarding — samples verb');
+  await runTerminalCommand(page, 'samples');
+  txt = await lastGroupText(page);
+  assert('samples returns the menu heading', /samples/i.test(txt));
+  assert('samples covers ask section', /ask in plain english/i.test(txt) || /ask whats included/i.test(txt));
+  assert('samples covers tree section', /explore a license/i.test(txt) || /tree m365-e5/i.test(txt));
+  assert('samples covers pipes section', /power pipes/i.test(txt));
+
+  log.section('12. onboarding — NL detection fires `ask` chip');
+  await page.fill('#cmd-input', 'what license includes conditional access');
+  await page.waitForTimeout(200);
+  let nlSuggest = await page.evaluate(() => document.querySelector('#cmd-suggest').innerText);
+  assert('natural-language input suggests `ask` chip', /^ask /m.test(nlSuggest));
+
+  await page.fill('#cmd-input', 'difference between mde plan 1 and plan 2');
+  await page.waitForTimeout(200);
+  nlSuggest = await page.evaluate(() => document.querySelector('#cmd-suggest').innerText);
+  assert('comparison-style input suggests `ask` chip', /ask difference between mde/i.test(nlSuggest));
+
+  await page.fill('#cmd-input', 'mde');
+  await page.waitForTimeout(200);
+  nlSuggest = await page.evaluate(() => document.querySelector('#cmd-suggest').innerText);
+  assert('short slug input does NOT suggest `ask`', !/^ask mde$/m.test(nlSuggest));
+
+  await page.fill('#cmd-input', '');
+
+  log.section('13. onboarding — search miss nudges toward `ask`');
+  await runTerminalCommand(page, 'search totallyfakeproductnameforsure');
+  txt = await lastGroupText(page);
+  assert('search miss surfaces `ask` nudge', /not finding it.+ask/i.test(txt));
+
   await browser.close();
 
   // ─── Summary ──────────────────────────────────────────────────────────
