@@ -66,9 +66,23 @@ interface BrainBarEntry {
   aliases?: string[];
   old_names?: string[];
   plain_english?: string;
+  official?: string;
+  plans?: string[];
   status?: string;
   url: string;
   has_take?: boolean;
+  includes?: { slug: string; note: string }[];
+  included_in?: { slug: string; note: string }[];
+  includes_source?: string;
+  voice?: { sush_take?: string; sush_take_status?: string; mascot?: string };
+  watch?: string;
+  last_verified?: string;
+}
+
+interface Env {
+  AI: {
+    run(model: string, input: { messages: { role: string; content: string }[]; max_tokens?: number }): Promise<{ response?: string }>;
+  };
 }
 
 interface BrainBarIndex {
@@ -205,6 +219,128 @@ async function tool_list_kinds(kind?: string): Promise<{ kind: string; count: nu
     }));
 }
 
+// ── cmd_ask: grounded natural-language Q&A over cmd entries ──────────────
+//
+// Architecture:
+//   1. Search the index for top-K relevant entries (using existing 6-tier ranker)
+//   2. Build a system prompt that REQUIRES grounded citations
+//   3. Pack the entries as user-message context
+//   4. Call Cloudflare Workers AI (free tier, llama-3.1-8b-instruct)
+//   5. Return answer + the slugs that were given as context
+//
+// Hallucination guard: the system prompt + the constrained context window
+// makes the model very unlikely to invent Microsoft features. The cited
+// slugs let the user click through to verify against cmd's authoritative
+// entry pages.
+
+const ASK_SYSTEM_PROMPT = `You are cmd — a Microsoft cloud terminology decoder. Answer the user's question in plain English using ONLY the cmd entries provided below.
+
+Rules:
+1. Keep your answer to 120 words or less.
+2. Cite EVERY entry you reference by its slug in [square-brackets], e.g. [mde] or [m365-e5].
+3. If the provided entries don't cover the question, respond exactly: "I don't have a cmd entry covering that — try \`search <term>\` or browse \`all\`."
+4. No marketing fluff. No "Microsoft offers..." preambles. Sysadmin tone.
+5. Don't invent Microsoft features that aren't in the provided entries.
+6. When the question is about pricing or licensing, surface real numbers from the entries when present.
+7. When comparing entries, structure as a tight bulleted list, not prose paragraphs.`;
+
+async function tool_ask(
+  question: string,
+  env: Env
+): Promise<{ answer: string; cited_slugs: string[]; entries_used: { slug: string; name: string }[]; model: string }> {
+  if (!question || typeof question !== 'string' || !question.trim()) {
+    return { answer: 'usage: ask <natural language question>', cited_slugs: [], entries_used: [], model: 'none' };
+  }
+  if (!env || !env.AI || typeof env.AI.run !== 'function') {
+    return {
+      answer: 'cmd_ask requires the Cloudflare AI binding — set [ai] binding=\"AI\" in wrangler.toml and re-deploy.',
+      cited_slugs: [],
+      entries_used: [],
+      model: 'none',
+    };
+  }
+
+  // Pull top-K relevant entries using the existing ranker.
+  const candidates = await tool_search(question, 6);
+  // Also pull substring matches against tokens in the question (catches multi-term q's).
+  const idx = await loadIndex();
+  const tokens = question.toLowerCase().split(/\s+/).filter(t => t.length > 2);
+  const seen = new Set<string>(candidates.map(c => c.slug));
+  for (const t of tokens) {
+    for (const e of idx.entries) {
+      if (seen.has(e.slug)) continue;
+      if (e.slug.includes(t) || (e.abbreviations ?? []).some(a => a.toLowerCase().includes(t)) || (e.aliases ?? []).some(a => a.toLowerCase().includes(t))) {
+        candidates.push({ ...(e as BrainBarEntry), tier: 99, match_reason: `token "${t}"` });
+        seen.add(e.slug);
+        if (candidates.length >= 8) break;
+      }
+    }
+    if (candidates.length >= 8) break;
+  }
+
+  if (candidates.length === 0) {
+    return {
+      answer: "I don't have a cmd entry covering that — try `search <term>` or browse `all`.",
+      cited_slugs: [],
+      entries_used: [],
+      model: '@cf/meta/llama-3.1-8b-instruct',
+    };
+  }
+
+  const entries_used = candidates.map(c => ({ slug: c.slug, name: c.name }));
+  const contextBlocks = candidates.map(c => {
+    const lines: string[] = [];
+    lines.push(`[${c.slug}] ${c.name}`);
+    lines.push(`kind: ${c.kind} · domain: ${c.domain}`);
+    if (c.plain_english) lines.push(`plain: ${c.plain_english}`);
+    if (c.plans && c.plans.length) lines.push(`plans: ${c.plans.join(' | ')}`);
+    if (c.included_in && c.included_in.length) lines.push(`included_in: ${c.included_in.map(p => p.slug + (p.note ? ' (' + p.note + ')' : '')).join(', ')}`);
+    if (c.includes && c.includes.length) lines.push(`includes: ${c.includes.map(p => p.slug + (p.note ? ' (' + p.note + ')' : '')).join(', ')}`);
+    if (c.watch) lines.push(`watch: ${c.watch}`);
+    return lines.join('\n');
+  }).join('\n\n');
+
+  const userPrompt = `QUESTION:\n${question}\n\nENTRIES:\n${contextBlocks}`;
+
+  const model = '@cf/meta/llama-3.1-8b-instruct';
+  let answer = '';
+  try {
+    const aiResp = await env.AI.run(model, {
+      messages: [
+        { role: 'system', content: ASK_SYSTEM_PROMPT },
+        { role: 'user', content: userPrompt },
+      ],
+      max_tokens: 320,
+    });
+    answer = String((aiResp && aiResp.response) || '').trim();
+  } catch (err) {
+    return {
+      answer: 'AI call failed: ' + (err instanceof Error ? err.message : String(err)) + '\nFalling back: try `search ' + question.split(/\s+/)[0] + '` to browse manually.',
+      cited_slugs: [],
+      entries_used,
+      model,
+    };
+  }
+  if (!answer) {
+    answer = "I don't have a cmd entry covering that — try `search <term>` or browse `all`.";
+  }
+
+  // Extract cited slugs from the answer.
+  const citedSlugs: string[] = [];
+  const seenCited = new Set<string>();
+  const citeRe = /\[([a-z0-9][a-z0-9\-]*)\]/g;
+  let m: RegExpExecArray | null;
+  while ((m = citeRe.exec(answer)) !== null) {
+    const slug = m[1];
+    if (!seenCited.has(slug) && idx.entries.some(e => e.slug === slug)) {
+      citedSlugs.push(slug);
+      seenCited.add(slug);
+    }
+  }
+
+  return { answer, cited_slugs: citedSlugs, entries_used, model };
+}
+
 // ── MCP tool definitions (JSON Schema for inputs) ─────────────────────────
 
 const TOOLS = [
@@ -258,11 +394,26 @@ const TOOLS = [
       },
     },
   },
+  {
+    name: 'cmd_ask',
+    description:
+      'Natural-language question over the cmd corpus. Use this when an agent needs a synthesised answer (e.g., "what\'s the difference between MDE Plan 1 and Plan 2?", "what licenses include Conditional Access?") instead of a single-entry lookup. The answer is grounded in cmd entries — it cites every entry it uses by slug in [square-brackets]. If cmd doesn\'t cover the question, returns a "no entry covering that" response. Powered by Cloudflare Workers AI (llama-3.1-8b-instruct).',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        question: {
+          type: 'string',
+          description: 'Natural-language question about Microsoft cloud terminology.',
+        },
+      },
+      required: ['question'],
+    },
+  },
 ];
 
 // ── JSON-RPC dispatch ─────────────────────────────────────────────────────
 
-async function handleRpc(req: JsonRpcRequest): Promise<JsonRpcResponse> {
+async function handleRpc(req: JsonRpcRequest, env: Env): Promise<JsonRpcResponse> {
   const id = req.id ?? null;
   try {
     switch (req.method) {
@@ -275,7 +426,7 @@ async function handleRpc(req: JsonRpcRequest): Promise<JsonRpcResponse> {
             capabilities: { tools: {}, logging: {} },
             serverInfo: { name: SERVER_NAME, version: SERVER_VERSION },
             instructions:
-              'cmd — Microsoft jargon decoder (cmd.aguidetocloud.com). Use cmd_search to find a term, then cmd_get to fetch its full record. Use cmd_list_kinds for discovery. All entries are Sush-curated, citation-backed (Microsoft Learn URLs), and freshness-validated.',
+              'cmd — Microsoft jargon decoder (cmd.aguidetocloud.com). Use cmd_search to find a term, then cmd_get to fetch its full record. Use cmd_list_kinds for discovery. Use cmd_ask for natural-language questions grounded in cmd entries with citations. All entries are Sush-curated, citation-backed (Microsoft Learn URLs), and freshness-validated.',
           },
         };
       }
@@ -305,6 +456,9 @@ async function handleRpc(req: JsonRpcRequest): Promise<JsonRpcResponse> {
             payload = await tool_list_kinds(
               typeof args.kind === 'string' ? args.kind : undefined
             );
+            break;
+          case 'cmd_ask':
+            payload = await tool_ask(String(args.question ?? ''), env);
             break;
           default:
             return {
@@ -396,7 +550,8 @@ Content-Type: application/json</pre>
   <h2>tools</h2>
   <pre>cmd_search(query, limit?)
 cmd_get(slug)
-cmd_list_kinds(kind?)</pre>
+cmd_list_kinds(kind?)
+cmd_ask(question)         <span class="tag" style="margin-left:8px">new</span></pre>
 
   <h2>connect from claude desktop</h2>
   <pre>{
@@ -414,7 +569,7 @@ cmd_list_kinds(kind?)</pre>
 </main></body></html>`;
 
 export default {
-  async fetch(request: Request): Promise<Response> {
+  async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
 
     if (request.method === 'OPTIONS') {
@@ -431,6 +586,16 @@ export default {
       return jsonResponse({ ok: true, server: SERVER_NAME, version: SERVER_VERSION });
     }
 
+    // ── /ask: simple HTTP POST endpoint for cmd terminal (no MCP wrapping) ──
+    if (url.pathname === '/ask' && request.method === 'POST') {
+      const body = await request.json().catch(() => null) as { question?: string } | null;
+      if (!body || typeof body.question !== 'string' || !body.question.trim()) {
+        return jsonResponse({ error: 'question required' }, { status: 400 });
+      }
+      const result = await tool_ask(body.question, env);
+      return jsonResponse(result);
+    }
+
     if (url.pathname === '/mcp' && request.method === 'POST') {
       const body = await request.json().catch(() => null);
       if (!body || typeof body !== 'object') {
@@ -442,14 +607,14 @@ export default {
 
       // Single request OR batch
       if (Array.isArray(body)) {
-        const responses = await Promise.all(body.map((r) => handleRpc(r as JsonRpcRequest)));
+        const responses = await Promise.all(body.map((r) => handleRpc(r as JsonRpcRequest, env)));
         // Filter out empty responses for notifications (id absent)
         const filtered = responses.filter((r) => r.id !== undefined);
         if (filtered.length === 0) return new Response(null, { status: 202, headers: CORS_HEADERS });
         return jsonResponse(filtered);
       }
 
-      const response = await handleRpc(body as JsonRpcRequest);
+      const response = await handleRpc(body as JsonRpcRequest, env);
       // For notifications (no id), the spec asks for 202 Accepted with no body.
       if ((body as JsonRpcRequest).id === undefined) {
         return new Response(null, { status: 202, headers: CORS_HEADERS });
@@ -466,7 +631,7 @@ export default {
     }
 
     return jsonResponse(
-      { error: 'not found', endpoints: ['GET /', 'GET /health', 'POST /mcp'] },
+      { error: 'not found', endpoints: ['GET /', 'GET /health', 'POST /mcp', 'POST /ask'] },
       { status: 404 }
     );
   },

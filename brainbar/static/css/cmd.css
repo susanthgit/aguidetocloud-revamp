@@ -2834,3 +2834,35 @@ body.cmd-v2-home-page .bb-brand-name { font-weight: 700; }
 }
 .cmd-v2-home .cmd-dump-copy:hover { background: rgba(154, 230, 196, 0.22); color: #cce4d4; }
 .cmd-v2-home .cmd-dump-copy:focus-visible { outline: 2px solid #34d399; outline-offset: 1px; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   cmd · ask <NL> mode (Cloudflare Workers AI)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.cmd-v2-home .cmd-ask {
+  margin: 8px 0;
+  padding: 10px 14px 10px 16px;
+  background: rgba(167, 139, 250, 0.06);
+  border-left: 2px solid rgba(167, 139, 250, 0.55);
+  border-radius: 0 4px 4px 0;
+}
+.cmd-v2-home .cmd-ask-answer {
+  color: #cce4d4;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  font-family: ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+  font-size: 13px;
+}
+.cmd-v2-home .cmd-ask-answer a.cmd-rerun {
+  color: #c4b5fd;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(167, 139, 250, 0.5);
+}
+.cmd-v2-home .cmd-ask-answer a.cmd-rerun:hover {
+  color: #ddd6fe;
+  border-bottom-color: #ddd6fe;
+}
+.cmd-v2-home .cmd-ask-meta {
+  margin-top: 8px;
+  font-size: 11px;
+}

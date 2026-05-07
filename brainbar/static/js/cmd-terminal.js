@@ -711,6 +711,7 @@
     if (topic === 'why')        return cmdHelpWhy();
     const features = [
       { title: 'man pages',  cmd: 'man mde',          desc: 'full entry as a unix manual' },
+      { title: 'ask',        cmd: 'ask whats in m365 e5', desc: 'natural-language question \u2014 grounded answer with citations' },
       { title: 'tree',       cmd: 'tree m365-e5',     desc: 'what\u2019s included / what includes this' },
       { title: 'why',        cmd: 'why mde',          desc: 'sush\u2019s honest take (when there is one)' },
       { title: 'list all',   cmd: 'all',              desc: 'list every jargon entry' },
@@ -874,7 +875,50 @@
     return blocks;
   }
 
-  // ─── freshness: audit which entries need re-verifying ──────────────────
+  // ─── ask: natural-language question with grounded citations (Tier ASK) ──
+  function cmdAsk(args) {
+    const q = (args || []).join(' ').trim();
+    if (!q) return [{ type: 'err', text: 'usage: ask <natural language question>  ·  e.g. ask whats the difference between mde plan 1 and plan 2' }];
+    const askUrl = 'https://mcp.aguidetocloud.com/ask';
+    fetch(askUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'omit',
+      body: JSON.stringify({ question: q }),
+    })
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (!data) {
+          writeRaw('<span class="warn">// ask failed \u2014 try again, or use `search` to browse manually</span>', 'cmd-line');
+          return;
+        }
+        const answer = String(data.answer || '');
+        const entriesUsed = Array.isArray(data.entries_used) ? data.entries_used : [];
+        // Linkify [slug] citations to clickable rerun buttons.
+        const safe = esc(answer);
+        const linkified = safe.replace(/\[([a-z0-9][a-z0-9\-]*)\]/g, function (_m, slug) {
+          return '<a class="cmd-rerun accent" data-cmd="man ' + esc(slug) + '">[' + esc(slug) + ']</a>';
+        });
+        let html = '<div class="cmd-ask-answer">' + linkified + '</div>';
+        if (entriesUsed.length) {
+          html += '<div class="cmd-ask-meta dim">// entries given as context: ' +
+            entriesUsed.map(function (e) { return '<a class="cmd-rerun" data-cmd="man ' + esc(e.slug) + '">' + esc(e.slug) + '</a>'; }).join(', ') +
+            '</div>';
+        }
+        if (data.model) {
+          html += '<div class="cmd-ask-meta dim">// model: ' + esc(data.model) + '  \u00b7  grounded: each [slug] is a real cmd entry</div>';
+        }
+        writeRaw(html, 'cmd-ask');
+      })
+      .catch(function (err) {
+        writeRaw('<span class="warn">// ask failed: ' + esc(String(err && err.message || err)) + '</span>', 'cmd-line');
+      });
+    return [
+      { type: 'heading', text: '// ask: ' + q },
+      { type: 'dim', text: '// thinking via Cloudflare Workers AI \u2014 the answer will append below in 2-5 seconds...' },
+      { type: 'dim', text: '// grounded in cmd entries \u00b7 every [slug] in the answer is clickable' },
+    ];
+  }
   function cmdFreshness() {
     if (!STATE.ready) return [{ type: 'warn', text: '// loading — try again' }];
     const today = todayIso();
@@ -924,6 +968,7 @@
     tree:   cmdTree,
     why:    cmdWhy,
     freshness: cmdFreshness, fresh: cmdFreshness,
+    ask:    cmdAsk,
     history:cmdHistory, hist: cmdHistory,
     whoami: cmdWhoami, who: cmdWhoami,
     clear:  cmdClear, cls: cmdClear,

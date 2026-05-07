@@ -38,20 +38,20 @@ globalThis.fetch = async (url) => {
 const workerModule = await import('../src/index.ts');
 const worker = workerModule.default;
 
-async function rpc(method, params, id = 1) {
+async function rpc(method, params, id = 1, env = {}) {
   const req = new Request('https://mcp.local/mcp', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ jsonrpc: '2.0', id, method, params }),
   });
-  const res = await worker.fetch(req);
+  const res = await worker.fetch(req, env);
   if (res.status === 202) return null;
   return await res.json();
 }
 
 test('GET / serves homepage', async () => {
   const req = new Request('https://mcp.local/');
-  const res = await worker.fetch(req);
+  const res = await worker.fetch(req, {});
   assert.equal(res.status, 200);
   const body = await res.text();
   assert.match(body, /brainbar-mcp/);
@@ -59,7 +59,7 @@ test('GET / serves homepage', async () => {
 
 test('GET /health is OK', async () => {
   const req = new Request('https://mcp.local/health');
-  const res = await worker.fetch(req);
+  const res = await worker.fetch(req, {});
   assert.equal(res.status, 200);
   const body = await res.json();
   assert.equal(body.ok, true);
@@ -72,11 +72,11 @@ test('initialize returns server capabilities', async () => {
   assert.ok(r.result.capabilities.tools);
 });
 
-test('tools/list returns 3 tools', async () => {
+test('tools/list returns 4 tools', async () => {
   const r = await rpc('tools/list');
-  assert.equal(r.result.tools.length, 3);
+  assert.equal(r.result.tools.length, 4);
   const names = r.result.tools.map(t => t.name);
-  assert.deepEqual(names.sort(), ['cmd_get', 'cmd_list_kinds', 'cmd_search']);
+  assert.deepEqual(names.sort(), ['cmd_ask', 'cmd_get', 'cmd_list_kinds', 'cmd_search']);
 });
 
 test('cmd_search returns exact slug match (tier 1)', async () => {
@@ -158,4 +158,62 @@ test('unknown method returns JSON-RPC error', async () => {
   const r = await rpc('not/a/method', {});
   assert.ok(r.error);
   assert.equal(r.error.code, -32601);
+});
+
+// ─── cmd_ask tests (Cloudflare Workers AI integration) ─────────────────────
+
+test('cmd_ask without AI binding returns binding-required message', async () => {
+  // env without AI — simulates undeployed / misconfigured state
+  const r = await rpc('tools/call', { name: 'cmd_ask', arguments: { question: 'what is mde?' } }, 1, {});
+  assert.ok(r.result.content[0].text);
+  const payload = JSON.parse(r.result.content[0].text);
+  assert.match(payload.answer, /Cloudflare AI binding/);
+});
+
+test('cmd_ask with mock AI returns grounded answer with citations', async () => {
+  const mockAi = {
+    async run(model, input) {
+      // Mock: return a canned answer that cites mde and m365-e5
+      return { response: 'MDE [mde] is included in M365 E5 [m365-e5]. Plan 1 is preventative; Plan 2 adds full EDR.' };
+    },
+  };
+  const r = await rpc('tools/call', { name: 'cmd_ask', arguments: { question: 'what is mde and is it in e5?' } }, 1, { AI: mockAi });
+  assert.ok(r.result.content[0].text);
+  const payload = JSON.parse(r.result.content[0].text);
+  assert.match(payload.answer, /MDE/);
+  assert.deepEqual(payload.cited_slugs.sort(), ['m365-e5', 'mde']);
+  assert.equal(payload.model, '@cf/meta/llama-3.1-8b-instruct');
+  assert.ok(Array.isArray(payload.entries_used));
+});
+
+test('cmd_ask: empty question returns usage error', async () => {
+  const r = await rpc('tools/call', { name: 'cmd_ask', arguments: { question: '' } }, 1, { AI: { async run() { return { response: '' }; } } });
+  const payload = JSON.parse(r.result.content[0].text);
+  assert.match(payload.answer, /usage:/);
+});
+
+test('POST /ask HTTP endpoint works directly', async () => {
+  const mockAi = {
+    async run() { return { response: 'Conditional Access [conditional-access] requires Entra ID P1 [entra-p1].' }; },
+  };
+  const req = new Request('https://mcp.local/ask', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ question: 'what license do I need for conditional access?' }),
+  });
+  const res = await worker.fetch(req, { AI: mockAi });
+  assert.equal(res.status, 200);
+  const body = await res.json();
+  assert.match(body.answer, /Conditional Access/);
+  assert.ok(body.cited_slugs.length >= 1);
+});
+
+test('POST /ask without question returns 400', async () => {
+  const req = new Request('https://mcp.local/ask', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({}),
+  });
+  const res = await worker.fetch(req, {});
+  assert.equal(res.status, 400);
 });

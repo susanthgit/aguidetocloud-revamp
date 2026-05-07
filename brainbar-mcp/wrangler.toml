@@ -3,6 +3,12 @@ main = "src/index.ts"
 compatibility_date = "2026-05-01"
 compatibility_flags = ["nodejs_compat"]
 
+# Cloudflare Workers AI binding — powers `cmd_ask` (natural-language ask grounded
+# in cmd entries). Free tier is 10K neurons/day. Activates on the same Cloudflare
+# account that this Worker deploys into; no extra credentials needed.
+[ai]
+binding = "AI"
+
 # Will be activated by Sush when deploying:
 # 1. wrangler login
 # 2. wrangler deploy
