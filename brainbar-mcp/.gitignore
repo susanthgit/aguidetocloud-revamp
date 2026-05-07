@@ -12,3 +12,7 @@ npm-debug.log
 .vscode/
 *.swp
 .DS_Store
+
+# build artefacts
+dist/
+
