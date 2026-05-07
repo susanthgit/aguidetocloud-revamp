@@ -19,9 +19,43 @@
     /^KB\d+$/i,
   ];
 
+  // ─── Pure helpers (MIRROR of static/js/cmd-pure.mjs — keep in sync) ─────
+  // The .mjs version is the canonical, unit-tested source. These are inlined
+  // here because cmd-terminal.js is an IIFE, not an ES module. Future refactor:
+  // load cmd-pure.mjs as a module and remove these duplicates.
+  function normaliseIncludes(rawIncludes) {
+    if (!Array.isArray(rawIncludes)) return [];
+    return rawIncludes
+      .map(item => {
+        if (typeof item === 'string') return { slug: item.trim(), note: '' };
+        if (item && typeof item === 'object' && typeof item.slug === 'string') {
+          return { slug: item.slug.trim(), note: String(item.note || '') };
+        }
+        return null;
+      })
+      .filter(x => x && x.slug);
+  }
+  const MS_PER_DAY = 86400000;
+  function daysAgo(verifiedDate, todayIso) {
+    if (!verifiedDate || typeof verifiedDate !== 'string') return NaN;
+    const verified = new Date(verifiedDate + 'T00:00:00Z');
+    const today = new Date((todayIso || new Date().toISOString().slice(0, 10)) + 'T00:00:00Z');
+    if (isNaN(verified.getTime()) || isNaN(today.getTime())) return NaN;
+    return Math.floor((today.getTime() - verified.getTime()) / MS_PER_DAY);
+  }
+  function classifyFreshness(verifiedDate, todayIso) {
+    const d = daysAgo(verifiedDate, todayIso);
+    if (isNaN(d) || d < 0) return 'unknown';
+    if (d < 30) return 'fresh';
+    if (d <= 90) return 'stale';
+    return 'ancient';
+  }
+  function todayIso() { return new Date().toISOString().slice(0, 10); }
+
   // ─── State ─────────────────────────────────────────────────────────────
   const STATE = {
     entries: [],
+    skus:    {},
     decode:  [],
     ready:   false,
     decodeReady: false,
@@ -101,6 +135,7 @@
       .then(j => {
         if (j && Array.isArray(j.entries)) {
           STATE.entries = j.entries.map(normalizeEntry);
+          STATE.skus = j.skus && typeof j.skus === 'object' ? j.skus : {};
           STATE.ready = true;
           updateStatus();
         }
@@ -142,6 +177,10 @@
       url:          raw.url || ('/' + (raw.slug || '') + '/'),
       status:       raw.status || 'ga',
       lastVerified: raw.last_verified || '',
+      includes:     normaliseIncludes(raw.includes),
+      includedIn:   normaliseIncludes(raw.included_in),
+      includesSource: raw.includes_source || '',
+      voice:        raw.voice && typeof raw.voice === 'object' ? raw.voice : { sush_take: '', sush_take_status: '', mascot: '' },
     };
   }
 
@@ -450,11 +489,14 @@
   function cmdHelp() {
     const features = [
       { title: 'man pages',  cmd: 'man mde',          desc: 'full entry as a unix manual' },
+      { title: 'tree',       cmd: 'tree m365-e5',     desc: 'what\u2019s included / what includes this' },
+      { title: 'why',        cmd: 'why mde',          desc: 'sush\u2019s honest take (when there is one)' },
       { title: 'list all',   cmd: 'all',              desc: 'list every jargon entry' },
       { title: 'list errors',cmd: 'ls errno',         desc: 'list every error code' },
-      { title: 'decode',     cmd: 'decode aadsts50011',desc: 'error code → plain english' },
+      { title: 'decode',     cmd: 'decode aadsts50011',desc: 'error code \u2192 plain english' },
+      { title: 'freshness',  cmd: 'freshness',        desc: 'audit \u2014 which entries need re-verifying?' },
       { title: 'aliases',    cmd: 'mdatp',            desc: 'old names resolve automatically' },
-      { title: 'history',    cmd: 'history',          desc: 'cycle past commands · ↑↓' },
+      { title: 'history',    cmd: 'history',          desc: 'cycle past commands \u00b7 \u2191\u2193' },
       { title: 'whoami',     cmd: 'whoami',           desc: 'your search trail' },
       { title: 'compare',    cmd: 'compare e3 e5',    desc: 'side-by-side (preview)' },
       { title: 'about',      cmd: 'about',            desc: 'about cmd + MCP server' },
@@ -466,11 +508,121 @@
     }
     html += '</div>';
     return [
-      { type: 'heading', text: '// cmd — quick reference  (click any to run)' },
+      { type: 'heading', text: '// cmd \u2014 quick reference  (click any to run)' },
       { type: 'plain', html: html },
-      { type: 'dim', text: '// keys: ↑↓ history · tab complete · enter run · esc clear · ? this help' },
-      { type: 'dim', text: '// shortcut: bare slug works — type "mde" instead of "search mde"' },
+      { type: 'dim', text: '// keys: \u2191\u2193 history \u00b7 tab complete \u00b7 enter run \u00b7 esc clear \u00b7 ? this help' },
+      { type: 'dim', text: '// shortcut: bare slug works \u2014 type "mde" instead of "search mde"' },
     ];
+  }
+
+  // ─── tree: bidirectional includes graph (Tier 1 Batch 2) ───────────────
+  function cmdTree(args) {
+    if (!args.length) return [{ type: 'err', text: 'usage: tree <slug>' }];
+    if (!STATE.ready) return [{ type: 'warn', text: '// loading — try again' }];
+    const hit = findEntry(args.join(' '));
+    if (!hit) return [{ type: 'err', text: 'no entry for ' + args.join(' ') }];
+    const entry = hit.entry;
+    rememberTrail(entry.slug);
+    const children = entry.includes || [];
+    const parents = entry.includedIn || [];
+    if (!children.length && !parents.length) {
+      return [
+        { type: 'heading', text: '// tree ' + entry.slug },
+        { type: 'dim', text: '// no tree relationship for this kind \u2014 try `man ' + entry.slug + '`' },
+      ];
+    }
+    const blocks = [{ type: 'heading', text: '// tree ' + entry.slug + '  \u00b7  ' + entry.name }];
+    function renderEdge(edge, last, rerunPrefix) {
+      const branch = last ? '\u2514\u2500 ' : '\u251c\u2500 ';
+      const childEntry = STATE.entries.find(e => e.slug === edge.slug);
+      const childName = childEntry ? childEntry.name : edge.slug;
+      const noteText = edge.note ? '  \u00b7 ' + edge.note : '';
+      return {
+        type: 'plain',
+        html: '<span class="dim">' + branch + '</span><a class="cmd-rerun accent" data-cmd="' + esc(rerunPrefix + edge.slug) + '">' + esc(edge.slug) + '</a><span class="dim">  \u00b7 ' + esc(childName) + '</span>' + (noteText ? '<span class="cmd-tree-note">' + esc(noteText) + '</span>' : ''),
+      };
+    }
+    if (children.length) {
+      blocks.push({ type: 'dim', text: '// includes (' + children.length + ' direct ' + (children.length === 1 ? 'child' : 'children') + ')' });
+      children.forEach((child, i) => blocks.push(renderEdge(child, i === children.length - 1, 'man ')));
+    }
+    if (parents.length) {
+      blocks.push({ type: 'dim', text: '// included_in (' + parents.length + ' direct ' + (parents.length === 1 ? 'parent' : 'parents') + ')' });
+      parents.forEach((parent, i) => blocks.push(renderEdge(parent, i === parents.length - 1, 'tree ')));
+    }
+    if (entry.includesSource) {
+      blocks.push({ type: 'plain', html: '<span class="dim">// source: </span><a class="cmd-link" href="' + esc(entry.includesSource) + '" target="_blank" rel="noopener">' + esc(entry.includesSource) + '<span class="ext">\u2197</span></a>' });
+    }
+    return blocks;
+  }
+
+  // ─── why: surface sush's voice take (silence > forced fit) ─────────────
+  function cmdWhy(args) {
+    if (!args.length) return [{ type: 'err', text: 'usage: why <slug>' }];
+    if (!STATE.ready) return [{ type: 'warn', text: '// loading — try again' }];
+    const hit = findEntry(args.join(' '));
+    if (!hit) return [{ type: 'err', text: 'no entry for ' + args.join(' ') }];
+    const entry = hit.entry;
+    rememberTrail(entry.slug);
+    const v = entry.voice || {};
+    const blocks = [{ type: 'heading', text: '// why ' + entry.slug + '  \u00b7  ' + entry.name }];
+    if (v.mascot) {
+      blocks.push({ type: 'plain', html: '<span class="dim">// mascot: </span>' + esc(v.mascot) });
+    }
+    if (v.sush_take) {
+      const isSpicy = v.sush_take_status === 'spicy';
+      const cls = isSpicy ? 'cmd-take spicy' : 'cmd-take neutral';
+      const badge = isSpicy ? '<span class="cmd-take-badge spicy">[spicy]</span>' : '<span class="cmd-take-badge neutral">[neutral]</span>';
+      blocks.push({
+        type: 'plain',
+        html: '<span class="' + cls + '">// sush take: ' + esc(v.sush_take) + '</span> ' + badge,
+      });
+    } else {
+      // Voice silence rule (brain-bar-lessons.md lesson #6): no fake take. Dim line, never styled as a take.
+      blocks.push({ type: 'dim', text: '// no honest take recorded yet for this slug. silence > forced fit.' });
+    }
+    return blocks;
+  }
+
+  // ─── freshness: audit which entries need re-verifying ──────────────────
+  function cmdFreshness() {
+    if (!STATE.ready) return [{ type: 'warn', text: '// loading — try again' }];
+    const today = todayIso();
+    const stale = [];
+    const ancient = [];
+    for (const e of STATE.entries) {
+      const bucket = classifyFreshness(e.lastVerified, today);
+      const d = daysAgo(e.lastVerified, today);
+      if (bucket === 'stale') stale.push({ entry: e, days: d });
+      if (bucket === 'ancient') ancient.push({ entry: e, days: d });
+    }
+    if (!stale.length && !ancient.length) {
+      return [
+        { type: 'heading', text: '// freshness audit' },
+        { type: 'dim', text: '// all ' + STATE.entries.length + ' entries verified within 30 days \u2014 no stale or ancient entries' },
+        { type: 'dim', text: '// freshness shows up here automatically as entries naturally age past 30d (stale) and 90d (ancient)' },
+      ];
+    }
+    const blocks = [{ type: 'heading', text: '// freshness audit' }];
+    if (ancient.length) {
+      blocks.push({ type: 'dim', text: '// ancient (>90 days) \u2014 ' + ancient.length });
+      ancient.forEach(({ entry, days }) => {
+        blocks.push({
+          type: 'plain',
+          html: '<span class="cmd-fresh-warn" aria-hidden="true">\u26a0</span> <a class="cmd-rerun warn" data-cmd="' + esc('man ' + entry.slug) + '">' + esc(entry.slug) + '</a><span class="dim">  \u00b7 ' + esc(entry.name) + '  \u00b7 ancient: verified ' + days + 'd ago</span>',
+        });
+      });
+    }
+    if (stale.length) {
+      blocks.push({ type: 'dim', text: '// stale (30\u201390 days) \u2014 ' + stale.length });
+      stale.forEach(({ entry, days }) => {
+        blocks.push({
+          type: 'plain',
+          html: '<a class="cmd-rerun warn" data-cmd="' + esc('man ' + entry.slug) + '">' + esc(entry.slug) + '</a><span class="dim">  \u00b7 ' + esc(entry.name) + '  \u00b7 stale: verified ' + days + 'd ago</span>',
+        });
+      });
+    }
+    return blocks;
   }
 
   const COMMANDS = {
@@ -479,6 +631,9 @@
     ls:     cmdLs, list: cmdLs,
     decode: cmdDecode, d: cmdDecode,
     compare:cmdCompare, cmp: cmdCompare, diff: cmdCompare,
+    tree:   cmdTree,
+    why:    cmdWhy,
+    freshness: cmdFreshness, fresh: cmdFreshness,
     history:cmdHistory, hist: cmdHistory,
     whoami: cmdWhoami, who: cmdWhoami,
     clear:  cmdClear, cls: cmdClear,
@@ -549,8 +704,28 @@
       if (learnSafe)              dl += '<dt>learn more</dt><dd><a class="cmd-link" href="' + esc(learnSafe) + '" target="_blank" rel="noopener">' + esc(e.learnUrl) + '<span class="ext">↗</span></a></dd>';
       if (e.kind)                 dl += '<dt>kind</dt><dd><span class="dim">' + esc(e.kind) + (e.domain ? ' · ' + esc(e.domain) : '') + '</span></dd>';
       if (e.watch)                dl += '<dt>watch</dt><dd><span class="warn">' + esc(e.watch) + '</span></dd>';
+      // tree breadcrumb if entry has bundling relationships
+      if ((e.includes && e.includes.length) || (e.includedIn && e.includedIn.length)) {
+        dl += '<dt>tree</dt><dd><a class="cmd-rerun accent" data-cmd="' + esc('tree ' + e.slug) + '">tree ' + esc(e.slug) + '</a><span class="dim">  ·  ' + (e.includes ? e.includes.length : 0) + ' children · ' + (e.includedIn ? e.includedIn.length : 0) + ' parents</span></dd>';
+      }
       dl += '<dt>full entry</dt><dd><a class="cmd-link" href="' + esc(e.url) + '">' + esc(e.url) + '</a></dd>';
-      div.innerHTML = '<h3>' + esc(e.slug) + '  <span class="cmd-man-name">·  ' + esc(e.name) + '</span></h3><dl>' + dl + '</dl>';
+      // Freshness badge in heading row (text-labelled for a11y; >30d only — silence under 30d)
+      const fb = classifyFreshness(e.lastVerified, todayIso());
+      const dAgo = daysAgo(e.lastVerified, todayIso());
+      let freshBadge = '';
+      if (fb === 'ancient') freshBadge = ' <span class="cmd-fresh-badge ancient" aria-label="ancient: verified ' + dAgo + ' days ago">[ancient \u26a0]</span>';
+      else if (fb === 'stale') freshBadge = ' <span class="cmd-fresh-badge stale" aria-label="stale: verified ' + dAgo + ' days ago">[stale]</span>';
+      div.innerHTML = '<h3>' + esc(e.slug) + freshBadge + '  <span class="cmd-man-name">·  ' + esc(e.name) + '</span></h3><dl>' + dl + '</dl>';
+      // Voice silence rule: ONLY append a sush_take line when one actually exists.
+      // No "no take recorded" filler — that's reserved for explicit `why` calls.
+      if (e.voice && e.voice.sush_take) {
+        const isSpicy = e.voice.sush_take_status === 'spicy';
+        const takeCls = isSpicy ? 'cmd-take spicy' : 'cmd-take neutral';
+        const takeDiv = document.createElement('div');
+        takeDiv.className = takeCls;
+        takeDiv.textContent = '// sush take: ' + e.voice.sush_take;
+        div.appendChild(takeDiv);
+      }
       return div;
     }
     if (b.type === 'errno') {

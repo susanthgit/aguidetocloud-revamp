@@ -2710,3 +2710,85 @@ body.cmd-v2-home-page .bb-brand-name { font-weight: 700; }
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   cmd Tier 1 Batch 2 — verbs (tree / why / freshness) + UI badges
+   All colours tuned for the dark CRT screen #06080c interior + WCAG AA.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Freshness badges — text-labelled for a11y. Glyphs (⚠) carry aria-hidden. */
+.cmd-v2-home .cmd-fresh-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 1px 6px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 6px;
+  font-family: ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+}
+.cmd-v2-home .cmd-fresh-badge.stale {
+  background: rgba(252, 211, 77, 0.14);
+  color: #fcd34d;
+  border: 1px solid rgba(252, 211, 77, 0.45);
+  text-shadow: 0 0 3px rgba(252, 211, 77, 0.3);
+}
+.cmd-v2-home .cmd-fresh-badge.ancient {
+  background: rgba(248, 113, 113, 0.14);
+  color: #fca5a5;
+  border: 1px solid rgba(248, 113, 113, 0.55);
+  text-shadow: 0 0 3px rgba(248, 113, 113, 0.35);
+}
+.cmd-v2-home .cmd-fresh-warn {
+  color: #fca5a5;
+  margin-right: 2px;
+}
+
+/* Voice take styling — spicy = bold + brighter, neutral = plain amber */
+.cmd-v2-home .cmd-take {
+  margin-top: 12px;
+  padding: 6px 10px 6px 12px;
+  border-left: 2px solid rgba(252, 211, 77, 0.55);
+  background: rgba(252, 211, 77, 0.05);
+  font-style: italic;
+  border-radius: 0 3px 3px 0;
+}
+.cmd-v2-home .cmd-take.spicy {
+  color: #fcd34d;
+  font-weight: 600;
+  text-shadow: 0 0 4px rgba(252, 211, 77, 0.35);
+  border-left-color: #fcd34d;
+}
+.cmd-v2-home .cmd-take.neutral {
+  color: #c4a64d;
+  font-weight: 400;
+  border-left-color: rgba(252, 211, 77, 0.4);
+}
+.cmd-v2-home .cmd-take-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 6px;
+  font-style: normal;
+  vertical-align: middle;
+}
+.cmd-v2-home .cmd-take-badge.spicy {
+  background: rgba(252, 211, 77, 0.2);
+  color: #fcd34d;
+  border: 1px solid rgba(252, 211, 77, 0.5);
+}
+.cmd-v2-home .cmd-take-badge.neutral {
+  background: rgba(154, 230, 196, 0.08);
+  color: #9aE6c4;
+  border: 1px solid rgba(154, 230, 196, 0.3);
+}
+
+/* Tree edge note — italic dim, after the slug+name */
+.cmd-v2-home .cmd-tree-note {
+  color: rgba(154, 230, 196, 0.55);
+  font-style: italic;
+}
