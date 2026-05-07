@@ -70,7 +70,7 @@
 
 {{- else if eq $slug "earth" -}}
 {{/* Lotus AGTC logo — vendored in Brain Bar's static/images/ to point home. */}}
-<img src="/images/logo_agtc.webp" width="{{ $size }}" height="{{ $size }}" alt="" loading="lazy" decoding="async" style="border-radius:50%;object-fit:cover;display:block" />
+<img src="/images/logo_agtc.webp" width="{{ $size }}" height="{{ $size }}" alt="A Guide to Cloud — home" loading="lazy" decoding="async" style="border-radius:50%;object-fit:cover;display:block" />
 
 {{- else -}}
 {{- warnf "planet-icon.html: unknown slug %q (expected: earth, brainbar, shift, plainai)" $slug -}}

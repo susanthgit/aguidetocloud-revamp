@@ -2585,3 +2585,62 @@ body.cmd-v2-home-page .bb-footer .cmd-mcp:hover {
 
 /* On the cream page, the body scanline overlay is too dark — soften it */
 body.cmd-v2-home-page::before { mix-blend-mode: multiply; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   cmd v2.2 — Batch 1 P0 fixes (audit findings)
+   Contrast fixes (WCAG AA), skip link, mobile ASCII hide, cosmos rail force-hide
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Skip link — visually hidden until focused */
+.skip-link {
+  position: absolute; top: -40px; left: 12px;
+  background: #1a1d24; color: #50fa7b;
+  padding: 8px 14px; border-radius: 4px;
+  font-size: 13px; font-weight: 600;
+  text-decoration: none; z-index: 1000;
+  letter-spacing: 0.04em;
+  transition: top 150ms ease-out;
+}
+.skip-link:focus {
+  top: 8px;
+  outline: 2px solid #50fa7b;
+  outline-offset: 2px;
+}
+
+/* Top-nav semantic — was inline div, now <nav> — keep flex behaviour */
+.bb-header > nav.bb-topnav {
+  display: flex; gap: var(--s-3); align-items: center;
+}
+
+/* Contrast fixes — WCAG AA compliance for cream-page text */
+body.cmd-v2-home-page .cmd-v2-home .cmd-hero .prelude { color: #5a3a18 !important; }
+body.cmd-v2-home-page .cmd-v2-home .cmd-hero-capability { color: #5a3a18 !important; }
+body.cmd-v2-home-page .cmd-v2-home .cmd-hero-capability .em { color: #9a4515 !important; font-weight: 600; }
+body.cmd-v2-home-page .bb-footer p,
+body.cmd-v2-home-page .bb-footer { color: #4a3a2a !important; }
+body.cmd-v2-home-page .bb-footer a { color: #9a4515 !important; }
+body.cmd-v2-home-page .bb-footer a:hover { color: #1a3a4a !important; }
+body.cmd-v2-home-page .bb-footer .cmd-mcp { color: #9a4515 !important; border-color: #9a4515 !important; }
+
+/* Hide ASCII boot logo on mobile (it wraps badly) */
+@media (max-width: 719px) {
+  .cmd-v2-home .cmd-boot-ascii { display: none !important; }
+}
+
+/* Force-hide cosmos rail on home (audit found it was still visible) */
+body.cmd-v2-home-page .bb-cosmos-rail { display: none !important; }
+
+/* Make brand more prominent on home (was tiny in audit) */
+body.cmd-v2-home-page .bb-brand { font-size: 18px; }
+body.cmd-v2-home-page .bb-brand-name { font-weight: 700; }
+
+/* Mobile: tighter top-nav so brand isn't crowded */
+@media (max-width: 719px) {
+  .cmd-v2-home-page .bb-topnav-link {
+    padding: 4px 8px; font-size: 12px;
+  }
+  body.cmd-v2-home-page .bb-brand { font-size: 16px; }
+  /* Hide CRT title bar actions on mobile (clear/fullscreen) — too cramped */
+  .cmd-v2-home .cmd-titlebar .actions a:not(#cmd-fs-toggle) { display: none; }
+  .cmd-v2-home .cmd-titlebar .actions a#cmd-fs-toggle { padding: 3px 7px; font-size: 10px; }
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <title>{{ if .IsHome }}cmd — Microsoft jargon &amp; error code decoder · stop googling microsoft{{ else }}{{ .Title }} | cmd — Microsoft jargon decoder{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
   <!-- Anti-FOUC: theme via .aguidetocloud.com cookie. cmd defaults to DARK
@@ -59,6 +59,7 @@
   <meta name="theme-color" content="#F4F2EC" media="(prefers-color-scheme: light)">
 </head>
 <body{{ if .IsHome }} class="cmd-v2-home-page"{{ end }}>
+  <a class="skip-link" href="#cmd-input">skip to terminal</a>
   <header class="bb-header">
     <div class="bb-header-left">
       <a class="bb-brand" href="/">
@@ -77,7 +78,7 @@
         {{ end }}
       </span>
     </div>
-    <div style="display:flex; gap: var(--s-3); align-items:center;">
+    <nav class="bb-topnav" aria-label="cmd primary">
       {{ if .IsHome }}
       <a class="bb-topnav-link cmd-topnav-cmd" data-cmd="about" href="/about/">about</a>
       <a class="bb-topnav-link cmd-topnav-cmd" data-cmd="?" href="#">help</a>
@@ -85,11 +86,13 @@
       <a class="bb-topnav-link" href="/">terminal</a>
       <a class="bb-topnav-link" href="/about/">about</a>
       {{ end }}
+      {{ if not .IsHome }}
       <button class="bb-theme-toggle" type="button" aria-label="Toggle theme — switch between dark and light mode" data-bb-theme>
         <span class="bb-theme-icon-dark" aria-hidden="true">☾</span>
         <span class="bb-theme-icon-light" aria-hidden="true">☀</span>
       </button>
-    </div>
+      {{ end }}
+    </nav>
   </header>
 
   {{/* On homepage, .cmd-v2-home provides its own wrapper — bypass bb-shell to allow wider terminal */}}
