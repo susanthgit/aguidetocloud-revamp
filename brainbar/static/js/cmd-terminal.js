@@ -52,6 +52,107 @@
   }
   function todayIso() { return new Date().toISOString().slice(0, 10); }
 
+  // Ordered matcher registry — specific patterns beat generic. Built lazily
+  // because STATE.skus is populated after fetch.
+  function buildMatcherRegistry() {
+    const skus = STATE.skus || {};
+    const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    const RESOURCE_ID_RE = /^\/subscriptions\/[0-9a-f-]{36}\/resourceGroups\/[^\/]+\/providers\/[^\/]+\/[^\/]+\/[^\/]+/i;
+    const GRAPH_URL_RE = /^https?:\/\/graph\.microsoft\.com\/(v1\.0|beta)\//i;
+    const MC_RE = /^MC\d{6,}$/i;
+    const AADSTS_RE = /^AADSTS\d+$/i;
+    const HRESULT_RE = /^0x[0-9a-fA-F]{4,8}$/;
+    const KB_RE = /^KB\d+$/i;
+    return [
+      { id: 'sku-guid', kind: 'sku', priority: 100, test(v) { const t = String(v || '').trim().toLowerCase(); if (!UUID_RE.test(t)) return null; if (Object.prototype.hasOwnProperty.call(skus, t)) return { kind: 'sku', input: t, slug: skus[t] }; return null; } },
+      { id: 'resource-id', kind: 'resource-id', priority: 90, test(v) { const t = String(v || '').trim(); if (!RESOURCE_ID_RE.test(t)) return null; return { kind: 'resource-id', input: t }; } },
+      { id: 'graph', kind: 'graph', priority: 80, test(v) { const t = String(v || '').trim(); if (!GRAPH_URL_RE.test(t)) return null; return { kind: 'graph', input: t }; } },
+      { id: 'mc', kind: 'mc', priority: 70, test(v) { const t = String(v || '').trim(); if (!MC_RE.test(t)) return null; return { kind: 'mc', input: t.toUpperCase() }; } },
+      { id: 'guid', kind: 'guid', priority: 50, test(v) { const t = String(v || '').trim(); if (!UUID_RE.test(t)) return null; return { kind: 'guid', input: t }; } },
+      { id: 'aadsts', kind: 'aadsts', priority: 40, test(v) { const t = String(v || '').trim(); if (!AADSTS_RE.test(t)) return null; return { kind: 'aadsts', input: t.toUpperCase() }; } },
+      { id: 'hresult', kind: 'hresult', priority: 30, test(v) { const t = String(v || '').trim(); if (!HRESULT_RE.test(t)) return null; return { kind: 'hresult', input: t.toLowerCase() }; } },
+      { id: 'kb', kind: 'kb', priority: 20, test(v) { const t = String(v || '').trim(); if (!KB_RE.test(t)) return null; return { kind: 'kb', input: t.toUpperCase() }; } },
+    ].sort((a, b) => b.priority - a.priority);
+  }
+  function dispatchPattern(input, registry) {
+    for (const rule of registry) { const m = rule.test(input); if (m) return m; }
+    return null;
+  }
+
+  // Pipe transforms — XSS-safe (dump block uses textContent), CSV neutralises
+  // formula-prefix injection (=+-@). Schemas locked per block kind in plan.md.
+  const CHROME_TYPES = new Set(['heading', 'dim']);
+  const FORMULA_PREFIX_RE = /^[=+\-@\t\r]/;
+  function csvEscape(value) {
+    if (value === undefined || value === null) return '';
+    let s = Array.isArray(value) ? value.join(';') : String(value);
+    if (FORMULA_PREFIX_RE.test(s)) s = "'" + s;
+    if (s.includes(',') || s.includes('"') || s.includes('\n') || s.includes('\r')) {
+      s = '"' + s.replace(/"/g, '""') + '"';
+    }
+    return s;
+  }
+  function pipeJson(blocks) {
+    const cleaned = (blocks || []).map(b => { const c = Object.assign({}, b); delete c.html; return c; });
+    return [{ type: 'dump', text: JSON.stringify(cleaned, null, 2), ariaAnnounce: false }];
+  }
+  function pipeCsv(blocks) {
+    const lines = []; let header = null;
+    function setHeader(h) { if (!header) { header = h; lines.push(h.map(csvEscape).join(',')); } }
+    for (const block of blocks || []) {
+      if (CHROME_TYPES.has(block.type)) continue;
+      if (block.type === 'man' || block.type === 'list' || block.type === 'tree') {
+        setHeader(['type', 'slug', 'name', 'kind', 'domain', 'status', 'last_verified', 'url', 'plain_english']);
+        const e = block.entry || {};
+        lines.push([block.type, e.slug || block.slug || '', e.name || '', e.kind || '', e.domain || '', e.status || '', e.lastVerified || e.last_verified || '', e.url || '', e.plain || e.plain_english || ''].map(csvEscape).join(','));
+      } else if (block.type === 'compare' && Array.isArray(block.rows)) {
+        const hdr = ['row_label'].concat(block.cols ? block.cols.slice(1) : ['left', 'right']);
+        setHeader(hdr);
+        for (const row of block.rows) lines.push(row.map(csvEscape).join(','));
+      } else if (block.type === 'errno') {
+        setHeader(['type', 'code', 'short', 'plain_english', 'fix']);
+        const e = block.entry || {};
+        lines.push(['errno', e.code || '', e.short || e.title || '', e.plain || e.plain_english || '', e.fix || e.fix_path || ''].map(csvEscape).join(','));
+      } else {
+        setHeader(['type', 'text']);
+        lines.push([block.type || '', block.text || ''].map(csvEscape).join(','));
+      }
+    }
+    return [{ type: 'dump', text: lines.join('\n'), ariaAnnounce: false }];
+  }
+  function pipeSort(blocks, field) {
+    const key = field || 'slug';
+    const chrome = []; const data = [];
+    for (const b of blocks || []) (CHROME_TYPES.has(b.type) ? chrome : data).push(b);
+    data.sort((a, b) => {
+      const av = (a.entry && a.entry[key]) || a[key] || a.text || '';
+      const bv = (b.entry && b.entry[key]) || b[key] || b.text || '';
+      return String(av).localeCompare(String(bv));
+    });
+    return [].concat(chrome, data);
+  }
+  function pipeHead(blocks, n) {
+    const limit = Number.isFinite(n) ? Math.max(0, Math.floor(n)) : 10;
+    const out = []; let dataCount = 0;
+    for (const b of blocks || []) {
+      if (CHROME_TYPES.has(b.type)) { out.push(b); continue; }
+      if (dataCount >= limit) break;
+      out.push(b); dataCount++;
+    }
+    return out;
+  }
+  function pipeTail(blocks, n) {
+    const limit = Number.isFinite(n) ? Math.max(0, Math.floor(n)) : 10;
+    const data = (blocks || []).filter(b => !CHROME_TYPES.has(b.type));
+    return data.slice(-limit);
+  }
+  function pipeWc(blocks) {
+    const total = (blocks || []).length; const byType = {};
+    for (const b of blocks || []) byType[b.type || 'unknown'] = (byType[b.type || 'unknown'] || 0) + 1;
+    const breakdown = Object.entries(byType).sort(function (a, b) { return b[1] - a[1]; }).map(function (kv) { return kv[0] + ': ' + kv[1]; }).join(', ');
+    return [{ type: 'dim', text: '// total: ' + total + ' (' + breakdown + ')' }];
+  }
+
   // ─── State ─────────────────────────────────────────────────────────────
   const STATE = {
     entries: [],
@@ -298,7 +399,14 @@
   }
 
   function cmdDecode(args) {
-    if (!args.length) return [{ type: 'err', text: 'usage: decode <code>' }];
+    if (!args.length) return [{ type: 'err', text: 'usage: decode <code>  ·  decode guid|resource-id|graph|sku|mc <input>' }];
+    const kind = (args[0] || '').toLowerCase();
+    if (kind === 'guid')        return cmdDecodeGuid(args.slice(1));
+    if (kind === 'resource-id' || kind === 'resourceid') return cmdDecodeResourceId(args.slice(1));
+    if (kind === 'graph')       return cmdDecodeGraph(args.slice(1));
+    if (kind === 'sku')         return cmdDecodeSku(args.slice(1));
+    if (kind === 'mc')          return cmdDecodeMc(args.slice(1));
+    // Default: existing errno decode (AADSTS / 0x HRESULT / KB)
     const code = args.join(' ');
     if (!STATE.decodeReady) {
       loadDecode().then(() => writeRaw('<span class="dim">// decode index loaded — re-run </span><a class="cmd-rerun" data-cmd="' + esc('decode ' + code) + '">decode ' + esc(code) + '</a>', 'cmd-line'));
@@ -308,8 +416,115 @@
     if (!e) return [
       { type: 'warn', text: '// no decode for "' + code + '"' },
       { type: 'dim',  text: '// covers AADSTS, 0x HRESULT, KB articles, MDM enrolment failures' },
+      { type: 'dim',  text: '// other decode kinds: decode guid <id>  ·  decode resource-id <id>  ·  decode graph <url>  ·  decode sku <guid>  ·  decode mc <id>' },
     ];
     return [{ type: 'errno', entry: e }];
+  }
+
+  // ─── Decode handlers (Tier 1 Batch 3) ─────────────────────────────────
+  function cmdDecodeGuid(args) {
+    const id = (args[0] || '').toLowerCase();
+    if (!id) return [{ type: 'err', text: 'usage: decode guid <uuid>' }];
+    const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    if (!UUID_RE.test(id)) return [{ type: 'warn', text: '// "' + id + '" doesn\'t look like a UUID' }];
+    const skuSlug = STATE.skus[id];
+    const blocks = [{ type: 'heading', text: '// decode guid ' + id }];
+    if (skuSlug) {
+      blocks.push({ type: 'plain', html: '<span class="ok">looks like a license SKU GUID — </span><a class="cmd-rerun accent" data-cmd="' + esc('man ' + skuSlug) + '">' + esc(skuSlug) + '</a>' });
+      blocks.push({ type: 'dim', text: '// confirm with: Get-MgSubscribedSku | ?{ $_.SkuId -eq "' + id + '" }' });
+      return blocks;
+    }
+    blocks.push({ type: 'plain', html: '<span class="dim">// looks like a UUID. Microsoft uses UUIDs for: tenant IDs, app registration IDs, group IDs, user object IDs, role IDs, license SKU IDs.</span>' });
+    blocks.push({ type: 'dim', text: '// resolve via Graph: Get-MgOrganization -OrganizationId ' + id + '  (tenant)' });
+    blocks.push({ type: 'dim', text: '// or:               Get-MgUser -UserId ' + id + '  ·  Get-MgGroup -GroupId ' + id + '  ·  Get-MgApplication -Filter "AppId eq \'' + id + '\'"' });
+    return blocks;
+  }
+  function cmdDecodeResourceId(args) {
+    const id = args.join(' ').trim();
+    if (!id) return [{ type: 'err', text: 'usage: decode resource-id /subscriptions/<uuid>/resourceGroups/<rg>/providers/<rp>/<type>/<name>' }];
+    const RESOURCE_ID_RE = /^\/subscriptions\/([0-9a-f-]{36})\/resourceGroups\/([^\/]+)\/providers\/([^\/]+)\/(.+)$/i;
+    const m = id.match(RESOURCE_ID_RE);
+    if (!m) return [{ type: 'warn', text: '// not an Azure resource ID' }];
+    const sub = m[1], rg = m[2], provider = m[3], rest = m[4];
+    const restParts = rest.split('/');
+    const blocks = [
+      { type: 'heading', text: '// decode resource-id' },
+      { type: 'plain', html: '<span class="dim">\u251c\u2500</span> subscription   <span class="accent">' + esc(sub) + '</span>' },
+      { type: 'plain', html: '<span class="dim">\u251c\u2500</span> resource group <span class="accent">' + esc(rg) + '</span>' },
+      { type: 'plain', html: '<span class="dim">\u251c\u2500</span> provider       <span class="accent">' + esc(provider) + '</span>' },
+    ];
+    for (let i = 0; i + 1 < restParts.length; i += 2) {
+      const last = i + 2 >= restParts.length;
+      const branch = last ? '\u2514\u2500' : '\u251c\u2500';
+      blocks.push({ type: 'plain', html: '<span class="dim">' + branch + '</span> ' + esc(restParts[i]) + '<span class="dim"> = </span><span class="accent">' + esc(restParts[i + 1]) + '</span>' });
+    }
+    blocks.push({ type: 'dim', text: '// view in portal: https://portal.azure.com/#@/resource' + id });
+    return blocks;
+  }
+  // Static map of common Graph endpoints → required least-privilege scope (best-effort, not exhaustive)
+  const GRAPH_SCOPE_MAP = [
+    { re: /\/users(\/|$|\?)/i,           scope: 'User.Read.All' },
+    { re: /\/groups(\/|$|\?)/i,          scope: 'Group.Read.All' },
+    { re: /\/applications(\/|$|\?)/i,    scope: 'Application.Read.All' },
+    { re: /\/servicePrincipals(\/|$|\?)/i, scope: 'Application.Read.All' },
+    { re: /\/devices(\/|$|\?)/i,         scope: 'Device.Read.All' },
+    { re: /\/directoryRoles(\/|$|\?)/i,  scope: 'RoleManagement.Read.Directory' },
+    { re: /\/auditLogs\//i,              scope: 'AuditLog.Read.All' },
+    { re: /\/me(\/|$|\?)/i,              scope: 'User.Read' },
+    { re: /\/messages(\/|$|\?)/i,        scope: 'Mail.Read' },
+    { re: /\/calendar/i,                 scope: 'Calendars.Read' },
+    { re: /\/sites(\/|$|\?)/i,           scope: 'Sites.Read.All' },
+    { re: /\/drives(\/|$|\?)/i,          scope: 'Files.Read.All' },
+    { re: /\/teams(\/|$|\?)/i,           scope: 'Team.ReadBasic.All' },
+    { re: /\/security\//i,               scope: 'SecurityEvents.Read.All' },
+    { re: /\/security\/incidents/i,      scope: 'SecurityIncident.Read.All' },
+    { re: /\/identityProtection\//i,     scope: 'IdentityRiskEvent.Read.All' },
+    { re: /\/policies\//i,               scope: 'Policy.Read.All' },
+  ];
+  function cmdDecodeGraph(args) {
+    const url = args.join(' ').trim();
+    if (!url) return [{ type: 'err', text: 'usage: decode graph https://graph.microsoft.com/v1.0/<endpoint>' }];
+    let parsed;
+    try { parsed = new URL(url); } catch (_) { return [{ type: 'warn', text: '// not a valid URL' }]; }
+    if (parsed.host.toLowerCase() !== 'graph.microsoft.com') return [{ type: 'warn', text: '// not a Microsoft Graph URL' }];
+    const versionMatch = parsed.pathname.match(/^\/(v1\.0|beta)\//);
+    const version = versionMatch ? versionMatch[1] : 'unknown';
+    const endpoint = parsed.pathname.replace(/^\/(v1\.0|beta)/, '');
+    let scope = 'unknown — check the endpoint docs';
+    for (const m of GRAPH_SCOPE_MAP) { if (m.re.test(endpoint)) { scope = m.scope; break; } }
+    return [
+      { type: 'heading', text: '// decode graph' },
+      { type: 'plain', html: '<span class="dim">api version: </span><span class="accent">' + esc(version) + '</span>' + (version === 'beta' ? '<span class="warn">  · beta — not for production</span>' : '') },
+      { type: 'plain', html: '<span class="dim">endpoint:    </span><span class="accent">' + esc(endpoint) + '</span>' },
+      { type: 'plain', html: '<span class="dim">least-priv scope (best-effort): </span><span class="ok">' + esc(scope) + '</span>' },
+      { type: 'plain', html: '<span class="dim">// try in </span><a class="cmd-link" href="https://developer.microsoft.com/graph/graph-explorer?request=' + esc(encodeURIComponent(endpoint.replace(/^\//, ''))) + '" target="_blank" rel="noopener">Graph Explorer<span class="ext">\u2197</span></a>' },
+    ];
+  }
+  function cmdDecodeSku(args) {
+    const id = (args[0] || '').toLowerCase();
+    if (!id) return [{ type: 'err', text: 'usage: decode sku <guid>' }];
+    const slug = STATE.skus[id];
+    if (!slug) return [
+      { type: 'warn', text: '// no curated SKU mapping for ' + id },
+      { type: 'dim',  text: '// raw lookup: Get-MgSubscribedSku | ?{ $_.SkuId -eq "' + id + '" }' },
+      { type: 'plain', html: '<span class="dim">// Microsoft\'s published SKU reference: </span><a class="cmd-link" href="https://learn.microsoft.com/en-us/entra/identity/users/licensing-service-plan-reference" target="_blank" rel="noopener">licensing-service-plan-reference<span class="ext">\u2197</span></a>' },
+    ];
+    return [
+      { type: 'heading', text: '// decode sku ' + id },
+      { type: 'plain', html: '<span class="ok">resolves to: </span><a class="cmd-rerun accent" data-cmd="' + esc('man ' + slug) + '">' + esc(slug) + '</a>' },
+      { type: 'plain', html: '<span class="dim">// see also: </span><a class="cmd-rerun accent" data-cmd="' + esc('tree ' + slug) + '">tree ' + esc(slug) + '</a>' },
+    ];
+  }
+  function cmdDecodeMc(args) {
+    const id = (args[0] || '').toUpperCase();
+    if (!id) return [{ type: 'err', text: 'usage: decode mc MC######' }];
+    if (!/^MC\d{6,}$/.test(id)) return [{ type: 'warn', text: '// "' + id + '" doesn\'t look like an MC ID' }];
+    return [
+      { type: 'heading', text: '// decode mc ' + id },
+      { type: 'plain', html: '<span class="dim">// Message Center ID — track via the M365 Roadmap tool: </span><a class="cmd-link" href="https://www.aguidetocloud.com/m365-roadmap/?mc=' + esc(id) + '" target="_blank" rel="noopener">/m365-roadmap/<span class="ext">\u2197</span></a>' },
+      { type: 'plain', html: '<span class="dim">// or admin centre: </span><a class="cmd-link" href="https://admin.microsoft.com/Adminportal/Home#/MessageCenter/:/messages/' + esc(id) + '" target="_blank" rel="noopener">admin.microsoft.com\u2026/messages/' + esc(id) + '<span class="ext">\u2197</span></a>' },
+      { type: 'dim', text: '// rich Message Center decode is on the Tier 2 roadmap — meantime the M365 Roadmap tool covers most rollouts' },
+    ];
   }
 
   // ─── Curated comparisons (real data) ─────────────────────────────────
@@ -486,7 +701,14 @@
     ];
   }
 
-  function cmdHelp() {
+  function cmdHelp(args) {
+    const topic = ((args && args[0]) || '').toLowerCase();
+    if (topic === 'pipes')      return cmdHelpPipes();
+    if (topic === 'decode')     return cmdHelpDecode();
+    if (topic === 'tree')       return cmdHelpTree();
+    if (topic === 'freshness')  return cmdHelpFreshness();
+    if (topic === 'csv')        return cmdHelpCsv();
+    if (topic === 'why')        return cmdHelpWhy();
     const features = [
       { title: 'man pages',  cmd: 'man mde',          desc: 'full entry as a unix manual' },
       { title: 'tree',       cmd: 'tree m365-e5',     desc: 'what\u2019s included / what includes this' },
@@ -495,6 +717,8 @@
       { title: 'list errors',cmd: 'ls errno',         desc: 'list every error code' },
       { title: 'decode',     cmd: 'decode aadsts50011',desc: 'error code \u2192 plain english' },
       { title: 'freshness',  cmd: 'freshness',        desc: 'audit \u2014 which entries need re-verifying?' },
+      { title: 'pipes',      cmd: 'help pipes',       desc: 'unix-style filters (json, csv, sort, head, tail, wc, grep)' },
+      { title: 'decode kinds',cmd: 'help decode',     desc: 'guid, resource-id, graph, sku, mc' },
       { title: 'aliases',    cmd: 'mdatp',            desc: 'old names resolve automatically' },
       { title: 'history',    cmd: 'history',          desc: 'cycle past commands \u00b7 \u2191\u2193' },
       { title: 'whoami',     cmd: 'whoami',           desc: 'your search trail' },
@@ -512,6 +736,72 @@
       { type: 'plain', html: html },
       { type: 'dim', text: '// keys: \u2191\u2193 history \u00b7 tab complete \u00b7 enter run \u00b7 esc clear \u00b7 ? this help' },
       { type: 'dim', text: '// shortcut: bare slug works \u2014 type "mde" instead of "search mde"' },
+      { type: 'dim', text: '// deeper help: help pipes \u00b7 help decode \u00b7 help tree \u00b7 help freshness \u00b7 help csv' },
+    ];
+  }
+  function cmdHelpPipes() {
+    return [
+      { type: 'heading', text: '// cmd \u2014 pipes' },
+      { type: 'dim', text: '// pipe model: everything is a block. pipes filter or transform blocks.' },
+      { type: 'plain', html: '<code>... | grep &lt;term&gt;</code> <span class="dim">substring filter on output text</span>' },
+      { type: 'plain', html: '<code>... | json</code>           <span class="dim">serialise to pretty JSON (xss-safe dump block)</span>' },
+      { type: 'plain', html: '<code>... | csv</code>            <span class="dim">tabular CSV (RFC 4180-escaped, formula prefix neutralised)</span>' },
+      { type: 'plain', html: '<code>... | sort [field]</code>   <span class="dim">sort blocks by entry.&lt;field&gt; (default: slug)</span>' },
+      { type: 'plain', html: '<code>... | head N</code>         <span class="dim">first N data blocks (chrome preserved at top)</span>' },
+      { type: 'plain', html: '<code>... | tail N</code>         <span class="dim">last N data blocks</span>' },
+      { type: 'plain', html: '<code>... | wc</code>             <span class="dim">count, broken down by type</span>' },
+      { type: 'plain', html: '<code>... | history</code>        <span class="dim">extract entry.watch from a man block</span>' },
+      { type: 'dim', text: '// examples: ls jargon | sort | head 5  ·  search mde | json  ·  ls jargon | wc' },
+      { type: 'dim', text: '// see also: help csv (column schemas)' },
+    ];
+  }
+  function cmdHelpDecode() {
+    return [
+      { type: 'heading', text: '// cmd \u2014 decode kinds' },
+      { type: 'plain', html: '<code>decode &lt;code&gt;</code>             <span class="dim">errno: AADSTS / 0x HRESULT / KB / MDM</span>' },
+      { type: 'plain', html: '<code>decode guid &lt;uuid&gt;</code>        <span class="dim">resolve license SKU; otherwise, hint at PowerShell lookups</span>' },
+      { type: 'plain', html: '<code>decode resource-id &lt;id&gt;</code>   <span class="dim">parse Azure resource ID into components</span>' },
+      { type: 'plain', html: '<code>decode graph &lt;url&gt;</code>        <span class="dim">label endpoint + suggest least-priv scope</span>' },
+      { type: 'plain', html: '<code>decode sku &lt;guid&gt;</code>         <span class="dim">resolve license SKU GUID to entry</span>' },
+      { type: 'plain', html: '<code>decode mc &lt;id&gt;</code>            <span class="dim">jump to M365 Roadmap tool / admin centre</span>' },
+      { type: 'dim', text: '// smart-suggest fires automatically when you paste a recognisable input \u2014 click the chip to run.' },
+    ];
+  }
+  function cmdHelpTree() {
+    return [
+      { type: 'heading', text: '// cmd \u2014 tree' },
+      { type: 'plain', html: '<code>tree &lt;slug&gt;</code> <span class="dim">bidirectional bundling graph</span>' },
+      { type: 'dim', text: '// shows what an entry includes (children via includes[]) AND what includes it (parents via included_in[]).' },
+      { type: 'dim', text: '// edge notes preserve plan-tier scoping (e.g., \"Plan 2 only\").' },
+      { type: 'dim', text: '// source URL links to Sush\u2019s licensing-docs page for verification.' },
+      { type: 'plain', html: '<span class="dim">try: </span><a class="cmd-rerun accent" data-cmd="tree m365-e5">tree m365-e5</a><span class="dim">  \u00b7  </span><a class="cmd-rerun accent" data-cmd="tree mde">tree mde</a>' },
+    ];
+  }
+  function cmdHelpFreshness() {
+    return [
+      { type: 'heading', text: '// cmd \u2014 freshness' },
+      { type: 'plain', html: '<code>freshness</code> <span class="dim">audit \u2014 which entries need re-verifying?</span>' },
+      { type: 'dim', text: '// last_verified = fact/source last verified (NOT entry last edited).' },
+      { type: 'dim', text: '// buckets: <30d = fresh (no badge) \u00b7 30\u201390d = [stale] amber \u00b7 >90d = [ancient] amber + warning' },
+      { type: 'dim', text: '// today: every entry is <30d \u2014 the freshness verb returns empty. As entries age, badges appear automatically.' },
+    ];
+  }
+  function cmdHelpCsv() {
+    return [
+      { type: 'heading', text: '// cmd \u2014 csv schemas' },
+      { type: 'dim', text: '// per-block-type column locks. Arrays joined with semicolons. Formula prefix (=+-@) neutralised.' },
+      { type: 'plain', html: '<span class="accent">man / list / tree:</span> <code>type,slug,name,kind,domain,status,last_verified,url,plain_english</code>' },
+      { type: 'plain', html: '<span class="accent">compare:</span>           <code>row_label,&lt;left_slug&gt;,&lt;right_slug&gt;</code>' },
+      { type: 'plain', html: '<span class="accent">errno:</span>             <code>type,code,short,plain_english,fix</code>' },
+      { type: 'plain', html: '<span class="accent">plain / dim / err:</span> <code>type,text</code>' },
+    ];
+  }
+  function cmdHelpWhy() {
+    return [
+      { type: 'heading', text: '// cmd \u2014 why' },
+      { type: 'plain', html: '<code>why &lt;slug&gt;</code> <span class="dim">sush\u2019s honest take, when there is one</span>' },
+      { type: 'dim', text: '// voice silence rule: man <slug> appends a take ONLY when one exists (never \"no take recorded\").' },
+      { type: 'dim', text: '// why <slug> standalone: shows mascot + take + [spicy/neutral] badge, OR a dim \"no take yet\" line.' },
     ];
   }
 
@@ -675,7 +965,13 @@
       }
       return [{ type: 'dim', text: '// no rebrand-watch note for this entry yet' }];
     }
-    return [{ type: 'err', text: 'unknown pipe filter: ' + verb }];
+    if (verb === 'json')  return pipeJson(blocks);
+    if (verb === 'csv')   return pipeCsv(blocks);
+    if (verb === 'sort')  return pipeSort(blocks, parts[1]);
+    if (verb === 'head')  return pipeHead(blocks, parseInt(parts[1] || '10', 10));
+    if (verb === 'tail')  return pipeTail(blocks, parseInt(parts[1] || '10', 10));
+    if (verb === 'wc')    return pipeWc(blocks);
+    return [{ type: 'err', text: 'unknown pipe filter: ' + verb + '  ·  try grep / json / csv / sort / head / tail / wc / history' }];
   }
 
   // ─── Render ────────────────────────────────────────────────────────────
@@ -775,6 +1071,32 @@
       div.innerHTML = b.html || '';
       return div;
     }
+    if (b.type === 'dump') {
+      // XSS-safe rendering: textContent only, no innerHTML. Used by | json / | csv pipes.
+      // ariaAnnounce=false suppresses screen reader announcement for large dumps.
+      div.className = 'cmd-dump';
+      if (b.ariaAnnounce === false) div.setAttribute('aria-live', 'off');
+      const pre = document.createElement('pre');
+      pre.className = 'cmd-dump-pre';
+      pre.textContent = b.text || '';
+      div.appendChild(pre);
+      // Copy-friendly affordance — small dim button using event delegation
+      const copyBtn = document.createElement('button');
+      copyBtn.className = 'cmd-dump-copy';
+      copyBtn.type = 'button';
+      copyBtn.textContent = 'copy';
+      copyBtn.setAttribute('aria-label', 'copy dump to clipboard');
+      copyBtn.onclick = function () {
+        try {
+          navigator.clipboard.writeText(b.text || '').then(
+            function () { copyBtn.textContent = 'copied'; setTimeout(function () { copyBtn.textContent = 'copy'; }, 1500); },
+            function () { copyBtn.textContent = 'fail'; }
+          );
+        } catch (_) { copyBtn.textContent = 'fail'; }
+      };
+      div.appendChild(copyBtn);
+      return div;
+    }
     div.className = 'cmd-line ' + (b.type || 'ok');
     div.textContent = b.text || '';
     return div;
@@ -829,7 +1151,19 @@
     const v = input.value.trim();
     if (!v) return;
     const matches = [];
-    if (ERROR_PATTERNS.some(p => p.test(v)) && !v.toLowerCase().startsWith('decode')) matches.push('decode ' + v);
+    // Ordered matcher: SKU GUID > resource ID > graph URL > MC ID > generic UUID > AADSTS/HRESULT/KB
+    if (!v.toLowerCase().startsWith('decode')) {
+      const registry = buildMatcherRegistry();
+      const m = dispatchPattern(v, registry);
+      if (m) {
+        if (m.kind === 'sku')         matches.push('decode sku ' + v);
+        else if (m.kind === 'resource-id') matches.push('decode resource-id ' + v);
+        else if (m.kind === 'graph')  matches.push('decode graph ' + v);
+        else if (m.kind === 'mc')     matches.push('decode mc ' + v);
+        else if (m.kind === 'guid')   matches.push('decode guid ' + v);
+        else                          matches.push('decode ' + v); // aadsts / hresult / kb
+      }
+    }
     const tokens = v.split(/\s+/);
     if (tokens.length === 2 && STATE.ready) {
       const a = findEntry(tokens[0]); const b = findEntry(tokens[1]);

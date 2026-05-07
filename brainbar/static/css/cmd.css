@@ -2792,3 +2792,45 @@ body.cmd-v2-home-page .bb-brand-name { font-weight: 700; }
   color: rgba(154, 230, 196, 0.55);
   font-style: italic;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   cmd Tier 1 Batch 3 — dump block (XSS-safe pipe output)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.cmd-v2-home .cmd-dump {
+  position: relative;
+  margin: 8px 0;
+  background: rgba(154, 230, 196, 0.04);
+  border: 1px solid rgba(154, 230, 196, 0.18);
+  border-radius: 4px;
+  max-height: 360px;
+  overflow: auto;
+}
+.cmd-v2-home .cmd-dump-pre {
+  margin: 0;
+  padding: 12px 14px;
+  font-family: ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #cce4d4;
+  white-space: pre;
+  overflow: auto;
+}
+.cmd-v2-home .cmd-dump-copy {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: rgba(154, 230, 196, 0.12);
+  color: #9aE6c4;
+  border: 1px solid rgba(154, 230, 196, 0.3);
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  padding: 3px 9px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 120ms ease-out, color 120ms ease-out;
+}
+.cmd-v2-home .cmd-dump-copy:hover { background: rgba(154, 230, 196, 0.22); color: #cce4d4; }
+.cmd-v2-home .cmd-dump-copy:focus-visible { outline: 2px solid #34d399; outline-offset: 1px; }
