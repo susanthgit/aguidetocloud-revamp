@@ -71,6 +71,7 @@ badge = "Best Value"
 tagline = "Security + device management for SMBs"
 description = "Everything in Standard plus Entra ID P1, Intune P1, Defender for Business (Endpoint P1 + O365 P1), DLP, Information Protection, and Autopilot."
 ms_url = "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-premium"
+cmd_slug = "m365-business-premium"
 features = [
   "teams", "sharepoint", "onedrive", "exchange",
   "desktop-apps", "web-mobile-apps", "bookings",
@@ -170,6 +171,7 @@ badge = "Most Popular"
 tagline = "The enterprise standard"
 description = "Office 365 E3 plus Windows 11 Enterprise, Entra ID P1, Intune P1, Defender for Endpoint P1, Defender for O365 P1. The most popular enterprise plan."
 ms_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/e3"
+cmd_slug = "m365-e3"
 features = [
   "teams", "sharepoint", "onedrive", "exchange",
   "desktop-apps", "web-mobile-apps", "bookings",
@@ -196,6 +198,7 @@ badge = "Best Security"
 tagline = "Full security, compliance & analytics"
 description = "Everything in E3 plus Entra ID P2, Defender for Endpoint P2, Defender for O365 P2, Defender for Identity, Defender for Cloud Apps, Insider Risk, eDiscovery Premium, Audit Premium, Power BI Pro, Teams Phone, Audio Conferencing."
 ms_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/e5"
+cmd_slug = "m365-e5"
 features = [
   "teams", "sharepoint", "onedrive", "exchange",
   "desktop-apps", "web-mobile-apps", "bookings",
@@ -286,6 +289,7 @@ badge = ""
 tagline = "Full web apps + security for frontline"
 description = "Everything in F1 with full web/mobile Office editing, SharePoint full access, Intune P1, Windows Enterprise. For frontline workers who need to edit documents."
 ms_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/f3"
+cmd_slug = "m365-f3"
 limitations = ["exchange:2 GB kiosk mailbox", "onedrive:2 GB storage"]
 features = [
   "teams", "sharepoint", "onedrive", "exchange",

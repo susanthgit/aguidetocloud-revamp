@@ -1398,3 +1398,58 @@
   .licpick-alt-price { color: #16a34a !important; }
   .licpick-alt-note { color: #6b7280 !important; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   cmd cross-link (added 7 May 2026)
+   Surfaces the cmd `tree` view for plans that have a corresponding cmd entry.
+   Terminal-flavoured to echo the cmd brand without imposing it on the rest of
+   the licence-picker UI.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.licpick-cmd-link {
+  margin: 14px 0 6px;
+  padding: 10px 12px;
+  background: rgba(52, 211, 153, 0.06);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  border-radius: 6px;
+  font-size: 13px;
+}
+.licpick-cmd-link a {
+  display: inline-block;
+  font-family: ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+  color: #34d399;
+  text-decoration: none;
+  font-weight: 500;
+}
+.licpick-cmd-link a:hover {
+  color: #6ee7b7;
+}
+.licpick-cmd-link a:hover .licpick-cmd-arrow {
+  transform: translate(2px, -2px);
+}
+.licpick-cmd-link .licpick-cmd-prompt {
+  display: inline-block;
+  margin-right: 6px;
+  color: rgba(52, 211, 153, 0.65);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+.licpick-cmd-link .licpick-cmd-arrow {
+  display: inline-block;
+  transition: transform 150ms ease-out;
+  margin-left: 2px;
+}
+.licpick-cmd-link strong {
+  color: #6ee7b7;
+  font-weight: 600;
+}
+.licpick-cmd-link .licpick-cmd-hint {
+  color: var(--text-muted, #6b7280);
+  font-family: var(--font-body, system-ui), sans-serif;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+[data-theme="dark"] .licpick-cmd-link {
+  background: rgba(52, 211, 153, 0.08);
+  border-color: rgba(52, 211, 153, 0.3);
+}

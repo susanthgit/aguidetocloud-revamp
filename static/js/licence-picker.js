@@ -466,6 +466,14 @@
     if (rec.plan.seat_max) covHTML += '<div class="licpick-coverage-note">' + esc(rec.plan.name) + ' is limited to ' + rec.plan.seat_max + ' users</div>';
     if (rec.plan.status === 'preview') covHTML += '<div class="licpick-coverage-note">' + esc(rec.plan.name) + ' is in preview (GA May 2026)</div>';
 
+    // Cross-link to cmd's `tree` view for deeper bundling exploration (added 7 May 2026).
+    // Only renders when this plan has a corresponding cmd entry.
+    if (rec.plan.cmd_slug) {
+      covHTML += '<div class="licpick-cmd-link"><a href="https://cmd.aguidetocloud.com/?q=' + encodeURIComponent('tree ' + rec.plan.cmd_slug) + '" target="_blank" rel="noopener">' +
+        '<span class="licpick-cmd-prompt">$_</span> see full bundling tree on <strong>cmd</strong> <span class="licpick-cmd-arrow">\u2197</span>' +
+        '</a><span class="licpick-cmd-hint"> \u2014 every component as a clickable node, with plan-tier notes</span></div>';
+    }
+
     // Why cheaper plans failed
     if (allResults.length > 0) {
       const cheaperPlans = plans.filter(p => getPrice(p) < getPrice(rec.plan) && p.status === 'ga');
