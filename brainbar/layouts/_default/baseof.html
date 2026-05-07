@@ -58,12 +58,12 @@
   <meta name="theme-color" content="#0E1410" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#F4F2EC" media="(prefers-color-scheme: light)">
 </head>
-<body>
+<body{{ if .IsHome }} class="cmd-v2-home-page"{{ end }}>
   <header class="bb-header">
     <div class="bb-header-left">
       <a class="bb-brand" href="/">
         <span class="bb-prompt">$_</span>
-        <span class="bb-brand-name">brainbar</span>
+        <span class="bb-brand-name">cmd</span>
       </a>
       {{/* ═══ COSMOS RAIL — sibling planets as icon chips, LEFT-aligned next
            to brand (matches the home planet pattern). 6 May 2026 v2. */}}
@@ -90,7 +90,7 @@
   </main>
 
   <footer class="bb-footer">
-    <p>// brainbar v{{ site.Params.cache_version }} · part of the <a href="{{ .Site.Params.parent_site }}" rel="noopener">aguidetocloud universe</a> · plain-english microsoft, for people like us · <a href="https://www.aguidetocloud.com/feedback/" rel="noopener">feedback →</a></p>
+    <p>// cmd v{{ site.Params.cache_version }} · part of the <a href="{{ .Site.Params.parent_site }}" rel="noopener">aguidetocloud universe</a> · plain-english microsoft, for people like us · <a href="https://www.aguidetocloud.com/feedback/" rel="noopener">feedback →</a> · <a class="cmd-mcp" href="https://mcp.aguidetocloud.com" target="_blank" rel="noopener">+ MCP for Claude/ChatGPT ↗</a></p>
   </footer>
 
   <script>

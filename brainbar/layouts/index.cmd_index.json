@@ -19,6 +19,11 @@
     "old_names"     ($terms.old_names | default slice)
     "synonyms"      ($terms.synonyms | default slice)
     "plain_english" .plain_english
+    "official"      (.official | default "")
+    "plans"         (.plans | default slice)
+    "portal_url"    (.portal_url | default "")
+    "learn_url"     (.learn_url | default "")
+    "watch"         (.watch | default "")
     "status"        (.status | default "ga")
     "url"           (printf "/%s/" .slug)
     "last_verified" (.last_verified | default "")

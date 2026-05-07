@@ -1,145 +1,123 @@
 {{ define "main" }}
-<section class="bb-hero" data-bb-mode="jargon">
-  <p class="bb-hero-prompt">brainbar — the microsoft jargon AND error code decoder</p>
-  <h1 class="bb-hero-title">stop googling microsoft.</h1>
-  <p class="bb-hero-tagline">{{ .Site.Params.description }}</p>
+{{/* ═══════════════════════════════════════════════════════════════════════
+     cmd v2 — Terminal Mode homepage
+     - All scoped under .cmd-v2-home
+     - Loads /cmd-index.json + /decode/decode-index.json (cache-busted)
+     - SSR-renders sample entries inside <details> for SEO + noscript fallback
+     ═══════════════════════════════════════════════════════════════════════ */}}
+<main class="cmd-v2-home"
+      id="cmd-v2-home"
+      data-cmd-index="/cmd-index.json?v={{ site.Params.cache_version }}"
+      data-decode-index="/decode/decode-index.json?v={{ site.Params.cache_version }}">
 
-  {{/* ── Mode chips (Round 2 discoverability) ────────────────────────────
-       Both modes visible at first glance. Click to swap mode in place
-       (placeholder + index + result colour). URL stays /. */}}
-  <div class="bb-mode-chips" role="tablist" aria-label="Search mode">
-    <button type="button" class="bb-mode-chip bb-mode-chip-jargon bb-mode-chip-active" data-bb-mode-target="jargon" role="tab" aria-selected="true" aria-controls="bb-input">
-      <span class="bb-mode-chip-glyph" aria-hidden="true">$</span><span>jargon</span>
-    </button>
-    <button type="button" class="bb-mode-chip bb-mode-chip-errno" data-bb-mode-target="errno" role="tab" aria-selected="false" aria-controls="bb-input">
-      <span class="bb-mode-chip-glyph" aria-hidden="true">!</span><span>errno</span>
-    </button>
+  {{/* Sticky mini-bar — gated by .IsHome via baseof; here we just include the markup */}}
+  {{ if .IsHome }}
+  <div class="cmd-sticky-bar" id="cmd-sticky-bar">
+    cmd · you've scrolled away from the terminal · <a id="cmd-sticky-back">↑ back to terminal</a>
   </div>
-  <p class="bb-mode-caption">
-    <strong>jargon</strong> — acronyms · licences · portals · products
-    <span style="color: var(--text-dim); margin: 0 var(--s-2);">·</span>
-    <strong>errno</strong> — error codes · KB articles · MDM enrolment failures
-  </p>
+  {{ end }}
 
-  {{/* ── Live launcher ───────────────────────────────────────────────────── */}}
-  <form class="bb-launcher" role="search" aria-label="Brain Bar search" autocomplete="off" onsubmit="return false;">
-    <label class="bb-launcher-label" for="bb-input"><span class="bb-launcher-prompt">$</span></label>
-    <input
-      type="text"
-      id="bb-input"
-      class="bb-launcher-input"
-      placeholder="type a microsoft term — try: mde, pim, e3, intune, foundry"
-      aria-label="Type a Microsoft term or paste an error code"
-      aria-controls="bb-results"
-      autocomplete="off"
-      autocorrect="off"
-      autocapitalize="off"
-      spellcheck="false">
-    <span class="bb-launcher-status" id="bb-input-status" aria-live="polite">loading index…</span>
-  </form>
+  {{/* ── HERO ─────────────────────────────────────────────────────────── */}}
+  <section class="cmd-hero">
+    <p class="prelude">cmd — the microsoft jargon AND error code decoder</p>
+    <h1>stop googling microsoft.</h1>
+    <p class="cmd-hero-capability">// type a microsoft term · open a portal · <span class="em">decode aadsts50011</span> · all in plain english</p>
+  </section>
 
-  <ul id="bb-results" class="bb-results" role="listbox" aria-label="Results"></ul>
-
-  <p id="bb-empty" class="bb-empty" hidden>
-    <span class="bb-empty-prefix">// no entry yet for </span><code id="bb-empty-term"></code>
-    <a id="bb-empty-suggest" class="bb-empty-suggest" href="#" target="_blank" rel="noopener">suggest it →</a>
-    <span class="bb-empty-divider"> · </span>
-    <a class="bb-empty-feedback" href="https://www.aguidetocloud.com/feedback/" target="_blank" rel="noopener">share other feedback →</a>
-  </p>
-
-  {{/* ── Recent searches (localStorage) ─────────────────────────────────── */}}
-  <div id="bb-recent" class="bb-recent" hidden></div>
-
-  {{/* ── Boot block (default state — hidden once user types) ─────────────── */}}
-  <div class="bb-boot" id="bb-boot">
-    {{ $allEntries := (index hugo.Data "cmd_entries").entries }}
-    {{ $allDecode  := (index hugo.Data "cmd_decode").entries }}
-    <div class="bb-boot-line"><span class="bb-boot-key">version</span><span class="bb-boot-val">brainbar v1 · {{ len $allEntries }} jargon entries · {{ len $allDecode }} error codes · growing</span></div>
-    <div class="bb-boot-line"><span class="bb-boot-key">type</span><span class="bb-boot-val">an acronym, license, portal, product — <strong style="color: var(--status-err);">or</strong> an error code (AADSTS, 0x..., KB...)</span></div>
-    <div class="bb-boot-line bb-boot-missing"><span class="bb-boot-key">missing?</span><span class="bb-boot-val">we're building something ambitious — tell us what to add → <a href="https://www.aguidetocloud.com/feedback/" target="_blank" rel="noopener" class="bb-boot-feedback">/feedback/</a></span></div>
-    <div class="bb-boot-line bb-boot-hotkey"><span class="bb-boot-key">hotkey</span><span class="bb-boot-val"><span class="bb-cmd">/</span> from anywhere · <span class="bb-cmd">enter</span> to open · <span class="bb-cmd">↑↓</span> to nav · <span class="bb-cmd">esc</span> to clear · <span class="bb-cmd">?</span> for help</span></div>
-
-    <div class="bb-boot-divider"></div>
-
-    {{/* ── Jargon-mode samples (default visible) ──────────────────────── */}}
-    <div class="bb-boot-jargon">
-      {{ $samplePool := slice }}
-      {{ range $allEntries }}
-        {{ if ne .kind "disambiguation" }}
-          {{ $samplePool = $samplePool | append . }}
-        {{ end }}
-      {{ end }}
-      {{ $picked := first 5 (shuffle $samplePool) }}
-
-      <p class="bb-boot-eg" style="color: var(--text-muted); margin: 0 0 var(--s-3); padding-left: 0;"><span style="color: var(--text-dim);">// {{ len $allEntries }} jargon entries live · 5 picked at random ↻</span></p>
-      {{ range $picked }}
-        <p class="bb-boot-eg"><a href="/{{ .slug }}/"><span class="bb-eg-cmd">{{ .slug }}</span></a> {{ .name | lower }}{{ with .terms.old_names }}{{ if gt (len .) 0 }} (formerly {{ index . 0 | lower }}){{ end }}{{ end }}</p>
-      {{ end }}
-    </div>
-
-    {{/* ── Errno-mode samples (visible only when errno chip is active) ─ */}}
-    <div class="bb-boot-decode">
-      {{ $pickedDecode := first 5 (shuffle $allDecode) }}
-      <p class="bb-boot-eg" style="color: var(--text-muted); margin: 0 0 var(--s-3); padding-left: 0;"><span style="color: var(--text-dim);">// {{ len $allDecode }} error codes live · 5 picked at random ↻</span></p>
-      {{ range $pickedDecode }}
-        <p class="bb-boot-eg"><a href="/decode/{{ .slug }}/"><span class="bb-eg-cmd" style="color: var(--status-err);">{{ .code }}</span></a> {{ .short | lower }}</p>
-      {{ end }}
-    </div>
-
-    <p class="bb-boot-eg" style="margin: var(--s-4) 0 0; padding-left: 0;">
-      <a href="/all/" style="color: var(--text-muted);">// see all {{ len $allEntries }} entries →</a>
-      <span class="bb-divider" style="color: var(--text-dim); margin: 0 var(--s-2);">·</span>
-      <a href="/decode/" style="color: var(--text-muted);">// decode error</a>
-      <span class="bb-divider" style="color: var(--text-dim); margin: 0 var(--s-2);">·</span>
-      <a href="/watch/" style="color: var(--text-muted);">// what's coming</a>
-      <span class="bb-divider" style="color: var(--text-dim); margin: 0 var(--s-2);">·</span>
-      <a href="/changelog/" style="color: var(--text-muted);">// changelog</a>
-      <span class="bb-divider" style="color: var(--text-dim); margin: 0 var(--s-2);">·</span>
-      <a href="#" id="bb-random" style="color: var(--text-muted);">// 🎲 random entry</a>
-      <span class="bb-divider" style="color: var(--text-dim); margin: 0 var(--s-2);">·</span>
-      <a href="#" id="bb-help-trigger" style="color: var(--text-muted);">// help</a>
-      <span class="bb-divider" style="color: var(--text-dim); margin: 0 var(--s-2);">·</span>
-      <a href="/about/#power-user" style="color: var(--text-muted);">// power-user setup</a>
-    </p>
-  </div>
-
-  {{/* ── Help overlay (toggled by ? key) ─────────────────────────────────── */}}
-  <div id="bb-help" class="bb-help" hidden role="dialog" aria-modal="true" aria-labelledby="bb-help-title">
-    <div class="bb-help-backdrop" aria-hidden="true"></div>
-    <div class="bb-help-card">
-      <button class="bb-help-close" type="button" aria-label="Close help">×</button>
-      <h2 id="bb-help-title" class="bb-help-title">// brain bar — keyboard &amp; search smarts</h2>
-      <div class="bb-help-grid">
-        <section>
-          <h3 class="bb-help-h3">keyboard</h3>
-          <dl class="bb-help-dl">
-            <dt><kbd>/</kbd></dt><dd>focus search from anywhere</dd>
-            <dt><kbd>↵</kbd></dt><dd>open top result (exact match) or selected row</dd>
-            <dt><kbd>↑</kbd> <kbd>↓</kbd></dt><dd>navigate results</dd>
-            <dt><kbd>esc</kbd></dt><dd>clear input · close this help</dd>
-            <dt><kbd>?</kbd></dt><dd>show this help (when input not focused)</dd>
-          </dl>
-        </section>
-        <section>
-          <h3 class="bb-help-h3">search smarts</h3>
-          <dl class="bb-help-dl">
-            <dt>exact slug</dt><dd><code>mde</code> · <code>pim</code> · <code>e3</code></dd>
-            <dt>abbreviation</dt><dd><code>MDE</code> · <code>SSPR</code></dd>
-            <dt>alias</dt><dd><code>mdatp</code> → mde</dd>
-            <dt>rebrand</dt><dd><code>azure ad premium p1</code> → entra-p1</dd>
-            <dt>synonym</dt><dd><code>antivirus</code> → mde · <code>sso</code> → entra-p1</dd>
-            <dt>did you mean</dt><dd><code>intuune</code> → intune (typo correction)</dd>
-            <dt>multi-word</dt><dd><code>defender for endpoint</code></dd>
-          </dl>
-        </section>
+  {{/* ── CRT MONITOR + TERMINAL ──────────────────────────────────────── */}}
+  <div class="cmd-crt" id="cmd-crt">
+    <span class="cmd-led" aria-hidden="true"></span>
+    <div class="cmd-term-wrap embed" id="cmd-term-wrap">
+      <div class="cmd-titlebar">
+        <div class="traffic">
+          <span class="light red"></span>
+          <span class="light yellow"></span>
+          <span class="light green"></span>
+          <span class="cmd-title-label">cmd <span class="cwd">:: terminal</span></span>
+        </div>
+        <div class="actions">
+          <a id="cmd-fs-toggle">⤢ open full-screen</a>
+          <a id="cmd-clear-link">clear</a>
+        </div>
       </div>
-      <p class="bb-help-foot">
-        <span class="bb-help-prompt">$</span> recent searches stored in your browser only · never sent to a server.
+
+      <div class="cmd-buffer" id="cmd-buffer" tabindex="-1">
+        {{/* SSR fallback — visible if JS fails. Replaced by cmd-terminal.js on first interaction. */}}
+        <noscript>
+          <div class="cmd-line dim">// cmd needs JavaScript for terminal mode.</div>
+          <div class="cmd-line">try the <a href="#cmd-express" class="cmd-link">classic search ↓</a></div>
+        </noscript>
+      </div>
+
+      <div class="cmd-suggest" id="cmd-suggest"></div>
+
+      <div class="cmd-term-prompt">
+        <span class="glyph">$</span>
+        <input id="cmd-input" type="text" placeholder="type a microsoft term — try: mde · pim · aadsts50011 · ?" autocomplete="off" autocorrect="off" spellcheck="false">
+        <span class="blinker" aria-hidden="true">▍</span>
+        <span class="cmd-first-hint" id="cmd-first-hint">type · click anything · ? for help</span>
+      </div>
+
+      <div class="cmd-term-status">
+        <div class="left">
+          <span class="seg"><span class="lbl">cmd</span>v{{ site.Params.cache_version }}</span>
+          <span class="seg" id="cmd-stat-counts"><span class="lbl">data</span>loading…</span>
+          <span class="seg" id="cmd-stat-hist"><span class="lbl">hist</span>0</span>
+        </div>
+        <div class="right">
+          <span class="seg"><span class="kbd">↑↓</span> hist</span>
+          <span class="seg"><span class="kbd">tab</span> complete</span>
+          <span class="seg"><span class="kbd">?</span> help</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* Quick-command strip — appears after first command */}}
+  <div class="cmd-quick-strip" id="cmd-quick-strip">
+    <span class="label">// quick:</span>
+    <a class="cmd-quick-cmd" data-cmd="mde">mde</a>
+    <a class="cmd-quick-cmd" data-cmd="pim">pim</a>
+    <a class="cmd-quick-cmd" data-cmd="all">all</a>
+    <a class="cmd-quick-cmd" data-cmd="ls errno">ls errno</a>
+    <a class="cmd-quick-cmd" data-cmd="?">?</a>
+    <a class="cmd-quick-cmd" data-cmd="clear">clear</a>
+  </div>
+
+  {{/* ── EXPRESS SEARCH (collapsed) — SSR fallback + mobile support ─── */}}
+  <details class="cmd-express-toggle" id="cmd-express">
+    <summary>or browse the index — classic search · works on mobile · no-JS fallback</summary>
+    <div class="cmd-express-content">
+      <p class="dim" style="font-size:13px; margin: 0 0 16px;">
+        same data, same answers — listed as plain links so they're indexable + reachable without JavaScript.
+      </p>
+
+      {{ $entries := (index hugo.Data "cmd_entries").entries }}
+      <p class="dim" style="font-size:12px; margin: 0 0 8px;">// {{ len $entries }} jargon entries</p>
+      <ul style="list-style:none; padding:0; margin: 0 0 24px; columns: 2; column-gap: 32px; font-size: 13px;">
+        {{ range first 30 $entries }}
+        <li style="padding: 2px 0; break-inside: avoid;">
+          <a href="/{{ .slug }}/" class="cmd-link">{{ .slug }}</a>
+          <span class="dim">· {{ .name }}</span>
+        </li>
+        {{ end }}
+      </ul>
+
+      <p class="dim" style="font-size:12px; margin: 0;">
+        <a href="/all/" class="cmd-link">// see all entries →</a>
+        &nbsp;·&nbsp;
+        <a href="/decode/" class="cmd-link">// decode error</a>
+        &nbsp;·&nbsp;
+        <a href="/watch/" class="cmd-link">// what's coming</a>
+        &nbsp;·&nbsp;
+        <a href="/changelog/" class="cmd-link">// changelog</a>
+        &nbsp;·&nbsp;
+        <a href="/about/" class="cmd-link">// about</a>
       </p>
     </div>
-  </div>
-</section>
+  </details>
 
-<script src="/js/cmd.js?v={{ site.Params.cache_version }}" defer></script>
+</main>
+
+<script src="/js/cmd-terminal.js?v={{ site.Params.cache_version }}" defer></script>
 {{ end }}
-
