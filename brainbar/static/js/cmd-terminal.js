@@ -144,6 +144,7 @@
   function pipeTail(blocks, n) {
     const limit = Number.isFinite(n) ? Math.max(0, Math.floor(n)) : 10;
     const data = (blocks || []).filter(b => !CHROME_TYPES.has(b.type));
+    if (limit === 0) return []; // slice(-0) returns everything; explicit zero-cap
     return data.slice(-limit);
   }
   function pipeWc(blocks) {
@@ -375,8 +376,9 @@
     const kind = String(args[0] || 'jargon').toLowerCase();
     if (kind === 'errno' || kind === 'decode') {
       if (!STATE.decodeReady) {
-        loadDecode().then(() => writeRaw('<span class="dim">// decode index loaded — re-run </span><a class="cmd-rerun" data-cmd="ls errno">ls errno</a>', 'cmd-line'));
-        return [{ type: 'dim', text: '// loading errno index — re-run in a sec' }];
+        // Auto-rerun once the lazy index lands — better UX than asking the user to click.
+        loadDecode().then(() => execute('ls errno'));
+        return [{ type: 'dim', text: '// loading errno index\u2026' }];
       }
       return [
         { type: 'dim', text: '// ' + STATE.decode.length + ' error codes' },
@@ -416,8 +418,10 @@
     // Default: existing errno decode (AADSTS / 0x HRESULT / KB)
     const code = args.join(' ');
     if (!STATE.decodeReady) {
-      loadDecode().then(() => writeRaw('<span class="dim">// decode index loaded — re-run </span><a class="cmd-rerun" data-cmd="' + esc('decode ' + code) + '">decode ' + esc(code) + '</a>', 'cmd-line'));
-      return [{ type: 'dim', text: '// loading errno index…' }];
+      // Auto-rerun once the lazy index lands — fixes the dead-end on fresh
+      // permalinks like /?q=decode%20AADSTS50105 (duck finding #4).
+      loadDecode().then(() => execute('decode ' + code));
+      return [{ type: 'dim', text: '// loading errno index\u2026 one moment' }];
     }
     const e = findErrno(code);
     if (!e) return [
@@ -727,7 +731,7 @@
       { title: 'why',        cmd: 'why mde',          desc: 'sush\u2019s honest take (when there is one)' },
       { title: 'list all',   cmd: 'all',              desc: 'list every jargon entry' },
       { title: 'list errors',cmd: 'ls errno',         desc: 'list every error code' },
-      { title: 'decode',     cmd: 'decode aadsts50011',desc: 'error code \u2192 plain english' },
+      { title: 'decode',     cmd: 'decode AADSTS50105',desc: 'error code \u2192 plain english' },
       { title: 'freshness',  cmd: 'freshness',        desc: 'audit \u2014 which entries need re-verifying?' },
       { title: 'pipes',      cmd: 'help pipes',       desc: 'unix-style filters (json, csv, sort, head, tail, wc, grep)' },
       { title: 'decode kinds',cmd: 'help decode',     desc: 'guid, resource-id, graph, sku, mc' },
@@ -850,8 +854,8 @@
       {
         title: '\ud83d\udd0d  Decode error codes & ids',
         rows: [
-          { cmd: 'decode AADSTS50058',                desc: 'sign-in error \u2014 plain english + fix' },
-          { cmd: 'decode 0xC0000005',                 desc: 'HRESULT' },
+          { cmd: 'decode AADSTS50105',                desc: 'sign-in error (user not assigned to app) \u2014 plain english + fix' },
+          { cmd: 'decode 0x80070005',                 desc: 'HRESULT \u2014 E_ACCESSDENIED' },
           { cmd: 'decode resource-id /subscriptions/06ebc4ee-1bb5-47dd-8120-11324bc54e06/resourceGroups/rg-prod/providers/Microsoft.Web/sites/myapp', desc: 'parse Azure resource ID into segments' },
         ],
       },
@@ -923,7 +927,14 @@
       parents.forEach((parent, i) => blocks.push(renderEdge(parent, i === parents.length - 1, 'tree ')));
     }
     if (entry.includesSource) {
-      blocks.push({ type: 'plain', html: '<span class="dim">// source: </span><a class="cmd-link" href="' + esc(entry.includesSource) + '" target="_blank" rel="noopener">' + esc(entry.includesSource) + '<span class="ext">\u2197</span></a>' });
+      // urlSafe defends against javascript: / data: scheme injection if the
+      // includes_source field ever picks up bad data (duck finding #13).
+      const sourceSafe = urlSafe(entry.includesSource);
+      if (sourceSafe) {
+        blocks.push({ type: 'plain', html: '<span class="dim">// source: </span><a class="cmd-link" href="' + esc(sourceSafe) + '" target="_blank" rel="noopener">' + esc(entry.includesSource) + '<span class="ext">\u2197</span></a>' });
+      } else {
+        blocks.push({ type: 'dim', text: '// source: ' + entry.includesSource });
+      }
     }
     return blocks;
   }
@@ -1591,8 +1602,8 @@
   // no chrome, no surprise — just a passing nudge that broader use cases
   // exist beyond "type a slug".
   const PLACEHOLDER_HINTS = [
-    'type a Microsoft acronym \u2014 try: mde \u00b7 pim \u00b7 aadsts50011 \u00b7 ?',
-    'or paste an error code \u2014 try: 0xC0000005 \u00b7 KB5028166',
+    'type a Microsoft acronym \u2014 try: mde \u00b7 pim \u00b7 AADSTS50105 \u00b7 ?',
+    'or paste an error code \u2014 try: 0x80070005 \u00b7 KB5034441',
     "or `ask whats included in m365 e5` \u2014 grounded answer with citations",
     'or `tree m365-e5` \u2014 see what\'s bundled in a license',
     'or paste an Azure resource id \u2014 cmd parses every segment',

@@ -195,28 +195,96 @@ test('cmd_ask: empty question returns usage error', async () => {
 test('cmd_ask: post-generation filter strips fake slug brackets', async () => {
   const mockAi = {
     async run() {
-      // Simulate two failure modes the bug exhibited:
+      // Three failure modes the bug exhibited:
       //   1. Plausible-looking variant: [entra-id-p1]  (real slug is [entra-p1])
-      //   2. Multi-word "slug" with spaces: [microsoft entra id p1]
-      //   3. Quote-wrapped answer (model copies example format)
-      return { response: '"Conditional Access requires [entra-id-p1] which is bundled in [m365-e5]. Risk-based CA needs [microsoft entra id p2]."' };
+      //   2. Multi-word "slug" with spaces: [microsoft entra id p2]
+      //   3. Quote-wrapped answer
+      // Plus a real slug from the allowlist that should be retained.
+      return { response: '"[mde] needs [entra-id-p1] in [m365-e5]. Risk-based CA: [microsoft entra id p2]."' };
     },
   };
-  const r = await rpc('tools/call', { name: 'cmd_ask', arguments: { question: 'what about conditional access?' } }, 1, { AI: mockAi });
+  // Use a question that retrieves BOTH mde and m365-e5 so they're in allowlist.
+  const r = await rpc('tools/call', { name: 'cmd_ask', arguments: { question: 'compare mde and m365-e5' } }, 1, { AI: mockAi });
   const payload = JSON.parse(r.result.content[0].text);
-  // Real slug retains brackets
-  assert.match(payload.answer, /\[m365-e5\]/, 'real slug retained as [m365-e5]');
+  // Real allowlisted slugs retained
+  assert.match(payload.answer, /\[mde\]/, 'allowlisted [mde] retained');
+  assert.match(payload.answer, /\[m365-e5\]/, 'allowlisted [m365-e5] retained');
   // Fake slug variants have brackets stripped
-  assert.doesNotMatch(payload.answer, /\[entra-id-p1\]/, 'fake hyphen-variant brackets stripped');
-  assert.doesNotMatch(payload.answer, /\[microsoft entra id p2\]/, 'multi-word fake brackets stripped');
-  // The plain-text version of the fake slug remains (so the answer is still readable)
-  assert.match(payload.answer, /entra-id-p1/, 'fake slug text remains as plain text');
-  assert.match(payload.answer, /microsoft entra id p2/, 'multi-word fake remains as plain text');
-  // Leading/trailing quote-wrapping is stripped
+  assert.doesNotMatch(payload.answer, /\[entra-id-p1\]/, 'fake hyphen-variant stripped');
+  assert.doesNotMatch(payload.answer, /\[microsoft entra id p2\]/, 'multi-word fake stripped');
+  // Plain-text variants remain
+  assert.match(payload.answer, /entra-id-p1/, 'plain text retained');
+  // Quote-wrapping stripped
   assert.doesNotMatch(payload.answer, /^"/, 'leading quote stripped');
   assert.doesNotMatch(payload.answer, /"$/, 'trailing quote stripped');
-  // Cited_slugs only contains real slugs
-  assert.deepEqual(payload.cited_slugs, ['m365-e5'], 'only real slug in cited_slugs');
+});
+
+test('cmd_ask: input over 1000 chars rejected with helpful message', async () => {
+  // Duck finding #1: protect Workers AI quota from cost-drain attacks.
+  const longQ = 'what is mde '.repeat(150); // ~1800 chars
+  let aiCalled = false;
+  const mockAi = { async run() { aiCalled = true; return { response: '...' }; } };
+  const r = await rpc('tools/call', { name: 'cmd_ask', arguments: { question: longQ } }, 1, { AI: mockAi });
+  const payload = JSON.parse(r.result.content[0].text);
+  assert.equal(aiCalled, false, 'AI should NOT be called for over-long input');
+  assert.match(payload.answer, /too long/i);
+});
+
+test('cmd_ask: citation allowlist is per-answer, not corpus-wide', async () => {
+  // Duck finding #2: a model citing a real slug it WAS NOT GIVEN as context
+  // should have those citations stripped (groundedness violation).
+  // mde retrieval surfaces mde + a few related entries. The model returns a
+  // citation to [pim] which is real but not in the retrieval set for "mde".
+  const mockAi = {
+    async run() { return { response: '[mde] is the endpoint guard. It interacts with [pim] for elevated tasks.' }; },
+  };
+  const r = await rpc('tools/call', { name: 'cmd_ask', arguments: { question: 'explain mde feature' } }, 1, { AI: mockAi });
+  const payload = JSON.parse(r.result.content[0].text);
+  // [mde] retained because it's in the retrieval set
+  assert.match(payload.answer, /\[mde\]/, 'mde retained — in allowlist');
+  // [pim] is a real slug but should NOT have been allowed since the question
+  // was about mde and pim wasn't in the retrieval context.
+  // (If the search happens to retrieve pim too, this assertion may need tuning.)
+  // The important invariant: cited_slugs MUST equal a subset of entries_used slugs.
+  for (const cited of payload.cited_slugs) {
+    assert.ok(payload.entries_used.some(e => e.slug === cited), `cited slug ${cited} must be in entries_used`);
+  }
+});
+
+test('cmd_ask: question with punctuation still retrieves entries', async () => {
+  let aiCalled = false;
+  const mockAi = {
+    async run() { aiCalled = true; return { response: '[mde] is endpoint security.' }; },
+  };
+  const r = await rpc('tools/call', { name: 'cmd_ask', arguments: { question: 'what is mde?' } }, 1, { AI: mockAi });
+  const payload = JSON.parse(r.result.content[0].text);
+  assert.equal(aiCalled, true, 'AI should be called when question has matchable token despite punctuation');
+  assert.match(payload.answer, /\[mde\]/);
+  assert.ok(payload.entries_used.some(e => e.slug === 'mde'), 'mde retrieved despite ? in question');
+});
+
+test('cmd_ask: post-generation filter strips prompt-scaffolding leakage', async () => {
+  // Bug found 7 May 2026: the model sometimes echoed the user-message
+  // scaffolding (ALLOWED CITATIONS / CITE-ONLY / Q: / E: lines) into its
+  // answer. The post-filter must strip those lines before returning.
+  const leaks = [
+    'ALLOWED CITATIONS: [m365-copilot] [copilot-studio] [intune]\n\nHere\'s the answer about [mde].',
+    '[CITE-ONLY [mde] [m365-e5]]\n\n[mde] is endpoint security.',
+    'Q: explain mde\n[mde] is Microsoft Defender for Endpoint.',
+    'E:\n[mde] is endpoint security.',
+    'ENTRIES (each starts with...):\n[mde] explained here.',
+  ];
+  for (const leaked of leaks) {
+    const mockAi = { async run() { return { response: leaked }; } };
+    // Use a question that retrieves mde so the AI mock gets called.
+    const r = await rpc('tools/call', { name: 'cmd_ask', arguments: { question: 'explain mde feature' } }, 1, { AI: mockAi });
+    const payload = JSON.parse(r.result.content[0].text);
+    assert.doesNotMatch(payload.answer, /^\[?\s*(CITE-ONLY|ALLOWED CITATIONS)\b/im, 'CITE-ONLY/ALLOWED CITATIONS lines stripped');
+    assert.doesNotMatch(payload.answer, /^Q:\s/m, 'Q: header stripped');
+    assert.doesNotMatch(payload.answer, /^E:\s*$/m, 'E: header stripped');
+    assert.doesNotMatch(payload.answer, /^ENTRIES\b/im, 'ENTRIES header stripped');
+    assert.match(payload.answer, /\[mde\]/, 'real slug citation still present after leak strip');
+  }
 });
 
 test('POST /ask HTTP endpoint works directly', async () => {

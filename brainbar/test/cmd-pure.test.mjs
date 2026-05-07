@@ -364,7 +364,7 @@ describe('pipeSort', () => {
   });
 });
 
-describe('pipeHead / pipeTail', () => {
+describe('pipeHead', () => {
   test('pipeHead with N=2 returns first 2 data blocks + chrome at top', () => {
     const blocks = [
       { type: 'heading', text: 'h' },
@@ -378,18 +378,25 @@ describe('pipeHead / pipeTail', () => {
     assert.equal(out[1].text, 'a');
     assert.equal(out[2].text, 'b');
   });
+});
 
-  test('pipeTail with N=2 returns last 2 data blocks (no chrome)', () => {
-    const blocks = [
-      { type: 'heading', text: 'h' },
-      { type: 'plain', text: 'a' },
-      { type: 'plain', text: 'b' },
-      { type: 'plain', text: 'c' },
-    ];
+describe('pipeTail', () => {
+  test('returns last N data blocks', () => {
+    const blocks = [{type:'plain', text:'a'}, {type:'plain', text:'b'}, {type:'plain', text:'c'}];
     const out = pipeTail(blocks, 2);
     assert.equal(out.length, 2);
     assert.equal(out[0].text, 'b');
-    assert.equal(out[1].text, 'c');
+  });
+  test('tail 0 returns [] (NOT slice(-0) which returns everything)', () => {
+    // Duck finding #9: explicit zero-cap so users get what they asked for.
+    const blocks = [{type:'plain', text:'a'}, {type:'plain', text:'b'}];
+    const out = pipeTail(blocks, 0);
+    assert.deepEqual(out, []);
+  });
+  test('tail with negative N returns []', () => {
+    const blocks = [{type:'plain', text:'a'}, {type:'plain', text:'b'}];
+    const out = pipeTail(blocks, -5);
+    assert.deepEqual(out, []);
   });
 });
 

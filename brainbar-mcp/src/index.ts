@@ -233,29 +233,45 @@ async function tool_list_kinds(kind?: string): Promise<{ kind: string; count: nu
 // slugs let the user click through to verify against cmd's authoritative
 // entry pages.
 
-const ASK_SYSTEM_PROMPT = `You are cmd — a Microsoft cloud terminology decoder. Answer the user's question in plain English using ONLY the cmd entries provided below.
+const ASK_SYSTEM_PROMPT = `You are cmd — a Microsoft cloud terminology decoder. Answer the user's question in plain English using ONLY the cmd entries provided in the user message.
+
+How the user message is structured:
+- A single line at the top starting with "[CITE-ONLY ...]" lists the only slugs you may put in [square-brackets] in your answer. NEVER copy this line into your reply — it is private prompt scaffolding.
+- A line "Q: <question>" — the user's actual question.
+- A block "E:" followed by entry records, each starting with "[slug] Name" then kind/plain/plans/etc.
 
 Rules:
 1. Keep your answer to 120 words or less.
 2. Cite EVERY entry you reference by its slug in [square-brackets]. Use the slug LITERALLY — copy character-for-character from the entry header.
-3. CRITICAL: The user message contains an "ALLOWED CITATIONS" line listing the only slugs you may put in [brackets]. Do NOT invent new slugs. If you need to mention a Microsoft product NOT in the allowed list, mention it in plain English WITHOUT brackets. NEVER guess slug variants like [entra-id-p1] — the real slug might be [entra-p1].
-4. If the provided entries don't cover the question, respond exactly: "I don't have a cmd entry covering that — try \`search <term>\` or browse \`all\`."
-5. No marketing fluff. No "Microsoft offers..." preambles. Sysadmin tone.
-6. Don't invent Microsoft features that aren't in the provided entries.
-7. When the question is about pricing or licensing, surface real numbers from the entries when present.
-8. When comparing entries, structure as a tight bulleted list, not prose paragraphs.
-9. Do NOT include hyperlinks or URLs. Do NOT recommend external sites (microsoft.com, learn.microsoft.com, docs.microsoft.com, etc). The user has cmd open already — citations route them to cmd entries.
+3. CRITICAL: The only slugs you may put in [brackets] are the ones from the [CITE-ONLY ...] line. Do NOT invent new slugs (e.g. [entra-id-p1] when [entra-p1] is real). For Microsoft products NOT on that list, mention them in plain English WITHOUT brackets.
+4. Do NOT echo the [CITE-ONLY ...] line, "Q:" header, "E:" header, or ANY of the user-message scaffolding into your answer. Start your answer directly with content.
+5. If the provided entries don't cover the question, respond exactly: "I don't have a cmd entry covering that — try \`search <term>\` or browse \`all\`."
+6. No marketing fluff. No "Microsoft offers..." preambles. Sysadmin tone.
+7. Don't invent Microsoft features that aren't in the provided entries.
+8. When the question is about pricing or licensing, surface real numbers from the entries when present.
+9. When comparing entries, structure as a tight bulleted list, not prose paragraphs.
+10. Do NOT include hyperlinks or URLs. Do NOT recommend external sites (microsoft.com, learn.microsoft.com, docs.microsoft.com, etc).
+11. Do NOT wrap your answer in quotes.
 
-EXAMPLE — note that EVERY [slug] is from the ALLOWED CITATIONS list, none are invented:
+EXAMPLE — note that the answer starts directly with content, no echoed scaffolding:
 
-Q: "What's the difference between MDE Plan 1 and Plan 2?"
-ALLOWED CITATIONS: [mde] [m365-e3] [m365-f3] [m365-e5]
-A: "[mde] ships in two plans:
+User message:
+[CITE-ONLY [mde] [m365-e3] [m365-f3] [m365-e5]]
+
+Q: What's the difference between MDE Plan 1 and Plan 2?
+
+E:
+[mde] Microsoft Defender for Endpoint
+kind: product · domain: security
+plain: ...
+
+Your answer (start directly, no scaffolding):
+[mde] ships in two plans:
 - Plan 1 — preventative antimalware. Bundled in [m365-e3] and [m365-f3].
-- Plan 2 — Plan 1 plus full EDR (threat hunting, automated investigation). Bundled in [m365-e5] only.
-If you only have [m365-e3], you can add [mde] Plan 2 as an add-on for ~$5.20/user/mo."
+- Plan 2 — Plan 1 plus full EDR. Bundled in [m365-e5] only.
+If you only have [m365-e3], you can add [mde] Plan 2 for ~$5.20/user/mo.
 
-Notice: every product/license/feature followed by its slug, drawn ONLY from the allowed list. Plain text for anything else. Never invent variants.`;
+That's the format every answer should follow.`;
 
 async function tool_ask(
   question: string,
@@ -263,6 +279,16 @@ async function tool_ask(
 ): Promise<{ answer: string; cited_slugs: string[]; entries_used: { slug: string; name: string }[]; model: string }> {
   if (!question || typeof question !== 'string' || !question.trim()) {
     return { answer: 'usage: ask <natural language question>', cited_slugs: [], entries_used: [], model: 'none' };
+  }
+  // Input length cap (duck finding #1) — protects the Workers AI free-tier
+  // quota and prevents cost-drain attacks. Real questions don't need >1000 chars.
+  if (question.length > 1000) {
+    return {
+      answer: 'Question too long (max 1000 characters). Try a shorter version.',
+      cited_slugs: [],
+      entries_used: [],
+      model: 'none',
+    };
   }
   if (!env || !env.AI || typeof env.AI.run !== 'function') {
     return {
@@ -276,13 +302,25 @@ async function tool_ask(
   // Pull top-K relevant entries using the existing ranker.
   const candidates = await tool_search(question, 6);
   // Also pull substring matches against tokens in the question (catches multi-term q's).
+  // Strip punctuation from tokens so "mde?" matches the slug "mde". Real users
+  // type questions with punctuation and the ranker shouldn't be defeated by a `?`.
   const idx = await loadIndex();
-  const tokens = question.toLowerCase().split(/\s+/).filter(t => t.length > 2);
+  const tokens = question
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s\-]/gu, ' ') // keep letters/digits/spaces/hyphens; strip ?,.,",',etc
+    .split(/\s+/)
+    .filter(t => t.length > 2);
   const seen = new Set<string>(candidates.map(c => c.slug));
   for (const t of tokens) {
     for (const e of idx.entries) {
       if (seen.has(e.slug)) continue;
-      if (e.slug.includes(t) || (e.abbreviations ?? []).some(a => a.toLowerCase().includes(t)) || (e.aliases ?? []).some(a => a.toLowerCase().includes(t))) {
+      if (
+        e.slug.includes(t) ||
+        e.name.toLowerCase().includes(t) ||
+        (e.abbreviations ?? []).some(a => a.toLowerCase().includes(t)) ||
+        (e.aliases ?? []).some(a => a.toLowerCase().includes(t)) ||
+        (e.plain_english ?? '').toLowerCase().includes(t)
+      ) {
         candidates.push({ ...(e as BrainBarEntry), tier: 99, match_reason: `token "${t}"` });
         seen.add(e.slug);
         if (candidates.length >= 8) break;
@@ -307,7 +345,9 @@ async function tool_ask(
   // slug variants like [entra-id-p1] when the real slug is [entra-p1]. Giving
   // them the literal allowlist + post-generation validation prevents this.
   const allowlistSlugs = candidates.map(c => c.slug);
-  const allowlistDisplay = allowlistSlugs.map(s => `[${s}]`).join(' ');
+  // Use a short label that the model is unlikely to echo verbatim. The previous
+  // label "ALLOWED CITATIONS" got copied into answers because it's prompt-y.
+  const allowlistLine = '[CITE-ONLY ' + allowlistSlugs.map(s => `[${s}]`).join(' ') + ']';
 
   const contextBlocks = candidates.map(c => {
     const lines: string[] = [];
@@ -321,7 +361,7 @@ async function tool_ask(
     return lines.join('\n');
   }).join('\n\n');
 
-  const userPrompt = `QUESTION:\n${question}\n\nALLOWED CITATIONS (use ONLY these — copy character-for-character):\n${allowlistDisplay}\n\nENTRIES (each starts with its slug in [brackets] — that's the citation token):\n${contextBlocks}`;
+  const userPrompt = `${allowlistLine}\n\nQ: ${question}\n\nE:\n${contextBlocks}`;
 
   const model = '@cf/meta/llama-3.1-8b-instruct';
   let answer = '';
@@ -346,20 +386,41 @@ async function tool_ask(
     answer = "I don't have a cmd entry covering that — try `search <term>` or browse `all`.";
   }
 
-  // Post-generation slug-bracket validation. Defence-in-depth against the
-  // model inventing slug variants. Strips brackets from ANY [content] that
-  // isn't an exact match for a real entry slug. Catches both:
-  //   - Plausible-looking variants: [entra-id-p1] when [entra-p1] is real
-  //   - Multi-word "slugs" with spaces: [microsoft entra id p1]
-  //   - Random made-up names: [defender-everywhere]
-  // Real slugs pass through unchanged.
-  const realSlugSet = new Set(idx.entries.map(e => e.slug));
+  // Post-generation cleanup. Three passes (in order):
+  //
+  // (1) STRIP PROMPT LEAKAGE — if the model echoed any of our scaffolding
+  //     (the [CITE-ONLY ...] line, "Q:" header, "E:" header), remove those
+  //     lines.
+  // (2) STRIP NON-ALLOWLIST SLUG BRACKETS — replaces any [content] in the
+  //     answer where `content` isn't in the ALLOWLIST for THIS answer (not
+  //     just any real slug — duck finding #2). Catches groundedness violations
+  //     where the model cites a real slug it wasn't given as context.
+  // (3) STRIP WRAPPING QUOTES — model sometimes copies the example format.
+  const allowlistSet = new Set(allowlistSlugs);
+  // (1)
+  answer = answer
+    .split('\n')
+    .filter(line => {
+      const trimmed = line.trim();
+      if (/^\[?\s*CITE-ONLY\b/i.test(trimmed)) return false;
+      if (/^Q:\s*/i.test(trimmed)) return false;
+      if (/^E:\s*$/i.test(trimmed)) return false;
+      if (/^ALLOWED CITATIONS:?/i.test(trimmed)) return false;
+      if (/^QUESTION:?\s*$/i.test(trimmed)) return false;
+      if (/^ENTRIES\s*(\(.*\))?:?\s*$/i.test(trimmed)) return false;
+      return true;
+    })
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+  // (2) — allowlist-bound, not corpus-wide. Citations to real slugs that
+  // weren't in the retrieval context get demoted to plain text — the model
+  // shouldn't be claiming to cite entries it wasn't shown.
   answer = answer.replace(/\[([^\]\n]+)\]/g, (_match, content: string) => {
     const trimmed = content.trim();
-    return realSlugSet.has(trimmed) ? `[${trimmed}]` : trimmed;
+    return allowlistSet.has(trimmed) ? `[${trimmed}]` : trimmed;
   });
-  // Strip leading/trailing quote-wrapping (model sometimes copies the
-  // example format which had quotes around the answer).
+  // (3)
   answer = answer.replace(/^"\s*|\s*"$/g, '').trim();
 
   // Extract validated cited slugs from the cleaned answer.
@@ -369,7 +430,7 @@ async function tool_ask(
   let m: RegExpExecArray | null;
   while ((m = citeRe.exec(answer)) !== null) {
     const slug = m[1];
-    if (!seenCited.has(slug) && realSlugSet.has(slug)) {
+    if (!seenCited.has(slug) && allowlistSet.has(slug)) {
       citedSlugs.push(slug);
       seenCited.add(slug);
     }
@@ -625,12 +686,25 @@ export default {
 
     // ── /ask: simple HTTP POST endpoint for cmd terminal (no MCP wrapping) ──
     if (url.pathname === '/ask' && request.method === 'POST') {
-      const body = await request.json().catch(() => null) as { question?: string } | null;
-      if (!body || typeof body.question !== 'string' || !body.question.trim()) {
-        return jsonResponse({ error: 'question required' }, { status: 400 });
+      try {
+        const body = await request.json().catch(() => null) as { question?: string } | null;
+        if (!body || typeof body.question !== 'string' || !body.question.trim()) {
+          return jsonResponse({ error: 'question required' }, { status: 400 });
+        }
+        const result = await tool_ask(body.question, env);
+        return jsonResponse(result);
+      } catch (err) {
+        // Wrap any internal failure (index load, AI hiccup, etc.) in a stable
+        // JSON shape so the cmd terminal can render it gracefully without
+        // CORS-flavoured network errors. Duck finding #7.
+        return jsonResponse({
+          error: 'ask unavailable',
+          answer: 'ask is temporarily unavailable. Try `search <term>` to browse manually, or refresh in a moment.',
+          cited_slugs: [],
+          entries_used: [],
+          model: 'none',
+        }, { status: 503 });
       }
-      const result = await tool_ask(body.question, env);
-      return jsonResponse(result);
     }
 
     if (url.pathname === '/mcp' && request.method === 'POST') {

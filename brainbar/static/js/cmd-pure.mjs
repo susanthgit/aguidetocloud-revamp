@@ -415,6 +415,7 @@ export function pipeHead(blocks, n, opts = {}) {
 export function pipeTail(blocks, n) {
   const limit = Number.isFinite(n) ? Math.max(0, Math.floor(n)) : 10;
   const data = (blocks || []).filter(b => !CHROME_TYPES.has(b.type));
+  if (limit === 0) return []; // slice(-0) returns everything; explicit zero-cap
   return data.slice(-limit);
 }
 

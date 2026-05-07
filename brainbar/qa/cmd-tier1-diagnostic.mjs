@@ -283,6 +283,32 @@ async function main() {
   txt = await lastGroupText(page);
   assert('search miss surfaces `ask` nudge', /not finding it.+ask/i.test(txt));
 
+  // ─── 14. samples examples reference real codes (duck finding #3) ──────
+  log.section('14. samples examples reference codes that exist');
+  await runTerminalCommand(page, 'samples');
+  const sampleCmds = await page.evaluate(() => {
+    const groups = document.querySelectorAll('#cmd-buffer .cmd-group');
+    const last = groups[groups.length - 1];
+    if (!last) return [];
+    return Array.from(last.querySelectorAll('.cmd-samples-cmd')).map(a => a.getAttribute('data-cmd'));
+  });
+  assert('samples produces clickable chips', sampleCmds.length > 5);
+  // Test every decode-related sample command — none should dead-end with
+  // "no curated decode for X" (which is what made cmd LOOK broken to Sush).
+  for (const cmd of sampleCmds.filter(c => c && c.startsWith('decode '))) {
+    await runTerminalCommand(page, cmd);
+    const out = await lastGroupText(page);
+    const isDeadEnd = /no curated decode/i.test(out);
+    assert(`sample "${cmd}" resolves to a real entry (not "no curated decode")`, !isDeadEnd, `sample "${cmd}" returns dead-end`);
+  }
+
+  // ─── 15. decode permalink lazy-load fix (duck finding #4) ─────────────
+  log.section('15. decode permalink resolves on fresh load');
+  await page.goto(BASE_URL + '?q=' + encodeURIComponent('decode AADSTS50105'), { waitUntil: 'networkidle' });
+  await page.waitForTimeout(3500); // give lazy decode index time to load + auto-rerun
+  const permText = await page.evaluate(() => document.querySelector('#cmd-buffer').innerText);
+  assert('decode permalink resolves to entry (not stuck on "loading errno index")', /User not assigned|app or role/i.test(permText));
+
   await browser.close();
 
   // ─── Summary ──────────────────────────────────────────────────────────
