@@ -2461,18 +2461,19 @@ body.cmd-fs-locked { overflow: hidden; }
 body.cmd-v2-home-page .bb-header .bb-cosmos-rail { display: none; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   cmd v2.1 — cream homepage background, hide theme toggle, compare tables
+   cmd v2.1 — compaq aged-plastic homepage background, hide theme toggle, compare tables
+   (was cream #f4ede0 — switched to compaq #D9D1B5 on 7 May 2026 for more lived-in character)
    ═══════════════════════════════════════════════════════════════════════════ */
 
 /* Hide theme toggle on cmd homepage — we own the look here, no dark/light */
 body.cmd-v2-home-page .bb-theme-toggle { display: none !important; }
 
-/* CREAM PAGE BACKGROUND — warm desk, dark CRT sits on it like real hardware */
+/* DESK BACKGROUND — warm aged-plastic desk, dark CRT sits on it like real hardware */
 body.cmd-v2-home-page {
   background:
-    radial-gradient(circle, rgba(140, 90, 50, 0.18) 1px, transparent 1.8px) 0 0 / 36px 36px,
+    radial-gradient(circle, rgba(140, 90, 50, 0.20) 1px, transparent 1.8px) 0 0 / 36px 36px,
     radial-gradient(ellipse 90% 60% at 50% 35%, rgba(255, 230, 180, 0.45) 0%, transparent 65%),
-    #f4ede0 !important;
+    #D9D1B5 !important;
 }
 body.cmd-v2-home-page::before {
   background: repeating-linear-gradient(
@@ -2612,15 +2613,15 @@ body.cmd-v2-home-page::before { mix-blend-mode: multiply; }
   display: flex; gap: var(--s-3); align-items: center;
 }
 
-/* Contrast fixes — WCAG AA compliance for cream-page text */
+/* Contrast fixes — WCAG AA compliance for desk-page text (compaq #D9D1B5 — accent darkened from #9a4515 to #8e3e10 to clear 4.5:1) */
 body.cmd-v2-home-page .cmd-v2-home .cmd-hero .prelude { color: #5a3a18 !important; }
 body.cmd-v2-home-page .cmd-v2-home .cmd-hero-capability { color: #5a3a18 !important; }
-body.cmd-v2-home-page .cmd-v2-home .cmd-hero-capability .em { color: #9a4515 !important; font-weight: 600; }
+body.cmd-v2-home-page .cmd-v2-home .cmd-hero-capability .em { color: #8e3e10 !important; font-weight: 600; }
 body.cmd-v2-home-page .bb-footer p,
 body.cmd-v2-home-page .bb-footer { color: #4a3a2a !important; }
-body.cmd-v2-home-page .bb-footer a { color: #9a4515 !important; }
+body.cmd-v2-home-page .bb-footer a { color: #8e3e10 !important; }
 body.cmd-v2-home-page .bb-footer a:hover { color: #1a3a4a !important; }
-body.cmd-v2-home-page .bb-footer .cmd-mcp { color: #9a4515 !important; border-color: #9a4515 !important; }
+body.cmd-v2-home-page .bb-footer .cmd-mcp { color: #8e3e10 !important; border-color: #8e3e10 !important; }
 
 /* Hide ASCII boot logo on mobile (it wraps badly) */
 @media (max-width: 719px) {
@@ -2676,17 +2677,17 @@ body.cmd-v2-home-page .bb-brand-name { font-weight: 700; }
   transition: all 180ms ease-out;
 }
 .cmd-v2-home .cmd-featured-card:hover {
-  border-color: #9a4515;
+  border-color: #8e3e10;
   background: rgba(255, 240, 215, 0.95);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(140, 90, 50, 0.15);
 }
 .cmd-v2-home .cmd-featured-card:focus-visible {
-  outline: 2px solid #9a4515;
+  outline: 2px solid #8e3e10;
   outline-offset: 2px;
 }
 .cmd-v2-home .cmd-featured-slug {
-  color: #9a4515;
+  color: #8e3e10;
   font-weight: 600;
   font-size: 14px;
   letter-spacing: -0.01em;
