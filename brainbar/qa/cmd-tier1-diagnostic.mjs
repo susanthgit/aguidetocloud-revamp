@@ -309,6 +309,35 @@ async function main() {
   const permText = await page.evaluate(() => document.querySelector('#cmd-buffer').innerText);
   assert('decode permalink resolves to entry (not stuck on "loading errno index")', /User not assigned|app or role/i.test(permText));
 
+  // ─── 16. pipes work on HTML-only blocks (duck finding #6) ──────────────
+  log.section('16. pipes operate on HTML-only blocks via blockToText');
+  await page.goto(BASE_URL, { waitUntil: 'networkidle' });
+  await page.waitForSelector('.cmd-v2-home');
+  await page.waitForTimeout(2500);
+  await runTerminalCommand(page, 'man mde | grep defender');
+  txt = await lastGroupText(page);
+  assert('man mde | grep defender finds matches (was empty before fix)', /Defender|defender/.test(txt));
+
+  await runTerminalCommand(page, 'samples | grep ask');
+  txt = await lastGroupText(page);
+  assert('samples | grep ask returns ask-related lines', /ask\s/.test(txt));
+
+  await runTerminalCommand(page, 'tree m365-e5 | grep mde');
+  txt = await lastGroupText(page);
+  assert('tree m365-e5 | grep mde finds the mde row (was empty before fix)', /\bmde\b/.test(txt));
+
+  // ─── 17. async ask race: clear-during-ask cancels (duck finding #5) ────
+  log.section('17. ask race: clear cancels in-flight requests');
+  // Run an ask, immediately clear before it resolves. Wait extra time. The
+  // answer should NOT appear in the now-cleared buffer.
+  await runTerminalCommand(page, 'ask whats included in m365 e5');
+  await page.waitForTimeout(100); // tiny wait so the placeholder renders
+  await runTerminalCommand(page, 'clear');
+  await page.waitForTimeout(5000); // give the (cancelled) fetch ample time
+  const afterClear = await page.evaluate(() => document.querySelector('#cmd-buffer').innerText);
+  // The boot banner is back; the ask answer should NOT have appeared.
+  assert('no ask answer leaks into cleared buffer', !/included in m365|m365-e5/i.test(afterClear) || /\/\/ new here/.test(afterClear));
+
   await browser.close();
 
   // ─── Summary ──────────────────────────────────────────────────────────

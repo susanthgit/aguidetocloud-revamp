@@ -30,6 +30,7 @@ import {
   pipeTail,
   pipeWc,
   csvEscape,
+  blockToText,
 } from '../static/js/cmd-pure.mjs';
 
 // ─── 1. normaliseIncludes ─────────────────────────────────────────────────
@@ -270,6 +271,35 @@ describe('dispatchPattern', () => {
 });
 
 // ─── 6. Pipe transforms ───────────────────────────────────────────────────
+
+describe('blockToText', () => {
+  test('extracts text from blocks with explicit text field', () => {
+    assert.equal(blockToText({ type: 'plain', text: 'hello' }), 'hello');
+  });
+  test('extracts from entry block', () => {
+    const b = { type: 'man', entry: { slug: 'mde', name: 'Microsoft Defender for Endpoint', kind: 'product', domain: 'security' } };
+    const t = blockToText(b);
+    assert.match(t, /mde/);
+    assert.match(t, /Microsoft Defender/);
+    assert.match(t, /security/);
+  });
+  test('strips HTML tags from html-only blocks', () => {
+    assert.equal(blockToText({ type: 'plain', html: '<a href="x">hello</a> <b>world</b>' }), 'hello world');
+  });
+  test('falls back to slug+text for list-style blocks', () => {
+    assert.equal(blockToText({ type: 'list', slug: 'mde', text: 'Microsoft Defender' }), 'mde \u00b7 Microsoft Defender');
+  });
+  test('handles errno blocks with code field', () => {
+    const t = blockToText({ type: 'errno', code: 'AADSTS50105', short: 'User not assigned' });
+    assert.match(t, /AADSTS50105/);
+    assert.match(t, /User not assigned/);
+  });
+  test('null/undefined returns empty string', () => {
+    assert.equal(blockToText(null), '');
+    assert.equal(blockToText(undefined), '');
+    assert.equal(blockToText({}), '');
+  });
+});
 
 describe('pipeJson', () => {
   test('serialises blocks to single dump block, strips html', () => {

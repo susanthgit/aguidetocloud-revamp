@@ -276,12 +276,55 @@ export function dispatchPattern(input, registry) {
 const CHROME_TYPES = new Set(['heading', 'dim']);
 
 /**
+ * Extract a semantic plain-text mirror from any block. Used by | grep / | csv
+ * / | json so pipes that need text-shaped data can operate on blocks that only
+ * carry HTML or structured `entry` data.
+ *
+ * Strategy: collect every human-readable field (slug, code, short, text,
+ * entry components, rows) and join them. Fall back to stripping HTML tags
+ * if no structured fields are present.
+ *
+ * Never returns null — always returns a string (may be empty).
+ */
+export function blockToText(block) {
+  if (!block || typeof block !== 'object') return '';
+  const parts = [];
+  if (block.slug) parts.push(block.slug);
+  if (block.code) parts.push(block.code);
+  if (block.namespace) parts.push(block.namespace);
+  if (block.short || block.title) parts.push(block.short || block.title);
+  if (block.text) parts.push(block.text);
+  if (block.entry) {
+    const e = block.entry;
+    parts.push(e.slug, e.name, e.kind, e.domain, e.plain || e.plain_english);
+    if (Array.isArray(e.plans)) parts.push(e.plans.join(' | '));
+    if (e.watch) parts.push(e.watch);
+  }
+  if (Array.isArray(block.rows)) {
+    for (const r of block.rows) {
+      if (Array.isArray(r)) parts.push(r.join(' | '));
+      else if (r) parts.push(r.label || r.text || '');
+    }
+  }
+  const collected = parts.filter(Boolean).join(' \u00b7 ');
+  if (collected) return collected;
+  // Fall through to HTML strip when no structured content.
+  if (typeof block.html === 'string' && block.html.length) {
+    return block.html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim();
+  }
+  return '';
+}
+
+/**
  * | json — serialise blocks to a single dump block containing pretty-printed
  * JSON. Strips `html` field (render-only). Preserves entry / slug / rows / etc.
  */
 export function pipeJson(blocks) {
   const cleaned = (blocks || []).map(b => {
     const copy = { ...b };
+    // Strip render-only HTML; replace with semantic text mirror so the
+    // dumped JSON is meaningful for blocks that only carried html.
+    if (copy.html && !copy.text) copy.text = blockToText(b);
     delete copy.html;
     return copy;
   });
@@ -360,7 +403,9 @@ export function pipeCsv(blocks) {
       ].map(csvEscape).join(','));
     } else {
       setHeader(['type', 'text']);
-      lines.push([block.type || '', block.text || ''].map(csvEscape).join(','));
+      // blockToText falls back through entry/code/slug/html so HTML-only
+      // blocks still yield meaningful CSV rows (duck finding #6).
+      lines.push([block.type || '', block.text || blockToText(block)].map(csvEscape).join(','));
     }
   }
 

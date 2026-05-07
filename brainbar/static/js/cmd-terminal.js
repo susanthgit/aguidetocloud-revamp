@@ -93,7 +93,14 @@
     return s;
   }
   function pipeJson(blocks) {
-    const cleaned = (blocks || []).map(b => { const c = Object.assign({}, b); delete c.html; return c; });
+    const cleaned = (blocks || []).map(b => {
+      const c = Object.assign({}, b);
+      // Strip render-only HTML; replace with semantic text mirror so the
+      // dumped JSON is meaningful (duck finding #6).
+      if (c.html && !c.text) c.text = blockToText(b);
+      delete c.html;
+      return c;
+    });
     return [{ type: 'dump', text: JSON.stringify(cleaned, null, 2), ariaAnnounce: false }];
   }
   function pipeCsv(blocks) {
@@ -115,7 +122,9 @@
         lines.push(['errno', e.code || '', e.short || e.title || '', e.plain || e.plain_english || '', e.fix || e.fix_path || ''].map(csvEscape).join(','));
       } else {
         setHeader(['type', 'text']);
-        lines.push([block.type || '', block.text || ''].map(csvEscape).join(','));
+        // blockToText falls back through entry/code/slug/html so HTML-only
+        // blocks still yield meaningful CSV rows.
+        lines.push([block.type || '', block.text || blockToText(block)].map(csvEscape).join(','));
       }
     }
     return [{ type: 'dump', text: lines.join('\n'), ariaAnnounce: false }];
@@ -168,6 +177,18 @@
     firstCommandRun: false,
     bootDone: false,
   };
+
+  // Track in-flight `ask` requests (placeholderId -> AbortController) so we
+  // can cancel them on `clear` — prevents stale answers materialising in a
+  // freshly-cleared buffer (duck finding #5).
+  const ASK_PENDING = new Map();
+  let ASK_COUNTER = 0;
+  function abortAllAsks() {
+    for (const ctrl of ASK_PENDING.values()) {
+      try { ctrl.abort(); } catch (_) {}
+    }
+    ASK_PENDING.clear();
+  }
 
   // ─── XSS-safe helpers ─────────────────────────────────────────────────
   function esc(s) {
@@ -690,7 +711,7 @@
     ];
   }
 
-  function cmdClear() { buf.innerHTML = ''; bootBannerFast(); return []; }
+  function cmdClear() { abortAllAsks(); buf.innerHTML = ''; bootBannerFast(); return []; }
 
   function cmdCowsay(args) {
     const msg = (args.join(' ') || 'moo').slice(0, 80);
@@ -786,9 +807,10 @@
   function cmdHelpTree() {
     return [
       { type: 'heading', text: '// cmd \u2014 tree' },
-      { type: 'plain', html: '<code>tree &lt;slug&gt;</code> <span class="dim">bidirectional bundling graph</span>' },
+      { type: 'plain', html: '<code>tree &lt;slug&gt;</code> <span class="dim">bidirectional bundling graph (direct edges only)</span>' },
       { type: 'dim', text: '// shows what an entry includes (children via includes[]) AND what includes it (parents via included_in[]).' },
       { type: 'dim', text: '// edge notes preserve plan-tier scoping (e.g., \"Plan 2 only\").' },
+      { type: 'dim', text: '// tree shows direct edges only \u2014 click any child or parent to walk one step further.' },
       { type: 'dim', text: '// source URL links to Sush\u2019s licensing-docs page for verification.' },
       { type: 'plain', html: '<span class="dim">try: </span><a class="cmd-rerun accent" data-cmd="tree m365-e5">tree m365-e5</a><span class="dim">  \u00b7  </span><a class="cmd-rerun accent" data-cmd="tree mde">tree mde</a>' },
     ];
@@ -892,6 +914,13 @@
     blocks.push({ type: 'dim', text: '// keys \u2191\u2193 cycle history \u00b7 tab to complete \u00b7 esc to clear input \u00b7 \u26a1 just type and press enter' });
     return blocks;
   }
+  // ─── tree: bidirectional includes graph (Tier 1 Batch 2) ───────────────
+  //
+  // Runtime renders DIRECT edges only (depth-1) for clarity and to keep the
+  // output compact. The unit-tested pure `treeWalk` helper supports depth-2
+  // walks with cycle/dup handling — kept as a building block for a future
+  // `tree --depth N` flag. Today's UX answer: if you want to see what's
+  // under a child, click that child's tree chip and walk one step at a time.
   function cmdTree(args) {
     if (!args.length) return [{ type: 'err', text: 'usage: tree <slug>' }];
     if (!STATE.ready) return [{ type: 'warn', text: '// loading — try again' }];
@@ -968,25 +997,41 @@
   }
 
   // ─── ask: natural-language question with grounded citations (Tier ASK) ──
+  // ─── ask: natural-language question with grounded citations (Tier ASK) ──
   function cmdAsk(args) {
     const q = (args || []).join(' ').trim();
-    if (!q) return [{ type: 'err', text: 'usage: ask <natural language question>  ·  e.g. ask whats the difference between mde plan 1 and plan 2' }];
+    if (!q) return [{ type: 'err', text: 'usage: ask <natural language question>  \u00b7  e.g. ask whats the difference between mde plan 1 and plan 2' }];
     const askUrl = 'https://mcp.aguidetocloud.com/ask';
+
+    // Each ask gets a unique placeholder id so the answer lands in the SAME
+    // command group (not at the buffer end). AbortController lets `clear`
+    // cancel outstanding requests — no stale answers in cleared buffer.
+    const placeholderId = 'cmd-ask-pending-' + (++ASK_COUNTER);
+    const controller = new AbortController();
+    ASK_PENDING.set(placeholderId, controller);
+
+    function resolveTo(html) {
+      ASK_PENDING.delete(placeholderId);
+      const el = document.getElementById(placeholderId);
+      if (!el) return; // placeholder gone (user cleared buffer); silent skip
+      el.innerHTML = html;
+    }
+
     fetch(askUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'omit',
       body: JSON.stringify({ question: q }),
+      signal: controller.signal,
     })
       .then(r => r.ok ? r.json() : null)
       .then(data => {
         if (!data) {
-          writeRaw('<span class="warn">// ask failed \u2014 try again, or use `search` to browse manually</span>', 'cmd-line');
+          resolveTo('<span class="warn">// ask failed \u2014 try again, or use `search` to browse manually</span>');
           return;
         }
         const answer = String(data.answer || '');
         const entriesUsed = Array.isArray(data.entries_used) ? data.entries_used : [];
-        // Linkify [slug] citations to clickable rerun buttons.
         const safe = esc(answer);
         const linkified = safe.replace(/\[([a-z0-9][a-z0-9\-]*)\]/g, function (_m, slug) {
           return '<a class="cmd-rerun accent" data-cmd="man ' + esc(slug) + '">[' + esc(slug) + ']</a>';
@@ -997,32 +1042,47 @@
             entriesUsed.map(function (e) { return '<a class="cmd-rerun" data-cmd="man ' + esc(e.slug) + '">' + esc(e.slug) + '</a>'; }).join(', ') +
             '</div>';
         }
-        if (data.model) {
+        if (data.model && data.model !== 'none') {
           html += '<div class="cmd-ask-meta dim">// model: ' + esc(data.model) + '  \u00b7  grounded: each [slug] is a real cmd entry</div>';
         }
-        writeRaw(html, 'cmd-ask');
+        resolveTo(html);
       })
       .catch(function (err) {
-        writeRaw('<span class="warn">// ask failed: ' + esc(String(err && err.message || err)) + '</span>', 'cmd-line');
+        // AbortError = user cleared / cancelled. Silent skip.
+        if (err && err.name === 'AbortError') {
+          ASK_PENDING.delete(placeholderId);
+          return;
+        }
+        resolveTo('<span class="warn">// ask failed: ' + esc(String(err && err.message || err)) + '</span>');
       });
     return [
       { type: 'heading', text: '// ask: ' + q },
-      { type: 'dim', text: '// thinking via Cloudflare Workers AI \u2014 the answer will append below in 2-5 seconds...' },
+      { type: 'plain', html: '<div id="' + placeholderId + '" class="cmd-ask cmd-ask-thinking" aria-live="polite"><span class="dim">// thinking via Cloudflare Workers AI \u2014 the answer will appear here in 2-5 seconds...</span></div>' },
       { type: 'dim', text: '// grounded in cmd entries \u00b7 every [slug] in the answer is clickable' },
     ];
   }
+  // ─── freshness: audit which entries need re-verifying ──────────────────
   function cmdFreshness() {
     if (!STATE.ready) return [{ type: 'warn', text: '// loading — try again' }];
     const today = todayIso();
     const stale = [];
     const ancient = [];
+    const unknown = [];
     for (const e of STATE.entries) {
+      if (!e.lastVerified) {
+        unknown.push({ entry: e, reason: 'missing last_verified' });
+        continue;
+      }
       const bucket = classifyFreshness(e.lastVerified, today);
+      if (bucket === 'unknown') {
+        unknown.push({ entry: e, reason: 'malformed last_verified: ' + e.lastVerified });
+        continue;
+      }
       const d = daysAgo(e.lastVerified, today);
       if (bucket === 'stale') stale.push({ entry: e, days: d });
       if (bucket === 'ancient') ancient.push({ entry: e, days: d });
     }
-    if (!stale.length && !ancient.length) {
+    if (!stale.length && !ancient.length && !unknown.length) {
       return [
         { type: 'heading', text: '// freshness audit' },
         { type: 'dim', text: '// all ' + STATE.entries.length + ' entries verified within 30 days \u2014 no stale or ancient entries' },
@@ -1030,6 +1090,15 @@
       ];
     }
     const blocks = [{ type: 'heading', text: '// freshness audit' }];
+    if (unknown.length) {
+      blocks.push({ type: 'dim', text: '// unknown freshness \u2014 ' + unknown.length + ' ' + (unknown.length === 1 ? 'entry has' : 'entries have') + ' missing or malformed last_verified' });
+      unknown.forEach(({ entry, reason }) => {
+        blocks.push({
+          type: 'plain',
+          html: '<span class="cmd-fresh-warn" aria-hidden="true">?</span> <a class="cmd-rerun warn" data-cmd="' + esc('man ' + entry.slug) + '">' + esc(entry.slug) + '</a><span class="dim">  \u00b7 ' + esc(entry.name) + '  \u00b7 ' + esc(reason) + '</span>',
+        });
+      });
+    }
     if (ancient.length) {
       blocks.push({ type: 'dim', text: '// ancient (>90 days) \u2014 ' + ancient.length });
       ancient.forEach(({ entry, days }) => {
@@ -1081,16 +1150,47 @@
   };
 
   // ─── Pipes ─────────────────────────────────────────────────────────────
+  // Mirror of cmd-pure.mjs blockToText — extracts semantic plain-text from
+  // any block type so | grep / | csv / | json work uniformly across blocks
+  // that only carry HTML or structured entry data (man, tree, samples, etc).
+  function blockToText(block) {
+    if (!block || typeof block !== 'object') return '';
+    const parts = [];
+    if (block.slug) parts.push(block.slug);
+    if (block.code) parts.push(block.code);
+    if (block.namespace) parts.push(block.namespace);
+    if (block.short || block.title) parts.push(block.short || block.title);
+    if (block.text) parts.push(block.text);
+    if (block.entry) {
+      const e = block.entry;
+      parts.push(e.slug, e.name, e.kind, e.domain, e.plain || e.plain_english);
+      if (Array.isArray(e.plans)) parts.push(e.plans.join(' | '));
+      if (e.watch) parts.push(e.watch);
+    }
+    if (Array.isArray(block.rows)) {
+      for (const r of block.rows) {
+        if (Array.isArray(r)) parts.push(r.join(' | '));
+        else if (r) parts.push(r.label || r.text || '');
+      }
+    }
+    const collected = parts.filter(Boolean).join(' \u00b7 ');
+    if (collected) return collected;
+    if (typeof block.html === 'string' && block.html.length) {
+      return block.html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim();
+    }
+    return '';
+  }
+
   function applyPipe(blocks, filter) {
     const parts = filter.trim().split(/\s+/);
     const verb = parts[0];
     if (verb === 'grep') {
       const needle = parts.slice(1).join(' ').toLowerCase();
       if (!needle) return [{ type: 'err', text: 'usage: ... | grep <term>' }];
-      return blocks.filter(b => {
-        const t = String(b.text || b.html || '').toLowerCase();
-        return t.includes(needle);
-      });
+      // Use blockToText so grep works on man/tree/samples/etc (HTML-only blocks).
+      // Was previously: String(b.text || b.html || '') which returned raw markup
+      // and missed structured entry data entirely (duck finding #6).
+      return blocks.filter(b => blockToText(b).toLowerCase().includes(needle));
     }
     if (verb === 'history') {
       // Pull the watch field if there's a man block — that's the closest to "history" in real data
@@ -1587,7 +1687,10 @@
     try {
       const params = new URLSearchParams(window.location.search);
       const q = params.get('q');
-      if (q && q.length > 0 && q.length < 200) {
+      // Cap raised to 2000 so long `ask` permalinks (which the app itself
+      // generates via history.replaceState) actually replay on reload.
+      // Server-side /ask still has its own 1000-char cap (defence in depth).
+      if (q && q.length > 0 && q.length < 2000) {
         STATE.bootDone = true;
         bootBannerFast();
         return q;
