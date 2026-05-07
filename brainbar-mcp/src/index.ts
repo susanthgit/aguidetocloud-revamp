@@ -267,9 +267,9 @@ plain: ...
 
 Your answer (start directly, no scaffolding):
 [mde] ships in two plans:
-- Plan 1 — preventative antimalware. Bundled in [m365-e3] and [m365-f3].
-- Plan 2 — Plan 1 plus full EDR. Bundled in [m365-e5] only.
-If you only have [m365-e3], you can add [mde] Plan 2 for ~$5.20/user/mo.
+- Plan 1 — next-gen protection, ASR, manual response actions. Bundled in [m365-e3]; [m365-business-premium] uses Defender for Business, not full MDE P1.
+- Plan 2 — Plan 1 plus full EDR, advanced hunting, automated investigation. Bundled in [m365-e5] only.
+If you only have [m365-e3], you can add [mde] Plan 2 as a standalone add-on.
 
 That's the format every answer should follow.`;
 
@@ -603,12 +603,39 @@ async function handleRpc(req: JsonRpcRequest, env: Env): Promise<JsonRpcResponse
 
 // ── HTTP entry point (Cloudflare Worker) ──────────────────────────────────
 
+// CORS_HEADERS for the open MCP surface (used by remote MCP clients from any origin).
 const CORS_HEADERS: Record<string, string> = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type, Mcp-Session-Id',
   'Access-Control-Expose-Headers': 'Mcp-Session-Id',
 };
+
+// /ask is browser-only and tied to the cmd terminal; restrict to known origins
+// to limit cost-drain attacks against the AI binding (RD-21).
+const ASK_ALLOWED_ORIGINS = new Set([
+  'https://cmd.aguidetocloud.com',
+  'https://www.aguidetocloud.com',
+  'https://aguidetocloud.com',
+  'http://localhost:1314',
+  'http://localhost:1315',
+  'http://127.0.0.1:1314',
+  'http://127.0.0.1:1315',
+]);
+
+function askCorsHeaders(origin: string | null): Record<string, string> {
+  const ok = origin && ASK_ALLOWED_ORIGINS.has(origin);
+  return {
+    'Access-Control-Allow-Origin': ok ? origin! : 'null',
+    'Vary': 'Origin',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+}
+
+// Cap MCP batch fan-out so a hostile or runaway client can't spawn dozens of
+// AI calls in one request (RD-22). 20 is generous for legitimate batches.
+const MCP_BATCH_MAX = 20;
 
 function jsonResponse(body: unknown, init: ResponseInit = {}): Response {
   return new Response(JSON.stringify(body), {
@@ -671,6 +698,10 @@ export default {
     const url = new URL(request.url);
 
     if (request.method === 'OPTIONS') {
+      // /ask gets a stricter origin allow-list; /mcp keeps wildcard for remote clients.
+      if (url.pathname === '/ask') {
+        return new Response(null, { headers: askCorsHeaders(request.headers.get('Origin')) });
+      }
       return new Response(null, { headers: CORS_HEADERS });
     }
 
@@ -686,24 +717,30 @@ export default {
 
     // ── /ask: simple HTTP POST endpoint for cmd terminal (no MCP wrapping) ──
     if (url.pathname === '/ask' && request.method === 'POST') {
+      const askHeaders = askCorsHeaders(request.headers.get('Origin'));
       try {
         const body = await request.json().catch(() => null) as { question?: string } | null;
         if (!body || typeof body.question !== 'string' || !body.question.trim()) {
-          return jsonResponse({ error: 'question required' }, { status: 400 });
+          return new Response(JSON.stringify({ error: 'question required' }), {
+            status: 400,
+            headers: { 'Content-Type': 'application/json', ...askHeaders },
+          });
         }
         const result = await tool_ask(body.question, env);
-        return jsonResponse(result);
+        return new Response(JSON.stringify(result), {
+          headers: { 'Content-Type': 'application/json', ...askHeaders },
+        });
       } catch (err) {
         // Wrap any internal failure (index load, AI hiccup, etc.) in a stable
         // JSON shape so the cmd terminal can render it gracefully without
         // CORS-flavoured network errors. Duck finding #7.
-        return jsonResponse({
+        return new Response(JSON.stringify({
           error: 'ask unavailable',
           answer: 'ask is temporarily unavailable. Try `search <term>` to browse manually, or refresh in a moment.',
           cited_slugs: [],
           entries_used: [],
           model: 'none',
-        }, { status: 503 });
+        }), { status: 503, headers: { 'Content-Type': 'application/json', ...askHeaders } });
       }
     }
 
@@ -718,6 +755,12 @@ export default {
 
       // Single request OR batch
       if (Array.isArray(body)) {
+        if (body.length > MCP_BATCH_MAX) {
+          return jsonResponse(
+            { jsonrpc: '2.0', id: null, error: { code: -32600, message: `batch too large (max ${MCP_BATCH_MAX})` } },
+            { status: 400 }
+          );
+        }
         const responses = await Promise.all(body.map((r) => handleRpc(r as JsonRpcRequest, env)));
         // Filter out empty responses for notifications (id absent)
         const filtered = responses.filter((r) => r.id !== undefined);

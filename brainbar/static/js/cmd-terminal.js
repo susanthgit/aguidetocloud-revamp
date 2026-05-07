@@ -170,6 +170,9 @@
     decode:  [],
     ready:   false,
     decodeReady: false,
+    decodeLoading: null,
+    decodeError: false,
+    indexError: false,
     history: [],
     histIdx: -1,
     draft:   '',
@@ -261,23 +264,35 @@
           STATE.skus = j.skus && typeof j.skus === 'object' ? j.skus : {};
           STATE.ready = true;
           updateStatus();
+          return true;
         }
+        STATE.indexError = true;
+        return false;
       })
-      .catch(() => {});
+      .catch(() => { STATE.indexError = true; return false; });
   }
 
+  // Single in-flight promise + sticky error state means a 404 / network failure
+  // does not cause callers to re-fetch indefinitely (duck blocker — RD-15).
   function loadDecode() {
-    if (STATE.decodeReady) return Promise.resolve();
-    return fetch(decodeUrl(), { credentials: 'omit' })
+    if (STATE.decodeReady) return Promise.resolve(true);
+    if (STATE.decodeError) return Promise.resolve(false);
+    if (STATE.decodeLoading) return STATE.decodeLoading;
+    STATE.decodeLoading = fetch(decodeUrl(), { credentials: 'omit' })
       .then(r => r.ok ? r.json() : null)
       .then(j => {
         if (j && Array.isArray(j.entries)) {
           STATE.decode = j.entries;
           STATE.decodeReady = true;
           updateStatus();
+          return true;
         }
+        STATE.decodeError = true;
+        return false;
       })
-      .catch(() => {});
+      .catch(() => { STATE.decodeError = true; return false; })
+      .finally(() => { STATE.decodeLoading = null; });
+    return STATE.decodeLoading;
   }
 
   // Normalise the live JSON shape to the renderer's expected shape
@@ -396,9 +411,12 @@
   function cmdLs(args) {
     const kind = String(args[0] || 'jargon').toLowerCase();
     if (kind === 'errno' || kind === 'decode') {
+      if (STATE.decodeError) return [
+        { type: 'err', text: '// decode index failed to load — refresh the page or try again later' },
+      ];
       if (!STATE.decodeReady) {
         // Auto-rerun once the lazy index lands — better UX than asking the user to click.
-        loadDecode().then(() => execute('ls errno'));
+        loadDecode().then(ok => { if (ok) execute('ls errno'); });
         return [{ type: 'dim', text: '// loading errno index\u2026' }];
       }
       return [
@@ -438,10 +456,13 @@
     if (kind === 'mc')          return cmdDecodeMc(args.slice(1));
     // Default: existing errno decode (AADSTS / 0x HRESULT / KB)
     const code = args.join(' ');
+    if (STATE.decodeError) return [
+      { type: 'err', text: '// decode index failed to load — refresh the page or try again later' },
+    ];
     if (!STATE.decodeReady) {
       // Auto-rerun once the lazy index lands — fixes the dead-end on fresh
       // permalinks like /?q=decode%20AADSTS50105 (duck finding #4).
-      loadDecode().then(() => execute('decode ' + code));
+      loadDecode().then(ok => { if (ok) execute('decode ' + code); });
       return [{ type: 'dim', text: '// loading errno index\u2026 one moment' }];
     }
     const e = findErrno(code);
@@ -497,24 +518,39 @@
     return blocks;
   }
   // Static map of common Graph endpoints → required least-privilege scope (best-effort, not exhaustive)
+  // GRAPH_SCOPE_MAP is ORDERED — specific endpoints MUST appear before the
+  // generic catch-alls (`/me`, `/users`, `/security/`) or the broad scope wins.
+  // Duck finding RD-12.
   const GRAPH_SCOPE_MAP = [
-    { re: /\/users(\/|$|\?)/i,           scope: 'User.Read.All' },
-    { re: /\/groups(\/|$|\?)/i,          scope: 'Group.Read.All' },
-    { re: /\/applications(\/|$|\?)/i,    scope: 'Application.Read.All' },
-    { re: /\/servicePrincipals(\/|$|\?)/i, scope: 'Application.Read.All' },
-    { re: /\/devices(\/|$|\?)/i,         scope: 'Device.Read.All' },
-    { re: /\/directoryRoles(\/|$|\?)/i,  scope: 'RoleManagement.Read.Directory' },
-    { re: /\/auditLogs\//i,              scope: 'AuditLog.Read.All' },
-    { re: /\/me(\/|$|\?)/i,              scope: 'User.Read' },
-    { re: /\/messages(\/|$|\?)/i,        scope: 'Mail.Read' },
-    { re: /\/calendar/i,                 scope: 'Calendars.Read' },
-    { re: /\/sites(\/|$|\?)/i,           scope: 'Sites.Read.All' },
-    { re: /\/drives(\/|$|\?)/i,          scope: 'Files.Read.All' },
-    { re: /\/teams(\/|$|\?)/i,           scope: 'Team.ReadBasic.All' },
-    { re: /\/security\//i,               scope: 'SecurityEvents.Read.All' },
-    { re: /\/security\/incidents/i,      scope: 'SecurityIncident.Read.All' },
-    { re: /\/identityProtection\//i,     scope: 'IdentityRiskEvent.Read.All' },
-    { re: /\/policies\//i,               scope: 'Policy.Read.All' },
+    // Mail (most common workload — must beat /me and /users)
+    { re: /\/(?:me|users\/[^/]+)\/(?:messages|mailFolders|mailboxSettings)/i, scope: 'Mail.Read' },
+    { re: /\/(?:me|users\/[^/]+)\/sendMail/i,                                  scope: 'Mail.Send' },
+    // Calendar (must beat /me and /users)
+    { re: /\/(?:me|users\/[^/]+)\/(?:calendar|events|calendarView)/i,          scope: 'Calendars.Read' },
+    // Files / Drive (must beat /me, /users, /sites)
+    { re: /\/(?:me|users\/[^/]+|sites\/[^/]+|groups\/[^/]+)\/drive/i,          scope: 'Files.Read.All' },
+    // Identity protection (must beat /identityProtection/)
+    { re: /\/identityProtection\/riskyUsers/i,                                  scope: 'IdentityRiskyUser.Read.All' },
+    { re: /\/identityProtection\/riskDetections/i,                              scope: 'IdentityRiskEvent.Read.All' },
+    { re: /\/identityProtection\//i,                                            scope: 'IdentityRiskEvent.Read.All' },
+    // Security incidents (must beat /security/)
+    { re: /\/security\/incidents/i,                                             scope: 'SecurityIncident.Read.All' },
+    { re: /\/security\/alerts/i,                                                scope: 'SecurityAlert.Read.All' },
+    { re: /\/security\//i,                                                      scope: 'SecurityEvents.Read.All' },
+    // Generic resources (broad workload-only scopes)
+    { re: /\/auditLogs\//i,                  scope: 'AuditLog.Read.All' },
+    { re: /\/directoryRoles(\/|$|\?)/i,      scope: 'RoleManagement.Read.Directory' },
+    { re: /\/policies\//i,                   scope: 'Policy.Read.All' },
+    { re: /\/applications(\/|$|\?)/i,        scope: 'Application.Read.All' },
+    { re: /\/servicePrincipals(\/|$|\?)/i,   scope: 'Application.Read.All' },
+    { re: /\/devices(\/|$|\?)/i,             scope: 'Device.Read.All' },
+    { re: /\/groups(\/|$|\?)/i,              scope: 'Group.Read.All' },
+    { re: /\/teams(\/|$|\?)/i,               scope: 'Team.ReadBasic.All' },
+    { re: /\/sites(\/|$|\?)/i,               scope: 'Sites.Read.All' },
+    { re: /\/drives(\/|$|\?)/i,              scope: 'Files.Read.All' },
+    // Generic identity (must come LAST — these match almost anything)
+    { re: /\/users(\/|$|\?)/i,               scope: 'User.Read.All' },
+    { re: /\/me(\/|$|\?)/i,                  scope: 'User.Read' },
   ];
   function cmdDecodeGraph(args) {
     const url = args.join(' ').trim();
@@ -821,7 +857,7 @@
       { type: 'plain', html: '<code>freshness</code> <span class="dim">audit \u2014 which entries need re-verifying?</span>' },
       { type: 'dim', text: '// last_verified = fact/source last verified (NOT entry last edited).' },
       { type: 'dim', text: '// buckets: <30d = fresh (no badge) \u00b7 30\u201390d = [stale] amber \u00b7 >90d = [ancient] amber + warning' },
-      { type: 'dim', text: '// today: every entry is <30d \u2014 the freshness verb returns empty. As entries age, badges appear automatically.' },
+      { type: 'dim', text: '// if all entries are fresh, freshness returns an empty result; stale/ancient badges appear automatically as last_verified ages.' },
     ];
   }
   function cmdHelpCsv() {
@@ -1009,8 +1045,13 @@
     const placeholderId = 'cmd-ask-pending-' + (++ASK_COUNTER);
     const controller = new AbortController();
     ASK_PENDING.set(placeholderId, controller);
+    // Hard timeout — covers a permanently hung worker. RD-20.
+    const timeoutId = setTimeout(() => {
+      try { controller.abort(); } catch (_) {}
+    }, 20000);
 
     function resolveTo(html) {
+      clearTimeout(timeoutId);
       ASK_PENDING.delete(placeholderId);
       const el = document.getElementById(placeholderId);
       if (!el) return; // placeholder gone (user cleared buffer); silent skip
@@ -1273,9 +1314,12 @@
               : '<span class="dim">' + esc(e.portal_url || e.portal) + '</span>';
           })()
         : '<span class="dim">—</span>';
+      // RD-19: render `fix` as a list when authored as an array (data shape).
+      const fixSrc = Array.isArray(e.fix) ? e.fix : [e.fix || e.fix_path || ''];
+      const fixHtml = fixSrc.filter(Boolean).map(s => '<li>' + esc(s) + '</li>').join('') || '<li class="dim">—</li>';
       div.innerHTML = '<h3 class="cmd-err-h3">' + esc(e.code || '') + '  <span class="cmd-man-name">·  ' + esc(e.short || e.title || '') + '</span></h3>' +
         '<dl><dt>plain english</dt><dd>' + esc(e.plain || e.plain_english || '') + '</dd>' +
-        '<dt>fix</dt><dd>' + esc(e.fix || e.fix_path || '') + '</dd>' +
+        '<dt>fix</dt><dd><ul class="cmd-fix-list">' + fixHtml + '</ul></dd>' +
         '<dt>portal</dt><dd>' + portalCell + '</dd></dl>';
       return div;
     }
@@ -1527,7 +1571,12 @@
   function updateTitleBar(line) {
     if (!titleLabel) return;
     const slug = (line || 'terminal').split(/\s+/).slice(-1)[0];
-    titleLabel.innerHTML = 'cmd <span class="cwd">:: ~/' + esc(slug) + '</span>';
+    // Cap displayed slug — long pasted resource IDs / URLs were overflowing the
+    // CRT title bar on mobile (UX-F). The full input still runs through; this
+    // is presentational only. Strip leading slash so we don't render `~//path`.
+    const cleaned = slug.replace(/^\//, '');
+    const display = cleaned.length > 32 ? cleaned.slice(0, 30) + '\u2026' : cleaned;
+    titleLabel.innerHTML = 'cmd <span class="cwd">:: ~/' + esc(display) + '</span>';
   }
   function showQuickStrip() {
     if (quickStrip && !quickStrip.classList.contains('visible')) quickStrip.classList.add('visible');
@@ -1716,12 +1765,23 @@
     if (!input) return;
     let i = 0;
     let stopped = false;
-    function stop() { stopped = true; }
+    let intervalId = null;
+    function stop() {
+      stopped = true;
+      if (intervalId !== null) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    }
     input.addEventListener('input', stop, { once: true });
     input.addEventListener('keydown', stop, { once: true });
-    setInterval(function () {
+    // Also clear when the page is hidden — avoids zombie intervals on bfcache.
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') stop();
+    }, { once: true });
+    intervalId = setInterval(function () {
       if (stopped) return;
-      if (input.value.length > 0) return; // user has typed something
+      if (input.value.length > 0) return;          // user has typed something
       if (document.activeElement === input) return; // user is composing
       i = (i + 1) % PLACEHOLDER_HINTS.length;
       input.placeholder = PLACEHOLDER_HINTS[i];
@@ -1738,8 +1798,21 @@
     if (expr) expr.open = true;
   }
 
-  loadIndex().then(() => {
+  loadIndex().then(ok => {
     updateStatus();
+    if (!ok || STATE.indexError) {
+      // RD-16: surface a clear failure banner instead of silently booting "0 entries".
+      writeRaw(
+        '<span class="err">[ FAIL ]</span> ' +
+        '<span class="warn">cmd index failed to load.</span> ' +
+        '<a class="cmd-rerun key" data-cmd="reload" onclick="location.reload();return false;">refresh</a>' +
+        '<span class="dim"> · or browse the static index at </span>' +
+        '<a class="cmd-link" href="/all/">/all/</a>',
+        'cmd-line'
+      );
+      input.focus();
+      return;
+    }
     const q = loadFromUrl();
     if (q) execute(q);
     else bootBanner();

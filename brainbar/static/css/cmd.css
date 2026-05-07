@@ -803,8 +803,12 @@ button:focus-visible {
   font-family: var(--font-mono);
   font-weight: 600;
   font-size: 0.95em;
-  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
 }
+/* Boost contrast on the .bb-keyword pill so the green-on-green stays
+   legible without changing brand colour. The border + slightly stronger
+   bg do the work. */
+[data-theme="light"] .bb-keyword { background: rgba(4, 120, 87, 0.14); }
 
 .bb-search-engine-help {
   margin-top: var(--s-4);
@@ -2203,19 +2207,25 @@ body.cmd-fs-locked { overflow: hidden; }
   padding: 10px 14px;
   background: linear-gradient(to bottom, #161a22, #11151c);
   border-bottom: 1px solid #1c2230;
-  font-size: 12px; color: #6272a4;
+  font-size: 12px; color: #8b94be;        /* bumped from #6272a4 — hits 4.5:1 against the gradient */
   position: relative; z-index: 3;
+  gap: 8px; min-width: 0;
 }
-.cmd-v2-home .cmd-titlebar .traffic { display: flex; gap: 6px; align-items: center; }
+.cmd-v2-home .cmd-titlebar .traffic { display: flex; gap: 6px; align-items: center; flex: 0 0 auto; }
 .cmd-v2-home .cmd-titlebar .traffic .light { width: 10px; height: 10px; border-radius: 50%; box-shadow: inset 0 -1px 1px rgba(0,0,0,0.3); }
 .cmd-v2-home .cmd-titlebar .traffic .red    { background: #ff5f57; }
 .cmd-v2-home .cmd-titlebar .traffic .yellow { background: #febc2e; }
 .cmd-v2-home .cmd-titlebar .traffic .green  { background: #28c840; box-shadow: inset 0 -1px 1px rgba(0,0,0,0.3), 0 0 8px rgba(40,200,64,0.6); }
-.cmd-v2-home .cmd-title-label { color: #ffb86c; letter-spacing: 0.04em; margin-left: 12px; }
-.cmd-v2-home .cmd-title-label .cwd { color: #6272a4; font-weight: 400; margin-left: 6px; letter-spacing: 0; }
+.cmd-v2-home .cmd-title-label {
+  color: #ffb86c; letter-spacing: 0.04em; margin-left: 12px;
+  flex: 1 1 auto; min-width: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.cmd-v2-home .cmd-title-label .cwd { color: #8b94be; font-weight: 400; margin-left: 6px; letter-spacing: 0; }
+.cmd-v2-home .cmd-titlebar .actions { flex: 0 0 auto; display: flex; }
 .cmd-v2-home .cmd-titlebar .actions a {
   padding: 4px 10px; border: 1px solid #2d3548; border-radius: 4px;
-  background: #11151c; color: #6272a4;
+  background: #11151c; color: #c5cce4;        /* bumped from #6272a4 — 4.5:1 on #11151c */
   font-size: 11px; letter-spacing: 0.05em; margin-left: 12px;
   text-decoration: none; cursor: pointer;
   transition: all 150ms ease-out;
@@ -2242,7 +2252,7 @@ body.cmd-fs-locked { overflow: hidden; }
 .cmd-v2-home .echo { margin-top: 8px; color: #f8f8f2; }
 .cmd-v2-home .echo .prompt { color: #50fa7b; margin-right: 8px; text-shadow: 0 0 6px rgba(80,250,123,0.5); }
 .cmd-v2-home .ok      { color: #d8dee9; }
-.cmd-v2-home .dim     { color: #6272a4; }
+.cmd-v2-home .dim     { color: #8b94be; }   /* bumped from #6272a4 — 4.5:1 on the CRT bg #06080c */
 .cmd-v2-home .accent  { color: #8be9fd; }
 .cmd-v2-home .heading { color: #ffb86c; font-weight: 600; text-shadow: 0 0 6px rgba(255,184,108,0.4); }
 .cmd-v2-home .err     { color: #ff5555; }
@@ -2264,8 +2274,18 @@ body.cmd-fs-locked { overflow: hidden; }
 .cmd-v2-home .cmd-man h3.cmd-err-h3 { color: #ff5555; }
 .cmd-v2-home .cmd-man-name { color: #6272a4; font-weight: 400; }
 .cmd-v2-home .cmd-man dl { margin: 0; display: grid; grid-template-columns: 110px 1fr; gap: 1px 12px; font-size: 13px; }
-.cmd-v2-home .cmd-man dt { color: #6272a4; }
+.cmd-v2-home .cmd-man dt { color: #8a93b3; }                /* bumped from #6272a4 — 4.5:1 */
 .cmd-v2-home .cmd-man dd { color: #d8dee9; margin: 0; }
+.cmd-v2-home .cmd-man dd ul.cmd-fix-list { list-style: none; padding: 0; margin: 0; }
+.cmd-v2-home .cmd-man dd ul.cmd-fix-list li { padding-left: 18px; position: relative; }
+.cmd-v2-home .cmd-man dd ul.cmd-fix-list li + li { margin-top: 4px; }
+.cmd-v2-home .cmd-man dd ul.cmd-fix-list li::before {
+  content: "•";
+  position: absolute;
+  left: 4px; top: 0;
+  color: #50fa7b;            /* phosphor-green bullet, matches prompt */
+  font-weight: bold;
+}
 
 /* Cowsay */
 .cmd-v2-home .cow { color: #f1fa8c; line-height: 1.2; font-size: 12px; }
@@ -2336,11 +2356,11 @@ body.cmd-fs-locked { overflow: hidden; }
   display: flex; justify-content: space-between;
   padding: 5px 16px; background: #11151c;
   border-top: 1px solid #1c2230;
-  font-size: 10px; color: #6272a4; letter-spacing: 0.02em;
+  font-size: 10px; color: #8b94be; letter-spacing: 0.02em;     /* bumped from #6272a4 — 4.5:1 on #11151c */
   position: relative; z-index: 3;
 }
 .cmd-v2-home .cmd-term-status .seg { margin-right: 14px; }
-.cmd-v2-home .cmd-term-status .seg .lbl { color: #44495e; margin-right: 4px; }
+.cmd-v2-home .cmd-term-status .seg .lbl { color: #8a93b3; margin-right: 4px; }   /* bumped — 4.5:1 on #11151c */
 .cmd-v2-home .cmd-term-status .right .seg { margin-left: 14px; margin-right: 0; }
 .cmd-v2-home .cmd-term-status .kbd {
   display: inline-block; padding: 1px 5px;

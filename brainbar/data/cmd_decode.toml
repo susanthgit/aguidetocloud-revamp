@@ -83,23 +83,24 @@ last_verified = "2026-05-05"
 code          = "AADSTS50158"
 slug          = "aadsts50158"
 namespace     = "AADSTS"
-short         = "Conditional Access requires step-up auth that didn't happen"
-plain_english = "A Conditional Access policy is requiring something extra — multi-factor auth, a compliant device, a managed app, a known network — and the user's session hasn't satisfied it. The sign-in is interrupted, not denied: complete the challenge and try again."
+short         = "External security challenge not satisfied"
+plain_english = "Entra redirected the user to an external security provider (a federation IdP, a third-party MFA service, or a Conditional Access Terms of Use page) and the challenge wasn't completed. Sign-in is interrupted, not denied — complete the external challenge and retry."
 likely_cause  = [
-  "Conditional Access policy requires MFA but the user's session has no recent MFA claim",
-  "Policy requires a compliant or hybrid-joined device, and Intune hasn't reported the device as compliant yet",
-  "Policy requires an approved client app (e.g. Outlook Mobile) but the user is signing in via a browser",
-  "Policy requires a specific authentication strength (e.g. phishing-resistant) the user hasn't completed",
+  "Conditional Access Terms of Use is required and the user hasn't accepted it yet",
+  "Tenant uses a third-party / federated MFA provider and the user didn't satisfy the prompt",
+  "Federation to an on-prem ADFS / external IdP failed mid-flow",
+  "User cancelled or timed out on the external provider's screen",
 ]
 fix = [
-  "Have the user complete the prompted MFA / device check / approved-app sign-in and retry",
-  "Entra portal → Protection → Conditional Access → Sign-in logs → find the failure → expand 'Conditional Access' to see exactly which policy interrupted",
-  "If the device should be compliant: Intune → Devices → All devices → check Compliance state. Force a sync if needed.",
-  "If the failure is repeated: use the What If tool (Conditional Access → What If) to verify the policy fires only when intended",
+  "Have the user complete the external challenge (re-accept Terms of Use, complete the third-party MFA prompt) and retry",
+  "Entra portal → Protection → Conditional Access → Sign-in logs → find the failure → expand 'Conditional Access' to see the policy that interrupted",
+  "If federated: check the federation IdP's logs (ADFS event logs, Okta system log, Ping audit) for the matching failure",
+  "For Terms of Use: Entra → Protection → Conditional Access → Terms of use → confirm assignment + the user hasn't been removed from the audience",
+  "Note: device-compliance failures usually surface as AADSTS53000, not 50158",
 ]
-seen_in       = ["Entra ID interactive sign-in", "Conditional Access policy evaluation", "Microsoft 365 sign-in"]
+seen_in       = ["Entra ID interactive sign-in", "Federated tenant sign-in", "Third-party MFA flows", "Conditional Access Terms of Use"]
 related       = ["aadsts50105", "entra-p1", "pim"]
-learn_url     = "https://learn.microsoft.com/en-us/entra/identity/conditional-access/troubleshoot-conditional-access"
+learn_url     = "https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes"
 last_verified = "2026-05-05"
 
 # ── 4. AADSTS50034 — User not found in directory ──────────────────────────
@@ -135,9 +136,9 @@ short         = "App registration is missing a redirect URI"
 plain_english = "The OAuth/OIDC flow needs to know where to send the user back after authentication. The app didn't send a redirect_uri in the request and there isn't a default one configured on the app registration. App-reg config error, not a user error."
 likely_cause  = [
   "App registration has zero redirect URIs configured for the platform being used (Web / SPA / Mobile)",
-  "App is sending a redirect_uri that doesn't match any registered URI (case-sensitive after the host)",
-  "Custom app doesn't include redirect_uri in the request (some libraries require it explicitly)",
+  "The auth library didn't include redirect_uri in the request and there's no default registered",
   "Redirect URI was registered on the wrong platform tab (e.g. SPA URI registered under Web)",
+  "Note: a redirect_uri value that doesn't MATCH a registered URI surfaces as AADSTS50011, not 900971",
 ]
 fix = [
   "Entra portal → Identity → App registrations → <app> → Authentication → add the platform (Web / SPA / Mobile) and the redirect URI",
@@ -207,25 +208,26 @@ last_verified = "2026-05-05"
 code          = "0x800F0922"
 slug          = "0x800f0922"
 namespace     = "HRESULT"
-short         = "Windows Update install/cleanup failed (often: WinRE partition full)"
-plain_english = "Windows Update couldn't complete component-store install or cleanup. The most common modern cause is a too-small WinRE recovery partition (the KB5034441 incident in 2024 made this famous), but it also covers component-store corruption, .NET install failures, and storage / connectivity blips during install."
+short         = "Windows Update install/cleanup failed (component store / connectivity / disk)"
+plain_english = "Windows Update couldn't complete a component-store install or cleanup. Most common causes are component-store corruption, .NET payload failures, low disk space, or connectivity blocking access to the update servers. (Note: KB5034441's notorious WinRE-too-small failure surfaces as 0x80070643, not 0x800F0922.)"
 likely_cause  = [
-  "WinRE recovery partition is too small for the update (need ~250MB free for safety updates)",
   "Component store (WinSxS) is corrupted",
   "Free disk space too low on system drive",
-  "Network blocking access to WSUS/Microsoft Update during install",
+  "Network blocking access to WSUS / Microsoft Update during install",
   ".NET Framework install failed inside the update payload",
+  "System reserved partition is full or has no free space for staging",
 ]
 fix = [
-  "Check WinRE partition size: reagentc /info — note the partition. If it's <750MB, follow KB5028997 to expand it.",
   "Run DISM repairs: DISM /Online /Cleanup-Image /RestoreHealth then sfc /scannow",
   "Check disk space: at least 20GB free on C: for feature updates, 5GB for security updates",
   "Review the CBS log at C:\\Windows\\Logs\\CBS\\CBS.log around the failure timestamp for the actual blocking error",
+  "Confirm the device can reach Microsoft Update endpoints (or your WSUS) — proxy/firewall changes are a frequent cause",
   "If repeated on a single device: try Microsoft's Show or hide updates troubleshooter, or skip the update via WSUS/Intune for that ring",
+  "If you're chasing a WinRE partition issue (KB5034441 era), look up 0x80070643 — that's the matching error code",
 ]
 seen_in       = ["Windows Update", "WSUS deployments", "Intune Update Rings", "Feature update installs"]
 related       = ["kb5034441"]
-learn_url     = "https://support.microsoft.com/en-us/topic/kb5028997-instructions-to-manually-resize-your-partition-to-install-the-winre-update-400faa27-9343-461c-ada9-24c8229763bf"
+learn_url     = "https://learn.microsoft.com/en-us/troubleshoot/windows-client/setup-upgrade-and-drivers/windows-update-issues-troubleshooting"
 last_verified = "2026-05-05"
 
 # ── 9. 0x80180014 — Intune MDM enrollment failed ──────────────────────────
@@ -233,25 +235,25 @@ last_verified = "2026-05-05"
 code          = "0x80180014"
 slug          = "0x80180014"
 namespace     = "INTUNE"
-short         = "MDM enrollment failed — device data invalid or already enrolled"
-plain_english = "Intune (or another MDM) refused to enrol the device. The 'provided device data is not valid' wording is generic — in practice this is almost always a device that's already enrolled in another MDM, a missing UPN at enrolment time, or an Autopilot config that's pointing the device at the wrong tenant."
+short         = "MDM enrolment blocked — 'organisation does not support this version of Windows'"
+plain_english = "Intune refused to enrol the device with the user-facing message 'Your organization does not support this version of Windows'. The actual cause is almost always Intune's enrolment restrictions blocking Windows MDM enrolment for this user, group, or device type — not a real Windows version problem."
 likely_cause  = [
-  "Device is already enrolled in a different MDM (only one MDM can manage a device at once)",
-  "The user signing in doesn't have an Intune licence",
-  "MDM auto-enrolment scope in Entra excludes this user/group",
-  "Autopilot profile assignment doesn't match this device's hardware hash",
-  "Device clock is off by more than 5 minutes, breaking the enrolment certificate request",
+  "Intune enrolment restriction has Windows (MDM) set to Block on the device-type platform settings",
+  "Personal Windows enrolment is blocked but the device was enrolled as personally-owned",
+  "Enrolment restriction policy is scoped to a group that doesn't include this user",
+  "Custom enrolment restriction blocks specific Windows versions (e.g. Home edition, or below a min build)",
+  "Less common: clock skew >5 min breaks the certificate request — enrolment fails before reaching the restriction policy",
 ]
 fix = [
-  "Confirm the device isn't already enrolled: Settings → Accounts → Access work or school. If a previous enrolment is listed, disconnect it first.",
-  "Verify the user has an Intune licence (Microsoft 365 admin centre → user → Licences and apps)",
-  "Entra portal → Identity → Mobility (MDM and MAM) → Microsoft Intune → MDM user scope = All (or includes this user)",
-  "If Autopilot: confirm the hardware hash is registered AND assigned a deployment profile (Intune → Devices → Enrollment → Devices)",
-  "Sync the device clock with time.windows.com and retry enrolment",
-  "Pull the MDM diagnostics log: Settings → Accounts → Access work or school → Info → Export",
+  "Intune admin centre → Devices → Enrollment → Enrollment restrictions → Default (or the assigned restriction) → Properties → Platform settings → set Windows (MDM) = Allow",
+  "Confirm Personally-owned vs Corporate-owned column is set the way you want — Block on either side will surface as 0x80180014",
+  "If using a custom restriction: check assignments → ensure the user/group is in scope and the restriction allows this Windows edition + build",
+  "Re-run enrolment on the device after the restriction change (it's near-realtime, no Intune sync needed for a fresh enrolment attempt)",
+  "If the user's clock is >5 min off: sync with time.windows.com first, then retry",
+  "Pull MDM diagnostics for confirmation: Settings → Accounts → Access work or school → Info → Export",
 ]
 seen_in       = ["Intune device enrolment", "Autopilot first-run experience", "BYOD self-enrolment via Company Portal"]
-related       = ["mde"]
+related       = []
 learn_url     = "https://learn.microsoft.com/en-us/intune/intune-service/enrollment/troubleshoot-windows-enrollment-errors"
 last_verified = "2026-05-05"
 
@@ -260,22 +262,22 @@ last_verified = "2026-05-05"
 code          = "KB5034441"
 slug          = "kb5034441"
 namespace     = "KB"
-short         = "January 2024 WinRE update — fails with 0x80070643 if WinRE partition is too small"
-plain_english = "A Windows 10 security update from January 2024 that patched a BitLocker bypass (CVE-2024-20666). It became infamous because installation fails with 0x80070643 on most existing devices — the WinRE recovery partition shipped on millions of OEM laptops is too small for the update payload. Microsoft eventually published a manual workaround (KB5028997) to expand the partition."
+short         = "Retired Jan 2024 WinRE update — failed with 0x80070643 if WinRE partition was too small"
+plain_english = "A January 2024 Windows 10 security update for a BitLocker bypass (CVE-2024-20666). It became infamous because installation fails with 0x80070643 (NOT 0x800F0922) on millions of OEM laptops whose WinRE recovery partition was too small. Microsoft has since retired this specific KB; current remediation is to ensure WinRE is healthy (~250MB free, version >= 10.0.19041.3920) — Microsoft now ships the WinRE update via the regular monthly cadence."
 likely_cause  = [
-  "WinRE recovery partition is smaller than 250MB free space",
-  "Recovery partition placement on disk prevents extending it from disk-management UI",
+  "WinRE recovery partition has less than 250MB free space",
+  "WinRE partition placement on disk prevents extending it via Disk Management",
   "WinRE is disabled (reagentc /info shows Windows RE status = Disabled)",
   "Third-party recovery solution has replaced or moved the WinRE partition",
 ]
 fix = [
-  "Run reagentc /info — note WinRE status, location, and partition",
+  "Run reagentc /info — note WinRE status, location, version, and partition",
   "If WinRE is disabled: reagentc /enable",
   "If partition is too small: follow KB5028997 to manually shrink the OS partition by 250MB and extend WinRE",
-  "If you can't expand it (e.g. recovery partition is in the wrong place): disable WinRE, install the update, re-enable WinRE",
-  "For fleets: deploy the KB5028997 PowerShell script via Intune Win32 app or Configuration Manager package before the update lands",
+  "Confirm WinRE version is at least 10.0.19041.3920 (the patched payload). If older, run Windows Update — current monthly LCUs carry the WinRE refresh.",
+  "For fleets: deploy the KB5028997 PowerShell script via Intune Win32 app or Configuration Manager package before WinRE updates land",
 ]
-seen_in       = ["Windows Update", "WSUS catalogue", "Intune Update Rings (Windows 10)", "Manual MSU install"]
+seen_in       = ["Historical: Windows Update on Win10 21H2/22H2", "WSUS catalogue", "Intune Update Rings (Windows 10)", "Manual MSU install"]
 related       = ["0x800f0922"]
 learn_url     = "https://support.microsoft.com/en-us/topic/kb5034441-windows-recovery-environment-update-for-windows-10-version-21h2-and-22h2-january-9-2024-62c04204-aaa5-4fee-a02a-2fdea17075a8"
 last_verified = "2026-05-05"

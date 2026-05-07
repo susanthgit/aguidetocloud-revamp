@@ -15,8 +15,8 @@
 
   --text:               #E6EDF3;
   --text-secondary:     #B1BAC4;
-  --text-muted:         #7D8590;
-  --text-dim:           #545D68;
+  --text-muted:         #8B95A1;          /* bumped from #7D8590 — body-text 4.5:1 on #0B0E14 */
+  --text-dim:           #757F8B;          /* dark-mode chrome — 4.6:1 on #0B0E14 (decode-list bg #0F1218 → 4.5:1) */
 
   --border:             #21262D;
   --border-emphasis:    #30363D;
@@ -96,8 +96,8 @@
 
   --text:               #0F1218;
   --text-secondary:     #2F3640;
-  --text-muted:         #5C6470;
-  --text-dim:           #94A0AB;
+  --text-muted:         #4A5360;          /* bumped — 4.5:1 on #F4F2EC */
+  --text-dim:           #5E6772;          /* bumped — 4.5:1 on #F4F2EC and #FFFFFF (decode-list / all-list chrome) */
 
   --border:             #D9D5C8;          /* slightly darker for cleaner card edges */
   --border-emphasis:    #C9C5BA;

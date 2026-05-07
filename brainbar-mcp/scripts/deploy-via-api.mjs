@@ -1,16 +1,22 @@
 // Direct Cloudflare Worker deploy via REST API.
 // Bypasses wrangler/workerd entirely (the local workerd binary is broken on
 // this Windows ARM64 machine). Uploads the same bundle wrangler would.
+//
+// Auth: prefer environment variables (CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID)
+// to keep secrets out of process listings + shell history (RD-24). The argv
+// fallback exists only for emergency one-off use.
 
 import { readFileSync } from 'node:fs';
 
-const TOKEN = process.argv[2];
-const ACCOUNT_ID = process.argv[3];
+const TOKEN = process.env.CLOUDFLARE_API_TOKEN || process.env.CF_API_TOKEN || process.argv[2];
+const ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID || process.env.CF_ACCOUNT_ID || process.argv[3];
 const SCRIPT_NAME = 'brainbar-mcp';
 const BUNDLE_PATH = 'dist/index.js';
 
 if (!TOKEN || !ACCOUNT_ID) {
-  console.error('usage: node deploy-via-api.mjs <api-token> <account-id>');
+  console.error('error: missing credentials');
+  console.error('preferred: set CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID env vars');
+  console.error('fallback:  node deploy-via-api.mjs <api-token> <account-id>');
   process.exit(2);
 }
 

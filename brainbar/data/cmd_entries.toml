@@ -31,7 +31,7 @@ kind = "product"
 domain = "security"
 plain_english = "The endpoint security layer that watches for malicious behaviour on company devices and lets admins investigate, isolate, or remediate from one console."
 official = "An enterprise endpoint security platform for preventing, detecting, investigating, and responding to advanced threats on Windows, macOS, Linux, iOS, and Android."
-plans = ["Plan 1 — preventative controls + basic EDR (E3, Business Premium)", "Plan 2 — full EDR, automated investigation, threat intelligence, vulnerability management (E5, M365 A5/G5)"]
+plans = ["Plan 1 — next-gen protection + ASR + manual response actions, central management (E3, Business Premium uses Defender for Business)", "Plan 2 — full EDR, advanced hunting, automated investigation and response, threat & vulnerability depth (E5, M365 A5/G5)"]
 portal_url = "https://security.microsoft.com/"
 learn_url = "https://learn.microsoft.com/en-us/defender-endpoint/"
 related_tools = ["copilot-feature-matrix"]
@@ -95,12 +95,11 @@ includes = [
   {slug = "entra-p1", note = "Conditional Access, MFA, SSO"},
   {slug = "mfa", note = "via Entra ID P1"},
   {slug = "conditional-access", note = "via Entra ID P1"},
-  {slug = "mde", note = "Plan 1 only — basic antimalware (full EDR is Plan 2 in E5)"},
-  {slug = "mdo", note = "Plan 1 — Safe Links, Safe Attachments (Plan 2 features in E5)"},
+  {slug = "mde", note = "Plan 1 — next-gen protection, ASR, manual response (full EDR is Plan 2 in E5)"},
   {slug = "intune", note = "Plan 1"},
   {slug = "autopilot", note = ""},
   {slug = "bitlocker", note = "via Windows 11 Enterprise E3"},
-  {slug = "eop", note = ""},
+  {slug = "eop", note = "email hygiene baseline; Defender for Office 365 is a separate add-on"},
   {slug = "compliance-policies", note = "via Intune"},
 ]
 [entries.terms]
@@ -437,7 +436,7 @@ kind = "license"
 domain = "productivity"
 plain_english = "The full enterprise plan — everything in E3 plus advanced security (MDE Plan 2, MDI, MDCA, MDO Plan 2), advanced compliance (Purview), Teams Phone, Power BI Pro, and Audio Conferencing."
 official = "Microsoft 365 E5 combines the productivity apps of Office 365 E5 with Windows 11 Enterprise, Enterprise Mobility + Security E5, and advanced Microsoft 365 security, compliance, voice, and analytics capabilities."
-plans = ["List price: USD /user/month (current). Increases to USD /user/month effective 1 July 2026."]
+plans = ["List price: USD $57/user/month (current). Increases to USD $61/user/month effective 1 July 2026."]
 portal_url = ""
 learn_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/e5"
 related_tools = ["licence-picker"]
@@ -481,7 +480,7 @@ kind = "license"
 domain = "productivity"
 plain_english = "The frontline worker plan — web/mobile Office (no desktop), 2 GB mailbox, Teams, Intune, Entra P1, Defender. Built for shift workers, retail, healthcare staff."
 official = "An affordable solution for firstline workers. Provides cloud-based productivity, security, identity, and device management capabilities optimized for frontline roles."
-plans = ["List price: USD /user/month", "Copilot eligible (since June 2024)"]
+plans = ["List price: USD $8/user/month", "Copilot eligible (since June 2024)"]
 portal_url = ""
 learn_url = "https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-f3"
 related_tools = ["licence-picker"]
@@ -499,7 +498,6 @@ includes = [
   {slug = "entra-p1", note = "Conditional Access, MFA, SSO"},
   {slug = "mfa", note = "via Entra ID P1"},
   {slug = "conditional-access", note = "via Entra ID P1"},
-  {slug = "mde", note = "Plan 1 only"},
   {slug = "intune", note = "Plan 1"},
   {slug = "eop", note = ""},
 ]
@@ -517,7 +515,7 @@ kind = "license"
 domain = "productivity"
 plain_english = "The SMB sweet-spot plan (≤300 users) — Office desktop, Exchange/SharePoint/Teams, Intune, Entra P1, Defender for Business, Defender for Office Plan 1. Most enterprise security features at a quarter of E5 cost."
 official = "An integrated solution for businesses with up to 300 employees. Includes the productivity apps and services in Microsoft 365 Business Standard, plus advanced security and device management."
-plans = ["List price: USD /user/month", "≤300 user cap (organizations larger than this need an enterprise plan)"]
+plans = ["List price: USD $22/user/month", "≤300 user cap (organizations larger than this need an enterprise plan)"]
 portal_url = ""
 learn_url = "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-premium"
 related_tools = ["licence-picker"]
@@ -1223,7 +1221,7 @@ kind = "license"
 domain = "licensing"
 plain_english = "Microsoft's standalone identity-and-device-management bundle — Entra ID, Intune, Azure Information Protection, MDI. Sold separately for orgs that don't want full M365. EMS E3 and E5 align with M365 E3/E5 security tiers."
 official = "A comprehensive cloud solution to address consumerization of IT, BYOD, and SaaS challenges. Combines identity management, device management, and information protection. Includes Microsoft Entra ID, Microsoft Intune, Azure Information Protection, and Microsoft Defender for Identity."
-plans = ["EMS E3 — Entra ID P1, Intune, AIP P1, MDI", "EMS E5 — adds Entra ID P2, MDCA, AIP P2"]
+plans = ["EMS E3 — Entra ID P1, Intune Plan 1, Azure Information Protection P1", "EMS E5 — adds Entra ID P2, Defender for Identity (MDI), Defender for Cloud Apps (MDCA), AIP P2"]
 portal_url = ""
 learn_url = "https://www.microsoft.com/en-us/security/business/microsoft-enterprise-mobility-security"
 related_tools = ["licence-picker"]

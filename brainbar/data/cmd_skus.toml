@@ -108,7 +108,7 @@ sku  = "DEFENDER_ENDPOINT_P1"
 slug = "mde"
 
 [[skus]]
-guid = "871d91ec-ec1a-452b-a83f-bd76c7d770ef"
+guid = "b126b073-72db-4a9d-87a4-b17afe41d4ab"
 sku  = "MDATP_XPLAT"
 slug = "mde"
 
@@ -123,18 +123,18 @@ sku  = "INTUNE_A"
 slug = "intune"
 
 [[skus]]
-guid = "1f2f344a-700d-42c9-9427-5cea1d5d7ba6"
-sku  = "INTUNE_SUITE"
+guid = "a929cd4d-8672-47c9-8664-159c1f322ba8"
+sku  = "Microsoft_Intune_Suite"
 slug = ""
 
 [[skus]]
-guid = "8a0116f1-6385-4a59-a3d1-9c9d72e2e3a1"
-sku  = "DEFENDER_FOR_OFFICE_365_P1"
+guid = "4ef96642-f096-40de-a3e9-d83fb2f90211"
+sku  = "ATP_ENTERPRISE"
 slug = "mdo"
 
 [[skus]]
 guid = "3dd6cf57-d688-4eed-ba52-9e40b5468c3e"
-sku  = "DEFENDER_FOR_OFFICE_365_P2"
+sku  = "THREAT_INTELLIGENCE"
 slug = "mdo"
 
 [[skus]]
@@ -155,11 +155,6 @@ slug = ""
 [[skus]]
 guid = "a403ebcc-fae0-4ca2-8c8c-7a907fd6c235"
 sku  = "POWER_BI_STANDARD"
-slug = ""
-
-[[skus]]
-guid = "f8a1db68-be16-40ed-86d5-cb42ce701560"
-sku  = "POWER_BI_PRO_OLD"
 slug = ""
 
 [[skus]]

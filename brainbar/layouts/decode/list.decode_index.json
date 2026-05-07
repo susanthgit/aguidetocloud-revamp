@@ -16,6 +16,10 @@
     "url"           (printf "/decode/%s/" .slug)
     "last_verified" (.last_verified | default "")
     "seen_in"       (.seen_in | default slice)
+    "likely_cause"  (.likely_cause | default slice)
+    "fix"           (.fix | default slice)
+    "learn_url"     (.learn_url | default "")
+    "related"       (.related | default slice)
   -}}
   {{- $items = $items | append $item -}}
 {{- end -}}
