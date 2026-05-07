@@ -2,13 +2,13 @@
 # BRAIN BAR — DECODE REGISTRY  (errno mode)
 # ═══════════════════════════════════════════════════════════════════════════
 #
-# Single source of truth for every Brain Bar /decode/ entry. The Hugo content
+# Single source of truth for every cmd /decode/ entry. The Hugo content
 # adapter at `content/decode/_content.gotmpl` generates one page per entry at
 # the canonical URL `cmd.aguidetocloud.com/decode/<slug>/`.
 #
 # WHY THIS LIVES IN A SEPARATE FILE FROM cmd_entries.toml:
 #   Per the parallel-session decision (cosmos-todo.md § P2, 5 May 2026):
-#   "Brain Bar is currently a synonym translator. Error codes are a sibling
+#   "cmd is currently a synonym translator. Error codes are a sibling
 #   job. Mixing them into one search dilutes both." → /decode/ is a separate
 #   subsection with its own data + render path. Same planet, different surface.
 #

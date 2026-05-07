@@ -2,7 +2,7 @@
 # BRAIN BAR — ENTRY REGISTRY
 # ═══════════════════════════════════════════════════════════════════════════
 #
-# This is the single source of truth for every Brain Bar entry. The Hugo
+# This is the single source of truth for every cmd entry. The Hugo
 # content adapter at `content/_content.gotmpl` generates one page per entry
 # at the canonical URL `cmd.aguidetocloud.com/<slug>/`.
 #

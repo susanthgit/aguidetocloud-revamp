@@ -19,12 +19,12 @@
 date    = "2026-05-05"
 title   = "errno mode — /decode/ launches"
 tag     = "feature"
-summary = "Brain Bar gains a sibling surface for Microsoft error codes. Paste an AADSTS code, an HRESULT (0x...), an Intune MDM error, or a KB number, and get a plain-english explainer plus the most-likely fix path. Same terminal, same green prompt — red is used only as a severity glyph on the result card."
+summary = "cmd gains a sibling surface for Microsoft error codes. Paste an AADSTS code, an HRESULT (0x...), an Intune MDM error, or a KB number, and get a plain-english explainer plus the most-likely fix path. Same terminal, same green prompt — red is used only as a severity glyph on the result card."
 highlights = [
   "/decode/ landing — instant client-side filter over the curated error catalogue",
   "10 seed codes covering AADSTS · HRESULT · INTUNE · KB",
   "Each entry: in-plain-english · most likely causes · fix path · seen in · related",
-  "Cross-links: related lists detect whether the slug points to a decode entry or an existing brain bar entry, and route accordingly",
+  "Cross-links: related lists detect whether the slug points to a decode entry or an existing cmd entry, and route accordingly",
   "Boot block on home gets // decode error as a new utility link",
 ]
 
@@ -45,7 +45,7 @@ highlights = [
 date    = "2026-05-05"
 title   = "catalogue doubles — 35 → 55 entries"
 tag     = "content"
-summary = "Twenty high-search-volume Microsoft terms added in one push. Brain Bar now has the depth to back up the 'stop googling Microsoft' tagline."
+summary = "Twenty high-search-volume Microsoft terms added in one push. cmd now has the depth to back up the 'stop googling Microsoft' tagline."
 highlights = [
   "New: entra-id, teams, sharepoint, azure, m365, office-365, ems",
   "New: exchange-online, onedrive, viva",
@@ -75,7 +75,7 @@ highlights = [
 date    = "2026-05-05"
 title   = "search got smart"
 tag     = "feature"
-summary = "Search expanded from 6 to 9 ranking tiers. Brain Bar now understands what you mean even when you type something Microsoft doesn't call it."
+summary = "Search expanded from 6 to 9 ranking tiers. cmd now understands what you mean even when you type something Microsoft doesn't call it."
 highlights = [
   "Synonym tier — type 'antivirus' → MDE, 'sso' → Entra P1, 'mdm' → Intune (27 entries seeded)",
   "Multi-token AND-match — 'defender for endpoint' parses across word boundaries",

@@ -4,7 +4,7 @@
 #
 # Brain-Bar-specific presentation. Kept SEPARATE from cmd_entries.toml so
 # that Shift / MCP / Grandma can reuse the entity layer without inheriting
-# Brain Bar voice.
+# cmd voice.
 #
 # RULES (from session 4 May 2026):
 # - Neutral by default. Spicy only when there is genuine conviction.
