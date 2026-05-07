@@ -84,6 +84,30 @@
     <a class="cmd-quick-cmd" data-cmd="clear">clear</a>
   </div>
 
+  {{/* ── FEATURED STRIP — server-rendered for SEO + always visible.
+       8 most-asked entries as real <a> links so search engines + no-JS
+       users get them above the fold. Pulls live data from cmd_entries.toml.
+       ──────────────────────────────────────────────────────────────────── */}}
+  {{ $allEntries := (index hugo.Data "cmd_entries").entries }}
+  {{ $featuredSlugs := slice "mde" "pim" "m365-e3" "m365-e5" "intune" "entra-p1" "m365-copilot" "conditional-access" }}
+  <section class="cmd-featured" aria-label="frequently-asked entries">
+    <p class="cmd-featured-title">// frequently asked — direct links</p>
+    <div class="cmd-featured-grid">
+      {{ range $featuredSlugs }}
+        {{ $slug := . }}
+        {{ range $allEntries }}
+          {{ if eq .slug $slug }}
+            <a href="/{{ .slug }}/" class="cmd-featured-card">
+              <span class="cmd-featured-slug">{{ .slug }}</span>
+              <span class="cmd-featured-name">{{ .name }}</span>
+              <span class="cmd-featured-kind">{{ .kind }}</span>
+            </a>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+
   {{/* ── EXPRESS SEARCH (collapsed) — SSR fallback + mobile support ─── */}}
   <details class="cmd-express-toggle" id="cmd-express">
     <summary>or browse the index — classic search · works on mobile · no-JS fallback</summary>

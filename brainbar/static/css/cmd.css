@@ -2644,3 +2644,68 @@ body.cmd-v2-home-page .bb-brand-name { font-weight: 700; }
   .cmd-v2-home .cmd-titlebar .actions a:not(#cmd-fs-toggle) { display: none; }
   .cmd-v2-home .cmd-titlebar .actions a#cmd-fs-toggle { padding: 3px 7px; font-size: 10px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   cmd v2.4 — Batch 3 P2: Featured cards strip (above-the-fold SEO content)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.cmd-v2-home .cmd-featured {
+  margin: 8px 0 20px;
+}
+.cmd-v2-home .cmd-featured-title {
+  font-size: 13px;
+  color: #5a3a18;
+  margin: 0 0 10px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+.cmd-v2-home .cmd-featured-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.cmd-v2-home .cmd-featured-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  border: 1px solid rgba(140, 100, 60, 0.3);
+  background: rgba(255, 245, 225, 0.6);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 180ms ease-out;
+}
+.cmd-v2-home .cmd-featured-card:hover {
+  border-color: #9a4515;
+  background: rgba(255, 240, 215, 0.95);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(140, 90, 50, 0.15);
+}
+.cmd-v2-home .cmd-featured-card:focus-visible {
+  outline: 2px solid #9a4515;
+  outline-offset: 2px;
+}
+.cmd-v2-home .cmd-featured-slug {
+  color: #9a4515;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+.cmd-v2-home .cmd-featured-name {
+  color: #3a2a1a;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.cmd-v2-home .cmd-featured-kind {
+  color: #8a6a4a;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 2px;
+  opacity: 0.85;
+}
+@media (max-width: 719px) {
+  .cmd-v2-home .cmd-featured-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
