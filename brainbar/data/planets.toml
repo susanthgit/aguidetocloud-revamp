@@ -23,19 +23,19 @@ parent_site       = "https://www.aguidetocloud.com/"
 slug    = "earth"
 name    = "A Guide to Cloud"
 url     = "https://www.aguidetocloud.com/"
-tagline = "the home — certs, tools, mind maps"
+tagline = "free cloud + AI guides for IT pros — tools, certs, blog, videos"
 
 [[planets]]
 slug    = "guided"
 name    = "Guided"
 url     = "https://www.aguidetocloud.com/guided/"
-tagline = "cert prep — affordable practice exams"
+tagline = "practice exams that don't gatekeep — $9, not $79"
 
 [[planets]]
 slug    = "brainbar"
 name    = "CMD"
 url     = "https://cmd.aguidetocloud.com/"
-tagline = "Microsoft jargon decoder"
+tagline = "Microsoft jargon AND error code decoder"
 
 [[planets]]
 slug    = "shift"
@@ -53,7 +53,7 @@ tagline = "AI explained plainly, for everyone"
 slug    = "agentic"
 name    = "Agentic"
 url     = "https://agents.aguidetocloud.com/"
-tagline = "agent cockpit — for techies building with agents"
+tagline = "MCP reviews, recipes, vendor takes — for techies building with agents"
 
 [[planets]]
 slug    = "claw"
