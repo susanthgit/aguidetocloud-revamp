@@ -5,5 +5,4 @@ sitemap:
   priority: 0.9
   changefreq: "weekly"
 lastmod: 2026-04-27
-images: ["images/og/ai-hub.jpg"]
 ---

@@ -6,7 +6,6 @@ layout: "list"
 sitemap:
   priority: 0.9
 lastmod: 2026-04-26
-images: ["images/og/certs/study-guides.jpg"]
 aliases:
   - "/study-guide/"
 ---

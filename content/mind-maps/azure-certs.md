@@ -7,8 +7,6 @@ category: "certifications"
 renderer: "horizontal"
 data_file: "azure_certs"
 lastmod: 2026-05-01
-images:
-  - images/og/mind-maps/azure-certs.jpg
 faq:
   - question: "Which Azure cert should I start with?"
     answer: "Start with AZ-900 (Azure Fundamentals). It requires no prerequisites and gives you a solid foundation in cloud concepts, Azure services, and pricing."

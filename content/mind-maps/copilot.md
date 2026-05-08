@@ -7,8 +7,6 @@ category: "copilot"
 renderer: "radial"
 data_file: "copilot"
 lastmod: 2026-05-01
-images:
-  - images/og/mind-maps/copilot.jpg
 faq:
   - question: "What is Microsoft 365 Copilot?"
     answer: "M365 Copilot is an AI assistant embedded in Microsoft 365 apps like Word, Excel, Teams, and Outlook. It uses GPT-4 and your Microsoft Graph data to help you draft, summarise, analyse, and create content."

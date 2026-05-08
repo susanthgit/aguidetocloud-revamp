@@ -136,6 +136,9 @@ foreach ($f in Get-ChildItem $ContentDir -Recurse -File -Filter '*.md' -ErrorAct
 
   if (-not $title -and -not $desc) { continue }
 
+  # Skip drafts — Hugo doesn't render them in production
+  if ($fm -match '(?m)^draft:\s*true\s*$') { continue }
+
   $titleLen = if ($title) { $title.Length } else { 0 }
   $descLen  = if ($desc)  { $desc.Length  } else { 0 }
   $titleOver = $titleLen -gt $TitleMax

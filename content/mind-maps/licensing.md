@@ -7,8 +7,6 @@ category: "licensing"
 renderer: "waterfall"
 data_file: "licensing"
 lastmod: 2026-05-01
-images:
-  - images/og/mind-maps/licensing.jpg
 faq:
   - question: "What is the difference between Business and Enterprise plans?"
     answer: "Business plans are for organisations up to 300 users with simpler needs. Enterprise plans (E1/E3/E5) support unlimited users and include advanced compliance, security, and analytics features."
