@@ -57,7 +57,7 @@ This is a living document. The AI landscape changes fast — features get added,
 
 - [What Is Microsoft 365 Copilot Chat?](#what-is-microsoft-365-copilot-chat)
 - [Security & Enterprise Data Protection](#security--enterprise-data-protection)
-- [⚠️ Upcoming Changes (April 15, 2026)](#-upcoming-changes-april-15-2026)
+- [⚠️ Upcoming Changes (April 15, 2026)](#upcoming-changes-april-15-2026)
 - **Deep Dive: Copilot Chat Features**
   - [1. The Chat Experience](#1-the-copilot-chat-experience)
   - [2. Upload Documents](#2-upload-documents-for-better-answers)
@@ -309,7 +309,7 @@ When users sign in with their work account, they'll see the **green shield 🛡�
 | **Teams** | Built-in Chat experience |
 | **Outlook** | Side pane and full chat |
 | **Edge Browser** | Copilot side pane |
-| **Word, Excel, PPT** | Side pane (availability depends on tenant size — see [changes above](#-upcoming-changes-april-15-2026)) |
+| **Word, Excel, PPT** | Side pane (availability depends on tenant size — see [changes above](#upcoming-changes-april-15-2026)) |
 
 ### Prompting Matters — A Lot
 

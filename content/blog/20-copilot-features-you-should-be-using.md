@@ -114,10 +114,10 @@ Think of this like a video game. Easy levels first to build confidence, then pro
 
 | Level | What You'll Learn | Time to Try | Vibe |
 |-------|------------------|-------------|------|
-| [🟢 Level 1](#level-1--the-two-minute-wins) | 5 quick wins | 2-10 min each | "Wait, it can do THAT?" |
-| [🔵 Level 2](#level-2--your-apps-just-got-superpowers) | 8 app upgrades | 10 min each | "Why didn't I know this sooner?" |
-| [🟣 Level 3](#level-3--the-power-moves) | 7 power moves | 15 min each | "OK, this is seriously impressive." |
-| [🟡 Level 4](#level-4--the-secret-weapon--whats-next) | 2 features for the brave | varies | "I need to tell my team about this." |
+| [🟢 Level 1](#-level-1--the-two-minute-wins) | 5 quick wins | 2-10 min each | "Wait, it can do THAT?" |
+| [🔵 Level 2](#-level-2--your-apps-just-got-superpowers) | 8 app upgrades | 10 min each | "Why didn't I know this sooner?" |
+| [🟣 Level 3](#-level-3--the-power-moves) | 7 power moves | 15 min each | "OK, this is seriously impressive." |
+| [🟡 Level 4](#-level-4--the-secret-weapon--whats-next) | 2 features for the brave | varies | "I need to tell my team about this." |
 
 **The challenge:** Try one feature from Level 1 today. Just one. If it saves you even five minutes, come back tomorrow for the next one. That's how this works — small wins that compound into something big.
 
