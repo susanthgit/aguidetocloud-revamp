@@ -55,6 +55,8 @@ A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard wo
 
 The **Copilot context menu** in Word now includes **Writing Coaching**, giving you guidance on **structure, flow, and tone** without leaving the document.
 
+{{< margin >}}Word users will love this — start here in any rollout.{{< /margin >}}
+
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> This is like having an editor sitting beside you before you hit send. Instead of rewriting your work for you, Copilot helps you tighten the parts that usually make a draft feel rough or unclear.</p>
 </blockquote>

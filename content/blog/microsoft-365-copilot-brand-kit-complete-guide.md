@@ -35,9 +35,9 @@ tags:
   - governance
 layout: "notebook"
 stamp: "guide"
-intro_note: "↗ for the IT admin asked can we add our logo to Copilot"
+intro_note: "↗ wrote this after two T3 sessions where the same question kept coming up"
 founder_note: |
-  Brand managers and IT admins kept landing in this conversation from opposite directions. This is the post I send to either side that catches them up to the other. The Brand Checker section is the one most people overlook and the one that does the most work.
+  I just wrapped up two Train-the-Trainer sessions and "how do I make Copilot use our brand?" came up in every single one. Brand managers and IT admins kept landing in this conversation from opposite directions. This is the post I send to either side that catches them up to the other. The Brand Checker section is the one most people overlook and the one that does the most work.
 ---
 
 I just wrapped up two Train-the-Trainer sessions on Microsoft 365 Copilot, and one question came up more than any other: **"How do I make Copilot use our brand?"** — followed closely by "What's a Brand Kit?", "How do I create one?", and "Will Copilot actually use our PowerPoint templates?"
@@ -107,7 +107,9 @@ Here's how it maps:
 | 🎨 Interior designers creating new rooms | **Copilot** generating on-brand content |
 | 🏨🏨🏨 Multiple hotel brands under one company | **Multiple Brand Kits** (Corporate, Product, Regional) |
 
-Without a Brand Kit, asking Copilot to "create a customer proposal" gives you generic content. With a Brand Kit, Copilot knows your colours, your logo, your tone of voice, and your template layouts — so the proposal comes out looking like *your* organisation created it.
+Without a Brand Kit, asking Copilot to "create a customer proposal" gives you generic content. With a Brand Kit, {{< hi >}}Copilot knows your colours, your logo, your tone of voice, and your template layouts{{< /hi >}} — so the proposal comes out looking like *your* organisation created it.
+
+{{< margin >}}Skip Brand Kit and every deck looks like Microsoft's defaults.{{< /margin >}}
 
 ```mermaid
 flowchart TD

@@ -41,7 +41,9 @@ founder_note: |
 
 I'll be straight with you — most IT admins I talk to know that Copilot has "some safety stuff built in." But when I ask them how many layers of safety controls they actually have, the answer is usually "one... maybe two?"
 
-You actually have **four**. And understanding which one does what is the difference between a secure Copilot rollout and an uncomfortable conversation with your CISO.
+You actually have **four**. And understanding which one does what is {{< hi >}}the difference between a secure Copilot rollout and an uncomfortable conversation with your CISO{{< /hi >}}.
+
+{{< margin >}}Had this exact conversation last quarter — twice.{{< /margin >}}
 
 This guide covers every content safety lever you have, when to use each one, and exactly how to set them up.
 

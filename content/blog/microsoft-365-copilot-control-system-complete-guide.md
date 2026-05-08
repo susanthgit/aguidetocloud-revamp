@@ -34,7 +34,9 @@ layout: "notebook"
 stamp: "guide"
 intro_note: "↗ for the admin trying to figure out where CCS ends and Agent 365 begins"
 founder_note: |
-  CCS confused me for weeks because Microsoft does not sell it as a product, does not list it on a price page, and yet keeps mentioning it. Once I figured out it is a framework sitting on top of licenses you already own, the whole thing clicked. This is the version I wish I had had earlier.
+  CCS confused me for weeks because Microsoft does not sell it as a product, does not list it on a price page, and yet keeps mentioning it. Once I figured out it is a framework sitting on top of licenses you already own, the whole thing clicked.
+
+  If your boss asks "what is CCS?" in the hallway, point them at the TL;DR table and the hotel analogy. That's the version they'll remember.
 ---
 
 Here's a conversation I keep having. An IT admin tells me: "We've deployed Copilot. It's great. People love it." And then they pause and say: "But my CISO just asked me — how do we actually *govern* this thing?"
@@ -66,7 +68,9 @@ If someone stops you in the hallway and asks "what's the Copilot Control System?
 | **Who needs it** | Everyone using Copilot | Organisations deploying agents at scale |
 | **Where it lives** | M365 Admin, Purview, Defender, SharePoint | M365 Admin Center ("Agents" blade) |
 
-> 📌 **The one-liner to remember:** CCS governs **people using AI**. Agent 365 governs **AI working for people**. Together, they cover the full spectrum.
+> 📌 **The one-liner to remember:** {{< hi >}}CCS governs **people using AI**. Agent 365 governs **AI working for people**.{{< /hi >}} Together, they cover the full spectrum.
+
+{{< margin >}}This is the line I use in every customer call.{{< /margin >}}
 
 ---
 

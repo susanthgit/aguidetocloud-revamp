@@ -122,7 +122,9 @@ If you're short on time and need to run a Copilot Chat training session soon, he
 
 ## What Is Microsoft 365 Copilot Chat?
 
-**Microsoft 365 Copilot Chat** is a **free**, **secure** AI assistant included with every Microsoft 365 subscription. Think of it as your organisation's approved AI chat — protected by enterprise-grade security, available to every user, and completely free.
+**Microsoft 365 Copilot Chat** is a **free**, **secure** AI assistant included with every Microsoft 365 subscription. Think of it as your organisation's approved AI chat — protected by enterprise-grade security, available to every user, and {{< hi >}}completely free{{< /hi >}}.
+
+{{< margin >}}Lead every training with "free" and "secure" — that's the whole pitch.{{< /margin >}}
 
 ```mermaid
 flowchart TD

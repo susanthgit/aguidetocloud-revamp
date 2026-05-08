@@ -53,7 +53,9 @@ Remember when Copilot first launched back in 2023? You could ask it to summarise
 
 Copilot Cowork changes that. Completely.
 
-Instead of being an assistant that waits for your instructions, Cowork is more like a colleague who takes ownership of a task. You describe what you need. It figures out the steps, works across all your M365 apps, and checks in with you before doing anything risky.
+Instead of being an assistant that waits for your instructions, {{< hi >}}Cowork is more like a colleague who takes ownership of a task{{< /hi >}}. You describe what you need. It figures out the steps, works across all your M365 apps, and checks in with you before doing anything risky.
+
+{{< margin >}}This is the difference. Everything else flows from here.{{< /margin >}}
 
 This guide explains everything — in plain language, with real scenarios, and honest opinions on what's great and what's not quite there yet.
 

@@ -34,7 +34,7 @@ tags:
   - checklist
 layout: "notebook"
 stamp: "checklist"
-intro_note: "↗ for the admin who has been told just turn it on"
+intro_note: "↗ wrote this after the third 'we just turned it on and panicked' phone call"
 founder_note: |
   Wrote this after my third customer told me they just turned it on and then panicked about oversharing two weeks later. The data readiness section is the part most teams skip and the part that bites them later. If you read nothing else, read that.
 ---
@@ -87,7 +87,9 @@ flowchart TD
 | **4. Adopt & Train** | Champions program, scenario-based training | Users get Copilot but don't know what to do with it — low adoption, wasted licences |
 | **5. Monitor & Optimise** | Usage dashboards, feedback loops, iterate | You can't prove ROI and can't justify the licence spend |
 
-> **The #1 rule:** Phase 2 (Secure & Govern) should take **more time** than Phase 3 (Configure & Deploy). Most failed deployments rushed past governance.
+> **The #1 rule:** {{< hi >}}Phase 2 (Secure & Govern) should take **more time** than Phase 3 (Configure & Deploy){{< /hi >}}. Most failed deployments rushed past governance.
+
+{{< margin >}}The part teams skip first, then regret first.{{< /margin >}}
 
 ### Quick Admin Answers
 

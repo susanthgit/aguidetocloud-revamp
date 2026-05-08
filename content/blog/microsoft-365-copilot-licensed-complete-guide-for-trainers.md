@@ -85,6 +85,8 @@ This is a living document. Bookmark this page rather than printing it — the AI
 
 The paid licence transforms Copilot from a **web-grounded chat tool** into an **AI assistant that understands your work** — your emails, files, meetings, chats, and organisational context.
 
+{{< margin >}}This one sentence is the trainer's elevator pitch.{{< /margin >}}
+
 ```mermaid
 flowchart TD
     A["M365 Copilot Licence"] --> B["Work Data<br/>via Microsoft Graph"]

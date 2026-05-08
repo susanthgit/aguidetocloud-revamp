@@ -36,7 +36,7 @@ tags:
   - privacy
 layout: "notebook"
 stamp: "explainer"
-intro_note: "↗ wrote this because how does it actually work kept coming up"
+intro_note: "↗ for every CISO who's asked 'where does my data go?'"
 founder_note: |
   Architecture posts usually go one of two ways: marketing slides or vendor whitepapers. I needed something in between. This post explains the seven layers using analogies my mum could follow at the dinner table.
 ---
@@ -68,7 +68,9 @@ So let me try something different. Let me walk you through what happens — step
 If you only have 30 seconds, here's the answer to "is Copilot safe?":
 
 1. **Your data stays inside Microsoft's boundary** — for standard Copilot interactions (no web search, no Anthropic), your data never leaves the Microsoft 365 service boundary. Not once.
-2. **Copilot only sees what YOU can see** — it inherits your Microsoft Graph permissions. If you can't access a file, neither can Copilot. The risk isn't Copilot — it's overshared SharePoint permissions.
+2. **Copilot only sees what YOU can see** — it inherits your Microsoft Graph permissions. If you can't access a file, neither can Copilot. {{< hi >}}The risk isn't Copilot — it's overshared SharePoint permissions{{< /hi >}}.
+
+{{< margin >}}If you remember nothing else from this post, remember this line.{{< /margin >}}
 3. **No data trains AI models** — this is contractual (Microsoft DPA), not just a promise. Applies to both OpenAI and Anthropic. Processing is transient.
 4. **Every interaction is auditable** — prompts, responses, and web searches are logged in Microsoft Purview Audit. Chat history lives in Exchange. eDiscovery works.
 

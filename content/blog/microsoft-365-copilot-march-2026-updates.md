@@ -57,6 +57,8 @@ A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard wo
 
 **Edit with Copilot** in Excel now reaches **Copilot Chat users without a paid licence**, and it also works in the **desktop app on Windows and Mac** — not just on the web. If you do have a paid licence, you can also choose between **OpenAI and Anthropic models** where your organisation allows it.
 
+{{< margin >}}Biggest impact for unlicensed users this month — open it up to anyone with M365.{{< /margin >}}
+
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> This takes one of the most practical Copilot experiences and opens it to far more people. Instead of needing an expensive licence just to tidy a spreadsheet, analyse columns, or reshape a table, more users can now get help directly inside Excel.</p>
 </blockquote>

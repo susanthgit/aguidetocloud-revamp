@@ -51,7 +51,9 @@ Your company has bought M365 Copilot for you. It's sitting right there — in Te
 
 I get it. I was there too.
 
-Then one afternoon I asked Copilot to pull together everything from my last three customer meetings — emails, action items, what was agreed, what was still open. It did it in about 30 seconds. That's when something clicked. My company had handed me a powerful tool and I was barely using it.
+Then one afternoon I asked Copilot to pull together everything from my last three customer meetings — emails, action items, what was agreed, what was still open. It did it in about 30 seconds. {{< hi >}}That's when something clicked.{{< /hi >}} My company had handed me a powerful tool and I was barely using it.
+
+{{< margin >}}My own moment of getting it. Two years in.{{< /margin >}}
 
 This blog is the guide I wish someone had handed me on day one. Not a feature dump. Not a Microsoft slide deck. Just 22 things that actually change how you work — organised as a journey you can take at your own pace.
 

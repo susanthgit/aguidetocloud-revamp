@@ -77,7 +77,9 @@ I wrote this guide because the official docs are spread across three different L
 | **Where does it live?** | Inside M365 Copilot | copilotstudio.microsoft.com | Azure portal |
 | **Cost model** | Per-user licence or metered | Copilot Credits | Consumption (pay-per-token) |
 
-**One sentence:** Start with Agent Builder, graduate to Copilot Studio when you need workflows, and only go to Foundry when you have developers and complex requirements.
+**One sentence:** {{< hi >}}Start with Agent Builder, graduate to Copilot Studio when you need workflows, and only go to Foundry when you have developers and complex requirements.{{< /hi >}}
+
+{{< margin >}}If you only read one line, this is it.{{< /margin >}}
 
 > 📋 **Do these 3 things today:**
 >

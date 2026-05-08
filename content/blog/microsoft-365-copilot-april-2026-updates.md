@@ -59,6 +59,8 @@ A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard wo
 
 Voice in Microsoft 365 Copilot brings a natural, **hands-free conversational experience** to your desktop and mobile devices. Speak directly to Copilot to search for information, catch up between meetings, brainstorm out loud, and do it all in multiple languages — like talking to a colleague who never forgets anything.
 
+{{< margin >}}The headline change this month — voice + "Hey Copilot" wake word.{{< /margin >}}
+
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Not everyone works best by typing. Whether you're multitasking, have accessibility needs, or just think better out loud, voice chat removes the friction between you and Copilot. It's especially powerful for catching up on your day while commuting or moving between meetings.</p>
 </blockquote>

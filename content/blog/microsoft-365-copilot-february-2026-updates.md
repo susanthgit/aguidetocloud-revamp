@@ -57,6 +57,8 @@ A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard wo
 
 **Agent Mode in Excel** is now available to **Copilot Chat users without a paid licence** across **web, Windows, and Mac**. Microsoft is also surfacing it through the **Tools** drop-down in the prompt box, making it easier to discover when you need spreadsheet help.
 
+{{< margin >}}The headline change this month — opens Excel agent to anyone with M365.{{< /margin >}}
+
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> This takes one of the most practical Excel experiences and opens it to far more people. It is a bit like moving a feature out of the VIP lounge and onto the main floor — more users can get spreadsheet help without hitting the premium wall first.</p>
 </blockquote>

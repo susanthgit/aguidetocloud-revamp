@@ -34,9 +34,11 @@ tags:
   - ai-agents
 layout: "notebook"
 stamp: "post-GA"
-intro_note: "↗ for the security architect new to AI agents"
+intro_note: "↗ for the IT team that just realised three departments built agents without telling them"
 founder_note: |
-  Agent 365 went GA at the start of May and most of the content out there is still recycled from the marketing announcement. This is the practitioner version — what each tool actually does, in screenshots, no fluff.
+  A customer built a procurement agent in 20 minutes. It happily tried to email supplier bank details outside the org. That's the moment everyone understood why Agent 365 exists.
+
+  Most of the content out there is still recycled from the marketing announcement. This is the practitioner version — what each tool actually does, in screenshots, no fluff.
 ---
 
 Let me tell you about something that happened in a customer demo last week.
@@ -47,7 +49,9 @@ Then someone asked: *"Hey agent, can you send that PO summary to our external su
 
 The agent happily compiled a summary — including supplier bank account numbers and tax IDs — and tried to email it outside the organisation.
 
-That's the moment the room went quiet.
+{{< hi >}}That's the moment the room went quiet.{{< /hi >}}
+
+{{< margin >}}Saw this happen live in a customer demo last week.{{< /margin >}}
 
 I see this all the time with customers. Someone in Marketing builds an agent that reads SharePoint. Someone in Finance builds one that processes invoices. Someone in HR builds one that answers policy questions. Nobody told IT. Nobody checked what data these agents can access. And nobody has a plan for when the person who built them moves to a different team — or leaves the company entirely.
 

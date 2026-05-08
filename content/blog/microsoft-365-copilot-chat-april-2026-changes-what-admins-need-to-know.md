@@ -36,14 +36,16 @@ tags:
   - news
 layout: "notebook"
 stamp: "heads up"
-intro_note: "← here is what is actually different from April 15"
+intro_note: "← what's changing April 15, before Monday morning"
 founder_note: |
   Two Message Center posts dropped in April that quietly changed Copilot Chat for unlicensed users. Most admins I spoke to had only seen one of the two. This puts both in one place with the licensing implications spelled out.
 ---
 
 If you're an IT admin who gave users free Copilot Chat in Office apps last year and they loved it — I'm sorry, but you're about to have some awkward conversations. Microsoft is pulling it back on **April 15, 2026**.
 
-The good news? It's not as bad as the headline sounds. There's a loophole most people don't know about (WXP agents), and whether your users even notice depends on how big your organisation is.
+The good news? It's not as bad as the headline sounds. {{< hi >}}There's a loophole most people don't know about (WXP agents){{< /hi >}}, and whether your users even notice depends on how big your organisation is.
+
+{{< margin >}}Admins keep missing this — go straight to the WXP section.{{< /margin >}}
 
 Here's the full picture — what's changing, what stays, what you should do before Monday morning.
 
