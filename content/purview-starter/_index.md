@@ -28,7 +28,7 @@ faq:
   - question: "What licence do I need for these features?"
     answer: "Basic sensitivity labels and email DLP are included in Microsoft 365 E3. Teams DLP, endpoint DLP, and auto-labeling require E5 or E5 Compliance. Each starter kit shows its licence requirement upfront, and the Deploy tab groups features by licence tier so you know exactly what works with your current plan."
   - question: "Is my data safe? Does anything leave my browser?"
-    answer: "100% safe. This tool runs entirely in your browser — no data is sent to any server. Your selections are saved in your browser's local storage so they persist between visits. The PowerShell commands are generated client-side. Standard site analytics (Google Analytics, Microsoft Clarity) apply site-wide but never capture your tool-specific inputs."
+    answer: "100% safe. This tool runs entirely in your browser — no data is sent to any server. Your selections are saved in your browser's local storage so they persist between visits. The PowerShell commands are generated client-side. Standard site analytics (Google Analytics) apply site-wide but never capture your tool-specific inputs."
   - question: "Is this tool still being improved?"
     answer: "Yes! We're refining the starter kits, adding new DLP scenarios, and improving the PowerShell export based on feedback. Visit our [feedback page](/feedback/) to share ideas and suggestions."
 ---

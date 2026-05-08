@@ -14,7 +14,7 @@ Every tool on this site runs **100% in your browser**. Your data never leaves yo
 
 ## Analytics We Use
 
-We use two analytics services to understand how visitors use the site so we can improve content and fix issues. **Both are configured for minimal data collection and only activate after you accept the cookie consent banner.**
+We use one analytics service to understand how visitors use the site so we can improve content and fix issues. **It's configured for minimal data collection and only activates after you accept the cookie consent banner.**
 
 ### Google Analytics 4 (GA4)
 
@@ -25,30 +25,22 @@ We use two analytics services to understand how visitors use the site so we can 
 - **Data processor:** Google LLC, under their [privacy policy](https://policies.google.com/privacy)
 - **Retention:** 14 months (Google's default), then automatically deleted
 
-### Microsoft Clarity
-
-- **Project ID:** `w44u6ylgj1`
-- **What it tracks:** Anonymised session recordings (scrolls, clicks), heatmaps, and engagement metrics
-- **What it does NOT track:** Keystrokes in password fields, personal information, or text you type into tool inputs
-- **Masking:** Clarity automatically masks sensitive content by default
-- **Data processor:** Microsoft Corporation, under their [privacy statement](https://privacy.microsoft.com/privacystatement)
+In addition, **Cloudflare Web Analytics** runs on this site as a server-side measurement (no cookies, no personal data, no third-party tracking) — see Cloudflare's [privacy policy](https://www.cloudflare.com/privacypolicy/).
 
 ---
 
 ## Cookies
 
-Both GA4 and Clarity set first-party cookies to distinguish unique visitors and track sessions. These are:
+GA4 sets first-party cookies to distinguish unique visitors and track sessions. These are:
 
 | Cookie | Set By | Purpose | Duration |
 |--------|--------|---------|----------|
 | `_ga` | Google Analytics | Distinguish unique visitors | 2 years |
 | `_ga_*` | Google Analytics | Session state | 2 years |
-| `_clck` | Microsoft Clarity | Visitor ID | 1 year |
-| `_clsk` | Microsoft Clarity | Session tracking | 1 day |
 | `agtc_consent` | This site | Remembers your cookie consent choice | 1 year |
 | `__cf_bm` | Cloudflare | Bot protection | 30 minutes |
 
-Analytics cookies (`_ga`, `_clck`) are **only set after you click Accept** on the consent banner. **No advertising cookies are used.** No data is sold or shared with advertisers.
+Analytics cookies (`_ga`) are **only set after you click Accept** on the consent banner. **No advertising cookies are used.** No data is sold or shared with advertisers.
 
 ---
 
@@ -70,9 +62,8 @@ If a tool claims "nothing leaves your browser" — we mean it. You can verify th
 
 | Service | Used For | Data Shared |
 |---------|----------|-------------|
-| Cloudflare Pages | Hosting | Standard web server logs (IP, user agent) — [Cloudflare privacy policy](https://www.cloudflare.com/privacypolicy/) |
+| Cloudflare Pages | Hosting + Web Analytics | Standard web server logs (IP, user agent), cookieless page-view counts — [Cloudflare privacy policy](https://www.cloudflare.com/privacypolicy/) |
 | Google Analytics 4 | Traffic analytics | Anonymised page views (see above) |
-| Microsoft Clarity | UX analytics | Anonymised session recordings (see above) |
 | YouTube (embedded) | Video content | Subject to [YouTube's terms](https://www.youtube.com/t/terms) — we use `youtube-nocookie.com` to minimise tracking |
 | GitHub Discussions | Feedback portal | Only what you voluntarily submit — [GitHub privacy](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) |
 | Have I Been Pwned | Password breach check (opt-in) | First 5 chars of SHA-1 hash only — [HIBP privacy](https://haveibeenpwned.com/Privacy) |
@@ -88,7 +79,6 @@ Under the **New Zealand Privacy Act 2020**, you have the right to access, correc
 - **Block analytics:** Use any ad blocker (uBlock Origin, Brave browser, etc.) — the site works perfectly without analytics
 - **Clear saved data:** Open your browser's Developer Tools → Application → Local Storage → delete `aguidetocloud.com` entries
 - **Opt out of GA4:** Install [Google's opt-out browser add-on](https://tools.google.com/dlpage/gaoptout)
-- **Opt out of Clarity:** Clarity respects Do Not Track (DNT) headers and Global Privacy Control (GPC) signals
 
 ---
 
@@ -97,7 +87,6 @@ Under the **New Zealand Privacy Act 2020**, you have the right to access, correc
 | Data | Retention |
 |------|-----------|
 | Google Analytics | 14 months, then automatically deleted |
-| Microsoft Clarity | 30 days |
 | Feedback submissions | Indefinite (public GitHub Discussions) |
 | localStorage data | Until you clear it |
 
