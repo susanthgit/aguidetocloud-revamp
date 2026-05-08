@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 08 May 2026 21:14:21 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2026 23:08:19 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Admins may see Microsoft 365 Copilot Chat reports delayed by up to one day within the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1304234</link>
+      <description>[Microsoft 365 Copilot Chat] Admins may see Copilot Chat reports delayed by up to one day within the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CW1304234</guid>
+      <pubDate>Fri, 08 May 2026 21:39:43 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Admins may see Microsoft 365 Copilot reports delayed by up to one day within the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1304233</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Admins may see Copilot reports delayed by up to one day within the Microsoft 365 admin center.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1304233</guid>
+      <pubDate>Fri, 08 May 2026 21:37:39 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to create or use SharePoint Online Copilot embedded agents within Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1301811</link>
@@ -440,24 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1268822</guid>
       <pubDate>Thu, 02 Apr 2026 18:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Viva] Some users may be unable to load Microsoft Viva Insights</title>
-      <link>https://www.aguidetocloud.com/service-health/#MV1268751</link>
-      <description>[Microsoft Viva] Users may have been unable to load Microsoft Viva Insights.</description>
-      <category>Microsoft Viva</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MV1268751</guid>
-      <pubDate>Thu, 02 Apr 2026 16:53:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Users' queries may fail with an error message in Microsoft 365 Copilot Chat</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1268725</link>
-      <description>[Microsoft 365 Copilot Chat] Users' queries may have failed with an error in Copilot Chat.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1268725</guid>
-      <pubDate>Thu, 02 Apr 2026 12:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
