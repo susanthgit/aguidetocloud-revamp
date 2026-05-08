@@ -34,6 +34,11 @@ tags:
   - copilot
   - administration
   - news
+layout: "notebook"
+stamp: "heads up"
+intro_note: "← here is what is actually different from April 15"
+founder_note: |
+  Two Message Center posts dropped in April that quietly changed Copilot Chat for unlicensed users. Most admins I spoke to had only seen one of the two. This puts both in one place with the licensing implications spelled out.
 ---
 
 If you're an IT admin who gave users free Copilot Chat in Office apps last year and they loved it — I'm sorry, but you're about to have some awkward conversations. Microsoft is pulling it back on **April 15, 2026**.

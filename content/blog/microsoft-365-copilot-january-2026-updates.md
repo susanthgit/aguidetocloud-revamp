@@ -20,6 +20,11 @@ faq:
     answer: "Agent Mode in Excel was initially rolling out for paid Copilot users in January 2026. It later became available for Copilot Chat users without a paid licence in subsequent months."
   - question: "What is the Library in the Microsoft 365 Copilot app?"
     answer: "Library is a central, visual-first space in the Microsoft 365 Copilot app where you can access Copilot-generated content like images and pages, as well as content shared with you by colleagues."
+layout: "notebook"
+stamp: "monthly recap"
+intro_note: "← what changed this month, in plain English"
+founder_note: |
+  Every month I read every Message Center post, every blog entry, every Tech Community thread, and condense it into the version I wish someone had handed me. If 30 things changed and only three matter for you, I would rather you know which three.
 ---
 
 January 2026 opens with **30 Microsoft 365 Copilot updates** — from **Writing Coaching in Word** and a new **Model Selector**, to **Agent Mode in Excel**, richer **video creation**, smarter **Copilot Search**, and better sharing across notebooks and pages. Most features are available now, while a second wave is currently rolling out.

@@ -36,6 +36,11 @@ tags:
   - copilot
   - ai
   - productivity
+layout: "notebook"
+stamp: "guide"
+intro_note: "↗ for everyone trying to figure out Cowork before it lands in their org"
+founder_note: |
+  Cowork is the biggest shift since Copilot launched, and the official docs do not quite explain how different it is. This is the version I keep linking customers to when they ask. The agentic harness section is where most of the confusion lives — start there if nothing else.
 ---
 
 <div class="living-doc-banner">

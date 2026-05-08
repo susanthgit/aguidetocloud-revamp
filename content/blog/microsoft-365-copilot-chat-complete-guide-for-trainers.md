@@ -32,6 +32,11 @@ tags:
   - copilot
   - training
   - guide
+layout: "notebook"
+stamp: "train-the-trainer"
+intro_note: "↗ for the trainer rolling out free Copilot Chat next week"
+founder_note: |
+  Free Copilot Chat is the version most people will actually meet first. Trainers keep asking me what to teach, what to skip, and what to call out as this is free, this is not. This is my answer.
 ---
 
 If you're training people on Copilot Chat tomorrow and you're wondering "what exactly am I teaching?" — this guide is for you.

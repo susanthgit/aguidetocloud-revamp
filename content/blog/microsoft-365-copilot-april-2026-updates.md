@@ -22,6 +22,11 @@ faq:
     answer: "The PowerPoint Agent, Excel Agent, and Word Agent are available to Microsoft 365 users with or without a paid Copilot licence, though your admin must enable them. The Planner Agent requires a Copilot licence."
   - question: "What Copilot Connectors were added in April 2026?"
     answer: "Eight new connectors: GitLab Issues, Asana, Monday.com, Guru, Coda, Zendesk Help Center, Egnyte, and Amazon S3."
+layout: "notebook"
+stamp: "monthly recap"
+intro_note: "← what changed this month, in plain English"
+founder_note: |
+  Every month I read every Message Center post, every blog entry, every Tech Community thread, and condense it into the version I wish someone had handed me. If 41 things changed and only three matter for you, I would rather you know which three.
 ---
 
 April 2026 is a massive month for Microsoft 365 Copilot with **41 updates** — including three brand-new productivity agents, a wake word for hands-free access, MCP connector support for admins, and a wave of new third-party Copilot Connectors. Some features first appeared in earlier months and are now broadly available or expanded.

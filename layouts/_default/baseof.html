@@ -74,6 +74,14 @@
     {{ if eq .url $pageURL }}{{ $isToolPage = true }}{{ end }}
   {{ end }}
   {{ if or (eq .Section "blog") (and (eq .Section "cert-tracker") .IsPage) (eq .Section "study-guides") (eq .Section "mind-maps") (and (eq .Section "licensing") .IsPage) (eq .Section "licensing-docs") (eq .Section "free-tools") (eq .RelPermalink "/about/") $isVideoSection $isToolPage }}<link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">{{ end }}
+  {{/* Notebook layout — preload fonts + scoped CSS in <head> to avoid FOUC */}}
+  {{ if eq .Params.layout "notebook" }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Special+Elite&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/zt-notebook.css?v={{ site.Params.cache_version }}">
+  {{ end }}
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">

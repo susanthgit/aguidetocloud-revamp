@@ -5,6 +5,13 @@ date: 2026-04-17
 lastmod: 2026-04-17
 card_tag: "AI Agents"
 tag_class: "ai"
+layout: "notebook"
+stamp: "decision guide"
+intro_note: "← for the customer who asked me this for the third time in one week"
+founder_note: |
+  Microsoft gave us three different ways to build agents. The official docs are split across three Learn sites and none of them put the three side-by-side to help you decide. So I wrote the version I wished I'd had after the first customer asked.
+
+  If you only remember one thing — start with Agent Builder. It's free with Copilot, and you can promote anything you build into Copilot Studio later without losing work.
 faq:
   - question: "Can I start with Agent Builder and move to Copilot Studio later?"
     answer: "Yes. Microsoft built a direct promotion path. You can copy any Agent Builder agent into Copilot Studio. Your instructions and knowledge carry over."

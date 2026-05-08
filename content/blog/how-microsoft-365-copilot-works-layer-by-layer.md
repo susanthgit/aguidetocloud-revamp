@@ -34,6 +34,11 @@ tags:
   - microsoft-365
   - responsible-ai
   - privacy
+layout: "notebook"
+stamp: "explainer"
+intro_note: "↗ wrote this because how does it actually work kept coming up"
+founder_note: |
+  Architecture posts usually go one of two ways: marketing slides or vendor whitepapers. I needed something in between. This post explains the seven layers using analogies my mum could follow at the dinner table.
 ---
 
 I get the same question every time I do a Copilot demo.

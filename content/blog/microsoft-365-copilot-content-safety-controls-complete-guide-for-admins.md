@@ -32,6 +32,11 @@ tags:
   - copilot
   - content-safety
   - governance
+layout: "notebook"
+stamp: "guide"
+intro_note: "↗ for the admin asked is our data safe in Copilot"
+founder_note: |
+  This is the post I keep linking when an admin asks me what the harmful-content toggle actually does. Short version: less than you think, but enough to matter. The bit that surprises everyone is what is always on regardless of toggle settings.
 ---
 
 I'll be straight with you — most IT admins I talk to know that Copilot has "some safety stuff built in." But when I ask them how many layers of safety controls they actually have, the answer is usually "one... maybe two?"

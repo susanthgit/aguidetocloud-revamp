@@ -5,6 +5,13 @@ date: 2026-04-10
 lastmod: 2026-04-10
 card_tag: "Copilot"
 tag_class: "ai"
+layout: "notebook"
+stamp: "draft · v1"
+intro_note: "↗ for me & for you — figured this out for our org first, then wrote it down"
+founder_note: |
+  E7 caught me off guard when it dropped. Took me a weekend of reading licensing PDFs and a few coffees with the EA team to figure out what was actually new versus what was repackaged. This page is the version I wish I'd had before that weekend started.
+
+  If you're reading this because someone in leadership asked *"should we move to E7?"* — start with the [Who should upgrade](#who-should-upgrade) section, then come back to the rest. That's the order I'd recommend.
 faq:
   - question: "What is Microsoft 365 E7?"
     answer: "Microsoft 365 E7, also known as the Frontier Suite, is Microsoft's new top-tier enterprise plan. It bundles Microsoft 365 E5, Microsoft 365 Copilot, Microsoft Entra Suite, and Agent 365 into a single SKU at $99/user/month."
@@ -36,7 +43,9 @@ tags:
 
 Microsoft just announced its biggest licensing shakeup in years. **Microsoft 365 E7** — also called the **"Frontier Suite"** — is a brand-new top-tier plan at $99/user/month that goes live on **May 1, 2026**.
 
-Here's the honest version: if you're already on E5 with a Copilot add-on, E7 is basically a bundle deal that adds two new things — **Agent 365** (governance for AI agents) and the **full Entra Suite** (Zero Trust network access). The question isn't "is E7 good?" — it's "do I need those two things right now?"
+{{< margin >}}I sat with the EA team for an hour to confirm this. The bundle math actually checks out.{{< /margin >}}
+
+Here's the honest version: if you're already on E5 with a Copilot add-on, E7 is basically a bundle deal that adds two new things — {{< hi >}}Agent 365 (governance for AI agents) and the full Entra Suite (Zero Trust network access){{< /hi >}}. The question isn't "is E7 good?" — it's "do I need those two things right now?"
 
 This guide breaks it all down so you can have that conversation with your leadership.
 
@@ -100,7 +109,9 @@ This is the bit that surprises people. E7 doesn't just include Entra ID P2 (whic
 
 ### Agent 365 (The Reason E7 Exists)
 
-This is the big one. [Agent 365](https://www.microsoft.com/en-us/microsoft-agent-365) is a **governance platform for AI agents** — or as I like to explain it, "Intune for AI bots." More in the [deep dive below](#agent-365--why-e7-exists).
+{{< margin >}}If you only read one section, make it this one.{{< /margin >}}
+
+This is the big one. [Agent 365](https://www.microsoft.com/en-us/microsoft-agent-365) is a **governance platform for AI agents** — or as I like to explain it, {{< hi >}}"Intune for AI bots."{{< /hi >}} More in the [deep dive below](#agent-365--why-e7-exists).
 
 ---
 

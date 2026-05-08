@@ -20,6 +20,11 @@ faq:
     answer: "Facilitator helps meeting participants manage tasks and create documents during meetings. It captures action items automatically, lets you assign tasks that sync to Planner, and can draft documents based on the meeting discussion."
   - question: "What Copilot Connectors were added in February 2026?"
     answer: "Eight new connectors: Dropbox, Miro, ServiceNow Knowledge templates, ServiceNow Tickets status updates, Aha!, Shortcut, GitLab Merge Requests, and Bitbucket Pull Requests."
+layout: "notebook"
+stamp: "monthly recap"
+intro_note: "← what changed this month, in plain English"
+founder_note: |
+  Every month I read every Message Center post, every blog entry, every Tech Community thread, and condense it into the version I wish someone had handed me. If 45 things changed and only three matter for you, I would rather you know which three.
 ---
 
 February 2026 is a huge month for Microsoft 365 Copilot with **45 updates** — from **Agent Mode in Excel** reaching Copilot Chat users without a paid licence, to **Copilot Pages getting much smarter**, **Outlook expanding to full inbox and calendar grounding**, and **eight new Copilot Connectors**. Some features are available now, while others are currently rolling out.

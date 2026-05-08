@@ -1,0 +1,223 @@
+{{ define "main" }}
+{{/* ── Blog Notebook POC ──
+     Triggered by frontmatter `layout: "notebook"`.
+     Same 3-col reading-room shell as single.html — adds notebook chrome
+     (paper, hand fonts, scribbles, margin notes, founder note).
+     CSS scoped to .zt-reading--notebook so other posts are unaffected.
+     Fonts + zt-notebook.css are preloaded in <head> via baseof.html. */}}
+
+{{ $wordCount := .WordCount }}
+{{ $readTime := div (add $wordCount 200) 250 }}
+{{ $hasVideo := .Params.youtube_id }}
+{{ $isUpdated := and .Lastmod (ne (.Date.Format "2006-01-02") (.Lastmod.Format "2006-01-02")) }}
+
+<div class="zt-reading zt-reading--notebook">
+  <script>
+    (function(){
+      var r=document.querySelector('.zt-reading');if(!r)return;
+      var fs=localStorage.getItem('zt-reading-font-size');
+      if(fs==='14'||fs==='18'){r.style.setProperty('--reading-font-size',fs+'px');}
+      if(localStorage.getItem('zt-reading-focus')==='1')r.classList.add('zt-reading--focused');
+    })();
+  </script>
+
+  {{/* ── LEFT: TOC sidebar (kept zen, not notebook) ── */}}
+  <aside class="zt-sidebar" aria-label="Table of contents">
+    <nav class="zt-toc">
+      <p class="zt-toc-title">On this page</p>
+      {{ .TableOfContents }}
+    </nav>
+  </aside>
+
+  {{/* ── CENTER: Notebook page ── */}}
+  <article class="zt-reading-content nb-page">
+    {{ partial "blog-prev-next.html" . }}
+
+    {{/* Masthead — like the mockup */}}
+    <header class="nb-masthead">
+      <div class="nb-brand"><span class="nb-strike">draft notes</span> Field Journal</div>
+      <div class="nb-meta-line">Vol. {{ .Date.Format "2006" }} &middot; {{ .Date.Format "2 Jan 2006" }}{{ if .Params.card_tag }} &middot; {{ .Params.card_tag }}{{ end }}</div>
+    </header>
+
+    {{/* Status stamp — explicit `stamp:` frontmatter wins; else auto from age/lastmod */}}
+    {{ $daysSince := div (sub now.Unix .Date.Unix) 86400 }}
+    {{ if .Params.stamp }}
+      <span class="nb-stamp">{{ .Params.stamp }}</span>
+    {{ else if $isUpdated }}
+      <span class="nb-stamp nb-stamp--updated">updated &middot; {{ .Lastmod.Format "2 Jan 2006" }}</span>
+    {{ else if le $daysSince 14 }}
+      <span class="nb-stamp">fresh &middot; v1</span>
+    {{ end }}
+
+    <h1 class="nb-h1">{{ .Title }}<span class="nb-h1-underline" aria-hidden="true"></span></h1>
+
+    {{/* Pen-note hook — author's red-ink one-liner under the title */}}
+    {{ with .Params.intro_note }}
+    <p class="nb-pen-note">{{ . }}</p>
+    {{ end }}
+
+    {{/* Meta line — typewriter style */}}
+    <p class="nb-meta">
+      {{ if .Params.card_tag }}<span class="nb-sticker">{{ .Params.card_tag }}</span>{{ end }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+      <span class="nb-meta-sep">·</span>
+      <span>by <a href="/links/">{{ .Site.Params.author }}</a></span>
+      <span class="nb-meta-sep">·</span>
+      <span>{{ $readTime }} min read</span>
+    </p>
+
+    {{/* Reading toolbar — kept (Sush still wants share, font, focus) */}}
+    <div class="zt-reading-actions">
+      <div class="zt-reading-toolbar">
+        <button aria-label="Share this article" class="zt-toolbar-btn" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href})}else{navigator.clipboard.writeText(location.href).then(function(){this.textContent='✓ Copied';var b=this;setTimeout(function(){b.textContent='Share'},2000)}.bind(this))}">Share</button>
+        <div class="zt-toolbar-group" role="group" aria-label="Font size">
+          <button aria-label="Small text" data-fontsize="14" title="Small">A<small>−</small></button>
+          <button aria-label="Default text" data-fontsize="16" title="Default" class="is-active">A</button>
+          <button aria-label="Large text" data-fontsize="18" title="Large">A<small>+</small></button>
+        </div>
+        <button aria-label="Toggle focus mode" class="zt-toolbar-btn zt-focus-toggle" title="Focus mode">Focus</button>
+      </div>
+    </div>
+
+    {{/* Mobile TOC */}}
+    <details class="zt-toc-mobile">
+      <summary>On this page</summary>
+      <div class="zt-toc-mobile-inner">{{ .TableOfContents }}</div>
+    </details>
+
+    {{ if $hasVideo }}
+    <div class="zt-reading-video-mobile" style="display:none">
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius-md,10px);border:1px solid var(--border,#262626)">
+        <iframe src="https://www.youtube-nocookie.com/embed/{{ .Params.youtube_id }}?rel=0" title="{{ .Title }}" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
+      </div>
+    </div>
+    {{ end }}
+
+    {{/* Article body */}}
+    <div class="zt-reading-body nb-body">
+      {{ .Content }}
+    </div>
+
+    {{/* Resources */}}
+    {{ if .Params.resources }}
+    <div class="zt-reading-resources">
+      <h2>Resources</h2>
+      <ul>
+        {{ range .Params.resources }}<li><a href="{{ .url }}">{{ .name }}</a></li>{{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
+    {{/* Founder note — handwritten closing letter from Sush */}}
+    {{ $founder := .Params.founder_note }}
+    {{ if not $founder }}{{ $founder = "Wrote this because I kept getting the same questions. If it helped, pass it along — that's how this whole thing keeps going." }}{{ end }}
+    <aside class="nb-founder-note" aria-label="A note from Sush">
+      {{ $founder | markdownify }}
+      <span class="nb-sig">— Sush</span>
+    </aside>
+
+    {{ partial "back-nav" (dict "Page" . "URL" "/blog/" "Label" "Blog") }}
+  </article>
+
+  {{/* ── RIGHT: Companion sidebar (kept zen) ── */}}
+  <aside class="zt-companion" aria-label="Related content">
+    {{ if $hasVideo }}
+    <div class="zt-companion-video">
+      <div class="zt-companion-video-player" id="zt-video-player">
+        <iframe src="" data-src="https://www.youtube-nocookie.com/embed/{{ .Params.youtube_id }}?rel=0&autoplay=1" title="{{ .Title }}" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="zt-companion-video-thumb" id="zt-video-thumb" onclick="var p=document.getElementById('zt-video-player'),f=p.querySelector('iframe');f.src=f.dataset.src;p.classList.add('is-active');this.style.display='none';document.getElementById('zt-video-collapse').style.display='block'">
+        <img src="https://i.ytimg.com/vi/{{ .Params.youtube_id }}/mqdefault.jpg" alt="Watch: {{ .Title }}" loading="lazy">
+        <div class="zt-companion-video-play">▶</div>
+      </div>
+      <button class="zt-companion-video-collapse" id="zt-video-collapse" style="display:none" onclick="var p=document.getElementById('zt-video-player'),f=p.querySelector('iframe');f.src='';p.classList.remove('is-active');document.getElementById('zt-video-thumb').style.display='block';this.style.display='none'">Collapse video</button>
+    </div>
+    {{ end }}
+
+    <div class="zt-companion-section">
+      <p class="zt-companion-title">More articles</p>
+      {{ $related := first 5 (where (where .Site.RegularPages "Section" "blog") ".Permalink" "!=" .Permalink) }}
+      {{ range $related }}
+      <a href="{{ .Permalink }}" class="zt-companion-link">
+        <span class="zt-companion-link-tag">{{ with .Params.card_tag }}{{ . }}{{ else }}Blog{{ end }}</span>
+        <span class="zt-companion-link-title">{{ .Title | truncate 55 }}</span>
+      </a>
+      {{ end }}
+    </div>
+
+    <div class="zt-companion-section">
+      <p class="zt-companion-title">Stay updated</p>
+      <div class="zt-companion-cta">
+        <a href="/index.xml" class="zt-companion-cta-btn">RSS</a>
+        <a href="{{ .Site.Params.youtube_channel }}" class="zt-companion-cta-btn" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div class="zt-reading-progress" aria-hidden="true"></div>
+
+<script>
+(function(){
+  var body = document.querySelector('.nb-body');
+  if (!body) return;
+
+  // ── Quiet marks: replace ✅ ✔ ❌ ✗ with handwritten ✓/− (skip Mermaid SVG) ──
+  (function quietMarks(){
+    // Use plain (non-global) regexes for .test() to avoid stateful lastIndex bugs.
+    // Use global regexes only inside .replace() where state isn't shared.
+    var hasYesNo = /[\u2705\u2714\u274C\u2717\u2718]/;
+    var YES_G = /[\u2705\u2714]/g;        // ✅ ✔
+    var NO_G  = /[\u274C\u2717\u2718]/g;  // ❌ ✗ ✘
+    var walker = document.createTreeWalker(body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (!n.nodeValue || !hasYesNo.test(n.nodeValue)) return NodeFilter.FILTER_REJECT;
+        var p = n.parentNode;
+        while (p && p !== body) {
+          if (p.classList && (p.classList.contains('mermaid') || p.classList.contains('nb-mark'))) return NodeFilter.FILTER_REJECT;
+          var tag = p.nodeName;
+          if (tag === 'CODE' || tag === 'PRE' || tag === 'SCRIPT' || tag === 'STYLE' || tag === 'svg' || tag === 'SVG') return NodeFilter.FILTER_REJECT;
+          p = p.parentNode;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(n){
+      var html = n.nodeValue
+        .replace(YES_G, '<span class="nb-mark nb-mark--yes" aria-label="yes">\u2713</span>')
+        .replace(NO_G,  '<span class="nb-mark nb-mark--no" aria-label="no">\u2212</span>');
+      var wrap = document.createElement('span');
+      wrap.innerHTML = html;
+      n.parentNode.replaceChild(wrap, n);
+    });
+  })();
+
+  // ── Heading anchors (red ink) ──
+  body.querySelectorAll('h2[id], h3[id], h4[id]').forEach(function(h) {
+    var link = document.createElement('a');
+    link.href = '#' + h.id; link.className = 'heading-anchor'; link.setAttribute('aria-label', 'Link to this section');
+    link.textContent = '#'; h.appendChild(link);
+  });
+  // ── Code copy (skip mermaid) ──
+  body.querySelectorAll('pre').forEach(function(pre) {
+    if (pre.classList.contains('mermaid')) return;
+    var code = pre.querySelector('code'); if (!code) return;
+    var btn = document.createElement('button'); btn.className = 'code-copy-btn'; btn.textContent = 'Copy';
+    btn.addEventListener('click', function() {
+      navigator.clipboard.writeText(code.textContent).then(function(){btn.textContent='Copied';btn.classList.add('copied');setTimeout(function(){btn.textContent='Copy';btn.classList.remove('copied');},2000);});
+    });
+    pre.style.position='relative'; pre.appendChild(btn);
+  });
+  // ── TOC active highlight ──
+  var tocLinks = document.querySelectorAll('.zt-toc a, .zt-toc-mobile a');
+  var headings = [];
+  tocLinks.forEach(function(link){var id=link.getAttribute('href');if(id&&id.startsWith('#')){var t=document.getElementById(id.substring(1));if(t)headings.push({el:t,link:link});}});
+  if (headings.length > 0) {
+    function update(){var sp=window.scrollY+120,c=headings[0];for(var i=0;i<headings.length;i++)if(headings[i].el.offsetTop<=sp)c=headings[i];tocLinks.forEach(function(l){l.classList.remove('toc-active');});if(c)c.link.classList.add('toc-active');}
+    window.addEventListener('scroll',update,{passive:true}); update();
+  }
+})();
+</script>
+{{ end }}

@@ -32,6 +32,11 @@ tags:
   - copilot
   - deployment
   - checklist
+layout: "notebook"
+stamp: "checklist"
+intro_note: "↗ for the admin who has been told just turn it on"
+founder_note: |
+  Wrote this after my third customer told me they just turned it on and then panicked about oversharing two weeks later. The data readiness section is the part most teams skip and the part that bites them later. If you read nothing else, read that.
 ---
 
 Deploying Copilot is like moving house. You wouldn't throw everything in a truck and hope for the best — you'd sort through your stuff first, label the boxes, and unpack room by room. The organisations that rush past the "sorting" phase are the ones that end up with Copilot surfacing confidential HR documents to people who shouldn't see them.

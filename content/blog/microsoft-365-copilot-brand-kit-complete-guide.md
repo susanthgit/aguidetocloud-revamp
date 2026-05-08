@@ -33,6 +33,11 @@ tags:
   - branding
   - powerpoint
   - governance
+layout: "notebook"
+stamp: "guide"
+intro_note: "↗ for the IT admin asked can we add our logo to Copilot"
+founder_note: |
+  Brand managers and IT admins kept landing in this conversation from opposite directions. This is the post I send to either side that catches them up to the other. The Brand Checker section is the one most people overlook and the one that does the most work.
 ---
 
 I just wrapped up two Train-the-Trainer sessions on Microsoft 365 Copilot, and one question came up more than any other: **"How do I make Copilot use our brand?"** — followed closely by "What's a Brand Kit?", "How do I create one?", and "Will Copilot actually use our PowerPoint templates?"

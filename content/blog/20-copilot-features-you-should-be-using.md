@@ -32,6 +32,11 @@ sitemap:
   priority: 0.8
 aliases:
   - /blog/20-copilot-features-you-should-be-using/
+layout: "notebook"
+stamp: "listicle"
+intro_note: "← the list I wish someone had handed me when I started using Copilot"
+founder_note: |
+  I have been using Copilot daily for over two years and the features that changed how I work were not always the headline ones. This list is in the order I would recommend learning them, not the order Microsoft launches them. The four-week challenge at the end is what got it to stick for me.
 ---
 
 <div class="living-doc-banner">

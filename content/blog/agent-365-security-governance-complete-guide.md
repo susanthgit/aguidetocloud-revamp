@@ -32,6 +32,11 @@ tags:
   - purview
   - defender
   - ai-agents
+layout: "notebook"
+stamp: "post-GA"
+intro_note: "↗ for the security architect new to AI agents"
+founder_note: |
+  Agent 365 went GA at the start of May and most of the content out there is still recycled from the marketing announcement. This is the practitioner version — what each tool actually does, in screenshots, no fluff.
 ---
 
 Let me tell you about something that happened in a customer demo last week.

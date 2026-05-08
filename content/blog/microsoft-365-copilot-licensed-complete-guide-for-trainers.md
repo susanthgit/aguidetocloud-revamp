@@ -32,6 +32,11 @@ tags:
   - copilot
   - licensing
   - training
+layout: "notebook"
+stamp: "train-the-trainer"
+intro_note: "↗ for the change leads who got handed a Copilot rollout this quarter"
+founder_note: |
+  Most train-the-trainer content I find is either an investor deck or a 200-slide product walkthrough. This is the version I would hand to a change lead who has one week to get up to speed. Every section maps to a question I have actually been asked in a customer room.
 ---
 
 This is the guide for people training users on the **paid** Microsoft 365 Copilot licence — the $30/month upgrade that turns Copilot from a chat tool into an AI assistant embedded in every app your users touch.

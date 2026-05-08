@@ -20,6 +20,11 @@ faq:
     answer: "Yes. Copilot in PowerPoint lets you create, edit, and refine presentations through natural conversation directly in the presentation. It connects to your brand kit for templates, images, and compliance checking. Available to Microsoft 365 Copilot-licensed users."
   - question: "What is the Word Agent in Microsoft 365 Copilot?"
     answer: "Word Agent helps you create Word files directly from the M365 Copilot app. It handles research, structure, and formatting for long-form work like strategic plans, policy documents, and technical papers. Available with or without a paid licence."
+layout: "notebook"
+stamp: "monthly recap"
+intro_note: "← what changed this month, in plain English"
+founder_note: |
+  Every month I read every Message Center post, every blog entry, every Tech Community thread, and condense it into the version I wish someone had handed me. If 36 things changed and only three matter for you, I would rather you know which three.
 ---
 
 March 2026 is a huge month for Microsoft 365 Copilot with **36 updates** — from **Edit with Copilot in Excel** for Copilot Chat users, to **meeting scheduling**, **PowerPoint editing**, **voice and memory improvements**, **new connectors**, and **admin controls**. Some features are available now, while others are still rolling out.
