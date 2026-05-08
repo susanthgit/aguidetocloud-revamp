@@ -7,7 +7,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Pomodoro Focus Timer",
-  "description": {{ .Description | jsonify }},
+  "description": {{ .Description | jsonify | safeJS }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "ProductivityApplication",
   "operatingSystem": "Any",
@@ -26,10 +26,10 @@
     {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
     {
       "@type": "Question",
-      "name": {{ $q.question | jsonify }},
+      "name": {{ $q.question | jsonify | safeJS }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {{ $q.answer | jsonify }}
+        "text": {{ $q.answer | jsonify | safeJS }}
       }
     }
     {{ end }}

@@ -8,8 +8,8 @@
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": {{ .Title | jsonify }},
-  "description": {{ .Description | jsonify }},
+  "name": {{ .Title | jsonify | safeJS }},
+  "description": {{ .Description | jsonify | safeJS }},
   "url": "{{ .Permalink }}",
   "isPartOf": {
     "@type": "WebPage",
@@ -21,7 +21,7 @@
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"},
       {"@type": "ListItem", "position": 2, "name": "AI News", "item": "{{ .Site.BaseURL }}ai-news/"},
-      {"@type": "ListItem", "position": 3, "name": {{ .Title | jsonify }}}
+      {"@type": "ListItem", "position": 3, "name": {{ .Title | jsonify | safeJS }}}
     ]
   },
   "publisher": {
@@ -50,7 +50,7 @@
   {{ partial "back-nav" (dict "Page" . "URL" "/ai-news/" "Label" "AI News") }}
 </div>
 <script>
-  window.__ainewsCategoryFilter = {{ .Params.category_filter | jsonify }};
+  window.__ainewsCategoryFilter = {{ .Params.category_filter | jsonify | safeJS }};
 </script>
 <script src="/js/ainews.js?v={{ site.Params.cache_version }}"></script>
 {{ end }}

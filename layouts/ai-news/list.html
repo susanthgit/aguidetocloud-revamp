@@ -14,15 +14,15 @@
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": {{ .Title | jsonify }},
-  "description": {{ .Description | jsonify }},
+  "name": {{ .Title | jsonify | safeJS }},
+  "description": {{ .Description | jsonify | safeJS }},
   "url": "{{ .Permalink }}",
   "publisher": { "@type": "Organization", "name": "A Guide to Cloud & AI", "url": "{{ .Site.BaseURL }}" },
   "breadcrumb": {
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"},
-      {"@type": "ListItem", "position": 2, "name": {{ .Title | jsonify }}}
+      {"@type": "ListItem", "position": 2, "name": {{ .Title | jsonify | safeJS }}}
     ]
   }
 }
@@ -80,7 +80,7 @@
 <script>
 window.__ainewsCategoryConfig = {
   {{ range $key, $val := hugo.Data.ainews_categories }}
-  {{ $val.name | jsonify }}: { emoji: {{ $val.emoji | jsonify }}, color: {{ $val.color | jsonify }} },
+  {{ $val.name | jsonify | safeJS }}: { emoji: {{ $val.emoji | jsonify | safeJS }}, color: {{ $val.color | jsonify | safeJS }} },
   {{ end }}
 };
 </script>

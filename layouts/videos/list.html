@@ -111,7 +111,7 @@
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Video Tutorials — A Guide to Cloud & AI",
-  "description": {{ .Description | jsonify }},
+  "description": {{ .Description | jsonify | safeJS }},
   "url": "{{ .Permalink }}",
   "numberOfItems": {{ len $allVideos }},
   "provider": {

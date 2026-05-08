@@ -3,12 +3,12 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": {{ .Site.Title | jsonify }},
-  "url": {{ .Site.BaseURL | jsonify }},
-  "description": {{ .Site.Params.description | jsonify }},
+  "name": {{ .Site.Title | jsonify | safeJS }},
+  "url": {{ .Site.BaseURL | jsonify | safeJS }},
+  "description": {{ .Site.Params.description | jsonify | safeJS }},
   "author": {
     "@type": "Person",
-    "name": {{ .Site.Params.author | jsonify }}
+    "name": {{ .Site.Params.author | jsonify | safeJS }}
   }
 }
 </script>
@@ -16,13 +16,13 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": {{ .Site.Title | jsonify }},
-  "url": {{ .Site.BaseURL | jsonify }},
-  "logo": {{ printf "%simages/og-default.jpg" .Site.BaseURL | jsonify }},
+  "name": {{ .Site.Title | jsonify | safeJS }},
+  "url": {{ .Site.BaseURL | jsonify | safeJS }},
+  "logo": {{ printf "%simages/og-default.jpg" .Site.BaseURL | jsonify | safeJS }},
   "sameAs": [
-    {{ .Site.Params.youtube_channel | jsonify }},
-    {{ .Site.Params.linkedin | jsonify }},
-    {{ .Site.Params.github | jsonify }}
+    {{ .Site.Params.youtube_channel | jsonify | safeJS }},
+    {{ .Site.Params.linkedin | jsonify | safeJS }},
+    {{ .Site.Params.github | jsonify | safeJS }}
   ]
 }
 </script>
@@ -40,8 +40,8 @@
     {
       "@type": "ListItem",
       "position": {{ add $i 1 }},
-      "name": {{ .name | jsonify }},
-      "url": {{ printf "%s%s" site.BaseURL (strings.TrimPrefix "/" .url) | jsonify }}
+      "name": {{ .name | jsonify | safeJS }},
+      "url": {{ printf "%s%s" site.BaseURL (strings.TrimPrefix "/" .url) | jsonify | safeJS }}
     }{{ end }}
   ]
 }
@@ -52,12 +52,12 @@
 {
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  "name": {{ .Title | jsonify }},
-  "description": {{ with .Description }}{{ . | jsonify }}{{ else }}{{ $.Site.Params.description | jsonify }}{{ end }},
-  "thumbnailUrl": {{ printf "https://img.youtube.com/vi/%s/maxresdefault.jpg" .Params.youtube_id | jsonify }},
+  "name": {{ .Title | jsonify | safeJS }},
+  "description": {{ with .Description }}{{ . | jsonify | safeJS }}{{ else }}{{ $.Site.Params.description | jsonify | safeJS }}{{ end }},
+  "thumbnailUrl": {{ printf "https://img.youtube.com/vi/%s/maxresdefault.jpg" .Params.youtube_id | jsonify | safeJS }},
   "uploadDate": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
-  "embedUrl": {{ printf "https://www.youtube-nocookie.com/embed/%s" .Params.youtube_id | jsonify }},
-  "contentUrl": {{ printf "https://www.youtube.com/watch?v=%s" .Params.youtube_id | jsonify }}
+  "embedUrl": {{ printf "https://www.youtube-nocookie.com/embed/%s" .Params.youtube_id | jsonify | safeJS }},
+  "contentUrl": {{ printf "https://www.youtube.com/watch?v=%s" .Params.youtube_id | jsonify | safeJS }}
 }
 </script>
 {{ end }}
@@ -66,28 +66,28 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": {{ .Title | jsonify }},
-  "description": {{ with .Description }}{{ . | jsonify }}{{ else }}{{ $.Site.Params.description | jsonify }}{{ end }},
+  "headline": {{ .Title | jsonify | safeJS }},
+  "description": {{ with .Description }}{{ . | jsonify | safeJS }}{{ else }}{{ $.Site.Params.description | jsonify | safeJS }}{{ end }},
   "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
   "dateModified": "{{ with .Params.lastmod }}{{ (time .).Format "2006-01-02T15:04:05Z07:00" }}{{ else }}{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}{{ end }}",
   "author": {
     "@type": "Person",
-    "name": {{ .Site.Params.author | jsonify }},
-    "url": {{ printf "%sabout/" .Site.BaseURL | jsonify }}
+    "name": {{ .Site.Params.author | jsonify | safeJS }},
+    "url": {{ printf "%sabout/" .Site.BaseURL | jsonify | safeJS }}
   },
   "publisher": {
     "@type": "Organization",
-    "name": {{ .Site.Title | jsonify }},
+    "name": {{ .Site.Title | jsonify | safeJS }},
     "logo": {
       "@type": "ImageObject",
-      "url": {{ printf "%simages/og-default.jpg" .Site.BaseURL | jsonify }}
+      "url": {{ printf "%simages/og-default.jpg" .Site.BaseURL | jsonify | safeJS }}
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": {{ .Permalink | jsonify }}
+    "@id": {{ .Permalink | jsonify | safeJS }}
   },
-  {{ if .Params.youtube_id }}"image": {{ printf "https://img.youtube.com/vi/%s/maxresdefault.jpg" .Params.youtube_id | jsonify }}{{ else if .Params.images }}"image": {{ printf "%s%s" .Site.BaseURL (index .Params.images 0 | strings.TrimPrefix "/") | jsonify }}{{ else }}"image": {{ printf "%simages/og-default.jpg" .Site.BaseURL | jsonify }}{{ end }},
+  {{ if .Params.youtube_id }}"image": {{ printf "https://img.youtube.com/vi/%s/maxresdefault.jpg" .Params.youtube_id | jsonify | safeJS }}{{ else if .Params.images }}"image": {{ printf "%s%s" .Site.BaseURL (index .Params.images 0 | strings.TrimPrefix "/") | jsonify | safeJS }}{{ else }}"image": {{ printf "%simages/og-default.jpg" .Site.BaseURL | jsonify | safeJS }}{{ end }},
   "wordCount": "{{ .WordCount }}"
 }
 </script>
@@ -101,10 +101,10 @@
     {{ range $i, $item := .Params.faq }}{{ if $i }},{{ end }}
     {
       "@type": "Question",
-      "name": {{ .question | jsonify }},
+      "name": {{ .question | jsonify | safeJS }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {{ .answer | jsonify }}
+        "text": {{ .answer | jsonify | safeJS }}
       }
     }{{ end }}
   ]
@@ -119,9 +119,9 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": {{ .name | jsonify }},
-  "description": {{ .desc | jsonify }},
-  "url": {{ printf "%s%s" site.BaseURL (strings.TrimPrefix "/" .url) | jsonify }},
+  "name": {{ .name | jsonify | safeJS }},
+  "description": {{ .desc | jsonify | safeJS }},
+  "url": {{ printf "%s%s" site.BaseURL (strings.TrimPrefix "/" .url) | jsonify | safeJS }},
   "applicationCategory": "WebApplication",
   "operatingSystem": "Any (Web Browser)",
   "offers": {
@@ -131,7 +131,7 @@
   },
   "author": {
     "@type": "Person",
-    "name": {{ site.Params.author | jsonify }}
+    "name": {{ site.Params.author | jsonify | safeJS }}
   }
 }
 </script>
@@ -181,23 +181,23 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": {{ .Site.BaseURL | jsonify }}
+      "item": {{ .Site.BaseURL | jsonify | safeJS }}
     }{{ if and .Parent (not .Parent.IsHome) }},
     {
       "@type": "ListItem",
       "position": 2,
-      "name": {{ .Parent.Title | jsonify }},
-      "item": {{ .Parent.Permalink | jsonify }}
+      "name": {{ .Parent.Title | jsonify | safeJS }},
+      "item": {{ .Parent.Permalink | jsonify | safeJS }}
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": {{ .Title | jsonify }}
+      "name": {{ .Title | jsonify | safeJS }}
     }{{ else }},
     {
       "@type": "ListItem",
       "position": 2,
-      "name": {{ .Title | jsonify }}
+      "name": {{ .Title | jsonify | safeJS }}
     }{{ end }}
   ]
 }

@@ -180,7 +180,7 @@
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Microsoft 365 Licensing Guides",
-  "description": {{ .Description | jsonify }},
+  "description": {{ .Description | jsonify | safeJS }},
   "url": "{{ .Permalink }}",
   "numberOfItems": {{ len $allPlans }},
   "provider": {

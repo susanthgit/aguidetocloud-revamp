@@ -5,15 +5,15 @@
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "name": {{ .Title | jsonify }},
+  "name": {{ .Title | jsonify | safeJS }},
   "mainEntity": [
     {{ range $i, $faq := .Params.faq }}{{ if $i }},{{ end }}
     {
       "@type": "Question",
-      "name": {{ $faq.question | jsonify }},
+      "name": {{ $faq.question | jsonify | safeJS }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {{ $faq.answer | jsonify }}
+        "text": {{ $faq.answer | jsonify | safeJS }}
       }
     }{{ end }}
   ]

@@ -150,11 +150,11 @@
 {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": {{ $s.name | jsonify }},
-  "description": {{ $s.description | jsonify }},
+  "name": {{ $s.name | jsonify | safeJS }},
+  "description": {{ $s.description | jsonify | safeJS }},
   "url": "{{ .Permalink }}",
-  "brand": { "@type": "Brand", "name": {{ $s.provider | jsonify }} },
-  "category": {{ $cat.name | jsonify }}
+  "brand": { "@type": "Brand", "name": {{ $s.provider | jsonify | safeJS }} },
+  "category": {{ $cat.name | jsonify | safeJS }}
 }
 </script>
 

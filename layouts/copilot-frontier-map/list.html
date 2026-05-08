@@ -52,7 +52,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Copilot Frontier Map",
-  "description": {{ .Description | jsonify }},
+  "description": {{ .Description | jsonify | safeJS }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any",
@@ -67,7 +67,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     {{ range $i, $faq := .Params.faq }}{{ if $i }},{{ end }}
-    { "@type": "Question", "name": {{ $faq.question | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $faq.answer | jsonify }} } }
+    { "@type": "Question", "name": {{ $faq.question | jsonify | safeJS }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $faq.answer | jsonify | safeJS }} } }
     {{ end }}
   ]
 }

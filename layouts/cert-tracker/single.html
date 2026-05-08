@@ -314,15 +314,15 @@
 {
   "@context": "https://schema.org",
   "@type": "Course",
-  "name": {{ printf "%s: %s" .Params.exam_code .Params.exam_title | jsonify }},
-  "description": {{ .Description | jsonify }},
+  "name": {{ printf "%s: %s" .Params.exam_code .Params.exam_title | jsonify | safeJS }},
+  "description": {{ .Description | jsonify | safeJS }},
   "url": "{{ .Permalink }}",
   "provider": {
     "@type": "Organization",
-    "name": {{ $vendorOrgName | jsonify }},
-    "url": {{ $vendorOrgUrl | jsonify }}
+    "name": {{ $vendorOrgName | jsonify | safeJS }},
+    "url": {{ $vendorOrgUrl | jsonify | safeJS }}
   },
-  "educationalLevel": {{ .Params.exam_level | jsonify }},
+  "educationalLevel": {{ .Params.exam_level | jsonify | safeJS }},
   "hasCourseInstance": {
     "@type": "CourseInstance",
     "courseMode": "online"
@@ -338,10 +338,10 @@
     {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
     {
       "@type": "Question",
-      "name": {{ $q.question | jsonify }},
+      "name": {{ $q.question | jsonify | safeJS }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {{ $q.answer | jsonify }}
+        "text": {{ $q.answer | jsonify | safeJS }}
       }
     }{{ end }}
   ]
@@ -351,9 +351,9 @@
 
 <script>
 (function(){
-  var code = {{ .Params.exam_code | jsonify }};
-  var level = {{ .Params.exam_level | jsonify }};
-  var status = {{ (default "active" .Params.exam_status) | jsonify }};
+  var code = {{ .Params.exam_code | jsonify | safeJS }};
+  var level = {{ .Params.exam_level | jsonify | safeJS }};
+  var status = {{ (default "active" .Params.exam_status) | jsonify | safeJS }};
 
   // ── Prep time estimate ──
   var prepEl = document.getElementById("cert-prep-time");

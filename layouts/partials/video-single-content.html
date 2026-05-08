@@ -99,8 +99,8 @@
 {
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  "name": {{ $.Title | jsonify }},
-  "description": {{ $.Description | jsonify }},
+  "name": {{ $.Title | jsonify | safeJS }},
+  "description": {{ $.Description | jsonify | safeJS }},
   "thumbnailUrl": "https://i.ytimg.com/vi/{{ . }}/maxresdefault.jpg",
   "uploadDate": "{{ $.Date.Format "2006-01-02" }}",
   "contentUrl": "https://www.youtube.com/watch?v={{ . }}",

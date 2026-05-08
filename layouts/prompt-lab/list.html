@@ -68,8 +68,8 @@
 </div>
 </div>
 <div data-pagefind-bodyaria-hidden="true" style="display:none"><h2>Prompt Lab</h2><p>Learn 12 advanced AI prompting techniques: Tree of Thought, Prompt Chaining, Skeleton Prompting, Mega Prompting, Self-Ask, Meta Prompting, Self-Reflection, Chain of Verification, Least-to-Most, Generated Knowledge, ReAct, Iterative Refinement.</p></div>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":{{ .Title | jsonify }},"description":{{ .Description | jsonify }},"url":"{{ .Permalink }}","applicationCategory":"EducationalApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-{{ if $faq }}<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{{ range $i, $item := $faq }}{{ if $i }},{{ end }}{"@type":"Question","name":{{ $item.question | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ $item.answer | jsonify }}}}{{ end }}]}</script>{{ end }}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":{{ .Title | jsonify | safeJS }},"description":{{ .Description | jsonify | safeJS }},"url":"{{ .Permalink }}","applicationCategory":"EducationalApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+{{ if $faq }}<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{{ range $i, $item := $faq }}{{ if $i }},{{ end }}{"@type":"Question","name":{{ $item.question | jsonify | safeJS }},"acceptedAnswer":{"@type":"Answer","text":{{ $item.answer | jsonify | safeJS }}}}{{ end }}]}</script>{{ end }}
 <script>window.__plabTechniques={{ $t | jsonify | safeJS }};window.__plabExercises={{ $e | jsonify | safeJS }};window.__plabCombinations={{ $c | jsonify | safeJS }};window.__plabQuiz={{ $q | jsonify | safeJS }};</script>
 <link rel="stylesheet" href="/css/prompt-lab.css?v={{ site.Params.cache_version }}">
 <script defer src="/js/prompt-lab.js?v={{ site.Params.cache_version }}"></script>

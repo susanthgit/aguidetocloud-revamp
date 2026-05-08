@@ -108,10 +108,10 @@
     {{ range $i, $q := . }}{{ if $i }},{{ end }}
     {
       "@type": "Question",
-      "name": {{ $q.question | jsonify }},
+      "name": {{ $q.question | jsonify | safeJS }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {{ $q.answer | jsonify }}
+        "text": {{ $q.answer | jsonify | safeJS }}
       }
     }
     {{ end }}

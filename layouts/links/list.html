@@ -190,7 +190,7 @@
     "@context": "https://schema.org", "@type": "Person",
     "name": "Susanth Sutheesh", "url": "https://www.aguidetocloud.com",
     "image": "https://www.aguidetocloud.com/images/about/headshot.webp",
-    "jobTitle": "Cloud & AI Educator", "description": {{ .Description | jsonify }},
+    "jobTitle": "Cloud & AI Educator", "description": {{ .Description | jsonify | safeJS }},
     "sameAs": ["https://www.youtube.com/@SusanthSutheesh","https://www.youtube.com/@AGuideToCloud","https://www.linkedin.com/in/susanthsutheesh/","https://github.com/susanthgit","https://ko-fi.com/aguidetocloud"]
   }
   </script>

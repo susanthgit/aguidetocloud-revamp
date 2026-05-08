@@ -6,8 +6,8 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": {{ .Title | jsonify }},
-  "description": {{ .Description | jsonify }},
+  "name": {{ .Title | jsonify | safeJS }},
+  "description": {{ .Description | jsonify | safeJS }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any",
@@ -22,7 +22,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
-    { "@type": "Question", "name": {{ $q.question | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $q.answer | jsonify }} } }
+    { "@type": "Question", "name": {{ $q.question | jsonify | safeJS }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $q.answer | jsonify | safeJS }} } }
     {{ end }}
   ]
 }

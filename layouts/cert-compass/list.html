@@ -220,9 +220,9 @@ window.__compassCertTopics = {{ $certTopics | jsonify | safeJS }};
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": {{ .Title | jsonify }},
-  "description": {{ .Description | jsonify }},
-  "url": {{ .Permalink | jsonify }},
+  "name": {{ .Title | jsonify | safeJS }},
+  "description": {{ .Description | jsonify | safeJS }},
+  "url": {{ .Permalink | jsonify | safeJS }},
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Any",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -235,7 +235,7 @@ window.__compassCertTopics = {{ $certTopics | jsonify | safeJS }};
   "@type": "FAQPage",
   "mainEntity": [
     {{ range $i, $f := .Params.faq }}{{ if $i }},{{ end }}
-    { "@type": "Question", "name": {{ $f.question | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $f.answer | jsonify }} } }
+    { "@type": "Question", "name": {{ $f.question | jsonify | safeJS }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $f.answer | jsonify | safeJS }} } }
     {{ end }}
   ]
 }

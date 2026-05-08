@@ -41,16 +41,16 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": {{ .Title | plainify | jsonify }},
+  "name": {{ .Title | plainify | jsonify | safeJS }},
   "url": "{{ .Permalink }}",
-  "description": {{ .Description | jsonify }},
+  "description": {{ .Description | jsonify | safeJS }},
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "isPartOf": { "@type": "WebApplication", "name": "M365 Roadmap Tracker", "url": "https://www.aguidetocloud.com/m365-roadmap/" }
 }
 </script>
-<script>window.__roadmapCategoryFilter = {{ .Params.roadmap_filter | jsonify }};</script>
+<script>window.__roadmapCategoryFilter = {{ .Params.roadmap_filter | jsonify | safeJS }};</script>
 <script src="/js/roadmap.js?v={{ site.Params.cache_version }}"></script>
 
 {{ partial "back-nav" (dict "Page" . "URL" "/m365-roadmap/" "Label" "Full Roadmap") }}

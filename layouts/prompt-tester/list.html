@@ -7,7 +7,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Prompt Tester — A/B Compare Any Two AI Prompts",
-  "description": {{ .Description | jsonify }},
+  "description": {{ .Description | jsonify | safeJS }},
   "url": "{{ .Permalink }}",
   "applicationCategory": "Utility",
   "operatingSystem": "Any",

@@ -142,7 +142,7 @@
   "@type": "WebApplication",
   "name": "Microsoft Service Health Tracker",
   "url": "{{ .Permalink }}",
-  "description": {{ .Description | jsonify }},
+  "description": {{ .Description | jsonify | safeJS }},
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Web",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
