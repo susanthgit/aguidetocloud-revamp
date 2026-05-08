@@ -2,7 +2,7 @@
 title: "M365 Copilot — February 2026: 45 Updates You Should Know"
 description: "All 45 M365 Copilot updates for February 2026 — Agent Mode in Excel for Chat users, Copilot Pages upgrades, Outlook expansion, new connectors."
 date: 2026-02-23
-lastmod: 2026-04-30
+lastmod: 2026-05-08
 youtube_id: "TKr-WB38ixQ"
 card_tag: "What's New"
 tag_class: "ai"

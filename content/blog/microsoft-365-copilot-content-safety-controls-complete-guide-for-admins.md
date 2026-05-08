@@ -2,7 +2,7 @@
 title: "Microsoft 365 Copilot Content Safety Controls for IT Admins"
 description: "How M365 Copilot handles harmful content, sensitivity labels, web search, and admin controls. Step-by-step config, scenarios, best practices."
 date: 2026-04-14
-lastmod: 2026-04-14
+lastmod: 2026-05-08
 card_tag: "Copilot"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins.jpg"]

@@ -2,7 +2,7 @@
 title: "Copilot Control System (CCS) — Plain-English Guide"
 description: "What CCS is, how it differs from Agent 365, and the 3 pillars of M365 AI governance — security, management, measurement."
 date: 2026-04-19
-lastmod: 2026-04-19
+lastmod: 2026-05-08
 card_tag: "Copilot"
 tag_class: "ai"
 faq:

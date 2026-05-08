@@ -38,7 +38,7 @@
                   'spec-phishing-resistant-admins', 'spec-compliant-all-apps', 'spec-token-lifetime', 'spec-azure-management'] }
   ];
 
-  // #13: Popular templates (static — could track via Clarity)
+  // #13: Popular templates (static — could track via analytics)
   const POPULAR_IDS = ['sp-mfa-all', 'sp-block-legacy', 'sp-mfa-admins', 'ent-compliant-device', 'ent-guest-mfa', 'spec-phishing-resistant-admins'];
 
   /* ═══════════════════════════════════════════════════════

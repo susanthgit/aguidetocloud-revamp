@@ -315,7 +315,7 @@
     // Scroll to results
     $results.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    // Clarity tracking
+    // Analytics tracking
     if (window.clarity) window.clarity('event', 'polisher_analyse');
   }
 

@@ -2,7 +2,7 @@
 title: "Microsoft 365 E7 (Frontier Suite) — Plain-English Guide"
 description: "The new $99/user/mo Frontier Suite — what's included, E3/E5/E7 comparison, Agent 365, pricing, GA May 1 2026, licensing essentials."
 date: 2026-04-10
-lastmod: 2026-04-10
+lastmod: 2026-05-08
 card_tag: "Copilot"
 tag_class: "ai"
 layout: "notebook"

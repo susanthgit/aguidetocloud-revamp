@@ -2,7 +2,7 @@
 title: "M365 Copilot Brand Kit — Setup Guide for IT Admins"
 description: "What Brand Kit is, where it works (PowerPoint, Word, Excel, Create tab), how to set it up, build Copilot-ready templates, run Brand Checker."
 date: 2026-04-15
-lastmod: 2026-04-16
+lastmod: 2026-05-08
 card_tag: "Copilot"
 tag_class: "ai"
 faq:

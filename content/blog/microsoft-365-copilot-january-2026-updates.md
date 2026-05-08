@@ -1,8 +1,8 @@
 ---
 title: "M365 Copilot — January 2026: 30 Updates You Should Know"
-description: "All 30 Microsoft 365 Copilot updates for January 2026 — Writing Coaching in Word, Model Selector, Agent Mode in Excel, video creation upgrades, and more."
+description: "All 30 M365 Copilot updates for January 2026 — Writing Coaching in Word, Model Selector, Agent Mode in Excel, video creation upgrades, and more."
 date: 2026-01-18
-lastmod: 2026-04-30
+lastmod: 2026-05-08
 youtube_id: "iDKpW_F18YI"
 card_tag: "What's New"
 tag_class: "ai"

@@ -2,7 +2,7 @@
 title: "M365 Copilot (Licensed) — Train-the-Trainer Guide"
 description: "Train-the-Trainer guide for the licensed M365 Copilot. Every app (Word, Excel, PPT, Outlook, Teams), Researcher, Analyst, agents, rollout tips."
 date: 2026-04-12
-lastmod: 2026-04-12
+lastmod: 2026-05-08
 card_tag: "Copilot"
 tag_class: "ai"
 faq:

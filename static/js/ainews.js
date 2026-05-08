@@ -790,7 +790,7 @@ function isNewSinceLastVisit(publishedStr) {
   } catch (e) { return false; }
 }
 
-// === CLICK ANALYTICS (Microsoft Clarity) ===
+// === CLICK ANALYTICS ===
 function trackArticleClick(category, title) {
   if (window.clarity) {
     window.clarity('event', 'ainews_click', { category: category, title: title.substring(0, 50) });

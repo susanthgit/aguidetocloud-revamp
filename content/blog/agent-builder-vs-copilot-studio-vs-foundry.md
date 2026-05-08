@@ -2,7 +2,7 @@
 title: "Agent Builder vs Copilot Studio vs Foundry — Which Tool?"
 description: "Full comparison with pricing, licensing, and a decision framework — which Microsoft AI agent platform should IT admins pick?"
 date: 2026-04-17
-lastmod: 2026-04-17
+lastmod: 2026-05-08
 card_tag: "AI Agents"
 tag_class: "ai"
 layout: "notebook"

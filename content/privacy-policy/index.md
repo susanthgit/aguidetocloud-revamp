@@ -14,7 +14,7 @@ Every tool on this site runs **100% in your browser**. Your data never leaves yo
 
 ## Analytics We Use
 
-We use one analytics service to understand how visitors use the site so we can improve content and fix issues. **It's configured for minimal data collection and only activates after you accept the cookie consent banner.**
+We use one analytics service to understand how visitors use the site so we can improve content and fix issues. **It's configured for minimal data collection — anonymised IP, no personal data, no cross-site tracking.** No cookie banner: this site doesn't use advertising cookies and doesn't sell your data, so the strict EU-style consent prompt isn't required under New Zealand law. If you'd rather not be counted at all, see *Your Choices & Rights* below.
 
 ### Google Analytics 4 (GA4)
 
@@ -22,10 +22,11 @@ We use one analytics service to understand how visitors use the site so we can i
 - **IP anonymisation:** Enabled (`anonymize_ip: true`) — your full IP address is never stored by Google
 - **What it tracks:** Page views, general traffic patterns, country (approximate), device type, referral source
 - **What it does NOT track:** Your name, email, browsing history outside this site, or any personally identifiable information
+- **When it runs:** On every visit (no consent gate). To opt out, see below.
 - **Data processor:** Google LLC, under their [privacy policy](https://policies.google.com/privacy)
 - **Retention:** 14 months (Google's default), then automatically deleted
 
-In addition, **Cloudflare Web Analytics** runs on this site as a server-side measurement (no cookies, no personal data, no third-party tracking) — see Cloudflare's [privacy policy](https://www.cloudflare.com/privacypolicy/).
+In addition, **Cloudflare Web Analytics** runs on this site as a cookieless, server-side measurement (no cookies, no personal data, no third-party tracking) — see Cloudflare's [privacy policy](https://www.cloudflare.com/privacypolicy/).
 
 ---
 
@@ -37,10 +38,9 @@ GA4 sets first-party cookies to distinguish unique visitors and track sessions. 
 |--------|--------|---------|----------|
 | `_ga` | Google Analytics | Distinguish unique visitors | 2 years |
 | `_ga_*` | Google Analytics | Session state | 2 years |
-| `agtc_consent` | This site | Remembers your cookie consent choice | 1 year |
-| `__cf_bm` | Cloudflare | Bot protection | 30 minutes |
+| `__cf_bm` | Cloudflare | Bot protection (necessary) | 30 minutes |
 
-Analytics cookies (`_ga`) are **only set after you click Accept** on the consent banner. **No advertising cookies are used.** No data is sold or shared with advertisers.
+**No advertising cookies are used.** No data is sold or shared with advertisers. Cloudflare Web Analytics is cookieless.
 
 ---
 
@@ -75,10 +75,9 @@ If a tool claims "nothing leaves your browser" — we mean it. You can verify th
 
 Under the **New Zealand Privacy Act 2020**, you have the right to access, correct, or delete your personal information.
 
-- **Withdraw consent:** Clear the `agtc_consent` value from localStorage and refresh the page — analytics will stop
 - **Block analytics:** Use any ad blocker (uBlock Origin, Brave browser, etc.) — the site works perfectly without analytics
-- **Clear saved data:** Open your browser's Developer Tools → Application → Local Storage → delete `aguidetocloud.com` entries
-- **Opt out of GA4:** Install [Google's opt-out browser add-on](https://tools.google.com/dlpage/gaoptout)
+- **Clear saved data:** Open your browser's Developer Tools → Application → Local Storage → delete `aguidetocloud.com` entries (and Cookies → delete `_ga`/`_ga_*` if you want to be counted as a fresh visitor next time)
+- **Opt out of GA4:** Install [Google's opt-out browser add-on](https://tools.google.com/dlpage/gaoptout) or send the `Do Not Track` / Global Privacy Control signal — modern browsers support both
 
 ---
 
@@ -110,4 +109,4 @@ If you have questions about this policy, reach out via the [Feedback Portal](/fe
 
 ---
 
-*Last updated: April 2026*
+*Last updated: May 2026*
