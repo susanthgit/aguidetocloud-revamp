@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T19:43:05.262106+00:00",
+  "generated_at": "2026-05-08T21:14:21.182867+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
@@ -160,8 +160,8 @@
       "short_name": "Print",
       "icon": "🖨️",
       "total_incidents": 1,
-      "active_incidents": 1,
-      "avg_duration_minutes": 0,
+      "active_incidents": 0,
+      "avg_duration_minutes": 31440,
       "last_incident": "2026-04-14T04:00:00+00:00",
       "classifications": {
         "incident": 1
