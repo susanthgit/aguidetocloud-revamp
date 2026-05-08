@@ -26,7 +26,7 @@
     {{/* Hero card */}}
     <div class="zt-about-hero" id="intro">
       <div class="zt-about-photo-wrap">
-        <img src="/images/about/headshot.webp" alt="Susanth Sutheesh" class="zt-about-headshot" width="140" height="140">
+        {{ partial "picture.html" (dict "src" "/images/about/headshot.webp" "alt" "Susanth Sutheesh" "class" "zt-about-headshot" "width" 140 "height" 140 "loading" "eager") }}
       </div>
       <div class="zt-about-info">
         <h1 class="zt-about-name">Susanth Sutheesh</h1>

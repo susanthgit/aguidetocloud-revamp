@@ -1,0 +1,62 @@
+{{/*
+  picture.html — Renders <picture> with AVIF source + WebP fallback.
+
+  Why: AVIF compresses ~30% smaller than WebP at the same visual quality.
+  scripts/build-images.mjs generates an AVIF sibling for every WebP under
+  /static/images/. This partial emits both, browsers pick the smaller AVIF
+  if supported. Modern browser fallback: if AVIF source is unsupported or
+  missing, the <img> loads (the type-hint short-circuits the source).
+
+  Contract: if you add a new .webp under /static/, run
+    node scripts/build-images.mjs
+  before pushing so the AVIF sibling exists.
+
+  Usage:
+    {{ partial "picture.html" (dict
+        "src" "/images/about/headshot.webp"
+        "alt" "Susanth Sutheesh"
+        "width" 140
+        "height" 140
+        "class" "zt-about-headshot"
+        "loading" "eager"
+    ) }}
+
+  Parameters:
+    src      — WebP path (required, must start with `/`)
+    alt      — alt text (required for accessibility; "" allowed for decorative)
+    width    — pixel width (optional, but strongly recommended for CLS)
+    height   — pixel height (optional, but strongly recommended for CLS)
+    class    — class attribute on <img> (optional)
+    loading  — "eager" | "lazy" (default: lazy)
+    decoding — "sync" | "async" | "auto" (default: async)
+    style    — inline style on <img> (optional)
+    id       — id on <img> (optional)
+*/}}
+
+{{- $src := .src -}}
+{{- $alt := .alt | default "" -}}
+{{- $width := .width -}}
+{{- $height := .height -}}
+{{- $class := .class | default "" -}}
+{{- $loading := .loading | default "lazy" -}}
+{{- $decoding := .decoding | default "async" -}}
+{{- $style := .style | default "" -}}
+{{- $id := .id | default "" -}}
+
+{{- $isWebp := hasSuffix (lower $src) ".webp" -}}
+{{- $avifSrc := "" -}}
+{{- if $isWebp -}}{{- $avifSrc = replaceRE `\.webp$` ".avif" $src -}}{{- end -}}
+
+{{- $imgAttrs := printf `src=%q alt=%q decoding=%q loading=%q` $src $alt $decoding $loading -}}
+{{- if $width }}{{ $imgAttrs = printf `%s width="%v"` $imgAttrs $width }}{{ end -}}
+{{- if $height }}{{ $imgAttrs = printf `%s height="%v"` $imgAttrs $height }}{{ end -}}
+{{- if $class }}{{ $imgAttrs = printf `%s class=%q` $imgAttrs $class }}{{ end -}}
+{{- if $style }}{{ $imgAttrs = printf `%s style=%q` $imgAttrs $style }}{{ end -}}
+{{- if $id }}{{ $imgAttrs = printf `%s id=%q` $imgAttrs $id }}{{ end -}}
+
+{{- if $isWebp -}}
+<picture><source srcset="{{ $avifSrc }}" type="image/avif"><img {{ $imgAttrs | safeHTMLAttr }}></picture>
+{{- else -}}
+<img {{ $imgAttrs | safeHTMLAttr }}>
+{{- end -}}
+

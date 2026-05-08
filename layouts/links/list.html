@@ -205,7 +205,7 @@
     <!-- Identity -->
     <div class="identity">
       <div class="avatar">
-        <img src="/images/about/headshot.webp" alt="Susanth Sutheesh" width="88" height="88" loading="eager">
+        {{ partial "picture.html" (dict "src" "/images/about/headshot.webp" "alt" "Susanth Sutheesh" "width" 88 "height" 88 "loading" "eager") }}
       </div>
       <h1 class="name">Susanth Sutheesh</h1>
       <p class="brand">A Guide to Cloud & AI</p>

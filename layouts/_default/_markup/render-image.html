@@ -1,0 +1,21 @@
+{{/*
+  render-image.html — Markdown image render hook.
+
+  When a markdown page writes `![alt](path.webp)`, Hugo routes through this
+  template. We auto-emit a <picture> with AVIF source + WebP fallback for
+  any .webp source. scripts/build-images.mjs guarantees the AVIF sibling
+  exists in static/.
+
+  Other formats (PNG, JPG, GIF, SVG) flow through unchanged.
+*/}}
+
+{{- $dest := .Destination | safeURL -}}
+{{- $alt := .PlainText -}}
+{{- $title := .Title -}}
+
+{{- if hasSuffix (lower $dest) ".webp" -}}
+  {{- $avifSrc := replaceRE `\.webp$` ".avif" $dest -}}
+<picture><source srcset="{{ $avifSrc }}" type="image/avif"><img src="{{ $dest }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async"></picture>
+{{- else -}}
+<img src="{{ $dest }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+{{- end -}}
