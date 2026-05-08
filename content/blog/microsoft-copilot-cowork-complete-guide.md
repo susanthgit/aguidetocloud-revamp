@@ -1,6 +1,6 @@
 ---
-title: "Microsoft Copilot Cowork — The Complete Guide to AI That Actually Does the Work"
-description: "Everything you need to know about Copilot Cowork — Microsoft's biggest AI leap since 2023. Simple explanation, real-world scenarios for every role, how it differs from regular Copilot, what an agentic harness is, Frontier access, and how it compares to Claude Cowork."
+title: "Microsoft Copilot Cowork — Plain-English Guide"
+description: "Plain-English guide to Copilot Cowork — Microsoft's biggest AI leap since 2023. Real-world scenarios, how it differs from regular Copilot."
 date: 2026-04-22
 lastmod: 2026-04-22
 card_tag: "Copilot"

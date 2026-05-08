@@ -1,6 +1,6 @@
 ---
-title: "22 M365 Copilot Features You're Probably Not Using (2026 Update)"
-description: "The honest, plain-English guide to Microsoft 365 Copilot — 22 features organised as a journey from quick wins to power moves. Sample prompts, real customer case studies, custom templates, and a 4-week challenge to actually build the habit."
+title: "22 M365 Copilot Features You're Probably Not Using"
+description: "22 M365 Copilot features as a journey from quick wins to power moves. Sample prompts, real customer cases, custom templates."
 date: 2026-04-21
 lastmod: 2026-05-06
 card_tag: "Guide"

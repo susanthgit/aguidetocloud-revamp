@@ -1,6 +1,6 @@
 ---
 title: "📝 Blog"
-description: "In-depth articles, guides, and tutorials on Microsoft 365 Copilot, Azure, AI tools, and cloud certifications — written for beginners with deep links to official docs"
+description: "In-depth articles, guides, and tutorials on M365 Copilot, Azure, AI tools, and cloud certs — for beginners with deep links to docs."
 images: ["images/og/sections/blog.jpg"]
 aliases:
   - "/blog/azure-ai-fundamentals/"

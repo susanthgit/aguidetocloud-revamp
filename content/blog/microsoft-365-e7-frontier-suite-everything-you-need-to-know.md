@@ -1,6 +1,6 @@
 ---
-title: "Microsoft 365 E7 (Frontier Suite) — Everything You Need to Know"
-description: "Complete guide to Microsoft 365 E7, the new $99/user/month Frontier Suite. Full breakdown of what's included, E3 vs E5 vs E7 comparison, Agent 365, pricing, GA date May 1 2026, and whether you should upgrade."
+title: "Microsoft 365 E7 (Frontier Suite) — Plain-English Guide"
+description: "The new $99/user/mo Frontier Suite — what's included, E3/E5/E7 comparison, Agent 365, pricing, GA May 1 2026, licensing essentials."
 date: 2026-04-10
 lastmod: 2026-04-10
 card_tag: "Copilot"

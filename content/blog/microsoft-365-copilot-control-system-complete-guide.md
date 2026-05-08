@@ -1,6 +1,6 @@
 ---
-title: "The Copilot Control System — Your Complete Guide to Governing AI in Microsoft 365"
-description: "What is the Copilot Control System (CCS)? How is it different from Agent 365? A plain-English guide to the 3 pillars of AI governance in Microsoft 365 — security, management, and measurement — with real scenarios and an honest licensing breakdown."
+title: "Copilot Control System (CCS) — Plain-English Guide"
+description: "What CCS is, how it differs from Agent 365, and the 3 pillars of M365 AI governance — security, management, measurement."
 date: 2026-04-19
 lastmod: 2026-04-19
 card_tag: "Copilot"

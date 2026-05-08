@@ -1,6 +1,6 @@
 ---
-title: "Microsoft 365 Copilot Brand Kit — The Complete Guide for IT Admins and Brand Managers"
-description: "Everything you need to know about Microsoft 365 Copilot Brand Kit — what it is, where it works (PowerPoint, Word, Excel, Create tab), how to set it up, how to create Copilot-optimised templates, and the Brand Checker. A practical guide for IT admins and brand managers."
+title: "M365 Copilot Brand Kit — Setup Guide for IT Admins"
+description: "What Brand Kit is, where it works (PowerPoint, Word, Excel, Create tab), how to set it up, build Copilot-ready templates, run Brand Checker."
 date: 2026-04-15
 lastmod: 2026-04-16
 card_tag: "Copilot"

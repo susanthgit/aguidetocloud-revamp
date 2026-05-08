@@ -1,6 +1,6 @@
 ---
-title: "Microsoft 365 Copilot Deployment Best Practices — The Ultimate Checklist for IT Admins"
-description: "Complete deployment checklist for Microsoft 365 Copilot. Covers licensing, security, governance, data readiness, adoption, monitoring, and real-world best practices for IT admins and architects."
+title: "M365 Copilot Deployment — IT Admin Checklist"
+description: "Deployment checklist for M365 Copilot — licensing, security, governance, data readiness, adoption, monitoring, real-world best practices."
 date: 2026-04-14
 lastmod: 2026-04-14
 card_tag: "Copilot"

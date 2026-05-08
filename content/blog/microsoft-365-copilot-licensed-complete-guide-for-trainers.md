@@ -1,6 +1,6 @@
 ---
-title: "Microsoft 365 Copilot (Licensed) — The Complete Train-the-Trainer Guide for AI Change Leads"
-description: "The definitive guide for AI trainers on the full Microsoft 365 Copilot licence. Deep-dive into every app — Word, Excel, PowerPoint, Outlook, Teams, OneNote — plus Researcher, Analyst, Notebooks, Agents, Anthropic Claude model choice, and enterprise search. Packed with scenarios, prompts, diagrams, and positioning scripts."
+title: "M365 Copilot (Licensed) — Train-the-Trainer Guide"
+description: "Train-the-Trainer guide for the licensed M365 Copilot. Every app (Word, Excel, PPT, Outlook, Teams), Researcher, Analyst, agents, rollout tips."
 date: 2026-04-12
 lastmod: 2026-04-12
 card_tag: "Copilot"
