@@ -1,0 +1,63 @@
+name: SEO + OG image guardrail
+
+# Runs the SEO/OG-image frontmatter check on every push that touches blog
+# content or the guardrail script itself. Catches:
+#   - title length > 60 chars (Google SERP truncation)
+#   - description length > 155 chars (Google SERP truncation)
+#   - frontmatter `images:` entries that don't resolve to a file in static/
+#
+# Origin: 8 May 2026 audit session — 14 blog posts had over-length titles
+# and the audit then caught a privacy-policy ↔ implementation drift.
+# See deployment-playbook.md step 17.5 + blog-notebook-system.md.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/blog/**'
+      - 'static/images/og/**'
+      - 'scripts/check-seo-lengths.ps1'
+      - '.github/workflows/seo-check.yml'
+  pull_request:
+    paths:
+      - 'content/blog/**'
+      - 'static/images/og/**'
+      - 'scripts/check-seo-lengths.ps1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  seo-blog:
+    name: Blog SEO check (strict)
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Verify pwsh available
+        shell: bash
+        run: |
+          which pwsh
+          pwsh --version
+
+      - name: Run guardrail (blog scope, strict)
+        shell: pwsh
+        working-directory: ${{ github.workspace }}
+        run: pwsh scripts/check-seo-lengths.ps1 -Strict
+
+  seo-all-content:
+    name: Full content audit (warn-only)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    # Full audit runs always — informational, never blocks the build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Run guardrail (all content, warn-only)
+        shell: pwsh
+        working-directory: ${{ github.workspace }}
+        run: pwsh scripts/check-seo-lengths.ps1 -All
