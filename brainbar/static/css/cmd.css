@@ -2919,3 +2919,136 @@ body.cmd-v2-home-page .bb-brand-name { font-weight: 700; }
 /* The dim placeholder rotation needs no extra styling — it inherits the
    existing input placeholder colour. Pause animation if user prefers reduced
    motion (honoured by JS check on prefers-reduced-motion in startPlaceholderRotation). */
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   cmd Wave A — creative-juice polish (Sat 10 May 2026)
+   - Item 1 + 10: Mobile CRT chrome trim (traffic-lights hidden, fs-toggle icon-only at <=480px)
+   - Item 2:  Mobile boot-sequence — taller buffer + tighter line-height so 5 OK + READY + samples all fit
+   - Item 4:  Masthead brand stamp — blinking _ cursor on every page (uses <span class=bb-cursor>)
+   - Item 5:  Desktop frequently-asked grid — re-styled as terminal-row aesthetic (no boxes)
+   - Item 7:  Mobile help discoverability — quick-strip always visible on phones
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* — Item 4: Masthead brand stamp — blinking `_` cursor on every page, every viewport.
+     Markup: <span class="bb-prompt">`$`<span class="bb-cursor">_</span></span> */
+.bb-brand .bb-cursor {
+  display: inline-block;
+  animation: cmd-mast-blink 1.05s steps(2, end) infinite;
+}
+@keyframes cmd-mast-blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .bb-brand .bb-cursor { animation: none; }
+}
+
+/* — Item 5: Desktop frequently-asked rows — drop the boxed-card aesthetic and
+     adopt a terminal-row look that bridges the empty space below the CRT.
+     Each row reads as a \$ ls line with aligned columns. */
+@media (min-width: 720px) {
+  .cmd-v2-home .cmd-featured {
+    margin-top: 18px;
+    padding: 12px 16px 14px;
+    border: 1px dashed rgba(140, 100, 60, 0.35);
+    border-radius: 4px;
+    background: rgba(255, 245, 225, 0.35);
+  }
+  .cmd-v2-home .cmd-featured-title {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #7a4a1a;
+    margin: 0 0 8px;
+    border-bottom: 1px dashed rgba(140, 100, 60, 0.25);
+    padding-bottom: 6px;
+  }
+  .cmd-v2-home .cmd-featured-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+  }
+  .cmd-v2-home .cmd-featured-card {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 12px;
+    padding: 5px 8px;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0;
+    border-bottom: 1px dotted transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: background 120ms ease-out, border-color 120ms ease-out;
+  }
+  .cmd-v2-home .cmd-featured-card:hover {
+    background: rgba(255, 240, 215, 0.6) !important;
+    border-bottom-color: rgba(140, 100, 60, 0.4) !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  .cmd-v2-home .cmd-featured-card::before {
+    content: '$';
+    color: #b85a1f;
+    font-weight: 700;
+    flex: 0 0 auto;
+  }
+  .cmd-v2-home .cmd-featured-slug {
+    flex: 0 0 170px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .cmd-v2-home .cmd-featured-name {
+    flex: 1 1 auto;
+    font-size: 12px;
+    color: #3a2a1a;
+  }
+  .cmd-v2-home .cmd-featured-kind {
+    flex: 0 0 auto;
+    margin: 0;
+    font-size: 10px;
+    opacity: 0.75;
+  }
+}
+
+/* — Item 1 + 10: Mobile CRT title-bar trim at <=480px (phone).
+     Hide macOS traffic-lights (don't earn space on phone), and strip
+     the "open full-screen" text down to its glyph. */
+@media (max-width: 480px) {
+  .cmd-v2-home .cmd-titlebar { padding: 8px 10px; }
+  .cmd-v2-home .cmd-titlebar .traffic .light { display: none; }
+  .cmd-v2-home .cmd-titlebar .traffic { gap: 0; }
+  .cmd-v2-home .cmd-title-label { margin-left: 0; font-size: 11px; }
+  .cmd-v2-home .cmd-title-label .cwd { display: none; }
+  .cmd-v2-home .cmd-titlebar .actions a#cmd-fs-toggle {
+    font-size: 0; padding: 4px 8px; line-height: 1;
+  }
+  .cmd-v2-home .cmd-titlebar .actions a#cmd-fs-toggle::before {
+    content: '⤢'; font-size: 13px; color: inherit;
+  }
+}
+
+/* — Item 2: Mobile boot-sequence room — taller CRT buffer + tighter rhythm
+     so the full BIOS boot (5 OK lines + READY) is visible without scroll
+     after the JS animation completes. */
+@media (max-width: 719px) {
+  .cmd-v2-home .cmd-term-wrap.embed { height: 460px; }
+  .cmd-v2-home .cmd-buffer { font-size: 13px; line-height: 1.5; padding: 12px; }
+  .cmd-v2-home .cmd-line { line-height: 1.5; }
+}
+
+/* — Item 7: Mobile help discoverability — quick-command strip always visible
+     on phones (instead of waiting for first command). Tap a chip = run the
+     command. Desktop users keep the JS-controlled appearance. */
+@media (max-width: 719px) {
+  .cmd-v2-home .cmd-quick-strip {
+    display: block !important;
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.9;
+    margin-top: 12px;
+  }
+  .cmd-v2-home .cmd-quick-strip .label {
+    display: block; margin-bottom: 4px;
+    font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+}
