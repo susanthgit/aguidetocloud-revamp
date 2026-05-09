@@ -4,13 +4,10 @@
       <a href="/" class="site-logo" title="A Guide to Cloud & AI">
         <span class="site-logo-img-wrap">{{ partial "picture.html" (dict "src" "/images/logo_agtc_dark_1.webp" "alt" "A Guide to Cloud & AI" "class" "site-logo-img" "width" 32 "height" 32 "loading" "eager") }}</span>
       </a>
-      {{/* Brain Bar inline-palette launcher — unique Earth tool. The $_ icon
-           opens cmd.aguidetocloud.com on click, and `/` / Cmd+K / Ctrl+K open
-           the inline palette via static/js/bb-palette.js. KEPT after cosmos-bar
-           ship — sibling planet links moved to the cross-planet bar. */}}
-      <a class="bb-launch-btn" id="bb-launch-btn" href="https://cmd.aguidetocloud.com/" target="_blank" rel="noopener" aria-label="Brain Bar — Microsoft jargon decoder. Press / to search inline." title="Brain Bar — press / to search inline">
-        <span class="bb-launch-prompt">$</span><span class="bb-launch-cursor">_</span>
-      </a>
+      {{/* Inline command palette is keyboard-only now (`/`, Cmd+K, Ctrl+K).
+           bb-launch-btn visible button removed 10 May 2026 morning — it
+           visually duplicated the cosmos bar's Brain Bar icon. The palette
+           overlay still loads via partial bb-palette.html lower in baseof. */}}
     </div>
 
     {{/* ═══════ DESKTOP NAV — 8 flat links, each with its own active state ═══════ */}}
