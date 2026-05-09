@@ -3352,87 +3352,9 @@ pre.mermaid {
    6 May 2026 — flat nav (no Browse popover) + no chip frames + new bubble icon.
    ═════════════════════════════════════════════════════════════════════════ */
 
-/* ── Cosmos group: $_ + planet icons, hairline-separated from logo ── */
-.cosmos-group {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding-left: 10px;
-  margin-left: 4px;
-  border-left: 1px solid var(--border);
-}
-.cosmos-group .bb-launch-btn {
-  margin-left: 0; /* Override the default 12px in bb-palette.css when inside cosmos group */
-}
-
-/* ── Planet icon wrapper — bare click target, no frame ── */
-.planet-chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0 4px;
-  color: var(--text-tertiary);
-  text-decoration: none;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  transition: color var(--transition, 150ms ease-out);
-  flex-shrink: 0;
-}
-.planet-chip:hover,
-.planet-chip:focus-visible {
-  color: var(--text-primary);
-  background: transparent;
-  outline: none;
-}
-.planet-chip svg { display: block; }
-
-/* ── Mobile: hide cosmos group + show planet rail in drawer footer ── */
-@media (max-width: 1180px) {
-  .nav-left .cosmos-group { display: none; }
-
-  .drawer-section-label {
-    font-family: var(--font-mono, ui-monospace, monospace);
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin: 1rem 0 0.5rem 0.4rem;
-  }
-  .drawer-planet-rail {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-top: 0.25rem;
-  }
-  .drawer-planet-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 0.7rem 0.4rem;
-    color: var(--text-tertiary);
-    text-decoration: none;
-    border-radius: var(--radius-sm, 6px);
-    transition: background-color 100ms, color 100ms;
-  }
-  .drawer-planet-link:hover {
-    background: var(--accent-subtle, rgba(99, 102, 241, 0.08));
-    color: var(--text-primary);
-  }
-  .drawer-planet-link svg { flex-shrink: 0; }
-  .drawer-planet-link .planet-text {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .drawer-planet-link .planet-name {
-    font-weight: 600;
-    font-size: 0.95rem;
-  }
-  .drawer-planet-link .planet-tagline {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-  }
-}
+/* ── Cosmos group + planet chips + drawer planet rail — REMOVED 9 May 2026 EVE.
+      The cross-planet cosmos bar (cosmos.aguidetocloud.com/cosmos-bar.js,
+      sticky-top on every planet) replaced these inline cosmos links. The
+      bb-launch-btn ($_ Brain Bar palette) stays in nav.html as a
+      stand-alone Earth-unique tool launcher.
+   ═════════════════════════════════════════════════════════════════════════ */

@@ -4,19 +4,13 @@
       <a href="/" class="site-logo" title="A Guide to Cloud & AI">
         <span class="site-logo-img-wrap">{{ partial "picture.html" (dict "src" "/images/logo_agtc_dark_1.webp" "alt" "A Guide to Cloud & AI" "class" "site-logo-img" "width" 32 "height" 32 "loading" "eager") }}</span>
       </a>
-      {{/* ═══ COSMOS GROUP — sibling planets (Brain Bar $_ · Shift dial · Plain AI bubble)
-           Icons stand on their own — no chip frame around them. */}}
-      <div class="cosmos-group" aria-label="The cosmos — sibling planets">
-        <a class="bb-launch-btn" id="bb-launch-btn" href="https://cmd.aguidetocloud.com/" target="_blank" rel="noopener" aria-label="Brain Bar — Microsoft jargon decoder. Press / to search inline." title="Brain Bar — press / to search inline">
-          <span class="bb-launch-prompt">$</span><span class="bb-launch-cursor">_</span>
-        </a>
-        <a href="https://shift.aguidetocloud.com/" class="planet-chip" data-slug="shift" target="_blank" rel="noopener" aria-label="Shift — the AI job-change wire (opens in new tab)" title="Shift — the AI job-change wire">
-          {{ partial "planet-icon.html" (dict "slug" "shift" "size" 24 "scope" "nav") }}
-        </a>
-        <a href="https://plainai.aguidetocloud.com/" class="planet-chip" data-slug="plainai" target="_blank" rel="noopener" aria-label="Plain AI — AI explained plainly, for everyone (opens in new tab)" title="Plain AI — AI explained plainly">
-          {{ partial "planet-icon.html" (dict "slug" "plainai" "scope" "nav") }}
-        </a>
-      </div>
+      {{/* Brain Bar inline-palette launcher — unique Earth tool. The $_ icon
+           opens cmd.aguidetocloud.com on click, and `/` / Cmd+K / Ctrl+K open
+           the inline palette via static/js/bb-palette.js. KEPT after cosmos-bar
+           ship — sibling planet links moved to the cross-planet bar. */}}
+      <a class="bb-launch-btn" id="bb-launch-btn" href="https://cmd.aguidetocloud.com/" target="_blank" rel="noopener" aria-label="Brain Bar — Microsoft jargon decoder. Press / to search inline." title="Brain Bar — press / to search inline">
+        <span class="bb-launch-prompt">$</span><span class="bb-launch-cursor">_</span>
+      </a>
     </div>
 
     {{/* ═══════ DESKTOP NAV — 8 flat links, each with its own active state ═══════ */}}
@@ -65,21 +59,6 @@
         <a href="/licensing-docs/" class="drawer-link">Licensing</a>
         <a href="/blog/" class="drawer-link">Blog</a>
         <a href="/about/" class="drawer-link">About</a>
-
-        <div class="drawer-section-label">// the cosmos</div>
-        <div class="drawer-planet-rail">
-          {{ range (index hugo.Data "planets").planets }}
-            {{ if ne .slug "earth" }}
-              <a href="{{ .url }}" class="drawer-planet-link" target="_blank" rel="noopener">
-                {{ partial "planet-icon.html" (dict "slug" .slug "size" 22 "scope" "drawer") }}
-                <span class="planet-text">
-                  <span class="planet-name">{{ .name }}</span>
-                  <span class="planet-tagline">{{ .tagline }}</span>
-                </span>
-              </a>
-            {{ end }}
-          {{ end }}
-        </div>
       </div>
       <a href="/guided/explore/" class="drawer-cta">Start Free →</a>
     </div>
