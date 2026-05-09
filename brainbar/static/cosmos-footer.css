@@ -1,0 +1,108 @@
+/* Cosmos Footer — shared CSS, vendored to every sibling planet
+   ════════════════════════════════════════════════════════════════════════════
+   BEM scope: .cosmos-footer{,__inner,__feedback,__kofi,__links,__disclaimer,
+              __legal,__copy}. No collisions with planet-specific footer classes.
+
+   Self-contained — uses only standard CSS, no design tokens (so it renders
+   consistently regardless of host planet's theme system). Colours mirror
+   Earth's footer using neutral mid-grey + accent indigo.
+
+   Touched: 9 May 2026 EVE — initial unification.
+*/
+
+.cosmos-footer {
+  width: 100%;
+  margin-top: 4rem;
+  padding: 2rem 1rem 2.5rem;
+  background: rgba(0, 0, 0, 0.02);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #6b7280;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .cosmos-footer {
+    background: rgba(255, 255, 255, 0.02);
+    border-top-color: rgba(255, 255, 255, 0.08);
+    color: #9ca3af;
+  }
+}
+
+[data-theme="dark"] .cosmos-footer,
+.dark .cosmos-footer {
+  background: rgba(255, 255, 255, 0.02);
+  border-top-color: rgba(255, 255, 255, 0.08);
+  color: #9ca3af;
+}
+
+.cosmos-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.cosmos-footer a {
+  color: #6366f1;
+  text-decoration: none;
+  transition: color 150ms ease-out;
+}
+.cosmos-footer a:hover { color: #4f46e5; text-decoration: underline; }
+
+[data-theme="dark"] .cosmos-footer a,
+.dark .cosmos-footer a { color: #818cf8; }
+[data-theme="dark"] .cosmos-footer a:hover,
+.dark .cosmos-footer a:hover { color: #a5b4fc; }
+
+.cosmos-footer__feedback {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 1.25rem;
+}
+.cosmos-footer__feedback svg { vertical-align: -2px; }
+
+.cosmos-footer__kofi {
+  margin: 0 0 1.5rem;
+}
+
+.cosmos-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+  margin: 0 0 1.5rem;
+}
+.cosmos-footer__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cosmos-footer__disclaimer {
+  max-width: 760px;
+  margin: 0 auto 1rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.cosmos-footer__legal {
+  margin: 0 auto 1rem;
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+.cosmos-footer__copy {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 640px) {
+  .cosmos-footer { padding: 1.5rem 0.75rem 2rem; }
+  .cosmos-footer__links { gap: 0.75rem 1rem; font-size: 0.85rem; }
+  .cosmos-footer__disclaimer,
+  .cosmos-footer__legal { font-size: 0.72rem; }
+}

@@ -62,6 +62,7 @@
   (function(){try{var t=localStorage.getItem('theme');if(!t)t='dark';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}})()</script>
   <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/cosmos-bar.css?v={{ site.Params.cache_version }}">
+  <link rel="stylesheet" href="/cosmos-footer.css?v={{ site.Params.cache_version }}">
   <link rel="stylesheet" href="/css/style.css?v={{ site.Params.cache_version }}">
   <link rel="stylesheet" href="/css/sections.css?v={{ site.Params.cache_version }}">
   <link rel="stylesheet" href="/css/bb-palette.css?v={{ site.Params.cache_version }}">
@@ -138,7 +139,7 @@
       {{ block "main" . }}{{ end }}
     {{ end }}
   </main>
-  {{ partial "footer.html" . }}
+  {{ partial "cosmos-footer.html" . }}
   {{ if not (hasPrefix .RelPermalink "/feedback/") }}
   <a href="/feedback/" class="feedback-fab" aria-label="Share feedback" title="Share feedback">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }}</a>
   {{ end }}

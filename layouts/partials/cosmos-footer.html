@@ -1,0 +1,73 @@
+<!--
+  Cosmos Footer — canonical unified footer
+  ════════════════════════════════════════════════════════════════════════════
+  Vendored to all 7 sibling sites for cross-planet brand consistency.
+  Source: derived from Earth's layouts/partials/footer.html (9 May 2026 EVE).
+
+  Render target: paste into each sibling's layout. The CSS lives at
+  /cosmos-footer.css (vendored alongside).
+
+  All cross-site links are ABSOLUTE (https://www.aguidetocloud.com/...) so
+  visitors on shift.aguidetocloud.com / claw.aguidetocloud.com / etc. land
+  on the right Earth page when they click feedback / privacy / All Links.
+
+  Year is hardcoded 2026 — bump annually or templatize per-repo.
+
+  Inline SVGs (Lucide-style 14×14 stroke=1.5) avoid the per-repo icon partial
+  dependency and keep the footer self-contained.
+-->
+<footer class="cosmos-footer" data-pagefind-ignore>
+  <div class="cosmos-footer__inner">
+    <p class="cosmos-footer__feedback">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Got feedback? <a href="https://www.aguidetocloud.com/feedback/">Share it here →</a>
+    </p>
+
+    <div class="cosmos-footer__kofi">
+      <a href="https://ko-fi.com/E1E34AWDJ" target="_blank" rel="noopener noreferrer" style="display:inline-block;background-color:#72a4f2;padding:2px 12px;border-radius:7px;color:#fff;font-family:'Quicksand',Helvetica,sans-serif;font-size:14px;font-weight:700;line-height:36px;text-decoration:none;box-shadow:1px 1px 0 rgba(0,0,0,0.2);">
+        <img src="https://storage.ko-fi.com/cdn/cup-border.png" alt="" style="height:15px;width:22px;vertical-align:middle;margin-bottom:3px;margin-right:5px;border:none;" />Support me on Ko-fi
+      </a>
+    </div>
+
+    <div class="cosmos-footer__links">
+      <a href="https://www.youtube.com/susanthsutheesh" target="_blank" rel="noopener noreferrer">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        YouTube
+      </a>
+      <a href="https://www.youtube.com/aguidetocloud" target="_blank" rel="noopener noreferrer">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        Bites
+      </a>
+      <a href="https://www.linkedin.com/in/susanthsutheesh/" target="_blank" rel="noopener noreferrer">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://ko-fi.com/aguidetocloud/shop" target="_blank" rel="noopener noreferrer">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        Ko-fi Shop
+      </a>
+      <a href="https://github.com/susanthgit" target="_blank" rel="noopener noreferrer">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.aguidetocloud.com/links/">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        All Links
+      </a>
+    </div>
+
+    <p class="cosmos-footer__disclaimer">
+      The views and opinions expressed on this site are my own and do not represent the official positions of Microsoft. Always refer to <a href="https://learn.microsoft.com" target="_blank" rel="noopener noreferrer">official Microsoft documentation</a> for the latest information.
+    </p>
+
+    <p class="cosmos-footer__legal">
+      This site uses analytics (Google Analytics &amp; Cloudflare Web Analytics) to improve content. <a href="https://www.aguidetocloud.com/privacy-policy/">Privacy Policy</a>
+    </p>
+
+    <p class="cosmos-footer__copy">
+      © 2026 A Guide to Cloud &amp; AI — Built with
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      by <a href="https://www.linkedin.com/in/susanthsutheesh/" target="_blank" rel="noopener noreferrer">Susanth Sutheesh</a>
+    </p>
+  </div>
+</footer>

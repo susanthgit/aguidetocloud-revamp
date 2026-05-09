@@ -29,6 +29,7 @@
   <!-- JetBrains Mono — cmd's only font. Self-hosted (no third-party CDN). -->
   <link rel="stylesheet" href="/css/fonts.css?v={{ site.Params.cache_version }}">
   <link rel="stylesheet" href="/cosmos-bar.css?v={{ site.Params.cache_version }}">
+  <link rel="stylesheet" href="/cosmos-footer.css?v={{ site.Params.cache_version }}">
 
   <link rel="stylesheet" href="/css/tokens.css?v={{ site.Params.cache_version }}">
   <link rel="stylesheet" href="/css/cmd.css?v={{ site.Params.cache_version }}">
@@ -101,9 +102,7 @@
   </main>
   {{ end }}
 
-  <footer class="bb-footer">
-    <p>// cmd v{{ site.Params.cache_version }} · part of the <a href="{{ .Site.Params.parent_site }}" rel="noopener">aguidetocloud universe</a> · plain-english microsoft, for people like us · <a href="https://www.aguidetocloud.com/feedback/" rel="noopener">feedback →</a> · <a class="cmd-mcp" href="https://mcp.aguidetocloud.com" target="_blank" rel="noopener">+ MCP for Claude/ChatGPT ↗</a></p>
-  </footer>
+  {{ partial "cosmos-footer.html" . }}
 
   <script>
     /* Tiny inline theme toggler — no framework. Writes the .aguidetocloud.com
