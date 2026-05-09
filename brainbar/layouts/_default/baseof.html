@@ -28,6 +28,7 @@
 
   <!-- JetBrains Mono — cmd's only font. Self-hosted (no third-party CDN). -->
   <link rel="stylesheet" href="/css/fonts.css?v={{ site.Params.cache_version }}">
+  <link rel="stylesheet" href="/cosmos-bar.css?v={{ site.Params.cache_version }}">
 
   <link rel="stylesheet" href="/css/tokens.css?v={{ site.Params.cache_version }}">
   <link rel="stylesheet" href="/css/cmd.css?v={{ site.Params.cache_version }}">
@@ -64,6 +65,7 @@
 </head>
 <body{{ if .IsHome }} class="cmd-v2-home-page"{{ end }}>
   <a class="skip-link" href="#cmd-input">skip to terminal</a>
+  {{ partial "cosmos-bar.html" . }}
   <header class="bb-header">
     <div class="bb-header-left">
       <a class="bb-brand" href="/">
