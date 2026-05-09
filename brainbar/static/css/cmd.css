@@ -56,38 +56,8 @@
   align-items: center;
   gap: var(--s-4);
 }
-.bb-cosmos-rail {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--s-3);
-  padding-left: var(--s-3);
-  border-left: 1px solid var(--border);
-}
-.bb-cosmos-chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0 4px;
-  color: var(--text-muted);
-  text-decoration: none;
-  background: transparent;
-  border: 0;
-  transition: color 150ms ease-out;
-  flex-shrink: 0;
-}
-.bb-cosmos-chip:hover,
-.bb-cosmos-chip:focus-visible {
-  color: var(--accent);
-  outline: none;
-}
-.bb-cosmos-chip svg { display: block; }
-@media (max-width: 540px) {
-  /* On narrow viewports, drop the cosmos rail (it's secondary navigation —
-     the primary surface IS Brain Bar itself). The theme toggle stays. */
-  .bb-cosmos-rail { display: none; }
-}
+/* bb-cosmos-rail / bb-cosmos-chip rules removed 9 May 2026 EVE — replaced by
+   the cross-planet cosmos bar (sticky-top, served from cosmos.aguidetocloud.com). */
 
 /* ── Theme toggle (terminal pill button) ─────────────────────────────── */
 
@@ -2477,8 +2447,7 @@ body.cmd-fs-locked { overflow: hidden; }
   .cmd-v2-home .cmd-boot-line-in { animation: none; }
 }
 
-/* Hide cosmos rail on home for visual focus */
-body.cmd-v2-home-page .bb-header .bb-cosmos-rail { display: none; }
+/* (removed 9 May 2026 EVE: bb-cosmos-rail rule — class no longer exists) */
 
 /* ═══════════════════════════════════════════════════════════════════════════
    cmd v2.1 — compaq aged-plastic homepage background, hide theme toggle, compare tables
@@ -2648,8 +2617,7 @@ body.cmd-v2-home-page .bb-footer .cmd-mcp { color: #8e3e10 !important; border-co
   .cmd-v2-home .cmd-boot-ascii { display: none !important; }
 }
 
-/* Force-hide cosmos rail on home (audit found it was still visible) */
-body.cmd-v2-home-page .bb-cosmos-rail { display: none !important; }
+/* (removed 9 May 2026 EVE: bb-cosmos-rail rule — class no longer exists) */
 
 /* Make brand more prominent on home (was tiny in audit) */
 body.cmd-v2-home-page .bb-brand { font-size: 18px; }

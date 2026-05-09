@@ -72,17 +72,8 @@
         <span class="bb-prompt">$_</span>
         <span class="bb-brand-name">cmd</span>
       </a>
-      {{/* ═══ COSMOS RAIL — sibling planets as icon chips, LEFT-aligned next
-           to brand (matches the home planet pattern). 6 May 2026 v2. */}}
-      <span class="bb-cosmos-rail" aria-label="The cosmos — sibling planets">
-        {{ range (index hugo.Data "planets").planets }}
-          {{ if ne .slug "brainbar" }}
-            <a class="bb-cosmos-chip" data-slug="{{ .slug }}" href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }} — {{ .tagline }}" aria-label="{{ .name }} — {{ .tagline }} (opens in new tab)">
-              {{ partial "planet-icon.html" (dict "slug" .slug "size" 24 "scope" "header") }}
-            </a>
-          {{ end }}
-        {{ end }}
-      </span>
+      {{/* bb-cosmos-rail removed 9 May 2026 EVE — replaced by the cross-planet
+           cosmos bar (sticky-top, served from cosmos.aguidetocloud.com). */}}
     </div>
     <nav class="bb-topnav" aria-label="cmd primary">
       {{ if .IsHome }}
