@@ -1,0 +1,21 @@
+{{/* ═══════════════════════════════════════════════════════════════════════════
+     COSMOS BAR — Hugo partial
+     ═══════════════════════════════════════════════════════════════════════════
+     Cross-planet sticky-top nav. Single source of truth lives at
+     cosmos.aguidetocloud.com — this partial only renders the placeholder slot
+     and the script tag.
+
+     Adding a planet to the cosmos = ONE edit to cosmos-atlas/src/data/atlas.json.
+     This partial does NOT need updates for new planets — the bar fetches
+     atlas-bar.json at runtime.
+
+     The `active` attribute tells the bar to dim the host planet's icon and
+     show the ▼ "you are here" indicator. For Earth (Hugo), active="earth".
+
+     CSS is vendored once at static/cosmos-bar.css to reserve the 36px slot
+     before the JS arrives — prevents FOUC.
+
+     Touched: 9 May 2026 EVE — initial Earth ship (cosmos-bar Phase 2).
+     ═══════════════════════════════════════════════════════════════════════════ */}}
+<cosmos-bar active="earth"></cosmos-bar>
+<script async src="https://cosmos.aguidetocloud.com/cosmos-bar.js"></script>
