@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 09 May 2026 19:19:29 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2026 21:00:13 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Defender XDR] Some users may be unable to view Microsoft Defender for Endpoint manual actions through the Action center</title>
@@ -17,22 +17,22 @@
       <pubDate>Sat, 09 May 2026 09:27:25 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft 365 Copilot Chat] Admins may see Microsoft 365 Copilot Chat reports delayed by up to one day within the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1304234</link>
-      <description>[Microsoft 365 Copilot Chat] Admins may see Copilot Chat reports delayed by up to one day within the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CW1304234</guid>
-      <pubDate>Fri, 08 May 2026 21:39:43 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may see Microsoft 365 Copilot reports delayed by up to one day within the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1304233</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins may see Copilot reports delayed by up to one day within the Microsoft 365 admin center.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Admins may have seen Copilot reports delayed by up to one day within the Microsoft 365 admin center.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1304233</guid>
-      <pubDate>Fri, 08 May 2026 21:37:39 +0000</pubDate>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Admins may see Microsoft 365 Copilot Chat reports delayed by up to one day within the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1304234</link>
+      <description>[Microsoft 365 Copilot Chat] Admins may have seen Copilot Chat reports delayed by up to one day within the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1304234</guid>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to create or use SharePoint Online Copilot embedded agents within Microsoft 365 Copilot</title>
