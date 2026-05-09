@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 09 May 2026 03:52:47 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2026 06:26:03 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 Copilot Chat] Admins may see Microsoft 365 Copilot Chat reports delayed by up to one day within the Microsoft 365 admin center</title>
@@ -42,6 +42,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1301759</guid>
       <pubDate>Tue, 05 May 2026 19:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Defender XDR] Some users may be incorrectly able to view Microsoft Defender for Endpoint manual actions through the Action center</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1304747</link>
+      <description>[Microsoft Defender XDR] Users may have been incorrectly able to view Microsoft Defender for Endpoint manual actions through the Action center.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">DZ1304747</guid>
+      <pubDate>Sun, 03 May 2026 11:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Some users may receive false positive alerts from Microsoft Defender Antivirus for specific certificates</title>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1268972</guid>
       <pubDate>Thu, 02 Apr 2026 20:40:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Central US admins may be unable to access or experience delays accessing the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1268822</link>
-      <description>[Microsoft 365 suite] Admins may have been unable to access or experience delays accessing the Microsoft 365 admin center</description>
-      <category>Microsoft 365 suite</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">MO1268822</guid>
-      <pubDate>Thu, 02 Apr 2026 18:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
