@@ -1,5 +1,5 @@
 /* ── AI Cost Calculator ──
-   Accent: Money Green #66C559
+   Accent: zen indigo (var(--accent)). Was Money Green (#66C559) — retired May 2026.
    Namespace: .aicost-*
 */
 
@@ -12,6 +12,20 @@
   --aicost-green: #22C55E;
   --aicost-amber: #F59E0B;
   --aicost-teal: #14B8A6;
+}
+
+/* Inline-style replacements (utility helpers used by aicost JS renders) */
+.aicost-meta { color: var(--text-muted); font-size: 0.78rem; }
+.aicost-meta-tiny { color: var(--text-muted); font-size: 0.75rem; }
+.aicost-bundle-suffix { font-size: 0.7rem; font-weight: 400; color: var(--text-muted); }
+.aicost-row { display: flex; justify-content: space-between; align-items: center; }
+.aicost-row + .aicost-row { margin-top: 0.5rem; }
+.aicost-explanation { color: var(--text-muted); font-size: 0.82rem; margin-top: 0.5rem; }
+.aicost-source-line { color: var(--text-muted); padding-top: 0.5rem; }
+.aicost-footer-note {
+  color: var(--text-muted); font-size: 0.75rem;
+  margin-top: 2rem; padding-top: 1rem;
+  border-top: 1px solid var(--border);
 }
 
 /* ── Container ── */
@@ -621,7 +635,7 @@
 }
 .aicost-compare-table .best {
   color: var(--aicost-green);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* ── Licence Optimizer ── */
@@ -1071,7 +1085,7 @@
 }
 .aicost-history-item .value {
   color: var(--accent-hover);
-  font-weight: 700;
+  font-weight: 600;
 }
 .aicost-history-actions {
   display: flex;

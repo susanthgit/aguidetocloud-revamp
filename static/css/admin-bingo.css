@@ -1,6 +1,6 @@
 /* ============================================================================
    IT Admin Bingo — .bingo-* namespace
-   Accent: #E91E8E (Vivid Pink)
+   Accent: zen indigo (var(--accent)). Was Vivid Pink (#E91E8E) — retired May 2026.
    ============================================================================ */
 
 :root { --bingo-accent: var(--accent); }
@@ -22,13 +22,13 @@
   background: none; border: 1px solid transparent;
   color: var(--text-secondary); font-size: 0.85rem; font-weight: 600;
   padding: 0.6rem 1.1rem; cursor: pointer; border-radius: 8px;
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease; flex: 1; text-align: center;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; flex: 1; text-align: center;
+  min-width: 0;
 }
 .bingo-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .bingo-tab.active {
-  color: var(--text-primary); background: var(--bingo-accent);
+  color: var(--accent-foreground); background: var(--bingo-accent);
   border-color: var(--bingo-accent);
-  box-shadow: 0 2px 8px rgba(233,30,142,0.3);
 }
 .bingo-panel { display: none; }
 .bingo-panel.active { display: block; }
@@ -43,28 +43,31 @@
   margin-bottom: 1rem;
 }
 .bingo-theme {
-  background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
+  background: var(--bg-elevated); border: 1px solid var(--border);
   color: var(--text-secondary); padding: 0.35rem 0.7rem; border-radius: var(--radius-lg, 16px);
-  cursor: pointer; font-size: 0.75rem; font-weight: 500; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
+  cursor: pointer; font-size: 0.75rem; font-weight: 500;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out;
 }
-.bingo-theme:hover { color: var(--text-primary); background: var(--border); }
+.bingo-theme:hover { color: var(--text-primary); background: var(--bg-surface); border-color: var(--border-emphasis); }
 .bingo-theme.active {
-  color: var(--text-primary); background: rgba(233,30,142,0.2); border-color: var(--bingo-accent);
+  color: var(--bingo-accent);
+  background: var(--accent-subtle);
+  border-color: var(--bingo-accent);
 }
 .bingo-btn {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   color: var(--text-primary); padding: 0.5rem 1rem;
   border-radius: 8px; cursor: pointer; font-size: 0.85rem;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; font-weight: 500;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out; font-weight: 500;
 }
-.bingo-btn:hover { background: var(--border); color: var(--text-primary); }
+.bingo-btn:hover { background: var(--bg-surface); border-color: var(--border-emphasis); color: var(--text-primary); }
 .bingo-btn-primary {
-  background: var(--bingo-accent); color: var(--text-primary);
+  background: var(--bingo-accent); color: var(--accent-foreground);
   border-color: var(--bingo-accent); font-weight: 600;
 }
 .bingo-btn-primary:hover {
-  background: var(--accent-hover); box-shadow: 0 2px 12px rgba(233,30,142,0.4);
+  background: var(--accent-hover); border-color: var(--accent-hover);
 }
 .bingo-select {
   background: var(--bg-elevated);
@@ -90,36 +93,42 @@
   border-radius: 10px; cursor: pointer;
   font-size: 0.7rem; line-height: 1.3;
   color: var(--text-secondary);
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   user-select: none;
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 .bingo-cell:hover {
-  background: var(--bg-elevated);
-  border-color: var(--border);
+  background: var(--bg-surface);
+  border-color: var(--border-emphasis);
   color: var(--text-primary);
 }
 .bingo-cell.marked {
-  background: rgba(233,30,142,0.2);
+  background: var(--accent-subtle);
   border-color: var(--bingo-accent);
-  color: var(--text-primary);
-  box-shadow: 0 0 8px rgba(233,30,142,0.2);
+  color: var(--bingo-accent);
+  font-weight: 600;
 }
 .bingo-cell.free-space {
-  background: rgba(233,30,142,0.15);
-  border-color: rgba(233,30,142,0.3);
+  background: var(--accent-subtle);
+  border-color: var(--bingo-accent);
   color: var(--bingo-accent);
-  font-weight: 700; font-size: 0.8rem;
+  font-weight: 600; font-size: 0.8rem;
   cursor: default;
 }
 .bingo-cell.bingo-winner {
-  background: rgba(233,30,142,0.4);
+  background: color-mix(in srgb, var(--bingo-accent) 18%, transparent);
   border-color: var(--bingo-accent);
-  animation: bingo-glow 0.6s ease-in-out infinite alternate;
+  color: var(--bingo-accent);
+  font-weight: 600;
+  animation: bingo-pulse 1.4s ease-in-out infinite;
 }
 
-@keyframes bingo-glow {
-  from { box-shadow: 0 0 8px rgba(233,30,142,0.3); }
-  to { box-shadow: 0 0 20px rgba(233,30,142,0.6); }
+@keyframes bingo-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }
 
 /* ── Status ───────────────────────────────────────────────────────────────── */
@@ -130,7 +139,7 @@
 }
 .bingo-status.show { display: block; }
 .bingo-status.win {
-  background: rgba(233,30,142,0.15);
+  background: var(--accent-subtle);
   border: 1px solid var(--bingo-accent);
   color: var(--bingo-accent);
 }
@@ -162,12 +171,11 @@
   .bingo-page { max-width: 100%; padding: 0; }
   .bingo-board { gap: 4px; }
   .bingo-cell {
-    border2px solid var(--border); background: #fff; color: #000;
+    border: 2px solid #999; background: #fff; color: #000;
     font-size: 9px; border-radius: 4px;
-    -webkit-backdrop-filter: none; backdrop-filter: none;
   }
-  .bingo-cell.marked { background: #f0c0d8; }
-  .bingo-cell.free-space { background: #e0e0e0; font-weight: 700; }
+  .bingo-cell.marked { background: #ddd; color: #000; }
+  .bingo-cell.free-space { background: #eee; font-weight: 600; color: #000; }
   .bingo-panel { display: none !important; }
   .bingo-panel#panel-play { display: block !important; }
 }

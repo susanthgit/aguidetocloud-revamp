@@ -50,7 +50,7 @@
   color: var(--text-primary);
   background: var(--cliquiz-accent);
   border-color: var(--cliquiz-accent);
-  box-shadow: 0 2px 8px rgba(126,87,194,0.3);
+  box-shadow: none;
 }
 
 .cliquiz-panel { display: none; }
@@ -159,7 +159,7 @@
 }
 .cliquiz-question-card .cliquiz-task {
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   line-height: 1.5;
 }
@@ -201,7 +201,7 @@
 .cliquiz-choice.selected,
 .cliquiz-choice--selected {
   border-color: var(--cliquiz-accent);
-  background: rgba(126,87,194,0.1);
+  background: color-mix(in srgb, var(--cliquiz-accent) 10%, transparent);
 }
 .cliquiz-choice.correct,
 .cliquiz-choice--correct {
@@ -243,7 +243,7 @@
 }
 .cliquiz-score-card .cliquiz-big-score {
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--cliquiz-accent);
   line-height: 1.1;
 }
@@ -281,12 +281,12 @@
 .cliquiz-mastery-fill {
   height: 100%;
   border-radius: 4px;
-  background: linear-gradient(90deg, var(--cliquiz-accent), rgba(126,87,194,0.6));
+  background: var(--cliquiz-accent);
   transition: width 0.3s ease;
 }
 .cliquiz-mastery-pct {
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--cliquiz-accent);
   min-width: 36px;
   text-align: right;
@@ -309,7 +309,7 @@
 }
 .cliquiz-history-score {
   color: var(--cliquiz-accent);
-  font-weight: 700;
+  font-weight: 600;
   min-width: 50px;
 }
 .cliquiz-history-mode {
@@ -364,7 +364,7 @@
   border-radius: 5px;
   background: var(--bg-elevated);
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-right: 0.6rem;
   flex-shrink: 0;
   color: var(--text-secondary);
@@ -394,7 +394,7 @@
   background: rgba(251,191,36,0.06);
 }
 .cliquiz-feedback-label {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.95rem;
   margin-bottom: 0.4rem;
 }
@@ -493,7 +493,7 @@
   color: var(--text-secondary);
 }
 .cliquiz-badge--cat {
-  background: rgba(126,87,194,0.15);
+  background: color-mix(in srgb, var(--cliquiz-accent) 15%, transparent);
   color: var(--cliquiz-accent);
 }
 .cliquiz-badge--diff {
@@ -559,7 +559,7 @@
 /* Score Display */
 .cliquiz-score-num {
   font-size: 1.3rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--cliquiz-accent);
 }
 .cliquiz-score-sep {
@@ -583,7 +583,7 @@
 }
 .cliquiz-results-score {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--cliquiz-accent);
   line-height: 1.1;
 }
@@ -633,7 +633,7 @@
 }
 .cliquiz-start-title {
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.3rem;
 }
@@ -643,7 +643,7 @@
 }
 .cliquiz-sample {
   margin-top: 1.2rem; padding: 1rem;
-  background: rgba(126,87,194,0.08); border: 1px solid rgba(126,87,194,0.2);
+  background: color-mix(in srgb, var(--cliquiz-accent) 8%, transparent); border: 1px solid color-mix(in srgb, var(--cliquiz-accent) 20%, transparent);
   border-radius: 10px; text-align: left;
 }
 .cliquiz-sample-label {
@@ -675,7 +675,7 @@
 }
 .cliquiz-mode-title {
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
 }
 .cliquiz-mode-desc {
@@ -717,7 +717,7 @@
 }
 .cliquiz-stat-val {
   font-size: 1.6rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--cliquiz-accent);
 }
 .cliquiz-stat-label {
@@ -748,7 +748,7 @@
 .cliquiz-mastery-bar-wrap .cliquiz-mastery-bar {
   height: 100%;
   border-radius: 4px;
-  background: linear-gradient(90deg, var(--cliquiz-accent), rgba(126,87,194,0.6));
+  background: var(--cliquiz-accent);
   transition: width 0.3s ease;
 }
 .cliquiz-mastery-val {

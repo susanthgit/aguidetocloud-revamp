@@ -110,8 +110,8 @@
       // Learn mode: show answer immediately, no options
       const el = document.getElementById('acro-options');
       el.innerHTML = `<div class="acro-learn-answer">
-        <div style="color:var(--acro-accent);font-weight:700;font-size:1.1rem;margin-bottom:0.3rem">${esc(q.accepted_answers[0])}</div>
-        <div style="color:rgba(255,255,255,0.6);font-size:0.85rem">${esc(q.explanation || '')}</div>
+        <div class="acro-learn-answer-text">${esc(q.accepted_answers[0])}</div>
+        <div class="acro-learn-answer-explanation">${esc(q.explanation || '')}</div>
         <button class="acro-btn acro-btn-primary" style="margin-top:0.8rem" onclick="document.getElementById('btn-next').click()">Next →</button>
       </div>`;
       hideTimerBar();
@@ -291,22 +291,22 @@
     const ctx = canvas.getContext('2d');
 
     ctx.fillStyle = '#0a0a14'; ctx.fillRect(0, 0, 600, 340);
-    ctx.fillStyle = '#9B59B6'; ctx.fillRect(0, 0, 600, 4);
+    ctx.fillStyle = '#6366F1'; ctx.fillRect(0, 0, 600, 4);
 
-    ctx.fillStyle = '#9B59B6'; ctx.font = 'bold 24px Inter, sans-serif';
+    ctx.fillStyle = '#6366F1'; ctx.font = 'bold 24px Inter, sans-serif';
     ctx.fillText('🧠 Tech Acronym Battle', 30, 50);
 
     ctx.fillStyle = '#ffffff'; ctx.font = 'bold 64px Inter, sans-serif';
     ctx.fillText(`${pct}%`, 30, 130);
 
-    ctx.fillStyle = 'rgba(255,255,255,0.6)'; ctx.font = '18px Inter, sans-serif';
+    ctx.fillStyle = 'rgba(255,255,255,0.7)'; ctx.font = '18px Inter, sans-serif';
     ctx.fillText(`${totalCorrect}/${totalAnswered} correct · ${score} pts · Streak: ${bestStreak}🔥`, 30, 170);
 
     let grade = pct >= 90 ? 'Expert!' : pct >= 70 ? 'Great job!' : pct >= 50 ? 'Good effort!' : 'Keep learning!';
-    ctx.fillStyle = pct >= 70 ? '#2ECC71' : '#F39C12'; ctx.font = 'bold 20px Inter, sans-serif';
+    ctx.fillStyle = pct >= 70 ? '#22C55E' : '#EAB308'; ctx.font = 'bold 20px Inter, sans-serif';
     ctx.fillText(grade, 30, 210);
 
-    ctx.fillStyle = 'rgba(255,255,255,0.3)'; ctx.font = '14px Inter, sans-serif';
+    ctx.fillStyle = 'rgba(255,255,255,0.4)'; ctx.font = '14px Inter, sans-serif';
     ctx.fillText('aguidetocloud.com/acronym-battle', 30, 310);
 
     const link = document.createElement('a');
@@ -341,17 +341,17 @@
         return pctB - pctA;
       });
       if (cats.length > 0) {
-        masteryEl.innerHTML = '<div style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin-bottom:0.6rem;font-weight:600;text-transform:uppercase">Category Mastery</div>' +
+        masteryEl.innerHTML = '<div class="acro-mastery-title">Category Mastery</div>' +
           cats.map(([cat, d]) => {
             const pct = d.total > 0 ? Math.round((d.correct / d.total) * 100) : 0;
-            const color = pct >= 80 ? '#2ECC71' : pct >= 50 ? '#F39C12' : '#E74C3C';
-            return `<div style="margin-bottom:0.5rem">
-              <div style="display:flex;justify-content:space-between;font-size:0.8rem;color:rgba(255,255,255,0.7);margin-bottom:0.2rem">
-                <span style="text-transform:capitalize">${cat}</span>
+            const lvl = pct >= 80 ? 'good' : pct >= 50 ? 'mid' : 'low';
+            return `<div class="acro-mastery-row">
+              <div class="acro-mastery-row-head">
+                <span class="acro-mastery-cat">${cat}</span>
                 <span>${pct}% (${d.correct}/${d.total})</span>
               </div>
-              <div style="height:6px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden">
-                <div style="height:100%;width:${pct}%;background:${color};border-radius:3px;transition:width 0.5s"></div>
+              <div class="acro-mastery-bar">
+                <div class="acro-mastery-fill acro-mastery-${lvl}" style="width:${pct}%"></div>
               </div>
             </div>`;
           }).join('');

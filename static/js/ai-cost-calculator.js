@@ -646,7 +646,7 @@
         implBody.innerHTML += '<tr><td>' + esc(r[0]) + '</td><td class="right">' + fmt(cost) + '</td><td>' + esc(r[2] || '') + '</td></tr>';
       });
       if (m !== 1) {
-        implBody.innerHTML += '<tr><td colspan="3" style="color:rgba(255,255,255,0.4);font-size:0.75rem;padding-top:0.25rem">Support multiplier: ' + m + 'x (' + S.support.replace(/_/g, ' ') + ')</td></tr>';
+        implBody.innerHTML += '<tr><td colspan="3" class="aicost-meta-tiny">Support multiplier: ' + m + 'x (' + S.support.replace(/_/g, ' ') + ')</td></tr>';
       }
       setText('cat-implementation-total', fmt(S.costs.implementation) + ' (one-time)');
     }
@@ -951,18 +951,18 @@
           (b.savings > 0 ? 'Save ' + fmt(b.savings) + '/yr' : 'Costs ' + fmt(-b.savings) + ' more/yr') +
           '</span>';
       }
-      if (b.isCurrent) savingsHtml = '<span style="color:rgba(255,255,255,0.4);font-size:0.78rem">Current setup</span>';
+      if (b.isCurrent) savingsHtml = '<span class="aicost-meta">Current setup</span>';
 
       container.innerHTML += '<div class="' + cls + '">' +
-        '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">' +
+        '<div class="aicost-row">' +
           '<span class="aicost-bundle-name">' + esc(b.name) + (b.isBest ? ' <span class="aicost-badge aicost-badge-green">Best Price</span>' : '') + '</span>' +
-          '<span class="aicost-bundle-price">' + fmtDec(b.perUser) + '<span style="font-size:0.7rem;font-weight:400;color:rgba(255,255,255,0.5)">/user/mo</span></span>' +
+          '<span class="aicost-bundle-price">' + fmtDec(b.perUser) + '<span class="aicost-bundle-suffix">/user/mo</span></span>' +
         '</div>' +
-        '<div style="display:flex;justify-content:space-between;align-items:center">' +
-          '<span style="color:rgba(255,255,255,0.5);font-size:0.82rem">' + fmt(b.annual) + '/yr for ' + users + ' users</span>' +
+        '<div class="aicost-row">' +
+          '<span class="aicost-meta">' + fmt(b.annual) + '/yr for ' + users + ' users</span>' +
           savingsHtml +
         '</div>' +
-        (b.note ? '<div style="color:rgba(255,255,255,0.4);font-size:0.75rem;margin-top:0.5rem">' + esc(b.note) + '</div>' : '') +
+        (b.note ? '<div class="aicost-meta-tiny" style="margin-top:0.5rem">' + esc(b.note) + '</div>' : '') +
       '</div>';
     });
 
@@ -1321,11 +1321,11 @@
           : 'At very high usage, Copilot may become cheaper. ';
         resultEl.innerHTML = breakEvenText +
           '<div class="verdict">At ' + actionsPerDay + ' actions/day, API costs ' + fmtDec(apiNow) + '/mo — <strong>cheaper than Copilot</strong> (' + fmtDec(copilotCost) + '/mo).</div>' +
-          '<div style="color:rgba(255,255,255,0.5);font-size:0.82rem;margin-top:0.5rem">' + aboveText + 'But remember: Copilot includes built-in M365 integration, security, and governance that raw API does not.</div>';
+          '<div class="aicost-explanation">' + aboveText + 'But remember: Copilot includes built-in M365 integration, security, and governance that raw API does not.</div>';
       } else {
         resultEl.innerHTML = breakEvenText +
           '<div class="verdict">At ' + actionsPerDay + ' actions/day, Copilot at ' + fmtDec(copilotCost) + '/mo is <strong>better value</strong> than API at ' + fmtDec(apiNow) + '/mo.</div>' +
-          '<div style="color:rgba(255,255,255,0.5);font-size:0.82rem;margin-top:0.5rem">Plus Copilot includes M365 integration, security guardrails, and enterprise governance — no extra setup needed.</div>';
+          '<div class="aicost-explanation">Plus Copilot includes M365 integration, security guardrails, and enterprise governance — no extra setup needed.</div>';
       }
     }
   }
@@ -1408,7 +1408,7 @@
       '<tr><td>User profile</td><td>' + profileLabel + '</td></tr>' +
       '<tr><td>EA/CSP discount</td><td>' + S.discount + '%</td></tr>' +
       '<tr><td>Currency</td><td>' + S.currency + (S.currency !== 'USD' ? ' (rate: ' + currRate() + ')' : '') + '</td></tr>' +
-      '<tr><td colspan="2" style="padding-top:0.5rem;color:rgba(255,255,255,0.4)">Sources: Forrester TEI, Microsoft Copilot Success Kit, Gartner AI TCO Framework</td></tr>' +
+      '<tr><td colspan="2" class="aicost-source-line">Sources: Forrester TEI, Microsoft Copilot Success Kit, Gartner AI TCO Framework</td></tr>' +
     '</table>';
   }
 
@@ -1546,7 +1546,7 @@
         recs.map(function (r) { return '<div class="aicost-recommendation">' + esc(r) + '</div>'; }).join('') +
       '</div>' : '') +
 
-      '<div style="color:rgba(255,255,255,0.35);font-size:0.75rem;margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.06)">' +
+      '<div class="aicost-footer-note">' +
         'This estimate is based on published list prices as of ' + date + '. Actual costs vary based on EA/CSP agreements, regional pricing, and implementation complexity. Use as a planning tool, not a quote. Verify current pricing at official vendor pages.' +
       '</div>';
   }
