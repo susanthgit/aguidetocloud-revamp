@@ -1,6 +1,6 @@
 ---
-title: "Copilot Demo Script Builder"
-description: "Generate complete, ready-to-deliver Microsoft 365 Copilot demo scripts. Pick a scenario, configure your audience, and get step-by-step talking points, prompts, timing cues, and fallback plans."
+title: "Copilot Demo Script Builder — Free Tool"
+description: "Generate complete, ready-to-deliver Microsoft 365 Copilot demo scripts. Pick a scenario, configure your audience. Free."
 type: "demo-scripts"
 layout: "list"
 sitemap:

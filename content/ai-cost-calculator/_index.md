@@ -1,6 +1,6 @@
 ---
-title: "AI Cost Calculator — Total AI Adoption Cost, Token Pricing & Licence Optimization"
-description: "Free interactive tool to calculate the full cost of AI adoption. Compare token prices across GPT, Claude, Gemini, DeepSeek. Optimize M365 licensing bundles. Generate budget timelines and executive summaries."
+title: "AI Cost Calculator — Total AI Adoption Cost, Token Pricing"
+description: "Free interactive tool to calculate the full cost of AI adoption. Compare token prices across GPT, Claude, Gemini, DeepSeek."
 type: "ai-cost-calculator"
 layout: "list"
 url: "/ai-cost-calculator/"

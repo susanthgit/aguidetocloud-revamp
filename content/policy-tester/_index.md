@@ -1,6 +1,6 @@
 ---
 title: "Password Policy Tester — Score Your Org's Password Rules"
-description: "Enter your password policy settings and get a security score compared to NIST, CIS, Microsoft, and Essential Eight recommendations. Free, instant, no sign-up."
+description: "Enter your password policy settings and get a security score compared to NIST, CIS, Microsoft, and Essential Eight recommendations. Free, instant."
 type: "policy-tester"
 layout: "list"
 lastmod: 2026-04-17

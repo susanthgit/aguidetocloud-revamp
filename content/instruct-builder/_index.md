@@ -1,6 +1,6 @@
 ---
-title: "Agent Instruction Builder"
-description: "Generate professional, platform-optimised AI agent instructions in seconds. Works with M365 Agent Builder, Copilot Studio, ChatGPT, Claude, and OpenAI Assistants."
+title: "Agent Instruction Builder — Free Tool"
+description: "Generate professional, platform-optimised AI agent instructions in seconds. Works with M365 Agent Builder, Copilot Studio, ChatGPT, Claude. Free."
 type: "instruct-builder"
 url: "/instruct-builder/"
 sitemap:

@@ -1,5 +1,5 @@
 ---
-title: "Incident Comms Generator — Professional Status Updates in Seconds"
+title: "Free Incident Comms Generator — Professional Status Updates"
 description: "Generate polished incident status updates for any outage type, severity, and audience. Professional and creative modes. Copy and send instantly."
 type: "incident-comms"
 layout: "list"

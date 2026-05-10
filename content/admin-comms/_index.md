@@ -1,6 +1,6 @@
 ---
 title: "IT Admin Comms Templates — Ready-Made Emails for M365 Admins"
-description: "20+ professional email templates for IT administrators. Maintenance notices, security alerts, Copilot rollouts, onboarding, offboarding, and more. Customise and copy in seconds."
+description: "20+ professional email templates for IT administrators. Maintenance notices, security alerts, Copilot rollouts, onboarding, offboarding, and more. Free."
 type: "admin-comms"
 layout: "list"
 lastmod: 2026-04-16

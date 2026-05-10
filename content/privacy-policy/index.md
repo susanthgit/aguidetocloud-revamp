@@ -1,7 +1,7 @@
 ---
-title: "Privacy Policy"
+title: "Privacy Policy — Free Tool on A Guide to Cloud"
 layout: single
-description: "How aguidetocloud.com handles your data — anonymous analytics, no personal data collection, and full transparency."
+description: "How aguidetocloud.com handles your data — anonymous analytics, no personal data collection, and full transparency. Free tool, runs in your browser."
 ---
 
 ## What This Site Does

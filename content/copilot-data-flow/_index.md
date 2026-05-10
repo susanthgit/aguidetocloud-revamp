@@ -1,6 +1,6 @@
 ---
-title: "Copilot Data Flow Map — Where Does Your Data Go?"
-description: "Interactive data flow and architecture explorer for M365 Copilot. Layer-by-layer breakdown of how Copilot works, where your data goes, security boundaries, grounding, and admin controls."
+title: "Copilot Data Flow Map — Where Does Your Data Go? (Free)"
+description: "Interactive data flow and architecture explorer for M365 Copilot. Layer-by-layer breakdown of how Copilot works, where your data goes. Free."
 type: "copilot-data-flow"
 layout: "list"
 sitemap:

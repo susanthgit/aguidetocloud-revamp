@@ -1,6 +1,6 @@
 ---
-title: "Compliance Passport — Which Frameworks Apply to You?"
-description: "Answer 8 questions about your organisation and get a visual compliance passport showing which frameworks likely apply. Includes M365 feature mappings. Free, client-side, no data leaves your browser."
+title: "Compliance Passport — Which Frameworks Apply to You? (Free)"
+description: "Answer 8 questions about your organisation and get a visual compliance passport showing which frameworks likely apply. Includes M365 feature mappings."
 type: "compliance-passport"
 layout: "list"
 lastmod: 2026-04-16

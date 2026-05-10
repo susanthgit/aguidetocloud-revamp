@@ -1,6 +1,6 @@
 ---
-title: "WiFi QR Code Generator — Beautiful Printable WiFi Cards"
-description: "Create a stunning WiFi QR code your guests scan to connect instantly. Choose from Home, Café, Hotel & Office card designs. Print-ready, no app needed. 100% free."
+title: "Free WiFi QR Code Generator — Beautiful Printable WiFi Cards"
+description: "Create a stunning WiFi QR code your guests scan to connect instantly. Choose from Home, Café, Hotel & Office card designs. Print-ready, no app needed."
 type: "wifi-qr"
 layout: "list"
 sitemap:

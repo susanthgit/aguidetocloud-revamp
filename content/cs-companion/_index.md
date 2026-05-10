@@ -1,6 +1,6 @@
 ---
-title: "Copilot Studio Companion"
-description: "Your comprehensive interactive guide to Microsoft Copilot Studio — evaluate scenarios, explore capabilities, navigate governance, and design agent architectures."
+title: "Copilot Studio Companion — Free Tool"
+description: "Your comprehensive interactive guide to Microsoft Copilot Studio — evaluate scenarios, explore capabilities, navigate governance. Free."
 type: "cs-companion"
 layout: "list"
 sitemap:

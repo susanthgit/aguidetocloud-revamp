@@ -1,6 +1,6 @@
 ---
-title: "IT Admin Bingo — The M365 Admin Experience"
-description: "Generate random bingo cards filled with relatable IT admin moments. Mark your squares, detect bingo, and share your card. Free, fun, and painfully accurate."
+title: "IT Admin Bingo — The M365 Admin Experience (Free)"
+description: "Generate random bingo cards filled with relatable IT admin moments. Mark your squares, detect bingo, and share your card. Free, fun."
 type: "admin-bingo"
 layout: "list"
 lastmod: 2026-04-16

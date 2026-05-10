@@ -1,5 +1,5 @@
 ---
-title: "My IT Day — Choose Your Admin Adventure"
+title: "My IT Day — Choose Your Admin Adventure (Free)"
 description: "Interactive story simulator where you're the IT admin. Every choice has consequences. Score your decisions and see what kind of admin you really are."
 type: "it-day-sim"
 layout: "list"

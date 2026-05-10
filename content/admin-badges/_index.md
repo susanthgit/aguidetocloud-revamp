@@ -1,6 +1,6 @@
 ---
-title: "IT Admin Achievement Badges — Gamify Your Career"
-description: "Unlock 45 achievement badges for real IT admin accomplishments. Track your career milestones, share your badge wall, and celebrate the wins. Free, fun, private."
+title: "IT Admin Achievement Badges — Gamify Your Career (Free)"
+description: "Unlock 45 achievement badges for real IT admin accomplishments. Track your career milestones, share your badge wall, and celebrate the wins. Free, fun."
 type: "admin-badges"
 layout: "list"
 lastmod: 2026-04-17

@@ -1,6 +1,6 @@
 ---
-title: "M365 Feature Roulette — Did You Know?"
-description: "Discover Microsoft 365 features you never knew existed. Spin the roulette for a random feature, mark it as 'Knew it' or 'New to me', and track how many you know. Free and fun."
+title: "M365 Feature Roulette — Did You Know? (Free)"
+description: "Discover Microsoft 365 features you never knew existed. Spin the roulette for a random feature, mark it as 'Knew it' or 'New to me'."
 type: "feature-roulette"
 layout: "list"
 lastmod: 2026-04-16

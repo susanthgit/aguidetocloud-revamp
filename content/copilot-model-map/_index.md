@@ -1,6 +1,6 @@
 ---
 title: "Copilot Model Map — Which AI Powers What in M365 Copilot"
-description: "Interactive map showing which AI models (GPT-5, Claude, Phi) power each Microsoft 365 Copilot feature. See routing patterns, admin controls, and multi-model orchestration."
+description: "Interactive map showing which AI models (GPT-5, Claude, Phi) power each Microsoft 365 Copilot feature. See routing patterns, admin controls. Free."
 type: "copilot-model-map"
 layout: "list"
 sitemap:

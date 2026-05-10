@@ -1,6 +1,6 @@
 ---
-title: M365 Agent Builder Helper
-description: The #1 interactive guide to M365 Copilot Agent Builder. Figure out what you CAN build, HOW to build it, and WHEN to graduate to Copilot Studio. Covers both Copilot Chat (free) and M365 Copilot licensed users.
+title: "M365 Agent Builder Helper — Free Tool"
+description: "The #1 interactive guide to M365 Copilot Agent Builder. Figure out what you CAN build, HOW to build it, and WHEN to graduate to Copilot Studio."
 layout: list
 lastmod: 2026-04-18
 sitemap:

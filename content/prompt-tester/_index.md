@@ -1,6 +1,6 @@
 ---
-title: "🔬 Prompt Tester — A/B Compare Any Two AI Prompts"
-description: "Paste two prompts side-by-side and instantly see which is more CRAFTS-complete. Per-criterion scoring, diff view, and auto-improvement suggestions. 100% free, runs in your browser."
+title: "🔬 Prompt Tester — A/B Compare Any Two AI Prompts (Free)"
+description: "Paste two prompts side-by-side and instantly see which is more CRAFTS-complete. Per-criterion scoring, diff view, and auto-improvement suggestions."
 type: "prompt-tester"
 layout: "list"
 sitemap:

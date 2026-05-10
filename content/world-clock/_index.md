@@ -1,6 +1,6 @@
 ---
-title: "Global Meeting Planner & World Clock"
-description: "Find the perfect meeting time across time zones. See who's in business hours, get the best overlap, copy to your calendar. Free, instant, no sign-up — 100% client-side."
+title: "Global Meeting Planner & World Clock (Free)"
+description: "Find the perfect meeting time across time zones. See who's in business hours, get the best overlap, copy to your calendar. Free, instant, no sign-up."
 type: "world-clock"
 layout: "list"
 sitemap:

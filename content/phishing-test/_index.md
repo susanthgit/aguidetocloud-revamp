@@ -1,6 +1,6 @@
 ---
-title: "Is This Phishing? — IT Security Training Simulator"
-description: "Test your phishing detection skills with realistic email scenarios. Score your ability to spot phishing, learn red flags, and share your results. Free security awareness training."
+title: "Is This Phishing? — IT Security Training Simulator (Free)"
+description: "Test your phishing detection skills with realistic email scenarios. Score your ability to spot phishing, learn red flags, and share your results."
 type: "phishing-test"
 layout: "list"
 lastmod: 2026-04-16

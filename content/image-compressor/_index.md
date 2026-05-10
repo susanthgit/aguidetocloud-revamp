@@ -1,6 +1,6 @@
 ---
-title: "Image Compressor — Compress, Resize & Convert Images Free in Your Browser"
-description: "Compress JPEG, PNG, WebP & GIF images up to 90% smaller. Batch processing, target file size, before/after comparison, EXIF stripping. 100% free, 100% private — your images never leave your browser."
+title: "Image Compressor — Compress, Resize & Convert Images Free"
+description: "Compress JPEG, PNG, WebP & GIF images up to 90% smaller. Batch processing, target file size, before/after comparison, EXIF stripping. 100% free."
 type: "image-compressor"
 layout: "list"
 sitemap:

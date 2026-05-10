@@ -1,5 +1,5 @@
 ---
-title: "💬 Community Feedback"
+title: "💬 Community Feedback — Free Tool on A Guide to Cloud"
 description: "Share your feedback, ask questions, request features, or suggest video topics — help us build better tools and content for the cloud community."
 layout: "feedback"
 images: ["images/og/feedback.jpg"]

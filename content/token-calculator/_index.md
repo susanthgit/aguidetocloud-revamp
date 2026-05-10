@@ -1,6 +1,6 @@
 ---
-title: "AI Token Calculator — Compare GPT, Claude, Gemini, DeepSeek Pricing"
-description: "Free tool to compare AI API token pricing across all major providers. Paste text to count tokens, set usage profiles, and see monthly costs for GPT-4o, Claude Sonnet, Gemini Pro, DeepSeek, Mistral, and Azure OpenAI."
+title: "AI Token Calculator — Compare GPT, Claude, Gemini, DeepSeek"
+description: "Free tool to compare AI API token pricing across all major providers. Paste text to count tokens, set usage profiles, and see monthly costs for GPT-4o."
 type: "token-calculator"
 layout: "list"
 url: "/token-calculator/"

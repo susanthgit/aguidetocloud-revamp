@@ -1,6 +1,6 @@
 ---
-title: "What Did They Call It Now? — M365 Rename Tracker"
-description: "Microsoft renames products constantly. Search any old or new name to see the full rename history timeline. 30+ products, 80+ name changes, all in one place. Free."
+title: "What Did They Call It Now? — M365 Rename Tracker (Free)"
+description: "Microsoft renames products constantly. Search any old or new name to see the full rename history timeline. 30+ products, 80+ name changes."
 type: "rename-tracker"
 layout: "list"
 lastmod: 2026-04-16

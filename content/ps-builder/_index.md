@@ -1,6 +1,6 @@
 ---
-title: "PowerShell Command Builder — Build M365, Azure & Windows Admin Commands Visually"
-description: "Free, visual PowerShell command builder for IT admins. Build Exchange, Teams, SharePoint, Entra ID, Azure, Active Directory, GPO & Windows commands with guided parameters. No sign-up, works offline."
+title: "PowerShell Command Builder — Build M365, Azure & Windows"
+description: "Free, visual PowerShell command builder for IT admins. Build Exchange, Teams, SharePoint, Entra ID, Azure, Active Directory."
 layout: "list"
 type: "ps-builder"
 sitemap:

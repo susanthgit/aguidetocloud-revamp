@@ -1,6 +1,6 @@
 ---
-title: "Agent 365 Governance Planner — Plan Your AI Agent Governance Strategy"
-description: "Free interactive tool to plan your Microsoft Agent 365 governance, registry, naming conventions, and deployment strategy. Score your readiness, generate policies, and design agents."
+title: "Agent 365 Governance Planner — Plan Your AI Agent (Free)"
+description: "Free interactive tool to plan your Microsoft Agent 365 governance, registry, naming conventions, and deployment strategy. Score your readiness."
 type: "agent-365-planner"
 layout: "list"
 url: "/agent-365-planner/"

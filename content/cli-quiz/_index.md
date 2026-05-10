@@ -1,6 +1,6 @@
 ---
-title: "Guess the CLI Command — IT Admin Quiz"
-description: "See a task, guess the PowerShell or CLI command. 30 commands across 6 categories. Multiple choice, hard mode, daily challenge, and category mastery tracking."
+title: "Guess the CLI Command — IT Admin Quiz (Free)"
+description: "See a task, guess the PowerShell or CLI command. 30 commands across 6 categories. Multiple choice, hard mode, daily challenge. Free."
 type: "cli-quiz"
 layout: "list"
 lastmod: 2026-04-17

@@ -1,6 +1,6 @@
 ---
-title: "M365 Security Toolkit — Free Tenant Hardening Assessment, Email Security & Admin Tools"
-description: "Free interactive M365 security assessment aligned to CIS benchmarks. Generate SPF, DKIM, DMARC records. Plan admin roles. Get prioritised remediation scripts. Map to CIS, NIST, ISO 27001, Essential Eight. No tenant access needed."
+title: "M365 Security Toolkit — Free Tenant Hardening Assessment"
+description: "Free interactive M365 security assessment aligned to CIS benchmarks. Generate SPF, DKIM, DMARC records. Plan admin roles."
 type: "security-toolkit"
 layout: "list"
 url: "/security-toolkit/"

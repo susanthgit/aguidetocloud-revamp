@@ -1,6 +1,6 @@
 ---
-title: "Countdown Timer & Event Countdown — Free Online Timer with Flip Clock"
-description: "Create beautiful countdown timers for events, deadlines & milestones. Flip-clock animation, full-screen presentation mode, quick timer, stopwatch & templates. 100% free, runs in your browser."
+title: "Countdown Timer & Event Countdown — Free Online Timer"
+description: "Create beautiful countdown timers for events, deadlines & milestones. Flip-clock animation, full-screen presentation mode, quick timer."
 type: "countdown"
 layout: "list"
 sitemap:

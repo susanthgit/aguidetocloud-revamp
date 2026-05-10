@@ -1,6 +1,6 @@
 ---
-title: "QR Code Generator — Create Beautiful, Scannable QR Codes Free"
-description: "Generate stunning QR codes for URLs, WiFi, email, phone & text. Custom colours, dot styles, logos, batch generation & built-in scanner. 100% free, no sign-up, runs in your browser."
+title: "QR Code Generator — Create Beautiful, Scannable QR Codes"
+description: "Generate stunning QR codes for URLs, WiFi, email, phone & text. Custom colours, dot styles, logos, batch generation & built-in scanner. 100% free."
 type: "qr-generator"
 layout: "list"
 sitemap:

@@ -1,6 +1,6 @@
 ---
-title: "Copilot Frontier Map — What's Coming to M365 Copilot"
-description: "Track every Microsoft 365 Copilot feature in the Frontier early-access programme. See what's available now, what's graduating to GA, expected dates, AI models used, and admin actions needed."
+title: "Copilot Frontier Map — What's Coming to M365 Copilot (Free)"
+description: "Track every Microsoft 365 Copilot feature in the Frontier early-access programme. See what's available now, what's graduating to GA, expected dates. Free."
 type: "copilot-frontier-map"
 layout: "list"
 sitemap:

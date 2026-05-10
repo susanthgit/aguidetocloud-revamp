@@ -1,6 +1,6 @@
 ---
-title: "Tech Acronym Battle — Test Your IT Knowledge"
-description: "How many tech acronyms can you decode? Flash quiz covering Security, Networking, M365, Azure, AI, and more. Score, streak, and share your results. Free and fun."
+title: "Tech Acronym Battle — Test Your IT Knowledge (Free)"
+description: "How many tech acronyms can you decode? Flash quiz covering Security, Networking, M365, Azure, AI, and more. Score, streak, and share your results."
 type: "acronym-battle"
 layout: "list"
 lastmod: 2026-04-16

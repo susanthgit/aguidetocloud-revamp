@@ -1,6 +1,6 @@
 ---
-title: "Pomodoro Focus Timer — Beautiful Free Productivity Timer with Ambient Sounds"
-description: "A world-class Pomodoro timer with customisable focus sessions, ambient sounds (rain, café, forest), task tracking, and detailed stats. 100% free, runs in your browser, your data never leaves your device."
+title: "Pomodoro Focus Timer — Beautiful Free Productivity Timer"
+description: "A world-class Pomodoro timer with customisable focus sessions, ambient sounds (rain, café, forest), task tracking, and detailed stats. 100% free."
 type: "pomodoro"
 layout: "list"
 sitemap:

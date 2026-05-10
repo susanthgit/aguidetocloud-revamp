@@ -1,6 +1,6 @@
 ---
-title: "Copilot Readiness Checker — Is Your Org Ready for Microsoft 365 Copilot?"
-description: "Free interactive assessment that scores your organisation's Microsoft 365 Copilot readiness across 7 pillars — licensing, identity, data governance, security, network, change management, and monitoring. Get a 0–100 score with actionable recommendations."
+title: "Copilot Readiness Checker — Is Your Org Ready for Microsoft"
+description: "Free interactive assessment that scores your organisation's Microsoft 365 Copilot readiness across 7 pillars — licensing, identity, data governance."
 type: "copilot-readiness"
 layout: "list"
 sitemap:

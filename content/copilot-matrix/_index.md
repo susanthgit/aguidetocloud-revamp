@@ -1,6 +1,6 @@
 ---
-title: "Copilot Feature Matrix — Compare Microsoft 365 Copilot Features by App & Licence"
-description: "See exactly which Copilot features are available in Word, Excel, Teams, Outlook & more — compared across Free, Chat, Pro, and M365 Copilot licence tiers. Interactive, always up to date."
+title: "Free Copilot Feature Matrix — Compare Microsoft 365 Copilot"
+description: "See exactly which Copilot features are available in Word, Excel, Teams, Outlook & more — compared across Free, Chat, Pro, and M365 Copilot licence tiers."
 type: "copilot-matrix"
 layout: "list"
 sitemap:

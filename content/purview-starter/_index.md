@@ -1,6 +1,6 @@
 ---
-title: "Purview Starter Kit — Sensitivity Labels & DLP Planner"
-description: "Plan Microsoft Purview sensitivity labels and DLP policies with pre-built starter kits. Get deploy-ready PowerShell, change management emails, and a clear rollout plan — all 100% in your browser."
+title: "Free Purview Starter Kit — Sensitivity Labels & DLP Planner"
+description: "Plan Microsoft Purview sensitivity labels and DLP policies with pre-built starter kits. Get deploy-ready PowerShell, change management emails. Free."
 type: "purview-starter"
 layout: "list"
 date: 2026-04-16
