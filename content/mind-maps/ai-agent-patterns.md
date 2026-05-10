@@ -1,6 +1,6 @@
 ---
-title: "AI Agent Patterns — Pick the Right Architecture"
-description: "Visual decision tree for AI agent design — direct LLM, RAG, tool-using, multi-step planner-executor, and reflection patterns. Pick the simplest pattern that solves your problem."
+title: "Free AI Agent Patterns — Pick the Right Architecture"
+description: "Visual decision tree for AI agent design — direct LLM, RAG, tool-using, multi-step planner-executor, and reflection patterns. Free mind map."
 intro: "Five canonical agent patterns from simple to complex. Pick the simplest that solves your problem — adding complexity costs tokens, latency, and quality."
 category: "copilot"
 format: "decision-tree"

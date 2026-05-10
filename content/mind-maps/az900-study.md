@@ -1,6 +1,6 @@
 ---
-title: "AZ-900 Study Topics"
-description: "Visual map of AZ-900 Microsoft Azure Fundamentals study domains — cloud concepts, architecture, services, governance, cost, and SLAs."
+title: "AZ-900 Study Topics — Free Mind Map"
+description: "Visual map of AZ-900 Microsoft Azure Fundamentals study domains — cloud concepts, architecture, services, governance, cost, and SLAs. Free mind map."
 intro: "What's actually on the AZ-900 exam — and how much weight does each domain carry?"
 category: "certifications"
 format: "reference"

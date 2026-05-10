@@ -1,6 +1,6 @@
 ---
-title: "M365 Group Types — Pick Yours"
-description: "Visual map of Microsoft 365 group types — Microsoft 365 Groups, Distribution Lists, Security Groups, and Mail-Enabled Security Groups. What each one does, when to use which."
+title: "M365 Group Types — Pick Yours — Free Mind Map"
+description: "Visual map of Microsoft 365 group types — Microsoft 365 Groups, Distribution Lists, Security Groups, and Mail-Enabled Security Groups. Free mind map."
 intro: "Four 'group' things in M365 do four different jobs. Pick the wrong one and your Teams owners can't manage their permissions. Here's the cheat sheet."
 category: "copilot"
 format: "comparison"

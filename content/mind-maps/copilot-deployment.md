@@ -1,6 +1,6 @@
 ---
-title: "Copilot Deployment Checklist"
-description: "Visual checklist for rolling out M365 Copilot — prerequisites, licensing, data readiness, identity, and rollout phases."
+title: "Copilot Deployment Checklist — Free Mind Map"
+description: "Visual checklist for rolling out M365 Copilot — prerequisites, licensing, data readiness, identity, and rollout phases. Free interactive mind map."
 intro: "What do I need to have in place before turning on Copilot for my organisation?"
 category: "copilot"
 format: "reference"

@@ -1,6 +1,6 @@
 ---
-title: "SharePoint Permissions Decoded"
-description: "Visual map of SharePoint's permission model — site → library → folder → file inheritance, default groups, when inheritance breaks, external sharing, and why Copilot makes permission hygiene critical."
+title: "SharePoint Permissions Decoded — Free Mind Map"
+description: "Visual map of SharePoint's permission model — site → library → folder → file inheritance, default groups, when inheritance breaks. Free mind map."
 intro: "SharePoint permissions are simple in theory and a swamp in practice. Here's the model — and why Copilot makes hygiene non-negotiable."
 category: "copilot"
 format: "architecture"

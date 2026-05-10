@@ -1,6 +1,6 @@
 ---
-title: "Exchange Online Mail Flow — How Email Travels"
-description: "Visual map of Exchange Online mail flow — inbound through EOP and Defender, outbound to the world, hybrid scenarios with on-prem, transport rules, and the email authentication trio (SPF/DKIM/DMARC)."
+title: "Free Exchange Online Mail Flow — How Email Travels"
+description: "Visual map of Exchange Online mail flow — inbound through EOP and Defender, outbound to the world, hybrid scenarios with on-prem. Free mind map."
 intro: "Email travels through more checkpoints than most admins realise. Inbound, outbound, hybrid, transport rules, plus the SPF/DKIM/DMARC trio. Here's the map."
 category: "copilot"
 format: "architecture"

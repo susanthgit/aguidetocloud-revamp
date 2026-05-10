@@ -1,6 +1,6 @@
 ---
-title: "Microsoft Cert Renewal Cycle"
-description: "How Microsoft certification renewal works — when each cert type expires, the 6-month renewal window, the free online assessment, and what happens if you fail or miss the window."
+title: "Microsoft Cert Renewal Cycle — Free Mind Map"
+description: "How Microsoft certification renewal works — when each cert type expires, the 6-month renewal window, the free online assessment."
 intro: "Most Microsoft certs expire after a year. The good news: renewal is free, online, and only ~45 minutes. Here's the cycle."
 category: "certifications"
 format: "roadmap"

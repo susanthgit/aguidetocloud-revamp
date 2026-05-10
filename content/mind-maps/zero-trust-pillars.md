@@ -1,6 +1,6 @@
 ---
-title: "Zero Trust — 6 Pillars (with Microsoft examples)"
-description: "Visual map of the Zero Trust security framework — six pillars (Identities, Endpoints, Apps, Data, Infrastructure, Networks) with the principle behind each and Microsoft tools mapped as examples."
+title: "Free Zero Trust — 6 Pillars (with Microsoft examples)"
+description: "Visual map of the Zero Trust security framework — six pillars (Identities, Endpoints, Apps, Data, Infrastructure. Free mind map."
 intro: "Zero Trust isn't a product. It's a framework with six defense areas. Here's the structure — and which Microsoft tools you'd reach for in each."
 category: "security"
 format: "architecture"

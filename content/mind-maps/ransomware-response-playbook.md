@@ -1,6 +1,6 @@
 ---
-title: "Ransomware Response Playbook"
-description: "Visual incident-response playbook for ransomware in Microsoft environments — detect, isolate (minutes), investigate, recover, the hard decisions, and prevent next time."
+title: "Ransomware Response Playbook — Free Mind Map"
+description: "Visual incident-response playbook for ransomware in Microsoft environments — detect, isolate (minutes), investigate, recover. Free mind map."
 intro: "Ransomware response is six phases — and the hard decisions phase is the one most playbooks skip. Here's the full picture with Microsoft tooling."
 category: "security"
 format: "architecture"

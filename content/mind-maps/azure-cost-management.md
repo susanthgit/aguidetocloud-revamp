@@ -1,6 +1,6 @@
 ---
-title: "Azure Cost Management Tactics"
-description: "Visual reference of Azure cost-saving levers — Reservations, Savings Plans, Spot, dev/test pricing, tagging, budgets, Advisor recommendations, and FinOps habits."
+title: "Azure Cost Management Tactics — Free Mind Map"
+description: "Visual reference of Azure cost-saving levers — Reservations, Savings Plans, Spot, dev/test pricing, tagging, budgets. Free mind map."
 intro: "Six tactics that move Azure bills the most. Reservations + Savings Plans + Spot + tagging + budgets + Advisor — and the FinOps habits that keep them working."
 category: "certifications"
 format: "reference"

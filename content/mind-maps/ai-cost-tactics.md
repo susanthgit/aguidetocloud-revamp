@@ -1,5 +1,5 @@
 ---
-title: "AI Cost Tactics — Spend Less Without Losing Quality"
+title: "Free AI Cost Tactics — Spend Less Without Losing Quality"
 description: "Visual reference of AI cost levers — token math, model selection, prompt optimisation, RAG vs fine-tuning trade-offs, and caching strategies."
 intro: "Five levers move AI bills the most. Token math, model choice, prompt compression, RAG over fine-tune, and caching. Pull on the right ones."
 category: "copilot"

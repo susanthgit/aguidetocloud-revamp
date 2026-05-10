@@ -1,6 +1,6 @@
 ---
-title: "Conditional Access — Canonical Baseline Policies"
-description: "Visual map of Microsoft's recommended Conditional Access baseline policies — block legacy auth, MFA tiers, device posture, risk-based controls, plus the always-do practices like break-glass exclusions and report-only testing."
+title: "Free Conditional Access — Canonical Baseline Policies"
+description: "Visual map of Microsoft's recommended Conditional Access baseline policies — block legacy auth, MFA tiers, device posture. Free mind map."
 intro: "Microsoft publishes a recommended Conditional Access baseline. Here it is on one map — what every tenant should have, in priority order."
 category: "security"
 format: "reference"

@@ -1,6 +1,6 @@
 ---
-title: "Azure Resource Hierarchy"
-description: "Visual map of the Azure resource hierarchy — Tenant → Management Groups → Subscriptions → Resource Groups → Resources. With where Policy, RBAC, billing, and quotas apply."
+title: "Azure Resource Hierarchy — Free Mind Map"
+description: "Visual map of the Azure resource hierarchy — Tenant → Management Groups → Subscriptions → Resource Groups → Resources. With where Policy. Free mind map."
 intro: "Five levels. Top to bottom. Where each policy, RBAC role, and billing decision actually applies. Foundational AZ-104 visual."
 category: "certifications"
 format: "architecture"

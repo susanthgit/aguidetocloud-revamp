@@ -1,6 +1,6 @@
 ---
-title: "Copilot in Teams"
-description: "What can M365 Copilot do in Teams? Visual guide to every feature — meetings, chat, channels, and compose."
+title: "Copilot in Teams — Free Mind Map"
+description: "What can M365 Copilot do in Teams? Visual guide to every feature — meetings, chat, channels, and compose. Free interactive mind map."
 intro: "What can M365 Copilot do in Teams — and when would I use each feature?"
 category: "copilot"
 format: "reference"

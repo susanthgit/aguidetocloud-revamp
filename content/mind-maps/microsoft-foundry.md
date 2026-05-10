@@ -1,6 +1,6 @@
 ---
-title: "Azure AI Foundry — Build, Evaluate, Deploy AI"
-description: "Visual map of Azure AI Foundry — the AI platform with a multi-vendor model catalog at its core. OpenAI, Anthropic, Meta, open-weights, BYOM. Plus build, ground, evaluate, deploy, monitor, govern."
+title: "Free Azure AI Foundry — Build, Evaluate, Deploy AI"
+description: "Visual map of Azure AI Foundry — the AI platform with a multi-vendor model catalog at its core. OpenAI, Anthropic, Meta, open-weights. Free mind map."
 intro: "Foundry's core USP is the multi-vendor model catalog — OpenAI, Anthropic, Meta, open-weights, BYOM all live alongside each other. Six layers from raw models to governed production."
 category: "copilot"
 format: "architecture"

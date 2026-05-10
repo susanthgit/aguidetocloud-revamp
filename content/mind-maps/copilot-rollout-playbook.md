@@ -1,6 +1,6 @@
 ---
-title: "M365 Copilot Rollout Playbook"
-description: "Visual roadmap for rolling out Microsoft 365 Copilot — readiness assessment, pilot, train-the-trainers, departmental scale, measurement. Plus the gotchas to watch."
+title: "M365 Copilot Rollout Playbook — Free Mind Map"
+description: "Visual roadmap for rolling out Microsoft 365 Copilot — readiness assessment, pilot, train-the-trainers, departmental scale, measurement. Free mind map."
 intro: "Copilot rollouts that succeed look the same. Five phases, plus the four watchouts that derail the unprepared."
 category: "copilot"
 format: "roadmap"

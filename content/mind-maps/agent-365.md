@@ -1,6 +1,6 @@
 ---
-title: "Agent 365 — Govern Your AI Agents"
-description: "Visual map of Microsoft Agent 365 — three control planes (Entra Agent ID, Purview for Agents, Defender for Agents) plus the M365 Admin Center, the four things every agent needs, and when you actually need this."
+title: "Agent 365 — Govern Your AI Agents — Free Mind Map"
+description: "Visual map of Microsoft Agent 365 — three control planes (Entra Agent ID, Purview for Agents. Free mind map."
 intro: "Agents need IDs, data rules, security cameras, and lifecycle. Agent 365 gives all four for AI agents in your tenant. Here's how it's organised."
 category: "security"
 format: "architecture"

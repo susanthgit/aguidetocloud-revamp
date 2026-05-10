@@ -1,6 +1,6 @@
 ---
-title: "Defender for Cloud — Multi-Cloud Security Posture"
-description: "Visual map of Microsoft Defender for Cloud — the CSPM + CWPP product that protects Azure, AWS, GCP, and on-prem workloads. Foundational free tier, premium CSPM, per-workload Defender plans."
+title: "Free Defender for Cloud — Multi-Cloud Security Posture"
+description: "Visual map of Microsoft Defender for Cloud — the CSPM + CWPP product that protects Azure, AWS, GCP, and on-prem workloads. Foundational free tier."
 intro: "Defender for Cloud is two things: CSPM (posture management — what's misconfigured?) and CWPP (workload protection — what's under attack?). Plus it's multi-cloud."
 category: "security"
 format: "architecture"

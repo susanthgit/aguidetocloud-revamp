@@ -1,5 +1,5 @@
 ---
-title: "Copilot Prompt Patterns"
+title: "Copilot Prompt Patterns — Free Mind Map"
 description: "Visual reference of prompt patterns for Microsoft 365 Copilot — the R-T-C-F formula, summarise/draft/analyse patterns, and the anti-patterns to avoid."
 intro: "Better prompts = better answers. Five pattern families, the R-T-C-F formula, and the four anti-patterns that produce useless Copilot output."
 category: "copilot"

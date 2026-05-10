@@ -1,6 +1,6 @@
 ---
-title: "Teams Phone Licensing — Pick Your Path"
-description: "Visual decision tree for Microsoft Teams Phone licensing — when you already have E5, when to buy the add-on, and which PSTN connectivity option (Calling Plan, Operator Connect, or Direct Routing) fits."
+title: "Teams Phone Licensing — Pick Your Path — Free Mind Map"
+description: "Visual decision tree for Microsoft Teams Phone licensing — when you already have E5, when to buy the add-on. Free mind map."
 intro: "Teams Phone is two decisions, not one. First: do I have the right base licence? Second: how do calls reach the public phone network?"
 category: "licensing"
 format: "decision-tree"

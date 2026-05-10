@@ -1,6 +1,6 @@
 ---
-title: "How Conditional Access Decides"
-description: "Visual map of how Microsoft Entra Conditional Access evaluates a sign-in — assignments, signals, conditions, grant controls, and session controls. The rules engine that gates every M365 sign-in."
+title: "How Conditional Access Decides — Free Mind Map"
+description: "Visual map of how Microsoft Entra Conditional Access evaluates a sign-in — assignments, signals, conditions, grant controls. Free mind map."
 intro: "Every sign-in goes through this five-stage gate. Who the user is → what they're accessing → real-time signals → grant decision → session limits. Here's how Conditional Access actually decides."
 category: "security"
 format: "architecture"

@@ -1,6 +1,6 @@
 ---
-title: "Copilot in Excel"
-description: "Visual guide to Copilot in Excel — analyse data, generate formulas, build charts, format tables, and run Python with natural language."
+title: "Copilot in Excel — Free Mind Map"
+description: "Visual guide to Copilot in Excel — analyse data, generate formulas, build charts, format tables, and run Python with natural language. Free mind map."
 intro: "What can Copilot do in Excel — and when is Python in Excel actually useful?"
 category: "copilot"
 format: "reference"

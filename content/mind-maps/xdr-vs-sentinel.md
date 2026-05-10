@@ -1,5 +1,5 @@
 ---
-title: "Defender XDR vs Microsoft Sentinel"
+title: "Defender XDR vs Microsoft Sentinel — Free Mind Map"
 description: "Visual disambiguation of Defender XDR and Microsoft Sentinel — scope, pricing, when to use each, the overlap, and how most enterprises use both together."
 intro: "XDR and Sentinel sound similar and overlap in features. They're not interchangeable. Pick by scope and budget — most enterprises run both."
 category: "security"

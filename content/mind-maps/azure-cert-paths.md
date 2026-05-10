@@ -1,6 +1,6 @@
 ---
-title: "Azure Cert Paths"
-description: "Visual map of Microsoft Azure certifications — Fundamentals, Associate, Expert, Specialty, and the newest exams. Find your path."
+title: "Azure Cert Paths — Free Mind Map"
+description: "Visual map of Microsoft Azure certifications — Fundamentals, Associate, Expert, Specialty, and the newest exams. Find your path. Free mind map."
 intro: "Where do I start with Azure certs — and which path matches my role?"
 category: "certifications"
 format: "roadmap"

@@ -1,6 +1,6 @@
 ---
-title: "The Microsoft AI Stack — Layer by Layer"
-description: "Bird's-eye view of the Microsoft AI stack — foundation models, the Azure platform, Copilot apps, the agent layer, and the cross-cutting governance/identity/data fabric."
+title: "The Microsoft AI Stack — Layer by Layer — Free Mind Map"
+description: "Bird's-eye view of the Microsoft AI stack — foundation models, the Azure platform, Copilot apps, the agent layer. Free mind map."
 intro: "Microsoft AI is not one product — it's four layers plus a cross-cutting fabric. Here's how Foundry, Azure OpenAI, Copilot, and Studio actually relate."
 category: "copilot"
 format: "architecture"

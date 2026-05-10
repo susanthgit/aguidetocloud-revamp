@@ -1,6 +1,6 @@
 ---
-title: "Microsoft 365 Education Licensing (A1/A3/A5)"
-description: "Visual breakdown of Microsoft 365 Education plans — A1 (free), A3, A5. Faculty vs student pricing, what's included, eligibility, and how they compare to Enterprise plans."
+title: "Microsoft 365 Education Licensing (A1/A3/A5) — Free Mind Map"
+description: "Visual breakdown of Microsoft 365 Education plans — A1 (free), A3, A5. Faculty vs student pricing, what's included, eligibility."
 intro: "Three Education plans with massive faculty discounts and free student licences. Here's what each tier includes — plus the eligibility gotchas."
 category: "licensing"
 format: "comparison"

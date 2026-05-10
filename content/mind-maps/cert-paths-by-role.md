@@ -1,6 +1,6 @@
 ---
-title: "Microsoft Certifications by Role"
-description: "Visual roadmap of Microsoft certification paths grouped by role — Cloud Admin, Cloud Architect, Security Analyst, Identity Admin, AI Engineer, Data Engineer. Pick a track, follow the progression."
+title: "Microsoft Certifications by Role — Free Mind Map"
+description: "Visual roadmap of Microsoft certification paths grouped by role — Cloud Admin, Cloud Architect, Security Analyst, Identity Admin. Free mind map."
 intro: "Microsoft has 50+ certs. Most people only need 3-4 — the ones that match their role. Here's the by-role progression for the six biggest tracks."
 category: "certifications"
 format: "roadmap"

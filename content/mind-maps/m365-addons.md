@@ -1,6 +1,6 @@
 ---
-title: "M365 Add-ons Worth Knowing"
-description: "The Microsoft 365 add-ons every IT team should know — AI, security, device management, collaboration, productivity, and compliance."
+title: "M365 Add-ons Worth Knowing — Free Mind Map"
+description: "The Microsoft 365 add-ons every IT team should know — AI, security, device management, collaboration, productivity, and compliance. Free mind map."
 intro: "Beyond the base licence, which Microsoft 365 add-ons are actually worth paying for?"
 category: "licensing"
 format: "reference"

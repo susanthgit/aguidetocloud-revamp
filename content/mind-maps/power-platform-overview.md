@@ -1,6 +1,6 @@
 ---
-title: "Microsoft Power Platform — What's What"
-description: "Visual overview of the Microsoft Power Platform — Power Apps, Power Automate, Power BI, Copilot Studio, plus Dataverse and the governance bits that keep it sane."
+title: "Microsoft Power Platform — What's What — Free Mind Map"
+description: "Visual overview of the Microsoft Power Platform — Power Apps, Power Automate, Power BI, Copilot Studio. Free mind map."
 intro: "Five products, one platform, shared backbone. Here's how Power Apps, Power Automate, Power BI, and Copilot Studio fit together — with Dataverse underneath."
 category: "copilot"
 format: "reference"

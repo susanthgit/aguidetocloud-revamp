@@ -1,6 +1,6 @@
 ---
-title: "Azure Database Options — Pick Yours (DP-900 / DP-300 / DP-700)"
-description: "Visual decision tree for picking the right Azure database — SQL Database, SQL Managed Instance, Postgres / MySQL Flexible, Cosmos DB (6 APIs), Synapse, Microsoft Fabric. Mapped to DP-900, DP-300, DP-700, AZ-204 exams."
+title: "Azure Database Options — Pick Yours — Free Mind Map"
+description: "Visual decision tree for picking the right Azure database — SQL Database, SQL Managed Instance, Postgres / MySQL Flexible. Free mind map."
 intro: "Eleven Azure database services. Six Cosmos APIs. Three exams test this. Here's the decision tree."
 category: "certifications"
 format: "decision-tree"

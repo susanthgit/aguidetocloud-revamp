@@ -1,6 +1,6 @@
 ---
-title: "M365 Service Outage Runbook"
-description: "Visual runbook for handling Microsoft 365 service outages — detect, triage, communicate, escalate, recover. With the cadence + tooling that prevents helpdesk meltdown."
+title: "M365 Service Outage Runbook — Free Mind Map"
+description: "Visual runbook for handling Microsoft 365 service outages — detect, triage, communicate, escalate, recover. Free mind map."
 intro: "When Microsoft 365 goes down, your helpdesk lights up in 10 minutes. Five phases, with the comms cadence that prevents the panic spiral."
 category: "copilot"
 format: "architecture"

@@ -1,6 +1,6 @@
 ---
-title: "Zero Trust Implementation — Where to Start"
-description: "Visual roadmap for rolling out Zero Trust — the staged order most successful programmes follow. Identity first, then endpoints + apps, then data, then network/workloads. With the always-on cross-cutting capabilities."
+title: "Zero Trust Implementation — Where to Start — Free Mind Map"
+description: "Visual roadmap for rolling out Zero Trust — the staged order most successful programmes follow. Identity first, then endpoints + apps. Free mind map."
 intro: "Companion to the Zero Trust pillars map. That one shows WHAT. This one shows the ORDER — what to ship in months 1, 2, 3, 6, 12. Identity first."
 category: "security"
 format: "roadmap"

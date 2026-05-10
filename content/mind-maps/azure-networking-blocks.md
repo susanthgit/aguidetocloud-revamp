@@ -1,6 +1,6 @@
 ---
-title: "Azure Networking Building Blocks"
-description: "Visual reference of Azure networking primitives — VNet, peering, NSG/ASG, Azure Firewall, Bastion, Private Link, VPN, ExpressRoute, Front Door, App Gateway, and DNS."
+title: "Azure Networking Building Blocks — Free Mind Map"
+description: "Visual reference of Azure networking primitives — VNet, peering, NSG/ASG, Azure Firewall, Bastion, Private Link, VPN, ExpressRoute. Free mind map."
 intro: "Most-asked AZ-104 visual. The building blocks of Azure networking on one map — from VNet to Front Door, with where each one fits."
 category: "certifications"
 format: "architecture"

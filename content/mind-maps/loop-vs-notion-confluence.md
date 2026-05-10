@@ -1,6 +1,6 @@
 ---
-title: "Microsoft Loop vs Notion vs Confluence"
-description: "Visual cross-platform comparison of Microsoft Loop, Notion, and Atlassian Confluence — costs, integration, flexibility, and how to pick the right one for your team."
+title: "Microsoft Loop vs Notion vs Confluence — Free Mind Map"
+description: "Visual cross-platform comparison of Microsoft Loop, Notion, and Atlassian Confluence — costs, integration, flexibility. Free mind map."
 intro: "Three collaboration platforms, three philosophies. Loop integrates into M365. Notion is most flexible. Confluence is most enterprise. Pick by what you already have."
 category: "copilot"
 format: "comparison"

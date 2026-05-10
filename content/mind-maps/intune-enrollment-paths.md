@@ -1,6 +1,6 @@
 ---
-title: "Intune Device Enrollment — Pick a Path"
-description: "Visual decision tree for Intune device enrollment — Autopilot, Hybrid Entra Join, Apple Business Manager, Android Zero Touch, BYOD MAM-only, kiosk and shared modes."
+title: "Intune Device Enrollment — Pick a Path — Free Mind Map"
+description: "Visual decision tree for Intune device enrollment — Autopilot, Hybrid Entra Join, Apple Business Manager, Android Zero Touch. Free mind map."
 intro: "Six enrollment paths, three platforms, two device-ownership models. Here's how to pick — and why most modern orgs land on Autopilot + MAM-only."
 category: "security"
 format: "decision-tree"

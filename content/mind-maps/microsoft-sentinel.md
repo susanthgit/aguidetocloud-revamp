@@ -1,6 +1,6 @@
 ---
-title: "Microsoft Sentinel — Cloud SIEM + SOAR"
-description: "Visual map of Microsoft Sentinel — what it is (SIEM + SOAR), data connectors, analytics rules, hunting, automation playbooks, and how it differs from Defender XDR."
+title: "Microsoft Sentinel — Cloud SIEM + SOAR — Free Mind Map"
+description: "Visual map of Microsoft Sentinel — what it is (SIEM + SOAR), data connectors, analytics rules, hunting, automation playbooks. Free mind map."
 intro: "Sentinel is the cloud SIEM that ingests logs from everywhere and correlates them. Defender XDR covers M365 only. Most SOCs run both."
 category: "security"
 format: "architecture"

@@ -1,6 +1,6 @@
 ---
-title: "Phishing Response Playbook"
-description: "Visual incident-response playbook for phishing attacks in Microsoft 365 — detect, contain (minutes), investigate, recover, and learn. With the Microsoft tools (Defender, Entra, Sentinel, Purview) at each step."
+title: "Phishing Response Playbook — Free Mind Map"
+description: "Visual incident-response playbook for phishing attacks in Microsoft 365 — detect, contain (minutes), investigate, recover, and learn. Free mind map."
 intro: "When phishing hits your tenant, the order matters. Detect → contain in minutes → investigate → recover → learn. Here's the playbook with Microsoft tools mapped to each step."
 category: "security"
 format: "architecture"

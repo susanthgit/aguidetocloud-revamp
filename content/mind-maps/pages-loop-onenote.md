@@ -1,6 +1,6 @@
 ---
-title: "Copilot Pages vs Loop vs OneNote vs Word"
-description: "Visual disambiguator for Microsoft's four 'page' tools — Copilot Pages, Loop pages, OneNote, and Word. Different jobs, easy to confuse."
+title: "Copilot Pages vs Loop vs OneNote vs Word — Free Mind Map"
+description: "Visual disambiguator for Microsoft's four 'page' tools — Copilot Pages, Loop pages, OneNote, and Word. Different jobs, easy to confuse. Free mind map."
 intro: "Four tools, all called pages or pages-adjacent. Each does something different. Pick by purpose."
 category: "copilot"
 format: "comparison"

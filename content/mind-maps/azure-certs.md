@@ -1,7 +1,7 @@
 ---
-title: "Azure Certification Paths Mind Map"
+title: "Azure Certification Paths Mind Map (Free)"
 draft: true
-description: "Visual guide to Azure certification paths — from fundamentals to expert. See prerequisites, recommended order, and career alignment."
+description: "Visual guide to Azure certification paths — from fundamentals to expert. See prerequisites, recommended order, and career alignment. Free mind map."
 intro: "Navigate the Azure certification landscape visually. See which certs build on each other and plan your learning path."
 category: "certifications"
 renderer: "horizontal"

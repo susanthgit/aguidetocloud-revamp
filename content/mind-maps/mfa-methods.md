@@ -1,6 +1,6 @@
 ---
-title: "MFA Methods — Phishing Resistance Ranked"
-description: "Visual comparison of multi-factor authentication methods ranked by phishing resistance — FIDO2/Passkey, hardware keys, Authenticator with number matching, TOTP, SMS, voice, email."
+title: "MFA Methods — Phishing Resistance Ranked — Free Mind Map"
+description: "Visual comparison of multi-factor authentication methods ranked by phishing resistance — FIDO2/Passkey, hardware keys. Free mind map."
 intro: "Not all MFA is equal. Passkey beats Authenticator beats TOTP beats SMS — and SMS for admins is a 2026 security risk. Here's the ranked map."
 category: "security"
 format: "comparison"

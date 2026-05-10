@@ -1,6 +1,6 @@
 ---
-title: "E3 vs E5 — What's the Difference?"
-description: "Visual comparison of Microsoft 365 E3 and E5 — identity, security, compliance, analytics, voice, and cost. When to upgrade."
+title: "E3 vs E5 — What's the Difference? — Free Mind Map"
+description: "Visual comparison of Microsoft 365 E3 and E5 — identity, security, compliance, analytics, voice, and cost. When to upgrade. Free mind map."
 intro: "What does E5 actually give me over E3 — and is it worth the price jump?"
 category: "licensing"
 format: "comparison"

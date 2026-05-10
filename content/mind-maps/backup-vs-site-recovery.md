@@ -1,6 +1,6 @@
 ---
-title: "Backup vs Site Recovery vs Soft Delete vs M365 Backup"
-description: "Visual map disambiguating Azure Backup, Azure Site Recovery, storage Soft Delete, and Microsoft 365 Backup — which fixes which disaster, with RPO/RTO and fit-for-purpose guidance."
+title: "Free Backup vs Site Recovery vs Soft Delete vs M365 Backup"
+description: "Visual map disambiguating Azure Backup, Azure Site Recovery, storage Soft Delete, and Microsoft 365 Backup — which fixes which disaster. Free mind map."
 intro: "Four products that look like 'backup'. Each fixes a different disaster. Here's the map — and which one to reach for."
 category: "certifications"
 format: "comparison"

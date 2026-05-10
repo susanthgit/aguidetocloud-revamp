@@ -1,6 +1,6 @@
 ---
-title: "Business vs Enterprise Plans"
-description: "Microsoft 365 Business vs Enterprise plans — user cap, included features, and which family is right for your organisation."
+title: "Business vs Enterprise Plans — Free Mind Map"
+description: "Microsoft 365 Business vs Enterprise plans — user cap, included features, and which family is right for your organisation. Free mind map."
 intro: "Should I buy Business or Enterprise plans — and what happens when I pass 300 users?"
 category: "licensing"
 format: "comparison"

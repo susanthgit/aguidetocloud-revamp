@@ -1,6 +1,6 @@
 ---
-title: "Where Does That File Actually Live?"
-description: "Visual map of M365 file storage by creation context. OneDrive, SharePoint, Teams channels, Outlook attachments, Loop, meeting recordings — where each one really sits."
+title: "Where Does That File Actually Live? — Free Mind Map"
+description: "Visual map of M365 file storage by creation context. OneDrive, SharePoint, Teams channels, Outlook attachments, Loop, meeting recordings. Free mind map."
 intro: "When you share a file in Teams chat — where does it actually go? It depends on the creation context, not the app. Here's the map."
 category: "copilot"
 format: "comparison"

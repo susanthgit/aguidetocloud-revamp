@@ -1,6 +1,6 @@
 ---
-title: "Data Leak Response Playbook"
-description: "Visual incident-response playbook for data leaks and exfiltration in Microsoft 365 — detect, scope, contain, notify, close the gap. With Purview, Defender Cloud Apps, and DLP at each step."
+title: "Data Leak Response Playbook — Free Mind Map"
+description: "Visual incident-response playbook for data leaks and exfiltration in Microsoft 365 — detect, scope, contain, notify, close the gap. Free mind map."
 intro: "Data leaks are quieter than ransomware but the regulatory clock is just as fast. Five phases — and the legal involvement starts in hours, not days."
 category: "security"
 format: "architecture"

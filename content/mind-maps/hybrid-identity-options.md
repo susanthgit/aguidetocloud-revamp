@@ -1,6 +1,6 @@
 ---
-title: "Hybrid Identity — Pick a Path"
-description: "Visual decision tree for hybrid identity in Microsoft Entra — cloud-only vs Cloud Sync vs Entra Connect Sync vs AD FS federation. Modernised guidance for 2026."
+title: "Hybrid Identity — Pick a Path — Free Mind Map"
+description: "Visual decision tree for hybrid identity in Microsoft Entra — cloud-only vs Cloud Sync vs Entra Connect Sync vs AD FS federation. Free mind map."
 intro: "Cloud-only, Cloud Sync, Connect Sync, or AD FS? The defaults have moved. Pick the right path."
 category: "security"
 format: "decision-tree"

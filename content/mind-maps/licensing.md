@@ -1,7 +1,7 @@
 ---
-title: "Microsoft 365 Licensing Mind Map"
+title: "Microsoft 365 Licensing Mind Map (Free)"
 draft: true
-description: "Visual overview of M365 licensing — plan families, E1/E3/E5 comparison, Business vs Enterprise, add-ons, and key features per plan."
+description: "Visual overview of M365 licensing — plan families, E1/E3/E5 comparison, Business vs Enterprise, add-ons, and key features per plan. Free mind map."
 intro: "Microsoft 365 licensing simplified. Explore plan families, compare features, and find which licence fits."
 category: "licensing"
 renderer: "waterfall"

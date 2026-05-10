@@ -1,6 +1,6 @@
 ---
-title: "Azure Compute Decision Tree (AZ-104 / AZ-204 / AZ-305)"
-description: "Visual decision tree for picking the right Azure compute service — VMs, AKS, Container Apps, Functions, App Service, Batch. Mapped to AZ-104 / AZ-204 / AZ-305 exam coverage."
+title: "Free Azure Compute Decision Tree (AZ-104 / AZ-204 / AZ-305)"
+description: "Visual decision tree for picking the right Azure compute service — VMs, AKS, Container Apps, Functions, App Service, Batch. Free mind map."
 intro: "Need full OS control? Containerised? Event-driven? Web app? Batch? Five questions, five answers — and which Azure cert exam tests each."
 category: "certifications"
 format: "decision-tree"

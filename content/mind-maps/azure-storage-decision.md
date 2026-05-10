@@ -1,5 +1,5 @@
 ---
-title: "Azure Storage Decision Tree"
+title: "Azure Storage Decision Tree — Free Mind Map"
 description: "Visual decision tree for picking the right Azure storage service — Blob, Files, Disks, Tables, Queues — plus access tiers and redundancy options."
 intro: "Five storage services, three access tiers, four redundancy options. Here's how to pick without overpaying."
 category: "certifications"

@@ -1,6 +1,6 @@
 ---
-title: "M365 Tenant-to-Tenant Migration — 5 Phases"
-description: "Visual roadmap of M365 tenant-to-tenant migration phases — Discovery, Planning, Pilot, Production, and Post-migration. Common pattern for M&A scenarios and brand consolidations."
+title: "M365 Tenant-to-Tenant Migration — 5 Phases — Free Mind Map"
+description: "Visual roadmap of M365 tenant-to-tenant migration phases — Discovery, Planning, Pilot, Production, and Post-migration. Free mind map."
 intro: "Tenant-to-tenant migrations are 5 phases, not one big event. Here's the roadmap — and why the post-migration phase is the one most teams under-plan."
 category: "licensing"
 format: "roadmap"

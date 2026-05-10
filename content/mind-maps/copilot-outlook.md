@@ -1,6 +1,6 @@
 ---
-title: "Copilot in Outlook"
-description: "What can M365 Copilot do in Outlook? Visual map of drafting, summarising, coaching, scheduling, and search features."
+title: "Copilot in Outlook — Free Mind Map"
+description: "What can M365 Copilot do in Outlook? Visual map of drafting, summarising, coaching, scheduling, and search features. Free interactive mind map."
 intro: "What can Copilot actually do in Outlook — and which features matter most for my inbox?"
 category: "copilot"
 format: "reference"

@@ -1,6 +1,6 @@
 ---
-title: "M365 Copilot Control System (CCS) — 3 Pillars"
-description: "Visual map of Microsoft's Copilot Control System (CCS) — three admin pillars (Security, Management, Measurement) plus Agent 365 for governing custom agents."
+title: "Free M365 Copilot Control System (CCS) — 3 Pillars"
+description: "Visual map of Microsoft's Copilot Control System (CCS) — three admin pillars (Security, Management. Free mind map."
 intro: "CCS is what makes M365 Copilot enterprise-safe. Three control surfaces — Security, Management, Measurement — plus Agent 365 next door."
 category: "copilot"
 format: "architecture"

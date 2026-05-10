@@ -1,7 +1,7 @@
 ---
-title: "Microsoft 365 Copilot Mind Map"
+title: "Microsoft 365 Copilot Mind Map (Free)"
 draft: true
-description: "Interactive visual overview of M365 Copilot — features by app, licensing, deployment, adoption, and security. Download and share."
+description: "Interactive visual overview of M365 Copilot — features by app, licensing, deployment, adoption, and security. Download and share. Free mind map."
 intro: "Everything about Microsoft 365 Copilot in one visual map. Click nodes to explore, drag to pan, scroll to zoom."
 category: "copilot"
 renderer: "radial"

@@ -1,6 +1,6 @@
 ---
-title: "Entra ID Admin Roles by Function"
-description: "Visual map of Microsoft Entra ID admin roles grouped by function — identity, security, workload, support, apps. Plus the two highest-impact roles to lock down with Privileged Identity Management."
+title: "Entra ID Admin Roles by Function — Free Mind Map"
+description: "Visual map of Microsoft Entra ID admin roles grouped by function — identity, security, workload, support, apps. Free mind map."
 intro: "Microsoft Entra has 100+ admin roles. Most teams only need a handful — and most of those should follow least privilege. Here's the functional map."
 category: "security"
 format: "reference"

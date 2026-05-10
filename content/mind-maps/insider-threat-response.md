@@ -1,6 +1,6 @@
 ---
-title: "Insider Threat Response Playbook"
-description: "Visual playbook for responding to insider risk — detect signals, investigate carefully (legal first), confirm intent, contain, work the people process with HR, and reduce future risk."
+title: "Insider Threat Response Playbook — Free Mind Map"
+description: "Visual playbook for responding to insider risk — detect signals, investigate carefully (legal first), confirm intent, contain. Free mind map."
 intro: "Insider threats are the slowest, quietest incidents. The investigation has to be careful — legal first, anonymous during triage, then the people process. Here's the path."
 category: "security"
 format: "architecture"

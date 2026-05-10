@@ -1,6 +1,6 @@
 ---
-title: "Frontline (F1/F3) vs Enterprise (E3/E5)"
-description: "Visual comparison of Microsoft 365 Frontline plans (F1, F3) and Enterprise plans (E3, E5) — costs, included apps, storage, security, and who actually qualifies as a frontline worker."
+title: "Frontline (F1/F3) vs Enterprise (E3/E5) — Free Mind Map"
+description: "Visual comparison of Microsoft 365 Frontline plans (F1, F3) and Enterprise plans (E3, E5) — costs, included apps, storage, security. Free mind map."
 intro: "Frontline plans are NOT 'cheap E3'. They're built for shared-device, shift-based workers who barely sit at a desk. Here's the actual comparison."
 category: "licensing"
 format: "comparison"

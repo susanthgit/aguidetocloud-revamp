@@ -1,6 +1,6 @@
 ---
-title: "How Copilot Features Reach Your Tenant"
-description: "The 3-tier release model for Microsoft 365 Copilot — Frontier, Standard, Deferred. Why the same feature lands in different tenants on different days, and what admins control."
+title: "How Copilot Features Reach Your Tenant — Free Mind Map"
+description: "The 3-tier release model for Microsoft 365 Copilot — Frontier, Standard, Deferred. Free mind map."
 intro: "Why doesn't my tenant have feature X yet? The Frontier → Standard → Deferred pipeline, the 5 feature statuses, and the levers admins actually have."
 category: "copilot"
 format: "roadmap"

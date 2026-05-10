@@ -1,5 +1,5 @@
 ---
-title: "AWS ↔ Azure ↔ GCP — Service Equivalents"
+title: "AWS ↔ Azure ↔ GCP — Service Equivalents — Free Mind Map"
 description: "Visual cross-cloud Rosetta Stone — compute, storage, databases, identity, networking, and AI services mapped across AWS, Azure, and Google Cloud."
 intro: "The classic cross-cloud chart. EC2/VM/Compute Engine. S3/Blob/Cloud Storage. Lambda/Functions/Cloud Functions. Six service families on one map."
 category: "certifications"

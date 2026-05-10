@@ -1,6 +1,6 @@
 ---
-title: "Microsoft Loop — Components, Pages, and Where They Live"
-description: "Visual map of Microsoft Loop — components, pages, workspaces, where they embed (Teams, Outlook, OneNote), where their data is stored (SharePoint Embedded vs OneDrive vs Site), and how governance applies."
+title: "Free Microsoft Loop — Components, Pages, and Where They Live"
+description: "Visual map of Microsoft Loop — components, pages, workspaces, where they embed (Teams, Outlook, OneNote). Free mind map."
 intro: "Loop has components, pages, workspaces, and three different storage containers depending on creation context. Here's the map."
 category: "copilot"
 format: "reference"

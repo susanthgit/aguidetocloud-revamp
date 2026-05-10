@@ -1,6 +1,6 @@
 ---
-title: "Security Cert Paths"
-description: "Visual map of Microsoft security certifications — SC-900, SC-200, SC-300, SC-400, SC-100, AZ-500. Find your specialty."
+title: "Security Cert Paths — Free Mind Map"
+description: "Visual map of Microsoft security certifications — SC-900, SC-200, SC-300, SC-400, SC-100, AZ-500. Find your specialty. Free interactive mind map."
 intro: "Which Microsoft security certification matches my role — and where do I start?"
 category: "certifications"
 format: "roadmap"
