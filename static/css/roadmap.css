@@ -1,5 +1,40 @@
 /* ── M365 Roadmap Tracker — Zen tokens ─────────── */
 
+:root {
+  --rdmap-brand-copilot: #7B68EE;
+  --rdmap-brand-teams: #6264A7;
+  --rdmap-brand-outlook: #0078D4;
+  --rdmap-brand-sharepoint: #038387;
+  --rdmap-brand-office-apps: #D83B01;
+  --rdmap-brand-purview: #E74856;
+  --rdmap-brand-intune: #00BCF2;
+  --rdmap-brand-viva: #6C33A3;
+  --rdmap-brand-entra: #0078D4;
+  --rdmap-brand-admin: #5C2D91;
+  --rdmap-brand-edge-media: #3C8527;
+  --rdmap-status-rolling: #059669;
+  --rdmap-status-indev: #D97706;
+  --rdmap-status-launched: #0891B2;
+  --rdmap-status-cancelled: #DC2626;
+}
+[data-theme="dark"] {
+  --rdmap-brand-copilot: #B7A7FF;
+  --rdmap-brand-teams: #A5A8D3;
+  --rdmap-brand-outlook: #5BA4EE;
+  --rdmap-brand-sharepoint: #5FB8B8;
+  --rdmap-brand-office-apps: #F39A6F;
+  --rdmap-brand-purview: #F58B96;
+  --rdmap-brand-intune: #69D8F5;
+  --rdmap-brand-viva: #B387D3;
+  --rdmap-brand-entra: #5BA4EE;
+  --rdmap-brand-admin: #A77BCE;
+  --rdmap-brand-edge-media: #80B86A;
+  --rdmap-status-rolling: #4ADE80;
+  --rdmap-status-indev: #FBBF24;
+  --rdmap-status-launched: #67E8F9;
+  --rdmap-status-cancelled: #F87171;
+}
+
 /* ── Zen Underline Tabs (top-level) ── */
 .rdmap-top-tabs {
   display: flex; gap: 0; padding: 0;
@@ -116,7 +151,7 @@
 .rdmap-row-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem; white-space: nowrap; }
 .rdmap-row-product { font-size: 0.78rem; }
 .rdmap-row-date { font-size: 0.78rem; color: var(--text-muted); }
-.rdmap-delayed { font-size: 0.62rem; font-weight: 700; color: var(--error); background: rgba(239,68,68,0.1); padding: 0.1rem 0.35rem; border-radius: 3px; margin-left: 0.3rem; letter-spacing: 0.03em; }
+.rdmap-delayed { font-size: 0.62rem; font-weight: 600; color: var(--error); background: color-mix(in srgb, var(--error) 10%, transparent); padding: 0.1rem 0.35rem; border-radius: 3px; margin-left: 0.3rem; letter-spacing: 0.03em; }
 
 /* Load more */
 .rdmap-load-more {
@@ -153,7 +188,7 @@
   position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
   width: 42px; height: 42px; border-radius: 50%;
   background: var(--accent); color: var(--accent-foreground); border: none;
-  font-size: 1.2rem; font-weight: 700; cursor: pointer;
+  font-size: 1.2rem; font-weight: 600; cursor: pointer;
   box-shadow: 0 2px 12px color-mix(in srgb, var(--accent) 25%, transparent);
   opacity: 0; transform: translateY(20px); transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out, transform 0.3s ease-out, opacity 0.3s ease-out; pointer-events: none;
 }
@@ -169,3 +204,45 @@
   .rdmap-row-meta { flex-direction: row; justify-content: space-between; align-items: center; }
   .rdmap-row-main { padding: 0; }
 }
+
+/* ── Phase 14 batch 12: brand & status tokens for inline-style elimination ── */
+.rdmap-chip[data-cat="copilot"] { --chip-c: var(--rdmap-brand-copilot); }
+.rdmap-chip[data-cat="teams"] { --chip-c: var(--rdmap-brand-teams); }
+.rdmap-chip[data-cat="outlook"] { --chip-c: var(--rdmap-brand-outlook); }
+.rdmap-chip[data-cat="sharepoint"] { --chip-c: var(--rdmap-brand-sharepoint); }
+.rdmap-chip[data-cat="office-apps"] { --chip-c: var(--rdmap-brand-office-apps); }
+.rdmap-chip[data-cat="purview"] { --chip-c: var(--rdmap-brand-purview); }
+.rdmap-chip[data-cat="intune"] { --chip-c: var(--rdmap-brand-intune); }
+.rdmap-chip[data-cat="viva"] { --chip-c: var(--rdmap-brand-viva); }
+.rdmap-chip[data-cat="entra"] { --chip-c: var(--rdmap-brand-entra); }
+.rdmap-chip[data-cat="admin"] { --chip-c: var(--rdmap-brand-admin); }
+.rdmap-chip[data-cat="edge-media"] { --chip-c: var(--rdmap-brand-edge-media); }
+
+.rdmap-row-product[data-cat="copilot"] { color: var(--rdmap-brand-copilot); }
+.rdmap-row-product[data-cat="teams"] { color: var(--rdmap-brand-teams); }
+.rdmap-row-product[data-cat="outlook"] { color: var(--rdmap-brand-outlook); }
+.rdmap-row-product[data-cat="sharepoint"] { color: var(--rdmap-brand-sharepoint); }
+.rdmap-row-product[data-cat="office-apps"] { color: var(--rdmap-brand-office-apps); }
+.rdmap-row-product[data-cat="purview"] { color: var(--rdmap-brand-purview); }
+.rdmap-row-product[data-cat="intune"] { color: var(--rdmap-brand-intune); }
+.rdmap-row-product[data-cat="viva"] { color: var(--rdmap-brand-viva); }
+.rdmap-row-product[data-cat="entra"] { color: var(--rdmap-brand-entra); }
+.rdmap-row-product[data-cat="admin"] { color: var(--rdmap-brand-admin); }
+.rdmap-row-product[data-cat="edge-media"] { color: var(--rdmap-brand-edge-media); }
+
+.rdmap-row[data-cat="copilot"] { border-left-color: var(--rdmap-brand-copilot); }
+.rdmap-row[data-cat="teams"] { border-left-color: var(--rdmap-brand-teams); }
+.rdmap-row[data-cat="outlook"] { border-left-color: var(--rdmap-brand-outlook); }
+.rdmap-row[data-cat="sharepoint"] { border-left-color: var(--rdmap-brand-sharepoint); }
+.rdmap-row[data-cat="office-apps"] { border-left-color: var(--rdmap-brand-office-apps); }
+.rdmap-row[data-cat="purview"] { border-left-color: var(--rdmap-brand-purview); }
+.rdmap-row[data-cat="intune"] { border-left-color: var(--rdmap-brand-intune); }
+.rdmap-row[data-cat="viva"] { border-left-color: var(--rdmap-brand-viva); }
+.rdmap-row[data-cat="entra"] { border-left-color: var(--rdmap-brand-entra); }
+.rdmap-row[data-cat="admin"] { border-left-color: var(--rdmap-brand-admin); }
+.rdmap-row[data-cat="edge-media"] { border-left-color: var(--rdmap-brand-edge-media); }
+
+.rdmap-st[data-status="Rolling out"] { background: var(--rdmap-status-rolling); }
+.rdmap-st[data-status="In development"] { background: var(--rdmap-status-indev); }
+.rdmap-st[data-status="Launched"] { background: var(--rdmap-status-launched); }
+.rdmap-st[data-status="Cancelled"] { background: var(--rdmap-status-cancelled); }
