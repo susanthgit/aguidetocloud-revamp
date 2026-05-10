@@ -365,7 +365,7 @@ function renderNews(data, view) {
       var hidden = i >= initialShow ? ' style="display:none"' : '';
       html += '<div class="ainews-compact-row ainews-loadmore-item' + (isRumour ? ' ainews-compact-rumour' : '') + '" data-category="' + escapeHtml(v.cat) + '"' + hidden + '>';
       html += '<div class="ainews-compact-header">';
-      html += '<span class="ainews-compact-cat" style="--pill-color:' + (CATEGORY_META[v.cat] || {color:'#888'}).color + '">' + v.emoji + ' ' + escapeHtml(v.cat) + '</span>';
+      html += '<span class="ainews-compact-cat" data-cat="' + escapeHtml(v.cat) + '">' + v.emoji + ' ' + escapeHtml(v.cat) + '</span>';
       html += '<span class="ainews-compact-title" role="button" tabindex="0">';
       html += (v.isNew ? '<span class="ainews-new-badge">NEW</span> ' : '') + escapeHtml(v.title);
       if (entry.related.length > 0) html += ' <span class="ainews-cluster-badge">+' + entry.related.length + ' source' + (entry.related.length > 1 ? 's' : '') + '</span>';
@@ -438,7 +438,7 @@ function renderNews(data, view) {
       var pct = Math.round((count / maxCount) * 100);
       thtml += '<div class="ainews-trend-row">';
       thtml += '<span class="ainews-trend-label">' + (meta.emoji || '') + ' ' + escapeHtml(cat) + '</span>';
-      thtml += '<div class="ainews-trend-bar-bg"><div class="ainews-trend-bar" style="width:' + pct + '%;background:' + meta.color + '"></div></div>';
+      thtml += '<div class="ainews-trend-bar-bg"><div class="ainews-trend-bar" data-cat="' + escapeHtml(cat) + '" style="--w:' + pct + '%"></div></div>';
       thtml += '<span class="ainews-trend-count">' + count + '</span>';
       thtml += '</div>';
     });

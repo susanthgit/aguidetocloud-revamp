@@ -1,6 +1,17 @@
 /* ── AI News Styles ─────────────────────── */
 /* Extracted from style.css for maintainability */
 
+:root {
+  --ainews-purple-deepdive: #9333EA;
+  --ainews-purple-rumour: #9B59B6;
+  --ainews-purple-cluster: #B44AFF;
+  --ainews-amber-hover: #B45309;
+  --ainews-gold: #FFD700;
+  --ainews-fresh-stale: #FFA500;
+  --ainews-fresh-old: #FF4444;
+  --ainews-text-dim: #504A59;
+}
+
 /* Tool accent tokens — used by shared components */
 .ainews-page-hero,
 .ainews-grid,
@@ -58,10 +69,10 @@
   width: 100%;
 }
 .ainews-hero-overlay h1 {
-  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+  text-shadow: 0 2px 12px color-mix(in srgb, black 70%, transparent);
 }
 .ainews-hero-overlay p {
-  text-shadow: 0 1px 8px rgba(0,0,0,0.7);
+  text-shadow: 0 1px 8px color-mix(in srgb, black 70%, transparent);
 }
 .ainews-header {
   text-align: center;
@@ -70,7 +81,7 @@
 .ainews-date {
   font-family: var(--font-heading);
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
 }
 .ainews-stats {
@@ -86,7 +97,7 @@
 }
 .ainews-breaking-label {
   font-family: var(--font-heading);
-  font-weight: 800;
+  font-weight: 600;
   color: var(--accent);
   letter-spacing: 1px;
   font-size: 0.75rem;
@@ -114,7 +125,7 @@
   position: absolute;
   left: 0;
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 600;
 }
 .ainews-breaking a {
   color: var(--text-secondary);
@@ -133,7 +144,7 @@
 .ainews-briefing-header {
   font-family: var(--font-heading);
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
   margin-bottom: 0.5rem;
 }
@@ -153,13 +164,13 @@
 .ainews-briefing-list li::before {
   content: '→ ';
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* ── CLUSTER BADGES ── */
 .ainews-cluster-badge {
   font-size: var(--text-caption, 0.75rem);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
   background: var(--accent-subtle);
   padding: 0.1rem 0.4rem;
@@ -218,7 +229,7 @@
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 16px color-mix(in srgb, black 10%, transparent);
   padding: 0.3rem;
 }
 .ainews-filter-option {
@@ -243,7 +254,7 @@
 .ainews-filter-option-active {
   background: var(--accent-subtle);
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 600;
 }
 .ainews-filter-count {
   opacity: 0.5;
@@ -274,12 +285,12 @@
 }
 .ainews-compact-cat {
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 600;
   padding: 0.15rem 0.5rem;
   border-radius: 16px;
-  background: color-mix(in srgb, var(--pill-color, #888) 15%, transparent);
-  color: var(--pill-color, #aaa);
-  border: 1px solid color-mix(in srgb, var(--pill-color, #888) 30%, transparent);
+  background: color-mix(in srgb, var(--pill-color, gray) 15%, transparent);
+  color: var(--pill-color, darkgray);
+  border: 1px solid color-mix(in srgb, var(--pill-color, gray) 30%, transparent);
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -409,7 +420,7 @@
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 600;
   font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -419,7 +430,7 @@
 .ainews-card h3 {
   font-family: var(--font-heading);
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   line-height: 1.4;
 }
@@ -465,8 +476,8 @@
   display: inline-block;
 }
 .ainews-fresh-dot.ainews-fresh { background: var(--success); box-shadow: none; }
-.ainews-fresh-dot.ainews-stale { background: #ffa500; box-shadow: 0 0 6px #ffa500; }
-.ainews-fresh-dot.ainews-old { background: #ff4444; box-shadow: 0 0 6px #ff4444; }
+.ainews-fresh-dot.ainews-stale { background: var(--ainews-fresh-stale); box-shadow: 0 0 6px var(--ainews-fresh-stale); }
+.ainews-fresh-dot.ainews-old { background: var(--ainews-fresh-old); box-shadow: 0 0 6px var(--ainews-fresh-old); }
 .ainews-tab {
   padding: 0.5rem 1.2rem;
   border-radius: var(--radius-md, 10px);
@@ -488,7 +499,7 @@
   grid-column: 1 / -1;
   font-family: var(--font-heading);
   font-size: 1.2rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-primary);
   padding: 1rem 0 0.5rem;
   border-bottom: 1px solid var(--accent-subtle);
@@ -503,7 +514,7 @@
 .ainews-tier-header {
   font-family: var(--font-heading);
   font-size: 1.1rem;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
   padding: 0.8rem 1rem;
@@ -518,7 +529,7 @@
   font-size: 1.2rem;
 }
 .ainews-tier-headlines {
-  background: linear-gradient(135deg, var(--accent-subtle), var(--accent-subtle));
+  background: var(--accent-subtle);
   border: 1px solid var(--accent-subtle);
   color: var(--accent);
 }
@@ -560,7 +571,7 @@
 .ainews-card-hero h3 {
   font-family: var(--font-heading);
   font-size: 1.15rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-primary);
   line-height: 1.4;
 }
@@ -601,7 +612,7 @@
 }
 .ainews-why strong {
   color: var(--success);
-  font-weight: 800;
+  font-weight: 600;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -619,10 +630,10 @@
 /* Deep dive cards — magenta */
 .ainews-deepdive-grid .ainews-why {
   background: color-mix(in srgb, var(--accent) 6%, transparent);
-  border-left-color: #9333EA;
+  border-left-color: var(--ainews-purple-deepdive);
 }
 .ainews-deepdive-grid .ainews-why strong {
-  color: #9333EA;
+  color: var(--ainews-purple-deepdive);
 }
 
 /* ── QUICK LINKS (box cards) ─────────────── */
@@ -644,10 +655,10 @@
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 .ainews-quick-item:hover {
-  border-color: #B45309;
+  border-color: var(--ainews-amber-hover);
   background: color-mix(in srgb, var(--warning) 3%, transparent);
   transform: translateY(-2px);
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.25), 0 0 25px rgba(255, 215, 0, 0.1);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--ainews-gold) 25%, transparent), 0 0 25px color-mix(in srgb, var(--ainews-gold) 10%, transparent);
 }
 .ainews-quick-emoji {
   font-size: 1rem;
@@ -655,7 +666,7 @@
 .ainews-quick-title {
   font-family: var(--font-heading);
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   line-height: 1.4;
 }
@@ -724,7 +735,7 @@
   box-shadow: 0 0 0 2px var(--accent-subtle);
 }
 .ainews-search::placeholder {
-  color: #504A59;
+  color: var(--ainews-text-dim);
 }
 /* ── STICKY SEARCH + FILTERS ─────────────── */
 .ainews-sticky-bar {
@@ -748,7 +759,7 @@
   background: var(--accent-subtle);
   color: var(--accent);
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
   font-family: var(--font-heading);
   cursor: pointer;
   transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out, transform 0.3s ease-out, opacity 0.3s ease-out;
@@ -819,10 +830,12 @@
   height: 100%;
   border-radius: 3px;
   transition: width 0.6s ease-out;
+  width: var(--w, 0);
+  background: var(--pill-color, var(--accent));
 }
 .ainews-trend-count {
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-muted);
   min-width: 28px;
   text-align: right;
@@ -837,18 +850,18 @@
 /* ── RUMOURS & GOSSIP STYLE ────────────── */
 .ainews-card-rumour {
   border-style: dashed;
-  border-color: rgba(155, 89, 182, 0.3);
+  border-color: color-mix(in srgb, var(--ainews-purple-rumour) 30%, transparent);
 }
 .ainews-card-rumour:hover {
-  border-color: #9B59B6;
-  box-shadow: 0 0 12px rgba(155, 89, 182, 0.25), 0 0 25px rgba(155, 89, 182, 0.1);
+  border-color: var(--ainews-purple-rumour);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--ainews-purple-rumour) 25%, transparent), 0 0 25px color-mix(in srgb, var(--ainews-purple-rumour) 10%, transparent);
 }
 .ainews-card-rumour h3 {
   font-style: italic;
 }
 .ainews-card-rumour .ainews-cat {
-  background: rgba(155, 89, 182, 0.15);
-  color: #9B59B6;
+  background: color-mix(in srgb, var(--ainews-purple-rumour) 15%, transparent);
+  color: var(--ainews-purple-rumour);
 }
 
 /* ── ARTICLE THUMBNAILS ─────────────────── */
@@ -926,7 +939,7 @@
 .ainews-thumb-source {
   font-family: var(--font-heading);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-muted);
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -965,8 +978,8 @@
   border-radius: 4px;
   font-size: var(--text-caption, 0.75rem);
   font-weight: 600;
-  background: rgba(180, 74, 255, 0.1);
-  color: #b44aff;
+  background: color-mix(in srgb, var(--ainews-purple-cluster) 10%, transparent);
+  color: var(--ainews-purple-cluster);
   text-transform: capitalize;
 }
 
@@ -1001,7 +1014,7 @@
   background: var(--accent-subtle);
   color: var(--accent);
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.85rem;
   text-decoration: none;
   white-space: nowrap;
@@ -1023,7 +1036,7 @@
 .ainews-btt {
   position: fixed; bottom: 2.5rem; right: 2.5rem; z-index: 9999;
   width: 50px; height: 50px; border-radius: 50%;
-  background: var(--accent); color: var(--accent-foreground, #fff); border: 2px solid var(--accent-subtle);
+  background: var(--accent); color: var(--accent-foreground, white); border: 2px solid var(--accent-subtle);
   font-size: 1.5rem; font-weight: 900; cursor: pointer;
   box-shadow: 0 4px 20px var(--accent-subtle), 0 0 40px var(--accent-subtle);
   opacity: 0; transform: translateY(20px); transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out, transform 0.3s ease-out, opacity 0.3s ease-out;
@@ -1031,7 +1044,7 @@
   display: flex; align-items: center; justify-content: center;
 }
 .ainews-btt-show { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.ainews-btt:hover { background: #fff; box-shadow: 0 4px 30px var(--accent-subtle), 0 0 60px var(--accent-subtle); }
+.ainews-btt:hover { background: white; box-shadow: 0 4px 30px var(--accent-subtle), 0 0 60px var(--accent-subtle); }
 
 /* ── SKELETON LOADING ──────────────────── */
 .ainews-skeleton-wrap {
@@ -1057,7 +1070,7 @@
   background: var(--accent);
   color: var(--text-primary);
   font-size: 0.6rem;
-  font-weight: 800;
+  font-weight: 600;
   padding: 2px 6px;
   border-radius: 4px;
   text-transform: uppercase;

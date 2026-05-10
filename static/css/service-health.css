@@ -58,7 +58,7 @@
   background: var(--bg-elevated);
 }
 .shealth-tab.active {
-  color: var(--accent-foreground, #fff);
+  color: var(--accent-foreground, white);
   background: var(--accent);
   border-color: var(--accent);
   box-shadow: 0 2px 8px var(--accent-subtle);
@@ -66,7 +66,7 @@
 .shealth-tab-badge {
   display: inline-flex; align-items: center; justify-content: center;
   min-width: 1.3em; height: 1.3em; padding: 0 0.35em; margin-left: 0.4em;
-  border-radius: 10px; font-size: 0.72rem; font-weight: 800;
+  border-radius: 10px; font-size: 0.72rem; font-weight: 600;
   background: var(--error); color: var(--accent-foreground); line-height: 1;
 }
 .shealth-panel { display: none; }
@@ -93,7 +93,7 @@
 }
 .shealth-summary-value {
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
 }
 .shealth-summary-value.shealth-red { color: var(--sh-red); }
@@ -145,7 +145,7 @@
   color: var(--text-primary);
   padding: 0.1rem 0.5rem;
   border-radius: 16px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* ── Active Incidents Section ── */
@@ -157,7 +157,7 @@
 }
 .shealth-active-list .shealth-incident {
   border-left: 3px solid var(--sh-red);
-  background: rgba(239, 68, 68, 0.04);
+  background: color-mix(in srgb, var(--sh-red) 4%, transparent);
 }
 
 /* ── Clear Filters Button ── */
@@ -405,7 +405,7 @@
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
-.shealth-load-btn:hover { background: var(--accent); color: var(--accent-foreground, #fff); }
+.shealth-load-btn:hover { background: var(--accent); color: var(--accent-foreground, white); }
 
 /* ── Footer ── */
 .shealth-footer {
@@ -469,7 +469,7 @@
 
 .shealth-modal-title {
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin: 0 0 0.5rem;
   padding-right: 2rem;
@@ -619,7 +619,7 @@
   align-items: center;
   justify-content: center;
   font-size: 0.6rem;
-  font-weight: 700;
+  font-weight: 600;
   flex-shrink: 0;
 }
 .shealth-ma-rank.shealth-r1 { background: var(--sh-red); color: var(--accent-foreground); }
@@ -627,7 +627,7 @@
 .shealth-ma-rank.shealth-r3 { background: var(--sh-yellow); color: var(--bg-page); }
 .shealth-ma-rank.shealth-r4,.shealth-ma-rank.shealth-r5 { background: var(--border); color: var(--text-secondary); }
 .shealth-ma-name { flex: 1; color: var(--text-primary); }
-.shealth-ma-count { font-weight: 700; color: var(--accent); }
+.shealth-ma-count { font-weight: 600; color: var(--accent); }
 .shealth-ma-bar-track {
   width: 60px;
   height: 5px;
@@ -667,7 +667,7 @@
 }
 .shealth-sc-item:last-child { border-bottom: none; }
 .shealth-sc-label { color: var(--text-secondary); }
-.shealth-sc-value { font-weight: 700; color: var(--text-primary); }
+.shealth-sc-value { font-weight: 600; color: var(--text-primary); }
 
 /* Date Lookup */
 .shealth-date-lookup {
@@ -691,12 +691,12 @@
 }
 .shealth-date-result-ok {
   background: var(--accent-subtle);
-  border: 1px solid rgba(34, 197, 94, 0.25);
+  border: 1px solid color-mix(in srgb, var(--sh-green) 25%, transparent);
   color: var(--sh-green);
 }
 .shealth-date-result-bad {
-  background: rgba(239, 68, 68, 0.08);
-  border: 1px solid rgba(239, 68, 68, 0.25);
+  background: color-mix(in srgb, var(--sh-red) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--sh-red) 25%, transparent);
   color: var(--text-primary);
 }
 
@@ -733,3 +733,41 @@
   .shealth-modal { padding: 1rem; margin-top: 1rem; }
   .shealth-trend-bars { gap: 2px; }
 }
+
+/* ── Phase 14 batch 12: inline-style eliminations ── */
+.shealth-duration-fill { width: var(--w, 0); transition: width 0.6s ease-out; }
+.shealth-duration-fill[data-tier="green"] { background: var(--sh-green); }
+.shealth-duration-fill[data-tier="yellow"] { background: var(--sh-yellow); }
+.shealth-duration-fill[data-tier="red"] { background: var(--sh-red); }
+
+.shealth-badge-status[data-status="serviceDegradation"],
+.shealth-badge-status[data-status="investigationSuspended"] {
+  background: color-mix(in srgb, var(--sh-yellow) 13%, transparent);
+  color: var(--sh-yellow);
+  border-color: color-mix(in srgb, var(--sh-yellow) 27%, transparent);
+}
+.shealth-badge-status[data-status="serviceOperational"],
+.shealth-badge-status[data-status="serviceRestored"],
+.shealth-badge-status[data-status="postIncidentReviewPublished"] {
+  background: color-mix(in srgb, var(--sh-green) 13%, transparent);
+  color: var(--sh-green);
+  border-color: color-mix(in srgb, var(--sh-green) 27%, transparent);
+}
+.shealth-badge-status[data-status="serviceInterruption"],
+.shealth-badge-status[data-status="serviceIncident"] {
+  background: color-mix(in srgb, var(--sh-red) 13%, transparent);
+  color: var(--sh-red);
+  border-color: color-mix(in srgb, var(--sh-red) 27%, transparent);
+}
+
+.shealth-badge--feature {
+  background: color-mix(in srgb, var(--badge-purple) 12%, transparent);
+  color: var(--badge-purple);
+  border: 1px solid color-mix(in srgb, var(--badge-purple) 25%, transparent);
+}
+.shealth-incident-duration--ongoing { color: var(--sh-red); }
+.shealth-active-count { color: var(--sh-red); }
+.shealth-empty-state { text-align: center; padding: 2rem; color: var(--sh-text-dim, var(--text-muted)); }
+.shealth-error-state { text-align: center; padding: 2rem; color: var(--sh-red); }
+.shealth-related-match { margin-top: 0.4rem; padding-left: 1rem; }
+.shealth-related-match-dim { color: var(--sh-text-dim, var(--text-muted)); }

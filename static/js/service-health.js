@@ -227,14 +227,13 @@
     if (mins <= 0) return '';
     // Scale: 0-60min = green, 60-360min = yellow, 360+ = red. Max bar at 24h (1440min)
     const pct = Math.min((mins / 1440) * 100, 100);
-    const color = mins < 60 ? 'var(--sh-green)' : mins < 360 ? 'var(--sh-yellow)' : 'var(--sh-red)';
-    return `<div class="shealth-duration-bar"><div class="shealth-duration-fill" style="width:${pct}%;background:${color}"></div></div>`;
+    const tier = mins < 60 ? 'green' : mins < 360 ? 'yellow' : 'red';
+    return `<div class="shealth-duration-bar"><div class="shealth-duration-fill" data-tier="${tier}" style="--w:${pct}%"></div></div>`;
   }
 
   // ── Render Incident Card ──
   function renderIncident(i) {
     const active = !i.is_resolved;
-    const statusStyle = `background:${i.status_color}22; color:${i.status_color}; border-color:${i.status_color}44`;
 
     return `
     <div class="shealth-incident" data-active="${active}" data-id="${esc(i.id)}" role="button" tabindex="0">
@@ -243,15 +242,15 @@
           <h3 class="shealth-incident-title">${esc(i.title)}</h3>
           <div class="shealth-incident-meta">
             <span class="shealth-badge shealth-badge-service">${i.service_icon} ${esc(i.service_short)}</span>
-            <span class="shealth-badge shealth-badge-status" style="${statusStyle}">${i.status_icon} ${esc(i.status_label)}</span>
+            <span class="shealth-badge shealth-badge-status" data-status="${esc(i.status || '')}">${i.status_icon} ${esc(i.status_label)}</span>
             ${i.regions && i.regions.length > 0 ? `<span class="shealth-badge shealth-badge-regions">${esc(i.regions.join(', '))}</span>` : ''}
-            ${i.feature ? `<span class="shealth-badge" style="background:rgba(167,139,250,0.12);color:#A78BFA;border:1px solid rgba(167,139,250,0.25)">${esc(i.feature)}</span>` : ''}
+            ${i.feature ? `<span class="shealth-badge shealth-badge--feature">${esc(i.feature)}</span>` : ''}
             ${i.update_count > 0 ? `<span class="shealth-update-count">${i.update_count} updates</span>` : ''}
           </div>
         </div>
         <div class="shealth-incident-right">
           <span class="shealth-incident-time">${formatDate(i.start_time)}</span>
-          ${i.duration ? `<span class="shealth-incident-duration">⏱ ${esc(i.duration)}</span>` : active ? '<span class="shealth-incident-duration" style="color:var(--sh-red)">⏱ Ongoing</span>' : ''}
+          ${i.duration ? `<span class="shealth-incident-duration">⏱ ${esc(i.duration)}</span>` : active ? '<span class="shealth-incident-duration shealth-incident-duration--ongoing">⏱ Ongoing</span>' : ''}
         </div>
       </div>
       ${i.impact ? `<div class="shealth-incident-impact">${esc(stripHtml(i.impact))}</div>` : ''}
@@ -280,12 +279,12 @@
 
     if (meta) {
       meta.innerHTML = `
-        <span><span class="shealth-meta-count">${historyFiltered.length}</span> incident${historyFiltered.length !== 1 ? 's' : ''}${hasFilters ? ' match filters' : ' in history'}${activeCount > 0 && hasFilters ? ` · <span style="color:var(--sh-red)">${activeCount} active</span>` : ''}</span>
+        <span><span class="shealth-meta-count">${historyFiltered.length}</span> incident${historyFiltered.length !== 1 ? 's' : ''}${hasFilters ? ' match filters' : ' in history'}${activeCount > 0 && hasFilters ? ` · <span class="shealth-active-count">${activeCount} active</span>` : ''}</span>
       `;
     }
 
     if (showing.length === 0) {
-      container.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--sh-text-dim)">No incidents match your filters</div>';
+      container.innerHTML = '<div class="shealth-empty-state">No incidents match your filters</div>';
       if (loadMore) loadMore.style.display = 'none';
       return;
     }
@@ -524,7 +523,7 @@
       resultEl.innerHTML = `
         <div class="shealth-date-result-msg shealth-date-result-bad">
           <strong>${matches.length} incident${matches.length !== 1 ? 's' : ''}</strong> ${svcFilter !== 'all' ? 'for this service ' : ''}on ${targetDate}:
-          ${matches.map(m => `<div style="margin-top:0.4rem;padding-left:1rem">• ${m.service_icon} <strong>${esc(m.service_short)}</strong>: ${esc(m.title)} <span style="color:var(--sh-text-dim)">(${esc(m.duration || 'ongoing')})</span></div>`).join('')}
+          ${matches.map(m => `<div class="shealth-related-match">• ${m.service_icon} <strong>${esc(m.service_short)}</strong>: ${esc(m.title)} <span class="shealth-related-match-dim">(${esc(m.duration || 'ongoing')})</span></div>`).join('')}
         </div>`;
     }
   }
@@ -653,7 +652,7 @@
     } catch (err) {
       console.error('Service Health init error:', err);
       const tl = document.getElementById('shealth-timeline');
-      if (tl) tl.innerHTML = '<div style="text-align:center;padding:2rem;color:#EF4444">Failed to load service health data. Please try again later.</div>';
+      if (tl) tl.innerHTML = '<div class="shealth-error-state">Failed to load service health data. Please try again later.</div>';
     }
   }
 

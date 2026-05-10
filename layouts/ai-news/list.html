@@ -77,6 +77,12 @@
 
 {{ partial "bookmark-cta.html" (dict "tool" "AI News" "accent" "#ff66ff") }}
 
+<style>
+{{ range $key, $val := hugo.Data.ainews_categories }}
+[data-cat="{{ $val.name }}"] { --pill-color: {{ $val.color }}; }
+{{ end }}
+</style>
+
 <script>
 window.__ainewsCategoryConfig = {
   {{ range $key, $val := hugo.Data.ainews_categories }}
