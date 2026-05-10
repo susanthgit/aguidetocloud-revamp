@@ -1,4 +1,4 @@
 ---
-title: "DeepSeek — Features, Pricing, Use Cases"
-description: "Complete overview of DeepSeek — capabilities, pricing, compliance, and integration details. Compare with alternatives."
+title: "DeepSeek — Compare Features, Pricing, Use Cases (Free)"
+description: "DeepSeek's open-weight LLM for reasoning at low cost. Free comparison covering pricing, features, compliance, and alternatives. Updated 2026."
 ---

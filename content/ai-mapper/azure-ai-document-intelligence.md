@@ -1,4 +1,4 @@
 ---
-title: "Azure AI Document Intelligence — Features, Pricing, Use Cases"
-description: "Complete overview of Azure AI Document Intelligence — capabilities, pricing, compliance, and integration details. Compare with alternatives."
+title: "Azure AI Document Intelligence — Compare Features, Pricing"
+description: "Azure AI Document Intelligence — Microsoft Azure's OCR + document AI. Free comparison of pricing, features, and alternatives. Updated 2026."
 ---

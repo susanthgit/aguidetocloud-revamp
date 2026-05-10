@@ -1,4 +1,4 @@
 ---
-title: "Google Vertex AI — Features, Pricing, Use Cases"
-description: "Complete overview of Google Vertex AI — capabilities, pricing, compliance, and integration details. Compare with alternatives."
+title: "Google Vertex AI — Free Pricing & Feature Comparison"
+description: "Google Vertex AI — Google Cloud's AI platform. Free guide covering pricing, features, managed ML + GenAI, and alternatives. Updated 2026."
 ---

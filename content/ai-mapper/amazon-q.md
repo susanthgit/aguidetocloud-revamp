@@ -1,4 +1,4 @@
 ---
-title: "Amazon Q — Features, Pricing, Use Cases"
-description: "Complete overview of Amazon Q — capabilities, pricing, compliance, and integration details. Compare with alternatives."
+title: "Amazon Q — Compare Features, Pricing, Use Cases (Free)"
+description: "Amazon Q is AWS's AI assistant for enterprise apps. Free comparison covering pricing, features, compliance, and alternatives. Updated 2026."
 ---

@@ -1,4 +1,4 @@
 ---
-title: "Azure AI Foundry — Features, Pricing, Use Cases"
-description: "Complete overview of Azure AI Foundry — capabilities, pricing, compliance, and integration details. Compare with alternatives."
+title: "Azure AI Foundry — Free Pricing & Feature Comparison"
+description: "Azure AI Foundry — Microsoft Azure's AI platform. Free guide covering pricing, features, enterprise agents, and alternatives. Updated 2026."
 ---

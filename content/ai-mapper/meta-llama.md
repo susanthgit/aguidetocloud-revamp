@@ -1,4 +1,4 @@
 ---
-title: "Llama (Open Source) — Features, Pricing, Use Cases"
-description: "Complete overview of Llama (Open Source) — capabilities, pricing, compliance, and integration details. Compare with alternatives."
+title: "Meta Llama — Compare Features, Pricing, Use Cases (Free)"
+description: "Meta Llama's open-weight LLM for self-hosted, fine-tuning. Free comparison covering pricing, features, compliance, and alternatives. Updated 2026."
 ---

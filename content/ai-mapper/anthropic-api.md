@@ -1,4 +1,4 @@
 ---
-title: "Claude API — Features, Pricing, Use Cases"
-description: "Complete overview of Claude API — capabilities, pricing, compliance, and integration details. Compare with alternatives."
+title: "Claude API — Compare Features, Pricing, Use Cases (Free)"
+description: "Claude API is Anthropic's LLM API for code, analysis, drafting. Free comparison covering pricing, features, compliance, and alternatives. Updated 2026."
 ---

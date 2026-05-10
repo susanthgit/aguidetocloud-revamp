@@ -1,4 +1,4 @@
 ---
-title: "Hugging Face — Features, Pricing, Use Cases"
-description: "Complete overview of Hugging Face — capabilities, pricing, compliance, and integration details. Compare with alternatives."
+title: "Hugging Face — Compare Features, Pricing, Use Cases (Free)"
+description: "Hugging Face's model hub for 600k open models + Spaces. Free comparison covering pricing, features, compliance, and alternatives. Updated 2026."
 ---

@@ -1,4 +1,4 @@
 ---
-title: "Google Gemini (Consumer) — Features, Pricing, Use Cases"
-description: "Complete overview of Google Gemini (Consumer) — capabilities, pricing, compliance, and integration details. Compare with alternatives."
+title: "Google Gemini — Compare Features, Pricing, Use Cases (Free)"
+description: "Google Gemini's AI chatbot for multimodal consumer chat. Free comparison covering pricing, features, compliance, and alternatives. Updated 2026."
 ---

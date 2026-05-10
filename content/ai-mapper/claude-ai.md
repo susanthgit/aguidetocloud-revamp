@@ -1,4 +1,4 @@
 ---
-title: "Claude.ai — Features, Pricing, Use Cases"
-description: "Complete overview of Claude.ai — capabilities, pricing, compliance, and integration details. Compare with alternatives."
+title: "Claude — Compare Features, Pricing, Use Cases (Free)"
+description: "Claude is Anthropic's AI chatbot for long-context reasoning. Free comparison covering pricing, features, compliance, and alternatives. Updated 2026."
 ---

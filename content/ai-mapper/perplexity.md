@@ -1,4 +1,4 @@
 ---
-title: "Perplexity — Features, Pricing, Use Cases"
-description: "Complete overview of Perplexity — capabilities, pricing, compliance, and integration details. Compare with alternatives."
+title: "Perplexity — Compare Features, Pricing, Use Cases (Free)"
+description: "Perplexity's AI search for cited web research. Free comparison covering pricing, features, compliance, and alternatives. Updated 2026."
 ---

@@ -1,4 +1,4 @@
 ---
-title: "Mistral API — Features, Pricing, Use Cases"
-description: "Complete overview of Mistral API — capabilities, pricing, compliance, and integration details. Compare with alternatives."
+title: "Mistral API — Compare Features, Pricing, Use Cases (Free)"
+description: "Mistral API's LLM API for Mistral Large, embeddings. Free comparison covering pricing, features, compliance, and alternatives. Updated 2026."
 ---

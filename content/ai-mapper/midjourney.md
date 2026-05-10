@@ -1,4 +1,4 @@
 ---
-title: "Midjourney — Features, Pricing, Use Cases"
-description: "Complete overview of Midjourney — capabilities, pricing, compliance, and integration details. Compare with alternatives."
+title: "Midjourney — Compare Features, Pricing, Use Cases (Free)"
+description: "Midjourney's image AI for text-to-image generation. Free comparison covering pricing, features, compliance, and alternatives. Updated 2026."
 ---

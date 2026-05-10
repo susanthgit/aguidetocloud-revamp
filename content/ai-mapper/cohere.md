@@ -1,4 +1,4 @@
 ---
-title: "Cohere — Features, Pricing, Use Cases"
-description: "Complete overview of Cohere — capabilities, pricing, compliance, and integration details. Compare with alternatives."
+title: "Cohere — Compare Features, Pricing, Use Cases (Free)"
+description: "Cohere's LLM API for Command R, Aya, embeddings. Free comparison covering pricing, features, compliance, and alternatives. Updated 2026."
 ---
