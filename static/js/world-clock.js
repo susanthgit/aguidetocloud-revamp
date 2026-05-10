@@ -633,10 +633,10 @@ function renderConvertResults() {
         <div class="wclk-result-day">${formatDateShort(adjusted, c.tz)}</div>
         <span class="wclk-result-biz ${biz.cls}">${biz.text}</span>
       </div>
-      <div style="text-align:right;display:flex;align-items:center;gap:0.5rem">
+      <div class="wclk-result-right">
         <div>
           <div class="wclk-result-time">${formatTimeShort(adjusted, c.tz, S.use24h)}</div>
-          <div style="font-size:0.72rem;color:var(--text-muted)">${esc(getUtcOffset(c.tz, adjusted))}</div>
+          <div class="wclk-result-offset">${esc(getUtcOffset(c.tz, adjusted))}</div>
         </div>
         <button class="wclk-result-remove" data-idx="${i}" title="Remove">✕</button>
       </div>
@@ -870,10 +870,10 @@ function renderMeetingTimeline() {
 
   // Legend — period-based
   html += `<div class="wclk-timeline-legend">
-    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(34,197,94,0.5)"></div> Daytime (9-5)</div>
-    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(251,191,36,0.35)"></div> Morning (6-9)</div>
-    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(249,115,22,0.3)"></div> Evening (5-9)</div>
-    <div class="wclk-legend-item"><div class="wclk-legend-swatch" style="background:rgba(139,92,246,0.25)"></div> Night</div>
+    <div class="wclk-legend-item"><div class="wclk-legend-swatch wclk-legend-swatch-day"></div> Daytime (9-5)</div>
+    <div class="wclk-legend-item"><div class="wclk-legend-swatch wclk-legend-swatch-morning"></div> Morning (6-9)</div>
+    <div class="wclk-legend-item"><div class="wclk-legend-swatch wclk-legend-swatch-evening"></div> Evening (5-9)</div>
+    <div class="wclk-legend-item"><div class="wclk-legend-swatch wclk-legend-swatch-night"></div> Night</div>
     ${S.duration !== 60 ? `<div class="wclk-legend-item">${S.duration} min meeting</div>` : ''}
   </div>`;
 
@@ -1220,7 +1220,7 @@ function initWorldClockTab() {
     const q = search.value.trim().toLowerCase();
     if (q.length < 2) { results.innerHTML = ''; results.hidden = true; return; }
     const matches = CITIES.filter(c => c.city.toLowerCase().includes(q) || c.country.toLowerCase().includes(q) || c.tz.toLowerCase().includes(q)).slice(0, 8);
-    results.innerHTML = matches.map(c => `<button class="wclk-search-item" data-tz="${c.tz}">${c.flag} ${c.city} <span style="color:var(--text-muted);font-size:0.75rem">${getUtcOffset(c.tz)}</span></button>`).join('');
+    results.innerHTML = matches.map(c => `<button class="wclk-search-item" data-tz="${c.tz}">${c.flag} ${c.city} <span class="wclk-search-utc">${getUtcOffset(c.tz)}</span></button>`).join('');
     results.hidden = false;
     results.querySelectorAll('.wclk-search-item').forEach(btn => {
       btn.addEventListener('click', () => {

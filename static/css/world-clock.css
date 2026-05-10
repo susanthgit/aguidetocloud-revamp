@@ -959,6 +959,15 @@
   margin: 0;
 }
 
+/* ── Phase 14 batch 18: inline-style eliminations (JS-rendered) ── */
+.wclk-result-right { text-align: right; display: flex; align-items: center; gap: 0.5rem; }
+.wclk-result-offset { font-size: 0.72rem; color: var(--text-muted); }
+.wclk-search-utc { color: var(--text-muted); font-size: 0.75rem; }
+.wclk-legend-swatch-day { background: color-mix(in srgb, var(--wclk-green) 50%, transparent); }
+.wclk-legend-swatch-morning { background: color-mix(in srgb, var(--wclk-amber) 35%, transparent); }
+.wclk-legend-swatch-evening { background: color-mix(in srgb, orange 30%, transparent); }
+.wclk-legend-swatch-night { background: color-mix(in srgb, var(--wclk-purple) 25%, transparent); }
+
 /* ═══════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════ */
