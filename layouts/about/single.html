@@ -23,7 +23,7 @@
   {{/* ── CENTER: About content ── */}}
   <article class="zt-reading-content">
 
-    {{/* Hero card */}}
+    {{/* Hero card — cosmos-first (May 2026 reimagining) */}}
     <div class="zt-about-hero" id="intro">
       <div class="zt-about-photo-wrap">
         {{ partial "picture.html" (dict "src" "/images/about/headshot.webp" "alt" "Susanth Sutheesh" "class" "zt-about-headshot" "width" 140 "height" 140 "loading" "eager") }}
@@ -31,12 +31,71 @@
       <div class="zt-about-info">
         <h1 class="zt-about-name">Susanth Sutheesh</h1>
         <p class="zt-about-role">Sr AI Solution Engineer at Microsoft · Auckland, New Zealand 🇳🇿</p>
-        <div class="zt-about-actions">
-          <a href="/images/about/susanth-sutheesh-resume.pdf" download class="zt-about-btn">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Download Resume</a>
-          <a href="/links/" class="zt-about-btn zt-about-btn--secondary">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} All My Links</a>
+
+        <span class="zt-about-stamp" aria-label="You are on the Earth planet of the cosmos">
+          <span class="zt-about-stamp-glyph" aria-hidden="true">🌍</span>
+          earth · home base
+        </span>
+
+        <div class="zt-about-cta-row">
+          <a href="https://cosmos.aguidetocloud.com/" class="zt-about-cta-cosmos" aria-label="Explore the cosmos — a tour of every planet I've built">
+            <span class="zt-about-cta-cosmos-glyph" aria-hidden="true">🪐</span>
+            <span class="zt-about-cta-cosmos-label">explore the cosmos</span>
+            <span class="zt-about-cta-cosmos-arrow" aria-hidden="true">→</span>
+          </a>
+          <nav class="zt-about-chips" aria-label="Find me elsewhere">
+            <a class="zt-about-chip" href="/links/"><span class="zt-about-chip-arrow" aria-hidden="true">↗</span> all links</a>
+            <a class="zt-about-chip" href="https://www.youtube.com/susanthsutheesh" target="_blank" rel="noopener">YouTube</a>
+            <a class="zt-about-chip" href="https://www.youtube.com/aguidetocloud" target="_blank" rel="noopener">Bites</a>
+            <a class="zt-about-chip" href="https://www.linkedin.com/in/susanthsutheesh/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="zt-about-chip" href="https://ko-fi.com/aguidetocloud" target="_blank" rel="noopener">Ko-fi</a>
+          </nav>
         </div>
+
+        <p class="zt-about-margin">
+          I sit on Earth. Built six other planets in this cosmos.
+        </p>
       </div>
     </div>
+
+    {{/* Planet chip strip — sibling planets in the cosmos */}}
+    <nav class="zt-about-planets" aria-label="Other planets in the A Guide to Cloud cosmos">
+      <a class="zt-about-planet" href="https://plainai.aguidetocloud.com/" target="_blank" rel="noopener">
+        <span class="zt-about-planet-glyph" aria-hidden="true">🪐</span>
+        <span class="zt-about-planet-body">
+          <span class="zt-about-planet-name">Plain AI</span>
+          <span class="zt-about-planet-tag">AI, in plain English</span>
+        </span>
+      </a>
+      <a class="zt-about-planet" href="https://shift.aguidetocloud.com/" target="_blank" rel="noopener">
+        <span class="zt-about-planet-glyph" aria-hidden="true">🪐</span>
+        <span class="zt-about-planet-body">
+          <span class="zt-about-planet-name">Shift</span>
+          <span class="zt-about-planet-tag">the AI job-change wire</span>
+        </span>
+      </a>
+      <a class="zt-about-planet" href="https://cmd.aguidetocloud.com/" target="_blank" rel="noopener">
+        <span class="zt-about-planet-glyph" aria-hidden="true">🪐</span>
+        <span class="zt-about-planet-body">
+          <span class="zt-about-planet-name">cmd</span>
+          <span class="zt-about-planet-tag">Microsoft jargon, decoded</span>
+        </span>
+      </a>
+      <a class="zt-about-planet" href="https://agents.aguidetocloud.com/" target="_blank" rel="noopener">
+        <span class="zt-about-planet-glyph" aria-hidden="true">🪐</span>
+        <span class="zt-about-planet-body">
+          <span class="zt-about-planet-name">Agentic</span>
+          <span class="zt-about-planet-tag">agent cockpit, for techies</span>
+        </span>
+      </a>
+      <a class="zt-about-planet" href="https://claw.aguidetocloud.com/" target="_blank" rel="noopener">
+        <span class="zt-about-planet-glyph" aria-hidden="true">🪐</span>
+        <span class="zt-about-planet-body">
+          <span class="zt-about-planet-name">Claw</span>
+          <span class="zt-about-planet-tag">OpenClaw, in plain English</span>
+        </span>
+      </a>
+    </nav>
 
     {{/* Mobile TOC */}}
     <details class="zt-toc-mobile">
@@ -80,6 +139,13 @@
     <p>Most importantly, I cherish time with my <strong>wife and daughter</strong> — my greatest source of inspiration and joy. Everything else is downstream of that.</p>
 
     <h2 id="career">Career Journey</h2>
+
+    <p class="zt-about-resume-link">
+      <a href="/images/about/susanth-sutheesh-resume.pdf" download>
+        <span aria-hidden="true">↗</span> Download full resume PDF (4&nbsp;MB)
+      </a>
+      <span class="zt-about-resume-meta">· 18+ years across Microsoft, EY, Capgemini, Allianz, Ingram&nbsp;Micro</span>
+    </p>
 
     <div class="zt-timeline">
       <div class="zt-timeline-item zt-timeline-item--current">
@@ -294,13 +360,34 @@
     </div>
     {{ end }}
 
-    {{/* Explore */}}
-    <div class="zt-companion-section">
-      <p class="zt-companion-title">Explore</p>
-      <div class="zt-companion-cta">
-        <a href="/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} Start Here</a>
-        <a href="/feedback/" class="zt-companion-cta-btn">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Share Feedback</a>
-      </div>
+    {{/* Visit other planets — replaces the old Explore block.
+         Cosmos is the new universe-wide nav as of May 2026. */}}
+    <div class="zt-companion-section zt-companion-planets">
+      <p class="zt-companion-title">Visit other planets</p>
+      <a href="https://plainai.aguidetocloud.com/" class="zt-companion-link" target="_blank" rel="noopener">
+        <span class="zt-companion-link-tag" aria-hidden="true">🪐</span>
+        <span class="zt-companion-link-title">Plain AI <em>— in plain English</em></span>
+      </a>
+      <a href="https://shift.aguidetocloud.com/" class="zt-companion-link" target="_blank" rel="noopener">
+        <span class="zt-companion-link-tag" aria-hidden="true">🪐</span>
+        <span class="zt-companion-link-title">Shift <em>— AI job-change wire</em></span>
+      </a>
+      <a href="https://cmd.aguidetocloud.com/" class="zt-companion-link" target="_blank" rel="noopener">
+        <span class="zt-companion-link-tag" aria-hidden="true">🪐</span>
+        <span class="zt-companion-link-title">cmd <em>— jargon decoder</em></span>
+      </a>
+      <a href="https://agents.aguidetocloud.com/" class="zt-companion-link" target="_blank" rel="noopener">
+        <span class="zt-companion-link-tag" aria-hidden="true">🪐</span>
+        <span class="zt-companion-link-title">Agentic <em>— agent cockpit</em></span>
+      </a>
+      <a href="https://claw.aguidetocloud.com/" class="zt-companion-link" target="_blank" rel="noopener">
+        <span class="zt-companion-link-tag" aria-hidden="true">🪐</span>
+        <span class="zt-companion-link-title">Claw <em>— OpenClaw reference</em></span>
+      </a>
+      <a href="https://cosmos.aguidetocloud.com/" class="zt-companion-link zt-companion-link--featured" target="_blank" rel="noopener">
+        <span class="zt-companion-link-tag" aria-hidden="true">🌌</span>
+        <span class="zt-companion-link-title">Tour the whole cosmos →</span>
+      </a>
     </div>
 
   </aside>

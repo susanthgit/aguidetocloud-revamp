@@ -4899,3 +4899,323 @@ pre:hover .code-copy-btn { opacity: 1; }
     grid-template-columns: 1fr;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   🌌 ABOUT — Cosmos-First Reimagining (10 May 2026)
+   Scope: every selector starts with .zt-reading--about
+   Goal: Move recruiter-bait (resume button) into Career section
+         where context earns the tap; elevate cosmos discovery
+         in the hero. Mirrors the cmd portal Wave A creative-juice
+         pattern (terminal voice → here, the cosmos voice).
+   ═══════════════════════════════════════════════════════════ */
+
+/* Local pen tokens — borrows the notebook handwritten voice
+   without depending on .zt-reading--notebook scope. */
+.zt-reading--about {
+  --about-pen: #B83230;
+  --about-pen-soft: #D4574F;
+  --about-tape: rgba(99, 102, 241, 0.10);
+}
+[data-theme="dark"] .zt-reading--about,
+.dark .zt-reading--about {
+  --about-pen: #FF7B6E;
+  --about-pen-soft: #FF9A90;
+  --about-tape: rgba(129, 140, 248, 0.18);
+}
+
+/* ── 1. "You are here" stamp ─────────────────────────────── */
+.zt-reading--about .zt-about-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Special Elite', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  padding: 4px 10px;
+  background: var(--about-tape);
+  border: 1px dashed var(--accent);
+  border-radius: 4px;
+  margin: 0 0 var(--space-3, 12px);
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+.zt-reading--about .zt-about-stamp-glyph {
+  font-size: 0.95rem;
+  line-height: 1;
+  filter: saturate(0.9);
+}
+
+/* ── 2. Hero CTA row ─────────────────────────────────────── */
+.zt-reading--about .zt-about-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  margin: var(--space-3, 12px) 0 0;
+}
+
+/* Primary cosmos CTA — confident but not garish */
+.zt-reading--about .zt-about-cta-cosmos {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius-md, 10px);
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.005em;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: background 200ms ease-out, transform 200ms ease-out, box-shadow 200ms ease-out;
+}
+.zt-reading--about .zt-about-cta-cosmos:hover {
+  background: var(--accent-hover);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .zt-reading--about .zt-about-cta-cosmos:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(99, 102, 241, 0.25);
+  }
+  .zt-reading--about .zt-about-cta-cosmos:hover .zt-about-cta-cosmos-arrow {
+    transform: translateX(2px);
+  }
+}
+.zt-reading--about .zt-about-cta-cosmos-glyph {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+.zt-reading--about .zt-about-cta-cosmos-arrow {
+  display: inline-block;
+  font-weight: 500;
+  transition: transform 200ms ease-out;
+}
+
+/* Chip group (sibling links — whisper, not shout) */
+.zt-reading--about .zt-about-chips {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 16px;
+  font-size: var(--text-sm, 0.875rem);
+}
+.zt-reading--about .zt-about-chip {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 150ms ease-out;
+}
+.zt-reading--about .zt-about-chip:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.zt-reading--about .zt-about-chip-arrow {
+  color: var(--text-tertiary);
+  margin-right: 1px;
+  transition: color 150ms ease-out;
+}
+.zt-reading--about .zt-about-chip:hover .zt-about-chip-arrow {
+  color: var(--accent);
+}
+
+/* ── 3. Caveat margin note (pen voice) ───────────────────── */
+.zt-reading--about .zt-about-margin {
+  font-family: 'Caveat', cursive;
+  font-size: 1.18rem;
+  line-height: 1.2;
+  color: var(--about-pen);
+  margin: var(--space-3, 12px) 0 0;
+  letter-spacing: 0.005em;
+  transform: rotate(-0.5deg);
+  transform-origin: 0 50%;
+}
+
+/* ── 4. Planet chip strip ────────────────────────────────── */
+.zt-reading--about .zt-about-planets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-2, 8px);
+  margin: 0 0 var(--space-8, 32px);
+}
+.zt-reading--about .zt-about-planet {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
+  text-decoration: none;
+  transition: border-color 200ms ease-out, background 200ms ease-out, transform 200ms ease-out;
+}
+.zt-reading--about .zt-about-planet:hover {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .zt-reading--about .zt-about-planet:hover { transform: translateY(-1px); }
+}
+.zt-reading--about .zt-about-planet-glyph {
+  font-size: 1.1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.zt-reading--about .zt-about-planet-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.zt-reading--about .zt-about-planet-name {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.zt-reading--about .zt-about-planet-tag {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* ── 5. Career section resume hyperlink (whisper) ────────── */
+.zt-reading--about .zt-about-resume-link {
+  font-family: 'Special Elite', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-4, 16px);
+  letter-spacing: 0.005em;
+}
+.zt-reading--about .zt-about-resume-link a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px dashed var(--accent);
+  padding-bottom: 1px;
+  transition: color 150ms ease-out, border-bottom-style 150ms ease-out;
+}
+.zt-reading--about .zt-about-resume-link a:hover {
+  color: var(--accent-hover);
+  border-bottom-style: solid;
+}
+.zt-reading--about .zt-about-resume-meta {
+  display: inline;
+  margin-left: 4px;
+  color: var(--text-tertiary);
+  font-size: 0.78rem;
+}
+
+/* ── 6. Sidebar "Visit other planets" ────────────────────── */
+.zt-reading--about .zt-companion-planets .zt-companion-link-title em {
+  font-style: normal;
+  color: var(--text-tertiary);
+  font-weight: 400;
+  font-size: 0.78rem;
+  margin-left: 2px;
+}
+.zt-reading--about .zt-companion-link--featured {
+  margin-top: var(--space-2, 8px);
+  padding: 10px 12px;
+  background: var(--accent-subtle);
+  border-radius: var(--radius-md, 10px);
+  transition: background 200ms ease-out;
+}
+.zt-reading--about .zt-companion-link--featured .zt-companion-link-title {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: var(--text-sm, 0.875rem);
+}
+.zt-reading--about .zt-companion-link--featured:hover {
+  background: var(--accent);
+}
+.zt-reading--about .zt-companion-link--featured:hover .zt-companion-link-title,
+.zt-reading--about .zt-companion-link--featured:hover .zt-companion-link-tag {
+  color: #fff;
+}
+
+/* ── 7. Mobile (≤640px) — compact, scroll-snap, full-tap ─── */
+@media (max-width: 640px) {
+  .zt-reading--about .zt-about-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2, 8px);
+  }
+  .zt-reading--about .zt-about-cta-cosmos {
+    justify-content: center;
+    padding: 12px 18px;
+    width: 100%;
+  }
+
+  /* Chip row → horizontal scroll-snap (no wrap), pill-style chips */
+  .zt-reading--about .zt-about-chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 6px;
+    padding: 4px 0 6px;
+    margin: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .zt-reading--about .zt-about-chips::-webkit-scrollbar { display: none; }
+  .zt-reading--about .zt-about-chip {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    padding: 6px 12px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full, 9999px);
+    font-size: 0.82rem;
+  }
+  .zt-reading--about .zt-about-chip:hover { text-decoration: none; }
+
+  /* Planet strip → single column on phone, larger tap targets */
+  .zt-reading--about .zt-about-planets {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .zt-reading--about .zt-about-planet {
+    padding: 12px 14px;
+  }
+
+  /* Margin note: smaller, no rotation (less crammed on narrow) */
+  .zt-reading--about .zt-about-margin {
+    font-size: 1.05rem;
+    transform: none;
+    text-align: center;
+  }
+
+  /* Stamp aligns with the centered hero info on mobile */
+  .zt-reading--about .zt-about-stamp {
+    align-self: center;
+  }
+
+  /* CTA row aligns center too on mobile */
+  .zt-reading--about .zt-about-cta-row {
+    align-items: center;
+  }
+}
+
+/* ── 8. Print stylesheet — recruiters who print get the resume ── */
+@media print {
+  .zt-reading--about .zt-about-stamp,
+  .zt-reading--about .zt-about-cta-row,
+  .zt-reading--about .zt-about-margin,
+  .zt-reading--about .zt-about-planets,
+  .zt-reading--about .zt-companion-planets {
+    display: none !important;
+  }
+  .zt-reading--about .zt-about-resume-link {
+    font-family: inherit;
+    font-size: 1rem;
+    color: #000;
+  }
+  .zt-reading--about .zt-about-resume-link a {
+    border-bottom: none;
+    color: #000;
+  }
+}
