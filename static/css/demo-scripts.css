@@ -13,7 +13,7 @@
 
 .demoscr-section-title {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   margin: 2rem 0 0.75rem;
 }
@@ -354,7 +354,7 @@
   border-radius: 50%;
   background: var(--accent-subtle);
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.85rem;
   flex-shrink: 0;
 }
@@ -1198,7 +1198,7 @@
 .demoscr-practice-timer {
   font-family: 'Consolas', monospace;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
   min-width: 5rem;
 }
@@ -1558,7 +1558,7 @@
 
 .demoscr-ba-time {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
 }
 
@@ -1571,7 +1571,7 @@
   border-radius: 999px;
   display: inline-block;
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.9rem;
 }
 
@@ -1701,7 +1701,7 @@
 
 .demoscr-scorecard-stat-num {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   display: block;
 }
 
@@ -1809,7 +1809,7 @@
 
 .demoscr-recording-label {
   color: var(--text-primary);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
 }
