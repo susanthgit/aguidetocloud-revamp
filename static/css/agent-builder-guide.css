@@ -65,7 +65,7 @@
 }
 .abguide-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
 .abguide-tab.active {
-  color: var(--accent-foreground, #fff); background: var(--abguide-accent);
+  color: var(--accent-foreground, white); background: var(--abguide-accent);
   border-color: var(--abguide-accent);
   box-shadow: 0 2px 8px color-mix(in srgb, var(--abguide-accent) 30%, transparent);
 }
@@ -107,7 +107,7 @@
 .abguide-custom-input:focus { outline: none; border-color: var(--abguide-accent); }
 .abguide-evaluate-btn {
   margin-top: 0.75rem; padding: 0.6rem 1.5rem; border-radius: 8px;
-  background: var(--abguide-accent); color: var(--accent-foreground, #fff); font-weight: 600;
+  background: var(--abguide-accent); color: var(--accent-foreground, white); font-weight: 600;
   border: none; cursor: pointer; font-size: 0.88rem; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 .abguide-evaluate-btn:hover { background: color-mix(in srgb, var(--accent) 80%, white); transform: translateY(-1px); }
@@ -258,7 +258,7 @@
 /* ── Testing Steps ── */
 .abguide-steps-list { display: grid; gap: 0.6rem; }
 .abguide-step-item { display: flex; gap: 0.75rem; align-items: flex-start; background: var(--border); border-radius: 8px; padding: 0.8rem; }
-.abguide-step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--abguide-accent); color: var(--accent-foreground, #fff); font-weight: 600; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0; }
+.abguide-step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--abguide-accent); color: var(--accent-foreground, white); font-weight: 600; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0; }
 .abguide-step-item strong { font-size: 0.85rem; color: var(--text-primary); }
 .abguide-step-item p { font-size: 0.8rem; color: var(--text-secondary); margin: 0.2rem 0 0; }
 
@@ -319,7 +319,7 @@
 .abguide-wiz-nav { display: flex; gap: 0.75rem; margin-top: 1rem; justify-content: center; }
 .abguide-wiz-next, .abguide-wiz-result {
   padding: 0.6rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.88rem; cursor: pointer;
-  background: var(--abguide-accent); color: var(--accent-foreground, #fff); border: none; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; margin-top: 1rem;
+  background: var(--abguide-accent); color: var(--accent-foreground, white); border: none; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; margin-top: 1rem;
 }
 .abguide-wiz-next:hover, .abguide-wiz-result:hover { background: color-mix(in srgb, var(--accent) 80%, white); transform: translateY(-1px); }
 .abguide-wiz-back {
@@ -482,7 +482,7 @@
 .abguide-sim-nav { display: flex; align-items: center; justify-content: space-between; margin-top: 1rem; }
 .abguide-sim-progress { font-size: 0.8rem; color: var(--text-muted); }
 .abguide-sim-next, .abguide-sim-back { padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; border: none; }
-.abguide-sim-next { background: var(--abguide-accent); color: var(--accent-foreground, #fff); }
+.abguide-sim-next { background: var(--abguide-accent); color: var(--accent-foreground, white); }
 .abguide-sim-back { background: var(--border); color: var(--text-secondary); border: 1px solid var(--border); }
 .abguide-sim-preview { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; min-height: 150px; }
 
@@ -515,7 +515,7 @@
 /* ── Changelog ── */
 .abguide-changelog { max-width: 700px; }
 .abguide-changelog-entry { padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
-.abguide-changelog-badge { font-size: 0.72rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 12px; background: var(--abguide-accent); color: var(--accent-foreground, #fff); margin-right: 0.5rem; }
+.abguide-changelog-badge { font-size: 0.72rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 12px; background: var(--abguide-accent); color: var(--accent-foreground, white); margin-right: 0.5rem; }
 .abguide-changelog-date { font-size: 0.78rem; color: var(--text-muted); }
 .abguide-changelog-entry ul { padding-left: 1.2rem; margin: 0.3rem 0 0; }
 .abguide-changelog-entry li { font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.1rem; }
@@ -545,7 +545,7 @@
 .abguide-progress-toggle {
   position: fixed; bottom: 1rem; right: 1rem; z-index: 101;
   width: 40px; height: 40px; border-radius: 50%;
-  background: var(--abguide-accent); color: var(--accent-foreground, #fff); border: none;
+  background: var(--abguide-accent); color: var(--accent-foreground, white); border: none;
   font-size: 1.1rem; cursor: pointer; box-shadow: 0 2px 10px color-mix(in srgb, black 30%, transparent);
 }
 
