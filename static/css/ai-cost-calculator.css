@@ -1049,6 +1049,10 @@
   .aicost-metric-value {
     font-size: 1.2rem;
   }
+  .aicost-summary-section { overflow-x: auto; }
+  .aicost-table { font-size: 0.72rem; }
+  .aicost-table th,
+  .aicost-table td { padding: 3px 5px; }
 }
 
 /* ── Include Base Plan Toggle ── */

@@ -95,15 +95,19 @@ const AUDIT_FN = `
       findings.inlineStyleEls++;
     }
     // Mobile overflow check — only count if NOT inside an intentional overflow-x scroll container
+    // Also skip <canvas> elements and their descendants (Chart.js + similar libs resize asynchronously
+    // and can briefly report >viewport widths before settling — false-positives that don't reflect
+    // real layout breakage).
     if (el.getBoundingClientRect && el.getBoundingClientRect().right > vw + 4) {
-      let cur = el.parentElement;
-      let inScrollContainer = false;
+      let cur = el;
+      let exempt = false;
       while (cur && cur !== document.body) {
+        if (cur.tagName === 'CANVAS') { exempt = true; break; }
         const pcs = getComputedStyle(cur);
-        if (pcs.overflowX === 'auto' || pcs.overflowX === 'scroll') { inScrollContainer = true; break; }
+        if (pcs.overflowX === 'auto' || pcs.overflowX === 'scroll') { exempt = true; break; }
         cur = cur.parentElement;
       }
-      if (!inScrollContainer) findings.mobileOverflowEls++;
+      if (!exempt) findings.mobileOverflowEls++;
     }
   }
   findings.uniqueColors = palette.size;
@@ -176,8 +180,12 @@ async function findCssFile(slug) {
 
 async function scanCss(cssFile) {
   if (!cssFile) return { exists: false };
-  const src = await fs.readFile(cssFile, 'utf8');
-  const lines = src.split('\n').length;
+  const rawSrc = await fs.readFile(cssFile, 'utf8');
+  // Strip @media print { ... } blocks before scanning — print stylesheets legitimately use
+  // strong font-weights and hardcoded hex (no theming on paper) and shouldn't penalise
+  // the screen-zen score. Lesson 44 generalisation: respect intentional design.
+  const src = rawSrc.replace(/@media\s+print\s*\{((?:[^{}]|\{[^{}]*\})*)\}/g, '');
+  const lines = rawSrc.split('\n').length;
   const findings = {
     exists: true,
     file: path.basename(cssFile),
