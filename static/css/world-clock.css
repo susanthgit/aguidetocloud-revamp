@@ -289,6 +289,9 @@
   gap: 4px;
   margin-bottom: 0.75rem;
 }
+@media (max-width: 640px) {
+  .wclk-grid { grid-template-columns: repeat(auto-fill, minmax(0, 1fr)); }
+}
 
 /* Clock card — compact horizontal layout */
 .wclk-card {
@@ -301,6 +304,13 @@
   align-items: center;
   gap: 8px;
   transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+.wclk-card > * {
+  min-width: 0;
 }
 .wclk-card:hover {
   border-color: color-mix(in srgb, var(--accent) 25%, transparent);
