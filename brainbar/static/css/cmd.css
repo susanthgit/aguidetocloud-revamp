@@ -3199,10 +3199,14 @@ body.cmd-v2-home-page .bb-brand-name { font-weight: 700; }
    feels like the only light source in a dark room.
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* DESK BACKGROUND — full-black void, faint amber stars, CRT halo bloom */
+/* DESK BACKGROUND — full-black void, visible amber stars, CRT halo bloom.
+   Dot opacity bumped 0.07 → 0.20 (Sun 10 May 2026 PM) per Sush — "bump the
+   lightness of the dots". Also nudged dot radius 1.8 → 2.0 + added a faint
+   shadow-dot offset so the grid reads with subtle depth (3D-ish). */
 body.cmd-v2-home-page {
   background:
-    radial-gradient(circle, rgba(255, 240, 220, 0.07) 1px, transparent 1.8px) 0 0 / 36px 36px,
+    radial-gradient(circle, rgba(255, 245, 230, 0.20) 1px, transparent 2px) 0 0 / 36px 36px,
+    radial-gradient(circle, rgba(0, 0, 0, 0.55) 1px, transparent 1.6px) 1px 1px / 36px 36px,
     radial-gradient(ellipse 90% 60% at 50% 35%, rgba(255, 200, 130, 0.18) 0%, transparent 65%),
     #0a0d12 !important;
 }
