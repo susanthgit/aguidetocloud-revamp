@@ -1,0 +1,7 @@
+# Local QA outputs — keep scripts, ignore PNG screenshots and live binaries
+about-tour/
+live-after/
+local-after/
+grey-shots/
+*.png
+*.log

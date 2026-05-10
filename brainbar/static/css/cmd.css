@@ -3328,3 +3328,63 @@ body.cmd-v2-home-page .bb-footer .cmd-mcp:hover {
   color: #50fa7b !important;
   border-color: #50fa7b !important;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   🪐 ABOUT — Tour the cosmos CTA (10 May 2026)
+   Carries the cross-planet "tour cosmos" pattern Earth ships.
+   Sits below the ASCII cosmos map; preserves the map as-is.
+   Terminal voice — green-accent border, $ prompt, → arrow.
+   ═══════════════════════════════════════════════════════════════ */
+.bb-cosmos-tour {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-4);
+  margin: 0 0 var(--s-5);
+  background: var(--bg-surface);
+  border: 1px solid var(--accent);
+  border-radius: var(--r-md);
+  font-family: var(--font-mono);
+  font-size: var(--t-sm);
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.005em;
+  transition: background 200ms ease-out, color 200ms ease-out, transform 200ms ease-out, box-shadow 200ms ease-out;
+}
+.bb-cosmos-tour:hover {
+  background: var(--accent);
+  color: var(--bg-page);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bb-cosmos-tour:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(80, 250, 123, 0.18);
+  }
+  .bb-cosmos-tour:hover .bb-cosmos-tour-arrow {
+    transform: translateX(2px);
+  }
+}
+.bb-cosmos-tour-prompt {
+  color: var(--text-dim);
+  font-weight: 500;
+}
+.bb-cosmos-tour:hover .bb-cosmos-tour-prompt {
+  color: var(--bg-page);
+}
+.bb-cosmos-tour-cmd {
+  font-weight: 500;
+}
+.bb-cosmos-tour-arrow {
+  display: inline-block;
+  transition: transform 200ms ease-out;
+}
+
+/* Mobile: full-width tap target like the rest of the entry chrome */
+@media (max-width: 640px) {
+  .bb-cosmos-tour {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: var(--s-3) var(--s-4);
+  }
+}
