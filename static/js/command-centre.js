@@ -25,6 +25,85 @@
   };
   var SEO_IGNORE = ['karamatura','marawhara','hiking','track','trail','mount donald','tramping','huia','dam','walk'];
 
+  // ── L1: Rewrite-prompt generator ──────────────────────────────────
+  // Each cc dashboard recommendation gets a "📋 prompt" button that
+  // copies a fully-formed Copilot CLI prompt to clipboard. Turns the
+  // dashboard from a vibes report into an actionable worklist.
+  function buildRewritePrompt(q, type) {
+    if (!q || !q.query) return '';
+    if (type === 'meta') {
+      return [
+        'Rewrite SEO meta for query "' + q.query + '"',
+        '— current rank: position ' + q.position + ', CTR ' + q.ctr + '%, ' + q.impressions + ' impressions, ' + q.clicks + ' clicks.',
+        '',
+        'Step 1: find the page that ranks for this query. Try grep over content/ for the keyword. Cert codes (e.g. az-900, ai-200, sc-100) live in content/cert-tracker/. Tools live in content/<tool-slug>/. Blog posts live in content/blog/.',
+        '',
+        'Step 2: rewrite the frontmatter title + description with these constraints:',
+        '- title: ≤60 chars (Google SERP truncation limit)',
+        '- description: ≤155 chars',
+        '- Lead with the strongest hook for what someone googling "' + q.query + '" actually wants',
+        '- Include brand word (Microsoft / Azure / AWS / GCP) in title if relevant',
+        '- Concrete numbers in description (e.g. "27 modules", "250 questions") — credibility signal',
+        '- Voice: honest, plain English. No hype words ("ultimate", "frontier", "comprehensive", "robust")',
+        '',
+        'Step 3: show me current title/desc + char counts, propose the rewrite, ask before shipping.'
+      ].join('\n');
+    }
+    if (type === 'content') {
+      return [
+        'Search demand exists for query "' + q.query + '" — ' + q.impressions + ' Google impressions but only ' + q.clicks + ' clicks (CTR ' + q.ctr + '%, position ' + q.position + ').',
+        '',
+        'Decide: do we already have a page that should rank for this? Run grep over content/ for the keyword.',
+        '- If yes → rewrite that page\'s meta (use the Rewrite Meta prompt format).',
+        '- If no → propose a new page. Pick the right type:',
+        '  • cert-tracker page for cert codes (e.g. az-900, ai-200)',
+        '  • blog post for how-to / explainer queries',
+        '  • tool page for utilities',
+        '',
+        'Constraints if creating new content:',
+        '- Identify search intent from the query — what does the searcher actually want?',
+        '- Voice: plain English, honest, no hype',
+        '- Title ≤60 chars, description ≤155 chars',
+        '',
+        'Show me your decision + the proposed plan. Don\'t ship anything yet.'
+      ].join('\n');
+    }
+    if (type === 'quickwin') {
+      return [
+        'Quick win opportunity: query "' + q.query + '" sits at position ' + q.position + ' (page 1 boundary) with ' + q.impressions + ' impressions and ' + q.clicks + ' clicks (CTR ' + q.ctr + '%).',
+        '',
+        'One small push could move this to page 1. Options:',
+        '- Add 1-2 internal links to the ranking page from related high-traffic pages',
+        '- Tighten the title/description for the query intent (≤60 / ≤155 chars)',
+        '- Add a focused section/heading containing the query phrase to the page body',
+        '- Cross-link from the related cert/tool/blog cluster',
+        '',
+        'Step 1: find the ranking page (grep content/ for "' + q.query + '").',
+        'Step 2: pick the cheapest action above that fits this page.',
+        'Step 3: propose the diff, ask before shipping.'
+      ].join('\n');
+    }
+    return '';
+  }
+
+  function copyPromptToClipboard(text, btn) {
+    var orig = btn ? btn.innerHTML : null;
+    function done(ok) {
+      if (!btn) return;
+      btn.innerHTML = ok ? '\u2713 copied' : '\u26A0 see prompt';
+      btn.disabled = true;
+      setTimeout(function() { btn.innerHTML = orig; btn.disabled = false; }, 2200);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() { done(true); }).catch(function() {
+        try { window.prompt('Copy this prompt:', text); done(true); } catch(e) { done(false); }
+      });
+    } else {
+      try { window.prompt('Copy this prompt:', text); done(true); } catch(e) { done(false); }
+    }
+  }
+
+
   function esc(s) { var el = document.createElement('span'); el.textContent = s || ''; return el.innerHTML; }
   function numFmt(n) { return typeof n === 'number' ? n.toLocaleString('en-US') : String(n || 0); }
   function roundK(n) { return n >= 1000000 ? (n/1000000).toFixed(1)+'M' : n >= 1000 ? (n/1000).toFixed(1)+'K' : String(n); }
@@ -196,7 +275,7 @@
     // SEO fixes
     if (gsc && gsc.queries) {
       gsc.queries.filter(function(q) { return q.position < 10 && q.ctr < 8 && q.impressions > 15 && !SEO_IGNORE.some(function(w) { return q.query.indexOf(w) > -1; }); }).slice(0, 2).forEach(function(q) {
-        actions.push({ p: 'high', tag: 'SEO', text: 'Rewrite meta for "' + q.query + '" \u2014 pos ' + q.position + ' but only ' + q.ctr + '% CTR' });
+        actions.push({ p: 'high', tag: 'SEO', text: 'Rewrite meta for "' + q.query + '" \u2014 pos ' + q.position + ' but only ' + q.ctr + '% CTR', q: q, t: 'meta' });
       });
     }
     // Low tools
@@ -207,12 +286,23 @@
     // Content idea from GSC
     if (gsc && gsc.queries) {
       var rising = gsc.queries.filter(function(q) { return q.impressions > 30 && q.clicks < 3; }).slice(0, 1);
-      if (rising.length) actions.push({ p: 'medium', tag: 'CONTENT', text: 'Write about "' + rising[0].query + '" \u2014 ' + rising[0].impressions + ' impressions but ' + rising[0].clicks + ' clicks' });
+      if (rising.length) actions.push({ p: 'medium', tag: 'CONTENT', text: 'Write about "' + rising[0].query + '" \u2014 ' + rising[0].impressions + ' impressions but ' + rising[0].clicks + ' clicks', q: rising[0], t: 'content' });
     }
     if (!actions.length) actions.push({ p: 'low', tag: 'OK', text: 'No urgent actions \u2014 keep publishing consistently' });
-    el.innerHTML = actions.map(function(a) {
-      return '<div class="cc-action cc-action-' + a.p + '"><span class="cc-action-tag">' + a.tag + '</span><span>' + esc(a.text) + '</span></div>';
+    el.innerHTML = actions.map(function(a, i) {
+      var btn = a.q ? '<button class="cc-action-copy" data-idx="' + i + '" title="Copy a fix prompt to paste into Copilot CLI">\uD83D\uDCCB prompt</button>' : '';
+      return '<div class="cc-action cc-action-' + a.p + '"><span class="cc-action-tag">' + a.tag + '</span><span class="cc-action-text">' + esc(a.text) + '</span>' + btn + '</div>';
     }).join('');
+    // Wire copy buttons (L1)
+    el.querySelectorAll('.cc-action-copy').forEach(function(b) {
+      b.addEventListener('click', function(ev) {
+        ev.stopPropagation();
+        var idx = parseInt(b.getAttribute('data-idx'), 10);
+        var a = actions[idx];
+        if (!a || !a.q) return;
+        copyPromptToClipboard(buildRewritePrompt(a.q, a.t), b);
+      });
+    });
   }
 
   function renderContentBets(ga4, gsc) {
@@ -349,10 +439,20 @@
     var oppsEl = document.getElementById('cc-seo-opps');
     if (oppsEl) {
       var opps = queries.filter(function(q) { return q.position < 10 && q.ctr < 10 && q.impressions > 10; });
-      oppsEl.innerHTML = opps.length ? opps.map(function(q) {
+      oppsEl.innerHTML = opps.length ? opps.map(function(q, i) {
         var est = Math.round(q.impressions * 0.2) - q.clicks;
-        return '<div class="cc-opp"><div class="cc-opp-query">' + esc(q.query) + '</div><div class="cc-opp-meta">pos ' + q.position + ' \u00B7 ' + q.ctr + '% CTR \u00B7 ' + q.impressions + ' imp</div><div class="cc-opp-uplift">+' + est + ' clicks/mo potential</div></div>';
+        return '<div class="cc-opp"><div class="cc-opp-query">' + esc(q.query) + '</div><div class="cc-opp-meta">pos ' + q.position + ' \u00B7 ' + q.ctr + '% CTR \u00B7 ' + q.impressions + ' imp</div><div class="cc-opp-uplift">+' + est + ' clicks/mo potential</div><button class="cc-opp-copy" data-idx="' + i + '" title="Copy a fix prompt to paste into Copilot CLI">\uD83D\uDCCB rewrite prompt</button></div>';
       }).join('') : '<p style="color:var(--cc-muted);font-size:0.82rem">No gaps found \u2014 titles look solid</p>';
+      // Wire copy buttons (L1)
+      oppsEl.querySelectorAll('.cc-opp-copy').forEach(function(b) {
+        b.addEventListener('click', function(ev) {
+          ev.stopPropagation();
+          var idx = parseInt(b.getAttribute('data-idx'), 10);
+          var q = opps[idx];
+          if (!q) return;
+          copyPromptToClipboard(buildRewritePrompt(q, 'meta'), b);
+        });
+      });
     }
 
     // All queries
@@ -467,10 +567,20 @@
       return q.position > 7 && q.position <= 20 && q.impressions > 10 && !SEO_IGNORE.some(function(w) { return q.query.indexOf(w) > -1; });
     }).sort(function(a, b) { return a.position - b.position; }).slice(0, 5);
     if (!wins.length) { el.innerHTML = '<p style="color:var(--cc-muted);font-size:0.82rem">All your key queries are already on page 1</p>'; return; }
-    el.innerHTML = wins.map(function(q) {
+    el.innerHTML = wins.map(function(q, i) {
       var gap = Math.round(q.position - 10);
-      return '<div class="cc-opp"><div class="cc-opp-query">' + esc(q.query) + '</div><div class="cc-opp-meta">pos ' + q.position + ' \u00B7 ' + q.impressions + ' imp \u00B7 needs to move ' + Math.abs(gap) + ' positions</div><div class="cc-opp-uplift">Add internal links + update content to push to page 1</div></div>';
+      return '<div class="cc-opp"><div class="cc-opp-query">' + esc(q.query) + '</div><div class="cc-opp-meta">pos ' + q.position + ' \u00B7 ' + q.impressions + ' imp \u00B7 needs to move ' + Math.abs(gap) + ' positions</div><div class="cc-opp-uplift">Add internal links + update content to push to page 1</div><button class="cc-opp-copy" data-idx="' + i + '" title="Copy a quick-win prompt to paste into Copilot CLI">\uD83D\uDCCB quick-win prompt</button></div>';
     }).join('');
+    // Wire copy buttons (L1)
+    el.querySelectorAll('.cc-opp-copy').forEach(function(b) {
+      b.addEventListener('click', function(ev) {
+        ev.stopPropagation();
+        var idx = parseInt(b.getAttribute('data-idx'), 10);
+        var q = wins[idx];
+        if (!q) return;
+        copyPromptToClipboard(buildRewritePrompt(q, 'quickwin'), b);
+      });
+    });
   }
 
   // ── V2: KEYBOARD SHORTCUTS (#8) ──

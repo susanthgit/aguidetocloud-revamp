@@ -1,28 +1,34 @@
 name: SEO + OG image guardrail
 
-# Runs the SEO/OG-image frontmatter check on every push that touches blog
-# content or the guardrail script itself. Catches:
+# Runs the SEO/OG-image frontmatter checks on every push that touches blog
+# or cert-tracker content or the guardrail scripts themselves. Catches:
 #   - title length > 60 chars (Google SERP truncation)
 #   - description length > 155 chars (Google SERP truncation)
 #   - frontmatter `images:` entries that don't resolve to a file in static/
+#   - SEO quality issues (brand/hook/CTA words, hype words, score < 70)
 #
 # Origin: 8 May 2026 audit session — 14 blog posts had over-length titles
 # and the audit then caught a privacy-policy ↔ implementation drift.
-# See deployment-playbook.md step 17.5 + blog-notebook-system.md.
+# Extended 10 May 2026 with L2 quality scoring (cc dashboard SEO autopilot).
+# See deployment-playbook.md step 17.5/17.6 + blog-notebook-system.md.
 
 on:
   push:
     branches: [main]
     paths:
       - 'content/blog/**'
+      - 'content/cert-tracker/**'
       - 'static/images/og/**'
       - 'scripts/check-seo-lengths.ps1'
+      - 'scripts/check-seo-quality.ps1'
       - '.github/workflows/seo-check.yml'
   pull_request:
     paths:
       - 'content/blog/**'
+      - 'content/cert-tracker/**'
       - 'static/images/og/**'
       - 'scripts/check-seo-lengths.ps1'
+      - 'scripts/check-seo-quality.ps1'
   workflow_dispatch:
 
 permissions:
@@ -43,13 +49,13 @@ jobs:
           which pwsh
           pwsh --version
 
-      - name: Run guardrail (blog scope, strict)
+      - name: Run length guardrail (blog scope, strict)
         shell: pwsh
         working-directory: ${{ github.workspace }}
         run: pwsh scripts/check-seo-lengths.ps1 -Strict
 
   seo-all-content:
-    name: Full content audit (warn-only)
+    name: Full content length audit (warn-only)
     runs-on: ubuntu-latest
     timeout-minutes: 5
     # Full audit runs always — informational, never blocks the build
@@ -57,7 +63,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - name: Run guardrail (all content, warn-only)
+      - name: Run length guardrail (all content, warn-only)
         shell: pwsh
         working-directory: ${{ github.workspace }}
         run: pwsh scripts/check-seo-lengths.ps1 -All
+
+  seo-quality:
+    name: SEO quality scoring (warn-only)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    # Scores cert-tracker pages on title/desc quality + brand/hook/CTA words.
+    # Pages scoring <70 are reported but never block the build.
+    # Use the cc dashboard "📋 prompt" buttons to fix flagged pages.
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Run quality guardrail (cert-tracker)
+        shell: pwsh
+        working-directory: ${{ github.workspace }}
+        run: pwsh scripts/check-seo-quality.ps1 -Scope cert-tracker
+

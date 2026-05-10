@@ -121,6 +121,18 @@ body { background: var(--bg-page) !important; }
 .cc-action-high .cc-action-tag { background: var(--cc-red); color: var(--bg-page); }
 .cc-action-medium .cc-action-tag { background: var(--cc-amber); color: var(--bg-page); }
 .cc-action-low .cc-action-tag { background: var(--cc-green); color: var(--bg-page); }
+.cc-action-text { flex: 1; min-width: 0; }
+.cc-action-copy, .cc-opp-copy {
+  flex-shrink: 0; align-self: flex-start;
+  font-family: var(--cc-mono); font-size: 0.7rem; font-weight: 600;
+  padding: 0.25rem 0.55rem; border-radius: 5px;
+  background: rgba(99,102,241,0.10); color: var(--accent, #6366F1);
+  border: 1px solid rgba(99,102,241,0.25); cursor: pointer;
+  white-space: nowrap; transition: background-color 150ms ease-out, color 150ms ease-out;
+}
+.cc-action-copy:hover, .cc-opp-copy:hover { background: rgba(99,102,241,0.18); }
+.cc-action-copy:disabled, .cc-opp-copy:disabled { opacity: 0.7; cursor: default; }
+.cc-opp-copy { margin-top: 0.4rem; }
 
 /* Working/Fixing items */
 .cc-item {
