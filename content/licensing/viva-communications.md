@@ -1,6 +1,6 @@
 ---
 title: "Viva Communications & Communities — Guide & Pricing (2026)"
-description: "Viva Employee Communications & Communities — Connections, Engage, and Amplify at $2/user/month."
+description: "Viva Employee Communications & Communities — Connections, Engage, and Amplify at $2/user/month. Free guide for the Microsoft Viva family."
 type: "licensing"
 layout: "single"
 plan_name: "Viva Employee Communications & Communities"

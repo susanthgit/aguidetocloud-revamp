@@ -1,6 +1,6 @@
 ---
-title: "Enterprise Mobility + Security (EMS) E3 & E5 — Guide & Pricing (2026)"
-description: "EMS E3 ($12) and E5 ($18) — identity and device management add-ons for Office 365 plans."
+title: "Enterprise Mobility + Security E3 & E5 — Guide & Pricing"
+description: "EMS E3 ($12) and E5 ($18) — identity and device management add-ons for Office 365 plans. Free guide for the Security Add-ons family."
 type: "licensing"
 layout: "single"
 plan_name: "Enterprise Mobility + Security (EMS)"

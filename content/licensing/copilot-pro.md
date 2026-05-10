@@ -1,6 +1,6 @@
 ---
-title: "Microsoft Copilot Pro — Complete Guide, Pricing & Comparison (2026)"
-description: "Microsoft Copilot Pro — $20/month AI for individuals in Word, Excel, PowerPoint, Outlook. Compare with Microsoft 365 Copilot for business. Requires M365 Personal or Family."
+title: "Microsoft Copilot Pro — Complete Guide, Pricing & Comparison"
+description: "Microsoft Copilot Pro — $20/month AI for individuals in Word, Excel, PowerPoint, Outlook. Compare with Microsoft 365 Copilot for business."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft Copilot Pro"

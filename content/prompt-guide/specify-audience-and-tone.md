@@ -1,7 +1,7 @@
 ---
-title: "🗣️ Specify Audience & Tone — Control the Voice"
+title: "🗣️ Specify Audience & Tone — Control the Voice (Free)"
 lastmod: "2026-04-12"
-description: "Learn how to control AI's writing style by specifying audience and tone. Practice creating audience-aware prompts for different workplace scenarios."
+description: "Learn how to control AI's writing style by specifying audience and tone. Practice creating audience-aware prompts for different workplace scenarios. Free."
 type: "prompt-guide"
 weight: 8
 difficulty: "intermediate"

@@ -1,6 +1,6 @@
 ---
-title: "M365 Roadmap Tracker — Every Microsoft 365 Feature Change, Updated Daily"
-description: "Track every Microsoft 365 roadmap feature across Copilot, Teams, Outlook, SharePoint & more. AI-summarised, change detection, smart filtering. Free, updated daily from the official M365 Roadmap."
+title: "M365 Roadmap Tracker — Every Microsoft 365 Feature Change"
+description: "Track every Microsoft 365 roadmap feature across Copilot, Teams, Outlook, SharePoint & more. AI-summarised, change detection, smart filtering. Free."
 type: "m365-roadmap"
 layout: "roadmap"
 sitemap:

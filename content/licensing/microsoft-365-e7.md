@@ -1,6 +1,6 @@
 ---
-title: "Microsoft 365 E7 (Frontier Suite) — Complete Guide, Pricing & What's Included (2026)"
-description: "Microsoft 365 E7 (Frontier Suite) — Copilot + Agent 365 + Entra Suite built in. $99/user/month. GA May 2026. Full feature breakdown, E5 vs E7 comparison, and migration guide."
+title: "Microsoft 365 E7 — Complete Guide, Pricing & What's Included"
+description: "Microsoft 365 E7 (Frontier Suite) — Copilot + Agent 365 + Entra Suite built in. $99/user/month. GA May 2026. Full feature breakdown, E5 vs E7 comparison."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft 365 E7"

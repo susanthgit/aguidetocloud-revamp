@@ -1,6 +1,6 @@
 ---
-title: "Visual Studio Professional & Enterprise — Guide & Pricing (2026)"
-description: "Visual Studio Professional ($45/mo) and Enterprise ($250/mo) — Microsoft's IDE for professional and enterprise development."
+title: "Visual Studio Professional & Enterprise — Guide & Pricing"
+description: "Visual Studio Professional ($45/mo) and Enterprise ($250/mo) — Microsoft's IDE for professional and enterprise development. Free guide."
 type: "licensing"
 layout: "single"
 plan_name: "Visual Studio"

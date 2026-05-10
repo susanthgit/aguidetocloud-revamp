@@ -1,6 +1,6 @@
 ---
-title: "Microsoft 365 Business Standard — Complete Guide, Pricing & What's Included (2026)"
-description: "Microsoft 365 Business Standard — desktop Office apps, Teams, email for SMBs. $14/user/month."
+title: "Microsoft 365 Business Standard — Complete Guide, Pricing &"
+description: "Microsoft 365 Business Standard — desktop Office apps, Teams, email for SMBs. $14/user/month. Free guide for the Business (≤300 users) family."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft 365 Business Standard"

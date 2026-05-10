@@ -1,6 +1,6 @@
 ---
 title: "Power Automate per User + RPA — Guide & Pricing (2026)"
-description: "Power Automate with unattended RPA — cloud flows plus desktop automation without a logged-in user at $40/user/month."
+description: "Power Automate with unattended RPA — cloud flows plus desktop automation without a logged-in user at $40/user/month. Free licensing guide. Updated 2026."
 type: "licensing"
 layout: "single"
 plan_name: "Power Automate per User + RPA"

@@ -1,7 +1,7 @@
 ---
-title: "📐 Define the Format — Control How AI Responds"
+title: "📐 Define the Format — Control How AI Responds (Free)"
 lastmod: "2026-04-12"
-description: "Learn how to specify output formats in your AI prompts. Master tables, bullet points, JSON, email formats and more with interactive examples."
+description: "Learn how to specify output formats in your AI prompts. Master tables, bullet points, JSON, email formats and more with interactive examples. Free."
 type: "prompt-guide"
 weight: 4
 difficulty: "beginner"

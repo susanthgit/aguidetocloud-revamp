@@ -1,6 +1,6 @@
 ---
-title: "Dynamics 365 Business Central Team Member — Guide & Pricing (2026)"
-description: "Business Central Team Member — read-only ERP access for light users at $8/user/month."
+title: "Dynamics 365 Business Central Team Member — Guide & Pricing"
+description: "Business Central Team Member — read-only ERP access for light users at $8/user/month. Free guide for the Dynamics 365 ERP family."
 type: "licensing"
 layout: "single"
 plan_name: "Dynamics 365 Business Central Team Member"

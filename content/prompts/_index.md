@@ -1,6 +1,6 @@
 ---
-title: "AI Prompt Library"
-description: "500 tested prompts for M365 Copilot, ChatGPT, Claude & more — across Teams, Word, Excel, Outlook, PowerPoint and 40 categories. Find, customize, copy, use."
+title: "AI Prompt Library Prompts — Free AI Prompts for M365 Copilot"
+description: "500 tested prompts for M365 Copilot, ChatGPT, Claude & more — across Teams, Word, Excel, Outlook, PowerPoint and 40 categories. Find, customize, copy"
 type: "prompts"
 sitemap:
   priority: 0.8

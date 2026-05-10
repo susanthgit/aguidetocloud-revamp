@@ -1,6 +1,6 @@
 ---
-title: "Microsoft 365 Copilot — Complete Guide, Pricing & Requirements (2026)"
-description: "Microsoft 365 Copilot — AI in every Office app, grounded on your data. $30/user/month add-on. Requirements and plans."
+title: "Microsoft 365 Copilot — Complete Guide, Pricing &"
+description: "Microsoft 365 Copilot — AI in every Office app, grounded on your data. $30/user/month add-on. Requirements and plans. Free licensing guide. Updated 2026."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft 365 Copilot"

@@ -1,6 +1,6 @@
 ---
 title: "Power BI Pro — Complete Guide & Pricing (2026)"
-description: "Everything about Power BI Pro — interactive dashboards, reports, and data visualisation for $10/user/month. Compare with Power BI Premium per User and free."
+description: "Everything about Power BI Pro — interactive dashboards, reports, and data visualisation for $10/user/month. Free guide."
 type: "licensing"
 layout: "single"
 plan_name: "Power BI Pro"

@@ -1,6 +1,6 @@
 ---
 title: "Power BI Premium per User — Guide & Pricing (2026)"
-description: "Power BI Premium per User — advanced analytics, AI, large datasets, and paginated reports at $20/user/month."
+description: "Power BI Premium per User — advanced analytics, AI, large datasets, and paginated reports at $20/user/month. Free guide for the Power Platform family."
 type: "licensing"
 layout: "single"
 plan_name: "Power BI Premium per User"

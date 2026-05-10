@@ -1,6 +1,6 @@
 ---
 title: "GitHub Enterprise — Guide & Pricing (2026)"
-description: "GitHub Enterprise — advanced security, SAML SSO, audit logs, and Copilot Business at $21/user/month."
+description: "GitHub Enterprise — advanced security, SAML SSO, audit logs, and Copilot Business at $21/user/month. Free guide for the Windows & Dev family."
 type: "licensing"
 layout: "single"
 plan_name: "GitHub Enterprise"

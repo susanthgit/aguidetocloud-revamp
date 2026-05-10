@@ -1,6 +1,6 @@
 ---
-title: "Microsoft 365 Business Premium — Complete Guide, Pricing & What's Included (2026)"
-description: "Microsoft 365 Business Premium — Intune, Defender, Entra ID P1 for SMBs. $22/user/month. Compare with Standard and E3. The security-first small business plan."
+title: "Microsoft 365 Business Premium — Complete Guide, Pricing &"
+description: "Microsoft 365 Business Premium — Intune, Defender, Entra ID P1 for SMBs. $22/user/month. Compare with Standard and E3."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft 365 Business Premium"

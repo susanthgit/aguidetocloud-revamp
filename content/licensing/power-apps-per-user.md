@@ -1,6 +1,6 @@
 ---
 title: "Power Apps per User — Complete Guide & Pricing (2026)"
-description: "Power Apps per User — build unlimited low-code apps with Dataverse and premium connectors. $20/user/month."
+description: "Power Apps per User — build unlimited low-code apps with Dataverse and premium connectors. $20/user/month. Free guide for the Power Platform family."
 type: "licensing"
 layout: "single"
 plan_name: "Power Apps per User"

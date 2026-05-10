@@ -1,7 +1,7 @@
 ---
-title: "🎭 Set a Role — Give AI the Right Expertise"
+title: "🎭 Set a Role — Give AI the Right Expertise (Free)"
 lastmod: "2026-04-12"
-description: "Learn how role prompting transforms AI responses by assigning expertise. Practice setting roles with before/after examples for M365 Copilot, ChatGPT, Claude, and Gemini."
+description: "Learn how role prompting transforms AI responses by assigning expertise. Practice setting roles with before/after examples for M365 Copilot, ChatGPT. Free."
 type: "prompt-guide"
 weight: 2
 difficulty: "beginner"

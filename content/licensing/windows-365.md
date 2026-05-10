@@ -1,6 +1,6 @@
 ---
 title: "Windows 365 Enterprise — Guide & Pricing (2026)"
-description: "Windows 365 Enterprise — Cloud PCs streamed from Azure, managed via Intune. Starting at $28/user/month."
+description: "Windows 365 Enterprise — Cloud PCs streamed from Azure, managed via Intune. Starting at $28/user/month. Free guide for the Windows & Dev family."
 type: "licensing"
 layout: "single"
 plan_name: "Windows 365 Enterprise"

@@ -1,6 +1,6 @@
 ---
-title: "Dynamics 365 Business Central Essentials — Complete Guide & Pricing (2026)"
-description: "Dynamics 365 Business Central Essentials — all-in-one ERP for SMBs. Finance, supply chain, projects. $70/user/month."
+title: "Dynamics 365 Business Central Essentials (Free Guide)"
+description: "Dynamics 365 Business Central Essentials — all-in-one ERP for SMBs. Finance, supply chain, projects. $70/user/month. Free licensing guide. Updated 2026."
 type: "licensing"
 layout: "single"
 plan_name: "Dynamics 365 Business Central Essentials"

@@ -1,6 +1,6 @@
 ---
 title: "Viva Workplace Analytics & Feedback — Guide & Pricing (2026)"
-description: "Viva Workplace Analytics & Feedback — Insights, Glint, and Pulse at $6/user/month."
+description: "Viva Workplace Analytics & Feedback — Insights, Glint, and Pulse at $6/user/month. Free guide for the Microsoft Viva family."
 type: "licensing"
 layout: "single"
 plan_name: "Viva Workplace Analytics & Feedback"

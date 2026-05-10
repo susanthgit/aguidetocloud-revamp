@@ -1,5 +1,5 @@
 ---
-title: "Office 365 E1 — Complete Guide, Pricing & What's Included (2026)"
+title: "Office 365 E1 — Complete Guide, Pricing & What's Included"
 description: "Everything about Office 365 E1 — web/mobile Office apps, 50 GB Exchange, Teams for $10/user/month. Compare with M365 E3 and Business Basic. No user limit."
 type: "licensing"
 layout: "single"

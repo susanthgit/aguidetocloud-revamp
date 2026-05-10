@@ -1,6 +1,6 @@
 ---
 title: "Office 365 E5 — Complete Guide & Pricing (2026)"
-description: "Everything about Office 365 E5 — analytics, Teams Phone, Power BI Pro, and advanced compliance for $41/user/month."
+description: "Everything about Office 365 E5 — analytics, Teams Phone, Power BI Pro, and advanced compliance for $41/user/month. Free guide for the Enterprise family."
 type: "licensing"
 layout: "single"
 plan_name: "Office 365 E5"

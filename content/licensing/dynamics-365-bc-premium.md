@@ -1,6 +1,6 @@
 ---
-title: "Dynamics 365 Business Central Premium — Guide & Pricing (2026)"
-description: "Business Central Premium — Essentials plus manufacturing and service management at $100/user/month."
+title: "Dynamics 365 Business Central Premium — Guide & Pricing"
+description: "Business Central Premium — Essentials plus manufacturing and service management at $100/user/month. Free guide for the Dynamics 365 ERP family."
 type: "licensing"
 layout: "single"
 plan_name: "Dynamics 365 Business Central Premium"

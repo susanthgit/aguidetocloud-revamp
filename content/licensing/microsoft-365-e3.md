@@ -1,6 +1,6 @@
 ---
-title: "Microsoft 365 E3 — Complete Guide, Pricing & What's Included (2026)"
-description: "Microsoft 365 E3 complete guide — features, pricing ($39/user/month), E3 vs E5 comparison, and what changed in 2026."
+title: "Microsoft 365 E3 — Complete Guide, Pricing & What's Included"
+description: "Microsoft 365 E3 complete guide — features, pricing ($39/user/month), E3 vs E5 comparison, and what changed in 2026. Free guide for the Enterprise family."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft 365 E3"

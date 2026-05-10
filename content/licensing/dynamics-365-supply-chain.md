@@ -1,6 +1,6 @@
 ---
-title: "Dynamics 365 Supply Chain Management — Guide & Pricing (2026)"
-description: "Dynamics 365 Supply Chain Management — procurement, warehousing, manufacturing, and demand planning at $210/user/month."
+title: "Dynamics 365 Supply Chain Management — Guide & Pricing"
+description: "Dynamics 365 Supply Chain Management — procurement, warehousing, manufacturing, and demand planning at $210/user/month. Free licensing guide. Updated 2026."
 type: "licensing"
 layout: "single"
 plan_name: "Dynamics 365 Supply Chain Management"
