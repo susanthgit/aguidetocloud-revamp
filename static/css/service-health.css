@@ -1,8 +1,8 @@
 /* ──────────────────────────────────────────
    Microsoft Service Health Tracker
-   Accent: #EA580C (burnt orange)
+   Accent: burnt orange
    Namespace: .shealth-*
-   Status: green #22C55E / yellow #EAB308 / red #EF4444
+   Status: green / yellow / red
    ────────────────────────────────────────── */
 
 :root {
@@ -771,3 +771,6 @@
 .shealth-error-state { text-align: center; padding: 2rem; color: var(--sh-red); }
 .shealth-related-match { margin-top: 0.4rem; padding-left: 1rem; }
 .shealth-related-match-dim { color: var(--sh-text-dim, var(--text-muted)); }
+.shealth-no-active { text-align: center; padding: 2rem; color: color-mix(in srgb, var(--text-primary) 40%, transparent); }
+.shealth-no-active-hidden { display: none; }
+.shealth-faq-heading { color: var(--tool-accent, var(--accent)); margin-bottom: 1rem; }
