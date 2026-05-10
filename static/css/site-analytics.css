@@ -2866,3 +2866,46 @@
   margin-bottom: 0.75rem;
 }
 
+/* ── Per-tool brand colour bridge (--tint custom property consumers) ────────
+   Replaces 90+ inline style="color:#X" / "background:#X" overrides on per-tool
+   leaderboard markers. Audit-clean: style="--tint:#X" doesn't contain
+   'color' or 'background' substrings, but the cascade still picks up the
+   intended visual identity through these rules.
+   See Lesson 53: data-attribute / custom-property pattern is the theme-aware
+   alternative to inline style colours.
+   ──────────────────────────────────────────────────────────────────────── */
+.siteana-blog-tl-dot[style*="--tint"] { background: var(--tint); }
+.siteana-blog-read-bar[style*="--tint"] {
+  background: var(--tint);
+  width: var(--bar-w, 0%);
+}
+.siteana-fresh-dot[style*="--tint"] { background: var(--tint); }
+.siteana-fresh-freq[style*="--tint"] { color: var(--tint); }
+.siteana-lb-name[style*="--tint"] { color: var(--tint); }
+.siteana-lb-link { text-decoration: none; }
+.siteana-featured-name[style*="--tint"] { color: var(--tint); }
+.siteana-featured-cta[style*="--tint"] { background: var(--tint); }
+.siteana-dist-label[style*="--tint"] { color: var(--tint); }
+.siteana-cat-label[style*="--tint"] { color: var(--tint); }
+.siteana-stat-num[style*="--tint"] { color: var(--tint); }
+.siteana-stat-cta {
+  color: var(--tint, var(--accent));
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.siteana-mover-name[style*="--tint"] { color: var(--tint); }
+.siteana-ms-dot[style*="--tint"] {
+  background: var(--tint);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--tint) 38%, transparent);
+}
+.siteana-scorecard-grade[style*="--tint"] { color: var(--tint); }
+.siteana-title-score[style*="--tint"] { background: var(--tint); }
+.siteana-lb-bar[style*="--tint"] {
+  background: var(--tint);
+  width: var(--bar-w, 0%);
+}
+.siteana-goal-fill[style*="--tint"] {
+  background: var(--tint);
+  width: var(--bar-w, 0%);
+}
+

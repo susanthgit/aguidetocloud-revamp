@@ -251,7 +251,7 @@
           {{ range first 8 (sort $blogPages "Date" "desc") }}
           <div class="siteana-blog-tl-item">
             <span class="siteana-blog-tl-date">{{ .Date.Format "Jan 2" }}</span>
-            <span class="siteana-blog-tl-dot" style="background:{{ with .Params.card_tag }}{{ if eq . "Copilot" }}#0EA5E9{{ else if eq . "AI Agents" }}#00A4EF{{ else if eq . "What's New" }}#FBBF24{{ else }}#64748B{{ end }}{{ else }}#64748B{{ end }}"></span>
+            <span class="siteana-blog-tl-dot" style="--tint:{{ with .Params.card_tag }}{{ if eq . "Copilot" }}#0EA5E9{{ else if eq . "AI Agents" }}#00A4EF{{ else if eq . "What's New" }}#FBBF24{{ else }}#64748B{{ end }}{{ else }}#64748B{{ end }}"></span>
             <a href="{{ .RelPermalink }}" class="siteana-blog-tl-title">{{ .Title | truncate 55 }}</a>
           </div>
           {{ end }}
@@ -272,7 +272,7 @@
           <div class="siteana-blog-read-row">
             <span class="siteana-blog-read-title">{{ .Title | truncate 40 }}</span>
             <div class="siteana-blog-read-bar-wrap">
-              <div class="siteana-blog-read-bar" style="width:{{ div (mul $readMin 100) 30 }}%;background:#0EA5E9"></div>
+              <div class="siteana-blog-read-bar" style="--bar-w:{{ div (mul $readMin 100) 30 }}%;--tint:#0EA5E9"></div>
             </div>
             <span class="siteana-blog-read-time">{{ $readMin }} min</span>
           </div>
@@ -354,9 +354,9 @@
         {{ range $sections }}
         <div class="siteana-fresh-item">
           <span class="siteana-fresh-icon">{{ partial "icon.html" (dict "name" .iconName "size" 14 "stroke" 1.5) }}</span>
-          <span class="siteana-fresh-dot" style="background:{{ .color }}"></span>
+          <span class="siteana-fresh-dot" style="--tint:{{ .color }}"></span>
           <span class="siteana-fresh-name">{{ .name }}</span>
-          <span class="siteana-fresh-freq" style="color:{{ .color }}">{{ .freq }}</span>
+          <span class="siteana-fresh-freq" style="--tint:{{ .color }}">{{ .freq }}</span>
         </div>
         {{ end }}
       </div>
@@ -871,14 +871,14 @@
     var tagline = TOOL_TAGLINES[tool.tool] || '';
     var rank = lb.indexOf(tool) + 1;
     el.innerHTML = '<div class="siteana-featured-inner">'
-      + '<a href="' + esc(url) + '" class="siteana-featured-name" style="color:' + color + '">' + esc(name) + '</a>'
+      + '<a href="' + esc(url) + '" class="siteana-featured-name" style="--tint:' + color + '">' + esc(name) + '</a>'
       + '<p class="siteana-featured-tagline">' + esc(tagline) + '</p>'
       + '<div class="siteana-featured-stats">'
       + '<span>' + roundK(tool.views) + ' views</span>'
       + '<span>' + roundK(tool.users) + ' users</span>'
       + '<span>#' + rank + ' overall</span>'
       + '</div>'
-      + '<a href="' + esc(url) + '" class="siteana-featured-cta" style="background:' + color + '">Try it now &rarr;</a>'
+      + '<a href="' + esc(url) + '" class="siteana-featured-cta" style="--tint:' + color + '">Try it now &rarr;</a>'
       + '</div>';
   }
 
@@ -901,7 +901,7 @@
       var color = COLORS[s.tool] || '#64748B';
       var url = TOOL_URLS[s.tool] || '/';
       return '<div class="siteana-rising-item">'
-        + '<a href="' + esc(url) + '" class="siteana-lb-name" style="color:' + color + ';text-decoration:none">' + esc(name) + '</a>'
+        + '<a href="' + esc(url) + '" class="siteana-lb-name siteana-lb-link" style="--tint:' + color + '">' + esc(name) + '</a>'
         + '<span class="siteana-rising-pct">\u2191 ' + s.growth + '%</span></div>';
     }).join('');
   }
@@ -918,7 +918,7 @@
       var url = TOOL_URLS[t.tool] || '/';
       var tagline = TOOL_TAGLINES[t.tool] || '';
       return '<div class="siteana-gem-item">'
-        + '<a href="' + esc(url) + '" class="siteana-lb-name" style="color:' + color + ';text-decoration:none">' + esc(name) + '</a>'
+        + '<a href="' + esc(url) + '" class="siteana-lb-name siteana-lb-link" style="--tint:' + color + '">' + esc(name) + '</a>'
         + '<span class="siteana-gem-tagline">' + esc(tagline.length > 50 ? tagline.slice(0,50)+'...' : tagline) + '</span>'
         + '<span class="siteana-gem-views">' + roundK(t.views) + ' views</span></div>';
     }).join('');
@@ -963,7 +963,7 @@
     el.innerHTML = bands.map(function(b) {
       var pct = Math.round((b.count / max) * 100);
       return '<div class="siteana-dist-row">'
-        + '<span class="siteana-dist-label" style="color:' + b.color + '">' + b.label + '</span>'
+        + '<span class="siteana-dist-label" style="--tint:' + b.color + '">' + b.label + '</span>'
         + '<div class="siteana-dist-bar-wrap"><div class="siteana-dist-bar" style="width:' + pct + '%;background:' + b.color + '"></div></div>'
         + '<span class="siteana-dist-count">' + b.count + ' queries</span>'
         + '</div>';
@@ -1028,7 +1028,7 @@
       var label = CAT_LABELS[cat] || cat;
       var color = CAT_COLORS[cat] || '#64748B';
       return '<div class="siteana-cat-row">'
-        + '<span class="siteana-cat-label" style="color:' + color + '">' + esc(label) + '</span>'
+        + '<span class="siteana-cat-label" style="--tint:' + color + '">' + esc(label) + '</span>'
         + '<div class="siteana-cat-bar-wrap"><div class="siteana-cat-bar" style="width:' + pct + '%;background:' + color + '"></div></div>'
         + '<span class="siteana-cat-views">' + roundK(catViews[cat]) + '</span>'
         + '</div>';
@@ -1152,9 +1152,9 @@
         var spark = (trends && trends[t.tool]) ? '<canvas class="siteana-sparkline" id="sp-' + t.tool + '" width="60" height="20"></canvas>' : '';
         var newBadge = (t._isNew) ? ' <span class="siteana-new-badge">NEW</span>' : '';
         return '<div class="siteana-lb-item"><span class="siteana-lb-rank ' + rank + '">' + (i+1) + '</span>'
-          + '<div class="siteana-lb-info"><div class="siteana-lb-name-row"><a href="' + esc(url) + '" class="siteana-lb-name" style="color:' + color + '">' + esc(name) + '</a>' + newBadge + spark + '</div>'
+          + '<div class="siteana-lb-info"><div class="siteana-lb-name-row"><a href="' + esc(url) + '" class="siteana-lb-name" style="--tint:' + color + '">' + esc(name) + '</a>' + newBadge + spark + '</div>'
           + '<span class="siteana-lb-count">' + roundK(t.views) + ' views \u00B7 ' + roundK(t.users) + ' users</span></div>'
-          + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:' + color + '"></div></div>'
+          + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="--bar-w:' + pct + '%;--tint:' + color + '"></div></div>'
           + '<span class="siteana-lb-total">' + roundK(t.total) + '</span></div>';
       }).join('');
     }

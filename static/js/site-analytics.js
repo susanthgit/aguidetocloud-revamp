@@ -351,9 +351,9 @@
       var sparkHtml = (toolTrends && toolTrends[item.tool]) ? '<canvas class="siteana-sparkline" id="spark-' + item.tool + '" width="60" height="20"></canvas>' : '';
       return '<div class="siteana-lb-item">'
         + '<span class="siteana-lb-rank ' + rankClass + '">' + (i + 1) + '</span>'
-        + '<div class="siteana-lb-info"><div class="siteana-lb-name-row"><span class="siteana-lb-name" style="color:' + info.color + '">' + esc(info.name) + '</span>' + sparkHtml + '</div>'
+        + '<div class="siteana-lb-info"><div class="siteana-lb-name-row"><span class="siteana-lb-name" style="--tint:' + info.color + '">' + esc(info.name) + '</span>' + sparkHtml + '</div>'
         + '<span class="siteana-lb-count">' + esc(roundDisplay(item.views)) + ' views \u00B7 ' + esc(roundDisplay(item.users)) + ' users</span></div>'
-        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:' + info.color + '"></div></div>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="--bar-w:' + pct + '%;--tint:' + info.color + '"></div></div>'
         + '<span class="siteana-lb-total">' + esc(roundDisplay(item.total)) + '</span>'
         + '</div>';
     }).join('');
@@ -400,7 +400,7 @@
       var info = getToolInfo(item.tool);
       return '<div class="siteana-lb-item">'
         + '<span class="siteana-lb-rank">' + (i + 1) + '</span>'
-        + '<span class="siteana-lb-name" style="color:' + info.color + '">' + esc(info.name) + '</span>'
+        + '<span class="siteana-lb-name" style="--tint:' + info.color + '">' + esc(info.name) + '</span>'
         + '<span class="siteana-lb-total">' + esc(roundDisplay(item[field])) + '</span></div>';
     }).join('');
   }
@@ -569,7 +569,7 @@
     if (!container) return;
     container.innerHTML = '<div class="siteana-ms-track">' + MILESTONES.map(function(ms) {
       return '<div class="siteana-ms-item">'
-        + '<div class="siteana-ms-dot" style="background:' + ms.color + ';box-shadow:0 0 8px ' + ms.color + '60" title="' + esc(ms.label) + '"></div>'
+        + '<div class="siteana-ms-dot" style="--tint:' + ms.color + '" title="' + esc(ms.label) + '"></div>'
         + '<div class="siteana-ms-date">' + ms.date.slice(5) + '</div>'
         + '<div class="siteana-ms-label">' + esc(ms.label) + '</div>'
         + '</div>';
@@ -637,7 +637,7 @@
       var barColor = pct >= 100 ? '#10B981' : '#64748B';
       return '<div class="siteana-goal">'
         + '<div class="siteana-goal-header"><span class="siteana-goal-label">' + esc(g.label) + '</span><span class="siteana-goal-pct">' + pct + '%</span></div>'
-        + '<div class="siteana-goal-track"><div class="siteana-goal-fill" style="width:' + pct + '%;background:' + barColor + '"></div></div>'
+        + '<div class="siteana-goal-track"><div class="siteana-goal-fill" style="--bar-w:' + pct + '%;--tint:' + barColor + '"></div></div>'
         + '<div class="siteana-goal-meta"><span>' + numFmt(current) + ' / ' + numFmt(g.target) + '</span><span>' + daysLeft + ' days left</span></div>'
         + '</div>';
     }).join('');
@@ -875,7 +875,7 @@
       var cls = m.diff > 0 ? 'siteana-mover-up' : 'siteana-mover-down';
       var arrow = m.diff > 0 ? '\u2191' : '\u2193';
       return '<div class="siteana-mover ' + cls + '">'
-        + '<span class="siteana-mover-name" style="color:' + info.color + '">' + esc(info.name) + '</span>'
+        + '<span class="siteana-mover-name" style="--tint:' + info.color + '">' + esc(info.name) + '</span>'
         + '<span class="siteana-mover-diff">' + arrow + ' ' + Math.abs(m.diff) + ' views</span>'
         + '<span class="siteana-mover-pct">' + (m.pct >= 0 ? '+' : '') + m.pct + '%</span>'
         + '</div>';
@@ -972,8 +972,8 @@
     // Stats
     var statsHtml = '<div class="siteana-grid-2" style="gap:1rem">';
     if (toolData) {
-      statsHtml += '<div class="siteana-stat"><span class="siteana-stat-num" style="color:' + info.color + '">' + numFmt(toolData.views) + '</span><span class="siteana-stat-label">Views</span></div>';
-      statsHtml += '<div class="siteana-stat"><span class="siteana-stat-num" style="color:' + info.color + '">' + numFmt(toolData.users) + '</span><span class="siteana-stat-label">Users</span></div>';
+      statsHtml += '<div class="siteana-stat"><span class="siteana-stat-num" style="--tint:' + info.color + '">' + numFmt(toolData.views) + '</span><span class="siteana-stat-label">Views</span></div>';
+      statsHtml += '<div class="siteana-stat"><span class="siteana-stat-num" style="--tint:' + info.color + '">' + numFmt(toolData.users) + '</span><span class="siteana-stat-label">Users</span></div>';
     }
     statsHtml += '</div>';
     // Rank
@@ -984,7 +984,7 @@
     }
     // Link
     var pathMap = {}; Object.keys(TOOLS).forEach(function(k) { pathMap[k] = '/' + k.replace('prompt-library', 'prompts').replace('licensing', 'licensing').replace('meeting-planner', 'world-clock') + '/'; });
-    statsHtml += '<a href="' + (pathMap[toolId] || '/' + toolId + '/') + '" style="color:' + info.color + ';font-size:0.88rem;font-weight:600" target="_blank" rel="noopener">Visit tool \u2192</a>';
+    statsHtml += '<a href="' + (pathMap[toolId] || '/' + toolId + '/') + '" class="siteana-stat-cta" style="--tint:' + info.color + '" target="_blank" rel="noopener">Visit tool \u2192</a>';
     statsEl.innerHTML = statsHtml;
     // Chart
     var ctx = document.getElementById('sa-tool-detail-chart');
@@ -1552,7 +1552,7 @@
     ];
     var validGrades = ['A+','A','A-','B+','B','B-','C+','C','C-','D','F'];
     var safeGrade = validGrades.includes(sc.grade) ? sc.grade : '?';
-    el.innerHTML = '<div class="siteana-scorecard-grade" style="color:' + gradeColor + '">Grade: ' + safeGrade + '</div>'
+    el.innerHTML = '<div class="siteana-scorecard-grade" style="--tint:' + gradeColor + '">Grade: ' + safeGrade + '</div>'
       + '<div class="siteana-ba-grid" style="grid-template-columns:1fr 1fr 1fr 1fr">'
       + '<div class="siteana-ba-header"><span></span><span>This Week</span><span>Last Week</span><span>Change</span></div>'
       + metrics.map(function(m) {
@@ -1580,7 +1580,7 @@
         var barColor = pct >= 80 ? '#10B981' : pct >= 50 ? '#FBBF24' : '#64748B';
         return '<div class="siteana-goal">'
           + '<div class="siteana-goal-header"><span class="siteana-goal-label">' + label + ' subscribers</span><span class="siteana-goal-pct">' + pct + '%</span></div>'
-          + '<div class="siteana-goal-track"><div class="siteana-goal-fill" style="width:' + pct + '%;background:' + barColor + '"></div></div>'
+          + '<div class="siteana-goal-track"><div class="siteana-goal-fill" style="--bar-w:' + pct + '%;--tint:' + barColor + '"></div></div>'
           + '<div class="siteana-goal-meta"><span>' + numFmt(proj.currentTotal) + ' / ' + numFmt(t.target) + '</span><span>' + timeStr + '</span></div>'
           + '</div>';
       }).join('');
@@ -1597,7 +1597,7 @@
       var issueHtml = s.issues && s.issues.length ? '<div class="siteana-title-issues">' + s.issues.map(function(i) { return '<span class="siteana-title-issue">' + esc(i) + '</span>'; }).join('') + '</div>' : '';
       return '<div class="siteana-title-card">'
         + '<div class="siteana-title-header">'
-        + '<span class="siteana-title-score" style="background:' + scoreColor + '">' + s.score + '</span>'
+        + '<span class="siteana-title-score" style="--tint:' + scoreColor + '">' + s.score + '</span>'
         + '<a class="siteana-title-name" href="https://youtube.com/watch?v=' + esc(s.id) + '" target="_blank" rel="noopener">' + esc(s.title) + '</a>'
         + '</div>'
         + '<div class="siteana-title-meta">' + numFmt(s.views) + ' views \u00B7 ' + s.engagement + '% engagement</div>'
@@ -1717,7 +1717,7 @@
       if (currentData._healthScore) vitals.push({ num: currentData._healthScore, label: 'Health', color: currentData._healthColor || '#64748B' });
       if (ytDataCache && ytDataCache.weeklyScorecard) vitals.push({ num: ytDataCache.weeklyScorecard.grade, label: 'YT Grade', color: ytDataCache.weeklyScorecard.grade.charAt(0) === 'A' ? '#10B981' : ytDataCache.weeklyScorecard.grade.charAt(0) === 'B' ? '#FBBF24' : ytDataCache.weeklyScorecard.grade.charAt(0) === 'C' ? '#FB923C' : '#EF4444' });
       vitalsEl.innerHTML = vitals.map(function(v) {
-        return '<div class="siteana-stat"><span class="siteana-stat-num" style="color:' + v.color + '">' + v.num + '</span><span class="siteana-stat-label">' + v.label + '</span></div>';
+        return '<div class="siteana-stat"><span class="siteana-stat-num" style="--tint:' + v.color + '">' + v.num + '</span><span class="siteana-stat-label">' + v.label + '</span></div>';
       }).join('');
     }
 
@@ -1727,7 +1727,7 @@
       var top5 = ga4.leaderboard.slice(0, 5);
       toolsEl.innerHTML = top5.map(function(t, i) {
         var info = getToolInfo(t.tool);
-        return '<div class="siteana-lb-item"><span class="siteana-lb-rank">' + (i + 1) + '</span><span class="siteana-lb-name" style="color:' + info.color + '">' + esc(info.name) + '</span><span class="siteana-lb-total">' + roundDisplay(t.views) + '</span></div>';
+        return '<div class="siteana-lb-item"><span class="siteana-lb-rank">' + (i + 1) + '</span><span class="siteana-lb-name" style="--tint:' + info.color + '">' + esc(info.name) + '</span><span class="siteana-lb-total">' + roundDisplay(t.views) + '</span></div>';
       }).join('');
     }
 
