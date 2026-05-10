@@ -3028,11 +3028,14 @@ body.cmd-v2-home-page .bb-brand-name { font-weight: 700; }
   }
 }
 
-/* — Item 2: Mobile boot-sequence room — taller CRT buffer + tighter rhythm
-     so the full BIOS boot (5 OK lines + READY) is visible without scroll
-     after the JS animation completes. */
+/* — Item 2: Mobile boot-sequence room — give the CRT viewport-aware height
+     so it fills the phone screen instead of being pinned to 460px. The clamp
+     lets it scale: min 460px (small phones), max 720px (tall phones), pref
+     100dvh - 200px (cosmos-bar 32 + header 50 + hero ~140 - some breathing). */
 @media (max-width: 719px) {
-  .cmd-v2-home .cmd-term-wrap.embed { height: 460px; }
+  .cmd-v2-home .cmd-term-wrap.embed {
+    height: clamp(460px, calc(100dvh - 200px), 720px);
+  }
   .cmd-v2-home .cmd-buffer { font-size: 13px; line-height: 1.5; padding: 12px; }
   .cmd-v2-home .cmd-line { line-height: 1.5; }
 }
