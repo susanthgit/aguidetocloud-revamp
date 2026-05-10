@@ -47,7 +47,7 @@
 .slacalc-input-group input[type="date"],
 .slacalc-input-group input[type="text"],
 .slacalc-input-group select {
-  width: 100%; padding: 0.6rem 0.8rem; font-size: 1.2rem; font-weight: 700;
+  width: 100%; padding: 0.6rem 0.8rem; font-size: 1.2rem; font-weight: 600;
   background: var(--bg-elevated); border: 1px solid var(--bg-elevated);
   border-radius: 8px; color: var(--text-primary); outline: none; transition: border-color 0.2s;
 }
@@ -83,7 +83,7 @@
   letter-spacing: 0.05em; margin-bottom: 0.5rem;
 }
 .slacalc-result-card .value {
-  font-size: 1.6rem; font-weight: 800; color: var(--slacalc-accent);
+  font-size: 1.6rem; font-weight: 600; color: var(--slacalc-accent);
 }
 .slacalc-result-card .detail {
   font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;
@@ -113,7 +113,7 @@
   border: 1px solid var(--border);
 }
 .slacalc-reverse-result .big-pct {
-  font-size: 3rem; font-weight: 800; color: var(--slacalc-accent);
+  font-size: 3rem; font-weight: 600; color: var(--slacalc-accent);
 }
 .slacalc-reverse-result .sub { color: var(--text-secondary); margin-top: 0.5rem; }
 
@@ -126,12 +126,12 @@
 }
 .slacalc-breach-item.breached { border-left-color: #EF4444; }
 .slacalc-breach-item.safe { border-left-color: var(--accent); }
-.slacalc-breach-item .sla-name { font-weight: 700; flex: 1; }
+.slacalc-breach-item .sla-name { font-weight: 600; flex: 1; }
 .slacalc-breach-item .badge {
-  padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700;
+  padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600;
 }
-.slacalc-breach-item.breached .badge { background: rgba(239,68,68,0.15); color: var(--text-primary); }
-.slacalc-breach-item.safe .badge { background: rgba(16,185,129,0.15); color: var(--accent); }
+.slacalc-breach-item.breached .badge { background: color-mix(in srgb, var(--error) 15%, transparent); color: var(--text-primary); }
+.slacalc-breach-item.safe .badge { background: color-mix(in srgb, var(--success) 15%, transparent); color: var(--accent); }
 
 /* Table */
 .slacalc-table-wrap { overflow-x: auto; }
@@ -139,7 +139,7 @@
   width: 100%; border-collapse: collapse; font-size: 0.85rem;
 }
 .slacalc-table th {
-  text-align: left; padding: 0.6rem 0.8rem; font-weight: 700;
+  text-align: left; padding: 0.6rem 0.8rem; font-weight: 600;
   color: var(--text-secondary); border-bottom: 1px solid var(--border);
   font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em;
 }
@@ -172,7 +172,7 @@
   border-bottom: 1px solid var(--border); font-size: 0.85rem;
 }
 .slacalc-log-entry .date { color: var(--text-secondary); min-width: 90px; }
-.slacalc-log-entry .dur { font-weight: 700; color: var(--slacalc-accent); min-width: 60px; }
+.slacalc-log-entry .dur { font-weight: 600; color: var(--slacalc-accent); min-width: 60px; }
 .slacalc-log-entry .svc { flex: 1; }
 .slacalc-log-entry .del {
   background: none; border: none; color: var(--border-emphasis);

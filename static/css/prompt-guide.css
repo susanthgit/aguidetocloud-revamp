@@ -169,11 +169,11 @@
   font-weight: 600;
 }
 .pguide-badge-beginner {
-  background: rgba(59, 130, 246, 0.15);
+  background: color-mix(in srgb, var(--info) 15%, transparent);
   color: var(--accent);
 }
 .pguide-badge-intermediate {
-  background: rgba(251, 191, 36, 0.15);
+  background: color-mix(in srgb, var(--warning) 15%, transparent);
   color: var(--text-primary);
 }
 
@@ -420,7 +420,7 @@
    TECHNIQUE SINGLE PAGE
    ══════════════════════════════════════ */
 .pguide-technique-hero {
-  background: linear-gradient(180deg, color-mix(in srgb, #84CC16 15%, #060610) 0%, #060610 100%);
+  background: color-mix(in srgb, var(--accent) 8%, var(--bg-page));
   padding: 3rem 1.5rem 2rem;
 }
 .pguide-technique-hero-inner {
@@ -588,8 +588,8 @@
   margin-bottom: 0.4rem;
 }
 .pguide-sandbox-bad {
-  background: rgba(220, 38, 38, 0.1);
-  border: 1px solid rgba(220, 38, 38, 0.3);
+  background: color-mix(in srgb, var(--error) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--error) 30%, transparent);
   color: var(--text-primary);
   padding: 0.75rem 1rem;
   border-radius: var(--radius-md, 10px);
@@ -658,7 +658,7 @@
   color: var(--tool-accent-text);
 }
 .pguide-sandbox-feedback.partial {
-  background: rgba(251, 191, 36, 0.15);
+  background: color-mix(in srgb, var(--warning) 15%, transparent);
   border: 1px solid var(--accent);
   color: var(--text-primary);
 }
@@ -808,8 +808,8 @@
   position: relative;
 }
 .pguide-ba-before {
-  background: rgba(220, 38, 38, 0.08);
-  border: 1px solid rgba(220, 38, 38, 0.25);
+  background: color-mix(in srgb, var(--error) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--error) 25%, transparent);
 }
 .pguide-ba-after {
   background: var(--accent-subtle);
@@ -817,7 +817,7 @@
 }
 .pguide-ba-label {
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   display: block;
   margin-bottom: 0.5rem;
 }
@@ -827,7 +827,7 @@
 .pguide-ba-arrow {
   font-size: 1.5rem;
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 600;
   flex-shrink: 0;
 }
 .pguide-quickwin-note {
@@ -898,14 +898,14 @@
   font-size: 0.8rem;
   font-weight: 600;
 }
-.pguide-combine-plus, .pguide-combine-eq { color: var(--text-secondary); font-weight: 700; }
+.pguide-combine-plus, .pguide-combine-eq { color: var(--text-secondary); font-weight: 600; }
 .pguide-combine-result {
   background: var(--accent);
   color: var(--accent-foreground, #fff);
   padding: 0.3rem 0.8rem;
   border-radius: 6px;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* ══ Print Button ══ */
@@ -950,7 +950,7 @@
 
 /* ══ Fix This Prompt — V2 ══ */
 .pguide-fix-exercise {
-  background: rgba(251, 191, 36, 0.06);
+  background: color-mix(in srgb, var(--warning) 6%, transparent);
   border: 2px solid var(--accent);
   border-radius: 16px;
   padding: 1.5rem;
@@ -977,7 +977,7 @@
 
 /* ══ Certificate — V2 ══ */
 .pguide-certificate {
-  background: linear-gradient(135deg, var(--accent-subtle), var(--accent-subtle));
+  background: var(--accent-subtle);
   border: 2px solid var(--accent);
   border-radius: 16px;
   padding: 2rem;
@@ -991,7 +991,7 @@
 .pguide-cert-card {
   max-width: 500px;
   margin: 1.5rem auto 0;
-  background: linear-gradient(135deg, #1a2a1a, #050510);
+  background: var(--bg-elevated);
   border: 2px solid var(--accent);
   border-radius: 16px;
   overflow: hidden;
@@ -999,7 +999,7 @@
 .pguide-cert-card-inner { padding: 2rem; }
 .pguide-cert-top { font-size: 0.75rem; color: var(--text-secondary); letter-spacing: 2px; text-transform: uppercase; margin: 0 0 0.5rem; }
 .pguide-cert-card h4 { color: var(--tool-accent-text); font-size: 1.3rem; margin: 0 0 1rem; }
-.pguide-cert-name { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin: 0 0 0.75rem; }
+.pguide-cert-name { font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.75rem; }
 .pguide-cert-detail { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin: 0 0 0.5rem; }
 .pguide-cert-date { font-size: 0.75rem; color: var(--text-secondary); margin: 0; }
 
@@ -1018,7 +1018,7 @@
 .pguide-quiz-q .pguide-quiz-num { color: var(--tool-accent-text); font-size: 0.85rem; }
 .pguide-quiz-options { display: flex; flex-direction: column; gap: 0.4rem; }
 .pguide-quiz-opt {
-  background: rgba(0,0,0,0.15);
+  background: color-mix(in srgb, black 15%, transparent);
   border: 1px solid var(--border);
   color: var(--text-primary);
   padding: 0.6rem 1rem;
@@ -1047,7 +1047,7 @@
 }
 .pguide-quiz-result-rank {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--tool-accent-text);
   min-width: 40px;
   text-align: center;
@@ -1102,7 +1102,7 @@
   top: -10px;
   right: 12px;
   font-size: var(--text-caption, 0.75rem);
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0.2rem 0.6rem;
@@ -1152,7 +1152,7 @@
 
 /* ══ TL;DR Box (fix K) ══ */
 .pguide-tldr {
-  background: linear-gradient(135deg, var(--accent-subtle), var(--accent-subtle));
+  background: var(--accent-subtle);
   border: 1px solid var(--accent);
   border-radius: 16px;
   padding: 1rem 1.25rem;
@@ -1164,7 +1164,7 @@
 .pguide-tldr-label {
   background: var(--accent);
   color: var(--accent-foreground, #fff);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.75rem;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
