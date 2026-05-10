@@ -1,6 +1,6 @@
 ---
-title: "JNCIS-ENT: Juniper Networks Certified Specialist, Enterprise Routing and Switching (JNCIS-ENT) — Study Guide & Practice Exam"
-description: "Free JNCIS-ENT study guide and 200-question practice exam. Juniper Networks Certified Specialist, Enterprise Routing and Switching (JNCIS-ENT) — exam objectives, study resources, and exam simulation."
+title: "JNCIS-ENT: Juniper professional exam — Free Study Guide"
+description: "JNCIS-ENT: the Juniper Specialist, Enterprise Routing and Switching (JNCIS-ENT) exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "JNCIS-ENT"

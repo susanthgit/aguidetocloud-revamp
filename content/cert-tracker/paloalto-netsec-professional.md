@@ -1,6 +1,6 @@
 ---
-title: "NETSEC-PROFESSIONAL: Palo Alto Networks Certified Network Security Professional — Study Guide & Practice Exam"
-description: "Free NETSEC-PROFESSIONAL study guide and 200-question practice exam. Palo Alto Networks Certified Network Security Professional — exam objectives, study resources, and exam simulation."
+title: "NETSEC-PROFESSIONAL: Palo Alto exam — Free Study Guide"
+description: "NETSEC-PROFESSIONAL: the Palo Alto Network Security Professional exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NETSEC-PROFESSIONAL"

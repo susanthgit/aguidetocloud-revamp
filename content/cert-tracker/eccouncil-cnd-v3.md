@@ -1,6 +1,6 @@
 ---
-title: "CND-V3: EC-Council Certified Network Defender v3 — Study Guide & Practice Exam"
-description: "Free CND-V3 study guide and 200-question practice exam. EC-Council Certified Network Defender v3 — exam objectives, study resources, and exam simulation."
+title: "CND-V3: EC-Council Network Defender v3 — Free Study Guide"
+description: "CND-V3: EC-Council Network Defender v3. Free 200-question practice exam + study guide covering networking, routing, switching, and traffic management."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CND-V3"

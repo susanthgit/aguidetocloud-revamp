@@ -1,6 +1,6 @@
 ---
-title: "DBS-C01: AWS Database Specialty — Study Guide & Practice Exam"
-description: "Free DBS-C01 study guide and 200-question practice exam. AWS Database Specialty — exam objectives, study resources, and exam simulation."
+title: "DBS-C01: AWS Database Specialty — Free Study Guide"
+description: "DBS-C01: the AWS Database Specialty exam. Free 200-question practice exam + study guide covering data services, modeling, pipelines, and analytics."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DBS-C01"

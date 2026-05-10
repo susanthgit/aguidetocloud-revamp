@@ -1,6 +1,6 @@
 ---
-title: "CLOUD-DIGITAL-LEADER: Google Cloud Digital Leader — Study Guide & Practice Exam"
-description: "Free CLOUD-DIGITAL-LEADER study guide and 200-question practice exam. Google Cloud Digital Leader — exam objectives, study resources, and exam simulation."
+title: "CLOUD-DIGITAL-LEADER: Google Cloud fundamentals — Free Guide"
+description: "CLOUD-DIGITAL-LEADER: the Google Cloud Digital Leader exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CLOUD-DIGITAL-LEADER"

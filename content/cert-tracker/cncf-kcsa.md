@@ -1,6 +1,6 @@
 ---
-title: "KCSA: CNCF KCSA (Kubernetes and Cloud Native Security Associate) — Study Guide & Practice Exam"
-description: "Free KCSA study guide and 200-question practice exam. CNCF KCSA (Kubernetes and Cloud Native Security Associate) — exam objectives, study resources, and exam simulation."
+title: "KCSA: Kubernetes associate exam — Free Study Guide"
+description: "KCSA: the Kubernetes KCSA (Kubernetes and Cloud Native Security Associate) exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "KCSA"

@@ -1,6 +1,6 @@
 ---
-title: "CISM: ISACA Certified Information Security Manager — Study Guide & Practice Exam"
-description: "Free CISM study guide and 200-question practice exam. ISACA Certified Information Security Manager — exam objectives, study resources, and exam simulation."
+title: "CISM: ISACA Information Security Manager — Free Study Guide"
+description: "CISM: the ISACA Information Security Manager exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CISM"

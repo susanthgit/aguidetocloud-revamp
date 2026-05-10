@@ -1,6 +1,6 @@
 ---
-title: "NETWORK-ENGINEER: Google Cloud Professional Cloud Network Engineer — Study Guide & Practice Exam"
-description: "Free NETWORK-ENGINEER study guide and 200-question practice exam. Google Cloud Professional Cloud Network Engineer — exam objectives, study resources, and exam simulation."
+title: "NETWORK-ENGINEER: Google Cloud Network Engineer — Free Guide"
+description: "NETWORK-ENGINEER: the Google Cloud Network Engineer exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NETWORK-ENGINEER"

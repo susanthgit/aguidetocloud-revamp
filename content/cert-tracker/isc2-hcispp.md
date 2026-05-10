@@ -1,6 +1,6 @@
 ---
-title: "HCISPP: (ISC)² HCISPP — Study Guide & Practice Exam"
-description: "Free HCISPP study guide and 200-question practice exam. (ISC)² HCISPP — exam objectives, study resources, and exam simulation."
+title: "HCISPP: (ISC)² HCISPP — Free Study Guide"
+description: "HCISPP: the (ISC)² HCISPP exam. Free 200-question practice exam + study guide covering healthcare information security, HIPAA, and patient data protection."
 type: "cert-tracker"
 layout: "single"
 exam_code: "HCISPP"

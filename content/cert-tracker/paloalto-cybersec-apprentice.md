@@ -1,6 +1,6 @@
 ---
-title: "CYBERSEC-APPRENTICE: Palo Alto Networks Certified Cybersecurity Apprentice — Study Guide & Practice Exam"
-description: "Free CYBERSEC-APPRENTICE study guide and 200-question practice exam. Palo Alto Networks Certified Cybersecurity Apprentice — exam objectives, study resources, and exam simulation."
+title: "CYBERSEC-APPRENTICE: Palo Alto fundamentals — Free Guide"
+description: "CYBERSEC-APPRENTICE: the Palo Alto Cybersecurity Apprentice exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CYBERSEC-APPRENTICE"

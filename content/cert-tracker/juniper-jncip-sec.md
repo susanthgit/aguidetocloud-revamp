@@ -1,6 +1,6 @@
 ---
-title: "JNCIP-SEC: Juniper Networks Certified Professional, Security (JNCIP-SEC) — Study Guide & Practice Exam"
-description: "Free JNCIP-SEC study guide and 200-question practice exam. Juniper Networks Certified Professional, Security (JNCIP-SEC) — exam objectives, study resources, and exam simulation."
+title: "JNCIP-SEC: Juniper professional exam — Free Study Guide"
+description: "JNCIP-SEC: the Juniper Professional, Security (JNCIP-SEC) exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "JNCIP-SEC"

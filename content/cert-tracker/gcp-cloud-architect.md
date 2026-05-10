@@ -1,6 +1,6 @@
 ---
-title: "CLOUD-ARCHITECT: Google Cloud Professional Cloud Architect — Study Guide & Practice Exam"
-description: "Free CLOUD-ARCHITECT study guide and 200-question practice exam. Google Cloud Professional Cloud Architect — exam objectives, study resources, and exam simulation."
+title: "CLOUD-ARCHITECT: Google Cloud Architect — Free Study Guide"
+description: "CLOUD-ARCHITECT: the Google Cloud Architect exam. Free study guide covering architecture, design patterns, and Well-Architected best practices."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CLOUD-ARCHITECT"

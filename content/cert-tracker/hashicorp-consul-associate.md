@@ -1,6 +1,6 @@
 ---
-title: "CONSUL-ASSOCIATE: HashiCorp Certified: Consul Associate (003) — Study Guide & Practice Exam"
-description: "Free CONSUL-ASSOCIATE study guide and 200-question practice exam. HashiCorp Certified: Consul Associate (003) — exam objectives, study resources, and exam simulation."
+title: "CONSUL-ASSOCIATE: HashiCorp associate — Free Study Guide"
+description: "CONSUL-ASSOCIATE: the HashiCorp Consul Associate (003) exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CONSUL-ASSOCIATE"

@@ -1,6 +1,6 @@
 ---
-title: "DATA-ENGINEER: Google Cloud Professional Data Engineer — Study Guide & Practice Exam"
-description: "Free DATA-ENGINEER study guide and 200-question practice exam. Google Cloud Professional Data Engineer — exam objectives, study resources, and exam simulation."
+title: "DATA-ENGINEER: Google Cloud Data Engineer — Free Study Guide"
+description: "DATA-ENGINEER: the Google Cloud Data Engineer exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DATA-ENGINEER"

@@ -1,6 +1,6 @@
 ---
-title: "NSE4: Fortinet NSE 4 - FortiOS 7.6 Administrator — Study Guide & Practice Exam"
-description: "Free NSE4 study guide and 200-question practice exam. Fortinet NSE 4 - FortiOS 7.6 Administrator — exam objectives, study resources, and exam simulation."
+title: "NSE4: Fortinet professional exam — Free Study Guide"
+description: "NSE4: the Fortinet NSE 4 - FortiOS 7.6 Administrator exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NSE4"

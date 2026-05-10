@@ -1,6 +1,6 @@
 ---
-title: "ENCOR: Cisco CCNP ENCOR (350-401) — Study Guide & Practice Exam"
-description: "Free ENCOR study guide and 200-question practice exam. Cisco CCNP ENCOR (350-401) — exam objectives, study resources, and exam simulation."
+title: "ENCOR: Cisco CCNP ENCOR (350-401) — Free Study Guide"
+description: "ENCOR: Cisco CCNP ENCOR (350-401). Free 200-question practice exam + study guide covering all skills measured domains, exam tips, and study resources."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ENCOR"

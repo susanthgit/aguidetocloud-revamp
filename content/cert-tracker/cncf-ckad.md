@@ -1,6 +1,6 @@
 ---
-title: "CKAD: CNCF CKAD (Certified Kubernetes Application Developer) — Study Guide & Practice Exam"
-description: "Free CKAD study guide and 200-question practice exam. CNCF CKAD (Certified Kubernetes Application Developer) — exam objectives, study resources, and exam simulation."
+title: "CKAD: Kubernetes associate exam — Free Study Guide"
+description: "CKAD: the Kubernetes CKAD (Certified Kubernetes Application Developer) exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CKAD"

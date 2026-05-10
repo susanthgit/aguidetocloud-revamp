@@ -1,6 +1,6 @@
 ---
-title: "CYBEROPS: Cisco CyberOps Associate (200-201) — Study Guide & Practice Exam"
-description: "Free CYBEROPS study guide and 200-question practice exam. Cisco CyberOps Associate (200-201) — exam objectives, study resources, and exam simulation."
+title: "CYBEROPS: Cisco CyberOps Associate (200-201) — Free Guide"
+description: "CYBEROPS: the Cisco CyberOps Associate (200-201) exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CYBEROPS"

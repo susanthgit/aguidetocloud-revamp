@@ -1,6 +1,6 @@
 ---
-title: "DCCOR: Cisco CCNP DCCOR (350-601) — Study Guide & Practice Exam"
-description: "Free DCCOR study guide and 200-question practice exam. Cisco CCNP DCCOR (350-601) — exam objectives, study resources, and exam simulation."
+title: "DCCOR: Cisco CCNP DCCOR (350-601) — Free Study Guide"
+description: "DCCOR: Cisco CCNP DCCOR (350-601). Free 200-question practice exam + study guide covering all skills measured domains, exam tips, and study resources."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DCCOR"

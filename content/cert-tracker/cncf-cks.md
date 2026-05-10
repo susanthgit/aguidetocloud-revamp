@@ -1,6 +1,6 @@
 ---
-title: "CKS: Certified Kubernetes Security Specialist — Study Guide & Practice Exam"
-description: "Free CKS study guide and 200-question practice exam. Certified Kubernetes Security Specialist — exam objectives, study resources, and exam simulation."
+title: "CKS: Kubernetes Security Specialist — Free Study Guide"
+description: "CKS: the Kubernetes Security Specialist exam. Free study guide covering Kubernetes cluster operations, workloads, networking, and security."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CKS"

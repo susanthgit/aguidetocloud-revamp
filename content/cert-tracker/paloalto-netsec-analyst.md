@@ -1,6 +1,6 @@
 ---
-title: "NETSEC-ANALYST: Palo Alto Networks Certified Network Security Analyst — Study Guide & Practice Exam"
-description: "Free NETSEC-ANALYST study guide and 200-question practice exam. Palo Alto Networks Certified Network Security Analyst — exam objectives, study resources, and exam simulation."
+title: "NETSEC-ANALYST: Palo Alto professional — Free Study Guide"
+description: "NETSEC-ANALYST: the Palo Alto Network Security Analyst exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NETSEC-ANALYST"

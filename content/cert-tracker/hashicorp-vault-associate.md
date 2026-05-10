@@ -1,6 +1,6 @@
 ---
-title: "VAULT-ASSOCIATE: HashiCorp Certified: Vault Associate (003) — Study Guide & Practice Exam"
-description: "Free VAULT-ASSOCIATE study guide and 200-question practice exam. HashiCorp Certified: Vault Associate (003) — exam objectives, study resources, and exam simulation."
+title: "VAULT-ASSOCIATE: HashiCorp associate exam — Free Study Guide"
+description: "VAULT-ASSOCIATE: the HashiCorp Vault Associate (003) exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "VAULT-ASSOCIATE"

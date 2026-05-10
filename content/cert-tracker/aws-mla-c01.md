@@ -1,6 +1,6 @@
 ---
-title: "MLA-C01: AWS Machine Learning Engineer Associate — Study Guide & Practice Exam"
-description: "Free MLA-C01 study guide and 200-question practice exam. AWS Machine Learning Engineer Associate — exam objectives, study resources, and exam simulation."
+title: "MLA-C01: AWS exam — Free Study Guide"
+description: "MLA-C01: the AWS Machine Learning Engineer Associate exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "MLA-C01"

@@ -1,6 +1,6 @@
 ---
-title: "CSSLP: (ISC)² CSSLP — Study Guide & Practice Exam"
-description: "Free CSSLP study guide and 200-question practice exam. (ISC)² CSSLP — exam objectives, study resources, and exam simulation."
+title: "CSSLP: (ISC)² CSSLP — Free Study Guide"
+description: "CSSLP: the (ISC)² CSSLP exam. Free 200-question practice exam + study guide covering identity, threat protection, compliance, and security operations."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CSSLP"

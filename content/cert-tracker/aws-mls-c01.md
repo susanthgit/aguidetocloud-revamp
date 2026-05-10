@@ -1,6 +1,6 @@
 ---
-title: "MLS-C01: AWS Machine Learning Specialty — Study Guide & Practice Exam"
-description: "Free MLS-C01 study guide and 200-question practice exam. AWS Machine Learning Specialty — exam objectives, study resources, and exam simulation."
+title: "MLS-C01: AWS Machine Learning Specialty — Free Study Guide"
+description: "MLS-C01: AWS Machine Learning Specialty. Free 200-question practice exam + study guide covering ML pipelines, model deployment, MLOps, and AI services."
 type: "cert-tracker"
 layout: "single"
 exam_code: "MLS-C01"

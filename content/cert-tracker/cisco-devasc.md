@@ -1,6 +1,6 @@
 ---
-title: "DEVASC: Cisco DevNet Associate (200-901) — Study Guide & Practice Exam"
-description: "Free DEVASC study guide and 200-question practice exam. Cisco DevNet Associate (200-901) — exam objectives, study resources, and exam simulation."
+title: "DEVASC: Cisco DevNet Associate (200-901) — Free Study Guide"
+description: "DEVASC: the Cisco DevNet Associate (200-901) exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DEVASC"

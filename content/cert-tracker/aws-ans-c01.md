@@ -1,6 +1,6 @@
 ---
-title: "ANS-C01: AWS Advanced Networking Specialty — Study Guide & Practice Exam"
-description: "Free ANS-C01 study guide and 200-question practice exam. AWS Advanced Networking Specialty — exam objectives, study resources, and exam simulation."
+title: "ANS-C01: AWS Advanced Networking Specialty — Free Guide"
+description: "ANS-C01: the AWS Advanced Networking Specialty exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ANS-C01"

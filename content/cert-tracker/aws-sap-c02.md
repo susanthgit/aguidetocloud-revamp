@@ -1,6 +1,6 @@
 ---
-title: "SAP-C02: AWS Solutions Architect Professional — Study Guide & Practice Exam"
-description: "Free SAP-C02 study guide and 200-question practice exam. AWS Solutions Architect Professional — exam objectives, study resources, and exam simulation."
+title: "SAP-C02: AWS Solutions Architect Professional — Free Guide"
+description: "SAP-C02: the AWS Solutions Architect Professional exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SAP-C02"

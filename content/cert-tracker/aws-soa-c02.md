@@ -1,6 +1,6 @@
 ---
-title: "SOA-C02: AWS SysOps Administrator Associate — Study Guide & Practice Exam"
-description: "Free SOA-C02 study guide and 200-question practice exam. AWS SysOps Administrator Associate — exam objectives, study resources, and exam simulation."
+title: "SOA-C02: AWS SysOps Administrator Associate — Free Guide"
+description: "SOA-C02: the AWS SysOps Administrator Associate exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SOA-C02"

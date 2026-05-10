@@ -1,6 +1,6 @@
 ---
-title: "CLF-C02: AWS Cloud Practitioner — Study Guide & Practice Exam"
-description: "Free CLF-C02 study guide and 200-question practice exam. AWS Cloud Practitioner — exam objectives, study resources, and exam simulation."
+title: "CLF-C02: AWS Cloud Practitioner — Free Study Guide"
+description: "CLF-C02: the AWS Cloud Practitioner exam. Free 200-question practice exam + study guide covering core concepts, key services, and foundational topics."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CLF-C02"

@@ -1,6 +1,6 @@
 ---
-title: "CC: (ISC)² Certified in Cybersecurity — Study Guide & Practice Exam"
-description: "Free CC study guide and 200-question practice exam. (ISC)² Certified in Cybersecurity — exam objectives, study resources, and exam simulation."
+title: "CC: (ISC)² Certified in Cybersecurity — Free Study Guide"
+description: "CC: the (ISC)² Certified in Cybersecurity exam. Free study guide covering identity, threat protection, compliance, and security operations."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CC"

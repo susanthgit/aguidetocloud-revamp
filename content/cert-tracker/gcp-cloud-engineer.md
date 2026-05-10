@@ -1,6 +1,6 @@
 ---
-title: "CLOUD-ENGINEER: Google Cloud Associate Cloud Engineer — Study Guide & Practice Exam"
-description: "Free CLOUD-ENGINEER study guide and 200-question practice exam. Google Cloud Associate Cloud Engineer — exam objectives, study resources, and exam simulation."
+title: "CLOUD-ENGINEER: Google Cloud associate — Free Study Guide"
+description: "CLOUD-ENGINEER: the Google Cloud Associate Cloud Engineer exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CLOUD-ENGINEER"

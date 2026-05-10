@@ -1,6 +1,6 @@
 ---
-title: "KCNA: CNCF Kubernetes and Cloud Native Associate — Study Guide & Practice Exam"
-description: "Free KCNA study guide and 200-question practice exam. CNCF Kubernetes and Cloud Native Associate — exam objectives, study resources, and exam simulation."
+title: "KCNA: Kubernetes and Cloud Native Associate — Free Guide"
+description: "KCNA: the Kubernetes and Cloud Native Associate exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "KCNA"

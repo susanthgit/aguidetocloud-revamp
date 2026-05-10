@@ -1,6 +1,6 @@
 ---
-title: "CHFI-V11: EC-Council Certified Hacking Forensic Investigator v11 — Study Guide & Practice Exam"
-description: "Free CHFI-V11 study guide and 200-question practice exam. EC-Council Certified Hacking Forensic Investigator v11 — exam objectives, study resources, and exam simulation."
+title: "CHFI-V11: EC-Council professional exam — Free Study Guide"
+description: "CHFI-V11: the EC-Council Hacking Forensic Investigator v11 exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CHFI-V11"

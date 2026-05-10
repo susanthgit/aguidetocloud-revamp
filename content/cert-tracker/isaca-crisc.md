@@ -1,6 +1,6 @@
 ---
-title: "CRISC: ISACA Certified in Risk and Information Systems Control — Study Guide & Practice Exam"
-description: "Free CRISC study guide and 200-question practice exam. ISACA Certified in Risk and Information Systems Control — exam objectives, study resources, and exam simulation."
+title: "CRISC: ISACA professional exam — Free Study Guide"
+description: "CRISC: the ISACA in Risk and Information Systems Control exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CRISC"

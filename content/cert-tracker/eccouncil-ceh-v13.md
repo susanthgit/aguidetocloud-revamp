@@ -1,6 +1,6 @@
 ---
-title: "CEH-V13: EC-Council Certified Ethical Hacker (CEH) v13 — Study Guide & Practice Exam"
-description: "Free CEH-V13 study guide and 200-question practice exam. EC-Council Certified Ethical Hacker (CEH) v13 — exam objectives, study resources, and exam simulation."
+title: "CEH-V13: EC-Council Ethical Hacker (CEH) v13 — Free Guide"
+description: "CEH-V13: the EC-Council Ethical Hacker (CEH) v13 exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CEH-V13"

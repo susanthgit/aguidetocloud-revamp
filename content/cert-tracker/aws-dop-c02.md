@@ -1,6 +1,6 @@
 ---
-title: "DOP-C02: AWS DevOps Engineer Professional — Study Guide & Practice Exam"
-description: "Free DOP-C02 study guide and 200-question practice exam. AWS DevOps Engineer Professional — exam objectives, study resources, and exam simulation."
+title: "DOP-C02: AWS DevOps Engineer Professional — Free Study Guide"
+description: "DOP-C02: the AWS DevOps Engineer Professional exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DOP-C02"

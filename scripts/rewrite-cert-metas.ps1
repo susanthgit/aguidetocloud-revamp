@@ -71,19 +71,21 @@ $VendorPatterns = @{
 }
 
 # Vendor display config — used by the generic non-Microsoft template
+# StripPrefix regex strips the leading brand from exam_title so we don't
+# double up when prepending brand in our title template.
 $VendorConfig = @{
-  'aws'        = @{ Display = 'AWS';        StripPrefix = '^AWS Certified\s+|^Certified\s+' }
-  'gcp'        = @{ Display = 'Google Cloud'; StripPrefix = '^Google Cloud\s+' }
-  'cisco'      = @{ Display = 'Cisco';      StripPrefix = '^Cisco\s+|^Certified\s+' }
-  'comptia'    = @{ Display = 'CompTIA';    StripPrefix = '^CompTIA\s+' }
-  'cncf'       = @{ Display = 'Kubernetes'; StripPrefix = '^Certified\s+' }
-  'hashicorp'  = @{ Display = 'HashiCorp';  StripPrefix = '^HashiCorp\s+' }
-  'isc2'       = @{ Display = 'ISC2';       StripPrefix = '^Certified\s+' }
-  'isaca'      = @{ Display = 'ISACA';      StripPrefix = '^Certified\s+' }
-  'paloalto'   = @{ Display = 'Palo Alto';  StripPrefix = '^Palo Alto\s+|^PCNS[A-Z]\s*-?\s*' }
-  'fortinet'   = @{ Display = 'Fortinet';   StripPrefix = '^Fortinet\s+|^NSE\s*\d+\s*-?\s*' }
-  'juniper'    = @{ Display = 'Juniper';    StripPrefix = '^Juniper\s+|^JNCI[A-Z]\s*-?\s*' }
-  'eccouncil'  = @{ Display = 'EC-Council'; StripPrefix = '^EC-Council\s+' }
+  'aws'        = @{ Display = 'AWS';          StripPrefix = '^AWS Certified\s+|^AWS\s+|^Certified\s+' }
+  'gcp'        = @{ Display = 'Google Cloud'; StripPrefix = '^Google Cloud Professional\s+|^Google Cloud\s+' }
+  'cisco'      = @{ Display = 'Cisco';        StripPrefix = '^Cisco\s+' }
+  'comptia'    = @{ Display = 'CompTIA';      StripPrefix = '^CompTIA\s+' }
+  'cncf'       = @{ Display = 'Kubernetes';   StripPrefix = '^CNCF\s+|^Certified Kubernetes\s+|^Certified\s+' }
+  'hashicorp'  = @{ Display = 'HashiCorp';    StripPrefix = '^HashiCorp Certified:\s+|^HashiCorp\s+' }
+  'isc2'       = @{ Display = '(ISC)²';       StripPrefix = '^\(ISC\)\u00B2\s+|^ISC2\s+' }
+  'isaca'      = @{ Display = 'ISACA';        StripPrefix = '^ISACA Certified\s+|^ISACA\s+' }
+  'paloalto'   = @{ Display = 'Palo Alto';    StripPrefix = '^Palo Alto Networks Certified\s+|^Palo Alto Networks\s+|^Palo Alto\s+' }
+  'fortinet'   = @{ Display = 'Fortinet';     StripPrefix = '^Fortinet\s+' }
+  'juniper'    = @{ Display = 'Juniper';      StripPrefix = '^Juniper Networks Certified\s+|^Juniper Networks\s+|^Juniper\s+' }
+  'eccouncil'  = @{ Display = 'EC-Council';   StripPrefix = '^EC-Council Certified\s+|^EC-Council\s+' }
 }
 
 if (-not $VendorPatterns.ContainsKey($Vendor)) {
@@ -397,7 +399,7 @@ function Get-RoleTopicsFromTitle {
 }
 
 function New-Meta-Generic {
-  param($Code, $ExamTitle, $Level, $Vendor)
+  param($Code, $ExamTitle, $Level, $Vendor, [int]$PracticeQuestions = 0)
 
   $cfg = $VendorConfig[$Vendor]
   if (-not $cfg) { $cfg = @{ Display = $Vendor; StripPrefix = '' } }
@@ -410,6 +412,17 @@ function New-Meta-Generic {
   }
   $shortTitle = $shortTitle.Trim()
 
+  # Dedup: if shortTitle starts with the LAST word of $brand (e.g. "Cloud" from "Google Cloud"),
+  # drop that word from shortTitle to avoid "Google Cloud Cloud Architect" stutter
+  $brandLastWord = ($brand -split '\s+')[-1]
+  if ($brandLastWord -and $shortTitle -match "^$([regex]::Escape($brandLastWord))\s+") {
+    $shortTitle = $shortTitle -replace "^$([regex]::Escape($brandLastWord))\s+", ''
+  }
+  # Also dedup the FULL brand if shortTitle still starts with it
+  if ($brand -and $shortTitle -match "^$([regex]::Escape($brand))\s+") {
+    $shortTitle = $shortTitle -replace "^$([regex]::Escape($brand))\s+", ''
+  }
+
   $roleTopics = Get-RoleTopicsFromTitle -ExamTitle $ExamTitle
 
   $levelWord = switch ($Level) {
@@ -421,6 +434,17 @@ function New-Meta-Generic {
     default           { '' }
   }
 
+  # Dedup: if shortTitle already ends with the level word, skip adding level
+  $effectiveLevelWord = $levelWord
+  if ($levelWord -and $shortTitle -match "(?i)\b$levelWord$") {
+    $effectiveLevelWord = ''
+  } elseif ($levelWord -and $shortTitle -match "(?i)\b(Fundamentals|Associate|Expert|Professional|Specialty)$") {
+    $effectiveLevelWord = ''
+  }
+
+  $hasPracticeBank = $PracticeQuestions -gt 0
+  $pq = $PracticeQuestions
+
   # ── Title variants ─────────────────────────────────────────
   $titleVariants = @()
   $titleVariants += "${Code}: $brand $shortTitle — Free Study Guide"
@@ -429,10 +453,10 @@ function New-Meta-Generic {
     $titleVariants += "${Code}: $ExamTitle — Free Study Guide"
     $titleVariants += "${Code}: $ExamTitle — Free Guide"
   }
-  if ($levelWord) {
-    $titleVariants += "${Code}: $brand $levelWord exam — Free Study Guide"
-    $titleVariants += "${Code}: $brand $levelWord — Free Study Guide"
-    $titleVariants += "${Code}: $brand $levelWord — Free Guide"
+  if ($effectiveLevelWord) {
+    $titleVariants += "${Code}: $brand $effectiveLevelWord exam — Free Study Guide"
+    $titleVariants += "${Code}: $brand $effectiveLevelWord — Free Study Guide"
+    $titleVariants += "${Code}: $brand $effectiveLevelWord — Free Guide"
   }
   $titleVariants += "${Code}: $brand exam — Free Study Guide"
   $titleVariants += "${Code}: $brand — Free Study Guide"
@@ -448,16 +472,26 @@ function New-Meta-Generic {
 
   # ── Description variants ───────────────────────────────────
   $descVariants = @()
-  if ($levelWord) {
-    $descVariants += "${Code}: the $brand $shortTitle $levelWord exam. Free study guide covering $roleTopics, with exam tips and study resources."
-    $descVariants += "$Code is the $brand $shortTitle $levelWord exam. Free study guide covering $roleTopics, with exam tips and study resources."
-    $descVariants += "${Code}: the $brand $shortTitle exam ($levelWord-level). Free study guide covering $roleTopics, with exam tips."
+  if ($hasPracticeBank) {
+    $descVariants += "${Code}: the $brand $shortTitle $effectiveLevelWord exam. Free $pq-question practice exam + study guide covering $roleTopics."
+    $descVariants += "${Code}: the $brand $shortTitle exam. Free $pq-question practice exam + study guide covering $roleTopics."
+    $descVariants += "${Code}: the $brand $shortTitle exam. Free $pq-question practice exam + complete study guide and exam tips."
+    $descVariants += "${Code}: $brand $shortTitle. Free $pq-question practice exam + study guide covering $roleTopics."
+    $descVariants += "${Code}: $brand $shortTitle exam. Free $pq-question practice exam + study guide and exam tips."
+  }
+  if ($effectiveLevelWord) {
+    $descVariants += "${Code}: the $brand $shortTitle $effectiveLevelWord exam. Free study guide covering $roleTopics, with exam tips and study resources."
+    $descVariants += "$Code is the $brand $shortTitle $effectiveLevelWord exam. Free study guide covering $roleTopics, with exam tips and study resources."
+    $descVariants += "${Code}: the $brand $shortTitle exam ($effectiveLevelWord-level). Free study guide covering $roleTopics, with exam tips."
   }
   $descVariants += "${Code}: the $brand $shortTitle exam. Free study guide covering $roleTopics, with exam tips and study resources."
   $descVariants += "$Code is the $brand $shortTitle exam. Free study guide covering $roleTopics, with exam tips and study resources."
   $descVariants += "${Code}: the $brand $shortTitle exam. Free study guide covering $roleTopics."
   $descVariants += "$Code is the $brand $shortTitle exam. Free study guide covering $roleTopics."
   $descVariants += "${Code}: the $brand exam. Free study guide covering $roleTopics, with exam tips and study resources."
+
+  # Clean any double spaces from empty $effectiveLevelWord
+  $descVariants = $descVariants | ForEach-Object { $_ -replace '  +', ' ' -replace ' \.', '.' }
 
   $newDesc = $null
   foreach ($v in $descVariants) {
@@ -510,9 +544,15 @@ $stats = @{ Rewritten = 0; Flagged = 0; Skipped = 0; ScoreSum = 0 }
 foreach ($f in $files) {
   $c = [System.IO.File]::ReadAllText($f.FullName)
   if (-not $c.StartsWith('---')) { $stats.Skipped++; continue }
-  $end = $c.IndexOf("`n---", 4)
+  # Determine how many bytes the opening --- line takes (---, ---\n, or ---\r\n)
+  $prefixEnd = 3
+  if ($c.Length -gt 4 -and $c[3] -eq [char]"`r" -and $c[4] -eq [char]"`n") { $prefixEnd = 5 }
+  elseif ($c.Length -gt 3 -and $c[3] -eq [char]"`n") { $prefixEnd = 4 }
+  # else: malformed (no newline after ---), fallback to 3 — we'll always emit `---\r\n` on output
+
+  $end = $c.IndexOf("`n---", $prefixEnd)
   if ($end -lt 0) { $stats.Skipped++; continue }
-  $fm = $c.Substring(4, $end - 4)
+  $fm = $c.Substring($prefixEnd, $end - $prefixEnd)
   $body = $c.Substring($end)
 
   $oldTitle = Get-FrontmatterField -Frontmatter $fm -Key 'title'
@@ -557,7 +597,7 @@ foreach ($f in $files) {
     if ($detectedVendor -eq 'microsoft') {
       $rewrite = New-Meta-Microsoft -Code $code -ExamTitle $extitle -Level $level -Category $cat -Replaces $repl -PracticeQuestions $practiceQuestions
     } elseif ($VendorConfig.ContainsKey($detectedVendor)) {
-      $rewrite = New-Meta-Generic -Code $code -ExamTitle $extitle -Level $level -Vendor $detectedVendor
+      $rewrite = New-Meta-Generic -Code $code -ExamTitle $extitle -Level $level -Vendor $detectedVendor -PracticeQuestions $practiceQuestions
     } else {
       $reviewLines += "## $($f.Name) ⚠️ UNRECOGNIZED VENDOR"
       $reviewLines += ""
@@ -569,7 +609,7 @@ foreach ($f in $files) {
       continue
     }
   } elseif ($VendorConfig.ContainsKey($Vendor)) {
-    $rewrite = New-Meta-Generic -Code $code -ExamTitle $extitle -Level $level -Vendor $Vendor
+    $rewrite = New-Meta-Generic -Code $code -ExamTitle $extitle -Level $level -Vendor $Vendor -PracticeQuestions $practiceQuestions
   } else {
     $reviewLines += "## $($f.Name) ⚠️ VENDOR NOT YET IMPLEMENTED"
     $reviewLines += ""
@@ -648,7 +688,7 @@ foreach ($f in $files) {
     $newFM = $newFM -replace '(?m)^(title:[^\r\n]+)', "`$1`r`ndescription: `"$newDesc`""
   }
 
-  $newContent = '---' + $newFM + $body
+  $newContent = "---`r`n" + $newFM.TrimStart("`r","`n") + $body
 
   if (-not $DryRun) {
     [System.IO.File]::WriteAllText($f.FullName, $newContent)

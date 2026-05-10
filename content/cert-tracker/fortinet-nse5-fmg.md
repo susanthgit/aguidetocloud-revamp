@@ -1,6 +1,6 @@
 ---
-title: "NSE5-FMG: FCP - FortiManager 7.4 Administrator — Study Guide & Practice Exam"
-description: "Free NSE5-FMG study guide and 200-question practice exam. FCP - FortiManager 7.4 Administrator — exam objectives, study resources, and exam simulation."
+title: "NSE5-FMG: Fortinet professional exam — Free Study Guide"
+description: "NSE5-FMG: the Fortinet FCP - FortiManager 7.4 Administrator exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NSE5-FMG"

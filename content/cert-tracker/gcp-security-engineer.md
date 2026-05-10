@@ -1,6 +1,6 @@
 ---
-title: "SECURITY-ENGINEER: Google Cloud Professional Cloud Security Engineer — Study Guide & Practice Exam"
-description: "Free SECURITY-ENGINEER study guide and 200-question practice exam. Google Cloud Professional Cloud Security Engineer — exam objectives, study resources, and exam simulation."
+title: "SECURITY-ENGINEER: Google Cloud professional — Free Guide"
+description: "SECURITY-ENGINEER: the Google Cloud Security Engineer exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SECURITY-ENGINEER"

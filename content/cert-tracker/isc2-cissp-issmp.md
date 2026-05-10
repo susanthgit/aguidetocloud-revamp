@@ -1,6 +1,6 @@
 ---
-title: "CISSP-ISSMP: (ISC)² CISSP-ISSMP — Study Guide & Practice Exam"
-description: "Free CISSP-ISSMP study guide and 200-question practice exam. (ISC)² CISSP-ISSMP — exam objectives, study resources, and exam simulation."
+title: "CISSP-ISSMP: (ISC)² CISSP-ISSMP — Free Study Guide"
+description: "CISSP-ISSMP: (ISC)² CISSP-ISSMP. Free 200-question practice exam + study guide covering identity, threat protection, compliance, and security operations."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CISSP-ISSMP"

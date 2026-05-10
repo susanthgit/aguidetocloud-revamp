@@ -1,6 +1,6 @@
 ---
-title: "CLOUD-DEVELOPER: Google Cloud Professional Cloud Developer — Study Guide & Practice Exam"
-description: "Free CLOUD-DEVELOPER study guide and 200-question practice exam. Google Cloud Professional Cloud Developer — exam objectives, study resources, and exam simulation."
+title: "CLOUD-DEVELOPER: Google Cloud Developer — Free Study Guide"
+description: "CLOUD-DEVELOPER: Google Cloud Developer. Free 200-question practice exam + study guide covering SDKs, deployment patterns, and application development."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CLOUD-DEVELOPER"

@@ -1,6 +1,6 @@
 ---
-title: "DEA-C01: AWS Data Engineer Associate — Study Guide & Practice Exam"
-description: "Free DEA-C01 study guide and 200-question practice exam. AWS Data Engineer Associate — exam objectives, study resources, and exam simulation."
+title: "DEA-C01: AWS Data Engineer Associate — Free Study Guide"
+description: "DEA-C01: the AWS Data Engineer Associate exam. Free 200-question practice exam + study guide covering data services, modeling, pipelines, and analytics."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DEA-C01"

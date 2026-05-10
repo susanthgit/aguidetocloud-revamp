@@ -1,6 +1,6 @@
 ---
-title: "CKA: CNCF CKA (Certified Kubernetes Administrator) — Study Guide & Practice Exam"
-description: "Free CKA study guide and 200-question practice exam. CNCF CKA (Certified Kubernetes Administrator) — exam objectives, study resources, and exam simulation."
+title: "CKA: Kubernetes associate exam — Free Study Guide"
+description: "CKA: the Kubernetes CKA (Certified Kubernetes Administrator) exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CKA"

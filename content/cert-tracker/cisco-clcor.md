@@ -1,6 +1,6 @@
 ---
-title: "CLCOR: Cisco CCNP CLCOR (350-801) — Study Guide & Practice Exam"
-description: "Free CLCOR study guide and 200-question practice exam. Cisco CCNP CLCOR (350-801) — exam objectives, study resources, and exam simulation."
+title: "CLCOR: Cisco CCNP CLCOR (350-801) — Free Study Guide"
+description: "CLCOR: Cisco CCNP CLCOR (350-801). Free 200-question practice exam + study guide covering all skills measured domains, exam tips, and study resources."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CLCOR"

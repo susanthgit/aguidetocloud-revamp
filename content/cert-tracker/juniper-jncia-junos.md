@@ -1,6 +1,6 @@
 ---
-title: "JNCIA-JUNOS: Juniper Networks Certified Associate, Junos (JNCIA-Junos) — Study Guide & Practice Exam"
-description: "Free JNCIA-JUNOS study guide and 200-question practice exam. Juniper Networks Certified Associate, Junos (JNCIA-Junos) — exam objectives, study resources, and exam simulation."
+title: "JNCIA-JUNOS: Juniper associate exam — Free Study Guide"
+description: "JNCIA-JUNOS: the Juniper Associate, Junos (JNCIA-Junos) exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "JNCIA-JUNOS"

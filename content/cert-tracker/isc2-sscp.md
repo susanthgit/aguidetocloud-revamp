@@ -1,6 +1,6 @@
 ---
-title: "SSCP: (ISC)² SSCP — Study Guide & Practice Exam"
-description: "Free SSCP study guide and 200-question practice exam. (ISC)² SSCP — exam objectives, study resources, and exam simulation."
+title: "SSCP: (ISC)² SSCP — Free Study Guide"
+description: "SSCP: the (ISC)² SSCP exam. Free 200-question practice exam + study guide covering identity, threat protection, compliance, and security operations."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SSCP"

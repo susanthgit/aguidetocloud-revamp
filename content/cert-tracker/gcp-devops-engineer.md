@@ -1,6 +1,6 @@
 ---
-title: "DEVOPS-ENGINEER: Google Cloud Professional Cloud DevOps Engineer — Study Guide & Practice Exam"
-description: "Free DEVOPS-ENGINEER study guide and 200-question practice exam. Google Cloud Professional Cloud DevOps Engineer — exam objectives, study resources, and exam simulation."
+title: "DEVOPS-ENGINEER: Google Cloud DevOps Engineer — Free Guide"
+description: "DEVOPS-ENGINEER: the Google Cloud DevOps Engineer exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DEVOPS-ENGINEER"

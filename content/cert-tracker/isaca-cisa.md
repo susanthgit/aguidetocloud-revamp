@@ -1,6 +1,6 @@
 ---
-title: "CISA: ISACA Certified Information Systems Auditor — Study Guide & Practice Exam"
-description: "Free CISA study guide and 200-question practice exam. ISACA Certified Information Systems Auditor — exam objectives, study resources, and exam simulation."
+title: "CISA: ISACA Information Systems Auditor — Free Study Guide"
+description: "CISA: the ISACA Information Systems Auditor exam. Free study guide covering IT audit, governance frameworks, risk management, and compliance."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CISA"

@@ -1,6 +1,6 @@
 ---
-title: "ML-ENGINEER: Google Cloud Professional Machine Learning Engineer — Study Guide & Practice Exam"
-description: "Free ML-ENGINEER study guide and 200-question practice exam. Google Cloud Professional Machine Learning Engineer — exam objectives, study resources, and exam simulation."
+title: "ML-ENGINEER: Google Cloud professional — Free Study Guide"
+description: "ML-ENGINEER: the Google Cloud Machine Learning Engineer exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ML-ENGINEER"

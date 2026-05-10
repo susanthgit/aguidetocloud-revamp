@@ -1,6 +1,6 @@
 ---
-title: "SPCOR: Cisco CCNP SPCOR (350-501) — Study Guide & Practice Exam"
-description: "Free SPCOR study guide and 200-question practice exam. Cisco CCNP SPCOR (350-501) — exam objectives, study resources, and exam simulation."
+title: "SPCOR: Cisco CCNP SPCOR (350-501) — Free Study Guide"
+description: "SPCOR: Cisco CCNP SPCOR (350-501). Free 200-question practice exam + study guide covering all skills measured domains, exam tips, and study resources."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SPCOR"

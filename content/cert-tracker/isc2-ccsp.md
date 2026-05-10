@@ -1,6 +1,6 @@
 ---
-title: "CCSP: (ISC)² CCSP — Study Guide & Practice Exam"
-description: "Free CCSP study guide and 200-question practice exam. (ISC)² CCSP — exam objectives, study resources, and exam simulation."
+title: "CCSP: (ISC)² CCSP — Free Study Guide"
+description: "CCSP: the (ISC)² CCSP exam. Free 200-question practice exam + study guide covering identity, threat protection, compliance, and security operations."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CCSP"

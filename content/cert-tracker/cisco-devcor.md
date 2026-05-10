@@ -1,6 +1,6 @@
 ---
-title: "DEVCOR: Cisco DevNet Professional (350-901) — Study Guide & Practice Exam"
-description: "Free DEVCOR study guide and 200-question practice exam. Cisco DevNet Professional (350-901) — exam objectives, study resources, and exam simulation."
+title: "DEVCOR: Cisco DevNet Professional (350-901) — Free Guide"
+description: "DEVCOR: the Cisco DevNet Professional (350-901) exam. Free 200-question practice exam + complete study guide and exam tips."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DEVCOR"
