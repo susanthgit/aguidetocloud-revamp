@@ -45,7 +45,7 @@ const DONE_URLS = new Set([
   '/acronym-battle/', '/feature-roulette/', '/rename-tracker/', '/admin-comms/',
   '/compliance-passport/', '/phishing-test/', '/sla-calculator/', '/policy-tester/',
   '/incident-comms/', '/cli-quiz/', '/it-day-sim/', '/instruct-builder/',
-  '/feedback/',
+  '/feedback/', '/countdown/',
 ]);
 
 // Map URL slug → likely CSS file basename (best-effort)
