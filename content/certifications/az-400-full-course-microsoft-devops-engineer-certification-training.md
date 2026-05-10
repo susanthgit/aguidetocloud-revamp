@@ -1,6 +1,6 @@
 ---
-title: "AZ-400 Full Course | Microsoft DevOps Engineer Certification Training"
-description: "Watch AZ-400 Full Course | Microsoft DevOps Engineer Certification Training - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "AZ-400 Full Course | Microsoft DevOps Engineer — Free Course"
+description: "AZ-400 exam prep: AZ-400 Full Course. Free practice tutorial covering az-400, az-400 exam, with examples by Susanth Sutheesh."
 date: 2022-03-29
 youtube_id: "2HlRaIPo4W8"
 card_tag: "AZ--400"

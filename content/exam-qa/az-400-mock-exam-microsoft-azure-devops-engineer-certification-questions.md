@@ -1,6 +1,6 @@
 ---
-title: "AZ-400 Mock Exam | Microsoft Azure DevOps Engineer Certification Questions"
-description: "Watch AZ-400 Mock Exam | Microsoft Azure DevOps Engineer Certification Questions - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "AZ-400 Mock Exam | Microsoft Azure DevOps Engineer (Free)"
+description: "AZ-400 exam prep: AZ-400 Mock Exam. Free practice tutorial covering az-400, az-400 exam, with examples by Susanth Sutheesh."
 date: 2024-03-26
 youtube_id: "OgFT-VhS2XA"
 card_tag: "AZ--400"

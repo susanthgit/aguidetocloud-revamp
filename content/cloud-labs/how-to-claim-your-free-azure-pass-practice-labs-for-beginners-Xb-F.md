@@ -1,6 +1,6 @@
 ---
-title: "How to Claim Your Free Azure Pass | Practice Labs for Beginners"
-description: "Watch How to Claim Your Free Azure Pass | Practice Labs for Beginners - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "How to Claim Your Free Azure Pass — Free Lab"
+description: "Azure tutorial: How to Claim Your Free Azure Pass. Free hands-on lab covering azure pass, azure for beginners, with examples by Susanth Sutheesh."
 date: 2022-05-20
 youtube_id: "Xb-FGrAx31Y"
 card_tag: "Azure"

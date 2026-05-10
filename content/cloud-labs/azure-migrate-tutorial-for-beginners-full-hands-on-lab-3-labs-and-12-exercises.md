@@ -1,6 +1,6 @@
 ---
-title: "Azure Migrate Tutorial for Beginners | Full Hands-on Lab (3 Labs and 12 exercises)"
-description: "Watch Azure Migrate Tutorial for Beginners | Full Hands-on Lab (3 Labs and 12 exercises) - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Azure Migrate Tutorial for Beginners — Free Lab"
+description: "Azure Migration tutorial: Azure Migrate Tutorial for Beginners. Free hands-on lab covering azure for beginners, azure hands on lab on A Guide to Cloud."
 date: 2022-04-15
 youtube_id: "hiIWd3upOEE"
 card_tag: "Migration"

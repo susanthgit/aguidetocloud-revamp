@@ -1,6 +1,6 @@
 ---
-title: "M365 Copilot Studio lite or Agent Builder Hands on Lab | Create Your Own AI Agent in Microsoft 365"
-description: "Watch M365 Copilot Studio lite or Agent Builder Hands on Lab | Create Your Own AI Agent in Microsoft 365 - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "M365 Copilot Studio lite or Agent Builder Hands on Lab"
+description: "M365 Copilot Agents tutorial: M365 Copilot Studio lite or Agent Builder Hands on Lab. Free hands-on guide by Susanth Sutheesh on A Guide to Cloud."
 date: 2025-05-07
 youtube_id: "WbTdbOrNSxs"
 card_tag: "Agentic AI"

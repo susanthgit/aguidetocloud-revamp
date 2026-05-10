@@ -1,6 +1,6 @@
 ---
-title: "AZ-104 Mock Exam | Microsoft Azure Administrator Certification Questions with Explanations"
-description: "Watch AZ-104 Mock Exam | Microsoft Azure Administrator Certification Questions with Explanations - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "AZ-104 Mock Exam | Microsoft Azure Administrator (Free)"
+description: "AZ-104 exam prep: AZ-104 Mock Exam. Free practice tutorial covering az-104, az-104 exam, with examples by Susanth Sutheesh."
 date: 2022-04-12
 youtube_id: "rr74T-HgqzI"
 card_tag: "AZ--104"

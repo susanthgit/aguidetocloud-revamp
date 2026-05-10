@@ -1,6 +1,6 @@
 ---
-title: "Copilot Studio Lab Part 2 | Entities, Connectors, Generative AI, Power Automate Flow Customization"
-description: "Watch Copilot Studio Lab Part 2 | Entities, Connectors, Generative AI, Power Automate Flow Customization - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Copilot Studio Lab Part 2 | Entities, Connectors (Free)"
+description: "M365 Copilot Agents tutorial: Copilot Studio Lab Part 2. Free hands-on guide covering aiworkflow, aiagents, with examples by Susanth Sutheesh."
 date: 2025-07-15
 youtube_id: "H5H0ufslAls"
 card_tag: "Agentic AI"

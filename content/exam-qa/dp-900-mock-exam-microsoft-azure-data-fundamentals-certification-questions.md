@@ -1,6 +1,6 @@
 ---
-title: "DP-900 Mock Exam | Microsoft Azure Data Fundamentals Certification Questions"
-description: "Watch DP-900 Mock Exam | Microsoft Azure Data Fundamentals Certification Questions - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "DP-900 Mock Exam | Microsoft Azure Data Fundamentals (Free)"
+description: "DP-900 exam prep: DP-900 Mock Exam. Free practice tutorial covering dp-900, dp-900 exam, with examples by Susanth Sutheesh."
 date: 2024-03-26
 youtube_id: "kn6sE_7r40E"
 card_tag: "DP--900"

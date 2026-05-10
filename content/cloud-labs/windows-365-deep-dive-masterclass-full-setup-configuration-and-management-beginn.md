@@ -1,6 +1,6 @@
 ---
-title: "Windows 365 Deep Dive Masterclass | Full Setup, Configuration, and Management (Beginner Friendly)"
-description: "Watch Windows 365 Deep Dive Masterclass | Full Setup, Configuration, and Management (Beginner Friendly) - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Windows 365 Deep Dive Masterclass | Full Setup — Free Lab"
+description: "Azure Virtual Desktop tutorial: Windows 365 Deep Dive Masterclass. Free hands-on lab covering #windows365, azure virtual desktop on A Guide to Cloud."
 date: 2025-03-20
 youtube_id: "kHm8lL3Wd8g"
 card_tag: "Virtual Desktop"

@@ -1,6 +1,6 @@
 ---
-title: "Azure Networking for Beginners | Full Hands-on Labs Masterclass"
-description: "Watch Azure Networking for Beginners | Full Hands-on Labs Masterclass - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Azure Networking for Beginners | Full Hands-on Labs"
+description: "Azure Networking tutorial: Azure Networking for Beginners. Free hands-on lab covering azure for beginners, azure hands on lab on A Guide to Cloud."
 date: 2022-07-13
 youtube_id: "DFdOi0QVso4"
 card_tag: "Networking"

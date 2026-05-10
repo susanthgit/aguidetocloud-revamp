@@ -1,6 +1,6 @@
 ---
-title: "AZ-900 Mock Exam | Microsoft Azure Fundamentals Certification Questions with Answers"
-description: "Watch AZ-900 Mock Exam | Microsoft Azure Fundamentals Certification Questions with Answers - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "AZ-900 Mock Exam | Microsoft Azure Fundamentals (Free)"
+description: "AZ-900 exam prep: AZ-900 Mock Exam. Free practice tutorial covering az-900, az-900 exam, with examples by Susanth Sutheesh."
 date: 2022-05-13
 youtube_id: "uhDcDLztBKk"
 card_tag: "AZ--900"

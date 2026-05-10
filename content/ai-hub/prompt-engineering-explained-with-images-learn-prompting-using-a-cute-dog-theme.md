@@ -1,6 +1,6 @@
 ---
-title: "Prompt Engineering Explained with Images | Learn Prompting Using a Cute Dog Theme 🐶"
-description: "Watch Prompt Engineering Explained with Images | Learn Prompting Using a Cute Dog Theme - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Prompt Engineering Explained with Images — Free Tutorial"
+description: "Prompt Engineering tutorial: Prompt Engineering Explained with Images. Free hands-on guide covering aibasics, aiexplained on A Guide to Cloud."
 date: 2025-05-13
 youtube_id: "F1z6PesK1Nc"
 card_tag: "Prompt Engineering"

@@ -1,6 +1,6 @@
 ---
-title: "Microsoft Sentinel for Beginners | Full Hands-on Security Masterclass"
-description: "Watch Microsoft Sentinel for Beginners | Full Hands-on Security Masterclass - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Microsoft Sentinel for Beginners | Full Hands-on Security"
+description: "Azure Security tutorial: Microsoft Sentinel for Beginners. Free hands-on lab covering azure sentinel, bootcamp, with examples by Susanth Sutheesh."
 date: 2022-06-21
 youtube_id: "NJlaqBaqahc"
 card_tag: "Security"

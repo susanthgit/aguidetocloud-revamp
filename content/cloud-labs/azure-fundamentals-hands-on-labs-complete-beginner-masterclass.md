@@ -1,6 +1,6 @@
 ---
-title: "Azure Fundamentals Hands-on Labs | Complete Beginner Masterclass"
-description: "Watch Azure Fundamentals Hands-on Labs | Complete Beginner Masterclass - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Azure Fundamentals Hands-on Labs | Complete Beginner"
+description: "Azure tutorial: Azure Fundamentals Hands-on Labs. Free hands-on lab covering azure, azure hands on lab, with examples by Susanth Sutheesh."
 date: 2022-05-06
 youtube_id: "KzTEJ_hen3c"
 card_tag: "Azure"

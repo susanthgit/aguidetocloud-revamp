@@ -1,6 +1,6 @@
 ---
-title: "Azure Boards Tutorial for Beginners | Hands-on Lab to Track Work in Azure DevOps"
-description: "Watch Azure Boards Tutorial for Beginners | Hands-on Lab to Track Work in Azure DevOps - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Azure Boards Tutorial for Beginners — Free Lab"
+description: "Azure DevOps tutorial: Azure Boards Tutorial for Beginners. Free hands-on lab covering azure for beginners, azure hands on lab on A Guide to Cloud."
 date: 2022-05-17
 youtube_id: "lJBNTI_KVwc"
 card_tag: "DevOps"

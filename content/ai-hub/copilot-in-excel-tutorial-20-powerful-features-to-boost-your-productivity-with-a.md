@@ -1,6 +1,6 @@
 ---
-title: "Copilot in Excel Tutorial | 20 Powerful Features to Boost Your Productivity with AI!"
-description: "Watch Copilot in Excel Tutorial | 20 Powerful Features to Boost Your Productivity with AI! - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Copilot in Excel Tutorial | 20 Powerful Features to Boost"
+description: "M365 Copilot tutorial: Copilot in Excel Tutorial. Free hands-on guide covering microsoft 365 copilot, with examples by Susanth Sutheesh."
 date: 2025-08-19
 youtube_id: "7NTgtKzmEnY"
 card_tag: "M365 Copilot"

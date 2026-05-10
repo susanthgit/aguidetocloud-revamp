@@ -1,6 +1,6 @@
 ---
-title: "AZ-500 Full Course | Microsoft Azure Security Certification Training"
-description: "Watch AZ-500 Full Course | Microsoft Azure Security Certification Training - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "AZ-500 Full Course | Microsoft Azure Security Certification"
+description: "AZ-500 exam prep: AZ-500 Full Course. Free practice tutorial covering az-500, az-500 exam, with examples by Susanth Sutheesh."
 date: 2022-02-14
 youtube_id: "m1VWSWlrJa8"
 card_tag: "AZ--500"

@@ -1,6 +1,6 @@
 ---
-title: Microsoft 365 Copilot Chat Masterclass | 18 Powerful Features for Enterprise Users
-description: "Watch Microsoft 365 Copilot Chat Masterclass | 18 Powerful Features for Enterprise Users - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Microsoft 365 Copilot Chat Masterclass — Free Tutorial"
+description: "M365 Copilot tutorial: Microsoft 365 Copilot Chat Masterclass. Free hands-on guide by Susanth Sutheesh on A Guide to Cloud."
 date: 2026-02-02
 youtube_id: WWNuITo9dn4
 card_tag: M365 Copilot

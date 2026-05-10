@@ -1,6 +1,6 @@
 ---
-title: "Microsoft Purview Masterclass for Beginners | Hands-on Lab for Information Protection & Compliance"
-description: "Watch Microsoft Purview Masterclass for Beginners | Hands-on Lab for Information Protection & Compliance - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Microsoft Purview Masterclass for Beginners — Free Lab"
+description: "Azure Security tutorial: Microsoft Purview Masterclass for Beginners. Free hands-on lab covering autolabeling, copilotsecurity on A Guide to Cloud."
 date: 2025-06-17
 youtube_id: "0oVan90eufg"
 card_tag: "Security"

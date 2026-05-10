@@ -1,6 +1,6 @@
 ---
-title: "Master Researcher Agent | Save Time with AI-Powered Research & Briefing Generator"
-description: "Watch Master Researcher Agent | Save Time with AI-Powered Research & Briefing Generator - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Master Researcher Agent | Save Time with AI-Powered (Free)"
+description: "M365 Copilot Agents tutorial: Master Researcher Agent. Free hands-on guide covering aiassistant, aiproductivity, with examples by Susanth Sutheesh."
 date: 2025-06-03
 youtube_id: "ke1M1k1aMVI"
 card_tag: "Agentic AI"

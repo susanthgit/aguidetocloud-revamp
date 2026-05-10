@@ -1,6 +1,6 @@
 ---
-title: "AZ-305 Mock Exam | Microsoft Azure Solutions Architect Certification Questions"
-description: "Watch AZ-305 Mock Exam | Microsoft Azure Solutions Architect Certification Questions - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "AZ-305 Mock Exam | Microsoft Azure Solutions Architect"
+description: "AZ-305 exam prep: AZ-305 Mock Exam. Free practice tutorial covering az-305 questions, az305 q&a, with examples by Susanth Sutheesh."
 date: 2022-05-03
 youtube_id: "PPJYQeh26Tg"
 card_tag: "AZ--305"

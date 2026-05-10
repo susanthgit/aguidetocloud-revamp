@@ -1,6 +1,6 @@
 ---
-title: "AZ-900 Full Course | Microsoft Azure Fundamentals Certification Training"
-description: "Watch AZ-900 Full Course | Microsoft Azure Fundamentals Certification Training - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "AZ-900 Full Course | Microsoft Azure Fundamentals (Free)"
+description: "AZ-900 exam prep: AZ-900 Full Course. Free practice tutorial covering az-900, az-900 exam, with examples by Susanth Sutheesh."
 date: 2021-12-21
 youtube_id: "j26eNpUU0zM"
 card_tag: "AZ--900"

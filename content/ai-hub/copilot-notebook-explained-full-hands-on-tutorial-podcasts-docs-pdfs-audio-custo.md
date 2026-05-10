@@ -1,6 +1,6 @@
 ---
-title: "Copilot Notebook Explained | Full Hands-On Tutorial (Podcasts, Docs, PDFs, Audio & Custom Prompts)"
-description: "Watch Copilot Notebook Explained | Full Hands-On Tutorial (Podcasts, Docs, PDFs, Audio & Custom Prompts) - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Copilot Notebook Explained | Full Hands-On Tutorial"
+description: "Prompt Engineering tutorial: Copilot Notebook Explained. Free hands-on guide covering microsoft 365 copilot, with examples by Susanth Sutheesh."
 date: 2025-10-14
 youtube_id: "1WAPZoxtPjU"
 card_tag: "Prompt Engineering"

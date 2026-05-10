@@ -1,6 +1,6 @@
 ---
-title: "Master Analyst Agent | Real-World Data Analysis, Trends & Insights using Microsoft 365 Copilot"
-description: "Watch Master Analyst Agent | Real-World Data Analysis, Trends & Insights using Microsoft 365 Copilot - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Master Analyst Agent | Real-World Data Analysis, Trends &"
+description: "M365 Copilot Agents tutorial: Master Analyst Agent. Free hands-on guide covering aiforwork, artificialintelligence, with examples by Susanth Sutheesh."
 date: 2025-10-07
 youtube_id: "kuPLfYr2YZU"
 card_tag: "Agentic AI"

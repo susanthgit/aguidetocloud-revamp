@@ -1,6 +1,6 @@
 ---
-title: "SC-100 Microsoft Cybersecurity Architect | 100 Mock Questions & Answers with Explanations"
-description: "Watch SC-100 Microsoft Cybersecurity Architect | 100 Mock Questions & Answers with Explanations - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "SC-100 Microsoft Cybersecurity Architect — Free Tutorial"
+description: "SC-100 exam prep: SC-100 Microsoft Cybersecurity Architect. Free practice tutorial covering azuresecurity, certificationprep on A Guide to Cloud."
 date: 2025-06-24
 youtube_id: "GC1xKIsQbCY"
 card_tag: "SC--100"

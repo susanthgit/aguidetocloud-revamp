@@ -1,6 +1,6 @@
 ---
-title: "Get Free Microsoft Exam Vouchers | Step-by-Step Guide for Beginners"
-description: "Watch Get Free Microsoft Exam Vouchers | Step-by-Step Guide for Beginners - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Get Free Microsoft Exam Vouchers — Free Tutorial"
+description: "Exam Tips exam prep: Get Free Microsoft Exam Vouchers. Free practice tutorial covering azure exam, free training voucher on A Guide to Cloud."
 date: 2022-02-07
 youtube_id: "sLIaWJC0NJE"
 card_tag: "Exam Tips"

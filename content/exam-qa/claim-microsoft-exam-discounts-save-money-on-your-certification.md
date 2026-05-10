@@ -1,6 +1,6 @@
 ---
-title: "Claim Microsoft Exam Discounts | Save Money on Your Certification"
-description: "Watch Claim Microsoft Exam Discounts | Save Money on Your Certification - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Claim Microsoft Exam Discounts | Save Money on Your (Free)"
+description: "Exam Tips exam prep: Claim Microsoft Exam Discounts. Free practice tutorial covering 100% free, microsoft certification, with examples by Susanth Sutheesh."
 date: 2022-01-12
 youtube_id: "4FCDkZEBkf8"
 card_tag: "Exam Tips"
