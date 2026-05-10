@@ -54,7 +54,7 @@ $MinScore = 80
 
 # Vendor → file prefix regex
 $VendorPatterns = @{
-  'microsoft'  = '^(ai-|az-|dp-|mb-|md-|ms-|pl-|sc-)'
+  'microsoft'  = '^(ab-|ai-|az-|dp-|mb-|md-|ms-|pl-|sc-)'
   'aws'        = '^aws-'
   'gcp'        = '^gcp-'
   'cisco'      = '^cisco-'
@@ -68,6 +68,22 @@ $VendorPatterns = @{
   'eccouncil'  = '^eccouncil-'
   'hashicorp'  = '^hashicorp-'
   'all'        = '.'
+}
+
+# Vendor display config — used by the generic non-Microsoft template
+$VendorConfig = @{
+  'aws'        = @{ Display = 'AWS';        StripPrefix = '^AWS Certified\s+|^Certified\s+' }
+  'gcp'        = @{ Display = 'Google Cloud'; StripPrefix = '^Google Cloud\s+' }
+  'cisco'      = @{ Display = 'Cisco';      StripPrefix = '^Cisco\s+|^Certified\s+' }
+  'comptia'    = @{ Display = 'CompTIA';    StripPrefix = '^CompTIA\s+' }
+  'cncf'       = @{ Display = 'Kubernetes'; StripPrefix = '^Certified\s+' }
+  'hashicorp'  = @{ Display = 'HashiCorp';  StripPrefix = '^HashiCorp\s+' }
+  'isc2'       = @{ Display = 'ISC2';       StripPrefix = '^Certified\s+' }
+  'isaca'      = @{ Display = 'ISACA';      StripPrefix = '^Certified\s+' }
+  'paloalto'   = @{ Display = 'Palo Alto';  StripPrefix = '^Palo Alto\s+|^PCNS[A-Z]\s*-?\s*' }
+  'fortinet'   = @{ Display = 'Fortinet';   StripPrefix = '^Fortinet\s+|^NSE\s*\d+\s*-?\s*' }
+  'juniper'    = @{ Display = 'Juniper';    StripPrefix = '^Juniper\s+|^JNCI[A-Z]\s*-?\s*' }
+  'eccouncil'  = @{ Display = 'EC-Council'; StripPrefix = '^EC-Council\s+' }
 }
 
 if (-not $VendorPatterns.ContainsKey($Vendor)) {
@@ -88,7 +104,7 @@ if (-not $ReviewOut) {
 }
 
 # Quality scoring lists (sync with check-seo-quality.ps1)
-$BrandWords = @('Microsoft','Azure','AWS','GCP','Google Cloud','Microsoft 365','M365','Power Platform','Dynamics 365','CompTIA','Cisco','Fortinet','Juniper','HashiCorp','Terraform','Kubernetes','CNCF','ISC2','ISACA','Palo Alto')
+$BrandWords = @('Microsoft','Azure','AWS','GCP','Google Cloud','Microsoft 365','M365','Power Platform','Dynamics 365','CompTIA','Cisco','Fortinet','Juniper','HashiCorp','Terraform','Kubernetes','CNCF','ISC2','ISC²','ISACA','Palo Alto','EC-Council','Vault','Consul')
 $HookWords  = @('Free','New','Replaces','Complete','Beginner','Updated','2026','Step-by-Step','Hands-On')
 $CtaWords   = @('Free','Practice','Guide','Tips','Modules','Questions','Tutorial','Walkthrough','Roadmap')
 $HypeWords  = @('ultimate','comprehensive','robust','frontier','agentic','revolutionary','game-changing','best-in-class','cutting-edge','holistic','mission-critical','scalable','seamless')
@@ -170,7 +186,7 @@ function Score-Meta {
 }
 
 function New-Meta-Microsoft {
-  param($Code, $ExamTitle, $Level, $Category, $Replaces, $HasPracticeBank)
+  param($Code, $ExamTitle, $Level, $Category, $Replaces, [int]$PracticeQuestions = 0)
 
   # Normalize exam_title — some include "Microsoft" prefix, some don't
   $clean = $ExamTitle
@@ -207,6 +223,18 @@ function New-Meta-Microsoft {
     default          { 'Microsoft' }
   }
 
+  $hasPracticeBank = $PracticeQuestions -gt 0
+
+  # If exam_title already ends with the level word (e.g., "Copilot Admin Fundamentals" + "fundamentals"),
+  # skip adding the level word again to avoid stuttering
+  $effectiveLevelWord = $levelWord
+  if ($levelWord -and $cleanShort -match "(?i)\b$levelWord$") {
+    $effectiveLevelWord = ''
+  } elseif ($levelWord -and $cleanShort -match "(?i)\b(Fundamentals|Associate|Expert|Professional)$") {
+    $effectiveLevelWord = ''
+  }
+  $brandShort = $cleanShort  # alias for description templates
+
   # ── Title variants (pick first that fits ≤60) ──────────────
   $titleVariants = @()
   if ($Replaces) {
@@ -241,17 +269,25 @@ function New-Meta-Microsoft {
 
   # ── Description variants (richer, per-category detail) ─────
   $brandShort = $cleanShort
+  $pq = $PracticeQuestions
 
   $descVariants = @()
-  if ($Replaces -and $HasPracticeBank) {
-    $descVariants += "$Code is the new Microsoft $brandShort exam, replacing $Replaces. Free study guide + 250 practice questions covering $catDetail."
+  if ($Replaces -and $hasPracticeBank) {
+    $descVariants += "$Code is the new Microsoft $brandShort exam, replacing $Replaces. Free $pq-question practice exam + study guide covering $catDetail."
   }
   if ($Replaces) {
     $descVariants += "$Code is the new Microsoft $brandShort exam, replacing $Replaces. Free study guide covering $catDetail."
     $descVariants += "${Code}: Microsoft's new $brandShort exam, replacing $Replaces. Free study guide covering $catDetail."
   }
-  if ($HasPracticeBank) {
-    $descVariants += "${Code}: the Microsoft $brandShort $levelWord exam. Free study guide + 250 practice questions covering $catDetail."
+  if ($hasPracticeBank) {
+    $descVariants += "${Code}: the Microsoft $brandShort $effectiveLevelWord exam. Free $pq-question practice exam + study guide covering $catDetail."
+    $descVariants += "${Code}: the Microsoft $brandShort exam. Free $pq-question practice exam + study guide covering $catDetail."
+    $descVariants += "$Code is the Microsoft $brandShort exam. Free $pq-question practice exam + study guide covering $catDetail."
+    # Shorter variants for long exam titles (drop catDetail)
+    $descVariants += "${Code}: the Microsoft $brandShort $effectiveLevelWord exam. Free $pq-question practice exam + complete study guide and exam tips."
+    $descVariants += "${Code}: Microsoft $brandShort $effectiveLevelWord exam. Free $pq-question practice exam + study guide with skills measured and exam tips."
+    $descVariants += "${Code}: Microsoft $brandShort. Free $pq-question practice exam + study guide covering skills measured, exam tips, and Microsoft Learn paths."
+    $descVariants += "${Code}: Microsoft $brandShort exam. Free $pq-question practice exam + study guide with skills measured, exam tips, and Microsoft Learn."
   }
   if ($levelWord -eq 'fundamentals') {
     $descVariants += "${Code}: Microsoft's $brandShort fundamentals exam — your starting point for $catDetail. Free study guide with all skills measured."
@@ -266,6 +302,9 @@ function New-Meta-Microsoft {
   # Generic fallbacks
   $descVariants += "${Code}: the Microsoft $brandShort exam. Free study guide covering $catDetail."
   $descVariants += "${Code}: the Microsoft $brandShort exam. Free study guide with skills measured, exam tips, and Microsoft Learn paths."
+
+  # Clean any double spaces from empty $effectiveLevelWord
+  $descVariants = $descVariants | ForEach-Object { $_ -replace '  +', ' ' -replace ' \.', '.' }
 
   $newDesc = $null
   foreach ($v in $descVariants) {
@@ -289,16 +328,152 @@ function New-Meta-Microsoft {
 function Truncate-AtWordBoundary {
   param([string]$Text, [int]$MaxLength)
   if ($Text.Length -le $MaxLength) { return $Text }
-  # Reserve 1 char for trailing period
   $cut = $Text.Substring(0, $MaxLength - 1)
   $lastSpace = $cut.LastIndexOf(' ')
   if ($lastSpace -gt ($MaxLength * 0.7)) {
     $cut = $cut.Substring(0, $lastSpace)
   }
-  # Strip trailing punctuation we don't want, then add period
   $cut = $cut.TrimEnd(',', ';', ':', ' ', '-', '—')
   if (-not $cut.EndsWith('.')) { $cut += '.' }
   return $cut
+}
+
+function Get-RoleTopicsFromTitle {
+  param([string]$ExamTitle)
+  $tl = $ExamTitle.ToLower()
+  # Order matters — most specific first
+  if ($tl -match 'kubernetes|cka|ckad|cks|kcna|kcsa') {
+    return 'Kubernetes cluster operations, workloads, networking, and security'
+  }
+  if ($tl -match 'terraform') {
+    return 'Terraform configuration, state, modules, and cloud provisioning'
+  }
+  if ($tl -match 'vault') {
+    return 'HashiCorp Vault secrets management, policies, and dynamic credentials'
+  }
+  if ($tl -match 'consul') {
+    return 'Consul service mesh, service discovery, and configuration'
+  }
+  if ($tl -match 'penetration|pentest|ethical hack|chfi|forensic') {
+    return 'penetration testing, red-team techniques, and reporting'
+  }
+  if ($tl -match 'machine learning|\bml\b|mlops|\bai\b|generative') {
+    return 'ML pipelines, model deployment, MLOps, and AI services'
+  }
+  if ($tl -match 'data engineer|data analy|database|big data') {
+    return 'data services, modeling, pipelines, and analytics'
+  }
+  if ($tl -match 'devops|sre|reliability|continuous') {
+    return 'CI/CD, IaC, deployment automation, and platform engineering'
+  }
+  if ($tl -match 'network|routing|switch') {
+    return 'networking, routing, switching, and traffic management'
+  }
+  if ($tl -match 'security|defender|threat|cybersec|cissp|sscp|csslp|ccsp|cgrc|cisa|cism|crisc|firewall') {
+    return 'identity, threat protection, compliance, and security operations'
+  }
+  if ($tl -match 'architect|architecture') {
+    return 'architecture, design patterns, and Well-Architected best practices'
+  }
+  if ($tl -match 'developer|develop(?!ing)|application|software') {
+    return 'SDKs, deployment patterns, and application development'
+  }
+  if ($tl -match 'sysops|administrator|operator|admin\b') {
+    return 'administration, monitoring, automation, and operations'
+  }
+  if ($tl -match 'audit|governance|cgeit|risk') {
+    return 'IT audit, governance frameworks, risk management, and compliance'
+  }
+  if ($tl -match 'privacy|cdpse|gdpr') {
+    return 'data privacy, GDPR, and privacy engineering'
+  }
+  if ($tl -match 'healthcare|hcispp|hipaa') {
+    return 'healthcare information security, HIPAA, and patient data protection'
+  }
+  if ($tl -match 'fundamentals|practitioner|foundational|digital leader|cybersecurity entry|^tech\+|certified in cybersecurity') {
+    return 'core concepts, key services, and foundational topics'
+  }
+  return 'all skills measured domains, exam tips, and study resources'
+}
+
+function New-Meta-Generic {
+  param($Code, $ExamTitle, $Level, $Vendor)
+
+  $cfg = $VendorConfig[$Vendor]
+  if (-not $cfg) { $cfg = @{ Display = $Vendor; StripPrefix = '' } }
+  $brand = $cfg.Display
+
+  # Strip vendor prefix if redundant in title
+  $shortTitle = $ExamTitle
+  if ($cfg.StripPrefix) {
+    $shortTitle = [regex]::Replace($shortTitle, $cfg.StripPrefix, '', 'IgnoreCase')
+  }
+  $shortTitle = $shortTitle.Trim()
+
+  $roleTopics = Get-RoleTopicsFromTitle -ExamTitle $ExamTitle
+
+  $levelWord = switch ($Level) {
+    'beginner'        { 'fundamentals' }
+    'intermediate'    { 'associate' }
+    'advanced'        { 'professional' }
+    'infrastructure'  { 'specialty' }
+    'expansion'       { 'specialty' }
+    default           { '' }
+  }
+
+  # ── Title variants ─────────────────────────────────────────
+  $titleVariants = @()
+  $titleVariants += "${Code}: $brand $shortTitle — Free Study Guide"
+  $titleVariants += "${Code}: $brand $shortTitle — Free Guide"
+  if ($ExamTitle -ne $shortTitle) {
+    $titleVariants += "${Code}: $ExamTitle — Free Study Guide"
+    $titleVariants += "${Code}: $ExamTitle — Free Guide"
+  }
+  if ($levelWord) {
+    $titleVariants += "${Code}: $brand $levelWord exam — Free Study Guide"
+    $titleVariants += "${Code}: $brand $levelWord — Free Study Guide"
+    $titleVariants += "${Code}: $brand $levelWord — Free Guide"
+  }
+  $titleVariants += "${Code}: $brand exam — Free Study Guide"
+  $titleVariants += "${Code}: $brand — Free Study Guide"
+  $titleVariants += "${Code}: $brand — Free Guide"
+
+  $newTitle = $null
+  foreach ($v in $titleVariants) {
+    if ($v.Length -le $TitleMax -and $v.Length -ge 30) { $newTitle = $v; break }
+  }
+  if (-not $newTitle) {
+    $newTitle = "${Code}: $brand — Free Guide"
+  }
+
+  # ── Description variants ───────────────────────────────────
+  $descVariants = @()
+  if ($levelWord) {
+    $descVariants += "${Code}: the $brand $shortTitle $levelWord exam. Free study guide covering $roleTopics, with exam tips and study resources."
+    $descVariants += "$Code is the $brand $shortTitle $levelWord exam. Free study guide covering $roleTopics, with exam tips and study resources."
+    $descVariants += "${Code}: the $brand $shortTitle exam ($levelWord-level). Free study guide covering $roleTopics, with exam tips."
+  }
+  $descVariants += "${Code}: the $brand $shortTitle exam. Free study guide covering $roleTopics, with exam tips and study resources."
+  $descVariants += "$Code is the $brand $shortTitle exam. Free study guide covering $roleTopics, with exam tips and study resources."
+  $descVariants += "${Code}: the $brand $shortTitle exam. Free study guide covering $roleTopics."
+  $descVariants += "$Code is the $brand $shortTitle exam. Free study guide covering $roleTopics."
+  $descVariants += "${Code}: the $brand exam. Free study guide covering $roleTopics, with exam tips and study resources."
+
+  $newDesc = $null
+  foreach ($v in $descVariants) {
+    if ($v.Length -ge $DescMin -and $v.Length -le $DescMax) { $newDesc = $v; break }
+  }
+  if (-not $newDesc) {
+    $under = $descVariants | Where-Object { $_.Length -le $DescMax } | Sort-Object -Property Length -Descending | Select-Object -First 1
+    if ($under) {
+      $newDesc = $under
+    } else {
+      $shortest = $descVariants | Sort-Object -Property Length | Select-Object -First 1
+      $newDesc = Truncate-AtWordBoundary -Text $shortest -MaxLength $DescMax
+    }
+  }
+
+  return @{ Title = $newTitle; Description = $newDesc }
 }
 
 # ── Main loop ─────────────────────────────────────────────────────
@@ -347,7 +522,16 @@ foreach ($f in $files) {
   $level    = Get-FrontmatterField -Frontmatter $fm -Key 'exam_level'
   $cat      = Get-FrontmatterField -Frontmatter $fm -Key 'exam_category'
   $repl     = Get-FrontmatterField -Frontmatter $fm -Key 'replaces'
-  $hasPracticeBank = ($code -eq 'AI-200')  # only AI-200 ships with 250 practice Qs as of 8 May 2026
+  $hasPracticeBank = $false
+  $practiceQuestions = 0
+  if ($oldDesc -match '(?i)(\d+)[\s-]question[s]?\s+practice') {
+    $practiceQuestions = [int]$Matches[1]
+    $hasPracticeBank = $true
+  } elseif ($oldDesc -match '(?i)practice\s+exam|practice\s+question') {
+    $hasPracticeBank = $true
+    $practiceQuestions = 0
+  }
+  if ($code -eq 'AI-200') { $practiceQuestions = 250; $hasPracticeBank = $true }  # confirmed shipped 8 May 2026
 
   if (-not $code -or -not $extitle) {
     $reviewLines += "## $($f.Name) ⚠️ NEEDS HUMAN ATTENTION"
@@ -363,10 +547,35 @@ foreach ($f in $files) {
   # Generate
   $rewrite = $null
   if ($Vendor -eq 'microsoft') {
-    $rewrite = New-Meta-Microsoft -Code $code -ExamTitle $extitle -Level $level -Category $cat -Replaces $repl -HasPracticeBank $hasPracticeBank
+    $rewrite = New-Meta-Microsoft -Code $code -ExamTitle $extitle -Level $level -Category $cat -Replaces $repl -PracticeQuestions $practiceQuestions
+  } elseif ($Vendor -eq 'all') {
+    # 'all' scope: dispatch by file prefix
+    $detectedVendor = if ($f.Name -match '^(ab-|ai-|az-|dp-|mb-|md-|ms-|pl-|sc-)') { 'microsoft' }
+                      elseif ($f.Name -match '^(isc2|isaca|cncf)-') { $Matches[1] }
+                      elseif ($f.Name -match '^([a-z]+)-') { $Matches[1] }
+                      else { '' }
+    if ($detectedVendor -eq 'microsoft') {
+      $rewrite = New-Meta-Microsoft -Code $code -ExamTitle $extitle -Level $level -Category $cat -Replaces $repl -PracticeQuestions $practiceQuestions
+    } elseif ($VendorConfig.ContainsKey($detectedVendor)) {
+      $rewrite = New-Meta-Generic -Code $code -ExamTitle $extitle -Level $level -Vendor $detectedVendor
+    } else {
+      $reviewLines += "## $($f.Name) ⚠️ UNRECOGNIZED VENDOR"
+      $reviewLines += ""
+      $reviewLines += "Could not detect vendor from filename. Filename pattern not in known vendor list."
+      $reviewLines += ""
+      $reviewLines += "---"
+      $reviewLines += ""
+      $stats.Flagged++
+      continue
+    }
+  } elseif ($VendorConfig.ContainsKey($Vendor)) {
+    $rewrite = New-Meta-Generic -Code $code -ExamTitle $extitle -Level $level -Vendor $Vendor
   } else {
-    # For now only Microsoft is implemented — future: AWS/GCP/etc.
     $reviewLines += "## $($f.Name) ⚠️ VENDOR NOT YET IMPLEMENTED"
+    $reviewLines += ""
+    $reviewLines += "Vendor '$Vendor' has no template implementation. Add to VendorConfig + New-Meta-Generic dispatch."
+    $reviewLines += ""
+    $reviewLines += "---"
     $reviewLines += ""
     $stats.Flagged++
     continue
