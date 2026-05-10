@@ -13,15 +13,15 @@
 
   <div class="roadmap-legend">
     <strong>Categories:</strong>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#3B82F6"></div> Azure</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#8B5CF6"></div> AI & Data</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#EF4444"></div> Security</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#F59E0B"></div> M365</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#A855F7"></div> Power Platform</div>
-    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#14B8A6"></div> Dynamics 365</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch roadmap-legend-swatch--azure"></div> Azure</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch roadmap-legend-swatch--ai"></div> AI & Data</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch roadmap-legend-swatch--security"></div> Security</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch roadmap-legend-swatch--m365"></div> M365</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch roadmap-legend-swatch--power"></div> Power Platform</div>
+    <div class="roadmap-legend-item"><div class="roadmap-legend-swatch roadmap-legend-swatch--dynamics"></div> Dynamics 365</div>
   </div>
 
-  <p style="font-size:0.85rem;color:var(--cert-text-dim);margin-bottom:1rem;">Read left to right: start with Fundamentals, progress to Associate, then Expert. Click any card to open its study guide.</p>
+    <p class="roadmap-intro-text">Read left to right: start with Fundamentals, progress to Associate, then Expert. Click any card to open its study guide.</p>
 
   <div class="kanban-wrap">
     <div id="roadmap-content">
@@ -101,7 +101,7 @@
       // Rows
       rows.forEach(function(row) {
         var g = grid[row.key];
-        html += '<div class="kanban-lane-label" style="--lane-color:' + row.color + '"><div class="kanban-lane-dot" style="background:' + row.color + '"></div> ' + row.label + '</div>';
+        html += '<div class="kanban-lane-label" data-vendor="' + row.key + '"><div class="kanban-lane-dot"></div> ' + row.label + '</div>';
         ["fund", "assoc", "expert"].forEach(function(lev) {
           html += '<div class="kanban-cell ' + row.css + '">';
           if (g[lev].length) {

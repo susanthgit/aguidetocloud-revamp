@@ -38,12 +38,12 @@
     </div>
     <div class="roadmap-legend">
       <strong>Categories:</strong>
-      <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#3B82F6"></div> Azure</div>
-      <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#8B5CF6"></div> AI & Data</div>
-      <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#EF4444"></div> Security</div>
-      <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#F59E0B"></div> M365</div>
-      <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#A855F7"></div> Power Platform</div>
-      <div class="roadmap-legend-item"><div class="roadmap-legend-swatch" style="background:#14B8A6"></div> Dynamics 365</div>
+      <div class="roadmap-legend-item"><div class="roadmap-legend-swatch roadmap-legend-swatch--azure"></div> Azure</div>
+      <div class="roadmap-legend-item"><div class="roadmap-legend-swatch roadmap-legend-swatch--ai"></div> AI & Data</div>
+      <div class="roadmap-legend-item"><div class="roadmap-legend-swatch roadmap-legend-swatch--security"></div> Security</div>
+      <div class="roadmap-legend-item"><div class="roadmap-legend-swatch roadmap-legend-swatch--m365"></div> M365</div>
+      <div class="roadmap-legend-item"><div class="roadmap-legend-swatch roadmap-legend-swatch--power"></div> Power Platform</div>
+      <div class="roadmap-legend-item"><div class="roadmap-legend-swatch roadmap-legend-swatch--dynamics"></div> Dynamics 365</div>
     </div>
     <div class="cert-controls" id="cert-controls">
       <label for="cert-search" class="sr-only">Search exams</label>
@@ -76,9 +76,9 @@
 
   {{/* ── Tab 2: Microsoft Roadmap ── */}}
   <div class="cert-panel" id="panel-updates" role="tabpanel" hidden>
-    <div style="padding:0.75rem 1rem;margin-bottom:1rem;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:10px;display:flex;align-items:center;gap:0.75rem">
-      <span style="font-size:1.3rem">👆</span>
-      <p style="margin:0;font-size:0.9rem;color:var(--cert-text)"><strong>Click any card</strong> to open its free study guide. Read left to right: <strong>Fundamentals → Associate → Expert</strong></p>
+    <div class="cert-click-note">
+      <span class="cert-click-note-icon">👆</span>
+      <p class="cert-click-note-text"><strong>Click any card</strong> to open its free study guide. Read left to right: <strong>Fundamentals → Associate → Expert</strong></p>
     </div>
 
     <div class="kanban-wrap">
@@ -87,10 +87,10 @@
       </div>
     </div>
 
-    <div class="cert-updates-section" style="margin-top:2rem">
+    <div class="cert-updates-section cert-updates-section-wrap">
       <h2>{{ partial "icon.html" (dict "name" "satellite" "size" 14 "stroke" 1.5) }} Stay Updated</h2>
-      <p style="color:rgba(255,255,255,0.5);margin-bottom:1rem">Get notified when exam objectives change or new exams are announced.</p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <p class="cert-stay-updated-text">Get notified when exam objectives change or new exams are announced.</p>
+      <div class="cert-stay-updated-row">
         <a href="/data/cert-tracker/rss.xml" target="_blank" rel="noopener noreferrer" class="cert-roadmap-btn">{{ partial "icon.html" (dict "name" "satellite" "size" 14 "stroke" 1.5) }} RSS Feed</a>
         <a href="https://learn.microsoft.com/en-us/credentials/browse/?credential_types=certification" target="_blank" rel="noopener noreferrer" class="cert-roadmap-btn">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Official Credentials</a>
       </div>
@@ -107,7 +107,7 @@
   <div class="cert-panel" id="panel-faq" role="tabpanel" hidden>
   {{ if .Params.faq }}
   <div class="zt-faq-wrap">
-    <h2 style="color:var(--tool-accent, #fff);margin-bottom:1rem">Frequently Asked Questions</h2>
+    <h2 class="cert-faq-heading">Frequently Asked Questions</h2>
     {{ range $i, $q := .Params.faq }}
     <details open class="zt-faq-detail"><summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary><p class="zt-faq-answer">{{ $q.answer }}</p></details>
     {{ end }}
@@ -184,7 +184,7 @@ window.__vendors = {{ site.Data.vendors.vendor | jsonify | safeJS }};
     html += '<div class="kanban-header kanban-header-expert">{{ partial "icon.html" (dict "name" "clock" "size" 14 "stroke" 1.5) }} Expert & Beta</div>';
     rows.forEach(function(row) {
       var g = grid[row.key];
-      html += '<div class="kanban-lane-label" style="--lane-color:' + row.color + '"><div class="kanban-lane-dot" style="background:' + row.color + '"></div> ' + row.label + '</div>';
+      html += '<div class="kanban-lane-label" data-vendor="' + row.key + '"><div class="kanban-lane-dot"></div> ' + row.label + '</div>';
       ["fund", "assoc", "expert"].forEach(function(lev) {
         html += '<div class="kanban-cell ' + row.css + '">';
         html += g[lev].length ? g[lev].map(renderCard).join('') : '<span class="kanban-empty">—</span>';

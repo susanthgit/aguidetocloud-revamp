@@ -80,10 +80,10 @@
     const statusCounts = { active: 0, retiring: 0, beta: 0, retired: 0 };
     (data.exams || []).forEach((e) => { statusCounts[e.status || "active"]++; });
     el.innerHTML = `
-      <div class="cert-stat-box" style="--stat-color:#10B981"><span class="cert-stat-num">${data.exam_count}</span><span class="cert-stat-label">Study Guides</span></div>
-      <div class="cert-stat-box" style="--stat-color:#22C55E"><span class="cert-stat-num">${statusCounts.active}</span><span class="cert-stat-label">Active</span></div>
-      <div class="cert-stat-box" style="--stat-color:#F59E0B"><span class="cert-stat-num">${statusCounts.retiring}</span><span class="cert-stat-label">Retiring</span></div>
-      <div class="cert-stat-box" style="--stat-color:#8B5CF6"><span class="cert-stat-num">${statusCounts.beta}</span><span class="cert-stat-label">Beta</span></div>
+      <div class="cert-stat-box" data-tone="guides"><span class="cert-stat-num">${data.exam_count}</span><span class="cert-stat-label">Study Guides</span></div>
+      <div class="cert-stat-box" data-tone="active"><span class="cert-stat-num">${statusCounts.active}</span><span class="cert-stat-label">Active</span></div>
+      <div class="cert-stat-box" data-tone="retiring"><span class="cert-stat-num">${statusCounts.retiring}</span><span class="cert-stat-label">Retiring</span></div>
+      <div class="cert-stat-box" data-tone="beta"><span class="cert-stat-num">${statusCounts.beta}</span><span class="cert-stat-label">Beta</span></div>
     `;
   }
 
