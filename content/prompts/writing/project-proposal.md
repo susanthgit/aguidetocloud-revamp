@@ -1,6 +1,6 @@
 ---
-title: Project Proposal Writer
-description: Create a compelling project proposal with business case, timeline, and resource requirements
+title: "Project Proposal Writer — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: create a compelling project proposal with business case, timeline, and resource requirements. Best on M365 Copilot."
 prompt: 'Write a project proposal for [PROJECT NAME]. Include: (1) Problem Statement — what issue this project solves, (2) Proposed Solution — high-level approach, (3) Business Case — expected ROI, cost
   savings, or strategic value, (4) Scope — what is included and explicitly excluded, (5) Timeline — major milestones over [DURATION], (6) Resource Requirements — team members, budget, tools needed, (7)
   Risks & Mitigation — top 3 risks with mitigation plans, (8) Success Metrics — how we will measure success. Tone: persuasive yet realistic.'

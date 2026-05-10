@@ -1,6 +1,6 @@
 ---
-title: Employee Engagement Survey Designer
-description: Create a focused employee engagement survey with analysis framework
+title: "Employee Engagement Survey Designer — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for HR teams: create a focused employee engagement survey with analysis framework. Works in ChatGPT. Tag: hr."
 prompt: 'Design a [NUMBER — 10 / 15 / 20]-question employee engagement survey for [DEPARTMENT/COMPANY]. Cover: (1) Job satisfaction, (2) Manager relationship, (3) Growth opportunities, (4) Work-life balance, (5) Company culture. Use a mix of 1-5 scale questions and open-ended questions. Include a scoring framework and benchmark targets.'
 platforms:
 - m365-copilot

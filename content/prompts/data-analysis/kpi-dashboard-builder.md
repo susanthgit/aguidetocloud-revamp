@@ -1,6 +1,6 @@
 ---
-title: KPI Dashboard Data Prep
-description: Transform raw data into KPI summaries with trends, targets, and RAG status indicators
+title: "KPI Dashboard Data Prep — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: transform raw data into KPI summaries with trends, targets, and RAG status indicators. Best on M365 Copilot."
 prompt: 'Using this data, create a KPI dashboard summary. For each metric: (1) Current value, (2) Target value, (3) Variance from target as a percentage, (4) RAG status (Red if >10% below target, Amber
   if 5-10% below, Green if on or above target), (5) Trend direction compared to last period (↑ improving, → stable, ↓ declining). Present as a clean table. Then provide a narrative summary of the top 3
   areas needing attention and top 3 areas performing well.'

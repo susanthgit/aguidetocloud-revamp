@@ -1,6 +1,6 @@
 ---
-title: Network Connectivity Diagnosis
-description: Systematically troubleshoot network connectivity issues
+title: "Network Connectivity Diagnosis — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for IT admins: systematically troubleshoot network connectivity issues. Works in ChatGPT. Tag: troubleshooting."
 prompt: >-
   Help me diagnose this network issue: [SYMPTOMS]. Walk through: (1) Client-side checks (IP, DNS, gateway), (2) Internal network checks (switches, VLAN, firewall rules), (3) External connectivity (ISP, DNS resolution, latency), (4) Application-specific checks, (5) Recent changes that might correlate. Provide commands to run at each step.
 platforms:

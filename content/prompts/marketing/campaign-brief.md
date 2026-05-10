@@ -1,6 +1,6 @@
 ---
-title: Campaign Brief Creator
-description: Create a structured marketing campaign brief
+title: "Campaign Brief Creator — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for marketers: create a structured marketing campaign brief. Works in ChatGPT. Tag: marketing."
 prompt: >-
   Create a campaign brief for [CAMPAIGN NAME] targeting [AUDIENCE]. Include: (1) Campaign objective and KPIs, (2) Target audience persona, (3) Key message and value proposition, (4) Channels and tactics, (5) Timeline and milestones, (6) Budget allocation, (7) Success metrics. Format as a one-page brief.
 platforms:

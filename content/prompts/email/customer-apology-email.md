@@ -1,6 +1,6 @@
 ---
-title: Customer Apology Email
-description: Draft a sincere apology email that acknowledges the issue, takes responsibility, and rebuilds trust
+title: "Customer Apology Email — Free M365 Copilot AI Prompt"
+description: "Free AI prompt: draft a sincere apology email that acknowledges the issue, takes responsibility, and rebuilds trust. Works in M365 Copilot. Tag: email."
 prompt: 'Draft an apology email to a customer regarding [ISSUE]. The email must: (1) Acknowledge the problem specifically — do not be vague, (2) Take responsibility without making excuses, (3) Explain what
   happened in simple terms, (4) Detail what we are doing to fix it right now, (5) Describe what we are doing to prevent it from happening again, (6) Offer appropriate compensation or goodwill gesture if
   applicable, (7) Provide a direct contact for follow-up. Tone: sincere, empathetic, professional. Keep under 200 words.'

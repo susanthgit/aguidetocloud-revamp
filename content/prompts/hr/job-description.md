@@ -1,6 +1,6 @@
 ---
-title: Job Description Writer
-description: Create an inclusive and compelling job description
+title: "Job Description Writer — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for HR teams: create an inclusive and compelling job description. Works in ChatGPT. Tags: hr, hiring."
 prompt: 'Write a job description for [ROLE] at [COMPANY/TEAM]. Include: (1) An engaging role summary (not a requirement list), (2) Key responsibilities (5-7 bullets), (3) Must-have skills (keep to 5), (4) Nice-to-have skills (3 max), (5) What we offer (benefits, culture, growth). Use inclusive language. Remove unnecessary requirements that could discourage diverse candidates.'
 platforms:
 - m365-copilot

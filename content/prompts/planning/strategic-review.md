@@ -1,6 +1,6 @@
 ---
-title: Strategic Review Framework
-description: Conduct a structured strategic review of performance
+title: "Strategic Review Framework — Free Claude AI Prompt"
+description: "Free advanced AI prompt for executives: conduct a structured strategic review of performance. Works in Claude. Tag: planning."
 prompt: >-
   Create a strategic review framework for [BUSINESS AREA] covering [PERIOD]. Include: (1) Mission and strategy recap, (2) Performance vs goals, (3) What worked and why, (4) What did not work and root causes, (5) Market and competitive changes, (6) Resource utilisation, (7) Priorities for next period, (8) Key bets and experiments to run.
 platforms:

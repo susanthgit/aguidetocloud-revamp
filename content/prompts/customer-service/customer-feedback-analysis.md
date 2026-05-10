@@ -1,6 +1,6 @@
 ---
-title: Customer Feedback Analyser
-description: Analyse customer feedback, reviews, or survey results to extract actionable insights
+title: "Customer Feedback Analyser — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for teams: analyse customer feedback, reviews, or survey results to extract actionable insights. Best on Claude."
 prompt: 'Analyse this customer feedback data and provide: (1) Sentiment Overview — percentage positive, neutral, negative, (2) Top 5 Praise Points — what customers love most, (3) Top 5 Pain Points — what
   customers complain about most, (4) Trending Themes — patterns that appear across multiple pieces of feedback, (5) Quick Wins — 3 improvements that would address the most common complaints with minimal
   effort, (6) Strategic Recommendations — 2-3 bigger changes that could significantly improve satisfaction, (7) Verbatim Highlights — the most impactful positive and negative quotes. Present with specific

@@ -1,6 +1,6 @@
 ---
-title: Decision Framework Builder
-description: Create a structured framework for making a specific decision
+title: "Decision Framework Builder — Free Claude AI Prompt"
+description: "Free advanced AI prompt for managers: create a structured framework for making a specific decision. Works in Claude. Tag: planning."
 prompt: >-
   Build a decision framework for [DECISION]. Include: (1) Decision statement, (2) Decision criteria with weights, (3) Options to evaluate, (4) Scoring template, (5) Risk assessment per option, (6) Stakeholder input needed, (7) Timeline and decision deadline, (8) Communication plan for the decision. Help us make this decision objectively.
 platforms:

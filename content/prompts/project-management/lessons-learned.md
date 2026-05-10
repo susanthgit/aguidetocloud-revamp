@@ -1,6 +1,6 @@
 ---
-title: Lessons Learned Document
-description: Capture project lessons learned in a structured format
+title: "Lessons Learned Document — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: Lessons Learned Document — capture project lessons learned in a structured format. Works in M365 Copilot."
 prompt: >-
   Create a lessons learned document for [PROJECT]. Structure: (1) Project overview (scope, timeline, outcome), (2) What went well (5-7 items with impact), (3) What could improve (5-7 items with root cause), (4) What we would do differently, (5) Recommendations for future projects, (6) Key metrics vs plan. Get input from: [TEAM MEMBERS]. Tone: constructive and forward-looking.
 platforms:

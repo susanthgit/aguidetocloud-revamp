@@ -1,6 +1,6 @@
 ---
-title: Project Retrospective Board
-description: Run a collaborative project retrospective in Loop
+title: "Project Retrospective Board — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for project managers: run a collaborative project retrospective in Loop. Works in M365 Copilot. Tag: loop."
 prompt: >-
   Create a retrospective board for [PROJECT]. Sections: (1) What went well — team adds items live, (2) What to improve, (3) What puzzled us, (4) Vote on top items (each person picks 3), (5) Action items from top-voted (owner, deadline, success measure). Claude or Copilot: group themes as items come in.
 platforms:

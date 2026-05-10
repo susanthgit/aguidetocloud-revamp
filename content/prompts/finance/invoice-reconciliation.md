@@ -1,6 +1,6 @@
 ---
-title: Invoice Reconciliation Helper
-description: Compare invoices against purchase orders and flag discrepancies
+title: "Invoice Reconciliation Helper — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for finance teams: compare invoices against purchase orders and flag discrepancies. Works in M365 Copilot. Tag: finance."
 prompt: >-
   Compare these invoices against the purchase orders and flag: (1) Amount mismatches (over-billing or under-billing), (2) Missing line items, (3) Incorrect quantities, (4) Duplicate invoices, (5) Invoices without a matching PO. Present discrepancies in a table with invoice number, PO number, expected amount, actual amount, and status. Calculate total discrepancy value.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Performance Issue Diagnosis
-description: Systematically diagnose slow system or application performance
+title: "Performance Issue Diagnosis — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for IT admins: systematically diagnose slow system or application performance. Works in ChatGPT. Tag: troubleshooting."
 prompt: >-
   Help me diagnose slow performance in [SYSTEM/APPLICATION]. Walk me through: (1) Quick checks (CPU, memory, disk, network baseline), (2) Identifying the bottleneck, (3) Correlation with recent changes or events, (4) User-side vs server-side diagnosis, (5) Top 5 most common causes for this type of slowness, (6) Recommended monitoring to set up. Environment: [DETAILS].
 platforms:

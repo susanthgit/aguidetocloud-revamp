@@ -1,6 +1,6 @@
 ---
-title: Teams Channel Thread Summary
-description: Get a quick summary of what has been discussed in a busy Teams channel
+title: "Teams Channel Thread Summary — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: get a quick summary of what has been discussed in a busy Teams channel. Works in M365 Copilot. Tags: teams, channels."
 prompt: 'Summarise the recent conversations in this Teams channel from the past [TIME PERIOD]. Include: (1) Key topics discussed, (2) Decisions that were made, (3) Questions that remain unanswered, (4)
   Action items assigned to specific people, (5) Any links or files that were shared. Group by topic rather than chronologically. Highlight anything I should respond to.'
 platforms:

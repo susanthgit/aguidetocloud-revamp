@@ -1,6 +1,6 @@
 ---
-title: Champion Network Setup
-description: Create a change champion programme to drive adoption
+title: "Champion Network Setup — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: create a change champion programme to drive adoption. Works in M365 Copilot. Tags: onboarding, champions."
 prompt: >-
   Design a change champion programme for [CHANGE/TOOL] rollout. Include: (1) Champion role description and time commitment, (2) Selection criteria and recruitment message, (3) Training plan for champions, (4) Communication toolkit (templates, talking points, FAQ), (5) Recognition and incentive programme, (6) Reporting cadence and feedback loop. Target: [NUMBER] champions across [DEPARTMENTS].
 platforms:

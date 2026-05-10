@@ -1,6 +1,6 @@
 ---
-title: Security Metrics Dashboard
-description: Design a CISO-ready security dashboard
+title: "Security Metrics Dashboard — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for teams: design a CISO-ready security dashboard. Works in M365 Copilot. Tags: cybersecurity, metrics."
 prompt: >-
   Design a security metrics dashboard. Include: Secure Score trend, incident count, vulnerability remediation, phishing results, compliance status, top risks, investment ROI.
 platforms:

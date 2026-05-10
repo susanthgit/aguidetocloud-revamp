@@ -1,6 +1,6 @@
 ---
-title: Identify Key Drivers
-description: Find what factors are driving a metric up or down and quantify their impact
+title: "Identify Key Drivers — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt: Identify Key Drivers — find what factors are driving a metric up or down and quantify their impact. Works in M365 Copilot."
 prompt: 'Analyse this data and identify the biggest drivers behind [METRIC — revenue growth / ticket volume / churn rate]. For each driver: quantify its impact, explain the mechanism, and suggest what we can do about it. Rank drivers by impact size. Create a chart showing the contribution of each driver.'
 platforms:
 - m365-copilot

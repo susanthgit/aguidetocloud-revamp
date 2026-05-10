@@ -1,6 +1,6 @@
 ---
-title: Extract Risks and Open Questions
-description: Pull out all risks, concerns, and unanswered questions from your notes
+title: "Extract Risks and Open Questions — Free M365 Copilot Prompt"
+description: "Free intermediate AI prompt for project managers: pull out all risks, concerns, and unanswered questions from your notes. Best on M365 Copilot."
 prompt: 'Review these notes and extract: (1) Risks or concerns mentioned by anyone, (2) Questions that were raised but not answered, (3) Assumptions that need to be validated, (4) Dependencies on other teams or decisions. Rate each risk as High/Medium/Low impact.'
 platforms:
 - m365-copilot

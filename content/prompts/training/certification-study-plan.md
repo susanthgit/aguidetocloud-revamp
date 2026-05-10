@@ -1,6 +1,6 @@
 ---
-title: Certification Study Plan
-description: Create a structured study plan for a professional certification
+title: "Certification Study Plan — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for teams: create a structured study plan for a professional certification. Works in M365 Copilot. Tag: training."
 prompt: >-
   Create a study plan for [CERTIFICATION — AZ-900 / PMP / CISSP / AWS]. Include: (1) Exam overview and passing score, (2) Weekly study schedule for [WEEKS] weeks, (3) Topics by priority and weight, (4) Resources (official study guide, practice tests, videos), (5) Practice test strategy, (6) Exam day tips. Based on [AVAILABLE HOURS] study hours per week.
 platforms:

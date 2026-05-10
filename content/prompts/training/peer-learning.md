@@ -1,6 +1,6 @@
 ---
-title: Peer Learning Programme
-description: Design a peer-to-peer learning programme
+title: "Peer Learning Programme — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for teams: design a peer-to-peer learning programme. Works in M365 Copilot. Tags: training, peer-learning."
 prompt: >-
   Design a peer learning programme. Include: structure, topic selection, session format, facilitator rotation, knowledge capture, recognition, success metrics.
 platforms:

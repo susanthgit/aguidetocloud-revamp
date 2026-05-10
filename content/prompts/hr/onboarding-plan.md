@@ -1,6 +1,6 @@
 ---
-title: 30-60-90 Day Onboarding Plan
-description: Create a structured onboarding plan for a new hire
+title: "30-60-90 Day Onboarding Plan — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for HR teams: create a structured onboarding plan for a new hire. Works in M365 Copilot. Tag: hr."
 prompt: 'Create a 30/60/90-day onboarding plan for a new [ROLE] joining [TEAM/DEPARTMENT]. Include: (1) Week 1: orientation, tools setup, key contacts, (2) Days 1-30: learning goals and shadowing, (3) Days 31-60: first deliverables and independence, (4) Days 61-90: full ownership and review. Add success metrics for each phase and a buddy/mentor assignment.'
 platforms:
 - m365-copilot

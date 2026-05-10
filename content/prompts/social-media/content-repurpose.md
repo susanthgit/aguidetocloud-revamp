@@ -1,6 +1,6 @@
 ---
-title: Content Repurposing Plan
-description: Turn one piece of content into multiple social media posts
+title: "Content Repurposing Plan — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for marketers: turn one piece of content into multiple social media posts. Works in ChatGPT. Tags: social-media, repurpose."
 prompt: >-
   Repurpose this content into social media posts: [PASTE OR DESCRIBE CONTENT — blog post / presentation / webinar / report]. Create: (1) 3 LinkedIn posts (different angles), (2) 5 Twitter/X posts (key quotes and stats), (3) 2 Instagram carousel ideas, (4) 1 short video script (60 seconds). Each should drive back to the original content.
 platforms:

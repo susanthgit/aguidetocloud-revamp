@@ -1,6 +1,6 @@
 ---
-title: Extract Unresolved Questions
-description: Pull out all unanswered questions and follow-ups from a meeting transcript
+title: "Extract Unresolved Questions — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for project managers: pull out all unanswered questions and follow-ups from a meeting transcript. Best on M365 Copilot."
 prompt: 'Review this meeting transcript and list: (1) Questions that were asked but not answered, (2) Topics that need further discussion, (3) Decisions that were deferred, (4) Items where someone said "I will check" or "Let me get back to you." Present as a numbered list with the person responsible.'
 platforms:
 - m365-copilot

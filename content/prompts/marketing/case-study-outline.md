@@ -1,6 +1,6 @@
 ---
-title: Customer Success Story
-description: Structure a compelling case study
+title: "Customer Success Story — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for marketers: structure a compelling case study. Works in Claude. Tags: marketing, case-study."
 prompt: >-
   Create a case study outline for [CUSTOMER] who achieved [RESULT] using [PRODUCT]. Include: headline with result, customer profile, problem, why they chose us, implementation, results with metrics, customer quote. Include interview questions.
 platforms:

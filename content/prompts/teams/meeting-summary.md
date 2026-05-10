@@ -1,6 +1,6 @@
 ---
-title: Meeting Summary with Action Items
-description: Turn a Teams meeting transcript into a structured summary with decisions, actions, and owners
+title: "Meeting Summary with Action Items — Free M365 Copilot Prompt"
+description: "Free beginner AI prompt for managers: turn a Teams meeting transcript into a structured summary with decisions, actions, and owners. Best on M365 Copilot."
 prompt: 'Summarise this meeting into: (1) Key decisions made, (2) Action items with owners and deadlines in a table, (3) Open questions or unresolved issues, (4) Next steps. Keep each section to 3-5 bullet points maximum.'
 platforms:
 - m365-copilot

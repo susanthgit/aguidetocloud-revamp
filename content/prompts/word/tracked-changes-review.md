@@ -1,6 +1,6 @@
 ---
-title: Review and Suggest Improvements
-description: Get Copilot to review your draft and suggest tracked changes for clarity and tone
+title: "Review and Suggest Improvements — Free M365 Copilot Prompt"
+description: "Free advanced AI prompt for teams: get Copilot to review your draft and suggest tracked changes for clarity and tone. Works in M365 Copilot. Tag: word."
 prompt: 'Review this document and suggest improvements to clarity, tone, and structure. Focus on: (1) Sentences that are too long or confusing, (2) Passive voice that should be active, (3) Sections that could be reordered for better flow, (4) Missing information the reader would expect. Present your suggestions as specific edits, not general advice.'
 platforms:
 - m365-copilot

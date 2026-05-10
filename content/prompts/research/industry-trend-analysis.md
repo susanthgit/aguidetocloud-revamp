@@ -1,6 +1,6 @@
 ---
-title: Industry Trend Analysis
-description: Get a comprehensive analysis of current trends, disruptions, and opportunities in any industry
+title: "Industry Trend Analysis — Free M365 Copilot AI Prompt"
+description: "Free AI prompt: get a comprehensive analysis of current trends, disruptions, and opportunities in any industry. Works in M365 Copilot. Tag: research."
 prompt: 'Provide a comprehensive analysis of the current state of the [INDUSTRY] industry. Include: (1) Top 5 Trends — what is changing and why it matters, (2) Key Disruptions — technologies or business
   models disrupting the status quo, (3) Competitive Landscape — major players and their strategies, (4) Opportunities — where growth potential exists for new entrants or innovators, (5) Threats — regulatory,
   economic, or technological risks, (6) 12-Month Outlook — what to expect in the near future. Cite specific companies, products, or data points where possible.'

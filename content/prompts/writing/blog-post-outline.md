@@ -1,6 +1,6 @@
 ---
-title: "Blog Post Outline Generator"
-description: "Generate a structured outline for a blog post on any topic with SEO-friendly headings"
+title: "Blog Post Outline Generator — Free Claude AI Prompt"
+description: "Free beginner AI prompt for marketers: generate a structured outline for a blog post on any topic with SEO-friendly headings. Best on Claude."
 prompt: "Create a detailed blog post outline about [TOPIC]. Include: (1) A compelling title with a keyword focus, (2) An engaging introduction hook, (3) 5-7 H2 subheadings that flow logically, (4) 2-3 bullet points under each heading showing what to cover, (5) A conclusion with a call-to-action. Target audience: [AUDIENCE]. Tone: informative but conversational."
 platforms: ["chatgpt", "claude", "gemini", "m365-copilot"]
 best_on: "claude"

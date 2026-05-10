@@ -1,6 +1,6 @@
 ---
-title: Meeting Preparation Briefing
-description: Get Copilot to prepare you for an upcoming meeting using recent context
+title: "Meeting Preparation Briefing — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt: Meeting Preparation Briefing — get Copilot to prepare you for an upcoming meeting using recent context. Works in M365 Copilot."
 prompt: 'Prepare me for my upcoming meeting with [PERSON OR TEAM]. Summarise: (1) What we discussed in our last meeting, (2) Any outstanding action items, (3) Recent emails or chats between us, (4) Key topics I should raise. Present as a one-page briefing.'
 platforms:
 - m365-copilot

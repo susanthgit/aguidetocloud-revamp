@@ -1,6 +1,6 @@
 ---
-title: Team Brainstorm Facilitator
-description: Use Claude Cowork to facilitate a structured team brainstorming session in real time
+title: "Team Brainstorm Facilitator — Free Claude AI Prompt"
+description: "Free beginner AI prompt for managers: use Claude Cowork to facilitate a structured team brainstorming session in real time. Best on Claude."
 prompt: >-
   We are brainstorming [TOPIC/CHALLENGE] as a team. Help us by: (1) Capturing every idea from the team without judgment, (2) Grouping similar ideas into themes, (3) For each theme, list pros, cons, and feasibility, (4) Summarise the top 5 ideas ranked by impact and effort, (5) Create an action plan for the winning idea. Team members will add ideas in the document — organise them as they come in.
 platforms:

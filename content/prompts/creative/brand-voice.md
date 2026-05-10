@@ -1,6 +1,6 @@
 ---
-title: Brand Voice Guide
-description: Define a consistent brand voice and writing style
+title: "Brand Voice Guide — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for teams: define a consistent brand voice and writing style. Works in Claude. Tag: creative."
 prompt: >-
   Create a brand voice guide for [BRAND]. Include: (1) Brand personality traits (3-5 adjectives), (2) Voice characteristics (what we sound like), (3) Tone variations by context (social, email, support, formal), (4) Vocabulary do and don't list, (5) Example sentences showing right vs wrong, (6) Grammar and formatting preferences. Make it practical enough for any team member to follow.
 platforms:

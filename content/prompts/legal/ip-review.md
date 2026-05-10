@@ -1,6 +1,6 @@
 ---
-title: IP Assignment Review
-description: Review intellectual property provisions
+title: "IP Assignment Review — Free M365 Copilot AI Prompt"
+description: "IP Assignment Review — free advanced AI prompt: review intellectual property provisions. Best on M365 Copilot. Tags: legal, ip."
 prompt: >-
   Review IP provisions: who owns work product, background IP, licence grants, assignment rights, third-party IP, open source, moral rights, warranties. Flag ownership limitations.
 platforms:

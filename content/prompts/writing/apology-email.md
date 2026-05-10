@@ -1,6 +1,6 @@
 ---
-title: Professional Apology Email
-description: Draft a sincere professional apology
+title: "Professional Apology Email — Free M365 Copilot AI Prompt"
+description: "Professional Apology Email — free intermediate AI prompt: draft a sincere professional apology. Best on M365 Copilot. Tag: writing."
 prompt: >-
   Draft an apology email to [RECIPIENT] for [SITUATION]. Acknowledge the issue, take responsibility, explain what happened briefly, state corrective action, commit to improvement.
 platforms:

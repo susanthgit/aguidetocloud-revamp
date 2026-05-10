@@ -1,6 +1,6 @@
 ---
-title: New Hire Training Curriculum
-description: Build a comprehensive training plan for new employees
+title: "New Hire Training Curriculum — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for teams: build a comprehensive training plan for new employees. Works in M365 Copilot. Tags: training, onboarding."
 prompt: >-
   Create a training curriculum for new [ROLE] hires at [COMPANY/TEAM]. Cover weeks 1-4: (1) Week 1: Company orientation, tools, and culture, (2) Week 2: Role-specific training and shadowing, (3) Week 3: Guided practice with mentor support, (4) Week 4: Independent work with daily check-ins. For each week include: learning goals, activities, resources, and success criteria.
 platforms:

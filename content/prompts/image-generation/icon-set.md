@@ -1,6 +1,6 @@
 ---
-title: Custom Icon Set Designer
-description: Generate prompts for a matching set of custom icons
+title: "Custom Icon Set Designer — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for teams: generate prompts for a matching set of custom icons. Works in M365 Copilot. Tag: image-generation."
 prompt: >-
   Generate image prompts for a set of [NUMBER — 6 / 8 / 12] matching icons for [PURPOSE — website / app / presentation / documentation]. Theme: [THEME]. Each icon should: (1) Follow the same visual style, (2) Use a consistent colour palette, (3) Work at small sizes (64x64 to 256x256), (4) Have a clean transparent background, (5) Represent: [LIST CONCEPTS]. Provide: detailed prompt and style modifiers.
 platforms:

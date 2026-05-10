@@ -1,6 +1,6 @@
 ---
-title: "Technology Comparison Brief"
-description: "Compare two or more technologies, tools, or platforms with a structured analysis"
+title: "Technology Comparison Brief — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for IT admins: compare two or more technologies, tools, or platforms with a structured analysis. Best on M365 Copilot."
 prompt: "Create a detailed comparison between [TECH A] and [TECH B]. Include: (1) Overview — one paragraph for each, (2) Feature comparison table with categories like pricing, ease of use, scalability, integrations, learning curve, (3) Best for — which use cases each excels at, (4) Limitations of each, (5) My recommendation with reasoning. Be objective and cite specific features, not marketing claims."
 platforms: ["chatgpt", "claude", "gemini", "perplexity"]
 best_on: "perplexity"

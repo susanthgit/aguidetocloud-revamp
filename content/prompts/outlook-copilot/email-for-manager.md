@@ -1,6 +1,6 @@
 ---
-title: Brief Email Summary for My Manager
-description: Create a quick summary of an email thread that your manager can read in 30 seconds
+title: "Brief Email Summary for My Manager — Free AI Prompt"
+description: "Free beginner AI prompt for executive assistants: create a quick summary of an email thread that your manager can read in 30 seconds. Best on M365 Copilot."
 prompt: 'Write a brief overview of this email for my manager. Include: what it is about, what decision or action is needed from us, and the deadline if mentioned. Keep it to 3-4 sentences maximum. Tone: factual and concise.'
 platforms:
 - m365-copilot

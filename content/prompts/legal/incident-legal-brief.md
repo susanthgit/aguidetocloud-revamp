@@ -1,6 +1,6 @@
 ---
-title: Legal Brief for Security Incident
-description: Prepare a legal summary of a security incident
+title: "Legal Brief for Security Incident — Free Claude AI Prompt"
+description: "Legal Brief for Security Incident — free advanced AI prompt: prepare a legal summary of a security incident. Best on Claude. Tag: legal."
 prompt: >-
   Prepare a legal brief for [INCIDENT TYPE — data breach / unauthorized access / compliance violation]. Include: (1) Factual summary of what occurred, (2) Data types and individuals affected, (3) Applicable regulations and notification requirements, (4) Timeline of required actions (notification deadlines), (5) Potential legal exposure, (6) Recommended immediate legal steps. This is for internal counsel preparation.
 platforms:

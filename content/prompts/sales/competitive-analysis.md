@@ -1,6 +1,6 @@
 ---
-title: Competitive Battle Card
-description: Create a competitive comparison for sales conversations
+title: "Competitive Battle Card — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for sales teams: create a competitive comparison for sales conversations. Works in M365 Copilot. Tag: sales."
 prompt: >-
   Create a battle card comparing [OUR PRODUCT] vs [COMPETITOR]. Include: (1) Feature comparison table, (2) Where we win (3 strengths), (3) Where they win (be honest), (4) How to handle it when prospect mentions competitor, (5) Key differentiators in one sentence, (6) Customer switching stories. Format for quick reference during a call.
 platforms:

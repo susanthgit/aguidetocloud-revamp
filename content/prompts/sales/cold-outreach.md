@@ -1,6 +1,6 @@
 ---
-title: Cold Outreach Email
-description: Write a compelling cold outreach email that gets opened
+title: "Cold Outreach Email — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for sales teams: write a compelling cold outreach email that gets opened. Works in ChatGPT. Tag: sales."
 prompt: >-
   Write a cold outreach email to [PERSONA — CTO / IT Director / CFO] at [COMPANY] about [PRODUCT/SERVICE]. Hook them with a relevant insight about their industry or company. Keep it to 3 short paragraphs: (1) Personalised hook, (2) How we help companies like theirs (one specific outcome), (3) Low-pressure CTA (not asking for a meeting — offering value). Under 100 words total.
 platforms:

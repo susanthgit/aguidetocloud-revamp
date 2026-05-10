@@ -1,6 +1,6 @@
 ---
-title: Source-Grounded Q&A Session
-description: Upload documents to NotebookLM and get answers strictly based on your sources — no hallucination
+title: "Source-Grounded Q&A Session — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for teams: upload documents to NotebookLM and get answers strictly based on your sources — no hallucination. Best on M365 Copilot."
 prompt: 'Based ONLY on the documents I have uploaded as sources, answer these questions: (1) [QUESTION 1], (2) [QUESTION 2], (3) [QUESTION 3]. For each answer: cite the specific source document and section
   where you found the information. If the answer is not in my sources, say "Not found in uploaded sources" rather than making something up. After answering, suggest 5 additional questions I should ask about
   these documents that I might not have thought of.'

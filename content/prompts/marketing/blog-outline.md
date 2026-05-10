@@ -1,6 +1,6 @@
 ---
-title: Blog Post Outline
-description: Generate a structured blog post outline with SEO considerations
+title: "Blog Post Outline — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for marketers: generate a structured blog post outline with SEO considerations. Works in ChatGPT. Tag: marketing."
 prompt: >-
   Create a blog post outline for [TOPIC] targeting the keyword [KEYWORD]. Include: (1) SEO-optimised title (under 60 chars), (2) Meta description (under 155 chars), (3) H2 and H3 heading structure, (4) Key points for each section, (5) Internal linking opportunities, (6) CTA at the end. Target word count: [LENGTH — 1000 / 1500 / 2000] words.
 platforms:

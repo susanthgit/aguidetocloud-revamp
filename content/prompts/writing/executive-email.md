@@ -1,6 +1,6 @@
 ---
-title: Executive Email Writer
-description: Write a polished email suitable for C-suite recipients
+title: "Executive Email Writer — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for managers: write a polished email suitable for C-suite recipients. Works in Claude. Tags: writing, executive."
 prompt: >-
   Write an email to [EXECUTIVE — CEO / CFO / CTO / VP] about [TOPIC]. Requirements: (1) Subject line that immediately conveys the ask, (2) First sentence states the bottom line, (3) Context in 2-3 sentences maximum, (4) Clear ask or decision needed, (5) Options if applicable (recommend one), (6) Timeline. Total length: under 150 words. Executives skim — every word must earn its place.
 platforms:

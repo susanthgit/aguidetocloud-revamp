@@ -1,6 +1,6 @@
 ---
-title: Employee Headcount Analysis
-description: Analyse workforce data to identify trends in hiring, attrition, and team composition
+title: "Employee Headcount Analysis — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for HR teams: analyse workforce data to identify trends in hiring, attrition, and team composition. Best on M365 Copilot."
 prompt: 'Analyse this employee headcount data and provide: (1) Total headcount by department and location, (2) Hiring trends — new joiners per month over the past year, (3) Attrition analysis — leavers
   by department, tenure, and reason if available, (4) Diversity breakdown — gender, age bands, and tenure distribution, (5) Cost analysis — average salary by department and level, (6) Recommendations —
   flag departments with high attrition or understaffing risks. Present as a combination of tables and key insight bullets.'

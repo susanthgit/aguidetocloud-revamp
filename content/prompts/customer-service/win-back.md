@@ -1,6 +1,6 @@
 ---
-title: Customer Win-Back Email
-description: Write a re-engagement email for lapsed or churned customers
+title: "Customer Win-Back Email — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for CS teams: write a re-engagement email for lapsed or churned customers. Works in ChatGPT. Tags: customer-service, win-back."
 prompt: >-
   Write a win-back email for [CUSTOMER/SEGMENT] who [CANCELLED / STOPPED USING / WENT QUIET] [TIMEFRAME] ago. Include: (1) Acknowledge they have been away (no guilt), (2) Share what has improved since they left, (3) Offer a specific reason to return, (4) Include a limited-time incentive if appropriate, (5) Make it easy to come back (one-click CTA). Tone: welcoming, not desperate.
 platforms:

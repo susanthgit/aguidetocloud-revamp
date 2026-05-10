@@ -1,6 +1,6 @@
 ---
-title: Team Skill Gap Analysis
-description: Identify skill gaps in your team and plan development
+title: "Team Skill Gap Analysis — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for managers: identify skill gaps in your team and plan development. Works in ChatGPT. Tags: training, skill-gap."
 prompt: >-
   Conduct a skill gap analysis for [TEAM]. Steps: (1) List required skills for the team's goals, (2) Rate current team capability (1-5) for each skill, (3) Identify gaps (required vs current), (4) Prioritise gaps by business impact, (5) Recommend development actions for each (training, hiring, mentoring). Present as a gap analysis matrix.
 platforms:

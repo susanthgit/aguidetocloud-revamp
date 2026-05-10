@@ -1,6 +1,6 @@
 ---
-title: Create a Shared Project Tracker
-description: Set up a project tracker that the whole team can update in real time
+title: "Create a Shared Project Tracker — Free M365 Copilot Prompt"
+description: "Free beginner AI prompt: Create a Shared Project Tracker — set up a project tracker that the whole team can update in real time. Works in M365 Copilot."
 prompt: 'Create a project tracker table from these tasks. Columns: Task Name, Owner, Due Date, Status (Not Started / In Progress / Done / Blocked), Dependencies, Notes. Add all tasks mentioned, assign owners where specified, and set realistic due dates based on the project timeline of [DURATION].'
 platforms:
 - m365-copilot

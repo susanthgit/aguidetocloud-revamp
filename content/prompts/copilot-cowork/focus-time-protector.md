@@ -1,6 +1,6 @@
 ---
-title: Protect My Focus Time
-description: Have Cowork reschedule low-priority meetings and block deep work time in your calendar
+title: "Protect My Focus Time — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: have Cowork reschedule low-priority meetings and block deep work time in your calendar. Best on M365 Copilot."
 prompt: >-
   Review my calendar for the next two weeks. Reschedule any low-priority or optional meetings to free up at least 2 hours of uninterrupted focus time every day. Keep all meetings with [PRIORITY CONTACTS — my manager / clients / direct reports]. Send polite reschedule requests to affected attendees. Block the freed time as Focus Time in my calendar.
 platforms:

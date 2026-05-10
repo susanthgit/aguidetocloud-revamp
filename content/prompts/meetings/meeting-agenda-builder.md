@@ -1,6 +1,6 @@
 ---
-title: "Meeting Agenda Builder"
-description: "Create a structured meeting agenda with time allocations and expected outcomes"
+title: "Meeting Agenda Builder — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: create a structured meeting agenda with time allocations and expected outcomes. Works in M365 Copilot. Tag: meetings."
 prompt: "Create a structured meeting agenda for a [DURATION]-minute [MEETING TYPE] meeting. Include: (1) Meeting objective — one clear sentence, (2) Attendees and their roles, (3) Agenda items with time allocations that add up to [DURATION] minutes, (4) For each item: topic, presenter, expected outcome (decision, discussion, or FYI), (5) Pre-read materials or preparation needed, (6) Leave 5 minutes for wrap-up and action items. Topic: [TOPIC]."
 platforms: ["m365-copilot", "chatgpt", "claude", "gemini"]
 m365_surfaces: ["copilot-chat-work", "outlook", "teams"]

@@ -1,6 +1,6 @@
 ---
-title: Viral Hook Generator
-description: Generate scroll-stopping opening lines for social posts
+title: "Viral Hook Generator — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for teams: generate scroll-stopping opening lines for social posts. Works in ChatGPT. Tags: social-media, hooks."
 prompt: >-
   Generate [NUMBER — 10 / 15] scroll-stopping opening hooks for posts about [TOPIC]. Types: (1) Contrarian opinion, (2) Surprising statistic, (3) Personal story starter, (4) Question that makes people think, (5) Bold prediction. Each hook should make someone stop scrolling in under 2 seconds.
 platforms:

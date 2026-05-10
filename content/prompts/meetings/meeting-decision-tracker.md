@@ -1,6 +1,6 @@
 ---
-title: Meeting Decision Tracker
-description: Track all decisions from a meeting with rationale and impact
+title: "Meeting Decision Tracker — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for project managers: track all decisions from a meeting with rationale and impact. Works in M365 Copilot. Tag: meetings."
 prompt: >-
   Review this meeting [TRANSCRIPT/NOTES] and extract every decision made. For each: (1) Decision statement, (2) Who decided, (3) Rationale given, (4) Impact or implications, (5) Dissenting opinions if any, (6) Review or revisit date if mentioned. Present as a numbered decision log the team can reference.
 platforms:

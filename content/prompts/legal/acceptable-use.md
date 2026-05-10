@@ -1,6 +1,6 @@
 ---
-title: Acceptable Use Policy Guide
-description: Summarise an AUP into user-friendly guidelines
+title: "Acceptable Use Policy Guide — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for teams: summarise an AUP into user-friendly guidelines. Works in M365 Copilot. Tags: legal, acceptable-use."
 prompt: >-
   Summarise this AUP into a one-page guide: what you CAN do, what you CANNOT do, grey areas, monitoring notice, consequences, how to report. Understandable in 3 minutes.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Business Proposal Template
-description: Create a professional proposal document structure
+title: "Business Proposal Template — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: create a professional proposal document structure. Works in M365 Copilot. Tag: word."
 prompt: >-
   Create a business proposal template for [TYPE — consulting / project / partnership / grant]. Include: (1) Cover page, (2) Executive summary, (3) Problem statement, (4) Proposed solution, (5) Methodology and approach, (6) Timeline and deliverables, (7) Team and qualifications, (8) Pricing, (9) Terms and conditions, (10) Appendices. Format with proper headings and professional styling.
 platforms:

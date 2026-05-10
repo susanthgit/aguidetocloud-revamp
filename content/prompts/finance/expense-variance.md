@@ -1,6 +1,6 @@
 ---
-title: Expense Variance Analysis
-description: Analyse actual vs budget spending and explain the differences
+title: "Expense Variance Analysis — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: Expense Variance Analysis — analyse actual vs budget spending and explain the differences. Works in M365 Copilot."
 prompt: >-
   Analyse the expense variance between budget and actual for [PERIOD]. For each line item that varies by more than [THRESHOLD — 5% / 10% / ]: (1) State the variance amount and percentage, (2) Classify as favourable or unfavourable, (3) Explain the likely cause, (4) Recommend whether it is a one-time variance or a trend, (5) Suggest corrective action if needed. Summarise total impact.
 platforms:

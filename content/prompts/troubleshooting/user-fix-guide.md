@@ -1,6 +1,6 @@
 ---
-title: End User Self-Service Fix Guide
-description: Write a simple troubleshooting guide for non-technical users
+title: "End User Self-Service Fix Guide — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for IT admins: write a simple troubleshooting guide for non-technical users. Works in ChatGPT. Tags: troubleshooting, self-service."
 prompt: >-
   Write a self-help troubleshooting guide for [ISSUE] that a non-technical user can follow. Structure: (1) What you are experiencing (symptom description), (2) Try this first (easiest fix), (3) If that did not work, try this (next steps), (4) Still stuck? Contact IT (what info to provide). Use simple language, include where to click, and add helpful screenshots descriptions.
 platforms:

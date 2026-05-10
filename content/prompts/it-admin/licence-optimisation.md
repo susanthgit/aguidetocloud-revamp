@@ -1,6 +1,6 @@
 ---
-title: M365 Licence Optimisation Report
-description: Analyse Microsoft 365 licence usage and recommend cost savings
+title: "M365 Licence Optimisation Report — Free M365 Copilot Prompt"
+description: "Free advanced AI prompt for IT admins: analyse Microsoft 365 licence usage and recommend cost savings. Works in M365 Copilot. Tags: it-admin, licensing."
 prompt: 'Create a licence optimisation report for our Microsoft 365 tenant. Analyse: (1) Licences assigned vs actively used (last 90 days), (2) Users with premium licences who only use basic features, (3) Shared mailboxes or service accounts with unnecessary licences, (4) Recommended downgrades or removals, (5) Estimated monthly savings. Present as a table with user counts and cost impact.'
 platforms:
 - m365-copilot

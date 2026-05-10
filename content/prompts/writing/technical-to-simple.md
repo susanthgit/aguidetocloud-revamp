@@ -1,6 +1,6 @@
 ---
-title: Technical to Simple Translator
-description: Rewrite technical content for a non-technical audience
+title: "Technical to Simple Translator — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for comms teams: rewrite technical content for a non-technical audience. Works in Claude. Tags: writing, simplification."
 prompt: >-
   Rewrite this technical content for a non-technical audience: [PASTE CONTENT]. Rules: (1) Replace every acronym with a plain English equivalent (or define on first use), (2) Use analogies for complex concepts, (3) Break long sentences into two shorter ones, (4) Remove unnecessary qualifications and caveats, (5) Add examples for abstract ideas. Target: understandable by someone with no background in this field.
 platforms:

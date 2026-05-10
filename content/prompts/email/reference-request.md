@@ -1,6 +1,6 @@
 ---
-title: Reference Request Email
-description: Ask someone to be a reference professionally
+title: "Reference Request Email — Free M365 Copilot AI Prompt"
+description: "Reference Request Email — free beginner AI prompt: ask someone to be a reference professionally. Best on M365 Copilot. Tag: email."
 prompt: >-
   Draft an email asking [PERSON] to be a reference for [OPPORTUNITY]. Include: why you are asking them specifically, what the opportunity is, what topics they might be asked about, and make declining easy.
 platforms:

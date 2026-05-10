@@ -1,6 +1,6 @@
 ---
-title: Issue Escalation Email
-description: Draft a clear, professional escalation email that gets results without burning bridges
+title: "Issue Escalation Email — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for IT admins: draft a clear, professional escalation email that gets results without burning bridges. Best on M365 Copilot."
 prompt: 'Draft an escalation email about [ISSUE] to [RECIPIENT/ROLE]. Structure it as: (1) Subject line that conveys urgency without alarm, (2) Brief context — what the issue is and when it started, (3)
   Impact — how this is affecting the business/team/customer right now, (4) Actions already taken — what has been tried so far, (5) Specific ask — exactly what you need from the recipient, (6) Deadline —
   when a response or action is needed by. Tone: factual, urgent but professional, solution-oriented. Avoid blame.'

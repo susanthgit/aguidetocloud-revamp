@@ -1,6 +1,6 @@
 ---
-title: Lunch and Learn Session Plan
-description: Plan an engaging lunch and learn session
+title: "Lunch and Learn Session Plan — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for teams: plan an engaging lunch and learn session. Works in ChatGPT. Tags: training, lunch-learn."
 prompt: >-
   Plan a [DURATION — 30 / 45]-minute lunch and learn on [TOPIC] for [AUDIENCE]. Include: (1) Catchy title and promotion blurb, (2) Learning objectives (2-3), (3) Agenda with timing, (4) Interactive element (demo, poll, Q&A), (5) Key takeaways (3 max), (6) Resources for further learning. Keep it informal and engaging — people are giving up their lunch break.
 platforms:

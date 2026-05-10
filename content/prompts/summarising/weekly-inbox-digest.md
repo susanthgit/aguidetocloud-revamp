@@ -1,6 +1,6 @@
 ---
-title: Weekly Inbox Digest
-description: Get a prioritised summary of your week's emails with action items and follow-ups
+title: "Weekly Inbox Digest — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt: Weekly Inbox Digest — get a prioritised summary of your week's emails with action items and follow-ups. Works in M365 Copilot."
 prompt: 'Summarise my emails from the past week. Group them into: (1) Urgent — needs response today, (2) Action Required — needs response this week, (3) FYI — informational only. For each email list the
   sender, subject, and one-line summary. Highlight any emails where I was directly asked a question or given a deadline.'
 platforms:

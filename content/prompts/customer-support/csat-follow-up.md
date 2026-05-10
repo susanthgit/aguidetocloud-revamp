@@ -1,6 +1,6 @@
 ---
-title: CSAT Follow-Up Message
-description: Draft a follow-up message based on customer satisfaction feedback
+title: "CSAT Follow-Up Message — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for support agents: draft a follow-up message based on customer satisfaction feedback. Works in ChatGPT. Tags: support, csat."
 prompt: >-
   Draft a follow-up message to [CUSTOMER] who gave a [SCORE — 1-2 negative / 3 neutral / 4-5 positive] CSAT score after their support interaction about [ISSUE]. For negative: empathise, ask what went wrong, offer to make it right. For positive: thank them, ask for a testimonial. Tone: genuine, not scripted.
 platforms:

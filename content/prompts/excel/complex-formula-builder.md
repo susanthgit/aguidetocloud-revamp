@@ -1,6 +1,6 @@
 ---
-title: Build a Complex Formula
-description: Describe what you need in plain English and get the right Excel formula
+title: "Build a Complex Formula — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for analysts: describe what you need in plain English and get the right Excel formula. Works in M365 Copilot. Tag: excel."
 prompt: 'Create a formula that [DESCRIBE WHAT YOU NEED — e.g., calculates the priority score based on severity (High=3, Medium=2, Low=1) multiplied by the number of days open, then sorts into Critical/High/Medium/Low tiers]. Explain how the formula works step by step so I can modify it later.'
 platforms:
 - m365-copilot

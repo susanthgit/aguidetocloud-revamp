@@ -1,6 +1,6 @@
 ---
-title: Project Status Dashboard Design
-description: Design a project status reporting dashboard
+title: "Project Status Dashboard Design — Free M365 Copilot Prompt"
+description: "Free intermediate AI prompt for project managers: design a project status reporting dashboard. Works in M365 Copilot. Tag: project-management."
 prompt: >-
   Design a project status dashboard for [PROJECT/PORTFOLIO]. Include: (1) Overall status indicator (RAG), (2) Timeline progress with milestone markers, (3) Budget tracker (planned vs actual), (4) Risk summary with top 3 risks, (5) Key metrics and KPIs, (6) Recent accomplishments, (7) Upcoming milestones (next 2 weeks), (8) Decisions needed. One-page format for weekly reporting.
 platforms:

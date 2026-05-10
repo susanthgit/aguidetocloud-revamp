@@ -1,6 +1,6 @@
 ---
-title: A/B Test Results Analyser
-description: Analyse A/B test results for statistical significance
+title: "A/B Test Results Analyser — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for analysts: analyse A/B test results for statistical significance. Works in M365 Copilot. Tags: analyst, ab-test."
 prompt: >-
   Analyse this A/B test: Control [A METRICS] vs Variant [B METRICS]. Determine: (1) Statistical significance (p-value), (2) Confidence interval, (3) Effect size, (4) Sample size adequacy, (5) Winner recommendation with caveats, (6) Whether to continue testing.
 platforms:

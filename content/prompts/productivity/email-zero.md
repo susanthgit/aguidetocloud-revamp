@@ -1,6 +1,6 @@
 ---
-title: Inbox Zero Strategy
-description: Create a system for processing email efficiently
+title: "Inbox Zero Strategy — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for teams: create a system for processing email efficiently. Works in M365 Copilot. Tag: productivity."
 prompt: >-
   Create a personalised inbox management strategy for me. I receive approximately [NUMBER] emails per day. My biggest email challenges: [CHALLENGES]. Design: (1) Rules for what to respond to immediately vs batch, (2) Folder or label structure, (3) Templates for common responses, (4) Daily email processing schedule, (5) Rules I can automate. Goal: process all email in under [TIME] minutes per day.
 platforms:

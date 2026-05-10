@@ -1,6 +1,6 @@
 ---
-title: Customer Onboarding Check-In
-description: Draft a proactive check-in email during customer onboarding
+title: "Customer Onboarding Check-In — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for CS teams: draft a proactive check-in email during customer onboarding. Works in ChatGPT. Tag: support."
 prompt: >-
   Draft a proactive check-in email for [CUSTOMER] who is [DAYS] days into onboarding with [PRODUCT]. Include: (1) Warm personal check-in, (2) Ask how their experience has been, (3) Share a tip they probably have not discovered, (4) Offer a quick call if they need help, (5) Link to helpful resource. Tone: caring, not salesy. Under 100 words.
 platforms:

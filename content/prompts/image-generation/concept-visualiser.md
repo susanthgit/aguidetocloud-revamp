@@ -1,6 +1,6 @@
 ---
-title: Abstract Concept Visualiser
-description: Create visual metaphors for abstract business concepts
+title: "Abstract Concept Visualiser — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for teams: create visual metaphors for abstract business concepts. Works in M365 Copilot. Tag: image-generation."
 prompt: >-
   Create an image prompt that visualises [ABSTRACT CONCEPT — digital transformation / team collaboration / innovation / data security / growth]. The image should: (1) Use visual metaphor not literal representation, (2) Style: [STYLE — corporate / modern / artistic], (3) Colour mood: [MOOD — energetic / calming / powerful / futuristic], (4) Work as a hero image for a [USE — presentation / report / website]. Provide 3 different metaphor approaches.
 platforms:

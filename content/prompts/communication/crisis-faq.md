@@ -1,6 +1,6 @@
 ---
-title: Crisis FAQ Generator
-description: Create an FAQ for an emerging crisis
+title: "Crisis FAQ Generator — Free Claude AI Prompt"
+description: "Crisis FAQ Generator — free advanced AI prompt: create an FAQ for an emerging crisis. Best on Claude. Tag: communication."
 prompt: >-
   Create an urgent FAQ for [CRISIS] targeting [AUDIENCE]. Include: (1) What happened, (2) 15-20 anticipated questions by frequency, (3) Approved answers, (4) Default response for unlisted questions, (5) Spokesperson contacts. Update as new info becomes available.
 platforms:

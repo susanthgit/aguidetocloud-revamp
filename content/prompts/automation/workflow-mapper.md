@@ -1,6 +1,6 @@
 ---
-title: Manual Process to Automation Map
-description: Convert a manual process into an automation design
+title: "Manual Process to Automation Map — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for teams: convert a manual process into an automation design. Works in ChatGPT. Tag: automation."
 prompt: >-
   Analyse this manual process: [DESCRIBE PROCESS]. Map it for automation: (1) Current steps with time per step, (2) Which steps can be automated vs need human judgment, (3) Recommended automation tool (Power Automate, script, API), (4) Trigger event, (5) Data flow between steps, (6) Exception handling, (7) Estimated time savings. Present as a process flow.
 platforms:

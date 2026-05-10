@@ -1,6 +1,6 @@
 ---
-title: Internal Audit Preparation Checklist
-description: Prepare for an upcoming internal or external audit
+title: "Internal Audit Preparation Checklist — Free AI Prompt"
+description: "Free intermediate AI prompt for finance teams: prepare for an upcoming internal or external audit. Works in M365 Copilot. Tag: finance."
 prompt: >-
   Create an audit preparation checklist for [AUDIT TYPE — financial / IT / compliance / SOC2]. Include: (1) Documents to prepare and organise, (2) Access and permissions to set up for auditors, (3) Key contacts and their responsibilities, (4) Common findings from previous audits to pre-check, (5) Timeline from 4 weeks before to audit day, (6) Post-audit follow-up actions. Assign owners to each item.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: OKR Generator
-description: Create measurable objectives and key results
+title: "OKR Generator — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for managers: create measurable objectives and key results. Works in ChatGPT. Tags: planning, okr."
 prompt: >-
   Generate OKRs for [TEAM/DEPARTMENT] for [PERIOD — Q1/Q2/H1/annual]. Create [NUMBER — 3 / 4] objectives, each with 3-4 key results. Objectives should be ambitious and qualitative. Key results should be specific, measurable, and have a clear target number. Align with company goal: [COMPANY GOAL]. Include a confidence rating (30/50/70 percent) for each KR.
 platforms:

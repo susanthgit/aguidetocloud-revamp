@@ -1,6 +1,6 @@
 ---
-title: Team Capacity Planning
-description: Calculate team capacity and plan workload allocation
+title: "Team Capacity Planning — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: calculate team capacity and plan workload allocation. Works in M365 Copilot. Tag: planning."
 prompt: >-
   Help me plan capacity for [TEAM] for [PERIOD]. We have [NUMBER] team members with these roles: [ROLES]. Available working hours: [HOURS/WEEK per person] minus meetings, admin, and leave. Map our committed projects: [LIST PROJECTS] against available capacity. Identify: over-allocation, under-allocation, and hiring needs. Present as a visual capacity chart.
 platforms:

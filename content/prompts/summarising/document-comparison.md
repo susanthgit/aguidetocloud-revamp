@@ -1,6 +1,6 @@
 ---
-title: Document Comparison Summary
-description: Compare two documents and highlight differences
+title: "Document Comparison Summary — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: compare two documents and highlight differences. Works in M365 Copilot. Tag: summarising."
 prompt: >-
   Compare these two versions of [DOCUMENT]. Identify: (1) What was added, (2) What was removed, (3) What was changed, (4) Impact of changes, (5) Your recommendation on which version is better and why.
 platforms:

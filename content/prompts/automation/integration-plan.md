@@ -1,6 +1,6 @@
 ---
-title: System Integration Plan
-description: Design how two systems should connect and exchange data
+title: "System Integration Plan — Free Claude AI Prompt"
+description: "Free advanced AI prompt for IT admins: design how two systems should connect and exchange data. Works in Claude. Tags: automation, integration."
 prompt: >-
   Design an integration between [SYSTEM A] and [SYSTEM B] for [BUSINESS OUTCOME]. Include: (1) Data fields to sync and direction, (2) Sync frequency (real-time, scheduled, on-demand), (3) Authentication method, (4) Error handling and conflict resolution, (5) Data transformation rules, (6) Testing approach, (7) Monitoring and alerting. Consider security and data privacy.
 platforms:

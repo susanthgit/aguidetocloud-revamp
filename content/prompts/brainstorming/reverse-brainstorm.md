@@ -1,6 +1,6 @@
 ---
-title: Reverse Brainstorm
-description: Find solutions by brainstorming how to make the problem worse
+title: "Reverse Brainstorm — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for managers: find solutions by brainstorming how to make the problem worse. Works in Claude. Tags: brainstorming, reverse."
 prompt: >-
   Help me reverse-brainstorm [PROBLEM/CHALLENGE]. Instead of solving it, list 10 ways to make this problem dramatically worse. Then for each, reverse engineer the opposite into a potential solution. Present as a table: Way to Make it Worse then Reversed Solution then Feasibility.
 platforms:

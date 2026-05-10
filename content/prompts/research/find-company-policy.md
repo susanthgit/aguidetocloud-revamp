@@ -1,6 +1,6 @@
 ---
-title: Find and Summarise Company Policy
-description: Quickly find and summarise any internal company policy or procedure document
+title: "Find and Summarise Company Policy — Free M365 Copilot Prompt"
+description: "Free beginner AI prompt for IT admins: quickly find and summarise any internal company policy or procedure document. Best on M365 Copilot."
 prompt: 'Find our company policy on [TOPIC] from SharePoint or shared documents. Summarise the key points in plain language, including: (1) What the policy requires, (2) Who it applies to, (3) Any exceptions
   or special cases, (4) Who to contact for questions, (5) When it was last updated. If multiple versions exist, use the most recent one.'
 platforms:

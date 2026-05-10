@@ -1,6 +1,6 @@
 ---
-title: Presentation Visual
-description: Generate a clean, professional visual or diagram for a presentation slide
+title: "Presentation Visual — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: Presentation Visual — generate a clean, professional visual or diagram for a presentation slide. Works in M365 Copilot."
 prompt: 'Create a visual for a presentation slide about [TOPIC]. Requirements: (1) Style: clean, modern, professional — suitable for a corporate presentation, (2) Visual type: [CHOOSE — infographic-style
   diagram / abstract concept illustration / isometric scene / icon-based layout], (3) Colour scheme: [COLOURS or "corporate blue and white"], (4) The visual should clearly communicate [KEY CONCEPT], (5)
   Clean background (white or transparent-friendly), (6) Simple enough to be understood in 3 seconds from the back of a room. Do NOT include any text, numbers, or labels — those will be added in PowerPoint.'

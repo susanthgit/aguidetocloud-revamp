@@ -1,6 +1,6 @@
 ---
-title: Sentiment Analysis
-description: Analyse sentiment from feedback
+title: "Sentiment Analysis — Free M365 Copilot AI Prompt"
+description: "Sentiment Analysis — free intermediate AI prompt: analyse sentiment from feedback. Best on M365 Copilot. Tag: analyst."
 prompt: >-
   Classify feedback as positive, neutral, or negative. Show: sentiment distribution, positive themes, negative themes, sentiment trend, priority action areas.
 platforms:

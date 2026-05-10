@@ -1,6 +1,6 @@
 ---
-title: Sales Follow-Up Email Sequence
-description: Create a multi-touch follow-up sequence after a demo or meeting
+title: "Sales Follow-Up Email Sequence — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for sales teams: create a multi-touch follow-up sequence after a demo or meeting. Works in M365 Copilot. Tag: sales."
 prompt: >-
   Create a 5-email follow-up sequence after a [DEMO/MEETING] with [PROSPECT NAME] at [COMPANY]. Email 1: Same day thank you + recap. Email 2: Day 3 value-add content. Email 3: Day 7 case study share. Email 4: Day 14 check-in with urgency. Email 5: Day 21 final outreach. Each email under 100 words. Tone: helpful, not pushy.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Live Meeting Decisions Tracker
-description: Use Claude Cowork during a meeting to capture decisions, actions, and disagreements in real time
+title: "Live Meeting Decisions Tracker — Free Claude AI Prompt"
+description: "Free beginner AI prompt: use Claude Cowork during a meeting to capture decisions, actions, and disagreements in real time. Best on Claude."
 prompt: >-
   We are in a meeting about [TOPIC]. As we discuss, track: (1) Decisions made (with who decided and rationale), (2) Action items (with owner and deadline), (3) Open questions that need follow-up, (4) Points of disagreement and how they were resolved. Present as a clean table the whole team can see and verify during the meeting. Update in real time as we discuss.
 platforms:

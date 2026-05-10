@@ -1,6 +1,6 @@
 ---
-title: Meeting Recap Email from Transcript
-description: Turn a Teams meeting transcript into a professional recap email
+title: "Meeting Recap Email from Transcript — Free AI Prompt"
+description: "Free beginner AI prompt for managers: turn a Teams meeting transcript into a professional recap email. Works in M365 Copilot. Tag: teams."
 prompt: >-
   Turn this Teams meeting transcript into a recap email for [RECIPIENTS]. Include: (1) Meeting purpose and attendees, (2) Key discussion points (3-5 bullets), (3) Decisions made, (4) Action items table (task, owner, deadline), (5) Next meeting date if scheduled. Tone: professional, concise. Under 200 words.
 platforms:

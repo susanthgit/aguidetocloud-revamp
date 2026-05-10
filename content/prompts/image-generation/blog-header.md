@@ -1,6 +1,6 @@
 ---
-title: Blog Header Image Generator
-description: Create eye-catching header images for blog posts
+title: "Blog Header Image Generator — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for teams: create eye-catching header images for blog posts. Works in M365 Copilot. Tag: image-generation."
 prompt: >-
   Create an image prompt for a blog header about [TOPIC]. The image should: (1) Be eye-catching and relevant to the topic, (2) Work at 1200x630 (OG image size), (3) Use [STYLE — photorealistic / illustration / abstract / minimal], (4) Avoid text (will be overlaid separately), (5) Use colours that complement [BRAND COLOURS]. Provide prompt and negative prompt.
 platforms:

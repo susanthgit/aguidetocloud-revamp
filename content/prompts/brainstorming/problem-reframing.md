@@ -1,6 +1,6 @@
 ---
-title: Problem Reframing Exercise
-description: Reframe a problem from multiple perspectives to find new solutions
+title: "Problem Reframing Exercise — Free Claude AI Prompt"
+description: "Free advanced AI prompt for managers: reframe a problem from multiple perspectives to find new solutions. Works in Claude. Tags: brainstorming, reframing."
 prompt: >-
   Help me reframe this problem: [DESCRIBE PROBLEM]. Look at it from: (1) The customer perspective, (2) The competitor perspective, (3) A completely different industry, (4) 10x scale (what if the problem was 10x bigger or smaller?), (5) Reverse — what if we caused this problem deliberately? For each reframe, suggest one insight or solution that would not be obvious from the original framing.
 platforms:

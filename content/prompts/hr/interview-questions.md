@@ -1,6 +1,6 @@
 ---
-title: Interview Question Generator
-description: Create role-specific interview questions with scoring rubrics
+title: "Interview Question Generator — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for teams: create role-specific interview questions with scoring rubrics. Works in ChatGPT. Tags: hr, hiring."
 prompt: 'Generate 10 interview questions for a [ROLE] candidate. Include: 3 technical/skill questions, 3 behavioural (STAR format), 2 situational, and 2 culture-fit questions. For each question provide: what good looks like, what a red flag looks like, and a 1-5 scoring guide.'
 platforms:
 - m365-copilot

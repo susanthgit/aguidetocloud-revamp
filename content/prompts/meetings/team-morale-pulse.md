@@ -1,6 +1,6 @@
 ---
-title: Team Morale Pulse Check
-description: Conduct a structured team wellbeing check using thoughtful questions and analysis
+title: "Team Morale Pulse Check — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: conduct a structured team wellbeing check using thoughtful questions and analysis. Best on M365 Copilot."
 prompt: 'Help me run a team morale pulse check. Create: (1) A set of 8-10 anonymous survey questions covering workload, team dynamics, growth opportunities, communication, and overall satisfaction — use
   a mix of 1-5 scale and open-ended, (2) An introduction message explaining why we are doing this and that it is genuinely anonymous, (3) A framework for analysing the results — what scores indicate action
   needed, (4) Response templates for common scenarios: high morale (celebrate), mixed signals (investigate), low morale (urgent action plan), (5) Follow-up actions — specific interventions for each concern

@@ -1,6 +1,6 @@
 ---
-title: Project Status Update Email
-description: Write a concise project status email
+title: "Project Status Update Email — Free M365 Copilot AI Prompt"
+description: "Project Status Update Email — free beginner AI prompt: write a concise project status email. Best on M365 Copilot. Tag: writing."
 prompt: >-
   Write a project update for [PROJECT]. Include: current status (RAG), accomplishments this period, upcoming milestones, risks, and decisions needed. One page maximum.
 platforms:

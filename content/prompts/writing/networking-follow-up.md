@@ -1,6 +1,6 @@
 ---
-title: Networking Follow-Up Email
-description: Write a memorable follow-up after meeting someone at an event or conference
+title: "Networking Follow-Up Email — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt: Networking Follow-Up Email — write a memorable follow-up after meeting someone at an event or conference. Works in M365 Copilot."
 prompt: >-
   Draft a follow-up email to [PERSON] I met at [EVENT] on [DATE]. Reference our conversation about [TOPIC]. Include: personal connection point, one value-add (article, introduction, resource), and a low-pressure CTA (coffee chat, LinkedIn connect). Under 100 words. Tone: genuine, not transactional.
 platforms:

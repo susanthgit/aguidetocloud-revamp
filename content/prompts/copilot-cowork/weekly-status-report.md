@@ -1,6 +1,6 @@
 ---
-title: Compile Weekly Status Report
-description: Have Cowork gather updates from emails, Teams, and files into a single status report
+title: "Compile Weekly Status Report — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: have Cowork gather updates from emails, Teams, and files into a single status report. Best on M365 Copilot."
 prompt: >-
   Compile my weekly status report for [WEEK/PERIOD]. Gather: (1) Action items completed from my emails and Teams chats, (2) Key decisions made in meetings this week, (3) Blockers or escalations raised, (4) Plans for next week based on my calendar. Write it up in Word as a formatted status report and email it to [MANAGER/TEAM] by end of day Friday.
 platforms:

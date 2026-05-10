@@ -1,6 +1,6 @@
 ---
-title: Channel Announcement Post
-description: Draft a professional Teams channel announcement for a change, update, or new initiative
+title: "Channel Announcement Post — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for IT admins: draft a professional Teams channel announcement for a change, update, or new initiative. Best on M365 Copilot."
 prompt: 'Draft a Teams channel post announcing [CHANGE OR UPDATE]. Include: what is changing, when it takes effect, who is affected, what they need to do, and where to ask questions. Use a professional but approachable tone. Add relevant emoji for visual scanning. Keep it under 200 words.'
 platforms:
 - m365-copilot

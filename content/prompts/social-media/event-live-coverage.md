@@ -1,6 +1,6 @@
 ---
-title: Live Event Social Coverage Plan
-description: Plan social media coverage for a conference or event
+title: "Live Event Social Coverage Plan — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for marketers: plan social media coverage for a conference or event. Works in ChatGPT. Tags: social-media, events."
 prompt: >-
   Create a social media coverage plan for [EVENT NAME] on [DATE]. Include: (1) Pre-event teaser posts (1 week before), (2) Day-of posting schedule with templates for key moments, (3) Live-posting guidelines (what to capture, format, hashtags), (4) Post-event summary thread, (5) Follow-up engagement plan. Platform: [PLATFORM]. Include a shot list for photos.
 platforms:

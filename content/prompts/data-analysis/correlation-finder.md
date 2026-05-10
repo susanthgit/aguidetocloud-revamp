@@ -1,6 +1,6 @@
 ---
-title: Correlation Finder
-description: Identify relationships between variables
+title: "Correlation Finder — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for analysts: identify relationships between variables. Works in M365 Copilot. Tags: data-analysis, correlation."
 prompt: >-
   Analyse for correlations between [VARIABLES]. For each significant one: (1) State the relationship, (2) Strength, (3) Direction, (4) Possible explanations, (5) Caveats. Create a correlation matrix.
 platforms:

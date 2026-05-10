@@ -1,6 +1,6 @@
 ---
-title: Executive Summary Generator
-description: Condense a long document into a crisp executive summary with key takeaways
+title: "Executive Summary Generator — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for executives: condense a long document into a crisp executive summary with key takeaways. Works in M365 Copilot. Tag: word."
 prompt: 'Summarise this document into an executive summary for [AUDIENCE — leadership / board / client]. Include: (1) The headline finding or recommendation (one sentence), (2) 3-5 key takeaways as bullet points, (3) Recommended next steps. Keep the entire summary under 200 words. Prioritise decisions over details.'
 platforms:
 - m365-copilot

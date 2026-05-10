@@ -1,6 +1,6 @@
 ---
-title: Project Kickoff Package
-description: Have Cowork create a complete project kickoff bundle — charter, timeline, RACI, and kick-off email
+title: "Project Kickoff Package — Free M365 Copilot AI Prompt"
+description: "Free AI prompt: have Cowork create a complete project kickoff bundle — charter, timeline, RACI, and kick-off email. Works in M365 Copilot. Tag: cowork."
 prompt: >-
   Create a project kickoff package for [PROJECT NAME]. Include: (1) A project charter in Word with objectives, scope, success criteria, and risks, (2) A timeline in Excel with phases, milestones, and owners, (3) A RACI matrix for [TEAM MEMBERS], (4) A 5-slide kickoff deck in PowerPoint, (5) A kickoff meeting invite for [DATE] with the charter attached. Base the scope on [SOURCE — these notes / this brief / this email thread].
 platforms:

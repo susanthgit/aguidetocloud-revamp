@@ -1,6 +1,6 @@
 ---
-title: Forecast Next Period
-description: Project future values based on historical patterns and state assumptions
+title: "Forecast Next Period — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt: Forecast Next Period — project future values based on historical patterns and state assumptions. Works in M365 Copilot."
 prompt: 'Based on this historical data, forecast [METRIC] for the next [PERIOD — 3 months / 6 months / quarter]. Show: (1) The predicted values with confidence range, (2) The method and assumptions used, (3) Key factors that could change the forecast, (4) A chart with the historical trend and projected values. State your confidence level.'
 platforms:
 - m365-copilot

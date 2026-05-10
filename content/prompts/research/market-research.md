@@ -1,6 +1,6 @@
 ---
-title: Market Research Brief
-description: Conduct quick market research on an industry or segment
+title: "Market Research Brief — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for analysts: conduct quick market research on an industry or segment. Works in M365 Copilot. Tag: research."
 prompt: >-
   Research the market for [INDUSTRY/PRODUCT/SEGMENT]. Cover: (1) Market size and growth rate, (2) Key players and market share, (3) Customer segments, (4) Industry trends (3-5), (5) Regulatory considerations, (6) Barriers to entry, (7) Opportunities for new entrants. Cite sources and note confidence levels. Present as an executive brief.
 platforms:

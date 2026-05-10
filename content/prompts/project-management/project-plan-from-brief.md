@@ -1,6 +1,6 @@
 ---
-title: Project Plan from Brief
-description: Turn a high-level project brief into a detailed project plan with phases, milestones, and owners
+title: "Project Plan from Brief — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: turn a high-level project brief into a detailed project plan with phases, milestones, and owners. Best on M365 Copilot."
 prompt: 'Create a detailed project plan from this brief. Include: (1) Project Overview — objective, scope, success criteria, (2) Phases — break the project into 3-5 logical phases, (3) Tasks — list tasks
   within each phase with estimated duration, (4) Milestones — key checkpoints with dates, (5) Dependencies — which tasks depend on others, (6) Resource Requirements — roles needed for each phase, (7) Risk
   Register — top 5 risks with likelihood, impact, and mitigation, (8) Communication Plan — who gets updated, how often, through what channel. Present as a structured document with tables.'

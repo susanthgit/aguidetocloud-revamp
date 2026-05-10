@@ -1,6 +1,6 @@
 ---
-title: Weekly Status from Notebook Pages
-description: Compile notes from multiple pages into a weekly status summary
+title: "Weekly Status from Notebook Pages — Free M365 Copilot Prompt"
+description: "Free intermediate AI prompt: Weekly Status from Notebook Pages — compile notes from multiple pages into a weekly status summary. Works in M365 Copilot."
 prompt: 'Summarise the notes from this week into a weekly status update. Include: (1) What was accomplished this week, (2) What is in progress, (3) Blockers or risks, (4) Plans for next week. Keep it concise — this is for my [AUDIENCE — manager / team / stakeholders].'
 platforms:
 - m365-copilot

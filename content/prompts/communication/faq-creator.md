@@ -1,6 +1,6 @@
 ---
-title: FAQ Document Creator
-description: Create an FAQ from anticipated questions
+title: "FAQ Document Creator — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for comms teams: create an FAQ from anticipated questions. Works in M365 Copilot. Tag: communication."
 prompt: >-
   Create [NUMBER] FAQ for [TOPIC] for [AUDIENCE]. Cover: basic questions, how it affects them, technical questions, concerns, next steps. 2-3 sentences per answer.
 platforms:

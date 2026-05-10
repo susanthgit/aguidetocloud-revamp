@@ -1,6 +1,6 @@
 ---
-title: "Meeting Notes to Action Items"
-description: "Extract clear action items with owners and deadlines from messy meeting notes"
+title: "Meeting Notes to Action Items — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: extract clear action items with owners and deadlines from messy meeting notes. Best on M365 Copilot."
 prompt: "Review these meeting notes and extract all action items. For each action item, provide: (1) Task — what needs to be done, (2) Owner — who is responsible, (3) Deadline — when it's due (if mentioned), (4) Priority — High, Medium, or Low based on context. Format as a clean table. If no deadline was mentioned, suggest a reasonable one based on the urgency implied."
 platforms: ["m365-copilot", "chatgpt", "claude", "gemini"]
 m365_surfaces: ["teams", "copilot-chat-work", "onenote"]

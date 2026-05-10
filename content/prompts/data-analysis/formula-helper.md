@@ -1,6 +1,6 @@
 ---
-title: Excel Formula Helper
-description: Get the right Excel formula explained step by step for any calculation you need
+title: "Excel Formula Helper — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt: Excel Formula Helper — get the right Excel formula explained step by step for any calculation you need. Works in M365 Copilot."
 prompt: 'I need an Excel formula to [DESCRIBE WHAT YOU WANT TO CALCULATE]. My data is structured as: [DESCRIBE YOUR COLUMNS/LAYOUT]. Please provide: (1) The exact formula I should use, (2) A step-by-step
   explanation of how the formula works, (3) Where to place it in my spreadsheet, (4) Any helper columns needed, (5) Common errors to watch for, (6) An alternative formula approach if there is one. If the
   task is complex, break it into multiple simpler formulas rather than one giant nested formula.'

@@ -1,6 +1,6 @@
 ---
-title: Company Policy Draft
-description: Draft a professional company policy document from scratch or update an existing one
+title: "Company Policy Draft — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for HR teams: draft a professional company policy document from scratch or update an existing one. Best on M365 Copilot."
 prompt: 'Draft a company policy document for [POLICY TOPIC]. Include these sections: (1) Purpose — why this policy exists, (2) Scope — who it applies to, (3) Definitions — key terms explained, (4) Policy
   Statement — the actual rules and requirements, (5) Procedures — step-by-step process for compliance, (6) Responsibilities — who enforces and who follows, (7) Exceptions — how to request exceptions, (8)
   Review Schedule — when this policy will be reviewed. Use clear, unambiguous language. Tone: professional, formal, legally sound.'

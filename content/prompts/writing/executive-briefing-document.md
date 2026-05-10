@@ -1,6 +1,6 @@
 ---
-title: Executive Briefing Document
-description: Create a polished executive briefing from scattered notes, emails, and data points
+title: "Executive Briefing Document — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for executives: create a polished executive briefing from scattered notes, emails, and data points. Best on M365 Copilot."
 prompt: 'Draft an executive briefing document about [TOPIC] for [AUDIENCE]. Structure it as: (1) Executive Summary — 3 sentences max, (2) Background — what led to this situation, (3) Current State — where
   things stand today with key metrics, (4) Options & Recommendations — 2-3 options with pros/cons, (5) Recommended Action — one clear recommendation with reasoning, (6) Next Steps — specific actions with
   owners and timelines. Keep the total under 2 pages. Tone: authoritative, concise, fact-based.'

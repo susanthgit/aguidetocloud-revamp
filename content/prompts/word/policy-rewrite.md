@@ -1,6 +1,6 @@
 ---
-title: Policy Plain English Rewrite
-description: Rewrite a complex policy document in plain, accessible English
+title: "Policy Plain English Rewrite — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for comms teams: rewrite a complex policy document in plain, accessible English. Works in M365 Copilot. Tag: word."
 prompt: >-
   Rewrite this policy document in plain English: [PASTE OR DESCRIBE POLICY]. Keep all requirements and obligations exactly the same but: (1) Replace jargon with simple words, (2) Break long sentences into shorter ones, (3) Use bullet points instead of dense paragraphs, (4) Add headings for each major section, (5) Include a quick reference summary at the top. Target: readable by someone with no specialist knowledge.
 platforms:

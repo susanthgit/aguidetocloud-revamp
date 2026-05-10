@@ -1,6 +1,6 @@
 ---
-title: Create an Insightful Chart
-description: Ask Copilot to build the right chart for your data and explain what it shows
+title: "Create an Insightful Chart — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for analysts: ask Copilot to build the right chart for your data and explain what it shows. Best on M365 Copilot."
 prompt: 'Create a chart that best shows [WHAT YOU WANT TO VISUALISE — trends over time / comparison between categories / distribution of values] from this data. Choose the most appropriate chart type. Add clear labels, a title, and a legend. Then explain in one sentence what the chart tells us.'
 platforms:
 - m365-copilot

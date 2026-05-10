@@ -1,6 +1,6 @@
 ---
-title: Rewrite in Plain English
-description: Simplify complex or jargon-heavy text for a non-technical audience
+title: "Rewrite in Plain English — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: Rewrite in Plain English — simplify complex or jargon-heavy text for a non-technical audience. Works in M365 Copilot."
 prompt: 'Rewrite this section in plain English for [AUDIENCE — non-technical staff / customers / new hires]. Remove jargon and acronyms (or explain them on first use). Keep the meaning exactly the same but make it easy to understand on first read. Aim for an 8th-grade reading level.'
 platforms:
 - m365-copilot

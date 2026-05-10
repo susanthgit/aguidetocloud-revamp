@@ -1,6 +1,6 @@
 ---
-title: Post-Mortem Facilitator
-description: Run a blameless post-mortem
+title: "Post-Mortem Facilitator — Free M365 Copilot AI Prompt"
+description: "Post-Mortem Facilitator — free intermediate AI prompt: run a blameless post-mortem. Best on M365 Copilot. Tag: claude-cowork."
 prompt: >-
   Facilitate a blameless post-mortem for [INCIDENT]. Each person adds their timeline. Merge into unified timeline. Identify contributing factors. Define prevention actions.
 platforms:

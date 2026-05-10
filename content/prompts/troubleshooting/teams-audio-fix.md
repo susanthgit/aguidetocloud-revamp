@@ -1,6 +1,6 @@
 ---
-title: Teams Audio Troubleshooting
-description: Self-service guide for Teams audio issues
+title: "Teams Audio Troubleshooting — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for IT admins: self-service guide for Teams audio issues. Works in ChatGPT. Tag: troubleshooting."
 prompt: >-
   Create a troubleshooting guide for Teams audio: (1) Cannot hear others, (2) Others cannot hear me, (3) Echo, (4) Audio cutting out, (5) Wrong device. For each: ordered fix steps, settings locations, when to contact IT. Write for non-technical users.
 platforms:

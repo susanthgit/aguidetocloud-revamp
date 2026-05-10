@@ -1,6 +1,6 @@
 ---
-title: Smart Meeting Scheduler
-description: Find the best meeting time and draft the invite
+title: "Smart Meeting Scheduler — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: find the best meeting time and draft the invite. Works in M365 Copilot. Tags: outlook, scheduling."
 prompt: >-
   Find a [DURATION]-minute meeting slot for [ATTENDEES] in the next [TIMEFRAME — week / 2 weeks]. Preferences: (1) Avoid [DAY/TIME], (2) Prefer [MORNING/AFTERNOON], (3) Allow for time zone differences if applicable. Draft a meeting invite with: clear purpose, agenda (3 items max), and any pre-read materials to attach.
 platforms:

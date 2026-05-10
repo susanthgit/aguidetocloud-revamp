@@ -1,6 +1,6 @@
 ---
-title: API Documentation Generator
-description: Generate clean API documentation from code or specs
+title: "API Documentation Generator — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for developers: generate clean API documentation from code or specs. Works in Claude. Tag: coding."
 prompt: >-
   Generate API documentation for [API NAME]. For each endpoint include: (1) HTTP method and path, (2) Description of what it does, (3) Request parameters with types and required/optional, (4) Request body schema with examples, (5) Response schema with examples, (6) Error codes and meanings, (7) Authentication requirements. Format as Markdown.
 platforms:

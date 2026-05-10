@@ -1,6 +1,6 @@
 ---
-title: Risk Mitigation Plan
-description: Create mitigation plans for identified risks
+title: "Risk Mitigation Plan — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for project managers: create mitigation plans for identified risks. Works in M365 Copilot. Tag: planning."
 prompt: >-
   Create mitigation plans for [RISKS]. For each: description, triggers, preventive actions, contingency plan, early warnings, owner, review cadence, budget needed. Prioritise by score.
 platforms:

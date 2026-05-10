@@ -1,6 +1,6 @@
 ---
-title: Expense Report Analyser
-description: Analyse expense data to find patterns, flag anomalies, and identify cost-saving opportunities
+title: "Expense Report Analyser — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: analyse expense data to find patterns, flag anomalies, and identify cost-saving opportunities. Best on M365 Copilot."
 prompt: 'Analyse this expense data and provide: (1) Total Spend Summary — by category, department, and time period, (2) Top Spenders — individuals or departments with highest expenses, (3) Trend Analysis
   — month-over-month spending patterns, (4) Anomaly Detection — flag any expenses that seem unusual (unusually high amounts, weekend expenses, duplicate claims), (5) Policy Compliance — identify expenses
   that may violate common corporate policies (excessive meals, unapproved travel class), (6) Cost-Saving Opportunities — 3-5 specific recommendations to reduce spending, (7) Benchmarks — compare against

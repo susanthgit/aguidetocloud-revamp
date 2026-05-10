@@ -1,6 +1,6 @@
 ---
-title: Escalation Handoff Summary
-description: Prepare a complete handoff when escalating to higher-level support
+title: "Escalation Handoff Summary — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: Escalation Handoff Summary — prepare a complete handoff when escalating to higher-level support. Works in M365 Copilot."
 prompt: >-
   Write an escalation summary for [ISSUE] being escalated to [TEAM — Level 2 / vendor / engineering]. Include: (1) Issue description and business impact, (2) Users affected and timeline, (3) All troubleshooting steps attempted and results, (4) Relevant logs, error messages, or screenshots, (5) Current hypothesis, (6) Urgency and SLA deadline. Format for quick consumption.
 platforms:

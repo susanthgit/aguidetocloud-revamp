@@ -1,6 +1,6 @@
 ---
-title: Competency Framework Builder
-description: Create a competency framework for a role
+title: "Competency Framework Builder — Free M365 Copilot AI Prompt"
+description: "Competency Framework Builder — free advanced AI prompt: create a competency framework for a role. Best on M365 Copilot. Tag: training."
 prompt: >-
   Build a competency framework for [ROLE]. For each: name, definition, behavioural indicators at 4 levels, assessment methods, development resources. Cover 8-12 competencies.
 platforms:

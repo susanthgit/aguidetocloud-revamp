@@ -1,6 +1,6 @@
 ---
-title: Draft a Standard Operating Procedure
-description: Turn rough notes into a professional SOP document with proper structure
+title: "Draft a Standard Operating Procedure — Free AI Prompt"
+description: "Free beginner AI prompt for IT admins: turn rough notes into a professional SOP document with proper structure. Works in M365 Copilot. Tag: word."
 prompt: 'Draft a standard operating procedure (SOP) for [PROCESS NAME] based on these notes. Include: (1) Purpose and scope, (2) Prerequisites, (3) Step-by-step procedure with numbered steps, (4) Common exceptions and how to handle them, (5) Who to contact for help. Use clear, non-technical language. Format with headings and bullet points.'
 platforms:
 - m365-copilot

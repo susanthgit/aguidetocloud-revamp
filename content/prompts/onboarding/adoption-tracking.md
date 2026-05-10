@@ -1,6 +1,6 @@
 ---
-title: Adoption Tracking Framework
-description: Design metrics for technology adoption
+title: "Adoption Tracking Framework — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for IT admins: design metrics for technology adoption. Works in M365 Copilot. Tag: onboarding."
 prompt: >-
   Design adoption tracking for [TOOL]. Include: metrics (active users, feature usage, tickets), 30/60/90 targets, dashboard layout, data sources, alert thresholds, low-adoption actions.
 platforms:

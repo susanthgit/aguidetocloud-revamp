@@ -1,6 +1,6 @@
 ---
-title: New Hire Onboarding Coordinator
-description: Have Cowork set up everything a new team member needs across multiple systems
+title: "New Hire Onboarding Coordinator — Free M365 Copilot Prompt"
+description: "Free intermediate AI prompt for managers: have Cowork set up everything a new team member needs across multiple systems. Best on M365 Copilot."
 prompt: >-
   Help me onboard [NEW HIRE NAME] joining as [ROLE] on [START DATE]. Create: (1) A welcome email with first-week schedule, (2) An onboarding checklist in a Loop page the team can update, (3) A 30/60/90 day plan in Word, (4) Calendar invites for their orientation meetings, key 1:1s, and team introductions. Send the welcome email on [DATE — day before they start]. Check in with me before sending anything external.
 platforms:

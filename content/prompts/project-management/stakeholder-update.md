@@ -1,6 +1,6 @@
 ---
-title: Stakeholder Update Email
-description: Create a professional stakeholder update with RAG status, progress, and next steps
+title: "Stakeholder Update Email — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: create a professional stakeholder update with RAG status, progress, and next steps. Best on M365 Copilot."
 prompt: 'Draft a stakeholder update for [PROJECT NAME] covering [TIME PERIOD]. Include: (1) RAG Status — Red, Amber, or Green with clear justification, (2) Executive Summary — 2-3 sentences on overall progress,
   (3) Key Accomplishments — what was delivered this period, (4) Upcoming Milestones — what is due next with dates, (5) Risks & Issues — any current blockers with mitigation actions, (6) Budget Status —
   on track / variance, (7) Decisions Needed — anything requiring stakeholder input, (8) Next Steps — priorities for the coming period. Keep it to one page. Tone: confident, transparent, concise.'

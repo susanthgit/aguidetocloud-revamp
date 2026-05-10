@@ -1,6 +1,6 @@
 ---
-title: Business Case Template
-description: Build a structured business case for investment approval
+title: "Business Case Template — Free Claude AI Prompt"
+description: "Free advanced AI prompt for managers: build a structured business case for investment approval. Works in Claude. Tags: planning, business-case."
 prompt: >-
   Write a business case for [INITIATIVE/INVESTMENT]. Include: (1) Executive summary, (2) Problem statement with data, (3) Proposed solution, (4) Options considered (including do nothing), (5) Cost breakdown (one-time and recurring), (6) Expected benefits (quantified where possible), (7) Timeline, (8) Risks, (9) Recommendation. Format for [AUDIENCE — board / leadership / finance].
 platforms:

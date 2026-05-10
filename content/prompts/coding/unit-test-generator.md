@@ -1,6 +1,6 @@
 ---
-title: Unit Test Generator
-description: Generate comprehensive unit tests for existing code
+title: "Unit Test Generator — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for developers: generate comprehensive unit tests for existing code. Works in Claude. Tags: coding, testing."
 prompt: >-
   Write unit tests for this [LANGUAGE] code: [PASTE CODE]. Include: (1) Happy path tests, (2) Edge cases (null, empty, boundary values), (3) Error handling tests, (4) Tests for each public method. Use [FRAMEWORK — Jest / pytest / xUnit / NUnit]. Include descriptive test names that explain what is being tested.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Retrospective Discussion Questions
-description: Generate thought-provoking retro questions
+title: "Retrospective Discussion Questions — Free AI Prompt"
+description: "Retrospective Discussion Questions — free beginner AI prompt: generate thought-provoking retro questions. Best on M365 Copilot. Tag: meetings."
 prompt: >-
   Generate 10 retrospective questions for a team that just completed [PROJECT/SPRINT]. Mix: celebration, improvement, process, team dynamics, and forward-looking questions. Avoid yes/no questions.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Sales Enablement Deck
-description: Create a deck that helps sales teams sell effectively
+title: "Sales Enablement Deck — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for sales teams: create a deck that helps sales teams sell effectively. Works in M365 Copilot. Tag: powerpoint."
 prompt: >-
   Create a sales enablement deck for [PRODUCT/SERVICE]. Include: (1) Elevator pitch (30 seconds), (2) Target customer profile, (3) Key pain points we solve (with customer quotes), (4) Product overview (features mapped to benefits), (5) Competitive positioning (us vs alternatives), (6) Pricing and packaging, (7) Objection handling, (8) Case studies, (9) Next step CTA.
 platforms:

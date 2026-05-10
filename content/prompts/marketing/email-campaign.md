@@ -1,6 +1,6 @@
 ---
-title: Email Campaign Sequence
-description: Write a multi-email nurture campaign
+title: "Email Campaign Sequence — Free ChatGPT AI Prompt"
+description: "Email Campaign Sequence — free intermediate AI prompt: write a multi-email nurture campaign. Best on ChatGPT. Tag: marketing."
 prompt: >-
   Write a [NUMBER — 3 / 5 / 7]-email nurture sequence for [PRODUCT/SERVICE] targeting [AUDIENCE]. For each email: subject line (under 50 chars), preview text, body (under 150 words), and CTA. Space emails [FREQUENCY — 3 days / weekly] apart. Theme: educate first, then convert.
 platforms:

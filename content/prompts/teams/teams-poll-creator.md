@@ -1,6 +1,6 @@
 ---
-title: Team Poll Creator
-description: Create a structured poll for team decisions
+title: "Team Poll Creator — Free M365 Copilot AI Prompt"
+description: "Team Poll Creator — free beginner AI prompt: create a structured poll for team decisions. Best on M365 Copilot. Tag: teams."
 prompt: >-
   Create a Teams poll for [DECISION]. Include: clear question, 3-5 options, context, deadline for voting, and how to proceed based on results.
 platforms:

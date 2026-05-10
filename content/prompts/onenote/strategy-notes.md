@@ -1,6 +1,6 @@
 ---
-title: Strategy Session Notes
-description: Capture strategy session notes
+title: "Strategy Session Notes — Free M365 Copilot AI Prompt"
+description: "Strategy Session Notes — free intermediate AI prompt: capture strategy session notes. Best on M365 Copilot. Tag: onenote."
 prompt: >-
   Set up a strategy notes template: session objective, current state, vision discussed, options explored, pros and cons, decisions, open questions, action items.
 platforms:

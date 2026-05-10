@@ -1,6 +1,6 @@
 ---
-title: Prospect Research Brief
-description: Research a company before a sales call
+title: "Prospect Research Brief — Free M365 Copilot AI Prompt"
+description: "Prospect Research Brief — free intermediate AI prompt: research a company before a sales call. Best on M365 Copilot. Tag: sales."
 prompt: >-
   Research [COMPANY NAME] and prepare a sales briefing. Include: (1) Company overview and recent news, (2) Industry challenges they likely face, (3) Their current tech stack if publicly known, (4) Key decision makers to engage, (5) Potential pain points our solution addresses, (6) Conversation starters based on their recent announcements.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Problem-Solution Deck
-description: Create a problem-solution presentation structure
+title: "Problem-Solution Deck — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: create a problem-solution presentation structure. Works in M365 Copilot. Tag: powerpoint."
 prompt: >-
   Create a [NUMBER]-slide problem-solution deck for [TOPIC]. Structure: (1) Hook with the problem statement, (2) Scale of the problem with data, (3) Why current approaches fail, (4) Our proposed solution, (5) How it works (3 steps max), (6) Evidence and proof points, (7) Investment required, (8) Expected outcomes, (9) Next steps and CTA.
 platforms:

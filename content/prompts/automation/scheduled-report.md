@@ -1,6 +1,6 @@
 ---
-title: Automated Report Generator
-description: Design an automated recurring report workflow
+title: "Automated Report Generator — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for analysts: design an automated recurring report workflow. Works in M365 Copilot. Tag: automation."
 prompt: >-
   Design an automated workflow that generates a [FREQUENCY — daily / weekly / monthly] [REPORT TYPE] report. Include: (1) Data sources to pull from, (2) Calculations and transformations needed, (3) Report format and layout, (4) Distribution list and delivery method, (5) Schedule and timing, (6) Error notification if report fails, (7) Archive and retention policy.
 platforms:

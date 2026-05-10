@@ -1,6 +1,6 @@
 ---
-title: Podcast Episode Outline
-description: Plan a podcast episode with segments, questions, and talking points
+title: "Podcast Episode Outline — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for teams: plan a podcast episode with segments, questions, and talking points. Works in ChatGPT. Tag: creative."
 prompt: >-
   Create an outline for a [LENGTH — 20 / 30 / 45]-minute podcast episode about [TOPIC]. Include: (1) Cold open hook (30 seconds), (2) Introduction and context (2 minutes), (3) Main segments with talking points and transitions, (4) Guest interview questions (if applicable), (5) Key takeaways, (6) CTA and outro. Note timing for each segment.
 platforms:

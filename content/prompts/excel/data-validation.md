@@ -1,6 +1,6 @@
 ---
-title: Data Validation Rules Designer
-description: Set up data validation to prevent errors in shared spreadsheets
+title: "Data Validation Rules Designer — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for analysts: set up data validation to prevent errors in shared spreadsheets. Works in M365 Copilot. Tag: excel."
 prompt: >-
   Design data validation rules for this shared spreadsheet with columns: [LIST COLUMNS]. For each column specify: (1) Allowed data type, (2) Validation rule (dropdown list, range, format), (3) Input message for users, (4) Error message if invalid, (5) Whether blank is allowed. Goal: prevent data quality issues before they happen.
 platforms:

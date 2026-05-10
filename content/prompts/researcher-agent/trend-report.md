@@ -1,6 +1,6 @@
 ---
-title: Emerging Trends Report
-description: Research emerging trends in a specific domain
+title: "Emerging Trends Report — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for teams: research emerging trends in a specific domain. Works in M365 Copilot. Tag: researcher."
 prompt: >-
   Research emerging trends in [DOMAIN] for [YEAR]. Identify: (1) Top 5 trends with evidence, (2) Which are hype vs real adoption, (3) Key players driving each trend, (4) Timeline to mainstream, (5) Implications for [OUR CONTEXT], (6) Recommended actions. Distinguish predictions from confirmed developments.
 platforms:

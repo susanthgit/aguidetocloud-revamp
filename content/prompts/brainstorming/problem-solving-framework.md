@@ -1,6 +1,6 @@
 ---
-title: Problem-Solving Framework
-description: Break down a complex problem into root causes, options, and a recommended solution
+title: "Problem-Solving Framework — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for managers: break down a complex problem into root causes, options, and a recommended solution. Best on Claude."
 prompt: 'Help me solve this problem: [DESCRIBE PROBLEM]. Walk me through it using this framework: (1) Problem Definition — restate the problem clearly in one sentence, (2) Root Cause Analysis — identify
   3-5 possible root causes using the "5 Whys" technique, (3) Impact Assessment — who is affected and how severely, (4) Options — generate 3-4 possible solutions, each with pros, cons, effort level, and
   estimated time to implement, (5) Recommendation — which option you recommend and why, (6) Implementation Plan — first 3 steps to get started, (7) Success Metrics — how we will know the problem is solved.'

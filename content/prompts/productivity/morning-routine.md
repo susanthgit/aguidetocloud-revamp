@@ -1,6 +1,6 @@
 ---
-title: Morning Productivity Routine
-description: Design an optimal morning routine for maximum productivity
+title: "Morning Productivity Routine — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for teams: design an optimal morning routine for maximum productivity. Works in ChatGPT. Tag: productivity."
 prompt: >-
   Design a morning routine for a [ROLE] who starts work at [TIME]. Include: (1) Pre-work ritual (15 min), (2) Planning block (10 min — review calendar, set daily top 3), (3) Deep work block (60-90 min on most important task), (4) Communication check (15 min — email and Teams triage), (5) First meeting prep. Base on research about peak productivity times.
 platforms:

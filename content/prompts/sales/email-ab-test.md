@@ -1,6 +1,6 @@
 ---
-title: Sales Email A/B Test
-description: Create A/B variants for sales emails
+title: "Sales Email A/B Test — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for sales teams: create A/B variants for sales emails. Works in M365 Copilot. Tags: sales, ab-test."
 prompt: >-
   Create 2 email variants for A/B testing. Target: [PERSONA]. Variant A: pain-point focused. Variant B: benefit-led. Same CTA. Include hypothesis and tracking metrics.
 platforms:

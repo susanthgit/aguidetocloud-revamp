@@ -1,6 +1,6 @@
 ---
-title: REST API Design Document
-description: Design a REST API with proper conventions
+title: "REST API Design Document — Free M365 Copilot AI Prompt"
+description: "REST API Design Document — free advanced AI prompt: design a REST API with proper conventions. Best on M365 Copilot. Tag: coding."
 prompt: >-
   Design a REST API for [PURPOSE]. Include: resource naming, endpoints with methods, request/response schemas, authentication, errors, pagination, rate limiting, versioning.
 platforms:

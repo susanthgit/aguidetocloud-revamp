@@ -1,6 +1,6 @@
 ---
-title: Error Handling Pattern
-description: Design robust error handling for an application component
+title: "Error Handling Pattern — Free Claude AI Prompt"
+description: "Free advanced AI prompt for developers: design robust error handling for an application component. Works in Claude. Tags: coding, error-handling."
 prompt: >-
   Design error handling for [COMPONENT — API endpoint / background job / file processor / user form] in [LANGUAGE]. Include: (1) Input validation, (2) Try-catch structure, (3) Specific exception types to handle, (4) Logging strategy, (5) User-friendly error messages, (6) Retry logic for transient failures, (7) Graceful degradation. Show complete code.
 platforms:

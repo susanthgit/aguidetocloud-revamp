@@ -1,6 +1,6 @@
 ---
-title: Smart Auto-Responder Designer
-description: Design intelligent email auto-response rules
+title: "Smart Auto-Responder Designer — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for IT admins: design intelligent email auto-response rules. Works in M365 Copilot. Tag: automation."
 prompt: >-
   Design auto-response rules for [SCENARIO]. Include: triggers, templates by sender type, escalation rules, follow-up sequence, exclusion rules to prevent loops.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Annual Goal Setting
-description: Set structured personal or team goals
+title: "Annual Goal Setting — Free ChatGPT AI Prompt"
+description: "Annual Goal Setting — free intermediate AI prompt: set structured personal or team goals. Best on ChatGPT. Tag: productivity."
 prompt: >-
   Help me set goals for [YEAR]. Role: [ROLE]. Priorities: [LIST]. Create: (1) 3-5 SMART goals, (2) Quarterly milestones, (3) Supporting habits, (4) Obstacles and mitigation, (5) Tracking plan. Balance development with deliverables.
 platforms:

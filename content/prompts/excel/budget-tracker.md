@@ -1,6 +1,6 @@
 ---
-title: Budget vs Actual Tracker
-description: Set up a budget tracking spreadsheet
+title: "Budget vs Actual Tracker — Free M365 Copilot AI Prompt"
+description: "Budget vs Actual Tracker — free intermediate AI prompt: set up a budget tracking spreadsheet. Best on M365 Copilot. Tag: excel."
 prompt: >-
   Set up a budget tracker with monthly columns for budget and actual, auto-calculated variance, conditional formatting, YTD totals, forecast, and dashboard summary.
 platforms:

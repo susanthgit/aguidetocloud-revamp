@@ -1,6 +1,6 @@
 ---
-title: Discovery Call Questions
-description: Prepare structured discovery questions for a sales call
+title: "Discovery Call Questions — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for sales teams: prepare structured discovery questions for a sales call. Works in ChatGPT. Tag: sales."
 prompt: >-
   Create discovery questions for a call with [PROSPECT TYPE] evaluating [SOLUTION]. Include: (1) Rapport opener, (2) Current state questions, (3) Impact questions, (4) Vision questions, (5) Process questions, (6) Next steps. Order broad to specific.
 platforms:

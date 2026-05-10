@@ -1,6 +1,6 @@
 ---
-title: Threat Assessment Report
-description: Assess security threats relevant to your organisation
+title: "Threat Assessment Report — Free Claude AI Prompt"
+description: "Free advanced AI prompt for teams: assess security threats relevant to your organisation. Works in Claude. Tag: cybersecurity."
 prompt: >-
   Create a threat assessment for [ORGANISATION TYPE — SMB / enterprise / government]. Cover: (1) Top 5 threats for our industry in [YEAR], (2) Likelihood and impact rating for each, (3) Current controls we likely have, (4) Gaps and recommended mitigations, (5) Priority actions ranked by risk reduction per effort. Present as an executive summary with a risk matrix.
 platforms:

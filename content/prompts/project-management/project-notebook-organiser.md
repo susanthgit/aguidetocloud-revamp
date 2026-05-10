@@ -1,6 +1,6 @@
 ---
-title: Project Notebook Template
-description: Create a structured project notebook with standardised sections for consistent tracking
+title: "Project Notebook Template — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: create a structured project notebook with standardised sections for consistent tracking. Best on M365 Copilot."
 prompt: 'Create a project notebook template for [PROJECT NAME] with these sections: (1) Project Charter — objective, scope, stakeholders, success criteria, (2) Meeting Notes — template for recurring meeting
   minutes, (3) Decision Log — table with Date, Decision, Rationale, Owner, (4) Action Item Tracker — Task, Owner, Due Date, Status, (5) Risk & Issue Log — structured risk register, (6) Key Contacts — stakeholder
   directory with roles and contact details, (7) Reference Documents — links to important files and resources, (8) Lessons Learned — ongoing capture of what went well and what to improve, (9) Status Dashboard

@@ -1,6 +1,6 @@
 ---
-title: Batch Reply Drafter
-description: Draft replies to multiple emails efficiently
+title: "Batch Reply Drafter — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: draft replies to multiple emails efficiently. Works in M365 Copilot. Tag: outlook."
 prompt: >-
   I have [NUMBER] emails that need responses. For each email: read the context, draft a concise reply that addresses their question or request, and match the appropriate tone (formal for external, casual for team). Flag any emails that need more information from me before responding. Show all drafts for my review before sending.
 platforms:

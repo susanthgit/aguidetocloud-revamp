@@ -1,6 +1,6 @@
 ---
-title: Learning Journal
-description: Create a structured learning journal for professional development
+title: "Learning Journal — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for teams: create a structured learning journal for professional development. Works in M365 Copilot. Tag: onenote."
 prompt: >-
   Set up a learning journal in OneNote. Structure: (1) Weekly learning entries (date, what I learned, source, how I will apply it), (2) Book and article notes section, (3) Course notes with key takeaways, (4) Skills tracking (skill, level, target, progress), (5) Questions to explore, (6) Monthly reflection on growth.
 platforms:

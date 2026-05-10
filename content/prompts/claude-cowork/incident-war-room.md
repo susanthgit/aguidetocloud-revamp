@@ -1,6 +1,6 @@
 ---
-title: Incident War Room Coordinator
-description: Use Claude Cowork as a live incident tracker during a critical issue with multiple responders
+title: "Incident War Room Coordinator — Free Claude AI Prompt"
+description: "Free advanced AI prompt for IT admins: use Claude Cowork as a live incident tracker during a critical issue with multiple responders. Best on Claude."
 prompt: >-
   We have a [SEVERITY — P1 / P2] incident: [INCIDENT DESCRIPTION]. Help coordinate: (1) Maintain a live timeline of events as team members report updates, (2) Track who is working on what, (3) Log all actions taken and their results, (4) Draft stakeholder communications at [INTERVAL — every 30 minutes / hourly], (5) When resolved, compile a post-incident report with timeline, root cause, and prevention actions. Keep everything factual and time-stamped.
 platforms:

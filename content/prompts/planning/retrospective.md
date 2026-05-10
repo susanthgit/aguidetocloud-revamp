@@ -1,6 +1,6 @@
 ---
-title: Team Retrospective Facilitator
-description: Run a structured team retrospective with actionable outcomes
+title: "Team Retrospective Facilitator — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for project managers: run a structured team retrospective with actionable outcomes. Works in ChatGPT. Tag: planning."
 prompt: >-
   Facilitate a retrospective for [TEAM] covering [PERIOD/SPRINT]. Structure: (1) Set the stage with a one-word check-in, (2) Gather data in three columns (What went well, What to improve, Ideas to try), (3) Group themes and vote on top 3, (4) Define specific actions for each with owner and deadline, (5) Review actions from last retro — were they completed? End on a positive note.
 platforms:

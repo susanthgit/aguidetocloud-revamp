@@ -1,6 +1,6 @@
 ---
-title: Draft a Decision Log
-description: Convert a discussion thread into a formal decision log with rationale
+title: "Draft a Decision Log — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: Draft a Decision Log — convert a discussion thread into a formal decision log with rationale. Works in M365 Copilot."
 prompt: 'Turn this discussion into a decision log. For each decision include: the decision made, the alternatives considered, the rationale for choosing this option, who made the decision, and the date. Format as a table that the team can reference later.'
 platforms:
 - m365-copilot

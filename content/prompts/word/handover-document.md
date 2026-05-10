@@ -1,6 +1,6 @@
 ---
-title: Role Handover Document
-description: Create a comprehensive handover document
+title: "Role Handover Document — Free M365 Copilot AI Prompt"
+description: "Role Handover Document — free intermediate AI prompt: create a comprehensive handover document. Best on M365 Copilot. Tag: word."
 prompt: >-
   Create a handover document for my role as [ROLE]. Include: key responsibilities, important contacts, active projects, pending decisions, file locations, tips and gotchas.
 platforms:

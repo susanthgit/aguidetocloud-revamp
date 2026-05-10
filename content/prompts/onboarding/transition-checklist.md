@@ -1,6 +1,6 @@
 ---
-title: Role Transition Checklist
-description: Create a checklist for someone transitioning into a new role
+title: "Role Transition Checklist — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: create a checklist for someone transitioning into a new role. Works in M365 Copilot. Tag: onboarding."
 prompt: >-
   Create a role transition checklist for [PERSON] moving from [OLD ROLE] to [NEW ROLE]. Include: (1) Knowledge transfer items from old role, (2) Handoff documents and contacts, (3) New role orientation and expectations, (4) Training and skill gaps to address, (5) Key stakeholder introductions, (6) 30-day milestones in the new role, (7) Support contacts. Both the leaver and the successor should use this.
 platforms:

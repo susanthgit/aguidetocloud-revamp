@@ -1,6 +1,6 @@
 ---
-title: Strategy Alignment Workshop
-description: Use Claude to help a team align on strategy by structuring debate and finding common ground
+title: "Strategy Alignment Workshop — Free Claude AI Prompt"
+description: "Free advanced AI prompt for executives: use Claude to help a team align on strategy by structuring debate and finding common ground. Best on Claude."
 prompt: >-
   Facilitate a strategy alignment session for our team on [STRATEGIC QUESTION — e.g. Should we expand into market X?]. Structure: (1) Have each team member state their position and reasoning, (2) Identify areas of agreement and disagreement, (3) Present the strongest arguments for each position, (4) Propose a compromise or hybrid approach, (5) Draft a decision with rationale that the team can endorse. Remain neutral and ensure all voices are heard.
 platforms:

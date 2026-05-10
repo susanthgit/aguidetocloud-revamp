@@ -1,6 +1,6 @@
 ---
-title: Literature Review Summary
-description: Summarise research from multiple sources into a structured review
+title: "Literature Review Summary — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt: Literature Review Summary — summarise research from multiple sources into a structured review. Works in M365 Copilot."
 prompt: >-
   Conduct a literature review on [TOPIC] using [NUMBER — 5 / 10] sources. For each source: (1) Citation, (2) Key findings, (3) Methodology, (4) Relevance to our question. Then synthesise: (1) What the consensus is, (2) Where experts disagree, (3) Gaps in current research, (4) Implications for our work. Present as an academic-style summary.
 platforms:

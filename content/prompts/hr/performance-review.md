@@ -1,6 +1,6 @@
 ---
-title: Performance Review Draft
-description: Write a balanced performance review with specific examples and growth areas
+title: "Performance Review Draft — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: write a balanced performance review with specific examples and growth areas. Works in M365 Copilot. Tag: hr."
 prompt: 'Write a performance review for [EMPLOYEE NAME] in the role of [ROLE]. Based on these achievements: [ACHIEVEMENTS] and these areas for improvement: [AREAS]. Include: (1) Overall assessment, (2) Key strengths with specific examples, (3) Growth areas with actionable suggestions, (4) Goals for next period. Tone: constructive, specific, and fair.'
 platforms:
 - m365-copilot

@@ -1,6 +1,6 @@
 ---
-title: ROI Evidence Finder
-description: Find external evidence to support an ROI business case
+title: "ROI Evidence Finder — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for analysts: find external evidence to support an ROI business case. Works in M365 Copilot. Tag: researcher."
 prompt: >-
   Find external evidence supporting the ROI of [INITIATIVE — Copilot / cloud migration / automation / AI adoption]. Look for: (1) Published case studies with specific numbers, (2) Analyst reports (Forrester TEI, Gartner), (3) Customer testimonials, (4) Industry benchmarks, (5) Academic research. Compile as a sourced evidence appendix for a business case.
 platforms:

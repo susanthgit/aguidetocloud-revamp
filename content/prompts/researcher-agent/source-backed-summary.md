@@ -1,6 +1,6 @@
 ---
-title: Source-Backed Research Summary
-description: Get a comprehensive research summary with citations and source links
+title: "Source-Backed Research Summary — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for analysts: get a comprehensive research summary with citations and source links. Works in M365 Copilot. Tag: researcher."
 prompt: 'Research [TOPIC] and provide a source-backed summary. Include: (1) Current state overview (3-4 paragraphs), (2) Key facts with source citations, (3) Areas where sources disagree or information is uncertain, (4) 3-5 recommended next steps or further reading. Prioritise recent and authoritative sources.'
 platforms:
 - m365-copilot

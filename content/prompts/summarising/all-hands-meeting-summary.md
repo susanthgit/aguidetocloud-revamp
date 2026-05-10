@@ -1,6 +1,6 @@
 ---
-title: All-Hands Meeting Summary
-description: Create a digestible summary of an all-hands or town hall meeting for those who could not attend
+title: "All-Hands Meeting Summary — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt: create a digestible summary of an all-hands or town hall meeting for those who could not attend. Best on M365 Copilot."
 prompt: 'Create a summary of the all-hands meeting for distribution to the team. Include: (1) Key Announcements — the most important news and updates, (2) Company Performance — any metrics, results, or
   targets shared, (3) Strategic Updates — new initiatives, direction changes, or priorities, (4) People News — new hires, departures, promotions, recognitions, (5) Q&A Highlights — the most interesting
   questions asked and answers given, (6) Action Items — anything attendees were asked to do, (7) Upcoming Dates — events, deadlines, or meetings mentioned. Format as a scannable email-ready summary with

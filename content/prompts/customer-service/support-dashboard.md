@@ -1,6 +1,6 @@
 ---
-title: Support Performance Dashboard
-description: Design a support team performance dashboard
+title: "Support Performance Dashboard — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: design a support team performance dashboard. Works in M365 Copilot. Tag: customer-service."
 prompt: >-
   Design a support dashboard. Metrics: ticket volume, resolution time, CSAT, first contact resolution, backlog age, top categories, team utilisation. Include targets and traffic lights.
 platforms:

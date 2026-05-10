@@ -1,6 +1,6 @@
 ---
-title: Diagnostic Decision Tree
-description: Build a step-by-step troubleshooting flowchart
+title: "Diagnostic Decision Tree — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for IT admins: build a step-by-step troubleshooting flowchart. Works in ChatGPT. Tag: troubleshooting."
 prompt: >-
   Create a diagnostic decision tree for [ISSUE TYPE — network connectivity / application crash / login failure / slow performance / email delivery]. Structure as: If symptom A → check B → if yes → do C, if no → check D. Include: expected outcomes at each step, escalation triggers, and resolution confirmations. Write for a Level 1 support technician.
 platforms:

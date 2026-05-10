@@ -1,6 +1,6 @@
 ---
-title: Weekly Channel Digest
-description: Summarise a busy Teams channel into a weekly digest
+title: "Weekly Channel Digest — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: summarise a busy Teams channel into a weekly digest. Works in M365 Copilot. Tag: teams."
 prompt: >-
   Summarise this Teams channel activity from the past week into a digest. Include: (1) Key announcements or decisions, (2) Questions asked and whether they were answered, (3) Files or resources shared, (4) Action items mentioned, (5) Unanswered questions that need follow-up. Format as a scannable digest for people who were too busy to follow the channel.
 platforms:

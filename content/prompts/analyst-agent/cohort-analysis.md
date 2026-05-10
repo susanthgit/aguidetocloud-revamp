@@ -1,6 +1,6 @@
 ---
-title: Cohort Analysis
-description: Analyse user or customer behaviour by cohort
+title: "Cohort Analysis — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for analysts: analyse user or customer behaviour by cohort. Works in M365 Copilot. Tag: analyst."
 prompt: >-
   Group users from this data into cohorts by [CRITERIA — sign-up month / first purchase / plan tier]. Track [METRIC — retention / revenue / engagement] over [PERIODS]. Show: cohort table, trend chart, strongest vs weakest cohort, and 3 actionable insights.
 platforms:

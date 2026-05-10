@@ -1,6 +1,6 @@
 ---
-title: Full Meeting Preparation Package
-description: Have Cowork research, brief, and prepare everything you need before a big meeting
+title: "Full Meeting Preparation Package — Free M365 Copilot Prompt"
+description: "Free intermediate AI prompt for executives: have Cowork research, brief, and prepare everything you need before a big meeting. Best on M365 Copilot."
 prompt: >-
   Prepare me for my meeting with [PERSON/COMPANY] on [DATE]. Research: recent emails and chats between us, their last shared documents, any open action items. Create: (1) A one-page briefing document in Word, (2) 3-5 talking points, (3) Any data they might reference from our shared files. Add 15 minutes of prep time to my calendar before the meeting.
 platforms:

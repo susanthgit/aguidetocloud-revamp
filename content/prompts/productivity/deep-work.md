@@ -1,6 +1,6 @@
 ---
-title: Deep Work Session Planner
-description: Design a focused deep work session
+title: "Deep Work Session Planner — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for teams: design a focused deep work session. Works in M365 Copilot. Tags: productivity, deep-work."
 prompt: >-
   Plan a deep work session for [TASK]. Duration: [HOURS]. Include: pre-session setup, session structure with breaks, milestones, definition of done, post-session review.
 platforms:

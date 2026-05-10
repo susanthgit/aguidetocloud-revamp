@@ -1,6 +1,6 @@
 ---
-title: Make This Shorter and More Direct
-description: Tighten up a wordy document while keeping all essential information
+title: "Make This Shorter and More Direct — Free M365 Copilot Prompt"
+description: "Free intermediate AI prompt for teams: tighten up a wordy document while keeping all essential information. Works in M365 Copilot. Tags: word, conciseness."
 prompt: 'Make this document more concise and direct. Cut unnecessary words, merge redundant sections, and remove filler phrases. Keep all essential information and key points. Target a [PERCENTAGE — 30% / 50%] reduction in word count. Use active voice throughout.'
 platforms:
 - m365-copilot

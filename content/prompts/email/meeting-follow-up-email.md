@@ -1,6 +1,6 @@
 ---
-title: Post-Meeting Follow-Up Email
-description: Draft a professional follow-up email summarising what was discussed and next steps
+title: "Post-Meeting Follow-Up Email — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: draft a professional follow-up email summarising what was discussed and next steps. Best on M365 Copilot."
 prompt: 'Draft a follow-up email after my meeting about [TOPIC] with [ATTENDEES]. Include: (1) Thank them for their time, (2) Summarise the key points discussed (3-4 bullets), (3) List the agreed action
   items with owners and deadlines, (4) Confirm the next meeting date if one was scheduled, (5) Attach or reference any documents mentioned. Tone: professional, warm, action-oriented. Keep it under 200 words.'
 platforms:

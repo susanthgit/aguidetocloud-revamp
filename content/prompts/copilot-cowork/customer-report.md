@@ -1,6 +1,6 @@
 ---
-title: Customer Health Report
-description: Compile a customer report across all touchpoints
+title: "Customer Health Report — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for sales teams: compile a customer report across all touchpoints. Works in M365 Copilot. Tag: cowork."
 prompt: >-
   Compile a report on [CUSTOMER] across all touchpoints. Gather emails, meetings, support tickets, contract status. Produce a health summary in Word and 3-slide deck.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Pivot Table Design Helper
-description: Design the right pivot table layout for your analysis question
+title: "Pivot Table Design Helper — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for analysts: design the right pivot table layout for your analysis question. Works in M365 Copilot. Tags: excel, pivot-table."
 prompt: >-
   I need to answer this business question from my data: [QUESTION — e.g. Which region had the highest sales growth last quarter?]. My data has these columns: [LIST COLUMNS]. Design: (1) The pivot table layout (rows, columns, values, filters), (2) What aggregation to use (sum, count, average), (3) Any calculated fields needed, (4) Recommended chart to visualise the result.
 platforms:

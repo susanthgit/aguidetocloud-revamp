@@ -1,6 +1,6 @@
 ---
-title: Content Calendar Planner
-description: Create a themed content calendar for consistent publishing
+title: "Content Calendar Planner — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for teams: create a themed content calendar for consistent publishing. Works in ChatGPT. Tag: creative."
 prompt: >-
   Create a [TIMEFRAME — monthly / quarterly] content calendar for [BRAND/PROJECT] on [CHANNELS — blog / LinkedIn / Instagram / YouTube]. Include: (1) Weekly themes aligned to [GOALS], (2) Specific post ideas with headlines, (3) Content type (article, video, carousel, story), (4) Posting schedule by day, (5) Key dates and events to leverage. Target: [POSTS PER WEEK] posts per week.
 platforms:

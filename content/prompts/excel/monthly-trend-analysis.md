@@ -1,6 +1,6 @@
 ---
-title: Monthly Trend Analysis
-description: Analyse data for month-over-month trends, seasonal patterns, and growth rates
+title: "Monthly Trend Analysis — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for analysts: analyse data for month-over-month trends, seasonal patterns, and growth rates. Works in M365 Copilot. Tag: excel."
 prompt: 'Analyse this data by month and show me: (1) Month-over-month change (percentage), (2) The best and worst performing months, (3) Any seasonal patterns you can detect, (4) The overall trend direction (growing, declining, or flat). Add a trend line chart and forecast the next 3 months based on the pattern.'
 platforms:
 - m365-copilot

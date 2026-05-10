@@ -1,6 +1,6 @@
 ---
-title: Login and Authentication Troubleshooting
-description: Diagnose common login and authentication failures
+title: "Login and Authentication Troubleshooting — Free AI Prompt"
+description: "Free beginner AI prompt for IT admins: diagnose common login and authentication failures. Works in ChatGPT. Tag: troubleshooting."
 prompt: >-
   Create a troubleshooting guide for login failures in [SYSTEM — M365 / VPN / application]. Cover: (1) Password issues (expired, locked, forgotten), (2) MFA problems (lost device, token expired), (3) Conditional Access blocks, (4) Account disabled, (5) SSO failures, (6) Browser and cache issues. For each: symptoms, diagnosis steps, resolution, and prevention.
 platforms:

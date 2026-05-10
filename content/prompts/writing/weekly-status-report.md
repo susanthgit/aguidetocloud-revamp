@@ -1,6 +1,6 @@
 ---
-title: "Weekly Status Report Generator"
-description: "Transform scattered notes into a polished weekly status report for leadership"
+title: "Weekly Status Report Generator — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: transform scattered notes into a polished weekly status report for leadership. Best on M365 Copilot."
 prompt: "Create a professional weekly status report from these notes. Structure it as: (1) Highlights — top 3 accomplishments this week, (2) In Progress — what's currently being worked on with percentage completion, (3) Blockers — any issues or dependencies holding things up, (4) Next Week — planned priorities and goals, (5) Metrics — any relevant KPIs or numbers. Keep each bullet to one line. Tone: confident, clear, suitable for VP-level audience."
 platforms: ["m365-copilot", "chatgpt", "claude", "gemini"]
 m365_surfaces: ["copilot-chat-work", "word", "loop"]

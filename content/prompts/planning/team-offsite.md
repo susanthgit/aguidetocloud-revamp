@@ -1,6 +1,6 @@
 ---
-title: Team Offsite Agenda
-description: Plan a productive and engaging team offsite
+title: "Team Offsite Agenda — Free ChatGPT AI Prompt"
+description: "Team Offsite Agenda — free intermediate AI prompt: plan a productive and engaging team offsite. Best on ChatGPT. Tag: planning."
 prompt: >-
   Plan a [DURATION]-day team offsite for [TEAM]. Include: (1) Objectives (what we want to walk away with), (2) Agenda with session timing, (3) Strategic sessions (vision, priorities, OKRs), (4) Team building activities, (5) Working sessions with clear outputs, (6) Social programme, (7) Pre-work for participants, (8) Follow-up actions framework.
 platforms:

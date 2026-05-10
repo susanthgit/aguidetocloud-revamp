@@ -1,6 +1,6 @@
 ---
-title: Data Cleanup Instructions
-description: Get step-by-step instructions to clean messy spreadsheet data into analysis-ready format
+title: "Data Cleanup Instructions — Free M365 Copilot AI Prompt"
+description: "Free AI prompt: get step-by-step instructions to clean messy spreadsheet data into analysis-ready format. Works in M365 Copilot. Tags: excel, data-cleanup."
 prompt: 'Help me clean up this messy spreadsheet data. The issues I am seeing: [DESCRIBE PROBLEMS — duplicates, inconsistent formatting, missing values, merged cells, etc.]. Provide a step-by-step cleanup
   plan: (1) Remove Duplicates — how to identify and remove them, (2) Standardise Formats — fix date formats, number formats, text capitalisation, (3) Handle Missing Data — strategy for blank cells (fill,
   flag, or remove), (4) Split/Merge Columns — separate combined data into proper columns, (5) Validate Data — formulas to check for errors and outliers, (6) Final Structure — what the clean dataset should

@@ -1,6 +1,6 @@
 ---
-title: Tone Adjuster
-description: Rewrite content with a different tone
+title: "Tone Adjuster — Free Claude AI Prompt"
+description: "Tone Adjuster — free beginner AI prompt: rewrite content with a different tone. Best on Claude. Tag: writing."
 prompt: >-
   Rewrite this text with a [TARGET TONE — formal / casual / empathetic / urgent] tone: [PASTE TEXT]. Keep the exact same message but change the voice. Show before and after.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Find Data Quality Issues
-description: Identify duplicates, blanks, inconsistencies, and formatting problems in your data
+title: "Find Data Quality Issues — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for analysts: identify duplicates, blanks, inconsistencies, and formatting problems in your data. Best on M365 Copilot."
 prompt: 'Scan this table for data quality issues. Look for: (1) Duplicate rows, (2) Blank or missing values in required columns, (3) Inconsistent formatting (dates, currencies, text case), (4) Values that look like typos or outliers. List each issue with the row number and a suggested fix.'
 platforms:
 - m365-copilot

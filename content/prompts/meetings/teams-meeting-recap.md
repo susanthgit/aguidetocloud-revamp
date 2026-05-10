@@ -1,6 +1,6 @@
 ---
-title: Teams Meeting Recap
-description: Get a structured recap of a Teams meeting with decisions, action items, and follow-ups
+title: "Teams Meeting Recap — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: get a structured recap of a Teams meeting with decisions, action items, and follow-ups. Best on M365 Copilot."
 prompt: 'Create a comprehensive recap of the meeting that just ended. Include: (1) Meeting Title and Attendees, (2) Key Topics Discussed — summarise each agenda item, (3) Decisions Made — list every decision
   with who made it, (4) Action Items — table with Task, Owner, Deadline, (5) Open Questions — anything unresolved that needs follow-up, (6) Next Meeting — date and preliminary agenda items. Format this
   ready to share in the Teams channel.'

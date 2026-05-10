@@ -1,6 +1,6 @@
 ---
-title: Report Structure Generator
-description: Design the structure for a professional report
+title: "Report Structure Generator — Free ChatGPT AI Prompt"
+description: "Report Structure Generator — free beginner AI prompt: design the structure for a professional report. Best on ChatGPT. Tag: word."
 prompt: >-
   Design the structure for a [REPORT TYPE — annual / quarterly / research / audit / project completion] report about [TOPIC]. Include: (1) Recommended sections with headings, (2) What to include in each section, (3) Target length per section, (4) Charts or visuals to include, (5) Appendices needed. Optimise the flow so the most important findings are early in the document.
 platforms:

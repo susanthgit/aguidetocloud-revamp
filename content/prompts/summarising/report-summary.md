@@ -1,6 +1,6 @@
 ---
-title: Report Key Findings Summary
-description: Extract key findings from a long report
+title: "Report Key Findings Summary — Free M365 Copilot AI Prompt"
+description: "Report Key Findings Summary — free beginner AI prompt: extract key findings from a long report. Best on M365 Copilot. Tag: summarising."
 prompt: >-
   Extract key findings from this report. Provide: (1) The headline conclusion, (2) Top 5 findings ranked by importance, (3) Data that surprised you, (4) Implications for our team, (5) Recommended next steps.
 platforms:

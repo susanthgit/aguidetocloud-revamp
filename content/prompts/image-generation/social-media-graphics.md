@@ -1,6 +1,6 @@
 ---
-title: Social Media Image Series
-description: Generate prompts for a cohesive social media image series
+title: "Social Media Image Series — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: Social Media Image Series — generate prompts for a cohesive social media image series. Works in M365 Copilot."
 prompt: >-
   Create image generation prompts for a [NUMBER]-post social media series about [TOPIC] for [PLATFORM]. Each image should: (1) Follow a consistent visual style, (2) Use brand colours [COLOURS], (3) Work at [DIMENSIONS — 1080x1080 / 1200x628 / 1080x1920], (4) Leave space for text overlay. Provide: detailed prompt, negative prompt, and text placement guide.
 platforms:

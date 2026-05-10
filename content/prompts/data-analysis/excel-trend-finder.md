@@ -1,6 +1,6 @@
 ---
-title: "Excel Data Trend Finder"
-description: "Analyse spreadsheet data and identify the top trends, patterns, and anomalies"
+title: "Excel Data Trend Finder — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for finance teams: analyse spreadsheet data and identify the top trends, patterns, and anomalies. Best on M365 Copilot."
 prompt: "Analyse this data and identify: (1) The top 3 trends over the time period shown, (2) Any anomalies or outliers that stand out, (3) A comparison between the highest and lowest performing categories, (4) A brief recommendation based on the patterns. Present your findings with specific numbers and percentages. Use a clear, executive-summary style."
 platforms: ["m365-copilot", "chatgpt", "claude", "gemini"]
 m365_surfaces: ["excel", "copilot-chat-work"]

@@ -1,6 +1,6 @@
 ---
-title: Weekly Planning Session
-description: Create a focused plan for the week ahead
+title: "Weekly Planning Session — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for teams: create a focused plan for the week ahead. Works in M365 Copilot. Tags: productivity, weekly."
 prompt: >-
   Help me plan my week. My priorities are: [LIST TOP PRIORITIES]. My meetings this week: [KEY MEETINGS]. My deadlines: [DEADLINES]. Create: (1) Top 3 outcomes to achieve by Friday, (2) Daily focus blocks (what to work on each day), (3) Meetings I should prepare for, (4) Tasks I should delegate or defer, (5) One thing to learn or improve this week. Keep realistic with 6 productive hours per day.
 platforms:

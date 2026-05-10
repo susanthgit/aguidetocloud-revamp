@@ -1,6 +1,6 @@
 ---
-title: Content Repurposing Pipeline
-description: Turn one content piece into multiple formats
+title: "Content Repurposing Pipeline — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for marketers: turn one content piece into multiple formats. Works in M365 Copilot. Tag: cowork."
 prompt: >-
   Repurpose this [CONTENT] into: LinkedIn post, executive summary in Word, 3-slide deck, email to stakeholders, Teams channel post. Consistent messaging.
 platforms:

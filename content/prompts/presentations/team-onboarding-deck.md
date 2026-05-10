@@ -1,6 +1,6 @@
 ---
-title: New Employee Onboarding Deck
-description: Create a welcoming and informative onboarding presentation for new team members
+title: "New Employee Onboarding Deck — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for HR teams: create a welcoming and informative onboarding presentation for new team members. Best on M365 Copilot."
 prompt: 'Create a new employee onboarding presentation for the [DEPARTMENT] team. Include: (1) Welcome & Team Culture — who we are and how we work, (2) Team Structure — org chart and key contacts, (3) Tools
   & Systems — what software and platforms we use daily, (4) Key Processes — how we handle [COMMON WORKFLOWS], (5) Communication Norms — meeting cadence, chat etiquette, response time expectations, (6) First
   30-60-90 Day Expectations, (7) FAQ — common new starter questions, (8) Resources & Links — where to find everything. Tone: welcoming, clear, friendly.'

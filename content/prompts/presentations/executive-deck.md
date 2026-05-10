@@ -1,6 +1,6 @@
 ---
-title: Executive Pitch Deck
-description: Create a concise executive decision deck
+title: "Executive Pitch Deck — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for managers: create a concise executive decision deck. Works in M365 Copilot. Tag: presentations."
 prompt: >-
   Create a [NUMBER]-slide executive deck for [DECISION]. Structure: bottom line, context, options, recommendation, risk, investment, timeline. Each slide answers one question. Minimal text.
 platforms:

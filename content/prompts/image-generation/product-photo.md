@@ -1,6 +1,6 @@
 ---
-title: "Professional Product Photo"
-description: "Generate a clean, professional product photo with studio-quality lighting"
+title: "Professional Product Photo — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: Professional Product Photo — generate a clean, professional product photo with studio-quality lighting. Works in M365 Copilot."
 prompt: "A professional product photograph of [PRODUCT] on a clean white surface with soft studio lighting. Shot with a 85mm lens at f/2.8 for shallow depth of field. The product is centred in frame with subtle shadow underneath. Background is a smooth gradient from white to light grey. Commercial photography style, 4K resolution, photorealistic."
 platforms: ["dall-e", "midjourney"]
 best_on: "midjourney"

@@ -1,6 +1,6 @@
 ---
-title: Polite Decline Email
-description: Professionally decline a request, invitation, or proposal while maintaining the relationship
+title: "Polite Decline Email — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for executives: professionally decline a request, invitation, or proposal while maintaining the relationship. Best on M365 Copilot."
 prompt: 'Draft a polite but clear email declining [REQUEST/INVITATION]. The email should: (1) Thank them for thinking of me/us, (2) Clearly state that I am unable to accept, (3) Give a brief, professional
   reason without over-explaining, (4) Offer an alternative if appropriate — suggest another person, different timing, or a smaller commitment, (5) End on a positive note that keeps the door open for future
   opportunities. Tone: respectful, warm, definitive. Keep under 120 words.'

@@ -1,6 +1,6 @@
 ---
-title: Product Launch Announcement
-description: Create a multi-channel product launch communication plan
+title: "Product Launch Announcement — Free Claude AI Prompt"
+description: "Free advanced AI prompt for marketers: create a multi-channel product launch communication plan. Works in Claude. Tag: marketing."
 prompt: >-
   Create a product launch plan for [PRODUCT/FEATURE]. Include: (1) Launch messaging framework (headline, subhead, 3 key benefits), (2) Press release draft, (3) Blog post outline, (4) Social media post series (5 posts across platforms), (5) Internal announcement for sales team, (6) Email to existing customers. All materials should use consistent messaging.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Resource Request Justification
-description: Build a case for additional project resources
+title: "Resource Request Justification — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for project managers: build a case for additional project resources. Works in M365 Copilot. Tag: project-management."
 prompt: >-
   Write a resource request for [PROJECT] requesting [WHAT — additional headcount / budget / tools / time]. Include: (1) Current resource allocation, (2) Gap analysis showing what cannot be delivered without the resource, (3) Impact of not getting the resource (delays, quality, risk), (4) Options (full request, partial, alternative), (5) ROI or payback, (6) Timeline needed. Present for [APPROVER — PMO / director / finance].
 platforms:

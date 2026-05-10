@@ -1,6 +1,6 @@
 ---
-title: Travel Itinerary Organiser
-description: Compile scattered travel bookings into a clean, chronological itinerary document
+title: "Travel Itinerary Organiser — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for executive assistants: compile scattered travel bookings into a clean, chronological itinerary document. Best on M365 Copilot."
 prompt: 'Create a detailed travel itinerary from these booking confirmations. Organise chronologically and include: (1) Date/Time — local time at each location, (2) Flights — airline, flight number, departure/arrival
   times, terminal, seat, confirmation number, (3) Hotels — name, address, check-in/out times, confirmation number, (4) Ground Transport — car rental, transfers, taxi contacts, (5) Meetings/Events — what
   is scheduled and where, (6) Key Contacts — names and phone numbers for each leg, (7) Notes — time zone changes, visa requirements, weather forecast. Format as a day-by-day schedule.'

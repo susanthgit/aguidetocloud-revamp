@@ -1,6 +1,6 @@
 ---
-title: Company Introduction Deck
-description: Create a professional company overview presentation for prospects, partners, or new employees
+title: "Company Introduction Deck — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt: create a professional company overview presentation for prospects, partners, or new employees. Best on M365 Copilot."
 prompt: 'Create a company introduction presentation for [AUDIENCE TYPE]. Include: (1) Who We Are — company mission, vision, and values in one impactful slide, (2) By the Numbers — key stats (revenue, employees,
   customers, years in business), (3) What We Do — products/services overview with clear value propositions, (4) Our Differentiators — what makes us unique vs competitors, (5) Client Success Stories — 2-3
   brief case studies with metrics, (6) Our Team — leadership team highlights, (7) Awards & Recognition — credibility builders, (8) Next Steps — clear CTA for the audience. Keep to 12 slides max. Design

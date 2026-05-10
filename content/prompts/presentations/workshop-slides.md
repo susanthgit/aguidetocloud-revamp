@@ -1,6 +1,6 @@
 ---
-title: Workshop Slide Deck
-description: Create interactive workshop slides
+title: "Workshop Slide Deck — Free M365 Copilot AI Prompt"
+description: "Workshop Slide Deck — free intermediate AI prompt: create interactive workshop slides. Best on M365 Copilot. Tag: presentations."
 prompt: >-
   Create a [NUMBER]-slide workshop deck for [TOPIC]. Include: welcome/objectives, 3-4 content sections, interactive exercises between sections, discussion questions, summary/takeaways, resources. Add facilitator notes.
 platforms:

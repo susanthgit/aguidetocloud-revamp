@@ -1,6 +1,6 @@
 ---
-title: Team Sentiment Check
-description: Gauge team morale from recent Teams conversations
+title: "Team Sentiment Check — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for managers: gauge team morale from recent Teams conversations. Works in M365 Copilot. Tags: teams, sentiment."
 prompt: >-
   Review our recent team conversations and provide a sentiment check. Identify: (1) Overall team mood (positive, neutral, stressed), (2) Topics generating the most discussion or concern, (3) Team members who might need support (high workload signals, frustrated language), (4) Positive moments to celebrate. Note: this is for my awareness as a manager, not surveillance. Present diplomatically.
 platforms:

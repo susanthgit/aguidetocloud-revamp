@@ -1,6 +1,6 @@
 ---
-title: Budget Planning Template
-description: Create a departmental budget template with categories and formulas
+title: "Budget Planning Template — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for finance teams: create a departmental budget template with categories and formulas. Works in M365 Copilot. Tag: finance."
 prompt: >-
   Create a budget planning template for [DEPARTMENT] for [FISCAL YEAR]. Include: (1) Revenue categories with line items, (2) Operating expenses by category (personnel, software, travel, training), (3) Capital expenditure section, (4) Monthly and quarterly breakdowns, (5) Variance tracking columns (budget vs actual), (6) Summary dashboard row with key ratios. Add formulas for totals, percentages, and year-over-year comparison.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Shorten This Deck
-description: Condense a long presentation into fewer slides without losing the message
+title: "Shorten This Deck — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: Shorten This Deck — condense a long presentation into fewer slides without losing the message. Works in M365 Copilot."
 prompt: 'Shorten this [CURRENT NUMBER]-slide deck to [TARGET NUMBER] slides. Keep the key message, main data points, and call to action. Merge related slides, remove redundant content, and cut filler slides. The shortened version should still tell a complete story.'
 platforms:
 - m365-copilot

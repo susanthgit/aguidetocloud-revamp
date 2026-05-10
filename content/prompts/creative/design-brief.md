@@ -1,6 +1,6 @@
 ---
-title: Design Brief Creator
-description: Create a structured design brief for any creative project
+title: "Design Brief Creator — Free Claude AI Prompt"
+description: "Free beginner AI prompt for teams: create a structured design brief for any creative project. Works in Claude. Tag: creative."
 prompt: >-
   Write a design brief for [PROJECT — logo / website / presentation / marketing material]. Include: (1) Project overview and objectives, (2) Target audience, (3) Key message to convey, (4) Tone and style direction, (5) Must-have elements, (6) Deliverables and formats, (7) Timeline and milestones, (8) Inspiration references. Keep concise enough for a designer to act on.
 platforms:

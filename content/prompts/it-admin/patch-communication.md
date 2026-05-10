@@ -1,6 +1,6 @@
 ---
-title: Patch Management Communication
-description: Create patch management communications
+title: "Patch Management Communication — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for IT admins: create patch management communications. Works in M365 Copilot. Tag: it-admin."
 prompt: >-
   Draft patch communications for [UPDATE]. Include: pre-patch notification, day-of reminder, during-maintenance updates, completion confirmation, known issues.
 platforms:

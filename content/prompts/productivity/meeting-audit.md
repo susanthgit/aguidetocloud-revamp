@@ -1,6 +1,6 @@
 ---
-title: Meeting Audit and Cleanup
-description: Analyse your meeting load and reclaim time
+title: "Meeting Audit and Cleanup — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: analyse your meeting load and reclaim time. Works in M365 Copilot. Tags: productivity, meetings."
 prompt: >-
   Audit my calendar for the past [WEEKS — 2 / 4] weeks. Categorise each recurring meeting as: (1) Essential — I must attend, (2) Optional — I could send a delegate or read notes, (3) Redundant — overlaps with another meeting, (4) Unnecessary — should be an email. For each non-essential meeting, draft a polite opt-out message or suggest a shorter format. Calculate hours I could reclaim per week.
 platforms:

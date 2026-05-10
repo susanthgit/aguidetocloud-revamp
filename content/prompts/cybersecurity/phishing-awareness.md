@@ -1,6 +1,6 @@
 ---
-title: Phishing Awareness Training Content
-description: Create phishing awareness training materials
+title: "Phishing Awareness Training Content — Free ChatGPT AI Prompt"
+description: "Phishing Awareness Training Content — free beginner AI prompt: create phishing awareness training materials. Best on ChatGPT. Tag: cybersecurity."
 prompt: >-
   Create phishing awareness training content for [AUDIENCE — all staff / IT team / executives]. Include: (1) What phishing is and why it matters (with stats), (2) 5 real-world phishing examples with red flags highlighted, (3) How to identify suspicious emails (checklist), (4) What to do if you click a link, (5) Quiz questions to test understanding. Tone: engaging, not condescending.
 platforms:

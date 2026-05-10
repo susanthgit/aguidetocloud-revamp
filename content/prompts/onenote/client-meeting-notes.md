@@ -1,6 +1,6 @@
 ---
-title: Client Meeting Notes Template
-description: Set up a structured template for client meeting notes
+title: "Client Meeting Notes Template — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for sales teams: set up a structured template for client meeting notes. Works in M365 Copilot. Tag: onenote."
 prompt: >-
   Set up a client meeting notes template in OneNote. Sections: (1) Client details and attendees, (2) Agenda items, (3) Discussion notes by agenda item, (4) Commitments we made, (5) Commitments they made, (6) Follow-up actions with owners and dates, (7) Next meeting date. Include a satisfaction indicator.
 platforms:

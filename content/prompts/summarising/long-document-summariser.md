@@ -1,6 +1,6 @@
 ---
-title: "Long Document Summariser"
-description: "Condense a long document, report, or article into a clear executive summary"
+title: "Long Document Summariser — Free Claude AI Prompt"
+description: "Free beginner AI prompt: Long Document Summariser — condense a long document, report, or article into a clear executive summary. Works in Claude."
 prompt: "Summarise this document in three levels: (1) TL;DR — one sentence capturing the core message, (2) Executive Summary — a 3-4 sentence paragraph covering the key points, (3) Detailed Summary — bullet points covering every major section with the most important facts and figures preserved. Flag anything that seems like a decision point or requires action."
 platforms: ["m365-copilot", "chatgpt", "claude", "notebooklm"]
 m365_surfaces: ["word", "copilot-chat-work"]

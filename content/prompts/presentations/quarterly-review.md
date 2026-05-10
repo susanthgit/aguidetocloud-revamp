@@ -1,6 +1,6 @@
 ---
-title: Quarterly Review Slides
-description: Create a structured QBR presentation
+title: "Quarterly Review Slides — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: create a structured QBR presentation. Works in M365 Copilot. Tag: presentations."
 prompt: >-
   Create a [NUMBER]-slide QBR deck for [DEPARTMENT]. Include: overview and metrics, highlights, challenges, financial performance, customer insights, learnings, next priorities, support needed. Headline insight on each slide.
 platforms:

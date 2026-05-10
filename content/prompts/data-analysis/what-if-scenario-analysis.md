@@ -1,6 +1,6 @@
 ---
-title: What-If Scenario Analysis
-description: Build a scenario analysis comparing optimistic, realistic, and pessimistic projections
+title: "What-If Scenario Analysis — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for finance teams: build a scenario analysis comparing optimistic, realistic, and pessimistic projections. Best on M365 Copilot."
 prompt: 'Create a what-if scenario analysis for [DECISION/PROJECTION]. Build three scenarios: (1) Optimistic — best case with favourable assumptions, (2) Realistic — most likely case based on current trends,
   (3) Pessimistic — worst case with unfavourable assumptions. For each scenario provide: variable assumptions used, projected outcome (revenue, cost, timeline, or metric), probability estimate, key risks,
   and recommended actions. Create a comparison table and identify the break-even point or decision threshold. Conclude with a recommendation on which scenario to plan for.'

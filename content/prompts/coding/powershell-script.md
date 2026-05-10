@@ -1,6 +1,6 @@
 ---
-title: PowerShell Script from Description
-description: Generate a PowerShell script from a plain English task description
+title: "PowerShell Script from Description — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for IT admins: generate a PowerShell script from a plain English task description. Works in ChatGPT. Tag: coding."
 prompt: >-
   Write a PowerShell script that [DESCRIBE TASK — e.g. finds all inactive users in Entra ID who have not signed in for 90 days and exports them to CSV]. Include: (1) Required modules and permissions, (2) Parameter block with defaults, (3) Error handling with try-catch, (4) Progress output, (5) CSV or report output, (6) Comments explaining each section. Target: PowerShell 7+.
 platforms:

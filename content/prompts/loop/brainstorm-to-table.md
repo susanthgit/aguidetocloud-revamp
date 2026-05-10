@@ -1,6 +1,6 @@
 ---
-title: Turn Brainstorm into Action Table
-description: Convert a free-form brainstorm into a structured table with owners and next steps
+title: "Turn Brainstorm into Action Table — Free M365 Copilot Prompt"
+description: "Free beginner AI prompt for project managers: convert a free-form brainstorm into a structured table with owners and next steps. Best on M365 Copilot."
 prompt: 'Turn this brainstorm into a table with columns: Idea, Owner, Priority (High/Medium/Low), Next Step, and Status. Group related ideas together. Remove duplicates. Put the highest-impact ideas first.'
 platforms:
 - m365-copilot

@@ -1,6 +1,6 @@
 ---
-title: Remote Design Sprint Facilitator
-description: Run a compressed design sprint with your team
+title: "Remote Design Sprint Facilitator — Free Claude AI Prompt"
+description: "Free advanced AI prompt for product managers: run a compressed design sprint with your team. Works in Claude. Tags: claude-cowork, design-sprint."
 prompt: >-
   Facilitate a 2-hour design sprint for [CHALLENGE]. Structure: (1) Problem definition (10 min), (2) How Might We questions (15 min), (3) Rapid ideation — 8 ideas in 8 minutes, (4) Dot voting, (5) Solution sketching (20 min), (6) Critique, (7) Next steps. Keep energy high.
 platforms:

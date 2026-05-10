@@ -1,6 +1,6 @@
 ---
-title: Technology Stack Introduction
-description: Introduce new hires to company tech
+title: "Technology Stack Introduction — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for IT admins: introduce new hires to company tech. Works in M365 Copilot. Tags: onboarding, technology."
 prompt: >-
   Create a tech guide for new hires. Cover: communication tools, productivity tools, department tools, getting help, security essentials, efficiency tips. Include setup links.
 platforms:

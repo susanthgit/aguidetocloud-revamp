@@ -1,6 +1,6 @@
 ---
-title: Meeting Agenda Designer
-description: Create a purposeful meeting agenda with outcomes and timing
+title: "Meeting Agenda Designer — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: create a purposeful meeting agenda with outcomes and timing. Works in M365 Copilot. Tag: planning."
 prompt: >-
   Create an agenda for a [DURATION]-minute [MEETING TYPE — team meeting / planning session / review / workshop]. Include: (1) Meeting purpose (one sentence), (2) Pre-read or preparation required, (3) Agenda items with time allocation, discussion lead, and expected outcome (decision, input, or FYI), (4) Parking lot section, (5) Action items template. Total time must equal [DURATION].
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Stakeholder Progress Update
-description: Write a concise project update for senior stakeholders
+title: "Stakeholder Progress Update — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for project managers: write a concise project update for senior stakeholders. Works in M365 Copilot. Tag: communication."
 prompt: >-
   Write a stakeholder update for [PROJECT NAME] for [PERIOD]. Structure: (1) Status summary (On Track / At Risk / Blocked), (2) Key accomplishments this period, (3) Upcoming milestones, (4) Risks and mitigation actions, (5) Decisions needed from stakeholders, (6) Budget status. Keep it to one page. Use traffic light indicators for quick scanning.
 platforms:

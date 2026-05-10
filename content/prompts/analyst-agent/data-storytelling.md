@@ -1,6 +1,6 @@
 ---
-title: Data Storytelling Narrative
-description: Turn analysis results into a compelling narrative
+title: "Data Storytelling Narrative — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for analysts: turn analysis results into a compelling narrative. Works in M365 Copilot. Tags: analyst, storytelling."
 prompt: >-
   Take these analysis results: [DESCRIBE FINDINGS]. Turn them into a data story for [AUDIENCE]. Include: (1) The headline insight (one sentence), (2) Why it matters (so what), (3) The evidence (charts and numbers), (4) What caused it, (5) What to do about it. Write for people who do not love data.
 platforms:

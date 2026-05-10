@@ -1,6 +1,6 @@
 ---
-title: Shift Handoff Notes
-description: Create structured handoff notes between support shifts
+title: "Shift Handoff Notes — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for support agents: create structured handoff notes between support shifts. Works in M365 Copilot. Tag: support."
 prompt: >-
   Create handoff notes for the [INCOMING SHIFT — morning / evening / weekend] support team. Include: (1) Active high-priority tickets with status, (2) Pending customer callbacks, (3) Known issues or outages, (4) Escalations in progress, (5) Important context the next shift needs, (6) Staffing notes (who is available for what). Format for a 5-minute standup review.
 platforms:

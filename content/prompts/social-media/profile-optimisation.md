@@ -1,6 +1,6 @@
 ---
-title: LinkedIn Profile Optimiser
-description: Improve your LinkedIn profile for discoverability and credibility
+title: "LinkedIn Profile Optimiser — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for teams: improve your LinkedIn profile for discoverability and credibility. Works in ChatGPT. Tag: social-media."
 prompt: >-
   Review and improve my LinkedIn profile for [GOAL — job search / thought leadership / business development / networking]. Rewrite: (1) Headline (under 120 chars, keyword-rich), (2) About section (hook, story, value, CTA), (3) Experience descriptions (achievement-focused, not duty-focused), (4) Skills to add or remove, (5) Recommendations to request. Current profile: [PASTE CURRENT CONTENT].
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: SEO Content Brief
-description: Create a detailed content brief for a writer targeting specific keywords
+title: "SEO Content Brief — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt: SEO Content Brief — create a detailed content brief for a writer targeting specific keywords. Works in M365 Copilot."
 prompt: >-
   Create an SEO content brief for an article targeting [PRIMARY KEYWORD]. Include: (1) Target keyword and related terms, (2) Search intent analysis, (3) Competitor content review (top 3 results), (4) Recommended word count, (5) Heading structure with H2s and H3s, (6) Key points to cover, (7) Internal and external linking suggestions, (8) Featured snippet opportunity.
 platforms:

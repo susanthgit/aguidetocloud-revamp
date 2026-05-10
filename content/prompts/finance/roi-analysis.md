@@ -1,6 +1,6 @@
 ---
-title: ROI Analysis Builder
-description: Calculate ROI for a proposed initiative
+title: "ROI Analysis Builder — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for finance teams: calculate ROI for a proposed initiative. Works in M365 Copilot. Tag: finance."
 prompt: >-
   Calculate ROI for [INITIATIVE]. Include: total investment, quantified benefits, payback period, 3-year NPV, IRR, break-even, sensitivity analysis, risk-adjusted ROI. Present with recommendation.
 platforms:

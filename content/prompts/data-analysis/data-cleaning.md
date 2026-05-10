@@ -1,6 +1,6 @@
 ---
-title: Data Cleaning Checklist
-description: Create a systematic data cleaning plan
+title: "Data Cleaning Checklist — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: create a systematic data cleaning plan. Works in M365 Copilot. Tag: data-analysis."
 prompt: >-
   Create a data cleaning plan for [DATASET]. Check for: duplicates, missing values, inconsistent formats, outliers, invalid entries, and typos. Prioritise fixes by impact on analysis.
 platforms:

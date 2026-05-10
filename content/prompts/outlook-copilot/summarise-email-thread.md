@@ -1,6 +1,6 @@
 ---
-title: Summarise Long Email Thread
-description: Get a concise executive summary of a lengthy email conversation
+title: "Summarise Long Email Thread — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: get a concise executive summary of a lengthy email conversation. Works in M365 Copilot. Tag: outlook."
 prompt: 'Summarise this email thread into: (1) The original request, (2) Key decisions made, (3) Current status, (4) What needs to happen next. Keep it under 100 words so I can quickly understand this thread.'
 platforms:
 - m365-copilot

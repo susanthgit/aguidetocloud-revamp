@@ -1,6 +1,6 @@
 ---
-title: Privacy Notice Drafter
-description: Draft a privacy notice for a product or service
+title: "Privacy Notice Drafter — Free Claude AI Prompt"
+description: "Privacy Notice Drafter — free advanced AI prompt: draft a privacy notice for a product or service. Best on Claude. Tag: legal."
 prompt: >-
   Draft a privacy notice for [PRODUCT/SERVICE/WEBSITE]. Cover: (1) What data we collect, (2) How we use it, (3) Legal basis for processing, (4) Data sharing and third parties, (5) Data retention periods, (6) User rights (access, deletion, portability), (7) Cookie usage, (8) Contact details for privacy queries. Comply with: [REGULATION — GDPR / Privacy Act / CCPA]. Use plain language.
 platforms:

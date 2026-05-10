@@ -1,6 +1,6 @@
 ---
-title: Revenue Forecast Model
-description: Build a simple forecast based on historical performance
+title: "Revenue Forecast Model — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for finance teams: build a simple forecast based on historical performance. Works in M365 Copilot. Tag: finance."
 prompt: >-
   Using the last [PERIOD — 12 / 24] months of revenue data, create a forecast for the next [PERIOD — 3 / 6 / 12] months. Include: (1) Trend analysis, (2) Seasonal adjustments if patterns exist, (3) Best case, expected, and worst case scenarios, (4) Key assumptions stated clearly, (5) Confidence level for each scenario. Present as a table with a trend chart.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Suggest Better Visual Layouts
-description: Get Copilot to recommend improved layouts and visuals for each slide
+title: "Suggest Better Visual Layouts — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for teams: get Copilot to recommend improved layouts and visuals for each slide. Works in M365 Copilot. Tags: powerpoint, design."
 prompt: 'Review each slide in this presentation and suggest a better visual layout. For text-heavy slides, suggest diagrams, icons, or charts that could replace the text. For data slides, suggest the best chart type. Explain why each suggestion would improve audience comprehension.'
 platforms:
 - m365-copilot

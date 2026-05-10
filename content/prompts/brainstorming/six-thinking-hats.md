@@ -1,6 +1,6 @@
 ---
-title: Six Thinking Hats Analysis
-description: Analyse a decision using de Bono Six Thinking Hats framework
+title: "Six Thinking Hats Analysis — Free Claude AI Prompt"
+description: "Free advanced AI prompt for managers: analyse a decision using de Bono Six Thinking Hats framework. Works in Claude. Tags: brainstorming, six-hats."
 prompt: >-
   Analyse [DECISION/TOPIC] using the Six Thinking Hats framework: (1) White Hat — facts and data only, (2) Red Hat — emotions and gut feelings, (3) Black Hat — risks and cautions, (4) Yellow Hat — benefits and optimism, (5) Green Hat — creative alternatives, (6) Blue Hat — process and next steps. Present each perspective clearly then synthesise into a balanced recommendation.
 platforms:

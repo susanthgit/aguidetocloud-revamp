@@ -1,6 +1,6 @@
 ---
-title: Compare Meetings — Progress Check
-description: Compare promises from a previous meeting with what was actually delivered
+title: "Compare Meetings — Progress Check — Free M365 Copilot Prompt"
+description: "Free advanced AI prompt for managers: compare promises from a previous meeting with what was actually delivered. Best on M365 Copilot."
 prompt: 'Compare what was committed in our [PREVIOUS MEETING DATE] meeting with what has been delivered as of today. For each action item: state the original commitment, current status (done, in progress, overdue), and who is responsible. Highlight anything overdue or at risk.'
 platforms:
 - m365-copilot

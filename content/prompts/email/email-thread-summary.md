@@ -1,6 +1,6 @@
 ---
-title: Email Thread Summariser
-description: Summarise a long email thread into key points, decisions, and action items
+title: "Email Thread Summariser — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt: Email Thread Summariser — summarise a long email thread into key points, decisions, and action items. Works in M365 Copilot."
 prompt: 'Summarise this email thread concisely. Include: (1) Topic — what this thread is about in one sentence, (2) Participants — who is involved and their roles, (3) Timeline — when it started and key
   dates mentioned, (4) Key Points — the main arguments or updates from each participant, (5) Decisions Made — any agreements or approvals, (6) Action Items — tasks with owners, (7) Current Status — where
   things stand right now, (8) My Required Action — what I specifically need to do next.'

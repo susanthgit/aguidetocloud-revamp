@@ -1,6 +1,6 @@
 ---
-title: Meeting Preparation Briefing
-description: Get a comprehensive briefing on attendees, context, and talking points before any meeting
+title: "Meeting Preparation Briefing — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: get a comprehensive briefing on attendees, context, and talking points before any meeting. Best on M365 Copilot."
 prompt: 'I have a meeting with [ATTENDEES] about [TOPIC] scheduled for [DATE/TIME]. Prepare a briefing that includes: (1) Recent email threads and Teams messages related to this topic, (2) Any shared documents
   or files relevant to the discussion, (3) Key talking points I should raise, (4) Open questions or unresolved items from previous conversations, (5) Suggested agenda with time allocations.'
 platforms:

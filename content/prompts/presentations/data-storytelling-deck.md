@@ -1,6 +1,6 @@
 ---
-title: Data Storytelling Presentation
-description: Transform raw data and charts into a compelling narrative presentation
+title: "Data Storytelling Presentation — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt: Data Storytelling Presentation — transform raw data and charts into a compelling narrative presentation. Works in M365 Copilot."
 prompt: 'Create a data storytelling presentation from this data. Structure as: (1) The Hook — start with a surprising finding or trend, (2) The Context — why this data matters and what we were measuring,
   (3) The Journey — walk through the data chronologically or by theme, building toward the insight, (4) The Insight — the key "aha moment" the data reveals, (5) The Implications — what this means for our
   business, (6) The Action — specific recommendations backed by the data, (7) The Ask — what you need from the audience. For each slide, suggest a chart type or visual that best tells that part of the story.

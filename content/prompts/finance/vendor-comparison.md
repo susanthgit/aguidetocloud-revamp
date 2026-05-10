@@ -1,6 +1,6 @@
 ---
-title: Vendor Cost Comparison
-description: Compare vendor pricing and TCO
+title: "Vendor Cost Comparison — Free M365 Copilot AI Prompt"
+description: "Vendor Cost Comparison — free intermediate AI prompt: compare vendor pricing and TCO. Best on M365 Copilot. Tag: finance."
 prompt: >-
   Compare [VENDORS] for [SERVICE]. Include: licence costs, implementation, training, maintenance, hidden costs, 3-year TCO, per-user cost, contract flexibility. Side-by-side table.
 platforms:

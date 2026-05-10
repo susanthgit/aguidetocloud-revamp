@@ -1,6 +1,6 @@
 ---
-title: Data Storytelling Deck
-description: Transform data into a compelling visual story
+title: "Data Storytelling Deck — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for analysts: transform data into a compelling visual story. Works in M365 Copilot. Tag: powerpoint."
 prompt: >-
   Transform this data into a compelling presentation story: [DESCRIBE DATA/FINDINGS]. Create a [NUMBER]-slide deck that: (1) Opens with the headline finding, (2) Shows the data visually with the right chart types, (3) Explains what the data means in plain English, (4) Highlights surprises or counterintuitive findings, (5) Ends with clear recommendations. Each slide should make one point.
 platforms:

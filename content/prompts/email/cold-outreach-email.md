@@ -1,6 +1,6 @@
 ---
-title: Cold Outreach Email
-description: Draft a compelling cold outreach email that gets opened and replied to
+title: "Cold Outreach Email — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: Cold Outreach Email — draft a compelling cold outreach email that gets opened and replied to. Works in M365 Copilot."
 prompt: 'Draft a cold outreach email to [RECIPIENT ROLE] at [COMPANY] about [YOUR OFFERING]. Structure: (1) Subject line — personalised, curiosity-driven, under 8 words, (2) Opening — reference something
   specific about their company or role (show you did research), (3) Value prop — one clear sentence on what you offer and why it matters to them, (4) Social proof — one brief example or metric from a similar
   company, (5) CTA — one specific, low-commitment ask (15-min call, not "let me know"). Keep the entire email under 120 words. No attachments, no links in first email.'

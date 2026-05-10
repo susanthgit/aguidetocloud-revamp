@@ -1,6 +1,6 @@
 ---
-title: Energy Management Plan
-description: Design your day around energy patterns
+title: "Energy Management Plan — Free M365 Copilot AI Prompt"
+description: "Energy Management Plan — free beginner AI prompt: design your day around energy patterns. Best on M365 Copilot. Tag: productivity."
 prompt: >-
   Design my ideal day based on energy. Peak at [TIME], low at [TIME]. Assign: deep work, admin, meetings, breaks, exercise, wind-down. Optimise for performance.
 platforms:

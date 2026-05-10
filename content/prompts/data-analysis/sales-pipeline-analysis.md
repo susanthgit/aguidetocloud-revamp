@@ -1,6 +1,6 @@
 ---
-title: Sales Pipeline Analysis
-description: Analyse your sales pipeline data to identify top opportunities, risks, and forecast accuracy
+title: "Sales Pipeline Analysis — Free M365 Copilot AI Prompt"
+description: "Free AI prompt: analyse your sales pipeline data to identify top opportunities, risks, and forecast accuracy. Works in M365 Copilot. Tag: sales."
 prompt: 'Analyse this sales pipeline data and provide: (1) Total pipeline value by stage (Prospect, Qualified, Proposal, Negotiation, Closed Won/Lost), (2) Win rate by stage and by sales rep, (3) Average
   deal cycle time from first contact to close, (4) At-risk deals — opportunities that have been in the same stage for more than [X] days, (5) Revenue forecast for the next quarter based on current pipeline
   and historical win rates, (6) Top 5 recommendations to improve pipeline conversion.'

@@ -1,6 +1,6 @@
 ---
-title: Chatbot Conversation Design
-description: Design a chatbot conversation flow for common requests
+title: "Chatbot Conversation Design — Free ChatGPT AI Prompt"
+description: "Free advanced AI prompt for IT admins: design a chatbot conversation flow for common requests. Works in ChatGPT. Tag: automation."
 prompt: >-
   Design a chatbot conversation flow for handling [USE CASE — IT password resets / leave requests / FAQ / order status]. Include: (1) Welcome message and intent detection, (2) Main conversation branches, (3) Questions to ask and in what order, (4) Integration points (API calls, database lookups), (5) Handoff to human agent triggers, (6) Fallback and error messages. Map as a decision tree.
 platforms:

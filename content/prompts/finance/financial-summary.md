@@ -1,6 +1,6 @@
 ---
-title: Monthly Financial Summary
-description: Create an executive-ready financial summary for leadership
+title: "Monthly Financial Summary — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for finance teams: create an executive-ready financial summary for leadership. Works in M365 Copilot. Tags: finance, reporting."
 prompt: >-
   Create a monthly financial summary for [MONTH/PERIOD]. Include: (1) Revenue vs target (with percentage achievement), (2) Key expense categories and notable changes, (3) Profitability metrics, (4) Cash flow highlights, (5) Top 3 financial risks, (6) Outlook for next month. Present as a one-page executive summary with a traffic light dashboard. Use plain English.
 platforms:

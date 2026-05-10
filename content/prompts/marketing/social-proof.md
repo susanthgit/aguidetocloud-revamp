@@ -1,6 +1,6 @@
 ---
-title: Customer Testimonial Request
-description: Draft a request for customer testimonials or case studies
+title: "Customer Testimonial Request — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for marketers: draft a request for customer testimonials or case studies. Works in M365 Copilot. Tag: marketing."
 prompt: >-
   Draft an email to [CUSTOMER NAME] requesting a testimonial or case study about their experience with [PRODUCT/SERVICE]. Include: (1) Warm opening referencing their success, (2) Why their story matters, (3) What the process involves (10-min call or written Q&A), (4) How we will use it (website, sales materials), (5) Easy opt-out. Tone: grateful and low-pressure.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Negotiation Email
-description: Write a professional negotiation email
+title: "Negotiation Email — Free M365 Copilot AI Prompt"
+description: "Negotiation Email — free advanced AI prompt: write a professional negotiation email. Best on M365 Copilot. Tag: email."
 prompt: >-
   Draft an email negotiating [WHAT — pricing / terms / timeline / scope] with [RECIPIENT]. Be firm but fair. Present your position with reasoning, propose a compromise, and keep the relationship positive.
 platforms:

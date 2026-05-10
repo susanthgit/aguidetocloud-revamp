@@ -1,6 +1,6 @@
 ---
-title: Workshop Materials Designer
-description: Design visual materials for a workshop
+title: "Workshop Materials Designer — Free M365 Copilot AI Prompt"
+description: "Workshop Materials Designer — free intermediate AI prompt: design visual materials for a workshop. Best on M365 Copilot. Tag: creative."
 prompt: >-
   Design materials for [WORKSHOP]. Create: agenda poster, exercise cards, discussion prompts, feedback form, completion certificate. Consistent branding with [BRAND].
 platforms:

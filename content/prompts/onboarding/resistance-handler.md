@@ -1,6 +1,6 @@
 ---
-title: Change Resistance Response Guide
-description: Prepare responses for common change resistance
+title: "Change Resistance Response Guide — Free Claude AI Prompt"
+description: "Change Resistance Response Guide — free advanced AI prompt: prepare responses for common change resistance. Best on Claude. Tag: onboarding."
 prompt: >-
   Create a guide for handling resistance to [CHANGE]. Address these common objections: (1) We have always done it this way, (2) This is going to make my job harder, (3) Nobody asked us about this, (4) The old system worked fine, (5) I do not have time to learn something new. For each: empathise, reframe, provide evidence, and offer support. Include escalation paths for persistent resistance.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Email Template Collection
-description: Create reusable email templates for common workplace scenarios
+title: "Email Template Collection — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for teams: create reusable email templates for common workplace scenarios. Works in M365 Copilot. Tag: outlook."
 prompt: >-
   Create [NUMBER — 5 / 10] email templates for common workplace scenarios in my role as [ROLE]. For each template: (1) Scenario description, (2) Subject line, (3) Email body with [PLACEHOLDERS], (4) Tone guidance, (5) When to use vs customise heavily. Cover: requests, follow-ups, introductions, thank-yous, and bad news delivery.
 platforms:

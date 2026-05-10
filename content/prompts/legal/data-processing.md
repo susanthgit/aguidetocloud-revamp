@@ -1,6 +1,6 @@
 ---
-title: DPA Review
-description: Review a Data Processing Agreement
+title: "DPA Review — Free M365 Copilot AI Prompt"
+description: "DPA Review — free advanced AI prompt: review a Data Processing Agreement. Best on M365 Copilot. Tags: legal, dpa."
 prompt: >-
   Review this DPA: data processed, purposes, controller vs processor, sub-processors, cross-border transfers, breach notification, audit rights, data return. Flag deviations.
 platforms:

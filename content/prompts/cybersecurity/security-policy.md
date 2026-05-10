@@ -1,6 +1,6 @@
 ---
-title: Security Policy Draft
-description: Create an information security policy document
+title: "Security Policy Draft — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for teams: create an information security policy document. Works in M365 Copilot. Tag: cybersecurity."
 prompt: >-
   Draft an information security policy for [POLICY AREA — acceptable use / remote work / BYOD / data classification / password / incident reporting]. Include: (1) Purpose and scope, (2) Policy statements with clear rules, (3) User responsibilities, (4) Monitoring and enforcement, (5) Exceptions process, (6) Compliance requirements referenced. Write for a non-technical audience.
 platforms:

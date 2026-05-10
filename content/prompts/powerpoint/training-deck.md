@@ -1,6 +1,6 @@
 ---
-title: Training Presentation Builder
-description: Create an interactive training deck with exercises
+title: "Training Presentation Builder — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for teams: create an interactive training deck with exercises. Works in M365 Copilot. Tag: powerpoint."
 prompt: >-
   Create a [NUMBER]-slide training deck on [TOPIC] for [AUDIENCE]. Include: (1) Learning objectives slide, (2) Content slides with visuals over text, (3) Discussion question slides between sections, (4) Hands-on exercise slides with instructions, (5) Quiz or knowledge check slides, (6) Summary and resources slide. Add speaker notes with facilitator guidance.
 platforms:

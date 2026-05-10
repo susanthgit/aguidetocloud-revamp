@@ -1,6 +1,6 @@
 ---
-title: Learn Any Topic Fast
-description: Get a structured crash course on any topic, from beginner to competent in 10 minutes
+title: "Learn Any Topic Fast — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt: Learn Any Topic Fast — get a structured crash course on any topic, from beginner to competent in 10 minutes. Works in ChatGPT."
 prompt: 'Give me a comprehensive crash course on [TOPIC]. Structure it as: (1) ELI5 — explain it in one simple analogy a 10-year-old would understand, (2) Core Concepts — the 5-7 key ideas I must understand,
   each in 2-3 sentences, (3) How It Actually Works — a more technical explanation with a step-by-step process, (4) Common Misconceptions — 3 things people get wrong about this topic, (5) Real-World Examples
   — 3 concrete examples of this in action, (6) Key Terminology — a mini-glossary of 8-10 essential terms, (7) What to Learn Next — recommended path to go deeper. Write in clear, simple English. Avoid jargon

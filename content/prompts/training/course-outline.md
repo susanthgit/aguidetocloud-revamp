@@ -1,6 +1,6 @@
 ---
-title: Course Outline Designer
-description: Design a structured training course outline
+title: "Course Outline Designer — Free ChatGPT AI Prompt"
+description: "Course Outline Designer — free intermediate AI prompt: design a structured training course outline. Best on ChatGPT. Tag: training."
 prompt: >-
   Design a course outline for [TOPIC] targeting [AUDIENCE — beginners / intermediate / advanced]. Include: (1) Learning objectives (3-5), (2) Module breakdown with topics and duration, (3) Key concepts per module, (4) Hands-on exercises or activities, (5) Assessment methods, (6) Prerequisites, (7) Recommended resources. Total duration: [HOURS] hours.
 platforms:

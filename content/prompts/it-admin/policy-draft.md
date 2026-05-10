@@ -1,6 +1,6 @@
 ---
-title: IT Policy Document Draft
-description: Create an IT policy document with proper structure and enforcement guidelines
+title: "IT Policy Document Draft — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for IT admins: create an IT policy document with proper structure and enforcement guidelines. Best on M365 Copilot."
 prompt: 'Draft an IT policy for [POLICY TOPIC — acceptable use / BYOD / password / remote access / data classification]. Include: (1) Purpose and scope, (2) Policy statements with clear rules, (3) Roles and responsibilities, (4) Exceptions process, (5) Enforcement and consequences, (6) Review schedule. Write in plain English that non-technical staff can understand.'
 platforms:
 - m365-copilot

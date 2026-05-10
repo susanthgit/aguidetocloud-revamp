@@ -1,6 +1,6 @@
 ---
-title: Industry Trends Research
-description: Research current trends in a specific industry
+title: "Industry Trends Research — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: research current trends in a specific industry. Works in M365 Copilot. Tag: research."
 prompt: >-
   Research current trends in [INDUSTRY]. Cover: top 5 trends, driving forces behind each, early adopters, implications for our business, and recommended actions for the next 12 months.
 platforms:

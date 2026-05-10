@@ -1,6 +1,6 @@
 ---
-title: Team Skill Gap Analysis
-description: Identify skill gaps and plan development
+title: "Team Skill Gap Analysis — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: identify skill gaps and plan development. Works in M365 Copilot. Tags: training, skill-gap."
 prompt: >-
   Conduct a skill gap analysis. List required skills, rate current capability 1-5, identify gaps, prioritise by impact, recommend development actions per gap.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Polite Meeting Decline
-description: Draft a polite meeting decline with alternatives
+title: "Polite Meeting Decline — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: draft a polite meeting decline with alternatives. Works in M365 Copilot. Tag: outlook."
 prompt: >-
   Draft a decline for this meeting. Include: polite reason, ask for notes after, offer async input, suggest alternative time if topic is important.
 platforms:

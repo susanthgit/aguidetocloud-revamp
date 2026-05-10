@@ -1,6 +1,6 @@
 ---
-title: Quarterly Business Review Deck Outline
-description: Structure a QBR presentation for an existing customer
+title: "Quarterly Business Review Deck Outline — Free AI Prompt"
+description: "Free advanced AI prompt for sales teams: structure a QBR presentation for an existing customer. Works in M365 Copilot. Tag: sales."
 prompt: >-
   Create a QBR presentation outline for [CUSTOMER NAME]. Include: (1) Relationship summary and key contacts, (2) Usage and adoption metrics, (3) ROI achieved vs promised, (4) Support ticket summary, (5) Product roadmap highlights relevant to them, (6) Expansion opportunities, (7) Action items and next steps. Format as a slide outline with talking points.
 platforms:

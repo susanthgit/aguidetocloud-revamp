@@ -1,6 +1,6 @@
 ---
-title: Book or Report Summary
-description: Summarise a book or long report into key takeaways
+title: "Book or Report Summary — Free Claude AI Prompt"
+description: "Free beginner AI prompt for teams: summarise a book or long report into key takeaways. Works in Claude. Tag: summarising."
 prompt: >-
   Summarise [BOOK/REPORT TITLE] into: (1) One-sentence overview, (2) 5-7 key takeaways, (3) The main argument or thesis, (4) Most surprising or contrarian finding, (5) How it applies to [MY ROLE/CONTEXT], (6) Who should read this and why, (7) 3 quotes worth remembering. Keep the full summary under 500 words.
 platforms:

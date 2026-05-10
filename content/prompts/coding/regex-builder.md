@@ -1,6 +1,6 @@
 ---
-title: Regex Pattern Builder
-description: Build and explain a regular expression for a specific pattern
+title: "Regex Pattern Builder — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for developers: build and explain a regular expression for a specific pattern. Works in ChatGPT. Tags: coding, regex."
 prompt: >-
   Build a regex pattern that matches [DESCRIBE WHAT YOU NEED — e.g. email addresses / phone numbers / dates in DD/MM/YYYY format / URLs]. Provide: (1) The regex pattern, (2) A plain English explanation of each part, (3) Test cases that should match, (4) Test cases that should NOT match, (5) Any edge cases to watch for. Language: [LANGUAGE].
 platforms:

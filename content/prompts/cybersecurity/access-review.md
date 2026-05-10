@@ -1,6 +1,6 @@
 ---
-title: User Access Review Template
-description: Create a structured user access review checklist
+title: "User Access Review Template — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for teams: create a structured user access review checklist. Works in M365 Copilot. Tags: cybersecurity, access-review."
 prompt: >-
   Create a user access review template for [SYSTEM/APPLICATION]. Include: (1) All user accounts with their roles and permissions, (2) Last login date, (3) Business justification for access, (4) Manager approval column, (5) Actions needed (keep, reduce, remove), (6) Compliance evidence trail. Flag accounts with: no login in 90 days, excessive permissions, or no manager assigned.
 platforms:

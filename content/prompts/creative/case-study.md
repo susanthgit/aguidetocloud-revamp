@@ -1,6 +1,6 @@
 ---
-title: Customer Case Study Draft
-description: Write a compelling case study from customer data
+title: "Customer Case Study Draft — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for teams: write a compelling case study from customer data. Works in Claude. Tags: creative, case-study."
 prompt: >-
   Write a case study about [CUSTOMER/PROJECT]. Structure: (1) The Challenge — what problem they faced, (2) The Solution — what we did and how, (3) The Results — specific metrics and outcomes, (4) Quote from the customer, (5) Key takeaway. Keep it to one page. Tone: factual and credible, not salesy. Base on: [SOURCE DATA].
 platforms:

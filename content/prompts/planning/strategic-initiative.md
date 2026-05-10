@@ -1,6 +1,6 @@
 ---
-title: Strategic Initiative Prioritiser
-description: Evaluate and rank competing strategic initiatives
+title: "Strategic Initiative Prioritiser — Free Claude AI Prompt"
+description: "Free advanced AI prompt for executives: evaluate and rank competing strategic initiatives. Works in Claude. Tags: planning, strategy."
 prompt: >-
   Evaluate these strategic initiatives: [LIST INITIATIVES]. For each assess: (1) Strategic alignment score (1-10), (2) Expected impact, (3) Resource requirements, (4) Time to value, (5) Risk level, (6) Dependencies. Rank by weighted score. Present as a prioritisation matrix with a recommendation for what to pursue this [PERIOD].
 platforms:

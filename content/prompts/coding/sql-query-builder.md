@@ -1,6 +1,6 @@
 ---
-title: SQL Query Builder
-description: Write a SQL query from a plain English description
+title: "SQL Query Builder — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for developers: write a SQL query from a plain English description. Works in ChatGPT. Tag: coding."
 prompt: >-
   Write a SQL query that [DESCRIBE WHAT YOU NEED — e.g. finds all customers who ordered more than 3 times in the last month but have not ordered in the last 7 days]. Database: [TYPE — SQL Server / PostgreSQL / MySQL]. Tables: [LIST TABLE NAMES AND KEY COLUMNS]. Include: the query, explanation of each clause, and performance considerations.
 platforms:

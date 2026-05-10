@@ -1,6 +1,6 @@
 ---
-title: Short Video Content Ideas
-description: Generate ideas for short-form video content
+title: "Short Video Content Ideas — Free ChatGPT AI Prompt"
+description: "Short Video Content Ideas — free beginner AI prompt: generate ideas for short-form video content. Best on ChatGPT. Tag: social-media."
 prompt: >-
   Generate [NUMBER — 10 / 15] short-form video ideas for [TOPIC/NICHE] on [PLATFORM — TikTok / Reels / Shorts]. For each: (1) Concept in one sentence, (2) Hook (first 3 seconds), (3) Format (tutorial / story / reaction / tips), (4) Length (15s / 30s / 60s), (5) Trending audio or style to leverage. Focus on ideas that showcase expertise without being boring.
 platforms:

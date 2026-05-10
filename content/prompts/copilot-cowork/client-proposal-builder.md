@@ -1,6 +1,6 @@
 ---
-title: Build a Client Proposal End-to-End
-description: Have Cowork research, draft, and package a complete client proposal
+title: "Build a Client Proposal End-to-End — Free AI Prompt"
+description: "Free advanced AI prompt for sales teams: have Cowork research, draft, and package a complete client proposal. Works in M365 Copilot. Tag: cowork."
 prompt: >-
   Build a proposal for [CLIENT NAME] for [PROJECT/SERVICE]. Steps: (1) Research recent correspondence with this client from emails and Teams, (2) Draft the proposal in Word using our [TEMPLATE] with their specific needs, (3) Create a pricing comparison in Excel with [OPTIONS — 3 tiers], (4) Build a 4-slide summary deck in PowerPoint for the pitch meeting, (5) Draft a cover email to [CLIENT CONTACT] with the proposal attached.
 platforms:

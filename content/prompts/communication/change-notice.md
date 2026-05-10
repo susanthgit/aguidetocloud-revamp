@@ -1,6 +1,6 @@
 ---
-title: Change Management Communication
-description: Write a change management notice for employees
+title: "Change Management Communication — Free M365 Copilot Prompt"
+description: "Free intermediate AI prompt for comms teams: write a change management notice for employees. Works in M365 Copilot. Tags: communication, change-management."
 prompt: >-
   Draft a change management communication for [CHANGE — new system / process update / policy change / tool migration]. Include: (1) What is changing and why, (2) What stays the same (reassurance), (3) Timeline with key dates, (4) Training and support available, (5) FAQ for common concerns, (6) Feedback channel. Tone: supportive, clear, proactive.
 platforms:

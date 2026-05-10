@@ -1,6 +1,6 @@
 ---
-title: Long Document Deep Analysis
-description: Upload a massive document and get a thorough, structured analysis leveraging Claude's 200K context
+title: "Long Document Deep Analysis — Free Claude AI Prompt"
+description: "Free advanced AI prompt for executives: upload a massive document and get a thorough, structured analysis leveraging Claude's 200K context. Best on Claude."
 prompt: 'Analyse this entire document thoroughly. Provide: (1) Document Overview — type, purpose, author, date, length, (2) Executive Summary — the core message in 5 sentences, (3) Section-by-Section Analysis
   — key points from each major section, (4) Critical Assessment — strengths and weaknesses of the arguments/content, (5) Key Data Points — all important numbers, statistics, and figures extracted, (6) Inconsistencies
   — any contradictions or gaps in the document, (7) Implications — what this document means for [YOUR CONTEXT], (8) Questions Raised — issues the document raises but does not answer, (9) Recommended Actions

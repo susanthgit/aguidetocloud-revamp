@@ -1,6 +1,6 @@
 ---
-title: Dashboard Metrics Designer
-description: Design a one-page dashboard layout for key metrics
+title: "Dashboard Metrics Designer — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for analysts: design a one-page dashboard layout for key metrics. Works in M365 Copilot. Tag: excel."
 prompt: >-
   Design a one-page Excel dashboard for [PURPOSE — sales tracking / project status / IT operations / team performance]. Include: (1) 4-6 KPI cards with current value and trend, (2) Main chart showing the primary metric over time, (3) Breakdown chart by [DIMENSION — region / category / team], (4) Data table with detail, (5) Refresh date. Specify chart types and layout.
 platforms:

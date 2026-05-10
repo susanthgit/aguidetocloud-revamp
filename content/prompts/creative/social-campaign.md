@@ -1,6 +1,6 @@
 ---
-title: Social Campaign Concept
-description: Develop a social media campaign concept
+title: "Social Campaign Concept — Free M365 Copilot AI Prompt"
+description: "Social Campaign Concept — free advanced AI prompt: develop a social media campaign concept. Best on M365 Copilot. Tag: creative."
 prompt: >-
   Develop a campaign for [GOAL] on [PLATFORMS]. Include: campaign name, big idea, visual direction, content pillars, 5-7 post examples, engagement mechanic, metrics.
 platforms:

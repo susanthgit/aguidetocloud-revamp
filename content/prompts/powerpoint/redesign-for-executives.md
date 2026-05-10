@@ -1,6 +1,6 @@
 ---
-title: Redesign Deck for Executive Audience
-description: Transform a detailed deck into an executive-ready version with less text and stronger impact
+title: "Redesign Deck for Executive Audience — Free AI Prompt"
+description: "Free advanced AI prompt for executives: transform a detailed deck into an executive-ready version with less text and stronger impact. Best on M365 Copilot."
 prompt: 'Redesign this presentation for an executive audience. Reduce text on each slide to headlines and key numbers only. Replace detailed explanations with high-impact statements. Add an executive summary slide at the front. Keep data charts but simplify labels. Remove any slides that do not directly support a decision.'
 platforms:
 - m365-copilot

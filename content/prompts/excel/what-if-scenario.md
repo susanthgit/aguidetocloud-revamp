@@ -1,6 +1,6 @@
 ---
-title: What-If Scenario Comparison
-description: Build side-by-side scenario comparisons with different assumptions
+title: "What-If Scenario Comparison — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for analysts: build side-by-side scenario comparisons with different assumptions. Works in M365 Copilot. Tag: excel."
 prompt: >-
   Build a what-if scenario comparison for [DECISION — hiring plan / budget allocation / pricing change / expansion]. Create 3 scenarios: (1) Conservative, (2) Base case, (3) Optimistic. For each: define assumptions, calculate outcomes, and show the difference. Include a sensitivity analysis on the [KEY VARIABLE]. Present as a side-by-side comparison table.
 platforms:

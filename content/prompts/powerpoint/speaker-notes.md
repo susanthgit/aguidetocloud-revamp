@@ -1,6 +1,6 @@
 ---
-title: Add Speaker Notes to Every Slide
-description: Generate natural, presentation-ready speaker notes for each slide
+title: "Add Speaker Notes to Every Slide — Free M365 Copilot Prompt"
+description: "Free intermediate AI prompt: Add Speaker Notes to Every Slide — generate natural, presentation-ready speaker notes for each slide. Works in M365 Copilot."
 prompt: 'Add speaker notes to each slide in this presentation. The notes should sound natural — like I am explaining each slide to the audience in conversation, not reading bullet points. Include transition phrases between slides. Keep each slide note to 3-5 sentences.'
 platforms:
 - m365-copilot

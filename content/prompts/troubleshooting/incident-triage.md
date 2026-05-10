@@ -1,6 +1,6 @@
 ---
-title: Incident Triage Guide
-description: Quickly diagnose and categorise an IT incident
+title: "Incident Triage Guide — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for IT admins: quickly diagnose and categorise an IT incident. Works in ChatGPT. Tag: troubleshooting."
 prompt: >-
   Help me triage this IT incident: [DESCRIBE THE ISSUE]. (1) Classify severity (P1-P4) based on user impact, (2) Identify the most likely affected system or service, (3) List 5 diagnostic checks to run immediately, (4) Suggest the probable root cause, (5) Recommend whether to escalate or resolve at this level, (6) Draft a status update for affected users.
 platforms:

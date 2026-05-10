@@ -1,6 +1,6 @@
 ---
-title: Interview Notes Template
-description: Create a structured interview notes template
+title: "Interview Notes Template — Free M365 Copilot AI Prompt"
+description: "Interview Notes Template — free beginner AI prompt: create a structured interview notes template. Best on M365 Copilot. Tag: onenote."
 prompt: >-
   Create an interview notes template. Include: candidate details, questions with answer space, competency scoring 1-5, cultural fit indicators, red flags, recommendation.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Difficult Meeting Preparation
-description: Prepare for a challenging or contentious meeting
+title: "Difficult Meeting Preparation — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for managers: prepare for a challenging or contentious meeting. Works in M365 Copilot. Tag: meetings."
 prompt: >-
   Help me prepare for a difficult meeting about [TOPIC]. Include: (1) My opening statement, (2) Key points to make, (3) Anticipated objections and responses, (4) Ground rules to set, (5) Desired outcome, (6) Plan if things go off track.
 platforms:

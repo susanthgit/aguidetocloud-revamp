@@ -1,6 +1,6 @@
 ---
-title: MFA Rollout Communication Plan
-description: Create a communication plan for rolling out multi-factor authentication
+title: "MFA Rollout Communication Plan — Free M365 Copilot AI Prompt"
+description: "MFA Rollout Communication Plan — free AI prompt for teams. create a communication plan for rolling out multi-factor authentication. Best on M365 Copilot."
 prompt: >-
   Create a communication plan for rolling out MFA to [NUMBER] users over [TIMEFRAME]. Include: (1) Executive announcement email, (2) Step-by-step setup guide for users, (3) FAQ addressing common concerns, (4) Support escalation path, (5) Timeline with pilot group and full rollout dates, (6) Follow-up email for non-compliant users. Tone: supportive, not threatening.
 platforms:

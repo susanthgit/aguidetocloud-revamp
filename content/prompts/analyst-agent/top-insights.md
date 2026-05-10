@@ -1,6 +1,6 @@
 ---
-title: Analyse Dataset for Top Insights
-description: Ask the Analyst agent to find the most important patterns and trends in your data
+title: "Analyse Dataset for Top Insights — Free M365 Copilot Prompt"
+description: "Free beginner AI prompt for analysts: ask the Analyst agent to find the most important patterns and trends in your data. Best on M365 Copilot."
 prompt: 'Analyse this data and give me the top [NUMBER — 3 / 5] insights. For each insight explain: what the data shows, why it matters, and what I should do about it. Include a supporting chart or visualisation for the most impactful finding. Write for [AUDIENCE — management / the team / a technical audience].'
 platforms:
 - m365-copilot

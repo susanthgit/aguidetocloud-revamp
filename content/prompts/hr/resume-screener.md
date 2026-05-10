@@ -1,6 +1,6 @@
 ---
-title: Resume Fit Scorer
-description: Score a candidate resume against a job description with strengths and gaps
+title: "Resume Fit Scorer — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for teams: score a candidate resume against a job description with strengths and gaps. Works in M365 Copilot. Tags: hr, hiring."
 prompt: 'Review this resume and compare it to the job description for [ROLE]. Score the candidate 1-10 on: (1) Technical skills match, (2) Experience level, (3) Culture fit indicators, (4) Red flags or gaps. Provide a 3-sentence summary and recommend: Strong Yes, Yes, Maybe, or No.'
 platforms:
 - m365-copilot

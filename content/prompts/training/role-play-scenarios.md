@@ -1,6 +1,6 @@
 ---
-title: Training Role-Play Scenarios
-description: Create realistic role-play scenarios for skills practice
+title: "Training Role-Play Scenarios — Free Claude AI Prompt"
+description: "Free advanced AI prompt for teams: create realistic role-play scenarios for skills practice. Works in Claude. Tag: training."
 prompt: >-
   Create [NUMBER] role-play scenarios for practicing [SKILL]. Each: (1) Situation setup, (2) Character briefs for participants, (3) Hidden objectives, (4) Evaluation criteria, (5) Debrief questions. Increase difficulty progressively.
 platforms:

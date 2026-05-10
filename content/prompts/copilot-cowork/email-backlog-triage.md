@@ -1,6 +1,6 @@
 ---
-title: Triage My Email Backlog
-description: Have Cowork sort, summarise, and draft responses for your unread emails
+title: "Triage My Email Backlog — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for executives: have Cowork sort, summarise, and draft responses for your unread emails. Works in M365 Copilot. Tag: cowork."
 prompt: >-
   I have [NUMBER] unread emails from the past [PERIOD — week / 3 days / while I was on leave]. Triage them: (1) Categorise by urgency (respond today, respond this week, FYI only, can delete), (2) Summarise each urgent email in one sentence, (3) Draft responses for the top [NUMBER — 5 / 10] most urgent. Show me the drafts for approval before sending.
 platforms:

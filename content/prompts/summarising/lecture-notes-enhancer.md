@@ -1,6 +1,6 @@
 ---
-title: Lecture Notes Enhancer
-description: Transform rough lecture or class notes into well-structured study material
+title: "Lecture Notes Enhancer — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for teams: transform rough lecture or class notes into well-structured study material. Works in M365 Copilot. Tag: study."
 prompt: 'Enhance these lecture notes into comprehensive study material. For each topic covered: (1) Clean up and organise the content with proper headings, (2) Fill in any gaps — add context and explanations
   for incomplete points, (3) Highlight Key Concepts — bold the terms and ideas most likely to appear in an exam, (4) Add Examples — provide one real-world example for each major concept, (5) Create Quick-Reference
   Definitions for any technical terms, (6) Generate Study Questions — 3 questions per topic to test understanding, (7) Link Related Topics — show how concepts connect to each other. Format with clear headers

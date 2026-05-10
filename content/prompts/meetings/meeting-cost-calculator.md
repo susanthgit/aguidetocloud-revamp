@@ -1,6 +1,6 @@
 ---
-title: Meeting Cost Estimator
-description: Calculate the real cost of a meeting to justify or challenge it
+title: "Meeting Cost Estimator — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for managers: calculate the real cost of a meeting to justify or challenge it. Works in ChatGPT. Tag: meetings."
 prompt: >-
   Calculate the cost of this meeting: [NUMBER] attendees with average salary [AMOUNT/YEAR], meeting duration [MINUTES], happening [FREQUENCY]. Show: (1) Cost per meeting, (2) Annual cost, (3) Opportunity cost (what else could these people be doing), (4) Is this meeting worth the cost? (5) Suggestions to reduce cost (fewer attendees, shorter, async alternative).
 platforms:

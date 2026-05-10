@@ -1,6 +1,6 @@
 ---
-title: Organise Messy Notes into Sections
-description: Structure chaotic notes into clear, labelled sections
+title: "Organise Messy Notes into Sections — Free AI Prompt"
+description: "Free beginner AI prompt for teams: structure chaotic notes into clear, labelled sections. Works in M365 Copilot. Tags: onenote, organisation."
 prompt: 'Organise these notes into clear sections with headings. Suggested structure: (1) Key Decisions, (2) Action Items, (3) Discussion Points, (4) Open Questions, (5) Reference Links or Documents Mentioned. Move each piece of content to the right section.'
 platforms:
 - m365-copilot

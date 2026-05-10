@@ -1,6 +1,6 @@
 ---
-title: Known Error Database Entry
-description: Document a known issue with workaround for the knowledge base
+title: "Known Error Database Entry — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt: Known Error Database Entry — document a known issue with workaround for the knowledge base. Works in M365 Copilot."
 prompt: >-
   Create a known error database entry for [ISSUE]. Include: (1) Error title and ID, (2) Symptoms the user sees, (3) Affected systems and versions, (4) Root cause explanation, (5) Workaround steps, (6) Permanent fix status and ETA, (7) Related incidents. Format for searchability in a knowledge base.
 platforms:

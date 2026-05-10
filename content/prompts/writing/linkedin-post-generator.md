@@ -1,6 +1,6 @@
 ---
-title: LinkedIn Post Generator
-description: Create an engaging LinkedIn post from meeting notes, achievements, or company updates
+title: "LinkedIn Post Generator — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt: LinkedIn Post Generator — create an engaging LinkedIn post from meeting notes, achievements, or company updates. Works in ChatGPT."
 prompt: 'Write a LinkedIn post about [TOPIC]. Structure it using this format: (1) Hook — an attention-grabbing first line (question, bold statement, or surprising fact), (2) Story/Context — 2-3 short paragraphs
   explaining the insight (use line breaks for readability), (3) Key Takeaways — 3-5 bullet points with emoji anchors, (4) Call to Action — ask a question or invite engagement. Keep it under 200 words. Tone:
   authentic, insightful, conversational — not corporate or salesy. Use short paragraphs and line breaks for mobile readability.'

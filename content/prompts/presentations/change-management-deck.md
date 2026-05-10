@@ -1,6 +1,6 @@
 ---
-title: Change Management Presentation
-description: Create a presentation to announce and guide teams through an organisational change
+title: "Change Management Presentation — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for executives: create a presentation to announce and guide teams through an organisational change. Best on M365 Copilot."
 prompt: 'Create a change management presentation about [CHANGE/INITIATIVE]. Structure as: (1) Why Change — the business case and urgency, (2) What Is Changing — specific changes in clear, simple terms,
   (3) What Is NOT Changing — reassure on stability areas, (4) Timeline — phased approach with key dates, (5) Impact by Team — how different groups are affected, (6) Support Available — training, resources,
   help channels, (7) FAQ — top 5 anticipated concerns with honest answers, (8) Your Role — what the audience needs to do, (9) Feedback Channel — how to raise questions or concerns, (10) Vision — paint the

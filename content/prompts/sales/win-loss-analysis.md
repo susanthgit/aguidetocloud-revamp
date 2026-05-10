@@ -1,6 +1,6 @@
 ---
-title: Win-Loss Analysis
-description: Analyse why deals were won or lost
+title: "Win-Loss Analysis — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for sales teams: analyse why deals were won or lost. Works in M365 Copilot. Tags: sales, win-loss."
 prompt: >-
   Analyse recent deals. For each: details, decision factors, competitor, what worked or failed, customer feedback. Synthesise: top win reasons, top loss reasons, recommendations.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Create a Deck from a Document
-description: Turn a Word document or notes into a professional slide deck
+title: "Create a Deck from a Document — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: turn a Word document or notes into a professional slide deck. Works in M365 Copilot. Tags: powerpoint, slides."
 prompt: 'Create a [NUMBER — 6 / 8 / 10]-slide presentation from this document for [AUDIENCE — leadership / client / team]. Each slide should have a clear title, 3-4 bullet points maximum, and a suggestion for a supporting visual. Include an agenda slide and a summary/next-steps slide at the end.'
 platforms:
 - m365-copilot

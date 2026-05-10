@@ -1,6 +1,6 @@
 ---
-title: Reply Requesting Missing Details
-description: Draft a professional follow-up asking for the specific information you need
+title: "Reply Requesting Missing Details — Free M365 Copilot Prompt"
+description: "Free intermediate AI prompt for project managers: draft a professional follow-up asking for the specific information you need. Best on M365 Copilot."
 prompt: 'Draft a reply to this email asking for the missing information I need to move forward. I specifically need: [LIST WHAT YOU NEED]. Be polite but clear about what is blocking progress. Include a deadline if needed. Tone: professional and direct.'
 platforms:
 - m365-copilot

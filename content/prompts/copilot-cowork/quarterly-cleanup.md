@@ -1,6 +1,6 @@
 ---
-title: Quarterly Digital Cleanup
-description: Have Cowork clean up your files and subscriptions
+title: "Quarterly Digital Cleanup — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for teams: have Cowork clean up your files and subscriptions. Works in M365 Copilot. Tags: cowork, cleanup."
 prompt: >-
   Perform a quarterly cleanup: (1) Find unfinished files for review, (2) Identify unread email subscriptions, (3) Flag inactive Teams channels, (4) Check expired sharing permissions, (5) Summarise unused licences. Present a cleanup checklist.
 platforms:

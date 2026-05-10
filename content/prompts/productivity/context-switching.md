@@ -1,6 +1,6 @@
 ---
-title: Context Switching Reducer
-description: Reduce costly context switches
+title: "Context Switching Reducer — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for teams: reduce costly context switches. Works in M365 Copilot. Tags: productivity, context-switching."
 prompt: >-
   Analyse my day: [DESCRIBE]. Identify: context switch count, cost per switch (23 min), total lost time, avoidable switches, batching strategy, redesigned schedule.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: FAQ Generator
-description: Generate a comprehensive FAQ document from product info, support tickets, or customer conversations
+title: "FAQ Generator — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for teams: generate a comprehensive FAQ document from product info, support tickets, or customer conversations. Best on ChatGPT."
 prompt: 'Generate a comprehensive FAQ document about [PRODUCT/SERVICE/TOPIC]. Include at least 15 questions and answers organised into these sections: (1) Getting Started — basics and setup, (2) Features
   & Usage — how to use key features, (3) Troubleshooting — common problems and fixes, (4) Billing & Account — pricing, plans, cancellation, (5) Security & Privacy — data handling and compliance. Each answer
   should be 2-3 sentences, written in plain language. Include a "Still need help?" section at the end with contact information.'

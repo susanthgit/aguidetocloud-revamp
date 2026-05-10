@@ -1,6 +1,6 @@
 ---
-title: Video Script Writer
-description: Draft a video script with timing, visuals, and dialogue
+title: "Video Script Writer — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for teams: draft a video script with timing, visuals, and dialogue. Works in Claude. Tag: creative."
 prompt: >-
   Write a script for a [LENGTH — 1 / 2 / 5]-minute video about [TOPIC] for [AUDIENCE]. Include: (1) Hook in the first 5 seconds, (2) Scene-by-scene breakdown with timing, (3) On-screen text suggestions, (4) B-roll or visual recommendations, (5) Call to action at the end. Tone: [TONE — professional / casual / energetic / educational]. Format as a two-column table (visuals | dialogue).
 platforms:

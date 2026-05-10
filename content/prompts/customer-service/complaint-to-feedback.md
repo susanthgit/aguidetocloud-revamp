@@ -1,6 +1,6 @@
 ---
-title: Turn Complaints into Feedback
-description: Transform customer complaints into actionable product feedback
+title: "Turn Complaints into Feedback — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: transform customer complaints into actionable product feedback. Works in M365 Copilot. Tag: customer-service."
 prompt: >-
   Analyse these customer complaints: [PASTE]. Group by theme, identify root causes, quantify frequency, assess severity, and create a prioritised feedback report for the product team.
 platforms:

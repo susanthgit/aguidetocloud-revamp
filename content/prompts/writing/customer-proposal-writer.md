@@ -1,6 +1,6 @@
 ---
-title: Customer Proposal Customiser
-description: Customise a generic proposal template for a specific customer based on their needs
+title: "Customer Proposal Customiser — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for sales teams: customise a generic proposal template for a specific customer based on their needs. Best on M365 Copilot."
 prompt: 'Customise this proposal for [CUSTOMER NAME] based on their specific needs: [KEY REQUIREMENTS]. Adapt the following: (1) Executive Summary — tailor to their industry and pain points, (2) Proposed
   Solution — emphasise features most relevant to their requirements, (3) Pricing — adjust the pricing table for their selected options, (4) Timeline — modify milestones to match their stated deadlines,
   (5) Case Studies — include examples from their industry, (6) Next Steps — personalise the call to action. Maintain our professional tone but make the customer feel this was written specifically for them.'

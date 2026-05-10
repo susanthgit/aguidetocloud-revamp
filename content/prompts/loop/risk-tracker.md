@@ -1,6 +1,6 @@
 ---
-title: Live Risk Tracker
-description: Create a shared risk tracker
+title: "Live Risk Tracker — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for project managers: create a shared risk tracker. Works in M365 Copilot. Tag: loop."
 prompt: >-
   Create a risk tracker in Loop. Columns: Risk ID, Description, Category, Likelihood, Impact, Score, Mitigation, Owner, Status, Last Reviewed. Auto-sort by score.
 platforms:

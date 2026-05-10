@@ -1,6 +1,6 @@
 ---
-title: Employee Onboarding Automation
-description: Automate the new hire onboarding process
+title: "Employee Onboarding Automation — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for IT admins: automate the new hire onboarding process. Works in M365 Copilot. Tag: automation."
 prompt: >-
   Design an automated onboarding workflow triggered when HR adds a new hire. Steps: (1) Create accounts and assign licences, (2) Add to groups and distribution lists, (3) Send welcome email with setup instructions, (4) Create onboarding task list, (5) Schedule orientation meetings, (6) Assign buddy, (7) Day-30 check-in reminder to manager.
 platforms:

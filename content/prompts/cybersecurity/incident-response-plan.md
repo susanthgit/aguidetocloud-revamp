@@ -1,6 +1,6 @@
 ---
-title: Incident Response Plan
-description: Draft an incident response plan for a specific threat type
+title: "Incident Response Plan — Free Claude AI Prompt"
+description: "Free advanced AI prompt for teams: draft an incident response plan for a specific threat type. Works in Claude. Tags: cybersecurity, incident-response."
 prompt: >-
   Draft an incident response plan for [INCIDENT TYPE — ransomware / data breach / phishing compromise / account takeover]. Include: (1) Detection indicators, (2) Immediate containment steps, (3) Eradication procedures, (4) Recovery timeline, (5) Communication plan (internal and external), (6) Post-incident review process, (7) Roles and responsibilities matrix.
 platforms:

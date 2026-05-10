@@ -1,6 +1,6 @@
 ---
-title: Contract Review Checklist
-description: Systematically review a contract and flag potential issues, missing clauses, and risks
+title: "Contract Review Checklist — Free Claude AI Prompt"
+description: "Free advanced AI prompt for teams: systematically review a contract and flag potential issues, missing clauses, and risks. Works in Claude. Tag: legal."
 prompt: 'Review this contract and create a checklist assessment. For each section evaluate: (1) Clarity — is the language clear and unambiguous? (2) Completeness — are any standard clauses missing? (3)
   Risk — flag any terms that are unfavourable or unusual, (4) Compliance — does it align with standard business practices? Check specifically for: termination clauses, liability limitations, indemnification,
   confidentiality, intellectual property ownership, payment terms, dispute resolution, and force majeure. Rate each area as ✅ Acceptable, ⚠️ Needs Review, or ❌ Concerning.'

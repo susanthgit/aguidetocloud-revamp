@@ -1,6 +1,6 @@
 ---
-title: Decision Journal Entry
-description: Document a decision with context and reasoning for future reference
+title: "Decision Journal Entry — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for managers: document a decision with context and reasoning for future reference. Works in Claude. Tag: productivity."
 prompt: >-
   Help me document this decision for my decision journal. Decision: [WHAT I DECIDED]. Create an entry with: (1) The decision and date, (2) Context and constraints at the time, (3) Options I considered, (4) Why I chose this option, (5) What I expect to happen, (6) How I will know if it was the right call, (7) Review date to assess the outcome.
 platforms:

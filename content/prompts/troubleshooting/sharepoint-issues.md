@@ -1,6 +1,6 @@
 ---
-title: SharePoint Troubleshooting
-description: Fix common SharePoint issues
+title: "SharePoint Troubleshooting — Free M365 Copilot AI Prompt"
+description: "SharePoint Troubleshooting — free beginner AI prompt: fix common SharePoint issues. Best on M365 Copilot. Tag: troubleshooting."
 prompt: >-
   Guide for SharePoint issues: cannot access site, sync not working, file locked, version conflict, permission errors, search not finding docs. Symptoms, steps, prevention.
 platforms:

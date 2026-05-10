@@ -1,6 +1,6 @@
 ---
-title: Stakeholder Map Creator
-description: Map project stakeholders by influence and interest
+title: "Stakeholder Map Creator — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for project managers: map project stakeholders by influence and interest. Works in ChatGPT. Tag: project-management."
 prompt: >-
   Create a stakeholder map for [PROJECT]. For each stakeholder: (1) Name and role, (2) Interest level (High/Medium/Low), (3) Influence level (High/Medium/Low), (4) Current attitude (Supportive/Neutral/Resistant), (5) Engagement strategy, (6) Communication frequency. Categorise into quadrant: Manage Closely, Keep Satisfied, Keep Informed, Monitor.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: User Offboarding Checklist
-description: Create a comprehensive IT offboarding checklist for departing employees
+title: "User Offboarding Checklist — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for IT admins: create a comprehensive IT offboarding checklist for departing employees. Works in M365 Copilot. Tag: it-admin."
 prompt: 'Create an IT offboarding checklist for an employee leaving [DEPARTMENT]. Include: (1) Account disablement steps (Entra ID, M365, VPN, apps), (2) Data backup and transfer procedures, (3) Device recovery checklist, (4) Licence reclamation, (5) Access review for shared resources, (6) Communication to relevant teams. Order by urgency — what must happen on day 1 vs within 30 days.'
 platforms:
 - m365-copilot

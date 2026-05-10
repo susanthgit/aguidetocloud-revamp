@@ -1,6 +1,6 @@
 ---
-title: Database Migration Script
-description: Generate a database migration with rollback
+title: "Database Migration Script — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for developers: generate a database migration with rollback. Works in M365 Copilot. Tag: coding."
 prompt: >-
   Write a migration script for [CHANGE]. Include: up migration, down migration (rollback), data preservation, validation queries, estimated execution time. Include safety checks.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Quick Knowledge Check
-description: Create a rapid knowledge check for team meetings or standups
+title: "Quick Knowledge Check — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for teams: create a rapid knowledge check for team meetings or standups. Works in ChatGPT. Tags: training, knowledge-check."
 prompt: >-
   Create a 5-minute knowledge check on [TOPIC] that a manager can run during a team meeting. Include: (1) 5 quick-fire questions (30 seconds each), (2) Answer reveals with brief explanations, (3) A bonus challenge question for experts, (4) Key takeaway to reinforce. Format for verbal delivery — no written test needed.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Professional Business Letter
-description: Draft a formal business letter
+title: "Professional Business Letter — Free M365 Copilot AI Prompt"
+description: "Professional Business Letter — free beginner AI prompt: draft a formal business letter. Best on M365 Copilot. Tag: word."
 prompt: >-
   Draft a formal business letter from [SENDER] to [RECIPIENT] regarding [PURPOSE]. Include proper formatting, clear purpose, supporting details, call to action.
 platforms:

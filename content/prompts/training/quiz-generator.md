@@ -1,6 +1,6 @@
 ---
-title: Training Quiz Generator
-description: Create a quiz to assess learning from training content
+title: "Training Quiz Generator — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for teams: create a quiz to assess learning from training content. Works in ChatGPT. Tag: training."
 prompt: >-
   Create a [NUMBER — 10 / 15 / 20]-question quiz for [TRAINING TOPIC]. Include: (1) Mix of question types (multiple choice, true/false, scenario-based), (2) Questions at different Bloom taxonomy levels (remember, understand, apply, analyse), (3) Answer key with explanations for wrong answers, (4) Passing score recommendation. Difficulty: [LEVEL].
 platforms:

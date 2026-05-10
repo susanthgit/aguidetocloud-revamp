@@ -1,6 +1,6 @@
 ---
-title: Budget Variance Analysis
-description: Analyse actual vs budgeted figures and highlight significant variances with explanations
+title: "Budget Variance Analysis — Free M365 Copilot AI Prompt"
+description: "Free AI prompt: analyse actual vs budgeted figures and highlight significant variances with explanations. Works in M365 Copilot. Tags: budget, finance."
 prompt: 'Analyse this budget data comparing actual spend versus budgeted amounts. For each line item: (1) Calculate the variance (actual minus budget) and variance percentage, (2) Flag any variances greater
   than 10% as significant, (3) Categorise variances as Favourable or Unfavourable, (4) Suggest possible reasons for the top 5 largest variances, (5) Provide a summary with total budget utilisation percentage.
   Format as a table with colour-coded indicators.'

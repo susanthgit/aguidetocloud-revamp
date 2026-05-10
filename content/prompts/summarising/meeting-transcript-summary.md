@@ -1,6 +1,6 @@
 ---
-title: Meeting Transcript Summary
-description: Condense a meeting transcript into essentials
+title: "Meeting Transcript Summary — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: condense a meeting transcript into essentials. Works in M365 Copilot. Tag: summarising."
 prompt: >-
   Condense this meeting transcript into: (1) Meeting purpose and outcome, (2) Key points discussed (5-7 bullets), (3) Decisions made, (4) Action items with owners, (5) Unresolved items for next time. Under 300 words.
 platforms:

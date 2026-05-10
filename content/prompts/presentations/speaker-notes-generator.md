@@ -1,6 +1,6 @@
 ---
-title: Speaker Notes Generator
-description: Generate detailed speaker notes for each slide so you can present confidently without memorising
+title: "Speaker Notes Generator — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: generate detailed speaker notes for each slide so you can present confidently without memorising. Best on M365 Copilot."
 prompt: 'Write detailed speaker notes for each slide in this presentation. For each slide provide: (1) Opening line — how to introduce the slide naturally, (2) Key talking points — 3-4 sentences expanding
   on the bullet points with examples and data, (3) Transition — one sentence connecting to the next slide, (4) Timing — suggested time to spend on this slide. Total presentation should be [DURATION] minutes.
   Tone: conversational, confident, as if speaking to [AUDIENCE]. Include one anecdote or real-world example per 3 slides.'

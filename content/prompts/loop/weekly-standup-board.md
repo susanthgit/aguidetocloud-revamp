@@ -1,6 +1,6 @@
 ---
-title: Weekly Standup Board
-description: Create a persistent weekly standup board the team updates
+title: "Weekly Standup Board — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for teams: create a persistent weekly standup board the team updates. Works in M365 Copilot. Tag: loop."
 prompt: >-
   Create a weekly standup board. Columns per team member: What I did this week, What I am doing next week, Blockers. Include: team health check (1-5 mood rating), wins to celebrate section, and a help-needed board. Refresh weekly but keep history.
 platforms:

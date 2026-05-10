@@ -1,6 +1,6 @@
 ---
-title: Email Delivery Troubleshooting
-description: Diagnose why emails are not being delivered
+title: "Email Delivery Troubleshooting — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for IT admins: diagnose why emails are not being delivered. Works in ChatGPT. Tag: troubleshooting."
 prompt: >-
   Help me diagnose email delivery failure. Scenario: [DESCRIBE — emails not received / going to spam / bouncing / delayed]. Check: (1) Message trace in Exchange Admin, (2) SPF/DKIM/DMARC alignment, (3) Transport rules that might redirect, (4) Recipient mailbox issues, (5) IP reputation, (6) Content filtering triggers. Provide step-by-step diagnosis with Exchange admin paths.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: README Generator
-description: Create a professional README for a project or repository
+title: "README Generator — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for developers: create a professional README for a project or repository. Works in ChatGPT. Tag: coding."
 prompt: >-
   Generate a README.md for [PROJECT NAME]. Include: (1) Project description and purpose, (2) Features list, (3) Quick start guide with installation steps, (4) Usage examples with code snippets, (5) Configuration options, (6) Contributing guidelines, (7) License information, (8) Badge suggestions (build status, coverage, version). Based on: [DESCRIBE THE PROJECT].
 platforms:

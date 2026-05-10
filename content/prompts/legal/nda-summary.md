@@ -1,6 +1,6 @@
 ---
-title: NDA Quick Summary
-description: Summarise a non-disclosure agreement highlighting key obligations
+title: "NDA Quick Summary — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for teams: summarise a non-disclosure agreement highlighting key obligations. Works in Claude. Tags: legal, nda."
 prompt: >-
   Summarise this NDA highlighting: (1) What is considered confidential, (2) What is excluded, (3) Duration of confidentiality obligations, (4) Permitted disclosures, (5) Return or destruction of information requirements, (6) Which party has more restrictive obligations, (7) Governing law. Flag anything unusual or one-sided. Note: for awareness only — consult legal for binding advice.
 platforms:

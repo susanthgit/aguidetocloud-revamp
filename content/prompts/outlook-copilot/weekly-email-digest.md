@@ -1,6 +1,6 @@
 ---
-title: Weekly Email Digest
-description: Create a digest of important emails from the week
+title: "Weekly Email Digest — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: create a digest of important emails from the week. Works in M365 Copilot. Tag: outlook."
 prompt: >-
   Summarise my most important emails from this week. Group by: requires response, FYI updates, action items from others, upcoming deadlines. Skip newsletters.
 platforms:

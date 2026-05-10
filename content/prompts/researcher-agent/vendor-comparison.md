@@ -1,6 +1,6 @@
 ---
-title: Vendor Comparison Brief
-description: Compare multiple vendors or solutions with a structured evaluation matrix
+title: "Vendor Comparison Brief — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: Vendor Comparison Brief — compare multiple vendors or solutions with a structured evaluation matrix. Works in M365 Copilot."
 prompt: 'Compare [VENDOR A], [VENDOR B], and [VENDOR C] for [USE CASE]. Evaluate each on: (1) Key features, (2) Pricing model, (3) Security and compliance certifications, (4) Integration with Microsoft 365, (5) Strengths and weaknesses, (6) Best suited for. Present as a comparison table with a recommendation at the end. Cite your sources.'
 platforms:
 - m365-copilot

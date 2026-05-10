@@ -1,6 +1,6 @@
 ---
-title: Formal Meeting Minutes
-description: Create professional meeting minutes from notes or transcript
+title: "Formal Meeting Minutes — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for executive assistants: create professional meeting minutes from notes or transcript. Works in M365 Copilot. Tag: word."
 prompt: >-
   Write formal meeting minutes for [MEETING NAME] held on [DATE]. Include: (1) Meeting details (date, time, location, attendees, apologies), (2) Agenda items discussed with summary, (3) Motions or decisions with voting results if applicable, (4) Action items with owners and deadlines, (5) Next meeting date, (6) Approval section. Format as an official record.
 platforms:

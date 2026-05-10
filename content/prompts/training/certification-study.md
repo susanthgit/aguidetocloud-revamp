@@ -1,6 +1,6 @@
 ---
-title: Certification Study Plan
-description: Create a study plan for a professional certification
+title: "Certification Study Plan — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for teams: create a study plan for a professional certification. Works in M365 Copilot. Tag: training."
 prompt: >-
   Create a study plan for [CERTIFICATION]. Include: exam overview, weekly schedule for [WEEKS], topics by weight, resources, practice test strategy, exam day tips.
 platforms:

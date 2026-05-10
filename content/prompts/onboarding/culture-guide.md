@@ -1,6 +1,6 @@
 ---
-title: Company Culture Guide
-description: Create a culture guide beyond the handbook
+title: "Company Culture Guide — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for HR teams: create a culture guide beyond the handbook. Works in M365 Copilot. Tag: onboarding."
 prompt: >-
   Create a culture guide covering unwritten rules: how we communicate, meeting norms, work-life balance, decision making, social traditions, acronyms, who to ask for what.
 platforms:

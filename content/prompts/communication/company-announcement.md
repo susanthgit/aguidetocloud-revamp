@@ -1,6 +1,6 @@
 ---
-title: Company-Wide Announcement
-description: Draft an internal announcement for a major change or update
+title: "Company-Wide Announcement — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for comms teams: draft an internal announcement for a major change or update. Works in M365 Copilot. Tag: communication."
 prompt: >-
   Draft a company-wide announcement about [NEWS — new policy / leadership change / office move / product launch / restructure]. Include: (1) What is happening (clear, direct), (2) Why this matters, (3) How it affects employees, (4) Timeline, (5) What they need to do, (6) Where to ask questions. Tone: transparent, confident, and empathetic. Under 250 words.
 platforms:

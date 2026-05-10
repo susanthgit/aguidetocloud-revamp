@@ -1,6 +1,6 @@
 ---
-title: New Hire Feedback Collection
-description: Create a feedback system for onboarding
+title: "New Hire Feedback Collection — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for HR teams: create a feedback system for onboarding. Works in M365 Copilot. Tag: onboarding."
 prompt: >-
   Design feedback collection: Day 1 pulse check, Week 1 survey, 30-day check-in guide, 60-day survey, 90-day review. Track satisfaction, time-to-productivity, buddy effectiveness.
 platforms:

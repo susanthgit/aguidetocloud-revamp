@@ -1,6 +1,6 @@
 ---
-title: Performance Review Helper
-description: Draft balanced, constructive performance review comments with specific examples
+title: "Performance Review Helper — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: draft balanced, constructive performance review comments with specific examples. Best on M365 Copilot."
 prompt: 'Help me write a performance review for [EMPLOYEE NAME/ROLE]. Based on these notes: [PASTE NOTES]. For each performance area provide: (1) Rating context — what level of performance was demonstrated,
   (2) Specific Examples — cite concrete achievements or behaviours (not generalities), (3) Impact — how their work contributed to team/company goals, (4) Growth Areas — constructive feedback framed positively
   with specific improvement suggestions, (5) Development Goals — 2-3 SMART goals for the next period. Tone: supportive, honest, growth-oriented. Avoid generic phrases like "meets expectations" without context.'

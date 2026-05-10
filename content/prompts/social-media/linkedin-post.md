@@ -1,6 +1,6 @@
 ---
-title: LinkedIn Thought Leadership Post
-description: Write a LinkedIn post that drives engagement and builds authority
+title: "LinkedIn Thought Leadership Post — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for teams: write a LinkedIn post that drives engagement and builds authority. Works in ChatGPT. Tag: social-media."
 prompt: >-
   Write a LinkedIn post about [TOPIC] for my audience of [AUDIENCE — IT professionals / business leaders / tech community]. Structure: (1) Bold opening line (hook), (2) Personal insight or experience (3-4 sentences), (3) Practical takeaway or framework, (4) Call to engagement (question or invitation to share). Under 200 words. Include relevant hashtag suggestions.
 platforms:

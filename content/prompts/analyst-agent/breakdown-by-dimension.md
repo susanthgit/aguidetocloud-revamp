@@ -1,6 +1,6 @@
 ---
-title: Break Down Results by Dimension
-description: Slice your data by categories to find where performance varies
+title: "Break Down Results by Dimension — Free M365 Copilot Prompt"
+description: "Free intermediate AI prompt: Break Down Results by Dimension — slice your data by categories to find where performance varies. Works in M365 Copilot."
 prompt: 'Break down the results in this data by [DIMENSIONS — region, product, customer type, department]. For each segment show: total, average, percentage of whole, and trend direction. Highlight the best and worst performing segments. Create a chart comparing the top segments.'
 platforms:
 - m365-copilot

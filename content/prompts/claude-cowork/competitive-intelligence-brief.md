@@ -1,6 +1,6 @@
 ---
-title: Collaborative Competitive Intelligence Brief
-description: Have the team contribute competitive insights while Claude builds a structured analysis
+title: "Collaborative Competitive Intelligence Brief — Free Claude"
+description: "Free advanced AI prompt for sales teams: have the team contribute competitive insights while Claude builds a structured analysis. Best on Claude."
 prompt: >-
   Build a competitive intelligence brief for [COMPETITOR/MARKET]. Team members will contribute observations from: customer conversations, product usage, news articles, and industry events. As insights come in: (1) Categorise by theme (product, pricing, go-to-market, strengths, weaknesses), (2) Rate confidence level of each insight (confirmed, likely, rumour), (3) Identify patterns across contributions, (4) Summarise as a one-page competitive brief with actionable recommendations.
 platforms:

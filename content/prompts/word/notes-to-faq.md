@@ -1,6 +1,6 @@
 ---
-title: Convert Notes to FAQ Document
-description: Transform meeting notes or knowledge into a structured FAQ format
+title: "Convert Notes to FAQ Document — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for IT admins: transform meeting notes or knowledge into a structured FAQ format. Works in M365 Copilot. Tag: word."
 prompt: 'Convert these notes into an FAQ document with clear questions and concise answers. Group related questions under headings. Start with the most commonly asked questions. Include 10-15 Q&A pairs. Each answer should be 2-3 sentences maximum.'
 platforms:
 - m365-copilot

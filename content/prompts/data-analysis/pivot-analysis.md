@@ -1,6 +1,6 @@
 ---
-title: Pivot Table Analysis
-description: Analyse data using pivot table approach
+title: "Pivot Table Analysis — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: analyse data using pivot table approach. Works in M365 Copilot. Tag: data-analysis."
 prompt: >-
   Analyse this data using a pivot approach. Group by [DIMENSION], measure [METRIC]. Show: totals, averages, percentages, and identify the top and bottom performers. Add a chart.
 platforms:

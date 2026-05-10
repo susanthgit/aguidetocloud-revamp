@@ -1,6 +1,6 @@
 ---
-title: Inbox Rules Advisor
-description: Design email rules to automatically organise your inbox
+title: "Inbox Rules Advisor — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for teams: design email rules to automatically organise your inbox. Works in M365 Copilot. Tag: outlook."
 prompt: >-
   Design inbox rules for my Outlook to automatically organise my email. I receive emails from: [DESCRIBE MAIN SOURCES — team, clients, newsletters, alerts, HR]. Create rules for: (1) Priority routing (VIP senders to focused inbox), (2) Auto-categorisation by project or topic, (3) Newsletter and notification management, (4) Alert handling. Include the rule logic and folder structure.
 platforms:

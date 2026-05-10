@@ -1,6 +1,6 @@
 ---
-title: Benchmark Comparison
-description: Compare your metrics against industry benchmarks
+title: "Benchmark Comparison — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for analysts: compare your metrics against industry benchmarks. Works in M365 Copilot. Tag: analyst."
 prompt: >-
   Compare our metrics against industry benchmarks. Our data: [PASTE KEY METRICS]. Industry: [INDUSTRY]. For each metric: (1) Our value, (2) Industry benchmark, (3) Percentile ranking, (4) Gap analysis, (5) Whether the gap matters and what to do about it. Flag where we significantly lag or lead.
 platforms:

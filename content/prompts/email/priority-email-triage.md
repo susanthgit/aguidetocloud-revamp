@@ -1,6 +1,6 @@
 ---
-title: Priority Email Triage
-description: Quickly triage and respond to your most important emails with AI-drafted replies
+title: "Priority Email Triage — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt: Priority Email Triage — quickly triage and respond to your most important emails with AI-drafted replies. Works in M365 Copilot."
 prompt: 'Review my unread emails and identify the top 5 that need my attention most urgently. For each one: (1) Sender and subject, (2) Why it is urgent — deadline, escalation, decision needed, (3) Suggested
   response — a draft reply I can review and send, (4) Estimated time to handle. Sort by urgency with the most critical first.'
 platforms:

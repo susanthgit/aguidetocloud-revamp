@@ -1,6 +1,6 @@
 ---
-title: Recommendation Letter
-description: Write a professional recommendation letter
+title: "Recommendation Letter — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: write a professional recommendation letter. Works in M365 Copilot. Tag: writing."
 prompt: >-
   Write a recommendation letter for [PERSON] applying for [ROLE/PROGRAMME]. Include: relationship context, specific strengths with examples, notable achievements, enthusiastic endorsement.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Policy Impact Analysis
-description: Assess how a new policy affects your organisation
+title: "Policy Impact Analysis — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for teams: assess how a new policy affects your organisation. Works in M365 Copilot. Tag: researcher."
 prompt: >-
   Research [POLICY] and assess impact. Cover: requirements, effective date, who is affected, compliance needs, cost to comply, penalties, peer responses. Cite sources.
 platforms:

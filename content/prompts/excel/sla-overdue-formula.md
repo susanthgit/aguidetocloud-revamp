@@ -1,6 +1,6 @@
 ---
-title: Create an SLA Overdue Formula
-description: Build a formula that flags rows where deadlines have passed and highlights them
+title: "Create an SLA Overdue Formula — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for IT admins: build a formula that flags rows where deadlines have passed and highlights them. Works in M365 Copilot. Tag: excel."
 prompt: 'Create a formula for this table that flags rows where the [DEADLINE COLUMN] has passed and the [STATUS COLUMN] is not "Completed". Show "Overdue" in a new column. Then add conditional formatting to highlight overdue rows in red and items due within 3 days in amber.'
 platforms:
 - m365-copilot

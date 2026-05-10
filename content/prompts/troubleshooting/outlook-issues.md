@@ -1,6 +1,6 @@
 ---
-title: Outlook Troubleshooting
-description: Fix common Outlook problems
+title: "Outlook Troubleshooting — Free M365 Copilot AI Prompt"
+description: "Outlook Troubleshooting — free beginner AI prompt: fix common Outlook problems. Best on M365 Copilot. Tag: troubleshooting."
 prompt: >-
   Guide for Outlook issues: not opening, not receiving email, calendar not syncing, missing shared mailbox, slow performance, missing folders. Try first, try next, contact IT.
 platforms:

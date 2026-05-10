@@ -1,6 +1,6 @@
 ---
-title: Naming Brainstorm
-description: Generate name ideas for a product or project
+title: "Naming Brainstorm — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for teams: generate name ideas for a product or project. Works in ChatGPT. Tags: creative, naming."
 prompt: >-
   Generate [NUMBER] name ideas for [WHAT]. Requirements: easy to pronounce, available as domain, no negative meanings, fits [BRAND] personality. Style: [STYLE]. For top 5, explain why each works.
 platforms:

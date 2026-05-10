@@ -1,6 +1,6 @@
 ---
-title: Public Review Response
-description: Respond to a public review professionally
+title: "Public Review Response — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for support agents: respond to a public review professionally. Works in ChatGPT. Tag: customer-service."
 prompt: >-
   Write a response to this [POSITIVE / NEGATIVE / MIXED] public review: [PASTE REVIEW]. Guidelines: (1) Thank them for the feedback, (2) Address specific points they raised, (3) For negative items: acknowledge and explain what we are doing about it, (4) For positive items: reinforce and share appreciation, (5) Invite them to contact us directly for resolution. Tone: professional, gracious, genuine. Keep under 100 words.
 platforms:

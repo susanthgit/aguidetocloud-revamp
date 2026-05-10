@@ -1,6 +1,6 @@
 ---
-title: Internal Announcement Email
-description: Draft a clear, engaging internal announcement for company-wide or team communications
+title: "Internal Announcement Email — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for HR teams: draft a clear, engaging internal announcement for company-wide or team communications. Best on M365 Copilot."
 prompt: 'Draft an internal announcement email about [TOPIC] for [AUDIENCE — all staff / department / leadership]. Structure: (1) Subject line — clear and informative, (2) Opening — what is happening and
   why it matters, (3) Key Details — the who, what, when, where in bullet points, (4) Impact — how this affects the audience specifically, (5) Action Required — what people need to do (if anything), (6)
   Timeline — key dates, (7) FAQ — 3 anticipated questions with answers, (8) Contact — who to reach out to for questions. Tone: [professional / excited / reassuring — depending on the news].'

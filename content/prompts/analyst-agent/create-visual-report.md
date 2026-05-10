@@ -1,6 +1,6 @@
 ---
-title: Create a Visual Data Report
-description: Turn raw data into a visual report with charts, tables, and narrative
+title: "Create a Visual Data Report — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: Create a Visual Data Report — turn raw data into a visual report with charts, tables, and narrative. Works in M365 Copilot."
 prompt: 'Create a visual report from this data for [AUDIENCE — leadership / the board / the team]. Include: (1) An executive summary of key findings in 3 bullets, (2) 2-3 charts showing the most important trends, (3) A summary table with key metrics, (4) Recommendations based on the data. Make the report clear enough to present without additional explanation.'
 platforms:
 - m365-copilot

@@ -1,6 +1,6 @@
 ---
-title: Quarterly Plan Builder
-description: Create a workable plan for the next quarter
+title: "Quarterly Plan Builder — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: create a workable plan for the next quarter. Works in M365 Copilot. Tags: planning, quarterly."
 prompt: >-
   Build a quarterly plan for [TEAM/DEPARTMENT] for [QUARTER]. Include: (1) Top 3-5 priorities aligned to [COMPANY GOALS], (2) Key deliverables with owners and deadlines, (3) Dependencies on other teams, (4) Resource requirements, (5) Risks and contingencies, (6) Success metrics, (7) Review cadence. Format as a one-page plan the team can reference daily.
 platforms:

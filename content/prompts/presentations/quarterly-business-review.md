@@ -1,6 +1,6 @@
 ---
-title: Quarterly Business Review Deck
-description: Create a QBR presentation with financials, achievements, challenges, and next quarter goals
+title: "Quarterly Business Review Deck — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: create a QBR presentation with financials, achievements, challenges, and next quarter goals. Best on M365 Copilot."
 prompt: 'Create a Quarterly Business Review presentation with these slides: (1) Title slide with quarter and date, (2) Executive Summary — 3 key takeaways, (3) Financial Performance — revenue, costs, margin
   vs target, (4) Key Achievements — top 5 wins this quarter, (5) Challenges & Lessons Learned, (6) Customer/Client Highlights, (7) Team & Resource Update, (8) KPI Scorecard with RAG status, (9) Next Quarter
   Priorities and Goals, (10) Appendix with detailed data. Keep each slide to 4-5 bullet points max. Tone: professional, data-driven.'

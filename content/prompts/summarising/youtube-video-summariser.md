@@ -1,6 +1,6 @@
 ---
-title: YouTube Video Summariser
-description: Get a structured summary of any YouTube video without watching the full thing
+title: "YouTube Video Summariser — Free Gemini AI Prompt"
+description: "Free beginner AI prompt for teams: get a structured summary of any YouTube video without watching the full thing. Works in Gemini. Tag: youtube."
 prompt: 'Summarise this YouTube video: [PASTE URL OR DESCRIBE VIDEO]. Provide: (1) Title and Creator, (2) TL;DR — the main point in one sentence, (3) Key Takeaways — 5-7 most important points as bullets,
   (4) Timestamps — approximate times for each major topic change, (5) Quotes — any notable statements worth remembering, (6) Action Items — things the viewer is encouraged to do, (7) Who Should Watch This
   — is it worth the full watch for my role/interests? Rate overall quality and relevance (1-10).'

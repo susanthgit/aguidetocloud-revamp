@@ -1,6 +1,6 @@
 ---
-title: Data Breach Notification Draft
-description: Draft internal and external breach notification communications
+title: "Data Breach Notification Draft — Free Claude AI Prompt"
+description: "Free advanced AI prompt for teams: draft internal and external breach notification communications. Works in Claude. Tag: cybersecurity."
 prompt: >-
   Draft breach notification communications for a [BREACH TYPE — data leak / unauthorized access / ransomware] affecting [NUMBER] records. Create: (1) Internal notification to leadership (immediate), (2) Employee communication (within 24 hours), (3) Customer notification (compliant with [REGULATION — GDPR / Privacy Act / state law]), (4) Media statement (if needed). Each communication should be factual, empathetic, and include next steps.
 platforms:

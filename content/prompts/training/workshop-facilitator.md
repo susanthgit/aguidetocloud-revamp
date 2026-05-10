@@ -1,6 +1,6 @@
 ---
-title: Workshop Facilitation Guide
-description: Create a detailed facilitator guide for running a workshop
+title: "Workshop Facilitation Guide — Free Claude AI Prompt"
+description: "Free advanced AI prompt for teams: create a detailed facilitator guide for running a workshop. Works in Claude. Tag: training."
 prompt: >-
   Create a facilitator guide for a [DURATION]-hour workshop on [TOPIC]. Include: (1) Room setup and materials needed, (2) Minute-by-minute agenda, (3) Facilitator scripts for key moments, (4) Discussion questions with expected responses, (5) Activity instructions with timing, (6) Troubleshooting tips for common issues, (7) Wrap-up and evaluation.
 platforms:

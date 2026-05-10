@@ -1,6 +1,6 @@
 ---
-title: Code Review Assistant
-description: Get a thorough code review with actionable feedback
+title: "Code Review Assistant — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for developers: get a thorough code review with actionable feedback. Works in Claude. Tag: coding."
 prompt: >-
   Review this code and provide feedback on: (1) Bugs or logic errors, (2) Security vulnerabilities, (3) Performance issues, (4) Readability and naming, (5) Missing error handling, (6) Test coverage gaps. For each issue: explain the problem, show the fix, and rate severity (critical, important, minor). [PASTE CODE]
 platforms:

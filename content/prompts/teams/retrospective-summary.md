@@ -1,6 +1,6 @@
 ---
-title: Retrospective Summary
-description: Summarise a Teams retrospective discussion
+title: "Retrospective Summary — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for project managers: summarise a Teams retrospective discussion. Works in M365 Copilot. Tag: teams."
 prompt: >-
   Summarise this retrospective discussion. Extract: top 3 things that went well, top 3 improvements, specific action items with owners, and overall team sentiment.
 platforms:

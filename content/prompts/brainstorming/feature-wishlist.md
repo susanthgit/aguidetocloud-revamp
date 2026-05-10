@@ -1,6 +1,6 @@
 ---
-title: Feature Wishlist Prioritiser
-description: Gather and prioritise feature ideas from stakeholders
+title: "Feature Wishlist Prioritiser — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for product managers: gather and prioritise feature ideas from stakeholders. Works in ChatGPT. Tags: brainstorming, features."
 prompt: >-
   Compile and prioritise this feature wishlist: [LIST FEATURES/IDEAS]. For each: (1) User story format, (2) Which user persona benefits, (3) Business value (revenue/retention/efficiency), (4) Technical complexity estimate, (5) Dependencies. Group into: Must Have, Should Have, Could Have, Will Not Have (MoSCoW). Present as a release planning table.
 platforms:

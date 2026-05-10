@@ -1,6 +1,6 @@
 ---
-title: Best Practices Research
-description: Find and compare industry best practices for a specific area
+title: "Best Practices Research — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: Best Practices Research — find and compare industry best practices for a specific area. Works in M365 Copilot."
 prompt: >-
   Research best practices for [TOPIC/AREA] in [INDUSTRY/CONTEXT]. Provide: (1) Top 5 proven best practices with evidence, (2) Which leading companies follow each practice, (3) Common mistakes to avoid, (4) Implementation difficulty for each, (5) Where to start (recommended sequence). Base on reputable sources and cite them.
 platforms:

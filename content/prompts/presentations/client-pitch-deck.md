@@ -1,6 +1,6 @@
 ---
-title: Client Pitch Deck
-description: Build a persuasive client pitch presentation tailored to their industry and pain points
+title: "Client Pitch Deck — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for sales teams: build a persuasive client pitch presentation tailored to their industry and pain points. Best on M365 Copilot."
 prompt: 'Create a client pitch presentation for [CLIENT NAME] in the [INDUSTRY] industry. Include: (1) Their Challenge — show you understand their pain points, (2) Our Solution — how we solve it specifically
   for them, (3) Key Differentiators — why us vs competitors, (4) Case Study — similar client success story with metrics, (5) Implementation Approach — high-level timeline, (6) Investment & ROI — pricing
   context with expected returns, (7) Team — who they will work with, (8) Next Steps — clear call to action. Tone: consultative, confident, tailored.'

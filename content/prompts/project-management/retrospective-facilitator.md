@@ -1,6 +1,6 @@
 ---
-title: Retrospective Facilitator
-description: Run a structured team retrospective to identify what went well, what did not, and improvement actions
+title: "Retrospective Facilitator — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt: run a structured team retrospective to identify what went well, what did not, and improvement actions. Best on M365 Copilot."
 prompt: 'Create a retrospective document for [PROJECT/SPRINT/QUARTER]. Structure it using the Start-Stop-Continue framework: (1) START — things we should begin doing (new practices, tools, habits), (2)
   STOP — things we should stop doing (wasteful activities, bad habits), (3) CONTINUE — things that are working well and should keep going. For each section, provide 5 thought-provoking questions the facilitator
   should ask. Then include: (4) Top 3 Action Items — specific improvements with owners and deadlines, (5) Celebration — highlight one team achievement to recognise.'

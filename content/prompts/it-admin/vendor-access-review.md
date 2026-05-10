@@ -1,6 +1,6 @@
 ---
-title: Third-Party Vendor Access Review
-description: Audit and document third-party vendor access to your environment
+title: "Third-Party Vendor Access Review — Free M365 Copilot Prompt"
+description: "Free advanced AI prompt for IT admins: audit and document third-party vendor access to your environment. Works in M365 Copilot. Tag: it-admin."
 prompt: 'Create a vendor access review document for [VENDOR NAME]. Document: (1) What systems and data they can access, (2) Authentication method (SSO, VPN, direct), (3) User accounts and privilege levels, (4) Last access review date, (5) Business justification for continued access, (6) Compliance requirements (SOC2, ISO, etc.), (7) Recommendation: maintain, reduce, or revoke access.'
 platforms:
 - m365-copilot

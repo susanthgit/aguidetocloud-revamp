@@ -1,6 +1,6 @@
 ---
-title: Refund Request Handler
-description: Process a refund request with appropriate tone and policy adherence
+title: "Refund Request Handler — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt: Refund Request Handler — process a refund request with appropriate tone and policy adherence. Works in ChatGPT."
 prompt: >-
   Handle this refund request: [CUSTOMER SITUATION]. Our refund policy: [POLICY SUMMARY]. Draft a response that: (1) Acknowledges the request, (2) Reviews eligibility against policy, (3) If approved: confirms the refund amount and timeline, (4) If denied: explains why compassionately with alternatives, (5) Offers additional support. Tone: fair, empathetic, policy-adherent.
 platforms:

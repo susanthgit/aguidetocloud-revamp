@@ -1,6 +1,6 @@
 ---
-title: AI Debate Partner
-description: Use AI to challenge your ideas and find weaknesses in your arguments before presenting them
+title: "AI Debate Partner — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for executives: use AI to challenge your ideas and find weaknesses in your arguments before presenting them. Best on Claude."
 prompt: 'I want to present this idea/proposal: [DESCRIBE YOUR IDEA]. Act as a critical but constructive debate partner. (1) First, summarise my idea to confirm you understand it correctly, (2) Then present
   the 5 strongest arguments AGAINST my idea — play devil''s advocate convincingly, (3) For each counter-argument, suggest how I could address or rebut it, (4) Identify any logical fallacies or weak assumptions
   in my reasoning, (5) Suggest 3 improvements that would make my idea stronger, (6) Rate the overall strength of my idea on a scale of 1-10 with specific reasoning. Be tough but fair — I want to be prepared

@@ -1,6 +1,6 @@
 ---
-title: Approval Workflow Designer
-description: Design a multi-step approval workflow
+title: "Approval Workflow Designer — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for IT admins: design a multi-step approval workflow. Works in M365 Copilot. Tag: automation."
 prompt: >-
   Design an approval workflow for [PROCESS]. Include: (1) Form fields, (2) Routing rules (by amount, type, department), (3) Escalation if unapproved within [TIME], (4) Notifications (submitted, approved, rejected, escalated), (5) Audit trail. Power Automate actions specified.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Workshop Content Creator
-description: Collaboratively design workshop content with agenda, exercises, and materials
+title: "Workshop Content Creator — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for teams: collaboratively design workshop content with agenda, exercises, and materials. Works in Claude. Tag: claude-cowork."
 prompt: >-
   Help us design a [DURATION — half-day / full-day] workshop on [TOPIC] for [AUDIENCE — new hires / leadership / cross-functional team]. Collaboratively build: (1) Agenda with time blocks and facilitator notes, (2) 3-4 interactive exercises with instructions and materials needed, (3) Discussion questions for each section, (4) Pre-work for participants, (5) Evaluation survey questions. Team members will contribute their expertise for different sections.
 platforms:

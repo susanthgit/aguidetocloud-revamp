@@ -1,6 +1,6 @@
 ---
-title: Create a Summary Page
-description: Summarise a OneNote page into key decisions and next steps
+title: "Create a Summary Page — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for teams: summarise a OneNote page into key decisions and next steps. Works in M365 Copilot. Tags: onenote, summary."
 prompt: 'Create a one-page summary of these notes. Include only: the key decisions made, the most important takeaways, and the next steps with owners. Remove all discussion details — this summary should tell someone what happened in 30 seconds.'
 platforms:
 - m365-copilot

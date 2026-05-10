@@ -1,6 +1,6 @@
 ---
-title: Project Status from Teams Channels
-description: Compile a project status update from scattered Teams conversations and shared files
+title: "Project Status from Teams Channels — Free AI Prompt"
+description: "Free intermediate AI prompt for managers: compile a project status update from scattered Teams conversations and shared files. Best on M365 Copilot."
 prompt: 'Review the recent conversations in the [PROJECT NAME] Teams channel from the past [TIME PERIOD]. Compile a project status update that includes: (1) Key decisions made, (2) Tasks completed, (3)
   Current blockers or issues raised, (4) Upcoming deadlines mentioned, (5) Who is working on what. Format as a concise status report suitable for sharing with leadership.'
 platforms:

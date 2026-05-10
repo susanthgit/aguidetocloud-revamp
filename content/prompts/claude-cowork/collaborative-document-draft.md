@@ -1,6 +1,6 @@
 ---
-title: Collaborative Document Co-Author
-description: Draft a document together with Claude while team members contribute and edit in real time
+title: "Collaborative Document Co-Author — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for managers: draft a document together with Claude while team members contribute and edit in real time. Best on Claude."
 prompt: >-
   Help our team co-author a [DOCUMENT TYPE — strategy document / project brief / policy / report] about [TOPIC]. Start with an outline based on these goals: [GOALS]. As team members add their sections and comments, integrate their input, maintain consistent tone and formatting, resolve any conflicting suggestions, and flag areas where more input is needed.
 platforms:

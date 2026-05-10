@@ -1,6 +1,6 @@
 ---
-title: Presentation Storytelling Framework
-description: Structure a presentation around a compelling narrative
+title: "Presentation Storytelling Framework — Free Claude AI Prompt"
+description: "Free advanced AI prompt for teams: structure a presentation around a compelling narrative. Works in Claude. Tag: creative."
 prompt: >-
   Help me structure a presentation about [TOPIC] using storytelling. Create: (1) Opening hook that grabs attention, (2) The problem or challenge (make audience feel it), (3) The journey or approach, (4) The solution or insight, (5) Evidence and proof points, (6) The transformation or result, (7) Call to action. For each section suggest visuals and delivery notes.
 platforms:

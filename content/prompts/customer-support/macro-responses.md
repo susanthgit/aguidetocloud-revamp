@@ -1,6 +1,6 @@
 ---
-title: Support Macro Templates
-description: Create reusable response templates for common support scenarios
+title: "Support Macro Templates — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for support agents: create reusable response templates for common support scenarios. Works in ChatGPT. Tag: support."
 prompt: >-
   Create [NUMBER — 10 / 15] support response templates for common [PRODUCT/SERVICE] support scenarios. For each template: (1) Scenario description, (2) Response text with [PLACEHOLDERS] for personalisation, (3) Tone guidance, (4) When to use vs not use this template, (5) Follow-up action if needed. Cover: greeting, common issues, billing, feature requests, and closing.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Salary Benchmarking Research
-description: Research competitive salary ranges for a role
+title: "Salary Benchmarking Research — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for HR teams: research competitive salary ranges for a role. Works in M365 Copilot. Tag: hr."
 prompt: 'Research the current salary range for [ROLE] in [LOCATION/MARKET]. Consider: (1) Experience levels (junior, mid, senior), (2) Industry variations, (3) Remote vs on-site differences, (4) Total compensation including benefits. Present as a table with low, median, and high ranges. Note your sources and confidence level.'
 platforms:
 - m365-copilot

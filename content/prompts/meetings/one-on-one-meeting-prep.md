@@ -1,6 +1,6 @@
 ---
-title: 1:1 Meeting Prep
-description: Prepare for a productive 1:1 meeting with a direct report or manager
+title: "1:1 Meeting Prep — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: prepare for a productive 1:1 meeting with a direct report or manager. Works in M365 Copilot. Tag: 1-on-1."
 prompt: 'Prepare for my upcoming 1:1 meeting with [PERSON]. Create a structured agenda that includes: (1) Check-in — an icebreaker question and general wellbeing check, (2) Their Updates — space for them
   to share wins, challenges, and blockers, (3) My Updates — key information I need to share with them, (4) Review Actions — status of action items from our last 1:1, (5) Discussion Topics — [LIST ANY TOPICS],
   (6) Career Development — one question about their growth and goals, (7) Feedback — one piece of positive reinforcement and one constructive observation, (8) Action Items — space to capture new actions.

@@ -1,6 +1,6 @@
 ---
-title: Refactoring Suggestions
-description: Get specific refactoring recommendations for cleaner code
+title: "Refactoring Suggestions — Free Claude AI Prompt"
+description: "Free advanced AI prompt for developers: get specific refactoring recommendations for cleaner code. Works in Claude. Tag: coding."
 prompt: >-
   Analyse this code and suggest refactoring improvements: [PASTE CODE]. Focus on: (1) Reducing complexity, (2) Removing duplication, (3) Improving naming, (4) Applying [PATTERN — SOLID principles / DRY / design patterns], (5) Breaking large functions into smaller ones. Show before and after code for each suggestion.
 platforms:

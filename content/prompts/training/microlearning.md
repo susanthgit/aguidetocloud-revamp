@@ -1,6 +1,6 @@
 ---
-title: Microlearning Content Creator
-description: Create bite-sized learning modules for busy professionals
+title: "Microlearning Content Creator — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for teams: create bite-sized learning modules for busy professionals. Works in ChatGPT. Tags: training, microlearning."
 prompt: >-
   Create [NUMBER — 5 / 10] microlearning modules on [TOPIC]. Each module should: (1) Take under 5 minutes to complete, (2) Cover exactly one concept, (3) Include a real-world example, (4) End with one action the learner can try immediately, (5) Include a one-question check. Format for delivery via email, Teams message, or learning platform.
 platforms:

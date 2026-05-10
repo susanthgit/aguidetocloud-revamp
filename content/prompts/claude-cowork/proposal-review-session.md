@@ -1,6 +1,6 @@
 ---
-title: Multi-Reviewer Document Review
-description: Have multiple reviewers comment on a document while Claude synthesises feedback
+title: "Multi-Reviewer Document Review — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for managers: have multiple reviewers comment on a document while Claude synthesises feedback. Best on Claude."
 prompt: >-
   We need [NUMBER] team members to review this [DOCUMENT TYPE]. As each reviewer adds their comments and suggestions: (1) Track all feedback by reviewer, (2) Identify where reviewers agree (easy fixes), (3) Highlight where reviewers disagree (needs discussion), (4) Suggest a resolution for each conflict based on the document goals, (5) Create a clean revised version incorporating the agreed changes.
 platforms:

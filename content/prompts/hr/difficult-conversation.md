@@ -1,6 +1,6 @@
 ---
-title: Difficult Conversation Script
-description: Prepare talking points for a sensitive HR conversation
+title: "Difficult Conversation Script — Free Claude AI Prompt"
+description: "Free advanced AI prompt for managers: prepare talking points for a sensitive HR conversation. Works in Claude. Tags: hr, feedback."
 prompt: 'Help me prepare for a difficult conversation with [EMPLOYEE NAME] about [SITUATION — performance issue / behaviour concern / role change / redundancy]. Draft: (1) Opening statement that is direct but empathetic, (2) Key facts and specific examples, (3) Impact of the situation, (4) Clear expectations going forward, (5) Support offered. Tone: respectful, factual, and solution-focused.'
 platforms:
 - m365-copilot

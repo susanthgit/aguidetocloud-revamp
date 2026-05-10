@@ -1,6 +1,6 @@
 ---
-title: Organise Travel Itinerary
-description: Have Cowork compile all travel details into one organised itinerary
+title: "Organise Travel Itinerary — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for executives: have Cowork compile all travel details into one organised itinerary. Works in M365 Copilot. Tag: cowork."
 prompt: >-
   Compile my travel itinerary for [TRIP — destination / dates]. Search my emails for: flight confirmations, hotel bookings, meeting invites, and any relevant documents. Create a day-by-day itinerary in Word with: travel details, meeting times and locations, contact information, and links to important documents. Add travel blocks to my calendar and set reminders for check-in times.
 platforms:

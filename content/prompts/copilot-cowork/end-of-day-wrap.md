@@ -1,6 +1,6 @@
 ---
-title: End-of-Day Wrap-Up
-description: Have Cowork summarise your day, update your task list, and prep tomorrow
+title: "End-of-Day Wrap-Up — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for teams: have Cowork summarise your day, update your task list, and prep tomorrow. Works in M365 Copilot. Tags: cowork, daily."
 prompt: >-
   Give me an end-of-day summary. Include: (1) What I accomplished today based on sent emails, completed tasks, and meetings attended, (2) Action items I committed to but have not done yet, (3) Tomorrow's calendar preview with prep needed, (4) Any emails that still need a response. Present as a clean daily wrap-up I can review in 2 minutes.
 platforms:

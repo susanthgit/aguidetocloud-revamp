@@ -1,6 +1,6 @@
 ---
-title: Meeting Request Email
-description: Draft a compelling meeting request
+title: "Meeting Request Email — Free M365 Copilot AI Prompt"
+description: "Meeting Request Email — free beginner AI prompt: draft a compelling meeting request. Best on M365 Copilot. Tag: writing."
 prompt: >-
   Draft a meeting request to [RECIPIENT] about [TOPIC]. Include: why this meeting matters, what we will cover, proposed duration and times, what to prepare. Make accepting easy.
 platforms:

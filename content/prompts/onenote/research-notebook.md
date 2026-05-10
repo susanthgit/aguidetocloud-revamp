@@ -1,6 +1,6 @@
 ---
-title: Research Collection Notebook
-description: Organise research from multiple sources into a structured notebook
+title: "Research Collection Notebook — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for analysts: organise research from multiple sources into a structured notebook. Works in M365 Copilot. Tag: onenote."
 prompt: >-
   Set up a research notebook in OneNote for [TOPIC]. Sections: (1) Research questions to answer, (2) Source notes (one page per source with citation, key points, credibility rating), (3) Synthesis page (themes across sources), (4) Gaps and questions, (5) Conclusions and recommendations.
 platforms:

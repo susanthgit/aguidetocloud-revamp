@@ -1,6 +1,6 @@
 ---
-title: Convert Comments to Action Items
-description: Pull action items from Loop comments and assign owners
+title: "Convert Comments to Action Items — Free M365 Copilot Prompt"
+description: "Free intermediate AI prompt for project managers: pull action items from Loop comments and assign owners. Works in M365 Copilot. Tag: loop."
 prompt: 'Review the comments on this Loop page and extract all action items, requests, and follow-ups. For each item list: what needs to be done, who requested it, and who should own it. Present as a checklist the team can work through.'
 platforms:
 - m365-copilot

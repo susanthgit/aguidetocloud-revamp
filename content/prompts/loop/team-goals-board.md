@@ -1,6 +1,6 @@
 ---
-title: Team Goals Board
-description: Create a visible goals board
+title: "Team Goals Board — Free M365 Copilot AI Prompt"
+description: "Team Goals Board — free beginner AI prompt: create a visible goals board. Best on M365 Copilot. Tag: loop."
 prompt: >-
   Create a goals board for [QUARTER]. For each goal: statement, key results, progress, owner, status. Include celebration section for completions.
 platforms:

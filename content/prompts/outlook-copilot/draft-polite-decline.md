@@ -1,6 +1,6 @@
 ---
-title: Draft a Polite Decline
-description: Write a professional and empathetic decline email that maintains the relationship
+title: "Draft a Polite Decline — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt: Draft a Polite Decline — write a professional and empathetic decline email that maintains the relationship. Works in M365 Copilot."
 prompt: 'Draft a reply declining this request. Be polite and empathetic. Briefly explain why I cannot help with this right now, suggest an alternative if possible, and keep the door open for future collaboration. Tone: warm but clear. Keep it under 100 words.'
 platforms:
 - m365-copilot

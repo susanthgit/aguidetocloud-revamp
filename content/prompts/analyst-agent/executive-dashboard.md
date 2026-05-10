@@ -1,6 +1,6 @@
 ---
-title: Executive Dashboard Data
-description: Prepare dashboard data from multiple sources
+title: "Executive Dashboard Data — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for analysts: prepare dashboard data from multiple sources. Works in M365 Copilot. Tag: analyst."
 prompt: >-
   Combine data from [SOURCES] into executive dashboard. Calculate top-line KPIs with trends, department breakdown, 12-month charts, anomaly detection, next quarter forecast.
 platforms:

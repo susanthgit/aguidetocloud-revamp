@@ -1,6 +1,6 @@
 ---
-title: Research Timeline of Developments
-description: Build a chronological timeline of key developments on a topic
+title: "Research Timeline of Developments — Free M365 Copilot Prompt"
+description: "Free intermediate AI prompt for analysts: build a chronological timeline of key developments on a topic. Works in M365 Copilot. Tag: researcher."
 prompt: 'Create a timeline of major developments for [TOPIC] over the [TIME PERIOD — last 12 months / last 3 years]. For each entry include: the date, what happened, why it matters, and a source link. Highlight any upcoming dates or announced plans. Flag where information is based on announcements vs. confirmed releases.'
 platforms:
 - m365-copilot

@@ -1,6 +1,6 @@
 ---
-title: New Hire Welcome Email
-description: Write a warm, informative welcome email for a new team member
+title: "New Hire Welcome Email — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: write a warm, informative welcome email for a new team member. Works in M365 Copilot. Tag: onboarding."
 prompt: >-
   Write a welcome email for [NEW HIRE NAME] joining as [ROLE] on [DATE]. Include: (1) Warm personal welcome from [MANAGER NAME], (2) What to expect on day 1 (time, location, who to ask for), (3) First week overview, (4) Key contacts and their roles, (5) Links to essential resources, (6) Something fun or personal about the team. Tone: excited, supportive, and helpful.
 platforms:

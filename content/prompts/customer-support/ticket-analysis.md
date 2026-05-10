@@ -1,6 +1,6 @@
 ---
-title: Support Ticket Trend Analysis
-description: Analyse support ticket patterns to prevent recurring issues
+title: "Support Ticket Trend Analysis — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: Support Ticket Trend Analysis — analyse support ticket patterns to prevent recurring issues. Works in M365 Copilot."
 prompt: >-
   Analyse support tickets from [PERIOD]. Identify: (1) Top 10 issue categories by volume, (2) Trending up vs down vs stable, (3) Average resolution time by category, (4) Tickets that could be prevented with documentation, (5) Tickets that need a product fix, (6) Staffing implications. Recommend 3 actions to reduce ticket volume.
 platforms:

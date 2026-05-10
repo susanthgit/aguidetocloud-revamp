@@ -1,6 +1,6 @@
 ---
-title: Event Promotion Plan
-description: Create a promotion plan for an upcoming webinar or event
+title: "Event Promotion Plan — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for marketers: create a promotion plan for an upcoming webinar or event. Works in ChatGPT. Tag: marketing."
 prompt: >-
   Create a promotion plan for [EVENT NAME] on [DATE]. Include: (1) Event landing page copy, (2) 3-email invitation sequence (save the date, register now, last chance), (3) 5 social media posts with countdown, (4) Internal promotion for employees, (5) Post-event follow-up email. Include registration CTA in every piece.
 platforms:

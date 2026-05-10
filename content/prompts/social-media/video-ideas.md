@@ -1,6 +1,6 @@
 ---
-title: Short Video Content Ideas
-description: Generate ideas for short-form video
+title: "Short Video Content Ideas — Free M365 Copilot AI Prompt"
+description: "Short Video Content Ideas — free beginner AI prompt: generate ideas for short-form video. Best on M365 Copilot. Tag: social-media."
 prompt: >-
   Generate [NUMBER] short-form video ideas for [NICHE] on [PLATFORM]. Each: concept, hook (first 3 seconds), format, length, trending style. Showcase expertise engagingly.
 platforms:

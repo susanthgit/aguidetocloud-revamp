@@ -1,6 +1,6 @@
 ---
-title: Presentation Outline from Topic
-description: Generate a slide outline with titles and talking points from just a topic
+title: "Presentation Outline from Topic — Free M365 Copilot Prompt"
+description: "Free beginner AI prompt for teams: generate a slide outline with titles and talking points from just a topic. Works in M365 Copilot. Tag: powerpoint."
 prompt: 'Create a slide outline for a [DURATION — 10 / 20 / 30]-minute presentation about [TOPIC] for [AUDIENCE]. For each slide provide: a clear title, 3 key talking points, and a suggested visual or diagram. Include an opening hook slide and a closing call-to-action slide.'
 platforms:
 - m365-copilot

@@ -1,6 +1,6 @@
 ---
-title: Prepare a Quarterly Business Review
-description: Have Cowork autonomously build a complete QBR across Excel, PowerPoint, Word, and Outlook
+title: "Prepare a Quarterly Business Review — Free AI Prompt"
+description: "Free advanced AI prompt for managers: have Cowork autonomously build a complete QBR across Excel, PowerPoint, Word, and Outlook. Best on M365 Copilot."
 prompt: >-
   Prepare my Q2 business review for [AUDIENCE — leadership / board / client]. Pull the latest numbers from [EXCEL FILE OR DATA SOURCE], create a 6-slide PowerPoint with key metrics, trends, and recommendations. Draft a one-page executive summary in Word. Then draft an email inviting [STAKEHOLDERS] to the review meeting and attach the deck. Check in with me before sending anything.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Dashboard Metrics Design
-description: Define the right metrics for a dashboard
+title: "Dashboard Metrics Design — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for managers: define the right metrics for a dashboard. Works in M365 Copilot. Tag: data-analysis."
 prompt: >-
   Define metrics for a [PURPOSE] dashboard. For each metric: name, definition, data source, calculation, target, frequency, owner, and why it matters. Limit to 8-10 KPIs.
 platforms:

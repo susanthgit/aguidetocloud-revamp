@@ -1,6 +1,6 @@
 ---
-title: Empathetic Customer Response
-description: Write a response that acknowledges frustration and offers a solution
+title: "Empathetic Customer Response — Free Claude AI Prompt"
+description: "Free intermediate AI prompt: Empathetic Customer Response — write a response that acknowledges frustration and offers a solution. Works in Claude."
 prompt: >-
   Write a response to this frustrated customer: [PASTE CUSTOMER MESSAGE]. Structure: (1) Acknowledge their frustration specifically, (2) Apologise sincerely without being defensive, (3) Explain what happened (briefly, no excuses), (4) State exactly what we will do to fix it, (5) Offer something extra to restore trust, (6) Provide a direct contact for follow-up. Tone: empathetic, accountable, solution-focused.
 platforms:

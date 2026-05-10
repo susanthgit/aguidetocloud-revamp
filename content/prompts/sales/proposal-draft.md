@@ -1,6 +1,6 @@
 ---
-title: Sales Proposal Draft
-description: Generate a professional proposal tailored to the prospect
+title: "Sales Proposal Draft — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for sales teams: generate a professional proposal tailored to the prospect. Works in Claude. Tag: sales."
 prompt: >-
   Draft a sales proposal for [COMPANY NAME] for [PRODUCT/SERVICE]. Include: (1) Executive summary addressing their specific needs, (2) Proposed solution with key features mapped to their challenges, (3) Implementation timeline, (4) Pricing options with a recommended tier, (5) Case study reference from a similar client, (6) Next steps and call to action.
 platforms:

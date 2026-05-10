@@ -1,6 +1,6 @@
 ---
-title: Escalation Communication Template
-description: Draft customer-facing escalation updates
+title: "Escalation Communication Template — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for support agents: draft customer-facing escalation updates. Works in ChatGPT. Tag: support."
 prompt: >-
   Draft an escalation update for [CUSTOMER] about [ISSUE] that has been escalated to [TEAM]. Include: (1) Acknowledgement that we understand the urgency, (2) What we are doing (specific actions), (3) Who is working on it (by role, not name), (4) Expected next update time, (5) What they can do in the meantime (workaround). Tone: professional, empathetic, and confident.
 platforms:

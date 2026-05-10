@@ -1,6 +1,6 @@
 ---
-title: Debug This Error
-description: Diagnose and fix a runtime error from logs or stack traces
+title: "Debug This Error — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for developers: diagnose and fix a runtime error from logs or stack traces. Works in Claude. Tags: coding, debug."
 prompt: >-
   Debug this error: [PASTE ERROR MESSAGE OR STACK TRACE]. (1) Explain what the error means in plain English, (2) Identify the most likely root cause, (3) Provide a fix with code, (4) Explain why the fix works, (5) Suggest how to prevent this error in the future. Language: [LANGUAGE — Python / JavaScript / C# / PowerShell].
 platforms:

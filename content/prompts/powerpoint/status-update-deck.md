@@ -1,6 +1,6 @@
 ---
-title: Weekly Status Update Template
-description: Create a standardised weekly status deck
+title: "Weekly Status Update Template — Free M365 Copilot AI Prompt"
+description: "Weekly Status Update Template — free beginner AI prompt: create a standardised weekly status deck. Best on M365 Copilot. Tag: powerpoint."
 prompt: >-
   Create a weekly status template. Slides: week summary with RAG, accomplishments, in progress, risks and blockers, next week plan, help needed. Consistent layout.
 platforms:

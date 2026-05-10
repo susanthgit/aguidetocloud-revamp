@@ -1,6 +1,6 @@
 ---
-title: Stakeholder Presentation
-description: Create a persuasive stakeholder presentation
+title: "Stakeholder Presentation — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt for managers: create a persuasive stakeholder presentation. Works in M365 Copilot. Tag: powerpoint."
 prompt: >-
   Create a presentation for [STAKEHOLDERS] about [TOPIC]. Structure: bottom line upfront, context, evidence, options with recommendation, risks, ask, timeline.
 platforms:

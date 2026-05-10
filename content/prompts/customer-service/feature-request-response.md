@@ -1,6 +1,6 @@
 ---
-title: Feature Request Response
-description: Professionally respond to a feature request you cannot implement now
+title: "Feature Request Response — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt: Feature Request Response — professionally respond to a feature request you cannot implement now. Works in ChatGPT."
 prompt: >-
   Write a response to a customer requesting [FEATURE]. We [CANNOT BUILD THIS / HAVE IT ON ROADMAP FOR Q[X] / NEED MORE DETAILS]. Include: (1) Thank them for the suggestion, (2) Acknowledge the value of their idea, (3) Be honest about the status, (4) Explain what we can offer as an alternative, (5) Invite them to our feedback programme. Tone: appreciative and transparent.
 platforms:

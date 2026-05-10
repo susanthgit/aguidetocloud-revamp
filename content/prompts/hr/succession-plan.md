@@ -1,6 +1,6 @@
 ---
-title: Succession Planning Template
-description: Create a succession plan for key roles
+title: "Succession Planning Template — Free M365 Copilot AI Prompt"
+description: "Succession Planning Template — free advanced AI prompt: create a succession plan for key roles. Best on M365 Copilot. Tag: hr."
 prompt: >-
   Create a succession plan for [ROLES]. For each: current holder, criticality, ready-now successors, ready-in-1-year, development plans, vacancy risk, interim coverage.
 platforms:

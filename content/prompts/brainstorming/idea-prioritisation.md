@@ -1,6 +1,6 @@
 ---
-title: Idea Prioritisation Matrix
-description: Score and rank brainstormed ideas by impact and feasibility
+title: "Idea Prioritisation Matrix — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt: Idea Prioritisation Matrix — score and rank brainstormed ideas by impact and feasibility. Works in ChatGPT."
 prompt: >-
   Take these ideas: [LIST IDEAS]. Score each on: (1) Impact potential (1-10), (2) Feasibility with current resources (1-10), (3) Time to implement, (4) Risk level, (5) Strategic alignment. Calculate a priority score. Present as a ranked table with a clear recommendation for which 3 to pursue first and which to park.
 platforms:

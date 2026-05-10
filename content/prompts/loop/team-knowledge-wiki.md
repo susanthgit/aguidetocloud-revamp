@@ -1,6 +1,6 @@
 ---
-title: Team Knowledge Wiki
-description: Build a living team wiki that everyone maintains
+title: "Team Knowledge Wiki — Free M365 Copilot AI Prompt"
+description: "Team Knowledge Wiki — free beginner AI prompt: build a living team wiki that everyone maintains. Best on M365 Copilot. Tag: loop."
 prompt: >-
   Create a team wiki in Loop for [TEAM]. Sections: (1) Team mission and goals, (2) Who does what (roles and responsibilities), (3) How we work (processes, tools, ceremonies), (4) Key resources and links, (5) FAQ for new joiners, (6) Glossary of team-specific terms. Everyone on the team can edit and keep current.
 platforms:

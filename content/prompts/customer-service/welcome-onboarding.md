@@ -1,6 +1,6 @@
 ---
-title: Customer Onboarding Welcome
-description: Create a welcoming onboarding experience for new customers
+title: "Customer Onboarding Welcome — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for CS teams: create a welcoming onboarding experience for new customers. Works in ChatGPT. Tag: customer-service."
 prompt: >-
   Create an onboarding email sequence for a new customer who just purchased [PRODUCT/SERVICE]. Email 1 (Day 0): Welcome and quick start. Email 2 (Day 3): Key feature highlight. Email 3 (Day 7): Tips for getting the most value. Email 4 (Day 14): Check-in and support offer. Each email: warm, helpful, under 150 words, with one clear action.
 platforms:

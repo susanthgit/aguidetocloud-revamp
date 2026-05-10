@@ -1,6 +1,6 @@
 ---
-title: Conflict Resolution Facilitator
-description: Mediate and resolve team disagreements
+title: "Conflict Resolution Facilitator — Free M365 Copilot Prompt"
+description: "Free advanced AI prompt for managers: mediate and resolve team disagreements. Works in M365 Copilot. Tags: claude-cowork, conflict."
 prompt: >-
   Help resolve a disagreement about [TOPIC]. Each person states their position. Identify common ground, name the core disagreement, present both sides, propose compromises.
 platforms:

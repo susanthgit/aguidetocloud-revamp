@@ -1,6 +1,6 @@
 ---
-title: Onboarding Buddy Guide
-description: Create a guide for someone mentoring a new hire
+title: "Onboarding Buddy Guide — Free ChatGPT AI Prompt"
+description: "Free beginner AI prompt for HR teams: create a guide for someone mentoring a new hire. Works in ChatGPT. Tags: onboarding, buddy."
 prompt: >-
   Create an onboarding buddy guide for someone helping [NEW HIRE ROLE] settle in. Include: (1) Your role as a buddy (expectations and time commitment), (2) Week-by-week checklist of things to show and share, (3) Common new hire questions and answers, (4) Cultural norms and unwritten rules, (5) Red flags that the new hire might be struggling, (6) How to hand off when buddying period ends.
 platforms:

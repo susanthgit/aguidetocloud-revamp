@@ -1,6 +1,6 @@
 ---
-title: Smart Notification System
-description: Design a notification system that reduces noise
+title: "Smart Notification System — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for IT admins: design a notification system that reduces noise. Works in ChatGPT. Tags: automation, notifications."
 prompt: >-
   Design a notification system for [TOOL/PROCESS] that reduces noise. Include: (1) Notification categories by urgency, (2) Channel routing rules (email for urgent, Teams for FYI, digest for low), (3) Frequency caps, (4) Quiet hours, (5) User preference settings, (6) Escalation for unacknowledged critical alerts.
 platforms:

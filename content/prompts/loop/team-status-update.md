@@ -1,6 +1,6 @@
 ---
-title: Editable Team Status Update
-description: Create a status update template the whole team can keep current
+title: "Editable Team Status Update — Free M365 Copilot AI Prompt"
+description: "Free advanced AI prompt: Editable Team Status Update — create a status update template the whole team can keep current. Works in M365 Copilot."
 prompt: 'Create a team status update template with sections for each workstream: [LIST WORKSTREAMS]. Each section should have: Owner, Status (On Track / At Risk / Blocked), Key Updates (2-3 bullets), and Next Week Plans. Make it easy for each team member to fill in their section.'
 platforms:
 - m365-copilot

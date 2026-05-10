@@ -1,6 +1,6 @@
 ---
-title: Cover Letter Writer
-description: Write a compelling, personalised cover letter tailored to a specific job posting
+title: "Cover Letter Writer — Free Claude AI Prompt"
+description: "Free beginner AI prompt: Cover Letter Writer — write a compelling, personalised cover letter tailored to a specific job posting. Works in Claude."
 prompt: 'Write a cover letter for the [JOB TITLE] position at [COMPANY]. My background: [BRIEF SUMMARY OF EXPERIENCE]. The job posting emphasises: [KEY REQUIREMENTS FROM THE POSTING]. Structure: (1) Opening
   — a compelling hook that shows genuine interest in THIS company (not generic), (2) Value Match — 2-3 paragraphs connecting my specific experience to their key requirements with concrete examples, (3)
   Cultural Fit — one paragraph showing I understand their values and mission, (4) Closing — confident, forward-looking, with a specific call to action. Keep under 400 words. Tone: professional, authentic,

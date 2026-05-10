@@ -1,6 +1,6 @@
 ---
-title: Project Scope Document
-description: Define clear project scope with boundaries and exclusions
+title: "Project Scope Document — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt: Project Scope Document — define clear project scope with boundaries and exclusions. Works in M365 Copilot."
 prompt: >-
   Write a project scope document for [PROJECT]. Include: (1) Project objectives and success criteria, (2) In-scope deliverables (be specific), (3) Out-of-scope items (explicitly stated), (4) Assumptions, (5) Constraints, (6) Dependencies on other teams, (7) Acceptance criteria, (8) Change control process. This document prevents scope creep — be precise.
 platforms:

@@ -1,6 +1,6 @@
 ---
-title: Employee Directory Builder
-description: Create a structured employee directory
+title: "Employee Directory Builder — Free M365 Copilot AI Prompt"
+description: "Employee Directory Builder — free beginner AI prompt: create a structured employee directory. Best on M365 Copilot. Tag: excel."
 prompt: >-
   Create an employee directory template with name, role, department, location, email, phone, manager, start date, skills. Add filters and headcount calculation.
 platforms:

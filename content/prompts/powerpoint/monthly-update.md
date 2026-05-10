@@ -1,6 +1,6 @@
 ---
-title: Monthly Team Update Deck
-description: Create a structured monthly team update presentation
+title: "Monthly Team Update Deck — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: create a structured monthly team update presentation. Works in M365 Copilot. Tag: powerpoint."
 prompt: >-
   Create a [NUMBER]-slide monthly update for [TEAM/DEPARTMENT]. Include: (1) Headline achievement this month, (2) Key metrics dashboard, (3) Wins and highlights, (4) Challenges and how we handled them, (5) Team shoutouts, (6) Next month priorities, (7) Resources or support needed. Each slide: one message, visual over text.
 platforms:

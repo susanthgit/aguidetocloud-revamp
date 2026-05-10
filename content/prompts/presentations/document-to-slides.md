@@ -1,6 +1,6 @@
 ---
-title: "Document to Presentation Outline"
-description: "Turn a long document or report into a concise slide deck outline"
+title: "Document to Presentation Outline — Free M365 Copilot Prompt"
+description: "Free beginner AI prompt: Document to Presentation Outline — turn a long document or report into a concise slide deck outline. Works in M365 Copilot."
 prompt: "Convert this document into a presentation outline with 10-12 slides. For each slide provide: (1) Slide title, (2) 3-4 key bullet points, (3) Suggested visual — chart, image, or diagram that would support the point. Start with an executive summary slide and end with key takeaways and next steps. Keep language concise — no full sentences on slides."
 platforms: ["m365-copilot", "chatgpt", "claude", "gemini"]
 m365_surfaces: ["powerpoint", "copilot-chat-work"]

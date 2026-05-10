@@ -1,6 +1,6 @@
 ---
-title: Explain a Topic in Plain English
-description: Get a clear, jargon-free explanation of a complex topic with current state
+title: "Explain a Topic in Plain English — Free M365 Copilot Prompt"
+description: "Free beginner AI prompt for teams: get a clear, jargon-free explanation of a complex topic with current state. Best on M365 Copilot."
 prompt: 'Explain [TOPIC] in plain English. Cover: (1) What it is and why it matters, (2) How it works at a high level, (3) The current state — what is available now vs. coming soon, (4) Common misconceptions, (5) How it affects [ROLE — IT admins / end users / security teams]. Write for someone who is smart but not an expert in this area.'
 platforms:
 - m365-copilot

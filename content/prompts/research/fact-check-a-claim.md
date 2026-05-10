@@ -1,6 +1,6 @@
 ---
-title: Fact-Check a Claim
-description: Verify whether a statement, statistic, or claim is accurate with cited sources
+title: "Fact-Check a Claim — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt: Fact-Check a Claim — verify whether a statement, statistic, or claim is accurate with cited sources. Works in M365 Copilot."
 prompt: 'Fact-check this claim: "[PASTE CLAIM OR STATEMENT]". Provide: (1) Verdict — True, Partially True, Misleading, or False, (2) Evidence For — sources and data supporting the claim, (3) Evidence Against
   — sources and data contradicting the claim, (4) Context Missing — important nuance the claim leaves out, (5) Original Source — where this claim likely originated, (6) Current Status — is this still accurate
   as of today or has it been updated/corrected? Cite specific, credible sources for every point. Prioritise official data, peer-reviewed research, and reputable news outlets.'

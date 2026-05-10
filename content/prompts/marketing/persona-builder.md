@@ -1,6 +1,6 @@
 ---
-title: Customer Persona Builder
-description: Create detailed customer personas from market data
+title: "Customer Persona Builder — Free ChatGPT AI Prompt"
+description: "Free intermediate AI prompt for marketers: create detailed customer personas from market data. Works in ChatGPT. Tag: marketing."
 prompt: >-
   Build [NUMBER — 2 / 3] customer personas for [PRODUCT/SERVICE]. For each persona include: (1) Name, role, and demographics, (2) Goals and motivations, (3) Pain points and challenges, (4) How they discover solutions, (5) Objections they might have, (6) Channels where they spend time, (7) A quote that captures their mindset. Base on [DATA SOURCE — surveys / interviews / market research].
 platforms:

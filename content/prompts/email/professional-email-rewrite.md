@@ -1,6 +1,6 @@
 ---
-title: "Professional Email Rewrite"
-description: "Transform a casual or rough email draft into a polished, professional message"
+title: "Professional Email Rewrite — Free M365 Copilot AI Prompt"
+description: "Free beginner AI prompt for managers: transform a casual or rough email draft into a polished, professional message. Works in M365 Copilot. Tag: email."
 prompt: "Rewrite this email in a professional tone that conveys urgency without being aggressive. Keep it under 150 words. Maintain the core message but make it suitable for a senior leadership audience. Preserve any specific dates, numbers, or action items mentioned."
 platforms: ["m365-copilot", "chatgpt", "claude", "gemini"]
 m365_surfaces: ["outlook", "copilot-chat-work"]

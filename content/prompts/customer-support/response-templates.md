@@ -1,6 +1,6 @@
 ---
-title: Tone-Matched Response Templates
-description: Create support response templates for different customer emotions
+title: "Tone-Matched Response Templates — Free Claude AI Prompt"
+description: "Free intermediate AI prompt for support agents: create support response templates for different customer emotions. Works in Claude. Tag: support."
 prompt: >-
   Create response templates for these customer emotional states: (1) Angry and frustrated, (2) Confused and lost, (3) Anxious and worried, (4) Happy but has a question, (5) Disappointed after a promise broken. Each template: acknowledge emotion, match energy appropriately, provide solution, next step. Include tone guidance.
 platforms:

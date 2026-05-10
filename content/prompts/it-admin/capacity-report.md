@@ -1,6 +1,6 @@
 ---
-title: Infrastructure Capacity Report
-description: Create a capacity report and forecast
+title: "Infrastructure Capacity Report — Free M365 Copilot AI Prompt"
+description: "Infrastructure Capacity Report — free advanced AI prompt: create a capacity report and forecast. Best on M365 Copilot. Tag: it-admin."
 prompt: >-
   Create a capacity report for [INFRASTRUCTURE]. Include: usage vs capacity, growth trend, projected exhaustion date, top consumers, optimisation tips, procurement timeline.
 platforms:

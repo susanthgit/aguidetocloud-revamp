@@ -1,6 +1,6 @@
 ---
-title: Project Decision Log
-description: Maintain a running log of all project decisions
+title: "Project Decision Log — Free M365 Copilot AI Prompt"
+description: "Free intermediate AI prompt for project managers: maintain a running log of all project decisions. Works in M365 Copilot. Tag: onenote."
 prompt: >-
   Set up a decision log in OneNote for [PROJECT]. For each decision: date, decision statement, context (why now), options considered, chosen option, rationale, who decided, review date. Include a search-friendly index at the top.
 platforms:
