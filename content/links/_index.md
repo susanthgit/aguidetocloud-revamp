@@ -1,6 +1,6 @@
 ---
 title: "Links — A Guide to Cloud & AI"
-description: "All links in one place — free tools, AI news, study guides, YouTube, blog & more."
+description: "I learn for myself first. What overflows lands here — practice exams, free tools, study guides, the cosmos atlas & more."
 type: "links"
 layout: "list"
 sitemap:

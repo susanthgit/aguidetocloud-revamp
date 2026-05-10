@@ -47,10 +47,10 @@
     .container { width: 100%; max-width: 480px; padding: 32px 20px 48px; }
 
     /* ── Identity ── */
-    .identity { text-align: center; margin-bottom: 24px; }
+    .identity { text-align: center; margin-bottom: 16px; }
     .avatar {
-      width: 88px; height: 88px; border-radius: 50%; overflow: hidden;
-      margin: 0 auto 12px; border: 2px solid var(--border);
+      width: 64px; height: 64px; border-radius: 50%; overflow: hidden;
+      margin: 0 auto 10px; border: 2px solid var(--border);
     }
     .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; object-position: center 10%; }
     .name { font-size: 22px; font-weight: 600; letter-spacing: -0.3px; }
@@ -179,8 +179,40 @@
     .video-meta { font-size: 11px; color: var(--text-muted); }
 
     @media (prefers-reduced-motion: reduce) {
-      .link-btn, .socials, .share-row, .footer-note, .testimonial, .latest-video, .live-dot { opacity: 1; transform: none; animation: none; }
+      .link-btn, .socials, .share-row, .footer-note, .testimonial, .latest-video, .live-dot,
+      .this-week, .shipping-status, .cosmos-twinkle { opacity: 1; transform: none; animation: none; }
     }
+
+    /* ── This Week ribbon ── */
+    .this-week {
+      display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center;
+      gap: 4px 6px; padding: 8px 14px; margin: 0 0 18px;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+      font-size: 12px; color: var(--text-sub); line-height: 1.5;
+      opacity: 0; animation: fadeUp 0.3s ease 0.06s forwards;
+    }
+    .this-week-icon { flex-shrink: 0; }
+    .this-week-label { font-weight: 600; color: var(--text); }
+    .this-week-sep { color: var(--text-muted); margin: 0 2px; }
+
+    /* ── Cosmos card twinkle (Cosmos link only) ── */
+    .cosmos-twinkle { animation: cosmosTwinkle 2.4s ease-in-out infinite; transform-origin: center; }
+    @keyframes cosmosTwinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+    /* ── Currently Shipping status ── */
+    .shipping-status {
+      display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+      gap: 4px 10px; margin-top: 16px; padding: 0 8px;
+      font-size: 11px; color: var(--text-muted); line-height: 1.5;
+      opacity: 0; animation: fadeUp 0.3s ease 0.55s forwards;
+    }
+    .ship-item { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+    .ship-state { font-size: 10px; line-height: 1; }
+    .ship-sep { color: var(--text-muted); opacity: 0.5; }
+
+    /* ── Last updated ── */
+    .last-updated { color: var(--text-muted); }
+    .last-updated-rel::after { content: ''; }
   </style>
 
   {{ partial "analytics.html" . }}
@@ -205,11 +237,11 @@
     <!-- Identity -->
     <div class="identity">
       <div class="avatar">
-        {{ partial "picture.html" (dict "src" "/images/about/headshot.webp" "alt" "Susanth Sutheesh" "width" 88 "height" 88 "loading" "eager") }}
+        {{ partial "picture.html" (dict "src" "/images/about/headshot.webp" "alt" "Susanth Sutheesh" "width" 64 "height" 64 "loading" "eager") }}
       </div>
       <h1 class="name">Susanth Sutheesh</h1>
       <p class="brand">A Guide to Cloud & AI</p>
-      <p class="subtitle">Free tools, study guides & tutorials for IT pros</p>
+      <p class="subtitle">I learn for myself first. What overflows lands here.</p>
       <div class="stats-pill">
         <span>54 tools</span><span class="stat-dot" aria-hidden="true"></span>
         <span>800+ videos</span><span class="stat-dot" aria-hidden="true"></span>
@@ -221,23 +253,26 @@
       </div>
     </div>
 
-    <!-- TOP — Revenue + High-Value -->
+    {{- with hugo.Data.now -}}{{- if .this_week -}}
+    <!-- This week — driven by data/now.toml [[this_week]] -->
+    <div class="this-week">
+      <span class="this-week-icon" aria-hidden="true">📡</span>
+      <span class="this-week-label">This week —</span>
+      {{- range $i, $item := .this_week -}}
+        {{- if $i }}<span class="this-week-sep">·</span>{{ end -}}
+        <span>{{ $item.text }}</span>
+      {{- end -}}
+    </div>
+    {{- end -}}{{- end }}
+
+    <!-- Start Here — top funnel, paid product first -->
     <div class="section-label">Start Here</div>
 
     <a href="/guided/explore/" class="link-btn featured" data-link-id="practice_exams" data-link-section="primary">
       <span class="link-icon">{{ partial "icon.html" (dict "name" "graduation-cap" "size" 18 "stroke" 1.5) }}</span>
       <span class="link-text">
         <span class="label">Practice Exams<span class="badge-new">Popular</span></span>
-        <span class="meta">Azure, M365, Security & GCP — from $9</span>
-      </span>
-      <span class="link-arrow">→</span>
-    </a>
-
-    <a href="/free-tools/" class="link-btn featured" data-link-id="free_tools" data-link-section="primary">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "wrench" "size" 18 "stroke" 1.5) }}</span>
-      <span class="link-text">
-        <span class="label">54 Free Cloud & AI Tools</span>
-        <span class="meta">Zero cost, zero login — prompt polisher, cost calculators, builders</span>
+        <span class="meta">Azure, M365, Security & GCP — from $9. AI-200 just shipped.</span>
       </span>
       <span class="link-arrow">→</span>
     </a>
@@ -251,94 +286,70 @@
       <span class="link-arrow">→</span>
     </a>
 
-    <a href="https://ko-fi.com/aguidetocloud/shop" class="link-btn" data-link-id="downloads" data-link-section="primary" target="_blank" rel="noopener noreferrer">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "download" "size" 18 "stroke" 1.5) }}</span>
+    <a href="/free-tools/" class="link-btn" data-link-id="free_tools" data-link-section="primary">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "wrench" "size" 18 "stroke" 1.5) }}</span>
       <span class="link-text">
-        <span class="label">Downloads</span>
-        <span class="meta">Study guides, flash cards & practice tests</span>
+        <span class="label">54 Free Cloud & AI Tools</span>
+        <span class="meta">Calculators, builders, Copilot helpers — zero login</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <!-- Explore — the universe -->
+    <div class="section-label">Explore</div>
+
+    <a href="https://cosmos.aguidetocloud.com/" class="link-btn" data-link-id="cosmos" data-link-section="explore" target="_blank" rel="noopener noreferrer">
+      <span class="link-icon">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke-opacity="0.45"/>
+          <circle cx="12" cy="12" r="1.8" fill="currentColor" stroke="none"/>
+          <circle class="cosmos-twinkle" cx="21" cy="12" r="1.6" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
+      <span class="link-text">
+        <span class="label">Cosmos Atlas<span class="badge-new">New</span></span>
+        <span class="meta">Tour the universe — every planet I've built</span>
       </span>
       <span class="link-arrow">↗</span>
     </a>
 
-    <!-- Learn -->
-    <div class="section-label">Learn</div>
-
-    <a href="/videos/" class="link-btn" data-link-id="videos" data-link-section="learn">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "video" "size" 18 "stroke" 1.5) }}</span>
+    <a href="https://shift.aguidetocloud.com/" class="link-btn" data-link-id="shift" data-link-section="explore" target="_blank" rel="noopener noreferrer">
+      <span class="link-icon">{{ partial "planet-icon.html" (dict "slug" "shift" "size" 18 "scope" "links") }}</span>
       <span class="link-text">
-        <span class="label">Video Tutorials</span>
-        <span class="meta">78 videos — Azure, M365, Copilot & Security</span>
+        <span class="label">Shift</span>
+        <span class="meta">What changed in AI this month — plain English</span>
       </span>
-      <span class="link-arrow">→</span>
+      <span class="link-arrow">↗</span>
     </a>
 
-    <a href="/blog/" class="link-btn" data-link-id="blog" data-link-section="learn">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "edit-3" "size" 18 "stroke" 1.5) }}</span>
-      <span class="link-text">
-        <span class="label">Blog</span>
-        <span class="meta">Deep dives on Copilot, licensing & security</span>
-      </span>
-      <span class="link-arrow">→</span>
-    </a>
-
-    <a href="/licensing-docs/" class="link-btn" data-link-id="licensing" data-link-section="learn">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "book-open" "size" 18 "stroke" 1.5) }}</span>
-      <span class="link-text">
-        <span class="label">M365 Licensing Wiki</span>
-        <span class="meta">50 plans explained in plain English</span>
-      </span>
-      <span class="link-arrow">→</span>
-    </a>
-
-    <!-- Featured Tools -->
-    <div class="section-label">Featured Tools</div>
-
-    <a href="/prompt-polisher/" class="link-btn" data-link-id="polisher" data-link-section="tools">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "sparkles" "size" 18 "stroke" 1.5) }}</span>
-      <span class="link-text">
-        <span class="label">Prompt Polisher</span>
-        <span class="meta">Score & rewrite any AI prompt instantly</span>
-      </span>
-      <span class="link-arrow">→</span>
-    </a>
-
-    <a href="/token-calculator/" class="link-btn" data-link-id="token_calc" data-link-section="tools">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 18 "stroke" 1.5) }}</span>
-      <span class="link-text">
-        <span class="label">AI Token Calculator<span class="badge-new">New</span></span>
-        <span class="meta">Compare GPT, Claude, Gemini pricing</span>
-      </span>
-      <span class="link-arrow">→</span>
-    </a>
-
-    <a href="/ai-news/" class="link-btn" data-link-id="ai_news" data-link-section="tools">
+    <a href="/ai-news/" class="link-btn" data-link-id="ai_news" data-link-section="explore">
       <span class="link-icon">{{ partial "icon.html" (dict "name" "newspaper" "size" 18 "stroke" 1.5) }}</span>
       <span class="link-text">
         <span class="label">AI News</span>
-        <span class="meta">Updated 4x daily from 33 sources</span>
+        <span class="meta">Updated 4× daily from 33 sources</span>
       </span>
       <span class="link-arrow">→</span>
     </a>
 
-    <!-- Watch -->
-    <div class="section-label">YouTube</div>
+    <!-- Watch & Read -->
+    <div class="section-label">Watch &amp; Read</div>
 
     <a href="https://www.youtube.com/@SusanthSutheesh" class="link-btn" data-link-id="yt_main" data-link-section="watch" target="_blank" rel="noopener noreferrer">
       <span class="link-icon">{{ partial "icon.html" (dict "name" "video" "size" 18 "stroke" 1.5) }}</span>
       <span class="link-text">
-        <span class="label">Full Courses</span>
-        <span class="meta">74 videos · Azure, M365, Copilot & Security</span>
+        <span class="label">YouTube</span>
+        <span class="meta">Full courses + 730+ Quick Bites</span>
       </span>
       <span class="link-arrow">↗</span>
     </a>
 
-    <a href="https://www.youtube.com/@AGuideToCloud" class="link-btn" data-link-id="yt_bites" data-link-section="watch" target="_blank" rel="noopener noreferrer">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "bolt" "size" 18 "stroke" 1.5) }}</span>
+    <a href="/blog/" class="link-btn" data-link-id="blog" data-link-section="watch">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "edit-3" "size" 18 "stroke" 1.5) }}</span>
       <span class="link-text">
-        <span class="label">Quick Bites</span>
-        <span class="meta">730+ short exam prep clips</span>
+        <span class="label">Blog</span>
+        <span class="meta">Honest field notes on Copilot, licensing &amp; security</span>
       </span>
-      <span class="link-arrow">↗</span>
+      <span class="link-arrow">→</span>
     </a>
 
     <!-- Latest Video -->
@@ -355,23 +366,35 @@
       </a>
     </div>
 
-    <!-- Connect -->
-    <div class="section-label">Connect</div>
+    <!-- Reference — look-up-when-you-need-it content -->
+    <div class="section-label">Reference</div>
+
+    <a href="/licensing/" class="link-btn" data-link-id="licensing" data-link-section="reference">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "book-open" "size" 18 "stroke" 1.5) }}</span>
+      <span class="link-text">
+        <span class="label">M365 Licensing</span>
+        <span class="meta">Plans, features &amp; pricing — in plain English</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a href="/mind-maps/" class="link-btn" data-link-id="mind_maps" data-link-section="reference">
+      <span class="link-icon">{{ partial "icon.html" (dict "name" "brain" "size" 18 "stroke" 1.5) }}</span>
+      <span class="link-text">
+        <span class="label">Mind Maps</span>
+        <span class="meta">Visual reference for tricky cloud &amp; security topics</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <!-- Community -->
+    <div class="section-label">Community</div>
 
     <a href="https://chat.whatsapp.com/KpiSMbE8i1n60KLgI4lFal" class="link-btn" data-link-id="whatsapp" data-link-section="connect" target="_blank" rel="noopener noreferrer">
       <span class="link-icon">{{ partial "icon.html" (dict "name" "message-square" "size" 18 "stroke" 1.5) }}</span>
       <span class="link-text">
-        <span class="label">Community</span>
-        <span class="meta">Join the WhatsApp group</span>
-      </span>
-      <span class="link-arrow">↗</span>
-    </a>
-
-    <a href="https://ko-fi.com/aguidetocloud" class="link-btn" data-link-id="donate" data-link-section="connect" target="_blank" rel="noopener noreferrer">
-      <span class="link-icon">{{ partial "icon.html" (dict "name" "coffee" "size" 18 "stroke" 1.5) }}</span>
-      <span class="link-text">
-        <span class="label">Support My Work</span>
-        <span class="meta">Buy me a coffee on Ko-fi</span>
+        <span class="label">WhatsApp Community</span>
+        <span class="meta">Join the chat — IT pros studying together</span>
       </span>
       <span class="link-arrow">↗</span>
     </a>
@@ -406,7 +429,23 @@
       </button>
     </div>
 
-    <p class="footer-note"><a href="/">aguidetocloud.com</a></p>
+    {{- with hugo.Data.now -}}{{- if .shipping_status -}}
+    <!-- Currently shipping — driven by data/now.toml [[shipping_status]] -->
+    <div class="shipping-status" aria-label="Currently shipping">
+      {{- range $i, $item := .shipping_status -}}
+        {{- if $i }}<span class="ship-sep">·</span>{{ end -}}
+        <span class="ship-item">
+          <span class="ship-state" aria-hidden="true">{{- if eq $item.state "live" -}}🟢{{- else if eq $item.state "watch" -}}🛠{{- else -}}⚪{{- end -}}</span>
+          <span>{{ $item.text }}</span>
+        </span>
+      {{- end -}}
+    </div>
+    {{- end -}}{{- end }}
+
+    <p class="footer-note">
+      <span class="last-updated" data-built-at="{{ now.Format "2006-01-02T15:04:05Z" }}">Last updated <span class="last-updated-rel">just now</span></span>
+      · <a href="/">aguidetocloud.com</a>
+    </p>
   </div>
 
   <script>
@@ -485,6 +524,22 @@
         t.textContent = d.title || ''; m.textContent = d.published || ''; w.style.display = '';
       }
       fetch('/api/stats?latestvideo=1').then(function(r) { return r.json(); }).then(function(d) { show(d.error || !d.id ? fb : d); }).catch(function() { show(fb); });
+    })();
+
+    /* Last-updated relative time — built at Hugo build time */
+    (function() {
+      var el = document.querySelector('.last-updated'); if (!el) return;
+      var rel = el.querySelector('.last-updated-rel'); if (!rel) return;
+      var built = el.getAttribute('data-built-at'); if (!built) return;
+      var t = new Date(built).getTime(); if (isNaN(t)) return;
+      var diff = (Date.now() - t) / 1000;
+      var label;
+      if (diff < 60) label = 'just now';
+      else if (diff < 3600) { var m = Math.floor(diff / 60); label = m + (m === 1 ? ' min ago' : ' min ago'); }
+      else if (diff < 86400) { var h = Math.floor(diff / 3600); label = h + (h === 1 ? ' hr ago' : ' hrs ago'); }
+      else if (diff < 2592000) { var d = Math.floor(diff / 86400); label = d + (d === 1 ? ' day ago' : ' days ago'); }
+      else { label = 'recently'; }
+      rel.textContent = label;
     })();
   </script>
 </body>

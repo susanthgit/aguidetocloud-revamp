@@ -1,0 +1,73 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# NOW — single source of truth for the /links/ page "live" elements
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Drives two things on /links/:
+#   1. [[this_week]]      — the "📡 This week" ribbon under the hero
+#   2. [[shipping_status]] — the "Currently shipping" footer pill
+#
+# UPDATE THIS FILE MANUALLY when something ships or status changes.
+# Auto-pulling from blog/git would lie — this file tells the truth.
+#
+# Behavior:
+#   - Empty section = element hides gracefully (no error, no warning)
+#   - Items render in order, joined with " · "
+#   - Keep each item under ~50 chars so the line doesn't wrap awkwardly
+#
+# CADENCE:
+#   - Update [[this_week]] when a meaningful new thing ships (1–2 items, max 3)
+#   - Update [[shipping_status]] less often — these are the persistent
+#     "what's currently live and being maintained" markers
+#
+# WHY THIS EXISTS:
+#   /links/ is the bio-page funnel from socials. A static linktree page
+#   feels abandoned after a week. This file lets the page show "I shipped
+#   this week" and "these things are alive" without engineering risk.
+#   See: ~/.copilot/session-state/<id>/plan.md (10 May 2026 reimagining)
+#
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ─── This week ribbon ──────────────────────────────────────────────────────
+# Renders as: 📡 This week — {item1.text} · {item2.text}
+# Keep to 1–2 items. 3 max.
+#
+# 🔴 RULE — USER-VALUE ONLY. What just shipped, changed, or got added
+# that a visitor (not a developer) would care about?
+#
+# GOOD examples (put these here):
+#   text = "AI-200 practice exams shipped"
+#   text = "M365 E7 licensing update"
+#   text = "New blog: Agent Builder vs Copilot Studio"
+#   text = "New mind map: Defender for Cloud"
+#   text = "Cert Study Guide refreshed: AZ-104"
+#
+# BAD examples (DO NOT put these — internal dev, no user value):
+#   text = "Cosmos V5 deployed"
+#   text = "Refactored CSS tokens"
+#   text = "SLA gates passing"
+#   text = "Hugo build pipeline upgraded"
+
+[[this_week]]
+text = "AI-200 practice exams shipped"
+
+[[this_week]]
+text = "Blog: Agent Builder vs Copilot Studio vs Foundry"
+
+# ─── Currently shipping status ─────────────────────────────────────────────
+# Renders as: 🟢 {item1.text} · 🛠 {item2.text} · 🟢 {item3.text}
+# state options: "live" (🟢) · "watch" (🛠) · "off" (⚪)
+#
+# 🔴 SAME RULE — user-value only. What's alive and being maintained
+# RIGHT NOW that visitors would care about?
+
+[[shipping_status]]
+state = "live"
+text = "AI News refreshing 4×/day"
+
+[[shipping_status]]
+state = "watch"
+text = "SC-500 study guide watch"
+
+[[shipping_status]]
+state = "live"
+text = "52 free study guides"
