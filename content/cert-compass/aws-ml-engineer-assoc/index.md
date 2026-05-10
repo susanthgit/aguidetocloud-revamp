@@ -1,6 +1,6 @@
 ---
-title: "Machine Learning Engineer – Associate (MLA-C01) — AWS Certification Guide"
-description: "Everything you need to know about Machine Learning Engineer – Associate (MLA-C01): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "MLA-C01: AWS exam — Free Cert Guide"
+description: "MLA-C01: the AWS Machine Learning Engineer – Associate exam. Free study guide with ML pipelines, model deployment, applied AI design, plus career paths."
 type: "cert-compass"
 layout: "single"
 cert_id: "aws-ml-engineer-assoc"

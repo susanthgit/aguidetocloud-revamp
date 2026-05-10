@@ -1,6 +1,6 @@
 ---
-title: "Azure Solutions Architect Expert (AZ-305) — Microsoft Azure Certification Guide"
-description: "Everything you need to know about Azure Solutions Architect Expert (AZ-305): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "AZ-305: Azure Solutions Architect Expert — Free Study Guide"
+description: "AZ-305: the Microsoft Azure Solutions Architect Expert exam. Free study guide with cloud architecture, reliability, cost optimisation, plus career paths."
 type: "cert-compass"
 layout: "single"
 cert_id: "ms-az-305"

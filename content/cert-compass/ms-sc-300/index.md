@@ -1,6 +1,6 @@
 ---
-title: "Microsoft Identity and Access Administrator (SC-300) — Microsoft Azure Certification Guide"
-description: "Everything you need to know about Microsoft Identity and Access Administrator (SC-300): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "SC-300: Microsoft exam — Free Cert Guide"
+description: "SC-300: the Microsoft Microsoft Identity and Access Administrator exam. Free guide covering exam objectives, services, architecture decisions."
 type: "cert-compass"
 layout: "single"
 cert_id: "ms-sc-300"

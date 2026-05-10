@@ -1,6 +1,6 @@
 ---
-title: "Professional Data Engineer (PDE) — Google Cloud Certification Guide"
-description: "Everything you need to know about Professional Data Engineer (PDE): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "PDE: Professional Data Engineer — Free Study Guide"
+description: "PDE: the Google Cloud Professional Data Engineer exam. Free study guide with data pipelines, warehouses, analytics services, plus career paths."
 type: "cert-compass"
 layout: "single"
 cert_id: "gcp-prof-data-engineer"

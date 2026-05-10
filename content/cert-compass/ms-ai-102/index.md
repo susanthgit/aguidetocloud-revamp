@@ -1,6 +1,6 @@
 ---
-title: "Azure AI Engineer (AI-102) — Microsoft Azure Certification Guide"
-description: "Everything you need to know about Azure AI Engineer (AI-102): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "AI-102: Azure AI Engineer — Free Microsoft Cert Guide"
+description: "AI-102: the Microsoft Azure AI Engineer exam. Free guide covering ML pipelines, model deployment, applied AI design, plus exam details and study tips."
 type: "cert-compass"
 layout: "single"
 cert_id: "ms-ai-102"

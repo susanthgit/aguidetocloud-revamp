@@ -1,6 +1,6 @@
 ---
-title: "Solutions Architect – Professional (SAP-C02) — AWS Certification Guide"
-description: "Everything you need to know about Solutions Architect – Professional (SAP-C02): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "SAP-C02: AWS Solutions Architect – Professional — Free Guide"
+description: "SAP-C02: the AWS Solutions Architect – Professional exam. Free study guide with cloud architecture, reliability, cost optimisation, plus career paths."
 type: "cert-compass"
 layout: "single"
 cert_id: "aws-solutions-architect-pro"

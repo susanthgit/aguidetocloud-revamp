@@ -1,6 +1,6 @@
 ---
-title: "Azure Administrator (AZ-104) — Microsoft Azure Certification Guide"
-description: "Everything you need to know about Azure Administrator (AZ-104): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "AZ-104: Azure Administrator — Free Microsoft Cert Guide"
+description: "AZ-104: the Microsoft Azure Administrator exam. Free guide covering exam objectives, services, architecture decisions, plus exam details and study tips."
 type: "cert-compass"
 layout: "single"
 cert_id: "ms-az-104"

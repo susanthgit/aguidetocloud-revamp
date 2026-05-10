@@ -1,6 +1,6 @@
 ---
-title: "Data Engineer – Associate (DEA-C01) — AWS Certification Guide"
-description: "Everything you need to know about Data Engineer – Associate (DEA-C01): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "DEA-C01: Data Engineer – Associate — Free AWS Cert Guide"
+description: "DEA-C01: the AWS Data Engineer – Associate exam. Free guide covering data pipelines, warehouses, analytics services, plus exam details and study tips."
 type: "cert-compass"
 layout: "single"
 cert_id: "aws-data-engineer-assoc"

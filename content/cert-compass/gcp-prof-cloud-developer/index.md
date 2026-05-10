@@ -1,6 +1,6 @@
 ---
-title: "Professional Cloud Developer (PCD) — Google Cloud Certification Guide"
-description: "Everything you need to know about Professional Cloud Developer (PCD): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "PCD: Professional Cloud Developer — Free Study Guide"
+description: "PCD: the Google Cloud Professional Cloud Developer exam. Free study guide with CI/CD, observability, reliability engineering, plus career paths."
 type: "cert-compass"
 layout: "single"
 cert_id: "gcp-prof-cloud-developer"

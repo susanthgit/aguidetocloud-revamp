@@ -1,6 +1,6 @@
 ---
-title: "DevOps Engineer – Professional (DOP-C02) — AWS Certification Guide"
-description: "Everything you need to know about DevOps Engineer – Professional (DOP-C02): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "DOP-C02: DevOps Engineer – Professional — Free Study Guide"
+description: "DOP-C02: the AWS DevOps Engineer – Professional exam. Free guide covering CI/CD, observability, reliability engineering, plus exam details and study tips."
 type: "cert-compass"
 layout: "single"
 cert_id: "aws-devops-pro"

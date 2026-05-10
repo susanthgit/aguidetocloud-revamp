@@ -1,6 +1,6 @@
 ---
-title: "SysOps Administrator – Associate (SOA-C02) — AWS Certification Guide"
-description: "Everything you need to know about SysOps Administrator – Associate (SOA-C02): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "SOA-C02: SysOps Administrator – Associate — Free Study Guide"
+description: "SOA-C02: the AWS SysOps Administrator – Associate exam. Free study guide with exam objectives, services, architecture decisions, plus career paths."
 type: "cert-compass"
 layout: "single"
 cert_id: "aws-sysops-assoc"

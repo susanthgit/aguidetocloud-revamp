@@ -1,6 +1,6 @@
 ---
-title: "Azure DevOps Engineer Expert (AZ-400) — Microsoft Azure Certification Guide"
-description: "Everything you need to know about Azure DevOps Engineer Expert (AZ-400): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "AZ-400: Azure DevOps Engineer Expert — Free Study Guide"
+description: "AZ-400: the Microsoft Azure DevOps Engineer Expert exam. Free study guide with CI/CD, observability, reliability engineering, plus career paths."
 type: "cert-compass"
 layout: "single"
 cert_id: "ms-az-400"

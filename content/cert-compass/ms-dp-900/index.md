@@ -1,6 +1,6 @@
 ---
-title: "Azure Data Fundamentals (DP-900) — Microsoft Azure Certification Guide"
-description: "Everything you need to know about Azure Data Fundamentals (DP-900): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "DP-900: Azure Data Fundamentals — Free Microsoft Cert Guide"
+description: "DP-900: the Microsoft Azure Data Fundamentals exam. Free guide covering data pipelines, warehouses, analytics services, plus exam details and study tips."
 type: "cert-compass"
 layout: "single"
 cert_id: "ms-dp-900"

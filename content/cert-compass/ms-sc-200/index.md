@@ -1,6 +1,6 @@
 ---
-title: "Microsoft Security Operations Analyst (SC-200) — Microsoft Azure Certification Guide"
-description: "Everything you need to know about Microsoft Security Operations Analyst (SC-200): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "SC-200: Microsoft exam — Free Cert Guide"
+description: "SC-200: the Microsoft Microsoft Security Operations Analyst exam. Free guide covering identity, threat protection, security operations."
 type: "cert-compass"
 layout: "single"
 cert_id: "ms-sc-200"

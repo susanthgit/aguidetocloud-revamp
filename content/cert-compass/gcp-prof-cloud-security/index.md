@@ -1,6 +1,6 @@
 ---
-title: "Professional Cloud Security Engineer (PCSE) — Google Cloud Certification Guide"
-description: "Everything you need to know about Professional Cloud Security Engineer (PCSE): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "PCSE: Google Cloud exam — Free Cert Guide"
+description: "PCSE: the Google Cloud Professional Cloud Security Engineer exam. Free guide covering identity, threat protection, security operations."
 type: "cert-compass"
 layout: "single"
 cert_id: "gcp-prof-cloud-security"

@@ -1,6 +1,6 @@
 ---
-title: "Advanced Networking – Specialty (ANS-C01) — AWS Certification Guide"
-description: "Everything you need to know about Advanced Networking – Specialty (ANS-C01): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "ANS-C01: Advanced Networking – Specialty — Free Study Guide"
+description: "ANS-C01: the AWS Advanced Networking – Specialty exam. Free guide covering VPCs, hybrid connectivity, network security, plus exam details and study tips."
 type: "cert-compass"
 layout: "single"
 cert_id: "aws-networking-specialty"

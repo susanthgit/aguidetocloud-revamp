@@ -1,6 +1,6 @@
 ---
-title: "Azure Developer (AZ-204) — Microsoft Azure Certification Guide"
-description: "Everything you need to know about Azure Developer (AZ-204): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "AZ-204: Azure Developer — Free Microsoft Cert Guide"
+description: "AZ-204: the Microsoft Azure Developer exam. Free guide covering CI/CD, observability, reliability engineering, plus exam details and study tips."
 type: "cert-compass"
 layout: "single"
 cert_id: "ms-az-204"

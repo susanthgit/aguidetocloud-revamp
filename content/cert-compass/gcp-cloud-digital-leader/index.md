@@ -1,6 +1,6 @@
 ---
-title: "Cloud Digital Leader (CDL) — Google Cloud Certification Guide"
-description: "Everything you need to know about Cloud Digital Leader (CDL): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "CDL: Cloud Digital Leader — Free Google Cloud Cert Guide"
+description: "CDL: the Google Cloud Cloud Digital Leader exam. Free guide covering cloud concepts, core services, governance, pricing, plus exam details and study tips."
 type: "cert-compass"
 layout: "single"
 cert_id: "gcp-cloud-digital-leader"

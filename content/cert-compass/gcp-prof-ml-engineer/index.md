@@ -1,6 +1,6 @@
 ---
-title: "Professional Machine Learning Engineer (PMLE) — Google Cloud Certification Guide"
-description: "Everything you need to know about Professional Machine Learning Engineer (PMLE): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "PMLE: Google Cloud exam — Free Cert Guide"
+description: "PMLE: the Google Cloud Professional Machine Learning Engineer exam. Free guide covering ML pipelines, model deployment, applied AI design."
 type: "cert-compass"
 layout: "single"
 cert_id: "gcp-prof-ml-engineer"

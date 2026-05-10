@@ -1,6 +1,6 @@
 ---
-title: "Professional Cloud Database Engineer (PDBE) — Google Cloud Certification Guide"
-description: "Everything you need to know about Professional Cloud Database Engineer (PDBE): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "PDBE: Google Cloud exam — Free Cert Guide"
+description: "PDBE: the Google Cloud Professional Cloud Database Engineer exam. Free study guide with data pipelines, warehouses, analytics services, plus career paths."
 type: "cert-compass"
 layout: "single"
 cert_id: "gcp-prof-database-engineer"

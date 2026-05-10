@@ -1,6 +1,6 @@
 ---
-title: "Professional Security Operations Engineer (PSOE) — Google Cloud Certification Guide"
-description: "Everything you need to know about Professional Security Operations Engineer (PSOE): exam details, cross-cloud equivalents, career paths, and study resources."
+title: "PSOE: Google Cloud exam — Free Cert Guide"
+description: "PSOE: the Google Cloud Professional Security Operations Engineer exam. Free guide covering identity, threat protection, security operations."
 type: "cert-compass"
 layout: "single"
 cert_id: "gcp-prof-secops-engineer"
