@@ -6,6 +6,8 @@
 /* ── Accent tokens ── */
 :root {
   --palette-accent: var(--accent);
+}
+
 /* ── Page wrapper ── */
 .palette-page {
   padding: 0 0 2rem;
@@ -245,6 +247,8 @@
   transition: background-color 0.5s ease, flex 0.3s ease;
   user-select: none;
   min-width: 0;
+  background: var(--swatch);
+  color: var(--swatch-text);
 }
 .palette-swatch.focused {
   flex: 1.3;
@@ -271,7 +275,7 @@
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.03em;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 4px color-mix(in srgb, black 50%, transparent);
   pointer-events: auto;
   cursor: pointer;
   padding: 0.2rem 0.5rem;
@@ -285,7 +289,7 @@
 .palette-swatch-name {
   font-size: 0.72rem;
   opacity: 0.85;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 4px color-mix(in srgb, black 50%, transparent);
   text-align: center;
   max-width: 100%;
   overflow: hidden;
@@ -317,7 +321,7 @@
   color: var(--text-primary);
 }
 .palette-swatch-lock.locked {
-  background: rgba(244,114,182,0.5);
+  background: color-mix(in srgb, deeppink 50%, transparent);
   color: var(--text-primary);
 }
 
@@ -326,7 +330,7 @@
   position: absolute;
   top: 0.75rem;
   left: 0.5rem;
-  background: rgba(239,68,68,0.4);
+  background: color-mix(in srgb, var(--error) 40%, transparent);
   border: none;
   border-radius: 50%;
   width: 24px; height: 24px;
@@ -425,6 +429,7 @@
   border-radius: var(--radius-md);
   border: 2px solid var(--border);
   flex-shrink: 0;
+  background: var(--swatch);
 }
 .palette-detail-name {
   font-size: 1rem;
@@ -630,6 +635,7 @@
   border: 2px solid transparent;
   transition: color 150ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
   position: relative;
+  background: var(--swatch);
 }
 .palette-extract-swatch:hover {
   border-color: var(--accent);
@@ -705,7 +711,7 @@
 }
 .palette-contrast-ratio-num {
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-primary);
   line-height: 1;
 }
@@ -750,6 +756,8 @@
   padding: 2rem;
   transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out, transform 0.3s ease-out, opacity 0.3s ease-out;
   min-height: 140px;
+  background: var(--bg);
+  color: var(--fg);
 }
 .palette-contrast-preview h2 { font-size: 1.4rem; }
 .palette-contrast-preview p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
@@ -810,14 +818,15 @@
 .palette-blindness-swatch {
   flex: 1;
   transition: background-color 0.3s;
+  background: var(--swatch);
 }
 
 .palette-blindness-summary {
   margin-top: 1.5rem;
 }
 .palette-blindness-warning {
-  background: rgba(251,191,36,0.1);
-  border: 1px solid rgba(251,191,36,0.3);
+  background: color-mix(in srgb, var(--warning) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--warning) 30%, transparent);
   border-radius: var(--radius-md);
   padding: 1rem;
   color: var(--text-primary);
@@ -829,8 +838,8 @@
   line-height: 1.5;
 }
 .palette-blindness-pass {
-  background: rgba(52,211,153,0.1);
-  border: 1px solid rgba(52,211,153,0.3);
+  background: color-mix(in srgb, var(--success) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--success) 30%, transparent);
   border-radius: var(--radius-md);
   padding: 1rem;
   color: var(--accent);
@@ -884,6 +893,7 @@
 .palette-explore-card-color {
   flex: 1;
   transition: flex 0.2s;
+  background: var(--swatch);
 }
 .palette-explore-card-color:hover { flex: 1.3; }
 .palette-explore-card-info {
@@ -904,7 +914,7 @@
 
 /* Favourite delete */
 .palette-fav-delete {
-  background: rgba(239,68,68,0.3);
+  background: color-mix(in srgb, var(--error) 30%, transparent);
   border: none;
   border-radius: 50%;
   width: 22px; height: 22px;
@@ -917,7 +927,7 @@
   transition: background-color 150ms ease-out;
   flex-shrink: 0;
 }
-.palette-fav-delete:hover { background: rgba(239,68,68,0.6); }
+.palette-fav-delete:hover { background: color-mix(in srgb, var(--error) 60%, transparent); }
 
 .palette-explore-card-use {
   font-size: 0.72rem;
@@ -951,7 +961,7 @@
   display: flex;
   height: 48px;
 }
-.palette-history-color { flex: 1; }
+.palette-history-color { flex: 1; background: var(--swatch); }
 .palette-history-hex {
   padding: 0.4rem 0.6rem;
   font-family: monospace;

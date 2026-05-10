@@ -550,8 +550,8 @@ function renderSwatches() {
     }
 
     const tc = textColorFor(hex);
-    el.style.backgroundColor = hex;
-    el.style.color = tc;
+    el.style.setProperty('--swatch', hex);
+    el.style.setProperty('--swatch-text', tc);
     el.classList.toggle('focused', i === S.focused);
     el.querySelector('.palette-swatch-hex').textContent = hex;
     el.querySelector('.palette-swatch-name').textContent = nearestColorName(hex);
@@ -594,7 +594,7 @@ function openDetail(idx) {
   const [h, s, l] = rgbToHsl(r, g, b);
 
   $('palette-detail').classList.add('open');
-  $('palette-detail-swatch').style.background = hex;
+  $('palette-detail-swatch').style.setProperty('--swatch', hex);
   $('palette-detail-name').textContent = nearestColorName(hex);
   $('palette-detail-hex').value = hex;
   $('palette-detail-rgb').value = `rgb(${r}, ${g}, ${b})`;
@@ -1058,7 +1058,7 @@ function initExtract() {
     colors.forEach(hex => {
       const div = document.createElement('div');
       div.className = 'palette-extract-swatch';
-      div.style.backgroundColor = hex;
+      div.style.setProperty('--swatch', hex);
       div.dataset.hex = hex;
       div.title = hex;
       div.innerHTML = `<span class="palette-extract-swatch-hex">${esc(hex)}</span>`;
@@ -1111,10 +1111,10 @@ function initContrast() {
     });
 
     const preview = $('palette-contrast-preview');
-    preview.style.backgroundColor = bg;
-    preview.style.color = fg;
-    preview.querySelector('.palette-contrast-preview-btn').style.color = fg;
-    preview.querySelector('.palette-contrast-preview-btn').style.borderColor = fg;
+    preview.style.setProperty('--bg', bg);
+    preview.style.setProperty('--fg', fg);
+    const btn = preview.querySelector('.palette-contrast-preview-btn');
+    btn.style.setProperty('--fg', fg);
   }
 
   fgPicker.addEventListener('input', () => { fgHex.value = fgPicker.value.toUpperCase(); update(); });
@@ -1201,7 +1201,7 @@ function renderBlindness() {
     const simColors = S.colors.map(c => simulateColorBlindness(c, key));
     card.innerHTML = `
       <div class="palette-blindness-card-title">${key === 'normal' ? 'Normal' : 'Sim'} ${esc(name)} <span class="palette-blindness-card-subtitle">${esc(desc)}</span></div>
-      <div class="palette-blindness-swatches">${simColors.map(c => `<div class="palette-blindness-swatch" style="background:${c}"></div>`).join('')}</div>
+      <div class="palette-blindness-swatches">${simColors.map(c => `<div class="palette-blindness-swatch" style="--swatch:${c}"></div>`).join('')}</div>
     `;
     grid.appendChild(card);
   });
@@ -1252,7 +1252,7 @@ function renderExplore() {
     const card = document.createElement('div');
     card.className = 'palette-explore-card';
     card.innerHTML = `
-      <div class="palette-explore-card-colors">${p.colors.map(c => `<div class="palette-explore-card-color" style="background:${c}"></div>`).join('')}</div>
+      <div class="palette-explore-card-colors">${p.colors.map(c => `<div class="palette-explore-card-color" style="--swatch:${c}"></div>`).join('')}</div>
       <div class="palette-explore-card-info">
         <span class="palette-explore-card-name">${esc(p.name)}</span>
         <span class="palette-explore-card-use">Use This →</span>
@@ -1281,7 +1281,7 @@ function renderExplore() {
       card.setAttribute('role', 'button');
       card.setAttribute('aria-label', 'Load palette ' + colors.join(' '));
       card.innerHTML = `
-        <div class="palette-history-colors">${colors.map(c => `<div class="palette-history-color" style="background:${c}"></div>`).join('')}</div>
+        <div class="palette-history-colors">${colors.map(c => `<div class="palette-history-color" style="--swatch:${c}"></div>`).join('')}</div>
         <div class="palette-history-hex">${colors.map(c => esc(c)).join(' ')}</div>`;
       const load = () => {
         S.colors = colors.slice();
@@ -1307,7 +1307,7 @@ function renderExplore() {
       const card = document.createElement('div');
       card.className = 'palette-explore-card';
       card.innerHTML = `
-        <div class="palette-explore-card-colors">${fav.colors.map(c => `<div class="palette-explore-card-color" style="background:${c}"></div>`).join('')}</div>
+        <div class="palette-explore-card-colors">${fav.colors.map(c => `<div class="palette-explore-card-color" style="--swatch:${c}"></div>`).join('')}</div>
         <div class="palette-explore-card-info">
           <span class="palette-explore-card-name">${esc(fav.name)}</span>
           <button class="palette-fav-delete" data-fi="${fi}" title="Delete" aria-label="Delete ${esc(fav.name)}">✕</button>

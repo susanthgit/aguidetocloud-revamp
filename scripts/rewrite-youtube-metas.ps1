@@ -33,7 +33,7 @@ pwsh scripts\rewrite-youtube-metas.ps1 -Surface ai-hub -DryRun
 pwsh scripts\rewrite-youtube-metas.ps1
 #>
 param(
-  [ValidateSet('all','ai-hub','exam-qa','cloud-labs','certifications')]
+  [ValidateSet('all','ai-hub','exam-qa','cloud-labs','certifications','interview-prep')]
   [string]$Surface = 'all',
   [switch]$DryRun,
   [string]$ContentDir,
@@ -345,7 +345,7 @@ function New-Meta-Video {
 }
 
 # ── Main loop ─────────────────────────────────────────────────────
-$dirsToProcess = if ($Surface -eq 'all') { @('ai-hub','exam-qa','cloud-labs','certifications') } else { @($Surface) }
+$dirsToProcess = if ($Surface -eq 'all') { @('ai-hub','exam-qa','cloud-labs','certifications','interview-prep') } else { @($Surface) }
 
 $allFiles = @()
 foreach ($d in $dirsToProcess) {

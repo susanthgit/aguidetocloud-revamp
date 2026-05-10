@@ -1,6 +1,6 @@
 ---
-title: "Microsoft 365 Interview Questions for Beginners and Experienced Professionals"
-description: "Watch Microsoft 365 Interview Questions for Beginners and Experienced Professionals - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+title: "Microsoft 365 Interview Questions for Beginners and (Free)"
+description: "Azure Interview Prep tutorial: Microsoft 365 Interview Questions for Beginners and Experienced Professionals. Free hands-on lab by Susanth Sutheesh."
 date: 2025-04-08
 youtube_id: "8tHh6wJEqo8"
 card_tag: "Interview Prep"
