@@ -3183,3 +3183,141 @@ body.cmd-v2-home-page .bb-brand-name { font-weight: 700; }
   .bb-kind-chips { gap: 6px; padding: 8px 0; }
   .bb-kind-chip { padding: 4px 8px; font-size: 11px; }
 }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   cmd v2.5 — full-black home variant (Sun 10 May 2026)
+   Sush asked: "can we go full black with dotted in the back"
+   This block overrides v2.1 cream + v2.2 contrast tuning + Wave A featured-row
+   colors + Wave B kind-chip colors for the home page only. Inner pages still
+   flip light/dark via cookie — only `body.cmd-v2-home-page` is touched.
+   The void: black canvas, faint amber stars, CRT halo bloom centered. All
+   home-only text + UI shifts to light/amber/terminal palette so the CRT
+   feels like the only light source in a dark room.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* DESK BACKGROUND — full-black void, faint amber stars, CRT halo bloom */
+body.cmd-v2-home-page {
+  background:
+    radial-gradient(circle, rgba(255, 240, 220, 0.07) 1px, transparent 1.8px) 0 0 / 36px 36px,
+    radial-gradient(ellipse 90% 60% at 50% 35%, rgba(255, 200, 130, 0.18) 0%, transparent 65%),
+    #0a0d12 !important;
+}
+body.cmd-v2-home-page::before {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 220, 180, 0.025) 0,
+    rgba(255, 220, 180, 0.025) 1px,
+    transparent 1px, transparent 4px
+  ) !important;
+  mix-blend-mode: normal !important;
+}
+
+/* Header — light wordmark, amber prompt cursor */
+body.cmd-v2-home-page .bb-brand,
+body.cmd-v2-home-page .bb-brand-name { color: #f4ede0 !important; }
+body.cmd-v2-home-page .bb-brand .bb-prompt { color: #ffb86c !important; }
+body.cmd-v2-home-page .bb-brand .bb-cursor { color: #ffb86c !important; }
+body.cmd-v2-home-page .bb-topnav-link {
+  color: #c5cce4 !important;
+  background: rgba(20, 24, 32, 0.6) !important;
+  border-color: rgba(255, 200, 130, 0.25) !important;
+}
+body.cmd-v2-home-page .bb-topnav-link:hover {
+  color: #50fa7b !important;
+  border-color: #50fa7b !important;
+  background: rgba(20, 24, 32, 0.85) !important;
+}
+
+/* Hero — light prelude/h1, amber em accent */
+body.cmd-v2-home-page .cmd-v2-home .cmd-hero .prelude { color: #8a93b3 !important; }
+body.cmd-v2-home-page .cmd-v2-home .cmd-hero h1 { color: #f4ede0 !important; }
+body.cmd-v2-home-page .cmd-v2-home .cmd-hero-capability { color: #8a93b3 !important; }
+body.cmd-v2-home-page .cmd-v2-home .cmd-hero-capability .em { color: #ffb86c !important; font-weight: 600; }
+
+/* Quick-strip — dark glass with terminal palette */
+body.cmd-v2-home-page .cmd-v2-home .cmd-quick-strip {
+  background: rgba(13, 18, 25, 0.75) !important;
+  border-color: rgba(255, 184, 108, 0.25) !important;
+  color: #6272a4 !important;
+}
+body.cmd-v2-home-page .cmd-v2-home .cmd-quick-strip .label { color: #6272a4 !important; }
+body.cmd-v2-home-page .cmd-v2-home .cmd-quick-cmd {
+  background: #11151c !important;
+  border-color: #2d3548 !important;
+  color: #8be9fd !important;
+}
+body.cmd-v2-home-page .cmd-v2-home .cmd-quick-cmd:hover {
+  color: #50fa7b !important;
+  border-color: #50fa7b !important;
+  background: #11151c !important;
+  text-shadow: 0 0 5px rgba(80, 250, 123, 0.5);
+}
+body.cmd-v2-home-page .cmd-v2-home .cmd-quick-cmd.cmd-quick-headline {
+  color: #ffb86c !important;
+  border-color: #ffb86c !important;
+}
+
+/* Wave A featured-row block — dark panel with amber prompts + cyan names */
+body.cmd-v2-home-page .cmd-v2-home .cmd-featured {
+  background: rgba(13, 18, 25, 0.55) !important;
+  border-color: rgba(255, 184, 108, 0.3) !important;
+}
+body.cmd-v2-home-page .cmd-v2-home .cmd-featured-title {
+  color: #ffb86c !important;
+  border-bottom-color: rgba(255, 184, 108, 0.2) !important;
+}
+body.cmd-v2-home-page .cmd-v2-home .cmd-featured-card { background: transparent !important; }
+@media (min-width: 720px) {
+  body.cmd-v2-home-page .cmd-v2-home .cmd-featured-card:hover {
+    background: rgba(20, 24, 32, 0.85) !important;
+    border-bottom-color: rgba(255, 184, 108, 0.5) !important;
+  }
+  body.cmd-v2-home-page .cmd-v2-home .cmd-featured-card::before {
+    color: #ffb86c !important;
+  }
+}
+body.cmd-v2-home-page .cmd-v2-home .cmd-featured-slug { color: #ffb86c !important; }
+body.cmd-v2-home-page .cmd-v2-home .cmd-featured-name { color: #c5cce4 !important; }
+body.cmd-v2-home-page .cmd-v2-home .cmd-featured-kind { color: #6272a4 !important; }
+
+/* Express toggle ('or browse the index') */
+body.cmd-v2-home-page .cmd-v2-home details.cmd-express-toggle {
+  border-top-color: rgba(255, 184, 108, 0.2) !important;
+}
+body.cmd-v2-home-page .cmd-v2-home details.cmd-express-toggle > summary { color: #6272a4 !important; }
+body.cmd-v2-home-page .cmd-v2-home details.cmd-express-toggle > summary:hover { color: #8be9fd !important; }
+body.cmd-v2-home-page .cmd-v2-home .cmd-express-content .dim { color: #6272a4 !important; }
+body.cmd-v2-home-page .cmd-v2-home .cmd-express-content .cmd-link { color: #8be9fd !important; }
+body.cmd-v2-home-page .cmd-v2-home .cmd-express-content .cmd-link:hover {
+  color: #50fa7b !important;
+  border-bottom-color: #50fa7b !important;
+}
+
+/* Sticky bar on void */
+body.cmd-v2-home-page .cmd-sticky-bar {
+  background: rgba(13, 18, 25, 0.95) !important;
+  border-bottom-color: rgba(255, 184, 108, 0.3) !important;
+  color: #6272a4 !important;
+}
+body.cmd-v2-home-page .cmd-sticky-bar a { color: #8be9fd !important; }
+body.cmd-v2-home-page .cmd-sticky-bar a:hover { color: #50fa7b !important; }
+
+/* Footer on void */
+body.cmd-v2-home-page .bb-footer,
+body.cmd-v2-home-page .bb-footer p {
+  background: transparent !important;
+  color: #8a93b3 !important;
+  border-top: 1px solid rgba(255, 184, 108, 0.2);
+}
+body.cmd-v2-home-page .bb-footer a { color: #8be9fd !important; }
+body.cmd-v2-home-page .bb-footer a:hover { color: #50fa7b !important; }
+body.cmd-v2-home-page .bb-footer .cmd-mcp {
+  background: rgba(13, 18, 25, 0.7) !important;
+  border-color: rgba(255, 184, 108, 0.4) !important;
+  color: #ffb86c !important;
+}
+body.cmd-v2-home-page .bb-footer .cmd-mcp:hover {
+  color: #50fa7b !important;
+  border-color: #50fa7b !important;
+}
