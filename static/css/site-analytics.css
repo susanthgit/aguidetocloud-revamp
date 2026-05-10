@@ -2894,6 +2894,19 @@
   font-weight: 600;
 }
 .siteana-mover-name[style*="--tint"] { color: var(--tint); }
+
+/* Dark-mode contrast lift: per-tool brand --tint is too dark on bg-surface (#141414).
+   Mix 50% with white to raise ratio. Brand identity preserved (still recognisable). */
+[data-theme="dark"] .siteana-lb-name[style*="--tint"],
+[data-theme="dark"] .siteana-cat-label[style*="--tint"],
+[data-theme="dark"] .siteana-featured-name[style*="--tint"],
+[data-theme="dark"] .siteana-dist-label[style*="--tint"],
+[data-theme="dark"] .siteana-stat-num[style*="--tint"],
+[data-theme="dark"] .siteana-stat-cta,
+[data-theme="dark"] .siteana-mover-name[style*="--tint"],
+[data-theme="dark"] .siteana-fresh-freq[style*="--tint"] {
+  color: color-mix(in srgb, var(--tint) 50%, white 50%);
+}
 .siteana-ms-dot[style*="--tint"] {
   background: var(--tint);
   box-shadow: 0 0 8px color-mix(in srgb, var(--tint) 38%, transparent);
