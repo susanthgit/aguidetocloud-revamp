@@ -166,7 +166,7 @@
       '<td>' + esc(fmtDuration(downtimeMins(t.pct, MINS_YEAR))) + '</td>' +
       '<td>' + esc(fmtDuration(downtimeMins(t.pct, MINS_MONTH))) + '</td>' +
       '<td>' + esc(fmtDuration(downtimeMins(t.pct, MINS_WEEK))) + '</td>' +
-      '<td style="color:rgba(255,255,255,0.5)">' + esc(t.typical) + '</td></tr>'
+      '<td class="slacalc-typical">' + esc(t.typical) + '</td></tr>'
     ).join('');
   }
 
@@ -180,7 +180,7 @@
       '<td>' + esc(s.sla_pct + '%') + '</td>' +
       '<td>' + esc(fmtDuration(downtimeMins(s.sla_pct, MINS_YEAR))) + '</td>' +
       '<td>' + esc(fmtDuration(downtimeMins(s.sla_pct, MINS_MONTH))) + '</td>' +
-      '<td style="color:rgba(255,255,255,0.5)">' + esc(s.notes) + '</td></tr>'
+      '<td class="slacalc-typical">' + esc(s.notes) + '</td></tr>'
     ).join('');
     tbody.addEventListener('click', function (e) {
       const row = e.target.closest('tr[data-pct]');
@@ -262,17 +262,17 @@
     summary.innerHTML =
       '<div class="slacalc-burndown">' +
         '<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;font-size:0.85rem">' +
-          '<span>SLA Target: <strong style="color:var(--slacalc-accent)">' + esc(slaTarget + '%') + '</strong></span>' +
+          '<span>SLA Target: <strong class="slacalc-stat-strong">' + esc(slaTarget + '%') + '</strong></span>' +
           '<span>Budget: <strong>' + esc(fmtDuration(budgetMins)) + '</strong>/mo</span>' +
-          '<span>Used: <strong style="color:' + statusColor + '">' + esc(fmtDuration(usedMins)) + '</strong></span>' +
+          '<span>Used: <strong class="slacalc-status-strong" data-status="' + (statusColor === '#ef4444' ? 'breach' : statusColor === '#fbbf24' ? 'warn' : 'safe') + '">' + esc(fmtDuration(usedMins)) + '</strong></span>' +
           '<span>Remaining: <strong>' + esc(fmtDuration(remaining)) + '</strong></span>' +
         '</div>' +
         '<div class="slacalc-burndown-bar"><div class="slacalc-burndown-fill ' + barClass + '" style="width:' + pctUsed + '%"></div></div>' +
-        '<div style="text-align:center;font-size:0.82rem;color:rgba(255,255,255,0.5)">Real SLA this month: <strong style="color:' + (realSla < slaTarget ? '#ef4444' : '#4ade80') + '">' + esc(realSla.toFixed(4) + '%') + '</strong></div>' +
+        '<div class="slacalc-real-sla">Real SLA this month: <strong data-status="' + (realSla < slaTarget ? 'breach' : 'safe') + '">' + esc(realSla.toFixed(4) + '%') + '</strong></div>' +
       '</div>';
 
     if (!incidents.length) {
-      list.innerHTML = '<p style="text-align:center;color:rgba(255,255,255,0.4);padding:1.5rem">No incidents logged yet. Add one above to start tracking.</p>';
+      list.innerHTML = '<p class="slacalc-empty">No incidents logged yet. Add one above to start tracking.</p>';
       return;
     }
     let html = '';

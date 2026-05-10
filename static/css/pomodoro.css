@@ -442,3 +442,11 @@ body.pomo-fullscreen .pomo-time { font-size: 4.5rem; }
   .pomo-presets, .pomo-modal-overlay { display: none; }
   .pomo-page { max-width: 100%; }
 }
+
+/* ═══ AMBIENT PILL COLORS (was inline --pill-color hex) ═══ */
+.pomo-ambient-pill[data-ambient="s-focus"]  { --pill-color: var(--error); }
+.pomo-ambient-pill[data-ambient="s-calm"]   { --pill-color: var(--success); }
+.pomo-ambient-pill[data-ambient="s-bright"] { --pill-color: var(--warning); }
+.pomo-ambient-pill[data-ambient="s-deep"]   { --pill-color: var(--info); }
+.pomo-ambient-pill[data-ambient="s-static"] { --pill-color: var(--accent); }
+.pomo-ambient-pill[data-ambient="s-warm"]   { --pill-color: var(--warning); }

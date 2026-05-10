@@ -199,3 +199,19 @@
   .slacalc-mode-toggle { flex-direction: column; }
 }
 
+
+
+/* ═══ JS-RENDERED UTILITY CLASSES ═══ */
+.slacalc-intro-text { color: var(--text-secondary); margin-bottom: 1.5rem; }
+.slacalc-intro-text-tight { color: var(--text-secondary); margin-bottom: 1rem; }
+.slacalc-source-line { color: var(--text-muted); font-size: 0.8rem; margin-top: 1rem; }
+.slacalc-source-link { color: var(--text-tertiary); }
+.slacalc-typical { color: var(--text-tertiary); }
+.slacalc-stat-strong { color: var(--slacalc-accent); }
+.slacalc-status-strong[data-status="breach"] { color: var(--error); }
+.slacalc-status-strong[data-status="warn"]   { color: var(--warning); }
+.slacalc-status-strong[data-status="safe"]   { color: var(--success); }
+.slacalc-real-sla { text-align: center; font-size: 0.82rem; color: var(--text-tertiary); }
+.slacalc-real-sla strong[data-status="breach"] { color: var(--error); }
+.slacalc-real-sla strong[data-status="safe"]   { color: var(--success); }
+.slacalc-empty { text-align: center; color: var(--text-muted); padding: 1.5rem; }
