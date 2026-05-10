@@ -48,7 +48,7 @@
       bindEvents();
     } catch (err) {
       document.getElementById("cert-grid").innerHTML =
-        '<div class="cert-no-results">⚠️ Failed to load exam data. Please try again later.</div>';
+        '<div class="cert-no-results">Failed to load exam data. Please try again later.</div>';
       console.error("Cert Tracker init failed:", err);
     }
   }
@@ -80,10 +80,10 @@
     const statusCounts = { active: 0, retiring: 0, beta: 0, retired: 0 };
     (data.exams || []).forEach((e) => { statusCounts[e.status || "active"]++; });
     el.innerHTML = `
-      <div class="cert-stat-box" style="--stat-color:#10B981"><span class="cert-stat-num">${data.exam_count}</span><span class="cert-stat-label">📖 Study Guides</span></div>
-      <div class="cert-stat-box" style="--stat-color:#22C55E"><span class="cert-stat-num">${statusCounts.active}</span><span class="cert-stat-label">✅ Active</span></div>
-      <div class="cert-stat-box" style="--stat-color:#F59E0B"><span class="cert-stat-num">${statusCounts.retiring}</span><span class="cert-stat-label">⚠️ Retiring</span></div>
-      <div class="cert-stat-box" style="--stat-color:#8B5CF6"><span class="cert-stat-num">${statusCounts.beta}</span><span class="cert-stat-label">🧪 Beta</span></div>
+      <div class="cert-stat-box" style="--stat-color:#10B981"><span class="cert-stat-num">${data.exam_count}</span><span class="cert-stat-label">Study Guides</span></div>
+      <div class="cert-stat-box" style="--stat-color:#22C55E"><span class="cert-stat-num">${statusCounts.active}</span><span class="cert-stat-label">Active</span></div>
+      <div class="cert-stat-box" style="--stat-color:#F59E0B"><span class="cert-stat-num">${statusCounts.retiring}</span><span class="cert-stat-label">Retiring</span></div>
+      <div class="cert-stat-box" style="--stat-color:#8B5CF6"><span class="cert-stat-num">${statusCounts.beta}</span><span class="cert-stat-label">Beta</span></div>
     `;
   }
 
@@ -180,11 +180,11 @@
 
   function renderCard(exam) {
     const levelLabel = { beginner: "Fundamentals", intermediate: "Associate", advanced: "Expert" };
-    const statusLabels = { active: "", retiring: "⚠️ Retiring", retired: "🚫 Retired", beta: "🧪 Beta", upcoming: "🔜 Upcoming" };
+    const statusLabels = { active: "", retiring: "Retiring", retired: "Retired", beta: "Beta", upcoming: "Upcoming" };
     const status = exam.status || "active";
     const statusBadge = status !== "active" ? `<span class="cert-badge cert-badge-${status}">${statusLabels[status]}</span>` : "";
     const guidedData = window.__guidedCerts && window.__guidedCerts[exam.code.toLowerCase()];
-    const guidedBadge = guidedData ? `<span class="cert-badge cert-badge-guided">📖 Interactive</span>` : "";
+    const guidedBadge = guidedData ? `<span class="cert-badge cert-badge-guided">Interactive</span>` : "";
     const statusClass = status !== "active" ? ` cert-card-${status}` : "";
 
     const skillsHtml = (exam.skills_at_a_glance || [])
@@ -194,9 +194,9 @@
       )
       .join("");
 
-    const retireNote = (status === "retiring" && exam.retirement_date) ? `<div class="cert-card-status-note cert-card-status-retiring">⚠️ Retiring ${exam.retirement_date}${exam.replacement ? " → " + esc(exam.replacement) : ""}</div>` : "";
-    const retiredNote = (status === "retired") ? `<div class="cert-card-status-note cert-card-status-retired">🚫 Retired${exam.replacement ? " → " + esc(exam.replacement) : ""}</div>` : "";
-    const betaNote = (status === "beta") ? `<div class="cert-card-status-note cert-card-status-beta">🧪 Beta${exam.replaces ? " — replaces " + esc(exam.replaces) : ""}</div>` : "";
+    const retireNote = (status === "retiring" && exam.retirement_date) ? `<div class="cert-card-status-note cert-card-status-retiring">Retiring ${exam.retirement_date}${exam.replacement ? " → " + esc(exam.replacement) : ""}</div>` : "";
+    const retiredNote = (status === "retired") ? `<div class="cert-card-status-note cert-card-status-retired">Retired${exam.replacement ? " → " + esc(exam.replacement) : ""}</div>` : "";
+    const betaNote = (status === "beta") ? `<div class="cert-card-status-note cert-card-status-beta">Beta${exam.replaces ? " — replaces " + esc(exam.replaces) : ""}</div>` : "";
 
     const examUrl = `/cert-tracker/${exam.code.toLowerCase()}/`;
     const objCount = exam.total_objectives || 0;
@@ -216,7 +216,7 @@
         ${retireNote}${retiredNote}${betaNote}
         <div class="cert-card-footer">
           <span>${objCount > 0 ? `${objCount} objectives · ${skillAreas} domains` : "Details →"}</span>
-          <span class="cert-card-cta">📖 Study Guide →</span>
+          <span class="cert-card-cta">Study Guide →</span>
         </div>
       </a>
     `;

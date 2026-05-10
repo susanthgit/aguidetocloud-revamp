@@ -349,6 +349,19 @@
 .shealth-badge-status {
   border: 1px solid var(--border);
 }
+.shealth-badge-regions {
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid var(--border);
+}
+.shealth-update-count {
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-tertiary);
+}
+.shealth-ongoing {
+  color: var(--sh-red);
+  font-weight: 600;
+}
 
 .shealth-incident-right {
   display: flex;

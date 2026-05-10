@@ -91,7 +91,7 @@
 
     if (degradedCount === 0) {
       el.innerHTML = `
-        <div class="shealth-all-ok">✅ All ${totalServices} services operational</div>
+        <div class="shealth-all-ok">All ${totalServices} services operational</div>
         <div class="shealth-summary-item"><span class="shealth-summary-value shealth-accent">${totalIssues}</span> incidents tracked</div>
       `;
     } else {
@@ -244,9 +244,9 @@
           <div class="shealth-incident-meta">
             <span class="shealth-badge shealth-badge-service">${i.service_icon} ${esc(i.service_short)}</span>
             <span class="shealth-badge shealth-badge-status" style="${statusStyle}">${i.status_icon} ${esc(i.status_label)}</span>
-            ${i.regions && i.regions.length > 0 ? `<span class="shealth-badge" style="background:rgba(59,130,246,0.12);color:#60A5FA;border:1px solid rgba(59,130,246,0.25)">🌍 ${esc(i.regions.join(', '))}</span>` : ''}
+            ${i.regions && i.regions.length > 0 ? `<span class="shealth-badge shealth-badge-regions">${esc(i.regions.join(', '))}</span>` : ''}
             ${i.feature ? `<span class="shealth-badge" style="background:rgba(167,139,250,0.12);color:#A78BFA;border:1px solid rgba(167,139,250,0.25)">${esc(i.feature)}</span>` : ''}
-            ${i.update_count > 0 ? `<span style="color:var(--sh-text-dim)">💬 ${i.update_count} updates</span>` : ''}
+            ${i.update_count > 0 ? `<span class="shealth-update-count">${i.update_count} updates</span>` : ''}
           </div>
         </div>
         <div class="shealth-incident-right">
@@ -396,8 +396,8 @@
         ${d.feature ? `<span>Feature: ${esc(d.feature)}</span>` : ''}
       </div>
       <div class="shealth-modal-meta">
-        <span>🕐 Started: ${formatDate(d.start_time)}</span>
-        ${d.end_time ? `<span>✅ Ended: ${formatDate(d.end_time)}</span>` : '<span style="color:var(--sh-red)">🔴 Ongoing</span>'}
+        <span>Started: ${formatDate(d.start_time)}</span>
+        ${d.end_time ? `<span>Ended: ${formatDate(d.end_time)}</span>` : '<span class="shealth-ongoing">Ongoing</span>'}
         ${d.duration ? `<span>⏱ Duration: ${esc(d.duration)}</span>` : ''}
       </div>
       ${d.impact ? `<div class="shealth-modal-impact">${esc(stripHtml(d.impact))}</div>` : ''}
@@ -488,7 +488,7 @@
     const avgResStr = avgRes < 60 ? avgRes + 'm' : Math.round(avgRes / 60) + 'h ' + (avgRes % 60) + 'm';
     const thisMonth = stats.monthly?.[0] || {};
     const lastMonth = stats.monthly?.[1] || {};
-    const trend = thisMonth.incident_count > lastMonth.incident_count ? '📈 Up' : thisMonth.incident_count < lastMonth.incident_count ? '📉 Down' : '➡️ Same';
+    const trend = thisMonth.incident_count > lastMonth.incident_count ? 'Up' : thisMonth.incident_count < lastMonth.incident_count ? 'Down' : 'Same';
 
     el.innerHTML = `
       <div class="shealth-sc-title">Quick Stats</div>
@@ -519,11 +519,11 @@
     });
 
     if (matches.length === 0) {
-      resultEl.innerHTML = `<div class="shealth-date-result-msg shealth-date-result-ok">✅ No incidents found ${svcFilter !== 'all' ? 'for this service ' : ''}on ${targetDate}. All clear!</div>`;
+      resultEl.innerHTML = `<div class="shealth-date-result-msg shealth-date-result-ok">No incidents found ${svcFilter !== 'all' ? 'for this service ' : ''}on ${targetDate}. All clear.</div>`;
     } else {
       resultEl.innerHTML = `
         <div class="shealth-date-result-msg shealth-date-result-bad">
-          ⚠️ <strong>${matches.length} incident${matches.length !== 1 ? 's' : ''}</strong> ${svcFilter !== 'all' ? 'for this service ' : ''}on ${targetDate}:
+          <strong>${matches.length} incident${matches.length !== 1 ? 's' : ''}</strong> ${svcFilter !== 'all' ? 'for this service ' : ''}on ${targetDate}:
           ${matches.map(m => `<div style="margin-top:0.4rem;padding-left:1rem">• ${m.service_icon} <strong>${esc(m.service_short)}</strong>: ${esc(m.title)} <span style="color:var(--sh-text-dim)">(${esc(m.duration || 'ongoing')})</span></div>`).join('')}
         </div>`;
     }

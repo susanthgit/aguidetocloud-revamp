@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         grid.innerHTML = '<p style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;">No ' + view + ' data available yet — showing today\'s news instead.</p>';
         setTimeout(function() { loadView('daily'); }, 1500);
       } else {
-        grid.innerHTML = '<div style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;"><p>⚠️ Could not load AI News data.</p><button onclick="location.reload()" style="margin-top:0.8rem;padding:0.4rem 1.2rem;border-radius:8px;border:1px solid var(--neon-cyan);background:rgba(102,255,255,0.08);color:var(--neon-cyan);cursor:pointer;font-weight:600">Retry</button></div>';
+        grid.innerHTML = '<div style="color: var(--text-muted); text-align: center; grid-column: 1 / -1; padding: 3rem;"><p>Could not load AI News data.</p><button onclick="location.reload()" style="margin-top:0.8rem;padding:0.4rem 1.2rem;border-radius:8px;border:1px solid var(--neon-cyan);background:rgba(102,255,255,0.08);color:var(--neon-cyan);cursor:pointer;font-weight:600">Retry</button></div>';
       }
     }
   }
@@ -301,7 +301,7 @@ function renderNews(data, view) {
   var breakingArticles = articles.filter(function (a) { return a.is_breaking; });
   if (breakingArticles.length > 0) {
     html += '<div class="ainews-breaking" style="grid-column:1/-1">';
-    html += '<span class="ainews-breaking-label">🔴 BREAKING</span>';
+    html += '<span class="ainews-breaking-label">BREAKING</span>';
     html += '<ul class="ainews-breaking-list">';
     html += breakingArticles.map(function (a) {
       return '<li><a href="' + escapeHtml(a.url || a.link || '#') + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(a.title) + '</a></li>';
@@ -472,7 +472,7 @@ function renderNews(data, view) {
       dd2.querySelectorAll('.ainews-filter-option').forEach(function (o) { o.classList.remove('ainews-filter-option-active'); });
       filterOpt.classList.add('ainews-filter-option-active');
       // Update button label
-      btn2.textContent = '🏷️ ' + filterOpt.textContent.trim() + ' ▾';
+      btn2.textContent = filterOpt.textContent.trim() + ' ▾';
       dd2.hidden = true;
       btn2.setAttribute('aria-expanded', 'false');
       filterByCategory(cat);

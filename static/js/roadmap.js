@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       populateProductFilter(data.product_categories || []);
       renderChips(data); render(); renderFreshness(data.generated_at); renderBrowse();
     } catch (e) {
-      document.getElementById('rdmap-content').innerHTML = '<div class="rdmap-empty"><p>⚠️ Roadmap data could not be loaded.</p><button onclick="location.reload()" class="rdmap-clear-btn" style="margin-top:0.8rem">Retry</button></div>';
+      document.getElementById('rdmap-content').innerHTML = '<div class="rdmap-empty"><p>Roadmap data could not be loaded.</p><button onclick="location.reload()" class="rdmap-clear-btn" style="margin-top:0.8rem">Retry</button></div>';
     }
   }
 
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       if (clearBtn) clearBtn.addEventListener('click', clearAllFilters);
       return;
     }
-    var clearHtml = (activeProductFilter !== 'all' || activeStatusFilter !== 'all' || document.getElementById('rdmap-search').value) ? ' <button class="rdmap-clear-btn" id="rdmap-clear">✕ Clear filters</button>' : '';
+    var clearHtml = (activeProductFilter !== 'all' || activeStatusFilter !== 'all' || document.getElementById('rdmap-search').value) ? ' <button class="rdmap-clear-btn" id="rdmap-clear">Clear filters</button>' : '';
     content.innerHTML = '<div class="rdmap-list-info">Showing <b>' + currentFiltered.length + '</b> of <b>' + currentData.items.length + '</b> items' + clearHtml + '</div><div class="rdmap-list" id="rdmap-list"></div>';
     var clearBtn2 = document.getElementById('rdmap-clear');
     if (clearBtn2) clearBtn2.addEventListener('click', clearAllFilters);
