@@ -5,407 +5,375 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Sun, 10 May 2026 17:50:18 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2026 23:50:37 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Memory godboxes could offer relief from the RAMpocalypse</title>
-      <link>https://www.theregister.com/systems/2026/05/10/memory-godboxes-could-offer-relief-from-the-rampocalypse/5237463</link>
+      <title>Yes, local LLMs are ready to ease the compute strain</title>
+      <link>https://www.theregister.com/ai-and-ml/2026/05/11/yes-local-llms-are-ready-to-ease-the-compute-strain/5237451</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 11 May 2026 01:00:00 +0200</pubDate>
+      <guid>https://www.theregister.com/ai-and-ml/2026/05/11/yes-local-llms-are-ready-to-ease-the-compute-strain/5237451</guid>
+    </item>
+    <item>
+      <title>‘Your Career Starts at the Beginning of the AI Revolution,’ NVIDIA CEO Tells Graduates</title>
+      <link>https://blogs.nvidia.com/blog/nvidia-ceo-carnegie-mellon-commencement-address/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Sun, 10 May 2026 22:00:50 +0000</pubDate>
+      <guid>https://blogs.nvidia.com/blog/nvidia-ceo-carnegie-mellon-commencement-address/</guid>
+    </item>
+    <item>
+      <title>Get ready for the whisper-filled office of the future</title>
+      <link>https://techcrunch.com/2026/05/10/get-ready-for-the-whisper-filled-office-of-the-future/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Sun, 10 May 2026 16:00:00 +0200</pubDate>
-      <guid>https://www.theregister.com/systems/2026/05/10/memory-godboxes-could-offer-relief-from-the-rampocalypse/5237463</guid>
+      <pubDate>Sun, 10 May 2026 21:15:30 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/10/get-ready-for-the-whisper-filled-office-of-the-future/</guid>
     </item>
     <item>
-      <title>We’re feeling cynical about xAI’s big deal with Anthropic</title>
-      <link>https://techcrunch.com/2026/05/10/were-feeling-cynical-about-xais-big-deal-with-anthropic/</link>
+      <title>Anthropic says ‘evil’ portrayals of AI were responsible for Claude’s blackmail attempts</title>
+      <link>https://techcrunch.com/2026/05/10/anthropic-says-evil-portrayals-of-ai-were-responsible-for-claudes-blackmail-attempts/</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Sun, 10 May 2026 15:34:25 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/05/10/were-feeling-cynical-about-xais-big-deal-with-anthropic/</guid>
+      <pubDate>Sun, 10 May 2026 20:40:41 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/10/anthropic-says-evil-portrayals-of-ai-were-responsible-for-claudes-blackmail-attempts/</guid>
     </item>
     <item>
-      <title>Both Fedora and Ubuntu will get AI support – soon</title>
-      <link>https://www.theregister.com/oses/2026/05/10/both-fedora-and-ubuntu-will-get-ai-support-soon/5237409</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Sun, 10 May 2026 15:00:00 +0200</pubDate>
-      <guid>https://www.theregister.com/oses/2026/05/10/both-fedora-and-ubuntu-will-get-ai-support-soon/5237409</guid>
-    </item>
-    <item>
-      <title>Why Are People Getting Rid Of ChatGPT</title>
-      <link>https://www.bgr.com/2163817/why-are-people-getting-rid-of-chatgpt/</link>
-      <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Sat, 09 May 2026 17:47:00 +0000</pubDate>
-      <guid>https://www.bgr.com/2163817/why-are-people-getting-rid-of-chatgpt/</guid>
-    </item>
-    <item>
-      <title>skt-ai-labs-adk added to PyPI</title>
-      <link>https://pypi.org/project/skt-ai-labs-adk/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 09 May 2026 17:45:12 +0000</pubDate>
-      <guid>https://pypi.org/project/skt-ai-labs-adk/</guid>
-    </item>
-    <item>
-      <title>claude-mirror 0.5.60</title>
-      <link>https://pypi.org/project/claude-mirror/0.5.60/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 09 May 2026 17:41:59 +0000</pubDate>
-      <guid>https://pypi.org/project/claude-mirror/0.5.60/</guid>
-    </item>
-    <item>
-      <title>sheetwright 0.1.1</title>
-      <link>https://pypi.org/project/sheetwright/0.1.1/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 09 May 2026 17:41:31 +0000</pubDate>
-      <guid>https://pypi.org/project/sheetwright/0.1.1/</guid>
-    </item>
-    <item>
-      <title>scriptgini added to PyPI</title>
-      <link>https://pypi.org/project/scriptgini/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 09 May 2026 17:40:05 +0000</pubDate>
-      <guid>https://pypi.org/project/scriptgini/</guid>
-    </item>
-    <item>
-      <title>vantage-agents added to PyPI</title>
-      <link>https://pypi.org/project/vantage-agents/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 09 May 2026 17:37:40 +0000</pubDate>
-      <guid>https://pypi.org/project/vantage-agents/</guid>
-    </item>
-    <item>
-      <title>mcp-remlezrd added to PyPI</title>
-      <link>https://pypi.org/project/mcp-remlezrd/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 09 May 2026 17:34:07 +0000</pubDate>
-      <guid>https://pypi.org/project/mcp-remlezrd/</guid>
-    </item>
-    <item>
-      <title>What I saw at the Musk-OpenAI trial: petty billionaires, protests and a stern judge - The Guardian</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=183168632</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 09 May 2026 17:32:29 +0000</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=183168632</guid>
-    </item>
-    <item>
-      <title>claude-code-conductor 1.6.0</title>
-      <link>https://pypi.org/project/claude-code-conductor/1.6.0/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 09 May 2026 17:30:39 +0000</pubDate>
-      <guid>https://pypi.org/project/claude-code-conductor/1.6.0/</guid>
-    </item>
-    <item>
-      <title>How They Plan To Ask You Out (Based On Their Zodiac Sign)</title>
-      <link>https://thoughtcatalog.com/nicole-garbanzos/2026/05/how-they-plan-to-ask-you-out-based-on-their-zodiac-sign/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sat, 09 May 2026 17:30:00 +0000</pubDate>
-      <guid>https://thoughtcatalog.com/nicole-garbanzos/2026/05/how-they-plan-to-ask-you-out-based-on-their-zodiac-sign/</guid>
-    </item>
-    <item>
-      <title>Apple’s $599 MacBook is such a massive hit, Tim Cook can’t keep up with the demand</title>
-      <link>https://www.yankodesign.com/2026/05/09/apples-599-macbook-is-such-a-massive-hit-tim-cook-cant-keep-up-with-the-demand/</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Sat, 09 May 2026 17:20:39 +0000</pubDate>
-      <guid>https://www.yankodesign.com/2026/05/09/apples-599-macbook-is-such-a-massive-hit-tim-cook-cant-keep-up-with-the-demand/</guid>
-    </item>
-    <item>
-      <title>ByteDance targets 25% rise in AI infrastructure spending</title>
-      <link>https://economictimes.indiatimes.com/tech/technology/bytedance-targets-25-rise-in-ai-infrastructure-spending/articleshow/130981372.cms</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 09 May 2026 17:16:16 +0000</pubDate>
-      <guid>https://economictimes.indiatimes.com/tech/technology/bytedance-targets-25-rise-in-ai-infrastructure-spending/articleshow/130981372.cms</guid>
-    </item>
-    <item>
-      <title>OfoxAI – One API for 100+ LLMs including GPT-5.4, Claude Opus 4.6, Gemini 3.1</title>
-      <link>https://betalist.com/startups/ofoxai</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 09 May 2026 17:15:01 +0000</pubDate>
-      <guid>https://betalist.com/startups/ofoxai</guid>
-    </item>
-    <item>
-      <title>Long-Awaited Open-World Superhero Game Slated for This Year Delayed to 2027</title>
-      <link>http://comicbook.com/gaming/news/long-awaited-open-world-superhero-game-slated-for-this-year-delayed-to-2027/</link>
-      <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Sat, 09 May 2026 17:15:00 +0000</pubDate>
-      <guid>http://comicbook.com/gaming/news/long-awaited-open-world-superhero-game-slated-for-this-year-delayed-to-2027/</guid>
-    </item>
-    <item>
-      <title>These are the 5 features that make the Samsung Galaxy Watch 8 worth it</title>
-      <link>https://www.androidcentral.com/wearables/samsung-galaxy-watch/these-are-the-5-features-that-make-the-samsung-galaxy-watch-8-worth-it</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sat, 09 May 2026 17:07:00 +0000</pubDate>
-      <guid>https://www.androidcentral.com/wearables/samsung-galaxy-watch/these-are-the-5-features-that-make-the-samsung-galaxy-watch-8-worth-it</guid>
-    </item>
-    <item>
-      <title>Trump Touted The “Tens Of Billions Of Dollars” The Government Has Made From Intel, While Selling A Deal To Apple That Undercuts TSMC By 25% On Wafer Pricing</title>
-      <link>https://wccftech.com/trump-touted-the-tens-of-billions-of-dollars-the-government-has-made-from-intel-while-selling-a-deal-to-apple-that-undercuts-tsmc-by-25-on-wafer-pricing/</link>
-      <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Sat, 09 May 2026 17:02:07 +0000</pubDate>
-      <guid>https://wccftech.com/trump-touted-the-tens-of-billions-of-dollars-the-government-has-made-from-intel-while-selling-a-deal-to-apple-that-undercuts-tsmc-by-25-on-wafer-pricing/</guid>
-    </item>
-    <item>
-      <title>Classified Networks AI Agreements</title>
-      <link>https://soldiersystems.net/2026/05/09/classified-networks-ai-agreements/</link>
-      <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Sat, 09 May 2026 17:00:00 +0000</pubDate>
-      <guid>https://soldiersystems.net/2026/05/09/classified-networks-ai-agreements/</guid>
-    </item>
-    <item>
-      <title>Here’s why I’m optimistic about iOS 27 and Apple’s renewed focus on stability</title>
-      <link>https://9to5mac.com/2026/05/09/ios-27-focus-on-stability-why-im-optimistic/</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Sat, 09 May 2026 16:35:33 +0000</pubDate>
-      <guid>https://9to5mac.com/2026/05/09/ios-27-focus-on-stability-why-im-optimistic/</guid>
-    </item>
-    <item>
-      <title>What the Musk-Altman courtroom clash reveals about two of the most powerful men in Silicon Valley - Business Insider</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=183168298</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 09 May 2026 16:32:40 +0000</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=183168298</guid>
-    </item>
-    <item>
-      <title>dwagents 0.2.1</title>
-      <link>https://pypi.org/project/dwagents/0.2.1/</link>
+      <title>MachinaCheck: Building a Multi-Agent CNC Manufacturability System on AMD MI300X</title>
+      <link>https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/machinacheck</link>
       <description></description>
       <category>Open Source</category>
-      <pubDate>Sat, 09 May 2026 16:26:22 +0000</pubDate>
-      <guid>https://pypi.org/project/dwagents/0.2.1/</guid>
+      <pubDate>Sun, 10 May 2026 18:44:11 +0000</pubDate>
+      <guid>https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/machinacheck</guid>
     </item>
     <item>
-      <title>tiny-turboquant 0.8.1</title>
-      <link>https://pypi.org/project/tiny-turboquant/0.8.1/</link>
+      <title>King Slide says AI compute demand is not a bubble and expects strong 2Q26 orders</title>
+      <link>https://www.digitimes.com/news/a20260508PD210/king-slide-demand-high-end-development-market.html</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 09 May 2026 23:48:45 +0000</pubDate>
+      <guid>https://www.digitimes.com/news/a20260508PD210/king-slide-demand-high-end-development-market.html</guid>
+    </item>
+    <item>
+      <title>dataio-rs added to PyPI</title>
+      <link>https://pypi.org/project/dataio-rs/</link>
       <description></description>
       <category>Meta</category>
-      <pubDate>Sat, 09 May 2026 16:12:20 +0000</pubDate>
-      <guid>https://pypi.org/project/tiny-turboquant/0.8.1/</guid>
+      <pubDate>Sat, 09 May 2026 23:47:06 +0000</pubDate>
+      <guid>https://pypi.org/project/dataio-rs/</guid>
     </item>
     <item>
-      <title>Baytex Energy Q1 Earnings Call Highlights</title>
-      <link>https://www.marketbeat.com/instant-alerts/baytex-energy-q1-earnings-call-highlights-2026-05-09/?utm_source=yahoofinance&amp;amp;utm_medium=yahoofinance</link>
+      <title>polymarket-intel-mcp added to PyPI</title>
+      <link>https://pypi.org/project/polymarket-intel-mcp/</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Sat, 09 May 2026 16:05:07 +0000</pubDate>
-      <guid>https://www.marketbeat.com/instant-alerts/baytex-energy-q1-earnings-call-highlights-2026-05-09/?utm_source=yahoofinance&amp;amp;utm_medium=yahoofinance</guid>
+      <category>Anthropic</category>
+      <pubDate>Sat, 09 May 2026 23:45:22 +0000</pubDate>
+      <guid>https://pypi.org/project/polymarket-intel-mcp/</guid>
     </item>
     <item>
-      <title>tq-serve 0.4.1</title>
-      <link>https://pypi.org/project/tq-serve/0.4.1/</link>
+      <title>gh-backlog-mcp added to PyPI</title>
+      <link>https://pypi.org/project/gh-backlog-mcp/</link>
       <description></description>
-      <category>Meta</category>
-      <pubDate>Sat, 09 May 2026 16:02:31 +0000</pubDate>
-      <guid>https://pypi.org/project/tq-serve/0.4.1/</guid>
+      <category>Anthropic</category>
+      <pubDate>Sat, 09 May 2026 23:40:42 +0000</pubDate>
+      <guid>https://pypi.org/project/gh-backlog-mcp/</guid>
     </item>
     <item>
-      <title>Can Smart Glasses Be Used for Extortion? Report Raises Alarm</title>
-      <link>https://www.ubergizmo.com/2026/05/can-smart-glasses-be-used-for-extortion/</link>
+      <title>vector-task-mcp 1.8.5</title>
+      <link>https://pypi.org/project/vector-task-mcp/1.8.5/</link>
       <description></description>
-      <category>Meta</category>
-      <pubDate>Sat, 09 May 2026 16:00:29 +0000</pubDate>
-      <guid>https://www.ubergizmo.com/2026/05/can-smart-glasses-be-used-for-extortion/</guid>
+      <category>Anthropic</category>
+      <pubDate>Sat, 09 May 2026 23:39:45 +0000</pubDate>
+      <guid>https://pypi.org/project/vector-task-mcp/1.8.5/</guid>
     </item>
     <item>
-      <title>hermex 0.2.0</title>
-      <link>https://pypi.org/project/hermex/0.2.0/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sat, 09 May 2026 15:58:51 +0000</pubDate>
-      <guid>https://pypi.org/project/hermex/0.2.0/</guid>
-    </item>
-    <item>
-      <title>tiny-turboquant 0.8.0</title>
-      <link>https://pypi.org/project/tiny-turboquant/0.8.0/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Sat, 09 May 2026 15:58:42 +0000</pubDate>
-      <guid>https://pypi.org/project/tiny-turboquant/0.8.0/</guid>
-    </item>
-    <item>
-      <title>Explosive co-op shooter Aliens: Fireteam Elite gets a sequel, and it's coming soon</title>
-      <link>https://www.eurogamer.net/explosive-co-op-shooter-aliens-fireteam-elite-gets-a-sequel-and-its-coming-soon</link>
-      <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Sat, 09 May 2026 15:54:00 +0000</pubDate>
-      <guid>https://www.eurogamer.net/explosive-co-op-shooter-aliens-fireteam-elite-gets-a-sequel-and-its-coming-soon</guid>
-    </item>
-    <item>
-      <title>The 13-inch M5 MacBook Air 16GB/1TB Is $150 Off</title>
-      <link>https://www.ilounge.com/news/daily-deals/the-13-inch-m5-macbook-air-16gb-1tb-is-150-off</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Sat, 09 May 2026 15:45:07 +0000</pubDate>
-      <guid>https://www.ilounge.com/news/daily-deals/the-13-inch-m5-macbook-air-16gb-1tb-is-150-off</guid>
-    </item>
-    <item>
-      <title>tech-update-recommender added to PyPI</title>
-      <link>https://pypi.org/project/tech-update-recommender/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sat, 09 May 2026 15:44:44 +0000</pubDate>
-      <guid>https://pypi.org/project/tech-update-recommender/</guid>
-    </item>
-    <item>
-      <title>M4 iPad Air is $79 off</title>
-      <link>https://www.ilounge.com/news/daily-deals/m4-ipad-air-is-79-off</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Sat, 09 May 2026 15:40:41 +0000</pubDate>
-      <guid>https://www.ilounge.com/news/daily-deals/m4-ipad-air-is-79-off</guid>
-    </item>
-    <item>
-      <title>NVIDIA’s AI Chips Reached China’s Alibaba Through Thailand, As US Indicts Supermicro Execs In $2.5 Billion Smuggling Ring</title>
-      <link>https://wccftech.com/nvidia-ai-chips-reached-china-alibaba-through-thailand-smuggling-ring/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Sat, 09 May 2026 15:35:22 +0000</pubDate>
-      <guid>https://wccftech.com/nvidia-ai-chips-reached-china-alibaba-through-thailand-smuggling-ring/</guid>
-    </item>
-    <item>
-      <title>langchain-taiga 2.3.3</title>
-      <link>https://pypi.org/project/langchain-taiga/2.3.3/</link>
+      <title>copass-langchain 1.0.7</title>
+      <link>https://pypi.org/project/copass-langchain/1.0.7/</link>
       <description></description>
       <category>Open Source</category>
-      <pubDate>Sat, 09 May 2026 15:31:05 +0000</pubDate>
-      <guid>https://pypi.org/project/langchain-taiga/2.3.3/</guid>
+      <pubDate>Sat, 09 May 2026 23:08:42 +0000</pubDate>
+      <guid>https://pypi.org/project/copass-langchain/1.0.7/</guid>
     </item>
     <item>
-      <title>CEO Sundar Pichai Says Google Is Having a ‘Terrific Start’ to the Year. Mag-7 Investors Agree as GOOGL Stock Leads the Way.</title>
-      <link>https://www.barchart.com/story/news/1828375/ceo-sundar-pichai-says-google-is-having-a-terrific-start-to-the-year-mag-7-investors-agree-as-googl-stock-leads-the-way</link>
+      <title>atomr-accel 0.9.1</title>
+      <link>https://pypi.org/project/atomr-accel/0.9.1/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 09 May 2026 23:07:56 +0000</pubDate>
+      <guid>https://pypi.org/project/atomr-accel/0.9.1/</guid>
+    </item>
+    <item>
+      <title>copass-google-agents 1.0.7</title>
+      <link>https://pypi.org/project/copass-google-agents/1.0.7/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Sat, 09 May 2026 15:30:02 +0000</pubDate>
-      <guid>https://www.barchart.com/story/news/1828375/ceo-sundar-pichai-says-google-is-having-a-terrific-start-to-the-year-mag-7-investors-agree-as-googl-stock-leads-the-way</guid>
+      <pubDate>Sat, 09 May 2026 23:07:20 +0000</pubDate>
+      <guid>https://pypi.org/project/copass-google-agents/1.0.7/</guid>
     </item>
     <item>
-      <title>picobot added to PyPI</title>
-      <link>https://pypi.org/project/picobot/</link>
+      <title>JD Vance Holds AI Wake-Up Call With Tech CEOs Elon Musk, Sam Altman and More After Anthropic Shows Hacking Superpowers</title>
+      <link>https://www.thewrap.com/industry-news/tech/jd-vance-ai-call-with-tech-ceos-elon-musk-sam-altman-anthropic-mythos-hacking/</link>
       <description></description>
-      <category>Open Source</category>
-      <pubDate>Sat, 09 May 2026 15:16:10 +0000</pubDate>
-      <guid>https://pypi.org/project/picobot/</guid>
+      <category>OpenAI</category>
+      <pubDate>Sat, 09 May 2026 23:02:51 +0000</pubDate>
+      <guid>https://www.thewrap.com/industry-news/tech/jd-vance-ai-call-with-tech-ceos-elon-musk-sam-altman-anthropic-mythos-hacking/</guid>
     </item>
     <item>
-      <title>The context window has been shattered: Subquadratic debuts a 12M token window</title>
-      <link>https://thenewstack.io/subquadratic-12-million-context-window/</link>
-      <description></description>
-      <category>DeepSeek</category>
-      <pubDate>Sat, 09 May 2026 15:15:39 +0000</pubDate>
-      <guid>https://thenewstack.io/subquadratic-12-million-context-window/</guid>
-    </item>
-    <item>
-      <title>Samsung Finally Fixed the Fold: First Look at the Z Fold 8 Wide Design</title>
-      <link>https://www.geeky-gadgets.com/samsung-galaxy-z-fold-8-wide-design-2/</link>
-      <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Sat, 09 May 2026 15:00:58 +0000</pubDate>
-      <guid>https://www.geeky-gadgets.com/samsung-galaxy-z-fold-8-wide-design-2/</guid>
-    </item>
-    <item>
-      <title>Claude vs ChatGPT 2026 – Which AI Is Actually Better For Your Work?</title>
-      <link>https://www.smashingapps.com/claude-vs-chatgpt-2026/</link>
-      <description></description>
-      <category>Perplexity</category>
-      <pubDate>Sat, 09 May 2026 14:59:32 +0000</pubDate>
-      <guid>https://www.smashingapps.com/claude-vs-chatgpt-2026/</guid>
-    </item>
-    <item>
-      <title>KeyBanc Reiterates Service Now’s (NOW) Underweight Rating</title>
-      <link>https://finance.yahoo.com/markets/stocks/articles/keybanc-reiterates-now-now-underweight-145149352.html</link>
-      <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Sat, 09 May 2026 14:51:49 +0000</pubDate>
-      <guid>https://finance.yahoo.com/markets/stocks/articles/keybanc-reiterates-now-now-underweight-145149352.html</guid>
-    </item>
-    <item>
-      <title>langchain-paras-integration added to PyPI</title>
-      <link>https://pypi.org/project/langchain-paras-integration/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Sat, 09 May 2026 14:49:20 +0000</pubDate>
-      <guid>https://pypi.org/project/langchain-paras-integration/</guid>
-    </item>
-    <item>
-      <title>langchain-astro-dao-integration added to PyPI</title>
-      <link>https://pypi.org/project/langchain-astro-dao-integration/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Sat, 09 May 2026 14:48:33 +0000</pubDate>
-      <guid>https://pypi.org/project/langchain-astro-dao-integration/</guid>
-    </item>
-    <item>
-      <title>Pennsylvania Files Lawsuit Against Character.AI Claiming Chatbot Pretends to Be a Doctor</title>
-      <link>https://www.breitbart.com/tech/2026/05/09/pennsylvania-files-lawsuit-against-character-ai-claiming-chatbot-pretends-to-be-a-doctor/</link>
+      <title>Real 2022 tweet about hantavirus fuels 'prediction' rumor amid outbreak</title>
+      <link>https://www.snopes.com//fact-check/hantavirus-tweet-2022-prediction/</link>
       <description></description>
       <category>xAI</category>
-      <pubDate>Sat, 09 May 2026 14:41:29 +0000</pubDate>
-      <guid>https://www.breitbart.com/tech/2026/05/09/pennsylvania-files-lawsuit-against-character-ai-claiming-chatbot-pretends-to-be-a-doctor/</guid>
+      <pubDate>Sat, 09 May 2026 23:00:00 +0000</pubDate>
+      <guid>https://www.snopes.com//fact-check/hantavirus-tweet-2022-prediction/</guid>
     </item>
     <item>
-      <title>Apple is increasing my cortisol levels</title>
-      <link>https://blog.kronis.dev/blog/apple-is-increasing-my-cortisol-levels</link>
+      <title>RED Behind the Look Highlight Reel II</title>
+      <link>https://www.newsshooter.com/2026/05/09/red-behind-the-look-highlight-reel-ii/</link>
       <description></description>
-      <category>DeepSeek</category>
-      <pubDate>Sat, 09 May 2026 14:40:58 +0000</pubDate>
-      <guid>https://blog.kronis.dev/blog/apple-is-increasing-my-cortisol-levels</guid>
+      <category>Google</category>
+      <pubDate>Sat, 09 May 2026 22:57:12 +0000</pubDate>
+      <guid>https://www.newsshooter.com/2026/05/09/red-behind-the-look-highlight-reel-ii/</guid>
     </item>
     <item>
-      <title>sigma-guard added to PyPI</title>
-      <link>https://pypi.org/project/sigma-guard/</link>
+      <title>copass-langchain 1.0.6</title>
+      <link>https://pypi.org/project/copass-langchain/1.0.6/</link>
       <description></description>
-      <category>Mistral</category>
-      <pubDate>Sat, 09 May 2026 14:35:24 +0000</pubDate>
-      <guid>https://pypi.org/project/sigma-guard/</guid>
+      <category>Open Source</category>
+      <pubDate>Sat, 09 May 2026 22:53:38 +0000</pubDate>
+      <guid>https://pypi.org/project/copass-langchain/1.0.6/</guid>
     </item>
     <item>
-      <title>Show HN: AaaS – Agent as a Service</title>
-      <link>https://github.com/Tem-Degu/streetai-aaas</link>
+      <title>copass-google-agents 1.0.6</title>
+      <link>https://pypi.org/project/copass-google-agents/1.0.6/</link>
       <description></description>
-      <category>DeepSeek</category>
-      <pubDate>Sat, 09 May 2026 14:22:26 +0000</pubDate>
-      <guid>https://github.com/Tem-Degu/streetai-aaas</guid>
+      <category>Google</category>
+      <pubDate>Sat, 09 May 2026 22:52:39 +0000</pubDate>
+      <guid>https://pypi.org/project/copass-google-agents/1.0.6/</guid>
     </item>
     <item>
-      <title>toposync-vision-cuda 0.4.10</title>
-      <link>https://pypi.org/project/toposync-vision-cuda/0.4.10/</link>
+      <title>youtube-short-generator 1.0.0</title>
+      <link>https://pypi.org/project/youtube-short-generator/</link>
       <description></description>
       <category>NVIDIA</category>
-      <pubDate>Sat, 09 May 2026 14:21:44 +0000</pubDate>
-      <guid>https://pypi.org/project/toposync-vision-cuda/0.4.10/</guid>
+      <pubDate>Sat, 09 May 2026 22:40:49 +0000</pubDate>
+      <guid>https://pypi.org/project/youtube-short-generator/</guid>
     </item>
     <item>
-      <title>tensordict-nightly 2026.5.9</title>
-      <link>https://pypi.org/project/tensordict-nightly/2026.5.9/</link>
+      <title>noiraiguardrails added to PyPI</title>
+      <link>https://pypi.org/project/noiraiguardrails/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 09 May 2026 22:32:07 +0000</pubDate>
+      <guid>https://pypi.org/project/noiraiguardrails/</guid>
+    </item>
+    <item>
+      <title>faiss-cuda-cu128 1.14.1.post0</title>
+      <link>https://pypi.org/project/faiss-cuda-cu128/1.14.1.post0/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 09 May 2026 22:28:11 +0000</pubDate>
+      <guid>https://pypi.org/project/faiss-cuda-cu128/1.14.1.post0/</guid>
+    </item>
+    <item>
+      <title>pyconveyor added to PyPI</title>
+      <link>https://pypi.org/project/pyconveyor/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 09 May 2026 22:23:17 +0000</pubDate>
+      <guid>https://pypi.org/project/pyconveyor/</guid>
+    </item>
+    <item>
+      <title>Delaying The iPhone 18 Release By Six Months Can Only Benefit Apple</title>
+      <link>https://www.forbes.com/sites/ewanspence/2026/05/09/apple-iphone-18-release-date-delay-mwc-challenge-industry-disruption/</link>
+      <description></description>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>Sat, 09 May 2026 22:17:14 +0000</pubDate>
+      <guid>https://www.forbes.com/sites/ewanspence/2026/05/09/apple-iphone-18-release-date-delay-mwc-challenge-industry-disruption/</guid>
+    </item>
+    <item>
+      <title>Is Cathie Wood Still Hopeful About Tesla (TSLA)?</title>
+      <link>https://finance.yahoo.com/markets/stocks/articles/cathie-wood-still-hopeful-tesla-220601937.html</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Sat, 09 May 2026 22:06:01 +0000</pubDate>
+      <guid>https://finance.yahoo.com/markets/stocks/articles/cathie-wood-still-hopeful-tesla-220601937.html</guid>
+    </item>
+    <item>
+      <title>perplexity-web-mcp-cli 0.11.1</title>
+      <link>https://pypi.org/project/perplexity-web-mcp-cli/0.11.1/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 09 May 2026 21:54:53 +0000</pubDate>
+      <guid>https://pypi.org/project/perplexity-web-mcp-cli/0.11.1/</guid>
+    </item>
+    <item>
+      <title>hessian-eigenthings 1.0.0a5</title>
+      <link>https://pypi.org/project/hessian-eigenthings/1.0.0a5/</link>
       <description></description>
       <category>Meta</category>
-      <pubDate>Sat, 09 May 2026 14:16:24 +0000</pubDate>
-      <guid>https://pypi.org/project/tensordict-nightly/2026.5.9/</guid>
+      <pubDate>Sat, 09 May 2026 21:46:18 +0000</pubDate>
+      <guid>https://pypi.org/project/hessian-eigenthings/1.0.0a5/</guid>
     </item>
     <item>
-      <title>IceWhale ZimaBoard 2 mini NAS review</title>
-      <link>https://www.techradar.com/computing/icewhale-zimaboard-2-mini-nas-review</link>
+      <title>perplexity-web-mcp-cli 0.11.0</title>
+      <link>https://pypi.org/project/perplexity-web-mcp-cli/0.11.0/</link>
       <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 09 May 2026 14:15:00 +0000</pubDate>
-      <guid>https://www.techradar.com/computing/icewhale-zimaboard-2-mini-nas-review</guid>
+      <category>OpenAI</category>
+      <pubDate>Sat, 09 May 2026 21:44:39 +0000</pubDate>
+      <guid>https://pypi.org/project/perplexity-web-mcp-cli/0.11.0/</guid>
+    </item>
+    <item>
+      <title>langchain-taiga 2.4.0</title>
+      <link>https://pypi.org/project/langchain-taiga/2.4.0/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Sat, 09 May 2026 21:44:05 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-taiga/2.4.0/</guid>
+    </item>
+    <item>
+      <title>A tech writer puts Google’s AI to the test as a trip planner</title>
+      <link>https://cnaluxury.channelnewsasia.com/experiences/ai-travel-plan-gemini-vacation-293626</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sat, 09 May 2026 21:37:00 +0000</pubDate>
+      <guid>https://cnaluxury.channelnewsasia.com/experiences/ai-travel-plan-gemini-vacation-293626</guid>
+    </item>
+    <item>
+      <title>xAI leases Colossus 1 supercomputer to Anthropic for $5B ahead of planned IPO</title>
+      <link>https://cryptobriefing.com/xai-leases-colossus-anthropic-ipo/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 09 May 2026 21:32:39 +0000</pubDate>
+      <guid>https://cryptobriefing.com/xai-leases-colossus-anthropic-ipo/</guid>
+    </item>
+    <item>
+      <title>hessian-eigenthings 1.0.0a4</title>
+      <link>https://pypi.org/project/hessian-eigenthings/1.0.0a4/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Sat, 09 May 2026 21:27:05 +0000</pubDate>
+      <guid>https://pypi.org/project/hessian-eigenthings/1.0.0a4/</guid>
+    </item>
+    <item>
+      <title>Who’s liable when AI gives bad financial advice? – Nadine Higgins</title>
+      <link>https://www.nzherald.co.nz/business/personal-finance/investment/whos-liable-when-ai-gives-bad-financial-advice-nadine-higgins/premium/NZBOHVJUFRGPTMZZGKTU3JQMH4/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 09 May 2026 21:00:00 +0000</pubDate>
+      <guid>https://www.nzherald.co.nz/business/personal-finance/investment/whos-liable-when-ai-gives-bad-financial-advice-nadine-higgins/premium/NZBOHVJUFRGPTMZZGKTU3JQMH4/</guid>
+    </item>
+    <item>
+      <title>langchain-scavio 2.7</title>
+      <link>https://pypi.org/project/langchain-scavio/2.7/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Sat, 09 May 2026 20:55:42 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-scavio/2.7/</guid>
+    </item>
+    <item>
+      <title>5 Zodiac Signs Who Are Smarter Than You Think</title>
+      <link>https://thoughtcatalog.com/grace-turney/2026/05/5-zodiac-signs-who-are-smarter-than-you-think/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sat, 09 May 2026 20:55:00 +0000</pubDate>
+      <guid>https://thoughtcatalog.com/grace-turney/2026/05/5-zodiac-signs-who-are-smarter-than-you-think/</guid>
+    </item>
+    <item>
+      <title>AJ Chronicles: The Venice Biennale Blows Up — Some Takeaways</title>
+      <link>https://www.artsjournal.com/diacritical/2026/05/aj-chronicles-the-venice-biennale-blows-up-some-takeaways.html</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sat, 09 May 2026 20:33:23 +0000</pubDate>
+      <guid>https://www.artsjournal.com/diacritical/2026/05/aj-chronicles-the-venice-biennale-blows-up-some-takeaways.html</guid>
+    </item>
+    <item>
+      <title>hermes-council added to PyPI</title>
+      <link>https://pypi.org/project/hermes-council/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Sat, 09 May 2026 20:10:55 +0000</pubDate>
+      <guid>https://pypi.org/project/hermes-council/</guid>
+    </item>
+    <item>
+      <title>Living With HP’s EliteBoard G1a: The PC-in-a-Keyboard Concept Is Intriguing, But I'll Stick With My Laptop</title>
+      <link>https://me.pcmag.com/en/old-desktop-pcs/37032/living-with-hps-eliteboard-g1a-the-pc-in-a-keyboard-concept-is-intriguing-but-ill-stick-with-my-lapt</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Sat, 09 May 2026 20:00:00 +0000</pubDate>
+      <guid>https://me.pcmag.com/en/old-desktop-pcs/37032/living-with-hps-eliteboard-g1a-the-pc-in-a-keyboard-concept-is-intriguing-but-ill-stick-with-my-lapt</guid>
+    </item>
+    <item>
+      <title>How High Can XRP Go If Global Banks Ditch SWIFT for Ripple? Grok Reveals Shocking Upside Scenario</title>
+      <link>https://zycrypto.com/how-high-can-xrp-go-if-global-banks-ditch-swift-for-ripple-grok-reveals-shocking-upside-scenario/</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Sat, 09 May 2026 19:59:23 +0000</pubDate>
+      <guid>https://zycrypto.com/how-high-can-xrp-go-if-global-banks-ditch-swift-for-ripple-grok-reveals-shocking-upside-scenario/</guid>
+    </item>
+    <item>
+      <title>Show HN: Mlx-code – I built a "backyard shed" AI coding agent for Mac</title>
+      <link>https://github.com/JosefAlbers/mlx-code</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sat, 09 May 2026 19:28:01 +0000</pubDate>
+      <guid>https://github.com/JosefAlbers/mlx-code</guid>
+    </item>
+    <item>
+      <title>Pennsylvania files lawsuit against Character.AI for chatbot impersonation of doctors</title>
+      <link>https://cryptobriefing.com/pennsylvania-lawsuit-character-ai-doctor-impersonation/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Sat, 09 May 2026 19:20:53 +0000</pubDate>
+      <guid>https://cryptobriefing.com/pennsylvania-lawsuit-character-ai-doctor-impersonation/</guid>
+    </item>
+    <item>
+      <title>Malaysia Political Corruption, Indigenous Basket Art, Snapchat/Perplexity, More: Saturday Afternoon ResearchBuzz, May 9, 2026</title>
+      <link>https://researchbuzz.me/2026/05/09/malaysia-political-corruption-indigenous-basket-art-snapchat-perplexity-more-saturday-afternoon-researchbuzz-may-9-2026/</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Sat, 09 May 2026 19:03:32 +0000</pubDate>
+      <guid>https://researchbuzz.me/2026/05/09/malaysia-political-corruption-indigenous-basket-art-snapchat-perplexity-more-saturday-afternoon-researchbuzz-may-9-2026/</guid>
+    </item>
+    <item>
+      <title>AOC claims American Revolution was fight against ‘billionaires’ as critics school her on actual history</title>
+      <link>https://nypost.com/2026/05/09/us-news/aoc-claims-american-revolution-was-fight-against-billionaires-as-critics-school-her-on-actual-history/</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Sat, 09 May 2026 18:53:19 +0000</pubDate>
+      <guid>https://nypost.com/2026/05/09/us-news/aoc-claims-american-revolution-was-fight-against-billionaires-as-critics-school-her-on-actual-history/</guid>
+    </item>
+    <item>
+      <title>Grok AI Voice Mode Is Now Available Via Apple CarPlay</title>
+      <link>https://www.redmondpie.com/grok-ai-voice-mode-is-now-available-via-apple-carplay/</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Sat, 09 May 2026 18:42:16 +0000</pubDate>
+      <guid>https://www.redmondpie.com/grok-ai-voice-mode-is-now-available-via-apple-carplay/</guid>
+    </item>
+    <item>
+      <title>SpaceXAI Launches HUGELY Profitable New AI Business</title>
+      <link>https://www.nextbigfuture.com/2026/05/spacexai-launches-hugely-profitable-new-ai-business.html</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Sat, 09 May 2026 18:14:29 +0000</pubDate>
+      <guid>https://www.nextbigfuture.com/2026/05/spacexai-launches-hugely-profitable-new-ai-business.html</guid>
+    </item>
+    <item>
+      <title>The Startup Nation is now the AI Nation: Jewish Communal Schools must learn from Israel</title>
+      <link>https://www.israelnationalnews.com/news/426797</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Sat, 09 May 2026 18:09:46 +0000</pubDate>
+      <guid>https://www.israelnationalnews.com/news/426797</guid>
+    </item>
+    <item>
+      <title>iOS 27 Leaks Reveal the End of an Era: Apple’s New Priorities Confirmed</title>
+      <link>https://www.geeky-gadgets.com/apple-ios-27-leaks/</link>
+      <description></description>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>Sat, 09 May 2026 13:00:38 +0000</pubDate>
+      <guid>https://www.geeky-gadgets.com/apple-ios-27-leaks/</guid>
     </item>
   </channel>
 </rss>
