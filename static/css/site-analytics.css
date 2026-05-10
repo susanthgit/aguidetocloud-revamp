@@ -2745,6 +2745,8 @@
 .siteana-lb-bar-today { background: var(--text-tertiary); }
 .siteana-lb-bar-yest { background: var(--info); }
 .siteana-lb-bar-yt { background: var(--error); }
+.siteana-lb-bar-msblue { background: var(--info); }
+.siteana-link-msblue { color: var(--info); text-decoration: none; }
 
 /* YouTube channel stats (brand-coloured numbers) */
 .siteana-stat-num.is-yt { color: var(--error); }
@@ -2795,4 +2797,72 @@
   border-bottom: 1px solid var(--border);
 }
 .siteana-list-row-tight { padding: 0.35rem 0; }
+
+/* Static heatmap legend cells (replaces inline rgba fades) */
+.siteana-hm-legend-cell { border-radius: 3px; }
+.siteana-hm-legend-cell.is-l1 { --hm-alpha: 10%; }
+.siteana-hm-legend-cell.is-l2 { --hm-alpha: 30%; }
+.siteana-hm-legend-cell.is-l3 { --hm-alpha: 55%; }
+.siteana-hm-legend-cell.is-l4 { background: var(--text-tertiary); }
+
+/* Content-stat number palette modifiers (replaces inline color:#X) */
+.siteana-content-num.is-blue   { color: var(--info); }
+.siteana-content-num.is-green  { color: var(--success); }
+.siteana-content-num.is-pink   { color: var(--accent); }
+.siteana-content-num.is-yellow { color: var(--warning); }
+.siteana-content-num.is-purple { color: var(--accent); }
+.siteana-content-num.is-orange { color: var(--warning); }
+.siteana-content-num.is-red    { color: var(--error); }
+.siteana-content-num.is-msblue { color: var(--info); }
+
+/* Deep-dive CTA card (replaces inline gradient + button styles) */
+.siteana-deep-cta {
+  text-align: center;
+  border-color: color-mix(in srgb, var(--info) 20%, transparent);
+  background: color-mix(in srgb, var(--info) 4%, transparent);
+}
+.siteana-deep-cta.is-msblue {
+  border-color: color-mix(in srgb, var(--info) 25%, transparent);
+  background: color-mix(in srgb, var(--info) 5%, transparent);
+}
+.siteana-deep-cta-text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0 0 1rem;
+}
+.siteana-deep-cta-btn {
+  display: inline-block;
+  padding: 0.65rem 2rem;
+  background: var(--info);
+  color: var(--bg-page);
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+.siteana-deep-cta-btn:hover { opacity: 0.85; }
+
+/* "Learn how" inline link (replaces color:#64748B) */
+.siteana-learn-link { color: var(--text-tertiary); }
+.siteana-reset-link { font-size: 0.78rem; }
+
+/* Country reach table styling (replaces inline cell paddings) */
+.siteana-co-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.siteana-co-table th { padding: 0.5rem 0.75rem; }
+.siteana-co-table th.is-bar { width: 35%; }
+
+/* SEO Opportunities deep-cta variant (warning-tinted) */
+.siteana-deep-cta.is-warning {
+  border-color: color-mix(in srgb, var(--warning) 20%, transparent);
+  background: color-mix(in srgb, var(--warning) 4%, transparent);
+}
+
+/* FAQ detail block (replaces inline details styling) */
+.siteana-faq-detail {
+  background: color-mix(in srgb, var(--text-primary) 2%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+}
 

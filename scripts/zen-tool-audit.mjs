@@ -321,7 +321,7 @@ async function run() {
       ['dark-mobile',   'dark',  { width: 390,  height: 844 }],
     ];
     for (const [comboName, theme, vp] of combos) {
-      const ctx = await browser.newContext({ colorScheme: theme, viewport: vp });
+      const ctx = await browser.newContext({ colorScheme: theme, viewport: vp, serviceWorkers: 'block' });
       const out = path.join(slugDir, `${comboName}.png`);
       const r = await captureCombo(ctx, url, theme, vp, out);
       runtime[comboName] = r;

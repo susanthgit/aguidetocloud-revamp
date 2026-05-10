@@ -105,10 +105,10 @@
       <div class="siteana-heatmap-grid" id="sa-heatmap"></div>
       <div class="siteana-hm-legend">
         <span>Less</span>
-        <span class="siteana-hm-legend-cell" style="background:rgba(100,116,139,0.1);border-radius:3px"></span>
-        <span class="siteana-hm-legend-cell" style="background:rgba(100,116,139,0.3);border-radius:3px"></span>
-        <span class="siteana-hm-legend-cell" style="background:rgba(100,116,139,0.55);border-radius:3px"></span>
-        <span class="siteana-hm-legend-cell" style="background:#64748B;border-radius:3px"></span>
+        <span class="siteana-hm-legend-cell is-l1"></span>
+        <span class="siteana-hm-legend-cell is-l2"></span>
+        <span class="siteana-hm-legend-cell is-l3"></span>
+        <span class="siteana-hm-legend-cell is-l4"></span>
         <span>More</span>
       </div>
     </div>
@@ -134,7 +134,7 @@
       <div class="siteana-card siteana-transparency">
         <h3>Transparency Note</h3>
         <p>Traffic from Google Analytics (30-day window). All counts are approximate and anonymous — no personal data stored.</p>
-        <p>This data is real and unfiltered. <a href="#" data-tab-link="about" style="color:#64748B">Learn how it's collected →</a></p>
+        <p>This data is real and unfiltered. <a href="#" data-tab-link="about" class="siteana-learn-link">Learn how it's collected →</a></p>
       </div>
     </div>
   </div>
@@ -202,22 +202,22 @@
 
     <div class="siteana-content-stats" style="margin-bottom:1.5rem">
       <div class="siteana-content-item">
-        <span class="siteana-content-num" style="color:#0EA5E9">{{ $blogCount }}</span>
+        <span class="siteana-content-num is-blue">{{ $blogCount }}</span>
         <span>Blog Posts</span>
       </div>
       <div class="siteana-content-item">
         {{ $totalWords := 0 }}{{ range $blogPages }}{{ $totalWords = add $totalWords (countwords .Content) }}{{ end }}
-        <span class="siteana-content-num" style="color:#10B981">{{ div $totalWords 1000 }}K</span>
+        <span class="siteana-content-num is-green">{{ div $totalWords 1000 }}K</span>
         <span>Words Written</span>
       </div>
       <div class="siteana-content-item">
         {{ $avgRead := div (div $totalWords $blogCount) 250 }}{{ if lt $avgRead 1 }}{{ $avgRead = 1 }}{{ end }}
-        <span class="siteana-content-num" style="color:#EC4899">{{ $avgRead }}</span>
+        <span class="siteana-content-num is-pink">{{ $avgRead }}</span>
         <span>Avg Min / Post</span>
       </div>
       <div class="siteana-content-item">
         {{ $totalFaq := 0 }}{{ range $blogPages }}{{ with .Params.faq }}{{ $totalFaq = add $totalFaq (len .) }}{{ end }}{{ end }}
-        <span class="siteana-content-num" style="color:#FBBF24">{{ $totalFaq }}</span>
+        <span class="siteana-content-num is-yellow">{{ $totalFaq }}</span>
         <span>FAQ Answers</span>
       </div>
     </div>
@@ -297,9 +297,9 @@
     </div>
 
     <!-- CTA -->
-    <div class="siteana-card" style="text-align:center;border-color:rgba(14,165,233,0.2);background:linear-gradient(135deg,rgba(14,165,233,0.06),rgba(14,165,233,0.01))">
-      <p style="color:rgba(255,255,255,0.8);font-size:0.95rem;margin:0 0 1rem">Deep-dive guides on Microsoft 365, Copilot, AI, and cloud — written for IT pros, not developers.</p>
-      <a href="/blog/" style="display:inline-block;padding:0.65rem 2rem;background:#0EA5E9;color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:0.9rem;transition:opacity 0.2s">Read the Blog →</a>
+    <div class="siteana-card siteana-deep-cta">
+      <p class="siteana-deep-cta-text">Deep-dive guides on Microsoft 365, Copilot, AI, and cloud — written for IT pros, not developers.</p>
+      <a href="/blog/" class="siteana-deep-cta-btn">Read the Blog →</a>
     </div>
   </div>
 
@@ -377,27 +377,27 @@
 
     <div class="siteana-content-stats" id="sa-guided-pulse" style="margin-bottom:1.5rem">
       <div class="siteana-content-item">
-        <span class="siteana-content-num" id="gd-learners" style="color:#00A4EF">—</span>
+        <span class="siteana-content-num is-msblue" id="gd-learners">—</span>
         <span>Learners (30d)</span>
       </div>
       <div class="siteana-content-item">
-        <span class="siteana-content-num" id="gd-starts" style="color:#10B981">—</span>
+        <span class="siteana-content-num is-green" id="gd-starts">—</span>
         <span>Quiz Starts</span>
       </div>
       <div class="siteana-content-item">
-        <span class="siteana-content-num" id="gd-completes" style="color:#A78BFA">—</span>
+        <span class="siteana-content-num is-purple" id="gd-completes">—</span>
         <span>Completed</span>
       </div>
       <div class="siteana-content-item">
-        <span class="siteana-content-num" id="gd-rate" style="color:#F59E0B">—</span>
+        <span class="siteana-content-num is-orange" id="gd-rate">—</span>
         <span>Completion Rate</span>
       </div>
       <div class="siteana-content-item">
-        <span class="siteana-content-num" id="gd-views" style="color:#EC4899">—</span>
+        <span class="siteana-content-num is-pink" id="gd-views">—</span>
         <span>Page Views</span>
       </div>
       <div class="siteana-content-item">
-        <span class="siteana-content-num" id="gd-live" style="color:#22C55E">—</span>
+        <span class="siteana-content-num is-green" id="gd-live">—</span>
         <span>Live Now</span>
       </div>
     </div>
@@ -449,9 +449,9 @@
     </div>
 
     <!-- CTA -->
-    <div class="siteana-card" style="text-align:center;border-color:rgba(0,164,239,0.2);background:linear-gradient(135deg,rgba(0,164,239,0.06),rgba(0,164,239,0.01))">
-      <p style="color:rgba(255,255,255,0.8);font-size:0.95rem;margin:0 0 1rem">Start studying for free — interactive modules, no account required.</p>
-      <a href="/guided/" style="display:inline-block;padding:0.65rem 2rem;background:#00A4EF;color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:0.9rem;transition:opacity 0.2s">Open Guided →</a>
+    <div class="siteana-card siteana-deep-cta is-msblue">
+      <p class="siteana-deep-cta-text">Start studying for free — interactive modules, no account required.</p>
+      <a href="/guided/" class="siteana-deep-cta-btn">Open Guided →</a>
     </div>
   </div>
 
@@ -473,7 +473,7 @@
     </div>
 
     <!-- SEO Opportunities -->
-    <div class="siteana-card" style="border-color:rgba(251,191,36,0.2);background:linear-gradient(135deg,rgba(251,191,36,0.04),rgba(251,191,36,0.01))">
+    <div class="siteana-card siteana-deep-cta is-warning">
       <h3 class="siteana-card-title">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} SEO Opportunities</h3>
       <p class="siteana-hint">Queries ranking #4–10 with high impressions — one optimisation away from page 1</p>
       <div id="sa-seo-opps"><p class="siteana-hint">Loading...</p></div>
@@ -488,7 +488,7 @@
       <div class="siteana-journey-inner" id="sa-journey-body">
         <span class="siteana-journey-wave">👋</span>
         <p id="sa-journey-text">Welcome! You're one of our visitors this month.</p>
-        <p class="siteana-journey-privacy">This info lives only in <strong>your browser</strong>. We can't see it. <a href="#" id="sa-journey-reset" style="color:#64748B;font-size:0.78rem">Reset</a></p>
+        <p class="siteana-journey-privacy">This info lives only in <strong>your browser</strong>. We can't see it. <a href="#" id="sa-journey-reset" class="siteana-learn-link siteana-reset-link">Reset</a></p>
       </div>
     </div>
 
@@ -597,7 +597,7 @@
     <div class="siteana-card">
       <h3 class="siteana-card-title">Frequently Asked Questions</h3>
       {{ range $i, $q := . }}
-      <details{{ if eq $i 0 }} open{{ end }} style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;margin-bottom:0.75rem">
+      <details{{ if eq $i 0 }} open{{ end }} class="siteana-faq-detail">
         <summary class="zt-faq-summary">{{ $q.question }}</summary>
         <p class="zt-faq-answer">{{ $q.answer }}</p>
       </details>
@@ -810,9 +810,9 @@
     var html = '';
     trend.forEach(function(d) {
       var intensity = d.views / max;
-      var bg = intensity < 0.15 ? 'rgba(100,116,139,0.08)' : intensity < 0.35 ? 'rgba(100,116,139,0.25)' : intensity < 0.6 ? 'rgba(100,116,139,0.45)' : intensity < 0.8 ? 'rgba(100,116,139,0.7)' : '#64748B';
+      var alpha = intensity < 0.15 ? 8 : intensity < 0.35 ? 25 : intensity < 0.6 ? 45 : intensity < 0.8 ? 70 : 100;
       var day = d.date.slice(5);
-      html += '<div class="siteana-hm-cell" style="background:' + bg + '" data-tip="' + day + ': ' + d.views + ' views"><span class="siteana-hm-label">' + day.slice(3) + '</span></div>';
+      html += '<div class="siteana-hm-cell" style="--hm-alpha:' + alpha + '%" data-tip="' + day + ': ' + d.views + ' views"><span class="siteana-hm-label">' + day.slice(3) + '</span></div>';
     });
     el.innerHTML = html;
   }
@@ -1069,8 +1069,8 @@
       var name = p.path.replace('/guided/', '').replace(/\//g, ' › ').replace(/\s*›\s*$/, '') || 'Homepage';
       if (name.length > 45) name = name.slice(0,42) + '...';
       return '<div class="siteana-lb-item"><span class="siteana-lb-rank">' + (i+1) + '</span>'
-        + '<span class="siteana-lb-name"><a href="' + esc(p.path) + '" style="color:#00A4EF;text-decoration:none">' + esc(name) + '</a></span>'
-        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#00A4EF"></div></div>'
+        + '<span class="siteana-lb-name"><a href="' + esc(p.path) + '" class="siteana-link-msblue">' + esc(name) + '</a></span>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar siteana-lb-bar-msblue" style="width:' + pct + '%"></div></div>'
         + '<span class="siteana-lb-total">' + roundK(p.views) + '</span></div>';
     }).join('');
   }
@@ -1194,7 +1194,7 @@
       var pct = Math.round((item[valueKey] / max) * 100);
       var flag = (showFlags && COUNTRY_FLAGS[item[labelKey]]) ? '<span class="siteana-flag">' + COUNTRY_FLAGS[item[labelKey]] + '</span> ' : '';
       return '<div class="siteana-lb-item">' + flag + '<span class="siteana-lb-name">' + esc(item[labelKey]) + '</span>'
-        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#64748B"></div></div>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar siteana-lb-bar-today" style="width:' + pct + '%"></div></div>'
         + '<span class="siteana-lb-total">' + item[valueKey] + '</span></div>';
     }).join('');
   }
@@ -1206,10 +1206,10 @@
       var pct = Math.round((p.views / max) * 100);
       var name = p.path === '/' ? 'Homepage' : p.path.replace(/\//g, ' ').trim();
       if (name.length > 60) name = name.slice(0,57) + '...';
-      var barColor = p.path.startsWith('/blog/') ? '#0EA5E9' : '#64748B';
+      var barClass = p.path.startsWith('/blog/') ? 'siteana-lb-bar-yest' : 'siteana-lb-bar-today';
       return '<div class="siteana-lb-item"><span class="siteana-lb-rank">' + (i+1) + '</span>'
-        + '<span class="siteana-lb-name"><a href="' + esc(p.path) + '" style="color:rgba(255,255,255,0.75);text-decoration:none">' + esc(name) + '</a></span>'
-        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:' + barColor + '"></div></div>'
+        + '<span class="siteana-lb-name"><a href="' + esc(p.path) + '" class="siteana-link-muted">' + esc(name) + '</a></span>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar ' + barClass + '" style="width:' + pct + '%"></div></div>'
         + '<span class="siteana-lb-total">' + roundK(p.views) + '</span></div>';
     }).join('');
   }
@@ -1343,18 +1343,18 @@
             if (!certs.length) { certEl.innerHTML = '<p class="siteana-hint">No certification data yet.</p>'; }
             else {
               var mx = certs[0].views || 1;
-              certEl.innerHTML = '<table style="width:100%;border-collapse:collapse;font-size:0.85rem"><thead><tr style="color:rgba(255,255,255,0.4);font-size:0.75rem;text-align:left">'
-                + '<th style="padding:0.5rem 0.75rem">Cert</th><th style="padding:0.5rem 0.75rem">Views</th><th style="padding:0.5rem 0.75rem">Users</th>'
-                + '<th style="padding:0.5rem 0.75rem">Quizzes</th><th style="padding:0.5rem 0.75rem;width:35%"></th></tr></thead><tbody>'
+              certEl.innerHTML = '<table class="siteana-co-table"><thead><tr class="siteana-co-thead">'
+                + '<th>Cert</th><th>Views</th><th>Users</th>'
+                + '<th>Quizzes</th><th class="is-bar"></th></tr></thead><tbody>'
                 + certs.map(function(c,i){
                   var pct = Math.round((c.views/mx)*100);
-                  return '<tr style="border-top:1px solid rgba(255,255,255,0.05);background:'+(i===0?'rgba(0,164,239,0.08)':'transparent')+'">'
-                    + '<td style="padding:0.6rem 0.75rem;font-weight:600;color:rgba(255,255,255,0.9);text-transform:uppercase">'+esc(c.code)+'</td>'
-                    + '<td style="padding:0.6rem 0.75rem;color:rgba(255,255,255,0.7)">'+numK(c.views)+'</td>'
-                    + '<td style="padding:0.6rem 0.75rem;color:rgba(255,255,255,0.7)">'+numK(c.users)+'</td>'
-                    + '<td style="padding:0.6rem 0.75rem;color:'+(c.completions?'#10B981':'rgba(255,255,255,0.3)')+'">'+((c.completions)?numK(c.completions):'\u2014')+'</td>'
-                    + '<td style="padding:0.6rem 0.75rem"><div style="background:rgba(0,164,239,0.15);border-radius:4px;height:8px;overflow:hidden">'
-                    + '<div style="width:'+pct+'%;height:100%;background:#00A4EF;border-radius:4px"></div></div></td></tr>';
+                  return '<tr class="siteana-co-row' + (i===0?' is-zebra':'') + '">'
+                    + '<td class="siteana-co-cell-code">'+esc(c.code)+'</td>'
+                    + '<td class="siteana-co-cell">'+numK(c.views)+'</td>'
+                    + '<td class="siteana-co-cell">'+numK(c.users)+'</td>'
+                    + '<td class="siteana-co-cell siteana-co-cell-comp ' + (c.completions ? 'has-data' : 'no-data') + '">'+((c.completions)?numK(c.completions):'\u2014')+'</td>'
+                    + '<td class="siteana-co-cell"><div class="siteana-co-bar-wrap">'
+                    + '<div class="siteana-co-bar-fill" style="width:'+pct+'%"></div></div></td></tr>';
                 }).join('') + '</tbody></table>';
             }
           }
@@ -1370,10 +1370,10 @@
                 guided_practice_view:'\uD83D\uDCDD Practice', guided_quiz_start:'\u25B6\uFE0F Quiz Start', guided_quiz_complete:'\u2705 Quiz Complete',
                 guided_flashcard_start:'\uD83C\uDCCF Flashcards', guided_bookmark:'\uD83D\uDD16 Bookmark', guided_streak_update:'\uD83D\uDD25 Streak' };
               eKeys.sort(function(a,b){ return (events[b].count||0)-(events[a].count||0); });
-              evEl.innerHTML = '<div style="display:flex;flex-direction:column;gap:0.5rem">' + eKeys.map(function(k){
-                return '<div style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">'
-                  + '<span style="color:rgba(255,255,255,0.75);font-size:0.82rem">'+(ELAB[k]||k.replace(/guided_/g,'').replace(/_/g,' '))+'</span>'
-                  + '<span style="color:rgba(255,255,255,0.5);font-size:0.82rem;font-variant-numeric:tabular-nums">'+numK(events[k].count)+'</span></div>';
+              evEl.innerHTML = '<div class="siteana-list-stack">' + eKeys.map(function(k){
+                return '<div class="siteana-list-row">'
+                  + '<span class="siteana-list-label">'+(ELAB[k]||k.replace(/guided_/g,'').replace(/_/g,' '))+'</span>'
+                  + '<span class="siteana-list-count">'+numK(events[k].count)+'</span></div>';
               }).join('') + '</div>';
             }
           }
@@ -1384,11 +1384,11 @@
           if (pgEl) {
             if (!pages.length) { pgEl.innerHTML = '<p class="siteana-hint">No page data yet.</p>'; }
             else {
-              pgEl.innerHTML = '<div style="display:flex;flex-direction:column;gap:0.4rem">' + pages.slice(0,12).map(function(p){
+              pgEl.innerHTML = '<div class="siteana-list-stack siteana-list-stack-tight">' + pages.slice(0,12).map(function(p){
                 var short = p.path.replace(/^\/guided\//,'/').replace(/\/$/,'') || '/';
-                return '<div style="display:flex;justify-content:space-between;padding:0.35rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">'
-                  + '<span style="color:rgba(255,255,255,0.7);font-size:0.82rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:70%">'+esc(short)+'</span>'
-                  + '<span style="color:rgba(255,255,255,0.4);font-size:0.82rem">'+numK(p.views)+'</span></div>';
+                return '<div class="siteana-list-row siteana-list-row-tight">'
+                  + '<span class="siteana-list-name">'+esc(short)+'</span>'
+                  + '<span class="siteana-list-views">'+numK(p.views)+'</span></div>';
               }).join('') + '</div>';
             }
           }
