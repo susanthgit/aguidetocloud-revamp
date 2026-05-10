@@ -5182,6 +5182,13 @@ pre:hover .code-copy-btn { opacity: 1; }
     padding: 12px 14px;
   }
 
+  /* Planet strip → hidden on mobile.
+     Redundant with: hero cosmos CTA · ↗ all links chip · sidebar
+     "Visit other planets" list (which stacks below content on phone). */
+  .zt-reading--about .zt-about-planets {
+    display: none;
+  }
+
   /* Margin note: smaller, no rotation (less crammed on narrow) */
   .zt-reading--about .zt-about-margin {
     font-size: 1.05rem;
