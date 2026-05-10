@@ -175,9 +175,9 @@
 
     grid.innerHTML = shown.map(s => `
       <div class="shealth-svc-card" data-severity="${s.severity}" data-service="${esc(s.service)}" title="${esc(s.service)}: ${esc(s.status_label)}" role="button" tabindex="0" aria-label="${esc(s.short_name)}: ${esc(s.status_label)}">
-        <div class="shealth-svc-icon">${s.icon}</div>
+        <div class="shealth-svc-icon">${(window.__shealthIcons && window.__shealthIcons[s.short_name]) || s.icon}</div>
         <div class="shealth-svc-name">${esc(s.short_name)}</div>
-        <div class="shealth-svc-status" data-severity="${s.severity}">${s.status_icon} ${esc(s.status_label)}</div>
+        <div class="shealth-svc-status" data-severity="${s.severity}">${(window.__shealthStatusIcons && window.__shealthStatusIcons[s.status]) || s.status_icon} ${esc(s.status_label)}</div>
       </div>
     `).join('');
 
@@ -241,8 +241,8 @@
         <div class="shealth-incident-left">
           <h3 class="shealth-incident-title">${esc(i.title)}</h3>
           <div class="shealth-incident-meta">
-            <span class="shealth-badge shealth-badge-service">${i.service_icon} ${esc(i.service_short)}</span>
-            <span class="shealth-badge shealth-badge-status" data-status="${esc(i.status || '')}">${i.status_icon} ${esc(i.status_label)}</span>
+            <span class="shealth-badge shealth-badge-service">${(window.__shealthIcons && window.__shealthIcons[i.service_short]) || i.service_icon} ${esc(i.service_short)}</span>
+            <span class="shealth-badge shealth-badge-status" data-status="${esc(i.status || '')}">${(window.__shealthStatusIcons && window.__shealthStatusIcons[i.status]) || i.status_icon} ${esc(i.status_label)}</span>
             ${i.regions && i.regions.length > 0 ? `<span class="shealth-badge shealth-badge-regions">${esc(i.regions.join(', '))}</span>` : ''}
             ${i.feature ? `<span class="shealth-badge shealth-badge--feature">${esc(i.feature)}</span>` : ''}
             ${i.update_count > 0 ? `<span class="shealth-update-count">${i.update_count} updates</span>` : ''}
@@ -389,7 +389,7 @@
     body.innerHTML = `
       <h2 class="shealth-modal-title">${esc(d.title)}</h2>
       <div class="shealth-modal-meta">
-        <span class="shealth-badge shealth-badge-service">${issue.service_icon} ${esc(d.service_short || d.service)}</span>
+        <span class="shealth-badge shealth-badge-service">${(window.__shealthIcons && window.__shealthIcons[d.service_short || d.service]) || issue.service_icon} ${esc(d.service_short || d.service)}</span>
         <span>${esc(d.classification || '')}</span>
         <span>ID: ${esc(d.id)}</span>
         ${d.feature ? `<span>Feature: ${esc(d.feature)}</span>` : ''}
@@ -523,7 +523,7 @@
       resultEl.innerHTML = `
         <div class="shealth-date-result-msg shealth-date-result-bad">
           <strong>${matches.length} incident${matches.length !== 1 ? 's' : ''}</strong> ${svcFilter !== 'all' ? 'for this service ' : ''}on ${targetDate}:
-          ${matches.map(m => `<div class="shealth-related-match">• ${m.service_icon} <strong>${esc(m.service_short)}</strong>: ${esc(m.title)} <span class="shealth-related-match-dim">(${esc(m.duration || 'ongoing')})</span></div>`).join('')}
+          ${matches.map(m => `<div class="shealth-related-match">• ${(window.__shealthIcons && window.__shealthIcons[m.service_short]) || m.service_icon} <strong>${esc(m.service_short)}</strong>: ${esc(m.title)} <span class="shealth-related-match-dim">(${esc(m.duration || 'ongoing')})</span></div>`).join('')}
         </div>`;
     }
   }

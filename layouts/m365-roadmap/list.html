@@ -86,6 +86,21 @@
   "keywords": ["Microsoft 365 roadmap", "M365 updates", "Copilot roadmap", "Teams new features"]
 }
 </script>
+<script>
+window.__rdmapIcons = {
+  copilot: `{{ partial "icon.html" (dict "name" "robot" "size" 14 "stroke" 1.5) }}`,
+  teams: `{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }}`,
+  outlook: `{{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }}`,
+  sharepoint: `{{ partial "icon.html" (dict "name" "cloud" "size" 14 "stroke" 1.5) }}`,
+  'office-apps': `{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }}`,
+  purview: `{{ partial "icon.html" (dict "name" "shield" "size" 14 "stroke" 1.5) }}`,
+  intune: `{{ partial "icon.html" (dict "name" "monitor" "size" 14 "stroke" 1.5) }}`,
+  viva: `{{ partial "icon.html" (dict "name" "building" "size" 14 "stroke" 1.5) }}`,
+  entra: `{{ partial "icon.html" (dict "name" "key" "size" 14 "stroke" 1.5) }}`,
+  admin: `{{ partial "icon.html" (dict "name" "settings" "size" 14 "stroke" 1.5) }}`,
+  'edge-media': `{{ partial "icon.html" (dict "name" "globe" "size" 14 "stroke" 1.5) }}`
+};
+</script>
 <script src="/js/roadmap.js?v={{ site.Params.cache_version }}"></script>
 <script>
 document.querySelectorAll('.rdmap-top-tab').forEach(function(tab) {

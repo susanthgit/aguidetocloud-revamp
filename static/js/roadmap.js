@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     var el = document.getElementById('rdmap-chips');
     var cats = data.product_categories || [];
     var html = '<button class="rdmap-chip' + (activeProductFilter === 'all' ? ' active' : '') + '" data-cat="all" aria-pressed="' + (activeProductFilter === 'all') + '">All</button>';
-    cats.forEach(function (c) { var m = CATEGORY_META[c.id] || {}; var isActive = activeProductFilter === c.id; html += '<button class="rdmap-chip' + (isActive ? ' active' : '') + '" data-cat="' + c.id + '" aria-pressed="' + isActive + '">' + (m.emoji || '') + ' ' + esc(c.name) + '</button>'; });
+    cats.forEach(function (c) { var m = CATEGORY_META[c.id] || {}; var isActive = activeProductFilter === c.id; var ico = (window.__rdmapIcons && window.__rdmapIcons[c.id]) || (m.emoji || ''); html += '<button class="rdmap-chip' + (isActive ? ' active' : '') + '" data-cat="' + c.id + '" aria-pressed="' + isActive + '">' + ico + ' ' + esc(c.name) + '</button>'; });
     el.innerHTML = html;
     el.querySelectorAll('.rdmap-chip').forEach(function (b) { b.addEventListener('click', function () { el.querySelectorAll('.rdmap-chip').forEach(function (x) { x.classList.remove('active'); x.setAttribute('aria-pressed', 'false'); }); this.classList.add('active'); this.setAttribute('aria-pressed', 'true'); activeProductFilter = this.dataset.cat; applyFilters(); }); });
   }
@@ -130,6 +130,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     var favClass = isFav(item.id) ? ' rdmap-fav-active' : '';
     var catId = esc(item.product_category || '');
     var statusName = esc(item.status || '');
+    var ico = (window.__rdmapIcons && window.__rdmapIcons[item.product_category]) || (cat.emoji || '');
     return '<div class="rdmap-row-wrap">'
       + '<button class="rdmap-fav' + favClass + '" data-fav-id="' + item.id + '" aria-label="Favourite" title="Watch this item">★</button>'
       + '<a href="' + esc(item.roadmap_url) + '" target="_blank" rel="noopener noreferrer" class="rdmap-row" data-id="' + item.id + '" data-cat="' + catId + '">'
@@ -139,7 +140,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       + (summary ? '<div class="rdmap-row-desc">' + esc(summary) + '</div>' : '')
       + '</div>'
       + '<div class="rdmap-row-meta">'
-      + '<span class="rdmap-row-product" data-cat="' + catId + '">' + (cat.emoji || '') + ' ' + esc(item.product_category_name || '') + '</span>'
+      + '<span class="rdmap-row-product" data-cat="' + catId + '">' + ico + ' ' + esc(item.product_category_name || '') + '</span>'
       + '<span class="rdmap-row-date">' + esc(item.ga_date || '\u2014') + (item.is_delayed ? ' <span class="rdmap-delayed">DELAYED</span>' : '') + '</span>'
       + '</div></a></div>';
   }
