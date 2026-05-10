@@ -114,14 +114,24 @@ const AUDIT_FN = `
   // Emoji count — text content of body
   const text = document.body.innerText || '';
   findings.emojiCount = (text.match(emojiRe) || []).length;
-  // Contrast sampling — 30 random text-bearing leaf elements
+  // Contrast sampling — 30 deterministic, evenly-spaced text-bearing leaf elements.
+  // Was previously randomized (sort(() => 0.5 - Math.random())) which produced
+  // wildly different scores between runs (Lesson: audit variance vs real regression).
+  // Now: pick 30 evenly across the leaves array — same DOM produces same sample.
   const leaves = [...all].filter(el => {
     if (!el.textContent || !el.textContent.trim()) return false;
     if (el.children.length > 0) return false;
     if (el.offsetWidth === 0 || el.offsetHeight === 0) return false;
     return true;
   });
-  const sample = leaves.sort(() => 0.5 - Math.random()).slice(0, 30);
+  let sample;
+  if (leaves.length <= 30) {
+    sample = leaves;
+  } else {
+    sample = [];
+    const stride = leaves.length / 30;
+    for (let i = 0; i < 30; i++) sample.push(leaves[Math.floor(i * stride)]);
+  }
   const parseRgb = s => {
     const m = s.match(/(\\d+(\\.\\d+)?)/g);
     if (!m) return null;
@@ -210,10 +220,16 @@ async function captureCombo(context, url, theme, viewport, outPath) {
   await page.setViewportSize(viewport);
   let nav = { ok: false, status: 0, error: null };
   try {
-    const resp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+    const resp = await page.goto(url, { waitUntil: 'load', timeout: 30000 });
     nav.status = resp ? resp.status() : 0;
     nav.ok = resp && resp.ok();
-    // Let CSS settle
+    // Wait for async data fetches / dashboard rendering to settle (Lesson: domcontentloaded
+    // alone is insufficient for tools with inline-JS dashboards that fetch GA4/Cloudflare data).
+    try {
+      await page.waitForLoadState('networkidle', { timeout: 5000 });
+    } catch {
+      // Connection never went fully idle (long-poll / streaming) — accept what we have.
+    }
     await page.waitForTimeout(800);
   } catch (e) {
     nav.error = String(e.message || e);
