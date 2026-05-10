@@ -2457,18 +2457,20 @@ body.cmd-fs-locked { overflow: hidden; }
 /* Hide theme toggle on cmd homepage — we own the look here, no dark/light */
 body.cmd-v2-home-page .bb-theme-toggle { display: none !important; }
 
-/* DESK BACKGROUND — warm aged-plastic desk, dark CRT sits on it like real hardware */
+/* DESK BACKGROUND — plastic-grey 90s chassis, dark CRT sits on it like real hardware
+   (cream #D9D1B5 was the v2.1 colour; switched to plastic-grey #9E9890 on 10 May 2026
+   per Sush — "darker plastic grey instead of yellow, same dots") */
 body.cmd-v2-home-page {
   background:
-    radial-gradient(circle, rgba(140, 90, 50, 0.20) 1px, transparent 1.8px) 0 0 / 36px 36px,
-    radial-gradient(ellipse 90% 60% at 50% 35%, rgba(255, 230, 180, 0.45) 0%, transparent 65%),
-    #D9D1B5 !important;
+    radial-gradient(circle, rgba(60, 55, 50, 0.22) 1px, transparent 1.8px) 0 0 / 36px 36px,
+    radial-gradient(ellipse 90% 60% at 50% 35%, rgba(255, 230, 180, 0.20) 0%, transparent 65%),
+    #9E9890 !important;
 }
 body.cmd-v2-home-page::before {
   background: repeating-linear-gradient(
     to bottom,
-    rgba(120, 80, 40, 0.04) 0,
-    rgba(120, 80, 40, 0.04) 1px,
+    rgba(40, 35, 30, 0.05) 0,
+    rgba(40, 35, 30, 0.05) 1px,
     transparent 1px, transparent 4px
   );
 }
