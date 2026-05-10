@@ -2908,4 +2908,12 @@
   background: var(--tint);
   width: var(--bar-w, 0%);
 }
+.siteana-dist-bar[style*="--tint"] {
+  background: var(--tint);
+  width: var(--bar-w, 0%);
+}
+.siteana-cat-bar[style*="--tint"] {
+  background: var(--tint);
+  width: var(--bar-w, 0%);
+}
 

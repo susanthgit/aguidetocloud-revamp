@@ -964,7 +964,7 @@
       var pct = Math.round((b.count / max) * 100);
       return '<div class="siteana-dist-row">'
         + '<span class="siteana-dist-label" style="--tint:' + b.color + '">' + b.label + '</span>'
-        + '<div class="siteana-dist-bar-wrap"><div class="siteana-dist-bar" style="width:' + pct + '%;background:' + b.color + '"></div></div>'
+        + '<div class="siteana-dist-bar-wrap"><div class="siteana-dist-bar" style="--bar-w:' + pct + '%;--tint:' + b.color + '"></div></div>'
         + '<span class="siteana-dist-count">' + b.count + ' queries</span>'
         + '</div>';
     }).join('');
@@ -1029,7 +1029,7 @@
       var color = CAT_COLORS[cat] || '#64748B';
       return '<div class="siteana-cat-row">'
         + '<span class="siteana-cat-label" style="--tint:' + color + '">' + esc(label) + '</span>'
-        + '<div class="siteana-cat-bar-wrap"><div class="siteana-cat-bar" style="width:' + pct + '%;background:' + color + '"></div></div>'
+        + '<div class="siteana-cat-bar-wrap"><div class="siteana-cat-bar" style="--bar-w:' + pct + '%;--tint:' + color + '"></div></div>'
         + '<span class="siteana-cat-views">' + roundK(catViews[cat]) + '</span>'
         + '</div>';
     }).join('');
