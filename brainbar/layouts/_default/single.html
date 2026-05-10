@@ -153,6 +153,12 @@
     {{ with .Params.terms.old_names }}
       <p class="bb-entry-formerly">{{ delimit . " · " }}</p>
     {{ end }}
+    {{ with .Params.terms.aliases }}
+      {{ $aliases := . }}
+      <p class="bb-aliases bb-aliases-stamp">
+        {{ range $i, $a := $aliases }}<code>/{{ $a }}</code>{{ if (lt (add $i 1) (len $aliases)) }}<span class="bb-alias-sep"> · </span>{{ end }}{{ end }}
+      </p>
+    {{ end }}
   </header>
 
   {{/* Voice card — only if there's a mascot OR a spicy sush_take */}}
@@ -222,10 +228,9 @@
   {{ end }}
 
   {{ with .Params.terms.aliases }}
-    {{ $aliases := . }}
-    <p class="bb-aliases">
-      {{ range $i, $a := $aliases }}<code>/{{ $a }}</code>{{ if (lt (add $i 1) (len $aliases)) }}<span class="bb-alias-sep"> · </span>{{ end }}{{ end }}
-    </p>
+    {{/* Wave B: aliases moved up into the header as a rebrand-stamp.
+         Old footer location intentionally left empty — keeping the comment
+         here so future edits don't accidentally re-add the duplicate. */}}
   {{ end }}
 
   <p class="bb-verified" title="microsoft renames things often — this entry was last fact-checked on the date below.">

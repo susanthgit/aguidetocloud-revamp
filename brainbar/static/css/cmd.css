@@ -3052,3 +3052,132 @@ body.cmd-v2-home-page .bb-brand-name { font-weight: 700; }
     font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
   }
 }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   cmd Wave B — entry-page rebrand stamp + /all/ kind-chip nav (Sun 10 May 2026)
+   - Item 8: Aliases moved up into header — tighten spacing as a rebrand-stamp.
+             Meta pills slightly tightened on phones.
+   - Item 9: /all/ kind-chip nav — sticky-top, horizontal scroll on phone,
+             anchor-jumps to each kind section. First chip is ↑ top so phone
+             users always have a quick return path.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* — Item 8a: Aliases as rebrand-stamp inside the entry header.
+     Default .bb-aliases had margin-top var(--s-8) (sat at end of article);
+     the -stamp modifier tightens it to live next to formerly: */
+.bb-aliases.bb-aliases-stamp {
+  margin: var(--s-2) 0 0;
+  font-size: var(--t-xs);
+}
+.bb-aliases.bb-aliases-stamp::before {
+  content: "# also reachable: ";
+  color: var(--text-dim);
+}
+.bb-aliases.bb-aliases-stamp code {
+  /* Slightly less prominent than the body — they're a navigational stamp,
+     not a primary CTA. */
+  background: transparent;
+  padding: 0;
+  border-bottom: 1px dotted transparent;
+  transition: border-color 120ms ease-out;
+}
+.bb-aliases.bb-aliases-stamp code:hover {
+  border-bottom-color: var(--accent-dim);
+}
+
+/* — Item 8b: Tighten meta pills + formerly on phones. The [ product ] pills
+     have a margin-right: var(--s-3) which packs tight on 320px viewports. */
+@media (max-width: 480px) {
+  .bb-pill-bracket { margin-right: var(--s-2); font-size: var(--t-xs); }
+  .bb-entry-formerly { font-size: var(--t-xs); }
+  .bb-aliases.bb-aliases-stamp { font-size: 11px; line-height: 1.6; }
+}
+
+/* — Item 9: /all/ kind-chip nav — sticky under the cosmos-bar.
+     Renders as a row of bracket-style chips with kind name + count badge.
+     Anchors to #kind-product, #kind-portal, etc. */
+.bb-kind-chips {
+  position: sticky;
+  top: var(--cosmos-bar-h, 36px);
+  z-index: 50;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--s-2);
+  padding: var(--s-3) 0;
+  margin: 0 0 var(--s-6);
+  background: var(--bg);
+  background: linear-gradient(to bottom, var(--bg) 70%, rgba(0,0,0,0));
+  border-bottom: 1px dashed var(--border);
+  /* Horizontal scroll on phones — chips slide rather than wrap so the strip
+     stays one-line tall under the cosmos-bar. */
+  overflow-x: auto;
+  overflow-y: visible;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+.bb-kind-chips::-webkit-scrollbar { height: 4px; }
+.bb-kind-chips::-webkit-scrollbar-track { background: transparent; }
+.bb-kind-chips::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.bb-kind-chip {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  color: var(--text-secondary);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 120ms ease-out, border-color 120ms ease-out, background 120ms ease-out;
+}
+.bb-kind-chip::before { content: "["; color: var(--text-dim); margin-right: 2px; }
+.bb-kind-chip::after  { content: "]"; color: var(--text-dim); margin-left: 2px; }
+.bb-kind-chip:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--surface-hover, var(--surface));
+}
+.bb-kind-chip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.bb-kind-chip-name { color: inherit; }
+.bb-kind-chip-count {
+  color: var(--text-dim);
+  font-size: 10px;
+  padding: 0 4px;
+  border-radius: 2px;
+  background: rgba(127, 127, 127, 0.12);
+}
+/* "↑ top" chip — slightly different to read as nav-action vs filter */
+.bb-kind-chip-top {
+  color: var(--accent);
+  font-weight: 600;
+}
+.bb-kind-chip-top::before { content: ""; margin: 0; }
+.bb-kind-chip-top::after  { content: ""; margin: 0; }
+
+/* — Item 9b: anchor-jump scroll-margin so target sections don't hide under
+     the sticky cosmos-bar + chip strip when navigated to via #kind-x. */
+.bb-entry section.bb-section[id^="kind-"] {
+  scroll-margin-top: calc(var(--cosmos-bar-h, 36px) + 56px);
+}
+#cmd-all-top { scroll-margin-top: calc(var(--cosmos-bar-h, 36px) + 8px); }
+
+/* Light-mode tweaks (cmd's inner pages flip light/dark via cookie) */
+[data-theme="light"] .bb-kind-chips {
+  background: linear-gradient(to bottom, var(--bg) 70%, rgba(255,255,255,0));
+}
+
+@media (max-width: 480px) {
+  .bb-kind-chips { gap: 6px; padding: 8px 0; }
+  .bb-kind-chip { padding: 4px 8px; font-size: 11px; }
+}

@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article class="bb-entry">
+<article class="bb-entry" id="cmd-all-top">
 
   <header class="bb-entry-header">
     <p class="bb-entry-prompt"><code>ls</code></p>
@@ -15,13 +15,33 @@
   {{ $entries := (index hugo.Data "cmd_entries").entries }}
   {{ $kinds := slice "product" "portal" "feature" "license" "cert" "tool" "acronym-only" "disambiguation" }}
 
+  {{/* Wave B: kind-chip nav — sticky-top, anchor-jumps to each section.
+       First chip is "↑ top" so phone users always have a quick return. */}}
+  <nav class="bb-kind-chips" aria-label="jump to a kind">
+    <a href="#cmd-all-top" class="bb-kind-chip bb-kind-chip-top" aria-label="back to top">
+      <span class="bb-kind-chip-name">↑ top</span>
+    </a>
+    {{ range $kind := $kinds }}
+      {{ $matched := slice }}
+      {{ range $entries }}
+        {{ if eq .kind $kind }}{{ $matched = $matched | append . }}{{ end }}
+      {{ end }}
+      {{ if gt (len $matched) 0 }}
+        <a href="#kind-{{ $kind }}" class="bb-kind-chip">
+          <span class="bb-kind-chip-name">{{ $kind | humanize | lower }}</span>
+          <span class="bb-kind-chip-count">{{ len $matched }}</span>
+        </a>
+      {{ end }}
+    {{ end }}
+  </nav>
+
   {{ range $kind := $kinds }}
     {{ $matched := slice }}
     {{ range $entries }}
       {{ if eq .kind $kind }}{{ $matched = $matched | append . }}{{ end }}
     {{ end }}
     {{ if gt (len $matched) 0 }}
-      <section class="bb-section">
+      <section class="bb-section" id="kind-{{ $kind }}">
         <h2 class="bb-section-title">// {{ $kind | humanize | lower }} <span style="color: var(--text-dim); font-weight: 400;">({{ len $matched }})</span></h2>
         <ul class="bb-catalogue">
           {{ range (sort $matched "slug") }}
