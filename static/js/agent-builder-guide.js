@@ -74,13 +74,13 @@ if(wizEval)wizEval.addEventListener('click',function(){
   else if(data.indexOf('sharepoint')!==-1||data.indexOf('files')!==-1)tier='paygo';
   if(audience!=='me'&&audience!==''&&tier==='free')tier='paygo';
   if(reasons.length>0){
-    html+='<h4 style="color:#FCA5A5">This needs Copilot Studio</h4>';
+    html+='<h4 class="abguide-state-error">This needs Copilot Studio</h4>';
     html+='<ul>'+reasons.map(function(r){return '<li>'+esc(r)+'</li>';}).join('')+'</ul>';
     html+='<p><button class="abguide-tab-link" onclick="abguideJump(\'tips\',\'graduate\')">See Graduate checklist</button></p>';
   }else{
-    html+='<h4 style="color:#6EE7B7">Agent Builder can handle this!</h4>';
+    html+='<h4 class="abguide-state-success">Agent Builder can handle this!</h4>';
     html+='<p><strong>Minimum licence:</strong> <span class="abguide-detail-badge abguide-detail-badge--'+tier+'">'+esc(TIER_NAMES[tier])+'</span></p>';
-    if(tier==='paid')html+='<p style="color:#FCD34D">Email/Teams require per-user licence &mdash; <button class="abguide-tab-link" onclick="abguideJump(\'matrix\')">see Matrix</button></p>';
+    if(tier==='paid')html+='<p class="abguide-state-warning">Email/Teams require per-user licence &mdash; <button class="abguide-tab-link" onclick="abguideJump(\'matrix\')">see Matrix</button></p>';
     if(tier==='paygo')html+='<p>Admin needs pay-as-you-go billing &mdash; <button class="abguide-tab-link" onclick="abguideJump(\'tips\')">see Admin Prerequisites</button></p>';
     html+='<p><button class="abguide-evaluate-btn" onclick="abguideExportPlan()">Export My Agent Plan</button></p>';
   }
@@ -108,7 +108,7 @@ if(audience!=='me'&&audience!==''&&tier==='free')tier='paygo';
   w.document.write('<tr><td>Minimum Licence</td><td><span class="badge badge-'+tier+'">'+esc(TIER_NAMES[tier])+'</span></td></tr>');
   w.document.write('</table>');
   w.document.write('<h2>Next Steps</h2><ol><li>Confirm licence tier with your IT admin</li><li>Prepare your knowledge source content</li><li>Write agent instructions (use our <a href="https://www.aguidetocloud.com/agent-instructions/">Instruction Builder</a>)</li><li>Build in Agent Builder at microsoft365.com/chat</li><li>Test with 2-3 colleagues before sharing widely</li></ol>');
-  w.document.write('<p style="color:var(--text-muted);font-size:0.8rem">Generated '+new Date().toLocaleDateString()+' &middot; aguidetocloud.com</p>');
+  w.document.write('<p class="abguide-print-footer">Generated '+new Date().toLocaleDateString()+' &middot; aguidetocloud.com</p>');
   w.document.write('</body></html>');w.document.close();
 };
 
@@ -129,11 +129,11 @@ card.addEventListener('click',function(){
     var slug=title.toLowerCase().replace(/\s+/g,'-');
     history.replaceState(null,'','#scenarios/'+slug);
     var html='<h4>'+icon+' '+esc(title)+'</h4>';
-    if(v==='yes'){html+='<p style="color:#6EE7B7;font-weight:600">Yes &mdash; you can build this!</p><p><span class="abguide-detail-badge abguide-detail-badge--'+r+'">'+esc(TIER_NAMES[r])+'</span></p>';}
-    else if(v==='partial'){html+='<p style="color:#FCD34D;font-weight:600">Partially &mdash; with limitations</p><p><span class="abguide-detail-badge abguide-detail-badge--'+r+'">'+esc(TIER_NAMES[r])+'</span></p>';if(partial)html+='<p><strong>Limitation:</strong> '+esc(partial)+'</p>';}
-    else{html+='<p style="color:#FCA5A5;font-weight:600">Not possible in Agent Builder</p>';if(studio)html+='<p>'+esc(studio)+'</p>';html+='<p><a href="/copilot-studio/" style="color:#00A4EF">Copilot Studio Companion</a></p>';}
+    if(v==='yes'){html+='<p class="abguide-state-success abguide-bold">Yes &mdash; you can build this!</p><p><span class="abguide-detail-badge abguide-detail-badge--'+r+'">'+esc(TIER_NAMES[r])+'</span></p>';}
+    else if(v==='partial'){html+='<p class="abguide-state-warning abguide-bold">Partially &mdash; with limitations</p><p><span class="abguide-detail-badge abguide-detail-badge--'+r+'">'+esc(TIER_NAMES[r])+'</span></p>';if(partial)html+='<p><strong>Limitation:</strong> '+esc(partial)+'</p>';}
+    else{html+='<p class="abguide-state-error abguide-bold">Not possible in Agent Builder</p>';if(studio)html+='<p>'+esc(studio)+'</p>';html+='<p><a href="/copilot-studio/" class="abguide-state-info">Copilot Studio Companion</a></p>';}
     if(k.length>0)html+='<p><strong>Knowledge:</strong> '+k.map(function(x){return esc(x.replace(/_/g,' '));}).join(', ')+' &mdash; <button class="abguide-tab-link" onclick="abguideJump(\'knowledge\')">View limits</button></p>';
-    if(tip)html+='<p style="color:rgba(255,255,255,0.55)">'+esc(tip)+'</p>';
+    if(tip)html+='<p class="abguide-muted">'+esc(tip)+'</p>';
     if(inst||starters.length>0){
       html+='<div class="abguide-playbook"><h5>Starter Playbook</h5>';
       if(inst){html+='<h5>Sample Instructions</h5><div class="abguide-playbook-code"><button class="abguide-copy-btn" onclick="abguideCopy(this)">Copy</button>'+esc(inst)+'</div>';}
@@ -183,12 +183,12 @@ function renderSimPreview(){
   var srcs=Array.from(document.querySelectorAll('input[name="sim-src"]:checked')).map(function(c){return c.value;});
   var starters=Array.from(document.querySelectorAll('.sim-starter')).map(function(i){return i.value;}).filter(Boolean);
   var prev=document.getElementById('sim-preview');
-  var html='<h4 style="color:#00A4EF">'+esc(name)+'</h4>';
-  html+='<p style="font-size:0.85rem;color:rgba(255,255,255,0.55)">'+esc(inst)+(inst.length>=200?'...':'')+'</p>';
+  var html='<h4 class="abguide-state-info">'+esc(name)+'</h4>';
+  html+='<p class="abguide-muted abguide-small">'+esc(inst)+(inst.length>=200?'...':'')+'</p>';
   html+='<p><strong>Sources:</strong> '+(srcs.length?srcs.join(', '):'None selected')+'</p>';
   if(starters.length){html+='<p><strong>Starters:</strong></p><div class="abguide-playbook-chips">'+starters.map(function(s){return '<span class="abguide-playbook-chip">'+esc(s)+'</span>';}).join('')+'</div>';}
-  html+='<p style="color:#6EE7B7;margin-top:1rem">Your agent is ready to build in Agent Builder!</p>';
-  html+='<p><a href="https://microsoft365.com/chat" target="_blank" style="color:#00A4EF">Open Agent Builder &rarr;</a></p>';
+  html+='<p class="abguide-state-success abguide-mt">Your agent is ready to build in Agent Builder!</p>';
+  html+='<p><a href="https://microsoft365.com/chat" target="_blank" class="abguide-state-info">Open Agent Builder &rarr;</a></p>';
   prev.innerHTML=html;
 }
 
@@ -228,9 +228,9 @@ document.querySelectorAll('input[name="rec-where"]').forEach(function(r){
   r.addEventListener('change',function(){
     var rec=REC[r.value];if(!rec)return;
     var el=document.getElementById('rec-result');
-    var html='<h4 style="color:#6EE7B7">'+esc(rec.title)+'</h4><p>'+esc(rec.desc)+'</p>';
+    var html='<h4 class="abguide-state-success">'+esc(rec.title)+'</h4><p>'+esc(rec.desc)+'</p>';
     html+='<p><strong>Licence needed:</strong> <span class="abguide-detail-badge abguide-detail-badge--'+rec.tier+'">'+esc(TIER_NAMES[rec.tier])+'</span></p>';
-    html+='<p style="color:rgba(255,255,255,0.55)">'+esc(rec.tip)+'</p>';
+    html+='<p class="abguide-muted">'+esc(rec.tip)+'</p>';
     el.innerHTML=html;el.style.display='block';
     try{localStorage.setItem('abg-progress-knowledge','1');}catch(e){}updateProgress();
   });
@@ -285,9 +285,9 @@ if(hcBtn)hcBtn.addEventListener('click',function(){
   checks.forEach(function(c){if(c.test)score+=c.weight;});
   var color=score>=80?'#6EE7B7':score>=50?'#FCD34D':'#FCA5A5';
   var grade=score>=80?'Excellent':score>=60?'Good':score>=40?'Needs Work':'Weak';
-  var html='<div class="abguide-hc-score" style="color:'+color+'">'+score+'/100 &mdash; '+grade+'</div>';
-  html+='<div class="abguide-hc-bar"><div class="abguide-hc-fill" style="width:'+score+'%;background:'+color+'"></div></div>';
-  html+='<p style="font-size:0.82rem;color:rgba(255,255,255,0.45)">'+text.length+' characters</p>';
+  var html='<div class="abguide-hc-score" style="--tint:'+color+'">'+score+'/100 &mdash; '+grade+'</div>';
+  html+='<div class="abguide-hc-bar"><div class="abguide-hc-fill" style="--bar-w:'+score+'%;--tint:'+color+'"></div></div>';
+  html+='<p class="abguide-muted-soft abguide-small">'+text.length+' characters</p>';
   html+='<div class="abguide-hc-checks">';
   checks.forEach(function(c){html+='<div class="abguide-hc-check abguide-hc-check--'+(c.test?'pass':'fail')+'">'+(c.test?'&#10003;':'&#10007;')+' '+esc(c.name)+' <span style="opacity:0.5">('+c.weight+'pts)</span></div>';});
   html+='</div>';

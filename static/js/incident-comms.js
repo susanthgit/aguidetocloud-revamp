@@ -160,9 +160,9 @@
         subjectHtml +
         '<div class="icomms-section-body">' + bodyHtml + '</div>' +
         '<div class="icomms-section-actions">' +
-          '<button class="icomms-copy-btn" data-text="' + esc(copyBody) + '" aria-label="Copy ' + esc(phase) + '">📋 Copy</button>' +
+          '<button class="icomms-copy-btn" data-text="' + esc(copyBody) + '" aria-label="Copy ' + esc(phase) + '">Copy</button>' +
           (subjectLine
-            ? '<button class="icomms-mailto-btn" data-subject="' + esc(subjectLine) + '" data-body="' + esc(copyBody) + '" aria-label="Email ' + esc(phase) + '">✉️ Email</button>'
+            ? '<button class="icomms-mailto-btn" data-subject="' + esc(subjectLine) + '" data-body="' + esc(copyBody) + '" aria-label="Email ' + esc(phase) + '">Email</button>'
             : '') +
         '</div>' +
       '</div>'
@@ -214,7 +214,7 @@
       html += sectionCard('🎨 Creative Communication', block.subject || '', block.creative);
     }
 
-    html += '<div class="icomms-copy-all"><button class="icomms-copy-all-btn" id="copy-all-btn">📋 Copy All Phases</button></div>';
+    html += '<div class="icomms-copy-all"><button class="icomms-copy-all-btn" id="copy-all-btn">Copy All Phases</button></div>';
 
     out.innerHTML = html;
 

@@ -79,7 +79,7 @@
 <details class="abguide-simulator" id="simulator">
 <summary class="abguide-sim-toggle">Try the Agent Builder Simulator</summary>
 <div class="abguide-sim-body">
-<p style="color:rgba(255,255,255,0.55);margin-bottom:1rem">Experience the Agent Builder workflow without leaving this page.</p>
+<p class="abguide-muted abguide-mb">Experience the Agent Builder workflow without leaving this page.</p>
 <div class="abguide-sim-steps">
 <div class="abguide-sim-step active" data-sim="1"><label>Agent Name</label><input type="text" id="sim-name" class="abguide-sim-input" placeholder="e.g. HR Policy Bot" aria-label="Agent name"></div>
 <div class="abguide-sim-step" data-sim="2"><div class="abguide-sim-label-row"><label for="sim-instructions">Instructions</label><span id="sim-char-count" class="abguide-sim-counter">0 / 8,000</span></div><textarea id="sim-instructions" class="abguide-sim-textarea" placeholder="Describe what your agent should do..." rows="6" maxlength="8000" aria-label="Agent instructions"></textarea></div>
@@ -111,12 +111,12 @@
 <h3 style="margin:2rem 0 1rem">Full Capability Matrix</h3>
 <p class="abguide-verified">Last verified: April 2026 &middot; <a href="https://learn.microsoft.com/microsoft-365/copilot/extensibility/knowledge-sources" target="_blank" rel="noopener">MS Learn source</a></p>
 <div class="abguide-table-wrap"><table class="abguide-matrix-table">
-<thead><tr><th>Capability</th><th><span class="abguide-col-badge" style="background:#6B7280">Free</span></th><th><span class="abguide-col-badge" style="background:#F59E0B">PAYG</span></th><th><span class="abguide-col-badge" style="background:#10B981">Licensed</span></th><th>Notes</th></tr></thead>
+<thead><tr><th>Capability</th><th><span class="abguide-col-badge abguide-col-badge-free">Free</span></th><th><span class="abguide-col-badge abguide-col-badge-paygo">PAYG</span></th><th><span class="abguide-col-badge abguide-col-badge-paid">Licensed</span></th><th>Notes</th></tr></thead>
 <tbody>{{ range $lic.capabilities }}<tr><td><strong>{{ .name }}</strong><br><span class="abguide-cap-desc">{{ .description }}</span></td><td class="abguide-cell">{{ if .free }}&#10003;{{ else }}&#10007;{{ end }}</td><td class="abguide-cell">{{ if .paygo }}&#10003;{{ else }}&#10007;{{ end }}</td><td class="abguide-cell">{{ if .paid }}&#10003;{{ else }}&#10007;{{ end }}</td><td class="abguide-note">{{ with .note }}{{ . }}{{ end }}</td></tr>{{ end }}</tbody>
 </table></div>
 <h3 style="margin:2rem 0 1rem">Agent Builder vs Copilot Studio</h3>
 <div class="abguide-table-wrap"><table class="abguide-compare-table">
-<thead><tr><th>Feature</th><th style="color:#00A4EF">Agent Builder</th><th style="color:#7C3AED">Copilot Studio</th></tr></thead>
+<thead><tr><th>Feature</th><th class="abguide-state-info">Agent Builder</th><th class="abguide-state-cps">Copilot Studio</th></tr></thead>
 <tbody>{{ range $cmp.features }}<tr><td><strong>{{ .feature }}</strong></td><td class="{{ if eq .winner "builder" }}abguide-winner{{ end }}">{{ .agent_builder }}</td><td class="{{ if eq .winner "studio" }}abguide-winner{{ end }}">{{ .copilot_studio }}</td></tr>{{ end }}</tbody>
 </table></div>
 <h3 style="margin:2rem 0 1rem">{{ $tips.cost_model.title }}</h3>
@@ -148,9 +148,9 @@
 </div></details>{{ end }}
 </div>
 <div class="abguide-panel" id="panel-tips" role="tabpanel" aria-labelledby="tab-tips">
-<div class="abguide-admin-prereqs"><h3>{{ $tips.admin_prereqs.title }}</h3><p style="color:rgba(255,255,255,0.55);margin-bottom:1rem">{{ $tips.admin_prereqs.description }}</p>
+<div class="abguide-admin-prereqs"><h3>{{ $tips.admin_prereqs.title }}</h3><p class="abguide-muted abguide-mb">{{ $tips.admin_prereqs.description }}</p>
 <div class="abguide-prereq-grid">{{ range $tips.admin_prereqs.items }}<div class="abguide-prereq-card{{ if .blocker }} abguide-prereq--blocker{{ end }}"><strong>{{ .item }}{{ if .blocker }} <span class="abguide-prereq-blocker">BLOCKER</span>{{ end }}</strong><p>{{ .what }}</p><span class="abguide-prereq-admin">{{ .admin_action }}</span></div>{{ end }}</div></div>
-<div class="abguide-admin-email" style="margin-top:2rem"><h3>Admin Email Generator</h3><p style="color:rgba(255,255,255,0.55);margin-bottom:0.75rem">Generate a professional email to send your IT admin.</p>
+<div class="abguide-admin-email" style="margin-top:2rem"><h3>Admin Email Generator</h3><p class="abguide-muted abguide-mb-soft">Generate a professional email to send your IT admin.</p>
 <div class="abguide-email-form">
 <div class="abguide-form-field">
   <label for="email-need">What do you need?</label>
@@ -167,7 +167,7 @@
 <button class="abguide-evaluate-btn" id="gen-email-btn">Generate Email</button>
 <div id="email-output" class="abguide-playbook-code" style="display:none;margin-top:0.75rem"><button class="abguide-copy-btn" onclick="abguideCopy(this)">Copy</button><span id="email-text"></span></div>
 </div></div>
-<div class="abguide-instgen" style="margin-top:2rem"><h3>Quick Instruction Generator</h3><p style="color:rgba(255,255,255,0.55);margin-bottom:0.75rem">Generate ready-to-paste agent instructions.</p>
+<div class="abguide-instgen" style="margin-top:2rem"><h3>Quick Instruction Generator</h3><p class="abguide-muted abguide-mb-soft">Generate ready-to-paste agent instructions.</p>
 <div class="abguide-instgen-form">
 <div class="abguide-form-field">
   <label for="ig-purpose">Agent purpose</label>
@@ -190,13 +190,13 @@
 <button class="abguide-evaluate-btn" id="gen-inst-btn">Generate Instructions</button>
 <div id="ig-output" class="abguide-playbook-code" style="display:none;margin-top:0.75rem"><button class="abguide-copy-btn" onclick="abguideCopy(this)">Copy</button><span id="ig-text"></span></div>
 </div></div>
-<div class="abguide-healthcheck" style="margin-top:2rem"><h3>Agent Health Checker</h3><p style="color:rgba(255,255,255,0.55);margin-bottom:0.75rem">Paste your instructions and get a quality score.</p>
+<div class="abguide-healthcheck" style="margin-top:2rem"><h3>Agent Health Checker</h3><p class="abguide-muted abguide-mb-soft">Paste your instructions and get a quality score.</p>
 <textarea id="hc-input" class="abguide-sim-textarea" rows="5" placeholder="Paste your agent instructions here..." aria-label="Instructions to check"></textarea>
 <button class="abguide-evaluate-btn" id="hc-btn" style="margin-top:0.5rem">Check Health</button>
 <div id="hc-result" class="abguide-hc-result" style="display:none" aria-live="polite"></div></div>
 <div class="abguide-highlight-card" style="--highlight:#00A4EF;margin-top:2rem"><h3>{{ $tips.caps_technique.title }}</h3><p>{{ $tips.caps_technique.description }}</p>
 <div class="abguide-caps-parts">{{ range $tips.caps_technique.parts }}<div class="abguide-caps-part"><strong>{{ .name }}</strong><p>{{ .description }}</p><pre class="abguide-code">{{ .example }}</pre></div>{{ end }}</div>
-<p style="color:rgba(255,255,255,0.5);font-size:0.82rem;margin-top:1rem">{{ $tips.caps_technique.why_it_works }}</p></div>
+<p class="abguide-muted abguide-small abguide-mt">{{ $tips.caps_technique.why_it_works }}</p></div>
 <h3 style="margin:2rem 0 1rem">Sharing &amp; Privacy Rules</h3>
 <div class="abguide-privacy-grid">{{ range $tips.privacy_rules }}<div class="abguide-privacy-card"><span class="abguide-privacy-icon">{{ .icon }}</span><strong>{{ .rule }}</strong><p>{{ .detail }}</p></div>{{ end }}</div>
 <h3 style="margin:2rem 0 1rem" id="troubleshoot">What's Going Wrong?</h3>
@@ -216,14 +216,14 @@
 </div>
 <div class="abguide-panel" id="panel-community" role="tabpanel" aria-labelledby="tab-community">
 <h3 style="margin-bottom:1rem">Agent Gallery &mdash; What Others Built</h3>
-<p style="color:rgba(255,255,255,0.55);margin-bottom:1rem">Curated agent ideas from real IT admins. Click to see instructions.</p>
+<p class="abguide-muted abguide-mb">Curated agent ideas from real IT admins. Click to see instructions.</p>
 <div class="abguide-gallery-grid">
 {{ range $gallery.agents }}<details class="abguide-gallery-card">
 <summary><strong>{{ .name }}</strong><span class="abguide-gallery-dept">{{ .department }}</span><span class="abguide-gallery-tier">{{ .tier }}</span></summary>
 <div class="abguide-gallery-body"><p>{{ .description }}</p>
 <p><strong>Knowledge:</strong> {{ delimit .knowledge ", " }}</p>
 <div class="abguide-playbook-code"><button class="abguide-copy-btn" onclick="abguideCopy(this)">Copy</button>{{ .instructions_preview }}</div>
-<p style="font-size:0.75rem;color:rgba(255,255,255,0.35);margin-top:0.5rem">By: {{ .author }}</p>
+<p class="abguide-tiny-muted abguide-mt-soft">By: {{ .author }}</p>
 </div></details>{{ end }}
 </div>
 <h3 style="margin:2rem 0 1rem">Frequently Asked Questions</h3>
