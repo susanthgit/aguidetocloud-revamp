@@ -364,14 +364,8 @@
   background: var(--accent);
 }
 .cmm-vl-other {
-  background: var(--warning);
-  background-image: repeating-linear-gradient(
-    90deg,
-    var(--warning) 0px,
-    var(--warning) 6px,
-    transparent 6px,
-    transparent 10px
-  );
+  background: var(--text-tertiary);
+  opacity: 0.7;
 }
 
 /* Highlight states */
@@ -483,7 +477,7 @@
 /* Provider group labels in models column */
 .cmm-vis-provider-label {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-tertiary);
   text-transform: uppercase;
   letter-spacing: 0.8px;
@@ -496,7 +490,7 @@
 /* Category group labels in features column */
 .cmm-vis-category-label {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-tertiary);
   text-transform: uppercase;
   letter-spacing: 0.8px;

@@ -530,7 +530,7 @@
 
       /* Benefit */
       if (p.benefit) {
-        html += '<div class="cmm-pattern-benefit"><span class="cmm-pattern-benefit-text">💡 ' + esc(p.benefit) + '</span></div>';
+        html += '<div class="cmm-pattern-benefit"><span class="cmm-pattern-benefit-text">' + esc(p.benefit) + '</span></div>';
       }
 
       /* Features using this pattern */
@@ -889,10 +889,10 @@
 
   function speedLabel(s) {
     switch (s) {
-      case 'very-fast': return '⚡ Very Fast';
-      case 'fast': return '🟢 Fast';
-      case 'medium': return '🟡 Medium';
-      case 'slow': return '🔴 Deliberate';
+      case 'very-fast': return 'Very Fast';
+      case 'fast': return 'Fast';
+      case 'medium': return 'Medium';
+      case 'slow': return 'Deliberate';
       default: return s || 'N/A';
     }
   }

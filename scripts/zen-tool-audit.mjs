@@ -94,8 +94,17 @@ const AUDIT_FN = `
     if (el.getAttribute('style') && /background|color/i.test(el.getAttribute('style'))) {
       findings.inlineStyleEls++;
     }
-    // Mobile overflow check (only meaningful at 390 viewport but harmless elsewhere)
-    if (el.getBoundingClientRect && el.getBoundingClientRect().right > vw + 4) findings.mobileOverflowEls++;
+    // Mobile overflow check — only count if NOT inside an intentional overflow-x scroll container
+    if (el.getBoundingClientRect && el.getBoundingClientRect().right > vw + 4) {
+      let cur = el.parentElement;
+      let inScrollContainer = false;
+      while (cur && cur !== document.body) {
+        const pcs = getComputedStyle(cur);
+        if (pcs.overflowX === 'auto' || pcs.overflowX === 'scroll') { inScrollContainer = true; break; }
+        cur = cur.parentElement;
+      }
+      if (!inScrollContainer) findings.mobileOverflowEls++;
+    }
   }
   findings.uniqueColors = palette.size;
   // Emoji count — text content of body
