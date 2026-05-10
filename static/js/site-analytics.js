@@ -653,8 +653,8 @@
       var name = p.path === '/' ? 'Homepage' : p.path.replace(/\//g, ' ').trim();
       return '<div class="siteana-lb-item">'
         + '<span class="siteana-lb-rank">' + (i + 1) + '</span>'
-        + '<span class="siteana-lb-name"><a href="' + esc(p.path) + '" style="color:rgba(255,255,255,0.75);text-decoration:none">' + esc(name) + '</a></span>'
-        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#64748B"></div></div>'
+        + '<span class="siteana-lb-name"><a href="' + esc(p.path) + '" class="siteana-link-muted">' + esc(name) + '</a></span>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar siteana-lb-bar-today" style="width:' + pct + '%"></div></div>'
         + '<span class="siteana-lb-total">' + roundDisplay(p.views) + '</span></div>';
     }).join('');
   }
@@ -670,8 +670,8 @@
       if (name.length > 60) name = name.slice(0, 57) + '...';
       return '<div class="siteana-lb-item">'
         + '<span class="siteana-lb-rank">' + (i + 1) + '</span>'
-        + '<span class="siteana-lb-name"><a href="' + esc(p.path) + '" style="color:rgba(255,255,255,0.75);text-decoration:none">' + esc(name) + '</a></span>'
-        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#0EA5E9"></div></div>'
+        + '<span class="siteana-lb-name"><a href="' + esc(p.path) + '" class="siteana-link-muted">' + esc(name) + '</a></span>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar siteana-lb-bar-yest" style="width:' + pct + '%"></div></div>'
         + '<span class="siteana-lb-total">' + roundDisplay(p.views) + '</span></div>';
     }).join('');
   }
@@ -741,7 +741,7 @@
       var pct = Math.round((item[valueKey] / max) * 100);
       return '<div class="siteana-lb-item">'
         + '<span class="siteana-lb-name">' + esc(item[labelKey]) + '</span>'
-        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#64748B"></div></div>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar siteana-lb-bar-today" style="width:' + pct + '%"></div></div>'
         + '<span class="siteana-lb-total">' + item[valueKey] + '</span></div>';
     }).join('');
   }
@@ -972,8 +972,8 @@
     // Stats
     var statsHtml = '<div class="siteana-grid-2" style="gap:1rem">';
     if (toolData) {
-      statsHtml += '<div class="siteana-stat" style="background:rgba(255,255,255,0.03)"><span class="siteana-stat-num" style="color:' + info.color + '">' + numFmt(toolData.views) + '</span><span class="siteana-stat-label">Views</span></div>';
-      statsHtml += '<div class="siteana-stat" style="background:rgba(255,255,255,0.03)"><span class="siteana-stat-num" style="color:' + info.color + '">' + numFmt(toolData.users) + '</span><span class="siteana-stat-label">Users</span></div>';
+      statsHtml += '<div class="siteana-stat"><span class="siteana-stat-num" style="color:' + info.color + '">' + numFmt(toolData.views) + '</span><span class="siteana-stat-label">Views</span></div>';
+      statsHtml += '<div class="siteana-stat"><span class="siteana-stat-num" style="color:' + info.color + '">' + numFmt(toolData.users) + '</span><span class="siteana-stat-label">Users</span></div>';
     }
     statsHtml += '</div>';
     // Rank
@@ -1169,14 +1169,14 @@
       var intensity = Math.min(1, d.views / max);
       var alpha = 0.1 + intensity * 0.8;
       var title = d.date + ': ' + numFmt(d.views) + ' views';
-      html += '<div class="siteana-hm-cell" style="background:rgba(100,116,139,' + alpha.toFixed(2) + ')" title="' + esc(title) + '"><span class="siteana-hm-label">' + d.date.slice(8) + '</span></div>';
+      html += '<div class="siteana-hm-cell" style="--hm-alpha:' + Math.round(alpha*100) + '%" title="' + esc(title) + '"><span class="siteana-hm-label">' + d.date.slice(8) + '</span></div>';
     });
     html += '</div>';
     // Legend
     html += '<div class="siteana-hm-legend"><span>Less</span>';
     for (var l = 0; l < 5; l++) {
       var a = 0.1 + (l / 4) * 0.8;
-      html += '<div class="siteana-hm-cell siteana-hm-legend-cell" style="background:rgba(100,116,139,' + a.toFixed(2) + ')"></div>';
+      html += '<div class="siteana-hm-cell siteana-hm-legend-cell" style="--hm-alpha:' + Math.round(a*100) + '%"></div>';
     }
     html += '<span>More</span></div>';
     container.innerHTML = html;
@@ -1417,16 +1417,16 @@
     }
     if (!parts.length) { el.style.display = 'none'; return; }
     el.style.display = '';
-    el.innerHTML = '<div class="siteana-brief-inner" style="border-color:rgba(239,68,68,0.25);background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(239,68,68,0.02))">\uD83C\uDFAC ' + parts.join(' ') + '</div>';
+    el.innerHTML = '<div class="siteana-brief-inner is-error">\uD83C\uDFAC ' + parts.join(' ') + '</div>';
   }
 
   function renderChannelCard(containerId, ch) {
     var el = document.getElementById(containerId);
     if (!el || !ch) return;
     el.innerHTML = '<div class="siteana-yt-stats">'
-      + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + roundDisplay(ch.subscribers) + '</span><span class="siteana-stat-label">Subscribers</span></div>'
-      + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + roundDisplay(ch.totalViews) + '</span><span class="siteana-stat-label">Total Views</span></div>'
-      + '<div class="siteana-stat"><span class="siteana-stat-num" style="color:#EF4444">' + ch.videoCount + '</span><span class="siteana-stat-label">Videos</span></div>'
+      + '<div class="siteana-stat"><span class="siteana-stat-num is-yt">' + roundDisplay(ch.subscribers) + '</span><span class="siteana-stat-label">Subscribers</span></div>'
+      + '<div class="siteana-stat"><span class="siteana-stat-num is-yt">' + roundDisplay(ch.totalViews) + '</span><span class="siteana-stat-label">Total Views</span></div>'
+      + '<div class="siteana-stat"><span class="siteana-stat-num is-yt">' + ch.videoCount + '</span><span class="siteana-stat-label">Videos</span></div>'
       + '</div>';
   }
 
@@ -1483,10 +1483,10 @@
       var engBadge = v.engagement > 5 ? 'siteana-pos-top3' : v.engagement > 3 ? 'siteana-pos-top10' : v.engagement > 1 ? 'siteana-pos-top20' : 'siteana-pos-deep';
       return '<div class="siteana-lb-item" style="cursor:default">'
         + '<span class="siteana-lb-rank">' + (i + 1) + '</span>'
-        + '<div class="siteana-lb-info"><a class="siteana-lb-name" href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.85);text-decoration:none">' + esc(v.title.length > 55 ? v.title.slice(0, 52) + '...' : v.title) + '</a>'
+        + '<div class="siteana-lb-info"><a class="siteana-lb-name siteana-link-soft" href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener">' + esc(v.title.length > 55 ? v.title.slice(0, 52) + '...' : v.title) + '</a>'
         + '<span class="siteana-lb-count">' + numFmt(v.views) + ' views \u00B7 ' + v.viewsPerDay + '/day \u00B7 ' + v.daysSince + 'd old</span></div>'
         + '<span class="siteana-pos-badge ' + engBadge + '">' + v.engagement + '%</span>'
-        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="width:' + pct + '%;background:#EF4444"></div></div>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar siteana-lb-bar-yt" style="width:' + pct + '%"></div></div>'
         + '</div>';
     }).join('');
   }
@@ -1530,7 +1530,7 @@
     card.style.display = '';
     el.innerHTML = analysis.underperformers.map(function(v) {
       return '<div class="siteana-opp-item">'
-        + '<div class="siteana-opp-query"><a href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.85);text-decoration:none">' + esc(v.title) + '</a></div>'
+        + '<div class="siteana-opp-query"><a href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener" class="siteana-link-soft">' + esc(v.title) + '</a></div>'
         + '<div class="siteana-opp-stats">' + numFmt(v.views) + ' views \u00B7 ' + v.viewsPerDay + ' views/day \u00B7 ' + v.daysSince + ' days old</div>'
         + '<div class="siteana-opp-uplift">Consider: update title/thumbnail, create a follow-up, or reshare</div>'
         + '</div>';
@@ -1612,7 +1612,7 @@
     el.innerHTML = videos.slice(0, 10).map(function(v, i) {
       return '<div class="siteana-lb-item" style="cursor:default">'
         + '<span class="siteana-lb-rank">' + (i + 1) + '</span>'
-        + '<span class="siteana-lb-name"><a href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);text-decoration:none">' + esc(v.title.length > 55 ? v.title.slice(0, 52) + '...' : v.title) + '</a></span>'
+        + '<span class="siteana-lb-name"><a href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener" class="siteana-link-muted">' + esc(v.title.length > 55 ? v.title.slice(0, 52) + '...' : v.title) + '</a></span>'
         + '<span class="siteana-lb-total">' + roundDisplay(v.views) + '</span></div>';
     }).join('');
   }
@@ -1737,7 +1737,7 @@
       if (ytDataCache && ytDataCache.mainAnalysis && ytDataCache.mainAnalysis.topByVelocity) {
         var topYt = ytDataCache.mainAnalysis.topByVelocity.slice(0, 5);
         ytEl.innerHTML = topYt.map(function(v, i) {
-          return '<div class="siteana-lb-item"><span class="siteana-lb-rank">' + (i + 1) + '</span><span class="siteana-lb-name"><a href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);text-decoration:none">' + esc(v.title.length > 45 ? v.title.slice(0, 42) + '...' : v.title) + '</a></span><span class="siteana-lb-total">' + v.viewsPerDay + '/d</span></div>';
+          return '<div class="siteana-lb-item"><span class="siteana-lb-rank">' + (i + 1) + '</span><span class="siteana-lb-name"><a href="https://youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener" class="siteana-link-muted">' + esc(v.title.length > 45 ? v.title.slice(0, 42) + '...' : v.title) + '</a></span><span class="siteana-lb-total">' + v.viewsPerDay + '/d</span></div>';
         }).join('');
       } else {
         ytEl.innerHTML = '<p class="siteana-hint">Click YouTube tab first to load data</p>';
@@ -1793,7 +1793,7 @@
     if (siteAudEl && ga4.countries && ga4.sources) {
       var topCountries = ga4.countries.slice(0, 3).map(function(c) { return c.country; }).join(', ');
       var topSource = ga4.sources.length ? ga4.sources[0].source : 'unknown';
-      siteAudEl.innerHTML = '<p style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.6">Top countries: <strong>' + esc(topCountries) + '</strong><br>Primary source: <strong>' + esc(topSource) + '</strong> (' + (ga4.sources.length ? ga4.sources[0].sessions : 0) + ' sessions)<br>Devices: ' + (ga4.devices || []).map(function(d) { return d.device + ' ' + d.users; }).join(', ') + '</p>';
+      siteAudEl.innerHTML = '<p class="siteana-aud-summary">Top countries: <strong>' + esc(topCountries) + '</strong><br>Primary source: <strong>' + esc(topSource) + '</strong> (' + (ga4.sources.length ? ga4.sources[0].sessions : 0) + ' sessions)<br>Devices: ' + (ga4.devices || []).map(function(d) { return d.device + ' ' + d.users; }).join(', ') + '</p>';
     }
 
     // YouTube Audience
@@ -1967,19 +1967,19 @@
     }
     var maxViews = Math.max.apply(null, certs.map(function(c) { return c.views; })) || 1;
     var html = '<table style="width:100%;border-collapse:collapse;font-size:0.85rem">';
-    html += '<thead><tr style="color:rgba(255,255,255,0.4);font-size:0.75rem;text-align:left">';
+    html += '<thead><tr class="siteana-co-thead">';
     html += '<th style="padding:0.5rem 0.75rem">Cert</th><th style="padding:0.5rem 0.75rem">Views</th>';
     html += '<th style="padding:0.5rem 0.75rem">Users</th><th style="padding:0.5rem 0.75rem">Quizzes</th><th style="padding:0.5rem 0.75rem;width:35%"></th></tr></thead><tbody>';
     certs.forEach(function(c, i) {
       var pct = Math.round((c.views / maxViews) * 100);
-      var bg = i === 0 ? 'rgba(0,164,239,0.08)' : 'transparent';
-      html += '<tr style="border-top:1px solid rgba(255,255,255,0.05);background:' + bg + '">';
-      html += '<td style="padding:0.6rem 0.75rem;font-weight:600;color:rgba(255,255,255,0.9);text-transform:uppercase">' + esc(c.code) + '</td>';
-      html += '<td style="padding:0.6rem 0.75rem;color:rgba(255,255,255,0.7)">' + numFmt(c.views) + '</td>';
-      html += '<td style="padding:0.6rem 0.75rem;color:rgba(255,255,255,0.7)">' + numFmt(c.users) + '</td>';
-      html += '<td style="padding:0.6rem 0.75rem;color:' + (c.completions ? '#10B981' : 'rgba(255,255,255,0.3)') + '">' + (c.completions ? numFmt(c.completions) : '—') + '</td>';
-      html += '<td style="padding:0.6rem 0.75rem"><div style="background:rgba(0,164,239,0.15);border-radius:4px;height:8px;overflow:hidden">';
-      html += '<div style="width:' + pct + '%;height:100%;background:#00A4EF;border-radius:4px"></div></div></td>';
+      var rowClass = 'siteana-co-row' + (i === 0 ? ' is-zebra' : '');
+      html += '<tr class="' + rowClass + '">';
+      html += '<td class="siteana-co-cell-code">' + esc(c.code) + '</td>';
+      html += '<td class="siteana-co-cell">' + numFmt(c.views) + '</td>';
+      html += '<td class="siteana-co-cell">' + numFmt(c.users) + '</td>';
+      html += '<td class="siteana-co-cell siteana-co-cell-comp ' + (c.completions ? 'has-data' : 'no-data') + '">' + (c.completions ? numFmt(c.completions) : '—') + '</td>';
+      html += '<td class="siteana-co-cell"><div class="siteana-co-bar-wrap">';
+      html += '<div class="siteana-co-bar-fill" style="width:' + pct + '%"></div></div></td>';
       html += '</tr>';
     });
     html += '</tbody></table>';
@@ -2008,13 +2008,13 @@
       guided_activation_success: '🔑 Key Activation'
     };
     var sorted = keys.sort(function(a, b) { return (events[b].count || 0) - (events[a].count || 0); });
-    var html = '<div style="display:flex;flex-direction:column;gap:0.5rem">';
+    var html = '<div class="siteana-list-stack">';
     sorted.forEach(function(key) {
       var e = events[key];
       var label = EVENT_LABELS[key] || key.replace(/guided_/g, '').replace(/_/g, ' ');
-      html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:0.4rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">';
-      html += '<span style="color:rgba(255,255,255,0.75);font-size:0.82rem">' + esc(label) + '</span>';
-      html += '<span style="color:rgba(255,255,255,0.5);font-size:0.82rem;font-variant-numeric:tabular-nums">' + numFmt(e.count) + '</span>';
+      html += '<div class="siteana-list-row">';
+      html += '<span class="siteana-list-label">' + esc(label) + '</span>';
+      html += '<span class="siteana-list-count">' + numFmt(e.count) + '</span>';
       html += '</div>';
     });
     html += '</div>';
@@ -2028,12 +2028,12 @@
       el.innerHTML = '<p class="siteana-hint">No guided page data yet.</p>';
       return;
     }
-    var html = '<div style="display:flex;flex-direction:column;gap:0.4rem">';
+    var html = '<div class="siteana-list-stack siteana-list-stack-tight">';
     pages.slice(0, 12).forEach(function(p) {
       var short = p.path.replace(/^\/guided\//, '/').replace(/\/$/, '') || '/';
-      html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:0.35rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">';
-      html += '<span style="color:rgba(255,255,255,0.7);font-size:0.82rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:70%">' + esc(short) + '</span>';
-      html += '<span style="color:rgba(255,255,255,0.4);font-size:0.82rem;font-variant-numeric:tabular-nums">' + numFmt(p.views) + ' <small>views</small></span>';
+      html += '<div class="siteana-list-row siteana-list-row-tight">';
+      html += '<span class="siteana-list-name">' + esc(short) + '</span>';
+      html += '<span class="siteana-list-views">' + numFmt(p.views) + ' <small>views</small></span>';
       html += '</div>';
     });
     html += '</div>';

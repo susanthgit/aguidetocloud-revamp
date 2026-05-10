@@ -13,7 +13,7 @@
 .siteana-page-title {
   font-family: var(--font-heading);
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
   margin: 0;
   letter-spacing: -0.01em;
@@ -63,7 +63,7 @@
 .siteana-stat-num {
   font-family: var(--font-heading);
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
   line-height: 1.2;
 }
@@ -80,7 +80,7 @@
 /* Week-over-week change badges */
 .siteana-wow {
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 600;
   padding: 0.12rem 0.45rem;
   border-radius: var(--radius-lg, 16px);
   margin-top: 0.2rem;
@@ -208,7 +208,7 @@
 .siteana-lb-rank {
   font-family: var(--font-heading);
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-muted);
   min-width: 2rem;
   text-align: center;
@@ -297,7 +297,7 @@
 .siteana-content-num {
   font-family: var(--font-heading);
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
 }
 
@@ -424,13 +424,13 @@
   position: relative;
   overflow: hidden;
   border-color: var(--border-emphasis);
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 8%, transparent), color-mix(in srgb, var(--accent) 2%, transparent));
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
 }
 
 .siteana-featured-badge {
   display: inline-block;
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-primary);
@@ -450,7 +450,7 @@
 .siteana-featured-name {
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   transition: opacity 0.2s;
 }
@@ -487,7 +487,7 @@
 
 .siteana-featured-cta:hover {
   opacity: 0.9;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 16px color-mix(in srgb, black 18%, transparent);
 }
 
 /* ── RISING STARS ────────────────── */
@@ -503,7 +503,7 @@
 
 .siteana-rising-pct {
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
   background: color-mix(in srgb, var(--success) 12%, transparent);
   border: 1px solid color-mix(in srgb, var(--success) 25%, transparent);
@@ -553,7 +553,7 @@
 .siteana-search-rank {
   font-family: var(--font-heading);
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-muted);
   min-width: 1.5rem;
   text-align: center;
@@ -571,7 +571,7 @@
 
 .siteana-pos-badge {
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 600;
   padding: 0.15rem 0.5rem;
   border-radius: var(--radius-lg, 16px);
   background: var(--bg-elevated);
@@ -646,7 +646,7 @@
 /* ── FUN FACTS ───────────────────── */
 .siteana-funfacts-card {
   border-color: color-mix(in srgb, var(--warning) 20%, transparent);
-  background: linear-gradient(135deg, color-mix(in srgb, var(--warning) 4%, transparent), color-mix(in srgb, var(--warning) 1%, transparent));
+  background: color-mix(in srgb, var(--warning) 3%, transparent);
 }
 
 .siteana-funfacts {
@@ -698,7 +698,7 @@
   top: 8px;
   bottom: 8px;
   width: 2px;
-  background: linear-gradient(to bottom, var(--accent), color-mix(in srgb, var(--accent) 20%, transparent));
+  background: color-mix(in srgb, var(--accent) 60%, transparent);
 }
 
 .siteana-ms-item {
@@ -784,7 +784,7 @@
 /* ── YOUR JOURNEY CARD ───────────── */
 .siteana-journey-card {
   border-color: color-mix(in srgb, var(--accent) 25%, transparent);
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 6%, transparent), color-mix(in srgb, var(--accent) 1%, transparent));
+  background: color-mix(in srgb, var(--accent) 4%, transparent);
 }
 
 .siteana-journey-inner {
@@ -815,7 +815,7 @@
 /* ── BUILT IN PUBLIC CARD ────────── */
 .siteana-bip-card {
   border-color: var(--accent-subtle);
-  background: linear-gradient(135deg, var(--accent-subtle), var(--accent-subtle));
+  background: var(--accent-subtle);
 }
 
 .siteana-bip-header {
@@ -827,7 +827,7 @@
 
 .siteana-bip-badge {
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent);
@@ -876,7 +876,7 @@
 }
 
 .siteana-bip-cost {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
   text-align: right;
   min-width: 70px;
@@ -889,7 +889,7 @@
   margin-top: 0.25rem;
 }
 
-.siteana-bip-total .siteana-bip-label { color: var(--text-primary); font-weight: 700; }
+.siteana-bip-total .siteana-bip-label { color: var(--text-primary); font-weight: 600; }
 .siteana-bip-total .siteana-bip-cost { font-size: 1.1rem; color: var(--accent); }
 
 .siteana-bip-footnote {
@@ -925,7 +925,7 @@
 /* ── COMMUNITY IMPACT ────────────── */
 .siteana-impact-card {
   border-color: color-mix(in srgb, var(--info) 20%, transparent);
-  background: linear-gradient(135deg, color-mix(in srgb, var(--info) 4%, transparent), color-mix(in srgb, var(--info) 1%, transparent));
+  background: color-mix(in srgb, var(--info) 3%, transparent);
 }
 
 .siteana-impact-grid {
@@ -966,7 +966,7 @@
 .siteana-impact-range {
   font-family: var(--font-heading);
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
 }
 
@@ -1073,7 +1073,7 @@
 }
 
 .siteana-brief-inner {
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 12%, transparent), color-mix(in srgb, var(--accent) 4%, transparent));
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
   border: 1px solid var(--border-emphasis);
   border-radius: 16px;
   padding: 1.25rem 1.5rem;
@@ -1124,7 +1124,7 @@
 .siteana-health-score {
   font-family: var(--font-heading);
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 600;
   display: block;
   line-height: 1;
 }
@@ -1169,6 +1169,7 @@
   cursor: default;
   position: relative;
   transition: transform 0.15s;
+  background: color-mix(in srgb, var(--text-muted) var(--hm-alpha, 0%), transparent);
 }
 
 .siteana-hm-cell:hover {
@@ -1220,7 +1221,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, var(--bg-elevated) 0%, var(--bg-elevated) 50%, var(--bg-elevated) 100%);
+  background: var(--bg-elevated);
   background-size: 200% 100%;
   animation: siteana-shimmer 1.5s ease-in-out infinite;
   border-radius: 6px;
@@ -1295,7 +1296,7 @@
 .siteana-gap-item:last-child { border-bottom: none; }
 
 .siteana-gap-cat {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   text-transform: capitalize;
   font-size: 0.88rem;
@@ -1365,7 +1366,7 @@
 
 /* ── COMMAND CENTRE ────────────────── */
 .siteana-cmd-brief-inner {
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 15%, transparent), color-mix(in srgb, var(--accent) 4%, transparent));
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
   border: 1px solid var(--border-emphasis);
   border-radius: 16px;
   padding: 1.25rem 1.5rem;
@@ -1407,7 +1408,7 @@
 .siteana-scorecard-grade {
   font-family: var(--font-heading);
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 600;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -1433,7 +1434,7 @@
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 0.82rem;
   color: #000;
   flex-shrink: 0;
@@ -1509,13 +1510,13 @@
   font-size: 0.85rem;
 }
 
-.siteana-mover-up { border-color: rgba(16,185,129,0.2); }
-.siteana-mover-down { border-color: rgba(239,68,68,0.2); }
+.siteana-mover-up { border-color: color-mix(in srgb, var(--success) 25%, transparent); }
+.siteana-mover-down { border-color: color-mix(in srgb, var(--error) 25%, transparent); }
 
 .siteana-mover-name { font-weight: 600; }
 
 .siteana-mover-diff {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.82rem;
 }
 
@@ -1545,12 +1546,12 @@
 }
 
 .siteana-action-medium {
-  background: rgba(251,191,36,0.06);
+  background: color-mix(in srgb, var(--warning) 6%, transparent);
   border-left-color: var(--accent);
 }
 
 .siteana-action-low {
-  background: rgba(16,185,129,0.06);
+  background: color-mix(in srgb, var(--success) 6%, transparent);
   border-left-color: var(--accent);
 }
 
@@ -1684,7 +1685,7 @@
 .siteana-modal-header h3 {
   color: var(--text-primary);
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -1900,7 +1901,7 @@
   display: block;
   font-family: var(--font-heading);
   font-size: 3rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--accent);
   line-height: 1.2;
 }
@@ -2074,7 +2075,7 @@
 
 .siteana-goal-pct {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
   font-size: 0.95rem;
 }
@@ -2117,7 +2118,7 @@
 .siteana-matrix-label {
   position: absolute;
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -2134,7 +2135,7 @@
   padding: 0.15rem 0.5rem;
   border-radius: 6px;
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
   min-width: 2rem;
 }
@@ -2236,8 +2237,8 @@
 .sa-rt-row { display: grid; grid-template-columns: minmax(120px, 1fr) minmax(80px, 2fr) 32px; gap: 10px; align-items: center; padding: 3px 0; }
 .sa-rt-name { font-size: 0.82rem; color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .sa-rt-bar-wrap { height: 8px; border-radius: 4px; background: var(--border); overflow: hidden; }
-.sa-rt-bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #22c55e, #4ade80); transition: width 0.5s ease; }
-.sa-rt-count { font-size: 0.82rem; font-weight: 700; color: var(--accent); text-align: right; }
+.sa-rt-bar-fill { height: 100%; border-radius: 4px; background: var(--success); transition: width 0.5s ease; }
+.sa-rt-count { font-size: 0.82rem; font-weight: 600; color: var(--accent); text-align: right; }
 @media (max-width: 768px) { .sa-rt-row { grid-template-columns: minmax(80px, 1fr) minmax(60px, 1.5fr) 28px; } .sa-rt-name { font-size: 0.78rem; } }
 
 /* ── LEADERBOARD TOGGLE ──────────── */
@@ -2266,7 +2267,7 @@
 /* ── NEW BADGE ───────────────────── */
 .siteana-new-badge {
   font-size: 0.6rem;
-  font-weight: 800;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--accent);
@@ -2319,7 +2320,7 @@
   pointer-events: none;
   z-index: 10;
   border: 1px solid var(--border);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 12px color-mix(in srgb, black 22%, transparent);
 }
 
 /* ── BLOG TAB ─────────────────────── */
@@ -2340,7 +2341,7 @@
 }
 
 .siteana-blog-cat-tag {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
   font-size: 0.88rem;
 }
@@ -2474,7 +2475,7 @@
 
 .siteana-blog-depth-faq {
   font-size: var(--text-caption, 0.75rem);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   background: color-mix(in srgb, var(--warning) 12%, transparent);
   border: 1px solid color-mix(in srgb, var(--warning) 25%, transparent);
@@ -2486,7 +2487,7 @@
 /* ── GUIDED TAB ───────────────────── */
 .siteana-guided-hero {
   border-color: var(--accent-subtle);
-  background: linear-gradient(135deg, var(--accent-subtle), var(--accent-subtle));
+  background: var(--accent-subtle);
 }
 
 .siteana-guided-header {
@@ -2499,7 +2500,7 @@
 .siteana-guided-badge {
   margin-left: auto;
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--accent);
   background: var(--accent-subtle);
   border: 1px solid var(--accent-subtle);
@@ -2541,7 +2542,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 0.85rem;
   flex-shrink: 0;
 }
@@ -2560,7 +2561,7 @@
 
 .siteana-guided-path-status {
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   padding: 0.2rem 0.6rem;
@@ -2706,7 +2707,7 @@
 
 .siteana-dist-label {
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .siteana-dist-bar-wrap {
@@ -2734,4 +2735,64 @@
   .siteana-tabs, .siteana-transparency, .siteana-range-bar { display: none; }
   .siteana-panel { display: block !important; page-break-inside: avoid; }
 }
+
+/* ═══ JS-RENDERED UTILITY CLASSES (replace inline-style colours) ═══ */
+.siteana-link-soft { color: var(--text-primary); text-decoration: none; }
+.siteana-link-muted { color: var(--text-secondary); text-decoration: none; }
+.siteana-aud-summary { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; }
+
+/* "Today/Yesterday" leaderboard bar accents */
+.siteana-lb-bar-today { background: var(--text-tertiary); }
+.siteana-lb-bar-yest { background: var(--info); }
+.siteana-lb-bar-yt { background: var(--error); }
+
+/* YouTube channel stats (brand-coloured numbers) */
+.siteana-stat-num.is-yt { color: var(--error); }
+
+/* Brief inner — error variant (replaces inline gradient + border) */
+.siteana-brief-inner.is-error {
+  border-color: color-mix(in srgb, var(--error) 25%, transparent);
+  background: color-mix(in srgb, var(--error) 6%, transparent);
+}
+
+/* Country table (Microsoft brand reach) */
+.siteana-co-thead { color: var(--text-muted); font-size: 0.75rem; text-align: left; }
+.siteana-co-row { border-top: 1px solid var(--border); }
+.siteana-co-row.is-zebra { background: var(--bg-elevated); }
+.siteana-co-cell { padding: 0.6rem 0.75rem; color: var(--text-secondary); }
+.siteana-co-cell-code { padding: 0.6rem 0.75rem; font-weight: 600; color: var(--text-primary); text-transform: uppercase; }
+.siteana-co-cell-comp.has-data { color: var(--success); }
+.siteana-co-cell-comp.no-data { color: var(--text-muted); }
+.siteana-co-bar-wrap {
+  background: color-mix(in srgb, var(--info) 18%, transparent);
+  border-radius: 4px;
+  height: 8px;
+  overflow: hidden;
+}
+.siteana-co-bar-fill { height: 100%; background: var(--info); border-radius: 4px; }
+
+/* Search/page list rows */
+.siteana-list-label { color: var(--text-secondary); font-size: 0.82rem; }
+.siteana-list-count { color: var(--text-muted); font-size: 0.82rem; font-variant-numeric: tabular-nums; }
+.siteana-list-name {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 70%;
+}
+.siteana-list-views { color: var(--text-muted); font-size: 0.82rem; font-variant-numeric: tabular-nums; }
+
+/* List-stack containers (replace inline flex declarations) */
+.siteana-list-stack { display: flex; flex-direction: column; gap: 0.5rem; }
+.siteana-list-stack-tight { gap: 0.4rem; }
+.siteana-list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.siteana-list-row-tight { padding: 0.35rem 0; }
 
