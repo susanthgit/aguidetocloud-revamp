@@ -1,6 +1,6 @@
 ---
-title: "A Guide to Cloud & AI — Free Study Guides, Practice Exams, Tools & Tutorials for Cloud Certifications"
-description: "Free certification study guides, practice exams, IT tools, M365 licensing wiki, video tutorials and blog — for IT pros, students, and anyone studying for cloud & AI certifications. Built by a Microsoft Engineer."
+title: "A Guide to Cloud & AI — Free Practice Exams & IT Tools"
+description: "Free cloud cert study guides, practice exams, IT tools, M365 licensing wiki and video tutorials — for IT pros and students. Built by a Microsoft engineer."
 images:
   - "images/og/sections/homepage.jpg"
 sitemap:
