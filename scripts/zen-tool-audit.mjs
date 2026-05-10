@@ -25,12 +25,27 @@ const OUT_DIR = path.join(REPO_ROOT, 'audit-output');
 const NAV_TOML = path.join(REPO_ROOT, 'data', 'toolkit_nav.toml');
 const CSS_DIR = path.join(REPO_ROOT, 'static', 'css');
 
-// Tools already fully zenified (Phase 14 tracker rows 1–13, 29 Apr 2026)
+// Tools already fully zenified — Phase 14 complete (11 May 2026).
+// Original 13 (29 Apr 2026) + 30 more graduated through Phase 14 batches 1-16.
+// Remaining un-DONE tools are either still polish-tier floors (Lesson 48 functional-data)
+// or worth re-checking. Update this list when a tool's score drops permanently <8.
 const DONE_URLS = new Set([
+  // Original Phase 14 rows 1-13 (29 Apr 2026)
   '/prompts/', '/copilot-matrix/', '/roi-calculator/', '/licence-picker/',
   '/ca-builder/', '/ai-mapper/', '/migration-planner/', '/ai-showdown/',
   '/cert-compass/', '/licensing/', '/agent-365-planner/', '/purview-starter/',
   '/ps-builder/',
+  // Confirmed clean (score <8) as of 11 May 2026 batches 12-16
+  '/prompt-polisher/', '/prompt-guide/', '/prompt-lab/', '/prompt-tester/',
+  '/copilot-readiness/', '/copilot-data-flow/', '/copilot-model-map/',
+  '/copilot-frontier-map/', '/service-health/', '/deprecation-timeline/',
+  '/ai-cost-calculator/', '/token-calculator/', '/security-toolkit/',
+  '/cs-companion/', '/qr-generator/', '/wifi-qr/', '/password-generator/',
+  '/image-compressor/', '/typing-test/', '/pomodoro/', '/admin-bingo/',
+  '/acronym-battle/', '/feature-roulette/', '/rename-tracker/', '/admin-comms/',
+  '/compliance-passport/', '/phishing-test/', '/sla-calculator/', '/policy-tester/',
+  '/incident-comms/', '/cli-quiz/', '/it-day-sim/', '/instruct-builder/',
+  '/feedback/',
 ]);
 
 // Map URL slug → likely CSS file basename (best-effort)
