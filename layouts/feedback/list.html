@@ -41,7 +41,7 @@
             <option value="questions">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }} Questions</option>
             <option value="feature-requests">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Feature Requests</option>
             <option value="video-requests">{{ partial "icon.html" (dict "name" "clapperboard" "size" 14 "stroke" 1.5) }} Video Requests</option>
-            <option value="bug-reports">🐛 Bug Reports</option>
+            <option value="bug-reports">Bug Reports</option>
             <option value="tool-feedback">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} Tool Feedback</option>
             <option value="content-ideas">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Content Ideas</option>
             <option value="general">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} General</option>
@@ -96,13 +96,13 @@
         </button>
         <div class="feedback-submit-hints">
           <span>No sign-up required. We read every submission.</span>
-          <span>🔓 Your submission will be posted publicly so others can benefit. Name and email are optional.</span>
+          <span>{{ partial "icon.html" (dict "name" "globe" "size" 14 "stroke" 1.5) }} Your submission will be posted publicly so others can benefit. Name and email are optional.</span>
         </div>
       </div>
 
       <div class="feedback-status" id="fb-status" role="alert" aria-live="polite"></div>
       <div class="feedback-success-detail" id="fb-success-detail" style="display:none">
-        <p>📬 We personally read every submission and respond within <strong>48 hours</strong>.</p>
+        <p>{{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }} We personally read every submission and respond within <strong>48 hours</strong>.</p>
         <a id="fb-success-link" href="#" target="_blank" rel="noopener noreferrer" class="feedback-success-link">View your submission on GitHub →</a>
       </div>
     </form>
@@ -118,7 +118,7 @@
     </div>
     <div class="feedback-recent-list" id="feedback-recent-list">
       <div class="feedback-empty">
-        <div class="feedback-empty-icon">🌱</div>
+        <div class="feedback-empty-icon">{{ partial "icon.html" (dict "name" "message-square" "size" 32 "stroke" 1.25) }}</div>
         <p>Be the first to share feedback! Your voice shapes our tools and content.</p>
       </div>
     </div>

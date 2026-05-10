@@ -50,7 +50,7 @@
   color: var(--text-primary);
   background: var(--ptester-accent);
   border-color: var(--ptester-accent);
-  box-shadow: 0 2px 8px rgba(38,166,154,0.3);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--ptester-accent) 30%, transparent);
 }
 
 .ptester-panel { display: none; }
@@ -123,7 +123,7 @@
 .ptester-field output {
   font-size: 0.85rem;
   color: var(--ptester-accent);
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
 }
 .ptester-field--checkbox label {
@@ -171,7 +171,7 @@
 .ptester-score-value {
   position: absolute;
   font-size: 2.8rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-primary);
   text-align: center;
 }
@@ -209,12 +209,13 @@
 .ptester-bar-fill {
   height: 100%;
   border-radius: 4px;
-  background: linear-gradient(90deg, var(--ptester-accent), rgba(38,166,154,0.6));
+  width: var(--bar-w, 0%);
+  background: var(--bar-tint, var(--ptester-accent));
   transition: width 0.3s ease;
 }
 .ptester-bar-score {
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--ptester-accent);
   min-width: 36px;
   text-align: right;
@@ -272,22 +273,22 @@
   letter-spacing: 0.03em;
 }
 .ptester-cell-pass {
-  background: rgba(76,175,80,0.15);
+  background: color-mix(in srgb, var(--success) 15%, transparent);
   color: var(--success);
   border-radius: 4px;
 }
 .ptester-cell-partial {
-  background: rgba(255,183,77,0.15);
+  background: color-mix(in srgb, var(--warning) 15%, transparent);
   color: var(--text-primary);
   border-radius: 4px;
 }
 .ptester-cell-fail {
-  background: rgba(239,83,80,0.15);
+  background: color-mix(in srgb, var(--error) 15%, transparent);
   color: var(--text-primary);
   border-radius: 4px;
 }
 .ptester-standard-header {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--ptester-accent);
 }
 .ptester-tbl-scroll {
@@ -326,7 +327,7 @@
 .ptester-fix-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .ptester-fix-btn {
   padding: 0.4rem 0.8rem; font-size: 0.8rem; font-weight: 600;
-  background: rgba(38,166,154,0.1); border: 1px solid rgba(38,166,154,0.3);
+  background: color-mix(in srgb, var(--ptester-accent) 10%, transparent); border: 1px solid color-mix(in srgb, var(--ptester-accent) 30%, transparent);
   border-radius: 6px; color: var(--ptester-accent); cursor: pointer;
   transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out;
 }
@@ -335,12 +336,12 @@
 /* Delta Card */
 .ptester-delta-card {
   text-align: center; padding: 1rem; margin: 1rem 0;
-  background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.2);
+  background: color-mix(in srgb, var(--success) 8%, transparent); border: 1px solid color-mix(in srgb, var(--success) 20%, transparent);
   border-radius: 10px;
 }
 .ptester-delta-card .before { color: var(--text-secondary); }
 .ptester-delta-card .arrow { color: var(--ptester-accent); font-size: 1.2rem; margin: 0 0.5rem; }
-.ptester-delta-card .after { color: var(--accent); font-weight: 700; font-size: 1.3rem; }
+.ptester-delta-card .after { color: var(--accent); font-weight: 600; font-size: 1.3rem; }
 .ptester-delta-card .gain { color: var(--accent); font-weight: 600; }
 
 /* Export Button */

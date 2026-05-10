@@ -59,6 +59,10 @@
   font-size: 0.88rem;
   margin-bottom: 1.25rem;
 }
+.cdown-hint-empty {
+  text-align: center;
+  padding: 2rem 0;
+}
 
 /* ── Inputs ── */
 .cdown-input {
@@ -106,7 +110,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   font-size: 0.78rem;
 }
 .cdown-btn-danger { border-color: var(--cdown-red); color: var(--cdown-red); }
-.cdown-btn-danger:hover { background: rgba(239,68,68,0.15); }
+.cdown-btn-danger:hover { background: color-mix(in srgb, var(--error) 15%, transparent); }
 
 /* ── Create form ── */
 .cdown-create {
@@ -159,6 +163,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   border-radius: 50%;
   border: 2px solid transparent;
   cursor: pointer;
+  background: var(--cdown-tint, var(--accent));
   transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out;
   box-shadow: 0 0 0 2px transparent;
 }
@@ -235,7 +240,8 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
 .cdown-card-progress-bar {
   height: 100%;
   border-radius: 2px;
-  background: var(--accent);
+  width: var(--cdown-bar-w, 0%);
+  background: var(--cdown-tint, var(--accent));
   transition: width 1s linear;
 }
 .cdown-card-actions {
@@ -253,6 +259,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
+  background: var(--cdown-tint, var(--accent));
 }
 
 /* ── Flip Clock ── */
@@ -300,7 +307,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   perspective: 250px;
   border-radius: var(--radius-md);
   isolation: isolate;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 8px color-mix(in srgb, black 15%, transparent);
 }
 .cdown-d-top,
 .cdown-d-btm {
@@ -583,7 +590,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 2rem;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 20px color-mix(in srgb, black 50%, transparent);
 }
 .cdown-fs-clock { margin-bottom: 2rem; }
 .cdown-fs-bar-wrap {
@@ -632,7 +639,7 @@ input[type="datetime-local"].cdown-input::-webkit-calendar-picker-indicator {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(10,8,18,0.85);
+  background: color-mix(in srgb, black 85%, transparent);
 }
 .cdown-fs-done-icon { font-size: 5rem; margin-bottom: 1rem; animation: cdownBounce 0.6s ease; }
 .cdown-fs-done-text {
@@ -746,7 +753,7 @@ body.page-countdown .site-nav { border-bottom-color: var(--accent); }
   max-height: 120px;
   object-fit: contain;
   border-radius: var(--radius-md);
-  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 4px 20px color-mix(in srgb, black 50%, transparent));
 }
 .cdown-fs-msg {
   color: var(--text-secondary);

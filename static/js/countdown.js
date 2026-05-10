@@ -467,7 +467,7 @@ function initPickers() {
   if (colorGrid) {
     colorGrid.innerHTML = COLORS.map(function (c) {
       var cls = c === S.selColor ? ' active' : '';
-      return '<button class="cdown-color-btn' + cls + '" data-color="' + c + '" style="background:' + c + '" title="' + c + '"></button>';
+      return '<button class="cdown-color-btn' + cls + '" data-color="' + c + '" style="--cdown-tint:' + c + '" title="' + c + '"></button>';
     }).join('');
     colorGrid.addEventListener('click', function (e) {
       var btn = e.target.closest('.cdown-color-btn');
@@ -710,7 +710,7 @@ function renderDashboard() {
   if (!container) return;
 
   if (!S.events.length) {
-    container.innerHTML = '<div class="cdown-hint" style="text-align:center;padding:2rem 0">No countdowns yet — create one above! ⏳</div>';
+    container.innerHTML = '<div class="cdown-hint cdown-hint-empty">No countdowns yet — create one above!</div>';
     if (sortEl) sortEl.style.display = 'none';
     return;
   }
@@ -733,11 +733,11 @@ function renderDashboard() {
     } else {
       cardContent = '<div class="cdown-card-clock" id="clock-' + ev.id + '">' +
         createClockHtml({ size: 'md', dayDigits: 2 }) + '</div>' +
-        '<div class="cdown-card-progress"><div class="cdown-card-progress-bar" style="width:' + pct + '%;background:' + color + '"></div></div>';
+        '<div class="cdown-card-progress"><div class="cdown-card-progress-bar" style="--cdown-bar-w:' + pct + '%;--cdown-tint:' + color + '"></div></div>';
     }
     var dateStr = new Date(ev.date).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
     return '<div class="cdown-card" data-id="' + ev.id + '">' +
-      '<div class="cdown-card-accent" style="background:' + color + '"></div>' +
+      '<div class="cdown-card-accent" style="--cdown-tint:' + color + '"></div>' +
       '<div class="cdown-card-header">' +
         '<div class="cdown-card-icon">' + safeIcon(ev.icon) + '</div>' +
         '<div class="cdown-card-name">' + esc(ev.name) + '</div>' +
@@ -745,11 +745,11 @@ function renderDashboard() {
       '<div class="cdown-card-date">' + esc(dateStr) + '</div>' +
       cardContent +
       '<div class="cdown-card-actions">' +
-        '<button class="cdown-btn cdown-btn-sm" data-action="share" data-id="' + ev.id + '" title="Share">🔗 Share</button>' +
-        '<button class="cdown-btn cdown-btn-sm" data-action="embed" data-id="' + ev.id + '" title="Embed">📋 Embed</button>' +
-        '<button class="cdown-btn cdown-btn-sm" data-action="fs" data-id="' + ev.id + '" title="Full Screen">🖥️ Full Screen</button>' +
-        '<button class="cdown-btn cdown-btn-sm" data-action="edit" data-id="' + ev.id + '" title="Edit">✏️</button>' +
-        '<button class="cdown-btn cdown-btn-sm cdown-btn-danger" data-action="delete" data-id="' + ev.id + '" title="Delete">🗑️</button>' +
+        '<button class="cdown-btn cdown-btn-sm" data-action="share" data-id="' + ev.id + '" title="Share">Share</button>' +
+        '<button class="cdown-btn cdown-btn-sm" data-action="embed" data-id="' + ev.id + '" title="Embed">Embed</button>' +
+        '<button class="cdown-btn cdown-btn-sm" data-action="fs" data-id="' + ev.id + '" title="Full Screen">Full Screen</button>' +
+        '<button class="cdown-btn cdown-btn-sm" data-action="edit" data-id="' + ev.id + '" title="Edit">Edit</button>' +
+        '<button class="cdown-btn cdown-btn-sm cdown-btn-danger" data-action="delete" data-id="' + ev.id + '" title="Delete">Delete</button>' +
       '</div>' +
     '</div>';
   }).join('');
@@ -867,7 +867,7 @@ function setTimerMode(mode) {
   document.getElementById('cdown-custom-time').style.display = isTimer ? '' : 'none';
   document.getElementById('cdown-plus1').style.display = isTimer ? '' : 'none';
   document.getElementById('cdown-loop').parentElement.style.display = isTimer ? '' : 'none';
-  document.getElementById('cdown-lap').textContent = isTimer ? '🏁 Lap' : '🏁 Lap';
+  document.getElementById('cdown-lap').textContent = 'Lap';
 }
 
 function setTimer(secs) {

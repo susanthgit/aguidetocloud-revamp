@@ -296,7 +296,7 @@
         '<div class="ptester-bar-row">' +
           '<span class="ptester-bar-label">' + esc(c.name) + '</span>' +
           '<div class="ptester-bar">' +
-            '<div class="ptester-bar-fill" style="width:' + pct + '%;background:' + barColor + '"></div>' +
+            '<div class="ptester-bar-fill" style="--bar-w:' + pct + '%;--bar-tint:' + barColor + '"></div>' +
           '</div>' +
           '<span class="ptester-bar-score">' + esc(c.label) + '</span>' +
         '</div>';

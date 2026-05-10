@@ -146,7 +146,7 @@
       h += '<p class="plab-prereq">Builds on: <a href="' + esc(safeUrl(t.prerequisite_url)) + '">' + esc(t.prerequisite) + '</a> from the Prompt Guide</p>';
     }
 
-    h += '<p style="font-size:0.82rem;color:rgba(255,255,255,0.7);line-height:1.5;margin:0.5rem 0">' + esc(t.description) + '</p>';
+    h += '<p class="plab-tech-desc">' + esc(t.description) + '</p>';
 
     h += '<h4>When to Use</h4><ul class="plab-when-list">';
     (t.when_to_use || []).forEach(function (w) {
@@ -174,7 +174,7 @@
     '</div>';
 
     if (t.academic_name) {
-      h += '<p style="font-size:0.7rem;color:rgba(255,255,255,0.3);margin-top:0.5rem">' + esc(t.academic_name) + '</p>';
+      h += '<p class="plab-tech-academic">' + esc(t.academic_name) + '</p>';
     }
 
     return h;

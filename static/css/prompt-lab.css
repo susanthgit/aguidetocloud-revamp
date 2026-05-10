@@ -100,10 +100,23 @@
   font-size: var(--text-caption, 0.75rem); font-weight: 600; padding: 0.2rem 0.5rem;
   border-radius: 4px; text-transform: uppercase; letter-spacing: 0.03em;
 }
-.plab-badge-diff-1 { background: rgba(45,212,191,0.15); color: var(--accent); }
-.plab-badge-diff-2 { background: rgba(245,158,11,0.15); color: var(--text-primary); }
-.plab-badge-diff-3 { background: rgba(239,68,68,0.15); color: var(--text-primary); }
-.plab-badge-explored { background: rgba(45,212,191,0.2); color: var(--accent); }
+.plab-badge-diff-1 { background: color-mix(in srgb, var(--accent) 15%, transparent); color: var(--accent); }
+.plab-badge-diff-2 { background: color-mix(in srgb, var(--warning) 15%, transparent); color: var(--text-primary); }
+.plab-badge-diff-3 { background: color-mix(in srgb, var(--error) 15%, transparent); color: var(--text-primary); }
+.plab-badge-explored { background: color-mix(in srgb, var(--accent) 20%, transparent); color: var(--accent); }
+
+.plab-tech-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0.5rem 0;
+}
+.plab-tech-academic {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  opacity: 0.75;
+  margin-top: 0.5rem;
+}
 
 .plab-card-chevron {
   color: var(--text-muted); font-size: 0.8rem; transition: transform 150ms ease-out;
@@ -245,7 +258,7 @@
 }
 
 .plab-exercise-starter {
-  background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2);
+  background: color-mix(in srgb, var(--error) 8%, transparent); border: 1px solid color-mix(in srgb, var(--error) 20%, transparent);
   border-radius: var(--radius-sm, 6px); padding: 0.6rem 0.75rem; margin-bottom: 0.5rem;
   font-size: 0.82rem; color: var(--text-secondary); font-style: italic;
 }
@@ -296,8 +309,8 @@
 
 /* Sample answer reveal */
 .plab-answer-box {
-  display: none; background: rgba(45,212,191,0.05);
-  border: 1px solid rgba(45,212,191,0.2); border-radius: var(--radius-sm, 6px);
+  display: none; background: color-mix(in srgb, var(--accent) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent); border-radius: var(--radius-sm, 6px);
   padding: 0.75rem; margin-top: 0.5rem;
 }
 .plab-answer-box.visible { display: block; }
