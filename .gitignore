@@ -23,3 +23,6 @@ scripts/thumbnail-generator/*.json
 # Generated freshness reports (created by GH Actions or local runs)
 freshness-report.md
 mind-maps-freshness-report.md
+
+# Zen Tool Audit output (Phase 14, 10 May 2026) — screenshots regenerate locally
+audit-output/

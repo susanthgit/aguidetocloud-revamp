@@ -84,10 +84,10 @@
       el.setAttribute('aria-live', 'polite');
       el.style.cssText =
         'position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);' +
-        'background:rgba(20,184,166,.92);color:#fff;padding:.65rem 1.4rem;' +
+        'background:#0d9488;color:#fff;padding:.65rem 1.4rem;' +
         'border-radius:10px;font-size:.88rem;font-weight:600;z-index:9999;' +
-        'pointer-events:none;opacity:0;transition:opacity .25s ease;' +
-        'backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);';
+        'pointer-events:none;opacity:0;transition:opacity .2s ease-out;' +
+        'box-shadow:0 4px 12px rgba(0,0,0,0.15);';
       document.body.appendChild(el);
     }
     el.textContent = msg;

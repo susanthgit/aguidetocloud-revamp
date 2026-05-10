@@ -72,9 +72,8 @@
 .bb-palette-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(11, 14, 20, 0.72);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: rgba(11, 14, 20, 0.85);
+  /* Zen guardrail: backdrop-filter banned (10 May 2026 audit). Solid darker bg replaces blur. */
   animation: bb-fade-in 120ms ease-out;
 }
 

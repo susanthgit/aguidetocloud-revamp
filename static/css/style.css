@@ -3358,3 +3358,58 @@ pre.mermaid {
       bb-launch-btn ($_ Brain Bar palette) stays in nav.html as a
       stand-alone Earth-unique tool launcher.
    ═════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ZEN TOOL — Mobile Strip Helpers (Phase 14 audit, set 10 May 2026)
+   ─────────────────────────────────────────────────────────────────────────
+   Global helpers for tool pages so the mobile experience stays focused.
+   Lessons #32, #33, #35 from the zenification work codified here.
+
+   USAGE — opt in per element:
+     class="zt-mobile-hide"        → hidden on mobile (≤768px)
+     class="zt-mobile-only"        → shown ONLY on mobile
+     class="zt-mobile-collapse"    → shrinks decoration without hiding
+     <details class="zt-mobile-details"> → forces collapsed by default on mobile
+
+   Plus a global .zt-page mobile reset so every tool gets:
+     - 12px page padding (not 32px)
+     - single-column grids (where grid-mobile-stack class is opt-in)
+     - sidebars/recommendation panels below content (order:1)
+   ═════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Page-level: tighten horizontal padding for every tool */
+  .zt-page,
+  body[class*="-page"] .zt-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Opt-in helpers — apply via class, no per-tool CSS needed */
+  .zt-mobile-hide { display: none !important; }
+  .zt-mobile-only { display: revert !important; }
+
+  /* Stack 2-col grids; opt-in via class */
+  .zt-mobile-stack {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+  }
+  .zt-mobile-stack > * { width: 100%; max-width: 100%; }
+
+  /* Sidebars/results below the interactive area on mobile (Lesson #35) */
+  .zt-mobile-sidebar-below { order: 1; }
+  .zt-mobile-content-first { order: 0; }
+
+  /* Force <details> collapsed on mobile even if open by default on desktop */
+  details.zt-mobile-details:not([data-mobile-keep-open])[open] > *:not(summary) {
+    display: none;
+  }
+
+  /* Tighten card density everywhere a tool uses .zt-card */
+  .zt-card { padding: 10px !important; }
+  .zt-card-tight { padding: 8px !important; }
+}
+
+/* Desktop default for .zt-mobile-only — hidden until viewport is mobile */
+.zt-mobile-only { display: none !important; }
+
