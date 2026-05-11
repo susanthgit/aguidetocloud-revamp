@@ -154,6 +154,15 @@
 .siteana-panel { display: none; }
 .siteana-panel.active { display: block; }
 
+/* Phase 16 P3b: reserve height on JS-hydrated content containers to kill CLS=0.244.
+   These cards initially show "Loading…" placeholders, then JS replaces innerHTML
+   with leaderboard rows / charts. Without min-height the shrink during innerHTML
+   swap registers as layout shift. Values match typical hydrated content sizes. */
+#sa-leaderboard { min-height: 2400px; }
+#sa-rising, #sa-gems { min-height: 400px; }
+#sa-category-bars { min-height: 320px; }
+#sa-featured-body { min-height: 220px; }
+
 /* Grid */
 .siteana-grid-2 {
   display: grid;
