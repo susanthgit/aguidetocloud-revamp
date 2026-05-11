@@ -270,7 +270,8 @@ function renderNews(data, view) {
   var headlines = articles.filter(function (a) { return a.tier === 'headline'; });
   var deepDives = articles.filter(function (a) { return a.tier !== 'headline'; });
 
-  // Sort: articles with images first for headlines
+  // Phase 16: image-presence sort retained as a no-op safeguard — buildThumbHtml
+  // no longer renders v.image, but this keeps the API stable if the data flips back.
   headlines.sort(function (a, b) { return (b.image ? 1 : 0) - (a.image ? 1 : 0); });
 
   // Display caps
@@ -681,12 +682,10 @@ function getArticleVars(article) {
 }
 
 function buildThumbHtml(v) {
-  if (v.image) {
-    return '<img src="' + escapeHtml(v.image) + '" alt="" class="ainews-thumb-img" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">' +
-      '<div class="ainews-thumb ainews-thumb-logo" style="display:none">' +
-      '<span class="ainews-logo-fallback" style="display:flex"><span class="ainews-thumb-emoji">' + v.emoji + '</span></span>' +
-      '<span class="ainews-thumb-source">' + escapeHtml(v.source) + '</span></div>';
-  }
+  // Phase 16: dropped the v.image branch (huge weight win — was 1553 KB of
+  // third-party article hero images on /ai-news/). All cards now use the
+  // logo+emoji fallback path. Source identity stays clear via brand colour,
+  // small source logo (if present), and emoji.
   return '<div class="ainews-thumb ainews-thumb-logo">' +
     (v.logo ? '<img src="' + escapeHtml(v.logo) + '" alt="" class="ainews-logo-img" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">' : '') +
     '<span class="ainews-logo-fallback" style="' + (v.logo ? 'display:none' : 'display:flex') + '"><span class="ainews-thumb-emoji">' + v.emoji + '</span></span>' +
