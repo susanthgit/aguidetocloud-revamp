@@ -1,6 +1,7 @@
 ---
 title: "What's New in Microsoft 365 Copilot – April 2026 | 41 Updates You Need to Know"
 description: "Watch What's New in Microsoft 365 Copilot April 2026 | 41 Updates You Need to Know - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+canonical_url: "https://www.aguidetocloud.com/blog/microsoft-365-copilot-april-2026-updates/"
 date: 2026-04-30
 youtube_id: "ax6KMZMoIt4"
 card_tag: "What's New"

@@ -1,5 +1,5 @@
 ---
-title: "How Microsoft 365 Copilot Works — Layer by Layer"
+title: "How M365 Copilot Works — 7 Layers Explained (Diagram)"
 description: "The 7 layers inside M365 Copilot explained in plain English. Grounding, Semantic Index, Orchestrator, and Responsible AI — with diagrams and analogies."
 date: 2026-05-01
 lastmod: 2026-05-01
