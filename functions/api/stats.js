@@ -206,18 +206,35 @@ async function sha256Hex(text) {
   return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-// Accepts EITHER plaintext password OR already-hashed value in the Bearer token.
-// Compares to env.ADMIN_PASSWORD_HASH (same hex used in /cc/list.html).
+// Constant-time string equality — defeats timing attacks on auth comparison.
+// JavaScript === short-circuits on first mismatch, leaking position information.
+// This XORs every char (or 0 if lengths differ) and reduces to a single bit.
+function timingSafeStrEqual(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string') return false;
+  // Length-mismatch can still leak the fact that lengths differ, but for a
+  // fixed-length hash comparison this is fine — both sides are 64 hex chars.
+  if (a.length !== b.length) return false;
+  let acc = 0;
+  for (let i = 0; i < a.length; i++) {
+    acc |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  }
+  return acc === 0;
+}
+
+// Hash the Authorization Bearer value and constant-time compare to
+// env.ADMIN_PASSWORD_HASH. We REJECT pre-hashed values because the hash is
+// embedded in the public /cc/ HTML (line 502 of layouts/cc/list.html) — if
+// we accepted hashes as Bearer, anyone could scrape the public hash and
+// reuse it. Plaintext-only forces possession of the actual password.
 async function isAuthedAsAdmin(request, env) {
   if (!env.ADMIN_PASSWORD_HASH) return false;
   const auth = request.headers.get('Authorization') || '';
   const m = auth.match(/^Bearer\s+(.+)$/i);
   if (!m) return false;
-  const provided = m[1].trim();
-  const expected = env.ADMIN_PASSWORD_HASH.toLowerCase();
-  if (provided.toLowerCase() === expected) return true; // pre-hashed
-  const hash = await sha256Hex(provided);                // plaintext path
-  return hash.toLowerCase() === expected;
+  const plaintext = m[1].trim();
+  if (!plaintext) return false;
+  const hash = await sha256Hex(plaintext);
+  return timingSafeStrEqual(hash.toLowerCase(), env.ADMIN_PASSWORD_HASH.toLowerCase());
 }
 
 function cosmosJsonRes(data, status = 200, cache = 'public, max-age=45') {
