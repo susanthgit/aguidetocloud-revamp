@@ -874,25 +874,161 @@
   margin-top: 0.1rem;
 }
 .feedback-acc-body {
-  padding: 0.75rem 1rem 1rem 2.6rem;
+  padding: 1rem 1.25rem 1.5rem;
   background: color-mix(in srgb, var(--fb-accent) 3%, var(--fb-bg));
   border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
-.feedback-acc-question {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 0.6rem;
-  white-space: pre-wrap;
+
+/* ── Pretty thread: Question section (May 11 2026 — feedback #10 follow-up) ── */
+.feedback-q {
+  background: var(--bg-elevated);
+  border-left: 3px solid var(--text-muted);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
 }
-.feedback-acc-link {
-  display: inline-block;
-  margin-top: 0.5rem;
-  font-size: 0.75rem;
+.feedback-q-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
   font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.6rem;
+}
+.feedback-q-label-emoji { font-size: 0.9rem; line-height: 1; }
+.feedback-q-body {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+.feedback-q-body p { margin: 0 0 0.6rem; }
+.feedback-q-body p:last-child { margin-bottom: 0; }
+
+/* ── Thread connector between question and replies ── */
+.feedback-thread-arrow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  margin: 0.1rem 0 0.1rem 1rem;
+  font-weight: 500;
+}
+
+/* ── Pretty thread: Reply section (each comment) ── */
+.feedback-a {
+  background: color-mix(in srgb, var(--fb-accent) 6%, var(--bg-surface));
+  border-left: 3px solid var(--fb-accent);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+}
+.feedback-a-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.6rem;
+}
+.feedback-a-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--bg-elevated);
+}
+.feedback-a-author {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+.feedback-a-badge {
+  background: var(--fb-accent);
+  color: #1a1300;
+  font-size: 0.65rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+.feedback-a-time {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+.feedback-a-body {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.feedback-a-body p { margin: 0 0 0.7rem; }
+.feedback-a-body p:last-child { margin-bottom: 0; }
+.feedback-a-body strong { color: var(--text-primary); font-weight: 600; }
+.feedback-a-body em { font-style: italic; }
+.feedback-a-body a {
   color: var(--fb-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.feedback-a-body a:hover { color: var(--fb-accent-hover); }
+.feedback-a-body ul.feedback-ul,
+.feedback-a-body ol.feedback-ol {
+  padding-left: 1.25rem;
+  margin: 0.4rem 0 0.7rem;
+}
+.feedback-a-body li { margin: 0.25rem 0; }
+.feedback-q-body ul.feedback-ul,
+.feedback-q-body ol.feedback-ol {
+  padding-left: 1.25rem;
+  margin: 0.4rem 0 0.7rem;
+}
+.feedback-q-body li { margin: 0.25rem 0; }
+.feedback-a-body code.feedback-code-inline,
+.feedback-q-body code.feedback-code-inline {
+  background: var(--bg-page);
+  color: var(--fb-accent);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.85em;
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+}
+.feedback-a-body pre.feedback-code,
+.feedback-q-body pre.feedback-code {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.85em;
+  padding: 0.7rem 0.9rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+  white-space: pre;
+  border: 1px solid var(--border);
+}
+
+.feedback-acc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+  padding: 0.55rem 0.95rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
   text-decoration: none;
+  width: fit-content;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
 }
 .feedback-acc-link:hover {
-  text-decoration: underline;
+  background: var(--accent-subtle);
+  border-color: var(--fb-accent);
+  color: var(--fb-accent);
 }
