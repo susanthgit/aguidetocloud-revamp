@@ -193,6 +193,47 @@ function jsonRes(data, status = 200, cache = 'public, max-age=300') {
   });
 }
 
+// ── Cosmos endpoint helpers (cross-origin; dual public/gated mode) ────
+
+const COSMOS_PLANET_KINDS = {
+  earth: 'planet', guided: 'moon', brainbar: 'planet', shift: 'planet',
+  plainai: 'planet', curriculum: 'moon', agentic: 'planet', claw: 'planet',
+  cosmos: 'hub'
+};
+
+async function sha256Hex(text) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+// Accepts EITHER plaintext password OR already-hashed value in the Bearer token.
+// Compares to env.ADMIN_PASSWORD_HASH (same hex used in /cc/list.html).
+async function isAuthedAsAdmin(request, env) {
+  if (!env.ADMIN_PASSWORD_HASH) return false;
+  const auth = request.headers.get('Authorization') || '';
+  const m = auth.match(/^Bearer\s+(.+)$/i);
+  if (!m) return false;
+  const provided = m[1].trim();
+  const expected = env.ADMIN_PASSWORD_HASH.toLowerCase();
+  if (provided.toLowerCase() === expected) return true; // pre-hashed
+  const hash = await sha256Hex(provided);                // plaintext path
+  return hash.toLowerCase() === expected;
+}
+
+function cosmosJsonRes(data, status = 200, cache = 'public, max-age=45') {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': cache,
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, OPTIONS',
+      'Access-Control-Allow-Headers': 'Authorization, Content-Type',
+      'Vary': 'Authorization'
+    }
+  });
+}
+
 // ── Auth helper ──────────────────────────────────────────────────
 
 async function getToken(env) {
@@ -225,6 +266,91 @@ async function handleRealtime(env) {
     }).sort((a, b) => b.users - a.users);
     return jsonRes({ active: rows.reduce((s, p) => s + p.users, 0), pages: rows }, 200, 'no-cache');
   } catch { return jsonRes({ active: 0, pages: [] }, 200, 'no-cache'); }
+}
+
+// ── Endpoint: Cosmos realtime (cross-origin) ─────────────────────
+//
+// Public:  GET /api/stats?realtime=cosmos
+//   → { totalUnique, scope:'cosmos', generated_at }  (CORS *)
+// Gated:   GET /api/stats?realtime=cosmos&intel=1
+//   Authorization: Bearer <plaintext-admin-password OR sha256(password)>
+//   → { totalUnique, byPlanet, byPlanetSum, byKind, scope:'cosmos', generated_at }
+//   → 401 without valid Bearer
+//
+// Caches via Cloudflare caches.default with 45s TTL. Public + intel variants
+// are cached separately (different cache keys).
+//
+// Per-planet split uses GA4 event-scoped custom dimension `cosmos_planet`
+// (registered 12 May 2026). Earth/Guided + PlainAI/Curriculum splits work
+// because slug is set client-side per-page.
+async function handleRealtimeCosmos(request, env, url) {
+  const intel = url.searchParams.get('intel') === '1';
+
+  if (intel && !(await isAuthedAsAdmin(request, env))) {
+    return cosmosJsonRes({ error: 'Unauthorized' }, 401, 'no-cache');
+  }
+
+  // CF Cache API — separate keys for public vs intel responses
+  const cacheKeyUrl = url.origin + '/api/stats?realtime=cosmos' + (intel ? '&intel=1' : '');
+  const cacheKey = new Request(cacheKeyUrl, { method: 'GET' });
+  const cache = caches.default;
+  const cached = await cache.match(cacheKey);
+  if (cached) return cached;
+
+  const token = await getToken(env);
+  if (!token) {
+    return cosmosJsonRes(
+      { totalUnique: 0, scope: 'cosmos', error: 'no-auth', generated_at: new Date().toISOString() },
+      200, 'no-cache'
+    );
+  }
+
+  try {
+    // Run total + (optional) byPlanet queries in parallel
+    const totalReq = ga4RunRealtimeReport(token, { metrics: [{ name: 'activeUsers' }] });
+    const byPlanetReq = intel
+      ? ga4RunRealtimeReport(token, {
+          dimensions: [{ name: 'customEvent:cosmos_planet' }],
+          metrics: [{ name: 'activeUsers' }],
+          limit: 20
+        })
+      : Promise.resolve(null);
+    const [totalRes, byPlanetRes] = await Promise.all([totalReq, byPlanetReq]);
+
+    const totalUnique = parseInt(totalRes.rows?.[0]?.metricValues?.[0]?.value) || 0;
+
+    let body;
+    if (intel && byPlanetRes) {
+      const byPlanet = {};
+      for (const r of (byPlanetRes.rows || [])) {
+        const slug = (r.dimensionValues?.[0]?.value || '').trim();
+        const users = parseInt(r.metricValues?.[0]?.value) || 0;
+        if (slug && slug !== '(not set)' && slug !== 'unknown') {
+          byPlanet[slug] = (byPlanet[slug] || 0) + users;
+        }
+      }
+      const byPlanetSum = Object.values(byPlanet).reduce((a, b) => a + b, 0);
+      const byKind = { planet: 0, moon: 0, hub: 0 };
+      for (const [slug, count] of Object.entries(byPlanet)) {
+        const kind = COSMOS_PLANET_KINDS[slug] || 'planet';
+        byKind[kind] = (byKind[kind] || 0) + count;
+      }
+      body = { totalUnique, byPlanet, byPlanetSum, byKind, scope: 'cosmos', generated_at: new Date().toISOString() };
+    } else {
+      body = { totalUnique, scope: 'cosmos', generated_at: new Date().toISOString() };
+    }
+
+    const response = cosmosJsonRes(body, 200);
+    // Cache the clone — CF requires response not consumed
+    try { await cache.put(cacheKey, response.clone()); } catch (_) { /* cache.put can throw on some runtimes; non-fatal */ }
+    return response;
+  } catch (e) {
+    console.error('Cosmos realtime error:', e?.message || e);
+    return cosmosJsonRes(
+      { totalUnique: 0, scope: 'cosmos', error: 'query-failed', generated_at: new Date().toISOString() },
+      200, 'no-cache'
+    );
+  }
 }
 
 // ── Endpoint: Latest Video ───────────────────────────────────────
@@ -780,6 +906,7 @@ export async function onRequestGet(context) {
   }
 
   try {
+    if (url.searchParams.get('realtime') === 'cosmos') return await handleRealtimeCosmos(request, env, url);
     if (url.searchParams.get('realtime') === '1') return await handleRealtime(env);
     if (url.searchParams.get('latestvideo') === '1') return await handleLatestVideo(env);
     if (url.searchParams.get('biolinks') === '1') return await handleBioLinks(env);
@@ -790,4 +917,21 @@ export async function onRequestGet(context) {
     console.error('Stats error:', e.message, e.stack);
     return jsonRes({ error: 'Internal server error' }, 500);
   }
+}
+
+// CORS preflight for the cosmos endpoint (the dashboard sends Authorization).
+export async function onRequestOptions(context) {
+  const url = new URL(context.request.url);
+  if (url.searchParams.get('realtime') === 'cosmos' || url.searchParams.get('cosmos') === '1') {
+    return new Response(null, {
+      status: 204,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, OPTIONS',
+        'Access-Control-Allow-Headers': 'Authorization, Content-Type',
+        'Access-Control-Max-Age': '86400'
+      }
+    });
+  }
+  return new Response(null, { status: 405 });
 }
