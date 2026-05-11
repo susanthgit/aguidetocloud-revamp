@@ -179,7 +179,7 @@
         <p class="zt-cert-intro">Video courses to help you prepare.</p>
         <div class="cert-video-grid{{ if not (and .Params.cert_video_id .Params.qa_video_id) }} cert-video-single{{ end }}">
           {{ with .Params.cert_video_id }}
-          <a class="cert-video-card" href="https://www.youtube.com/watch?v={{ . }}" data-yt="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Play {{ $.Params.exam_code }} Full Course">
+          <a class="cert-video-card" href="https://www.youtube.com/watch?v={{ . }}" data-yt="{{ . }}" target="_blank" rel="noopener noreferrer">
             <div class="cert-video-thumb">
               <img src="https://i.ytimg.com/vi/{{ . }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg'" alt="{{ $.Params.exam_code }} Full Course" loading="lazy" decoding="async" width="480" height="270">
               <div class="cert-video-play" aria-hidden="true">
@@ -191,7 +191,7 @@
           </a>
           {{ end }}
           {{ with .Params.qa_video_id }}
-          <a class="cert-video-card" href="https://www.youtube.com/watch?v={{ . }}" data-yt="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Play {{ $.Params.exam_code }} Mock Exam">
+          <a class="cert-video-card" href="https://www.youtube.com/watch?v={{ . }}" data-yt="{{ . }}" target="_blank" rel="noopener noreferrer">
             <div class="cert-video-thumb">
               <img src="https://i.ytimg.com/vi/{{ . }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg'" alt="{{ $.Params.exam_code }} Mock Exam" loading="lazy" decoding="async" width="480" height="270">
               <div class="cert-video-play" aria-hidden="true">

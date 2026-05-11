@@ -203,7 +203,7 @@
     const skillAreas = exam.skill_areas || 0;
 
     return `
-      <a href="${examUrl}" class="cert-card${exam.has_changes ? " cert-card-changed" : ""}${statusClass}" data-code="${exam.code}" aria-label="${esc(exam.code)} study guide">
+      <a href="${examUrl}" class="cert-card${exam.has_changes ? " cert-card-changed" : ""}${statusClass}" data-code="${exam.code}">
         <div class="cert-card-header">
           <span class="cert-card-code">${esc(exam.code)}</span>
           <span class="cert-card-title">${esc(exam.title)}</span>
