@@ -40,5 +40,10 @@
     {{ end }}
     <button class="zt-fullscreen-btn" id="zt-fullscreen-toggle" aria-label="Toggle focus mode"><span class="zt-fs-label">Focus Mode</span> {{ partial "icon.html" (dict "name" "maximize" "size" 14 "stroke" 1.5) }}</button>
   </div>
-  {{ with $subtitle }}<p class="zt-subtitle">{{ . }}</p>{{ end }}
+  {{ with $subtitle }}<p class="zt-subtitle">{{ . }}</p>
+  {{/* SEO Phase 17: sr-only H2 mirrors the subtitle so heading hierarchy goes
+       H1 (title) -> H2 (this) -> H3 (sections), with no visual change. Fixes
+       Google's heading-skip flag on tool pages where layouts emit H3s directly
+       after the H1. */}}
+  <h2 class="sr-only">{{ . }}</h2>{{ end }}
 </header>

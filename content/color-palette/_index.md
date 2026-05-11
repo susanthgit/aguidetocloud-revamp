@@ -1,6 +1,6 @@
 ---
-title: "Colour Palette Generator — Create Beautiful Colour Palettes Free"
-description: "Generate stunning colour palettes with harmony modes, extract colours from images, check WCAG contrast, simulate colour blindness & export to CSS/Tailwind. 100% free, runs in your browser."
+title: "Colour Palette Generator — Free, WCAG-Ready"
+description: "Generate palettes with harmony modes, extract from images, check WCAG contrast, simulate colour blindness, export to CSS/Tailwind. 100% free."
 type: "color-palette"
 layout: "list"
 sitemap:

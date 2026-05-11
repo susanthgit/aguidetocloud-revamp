@@ -1,6 +1,6 @@
 ---
 title: "AI News"
-description: "Free AI news tracker updated 4x daily — latest from Microsoft Copilot, OpenAI, Anthropic, Google AI, Meta & more. Curated with 3-tier summaries explaining why each story matters."
+description: "Free AI news tracker, updated 4× daily — Microsoft Copilot, OpenAI, Anthropic, Google AI, Meta & more. Each story with a 3-tier why-it-matters summary."
 type: "ai-news"
 layout: "ainews"
 sitemap:
