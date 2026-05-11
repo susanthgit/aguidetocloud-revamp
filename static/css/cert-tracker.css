@@ -1224,32 +1224,55 @@ details[open] > .cert-curriculum-domain-title .cert-curriculum-chevron {
 .cert-plan-week ul { margin: 0.3rem 0 0; padding-left: 1.25rem; }
 .cert-plan-week li { font-size: 0.83rem; color: var(--text-secondary); }
 
-/* Study checkboxes */
+/* Study checkboxes
+ * Tap target is the full input (40x40, WCAG 2.5.5 min);
+ * visible square is 16x16 drawn via ::before so the row still looks compact.
+ * Phase 15 batch 1 — fixes 60 sub-40px tap targets + form-label miss (aria-label in JS). */
 .cert-cb {
   appearance: none;
   -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
-  border: 2px solid var(--border);
-  border-radius: 3px;
-  margin-right: 0.5rem;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0 0.25rem 0 -0.25rem;
   cursor: pointer;
   vertical-align: middle;
   position: relative;
   flex-shrink: 0;
+  display: inline-grid;
+  place-items: center;
 }
-.cert-cb:checked {
+.cert-cb::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--border);
+  border-radius: 3px;
+  background: transparent;
+  transition: background-color 150ms ease-out, border-color 150ms ease-out;
+}
+.cert-cb:checked::before {
   background: var(--accent);
   border-color: var(--accent);
 }
 .cert-cb:checked::after {
   content: "✓";
   position: absolute;
-  top: -2px;
-  left: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 12px;
+  line-height: 1;
   color: var(--accent-foreground, white);
   font-weight: 600;
+  pointer-events: none;
+}
+.cert-cb:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -10px;
+  border-radius: 4px;
 }
 .cert-checked { opacity: 0.5; }
 .cert-checked a { text-decoration: line-through !important; }

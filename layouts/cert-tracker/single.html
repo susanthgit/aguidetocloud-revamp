@@ -409,6 +409,9 @@
         cb.className = "cert-cb";
         cb.id = id;
         cb.checked = !!checked[id];
+        // Phase 15 batch 1: aria-label sourced from objective text (accessibility + form label)
+        var objText = (link.textContent || "").trim().replace(/\s+/g, " ").slice(0, 100);
+        cb.setAttribute("aria-label", objText ? "Mark complete: " + objText : "Mark objective " + (i + 1) + " complete");
         if (cb.checked) li.classList.add("cert-checked");
         cb.addEventListener("change", function() {
           if (cb.checked) { checked[id] = 1; li.classList.add("cert-checked"); }
