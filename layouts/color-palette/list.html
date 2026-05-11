@@ -119,17 +119,17 @@
       </div>
       <div class="palette-detail-formats">
         <div class="palette-detail-row">
-          <label>HEX</label>
+          <label for="palette-detail-hex">HEX</label>
           <input type="text" id="palette-detail-hex" class="palette-input palette-mono" readonly>
           <button class="palette-copy-btn" data-target="palette-detail-hex">Copy</button>
         </div>
         <div class="palette-detail-row">
-          <label>RGB</label>
+          <label for="palette-detail-rgb">RGB</label>
           <input type="text" id="palette-detail-rgb" class="palette-input palette-mono" readonly>
           <button class="palette-copy-btn" data-target="palette-detail-rgb">Copy</button>
         </div>
         <div class="palette-detail-row">
-          <label>HSL</label>
+          <label for="palette-detail-hsl">HSL</label>
           <input type="text" id="palette-detail-hsl" class="palette-input palette-mono" readonly>
           <button class="palette-copy-btn" data-target="palette-detail-hsl">Copy</button>
         </div>
@@ -140,9 +140,9 @@
           <canvas id="palette-picker-hue" class="palette-picker-hue" width="280" height="16"></canvas>
         </div>
         <div class="palette-picker-sliders">
-          <label>Hue <input type="range" id="palette-adj-h" min="0" max="360" class="palette-slider"></label>
-          <label>Sat <input type="range" id="palette-adj-s" min="0" max="100" class="palette-slider"></label>
-          <label>Light <input type="range" id="palette-adj-l" min="0" max="100" class="palette-slider"></label>
+          <label>Hue <input type="range" id="palette-adj-h" min="0" max="360" class="palette-slider" aria-label="Hue adjustment"></label>
+          <label>Sat <input type="range" id="palette-adj-s" min="0" max="100" class="palette-slider" aria-label="Saturation adjustment"></label>
+          <label>Light <input type="range" id="palette-adj-l" min="0" max="100" class="palette-slider" aria-label="Lightness adjustment"></label>
         </div>
       </div>
     </div>
@@ -167,7 +167,7 @@
         <div class="palette-extract-icon">{{ partial "icon.html" (dict "name" "image" "size" 14 "stroke" 1.5) }}</div>
         <p class="palette-extract-text">Drop an image here or click to upload</p>
         <p class="palette-extract-sub">JPEG, PNG, WebP supported</p>
-        <input type="file" id="palette-image-input" accept="image/jpeg,image/png,image/webp" hidden>
+        <input type="file" id="palette-image-input" accept="image/jpeg,image/png,image/webp" aria-label="Upload an image to extract its colour palette" hidden>
       </div>
 
       <div class="palette-extract-controls palette-hidden" id="palette-extract-controls">
@@ -177,7 +177,7 @@
         <div class="palette-extract-settings">
           <label class="palette-label">Colours to extract</label>
           <div class="palette-extract-count-row">
-            <input type="range" id="palette-extract-count" min="2" max="10" value="5" class="palette-slider">
+            <input type="range" id="palette-extract-count" min="2" max="10" value="5" class="palette-slider" aria-label="Number of palette colours to extract">
             <span id="palette-extract-count-val">5</span>
           </div>
           <button class="palette-btn palette-btn-primary" id="palette-extract-again">Re-extract</button>
@@ -204,7 +204,7 @@
           </div>
           <div class="palette-contrast-import">
             <label class="palette-label">Import from palette</label>
-            <select id="palette-fg-import" class="palette-select"><option value="">— select —</option></select>
+            <select id="palette-fg-import" class="palette-select" aria-label="Import foreground colour from palette"><option value="">— select —</option></select>
           </div>
         </div>
         <div class="palette-contrast-swap">
@@ -218,7 +218,7 @@
           </div>
           <div class="palette-contrast-import">
             <label class="palette-label">Import from palette</label>
-            <select id="palette-bg-import" class="palette-select"><option value="">— select —</option></select>
+            <select id="palette-bg-import" class="palette-select" aria-label="Import background colour from palette"><option value="">— select —</option></select>
           </div>
         </div>
       </div>

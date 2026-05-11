@@ -109,7 +109,7 @@
         <summary>Advanced options</summary>
         <div class="licpick-advanced-inner">
           <label class="licpick-toggle-label">
-            <input type="checkbox" id="licpick-preview-toggle" checked>
+            <input type="checkbox" id="licpick-preview-toggle" checked aria-label="Include preview plans (E7) in the comparison">
             <span>Include preview plans (E7)</span>
           </label>
           <div class="licpick-segments" id="licpick-segments">
@@ -175,7 +175,7 @@
       {{ end }}
     </select>
     <label class="licpick-toggle-label licpick-diff-toggle">
-      <input type="checkbox" id="licpick-diff-only">
+      <input type="checkbox" id="licpick-diff-only" aria-label="Show differences only between selected plans">
       <span>Show differences only</span>
     </label>
   </div>
@@ -281,7 +281,7 @@
       <h3>{{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }} Procurement Email</h3>
       <button class="licpick-modal-close" id="licpick-modal-close" aria-label="Close">&times;</button>
     </div>
-    <textarea class="licpick-modal-body" id="licpick-email-body" rows="18"></textarea>
+    <textarea class="licpick-modal-body" id="licpick-email-body" rows="18" aria-label="Email body draft for licence recommendation"></textarea>
     <div class="licpick-modal-actions">
       <button class="licpick-action-btn" id="licpick-email-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy to Clipboard</button>
       <a class="licpick-action-btn licpick-email-mailto" id="licpick-email-mailto" href="#">Open in Email Client</a>

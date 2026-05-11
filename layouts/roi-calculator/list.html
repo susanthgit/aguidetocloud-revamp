@@ -97,7 +97,7 @@
           <div class="roi-field">
             <label for="roi-users">Number of Copilot users</label>
             <div class="roi-range-row">
-              <input type="range" id="roi-users-range" min="10" max="5000" value="100" step="10" aria-hidden="true">
+              <input type="range" id="roi-users-range" min="10" max="5000" value="100" step="10" tabindex="-1" aria-hidden="true" aria-label="Number of Copilot users (visual slider)">
               <input type="number" id="roi-users" min="1" max="50000" value="100" class="roi-num-input" aria-label="Number of Copilot users">
             </div>
           </div>
@@ -107,7 +107,7 @@
               <span class="roi-tooltip" aria-label="Fully-loaded cost including benefits. We add 30% overhead automatically.">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</span>
             </label>
             <div class="roi-range-row">
-              <input type="range" id="roi-salary-range" min="30000" max="300000" value="75000" step="5000" aria-hidden="true">
+              <input type="range" id="roi-salary-range" min="30000" max="300000" value="75000" step="5000" tabindex="-1" aria-hidden="true" aria-label="Average annual salary (visual slider)">
               <input type="number" id="roi-salary" min="10000" max="500000" value="75000" class="roi-num-input" aria-label="Average annual salary">
             </div>
             <span class="roi-field-hint">Fully-loaded hourly rate: <strong id="roi-hourly-rate">$46.88</strong></span>
@@ -128,7 +128,7 @@
           {{/* Custom pricing toggle */}}
           <div class="roi-field roi-custom-cost-field">
             <label class="roi-toggle-label">
-              <input type="checkbox" id="roi-cost-toggle"> Have a negotiated / discounted price?
+              <input type="checkbox" id="roi-cost-toggle" aria-label="Use a negotiated or discounted price"> Have a negotiated / discounted price?
             </label>
             <div class="roi-custom-cost-row" id="roi-custom-cost-wrap" style="display:none">
               <label for="roi-custom-cost" class="roi-sr-only">Custom Copilot cost per user per month</label>
@@ -142,9 +142,9 @@
           <div class="roi-field">
             <label>Adoption scenario</label>
             <div class="roi-radio-group" role="radiogroup" aria-label="Adoption scenario">
-              <label class="roi-radio"><input type="radio" name="roi-scenario" value="conservative"> Conservative</label>
-              <label class="roi-radio roi-radio-selected"><input type="radio" name="roi-scenario" value="moderate" checked> {{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Moderate</label>
-              <label class="roi-radio"><input type="radio" name="roi-scenario" value="aggressive"> {{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} Aggressive</label>
+              <label class="roi-radio"><input type="radio" name="roi-scenario" value="conservative" aria-label="Conservative adoption scenario"> Conservative</label>
+              <label class="roi-radio roi-radio-selected"><input type="radio" name="roi-scenario" value="moderate" checked aria-label="Moderate adoption scenario"> {{ partial "icon.html" (dict "name" "ruler" "size" 14 "stroke" 1.5) }} Moderate</label>
+              <label class="roi-radio"><input type="radio" name="roi-scenario" value="aggressive" aria-label="Aggressive adoption scenario"> {{ partial "icon.html" (dict "name" "rocket" "size" 14 "stroke" 1.5) }} Aggressive</label>
             </div>
           </div>
 
@@ -326,7 +326,7 @@
               <span class="roi-tooltip" aria-label="Includes workshops, e-learning, and champions programme">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</span>
             </label>
             <div class="roi-range-row">
-              <input type="range" id="roi-training-range" min="0" max="300" value="100" step="10" aria-hidden="true">
+              <input type="range" id="roi-training-range" min="0" max="300" value="100" step="10" tabindex="-1" aria-hidden="true" aria-label="Training cost per user (visual slider)">
               <span class="roi-range-val" id="roi-training-val">$100</span>
             </div>
             <div class="roi-preset-chips">
@@ -341,7 +341,7 @@
               <span class="roi-tooltip" aria-label="External consultancy or internal programme for adoption">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</span>
             </label>
             <div class="roi-range-row">
-              <input type="range" id="roi-change-mgmt-range" min="0" max="100000" value="20000" step="5000" aria-hidden="true">
+              <input type="range" id="roi-change-mgmt-range" min="0" max="100000" value="20000" step="5000" tabindex="-1" aria-hidden="true" aria-label="Change management investment (visual slider)">
               <span class="roi-range-val" id="roi-change-mgmt-val">$20,000</span>
             </div>
             <div class="roi-preset-chips">
@@ -356,7 +356,7 @@
               <span class="roi-tooltip" aria-label="SharePoint cleanup, sensitivity labels, DLP policies, Purview setup">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</span>
             </label>
             <div class="roi-range-row">
-              <input type="range" id="roi-data-gov-range" min="0" max="150000" value="40000" step="5000" aria-hidden="true">
+              <input type="range" id="roi-data-gov-range" min="0" max="150000" value="40000" step="5000" tabindex="-1" aria-hidden="true" aria-label="Data governance investment (visual slider)">
               <span class="roi-range-val" id="roi-data-gov-val">$40,000</span>
             </div>
             <div class="roi-preset-chips">
@@ -369,7 +369,7 @@
           <div class="roi-field">
             <label for="roi-admin-hours">Admin rollout time (hours)</label>
             <div class="roi-range-row">
-              <input type="range" id="roi-admin-hours-range" min="0" max="320" value="80" step="8" aria-hidden="true">
+              <input type="range" id="roi-admin-hours-range" min="0" max="320" value="80" step="8" tabindex="-1" aria-hidden="true" aria-label="Annual admin hours saved (visual slider)">
               <span class="roi-range-val" id="roi-admin-hours-val">80 hrs</span>
             </div>
           </div>
