@@ -63,6 +63,20 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v={{ site.Params.cache_version }}">
   <meta name="theme-color" content="#0E1410" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#D9D1B5" media="(prefers-color-scheme: light)">
+
+  <!-- Cosmos GA4 — aggregate analytics for cosmos-wide intelligence.
+       Single shared property G-2HWWZGWCD0 + event-scoped dim cosmos_planet.
+       Ad signals denied; purely analytics_storage. Added 12 May 2026. -->
+  {{ if hugo.IsProduction }}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HWWZGWCD0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'granted'});
+    gtag('js', new Date());
+    gtag('config', 'G-2HWWZGWCD0', { cosmos_planet: 'brainbar', anonymize_ip: true });
+  </script>
+  {{ end }}
 </head>
 <body{{ if .IsHome }} class="cmd-v2-home-page"{{ end }}>
   <a class="skip-link" href="#cmd-input">skip to terminal</a>
