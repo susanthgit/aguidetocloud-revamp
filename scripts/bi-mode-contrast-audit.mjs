@@ -73,8 +73,20 @@ const SAMPLE_FN = `
     for (let i = 0; i < 60; i++) sample.push(leaves[Math.floor(i * stride)]);
   }
   const parseRgb = s => {
+    // Handle "color(srgb 0.5 0.5 0.5)" — values are 0-1 fractions
+    if (s.startsWith('color(srgb')) {
+      const m = s.match(/(\\d+(\\.\\d+)?)/g);
+      if (!m || m.length < 3) return null;
+      return [
+        Math.round(parseFloat(m[0]) * 255),
+        Math.round(parseFloat(m[1]) * 255),
+        Math.round(parseFloat(m[2]) * 255),
+        m[3] !== undefined ? parseFloat(m[3]) : 1,
+      ];
+    }
+    // Handle "rgb(X, Y, Z)" or "rgba(X, Y, Z, A)" — values are 0-255 ints
     const m = s.match(/(\\d+(\\.\\d+)?)/g);
-    if (!m) return null;
+    if (!m || m.length < 3) return null;
     return [parseFloat(m[0]), parseFloat(m[1]), parseFloat(m[2]), m[3] !== undefined ? parseFloat(m[3]) : 1];
   };
   const luminance = ([r,g,b]) => {

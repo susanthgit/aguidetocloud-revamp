@@ -45,16 +45,16 @@
 }
 
 .cosmos-footer a {
-  color: #6366f1;
+  color: var(--accent);
   text-decoration: none;
   transition: color 150ms ease-out;
 }
-.cosmos-footer a:hover { color: #4f46e5; text-decoration: underline; }
+.cosmos-footer a:hover { color: var(--accent-hover); text-decoration: underline; }
 
 [data-theme="dark"] .cosmos-footer a,
-.dark .cosmos-footer a { color: #818cf8; }
+.dark .cosmos-footer a { color: var(--accent); }
 [data-theme="dark"] .cosmos-footer a:hover,
-.dark .cosmos-footer a:hover { color: #a5b4fc; }
+.dark .cosmos-footer a:hover { color: var(--accent-hover); }
 
 .cosmos-footer__feedback {
   display: inline-flex;

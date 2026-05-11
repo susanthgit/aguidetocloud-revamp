@@ -488,9 +488,17 @@
   font-weight: 600;
   margin-left: 4px;
 }
-.licpick-badge-popular { background: var(--accent); color: #fff; }
-.licpick-badge-new { background: var(--accent); color: #fff; }
-.licpick-badge-security { background: var(--error); color: #fff; }
+.licpick-badge-popular { background: var(--accent-strong); color: white; }
+.licpick-badge-new { background: var(--accent-strong); color: white; }
+.licpick-badge-security {
+  background: var(--error);
+  color: white;
+}
+[data-theme="dark"] .licpick-badge-security {
+  /* In dark mode, --error is lighter (#F87171) which makes white text fail.
+     Use a darker shade for security badge specifically. */
+  background: #B91C1C;
+}
 
 /* ══════════════════════════════════════════════════
    TAB 3 — ADD-ON CALCULATOR

@@ -148,8 +148,16 @@ const AUDIT_FN = `
     for (let i = 0; i < 30; i++) sample.push(leaves[Math.floor(i * stride)]);
   }
   const parseRgb = s => {
+    // Lesson 64: color-mix() returns "color(srgb X Y Z)" format with 0-1 fractions,
+    // not 0-255 ints. Without this branch, audit miscounts contrast for any element
+    // using color-mix() (e.g., site-analytics dark-mode tint override).
+    if (s.startsWith('color(srgb')) {
+      const m = s.match(/(\\d+(\\.\\d+)?)/g);
+      if (!m || m.length < 3) return null;
+      return [Math.round(parseFloat(m[0])*255), Math.round(parseFloat(m[1])*255), Math.round(parseFloat(m[2])*255), m[3] !== undefined ? parseFloat(m[3]) : 1];
+    }
     const m = s.match(/(\\d+(\\.\\d+)?)/g);
-    if (!m) return null;
+    if (!m || m.length < 3) return null;
     return [parseFloat(m[0]), parseFloat(m[1]), parseFloat(m[2]), m[3] !== undefined ? parseFloat(m[3]) : 1];
   };
   const luminance = ([r,g,b]) => {

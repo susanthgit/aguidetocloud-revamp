@@ -131,8 +131,8 @@
   align-items: center;
   gap: 0.4rem;
   padding: 6px 16px;
-  background: var(--accent);
-  color: #fff;
+  background: var(--accent-strong);
+  color: white;
   border: none;
   border-radius: var(--radius-md);
   font-family: var(--font-heading);
