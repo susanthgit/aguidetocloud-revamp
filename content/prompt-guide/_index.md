@@ -1,6 +1,6 @@
 ---
 title: "Prompt Engineering Guide — 8 Free Techniques with Hands-On Practice"
-description: "Master prompt engineering for ChatGPT, Microsoft Copilot, Claude & Gemini. 8 interactive techniques with before/after examples, quizzes, and a step-by-step Prompt Builder. Free, no account needed."
+description: "Master prompt engineering for ChatGPT, Microsoft Copilot, Claude & Gemini. 8 interactive techniques with before/after examples, quizzes & a Prompt Builder."
 type: "prompt-guide"
 layout: "list"
 sitemap:

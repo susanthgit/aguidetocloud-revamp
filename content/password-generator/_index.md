@@ -1,6 +1,6 @@
 ---
 title: "Password Generator — Create Strong, Secure Passwords Free"
-description: "Generate unbreakable passwords, passphrases & PINs instantly. Real-time strength analysis, crack-time estimates & breach checking via Have I Been Pwned (k-anonymity). 100% free, runs in your browser."
+description: "Generate unbreakable passwords, passphrases & PINs instantly. Real-time strength analysis, crack-time estimates & breach checking via Have I Been Pwned."
 type: "password-generator"
 layout: "list"
 sitemap:

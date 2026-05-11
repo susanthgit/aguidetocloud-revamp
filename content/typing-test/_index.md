@@ -1,6 +1,6 @@
 ---
 title: "Typing Speed Test — Free Online WPM Test with Practice Modes"
-description: "Test your typing speed and accuracy with our free online typing test. Track WPM, accuracy, consistency, and problem keys. Practice with quotes, code snippets, and custom text. 100% private — runs entirely in your browser."
+description: "Test your typing speed and accuracy with our free online typing test. Track WPM, accuracy & problem keys. Practice with quotes, code & custom text."
 type: "typing-test"
 layout: "list"
 sitemap:

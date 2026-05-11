@@ -104,7 +104,7 @@
 
           <div class="roi-field">
             <label for="roi-salary">Average annual salary (USD)
-              <span class="roi-tooltip" aria-label="Fully-loaded cost including benefits. We add 30% overhead automatically.">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</span>
+              <button type="button" class="roi-tooltip-btn" aria-label="Fully-loaded cost including benefits. We add 30% overhead automatically.">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</button>
             </label>
             <div class="roi-range-row">
               <input type="range" id="roi-salary-range" min="30000" max="300000" value="75000" step="5000" tabindex="-1" aria-hidden="true" aria-label="Average annual salary (visual slider)">
@@ -323,7 +323,7 @@
 
           <div class="roi-field">
             <label for="roi-training">Training per user
-              <span class="roi-tooltip" aria-label="Includes workshops, e-learning, and champions programme">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</span>
+              <button type="button" class="roi-tooltip-btn" aria-label="Includes workshops, e-learning, and champions programme">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</button>
             </label>
             <div class="roi-range-row">
               <input type="range" id="roi-training-range" min="0" max="300" value="100" step="10" tabindex="-1" aria-hidden="true" aria-label="Training cost per user (visual slider)">
@@ -338,7 +338,7 @@
 
           <div class="roi-field">
             <label for="roi-change-mgmt">Change management consulting
-              <span class="roi-tooltip" aria-label="External consultancy or internal programme for adoption">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</span>
+              <button type="button" class="roi-tooltip-btn" aria-label="External consultancy or internal programme for adoption">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</button>
             </label>
             <div class="roi-range-row">
               <input type="range" id="roi-change-mgmt-range" min="0" max="100000" value="20000" step="5000" tabindex="-1" aria-hidden="true" aria-label="Change management investment (visual slider)">
@@ -353,7 +353,7 @@
 
           <div class="roi-field">
             <label for="roi-data-gov">Data governance &amp; cleanup
-              <span class="roi-tooltip" aria-label="SharePoint cleanup, sensitivity labels, DLP policies, Purview setup">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</span>
+              <button type="button" class="roi-tooltip-btn" aria-label="SharePoint cleanup, sensitivity labels, DLP policies, Purview setup">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</button>
             </label>
             <div class="roi-range-row">
               <input type="range" id="roi-data-gov-range" min="0" max="150000" value="40000" step="5000" tabindex="-1" aria-hidden="true" aria-label="Data governance investment (visual slider)">
