@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 11 May 2026 16:42:59 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2026 20:02:08 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Defender XDR] Some users may be unable to view Microsoft Defender for Endpoint manual actions through the Action center</title>
@@ -15,15 +15,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">DZ1304997</guid>
       <pubDate>Sat, 09 May 2026 09:27:25 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users may be unable to view on-premises or cross-tenant free/busy availability when scheduling meetings</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1304825</link>
-      <description>[Exchange Online] Users may be unable to view on-premises or cross-tenant free/busy availability when scheduling meetings.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1304825</guid>
-      <pubDate>Sat, 09 May 2026 07:14:55 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may see Microsoft 365 Copilot reports delayed by up to one day within the Microsoft 365 admin center</title>
@@ -60,6 +51,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1301759</guid>
       <pubDate>Tue, 05 May 2026 19:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Some users may be unable to view on-premises or cross-tenant free/busy availability when scheduling meetings</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1304825</link>
+      <description>[Exchange Online] Users may be unable to view on-premises or cross-tenant free/busy availability when scheduling meetings.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1304825</guid>
+      <pubDate>Tue, 05 May 2026 15:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Some users may be incorrectly able to view Microsoft Defender for Endpoint manual actions through the Action center</title>
@@ -212,7 +212,7 @@ The issue initially began with impact to a subset of customers in a single Avail
       <link>https://www.aguidetocloud.com/service-health/#MO1297751</link>
       <description>[Microsoft 365 suite] Users may not receive results when performing searches in SharePoint Online.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1297751</guid>
       <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
     </item>
