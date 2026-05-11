@@ -1,6 +1,6 @@
 ---
-title: "How M365 Copilot Works — 7 Layers Explained (Diagram)"
-description: "The 7 layers inside M365 Copilot explained in plain English. Grounding, Semantic Index, Orchestrator, and Responsible AI — with diagrams and analogies."
+title: "How M365 Copilot Works: LLM, Graph Grounding, Semantic Index"
+description: "Layer-by-layer guide to Microsoft 365 Copilot: Orchestrator, Semantic Index, Microsoft Graph grounding, LLM choice. How prompts become answers — explained."
 date: 2026-05-01
 lastmod: 2026-05-01
 sitemap:
@@ -311,7 +311,7 @@ flowchart TD
     D --> E
 ```
 
-| | Azure OpenAI (GPT) | Anthropic Claude |
+| Aspect | Azure OpenAI (GPT) | Anthropic Claude |
 |---|---|---|
 | **Hosted by** | Microsoft (Azure infrastructure) | Anthropic (under Microsoft's contractual control) |
 | **Data boundary** | Inside Microsoft 365 service boundary | Crosses Microsoft boundary → Anthropic infrastructure |
@@ -434,7 +434,7 @@ Now that you know the seven layers, let's see why they matter. Here's what happe
 
 **The prompt:** *"Summarise the Q3 sales report."*
 
-| | ChatGPT | Microsoft 365 Copilot |
+| Aspect | ChatGPT | Microsoft 365 Copilot |
 |---|---|---|
 | **Identity check** | None — anyone with an account | Entra ID + MFA + Conditional Access |
 | **Data source** | Has no idea what your Q3 report says | Fetches YOUR Q3 report from SharePoint via Graph |

@@ -1,6 +1,6 @@
 ---
-title: "Microsoft 365 Education (A1/A3/A5) — Guide & Pricing (2026)"
-description: "Microsoft 365 Education plans — A1 (free), A3 ($3.25), A5 ($8). Discounted M365 for schools and universities."
+title: "Microsoft 365 Education A1 vs A3 vs A5 — Pricing Guide 2026"
+description: "Compare Microsoft 365 Education plans: A1 (free), A3 ($3.25/user), A5 ($8/user). Pricing for schools, universities, students, staff. Copilot eligibility."
 type: "licensing"
 layout: "single"
 plan_name: "Microsoft 365 Education"
