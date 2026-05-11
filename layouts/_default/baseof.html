@@ -60,6 +60,13 @@
   {{ end }}
   <script>/* Anti-FOUC: set theme before CSS loads — dark by default */
   (function(){try{var t=localStorage.getItem('theme');if(!t)t='dark';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}})()</script>
+  {{/* Phase 15 batch 4: preload critical self-hosted fonts on non-notebook pages so the
+       browser fetches Inter in parallel with CSS parsing (was waiting for fonts.css to
+       declare @font-face first). Targets the home page LCP ~3128ms regression. */}}
+  {{ if ne .Params.layout "notebook" }}
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
+  {{ end }}
   <link rel="stylesheet" href="/css/fonts.css">
   <link rel="stylesheet" href="/cosmos-bar.css?v={{ site.Params.cache_version }}">
   <link rel="stylesheet" href="/cosmos-footer.css?v={{ site.Params.cache_version }}">
