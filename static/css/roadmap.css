@@ -107,7 +107,8 @@
 .rdmap-chips::-webkit-scrollbar { display: none; }
 .rdmap-chip {
   display: inline-flex; align-items: center; gap: 0.3rem;
-  padding: 0.35rem 0.8rem; border-radius: var(--radius-lg, 16px); font-size: 0.78rem;
+  padding: 0.5rem 0.8rem; border-radius: var(--radius-lg, 16px); font-size: 0.78rem;
+  min-height: 40px;
   background: var(--bg-surface); border: 1px solid var(--border); color: var(--text-muted);
   cursor: pointer; white-space: nowrap; transition: color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.15s ease-out, opacity 0.15s ease-out; flex-shrink: 0;
 }
@@ -127,7 +128,7 @@
 /* List — card-style rows */
 .rdmap-list { display: flex; flex-direction: column; gap: 0.5rem; }
 .rdmap-row-wrap { position: relative; }
-.rdmap-fav { position: absolute; left: -0.3rem; top: 50%; transform: translateY(-50%); z-index: 2; background: none; border: none; color: var(--text-muted); font-size: 1rem; cursor: pointer; padding: 0.3rem; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; opacity: 0.3; }
+.rdmap-fav { position: absolute; left: -0.5rem; top: 50%; transform: translateY(-50%); z-index: 2; background: none; border: none; color: var(--text-muted); font-size: 1rem; cursor: pointer; padding: 0; min-width: 40px; min-height: 40px; display: inline-flex; align-items: center; justify-content: center; transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out, opacity 0.2s ease-out; opacity: 0.3; }
 .rdmap-row-wrap:hover .rdmap-fav, .rdmap-fav:focus { opacity: 0.7; }
 .rdmap-fav:hover { color: var(--accent); opacity: 1 !important; }
 .rdmap-fav-active { color: var(--accent) !important; opacity: 1 !important; }
