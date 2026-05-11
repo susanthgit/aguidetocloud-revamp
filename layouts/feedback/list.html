@@ -11,6 +11,39 @@
 
 {{ partial "tool-header.html" (dict "page" . "title" "Community Feedback") }}
 
+  {{/* ── Safe-space hero — explicit framing: read, answered, public thread ── */}}
+  <section class="feedback-hero" aria-labelledby="feedback-hero-title">
+    <h2 id="feedback-hero-title" class="feedback-hero-title">
+      🌱 A safe space to ask anything
+    </h2>
+    <p class="feedback-hero-lead">
+      Stuck on a Microsoft 365 or AI concept? Found a bug? Want a new feature? Drop it here — there are no silly questions, and every submission is read by Susanth personally.
+    </p>
+    <ul class="feedback-hero-pillars" role="list">
+      <li>
+        <span class="feedback-hero-pillar-icon" aria-hidden="true">{{ partial "icon.html" (dict "name" "shield" "size" 16 "stroke" 1.5) }}</span>
+        <div>
+          <strong>No login. No email needed.</strong>
+          <span>Stay anonymous if you want — name and email are optional.</span>
+        </div>
+      </li>
+      <li>
+        <span class="feedback-hero-pillar-icon" aria-hidden="true">{{ partial "icon.html" (dict "name" "mail" "size" 16 "stroke" 1.5) }}</span>
+        <div>
+          <strong>Read and answered within 48 hours.</strong>
+          <span>Every question is a chance to make the site better. We mean it.</span>
+        </div>
+      </li>
+      <li>
+        <span class="feedback-hero-pillar-icon" aria-hidden="true">{{ partial "icon.html" (dict "name" "message-square" "size" 16 "stroke" 1.5) }}</span>
+        <div>
+          <strong>All Q&amp;A is public.</strong>
+          <span>Scroll down to see what others asked and what we're working on right now.</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
   {{/* ── Tabs ── */}}
   <div class="feedback-tabs" role="tablist">
     <button class="feedback-tab active" role="tab" aria-selected="true" data-tab="submit">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Submit Feedback</button>
@@ -95,7 +128,7 @@
           <span id="fb-submit-text">Send Feedback</span>
         </button>
         <div class="feedback-submit-hints">
-          <span>No sign-up required. We read every submission.</span>
+          <span>{{ partial "icon.html" (dict "name" "heart" "size" 14 "stroke" 1.5) }} Take your time — there are no silly questions, and we read everything.</span>
           <span>{{ partial "icon.html" (dict "name" "globe" "size" 14 "stroke" 1.5) }} Your submission will be posted publicly so others can benefit. Name and email are optional.</span>
         </div>
       </div>
@@ -111,7 +144,10 @@
   <!-- Past Discussions -->
   <div class="feedback-recent" id="feedback-recent">
     <div class="feedback-recent-header">
-      <div class="feedback-recent-title">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Past Questions & Answers</div>
+      <div class="feedback-recent-title-wrap">
+        <div class="feedback-recent-title">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} What others asked (and what we're working on)</div>
+        <div class="feedback-recent-subtitle">Click any thread to see the question, our reply, and the status. Nothing is hidden — this is the same view we use.</div>
+      </div>
       <div class="feedback-search-wrap">
         <input type="text" class="feedback-search" id="fb-search" placeholder="Search discussions…" aria-label="Search past discussions">
       </div>

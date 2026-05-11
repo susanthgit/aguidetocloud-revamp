@@ -548,6 +548,48 @@ a:hover {
   color: #fff;
 }
 
+/* 🌸 Zen: "Ask" nav button — friendly, ghost pill, sits between theme toggle and Downloads CTA */
+.nav-ask {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 44px;
+  padding: 0 0.9rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color var(--transition), color var(--transition), background-color var(--transition);
+  flex-shrink: 0;
+}
+.nav-ask:hover,
+.nav-ask:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-subtle);
+  outline: none;
+}
+.nav-ask.nav-ask--active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-subtle);
+}
+.nav-ask svg { display: block; flex-shrink: 0; }
+.nav-ask-label { line-height: 1; }
+
+/* Drawer Ask link — visually distinct from regular links */
+.drawer-link--ask {
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--accent) !important;
+  font-weight: 600;
+}
+
 
 /* 🌸 Old homepage CSS removed (927-2114) — Zen homepage uses zt-reading.css */
 
@@ -2513,6 +2555,7 @@ pre.mermaid {
   .hamburger { display: block; }
   .nav-links { display: none !important; }
   .nav-right .nav-cta { display: none; }
+  .nav-right .nav-ask { display: none; }
   .nav-drawer-backdrop { display: block; }
   body.nav-open { overflow: hidden; }
 
