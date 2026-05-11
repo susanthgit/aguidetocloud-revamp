@@ -272,8 +272,13 @@ async function handleBioLinks(env) {
         metrics: [{ name: 'eventCount' }], dimensionFilter: dimFilter })
     ]);
 
-    const clicks = parseRows(clicksRes).map(r => ({ link_id: r.dimensions[0], clicks: r.metrics[0] }));
-    const sections = parseRows(sectionRes).map(r => ({ section: r.dimensions[0], clicks: r.metrics[0] }));
+    const NOT_SET = '(not set)';
+    const clicks = parseRows(clicksRes)
+      .map(r => ({ link_id: r.dimensions[0], clicks: r.metrics[0] }))
+      .filter(r => r.link_id && r.link_id !== NOT_SET);
+    const sections = parseRows(sectionRes)
+      .map(r => ({ section: r.dimensions[0], clicks: r.metrics[0] }))
+      .filter(r => r.section && r.section !== NOT_SET);
     const trend = parseRows(trendRes).map(r => {
       const raw = r.dimensions[0];
       return { date: `${raw.slice(0,4)}-${raw.slice(4,6)}-${raw.slice(6,8)}`, clicks: r.metrics[0] };
