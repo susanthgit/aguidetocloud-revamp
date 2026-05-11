@@ -302,9 +302,12 @@ function classify(tool, runtime, css) {
   // Mobile overflow (only check the mobile findings)
   const mOverflow = Math.max(lm?.mobileOverflowEls || 0, dm?.mobileOverflowEls || 0);
   if (mOverflow > 0) { score += mOverflow; reasons.push(`${mOverflow} elements overflow mobile viewport`); }
-  // Contrast — pull dark-mode results separately, that's where the regressions live
-  const contrastFails = Math.max(dd?.lowContrastPairs || 0, dm?.lowContrastPairs || 0);
-  if (contrastFails > 2) { score += contrastFails; reasons.push(`${contrastFails}/30 low-contrast text in dark mode`); }
+  // Contrast — check BOTH light and dark mode failures (Lesson 63: dark-mode-first design
+  // accumulates light-mode debt invisibly because most devs work in dark mode).
+  const lightContrastFails = Math.max(ld?.lowContrastPairs || 0, lm?.lowContrastPairs || 0);
+  const darkContrastFails = Math.max(dd?.lowContrastPairs || 0, dm?.lowContrastPairs || 0);
+  if (lightContrastFails > 2) { score += lightContrastFails; reasons.push(`${lightContrastFails}/30 low-contrast text in LIGHT mode`); }
+  if (darkContrastFails > 2) { score += darkContrastFails; reasons.push(`${darkContrastFails}/30 low-contrast text in DARK mode`); }
   // CSS file
   if (css.exists) {
     if (css.backdropFilter > 0) { score += css.backdropFilter * 3; reasons.push(`CSS: ${css.backdropFilter} backdrop-filter rules`); }

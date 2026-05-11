@@ -12,10 +12,10 @@
   --rdmap-brand-entra: #0078D4;
   --rdmap-brand-admin: #5C2D91;
   --rdmap-brand-edge-media: #3C8527;
-  --rdmap-status-rolling: #059669;
-  --rdmap-status-indev: #D97706;
-  --rdmap-status-launched: #0891B2;
-  --rdmap-status-cancelled: #DC2626;
+  --rdmap-status-rolling: #047857;
+  --rdmap-status-indev: #B45309;
+  --rdmap-status-launched: #0E7490;
+  --rdmap-status-cancelled: #B91C1C;
 }
 [data-theme="dark"] {
   --rdmap-brand-copilot: #B7A7FF;

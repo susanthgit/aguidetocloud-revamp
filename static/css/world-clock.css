@@ -5,12 +5,22 @@
    ────────────────────────────────────────── */
 
 .wclk-page {
-  --wclk-green: #22C55E;
-  --wclk-yellow: #EAB308;
-  --wclk-red: #EF4444;
+  /* Light mode: darker variants for contrast on white bg */
+  --wclk-green: #166534;
+  --wclk-yellow: #A16207;
+  --wclk-red: #DC2626;
+  --wclk-sky: #0369A1;
+  --wclk-amber: #92400E;
+  --wclk-purple: #6D28D9;
+}
+[data-theme="dark"] .wclk-page {
+  /* Dark mode: brighter variants for contrast on dark bg */
+  --wclk-green: #4ADE80;
+  --wclk-yellow: #FACC15;
+  --wclk-red: #F87171;
   --wclk-sky: #0EA5E9;
   --wclk-amber: #FBBF24;
-  --wclk-purple: #8B5CF6;
+  --wclk-purple: #C4B5FD;
 }
 
 /* ── Page container ── */

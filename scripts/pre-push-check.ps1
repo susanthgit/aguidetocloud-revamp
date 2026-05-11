@@ -8,12 +8,15 @@
   1. cache_version bumped if CSS/JS files changed since last push
   2. Hugo build succeeds (no template errors)
   3. No stray template markers (ZgotmplZ, unclosed {{)
+  4. Parallel-safe staging guard (Lesson 61): only files YOU modified are staged
+  5. Bi-mode contrast sanity check (advisory — Lesson 63): flags new light-mode failures
 
   Exit code 0 = safe to push. Exit code 1 = BLOCKED.
 #>
 
 param(
-    [switch]$SkipBuild  # Skip Hugo build check (for when you already built)
+    [switch]$SkipBuild,    # Skip Hugo build check (for when you already built)
+    [switch]$SkipContrast  # Skip bi-mode contrast check (it's advisory and takes ~3min)
 )
 
 $ErrorActionPreference = "Stop"
@@ -98,7 +101,32 @@ Write-Host ""
 if ($failed) {
     Write-Host "🚫 PUSH BLOCKED — fix the issues above first." -ForegroundColor Red
     exit 1
-} else {
-    Write-Host "🟢 ALL CLEAR — safe to push." -ForegroundColor Green
-    exit 0
 }
+
+# ─── ADVISORY CHECK: Bi-mode contrast (non-blocking, Lesson 63) ───
+# This is a sanity probe — runs only if CSS files changed AND -SkipContrast not set.
+# Runs the bi-mode-contrast-audit script against live (post-deploy) or last build.
+# Result is informational; doesn't block push but flags new regressions.
+if ($cssJsChanged -and -not $SkipContrast) {
+    Write-Host "`n[Advisory] Bi-mode contrast check (~2min, --SkipContrast to skip)..." -ForegroundColor DarkCyan
+    $contrastScript = Join-Path $repoRoot "scripts\bi-mode-contrast-audit.mjs"
+    if (Test-Path $contrastScript) {
+        # Quick mode: just home + free-tools + 1 blog post (3 pages, ~45s)
+        # Full audit (17 pages, ~3min) runs manually post-deploy
+        $env:BIMODE_QUICK = "1"
+        $contrastOutput = & node $contrastScript 2>&1 | Select-Object -Last 8
+        $contrastOutput | ForEach-Object {
+            if ($_ -match "Critical|both-mode fails") {
+                Write-Host "  $_" -ForegroundColor Yellow
+            } else {
+                Write-Host "  $_" -ForegroundColor DarkGray
+            }
+        }
+        Remove-Item env:BIMODE_QUICK -ErrorAction SilentlyContinue
+        Write-Host "  (Advisory only — see audit-output/bi-mode-contrast.json for detail)" -ForegroundColor DarkGray
+    }
+}
+
+Write-Host ""
+Write-Host "🟢 ALL CLEAR — safe to push." -ForegroundColor Green
+exit 0

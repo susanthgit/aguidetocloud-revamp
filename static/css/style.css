@@ -17,9 +17,14 @@
   --border: #E5E5E5;
   --border-emphasis: #D4D4D4;
 
-  /* Accent — Indigo */
-  --accent: #6366F1;
-  --accent-hover: #4F46E5;
+  /* Accent — Indigo
+     WCAG-tuned: --accent is the readable text/UI colour (passes AA 4.5 on bg-surface).
+     --accent-brand is the bright marketing indigo (decorative use only — logos, splashes).
+     --accent-strong is the high-contrast version for primary CTA buttons (white text passes both modes). */
+  --accent: #4F46E5;          /* 6.29 on white — readable as text */
+  --accent-hover: #3730A3;    /* 10.5 on white — strong hover state */
+  --accent-brand: #6366F1;    /* bright indigo — backgrounds + decoration only, NOT text */
+  --accent-strong: #4F46E5;   /* CTA button bg — white text = 6.29 ratio */
   --accent-subtle: #EEF2FF;
 
   /* Semantic */
@@ -74,8 +79,10 @@
   --text-tertiary: #A3A3A3;
   --border: #262626;
   --border-emphasis: #404040;
-  --accent: #818CF8;
-  --accent-hover: #6366F1;
+  --accent: #818CF8;          /* 7.21 on dark bg — readable as text */
+  --accent-hover: #A5B4FC;    /* even lighter for hover */
+  --accent-brand: #6366F1;    /* bright indigo — backgrounds + decoration only */
+  --accent-strong: #4F46E5;   /* CTA button bg — white text = 6.29 ratio */
   --accent-subtle: rgba(99, 102, 241, 0.1);
   --success: #4ADE80;
   --warning: #FACC15;
@@ -113,7 +120,9 @@ body:not(.is-home):not(.zen-migrated) {
   --border: #262626;
   --border-emphasis: #404040;
   --accent: #818CF8;
-  --accent-hover: #6366F1;
+  --accent-hover: #A5B4FC;
+  --accent-brand: #6366F1;
+  --accent-strong: #4F46E5;
   --accent-subtle: rgba(99, 102, 241, 0.1);
   --success: #4ADE80;
   --warning: #FACC15;
@@ -2552,8 +2561,8 @@ pre.mermaid {
   /* CTA at bottom */
   .drawer-cta {
     display: block; text-align: center; margin-top: auto; padding-top: 1rem;
-    padding: 0.85rem 1.5rem; border-radius: var(--radius-md); font-weight: 700;
-    background: var(--accent); color: #fff; text-decoration: none;
+    padding: 0.85rem 1.5rem; border-radius: var(--radius-md); font-weight: 600;
+    background: var(--accent-strong); color: white; text-decoration: none;
     font-size: 0.95rem; transition: background-color var(--transition);
     margin-top: 1.5rem;
   }
