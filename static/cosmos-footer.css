@@ -51,6 +51,16 @@
 }
 .cosmos-footer a:hover { color: var(--accent-hover); text-decoration: underline; }
 
+/* Phase 18: links inside prose paragraphs need underline to be distinguishable
+   by colour-blind users (Lighthouse 'link-in-text-block' audit). Excludes the
+   icon-row link list and Ko-fi button which have non-prose visual containers. */
+.cosmos-footer__disclaimer a,
+.cosmos-footer__legal a,
+.cosmos-footer__copy a,
+.cosmos-footer__feedback a {
+  text-decoration: underline;
+}
+
 [data-theme="dark"] .cosmos-footer a,
 .dark .cosmos-footer a { color: var(--accent); }
 [data-theme="dark"] .cosmos-footer a:hover,
