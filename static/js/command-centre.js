@@ -5,11 +5,14 @@
 (function() {
   'use strict';
   var API = '/api/stats';
+  var COSMOS_API = '/api/cosmos-summary';
   var siteData = null;
   var ytData = null;
+  var cosmosData = null;
   var _sitePulse = null;
   var _ytPulse = null;
   var _growthChart = null;
+  var _cosmosCharts = {};
 
   var TOOLS = {
     'ai-news':'AI News','m365-roadmap':'M365 Roadmap','prompt-library':'Prompt Library',
@@ -119,6 +122,7 @@
       if (btn.dataset.view === 'youtube' && !ytData) fetchYT();
       if (btn.dataset.view === 'seo' && siteData) renderSEO(siteData);
       if (btn.dataset.view === 'biolinks' && !bioData) fetchBioLinks();
+      if (btn.dataset.view === 'cosmos' && !cosmosData) fetchCosmos();
     });
   });
 
@@ -591,6 +595,7 @@
     else if (key === 'y') switchView('youtube');
     else if (key === 's') switchView('seo');
     else if (key === 't') switchView('strategy');
+    else if (key === 'c') switchView('cosmos');
     else if (key === 'r') { e.preventDefault(); location.reload(); }
     else if (e.key === '?') toggleHelp();
   });
@@ -602,9 +607,190 @@
     if (name === 'youtube' && !ytData) fetchYT();
     if (name === 'seo' && siteData) renderSEO(siteData);
     if (name === 'strategy') renderStrategy();
+    if (name === 'cosmos' && !cosmosData) fetchCosmos();
   }
 
-  // ── V2: COPY WEEKLY REPORT (#9) ──
+  // ── COSMOS INTELLIGENCE (Phase A2 — 12 May 2026) ──
+  //
+  // Fetches /api/cosmos-summary (gated). Uses CC plaintext password from
+  // sessionStorage as Bearer (server hashes + constant-time compares).
+  // Renders 4 sections: Cosmos Pulse / Planet Leaderboard / Signals / Stars.
+
+  function fetchCosmos() {
+    var pwd = sessionStorage.getItem('cc-p');
+    if (!pwd) {
+      paintCosmosError('No CC session — refresh and re-authenticate.');
+      return;
+    }
+    var origin = 'https://www.aguidetocloud.com';
+    fetch(origin + COSMOS_API, {
+      method: 'GET',
+      credentials: 'omit',
+      headers: { 'Authorization': 'Bearer ' + pwd }
+    }).then(function(r) {
+      if (r.status === 401) { paintCosmosError('Auth rejected by worker (password mismatch).'); return null; }
+      if (r.status === 202) { paintCosmosGenerating(); setTimeout(fetchCosmos, 30000); return null; }
+      return r.json();
+    }).then(function(data) {
+      if (!data) return;
+      if (data.error) { paintCosmosError(data.error + (data.message ? ' — ' + data.message : '')); return; }
+      cosmosData = data;
+      renderCosmos(data);
+    }).catch(function(e) {
+      paintCosmosError('Network error: ' + (e && e.message ? e.message : 'unknown'));
+    });
+  }
+
+  function paintCosmosError(msg) {
+    var el = document.getElementById('cc-cosmos-kpis');
+    if (el) el.innerHTML = '<div class="cc-warmup-card" style="border-color:rgba(239,68,68,0.4)"><strong>Cosmos data unavailable</strong><p class="cc-hint">' + esc(msg) + '</p></div>';
+  }
+
+  function paintCosmosGenerating() {
+    var el = document.getElementById('cc-cosmos-kpis');
+    if (el) el.innerHTML = '<div class="cc-warmup-card"><strong>⏳ Building first cosmos summary…</strong><p class="cc-hint">First time only — ~15 GA4 queries running. Retrying every 30s.</p></div>';
+  }
+
+  function renderCosmos(d) {
+    var warm = document.getElementById('cc-cosmos-warmup');
+    if (warm) warm.style.display = d.warm_up ? '' : 'none';
+
+    // Freshness
+    var fr = document.getElementById('cc-cosmos-freshness');
+    if (fr) {
+      var label = d.stale ? 'stale' : 'fresh';
+      var when = d.generated_at ? new Date(d.generated_at).toLocaleString('en-NZ', { dateStyle:'short', timeStyle:'short' }) : 'never';
+      fr.textContent = label + ' · ' + when + ' · ' + (d.freshness_hours != null ? d.freshness_hours + 'h ago' : '');
+      fr.className = 'cc-status-mini' + (d.stale ? ' cc-status-stale' : '');
+    }
+
+    renderCosmosKPIs(d);
+    renderCosmosLeaderboard(d);
+    renderCosmosSignals(d);
+    renderCosmosStars(d);
+  }
+
+  function fmtPct(p) {
+    if (p == null) return '<span class="cc-muted">—</span>';
+    var cls = p > 0 ? 'cc-up' : p < 0 ? 'cc-down' : '';
+    var sign = p > 0 ? '+' : '';
+    return '<span class="' + cls + '">' + sign + p.toFixed(1) + '%</span>';
+  }
+
+  function fmtTime(s) {
+    if (!s || s < 1) return '0s';
+    if (s < 60) return s + 's';
+    var m = Math.floor(s / 60), r = s % 60;
+    return m + 'm ' + (r > 0 ? r + 's' : '');
+  }
+
+  function renderCosmosKPIs(d) {
+    var c = d.cosmos || {};
+    var wow = c.wow || {};
+    var html = ''
+      + cosmosKpi('Users (week)',    numFmt(c.users_week),    fmtPct(wow.users_pct))
+      + cosmosKpi('Sessions',        numFmt(c.sessions_week), fmtPct(wow.sessions_pct))
+      + cosmosKpi('Page views',      numFmt(c.views_week),    fmtPct(wow.views_pct))
+      + cosmosKpi('Avg engagement',  fmtTime(c.engagement_avg_sec), fmtPct(wow.engagement_avg_pct));
+    var el = document.getElementById('cc-cosmos-kpis');
+    if (el) el.innerHTML = html;
+  }
+
+  function cosmosKpi(label, value, wow) {
+    return '<div class="cc-cosmos-kpi"><div class="cc-cosmos-kpi-label">' + esc(label) + '</div>'
+      + '<div class="cc-cosmos-kpi-value">' + value + '</div>'
+      + '<div class="cc-cosmos-kpi-wow">WoW ' + wow + '</div></div>';
+  }
+
+  function renderCosmosLeaderboard(d) {
+    var planets = d.planets || [];
+    var el = document.getElementById('cc-cosmos-leaderboard');
+    if (!el) return;
+    if (planets.length === 0) { el.innerHTML = '<p class="cc-hint">No planet data yet.</p>'; return; }
+
+    var rows = planets.map(function(p) {
+      return '<tr class="cc-cosmos-row" data-planet="' + esc(p.slug) + '">'
+        + '<td><strong>' + esc(p.name) + '</strong> <span class="cc-cosmos-kind">' + esc(p.kind) + '</span></td>'
+        + '<td>' + numFmt(p.users_week) + '</td>'
+        + '<td>' + fmtPct(p.wow_pct) + '</td>'
+        + '<td>' + numFmt(p.sessions_week) + '</td>'
+        + '<td>' + fmtTime(p.engagement_avg_sec) + '</td>'
+        + '<td>' + sparklineSvg(p.spark) + '</td>'
+        + '<td>' + planetBadge(p) + '</td>'
+        + '</tr>';
+    }).join('');
+    el.innerHTML = '<table class="cc-cosmos-table">'
+      + '<thead><tr><th>Planet</th><th>Users</th><th>WoW</th><th>Sessions</th><th>Avg engage</th><th>30d trend</th><th>Status</th></tr></thead>'
+      + '<tbody>' + rows + '</tbody></table>';
+  }
+
+  function planetBadge(p) {
+    // Honour planet semantics: commons mode never gets 🔥/📉 badges
+    if (p.action_mode === 'commons') return '<span class="cc-badge cc-badge-commons">commons</span>';
+    if (p.action_mode === 'hub') return '<span class="cc-badge cc-badge-hub">hub</span>';
+    // Confidence floor: need both periods >= 20 to badge growth/drop
+    if (p.users_week < 10) return '<span class="cc-badge cc-badge-quiet">😴 quiet</span>';
+    if (p.users_week < 20 || p.users_prev_week < 20) return '<span class="cc-badge cc-badge-low">low data</span>';
+    if (p.wow_pct == null) return '<span class="cc-badge">—</span>';
+    if (p.users_week >= 50 && p.wow_pct > 25) return '<span class="cc-badge cc-badge-hot">🔥 trending</span>';
+    if (p.users_prev_week >= 50 && p.wow_pct < -15) return '<span class="cc-badge cc-badge-attn">📉 attention</span>';
+    return '<span class="cc-badge cc-badge-steady">steady</span>';
+  }
+
+  function sparklineSvg(spark) {
+    if (!spark || spark.length === 0) return '<span class="cc-muted">—</span>';
+    var max = Math.max.apply(null, spark.concat([1]));
+    var w = 120, h = 28, pad = 1;
+    var stepX = (w - pad * 2) / Math.max(spark.length - 1, 1);
+    var pts = spark.map(function(v, i) {
+      var x = pad + i * stepX;
+      var y = h - pad - ((v / max) * (h - pad * 2));
+      return x.toFixed(1) + ',' + y.toFixed(1);
+    }).join(' ');
+    return '<svg class="cc-spark" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '" aria-hidden="true">'
+      + '<polyline fill="none" stroke="currentColor" stroke-width="1.4" points="' + pts + '"/></svg>';
+  }
+
+  function renderCosmosSignals(d) {
+    var signals = d.signals || [];
+    var el = document.getElementById('cc-cosmos-signals');
+    if (!el) return;
+    if (signals.length === 0) {
+      el.innerHTML = '<p class="cc-hint">No signals to review yet. Either everything is steady, or data is still warming up.</p>';
+      return;
+    }
+    var iconMap = { growth: '🔥', drop: '📉', quiet: '😴', star_page: '🌟', high_bounce: '🚪' };
+    el.innerHTML = signals.map(function(s) {
+      return '<div class="cc-cosmos-signal cc-sig-' + esc(s.type || 'note') + '">'
+        + '<div class="cc-sig-head"><span class="cc-sig-icon">' + (iconMap[s.type] || '•') + '</span>'
+        + '<strong>' + esc(s.headline || '') + '</strong>'
+        + '<span class="cc-sig-conf">' + esc(s.confidence || '') + '</span></div>'
+        + (s.suggestion ? '<div class="cc-sig-sug">' + esc(s.suggestion) + '</div>' : '')
+        + '</div>';
+    }).join('');
+  }
+
+  function renderCosmosStars(d) {
+    var pages = (d.top_pages_engagement || []).slice(0, 10);
+    var el = document.getElementById('cc-cosmos-stars');
+    if (!el) return;
+    if (pages.length === 0) { el.innerHTML = '<p class="cc-hint">No engagement data yet.</p>'; return; }
+    el.innerHTML = '<table class="cc-cosmos-table">'
+      + '<thead><tr><th>#</th><th>Path</th><th>Planet</th><th>Views</th><th>Users</th><th>Avg engage</th></tr></thead>'
+      + '<tbody>'
+      + pages.map(function(p, i) {
+        var avg = p.users > 0 ? Math.round((p.user_engagement_duration || 0) / p.users) : 0;
+        return '<tr><td>' + (i+1) + '</td>'
+          + '<td><a href="https://' + esc(p.host) + esc(p.path) + '" target="_blank" rel="noopener">' + esc(p.path) + '</a> <span class="cc-cosmos-kind">' + esc(p.host) + '</span></td>'
+          + '<td>' + esc(p.planet || '—') + '</td>'
+          + '<td>' + numFmt(p.views) + '</td>'
+          + '<td>' + numFmt(p.users) + '</td>'
+          + '<td>' + fmtTime(avg) + '</td></tr>';
+      }).join('')
+      + '</tbody></table>';
+  }
+
+  // ── V2: KEYBOARD SHORTCUTS (#8) ──
   function copyWeeklyReport() {
     if (!siteData || !siteData.ga4) return;
     var ga4 = siteData.ga4;

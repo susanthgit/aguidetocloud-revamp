@@ -684,3 +684,146 @@ p.cc-muted { color: var(--text-muted); font-size: 0.82rem; font-family: var(--cc
 }
 
 @media print { #cc-gate { display: none !important; } .cc-views { display: none; } .cc-panel { display: block !important; } }
+
+/* ───────────────────────── COSMOS INTELLIGENCE (Phase A2 — 12 May 2026) ───────────────────────── */
+
+.cc-warmup-card {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-left: 3px solid var(--cc-amber);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.9rem;
+}
+.cc-warmup-card strong { color: var(--cc-amber); display: block; margin-bottom: 0.3rem; }
+.cc-warmup-card p { margin: 0; }
+
+.cc-status-mini {
+  font-family: var(--cc-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-left: 0.6rem;
+}
+.cc-status-mini.cc-status-stale { color: var(--cc-amber); }
+
+.cc-cosmos-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+}
+@media (max-width: 720px) { .cc-cosmos-kpis { grid-template-columns: repeat(2, 1fr); } }
+
+.cc-cosmos-kpi {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+}
+.cc-cosmos-kpi-label {
+  font-family: var(--cc-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+.cc-cosmos-kpi-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+.cc-cosmos-kpi-wow {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.cc-cosmos-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+.cc-cosmos-table thead th {
+  text-align: left;
+  padding: 0.5rem 0.7rem;
+  font-family: var(--cc-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+.cc-cosmos-table tbody td {
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.cc-cosmos-table tbody tr:hover { background: var(--bg-elevated); }
+.cc-cosmos-table tbody tr:last-child td { border-bottom: 0; }
+
+.cc-cosmos-kind {
+  display: inline-block;
+  font-family: var(--cc-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-left: 0.4rem;
+}
+
+.cc-spark { display: inline-block; color: var(--cc-blue); vertical-align: middle; }
+
+.cc-badge {
+  display: inline-block;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-family: var(--cc-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+.cc-badge-hot     { background: rgba(239, 68, 68, 0.10); border-color: rgba(239, 68, 68, 0.35); color: var(--cc-red); }
+.cc-badge-attn    { background: rgba(245, 158, 11, 0.10); border-color: rgba(245, 158, 11, 0.35); color: var(--cc-amber); }
+.cc-badge-quiet   { background: rgba(100, 116, 139, 0.10); border-color: rgba(100, 116, 139, 0.35); color: var(--text-muted); }
+.cc-badge-low     { background: rgba(59, 130, 246, 0.08); border-color: rgba(59, 130, 246, 0.30); color: var(--cc-blue); }
+.cc-badge-steady  { background: rgba(34, 197, 94, 0.08); border-color: rgba(34, 197, 94, 0.30); color: var(--cc-green); }
+.cc-badge-commons { background: rgba(168, 230, 168, 0.10); border-color: rgba(34, 197, 94, 0.30); color: var(--cc-green); }
+.cc-badge-hub     { background: rgba(168, 85, 247, 0.10); border-color: rgba(168, 85, 247, 0.30); color: #a855f7; }
+
+.cc-cosmos-signal {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.6rem;
+}
+.cc-sig-growth    { border-left: 3px solid var(--cc-red); }
+.cc-sig-drop      { border-left: 3px solid var(--cc-amber); }
+.cc-sig-quiet     { border-left: 3px solid var(--text-muted); }
+.cc-sig-star_page { border-left: 3px solid var(--cc-green); }
+.cc-sig-high_bounce { border-left: 3px solid var(--cc-blue); }
+.cc-sig-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+.cc-sig-icon { flex: 0 0 auto; font-size: 1rem; }
+.cc-sig-head strong { color: var(--text-primary); flex: 1 1 auto; }
+.cc-sig-conf {
+  flex: 0 0 auto;
+  font-family: var(--cc-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.1rem 0.5rem;
+  background: var(--bg-page);
+  border-radius: 999px;
+}
+.cc-sig-sug { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem; line-height: 1.45; }
+
+.cc-muted { color: var(--text-muted); }

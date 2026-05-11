@@ -4,10 +4,17 @@
  * instead of the googleapis npm package (too heavy for CF Workers).
  *
  * Auth: Google Service Account JWT (Web Crypto API) + YouTube OAuth2 refresh.
- * Env vars: GOOGLE_SERVICE_ACCOUNT_KEY, GA4_PROPERTY_ID,
+ * Env vars: GOOGLE_SERVICE_ACCOUNT_KEY, GA4_PROPERTY_ID, ADMIN_PASSWORD_HASH,
  *           YOUTUBE_API_KEY, YOUTUBE_OAUTH_CLIENT_ID,
  *           YOUTUBE_OAUTH_CLIENT_SECRET, YOUTUBE_OAUTH_REFRESH_TOKEN
  */
+
+import {
+  isAuthedAsAdmin,
+  cosmosJsonRes,
+  corsPreflight,
+  COSMOS_PLANET_KINDS,
+} from './_cosmos-shared.js';
 
 const GA4_PROPERTY = '530486519';
 const GSC_SITE = 'https://www.aguidetocloud.com/';
@@ -193,63 +200,12 @@ function jsonRes(data, status = 200, cache = 'public, max-age=300') {
   });
 }
 
-// ── Cosmos endpoint helpers (cross-origin; dual public/gated mode) ────
-
-const COSMOS_PLANET_KINDS = {
-  earth: 'planet', guided: 'moon', brainbar: 'planet', shift: 'planet',
-  plainai: 'planet', curriculum: 'moon', agentic: 'planet', claw: 'planet',
-  cosmos: 'hub'
-};
-
-async function sha256Hex(text) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
-  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-// Constant-time string equality — defeats timing attacks on auth comparison.
-// JavaScript === short-circuits on first mismatch, leaking position information.
-// This XORs every char (or 0 if lengths differ) and reduces to a single bit.
-function timingSafeStrEqual(a, b) {
-  if (typeof a !== 'string' || typeof b !== 'string') return false;
-  // Length-mismatch can still leak the fact that lengths differ, but for a
-  // fixed-length hash comparison this is fine — both sides are 64 hex chars.
-  if (a.length !== b.length) return false;
-  let acc = 0;
-  for (let i = 0; i < a.length; i++) {
-    acc |= a.charCodeAt(i) ^ b.charCodeAt(i);
-  }
-  return acc === 0;
-}
-
-// Hash the Authorization Bearer value and constant-time compare to
-// env.ADMIN_PASSWORD_HASH. We REJECT pre-hashed values because the hash is
-// embedded in the public /cc/ HTML (line 502 of layouts/cc/list.html) — if
-// we accepted hashes as Bearer, anyone could scrape the public hash and
-// reuse it. Plaintext-only forces possession of the actual password.
-async function isAuthedAsAdmin(request, env) {
-  if (!env.ADMIN_PASSWORD_HASH) return false;
-  const auth = request.headers.get('Authorization') || '';
-  const m = auth.match(/^Bearer\s+(.+)$/i);
-  if (!m) return false;
-  const plaintext = m[1].trim();
-  if (!plaintext) return false;
-  const hash = await sha256Hex(plaintext);
-  return timingSafeStrEqual(hash.toLowerCase(), env.ADMIN_PASSWORD_HASH.toLowerCase());
-}
-
-function cosmosJsonRes(data, status = 200, cache = 'public, max-age=45') {
-  return new Response(JSON.stringify(data), {
-    status,
-    headers: {
-      'Content-Type': 'application/json',
-      'Cache-Control': cache,
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, OPTIONS',
-      'Access-Control-Allow-Headers': 'Authorization, Content-Type',
-      'Vary': 'Authorization'
-    }
-  });
-}
+// ── Cosmos endpoint helpers moved to ./_cosmos-shared.js ──
+// (cosmosJsonRes, sha256Hex, timingSafeStrEqual, isAuthedAsAdmin,
+//  COSMOS_PLANET_KINDS, COSMOS_PLANETS, HOST_TO_PLANETS, resolvePlanet,
+//  PLANET_SEMANTICS, nztWeekRanges, throttled, corsPreflight)
+//
+// stats.js imports only what it needs at the top of the file.
 
 // ── Auth helper ──────────────────────────────────────────────────
 
@@ -940,15 +896,7 @@ export async function onRequestGet(context) {
 export async function onRequestOptions(context) {
   const url = new URL(context.request.url);
   if (url.searchParams.get('realtime') === 'cosmos' || url.searchParams.get('cosmos') === '1') {
-    return new Response(null, {
-      status: 204,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, OPTIONS',
-        'Access-Control-Allow-Headers': 'Authorization, Content-Type',
-        'Access-Control-Max-Age': '86400'
-      }
-    });
+    return corsPreflight();
   }
   return new Response(null, { status: 405 });
 }

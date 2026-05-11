@@ -102,6 +102,7 @@
     <button class="cc-view" data-view="seo">SEO</button>
     <button class="cc-view" data-view="strategy">Strategy</button>
     <button class="cc-view" data-view="biolinks">Bio Links</button>
+    <button class="cc-view" data-view="cosmos">🌌 Cosmos</button>
     <span class="cc-view-divider"></span>
     <button class="cc-view" data-view="guided-sales">💰 Sales</button>
     <button class="cc-view" data-view="guided-licences">🔑 Licences</button>
@@ -277,6 +278,41 @@
     <section class="cc-section">
       <h2 class="cc-section-title">Insights</h2>
       <div id="cc-bio-insights"></div>
+    </section>
+  </div>
+
+  <!-- VIEW: Cosmos Intelligence (Phase A2 — 12 May 2026) -->
+  <div class="cc-panel" id="cc-cosmos">
+    <section class="cc-section" id="cc-cosmos-warmup" style="display:none">
+      <div class="cc-warmup-card">
+        <strong>⏳ Cosmos historical data is warming up.</strong>
+        <p class="cc-hint">The <code>cosmos_planet</code> GA4 custom dimension was registered today. Live data is verified, but weekly trends need 48–72h of hits to populate cleanly. Some planet rows may show 0 until then.</p>
+      </div>
+    </section>
+    <section class="cc-section">
+      <div class="cc-section-head">
+        <h2 class="cc-section-title">Cosmos Pulse <span class="cc-tip" data-tip="Cosmos-wide totals for last complete Mon-Sun week (NZT) vs the previous week.">?</span></h2>
+        <span class="cc-status-mini" id="cc-cosmos-freshness"></span>
+      </div>
+      <div class="cc-cosmos-kpis" id="cc-cosmos-kpis"></div>
+    </section>
+    <section class="cc-section">
+      <div class="cc-section-head">
+        <h2 class="cc-section-title">Planet Leaderboard <span class="cc-tip" data-tip="Per-planet weekly users, WoW change, 30-day sparkline. Badges respect per-planet semantics (e.g. Curriculum suppresses growth prompts).">?</span></h2>
+      </div>
+      <div id="cc-cosmos-leaderboard"></div>
+    </section>
+    <section class="cc-section">
+      <div class="cc-section-head">
+        <h2 class="cc-section-title">Signals to Review <span class="cc-tip" data-tip="Rule-based observations to investigate — not auto-recommendations. Confidence-gated by volume floors.">?</span></h2>
+      </div>
+      <div id="cc-cosmos-signals"></div>
+    </section>
+    <section class="cc-section">
+      <div class="cc-section-head">
+        <h2 class="cc-section-title">Star Pages <span class="cc-tip" data-tip="Top 3 pages cosmos-wide by average engagement-per-user.">?</span></h2>
+      </div>
+      <div id="cc-cosmos-stars"></div>
     </section>
   </div>
 
