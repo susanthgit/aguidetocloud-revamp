@@ -40,7 +40,7 @@ const PAGES = [
   ['/color-palette/', 'color-palette'],
   ['/site-analytics/', 'site-analytics'],
   ['/copilot-readiness/', 'readiness'],
-  ['/blog/microsoft-365-copilot-explained/', 'blog-post'],
+  ['/blog/how-microsoft-365-copilot-works-layer-by-layer/', 'blog-post'],
   ['/study-guides/', 'sg-index'],
 ];
 

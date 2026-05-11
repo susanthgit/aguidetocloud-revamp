@@ -36,7 +36,7 @@ const ALL_PAGES = [
   ['/color-palette/', 'color-palette'],
   ['/site-analytics/', 'site-analytics'],
   // Blog post (sample)
-  ['/blog/microsoft-365-copilot-explained/', 'blog-post'],
+  ['/blog/how-microsoft-365-copilot-works-layer-by-layer/', 'blog-post'],
   // Cert page (sample)
   ['/cert-tracker/az-900/', 'cert-page'],
   // Licence picker / Mind map
@@ -46,7 +46,7 @@ const ALL_PAGES = [
 const QUICK_PAGES = [
   ['/', 'home'],
   ['/free-tools/', 'tools-hub'],
-  ['/blog/microsoft-365-copilot-explained/', 'blog-post'],
+  ['/blog/how-microsoft-365-copilot-works-layer-by-layer/', 'blog-post'],
 ];
 const PAGES = process.env.BIMODE_QUICK ? QUICK_PAGES : ALL_PAGES;
 
