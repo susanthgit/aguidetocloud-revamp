@@ -872,6 +872,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1rem;
+  min-height: 800px; /* Phase 16 P4: reserve height to prevent CLS while JS hydrates curated palettes */
 }
 
 .palette-explore-card {

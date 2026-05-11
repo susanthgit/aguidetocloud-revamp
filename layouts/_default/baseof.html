@@ -68,11 +68,11 @@
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-700.woff2" crossorigin>
   {{ end }}
   <link rel="stylesheet" href="/css/fonts.css">
-  <link rel="stylesheet" href="/cosmos-bar.css?v={{ site.Params.cache_version }}">
-  <link rel="stylesheet" href="/cosmos-footer.css?v={{ site.Params.cache_version }}">
+  {{/* Phase 16 P6: cosmos-bar + cosmos-footer + bb-palette combined into zen-chrome.css
+       — was 3 render-blocking files, now 1. Originals kept in repo for debugging only. */}}
+  <link rel="stylesheet" href="/css/zen-chrome.css?v={{ site.Params.cache_version }}">
   <link rel="stylesheet" href="/css/style.css?v={{ site.Params.cache_version }}">
   <link rel="stylesheet" href="/css/sections.css?v={{ site.Params.cache_version }}">
-  <link rel="stylesheet" href="/css/bb-palette.css?v={{ site.Params.cache_version }}">
   {{ if hasPrefix .RelPermalink "/guided/" }}<link rel="stylesheet" href="/css/guided.css?v={{ site.Params.cache_version }}">{{ end }}
   {{ $videoSections := slice "ai-hub" "cloud-labs" "certifications" "exam-qa" "interview-prep" "music" "videos" }}
   {{ $isVideoSection := in $videoSections .Section }}

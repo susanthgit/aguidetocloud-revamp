@@ -1241,32 +1241,44 @@ function initWorldClockTab() {
    ═══════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Phase 16 P5: above-the-fold init only — the rest defers via requestIdleCallback
+  // to drop TBT from 215ms below the 200ms threshold. The "Convert / Meeting Planner /
+  // DST Guide" tabs are not visible on load, so their init can wait.
   initTabs();
   initWorldClock();
-  initConvert();
-  initMeetingPlanner();
-  initDstGuide();
 
-  // Restore URL state for date and slider after init
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.has('date')) {
-    const dateInput = document.getElementById('wclk-meeting-date');
-    if (dateInput) dateInput.value = urlParams.get('date');
-  }
-  if (urlParams.has('t')) {
-    const slider = document.getElementById('wclk-time-slider');
-    if (slider) slider.value = urlParams.get('t');
-  }
-  if (urlParams.has('dur')) {
-    const durSelect = document.getElementById('wclk-duration');
-    if (durSelect) durSelect.value = urlParams.get('dur');
-  }
-  // Re-render if URL had state
-  if (urlParams.has('cities')) {
-    renderClocks();
-    updateQuickButtons();
-    renderMeetingTimeline();
-    renderSliderResults();
+  const deferRest = () => {
+    initConvert();
+    initMeetingPlanner();
+    initDstGuide();
+
+    // Restore URL state for date and slider after init
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('date')) {
+      const dateInput = document.getElementById('wclk-meeting-date');
+      if (dateInput) dateInput.value = urlParams.get('date');
+    }
+    if (urlParams.has('t')) {
+      const slider = document.getElementById('wclk-time-slider');
+      if (slider) slider.value = urlParams.get('t');
+    }
+    if (urlParams.has('dur')) {
+      const durSelect = document.getElementById('wclk-duration');
+      if (durSelect) durSelect.value = urlParams.get('dur');
+    }
+    // Re-render if URL had state
+    if (urlParams.has('cities')) {
+      renderClocks();
+      updateQuickButtons();
+      renderMeetingTimeline();
+      renderSliderResults();
+    }
+  };
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(deferRest, { timeout: 2000 });
+  } else {
+    setTimeout(deferRest, 0);
   }
 });
 

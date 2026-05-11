@@ -38,7 +38,9 @@
 
   <h2 class="sr-only">Roadmap Items</h2>
   <div class="rdmap-content" id="rdmap-content" aria-live="polite">
-    <div class="rdmap-skeleton"><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div><div class="rdmap-skeleton-row"></div></div>
+    {{/* Phase 16 P2: 30 skeleton rows (was 4) — matches typical hydrated row count
+         to eliminate CLS=0.33. Real content replaces them on JS hydrate. */}}
+    <div class="rdmap-skeleton">{{ range seq 30 }}<div class="rdmap-skeleton-row"></div>{{ end }}</div>
   </div>
 
   <div class="rdmap-footer">
