@@ -222,23 +222,56 @@ async function getToken(env) {
 }
 
 // ── Endpoint: Realtime ───────────────────────────────────────────
-
+//
+// Returns { active, pages }. `active` is the TRUE unique active-user count
+// across the property; `pages` is the per-page breakdown (top 25 by users).
+//
+// 🪲 Bug fixed 13 May 2026 — `active` used to be `sum(pages[].users)` which
+// double-counted any visitor who hopped between pages in the realtime window
+// (GA4 returns activeUsers PER dimension value when a dimension is added).
+// Site Analytics tile + tool-counter pill + CC "Live Now" inherited the
+// inflation. Fix: separate no-dimension query → true unique total; per-page
+// query keeps the breakdown. The cosmos pill already uses the same pattern.
+//
+// Two parallel realtime queries (Promise.allSettled): if the per-page call
+// fails but the total succeeds we still return the right number; if the
+// total fails but per-page succeeds we fall back to the sum (old behaviour,
+// at least matches what the user used to see). Both fail → 0/[].
 async function handleRealtime(env) {
   const token = await getToken(env);
   if (!token) return jsonRes({ active: 0, pages: [] }, 200, 'no-cache');
-  try {
-    const res = await ga4RunRealtimeReport(token, {
-      dimensions: [{ name: 'unifiedScreenName' }],
-      metrics: [{ name: 'activeUsers' }], limit: 25
-    });
-    const rows = (res.rows || []).map(r => {
+
+  const totalReq = ga4RunRealtimeReport(token, {
+    metrics: [{ name: 'activeUsers' }]
+  });
+  const perPageReq = ga4RunRealtimeReport(token, {
+    dimensions: [{ name: 'unifiedScreenName' }],
+    metrics: [{ name: 'activeUsers' }], limit: 25
+  });
+
+  const [totalSettled, perPageSettled] = await Promise.allSettled([totalReq, perPageReq]);
+
+  let pages = [];
+  if (perPageSettled.status === 'fulfilled') {
+    pages = (perPageSettled.value.rows || []).map(r => {
       const rawTitle = r.dimensionValues?.[0]?.value || '';
       const cleanTitle = rawTitle.replace(/\s*\|.*$/, '').replace(/\s*[—–].*$/, '').trim();
       const slug = '/' + cleanTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') + '/';
       return { page: cleanTitle, path: slug, users: parseInt(r.metricValues?.[0]?.value) || 0 };
     }).sort((a, b) => b.users - a.users);
-    return jsonRes({ active: rows.reduce((s, p) => s + p.users, 0), pages: rows }, 200, 'no-cache');
-  } catch { return jsonRes({ active: 0, pages: [] }, 200, 'no-cache'); }
+  }
+
+  let active;
+  if (totalSettled.status === 'fulfilled') {
+    active = parseInt(totalSettled.value.rows?.[0]?.metricValues?.[0]?.value) || 0;
+  } else if (perPageSettled.status === 'fulfilled') {
+    // Inflated fallback — better than 0 if the no-dim query 4xxs.
+    active = pages.reduce((s, p) => s + p.users, 0);
+  } else {
+    return jsonRes({ active: 0, pages: [] }, 200, 'no-cache');
+  }
+
+  return jsonRes({ active, pages }, 200, 'no-cache');
 }
 
 // ── Endpoint: Cosmos realtime (cross-origin) ─────────────────────
