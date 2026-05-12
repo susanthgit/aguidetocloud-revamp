@@ -2,7 +2,7 @@
 # Agent 365 Planner — Best Practices Checklist
 # 3 categories, ~10 items each. Scored: Done (2) / Partial (1) / Not Done (0)
 # Source: Public Microsoft Learn docs + community best practices
-# Last verified: 2026-04-16
+# Last verified: 2026-05-13 (post-GA — Agent 365 GA'd 1 May 2026)
 # ============================================================================
 
 # ── Pre-Deployment ───────────────────────────────────────────────────────────
@@ -143,6 +143,13 @@ id = "bp-d1-08"
 text = "Verified Agent Registry shows all expected agents"
 detail = "After enabling, verify the Agent Registry displays all Microsoft, partner, and org agents correctly."
 learn_url = "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry"
+severity = "medium"
+
+[[categories.items]]
+id = "bp-d1-09"
+text = "Configured Intune policies for local agent endpoints"
+detail = "Where agents run on Windows endpoints, use Intune to enforce baseline device compliance, app protection, and conditional access — closes the loop on local-agent governance alongside cloud-native controls."
+learn_url = "https://learn.microsoft.com/en-us/microsoft-agent-365/overview"
 severity = "medium"
 
 # ── Ongoing Governance ───────────────────────────────────────────────────────
