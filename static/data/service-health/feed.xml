@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 12 May 2026 06:46:14 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2026 10:40:33 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Defender XDR] Admins or users may be unable to see files' meta data from endpoints in the Microsoft Defender for Endpoint portal</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1308378</link>
+      <description>[Microsoft Defender XDR] Admins or users may be unable to see files' meta data from endpoints in the Microsoft Defender for Endpoint portal.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">DZ1308378</guid>
+      <pubDate>Tue, 12 May 2026 09:19:39 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Users’ text may turn blank when translated from the reading pane in Outlook desktop and Outlook on the web</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1307899</link>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1272944</guid>
       <pubDate>Tue, 07 Apr 2026 06:15:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] A small subset of admins in North America and Brazil may be unable to access the Microsoft 365 admin center </title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1272387</link>
-      <description>[Microsoft 365 suite] A subset of admins in North America and Brazil may have been unable to access the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">MO1272387</guid>
-      <pubDate>Mon, 06 Apr 2026 17:45:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
