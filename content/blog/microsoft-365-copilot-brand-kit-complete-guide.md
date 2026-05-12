@@ -795,6 +795,29 @@ If you're already invested in Bynder, Frontify, or AEM Assets and waiting for ti
 
 Customers ask: "we already have Designer; do we need Adobe Express? And how does Brand Kit fit?" Here's the positioning I use.
 
+> 💡 **Quick primer — what is Adobe Express?**
+> Adobe Express is Adobe's free creative design tool (think: Canva, from Adobe). It does posters, social posts, animated graphics, short videos, magazine-style layouts. Inside Copilot Chat you invoke it with **`@Adobe Express`** to browse Adobe templates, swap in your images, animate designs, and export the result back to Microsoft formats (PNG, JPG, MP4, PPTX). Most office workers won't reach for it daily — but marketing, comms, and design teams will.
+
+### Decision tree — which one do I use?
+
+<figure class="diagram">
+  <img
+    src="/diagrams/brand-kit-decision-tree.svg"
+    alt="Decision tree for choosing between Microsoft Designer, Adobe Express, and PowerPoint/Word with Brand Kit. If the visual goes inside a PowerPoint deck or Word document, use the Office app with Brand Kit and Brand Images from your OAL. Otherwise, if the visual needs animation, motion, or magazine-style creative depth, use the @Adobe Express agent in Copilot Chat (with the caveat that Brand Kit guides Express less tightly — check brand alignment manually). For everything else (fast on-brand static visuals like banners, posters, infographics), use Microsoft Designer in Copilot Create. Brand Kit (colours, fonts, voice, imagery rules) applies across all of these tools — it's the rule book, not a tool you pick."
+    loading="lazy"
+    style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto;"
+  />
+  <figcaption style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+    Save or share:
+    <a href="/diagrams/brand-kit-decision-tree.png" download>PNG (high-res, LinkedIn-ready)</a> ·
+    <a href="/diagrams/brand-kit-decision-tree.svg" download>SVG (vector)</a> ·
+    <a href="/diagrams/brand-kit-decision-tree.excalidraw" download>.excalidraw source</a>
+    (open in <a href="https://excalidraw.com" target="_blank" rel="noopener">excalidraw.com</a> or aka.ms/excalidraw to edit)
+  </figcaption>
+</figure>
+
+### Positioning at a glance
+
 | Tool | What it's for | Strength | Where to access |
 |---|---|---|---|
 | **Microsoft Designer** | Quick branded visuals — banners, posters, infographics, images for Copilot Create | Fast, integrated, free with Copilot | Copilot Create → More options |
