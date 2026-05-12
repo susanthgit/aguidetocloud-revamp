@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T14:51:20.158505+00:00",
+  "generated_at": "2026-05-12T18:15:26.390050+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
@@ -16,29 +16,29 @@
       }
     },
     {
-      "service": "Exchange Online",
-      "short_name": "Exchange",
-      "icon": "📧",
-      "total_incidents": 19,
-      "active_incidents": 2,
-      "avg_duration_minutes": 17009,
-      "last_incident": "2026-05-11T23:05:19.263000+00:00",
-      "classifications": {
-        "advisory": 15,
-        "incident": 4
-      }
-    },
-    {
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 18,
-      "active_incidents": 0,
+      "total_incidents": 19,
+      "active_incidents": 1,
       "avg_duration_minutes": 5339,
-      "last_incident": "2026-04-20T00:00:00+00:00",
+      "last_incident": "2026-05-12T17:40:58.807000+00:00",
       "classifications": {
-        "incident": 11,
-        "advisory": 7
+        "advisory": 8,
+        "incident": 11
+      }
+    },
+    {
+      "service": "Exchange Online",
+      "short_name": "Exchange",
+      "icon": "📧",
+      "total_incidents": 18,
+      "active_incidents": 2,
+      "avg_duration_minutes": 17997,
+      "last_incident": "2026-05-05T15:00:00+00:00",
+      "classifications": {
+        "advisory": 14,
+        "incident": 4
       }
     },
     {
@@ -156,6 +156,18 @@
       }
     },
     {
+      "service": "Dynamics 365 Apps",
+      "short_name": "Dynamics",
+      "icon": "🏢",
+      "total_incidents": 1,
+      "active_incidents": 0,
+      "avg_duration_minutes": 13650,
+      "last_incident": "2026-05-02T18:00:00+00:00",
+      "classifications": {
+        "advisory": 1
+      }
+    },
+    {
       "service": "Universal Print",
       "short_name": "Print",
       "icon": "🖨️",
@@ -166,25 +178,13 @@
       "classifications": {
         "incident": 1
       }
-    },
-    {
-      "service": "Planner",
-      "short_name": "Planner",
-      "icon": "📋",
-      "total_incidents": 1,
-      "active_incidents": 0,
-      "avg_duration_minutes": 610,
-      "last_incident": "2026-03-02T07:15:00+00:00",
-      "classifications": {
-        "incident": 1
-      }
     }
   ],
   "monthly": [
     {
       "month": "2026-05",
-      "incident_count": 12,
-      "services_affected": 6
+      "incident_count": 14,
+      "services_affected": 8
     },
     {
       "month": "2026-04",
@@ -193,8 +193,8 @@
     },
     {
       "month": "2026-03",
-      "incident_count": 40,
-      "services_affected": 11
+      "incident_count": 38,
+      "services_affected": 10
     }
   ]
 }

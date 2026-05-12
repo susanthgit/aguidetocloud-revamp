@@ -5,16 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 12 May 2026 14:51:20 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2026 18:15:26 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Exchange Online] Users’ text may turn blank when translated from the reading pane in Outlook desktop and Outlook on the web</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1307899</link>
-      <description>[Exchange Online] Users’ text may turn blank when translated from the reading pane in Outlook desktop and Outlook on the web.</description>
-      <category>Exchange Online</category>
+      <title>[Microsoft 365 suite] Some admins may experience delays of up to 72 hours receiving app usage reports in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1308654</link>
+      <description>[Microsoft 365 suite] Admins may experience delays of up to 72 hours receiving app usage reports in the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
       <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1307899</guid>
-      <pubDate>Mon, 11 May 2026 23:05:19 +0000</pubDate>
+      <guid isPermaLink="false">MO1308654</guid>
+      <pubDate>Tue, 12 May 2026 17:40:58 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins' Copilot usage and chat report data may be delayed from appearing in the Microsoft 365 admin center</title>
@@ -80,6 +80,15 @@
       <pubDate>Tue, 05 May 2026 15:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Exchange Online] Users’ text may turn blank when translated from the reading pane in Outlook desktop and Outlook on the web</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1307899</link>
+      <description>[Exchange Online] Users’ text may turn blank when translated from the reading pane in Outlook desktop and Outlook on the web.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1307899</guid>
+      <pubDate>Mon, 04 May 2026 15:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Defender XDR] Admins or users were unable to see files' meta data from endpoints in the Microsoft Defender for Endpoint portal</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1308378</link>
       <description>[Microsoft Defender XDR] Admins or users were unable to see files' meta data from endpoints in the Microsoft Defender for Endpoint portal.</description>
@@ -105,6 +114,15 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">DZ1299600</guid>
       <pubDate>Sun, 03 May 2026 08:52:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Dynamics 365 Apps] Queried data from computed columns return duplicate fields where the logical/physical names differ</title>
+      <link>https://www.aguidetocloud.com/service-health/#CR1308631</link>
+      <description>[Dynamics 365 Apps] Queried data from computed columns had returned duplicate fields where the logical/physical names differ.</description>
+      <category>Dynamics 365 Apps</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CR1308631</guid>
+      <pubDate>Sat, 02 May 2026 18:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Viva] Users may be unable to access Community Analytics in Microsoft Viva Engage</title>
@@ -440,24 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1279825</guid>
       <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some users in the United States may have been unable to access multiple Microsoft 365 services</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1273099</link>
-      <description>[Microsoft 365 suite] Users may have been unable to access multiple Microsoft 365 services.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1273099</guid>
-      <pubDate>Tue, 07 Apr 2026 13:20:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may experience errors or pages failing to load when accessing Microsoft 365 Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1272944</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to load pages when accessing Copilot.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1272944</guid>
-      <pubDate>Tue, 07 Apr 2026 06:15:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
