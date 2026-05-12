@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 12 May 2026 04:02:35 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2026 06:46:14 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Exchange Online] Users’ text may turn blank when translated from the reading pane in Outlook desktop and Outlook on the web</title>
@@ -21,7 +21,7 @@
       <link>https://www.aguidetocloud.com/service-health/#CP1307847</link>
       <description>[Microsoft Copilot (Microsoft 365)] Admins' Copilot usage and chat report data may be delayed from appearing in the Microsoft 365 admin center.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>investigating</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1307847</guid>
       <pubDate>Mon, 11 May 2026 19:40:40 +0000</pubDate>
     </item>
