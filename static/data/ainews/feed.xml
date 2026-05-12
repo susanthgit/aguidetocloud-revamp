@@ -5,407 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Mon, 11 May 2026 23:56:47 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2026 07:37:36 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Double Canvas breach acknowledged as ShinyHunters sets new pay-or-leak deadline</title>
-      <link>https://www.theregister.com/security/2026/05/12/double-canvas-intrusion-confirmed-as-shinyhunters-resets-leak-deadline/5238361</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 12 May 2026 01:16:25 +0200</pubDate>
-      <guid>https://www.theregister.com/security/2026/05/12/double-canvas-intrusion-confirmed-as-shinyhunters-resets-leak-deadline/5238361</guid>
-    </item>
-    <item>
-      <title>Closing the knowledge gap with agent skills</title>
-      <link>https://developers.googleblog.com/closing-the-knowledge-gap-with-agent-skills/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 11 May 2026 23:55:34 +0000</pubDate>
-      <guid>https://developers.googleblog.com/closing-the-knowledge-gap-with-agent-skills/</guid>
-    </item>
-    <item>
-      <title>Announcing ADK for Java 1.0.0: Building the Future of AI Agents in Java</title>
-      <link>https://developers.googleblog.com/announcing-adk-for-java-100-building-the-future-of-ai-agents-in-java/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 11 May 2026 23:55:34 +0000</pubDate>
-      <guid>https://developers.googleblog.com/announcing-adk-for-java-100-building-the-future-of-ai-agents-in-java/</guid>
-    </item>
-    <item>
-      <title>Ilya Sutskever Stands by His Role in Sam Altman’s OpenAI Ouster: ‘I Didn’t Want It to Be Destroyed’</title>
-      <link>https://www.wired.com/story/ilya-sutskever-testifies-musk-v-altman-trial/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 11 May 2026 23:51:35 +0000</pubDate>
-      <guid>https://www.wired.com/story/ilya-sutskever-testifies-musk-v-altman-trial/</guid>
-    </item>
-    <item>
-      <title>Building Blocks for Foundation Model Training and Inference on AWS</title>
-      <link>https://huggingface.co/blog/amazon/foundation-model-building-blocks</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Mon, 11 May 2026 23:18:26 +0000</pubDate>
-      <guid>https://huggingface.co/blog/amazon/foundation-model-building-blocks</guid>
-    </item>
-    <item>
-      <title>Rodent-obsessed developer creates Ratty to bring 3D graphics to the command line</title>
-      <link>https://www.theregister.com/software/2026/05/11/ratty-terminal-emulator-brings-3d-graphics-to-the-command-line/5238299</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 11 May 2026 22:54:30 +0200</pubDate>
-      <guid>https://www.theregister.com/software/2026/05/11/ratty-terminal-emulator-brings-3d-graphics-to-the-command-line/5238299</guid>
-    </item>
-    <item>
-      <title>Microsoft researchers find AI models and agents can't handle long-running tasks</title>
-      <link>https://www.theregister.com/ai-ml/2026/05/11/microsoft-researchers-find-ai-models-and-agents-cant-handle-long-running-tasks/5238263</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 11 May 2026 22:50:00 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-ml/2026/05/11/microsoft-researchers-find-ai-models-and-agents-cant-handle-long-running-tasks/5238263</guid>
-    </item>
-    <item>
-      <title>Linux bitten by second severe vulnerability in as many weeks</title>
-      <link>https://arstechnica.com/security/2026/05/linux-bitten-by-second-severe-vulnerability-in-as-many-weeks/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 11 May 2026 22:28:19 +0000</pubDate>
-      <guid>https://arstechnica.com/security/2026/05/linux-bitten-by-second-severe-vulnerability-in-as-many-weeks/</guid>
-    </item>
-    <item>
-      <title>Cookie thieves caught stealing dev secrets via fake Claude Code installers</title>
-      <link>https://www.theregister.com/security/2026/05/11/cookie-thieves-caught-stealing-dev-secrets/5238248</link>
+      <title>Japan’s PM orders cybersecurity review to stop Mythos going full CyberZilla</title>
+      <link>https://www.theregister.com/security/2026/05/12/japans-pm-orders-cybersecurity-review-to-defend-against-anthropic-mythos/5238501</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Mon, 11 May 2026 22:21:09 +0200</pubDate>
-      <guid>https://www.theregister.com/security/2026/05/11/cookie-thieves-caught-stealing-dev-secrets/5238248</guid>
+      <pubDate>Tue, 12 May 2026 07:40:37 +0200</pubDate>
+      <guid>https://www.theregister.com/security/2026/05/12/japans-pm-orders-cybersecurity-review-to-defend-against-anthropic-mythos/5238501</guid>
     </item>
     <item>
-      <title>Building web search-enabled agents with Strands and Exa</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/building-web-search-enabled-agents-with-strands-and-exa/</link>
+      <title>Boost Training Goodput: How Continuous Checkpointing Optimizes Reliability in Orbax and MaxText</title>
+      <link>https://developers.googleblog.com/boost-training-goodput-how-continuous-checkpointing-optimizes-reliability-in-orbax-and-maxtext/</link>
       <description></description>
-      <category>Amazon</category>
-      <pubDate>Mon, 11 May 2026 21:58:16 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/building-web-search-enabled-agents-with-strands-and-exa/</guid>
+      <category>Google</category>
+      <pubDate>Tue, 12 May 2026 07:36:12 +0000</pubDate>
+      <guid>https://developers.googleblog.com/boost-training-goodput-how-continuous-checkpointing-optimizes-reliability-in-orbax-and-maxtext/</guid>
     </item>
     <item>
-      <title>Microsoft is boosting the launch time of key Windows apps and features - here's how</title>
+      <title>ADK Go 1.0 Arrives!</title>
+      <link>https://developers.googleblog.com/adk-go-10-arrives/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 12 May 2026 07:36:12 +0000</pubDate>
+      <guid>https://developers.googleblog.com/adk-go-10-arrives/</guid>
+    </item>
+    <item>
+      <title>Developer’s Guide to Building ADK Agents with Skills</title>
+      <link>https://developers.googleblog.com/developers-guide-to-building-adk-agents-with-skills/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 12 May 2026 07:36:12 +0000</pubDate>
+      <guid>https://developers.googleblog.com/developers-guide-to-building-adk-agents-with-skills/</guid>
+    </item>
+    <item>
+      <title>Bring state-of-the-art agentic skills to the edge with Gemma 4</title>
+      <link>https://developers.googleblog.com/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 12 May 2026 07:36:12 +0000</pubDate>
+      <guid>https://developers.googleblog.com/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/</guid>
+    </item>
+    <item>
+      <title>Supporting Google Account username change in your app</title>
+      <link>https://developers.googleblog.com/supporting-google-account-username-change-in-your-app/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 12 May 2026 07:36:12 +0000</pubDate>
+      <guid>https://developers.googleblog.com/supporting-google-account-username-change-in-your-app/</guid>
+    </item>
+    <item>
+      <title>TorchTPU: Running PyTorch Natively on TPUs at Google Scale</title>
+      <link>https://developers.googleblog.com/torchtpu-running-pytorch-natively-on-tpus-at-google-scale/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 12 May 2026 07:36:12 +0000</pubDate>
+      <guid>https://developers.googleblog.com/torchtpu-running-pytorch-natively-on-tpus-at-google-scale/</guid>
+    </item>
+    <item>
+      <title>Veteran network architect proposes IPv8 – to improve IPv4, not leapfrog v6</title>
+      <link>https://www.theregister.com/networks/2026/05/12/veteran-network-architect-proposes-ipv8-to-improve-ipv4-not-leapfrog-v6/5238474</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 12 May 2026 06:44:16 +0200</pubDate>
+      <guid>https://www.theregister.com/networks/2026/05/12/veteran-network-architect-proposes-ipv8-to-improve-ipv4-not-leapfrog-v6/5238474</guid>
+    </item>
+    <item>
+      <title>Thinking Machines wants to build an AI that actually listens while it talks</title>
+      <link>https://techcrunch.com/2026/05/11/thinking-machines-wants-to-build-an-ai-that-actually-listens-while-it-talks/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 12 May 2026 04:52:35 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/11/thinking-machines-wants-to-build-an-ai-that-actually-listens-while-it-talks/</guid>
+    </item>
+    <item>
+      <title>GitLab promises a different kind of layoff as biz pivots toward AI</title>
+      <link>https://www.theregister.com/devops/2026/05/12/gitlab-promises-a-different-kind-of-layoff-as-biz-pivots-toward-ai/5238422</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 12 May 2026 03:58:07 +0200</pubDate>
+      <guid>https://www.theregister.com/devops/2026/05/12/gitlab-promises-a-different-kind-of-layoff-as-biz-pivots-toward-ai/5238422</guid>
+    </item>
+    <item>
+      <title>Red Hat blasts RHEL 10.1 into orbit aboard Voyager's micro datacenter</title>
+      <link>https://www.theregister.com/off-prem/2026/05/12/red-hat-gives-rhel-101-the-boot-into-orbit/5238373</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 12 May 2026 02:14:00 +0200</pubDate>
+      <guid>https://www.theregister.com/off-prem/2026/05/12/red-hat-gives-rhel-101-the-boot-into-orbit/5238373</guid>
+    </item>
+    <item>
+      <title>Best Buy is selling this 4TB WD Black SSD for 65% off right now - and I'm seriously tempted</title>
+      <link>https://www.zdnet.com/article/wd-black-sn850x-4tb-best-buy-deal/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Tue, 12 May 2026 02:04:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/wd-black-sn850x-4tb-best-buy-deal/</guid>
+    </item>
+    <item>
+      <title>Windows 11's new Low Latency Profile may give your PC the speed boost it deserves</title>
       <link>https://www.zdnet.com/article/microsoft-speed-launch-time-windows-11-apps-features/</link>
       <description></description>
       <category>Industry</category>
-      <pubDate>Mon, 11 May 2026 21:25:24 +0000</pubDate>
+      <pubDate>Tue, 12 May 2026 02:01:00 +0000</pubDate>
       <guid>https://www.zdnet.com/article/microsoft-speed-launch-time-windows-11-apps-features/</guid>
     </item>
     <item>
-      <title>Can hackers break encrypted USB drives? I tried to find out</title>
-      <link>https://www.zdnet.com/article/kingston-ironkey-locker50-g2-review/</link>
+      <title>Microsoft PowerToys now lets you control your monitor from the taskbar - here's how</title>
+      <link>https://www.zdnet.com/article/microsoft-powertoys-control-your-windows-monitor-from-the-taskbar/</link>
       <description></description>
       <category>Industry</category>
-      <pubDate>Mon, 11 May 2026 20:42:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/kingston-ironkey-locker50-g2-review/</guid>
+      <pubDate>Tue, 12 May 2026 02:00:41 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/microsoft-powertoys-control-your-windows-monitor-from-the-taskbar/</guid>
     </item>
     <item>
-      <title>OpenAI can't have incompetent AI consultants ruining the market, so bought its own</title>
-      <link>https://www.theregister.com/ai-ml/2026/05/11/openai-buys-ai-consultancy-to-sell-enterprises-on-its-models/5238213</link>
+      <title>I compared how Gemini, ChatGPT, and Claude can analyze videos - this model wins</title>
+      <link>https://www.zdnet.com/article/can-gemini-chatgpt-claude-analyze-video-this-one-wins-test/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Mon, 11 May 2026 20:33:11 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-ml/2026/05/11/openai-buys-ai-consultancy-to-sell-enterprises-on-its-models/5238213</guid>
+      <pubDate>Tue, 12 May 2026 01:59:09 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/can-gemini-chatgpt-claude-analyze-video-this-one-wins-test/</guid>
     </item>
     <item>
-      <title>OpenAI just released its answer to Claude Mythos</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/928342/openai-daybreak-security-ai</link>
+      <title>Quit VMware and you’ll emerge with more complex and less capable infrastructure</title>
+      <link>https://www.theregister.com/virtualization/2026/05/12/quit-vmware-and-youll-emerge-with-more-complex-and-less-capable-infrastructure/5238442</link>
       <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 11 May 2026 19:05:01 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/928342/openai-daybreak-security-ai</guid>
+      <category>Top Stories</category>
+      <pubDate>Tue, 12 May 2026 01:59:06 +0200</pubDate>
+      <guid>https://www.theregister.com/virtualization/2026/05/12/quit-vmware-and-youll-emerge-with-more-complex-and-less-capable-infrastructure/5238442</guid>
     </item>
     <item>
-      <title>Ubuntu 26.04 vs. Fedora 44: After years of testing both Linux distros, here's my verdict</title>
-      <link>https://www.zdnet.com/article/ubuntu-26-04-vs-fedora-44/</link>
+      <title>Verizon will give you a free Samsung Galaxy S26, tablet, and watch today - how to qualify</title>
+      <link>https://www.zdnet.com/article/samsung-galaxy-s26-verizon-deal/</link>
       <description></description>
       <category>Industry</category>
-      <pubDate>Mon, 11 May 2026 18:57:15 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/ubuntu-26-04-vs-fedora-44/</guid>
+      <pubDate>Tue, 12 May 2026 00:16:37 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/samsung-galaxy-s26-verizon-deal/</guid>
     </item>
     <item>
-      <title>Here&amp;#8217;s what Mira Murati&amp;#8217;s AI company is up to</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/928309/mira-murati-thinking-machines-ai-interaction-model</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 11 May 2026 18:19:15 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/928309/mira-murati-thinking-machines-ai-interaction-model</guid>
-    </item>
-    <item>
-      <title>Linux is getting a security wake-up call - why it was inevitable and I'm not worried</title>
-      <link>https://www.zdnet.com/article/linux-security-wake-up-call-copy-fail-dirty-frag-why-inevitable/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Mon, 11 May 2026 15:12:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/linux-security-wake-up-call-copy-fail-dirty-frag-why-inevitable/</guid>
-    </item>
-    <item>
-      <title>How ChatGPT adoption broadened in early 2026</title>
-      <link>https://openai.com/signals/research/2026q1-update</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 11 May 2026 15:00:00 +0000</pubDate>
-      <guid>https://openai.com/signals/research/2026q1-update</guid>
-    </item>
-    <item>
-      <title>Google stopped a zero-day hack that it says was developed with AI</title>
-      <link>https://www.theverge.com/tech/928007/google-ai-zero-day-exploit-stopped</link>
+      <title>Riding an AI rally, Robinhood preps second retail venture IPO</title>
+      <link>https://techcrunch.com/2026/05/11/riding-an-ai-rally-robinhood-preps-second-retail-venture-ipo/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Mon, 11 May 2026 12:09:42 -0400</pubDate>
-      <guid>https://www.theverge.com/tech/928007/google-ai-zero-day-exploit-stopped</guid>
+      <pubDate>Tue, 12 May 2026 00:09:01 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/11/riding-an-ai-rally-robinhood-preps-second-retail-venture-ipo/</guid>
     </item>
     <item>
-      <title>The latest innovation in UK public transport: Schrödinger's trains</title>
-      <link>https://www.theregister.com/offbeat/2026/05/11/the-latest-innovation-in-uk-public-transport-schroedingers-trains/5237362</link>
+      <title>GM just laid off hundreds of IT workers to hire those with stronger AI skills</title>
+      <link>https://techcrunch.com/2026/05/11/gm-just-laid-off-hundreds-of-it-workers-to-hire-those-with-stronger-ai-skills/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Mon, 11 May 2026 11:15:00 +0200</pubDate>
-      <guid>https://www.theregister.com/offbeat/2026/05/11/the-latest-innovation-in-uk-public-transport-schroedingers-trains/5237362</guid>
+      <pubDate>Mon, 11 May 2026 23:04:10 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/11/gm-just-laid-off-hundreds-of-it-workers-to-hire-those-with-stronger-ai-skills/</guid>
     </item>
     <item>
-      <title>Taiwan's train cyber-trauma reveals a global system that’s coming off the tracks</title>
-      <link>https://www.theregister.com/security/2026/05/11/taiwans-train-cyber-trauma-reveals-a-global-system-thats-coming-off-the-tracks/5237248</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 11 May 2026 10:30:00 +0200</pubDate>
-      <guid>https://www.theregister.com/security/2026/05/11/taiwans-train-cyber-trauma-reveals-a-global-system-thats-coming-off-the-tracks/5237248</guid>
-    </item>
-    <item>
-      <title>Joanna Stern is not a robot, but she lived with them</title>
-      <link>https://www.theverge.com/podcast/926752/joanna-stern-i-am-not-a-robot-new-things-media-youtube-ai-automation</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 11 May 2026 10:00:00 -0400</pubDate>
-      <guid>https://www.theverge.com/podcast/926752/joanna-stern-i-am-not-a-robot-new-things-media-youtube-ai-automation</guid>
-    </item>
-    <item>
-      <title>I Work in Hollywood. Everyone Who Used to Make TV Is Now Secretly Training AI</title>
-      <link>https://www.wired.com/story/i-work-in-hollywood-everyone-who-used-to-make-tv-now-training-ai/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 11 May 2026 10:00:00 +0000</pubDate>
-      <guid>https://www.wired.com/story/i-work-in-hollywood-everyone-who-used-to-make-tv-now-training-ai/</guid>
-    </item>
-    <item>
-      <title>Lab worker built a fake PC to nuke his lunch</title>
-      <link>https://www.theregister.com/personal-tech/2026/05/11/lab-worker-built-a-fake-pc-to-nuke-his-lunch/5235416</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 11 May 2026 09:30:00 +0200</pubDate>
-      <guid>https://www.theregister.com/personal-tech/2026/05/11/lab-worker-built-a-fake-pc-to-nuke-his-lunch/5235416</guid>
-    </item>
-    <item>
-      <title>Create repositories on the go with GitHub Mobile</title>
-      <link>https://github.blog/changelog/2026-05-11-create-repositories-on-the-go-with-github-mobile</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Mon, 11 May 2026 09:26:45 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-05-11-create-repositories-on-the-go-with-github-mobile</guid>
-    </item>
-    <item>
-      <title>BalCapRL: A Balanced Framework for RL-Based MLLM Image Captioning</title>
-      <link>https://machinelearning.apple.com/research/balcaprl-mllm-image-captioning</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://machinelearning.apple.com/research/balcaprl-mllm-image-captioning</guid>
-    </item>
-    <item>
-      <title>garmin-mcp 0.1.0</title>
-      <link>https://pypi.org/project/garmin-mcp/0.1.0/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 10 May 2026 23:54:10 +0000</pubDate>
-      <guid>https://pypi.org/project/garmin-mcp/0.1.0/</guid>
-    </item>
-    <item>
-      <title>garmin-mcp added to PyPI</title>
-      <link>https://pypi.org/project/garmin-mcp/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 10 May 2026 23:54:10 +0000</pubDate>
-      <guid>https://pypi.org/project/garmin-mcp/</guid>
-    </item>
-    <item>
-      <title>haluguard 0.3.4</title>
-      <link>https://pypi.org/project/haluguard/0.3.4/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 10 May 2026 23:50:29 +0000</pubDate>
-      <guid>https://pypi.org/project/haluguard/0.3.4/</guid>
-    </item>
-    <item>
-      <title>AWS IAM Identity Center 認証の Amazon SageMaker AI ドメインにユーザーを追加する方法</title>
-      <link>https://dev.classmethod.jp/articles/amazon-sagemaker-ai-domain-add-iam-identity-center-user/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Sun, 10 May 2026 23:48:21 +0000</pubDate>
-      <guid>https://dev.classmethod.jp/articles/amazon-sagemaker-ai-domain-add-iam-identity-center-user/</guid>
-    </item>
-    <item>
-      <title>AI Productivity Fails</title>
-      <link>https://blog.sshh.io/p/how-ai-productivity-fails</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 10 May 2026 23:43:07 +0000</pubDate>
-      <guid>https://blog.sshh.io/p/how-ai-productivity-fails</guid>
-    </item>
-    <item>
-      <title>Meta’s embrace of AI is making its employees miserable</title>
-      <link>https://www.straitstimes.com/business/companies-markets/metas-embrace-of-ai-is-making-its-employees-miserable</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sun, 10 May 2026 23:42:28 +0000</pubDate>
-      <guid>https://www.straitstimes.com/business/companies-markets/metas-embrace-of-ai-is-making-its-employees-miserable</guid>
-    </item>
-    <item>
-      <title>Samsung Expands AI Capabilities of Bespoke AI Refrigerator Family Hub With Major Updates</title>
-      <link>https://news.samsung.com/global/samsung-expands-ai-capabilities-of-bespoke-ai-refrigerator-family-hub-with-major-updates</link>
+      <title>hol-guard 2.0.175</title>
+      <link>https://pypi.org/project/hol-guard/2.0.175/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Sun, 10 May 2026 23:20:07 +0000</pubDate>
-      <guid>https://news.samsung.com/global/samsung-expands-ai-capabilities-of-bespoke-ai-refrigerator-family-hub-with-major-updates</guid>
+      <pubDate>Mon, 11 May 2026 07:35:30 +0000</pubDate>
+      <guid>https://pypi.org/project/hol-guard/2.0.175/</guid>
     </item>
     <item>
-      <title>Alibaba Aims to Integrate AI Platform and eCommerce Marketplace</title>
-      <link>https://www.pymnts.com/artificial-intelligence-2/2026/alibaba-aims-to-integrate-ai-platform-and-ecommerce-marketplace/</link>
+      <title>skill-blast 1.1.1</title>
+      <link>https://pypi.org/project/skill-blast/1.1.1/</link>
       <description></description>
-      <category>Microsoft</category>
-      <pubDate>Sun, 10 May 2026 23:18:21 +0000</pubDate>
-      <guid>https://www.pymnts.com/artificial-intelligence-2/2026/alibaba-aims-to-integrate-ai-platform-and-ecommerce-marketplace/</guid>
+      <category>Anthropic</category>
+      <pubDate>Mon, 11 May 2026 07:32:29 +0000</pubDate>
+      <guid>https://pypi.org/project/skill-blast/1.1.1/</guid>
     </item>
     <item>
-      <title>Show HN: Gawk Dev – live feed tracking what's happening across AI tools</title>
-      <link>https://gawk.dev</link>
+      <title>mnemonic-sdk added to PyPI</title>
+      <link>https://pypi.org/project/mnemonic-sdk/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Sun, 10 May 2026 23:17:15 +0000</pubDate>
-      <guid>https://gawk.dev</guid>
+      <pubDate>Mon, 11 May 2026 07:32:02 +0000</pubDate>
+      <guid>https://pypi.org/project/mnemonic-sdk/</guid>
     </item>
     <item>
-      <title>xAI partners with Cursor in $10 billion deal to supercharge AI coding capabilities</title>
-      <link>https://cryptobriefing.com/xai-cursor-ai-coding-partnership/</link>
+      <title>Ambani's Reliance Jio: Businesses and investors of the IPO-bound firm</title>
+      <link>https://economictimes.indiatimes.com/industry/telecom/telecom-news/ambanis-reliance-jio-businesses-and-investors-of-the-ipo-bound-firm/articleshow/131007520.cms</link>
       <description></description>
-      <category>xAI</category>
-      <pubDate>Sun, 10 May 2026 23:12:08 +0000</pubDate>
-      <guid>https://cryptobriefing.com/xai-cursor-ai-coding-partnership/</guid>
+      <category>Industry</category>
+      <pubDate>Mon, 11 May 2026 07:31:09 +0000</pubDate>
+      <guid>https://economictimes.indiatimes.com/industry/telecom/telecom-news/ambanis-reliance-jio-businesses-and-investors-of-the-ipo-bound-firm/articleshow/131007520.cms</guid>
     </item>
     <item>
-      <title>substrai 0.0.1</title>
-      <link>https://pypi.org/project/substrai/</link>
+      <title>deepseek-harness-cli added to PyPI</title>
+      <link>https://pypi.org/project/deepseek-harness-cli/</link>
       <description></description>
-      <category>Open Source</category>
-      <pubDate>Sun, 10 May 2026 23:11:01 +0000</pubDate>
-      <guid>https://pypi.org/project/substrai/</guid>
+      <category>DeepSeek</category>
+      <pubDate>Mon, 11 May 2026 07:29:10 +0000</pubDate>
+      <guid>https://pypi.org/project/deepseek-harness-cli/</guid>
     </item>
     <item>
-      <title>Rumblings launches AI platform for marketing decisions</title>
-      <link>https://ecommercenews.com.au/story/rumblings-launches-ai-platform-for-marketing-decisions</link>
+      <title>deepseek-harness added to PyPI</title>
+      <link>https://pypi.org/project/deepseek-harness/</link>
       <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Sun, 10 May 2026 22:42:39 +0000</pubDate>
-      <guid>https://ecommercenews.com.au/story/rumblings-launches-ai-platform-for-marketing-decisions</guid>
+      <category>DeepSeek</category>
+      <pubDate>Mon, 11 May 2026 07:29:08 +0000</pubDate>
+      <guid>https://pypi.org/project/deepseek-harness/</guid>
     </item>
     <item>
-      <title>Are You Smarter than an LLM?</title>
-      <link>https://freethoughtblogs.com/gas/2026/05/10/are-you-smarter-than-an-llm/</link>
+      <title>deepseek-harness 0.2.0</title>
+      <link>https://pypi.org/project/deepseek-harness/0.2.0/</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Sun, 10 May 2026 22:33:24 +0000</pubDate>
-      <guid>https://freethoughtblogs.com/gas/2026/05/10/are-you-smarter-than-an-llm/</guid>
+      <category>DeepSeek</category>
+      <pubDate>Mon, 11 May 2026 07:29:08 +0000</pubDate>
+      <guid>https://pypi.org/project/deepseek-harness/0.2.0/</guid>
     </item>
     <item>
-      <title>Show HN: I trained a chess engine to play like humans</title>
-      <link>https://news.ycombinator.com/item?id=48088819</link>
+      <title>hermes-a365 added to PyPI</title>
+      <link>https://pypi.org/project/hermes-a365/</link>
+      <description></description>
+      <category>M365 Copilot</category>
+      <pubDate>Mon, 11 May 2026 07:29:01 +0000</pubDate>
+      <guid>https://pypi.org/project/hermes-a365/</guid>
+    </item>
+    <item>
+      <title>pyg-nightly 2.8.0.dev20260511</title>
+      <link>https://pypi.org/project/pyg-nightly/2.8.0.dev20260511/</link>
       <description></description>
       <category>Meta</category>
-      <pubDate>Sun, 10 May 2026 22:31:29 +0000</pubDate>
-      <guid>https://news.ycombinator.com/item?id=48088819</guid>
+      <pubDate>Mon, 11 May 2026 07:27:30 +0000</pubDate>
+      <guid>https://pypi.org/project/pyg-nightly/2.8.0.dev20260511/</guid>
     </item>
     <item>
-      <title>synmerco-langchain 1.2.0</title>
-      <link>https://pypi.org/project/synmerco-langchain/1.2.0/</link>
+      <title>tq-serve 0.4.26</title>
+      <link>https://pypi.org/project/tq-serve/0.4.26/</link>
       <description></description>
-      <category>Open Source</category>
-      <pubDate>Sun, 10 May 2026 22:30:46 +0000</pubDate>
-      <guid>https://pypi.org/project/synmerco-langchain/1.2.0/</guid>
+      <category>Meta</category>
+      <pubDate>Mon, 11 May 2026 07:26:43 +0000</pubDate>
+      <guid>https://pypi.org/project/tq-serve/0.4.26/</guid>
     </item>
     <item>
-      <title>hol-guard 2.0.173</title>
-      <link>https://pypi.org/project/hol-guard/2.0.173/</link>
+      <title>Popular enterprise AI tools fail to accurately transcribe Indic languages: Humyn Labs</title>
+      <link>https://www.thehindubusinessline.com/info-tech/popular-enterprise-ai-tools-fail-to-accurately-transcribe-indic-languages-humyn-labs/article70964713.ece</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Sun, 10 May 2026 22:18:17 +0000</pubDate>
-      <guid>https://pypi.org/project/hol-guard/2.0.173/</guid>
+      <category>OpenAI</category>
+      <pubDate>Mon, 11 May 2026 07:23:43 +0000</pubDate>
+      <guid>https://www.thehindubusinessline.com/info-tech/popular-enterprise-ai-tools-fail-to-accurately-transcribe-indic-languages-humyn-labs/article70964713.ece</guid>
     </item>
     <item>
-      <title>Sarah Jane Nicholson reflects on 6 years of Africa Rising Music Conference</title>
-      <link>https://gq.co.za/culture/entertainment/2026-05-10-sarah-jane-nicholson-reflects-on-6-years-of-africa-rising-music-conference/</link>
+      <title>SoftBank to manufacture large-scale batteries for AI data centres at former Sharp plant</title>
+      <link>https://thenextweb.com/news/oftbank-sakai-battery-plant-ai-data-centres/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 11 May 2026 07:21:57 +0000</pubDate>
+      <guid>https://thenextweb.com/news/oftbank-sakai-battery-plant-ai-data-centres/</guid>
+    </item>
+    <item>
+      <title>One UI 8.5 update rolling out to Galaxy S25 in more countries</title>
+      <link>https://www.sammobile.com/news/galaxy-s25-stable-one-ui-8-5-update-rolling-out-more-countries/</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Mon, 11 May 2026 07:20:50 +0000</pubDate>
+      <guid>https://www.sammobile.com/news/galaxy-s25-stable-one-ui-8-5-update-rolling-out-more-countries/</guid>
+    </item>
+    <item>
+      <title>Monthly Education Buzz Report – April 2026</title>
+      <link>https://make.wordpress.org/community/2026/05/11/monthly-education-buzz-report-april-2026/</link>
       <description></description>
       <category>AI Foundry</category>
-      <pubDate>Sun, 10 May 2026 21:45:58 +0000</pubDate>
-      <guid>https://gq.co.za/culture/entertainment/2026-05-10-sarah-jane-nicholson-reflects-on-6-years-of-africa-rising-music-conference/</guid>
+      <pubDate>Mon, 11 May 2026 07:15:20 +0000</pubDate>
+      <guid>https://make.wordpress.org/community/2026/05/11/monthly-education-buzz-report-april-2026/</guid>
     </item>
     <item>
-      <title>comfy-env 0.3.82</title>
-      <link>https://pypi.org/project/comfy-env/0.3.82/</link>
+      <title>People Are Audaciously Taking Undue Credit For AI-Generated Brainy Outputs</title>
+      <link>https://www.forbes.com/sites/lanceeliot/2026/05/11/people-are-audaciously-and-deceitfully-taking-undue-credit-for-ai-generated-brainy-outputs/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 11 May 2026 07:15:00 +0000</pubDate>
+      <guid>https://www.forbes.com/sites/lanceeliot/2026/05/11/people-are-audaciously-and-deceitfully-taking-undue-credit-for-ai-generated-brainy-outputs/</guid>
+    </item>
+    <item>
+      <title>Why Anthropic Just Copied OpenClaw’s Breakout Feature</title>
+      <link>https://www.geeky-gadgets.com/openclaw-anthropic-ai-dreaming/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 11 May 2026 07:15:00 +0000</pubDate>
+      <guid>https://www.geeky-gadgets.com/openclaw-anthropic-ai-dreaming/</guid>
+    </item>
+    <item>
+      <title>DeepSeek's US$7bn funding bid puts China's AI race on notice</title>
+      <link>https://www.digitimes.com/news/a20260511VL206/deepseek-funding-startup-fundraising-commercial.html</link>
+      <description></description>
+      <category>DeepSeek</category>
+      <pubDate>Mon, 11 May 2026 07:14:35 +0000</pubDate>
+      <guid>https://www.digitimes.com/news/a20260511VL206/deepseek-funding-startup-fundraising-commercial.html</guid>
+    </item>
+    <item>
+      <title>ai-agentbom added to PyPI</title>
+      <link>https://pypi.org/project/ai-agentbom/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 11 May 2026 07:11:42 +0000</pubDate>
+      <guid>https://pypi.org/project/ai-agentbom/</guid>
+    </item>
+    <item>
+      <title>w2v-accel added to PyPI</title>
+      <link>https://pypi.org/project/w2v-accel/</link>
       <description></description>
       <category>NVIDIA</category>
-      <pubDate>Sun, 10 May 2026 21:35:34 +0000</pubDate>
-      <guid>https://pypi.org/project/comfy-env/0.3.82/</guid>
+      <pubDate>Mon, 11 May 2026 07:09:28 +0000</pubDate>
+      <guid>https://pypi.org/project/w2v-accel/</guid>
     </item>
     <item>
-      <title>Jensen Huang tells graduates there is no better time to start a career</title>
-      <link>https://www.businessinsider.com/jensen-huang-graduation-speech-ai-jobs-anxiety-2026-5</link>
+      <title>sim-plugin-matlab added to PyPI</title>
+      <link>https://pypi.org/project/sim-plugin-matlab/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 11 May 2026 07:05:35 +0000</pubDate>
+      <guid>https://pypi.org/project/sim-plugin-matlab/</guid>
+    </item>
+    <item>
+      <title>Fake OpenAI Privacy Filter Repo Hits #1 on Hugging Face, Draws 244K Downloads</title>
+      <link>https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 11 May 2026 07:05:00 +0000</pubDate>
+      <guid>https://thehackernews.com/2026/05/fake-openai-privacy-filter-repo-hits-1.html</guid>
+    </item>
+    <item>
+      <title>llama-cpp-bin 9101.0.0</title>
+      <link>https://pypi.org/project/llama-cpp-bin/9101.0.0/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Mon, 11 May 2026 07:03:16 +0000</pubDate>
+      <guid>https://pypi.org/project/llama-cpp-bin/9101.0.0/</guid>
+    </item>
+    <item>
+      <title>tq-serve 0.4.25</title>
+      <link>https://pypi.org/project/tq-serve/0.4.25/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Mon, 11 May 2026 06:54:41 +0000</pubDate>
+      <guid>https://pypi.org/project/tq-serve/0.4.25/</guid>
+    </item>
+    <item>
+      <title>yobitsugi 0.1.3</title>
+      <link>https://pypi.org/project/yobitsugi/0.1.3/</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Mon, 11 May 2026 06:53:41 +0000</pubDate>
+      <guid>https://pypi.org/project/yobitsugi/0.1.3/</guid>
+    </item>
+    <item>
+      <title>yobitsugi 0.1.2</title>
+      <link>https://pypi.org/project/yobitsugi/0.1.2/</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Mon, 11 May 2026 06:48:45 +0000</pubDate>
+      <guid>https://pypi.org/project/yobitsugi/0.1.2/</guid>
+    </item>
+    <item>
+      <title>Rethinking the Architecture Firm for the AI Era</title>
+      <link>https://www.archdaily.com/1039777/rethinking-the-architecture-firm-for-the-ai-era</link>
+      <description></description>
+      <category>AI Foundry</category>
+      <pubDate>Mon, 11 May 2026 06:45:00 +0000</pubDate>
+      <guid>https://www.archdaily.com/1039777/rethinking-the-architecture-firm-for-the-ai-era</guid>
+    </item>
+    <item>
+      <title>tq-serve 0.4.24</title>
+      <link>https://pypi.org/project/tq-serve/0.4.24/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Mon, 11 May 2026 06:41:13 +0000</pubDate>
+      <guid>https://pypi.org/project/tq-serve/0.4.24/</guid>
+    </item>
+    <item>
+      <title>Blaize and Winmate Sign Strategic Partnership Agreement to Bring AI</title>
+      <link>https://en.antaranews.com/news/415361/blaize-and-winmate-sign-strategic-partnership-agreement-to-bring-ai</link>
+      <description></description>
+      <category>AI Foundry</category>
+      <pubDate>Mon, 11 May 2026 06:29:54 +0000</pubDate>
+      <guid>https://en.antaranews.com/news/415361/blaize-and-winmate-sign-strategic-partnership-agreement-to-bring-ai</guid>
+    </item>
+    <item>
+      <title>torchada 0.1.55</title>
+      <link>https://pypi.org/project/torchada/0.1.55/</link>
       <description></description>
       <category>NVIDIA</category>
-      <pubDate>Sun, 10 May 2026 21:35:06 +0000</pubDate>
-      <guid>https://www.businessinsider.com/jensen-huang-graduation-speech-ai-jobs-anxiety-2026-5</guid>
+      <pubDate>Mon, 11 May 2026 06:23:16 +0000</pubDate>
+      <guid>https://pypi.org/project/torchada/0.1.55/</guid>
     </item>
     <item>
-      <title>Digital Marketing Companies in the US</title>
-      <link>https://aamax.co/blog/digital-marketing-companies-in-the-us</link>
-      <description></description>
-      <category>Perplexity</category>
-      <pubDate>Sun, 10 May 2026 21:32:49 +0000</pubDate>
-      <guid>https://aamax.co/blog/digital-marketing-companies-in-the-us</guid>
-    </item>
-    <item>
-      <title>Digital Marketing Outdoor Industry</title>
-      <link>https://aamax.co/blog/digital-marketing-outdoor-industry</link>
-      <description></description>
-      <category>Perplexity</category>
-      <pubDate>Sun, 10 May 2026 21:32:49 +0000</pubDate>
-      <guid>https://aamax.co/blog/digital-marketing-outdoor-industry</guid>
-    </item>
-    <item>
-      <title>maru-deep-pro-search 0.8.1</title>
-      <link>https://pypi.org/project/maru-deep-pro-search/0.8.1/</link>
-      <description></description>
-      <category>Perplexity</category>
-      <pubDate>Sun, 10 May 2026 21:18:47 +0000</pubDate>
-      <guid>https://pypi.org/project/maru-deep-pro-search/0.8.1/</guid>
-    </item>
-    <item>
-      <title>create-agent-template added to PyPI</title>
-      <link>https://pypi.org/project/create-agent-template/</link>
-      <description></description>
-      <category>Microsoft</category>
-      <pubDate>Sun, 10 May 2026 21:14:52 +0000</pubDate>
-      <guid>https://pypi.org/project/create-agent-template/</guid>
-    </item>
-    <item>
-      <title>agent-pinboard added to PyPI</title>
-      <link>https://pypi.org/project/agent-pinboard/</link>
+      <title>pyaigis 1.0.12</title>
+      <link>https://pypi.org/project/pyaigis/1.0.12/</link>
       <description></description>
       <category>Open Source</category>
-      <pubDate>Sun, 10 May 2026 21:11:58 +0000</pubDate>
-      <guid>https://pypi.org/project/agent-pinboard/</guid>
+      <pubDate>Mon, 11 May 2026 06:22:13 +0000</pubDate>
+      <guid>https://pypi.org/project/pyaigis/1.0.12/</guid>
+    </item>
+    <item>
+      <title>deepcraft-agent 0.29.0</title>
+      <link>https://pypi.org/project/deepcraft-agent/0.29.0/</link>
+      <description></description>
+      <category>DeepSeek</category>
+      <pubDate>Mon, 11 May 2026 06:19:46 +0000</pubDate>
+      <guid>https://pypi.org/project/deepcraft-agent/0.29.0/</guid>
     </item>
   </channel>
 </rss>
