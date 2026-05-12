@@ -1,8 +1,17 @@
 # ============================================
 # Licensing Changelog — What Changed?
 # Manually curated, newest first
-# Last updated: April 2026
+# Last updated: 13 May 2026
 # ============================================
+
+[[entries]]
+id = "2026-05-multiplexing"
+date = "2026-05-01"
+title = "Multiplexing Rules Updated for AI Agents, Bots, and RPA"
+severity = "moderate"
+description = "Microsoft updated the May 2026 Product Terms to clarify multiplexing: ALL users or devices that indirectly benefit from M365 — including through agents, bots, or RPA — still require licensing. Closes loopholes around automation layers. Agents themselves don't need separate licences; they're covered under the licensed user's Agent 365 or E7 seat."
+affected = ["m365-e7", "m365-copilot", "agent-365", "copilot-studio"]
+source = "https://www.microsoft.com/licensing/product-licensing/products"
 
 [[entries]]
 id = "2026-07"
@@ -16,10 +25,10 @@ source = "https://www.microsoft.com/en-us/licensing/news/2026-M365-Packaging-Pri
 [[entries]]
 id = "2026-05"
 date = "2026-05-01"
-title = "Microsoft 365 E7 (Frontier Suite) Goes GA"
+title = "Microsoft 365 E7 + Agent 365 Now Generally Available"
 severity = "major"
-description = "The first enterprise plan with Copilot and Agent 365 built in. Priced at $99/user/month. Includes everything in E5 plus AI governance and advanced identity protection."
-affected = ["m365-e7"]
+description = "Microsoft 365 E7 (Frontier Suite) went GA on 1 May 2026 at $99/user/month — the first enterprise plan with Copilot and Agent 365 built in. Standalone Agent 365 also available at $15/user/month for orgs on any plan that includes Copilot. Both transactable via EA, EAS, CSP, MCA, and Web Direct. FastTrack remote guidance available for Agent 365 enablement; pre-integrated ecosystem partner agents (ServiceNow, SAP, Workday) deployable from the M365 Admin Center."
+affected = ["m365-e7", "agent-365"]
 source = "https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing"
 
 [[entries]]
