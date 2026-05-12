@@ -69,7 +69,7 @@ name = "Microsoft 365 Copilot"
 short_name = "M365 Copilot"
 emoji = "🚀"
 price = "$30/user/month"
-price_note = "Add-on to M365 E3/E5/Business Premium/Standard"
+price_note = "Add-on to M365 E3/E5/Business Premium/Standard. Also bundled in Microsoft 365 E7 (Frontier Suite, $99/mo) which adds Agent 365 + Entra Suite."
 description = "Enterprise AI assistant grounded in your organisation's data via Microsoft Graph. Full app integration, agents, analytics."
 colour = "#3B82F6"
 highlights = [
@@ -80,8 +80,9 @@ highlights = [
   "Copilot Analytics for admins",
   "SharePoint Advanced Management included",
   "Meeting summarisation in Teams",
-  "Priority access and performance"
+  "Priority access and performance",
+  "Also included in M365 E7 — adds Agent 365 governance + full Entra Suite"
 ]
 best_for = "Enterprises wanting AI deeply integrated with their work data"
 data_access = "Organisation data (Graph) + public web"
-licensing_url = "/licensing/?compare=m365-e3,m365-e5"
+licensing_url = "/licensing/microsoft-365-e7/"

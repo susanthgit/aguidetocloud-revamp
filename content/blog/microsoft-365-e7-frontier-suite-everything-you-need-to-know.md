@@ -1,8 +1,8 @@
 ---
 title: "Microsoft 365 E7 (Frontier Suite) — Plain-English Guide"
-description: "The new $99/user/mo Frontier Suite — what's included, E3/E5/E7 comparison, Agent 365, pricing, GA May 1 2026, licensing essentials."
+description: "The new $99/user/mo Frontier Suite — what's included, E3/E5/E7 comparison, Agent 365, pricing, GA'd 1 May 2026, licensing essentials."
 date: 2026-04-10
-lastmod: 2026-05-08
+lastmod: 2026-05-13
 card_tag: "Copilot"
 tag_class: "ai"
 layout: "notebook"
@@ -16,7 +16,7 @@ faq:
   - question: "What is Microsoft 365 E7?"
     answer: "Microsoft 365 E7, also known as the Frontier Suite, is Microsoft's new top-tier enterprise plan. It bundles Microsoft 365 E5, Microsoft 365 Copilot, Microsoft Entra Suite, and Agent 365 into a single SKU at $99/user/month."
   - question: "When does Microsoft 365 E7 become available?"
-    answer: "May 1, 2026. Both E7 and standalone Agent 365 become generally available and transactable through EA, EAS, CSP, and MCA channels."
+    answer: "Microsoft 365 E7 went generally available on 1 May 2026, alongside standalone Agent 365. Both are now transactable through EA, EAS, CSP, and MCA channels worldwide."
   - question: "How much does Microsoft 365 E7 cost?"
     answer: "$99 USD per user per month with an annual commitment. This is 15% cheaper than buying E5, Copilot, Entra Suite, and Agent 365 separately ($117/month)."
   - question: "What is Agent 365?"
@@ -33,6 +33,8 @@ faq:
     answer: "No. The $99/user/month covers the platform, governance, and licensing. Building and running custom AI agents may incur additional consumption-based Azure costs."
   - question: "What is Work IQ?"
     answer: "Work IQ is an intelligence layer built into E7 that gives Copilot and AI agents broader context about organisational data, workflows, and work patterns — improving AI relevance and safety."
+  - question: "What changed about multiplexing for agents?"
+    answer: "Microsoft updated the May 2026 Product Terms to clarify that ALL users or devices indirectly benefiting from M365 — including through agents, bots, or RPA — still require licensing. This closes a loophole some orgs were using to dodge user counts via automation layers."
 images: ["images/og/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know.jpg"]
 tags:
   - microsoft-365
@@ -41,7 +43,7 @@ tags:
   - security
 ---
 
-Microsoft just announced its biggest licensing shakeup in years. **Microsoft 365 E7** — also called the **"Frontier Suite"** — is a brand-new top-tier plan at $99/user/month that goes live on **May 1, 2026**.
+Microsoft just announced its biggest licensing shakeup in years. **Microsoft 365 E7** — also called the **"Frontier Suite"** — is the new top-tier plan at $99/user/month, generally available since **1 May 2026**.
 
 {{< margin >}}I sat with the EA team for an hour to confirm this. The bundle math actually checks out.{{< /margin >}}
 
@@ -285,7 +287,7 @@ flowchart TD
 
 ## What Should You Do Now?
 
-### Before May 1
+### Before You Adopt
 
 Here's what I'd do to prepare:
 
@@ -294,9 +296,10 @@ Here's what I'd do to prepare:
 - [ ] **Inventory your AI agents** — which Copilot agents, Power Automate flows, and custom bots exist in your tenant?
 - [ ] **Check your EA/EAS renewal date** — E7 may align with your next renewal
 - [ ] **Review the Entra Suite** — are you paying for Entra components separately?
+- [ ] **Re-read the May 2026 multiplexing rules** — Microsoft tightened them: ALL users or devices indirectly benefiting from M365 via agents, bots, or RPA still require licensing. Closes automation loopholes that used to dodge the count.
 - [ ] **Talk to your Microsoft partner** — ask about CSP promotional pricing
 
-### After May 1 (If You Decide to Upgrade)
+### After Adoption
 
 - [ ] **Enable Agent 365** — set up the Agent Registry in the M365 Admin Center
 - [ ] **Configure Entra Agent ID** — ensure agents get managed identities
@@ -344,7 +347,7 @@ Microsoft 365 E7, also known as the **Frontier Suite**, is Microsoft's new top-t
 
 ### When does Microsoft 365 E7 become available?
 
-**May 1, 2026.** Both E7 and standalone Agent 365 become generally available and transactable through EA, EAS, CSP, and MCA channels.
+Microsoft 365 E7 went **generally available on 1 May 2026**. Both E7 and standalone Agent 365 are now transactable through EA, EAS, CSP, and MCA channels worldwide. At launch, a set of pre-integrated ecosystem partner agents (ServiceNow, SAP, Workday, etc.) are deployable directly from the M365 Admin Center, and FastTrack remote guidance is available for Agent 365 enablement.
 
 ### How much does Microsoft 365 E7 cost?
 
@@ -377,6 +380,12 @@ No. The $99/user/month covers the platform, governance, and licensing. **Buildin
 ### What is Work IQ?
 
 Work IQ is an intelligence layer built into E7 that gives Copilot and AI agents broader context about organisational data, workflows, and work patterns — improving AI relevance, safety, and usefulness across the enterprise.
+
+### What changed about multiplexing for agents?
+
+Microsoft updated the **May 2026 Product Terms** to clarify multiplexing rules: ALL users or devices that indirectly benefit from M365 — including through **agents, bots, or RPA** — still require licensing. This closes a loophole that some organisations were using to dodge user counts by routing work through an automation layer.
+
+If you're building or scaling AI agents inside Agent 365 or E7, factor this in to your seat count modelling. The good news: agents themselves don't need separate licences — they're covered under the licensed user's Agent 365 or E7 seat.
 
 ---
 
