@@ -35,6 +35,8 @@ faq:
   - question: "Does Brand Kit work in Outlook, Loop, Whiteboard, or Forms?"
     answer: "Mostly no, today. Copilot writing in Outlook reflects your tenant defaults, but explicit Brand Kit voice enforcement in Outlook is limited. Loop, Whiteboard, and Forms don't have documented Brand Kit support yet — they use their own themes and templates. Track the Microsoft 365 Roadmap for changes."
 images: ["images/og/blog/microsoft-365-copilot-brand-kit-complete-guide.jpg"]
+og_headline: "M365 Copilot Brand Kit guide"
+og_glyph: "list"
 tags:
   - microsoft-365
   - copilot

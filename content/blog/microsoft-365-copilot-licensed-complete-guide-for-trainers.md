@@ -27,6 +27,8 @@ faq:
   - question: "What is priority access in Microsoft 365 Copilot?"
     answer: "Licensed Copilot users get priority access to all capabilities — faster, more consistent availability during peak periods, best performance, and access to the latest models. Free Copilot Chat users get standard access which may experience reduced speed or temporary unavailability during high-demand periods."
 images: ["images/og/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers.jpg"]
+og_headline: "M365 Copilot Licensed - trainer guide"
+og_glyph: "layers"
 tags:
   - microsoft-365
   - copilot

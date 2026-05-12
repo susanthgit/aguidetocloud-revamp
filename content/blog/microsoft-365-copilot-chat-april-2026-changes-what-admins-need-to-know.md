@@ -29,6 +29,8 @@ faq:
   - question: "How much does a Microsoft 365 Copilot licence cost?"
     answer: "For enterprises (over 300 users): $30 USD per user per month. For businesses (under 300 users): $21 USD per user per month. Both require an annual commitment as add-on licences."
 images: ["images/og/blog/microsoft-365-copilot-chat-april-2026-changes-what-admins-need-to-know.jpg"]
+og_headline: "M365 Copilot Chat changes"
+og_glyph: "calendar"
 tags:
   - microsoft-365
   - copilot

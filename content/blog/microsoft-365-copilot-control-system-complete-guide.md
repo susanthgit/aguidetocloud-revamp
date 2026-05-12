@@ -25,6 +25,8 @@ faq:
   - question: "What is the relationship between CCS, Agent 365, and Microsoft 365 E7?"
     answer: "Think of it as layers. CCS provides governance for the Copilot experience — included with your existing licences. Agent 365 provides governance for AI agents — a new paid add-on. Microsoft 365 E7 bundles everything together: E5 + Copilot + Agent 365 + Entra Suite at $99/user/month. E7 is for organisations that want the complete AI governance stack in one SKU."
 images: ["images/og/blog/microsoft-365-copilot-control-system-complete-guide.jpg"]
+og_headline: "Copilot Control System simplified"
+og_glyph: "layers"
 tags:
   - microsoft-365
   - copilot

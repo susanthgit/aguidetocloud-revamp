@@ -30,6 +30,8 @@ faq:
   - question: "What about data security?"
     answer: "Each platform has its own security model. Agent Builder respects M365 permissions. Copilot Studio adds Power Platform DLP. Foundry depends on your Azure architecture."
 images: ["images/og/blog/agent-builder-vs-copilot-studio-vs-foundry.jpg"]
+og_headline: "Agent Builder vs Studio vs Foundry"
+og_glyph: "compare"
 tags:
   - ai-agents
   - copilot

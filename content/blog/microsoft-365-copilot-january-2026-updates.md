@@ -7,6 +7,8 @@ youtube_id: "iDKpW_F18YI"
 card_tag: "What's New"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-january-2026-updates.jpg"]
+og_headline: "January 2026 — 30 M365 Copilot updates"
+og_glyph: "calendar"
 tags:
   - microsoft-365
   - copilot

@@ -23,6 +23,8 @@ faq:
   - question: "How is Agent 365 different from the Copilot Control System?"
     answer: "The Copilot Control System governs how people use Copilot. Agent 365 governs how AI agents work for people. CCS is a framework built into your existing licences. Agent 365 is a product you buy. If you only use Copilot, CCS is enough. The moment you deploy agents at scale, you need Agent 365 too."
 images: ["images/og/blog/agent-365-security-governance-complete-guide.jpg"]
+og_headline: "Agent 365 simplified"
+og_glyph: "layers"
 tags:
   - agent-365
   - security

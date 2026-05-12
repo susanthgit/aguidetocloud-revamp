@@ -36,6 +36,8 @@ faq:
   - question: "What changed about multiplexing for agents?"
     answer: "Microsoft updated the May 2026 Product Terms to clarify that ALL users or devices indirectly benefiting from M365 — including through agents, bots, or RPA — still require licensing. This closes a loophole some orgs were using to dodge user counts via automation layers."
 images: ["images/og/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know.jpg"]
+og_headline: "M365 E7 (Frontier Suite) simplified"
+og_glyph: "layers"
 tags:
   - microsoft-365
   - copilot

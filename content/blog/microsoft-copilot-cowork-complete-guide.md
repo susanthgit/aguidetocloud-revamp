@@ -31,6 +31,8 @@ faq:
   - question: "Will Copilot Cowork replace my job?"
     answer: "No. Cowork is brilliant at coordination, preparation, and routine multi-step tasks. It's not designed for strategy, relationship building, creative thinking, or judgment calls. It handles the busywork so you can focus on work that actually needs a human brain."
 images: ["images/og/blog/microsoft-copilot-cowork-complete-guide.jpg"]
+og_headline: "M365 Copilot Cowork simplified"
+og_glyph: "layers"
 tags:
   - microsoft-365
   - copilot

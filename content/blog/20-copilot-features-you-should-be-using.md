@@ -6,6 +6,8 @@ lastmod: 2026-05-08
 card_tag: "Guide"
 tag_class: "ai"
 images: ["images/og/blog/20-copilot-features-you-should-be-using.jpg"]
+og_headline: "22 M365 Copilot Features"
+og_glyph: "list"
 faq:
   - question: "Do I need a special licence for these M365 Copilot features?"
     answer: "Most features work with the standard Microsoft 365 Copilot licence your organisation has likely already provisioned. Some (model choice, third-party connectors, image input, image generation) may need your admin to switch them on. Cowork (#22) is currently in early-access preview via the Microsoft Frontier programme and is expected to require an upcoming higher M365 tier."

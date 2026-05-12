@@ -38,6 +38,8 @@ faq:
   - question: "If I leave my job, what happens to my Microsoft 365 Copilot access?"
     answer: "Microsoft 365 Copilot is tied to your work account — when you leave, your IT admin disables that account and you lose Copilot along with everything else. Your prompts, chat history and any Copilot-generated content in mailboxes/files belong to the organisation, not to you. This is a key reason consumer-AI-for-work doesn't translate cleanly."
 images: ["images/og/blog/copilot-pro-vs-microsoft-365-copilot.jpg"]
+og_headline: "Copilot Pro vs M365 Copilot?"
+og_glyph: "compare"
 tags:
   - copilot
   - copilot-pro

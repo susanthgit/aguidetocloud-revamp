@@ -29,3 +29,8 @@ audit-output/
 
 # Playwright visual-regression output (16MB of screenshots) (set 13 May 2026)
 qa/qa-review/
+
+# V3-blog OG generator build artefacts (set 13 May 2026) — keep make.mjs + fonts in git
+scripts/og-generator-blog/node_modules/
+scripts/og-generator-blog/.og-blog-cache.json
+scripts/og-generator-blog/package-lock.json

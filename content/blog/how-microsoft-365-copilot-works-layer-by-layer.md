@@ -25,6 +25,8 @@ faq:
   - question: "What is Responsible AI in Copilot?"
     answer: "Responsible AI is a set of safety guardrails woven throughout the entire Copilot pipeline. It includes the metaprompt (system instructions that tell the AI to be helpful and honest), content safety filters (blocking harmful content), grounding validation (reducing hallucination), and jailbreak detection. These controls are always on and cannot be disabled."
 images: ["images/og/blog/how-microsoft-365-copilot-works-layer-by-layer.jpg"]
+og_headline: "How M365 Copilot works?"
+og_glyph: "layers"
 tags:
   - copilot
   - architecture

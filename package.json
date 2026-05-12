@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:og:blog": "cd scripts/og-generator-blog && node make.mjs",
+    "build:og:blog:dry": "cd scripts/og-generator-blog && node make.mjs --dry-run",
+    "build:og:blog:force": "cd scripts/og-generator-blog && node make.mjs --force"
   },
   "repository": {
     "type": "git",

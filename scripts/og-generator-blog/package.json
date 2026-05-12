@@ -1,0 +1,17 @@
+{
+  "name": "og-generator-blog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AGTC blog OG cover generator (B2 Editorial-Light, V3-blog system). SLA-isolated from hugo build per og-image-system.md § 6.8.",
+  "scripts": {
+    "build": "node make.mjs",
+    "dry-run": "node make.mjs --dry-run"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "satori": "^0.26.0",
+    "sharp": "^0.34.5",
+    "gray-matter": "^4.0.3"
+  }
+}
