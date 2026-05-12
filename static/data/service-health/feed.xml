@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 12 May 2026 10:40:33 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2026 14:51:20 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft Defender XDR] Admins or users may be unable to see files' meta data from endpoints in the Microsoft Defender for Endpoint portal</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1308378</link>
-      <description>[Microsoft Defender XDR] Admins or users may be unable to see files' meta data from endpoints in the Microsoft Defender for Endpoint portal.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">DZ1308378</guid>
-      <pubDate>Tue, 12 May 2026 09:19:39 +0000</pubDate>
-    </item>
     <item>
       <title>[Exchange Online] Users’ text may turn blank when translated from the reading pane in Outlook desktop and Outlook on the web</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1307899</link>
@@ -87,6 +78,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1304825</guid>
       <pubDate>Tue, 05 May 2026 15:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Defender XDR] Admins or users were unable to see files' meta data from endpoints in the Microsoft Defender for Endpoint portal</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1308378</link>
+      <description>[Microsoft Defender XDR] Admins or users were unable to see files' meta data from endpoints in the Microsoft Defender for Endpoint portal.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">DZ1308378</guid>
+      <pubDate>Mon, 04 May 2026 09:22:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Some users may be incorrectly able to view Microsoft Defender for Endpoint manual actions through the Action center</title>
