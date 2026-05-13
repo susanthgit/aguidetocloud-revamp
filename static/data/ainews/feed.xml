@@ -5,407 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Wed, 13 May 2026 13:13:14 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2026 18:56:37 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Microsoft gives Windows Update a Ctrl-Z for bad drivers</title>
-      <link>https://www.theregister.com/oses/2026/05/13/microsoft-gives-windows-update-a-ctrl-z-for-bad-drivers/5239489</link>
+      <title>Building a safe, effective sandbox to enable Codex on Windows</title>
+      <link>https://openai.com/index/building-codex-windows-sandbox</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://openai.com/index/building-codex-windows-sandbox</guid>
+    </item>
+    <item>
+      <title>New enhancements for merchant initiated transactions with the Google Pay API</title>
+      <link>https://developers.googleblog.com/new-enhancements-for-merchant-initiated-transactions-with-the-google-pay-api/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Wed, 13 May 2026 18:54:51 +0000</pubDate>
+      <guid>https://developers.googleblog.com/new-enhancements-for-merchant-initiated-transactions-with-the-google-pay-api/</guid>
+    </item>
+    <item>
+      <title>Subagents have arrived in Gemini CLI</title>
+      <link>https://developers.googleblog.com/subagents-have-arrived-in-gemini-cli/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Wed, 13 May 2026 18:54:51 +0000</pubDate>
+      <guid>https://developers.googleblog.com/subagents-have-arrived-in-gemini-cli/</guid>
+    </item>
+    <item>
+      <title>Speeding Up AI: Bringing Google Colossus to PyTorch via GCSFS and Rapid Bucket</title>
+      <link>https://developers.googleblog.com/speeding-up-ai-bringing-google-colossus-to-pytorch-via-gcsfs-and-rapid-bucket/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Wed, 13 May 2026 18:54:51 +0000</pubDate>
+      <guid>https://developers.googleblog.com/speeding-up-ai-bringing-google-colossus-to-pytorch-via-gcsfs-and-rapid-bucket/</guid>
+    </item>
+    <item>
+      <title>Dissatisfied: Three-fourths of AI customer service rollouts are a letdown</title>
+      <link>https://www.theregister.com/ai-ml/2026/05/13/ai-customer-service-bots-get-rolled-back-at-74-of-firms/5239800</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Wed, 13 May 2026 15:00:00 +0200</pubDate>
-      <guid>https://www.theregister.com/oses/2026/05/13/microsoft-gives-windows-update-a-ctrl-z-for-bad-drivers/5239489</guid>
+      <pubDate>Wed, 13 May 2026 18:53:39 +0200</pubDate>
+      <guid>https://www.theregister.com/ai-ml/2026/05/13/ai-customer-service-bots-get-rolled-back-at-74-of-firms/5239800</guid>
     </item>
     <item>
-      <title>London cops hail fixed facial recognition cams after suspects collared every 35 mins</title>
-      <link>https://www.theregister.com/public-sector/2026/05/13/london-cops-hail-fixed-facial-recognition-cams-after-suspects-collared-every-35-mins/5239521</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 13 May 2026 14:15:00 +0200</pubDate>
-      <guid>https://www.theregister.com/public-sector/2026/05/13/london-cops-hail-fixed-facial-recognition-cams-after-suspects-collared-every-35-mins/5239521</guid>
-    </item>
-    <item>
-      <title>Linux gains more critical Windows apps: 3D Movie Maker and Space Cadet Pinball</title>
-      <link>https://www.theregister.com/oses/2026/05/13/linux-gains-more-critical-windows-apps-3d-movie-maker-and-space-cadet-pinball/5239455</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 13 May 2026 13:30:00 +0200</pubDate>
-      <guid>https://www.theregister.com/oses/2026/05/13/linux-gains-more-critical-windows-apps-3d-movie-maker-and-space-cadet-pinball/5239455</guid>
-    </item>
-    <item>
-      <title>NVIDIA, Ineffable Intelligence Team Up to Build the Future of Reinforcement Learning Infrastructure</title>
-      <link>https://blogs.nvidia.com/blog/ineffable-intelligence-reinforcement-learning-infrastructure/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Wed, 13 May 2026 13:00:57 +0000</pubDate>
-      <guid>https://blogs.nvidia.com/blog/ineffable-intelligence-reinforcement-learning-infrastructure/</guid>
-    </item>
-    <item>
-      <title>Reel Friends: Building Social Discovery that Scales to Billions</title>
-      <link>https://engineering.fb.com/2026/05/13/ml-applications/reel-friends-building-social-discovery-that-scales-to-billions/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Wed, 13 May 2026 13:00:44 +0000</pubDate>
-      <guid>https://engineering.fb.com/2026/05/13/ml-applications/reel-friends-building-social-discovery-that-scales-to-billions/</guid>
-    </item>
-    <item>
-      <title>Hermes Unlocks Self-Improving AI Agents, Powered by NVIDIA RTX PCs and DGX Spark</title>
-      <link>https://blogs.nvidia.com/blog/rtx-ai-garage-hermes-agent-dgx-spark/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Wed, 13 May 2026 13:00:10 +0000</pubDate>
-      <guid>https://blogs.nvidia.com/blog/rtx-ai-garage-hermes-agent-dgx-spark/</guid>
-    </item>
-    <item>
-      <title>dBase debased: Database titan fades to black after 47 years</title>
-      <link>https://www.theregister.com/databases/2026/05/13/dbase-debased-database-titan-fades-to-black-after-47-years/5238841</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 13 May 2026 12:44:00 +0200</pubDate>
-      <guid>https://www.theregister.com/databases/2026/05/13/dbase-debased-database-titan-fades-to-black-after-47-years/5238841</guid>
-    </item>
-    <item>
-      <title>How to learn Claude Code for free with Anthropic's AI courses - one took me just 20 minutes</title>
-      <link>https://www.zdnet.com/article/how-to-learn-claude-code-with-free-anthropic-ai-courses-online/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Wed, 13 May 2026 12:17:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/how-to-learn-claude-code-with-free-anthropic-ai-courses-online/</guid>
-    </item>
-    <item>
-      <title>Adaption aims big with AutoScientist, an AI tool that helps models train themselves</title>
-      <link>https://techcrunch.com/2026/05/13/adaption-aims-big-with-autoscientist-an-ai-tool-that-helps-models-train-themselves/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 13 May 2026 12:11:33 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/05/13/adaption-aims-big-with-autoscientist-an-ai-tool-that-helps-models-train-themselves/</guid>
-    </item>
-    <item>
-      <title>The Download: making drugs in orbit and NASA’s nuclear-powered spacecraft</title>
-      <link>https://www.technologyreview.com/2026/05/13/1137176/the-download-drugs-in-orbit-nasa-nuclear-spacecraft/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 13 May 2026 12:10:00 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/05/13/1137176/the-download-drugs-in-orbit-nasa-nuclear-spacecraft/</guid>
-    </item>
-    <item>
-      <title>This browser add-in doesn't just hide ads, it tells you to OBEY</title>
-      <link>https://www.theregister.com/offbeat/2026/05/13/this-browser-add-in-doesnt-just-hide-ads-it-tells-you-to-obey/5238887</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 13 May 2026 12:00:00 +0200</pubDate>
-      <guid>https://www.theregister.com/offbeat/2026/05/13/this-browser-add-in-doesnt-just-hide-ads-it-tells-you-to-obey/5238887</guid>
-    </item>
-    <item>
-      <title>SAP U-turn brings AI features to ECC and on-prem S/4HANA</title>
-      <link>https://www.theregister.com/ai-ml/2026/05/13/sap-u-turn-brings-ai-features-to-ecc-and-on-prem-s/4hana/5239040</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 13 May 2026 11:16:31 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-ml/2026/05/13/sap-u-turn-brings-ai-features-to-ecc-and-on-prem-s/4hana/5239040</guid>
-    </item>
-    <item>
-      <title>Submit Your Questions: AI Is Changing Your Job—Now What?</title>
-      <link>https://www.wired.com/story/livestream-ai-is-changing-your-job-now-what/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 13 May 2026 11:00:00 +0000</pubDate>
-      <guid>https://www.wired.com/story/livestream-ai-is-changing-your-job-now-what/</guid>
-    </item>
-    <item>
-      <title>ZTE advances intelligent network monetization strategy at AGC2026, empowering ISPs for sustainable growth</title>
-      <link>https://www.theregister.com/networks/2026/05/13/zte-advances-intelligent-network-monetization-strategy-at-agc2026-empowering-isps-for-sustainable-growth/5239443</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 13 May 2026 10:33:13 +0200</pubDate>
-      <guid>https://www.theregister.com/networks/2026/05/13/zte-advances-intelligent-network-monetization-strategy-at-agc2026-empowering-isps-for-sustainable-growth/5239443</guid>
-    </item>
-    <item>
-      <title>Sony just gave me a compelling reason to put my AirPods and Bose headphones away</title>
-      <link>https://www.zdnet.com/article/sony-headphoens-adaptive-sound-control-feature/</link>
+      <title>Googlebook looks promising, but one big laptop brand is conspicuously absent</title>
+      <link>https://www.zdnet.com/article/googlebook-looks-promising-but-one-big-question-remains-unanswered/</link>
       <description></description>
       <category>Industry</category>
-      <pubDate>Wed, 13 May 2026 09:00:44 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/sony-headphoens-adaptive-sound-control-feature/</guid>
+      <pubDate>Wed, 13 May 2026 18:40:06 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/googlebook-looks-promising-but-one-big-question-remains-unanswered/</guid>
     </item>
     <item>
-      <title>Spark Mail Adds a Mac CLI and Agent Skills</title>
-      <link>https://www.macstories.net/reviews/spark-mail-adds-a-mac-cli-and-agent-skills/</link>
+      <title>Utah mega datacenter could dump 23 atomic bombs worth of energy per day</title>
+      <link>https://www.theregister.com/on-prem/2026/05/13/utah-mega-datacenter-could-dump-23-atomic-bombs-worth-of-energy-per-day/5239670</link>
       <description></description>
-      <category>Anthropic</category>
-      <pubDate>Tue, 12 May 2026 13:11:33 +0000</pubDate>
-      <guid>https://www.macstories.net/reviews/spark-mail-adds-a-mac-cli-and-agent-skills/</guid>
+      <category>Top Stories</category>
+      <pubDate>Wed, 13 May 2026 18:36:00 +0200</pubDate>
+      <guid>https://www.theregister.com/on-prem/2026/05/13/utah-mega-datacenter-could-dump-23-atomic-bombs-worth-of-energy-per-day/5239670</guid>
     </item>
     <item>
-      <title>langchain-spidra 0.1.0</title>
-      <link>https://pypi.org/project/langchain-spidra/</link>
+      <title>Best Buy just slashed the price on this 8TB SanDisk SSD - and I'd recommend it</title>
+      <link>https://www.zdnet.com/article/sandisk-desk-drive-ssd-best-buy-deal/</link>
       <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 12 May 2026 13:11:08 +0000</pubDate>
-      <guid>https://pypi.org/project/langchain-spidra/</guid>
+      <category>Industry</category>
+      <pubDate>Wed, 13 May 2026 18:23:37 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/sandisk-desk-drive-ssd-best-buy-deal/</guid>
     </item>
     <item>
-      <title>Emily and Lyle’s Story: Letters From Boot Camp – Part 2, May-June 1917</title>
-      <link>https://www.blogger.com/browser-not-supported/?ref=/comment/fullpage/post/26204193/8149313880523012990</link>
+      <title>Mystery Microsoft bug leaker keeps the zero-days coming</title>
+      <link>https://www.theregister.com/security/2026/05/13/disgruntled-researcher-releases-two-more-microsoft-zero-days/5239758</link>
       <description></description>
-      <category>Anthropic</category>
-      <pubDate>Tue, 12 May 2026 13:08:00 +0000</pubDate>
-      <guid>https://www.blogger.com/browser-not-supported/?ref=/comment/fullpage/post/26204193/8149313880523012990</guid>
+      <category>Top Stories</category>
+      <pubDate>Wed, 13 May 2026 18:16:02 +0200</pubDate>
+      <guid>https://www.theregister.com/security/2026/05/13/disgruntled-researcher-releases-two-more-microsoft-zero-days/5239758</guid>
     </item>
     <item>
-      <title>seedfile added to PyPI</title>
-      <link>https://pypi.org/project/seedfile/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Tue, 12 May 2026 13:07:28 +0000</pubDate>
-      <guid>https://pypi.org/project/seedfile/</guid>
-    </item>
-    <item>
-      <title>Affirm works with Google to make AI shopping payments clear and simple</title>
-      <link>https://financialpost.com/pmn/business-wire-news-releases-pmn/affirm-works-with-google-to-make-ai-shopping-payments-clear-and-simple</link>
+      <title>AI chatbots are giving out people’s real phone numbers</title>
+      <link>https://www.technologyreview.com/2026/05/13/1137203/ai-chatbots-are-giving-out-peoples-real-phone-numbers/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Tue, 12 May 2026 13:06:25 +0000</pubDate>
-      <guid>https://financialpost.com/pmn/business-wire-news-releases-pmn/affirm-works-with-google-to-make-ai-shopping-payments-clear-and-simple</guid>
+      <pubDate>Wed, 13 May 2026 18:09:03 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/05/13/1137203/ai-chatbots-are-giving-out-peoples-real-phone-numbers/</guid>
     </item>
     <item>
-      <title>IRONSCALES Becomes First Email Security Vendor Verified Under Anthropic’s Cyber Verification Program, Gaining Frontier AI Access for Preemptive Defense</title>
-      <link>https://financialpost.com/pmn/business-wire-news-releases-pmn/ironscales-becomes-first-email-security-vendor-verified-under-anthropics-cyber-verification-program-gaining-frontier-ai-access-for-preemptive-defense</link>
+      <title>Overworked AI Agents Turn Marxist, Researchers Find</title>
+      <link>https://www.wired.com/story/overworked-ai-agents-turn-marxist-study/</link>
       <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Tue, 12 May 2026 13:06:17 +0000</pubDate>
-      <guid>https://financialpost.com/pmn/business-wire-news-releases-pmn/ironscales-becomes-first-email-security-vendor-verified-under-anthropics-cyber-verification-program-gaining-frontier-ai-access-for-preemptive-defense</guid>
+      <category>Top Stories</category>
+      <pubDate>Wed, 13 May 2026 18:08:33 +0000</pubDate>
+      <guid>https://www.wired.com/story/overworked-ai-agents-turn-marxist-study/</guid>
     </item>
     <item>
-      <title>IntelePeer SmartAgent™ Named "Best Patient Communication Solution" Winner in 2026 MedTech Breakthrough Awards Program</title>
-      <link>https://www.prnewswire.com/news-releases/intelepeer-smartagent-named-best-patient-communication-solution-winner-in-2026-medtech-breakthrough-awards-program-302769520.html</link>
-      <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Tue, 12 May 2026 13:05:00 +0000</pubDate>
-      <guid>https://www.prnewswire.com/news-releases/intelepeer-smartagent-named-best-patient-communication-solution-winner-in-2026-medtech-breakthrough-awards-program-302769520.html</guid>
-    </item>
-    <item>
-      <title>Portnoy Law Firm Announces Class Action on Behalf of Gemini Space Station, Inc. Investors</title>
-      <link>https://www.globenewswire.com/news-release/2026/05/12/3292961/0/en/Portnoy-Law-Firm-Announces-Class-Action-on-Behalf-of-Gemini-Space-Station-Inc-Investors.html</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Tue, 12 May 2026 13:05:00 +0000</pubDate>
-      <guid>https://www.globenewswire.com/news-release/2026/05/12/3292961/0/en/Portnoy-Law-Firm-Announces-Class-Action-on-Behalf-of-Gemini-Space-Station-Inc-Investors.html</guid>
-    </item>
-    <item>
-      <title>Explosion Drawings</title>
-      <link>https://goodinternet.substack.com/p/interpolatable-archives-part-2</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 12 May 2026 13:03:38 +0000</pubDate>
-      <guid>https://goodinternet.substack.com/p/interpolatable-archives-part-2</guid>
-    </item>
-    <item>
-      <title>BNY Built Its Digital Workforce Backward — And It’s Working</title>
-      <link>https://www.forrester.com/blogs/bny-built-its-digital-workforce-backward-and-its-working/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 12 May 2026 13:03:06 +0000</pubDate>
-      <guid>https://www.forrester.com/blogs/bny-built-its-digital-workforce-backward-and-its-working/</guid>
-    </item>
-    <item>
-      <title>Dessn raises $6M for its production focused design tool | TechCrunch</title>
-      <link>https://techcrunch.com/2026/05/12/dessn-raises-6m-for-its-production-focused-design-tool/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Tue, 12 May 2026 13:02:42 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/05/12/dessn-raises-6m-for-its-production-focused-design-tool/</guid>
-    </item>
-    <item>
-      <title>Avenda Health's Unfold AI to be Deployed at University of Michigan Health, Expanding AI-Guided Prostate Cancer Care to the Midwest for the First Time</title>
-      <link>https://www.prnewswire.com/news-releases/avenda-healths-unfold-ai-to-be-deployed-at-university-of-michigan-health-expanding-ai-guided-prostate-cancer-care-to-the-midwest-for-the-first-time-302769166.html</link>
-      <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Tue, 12 May 2026 13:02:00 +0000</pubDate>
-      <guid>https://www.prnewswire.com/news-releases/avenda-healths-unfold-ai-to-be-deployed-at-university-of-michigan-health-expanding-ai-guided-prostate-cancer-care-to-the-midwest-for-the-first-time-302769166.html</guid>
-    </item>
-    <item>
-      <title>2nm chipsets will steal the show, but here's why we should pay attention to the 3nm Dimensity 8600</title>
-      <link>https://www.phonearena.com/news/why-we-should-pay-attention-to-the-3nm-dimensity-8600_id180283</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 12 May 2026 13:01:29 +0000</pubDate>
-      <guid>https://www.phonearena.com/news/why-we-should-pay-attention-to-the-3nm-dimensity-8600_id180283</guid>
-    </item>
-    <item>
-      <title>The $54 Billion “Impunity Gap” is a “Responsibility Vacuum” — Part 2</title>
-      <link>https://www.fairobserver.com/world-news/the-54-billion-impunity-gap-is-a-responsibility-vacuum-part-2/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 12 May 2026 13:01:23 +0000</pubDate>
-      <guid>https://www.fairobserver.com/world-news/the-54-billion-impunity-gap-is-a-responsibility-vacuum-part-2/</guid>
-    </item>
-    <item>
-      <title>Here’s What Happened To The NASA-Issued Speedmasters!</title>
-      <link>https://www.fratellowatches.com/heres-what-happened-to-the-nasa-issued-speedmasters/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Tue, 12 May 2026 13:00:56 +0000</pubDate>
-      <guid>https://www.fratellowatches.com/heres-what-happened-to-the-nasa-issued-speedmasters/</guid>
-    </item>
-    <item>
-      <title>Google Embeds Klarna BNPL Into Gemini AI Conversations</title>
-      <link>https://www.pymnts.com/buy-now-pay-later/2026/google-embeds-klarna-bnpl-into-gemini-ai-conversations/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Tue, 12 May 2026 13:00:53 +0000</pubDate>
-      <guid>https://www.pymnts.com/buy-now-pay-later/2026/google-embeds-klarna-bnpl-into-gemini-ai-conversations/</guid>
-    </item>
-    <item>
-      <title>Apple Watch Series 12 might make upgrading hard to resist</title>
-      <link>https://www.cultofmac.com/news/apple-watch-series-12-rumors</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Tue, 12 May 2026 13:00:43 +0000</pubDate>
-      <guid>https://www.cultofmac.com/news/apple-watch-series-12-rumors</guid>
-    </item>
-    <item>
-      <title>New Signadot skill lets Claude Code, Codex and Cursor validate changes in live Kubernetes environments</title>
-      <link>https://siliconangle.com/2026/05/12/new-signadot-skill-lets-claude-code-codex-cursor-validate-changes-live-kubernetes-environments/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 12 May 2026 13:00:20 +0000</pubDate>
-      <guid>https://siliconangle.com/2026/05/12/new-signadot-skill-lets-claude-code-codex-cursor-validate-changes-live-kubernetes-environments/</guid>
-    </item>
-    <item>
-      <title>Show HN: Watch Claude think</title>
-      <link>https://github.com/ichbinsoftware/clinky</link>
+      <title>Start Copilot cloud agent tasks via the REST API</title>
+      <link>https://github.blog/changelog/2026-05-13-start-copilot-cloud-agent-tasks-via-the-rest-api</link>
       <description></description>
       <category>GitHub Copilot</category>
-      <pubDate>Tue, 12 May 2026 13:00:04 +0000</pubDate>
-      <guid>https://github.com/ichbinsoftware/clinky</guid>
+      <pubDate>Wed, 13 May 2026 18:01:15 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-05-13-start-copilot-cloud-agent-tasks-via-the-rest-api</guid>
     </item>
     <item>
-      <title>Manifold scores 7,700 MCP servers in Manifest expansion aimed at agent security teams</title>
-      <link>https://siliconangle.com/2026/05/12/manifold-scores-7700-mcp-servers-manifest-expansion-aimed-agent-security-teams/</link>
+      <title>Build financial document processing with Pulse AI and Amazon Bedrock</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/build-financial-document-processing-with-pulse-ai-and-amazon-bedrock/</link>
       <description></description>
-      <category>Anthropic</category>
-      <pubDate>Tue, 12 May 2026 13:00:03 +0000</pubDate>
-      <guid>https://siliconangle.com/2026/05/12/manifold-scores-7700-mcp-servers-manifest-expansion-aimed-agent-security-teams/</guid>
+      <category>Amazon</category>
+      <pubDate>Wed, 13 May 2026 18:00:06 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/build-financial-document-processing-with-pulse-ai-and-amazon-bedrock/</guid>
     </item>
     <item>
-      <title>Read the pitch deck Instacart veterans used to raise $8.5 million for AI startup Champ AI</title>
-      <link>https://www.businessinsider.com/instacart-veterans-raise-8-5-million-automate-back-office-work-2026-5</link>
+      <title>Build real-time voice streaming applications with Amazon Nova Sonic and WebRTC</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/build-real-time-voice-streaming-applications-with-amazon-nova-sonic-and-webrtc/</link>
       <description></description>
-      <category>Industry</category>
-      <pubDate>Tue, 12 May 2026 13:00:01 +0000</pubDate>
-      <guid>https://www.businessinsider.com/instacart-veterans-raise-8-5-million-automate-back-office-work-2026-5</guid>
+      <category>Amazon</category>
+      <pubDate>Wed, 13 May 2026 17:46:19 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/build-real-time-voice-streaming-applications-with-amazon-nova-sonic-and-webrtc/</guid>
     </item>
     <item>
-      <title>Does image show bald eagle attacking furry for defiling veterans memorial? Don't be fooled</title>
-      <link>https://www.snopes.com//fact-check/eagle-attack-furry-memorial/</link>
+      <title>Securing AI agents: How AWS and Cisco AI Defense scale MCP and A2A deployments</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/securing-ai-agents-how-aws-and-cisco-ai-defense-scale-mcp-and-a2a-deployments/</link>
       <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Tue, 12 May 2026 13:00:00 +0000</pubDate>
-      <guid>https://www.snopes.com//fact-check/eagle-attack-furry-memorial/</guid>
+      <category>Amazon</category>
+      <pubDate>Wed, 13 May 2026 17:33:16 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/securing-ai-agents-how-aws-and-cisco-ai-defense-scale-mcp-and-a2a-deployments/</guid>
     </item>
     <item>
-      <title>Xurrent Extends Its AI Fabric with Autonomous Agents and an Open MCP Server</title>
-      <link>https://www.prnewswire.com/news-releases/xurrent-extends-its-ai-fabric-with-autonomous-agents-and-an-open-mcp-server-302768923.html</link>
+      <title>Fine-tune LLM with Databricks Unity Catalog and Amazon SageMaker AI</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/fine-tune-llm-with-databricks-unity-catalog-and-amazon-sagemaker-ai/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Wed, 13 May 2026 17:22:42 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/fine-tune-llm-with-databricks-unity-catalog-and-amazon-sagemaker-ai/</guid>
+    </item>
+    <item>
+      <title>Rust stalks IBM mainframes, but only in nightly form</title>
+      <link>https://www.theregister.com/on-prem/2026/05/13/rust-stalks-ibm-mainframes-but-only-in-nightly-form/5239710</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 13 May 2026 17:21:29 +0200</pubDate>
+      <guid>https://www.theregister.com/on-prem/2026/05/13/rust-stalks-ibm-mainframes-but-only-in-nightly-form/5239710</guid>
+    </item>
+    <item>
+      <title>OpenAI Brings Its Ass to Court</title>
+      <link>https://www.wired.com/story/musk-altman-trial-ass-statue-evidence/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Tue, 12 May 2026 13:00:00 +0000</pubDate>
-      <guid>https://www.prnewswire.com/news-releases/xurrent-extends-its-ai-fabric-with-autonomous-agents-and-an-open-mcp-server-302768923.html</guid>
+      <pubDate>Wed, 13 May 2026 17:08:01 +0000</pubDate>
+      <guid>https://www.wired.com/story/musk-altman-trial-ass-statue-evidence/</guid>
     </item>
     <item>
-      <title>9 Clever Ways I Use Google Gemini in My Car With Android Auto</title>
-      <link>https://uk.pcmag.com/ai/164886/9-clever-ways-i-use-google-gemini-in-my-car-with-android-auto</link>
+      <title>GitHub Enterprise Server 3.21 release candidate is available</title>
+      <link>https://github.blog/changelog/2026-05-13-github-enterprise-server-3-21-release-candidate-is-available</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Tue, 12 May 2026 13:00:00 +0000</pubDate>
-      <guid>https://uk.pcmag.com/ai/164886/9-clever-ways-i-use-google-gemini-in-my-car-with-android-auto</guid>
+      <category>GitHub Copilot</category>
+      <pubDate>Wed, 13 May 2026 16:47:15 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-05-13-github-enterprise-server-3-21-release-candidate-is-available</guid>
     </item>
     <item>
-      <title>John Merrow: AI Didn’t Kill Writing. The Testing Regime is the Culprit!</title>
-      <link>https://dianeravitch.net/2026/05/12/john-merrow-ai-didnt-kill-writing-the-testing-regime-is-the-culprit/</link>
+      <title>Royal Household seeks £3M finance system fit for a King</title>
+      <link>https://www.theregister.com/public-sector/2026/05/13/royal-household-seeks-3m-finance-system-fit-for-a-king/5239616</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Tue, 12 May 2026 13:00:00 +0000</pubDate>
-      <guid>https://dianeravitch.net/2026/05/12/john-merrow-ai-didnt-kill-writing-the-testing-regime-is-the-culprit/</guid>
+      <category>Top Stories</category>
+      <pubDate>Wed, 13 May 2026 16:33:00 +0200</pubDate>
+      <guid>https://www.theregister.com/public-sector/2026/05/13/royal-household-seeks-3m-finance-system-fit-for-a-king/5239616</guid>
     </item>
     <item>
-      <title>Star Catcher Raises $65 Million to Build the First Power Grid in Space</title>
-      <link>https://www.prnewswire.com/news-releases/star-catcher-raises-65-million-to-build-the-first-power-grid-in-space-302769128.html</link>
+      <title>Who trusts Sam Altman?</title>
+      <link>https://techcrunch.com/2026/05/13/who-trusts-sam-altman/</link>
       <description></description>
-      <category>Perplexity</category>
-      <pubDate>Tue, 12 May 2026 13:00:00 +0000</pubDate>
-      <guid>https://www.prnewswire.com/news-releases/star-catcher-raises-65-million-to-build-the-first-power-grid-in-space-302769128.html</guid>
+      <category>OpenAI</category>
+      <pubDate>Wed, 13 May 2026 16:31:04 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/13/who-trusts-sam-altman/</guid>
     </item>
     <item>
-      <title>Coworked Raises $1.8M to Bring Agentic AI to Enterprise Project Management</title>
-      <link>https://www.prnewswire.com/news-releases/coworked-raises-1-8m-to-bring-agentic-ai-to-enterprise-project-management-302769549.html</link>
+      <title>Origin Lab raises $8M to help video game companies sell data to world-model builders</title>
+      <link>https://techcrunch.com/2026/05/13/origin-lab-raises-8m-to-help-video-game-companies-sell-data-to-world-model-builders/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 13 May 2026 16:22:01 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/13/origin-lab-raises-8m-to-help-video-game-companies-sell-data-to-world-model-builders/</guid>
+    </item>
+    <item>
+      <title>T-Mobile will give you $400 just for switching - here's how to qualify</title>
+      <link>https://www.zdnet.com/article/t-mobile-gift-card-deal/</link>
       <description></description>
       <category>Industry</category>
-      <pubDate>Tue, 12 May 2026 13:00:00 +0000</pubDate>
-      <guid>https://www.prnewswire.com/news-releases/coworked-raises-1-8m-to-bring-agentic-ai-to-enterprise-project-management-302769549.html</guid>
+      <pubDate>Wed, 13 May 2026 16:17:38 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/t-mobile-gift-card-deal/</guid>
     </item>
     <item>
-      <title>I hate the recent open-source rise</title>
-      <link>https://www.jvt.me/posts/2026/05/12/open-source/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Tue, 12 May 2026 12:58:13 +0000</pubDate>
-      <guid>https://www.jvt.me/posts/2026/05/12/open-source/</guid>
-    </item>
-    <item>
-      <title>Parents sue OpenAI over teen's death after he used ChatGPT to get drug info</title>
-      <link>https://www.cbsnews.com/news/open-ai-chatgpt-drug-overdose-lawsuit/</link>
+      <title>Anthropic courts a new kind of customer: small business owners</title>
+      <link>https://techcrunch.com/2026/05/13/anthropic-courts-a-new-kind-of-customer-small-business-owners/</link>
       <description></description>
       <category>AI Foundry</category>
-      <pubDate>Tue, 12 May 2026 12:54:57 +0000</pubDate>
-      <guid>https://www.cbsnews.com/news/open-ai-chatgpt-drug-overdose-lawsuit/</guid>
+      <pubDate>Wed, 13 May 2026 16:00:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/13/anthropic-courts-a-new-kind-of-customer-small-business-owners/</guid>
     </item>
     <item>
-      <title>Show HN: Voice gender classifier for European voice AI (1MB, ONNX, 4ms)</title>
-      <link>https://huggingface.co/syntropicsignal-ai/gender-voice-classifier</link>
+      <title>Dungeons &amp; Desktops: 10 roguelikes that never die (because their communities won’t let them)</title>
+      <link>https://github.blog/open-source/gaming/dungeons-desktops-10-roguelikes-that-never-die-because-their-communities-wont-let-them/</link>
       <description></description>
-      <category>Meta</category>
-      <pubDate>Tue, 12 May 2026 12:53:19 +0000</pubDate>
-      <guid>https://huggingface.co/syntropicsignal-ai/gender-voice-classifier</guid>
+      <category>GitHub Copilot</category>
+      <pubDate>Wed, 13 May 2026 16:00:00 +0000</pubDate>
+      <guid>https://github.blog/open-source/gaming/dungeons-desktops-10-roguelikes-that-never-die-because-their-communities-wont-let-them/</guid>
     </item>
     <item>
-      <title>Grok 4.3 Features Most Beginners Overlook : Unlock Smarter AI Answers</title>
-      <link>https://www.geeky-gadgets.com/grok-4-3-beginners-guide-2026/</link>
+      <title>Get Audible for 30 days totally free - here's how</title>
+      <link>https://www.zdnet.com/article/audible-free-trial-deal/</link>
       <description></description>
-      <category>xAI</category>
-      <pubDate>Tue, 12 May 2026 12:45:00 +0000</pubDate>
-      <guid>https://www.geeky-gadgets.com/grok-4-3-beginners-guide-2026/</guid>
+      <category>Industry</category>
+      <pubDate>Wed, 13 May 2026 15:53:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/audible-free-trial-deal/</guid>
     </item>
     <item>
-      <title>Rutgers Facilities: Renovating the Basketball Arena</title>
-      <link>https://www.onthebanks.com/rutgers-basketball/52500/rutgers-facilities-renovating-the-basketball-arena</link>
+      <title>Microsoft aims to speed Windows with 'leap forward' in WinUI 3 perf</title>
+      <link>https://www.theregister.com/oses/2026/05/13/microsoft-aims-to-speed-windows-with-leap-forward-in-winui-3-perf/5239559</link>
       <description></description>
       <category>Microsoft</category>
-      <pubDate>Tue, 12 May 2026 12:42:02 +0000</pubDate>
-      <guid>https://www.onthebanks.com/rutgers-basketball/52500/rutgers-facilities-renovating-the-basketball-arena</guid>
+      <pubDate>Wed, 13 May 2026 15:49:00 +0200</pubDate>
+      <guid>https://www.theregister.com/oses/2026/05/13/microsoft-aims-to-speed-windows-with-leap-forward-in-winui-3-perf/5239559</guid>
     </item>
     <item>
-      <title>Samsung launching One UI 9 beta, based on Android 17, for Galaxy S26 this week</title>
-      <link>http://9to5google.com/2026/05/12/samsung-galaxy-one-ui-9-beta-android-17/</link>
+      <title>SpaceX sets date for Starship test that asks: Did we break anything in the upgrade?</title>
+      <link>https://www.theregister.com/science/2026/05/13/spacex-sets-date-for-starship-test-that-asks-did-we-break-anything-in-the-upgrade/5239547</link>
       <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Tue, 12 May 2026 12:33:40 +0000</pubDate>
-      <guid>http://9to5google.com/2026/05/12/samsung-galaxy-one-ui-9-beta-android-17/</guid>
+      <category>Top Stories</category>
+      <pubDate>Wed, 13 May 2026 15:29:00 +0200</pubDate>
+      <guid>https://www.theregister.com/science/2026/05/13/spacex-sets-date-for-starship-test-that-asks-did-we-break-anything-in-the-upgrade/5239547</guid>
     </item>
     <item>
-      <title>Show HN: AnythingMCP – source-available gateway turning REST/SOAP/SQL into MCP</title>
-      <link>https://github.com/HelpCode-ai/anythingmcp</link>
+      <title>Greater Manchester still says no to NHS data platform with Palantir at its heart</title>
+      <link>https://www.theregister.com/public-sector/2026/05/13/greater-manchester-still-says-no-to-nhs-data-platform-with-palantir-at-its-heart/5239584</link>
       <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 12 May 2026 12:31:10 +0000</pubDate>
-      <guid>https://github.com/HelpCode-ai/anythingmcp</guid>
+      <category>Top Stories</category>
+      <pubDate>Wed, 13 May 2026 15:07:45 +0200</pubDate>
+      <guid>https://www.theregister.com/public-sector/2026/05/13/greater-manchester-still-says-no-to-nhs-data-platform-with-palantir-at-its-heart/5239584</guid>
     </item>
     <item>
-      <title>From perceptron to Concert: The operations data model at IBM Think '26</title>
-      <link>https://www.techtarget.com/searchapparchitecture/tip/From-perceptron-to-Concert-The-operations-data-model-at-IBM-Think-26</link>
+      <title>Your TV's RS-232 port is a powerful automation tool - how to unlock it (and what it can do)</title>
+      <link>https://www.zdnet.com/article/what-is-the-tvs-rss232-serial-port-and-what-it-can-do/</link>
       <description></description>
-      <category>xAI</category>
-      <pubDate>Tue, 12 May 2026 12:31:00 +0000</pubDate>
-      <guid>https://www.techtarget.com/searchapparchitecture/tip/From-perceptron-to-Concert-The-operations-data-model-at-IBM-Think-26</guid>
+      <category>Industry</category>
+      <pubDate>Wed, 13 May 2026 15:00:38 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/what-is-the-tvs-rss232-serial-port-and-what-it-can-do/</guid>
+    </item>
+    <item>
+      <title>Amazon launches an AI shopping assistant for the search bar, powered by Alexa+</title>
+      <link>https://techcrunch.com/2026/05/13/amazon-launches-an-ai-shopping-assistant-for-the-search-bar-powered-by-alexa/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 13 May 2026 14:59:32 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/13/amazon-launches-an-ai-shopping-assistant-for-the-search-bar-powered-by-alexa/</guid>
+    </item>
+    <item>
+      <title>CachyOS vs. MX Linux: Are you seeking speed or stability in your distro?</title>
+      <link>https://www.zdnet.com/article/cachyos-vs-mx-linux-which-is-right-for-you/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Wed, 13 May 2026 14:18:48 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/cachyos-vs-mx-linux-which-is-right-for-you/</guid>
+    </item>
+    <item>
+      <title>WhatsApp adds an incognito mode in Meta AI chats</title>
+      <link>https://techcrunch.com/2026/05/13/whatsapp-adds-an-incognito-mode-in-meta-ai-chats/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Wed, 13 May 2026 14:00:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/13/whatsapp-adds-an-incognito-mode-in-meta-ai-chats/</guid>
+    </item>
+    <item>
+      <title>Anthropic now has more business customers than OpenAI, according to Ramp data</title>
+      <link>https://techcrunch.com/2026/05/13/anthropic-now-has-more-business-customers-than-openai-according-to-ramp-data/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Wed, 13 May 2026 14:00:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/13/anthropic-now-has-more-business-customers-than-openai-according-to-ramp-data/</guid>
+    </item>
+    <item>
+      <title>WhatsApp Adds Meta AI Chats That Are Built to Be Fully Private</title>
+      <link>https://www.wired.com/story/whatsapp-incognito-chat-meta-ai/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Wed, 13 May 2026 14:00:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/whatsapp-incognito-chat-meta-ai/</guid>
+    </item>
+    <item>
+      <title>What is digital transformation? Everything you need to know about how technology is changing business</title>
+      <link>https://www.zdnet.com/article/what-is-digital-transformation/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Wed, 13 May 2026 13:41:13 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/what-is-digital-transformation/</guid>
+    </item>
+    <item>
+      <title>Mark Zuckerberg announces &amp;#8216;completely private&amp;#8217; encrypted Meta AI chat</title>
+      <link>https://www.theverge.com/tech/929791/meta-ai-incognito-chats</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Wed, 13 May 2026 12:45:43 -0400</pubDate>
+      <guid>https://www.theverge.com/tech/929791/meta-ai-incognito-chats</guid>
+    </item>
+    <item>
+      <title>Live updates from Elon Musk and Sam Altman’s court battle over the future of OpenAI</title>
+      <link>https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Wed, 13 May 2026 11:28:21 -0400</pubDate>
+      <guid>https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit</guid>
+    </item>
+    <item>
+      <title>ouroboros-ai 0.37.1.dev35</title>
+      <link>https://pypi.org/project/ouroboros-ai/0.37.1.dev35/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 12 May 2026 18:54:29 +0000</pubDate>
+      <guid>https://pypi.org/project/ouroboros-ai/0.37.1.dev35/</guid>
+    </item>
+    <item>
+      <title>MacBook Air Laptop (13-inch) - Apple M4 chip, Built for Apple Intelligence, 10-core CPU, 10-core GPU, 24GB Memory, 512GB SSD Storage $999.97 (6 replies)</title>
+      <link>https://slickdeals.net/f/19515843-macbook-air-laptop-13-inch-apple-m4-chip-built-for-apple-intelligence-10-core-cpu-10-core-gpu-24gb-memory-512gb-ssd-storage-999-97</link>
+      <description></description>
+      <category>Apple</category>
+      <pubDate>Tue, 12 May 2026 18:54:05 +0000</pubDate>
+      <guid>https://slickdeals.net/f/19515843-macbook-air-laptop-13-inch-apple-m4-chip-built-for-apple-intelligence-10-core-cpu-10-core-gpu-24gb-memory-512gb-ssd-storage-999-97</guid>
+    </item>
+    <item>
+      <title>sage-ai-cli 1.19.23</title>
+      <link>https://pypi.org/project/sage-ai-cli/1.19.23/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 12 May 2026 18:53:47 +0000</pubDate>
+      <guid>https://pypi.org/project/sage-ai-cli/1.19.23/</guid>
+    </item>
+    <item>
+      <title>First look at Googlebook: A premium Chromebook alternative for Android users - ZDNET</title>
+      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=183199171</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 12 May 2026 18:53:04 +0000</pubDate>
+      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=183199171</guid>
+    </item>
+    <item>
+      <title>How to watch live sports on DIRECTV for free: Stream NFL, NBA, MLB, college basketball, football and more</title>
+      <link>https://www.sportingnews.com/us/tsn/news/directv-stream-watch-live-sports-nba-mlb/b12864c097edbba332924a79</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 12 May 2026 18:53:00 +0000</pubDate>
+      <guid>https://www.sportingnews.com/us/tsn/news/directv-stream-watch-live-sports-nba-mlb/b12864c097edbba332924a79</guid>
+    </item>
+    <item>
+      <title>mosaic-temporal-gpu added to PyPI</title>
+      <link>https://pypi.org/project/mosaic-temporal-gpu/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Tue, 12 May 2026 18:52:36 +0000</pubDate>
+      <guid>https://pypi.org/project/mosaic-temporal-gpu/</guid>
+    </item>
+    <item>
+      <title>SAP Intros Program to Help Enterprises Incorporate AI Agents</title>
+      <link>https://www.pymnts.com/news/b2b-payments/2026/sap-intros-program-to-help-enterprises-incorporate-ai-agents/</link>
+      <description></description>
+      <category>AI Foundry</category>
+      <pubDate>Tue, 12 May 2026 18:51:14 +0000</pubDate>
+      <guid>https://www.pymnts.com/news/b2b-payments/2026/sap-intros-program-to-help-enterprises-incorporate-ai-agents/</guid>
+    </item>
+    <item>
+      <title>Parti Québécois leader concerned Ottawa spying on his party, but has no proof</title>
+      <link>https://www.cbc.ca/news/canada/montreal/p-q-leader-worried-ottawa-spying-on-party-9.7196863</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 12 May 2026 18:50:02 +0000</pubDate>
+      <guid>https://www.cbc.ca/news/canada/montreal/p-q-leader-worried-ottawa-spying-on-party-9.7196863</guid>
+    </item>
+    <item>
+      <title>This is Googlebook</title>
+      <link>https://slashdot.org/submission/17347221/this-is-googlebook</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 12 May 2026 18:48:00 +0000</pubDate>
+      <guid>https://slashdot.org/submission/17347221/this-is-googlebook</guid>
+    </item>
+    <item>
+      <title>OpenAI Sued Over ChatGPT Medical Advice That Allegedly Killed College Student</title>
+      <link>http://futurism.com/artificial-intelligence/openai-sued-chatgpt-medical-advice-killed-student</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 12 May 2026 18:47:31 +0000</pubDate>
+      <guid>http://futurism.com/artificial-intelligence/openai-sued-chatgpt-medical-advice-killed-student</guid>
+    </item>
+    <item>
+      <title>ai-token-tracker added to PyPI</title>
+      <link>https://pypi.org/project/ai-token-tracker/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 12 May 2026 18:46:40 +0000</pubDate>
+      <guid>https://pypi.org/project/ai-token-tracker/</guid>
+    </item>
+    <item>
+      <title>ouroboros-ai 0.37.1.dev33</title>
+      <link>https://pypi.org/project/ouroboros-ai/0.37.1.dev33/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 12 May 2026 18:44:02 +0000</pubDate>
+      <guid>https://pypi.org/project/ouroboros-ai/0.37.1.dev33/</guid>
     </item>
   </channel>
 </rss>
