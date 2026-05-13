@@ -7,7 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:og:blog": "cd scripts/og-generator-blog && node make.mjs",
     "build:og:blog:dry": "cd scripts/og-generator-blog && node make.mjs --dry-run",
-    "build:og:blog:force": "cd scripts/og-generator-blog && node make.mjs --force"
+    "build:og:blog:force": "cd scripts/og-generator-blog && node make.mjs --force",
+    "build:og:certs": "cd scripts/og-generator-cert && node make.mjs --mode=study",
+    "build:og:certs:dry": "cd scripts/og-generator-cert && node make.mjs --mode=study --dry-run",
+    "build:og:certs:force": "cd scripts/og-generator-cert && node make.mjs --mode=study --force",
+    "build:og:practice": "cd scripts/og-generator-cert && node make.mjs --mode=practice",
+    "build:og:practice:dry": "cd scripts/og-generator-cert && node make.mjs --mode=practice --dry-run",
+    "build:og:practice:force": "cd scripts/og-generator-cert && node make.mjs --mode=practice --force"
   },
   "repository": {
     "type": "git",

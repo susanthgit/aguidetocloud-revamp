@@ -34,3 +34,9 @@ qa/qa-review/
 scripts/og-generator-blog/node_modules/
 scripts/og-generator-blog/.og-blog-cache.json
 scripts/og-generator-blog/package-lock.json
+
+# V3 cert OG generator build artefacts (set 13 May 2026) — keep make.mjs + fonts in git
+scripts/og-generator-cert/node_modules/
+scripts/og-generator-cert/.og-cert-cache.json
+scripts/og-generator-cert/.og-practice-cache.json
+scripts/og-generator-cert/package-lock.json

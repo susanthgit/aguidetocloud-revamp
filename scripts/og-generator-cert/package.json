@@ -1,0 +1,20 @@
+{
+  "name": "og-generator-cert",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AGTC cert OG cover generator (V3 dark BG + family-band) for both study-guide AND practice-exam pages. SLA-isolated from hugo build per og-image-system.md § 6.8.",
+  "scripts": {
+    "build:study":     "node make.mjs --mode=study",
+    "build:practice":  "node make.mjs --mode=practice",
+    "dry:study":       "node make.mjs --mode=study --dry-run",
+    "dry:practice":    "node make.mjs --mode=practice --dry-run"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "satori": "^0.26.0",
+    "sharp": "^0.34.5",
+    "gray-matter": "^4.0.3",
+    "@iarna/toml": "^2.2.5"
+  }
+}
