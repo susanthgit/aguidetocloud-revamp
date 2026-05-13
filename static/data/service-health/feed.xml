@@ -5,14 +5,23 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 13 May 2026 18:10:31 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2026 20:07:03 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Users may be unable to initiate Office app installations in the My Account portal found within portal.office.com </title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1309601</link>
+      <description>[Microsoft 365 suite] Users may have been unable to initiate Office app installations in the My Account portal found within portal.office.com.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1309601</guid>
+      <pubDate>Wed, 13 May 2026 18:55:19 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Users are unable to access Microsoft 365 services in South America</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1309330</link>
-      <description>[Microsoft 365 suite] Some users are unable to access Microsoft 365 services.</description>
+      <description>[Microsoft 365 suite] Some users were unable to access Microsoft 365 services.</description>
       <category>Microsoft 365 suite</category>
-      <category>restoringService</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1309330</guid>
       <pubDate>Wed, 13 May 2026 13:30:00 +0000</pubDate>
     </item>
@@ -172,9 +181,9 @@
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users may be unable to access links to other apps provided by Microsoft 365 Copilot Chat prompts</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1300750</link>
-      <description>[Microsoft 365 Copilot Chat] Users may be unable to access links to other apps provided by Copilot Chat prompts.</description>
+      <description>[Microsoft 365 Copilot Chat] Users may have been unable to access links to other apps provided by Copilot Chat prompts.</description>
       <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CW1300750</guid>
       <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
     </item>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1275040</guid>
       <pubDate>Thu, 09 Apr 2026 04:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users may experience issues accessing or using multiple Microsoft 365 services, including Microsoft Teams and Outlook</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1274150</link>
-      <description>[Microsoft 365 suite] Users may have experienced intermittent delays in email delivery and access to Microsoft 365 services.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1274150</guid>
-      <pubDate>Wed, 08 Apr 2026 14:38:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
