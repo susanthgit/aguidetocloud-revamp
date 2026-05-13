@@ -1,0 +1,255 @@
+name: 📡 Realtime Counter Monitor
+
+# Probes /api/stats?realtime=1 and /api/stats?realtime=cosmos to catch
+# silent-zero regressions (like the 13 May 2026 GA4 quota incident).
+#
+# Smart de-dup:
+#   - Searches for existing open issue with label `realtime-degraded`
+#   - If present → adds a comment with the new failure (no new issue)
+#   - If absent  → creates a new issue
+#   - On next healthy run → closes the open issue with a recovery comment
+#
+# Optional ntfy push:
+#   - If the repo has secret NTFY_TOPIC set, sends an ntfy.sh push on the
+#     FIRST failure detected (when the issue gets opened, not on every probe).
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'  # Every 15 minutes
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/realtime-probe.yml'
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    outputs:
+      status: ${{ steps.run.outputs.status }}
+      summary: ${{ steps.run.outputs.summary }}
+      reasons: ${{ steps.run.outputs.reasons }}
+    steps:
+      - name: 📡 Probe live + cosmos counters
+        id: run
+        run: |
+          set +e
+          # Inline probe — avoids a checkout step. Mirrors the logic of
+          # ~/.copilot/scripts/realtime-probe.py so local + CI behave the same.
+          python3 - <<'PY'
+          import json, os, sys, time, urllib.request, urllib.error
+
+          REALTIME = "https://www.aguidetocloud.com/api/stats?realtime=1"
+          COSMOS   = "https://www.aguidetocloud.com/api/stats?realtime=cosmos"
+
+          def probe(url):
+              req = urllib.request.Request(url, headers={"User-Agent": "agtc-realtime-probe-gha/1.0"})
+              try:
+                  with urllib.request.urlopen(req, timeout=15) as r:
+                      raw = r.read()
+                      headers = {k.lower(): v for k, v in r.headers.items()}
+                      return {"ok": True, "status": r.status,
+                              "age_s": int(headers.get("age", "0") or 0),
+                              "body": json.loads(raw)}
+              except urllib.error.HTTPError as e:
+                  return {"ok": False, "status": e.code, "error": f"HTTP {e.code}"}
+              except Exception as e:
+                  return {"ok": False, "status": None, "error": f"{type(e).__name__}: {e}"}
+
+          rt = probe(REALTIME)
+          cs = probe(COSMOS)
+
+          reasons = []
+          if not rt["ok"]:
+              reasons.append(f"realtime=1 fetch failed: {rt['error']}")
+          if not cs["ok"]:
+              reasons.append(f"realtime=cosmos fetch failed: {cs['error']}")
+
+          rb = rt.get("body", {}) or {}
+          cb = cs.get("body", {}) or {}
+
+          if rt["ok"] and rb.get("error"):
+              reasons.append(f"realtime=1 returned error={rb['error']}")
+          if cs["ok"] and cb.get("error"):
+              reasons.append(f"realtime=cosmos returned error={cb['error']}")
+
+          # Divergence check — one stuck at 0 while other > 0
+          r_active = rb.get("active")
+          c_total  = cb.get("totalUnique")
+          if rt["ok"] and cs["ok"] and r_active is not None and c_total is not None:
+              if r_active == 0 and c_total > 5:
+                  reasons.append(f"realtime=1 stuck at 0 while cosmos reports {c_total}")
+              elif c_total == 0 and r_active > 5:
+                  reasons.append(f"cosmos stuck at 0 while realtime=1 reports {r_active}")
+              elif r_active > 0 and c_total > 0:
+                  ratio = max(r_active, c_total) / max(min(r_active, c_total), 1)
+                  if ratio > 2.5:
+                      reasons.append(f"divergence: realtime=1={r_active} vs cosmos={c_total} ({ratio:.1f}x)")
+
+          status = "broken" if (not rt["ok"] or not cs["ok"]) else ("degraded" if reasons else "healthy")
+
+          # Summary line for issue title / ntfy
+          if rt["ok"] and cs["ok"]:
+              summary = f"realtime=1: active={rb.get('active')} | cosmos: totalUnique={cb.get('totalUnique')}"
+              if rb.get("error"): summary += f" | rt.error={rb['error']}"
+              if cb.get("error"): summary += f" | cs.error={cb['error']}"
+          else:
+              summary = "endpoint(s) unreachable"
+
+          print(f"Status: {status}")
+          print(f"Summary: {summary}")
+          if reasons:
+              print("Reasons:")
+              for r in reasons:
+                  print(f"  - {r}")
+
+          # Emit outputs
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"status={status}\n")
+              f.write(f"summary={summary}\n")
+              # Reasons as a JSON-encoded string to preserve newlines
+              f.write(f"reasons={json.dumps(reasons)}\n")
+
+          sys.exit(0 if status == "healthy" else 1)
+          PY
+
+  # ── On failure: open/comment on issue + optional ntfy ──
+  alert:
+    runs-on: ubuntu-latest
+    needs: probe
+    if: failure() || needs.probe.outputs.status != 'healthy'
+    permissions:
+      issues: write
+    steps:
+      - name: 🔎 Find existing open issue
+        id: find
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          EXISTING=$(gh issue list \
+            --repo "${{ github.repository }}" \
+            --state open \
+            --label realtime-degraded \
+            --json number,title \
+            --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            echo "existing=$EXISTING" >> "$GITHUB_OUTPUT"
+            echo "Found existing issue #$EXISTING"
+          else
+            echo "existing=" >> "$GITHUB_OUTPUT"
+            echo "No open issue — will create"
+          fi
+
+      - name: 💬 Comment on existing issue
+        if: steps.find.outputs.existing != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ steps.find.outputs.existing }}
+          SUMMARY: ${{ needs.probe.outputs.summary }}
+          REASONS: ${{ needs.probe.outputs.reasons }}
+        run: |
+          TS=$(date -u +'%Y-%m-%d %H:%M UTC')
+          gh issue comment "$ISSUE" \
+            --repo "${{ github.repository }}" \
+            --body "🔴 Still degraded as of $TS — $SUMMARY
+
+          Reasons: $REASONS
+
+          [Run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+
+      - name: 🚨 Open new issue
+        if: steps.find.outputs.existing == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SUMMARY: ${{ needs.probe.outputs.summary }}
+          REASONS: ${{ needs.probe.outputs.reasons }}
+        run: |
+          # Ensure label exists (idempotent — ignore "already exists" error)
+          gh label create realtime-degraded \
+            --repo "${{ github.repository }}" \
+            --color FFA500 \
+            --description "Realtime counter probe detected silent-zero / quota / divergence" 2>/dev/null || true
+
+          TS=$(date -u +'%Y-%m-%d %H:%M UTC')
+          gh issue create \
+            --repo "${{ github.repository }}" \
+            --title "📡 Realtime counter degraded — $TS" \
+            --label realtime-degraded \
+            --body "**Status:** \`${{ needs.probe.outputs.status }}\`
+          **First detected:** $TS
+          **Summary:** $SUMMARY
+
+          **Reasons:**
+          $REASONS
+
+          ## Context
+
+          The realtime counter system (\`/api/stats?realtime=1\` and \`/api/stats?realtime=cosmos\`) is reporting unhealthy. This usually means one of:
+
+          1. **GA4 realtime quota exhausted** — \`error: 'quota-exhausted'\`. Quota replenishes hourly. Counter should recover on its own; if not in ~60 min, increase cache TTLs in \`functions/api/stats.js\` (currently 120s for realtime=1, 60s for cosmos).
+          2. **No-auth** — \`error: 'no-auth'\`. \`GOOGLE_SERVICE_ACCOUNT_KEY\` env var missing on Cloudflare Pages. **🚨 Check Pages env vars** — may have been wiped by a PATCH operation.
+          3. **Both reporting 0** — likely fine during quiet hours (4-6am NZST). Otherwise verify against [GA4 realtime UI](https://analytics.google.com/) directly.
+
+          ## Cmd-line reproduce
+
+          \`\`\`powershell
+          python ~/.copilot/scripts/realtime-probe.py
+          # or JSON
+          python ~/.copilot/scripts/realtime-probe.py --json
+          \`\`\`
+
+          ## On recovery
+          This issue will auto-close when the next probe reports healthy.
+
+          [Run that detected this](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+
+      - name: 📣 Push to phone (ntfy)
+        if: steps.find.outputs.existing == '' && env.NTFY_TOPIC != ''
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          SUMMARY: ${{ needs.probe.outputs.summary }}
+        run: |
+          curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+            -H "Title: 📡 A Guide to Cloud: realtime counter degraded" \
+            -H "Priority: default" \
+            -H "Tags: chart_with_downwards_trend,signal_strength" \
+            -H "Click: ${{ github.server_url }}/${{ github.repository }}/issues?q=is%3Aopen+label%3Arealtime-degraded" \
+            -d "$SUMMARY"
+
+  # ── On recovery: close any open degraded issue ──
+  recover:
+    runs-on: ubuntu-latest
+    needs: probe
+    if: success() && needs.probe.outputs.status == 'healthy'
+    permissions:
+      issues: write
+    steps:
+      - name: 🟢 Close open degraded issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SUMMARY: ${{ needs.probe.outputs.summary }}
+        run: |
+          ISSUES=$(gh issue list \
+            --repo "${{ github.repository }}" \
+            --state open \
+            --label realtime-degraded \
+            --json number \
+            --jq '.[].number')
+          if [ -z "$ISSUES" ]; then
+            echo "No open issues to close — healthy run, nothing to do"
+            exit 0
+          fi
+          TS=$(date -u +'%Y-%m-%d %H:%M UTC')
+          for N in $ISSUES; do
+            gh issue comment "$N" --repo "${{ github.repository }}" \
+              --body "🟢 Recovered at $TS — $SUMMARY
+
+          [Run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+            gh issue close "$N" --repo "${{ github.repository }}" --reason completed
+            echo "Closed #$N"
+          done

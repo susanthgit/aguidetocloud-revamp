@@ -258,6 +258,15 @@ async function getToken(env) {
 //      errors (prevents thundering herd while quota recovers).
 // Cosmos endpoint already uses this pattern (handleRealtimeCosmos, 45s now
 // bumped to 60s at the cosmosJsonRes call site below).
+//
+// In-isolate coalescing (13 May 2026 follow-up): when the CF cache is cold
+// (post-deploy, or just expired) and N concurrent requests all miss, this
+// module-level promise ensures only ONE GA4 fetch fires per CF isolate.
+// CF Pages routinely fans out across isolates within a POP, so this is a
+// best-effort burst dampener — not a global lock. The 120s cache TTL is
+// the primary defense.
+let realtimeInFlight = null;
+
 async function handleRealtime(request, env, url) {
   // CF Cache API — per-POP cache. Global GA4 load ≈ N_pops × 2 calls per
   // 120s. With ~3-5 active POPs this stays well under the property quota.
@@ -267,8 +276,27 @@ async function handleRealtime(request, env, url) {
   const cached = await cache.match(cacheKey);
   if (cached) return cached;
 
+  // Coalesce concurrent cold-cache requests within the same isolate.
+  // buildRealtimePayload returns a plain object (NOT a Response) so all
+  // awaiters can each create their own Response with their own clonable body.
+  if (!realtimeInFlight) {
+    realtimeInFlight = (async () => {
+      try {
+        return await buildRealtimePayload(env, cache, cacheKey);
+      } finally {
+        realtimeInFlight = null;
+      }
+    })();
+  }
+  const { body, cacheControl } = await realtimeInFlight;
+  return jsonRes(body, 200, cacheControl);
+}
+
+async function buildRealtimePayload(env, cache, cacheKey) {
   const token = await getToken(env);
-  if (!token) return jsonRes({ active: 0, pages: [], error: 'no-auth' }, 200, 'no-cache');
+  if (!token) {
+    return { body: { active: 0, pages: [], error: 'no-auth' }, cacheControl: 'no-cache' };
+  }
 
   const totalReq = ga4RunRealtimeReport(token, {
     metrics: [{ name: 'activeUsers' }]
@@ -297,7 +325,7 @@ async function handleRealtime(request, env, url) {
     // Inflated fallback — better than 0 if the no-dim query 4xxs. Don't
     // cache (partial failures are usually transient; let next poll retry).
     active = pages.reduce((s, p) => s + p.users, 0);
-    return jsonRes({ active, pages, partial: true }, 200, 'no-cache');
+    return { body: { active, pages, partial: true }, cacheControl: 'no-cache' };
   } else {
     // Both queries failed — most likely a 429 quota exhaustion. Cache the
     // error response for 90s to prevent every visitor poll from re-hitting
@@ -305,15 +333,21 @@ async function handleRealtime(request, env, url) {
     // be massively delayed by our own thundering herd.
     const status = totalSettled.reason?.status || perPageSettled.reason?.status;
     const errorTag = status === 429 ? 'quota-exhausted' : 'realtime-failed';
-    const errResp = jsonRes({ active: 0, pages: [], error: errorTag }, 200, 'public, max-age=90');
-    try { await cache.put(cacheKey, errResp.clone()); } catch (_) {}
-    return errResp;
+    const errCacheControl = 'public, max-age=90';
+    const errBody = { active: 0, pages: [], error: errorTag };
+    try {
+      await cache.put(cacheKey, jsonRes(errBody, 200, errCacheControl));
+    } catch (_) {}
+    return { body: errBody, cacheControl: errCacheControl };
   }
 
   // Cache success for 120s.
-  const response = jsonRes({ active, pages }, 200, 'public, max-age=120');
-  try { await cache.put(cacheKey, response.clone()); } catch (_) {}
-  return response;
+  const successCacheControl = 'public, max-age=120';
+  const successBody = { active, pages };
+  try {
+    await cache.put(cacheKey, jsonRes(successBody, 200, successCacheControl));
+  } catch (_) {}
+  return { body: successBody, cacheControl: successCacheControl };
 }
 
 // ── Endpoint: Cosmos realtime (cross-origin) ─────────────────────
