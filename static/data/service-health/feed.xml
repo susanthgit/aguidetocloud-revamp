@@ -5,16 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 13 May 2026 15:12:26 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2026 18:10:31 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users are unable to access Microsoft 365 services in South America</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1309330</link>
       <description>[Microsoft 365 suite] Some users are unable to access Microsoft 365 services.</description>
       <category>Microsoft 365 suite</category>
-      <category>investigating</category>
+      <category>restoringService</category>
       <guid isPermaLink="false">MO1309330</guid>
-      <pubDate>Wed, 13 May 2026 14:36:32 +0000</pubDate>
+      <pubDate>Wed, 13 May 2026 13:30:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some admins may experience delays of up to 72 hours receiving app usage reports in the Microsoft 365 admin center</title>
