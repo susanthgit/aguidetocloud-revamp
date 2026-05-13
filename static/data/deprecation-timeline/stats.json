@@ -1,30 +1,30 @@
 {
-  "generated": "2026-05-12T08:06:54.247899+00:00",
+  "generated": "2026-05-13T08:14:05.613529+00:00",
   "total": 52,
-  "active": 36,
-  "passed": 16,
-  "action_required": 35,
+  "active": 35,
+  "passed": 17,
+  "action_required": 34,
   "urgency": {
-    "critical": 2,
+    "critical": 1,
     "warning": 28,
     "watch": 6
   },
   "categories": {
-    "azure": 18,
     "windows": 6,
     "sharepoint": 3,
     "office-apps": 6,
+    "azure": 17,
     "exchange": 2,
     "entra": 1
   },
   "types": {
-    "end-of-support": 20,
+    "end-of-support": 19,
     "retirement": 16
   },
   "next_deadline": {
-    "title": ".NET 9 End of Support",
-    "deadline": "2026-05-12",
-    "days_remaining": 0,
+    "title": "Microsoft Configuration Manager Version 2409 End of Support",
+    "deadline": "2026-06-06",
+    "days_remaining": 24,
     "urgency": "critical"
   },
   "category_meta": {
