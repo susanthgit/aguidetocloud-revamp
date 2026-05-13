@@ -100,6 +100,21 @@ async function ga4RunRealtimeReport(token, requestBody) {
     method: 'POST', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
     body: JSON.stringify(requestBody)
   });
+  // 🪲 13 May 2026 — before this guard, GA4 4xx/5xx responses (esp. 429
+  // "Exhausted property tokens for a project per hour") would parse as
+  // valid JSON with no `rows`/`totals`, then silently become 0 downstream.
+  // The Site Analytics tile + cosmos pill + tool-counter all displayed
+  // fake 0s. Throwing a typed error lets handlers classify 429 vs other
+  // failures and cache an error response to prevent thundering herds.
+  // NOTE: only realtime is hardened — ga4RunReport stays permissive for
+  // now to avoid cascading failures in non-realtime endpoints that don't
+  // expect throws.
+  if (!res.ok) {
+    const txt = await res.text();
+    const err = new Error(`GA4 realtime ${res.status}: ${txt.slice(0, 200)}`);
+    err.status = res.status;
+    throw err;
+  }
   return res.json();
 }
 
@@ -226,20 +241,34 @@ async function getToken(env) {
 // Returns { active, pages }. `active` is the TRUE unique active-user count
 // across the property; `pages` is the per-page breakdown (top 25 by users).
 //
-// 🪲 Bug fixed 13 May 2026 — `active` used to be `sum(pages[].users)` which
-// double-counted any visitor who hopped between pages in the realtime window
-// (GA4 returns activeUsers PER dimension value when a dimension is added).
-// Site Analytics tile + tool-counter pill + CC "Live Now" inherited the
-// inflation. Fix: separate no-dimension query → true unique total; per-page
-// query keeps the breakdown. The cosmos pill already uses the same pattern.
+// 🪲 Bug fixed 13 May 2026 (round 1) — `active` used to be `sum(pages[].users)`
+// which double-counted any visitor who hopped between pages in the realtime
+// window (GA4 returns activeUsers PER dimension value when a dimension is
+// added). Fix: separate no-dimension query → true unique total; per-page
+// query keeps the breakdown.
 //
-// Two parallel realtime queries (Promise.allSettled): if the per-page call
-// fails but the total succeeds we still return the right number; if the
-// total fails but per-page succeeds we fall back to the sum (old behaviour,
-// at least matches what the user used to see). Both fail → 0/[].
-async function handleRealtime(env) {
+// 🪲 Bug fixed 13 May 2026 (round 2) — round 1 doubled GA4 realtime calls
+// per request (1 → 2 in parallel) and this endpoint had NO server-side cache.
+// Site Analytics dashboard + CC dashboard + tool-counter pill all polled
+// every 30–60s and burned through the per-property realtime quota (~175
+// reports/hr at Standard tier). GA4 started returning 429s; ga4RunRealtimeReport
+// silently swallowed them → counters displayed fake 0s. Two fixes:
+//   1. Throw on non-OK responses (above) so 429s surface.
+//   2. Add CF Cache API with 120s TTL on success and 90s TTL on 429-quota
+//      errors (prevents thundering herd while quota recovers).
+// Cosmos endpoint already uses this pattern (handleRealtimeCosmos, 45s now
+// bumped to 60s at the cosmosJsonRes call site below).
+async function handleRealtime(request, env, url) {
+  // CF Cache API — per-POP cache. Global GA4 load ≈ N_pops × 2 calls per
+  // 120s. With ~3-5 active POPs this stays well under the property quota.
+  const cacheKeyUrl = url.origin + '/api/stats?realtime=1';
+  const cacheKey = new Request(cacheKeyUrl, { method: 'GET' });
+  const cache = caches.default;
+  const cached = await cache.match(cacheKey);
+  if (cached) return cached;
+
   const token = await getToken(env);
-  if (!token) return jsonRes({ active: 0, pages: [] }, 200, 'no-cache');
+  if (!token) return jsonRes({ active: 0, pages: [], error: 'no-auth' }, 200, 'no-cache');
 
   const totalReq = ga4RunRealtimeReport(token, {
     metrics: [{ name: 'activeUsers' }]
@@ -265,13 +294,26 @@ async function handleRealtime(env) {
   if (totalSettled.status === 'fulfilled') {
     active = parseInt(totalSettled.value.rows?.[0]?.metricValues?.[0]?.value) || 0;
   } else if (perPageSettled.status === 'fulfilled') {
-    // Inflated fallback — better than 0 if the no-dim query 4xxs.
+    // Inflated fallback — better than 0 if the no-dim query 4xxs. Don't
+    // cache (partial failures are usually transient; let next poll retry).
     active = pages.reduce((s, p) => s + p.users, 0);
+    return jsonRes({ active, pages, partial: true }, 200, 'no-cache');
   } else {
-    return jsonRes({ active: 0, pages: [] }, 200, 'no-cache');
+    // Both queries failed — most likely a 429 quota exhaustion. Cache the
+    // error response for 90s to prevent every visitor poll from re-hitting
+    // GA4 while quota recovers (~50 min). Without this, the recovery would
+    // be massively delayed by our own thundering herd.
+    const status = totalSettled.reason?.status || perPageSettled.reason?.status;
+    const errorTag = status === 429 ? 'quota-exhausted' : 'realtime-failed';
+    const errResp = jsonRes({ active: 0, pages: [], error: errorTag }, 200, 'public, max-age=90');
+    try { await cache.put(cacheKey, errResp.clone()); } catch (_) {}
+    return errResp;
   }
 
-  return jsonRes({ active, pages }, 200, 'no-cache');
+  // Cache success for 120s.
+  const response = jsonRes({ active, pages }, 200, 'public, max-age=120');
+  try { await cache.put(cacheKey, response.clone()); } catch (_) {}
+  return response;
 }
 
 // ── Endpoint: Cosmos realtime (cross-origin) ─────────────────────
@@ -346,7 +388,9 @@ async function handleRealtimeCosmos(request, env, url) {
       body = { totalUnique, scope: 'cosmos', generated_at: new Date().toISOString() };
     }
 
-    const response = cosmosJsonRes(body, 200);
+    // 13 May 2026 — bumped from default 45s to 60s. Shares GA4 realtime
+    // property quota with handleRealtime; longer TTL reduces overall pressure.
+    const response = cosmosJsonRes(body, 200, 'public, max-age=60');
     // Cache the clone — CF requires response not consumed
     try { await cache.put(cacheKey, response.clone()); } catch (_) { /* cache.put can throw on some runtimes; non-fatal */ }
     return response;
@@ -913,7 +957,7 @@ export async function onRequestGet(context) {
 
   try {
     if (url.searchParams.get('realtime') === 'cosmos') return await handleRealtimeCosmos(request, env, url);
-    if (url.searchParams.get('realtime') === '1') return await handleRealtime(env);
+    if (url.searchParams.get('realtime') === '1') return await handleRealtime(request, env, url);
     if (url.searchParams.get('latestvideo') === '1') return await handleLatestVideo(env);
     if (url.searchParams.get('biolinks') === '1') return await handleBioLinks(env);
     if (url.searchParams.get('youtube') === '1') return await handleYouTube(env);
