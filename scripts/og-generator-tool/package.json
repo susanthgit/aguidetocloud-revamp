@@ -1,0 +1,19 @@
+{
+  "name": "og-generator-tool",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AGTC tool OG cover generator (T-A Dark Tool Card, V3-tool system). SLA-isolated from hugo build per og-image-system.md § 6.8.",
+  "scripts": {
+    "build": "node make.mjs",
+    "dry-run": "node make.mjs --dry-run",
+    "force": "node make.mjs --force"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "satori": "^0.26.0",
+    "sharp": "^0.34.5",
+    "smol-toml": "^1.4.2",
+    "lucide-static": "^0.566.0"
+  }
+}
