@@ -23,9 +23,9 @@ faq:
   - question: "What is the difference between RSS, RCD and RAC?"
     answer: "RSS (Restricted SharePoint Search) is a tenant-wide allow-list — only listed sites are discoverable to Copilot. RCD (Restricted Content Discovery) is the opposite: a site-level toggle that hides a specific site from Copilot and tenant search, even though members can still walk into the site directly. RAC (Restricted Access Control) is the only one of the three that actually changes access — it limits a site to members of a specified Entra security or Microsoft 365 group, blocking everyone else even if they have a sharing link. Think of it as: RSS is an allow-list, RCD is a denylist, RAC is a fence."
   - question: "Do I need SharePoint Advanced Management for Copilot?"
-    answer: "If anyone in your tenant has a Microsoft 365 Copilot licence, SharePoint Advanced Management (SAM) is included automatically — you don't buy it separately. SAM gives you the Data Access Governance reports, the Content Management Assessment dashboard, site access reviews, inactive site policies, RCD, and RAC. These are the tools you actually use to find and fix oversharing before Copilot makes it visible. SAM is also available as a standalone $3/user/month add-on for tenants without Copilot."
+    answer: "If anyone in your tenant has a Microsoft 365 Copilot licence, SharePoint Advanced Management (SAM) is included automatically — you don't buy it separately. SAM gives you the Data Access Governance reports, the Content Management Assessment dashboard, site access reviews, inactive site policies, RCD, and RAC. These are the tools you actually use to find and fix oversharing before Copilot makes it visible. SAM is also available as a standalone 'SharePoint Advanced Management Plan 1' add-on for tenants without Copilot — check Microsoft's licensing page for current pricing."
   - question: "Does Copilot honour sensitivity labels on SharePoint files?"
-    answer: "Yes, but only when the label actually enforces something. If a label applies encryption AND removes the EXTRACT usage right, Copilot can cite the file's existence but cannot summarise its contents. If the label is purely visual (header, watermark, no encryption), Copilot can still read and summarise the file. The common mistake is assuming a 'Confidential' label alone blocks Copilot — it doesn't. You need encryption with EXTRACT denied, or a DLP for Copilot policy that explicitly blocks the label."
+    answer: "Yes, but only when the label actually enforces something. If a label applies encryption AND removes the EXTRACT usage right (shown in the Purview portal as 'Copy'), Copilot can cite the file's existence but cannot summarise its contents. If the label is purely visual (header, watermark, no encryption), Copilot can still read and summarise the file. The common mistake is assuming a 'Confidential' label alone blocks Copilot — it doesn't. You need encryption with EXTRACT denied, or a DLP for Copilot policy that explicitly blocks the label."
   - question: "How long does Restricted Content Discovery take to take effect?"
     answer: "For most sites, RCD takes effect within a few hours of being enabled. For very large sites with more than 500,000 items, Microsoft documents that propagation can take more than a week. RCD does not change permissions and does not affect site-scoped search — users who have direct access can still open the site, search within it, and use Copilot in Word or Excel on files they have open. It only removes the site from tenant-wide search and Copilot Chat grounding."
   - question: "What is the 'Everyone except external users' group and why does it matter for Copilot?"
@@ -51,21 +51,29 @@ A CISO I met last month described their Copilot pilot like this: *"We turned it 
 
 That's the conversation this post is for. {{< hi >}}Copilot doesn't bypass your permissions. It just makes existing oversharing instantly searchable in plain English.{{< /hi >}}
 
-Microsoft gives you four controls in SharePoint to handle this — three "fences" and an engine that tells you which fence each room needs. The fences are called RSS, RCD and RAC. The engine is SharePoint Advanced Management. By the end of this post you'll know which one to use when, what each one doesn't do, and the rollout sequence Microsoft itself recommends.
+Microsoft gives you four controls in SharePoint to handle this — an engine that maps your oversharing, and three "fences" you can apply once you know where to put them. The engine is SharePoint Advanced Management. The fences are RSS, RCD and RAC. By the end of this post you'll know which one to use when, what each one doesn't do, and the rollout sequence that actually works.
 
 {{< margin >}}I'm a Copilot Solution Engineer at Microsoft NZ. The "wrong people now knew about a redundancy plan" story is anonymised but very real — and it's the most common Copilot rollout pause-and-restart pattern I see.{{< /margin >}}
 
+**Three patterns I keep seeing in real rollouts:**
+
+1. **The Legal Green Light.** Legal initially blocks Copilot entirely citing discovery risk. After seeing the controls in this post — particularly RCD on legal sites and audit trails for Copilot interactions — they approve a controlled pilot.
+2. **The False Sense of Safety.** *"We've had M365 for years, we're fine."* The first SAM scan shows the average employee has technical access to millions of files. Copilot becomes the trigger for the long-overdue data cleanup.
+3. **The HR Wake-Up Call.** Like the CISO story above. No breach, no policy violation — but the rollout pauses while permissions get tidied.
+
+The fix isn't to slow Copilot down. The fix is to use the four controls below in the right order so Copilot lands on a tidy library, not a chaotic one.
+
 **Quick links:**
 
+- [The mental model — a library, doors and a building survey](#mental-model)
 - [TL;DR — the four controls in a sentence each](#tldr)
-- [The mental model — a library, three doors](#mental-model)
-- [Why this matters — Copilot doesn't create the problem, it exposes it](#why-it-matters)
 - [The engine first — SAM, DAG and the Content Management Assessment](#sam-engine)
 - [RSS — the rope across the door](#rss)
 - [RCD — making a site AI-invisible](#rcd)
 - [RAC — the membership fence](#rac)
-- [Container labels, sharing defaults, and the EEEU landmine](#defaults)
-- [The rollout sequence Microsoft actually recommends](#rollout)
+- [Container labels and sharing defaults](#defaults)
+- [The "Everyone except external users" landmine](#eeeu)
+- [How to actually roll this out](#rollout)
 - [Microsoft's official blueprint](#blueprint)
 - [What I'm not covering here](#not-covered)
 - [Common mistakes I see admins make](#mistakes)
@@ -76,6 +84,26 @@ Microsoft gives you four controls in SharePoint to handle this — three "fences
 🔄 **Living document. Verified May 2026.** Microsoft renames features, ships preview-to-GA, and updates licence bundles regularly — what you read here may differ from today's docs. For exact GA dates and PowerShell syntax, Microsoft Learn is the source of truth (links throughout). Spotted something stale? [Let me know](/feedback/) and I'll update.
 
 </div>
+
+---
+
+## The Mental Model — A Library, Doors and a Building Survey {#mental-model}
+
+Imagine your SharePoint tenant as a research library. There are thousands of rooms (sites), millions of books (files), and one front desk where readers ask questions. Copilot is a very fast, very polite librarian standing at that front desk.
+
+By default, the librarian can walk into every room a reader has a key to, pull every book that reader is allowed to touch, and read the contents aloud in a clear summary. Most of the time that's wonderful. Some of the time — when the room labelled "Strategy 2018" still has the door propped open from a temporary project five years ago — it's a problem.
+
+Microsoft gives you one engine and three fences to handle this:
+
+**SAM = the building survey.** Before you put fences anywhere, somebody needs to walk the corridors and tell you which rooms have doors propped open, which have lost their owners, and which are accessed weekly by people who shouldn't have keys. That's what SharePoint Advanced Management, DAG reports, and the Content Management Assessment do. Without it, you're guessing.
+
+**RSS = a rope across the front entrance.** The librarian is only allowed to walk into the rooms on a list you tape to the rope. Everything else is off limits — including rooms readers absolutely have keys to. It's a fast way to calm the building down while you decide which rooms actually need a real lock. Microsoft explicitly designs RSS as temporary.
+
+**RCD = an "invisible" tag on a specific room.** The room is still there, members can still walk in directly, and Copilot can even help them with a book they have open inside the room. But when readers ask at the front desk, the librarian acts as if the room doesn't exist — *with one carve-out*: if a reader has touched a book from that room recently, or owns content in it, the librarian still remembers and can mention it. Sensitive sites that you want to keep accessible-but-quiet — HR archives, legal matters, board materials — are good candidates.
+
+**RAC = a guard at the door of a specific room.** Only readers on a named list (a Microsoft 365 group or Entra security group) may enter, regardless of whether they have a key. Even sharing-link tricks don't help. This is real access control — the strongest oversharing fence Microsoft ships.
+
+{{< margin >}}The library metaphor is mine — Microsoft's own docs use the "guardrails" framing. Use whichever lands with your audience. Engineers like RSS-RCD-RAC. CISOs prefer doors and fences.{{< /margin >}}
 
 ---
 
@@ -90,45 +118,7 @@ Microsoft gives you four controls in SharePoint to handle this — three "fences
 
 **One sentence:** {{< hi >}}SAM tells you what's overshared. RSS is a temporary safety net. RCD hides a site from Copilot. RAC blocks access to a site entirely. They are not interchangeable.{{< /hi >}}
 
-{{< margin >}}If you only read one section of this post, read the mental model below — every other section is just the implementation detail of the same four ideas.{{< /margin >}}
-
----
-
-## The Mental Model — A Library, Three Doors {#mental-model}
-
-Imagine your SharePoint tenant as a research library. There are thousands of rooms (sites), millions of books (files), and one front desk where readers ask questions. Copilot is a very fast, very polite librarian standing at that front desk.
-
-By default, the librarian can walk into every room a reader has a key to, pull every book that reader is allowed to touch, and read the contents aloud in a clear summary. Most of the time that's wonderful. Some of the time — when the room labelled "Strategy 2018" still has the door propped open from a temporary project five years ago — it's a problem.
-
-Microsoft gives you three ways to handle the rooms you don't want the librarian browsing:
-
-**RSS = a rope across the front entrance.** The librarian is only allowed to walk into the rooms on a list you tape to the rope. Everything else is off limits — including rooms readers absolutely have keys to. It's a fast way to calm the building down while you decide which rooms actually need a real lock. Microsoft explicitly designs RSS as temporary.
-
-**RCD = an "invisible" tag on a specific room.** The room is still there, members can still walk in directly, and Copilot can even help them with a book they have open inside the room. But when readers ask at the front desk, the librarian acts as if the room doesn't exist — *with one carve-out*: if a reader has touched a book from that room recently, or owns content in it, the librarian still remembers and can mention it. Sensitive sites that you want to keep accessible-but-quiet — HR archives, legal matters, board materials — are good candidates.
-
-**RAC = a guard at the door of a specific room.** Only readers on a named list (a Microsoft 365 group or Entra security group) may enter, regardless of whether they have a key. Even sharing-link tricks don't help. This is real access control — the strongest oversharing fence Microsoft ships.
-
-**SAM = the building survey.** Before you decide where to put fences, somebody needs to walk the corridors and tell you which rooms have doors propped open, which have lost their owners, and which are accessed weekly by people who shouldn't have keys. That's what SAM, DAG reports, and the Content Management Assessment do.
-
-{{< margin >}}The library metaphor is mine — Microsoft's own docs use the "guardrails" framing. Use whichever lands with your audience. Engineers like RSS-RCD-RAC. CISOs prefer doors and fences.{{< /margin >}}
-
----
-
-## Why This Matters — Copilot Doesn't Create the Problem, It Exposes It {#why-it-matters}
-
-The most-quoted line in every Copilot rollout meeting I've been in: **Copilot respects existing permissions, but it makes the consequences of those permissions visible at AI speed.**
-
-Three patterns I see in real rollouts:
-
-**1. The HR Wake-Up Call.** A pilot for the leadership team. Someone types *"Summarise recent strategy documents."* Copilot returns extracts from board minutes via an "Everyone except external users" Team that was set up five years ago for an offsite. No breach, no policy violation — but the rollout pauses for two weeks while HR relabels.
-
-**2. The Legal Green Light.** Legal initially blocks Copilot entirely citing discovery risk and privilege concerns. After seeing the controls in this post — particularly RCD on legal sites and audit trails for Copilot interactions — they approve a controlled pilot.
-
-**3. The False Sense of Safety.** *"We've had M365 for years, we're fine."* The first SAM Content Management Assessment shows the average employee has technical access to millions of files. Copilot becomes the trigger for the long-overdue data cleanup the organisation had been deferring.
-
-The fix isn't to slow Copilot down. The fix is to use the controls below in the right order so Copilot lands on a tidy library, not a chaotic one.
-
-{{< hi >}}Permissions hygiene is a multi-year journey for most organisations. The controls below let you ship Copilot before you finish the journey — and ship it safely.{{< /hi >}}
+{{< margin >}}Permissions hygiene is a multi-year journey for most organisations. The four controls above let you ship Copilot before you finish the journey — and ship it safely.{{< /margin >}}
 
 ---
 
@@ -136,7 +126,7 @@ The fix isn't to slow Copilot down. The fix is to use the controls below in the 
 
 Before any fence, you need to know which rooms have doors propped open. That's what SharePoint Advanced Management (SAM) does.
 
-**The single most important thing to know:** {{< hi >}}If anyone in your tenant has a Microsoft 365 Copilot licence, SAM is unlocked for all SharePoint admins automatically. You don't buy it separately.{{< /hi >}} It is also available as a standalone add-on (~$3/user/month) for tenants without Copilot, but the most common situation is "we already have it and didn't realise."
+**The single most important thing to know:** {{< hi >}}If anyone in your tenant has a Microsoft 365 Copilot licence, SAM is unlocked for all SharePoint admins automatically. You don't buy it separately.{{< /hi >}} It is also available as a standalone "SharePoint Advanced Management Plan 1" add-on for tenants without Copilot — see [Microsoft's licensing page](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-licensing) for current pricing — but the most common situation is "we already have it and didn't realise."
 
 SAM unlocks four things that out-of-box SharePoint doesn't have:
 
@@ -182,11 +172,14 @@ Inactive site policies, ownerless-site policies, and site attestation policies a
 
 When RSS is on, Copilot Chat and Copilot agents ground only on:
 - Sites you've added to the allow-list
-- The user's own OneDrive content
+- The user's own OneDrive content, plus chats, emails and calendars they have access to
+- Files from the user's **frequently visited** SharePoint sites
 - Files the user has been directly shared
-- Files the user has recently accessed (last 2,000)
+- Files the user has viewed, edited or created
 
-Everything else in SharePoint is excluded from Copilot — even sites the user has full access to.
+> 💡 **Watch the 2,000 cap.** The total of the last three categories above (frequently visited + directly shared + viewed/edited/created) is capped at the **last 2,000 entities per user**. A site that's not on the allow-list but is frequently visited by a particular user can still surface for that user — RSS reduces ambient discovery, it doesn't fence each individual user.
+
+Everything else in SharePoint is excluded from Copilot for users who haven't recently touched it.
 
 ### When to use RSS
 
@@ -202,7 +195,7 @@ If you can't fit your business in 100 hub entries, RSS isn't the right tool. Ski
 
 There's no toggle in the SharePoint Admin Centre. RSS is PowerShell-only via the SharePoint Online Management Shell:
 
-```powershell
+```
 # Connect first
 Connect-SPOService -Url https://<tenant>-admin.sharepoint.com
 
@@ -242,7 +235,7 @@ It's the surgical opposite of RSS. RSS is an allow-list applied to the whole ten
 ### What RCD does and doesn't change
 
 **RCD does:**
-- Remove the site's content from Copilot Chat grounding for users who haven't recently interacted with it
+- Remove the site's content from Copilot Chat grounding for users who haven't recently interacted with it and don't own content there
 - Remove the site's content from organisation-wide search (SharePoint home, Office.com, Bing)
 - Remove the site's content from tenant-scope Copilot agent grounding
 
@@ -251,7 +244,7 @@ It's the surgical opposite of RSS. RSS is an allow-list applied to the whole ten
 - Affect users who walk into the site directly — they still see everything they always saw
 - Affect site-scoped search (searching inside the site itself still works)
 - Affect Copilot "data-in-use" scenarios — if a user opens a Word file from an RCD site, *"Summarise this document"* still works inside Word
-- Hide content from users who have **recently interacted** with it — recent-access history can still surface a reference even on an RCD site
+- Hide content from users who **own** files in the site or have **recently interacted** with them — content owners and recent visitors still see references in Copilot
 - Affect Purview features (eDiscovery, auto-labelling, retention) — content stays in the index
 - Apply to OneDrive (RCD is SharePoint sites only)
 
@@ -270,14 +263,14 @@ SharePoint Admin Centre → Sites → Active sites → select site → Settings 
 
 Or via PowerShell:
 
-```powershell
+```
 Set-SPOSite -Identity https://<tenant>.sharepoint.com/sites/hr-confidential `
             -RestrictContentOrgWideSearch $true
 ```
 
 To delegate RCD to site admins (so site owners can mark their own sites):
 
-```powershell
+```
 Set-SPOTenant -DelegateRestrictedContentDiscoverabilityManagement $true
 ```
 
@@ -308,12 +301,13 @@ RAC stops the user. {{< hi >}}If you're not in the RAC group, you can't open the
 ### What RAC does and doesn't change
 
 **RAC does:**
-- Block file access for anyone not in the RAC group
-- Apply to direct navigation, sharing links, search results that surface a file, everything
+- Block file access attempts for anyone not in the RAC group, regardless of existing permissions or sharing links
+- Apply at file-open time (direct navigation, sharing links, click-through from search — all blocked)
 - Support dynamic Entra security groups (attribute-based access)
 - Support up to 10 groups per site
 
 **RAC does NOT:**
+- Suppress files from search results — users with direct file permissions can still see filenames in search and Copilot citations, they just can't open the files. The CISO-relevant nuance is that Copilot may still *mention* "Board minutes Q3 — access denied" rather than hide it entirely.
 - Automatically grant access just by being in the group — users still need site/content permissions on top of group membership
 - Cascade to shared or private Teams channel sites (those are separate; configure RAC on each)
 - Apply to OneDrive in the same way (this section covers SharePoint site-level RAC; OneDrive has separate access restriction controls under SAM — out of scope for this post)
@@ -334,13 +328,13 @@ RAC is the right tool for high-value, defined-membership sites where you want a 
 
 Tenant-level enable first:
 
-```powershell
+```
 Set-SPOTenant -EnableRestrictedAccessControl $true
 ```
 
 Then per-site:
 
-```powershell
+```
 Set-SPOSite -Identity https://<tenant>.sharepoint.com/sites/board-materials `
             -RestrictedAccessControl $true
 Set-SPOSite -Identity https://<tenant>.sharepoint.com/sites/board-materials `
@@ -353,18 +347,20 @@ Or via the SharePoint Admin Centre: Policies → Access control → Site-level a
 
 ---
 
-## Container Labels, Sharing Defaults, and the EEEU Landmine {#defaults}
+## Container Labels and Sharing Defaults {#defaults}
 
 The three fences above are powerful, but they treat symptoms. The hygiene below treats causes.
 
 ### Container labels for SharePoint sites
 
-Container labels (sometimes called "groups and sites" labels) are sensitivity labels that govern the *workspace settings* of a SharePoint site, Microsoft 365 group, or Team. They control:
+Container labels (sometimes called "groups and sites" labels) are sensitivity labels that govern the *workspace settings* of a SharePoint site, Microsoft 365 group, or Team. The main settings relevant for oversharing are:
 
 - Public vs private at the container level
 - External sharing settings (block, allow guests, etc.)
 - Access from unmanaged devices
-- Conditional Access enforcement for the container
+- Authentication contexts (linking an existing Conditional Access policy to the container — the label doesn't create CA rules, it references one you've already configured in Entra)
+
+Container labels expose more settings than the four above (private Teams discoverability, default sharing link type via PowerShell, shared channels control, default label for channel meetings) — but these four are the ones that bite on oversharing.
 
 **The critical nuance:** {{< hi >}}A container label on a site does NOT label or encrypt the files inside it.{{< /hi >}} A "Highly Confidential" site label controls how the *site* is configured — it doesn't make the documents inside automatically "Highly Confidential." Files need their own labels for item-level protection.
 
@@ -376,10 +372,10 @@ The single biggest configuration change you can make before Copilot rollout is c
 
 SharePoint Admin Centre → Policies → Sharing → Default link type → **Specific people**.
 
-Or via PowerShell:
+Or via PowerShell (note: the value is `Direct` for "Specific people" — not `DirectLink`):
 
-```powershell
-Set-SPOTenant -DefaultSharingLinkType DirectLink
+```
+Set-SPOTenant -DefaultSharingLinkType Direct
 Set-SPOTenant -RequireAnonymousLinksExpireInDays 30
 ```
 
@@ -389,7 +385,9 @@ Set-SPOTenant -RequireAnonymousLinksExpireInDays 30
 >
 > Use the SAM Sharing Links DAG report to find the sites with the most legacy "Anyone" links and clean those up explicitly.
 
-### The "Everyone except external users" landmine
+---
+
+## The "Everyone Except External Users" Landmine {#eeeu}
 
 If there's one thing in this post that will change your Copilot rollout the most, it's auditing for EEEU.
 
@@ -398,11 +396,13 @@ If there's one thing in this post that will change your Copilot rollout the most
 When Copilot is turned on, EEEU oversharing isn't an academic concern — it's the most common source of *"why did Copilot show me that?"* moments.
 
 **How to find it:**
+
 - SAM DAG → "Everyone Except External Users activity" report → top 100 sites in past 28 days
 - DSPM for AI weekly assessments
 - Site permissions baseline snapshot
 
 **How to fix it:**
+
 1. Site access review to confirm whether EEEU is still required (most aren't)
 2. Replace EEEU with appropriately-scoped security groups
 3. Apply RCD as an interim shield while you fix the underlying permissions
@@ -412,21 +412,16 @@ When Copilot is turned on, EEEU oversharing isn't an academic concern — it's t
 
 ---
 
-## The Rollout Sequence Microsoft Actually Recommends {#rollout}
+## How to Actually Roll This Out {#rollout}
 
-Here's the practical five-phase sequence that aligns with Microsoft's published guidance — drawn from the Restricted SharePoint Search docs, the SAM "Get ready for Copilot" page, and the Secure and govern foundational deployment blueprint. Microsoft itself frames the bigger picture as three pillars (covered below) rather than five phases — but this is the implementation shape that maps cleanly to the controls in this post.
+Here's the practical five-phase sequence — drawn from the Restricted SharePoint Search docs, the SAM "Get ready for Copilot" page, and the Secure and govern foundational deployment blueprint. Microsoft itself frames the bigger picture as three pillars (covered below) rather than five phases — but this is the implementation shape that maps cleanly to the controls in this post.
 
 ```mermaid
 flowchart TD
     A[Phase 1<br/>Turn RSS on<br/>tenant-wide safety net] --> B[Phase 2<br/>Run SAM Content<br/>Management Assessment]
-    B --> C[Phase 3<br/>Fix permissions<br/>via site access reviews]
-    C --> D[Phase 4<br/>Apply RCD or RAC<br/>to genuinely sensitive sites]
+    B --> C[Phase 3<br/>Fix permissions via site<br/>access reviews + apply RCD<br/>as interim cover]
+    C --> D[Phase 4<br/>Apply RAC as durable<br/>fence on regulated sites]
     D --> E[Phase 5<br/>Disable RSS<br/>rely on durable controls]
-    style A fill:#fef3c7,stroke:#d97706
-    style B fill:#dbeafe,stroke:#2563eb
-    style C fill:#dbeafe,stroke:#2563eb
-    style D fill:#fee2e2,stroke:#dc2626
-    style E fill:#dcfce7,stroke:#16a34a
 ```
 
 ### Phase 1 — Turn RSS on (Days 0–7)
@@ -479,7 +474,7 @@ The four-step sequence inside Pillar 1 (RSS → SAM CMA → fix → disable RSS)
 
 Oversharing is one of four layers of Copilot data control. This post is layer one — the SharePoint piece. The other three deserve their own posts because they're complete topics in their own right:
 
-- **Conditional Access for Copilot** — how to require compliant devices, MFA, or named locations before Copilot will respond. Copilot inherits standard Microsoft 365 resource Conditional Access; specific Copilot service-principal targeting is its own setup with its own gotchas — post coming.
+- **Conditional Access for Copilot** — how to require compliant devices, MFA, or named locations before Copilot will respond. The gotcha most admins miss: a Conditional Access policy targeting "Office 365" doesn't reliably catch Copilot — the right setup pattern deserves its own post.
 - **DLP for Microsoft 365 Copilot** — the only control that can say *"even if the user has access, Copilot must not use this content."* Item-level sensitivity labels enforce EXTRACT denial via encryption; the dedicated Copilot DLP location adds prompt-level blocking and label-based response suppression — post coming.
 - **Microsoft Purview DSPM for AI** — the observability layer that tells you whether all the controls above are actually working. Weekly oversharing risk assessments, AI Activity Explorer, one-click remediation policies — post coming.
 
@@ -491,19 +486,15 @@ If you're waiting on one of the above, [send me a note](/feedback/) and I'll pri
 
 ## Common Mistakes I See Admins Make {#mistakes}
 
-**1. Treating RSS as a long-term answer.** RSS is the safety net while you do the real work. Tenants that leave RSS on for a year end up with Copilot responses that feel "thin" because so much legitimate content is excluded. Microsoft *recommends* disabling RSS once durable controls are in place.
+**1. Confusing RCD with RAC.** RCD hides; RAC blocks. A site marked RCD but not RAC is still accessible to anyone with a link — Copilot just won't surface it via tenant search. If you wanted the file to be inaccessible, you needed RAC.
 
-**2. Confusing RCD with RAC.** RCD hides; RAC blocks. A site marked RCD but not RAC is still accessible to anyone with a link — Copilot just won't surface it via tenant search. If you wanted the file to be inaccessible, you needed RAC.
+**2. Relying on container labels for item protection.** A "Confidential" label on a site does not encrypt the files inside. Use container labels for workspace governance; use item-level labels (with encryption and EXTRACT denial) for content protection.
 
-**3. Assuming SAM costs extra when it doesn't.** If even one user has a Copilot licence, SAM is unlocked. Many admins discover this six months into a rollout after they've been doing manual permission audits the hard way.
+**3. Trying to fix oversharing from IT.** With more than ~100 risky sites, central cleanup is impossible. SAM site access reviews exist for a reason — site owners know their own context. Delegate.
 
-**4. Relying on container labels for item protection.** A "Confidential" label on a site does not encrypt the files inside. Use container labels for workspace governance; use item-level labels (with encryption and EXTRACT denial) for content protection.
+**4. Forgetting Teams private channels.** RAC on the main team site does not cascade to private or shared channels. Each needs RAC configured separately. Most admins miss this.
 
-**5. Trying to fix oversharing from IT.** With more than ~100 risky sites, central cleanup is impossible. SAM site access reviews exist for a reason — site owners know their own context. Delegate.
-
-**6. Forgetting Teams private channels.** RAC on the main team site does not cascade to private or shared channels. Each needs RAC configured separately. Most admins miss this.
-
-**7. Blanket-applying RCD.** Microsoft explicitly warns this degrades Copilot response quality. RCD is a scalpel for sensitive sites — not a substitute for fixing permissions.
+**5. Blanket-applying RCD.** Microsoft explicitly warns this degrades Copilot response quality. RCD is a scalpel for sensitive sites — not a substitute for fixing permissions.
 
 > 💡 **Quick admin checklist:** Use the [Copilot Readiness Checker](/copilot-readiness/) to assess oversharing risk before rolling out. Use the [Copilot Cost Calculator](/copilot-cost-calculator/) to model what Copilot will cost across your organisation. Use the [Copilot Feature Matrix](/copilot-matrix/) to see which controls map to which licence tier.
 
@@ -521,11 +512,11 @@ RSS (Restricted SharePoint Search) is a tenant-wide allow-list — only listed s
 
 ### Do I need SharePoint Advanced Management for Copilot?
 
-If anyone in your tenant has a Microsoft 365 Copilot licence, SharePoint Advanced Management (SAM) is included automatically — you don't buy it separately. SAM gives you the Data Access Governance reports, the Content Management Assessment dashboard, site access reviews, inactive site policies, RCD, and RAC. These are the tools you actually use to find and fix oversharing before Copilot makes it visible. SAM is also available as a standalone $3/user/month add-on for tenants without Copilot.
+If anyone in your tenant has a Microsoft 365 Copilot licence, SharePoint Advanced Management (SAM) is included automatically — you don't buy it separately. SAM gives you the Data Access Governance reports, the Content Management Assessment dashboard, site access reviews, inactive site policies, RCD, and RAC. These are the tools you actually use to find and fix oversharing before Copilot makes it visible. SAM is also available as a standalone "SharePoint Advanced Management Plan 1" add-on for tenants without Copilot — check Microsoft's licensing page for current pricing.
 
 ### Does Copilot honour sensitivity labels on SharePoint files?
 
-Yes, but only when the label actually enforces something. If a label applies encryption AND removes the EXTRACT usage right, Copilot can cite the file's existence but cannot summarise its contents. If the label is purely visual (header, watermark, no encryption), Copilot can still read and summarise the file. The common mistake is assuming a 'Confidential' label alone blocks Copilot — it doesn't. You need encryption with EXTRACT denied, or a DLP for Copilot policy that explicitly blocks the label.
+Yes, but only when the label actually enforces something. If a label applies encryption AND removes the EXTRACT usage right (shown in the Purview portal as 'Copy'), Copilot can cite the file's existence but cannot summarise its contents. If the label is purely visual (header, watermark, no encryption), Copilot can still read and summarise the file. The common mistake is assuming a 'Confidential' label alone blocks Copilot — it doesn't. You need encryption with EXTRACT denied, or a DLP for Copilot policy that explicitly blocks the label.
 
 ### How long does Restricted Content Discovery take to take effect?
 
