@@ -35,19 +35,45 @@ A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard wo
 
 ---
 
+## If you only have 2 minutes — January's 3 picks
+
+If 30 changes feels like too much, these are the three I'd start with:
+
+1. **[Model Selector in Microsoft 365 Copilot](#4-model-selector-in-microsoft-365-copilot)** — three modes (Auto · Quick response · Think deeper) backed by GPT-5. Foundational — it changes how *every* Copilot interaction feels. Most users won't notice the rest of January until they get this right.
+2. **[Writing Coaching in Word](#1-writing-coaching-in-word)** — guidance on structure, flow, and tone right inside the Word context menu. Most people draft something every day; this one quietly improves a lot of those drafts.
+3. **[Library in the Microsoft 365 Copilot app](#11-library-in-the-microsoft-365-copilot-app)** — a new visual-first home for everything Copilot generates (images, pages, shared content). Solves the "where did that Copilot thing I made go?" problem that had been quietly costing time.
+
+---
+
+## Admin Checklist — January 2026
+
+Five admin checks worth doing this month, in priority order:
+
+1. **Brief teams on the Model Selector before they discover it.** People will see Auto, Quick response, and Think deeper appear in their Copilot prompt — without context, they'll pick randomly. **Action:** Update your Copilot intranet page with a one-line guide: *"Auto for most things · Quick for short answers · Think deeper for complex analysis."*
+
+2. **Update your Outlook Copilot training material** to cover the new "Edit in Outlook" draft handoff from Chat. This is a small UX change with high adoption pull — once people see it, they use it. **Action:** Add a screenshot + one-paragraph note to your existing Outlook training.
+
+3. **Brief Copilot champions on the new Library.** Library is where Copilot-generated images, pages, and shared content now live. Your champions need to know it exists so they can answer the inevitable "where did that go?" question. **Action:** Microsoft 365 Copilot app → Library → familiarise yourself, then share a short walkthrough.
+
+4. **Re-test active Agent Builder projects now that Copilot Studio Lite uses GPT-5.** Better reasoning and longer-context handling — agents that previously felt brittle on multi-turn conversation are worth a fresh smoke test. **Action:** Open your active agents and run them through the conversation flows that used to cause trouble.
+
+5. **Review Copilot Dashboard's new chat-adoption insights.** The dashboard now exposes adoption signal for users *without* a paid Copilot licence — important for measuring whether Copilot Chat habits are forming broadly before you justify more licences. **Action:** Viva Insights → Copilot Dashboard → look for the new Copilot Chat adoption insights.
+
+---
+
 ## Quick Jump
 
-**📝 Word & Writing:** [Writing Coaching](#1-writing-coaching-in-word) · [Recent Prompts](#2-recent-prompts-in-draft-with-copilot-in-word) · [Precise Text Selection](#6-precise-text-selection-in-word) · [Voice support](#23-voice-support-in-word-and-powerpoint)
+**Word & Writing:** [Writing Coaching](#1-writing-coaching-in-word) · [Recent Prompts](#2-recent-prompts-in-draft-with-copilot-in-word) · [Precise Text Selection](#6-precise-text-selection-in-word) · [Voice support](#23-voice-support-in-word-and-powerpoint)
 
-**🤖 Agents & Builder:** [Generate files from agents](#3-generate-word-excel-and-powerpoint-files-from-agents) · [GPT-5 in Agent Builder](#12-gpt-5-in-agent-builder) · [Agent Mode in Excel](#18-agent-mode-in-excel) · [Larger file upload](#30-larger-file-upload-in-copilot-studio-agent-builder)
+**Agents & Builder:** [Generate files from agents](#3-generate-word-excel-and-powerpoint-files-from-agents) · [GPT-5 in Agent Builder](#12-gpt-5-in-agent-builder) · [Agent Mode in Excel](#18-agent-mode-in-excel) · [Larger file upload](#30-larger-file-upload-in-copilot-studio-agent-builder)
 
-**💬 Copilot Chat, Search & App:** [Model Selector](#4-model-selector-in-microsoft-365-copilot) · [Updated navigation pane](#5-updated-navigation-pane) · [Calendar Search](#10-calendar-search-in-copilot-search) · [Library](#11-library-in-the-microsoft-365-copilot-app) · [Teams Channels](#17-teams-channels-in-context-iq) · [App canvas button](#19-copilot-chat-button-moves-to-the-app-canvas) · [Past chat search](#20-search-past-copilot-chat-conversations) · [Source-specific filters](#21-copilot-search-source-specific-filters) · [Session persistence](#26-session-persistence-enhancement) · [Rich Bing cards](#27-rich-bing-web-answer-cards) · [Memory and Personalisation](#28-memory-and-personalisation-updates) · [Loop Notebooks](#29-loop-notebooks-in-context-iq)
+**Copilot Chat, Search & App:** [Model Selector](#4-model-selector-in-microsoft-365-copilot) · [Updated navigation pane](#5-updated-navigation-pane) · [Calendar Search](#10-calendar-search-in-copilot-search) · [Library](#11-library-in-the-microsoft-365-copilot-app) · [Teams Channels](#17-teams-channels-in-context-iq) · [App canvas button](#19-copilot-chat-button-moves-to-the-app-canvas) · [Past chat search](#20-search-past-copilot-chat-conversations) · [Source-specific filters](#21-copilot-search-source-specific-filters) · [Session persistence](#26-session-persistence-enhancement) · [Rich Bing cards](#27-rich-bing-web-answer-cards) · [Memory and Personalisation](#28-memory-and-personalisation-updates) · [Loop Notebooks](#29-loop-notebooks-in-context-iq)
 
-**📧 Outlook, Meetings & Dashboard:** [Edit in Outlook](#7-continue-editing-in-outlook-from-copilot-chat) · [Meeting metrics](#15-copilot-dashboard-updated-meeting-metrics) · [Chat adoption metrics](#16-copilot-dashboard-chat-adoption-metrics) · [Meeting recap notes](#22-customise-ai-generated-notes-in-meeting-recap)
+**Outlook, Meetings & Dashboard:** [Edit in Outlook](#7-continue-editing-in-outlook-from-copilot-chat) · [Meeting metrics](#15-copilot-dashboard-updated-meeting-metrics) · [Chat adoption metrics](#16-copilot-dashboard-chat-adoption-metrics) · [Meeting recap notes](#22-customise-ai-generated-notes-in-meeting-recap)
 
-**📊 PowerPoint, Pages & Video:** [PowerPoint from Pages](#8-powerpoint-grounded-on-copilot-pages) · [Video creation](#9-video-creation-updates-in-microsoft-365-copilot) · [File preview on Android](#24-file-preview-and-chat-on-android) · [Video recap](#25-video-recap-in-copilot-chat)
+**PowerPoint, Pages & Video:** [PowerPoint from Pages](#8-powerpoint-grounded-on-copilot-pages) · [Video creation](#9-video-creation-updates-in-microsoft-365-copilot) · [File preview on Android](#24-file-preview-and-chat-on-android) · [Video recap](#25-video-recap-in-copilot-chat)
 
-**🌐 SharePoint & Collaboration:** [Sharing Copilot Notebooks](#13-sharing-copilot-notebooks) · [Sections with Copilot](#14-sharepoint-sections-with-copilot)
+**SharePoint & Collaboration:** [Sharing Copilot Notebooks](#13-sharing-copilot-notebooks) · [Sections with Copilot](#14-sharepoint-sections-with-copilot)
 
 ---
 

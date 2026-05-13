@@ -35,21 +35,47 @@ A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard wo
 
 ---
 
+## If you only have 2 minutes — March's 3 picks
+
+If 36 changes feels like too much, these are the three I'd start with:
+
+1. **[Edit with Copilot (Agent Mode) in Excel](#1-edit-with-copilot-agent-mode-in-excel)** — extends one of the most practical Copilot experiences to **Chat users without a paid licence** AND to **desktop Excel on Windows and Mac** (not just web). Biggest reach unlock this month — and paid users get the bonus of choosing between OpenAI and Anthropic models.
+2. **[Scheduling with Copilot](#4-scheduling-with-copilot)** — ask Copilot to find a time, book the room, draft the agenda, and send the invite, all from chat. Replaces a five-step admin chore with one request. Will save real time every day.
+3. **[Copilot Can Edit PowerPoint](#13-copilot-can-edit-powerpoint)** — natural-language editing of an *existing* deck, with brand-kit awareness. The conversational PowerPoint experience finally moves from "side panel suggestions" to "real editor that stays on-brand".
+
+---
+
+## Admin Checklist — March 2026
+
+Five admin checks worth doing this month, in priority order:
+
+1. **Review whether your tenant allows the Anthropic model choice for eligible paid Copilot users.** Microsoft says model choice is available "where your organisation allows it" — so check your Microsoft 365 admin center Copilot settings for model-provider controls before you communicate availability to users. **Action:** Confirm the toggle/policy in your tenant, then update your Copilot training and FAQ to reflect what's actually available to your users.
+
+2. **Roll out Excel Copilot to Chat users (no licence needed).** This is the biggest no-cost-to-you adoption opportunity of the month — users without a paid licence can now use Excel Copilot on web, Windows, and Mac. **Action:** Make sure Copilot Chat is enabled tenant-wide, then announce the new capability to teams. No special admin work to enable.
+
+3. **Pilot Scheduling with Copilot with one team** before broad comms. Book one real team meeting via Copilot, including room and agenda, to validate it works for your tenant's rooms and resources.
+
+4. **Review watermark availability for AI-generated content** and decide whether to include it in your content-integrity guidance. Microsoft says this is controlled through the privacy dashboard. **Action:** Look at the watermark setting yourself, then decide what to recommend (or require) in your AI-content policy.
+
+5. **Brief your comms / internal-comms team** about Audio Overview of Meetings (English only for now) and the AI Audio Briefing in Viva Connections. Both make work content consumable on the move — useful for organisations with field workforces or commute-heavy staff.
+
+---
+
 ## Quick Jump
 
-**🤖 Agents & Copilot Chat:** [Edit with Copilot in Excel](#1-edit-with-copilot-agent-mode-in-excel) · [Scheduling with Copilot](#4-scheduling-with-copilot) · [Agents in Classic Outlook](#9-agents-in-classic-outlook) · [Word Agent](#16-word-agent) · [SharePoint List Agent](#17-sharepoint-list-agent)
+**Agents & Copilot Chat:** [Edit with Copilot in Excel](#1-edit-with-copilot-agent-mode-in-excel) · [Scheduling with Copilot](#4-scheduling-with-copilot) · [Agents in Classic Outlook](#9-agents-in-classic-outlook) · [Word Agent](#16-word-agent) · [SharePoint List Agent](#17-sharepoint-list-agent)
 
-**🗂️ Files, OneDrive & SharePoint:** [Finder integration](#3-copilot-with-onedrive-files-in-macos-finder) · [Share with Summary](#5-share-with-summary-for-onedrive-files) · [Floating Copilot button](#6-floating-copilot-button-in-onedrive) · [Loop Notebooks in ContextIQ](#7-loop-notebooks-in-contextiq) · [Review PDFs](#8-review-pdfs-with-copilot) · [SharePoint metadata](#20-metadata-support-for-sharepoint-queries)
+**Files, OneDrive & SharePoint:** [Finder integration](#3-copilot-with-onedrive-files-in-macos-finder) · [Share with Summary](#5-share-with-summary-for-onedrive-files) · [Floating Copilot button](#6-floating-copilot-button-in-onedrive) · [Loop Notebooks in ContextIQ](#7-loop-notebooks-in-contextiq) · [Review PDFs](#8-review-pdfs-with-copilot) · [SharePoint metadata](#20-metadata-support-for-sharepoint-queries)
 
-**🎙️ Voice, Audio & Memory:** [Audio Overview of Meetings](#10-audio-overview-of-meetings) · [Enhanced Memory](#15-enhanced-memory-with-work-data) · [Voice chats reference Memory](#18-voice-chats-reference-memory) · [Voice support in Word & PowerPoint](#19-voice-support-in-word--powerpoint) · [Viva Connections AI audio overview](#26-viva-connections-ai-audio-overview)
+**Voice, Audio & Memory:** [Audio Overview of Meetings](#10-audio-overview-of-meetings) · [Enhanced Memory](#15-enhanced-memory-with-work-data) · [Voice chats reference Memory](#18-voice-chats-reference-memory) · [Voice support in Word & PowerPoint](#19-voice-support-in-word--powerpoint) · [Viva Connections AI audio overview](#26-viva-connections-ai-audio-overview)
 
-**📊 PowerPoint, Meetings & Mobile:** [Copilot can edit PowerPoint](#13-copilot-can-edit-powerpoint) · [Prepare for meetings in Outlook mobile](#22-prepare-for-meetings-in-outlook-mobile) · [Copilot in Teams chats and meetings](#23-copilot-chat-for-teams-chats-channels-calling--meetings)
+**PowerPoint, Meetings & Mobile:** [Copilot can edit PowerPoint](#13-copilot-can-edit-powerpoint) · [Prepare for meetings in Outlook mobile](#22-prepare-for-meetings-in-outlook-mobile) · [Copilot in Teams chats and meetings](#23-copilot-chat-for-teams-chats-channels-calling--meetings)
 
-**🌐 Edge & Web:** [Ask Copilot from Edge](#11-ask-copilot-from-edge-address-bar) · [Summarise & Explain in PDF Reader](#12-summarise--explain-in-pdf-reader) · [Multiple Edge tabs](#24-copilot-chat-across-multiple-edge-tabs) · [Ground Copilot in YouTube](#25-ground-copilot-in-youtube-videos)
+**Edge & Web:** [Ask Copilot from Edge](#11-ask-copilot-from-edge-address-bar) · [Summarise & Explain in PDF Reader](#12-summarise--explain-in-pdf-reader) · [Multiple Edge tabs](#24-copilot-chat-across-multiple-edge-tabs) · [Ground Copilot in YouTube](#25-ground-copilot-in-youtube-videos)
 
-**🔌 Connectors & Search:** [Copilot Search Admin Experience](#27-copilot-search-admin-experience) · [ServiceNow permissions](#29-servicenow-edit-permissions) · [5 new connectors](#new-copilot-connectors) · [ServiceNow query filters](#35-servicenow-connector-edit-user-mappings--query-filters)
+**Connectors & Search:** [Copilot Search Admin Experience](#27-copilot-search-admin-experience) · [ServiceNow permissions](#29-servicenow-edit-permissions) · [5 new connectors](#new-copilot-connectors) · [ServiceNow query filters](#35-servicenow-connector-edit-user-mappings--query-filters)
 
-**🛡️ Admin, Governance & Insights:** [Chat History](#2-chat-history-update) · [Watermarks](#14-watermarks-for-ai-generated-content) · [Copilot Notebooks overview](#21-overview-page-in-copilot-notebooks) · [People Skills](#28-people-skills-expanded-ai-for-e3e5) · [Teams Organisation Evaluation Score](#36-teams-organisation-evaluation-score)
+**Admin, Governance & Insights:** [Chat History](#2-chat-history-update) · [Watermarks](#14-watermarks-for-ai-generated-content) · [Copilot Notebooks overview](#21-overview-page-in-copilot-notebooks) · [People Skills](#28-people-skills-expanded-ai-for-e3e5) · [Teams Organisation Evaluation Score](#36-teams-organisation-evaluation-score)
 
 ---
 

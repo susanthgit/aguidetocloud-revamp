@@ -35,21 +35,47 @@ A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard wo
 
 ---
 
+## If you only have 2 minutes — February's 3 picks
+
+If 45 changes feels like too much, these are the three I'd start with:
+
+1. **[Agent Mode in Excel for Copilot Chat Users](#1-agent-mode-in-excel-for-copilot-chat-users)** — the most-asked-for Excel experience now reaches users **without a paid Copilot licence**, on web, Windows and Mac. Biggest reach unlock this month.
+2. **[Copilot Chat in Outlook with full inbox and calendar](#20-copilot-chat-in-outlook-can-use-your-full-inbox-and-calendar)** — Copilot in Outlook stops looking only at the message in front of you and starts reasoning across your **full inbox and calendar**, even for users without a paid licence. The depth jump that makes Outlook feel like a real assistant.
+3. **[Facilitator in Teams](#17-facilitator-in-teams)** — captures action items automatically during meetings, lets you assign tasks that sync to Planner, and can draft documents from the discussion. Turns the "what were we going to do again?" end-of-meeting fog into structured follow-up.
+
+---
+
+## Admin Checklist — February 2026
+
+Five admin checks worth doing this month, in priority order:
+
+1. **Communicate the two no-extra-licence expansions** to non-licensed users — Excel Agent Mode for Chat users and full-inbox-and-calendar Outlook Copilot. This is the biggest no-cost-to-you adoption opportunity of the month. **Action:** Send an org-wide note or update your Copilot intranet page so unlicensed users know what they can now do.
+
+2. **Pilot Facilitator with meeting hosts first.** Facilitator can quietly produce tasks and documents during meetings, which is a behavioural shift for participants. **Action:** Pilot with a small group of meeting hosts who are comfortable adopting new tools, gather their experience, then decide broader comms and support material.
+
+3. **Enable Agents in OneDrive for power users.** This requires a Copilot licence and is available on OneDrive Web. **Action:** Identify your power users (sales engineers, analysts, executive assistants) and brief them on building file-grounded agents.
+
+4. **Update your Outlook Copilot training material.** Until now, training said "Copilot reads the open message"; that is no longer accurate. **Action:** Update your training decks, FAQ, and any internal Copilot champion content to reflect full-inbox/calendar reasoning.
+
+5. **Review the eight new Copilot Connectors** (Dropbox · Miro · ServiceNow Knowledge templates · ServiceNow Tickets status update frequency · Aha! · Shortcut · GitLab Merge Requests · Bitbucket Pull Requests). Decide which to deploy based on what your teams actually use. **Action:** Microsoft 365 admin center → Copilot → Connectors → Gallery.
+
+---
+
 ## Quick Jump
 
-**🤖 Copilot Chat, Pages & Agents:** [Agent Mode in Excel](#1-agent-mode-in-excel-for-copilot-chat-users) · [Modify Copilot Pages](#8-chat-can-modify-copilot-pages) · [Ask about open Pages](#9-ask-questions-about-open-copilot-pages) · [Auto-generated Pages](#10-auto-generated-copilot-pages) · [PowerPoint from Pages](#11-powerpoint-from-copilot-pages) · [AI-generated agent icons](#15-ai-generated-agent-icons) · [Agents in OneDrive](#19-agents-in-onedrive) · [Edit Scheduled Prompts](#21-edit-scheduled-prompts) · [Scheduling with Copilot](#22-scheduling-with-copilot) · [Agents in Classic Outlook](#23-agents-in-classic-outlook)
+**Copilot Chat, Pages & Agents:** [Agent Mode in Excel](#1-agent-mode-in-excel-for-copilot-chat-users) · [Modify Copilot Pages](#8-chat-can-modify-copilot-pages) · [Ask about open Pages](#9-ask-questions-about-open-copilot-pages) · [Auto-generated Pages](#10-auto-generated-copilot-pages) · [PowerPoint from Pages](#11-powerpoint-from-copilot-pages) · [AI-generated agent icons](#15-ai-generated-agent-icons) · [Agents in OneDrive](#19-agents-in-onedrive) · [Edit Scheduled Prompts](#21-edit-scheduled-prompts) · [Scheduling with Copilot](#22-scheduling-with-copilot) · [Agents in Classic Outlook](#23-agents-in-classic-outlook)
 
-**📄 Word, PowerPoint & Excel:** [Steer presentation length](#3-steer-presentation-length-tone-style-and-ai-images-in-powerpoint) · [Auto-Summary in Word](#6-auto-summary-on-file-open-in-word) · [Comments Summary](#7-document-comments-summary-in-word) · [Python-powered answers](#12-improved-python-powered-answers-in-excel) · [Designer](#16-designer-in-microsoft-365-copilot) · [Voice Q&A during Read Aloud](#26-voice-qa-during-read-aloud-in-word) · [Agent Mode in Excel desktop](#30-agent-mode-in-excel-desktop-apps) · [Scatter image effect](#31-scatter-image-effect) · [Edit images in PowerPoint](#33-edit-images-in-powerpoint) · [Formula auto-completion](#37-formula-auto-completion-in-excel)
+**Word, PowerPoint & Excel:** [Steer presentation length](#3-steer-presentation-length-tone-style-and-ai-images-in-powerpoint) · [Auto-Summary in Word](#6-auto-summary-on-file-open-in-word) · [Comments Summary](#7-document-comments-summary-in-word) · [Python-powered answers](#12-improved-python-powered-answers-in-excel) · [Designer](#16-designer-in-microsoft-365-copilot) · [Voice Q&A during Read Aloud](#26-voice-qa-during-read-aloud-in-word) · [Agent Mode in Excel desktop](#30-agent-mode-in-excel-desktop-apps) · [Scatter image effect](#31-scatter-image-effect) · [Edit images in PowerPoint](#33-edit-images-in-powerpoint) · [Formula auto-completion](#37-formula-auto-completion-in-excel)
 
-**🔍 Search & Discovery:** [Source-specific filters](#4-copilot-search-source-specific-filters) · [Channels in Context IQ](#13-teams-channels-in-context-iq) · [Filter as you type](#27-filter-search-as-you-type-in-copilot-search) · [Department matches](#28-copilot-search-matches-on-department) · [Discover People](#29-copilot-search-discovers-people)
+**Search & Discovery:** [Source-specific filters](#4-copilot-search-source-specific-filters) · [Channels in Context IQ](#13-teams-channels-in-context-iq) · [Filter as you type](#27-filter-search-as-you-type-in-copilot-search) · [Department matches](#28-copilot-search-matches-on-department) · [Discover People](#29-copilot-search-discovers-people)
 
-**📂 Files, OneDrive & SharePoint:** [Finder integration](#2-copilot-with-onedrive-files-in-finder) · [Android file preview](#5-file-preview-and-chat-on-android) · [SharePoint actions](#18-copilot-actions-in-sharepoint-document-libraries) · [Share with Summary](#24-share-with-summary-for-onedrive-files) · [Floating Copilot icon](#25-floating-copilot-icon-in-file-previewer)
+**Files, OneDrive & SharePoint:** [Finder integration](#2-copilot-with-onedrive-files-in-finder) · [Android file preview](#5-file-preview-and-chat-on-android) · [SharePoint actions](#18-copilot-actions-in-sharepoint-document-libraries) · [Share with Summary](#24-share-with-summary-for-onedrive-files) · [Floating Copilot icon](#25-floating-copilot-icon-in-file-previewer)
 
-**📧 Outlook, Teams & Meetings:** [Summarise email without a licence](#14-summarise-email-without-a-copilot-licence-in-outlook) · [Facilitator in Teams](#17-facilitator-in-teams) · [Full inbox and calendar in Outlook](#20-copilot-chat-in-outlook-can-use-your-full-inbox-and-calendar) · [Meeting recap summarises screen content](#34-meeting-recap-summarises-screen-content) · [Calendar search for delegates](#35-calendar-search-for-email-delegates)
+**Outlook, Teams & Meetings:** [Summarise email without a licence](#14-summarise-email-without-a-copilot-licence-in-outlook) · [Facilitator in Teams](#17-facilitator-in-teams) · [Full inbox and calendar in Outlook](#20-copilot-chat-in-outlook-can-use-your-full-inbox-and-calendar) · [Meeting recap summarises screen content](#34-meeting-recap-summarises-screen-content) · [Calendar search for delegates](#35-calendar-search-for-email-delegates)
 
-**🧠 Personalisation & Productivity:** [Updated Copilot Notebooks](#32-updated-copilot-notebooks-interface) · [Memory and Personalisation](#36-memory-and-personalisation-updates)
+**Personalisation & Productivity:** [Updated Copilot Notebooks](#32-updated-copilot-notebooks-interface) · [Memory and Personalisation](#36-memory-and-personalisation-updates)
 
-**🔌 Copilot Connectors:** [8 new connectors](#new-copilot-connectors) — Dropbox, Miro, ServiceNow, Aha!, Shortcut, GitLab, and Bitbucket
+**Copilot Connectors:** [8 new connectors](#new-copilot-connectors) — Dropbox, Miro, ServiceNow, Aha!, Shortcut, GitLab, and Bitbucket
 
 ---
 

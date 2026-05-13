@@ -37,23 +37,49 @@ A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard wo
 
 ---
 
+## If you only have 2 minutes — April's 3 picks
+
+If 41 changes feels like too much, these are the three I'd start with:
+
+1. **["Hey Copilot" Wake Word on Windows](#22-hey-copilot-wake-word-on-windows)** — the "Hey Siri" moment for Microsoft 365. Voice activation that respects enterprise compliance and only listens when called. Quietly changes how people may start using Copilot day to day.
+2. **[PowerPoint Agent](#3-powerpoint-agent)** *(plus Excel Agent and Word Agent)* — three new productivity agents that build entire decks, spreadsheets, and documents from conversation. Available to anyone with M365 (with or without a paid Copilot licence), where your admin has enabled them.
+3. **[Custom MCP Connectors in M365 Admin Center](#35-custom-mcp-connectors-in-m365-admin-center)** — admins can now bring almost any internal system into Copilot with real-time, federated MCP queries. The foundation for May's federated Copilot connectors wave.
+
+---
+
+## Admin Checklist — April 2026
+
+Five admin checks worth doing this month, in priority order:
+
+1. **Publish your wake-word guidance before broad adoption.** Wake-word activation raises legitimate privacy and compliance questions even though it only listens when called. **Action:** Check the available Microsoft 365 Copilot and Windows controls in your tenant before promising any tenant-wide allow/restrict policy — your control plane depends on your licensing and current tenant configuration. Then update your AI usage policy and brief users on the wake-word setting in the Copilot app (Settings → Quick View).
+
+2. **Enable Purview DLP for Copilot prompts** if you have not already. The new real-time DLP control (feature #39) blocks Copilot from returning answers when prompts contain sensitive data — critical for regulated industries. **Action:** Microsoft Purview → DLP → create a policy targeted at the new "Microsoft 365 Copilot prompts" surface.
+
+3. **Decide which productivity agents to enable.** PowerPoint, Excel, and Word agents are all gated by tenant-level admin toggles. Decide whether to enable for all, for licensed users only, or for a pilot group. *My note:* start with a pilot if you need usage or governance evidence before broad rollout.
+
+4. **Pilot Custom MCP connectors with one internal system — only where you already have a suitable read-only MCP endpoint and authentication path.** Pick a low-risk line-of-business system (HR knowledge base, finance docs, project tracker) and stand up an MCP connector for it. This puts your team ahead of the May federated-connectors wave and builds the muscle for MCP-based extensibility. *Note:* you will also need Microsoft Entra ID setup and the appropriate admin roles (Global or AI admin) for the registration step.
+
+5. **Review the eight new third-party connectors** (GitLab Issues · Asana · Monday.com · Guru · Coda · Zendesk Help Center · Egnyte · Amazon S3). Decide which to deploy based on what your teams actually use. **Action:** Microsoft 365 admin center → Copilot → Connectors → Gallery.
+
+---
+
 ## Quick Jump
 
-**🤖 New Agents:** [PowerPoint Agent](#3-powerpoint-agent) · [Excel Agent](#4-excel-agent) · [Word Agent](#5-word-agent) · [Planner Agent](#8-planner-agent) · [SharePoint List Agent](#9-sharepoint-list-agent) · [Interpreter Agent](#14-interpreter-agent-in-teams-rooms-on-windows)
+**New Agents:** [PowerPoint Agent](#3-powerpoint-agent) · [Excel Agent](#4-excel-agent) · [Word Agent](#5-word-agent) · [Planner Agent](#8-planner-agent) · [SharePoint List Agent](#9-sharepoint-list-agent) · [Interpreter Agent](#14-interpreter-agent-in-teams-rooms-on-windows)
 
-**🎙️ Voice & Audio:** [Voice Chat](#1-voice-chat-in-microsoft-365-copilot) · [Audio Overviews in Word](#2-audio-overviews-in-word-documents) · ["Hey Copilot" Wake Word](#22-hey-copilot-wake-word-on-windows) · [News Audio Briefing](#19-news-ai-audio-briefing-in-viva-connections-mobile)
+**Voice & Audio:** [Voice Chat](#1-voice-chat-in-microsoft-365-copilot) · [Audio Overviews in Word](#2-audio-overviews-in-word-documents) · ["Hey Copilot" Wake Word](#22-hey-copilot-wake-word-on-windows) · [News Audio Briefing](#19-news-ai-audio-briefing-in-viva-connections-mobile)
 
-**📊 PowerPoint & Presentations:** [Copilot Edits PowerPoint](#6-copilot-can-edit-your-powerpoint) · [Edit Images](#10-quickly-edit-images-in-powerpoint) · [Contextual Explanations](#11-contextual-explanations-in-powerpoint)
+**PowerPoint & Presentations:** [Copilot Edits PowerPoint](#6-copilot-can-edit-your-powerpoint) · [Edit Images](#10-quickly-edit-images-in-powerpoint) · [Contextual Explanations](#11-contextual-explanations-in-powerpoint)
 
-**📱 Mobile:** [Meeting Prep in Outlook](#17-prepare-for-meetings-in-outlook-mobile) · [Pages in Outlook Mobile](#18-copilot-pages-in-outlook-mobile)
+**Mobile:** [Meeting Prep in Outlook](#17-prepare-for-meetings-in-outlook-mobile) · [Pages in Outlook Mobile](#18-copilot-pages-in-outlook-mobile)
 
-**🔌 Copilot Connectors:** [8 new connectors](#new-copilot-connectors) — GitLab, Asana, Monday.com, Guru, Coda, Zendesk, Egnyte, Amazon S3
+**Copilot Connectors:** [8 new connectors](#new-copilot-connectors) — GitLab, Asana, Monday.com, Guru, Coda, Zendesk, Egnyte, Amazon S3
 
-**🛡️ Admin & Governance:** [Optimize View](#23-copilot-settings--optimize-view-in-admin-center) · [Agent Metadata Export](#24-agent-metadata-in-inventory-export) · [Purview IRM Report](#25-purview-insider-risk-management--pay-as-you-go-usage-report) · [Purview DLP for Prompts](#39-purview-dlp-for-microsoft-365-copilot-prompts) · [Custom MCP Connectors](#35-custom-mcp-connectors-in-m365-admin-center)
+**Admin & Governance:** [Optimize View](#23-copilot-settings--optimize-view-in-admin-center) · [Agent Metadata Export](#24-agent-metadata-in-inventory-export) · [Purview IRM Report](#25-purview-insider-risk-management--pay-as-you-go-usage-report) · [Purview DLP for Prompts](#39-purview-dlp-for-microsoft-365-copilot-prompts) · [Custom MCP Connectors](#35-custom-mcp-connectors-in-m365-admin-center)
 
-**📈 Analytics & Insights:** [Satisfaction Rate](#38-satisfaction-rate-metric-in-copilot-dashboard) · [Power User Insights](#40-copilot-analytics-power-bi-update-with-power-user-insights) · [Broader Dashboard Access](#41-copilot-dashboard--broader-access-to-copilot-chat-insights) · [Studio Agent Report](#37-copilot-studio-agent-report-in-viva-insights)
+**Analytics & Insights:** [Satisfaction Rate](#38-satisfaction-rate-metric-in-copilot-dashboard) · [Power User Insights](#40-copilot-analytics-power-bi-update-with-power-user-insights) · [Broader Dashboard Access](#41-copilot-dashboard--broader-access-to-copilot-chat-insights) · [Studio Agent Report](#37-copilot-studio-agent-report-in-viva-insights)
 
-**🧩 Everything Else:** [Notebooks Overview](#7-overview-page-in-copilot-notebooks) · [AI Workflows](#15-ai-workflows-in-the-workflows-app) · [Code Interpreter + Search](#16-code-interpreter-analyses-chat-search-files) · [AI in SharePoint](#20-ai-in-sharepoint-formerly-knowledge-agent) · [Channel Agent Updates](#21-teams-channel-agent-updates) · [Declarative Agent Images](#12-declarative-agents-understand-embedded-images) · [Calendar Delegates](#13-calendar-search-for-email-delegates) · [Foundry Agent Publishing](#29-no-code-publishing-for-azure-ai-foundry-agents) · [Embedded Knowledge](#36-embedded-knowledge-for-declarative-agents-teams-toolkit)
+**Everything Else:** [Notebooks Overview](#7-overview-page-in-copilot-notebooks) · [AI Workflows](#15-ai-workflows-in-the-workflows-app) · [Code Interpreter + Search](#16-code-interpreter-analyses-chat-search-files) · [AI in SharePoint](#20-ai-in-sharepoint-formerly-knowledge-agent) · [Channel Agent Updates](#21-teams-channel-agent-updates) · [Declarative Agent Images](#12-declarative-agents-understand-embedded-images) · [Calendar Delegates](#13-calendar-search-for-email-delegates) · [Foundry Agent Publishing](#29-no-code-publishing-for-azure-ai-foundry-agents) · [Embedded Knowledge](#36-embedded-knowledge-for-declarative-agents-teams-toolkit)
 
 ---
 
