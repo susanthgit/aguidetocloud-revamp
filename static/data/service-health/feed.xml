@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 14 May 2026 18:05:21 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2026 20:00:20 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 apps] Admins may not see new policies apply from the Cloud Policy service for devices running Win32 Microsoft 365 apps</title>
+      <link>https://www.aguidetocloud.com/service-health/#OP1310599</link>
+      <description>[Microsoft 365 apps] Admins may not see new policies apply from the Cloud Policy service for devices running Win32 Microsoft 365 apps.</description>
+      <category>Microsoft 365 apps</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">OP1310599</guid>
+      <pubDate>Thu, 14 May 2026 18:49:44 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Users may be unable to initiate Office app installations in the My Account portal found within portal.office.com </title>
       <link>https://www.aguidetocloud.com/service-health/#MO1309601</link>
@@ -28,9 +37,9 @@
     <item>
       <title>[Microsoft 365 suite] Some admins may experience delays of up to 72 hours receiving app usage reports in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1308654</link>
-      <description>[Microsoft 365 suite] Admins may experience delays of up to 72 hours receiving app usage reports in the Microsoft 365 admin center.</description>
+      <description>[Microsoft 365 suite] Admins may have experienced delays of up to 72 hours receiving app usage reports in the Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1308654</guid>
       <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
     </item>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1280165</guid>
       <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be unable to download or open email attachments in Outlook on the web</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1275040</link>
-      <description>[Exchange Online] Users may have been unable to download or open email attachments in Outlook on the web.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1275040</guid>
-      <pubDate>Thu, 09 Apr 2026 04:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
