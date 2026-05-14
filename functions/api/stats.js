@@ -430,10 +430,17 @@ async function handleRealtimeCosmos(request, env, url) {
     return response;
   } catch (e) {
     console.error('Cosmos realtime error:', e?.message || e);
-    return cosmosJsonRes(
-      { totalUnique: 0, scope: 'cosmos', error: 'query-failed', generated_at: new Date().toISOString() },
-      200, 'no-cache'
-    );
+    // 🪲 14 May 2026 — cache error responses so a single 429 doesn't cause
+    // every visitor poll to re-hit GA4 with no cache (the self-DoS that
+    // kept the property quota perpetually exhausted overnight 13→14 May).
+    // Mirrors the 90s/30s pattern in handleRealtime.
+    const status = e?.status;
+    const errorTag = status === 429 ? 'quota-exhausted' : 'query-failed';
+    const errCacheControl = status === 429 ? 'public, max-age=90' : 'public, max-age=30';
+    const errBody = { totalUnique: 0, scope: 'cosmos', error: errorTag, generated_at: new Date().toISOString() };
+    const errResponse = cosmosJsonRes(errBody, 200, errCacheControl);
+    try { await cache.put(cacheKey, errResponse.clone()); } catch (_) { /* non-fatal */ }
+    return errResponse;
   }
 }
 
