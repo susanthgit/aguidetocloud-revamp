@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 14 May 2026 23:10:37 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 May 2026 04:14:59 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Admins may see stale or delayed report data in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1310977</link>
+      <description>[Microsoft 365 suite] Admins may see stale or delayed report data in the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1310977</guid>
+      <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users may be unable to access Microsoft 365 Copilot Chat via any connection method</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1310341</link>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1277749</guid>
       <pubDate>Fri, 10 Apr 2026 13:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Users' responses from Microsoft 365 Copilot Chat are delayed up to seven seconds or longer</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1276339</link>
-      <description>[Microsoft 365 Copilot Chat] Users' responses from Microsoft 365 Copilot Chat were delayed up to seven seconds or longer.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1276339</guid>
-      <pubDate>Fri, 10 Apr 2026 06:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
