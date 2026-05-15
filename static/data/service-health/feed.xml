@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 15 May 2026 17:50:49 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 May 2026 19:52:12 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Admins may see stale or delayed report data in the Microsoft 365 admin center</title>
@@ -39,7 +39,7 @@
       <link>https://www.aguidetocloud.com/service-health/#MO1309330</link>
       <description>[Microsoft 365 suite] Some users were unable to access Microsoft 365 services.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1309330</guid>
       <pubDate>Wed, 13 May 2026 13:30:00 +0000</pubDate>
     </item>
