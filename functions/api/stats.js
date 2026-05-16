@@ -238,129 +238,243 @@ async function getToken(env) {
 
 // ── Endpoint: Realtime ───────────────────────────────────────────
 //
-// Returns { active, pages }. `active` is the TRUE unique active-user count
-// across the property; `pages` is the per-page breakdown (top 25 by users).
+// Returns { active, pages, generated_at, age_s, stale }. `active` is the TRUE
+// unique active-user count across the property; `pages` is the per-page
+// breakdown (top 25 by users).
 //
-// 🪲 Bug fixed 13 May 2026 (round 1) — `active` used to be `sum(pages[].users)`
-// which double-counted any visitor who hopped between pages in the realtime
-// window (GA4 returns activeUsers PER dimension value when a dimension is
-// added). Fix: separate no-dimension query → true unique total; per-page
-// query keeps the breakdown.
+// 🪲 Incident history (full detail in learning-docs/docs/reference/incident-log.md):
+//   13 May 2026 — silent zeros from swallowed 429s (round 1 fix: throw on !res.ok)
+//   13 May 2026 — per-POP cache fanout × doubled GA4 calls exhausted property
+//                 quota (round 2 fix: CF Cache API + error cache + in-isolate
+//                 coalescing). Stopped self-DOS but didn't add capacity.
+//   14 May 2026 — same quota outage recurred; cosmos handler missing error cache
+//                 (round 3 fix: mirror the pattern, commit 7dda5840).
+//   15-16 May 2026 — quota STILL exhausting periodically because architecture
+//                 was fundamentally wrong: per-visitor polling × per-POP cache.
 //
-// 🪲 Bug fixed 13 May 2026 (round 2) — round 1 doubled GA4 realtime calls
-// per request (1 → 2 in parallel) and this endpoint had NO server-side cache.
-// Site Analytics dashboard + CC dashboard + tool-counter pill all polled
-// every 30–60s and burned through the per-property realtime quota (~175
-// reports/hr at Standard tier). GA4 started returning 429s; ga4RunRealtimeReport
-// silently swallowed them → counters displayed fake 0s. Two fixes:
-//   1. Throw on non-OK responses (above) so 429s surface.
-//   2. Add CF Cache API with 120s TTL on success and 90s TTL on 429-quota
-//      errors (prevents thundering herd while quota recovers).
-// Cosmos endpoint already uses this pattern (handleRealtimeCosmos, 45s now
-// bumped to 60s at the cosmosJsonRes call site below).
+// 16 May 2026 — Option A+ permanent fix: decouple ALL public realtime reads
+// from GA4. A scheduled refresher (GHA cron + handleRealtimeRefresh) writes
+// to KV every ~60s. Public handlers only READ KV — zero GA4 calls per visitor.
 //
-// In-isolate coalescing (13 May 2026 follow-up): when the CF cache is cold
-// (post-deploy, or just expired) and N concurrent requests all miss, this
-// module-level promise ensures only ONE GA4 fetch fires per CF isolate.
-// CF Pages routinely fans out across isolates within a POP, so this is a
-// best-effort burst dampener — not a global lock. The 120s cache TTL is
-// the primary defense.
-let realtimeInFlight = null;
-
+// GA4 calls/hour: previously O(visitors × poll_rate × N_pops), now CONSTANT ~60.
+// Property quota becomes irrelevant regardless of traffic.
 async function handleRealtime(request, env, url) {
-  // CF Cache API — per-POP cache. Global GA4 load ≈ N_pops × 2 calls per
-  // 120s. With ~3-5 active POPs this stays well under the property quota.
+  // L1: caches.default (per-POP, 60s) — sub-ms responses on warm POPs.
+  // L2: env.COSMOS_SUMMARY_KV — globally-shared snapshot, written by the
+  //     refresh handler. ZERO GA4 calls from this path.
   const cacheKeyUrl = url.origin + '/api/stats?realtime=1';
   const cacheKey = new Request(cacheKeyUrl, { method: 'GET' });
   const cache = caches.default;
   const cached = await cache.match(cacheKey);
   if (cached) return cached;
 
-  // Coalesce concurrent cold-cache requests within the same isolate.
-  // buildRealtimePayload returns a plain object (NOT a Response) so all
-  // awaiters can each create their own Response with their own clonable body.
-  if (!realtimeInFlight) {
-    realtimeInFlight = (async () => {
-      try {
-        return await buildRealtimePayload(env, cache, cacheKey);
-      } finally {
-        realtimeInFlight = null;
-      }
-    })();
+  const kv = env.COSMOS_SUMMARY_KV;
+  if (!kv) {
+    // KV not bound — return empty, do NOT fall back to GA4 (rubber-duck: fail
+    // closed on the public path, otherwise we recreate the failure mode).
+    return jsonRes({ active: 0, pages: [], error: 'kv-not-bound' }, 200, 'no-cache');
   }
-  const { body, cacheControl } = await realtimeInFlight;
-  return jsonRes(body, 200, cacheControl);
+
+  const [activeKV, pagesKV] = await Promise.all([
+    kv.get('realtime:active', 'json'),
+    kv.get('realtime:pages', 'json')
+  ]);
+
+  if (!activeKV) {
+    // Pre-warm window (first deploy / KV ever cleared / refresher down >24h).
+    return jsonRes(
+      { active: 0, pages: [], error: 'no-data', generated_at: null, stale: true },
+      200,
+      'public, max-age=30'
+    );
+  }
+
+  const now = Date.now();
+  const ageMs = now - Date.parse(activeKV.generated_at);
+  const ageS = Math.max(0, Math.round(ageMs / 1000));
+  const stale = ageMs > 3 * 60 * 1000;       // mark stale after 3 min
+  const tooStale = ageMs > 30 * 60 * 1000;   // hide pill after 30 min (UI sees active=0)
+
+  const body = {
+    active: tooStale ? 0 : (activeKV.active || 0),
+    pages: pagesKV?.pages || [],
+    generated_at: activeKV.generated_at,
+    age_s: ageS,
+    stale
+  };
+  if (tooStale) body.error = 'data-too-stale';
+
+  const response = jsonRes(body, 200, 'public, max-age=60');
+  try { await cache.put(cacheKey, response.clone()); } catch (_) {}
+  return response;
 }
 
-async function buildRealtimePayload(env, cache, cacheKey) {
+// ── Endpoint: Realtime Refresh (authed, called by GHA cron) ──────
+//
+// POST /api/stats?refresh=realtime
+//   Authorization: Bearer <plaintext ADMIN_PASSWORD>
+//
+// Calls GA4 Realtime API twice (no-dim active count + per-page breakdown)
+// and writes the result to KV. The ONLY code path that calls GA4 Realtime
+// for public-counter data. Triggered by .github/workflows/realtime-refresh.yml
+// every ~60s. Total GA4 calls/hour: ~60 × 2 queries = 120 reports.
+//
+// Rubber-duck design constraints:
+// 1. Long TTL on last-good keys (24h) — survives multiple missed GHA runs.
+// 2. Errors written to SEPARATE key (realtime:last_error) — never overwrites
+//    the last-good values. Stale-but-real beats zeros.
+// 3. Returns HTTP 200 even on internal failure so GHA doesn't retry-storm
+//    (status conveyed via { ok: false, error }).
+async function handleRealtimeRefresh(request, env) {
+  if (!(await isAuthedAsAdmin(request, env))) {
+    return jsonRes({ ok: false, error: 'Unauthorized' }, 401, 'no-cache');
+  }
+  if (!env.COSMOS_SUMMARY_KV) {
+    return jsonRes({ ok: false, error: 'kv-not-bound' }, 500, 'no-cache');
+  }
   const token = await getToken(env);
   if (!token) {
-    return { body: { active: 0, pages: [], error: 'no-auth' }, cacheControl: 'no-cache' };
+    return jsonRes({ ok: false, error: 'no-google-auth' }, 500, 'no-cache');
   }
 
-  const totalReq = ga4RunRealtimeReport(token, {
-    metrics: [{ name: 'activeUsers' }]
-  });
-  const perPageReq = ga4RunRealtimeReport(token, {
-    dimensions: [{ name: 'unifiedScreenName' }],
-    metrics: [{ name: 'activeUsers' }], limit: 25
-  });
-
-  const [totalSettled, perPageSettled] = await Promise.allSettled([totalReq, perPageReq]);
-
-  let pages = [];
-  if (perPageSettled.status === 'fulfilled') {
-    pages = (perPageSettled.value.rows || []).map(r => {
-      const rawTitle = r.dimensionValues?.[0]?.value || '';
-      const cleanTitle = rawTitle.replace(/\s*\|.*$/, '').replace(/\s*[—–].*$/, '').trim();
-      const slug = '/' + cleanTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') + '/';
-      return { page: cleanTitle, path: slug, users: parseInt(r.metricValues?.[0]?.value) || 0 };
-    }).sort((a, b) => b.users - a.users);
-  }
-
-  let active;
-  if (totalSettled.status === 'fulfilled') {
-    active = parseInt(totalSettled.value.rows?.[0]?.metricValues?.[0]?.value) || 0;
-  } else if (perPageSettled.status === 'fulfilled') {
-    // Inflated fallback — better than 0 if the no-dim query 4xxs. Don't
-    // cache (partial failures are usually transient; let next poll retry).
-    active = pages.reduce((s, p) => s + p.users, 0);
-    return { body: { active, pages, partial: true }, cacheControl: 'no-cache' };
-  } else {
-    // Both queries failed — most likely a 429 quota exhaustion. Cache the
-    // error response for 90s to prevent every visitor poll from re-hitting
-    // GA4 while quota recovers (~50 min). Without this, the recovery would
-    // be massively delayed by our own thundering herd.
-    const status = totalSettled.reason?.status || perPageSettled.reason?.status;
-    const errorTag = status === 429 ? 'quota-exhausted' : 'realtime-failed';
-    const errCacheControl = 'public, max-age=90';
-    const errBody = { active: 0, pages: [], error: errorTag };
-    try {
-      await cache.put(cacheKey, jsonRes(errBody, 200, errCacheControl));
-    } catch (_) {}
-    return { body: errBody, cacheControl: errCacheControl };
-  }
-
-  // Cache success for 120s.
-  const successCacheControl = 'public, max-age=120';
-  const successBody = { active, pages };
+  const TTL_24H = 60 * 60 * 24;
   try {
-    await cache.put(cacheKey, jsonRes(successBody, 200, successCacheControl));
-  } catch (_) {}
-  return { body: successBody, cacheControl: successCacheControl };
+    // Use allSettled so a per-page failure can't prevent realtime:active
+    // from updating (rubber-duck blocker: previously Promise.all let a
+    // per-page 429 take down the entire counter even when the no-dim
+    // total succeeded).
+    const [totalSettled, perPageSettled] = await Promise.allSettled([
+      ga4RunRealtimeReport(token, { metrics: [{ name: 'activeUsers' }] }),
+      ga4RunRealtimeReport(token, {
+        dimensions: [{ name: 'unifiedScreenName' }],
+        metrics: [{ name: 'activeUsers' }],
+        limit: 25
+      })
+    ]);
+
+    const generated_at = new Date().toISOString();
+    const writes = [];
+    const partials = { active: false, pages: false };
+    let active = null;
+    let pagesCount = null;
+
+    if (totalSettled.status === 'fulfilled') {
+      active = parseInt(totalSettled.value.rows?.[0]?.metricValues?.[0]?.value) || 0;
+      writes.push(env.COSMOS_SUMMARY_KV.put(
+        'realtime:active',
+        JSON.stringify({ active, generated_at }),
+        { expirationTtl: TTL_24H }
+      ));
+      partials.active = true;
+    }
+
+    if (perPageSettled.status === 'fulfilled') {
+      const pages = (perPageSettled.value.rows || []).map(r => {
+        const rawTitle = r.dimensionValues?.[0]?.value || '';
+        const cleanTitle = rawTitle.replace(/\s*\|.*$/, '').replace(/\s*[—–].*$/, '').trim();
+        const slug = '/' + cleanTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') + '/';
+        return { page: cleanTitle, path: slug, users: parseInt(r.metricValues?.[0]?.value) || 0 };
+      }).sort((a, b) => b.users - a.users);
+      pagesCount = pages.length;
+      writes.push(env.COSMOS_SUMMARY_KV.put(
+        'realtime:pages',
+        JSON.stringify({ pages, generated_at }),
+        { expirationTtl: TTL_24H }
+      ));
+      partials.pages = true;
+    }
+
+    if (writes.length === 0) {
+      // Both queries failed — surface for diagnostics, do NOT touch last-good.
+      const reason = totalSettled.reason || perPageSettled.reason;
+      const status = reason?.status;
+      try {
+        await env.COSMOS_SUMMARY_KV.put(
+          'realtime:last_error',
+          JSON.stringify({
+            message: reason?.message || 'both-queries-failed',
+            status: status || null,
+            attempted_at: generated_at
+          }),
+          { expirationTtl: 60 * 60 }
+        );
+      } catch (_) { /* non-fatal */ }
+      const tag = status === 429 ? 'quota-exhausted' : 'refresh-failed';
+      return jsonRes(
+        { ok: false, error: tag, status: status || null, message: reason?.message },
+        200,
+        'no-cache'
+      );
+    }
+
+    await Promise.all(writes);
+
+    // Record per-query failures for diagnostics, but DON'T downgrade ok.
+    // The counter is still healthy if active updated.
+    if (!partials.active || !partials.pages) {
+      const failed = !partials.active ? totalSettled : perPageSettled;
+      try {
+        await env.COSMOS_SUMMARY_KV.put(
+          'realtime:last_error',
+          JSON.stringify({
+            message: failed.reason?.message || 'partial-failure',
+            status: failed.reason?.status || null,
+            failed_query: !partials.active ? 'total' : 'pages',
+            attempted_at: generated_at
+          }),
+          { expirationTtl: 60 * 60 }
+        );
+      } catch (_) { /* non-fatal */ }
+    }
+
+    return jsonRes(
+      {
+        ok: partials.active, // 'ok' tied to the critical counter, not pages
+        active,
+        pages_count: pagesCount,
+        partial_active_only: partials.active && !partials.pages,
+        partial_pages_only: !partials.active && partials.pages,
+        generated_at
+      },
+      200,
+      'no-cache'
+    );
+  } catch (e) {
+    // Errors go to a SEPARATE key — do NOT overwrite last-good values.
+    try {
+      await env.COSMOS_SUMMARY_KV.put(
+        'realtime:last_error',
+        JSON.stringify({
+          message: e?.message || String(e),
+          status: e?.status || null,
+          attempted_at: new Date().toISOString()
+        }),
+        { expirationTtl: 60 * 60 }
+      );
+    } catch (_) { /* non-fatal */ }
+
+    const tag = e?.status === 429 ? 'quota-exhausted' : 'refresh-failed';
+    return jsonRes(
+      { ok: false, error: tag, status: e?.status || null, message: e?.message },
+      200,
+      'no-cache'
+    );
+  }
 }
 
 // ── Endpoint: Cosmos realtime (cross-origin) ─────────────────────
 //
 // Public:  GET /api/stats?realtime=cosmos
-//   → { totalUnique, scope:'cosmos', generated_at }  (CORS *)
+//   → { totalUnique, scope:'cosmos', generated_at, age_s, stale }  (CORS *)
 // Gated:   GET /api/stats?realtime=cosmos&intel=1
-//   Authorization: Bearer <plaintext-admin-password OR sha256(password)>
+//   Authorization: Bearer <plaintext-admin-password>
 //   → { totalUnique, byPlanet, byPlanetSum, byKind, scope:'cosmos', generated_at }
 //   → 401 without valid Bearer
 //
-// Caches via Cloudflare caches.default with 45s TTL. Public + intel variants
-// are cached separately (different cache keys).
+// 16 May 2026 — Public path no longer calls GA4. Reads from KV
+// (realtime:active) which is written by the refresh handler. Intel path
+// (admin-only, low traffic) still calls GA4 directly for the byPlanet
+// breakdown — that's not pre-computed in KV because it's gated.
 //
 // Per-planet split uses GA4 event-scoped custom dimension `cosmos_planet`
 // (registered 12 May 2026). Earth/Guided + PlainAI/Curriculum splits work
@@ -372,8 +486,64 @@ async function handleRealtimeCosmos(request, env, url) {
     return cosmosJsonRes({ error: 'Unauthorized' }, 401, 'no-cache');
   }
 
-  // CF Cache API — separate keys for public vs intel responses
-  const cacheKeyUrl = url.origin + '/api/stats?realtime=cosmos' + (intel ? '&intel=1' : '');
+  // Intel path — admin-only, direct GA4 call (low traffic)
+  if (intel) {
+    return await handleRealtimeCosmosIntel(env, url);
+  }
+
+  // Public path — read from KV. ZERO GA4 calls.
+  const cacheKeyUrl = url.origin + '/api/stats?realtime=cosmos';
+  const cacheKey = new Request(cacheKeyUrl, { method: 'GET' });
+  const cache = caches.default;
+  const cached = await cache.match(cacheKey);
+  if (cached) return cached;
+
+  const kv = env.COSMOS_SUMMARY_KV;
+  if (!kv) {
+    return cosmosJsonRes(
+      { totalUnique: 0, scope: 'cosmos', error: 'kv-not-bound', generated_at: new Date().toISOString() },
+      200,
+      'no-cache'
+    );
+  }
+
+  const activeKV = await kv.get('realtime:active', 'json');
+
+  if (!activeKV) {
+    // Pre-warm window — refresher hasn't populated KV yet.
+    return cosmosJsonRes(
+      { totalUnique: 0, scope: 'cosmos', error: 'no-data', generated_at: new Date().toISOString(), stale: true },
+      200,
+      'public, max-age=30'
+    );
+  }
+
+  const now = Date.now();
+  const ageMs = now - Date.parse(activeKV.generated_at);
+  const ageS = Math.max(0, Math.round(ageMs / 1000));
+  const stale = ageMs > 3 * 60 * 1000;
+  const tooStale = ageMs > 30 * 60 * 1000;
+
+  const body = {
+    totalUnique: tooStale ? 0 : (activeKV.active || 0),
+    scope: 'cosmos',
+    generated_at: activeKV.generated_at,
+    age_s: ageS,
+    stale
+  };
+  if (tooStale) body.error = 'data-too-stale';
+
+  const response = cosmosJsonRes(body, 200, 'public, max-age=60');
+  try { await cache.put(cacheKey, response.clone()); } catch (_) {}
+  return response;
+}
+
+// Admin-only intel path — direct GA4 for the byPlanet breakdown.
+// Kept separate because admin traffic is low and byPlanet isn't worth
+// pre-computing in KV. Re-uses the KV totalUnique to halve the GA4 calls
+// (1 instead of 2) when the public snapshot is fresh enough.
+async function handleRealtimeCosmosIntel(env, url) {
+  const cacheKeyUrl = url.origin + '/api/stats?realtime=cosmos&intel=1';
   const cacheKey = new Request(cacheKeyUrl, { method: 'GET' });
   const cache = caches.default;
   const cached = await cache.match(cacheKey);
@@ -388,58 +558,50 @@ async function handleRealtimeCosmos(request, env, url) {
   }
 
   try {
-    // Run total + (optional) byPlanet queries in parallel
-    const totalReq = ga4RunRealtimeReport(token, { metrics: [{ name: 'activeUsers' }] });
-    const byPlanetReq = intel
-      ? ga4RunRealtimeReport(token, {
-          dimensions: [{ name: 'customEvent:cosmos_planet' }],
-          metrics: [{ name: 'activeUsers' }],
-          limit: 20
-        })
-      : Promise.resolve(null);
-    const [totalRes, byPlanetRes] = await Promise.all([totalReq, byPlanetReq]);
+    // Try to use KV total if reasonably fresh; only GA4 the byPlanet query.
+    const kv = env.COSMOS_SUMMARY_KV;
+    const activeKV = kv ? await kv.get('realtime:active', 'json') : null;
+    const kvFresh = activeKV && (Date.now() - Date.parse(activeKV.generated_at)) < 3 * 60 * 1000;
 
+    const totalPromise = kvFresh
+      ? Promise.resolve({ rows: [{ metricValues: [{ value: String(activeKV.active) }] }] })
+      : ga4RunRealtimeReport(token, { metrics: [{ name: 'activeUsers' }] });
+    const byPlanetPromise = ga4RunRealtimeReport(token, {
+      dimensions: [{ name: 'customEvent:cosmos_planet' }],
+      metrics: [{ name: 'activeUsers' }],
+      limit: 20
+    });
+
+    const [totalRes, byPlanetRes] = await Promise.all([totalPromise, byPlanetPromise]);
     const totalUnique = parseInt(totalRes.rows?.[0]?.metricValues?.[0]?.value) || 0;
 
-    let body;
-    if (intel && byPlanetRes) {
-      const byPlanet = {};
-      for (const r of (byPlanetRes.rows || [])) {
-        const slug = (r.dimensionValues?.[0]?.value || '').trim();
-        const users = parseInt(r.metricValues?.[0]?.value) || 0;
-        if (slug && slug !== '(not set)' && slug !== 'unknown') {
-          byPlanet[slug] = (byPlanet[slug] || 0) + users;
-        }
+    const byPlanet = {};
+    for (const r of (byPlanetRes.rows || [])) {
+      const slug = (r.dimensionValues?.[0]?.value || '').trim();
+      const users = parseInt(r.metricValues?.[0]?.value) || 0;
+      if (slug && slug !== '(not set)' && slug !== 'unknown') {
+        byPlanet[slug] = (byPlanet[slug] || 0) + users;
       }
-      const byPlanetSum = Object.values(byPlanet).reduce((a, b) => a + b, 0);
-      const byKind = { planet: 0, moon: 0, hub: 0 };
-      for (const [slug, count] of Object.entries(byPlanet)) {
-        const kind = COSMOS_PLANET_KINDS[slug] || 'planet';
-        byKind[kind] = (byKind[kind] || 0) + count;
-      }
-      body = { totalUnique, byPlanet, byPlanetSum, byKind, scope: 'cosmos', generated_at: new Date().toISOString() };
-    } else {
-      body = { totalUnique, scope: 'cosmos', generated_at: new Date().toISOString() };
+    }
+    const byPlanetSum = Object.values(byPlanet).reduce((a, b) => a + b, 0);
+    const byKind = { planet: 0, moon: 0, hub: 0 };
+    for (const [slug, count] of Object.entries(byPlanet)) {
+      const kind = COSMOS_PLANET_KINDS[slug] || 'planet';
+      byKind[kind] = (byKind[kind] || 0) + count;
     }
 
-    // 13 May 2026 — bumped from default 45s to 60s. Shares GA4 realtime
-    // property quota with handleRealtime; longer TTL reduces overall pressure.
+    const body = { totalUnique, byPlanet, byPlanetSum, byKind, scope: 'cosmos', generated_at: new Date().toISOString() };
     const response = cosmosJsonRes(body, 200, 'public, max-age=60');
-    // Cache the clone — CF requires response not consumed
-    try { await cache.put(cacheKey, response.clone()); } catch (_) { /* cache.put can throw on some runtimes; non-fatal */ }
+    try { await cache.put(cacheKey, response.clone()); } catch (_) {}
     return response;
   } catch (e) {
-    console.error('Cosmos realtime error:', e?.message || e);
-    // 🪲 14 May 2026 — cache error responses so a single 429 doesn't cause
-    // every visitor poll to re-hit GA4 with no cache (the self-DoS that
-    // kept the property quota perpetually exhausted overnight 13→14 May).
-    // Mirrors the 90s/30s pattern in handleRealtime.
+    console.error('Cosmos intel realtime error:', e?.message || e);
     const status = e?.status;
     const errorTag = status === 429 ? 'quota-exhausted' : 'query-failed';
     const errCacheControl = status === 429 ? 'public, max-age=90' : 'public, max-age=30';
     const errBody = { totalUnique: 0, scope: 'cosmos', error: errorTag, generated_at: new Date().toISOString() };
     const errResponse = cosmosJsonRes(errBody, 200, errCacheControl);
-    try { await cache.put(cacheKey, errResponse.clone()); } catch (_) { /* non-fatal */ }
+    try { await cache.put(cacheKey, errResponse.clone()); } catch (_) {}
     return errResponse;
   }
 }
@@ -1017,4 +1179,17 @@ export async function onRequestOptions(context) {
     return corsPreflight();
   }
   return new Response(null, { status: 405 });
+}
+
+// POST /api/stats?refresh=realtime — authed refresh endpoint called by the
+// scheduled GHA workflow (.github/workflows/realtime-refresh.yml). Calls GA4
+// Realtime, writes to COSMOS_SUMMARY_KV. This is the ONLY caller of GA4
+// realtime for public-counter data. Any other code path reads from KV.
+export async function onRequestPost(context) {
+  const { request, env } = context;
+  const url = new URL(request.url);
+  if (url.searchParams.get('refresh') === 'realtime') {
+    return await handleRealtimeRefresh(request, env);
+  }
+  return jsonRes({ error: 'Method not allowed' }, 405, 'no-cache');
 }

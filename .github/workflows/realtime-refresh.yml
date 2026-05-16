@@ -1,0 +1,103 @@
+name: 📡 Realtime Counter Refresh
+
+# Calls /api/stats?refresh=realtime on a near-1-minute cadence to keep the
+# KV-backed realtime snapshot warm. This is the ONLY caller of GA4 Realtime
+# for public-counter data — visitors only read the cached snapshot from KV.
+#
+# Architecture: GitHub Actions cron has a 5-minute floor with jitter. To
+# achieve ~60s effective cadence, each run loops 5 times with 55s sleeps
+# (total job ~4:35 wall-clock). Next cron tick picks up after ~5 min, giving
+# continuous coverage with small jitter-induced gaps that are bridged by the
+# 24h KV TTL on the last-good snapshot.
+#
+# Born from the 16 May 2026 permanent fix (Option A+). See:
+#   functions/api/stats.js :: handleRealtimeRefresh
+#   learning-docs/docs/reference/incident-log.md § 13-16 May realtime counter
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+    inputs:
+      iterations:
+        description: 'Number of refresh iterations (default 5, max 25)'
+        required: false
+        default: '5'
+
+# Prevent overlapping runs (e.g. delayed cron + manual dispatch) from
+# doubling GA4 quota usage. Drop the new run rather than cancel the live one
+# so the existing refresher keeps the snapshot fresh.
+concurrency:
+  group: realtime-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 🔄 Refresh realtime snapshot
+        env:
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          ITERATIONS: ${{ github.event.inputs.iterations || '5' }}
+        run: |
+          set -e
+          if [ -z "$ADMIN_PASSWORD" ]; then
+            echo "::error::ADMIN_PASSWORD secret not set. Add it at:"
+            echo "::error::  https://github.com/${{ github.repository }}/settings/secrets/actions"
+            exit 1
+          fi
+          if ! command -v jq >/dev/null 2>&1; then
+            echo "::error::jq not available on this runner"
+            exit 1
+          fi
+
+          if [ "$ITERATIONS" -gt 25 ] 2>/dev/null; then
+            ITERATIONS=25
+          fi
+
+          URL="https://www.aguidetocloud.com/api/stats?refresh=realtime"
+          SUCCESS=0
+          FAILED=0
+
+          for i in $(seq 1 "$ITERATIONS"); do
+            TS=$(date -u +'%H:%M:%S')
+            HTTP_CODE=$(curl -sS -o /tmp/resp.json -w '%{http_code}' \
+              -X POST \
+              -H "Authorization: Bearer $ADMIN_PASSWORD" \
+              -m 30 \
+              "$URL" || echo "000")
+
+            if [ ! -s /tmp/resp.json ]; then
+              echo "[$TS] iter $i/$ITERATIONS — 🔴 http=$HTTP_CODE empty-body"
+              FAILED=$((FAILED + 1))
+            else
+              OK=$(jq -r '.ok // false' /tmp/resp.json 2>/dev/null || echo "parse-fail")
+              if [ "$HTTP_CODE" = "200" ] && [ "$OK" = "true" ]; then
+                ACTIVE=$(jq -r '.active // 0' /tmp/resp.json)
+                PAGES=$(jq -r '.pages_count // 0' /tmp/resp.json)
+                echo "[$TS] iter $i/$ITERATIONS — 🟢 active=$ACTIVE pages=$PAGES"
+                SUCCESS=$((SUCCESS + 1))
+              else
+                ERR=$(jq -r '.error // "unknown"' /tmp/resp.json 2>/dev/null || echo "parse-fail")
+                BODY_PREVIEW=$(head -c 200 /tmp/resp.json)
+                echo "[$TS] iter $i/$ITERATIONS — 🔴 http=$HTTP_CODE err=$ERR body=$BODY_PREVIEW"
+                FAILED=$((FAILED + 1))
+              fi
+            fi
+
+            if [ "$i" -lt "$ITERATIONS" ]; then
+              sleep 55
+            fi
+          done
+
+          echo "---"
+          echo "Run summary: $SUCCESS success / $FAILED failed out of $ITERATIONS"
+
+          # Fail the job only if ALL iterations failed — keeps the workflow
+          # green during transient GA4 hiccups. The realtime-probe workflow
+          # is the alerting layer.
+          if [ "$SUCCESS" -eq 0 ]; then
+            echo "::error::All $ITERATIONS refresh attempts failed."
+            exit 1
+          fi
