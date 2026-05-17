@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-16T23:04:12.676953+00:00",
+  "generated_at": "2026-05-17T04:18:01.424310+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
@@ -32,13 +32,13 @@
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 17,
+      "total_incidents": 16,
       "active_incidents": 1,
-      "avg_duration_minutes": 16551,
+      "avg_duration_minutes": 15890,
       "last_incident": "2026-05-11T23:05:19.263000+00:00",
       "classifications": {
         "advisory": 13,
-        "incident": 4
+        "incident": 3
       }
     },
     {
@@ -119,6 +119,18 @@
       }
     },
     {
+      "service": "Microsoft 365 apps",
+      "short_name": "M365 Apps",
+      "icon": "💼",
+      "total_incidents": 2,
+      "active_incidents": 0,
+      "avg_duration_minutes": 2339,
+      "last_incident": "2026-05-12T22:00:00+00:00",
+      "classifications": {
+        "advisory": 2
+      }
+    },
+    {
       "service": "Microsoft OneDrive",
       "short_name": "OneDrive",
       "icon": "☁️",
@@ -141,18 +153,6 @@
       "last_incident": "2026-04-24T23:22:00+00:00",
       "classifications": {
         "incident": 2
-      }
-    },
-    {
-      "service": "Microsoft 365 apps",
-      "short_name": "M365 Apps",
-      "icon": "💼",
-      "total_incidents": 1,
-      "active_incidents": 0,
-      "avg_duration_minutes": 2790,
-      "last_incident": "2026-05-12T22:00:00+00:00",
-      "classifications": {
-        "advisory": 1
       }
     },
     {
@@ -195,7 +195,7 @@
   "monthly": [
     {
       "month": "2026-05",
-      "incident_count": 20,
+      "incident_count": 21,
       "services_affected": 9
     },
     {
@@ -205,7 +205,7 @@
     },
     {
       "month": "2026-03",
-      "incident_count": 32,
+      "incident_count": 31,
       "services_affected": 10
     }
   ]

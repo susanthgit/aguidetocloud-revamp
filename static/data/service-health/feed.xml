@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 16 May 2026 23:04:13 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 May 2026 04:18:01 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some admins' Copilot usage and chat report data may be delayed from appearing in the Microsoft 365 admin center</title>
@@ -60,6 +60,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">OP1310599</guid>
       <pubDate>Tue, 12 May 2026 22:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 apps] Users may be unable to install Microsoft 365 apps on their Windows device</title>
+      <link>https://www.aguidetocloud.com/service-health/#OP1313047</link>
+      <description>[Microsoft 365 apps] Users may have been unable to install Microsoft 365 apps on their Windows device.</description>
+      <category>Microsoft 365 apps</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">OP1313047</guid>
+      <pubDate>Tue, 12 May 2026 21:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some admins may experience delays of up to 72 hours receiving app usage reports in the Microsoft 365 admin center</title>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1281119</guid>
       <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users may be unable to access email messages in Outlook Mobile when connecting to Exchange on‑premises</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1278714</link>
-      <description>[Exchange Online] Users may have been unable to access email messages in Outlook Mobile when connecting to Exchange on‑premises.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1278714</guid>
-      <pubDate>Fri, 10 Apr 2026 17:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
