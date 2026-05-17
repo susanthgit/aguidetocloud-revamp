@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 17 May 2026 21:06:40 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 May 2026 23:09:50 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users may be unable to access Copilot Voice in Microsoft 365 Copilot Chat or conduct voice conversations</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1314072</link>
+      <description>[Microsoft 365 Copilot Chat] Users may be unable to access Copilot Voice in Copilot Chat or conduct voice conversations.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CW1314072</guid>
+      <pubDate>Sun, 17 May 2026 03:30:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some admins' Copilot usage and chat report data may be delayed from appearing in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1312096</link>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1280216</guid>
       <pubDate>Mon, 13 Apr 2026 22:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users intermittently may be unable to run queries in Microsoft 365 Copilot and receive an error message</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1281119</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users intermittently may have been unable to run queries in Microsoft 365 Copilot and received an error message.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1281119</guid>
-      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
