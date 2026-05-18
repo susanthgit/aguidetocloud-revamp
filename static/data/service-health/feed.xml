@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 18 May 2026 19:59:07 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 May 2026 21:23:15 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users intermittently may be unable to create Copilot Notebooks through Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1315061</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users intermittently may be unable to create Copilot Notebooks through Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1315061</guid>
+      <pubDate>Mon, 18 May 2026 19:22:41 +0000</pubDate>
+    </item>
     <item>
       <title>[Power BI] Users may be unable to access or may experience delays when accessing Microsoft Fabric</title>
       <link>https://www.aguidetocloud.com/service-health/#PB1314779</link>
@@ -60,6 +69,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1309601</guid>
       <pubDate>Wed, 13 May 2026 18:55:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Users may be unable to edit pages using SharePoint Designer</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1314602</link>
+      <description>[SharePoint Online] Users may be unable to edit pages using SharePoint Designer.</description>
+      <category>SharePoint Online</category>
+      <category>investigationSuspended</category>
+      <guid isPermaLink="false">SP1314602</guid>
+      <pubDate>Wed, 13 May 2026 18:01:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Users are unable to access Microsoft 365 services in South America</title>
@@ -440,24 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">UP1287359</guid>
       <pubDate>Tue, 14 Apr 2026 04:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be unable to reply to email messages from a pop-up window in Outlook on the web</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1281449</link>
-      <description>[Exchange Online] Users may have been unable reply to email messages from a pop-up window in Outlook on the web.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1281449</guid>
-      <pubDate>Tue, 14 Apr 2026 02:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Intune] Users may be unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1281212</link>
-      <description>[Microsoft Intune] Users may have been unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser.</description>
-      <category>Microsoft Intune</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">IT1281212</guid>
-      <pubDate>Tue, 14 Apr 2026 00:24:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
