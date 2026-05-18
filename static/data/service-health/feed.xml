@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 18 May 2026 10:23:34 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 May 2026 15:54:49 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Power BI] Users may be unable to access or may experience delays when accessing Microsoft Fabric</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1314779</link>
+      <description>[Power BI] Users may be unable to access or may experience delays when accessing Microsoft Fabric.</description>
+      <category>Power BI</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">PB1314779</guid>
+      <pubDate>Mon, 18 May 2026 12:24:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users may be unable to access Copilot Voice in Microsoft 365 Copilot Chat or conduct voice conversations</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1314072</link>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1281212</guid>
       <pubDate>Tue, 14 Apr 2026 00:24:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Admins may have experienced failures when running admin operations the admin portal in Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1280216</link>
-      <description>[Exchange Online] Admins may have experienced failures when running admin operations the admin portal in Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1280216</guid>
-      <pubDate>Mon, 13 Apr 2026 22:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
