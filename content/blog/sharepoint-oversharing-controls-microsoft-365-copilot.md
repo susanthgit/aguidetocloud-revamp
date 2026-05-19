@@ -36,7 +36,7 @@ faq:
     answer: "Microsoft publishes 'Secure and govern Microsoft 365 Copilot: Foundational deployment guidance', a three-pillar framework: (1) Remediate Oversharing — fix existing permission sprawl, (2) Set Up Guardrails — enforce labels, sharing defaults, RAC, (3) Meet Regulations — retention, audit, compliance. Inside Pillar 1, Microsoft recommends a remediation sequence: turn on Restricted SharePoint Search as a safety net, run the SharePoint Advanced Management Content Management Assessment, fix permissions and apply RCD or RAC where needed, then disable RSS. Available at aka.ms/Copilot/SecureGovernBlueprintLearn."
 images: ["images/og/blog/sharepoint-oversharing-controls-microsoft-365-copilot.jpg"]
 og_headline: "SharePoint oversharing, fenced for Copilot"
-og_glyph: "shield"
+og_glyph: "list"
 tags:
   - microsoft-365
   - copilot

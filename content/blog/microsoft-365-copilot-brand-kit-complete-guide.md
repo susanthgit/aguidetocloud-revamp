@@ -1,6 +1,6 @@
 ---
-title: "M365 Copilot Brand Kit — The Complete Guide (Templates, Stock Images, Brand Checker)"
-description: "Brand Kit end-to-end: build PowerPoint templates that work inside and outside Copilot, set up Brand Images and stock photo libraries, run Brand Checker, position Designer and Adobe Express, and get the admin config right."
+title: "M365 Copilot Brand Kit — Templates, Images, Brand Checker"
+description: "Build PowerPoint templates that work inside and outside Copilot, set up Brand Images, run Brand Checker, position Designer vs Adobe Express."
 date: 2026-04-15
 lastmod: 2026-05-12
 card_tag: "Copilot"

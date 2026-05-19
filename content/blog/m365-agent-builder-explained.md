@@ -39,7 +39,7 @@ faq:
     answer: "Because your boundary rules were too soft. The LLM defaults to being helpful — a polite 'please don't answer X' often gets ignored. Use the CAPS technique (covered in this post): CAPS keywords + exact fallback text + positive redirect. It's the single biggest improvement you can make to any agent's behaviour."
 images: ["images/og/blog/m365-agent-builder-explained.jpg"]
 og_headline: "M365 Agent Builder, Explained"
-og_glyph: "build"
+og_glyph: "layers"
 tags:
   - ai-agents
   - copilot
