@@ -1,13 +1,13 @@
 ---
-title: "M365 Agent Builder — Plain-English Guide for Business Users"
-description: "Plain-English field guide to M365 Agent Builder: what it is, 6 agents to build today, the CAPS instruction technique, and the gotchas docs miss."
+title: "M365 Agent Builder — Plain-English Field Guide"
+description: "Plain-English field guide to M365 Agent Builder: 6 agents to build, the CAPS technique, hidden scheduled-prompt workflow, the gotchas docs miss."
 date: 2026-05-16
 lastmod: 2026-05-19
 card_tag: "AI Agents"
 tag_class: "ai"
 layout: "notebook"
 stamp: "field guide"
-intro_note: "← for the colleague who asked me 'wait, is this the same as Copilot Studio?' three times this week"
+intro_note: "← started as a quick reply to one colleague. Then four more asked the same week. So here it is, full version."
 founder_note: |
   Microsoft Learn covers the *what* of Agent Builder really well. This post covers the *why*, the *when*, and the *here's the bit nobody tells you* — the kind of stuff you only learn after building a dozen agents and watching them break in interesting ways.
 
@@ -178,7 +178,7 @@ I find the pattern *describe the rough idea → switch to Configure for surgical
 
 In **Describe**, write something like:
 
-> *"I want an HR Policy Bot that answers employee questions about leave, benefits, and workplace policies using the documents in our HR SharePoint site. It should be professional, friendly, and refuse to answer non-HR questions."*
+> *"I want a Daily Email Digest agent that summarises my unread emails from the last 24 hours from my manager and direct reports. Group by sender. Highlight anything that needs a reply today. Professional, concise tone."*
 
 Click send. Agent Builder will draft:
 
@@ -216,31 +216,85 @@ Three toggles sit below the input — they're easy to miss but they change how t
 
 > 💡 **Tip:** Files take a minute or two to index. You'll see a *"Preparing"* status next to anything still being processed. You can keep building — just don't test on that file's content until it's ready.
 
+> 🚨 **Heads-up — "My emails" and "My Teams chats and meetings" are hidden.** They're not on the four connector icons up top. To wire them up, **click inside the search input** (don't type anything yet — just focus it). A dropdown opens with a sticky footer that reveals three special M365-data shortcuts: *My SharePoint files, folders, and sites* · *My Teams chats and meetings* · *My emails*. Click whichever you want.
+
+<p><img src="/images/blog/m365-agent-builder/09-knowledge-hidden-options.webp" alt="Knowledge search dropdown in Agent Builder showing a list of recent files and meetings (Tech Week 2026 workshop meeting, Mastering Copilot in Excel, Fulton Hogan PowerPoint template, Customer feedback store of the future PDF, Store Rollout Plan, Customer Journey Mapping presentation, Copilot Cowork Talking Points, fh-project-status-report-template). A sticky footer at the bottom of the dropdown shows three special M365-data shortcuts highlighted with a cursor pointing at the last one — My SharePoint files folders and sites, My Teams chats and meetings, and My emails." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+For the Daily Email Digest agent we're building, click **My emails** so the agent can read your inbox. (Per-user permissioned — the agent will only ever read your mailbox, not a colleague's, even if you share the agent.)
+
+### Step 3.5 — Set your capabilities (15 seconds)
+
+Scroll past Knowledge to the **Capabilities** section. Two toggles control what the agent can do beyond Q&A:
+
+<p><img src="/images/blog/m365-agent-builder/10-capability-toggles.webp" alt="Capabilities section in Agent Builder showing two capability toggles — 'Create documents, charts, and code' (with Word, Excel and PowerPoint icons underneath, described as 'Analyze data, graph math equations, and create code snippets, Word, Excel, and PowerPoint files') and 'Create images' (described as 'Create visual aids like images and art in response to user prompts'). Both toggles are visible." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+- **Create documents, charts, and code** — turn ON if your agent needs to produce Word docs, Excel sheets, PowerPoint decks, or run code. Required for the Excel-data scenarios in [Troubleshooting](#troubleshooting).
+- **Create images** — turn ON if your agent should generate visuals. Off by default; safe to leave off for most agents.
+
+For the Daily Email Digest we're building, **leave both OFF** — pure summarisation, no document creation needed.
+
 ### Step 4 — Improve the instructions (60 seconds)
 
-This is the single highest-leverage step in the whole build. Click the **Instructions** field and rewrite what Agent Builder drafted. There's a full template later in this post ([section: Instruction template](#instructions)). For now, the minimum viable version is:
+This is the single highest-leverage step in the whole build. Click the **Instructions** field and rewrite what Agent Builder drafted. There's a full template later in this post ([section: Instruction template](#instructions)). The version we're using for the Daily Email Digest agent is below — paste this into Instructions:
 
 ```
-You are the HR Policy Bot for [Company].
+You are Sush's Daily Email Digest agent.
 
 ## Your Role
-Answer employee questions about HR policies — leave, benefits,
-dress code, conduct — using the SharePoint documents in your
-knowledge sources.
+Produce a daily scan-friendly briefing of unread emails
+from the last 24 hours. You save Sush ~15 minutes every
+morning by triaging his inbox before he opens Outlook.
 
-## Rules
-- ONLY answer HR questions.
-- ALWAYS cite the specific document you used.
-- If asked something outside HR, respond EXACTLY:
-  "I'm the HR Policy Bot — I can only help with HR-related
-   questions. For IT support, contact the IT Help Desk."
-- If you can't find the answer, say so. NEVER guess.
+## Email Grouping Rules
+ALWAYS group emails into these 5 buckets in this exact order:
+1. 🔥 From manager / skip-level — anything that needs a reply today
+2. 👥 From direct reports — questions, blockers, status updates
+3. 🤝 From peers / project teams — coordination, requests
+4. 🌍 From external senders — customers, partners, vendors
+5. 📰 Newsletters, automated alerts, calendar updates — one-line summary only
+
+If a bucket is empty, write "(nothing today)" — do NOT skip the heading.
+
+## Reply-flag Rules
+For each email, surface ONE of these flags at the start:
+- ⚠️ "Reply today" — explicit request + same-day urgency
+- 🕐 "Reply this week" — needs response but not urgent
+- 👀 "Read only" — informational
+- 🗑️ "Skip" — clearly noise (newsletters/alerts only)
+
+## Strict Rules You MUST Follow
+- ONLY summarise emails from the last 24 hours. If asked about
+  older threads, respond EXACTLY: "I only cover the last 24
+  hours. Open Outlook for older threads."
+- NEVER include the full body of any email — just a 1-line
+  summary per message.
+- NEVER guess what an email is about. If subject + first
+  sentence are ambiguous, respond EXACTLY:
+  "(ambiguous — open in Outlook)".
+- ALWAYS cite the sender name and time received.
+- NEVER include attachment content unless explicitly asked.
+
+## When Triggered by a Scheduled Prompt
+ALWAYS open with:
+"Good morning Sush. Here's your briefing for {today's date}.
+Time range covered: {start} to {now}."
+Then deliver the 5-bucket digest.
+
+## Output Format
+Compact markdown headings (## per bucket), one line per email:
+- ⚠️ **John (manager) · 8:42am** — Q2 priorities review, needs reply today
+- 👀 **Jane (peer) · 7:15am** — FYI on Project Nimbus rollout
+
+Keep total output under 400 words even for a busy inbox.
 
 ## Tone
-Professional, concise, friendly.
+Crisp, professional, scan-friendly. No flattery, no padding.
+You're Sush's morning chief-of-staff, not a chatbot.
 ```
 
-(That `EXACTLY` line is your CAPS-technique boundary — more on that in the [CAPS section](#caps).)
+Notice the **CAPS-technique** pattern in use: `ALWAYS`, `ONLY`, `NEVER`, and the *"respond EXACTLY"* clauses with fixed fallback text. That's how you make boundaries stick — much more on this in the [CAPS section](#caps).
+
+> 🛠️ **Want a different starting agent?** Six other working examples — HR Policy Bot, Team Wiki, Fishing Buddy, Brand Voice Coach, NZ Policy Advisor, Weekly Report Maker — are in the [6 example agents](#examples) library below. Each has its own copy-paste Instructions block.
 
 ### Step 5 — Test, then share (60 seconds)
 
@@ -258,7 +312,127 @@ Using the exact labels you'll see in the UI:
 
 The agent now lives in your left rail. So do your colleagues' versions once they share with you.
 
-You're done. The whole thing was 5 minutes.
+You're done — the core build is about 5 minutes. If you want the agent to also run **on a schedule** (daily morning briefing without you opening Copilot), keep reading.
+
+### Step 6 — Schedule the first run (2 minutes) {#schedule-first-run}
+
+This is one of the most useful 2026 additions to Agent Builder, and it's also one of the most **hidden** features in the entire product. There's no "Set a schedule" button anywhere obvious. Here's the trick.
+
+#### 6a. Run the prompt once (manually)
+
+Open your published Daily Email Digest agent. In the prompt box, type:
+
+> *Run the daily morning briefing*
+
+Send it. Wait for the agent to finish producing output (~10 seconds depending on inbox size).
+
+#### 6b. Hover the prompt → reveal the hidden clock icon
+
+Once the output has fully generated, **move your mouse over the prompt you just sent** (not the response — the prompt above it). A tiny toolbar appears with edit / save / **clock** / bookmark icons. The clock is the schedule control. Its tooltip reads *"Schedule this prompt"*.
+
+<p><img src="/images/blog/m365-agent-builder/05-scheduled-prompt-hover-icons.webp" alt="Close-up of a Copilot prompt 'Run the daily m...' with a small hover toolbar appearing below it containing four icons — pencil edit, bookmark, a clock icon highlighted with a teal hand cursor and tooltip reading 'Schedule this prompt', and a save bookmark. The hand cursor is pointing directly at the clock icon to show this is the hidden control for scheduling." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+> 💡 **Why this matters:** if you don't hover, you'll never know scheduling exists. I've sat with five different testers and four of them gave up trying to find it.
+
+#### 6c. Click the clock → schedule dialog opens
+
+The dialog gives you fine-grained control:
+
+<p><img src="/images/blog/m365-agent-builder/06-scheduled-prompt-config-dialog.webp" alt="Create a schedule dialog in Microsoft 365 Copilot. The Prompt field shows 'Run the daily morning briefing' with the agent chip 'Sush's Daily Email Digest' attached. The Schedule summary reads 'Repeat this prompt every day at 2:00 PM until Jun 3, 2026'. Below that — Starts: 05/20/2026 At: 02:00 PM. Every: Day dropdown with seven day-of-week buttons S M T W T F S. Until: 06/03/2026 with a trash icon to remove the end date. A checkbox 'Receive an email when responses are ready' is checked. A Save button sits at the bottom right." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+- **Prompt** — the exact text that fires. You can edit it. The agent chip below shows which agent will run it.
+- **Starts** — first run date + time. Set to any future date/time. Microsoft uses your tenant time zone.
+- **Every** — frequency. Dropdown options include *Hour*, *Day*, *Week*, *Month*, *Year*. The day-of-week buttons let you skip weekends (click M-F only).
+- **Until** — end date. Leave blank for "indefinite" (or use the trash icon next to it). I set mine to a 2-week trial first.
+- **Receive an email when responses are ready** — **check this**. The output gets pushed to your Outlook inbox as soon as the schedule fires. Otherwise it just sits inside Copilot chat history and you'd have to remember to look.
+
+Click **Save**. Schedule is set.
+
+#### 6d. What happens when the schedule fires
+
+At the scheduled time, two things happen:
+
+**1. An email lands in your Outlook inbox** from *Microsoft Copilot*:
+
+<p><img src="/images/blog/m365-agent-builder/07-scheduled-prompt-email-notification.webp" alt="Outlook email from Microsoft Copilot. Subject: 'Your scheduled prompt is complete: May 19 Morning Briefing'. A blue banner at the top reads 'A notification about your scheduled prompt completion is provided by Copilot, indicating you can review the results and take any necessary next steps.' Sender row: Microsoft Copilot to Susanth Sutheesh, Tue 5/19/2026 2:05 PM. Body: 'Hi Susanth Sutheesh, Microsoft 365 Copilot has successfully completed a prompt you scheduled. You can now review the following results and take any necessary next steps.' A blue clickable link reads 'May 19 Morning Briefing'. Below: 'To manage your scheduled prompts, give feedback, or continue your chat, visit Microsoft 365 Copilot.' Standard Microsoft branding and Privacy Statement at the bottom." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+The email has a clickable link to the briefing (don't bother reading the email body — the briefing is behind the link).
+
+**2. Click the link → Copilot opens, the agent runs, the briefing renders:**
+
+<p><img src="/images/blog/m365-agent-builder/08-scheduled-prompt-email-link-result.webp" alt="Sush's Daily Email Digest agent running inside Microsoft 365 Copilot. The user prompt 'Run the daily morning briefing' appears in the top right corner. The agent's response opens with 'Good morning Sush. Here's your 9am briefing for Tuesday, 19 May 2026.' and 'Time range covered: 18 May 2026 14:04 → 19 May 2026 14:04.' Five buckets follow — '🔥 From manager / skip-level — anything that needs a reply today' with '(nothing today)' below, '👥 From direct reports — questions, blockers, status updates' with '(nothing today)', '🤝 From peers / project teams — coordination, requests' with '(nothing today)', '🌍 From external senders — customers, partners, vendors' with a single bullet listing Alan Walker · 10:16am — [EXTERNAL] Recording for Train-the-Trainer (Part 2), and '📰 Newsletters, automated alerts, calendar updates — one-line summary only' with five bulleted items listing Cesar Abdu, Cadie Kneip, Global Benefits Communications, Neil Barnett, and Eva Etchells with their times and email subjects. Closing line: 'If you want, I can flag anything here for follow-up or open a specific email.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+Notice the agent's persona held under schedule execution — the 5-bucket structure, the `(nothing today)` placeholders, the sender + time format, the closing line — all driven by the Instructions you pasted in Step 4. **This is the whole point.** Once you've written good instructions, the agent behaves the same way whether you call it manually or it fires on a timer.
+
+#### 6e. Re-trigger or pause a scheduled prompt (without waiting for the timer)
+
+Once you've set up a schedule, you don't have to wait for it to fire to verify it works. Microsoft has a *Manage scheduled* dialog that lets you run, edit, pause, or delete any scheduled prompt across your account — agent prompts AND Copilot Chat prompts, all in one view.
+
+To open it: click the **3-dot ellipses (…) menu** at the **top-right corner** of any Copilot pane (inside an agent or in plain chat) → select **Scheduled prompts**.
+
+<p><img src="/images/blog/m365-agent-builder/13-scheduled-prompts-menu-entry.webp" alt="Microsoft 365 Copilot top-right ellipses dropdown menu showing six options — Recent pages, Scheduled prompts (highlighted with a teal hand cursor pointing at it), Chat settings, Download apps, Help and tips, Send feedback. Below those is an 'Internal only' section visible with a 'Try FluxV4' toggle, Audience: Dogfood (Default), and License: Premium (Current) — internal preview features visible in this dogfood tenant." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+> 💡 **This menu lives on every Copilot surface — not just inside agents.** Scheduled prompts you've set on plain Copilot Chat show up in the same list as your agent schedules.
+
+The **Manage scheduled** dialog opens with three sections:
+
+- **Active** — currently running schedules
+- **Inactive** — paused or failed schedules
+- **Complete** — finished schedules (their *Until* date has passed)
+
+Each row shows the prompt text, the next run time, which agent is tied to it (if any), and an ellipses menu with five actions:
+
+<p><img src="/images/blog/m365-agent-builder/14-manage-scheduled-prompts-dialog.webp" alt="Manage scheduled dialog showing three sections — Active, Inactive, and Complete. The Active section shows 'Run the daily morning briefing' tied to Sush's Daily Email Digest agent, with 'Next run on 05/20/2026 at 2:00 PM' and an Active badge. Its ellipses menu is open showing five options highlighted by a teal hand cursor — Run now (highlighted with a red box on the topmost option), Edit schedule, Turn off, Delete, Copy debug info. Below that in the Inactive section, a failed schedule is visible — 'From my emails over the past week, create a table of actions, including who...' with the error message 'Sorry, something went wrong. Consider creating a new scheduled prompt.' rendered in red. Another Inactive entry below shows 'Last run on 03/16/2026 at 10:00 AM'. The Complete section at the bottom shows a similar entry with 'Last run on 12/31/2025 at 10:00 AM'." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+- **Run now** — fire the prompt immediately, out of schedule. **This is gold for testing.** Change a setting, hit Run now, see what the schedule will produce — without waiting 24 hours for the next scheduled fire.
+- **Edit schedule** — opens the same dialog from Step 6c (frequency, start, until, email toggle).
+- **Turn off** — pauses the schedule. Moves it to the *Inactive* section. You can turn it back on later.
+- **Delete** — removes the schedule permanently. The agent itself stays untouched.
+- **Copy debug info** — copies a JSON-style payload to your clipboard. Useful when reporting a stuck schedule to Microsoft support.
+
+> ⚠️ **Failures land in *Inactive* — and they don't otherwise notify you.** If a scheduled run errors out (e.g. *"Sorry, something went wrong. Consider creating a new scheduled prompt."*) the schedule drops to the Inactive section with the error rendered inline in red. Check this view periodically — there's no email or system notification when a schedule breaks. The official fix is *"create a new scheduled prompt"* (Microsoft hasn't yet exposed a "retry" path).
+
+#### 6f. Known constraints (still being verified)
+
+- Per-user only — the schedule fires for the **creator**, not for users you've shared the agent with
+- Doesn't fire on **draft / unpublished** agents — publish first
+- Likely consumes **Copilot Credits** in pay-as-you-go scenarios; watch the consumption report
+- Editing the agent's instructions mid-schedule: tested briefly on 19 May 2026 — the schedule kept firing with updated instructions. *(If you see different behaviour, [tell me](/feedback/) and I'll patch this section.)*
+
+### Step 7 — Coming back to edit your agent (it's hidden too) {#edit-existing}
+
+Once an agent is published, the obvious entry points (clicking it in the left rail's *Pinned* section) take you straight into chat — not into editing. There's no "Edit" button visible on the agent's chat page itself.
+
+To get back into edit mode:
+
+1. Click **Agents** in the left rail (the icon below *Library* / *Tasks* / *Notebooks*) — this opens the **Agent Store**.
+2. Find your agent under **Your agents** at the top of the store.
+3. **Hover the agent tile** → an ellipses menu (**…**) appears beside it.
+4. Click the menu → choose **Edit**.
+
+<p><img src="/images/blog/m365-agent-builder/11-edit-existing-agent-entry.webp" alt="Microsoft 365 Copilot Agent Store interface. The left rail shows New chat, Search, Library, Tasks, Notebooks, and Agents (highlighted with a red box and red arrow pointing to it). The main pane shows the Agent Store with a Your agents section listing tiles for Researcher, Analyst, Cowork (Frontier), Sales, Copilot & Agents Field FAQ, Agent Creation Assistant, Sush's Daily Em... (with a visible pin icon and ellipses menu next to it), A09: Email Powerhouse, Word, SharePoint list agent, PowerPoint. A context menu is open on Sush's agent showing four options — About, Share, Edit (highlighted with a red box and a teal hand cursor pointing at it), and Uninstall. A red arrow points from the Agents nav item to the agent tile, indicating the discovery path." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+The other options in the menu are also worth knowing:
+
+- **About** — metadata view (creator, last updated, description)
+- **Share** — re-opens the share dialog from Step 5 to widen / narrow audience
+- **Uninstall** — removes the agent from **your** list only. Others you've shared it with keep using it. The agent isn't deleted.
+
+Click **Edit** → the same Configure-tab view from Step 2 opens, with all your existing settings populated. Two things have changed:
+
+- **The CTA button is now "Update", not "Create"** (top right of the page)
+- **A green ✓ "Updated <date>" timestamp** appears next to the Update button, showing the last time someone saved changes
+
+<p><img src="/images/blog/m365-agent-builder/12-edit-existing-agent-view.webp" alt="Agent Builder edit view for an existing published agent. The breadcrumb at top reads 'Agent Builder > Sush's Daily Email Digest'. Configure and Try It tabs are visible at the top right. A green checkmark with 'Updated May 19' timestamp appears, next to an Update button (highlighted in black with a teal cursor pointing at it) and a Share button. Below the header is the agent's name 'Sush's Daily Email Digest' with an edit pencil icon, followed by the agent description starting with 'A daily morning briefing agent that summarises unread emails from the last 24 hours, grouped by sender relationship (manager / direct reports / peers / external / noise) with same-day reply flags. Runs both ad-hoc and on a scheduled 9am NZST daily trigger.' The Instructions section begins at the bottom of the visible frame." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+From here you can either:
+
+- **Use the Describe chat** (left pane) to ask Copilot to rewrite a section — *"make the tone more casual"*, *"add a rule about confidential data"*. Same conversational pattern as Step 2.
+- **Edit any field directly** — Name, Description, Instructions, Knowledge sources, Conversation starters, Capabilities.
+
+When done, click **Update** (top right) to save. **Your changes won't persist if you navigate away without clicking Update** — there's no auto-save.
+
+> 💡 **Schedule survival under edit:** if you have a scheduled prompt running against this agent, editing the agent doesn't break the schedule. The next fire uses the updated Instructions / Knowledge. Confirmed 19 May 2026 — but if you see different behaviour in your tenant, [tell me](/feedback/).
 
 ## What should you build first? {#what-first}
 
@@ -682,15 +856,15 @@ Agent Builder has been evolving fast — Microsoft has shipped material changes 
 
 The first proactive capability inside Agent Builder. Your agent can now run prompts on a schedule — hourly, daily, weekly, monthly, or yearly. Want a daily summary of yesterday's Teams meetings? A weekly digest of project-channel changes? You can now set it and forget it.
 
+> 📍 **Full walkthrough with screenshots:** see [Step 6 — Schedule the first run](#schedule-first-run) earlier in this post. The control is hidden behind a hover toolbar — most people miss it.
+
 **Known constraints:**
 
 - Per-user only — the schedule runs for the *creator*, not for users you've shared the agent with
 - Doesn't run for draft / unpublished agents
 - Likely consumes Copilot Credits in pay-as-you-go scenarios (worth watching for licensed users too in some autonomous patterns)
 
-> 🧪 **Test in your tenant:** Set up a daily 9 am prompt on a simple agent (*"Summarise unread emails from the last 24h"*). Verify it runs. Check what shows up in your tenant's Copilot Credits consumption report.
-
-> 💬 **Findings I'd love to publish:** Does it run on the dot, or drift? Does it survive an agent edit? Does it stop if the creator's licence is revoked? What's the credit cost per run for a "real" agent? Does it run during weekends/public holidays? <!-- LAB-VERIFY: scheduled prompts behaviour + credit cost -->
+> 💬 **Findings I'd love to publish:** Does it run on the dot, or drift across multiple days? What's the per-run credit cost for a real agent (not just an empty inbox)? Does it stop firing if the creator's licence is revoked? Does it skip weekends/public holidays? Does an in-flight schedule survive an agent edit, or do you need to delete + recreate? <!-- LAB-VERIFY: scheduled prompts behaviour + credit cost + edit-survival + weekend handling -->
 
 ### 2. Tool Groups — pre-packaged actions for Outlook + SharePoint
 
