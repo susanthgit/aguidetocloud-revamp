@@ -5,10 +5,13 @@
 [[platforms]]
 id = "m365"
 name = "M365 Agent Builder"
+short_name = "M365"
 icon = "🤖"
 char_limit = 8000
 format = "markdown"
 doc_url = "https://learn.microsoft.com/microsoft-365/copilot/extensibility/declarative-agent-instructions"
+paste_url = "https://microsoft365.com/chat"
+paste_label = "Paste into M365 Agent Builder"
 description = "Build declarative agents for Microsoft 365 Copilot. Best for org-wide productivity agents grounded in SharePoint, OneDrive, and email."
 tips = [
   "Use Markdown headers (##) to organise instruction sections",
@@ -22,10 +25,13 @@ tips = [
 [[platforms]]
 id = "studio"
 name = "Copilot Studio"
+short_name = "Studio"
 icon = "⚙️"
 char_limit = 8000
 format = "markdown"
 doc_url = "https://learn.microsoft.com/microsoft-copilot-studio/"
+paste_url = "https://copilotstudio.microsoft.com"
+paste_label = "Open Copilot Studio"
 description = "Build enterprise-grade agents with topics, actions, and Power Platform integration. Best for complex workflows and multi-step business processes."
 tips = [
   "Keep instructions clear and specific — avoid ambiguous language",
@@ -39,10 +45,13 @@ tips = [
 [[platforms]]
 id = "chatgpt"
 name = "ChatGPT GPT Builder"
+short_name = "ChatGPT"
 icon = "💬"
 char_limit = 8000
 format = "plain"
 doc_url = "https://help.openai.com/en/articles/8554397-creating-a-gpt"
+paste_url = "https://chatgpt.com/gpts/editor"
+paste_label = "Open ChatGPT GPT Builder"
 description = "Create custom GPTs in ChatGPT. Best for consumer-facing bots, personal assistants, and tools shared via the GPT Store."
 tips = [
   "Shorter instructions often perform better with GPT-4o",
@@ -56,10 +65,13 @@ tips = [
 [[platforms]]
 id = "claude"
 name = "Claude Projects"
+short_name = "Claude"
 icon = "🧠"
 char_limit = 8000
 format = "xml"
 doc_url = "https://docs.anthropic.com/claude/docs/system-prompts"
+paste_url = "https://claude.ai/projects"
+paste_label = "Open Claude Projects"
 description = "Create persistent project contexts in Claude. Best for focused research, writing, and analysis with large document sets."
 tips = [
   "Use XML tags (<role>, <rules>) — Claude handles them natively",
@@ -73,10 +85,13 @@ tips = [
 [[platforms]]
 id = "assistants"
 name = "OpenAI Assistants API"
+short_name = "Assistants"
 icon = "🔧"
 char_limit = 32000
 format = "markdown"
 doc_url = "https://platform.openai.com/docs/assistants/overview"
+paste_url = "https://platform.openai.com/assistants"
+paste_label = "Open OpenAI Platform"
 description = "Build agents via the OpenAI API with function calling, code interpreter, and file search. Best for developer-built integrations and custom apps."
 tips = [
   "Place the system message first in the thread",

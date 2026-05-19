@@ -229,12 +229,23 @@ function initQuickAdds() {
 }
 
 /* === Templates === */
+var DAYS_NEW = 30;
+function isNewTemplate(tpl) {
+  if (!tpl.date_added) return false;
+  var added = new Date(tpl.date_added);
+  if (isNaN(added.getTime())) return false;
+  var diffDays = (Date.now() - added.getTime()) / (1000 * 60 * 60 * 24);
+  return diffDays >= 0 && diffDays <= DAYS_NEW;
+}
 function renderTemplates() {
   var grid = $('tpl-grid');
   if (!grid) return;
   var html = '';
   TEMPLATES.forEach(function(tpl){
-    html += '<div class="instruct-tpl-card" data-tpl="' + esc(tpl.id) + '">';
+    var classes = 'instruct-tpl-card';
+    if (tpl.featured) classes += ' instruct-tpl-card-featured';
+    html += '<div class="' + classes + '" data-tpl="' + esc(tpl.id) + '" data-cat="' + esc(tpl.category || '') + '">';
+    if (isNewTemplate(tpl)) html += '<span class="instruct-tpl-new">NEW</span>';
     html += '<div class="instruct-tpl-icon">' + esc(tpl.icon) + '</div>';
     html += '<div class="instruct-tpl-name">' + esc(tpl.name) + '</div>';
     html += '<div class="instruct-tpl-desc">' + esc(tpl.description) + '</div>';
@@ -247,13 +258,30 @@ function renderTemplates() {
     if (c) loadTemplate(c.dataset.tpl);
   });
 }
+function initTemplateFilters() {
+  var bar = $('tpl-filters');
+  if (!bar) return;
+  bar.addEventListener('click', function(e){
+    var btn = e.target.closest('.instruct-tpl-filter');
+    if (!btn) return;
+    bar.querySelectorAll('.instruct-tpl-filter').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    var cat = btn.dataset.cat;
+    document.querySelectorAll('.instruct-tpl-card').forEach(function(card){
+      var show = cat === 'all' || card.dataset.cat === cat;
+      card.style.display = show ? '' : 'none';
+    });
+  });
+}
 function loadTemplate(id) {
   var tpl = null;
   for (var i = 0; i < TEMPLATES.length; i++) {
     if (TEMPLATES[i].id === id) { tpl = TEMPLATES[i]; break; }
   }
   if (!tpl) return;
-  $('instruct-name').value = tpl.name || '';
+  // Fix #11: do NOT pre-fill agent-name from template name — leave blank so the
+  // field reads as a personal touch, not a category label.
+  $('instruct-name').value = '';
   $('instruct-purpose').value = tpl.purpose || '';
   $('instruct-boundaries').value = tpl.boundaries || '';
   $('instruct-knowledge').value = tpl.knowledge || '';
@@ -281,7 +309,7 @@ function loadTemplate(id) {
   switchToTab('build');
   updateToneDesc();
   triggerLivePreview();
-  toast('Template loaded — tweak any field and the preview updates live');
+  toast('Template loaded — give your agent a name and tweak any field');
 }
 
 /* === Generation engine === */
@@ -647,6 +675,8 @@ function showOutput(text, config, data) {
   updateCharCount();
   renderStrength(data, text);
   generateStarters(data);
+  renderNextStep(config);
+  renderSmartSuggestion(data);
 }
 function updateCharCount() {
   var ta = $('output-text');
@@ -699,15 +729,53 @@ function renderStrength(data, text) {
   if (total >= 80) label = 'Strong';
   else if (total >= 50) label = 'Moderate';
   else label = 'Weak';
-  var hints = [];
-  if (dim.boundaries < 10) hints.push('add clearer boundaries');
-  if (dim.fallback < 10) hints.push('include a refusal example');
-  if (dim.specificity < 10) hints.push('list specific knowledge sources');
-  if (dim.role < 15 && !data.name) hints.push('give your agent a name');
-  hints = hints.slice(0, 2);
+  // Fix #4: clickable hints — each hint scrolls + pulses its target field.
+  var hintObjs = [];
+  if (dim.boundaries < 10) hintObjs.push({ text: 'add clearer boundaries', target: 'instruct-boundaries', openSection: null });
+  if (dim.fallback < 10) hintObjs.push({ text: 'include a refusal example', target: 'ex-user-2', openSection: 'section-examples' });
+  if (dim.specificity < 10) hintObjs.push({ text: 'list specific knowledge sources', target: 'instruct-knowledge', openSection: null });
+  if (dim.role < 15 && !data.name) hintObjs.push({ text: 'give your agent a name', target: 'instruct-name', openSection: null });
+  hintObjs = hintObjs.slice(0, 2);
   badge.className = 'instruct-strength instruct-strength-' + label.toLowerCase();
-  var hintText = hints.length ? ' \u00b7 ' + hints.join(' \u00b7 ') + ' to strengthen' : ' \u00b7 all five dimensions covered';
-  badge.innerHTML = '<strong>' + label + '</strong>' + esc(hintText);
+  if (!hintObjs.length) {
+    badge.innerHTML = '<strong>' + label + '</strong> \u00b7 all five dimensions covered';
+    return;
+  }
+  var html = '<strong>' + label + '</strong> \u00b7 ';
+  var links = hintObjs.map(function(h){
+    return '<a href="#" class="instruct-strength-hint" data-target="' + esc(h.target) + '"' +
+      (h.openSection ? ' data-open-section="' + esc(h.openSection) + '"' : '') + '>' + esc(h.text) + '</a>';
+  });
+  badge.innerHTML = html + links.join(' \u00b7 ') + ' to strengthen';
+}
+function pulseField(id) {
+  var el = $(id);
+  if (!el) return;
+  el.classList.remove('instruct-pulse');
+  // Force reflow so the animation can restart even if the class is reapplied.
+  void el.offsetWidth;
+  el.classList.add('instruct-pulse');
+  setTimeout(function(){ el.classList.remove('instruct-pulse'); }, 1600);
+}
+function initStrengthHintClicks() {
+  document.body.addEventListener('click', function(e){
+    var link = e.target.closest('.instruct-strength-hint');
+    if (!link) return;
+    e.preventDefault();
+    var sectionId = link.dataset.openSection;
+    if (sectionId) {
+      var sec = $(sectionId);
+      if (sec) sec.open = true;
+    }
+    var targetId = link.dataset.target;
+    var target = $(targetId);
+    if (!target) return;
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(function(){
+      pulseField(targetId);
+      try { target.focus({ preventScroll: true }); } catch (e2) { target.focus(); }
+    }, 350);
+  });
 }
 
 /* === Starters === */
@@ -749,11 +817,95 @@ function generateStarters(data) {
 }
 
 /* === Live preview === */
+function renderNextStep(config) {
+  var el = $('next-step-cta');
+  if (!el) return;
+  if (!config || !config.paste_url) {
+    el.style.display = 'none';
+    return;
+  }
+  var label = config.paste_label || ('Open ' + config.name);
+  el.href = config.paste_url;
+  el.innerHTML = '<span class="instruct-next-step-arrow">→</span> ' +
+    '<span class="instruct-next-step-label">' + esc(label) + '</span>' +
+    '<span class="instruct-next-step-hint">Paste your generated instructions there</span>';
+  el.style.display = 'flex';
+}
+
+var SMART_SUGGESTIONS = [
+  { match: /\b(email|inbox|outlook)\b/i, value: 'My emails', label: '📧 You mentioned email — add "My emails" as a knowledge source?' },
+  { match: /\b(team|teams|chat|meeting)\b/i, value: 'My Teams chats and meetings', label: '💬 You mentioned Teams/meetings — add "My Teams chats and meetings"?' },
+  { match: /\b(calendar|standup|stand-up|schedule|agenda)\b/i, value: 'My calendar', label: '📅 You mentioned calendar/schedule — add "My calendar"?' },
+  { match: /\b(doc|file|sharepoint|wiki|policy|policies|handbook)\b/i, value: 'Your team\'s SharePoint site URL', label: '📂 You mentioned docs/SharePoint — add a SharePoint site URL?' }
+];
+function renderSmartSuggestion(data) {
+  var el = $('smart-suggestion');
+  if (!el) return;
+  if (!data.purpose) { el.style.display = 'none'; el.innerHTML = ''; return; }
+  var knowledge = (data.knowledge || '').toLowerCase();
+  for (var i = 0; i < SMART_SUGGESTIONS.length; i++) {
+    var s = SMART_SUGGESTIONS[i];
+    if (s.match.test(data.purpose) && knowledge.indexOf(s.value.toLowerCase()) === -1) {
+      el.style.display = 'flex';
+      el.innerHTML = '<span class="instruct-smart-msg">' + esc(s.label) + '</span>' +
+        '<button type="button" class="instruct-smart-add" data-value="' + esc(s.value) + '">+ Add</button>' +
+        '<button type="button" class="instruct-smart-dismiss" aria-label="Dismiss suggestion">\u00d7</button>';
+      return;
+    }
+  }
+  el.style.display = 'none';
+  el.innerHTML = '';
+}
+function initSmartSuggestion() {
+  var el = $('smart-suggestion');
+  if (!el) return;
+  el.addEventListener('click', function(e){
+    var add = e.target.closest('.instruct-smart-add');
+    if (add) {
+      var value = add.dataset.value;
+      var ta = $('instruct-knowledge');
+      if (!ta) return;
+      var existing = ta.value.trim();
+      ta.value = existing ? (existing + (existing.endsWith(',') ? ' ' : ', ') + value) : value;
+      pulseField('instruct-knowledge');
+      el.style.display = 'none';
+      triggerLivePreview();
+      return;
+    }
+    if (e.target.closest('.instruct-smart-dismiss')) {
+      el.style.display = 'none';
+    }
+  });
+}
+
+function kebabCase(s) {
+  return (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60) || 'agent';
+}
+function downloadMarkdown() {
+  var text = $('output-text').value;
+  if (!text) { toast('Generate some instructions first'); return; }
+  var name = $('instruct-name').value.trim();
+  var platformId = state.activePlatform || 'm365';
+  var fname = (name ? kebabCase(name) : 'agent-' + platformId) + '-instructions.md';
+  try {
+    var blob = new Blob([text], { type: 'text/markdown;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = fname;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+    toast('Downloaded ' + fname);
+  } catch (e) {
+    toast('Download failed — try Copy instead');
+  }
+}
+
 function triggerLivePreview() {
   var data = getFormData();
   if (!data.purpose) {
     $('preview-empty').style.display = 'block';
     $('preview-content').style.display = 'none';
+    renderSmartSuggestion(data);
     return;
   }
   var config = getPlatformConfig(data.platformId);
@@ -767,6 +919,8 @@ function triggerLivePreview() {
   updateCharCount();
   renderStrength(data, output);
   generateStarters(data);
+  renderNextStep(config);
+  renderSmartSuggestion(data);
   saveToLocalStorage(data);
 }
 var debouncedPreview = debounce(triggerLivePreview, 300);
@@ -895,15 +1049,20 @@ function initKeyboard() {
 function init() {
   initTabs();
   renderTemplates();
+  initTemplateFilters();
   initLivePreview();
   initCustomTone();
   initQuickAdds();
   initKeyboard();
+  initStrengthHintClicks();
+  initSmartSuggestion();
   updateToneDesc();
   var btnGen = $('btn-generate');
   if (btnGen) btnGen.addEventListener('click', function(){ generate(); });
   var btnCopy = $('btn-copy');
   if (btnCopy) btnCopy.addEventListener('click', function(){ copyText($('output-text').value, btnCopy); });
+  var btnDownload = $('btn-download-md');
+  if (btnDownload) btnDownload.addEventListener('click', downloadMarkdown);
   var btnStart = $('btn-start-over');
   if (btnStart) btnStart.addEventListener('click', startOver);
   var btnExample = $('btn-try-example');

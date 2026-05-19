@@ -48,10 +48,11 @@ textarea.instruct-input{resize:vertical;min-height:2.6rem}
 
 /* Section toggles */
 .instruct-section-toggle{background:var(--instruct-glass);border:1px solid var(--instruct-border);border-radius:10px;margin-bottom:1rem;overflow:hidden}
-.instruct-section-toggle summary{padding:.7rem 1rem;cursor:pointer;color:var(--text-secondary);font-size:.84rem;font-weight:600;list-style:none;display:flex;align-items:center;gap:.4rem}
-.instruct-section-toggle summary::-webkit-details-marker{display:none}
-.instruct-section-toggle summary::after{content:'▸';margin-left:auto;transition:transform .2s;color:var(--text-muted)}
-.instruct-section-toggle[open] summary::after{transform:rotate(90deg)}
+/* Specificity bump (.instruct-panel details summary further down the file overrides plain .instruct-section-toggle summary) */
+.instruct-panel details.instruct-section-toggle>summary{display:block;padding:.7rem 2.2rem .7rem 1rem;cursor:pointer;color:var(--text-secondary);font-size:.84rem;font-weight:600;list-style:none;position:relative;line-height:1.45;background:transparent}
+.instruct-panel details.instruct-section-toggle>summary::-webkit-details-marker{display:none}
+.instruct-panel details.instruct-section-toggle>summary::after{content:'▸';position:absolute;right:1rem;top:50%;transform:translateY(-50%);transition:transform .2s;color:var(--text-muted);margin-left:0}
+.instruct-panel details.instruct-section-toggle[open]>summary::after{transform:translateY(-50%) rotate(90deg)}
 .instruct-section-toggle>div{padding:0 1rem 1rem}
 .instruct-examples,.instruct-blocks{display:flex;flex-direction:column;gap:.75rem}
 .instruct-example-pair{background:var(--bg-elevated);border-radius:8px;padding:.75rem}
@@ -213,13 +214,13 @@ textarea.instruct-input{resize:vertical;min-height:2.6rem}
    ═══════════════════════════════════════════════════════════════ */
 
 /* v4 marker */
-.instruct-page.instruct-v4{max-width:1100px}
+.instruct-page.instruct-v4{max-width:1200px}
 
 /* Platform pills (replaces dropdown) — mirrors .instruct-tone-pill pattern */
-.instruct-platform-group{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.4rem}
+.instruct-platform-group{display:flex;flex-wrap:wrap;gap:.25rem;margin-bottom:.4rem}
 .instruct-platform-pill{cursor:pointer}
 .instruct-platform-pill input{display:none}
-.instruct-platform-pill span{display:inline-block;padding:.4rem .9rem;border-radius:var(--radius-lg,16px);font-size:.8rem;font-weight:600;color:var(--text-tertiary);background:var(--bg-elevated);border:1px solid var(--border);transition:color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out}
+.instruct-platform-pill span{display:inline-block;padding:.3rem .55rem;border-radius:var(--radius-lg,16px);font-size:.74rem;font-weight:600;color:var(--text-tertiary);background:var(--bg-elevated);border:1px solid var(--border);transition:color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out;white-space:nowrap}
 .instruct-platform-pill:hover span{color:var(--text-primary);background:var(--bg-elevated)}
 .instruct-platform-pill input:checked+span{color:var(--accent-foreground);background:var(--instruct-accent);border-color:var(--instruct-accent);box-shadow:0 2px 8px var(--accent-subtle)}
 
@@ -257,3 +258,89 @@ textarea.instruct-input{resize:vertical;min-height:2.6rem}
 
 /* Tighten responsive grid for platform pills on small screens */
 @media(max-width:640px){.instruct-platform-group{flex-direction:column}.instruct-platform-pill span{display:block;text-align:center}}
+
+/* ═══════════════════════════════════════════════════════════════
+   v5 ADDITIONS — Cold-user audit polish (May 2026)
+   Pulse · Ghost preview · NEW badges · Filters · Next-step CTA ·
+   Smart suggestions · Field tips · Mobile noise reduction
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Fix #4: pulse animation for weak-field hints (1.5s indigo glow) */
+@keyframes instruct-pulse {
+  0%   { box-shadow: 0 0 0 0 var(--accent-subtle), 0 0 0 0 color-mix(in srgb, var(--instruct-accent) 60%, transparent); }
+  40%  { box-shadow: 0 0 0 6px var(--accent-subtle), 0 0 0 2px color-mix(in srgb, var(--instruct-accent) 50%, transparent); }
+  100% { box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent; }
+}
+.instruct-pulse { animation: instruct-pulse 1.5s ease-out; border-color: var(--instruct-accent) !important; }
+
+/* Fix #4: clickable strength hints */
+.instruct-strength-hint { color: var(--instruct-accent); text-decoration: underline dotted; text-underline-offset: 2px; cursor: pointer; font-weight: 500; }
+.instruct-strength-hint:hover { text-decoration-style: solid; color: var(--accent-hover, var(--instruct-accent)); }
+
+/* Fix #5: collapsible subtitle — context for "why open this" */
+.instruct-section-subtitle { font-weight: 400; color: var(--text-muted); font-size: .76rem; }
+@media(max-width:640px){ .instruct-section-subtitle { display: none; } } /* mobile noise reduction */
+
+/* Fix #20 (scoped): single field tip under Purpose */
+.instruct-field-tip { margin: .35rem 0 0; font-size: .72rem; color: var(--text-muted); line-height: 1.5; font-style: italic; }
+.instruct-field-tip strong { color: var(--text-secondary); font-style: normal; }
+
+/* Fix #2: ghosted preview — banner + dimmed pre */
+.instruct-preview-empty { text-align: left; padding: 1rem 0; color: var(--text-muted); }
+.instruct-preview-empty-banner { background: var(--accent-subtle); border: 1px solid var(--instruct-accent); border-radius: 10px; padding: .7rem .9rem; margin-bottom: .8rem; font-size: .82rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: .15rem; line-height: 1.45; }
+.instruct-preview-empty-banner strong { color: var(--text-primary); }
+.instruct-preview-empty-banner em { font-style: normal; color: var(--instruct-accent); font-weight: 600; }
+.instruct-empty-cta-mobile { display: none; }
+.instruct-empty-cta-desktop { display: block; }
+@media(max-width:640px) {
+  .instruct-empty-cta-desktop { display: none; }
+  .instruct-empty-cta-mobile { display: block; }
+}
+.instruct-preview-ghost { background: var(--bg-elevated); border: 1px dashed var(--border); border-radius: 10px; padding: 1rem; color: var(--text-muted); font-size: .75rem; line-height: 1.55; opacity: .55; white-space: pre-wrap; word-wrap: break-word; max-height: 380px; overflow: hidden; margin: 0; font-family: inherit; pointer-events: none; user-select: none; -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%); mask-image: linear-gradient(to bottom, black 60%, transparent 100%); }
+
+/* Fix #9: CAPS badge now ABOVE textarea — adjust margins */
+.instruct-caps-badge { margin-top: 0; margin-bottom: .75rem; }
+
+/* Fix #10: platform-specific next-step CTA */
+.instruct-next-step { display: flex; align-items: center; gap: .5rem; padding: .65rem .9rem; background: var(--instruct-accent); color: var(--accent-foreground); border-radius: 10px; text-decoration: none; font-size: .85rem; font-weight: 600; margin-bottom: .75rem; transition: background-color 200ms ease-out, transform 200ms ease-out, box-shadow 200ms ease-out; }
+.instruct-next-step:hover { background: var(--accent-hover, var(--instruct-accent)); transform: translateY(-1px); box-shadow: 0 4px 16px var(--accent-subtle); }
+.instruct-next-step-arrow { font-size: 1.1rem; }
+.instruct-next-step-label { font-weight: 600; }
+.instruct-next-step-hint { font-weight: 400; opacity: .85; font-size: .75rem; margin-left: auto; }
+@media(max-width:640px){ .instruct-next-step-hint { display: none; } }
+
+/* Fix #18: smart suggestion callout */
+.instruct-smart-suggestion { display: flex; align-items: center; gap: .5rem; margin-top: .5rem; padding: .55rem .75rem; background: var(--accent-subtle); border: 1px solid var(--instruct-accent); border-radius: 8px; font-size: .78rem; color: var(--text-secondary); animation: instruct-fadeIn .25s ease; }
+.instruct-smart-msg { flex: 1; line-height: 1.4; }
+.instruct-smart-add { background: var(--instruct-accent); color: var(--accent-foreground); border: 1px solid var(--instruct-accent); border-radius: 6px; padding: .25rem .6rem; font-size: .76rem; font-weight: 600; cursor: pointer; font-family: inherit; flex-shrink: 0; }
+.instruct-smart-add:hover { background: var(--accent-hover, var(--instruct-accent)); }
+.instruct-smart-dismiss { background: transparent; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.1rem; line-height: 1; padding: 0 .25rem; flex-shrink: 0; }
+.instruct-smart-dismiss:hover { color: var(--text-primary); }
+
+/* Fix #7 / #14: template category filters */
+.instruct-tpl-filters { display: flex; flex-wrap: wrap; gap: .35rem; justify-content: center; margin-bottom: 1rem; }
+.instruct-tpl-filter { background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-tertiary); font-size: .78rem; font-weight: 500; padding: .35rem .8rem; border-radius: var(--radius-lg, 16px); cursor: pointer; font-family: inherit; transition: color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out; }
+.instruct-tpl-filter:hover { color: var(--text-primary); background: var(--accent-subtle); border-color: var(--instruct-accent); }
+.instruct-tpl-filter.active { color: var(--accent-foreground); background: var(--instruct-accent); border-color: var(--instruct-accent); }
+
+/* Fix #8 / #19: NEW badge + featured card */
+.instruct-tpl-card { position: relative; }
+.instruct-tpl-new { position: absolute; top: .5rem; right: .5rem; background: var(--instruct-accent); color: var(--accent-foreground); font-size: .62rem; font-weight: 700; padding: .15rem .4rem; border-radius: 4px; letter-spacing: .04em; }
+.instruct-tpl-card-featured { border-color: var(--instruct-accent); box-shadow: 0 2px 12px var(--accent-subtle); }
+.instruct-tpl-card-featured:hover { box-shadow: 0 6px 20px color-mix(in srgb, var(--instruct-accent) 25%, transparent); }
+
+/* Mobile noise reduction (per "hide things from mobile to only show relevant things") */
+@media(max-width:640px) {
+  .instruct-kbd-bar { display: none; } /* keyboard shortcuts meaningless on mobile */
+  .instruct-preview-ghost { display: none; } /* ghost preview is desktop-only context */
+  .instruct-preview-empty { padding: 0; }
+  .instruct-preview-empty-banner { font-size: .78rem; padding: .55rem .7rem; }
+  .instruct-tone-desc { font-size: .7rem; }
+  .instruct-helper-text { font-size: .68rem; }
+  .instruct-tpl-filters { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: .3rem; scrollbar-width: none; }
+  .instruct-tpl-filters::-webkit-scrollbar { display: none; }
+  .instruct-tpl-filter { flex-shrink: 0; }
+  .instruct-next-step { padding: .6rem .75rem; font-size: .8rem; }
+  /* Move next-step CTA up on mobile: visual priority after the output */
+}
+

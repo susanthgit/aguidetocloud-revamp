@@ -45,9 +45,9 @@
             <label>Output for which platform?</label>
             <div class="instruct-platform-group" role="radiogroup" aria-label="Output platform">
               {{ range $platforms }}
-              <label class="instruct-platform-pill">
+              <label class="instruct-platform-pill" title="{{ .name }}">
                 <input type="radio" name="instruct-platform" value="{{ .id }}"{{ if eq .id "m365" }} checked{{ end }}>
-                <span>{{ .icon }} {{ .name }}</span>
+                <span>{{ .icon }} {{ .short_name | default .name }}</span>
               </label>
               {{ end }}
             </div>
@@ -56,12 +56,13 @@
 
           <div class="instruct-field">
             <label for="instruct-name">Agent name <span class="instruct-optional">(optional)</span></label>
-            <input type="text" id="instruct-name" class="instruct-input" placeholder="e.g. Luna, TechBot, HR Helper" maxlength="60">
+            <input type="text" id="instruct-name" class="instruct-input" placeholder="Give it a personal touch — e.g. Luna, TechBot, HR Helper" maxlength="60">
           </div>
 
           <div class="instruct-field">
             <label for="instruct-purpose">What should your agent do? <span class="instruct-required">*</span></label>
             <textarea id="instruct-purpose" class="instruct-input" rows="3" placeholder="e.g. Help employees triage their inbox every morning, group by sender relationship, highlight what needs a reply today"></textarea>
+            <p class="instruct-field-tip">💡 <em>Be specific. <strong>Weak:</strong> "help with email." <strong>Strong:</strong> "triage unread emails by sender, flag same-day replies."</em></p>
           </div>
 
           <div class="instruct-field">
@@ -88,11 +89,12 @@
           <div class="instruct-field">
             <label for="instruct-knowledge">Knowledge sources <span class="instruct-optional">(optional)</span></label>
             <textarea id="instruct-knowledge" class="instruct-input" rows="2" placeholder="e.g. IT knowledge base, Microsoft 365 docs, VPN setup guides, approved software list"></textarea>
+            <div class="instruct-smart-suggestion" id="smart-suggestion" style="display:none"></div>
           </div>
 
           {{/* Output format scaffold */}}
           <details class="instruct-section-toggle" id="section-output-format">
-            <summary><span class="instruct-section-icon">📐</span> Output format scaffold <span class="instruct-optional">(optional)</span></summary>
+            <summary><span class="instruct-section-icon">📐</span> Output format scaffold <span class="instruct-section-subtitle">— for digests, reports, structured outputs</span> <span class="instruct-optional">(optional)</span></summary>
             <div class="instruct-section-body">
               <textarea id="instruct-output-format" class="instruct-input" rows="6" placeholder="e.g. Group emails into 5 buckets:&#10;## 🔥 Manager / skip-level&#10;## 👥 Direct reports&#10;## 🤝 Peers&#10;## 🌍 External&#10;## 📰 Newsletters&#10;If empty, write '(nothing today)'..."></textarea>
               <p class="instruct-helper-text">For digests, reports, or structured outputs — specify exact section headings, bullet styles, or formatting rules</p>
@@ -101,7 +103,7 @@
 
           {{/* Schedule / autonomous behaviour */}}
           <details class="instruct-section-toggle" id="section-schedule">
-            <summary><span class="instruct-section-icon">🕐</span> Behaviour when triggered automatically <span class="instruct-optional">(optional)</span></summary>
+            <summary><span class="instruct-section-icon">🕐</span> Behaviour when triggered automatically <span class="instruct-section-subtitle">— for scheduled prompts or autonomous runs</span> <span class="instruct-optional">(optional)</span></summary>
             <div class="instruct-section-body">
               <textarea id="instruct-schedule" class="instruct-input" rows="3" placeholder="e.g. When triggered by scheduled prompt, ALWAYS open with: 'Good morning [USER]. Here's your briefing for {today's date}...' Then deliver the digest without asking follow-up questions."></textarea>
               <p class="instruct-helper-text">For scheduled prompts or autonomous runs — opener, time-range awareness, no follow-up questions</p>
@@ -110,7 +112,7 @@
 
           {{/* Examples */}}
           <details class="instruct-section-toggle" id="section-examples">
-            <summary><span class="instruct-section-icon">💬</span> Example interactions <span class="instruct-optional">(recommended)</span></summary>
+            <summary><span class="instruct-section-icon">💬</span> Example interactions <span class="instruct-section-subtitle">— happy path + refusal pair</span> <span class="instruct-optional">(recommended)</span></summary>
             <div class="instruct-section-body">
               <div class="instruct-example-pair">
                 <div class="instruct-field">
@@ -137,7 +139,7 @@
 
           {{/* Additional rules */}}
           <details class="instruct-section-toggle" id="section-additional">
-            <summary><span class="instruct-section-icon">📝</span> Additional rules <span class="instruct-optional">(optional)</span></summary>
+            <summary><span class="instruct-section-icon">📝</span> Additional rules <span class="instruct-section-subtitle">— greeting, escalation, formatting, locale</span> <span class="instruct-optional">(optional)</span></summary>
             <div class="instruct-section-body">
               <div class="instruct-quickadds">
                 <button type="button" class="instruct-quickadd-chip" data-scaffold="greeting">+ Greeting</button>
@@ -159,13 +161,44 @@
       {{/* ── RIGHT: Live Preview ── */}}
       <div class="instruct-split-preview" id="preview-pane">
         <div class="instruct-preview-empty" id="preview-empty">
-          <div class="instruct-preview-empty-icon">📝</div>
-          <p>Start typing to see a live preview</p>
-          <p class="instruct-subtle">Or click <strong>Try Example</strong> to see it in action</p>
+          <div class="instruct-preview-empty-banner">
+            <strong>👀 Here's what a finished agent looks like.</strong>
+            <span class="instruct-empty-cta-desktop">Start typing on the left, or hit <em>Try Example</em> to load one →</span>
+            <span class="instruct-empty-cta-mobile">Fill the form above or tap <em>Try Example</em> to load one ↑</span>
+          </div>
+          <pre class="instruct-preview-ghost" aria-hidden="true">## Role &amp; Purpose
+You are an inbox-triage assistant. Help the user scan their unread emails before they open Outlook — group by sender relationship, flag what needs a same-day reply.
+
+## Tone
+Communicate in a clear, polished, and business-appropriate manner.
+
+## Knowledge &amp; Grounding
+You have access to:
+- My emails
+- People knowledge (org chart)
+
+ALWAYS ground your answers in the available knowledge sources.
+
+## Output Format
+Group emails into 5 buckets:
+## 🔥 Manager / skip-level
+## 👥 Direct reports
+## 🤝 Peers
+## 🌍 External
+## 📰 Newsletters
+
+## Core Rules
+- NEVER fabricate or guess information
+- NEVER share confidential data
+- ALWAYS suggest next steps when you cannot fulfil a request</pre>
         </div>
 
         <div class="instruct-preview-content" id="preview-content" style="display:none">
           <div class="instruct-strength" id="strength-badge" aria-live="polite"></div>
+
+          <a class="instruct-caps-badge" href="/blog/m365-agent-builder-explained/#caps">
+            <strong>✓ Uses the CAPS technique</strong> — clear CAPS keywords, exact fallback text, positive redirects →
+          </a>
 
           <div class="instruct-output-meta">
             <span class="instruct-output-badge" id="output-badge"></span>
@@ -177,12 +210,11 @@
 
           <div class="instruct-output-actions">
             <button class="instruct-btn instruct-btn-primary" id="btn-copy" type="button">📋 Copy</button>
+            <button class="instruct-btn" id="btn-download-md" type="button">⬇️ Download .md</button>
             <button class="instruct-btn" id="btn-start-over" type="button">↺ Reset</button>
           </div>
 
-          <a class="instruct-caps-badge" href="/blog/m365-agent-builder-explained/#caps">
-            <strong>✓ Uses the CAPS technique</strong> — clear CAPS keywords, exact fallback text, positive redirects →
-          </a>
+          <a class="instruct-next-step" id="next-step-cta" href="#" target="_blank" rel="noopener" style="display:none"></a>
 
           <div class="instruct-starters" id="output-starters" style="display:none">
             <h4>💬 Suggested conversation starters</h4>
@@ -196,6 +228,12 @@
   {{/* ══════════ TAB 2: TEMPLATES ══════════ */}}
   <div class="instruct-panel" id="panel-templates" role="tabpanel">
     <p class="instruct-templates-intro">Click a template to pre-fill all fields, then tweak and generate.</p>
+    <div class="instruct-tpl-filters" id="tpl-filters" role="tablist" aria-label="Template categories">
+      <button class="instruct-tpl-filter active" data-cat="all" type="button">All</button>
+      <button class="instruct-tpl-filter" data-cat="Support" type="button">Support</button>
+      <button class="instruct-tpl-filter" data-cat="Productivity" type="button">Productivity</button>
+      <button class="instruct-tpl-filter" data-cat="Daily Routine" type="button">Daily Routine</button>
+    </div>
     <div class="instruct-tpl-grid" id="tpl-grid"></div>
   </div>
 
