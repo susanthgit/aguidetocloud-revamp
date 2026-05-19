@@ -5,42 +5,314 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Tue, 19 May 2026 13:56:46 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 18:59:43 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Google I/O 2026 live updates: Biggest news on Android, Gemini AI, XR, and more we're seeing</title>
+      <title>Production-Ready AI Agents: 5 Lessons from Refactoring a Monolith</title>
+      <link>https://developers.googleblog.com/production-ready-ai-agents-5-lessons-from-refactoring-a-monolith/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 19 May 2026 18:58:00 +0000</pubDate>
+      <guid>https://developers.googleblog.com/production-ready-ai-agents-5-lessons-from-refactoring-a-monolith/</guid>
+    </item>
+    <item>
+      <title>An important update: Transitioning Gemini CLI to Antigravity CLI</title>
+      <link>https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 19 May 2026 18:58:00 +0000</pubDate>
+      <guid>https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/</guid>
+    </item>
+    <item>
+      <title>Google Tensor SDK Beta with LiteRT</title>
+      <link>https://developers.googleblog.com/google-tensor-sdk-beta-with-litert/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 19 May 2026 18:58:00 +0000</pubDate>
+      <guid>https://developers.googleblog.com/google-tensor-sdk-beta-with-litert/</guid>
+    </item>
+    <item>
+      <title>Google I/O 2026 live: Our takes on Gemini 3.5, Spark, Android XR, and more</title>
       <link>https://www.zdnet.com/article/google-io-05-19-2026-live-blog/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Tue, 19 May 2026 13:44:00 +0000</pubDate>
+      <pubDate>Tue, 19 May 2026 18:54:00 +0000</pubDate>
       <guid>https://www.zdnet.com/article/google-io-05-19-2026-live-blog/</guid>
     </item>
     <item>
-      <title>Indra rides off with £1.96B Transport for London ticketing deal as Oyster heads for back-office overhaul</title>
-      <link>https://www.theregister.com/public-sector/2026/05/19/indra-rides-off-with-196b-transport-for-london-ticketing-deal-as-oyster-heads-for-back-office-overhaul/5242520</link>
+      <title>OlmoEarth v1.1: A more efficient family of models</title>
+      <link>https://huggingface.co/blog/allenai/olmoearth-v1-1</link>
       <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 19 May 2026 13:39:53 +0200</pubDate>
-      <guid>https://www.theregister.com/public-sector/2026/05/19/indra-rides-off-with-196b-transport-for-london-ticketing-deal-as-oyster-heads-for-back-office-overhaul/5242520</guid>
+      <category>Open Source</category>
+      <pubDate>Tue, 19 May 2026 18:38:09 +0000</pubDate>
+      <guid>https://huggingface.co/blog/allenai/olmoearth-v1-1</guid>
     </item>
     <item>
-      <title>Crook leaks 468k+ records, claims they pwned Portugal’s postal carrier</title>
-      <link>https://www.theregister.com/cyber-crime/2026/05/19/468k-records-allegedly-stolen-from-portugals-postal-carrier/5242457</link>
+      <title>Airbus gets HPC-as-a-service supercomputer from Bull</title>
+      <link>https://www.theregister.com/hpc/2026/05/19/airbus-gets-hpc-as-a-service-supercomputer-from-bull/5242756</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Tue, 19 May 2026 13:20:00 +0200</pubDate>
-      <guid>https://www.theregister.com/cyber-crime/2026/05/19/468k-records-allegedly-stolen-from-portugals-postal-carrier/5242457</guid>
+      <pubDate>Tue, 19 May 2026 18:12:14 +0200</pubDate>
+      <guid>https://www.theregister.com/hpc/2026/05/19/airbus-gets-hpc-as-a-service-supercomputer-from-bull/5242756</guid>
     </item>
     <item>
-      <title>Understanding the modern cybercrime landscape</title>
-      <link>https://www.technologyreview.com/2026/05/19/1136925/understanding-the-modern-cybercrime-landscape/</link>
+      <title>Gemini 3.5 Flash is generally available for GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-05-19-gemini-3-5-flash-is-generally-available-for-github-copilot</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Tue, 19 May 2026 17:56:38 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-05-19-gemini-3-5-flash-is-generally-available-for-github-copilot</guid>
+    </item>
+    <item>
+      <title>Google’s Genie world model can now simulate real streets with Street View</title>
+      <link>https://techcrunch.com/2026/05/19/googles-genie-world-model-can-now-simulate-real-streets-with-street-view/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 19 May 2026 17:51:39 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/19/googles-genie-world-model-can-now-simulate-real-streets-with-street-view/</guid>
+    </item>
+    <item>
+      <title>With Gemini 3.5 Flash, Google bets its next AI wave on agents, not chatbots</title>
+      <link>https://techcrunch.com/2026/05/19/with-gemini-3-5-flash-google-bets-its-next-ai-wave-on-agents-not-chatbots/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 19 May 2026 17:51:30 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/19/with-gemini-3-5-flash-google-bets-its-next-ai-wave-on-agents-not-chatbots/</guid>
+    </item>
+    <item>
+      <title>How to use Google’s new information agents</title>
+      <link>https://techcrunch.com/2026/05/19/how-to-use-googles-new-information-agents/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Tue, 19 May 2026 13:00:00 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/05/19/1136925/understanding-the-modern-cybercrime-landscape/</guid>
+      <pubDate>Tue, 19 May 2026 17:50:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/19/how-to-use-googles-new-information-agents/</guid>
     </item>
     <item>
-      <title>I tested the Surface Pro's new privacy filter, and it's Microsoft's best business feature yet</title>
+      <title>SAP customers warned AI agents could put costs on autopilot</title>
+      <link>https://www.theregister.com/saas/2026/05/19/sap-customers-warned-ai-agents-could-put-costs-on-autopilot/5242646</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 19 May 2026 17:49:40 +0200</pubDate>
+      <guid>https://www.theregister.com/saas/2026/05/19/sap-customers-warned-ai-agents-could-put-costs-on-autopilot/5242646</guid>
+    </item>
+    <item>
+      <title>Google Search as you know it is over</title>
+      <link>https://techcrunch.com/2026/05/19/google-search-as-you-know-it-is-over/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 19 May 2026 17:46:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/19/google-search-as-you-know-it-is-over/</guid>
+    </item>
+    <item>
+      <title>OpenAI's new image watermarks make it easier to spot AI fakes - here's how</title>
+      <link>https://www.zdnet.com/article/openai-image-watermarks-help-spot-ai-fakes/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 19 May 2026 17:45:36 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/openai-image-watermarks-help-spot-ai-fakes/</guid>
+    </item>
+    <item>
+      <title>Google’s AI now lets you talk to your Gmail inbox</title>
+      <link>https://techcrunch.com/2026/05/19/googles-ai-now-lets-you-talk-to-your-gmail-inbox/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 19 May 2026 17:45:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/19/googles-ai-now-lets-you-talk-to-your-gmail-inbox/</guid>
+    </item>
+    <item>
+      <title>Google’s AI Studio now lets anyone build Android apps in minutes</title>
+      <link>https://techcrunch.com/2026/05/19/googles-ai-studio-now-lets-anyone-build-android-apps-in-minutes/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 19 May 2026 17:45:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/19/googles-ai-studio-now-lets-anyone-build-android-apps-in-minutes/</guid>
+    </item>
+    <item>
+      <title>OpenAI is making it easier to check if an image was made by their models</title>
+      <link>https://techcrunch.com/2026/05/19/openai-is-making-it-easier-to-check-if-an-image-was-made-by-their-models/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 19 May 2026 17:45:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/19/openai-is-making-it-easier-to-check-if-an-image-was-made-by-their-models/</guid>
+    </item>
+    <item>
+      <title>Google launches Antigravity 2.0 with an updated desktop app and CLI tool</title>
+      <link>https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 19 May 2026 17:45:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/19/google-launches-antigravity-2-0-with-an-updated-desktop-app-and-cli-tool/</guid>
+    </item>
+    <item>
+      <title>Google’s new Universal Cart wants to follow you across the entire internet</title>
+      <link>https://techcrunch.com/2026/05/19/googles-new-universal-cart-wants-to-follow-you-across-the-entire-internet/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 19 May 2026 17:45:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/19/googles-new-universal-cart-wants-to-follow-you-across-the-entire-internet/</guid>
+    </item>
+    <item>
+      <title>Google updates its Gemini app to take on ChatGPT and Claude</title>
+      <link>https://techcrunch.com/2026/05/19/google-updates-its-gemini-app-to-take-on-chatgpt-and-claude/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 19 May 2026 17:45:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/19/google-updates-its-gemini-app-to-take-on-chatgpt-and-claude/</guid>
+    </item>
+    <item>
+      <title>Google adds voice-based prompting to Docs and Keep</title>
+      <link>https://techcrunch.com/2026/05/19/google-adds-voice-based-prompting-to-docs-and-keep/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 19 May 2026 17:45:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/19/google-adds-voice-based-prompting-to-docs-and-keep/</guid>
+    </item>
+    <item>
+      <title>Google just declared itself a contender in AI design</title>
+      <link>https://techcrunch.com/2026/05/19/ai-design-tools-are-the-next-big-battleground-and-google-is-going-all-in/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 19 May 2026 17:45:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/19/ai-design-tools-are-the-next-big-battleground-and-google-is-going-all-in/</guid>
+    </item>
+    <item>
+      <title>Agentic app coding gets an upgrade with Google’s release of Android CLI</title>
+      <link>https://techcrunch.com/2026/05/19/agentic-app-coding-gets-an-upgrade-with-googles-release-of-android-cli/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 19 May 2026 17:45:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/19/agentic-app-coding-gets-an-upgrade-with-googles-release-of-android-cli/</guid>
+    </item>
+    <item>
+      <title>Google Makes It Easy to Deepfake Yourself</title>
+      <link>https://www.wired.com/story/google-makes-it-easy-to-make-a-deepfake-of-yourself/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 19 May 2026 17:45:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/google-makes-it-easy-to-make-a-deepfake-of-yourself/</guid>
+    </item>
+    <item>
+      <title>Google just redesigned the search box for the first time in 25 years — here’s why it matters more than you think.</title>
+      <link>https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Tue, 19 May 2026 17:45:00 +0000</pubDate>
+      <guid>https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think</guid>
+    </item>
+    <item>
+      <title>Google overhauls its AI plans - which one should you now choose?</title>
+      <link>https://www.zdnet.com/article/google-new-ai-plans-which-should-you-choose-2026/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Tue, 19 May 2026 17:45:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/google-new-ai-plans-which-should-you-choose-2026/</guid>
+    </item>
+    <item>
+      <title>Google's new AI Search box is here - along with agents and 5 more upgrades</title>
+      <link>https://www.zdnet.com/article/google-ai-search-box-with-agents-more-upgrades/</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Tue, 19 May 2026 17:45:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/google-ai-search-box-with-agents-more-upgrades/</guid>
+    </item>
+    <item>
+      <title>ZDNET Big Guessing Game: Official contest rules</title>
+      <link>https://www.zdnet.com/article/zdnet-big-guessing-game-apple-edition-official-contest-rules/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Tue, 19 May 2026 16:02:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/zdnet-big-guessing-game-apple-edition-official-contest-rules/</guid>
+    </item>
+    <item>
+      <title>I tested Sony's new premium headphones, and they define practical luxury for me</title>
+      <link>https://www.zdnet.com/article/sony-1000-x-the-collexion-review/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Tue, 19 May 2026 16:00:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/sony-1000-x-the-collexion-review/</guid>
+    </item>
+    <item>
+      <title>OpenAI co-founder Andrej Karpathy joins Anthropic’s pre-training team</title>
+      <link>https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 19 May 2026 15:43:04 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/</guid>
+    </item>
+    <item>
+      <title>Scalable voice agent design with Amazon Nova Sonic: multi-agent, tools, and session segmentation</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/scalable-voice-agent-design-with-amazon-nova-sonic-multi-agent-tools-and-session-segmentation/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Tue, 19 May 2026 15:26:37 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/scalable-voice-agent-design-with-amazon-nova-sonic-multi-agent-tools-and-session-segmentation/</guid>
+    </item>
+    <item>
+      <title>Extending conversational memory in Kiro CLI using Amazon Bedrock AgentCore Memory</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/extending-conversational-memory-in-kiro-cli-using-amazon-bedrock-agentcore-memory/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Tue, 19 May 2026 15:23:22 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/extending-conversational-memory-in-kiro-cli-using-amazon-bedrock-agentcore-memory/</guid>
+    </item>
+    <item>
+      <title>Accelerate ML feature pipelines with new capabilities in Amazon SageMaker Feature Store</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/accelerate-ml-feature-pipelines-with-new-capabilities-in-amazon-sagemaker-feature-store/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Tue, 19 May 2026 15:20:33 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/accelerate-ml-feature-pipelines-with-new-capabilities-in-amazon-sagemaker-feature-store/</guid>
+    </item>
+    <item>
+      <title>Implementing programmatic tool calling on Amazon Bedrock</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/implementing-programmatic-tool-calling-on-amazon-bedrock/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Tue, 19 May 2026 15:17:00 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/implementing-programmatic-tool-calling-on-amazon-bedrock/</guid>
+    </item>
+    <item>
+      <title>Former OpenAI Staffers Warn That xAI’s Poor Safety Record Could Complicate SpaceX’s IPO</title>
+      <link>https://www.wired.com/story/ex-openai-staffers-warn-spacex-investors-of-ai-safety-risks/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 19 May 2026 15:00:28 +0000</pubDate>
+      <guid>https://www.wired.com/story/ex-openai-staffers-warn-spacex-investors-of-ai-safety-risks/</guid>
+    </item>
+    <item>
+      <title>Apple, Sony, and Bose headphones are all on sale for Memorial Day - I found the best deals</title>
+      <link>https://www.zdnet.com/article/best-memorial-day-headphones-deals-2026/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Tue, 19 May 2026 14:56:24 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/best-memorial-day-headphones-deals-2026/</guid>
+    </item>
+    <item>
+      <title>6 Android Auto apps I wish I found sooner, because they make every drive easier</title>
+      <link>https://www.zdnet.com/article/6-android-auto-apps-i-wish-i-found-sooner/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Tue, 19 May 2026 14:46:51 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/6-android-auto-apps-i-wish-i-found-sooner/</guid>
+    </item>
+    <item>
+      <title>Start a GitHub Advanced Security trial from a risk assessment</title>
+      <link>https://github.blog/changelog/2026-05-19-start-a-github-advanced-security-trial-from-a-risk-assessment</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Tue, 19 May 2026 13:52:32 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-05-19-start-a-github-advanced-security-trial-from-a-risk-assessment</guid>
+    </item>
+    <item>
+      <title>Google wants to compete with Anthropic’s Mythos</title>
+      <link>https://www.theverge.com/tech/933921/google-wants-to-compete-with-anthropics-mythos</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 19 May 2026 13:48:22 -0400</pubDate>
+      <guid>https://www.theverge.com/tech/933921/google-wants-to-compete-with-anthropics-mythos</guid>
+    </item>
+    <item>
+      <title>I tested the Surface Pro with 5G, and it's Microsoft's most complete business 2-in-1 yet</title>
       <link>https://www.zdnet.com/article/microsoft-surface-pro-for-business-review/</link>
       <description></description>
       <category>Industry</category>
@@ -48,364 +320,92 @@
       <guid>https://www.zdnet.com/article/microsoft-surface-pro-for-business-review/</guid>
     </item>
     <item>
-      <title>1 in 5 Brits think AI layoffs could trigger civil unrest</title>
-      <link>https://www.theregister.com/ai-ml/2026/05/19/1-in-5-brits-think-ai-layoffs-could-trigger-civil-unrest/5242444</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 19 May 2026 12:59:00 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-ml/2026/05/19/1-in-5-brits-think-ai-layoffs-could-trigger-civil-unrest/5242444</guid>
-    </item>
-    <item>
-      <title>UK Typhoon jets fitted with bargain-bin drone busters for Middle East sorties</title>
-      <link>https://www.theregister.com/offbeat/2026/05/19/uk-typhoon-jets-fitted-with-bargain-bin-drone-busters-for-middle-east-sorties/5242412</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 19 May 2026 12:28:00 +0200</pubDate>
-      <guid>https://www.theregister.com/offbeat/2026/05/19/uk-typhoon-jets-fitted-with-bargain-bin-drone-busters-for-middle-east-sorties/5242412</guid>
-    </item>
-    <item>
-      <title>The Download: Musk v. Altman, smart glasses for warfare, and Google I/O</title>
-      <link>https://www.technologyreview.com/2026/05/19/1137505/the-download-musk-altman-trial-smart-glasses-warfare-google-i-o/</link>
+      <title>Advancing content provenance for a safer, more transparent AI ecosystem</title>
+      <link>https://openai.com/index/advancing-content-provenance</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Tue, 19 May 2026 12:10:00 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/05/19/1137505/the-download-musk-altman-trial-smart-glasses-warfare-google-i-o/</guid>
+      <pubDate>Tue, 19 May 2026 10:45:00 +0000</pubDate>
+      <guid>https://openai.com/index/advancing-content-provenance</guid>
     </item>
     <item>
-      <title>Marshall Milton ANC headphones aim to combine portability with performance</title>
-      <link>https://www.zdnet.com/article/marshall-milton-anc-combine-the-portability-of-major-v-with-the-performance-of-monitor-iii/</link>
+      <title>Introducing the Ettin Reranker Family</title>
+      <link>https://huggingface.co/blog/ettin-reranker</link>
       <description></description>
-      <category>Industry</category>
-      <pubDate>Tue, 19 May 2026 12:00:38 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/marshall-milton-anc-combine-the-portability-of-major-v-with-the-performance-of-monitor-iii/</guid>
-    </item>
-    <item>
-      <title>SAP's AI strategy: Come for the openness, stay because you have to</title>
-      <link>https://www.theregister.com/saas/2026/05/19/saps-ai-strategy-come-for-the-openness-stay-because-you-have-to/5241109</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 19 May 2026 12:00:00 +0200</pubDate>
-      <guid>https://www.theregister.com/saas/2026/05/19/saps-ai-strategy-come-for-the-openness-stay-because-you-have-to/5241109</guid>
-    </item>
-    <item>
-      <title>Colossal Biosciences is growing chickens in a 3D-printed container</title>
-      <link>https://www.technologyreview.com/2026/05/19/1137471/colossal-biosciences-is-growing-chickens-in-a-3d-printed-container/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 19 May 2026 12:00:00 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/05/19/1137471/colossal-biosciences-is-growing-chickens-in-a-3d-printed-container/</guid>
-    </item>
-    <item>
-      <title>ZTE Showcases AI Interactive Flat Panel at the Broadband User Congress in Brazil</title>
-      <link>https://www.theregister.com/systems/2026/05/19/zte-showcases-ai-interactive-flat-panel-at-the-broadband-user-congress-in-brazil/5242492</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 19 May 2026 11:59:43 +0200</pubDate>
-      <guid>https://www.theregister.com/systems/2026/05/19/zte-showcases-ai-interactive-flat-panel-at-the-broadband-user-congress-in-brazil/5242492</guid>
-    </item>
-    <item>
-      <title>Windows Firewall stands between you and greasy delight</title>
-      <link>https://www.theregister.com/oses/2026/05/19/windows-firewall-stands-between-you-and-greasy-delight/5241050</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 19 May 2026 11:15:00 +0200</pubDate>
-      <guid>https://www.theregister.com/oses/2026/05/19/windows-firewall-stands-between-you-and-greasy-delight/5241050</guid>
-    </item>
-    <item>
-      <title>I used Motorola's version of DeX with my Razr Fold, and it's nearly replaced my laptop</title>
-      <link>https://www.zdnet.com/article/motorola-smart-connect-razr-fold-hands-on/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Tue, 19 May 2026 11:00:46 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/motorola-smart-connect-razr-fold-hands-on/</guid>
-    </item>
-    <item>
-      <title>Removal of code_scanning_upload field from rate_limit API endpoint</title>
-      <link>https://github.blog/changelog/2026-05-19-removal-of-code_scanning_upload-field-from-rate_limit-api-endpoint</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 19 May 2026 10:40:26 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-05-19-removal-of-code_scanning_upload-field-from-rate_limit-api-endpoint</guid>
-    </item>
-    <item>
-      <title>My favorite early Memorial Day deals: Save big on laptops, tablets, and more</title>
-      <link>https://www.zdnet.com/article/best-early-memorial-day-deals-2026/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Tue, 19 May 2026 10:31:40 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/best-early-memorial-day-deals-2026/</guid>
-    </item>
-    <item>
-      <title>The class of 2026 has heard enough about AI, thanks</title>
-      <link>https://www.theregister.com/ai-ml/2026/05/19/the-class-of-2026-has-heard-enough-about-ai-thanks/5242080</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 19 May 2026 10:30:00 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-ml/2026/05/19/the-class-of-2026-has-heard-enough-about-ai-thanks/5242080</guid>
-    </item>
-    <item>
-      <title>This sneaky deal gets you a month of Peacock or Paramount+ for $1 - what to know</title>
-      <link>https://www.zdnet.com/article/walmart-plus-deal-memorial-day-2026/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Tue, 19 May 2026 10:00:50 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/walmart-plus-deal-memorial-day-2026/</guid>
-    </item>
-    <item>
-      <title>Gemini is in danger of going full Copilot</title>
-      <link>https://www.theverge.com/tech/931752/google-io-2026-gemini-icon-docs-workspace</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Tue, 19 May 2026 06:30:00 -0400</pubDate>
-      <guid>https://www.theverge.com/tech/931752/google-io-2026-gemini-icon-docs-workspace</guid>
-    </item>
-    <item>
-      <title>KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance</title>
-      <link>https://www.anthropic.com/news/anthropic-kpmg</link>
-      <description></description>
-      <category>Anthropic</category>
+      <category>Open Source</category>
       <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://www.anthropic.com/news/anthropic-kpmg</guid>
+      <guid>https://huggingface.co/blog/ettin-reranker</guid>
     </item>
     <item>
-      <title>Musk’s xAI promised staff $420 for their tax returns, hasn’t paid</title>
-      <link>https://www.mercurynews.com/2026/05/18/musks-xai-promised-staff-420-for-their-tax-returns-hasnt-paid/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 18 May 2026 13:55:00 +0000</pubDate>
-      <guid>https://www.mercurynews.com/2026/05/18/musks-xai-promised-staff-420-for-their-tax-returns-hasnt-paid/</guid>
-    </item>
-    <item>
-      <title>Exclusive: Jonah Peretti explains why he sold BuzzFeed</title>
-      <link>https://www.theverge.com/podcast/932154/peretti-allen-buzzfeed-ai-slop-social-media</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 18 May 2026 13:53:39 +0000</pubDate>
-      <guid>https://www.theverge.com/podcast/932154/peretti-allen-buzzfeed-ai-slop-social-media</guid>
-    </item>
-    <item>
-      <title>claude-auto-review added to PyPI</title>
-      <link>https://pypi.org/project/claude-auto-review/</link>
+      <title>claudewheel 0.4.4</title>
+      <link>https://pypi.org/project/claudewheel/0.4.4/</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Mon, 18 May 2026 13:52:28 +0000</pubDate>
-      <guid>https://pypi.org/project/claude-auto-review/</guid>
+      <pubDate>Mon, 18 May 2026 18:55:48 +0000</pubDate>
+      <guid>https://pypi.org/project/claudewheel/0.4.4/</guid>
     </item>
     <item>
-      <title>Major makeover coming to iPhone Camera app [Cult of Mac podcast No. 20]</title>
-      <link>https://www.cultofmac.com/news/ios-27-camera-app-cult-of-mac-podcast-20</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Mon, 18 May 2026 13:50:42 +0000</pubDate>
-      <guid>https://www.cultofmac.com/news/ios-27-camera-app-cult-of-mac-podcast-20</guid>
-    </item>
-    <item>
-      <title>AI-Referred Traffic Shifts Favours First-Party Brands | The Marketing Tutor</title>
-      <link>https://marketing-tutor.com/blog/ai-referred-traffic-shifts-favours-first-party-brands/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 18 May 2026 13:50:24 +0000</pubDate>
-      <guid>https://marketing-tutor.com/blog/ai-referred-traffic-shifts-favours-first-party-brands/</guid>
-    </item>
-    <item>
-      <title>⚡ Weekly Recap: Exchange 0-Day, npm Worm, Fake AI Repo, Cisco Exploit and More</title>
-      <link>https://thehackernews.com/2026/05/weekly-recap-exchange-0-day-npm-worm.html</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 18 May 2026 13:50:17 +0000</pubDate>
-      <guid>https://thehackernews.com/2026/05/weekly-recap-exchange-0-day-npm-worm.html</guid>
-    </item>
-    <item>
-      <title>Anker Day 2026: New products could be launching soon</title>
-      <link>https://www.notebookcheck.net/Anker-Day-2026-New-products-could-be-launching-soon.1299319.0.html</link>
-      <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Mon, 18 May 2026 13:50:00 +0000</pubDate>
-      <guid>https://www.notebookcheck.net/Anker-Day-2026-New-products-could-be-launching-soon.1299319.0.html</guid>
-    </item>
-    <item>
-      <title>ouroboros-ai 0.39.1.dev14</title>
-      <link>https://pypi.org/project/ouroboros-ai/0.39.1.dev14/</link>
+      <title>tix-cli added to PyPI</title>
+      <link>https://pypi.org/project/tix-cli/</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Mon, 18 May 2026 13:49:25 +0000</pubDate>
-      <guid>https://pypi.org/project/ouroboros-ai/0.39.1.dev14/</guid>
+      <pubDate>Mon, 18 May 2026 18:55:44 +0000</pubDate>
+      <guid>https://pypi.org/project/tix-cli/</guid>
     </item>
     <item>
-      <title>growth-loop-sdk 0.1.3</title>
-      <link>https://pypi.org/project/growth-loop-sdk/0.1.3/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 18 May 2026 13:48:49 +0000</pubDate>
-      <guid>https://pypi.org/project/growth-loop-sdk/0.1.3/</guid>
-    </item>
-    <item>
-      <title>torch-fem 0.6.3</title>
-      <link>https://pypi.org/project/torch-fem/0.6.3/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Mon, 18 May 2026 13:48:17 +0000</pubDate>
-      <guid>https://pypi.org/project/torch-fem/0.6.3/</guid>
-    </item>
-    <item>
-      <title>Drone Maker Ondas Is On a Spending Spree. Here Are All 6 Companies It Has Acquired in 2026</title>
-      <link>https://247wallst.com/investing/2026/05/18/drone-maker-ondas-is-on-a-spending-spree-here-are-all-6-companies-it-has-acquired-in-2026/</link>
-      <description></description>
-      <category>Mistral</category>
-      <pubDate>Mon, 18 May 2026 13:45:46 +0000</pubDate>
-      <guid>https://247wallst.com/investing/2026/05/18/drone-maker-ondas-is-on-a-spending-spree-here-are-all-6-companies-it-has-acquired-in-2026/</guid>
-    </item>
-    <item>
-      <title>frictionlog 0.1.1</title>
-      <link>https://pypi.org/project/frictionlog/0.1.1/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 18 May 2026 13:44:22 +0000</pubDate>
-      <guid>https://pypi.org/project/frictionlog/0.1.1/</guid>
-    </item>
-    <item>
-      <title>GEMI Investors Have Opportunity to Lead Gemini Space Station, Inc. Securities Fraud Lawsuit with the Schall Law Firm</title>
-      <link>https://www.globenewswire.com/news-release/2026/05/18/3296741/0/en/GEMI-Investors-Have-Opportunity-to-Lead-Gemini-Space-Station-Inc-Securities-Fraud-Lawsuit-with-the-Schall-Law-Firm.html</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 18 May 2026 13:43:00 +0000</pubDate>
-      <guid>https://www.globenewswire.com/news-release/2026/05/18/3296741/0/en/GEMI-Investors-Have-Opportunity-to-Lead-Gemini-Space-Station-Inc-Securities-Fraud-Lawsuit-with-the-Schall-Law-Firm.html</guid>
-    </item>
-    <item>
-      <title>zyndai-agent 0.6.2</title>
-      <link>https://pypi.org/project/zyndai-agent/0.6.2/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Mon, 18 May 2026 13:42:14 +0000</pubDate>
-      <guid>https://pypi.org/project/zyndai-agent/0.6.2/</guid>
-    </item>
-    <item>
-      <title>tokendna-sdk 0.2.0</title>
-      <link>https://pypi.org/project/tokendna-sdk/0.2.0/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Mon, 18 May 2026 13:40:19 +0000</pubDate>
-      <guid>https://pypi.org/project/tokendna-sdk/0.2.0/</guid>
-    </item>
-    <item>
-      <title>tokendna-sdk added to PyPI</title>
-      <link>https://pypi.org/project/tokendna-sdk/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 18 May 2026 13:40:14 +0000</pubDate>
-      <guid>https://pypi.org/project/tokendna-sdk/</guid>
-    </item>
-    <item>
-      <title>Hybrid AI Emerges To Tame LLMs – And Not A Moment Too Soon</title>
-      <link>https://www.forbes.com/sites/ericsiegel/2026/05/18/hybrid-ai-emerges-to-tame-llms--and-not-a-moment-too-soon/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 18 May 2026 13:39:17 +0000</pubDate>
-      <guid>https://www.forbes.com/sites/ericsiegel/2026/05/18/hybrid-ai-emerges-to-tame-llms--and-not-a-moment-too-soon/</guid>
-    </item>
-    <item>
-      <title>Uber’s Travis truce?; Micron’s warning to India</title>
-      <link>https://economictimes.indiatimes.com/tech/newsletters/tech-top-5/ubers-travis-truce-microns-warning-to-india/articleshow/131178024.cms</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 18 May 2026 13:37:07 +0000</pubDate>
-      <guid>https://economictimes.indiatimes.com/tech/newsletters/tech-top-5/ubers-travis-truce-microns-warning-to-india/articleshow/131178024.cms</guid>
-    </item>
-    <item>
-      <title>torch-pyodide 0.0.9</title>
-      <link>https://pypi.org/project/torch-pyodide/0.0.9/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Mon, 18 May 2026 13:36:22 +0000</pubDate>
-      <guid>https://pypi.org/project/torch-pyodide/0.0.9/</guid>
-    </item>
-    <item>
-      <title>DEADLINE ALERT for IT, PSIX, GEMI, and HTGC: The Law Offices of Frank R. Cruz Reminds Investors of Class Actions on Behalf of Shareholders</title>
-      <link>https://www.globenewswire.com/news-release/2026/05/18/3296735/0/en/DEADLINE-ALERT-for-IT-PSIX-GEMI-and-HTGC-The-Law-Offices-of-Frank-R-Cruz-Reminds-Investors-of-Class-Actions-on-Behalf-of-Shareholders.html</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 18 May 2026 13:36:00 +0000</pubDate>
-      <guid>https://www.globenewswire.com/news-release/2026/05/18/3296735/0/en/DEADLINE-ALERT-for-IT-PSIX-GEMI-and-HTGC-The-Law-Offices-of-Frank-R-Cruz-Reminds-Investors-of-Class-Actions-on-Behalf-of-Shareholders.html</guid>
-    </item>
-    <item>
-      <title>Google has sold so much TPU capacity that its own researchers are queueing for the rest</title>
-      <link>https://thenextweb.com/news/google-tpu-compute-internal-researchers-anthropic/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 18 May 2026 13:35:30 +0000</pubDate>
-      <guid>https://thenextweb.com/news/google-tpu-compute-internal-researchers-anthropic/</guid>
-    </item>
-    <item>
-      <title>Sony's 10th Anniversary 'Collexion' Over-Ear Headphones Leaked</title>
-      <link>https://www.macrumors.com/2026/05/18/sony-10th-anniversary-collexion-headphones-leaked/</link>
-      <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Mon, 18 May 2026 13:32:38 +0000</pubDate>
-      <guid>https://www.macrumors.com/2026/05/18/sony-10th-anniversary-collexion-headphones-leaked/</guid>
-    </item>
-    <item>
-      <title>Dust raises $40M to make AI multiplayer inside the enterprise</title>
-      <link>https://www.globenewswire.com/news-release/2026/05/18/3296726/0/en/Dust-raises-40M-to-make-AI-multiplayer-inside-the-enterprise.html</link>
-      <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Mon, 18 May 2026 13:30:00 +0000</pubDate>
-      <guid>https://www.globenewswire.com/news-release/2026/05/18/3296726/0/en/Dust-raises-40M-to-make-AI-multiplayer-inside-the-enterprise.html</guid>
-    </item>
-    <item>
-      <title>Linus Torvalds lackar på AI-buggrapporter för Linux</title>
-      <link>https://feber.se/pc/linus-torvalds-lackar-pa-ai-buggrapporter-for-linux/491878/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 18 May 2026 13:30:00 +0000</pubDate>
-      <guid>https://feber.se/pc/linus-torvalds-lackar-pa-ai-buggrapporter-for-linux/491878/</guid>
-    </item>
-    <item>
-      <title>Mattel (MAT) Slipped Due to Unexpected Incremental Spending</title>
-      <link>https://finance.yahoo.com/markets/stocks/articles/mattel-mat-slipped-due-unexpected-132718303.html</link>
+      <title>SpaceX raises Starlink prices across every consumer plan and doubles the cost of Standby Mode</title>
+      <link>https://thenextweb.com/news/starlink-price-increase-standby-mode-roam-residential/</link>
       <description></description>
       <category>xAI</category>
-      <pubDate>Mon, 18 May 2026 13:27:18 +0000</pubDate>
-      <guid>https://finance.yahoo.com/markets/stocks/articles/mattel-mat-slipped-due-unexpected-132718303.html</guid>
+      <pubDate>Mon, 18 May 2026 18:51:08 +0000</pubDate>
+      <guid>https://thenextweb.com/news/starlink-price-increase-standby-mode-roam-residential/</guid>
     </item>
     <item>
-      <title>Globant launches new $125 million share repurchase program</title>
-      <link>https://www.prnewswire.com/news-releases/globant-launches-new-125-million-share-repurchase-program-302774749.html</link>
+      <title>nvidia-nat-llama-index 1.7.0rc1</title>
+      <link>https://pypi.org/project/nvidia-nat-llama-index/1.7.0rc1/</link>
       <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Mon, 18 May 2026 13:27:00 +0000</pubDate>
-      <guid>https://www.prnewswire.com/news-releases/globant-launches-new-125-million-share-repurchase-program-302774749.html</guid>
+      <category>Meta</category>
+      <pubDate>Mon, 18 May 2026 18:47:41 +0000</pubDate>
+      <guid>https://pypi.org/project/nvidia-nat-llama-index/1.7.0rc1/</guid>
     </item>
     <item>
-      <title>mumaxplus added to PyPI</title>
-      <link>https://pypi.org/project/mumaxplus/</link>
+      <title>Show HN: Beacon - The open-source layer for local AI agent visibility</title>
+      <link>https://github.com/Asymptote-Labs/agent-beacon</link>
       <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Mon, 18 May 2026 13:20:08 +0000</pubDate>
-      <guid>https://pypi.org/project/mumaxplus/</guid>
+      <category>Anthropic</category>
+      <pubDate>Mon, 18 May 2026 18:45:55 +0000</pubDate>
+      <guid>https://github.com/Asymptote-Labs/agent-beacon</guid>
     </item>
     <item>
-      <title>Anthropic's Code With Claude Announces Managed Agents, Proactive Workflows, Capability Curve</title>
-      <link>https://www.infoq.com/news/2026/05/code-with-claude/</link>
+      <title>5 Steps to Managing Shadow AI Tools Without Slowing Down Employees</title>
+      <link>https://www.bleepingcomputer.com/news/security/5-steps-to-managing-shadow-ai-tools-without-slowing-down-employees/</link>
       <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Mon, 18 May 2026 13:14:00 +0000</pubDate>
-      <guid>https://www.infoq.com/news/2026/05/code-with-claude/</guid>
+      <category>Microsoft</category>
+      <pubDate>Mon, 18 May 2026 18:45:35 +0000</pubDate>
+      <guid>https://www.bleepingcomputer.com/news/security/5-steps-to-managing-shadow-ai-tools-without-slowing-down-employees/</guid>
     </item>
     <item>
-      <title>Could Amazon Really Hit $375 This Year? Here’s Why It’s Possible</title>
-      <link>https://247wallst.com/investing/2026/05/18/could-amazon-really-hit-375-this-year-heres-why-its-possible/</link>
+      <title>context-diff added to PyPI</title>
+      <link>https://pypi.org/project/context-diff/</link>
       <description></description>
-      <category>Amazon</category>
-      <pubDate>Mon, 18 May 2026 13:13:11 +0000</pubDate>
-      <guid>https://247wallst.com/investing/2026/05/18/could-amazon-really-hit-375-this-year-heres-why-its-possible/</guid>
+      <category>Anthropic</category>
+      <pubDate>Mon, 18 May 2026 18:44:32 +0000</pubDate>
+      <guid>https://pypi.org/project/context-diff/</guid>
     </item>
     <item>
-      <title>quality-playbook added to PyPI</title>
-      <link>https://pypi.org/project/quality-playbook/</link>
+      <title>nvidia-nat-langchain 1.7.0rc1</title>
+      <link>https://pypi.org/project/nvidia-nat-langchain/1.7.0rc1/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Mon, 18 May 2026 18:42:25 +0000</pubDate>
+      <guid>https://pypi.org/project/nvidia-nat-langchain/1.7.0rc1/</guid>
+    </item>
+    <item>
+      <title>ssafer 0.3.8</title>
+      <link>https://pypi.org/project/ssafer/0.3.8/</link>
       <description></description>
       <category>GitHub Copilot</category>
-      <pubDate>Mon, 18 May 2026 13:11:43 +0000</pubDate>
-      <guid>https://pypi.org/project/quality-playbook/</guid>
+      <pubDate>Mon, 18 May 2026 18:40:34 +0000</pubDate>
+      <guid>https://pypi.org/project/ssafer/0.3.8/</guid>
     </item>
   </channel>
 </rss>
