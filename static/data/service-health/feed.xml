@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 18 May 2026 23:17:30 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 04:21:58 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users intermittently may be unable to create Copilot Notebooks through Microsoft 365 Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1315061</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users intermittently may be unable to create Copilot Notebooks through Copilot.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1315061</guid>
-      <pubDate>Mon, 18 May 2026 19:22:41 +0000</pubDate>
-    </item>
     <item>
       <title>[Power BI] Users may be unable to access or may experience delays when accessing Microsoft Fabric</title>
       <link>https://www.aguidetocloud.com/service-health/#PB1314779</link>
@@ -35,6 +26,15 @@
       <pubDate>Sun, 17 May 2026 03:07:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Microsoft Viva] Some users may see that some Viva Engage message posting operations are failing</title>
+      <link>https://www.aguidetocloud.com/service-health/#MV1315266</link>
+      <description>[Microsoft Viva] Users may have seen that some Viva Engage message posting operations were failing.</description>
+      <category>Microsoft Viva</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MV1315266</guid>
+      <pubDate>Sat, 16 May 2026 22:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some admins' Copilot usage and chat report data may be delayed from appearing in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1312096</link>
       <description>[Microsoft Copilot (Microsoft 365)] Admins' Copilot usage and chat report data may have been delayed from appearing in the Microsoft 365 admin center.</description>
@@ -42,6 +42,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1312096</guid>
       <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users intermittently may be unable to create Copilot Notebooks through Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1315061</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users intermittently may be unable to create Copilot Notebooks through Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1315061</guid>
+      <pubDate>Fri, 15 May 2026 19:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Admins may see stale or delayed report data in the Microsoft 365 admin center</title>
@@ -57,7 +66,7 @@
       <link>https://www.aguidetocloud.com/service-health/#CW1310341</link>
       <description>[Microsoft 365 Copilot Chat] Users may have been unable to access Microsoft 365 Copilot Chat via any connection method.</description>
       <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CW1310341</guid>
       <pubDate>Thu, 14 May 2026 01:40:00 +0000</pubDate>
     </item>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1280763</guid>
       <pubDate>Tue, 14 Apr 2026 11:20:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Universal Print] Some users may be intermittently unable to create some printer shares in Universal Print</title>
-      <link>https://www.aguidetocloud.com/service-health/#UP1287359</link>
-      <description>[Universal Print] Users may have been intermittently unable to create some printer shares in Universal Print.</description>
-      <category>Universal Print</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">UP1287359</guid>
-      <pubDate>Tue, 14 Apr 2026 04:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
