@@ -2,7 +2,7 @@
 title: "M365 Agent Builder — Plain-English Guide for Business Users"
 description: "Plain-English field guide to M365 Agent Builder: what it is, 6 agents to build today, the CAPS instruction technique, and the gotchas docs miss."
 date: 2026-05-16
-lastmod: 2026-05-16
+lastmod: 2026-05-19
 card_tag: "AI Agents"
 tag_class: "ai"
 layout: "notebook"
@@ -155,14 +155,24 @@ Here's the entire workflow. Read it once, then go build something. It's quicker 
 
 Open [microsoft365.com/chat](https://microsoft365.com/chat) in your browser, or click the Copilot icon in Teams desktop.
 
-In the **left rail**, click **New agent**. <!-- SCREENSHOT-NEEDED: M365 Copilot left rail showing 'New agent' button — capture from microsoft365.com/chat -->
+<div class="living-doc-banner">
 
-You'll see two tabs at the top: **Describe** and **Configure**.
+📸 **Screenshots below were captured on 19 May 2026.** Microsoft 365 Copilot ships updates monthly — exact button positions, label wording, and dialog options can drift week to week. The shape of the flow stays the same, but if anything you see in your tenant looks different from what's pictured here, [send me a quick message](/feedback/) and I'll patch this post. Living doc, not press release.
 
-- **Describe** lets you write a natural-language description (*"I want an agent that..."*) and Agent Builder fills in the configuration for you. Good for first-time users.
-- **Configure** lets you set everything manually — name, instructions, knowledge sources, conversation starters. Use this when you know what you want.
+</div>
 
-I find *Describe → tweak in Configure* works best.
+In the **left rail**, click **New agent**.
+
+<p><img src="/images/blog/m365-agent-builder/01-new-agent-button.webp" alt="Microsoft 365 Copilot interface with the left rail showing New chat, Search, Library, then an Agents section listing Researcher, Analyst, Word, Excel — and the New agent button highlighted at the bottom of that list. The main pane reads 'Build an agent to save you time' with a 'Describe the agent you want to create' input box, a Skip to configure link, and three starter templates underneath (Plan My Day, Personal News Digest, Status Update Agent)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+> 💡 **Spotted in the same view:** a **Skip to configure** link (for when you already know what you want and don't need the chat), and three **starter templates** — *Plan My Day*, *Personal News Digest*, *Status Update Agent* — which are pre-built agents you can clone and tweak instead of starting from scratch.
+
+The Agent Builder workspace splits into two panes:
+
+- **Left pane — Describe:** a persistent chat where you tell Agent Builder what you want, in plain English. It writes back to the form on the right and you can keep refining as you go.
+- **Right pane — two tabs at the top:** **Configure** (the form where everything lives — name, instructions, knowledge sources, conversation starters) and **Try It** (a live chat to test the agent without leaving the build).
+
+I find the pattern *describe the rough idea → switch to Configure for surgical edits → Try It to test → back to Describe for big changes* works best.
 
 ### Step 2 — Tell it who it is (90 seconds)
 
@@ -177,17 +187,32 @@ Click send. Agent Builder will draft:
 - **Suggested knowledge sources** (you'll add the actual SharePoint site or files)
 - **Conversation starters** (the example prompts users see)
 
-Switch to the **Configure** tab to see and edit everything it generated. <!-- SCREENSHOT-NEEDED: Describe vs Configure tabs at the top of Agent Builder, with the right pane showing a draft agent -->
+Switch to the **Configure** tab (top right) to see and edit everything it generated. The Describe chat stays open on the left so you can ask for changes conversationally at any time.
+
+<p><img src="/images/blog/m365-agent-builder/02-describe-vs-configure-tabs.webp" alt="Agent Builder workspace split into two panes — left pane shows a Describe chat with the user's request 'Summarise unread emails from the last 24 hours from my manager and direct reports. Group by sender. Highlight anything that needs a reply today.' and Agent Builder's reply outlining the agent's goal. Right pane shows the Configure tab highlighted at the top (next to a Try It tab), with the New Agent header, an Instructions field with placeholder text, and the Knowledge section starting below. A Create button sits top right." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+> 🔍 **Quick proof Agent Builder runs on Copilot Studio under the hood:** look at the small print at the bottom of the right pane — *"Copilot Studio capabilities in M365 are processed by the Copilot Studio service."* Same engine, different audience.
 
 ### Step 3 — Point it at knowledge (2 minutes)
 
-In the **Knowledge** section, you have a few ways to add sources: <!-- SCREENSHOT-NEEDED: Knowledge section in Configure tab showing the Enter URL / Browse / Upload / Search options -->
+The **Knowledge** section is where you choose what your agent can see. The UI has four built-in connector icons at the top — SharePoint, Teams, Outlook, Web — a single input box that doubles as URL field / name search / file drop zone, and three toggles underneath that control behaviour.
 
-- **Enter URL** — paste a SharePoint site URL (max 2 levels deep, no query parameters), a OneDrive shared link, or a public website URL.
-- **Browse** — click the cloud icon to pick from SharePoint or OneDrive.
-- **Upload** — drag files from your device. Up to 20, supported formats include `.docx`, `.pdf`, `.pptx`, `.txt`, `.xls`, `.xlsx` <!-- LAB-VERIFY: confirm .csv still supported in upload UI — MS Learn omits it from the file-types table -->.
-- **Search bar** — type a name to find SharePoint sites, files, or Teams chats.
-- For **email** or **Teams**, search for *"My emails"* or *"My Teams chats and meetings"*.
+<p><img src="/images/blog/m365-agent-builder/03-knowledge-section-options.webp" alt="Knowledge section in Agent Builder showing the heading 'Add files, meetings, chats, emails, and websites' with four connector icons in a row — SharePoint, Teams, Outlook, and Web (globe). Below them is an input box reading 'Enter a URL or name or drop files here' with an upload arrow and OneDrive cloud icon on the right. Three toggle rows follow — 'Search all websites' (off), 'Only use specified sources' (off), and 'Reference org chart and profile info' (on by default, highlighted blue). At the bottom an 'Add other data sources' dropdown shows four more connector icons including ServiceNow." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+Here's how to wire up each kind of source:
+
+- **SharePoint / OneDrive** — click the **OneDrive cloud icon** on the right of the input, or paste a SharePoint site URL (max 2 levels deep, no query parameters), or paste a OneDrive shared link.
+- **Upload files** — drag files into the input box, or click the **upload arrow** next to the cloud icon. Up to 20 files per agent. Supported formats: `.doc`, `.docx`, `.pdf`, `.ppt`, `.pptx`, `.txt`, `.xls`, `.xlsx`. **Not in the file picker:** `.md` files (rename to `.txt` first) and `.csv` files (export to `.xlsx` first — the picker filters them out without showing why).
+- **Search by name** — type a SharePoint site, file name, or Teams chat name to find it.
+- **Email / Teams** — type *"My emails"* or *"My Teams chats and meetings"* to wire up those sources.
+- **Public websites** — paste any public URL.
+- **Other connectors** — expand **"Add other data sources"** at the bottom. **ServiceNow** is one of the built-in options; your tenant may show more depending on which connectors your admin has enabled.
+
+Three toggles sit below the input — they're easy to miss but they change how the agent behaves:
+
+- **Search all websites** *(off by default)* — when on, the agent can search the open web, not just URLs you listed. Useful for current-events agents; risky for policy bots.
+- **Only use specified sources** *(off by default)* — when on, the agent will **not** fall back to general M365 knowledge or web. Useful for tightly scoped policy bots where any answer outside your documents would be a problem.
+- **Reference org chart and profile info** *(on by default — heads-up)* — lets the agent know who reports to whom, job titles, and basic profile data. Convenient for "who owns this?" agents; turn it off if your agent shouldn't surface org structure.
 
 > 💡 **Tip:** Files take a minute or two to index. You'll see a *"Preparing"* status next to anything still being processed. You can keep building — just don't test on that file's content until it's ready.
 
@@ -219,13 +244,17 @@ Professional, concise, friendly.
 
 ### Step 5 — Test, then share (60 seconds)
 
-The **right pane** is a live test conversation. Try the conversation starters. Ask the agent something out of scope. See how it handles it.
+Click the **Try It** tab (top right, next to Configure) to open a live test conversation. Try the conversation starters. Ask the agent something out of scope. See how it handles it. You can flip back to Configure mid-test to tweak instructions, then jump straight back to Try It.
 
-When you're happy, click **Create** (top right), then **Share**: <!-- SCREENSHOT-NEEDED: Share dialog showing the three options — Only me / Specific people / Anyone in your organisation -->
+When you're happy, click **Create** (top right), then **Share** to open the sharing dialog. The default is **Only you** — flip it to wider access only after you've tested in *Try It*.
 
-- **Only me** — private, just for you
-- **Specific people** — name individuals or security groups
-- **Anyone in your organisation** — tenant-wide
+<p><img src="/images/blog/m365-agent-builder/04-share-dialog-options.webp" alt="Share dialog for an Agent Builder agent. The title reads 'Share Q2 Manager Email Daily Digest1' (the name has been capped to 30 characters by the UI). Underneath the heading 'This agent is available to' there are three radio button options — 'Anyone in your organization', 'Specific users in your organization', and 'Only you' (selected as the default). Apply and Cancel buttons at the bottom right." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+Using the exact labels you'll see in the UI:
+
+- **Only you** — private, just for you *(the default)*
+- **Specific users in your organization** — name individuals or security groups
+- **Anyone in your organization** — tenant-wide
 
 The agent now lives in your left rail. So do your colleagues' versions once they share with you.
 
@@ -755,10 +784,10 @@ Think of it like a job spec. The bulk of the spec describes the role positively.
 
 ### Hard limits to remember
 
-- **Instructions:** 8,000 characters (roughly 1,200–1,400 words) — generous, but fills faster than you'd think
-- **Agent name:** 30 characters in the M365 Copilot UI (100 in the Microsoft 365 Agents Toolkit) <!-- LAB-VERIFY: try a 31-char display name in M365 Copilot UI -->
-- **Description:** ≤ 1,000 characters <!-- LAB-VERIFY: try an over-length description -->
-- **Conversation starters:** no documented minimum, no documented max — the UI tends to show ~4 prominently <!-- LAB-VERIFY: try adding many conversation starters; what does UI show? -->
+- **Instructions:** 8,000 characters (roughly 1,200–1,400 words) — generous, but fills faster than you'd think. The UI hard-stops you at 8,000.
+- **Agent name:** 30 characters in the M365 Copilot UI (100 in the Microsoft 365 Agents Toolkit). The UI silently truncates a longer name to 30 — you'll only notice when the Share dialog shows the trimmed version.
+- **Description:** 1,000 characters. The UI shows a live counter (`X/1000`) and refuses to save with the error *"You've exceeded the character limit."*
+- **Conversation starters:** **maximum 12** (the UI blocks the 13th). End users typically see the first 4 prominently in the agent's intro card, with the rest behind a *"More starters"* link.
 
 > 💡 **Tip:** Don't try to fill the 8,000 characters. Tight instructions perform better than verbose ones. Aim for 1,500–3,000 characters; use the rest as a safety margin.
 
@@ -933,7 +962,7 @@ This is by design (it makes agents portable) but it's the privacy point most peo
 
 > ⚠️ **Practical rule:** If you uploaded a Confidential-labelled file, anyone who wants to use your agent needs extract rights to Confidential. You'll lose testers if you're not careful. <!-- LAB-VERIFY: upload Confidential + General labelled files; confirm whole agent inherits Confidential -->
 
-**Supported formats:** `.doc`, `.docx`, `.pdf`, `.ppt`, `.pptx`, `.txt`, `.xls`, `.xlsx`. Max 512 MB for most; **30 MB for Excel**. `.md` files are not supported — rename them to `.txt` first. <!-- LAB-VERIFY: confirm .csv still supported in UI (MS Learn omits from file-types table); confirm .md still rejected with same workaround -->
+**Supported formats:** `.doc`, `.docx`, `.pdf`, `.ppt`, `.pptx`, `.txt`, `.xls`, `.xlsx`. Max 512 MB for most; **30 MB for Excel**. **Filtered out of the file picker** (you won't even see them when browsing): `.md` (rename to `.txt` first) and `.csv` (export to `.xlsx` first). Lab-verified May 2026.
 
 ### Email — useful, but all-or-nothing
 
@@ -1143,4 +1172,4 @@ You've now got the mental model, the build flow, the instruction template, the C
 
 ---
 
-🔄 *This is a living document. The Agent Builder feature set is shipping monthly — if anything here is out of date, [send me feedback](/feedback/) and I'll patch it. Last verified: May 2026. Lab-test items pending verification in tenant — search this page for `LAB-VERIFY` to find them.*
+🔄 *This is a living document. The Agent Builder feature set ships updates every month — UI labels, button positions, and dialog options drift week to week. If you spot anything out of date in your tenant, [send me a quick message](/feedback/) and I'll patch it the same week. Last verified in tenant: **19 May 2026**. Some "what's new in 2026" items are still pending lab verification — search this page for `LAB-VERIFY` to find them.*
