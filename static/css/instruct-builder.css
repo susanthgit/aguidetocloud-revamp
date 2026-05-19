@@ -205,3 +205,55 @@ textarea.instruct-input{resize:vertical;min-height:2.6rem}
 
 /* Responsive */
 @media(max-width:640px){.instruct-page{padding:0 .75rem 2rem}.instruct-form{padding:.8rem}.instruct-tpl-grid{grid-template-columns:1fr}.instruct-output-text{font-size:.78rem;padding:.7rem;max-height:350px}.instruct-output-actions{flex-direction:column}.instruct-output-actions .instruct-btn{width:100%;justify-content:center}.instruct-score{flex-direction:column;text-align:center}.instruct-score-breakdown{grid-template-columns:1fr}}
+
+/* ═══════════════════════════════════════════════════════════════
+   v4 ADDITIONS — Zen redesign (May 2026)
+   Platform pills · Custom tone · Section icons · Quick-add chips ·
+   Strength badge · CAPS badge · Helper text
+   ═══════════════════════════════════════════════════════════════ */
+
+/* v4 marker */
+.instruct-page.instruct-v4{max-width:1100px}
+
+/* Platform pills (replaces dropdown) — mirrors .instruct-tone-pill pattern */
+.instruct-platform-group{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.4rem}
+.instruct-platform-pill{cursor:pointer}
+.instruct-platform-pill input{display:none}
+.instruct-platform-pill span{display:inline-block;padding:.4rem .9rem;border-radius:var(--radius-lg,16px);font-size:.8rem;font-weight:600;color:var(--text-tertiary);background:var(--bg-elevated);border:1px solid var(--border);transition:color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out}
+.instruct-platform-pill:hover span{color:var(--text-primary);background:var(--bg-elevated)}
+.instruct-platform-pill input:checked+span{color:var(--accent-foreground);background:var(--instruct-accent);border-color:var(--instruct-accent);box-shadow:0 2px 8px var(--accent-subtle)}
+
+/* Helper text — small subtitle under controls */
+.instruct-helper-text{margin:.4rem 0 0;font-size:.72rem;color:var(--text-muted);line-height:1.5}
+
+/* Tone — custom override link */
+.instruct-tone-custom-link{display:inline-block;margin-top:.5rem;font-size:.74rem;color:var(--instruct-accent);text-decoration:none;cursor:pointer;font-weight:500}
+.instruct-tone-custom-link:hover{text-decoration:underline}
+#tone-custom-field{margin-top:.5rem}
+
+/* Section icon prefix in details summaries */
+.instruct-section-icon{display:inline-flex;align-items:center;justify-content:center;width:1.2em;font-size:1em}
+.instruct-section-body{padding-top:.25rem}
+
+/* Quick-add chips above Additional rules */
+.instruct-quickadds{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.6rem}
+.instruct-quickadd-chip{background:var(--bg-elevated);border:1px solid var(--border);color:var(--text-tertiary);font-size:.74rem;font-weight:500;padding:.3rem .65rem;border-radius:var(--radius-lg,16px);cursor:pointer;font-family:inherit;transition:color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out}
+.instruct-quickadd-chip:hover{color:var(--text-primary);background:var(--accent-subtle);border-color:var(--instruct-accent)}
+
+/* Strength badge (replaces 5-dim score ring) */
+.instruct-strength{padding:.55rem .9rem;border-radius:8px;font-size:.82rem;font-weight:500;margin-bottom:.75rem;border:1px solid var(--border);background:var(--bg-elevated);color:var(--text-secondary);line-height:1.5}
+.instruct-strength strong{color:var(--text-primary);font-weight:700}
+.instruct-strength-strong{border-color:var(--success,#22c55e);background:color-mix(in srgb,var(--success,#22c55e) 8%,var(--bg-elevated))}
+.instruct-strength-strong strong{color:var(--success,#22c55e)}
+.instruct-strength-moderate{border-color:var(--instruct-accent);background:color-mix(in srgb,var(--instruct-accent) 6%,var(--bg-elevated))}
+.instruct-strength-moderate strong{color:var(--instruct-accent)}
+.instruct-strength-weak{border-color:var(--warning,#fb923c);background:color-mix(in srgb,var(--warning,#fb923c) 8%,var(--bg-elevated))}
+.instruct-strength-weak strong{color:var(--warning,#fb923c)}
+
+/* CAPS technique badge — links to blog */
+.instruct-caps-badge{display:block;margin-top:.75rem;padding:.6rem .85rem;background:var(--accent-subtle);border:1px solid var(--instruct-accent);border-radius:8px;color:var(--text-secondary);font-size:.78rem;line-height:1.5;text-decoration:none;transition:background-color 200ms ease-out, border-color 200ms ease-out}
+.instruct-caps-badge:hover{background:color-mix(in srgb,var(--instruct-accent) 15%,var(--bg-elevated));border-color:var(--instruct-accent)}
+.instruct-caps-badge strong{color:var(--instruct-accent);font-weight:600}
+
+/* Tighten responsive grid for platform pills on small screens */
+@media(max-width:640px){.instruct-platform-group{flex-direction:column}.instruct-platform-pill span{display:block;text-align:center}}

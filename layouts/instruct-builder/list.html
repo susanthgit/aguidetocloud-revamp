@@ -18,21 +18,17 @@
 }
 </script>
 
-
-
-<div class="instruct-page instruct-v3 zt-page">
+<div class="instruct-page instruct-v4 zt-page">
 
 {{ partial "tool-header.html" (dict "page" . "title" "Agent Instruction Builder") }}
 
-
   {{/* Keyboard hint */}}
-  <div class="instruct-kbd-bar"><kbd>Tab</kbd> fields · <kbd>Ctrl+Enter</kbd> generate · <kbd>?</kbd> shortcuts</div>
+  <div class="instruct-kbd-bar"><kbd>Tab</kbd> fields · <kbd>Ctrl+Enter</kbd> generate</div>
 
-  {{/* ── Glass Pill Tabs ── */}}
+  {{/* Tabs */}}
   <div class="instruct-tabs" role="tablist" aria-label="Agent Instruction Builder sections">
     <button class="instruct-tab active" data-tab="build" role="tab" aria-selected="true">Build</button>
     <button class="instruct-tab" data-tab="templates" role="tab" aria-selected="false">Templates</button>
-    <button class="instruct-tab" data-tab="quiz" role="tab" aria-selected="false">Which Platform?</button>
     <button class="instruct-tab" data-tab="faq" role="tab" aria-selected="false">FAQ</button>
   </div>
 
@@ -44,13 +40,18 @@
       <div class="instruct-split-form">
         <div class="instruct-form" id="instruct-form">
 
+          {{/* Platform selector */}}
           <div class="instruct-field">
-            <label for="instruct-platform">Platform</label>
-            <select id="instruct-platform" class="instruct-select">
+            <label>Output for which platform?</label>
+            <div class="instruct-platform-group" role="radiogroup" aria-label="Output platform">
               {{ range $platforms }}
-              <option value="{{ .id }}">{{ .icon }} {{ .name }} ({{ .char_limit | lang.FormatNumber 0 }} chars)</option>
+              <label class="instruct-platform-pill">
+                <input type="radio" name="instruct-platform" value="{{ .id }}"{{ if eq .id "m365" }} checked{{ end }}>
+                <span>{{ .icon }} {{ .name }}</span>
+              </label>
               {{ end }}
-            </select>
+            </div>
+            <p class="instruct-helper-text">M365 for Microsoft 365 work agents · Studio for workflows + actions · ChatGPT for public GPTs · Claude for research/writing · Assistants for custom apps</p>
           </div>
 
           <div class="instruct-field">
@@ -60,7 +61,7 @@
 
           <div class="instruct-field">
             <label for="instruct-purpose">What should your agent do? <span class="instruct-required">*</span></label>
-            <textarea id="instruct-purpose" class="instruct-input" rows="3" placeholder="e.g. Help employees troubleshoot IT issues like password resets, VPN problems, and software installation"></textarea>
+            <textarea id="instruct-purpose" class="instruct-input" rows="3" placeholder="e.g. Help employees triage their inbox every morning, group by sender relationship, highlight what needs a reply today"></textarea>
           </div>
 
           <div class="instruct-field">
@@ -73,6 +74,10 @@
               <label class="instruct-tone-pill"><input type="radio" name="instruct-tone" value="formal"><span>Formal</span></label>
             </div>
             <div class="instruct-tone-desc" id="tone-desc"></div>
+            <a href="#" id="tone-custom-toggle" class="instruct-tone-custom-link">Or write your own tone</a>
+            <div id="tone-custom-field" style="display:none">
+              <input type="text" id="instruct-tone-custom" class="instruct-input" placeholder="e.g. Crisp, scan-friendly. No flattery, morning chief-of-staff.">
+            </div>
           </div>
 
           <div class="instruct-field">
@@ -85,40 +90,68 @@
             <textarea id="instruct-knowledge" class="instruct-input" rows="2" placeholder="e.g. IT knowledge base, Microsoft 365 docs, VPN setup guides, approved software list"></textarea>
           </div>
 
-          {{/* Example Q&A (collapsible) */}}
+          {{/* Output format scaffold */}}
+          <details class="instruct-section-toggle" id="section-output-format">
+            <summary><span class="instruct-section-icon">📐</span> Output format scaffold <span class="instruct-optional">(optional)</span></summary>
+            <div class="instruct-section-body">
+              <textarea id="instruct-output-format" class="instruct-input" rows="6" placeholder="e.g. Group emails into 5 buckets:&#10;## 🔥 Manager / skip-level&#10;## 👥 Direct reports&#10;## 🤝 Peers&#10;## 🌍 External&#10;## 📰 Newsletters&#10;If empty, write '(nothing today)'..."></textarea>
+              <p class="instruct-helper-text">For digests, reports, or structured outputs — specify exact section headings, bullet styles, or formatting rules</p>
+            </div>
+          </details>
+
+          {{/* Schedule / autonomous behaviour */}}
+          <details class="instruct-section-toggle" id="section-schedule">
+            <summary><span class="instruct-section-icon">🕐</span> Behaviour when triggered automatically <span class="instruct-optional">(optional)</span></summary>
+            <div class="instruct-section-body">
+              <textarea id="instruct-schedule" class="instruct-input" rows="3" placeholder="e.g. When triggered by scheduled prompt, ALWAYS open with: 'Good morning [USER]. Here's your briefing for {today's date}...' Then deliver the digest without asking follow-up questions."></textarea>
+              <p class="instruct-helper-text">For scheduled prompts or autonomous runs — opener, time-range awareness, no follow-up questions</p>
+            </div>
+          </details>
+
+          {{/* Examples */}}
           <details class="instruct-section-toggle" id="section-examples">
-            <summary>{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Example Interactions <span class="instruct-optional">(recommended)</span></summary>
-            <div class="instruct-examples">
+            <summary><span class="instruct-section-icon">💬</span> Example interactions <span class="instruct-optional">(recommended)</span></summary>
+            <div class="instruct-section-body">
               <div class="instruct-example-pair">
-                <div class="instruct-field"><label>User question <span class="instruct-badge-good">Happy path</span></label>
-                  <input type="text" id="ex-user-1" class="instruct-input" placeholder="e.g. How do I reset my password?"></div>
-                <div class="instruct-field"><label>Ideal response</label>
-                  <textarea id="ex-agent-1" class="instruct-input" rows="2" placeholder="e.g. To reset your password, go to portal.office.com..."></textarea></div>
+                <div class="instruct-field">
+                  <label for="ex-user-1">User question <span class="instruct-badge-good">Happy path</span></label>
+                  <input type="text" id="ex-user-1" class="instruct-input" placeholder="e.g. How do I reset my password?">
+                </div>
+                <div class="instruct-field">
+                  <label for="ex-agent-1">Ideal response</label>
+                  <textarea id="ex-agent-1" class="instruct-input" rows="2" placeholder="e.g. To reset your password, go to portal.office.com..."></textarea>
+                </div>
               </div>
               <div class="instruct-example-pair">
-                <div class="instruct-field"><label>User question <span class="instruct-badge-refuse">Out of scope</span></label>
-                  <input type="text" id="ex-user-2" class="instruct-input" placeholder="e.g. Can you give me admin access?"></div>
-                <div class="instruct-field"><label>Ideal refusal</label>
-                  <textarea id="ex-agent-2" class="instruct-input" rows="2" placeholder="e.g. I can't grant access directly. Please contact your IT admin..."></textarea></div>
+                <div class="instruct-field">
+                  <label for="ex-user-2">User question <span class="instruct-badge-refuse">Out of scope</span></label>
+                  <input type="text" id="ex-user-2" class="instruct-input" placeholder="e.g. Can you give me admin access?">
+                </div>
+                <div class="instruct-field">
+                  <label for="ex-agent-2">Ideal refusal</label>
+                  <textarea id="ex-agent-2" class="instruct-input" rows="2" placeholder="e.g. I can't grant access directly. Please contact your IT admin..."></textarea>
+                </div>
               </div>
             </div>
           </details>
 
-          {{/* Custom Blocks (collapsible) */}}
-          <details class="instruct-section-toggle" id="section-blocks">
-            <summary>🧱 Custom Sections <span class="instruct-optional">(optional)</span></summary>
-            <div class="instruct-blocks" id="blocks-container">
-              <label class="instruct-block-toggle"><input type="checkbox" data-block="greeting"><span>👋 Greeting Message</span></label>
-              <label class="instruct-block-toggle"><input type="checkbox" data-block="escalation"><span>🚨 Escalation Rules</span></label>
-              <label class="instruct-block-toggle"><input type="checkbox" data-block="formatting"><span>{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Response Format</span></label>
-              <label class="instruct-block-toggle"><input type="checkbox" data-block="language"><span>🌐 Language / Locale</span></label>
-              <div id="blocks-fields"></div>
+          {{/* Additional rules */}}
+          <details class="instruct-section-toggle" id="section-additional">
+            <summary><span class="instruct-section-icon">📝</span> Additional rules <span class="instruct-optional">(optional)</span></summary>
+            <div class="instruct-section-body">
+              <div class="instruct-quickadds">
+                <button type="button" class="instruct-quickadd-chip" data-scaffold="greeting">+ Greeting</button>
+                <button type="button" class="instruct-quickadd-chip" data-scaffold="escalation">+ Escalation</button>
+                <button type="button" class="instruct-quickadd-chip" data-scaffold="formatting">+ Formatting</button>
+                <button type="button" class="instruct-quickadd-chip" data-scaffold="language">+ Language</button>
+              </div>
+              <textarea id="instruct-additional" class="instruct-input" rows="3" placeholder="Any other rules — greeting wording, escalation triggers, formatting preferences, locale settings. Click a chip above to add a scaffold."></textarea>
             </div>
           </details>
 
           <div class="instruct-form-actions">
-            <button class="instruct-btn instruct-btn-generate" id="btn-generate">{{ partial "icon.html" (dict "name" "bolt" "size" 14 "stroke" 1.5) }} Generate Instructions</button>
-            <button class="instruct-btn instruct-btn-example" id="btn-try-example">{{ partial "icon.html" (dict "name" "lightbulb" "size" 14 "stroke" 1.5) }} Try Example</button>
+            <button class="instruct-btn instruct-btn-generate" id="btn-generate" type="button">⚡ Generate Instructions</button>
+            <button class="instruct-btn instruct-btn-example" id="btn-try-example" type="button">💡 Try Example</button>
           </div>
         </div>
       </div>
@@ -126,89 +159,35 @@
       {{/* ── RIGHT: Live Preview ── */}}
       <div class="instruct-split-preview" id="preview-pane">
         <div class="instruct-preview-empty" id="preview-empty">
-          <div class="instruct-preview-empty-icon">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }}</div>
+          <div class="instruct-preview-empty-icon">📝</div>
           <p>Start typing to see a live preview</p>
           <p class="instruct-subtle">Or click <strong>Try Example</strong> to see it in action</p>
         </div>
 
         <div class="instruct-preview-content" id="preview-content" style="display:none">
-          {{/* Quality Score */}}
-          <div class="instruct-score" id="score-section">
-            <div class="instruct-score-ring-wrap">
-              <svg class="instruct-score-ring" viewBox="0 0 100 100">
-                <circle class="instruct-score-bg" cx="50" cy="50" r="42"/>
-                <circle class="instruct-score-fill" id="score-fill" cx="50" cy="50" r="42"/>
-              </svg>
-              <div class="instruct-score-num" id="score-num">0</div>
-            </div>
-            <div class="instruct-score-breakdown" id="score-breakdown"></div>
-          </div>
+          <div class="instruct-strength" id="strength-badge" aria-live="polite"></div>
 
-          {{/* Platform mini-tabs */}}
-          <div class="instruct-ptabs" id="platform-tabs">
-            {{ range $platforms }}
-            <button class="instruct-ptab" data-pid="{{ .id }}" title="{{ .name }}">{{ .icon }}</button>
-            {{ end }}
-          </div>
-
-          {{/* Char count + limit */}}
           <div class="instruct-output-meta">
             <span class="instruct-output-badge" id="output-badge"></span>
             <span class="instruct-output-chars" id="output-chars"></span>
           </div>
           <div class="instruct-output-limit" id="output-limit" style="display:none"></div>
 
-          {{/* Output text (editable) */}}
-          <textarea class="instruct-output-text" id="output-text" rows="18" spellcheck="false"></textarea>
+          <textarea class="instruct-output-text" id="output-text" rows="18" spellcheck="false" aria-label="Generated agent instructions"></textarea>
 
-          {{/* Actions */}}
           <div class="instruct-output-actions">
-            <button class="instruct-btn instruct-btn-primary" id="btn-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy</button>
-            <button class="instruct-btn" id="btn-download-all" title="Export for all platforms">⬇ Export All</button>
-            <button class="instruct-btn" id="btn-optimize" title="Shorten without losing meaning">✂ Optimize</button>
-            <button class="instruct-btn" id="btn-share" title="Share as link">{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share</button>
-            <button class="instruct-btn" id="btn-history" title="View version history">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }} History</button>
-            <button class="instruct-btn" id="btn-start-over">↺ Reset</button>
+            <button class="instruct-btn instruct-btn-primary" id="btn-copy" type="button">📋 Copy</button>
+            <button class="instruct-btn" id="btn-start-over" type="button">↺ Reset</button>
           </div>
 
-          {{/* Starters */}}
+          <a class="instruct-caps-badge" href="/blog/m365-agent-builder-explained/#caps">
+            <strong>✓ Uses the CAPS technique</strong> — clear CAPS keywords, exact fallback text, positive redirects →
+          </a>
+
           <div class="instruct-starters" id="output-starters" style="display:none">
-            <h4>{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Suggested Conversation Starters</h4>
+            <h4>💬 Suggested conversation starters</h4>
             <div class="instruct-starters-list" id="starters-list"></div>
           </div>
-
-          {{/* Tips */}}
-          <div class="instruct-tips" id="output-tips"></div>
-        </div>
-      </div>
-    </div>
-
-    {{/* History Drawer */}}
-    <div class="instruct-drawer" id="history-drawer" style="display:none">
-      <div class="instruct-drawer-header">
-        <h4>{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }} Version History</h4>
-        <button class="instruct-btn instruct-btn-sm" id="btn-history-close">✕ Close</button>
-      </div>
-      <div class="instruct-drawer-body" id="history-list"></div>
-    </div>
-
-    {{/* Diff View */}}
-    <div class="instruct-drawer" id="diff-drawer" style="display:none">
-      <div class="instruct-drawer-header">
-        <h4>{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} What Changed</h4>
-        <button class="instruct-btn instruct-btn-sm" id="btn-diff-close">✕ Close</button>
-      </div>
-      <div class="instruct-drawer-body instruct-diff-content" id="diff-content"></div>
-    </div>
-
-    {{/* Share Modal */}}
-    <div class="instruct-share-modal" id="share-modal" style="display:none">
-      <div class="instruct-share-inner">
-        <h4>{{ partial "icon.html" (dict "name" "link" "size" 14 "stroke" 1.5) }} Share Your Agent Instructions</h4>
-        <input type="text" class="instruct-input" id="share-url" readonly>
-        <div class="instruct-share-actions">
-          <button class="instruct-btn instruct-btn-primary" id="btn-share-copy">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} Copy Link</button>
-          <button class="instruct-btn" id="btn-share-close">Close</button>
         </div>
       </div>
     </div>
@@ -220,21 +199,7 @@
     <div class="instruct-tpl-grid" id="tpl-grid"></div>
   </div>
 
-  {{/* ══════════ TAB 3: PLATFORM QUIZ ══════════ */}}
-  <div class="instruct-panel" id="panel-quiz" role="tabpanel">
-    <div class="instruct-quiz" id="quiz-container">
-      <div class="instruct-quiz-intro" id="quiz-intro">
-        <div class="instruct-quiz-icon">{{ partial "icon.html" (dict "name" "question" "size" 14 "stroke" 1.5) }}</div>
-        <h3>Which platform is right for you?</h3>
-        <p>Answer 3 quick questions to find your best fit.</p>
-        <button class="instruct-btn instruct-btn-primary" id="btn-quiz-start">Start Quiz</button>
-      </div>
-      <div id="quiz-body" style="display:none"></div>
-      <div id="quiz-result" style="display:none"></div>
-    </div>
-  </div>
-
-  {{/* ══════════ TAB 4: FAQ ══════════ */}}
+  {{/* ══════════ TAB 3: FAQ ══════════ */}}
   <div class="instruct-panel" id="panel-faq" role="tabpanel">
     <div class="zt-faq-wrap">
       {{ range .Params.faq }}
@@ -248,9 +213,9 @@
 
 </div>
 
-  <nav class="zt-nav" aria-label="Tools navigation">
-    <a href="/free-tools/">← All Tools</a>
-  </nav>
+<nav class="zt-nav" aria-label="Tools navigation">
+  <a href="/free-tools/">← All Tools</a>
+</nav>
 
 <script>
 window.__instructPlatforms = {{ $platforms | jsonify | safeJS }};

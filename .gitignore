@@ -40,3 +40,8 @@ scripts/og-generator-cert/node_modules/
 scripts/og-generator-cert/.og-cert-cache.json
 scripts/og-generator-cert/.og-practice-cache.json
 scripts/og-generator-cert/package-lock.json
+
+# Playwright
+test-results/
+playwright-report/
+
