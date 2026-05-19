@@ -817,6 +817,12 @@ function generateStarters(data) {
 }
 
 /* === Live preview === */
+function updateEmptyHint() {
+  var form = $('instruct-form');
+  if (!form) return;
+  var p = ($('instruct-purpose') ? $('instruct-purpose').value : '').trim();
+  form.classList.toggle('is-empty', !p);
+}
 function renderNextStep(config) {
   var el = $('next-step-cta');
   if (!el) return;
@@ -902,6 +908,7 @@ function downloadMarkdown() {
 
 function triggerLivePreview() {
   var data = getFormData();
+  updateEmptyHint();
   if (!data.purpose) {
     $('preview-empty').style.display = 'block';
     $('preview-content').style.display = 'none';

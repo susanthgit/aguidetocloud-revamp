@@ -344,3 +344,72 @@ textarea.instruct-input{resize:vertical;min-height:2.6rem}
   /* Move next-step CTA up on mobile: visual priority after the output */
 }
 
+/* Quickstart bar — pin Try Example + Reset to top of form (cold-user attraction) */
+.instruct-quickstart { display: flex; gap: .5rem; align-items: stretch; margin-bottom: 1rem; }
+.instruct-btn-tryexample {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  justify-content: flex-start;
+  padding: .65rem .85rem;
+  background: color-mix(in srgb, var(--instruct-accent) 8%, var(--bg-elevated));
+  border: 1.5px solid var(--instruct-accent);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: .88rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 200ms ease-out, transform 200ms ease-out, box-shadow 200ms ease-out, border-color 200ms ease-out;
+  position: relative;
+  overflow: hidden;
+}
+.instruct-btn-tryexample:hover {
+  background: color-mix(in srgb, var(--instruct-accent) 18%, var(--bg-elevated));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px var(--accent-subtle);
+}
+.instruct-quickstart-icon { font-size: 1.05rem; }
+.instruct-quickstart-label { font-weight: 700; color: var(--instruct-accent); }
+.instruct-quickstart-hint { font-weight: 400; color: var(--text-tertiary); font-size: .8rem; margin-left: auto; }
+.instruct-btn-reset {
+  flex-shrink: 0;
+  padding: .55rem .85rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--text-tertiary);
+  font-size: .82rem;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out;
+}
+.instruct-btn-reset:hover {
+  color: var(--text-primary);
+  background: color-mix(in srgb, var(--warning, #fb923c) 8%, var(--bg-elevated));
+  border-color: color-mix(in srgb, var(--warning, #fb923c) 40%, var(--border));
+}
+
+/* Subtle invite-pulse on Try Example WHILE the form is empty (no purpose typed yet) */
+.instruct-form.is-empty .instruct-btn-tryexample {
+  animation: instruct-invite 2.6s ease-out infinite;
+}
+@keyframes instruct-invite {
+  0%, 100% { box-shadow: 0 0 0 0 transparent; }
+  50%      { box-shadow: 0 0 0 5px var(--accent-subtle); }
+}
+@media(prefers-reduced-motion: reduce) {
+  .instruct-form.is-empty .instruct-btn-tryexample { animation: none; }
+}
+
+/* Mobile: hide the long hint, keep buttons full-width and tap-friendly */
+@media(max-width:640px) {
+  .instruct-quickstart { gap: .4rem; }
+  .instruct-quickstart-hint { display: none; }
+  .instruct-btn-tryexample { padding: .6rem .7rem; font-size: .85rem; justify-content: center; }
+  .instruct-btn-tryexample .instruct-quickstart-label { margin-left: 0; }
+  .instruct-btn-reset { padding: .55rem .7rem; font-size: .78rem; }
+}
+

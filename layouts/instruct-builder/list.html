@@ -40,6 +40,18 @@
       <div class="instruct-split-form">
         <div class="instruct-form" id="instruct-form">
 
+          {{/* Quickstart bar — Try Example (primary attraction) + Reset (secondary) */}}
+          <div class="instruct-quickstart">
+            <button class="instruct-btn instruct-btn-tryexample" id="btn-try-example" type="button">
+              <span class="instruct-quickstart-icon">💡</span>
+              <span class="instruct-quickstart-label">Try an example</span>
+              <span class="instruct-quickstart-hint">— see a finished agent in 1 click</span>
+            </button>
+            <button class="instruct-btn instruct-btn-reset" id="btn-start-over" type="button" title="Clear all fields and start over">
+              <span aria-hidden="true">↺</span> Reset
+            </button>
+          </div>
+
           {{/* Platform selector */}}
           <div class="instruct-field">
             <label>Output for which platform?</label>
@@ -153,7 +165,6 @@
 
           <div class="instruct-form-actions">
             <button class="instruct-btn instruct-btn-generate" id="btn-generate" type="button">⚡ Generate Instructions</button>
-            <button class="instruct-btn instruct-btn-example" id="btn-try-example" type="button">💡 Try Example</button>
           </div>
         </div>
       </div>
@@ -211,7 +222,6 @@ Group emails into 5 buckets:
           <div class="instruct-output-actions">
             <button class="instruct-btn instruct-btn-primary" id="btn-copy" type="button">📋 Copy</button>
             <button class="instruct-btn" id="btn-download-md" type="button">⬇️ Download .md</button>
-            <button class="instruct-btn" id="btn-start-over" type="button">↺ Reset</button>
           </div>
 
           <a class="instruct-next-step" id="next-step-cta" href="#" target="_blank" rel="noopener" style="display:none"></a>
