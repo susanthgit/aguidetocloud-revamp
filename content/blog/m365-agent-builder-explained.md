@@ -738,6 +738,8 @@ OneDrive is now its own knowledge-source slot, with a separate **50-file cap** t
 
 > 💬 **Findings I'd love to publish:** Does OneDrive permissions flow through the same way as SharePoint (each user sees only what they're entitled to)? Are there file-type restrictions specific to OneDrive vs SharePoint? What happens when a OneDrive owner shares the file with the agent's users vs not? <!-- LAB-VERIFY: OneDrive 50-file cap + per-user permission inheritance -->
 
+> 🔍 **What about MCP Apps?** You may have heard about **MCP Apps** — the new interactive-UI capability (forms, dashboards, approval cards rendering inside Copilot chat) landing in 2026. **It's not an Agent Builder feature.** MCP Apps are built **in code**, with the **Microsoft 365 Agents Toolkit** (the SDK + VS Code extension we called out in [Not the same as...](#not-same) above). When and if the capability lands in the no-code Agent Builder UI, this guide will be updated. Until then — different track, different audience.
+
 ---
 
 > 💌 **Reminder — this is a living document.** As features ship and readers test them, I patch this guide. If you've tried any of the above in your tenant and want to share what you found — screenshots, surprises, "it didn't work for me because..." — [send me feedback](/feedback/) and I'll credit you in the post update. The findings from real-world tests are how this guide gets better month after month.
