@@ -83,7 +83,7 @@ If you need to compare it side-by-side with Copilot Studio or Azure AI Foundry, 
 5. [Your first agent in 5 minutes](#first-agent)
 6. [6 example agents](#examples)
 
-📚 **Deep dives:** [Instructions](#instructions) · [CAPS technique](#caps) · [Knowledge sources](#knowledge) · [Sharing & privacy](#sharing) · [Troubleshooting](#troubleshooting) · [Licensing & admin](#licensing) · [What's new in 2026](#whats-new) · [When to graduate](#graduate) · [Where to next](#next)
+📚 **Deep dives:** [Troubleshooting](#troubleshooting) · [Instructions](#instructions) · [CAPS technique](#caps) · [Knowledge sources](#knowledge) · [Sharing & privacy](#sharing) · [Licensing & admin](#licensing) · [What's new in 2026](#whats-new) · [When to graduate](#graduate) · [Where to next](#next)
 
 🤝 *Also covered:* [What it is](#what-it-is) · [Why it exists](#why-it-exists) · [What to build first](#what-first) · [3 rookie mistakes](#rookies) · [Not the same as…](#not-same)
 
@@ -554,6 +554,48 @@ When you build your first agent, you'll be tempted to do all three of these. Don
 
 The full 7-item mistakes table is in [Instruction template](#instructions). These three are the killers.
 
+## Troubleshooting: when Agent Builder behaves weirdly {#troubleshooting}
+
+When something's off, about 95% of the time it's one of the things in this table.
+
+### The fast-lookup table
+
+| Symptom | Likely cause | Fix |
+|---|---|---|
+| Agent gives generic answers, doesn't use my knowledge | Files still indexing | Wait for "Preparing" status to clear (1–2 min for uploads; up to hours for new SP) |
+| Agent answers off-topic questions | Boundaries too soft | Apply the [CAPS technique](#caps) |
+| Agent makes up answers when it doesn't know | No uncertainty handling in instructions | Add: *"If you don't know, say so. NEVER guess."* |
+| Agent creation failed silently | Uploaded file has user-defined permissions, extract rights disabled, or password protection | Remove files one by one to find the offender, then either remove that label or use the file via SharePoint instead |
+| SharePoint content not appearing | Restricted SharePoint Search enabled by admin, or permission issue | Ask SP admin to check `SP Admin Centre → Search → Restricted SP Search`. Verify user access to the site. |
+| New SharePoint site not in the picker | Indexing delay | Wait an hour, refresh. Or enter the site URL manually instead of using the picker. |
+| Agent can't read Excel data | "Generate documents" capability not enabled, or data spans multiple sheets | Enable "Generate documents" in agent settings. Move data into a single sheet. |
+| `.md` file won't upload | Unsupported format | Rename to `.txt` — content reads fine. |
+| MS Learn URL silently not added | URL is too deep (more than 2 levels) | Download the page content and upload as a `.txt` file instead. |
+| Web search not working despite toggle being on | Tenant admin has disabled web content via policy; UI toggle is misleading | Check with admin: `M365 Admin Centre → Copilot → Settings → "Allow web search"` policy. The UI toggle won't reflect this. <!-- LAB-VERIFY: confirm UI bug — toggle stays enabled when admin policy disables web -->|
+| Colleague can't use my shared agent | (1) Missing licence tier, (2) no SP file access, (3) blocked by sensitivity label | Check their licence. Verify SP permissions. Audit embedded files for restrictive labels. |
+| Image generation not available | Admin hasn't enabled it | `M365 Admin Centre → Copilot → Settings → enable image generation` |
+| Scheduled prompt didn't run | Agent is in draft (not published), OR you're trying to schedule it for someone else | Publish the agent first. Scheduled prompts are per-user only — they don't run for other users of a shared agent. <!-- LAB-VERIFY: confirm scheduled prompts behaviour: per-user, no draft execution --> |
+| Can't share to "everyone in org" | Free tier (sharing needs paygo or licence), or admin disabled org-wide sharing | Check tier. Check `Admin Centre → Copilot → Settings → Data access → Agents` for sharing controls. |
+| Agent disappeared from my left rail | Creator unshared it, or you removed it, or it was renamed | Search `microsoft365.com/chat` for the name. Ask the creator. |
+| Can't find Agent Builder at all | Using mobile (not supported), tenant doesn't have Copilot enabled, or wrong entry point | Open `microsoft365.com/chat` on desktop or use Teams desktop. Ask admin to verify Copilot is on. |
+
+### The "did the agent answer wrongly" debug
+
+If an answer is wrong (factually, formatted poorly, or off-style), the cause is almost always one of these — in order of likelihood:
+
+1. **Knowledge gap.** The agent didn't have the right source. Check Knowledge → did you add the doc that has the answer?
+2. **Indexing.** The doc is added but still "Preparing". Wait.
+3. **Instruction silence.** Your instructions don't tell the agent how to handle this case. Add a rule.
+4. **Boundary leak.** Your CAPS-style refusal isn't tight enough. Strengthen the fallback text.
+5. **Knowledge overflow.** You added so many sources the agent picked the wrong one. Trim down to focused sources.
+6. **Tone mismatch.** Instructions say "professional" but the agent's being formal. Be more specific: *"Professional but conversational. Avoid jargon. Plain English."*
+
+> 💡 **Tip:** When debugging, ask the agent itself: *"Which source did you use for that answer?"* It usually tells you, which makes the cause obvious.
+
+### Getting support from Microsoft
+
+If something's clearly broken (not a config issue), submit feedback via the Agent Builder UI: `Help dropdown → Send Feedback`. Include the **agent ID**, **tenant ID**, **environment ID**, and **session ID** — find these in `Help → Get support`. If the issue is on the preview pane or Describe tab, type `/debug` in the chat box first and include that output.
+
 ## Not the same as... {#not-same}
 
 Cold readers often arrive thinking Agent Builder is something else. Quick disambiguation:
@@ -577,7 +619,7 @@ Now you've seen what Agent Builder can do, built your first one, and got a sense
 
 If Microsoft 365 Copilot is a coffee shop, **Agent Builder is the self-service kiosk builder** at the counter. You can spin up a custom kiosk for any task — *"answer questions about HR policies"*, *"summarise the project channel"* — without hiring a developer.
 
-Copilot Studio is the **professional kiosk manufacturer**: more powerful, more complex, more expensive. Most teams don't need that level until they hit external customers, workflows, or co-authoring. Agent Builder covers the common case.
+Copilot Studio is the **professional kiosk manufacturer** — more powerful, more complex, more expensive. Agent Builder covers the common case.
 
 > 🧠 **Want the deeper how-it-works?** [How M365 Copilot Works — Layer by Layer](/blog/how-microsoft-365-copilot-works-layer-by-layer/) walks through the LLM, Graph grounding, and semantic index that make all of this possible. Worth reading once.
 
@@ -618,8 +660,6 @@ flowchart TB
     AB -->|"Copy to Studio<br/>(preserves work)"| CS
     CS --> F
 ```
-
-Most agents you'll ever build can live entirely in Agent Builder. The arrow into Copilot Studio is a one-way promotion path you take when (and only when) your agent outgrows what Agent Builder can do.
 
 ## Why it exists {#why-it-exists}
 
@@ -697,20 +737,6 @@ OneDrive is now its own knowledge-source slot, with a separate **50-file cap** t
 > 🧪 **Test in your tenant:** Add 50 specific OneDrive files to a single agent. Confirm whether the cap is exactly 50, and what happens when you try the 51st. Verify the OneDrive files appear separately from the SharePoint allotment in the Knowledge picker.
 
 > 💬 **Findings I'd love to publish:** Does OneDrive permissions flow through the same way as SharePoint (each user sees only what they're entitled to)? Are there file-type restrictions specific to OneDrive vs SharePoint? What happens when a OneDrive owner shares the file with the agent's users vs not? <!-- LAB-VERIFY: OneDrive 50-file cap + per-user permission inheritance -->
-
-### 6. MCP Apps — interactive UI inside chat (declarative-agent capability)
-
-**Status:** Announced April 2026 — capability available to declarative agents, but currently requires the Microsoft 365 Agents Toolkit + an MCP server (NOT yet a no-code feature in Agent Builder UI)
-
-The big shift here: declarative agents are no longer limited to text responses. They can render **forms**, **dashboards**, and **interactive experiences** directly in Copilot chat. An approval workflow can render an approve/deny card in chat instead of being a back-and-forth conversation. A status update can render as a dashboard widget.
-
-> ⚠️ **Important caveat:** MCP Apps today are built via the **Microsoft 365 Agents Toolkit** (VS Code extension) connected to a remote MCP server. They are NOT (yet) something you can configure in the no-code Agent Builder UI. They matter for this guide because Agent Builder-created agents live in the same declarative-agent family — so when the no-code experience catches up, your existing agents will be ready.
-
-This is the most experimental of the new capabilities and the one with the most upside. Worth watching closely.
-
-> 🧪 **Test in your tenant:** If your tenant has any Declarative Agent sample using MCP Apps available (check the Agent Store), open it and see the rendered UI. To build your own: install the Microsoft 365 Agents Toolkit and follow the MCP App tutorial.
-
-> 💬 **Findings I'd love to publish:** Which Declarative Agent samples in your tenant use MCP Apps? What's the UX like — feels responsive or laggy? Are forms accessible (screen-reader friendly)? When will (or has?) Agent Builder no-code added MCP App authoring? What's the maker effort gap between Agent Builder UI and MCP App authoring today? <!-- LAB-VERIFY: MCP Apps availability + samples + maker tooling roadmap -->
 
 ---
 
@@ -1036,48 +1062,6 @@ Agents aren't set-and-forget. Here's what to expect after build.
 - − **Information Barriers** do NOT apply to embedded uploaded file content
 
 If your org is in a regulated industry where Lockbox / CMK / IB are required, that's a *"use Copilot Studio (or Azure AI Foundry)"* signal — covered in [When to graduate](#graduate). For the full security/governance picture across all M365 Copilot agents, read **[Agent 365 Security Guide — Entra, Purview, Defender](/blog/agent-365-security-governance-complete-guide/)**. For the SharePoint-specific oversharing controls every admin should check before agents go org-wide, see **[SharePoint Oversharing Controls for M365 Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/)**.
-
-## Troubleshooting: when Agent Builder behaves weirdly {#troubleshooting}
-
-When something's off, about 95% of the time it's one of the things in this table.
-
-### The fast-lookup table
-
-| Symptom | Likely cause | Fix |
-|---|---|---|
-| Agent gives generic answers, doesn't use my knowledge | Files still indexing | Wait for "Preparing" status to clear (1–2 min for uploads; up to hours for new SP) |
-| Agent answers off-topic questions | Boundaries too soft | Apply the [CAPS technique](#caps) |
-| Agent makes up answers when it doesn't know | No uncertainty handling in instructions | Add: *"If you don't know, say so. NEVER guess."* |
-| Agent creation failed silently | Uploaded file has user-defined permissions, extract rights disabled, or password protection | Remove files one by one to find the offender, then either remove that label or use the file via SharePoint instead |
-| SharePoint content not appearing | Restricted SharePoint Search enabled by admin, or permission issue | Ask SP admin to check `SP Admin Centre → Search → Restricted SP Search`. Verify user access to the site. |
-| New SharePoint site not in the picker | Indexing delay | Wait an hour, refresh. Or enter the site URL manually instead of using the picker. |
-| Agent can't read Excel data | "Generate documents" capability not enabled, or data spans multiple sheets | Enable "Generate documents" in agent settings. Move data into a single sheet. |
-| `.md` file won't upload | Unsupported format | Rename to `.txt` — content reads fine. |
-| MS Learn URL silently not added | URL is too deep (more than 2 levels) | Download the page content and upload as a `.txt` file instead. |
-| Web search not working despite toggle being on | Tenant admin has disabled web content via policy; UI toggle is misleading | Check with admin: `M365 Admin Centre → Copilot → Settings → "Allow web search"` policy. The UI toggle won't reflect this. <!-- LAB-VERIFY: confirm UI bug — toggle stays enabled when admin policy disables web -->|
-| Colleague can't use my shared agent | (1) Missing licence tier, (2) no SP file access, (3) blocked by sensitivity label | Check their licence. Verify SP permissions. Audit embedded files for restrictive labels. |
-| Image generation not available | Admin hasn't enabled it | `M365 Admin Centre → Copilot → Settings → enable image generation` |
-| Scheduled prompt didn't run | Agent is in draft (not published), OR you're trying to schedule it for someone else | Publish the agent first. Scheduled prompts are per-user only — they don't run for other users of a shared agent. <!-- LAB-VERIFY: confirm scheduled prompts behaviour: per-user, no draft execution --> |
-| Can't share to "everyone in org" | Free tier (sharing needs paygo or licence), or admin disabled org-wide sharing | Check tier. Check `Admin Centre → Copilot → Settings → Data access → Agents` for sharing controls. |
-| Agent disappeared from my left rail | Creator unshared it, or you removed it, or it was renamed | Search `microsoft365.com/chat` for the name. Ask the creator. |
-| Can't find Agent Builder at all | Using mobile (not supported), tenant doesn't have Copilot enabled, or wrong entry point | Open `microsoft365.com/chat` on desktop or use Teams desktop. Ask admin to verify Copilot is on. |
-
-### The "did the agent answer wrongly" debug
-
-If an answer is wrong (factually, formatted poorly, or off-style), the cause is almost always one of these — in order of likelihood:
-
-1. **Knowledge gap.** The agent didn't have the right source. Check Knowledge → did you add the doc that has the answer?
-2. **Indexing.** The doc is added but still "Preparing". Wait.
-3. **Instruction silence.** Your instructions don't tell the agent how to handle this case. Add a rule.
-4. **Boundary leak.** Your CAPS-style refusal isn't tight enough. Strengthen the fallback text.
-5. **Knowledge overflow.** You added so many sources the agent picked the wrong one. Trim down to focused sources.
-6. **Tone mismatch.** Instructions say "professional" but the agent's being formal. Be more specific: *"Professional but conversational. Avoid jargon. Plain English."*
-
-> 💡 **Tip:** When debugging, ask the agent itself: *"Which source did you use for that answer?"* It usually tells you, which makes the cause obvious.
-
-### Getting support from Microsoft
-
-If something's clearly broken (not a config issue), submit feedback via the Agent Builder UI: `Help dropdown → Send Feedback`. Include the **agent ID**, **tenant ID**, **environment ID**, and **session ID** — find these in `Help → Get support`. If the issue is on the preview pane or Describe tab, type `/debug` in the chat box first and include that output.
 
 ## Licensing and admin notes {#licensing}
 
