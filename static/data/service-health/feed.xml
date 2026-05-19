@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 19 May 2026 12:53:11 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 17:13:09 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft 365 apps] Some users may see repeated location prompts in Microsoft Teams for Mac</title>
-      <link>https://www.aguidetocloud.com/service-health/#OP1315796</link>
-      <description>[Microsoft 365 apps] Users may see repeated location prompts in Microsoft Teams for Mac.</description>
-      <category>Microsoft 365 apps</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">OP1315796</guid>
-      <pubDate>Tue, 19 May 2026 12:34:45 +0000</pubDate>
-    </item>
     <item>
       <title>[Power BI] Users may be unable to access or may experience delays when accessing Microsoft Fabric</title>
       <link>https://www.aguidetocloud.com/service-health/#PB1314779</link>
@@ -149,6 +140,15 @@
       <category>Microsoft Copilot (Microsoft 365)</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1307847</guid>
+      <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 apps] Some users may see repeated location prompts in Microsoft Teams for Mac</title>
+      <link>https://www.aguidetocloud.com/service-health/#OP1315796</link>
+      <description>[Microsoft 365 apps] Users may see repeated location prompts in Microsoft Teams for Mac.</description>
+      <category>Microsoft 365 apps</category>
+      <category>falsePositive</category>
+      <guid isPermaLink="false">OP1315796</guid>
       <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
