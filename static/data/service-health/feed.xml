@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 19 May 2026 10:04:12 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 12:53:11 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 apps] Some users may see repeated location prompts in Microsoft Teams for Mac</title>
+      <link>https://www.aguidetocloud.com/service-health/#OP1315796</link>
+      <description>[Microsoft 365 apps] Users may see repeated location prompts in Microsoft Teams for Mac.</description>
+      <category>Microsoft 365 apps</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">OP1315796</guid>
+      <pubDate>Tue, 19 May 2026 12:34:45 +0000</pubDate>
+    </item>
     <item>
       <title>[Power BI] Users may be unable to access or may experience delays when accessing Microsoft Fabric</title>
       <link>https://www.aguidetocloud.com/service-health/#PB1314779</link>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceDegradation</category>
       <guid isPermaLink="false">EX1279815</guid>
       <pubDate>Tue, 14 Apr 2026 11:37:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Admins may be unable to progress mailbox migrations in Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1280763</link>
-      <description>[Exchange Online] Admins may have been unable to progress mailbox migrations in Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1280763</guid>
-      <pubDate>Tue, 14 Apr 2026 11:20:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
