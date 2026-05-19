@@ -26,7 +26,7 @@ faq:
   - question: "What happens to my agent if I leave the company?"
     answer: "The agent keeps working for everyone you shared it with. But because only the creator (or admin) can edit, your agent becomes effectively frozen — knowledge sources stop being updated, instructions can't be tweaked. Best practice: document the agent's purpose and instructions externally so a successor can rebuild it."
   - question: "Why isn't my agent answering from my SharePoint files?"
-    answer: "Most common causes: (1) the file is still indexing (look for the 'Preparing' status — wait a few minutes), (2) your tenant has Restricted SharePoint Search enabled (ask your admin), (3) the file is an unsupported format (.md isn't supported — rename to .txt), or (4) you don't have permission to the file (Agent Builder respects existing SharePoint permissions). For Excel specifically, data must be in a single sheet within the workbook and the agent needs 'Generate documents' capability enabled."
+    answer: "Most common causes: (1) the file is still indexing (look for the 'Preparing' status — wait a few minutes), (2) your tenant has Restricted SharePoint Search enabled (ask your admin), (3) the file is an unsupported format (.md isn't supported — rename to .txt), or (4) you don't have permission to the file (Agent Builder respects existing SharePoint permissions). For Excel specifically, data must be in a single sheet within the workbook and the agent needs the 'Create documents, charts, and code' capability enabled (renamed from 'Generate documents' in 2026)."
   - question: "Does Agent Builder work on mobile?"
     answer: "No. Custom agents built with Agent Builder aren't available on mobile M365 apps. They work on microsoft365.com/chat, office.com/chat, and the desktop/web Teams Copilot pane only. Mobile support is on the roadmap but not shipped yet."
   - question: "Can I build a customer-facing chatbot with Agent Builder?"
@@ -151,6 +151,8 @@ If you ended at **Agent Builder ✓** — keep reading. If you ended at **Copilo
 
 Here's the entire workflow. Read it once, then go build something. It's quicker than reading this section.
 
+> 🛠️ **Follow along in your own tenant.** This walkthrough builds the **Daily Email Digest** agent end-to-end — you can build it alongside us as you read. Every Describe prompt and Instructions block below is **copy-paste ready**. Just swap any `[BRACKETED PLACEHOLDER]` (`[YOUR NAME]`, `[YOUR FIRST NAME]`, etc.) for your own details. Total time: ~5 minutes for the core build (Steps 1–5), +5 minutes for the schedule walkthrough (Step 6).
+
 ### Step 1 — Open Agent Builder (30 seconds)
 
 Open [microsoft365.com/chat](https://microsoft365.com/chat) in your browser, or click the Copilot icon in Teams desktop.
@@ -238,12 +240,12 @@ For the Daily Email Digest we're building, **leave both OFF** — pure summarisa
 This is the single highest-leverage step in the whole build. Click the **Instructions** field and rewrite what Agent Builder drafted. There's a full template later in this post ([section: Instruction template](#instructions)). The version we're using for the Daily Email Digest agent is below — paste this into Instructions:
 
 ```
-You are Sush's Daily Email Digest agent.
+You are [YOUR NAME]'s Daily Email Digest agent.
 
 ## Your Role
 Produce a daily scan-friendly briefing of unread emails
-from the last 24 hours. You save Sush ~15 minutes every
-morning by triaging his inbox before he opens Outlook.
+from the last 24 hours. You save [YOUR NAME] ~15 minutes every
+morning by triaging the inbox before [YOUR NAME] opens Outlook.
 
 ## Email Grouping Rules
 ALWAYS group emails into these 5 buckets in this exact order:
@@ -276,7 +278,7 @@ For each email, surface ONE of these flags at the start:
 
 ## When Triggered by a Scheduled Prompt
 ALWAYS open with:
-"Good morning Sush. Here's your briefing for {today's date}.
+"Good morning [YOUR FIRST NAME]. Here's your briefing for {today's date}.
 Time range covered: {start} to {now}."
 Then deliver the 5-bucket digest.
 
@@ -289,12 +291,15 @@ Keep total output under 400 words even for a busy inbox.
 
 ## Tone
 Crisp, professional, scan-friendly. No flattery, no padding.
-You're Sush's morning chief-of-staff, not a chatbot.
+You're [YOUR FIRST NAME]'s morning chief-of-staff, not a chatbot.
 ```
 
 Notice the **CAPS-technique** pattern in use: `ALWAYS`, `ONLY`, `NEVER`, and the *"respond EXACTLY"* clauses with fixed fallback text. That's how you make boundaries stick — much more on this in the [CAPS section](#caps).
 
-> 🛠️ **Want a different starting agent?** Six other working examples — HR Policy Bot, Team Wiki, Fishing Buddy, Brand Voice Coach, NZ Policy Advisor, Weekly Report Maker — are in the [6 example agents](#examples) library below. Each has its own copy-paste Instructions block.
+> 🛠️ **Want different instructions?** Two paths forward:
+>
+> 1. **Pick a different starting agent** — the [6 example agents](#examples) library below has working Instructions for HR Policy Bot, Team Wiki, Fishing Buddy, Brand Voice Coach, NZ Policy Advisor, and Weekly Report Maker. Each is copy-paste ready.
+> 2. **Generate custom instructions for your scenario** — our [Agent Instruction Builder](/instruct-builder/) tool turns 5 simple questions into polished instructions (CAPS technique baked in). Output is copy-paste ready into Agent Builder, Copilot Studio, ChatGPT, Claude, or OpenAI Assistants.
 
 ### Step 5 — Test, then share (60 seconds)
 
@@ -634,9 +639,9 @@ Conversational but professional. Plain English, no legal jargon.
 
 **Best for:** Generating Word docs and Excel summaries from your SharePoint project files. Saves the *"can you put together a status report"* ask every Friday.
 
-**Knowledge needed:** SharePoint folder containing project status files + "Generate documents" capability enabled in agent settings.
+**Knowledge needed:** SharePoint folder containing project status files + the **Create documents, charts, and code** capability enabled in agent settings.
 
-**Minimum tier:** Pay-as-you-go. <!-- LAB-VERIFY: confirm the "Generate documents" capability toggle still appears in agent settings -->
+**Minimum tier:** Pay-as-you-go.
 
 **Copy-paste instruction:**
 
@@ -742,7 +747,7 @@ When something's off, about 95% of the time it's one of the things in this table
 | Agent creation failed silently | Uploaded file has user-defined permissions, extract rights disabled, or password protection | Remove files one by one to find the offender, then either remove that label or use the file via SharePoint instead |
 | SharePoint content not appearing | Restricted SharePoint Search enabled by admin, or permission issue | Ask SP admin to check `SP Admin Centre → Search → Restricted SP Search`. Verify user access to the site. |
 | New SharePoint site not in the picker | Indexing delay | Wait an hour, refresh. Or enter the site URL manually instead of using the picker. |
-| Agent can't read Excel data | "Generate documents" capability not enabled, or data spans multiple sheets | Enable "Generate documents" in agent settings. Move data into a single sheet. |
+| Agent can't read Excel data | "Create documents, charts, and code" capability not enabled, or data spans multiple sheets | Enable "Create documents, charts, and code" in agent settings. Move data into a single sheet. |
 | `.md` file won't upload | Unsupported format | Rename to `.txt` — content reads fine. |
 | MS Learn URL silently not added | URL is too deep (more than 2 levels) | Download the page content and upload as a `.txt` file instead. |
 | Web search not working despite toggle being on | Tenant admin has disabled web content via policy; UI toggle is misleading | Check with admin: `M365 Admin Centre → Copilot → Settings → "Allow web search"` policy. The UI toggle won't reflect this. <!-- LAB-VERIFY: confirm UI bug — toggle stays enabled when admin policy disables web -->|
@@ -807,7 +812,7 @@ Agent Builder runs inside M365 Copilot. You can open it from:
 - − **Mobile M365 apps** (not supported)
 - − Teams Chat **as an @mention** (different from the Copilot pane — see below)
 
-> ⚠️ **Small but important distinction:** Agent Builder agents work IN the Copilot pane that opens inside Teams desktop/web. They do NOT yet work as `@mention Copilot` calls inside regular Teams chats. A separate "share to Teams as app" rollout starting May 2026 lets you publish an Agent Builder agent as a Teams app — but `@mention` in arbitrary chats still isn't supported. <!-- LAB-VERIFY: confirm @mention in Teams chats still not supported -->
+> ⚠️ **Small but important distinction:** Agent Builder agents work IN the Copilot pane that opens inside Teams desktop/web. They do NOT yet work as `@mention Copilot` calls inside regular Teams chats. A separate "share to Teams as app" rollout starting May 2026 lets you publish an Agent Builder agent as a Teams app — but `@mention` in arbitrary chats still isn't supported. *(Lab-verified 19 May 2026 — typing `@<agent name>` in a regular Teams chat doesn't autocomplete the agent and doesn't invoke it.)*
 
 ### The key facts
 
@@ -868,7 +873,7 @@ The first proactive capability inside Agent Builder. Your agent can now run prom
 
 ### 2. Tool Groups — pre-packaged actions for Outlook + SharePoint
 
-**Status:** In-tenant rollout (varies by tenant) — verify availability in yours
+**Status:** In-tenant rollout (varies significantly by tenant) — **not yet visible in the test tenant for this guide as of 19 May 2026**. Verify availability in your tenant before promising the capability to stakeholders.
 
 Tool Groups are **pre-packaged sets of M365 actions** you can add to an agent in a single click. If your tenant has them, the Outlook Tool Group lets your agent draft emails, search the inbox, and create calendar events; the SharePoint Tool Group lets it search documents, read file content, and navigate sites.
 
@@ -1143,7 +1148,7 @@ SharePoint is the source you'll use most. It's also the trickiest.
 
 1. **New SharePoint sites can take hours** to appear in the picker. If your colleague created a site this morning, it may not be searchable until afternoon.
 2. **Restricted SharePoint Search** (a SP admin setting) **blocks SharePoint as a knowledge source entirely**. If your agent can't see your SP content, ask your admin first.
-3. **Excel files need 'Generate documents' enabled** in the agent settings just to be readable. And the data must be in a single sheet within the workbook.
+3. **Excel files need the 'Create documents, charts, and code' capability enabled** in the agent settings just to be readable (this toggle was named 'Generate documents' before the 2026 UI rename). And the data must be in a single sheet within the workbook.
 
 > 📌 **Admin action:** If users in your tenant can't add SharePoint as knowledge, check `SharePoint Admin Centre → Search → Restricted SharePoint Search`. If it's enabled, agents can't use SP at all. Related: **[SharePoint Oversharing Controls for M365 Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/)** — the controls every admin should check before agents go org-wide.
 
@@ -1305,7 +1310,11 @@ You've outgrown Agent Builder when **any** of these are true:
 
 ### The promotion path
 
-You don't lose your work. Agent Builder has a built-in **Copy to Copilot Studio** button. Your instructions, knowledge sources, and configuration carry over. <!-- LAB-VERIFY: walk through Copy to Studio button; confirm exactly which fields carry over and which don't -->
+You don't lose your work — mostly. From the Agent Store, hover your agent, click the ellipsis menu, choose **Edit agent**, then look for the **Copy to Copilot Studio** option in the same flow. A banner appears asking which Studio environment to land the agent in; pick one and click through. Most fields populate: name, description, instructions, conversation starters, capabilities.
+
+> 🚨 **One gotcha worth knowing — Knowledge sources are the exception.** When the copy lands in Studio, **open the Knowledge section and double-check it carries everything across.** In testing on 19 May 2026, the agent's name / description / instructions / starters all moved cleanly, but the Knowledge sources didn't always come with them. If you don't see your SharePoint sites / files / email connectors in the Studio version, **re-add them manually** before publishing.
+
+It's a small extra step. Doesn't undo the value of the Copy-to-Studio path — but it does mean you can't fully *"set it and forget it"* during the move.
 
 Start in Agent Builder. Validate the idea in minutes. Promote to Studio when (and only when) you hit one of the seven signals above. This is Microsoft's recommended lifecycle — and it's why *"what about Copilot Studio?"* is the right question to defer, not the right question to answer first.
 
