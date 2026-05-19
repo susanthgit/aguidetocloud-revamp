@@ -5,14 +5,14 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 19 May 2026 17:13:09 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 20:02:45 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Power BI] Users may be unable to access or may experience delays when accessing Microsoft Fabric</title>
       <link>https://www.aguidetocloud.com/service-health/#PB1314779</link>
-      <description>[Power BI] Users may be unable to access or may experience delays when accessing Microsoft Fabric.</description>
+      <description>[Power BI] Users may have been unable to access or may have experienced delays when accessing Microsoft Fabric.</description>
       <category>Power BI</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">PB1314779</guid>
       <pubDate>Mon, 18 May 2026 12:24:00 +0000</pubDate>
     </item>
