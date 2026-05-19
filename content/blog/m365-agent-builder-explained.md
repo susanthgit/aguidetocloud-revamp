@@ -299,7 +299,7 @@ Notice the **CAPS-technique** pattern in use: `ALWAYS`, `ONLY`, `NEVER`, and the
 > 🛠️ **Want different instructions?** Two paths forward:
 >
 > 1. **Pick a different starting agent** — the [6 example agents](#examples) library below has working Instructions for HR Policy Bot, Team Wiki, Fishing Buddy, Brand Voice Coach, NZ Policy Advisor, and Weekly Report Maker. Each is copy-paste ready.
-> 2. **Generate custom instructions for your scenario** — our [Agent Instruction Builder](/instruct-builder/) tool turns 5 simple questions into polished instructions (CAPS technique baked in). Output is copy-paste ready into Agent Builder, Copilot Studio, ChatGPT, Claude, or OpenAI Assistants.
+> 2. **Generate custom instructions for your scenario** — our [Agent Instruction Builder](/instruct-builder/) tool turns 5 simple questions into polished instructions (CAPS technique baked in). Output is copy-paste ready into Agent Builder, Copilot Studio, ChatGPT, Claude, or OpenAI Assistants. [Step-by-step walkthrough below ↓](#instruct-builder-howto)
 
 ### Step 5 — Test, then share (60 seconds)
 
@@ -931,6 +931,8 @@ Most people write instructions like a friendly Slack message. *"Be helpful, answ
 
 Here's the template that's worked for me.
 
+> 🛠️ **Prefer to skip writing this by hand?** The [Agent Instruction Builder](#instruct-builder-howto) tool further down generates this exact template from 5 questions — CAPS technique baked in, copy-paste ready for any of the 5 major platforms.
+
 ### The 7-part structure
 
 ```
@@ -998,7 +1000,24 @@ Think of it like a job spec. The bulk of the spec describes the role positively.
 
 > 💡 **Tip:** Don't try to fill the 8,000 characters. Tight instructions perform better than verbose ones. Aim for 1,500–3,000 characters; use the rest as a safety margin.
 
-> 🛠️ **Need help writing instructions?** Our [Agent Instruction Builder](/instruct-builder/) tool generates polished, platform-optimised instructions from 5 simple questions. It bakes in the template above and the CAPS technique automatically. The output is copy-paste ready.
+### 🛠️ Skip the writing — try the Agent Instruction Builder {#instruct-builder-howto}
+
+Adapting the template above for *your* agent is the hard part. I built the **[Agent Instruction Builder](/instruct-builder/)** to do exactly that — turn 5 questions into a polished, copy-paste-ready set of instructions, with the CAPS technique baked in and platform-specific output for M365 Agent Builder, Copilot Studio, ChatGPT, Claude, or OpenAI Assistants.
+
+<p><img src="/images/blog/m365-agent-builder/15-instruct-builder-empty.webp" alt="Agent Instruction Builder tool, empty state. Header reads 'Agent Instruction Builder' with a small '120 instructions generated' counter, subtitle 'Generate platform-optimised AI agent instructions in seconds'. Three tabs: Build (active), Templates, FAQ. Left side is the form — top row has a prominent indigo-outlined 'Try an example — see a finished agent in 1 click' button next to a small 'Reset' button. Below that: 'Output for which platform?' with 5 pills (M365 selected, then Studio, ChatGPT, Claude, Assistants) and a one-line helper text. Then Agent name field (placeholder 'Give it a personal touch — e.g. Luna, TechBot, HR Helper'), Purpose textarea with a Weak/Strong example tip beneath, Tone pills (Professional selected, plus Friendly, Technical, Casual, Formal), 'Or write your own tone' link, NOT-do and Knowledge-sources textareas, and four collapsible sections (Output format scaffold, Behaviour when triggered automatically, Example interactions, Additional rules) leading to a big Generate Instructions button. Right side shows an indigo callout banner reading 'Here's what a finished agent looks like. Start typing on the left, or hit Try Example to load one →' followed by a dimmed ghost preview of example output (## Role & Purpose, ## Tone, ## Knowledge & Grounding, ## Output Format sections)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+**How to use it (60 seconds):**
+
+1. **Pick your platform** at the top. M365 by default — switch to Copilot Studio / ChatGPT / Claude / OpenAI Assistants if you need a different format. Each platform gets its native syntax: **Markdown headings** for M365 / Studio / Assistants, **XML tags** (`<role>`, `<rules>`) for Claude, **plain text** for ChatGPT.
+2. **Describe what the agent should do** in the *What should your agent do?* field. The tip below the field shows the Weak vs Strong pattern live — *"triage unread emails by sender, flag same-day replies"* beats *"help with email"* every time.
+3. **Pick a tone** from the five presets, or click *Or write your own tone* for something distinctive (e.g. *"Crisp, scan-friendly. No flattery. Morning chief-of-staff."*).
+4. **Add boundaries and knowledge sources**. These are optional but they're what makes the output strong — the tool wraps the [CAPS technique](#caps) around your boundaries automatically with the exact-fallback-text pattern.
+5. **Open the optional sections** if you need them — *Output format scaffold* for digests / structured outputs, *Behaviour when triggered automatically* for scheduled prompts, *Example interactions* for the happy-path + refusal pair that pushes the strength badge from Moderate to Strong, and *Additional rules* for greeting, escalation, formatting, locale.
+6. **Watch the right pane update live as you type** — every change regenerates the full instructions in under 300 ms. The **Strong / Moderate / Weak** badge tells you what's missing; click any hint and it scrolls + pulses the weak field. Copy with the 📋 button or **Download .md**. The platform-specific *"Paste into ..."* CTA shows you exactly where to go next.
+
+<p><img src="/images/blog/m365-agent-builder/16-instruct-builder-loaded.webp" alt="Same tool after clicking 'Try an example' — Daily Email Digest template loaded. Form on the left is now filled in: purpose textarea contains 'A daily scan-friendly briefing of unread emails from the last 24 hours, grouped by sender relationship (manager / direct reports / peers / external / noise) with same-day reply flags. Saves [YOUR NAME] ~15 minutes every morning by triaging the inbox before Outlook opens.' Boundaries and Knowledge sources fields are filled in. Output format scaffold section is expanded showing the 5-bucket structure. Right side now shows: a green 'Strong · all five dimensions covered' badge, an indigo '✓ Uses the CAPS technique — clear CAPS keywords, exact fallback text, positive redirects →' badge, then 'M365 Agent Builder · 3,290 / 8,000 characters · ✓ Within limit — 4,710 remaining', the generated Markdown output text (## Role & Purpose · ## Tone · ## Knowledge & Grounding), a row of buttons (Copy and Download .md), and a prominent indigo 'Paste into M365 Agent Builder — Paste your generated instructions there' CTA. A floating toast at the bottom reads 'Template loaded — give your agent a name and tweak any field'." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+> 💡 **In a hurry?** Click the indigo **💡 Try an example** button at the top of the form to load a pre-built **Daily Email Digest** agent (the same one this post walks through). Tweak any field and the output regenerates instantly. The Templates tab has 12 more starting points across Support, Productivity, and Daily Routine — including 3 scheduled-aware agents marked **NEW** that mirror this post.
 
 ## The CAPS technique: how to make boundaries stick {#caps}
 
