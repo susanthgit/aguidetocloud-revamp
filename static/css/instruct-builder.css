@@ -256,8 +256,50 @@ textarea.instruct-input{resize:vertical;min-height:2.6rem}
 .instruct-caps-badge:hover{background:color-mix(in srgb,var(--instruct-accent) 15%,var(--bg-elevated));border-color:var(--instruct-accent)}
 .instruct-caps-badge strong{color:var(--instruct-accent);font-weight:600}
 
-/* Tighten responsive grid for platform pills on small screens */
-@media(max-width:640px){.instruct-platform-group{flex-direction:column}.instruct-platform-pill span{display:block;text-align:center}}
+/* Tighten responsive grid for platform pills on small screens
+   v5.2: on mobile, collapse to ONLY the selected pill + a "Change" toggle.
+   Tap the toggle → all 5 pills appear. Pick one → auto-collapses again.
+   Saves ~4 lines of vertical real estate on the form. */
+.instruct-platform-mobile-toggle { display: none; } /* desktop: hidden */
+
+@media(max-width:640px) {
+  /* Default (collapsed) — show only the selected pill + the toggle button */
+  .instruct-platform-group { flex-wrap: wrap; align-items: center; gap: .4rem; }
+  .instruct-platform-group:not(.expanded) .instruct-platform-pill { display: none; }
+  .instruct-platform-group:not(.expanded) .instruct-platform-pill:has(input:checked) { display: inline-block; }
+
+  /* Toggle button appears on mobile, sits next to the selected pill */
+  .instruct-platform-mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    padding: .3rem .65rem;
+    background: var(--bg-elevated);
+    border: 1px dashed var(--border);
+    color: var(--text-tertiary);
+    font-size: .76rem;
+    font-weight: 500;
+    border-radius: var(--radius-lg, 16px);
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out;
+  }
+  .instruct-platform-mobile-toggle:hover,
+  .instruct-platform-mobile-toggle:focus-visible {
+    color: var(--text-primary);
+    background: var(--accent-subtle);
+    border-color: var(--instruct-accent);
+    border-style: solid;
+    outline: none;
+  }
+  .instruct-platform-mobile-toggle[aria-expanded="true"] .instruct-platform-mobile-toggle-arrow { transform: rotate(180deg); }
+  .instruct-platform-mobile-toggle-arrow { transition: transform 200ms ease-out; display: inline-block; }
+
+  /* Expanded — show all pills + still show the toggle (now "Hide ▴") */
+  .instruct-platform-group.expanded .instruct-platform-pill { display: inline-block; }
+  /* Helper text only useful when comparing all 5 — hide when collapsed */
+  .instruct-platform-group:not(.expanded) + .instruct-helper-text { display: none; }
+}
 
 /* ═══════════════════════════════════════════════════════════════
    v5 ADDITIONS — Cold-user audit polish (May 2026)

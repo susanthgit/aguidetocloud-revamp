@@ -55,13 +55,17 @@
           {{/* Platform selector */}}
           <div class="instruct-field">
             <label>Output for which platform?</label>
-            <div class="instruct-platform-group" role="radiogroup" aria-label="Output platform">
+            <div class="instruct-platform-group" id="platform-group" role="radiogroup" aria-label="Output platform">
               {{ range $platforms }}
               <label class="instruct-platform-pill" title="{{ .name }}">
                 <input type="radio" name="instruct-platform" value="{{ .id }}"{{ if eq .id "m365" }} checked{{ end }}>
                 <span>{{ .icon }} {{ .short_name | default .name }}</span>
               </label>
               {{ end }}
+              <button type="button" class="instruct-platform-mobile-toggle" id="platform-mobile-toggle" aria-expanded="false" aria-controls="platform-group">
+                <span class="instruct-platform-mobile-toggle-label">Change</span>
+                <span class="instruct-platform-mobile-toggle-arrow" aria-hidden="true">▾</span>
+              </button>
             </div>
             <p class="instruct-helper-text">M365 for Microsoft 365 work agents · Studio for workflows + actions · ChatGPT for public GPTs · Claude for research/writing · Assistants for custom apps</p>
           </div>

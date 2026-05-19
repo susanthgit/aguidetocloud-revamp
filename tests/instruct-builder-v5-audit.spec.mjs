@@ -52,6 +52,33 @@ for (const device of [
         }
         const uniqueYs = [...new Set(ys)].sort((a, b) => a - b);
         expect(uniqueYs.length, `Pill rows should be ≤2 — got ${uniqueYs.length}: ${ys}`).toBeLessThanOrEqual(2);
+        // Mobile toggle should NOT be visible on desktop
+        await expect(page.locator('#platform-mobile-toggle')).toBeHidden();
+      } else {
+        // Mobile: by default ONLY the M365 (selected) pill is visible; the
+        // others are hidden behind the "Change" toggle. Tap Change → all show.
+        const visibleCount = await pills.evaluateAll(els =>
+          els.filter(e => getComputedStyle(e).display !== 'none').length
+        );
+        expect(visibleCount, 'Only selected pill should be visible on mobile by default').toBe(1);
+        await expect(page.locator('#platform-mobile-toggle')).toBeVisible();
+        await expect(page.locator('#platform-mobile-toggle')).toContainText(/Change/);
+        // Tap toggle → all 5 visible
+        await page.click('#platform-mobile-toggle');
+        const expandedCount = await pills.evaluateAll(els =>
+          els.filter(e => getComputedStyle(e).display !== 'none').length
+        );
+        expect(expandedCount, 'All 5 pills should be visible after Change tap').toBe(5);
+        await expect(page.locator('#platform-mobile-toggle')).toContainText(/Hide/);
+        // Pick a different platform → auto-collapse, only Claude visible
+        await page.locator('label.instruct-platform-pill:has(input[value="claude"])').click();
+        await page.waitForTimeout(200);
+        const afterPickCount = await pills.evaluateAll(els =>
+          els.filter(e => getComputedStyle(e).display !== 'none').length
+        );
+        expect(afterPickCount, 'Should auto-collapse after picking a platform').toBe(1);
+        const visibleSpan = await page.locator('.instruct-platform-pill:visible span').first().textContent();
+        expect(visibleSpan).toMatch(/Claude/);
       }
       await page.screenshot({ path: `tests/screenshots/v5-${device.name}-2-pills.png`, clip: device.name === 'desktop' ? { x: 0, y: 0, width: device.viewport.width, height: 600 } : undefined });
     });

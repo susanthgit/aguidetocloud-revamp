@@ -1052,6 +1052,29 @@ function initKeyboard() {
   });
 }
 
+/* === Platform mobile compact toggle === */
+function initPlatformMobileToggle() {
+  var toggle = $('platform-mobile-toggle');
+  var group = $('platform-group');
+  if (!toggle || !group) return;
+  var labelEl = toggle.querySelector('.instruct-platform-mobile-toggle-label');
+  function setExpanded(open) {
+    group.classList.toggle('expanded', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (labelEl) labelEl.textContent = open ? 'Hide' : 'Change';
+  }
+  toggle.addEventListener('click', function(){
+    setExpanded(!group.classList.contains('expanded'));
+  });
+  // Auto-collapse after a platform pick on mobile (keep open on desktop — invisible there anyway)
+  var mql = window.matchMedia('(max-width: 640px)');
+  document.querySelectorAll('input[name="instruct-platform"]').forEach(function(r){
+    r.addEventListener('change', function(){
+      if (mql.matches) setExpanded(false);
+    });
+  });
+}
+
 /* === Init === */
 function init() {
   initTabs();
@@ -1063,6 +1086,7 @@ function init() {
   initKeyboard();
   initStrengthHintClicks();
   initSmartSuggestion();
+  initPlatformMobileToggle();
   updateToneDesc();
   var btnGen = $('btn-generate');
   if (btnGen) btnGen.addEventListener('click', function(){ generate(); });
