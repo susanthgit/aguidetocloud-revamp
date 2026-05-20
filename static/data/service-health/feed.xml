@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 20 May 2026 17:25:24 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 20:29:00 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Intune] Users’ mobile application management (MAM) apps may crash if launched on devices running Android 17 QRP1 beta 3</title>
@@ -24,15 +24,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">DZ1316705</guid>
       <pubDate>Wed, 20 May 2026 11:08:04 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Admins may be unable to see IP address information in the audit logs for Microsoft Copilot (Microsoft 365) interactions</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1315951</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins may be unable to see IP address information in the audit logs for Copilot interactions.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1315951</guid>
-      <pubDate>Tue, 19 May 2026 18:34:54 +0000</pubDate>
     </item>
     <item>
       <title>[Power BI] Users may be unable to access or may experience delays when accessing Microsoft Fabric</title>
@@ -458,6 +449,15 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1281088</guid>
       <pubDate>Wed, 15 Apr 2026 14:43:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may see delays when accessing Microsoft 365 Copilot Suggested Notebooks</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1280167</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have seen delays when accessing Copilot Suggested Notebooks.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1280167</guid>
+      <pubDate>Tue, 14 Apr 2026 21:56:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
