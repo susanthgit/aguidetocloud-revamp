@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 19 May 2026 23:20:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 04:33:46 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Admins may be unable to see IP address information in the audit logs for Microsoft Copilot (Microsoft 365) interactions</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1315951</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Admins may be unable to see IP address information in the audit logs for Copilot interactions.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1315951</guid>
+      <pubDate>Tue, 19 May 2026 18:34:54 +0000</pubDate>
+    </item>
     <item>
       <title>[Power BI] Users may be unable to access or may experience delays when accessing Microsoft Fabric</title>
       <link>https://www.aguidetocloud.com/service-health/#PB1314779</link>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1280167</guid>
       <pubDate>Tue, 14 Apr 2026 21:56:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Admins' search parameters may be missing after performing a group search in the Exchange admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1279815</link>
-      <description>[Exchange Online] Admins' search parameters may have been missing after performing a group search in the Exchange admin center.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1279815</guid>
-      <pubDate>Tue, 14 Apr 2026 11:37:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
