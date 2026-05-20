@@ -1,9 +1,39 @@
-name: 📊 Monthly Counter Refresh
+# ─────────────────────────────────────────────────────────────────────────────
+# 📊 Monthly Counter Refresh — DISABLED 2026-05-20
+# ─────────────────────────────────────────────────────────────────────────────
+# This workflow used to refresh data/tool_counters.toml from GA4 once a month.
+# It was disabled on 2026-05-20 alongside the removal of the hardcoded tool
+# counter badges. Reasons:
+#   1. The "X reads / X polished" badges were honesty-incompatible (static
+#      decorative numbers shown as if live).
+#   2. The script had a wrong GA4 property ID hardcoded as default
+#      (270121818, while the real site property is 530486519), so the cron
+#      had been silently failing since at least 2026-05-01.
+#   3. scripts/refresh-counters.py only covered 28 of the 57 tools that had
+#      entries in the TOML, so even a fix would have left half the site
+#      with frozen-floor numbers forever.
+#
+# To resurrect intentionally:
+#   1. Fix the GA4 property ID + extend TOOL_PATHS in scripts/refresh-counters.py
+#   2. Re-populate data/tool_counters.toml [[tools]] entries
+#   3. Add `confirm_resurrect: true` when running the workflow manually
+#   4. Optionally restore the monthly `schedule:` block below
+# ─────────────────────────────────────────────────────────────────────────────
 
+name: 📊 Monthly Counter Refresh (DISABLED)
+
+# NOTE: schedule: cron intentionally removed 2026-05-20.
+# Only manual dispatch is permitted, and it requires an explicit
+# confirm_resurrect=true input so the workflow can't silently
+# overwrite the (currently empty) tool_counters.toml file.
 on:
-  schedule:
-    - cron: '0 3 1 * *'  # 1st of every month at 3 AM UTC
   workflow_dispatch:
+    inputs:
+      confirm_resurrect:
+        description: 'Type "true" to confirm you really want to regenerate tool_counters.toml. Without this, the workflow will no-op.'
+        required: true
+        default: 'false'
+        type: string
 
 permissions:
   contents: write
@@ -15,6 +45,7 @@ concurrency:
 jobs:
   refresh-counters:
     runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.confirm_resurrect == 'true' }}
     env:
       GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
     steps:
