@@ -5,12 +5,21 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 20 May 2026 12:37:27 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 17:25:24 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft Defender XDR] Some admins may experience a 30-minute gap in security telemetry and alerts in Microsoft Defender for Endpoint</title>
+      <title>[Microsoft Intune] Users’ mobile application management (MAM) apps may crash if launched on devices running Android 17 QRP1 beta 3</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1316808</link>
+      <description>[Microsoft Intune] Users’ MAM apps may crash if launched on an Android device with the Android 17 QRP1 beta 3 update.</description>
+      <category>Microsoft Intune</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">IT1316808</guid>
+      <pubDate>Wed, 20 May 2026 15:52:42 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Defender XDR] Some admins may experience a gap in security telemetry data and alerts in Microsoft Defender for Endpoint and Identity</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1316705</link>
-      <description>[Microsoft Defender XDR] Admins may experience a 30-minute gap in security telemetry and alerts in Microsoft Defender for Endpoint.</description>
+      <description>[Microsoft Defender XDR] Admins may experience a gap in security telemetry data and alerts in Microsoft Defender for Endpoint and Identity.</description>
       <category>Microsoft Defender XDR</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">DZ1316705</guid>
@@ -158,15 +167,6 @@
       <category>Microsoft Copilot (Microsoft 365)</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1307847</guid>
-      <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 apps] Some users may see repeated location prompts in Microsoft Teams for Mac</title>
-      <link>https://www.aguidetocloud.com/service-health/#OP1315796</link>
-      <description>[Microsoft 365 apps] Users may see repeated location prompts in Microsoft Teams for Mac.</description>
-      <category>Microsoft 365 apps</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">OP1315796</guid>
       <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
