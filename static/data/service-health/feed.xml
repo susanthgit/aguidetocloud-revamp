@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 20 May 2026 23:37:46 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 May 2026 04:41:09 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft Intune] Users’ mobile application management (MAM) apps may crash if launched on devices running Android 17 QRP1 beta 3</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1316808</link>
-      <description>[Microsoft Intune] Users’ MAM apps may crash if launched on an Android device with the Android 17 QRP1 beta 3 update.</description>
-      <category>Microsoft Intune</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">IT1316808</guid>
-      <pubDate>Wed, 20 May 2026 15:52:42 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft Defender XDR] Some admins may experience a gap in security telemetry data and alerts in Microsoft Defender for Endpoint and Identity</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1316705</link>
@@ -24,6 +15,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">DZ1316705</guid>
       <pubDate>Wed, 20 May 2026 11:08:04 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Intune] Users’ mobile application management (MAM) apps may crash if launched on devices running Android 17 QRP1 beta 3</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1316808</link>
+      <description>[Microsoft Intune] Users’ MAM apps may have crashed if launched on an Android device with the Android 17 QRP1 beta 3 update.</description>
+      <category>Microsoft Intune</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">IT1316808</guid>
+      <pubDate>Tue, 19 May 2026 20:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Power BI] Users may be unable to access or may experience delays when accessing Microsoft Fabric</title>
