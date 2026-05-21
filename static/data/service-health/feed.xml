@@ -5,23 +5,32 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 21 May 2026 16:47:21 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 May 2026 20:07:47 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may intermittently receive blank responses from Analyst Agent in Microsoft Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1318025</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may intermittently receive blank responses from Analyst Agent in Microsoft Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1318025</guid>
+      <pubDate>Thu, 21 May 2026 17:36:46 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Intune] Some users' Microsoft Intune devices may be unable to retrieve Intune Management Agent scripts from the service</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1317808</link>
-      <description>[Microsoft Intune] Users' Microsoft Intune devices may be unable to retrieve Intune Management Agent scripts from the service.</description>
+      <description>[Microsoft Intune] Users' Microsoft Intune devices may have been unable to retrieve Intune Management Agent scripts from the service.</description>
       <category>Microsoft Intune</category>
-      <category>investigating</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">IT1317808</guid>
       <pubDate>Thu, 21 May 2026 15:12:13 +0000</pubDate>
     </item>
     <item>
       <title>[Planner] Some users may encounter issues accessing features in the Microsoft Planner application</title>
       <link>https://www.aguidetocloud.com/service-health/#PL1317706</link>
-      <description>[Planner] Users may encounter issues accessing features in the Microsoft Planner application.</description>
+      <description>[Planner] Users may have encountered issues accessing features in the Microsoft Planner application.</description>
       <category>Planner</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">PL1317706</guid>
       <pubDate>Thu, 21 May 2026 13:19:09 +0000</pubDate>
     </item>
@@ -42,6 +51,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1316808</guid>
       <pubDate>Tue, 19 May 2026 20:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to share agents in Microsoft 365 Copilot with users without a Copilot license</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1314992</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to share agents in Copilot with users without a Copilot license.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1314992</guid>
+      <pubDate>Mon, 18 May 2026 17:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Power BI] Users may be unable to access or may experience delays when accessing Microsoft Fabric</title>
@@ -91,9 +109,9 @@
     <item>
       <title>[Microsoft 365 suite] Admins may see stale or delayed report data in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1310977</link>
-      <description>[Microsoft 365 suite] Admins may see stale or delayed report data in the Microsoft 365 admin center.</description>
+      <description>[Microsoft 365 suite] Admins may have seen stale or delayed report data in the Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1310977</guid>
       <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
     </item>
@@ -440,24 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1282907</guid>
       <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Users may have experienced delays and saw failures with multiple functions in Microsoft Defender</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1283890</link>
-      <description>[Microsoft Defender XDR] Users may have experienced delays and saw failures with multiple functions in Microsoft Defender. </description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">DZ1283890</guid>
-      <pubDate>Thu, 16 Apr 2026 17:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Purview] Admins may be unable to create new policies or edit existing compliance policies through Microsoft Purview</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1290847</link>
-      <description>[Microsoft Purview] Admins were unable to create new policies or edit existing compliance policies through Microsoft Purview.</description>
-      <category>Microsoft Purview</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MP1290847</guid>
-      <pubDate>Wed, 15 Apr 2026 23:52:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
