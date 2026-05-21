@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-21T04:41:09.049167+00:00",
+  "generated_at": "2026-05-21T10:01:26.571591+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
@@ -32,12 +32,12 @@
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 14,
-      "active_incidents": 1,
+      "total_incidents": 15,
+      "active_incidents": 2,
       "avg_duration_minutes": 15250,
       "last_incident": "2026-05-11T23:05:19.263000+00:00",
       "classifications": {
-        "advisory": 11,
+        "advisory": 12,
         "incident": 3
       }
     },
@@ -45,12 +45,12 @@
       "service": "Microsoft Defender XDR",
       "short_name": "Defender",
       "icon": "🛡️",
-      "total_incidents": 10,
+      "total_incidents": 9,
       "active_incidents": 2,
-      "avg_duration_minutes": 10593,
+      "avg_duration_minutes": 11901,
       "last_incident": "2026-05-20T11:08:04.553000+00:00",
       "classifications": {
-        "advisory": 9,
+        "advisory": 8,
         "incident": 1
       }
     },
@@ -196,7 +196,7 @@
   "monthly": [
     {
       "month": "2026-05",
-      "incident_count": 28,
+      "incident_count": 29,
       "services_affected": 11
     },
     {
@@ -206,7 +206,7 @@
     },
     {
       "month": "2026-03",
-      "incident_count": 24,
+      "incident_count": 23,
       "services_affected": 9
     }
   ]

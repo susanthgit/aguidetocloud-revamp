@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 21 May 2026 04:41:09 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 May 2026 10:01:27 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Defender XDR] Some admins may experience a gap in security telemetry data and alerts in Microsoft Defender for Endpoint and Identity</title>
@@ -150,6 +150,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1307899</guid>
       <pubDate>Mon, 11 May 2026 23:05:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online]  Users may be unable to view free/busy status for Gmail users within the Exchange Online calendar</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1310533</link>
+      <description>[Exchange Online]  Users may be unable to view free/busy status for Gmail users within the Exchange Online calendar.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1310533</guid>
+      <pubDate>Mon, 11 May 2026 07:01:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins' Copilot usage and chat report data may be delayed from appearing in the Microsoft 365 admin center</title>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1281088</guid>
       <pubDate>Wed, 15 Apr 2026 14:43:06 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may see delays when accessing Microsoft 365 Copilot Suggested Notebooks</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1280167</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have seen delays when accessing Copilot Suggested Notebooks.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1280167</guid>
-      <pubDate>Tue, 14 Apr 2026 21:56:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
