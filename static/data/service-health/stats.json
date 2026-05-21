@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-21T21:46:07.049382+00:00",
+  "generated_at": "2026-05-21T23:15:54.461848+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
@@ -21,7 +21,7 @@
       "icon": "📦",
       "total_incidents": 17,
       "active_incidents": 0,
-      "avg_duration_minutes": 4519,
+      "avg_duration_minutes": 4506,
       "last_incident": "2026-05-15T00:00:00+00:00",
       "classifications": {
         "advisory": 8,
@@ -60,8 +60,8 @@
       "icon": "📱",
       "total_incidents": 7,
       "active_incidents": 0,
-      "avg_duration_minutes": 3806,
-      "last_incident": "2026-05-21T15:12:13.187000+00:00",
+      "avg_duration_minutes": 4128,
+      "last_incident": "2026-05-20T00:29:00+00:00",
       "classifications": {
         "advisory": 5,
         "incident": 2
