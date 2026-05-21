@@ -5,16 +5,34 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 21 May 2026 13:30:53 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 May 2026 16:47:21 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Intune] Some users' Microsoft Intune devices may be unable to retrieve Intune Management Agent scripts from the service</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1317808</link>
+      <description>[Microsoft Intune] Users' Microsoft Intune devices may be unable to retrieve Intune Management Agent scripts from the service.</description>
+      <category>Microsoft Intune</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">IT1317808</guid>
+      <pubDate>Thu, 21 May 2026 15:12:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Planner] Some users may encounter issues accessing features in the Microsoft Planner application</title>
+      <link>https://www.aguidetocloud.com/service-health/#PL1317706</link>
+      <description>[Planner] Users may encounter issues accessing features in the Microsoft Planner application.</description>
+      <category>Planner</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">PL1317706</guid>
+      <pubDate>Thu, 21 May 2026 13:19:09 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Defender XDR] Some admins may experience a gap in security telemetry data and alerts in Microsoft Defender for Endpoint and Identity</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1316705</link>
       <description>[Microsoft Defender XDR] Admins may experience a gap in security telemetry data and alerts in Microsoft Defender for Endpoint and Identity.</description>
       <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1316705</guid>
-      <pubDate>Wed, 20 May 2026 11:08:04 +0000</pubDate>
+      <pubDate>Wed, 20 May 2026 07:30:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Intune] Users’ mobile application management (MAM) apps may crash if launched on devices running Android 17 QRP1 beta 3</title>
@@ -440,24 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">MP1290847</guid>
       <pubDate>Wed, 15 Apr 2026 23:52:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users may have been unable to access Microsoft 365 web-based services correctly when using Google Chrome</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1281730</link>
-      <description>[Microsoft 365 suite] Users may have been unable to access Microsoft 365 web-based services correctly when using Google Chrome.</description>
-      <category>Microsoft 365 suite</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">MO1281730</guid>
-      <pubDate>Wed, 15 Apr 2026 19:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Intune] Users may be unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1281088</link>
-      <description>[Microsoft Intune] Users may be unable to access the Microsoft Intune web app from a managed Microsoft Edge iOS browser.</description>
-      <category>Microsoft Intune</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">IT1281088</guid>
-      <pubDate>Wed, 15 Apr 2026 14:43:06 +0000</pubDate>
     </item>
   </channel>
 </rss>
