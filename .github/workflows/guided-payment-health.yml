@@ -151,18 +151,31 @@ jobs:
             -H "Click: https://www.aguidetocloud.com/guided/api/health" \
             -d "Cron monitor reports degraded. Auto-restore workflow will trigger next. If you don't see a 🟢 follow-up within ~10 min, run scripts/restore-cf-env.ps1 manually."
 
-      - name: 🚨 Alert on failure
+      - name: 🚨 Alert on failure (open issue in this repo)
+        # Targeting aguidetocloud-revamp (this repo) instead of susanthgit/guided
+        # because PERSONAL_PAT (used to write into guided) is a fine-grained PAT
+        # that doesn't include guided in its repo scope — verified 2026-05-26.
+        # github.token has issues:write on the current repo, no PAT needed.
         env:
-          GH_TOKEN: ${{ secrets.PERSONAL_PAT }}
+          GH_TOKEN: ${{ github.token }}
         run: |
+          # Ensure label exists (idempotent — succeeds quietly if already present)
+          gh label create guided-incident \
+            --repo "${{ github.repository }}" \
+            --color B60205 \
+            --description "Failure in a workflow monitoring guided paid product" \
+            2>/dev/null || true
+
           gh issue create \
-            --repo susanthgit/guided \
-            --title "🚨 Payment health check failed — $(date -u +'%Y-%m-%d %H:%M')" \
+            --repo "${{ github.repository }}" \
+            --title "🚨 Guided payment health check failed — $(date -u +'%Y-%m-%d %H:%M')" \
+            --label guided-incident \
             --body "The payment system health check failed. This is CRITICAL — customers may be paying without receiving licence keys.
 
           **Action required:**
           1. Check https://www.aguidetocloud.com/guided/api/health
           2. Check Stripe dashboard for failed webhooks
           3. Check Resend dashboard for delivery failures
+          4. Look at the auto-restore workflow run in this repo (will fire automatically on next workflow_run)
 
           [View workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})"

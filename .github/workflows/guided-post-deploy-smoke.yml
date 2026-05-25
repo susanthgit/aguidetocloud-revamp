@@ -104,13 +104,22 @@ jobs:
             -d "Production smoke test failed for commit ${{ github.sha }}. Customers may be unable to purchase or activate. Click for workflow run."
 
       - name: 🚨 Open GitHub issue
+        # Targeting this repo (aguidetocloud-revamp) using github.token. Cross-repo
+        # creation against susanthgit/guided isn't possible from this fine-grained
+        # PAT (verified 2026-05-26).
         env:
-          GH_TOKEN: ${{ secrets.PERSONAL_PAT }}
+          GH_TOKEN: ${{ github.token }}
         run: |
+          gh label create guided-incident \
+            --repo "${{ github.repository }}" \
+            --color B60205 \
+            --description "Failure in a workflow monitoring guided paid product" \
+            2>/dev/null || true
+
           gh issue create \
-            --repo susanthgit/guided \
-            --title "🚨 Post-deploy smoke test FAILED — commit ${{ github.sha }}" \
-            --label "incident,paid-product" \
+            --repo "${{ github.repository }}" \
+            --title "🚨 Guided post-deploy smoke test FAILED" \
+            --label guided-incident \
             --body "Post-deploy smoke test (running from aguidetocloud-revamp/.github/workflows/guided-post-deploy-smoke.yml) failed.
 
           **Action required:**

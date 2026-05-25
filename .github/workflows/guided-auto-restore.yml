@@ -331,6 +331,7 @@ jobs:
           && (github.event_name != 'workflow_dispatch' || github.event.inputs.confirm_patch == 'patch-cf-pages')
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           if [ -n "$NTFY_TOPIC" ]; then
             curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
@@ -340,34 +341,28 @@ jobs:
               -H "Click: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
               -d "Health: ${{ steps.precheck.outputs.status }} -> restore attempted -> ${{ steps.postcheck.outputs.status }}. RUN: pwsh C:\\\\ssClawy\\\\guided\\\\scripts\\\\restore-cf-env.ps1"
           fi
-          # Also open a GH issue so it's tracked. Robust pattern:
-          # 1. Try to create with labels; if cross-repo PAT can't reach guided's
-          #    labels (rubber-duck observed this 2026-05-26), retry without --label.
-          export GH_TOKEN="${{ secrets.PERSONAL_PAT }}"
-          if ! gh issue create \
-            --repo susanthgit/guided \
-            --title "🚨 Auto-restore FAILED at $(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
-            --label "incident,paid-product,P0" \
+          # Open a GH issue in THIS repo (aguidetocloud-revamp) — using github.token,
+          # not PERSONAL_PAT, because the local fine-grained PAT does not have access
+          # to susanthgit/guided (verified 2026-05-26). Label classifies as guided.
+          gh label create guided-incident \
+            --repo "${{ github.repository }}" \
+            --color B60205 \
+            --description "Failure in a workflow monitoring guided paid product" \
+            2>/dev/null || true
+
+          gh issue create \
+            --repo "${{ github.repository }}" \
+            --title "🚨 Guided auto-restore FAILED at $(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
+            --label guided-incident \
             --body "Auto-restore workflow failed. Pre-check: ${{ steps.precheck.outputs.status }}. Post-check: ${{ steps.postcheck.outputs.status }}.
 
           [Workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
-          Manual recovery:
+          Manual recovery (from a local machine with the secrets):
           \`\`\`
           pwsh C:\\\\ssClawy\\\\guided\\\\scripts\\\\restore-cf-env.ps1
-          \`\`\`"; then
-            echo "::warning::Could not create labelled issue — retrying without label"
-            gh issue create \
-              --repo susanthgit/guided \
-              --title "🚨 Auto-restore FAILED at $(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
-              --body "Auto-restore workflow failed (no-label fallback — cross-repo PAT could not access label endpoint).
-
-          Pre-check: ${{ steps.precheck.outputs.status }}. Post-check: ${{ steps.postcheck.outputs.status }}.
-
-          [Workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
-
-          Manual recovery:
           \`\`\`
-          pwsh C:\\\\ssClawy\\\\guided\\\\scripts\\\\restore-cf-env.ps1
-          \`\`\`" || echo "::error::Issue creation failed entirely — alert ONLY via ntfy"
-          fi
+
+          Note: This workflow monitors susanthgit/guided's CF Pages env vars, but
+          lives in this (public) repo because guided's private-repo Actions quota
+          is exhausted. The incident is logged here for the same reason."
