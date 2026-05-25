@@ -1,0 +1,278 @@
+name: 🚦 Pipeline Freshness Watchdog
+
+# Probes the 5 live data endpoints (AI News, M365 Roadmap, Service Health,
+# Cert Tracker, M365 Deprecation Timeline) and opens an issue if any
+# `generated_at` timestamp is older than its per-pipeline threshold.
+#
+# Born from the 22-26 May 2026 incident where 5 private-repo pipelines
+# silently failed for 4 days because their in-repo notify-on-failure jobs
+# shared the same broken setup. This watchdog runs in the (public, free
+# Actions) aguidetocloud-revamp repo, so it cannot be killed by quota or
+# fail in the same way as the pipelines it monitors.
+#
+# Smart de-dup (same pattern as realtime-probe.yml):
+#   - Searches for existing open issue with label `pipeline-stale`
+#   - If present → adds a comment with the new staleness reasons (no new issue)
+#   - If absent  → creates a new issue
+#   - On next healthy run → closes the open issue with a recovery comment
+#
+# Optional ntfy push:
+#   - If the repo has secret NTFY_TOPIC set, sends an ntfy.sh push on the
+#     FIRST failure detected (when the issue gets opened, not on every probe).
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'  # Every 4 hours
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/pipeline-freshness-watchdog.yml'
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    outputs:
+      status: ${{ steps.run.outputs.status }}
+      summary: ${{ steps.run.outputs.summary }}
+      reasons: ${{ steps.run.outputs.reasons }}
+    steps:
+      - name: 🚦 Probe pipeline data freshness
+        id: run
+        run: |
+          set +e
+          python3 - <<'PY'
+          import json, os, sys, urllib.request, urllib.error
+          from datetime import datetime, timezone
+
+          PIPELINES = [
+              ("AI News",        "https://www.aguidetocloud.com/data/ainews/latest.json",                12),
+              ("M365 Roadmap",   "https://www.aguidetocloud.com/data/roadmap/latest.json",               48),
+              ("Service Health", "https://www.aguidetocloud.com/data/service-health/latest.json",         6),
+              ("Cert Tracker",   "https://www.aguidetocloud.com/data/cert-tracker/latest.json",         192),
+              ("Deprecation",    "https://www.aguidetocloud.com/data/deprecation-timeline/latest.json",  48),
+          ]
+
+          def fetch(url):
+              req = urllib.request.Request(url, headers={"User-Agent": "agtc-pipeline-watchdog/1.0"})
+              try:
+                  with urllib.request.urlopen(req, timeout=15) as r:
+                      return r.status, json.loads(r.read().decode("utf-8"))
+              except urllib.error.HTTPError as e:
+                  return e.code, None
+              except Exception as e:
+                  return None, {"_error": str(e)}
+
+          def parse_ts(s):
+              if not s:
+                  return None
+              if isinstance(s, (int, float)):
+                  return datetime.fromtimestamp(s, tz=timezone.utc)
+              # Several pipelines produce slightly different formats; try a few.
+              fmts = [
+                  "%Y-%m-%dT%H:%M:%S.%fZ",
+                  "%Y-%m-%dT%H:%M:%SZ",
+                  "%Y-%m-%dT%H:%M:%S.%f%z",
+                  "%Y-%m-%dT%H:%M:%S%z",
+                  "%Y-%m-%d %H:%M:%S",
+                  "%Y-%m-%d",
+              ]
+              for f in fmts:
+                  try:
+                      dt = datetime.strptime(s, f)
+                      if dt.tzinfo is None:
+                          dt = dt.replace(tzinfo=timezone.utc)
+                      return dt
+                  except Exception:
+                      continue
+              # ISO format with no separator handled by fromisoformat in py3.11+
+              try:
+                  return datetime.fromisoformat(s.replace("Z", "+00:00"))
+              except Exception:
+                  return None
+
+          now = datetime.now(timezone.utc)
+          reasons = []
+          ok_count = 0
+
+          for name, url, max_hours in PIPELINES:
+              status, data = fetch(url)
+              if status != 200 or not data:
+                  reasons.append(f"❌ {name}: HTTP {status} or unparseable response")
+                  continue
+              # Pipelines emit `generated_at` or `generated`; try both.
+              gen = data.get("generated_at") or data.get("generated") or data.get("metadata", {}).get("generated")
+              dt = parse_ts(gen) if gen else None
+              if dt is None:
+                  reasons.append(f"❌ {name}: no parseable generated_at field (raw: {gen!r})")
+                  continue
+              age_h = (now - dt).total_seconds() / 3600
+              if age_h > max_hours:
+                  reasons.append(f"🔴 {name}: {age_h:.1f}h old (max {max_hours}h) — generated {dt.isoformat()}")
+              else:
+                  ok_count += 1
+                  print(f"✅ {name}: {age_h:.1f}h old (limit {max_hours}h)")
+
+          status = "healthy" if not reasons else "degraded"
+          if reasons:
+              summary = f"{len(reasons)} of {len(PIPELINES)} pipelines stale"
+          else:
+              summary = f"all {len(PIPELINES)} pipelines fresh"
+
+          print(f"Status: {status}")
+          print(f"Summary: {summary}")
+          if reasons:
+              print("Reasons:")
+              for r in reasons:
+                  print(f"  - {r}")
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"status={status}\n")
+              f.write(f"summary={summary}\n")
+              f.write(f"reasons={json.dumps(reasons)}\n")
+
+          sys.exit(0 if status == "healthy" else 1)
+          PY
+
+  # ── On failure: open/comment on issue + optional ntfy ──
+  alert:
+    runs-on: ubuntu-latest
+    needs: probe
+    if: failure() || needs.probe.outputs.status != 'healthy'
+    permissions:
+      issues: write
+    steps:
+      - name: 🔎 Find existing open issue
+        id: find
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          EXISTING=$(gh issue list \
+            --repo "${{ github.repository }}" \
+            --state open \
+            --label pipeline-stale \
+            --json number,title \
+            --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            echo "existing=$EXISTING" >> "$GITHUB_OUTPUT"
+            echo "Found existing issue #$EXISTING"
+          else
+            echo "existing=" >> "$GITHUB_OUTPUT"
+            echo "No open issue — will create"
+          fi
+
+      - name: 💬 Comment on existing issue
+        if: steps.find.outputs.existing != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ steps.find.outputs.existing }}
+          SUMMARY: ${{ needs.probe.outputs.summary }}
+          REASONS: ${{ needs.probe.outputs.reasons }}
+        run: |
+          TS=$(date -u +'%Y-%m-%d %H:%M UTC')
+          gh issue comment "$ISSUE" \
+            --repo "${{ github.repository }}" \
+            --body "🔴 Still stale as of $TS — $SUMMARY
+
+          Reasons: $REASONS
+
+          [Run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+
+      - name: 🚨 Open new issue
+        if: steps.find.outputs.existing == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SUMMARY: ${{ needs.probe.outputs.summary }}
+          REASONS: ${{ needs.probe.outputs.reasons }}
+        run: |
+          gh label create pipeline-stale \
+            --repo "${{ github.repository }}" \
+            --color FFA500 \
+            --description "One or more data pipelines (AI News, Roadmap, Service Health, Cert Tracker, Deprecation) have stale generated_at" 2>/dev/null || true
+
+          TS=$(date -u +'%Y-%m-%d %H:%M UTC')
+          gh issue create \
+            --repo "${{ github.repository }}" \
+            --title "🚦 Pipeline data stale — $TS" \
+            --label pipeline-stale \
+            --body "**Status:** \`${{ needs.probe.outputs.status }}\`
+          **First detected:** $TS
+          **Summary:** $SUMMARY
+
+          **Reasons:**
+          $REASONS
+
+          ## Context
+
+          One or more of the 5 data pipelines has not refreshed its \`generated_at\` within the per-pipeline freshness threshold. Common causes:
+
+          1. **GitHub Actions quota exhausted on the pipeline repo** — verify the source repo's recent runs aren't failing in 3s with 0 billable_ms. Repos must be public for unlimited free Actions, OR the account must have a paid Actions allowance.
+          2. **Upstream API change** — pipeline scripts (RSS feeds, Microsoft Learn scrapes, Microsoft API) may have started returning unexpected shapes; check the latest failed run in the pipeline repo.
+          3. **Push step failing on cross-repo write** — the pipeline writes its output JSON into \`aguidetocloud-revamp/static/data/<pipeline>/\` via a PERSONAL_PAT clone-and-push step. PAT may have expired or lost permissions.
+          4. **Cloudflare Pages build stuck** — push succeeded but CF rebuild didn't propagate. Check CF Pages dashboard or trigger a manual rebuild.
+
+          ## Cmd-line reproduce
+
+          \`\`\`powershell
+          # Quick local probe of the 5 endpoints
+          @('ainews','roadmap','service-health','cert-tracker','deprecation-timeline') | ForEach-Object {
+            \$j = curl -s \"https://www.aguidetocloud.com/data/\$_/latest.json\" | ConvertFrom-Json
+            Write-Host \"\$_: generated_at=\$(\$j.generated_at)\"
+          }
+          \`\`\`
+
+          ## On recovery
+          This issue will auto-close when the next watchdog run reports all pipelines fresh.
+
+          [Run that detected this](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+
+      - name: 📣 Push to phone (ntfy)
+        if: steps.find.outputs.existing == '' && env.NTFY_TOPIC != ''
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          SUMMARY: ${{ needs.probe.outputs.summary }}
+        run: |
+          curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+            -H "Title: 🚦 A Guide to Cloud: pipeline data stale" \
+            -H "Priority: default" \
+            -H "Tags: warning,traffic_light" \
+            -H "Click: ${{ github.server_url }}/${{ github.repository }}/issues?q=is%3Aopen+label%3Apipeline-stale" \
+            -d "$SUMMARY"
+
+  # ── On recovery: close any open pipeline-stale issue ──
+  recover:
+    runs-on: ubuntu-latest
+    needs: probe
+    if: success() && needs.probe.outputs.status == 'healthy'
+    permissions:
+      issues: write
+    steps:
+      - name: 🟢 Close open pipeline-stale issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SUMMARY: ${{ needs.probe.outputs.summary }}
+        run: |
+          ISSUES=$(gh issue list \
+            --repo "${{ github.repository }}" \
+            --state open \
+            --label pipeline-stale \
+            --json number \
+            --jq '.[].number')
+          if [ -z "$ISSUES" ]; then
+            echo "No open issues to close — healthy run, nothing to do"
+            exit 0
+          fi
+          TS=$(date -u +'%Y-%m-%d %H:%M UTC')
+          for N in $ISSUES; do
+            gh issue comment "$N" --repo "${{ github.repository }}" \
+              --body "🟢 Recovered at $TS — $SUMMARY
+
+            [Recovery run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+            gh issue close "$N" --repo "${{ github.repository }}" --reason completed
+            echo "Closed #$N"
+          done
