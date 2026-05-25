@@ -65,7 +65,9 @@ jobs:
             -d "Health monitor reported failure but rechecking shows healthy. No restore needed."
 
       - name: "📣 Push: starting auto-restore"
-        if: steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch'
+        if: |
+          (steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch')
+          && (github.event_name != 'workflow_dispatch' || github.event.inputs.confirm_patch == 'patch-cf-pages')
         run: |
           curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
             -H "Title: 🔴 Guided: degraded — auto-restoring now" \
@@ -75,7 +77,9 @@ jobs:
             -d "Pre-check status: ${{ steps.precheck.outputs.status }}. PATCHing 7 env vars and redeploying."
 
       - name: 🩺 Verify CF API token works from this runner (diagnostic)
-        if: steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch'
+        if: |
+          (steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch')
+          && (github.event_name != 'workflow_dispatch' || github.event.inputs.confirm_patch == 'patch-cf-pages')
         env:
           CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
@@ -100,15 +104,17 @@ jobs:
           fi
           echo "✅ CF token authenticated from GH runner"
 
-      - name: 🛑 Safety gate — workflow_dispatch requires confirm_patch
+      - name: ⏭️ Skip — workflow_dispatch without confirm_patch
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.confirm_patch != 'patch-cf-pages'
         run: |
-          echo "::error::workflow_dispatch trigger requires the confirm_patch input to equal 'patch-cf-pages'."
-          echo "Re-run with: gh workflow run guided-auto-restore.yml --repo susanthgit/aguidetocloud-revamp -f confirm_patch=patch-cf-pages -f reason='<reason>'"
-          exit 1
+          echo "::notice::workflow_dispatch ran without confirm_patch=patch-cf-pages. Skipping PATCH and exiting cleanly."
+          echo "::notice::To actually PATCH Cloudflare Pages env vars, re-run with:"
+          echo "::notice::  gh workflow run guided-auto-restore.yml --repo susanthgit/aguidetocloud-revamp -f confirm_patch=patch-cf-pages -f reason='<reason>'"
 
       - name: 🩹 PATCH Cloudflare Pages env vars
-        if: steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch'
+        if: |
+          (steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch')
+          && (github.event_name != 'workflow_dispatch' || github.event.inputs.confirm_patch == 'patch-cf-pages')
         env:
           CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           # GUIDED_ADMIN_PASSWORD intentionally — aguidetocloud-revamp also has an
@@ -166,7 +172,9 @@ jobs:
           fi
 
       - name: 🚀 Trigger redeploy
-        if: steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch'
+        if: |
+          (steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch')
+          && (github.event_name != 'workflow_dispatch' || github.event.inputs.confirm_patch == 'patch-cf-pages')
         id: deploy
         env:
           CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -179,7 +187,9 @@ jobs:
           echo "Deploy ID: $DEPLOY_ID"
 
       - name: ⏳ Wait for deploy to finish (max 6 min)
-        if: steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch'
+        if: |
+          (steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch')
+          && (github.event_name != 'workflow_dispatch' || github.event.inputs.confirm_patch == 'patch-cf-pages')
         env:
           CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           DEPLOY_ID: ${{ steps.deploy.outputs.deploy_id }}
@@ -205,7 +215,9 @@ jobs:
           exit 1
 
       - name: 🩺 Verify health is now green
-        if: steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch'
+        if: |
+          (steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch')
+          && (github.event_name != 'workflow_dispatch' || github.event.inputs.confirm_patch == 'patch-cf-pages')
         id: postcheck
         run: |
           # Give env vars a moment to propagate after deploy
