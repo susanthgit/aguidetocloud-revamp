@@ -190,16 +190,31 @@ jobs:
           SUMMARY: ${{ needs.probe.outputs.summary }}
           REASONS: ${{ needs.probe.outputs.reasons }}
         run: |
-          gh label create pipeline-stale \
-            --repo "${{ github.repository }}" \
-            --color FFA500 \
-            --description "One or more data pipelines (AI News, Roadmap, Service Health, Cert Tracker, Deprecation) have stale generated_at" 2>/dev/null || true
+          # Robust label creation — try, log failure visibly, never block issue creation
+          if ! gh label list --repo "${{ github.repository }}" --json name --jq '.[].name' | grep -qx 'pipeline-stale'; then
+            echo "Label 'pipeline-stale' not found — creating"
+            gh label create pipeline-stale \
+              --repo "${{ github.repository }}" \
+              --color FFA500 \
+              --description "One or more data pipelines have stale generated_at" \
+              || echo "Label creation failed — will create issue without label"
+          else
+            echo "Label 'pipeline-stale' already exists"
+          fi
+
+          # Check whether the label now exists; decide --label flag accordingly
+          if gh label list --repo "${{ github.repository }}" --json name --jq '.[].name' | grep -qx 'pipeline-stale'; then
+            LABEL_FLAG="--label pipeline-stale"
+          else
+            LABEL_FLAG=""
+            echo "::warning::pipeline-stale label could not be created — opening issue without label (dedup will fall back to title pattern next run)"
+          fi
 
           TS=$(date -u +'%Y-%m-%d %H:%M UTC')
           gh issue create \
             --repo "${{ github.repository }}" \
             --title "🚦 Pipeline data stale — $TS" \
-            --label pipeline-stale \
+            $LABEL_FLAG \
             --body "**Status:** \`${{ needs.probe.outputs.status }}\`
           **First detected:** $TS
           **Summary:** $SUMMARY
@@ -216,14 +231,13 @@ jobs:
           3. **Push step failing on cross-repo write** — the pipeline writes its output JSON into \`aguidetocloud-revamp/static/data/<pipeline>/\` via a PERSONAL_PAT clone-and-push step. PAT may have expired or lost permissions.
           4. **Cloudflare Pages build stuck** — push succeeded but CF rebuild didn't propagate. Check CF Pages dashboard or trigger a manual rebuild.
 
-          ## Cmd-line reproduce
+          ## Local probe
 
-          \`\`\`powershell
-          # Quick local probe of the 5 endpoints
-          @('ainews','roadmap','service-health','cert-tracker','deprecation-timeline') | ForEach-Object {
-            \$j = curl -s \"https://www.aguidetocloud.com/data/\$_/latest.json\" | ConvertFrom-Json
-            Write-Host \"\$_: generated_at=\$(\$j.generated_at)\"
-          }
+          \`\`\`bash
+          for p in ainews roadmap service-health cert-tracker deprecation-timeline; do
+            echo \"--- \$p ---\"
+            curl -s \"https://www.aguidetocloud.com/data/\$p/latest.json\" | jq -r '.generated_at // .generated // \"no timestamp\"'
+          done
           \`\`\`
 
           ## On recovery
