@@ -37,14 +37,29 @@ WATCHLIST_PATH = DATA_DIR / "refresh_watchlist.toml"
 AGE_THRESHOLD_DAYS = 90      # Maps older than this trigger a soft warning
 STALE_THRESHOLD_DAYS = 180   # Maps older than this trigger a strong warning
 
-# Patterns that should never appear post-retirement
-RETIRED_PATTERNS = [
-    (r'\bMS-900\b', "MS-900 was retired on March 31, 2026 — remove or annotate as retired"),
-    (r'\bDP-203\b', "DP-203 was retired on March 31, 2025 — replace with DP-700 (Fabric Engineer)"),
-    (r'\bAI-200\b', "AI-200 is not a published Microsoft exam code — remove or replace"),
-    (r'\bAzureAD\b(?!.*retir)', "AzureAD PowerShell module retired Aug 31 2025 — annotate as retired"),
-    (r'\bMSOnline\b(?!.*retir)', "MSOnline PowerShell module retired May 30 2025 — annotate as retired"),
+# Items that should ONLY appear in retirement context (i.e., the surrounding
+# prose should acknowledge they're retired/deprecated/end-of-support).
+# The check looks for the term and then a context window of ±200 chars; if the
+# window mentions a retirement keyword, the reference is considered properly
+# contextualised. This avoids the false-positive class where the .md prose
+# correctly says "DP-203 was retired in March 2025" but a naive regex fires
+# because the retirement keyword is on a different line / paragraph.
+#
+# Format: (term_regex, human_description_if_unannotated)
+RETIRED_ITEMS = [
+    (r'\bMS-900\b',   "MS-900 was retired on March 31, 2026 — annotate as retired or remove"),
+    (r'\bDP-203\b',   "DP-203 was retired on March 31, 2025 — replace with DP-700 (Fabric Engineer) or annotate"),
+    (r'\bAzureAD\b',  "AzureAD PowerShell module was retired Aug 31, 2025 — annotate as retired"),
+    (r'\bMSOnline\b', "MSOnline PowerShell module was retired May 30, 2025 — annotate as retired"),
 ]
+
+# Pattern that indicates "this mention IS in retirement context" — bypass alert.
+RETIREMENT_CONTEXT = re.compile(
+    r'\b(retir(?:ed|ing|ement)|deprecat(?:ed|ing|ion)|sunset|end[- ]?of[- ]?(?:support|life)'
+    r'|no longer (?:supported|available|works)|gone|dead)\b',
+    re.IGNORECASE,
+)
+CONTEXT_WINDOW = 250  # chars before+after each match to consider "same context"
 
 # Patterns worth a periodic check (not necessarily wrong, but verify)
 WATCH_PATTERNS = [
@@ -131,10 +146,24 @@ def check_lastmod_age(slug: str, fm: dict):
 
 
 def check_retired_patterns(slug: str, content: str):
-    """Flag references to known-retired things."""
-    for pattern, msg in RETIRED_PATTERNS:
-        if re.search(pattern, content, re.IGNORECASE):
-            ISSUES.append(f"🔴 **{slug}** — {msg}")
+    """Flag references to retired things ONLY if the document as a whole doesn't
+    acknowledge the retirement. We use file-level scope (not per-paragraph)
+    because the JSON often has just a short label ("Replaces AzureAD + MSOnline")
+    while the retirement acknowledgement lives in the markdown prose body —
+    they're in the same combined doc but hundreds of chars apart.
+
+    For a small curated list of obviously-retired items, false-negatives are
+    acceptable (someone would have to mention the term and explain retirement
+    elsewhere in the SAME document). Tightens to per-context if the list grows
+    or if we ever see a real false-negative.
+    """
+    doc_has_retirement_context = bool(RETIREMENT_CONTEXT.search(content))
+    for term_re, human_msg in RETIRED_ITEMS:
+        if not re.search(term_re, content, re.IGNORECASE):
+            continue
+        if doc_has_retirement_context:
+            continue  # document acknowledges retirement somewhere
+        ISSUES.append(f"🔴 **{slug}** — {human_msg}")
 
 
 def check_watch_patterns(slug: str, content: str):

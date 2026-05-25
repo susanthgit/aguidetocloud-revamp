@@ -33,11 +33,23 @@ ISSUES = []
 
 
 def check_m365_pricing():
-    """Check Microsoft 365 pricing page for changes."""
-    print("Checking M365 pricing...")
+    """Check our Microsoft 365 pricing TOMLs internally (cross-validate prices
+    across roi_pricing.toml + licensing/plans.toml). External MS pricing page
+    scraping was removed 2026-05-26 because Microsoft's compare-all-plans page
+    is now JS-rendered and our literal price-string check kept generating false-
+    positive 'price not found' alerts every month with no actual data change.
+
+    The price authority lives in our own TOMLs. This check now validates that:
+      1. roi_pricing.toml parses cleanly
+      2. licensing/plans.toml parses cleanly
+      3. Both files have the expected plan keys
+    Real price-change verification is now driven by the freshness label on
+    each TOML's last_verified field (set manually after Sush re-checks the
+    Microsoft pricing pages directly).
+    """
+    print("Checking M365 pricing TOML self-consistency...")
     try:
-        # Load current TOML pricing (simple parser — just extract key values)
-        roi_toml = (ROOT / "data" / "roi_pricing.toml").read_text()
+        roi_toml = (ROOT / "data" / "roi_pricing.toml").read_text(encoding="utf-8")
         current_prices = {}
         current_plan = None
         for line in roi_toml.splitlines():
@@ -48,24 +60,28 @@ def check_m365_pricing():
             if m2 and current_plan:
                 current_prices[current_plan] = float(m2.group(1))
 
-        # Check Microsoft pricing page
-        url = "https://www.microsoft.com/en-us/microsoft-365/business/compare-all-plans"
-        resp = requests.get(url, timeout=15, headers={'User-Agent': 'Mozilla/5.0'})
-        page_text = resp.text.lower()
+        if not current_prices:
+            ISSUES.append("⚠️ **roi_pricing.toml** — no `total = ` lines parsed. File may be malformed.")
+            return
 
-        # Look for known price strings
-        known_prices = {
-            'bus-std': ('12.50', 'Business Standard'),
-            'bus-prem': ('22.00', 'Business Premium'),
-        }
+        print(f"  Parsed {len(current_prices)} plans from roi_pricing.toml: {list(current_prices.keys())}")
 
-        for plan_id, (price_str, plan_name) in known_prices.items():
-            if price_str not in page_text and f"${price_str}" not in page_text:
-                ISSUES.append(f"⚠️ **{plan_name}** — price ${price_str}/user/mo not found on Microsoft pricing page. May have changed.")
+        # Sanity: every plan should have a non-zero total
+        for plan, total in current_prices.items():
+            if total <= 0:
+                ISSUES.append(f"⚠️ **roi_pricing.toml** — plan `{plan}` has non-positive total: ${total}")
 
-        print(f"  Current ROI pricing: {current_prices}")
+        # Cross-check that licensing/plans.toml exists and has plans (don't compare values —
+        # licensing TOML has separate per-currency fields)
+        lic_path = ROOT / "data" / "licensing" / "plans.toml"
+        if lic_path.exists():
+            lic_text = lic_path.read_text(encoding="utf-8")
+            plan_blocks = re.findall(r'\[\[plans\]\]', lic_text)
+            print(f"  Parsed {len(plan_blocks)} plans from licensing/plans.toml")
+        else:
+            ISSUES.append("⚠️ **licensing/plans.toml** — file not found.")
     except Exception as e:
-        print(f"  Warning: Could not check M365 pricing: {e}")
+        ISSUES.append(f"⚠️ **M365 pricing check** — could not read TOMLs: {e}")
 
 
 def check_copilot_features():
@@ -83,7 +99,7 @@ def check_copilot_features():
         has_current_month = any(current_month.lower() in h.get_text().lower() for h in headers)
 
         # Load current features count
-        features_toml = (ROOT / "data" / "copilot_matrix" / "features.toml").read_text()
+        features_toml = (ROOT / "data" / "copilot_matrix" / "features.toml").read_text(encoding="utf-8")
         feature_count = features_toml.count('[[features]]')
 
         print(f"  Current features in TOML: {feature_count}")
@@ -100,8 +116,8 @@ def check_roi_consistency():
     """Check ROI pricing TOML matches licensing TOML."""
     print("Checking ROI ↔ Licensing consistency...")
     try:
-        roi_toml = (ROOT / "data" / "roi_pricing.toml").read_text()
-        lic_toml = (ROOT / "data" / "licensing" / "plans.toml").read_text()
+        roi_toml = (ROOT / "data" / "roi_pricing.toml").read_text(encoding="utf-8")
+        lic_toml = (ROOT / "data" / "licensing" / "plans.toml").read_text(encoding="utf-8")
 
         # Extract E3 price from both
         roi_e3 = re.search(r'\[plans\.e3\].*?total\s*=\s*([\d.]+)', roi_toml, re.DOTALL)
@@ -116,8 +132,13 @@ def check_roi_consistency():
 
 
 def check_ai_vendors():
-    """Check AI vendor pricing pages for changes."""
-    print("Checking AI vendor pricing...")
+    """Verify AI vendor pricing pages are reachable. Bot-blocked vendors
+    (OpenAI, Gemini) regularly return 403/404 to GHA runners even though the
+    pages themselves are healthy — these were generating monthly false-positive
+    alerts. As of 2026-05-26, we only alert if a page returns a 5xx (real
+    server-side problem) and just log 4xx as expected bot-block.
+    """
+    print("Checking AI vendor pricing reachability...")
     vendors = {
         'OpenAI': 'https://openai.com/chatgpt/pricing/',
         'Anthropic': 'https://www.anthropic.com/pricing',
@@ -128,11 +149,16 @@ def check_ai_vendors():
         try:
             resp = requests.get(url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
             if resp.status_code == 200:
-                print(f"  {name}: pricing page accessible ✓")
+                print(f"  {name}: pricing page accessible ✓ (200)")
+            elif 400 <= resp.status_code < 500:
+                # Bot-block — expected on GHA runners. Don't alert.
+                print(f"  {name}: HTTP {resp.status_code} (likely bot-block from GHA runner — no alert)")
             else:
-                ISSUES.append(f"⚠️ **{name}** pricing page returned {resp.status_code} — may have moved.")
+                # 5xx — real server-side problem worth flagging
+                ISSUES.append(f"⚠️ **{name}** pricing page returned {resp.status_code} (5xx server error) — may need to verify the URL is still correct.")
         except Exception as e:
-            print(f"  {name}: could not reach ({e})")
+            # Network errors are not actionable on our end
+            print(f"  {name}: could not reach ({e}) — no alert")
 
 
 def check_pipeline_data_ages():
@@ -151,8 +177,15 @@ def check_pipeline_data_ages():
     for name, (path, max_hours) in checks.items():
         if path.exists():
             try:
-                data = json.loads(path.read_text())
-                gen = data.get('metadata', {}).get('generated') or data.get('generated')
+                data = json.loads(path.read_text(encoding="utf-8"))
+                # Pipelines emit one of: generated_at (most), metadata.generated
+                # (deprecation-timeline). Try both, plus a few common aliases.
+                gen = (data.get('generated_at')
+                       or data.get('generated')
+                       or data.get('metadata', {}).get('generated_at')
+                       or data.get('metadata', {}).get('generated')
+                       or data.get('lastUpdated')
+                       or data.get('last_updated'))
                 if gen:
                     gen_dt = datetime.fromisoformat(gen.replace('Z', '+00:00'))
                     age_h = (datetime.now(timezone.utc) - gen_dt).total_seconds() / 3600
@@ -179,7 +212,7 @@ def check_frontier_map():
         ISSUES.append("🔴 **Frontier Map** features.toml not found")
         return
 
-    content = features_path.read_text()
+    content = features_path.read_text(encoding="utf-8")
     last_verified_dates = re.findall(r'last_verified\s*=\s*"(\d{4}-\d{2}-\d{2})"', content)
 
     if last_verified_dates:
@@ -228,7 +261,7 @@ def check_frontier_map():
     # 3. Check metadata last_updated
     meta_path = ROOT / "data" / "copilot_frontier_map" / "metadata.toml"
     if meta_path.exists():
-        meta_content = meta_path.read_text()
+        meta_content = meta_path.read_text(encoding="utf-8")
         m = re.search(r'last_updated\s*=\s*"(\d{4}-\d{2}-\d{2})"', meta_content)
         if m:
             meta_date = m.group(1)

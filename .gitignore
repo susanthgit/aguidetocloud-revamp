@@ -45,3 +45,7 @@ scripts/og-generator-cert/package-lock.json
 test-results/
 playwright-report/
 
+
+# Playwright screenshot output (set 2026-05-26)
+tests/screenshots/
+
