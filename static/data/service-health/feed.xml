@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 22 May 2026 12:33:49 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2026 22:02:42 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Exchange Online] Users were intermittently unable to access Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1321282</link>
+      <description>[Exchange Online] Users were intermittently unable to access Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">EX1321282</guid>
+      <pubDate>Sun, 24 May 2026 23:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some admins' Copilot usage and chat report data may be delayed from appearing in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1320293</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Admins' Copilot usage and chat report data may have been delayed from appearing in the Microsoft 365 admin center.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1320293</guid>
+      <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may intermittently receive blank responses from Analyst Agent in Microsoft Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1318025</link>
@@ -51,15 +69,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1316808</guid>
       <pubDate>Tue, 19 May 2026 20:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to share agents in Microsoft 365 Copilot with users without a Copilot license</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1314992</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to share agents in Copilot with users without a Copilot license.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1314992</guid>
-      <pubDate>Mon, 18 May 2026 17:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Power BI] Users may be unable to access or may experience delays when accessing Microsoft Fabric</title>
@@ -368,6 +377,15 @@
       <pubDate>Mon, 27 Apr 2026 16:19:46 +0000</pubDate>
     </item>
     <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to share agents in Microsoft 365 Copilot with users without a Copilot license</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1314992</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to share agents in Copilot with users without a Copilot license.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1314992</guid>
+      <pubDate>Sun, 26 Apr 2026 19:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Azure] Azure incident affecting East US</title>
       <link>https://www.aguidetocloud.com/service-health/#AZ-5GP8-W0G</link>
       <description>[Azure] Between 11:30 and 23:22 UTC on 24 April 2026, customers may have experienced failures or delays when attempting to provision, scale, or update resources in East US.
@@ -440,24 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CP1283380</guid>
       <pubDate>Fri, 17 Apr 2026 15:07:37 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may see a delay in certain Microsoft Copilot usage reports in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1282908</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have seen a delay in certain Copilot usage reports in the Microsoft 365 admin center.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1282908</guid>
-      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users may see a delay in certain reports in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1282907</link>
-      <description>[Microsoft 365 suite] Users may have seen a delay in certain reports in the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1282907</guid>
-      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
