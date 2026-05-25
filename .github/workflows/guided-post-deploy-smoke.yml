@@ -1,0 +1,121 @@
+name: 🧪 Post-Deploy Smoke Test
+
+# Runs after every push to main. Cloudflare Pages auto-deploys from main, so we
+# wait ~3 min then hit production with the SLA smoke tests + a click-flow check.
+# This catches the class of bugs that 30 Apr / 1 May / 3 May incidents shared:
+# all 3 SLA curl checks were green AT BUILD TIME but click-flow was broken on prod.
+
+on:
+  schedule:
+    # Every 30 minutes — catches regressions within 30 min of any deploy.
+    # Original trigger was 'on: push: branches: [main]' in susanthgit/guided
+    # which fired after each guided commit (since CF Pages auto-deploys from guided).
+    # Migrated to aguidetocloud-revamp on 2026-05-26 — guided's main branch is
+    # no longer in this repo, so we use a schedule instead.
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+env:
+  PROD_URL: https://www.aguidetocloud.com
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  wait-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⏳ Wait for Cloudflare Pages deploy (3 min)
+        run: sleep 180
+
+      - name: 🩺 Health endpoint
+        run: |
+          BODY=$(curl -sf "$PROD_URL/guided/api/health")
+          echo "$BODY" | python3 -m json.tool
+          STATUS=$(echo "$BODY" | python3 -c "import sys,json; print(json.load(sys.stdin)['status'])")
+          if [ "$STATUS" != "healthy" ]; then
+            echo "::error::Health endpoint reports $STATUS"
+            exit 1
+          fi
+
+      - name: 📝 Questions JSON
+        run: |
+          curl -sf "$PROD_URL/guided/data/questions/az-900.json" \
+            | head -c 50 | grep -q '\[{"meta"' \
+            || (echo "::error::Questions JSON malformed" && exit 1)
+
+      - name: 💳 Checkout API returns Stripe URL
+        run: |
+          RESP=$(curl -sf -X POST "$PROD_URL/guided/api/checkout" \
+            -H "Content-Type: application/json" \
+            -d '{"productType":"cert","certCode":"az-900","vendorSlug":"microsoft"}')
+          echo "$RESP" | grep -q '"url":"https://checkout.stripe.com' \
+            || (echo "::error::Checkout API did not return Stripe URL: $RESP" && exit 1)
+
+      - name: 🎯 Practice page renders
+        run: |
+          curl -sf -o /dev/null -w "%{http_code}" "$PROD_URL/guided/az-900/practice/" | grep -q '^200$' \
+            || (echo "::error::Practice page not 200" && exit 1)
+
+      - name: 🔘 Cert landing has unlock button (no checkout-loop anchor)
+        run: |
+          BODY=$(curl -sf "$PROD_URL/guided/az-900/")
+          # Must have button id (the 3 May fix)
+          echo "$BODY" | grep -q 'id="cert-unlock-btn"' \
+            || (echo "::error::Cert landing missing cert-unlock-btn" && exit 1)
+          # Must NOT have the loop anchor (the 3 May bug)
+          if echo "$BODY" | grep -q 'href="[^"]*?checkout=1'; then
+            echo "::error::Cert landing has ?checkout=1 loop anchor (regression of 3 May bug)"
+            exit 1
+          fi
+
+      - name: 🔘 Practice page has unlock button (no loop anchor)
+        run: |
+          BODY=$(curl -sf "$PROD_URL/guided/az-900/practice/")
+          echo "$BODY" | grep -q 'id="practice-unlock-btn"' \
+            || echo "::warning::Practice page missing practice-unlock-btn (may be intentional after activation flow change)"
+          if echo "$BODY" | grep -q 'href="[^"]*?checkout=1'; then
+            echo "::error::Practice page has ?checkout=1 loop anchor (regression of 3 May bug)"
+            exit 1
+          fi
+
+      - name: ✅ All smoke checks passed
+        run: echo "Production smoke tests green for commit ${{ github.sha }}"
+
+  alert-on-failure:
+    runs-on: ubuntu-latest
+    needs: wait-and-test
+    if: failure()
+    steps:
+      - name: 📣 Push to phone
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          if [ -z "$NTFY_TOPIC" ]; then
+            echo "::warning::NTFY_TOPIC not set — skipping push"
+            exit 0
+          fi
+          curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+            -H "Title: 🚨 Guided: post-deploy smoke FAILED" \
+            -H "Priority: max" \
+            -H "Tags: rotating_light,construction" \
+            -H "Click: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            -d "Production smoke test failed for commit ${{ github.sha }}. Customers may be unable to purchase or activate. Click for workflow run."
+
+      - name: 🚨 Open GitHub issue
+        env:
+          GH_TOKEN: ${{ secrets.PERSONAL_PAT }}
+        run: |
+          gh issue create \
+            --repo susanthgit/guided \
+            --title "🚨 Post-deploy smoke test FAILED — commit ${{ github.sha }}" \
+            --label "incident,paid-product" \
+            --body "Post-deploy smoke test (running from aguidetocloud-revamp/.github/workflows/guided-post-deploy-smoke.yml) failed.
+
+          **Action required:**
+          1. Check https://www.aguidetocloud.com/guided/api/health
+          2. Check Cloudflare Pages deployment logs for the 'guided' project
+          3. [View workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+          This is a paid product. Customers may be unable to purchase or activate. Treat as P0."

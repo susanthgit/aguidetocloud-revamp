@@ -1,0 +1,234 @@
+name: 🔧 Auto-Restore CF Env Vars
+
+# Self-healing layer.
+# Triggered when 🏥 Payment Health Monitor reports failure. Re-checks first
+# (in case the failure was a transient blip), then PATCHes Cloudflare Pages
+# env vars from GH repo secrets, triggers a redeploy, and re-verifies.
+# Phone push at every state change so Sush sees what happened.
+#
+# Manual trigger:
+#   gh workflow run auto-restore.yml --repo susanthgit/guided
+
+on:
+  workflow_run:
+    workflows: ["🏥 Payment Health Monitor"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Why are you triggering this manually?"
+        required: false
+        default: "manual test"
+
+env:
+  CF_ACCOUNT_ID: d42846fe2c29daf890ec57877fda5e04
+  CF_PROJECT: guided
+  PROD_URL: https://www.aguidetocloud.com
+  NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+
+# Note: This workflow was migrated from susanthgit/guided -> aguidetocloud-revamp
+# on 2026-05-26. CF_PROJECT remains 'guided' (the target Pages project to PATCH).
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    # Only run on actual failure of payment-health, OR explicit manual dispatch.
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - name: 🔍 Re-check health (avoid PATCH on transient blips)
+        id: precheck
+        run: |
+          set +e
+          BODY=$(curl -s --max-time 30 "$PROD_URL/guided/api/health")
+          STATUS=$(echo "$BODY" | python3 -c "import sys,json; print(json.load(sys.stdin).get('status','unknown'))" 2>/dev/null)
+          echo "Pre-check status: $STATUS"
+          echo "status=$STATUS" >> $GITHUB_OUTPUT
+          # Show component breakdown in logs for ops visibility
+          echo "$BODY" | python3 -m json.tool 2>/dev/null || echo "$BODY"
+
+      - name: ⏭️ Skip — health recovered (transient blip)
+        if: steps.precheck.outputs.status == 'healthy' && github.event_name == 'workflow_run'
+        run: |
+          echo "Health is now healthy. Skipping restore. Likely a transient network blip in the cron monitor."
+          curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+            -H "Title: Guided: transient blip recovered" \
+            -H "Priority: low" \
+            -H "Tags: white_check_mark" \
+            -d "Health monitor reported failure but rechecking shows healthy. No restore needed."
+
+      - name: "📣 Push: starting auto-restore"
+        if: steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch'
+        run: |
+          curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+            -H "Title: 🔴 Guided: degraded — auto-restoring now" \
+            -H "Priority: high" \
+            -H "Tags: warning,wrench" \
+            -H "Click: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            -d "Pre-check status: ${{ steps.precheck.outputs.status }}. PATCHing 7 env vars and redeploying."
+
+      - name: 🩺 Verify CF API token works from this runner (diagnostic)
+        if: steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch'
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          # If this fails, the token likely has an IP allowlist that excludes GH Actions runners.
+          # Fix: Cloudflare dashboard → My Profile → API Tokens → edit the token → remove
+          # the IP filter (or set 0.0.0.0/0). Then re-run.
+          set +e
+          VERIFY=$(curl -s -w "\n%{http_code}" "https://api.cloudflare.com/client/v4/user/tokens/verify" \
+            -H "Authorization: Bearer $CF_API_TOKEN")
+          HTTP=$(echo "$VERIFY" | tail -n1)
+          BODY=$(echo "$VERIFY" | head -n -1)
+          echo "Token verify HTTP=$HTTP"
+          echo "$BODY" | python3 -m json.tool 2>/dev/null || echo "$BODY"
+          if [ "$HTTP" != "200" ]; then
+            echo "::error::CF token does not authenticate from GH runner (HTTP $HTTP). Likely IP allowlist on token. Fix at https://dash.cloudflare.com/profile/api-tokens"
+            curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+              -H "Title: 🚨 Guided: CF token blocked from GH Actions" \
+              -H "Priority: max" \
+              -H "Tags: rotating_light,key" \
+              -d "Auto-restore can't authenticate to Cloudflare API. Token likely has an IP allowlist. Edit token at https://dash.cloudflare.com/profile/api-tokens to remove IP filter."
+            exit 1
+          fi
+          echo "✅ CF token authenticated from GH runner"
+
+      - name: 🩹 PATCH Cloudflare Pages env vars
+        if: steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch'
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          STRIPE_PUBLISHABLE_KEY: ${{ secrets.STRIPE_PUBLISHABLE_KEY }}
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+          STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
+          TOKEN_SECRET: ${{ secrets.TOKEN_SECRET }}
+        run: |
+          # Build PATCH body with all 7 secrets (jq from-stdin to avoid leaking values in logs)
+          jq -n \
+            --arg adminPwd       "$ADMIN_PASSWORD" \
+            --arg cfApiToken     "$CF_API_TOKEN" \
+            --arg resendKey      "$RESEND_API_KEY" \
+            --arg stripePub      "$STRIPE_PUBLISHABLE_KEY" \
+            --arg stripeSec      "$STRIPE_SECRET_KEY" \
+            --arg stripeWebhook  "$STRIPE_WEBHOOK_SECRET" \
+            --arg tokenSecret    "$TOKEN_SECRET" \
+            '{
+              deployment_configs: {
+                production: {
+                  env_vars: {
+                    ADMIN_PASSWORD:         { type: "secret_text", value: $adminPwd },
+                    CLOUDFLARE_API_TOKEN:   { type: "secret_text", value: $cfApiToken },
+                    RESEND_API_KEY:         { type: "secret_text", value: $resendKey },
+                    STRIPE_PUBLISHABLE_KEY: { type: "secret_text", value: $stripePub },
+                    STRIPE_SECRET_KEY:      { type: "secret_text", value: $stripeSec },
+                    STRIPE_WEBHOOK_SECRET:  { type: "secret_text", value: $stripeWebhook },
+                    TOKEN_SECRET:           { type: "secret_text", value: $tokenSecret }
+                  }
+                }
+              }
+            }' > /tmp/patch-body.json
+
+          HTTP=$(curl -s -o /tmp/patch-response.json -w "%{http_code}" \
+            -X PATCH "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/pages/projects/$CF_PROJECT" \
+            -H "Authorization: Bearer $CF_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data-binary @/tmp/patch-body.json)
+          rm -f /tmp/patch-body.json
+
+          echo "PATCH HTTP=$HTTP"
+          # Show response keys without values
+          python3 -c "import json,sys; d=json.load(open('/tmp/patch-response.json')); print('success:', d.get('success'), 'errors:', d.get('errors'))"
+
+          if [ "$HTTP" != "200" ]; then
+            echo "::error::PATCH failed with HTTP $HTTP"
+            cat /tmp/patch-response.json
+            exit 1
+          fi
+
+      - name: 🚀 Trigger redeploy
+        if: steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch'
+        id: deploy
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          DEPLOY=$(curl -s -X POST \
+            "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/pages/projects/$CF_PROJECT/deployments" \
+            -H "Authorization: Bearer $CF_API_TOKEN")
+          DEPLOY_ID=$(echo "$DEPLOY" | python3 -c "import sys,json; print(json.load(sys.stdin)['result']['id'])")
+          echo "deploy_id=$DEPLOY_ID" >> $GITHUB_OUTPUT
+          echo "Deploy ID: $DEPLOY_ID"
+
+      - name: ⏳ Wait for deploy to finish (max 6 min)
+        if: steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch'
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          DEPLOY_ID: ${{ steps.deploy.outputs.deploy_id }}
+        run: |
+          DEADLINE=$((SECONDS + 360))
+          while [ $SECONDS -lt $DEADLINE ]; do
+            sleep 20
+            ST=$(curl -s -H "Authorization: Bearer $CF_API_TOKEN" \
+              "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/pages/projects/$CF_PROJECT/deployments/$DEPLOY_ID")
+            STAGE=$(echo "$ST" | python3 -c "import sys,json; r=json.load(sys.stdin)['result']; print(r['latest_stage']['name'])")
+            STATUS=$(echo "$ST" | python3 -c "import sys,json; r=json.load(sys.stdin)['result']; print(r['latest_stage']['status'])")
+            echo "  stage=$STAGE status=$STATUS"
+            if [ "$STAGE" = "deploy" ] && [ "$STATUS" = "success" ]; then
+              echo "Deploy complete"
+              exit 0
+            fi
+            if [ "$STATUS" = "failure" ]; then
+              echo "::error::Deploy failed at stage $STAGE"
+              exit 1
+            fi
+          done
+          echo "::error::Deploy did not complete within 6 min"
+          exit 1
+
+      - name: 🩺 Verify health is now green
+        if: steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch'
+        id: postcheck
+        run: |
+          # Give env vars a moment to propagate after deploy
+          sleep 10
+          BODY=$(curl -s --max-time 30 "$PROD_URL/guided/api/health")
+          STATUS=$(echo "$BODY" | python3 -c "import sys,json; print(json.load(sys.stdin).get('status','unknown'))" 2>/dev/null || echo "unknown")
+          echo "Post-restore status: $STATUS"
+          echo "status=$STATUS" >> $GITHUB_OUTPUT
+          echo "$BODY" | python3 -m json.tool 2>/dev/null || echo "$BODY"
+          [ "$STATUS" = "healthy" ]
+
+      - name: "✅ Push: restore succeeded"
+        if: success() && (steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch')
+        run: |
+          curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+            -H "Title: 🟢 Guided: auto-restored successfully" \
+            -H "Priority: default" \
+            -H "Tags: white_check_mark,sparkles" \
+            -d "Env vars restored, redeploy successful, health now green. No action needed."
+
+      - name: "🚨 Push: restore FAILED — manual intervention required"
+        if: failure()
+        run: |
+          curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+            -H "Title: 🚨 Guided: AUTO-RESTORE FAILED" \
+            -H "Priority: max" \
+            -H "Tags: rotating_light,fire" \
+            -H "Click: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            -d "Health: ${{ steps.precheck.outputs.status }} → restore attempted → ${{ steps.postcheck.outputs.status }}. RUN: pwsh C:\\\\ssClawy\\\\guided\\\\scripts\\\\restore-cf-env.ps1"
+          # Also open a GH issue so it's tracked
+          GH_TOKEN="${{ secrets.PERSONAL_PAT }}" gh issue create \
+            --repo susanthgit/guided \
+            --title "🚨 Auto-restore FAILED at $(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
+            --label "incident,paid-product,P0" \
+            --body "Auto-restore workflow failed. Pre-check: ${{ steps.precheck.outputs.status }}. Post-check: ${{ steps.postcheck.outputs.status }}.
+
+          [Workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+          Manual recovery:
+          \`\`\`
+          pwsh C:\\\\ssClawy\\\\guided\\\\scripts\\\\restore-cf-env.ps1
+          \`\`\`"

@@ -1,0 +1,163 @@
+name: 🏥 Payment Health Monitor
+
+on:
+  schedule:
+    # Every 10 minutes — fast enough to catch env-var wipes before customers notice
+    - cron: '*/10 * * * *'
+  workflow_dispatch: # Manual trigger
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/guided-payment-health.yml'
+
+# Note: This workflow was migrated from susanthgit/guided -> aguidetocloud-revamp
+# on 2026-05-26 (during the private-repo Actions quota incident). Issues it opens
+# still target susanthgit/guided (where the paid product incident log lives), so
+# the cross-repo gh issue create uses secrets.PERSONAL_PAT, not github.token.
+
+permissions:
+  issues: write    # for opening alert issues using github.token
+  contents: read
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏥 Check payment system health
+        run: |
+          echo "Checking Guided payment health (deep mode — full Resend/Stripe/KV roundtrip)..."
+          # 10 May 2026: ?deep=1 gates the external HTTP pings (Resend, Stripe)
+          # and the KV PUT/GET/DELETE roundtrip. payment-health.yml is the canonical
+          # caller for end-to-end verification; watchdog stays shallow at 5min.
+          RESPONSE=$(curl -s -w "\n%{http_code}" "https://www.aguidetocloud.com/guided/api/health?deep=1")
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | head -n -1)
+
+          echo "HTTP Status: $HTTP_CODE"
+          echo "$BODY" | python3 -m json.tool 2>/dev/null || echo "$BODY"
+
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "::error::Payment health check FAILED (HTTP $HTTP_CODE)"
+            exit 1
+          fi
+
+          STATUS=$(echo "$BODY" | python3 -c "import sys,json; print(json.load(sys.stdin)['status'])" 2>/dev/null)
+          if [ "$STATUS" != "healthy" ]; then
+            echo "::error::Payment system is DEGRADED: $BODY"
+            exit 1
+          fi
+
+          echo "✅ All payment components healthy"
+
+      - name: 🔔 Check Stripe webhook health
+        env:
+          STRIPE_KEY: ${{ secrets.STRIPE_LIVE_SECRET_KEY }}
+        run: |
+          if [ -z "$STRIPE_KEY" ]; then
+            echo "::warning::STRIPE_LIVE_SECRET_KEY not set — skipping webhook check"
+            exit 0
+          fi
+
+          # Check for failed webhook deliveries in last 24h
+          EVENTS=$(curl -s -u "$STRIPE_KEY:" \
+            "https://api.stripe.com/v1/events?type=checkout.session.completed&limit=10")
+
+          PENDING=$(echo "$EVENTS" | python3 -c "
+          import sys, json
+          data = json.load(sys.stdin)
+          failed = [e for e in data.get('data', []) if e.get('pending_webhooks', 0) > 0]
+          print(len(failed))
+          " 2>/dev/null || echo "0")
+
+          if [ "$PENDING" != "0" ]; then
+            echo "::error::$PENDING webhook(s) have pending deliveries — customers may not have received licence keys!"
+            exit 1
+          fi
+
+          echo "✅ All webhooks delivered successfully"
+
+      - name: 🧪 Synthetic checkout (catches slug-extraction bug class)
+        env:
+          STRIPE_KEY: ${{ secrets.STRIPE_LIVE_SECRET_KEY }}
+        run: |
+          if [ -z "$STRIPE_KEY" ]; then
+            echo "::warning::STRIPE_LIVE_SECRET_KEY not set — skipping synthetic checkout"
+            exit 0
+          fi
+
+          # Hit /api/checkout with az-900, follow Stripe URL to extract session_id,
+          # then retrieve session from Stripe and assert metadata is correct.
+          # This catches the 3 May bug where certCode shipped as 'guided' instead.
+          # Retry up to 3 times to absorb deploy-switchover blips.
+          set +e
+          RESP=""
+          for attempt in 1 2 3; do
+            RESP=$(curl -sf -X POST "https://www.aguidetocloud.com/guided/api/checkout" \
+              -H "Content-Type: application/json" \
+              -d '{"productType":"cert","certCode":"az-900","vendorSlug":"microsoft"}')
+            CURL_EXIT=$?
+            if [ $CURL_EXIT -eq 0 ] && [ -n "$RESP" ]; then break; fi
+            echo "Attempt $attempt: curl exited $CURL_EXIT, retrying in 10s..."
+            sleep 10
+          done
+          set -e
+          if [ -z "$RESP" ]; then
+            echo "::error::/api/checkout did not respond after 3 attempts"
+            exit 1
+          fi
+
+          URL=$(echo "$RESP" | python3 -c "import sys,json; print(json.load(sys.stdin).get('url',''))")
+          SID=$(echo "$URL" | grep -oE 'cs_(live|test)_[A-Za-z0-9]+' | head -1)
+          if [ -z "$SID" ]; then
+            echo "::error::Could not extract session_id. Response: $RESP. URL: $URL"
+            exit 1
+          fi
+          echo "Extracted session: $SID"
+
+          # Retrieve session from Stripe and verify metadata
+          SESSION=$(curl -sf -u "$STRIPE_KEY:" "https://api.stripe.com/v1/checkout/sessions/$SID")
+          CERT_CODE=$(echo "$SESSION" | python3 -c "import sys,json; print(json.load(sys.stdin).get('metadata',{}).get('certCode',''))")
+          PRODUCT_TYPE=$(echo "$SESSION" | python3 -c "import sys,json; print(json.load(sys.stdin).get('metadata',{}).get('productType',''))")
+
+          if [ "$CERT_CODE" != "az-900" ]; then
+            echo "::error::Synthetic checkout had wrong certCode: '$CERT_CODE' (expected 'az-900'). Slug bug regression!"
+            exit 1
+          fi
+          if [ "$PRODUCT_TYPE" != "cert" ]; then
+            echo "::error::Synthetic checkout had wrong productType: '$PRODUCT_TYPE'"
+            exit 1
+          fi
+          echo "✅ Synthetic checkout: certCode=$CERT_CODE productType=$PRODUCT_TYPE"
+
+  notify-on-failure:
+    runs-on: ubuntu-latest
+    needs: health-check
+    if: failure()
+    steps:
+      - name: 📣 Push to phone
+        if: ${{ env.NTFY_TOPIC != '' }}
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+            -H "Title: 🔴 Guided: payment health degraded" \
+            -H "Priority: high" \
+            -H "Tags: warning,money_with_wings" \
+            -H "Click: https://www.aguidetocloud.com/guided/api/health" \
+            -d "Cron monitor reports degraded. Auto-restore workflow will trigger next. If you don't see a 🟢 follow-up within ~10 min, run scripts/restore-cf-env.ps1 manually."
+
+      - name: 🚨 Alert on failure
+        env:
+          GH_TOKEN: ${{ secrets.PERSONAL_PAT }}
+        run: |
+          gh issue create \
+            --repo susanthgit/guided \
+            --title "🚨 Payment health check failed — $(date -u +'%Y-%m-%d %H:%M')" \
+            --body "The payment system health check failed. This is CRITICAL — customers may be paying without receiving licence keys.
+
+          **Action required:**
+          1. Check https://www.aguidetocloud.com/guided/api/health
+          2. Check Stripe dashboard for failed webhooks
+          3. Check Resend dashboard for delivery failures
+
+          [View workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})"
