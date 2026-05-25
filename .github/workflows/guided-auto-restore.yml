@@ -19,6 +19,10 @@ on:
         description: "Why are you triggering this manually?"
         required: false
         default: "manual test"
+      confirm_patch:
+        description: "Type 'patch-cf-pages' to confirm PATCH on Cloudflare Pages env vars (safety gate added 2026-05-26 after a workflow_dispatch test PATCHed wrong ADMIN_PASSWORD)"
+        required: false
+        default: ""
 
 env:
   CF_ACCOUNT_ID: d42846fe2c29daf890ec57877fda5e04
@@ -96,11 +100,23 @@ jobs:
           fi
           echo "✅ CF token authenticated from GH runner"
 
+      - name: 🛑 Safety gate — workflow_dispatch requires confirm_patch
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.confirm_patch != 'patch-cf-pages'
+        run: |
+          echo "::error::workflow_dispatch trigger requires the confirm_patch input to equal 'patch-cf-pages'."
+          echo "Re-run with: gh workflow run guided-auto-restore.yml --repo susanthgit/aguidetocloud-revamp -f confirm_patch=patch-cf-pages -f reason='<reason>'"
+          exit 1
+
       - name: 🩹 PATCH Cloudflare Pages env vars
         if: steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch'
         env:
           CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          # GUIDED_ADMIN_PASSWORD intentionally — aguidetocloud-revamp also has an
+          # ADMIN_PASSWORD secret for the /cc/ private dashboard, which is a DIFFERENT
+          # value. Using the wrong one would PATCH guided's CF Pages config with the
+          # cc-dashboard password and break /guided/api/admin on next redeploy.
+          # Lesson learned 2026-05-26 during the migration smoke test.
+          ADMIN_PASSWORD: ${{ secrets.GUIDED_ADMIN_PASSWORD }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           STRIPE_PUBLISHABLE_KEY: ${{ secrets.STRIPE_PUBLISHABLE_KEY }}
           STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
