@@ -35,6 +35,10 @@ faq:
     answer: "Long enough to remove the guesswork — usually 2-5 sentences. A specific 30-word prompt beats a vague 200-word one every time. The point is not length, it's clarity. If your prompt could mean ten different things, Copilot will pick one at random."
   - question: "Why does Copilot sometimes get things wrong?"
     answer: "Three main reasons. (1) The model doesn't actually know your facts unless you ground it with /file or other sources. (2) The prompt was too vague and Copilot guessed. (3) The model genuinely got it wrong — language models hallucinate. The fix for (1) and (2) is better prompting. The fix for (3) is to always validate output before you publish it."
+  - question: "Can I save a prompt that worked well and re-use it later?"
+    answer: "Yes — Microsoft 365 Copilot Chat has a built-in Prompt Gallery (curated by Microsoft) plus the ability to save your own prompts. Look for the pin / save icon in the composer, or check copilot.cloud.microsoft/prompts and adoption.microsoft.com/copilot-lab for the public gallery. For prompts you really want to keep, build an external library in a OneNote section or Loop page called 'My Copilot Prompts'. The third version of a great prompt is usually 10x better than the first — saving it means tomorrow starts from 'good', not blank."
+  - question: "What is a scheduled prompt and why does it matter?"
+    answer: "A scheduled prompt is a Copilot prompt that runs automatically on a recurring schedule — daily, weekly, monthly — and delivers the output to you without you having to open Copilot. Example: every Monday 7am, summarise last week's emails, meetings, and Teams chats from a specific project, and email me the digest before standup. It's the most underused feature in M365 Copilot. Set up one this week — it changes how you think about Copilot from 'tool I open' to 'AI that works for me even when I'm not at the keyboard'."
   - question: "Where do I go next after this guide?"
     answer: "Practise the four-block framework on real work tasks for a week. Then explore the deeper techniques in the Prompt Guide and Prompt Lab on this site, the 500-prompt library for ready-to-use templates, and the Prompt Polisher to score your own prompts. For role-specific examples — recruitment, ops, finance, IT, sales — see the companion Persona Playbook."
 images: ["images/og/blog/prompt-engineering-microsoft-365-copilot.jpg"]
@@ -71,6 +75,11 @@ I had to look this up three times before it clicked. Then I taught it to a recru
 3. [The Cheat Sheet](#cheat-sheet)
 4. [The 4-block framework](#four-blocks)
 5. [The habit that makes the framework work — iterate](#iterate)
+
+⭐ **Power moves (most underused):**
+
+- [Build your prompt library — Prompt Gallery + saving prompts](#library)
+- [Set-and-forget — scheduled prompts](#scheduled)
 
 📚 **Deep dives:**
 
@@ -257,6 +266,38 @@ A grounded prompt looks like this:
 
 Four blocks. Goal, Context, Expectations, Source. Once you've written ten of these you'll never go back to vague prompting.
 
+### Output-format priming — be explicit about the shape
+
+The Expectations block becomes much more useful when you describe the **exact shape** of the output, not just the length. Most readers stop at *"in 150 words"* — but you can prime the format precisely:
+
+> *"Output as a markdown table with columns Risk · Likelihood · Impact · Owner · Next step. Then a 2-sentence summary below the table. Then a numbered list of 3 follow-up questions."*
+
+That single sentence saves you 2-3 iterations. Other format primers worth knowing:
+
+| When you want… | Try this in Expectations |
+|---|---|
+| A scannable comparison | "Output as a table with rows X, Y, Z and columns A, B, C" |
+| An exec-ready brief | "One page. Heading · 3-bullet TL;DR · 2-paragraph body · 3 next steps" |
+| A working draft to send | "Email format. Subject line · 100-word body · clear ask in the final sentence" |
+| Something to paste into a deck | "6-slide outline. Each slide: title · 3 bullets · 1-sentence talk track underneath" |
+| Structured data to analyse | "CSV-format output with header row. No commentary outside the CSV." |
+| A staged 3-step analysis | "Output in 3 numbered sections: (1) facts only, (2) hypothesised drivers (marked as hypotheses), (3) executive narrative." |
+
+Format priming costs you 10 seconds in the prompt. It saves you 5 minutes of cleanup after.
+
+### Other framings you might see
+
+GCES (Goal · Context · Expectations · Source) is Microsoft's official framework — the spine of this guide. You'll see other framings on LinkedIn, YouTube, and other AI tools. They're not wrong, they're just different containers for the same ideas. Here's how the popular ones compare:
+
+| Framing | Where you'll see it | When it helps |
+|---|---|---|
+| **GCES** — Goal · Context · Expectations · Source | Microsoft official; this guide | Default for M365 Copilot work |
+| **CRAFT** — Context · Role · Audience · Format · Task | Marketing / writing AI communities | When *audience* is the trickiest variable in your task |
+| **STAR** — Situation · Task · Action · Result | Interview preparation | For drafting interview answers, performance stories, or behavioural-style content |
+| **Role-Task-Format-Tone** | Common with consumer ChatGPT / Anthropic users | When you're using a non-M365 AI tool and need a quick mental model |
+
+Pick the one that fits your task. The blocks are interchangeable in spirit — the discipline of writing all of them down is what matters, not the acronym.
+
 ### How the 4 blocks map to the deeper techniques
 
 The [Prompt Engineering Guide](/prompt-guide/) on this site teaches 8 techniques in more depth. Those techniques aren't replaced by the 4-block framework — they're **what each block looks like in practice**.
@@ -294,6 +335,146 @@ A few patterns that work:
 
 If iteration isn't getting you there, the original brief was probably under-specified. Open a new chat and rewrite the prompt with more in the Context and Expectations blocks.
 
+### Advanced: few-shot prompting — give Copilot examples
+
+The single biggest quality jump after the 4-block framework is **showing Copilot what good looks like before asking**. Paste 2-3 examples of the output you want, then ask for the new task in the same shape.
+
+How it looks in practice:
+
+> *"Here are three of my past customer follow-up emails. Match this tone, length, and structure for the next one.*
+> *[Example 1 pasted in]*
+> *[Example 2 pasted in]*
+> *[Example 3 pasted in]*
+> *Now draft a follow-up to /Customer ABC about the migration delay. 120 words. Same warm tone, same closing style."*
+
+This is the technique that turns Copilot from "generic AI assistant" to *your* AI assistant. Useful for: drafting emails in your voice, writing meeting recaps in your team's style, generating reports matching your existing template, customer communications matching brand voice.
+
+The mental model: a new hire shadows you for a day before drafting on your behalf. Few-shot prompting is that shadow day, compressed into three pasted examples.
+
+### Advanced: self-critique — let Copilot grade its own answer
+
+After Copilot answers, ask it to critique its own response. This catches things you'd otherwise miss:
+
+> *"Now review your own answer. What did you miss? What's unsupported by the source documents? Where might a reader push back?"*
+
+Then follow up with:
+
+> *"Now rewrite the answer addressing those points."*
+
+This single move catches the bulk of soft hallucinations and weak claims. Costs you 30 seconds. {{< hi >}}If you adopt one advanced technique from this guide, make it this one.{{< /hi >}}
+
+### The iteration script library
+
+After enough rounds with Copilot, you end up with the same follow-up phrases on repeat. Bookmark these — they work in every app, every role, every surface.
+
+| When the first answer is... | Try saying... |
+|---|---|
+| Too long | "Cut to 6 bullets" or "100 words max" |
+| Too generic | "Use the names, dates, and numbers from /[Source File], not placeholders" |
+| Too marketing-y | "Plain English. Drop the marketing words." |
+| Too hedge-y | "Give me options with pros and cons. Stay grounded in the source." |
+| Wrong format | "Now turn this into [table / slide outline / email / brief]" |
+| Misses something | "What did you miss? Now rewrite addressing it." |
+| Wrong audience | "Now rewrite for [audience]. Plain English." |
+| Wrong tone | "Warmer." / "More skeptical." / "More direct." |
+| Over-confident | "Where are you uncertain? Mark uncertainty inline." |
+| Need alternatives | "Now give me 3 versions with different angles." |
+| Need a counter-view | "Now critique this from the opposite POV." |
+| Need translation | "Now translate to [language]." or "Re-target for [audience]." |
+| Lacks evidence | "Cite the specific paragraph from /[Source File] for each claim." |
+
+> 💡 **Tip:** print or screenshot this table. Stick it next to your monitor. After a week, you'll know which 4-5 lines you use daily — that's your personal core.
+
+## Build your prompt library — Prompt Gallery + saving prompts {#library}
+
+Once you have a great prompt, you shouldn't have to rewrite it from scratch next time. Microsoft 365 Copilot has **two built-in ways** to build your personal library — and most users miss both.
+
+### Microsoft's Prompt Gallery — the curated starting library
+
+Inside Microsoft 365 Copilot Chat, there's a **Prompt Gallery** with hundreds of pre-written, role-aware prompts curated by Microsoft. Browse by app, task, or role. Click one to use it. Modify to fit your context.
+
+Where to find it:
+
+- **Inside M365 Copilot Chat** — click the prompt icon in the composer, or look for "View prompts" / "Browse prompts" links near the input box.
+- **Microsoft Copilot Lab** at **adoption.microsoft.com/copilot-lab** — the public-facing version with prompts organised by app, role, and task type.
+
+When to use it:
+
+- You're stuck on a blank chat — browse to find a prompt close to what you need.
+- You're new to Copilot — the gallery teaches what good prompts look like by example.
+- You want to discover capabilities you didn't know existed (image generation prompts, code prompts, data analysis prompts, etc.).
+
+### Save your own prompts
+
+When you craft a prompt that works really well — usually after iterating two or three times — **save it**. The third version of a prompt is almost always 10× better than the first. Saving means you start from "good" tomorrow, not from blank.
+
+In Microsoft 365 Copilot Chat:
+
+- Look for the **pin / save / star icon** beside a prompt or chat message — that bookmarks it for re-use.
+- Use the **"Save prompt"** action where it appears in the chat surface.
+- For frequently-used prompts, the **prompt history** lets you scroll back to anything you've sent recently.
+
+Where saved prompts live varies by surface. Some are tenant-private (synced to your M365 account). Some are visible only on the device. Check with your IT admin if you can't see saved prompts across devices.
+
+### Build a personal library on your own terms
+
+For prompts that matter more than chat history alone can preserve, build an external library:
+
+- Keep a **OneNote section** or **Loop page** called *"My Copilot Prompts"*
+- Save each working prompt with a 2-line note on context + when to use it
+- Tag by app or task ("Outlook · weekly digest", "Excel · variance commentary")
+- Review weekly — promote the best ones to a shared Loop page or Teams channel for your team
+
+> 📎 **The shift:** prompting moves from *"what should I type?"* to *"let me grab the one that worked last time and tweak it."* That's the muscle that compounds. Most people who plateau on Copilot have not built this library.
+
+## Set-and-forget — scheduled prompts {#scheduled}
+
+The most underused feature in Microsoft 365 Copilot. You can schedule a prompt to run on a **recurring basis** — daily, weekly, monthly — and have the output delivered to you automatically. No clicks needed at the scheduled time.
+
+### What it looks like in practice
+
+Imagine: every Monday at 7am, before standup, Copilot has already:
+
+1. Read your last 7 days of emails, meetings, and Teams chats
+2. Summarised by `/project`
+3. Flagged anything that needs your reply today
+4. Delivered the digest to your inbox
+
+The 30-minute morning catch-up that used to start your week now happens while you make coffee. {{< hi >}}Set it once. Read it forever.{{< /hi >}}
+
+### How to schedule a prompt
+
+The scheduling pattern in Microsoft 365 Copilot Chat (exact UI evolves):
+
+1. **Craft a prompt that works** on real data — use the 4-block framework. Iterate until the output is what you actually want.
+2. **Test it on a few different days' worth of data** so you know it holds up across normal variation.
+3. **Open the scheduling option** — look for a **clock / schedule icon** in the composer, or the **"Schedule"** action under saved prompts. Availability varies by surface and tenant configuration.
+4. **Pick a cadence** — daily / weekly / monthly / custom.
+5. **Pick delivery** — chat (default), Outlook email, Teams DM, depending on what your tenant supports.
+6. **Save and forget.**
+
+For deeper schedule logic — multiple steps, conditional outputs, or sharing across a team — that's where **Agent Builder scheduled agents** come in. Covered in the [Agent Builder Field Guide](/blog/m365-agent-builder-explained/).
+
+### Scheduled prompts per persona — high-ROI examples
+
+Copy these. Adapt for your tenant. Each one is a small recurring win that compounds across a quarter.
+
+| Role | What it does | Cadence |
+|---|---|---|
+| **Everyone** | "Read my unread emails. Group by sender priority — manager, direct reports, peers, external, newsletters. One-line summary per email. Flag anything needing a reply today." | Daily, 8am |
+| **Recruiter** | "Summarise candidate-stage movements over the last 7 days from /ATS export. Flag anyone stuck >5 days. List action owners." | Weekly, Friday 4pm |
+| **Ops lead** | "Catch me up on /[major project] across emails, meetings, and Teams chats from last 7 days. Lead with decisions made, blockers, asks." | Weekly, Monday 7am |
+| **Finance manager** | "Scan /Forecast model for material changes since last week. Flag anything >5% movement with hypothesised drivers (clearly labelled as hypotheses)." | Weekly, Friday 5pm |
+| **IT admin** | "Summarise the past 7 days of /Service Health alerts. Group by service. Flag any recurring incident or pattern across users." | Weekly, Monday 8am |
+| **Sales lead** | "Summarise pipeline movements from /CRM export over the past 7 days. Flag deals at risk. List my asks for my manager." | Weekly, Friday 4pm |
+| **Manager** | "From the last week's 1:1 notes for my direct reports (/1:1 notes folder), surface any recurring themes, blockers raised more than once, and people I haven't met with this week." | Weekly, Sunday 5pm |
+
+### Why this matters
+
+Scheduled prompts shift Copilot from "tool I open when I remember" to "AI that works for me even when I'm not at the keyboard". For most knowledge workers, this is the unlock that moves them from occasional Copilot use to daily-driver use.
+
+{{< margin >}}Set up ONE scheduled prompt this week. It will change how you think about Copilot more than any other feature in this guide.{{< /margin >}}
+
 ## Where you can prompt — Microsoft 365 Copilot Chat vs the apps {#where}
 
 Copilot shows up in two flavours inside Microsoft 365: a **general chat surface** and **task-specific assistants inside each app**. The same brain, different doors.
@@ -310,6 +491,25 @@ flowchart TD
 The shortcut rule: {{< hi >}}**inside one file → use the app's Copilot. Across many sources → use Copilot Chat.**{{< /hi >}} Everything else is a refinement of that rule.
 
 Need to understand the licensing behind these surfaces? The [Copilot Pro vs Microsoft 365 Copilot guide](/blog/copilot-pro-vs-microsoft-365-copilot/) on this site covers it end-to-end.
+
+### Two more surfaces worth knowing — Pages and Notebooks
+
+Beyond Chat and the in-app Copilots, Microsoft 365 Copilot offers two **sustained-work surfaces** that most users miss:
+
+- **Copilot Pages** — a collaborative AI canvas. Start with a Copilot Chat answer you like, click *"Edit in Pages"*, and the content opens in a shared, real-time-editable doc you can co-author with humans and Copilot together. Use it when: a chat answer is good but needs another iteration with a teammate. *"Send me the Page link and we'll riff."*
+- **Copilot Notebooks** — multi-source workspaces. Pin several files, emails, and meetings into one notebook, then ask questions across the lot in one place. Use it when: a project has 5+ relevant sources and you'll come back to them across multiple sessions. *"Open the project Notebook, all the context is there."*
+
+Both surfaces are best discovered hands-on — they shift Copilot from "one-shot chat" to "ongoing collaboration on a body of work".
+
+### Beyond text — multi-modal and voice prompting
+
+Copilot accepts more than typed text on most surfaces:
+
+- **Paste an image** — a chart, a screenshot, a whiteboard photo, a UI mockup. Then ask Copilot what's in it, or to summarise, or to draft text from it. *"Paste a sales chart screenshot → 'what's the headline trend here, and what's the question I should be asking my team about it?'"*
+- **Voice prompts** — in Teams meetings, on mobile, and increasingly in desktop Copilot, you can speak the prompt. Useful when typing slows you down or you're not at the keyboard. Voice + grounded files = "Copilot, using last week's leadership recap, draft me an update for the board" while driving.
+- **Mixed in-line** — paste an image, type a follow-up question that references it. Copilot reasons across both.
+
+Mode availability varies by surface and tenant — your Copilot may support image input but not voice, or both. When in doubt, just try.
 
 ## The grounding unlock — slash commands and file pickers {#grounding}
 

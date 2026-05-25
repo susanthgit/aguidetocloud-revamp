@@ -163,6 +163,8 @@ Every prompt in the persona sections below uses this shape. Once you've seen 20 
 
 Recruitment is the highest-judgment job inside HR. Every CV is a person. Every interview question shapes someone's career. Every rejection email lands in someone's inbox at the end of their day. Copilot does not change any of that — Copilot just removes the blank-page tax.
 
+> 📚 **Pairs with Microsoft's official HR Prompt Pack.** The 5 scenarios + 26 worked patterns below follow the same structure as Microsoft's HR Prompt Pack. Ask your Microsoft contact (account team, partner manager, or solution engineer) for the latest pack — it's a strong complement to this playbook.
+
 ## The recruiter's day with Copilot
 
 | Time | Task | Copilot pattern |
@@ -503,6 +505,8 @@ She is faster than she would have been. She is also more consistent — every CV
 
 Operations is the role where Copilot saves the most time in the least visible way. Process documentation, partner reviews, launch readiness, risk registers, deal pipelines — every one of them lives in documents, meetings, and spreadsheets, and every one of them used to take half a day of typing. Copilot turns those half-days into hours.
 
+> 📚 **Pairs with Microsoft's official Operations Prompt Pack.** The 5 scenarios + 26 worked patterns below follow the same structure as Microsoft's Operations Prompt Pack. Ask your Microsoft contact for the latest pack — it's a strong complement to this playbook.
+
 ## The ops lead's day with Copilot
 
 | Time | Task | Copilot pattern |
@@ -819,6 +823,8 @@ First draft is 80% there. She iterates a few times: shorter on the wins, more sp
 # 3 · Finance {#p3}
 
 Finance is the role where Copilot saves the most time on the most-disliked task on every finance manager's desk: **commentary**. Variance commentary, forecast narrative, executive summary, audit response. The numbers are in the spreadsheet — but the prose that wraps them used to take an hour per page. Copilot drafts it in two minutes. You spend the saved time on the actual judgment call: which variances need exec attention, which need an investigation, which are noise.
+
+> 📚 **Pairs with Microsoft's official Finance Prompt Pack.** The 5 scenarios + 25 worked patterns below follow the same structure as Microsoft's Finance Prompt Pack. Ask your Microsoft contact for the latest pack — it's a strong complement to this playbook.
 
 ## The finance manager's day with Copilot
 
@@ -1137,6 +1143,8 @@ He spends the saved time on the actual judgment call — which variances need ex
 
 IT admins live in the gap between policy and practice. Tenant configuration, security alerts, user support tickets, audit prep, runbooks, change requests — every one of them is a documentation-heavy task that used to mean copy-pasting between dashboards, ticket systems, and Word. Copilot handles the documentation and summarisation layer while you stay focused on the actual administration.
 
+> 📚 **No official Microsoft Prompt Pack yet for IT Admin.** The 6 patterns below draw on widely-shared internal admin workflows and the same 4-block framework. When Microsoft releases an IT Admin Prompt Pack (likely in a future wave), this section will be updated to mirror the official structure.
+
 ## The IT admin's day with Copilot
 
 | Time | Task | Copilot pattern |
@@ -1232,6 +1240,8 @@ The time saving across an audit cycle is significant. More importantly, the work
 # 5 · Sales & Marketing {#p5}
 
 Sellers and marketers live in the gap between **research** (knowing your customer deeply) and **execution** (writing the thing, prepping the thing, sending the thing). Copilot doesn't sell. It does the research, drafting, and follow-up legwork so you walk into customer conversations more prepared and walk out with better notes.
+
+> 📚 **No official Microsoft Prompt Pack yet for Sales & Marketing.** The 8 patterns below cover both seller and marketer workflows using the same 4-block framework. When Microsoft releases a Sales or Marketing Prompt Pack, this section will be restructured to mirror the official scenarios.
 
 ## The seller / marketer's day with Copilot
 
