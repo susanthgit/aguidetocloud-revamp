@@ -122,26 +122,42 @@ Notice what Copilot does **not** do in that diagram. It doesn't decide. It doesn
 
 ## One working prompt — before and after {#first-prompt}
 
-Before we go deep on theory, let's prove the skill exists. Here are two prompts asking for the same thing. Try them in your Copilot Chat right now if you have it.
+Before we go deep on theory, let's prove the skill exists. Two prompts asking for the same thing — emails turned into actionable tasks. Try them in your Copilot Chat right now if you have it.
 
-> ❌ **Before (vague):**
+> ❌ **Bad prompt (vague):**
 >
-> *"Write me something about the project."*
+> *"Summarise my emails."*
 
-You'll get something. Probably a generic 200 words about "the project" that could apply to any project anywhere. Not useful.
+You'll get something. Probably a generic blob about your inbox. No structure. Doesn't help you do anything with it.
 
-> ✅ **After (briefed properly):**
+> ✅ **Good prompt (briefed properly):**
 >
-> *"Draft a 200-word status update for the customer migration project, aimed at the steering committee. Use the meeting recap from yesterday and the risk log from last week. Lead with the three biggest risks, then this week's wins, then next week's asks. Plain English, no jargon, no marketing tone."*
+> *"From my emails over the past week, create a table of actions, including whose action it is, the person that assigned it and when it is due. I need this to have a good structure to organize my day. Be concise."*
 
-Now you'll get something useful on the first try. Notice what changed:
+Now you'll get a useful structured table on the first try. Here's the same prompt with each of the 4 blocks colour-coded so you can see how they're woven into one natural sentence:
 
-- **Goal:** Draft a 200-word status update
-- **Context:** Customer migration project, steering committee audience
-- **Expectations:** Lead with risks, then wins, then asks. Plain English, no jargon.
-- **Source:** The meeting recap from yesterday + the risk log from last week
+<p><img src="/images/blog/prompt-engineering/03-gces-color-coded.webp" alt="Prompt Engineering Skills comparison slide. Left side shows a Bad Prompt label with the prompt Summarise my emails. Below it a Good Prompt label with a colour-coded sentence. The full Good Prompt reads From my emails over the past week (in red), create a table of actions (in blue), including whose action it is, the person that assigned it and when it is due (in green), I need this to have a good structure to organize my day (in yellow-orange), Be concise (in green). Right side shows the same breakdown written out in plain English with each of Goal in blue, Context in orange, Source in red, and Expectations in green highlighted. The breakdown explains: Goal is to create a table of actions, Context is that you need this to organise your day, Source is your emails over the past week, Expectations are the table to include the person responsible for the action the person who assigned it and the due date, and the response to be concise." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-Four blocks. Microsoft calls them **Goal**, **Context**, **Expectations**, **Source**. Those are the bones of every good prompt. The rest of this guide is detail.
+Same four blocks. Microsoft calls them **Goal**, **Context**, **Expectations**, **Source**. They don't have to be in any particular order. They don't need labels. They just need to be **all present** in the prompt — woven into one sentence is fine.
+
+- 🔵 **Goal** — "create a table of actions"
+- 🟡 **Context** — "to organise my day"
+- 🔴 **Source** — "from my emails over the past week"
+- 🟢 **Expectations** — "whose action it is, the person that assigned it, when it is due... Be concise."
+
+Four blocks. Those are the bones of every good prompt. The rest of this guide is detail — how to make each block stronger, when to iterate, and the per-app tips that pay off immediately.
+
+**Here's what Copilot actually does with this prompt** — same prompt, real M365 Copilot Chat output (assigned-by names blurred for privacy):
+
+<p><img src="/images/blog/prompt-engineering/04-gces-running-output.webp" alt="Real Microsoft 365 Copilot Chat response to the email actions prompt. At the top the prompt is visible: From my emails over the past week, create a table of actions, including whose action it is, the person that assigned it and when it is due. I need this to have a good structure to organize my day. Be concise. Below the prompt, Copilot says Reasoning completed in 4 steps and I found 1 relevant email with clear action items from the past week. Heres a clean structured table for your day. The output is a table titled Action Tracker (Last 7 Days) with four columns: Action, Owner, Assigned By, Due. Four visible rows: Read Google IO 2026 recap, Review and use updated battlecards for objections, Use Agent J.ai for live deal coaching, Encourage customers to follow Microsoft Build. Owner column shows You for every row. Assigned By column is blurred for privacy. Due column shows Not specified for every row. A scroll-down arrow indicator is visible suggesting more rows exist below." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+Notice three things in the response that came directly from the four blocks:
+
+1. **The format is a table** — because Expectations asked for one.
+2. **Columns are Action / Owner / Assigned By / Due** — because Expectations specified those exact fields.
+3. **Copilot shows "Reasoning completed in 4 steps" + cites "1 relevant email"** — because Source pointed it at the inbox, Copilot grounded the answer in actual emails and is showing its work.
+
+The first-attempt result is genuinely usable. Iteration (covered next) would tighten it further — *"Add a priority column based on assigned-by seniority"* or *"Group by due date instead"* — but the baseline output is already a good day-organising table.
 
 ## The Cheat Sheet {#cheat-sheet}
 
@@ -389,32 +405,58 @@ After enough rounds with Copilot, you end up with the same follow-up phrases on 
 
 Once you have a great prompt, you shouldn't have to rewrite it from scratch next time. Microsoft 365 Copilot has **two built-in ways** to build your personal library — and most users miss both.
 
-### Microsoft's Prompt Gallery — the curated starting library
+### Microsoft's Copilot Prompt Gallery — the curated starting library
 
-Inside Microsoft 365 Copilot Chat, there's a **Prompt Gallery** with hundreds of pre-written, role-aware prompts curated by Microsoft. Browse by app, task, or role. Click one to use it. Modify to fit your context.
+Inside the Microsoft 365 Copilot app, there's a **Copilot Prompt Gallery** with hundreds of pre-written, role-aware prompts curated by Microsoft. Browse them by task, by job type, or by Copilot agent. Click one to use it. Modify to fit your context.
 
-Where to find it:
+**How to open it:**
 
-- **Inside M365 Copilot Chat** — click the prompt icon in the composer, or look for "View prompts" / "Browse prompts" links near the input box.
-- **Microsoft Copilot Lab** at **adoption.microsoft.com/copilot-lab** — the public-facing version with prompts organised by app, role, and task type.
+1. Open the **Microsoft 365 Copilot** app (web at [microsoft365.com](https://microsoft365.com) or the desktop / Teams Copilot pane).
+2. Click the **ellipsis (`…`) menu under "New chat"** in the left rail.
+3. The **Copilot Prompt Gallery** panel opens.
 
-When to use it:
+**What you see inside:**
+
+- A **Suggested / Your prompts** toggle at the top — start in *Suggested* to browse Microsoft's library; flip to *Your prompts* to find ones you've saved.
+- Three filters: **Task** (what you're trying to do — summarise, draft, analyse, etc.), **Job type** (role-specific filtering — HR, finance, ops, etc.), and **Copilot agent** (filter prompts by which agent they're designed for).
+- A grid of prompt cards — each card has a short title, the actual prompt text (with `[bracketed placeholders]` for you to fill in and `/slash references` to ground in your files), a "Microsoft suggested this" attribution, a **save** (bookmark) icon, and a **share** icon.
+
+<p><img src="/images/blog/prompt-engineering/01-prompt-gallery.webp" alt="Microsoft Copilot Prompt Gallery panel inside the Microsoft 365 Copilot app. Title 'Copilot Prompt Gallery' at top left, search bar at top right, Suggested toggle (selected, blue) and Your prompts toggle below the title, three filter dropdowns underneath labelled Task, Job type, and Copilot agent. Six prompt cards visible in a 3 by 2 grid: Ace your work habits (tennis-coach style improvement), Adjust message tone (empathetic and supportive rewrite), Agenda and Attendees (event meeting agenda), AI vs manual comparison, Analyze chat decisions (using slash-person grounding), and Answer questions from file. Each card has a bracketed-placeholder or slash-reference in its prompt text, a Microsoft suggested this attribution at the bottom, a bookmark save icon, and a share icon." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+> 📎 **Living document:** the Microsoft 365 Copilot app evolves every week — labels, layout, and exact filter names may have shifted by the time you read this. If your screen looks fundamentally different or you can't find the gallery, [drop me feedback](/feedback/) and I'll update this section with the current path.
+
+**When to use it:**
 
 - You're stuck on a blank chat — browse to find a prompt close to what you need.
-- You're new to Copilot — the gallery teaches what good prompts look like by example.
-- You want to discover capabilities you didn't know existed (image generation prompts, code prompts, data analysis prompts, etc.).
+- You're new to Copilot — the gallery teaches what good prompts look like *through example*.
+- You want to discover capabilities you didn't know existed (image generation prompts, code prompts, data analysis prompts, agent-specific prompts).
+- You're prepping a training session — the gallery is a ready-made teaching tool.
+
+**The public version:** Microsoft also publishes a public-facing prompt gallery at **[adoption.microsoft.com/copilot-lab](https://adoption.microsoft.com/copilot-lab)** with prompts organised by app, role, and task type. Useful if you want to browse without being signed in, or share specific prompts via link.
 
 ### Save your own prompts
 
 When you craft a prompt that works really well — usually after iterating two or three times — **save it**. The third version of a prompt is almost always 10× better than the first. Saving means you start from "good" tomorrow, not from blank.
 
-In Microsoft 365 Copilot Chat:
+In the Microsoft 365 Copilot app:
 
-- Look for the **pin / save / star icon** beside a prompt or chat message — that bookmarks it for re-use.
-- Use the **"Save prompt"** action where it appears in the chat surface.
-- For frequently-used prompts, the **prompt history** lets you scroll back to anything you've sent recently.
+- Click the **bookmark / save icon** on any prompt card in the Copilot Prompt Gallery — that pins it for re-use.
+- After saving, your prompts show up under the **"Your prompts"** toggle (right next to "Suggested" at the top of the gallery).
+- The "Your prompts" view adds a **"Created by"** filter alongside Task, Job type, and Copilot agent — useful when you've co-saved prompts with teammates.
+- Each saved prompt shows a **pink bookmark icon** and a **"You created this"** attribution at the bottom.
 
-Where saved prompts live varies by surface. Some are tenant-private (synced to your M365 account). Some are visible only on the device. Check with your IT admin if you can't see saved prompts across devices.
+<p><img src="/images/blog/prompt-engineering/02-your-prompts-view.webp" alt="Copilot Prompt Gallery panel with the Your prompts toggle selected (highlighted by a hand-drawn red circle in the screenshot). Four filter dropdowns visible — Created by, Task, Job type, and Copilot agent. Six saved prompt cards in a 3 by 2 grid, each with a pink bookmark icon and a You created this attribution. The ellipsis (3-dot) menu is open on the first card showing a Remove from saved action highlighted by a box. Several cards say From my emails over the past week, plus Email Actions, Act as a strategic advisor, and Global event." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+**How to use a saved prompt:**
+
+- **Click the prompt card** — it auto-fills the prompt into your chat composer. Review it, fill in any `[bracketed placeholder]` or `/file` reference, then click Send.
+- **Click the ellipsis (`…`) on a saved prompt card** to access the **"Remove from saved"** action (visible in the screenshot above). Useful for cleaning up prompts you no longer need.
+
+> 📎 **Living document:** the Microsoft 365 Copilot app evolves every week. Labels and filter options may differ in your tenant. If your "Your prompts" view looks fundamentally different, [drop me feedback](/feedback/) and I'll update.
+
+You can also save your own raw prompts directly from the chat — look for the bookmark icon next to a prompt you've sent. The **prompt history** in the left rail also lets you scroll back to anything you've recently asked Copilot.
+
+Where saved prompts live varies by surface and tenant configuration. Most are synced to your M365 account so you see them across devices, but check with your IT admin if anything's missing.
 
 ### Build a personal library on your own terms
 
@@ -448,10 +490,16 @@ The scheduling pattern in Microsoft 365 Copilot Chat (exact UI evolves):
 
 1. **Craft a prompt that works** on real data — use the 4-block framework. Iterate until the output is what you actually want.
 2. **Test it on a few different days' worth of data** so you know it holds up across normal variation.
-3. **Open the scheduling option** — look for a **clock / schedule icon** in the composer, or the **"Schedule"** action under saved prompts. Availability varies by surface and tenant configuration.
-4. **Pick a cadence** — daily / weekly / monthly / custom.
-5. **Pick delivery** — chat (default), Outlook email, Teams DM, depending on what your tenant supports.
-6. **Save and forget.**
+3. **Open the scheduling option** — look for a **clock / schedule icon** that appears on a prompt row (often in the hover toolbar alongside edit, copy, and bookmark icons). Hover over a saved prompt to see the toolbar appear. Availability varies by surface and tenant configuration.
+
+<p><img src="/images/blog/m365-agent-builder/05-scheduled-prompt-hover-icons.webp" alt="A saved Copilot prompt with the hover toolbar visible underneath, showing four icons in a row — edit pencil, copy, clock with Schedule this prompt tooltip highlighted by a cursor hand, and bookmark. The clock icon is the one you click to schedule the prompt to run on a recurring basis." loading="lazy" style="max-width:60%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+4. **Pick a cadence + delivery in the "Create a schedule" dialog.** The dialog has a prompt name, Start date / time / day-of-week selection / Until date, plus a "Receive an email when responses are ready" checkbox so the output lands in your inbox automatically. Recurrences can be daily, every weekday, weekly with specific weekdays selected, or custom.
+
+<p><img src="/images/blog/m365-agent-builder/06-scheduled-prompt-config-dialog.webp" alt="Create a schedule dialog in Microsoft 365 Copilot. Title Create a schedule with a clock icon. Prompt field at the top with the text Run the daily morning briefing and a Sushs Daily Email Digest agent chip attached. Schedule section below with a summary line Repeat this prompt every day at 2:00 PM until Jun 3, 2026. Configurable fields: Starts date picker 05/20/2026, At time picker 02:00 PM, Every dropdown showing Day with seven day-of-week pills (S M T W T F S), Until date picker 06/03/2026 with a delete icon. A checkbox labelled Receive an email when responses are ready is checked. Save button at the bottom right." loading="lazy" style="max-width:90%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+5. **Save and forget.** From the next scheduled run onward, Copilot delivers the output automatically — into the chat, your Outlook inbox, or Teams, depending on what you ticked.
+
+> 📎 **Living document:** the scheduling dialog above is the version you'll see in most M365 Copilot tenants today — labels and delivery options will keep evolving. If yours looks fundamentally different, [drop me feedback](/feedback/) and I'll update.
 
 For deeper schedule logic — multiple steps, conditional outputs, or sharing across a team — that's where **Agent Builder scheduled agents** come in. Covered in the [Agent Builder Field Guide](/blog/m365-agent-builder-explained/).
 
@@ -515,18 +563,34 @@ Mode availability varies by surface and tenant — your Copilot may support imag
 
 The biggest quality jump in your prompting is the day you stop relying on general knowledge and start grounding Copilot in your real work.
 
-**Grounding** means pointing Copilot at the specific files, emails, meetings, or chats that should inform its answer. When your Copilot experience supports it, the easiest way to ground is the **slash command** — type `/` and start typing a name. Copilot will offer matching files, people, meetings, or emails.
+**Grounding** means pointing Copilot at the specific files, emails, meetings, or chats that should inform its answer. The easiest way to ground is the **slash command** — type `/` and the picker opens. From there you can pick anything Copilot can see:
 
-A few patterns that pay off:
+- **People** — colleagues, contacts (Copilot brings in what's known about them from your org graph)
+- **Files** — Word, Excel, PowerPoint, PDF, and other documents you have access to
+- **Meetings** — past or upcoming meetings with recordings, transcripts, or recaps
+- **Emails** — specific email threads from your mailbox
+- **Chats** — Teams 1:1 or group chats
+- **Channels** — Teams channels you're a member of
+- **Sites** — SharePoint sites or site libraries
+- **Other** — additional connectors and integrations your tenant has enabled
+
+The picker has tabs at the top — **All / People / Files / Meetings / Emails / 4 More** — and the "4 More" dropdown unfolds the remaining types. There's also a search box at the right of the tabs for when you know exactly what you want.
+
+<p><img src="/images/blog/prompt-engineering/05-slash-picker.webp" alt="Microsoft 365 Copilot Chat composer with just a slash character typed. Below the composer is the slash picker panel showing tabs at the top — All (selected, highlighted blue), People, Files, Meetings, Emails, and 4 More dropdown — plus a search box and an upload arrow icon on the right. Five mixed-type results are visible: an Excel file EV Bike Financial Model 1-Year, a Word document The Importance of Prompt Engineering1, a person Sonia Rees with email address, an Email titled Meeting Notes Sprint Planning from Eka Siahaan, and a PowerPoint file Presentation 28. Each result shows a Microsoft 365 app icon, the title, and metadata such as Opened by you May 18th." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+> 💡 **Don't see what you need?** Use the **`+` (plus / upload) button** to the left of the chat input — that lets you **upload a file directly from your local machine** (Word, PDF, image, spreadsheet, etc.). The uploaded file becomes a one-shot source for that conversation. Useful when the file you want to ground in isn't in SharePoint, OneDrive, or any indexed surface — or when you just want a quick analysis without putting the document in shared storage first.
+
+A few example patterns that pay off:
 
 | Pattern | What it does |
 |---|---|
 | `/Project alpha brief` | Grounds Copilot in that specific document |
 | `/Steering committee 12 May` | Pulls in that meeting's recap and decisions |
-| `/email subject line` | Brings in an email thread (in supported experiences) |
-| `/person name` | Surfaces what's known about that person from your org graph |
+| `/email subject line` | Brings in an email thread |
+| `/Sonia Rees` | Surfaces what's known about that person from your org graph |
+| `/Sales channel` | Pulls in the channel context for cross-thread answers |
 
-If your Copilot doesn't surface slash auto-complete, use the **file picker** in the chat composer instead — it does the same thing under the hood. The label might be "Add files", "Reference content", or a paperclip icon depending on which surface you're in.
+If your Copilot doesn't surface slash auto-complete on a particular surface, use the **file picker** or **Add files** button in the chat composer — it does the same thing under the hood. The label might be "Add files", "Reference content", or a paperclip icon depending on which surface you're in.
 
 > 📎 **Why this matters:** Without grounding, Copilot is writing from general knowledge plus whatever it remembers from the recent chat. That's fine for brainstorming and writing scaffolds. It is **not** fine when your answer needs to reflect a specific customer, policy, decision, or set of numbers. Most "Copilot hallucinated" stories I hear are really "Copilot wasn't given the source".
 
