@@ -176,9 +176,15 @@ Recruitment is the highest-judgment job inside HR. Every CV is a person. Every i
 | 4:30pm | Reject candidates from earlier stage | Outlook — empathetic, neutral rejection grounded in your template |
 | 5:00pm | Pipeline check | Excel — funnel variances, time-to-hire, source-of-hire commentary |
 
-## Six worked prompt patterns
+## The 5 HR scenarios
 
-### Pattern 1.1 — Summarise a role intake meeting
+Microsoft's official HR Prompt Pack organises HR work into five scenarios. This playbook follows the same structure so the patterns line up with what your Microsoft contact will share.
+
+### Scenario 1 — Recruiting workflows
+
+The earliest stage of HR. Quality here decides quality everywhere downstream.
+
+#### Pattern 1.1 — Summarise a role intake meeting
 
 > **Goal:** Summarise the role intake notes into a structured role brief.
 >
@@ -188,7 +194,7 @@ Recruitment is the highest-judgment job inside HR. Every CV is a person. Every i
 >
 > **Source:** Using /Senior DE intake meeting and /Risk team org chart.
 
-### Pattern 1.2 — Inclusive job advert rewrite
+#### Pattern 1.2 — Inclusive job advert rewrite
 
 > **Goal:** Review this job advert and rewrite it through a DEI lens.
 >
@@ -207,7 +213,7 @@ Worked examples of what Copilot will catch:
 | "Aggressive deadlines, fast-paced environment" | Can read as 'expect overwork' | "Clear priorities and a focus on shipping outcomes" |
 | "Native English speaker required" | Often unlawful, excludes most of the world's English speakers | "Strong written and spoken English" |
 
-### Pattern 1.3 — Outreach email to a passive candidate
+#### Pattern 1.3 — Outreach email to a passive candidate
 
 > **Goal:** Draft an outreach email to a passive candidate.
 >
@@ -217,7 +223,7 @@ Worked examples of what Copilot will catch:
 >
 > **Source:** /Senior DE Job Description plus two example emails of yours for tone matching.
 
-### Pattern 1.4 — CV summary against role criteria (the safest pattern)
+#### Pattern 1.4 — CV summary against role criteria (the safest pattern)
 
 > **Goal:** Summarise this CV against the essential criteria in the job description.
 >
@@ -237,7 +243,7 @@ flowchart LR
     E --> F["Longlist with<br/>your name on it"]
 ```
 
-### Pattern 1.5 — Interview question bias check
+#### Pattern 1.5 — Interview question bias check
 
 > **Goal:** Review my draft interview questions for bias and leading language.
 >
@@ -247,15 +253,231 @@ flowchart LR
 >
 > **Source:** Paste your draft interview questions when you run this prompt.
 
-### Pattern 1.6 — Empathetic rejection email
+#### Pattern 1.6 — Empathetic rejection email
 
 > **Goal:** Draft a rejection email for a candidate who reached final round.
 >
 > **Context:** Someone we'd like to stay in touch with for future roles. Strong, just not the right fit for this specific opening.
 >
-> **Expectations:** 80-100 words. Warm, factual, no platitudes ("strong field", "very difficult decision"). Be specific about staying in touch without committing to a timeline. No individual feedback unless I add specific bullets below — the legal boundary depends on local law.
+> **Expectations:** 80-100 words. Warm, factual, no platitudes ("strong field", "very difficult decision"). Be specific about staying in touch without committing to a timeline. No individual feedback unless I add specific bullets — the legal boundary depends on local law.
 >
-> **Source:** /Rejection email template grounded in our HR policy plus the example email below.
+> **Source:** /Rejection email template grounded in our HR policy plus your example email of choice.
+
+#### Pattern 1.7 — Audit offer outcomes for pattern detection
+
+> **Goal:** Audit our offer outcomes for the last quarter to identify improvement areas.
+>
+> **Context:** I have anonymised offer-outcome data — role title, offer date, acceptance/rejection status, rejection reasons where given, time-to-decision. I want to find patterns and propose questions to investigate, not draw conclusions.
+>
+> **Expectations:** Output — (1) acceptance rate by role family, (2) top 3 rejection reasons, (3) any patterns in time-to-decision, (4) questions to investigate (not conclusions). Plain English. Do not infer demographic patterns. Flag any sample size too small to draw real signal from.
+>
+> **Source:** /Offer outcome data export (anonymised).
+
+#### Pattern 1.8 — Talent market research as background
+
+> **Goal:** Provide a high-level overview of skills, experience expectations, and hiring trends for this role and location.
+>
+> **Context:** Hiring a Senior Data Engineer in [location]. I want background research to inform recruiting discussions and pay benchmarking conversations.
+>
+> **Expectations:** Two-page brief — Commonly referenced skills · Typical experience levels · General hiring trends · Compensation ranges (only if specific public data is available — otherwise say "varies; check internal benchmarking"). Cite sources. This is *background*, not the basis for our role definition.
+>
+> **Source:** /Senior DE Job Description and recent labour market information from the web.
+
+### Scenario 2 — Employee experience & engagement
+
+HR's other half — making the workplace better for the people already inside it. Less about pipeline, more about culture, listening, and signals.
+
+#### Pattern 1.9 — Cultural calendar + Rhythm of Business
+
+> **Goal:** Identify cultural celebrations in [country] and propose ways to incorporate them into our team's Rhythm of Business.
+>
+> **Context:** We have an office in [country] and want to acknowledge cultural moments meaningfully without performative tokenism.
+>
+> **Expectations:** Output — (1) calendar of culturally significant dates in the country, (2) 3-5 lightweight activity suggestions per moment (e.g., learning lunch, shared meal, recognition), (3) one paragraph on what to avoid (tokenism flags). Plain English. Do not invent traditions — flag where the source is too thin for a confident recommendation.
+>
+> **Source:** /Cultural calendar reference document.
+
+#### Pattern 1.10 — Employee engagement feedback mechanism
+
+> **Goal:** Design a feedback mechanism and iteration plan based on our recent engagement insights.
+>
+> **Context:** We have an engagement insights report with quantitative satisfaction trends. We want to set up an ongoing feedback loop, not another one-off survey.
+>
+> **Expectations:** Document — (1) feedback mechanism design (channels, cadence, anonymity) · (2) iteration plan for next 12 months · (3) how we'll use the data to refine the Rhythm of Business. Plain English. Flag any design choice where we need legal or works-council input.
+>
+> **Source:** /Employee engagement insights report.
+
+#### Pattern 1.11 — Manager email summarising org health insights
+
+> **Goal:** Draft a manager-facing email summarising org health insights and action plan timelines.
+>
+> **Context:** Our HR team has reviewed organisational health data and built an action plan. I need to communicate this to people managers in [org] so they understand what's happening and when.
+>
+> **Expectations:** Email format. 250 words. Sections — Key findings · What we're doing about it · Timelines · What managers need to do · How to ask questions. Plain English, no jargon. Warm but unambiguous.
+>
+> **Source:** /Organisational health insights report and /HR review action plan.
+
+#### Pattern 1.12 — Plan engagement event logistics
+
+> **Goal:** Plan logistics and required resources for our upcoming engagement events.
+>
+> **Context:** We have a list of planned engagement events (formats, dates, expected attendance). I need a coordinated resource plan for budgets, people, and materials.
+>
+> **Expectations:** Table — Event · Date · Budget needed · People required · Materials · Owner · Timeline. Plain English. Flag any event where data is missing.
+>
+> **Source:** /Employee engagement events plan.
+
+#### Pattern 1.13 — Actionable culture plan from listening insights
+
+> **Goal:** Design a three-pillar action plan from our employee listening themes.
+>
+> **Context:** Listening report covers themes from surveys, focus groups, and feedback channels. We want a plan with clear ownership and measurable progress.
+>
+> **Expectations:** For each theme — (1) connection to a measurable business outcome (innovation / engagement / retention / operational effectiveness), (2) three-pillar action plan covering policy/process · manager enablement · employee communications, (3) accountable owners · key milestones · success KPIs. Plain English. Flag themes where the listening data is too thin for a real action.
+>
+> **Source:** /Employee listening themes report.
+
+### Scenario 3 — HR operations & policy communication
+
+The work of turning policy into things employees can actually understand and act on.
+
+#### Pattern 1.14 — Employee newsletter for benefits + programs
+
+> **Goal:** Draft an employee newsletter highlighting our benefits and upcoming HR programs.
+>
+> **Context:** Quarterly newsletter. Audience is all employees. We want to make our benefits actually visible and used.
+>
+> **Expectations:** Newsletter format. Sections — Financial benefits · Family support · Health and wellbeing · Upcoming HR events. Friendly, inclusive tone, no HR jargon. Engaging headlines, short paragraphs, clear CTAs. Standalone ready to send.
+>
+> **Source:** /Company benefits overview and /HR events calendar.
+
+#### Pattern 1.15 — Plain-language policy explainer
+
+> **Goal:** Rewrite this benefits or HR policy document as an employee-ready explanation.
+>
+> **Context:** Recent policy update needs to be communicated to employees. The current document is dense, legalistic, and unreadable.
+>
+> **Expectations:** Three sections — What's changing · What it means for you · Where to get help. Plain English, no HR jargon. Cover eligibility, coverage changes, effective dates, employee responsibilities, and support contacts. Do not invent commitments not in the source.
+>
+> **Source:** /Benefits or HR policy document.
+
+#### Pattern 1.16 — FAQ document for an upcoming policy change
+
+> **Goal:** Generate an FAQ for an upcoming policy change tailored to multiple audiences.
+>
+> **Context:** Policy change is rolling out next quarter. Employees, managers, and partners will all have questions, often different ones.
+>
+> **Expectations:** FAQ document with three sections — for Employees · for Managers · for Partners. Each FAQ has 5-8 questions in the order people will ask them. Clear answers in plain English. Standalone-ready format.
+>
+> **Source:** /Policy change overview document.
+
+#### Pattern 1.17 — Rewards guidance summary for HRBPs
+
+> **Goal:** Prepare an HRBP-ready summary of rewards guidance to support leader discussions.
+>
+> **Context:** Rewards season is coming. Our HRBPs need to support leaders confidently with a clear, consistent reference.
+>
+> **Expectations:** One-page summary — Key dates and milestones · Approved rewards levers · Common leader questions (with answers) · Where to escalate. Plain English. Cite the source for each rewards lever so HRBPs can defend it.
+>
+> **Source:** Existing company resources and guidelines for rewards (paste links or documents when running).
+
+#### Pattern 1.18 — Company-wide benefits info for one employee
+
+> **Goal:** Compile a clean summary of benefits info to send to a specific employee.
+>
+> **Context:** An employee asked about exploring their benefit options. I want a personalised summary email rather than sending generic links.
+>
+> **Expectations:** Email draft — Greeting · Three-bullet summary of relevant benefits · Links to detailed pages · Soft ask if they want a 15-minute walkthrough. Warm, factual. Do not commit to benefits the company doesn't actually offer.
+>
+> **Source:** /Company benefits overview plus the employee's role and tenure context.
+
+### Scenario 4 — Employee relations & case management
+
+The hardest, most human-judgment-heavy part of HR. Copilot helps with prep and tone — never with the decision.
+
+#### Pattern 1.19 — Practise delivering leader feedback with role-play
+
+> **Goal:** Run a role-play to help me practise giving feedback to a senior leader.
+>
+> **Context:** I need to deliver feedback to a manager in [business area] about [theme]. I have my notes on the key points. I want to rehearse before the real conversation.
+>
+> **Expectations:** Role-play — You act as the leader. I'll share my points. You ask realistic follow-up questions a leader would ask. After the practice ends, give me feedback on what I could say more clearly, where I was vague, and where the leader might push back.
+>
+> **Source:** /My notes document with the feedback points.
+
+#### Pattern 1.20 — HR coaching prep for a manager meeting
+
+> **Goal:** Create coaching follow-up questions based on my last meeting with this manager.
+>
+> **Context:** I'm an HR Business Partner coaching a manager on people-leader skills. I want structured follow-ups that move the coaching forward.
+>
+> **Expectations:** Five follow-up questions, each tied to a specific moment from the last meeting. Plain English. Open questions only (no yes/no). Each question paired with one line on "what I'm listening for."
+>
+> **Source:** /Notes from my last meeting with the manager.
+
+#### Pattern 1.21 — Escalation email to issue summary + questions
+
+> **Goal:** Convert this manager's escalation email into a clean issue summary plus follow-up questions.
+>
+> **Context:** A manager has emailed HR with a complex employee situation. I need to understand what's explicitly stated vs assumed before I respond.
+>
+> **Expectations:** Output — (1) issue summary in 4 bullets (what's explicitly stated, by whom, when), (2) what's NOT in the email but probably matters, (3) 5 follow-up questions for the manager. Plain English. No conclusions. No advocacy.
+>
+> **Source:** /Email from the manager requesting HR guidance.
+
+#### Pattern 1.22 — Empathetic neutral tone review of a draft communication
+
+> **Goal:** Review this draft employee communication for empathy and neutrality.
+>
+> **Context:** Sensitive employee communication. I want feedback on tone before sending — somewhere between caring and professionally neutral.
+>
+> **Expectations:** For the draft — (1) phrases that read as cold or clinical (with rewrites), (2) phrases that read as too informal or over-promising (with rewrites), (3) any phrasing that could be misread as judgement. Plain English. The redrafted version at the end should preserve the facts but improve tone.
+>
+> **Source:** /PII-redacted draft employee communication.
+
+### Scenario 5 — Performance & talent development
+
+Helping managers and employees prepare for the conversations that shape careers.
+
+#### Pattern 1.23 — Performance review resources for managers
+
+> **Goal:** Suggest HR-approved resources I can share with a manager preparing for a performance review.
+>
+> **Context:** I'm coaching this manager ahead of a performance conversation with a direct report. They need practical tools — not theory.
+>
+> **Expectations:** Three sections — Talking points the manager should prepare · Approved resources to share · Coaching prompts (in case the conversation goes off-track). Plain English. Source each resource — don't invent.
+>
+> **Source:** Existing company guidance plus the manager's name and the direct-report's role.
+
+#### Pattern 1.24 — Onboarding guide from JD + team docs
+
+> **Goal:** Create a concise onboarding document for a new joiner.
+>
+> **Context:** [Employee Name] joins on [date]. I want them to walk into a clear picture of their role, the team, and what success looks like in 30/60/90 days.
+>
+> **Expectations:** Document — Purpose of the role · Key responsibilities · Team-mate overview · Recommended people to meet · Topics to discuss in first 1:1s · 30/60/90-day success markers. Plain English.
+>
+> **Source:** /Job description, /Job responsibilities, /Team charter, /Team org chart.
+
+#### Pattern 1.25 — Performance + rewards workback plan
+
+> **Goal:** Build a workback plan for the performance and rewards cycle.
+>
+> **Context:** Performance and rewards cycle is coming. People managers in [org] need clarity on when to do what.
+>
+> **Expectations:** Two outputs — (1) workback plan as a table with key dates, activities, and HR-owned resources, (2) draft email to managers communicating upcoming milestones and where to find resources. Plain English. Do not invent dates.
+>
+> **Source:** /Calendar for Performance and Rewards review.
+
+#### Pattern 1.26 — Country-specific PIP guidance for managers
+
+> **Goal:** Provide country-specific guidance for navigating a Performance Improvement Plan (PIP).
+>
+> **Context:** Manager in [country] is preparing to put an employee on a PIP. They need clear, country-aware steps to follow.
+>
+> **Expectations:** Guidance document — How to assess the performance concern · How to conduct PIP conversations · Documentation expectations · When to escalate to HR · Country-specific considerations (only if grounded in source). Plain English. Mark anything not in the source as `[CONFIRM with local HR/legal]`.
+>
+> **Source:** /Manager guidance for handling performance issues and improvement plans.
 
 ## Persona-specific guardrails — Recruitment & HR
 
@@ -293,9 +515,15 @@ Operations is the role where Copilot saves the most time in the least visible wa
 | 3:00pm | Deal pipeline review with partner | Copilot Chat — summarise active deals from emails + Teams chats |
 | 4:30pm | SOP draft / update | Word + Copilot — convert process notes into formal SOP |
 
-## Six worked prompt patterns
+## The 5 Operations scenarios
 
-### Pattern 2.1 — Work instructions from a process overview
+Following Microsoft's official Operations Prompt Pack structure — process management, partner/supplier ops, launch & readiness, deal execution, and risk & compliance.
+
+### Scenario 1 — Process & program management
+
+The bread and butter of operations — turning fuzzy work into documented, repeatable, improvable processes.
+
+#### Pattern 2.1 — Work instructions from a process overview
 
 > **Goal:** Create a work instruction document.
 >
@@ -305,7 +533,17 @@ Operations is the role where Copilot saves the most time in the least visible wa
 >
 > **Source:** /Operational Procedure Overview.
 
-### Pattern 2.2 — High-level process flow diagram
+#### Pattern 2.2 — FAQ document for a process
+
+> **Goal:** Create an FAQ document based on this work instruction.
+>
+> **Context:** New joiners and stakeholders ask the same questions about this process repeatedly. I want an FAQ to publish alongside the work instruction.
+>
+> **Expectations:** 8-12 question/answer pairs in the order people will actually ask them. Plain English. Each answer 2-3 sentences max. Flag any question where the source doesn't have a clear answer yet.
+>
+> **Source:** /Work instruction document describing the process and steps.
+
+#### Pattern 2.3 — High-level process flow diagram
 
 > **Goal:** Create a high-level process flow diagram.
 >
@@ -315,17 +553,95 @@ Operations is the role where Copilot saves the most time in the least visible wa
 >
 > **Source:** /Operational Procedure Overview.
 
-### Pattern 2.3 — Monthly Business Review (MBR) preparation
+#### Pattern 2.4 — Business Requirements Document (BRD)
 
-> **Goal:** Prepare for an upcoming MBR with our key supplier.
+> **Goal:** Help me create a detailed Business Requirements Document for an engineering team.
 >
-> **Context:** I have the last three monthly MBR presentations. I need a consolidated view of supplier performance challenges and improvement opportunities.
+> **Context:** I have the project brief and the notes from our Process Improvement Proposal meeting. The engineering team needs a structured BRD to scope and estimate from.
 >
-> **Expectations:** Five bullets summarising key challenges and improvement opportunities across the three MBRs. Plain English. Cite the MBR each point came from.
+> **Expectations:** BRD format — Executive summary · Project scope · Objectives & success criteria · In-scope vs out-of-scope · Assumptions · Risks · Dependencies · Open questions. Plain English. Flag any section where the source is too thin to write confidently.
+>
+> **Source:** /Project brief and /Process Improvement Proposal meeting notes.
+
+#### Pattern 2.5 — Workflow performance + SLA analysis
+
+> **Goal:** Analyse this dataset and identify operational improvement opportunities.
+>
+> **Context:** Workflow performance data and SLA metrics for the last 90 days. I want a structured view of trends, bottlenecks, and outliers — not just a numerical summary.
+>
+> **Expectations:** Three outputs — (1) trend table by metric and week, (2) bottlenecks ranked by impact, (3) improvement opportunities organised by recommendation type and time-to-implement (quick win · medium · long-term). Plain English. Flag any metric where the data quality is poor.
+>
+> **Source:** /Workflow Performance and SLA Metrics dataset.
+
+### Scenario 2 — Partner & supplier operations
+
+The work of keeping external relationships clear, consistent, and well-documented.
+
+#### Pattern 2.6 — Supplier MBR consolidation
+
+> **Goal:** Summarise challenges and improvement opportunities across recent supplier MBRs.
+>
+> **Context:** I have the last three monthly MBR presentations with our key supplier. I want a consolidated view I can take to my procurement lead.
+>
+> **Expectations:** Five bullets summarising key challenges and improvement opportunities across the three MBRs. Plain English. Cite the MBR each point came from. Flag any pattern that may need formal escalation.
 >
 > **Source:** /Monthly Business Reviews 1, /Monthly Business Reviews 2, /Monthly Business Reviews 3.
 
-### Pattern 2.4 — Launch issues & risks register
+#### Pattern 2.7 — Partner-ready content from a launch outline
+
+> **Goal:** Create a one-page partner-facing summary of an upcoming change.
+>
+> **Context:** We have launch details. Our partners need a clean one-pager — what's changing, when, and what they need to do.
+>
+> **Expectations:** One page. Sections — What's changing · Key dates · What partners need to do · Where to ask questions. Plain English, no marketing fluff. In our company branding tone. Do not invent commitments not in the source.
+>
+> **Source:** /Launch details outline.
+
+#### Pattern 2.8 — Request for Proposal (RFP) draft
+
+> **Goal:** Help me prepare a Request for Proposal document.
+>
+> **Context:** We're going out to market for [product/service]. I have notes from our internal customer intro meeting. I want a first-draft RFP I can refine.
+>
+> **Expectations:** RFP format — General Overview · Scope · Best Practice Response Guidelines · Supplier Capabilities · Associated Questions (organised by capability area). Plain English. Mark any section where the source is too thin as `[needs internal alignment]`.
+>
+> **Source:** /Customer intro meeting notes.
+
+#### Pattern 2.9 — Partner impact analysis from a system export
+
+> **Goal:** Identify potential impacts to partner experience and propose mitigations.
+>
+> **Context:** I have an export from our Launch Management System. I need to understand what's changing for partners and where we can reduce friction.
+>
+> **Expectations:** Two outputs — (1) table of potential impacts (partner-facing change · severity · impacted partner group), (2) mitigation opportunities ranked by effort vs impact. Plain English. Do not invent impacts — flag where the source is unclear.
+>
+> **Source:** /Launch Management System export.
+
+#### Pattern 2.10 — Procedure simplification rewrite
+
+> **Goal:** Suggest a rewrite of this procedure to reduce page count and increase clarity.
+>
+> **Context:** This procedure document is too long. People don't read it. I want a simpler, shorter version that still covers the same ground.
+>
+> **Expectations:** Three outputs — (1) the rewritten procedure in plain English, (2) a short note on what was cut and why, (3) a flag for anything that was cut that may need legal/compliance sign-off before publishing.
+>
+> **Source:** /Procedure document.
+
+### Scenario 3 — Launch & readiness execution
+
+The cross-functional choreography of getting something live, on time, with everyone aligned.
+
+#### Pattern 2.11 — Launch workback plan
+
+> **Goal:** Create a project workback plan for an upcoming launch.
+>
+> **Context:** Launch is set to land on [date]. I have the BRD. I want a workback plan that aligns engineering, marketing, operations, and customer support.
+>
+> **Expectations:** Workback table — Milestone · Date · Owner · Predecessor · Status. Plain English. Group milestones by workstream. Flag any milestone where the BRD doesn't have enough detail.
+>
+> **Source:** /Business Requirements Document.
+
+#### Pattern 2.12 — Launch issues & risks register
 
 > **Goal:** Help me build a first-draft Issues & Risks register for an upcoming launch.
 >
@@ -335,7 +651,95 @@ Operations is the role where Copilot saves the most time in the least visible wa
 >
 > **Source:** /Launch Readiness Assessment.
 
-### Pattern 2.5 — Failure Mode and Effects Analysis (FMEA) — draft support
+#### Pattern 2.13 — Change management plan + communications
+
+> **Goal:** Draft a change management plan and stakeholder communications for an upcoming launch.
+>
+> **Context:** Launch goes live on [date]. I need a coordinated plan to communicate the change to internal stakeholders.
+>
+> **Expectations:** Two outputs — (1) change management plan (audiences · key messages · channels · timing · feedback loops), (2) draft email communications for each audience. Plain English. Do not invent stakeholder commitments.
+>
+> **Source:** /Updated business requirements.
+
+#### Pattern 2.14 — Cross-functional stakeholder mapping
+
+> **Goal:** Identify cross-functional stakeholders to engage for an upcoming launch.
+>
+> **Context:** I have the launch overview document. I need a clear view of which teams need to know what, and when.
+>
+> **Expectations:** Stakeholder map — Team · Stakeholder · Why they matter · What they need to know · When · Channel. Plain English. Flag any team where it's unclear whether engagement is needed.
+>
+> **Source:** /Launch Overview Document.
+
+#### Pattern 2.15 — Hypercare + UAT plan
+
+> **Goal:** Create a User Acceptance Testing schedule and post-launch Hypercare plan.
+>
+> **Context:** Launch goes live on [date]. I have the SOPs and the project workback schedule. I need a structured UAT + Hypercare plan.
+>
+> **Expectations:** Two outputs — (1) UAT schedule (test case · owner · date · pass criteria), (2) Hypercare plan (period · daily checks · escalation paths · success exit criteria). Plain English.
+>
+> **Source:** /Standard Operating Procedures and /Project workback schedule.
+
+### Scenario 4 — Deal execution & partner operations
+
+The operational layer behind partner-led deals — keeping the pipeline visible and the next actions clear.
+
+#### Pattern 2.16 — Monthly Business Review prep
+
+> **Goal:** Prepare for my upcoming MBR with this partner contact.
+>
+> **Context:** Monthly Business Review coming up. I want a clean view of open actions, follow-up items, and what to drive in the meeting.
+>
+> **Expectations:** Three outputs — (1) open actions table (action · owner · due date · status), (2) follow-up items ordered by due date, (3) my talking points for the meeting. Plain English. Flag any action where the status is unclear.
+>
+> **Source:** Recent meeting recaps and emails with [partner contact name].
+
+#### Pattern 2.17 — Active deals summary across email + Teams chats
+
+> **Goal:** Summarise my active deals from the last week's emails and Teams chats.
+>
+> **Context:** I'm managing multiple deals concurrently. I want a structured weekly view to identify what needs my attention.
+>
+> **Expectations:** Table — Deal · Current stage · Blockers · Dependencies · Pending actions · At risk this month (yes/no). Plain English. Flag deals where I haven't acted in 7+ days.
+>
+> **Source:** My emails and Teams chats from the last 7 days.
+
+#### Pattern 2.18 — Post-close retrospective
+
+> **Goal:** Prepare a post-close retrospective for a completed deal.
+>
+> **Context:** Deal with [Customer or Partner] just closed. I want to capture what worked and what didn't before the team moves on to the next thing.
+>
+> **Expectations:** Three sections — What went well · Improvement opportunities · Go-do actions (with owners and timelines). Plain English. Honest tone — no sugar-coating. Flag any item that needs broader team input before publishing.
+>
+> **Source:** /Customer or Partner deal materials and any /Post-close debrief notes.
+
+#### Pattern 2.19 — Partner-specific deal summary
+
+> **Goal:** Summarise deals from this partner over a specific period.
+>
+> **Context:** I work closely with [partner name]. I want a structured summary of recent deals with them — for my own planning and for an upcoming check-in.
+>
+> **Expectations:** Table — Deal · Customer · Stage · Value range · Key milestone · Next action. Summary paragraph on patterns. Plain English. Flag any deal where the source is missing key fields.
+>
+> **Source:** My emails and Teams chats from the past [number] of days, filtered for [partner name].
+
+#### Pattern 2.20 — Deal trends analysis
+
+> **Goal:** Analyse our deal trends and surface emerging patterns.
+>
+> **Context:** I have a Power BI report or pipeline export. I want to understand which regions have the highest deal volume and value, which deal types commonly face blockers, and root causes.
+>
+> **Expectations:** Three sections — Regional volume/value table · Deal types with most blockers · Root-cause hypotheses (clearly marked as hypotheses, not conclusions). Plain English. Do not assert causation — flag for human validation.
+>
+> **Source:** /Pipeline export or /Power BI report.
+
+### Scenario 5 — Risk, controls & compliance
+
+The audit-grade side of operations. Copilot helps prep, draft, and structure — never decides.
+
+#### Pattern 2.21 — Failure Mode and Effects Analysis (FMEA) — draft support
 
 > **Goal:** Help me draft an FMEA on this process — first surface candidate failure modes, then leave the scoring for SME review.
 >
@@ -345,7 +749,47 @@ Operations is the role where Copilot saves the most time in the least visible wa
 >
 > **Source:** /Operational Process Flow Diagram.
 
-### Pattern 2.6 — SOP draft from existing process notes
+#### Pattern 2.22 — Define controls for a process
+
+> **Goal:** Help me define a control for this process that mitigates a key risk.
+>
+> **Context:** We have a risk policy and the process flow document. I need a testable, measurable control to add to our internal control framework.
+>
+> **Expectations:** Control proposal — Control name · Risk it mitigates · How it's tested · Frequency · Owner · Evidence required to demonstrate it's working. Plain English. Mark anything beyond the source as `[needs SME input]`.
+>
+> **Source:** /Risk policy and /Process flow document.
+
+#### Pattern 2.23 — Audit prep — evidence package summary
+
+> **Goal:** Help me prepare for an upcoming audit meeting.
+>
+> **Context:** External audit on our operational controls. I have the audit meeting agenda and our controls document. I need to walk in with a clean evidence package.
+>
+> **Expectations:** Table per control — Control · Owner · Test design · Evidence available (cite source) · Gaps · Open questions. Plain English. Do not claim compliance — that's the auditor's call. Flag any control where evidence is thin.
+>
+> **Source:** /Audit meeting agenda and /Controls document.
+
+#### Pattern 2.24 — Risk register wording in ISO-style format
+
+> **Goal:** Convert this control document into formal risk register wording aligned to ISO-style formatting.
+>
+> **Context:** Our risk team uses an ISO-style risk register. I need to translate an operational control document into the right format.
+>
+> **Expectations:** Each entry — Risk statement · Cause · Impact · Inherent risk rating · Mitigation · Residual risk rating · Owner. Plain English. Mark anything not in the source as `[needs SME validation]`.
+>
+> **Source:** /Control document.
+
+#### Pattern 2.25 — KPI mockup for a control
+
+> **Goal:** Propose KPIs to measure the effectiveness of this control.
+>
+> **Context:** New control going live. We need KPIs that prove it's working — not just that the activity is happening.
+>
+> **Expectations:** Three outputs — (1) KPI definitions (metric · target · threshold for action), (2) recommended dashboard visuals, (3) refresh frequency. Plain English. Flag any KPI where measurement is hard.
+>
+> **Source:** /Control document.
+
+#### Pattern 2.26 — SOP draft from informal process notes
 
 > **Goal:** Draft a Standard Operating Procedure for an existing informal process.
 >
@@ -388,9 +832,15 @@ Finance is the role where Copilot saves the most time on the most-disliked task 
 | 3:00pm | Compliance / regulation update | Copilot Chat — summarise external updates, compare to internal policy |
 | 4:30pm | Cash flow / receivables review | Excel + Copilot — aging receivables, flag risks |
 
-## Six worked prompt patterns
+## The 5 Finance scenarios
 
-### Pattern 3.1 — Standardise close data before reconciling
+Following Microsoft's official Finance Prompt Pack structure — close & reporting, forecasting & analysis, risk & compliance, contract & supplier decisions, and cash flow management.
+
+### Scenario 1 — Financial close & reporting
+
+The most-disliked work on every finance manager's desk: commentary, drivers, and reporting. Copilot saves the most time here.
+
+#### Pattern 3.1 — Standardise close data before reconciling
 
 > **Goal:** Identify formatting inconsistencies in this dataset.
 >
@@ -400,7 +850,17 @@ Finance is the role where Copilot saves the most time on the most-disliked task 
 >
 > **Source:** /Aggregate sales invoice and payment data.
 
-### Pattern 3.2 — Variance commentary for leadership
+#### Pattern 3.2 — Identify top revenue categories with trend analysis
+
+> **Goal:** Identify the top three revenue categories and summarise their trends.
+>
+> **Context:** Reconciliation report transactions for the past three years. I want a structured view of what's growing, what's declining, and any notable shifts.
+>
+> **Expectations:** Output — (1) short summary paragraph, (2) table of top three categories with revenue and growth rate per year, (3) a chart suggestion that best fits the data. Plain English. Flag any year where data quality is poor.
+>
+> **Source:** /Reconciliation Report transactions.
+
+#### Pattern 3.3 — Variance commentary for leadership
 
 > **Goal:** Analyse the variance summary and draft leadership commentary.
 >
@@ -410,7 +870,7 @@ Finance is the role where Copilot saves the most time on the most-disliked task 
 >
 > **Source:** /Variance analysis summary.
 
-### Pattern 3.3 — Reusable close reporting template
+#### Pattern 3.4 — Reusable close reporting template
 
 > **Goal:** Create a reusable Copilot-friendly close reporting template.
 >
@@ -420,7 +880,100 @@ Finance is the role where Copilot saves the most time on the most-disliked task 
 >
 > **Source:** /Monthly reporting package (Excel + PPT).
 
-### Pattern 3.4 — Compare accounting amendments
+#### Pattern 3.5 — Business drivers impacting close outcomes
+
+> **Goal:** Extract business drivers and updates impacting our close results from the last 30 days.
+>
+> **Context:** Conversations across a Teams channel, meeting recaps, and an offline tracker file. I want a structured view of what drove this period's actuals away from forecast.
+>
+> **Expectations:** Table — Driver · Source · Direction (favourable/unfavourable) · Final impact on close. Plain English. Cite the source for each driver — do not infer drivers without grounding.
+>
+> **Source:** /Teams channel content, /Meeting recaps, /Offline tracker file.
+
+### Scenario 2 — Forecasting & performance analysis
+
+The work of looking forward — and explaining the gap between what we said would happen and what is actually happening.
+
+#### Pattern 3.6 — Forecast outlook summary
+
+> **Goal:** Summarise the forecast outlook for our top three product categories.
+>
+> **Context:** New forecast model just published. I need a one-page briefing for the leadership team — what's expected, key assumptions, and risks.
+>
+> **Expectations:** One-page briefing format. For each top category — Expected outlook · Key assumptions · Changes from prior forecast · Emerging risks/opportunities. Plain English. Flag any assumption that's high-uncertainty.
+>
+> **Source:** /Forecast model.
+
+#### Pattern 3.7 — Visualise forecast trends
+
+> **Goal:** Create a simple chart showing forecasted revenue by product category over the next two years.
+>
+> **Context:** I have the forecast data. I want a chart I can drop into a planning deck, plus a short explanation of what the trend implies.
+>
+> **Expectations:** Two outputs — (1) chart with appropriate type for the data, (2) two-sentence written explanation of what the trend suggests for planning conversations. Plain English.
+>
+> **Source:** /Forecast data.
+
+#### Pattern 3.8 — Competitor earnings summary
+
+> **Goal:** Summarise key financial trends from recent competitor earnings releases.
+>
+> **Context:** I want to inform our internal planning with external signals. Looking for trends in revenue, operating income, profit margin growth, and risks called out by competitors.
+>
+> **Expectations:** For each competitor — Quarter-over-quarter revenue trend · OI trend · Profit margin growth · Risks called out · Key takeaways. Then a final paragraph synthesising what's relevant to our planning. Plain English. Cite sources. Mark anything as `[needs verification]` if uncertain.
+>
+> **Source:** Competitor earnings releases plus /Internal planning and performance analysis for context.
+
+#### Pattern 3.9 — Automate repetitive data collection with a Python draft
+
+> **Goal:** Draft a Python script that automates repetitive data collection tasks.
+>
+> **Context:** I have a Web Data Collection Scope Document. We pull the same data from multiple sources every month. I want a starter script our analyst can refine.
+>
+> **Expectations:** Python script with clear comments — what each section does · where inputs need updating · where assumptions live. Plain English in the comments. Mark anything beyond the source as `[needs validation]`.
+>
+> **Source:** /Web Data Collection Scope Document.
+
+#### Pattern 3.10 — Explain model movements (chained 3-step prompt)
+
+> **Goal:** Run a three-step analysis of changes in our revenue planning model.
+>
+> **Context:** Sentinel revenue planning model has changed month-over-month. I want a clean explanation chain — facts first, then drivers, then exec-level narrative.
+>
+> **Expectations:** Three numbered outputs:
+> 1. Summarise month-over-month changes in ARR, consumption, seat growth, and credits usage in a table (facts only).
+> 2. Explain the primary drivers of those changes and note any assumptions or areas of uncertainty.
+> 3. Convert the analysis into a concise, executive-level narrative suitable for a weekly forecast call.
+>
+> Plain English throughout. Flag any change where the driver is unclear.
+>
+> **Source:** /Sentinel revenue planning model.
+
+### Scenario 3 — Risk & compliance readiness
+
+The audit-grade work that finance owns. Plain language, clear evidence, defensible documentation.
+
+#### Pattern 3.11 — Policy update from leadership feedback
+
+> **Goal:** Summarise leadership feedback and propose updated policy wording.
+>
+> **Context:** Leadership reviewed our policy and gave feedback. I need to translate that feedback into draft policy updates for legal/compliance review.
+>
+> **Expectations:** Two outputs — (1) 6-10 bullets summarising the feedback grouped by Decisions · Requested changes · Open questions · Owners/next steps, (2) draft updated wording for the sections impacted, calling out what changed, why, and what needs follow-up review.
+>
+> **Source:** /Leadership meeting and /Policy document.
+
+#### Pattern 3.12 — Accounting regulation update summary
+
+> **Goal:** Summarise recent accounting regulation updates and what they mean for our policies.
+>
+> **Context:** Regulatory landscape shifts every quarter. I want to brief my team on what's changed and what we need to do.
+>
+> **Expectations:** Two-page brief — Recent regulatory changes · What's changing · Effective dates · Implications for our policies · Suggested actions. Plain English. Cite the regulator and the source for each change.
+>
+> **Source:** Credible finance websites and /Company regulatory guidance.
+
+#### Pattern 3.13 — Compare accounting amendments
 
 > **Goal:** Compare two accounting amendments and summarise the differences.
 >
@@ -430,7 +983,61 @@ Finance is the role where Copilot saves the most time on the most-disliked task 
 >
 > **Source:** /Amendment A and /Amendment B.
 
-### Pattern 3.5 — Contract clauses requiring deeper review
+#### Pattern 3.14 — Plain-language financial terms
+
+> **Goal:** Rewrite these financial terms in plain language a non-finance person can understand.
+>
+> **Context:** Our finance team uses jargon-heavy documents. Non-finance stakeholders glaze over. I want plain-English versions for cross-team use.
+>
+> **Expectations:** For each term — Plain-English definition · Simple example of how it's used in business discussions. No jargon. Mark anything where the term has multiple meanings as `[context-dependent]`.
+>
+> **Source:** /Financial terms document and /Formulas referenced document.
+
+#### Pattern 3.15 — Long-range finance risks (synthesise risk log)
+
+> **Goal:** Synthesise the top long-range risks for finance.
+>
+> **Context:** Strategy offsite notes and our finance risk log. I want a structured view of long-range risks (technology shifts, competitive moves, macroeconomics, cloud cost trends).
+>
+> **Expectations:** Table — Risk · Likelihood · Impact · Early signals to monitor · Mitigation plan · Owner. Plain English. Mark anything beyond the source as `[suggested — confirm at next risk review]`.
+>
+> **Source:** /Strategy offsite notes and /Finance risk log.
+
+### Scenario 4 — Contract & supplier decision support
+
+Procurement-adjacent finance work — spending analysis, contract risk, negotiation prep.
+
+#### Pattern 3.16 — Spending variances vs deliverables
+
+> **Goal:** Identify spending variances between planned/committed and actual spend.
+>
+> **Context:** Contracts cube and invoice cube. I want a structured view of where we're overspending vs commitments, by vendor.
+>
+> **Expectations:** Table — Vendor · Vendor category · Planned/Committed · Actual (Invoiced/Paid) · Variance · Notes. Plus 3-5 bullets summarising likely drivers of the biggest gaps. Plain English. Do not invent drivers — flag if the data alone can't explain a variance.
+>
+> **Source:** /Contracts cube and /Invoice cube.
+
+#### Pattern 3.17 — Retrieve contract + payment context before negotiation
+
+> **Goal:** Summarise contract terms, renewal dates, and recent payment patterns before a vendor negotiation.
+>
+> **Context:** I have recent emails with [supplier], the prior contract, and an invoice cube. I want a clean prep summary before the negotiation conversation.
+>
+> **Expectations:** One-page summary — Latest contract terms · Renewal dates · Recent payment patterns · Open issues · Missed milestones · Pricing changes · Things that may affect negotiation. Plain English. Cite each fact's source.
+>
+> **Source:** Recent emails with [supplier], /Prior contract, /Invoice cube.
+
+#### Pattern 3.18 — Contract review meeting agenda
+
+> **Goal:** Draft a one-page meeting agenda for an upcoming contract review.
+>
+> **Context:** I have the latest contract review meeting notes and the customer email requests. I want a focused agenda that drives toward accounting recommendations.
+>
+> **Expectations:** One-page agenda — Goals · Decision points · Pre-reads · Questions to resolve · Time allocation. Plain English. Mark items that need a specific person prepared as `[requires X prep]`.
+>
+> **Source:** /Contract review meeting notes and /Customer email requests.
+
+#### Pattern 3.19 — Contract clauses requiring deeper review
 
 > **Goal:** Review this contract and identify clauses that may need additional review.
 >
@@ -440,7 +1047,26 @@ Finance is the role where Copilot saves the most time on the most-disliked task 
 >
 > **Source:** /Contract.
 
-### Pattern 3.6 — Aging receivables and overdue invoices
+#### Pattern 3.20 — Negotiation deviations vs standard (chained 3-step)
+
+> **Goal:** Assess negotiation deviations from our standard contract template.
+>
+> **Context:** Vendor has returned a redlined contract. I want a structured 3-step assessment of what's deviated, what the risk is, and what to fall back to.
+>
+> **Expectations:** Three numbered outputs:
+> 1. Compare /Redlined contract to /Standard template and extract only factual deviations into a table (no risk judgment yet).
+> 2. Using the extracted deviations, assess financial, legal, and operational risk for each item and assign High/Medium/Low with rationale.
+> 3. Based on the highest-risk items, propose fallback language and escalation recommendations.
+>
+> Plain English. Mark anything legal-significant as `[needs legal review]`.
+>
+> **Source:** /Redlined contract and /Standard template.
+
+### Scenario 5 — Cash flow management
+
+Receivables, collections, escalations — the things that quietly determine whether the month closes well or badly.
+
+#### Pattern 3.21 — Aging receivables and overdue invoices
 
 > **Goal:** Identify overdue invoices and recommend next steps.
 >
@@ -449,6 +1075,46 @@ Finance is the role where Copilot saves the most time on the most-disliked task 
 > **Expectations:** Table — Customer · Invoice · Days overdue · Issue · Recommended next step. Plain English. Recommended next steps should be process-aligned (send reminder, escalate to Collections, raise dispute, etc.) — do not invent customer-specific commitments.
 >
 > **Source:** /Aging receivables report and recent /Customer name email threads.
+
+#### Pattern 3.22 — Escalation plan for overdue accounts
+
+> **Goal:** Recommend an escalation plan for this overdue account.
+>
+> **Context:** Customer is significantly overdue. We need a defensible escalation path that's empathetic but firm.
+>
+> **Expectations:** Narrative — Rationale for escalation · Potential customer impact considerations · Steps Finance, Account, or Collections should take if payment isn't received by the defined deadline. Plain English. Mark any step that crosses commercial/legal lines as `[needs sign-off]`.
+>
+> **Source:** /Account history, /Invoice aging, /Escalation guidelines.
+
+#### Pattern 3.23 — Collections call summary
+
+> **Goal:** Summarise this collections call and extract commitments.
+>
+> **Context:** I had a collections call with a customer. I want a structured recap I can use for follow-up and for our CRM.
+>
+> **Expectations:** Three outputs — (1) agreed payment dates, (2) risks (with confidence level), (3) follow-up actions with owners. Plain English. Quote any verbatim commitments from the customer. Flag any commitment that's ambiguous.
+>
+> **Source:** /Collections call meeting recording or transcript.
+
+#### Pattern 3.24 — Recurring collection issues — pattern detection
+
+> **Goal:** Identify recurring patterns in collection issues over the past quarter.
+>
+> **Context:** I want to spot patterns — same customer types, same dispute reasons, same time-in-cycle. So we can fix root causes, not symptoms.
+>
+> **Expectations:** Three sections — Recurring patterns (with evidence count) · Hypothesised root causes (clearly marked as hypotheses) · Recommended investigations. Plain English. Do not assert root causes from data alone.
+>
+> **Source:** /Collections case logs from the past quarter.
+
+#### Pattern 3.25 — Cash flow forecast narrative
+
+> **Goal:** Draft a cash flow forecast narrative for the next 90 days.
+>
+> **Context:** I have the cash flow model and the receivables aging report. I want a forward-looking narrative for the next finance leadership review.
+>
+> **Expectations:** Narrative — Expected inflows · Expected outflows · Key risks (with confidence level) · Mitigations · One paragraph on what would change my view. Plain English. Clearly label assumptions.
+>
+> **Source:** /Cash flow model and /Receivables aging report.
 
 ## Persona-specific guardrails — Finance
 
