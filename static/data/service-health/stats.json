@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-05-25T22:02:42.257125+00:00",
+  "generated_at": "2026-05-25T23:20:01.772156+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 23,
+      "total_incidents": 22,
       "active_incidents": 1,
-      "avg_duration_minutes": 3894,
+      "avg_duration_minutes": 4045,
       "last_incident": "2026-05-23T00:00:00+00:00",
       "classifications": {
-        "incident": 9,
+        "incident": 8,
         "advisory": 14
       }
     },
@@ -19,12 +19,12 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 16,
-      "active_incidents": 0,
+      "total_incidents": 17,
+      "active_incidents": 1,
       "avg_duration_minutes": 4784,
-      "last_incident": "2026-05-15T00:00:00+00:00",
+      "last_incident": "2026-05-25T00:00:00+00:00",
       "classifications": {
-        "advisory": 8,
+        "advisory": 9,
         "incident": 8
       }
     },
@@ -208,7 +208,7 @@
   "monthly": [
     {
       "month": "2026-05",
-      "incident_count": 34,
+      "incident_count": 35,
       "services_affected": 12
     },
     {
@@ -218,7 +218,7 @@
     },
     {
       "month": "2026-03",
-      "incident_count": 16,
+      "incident_count": 15,
       "services_affected": 9
     }
   ]

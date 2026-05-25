@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 25 May 2026 22:02:42 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2026 23:20:02 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Some admins' Viva Learning activity reports may be delayed in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1322422</link>
+      <description>[Microsoft 365 suite] Admins' Viva Learning activity reports may be delayed in the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1322422</guid>
+      <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Users were intermittently unable to access Exchange Online</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1321282</link>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1297751</guid>
       <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may experience issues accessing or using Microsoft Copilot (Microsoft 365)</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1283380</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Affected users may have been unable to use Copilot services and features.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">CP1283380</guid>
-      <pubDate>Fri, 17 Apr 2026 15:07:37 +0000</pubDate>
     </item>
   </channel>
 </rss>
