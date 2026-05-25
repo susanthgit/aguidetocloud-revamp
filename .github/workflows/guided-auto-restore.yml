@@ -24,6 +24,12 @@ on:
         required: false
         default: ""
 
+# One run at a time — payment-health fires every 10 min so without this a
+# persistent degraded state could spawn parallel PATCH+redeploy runs.
+concurrency:
+  group: guided-auto-restore
+  cancel-in-progress: false
+
 env:
   CF_ACCOUNT_ID: d42846fe2c29daf890ec57877fda5e04
   CF_PROJECT: guided
@@ -47,11 +53,13 @@ jobs:
         id: precheck
         run: |
           set +e
-          BODY=$(curl -s --max-time 30 "$PROD_URL/guided/api/health")
+          # Use deep health endpoint (?deep=1) to match the payment-health monitor.
+          # The shallow endpoint can report healthy while Stripe/Resend/KV are
+          # actually degraded — that would mask a real failure as a "transient blip".
+          BODY=$(curl -s --max-time 30 "$PROD_URL/guided/api/health?deep=1")
           STATUS=$(echo "$BODY" | python3 -c "import sys,json; print(json.load(sys.stdin).get('status','unknown'))" 2>/dev/null)
           echo "Pre-check status: $STATUS"
           echo "status=$STATUS" >> $GITHUB_OUTPUT
-          # Show component breakdown in logs for ops visibility
           echo "$BODY" | python3 -m json.tool 2>/dev/null || echo "$BODY"
 
       - name: ⏭️ Skip — health recovered (transient blip)
@@ -111,7 +119,50 @@ jobs:
           echo "::notice::To actually PATCH Cloudflare Pages env vars, re-run with:"
           echo "::notice::  gh workflow run guided-auto-restore.yml --repo susanthgit/aguidetocloud-revamp -f confirm_patch=patch-cf-pages -f reason='<reason>'"
 
+      - name: ✅ Preflight — validate all 7 secrets are present and shaped correctly
+        if: |
+          (steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch')
+          && (github.event_name != 'workflow_dispatch' || github.event.inputs.confirm_patch == 'patch-cf-pages')
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ADMIN_PASSWORD: ${{ secrets.GUIDED_ADMIN_PASSWORD }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          STRIPE_PUBLISHABLE_KEY: ${{ secrets.STRIPE_PUBLISHABLE_KEY }}
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+          STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
+          TOKEN_SECRET: ${{ secrets.TOKEN_SECRET }}
+        run: |
+          # Validate before PATCH — GitHub silently expands missing secrets to "".
+          # Without this, a missing secret would PATCH an empty value into CF Pages
+          # and break the live product after next deploy. Lesson from rubber-duck
+          # review on 2026-05-26.
+          set -e
+          errors=()
+
+          [ -n "$CF_API_TOKEN" ]        || errors+=("CLOUDFLARE_API_TOKEN is empty")
+          [ -n "$ADMIN_PASSWORD" ]      || errors+=("GUIDED_ADMIN_PASSWORD is empty")
+          [ -n "$RESEND_API_KEY" ]      || errors+=("RESEND_API_KEY is empty")
+          [ -n "$STRIPE_PUBLISHABLE_KEY" ] || errors+=("STRIPE_PUBLISHABLE_KEY is empty")
+          [ -n "$STRIPE_SECRET_KEY" ]   || errors+=("STRIPE_SECRET_KEY is empty")
+          [ -n "$STRIPE_WEBHOOK_SECRET" ] || errors+=("STRIPE_WEBHOOK_SECRET is empty")
+          [ -n "$TOKEN_SECRET" ]        || errors+=("TOKEN_SECRET is empty")
+
+          # Shape sanity (catches a wrong secret value pasted into the wrong slot)
+          [[ "$STRIPE_PUBLISHABLE_KEY" == pk_live_* ]] || errors+=("STRIPE_PUBLISHABLE_KEY does not start with 'pk_live_'")
+          [[ "$STRIPE_SECRET_KEY" == sk_live_* ]]     || errors+=("STRIPE_SECRET_KEY does not start with 'sk_live_'")
+          [[ "$STRIPE_WEBHOOK_SECRET" == whsec_* ]]    || errors+=("STRIPE_WEBHOOK_SECRET does not start with 'whsec_'")
+          [ "${#ADMIN_PASSWORD}" -ge 16 ]              || errors+=("GUIDED_ADMIN_PASSWORD looks too short (< 16 chars) — guided's is 24")
+          [ "${#TOKEN_SECRET}" -ge 32 ]                || errors+=("TOKEN_SECRET looks too short (< 32 chars)")
+
+          if [ ${#errors[@]} -ne 0 ]; then
+            echo "::error::Preflight FAILED — refusing to PATCH Cloudflare Pages with bad/missing secrets:"
+            for e in "${errors[@]}"; do echo "::error::  - $e"; done
+            exit 1
+          fi
+          echo "✅ All 7 secrets present and shape-valid. Safe to PATCH."
+
       - name: 🩹 PATCH Cloudflare Pages env vars
+        id: patch
         if: |
           (steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch')
           && (github.event_name != 'workflow_dispatch' || github.event.inputs.confirm_patch == 'patch-cf-pages')
@@ -179,10 +230,32 @@ jobs:
         env:
           CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
-          DEPLOY=$(curl -s -X POST \
-            "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/pages/projects/$CF_PROJECT/deployments" \
-            -H "Authorization: Bearer $CF_API_TOKEN")
-          DEPLOY_ID=$(echo "$DEPLOY" | python3 -c "import sys,json; print(json.load(sys.stdin)['result']['id'])")
+          # Hardened on 2026-05-26 after a previous run got JSONDecodeError on
+          # an empty body parse. Now: explicit JSON body (branch=main),
+          # full HTTP status + response logging, graceful error if no result.id.
+          BODY='{"branch":"main"}'
+
+          HTTP=$(curl -s -o /tmp/deploy-response.json -w "%{http_code}" \
+            -X POST "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/pages/projects/$CF_PROJECT/deployments" \
+            -H "Authorization: Bearer $CF_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data-binary "$BODY")
+
+          echo "Redeploy HTTP=$HTTP"
+          echo "Response body:"
+          python3 -c "import json,sys; d=json.load(open('/tmp/deploy-response.json')); print(json.dumps({k: d.get(k) for k in ['success','errors','messages']}, indent=2))" 2>/dev/null || (echo "raw:"; cat /tmp/deploy-response.json)
+
+          if [ "$HTTP" != "200" ]; then
+            echo "::error::Redeploy POST failed with HTTP $HTTP"
+            cat /tmp/deploy-response.json
+            exit 1
+          fi
+
+          DEPLOY_ID=$(python3 -c "import json,sys; d=json.load(open('/tmp/deploy-response.json')); print((d.get('result') or {}).get('id',''))" 2>/dev/null)
+          if [ -z "$DEPLOY_ID" ]; then
+            echo "::error::Redeploy response did not contain result.id — full response above"
+            exit 1
+          fi
           echo "deploy_id=$DEPLOY_ID" >> $GITHUB_OUTPUT
           echo "Deploy ID: $DEPLOY_ID"
 
@@ -230,8 +303,19 @@ jobs:
           [ "$STATUS" = "healthy" ]
 
       - name: "✅ Push: restore succeeded"
-        if: success() && (steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch')
+        # Only fire if PATCH actually attempted AND completed successfully.
+        # The skip path (workflow_dispatch without confirm_patch) leaves the patch
+        # step skipped — `success()` is still true for skipped steps, so without
+        # this confirm-gate the skip path would push a misleading "🟢 restored" alert.
+        # Rubber-duck finding 2026-05-26.
+        if: |
+          success() && steps.patch.outcome == 'success'
+          && (steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch')
+          && (github.event_name != 'workflow_dispatch' || github.event.inputs.confirm_patch == 'patch-cf-pages')
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: |
+          if [ -z "$NTFY_TOPIC" ]; then exit 0; fi
           curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
             -H "Title: 🟢 Guided: auto-restored successfully" \
             -H "Priority: default" \
@@ -239,16 +323,28 @@ jobs:
             -d "Env vars restored, redeploy successful, health now green. No action needed."
 
       - name: "🚨 Push: restore FAILED — manual intervention required"
-        if: failure()
+        # Only fire on actual failure of a step that should have run.
+        # The "skip on no-confirm" path is NOT a failure — see the skip step above.
+        if: |
+          failure()
+          && (steps.precheck.outputs.status != 'healthy' || github.event_name == 'workflow_dispatch')
+          && (github.event_name != 'workflow_dispatch' || github.event.inputs.confirm_patch == 'patch-cf-pages')
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: |
-          curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
-            -H "Title: 🚨 Guided: AUTO-RESTORE FAILED" \
-            -H "Priority: max" \
-            -H "Tags: rotating_light,fire" \
-            -H "Click: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
-            -d "Health: ${{ steps.precheck.outputs.status }} → restore attempted → ${{ steps.postcheck.outputs.status }}. RUN: pwsh C:\\\\ssClawy\\\\guided\\\\scripts\\\\restore-cf-env.ps1"
-          # Also open a GH issue so it's tracked
-          GH_TOKEN="${{ secrets.PERSONAL_PAT }}" gh issue create \
+          if [ -n "$NTFY_TOPIC" ]; then
+            curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+              -H "Title: 🚨 Guided: AUTO-RESTORE FAILED" \
+              -H "Priority: max" \
+              -H "Tags: rotating_light,fire" \
+              -H "Click: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+              -d "Health: ${{ steps.precheck.outputs.status }} -> restore attempted -> ${{ steps.postcheck.outputs.status }}. RUN: pwsh C:\\\\ssClawy\\\\guided\\\\scripts\\\\restore-cf-env.ps1"
+          fi
+          # Also open a GH issue so it's tracked. Robust pattern:
+          # 1. Try to create with labels; if cross-repo PAT can't reach guided's
+          #    labels (rubber-duck observed this 2026-05-26), retry without --label.
+          export GH_TOKEN="${{ secrets.PERSONAL_PAT }}"
+          if ! gh issue create \
             --repo susanthgit/guided \
             --title "🚨 Auto-restore FAILED at $(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
             --label "incident,paid-product,P0" \
@@ -259,4 +355,19 @@ jobs:
           Manual recovery:
           \`\`\`
           pwsh C:\\\\ssClawy\\\\guided\\\\scripts\\\\restore-cf-env.ps1
-          \`\`\`"
+          \`\`\`"; then
+            echo "::warning::Could not create labelled issue — retrying without label"
+            gh issue create \
+              --repo susanthgit/guided \
+              --title "🚨 Auto-restore FAILED at $(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
+              --body "Auto-restore workflow failed (no-label fallback — cross-repo PAT could not access label endpoint).
+
+          Pre-check: ${{ steps.precheck.outputs.status }}. Post-check: ${{ steps.postcheck.outputs.status }}.
+
+          [Workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+          Manual recovery:
+          \`\`\`
+          pwsh C:\\\\ssClawy\\\\guided\\\\scripts\\\\restore-cf-env.ps1
+          \`\`\`" || echo "::error::Issue creation failed entirely — alert ONLY via ntfy"
+          fi

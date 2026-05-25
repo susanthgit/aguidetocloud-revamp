@@ -246,11 +246,18 @@ jobs:
           [Run that detected this](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
 
       - name: 📣 Push to phone (ntfy)
-        if: steps.find.outputs.existing == '' && env.NTFY_TOPIC != ''
+        # Only push on FIRST detection (no existing open issue). Secret check
+        # is done in bash because env.X / secrets.X in `if:` evaluates before
+        # the step's env: applies (rubber-duck 2026-05-26).
+        if: steps.find.outputs.existing == ''
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           SUMMARY: ${{ needs.probe.outputs.summary }}
         run: |
+          if [ -z "$NTFY_TOPIC" ]; then
+            echo "::warning::NTFY_TOPIC not set — skipping push"
+            exit 0
+          fi
           curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
             -H "Title: 🚦 A Guide to Cloud: pipeline data stale" \
             -H "Priority: default" \
