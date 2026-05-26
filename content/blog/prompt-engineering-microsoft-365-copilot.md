@@ -2,7 +2,7 @@
 title: "Prompt Engineering for Microsoft 365 Copilot — Field Guide"
 description: "Brief Microsoft 365 Copilot like a capable new colleague. Microsoft's 4-block framework, slash-command grounding, per-app prompts, mistakes to avoid."
 date: 2026-05-25
-lastmod: 2026-05-25
+lastmod: 2026-05-27
 card_tag: "Prompt Engineering"
 tag_class: "ai"
 layout: "notebook"
@@ -58,6 +58,26 @@ sitemap:
 
 I had to look this up three times before it clicked. Then I taught it to a recruitment team, a finance team, an operations team. Same four blocks every time. Same lightbulb moment. So this is the slow, plain-English version of the brief I wish someone had handed me on day one.
 
+<div class="post-trio">
+
+📚 **Three posts on M365 Copilot prompting — pick where you are:**
+
+- **🌱 Field Guide (you're reading this)** — start here. The four-block framework, per-app prompts, the mistakes everyone makes.
+- **🧑‍💼 [Persona Playbook](/blog/microsoft-365-copilot-by-persona-playbook/)** — your role's worked prompts. Recruiter · Ops · Finance · IT · Sales.
+- **🆕 2026 Upgrade Brief (coming soon)** — Notebooks · Researcher · Analyst · Memory · model choice. For daily prompters who want what's new.
+
+</div>
+
+> ⏱ **Start in 60 seconds — actually try this before reading further**
+>
+> 1. Open Microsoft 365 Copilot Chat at [microsoft365.com/chat](https://microsoft365.com/chat) (or your in-tenant equivalent).
+> 2. Paste this prompt exactly:
+>
+>    > *"From my emails over the past week, create a table of actions, including whose action it is, the person that assigned it and when it is due. I need this to have a good structure to organize my day. Be concise."*
+>
+> 3. Hit Send. You should get a clean, structured table on the first try.
+> 4. Now keep reading — the rest of this post is the framework that makes that prompt work, and how to write your own.
+
 > 🏃 **TL;DR for skimmers**
 >
 > Microsoft 365 Copilot is a **capable new colleague on day one**. Strong at language, fast at drafting, knows nothing about your company until you tell it. Your job is the brief.
@@ -108,7 +128,7 @@ That's the whole job of a prompt. {{< hi >}}A prompt is a brief for a capable ne
 Hold that picture. The rest of this guide just unpacks it.
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["You"] -->|"Brief"| B["Copilot<br/>(capable<br/>new colleague)"]
     B -->|"First draft"| C{"Good<br/>enough?"}
     C -->|"No — coach"| A
@@ -432,7 +452,7 @@ Inside the Microsoft 365 Copilot app, there's a **Copilot Prompt Gallery** with 
 - You want to discover capabilities you didn't know existed (image generation prompts, code prompts, data analysis prompts, agent-specific prompts).
 - You're prepping a training session — the gallery is a ready-made teaching tool.
 
-**The public version:** Microsoft also publishes a public-facing prompt gallery at **[adoption.microsoft.com/copilot-lab](https://adoption.microsoft.com/copilot-lab)** with prompts organised by app, role, and task type. Useful if you want to browse without being signed in, or share specific prompts via link.
+**The public version:** Microsoft also publishes a public-facing prompt gallery at **[adoption.microsoft.com/en-us/copilot/prompt-gallery/](https://adoption.microsoft.com/en-us/copilot/prompt-gallery/)** (the older `/copilot-lab` URL still redirects) with prompts organised by app, role, and task type. Useful if you want to browse without being signed in, or share specific prompts via link.
 
 ### Save your own prompts
 
@@ -539,6 +559,28 @@ flowchart TD
 The shortcut rule: {{< hi >}}**inside one file → use the app's Copilot. Across many sources → use Copilot Chat.**{{< /hi >}} Everything else is a refinement of that rule.
 
 Need to understand the licensing behind these surfaces? The [Copilot Pro vs Microsoft 365 Copilot guide](/blog/copilot-pro-vs-microsoft-365-copilot/) on this site covers it end-to-end.
+
+### Which Copilot surface am I in? — the matrix that explains 80% of the confusion {#surfaces}
+
+The single most useful thing to know about Microsoft 365 Copilot prompting: **the same prompt behaves differently depending on where you type it.** This is the #1 source of *"Copilot worked yesterday in Word, doesn't seem to work today in Teams"* confusion. Each surface sees a different slice of your work, supports a different set of grounding tools, and has different memory across sessions.
+
+| Surface | What it can see | Slash commands? | Memory across sessions? |
+|---|---|---|---|
+| **Copilot Chat** (microsoft365.com/chat or app) | Work IQ — emails, files, meetings, chats, web | ✅ Full | ❌ (unless Memory is enabled for your tenant) |
+| **Copilot Notebooks** | All references you've added to that notebook | ✅ Inside the notebook | ✅ Persistent across the notebook |
+| **Researcher / Analyst agents** | Web + your full Graph, multi-step | ✅ via the agent task brief | Multi-step task scope |
+| **Word Copilot** | Current document only | ❌ | ❌ |
+| **Excel Copilot** | Current workbook (Plan mode previews changes; Python mode runs real math) | ❌ | ❌ |
+| **PowerPoint Copilot** | Current deck (+ a source doc if you ground it) | ❌ | ❌ |
+| **Outlook Copilot** | The current email thread only | ❌ | ❌ |
+| **Teams chat Copilot** | The current thread, last ~30 days | ❌ | ❌ |
+| **Teams meeting Copilot** | The current meeting transcript only | ❌ | ❌ |
+
+**The mental rule:** If the task is rooted in **one document or message** you have open → use the in-app Copilot. If it **reasons across multiple sources** → use Copilot Chat or a Notebook. If it's **multi-step research or data analysis** → consider the Researcher or Analyst agent.
+
+> 📎 **Pin this table.** Almost every "Copilot doesn't know about my X" story I hear traces back to this matrix — wrong surface for the question being asked. Re-read it once a week for a fortnight; it sticks.
+
+The full 2026 layer — Notebooks, Researcher, Analyst, Work IQ, Memory, model choice — gets a deep dive in the upcoming **2026 Upgrade Brief** (coming soon). The fundamentals in *this* post apply across every surface in the table above.
 
 ### Two more surfaces worth knowing — Pages and Notebooks
 
@@ -726,7 +768,7 @@ Three prompts to try first:
 
 > 3. *"Suggest a meeting agenda for the kickoff based on this kickoff page."*
 
-## 10 prompt mistakes to avoid {#mistakes}
+## 13 prompt mistakes to avoid {#mistakes}
 
 These are the ones I see most often. None of them are technical. All of them are habits.
 
@@ -749,6 +791,12 @@ These are the ones I see most often. None of them are technical. All of them are
 **9. Over-engineering the prompt.** A specific 30-word prompt beats a 200-word prompt with elaborate role-play. Be specific, not fancy.
 
 **10. Forgetting the iteration habit.** If the first answer wasn't right, that's not a bug — that's the workflow. Coach Copilot. Don't start over.
+
+**11. Asking Copilot to count things accurately.** *"How many emails mention X?"* Language models are not calculators — they often miscount, especially across long lists. The fix: in **Excel**, explicitly ask Copilot to *"use Python for this"* (Plan mode then shows you the steps before running). In chat, ask Copilot to *"list each item with one line of evidence"* — then count them yourself. The same applies to dates, totals, percentages — verify any number that matters.
+
+**12. Same prompt, every surface.** Slash commands, the context window, and what Copilot can see vary sharply between Copilot Chat, Word, Excel, Outlook, and Teams. The [Which Copilot surface matrix](#surfaces) above is the cheat sheet — re-read it once a week for a fortnight until the differences become muscle memory.
+
+**13. Asking Copilot about a file before it's indexed.** Files newly saved to SharePoint or OneDrive can take **minutes-to-hours** to be indexed for Copilot. If `/file` can't find a document you just created, that's almost never a Copilot bug — it's indexing lag. The fix: use the **`+` upload button** in the chat composer to attach the file directly for that conversation, or wait and retry later. While you're at it: oversharing in SharePoint (everyone has access to everything) also degrades grounding quality — Copilot returns noisier answers because the haystack is too big.
 
 ## The honest take — what Copilot won't do for you {#honest}
 
@@ -820,6 +868,10 @@ You now have the framework, the per-app tips, the privacy guardrails, and a prac
 **Role-specific deep dives:**
 
 - 🧑‍💼 **[Microsoft 365 Copilot — A Plain-English Playbook for 5 Personas](/blog/microsoft-365-copilot-by-persona-playbook/)** — the role-specific companion. Recruiters & HR · Operations · Finance · IT Admin · Sales & Marketing. Day-in-the-life workflows, worked prompts, persona-specific guardrails, and the safety patterns that matter in each role.
+
+**The 2026 layer — for daily prompters who want what's new:**
+
+- 🆕 **Microsoft 365 Copilot Prompt Engineering — What's New for 2026 (coming soon)** — Copilot Notebooks · Researcher agent · Analyst agent · Work IQ · model choice (GPT-5.5 Thinking · Instant · Claude) · Memory · multimodal · Pages. The fundamentals in this hub still apply; the upgrade brief is where the 2026 features go.
 
 **Related licensing and architecture guides:**
 

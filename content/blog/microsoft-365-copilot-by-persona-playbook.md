@@ -2,7 +2,7 @@
 title: "Microsoft 365 Copilot — A Playbook for 5 Personas"
 description: "Copilot prompts for Recruiters, Operations, Finance, IT Admin, Sales & Marketing — daily workflows, worked examples, and the guardrails that matter."
 date: 2026-05-25
-lastmod: 2026-05-25
+lastmod: 2026-05-27
 card_tag: "Persona Playbook"
 tag_class: "ai"
 layout: "notebook"
@@ -56,6 +56,16 @@ sitemap:
 **Microsoft 365 Copilot does not change anyone's job. It changes the typing.** Whatever role you're in, your judgment stays where it is. This playbook walks through five personas — Recruiters & HR, Operations, Finance, IT Admin, Sales & Marketing — with the daily workflows, worked prompts, and guardrails that actually matter in each.
 
 This is the role-specific companion to the [Prompt Engineering hub guide](/blog/prompt-engineering-microsoft-365-copilot/). If you haven't read that yet, **read it first** — it covers Microsoft's four-block framework (Goal · Context · Expectations · Source), the iteration habit, and the privacy basics. Everything below sits on top of those.
+
+<div class="post-trio">
+
+📚 **Three posts on M365 Copilot prompting — pick where you are:**
+
+- **🌱 [Field Guide](/blog/prompt-engineering-microsoft-365-copilot/)** — start here if you're new. Four-block framework, per-app prompts, the mistakes everyone makes.
+- **🧑‍💼 Persona Playbook (you're reading this)** — your role's worked prompts. Recruiter · Ops · Finance · IT · Sales.
+- **🆕 2026 Upgrade Brief (coming soon)** — Notebooks · Researcher · Analyst · Memory · model choice. For daily prompters who want what's new.
+
+</div>
 
 > 🏃 **TL;DR for skimmers**
 >
@@ -338,7 +348,7 @@ Once you have a good first response, common follow-ups:
 {{< hi >}}Copilot summarises against criteria. You decide. Always.{{< /hi >}}
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["80 CVs"] --> B["Copilot:<br/>summary against<br/>role criteria"]
     B --> C{"Did the<br/>prompt ask<br/>for a decision?"}
     C -->|"Yes — rank,<br/>score, recommend"| D["STOP —<br/>Rewrite the prompt<br/>Remove decision language"]
@@ -2192,6 +2202,7 @@ This plan works for every persona in this playbook. Same shape, different prompt
 This playbook is the role-specific companion. Start with the hub if you haven't:
 
 - 🌱 **[Prompt Engineering for Microsoft 365 Copilot — A Plain-English Field Guide](/blog/prompt-engineering-microsoft-365-copilot/)** — the universal hub. The four-block framework, per-app tips, privacy basics, and the mistakes everyone makes.
+- 🆕 **Microsoft 365 Copilot Prompt Engineering — What's New for 2026 (coming soon)** — Notebooks · Researcher agent · Analyst agent · Work IQ · model choice · Memory · multimodal. The 2026 layer that sits on top of every persona section in this playbook.
 
 Also on this site:
 

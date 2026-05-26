@@ -770,6 +770,24 @@ pre:hover .code-copy-btn { opacity: 1; }
   font-style: normal;
 }
 
+/* Post Trio Navigator — three-post navigation strip at top of related blog posts (Zen) */
+.zt-reading-body .post-trio {
+  background: var(--bg-elevated, #1A1A1A);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid var(--border, #262626);
+  border-left: 3px solid var(--accent, #818CF8);
+  border-radius: var(--radius-md, 10px);
+  padding: var(--space-4, 16px) var(--space-6, 24px);
+  margin: var(--space-5, 20px) 0 var(--space-6, 24px);
+  color: var(--text-secondary, #D4D4D4);
+  max-width: var(--max-reading, 720px);
+}
+.zt-reading-body .post-trio strong { color: var(--text-primary, #F5F5F5); }
+.zt-reading-body .post-trio a { color: var(--accent, #818CF8); }
+.zt-reading-body .post-trio ul { margin: 0.5rem 0 0; padding-left: 1.4rem; }
+.zt-reading-body .post-trio li { margin-bottom: 0.4rem; }
+
 /* Prompt cards (blockquotes) — Zen version with copy affordance */
 .zt-reading-body .prompt-cards {
   position: relative;

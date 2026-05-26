@@ -3361,6 +3361,21 @@ pre.mermaid {
 .prompt-example strong { color: var(--accent); font-style: normal; }
 .prompt-example code { background: rgba(167,139,250,0.15); padding: 2px 6px; border-radius: 4px; font-style: normal; }
 
+/* Post Trio Navigator — three-post navigation strip at top of related blog posts */
+.post-trio {
+  background: var(--bg-elevated, #F5F5F5);
+  border: 1px solid var(--border, #E5E5E5);
+  border-left: 4px solid var(--accent, #6366F1);
+  border-radius: var(--radius-md, 10px);
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0 2rem;
+  color: var(--text-primary, #171717);
+}
+.post-trio strong { color: var(--accent, #6366F1); }
+.post-trio a { color: var(--accent, #6366F1); }
+.post-trio ul { margin: 0.5rem 0 0; padding-left: 1.5rem; }
+.post-trio li { margin-bottom: 0.4rem; }
+
 /* ============================================
    Print Stylesheet — Force exact screen look
    Preserves the dark theme for PDF/print.
