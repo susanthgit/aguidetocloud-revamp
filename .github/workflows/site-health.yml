@@ -78,19 +78,31 @@ jobs:
       - name: Check tool count consistency
         id: tools
         run: |
-          # Count tools on nav, homepage, toolkit page
-          NAV_COUNT=$(grep -c 'nav-cat-label\|class="nav-active"' layouts/partials/nav.html | head -1 || echo "?")
-          NAV_TOOLS=$(grep -c 'dropdown-menu.*href="/' layouts/partials/nav.html || echo "?")
-          HP_TOOLS=$(grep -c 'hp-toolkit-card' layouts/index.html || echo "?")
-          FT_TOOLS=$(grep -c 'free-tool-card' layouts/free-tools/list.html || echo "?")
-          TOML_COUNT=$(grep -oP 'tool_count = \K\d+' hugo.toml || echo "?")
+          # 🔴 KNOWN STALE (2026-05-26): most selectors below match nothing in current
+          # code (nav dropdown-menu, hp-toolkit-card, free-tool-card, tool_count).
+          # The original 2024-era guardrail caught "tool in TOML missing from page"
+          # but the CSS class names have all changed. Step kept as a stale-marker
+          # so the auto-generated health report flags it for V2 rebuild rather
+          # than silently false-passing.
+          #
+          # Original failure mode (May 15 → fixed 26 May): `|| echo "?"` placed
+          # `count\n?\n` into $GITHUB_OUTPUT, breaking the line-parser
+          # ("Invalid format '?'"). Replaced with `|| echo 0` and added an
+          # explicit "both-zero = stale" branch in the consistency logic.
+          NAV_COUNT=$(grep -c 'nav-cat-label\|class="nav-active"' layouts/partials/nav.html | head -1 || echo 0)
+          NAV_TOOLS=$(grep -c 'dropdown-menu.*href="/' layouts/partials/nav.html || echo 0)
+          HP_TOOLS=$(grep -c 'hp-toolkit-card' layouts/index.html || echo 0)
+          FT_TOOLS=$(grep -c 'free-tool-card' layouts/free-tools/list.html || echo 0)
+          TOML_COUNT=$(grep -oP 'tool_count = \K\d+' hugo.toml || echo 0)
           
           echo "nav_tools=$NAV_TOOLS" >> $GITHUB_OUTPUT
           echo "hp_tools=$HP_TOOLS" >> $GITHUB_OUTPUT
           echo "ft_tools=$FT_TOOLS" >> $GITHUB_OUTPUT
           echo "toml_count=$TOML_COUNT" >> $GITHUB_OUTPUT
           
-          if [ "$HP_TOOLS" = "$FT_TOOLS" ]; then
+          if [ "$HP_TOOLS" = "0" ] && [ "$FT_TOOLS" = "0" ]; then
+            echo "consistency=⚠️ Check stale — selectors do not match current code (V2 rebuild needed)" >> $GITHUB_OUTPUT
+          elif [ "$HP_TOOLS" = "$FT_TOOLS" ]; then
             echo "consistency=✅ Consistent" >> $GITHUB_OUTPUT
           else
             echo "consistency=⚠️ Mismatch: Homepage=$HP_TOOLS, Toolkit=$FT_TOOLS" >> $GITHUB_OUTPUT

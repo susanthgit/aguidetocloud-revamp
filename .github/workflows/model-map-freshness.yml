@@ -7,6 +7,14 @@ on:
 jobs:
   check-freshness:
     runs-on: ubuntu-latest
+    permissions:
+      # contents: write — the "Commit hash updates" step pushes back to main.
+      # Without this, github-actions[bot] gets a 403 on push (default token is read-only).
+      # issues: write — the "Create issue if changes detected" step opens issues.
+      # Added 2026-05-26 after the 15 May scheduled run failed with:
+      #   "Permission to susanthgit/aguidetocloud-revamp.git denied to github-actions[bot]."
+      contents: write
+      issues: write
     steps:
       - uses: actions/checkout@v4
       
