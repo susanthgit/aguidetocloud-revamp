@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 26 May 2026 16:05:31 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2026 18:35:12 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Exchange Online] Some users may see older draft email messages appear as recently modified in Exchange Online</title>
@@ -21,9 +21,9 @@
       <link>https://www.aguidetocloud.com/service-health/#MO1322422</link>
       <description>[Microsoft 365 suite] Admins' Viva Learning activity reports may be delayed in the Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1322422</guid>
-      <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Users were intermittently unable to access Exchange Online</title>
@@ -44,9 +44,9 @@
       <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may intermittently receive blank responses from Analyst Agent in Microsoft Copilot</title>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may intermittently receive blank responses from Analyst agent in Microsoft Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1318025</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may intermittently receive blank responses from Analyst Agent in Microsoft Copilot.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may intermittently receive blank responses from Analyst agent in Microsoft Copilot.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1318025</guid>
