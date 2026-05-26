@@ -85,15 +85,27 @@ jobs:
           # so the auto-generated health report flags it for V2 rebuild rather
           # than silently false-passing.
           #
-          # Original failure mode (May 15 → fixed 26 May): `|| echo "?"` placed
-          # `count\n?\n` into $GITHUB_OUTPUT, breaking the line-parser
-          # ("Invalid format '?'"). Replaced with `|| echo 0` and added an
-          # explicit "both-zero = stale" branch in the consistency logic.
-          NAV_COUNT=$(grep -c 'nav-cat-label\|class="nav-active"' layouts/partials/nav.html | head -1 || echo 0)
-          NAV_TOOLS=$(grep -c 'dropdown-menu.*href="/' layouts/partials/nav.html || echo 0)
-          HP_TOOLS=$(grep -c 'hp-toolkit-card' layouts/index.html || echo 0)
-          FT_TOOLS=$(grep -c 'free-tool-card' layouts/free-tools/list.html || echo 0)
-          TOML_COUNT=$(grep -oP 'tool_count = \K\d+' hugo.toml || echo 0)
+          # Two-pass fix (26 May 2026):
+          #
+          # First fix (failed): replaced `|| echo "?"` with `|| echo 0`. Same parser
+          # error — `grep -c PATTERN FILE` writes "0" to stdout AND exits 1 when
+          # there are no matches, so command substitution `$(grep -c ... || echo 0)`
+          # produced "0\n0" (two lines), still breaking the $GITHUB_OUTPUT
+          # line-parser ("Invalid format '0'").
+          #
+          # Working fix: `|| true` absorbs grep's non-zero exit without writing
+          # anything extra to stdout. Then `${VAR:-0}` defaults empty (file-missing)
+          # to "0". Always produces a single-line value safe for $GITHUB_OUTPUT.
+          NAV_COUNT=$(grep -c 'nav-cat-label\|class="nav-active"' layouts/partials/nav.html 2>/dev/null | head -1 || true)
+          NAV_COUNT=${NAV_COUNT:-0}
+          NAV_TOOLS=$(grep -c 'dropdown-menu.*href="/' layouts/partials/nav.html 2>/dev/null || true)
+          NAV_TOOLS=${NAV_TOOLS:-0}
+          HP_TOOLS=$(grep -c 'hp-toolkit-card' layouts/index.html 2>/dev/null || true)
+          HP_TOOLS=${HP_TOOLS:-0}
+          FT_TOOLS=$(grep -c 'free-tool-card' layouts/free-tools/list.html 2>/dev/null || true)
+          FT_TOOLS=${FT_TOOLS:-0}
+          TOML_COUNT=$(grep -oP 'tool_count = \K\d+' hugo.toml 2>/dev/null || true)
+          TOML_COUNT=${TOML_COUNT:-0}
           
           echo "nav_tools=$NAV_TOOLS" >> $GITHUB_OUTPUT
           echo "hp_tools=$HP_TOOLS" >> $GITHUB_OUTPUT
