@@ -64,8 +64,8 @@
   {{ with .Section }}<meta property="article:section" content="{{ . | title }}">{{ end }}
   {{ range .Params.tags }}<meta property="article:tag" content="{{ . }}">{{ end }}
   {{ end }}
-  <script>/* Anti-FOUC: set theme before CSS loads — dark by default */
-  (function(){try{var t=localStorage.getItem('theme');if(!t)t='dark';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}})()</script>
+  <script>/* Anti-FOUC: set theme before CSS loads — light by default (existing dark users keep dark via localStorage) */
+  (function(){try{var t=localStorage.getItem('theme');if(!t)t='light';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','light')}})()</script>
   {{/* Phase 15 batch 4: preload critical self-hosted fonts on non-notebook pages so the
        browser fetches Inter in parallel with CSS parsing (was waiting for fonts.css to
        declare @font-face first). Targets the home page LCP ~3128ms regression. */}}
@@ -102,7 +102,7 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#030308">
+  <meta name="theme-color" content="#FAFAFA">
   <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}index.xml">
