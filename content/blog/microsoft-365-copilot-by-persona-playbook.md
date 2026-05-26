@@ -204,16 +204,45 @@ The earliest stage of HR. Quality here decides quality everywhere downstream.
 >
 > **Expectations:** Three outputs — (1) a list of exclusionary or unintentionally gendered phrases with one-line explanations, (2) a rewritten version in plain inclusive language, (3) a short note flagging any phrasing that might still need a DEI partner review. Do not invent commitments we have not made.
 >
-> **Source:** Paste the draft job advert into the chat when you run this prompt.
+> **Source:** Paste the draft job advert or upload it when you run this prompt.
 
-Worked examples of what Copilot will catch:
+##### Why this pattern matters
 
-| Original phrasing | Why it's flagged | Rewrite |
-|---|---|---|
-| "We're looking for a rockstar engineer" | Male-coded language | "We're looking for an experienced engineer who…" |
-| "Must have 10+ years of experience" | Often narrows the pool unnecessarily and can function as a proxy that reduces inclusivity | "Significant hands-on experience with…" |
-| "Aggressive deadlines, fast-paced environment" | Can read as 'expect overwork' | "Clear priorities and a focus on shipping outcomes" |
-| "Native English speaker required" | Often unlawful, excludes most of the world's English speakers | "Strong written and spoken English" |
+Every company says *"we care about DEI in our ads."* Almost no team has a working **per-ad check** before publishing. Well-meaning ads with phrases like "rockstar" and "10+ years" go live every week, and the team finds out months later — or worse, a candidate calls it out. This is the 30-second check that closes the gap. Most importantly: {{< hi >}}Copilot doesn't replace your DEI partner. It gives them a better starting point.{{< /hi >}} The conversations with the partner become shorter, more substantive, and more useful for the people you're trying to attract.
+
+##### The crucial guardrail in this prompt
+
+**"Do not invent commitments we have not made."** Copilot's default when rewriting marketing-style content is to ADD nice-sounding commitments — *"we offer flexible hours, hybrid work, generous parental leave..."* — even if the source says none of those things. In a job ad, that's a legal-and-reputational landmine. The guardrail stops the invention dead.
+
+##### What the prompt looks like in M365 Copilot Chat
+
+The draft advert goes in via the `+` upload button. The prompt is shorter than you'd expect — the **structure** of "three outputs" does the heavy lifting.
+
+<p><img src="/images/blog/prompt-engineering/persona-recruiter-03-ad-prompt.webp" alt="Microsoft 365 Copilot Chat composer with the file 04-Senior-DE-draft-advert-needs-DEI-review attached as a Word file chip, underlined in red as an annotation. A system banner above reads Uploading from device will send a copy to OneDrive (work/school). Below the file chip the prompt is fully typed: Review this job advert and rewrite it through a DEI lens. Three outputs — (1) a list of exclusionary or unintentionally gendered phrases with one-line explanations, (2) a rewritten version in plain inclusive language, (3) a short note flagging any phrasing that might still need a DEI partner review. Do not invent commitments we have not made. A microphone and send arrow sit at the right of the composer." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+##### What Copilot actually does with it
+
+Copilot caught **14+ flagged phrases in this draft** — and gave each one a specific one-line explanation grounded in actual DEI principles. Notice the citation chips next to each flag — Copilot quotes the source ad verbatim, not paraphrased.
+
+<p><img src="/images/blog/prompt-engineering/persona-recruiter-04-ad-output.webp" alt="Real Microsoft 365 Copilot Chat output for the inclusive ad rewrite prompt. Opens with the line I reviewed 04-Senior-DE-draft-advert-needs-DEI-review and rewrote it in plain, more inclusive language while keeping to what the draft actually says. Heading 1) Exclusionary or unintentionally gendered phrases. Visible flagged phrases — rockstar Data Engineer can feel exclusionary or performative and may put off candidates who do not identify with hero language; aggressive self-driven can read as combative and is often perceived as gender-coded; thrives under pressure can signal an unhealthy work environment rather than a well-supported role; isnt afraid of long hours when it matters implies overwork is expected which can deter candidates with caring responsibilities disabilities or different working patterns; top-tier engineering team only the best need apply reads as elitist and can discourage capable people from applying especially those from non-traditional backgrounds; We dont believe in hand-holding suggests low support poor onboarding or a culture that does not value coaching and collaboration; If youre not constantly pushing yourself youll fall behind signals burnout culture and may exclude candidates who value sustainable performance; Must have 10+ years of experience rigid year-count requirements can screen out strong candidates with equivalent depth gained through different paths; A young energetic professional explicitly age-coded and inappropriate for a job advert; Native English speaker can unfairly exclude multilingual candidates when the real requirement is strong written and verbal communication; Killer instincts violent macho-coded phrasing that is easy to replace with a clearer competency statement; be aggressive about deadlines and push back hard on stakeholders frames collaboration in combative terms rather than professional judgement and communication; Strong cultural fit can invite bias because it is vague and often used to favour similarity over contribution; technical pedigree Oxbridge top-tier US universities privileges prestige over capability and may disadvantage local non-traditional self-made talent. Each flagged phrase has a citation paperclip icon. A scroll-down indicator at the bottom suggests Manpower experience and possibly more flags below." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+##### What to notice in the output (count the flags out loud)
+
+1. **14+ flags from a single draft.** When you demo this, count them out loud — *"one, two, three..."* — by the time you hit ten the room understands the scale.
+2. **One-line explanations.** Not jargon. Not abstract DEI theory. Each flag has a concrete reason — *"explicitly age-coded"*, *"reads as combative and is often perceived as gender-coded"*, *"can deter candidates with caring responsibilities, disabilities, or different working patterns"*. The DEI partner reads this faster than they'd write it themselves.
+3. **Citation chips.** Every flag has a paperclip icon linking back to the source paragraph. Auditable.
+4. **No invention.** The "do not invent commitments" guardrail held — Copilot didn't add flexible hours, parental leave, or anything that wasn't in the source.
+5. **The closing note (further down).** Copilot will typically add a *"some phrasing may still benefit from a DEI partner review"* note — drawing its own line about where AI judgment ends and human DEI judgment begins.
+
+##### The iteration loop on top of this pattern
+
+- *"Now produce the rewritten version of the advert with all 14 flags addressed. Plain inclusive language. Do not add commitments not in the source."*
+- *"Now flag any specific phrasing in the rewritten version that may still need a DEI partner to sign off for local jurisdiction reasons."*
+- *"Suggest 3 alternative phrasings for the 'must have 10+ years' line that signal seniority without using age-coded language."*
+
+##### The hard line, said out loud
+
+{{< hi >}}Copilot drafts a better starting point. The DEI partner draws the final line.{{< /hi >}}
 
 #### Pattern 1.3 — Outreach email to a passive candidate
 
@@ -233,7 +262,56 @@ Worked examples of what Copilot will catch:
 >
 > **Expectations:** Output a table — Criterion · Evidence in CV · Missing or unclear. **Do not rank. Do not recommend. Do not score. Do not advance or reject.** Do not infer age, gender, ethnicity, or any protected characteristic. Flag missing or ambiguous information.
 >
-> **Source:** /Senior DE Job Description. Paste the CV text when you run this prompt.
+> **Source:** /Senior DE Job Description. Paste the CV text or upload it when you run this prompt.
+
+##### Why this pattern matters
+
+Recruiters have a real tension: they need to read CVs fast (80+ per role is normal) but they **cannot** let AI rank or score candidates — it's a regulatory risk, a DEI risk, and just plain wrong. Most AI demos for recruitment cross that line. This pattern doesn't. Copilot summarises each CV in a consistent shape, and the recruiter reads structured summaries fast. {{< hi >}}Copilot does the typing. The recruiter does the judging.{{< /hi >}}
+
+##### The 5 guardrail phrases — what each one prevents
+
+The "Do not..." phrases aren't decoration. Each one stops a specific bad outcome:
+
+| Guardrail | What it stops |
+|---|---|
+| **Do not rank** | "Candidate A: 4/5, Candidate B: 3/5" — ranking is a decision recruiters can't outsource to AI |
+| **Do not recommend** | "I'd advance this candidate" — same problem, slightly disguised |
+| **Do not score** | "Score: 80%" — same problem, masked as a metric |
+| **Do not advance or reject** | "This candidate should not move forward" — the worst version |
+| **Do not infer protected characteristics** | Stops Copilot guessing age from career start, gender from name, ethnicity from school — all illegal to use in hiring |
+
+Copy-paste those 5 lines into **any candidate-related prompt** and you stay safe. That's the recruiter guardrail script.
+
+##### What the prompt looks like in M365 Copilot Chat
+
+Here's the upload + prompt step — the JD and CV go in via the `+` upload button, then the prompt sits underneath. Note how short the prompt is given how much work it's doing — the guardrails do the heavy lifting.
+
+<p><img src="/images/blog/prompt-engineering/persona-recruiter-01-cv-prompt.webp" alt="Microsoft 365 Copilot Chat composer with two attached files visible above the chat input — 01-Senior-Data-Engineer-JD docx and 05-Candidate-CV-1-Jane-Doe docx (both shown with Word icons). Above the file chips a system banner reads Uploading from device will send a copy to OneDrive (work/school) — Manage uploads. Below the file chips, the full prompt is typed in the chat input: Using the attached Senior Data Engineer JD and Jane Doe's CV, summarise this CV against the essential criteria. Output a table — Criterion · Evidence in CV · Missing or unclear. Do not rank. Do not recommend. Do not score. Do not advance or reject. Do not infer age, gender, ethnicity, or any protected characteristic. Flag missing or ambiguous information. A microphone icon and a send arrow button sit to the right of the input, with the send button circled in red as the next action." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+##### What Copilot actually does with it
+
+The output cites both files explicitly and produces a 5-row table — one row per essential criterion. **No ranking. No recommendation. Honest "Missing or unclear" column.** The Evidence column quotes the CV directly with citation chips (📎) pointing back to the source.
+
+<p><img src="/images/blog/prompt-engineering/persona-recruiter-02-cv-output.webp" alt="Real Microsoft 365 Copilot Chat output for the CV-against-criteria prompt. The response opens with the line Based on 01-Senior-Data-Engineer-JD and 05-Candidate-CV-1-Jane-Doe, here is a structured assessment against the essential criteria only — with both filenames underlined and clickable. Below is a 3-column table with headers Criterion, Evidence in CV, Missing or unclear. Three visible rows: (1) Significant hands-on experience building data warehouses on a major cloud platform Azure preferred AWS GCP acceptable — Evidence: Led rebuild of claims data warehouse on Azure Synapse plus dbt at Aurora Insurance built ingestion pipelines at Nimbus Health initial reporting layer at Fintech Holdings — Missing: Scale, complexity, and size of data platforms not explicitly stated. (2) Strong Python and SQL production-grade reviewable testable — Evidence: Python advanced SQL advanced production roles across three organisations wrote pipelines and reporting layers — Missing: No explicit mention of code review practices testing frameworks beyond dbt Great Expectations or code quality standards. (3) Experience with dbt or equivalent transformation framework — Evidence: Direct experience dbt production used in Azure Synapse rebuild custom dbt — Missing: Depth of advanced dbt usage e.g. macros packages large-scale modelling patterns. Citation paperclip icons visible at the end of each Evidence cell. Scroll-down indicator visible at the bottom suggesting more rows below." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+##### What to notice in the output (read it like a recruiter would)
+
+1. **Citations on every claim** — each Evidence cell has a paperclip icon pointing back to the source paragraph. If a recruiter wants to verify any line, one click takes them there.
+2. **Honest "Missing or unclear"** — Copilot doesn't pretend the CV says things it doesn't. Where the JD asks for something the CV doesn't explicitly cover (depth of dbt usage, code review practices, scale of past platforms), Copilot calls it out. That's the signal a recruiter can dig into in the screen call.
+3. **No ranking, no score, no recommendation** — the table ends. The judgment starts with the recruiter.
+4. **Same shape every time** — run this 80 times, you get 80 structured tables. The comparison across candidates is now scannable, not exhausting.
+
+##### The iteration loop on top of this pattern
+
+Once you have a good first response, common follow-ups:
+
+- *"Now do the same for Candidate 2's CV — same criteria, same shape."* (Run for each CV in turn.)
+- *"Highlight any criterion where the CV is fully missing evidence — across all candidates I've summarised."* (Helps you focus screen calls.)
+- *"For each candidate, list 2-3 specific questions I should ask in the screen call based on the missing-or-unclear column."* (Turns the table into action.)
+
+##### The hard line, said out loud
+
+{{< hi >}}Copilot summarises against criteria. You decide. Always.{{< /hi >}}
 
 ```mermaid
 flowchart LR
@@ -253,7 +331,40 @@ flowchart LR
 >
 > **Expectations:** For each question, output — Question · Bias risk (low/medium/high) · Why · Suggested rewrite. Be explicit about leading language, demographic-coded language, vague questions that invite subjective judgment, or questions that probe protected characteristics.
 >
-> **Source:** Paste your draft interview questions when you run this prompt.
+> **Source:** Paste your draft interview questions or upload the draft document when you run this prompt.
+
+##### Why this pattern matters
+
+Interview questions are where the most damage gets done in recruitment. Not because recruiters are biased — because they're rushed. A template gets borrowed, tweaked for the role, and small problems slip through: leading phrasing, adversarial framing, questions that probe protected territory. {{< hi >}}Run this every time you build a new interview kit. Five minutes. Catches the things you'd be embarrassed about in twelve months.{{< /hi >}}
+
+##### What the prompt looks like in M365 Copilot Chat
+
+The draft questions document goes in via the `+` upload button. The prompt names the 4 columns Copilot must produce per question, and explicitly spells out the **categories** of bias to look for — that specificity is what makes the output useful instead of generic.
+
+<p><img src="/images/blog/prompt-engineering/persona-recruiter-05-bias-prompt.webp" alt="Microsoft 365 Copilot Chat composer with the file 09-Draft-interview attached as a Word file chip, underlined in red as an annotation. A system banner above reads Uploading from device will send a copy to OneDrive (work/school). Below the file chip the prompt is typed: Review these draft interview questions for bias and leading language. For each question, output — Question · Bias risk (low/medium/high) · Why · Suggested rewrite. Be explicit about leading language, demographic-coded language, vague questions that invite subjective judgment, or questions that probe protected characteristics. A plus upload button on the left, microphone and send arrow on the right of the composer." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+##### What Copilot actually does with it
+
+The output is **per-question** — each question gets the same 4-part treatment (Question · Bias risk · Why · Suggested rewrite). The Why section is bulleted, with specific reasons. The rewrites are concrete, not generic.
+
+<p><img src="/images/blog/prompt-engineering/persona-recruiter-06-bias-output.webp" alt="Real Microsoft 365 Copilot Chat output for the interview question bias check. Section heading Behavioural questions. First question: Tell me about a time you successfully convinced a difficult stakeholder to agree with your technical direction. Bias risk: Medium. Why bullets: Leading: assumes success equals persuading others to agree with you; Encourages adversarial framing (difficult stakeholder); Penalises collaborative or consensus-driven styles. Suggested rewrite in italics: Tell me about a time you worked with stakeholders who had different views. What did you do and what was the outcome? Second question: Are you comfortable working long hours when a deadline is approaching? Bias risk: High. Why bullets: Signals expectation of overwork; Indirectly disadvantages caregivers people with disabilities and those needing flexible work; Leading yes-no question. Suggested rewrite in italics: How do you plan and manage your work to meet deadlines? Can you share an example? A scroll-down arrow indicator at the bottom suggests more questions below." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+##### What to notice in the output
+
+1. **Copilot catches subtler bias than I predicted.** I'd thought Question 1 ("Tell me about a time you successfully convinced a difficult stakeholder...") looked fine. Copilot flagged it **Medium** with three specific reasons — *"adversarial framing"*, *"assumes success = persuading others to agree with you"*, *"penalises collaborative or consensus-driven styles"*. That's the kind of subtle pattern a busy recruiter would miss.
+2. **The "Why" bullets are educational.** Each reason builds a recruiter's intuition for next time. Over a few rounds, the recruiter writes better questions unaided.
+3. **The rewrite is concrete, not generic.** *"Tell me about a time you worked with stakeholders who had different views"* — same competency assessed, neutral framing, opens space for collaborative styles to score well.
+4. **High vs Medium ratings are useful, not blunt.** A High flag means *"don't ask this"*. A Medium flag means *"keep the intent, fix the framing"*. The recruiter triages.
+
+##### The iteration loop on top of this pattern
+
+- *"Now produce the final, bias-checked interview kit — keep only the questions rated Low risk or rewritten."*
+- *"For Questions 4 and 15 (protected-characteristic questions), explain to a hiring manager why these can't go in an interview kit, in plain English. 60 words each."*
+- *"Suggest two additional behavioural questions that probe the same competency as Question 2 (working under deadline) but without the overwork framing."*
+
+##### The hard line, said out loud
+
+{{< hi >}}Copilot flags. Recruiters and DEI partners decide. Hiring managers are coached on the why.{{< /hi >}}
 
 #### Pattern 1.6 — Empathetic rejection email
 
@@ -480,6 +591,117 @@ Helping managers and employees prepare for the conversations that shape careers.
 > **Expectations:** Guidance document — How to assess the performance concern · How to conduct PIP conversations · Documentation expectations · When to escalate to HR · Country-specific considerations (only if grounded in source). Plain English. Mark anything not in the source as `[CONFIRM with local HR/legal]`.
 >
 > **Source:** /Manager guidance for handling performance issues and improvement plans.
+
+### Bonus — Atlas-original scenarios (beyond the official prompt pack)
+
+These are scenarios most recruitment teams don't think to try. They're the *"and here's something your team probably isn't doing today"* moments — high-ROI, low-effort, easy to get wrong without guardrails.
+
+#### Atlas Bonus 1 — Boomerang candidate watch
+
+> **Goal:** Identify the top 5 candidates from a 12-month past-candidate dataset most likely to re-engage.
+>
+> **Context:** Every recruitment team has a database of candidates who got close but didn't accept. Six or twelve months later, they may be open again — counter-offer wore off, fintech turbulence, new manager left. Almost no team systematically goes back. This pattern is the 5-minute scan that turns dormant data into warm leads.
+>
+> **Expectations:** Rank by signal strength (not contact yet). Output a 5-row table — Candidate ID · Why they're a top-5 signal · Recommended outreach angle. Ground each angle in the original decline reason. Do not contact them — just prioritise.
+>
+> **Source:** Past-candidate spreadsheet with columns for original decline reason, current employer, public signals, and free-form recruiter notes.
+
+##### Why this pattern matters
+
+Past-candidate data is sitting in every ATS and recruiter notebook. It's the most underused asset in recruitment. Three reasons most teams never act on it:
+
+1. **No time** — going through 12 months of notes manually is half a day.
+2. **No prioritisation framework** — *"which 5 should I contact first?"* is the harder question than *"who could I contact?"*.
+3. **No tailored angle** — generic re-engagement emails feel like spam.
+
+Copilot solves all three in 5 minutes. {{< hi >}}Past candidates aren't a dead asset. They're a warm pipeline you've already paid to build.{{< /hi >}}
+
+##### The crucial guardrail in this prompt
+
+**"Do not contact them — just rank by signal strength so I can prioritise outreach."**
+
+Why this matters: as Copilot agents and Studio flows become more capable, prompts that say *"draft and send"* are increasingly tempting. In recruitment, sending boomerang outreach without human review is a brand risk — past candidates remember the original conversation. The guardrail keeps the action with the human, even while Copilot does the prioritisation.
+
+##### What the prompt looks like in M365 Copilot Chat
+
+<p><img src="/images/blog/prompt-engineering/persona-recruiter-07-boomerang-prompt.webp" alt="Microsoft 365 Copilot Chat composer with the file 20-Boomeran attached as an Excel file chip, underlined in red as an annotation. A system banner above reads Uploading from device will send a copy to OneDrive (work/school). Below the file chip the prompt is fully typed: Using the attached Boomerang candidates spreadsheet, identify the top 5 candidates most likely to re-engage based on the signals in the Open to re-engage signal and Notes columns. Do not contact them — just rank by signal strength so I can prioritise outreach. Output a 5-row table with Candidate ID · Why they're a top-5 signal · Recommended outreach angle. A plus upload button on the left, microphone and send arrow on the right." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+##### What Copilot actually does with it
+
+A 5-row table reasoning across both the "Open to re-engage signal" column AND the free-form "Notes" column — synthesising signals across multiple data points per candidate. Each Why cell quotes the notes verbatim with citation chips. Each outreach angle is **specific to that candidate's original decline reason** — not generic.
+
+<p><img src="/images/blog/prompt-engineering/persona-recruiter-08-boomerang-output.webp" alt="Real Microsoft 365 Copilot Chat output for the Boomerang candidate watch prompt. Three-column table with headers Candidate ID, Why they're a top-5 signal, Recommended outreach angle. Four visible rows: (1) CN-2025-Q3-067 — Why: Clearest signal in the sheet quote open-to-work on LinkedIn plus the note says quote Counter wore off as expected and Strong re-engagement target with a citation paperclip — Angle: Reconnect around timing having changed since the earlier counter offer. Keep it simple and ask whether they would be open to a fresh conversation now. (2) CN-2025-Q3-022 — Why: Strong direct interest signal quote Sam met them at an Auckland data meetup last month and they expressed interest and the note says the pay band now matches with citation paperclip — Angle: Lead with the updated pay alignment and reference renewed interest. This looks like a practical things may be different now re-engagement. (3) CN-2025-Q4-092 — Why: Strong positive signal quote LinkedIn post about competitor culture issues plus the note explicitly says quote High-value re-engagement target with citation paperclip — Angle: Position the outreach around culture, team environment, and what may be different from their current experience. (4) CN-2025-Q3-031 — Why: Strong signal from public behaviour (truncated) recent LinkedIn post — Angle: Focus on stretch, impact, and fresh challenge rather than (truncated). A scroll-down arrow indicator at the bottom suggests the 5th candidate row continues below the visible area." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+##### What to notice in the output
+
+1. **Cross-column reasoning.** Copilot isn't keyword-matching — it's synthesising the "Signal" column WITH the "Notes" column WITH the public-behaviour observations. That's reasoning the recruiter would otherwise do candidate-by-candidate.
+2. **Verbatim quotes with citation chips.** Every "Why" cell quotes the notes exactly. No paraphrasing. Auditable.
+3. **Unique outreach angles per candidate.** CN-2025-Q3-067 = *"timing has changed"*. CN-2025-Q3-022 = *"updated pay alignment"*. CN-2025-Q4-092 = *"culture / team environment"*. CN-2025-Q3-031 = *"stretch and fresh challenge"*. Each one tailored to **why they declined the first time**.
+4. **The "do not contact" guardrail held.** Copilot prioritised. It did not send. It did not draft outreach in this prompt — that's the next step (intentionally).
+
+##### The iteration loop on top of this pattern
+
+**Step 2** is the magic follow-up:
+
+> *"For each of those top 5, draft a personalised re-engagement email grounded in the original decline reason. Warm, no pressure, 80 words. Match the tone from my last two outreach emails [attach]. Sign off as me."*
+
+That's 5 emails, in 5 minutes, with the right angle per candidate. The recruiter reviews each one before sending — judgment stays human, typing stays gone.
+
+##### The hard line, said out loud
+
+{{< hi >}}Copilot prioritises. The recruiter contacts. Always.{{< /hi >}}
+
+#### Atlas Bonus 2 — Hire-to-Manager onboarding handoff
+
+> **Goal:** Draft a 5-bullet handoff note from the recruiter to the hiring manager covering the things only the recruiter knows about the candidate from the interview process.
+>
+> **Context:** A candidate has signed. The recruiter has spent 5+ hours talking to them — knows what closed the deal, what concerns came up, what they're excited to grow into. That signal usually evaporates the moment the offer is signed.
+>
+> **Expectations:** Five bullets — (1) what closed the deal, (2) where she's strongest, (3) where she'll want stretch, (4) what concerns came up, (5) first person to introduce her to. Plain English, 200 words max. **Mark anything I should verify with the manager as [confirm].**
+>
+> **Source:** Hire handoff template + the role JD + the candidate's CV. Plus the recruiter's interview memory (held in the recruiter's head, validated against the [confirm] tags).
+
+##### Why this pattern matters
+
+Recruitment-as-a-funnel ends at signature. Recruitment-as-the-start-of-employment doesn't. The 15 minutes the recruiter spends on this handoff is the **single biggest onboarding-quality lever** most companies aren't using. The hiring manager goes into Day 1 with intent — knowing what to lean into, what to challenge, what to address early — instead of starting blind. {{< hi >}}First-90-day retention compounds from Day 1 decisions.{{< /hi >}}
+
+##### The crucial guardrail in this prompt
+
+**`Mark anything I should verify with the manager as [confirm].`**
+
+Why this matters: Some handoff content — *"what closed the deal"*, *"concerns that came up in interview"* — only the recruiter knows from interview memory. Copilot will make inferences from the JD + CV that may or may not match what the recruiter actually heard. The `[confirm]` tag asks Copilot to **draw its own line** about what's source-grounded vs interview-inferred. The recruiter validates from memory before sending.
+
+This is the same discipline as the "Missing or unclear" column from Pattern 1.4 — **let Copilot tell you where it's uncertain.**
+
+##### What the prompt looks like in M365 Copilot Chat
+
+Three files attached: the handoff template, the role JD, and the candidate's CV. Notice how the prompt tells Copilot exactly what to produce *and* exactly how to handle uncertainty.
+
+<p><img src="/images/blog/prompt-engineering/persona-recruiter-09-handoff-prompt.webp" alt="Microsoft 365 Copilot Chat composer with three Word file chips attached above the chat input — 24-Hire-hand, 01-Senior-Dat, and 05-Candidate — all underlined in red as annotations. A system banner above reads Uploading from device will send a copy to OneDrive (work/school). Below the file chips the prompt is fully typed: Using the attached hire handoff template, Jane Doe's CV, and the Senior Data Engineer JD, draft a 5-bullet handoff note from me (recruiter) to Lena Karaitiana (the hiring manager). Cover: (1) what closed the deal, (2) where Jane is strongest, (3) where Jane will want stretch, (4) what concerns came up during the process, (5) the first specific person to introduce her to. Plain English, 200 words max. Mark anything I should verify with Lena as [confirm]. A plus upload button on the left, microphone and send arrow on the right." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+##### What Copilot actually does with it
+
+A ready-to-send handoff email — five specific, concrete bullets grounded in the JD and CV. **Bullets 4 and 5 carry `[confirm]` markers** because those areas require recruiter interview memory that Copilot can't read from the CV alone.
+
+<p><img src="/images/blog/prompt-engineering/persona-recruiter-10-handoff-output.webp" alt="Real Microsoft 365 Copilot Chat output for the hire-to-manager handoff prompt. Email format. Subject: Onboarding handoff for Jane Doe — Senior Data Engineer. Greeting Hi Lena Karaitiana. Lead-in line: Here's the 5-bullet handoff. Five numbered bullets follow: (1) What closed the deal — the chance to build and mentor not just maintain pipelines. The platform rebuild on Azure and structured growth (30/60/90 plus mentoring responsibility) aligned strongly with what she's looking for. Citation chip. (2) Where she's strongest — data quality and observability. She's built this end-to-end using Great Expectations plus dbt and driven real impact in a regulated setting (major drop in reporting failures). Citation chip. (3) Where she'll want stretch — taking a bigger role in platform-level decisions and mentoring. She's done this well already but is keen to step into more ownership across ingestion modelling design and roadmap influence. Citation chip. (4) What concerns came up — she's wary of roles drifting into firefighting only vs building new capability. Worth reinforcing how work will balance build vs run. [confirm]. (5) First person to introduce her to — the platform lead or senior engineer she'll partner with day-to-day on ingestion modelling decisions [confirm] — this will anchor her quickly in how the platform is evolving. Sign-off: Best, [Your name]. A scroll-down indicator visible at the bottom." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+##### What to notice in the output
+
+1. **Specific, not generic.** *"Great Expectations + dbt"*, *"major drop in reporting failures"*, *"ingestion/modelling design and roadmap influence"* — all grounded in Jane's actual CV.
+2. **"Build and mentor" framing pulled directly from the JD.** Copilot synthesised across the JD context AND Jane's CV signals to identify what closed the deal. That's reasoning, not template-fill.
+3. **Two `[confirm]` markers in the right places.** Bullet 4 (interview concerns) and the manager-identification in bullet 5 — both require recruiter memory the CV doesn't reveal. Copilot drew the line itself.
+4. **Citation chips throughout.** Every bullet links back to the source paragraph in the attached files. Auditable.
+5. **`[Your name]` placeholder.** Copilot didn't invent a recruiter name — it left the signature blank for the recruiter to fill in.
+
+##### The iteration loop on top of this pattern
+
+- *"Now rewrite this 50% shorter. Same 5 bullets, more punch."* (For managers who want a 60-second read.)
+- *"Now add a one-line ask at the end — what should the manager do in the Day-1 1:1 specifically."*
+- *"Generate the same handoff for [Candidate 2] using their CV [paste]. Same structure."* (Reusable per hire.)
+
+##### The hard line, said out loud
+
+{{< hi >}}Copilot drafts the bridge. The recruiter validates the [confirm] tags from interview memory. The manager gets a real Day 1.{{< /hi >}}
 
 ## Persona-specific guardrails — Recruitment & HR
 
