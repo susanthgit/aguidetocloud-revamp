@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 26 May 2026 18:35:12 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2026 21:56:38 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Exchange Online] Some users may see older draft email messages appear as recently modified in Exchange Online</title>
@@ -42,15 +42,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1320293</guid>
       <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may intermittently receive blank responses from Analyst agent in Microsoft Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1318025</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may intermittently receive blank responses from Analyst agent in Microsoft Copilot.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1318025</guid>
-      <pubDate>Thu, 21 May 2026 17:36:46 +0000</pubDate>
     </item>
     <item>
       <title>[Planner] Some users may encounter issues accessing features in the Microsoft Planner application</title>
@@ -215,9 +206,9 @@
       <pubDate>Mon, 11 May 2026 23:05:19 +0000</pubDate>
     </item>
     <item>
-      <title>[Exchange Online]  Users may be unable to view free/busy status for Gmail users within the Exchange Online calendar</title>
+      <title>[Exchange Online] Users may be unable to view free/busy status for Gmail users within the Exchange Online calendar</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1310533</link>
-      <description>[Exchange Online]  Users may be unable to view free/busy status for Gmail users within the Exchange Online calendar.</description>
+      <description>[Exchange Online] Users may be unable to view free/busy status for Gmail users within the Exchange Online calendar.</description>
       <category>Exchange Online</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">EX1310533</guid>
@@ -258,6 +249,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1304234</guid>
       <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may intermittently receive blank responses from Analyst agent in Microsoft Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1318025</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may intermittently receive blank responses from Analyst agent in Microsoft Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1318025</guid>
+      <pubDate>Wed, 06 May 2026 07:44:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to create or use SharePoint Online Copilot embedded agents within Microsoft 365 Copilot</title>
