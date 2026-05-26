@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 26 May 2026 04:22:39 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2026 10:16:31 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Exchange Online] Some users may see older draft email messages appear as recently modified in Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1322762</link>
+      <description>[Exchange Online] Users may see older draft email messages appear as recently modified in Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1322762</guid>
+      <pubDate>Tue, 26 May 2026 08:15:52 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Some admins' Viva Learning activity reports may be delayed in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1322422</link>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1286586</guid>
       <pubDate>Tue, 21 Apr 2026 02:25:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some users may not receive results when performing searches in SharePoint Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1297751</link>
-      <description>[Microsoft 365 suite] Users may not receive results when performing searches in SharePoint Online.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1297751</guid>
-      <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
