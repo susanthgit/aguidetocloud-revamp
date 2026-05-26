@@ -398,19 +398,39 @@
   background: rgba(0, 0, 0, 0.025);
 }
 
-/* Code blocks — exclude .mermaid (Mermaid keeps its original zt-reading.css chrome) */
-.zt-reading--notebook .nb-body pre:not(.mermaid) {
-  background: var(--paper-deep);
+/* Code blocks — exclude .mermaid (Mermaid keeps its original zt-reading.css chrome)
+   Note: Hugo's Chroma highlighter wraps code blocks in <div class="highlight"> and applies
+   INLINE styles (background-color, color) on the <pre> element — those inline styles win
+   normal CSS specificity. We use !important on background/colour/font-size to defeat
+   Chroma's inline rules so the notebook theme stays consistent across light + dark.
+   Mermaid is excluded via :not(.mermaid). */
+.zt-reading--notebook .nb-body pre:not(.mermaid),
+.zt-reading--notebook .nb-body .highlight pre {
+  background: var(--paper-deep) !important;
+  color: var(--ink) !important;
   border: 1px solid var(--rule);
   border-radius: 0;
-  padding: 16px 20px;
+  padding: 18px 22px;
   overflow-x: auto;
-  font-size: 13px;
+  font-size: 16px !important;
+  line-height: 1.55;
 }
-.zt-reading--notebook .nb-body pre:not(.mermaid) code {
-  font-family: 'Special Elite', 'JetBrains Mono', ui-monospace, monospace;
-  color: var(--ink);
-  background: transparent;
+.zt-reading--notebook .nb-body pre:not(.mermaid) code,
+.zt-reading--notebook .nb-body .highlight pre code {
+  font-family: 'Special Elite', 'JetBrains Mono', ui-monospace, monospace !important;
+  color: var(--ink) !important;
+  background: transparent !important;
+  font-size: inherit !important;
+}
+/* Defeat Chroma's per-token inline span colours (Monokai palette) inside the notebook —
+   we want pure --ink across the whole block regardless of language token type. */
+.zt-reading--notebook .nb-body .highlight pre span {
+  color: var(--ink) !important;
+  background: transparent !important;
+}
+/* Make the .highlight wrapper transparent so notebook frame shows through. */
+.zt-reading--notebook .nb-body .highlight {
+  background: transparent !important;
 }
 .zt-reading--notebook .nb-body :not(pre) > code {
   font-family: 'Special Elite', monospace;
@@ -426,13 +446,13 @@
   border: 1px solid var(--ink-faint);
   color: var(--ink-soft);
   font-family: 'Special Elite', monospace;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   position: absolute;
-  top: 8px;
-  right: 8px;
-  padding: 4px 10px;
+  top: 10px;
+  right: 10px;
+  padding: 5px 12px;
   cursor: pointer;
   border-radius: 0;
 }
