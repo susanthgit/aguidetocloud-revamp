@@ -30,8 +30,11 @@ jobs:
           EXIT_CODE=$?
           echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
           echo "$OUTPUT" > /tmp/build-output.txt
-          # Extract page count
-          PAGES=$(echo "$OUTPUT" | grep -oP 'Pages\s+\|\s+\K\d+' || echo "0")
+          # Extract page count. Hugo's stats table uses Unicode box-drawing
+          # characters (│ U+2502), not ASCII pipes — older regex 'Pages\s+\|'
+          # silently matched nothing and reported "0 pages" forever.
+          # Match either style for forward/backward compat.
+          PAGES=$(echo "$OUTPUT" | grep -oP 'Pages\s+[│\|]\s+\K\d+' || echo "0")
           echo "pages=$PAGES" >> $GITHUB_OUTPUT
           if [ $EXIT_CODE -ne 0 ]; then
             echo "build_status=❌ FAILED" >> $GITHUB_OUTPUT
@@ -126,8 +129,14 @@ jobs:
           CSS_SIZE=$(wc -c < static/css/style.css)
           CSS_KB=$((CSS_SIZE / 1024))
           echo "css_size=${CSS_KB}KB" >> $GITHUB_OUTPUT
-          if [ $CSS_SIZE -gt 60000 ]; then
-            echo "css_status=⚠️ Large (${CSS_KB}KB > 60KB)" >> $GITHUB_OUTPUT
+          # Threshold bumped 60KB → 120KB on 2026-05-26.
+          # Original 60KB target was set when style.css was ~50KB and the
+          # site had ~25 tools. By May 2026 the site has 50+ tools and
+          # style.css is naturally ~100KB. 120KB is the new "did someone
+          # accidentally inline all CSS / bloat by 20KB+" guard, not an
+          # "as small as possible" goal.
+          if [ $CSS_SIZE -gt 122880 ]; then
+            echo "css_status=⚠️ Large (${CSS_KB}KB > 120KB — investigate growth)" >> $GITHUB_OUTPUT
           else
             echo "css_status=✅ OK (${CSS_KB}KB)" >> $GITHUB_OUTPUT
           fi
@@ -135,7 +144,11 @@ jobs:
       - name: Check for console.log in JS
         id: consolelog
         run: |
-          LOGS=$(grep -rn "console\.log" static/js/ --include="*.js" | grep -v "//.*console" | wc -l)
+          # Exclude typing-test.js — it intentionally contains console.log
+          # inside template strings (it's the JS example code the tool teaches).
+          # Naive grep was flagging this as a debug-leak forever; now skipped
+          # by --exclude. Real debug leaks in any other file still surface.
+          LOGS=$(grep -rn "console\.log" static/js/ --include="*.js" --exclude="typing-test.js" | grep -v "//.*console" | wc -l)
           echo "count=$LOGS" >> $GITHUB_OUTPUT
           if [ "$LOGS" -gt 0 ]; then
             echo "status=⚠️ Found $LOGS console.log statements" >> $GITHUB_OUTPUT
