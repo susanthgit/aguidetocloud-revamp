@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-05-27T16:10:15.952133+00:00",
+  "generated_at": "2026-05-27T18:32:15.007350+00:00",
   "total_incidents_tracked": 102,
   "services": [
     {
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 21,
+      "total_incidents": 22,
       "active_incidents": 1,
-      "avg_duration_minutes": 4223,
+      "avg_duration_minutes": 5579,
       "last_incident": "2026-05-23T00:00:00+00:00",
       "classifications": {
-        "incident": 7,
+        "incident": 8,
         "advisory": 14
       }
     },
@@ -19,25 +19,25 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 17,
-      "active_incidents": 0,
+      "total_incidents": 18,
+      "active_incidents": 1,
       "avg_duration_minutes": 4523,
       "last_incident": "2026-05-26T00:00:00+00:00",
       "classifications": {
-        "advisory": 9,
-        "incident": 8
+        "incident": 9,
+        "advisory": 9
       }
     },
     {
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 15,
+      "total_incidents": 14,
       "active_incidents": 2,
-      "avg_duration_minutes": 12316,
+      "avg_duration_minutes": 13215,
       "last_incident": "2026-05-26T08:15:52.110000+00:00",
       "classifications": {
-        "advisory": 12,
+        "advisory": 11,
         "incident": 3
       }
     },
@@ -119,19 +119,6 @@
       }
     },
     {
-      "service": "Power BI",
-      "short_name": "Power BI",
-      "icon": "📊",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 1031,
-      "last_incident": "2026-05-18T12:24:00+00:00",
-      "classifications": {
-        "incident": 1,
-        "advisory": 1
-      }
-    },
-    {
       "service": "Microsoft 365 apps",
       "short_name": "M365 Apps",
       "icon": "💼",
@@ -181,6 +168,18 @@
       }
     },
     {
+      "service": "Power BI",
+      "short_name": "Power BI",
+      "icon": "📊",
+      "total_incidents": 1,
+      "active_incidents": 0,
+      "avg_duration_minutes": 1806,
+      "last_incident": "2026-05-18T12:24:00+00:00",
+      "classifications": {
+        "incident": 1
+      }
+    },
+    {
       "service": "Dynamics 365 Apps",
       "short_name": "Dynamics",
       "icon": "🏢",
@@ -208,7 +207,7 @@
   "monthly": [
     {
       "month": "2026-05",
-      "incident_count": 36,
+      "incident_count": 38,
       "services_affected": 12
     },
     {
@@ -218,8 +217,8 @@
     },
     {
       "month": "2026-03",
-      "incident_count": 14,
-      "services_affected": 9
+      "incident_count": 12,
+      "services_affected": 8
     }
   ]
 }
