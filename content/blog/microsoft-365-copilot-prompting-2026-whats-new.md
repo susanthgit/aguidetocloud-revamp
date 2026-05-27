@@ -1,9 +1,9 @@
 ---
-title: "Microsoft 365 Copilot Prompt Engineering — What's New for 2026"
+title: "Microsoft 365 Copilot Prompting — What's New 2026"
 description: "Notebooks, Researcher, Analyst, Work IQ, model choice, Memory, multimodal. The 2026 prompting layer that sits on top of the four-block framework."
 date: 2026-05-27
 lastmod: 2026-05-27
-card_tag: "2026 Upgrade"
+card_tag: "Prompt Engineering"
 tag_class: "ai"
 layout: "notebook"
 stamp: "upgrade brief"
@@ -39,7 +39,7 @@ faq:
     answer: "Pick ONE thing from the brief and try it on a real work task this week. A Notebook is the easiest start — pin 3 references and ask a cross-source question. The Field Guide and Persona Playbook on this site cover the fundamentals; the Prompt Library has ready-to-use templates. The 4-week practice plan in the Field Guide is calibrated to layer the basics first, then add 2026 features one at a time."
 images: ["images/og/blog/microsoft-365-copilot-prompting-2026-whats-new.jpg"]
 og_headline: "Copilot Prompting — What's New 2026"
-og_glyph: "sparkles"
+og_glyph: "calendar"
 tags:
   - prompt-engineering
   - copilot

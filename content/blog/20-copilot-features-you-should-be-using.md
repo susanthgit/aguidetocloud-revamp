@@ -3,7 +3,7 @@ title: "22 M365 Copilot Features You're Probably Not Using"
 description: "22 M365 Copilot features as a journey from quick wins to power moves. Sample prompts, real customer cases, custom templates."
 date: 2026-04-21
 lastmod: 2026-05-08
-card_tag: "Guide"
+card_tag: "Copilot"
 tag_class: "ai"
 images: ["images/og/blog/20-copilot-features-you-should-be-using.jpg"]
 og_headline: "22 M365 Copilot Features"

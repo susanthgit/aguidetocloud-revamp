@@ -1,15 +1,18 @@
 <#
 .SYNOPSIS
   Pre-push guardrail — catches common deploy mistakes BEFORE they reach Cloudflare.
-  Run this before every git push. hugo-safe.ps1 calls this automatically.
+  Run this before every git push. hugo-safe.ps1 calls the SEO/OG check inline
+  in build mode whenever content/blog changes (since May 27 2026 — see Lesson 65).
 
 .DESCRIPTION
   Checks:
   1. cache_version bumped if CSS/JS files changed since last push
   2. Hugo build succeeds (no template errors)
   3. No stray template markers (ZgotmplZ, unclosed {{)
-  4. Parallel-safe staging guard (Lesson 61): only files YOU modified are staged
-  5. Bi-mode contrast sanity check (advisory — Lesson 63): flags new light-mode failures
+  4. Blog SEO + OG image guardrail (title len, desc len, og_headline, og_glyph,
+     OG image existence) — only fires when content/blog/ changes detected
+  5. Parallel-safe staging guard (Lesson 61): only files YOU modified are staged
+  6. Bi-mode contrast sanity check (advisory — Lesson 63): flags new light-mode failures
 
   Exit code 0 = safe to push. Exit code 1 = BLOCKED.
 #>
@@ -28,7 +31,7 @@ $failed = $false
 Write-Host "`n🔍 Pre-push checks..." -ForegroundColor Cyan
 
 # ─── CHECK 1: cache_version bump ───
-Write-Host "`n[1/3] Checking cache_version..." -NoNewline
+Write-Host "`n[1/4] Checking cache_version..." -NoNewline
 
 # Get files changed since origin/main (what would be pushed)
 $changedFiles = git diff --name-only origin/main HEAD 2>$null
@@ -63,7 +66,7 @@ if ($cssJsChanged -and -not $configChanged) {
 
 # ─── CHECK 2: Hugo build ───
 if (-not $SkipBuild) {
-    Write-Host "`n[2/3] Hugo build..." -NoNewline
+    Write-Host "`n[2/4] Hugo build..." -NoNewline
     $buildOutput = & hugo --quiet 2>&1
     if ($LASTEXITCODE -ne 0) {
         Write-Host " ❌ BLOCKED" -ForegroundColor Red
@@ -74,11 +77,11 @@ if (-not $SkipBuild) {
         Write-Host " ✅ Build succeeded" -ForegroundColor Green
     }
 } else {
-    Write-Host "`n[2/3] Hugo build... ⏭ skipped (-SkipBuild)" -ForegroundColor DarkGray
+    Write-Host "`n[2/4] Hugo build... ⏭ skipped (-SkipBuild)" -ForegroundColor DarkGray
 }
 
 # ─── CHECK 3: Template markers ───
-Write-Host "`n[3/3] Checking for template errors in output..." -NoNewline
+Write-Host "`n[3/4] Checking for template errors in output..." -NoNewline
 $publicDir = Join-Path $repoRoot "public"
 if (Test-Path $publicDir) {
     $badFiles = Get-ChildItem -Path $publicDir -Recurse -Include "*.html" |
@@ -94,6 +97,28 @@ if (Test-Path $publicDir) {
     }
 } else {
     Write-Host " ⏭ No public/ dir (build skipped?)" -ForegroundColor DarkGray
+}
+
+# ─── CHECK 4: Blog SEO + OG image guardrail (content/blog/ changes only) ───
+Write-Host "`n[4/4] Blog SEO + OG image..." -NoNewline
+$blogChanged = $changedFiles | Where-Object { $_ -match '^content/blog/.*\.md$' }
+if (-not $blogChanged) {
+    Write-Host " ⏭ No blog content changes (skip)" -ForegroundColor DarkGray
+} else {
+    $seoScript = Join-Path $PSScriptRoot "check-seo-lengths.ps1"
+    if (Test-Path $seoScript) {
+        $seoOutput = & pwsh -NoProfile -File $seoScript -Strict 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host " ❌ BLOCKED" -ForegroundColor Red
+            $seoOutput | Where-Object { $_ -match "Missing OG images|Titles >|Descriptions >|Missing og_headline|og_headline >|Invalid og_glyph|->" } | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+            Write-Host "  Fix: edit blog frontmatter (title <=60, description <=155, valid og_glyph) and/or run 'npm run build:og:blog' to generate the OG image." -ForegroundColor Yellow
+            $failed = $true
+        } else {
+            Write-Host " ✅ Title, desc, og_headline, og_glyph, OG image — all compliant" -ForegroundColor Green
+        }
+    } else {
+        Write-Host " ⏭ check-seo-lengths.ps1 not found" -ForegroundColor DarkGray
+    }
 }
 
 # ─── RESULT ───

@@ -4,7 +4,7 @@ description: "All 45 M365 Copilot updates for February 2026 — Agent Mode in Ex
 date: 2026-02-23
 lastmod: 2026-05-08
 youtube_id: "TKr-WB38ixQ"
-card_tag: "What's New"
+card_tag: "What's New in Copilot"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-february-2026-updates.jpg"]
 og_headline: "February 2026 — 45 M365 Copilot updates"

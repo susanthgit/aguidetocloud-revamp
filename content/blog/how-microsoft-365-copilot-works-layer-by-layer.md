@@ -5,7 +5,7 @@ date: 2026-05-01
 lastmod: 2026-05-01
 sitemap:
   priority: 0.9
-card_tag: "Copilot Architecture"
+card_tag: "Copilot"
 tag_class: "ai"
 faq:
   - question: "What is grounding in Microsoft 365 Copilot?"

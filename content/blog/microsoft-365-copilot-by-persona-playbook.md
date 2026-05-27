@@ -3,7 +3,7 @@ title: "Microsoft 365 Copilot — A Playbook for 5 Personas"
 description: "Copilot prompts for Recruiters, Operations, Finance, IT Admin, Sales & Marketing — daily workflows, worked examples, and the guardrails that matter."
 date: 2026-05-25
 lastmod: 2026-05-27
-card_tag: "Persona Playbook"
+card_tag: "Prompt Engineering"
 tag_class: "ai"
 layout: "notebook"
 stamp: "playbook"

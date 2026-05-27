@@ -3,7 +3,7 @@ title: "Copilot Pro vs Microsoft 365 Copilot — Which Do You Need?"
 description: "Copilot Pro ($20) vs Microsoft 365 Copilot ($30): feature comparison, hidden costs, real scenarios, and how to pick the right one in 2026."
 date: 2026-05-13
 lastmod: 2026-05-13
-card_tag: "Comparison"
+card_tag: "Copilot"
 tag_class: "ai"
 layout: "notebook"
 stamp: "decision guide"

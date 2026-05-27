@@ -5,7 +5,7 @@ date: 2026-05-13
 lastmod: 2026-05-13
 draft: true
 youtube_id: ""
-card_tag: "What's New"
+card_tag: "What's New in Copilot"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-may-2026-updates.jpg"]
 og_headline: "May 2026 — 40 M365 Copilot updates"

@@ -32,16 +32,40 @@ if (Test-Path $lockFile) {
 # 3. Pre-push cache_version check (build mode only, skip for server)
 $isServer = $HugoArgs -contains "server"
 if (-not $isServer) {
-    $changedFiles = git -C $root diff --name-only origin/main HEAD 2>$null
+    $committedDiff = git -C $root diff --name-only origin/main HEAD 2>$null
+    $workingDiff   = git -C $root diff --name-only HEAD 2>$null
+    $untracked     = git -C $root ls-files --others --exclude-standard 2>$null
+    $changedFiles = @($committedDiff) + @($workingDiff) + @($untracked) | Where-Object { $_ } | Sort-Object -Unique
     $cssJsChanged = $changedFiles | Where-Object { $_ -match '\.(css|js)$' -and $_ -match '^static/' }
     if ($cssJsChanged) {
         $tomlDiff = git -C $root diff origin/main HEAD -- hugo.toml 2>$null
-        if (-not ($tomlDiff -match 'cache_version')) {
+        $tomlDiffWorking = git -C $root diff HEAD -- hugo.toml 2>$null
+        if (-not (($tomlDiff -match 'cache_version') -or ($tomlDiffWorking -match 'cache_version'))) {
             Write-Host "❌ BLOCKED: CSS/JS changed but cache_version not bumped in hugo.toml!" -ForegroundColor Red
             $cssJsChanged | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
             Write-Host "  Fix: bump cache_version in hugo.toml before building." -ForegroundColor Yellow
             Pop-Location
             exit 1
+        }
+    }
+
+    # 3b. SEO + OG image guardrail — only fires when blog content has changed (committed OR uncommitted)
+    $blogChanged = $changedFiles | Where-Object { $_ -match '^content/blog/.*\.md$' }
+    if ($blogChanged) {
+        Write-Host "📝 Blog content changed — running SEO + OG image guardrail..." -ForegroundColor Cyan
+        $seoScript = Join-Path $PSScriptRoot "check-seo-lengths.ps1"
+        if (Test-Path $seoScript) {
+            $seoOutput = & pwsh -NoProfile -File $seoScript -Strict 2>&1
+            $seoExit = $LASTEXITCODE
+            if ($seoExit -ne 0) {
+                Write-Host "❌ BLOCKED: Blog SEO/OG guardrail failed!" -ForegroundColor Red
+                $seoOutput | Where-Object { $_ -match "Missing OG images|Titles >|Descriptions >|Missing og_headline|og_headline >|Invalid og_glyph|->" } | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+                Write-Host "  Fix: edit blog frontmatter (title <=60, description <=155, valid og_glyph) and/or run 'npm run build:og:blog' to generate the OG image." -ForegroundColor Yellow
+                Pop-Location
+                exit 1
+            } else {
+                Write-Host "✅ SEO + OG image guardrail clean." -ForegroundColor Green
+            }
         }
     }
 }

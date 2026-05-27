@@ -4,7 +4,7 @@ description: "All 30 M365 Copilot updates for January 2026 — Writing Coaching 
 date: 2026-01-18
 lastmod: 2026-05-08
 youtube_id: "iDKpW_F18YI"
-card_tag: "What's New"
+card_tag: "What's New in Copilot"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-january-2026-updates.jpg"]
 og_headline: "January 2026 — 30 M365 Copilot updates"
