@@ -64,7 +64,7 @@ I had to look this up three times before it clicked. Then I taught it to a recru
 
 - **🌱 Field Guide (you're reading this)** — start here. The four-block framework, per-app prompts, the mistakes everyone makes.
 - **🧑‍💼 [Persona Playbook](/blog/microsoft-365-copilot-by-persona-playbook/)** — your role's worked prompts. Recruiter · Ops · Finance · IT · Sales.
-- **🆕 2026 Upgrade Brief (coming soon)** — Notebooks · Researcher · Analyst · Memory · model choice. For daily prompters who want what's new.
+- **🆕 [2026 Upgrade Brief](/blog/microsoft-365-copilot-prompting-2026-whats-new/)** — Notebooks · Researcher · Analyst · Memory · model choice. For daily prompters who want what's new.
 
 </div>
 
@@ -580,7 +580,7 @@ The single most useful thing to know about Microsoft 365 Copilot prompting: **th
 
 > 📎 **Pin this table.** Almost every "Copilot doesn't know about my X" story I hear traces back to this matrix — wrong surface for the question being asked. Re-read it once a week for a fortnight; it sticks.
 
-The full 2026 layer — Notebooks, Researcher, Analyst, Work IQ, Memory, model choice — gets a deep dive in the upcoming **2026 Upgrade Brief** (coming soon). The fundamentals in *this* post apply across every surface in the table above.
+The full 2026 layer — Notebooks, Researcher, Analyst, Work IQ, Memory, model choice — gets a deep dive in the **[2026 Upgrade Brief](/blog/microsoft-365-copilot-prompting-2026-whats-new/)**. The fundamentals in *this* post apply across every surface in the table above.
 
 ### Two more surfaces worth knowing — Pages and Notebooks
 
@@ -871,7 +871,7 @@ You now have the framework, the per-app tips, the privacy guardrails, and a prac
 
 **The 2026 layer — for daily prompters who want what's new:**
 
-- 🆕 **Microsoft 365 Copilot Prompt Engineering — What's New for 2026 (coming soon)** — Copilot Notebooks · Researcher agent · Analyst agent · Work IQ · model choice (GPT-5.5 Thinking · Instant · Claude) · Memory · multimodal · Pages. The fundamentals in this hub still apply; the upgrade brief is where the 2026 features go.
+- 🆕 **[Microsoft 365 Copilot Prompt Engineering — What's New for 2026](/blog/microsoft-365-copilot-prompting-2026-whats-new/)** — Copilot Notebooks · Researcher agent · Analyst agent · Work IQ · model choice (GPT-5.5 Thinking · Instant · Claude) · Memory · multimodal · Pages. The fundamentals in this hub still apply; the upgrade brief is where the 2026 features go.
 
 **Related licensing and architecture guides:**
 

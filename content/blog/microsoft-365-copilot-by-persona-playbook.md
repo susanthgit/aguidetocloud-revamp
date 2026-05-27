@@ -63,7 +63,7 @@ This is the role-specific companion to the [Prompt Engineering hub guide](/blog/
 
 - **🌱 [Field Guide](/blog/prompt-engineering-microsoft-365-copilot/)** — start here if you're new. Four-block framework, per-app prompts, the mistakes everyone makes.
 - **🧑‍💼 Persona Playbook (you're reading this)** — your role's worked prompts. Recruiter · Ops · Finance · IT · Sales.
-- **🆕 2026 Upgrade Brief (coming soon)** — Notebooks · Researcher · Analyst · Memory · model choice. For daily prompters who want what's new.
+- **🆕 [2026 Upgrade Brief](/blog/microsoft-365-copilot-prompting-2026-whats-new/)** — Notebooks · Researcher · Analyst · Memory · model choice. For daily prompters who want what's new.
 
 </div>
 
@@ -2202,7 +2202,7 @@ This plan works for every persona in this playbook. Same shape, different prompt
 This playbook is the role-specific companion. Start with the hub if you haven't:
 
 - 🌱 **[Prompt Engineering for Microsoft 365 Copilot — A Plain-English Field Guide](/blog/prompt-engineering-microsoft-365-copilot/)** — the universal hub. The four-block framework, per-app tips, privacy basics, and the mistakes everyone makes.
-- 🆕 **Microsoft 365 Copilot Prompt Engineering — What's New for 2026 (coming soon)** — Notebooks · Researcher agent · Analyst agent · Work IQ · model choice · Memory · multimodal. The 2026 layer that sits on top of every persona section in this playbook.
+- 🆕 **[Microsoft 365 Copilot Prompt Engineering — What's New for 2026](/blog/microsoft-365-copilot-prompting-2026-whats-new/)** — Notebooks · Researcher agent · Analyst agent · Work IQ · model choice · Memory · multimodal. The 2026 layer that sits on top of every persona section in this playbook.
 
 Also on this site:
 
