@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 28 May 2026 20:36:04 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2026 23:41:22 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Exchange Online] Some users may see older draft email messages appear as recently modified in Exchange Online</title>
@@ -24,15 +24,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1322422</guid>
       <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some admins may be unable to view usage reports in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1321911</link>
-      <description>[Microsoft 365 suite] Admins may be unable to view usage reports in the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MO1321911</guid>
-      <pubDate>Mon, 25 May 2026 14:13:43 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Users were intermittently unable to access Exchange Online</title>
@@ -87,6 +78,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1316808</guid>
       <pubDate>Tue, 19 May 2026 20:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Some admins may be unable to view usage reports in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1321911</link>
+      <description>[Microsoft 365 suite] Admins were unable to view usage reports in the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1321911</guid>
+      <pubDate>Mon, 18 May 2026 23:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Power BI] Users may be unable to access or may experience delays when accessing Microsoft Fabric</title>
