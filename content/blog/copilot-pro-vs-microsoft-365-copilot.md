@@ -13,7 +13,7 @@ founder_note: |
 
   They're not identical. The $10/month difference between them is the single most important $10 in Microsoft's entire AI lineup — and most people get it wrong. This is the version of the answer I wish I could just send by link.
 
-  If you only remember one thing: **Copilot Pro is for your personal life. Microsoft 365 Copilot is for your work life.** Buying the wrong one is the most expensive mistake here.
+  If you only remember one thing: **Copilot Pro is for your personal life. Microsoft 365 Copilot is for your work life *(the [licensed guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/) explains what the work version unlocks).*** Buying the wrong one is the most expensive mistake here.
 faq:
   - question: "What is the difference between Copilot Pro and Microsoft 365 Copilot?"
     answer: "Copilot Pro ($20/month) is a personal consumer subscription that adds AI to your own Word, Excel, PowerPoint and Outlook. Microsoft 365 Copilot ($30/user/month) is an enterprise product your IT admin deploys — it adds AI to your work apps AND grounds it on your organisation's emails, files, meetings and Teams chats. The difference is the data Copilot can see."
@@ -107,7 +107,7 @@ The clearest way I've found to explain this is three coffee shops on the same st
 
 ☕ **Free Copilot = the takeaway window.** You order at a window, take your coffee, walk away. The barista doesn't know you, doesn't know what you usually order, doesn't see what's in your bag. You get a coffee. That's it. Free Copilot is the AI web chat — you ask, it answers, nothing is connected to anything else.
 
-🍵 **Copilot Pro = the indoor café where you bring your own laptop.** Same barista, same coffee, but now you've got a table, you're plugged in, your laptop is open with your own personal files. The barista can help you with anything on YOUR laptop — review your novel draft, polish your CV, fix that Excel budget you've been wrestling with — but she has no idea what your employer is paying you to do this week. {{< hi >}}Copilot Pro adds AI to YOUR Office apps — your personal Word, Excel, PowerPoint, Outlook.{{< /hi >}}
+🍵 **Copilot Pro = the indoor café where you bring your own laptop.** Same barista, same coffee, but now you've got a table, you're plugged in, your laptop is open with your own personal files. The barista can help you with anything on YOUR laptop — review your novel draft, polish your CV, fix that Excel budget you've been wrestling with — but she has no idea what your employer is paying you to do this week. {{< hi >}}Copilot Pro adds AI to YOUR Office apps — your personal Word, Excel, PowerPoint, Outlook *(for the work-account version, see the [licensed trainer guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/)).*{{< /hi >}}
 
 🏢 **Microsoft 365 Copilot = the office café in your company building.** Different shop entirely. Your employee badge gets you in. The barista has access to your work calendar, your team's shared drive, the meeting notes from last Tuesday, the project files your colleague shared yesterday. She can help you with anything on YOUR WORK account — and the bill goes to your employer. **This is a fundamentally different product**, not just "Copilot Pro for businesses."
 

@@ -15,7 +15,7 @@ faq:
   - question: "What is the Brand Checker in PowerPoint?"
     answer: "Brand Checker scans your entire presentation against your Brand Kit and flags issues — incorrect colours or fonts, misplaced logos, off-brand imagery, and layout problems. It offers one-click fixes to bring everything back on brand automatically."
   - question: "How do I set up Brand Kit as an IT admin?"
-    answer: "You need to do three things: (1) Set up a SharePoint Organizational Asset Library for templates and images, (2) Create a mail-enabled security group with your brand managers, and (3) Enable the Enterprise Brand Manager policy at config.office.com. It takes up to 24 hours after configuration."
+    answer: "You need to do three things: (1) Set up a SharePoint Organizational Asset Library for templates and images, (2) Create a mail-enabled security group with your brand managers, and (3) Enable the Enterprise Brand Manager policy at config.office.com. It takes up to 24 hours after configuration *(the [deployment checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) fits right alongside this setup work).*"
   - question: "What is the difference between Brand Kit and the Organizational Asset Library (OAL)?"
     answer: "The OAL is a SharePoint-based storage location for templates and images. Brand Kit adds richer capabilities on top — brand voice, guidelines extraction, Brand Checker, multiple brand support, and AI-powered enforcement of your visual and verbal identity. They work together for the best results."
   - question: "Can Copilot automatically extract my brand guidelines?"

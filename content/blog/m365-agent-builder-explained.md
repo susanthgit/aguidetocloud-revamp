@@ -110,7 +110,7 @@ The licensing question trips up everyone. Here's the one-table answer.
 | **Above + Pay-as-you-go** (admin enables Copilot Credits billing) | All of the above + SharePoint (100 files) + OneDrive (50) + uploads (20) + Copilot connectors + **sharing with org** | Email, Teams chats/meetings, people data (these need the full Copilot licence) |
 | **Full M365 Copilot licence** (per-user add-on) | All of the above + email knowledge + Teams chats + people data + Enterprise Graph | Customer-facing channels (use Copilot Studio) |
 
-**Plain-English:** Just M365 → web-only agents (you're in **[Copilot Chat free tier](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/)** territory). Admin turns on PayGo → unlocks your team's SharePoint + uploads + sharing. You have the **[M365 Copilot licence](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/)** → unlocks your own emails and Teams.
+**Plain-English:** Just M365 → web-only agents (you're in **[Copilot Chat free tier](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/)** territory). Admin turns on PayGo → unlocks your team's SharePoint + uploads + sharing. You have the **[M365 Copilot licence](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/)** → unlocks your own emails and Teams. *(If you're mapping the licence to rollout plans, the [deployment checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) helps.)*
 
 > 📌 **Admin note:** None of this requires Power Platform licensing or Dataverse storage. Agent Builder is the budget-friendly entry point. Full admin checklist is in the [Licensing](#licensing) section. For a tier-by-tier breakdown across every Copilot SKU, see the **[Licensing Simplifier](/licensing/)** tool.
 
@@ -145,7 +145,7 @@ flowchart TD
     E -.->|"You can always promote later<br/>via 'Copy to Studio'"| F
 ```
 
-If you ended at **Agent Builder ✓** — keep reading. If you ended at **Copilot Studio** — skip to my [Agent Builder vs Copilot Studio vs Foundry guide](/blog/agent-builder-vs-copilot-studio-vs-foundry/) for the alternative platforms.
+If you ended at **Agent Builder ✓** — keep reading. If you ended at **Copilot Studio** — skip to my [Agent Builder vs Copilot Studio vs Foundry guide](/blog/agent-builder-vs-copilot-studio-vs-foundry/) for the alternative platforms. *(For the practical governance angle, see the [security and governance guide](/blog/agent-365-security-governance-complete-guide/).)*
 
 ## Your first agent in 5 minutes {#first-agent}
 
@@ -197,7 +197,7 @@ Switch to the **Configure** tab (top right) to see and edit everything it genera
 
 ### Step 3 — Point it at knowledge (2 minutes)
 
-The **Knowledge** section is where you choose what your agent can see. The UI has four built-in connector icons at the top — SharePoint, Teams, Outlook, Web — a single input box that doubles as URL field / name search / file drop zone, and three toggles underneath that control behaviour.
+The **Knowledge** section is where you choose what your agent can see. The UI has four built-in connector icons at the top — SharePoint, Teams, Outlook, Web — a single input box that doubles as URL field / name search / file drop zone, and three toggles underneath that control behaviour. *(If you want the wider controls picture, the [control system guide](/blog/microsoft-365-copilot-control-system-complete-guide/) is the companion read.)*
 
 <p><img src="/images/blog/m365-agent-builder/03-knowledge-section-options.webp" alt="Knowledge section in Agent Builder showing the heading 'Add files, meetings, chats, emails, and websites' with four connector icons in a row — SharePoint, Teams, Outlook, and Web (globe). Below them is an input box reading 'Enter a URL or name or drop files here' with an upload arrow and OneDrive cloud icon on the right. Three toggle rows follow — 'Search all websites' (off), 'Only use specified sources' (off), and 'Reference org chart and profile info' (on by default, highlighted blue). At the bottom an 'Add other data sources' dropdown shows four more connector icons including ServiceNow." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 

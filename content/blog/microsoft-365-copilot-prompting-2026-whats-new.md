@@ -9,11 +9,11 @@ layout: "notebook"
 stamp: "upgrade brief"
 intro_note: "↗ what's changed since the original Copilot prompt engineering guide. The fundamentals still apply — these features sit on top."
 founder_note: |
-  The four-block framework (Goal · Context · Expectations · Source) and the iteration habit haven't moved. They're still the spine. But the surfaces Copilot prompts run on have moved a lot since 2024.
+  The four-block framework (Goal · Context · Expectations · Source) and the iteration habit haven't moved. They're still the spine. But the surfaces Copilot prompts run on have moved a lot since 2024. *(If you need a refresher on the basics, start with the [Field Guide](/blog/prompt-engineering-microsoft-365-copilot/).)*
 
   In the last twelve months Microsoft has shipped: **Copilot Notebooks** (persistent multi-source workspaces), the **Researcher** and **Analyst** agents (delegate a task, not a one-shot prompt), **Work IQ** (the new label for grounding across emails / files / meetings / chats), **model choice** (GPT-5.5 Thinking, GPT-5.5 Instant, Claude — each tuned differently), **Memory** (Copilot no longer forgets between sessions), and **multimodal** input (paste an image, speak a prompt, generate an image inside PowerPoint).
 
-  Honest take? Most M365 Copilot users I meet are still prompting like it's 2024. The Field Guide on this site teaches that layer — and you should master it first. This upgrade brief is the layer on top. Skim it once. Pick one or two things to try this week. Come back when something else lands.
+  Honest take? Most M365 Copilot users I meet are still prompting like it's 2024. The Field Guide on this site teaches that layer — and you should master it first. This upgrade brief is the layer on top. Skim it once. Pick one or two things to try this week. Come back when something else lands. *(For the monthly release notes, check the [May 2026 update](/blog/microsoft-365-copilot-may-2026-updates/) and the [April 2026 update](/blog/microsoft-365-copilot-april-2026-updates/).)*
 
   If you haven't read the [Prompt Engineering Field Guide](/blog/prompt-engineering-microsoft-365-copilot/) yet, **read that first**. Everything here assumes you already know what Goal · Context · Expectations · Source means and that iteration is a habit.
 faq:

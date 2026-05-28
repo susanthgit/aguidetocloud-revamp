@@ -1,8 +1,8 @@
 ---
 title: "Microsoft 365 Copilot May 2026 Updates — 40 New Features"
 description: "All 40 Microsoft 365 Copilot updates for May 2026 — federated MCP connectors, GPT-5.5 Instant, Plan mode in Excel, Copilot Notebooks wave, mobile redesign."
-date: 2026-05-13
-lastmod: 2026-05-13
+date: 2026-05-29
+lastmod: 2026-05-29
 youtube_id: ""
 card_tag: "What's New in Copilot"
 tag_class: "ai"
@@ -93,7 +93,7 @@ Five admin checks worth doing this month, in priority order:
 
 *For: All users (admin configures connectors) · Generally available in admin center, user experience rolling out*
 
-This is the headline of the month. **Federated Copilot connectors** are a new class of connector built on the **Model Context Protocol (MCP)** — instead of indexing data into your tenant ahead of time, they **query the source system live, at the moment of the prompt**. Responses reflect the latest data, every result includes a citation back to the source record, and access is securely governed via OAuth 2.0 using each user's own identity and permissions.
+This is the headline of the month. **Federated Copilot connectors** are a new class of connector built on the **Model Context Protocol (MCP)** — instead of indexing data into your tenant ahead of time, they **query the source system live, at the moment of the prompt**. *([MCP governance guide →](/blog/agent-365-security-governance-complete-guide/))* Responses reflect the latest data, every result includes a citation back to the source record, and access is securely governed via OAuth 2.0 using each user's own identity and permissions.
 
 The first wave of out-of-the-box federated connectors built by Microsoft in partnership with leading SaaS and data providers:
 
@@ -128,7 +128,7 @@ The first wave of out-of-the-box federated connectors built by Microsoft in part
 
 *For: All Copilot Chat users · Available now (rolling out)*
 
-OpenAI's **GPT-5.5 Instant** is now available in Microsoft 365 Copilot and Microsoft Copilot Studio. Building on GPT-5.3 Instant, it improves the quality of everyday work tasks, with better image analysis, better STEM reasoning, less verbosity, and fewer unnecessary follow-up questions.
+OpenAI's **GPT-5.5 Instant** is now available in Microsoft 365 Copilot and Microsoft Copilot Studio. Building on GPT-5.3 Instant, it improves the quality of everyday work tasks, with better image analysis, better STEM reasoning, less verbosity, and fewer unnecessary follow-up questions. *([Model choice brief →](/blog/microsoft-365-copilot-prompting-2026-whats-new/))*
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Most Copilot use is "everyday work" — summarise this email, fix this paragraph, explain this chart. GPT-5.5 Instant is tuned exactly for that flow — fewer "did you mean…" loops, more useful answers on the first try. Microsoft 365 Copilot licensed users get priority access, while users on free Copilot Chat get standard access. The same model is available to agent makers in Copilot Studio.</p>
@@ -170,7 +170,7 @@ Admins can now display their **organisation-approved logo** in the Microsoft 365
 
 *For: Frontier program preview users · Rolling out in May*
 
-**Copilot Notebooks** can now generate **PowerPoint presentations** directly from the content and references stored in a notebook. Choose the **primary focus, level of detail, slide deck length, and design theme** from example templates, and the PowerPoint agent produces a structured, editable deck preloaded with visuals — ready to refine in PowerPoint.
+**Copilot Notebooks** can now generate **PowerPoint presentations** directly from the content and references stored in a notebook. *([Notebook generation guide →](/blog/microsoft-365-copilot-prompting-2026-whats-new/))* Choose the **primary focus, level of detail, slide deck length, and design theme** from example templates, and the PowerPoint agent produces a structured, editable deck preloaded with visuals — ready to refine in PowerPoint.
 
 {{< margin >}}The Notebooks wave is initially rolling out via the Frontier early-access program.{{< /margin >}}
 
@@ -212,7 +212,7 @@ Same pattern — but for Excel. **Copilot Notebooks** can now generate **Excel s
 
 *For: Frontier program preview users · Rolling out in May*
 
-**Mind maps in Copilot Notebooks** provide an interactive, grounded view of key topics and the relationships across a notebook's content. Explore nodes, open summaries for specific areas, and use Copilot to drill deeper into what you see on the map.
+**Mind maps in Copilot Notebooks** provide an interactive, grounded view of key topics and the relationships across a notebook's content. *([Notebook prompt guide →](/blog/microsoft-365-copilot-prompting-2026-whats-new/))* Explore nodes, open summaries for specific areas, and use Copilot to drill deeper into what you see on the map.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> When a notebook starts holding 10 or 20 sources, the "what's actually in here?" question gets harder. Mind maps give you a visual scaffold of the territory — what the major themes are, how they connect, where to dig further. It is the way humans actually navigate knowledge.</p>
@@ -278,7 +278,7 @@ Add **Microsoft Teams meetings as references in a Copilot Notebook** — connect
 
 *For: All Copilot Excel users · Rolling out in May*
 
-**Plan mode for Copilot in Excel** outlines a clear, step-by-step approach **before anything in the workbook is updated**. Review which data Copilot will touch, which capabilities it intends to use, and adjust the plan as needed — so edits stay intentional, transparent, and aligned with your goals.
+**Plan mode for Copilot in Excel** outlines a clear, step-by-step approach **before anything in the workbook is updated**. *([Excel guardrails brief →](/blog/microsoft-365-copilot-prompting-2026-whats-new/))* Review which data Copilot will touch, which capabilities it intends to use, and adjust the plan as needed — so edits stay intentional, transparent, and aligned with your goals.
 
 {{< margin >}}If you have ever clicked "yes" on an AI suggestion and then watched it eat your spreadsheet — this is for you.{{< /margin >}}
 

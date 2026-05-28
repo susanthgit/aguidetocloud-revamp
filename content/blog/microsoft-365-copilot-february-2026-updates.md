@@ -185,7 +185,7 @@ Word is adding a **Discussion tab** that summarises open comments, so you can qu
 
 *For: Copilot Pages users*
 
-When Chat and a Copilot Page are open side by side, prompts in Chat can now **modify** the Page or **add new content** to it directly.
+When Chat and a Copilot Page are open side by side, prompts in Chat can now **modify** the Page or **add new content** to it directly. *([Pages deep dive →](/blog/microsoft-365-copilot-prompting-2026-whats-new/))*
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> This makes Copilot Pages feel more like a live working canvas instead of a static output. It is closer to working with a colleague beside you who can edit the page while you keep talking.</p>
@@ -339,7 +339,7 @@ When you select an item in a **SharePoint document library**, a **Copilot button
 
 *For: Users with a Copilot licence*
 
-You can now **build, use, and share agents in OneDrive** using files stored there. Microsoft says this requires a **Copilot licence** and is available in **OneDrive Web**.
+You can now **build, use, and share agents in OneDrive** using files stored there. Microsoft says this requires a **Copilot licence** and is available in **OneDrive Web**. *([Agent Builder guide →](/blog/m365-agent-builder-explained/))*
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> If your knowledge lives in files, building agents directly from OneDrive is a natural next step. It turns your file store into something closer to an interactive subject-matter expert.</p>

@@ -12,9 +12,9 @@ intro_note: "↗ for the SharePoint admin whose CISO just asked 'what will Copil
 founder_note: |
   Every Copilot deployment conversation eventually arrives at the same room. The CISO leans forward and asks: *"Will Copilot expose data we didn't realise was overshared?"*
 
-  The answer is yes — but not because Copilot is doing anything wrong. {{< hi >}}Copilot doesn't create a data problem. It exposes the one you already have, at AI speed.{{< /hi >}} Years of "Anyone with the link" sharing, broad "Everyone except external users" permissions, and forgotten Teams sites suddenly become discoverable in plain English.
+  The answer is yes — but not because Copilot is doing anything wrong. {{< hi >}}Copilot doesn't create a data problem. It exposes the one you already have, at AI speed *(the [how-it-works explainer](/blog/how-microsoft-365-copilot-works-layer-by-layer/) shows why permissions still matter).*{{< /hi >}} Years of "Anyone with the link" sharing, broad "Everyone except external users" permissions, and forgotten Teams sites suddenly become discoverable in plain English.
 
-  This post is the SharePoint half of the answer. It covers RSS, RCD, RAC and SharePoint Advanced Management — the controls that decide what Copilot can and can't surface from SharePoint. Other parts of the toolkit (Conditional Access, DLP for Copilot, Purview DSPM for AI) deserve their own posts — links at the bottom when they're ready.
+  This post is the SharePoint half of the answer. It covers RSS, RCD, RAC and SharePoint Advanced Management — the controls that decide what Copilot can and can't surface from SharePoint. Other parts of the toolkit (Conditional Access, DLP for Copilot, Purview DSPM for AI) deserve their own posts — links at the bottom when they're ready *(for the admin side, see the [CCS guide](/blog/microsoft-365-copilot-control-system-complete-guide/)).*
 
   If your CISO is asking, this is the post to send.
 faq:
@@ -51,7 +51,7 @@ A CISO I met last month described their Copilot pilot like this: *"We turned it 
 
 That's the conversation this post is for. {{< hi >}}Copilot doesn't bypass your permissions. It just makes existing oversharing instantly searchable in plain English.{{< /hi >}}
 
-Microsoft gives you four controls in SharePoint to handle this — an engine that maps your oversharing, and three "fences" you can apply once you know where to put them. The engine is SharePoint Advanced Management. The fences are RSS, RCD and RAC. By the end of this post you'll know which one to use when, what each one doesn't do, and the rollout sequence that actually works.
+Microsoft gives you four controls in SharePoint to handle this — an engine that maps your oversharing, and three "fences" you can apply once you know where to put them *(the [deployment checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) shows where this fits in rollout).* The engine is SharePoint Advanced Management. The fences are RSS, RCD and RAC. By the end of this post you'll know which one to use when, what each one doesn't do, and the rollout sequence that actually works.
 
 {{< margin >}}I'm a Copilot Solution Engineer at Microsoft NZ. The "wrong people now knew about a redundancy plan" story is anonymised but very real — and it's the most common Copilot rollout pause-and-restart pattern I see.{{< /margin >}}
 

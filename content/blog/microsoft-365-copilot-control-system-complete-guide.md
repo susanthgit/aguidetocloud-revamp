@@ -70,7 +70,7 @@ If someone stops you in the hallway and asks "what's the Copilot Control System?
 | **Who needs it** | Everyone using Copilot | Organisations deploying agents at scale |
 | **Where it lives** | M365 Admin, Purview, Defender, SharePoint | M365 Admin Center ("Agents" blade) |
 
-> 📌 **The one-liner to remember:** {{< hi >}}CCS governs **people using AI**. Agent 365 governs **AI working for people**.{{< /hi >}} Together, they cover the full spectrum.
+> 📌 **The one-liner to remember:** {{< hi >}}CCS governs **people using AI**. Agent 365 governs **AI working for people** *(for the agent side, see the [Agent 365 security guide](/blog/agent-365-security-governance-complete-guide/)).*{{< /hi >}} Together, they cover the full spectrum.
 
 {{< margin >}}This is the line I use in every customer call.{{< /margin >}}
 
@@ -84,7 +84,7 @@ Let's start with what CCS is *not* — because that clears up most of the confus
 - ❌ It's **not** a new licence or SKU
 - ❌ It's **not** a single admin portal
 
-CCS is a **governance framework**. It's a collection of controls and capabilities that are spread across tools you probably already use — the Microsoft 365 Admin Center, Microsoft Purview, Microsoft Defender, SharePoint Admin, and the Power Platform Admin Center.
+CCS is a **governance framework**. It's a collection of controls and capabilities that are spread across tools you probably already use — the Microsoft 365 Admin Center, Microsoft Purview, Microsoft Defender, SharePoint Admin, and the Power Platform Admin Center *(the [deployment checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) maps these to rollout work).*
 
 ### The Hotel Analogy
 
@@ -125,7 +125,7 @@ flowchart TD
 
 ### 🔐 Pillar 1: Security & Governance
 
-This is the one every CISO asks me about first. And honestly, it's the most important one to get right.
+This is the one every CISO asks me about first. And honestly, it's the most important one to get right *(if data access is the worry, the [SharePoint oversharing guide](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/) is the companion piece).*
 
 **The question it answers:** *"Is Copilot safe to use with our data?"*
 

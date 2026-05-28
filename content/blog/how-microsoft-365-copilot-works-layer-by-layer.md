@@ -15,7 +15,7 @@ faq:
   - question: "Does Microsoft train AI models on my Copilot data?"
     answer: "No. Microsoft explicitly commits that prompts, responses, and Microsoft Graph data are never used to train foundation models. This applies to both OpenAI and Anthropic models used in Copilot. Processing is transient — nothing is stored at the model layer."
   - question: "What is the Copilot Orchestrator?"
-    answer: "The Orchestrator is Copilot's central coordinator — like a skilled project manager. It analyses your prompt, determines what data is needed, plans which sources to query (Graph, Semantic Index, web search), constructs the grounded prompt for the AI model, and post-processes the response before returning it to you."
+    answer: "The Orchestrator is Copilot's central coordinator — like a skilled project manager *(for the admin controls around that flow, see the [CCS guide](/blog/microsoft-365-copilot-control-system-complete-guide/)).* It analyses your prompt, determines what data is needed, plans which sources to query (Graph, Semantic Index, web search), constructs the grounded prompt for the AI model, and post-processes the response before returning it to you."
   - question: "How many layers does the Copilot architecture have?"
     answer: "M365 Copilot processes prompts through 7 key layers: Microsoft 365 Apps (where prompts originate), Identity and Access (Entra ID authentication), the Copilot Orchestrator (the brain), the Grounding layer (Semantic Index and Microsoft Graph), LLM Processing (Azure OpenAI and optional Anthropic Claude), Responsible AI (safety guardrails), and Response and Governance (delivery, audit, retention)."
   - question: "What happens when Copilot uses Anthropic Claude?"

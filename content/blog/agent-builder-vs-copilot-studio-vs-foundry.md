@@ -79,7 +79,7 @@ I wrote this guide because the official docs are spread across three different L
 | **Where does it live?** | Inside M365 Copilot | copilotstudio.microsoft.com | Azure portal |
 | **Cost model** | Per-user licence or metered | Copilot Credits | Consumption (pay-per-token) |
 
-**One sentence:** {{< hi >}}Start with Agent Builder, graduate to Copilot Studio when you need workflows, and only go to Foundry when you have developers and complex requirements.{{< /hi >}}
+**One sentence:** {{< hi >}}Start with Agent Builder, graduate to Copilot Studio when you need workflows, and only go to Foundry when you have developers and complex requirements.{{< /hi >}} *(If you want the business-user version of that starting point, see the [Agent Builder field guide](/blog/m365-agent-builder-explained/).)*
 
 {{< margin >}}If you only read one line, this is it.{{< /margin >}}
 
@@ -129,7 +129,7 @@ This is always the first question. Here's the honest answer — more nuanced tha
 
 ## Agent Builder — The Microwave {#agent-builder}
 
-Agent Builder lives inside M365 Copilot. Open Copilot, click "New agent", start talking.
+Agent Builder lives inside M365 Copilot. Open Copilot, click "New agent", start talking. *(The step-by-step version lives in the [Agent Builder field guide](/blog/m365-agent-builder-explained/).)*
 
 ### What it can do
 
@@ -175,7 +175,7 @@ Copilot Studio is where most IT admins will spend their time. Think of it as Pow
 
 ### When to pick Studio over Agent Builder
 
-If your agent needs to **do something** (create a ticket, update a record, send an email, kick off an approval) rather than just **answer a question**, you need Copilot Studio. The moment you think "and then it should..." — that's your Studio trigger.
+If your agent needs to **do something** (create a ticket, update a record, send an email, kick off an approval) rather than just **answer a question**, you need Copilot Studio. The moment you think "and then it should..." — that's your Studio trigger. *(For rollout and governance, the [deployment checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) is the next stop.)*
 
 > 📌 **Admin action:** Manage through [Power Platform Admin Centre](https://admin.powerplatform.microsoft.com). Set DLP policies to control which connectors agents can use — this prevents shadow IT agents accessing systems you haven't approved. Use the [Copilot Feature Matrix](/copilot-matrix/) to check feature availability in your licence tier.
 
@@ -196,7 +196,7 @@ Azure AI Foundry (recently rebranded "Microsoft Foundry") is for developers. If 
 
 ### Who needs to own this
 
-This is not an IT admin tool — it's a development team tool. If your org is exploring Foundry, here's who's involved:
+This is not an IT admin tool — it's a development team tool. If your org is exploring Foundry, here's who's involved: *(And if you need the security and control story around all three, see the [Agent 365 governance guide](/blog/agent-365-security-governance-complete-guide/).)*
 
 | Role | Responsibility |
 |------|---------------|

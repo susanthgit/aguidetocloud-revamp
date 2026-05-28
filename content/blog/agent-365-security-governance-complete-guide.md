@@ -59,7 +59,7 @@ I see this all the time with customers. Someone in Marketing builds an agent tha
 
 That's the gap. We've got Entra for people, Intune for devices — but until now, nothing for agents.
 
-**Agent 365 went live today** (May 1, 2026), and it's Microsoft's answer to this problem. Think of it as the HR department, security team, and compliance office — all rolled into one — but for your AI agents. It ties together Entra, Purview, and Defender into a unified governance layer.
+**Agent 365 went live today** (May 1, 2026), and it's Microsoft's answer to this problem. Think of it as the HR department, security team, and compliance office — all rolled into one — but for your AI agents. It ties together Entra, Purview, and Defender into a unified governance layer *(the [CCS guide](/blog/microsoft-365-copilot-control-system-complete-guide/) explains how this differs from Copilot governance).*
 
 This guide is my breakdown of what Agent 365 actually does, how it works under the hood, and what you should do about it this week. No sales pitch. Just the stuff that matters for IT admins.
 
@@ -83,7 +83,7 @@ This guide is my breakdown of what Agent 365 actually does, how it works under t
 
 Before we dive in, let's get one thing straight: not every agent needs the same level of governance. The level of risk depends on how much autonomy the agent has.
 
-I think of it as three levels — like hiring different types of workers:
+I think of it as three levels — like hiring different types of workers *(for the broader suite view, see the [E7 guide](/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know/)).*
 
 | Level | Type | What It Does | Governance Needed | Example |
 |:---:|-------|-------------|------------------|---------|

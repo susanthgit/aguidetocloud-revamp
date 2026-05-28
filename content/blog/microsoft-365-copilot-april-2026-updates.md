@@ -115,7 +115,7 @@ Copilot can now generate an **audio overview of your Word document** directly fr
 
 *For: All users · Currently rolling out*
 
-The new **PowerPoint Agent** helps you build polished presentations with strong storytelling and visual structure. It handles research, formatting, and layout so you can focus on your message. Use **multi-turn chat** to refine content or open the deck in PowerPoint for full editing and collaboration.
+The new **PowerPoint Agent** helps you build polished presentations with strong storytelling and visual structure. It handles research, formatting, and layout so you can focus on your message. *([Brand-aware presentation guide →](/blog/microsoft-365-copilot-brand-kit-complete-guide/))* Use **multi-turn chat** to refine content or open the deck in PowerPoint for full editing and collaboration.
 
 **Not to be confused with** Feature #6 (Copilot editing inside PowerPoint) — PowerPoint Agent lives in Copilot Chat and creates entire decks from scratch, while #6 is about editing an existing presentation from within PowerPoint itself.
 
@@ -153,7 +153,7 @@ The **Excel Agent** turns data into clear charts, summaries, and insights using 
 
 *For: All users · Currently rolling out*
 
-**Word Agent** handles research, structure, and formatting so you can stay focused on your ideas. It's designed for long-form, information-dense work — like strategic plans, policy documents, and technical papers. Use multi-turn chat to refine your draft or open it in Word for full editing.
+**Word Agent** handles research, structure, and formatting so you can stay focused on your ideas. It's designed for long-form, information-dense work — like strategic plans, policy documents, and technical papers. *([Prompting guide for Word Agent →](/blog/microsoft-365-copilot-prompting-2026-whats-new/))* Use multi-turn chat to refine your draft or open it in Word for full editing.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Writing a 20-page policy document or technical paper from scratch is daunting. Word Agent gives you a co-author that understands structure and formatting — it handles the scaffolding while you focus on the substance. The multi-turn conversation means you can iterate on sections without starting over.</p>
@@ -183,7 +183,7 @@ Copilot in PowerPoint now lets you **create, edit, and refine presentations** th
 
 *🔄 First introduced in [March 2026](/blog/microsoft-365-copilot-march-2026-updates/#21-overview-page-in-copilot-notebooks) — now generally available.*
 
-Copilot Notebooks now features a **landing page with AI-powered summaries and insights**. When you open a Notebook, you'll see an overview that helps you quickly understand the key themes and content without scrolling through everything.
+Copilot Notebooks now features a **landing page with AI-powered summaries and insights**. When you open a Notebook, you'll see an overview that helps you quickly understand the key themes and content without scrolling through everything. *([Notebook overview brief →](/blog/microsoft-365-copilot-prompting-2026-whats-new/))*
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Notebooks can grow long and messy. The overview page acts like an executive summary — the moment you open a Notebook, you see the key takeaways without having to scroll through pages of notes. It's particularly useful when you're returning to a Notebook days or weeks later and need to quickly remember where you left off.</p>
@@ -456,7 +456,7 @@ Developers can now publish Azure AI Foundry Agents directly to the **Microsoft 3
 
 *For: IT admins and developers*
 
-Admins can now configure **custom Model Context Protocol (MCP) connectors** in the Microsoft 365 admin center and deploy them across the organisation. Unlike traditional Graph connectors that index data, MCP connectors are designed for **real-time, federated access** — allowing Copilot to query external systems on the fly, with users authenticating directly to those systems.
+Admins can now configure **custom Model Context Protocol (MCP) connectors** in the Microsoft 365 admin center and deploy them across the organisation. *([MCP governance guide →](/blog/agent-365-security-governance-complete-guide/))* Unlike traditional Graph connectors that index data, MCP connectors are designed for **real-time, federated access** — allowing Copilot to query external systems on the fly, with users authenticating directly to those systems.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> MCP is the emerging open standard for connecting AI models to external data and tools. Microsoft supporting custom MCP connectors means your organisation can bring virtually any data source into Copilot — internal databases, custom APIs, proprietary systems — without waiting for Microsoft to build a pre-built connector. Because it's real-time and user-authenticated, there's no stale data and permissions are always respected.</p>
@@ -506,7 +506,7 @@ Track user sentiment of Microsoft 365 Copilot with a new **satisfaction rate met
 
 *For: Compliance admins · Currently rolling out*
 
-Microsoft Purview **Data Loss Prevention** now safeguards prompts containing sensitive data. This real-time control prevents Copilot from returning responses when prompts contain sensitive data or using that data for grounding — helping mitigate data leakage and oversharing risks.
+Microsoft Purview **Data Loss Prevention** now safeguards prompts containing sensitive data. This real-time control prevents Copilot from returning responses when prompts contain sensitive data or using that data for grounding — helping mitigate data leakage and oversharing risks. *([Copilot DLP guide →](/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins/))*
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> One of the biggest concerns with AI adoption is users accidentally sharing sensitive data through prompts — credit card numbers, employee IDs, classified project names. Purview DLP now catches these in real time, blocking the response before any sensitive data leaks. This is a critical security control for regulated industries like finance, healthcare, and government.</p>

@@ -15,7 +15,7 @@ founder_note: |
 
   Honest take? The first week feels small. The second week feels real. The third week feels like a habit. By the fourth week, most people I've taught are reaching for Copilot a handful of times a day without thinking about it — and the time savings start to compound across a quarter.
 
-  This playbook is the cheat-sheet companion to the [Prompt Engineering hub guide](/blog/prompt-engineering-microsoft-365-copilot/). Read that first if you haven't — it covers Microsoft's four-block framework (Goal · Context · Expectations · Source), the iteration habit, and the privacy basics. Everything below sits on top of those.
+  This playbook is the cheat-sheet companion to the [Prompt Engineering hub guide](/blog/prompt-engineering-microsoft-365-copilot/). Read that first if you haven't — it covers Microsoft's four-block framework (Goal · Context · Expectations · Source), the iteration habit, and the privacy basics. Everything below sits on top of those *(for what's changed since then, see the [2026 upgrade brief](/blog/microsoft-365-copilot-prompting-2026-whats-new/)).*
 faq:
   - question: "Will Microsoft 365 Copilot replace my job?"
     answer: "No. Copilot is a drafting and summarising assistant — it shortens the typing tax that sits between you and the judgment work in your role. Recruiters still decide who to interview. Finance still decides what's a real variance. IT admins still decide what's a real incident. Sales still owns the customer relationship. Use Copilot to recover the time you used to spend on copy-paste, status updates, and first drafts."
@@ -85,7 +85,7 @@ This is the role-specific companion to the [Prompt Engineering hub guide](/blog/
 👥 **The five personas:**
 
 - [1 · Recruiters & HR](#p1) — talent, candidate comms, interviews, inclusive ads
-- [2 · Operations](#p2) — processes, partners, launches, risk, deal management
+- [2 · Operations](#p2) — processes, partners, launches, risk, deal management *(see the [prompting field guide](/blog/prompt-engineering-microsoft-365-copilot/) if you want the source/goal format that these prompts use).*
 - [3 · Finance](#p3) — close, forecasting, compliance, contracts, cash flow
 - [4 · IT Admin](#p4) — tenant ops, security, support, documentation, audit
 - [5 · Sales & Marketing](#p5) — account prep, outreach, pipeline, content

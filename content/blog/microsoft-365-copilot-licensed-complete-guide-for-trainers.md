@@ -41,7 +41,7 @@ founder_note: |
   Most train-the-trainer content I find is either an investor deck or a 200-slide product walkthrough. This is the version I would hand to a change lead who has one week to get up to speed. Every section maps to a question I have actually been asked in a customer room.
 ---
 
-This is the guide for people training users on the **paid** Microsoft 365 Copilot licence — the $30/month upgrade that turns Copilot from a chat tool into an AI assistant embedded in every app your users touch.
+This is the guide for people training users on the **paid** Microsoft 365 Copilot licence — the $30/month upgrade that turns Copilot from a chat tool into an AI assistant embedded in every app your users touch *(for the free version first, see the [Copilot Chat trainer guide](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/)).*
 
 If your users don't have the paid licence yet, start with our [Copilot Chat (Free) Trainer Guide](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/) — everything there still applies to licensed users too. This guide covers what the licence **adds on top**.
 
@@ -85,7 +85,7 @@ This is a living document. Bookmark this page rather than printing it — the AI
 
 ## What Does the Microsoft 365 Copilot Licence Unlock?
 
-The paid licence transforms Copilot from a **web-grounded chat tool** into an **AI assistant that understands your work** — your emails, files, meetings, chats, and organisational context.
+The paid licence transforms Copilot from a **web-grounded chat tool** into an **AI assistant that understands your work** — your emails, files, meetings, chats, and organisational context *(see the [free-vs-paid decision guide](/blog/copilot-pro-vs-microsoft-365-copilot/) if you need to explain the split).*
 
 {{< margin >}}This one sentence is the trainer's elevator pitch.{{< /margin >}}
 

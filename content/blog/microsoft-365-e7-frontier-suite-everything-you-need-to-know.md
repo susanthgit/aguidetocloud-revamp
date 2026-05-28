@@ -14,7 +14,7 @@ founder_note: |
   If you're reading this because someone in leadership asked *"should we move to E7?"* — start with the [Who should upgrade](#who-should-upgrade) section, then come back to the rest. That's the order I'd recommend.
 faq:
   - question: "What is Microsoft 365 E7?"
-    answer: "Microsoft 365 E7, also known as the Frontier Suite, is Microsoft's new top-tier enterprise plan. It bundles Microsoft 365 E5, Microsoft 365 Copilot, Microsoft Entra Suite, and Agent 365 into a single SKU at $99/user/month."
+    answer: "Microsoft 365 E7, also known as the Frontier Suite, is Microsoft's new top-tier enterprise plan. It bundles Microsoft 365 E5, Microsoft 365 Copilot, Microsoft Entra Suite, and Agent 365 into a single SKU at $99/user/month *(the [Agent 365 security guide](/blog/agent-365-security-governance-complete-guide/) covers the governance piece).*"
   - question: "When does Microsoft 365 E7 become available?"
     answer: "Microsoft 365 E7 went generally available on 1 May 2026, alongside standalone Agent 365. Both are now transactable through EA, EAS, CSP, and MCA channels worldwide."
   - question: "How much does Microsoft 365 E7 cost?"
@@ -115,7 +115,7 @@ This is the bit that surprises people. E7 doesn't just include Entra ID P2 (whic
 
 {{< margin >}}If you only read one section, make it this one.{{< /margin >}}
 
-This is the big one. [Agent 365](https://www.microsoft.com/en-us/microsoft-agent-365) is a **governance platform for AI agents** — or as I like to explain it, {{< hi >}}"Intune for AI bots."{{< /hi >}} More in the [deep dive below](#agent-365--why-e7-exists).
+This is the big one. [Agent 365](https://www.microsoft.com/en-us/microsoft-agent-365) is a **governance platform for AI agents** — or as I like to explain it, {{< hi >}}"Intune for AI bots."{{< /hi >}} More in the [deep dive below](#agent-365--why-e7-exists) *(or jump to the [3-tier compare](/blog/agent-builder-vs-copilot-studio-vs-foundry/) if you're choosing a build path).*
 
 ---
 

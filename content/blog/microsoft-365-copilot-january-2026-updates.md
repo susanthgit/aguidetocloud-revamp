@@ -113,7 +113,7 @@ The **Copilot context menu** in Word now includes **Writing Coaching**, giving y
 
 *For: Agent builders · Available now*
 
-**Agent Builder** can now generate **Word documents, Excel workbooks, and PowerPoint presentations**. Microsoft says you enable this by turning on **'Create documents, charts and code'** for the agent.
+**Agent Builder** can now generate **Word documents, Excel workbooks, and PowerPoint presentations**. Microsoft says you enable this by turning on **'Create documents, charts and code'** for the agent. *([Agent Builder deep dive →](/blog/m365-agent-builder-explained/))*
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> This moves agents from “answer bot” to “output builder”. Instead of getting a nice response and then doing the real work yourself, the agent can hand you the file you actually need.</p>
@@ -127,7 +127,7 @@ The **Copilot context menu** in Word now includes **Writing Coaching**, giving y
 
 *For: All users · Available now*
 
-Microsoft 365 Copilot now includes a **Model Selector** with **GPT-5** behind it, giving you three choices: **Auto** (default), **Quick response**, and **Think deeper**.
+Microsoft 365 Copilot now includes a **Model Selector** with **GPT-5** behind it, giving you three choices: **Auto** (default), **Quick response**, and **Think deeper**. *([Deep dive on model choice →](/blog/microsoft-365-copilot-prompting-2026-whats-new/))*
 
 | Mode | What it does |
 |------|--------------|
@@ -189,7 +189,7 @@ When Copilot recognises that you are drafting an email, it can now show an **Edi
 
 *For: PowerPoint and Copilot Pages users · Available now*
 
-You can now create a **PowerPoint presentation grounded on a Copilot Page**, turning page content into presentation material more directly.
+You can now create a **PowerPoint presentation grounded on a Copilot Page**, turning page content into presentation material more directly. *([Pages and prompting brief →](/blog/microsoft-365-copilot-prompting-2026-whats-new/))*
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> This is a cleaner handoff from thinking to presenting. Instead of rebuilding a deck from scratch, you can turn the page where the work already lives into slides.</p>
@@ -483,7 +483,7 @@ Copilot is updating **memory and personalisation** so it can use **chat history*
 
 *For: Loop users · Currently rolling out*
 
-**Loop Notebooks** can now be selected in **Context IQ**, letting you scope prompts to notebook content from the **Files** tab.
+**Loop Notebooks** can now be selected in **Context IQ**, letting you scope prompts to notebook content from the **Files** tab. *([Notebook prompting guide →](/blog/microsoft-365-copilot-prompting-2026-whats-new/))*
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Context is everything with Copilot. If your project thinking lives in Loop Notebooks, this makes it much easier to point Copilot at the right source instead of copying content around by hand.</p>

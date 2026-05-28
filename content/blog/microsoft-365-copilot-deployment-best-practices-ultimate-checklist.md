@@ -41,7 +41,7 @@ founder_note: |
   Wrote this after my third customer told me they just turned it on and then panicked about oversharing two weeks later. The data readiness section is the part most teams skip and the part that bites them later. If you read nothing else, read that.
 ---
 
-Deploying Copilot is like moving house. You wouldn't throw everything in a truck and hope for the best — you'd sort through your stuff first, label the boxes, and unpack room by room. The organisations that rush past the "sorting" phase are the ones that end up with Copilot surfacing confidential HR documents to people who shouldn't see them.
+Deploying Copilot is like moving house. You wouldn't throw everything in a truck and hope for the best — you'd sort through your stuff first, label the boxes, and unpack room by room *(the [how-it-works explainer](/blog/how-microsoft-365-copilot-works-layer-by-layer/) is a good pre-read for admins).* The organisations that rush past the "sorting" phase are the ones that end up with Copilot surfacing confidential HR documents to people who shouldn't see them.
 
 This guide gives you the complete, phased checklist — from planning through optimisation — so your deployment succeeds the first time.
 
@@ -89,7 +89,7 @@ flowchart TD
 | **4. Adopt & Train** | Champions program, scenario-based training | Users get Copilot but don't know what to do with it — low adoption, wasted licences |
 | **5. Monitor & Optimise** | Usage dashboards, feedback loops, iterate | You can't prove ROI and can't justify the licence spend |
 
-> **The #1 rule:** {{< hi >}}Phase 2 (Secure & Govern) should take **more time** than Phase 3 (Configure & Deploy){{< /hi >}}. Most failed deployments rushed past governance.
+> **The #1 rule:** {{< hi >}}Phase 2 (Secure & Govern) should take **more time** than Phase 3 (Configure & Deploy) *(if you need the SharePoint side, see the [oversharing controls guide](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/)).*{{< /hi >}}. Most failed deployments rushed past governance.
 
 {{< margin >}}The part teams skip first, then regret first.{{< /margin >}}
 
