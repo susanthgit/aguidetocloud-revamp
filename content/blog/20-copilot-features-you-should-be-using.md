@@ -715,6 +715,8 @@ It thinks harder. It's more thorough. It tells you where it got the information.
 
 **✅ You've unlocked:** Work that used to take 2-3 hours now takes minutes.
 
+🔗 **Go deeper:** The full 2026 deep dive on Researcher — model choice, planning, citations, what makes it different from regular Copilot chat — is in the [2026 prompting upgrade brief](/blog/microsoft-365-copilot-prompting-2026-whats-new/).
+
 ---
 
 ### 15. Analyst Agent — Your Personal Data Scientist
@@ -793,6 +795,8 @@ The magic? Copilot remembers the project context, so every response gets smarter
 
 **✅ You've unlocked:** Copilot with long-term memory. Projects that get smarter over time.
 
+🔗 **Go deeper:** Sample prompts, the cross-source table pattern, and the full Notebooks workflow are in the [2026 prompting upgrade brief](/blog/microsoft-365-copilot-prompting-2026-whats-new/).
+
 ---
 
 ### 17. Scheduled Prompts — Copilot Works While You Sleep
@@ -820,6 +824,8 @@ No more remembering to check something every Monday. No more manually pulling to
 </div>
 
 💡 **The honest insight:** This is the moment Copilot stops being something you *use* and starts being something that *works for you*.
+
+🔗 **Go deeper:** Worked examples, the bookmarked-prompt pattern, and where scheduled prompts stop and scheduled agents begin — all in the [Prompt Engineering Field Guide](/blog/prompt-engineering-microsoft-365-copilot/).
 
 ---
 
@@ -855,6 +861,8 @@ Build an agent for it.
 🪄 **Bonus — SharePoint agents:** Every SharePoint site now comes with a ready-made agent that answers questions over the content of that site. No build needed. Customise it if you want, or just use it as-is. Easiest 5-minute win in this whole guide.
 
 💡 **The impact:** One 30-minute build can save your team hours of "who do I ask about this?" every single week.
+
+🔗 **Go deeper:** Full step-by-step Agent Builder field guide — knowledge sources, sharing, scheduling, troubleshooting — is at [M365 Agent Builder explained](/blog/m365-agent-builder-explained/). For when to graduate to Copilot Studio or Foundry, see the [3-tier decision guide](/blog/agent-builder-vs-copilot-studio-vs-foundry/).
 
 ---
 
@@ -969,6 +977,8 @@ It's the difference between asking someone a question and handing them a whole p
 
 ⚠️ **Availability:** Cowork is currently in **early-access preview** for selected enterprises. Broader availability is expected as part of new M365 licensing tiers — watch the [Microsoft 365 roadmap](https://www.microsoft.com/en-us/microsoft-365/roadmap) for confirmed dates and licensing.
 
+🔗 **Go deeper:** Full Cowork field guide — what it is, how it differs from regular Copilot, the agentic harness, skills, access, licensing — is at [Microsoft Copilot Cowork complete guide](/blog/microsoft-copilot-cowork-complete-guide/).
+
 **That's the end of the list.** 🎉
 
 ---
@@ -1032,6 +1042,36 @@ Your Copilot conversations are private to you. They're not shared with colleague
 
 **What's the difference between Copilot in Teams/Outlook vs the main Copilot chat?**
 Copilot in Teams and Outlook works *within* those apps — it knows the meeting context or the email thread you're looking at. The main Copilot chat (at [microsoft365.com/chat](https://microsoft365.com/chat)) can search across everything and is where you'll find Researcher, Analyst, Notebooks, Agent Builder and Pages.
+
+---
+
+## Where to learn more
+
+Each feature on this list has a deep-dive somewhere on this site. Pick where you want to go next:
+
+**📝 Prompting**
+- [Prompt Engineering Field Guide](/blog/prompt-engineering-microsoft-365-copilot/) — the four-block framework, per-app prompts, the mistakes everyone makes
+- [2026 Prompting Upgrade Brief](/blog/microsoft-365-copilot-prompting-2026-whats-new/) — Notebooks · Researcher · Analyst · Memory · model choice
+
+**🤖 Agents**
+- [M365 Agent Builder Field Guide](/blog/m365-agent-builder-explained/) — no-code agent building, end-to-end
+- [Agent Builder vs Copilot Studio vs Foundry](/blog/agent-builder-vs-copilot-studio-vs-foundry/) — pick the right tool
+- [Microsoft Copilot Cowork Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) — what's next after agents
+
+**👥 By role**
+- [Microsoft 365 Copilot — Persona Playbook](/blog/microsoft-365-copilot-by-persona-playbook/) — Recruiter · Ops · Finance · IT · Sales
+
+**🎓 For trainers**
+- [Train-the-Trainer: licensed M365 Copilot](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/)
+- [Train-the-Trainer: free Copilot Chat](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/)
+
+**🔐 For admins**
+- [How Microsoft 365 Copilot Works, Layer by Layer](/blog/how-microsoft-365-copilot-works-layer-by-layer/) — the architecture primer
+- [Deployment Best Practices Checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/)
+- [Content Safety Controls for Admins](/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins/)
+
+**🗓️ Monthly updates**
+- [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · [May](/blog/microsoft-365-copilot-may-2026-updates/)
 
 ---
 

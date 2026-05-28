@@ -3,7 +3,6 @@ title: "Microsoft 365 Copilot May 2026 Updates — 40 New Features"
 description: "All 40 Microsoft 365 Copilot updates for May 2026 — federated MCP connectors, GPT-5.5 Instant, Plan mode in Excel, Copilot Notebooks wave, mobile redesign."
 date: 2026-05-13
 lastmod: 2026-05-13
-draft: true
 youtube_id: ""
 card_tag: "What's New in Copilot"
 tag_class: "ai"
@@ -35,6 +34,8 @@ founder_note: |
 May 2026 has a lot of practical Copilot changes — **40 updates** focused around connectors, notebooks, Excel and mobile. **Federated connectors built on MCP** bring live, real-time data into Copilot from partners like Canva, HubSpot, Linear, LSEG, Moody's and Notion. **GPT-5.5 Instant** lands in Copilot Chat. **Copilot Notebooks** picks up generation for PowerPoint, Word and Excel (in Frontier preview). **Plan mode in Excel** and **Python in Copilot for Excel** finally make spreadsheet edits transparent before they apply. And the mobile app gets a chat-first redesign with liquid glass styling.
 
 A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard work and persistence continue to power this monthly update series.
+
+📅 **2026 monthly recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · May (you are here)
 
 ---
 

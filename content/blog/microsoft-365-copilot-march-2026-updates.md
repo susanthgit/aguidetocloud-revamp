@@ -33,6 +33,8 @@ March 2026 is a huge month for Microsoft 365 Copilot with **36 updates** — fro
 
 A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard work and persistence continue to power this monthly update series.
 
+📅 **2026 monthly recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · March (you are here) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · [May](/blog/microsoft-365-copilot-may-2026-updates/)
+
 ---
 
 ## If you only have 2 minutes — March's 3 picks
@@ -547,6 +549,7 @@ Microsoft is introducing a **Teams Organisation Evaluation Score** that helps IT
 - [January 2026 Copilot Updates](/blog/microsoft-365-copilot-january-2026-updates/)
 - [February 2026 Copilot Updates](/blog/microsoft-365-copilot-february-2026-updates/)
 - [April 2026 Copilot Updates](/blog/microsoft-365-copilot-april-2026-updates/)
+- [May 2026 Copilot Updates](/blog/microsoft-365-copilot-may-2026-updates/)
 - [M365 Copilot Full Tutorial](/ai-hub/microsoft-365-copilot-full-tutorial-word-excel-teams-outlook-more-beginners-guid/)
 - [Master All 6 Copilot Agents](/ai-hub/master-all-6-new-microsoft-365-copilot-agents-boost-your-productivity-in-one-vid/)
 - [Copilot Studio Beginner Lab](/ai-hub/copilot-studio-beginner-lab-part-1-create-deploy-your-first-ai-agent-topics-deep/)

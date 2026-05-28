@@ -824,7 +824,7 @@ She doesn't ask Copilot to rank candidates — that decision stays with her and 
 
 Now Mei has 80 consistent summaries. She reads through them faster. The decisions are still hers — but the typing isn't.
 
-She'll also use prompts for **inclusive job advert drafting**, **interview guide creation**, and **candidate communication** — covered in detail in the [Recruiters & HR field guide](/blog/microsoft-365-copilot-for-recruiters-and-hr/).
+She'll also use prompts for **inclusive job advert drafting**, **interview guide creation**, and **candidate communication** — covered in detail in the [Recruiters & HR section of the Persona Playbook](/blog/microsoft-365-copilot-by-persona-playbook/#the-recruiters-day-with-copilot).
 
 ### "Priya the ops lead, weekly business review prep"
 

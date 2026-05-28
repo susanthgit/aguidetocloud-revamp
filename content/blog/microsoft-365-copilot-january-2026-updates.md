@@ -33,6 +33,8 @@ January 2026 opens with **30 Microsoft 365 Copilot updates** — from **Writing 
 
 A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard work and persistence continue to power this monthly update series.
 
+📅 **2026 monthly recaps:** January (you are here) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · [May](/blog/microsoft-365-copilot-may-2026-updates/)
+
 ---
 
 ## If you only have 2 minutes — January's 3 picks
@@ -522,6 +524,7 @@ Copilot is updating **memory and personalisation** so it can use **chat history*
 - [February 2026 Copilot Updates](/blog/microsoft-365-copilot-february-2026-updates/)
 - [March 2026 Copilot Updates](/blog/microsoft-365-copilot-march-2026-updates/)
 - [April 2026 Copilot Updates](/blog/microsoft-365-copilot-april-2026-updates/)
+- [May 2026 Copilot Updates](/blog/microsoft-365-copilot-may-2026-updates/)
 - [Master All 6 Copilot Agents](/ai-hub/master-all-6-new-microsoft-365-copilot-agents-boost-your-productivity-in-one-vid/)
 - [Browse all AI tutorials](/ai-hub/)
 - [Daily AI News](/ai-news/)

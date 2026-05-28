@@ -144,7 +144,7 @@ Here's the part that changes the whole story — and almost nobody is talking ab
 
 ### What Are WXP Agents?
 
-WXP Agents are AI agents for Word, Excel, and PowerPoint that live inside the [Copilot app](https://m365.cloud.microsoft/chat). You talk to them in chat, and they create entire documents, workbooks, or presentations for you.
+WXP Agents are AI agents for Word, Excel, and PowerPoint that live inside the [Copilot app](https://m365.cloud.microsoft/chat). You talk to them in chat, and they create entire documents, workbooks, or presentations for you. *(For the full plain-English explainer on what agents are and how to build your own, see the [M365 Agent Builder field guide](/blog/m365-agent-builder-explained/).)*
 
 The key thing: **they're not the same as the Copilot side panel inside Office apps.**
 
@@ -173,7 +173,7 @@ So a user in a large enterprise who loses the Word side panel can still open the
 
 ## The Anthropic Dependency
 
-Here's the catch with WXP agents — and this is the part that trips people up. **They run exclusively on Anthropic's Claude models**, not OpenAI GPT.
+Here's the catch with WXP agents — and this is the part that trips people up. **They run exclusively on Anthropic's Claude models**, not OpenAI GPT. *(Why Claude matters across the wider Copilot story — model choice in Word/Excel/PowerPoint, when to pick it over GPT — is in the [licensed Copilot trainer guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/).)*
 
 From the [official documentation](https://learn.microsoft.com/en-us/copilot/microsoft-365/wordexcelppt-agents):
 
@@ -223,7 +223,7 @@ Anthropic in Copilot is covered by Microsoft's [Data Protection Addendum](https:
 | M365 Copilot (Enterprise) | >300 users | **$30 USD/user/month** | Annual |
 | M365 Copilot (Business) | <300 users | **$21 USD/user/month** | Annual |
 
-Both are add-on licences on top of your existing Microsoft 365 subscription. You don't have to licence everyone — start with your power users and expand from there.
+Both are add-on licences on top of your existing Microsoft 365 subscription. You don't have to licence everyone — start with your power users and expand from there. *(For the full consumer-vs-enterprise breakdown — Copilot Pro vs Microsoft 365 Copilot — see [which Copilot is which](/blog/copilot-pro-vs-microsoft-365-copilot/).)*
 
 > 💡 **Want to build a business case?** Try our [Copilot ROI Calculator](/roi-calculator/) to estimate savings by role.
 
@@ -246,7 +246,9 @@ Here's my checklist — in order of priority:
 
 - **Lost the Copilot side panel?** Use the [Copilot web app](https://m365.cloud.microsoft/chat) and WXP agents instead
 - **Outlook and Teams?** No change. Copilot still works there
-- **Want the full experience?** Ask your IT admin about the paid licence
+- **Want the full experience?** Ask your IT admin about the paid licence — and read the [Copilot Pro vs Microsoft 365 Copilot](/blog/copilot-pro-vs-microsoft-365-copilot/) guide so you can have an informed conversation
+
+If you're the person who runs the training on this, the [Copilot Chat train-the-trainer guide](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/) has session agendas built around exactly this situation.
 
 ---
 
@@ -323,11 +325,15 @@ Enterprise (>300 users): **$30/user/month**. Business (<300 users): **$21/user/m
 
 ## Related Articles
 
-- [Master All 6 Microsoft 365 Copilot Agents](/ai-hub/master-all-6-new-microsoft-365-copilot-agents-boost-your-productivity-in-one-vid/)
-- [Microsoft 365 Copilot March 2026 Updates](/blog/microsoft-365-copilot-march-2026-updates/)
-- [Microsoft 365 Copilot Content Safety Controls for IT Admins](/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins/)
-- [Agent Builder in Microsoft 365 Copilot — Create AI Agents Without Code](/ai-hub/m365-copilot-studio-lite-or-agent-builder-hands-on-lab-create-your-own-ai-agent-/)
-- [Learn Prompt Engineering with Practical Work-Life Prompts](/ai-hub/learn-prompt-engineering-with-practical-work-life-prompts-beginner-friendly-ai-s/)
+- [Microsoft 365 Copilot Chat — Train-the-Trainer Guide](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/) — what this April change means for the people running training sessions
+- [Microsoft 365 Copilot Licensed — Train-the-Trainer Guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/) — for the licensed users who get Claude and everything else
+- [Copilot Pro vs Microsoft 365 Copilot](/blog/copilot-pro-vs-microsoft-365-copilot/) — the licensing decision in plain English
+- [M365 Agent Builder field guide](/blog/m365-agent-builder-explained/) — what the WXP agents actually are and how to build your own
+- [Microsoft 365 Copilot Deployment Best Practices](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) — the rollout checklist for after April 15
+- [Microsoft 365 Copilot March 2026 Updates](/blog/microsoft-365-copilot-march-2026-updates/) — the monthly context this change landed in
+- [Content Safety Controls for IT Admins](/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins/) — the other admin guardrail that matters here
+- [Master All 6 Microsoft 365 Copilot Agents](/ai-hub/master-all-6-new-microsoft-365-copilot-agents-boost-your-productivity-in-one-vid/) — video walk-through
+- [Learn Prompt Engineering with Practical Work-Life Prompts](/ai-hub/learn-prompt-engineering-with-practical-work-life-prompts-beginner-friendly-ai-s/) — video walk-through
 
 ---
 

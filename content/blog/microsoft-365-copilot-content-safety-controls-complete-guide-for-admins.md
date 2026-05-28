@@ -443,14 +443,14 @@ Content safety is one piece of a secure Copilot deployment. Here are the other c
 
 | Control | What It Does | Where |
 |---------|-------------|-------|
-| **DLP for Copilot prompts** | Prevent sensitive data in prompts and responses | Purview → DLP |
-| **Oversharing governance** | Fix SharePoint/OneDrive permissions | SharePoint Admin + access reviews |
+| **[DLP for Copilot prompts](/blog/microsoft-365-copilot-april-2026-updates/)** | Prevent sensitive data in prompts and responses | Purview → DLP |
+| **[Oversharing governance](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/)** | Fix SharePoint/OneDrive permissions | SharePoint Admin + access reviews |
 | **Retention policies** | Control how long Copilot conversations are kept | Purview → Retention |
 | **eDiscovery** | Search and export Copilot interactions for legal | Purview → eDiscovery |
 | **Audit logging** | Track usage, prompts, and responses | Purview → Audit |
 | **DSPM for AI** | Monitor AI-related data security posture | Purview → DSPM |
 
-> 💡 **The #1 security risk most admins miss with Copilot isn't content safety — it's oversharing.** If your SharePoint permissions are too broad, Copilot will surface documents that users technically can access but shouldn't see. Fix permissions before you scale.
+> 💡 **The #1 security risk most admins miss with Copilot isn't content safety — it's oversharing.** If your SharePoint permissions are too broad, Copilot will surface documents that users technically can access but shouldn't see. Fix permissions before you scale. ([Full SharePoint oversharing controls guide →](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/))
 
 ---
 
@@ -511,6 +511,19 @@ Oversharing. Copilot surfaces anything a user has access to. If SharePoint permi
 It's stored and auditable like any other Copilot conversation — subject to your retention and DLP policies. But it may contain sensitive material, so have clear usage policies.
 
 </div>
+
+---
+
+## Related Reading
+
+Content safety is one piece. These are the other admin-side pieces that work together with it:
+
+- 🔐 [SharePoint oversharing controls for Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/) — the #1 risk most admins miss
+- 🏛️ [Copilot Control System (CCS) complete guide](/blog/microsoft-365-copilot-control-system-complete-guide/) — the governance framework these layers sit inside
+- ✅ [Deployment best practices checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) — where to configure each layer in your rollout phases
+- 🤖 [Agent 365 security & governance](/blog/agent-365-security-governance-complete-guide/) — content safety extended to agents
+- 🏗️ [How Microsoft 365 Copilot works, layer by layer](/blog/how-microsoft-365-copilot-works-layer-by-layer/) — the architecture that these safety layers protect
+- 💳 [Copilot Pro vs Microsoft 365 Copilot](/blog/copilot-pro-vs-microsoft-365-copilot/) — which licence unlocks the harmful-content toggle
 
 ---
 
