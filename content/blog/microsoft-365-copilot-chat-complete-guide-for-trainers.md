@@ -124,7 +124,7 @@ If you're short on time and need to run a Copilot Chat training session soon, he
 
 ## What Is Microsoft 365 Copilot Chat?
 
-**Microsoft 365 Copilot Chat** is a **free**, **secure** AI assistant included with every Microsoft 365 subscription. Think of it as your organisation's approved AI chat — protected by enterprise-grade security, available to every user, and {{< hi >}}completely free{{< /hi >}}.
+**Microsoft 365 Copilot Chat** is a **free**, **secure** AI assistant included with every Microsoft 365 subscription. Think of it as your organisation's approved AI chat — protected by enterprise-grade security, available to every user, and {{< hi >}}completely free{{< /hi >}}. *(When users outgrow it, the [Licensed Copilot trainer guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/) covers the $30/month upgrade story.)*
 
 {{< margin >}}Lead every training with "free" and "secure" — that's the whole pitch.{{< /margin >}}
 
@@ -277,7 +277,7 @@ For large organisations, frame it as:
 
 ## Deep Dive: Copilot Chat Features
 
-Now let's get into the features your users can use **today**. Even as a free tool, Copilot Chat is surprisingly powerful. Here's how to teach each feature effectively.
+Now let's get into the features your users can use **today**. Even as a free tool, Copilot Chat is surprisingly powerful. Here's how to teach each feature effectively. *(For the full practical feature tour across free and paid, see [22 Copilot features you're probably not using](/blog/20-copilot-features-you-should-be-using/).)*
 
 ```mermaid
 flowchart TD
@@ -315,7 +315,7 @@ When users sign in with their work account, they'll see the **green shield 🛡�
 
 ### Prompting Matters — A Lot
 
-The single biggest factor in getting value from Copilot Chat is **the quality of the prompt**. As a trainer, this is your highest-impact teaching moment.
+The single biggest factor in getting value from Copilot Chat is **the quality of the prompt**. As a trainer, this is your highest-impact teaching moment. *(Pair this section with the [Prompt Engineering Field Guide](/blog/prompt-engineering-microsoft-365-copilot/) for the four-block framework that makes prompts repeatable.)*
 
 **The CRAFT Framework for Better Prompts:**
 

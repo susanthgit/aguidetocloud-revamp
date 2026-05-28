@@ -259,7 +259,7 @@ Now that you know what Cowork is, here's the fun part — trying it yourself. Th
 
 ## How is This Different from Regular Copilot?
 
-This is the question everyone asks, and it's a great one. Here's the honest comparison:
+This is the question everyone asks, and it's a great one. Here's the honest comparison: *(For the layer-by-layer architecture that both share, see [How Microsoft 365 Copilot Works](/blog/how-microsoft-365-copilot-works-layer-by-layer/).)*
 
 | | **Regular M365 Copilot** | **Copilot Cowork** |
 |---|---|---|
@@ -291,7 +291,7 @@ To understand where Cowork fits, it helps to see the bigger picture. Copilot has
 | **Wave 2** | 2025 | **Agent Builder** — You build custom agents in [Copilot Studio](https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio). They follow scripts you define. |
 | **Wave 3** | 2026 | **Cowork** — You describe an outcome. Copilot plans, executes across all apps, and checks in with you. |
 
-Each wave didn't replace the previous one — it added a new layer. You can still use Wave 1 Copilot (and you should for quick tasks). Cowork is for the bigger, multi-step stuff.
+Each wave didn't replace the previous one — it added a new layer. You can still use Wave 1 Copilot (and you should for quick tasks). Cowork is for the bigger, multi-step stuff. *(Wave 2 — the no-code Agent Builder bridge — is covered in the [M365 Agent Builder field guide](/blog/m365-agent-builder-explained/).)*
 
 ---
 
@@ -553,7 +553,7 @@ That's it. The "agentic harness" is just the **framework that keeps AI agents pr
 
 When Cowork executes a task, it calls on individual **Skills** — modular capabilities that each handle one specific job. When I wrote "Skills: Calendar → Email → Teams → Communications" in the scenario boxes earlier, I was showing which skills Cowork uses at each step of the task. Think of skills like specialist team members: your email person, your spreadsheet person, your meeting coordinator. Cowork decides which ones to call and in what order.
 
-This is also the part that makes Cowork genuinely extensible — you're not limited to what Microsoft ships out of the box.
+This is also the part that makes Cowork genuinely extensible — you're not limited to what Microsoft ships out of the box. *(If you want to build a custom no-code agent for similar reuse outside of Cowork, see the [M365 Agent Builder field guide](/blog/m365-agent-builder-explained/).)*
 
 ### Built-in Cowork Skills
 
@@ -660,7 +660,7 @@ If you're an IT admin, here's how to turn it on:
 4. **Control access (optional):** If you want to restrict who can use Cowork, go to Copilot → Agents → All Agents → Find "Cowork" → Set availability for specific groups
 5. **Communicate:** Let your users know it's available and what to expect
 
-> ⚠️ **Before you enable it broadly:** Review your [SharePoint permissions](https://learn.microsoft.com/en-us/sharepoint/modern-experience-sharing-permissions) and [information governance](https://learn.microsoft.com/en-us/purview/information-governance-solution). Cowork can access anything the user can access — so if your permissions are messy, Cowork will surface that mess. Start with a pilot group.
+> ⚠️ **Before you enable it broadly:** Review your [SharePoint permissions](https://learn.microsoft.com/en-us/sharepoint/modern-experience-sharing-permissions) and [information governance](https://learn.microsoft.com/en-us/purview/information-governance-solution). Cowork can access anything the user can access — so if your permissions are messy, Cowork will surface that mess. Start with a pilot group. *(For the full remediation playbook, see [SharePoint oversharing controls for Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/).)*
 
 ### Licensing
 
