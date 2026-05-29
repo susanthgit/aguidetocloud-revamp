@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 29 May 2026 10:12:41 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 May 2026 13:33:16 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Exchange Online] Some users may see older draft email messages appear as recently modified in Exchange Online</title>
@@ -433,6 +433,15 @@ The issue initially began with impact to a subset of customers in a single Avail
       <pubDate>Fri, 24 Apr 2026 23:22:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Windows 365] Users may be unable to connect to their Windows 365 Cloud PCs that are hosted in the East US region</title>
+      <link>https://www.aguidetocloud.com/service-health/#WP1290574</link>
+      <description>[Windows 365] Users may be unable to connect to their Cloud PCs that are hosted in the East US region.</description>
+      <category>Windows 365</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">WP1290574</guid>
+      <pubDate>Fri, 24 Apr 2026 16:14:53 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Purview] Some users in East US may experience latency in Microsoft Purview Data Loss Prevention</title>
       <link>https://www.aguidetocloud.com/service-health/#MP1290422</link>
       <description>[Microsoft Purview] Users may have experienced latency in Microsoft Purview Data Loss Prevention.</description>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">SP1295361</guid>
       <pubDate>Fri, 24 Apr 2026 12:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Users are intermittently unable to access Microsoft 365 Copilot Chat using the Microsoft Edge browser</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1293760</link>
-      <description>[Microsoft 365 Copilot Chat] Users were intermittently unable to access Microsoft 365 Copilot Chat using the Microsoft Edge browser.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">CW1293760</guid>
-      <pubDate>Thu, 23 Apr 2026 12:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
