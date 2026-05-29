@@ -2,7 +2,7 @@
 title: "Microsoft 365 Copilot April 2026 Updates — 41 New Features"
 description: "All 41 Microsoft 365 Copilot updates for April 2026 — PowerPoint Agent, Excel Agent, Hey Copilot wake word, MCP connectors. What shipped, what's next."
 date: 2026-04-29
-lastmod: 2026-05-08
+lastmod: 2026-05-29
 youtube_id: "ax6KMZMoIt4"
 card_tag: "What's New in Copilot"
 tag_class: "ai"
@@ -95,6 +95,8 @@ Voice in Microsoft 365 Copilot brings a natural, **hands-free conversational exp
 <p>💡 <strong>Why it matters:</strong> Not everyone works best by typing. Whether you're multitasking, have accessibility needs, or just think better out loud, voice chat removes the friction between you and Copilot. It's especially powerful for catching up on your day while commuting or moving between meetings.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-april-2026/01-voice-chat.webp" alt="Microsoft 365 Copilot Chat empty-state home with the message composer — the microphone icon and audio-waveform icon on the right of the prompt box are the voice-chat entry points for hands-free conversations." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to find it:** Click the **microphone icon** in your compose box.
 
 📖 [M365 Roadmap 481138](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=481138)
@@ -106,6 +108,8 @@ Copilot can now generate an **audio overview of your Word document** directly fr
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> We all receive documents we need to review but don't have time to sit down and read. Audio overviews let you absorb the key points of a 30-page report while walking to your next meeting, driving, or grabbing coffee. It turns passive documents into on-the-go content.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-april-2026/02-audio-overviews-word.webp" alt="A Word document with the AI Summary panel pinned to the top — Summary, Insights, Discussion and Activity tabs. The headphones icon for generating an audio overview lives in this same panel area in the document header." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** Open a Word document → look for the **headphones icon** in the AI Summary area at the top.
 
@@ -122,6 +126,8 @@ The new **PowerPoint Agent** helps you build polished presentations with strong 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Building a good presentation takes hours — finding the right structure, making it look professional, sourcing content. PowerPoint Agent compresses that into a conversation. You describe what you need, refine it iteratively, and get a presentation-ready deck. Ideal for executive presentations, strategic updates, and market overviews.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-april-2026/03-powerpoint-agent.webp" alt="Microsoft 365 Copilot Chat with PowerPoint Agent open from the All Agents rail — composer prompt "Describe the presentation you want to create" plus three starter cards: Impact analysis presentation, Market research, and Project update." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** Open Copilot Chat → look for **PowerPoint Agent** under 'All Agents' in the left-hand menu.
 
@@ -141,6 +147,8 @@ The **Excel Agent** turns data into clear charts, summaries, and insights using 
 <p>💡 <strong>Why it matters:</strong> Excel is powerful but intimidating for many users. The Excel Agent removes the formula-knowledge barrier — describe what you need in plain English and it builds the spreadsheet for you. Financial forecasts, project trackers, budgets, pivot tables — all through conversation. This is one of the most practical agents for everyday business users.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-april-2026/04-excel-agent.webp" alt="Microsoft 365 Copilot Chat with Excel Agent open from the All Agents rail — composer prompt "Describe the workbook you want to create" plus three starter cards: Financial model, Sales performance analysis, and Project tracker." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to find it:** Open Copilot Chat → look for **Excel Agent** under 'All Agents' in the left-hand menu.
 
 **Who gets it:** Available **with or without** a paid Copilot licence (your admin must enable it for your tenant).
@@ -159,6 +167,8 @@ The **Excel Agent** turns data into clear charts, summaries, and insights using 
 <p>💡 <strong>Why it matters:</strong> Writing a 20-page policy document or technical paper from scratch is daunting. Word Agent gives you a co-author that understands structure and formatting — it handles the scaffolding while you focus on the substance. The multi-turn conversation means you can iterate on sections without starting over.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-april-2026/05-word-agent.webp" alt="Microsoft 365 Copilot Chat with Word Agent open from the All Agents rail — composer prompt "Describe the document you want to create" plus three starter cards: Project status update, Strategic planning document, and Technical documentation." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to find it:** Open Copilot Chat → look for **Word Agent** under 'All Agents' in the left-hand menu.
 
 **Who gets it:** Available to Microsoft 365 users **with or without** a Copilot licence (your admin must enable it for your tenant).
@@ -175,6 +185,8 @@ Copilot in PowerPoint now lets you **create, edit, and refine presentations** th
 <p>💡 <strong>Why it matters:</strong> Previously, Copilot in PowerPoint could help you create decks but editing was limited to the side panel. Now the full editing experience is conversational — ask Copilot to swap a layout, add a slide, or restructure content and it happens right where you're working. The **brand kit integration** means your decks stay on-brand without you having to manually check templates and images.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-april-2026/06-copilot-edit-powerpoint.webp" alt="A conversational Copilot prompt overlaid inline on a PowerPoint slide reading "Transform text on this slide into a chart. If you have other suggestions to improve clarity, ask me questions one at a time before making changes." — this is the new in-presentation editing experience, not the side panel." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **Who gets it:** Available to Copilot-licensed users.
 
 📖 [M365 Roadmap 548520](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=548520)
@@ -189,6 +201,8 @@ Copilot Notebooks now features a **landing page with AI-powered summaries and in
 <p>💡 <strong>Why it matters:</strong> Notebooks can grow long and messy. The overview page acts like an executive summary — the moment you open a Notebook, you see the key takeaways without having to scroll through pages of notes. It's particularly useful when you're returning to a Notebook days or weeks later and need to quickly remember where you left off.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-april-2026/07-notebooks-overview.webp" alt="Microsoft 365 Copilot Notebooks landing page for a Zava Annual Report notebook — auto-generated Summary section, a Zava strategy and product narrative, and Key Insights with bullet points pulled from the notebook references. The right rail shows the Notebook chat with suggested prompts." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 📖 [M365 Roadmap 512430](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=512430)
 
 ## 8. Planner Agent
@@ -200,6 +214,8 @@ The new **Planner Agent** (formerly 'Project Manager Agent') helps you plan, org
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Project management shouldn't require switching to a separate app and clicking through forms. The Planner Agent lets you create tasks, assign them, and track progress through natural conversation in Copilot Chat. Think of it as having a project coordinator that listens to your instructions and updates Planner for you.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-april-2026/08-planner-agent.webp" alt="The Planner Agent task-generation interface — a goal prompt ("Create a marketing plan for a seasonal summer campaign showcasing a device product launch") at the top, then a Team tasks list of seven generated tasks (market research, audience definition, messaging, content calendar, materials, launch event, performance monitoring) with an "Assign all to Project Manager" action." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** Open Copilot Chat → look for **Planner** under 'All Agents' in the left-hand menu.
 
@@ -219,6 +235,8 @@ The **SharePoint List Agent** enables effortless list creation through prompts w
 <p>💡 <strong>Why it matters:</strong> Creating a well-structured SharePoint list usually means deciding on column types, validation rules, and views — which can be overwhelming for non-technical users. Now you can describe what you need ("I need a list to track vendor contracts with expiry dates, renewal status, and assigned owners") and the agent builds the schema for you.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-april-2026/09-sharepoint-list-agent.webp" alt="The SharePoint list agent install card in the Agent Store — Microsoft Corporation publisher, an Add button, and a Works across pill. Description: "Transform Microsoft 365 Copilot chat context into SharePoint lists" with three features: Effortless Creation, Flexible Storage Location, Seamless Integration." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to find it:** Add it from the **Agent Store** ('All Agents' on your left-hand menu in Microsoft Teams). Your admin may need to enable this for your organisation.
 
 📖 [M365 Roadmap 534606](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=534606)
@@ -231,6 +249,8 @@ Edit your images **directly in PowerPoint** with Copilot — no need to switch a
 <p>💡 <strong>Why it matters:</strong> We've all been there — you're building a deck and an image needs a quick fix, so you open a separate image editor, make the change, export, re-import. That workflow is gone. Now it's all inline. This is especially valuable for non-designers who don't have Photoshop skills but still need professional-looking visuals.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-april-2026/10-edit-images-powerpoint.webp" alt="PowerPoint Edit Picture dialog opened on a stock camera-lens image — a single toolbar with four AI-powered actions (Enhance, Background, Select Area, Text) sits at the top of the dialog. Behind it, the PowerPoint ribbon shows Edit Picture and Remove Background buttons." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to find it:** **Right-click on an image** and choose 'Edit Picture'.
 
 📖 [M365 Roadmap 551187](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=551187)
@@ -242,6 +262,8 @@ Right-click on an **acronym, text box, image, or an entire slide** in PowerPoint
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> We've all opened a presentation from another team and found it full of acronyms and jargon we don't recognise. Instead of Googling or asking the author, you can now right-click and get an instant explanation that understands the context of the presentation. This saves time and reduces misunderstandings.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-april-2026/11-contextual-explanations-ppt.webp" alt="A PowerPoint slide titled "LAUNCH LOGISTICS / SCHEDULING" with a Gantt-chart-style table — the right-click context menu is open and "Explain" is highlighted in blue, sitting alongside Cut, Copy, Paste variations, Layers, Arrange, Add Animation, Open in Immersive Reader, and New Comment." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 📖 [M365 Roadmap 516566](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516566)
 
@@ -265,6 +287,8 @@ Delegates with existing calendar access can now **search for meetings using Copi
 <p>💡 <strong>Why it matters:</strong> Executive assistants and admins who manage calendars for others have been asking for this. Instead of manually scrolling through someone's calendar to find a specific meeting, you can now ask Copilot "When was Sarah's last meeting with the finance team?" and get an instant answer. It respects existing delegate permissions, so there's no additional setup needed.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-april-2026/13-calendar-search-delegates.webp" alt="Microsoft 365 Copilot Chat composer with a delegate person chip — "Billie Vester" — pinned at the top of the prompt, and the typed query "Find upcoming meetings in the next two weeks in Billie Vester's calendar that mention Project Falcon." The person chip is how the delegate scope is set." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 📖 [M365 Roadmap 413718](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=413718)
 
 ## 14. Interpreter Agent in Teams Rooms on Windows
@@ -274,6 +298,8 @@ The **Interpreter Agent** acts as a real-time translator in Microsoft Teams meet
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> For multinational organisations, language barriers in meetings mean some people can't fully participate. The Interpreter Agent solves this at scale — meeting rooms equipped with Teams Rooms on Windows now offer real-time translation without needing a separate service. It's like having a UN-style interpreter built into every conference room.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-april-2026/14-interpreter-agent-teams.webp" alt="A Microsoft Teams meeting gallery with nine participant tiles. The top-left shows the Interpreter notification: "AI is interpreting this meeting. You and 4 others are using Interpreter. Your interpretation language is English." with Turn off for me and Manage settings buttons. One participant tile is labelled "Interpreting for others…"" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **Who gets it:** Now available in **Teams Rooms on Windows** licensed for Teams Rooms Pro.
 
@@ -288,6 +314,8 @@ The **Workflows app** in Teams now includes AI-powered templates to automate com
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Automation shouldn't require a developer. AI Workflows gives everyday users access to pre-built, AI-powered automation templates right inside Teams. Think of it as Power Automate's simpler, AI-native cousin — designed for people who want to automate repetitive tasks without building flows from scratch.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-april-2026/15-ai-workflows.webp" alt="The Microsoft Teams Workflows app home with the "AI Workflows" pill selected at the bottom — ten ready-to-use AI-powered templates are shown in a grid (Recap communications, Help me prepare for my day, Follow up on a message, Outline key takeaways, Summarise communications, Automate weekly reminders, Notify a channel when Planner tasks complete, Notify a channel when SharePoint changes, Forward emails, Prepare for my meetings tomorrow)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** Open **Teams → Apps → Workflows**. Note: This is a Frontier feature — your admin must enable it first.
 
@@ -315,6 +343,8 @@ Outlook mobile users can now **prepare for their meetings** using Copilot Chat i
 <p>💡 <strong>Why it matters:</strong> How many times have you walked into a meeting unprepared because you were running between calls? One tap in Outlook mobile and Copilot pulls together everything you need — who's attending, what was discussed last time, relevant files, and suggested talking points. It turns your commute into prep time.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-april-2026/17-outlook-mobile-meeting-prep.webp" alt="The Microsoft 365 Copilot mobile home screen with four suggestion pills along the bottom — Catch up, Plan ahead, Rewrite, and Summarise file. The "Plan ahead" pill is the entry point that brings together upcoming meetings, prep notes, and relevant documents for the day ahead." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **Who gets it:** Requires a Microsoft 365 Copilot licence.
 
 📖 [M365 Roadmap 516568](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516568)
@@ -337,6 +367,8 @@ An AI-generated **audio overview of the top 10 news items** is now available in 
 <p>💡 <strong>Why it matters:</strong> Keeping up with company news is important but rarely urgent enough to sit down and read. This feature turns your organisation's news into a podcast-like experience — listen to the top 10 items while walking, driving, or during downtime. It's a simple but powerful way to keep employees informed and engaged.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-april-2026/19-news-audio-briefing.webp" alt="Viva Connections on the left (desktop) and right (iPhone) side-by-side — the news section shows top organisational stories with cards for company announcements. The AI audio briefing plays the top items sequentially through the mobile Connections app on iOS and Android." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 📖 [M365 Roadmap 498233](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=498233)
 
 ## 20. AI in SharePoint (formerly 'Knowledge Agent')
@@ -351,6 +383,8 @@ This feature simplifies **SharePoint content management** and ensures content is
 <p>💡 <strong>Why it matters:</strong> Copilot is only as good as the data it has access to. If your SharePoint sites are full of outdated documents with missing metadata, Copilot's answers will be unreliable. AI in SharePoint acts as a content quality manager — it cleans up your knowledge base automatically so Copilot can give better answers. Think of it as preparing your house before the guests arrive.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-april-2026/20-ai-in-sharepoint.webp" alt="The SharePoint Copilot AI actions popup — Summarize this page, Listen to an audio overview, Create a list, Improve this site, Create a page, Open chat, See more agents — with an "Ask a question about this site" composer at the bottom. This is the in-context Copilot panel on a SharePoint site." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 📖 [M365 Roadmap 501451](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=501451)
 
 ## 21. Teams Channel Agent Updates
@@ -360,6 +394,8 @@ Channel Agents get several improvements including **dynamic, channel-aware welco
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Channel Agents are becoming the backbone of how teams interact in channels. These updates make them smarter and more flexible — welcome messages that adapt to the channel's purpose, better member management, and scheduling capabilities mean your channel agents can do more of the heavy lifting for team coordination.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-april-2026/21-teams-channel-agent.webp" alt="A Microsoft Teams channel conversation in the "Moondust" team — the People popup is open at the top right showing existing members plus an "Add members" link, and "Add agents and bots" is highlighted with a red box (the entry point for channel agents)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **Note:** Channel Agents are currently rolling out — availability may vary by tenant.
 
@@ -388,6 +424,8 @@ The new **Copilot settings landing experience** in the Microsoft 365 admin cente
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters for admins:</strong> Managing Copilot settings has been scattered across multiple admin center pages. This new view brings everything into one place with clear recommendations from Microsoft. Instead of wondering "have I configured everything correctly?", the Optimize view tells you what's set up, what's missing, and what Microsoft recommends — like a health check for your Copilot deployment.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-april-2026/23-admin-optimize-view.webp" alt="The Microsoft 365 admin center Copilot settings landing experience — Optimize tab selected, three progress cards visible (Deployment essentials 100% complete, Data security 25% complete with 1 of 4 actions done, User experiences 100% complete) and a Required / Recommended / Optional summary band beneath." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** Go to **Microsoft 365 admin center → Copilot → Settings**.
 
@@ -512,6 +550,8 @@ Microsoft Purview **Data Loss Prevention** now safeguards prompts containing sen
 <p>💡 <strong>Why it matters:</strong> One of the biggest concerns with AI adoption is users accidentally sharing sensitive data through prompts — credit card numbers, employee IDs, classified project names. Purview DLP now catches these in real time, blocking the response before any sensitive data leaks. This is a critical security control for regulated industries like finance, healthcare, and government.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/53-dlp-copilot-prompts.webp" alt="Microsoft Purview Data Loss Prevention console with the new "Safeguard sensitive data in Microsoft 365 Copilot interactions" policy template — top sensitive info types in Copilot interactions are visualised as a coloured bar, and a side panel lets admins pick Content contains rules, sensitive info types, and the Restrict Copilot from processing content action with toggles for User prompts and Web searches." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 📖 [M365 Roadmap 515945](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=515945)
 
 ## 40. Copilot Analytics Power BI Update with Power User Insights
@@ -539,6 +579,12 @@ Microsoft is expanding access to **M365 Copilot Chat Insights** in the Copilot D
 📖 [M365 Roadmap 501581](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=501581)
 
 ---
+
+---
+
+## 🖼️ Image Credits
+
+The in-product screenshots above are sourced with permission from **Shelly Blackley and Ashish Trivedi's** monthly *"What's new in M365 Copilot"* PowerPoint pack — the same one referenced in the intro. Shelly has full written permission for re-use across this series. Where a screenshot wasn't available in the April pack, an image was reused from May 2026 where the same feature appeared (Purview DLP for Copilot prompts). Some features in this month don't have a screenshot at all — that's deliberate. Under-representation is honest; misleading screenshots aren't.
 
 ## 📚 Official Microsoft Resources
 
