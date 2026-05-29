@@ -114,9 +114,15 @@ The first wave of out-of-the-box federated connectors built by Microsoft in part
 <p>💡 <strong>Why it matters:</strong> The old Copilot Connectors indexed data into Microsoft Graph — useful, but always one crawl behind. Federated connectors flip the model: Copilot asks the source system at query time, so when a treasury analyst asks for today's interest rate curve, or a sales manager checks an open pipeline, the answer reflects what the source system shows right now. And because it uses OAuth with your own identity, you only see what you're already permitted to see — perfect for sensitive scenarios in finance, healthcare and legal.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/01-federated-connectors-researcher.webp" alt="Microsoft 365 Copilot Researcher agent showing a sales-pipeline analysis. The agent surfaces structured insights pulled from a federated connector — open deals, last-activity dates, and pipeline status — with inline citations back to the source CRM record." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p><img src="/images/blog/copilot-may-2026/01-federated-connectors-sources-picker.webp" alt="Microsoft 365 Copilot Chat composer with the Sources picker open below the prompt box. The picker lists the available federated connectors — Canva, HubSpot, Linear, LSEG, Moody's, Notion and more — each with a Connect button to authenticate using your own credentials." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to find it:** In **Microsoft 365 Copilot Chat**, open **Sources** below the prompt box or in chat settings, browse the available connectors, and authenticate with your own credentials. Once connected, the source appears as **Connected** and you can query it immediately. Also available from the **Sources** menu inside the **Researcher** agent.
 
 **Admin controls:** Manage them in **Microsoft 365 admin center → Copilot → Connectors → Your connections**. Admins can enable/disable per tenant, stage rollout to specific Microsoft Entra ID groups, and use PowerShell to disable all default federated connectors and selectively re-enable them.
+
+<p><img src="/images/blog/copilot-may-2026/01-federated-connectors-moodys-connect.webp" alt="Authentication flow for connecting Microsoft 365 Copilot to the Moody's federated connector — the user signs in with their own Moody's credentials so subsequent queries respect their existing permissions in the source system." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **You can also build your own.** Custom federated connectors for internal and line-of-business systems can be built using the same MCP standard and deployed by admins.
 
@@ -134,6 +140,8 @@ OpenAI's **GPT-5.5 Instant** is now available in Microsoft 365 Copilot and Micro
 <p>💡 <strong>Why it matters:</strong> Most Copilot use is "everyday work" — summarise this email, fix this paragraph, explain this chart. GPT-5.5 Instant is tuned exactly for that flow — fewer "did you mean…" loops, more useful answers on the first try. Microsoft 365 Copilot licensed users get priority access, while users on free Copilot Chat get standard access. The same model is available to agent makers in Copilot Studio.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/02-gpt55-model-selector.webp" alt="Microsoft 365 Copilot Chat model selector open, showing GPT-5.5 Quick response listed under GPT as the new fast-model option for everyday work tasks." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to find it:** In **Copilot Chat**, open the **model selector** — GPT-5.5 Instant appears as **"GPT-5.5 Quick response"** under GPT. In **Copilot Studio**, it appears as **"GPT-5.5 Chat"** in early-release-cycle environments.
 
 📖 [Official announcement — GPT-5.5 Instant in M365 Copilot](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-gpt-5-5-instant-in-microsoft-365-copilot/4517084)
@@ -148,6 +156,8 @@ The **Microsoft 365 Copilot mobile app** gets a refreshed, chat-first design wit
 <p>💡 <strong>Why it matters:</strong> Most mobile Copilot use is one-handed and quick — between meetings, in transit, at the kitchen bench. A redesign that puts chat at the centre, makes citations easier to tap, and adds a proper voice visual changes the feel from "scaled-down desktop app" to "made for thumbs". It is the version of the mobile app that finally matches how people actually use it.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/03-mobile-app-refresh.webp" alt="Microsoft 365 Copilot mobile app showing the refreshed chat-first layout — cleaner navigation, text formatting controls in the prompt composer, and the new liquid glass styling for the voice-conversation visualiser." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to find it:** Open the **Microsoft 365 Copilot** app on iOS or Android — the new design rolls out in May.
 
 📖 [M365 Roadmap 559310](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559310)
@@ -161,6 +171,8 @@ Admins can now display their **organisation-approved logo** in the Microsoft 365
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters for admins:</strong> Users have been asking "is this the official, sanctioned version of Copilot?" since rollout began — particularly in environments where multiple AI tools are floating around. A visible, admin-approved branding cue inside Copilot Chat is a small detail that reassures users they're in the right tool, without needing another email or pop-up.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/04-branded-footer-approved-by.webp" alt="Microsoft 365 Copilot Chat footer showing an organisation-approved branding cue — the admin-uploaded logo with a fixed Approved by label, helping users confirm they're inside the work-managed Copilot environment rather than a consumer or shadow AI tool." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 📖 [M365 Roadmap 555852](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=555852)
 
@@ -178,6 +190,8 @@ Admins can now display their **organisation-approved logo** in the Microsoft 365
 <p>💡 <strong>Why it matters:</strong> The interesting part is the workflow, not the slides. You gather sources into a notebook — meeting content, SharePoint docs, web links — and then ask Copilot to turn that grounded knowledge into a deck. No copy-paste, no "let me find that document again". The notebook becomes the research workspace; the deck is the output. Same model applies to Word and Excel below.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/05-notebooks-wave-pages-chat.webp" alt="Copilot Notebook with a Copilot Page being edited through chat — describe the change in natural language and Copilot updates the page in place. Same wave of Notebooks updates also generates PowerPoint, Word and Excel from notebook content." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to find it:** Open a **Copilot Notebook** (Frontier preview) → ask Copilot to create a PowerPoint presentation → pick template, length, and focus.
 
 📖 [M365 Roadmap 558938](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=558938)
@@ -191,6 +205,8 @@ In **Copilot Notebooks**, generate **Word documents** — reports, summaries, pr
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Reports usually start with the painful first draft. Notebooks-to-Word skips that by drafting from material you have already curated — the references you trust, the notes you have taken — instead of from a cold prompt. The Word document arrives already grounded in your sources.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/06-notebooks-word-generation.webp" alt="Copilot Notebook dialog for generating a Word document from notebook content — select document type, main topic, audience and theme, then Copilot drafts a first version grounded in the references you've already curated." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** Inside a **Copilot Notebook**, ask Copilot to create a Word document and customise type, topic, audience and theme.
 
@@ -206,6 +222,8 @@ Same pattern — but for Excel. **Copilot Notebooks** can now generate **Excel s
 <p>💡 <strong>Why it matters:</strong> A lot of useful data lives in tables inside PDFs, web pages and meeting notes — but only as text. Notebooks-to-Excel pulls that structure out into a real workbook. Less "rebuild this table manually", more "open it in Excel and analyse".</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/07-notebooks-excel-generation.webp" alt="Generating an Excel spreadsheet from Copilot Notebook content — Copilot creates a structured workbook based on the notebook's references and notes, which then opens in Excel for editing." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 📖 [M365 Roadmap 559480](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559480)
 
 ## 8. Mind Maps in Copilot Notebooks
@@ -218,6 +236,8 @@ Same pattern — but for Excel. **Copilot Notebooks** can now generate **Excel s
 <p>💡 <strong>Why it matters:</strong> When a notebook starts holding 10 or 20 sources, the "what's actually in here?" question gets harder. Mind maps give you a visual scaffold of the territory — what the major themes are, how they connect, where to dig further. It is the way humans actually navigate knowledge.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/08-notebooks-mind-maps.webp" alt="Mind map view inside a Copilot Notebook — an interactive, grounded visual of the notebook's main topics and how they connect, with nodes you can expand to see Copilot-generated summaries and drill deeper via chat." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 📖 [M365 Roadmap 559029](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559029)
 
 ## 9. Web Link as a Reference in Copilot Notebooks
@@ -229,6 +249,8 @@ Paste a **URL as a reference in Copilot Notebooks** and Copilot uses that web li
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Until now, notebooks lived inside the walls of your tenant. Adding external web pages as first-class references closes the gap between internal context (the strategy doc) and external context (the regulator's announcement, the competitor's press release, the standards body's page). Both inform the same workspace.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/09-notebooks-web-link-reference.webp" alt="Adding a web URL as a reference in a Copilot Notebook — Copilot uses the page's content to inform notebook chat and outputs, expanding sources beyond internal tenant content." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** Add a reference to a notebook → paste a **URL** as the source.
 
@@ -268,6 +290,8 @@ Add **Microsoft Teams meetings as references in a Copilot Notebook** — connect
 <p>💡 <strong>Why it matters:</strong> The classroom-style "scribble + whiteboard photo + voice memo" workflow has been a pain point for years on mobile — usually scattered across three apps. Capturing all three in one OneNote session, then having Copilot turn them into a clean page, is the most natural mobile-Copilot use case yet.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/12-notebooks-multimodal-onenote.webp" alt="OneNote mobile app on iPhone showing a multimodal capture session inside a Copilot Notebook — audio transcription, images and typed notes captured in the same session, then turned by Copilot into a structured Copilot Page." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to find it:** Open **OneNote** on **iPhone** → start a multimodal capture session inside a Copilot Notebook.
 
 📖 [M365 Roadmap 559095](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559095)
@@ -286,6 +310,8 @@ Add **Microsoft Teams meetings as references in a Copilot Notebook** — connect
 <p>💡 <strong>Why it matters:</strong> Excel changes are notoriously irreversible — formulas chain, references break, a wrong "fix" can ripple through dependents. Plan mode is essentially "show me the plan before you apply it". You see what is about to change, what data is involved, and you can stop or adjust before any damage. This is what serious analysts have wanted since day one.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/13-excel-plan-mode.webp" alt="Copilot in Excel Plan mode — Copilot outlines a clear, step-by-step approach before anything in the workbook is updated, listing which data it will touch and which capabilities it intends to use so analysts can adjust the plan before edits apply." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to find it:** In **Excel** with Copilot open, select **Plan** from the menu above the prompt box.
 
 📖 [M365 Roadmap 560338](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=560338)
@@ -300,6 +326,8 @@ You can now use **Python when editing with Copilot in Excel** to take on more ad
 <p>💡 <strong>Why it matters:</strong> Excel's native formula language has limits — once you need real data transformation, pivot logic, statistical analysis or charting that goes beyond the built-ins, you used to leave Excel. Python in Copilot keeps you inside the workbook while picking up pandas-class capability for the heavy lifting. It is the biggest analyst-productivity upgrade Excel has shipped this year.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/14-excel-python.webp" alt="Copilot in Excel applying Python-powered techniques to a workbook — transforming data and generating a visualisation as part of the same edit, without leaving the spreadsheet." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to find it:** Inside Excel, ask Copilot to use Python in your prompt — or let Copilot invoke it when the task warrants it.
 
 📖 [Official April announcement — Plan mode + Python in Copilot for Excel](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935)
@@ -313,6 +341,8 @@ In **Copilot for PowerPoint** you can now choose which **image model** to use wh
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Different models have different strengths — some are sharper at photo-real, some better at illustration, some better at minimal vector-style work. Letting users pick puts decisions back where they belong: with the person who knows the brand and the audience. Combined with admin controls, this also means image generation can be aligned to internal style and governance expectations.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/15-powerpoint-image-models.webp" alt="Copilot in PowerPoint image-generation dialog with a model picker — choose between OpenAI's GPT-Image, Black Forest Labs' Flux, Microsoft's MAI-Image, or an Auto option that picks the best fit for the request." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** In **PowerPoint** when Copilot generates or edits an image, choose the image model from the options.
 
@@ -340,6 +370,8 @@ In **Copilot for PowerPoint** you can now choose which **image model** to use wh
 <p>💡 <strong>Why it matters:</strong> Decks that need an external context — a regulator's announcement, a competitor's product page, a standards body's update — usually start with copy-paste. Public web grounding skips that step. The slide gets the real context, and your deck stays up-to-date with the cited source.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/17-powerpoint-public-web-grounding.webp" alt="Copilot in PowerPoint grounding a new deck in a public web reference — Copilot pulls in the relevant context from the URL and generates an initial outline and slides ready to refine, with the cited source visible." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 📖 [Official April announcement — Public website grounding in PowerPoint](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935)
 
 ---
@@ -353,6 +385,8 @@ In **Copilot for PowerPoint** you can now choose which **image model** to use wh
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Different LLMs have noticeably different writing styles — Claude tends to produce longer-form, more deliberate prose; GPT models are tighter and more directive. For legal, policy and long-form work where voice matters, model choice is finally a real lever inside Word, not just inside Copilot Chat.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/18-word-claude-model.webp" alt="Copilot in Word model dropdown showing the Anthropic Claude option alongside the OpenAI models — same drafting and editing workflows, different model behind them." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** In **Word** when drafting or editing with Copilot, select **Claude** in the model dropdown (where enabled by your admin).
 
@@ -394,6 +428,8 @@ In **Outlook**, draft, edit and format emails **conversationally with Copilot** 
 <p>💡 <strong>Why it matters:</strong> One-shot generation is good for speed, bad for nuance. First-draft-in-canvas turns email drafting into a short conversation — Copilot writes, asks a clarifying question, adjusts in place. Every change stays visible in Outlook, no copy-paste or formatting surprises.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/21-outlook-first-draft-canvas.webp" alt="Copilot in new Outlook writing a first draft directly in the email canvas — Copilot iterates with the user via clarifying questions about goal, audience, and tone, with every change visible in place." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to find it:** Start a new email in **new Outlook** → use **Copilot** to draft — the draft appears directly in the canvas with iteration prompts.
 
 📖 [Official April announcement — First draft in canvas in Outlook](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935)
@@ -424,6 +460,8 @@ The **Copilot side pane in Outlook Calendar** (new Outlook) gets an **account dr
 <p>💡 <strong>Why it matters:</strong> A surprising amount of work-day friction is interruption from calls you would not have answered if you knew who they were. Call delegation turns "phone rings during deep work" into "Copilot tells you who is calling, what they want, and offers to book a follow-up". For sales, customer success and execs, this is the most concrete way Copilot starts feeling like a real assistant.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/23-teams-call-delegation.webp" alt="Microsoft Teams call settings showing Copilot call delegation toggle — Copilot answers incoming calls on the user's behalf, gathers context from callers, and can book a follow-up appointment via Microsoft Bookings." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to enable:** Open **Microsoft Teams → Settings → Calls** and turn on **Copilot call delegation**.
 
 📖 [Official April announcement — Call delegation and consecutive interpretation](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935)
@@ -438,6 +476,8 @@ The **Copilot side pane in Outlook Calendar** (new Outlook) gets an **account dr
 <p>💡 <strong>Why it matters:</strong> Real-time simultaneous translation works well in one-to-many scenarios — a keynote with translation in your ear. But two-way back-and-forth meetings work better with turn-based interpretation, the way human interpreters actually do it. This is Teams catching up to the way bilingual meetings should feel.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/24-teams-consecutive-interpretation.webp" alt="Microsoft Teams Interpreter showing the new consecutive interpretation mode — translation begins after each speaker finishes, creating a turn-based flow, with Interpreter visible on the meeting stage for everyone." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 📖 [M365 Roadmap 557180](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=557180)
 
 ## 25. Share Recap Access in Microsoft Teams
@@ -450,6 +490,8 @@ Meeting organisers can now **share recap access** — granting people who were n
 <p>💡 <strong>Why it matters:</strong> The most common request after any important meeting is "can you send me the notes?". Sharing recap access turns that one-off favour into a default capability — the right people get the right access without a manual copy-paste of the summary into an email.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/25-teams-share-recap.webp" alt="Microsoft Teams Share this recap dialog — the meeting organiser can specify people who weren't in the meeting, and grant them access to the recording, transcript, AI summary and notes at the moment the recap link is shared." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 📖 [M365 Roadmap 559606](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559606)
 
 ## 26. Delete Meeting-Generated Content in Recap
@@ -461,6 +503,8 @@ Organisers can now **delete meeting-generated content** (recaps, transcripts, AI
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters for admins:</strong> "Can we delete that recap?" used to be a service ticket. Giving organisers direct control over their own meeting-generated content reduces the admin burden and gives users the right level of agency over content created from their meetings — important for sensitive discussions like HR, M&amp;A, or performance reviews.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/26-teams-delete-recap-content.webp" alt="Microsoft Teams meeting recap with the new Delete recap content option in the More (...) menu — organisers can permanently delete recordings, transcripts, AI summaries and notes from the recap. Shared files remain in their original storage locations." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 📖 [M365 Roadmap 557170](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=557170)
 
@@ -489,6 +533,8 @@ The **Microsoft 365 Copilot mobile app** now lets you **capture voice notes** di
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> The new tab is the most-used surface in any browser. Centring it around a Copilot-aware search/chat box (rather than a plain search bar) nudges users towards plain-language asks and brings work content to the front of the browser instead of buried in tabs.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/28-edge-copilot-new-tab-page.webp" alt="Microsoft Edge for Business new tab page — a single combined Copilot search/chat composer at the top, with Copilot-suggested action tiles, curated work content cards, and personalised news/activities filling the page." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 📖 [M365 Roadmap 558256](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=558256)
 
@@ -528,6 +574,8 @@ In **Microsoft Edge v.148**, when **Purview DLP** blocks a user from sending a s
 <p>💡 <strong>Why it matters for admins:</strong> Internal agent distribution has been the missing piece — anyone could build, but getting an agent into real users' hands required manual sharing. A proper submit-and-review flow turns that into a managed pipeline: makers build, admins approve, users discover and install. Same model as an internal app store, applied to agents.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/31-submit-agents-agent-store.webp" alt="Agent Builder dialog for submitting a custom agent to the organisation's Agent Store catalog for administrator review and approval — once approved, the agent appears under Built by your org." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to find it:** In **Agent Builder**, submit your agent for review → admins approve via the **Agent Store** catalog in the M365 admin center.
 
 📖 [M365 Roadmap 557173](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=557173)
@@ -536,11 +584,13 @@ In **Microsoft Edge v.148**, when **Purview DLP** blocks a user from sending a s
 
 *For: IT admins · Launched in May*
 
-Admins can now **define rules to automate agent lifecycle management**. Examples from the Microsoft 365 admin centre include: **auto-block risky agents**, **auto-delete inactive agents**, and **auto-reassign ownerless agents to the original owner's manager** — keeping the agent estate tidy without manual auditing.
+Admins can now **bulk-manage the Copilot agent estate** from the Microsoft 365 admin centre — **bulk-install** Microsoft-built (first-party) agents across users, **bulk-reassign ownerless agents** to managers for proper governance, and apply on-demand lifecycle cleanup actions without per-agent clicking. Rule-based automation (auto-block risky agents, auto-delete inactive agents, auto-reassign based on conditions) is on the roadmap as a phased follow-up — bulk on-demand is GA today.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters for admins:</strong> Agent sprawl is real. Organisations that have been building agents for a year now have dozens of them, and a chunk of those are unused, risky, or have no clear owner. Lifecycle rules turn cleanup from "manual audit project" into "policy-driven housekeeping" — much easier to keep clean over time.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/32-agent-lifecycle-bulk-reassign.webp" alt="Microsoft 365 admin center bulk agent lifecycle actions — admins can bulk-reassign ownerless Copilot agents to their original owner's manager, install first-party agents to users en masse, and apply lifecycle policies across the agent estate. (Rule-based automation is shipping in phases; bulk on-demand is GA now.)" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 📖 [M365 Roadmap 481518](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=481518)
 
@@ -606,6 +656,8 @@ The **Copilot Dashboard Adoption tab** now includes **Power user insights** — 
 <p>💡 <strong>Why it matters for admins:</strong> Generic adoption numbers don't tell you what to do next. Knowing who your power users are turns them into internal champions — their patterns become training material. Knowing who your novices are turns them into a targeted enablement cohort. The same total-licence count, but a much sharper picture of who needs what.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/37-copilot-dashboard-power-users.webp" alt="Updated Adoption tab in the Copilot Dashboard with the new Power user insights view — users classified as power, habitual, novice, or non-Copilot based on usage frequency and consistency, so enablement teams can target the right cohorts." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 **How to find it:** Go to **Viva Insights → Copilot Dashboard → Adoption** tab.
 
 📖 [M365 Roadmap 560705](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=560705)
@@ -620,6 +672,8 @@ Admins can now **export by day** in the **Copilot Dashboard** — download de-id
 <p>💡 <strong>Why it matters for admins:</strong> Monthly aggregates hide trends. Day-level data lets you spot the start of a usage drop, the impact of a training campaign, or the difference between people who tried Copilot once and people who use it daily — which directly informs licence-allocation and intervention decisions.</p>
 </blockquote>
 
+<p><img src="/images/blog/copilot-may-2026/38-copilot-dashboard-export-by-day.webp" alt="Copilot Dashboard export-by-day option — admins download de-identified Copilot usage metrics aggregated by user and day for the most recent 28 days, for faster data-driven licence-assignment and intervention decisions." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 📖 [M365 Roadmap 547749](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=547749)
 
 ## 39. Microsoft 365 Admin Center — Prepaid Capacity Pack Billing
@@ -631,6 +685,8 @@ The **Microsoft 365 admin center** now supports using **prepaid capacity pack cr
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters for admins:</strong> Pay-as-you-go billing is great for flexibility, scary for finance teams that want fixed spend. Forcing covered users to draw only from prepaid credits gives finance a hard ceiling — no surprise invoices, no overages — while still letting consumption-based features work as intended.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/39-prepaid-capacity-pack-policies.webp" alt="Microsoft 365 admin center Billing view showing prepaid capacity pack policies listed by department — admins can ensure users covered by a policy draw exclusively from available prepaid credits, keeping spend predictable." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** In **Microsoft 365 admin center → Billing**, create a **capacity pack policy**.
 
@@ -647,6 +703,19 @@ A **new Microsoft Purview Data Security Posture Management (DSPM)** experience �
 </blockquote>
 
 📖 [M365 Roadmap 532728](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=532728)
+
+
+## Image credits
+
+Screenshots embedded in this article are sourced from Microsoft's own public publications, with thanks to Microsoft's Tech Community blog team and the public Message Center archive:
+
+- Most in-product UI screenshots — [What's New in Microsoft 365 Copilot · April 2026 recap](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935) (Microsoft 365 Copilot Blog, 30 April 2026)
+- Federated MCP Connectors (#1) — [Federated Copilot connectors -- bringing real-time enterprise data within Microsoft 365 Copilot](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/federated-copilot-connectors---bringing-real-time-enterprise-data-within-microso/4515993) (Microsoft 365 Copilot Blog, 5 May 2026)
+- GPT-5.5 Quick response in the model selector (#2) -- [Available today: GPT-5.5 Instant in Microsoft 365 Copilot](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-gpt-5-5-instant-in-microsoft-365-copilot/4517084) (Microsoft 365 Copilot Blog, 7 May 2026)
+- Microsoft Edge Copilot New Tab Page (#28) — [New in Edge for Business: AI for work, safe from day one](https://blogs.windows.com/msedgedev/2026/05/20/new-in-edge-for-business-ai-for-work-safe-from-day-one/) (Microsoft Edge Blog, 20 May 2026)
+- Branded footer (#4), Excel from Notebooks (#7), Share recap access (#25), Delete recap content (#26), Bulk agent lifecycle (#32) — Microsoft 365 Message Center posts ([MC1238432](https://mc.merill.net/message/MC1238432), [MC1262567](https://mc.merill.net/message/MC1262567), [MC1289724](https://mc.merill.net/message/MC1289724), [MC1289725](https://mc.merill.net/message/MC1289725), [MC1308854](https://mc.merill.net/message/MC1308854)). Mirrored via [merill/mc](https://github.com/merill/mc) (open-source archive of public Microsoft Graph Service Announcements).
+
+Features that shipped only in May (14 of the 40) do not have a public Microsoft screenshot yet -- when Microsoft publishes the May recap, this article will be refreshed.
 
 ---
 
