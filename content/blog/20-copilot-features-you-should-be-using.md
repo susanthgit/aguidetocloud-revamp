@@ -6,7 +6,7 @@ lastmod: 2026-05-08
 card_tag: "Copilot"
 tag_class: "ai"
 images: ["images/og/blog/20-copilot-features-you-should-be-using.jpg"]
-og_headline: "22 M365 Copilot Features"
+og_headline: "M365 Copilot Features You're Not Using"
 og_glyph: "list"
 faq:
   - question: "Do I need a special licence for these M365 Copilot features?"
