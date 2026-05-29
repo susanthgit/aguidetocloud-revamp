@@ -5,14 +5,23 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 29 May 2026 17:42:55 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 May 2026 20:37:19 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Power BI] Some users may experience errors when performing actions in Microsoft Fabric Notebooks</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1326495</link>
+      <description>[Power BI] Users may experience errors when performing actions in Microsoft Fabric Notebooks</description>
+      <category>Power BI</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">PB1326495</guid>
+      <pubDate>Fri, 29 May 2026 19:37:36 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to use Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1326225</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to use Microsoft 365 Copilot.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1326225</guid>
       <pubDate>Fri, 29 May 2026 15:26:33 +0000</pubDate>
     </item>
@@ -449,15 +458,6 @@ The issue initially began with impact to a subset of customers in a single Avail
       <category>serviceRestored</category>
       <guid isPermaLink="false">WP1290574</guid>
       <pubDate>Fri, 24 Apr 2026 16:14:53 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Purview] Some users in East US may experience latency in Microsoft Purview Data Loss Prevention</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1290422</link>
-      <description>[Microsoft Purview] Users may have experienced latency in Microsoft Purview Data Loss Prevention.</description>
-      <category>Microsoft Purview</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MP1290422</guid>
-      <pubDate>Fri, 24 Apr 2026 15:04:41 +0000</pubDate>
     </item>
   </channel>
 </rss>
