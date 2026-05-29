@@ -28,7 +28,9 @@ layout: "notebook"
 stamp: "monthly recap"
 intro_note: "← what changed this month, in plain English"
 founder_note: |
-  Every month I read every Message Center post, every blog entry, every Tech Community thread, and condense it into the version I wish someone had handed me. If 40 things changed and only three matter for you, I would rather you know which three.
+  Every month I read every Message Center post, every blog entry, every Tech Community thread, and condense it into the version I wish someone had handed me. If 53 things changed and only three matter for you, I would rather you know which three.
+
+  Until May 2026 I had a head start. My colleague [Shelly Blackley](https://www.linkedin.com/in/shelly-blackley-3636a57) quietly maintained the monthly "What's new in M365 Copilot" pack inside Microsoft, and her work was the foundation I built each recap on. May was her last month with us — from here I'm reading every Message Center post on my own. I'll miss her dearly and wish her every success in her next chapter outside Microsoft.
 ---
 
 May 2026 has a lot of practical Copilot changes — **53 updates** focused around connectors, notebooks, Excel and mobile. **Federated connectors built on MCP** bring live, real-time data into Copilot from partners like Canva, HubSpot, Linear, LSEG, Moody's and Notion. **GPT-5.5 Instant** lands in Copilot Chat. **Copilot Notebooks** picks up generation for PowerPoint, Word and Excel (in Frontier preview). **Plan mode in Excel** and **Python in Copilot for Excel** finally make spreadsheet edits transparent before they apply. And the mobile app gets a chat-first redesign with liquid glass styling.

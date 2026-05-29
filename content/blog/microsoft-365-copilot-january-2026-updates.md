@@ -27,6 +27,8 @@ stamp: "monthly recap"
 intro_note: "← what changed this month, in plain English"
 founder_note: |
   Every month I read every Message Center post, every blog entry, every Tech Community thread, and condense it into the version I wish someone had handed me. If 30 things changed and only three matter for you, I would rather you know which three.
+
+  Until May 2026 I had a head start. My colleague [Shelly Blackley](https://www.linkedin.com/in/shelly-blackley-3636a57) quietly maintained the monthly "What's new in M365 Copilot" pack inside Microsoft, and her work was the foundation I built each recap on. May was her last month with us — from here I'm reading every Message Center post on my own. I'll miss her dearly and wish her every success in her next chapter outside Microsoft.
 ---
 
 January 2026 opens with **30 Microsoft 365 Copilot updates** — from **Writing Coaching in Word** and a new **Model Selector**, to **Agent Mode in Excel**, richer **video creation**, smarter **Copilot Search**, and better sharing across notebooks and pages. Most features are available now, while a second wave is currently rolling out.

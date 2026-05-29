@@ -27,6 +27,8 @@ stamp: "monthly recap"
 intro_note: "← what changed this month, in plain English"
 founder_note: |
   Every month I read every Message Center post, every blog entry, every Tech Community thread, and condense it into the version I wish someone had handed me. If 36 things changed and only three matter for you, I would rather you know which three.
+
+  Until May 2026 I had a head start. My colleague [Shelly Blackley](https://www.linkedin.com/in/shelly-blackley-3636a57) quietly maintained the monthly "What's new in M365 Copilot" pack inside Microsoft, and her work was the foundation I built each recap on. May was her last month with us — from here I'm reading every Message Center post on my own. I'll miss her dearly and wish her every success in her next chapter outside Microsoft.
 ---
 
 March 2026 is a huge month for Microsoft 365 Copilot with **36 updates** — from **Edit with Copilot in Excel** for Copilot Chat users, to **meeting scheduling**, **PowerPoint editing**, **voice and memory improvements**, **new connectors**, and **admin controls**. Some features are available now, while others are still rolling out.
