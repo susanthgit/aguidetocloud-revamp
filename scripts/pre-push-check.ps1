@@ -11,8 +11,12 @@
   3. No stray template markers (ZgotmplZ, unclosed {{)
   4. Blog SEO + OG image guardrail (title len, desc len, og_headline, og_glyph,
      OG image existence) — only fires when content/blog/ changes detected
-  5. Parallel-safe staging guard (Lesson 61): only files YOU modified are staged
-  6. Bi-mode contrast sanity check (advisory — Lesson 63): flags new light-mode failures
+  5. Blog HTML hygiene guardrail (img alt well-formedness, src reachability,
+     hardcoded counts in og_headline, Quick Jump anchor presence) — only fires
+     when content/blog/ changes detected. Added 2026-05-29 after the 28-broken-
+     alt-attribute incident; see incident-log.md.
+  6. Parallel-safe staging guard (Lesson 61): only files YOU modified are staged
+  7. Bi-mode contrast sanity check (advisory — Lesson 63): flags new light-mode failures
 
   Exit code 0 = safe to push. Exit code 1 = BLOCKED.
 #>
@@ -31,7 +35,7 @@ $failed = $false
 Write-Host "`n🔍 Pre-push checks..." -ForegroundColor Cyan
 
 # ─── CHECK 1: cache_version bump ───
-Write-Host "`n[1/4] Checking cache_version..." -NoNewline
+Write-Host "`n[1/5] Checking cache_version..." -NoNewline
 
 # Get files changed since origin/main (what would be pushed)
 $changedFiles = git diff --name-only origin/main HEAD 2>$null
@@ -66,7 +70,7 @@ if ($cssJsChanged -and -not $configChanged) {
 
 # ─── CHECK 2: Hugo build ───
 if (-not $SkipBuild) {
-    Write-Host "`n[2/4] Hugo build..." -NoNewline
+    Write-Host "`n[2/5] Hugo build..." -NoNewline
     $buildOutput = & hugo --quiet 2>&1
     if ($LASTEXITCODE -ne 0) {
         Write-Host " ❌ BLOCKED" -ForegroundColor Red
@@ -77,11 +81,11 @@ if (-not $SkipBuild) {
         Write-Host " ✅ Build succeeded" -ForegroundColor Green
     }
 } else {
-    Write-Host "`n[2/4] Hugo build... ⏭ skipped (-SkipBuild)" -ForegroundColor DarkGray
+    Write-Host "`n[2/5] Hugo build... ⏭ skipped (-SkipBuild)" -ForegroundColor DarkGray
 }
 
 # ─── CHECK 3: Template markers ───
-Write-Host "`n[3/4] Checking for template errors in output..." -NoNewline
+Write-Host "`n[3/5] Checking for template errors in output..." -NoNewline
 $publicDir = Join-Path $repoRoot "public"
 if (Test-Path $publicDir) {
     $badFiles = Get-ChildItem -Path $publicDir -Recurse -Include "*.html" |
@@ -100,7 +104,7 @@ if (Test-Path $publicDir) {
 }
 
 # ─── CHECK 4: Blog SEO + OG image guardrail (content/blog/ changes only) ───
-Write-Host "`n[4/4] Blog SEO + OG image..." -NoNewline
+Write-Host "`n[4/5] Blog SEO + OG image..." -NoNewline
 $blogChanged = $changedFiles | Where-Object { $_ -match '^content/blog/.*\.md$' }
 if (-not $blogChanged) {
     Write-Host " ⏭ No blog content changes (skip)" -ForegroundColor DarkGray
@@ -118,6 +122,30 @@ if (-not $blogChanged) {
         }
     } else {
         Write-Host " ⏭ check-seo-lengths.ps1 not found" -ForegroundColor DarkGray
+    }
+}
+
+# ─── CHECK 5: Blog HTML hygiene (content/blog/ changes only) ───
+# Added 2026-05-29 after a 28-broken-alt-attribute incident slipped past Hugo build.
+# Hugo's HTML minifier silently "fixes" alt="A "thing"" by swapping to single quotes,
+# which masks the source bug. This check parses the source markdown directly.
+# Also catches hardcoded counts in og_headline (decay bug) and broken Quick Jump anchors.
+Write-Host "`n[5/5] Blog HTML hygiene..." -NoNewline
+if (-not $blogChanged) {
+    Write-Host " ⏭ No blog content changes (skip)" -ForegroundColor DarkGray
+} else {
+    $blogQaScript = Join-Path $PSScriptRoot "check-blog-html.mjs"
+    if (Test-Path $blogQaScript) {
+        $blogQaOutput = & node $blogQaScript 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host " ❌ BLOCKED" -ForegroundColor Red
+            $blogQaOutput | Where-Object { $_ -match "ERRORS|content/blog|truncated alt|remainder leaking|Fix:|Use evergreen" } | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+            $failed = $true
+        } else {
+            Write-Host " ✅ img alt + src + og_headline + anchors — all clean" -ForegroundColor Green
+        }
+    } else {
+        Write-Host " ⏭ check-blog-html.mjs not found" -ForegroundColor DarkGray
     }
 }
 
