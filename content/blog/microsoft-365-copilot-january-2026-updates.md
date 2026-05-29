@@ -31,8 +31,6 @@ founder_note: |
 
 January 2026 opens with **30 Microsoft 365 Copilot updates** — from **Writing Coaching in Word** and a new **Model Selector**, to **Agent Mode in Excel**, richer **video creation**, smarter **Copilot Search**, and better sharing across notebooks and pages. Most features are available now, while a second wave is currently rolling out.
 
-A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard work and persistence continue to power this monthly update series.
-
 📅 **2026 monthly recaps:** January (you are here) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · [May](/blog/microsoft-365-copilot-may-2026-updates/)
 
 ---
@@ -191,7 +189,7 @@ When Copilot recognises that you are drafting an email, it can now show an **Edi
 <p>💡 <strong>Why it matters:</strong> This closes the gap between “nice draft” and “ready to send”. It is the difference between getting advice from Copilot and having the email already sitting in Outlook waiting for your final review.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-january-2026/07-edit-in-outlook.webp" alt="The bottom of a Copilot Chat email draft — sign-off &quot;Thank you once again for your efforts and contributions. Best regards, Shelly&quot; followed by a Sources pill and a prominent &quot;Edit in Outlook&quot; button that opens a pre-filled draft in Outlook with subject, message and recipients ready." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-january-2026/07-edit-in-outlook.webp" alt="The bottom of a Copilot Chat email draft with a thank-you sign-off followed by a Sources pill and a prominent &quot;Edit in Outlook&quot; button that opens a pre-filled draft in Outlook with subject, message and recipients ready." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** Ask **Copilot Chat** to draft an email and look for the **Edit in Outlook** button.
 
@@ -550,10 +548,6 @@ Copilot is updating **memory and personalisation** so it can use **chat history*
 ---
 
 ---
-
-## 🖼️ Image Credits
-
-The in-product screenshots above are sourced with permission from **Shelly Blackley and Ashish Trivedi's** monthly *"What's new in M365 Copilot"* PowerPoint pack — the same one referenced in the intro. Shelly has full written permission for re-use across this series. Where a feature is text-only above, no clean in-product screenshot was available in the January pack — under-representation is honest; misleading screenshots aren't.
 
 ## 📚 Official Microsoft Resources
 

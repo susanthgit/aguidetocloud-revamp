@@ -33,8 +33,6 @@ founder_note: |
 
 May 2026 has a lot of practical Copilot changes — **53 updates** focused around connectors, notebooks, Excel and mobile. **Federated connectors built on MCP** bring live, real-time data into Copilot from partners like Canva, HubSpot, Linear, LSEG, Moody's and Notion. **GPT-5.5 Instant** lands in Copilot Chat. **Copilot Notebooks** picks up generation for PowerPoint, Word and Excel (in Frontier preview). **Plan mode in Excel** and **Python in Copilot for Excel** finally make spreadsheet edits transparent before they apply. And the mobile app gets a chat-first redesign with liquid glass styling.
 
-A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard work and persistence continue to power this monthly update series.
-
 📅 **2026 monthly recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · May (you are here)
 
 ---
@@ -902,7 +900,6 @@ Screenshots embedded in this article are sourced from Microsoft's own public pub
 - GPT-5.5 Quick response in the model selector (#2) -- [Available today: GPT-5.5 Instant in Microsoft 365 Copilot](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-gpt-5-5-instant-in-microsoft-365-copilot/4517084) (Microsoft 365 Copilot Blog, 7 May 2026)
 - Microsoft Edge Copilot New Tab Page (#28) — [New in Edge for Business: AI for work, safe from day one](https://blogs.windows.com/msedgedev/2026/05/20/new-in-edge-for-business-ai-for-work-safe-from-day-one/) (Microsoft Edge Blog, 20 May 2026)
 - Branded footer (#4), Excel from Notebooks (#7), Share recap access (#25), Delete recap content (#26), Bulk agent lifecycle (#32) — Microsoft 365 Message Center posts ([MC1238432](https://mc.merill.net/message/MC1238432), [MC1262567](https://mc.merill.net/message/MC1262567), [MC1289724](https://mc.merill.net/message/MC1289724), [MC1289725](https://mc.merill.net/message/MC1289725), [MC1308854](https://mc.merill.net/message/MC1308854)). Mirrored via [merill/mc](https://github.com/merill/mc) (open-source archive of public Microsoft Graph Service Announcements).
-- **Sections #41–#53** — product UI screenshots used with kind permission from **Shelly Blackley**'s May 2026 Copilot Solution Engineer pack. Shelly maintained the monthly "What's new in M365 Copilot" customer-ready deck inside Microsoft for two years; her final month was May 2026. Thank you, Shelly — for everything.
 
 Features that shipped only in May (19 of the 53) do not have a public Microsoft screenshot yet -- when Microsoft publishes the May recap, this article will be refreshed.
 

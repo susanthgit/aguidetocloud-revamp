@@ -31,8 +31,6 @@ founder_note: |
 
 February 2026 is a huge month for Microsoft 365 Copilot with **45 updates** — from **Agent Mode in Excel** reaching Copilot Chat users without a paid licence, to **Copilot Pages getting much smarter**, **Outlook expanding to full inbox and calendar grounding**, and **eight new Copilot Connectors**. Some features are available now, while others are currently rolling out.
 
-A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard work and persistence continue to power this monthly update series.
-
 📅 **2026 monthly recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · February (you are here) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · [May](/blog/microsoft-365-copilot-may-2026-updates/)
 
 ---
@@ -687,10 +685,6 @@ This month brings **eight new Copilot Connectors**, making Copilot more useful a
 **How to find it:** Admins deploy connectors from the **Microsoft 365 admin center → Settings → Copilot → Connectors**. Once deployed, users can ask Copilot questions against the connected systems.
 
 ---
-
-## 🖼️ Image Credits
-
-The in-product screenshots above are sourced with permission from **Shelly Blackley and Ashish Trivedi's** monthly *"What's new in M365 Copilot"* PowerPoint pack — the same one referenced in the intro. Shelly has full written permission for re-use across this series. Where a feature is text-only above, no clean in-product screenshot was available in the February pack — under-representation is honest; misleading screenshots aren't.
 
 ## 📚 Official Microsoft Resources
 

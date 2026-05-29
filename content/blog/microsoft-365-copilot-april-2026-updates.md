@@ -33,8 +33,6 @@ founder_note: |
 
 April 2026 is a massive month for Microsoft 365 Copilot with **41 updates** — including three brand-new productivity agents, a wake word for hands-free access, MCP connector support for admins, and a wave of new third-party Copilot Connectors. Some features first appeared in earlier months and are now broadly available or expanded.
 
-A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard work and persistence continue to power this monthly update series.
-
 📅 **2026 monthly recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · April (you are here) · [May](/blog/microsoft-365-copilot-may-2026-updates/)
 
 ---
@@ -581,10 +579,6 @@ Microsoft is expanding access to **M365 Copilot Chat Insights** in the Copilot D
 ---
 
 ---
-
-## 🖼️ Image Credits
-
-The in-product screenshots above are sourced with permission from **Shelly Blackley and Ashish Trivedi's** monthly *"What's new in M365 Copilot"* PowerPoint pack — the same one referenced in the intro. Shelly has full written permission for re-use across this series. Where a screenshot wasn't available in the April pack, an image was reused from May 2026 where the same feature appeared (Purview DLP for Copilot prompts). Some features in this month don't have a screenshot at all — that's deliberate. Under-representation is honest; misleading screenshots aren't.
 
 ## 📚 Official Microsoft Resources
 

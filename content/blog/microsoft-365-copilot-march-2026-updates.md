@@ -31,8 +31,6 @@ founder_note: |
 
 March 2026 is a huge month for Microsoft 365 Copilot with **36 updates** — from **Edit with Copilot in Excel** for Copilot Chat users, to **meeting scheduling**, **PowerPoint editing**, **voice and memory improvements**, **new connectors**, and **admin controls**. Some features are available now, while others are still rolling out.
 
-A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard work and persistence continue to power this monthly update series.
-
 📅 **2026 monthly recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · March (you are here) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · [May](/blog/microsoft-365-copilot-may-2026-updates/)
 
 ---
@@ -125,7 +123,7 @@ If your files are synced with OneDrive on Mac, you can now **right-click a file 
 <p>💡 <strong>Why it matters:</strong> This is the kind of workflow improvement people notice immediately. When Copilot comes to where your files already live, you save those tiny context switches that add up all day long.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-march-2026/03-onedrive-macos-finder.webp" alt="macOS Finder window in a Shelly OneDrive folder with a right-click context menu open showing the new 'Ask Copilot' and 'Ask Microsoft 365 Copilot' entries among standard Finder actions" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-march-2026/03-onedrive-macos-finder.webp" alt="macOS Finder window in a user's OneDrive folder with a right-click context menu open showing the new 'Ask Copilot' and 'Ask Microsoft 365 Copilot' entries among standard Finder actions" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** In **macOS Finder**, right-click a synced **OneDrive file** and look for the Copilot option in the context menu.
 
@@ -576,10 +574,6 @@ Microsoft is introducing a **Teams Organisation Evaluation Score** that helps IT
 📖 [M365 Roadmap 532720](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=532720)
 
 ---
-
-## 🖼️ Image Credits
-
-The in-product screenshots above are sourced with permission from **Shelly Blackley and Ashish Trivedi's** monthly *"What's new in M365 Copilot"* PowerPoint pack — the same one referenced in the intro. Shelly has full written permission for re-use across this series. Where a feature is text-only above, no clean in-product screenshot was available in the March pack — under-representation is honest; misleading screenshots aren't.
 
 ## 📚 Official Microsoft Resources
 
