@@ -5,16 +5,36 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 29 May 2026 20:37:19 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 May 2026 23:40:11 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Power BI] Some users may experience errors when performing actions in Microsoft Fabric Notebooks</title>
+      <title>[Azure] Azure incident affecting West US 2</title>
+      <link>https://www.aguidetocloud.com/service-health/#AZ-20260501-2</link>
+      <description>[Azure] Between 04:24 UTC and 20:18 UTC on 29 May 2026, a service disruption affected multiple Azure services in the West US 2 region. Impacted customers experienced service connectivity failures, timeouts, and elevated error rates when attempting to access resources in the region. Additionally, customers may have experienced an inability to deploy new resources or scale existing workloads, intermittent availability where some requests succeeded while others failed depending on which infrastructure node</description>
+      <category>Azure</category>
+      <category>postIncidentReviewPublished</category>
+      <guid isPermaLink="false">AZ-20260501-2</guid>
+      <pubDate>Fri, 29 May 2026 20:18:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Power BI] Users may be unable to initiate Spark sessions or open and perform actions in Microsoft Fabric Notebooks</title>
       <link>https://www.aguidetocloud.com/service-health/#PB1326495</link>
-      <description>[Power BI] Users may experience errors when performing actions in Microsoft Fabric Notebooks</description>
+      <description>[Power BI] Users may be unable to initiate Spark sessions or open and perform actions in Microsoft Fabric Notebooks.</description>
       <category>Power BI</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">PB1326495</guid>
       <pubDate>Fri, 29 May 2026 19:37:36 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Azure] Azure incident affecting West US 2</title>
+      <link>https://www.aguidetocloud.com/service-health/#AZ-20260501-1</link>
+      <description>[Azure] Between 09:39 UTC and 17:05 UTC on 29 May 2026, a platform issue resulted in impact to the Azure OpenAI service across multiple regions. Customers may have experienced degraded service health where requests intermittently failed, returned HTTP 5XX errors, or experienced increased latency.
+What do we know so far?
+We detected this issue through our automated monitoring systems after observing a drop in call success rates. Our investigation found that a backend service upon which Azure OpenAI depen</description>
+      <category>Azure</category>
+      <category>postIncidentReviewPublished</category>
+      <guid isPermaLink="false">AZ-20260501-1</guid>
+      <pubDate>Fri, 29 May 2026 17:05:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to use Microsoft 365 Copilot</title>
@@ -438,26 +458,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1314992</guid>
       <pubDate>Sun, 26 Apr 2026 19:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Azure] Azure incident affecting East US</title>
-      <link>https://www.aguidetocloud.com/service-health/#AZ-5GP8-W0G</link>
-      <description>[Azure] Between 11:30 and 23:22 UTC on 24 April 2026, customers may have experienced failures or delays when attempting to provision, scale, or update resources in East US.
-Beyond this impact to service management, a small subset of customers may have encountered intermittent connectivity issues for newly-provisioned workloads including Virtual Machines and Azure Virtual Desktop sessions. 
-The issue initially began with impact to a subset of customers in a single Availability Zone (physical AZ-01) but a</description>
-      <category>Azure</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">AZ-5GP8-W0G</guid>
-      <pubDate>Fri, 24 Apr 2026 23:22:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Windows 365] Users may be unable to connect to their Windows 365 Cloud PCs that are hosted in the East US region</title>
-      <link>https://www.aguidetocloud.com/service-health/#WP1290574</link>
-      <description>[Windows 365] Users may be unable to connect to their Cloud PCs that are hosted in the East US region.</description>
-      <category>Windows 365</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">WP1290574</guid>
-      <pubDate>Fri, 24 Apr 2026 16:14:53 +0000</pubDate>
     </item>
   </channel>
 </rss>
