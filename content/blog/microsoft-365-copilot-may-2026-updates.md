@@ -1,13 +1,13 @@
 ---
-title: "Microsoft 365 Copilot May 2026 Updates — 40 New Features"
-description: "All 40 Microsoft 365 Copilot updates for May 2026 — federated MCP connectors, GPT-5.5 Instant, Plan mode in Excel, Copilot Notebooks wave, mobile redesign."
+title: "Microsoft 365 Copilot May 2026 Updates — 53 New Features"
+description: "All 53 Microsoft 365 Copilot updates for May 2026 — federated connectors, GPT-5.5, Plan mode, video recap in Teams, voice chat, DLP for prompts."
 date: 2026-05-29
 lastmod: 2026-05-29
 youtube_id: ""
 card_tag: "What's New in Copilot"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-may-2026-updates.jpg"]
-og_headline: "May 2026 — 40 M365 Copilot updates"
+og_headline: "May 2026 — 53 M365 Copilot updates"
 og_glyph: "calendar"
 tags:
   - microsoft-365
@@ -15,7 +15,7 @@ tags:
   - news
 faq:
   - question: "What's new in Microsoft 365 Copilot in May 2026?"
-    answer: "May 2026 brings 40 updates including federated Copilot connectors (with Canva, HubSpot, Linear, LSEG, Moody's and Notion via MCP), GPT-5.5 Instant in Copilot Chat, Plan mode and Python in Copilot for Excel, a wave of Copilot Notebooks updates (PowerPoint/Word/Excel generation, Mind maps, web link references), a refreshed mobile app, Teams call delegation, and consecutive interpretation in Teams Interpreter."
+    answer: "May 2026 brings 53 updates including federated Copilot connectors (with Canva, HubSpot, Linear, LSEG, Moody's and Notion via MCP), GPT-5.5 Instant in Copilot Chat, Plan mode and Python in Copilot for Excel, a wave of Copilot Notebooks updates (PowerPoint/Word/Excel generation, Mind maps, web link references), a refreshed mobile app, Teams call delegation, and consecutive interpretation in Teams Interpreter."
   - question: "What are federated Copilot connectors?"
     answer: "Federated Copilot connectors are a new class of connector built on the Model Context Protocol (MCP) that query third-party systems live at the moment of the prompt — so responses reflect the latest data instead of an indexed snapshot. The first wave includes Canva, HubSpot, Intercom, Linear, LSEG, Moody's, Notion, and Google Calendar / Contacts. Available in Copilot Chat and the Researcher agent."
   - question: "What is GPT-5.5 Instant in Microsoft 365 Copilot?"
@@ -31,7 +31,7 @@ founder_note: |
   Every month I read every Message Center post, every blog entry, every Tech Community thread, and condense it into the version I wish someone had handed me. If 40 things changed and only three matter for you, I would rather you know which three.
 ---
 
-May 2026 has a lot of practical Copilot changes — **40 updates** focused around connectors, notebooks, Excel and mobile. **Federated connectors built on MCP** bring live, real-time data into Copilot from partners like Canva, HubSpot, Linear, LSEG, Moody's and Notion. **GPT-5.5 Instant** lands in Copilot Chat. **Copilot Notebooks** picks up generation for PowerPoint, Word and Excel (in Frontier preview). **Plan mode in Excel** and **Python in Copilot for Excel** finally make spreadsheet edits transparent before they apply. And the mobile app gets a chat-first redesign with liquid glass styling.
+May 2026 has a lot of practical Copilot changes — **53 updates** focused around connectors, notebooks, Excel and mobile. **Federated connectors built on MCP** bring live, real-time data into Copilot from partners like Canva, HubSpot, Linear, LSEG, Moody's and Notion. **GPT-5.5 Instant** lands in Copilot Chat. **Copilot Notebooks** picks up generation for PowerPoint, Word and Excel (in Frontier preview). **Plan mode in Excel** and **Python in Copilot for Excel** finally make spreadsheet edits transparent before they apply. And the mobile app gets a chat-first redesign with liquid glass styling.
 
 A special shout-out to **Shelly Blackley** and **Ashish Trivedi**, whose hard work and persistence continue to power this monthly update series.
 
@@ -67,25 +67,25 @@ Five admin checks worth doing this month, in priority order:
 
 ## Quick Jump
 
-**The Big Headlines:** [Federated MCP Connectors](#1-federated-copilot-connectors-with-mcp) · [GPT-5.5 Instant](#2-gpt-55-instant-in-microsoft-365-copilot) · [Mobile App Refresh](#3-microsoft-365-copilot-mobile-app--chat-first-redesign) · [Branded Footer](#4-branded-footer-in-the-microsoft-365-copilot-app)
+**The Big Headlines:** [Federated MCP Connectors](#1-federated-copilot-connectors-with-mcp) · [GPT-5.5 Instant](#2-gpt-55-instant-in-microsoft-365-copilot) · [Mobile App Refresh](#3-microsoft-365-copilot-mobile-app--chat-first-redesign) · [Branded Footer](#4-branded-footer-in-the-microsoft-365-copilot-app) · [Voice Chat](#41-voice-chat-in-microsoft-365-copilot)
 
-**Copilot Notebooks Wave:** [Generate PowerPoint](#5-create-powerpoint-presentations-from-copilot-notebooks) · [Generate Word](#6-create-word-documents-from-copilot-notebooks) · [Generate Excel](#7-create-excel-spreadsheets-from-copilot-notebooks) · [Mind Maps](#8-mind-maps-in-copilot-notebooks) · [Web Links as References](#9-web-link-as-a-reference-in-copilot-notebooks) · [Edit Pages with Chat](#10-edit-copilot-pages-with-chat-in-notebooks) · [Teams Meetings as References](#11-teams-meetings-in-copilot-notebooks) · [Multimodal Capture in OneNote iOS](#12-multimodal-capture-in-copilot-notebooks-onenote-iphone)
+**Copilot Notebooks & Pages Wave:** [Generate PowerPoint](#5-create-powerpoint-presentations-from-copilot-notebooks) · [Generate Word](#6-create-word-documents-from-copilot-notebooks) · [Generate Excel](#7-create-excel-spreadsheets-from-copilot-notebooks) · [Mind Maps](#8-mind-maps-in-copilot-notebooks) · [Web Links as References](#9-web-link-as-a-reference-in-copilot-notebooks) · [Edit Pages with Chat](#10-edit-copilot-pages-with-chat-in-notebooks) · [Teams Meetings as References](#11-teams-meetings-in-copilot-notebooks) · [Multimodal Capture in OneNote iOS](#12-multimodal-capture-in-copilot-notebooks-onenote-iphone) · [Copilot in Pages — Write/Code/Create](#49-copilot-in-pages--write-code-and-create)
 
-**Excel & PowerPoint:** [Plan Mode in Excel](#13-plan-mode-for-copilot-in-excel) · [Python in Copilot Excel](#14-python-when-editing-with-copilot-in-excel) · [Image Model Choice in PowerPoint](#15-create-and-edit-images-with-the-model-of-your-choice-in-powerpoint) · [Smarter Visual Understanding](#16-copilot-chat--smarter-visual-understanding-embedded-images) · [Public Web Grounding](#17-public-website-grounding-for-copilot-in-powerpoint)
+**Excel & PowerPoint:** [Plan Mode in Excel](#13-plan-mode-for-copilot-in-excel) · [Python in Copilot Excel](#14-python-when-editing-with-copilot-in-excel) · [Image Model Choice in PowerPoint](#15-create-and-edit-images-with-the-model-of-your-choice-in-powerpoint) · [Smarter Visual Understanding](#16-copilot-chat--smarter-visual-understanding-embedded-images) · [Public Web Grounding](#17-public-website-grounding-for-copilot-in-powerpoint) · [PPT Web Home Create](#43-create-with-copilot-from-the-powerpoint-web-home) · [Executive Summary Slide](#44-executive-summary-slide-in-powerpoint)
 
 **Word:** [Claude in Copilot for Word](#18-claude-model-for-copilot-in-word)
 
-**Outlook:** [Draft Coaching](#19-draft-coaching-feedback-in-outlook) · [Conversational Email Drafting](#20-draft-edit-and-format-emails-conversationally) · [First Draft in Canvas](#21-first-draft-in-the-canvas-for-copilot-in-outlook) · [Account Selector in Side Pane](#22-account-selector-in-the-outlook-copilot-side-pane)
+**Outlook:** [Draft Coaching](#19-draft-coaching-feedback-in-outlook) · [Conversational Email Drafting](#20-draft-edit-and-format-emails-conversationally) · [First Draft in Canvas](#21-first-draft-in-the-canvas-for-copilot-in-outlook) · [Account Selector in Side Pane](#22-account-selector-in-the-outlook-copilot-side-pane) · [List Email Attachments](#42-list-email-attachments-in-copilot)
 
-**Teams & Meetings:** [Call Delegation](#23-copilot-call-delegation-in-microsoft-teams) · [Consecutive Interpretation](#24-consecutive-interpretation-in-teams-interpreter) · [Sharing Recap Access](#25-share-recap-access-in-microsoft-teams) · [Delete Meeting-Generated Content](#26-delete-meeting-generated-content-in-recap)
+**Teams & Meetings:** [Call Delegation](#23-copilot-call-delegation-in-microsoft-teams) · [Consecutive Interpretation](#24-consecutive-interpretation-in-teams-interpreter) · [Sharing Recap Access](#25-share-recap-access-in-microsoft-teams) · [Delete Meeting-Generated Content](#26-delete-meeting-generated-content-in-recap) · [Video Recap](#45-video-recap-in-teams)
 
-**Mobile & Edge:** [Voice Notes in Mobile](#27-capture-voice-notes-in-the-microsoft-365-copilot-mobile-app) · [Edge Copilot New Tab Page](#28-microsoft-edge--copilot-new-tab-page) · [Edge DLP Redirect](#29-microsoft-edge-v148--redirect-to-m365-copilot-when-dlp-blocks-a-prompt) · [Edge Work Browsing History](#30-microsoft-edge--send-work-browsing-history-to-copilot)
+**Mobile & Edge:** [Voice Notes in Mobile](#27-capture-voice-notes-in-the-microsoft-365-copilot-mobile-app) · [Edge Copilot New Tab Page](#28-microsoft-edge--copilot-new-tab-page) · [Edge DLP Redirect](#29-microsoft-edge-v148--redirect-to-m365-copilot-when-dlp-blocks-a-prompt) · [Edge Work Browsing History](#30-microsoft-edge--send-work-browsing-history-to-copilot) · [Outlook Mobile Voice Triage](#51-triage-your-inbox-by-voice-in-outlook-mobile)
 
-**Agents:** [Submit Agents to Store via Builder](#31-submit-agents-to-agent-store-from-agent-builder) · [Agent Lifecycle Automation](#32-admin-rules-for-agent-lifecycle-automation) · [Scheduled Prompts for Agents](#33-scheduled-prompts-for-agents) · [SharePoint Agents in Teams Chat](#34-chat-one-on-one-with-sharepoint-agents-in-teams)
+**Agents:** [Submit Agents to Store via Builder](#31-submit-agents-to-agent-store-from-agent-builder) · [Agent Lifecycle Automation](#32-admin-rules-for-agent-lifecycle-automation) · [Scheduled Prompts for Agents](#33-scheduled-prompts-for-agents) · [SharePoint Agents in Teams Chat](#34-chat-one-on-one-with-sharepoint-agents-in-teams) · [Share Agents to a Teams team](#50-share-agents-to-a-microsoft-teams-team)
 
-**OneDrive, SharePoint & Video:** [Ready-to-Use Prompts in OneDrive](#35-ready-to-use-prompts-in-onedrive-file-preview) · [AI Video Drafts with Animations](#36-ai-generated-video-drafts-with-text-animations)
+**OneDrive, SharePoint, Forms & Video:** [Ready-to-Use Prompts in OneDrive](#35-ready-to-use-prompts-in-onedrive-file-preview) · [AI Video Drafts with Animations](#36-ai-generated-video-drafts-with-text-animations) · [Live FAQ in SharePoint](#46-create-a-live-faq-in-sharepoint) · [Charts on SharePoint with AI](#47-create-charts-on-sharepoint-pages-with-ai) · [Surveys Agent in Forms](#48-surveys-agent-in-microsoft-forms)
 
-**Admin, Governance & Insights:** [Power User Insights](#37-power-user-insights-in-copilot-dashboard) · [Export by Day](#38-copilot-dashboard--export-by-day) · [Prepaid Capacity Packs Only](#39-microsoft-365-admin-center--prepaid-capacity-pack-billing) · [Purview DSPM](#40-new-microsoft-purview-data-security-posture-management-experience)
+**Admin, Governance & Insights:** [Power User Insights](#37-power-user-insights-in-copilot-dashboard) · [Export by Day](#38-copilot-dashboard--export-by-day) · [Prepaid Capacity Packs Only](#39-microsoft-365-admin-center--prepaid-capacity-pack-billing) · [Purview DSPM](#40-new-microsoft-purview-data-security-posture-management-experience) · [Purview DLP for Copilot prompts](#52-purview-dlp-for-m365-copilot--safeguard-prompts) · [AI Content Watermarks](#53-watermarks-for-ai-generated-content)
 
 ---
 
@@ -234,7 +234,7 @@ Same pattern — but for Excel. **Copilot Notebooks** can now generate **Excel s
 <p>💡 <strong>Why it matters:</strong> When a notebook starts holding 10 or 20 sources, the "what's actually in here?" question gets harder. Mind maps give you a visual scaffold of the territory — what the major themes are, how they connect, where to dig further. It is the way humans actually navigate knowledge.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-may-2026/08-notebooks-mind-maps.webp" alt="Mind map view inside a Copilot Notebook — an interactive, grounded visual of the notebook's main topics and how they connect, with nodes you can expand to see Copilot-generated summaries and drill deeper via chat." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-may-2026/08-notebooks-mind-maps.webp" alt="Mind map view in a Copilot Notebook showing a Three-Phase Launch Strategy — central node branches to Pre-Launch, Launch and Post-Launch sub-trees that expand into Social teasers, Influencer partners, Press releases, Tech publications, Environmental media, Press coverage and Benefit blogs." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 📖 [M365 Roadmap 559029](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559029)
 
@@ -286,7 +286,7 @@ Add **Microsoft Teams meetings as references in a Copilot Notebook** — connect
 <p>💡 <strong>Why it matters:</strong> The classroom-style "scribble + whiteboard photo + voice memo" workflow has been a pain point for years on mobile — usually scattered across three apps. Capturing all three in one OneNote session, then having Copilot turn them into a clean page, is the most natural mobile-Copilot use case yet.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-may-2026/12-notebooks-multimodal-onenote.webp" alt="OneNote mobile app on iPhone showing a multimodal capture session inside a Copilot Notebook — audio transcription, images and typed notes captured in the same session, then turned by Copilot into a structured Copilot Page." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-may-2026/12-notebooks-multimodal-onenote.webp" alt="Two iPhone screens side-by-side: the OneNote Copilot Notebooks 'Capture what matters on the go' intro modal on the left (Try Now / Not Now); an active multimodal capture session on the right with voice transcription showing Speaker 1 and Speaker 2 timestamps, recording timer 00:01:90, and camera / pause / end controls." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** Open **OneNote** on **iPhone** → start a multimodal capture session inside a Copilot Notebook.
 
@@ -306,7 +306,7 @@ Add **Microsoft Teams meetings as references in a Copilot Notebook** — connect
 <p>💡 <strong>Why it matters:</strong> Excel changes are notoriously irreversible — formulas chain, references break, a wrong "fix" can ripple through dependents. Plan mode is essentially "show me the plan before you apply it". You see what is about to change, what data is involved, and you can stop or adjust before any damage. This is what serious analysts have wanted since day one.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-may-2026/13-excel-plan-mode.webp" alt="Copilot in Excel Plan mode — Copilot outlines a clear, step-by-step approach before anything in the workbook is updated, listing which data it will touch and which capabilities it intends to use so analysts can adjust the plan before edits apply." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-may-2026/13-excel-plan-mode.webp" alt="Excel workbook with sales and rating data on the left, and a Copilot panel on the right showing Plan mode in action — 'Reasoned in 2 steps' followed by 'Here's my plan before I make any changes to your workbook' with a step-by-step bullet list (create a Dashboard worksheet, PivotTable, clustered column chart for sales by category, bar chart for ratings, summary section with key metrics) and a green Proceed button. 'Plan' dropdown visible at the bottom of the composer." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** In **Excel** with Copilot open, select **Plan** from the menu above the prompt box.
 
@@ -378,7 +378,7 @@ In **Copilot for PowerPoint** you can now choose which **image model** to use wh
 <p>💡 <strong>Why it matters:</strong> Different LLMs have noticeably different writing styles — Claude tends to produce longer-form, more deliberate prose; GPT models are tighter and more directive. For legal, policy and long-form work where voice matters, model choice is finally a real lever inside Word, not just inside Copilot Chat.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-may-2026/18-word-claude-model.webp" alt="Copilot in Word model dropdown showing the Anthropic Claude option alongside the OpenAI models — same drafting and editing workflows, different model behind them." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-may-2026/18-word-claude-model.webp" alt="Copilot side panel open on a Word document titled 'ZavaCore Fiber Product Roadmap: v2 & v3' — the Model dropdown is expanded showing Auto with a check mark and a Claude submenu listing Claude Opus 4.6 and Claude Sonnet 4.6, plus Settings, Quick Help, Scheduled prompts and other panel options." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** In **Word** when drafting or editing with Copilot, select **Claude** in the model dropdown (where enabled by your admin).
 
@@ -452,7 +452,7 @@ The **Copilot side pane in Outlook Calendar** (new Outlook) gets an **account dr
 <p>💡 <strong>Why it matters:</strong> A surprising amount of work-day friction is interruption from calls you would not have answered if you knew who they were. Call delegation turns "phone rings during deep work" into "Copilot tells you who is calling, what they want, and offers to book a follow-up". For sales, customer success and execs, this is the most concrete way Copilot starts feeling like a real assistant.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-may-2026/23-teams-call-delegation.webp" alt="Microsoft Teams call settings showing Copilot call delegation toggle — Copilot answers incoming calls on the user's behalf, gathers context from callers, and can book a follow-up appointment via Microsoft Bookings." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-may-2026/23-teams-call-delegation.webp" alt="Microsoft Teams Calls UI mid-screening: a 'Started screening with Call Delegation' banner at the top, an active incoming call from +1 (509) 670-0594 in the Ongoing list (managed with Call Delegation), and a Details panel on the right showing Live screening 02:26 with the assistant transcript — 'Hello, I am Daniela's assistant, how can I help you today?' followed by the caller's reply — plus a Pick up button so the user can join the call once they know who it is." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to enable:** Open **Microsoft Teams → Settings → Calls** and turn on **Copilot call delegation**.
 
@@ -694,6 +694,204 @@ A **new Microsoft Purview Data Security Posture Management (DSPM)** experience �
 
 📖 [M365 Roadmap 532728](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=532728)
 
+---
+
+## 41. Voice Chat in Microsoft 365 Copilot
+
+*For: All Copilot Chat users · Available now*
+
+**Voice in Microsoft 365 Copilot** brings a hands-free, conversational way to talk to Copilot — on desktop and mobile. Speak directly to Copilot to search for information, catch up between meetings, brainstorm out loud, and switch languages mid-sentence. Voice mode also works in **Copilot in Word and PowerPoint**.
+
+{{< margin >}}One of those features that quietly changes the rhythm of using Copilot.{{< /margin >}}
+
+<blockquote class="callout callout-tip">
+<p>💡 <strong>Why it matters:</strong> Typing-first AI assistants always have a friction floor — you have to stop, switch surface, type the prompt. Voice removes the floor. Brainstorming becomes "think out loud, Copilot follows along". The biggest win is the contexts where typing was never going to happen — walking between meetings, hands occupied, dictating notes from a whiteboard photo.</p>
+</blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/42-voice-chat.webp" alt="Microsoft 365 Copilot composer with the voice mode icon highlighted on the right side of the message box — a single tap starts a hands-free voice conversation with Copilot." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+**How to find it:** Click the **voice icon** next to the microphone in the Copilot composer.
+
+📖 [M365 Roadmap 481138](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=481138)
+
+## 42. List Email Attachments in Copilot
+
+*For: All Copilot users · Available now*
+
+**Copilot can now list the file attachments** you've received or sent over email — ask *"show me the file attachments I've sent to [person]"* or *"find attachments from this thread"* and Copilot returns a structured list with sender, date, and one-click access.
+
+<blockquote class="callout callout-tip">
+<p>💡 <strong>Why it matters:</strong> The most common search-failure case in Outlook is "I sent her that document last month, where did it go?". Most users don't remember whether they emailed it, shared it via OneDrive, or attached it in Teams. A focused "show me the attachments" view turns five-minute searches into ten-second answers.</p>
+</blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/43-list-email-attachments.webp" alt="Copilot Chat response to 'Show me the file attachments I've emailed to William Beringer' — a structured list of recent attachments sent, with sender context, dates, and clickable file names." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+📖 [M365 Roadmap 497909](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=497909)
+
+## 43. Create with Copilot from the PowerPoint Web Home
+
+*For: PowerPoint web app users · Available now*
+
+The **Create with Copilot** button now appears right on the PowerPoint web app home page — start a new deck from a prompt without opening a blank file first. Removes one click and a context-switch from the "I need a deck" flow.
+
+<blockquote class="callout callout-tip">
+<p>💡 <strong>Why it matters:</strong> Adoption is friction-sensitive. Putting Copilot at the front door of PowerPoint instead of behind a "New blank presentation → click Copilot" path turns "I'll come back to that later" into "I'll try one prompt right now". Small UX move, big behavioural ripple.</p>
+</blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/44-ppt-web-home-create.webp" alt="PowerPoint web app home page with a prominent orange 'Create with Copilot' button alongside 'Create blank presentation' and 'Upload a file' — the new front-door CTA for Copilot-driven deck creation." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+📖 [M365 Roadmap 560537](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=560537)
+
+## 44. Executive Summary Slide in PowerPoint
+
+*For: PowerPoint users · Available now*
+
+**Generate an executive summary slide** for your existing deck — Copilot reads the presentation and produces a single polished slide that highlights the key points in exec-ready language. Useful when a 60-slide quarterly deck needs to start with a one-slide TL;DR for leadership.
+
+<blockquote class="callout callout-tip">
+<p>💡 <strong>Why it matters:</strong> The TL;DR slide is the most-read slide in any long deck and usually the last one written (or the one nobody writes). Auto-generating it from the rest of the deck means it stays in sync as the deck evolves — and removes the "we need a one-pager" anxiety from every pre-leadership review.</p>
+</blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/47-ppt-executive-summary.webp" alt="Copilot side panel in PowerPoint with the prompt 'create an executive summary slide' entered, surrounded by suggested editing actions like 'Summarise this presentation' and 'Add a table with data'." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+**How to find it:** In **PowerPoint** with editing enabled, open the Copilot side panel and ask Copilot to **create an executive summary slide**.
+
+📖 [M365 Roadmap 555875](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=555875)
+
+## 45. Video Recap in Teams
+
+*For: Teams meeting attendees with Copilot license · Available now*
+
+**Intelligent recap** now includes **video recap** — narrated highlight clips from your recorded Teams meetings, showing the key moments instead of the full hour. A "watchable" recap, not just a "readable" one.
+
+{{< margin >}}The first version of recap that catches people up in 90 seconds instead of 30 minutes.{{< /margin >}}
+
+<blockquote class="callout callout-tip">
+<p>💡 <strong>Why it matters:</strong> Reading a transcript is dense; watching a full meeting is a waste; reading bullet-point notes loses tone. Video recap is the missing middle — a short narrated clip that shows you who said what at the moments that mattered. For everyone who's ever clicked "Join recording" and immediately wished they could fast-forward to the bit they actually needed.</p>
+</blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/46-teams-video-recap.webp" alt="Teams meeting recap page for a 'Client experience review' showing the video player with the agenda slide visible and four participants in the side rail — narrated highlights generated automatically from the recording." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+📖 [M365 Roadmap 558540](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=558540)
+
+## 46. Create a Live FAQ in SharePoint
+
+*For: SharePoint content owners · Available now*
+
+A new **AI-powered FAQ web part for SharePoint** — content owners can curate a living FAQ with Copilot's help, grounded in connected references. The "Human-in-the-Loop" approach means Copilot drafts, the owner reviews and approves — keeping quality high without manual upkeep.
+
+<blockquote class="callout callout-tip">
+<p>💡 <strong>Why it matters:</strong> Every intranet has a FAQ page nobody trusts because it's three years stale. Living FAQs that draft themselves from current source documents — with human review before publish — solve the maintenance burden that killed the last decade of FAQ pages.</p>
+</blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/45-sharepoint-live-faq.webp" alt="SharePoint page edit view with the new AI-powered FAQ web part — 'Generate a ready-to-use FAQ set instantly — AI will craft them from your chosen references' — alongside the reference picker showing files, meetings and SharePoint pages." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+**How to find it:** Edit a SharePoint page → **Add a web part** → **AI** → **FAQ**.
+
+📖 [M365 Roadmap 482198](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=482198)
+
+## 47. Create Charts on SharePoint Pages with AI
+
+*For: SharePoint page authors · Rolling out in May*
+
+A new **Chart web part for SharePoint** powered by AI — describe the chart you want in plain English ("monthly support ticket volume by team") and Copilot creates an interactive chart embedded in the page. No data wrangling, no chart-tool round-trip.
+
+<blockquote class="callout callout-tip">
+<p>💡 <strong>Why it matters:</strong> SharePoint pages have always been text-heavy because charts required leaving the editor and importing from Excel or Power BI. A native AI chart web part means content authors can illustrate any point without breaking flow — and the chart updates live as the underlying data changes.</p>
+</blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/51-sharepoint-charts-ai.webp" alt="SharePoint Toolbox panel with the new AI Chart web part highlighted (dashed red outline) alongside Agent link and FAQ — three new AI-powered web parts available to drag into a SharePoint page." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+📖 [M365 Roadmap 660076](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=660076)
+
+## 48. Surveys Agent in Microsoft Forms
+
+*For: Microsoft Forms users · Rolling out in May*
+
+**Copilot lands in Microsoft Forms** — including the new **Surveys Agent** that helps you draft the survey, suggest improvements to question wording, draft and send invitations, and analyse the results when responses come in. End-to-end survey workflow inside Forms instead of three different tools.
+
+<blockquote class="callout callout-tip">
+<p>💡 <strong>Why it matters:</strong> Survey design is harder than it looks — biased questions, leading wording, the wrong response scale. A Surveys Agent in the moment, plus invitation drafting and result analysis, turns survey-running from a multi-day project into an afternoon. Pretty meaningful for HR, customer feedback, internal pulse checks.</p>
+</blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/50-forms-surveys-agent.webp" alt="Microsoft Forms with the 'Draft with Copilot' dialog open — a composer asking 'Describe what survey you'd like to create, including its purpose, audience, and the insights you hope to gain' with a Generate button below." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+📖 [M365 Roadmap 553136](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=553136)
+
+## 49. Copilot in Pages — Write, Code and Create
+
+*For: Copilot Chat users · Rolling out in May*
+
+Copilot Chat's **tools menu** now includes **"Create content or code"** — a one-click path to start co-creating in a Copilot Page (text, structured content, or code) alongside Copilot, then share it with others when ready. Pages becomes a first-class output, not a hidden surface.
+
+<blockquote class="callout callout-tip">
+<p>💡 <strong>Why it matters:</strong> Most users find Copilot Pages through the side door (a previous chat needed a longer canvas). Surfacing it as a first-action option in the chat tools menu turns Pages from "where Copilot occasionally lands" into "where I deliberately go to co-create". Bigger shift than it sounds.</p>
+</blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/49-copilot-in-pages.webp" alt="Copilot Chat composer with the + tools menu expanded — showing Add work content, Upload, Take screenshot, Add capabilities, Chat with an agent, Change data sources — and a submenu listing Research a topic, Analyse data, Create a document, Create a workbook, Create a presentation, Create a visual, Create content or code." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+📖 [M365 Roadmap 509109](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=509109)
+
+## 50. Share Agents to a Microsoft Teams Team
+
+*For: Agent makers · Available now*
+
+When sharing a custom agent, you can now **share directly with a Microsoft Teams team** — search for the team in the share dialog and send a notification to the main channel announcing the agent's availability. Removes the friction of "I built a useful agent, now how do I tell everyone?".
+
+<blockquote class="callout callout-tip">
+<p>💡 <strong>Why it matters:</strong> Agent adoption inside teams has been bottlenecked at distribution. Building the agent is the easy part; getting the team to discover and install it is where momentum dies. Native Teams-team-as-share-target with channel notification closes that loop — agent maker hits Share, team gets a heads-up in their main channel, members install in one click.</p>
+</blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/48-share-agents-teams.webp" alt="Agent sharing dialog for 'Policy Advisor' — radio options for 'Anyone in your organization', 'Specific users in your organization' (selected, with people/team picker), or 'Only you', plus a Copy Link option below for sending the share link directly." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+📖 [M365 Roadmap 557947](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=557947)
+
+## 51. Triage Your Inbox by Voice in Outlook Mobile
+
+*For: Outlook mobile users · Rolling out in May*
+
+The **Outlook mobile app** gets a **Copilot voice experience** — say *"summarise my recent unread"* and Copilot reads it back, then take action (flag, pin, archive, mark as read) by voice. Interrupt or redirect Copilot mid-flow when something catches your attention.
+
+{{< margin >}}Inbox triage between meetings, while the laptop is closed.{{< /margin >}}
+
+<blockquote class="callout callout-tip">
+<p>💡 <strong>Why it matters:</strong> Mobile inbox use has always been "scroll, tap, scroll, archive". Voice-driven triage turns the same five minutes between meetings into a more productive catch-up — and unlocks inbox use for people who can't or don't want to keep typing on a phone. Big for execs, big for accessibility.</p>
+</blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/52-outlook-mobile-voice.webp" alt="Outlook mobile inbox on iPhone with the Copilot bottom sheet open — quick action chips for 'Voice catch-up' and 'Triage my inbox' visible alongside a composer with the microphone and voice-conversation icons." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+📖 [M365 Roadmap 516575](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516575)
+
+## 52. Purview DLP for M365 Copilot — Safeguard Prompts
+
+*For: Purview DLP admins · Available now*
+
+**Purview DLP for Microsoft 365 Copilot** can now safeguard **prompts containing sensitive data** — in real time, blocking Copilot (including pre-built agents) from responding when the prompt itself contains sensitive content, or from using that content for grounding. Closes the loop on the other side of [#29 Edge DLP redirect](#29-microsoft-edge-v148--redirect-to-m365-copilot-when-dlp-blocks-a-prompt) — once a prompt lands inside Copilot, prompt-level DLP makes sure the sensitive content doesn't leak via the response.
+
+<blockquote class="callout callout-tip">
+<p>💡 <strong>Why it matters for admins:</strong> DLP for Copilot used to mean "controls on the output". This expansion is "controls on the input". For regulated industries (healthcare, finance, legal) where the question itself reveals confidential context, prompt-level DLP is the missing third leg of the Copilot governance stool — alongside output controls and Purview audit.</p>
+</blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/53-dlp-copilot-prompts.webp" alt="Microsoft Purview Data Loss Prevention page showing the 'Safeguard sensitive data in Microsoft 365 Copilot interactions' policy creation flow — sensitive information types selected (All Full Names, All Credential Types, All Medical Terms) with actions to 'Restrict Copilot from processing content' for user prompts and web searches." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+📖 [M365 Roadmap 51945](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=51945)
+
+## 53. Watermarks for AI-Generated Content
+
+*For: M365 Copilot tenants · Available now*
+
+**Watermarks for AI-generated content** — admins can now enable a small Copilot icon watermark on AI-generated images, audio, and video produced inside M365 Copilot. Helps recipients (internal or external) recognise AI-generated content at a glance, supporting transparency policies.
+
+<blockquote class="callout callout-tip">
+<p>💡 <strong>Why it matters for admins:</strong> Many organisations are starting to require disclosure when AI-generated content is shared — for IP reasons, for audit reasons, for downstream-trust reasons. A built-in watermark removes the "did they remember to label it?" risk by making the marker automatic and consistent. Particularly relevant for marketing, comms, and external-facing creative work.</p>
+</blockquote>
+
+<p><img src="/images/blog/copilot-may-2026/54-ai-content-watermarks.webp" alt="An AI-generated image of an empty modern conference room with a large window view of a city skyline — a small Copilot icon watermark sits subtly in the bottom-right corner, signalling the image was produced by Copilot." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+📖 [M365 Roadmap 547831](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=547831)
+
+
+---
 
 ## Image credits
 
@@ -704,8 +902,9 @@ Screenshots embedded in this article are sourced from Microsoft's own public pub
 - GPT-5.5 Quick response in the model selector (#2) -- [Available today: GPT-5.5 Instant in Microsoft 365 Copilot](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/available-today-gpt-5-5-instant-in-microsoft-365-copilot/4517084) (Microsoft 365 Copilot Blog, 7 May 2026)
 - Microsoft Edge Copilot New Tab Page (#28) — [New in Edge for Business: AI for work, safe from day one](https://blogs.windows.com/msedgedev/2026/05/20/new-in-edge-for-business-ai-for-work-safe-from-day-one/) (Microsoft Edge Blog, 20 May 2026)
 - Branded footer (#4), Excel from Notebooks (#7), Share recap access (#25), Delete recap content (#26), Bulk agent lifecycle (#32) — Microsoft 365 Message Center posts ([MC1238432](https://mc.merill.net/message/MC1238432), [MC1262567](https://mc.merill.net/message/MC1262567), [MC1289724](https://mc.merill.net/message/MC1289724), [MC1289725](https://mc.merill.net/message/MC1289725), [MC1308854](https://mc.merill.net/message/MC1308854)). Mirrored via [merill/mc](https://github.com/merill/mc) (open-source archive of public Microsoft Graph Service Announcements).
+- **Sections #41–#53** — product UI screenshots used with kind permission from **Shelly Blackley**'s May 2026 Copilot Solution Engineer pack. Shelly maintained the monthly "What's new in M365 Copilot" customer-ready deck inside Microsoft for two years; her final month was May 2026. Thank you, Shelly — for everything.
 
-Features that shipped only in May (19 of the 40) do not have a public Microsoft screenshot yet -- when Microsoft publishes the May recap, this article will be refreshed.
+Features that shipped only in May (19 of the 53) do not have a public Microsoft screenshot yet -- when Microsoft publishes the May recap, this article will be refreshed.
 
 ---
 
