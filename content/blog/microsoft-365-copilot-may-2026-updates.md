@@ -190,7 +190,7 @@ Admins can now display their **organisation-approved logo** in the Microsoft 365
 <p>💡 <strong>Why it matters:</strong> The interesting part is the workflow, not the slides. You gather sources into a notebook — meeting content, SharePoint docs, web links — and then ask Copilot to turn that grounded knowledge into a deck. No copy-paste, no "let me find that document again". The notebook becomes the research workspace; the deck is the output. Same model applies to Word and Excel below.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-may-2026/05-notebooks-wave-pages-chat.webp" alt="Copilot Notebook with a Copilot Page being edited through chat — describe the change in natural language and Copilot updates the page in place. Same wave of Notebooks updates also generates PowerPoint, Word and Excel from notebook content." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-may-2026/05-notebooks-ppt-generation.webp" alt="Copilot Notebook generating a PowerPoint presentation — the Notebook on the left lists references and Created content; the slide preview on the right shows generated slides ready to open in PowerPoint, with a chat panel on the far right confirming the deck is complete." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** Open a **Copilot Notebook** (Frontier preview) → ask Copilot to create a PowerPoint presentation → pick template, length, and focus.
 
@@ -205,8 +205,6 @@ In **Copilot Notebooks**, generate **Word documents** — reports, summaries, pr
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Reports usually start with the painful first draft. Notebooks-to-Word skips that by drafting from material you have already curated — the references you trust, the notes you have taken — instead of from a cold prompt. The Word document arrives already grounded in your sources.</p>
 </blockquote>
-
-<p><img src="/images/blog/copilot-may-2026/06-notebooks-word-generation.webp" alt="Copilot Notebook dialog for generating a Word document from notebook content — select document type, main topic, audience and theme, then Copilot drafts a first version grounded in the references you've already curated." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** Inside a **Copilot Notebook**, ask Copilot to create a Word document and customise type, topic, audience and theme.
 
@@ -249,8 +247,6 @@ Paste a **URL as a reference in Copilot Notebooks** and Copilot uses that web li
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Until now, notebooks lived inside the walls of your tenant. Adding external web pages as first-class references closes the gap between internal context (the strategy doc) and external context (the regulator's announcement, the competitor's press release, the standards body's page). Both inform the same workspace.</p>
 </blockquote>
-
-<p><img src="/images/blog/copilot-may-2026/09-notebooks-web-link-reference.webp" alt="Adding a web URL as a reference in a Copilot Notebook — Copilot uses the page's content to inform notebook chat and outputs, expanding sources beyond internal tenant content." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **How to find it:** Add a reference to a notebook → paste a **URL** as the source.
 
@@ -326,8 +322,6 @@ You can now use **Python when editing with Copilot in Excel** to take on more ad
 <p>💡 <strong>Why it matters:</strong> Excel's native formula language has limits — once you need real data transformation, pivot logic, statistical analysis or charting that goes beyond the built-ins, you used to leave Excel. Python in Copilot keeps you inside the workbook while picking up pandas-class capability for the heavy lifting. It is the biggest analyst-productivity upgrade Excel has shipped this year.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-may-2026/14-excel-python.webp" alt="Copilot in Excel applying Python-powered techniques to a workbook — transforming data and generating a visualisation as part of the same edit, without leaving the spreadsheet." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-
 **How to find it:** Inside Excel, ask Copilot to use Python in your prompt — or let Copilot invoke it when the task warrants it.
 
 📖 [Official April announcement — Plan mode + Python in Copilot for Excel](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935)
@@ -369,8 +363,6 @@ In **Copilot for PowerPoint** you can now choose which **image model** to use wh
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Decks that need an external context — a regulator's announcement, a competitor's product page, a standards body's update — usually start with copy-paste. Public web grounding skips that step. The slide gets the real context, and your deck stays up-to-date with the cited source.</p>
 </blockquote>
-
-<p><img src="/images/blog/copilot-may-2026/17-powerpoint-public-web-grounding.webp" alt="Copilot in PowerPoint grounding a new deck in a public web reference — Copilot pulls in the relevant context from the URL and generates an initial outline and slides ready to refine, with the cited source visible." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 📖 [Official April announcement — Public website grounding in PowerPoint](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935)
 
@@ -475,8 +467,6 @@ The **Copilot side pane in Outlook Calendar** (new Outlook) gets an **account dr
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Real-time simultaneous translation works well in one-to-many scenarios — a keynote with translation in your ear. But two-way back-and-forth meetings work better with turn-based interpretation, the way human interpreters actually do it. This is Teams catching up to the way bilingual meetings should feel.</p>
 </blockquote>
-
-<p><img src="/images/blog/copilot-may-2026/24-teams-consecutive-interpretation.webp" alt="Microsoft Teams Interpreter showing the new consecutive interpretation mode — translation begins after each speaker finishes, creating a turn-based flow, with Interpreter visible on the meeting stage for everyone." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 📖 [M365 Roadmap 557180](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=557180)
 
@@ -715,7 +705,7 @@ Screenshots embedded in this article are sourced from Microsoft's own public pub
 - Microsoft Edge Copilot New Tab Page (#28) — [New in Edge for Business: AI for work, safe from day one](https://blogs.windows.com/msedgedev/2026/05/20/new-in-edge-for-business-ai-for-work-safe-from-day-one/) (Microsoft Edge Blog, 20 May 2026)
 - Branded footer (#4), Excel from Notebooks (#7), Share recap access (#25), Delete recap content (#26), Bulk agent lifecycle (#32) — Microsoft 365 Message Center posts ([MC1238432](https://mc.merill.net/message/MC1238432), [MC1262567](https://mc.merill.net/message/MC1262567), [MC1289724](https://mc.merill.net/message/MC1289724), [MC1289725](https://mc.merill.net/message/MC1289725), [MC1308854](https://mc.merill.net/message/MC1308854)). Mirrored via [merill/mc](https://github.com/merill/mc) (open-source archive of public Microsoft Graph Service Announcements).
 
-Features that shipped only in May (14 of the 40) do not have a public Microsoft screenshot yet -- when Microsoft publishes the May recap, this article will be refreshed.
+Features that shipped only in May (19 of the 40) do not have a public Microsoft screenshot yet -- when Microsoft publishes the May recap, this article will be refreshed.
 
 ---
 
