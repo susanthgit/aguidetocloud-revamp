@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 29 May 2026 23:40:11 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 May 2026 04:14:32 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Azure] Azure incident affecting West US 2</title>
@@ -19,11 +19,20 @@
     <item>
       <title>[Power BI] Users may be unable to initiate Spark sessions or open and perform actions in Microsoft Fabric Notebooks</title>
       <link>https://www.aguidetocloud.com/service-health/#PB1326495</link>
-      <description>[Power BI] Users may be unable to initiate Spark sessions or open and perform actions in Microsoft Fabric Notebooks.</description>
+      <description>[Power BI] Users may have been unable to initiate Spark sessions or open and perform actions in Microsoft Fabric Notebooks.</description>
       <category>Power BI</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">PB1326495</guid>
-      <pubDate>Fri, 29 May 2026 19:37:36 +0000</pubDate>
+      <pubDate>Fri, 29 May 2026 18:55:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Power BI] Users may be unable to perform control plane operations on their capacities in Microsoft Fabric</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1326627</link>
+      <description>[Power BI] Users may have been unable to perform control plane operations on their capacities in Microsoft Fabric.</description>
+      <category>Power BI</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">PB1326627</guid>
+      <pubDate>Fri, 29 May 2026 17:25:00 +0000</pubDate>
     </item>
     <item>
       <title>[Azure] Azure incident affecting West US 2</title>
@@ -98,6 +107,15 @@ We detected this issue through our automated monitoring systems after observing 
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1316705</guid>
       <pubDate>Wed, 20 May 2026 07:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users' draft generation prompts to Microsoft 365 Copilot may not complete in the classic Outlook desktop app Build 2605</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1324075</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users' draft generation prompts to Copilot may not have completed in the classic Outlook desktop app Build 2605.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>postIncidentReviewPublished</category>
+      <guid isPermaLink="false">CP1324075</guid>
+      <pubDate>Wed, 20 May 2026 01:27:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Intune] Some users' Microsoft Intune devices may be unable to retrieve Intune Management Agent scripts from the service</title>
@@ -440,24 +458,6 @@ We detected this issue through our automated monitoring systems after observing 
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1293524</guid>
       <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users in North America may be unable to access Microsoft Copilot (Microsoft 365)</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1293219</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access Copilot.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">CP1293219</guid>
-      <pubDate>Mon, 27 Apr 2026 16:19:46 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to share agents in Microsoft 365 Copilot with users without a Copilot license</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1314992</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to share agents in Copilot with users without a Copilot license.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1314992</guid>
-      <pubDate>Sun, 26 Apr 2026 19:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
