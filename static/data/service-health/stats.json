@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T07:18:41.330878+00:00",
+  "generated_at": "2026-05-30T10:13:49.905061+00:00",
   "total_incidents_tracked": 104,
   "services": [
     {
@@ -32,13 +32,13 @@
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 12,
-      "active_incidents": 2,
+      "total_incidents": 13,
+      "active_incidents": 3,
       "avg_duration_minutes": 12785,
-      "last_incident": "2026-05-26T08:15:52.110000+00:00",
+      "last_incident": "2026-05-30T09:11:59.853000+00:00",
       "classifications": {
-        "advisory": 10,
-        "incident": 2
+        "incident": 3,
+        "advisory": 10
       }
     },
     {
@@ -81,19 +81,6 @@
       }
     },
     {
-      "service": "SharePoint Online",
-      "short_name": "SharePoint",
-      "icon": "📄",
-      "total_incidents": 5,
-      "active_incidents": 0,
-      "avg_duration_minutes": 9520,
-      "last_incident": "2026-05-13T18:01:00+00:00",
-      "classifications": {
-        "advisory": 4,
-        "incident": 1
-      }
-    },
-    {
       "service": "Microsoft Purview",
       "short_name": "Purview",
       "icon": "🔍",
@@ -125,6 +112,19 @@
       "active_incidents": 0,
       "avg_duration_minutes": 2360,
       "last_incident": "2026-05-16T22:00:00+00:00",
+      "classifications": {
+        "advisory": 3,
+        "incident": 1
+      }
+    },
+    {
+      "service": "SharePoint Online",
+      "short_name": "SharePoint",
+      "icon": "📄",
+      "total_incidents": 4,
+      "active_incidents": 0,
+      "avg_duration_minutes": 5914,
+      "last_incident": "2026-05-13T18:01:00+00:00",
       "classifications": {
         "advisory": 3,
         "incident": 1
@@ -221,7 +221,7 @@
   "monthly": [
     {
       "month": "2026-05",
-      "incident_count": 44,
+      "incident_count": 45,
       "services_affected": 13
     },
     {
@@ -231,8 +231,8 @@
     },
     {
       "month": "2026-03",
-      "incident_count": 6,
-      "services_affected": 5
+      "incident_count": 5,
+      "services_affected": 4
     }
   ]
 }
