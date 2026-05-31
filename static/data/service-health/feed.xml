@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 31 May 2026 09:22:06 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2026 11:48:58 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may see no responses from Microsoft Copilot (Microsoft 365) Custom agents, including admin agents</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1328187</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may see no responses from Microsoft Copilot (Microsoft 365) Custom agents, including admin agents.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1328187</guid>
-      <pubDate>Sun, 31 May 2026 07:06:27 +0000</pubDate>
-    </item>
     <item>
       <title>[Exchange Online] Some users may be unable to create new online meetings from shared calendar events in Exchange Online</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1327187</link>
@@ -24,6 +15,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">EX1327187</guid>
       <pubDate>Sat, 30 May 2026 09:11:59 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may see no responses from Microsoft Copilot (Microsoft 365) custom engine agents</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1328187</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may see no responses from Microsoft Copilot (Microsoft 365) custom engine agents.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1328187</guid>
+      <pubDate>Fri, 29 May 2026 21:45:00 +0000</pubDate>
     </item>
     <item>
       <title>[Azure] Azure incident affecting West US 2</title>
