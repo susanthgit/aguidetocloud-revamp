@@ -2,8 +2,8 @@
 title: "Microsoft 365 Copilot May 2026 Recap: 53 Updates"
 description: "All 53 Microsoft 365 Copilot updates for May 2026 — federated connectors, GPT-5.5, Plan mode, video recap in Teams, voice chat, DLP for prompts."
 date: 2026-05-29
-lastmod: 2026-05-30
-youtube_id: ""
+lastmod: 2026-05-31
+youtube_id: "qNcbrSZtbNs"
 card_tag: "What's New in Copilot"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-may-2026-updates.jpg"]
