@@ -2,7 +2,7 @@
 title: "Microsoft 365 Copilot Chat Masterclass — Free Tutorial"
 description: "M365 Copilot tutorial: Microsoft 365 Copilot Chat Masterclass. Free hands-on guide by Susanth Sutheesh on A Guide to Cloud."
 date: 2026-02-02
-youtube_id: WWNuITo9dn4
+youtube_id: "WWNuITo9dn4"
 card_tag: M365 Copilot
 tag_class: ai
 tags:

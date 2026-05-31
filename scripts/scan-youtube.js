@@ -203,7 +203,10 @@ async function main() {
     for (const file of fs.readdirSync(dir)) {
       if (file === '_index.md' || !file.endsWith('.md')) continue;
       const content = fs.readFileSync(path.join(dir, file), 'utf8');
-      const match = content.match(/youtube_id:\s*"([^"]+)"/);
+      // Match both quoted ("abc") and unquoted (abc) YAML formats; YouTube IDs
+      // are exactly 11 chars from [A-Za-z0-9_-]. The strict char-class prevents
+      // accidental matches against other fields and survives loose YAML formatting.
+      const match = content.match(/^youtube_id:\s*"?([A-Za-z0-9_-]{11})"?\s*$/m);
       if (match) contentIds.add(match[1]);
     }
   }
@@ -217,30 +220,43 @@ async function main() {
   const videoIds = await getAllVideoIds(playlistId);
   console.log(`   Found ${videoIds.length} videos on channel\n`);
 
-  // Find new video IDs (not in data file AND not in content)
-  const newIds = videoIds.filter(id => !existingIds.has(id) && !contentIds.has(id));
+  // Decouple data-file and content concerns:
+  //   - missingFromData: needs to be appended to videos-fresh.json
+  //   - missingFromContent: needs a content page generated
+  // Bug fix (set 31 May 2026): the previous AND filter (`!existingIds.has(id) && !contentIds.has(id)`)
+  // permanently skipped videos that had a manually-created content page but were not yet in the data file,
+  // so monthly recap videos never updated videos-fresh.json after their ai-hub pages were created by hand.
+  const missingFromData = videoIds.filter(id => !existingIds.has(id));
+  const missingFromContent = videoIds.filter(id => !contentIds.has(id));
+  const idsToFetch = [...new Set([...missingFromData, ...missingFromContent])];
 
-  if (newIds.length === 0) {
+  if (idsToFetch.length === 0) {
     console.log('✅ No new videos found. Everything is up to date!');
     return;
   }
 
-  console.log(`🆕 Found ${newIds.length} new video(s)!\n`);
+  console.log(`🆕 ${missingFromData.length} video(s) missing from data, ${missingFromContent.length} missing from content (${idsToFetch.length} unique to fetch)\n`);
 
-  // Fetch details for new videos
-  const newVideos = await getVideoDetails(newIds);
+  // Fetch details for videos needing attention
+  const fetchedVideos = await getVideoDetails(idsToFetch);
 
-  // Update data file
-  const allData = [...existingData, ...newVideos];
-  allData.sort((a, b) => b.date.localeCompare(a.date));
-  fs.writeFileSync(DATA_FILE, JSON.stringify(allData, null, 2), 'utf8');
-  console.log(`📁 Updated data file: ${allData.length} total videos\n`);
+  // Update data file (only entries that aren't already in it)
+  const dataToAdd = fetchedVideos.filter(v => !existingIds.has(v.id));
+  if (dataToAdd.length > 0) {
+    const allData = [...existingData, ...dataToAdd];
+    allData.sort((a, b) => b.date.localeCompare(a.date));
+    fs.writeFileSync(DATA_FILE, JSON.stringify(allData, null, 2), 'utf8');
+    console.log(`📁 Updated data file: +${dataToAdd.length} entries (${allData.length} total)\n`);
+  } else {
+    console.log('📁 Data file already current — no entries added.\n');
+  }
 
-  // Generate content pages for new videos only
+  // Generate content pages (only for videos that don't have one)
+  const contentToCreate = fetchedVideos.filter(v => !contentIds.has(v.id));
   let created = 0;
   const usedSlugs = new Set();
 
-  for (const video of newVideos) {
+  for (const video of contentToCreate) {
     const { category, slug, content } = generateMarkdown(video);
     let finalSlug = slug;
 
@@ -256,7 +272,11 @@ async function main() {
     created++;
   }
 
-  console.log(`\n🎉 Created ${created} new content page(s)!`);
+  if (created > 0) {
+    console.log(`\n🎉 Created ${created} new content page(s)!`);
+  } else {
+    console.log('\n📄 All videos already have content pages — no new pages needed.');
+  }
   console.log('   Push will trigger auto-deploy via deploy.yml');
 }
 

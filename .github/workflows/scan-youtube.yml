@@ -28,10 +28,10 @@ jobs:
       - name: Check for new content
         id: check
         run: |
-          if [ -n "$(git status --porcelain content/)" ]; then
+          if [ -n "$(git status --porcelain content/ data/videos-fresh.json)" ]; then
             echo "has_changes=true" >> $GITHUB_OUTPUT
             echo "New videos found!"
-            git diff --stat content/
+            git diff --stat content/ data/videos-fresh.json
           else
             echo "has_changes=false" >> $GITHUB_OUTPUT
             echo "No new videos found."
