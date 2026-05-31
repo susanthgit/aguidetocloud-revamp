@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-05-31T04:48:14.170376+00:00",
+  "generated_at": "2026-05-31T09:22:05.557000+00:00",
   "total_incidents_tracked": 104,
   "services": [
     {
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 23,
-      "active_incidents": 0,
+      "total_incidents": 24,
+      "active_incidents": 1,
       "avg_duration_minutes": 6803,
-      "last_incident": "2026-05-29T15:26:33.517000+00:00",
+      "last_incident": "2026-05-31T07:06:27+00:00",
       "classifications": {
-        "incident": 10,
+        "incident": 11,
         "advisory": 13
       }
     },
@@ -156,19 +156,6 @@
       }
     },
     {
-      "service": "Microsoft OneDrive",
-      "short_name": "OneDrive",
-      "icon": "☁️",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 12310,
-      "last_incident": "2026-04-30T07:30:00+00:00",
-      "classifications": {
-        "incident": 1,
-        "advisory": 1
-      }
-    },
-    {
       "service": "Windows 365",
       "short_name": "Windows 365",
       "icon": "⚙️",
@@ -206,6 +193,18 @@
       }
     },
     {
+      "service": "Microsoft OneDrive",
+      "short_name": "OneDrive",
+      "icon": "☁️",
+      "total_incidents": 1,
+      "active_incidents": 0,
+      "avg_duration_minutes": 675,
+      "last_incident": "2026-04-30T07:30:00+00:00",
+      "classifications": {
+        "incident": 1
+      }
+    },
+    {
       "service": "Universal Print",
       "short_name": "Print",
       "icon": "🖨️",
@@ -221,7 +220,7 @@
   "monthly": [
     {
       "month": "2026-05",
-      "incident_count": 45,
+      "incident_count": 46,
       "services_affected": 13
     },
     {
@@ -231,8 +230,8 @@
     },
     {
       "month": "2026-03",
-      "incident_count": 5,
-      "services_affected": 4
+      "incident_count": 4,
+      "services_affected": 3
     }
   ]
 }
