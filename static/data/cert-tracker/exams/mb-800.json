@@ -10,12 +10,12 @@
   ],
   "category": "Dynamics 365",
   "status": "active",
-  "updated_at": "2025-12-05 03:46:00+00:00",
-  "skills_date": "December 17, 2025",
+  "updated_at": "2026-05-29 22:10:00+00:00",
+  "skills_date": "June 30, 2026",
   "skills_at_a_glance": [
     {
       "area": "Set up Business Central",
-      "weight": "25-30%"
+      "weight": "20-25%"
     },
     {
       "area": "Configure financials",
@@ -27,13 +27,12 @@
     },
     {
       "area": "Perform Business Central operations",
-      "weight": "25-30%"
+      "weight": "30-35%"
     }
   ],
   "skills_detailed": {
-    "Set up Business Central (25–30%)": {
+    "Set up Business Central (20–25%)": {
       "Create and configure a company": [
-        "Create a company in Business Central",
         "Create a company by using Assisted Setup",
         "Create a configuration worksheet",
         "Create and use a configuration package",
@@ -41,7 +40,7 @@
         "Migrate data to and within Business Central"
       ],
       "Manage security": [
-        "Create and manage user profiles",
+        "Create and assign user profiles",
         "Set up a new user",
         "Create permissions and permission sets",
         "Apply security filters",
@@ -49,18 +48,16 @@
         "Configure and use security auditing in Business Central"
       ],
       "Set up core functionality": [
-        "Set up company information",
         "Set up reports and configure report layouts",
         "Set up and use job queues",
-        "Set up email accounts",
-        "Set up number series"
+        "Set up number series",
+        "Enable Copilot and agent capabilities"
       ],
       "Set up dimensions": [
         "Set up dimensions and dimension values",
         "Set up global dimensions and shortcut dimensions",
         "Set up default dimensions for master data",
         "Set up blocking combinations of dimensions and dimension values",
-        "Update posted dimensions by using the Dimension Correction Tool",
         "Set up default dimensions for account types",
         "Set up default dimension priorities"
       ],
@@ -68,10 +65,6 @@
         "Set up native workflows",
         "Set up a notification system",
         "Set up users for approval and workflow user groups"
-      ],
-      "Describe Business Central integrations with other products": [
-        "Configure Microsoft 365 integrations, including Microsoft Excel, OneDrive, Outlook, Teams, and Word",
-        "Define uses cases for Microsoft Power Platform integrations with Business Central"
       ]
     },
     "Configure financials (30–35%)": {
@@ -86,19 +79,21 @@
       "Manage the chart of accounts": [
         "Set up general ledger accounts",
         "Create account categories and subcategories",
-        "Prepare financial reporting with financial data and account categories"
+        "Prepare financial reporting with financial data and account categories",
+        "Set up general ledger allocations"
       ],
       "Set up posting groups": [
-        "Create specific posting groups including bank, customer, vendor, and inventory",
+        "Create specific posting groups",
         "Create general posting groups",
         "Configure the general posting setup",
-        "Configure inventory posting setup"
+        "Configure inventory posting setup",
+        "Allow multiple posting groups"
       ],
       "Set up journals and bank accounts": [
         "Set up bank accounts",
         "Create journal templates, including number series",
         "Create batches",
-        "Implement recurring journals"
+        "Create templates for recurring journals"
       ],
       "Set up accounts payables": [
         "Create vendor accounts, including payment terms, vendor bank accounts, and related records",
@@ -107,27 +102,26 @@
         "Assess the relationship between vendors, vendor ledger entries, detailed vendor ledger entries, and general ledger entries"
       ],
       "Set up accounts receivables": [
-        "Create customer accounts, including payment terms, customer bank accounts, and related records",
+        "Create customer accounts, including payment terms, payment methods, customer bank accounts, and related records",
         "Configure Sales & Receivables Setup",
         "Set up cash receipt journals",
         "Set up payment registration",
-        "Configure customer payment methods",
         "Assess the relationship between customers, customer ledger entries, detailed customer ledger entries, and general ledger entries"
       ],
       "Configure fixed assets": [
-        "Configure fixed asset settings including depreciation books, fixed asset classes and subclasses, and fixed asset posting groups",
-        "Configure fixed assets, main assets, and components",
+        "Configure fixed asset settings, including depreciation books and fixed asset classes and subclasses",
+        "Create and modify fixed assets, main assets, and components",
         "Differentiate between different depreciation methods"
       ]
     },
     "Configure sales and purchasing (10–15%)": {
       "Set up inventory": [
-        "Configure inventory set up",
+        "Configure inventory setup",
         "Configure core item settings, including item categories, item attributes, units of measure, and item variants",
         "Create locations",
         "Assess the relationship between items, item ledger entries, value entries, and general ledger entries",
         "Differentiate between costing methods",
-        "Configure stock keeping units"
+        "Configure stockkeeping units"
       ],
       "Configure master data for sales and purchasing": [
         "Configure core customer settings including shipping agents, locations, and shipping addresses",
@@ -140,27 +134,27 @@
         "Manage sales line and invoice discounts"
       ]
     },
-    "Perform Business Central operations (25–30%)": {
+    "Perform Business Central operations (30–35%)": {
       "Perform basic tasks in Business Central": [
         "Differentiate between designing, customizing, and personalizing pages",
         "Customize pages",
         "Apply and save filters",
         "Find documents and related entries",
-        "Use the Inspect pages and data feature",
+        "Inspect pages",
         "Perform data updates by using the Edit in Excel feature",
-        "Manage files by using Microsoft OneDrive and drag and drop",
-        "Configure and use data analysis mode"
+        "Configure and use data analysis mode",
+        "Personalize pages"
       ],
       "Process purchases": [
         "Manage quotes",
         "Create a purchase order",
         "Receive items for a purchase order",
-        "Utilize the over-receipt feature",
+        "Receive more items than ordered",
         "Reverse a receipt",
         "Create a posted invoice from a purchase order",
         "Configure recurring purchase lines",
         "Manage blanket purchase orders",
-        "Utilize deferrals with purchasing documents"
+        "Use deferrals with purchasing documents"
       ],
       "Process sales": [
         "Manage quotes",
@@ -171,7 +165,7 @@
         "Create a sales invoice from a sales order",
         "Configure recurring sales lines",
         "Manage blanket sales orders",
-        "Utilize deferrals with sales documents"
+        "Use deferrals with sales documents"
       ],
       "Process financial documents": [
         "Process purchase invoices",
@@ -185,7 +179,7 @@
         "Release and reopen documents",
         "Process prepayment invoices for purchases and sales"
       ],
-      "Process payments and journals": [
+      "Process journals and payments": [
         "Process payments by using payment journals",
         "Process receipts by using the cash receipt journal",
         "Process payment registrations",
@@ -193,13 +187,23 @@
         "Reverse posted journals",
         "Perform bank account reconciliation",
         "Process recurring transactions by using the recurring journals",
-        "Utilize general ledger allocations",
-        "Adjust currency exchange rates"
+        "Use general ledger allocations",
+        "Adjust currency exchange rates",
+        "Correct posted dimensions using the Dimension Correction Tool",
+        "Revalue general ledger account balances"
       ],
       "Process fixed asset transactions": [
         "Process fixed asset acquisitions",
         "Process fixed asset depreciations",
         "Process fixed asset disposals"
+      ],
+      "Process inventory transactions": [
+        "Process inventory receipts",
+        "Process inventory shipments",
+        "Transfer items between locations",
+        "Adjust item cost",
+        "Count inventory",
+        "Reclassify inventory"
       ]
     }
   },
