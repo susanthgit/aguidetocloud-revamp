@@ -108,32 +108,8 @@
     </div>
     {{ end }}
 
-    {{/* ── Auto-rendered FAQ from frontmatter ──
-         Schema (FAQPage JSON-LD) is generated separately in partials/seo-jsonld.html
-         for ALL blogs with faq:. This block adds the VISIBLE reader section.
-         Opt out per-page with `faq_render: false` (used on 18 blogs that already
-         have a richer manual FAQ section in body). Uses `isset` check because Hugo's
-         `default true` treats explicit `false` as empty and would override it. */}}
-    {{ $renderFAQ := true }}
-    {{ if isset .Params "faq_render" }}{{ $renderFAQ = .Params.faq_render }}{{ end }}
-    {{ if and .Params.faq $renderFAQ }}
-    <section class="nb-faq" id="faq" aria-labelledby="faq-heading">
-      <h2 class="nb-faq-heading" id="faq-heading">Frequently asked questions</h2>
-      {{ with .Params.faq_intro }}<p class="nb-faq-intro">{{ . | markdownify }}</p>{{ end }}
-      {{ range $i, $item := .Params.faq }}
-        {{ if and $item.question $item.answer }}
-        {{ $qid := printf "faq-%02d-%s" (add $i 1) ($item.question | urlize) }}
-        <div class="nb-faq-item">
-          <h3 class="nb-faq-q" id="{{ $qid }}">
-            <span class="nb-faq-q-text">{{ $item.question }}</span>
-            <a class="heading-anchor" href="#{{ $qid }}" aria-label="Link to this question">#</a>
-          </h3>
-          <div class="nb-faq-a">{{ $item.answer | markdownify }}</div>
-        </div>
-        {{ end }}
-      {{ end }}
-    </section>
-    {{ end }}
+    {{/* ── Auto-rendered FAQ — schema + visible together. See partials/faq-section.html ── */}}
+    {{ partial "faq-section.html" . }}
 
     {{/* Founder note — handwritten closing letter from Sush */}}
     {{ $founder := .Params.founder_note }}

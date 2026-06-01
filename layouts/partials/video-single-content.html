@@ -62,6 +62,9 @@
     </div>
     {{ end }}
 
+    {{/* ── Auto-rendered FAQ — schema + visible together ── */}}
+    {{ partial "faq-section.html" . }}
+
     {{/* Related videosfrom same section (sorted by views, excluding current) */}}
     {{ $sameSection := where site.RegularPages "Section" .Section }}
     {{ $others := where $sameSection "RelPermalink" "ne" .RelPermalink }}

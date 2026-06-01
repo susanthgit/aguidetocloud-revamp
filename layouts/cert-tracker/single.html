@@ -172,6 +172,9 @@
         {{ .Content }}
       </div>
 
+      {{/* ── Auto-rendered FAQ — schema + visible together ── */}}
+      {{ partial "faq-section.html" . }}
+
       {{/* Video Resources */}}
       {{ if or .Params.cert_video_id .Params.qa_video_id }}
       <div class="cert-video-section">
@@ -329,25 +332,7 @@
   }
 }
 </script>
-{{ if .Params.faq }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
-    {
-      "@type": "Question",
-      "name": {{ $q.question | jsonify | safeJS }},
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": {{ $q.answer | jsonify | safeJS }}
-      }
-    }{{ end }}
-  ]
-}
-</script>
-{{ end }}
+{{/* FAQPage JSON-LD is now emitted globally by partials/seo-jsonld.html (called from baseof.html line 117) for any page with .Params.faq. Redundant block removed 2026-06-01 to prevent duplicate FAQPage schema. */}}
 
 <script>
 (function(){

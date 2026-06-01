@@ -89,6 +89,8 @@
     {{ if eq .url $pageURL }}{{ $isToolPage = true }}{{ end }}
   {{ end }}
   {{ if or (eq .Section "blog") (and (eq .Section "cert-tracker") .IsPage) (eq .Section "study-guides") (eq .Section "mind-maps") (and (eq .Section "licensing") .IsPage) (eq .Section "licensing-docs") (eq .Section "free-tools") (eq .RelPermalink "/about/") $isVideoSection $isToolPage }}<link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">{{ end }}
+  {{/* FAQ section CSS — load on any page with faq: frontmatter (blog/cert-tracker/cloud-labs/interview-prep) */}}
+  {{ if .Params.faq }}<link rel="stylesheet" href="/css/faq-section.css?v={{ site.Params.cache_version }}">{{ end }}
   {{/* Notebook layout — preload fonts + scoped CSS in <head> to avoid FOUC */}}
   {{ if eq .Params.layout "notebook" }}
   <link rel="preconnect" href="https://fonts.googleapis.com">
