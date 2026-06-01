@@ -11,6 +11,18 @@ exam_category: "EC-Council"
 vendor: "eccouncil"
 manual: false
 guided_slug: "eccouncil-ceh-v13"
+faq_intro: "The CEH v13 questions I hear most — almost always opening with 'is CEH still worth it?' and 'is the price tag real?'"
+faq:
+  - question: "Is CEH v13 worth getting in 2026?"
+    answer: "Mixed honest answer. CEH carries weight in compliance-driven hiring (DoD 8570, government contractors, MSSPs) and is widely recognised by HR and recruiters — that's the real value. For pure technical skill, OSCP, PNPT, or HackTheBox CPTS will teach you more and cost less. If your target job ad lists CEH as required or preferred, get it. If you're choosing for skill development alone, go elsewhere first."
+  - question: "How much does the CEH v13 exam cost?"
+    answer: "USD $950 to $1,199 for the exam alone, depending on whether you take the official training. The full iLabs + courseware bundle is significantly more. EC-Council requires either accredited training OR two years of documented security experience to sit the exam without training. Renewal needs CPE credits over 3 years. Compare against alternatives like [PNPT](https://www.tcm-sec.com/certifications/) (around $299) or HTB CPTS (around $200) for similar skill validation at lower cost."
+  - question: "What's new in CEH v13 vs v12?"
+    answer: "CEH v13 (released 2024) added AI-assisted ethical hacking as a major theme — using AI to accelerate reconnaissance, vulnerability triage, social-engineering payload generation, and defensive automation. The 5-domain structure stayed similar but the AI lens runs through every domain. If your study material is for v12 or earlier, the AI content will be the biggest gap to close."
+  - question: "How long does it take to prepare for CEH v13?"
+    answer: "Eight to twelve weeks for most candidates with two years of security experience. Longer if you're new to penetration testing or only know defensive security. Block hands-on lab time — CEH is multiple-choice but the questions assume you've actually used the tools (Nmap, Metasploit, Burp Suite, Wireshark, Hashcat). Our [200-question practice exam](/cert-tracker/eccouncil-ceh-v13/) covers all 5 domains with realistic pentest scenarios."
+  - question: "Do I need EC-Council official training to take CEH v13?"
+    answer: "Not if you have two years of documented information security work experience — you can self-study and sit the exam directly. You'll submit an eligibility application with employment proof and pay a non-refundable application fee. Without two years of experience, you must complete official EC-Council training (online or via an Accredited Training Centre) — which makes up most of the total cost. Self-study + exam-only is the cheaper path if you qualify."
 ---
 ## About the CEH-V13 Exam
 

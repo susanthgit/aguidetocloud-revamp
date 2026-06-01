@@ -11,6 +11,18 @@ exam_category: "ISC²"
 vendor: "isc2"
 manual: false
 guided_slug: "isc2-cc"
+faq_intro: "The CC questions I get most — usually from career changers asking 'is this really my way in?' and 'is it actually free?'"
+faq:
+  - question: "Is ISC² CC really free?"
+    answer: "The exam fee was USD $50 (via the One Million Certified in Cybersecurity Pledge) for years — that promotion ended in mid-2025. The exam now costs USD $199. ISC² still offers free self-study materials (Official Study App + practice question pack) — register at [isc2.org/certifications/cc](https://www.isc2.org/certifications/cc) for the free materials, even though the exam fee is back to standard."
+  - question: "Is the CC certification worth it for getting into cybersecurity?"
+    answer: "Yes — for absolute beginners. CC gives you an ISC² credential on your CV without years of work history (unlike CISSP, which needs 5 years). It signals you've taken cybersecurity seriously and passed a vendor-neutral foundational exam. The next step from CC is usually [SSCP](https://www.isc2.org/certifications/sscp) (technical) or CompTIA Security+, then eventually CISSP. CC by itself rarely lands the job — it gets your CV past the keyword filter."
+  - question: "How long does it take to prepare for CC?"
+    answer: "Two to four weeks of part-time study for most beginners. If you've done CompTIA Security+ or have an IT background, you might pass cold or with a week's review. The exam is 100 questions over 2 hours covering 5 domains — Security Principles (26%) carries the most weight, so start there. Our [200-question practice exam](/cert-tracker/isc2-cc/) maps to the latest exam objectives."
+  - question: "CC vs CompTIA Security+ — which should I take first?"
+    answer: "Honest answer: take whichever your target job posting asks for. Security+ has wider US and UK enterprise and government recognition. CC has growing international recognition and a cleaner ISC² upgrade path to SSCP and CISSP. Cost-wise CC is cheaper ($199 vs around $392). Most career changers do CC first (cheaper, easier, faster) then Security+ within 6 months once they've landed an entry role."
+  - question: "What does the CC cert require for renewal?"
+    answer: "45 Continuing Professional Education (CPE) credits over a 3-year renewal cycle, plus an annual maintenance fee (USD $50/year for CC holders as of 2026). CPEs come from training, webinars, contributing to security communities, attending conferences. ISC² publishes the full CPE handbook. If you don't renew, the cert lapses but you can reinstate within a grace period."
 ---
 ## About the CC Exam
 
