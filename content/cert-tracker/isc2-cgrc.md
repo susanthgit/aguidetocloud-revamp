@@ -11,6 +11,18 @@ exam_category: "ISC²"
 vendor: "isc2"
 manual: false
 guided_slug: "isc2-cgrc"
+faq_intro: "The CGRC questions I hear most often — usually 'is this still the CAP cert?' and 'do I need a GRC role to take it?'"
+faq:
+  - question: "Is CGRC the same as CAP?"
+    answer: "Yes — ISC² renamed CAP (Certified Authorization Professional) to CGRC (Certified in Governance, Risk and Compliance) in 2023. Same body of knowledge, updated to align with current NIST Risk Management Framework, FIPS 199 / 200, and SP 800-53 controls. Older study materials labelled as CAP still cover roughly the right scope — just check they reference the current NIST RMF cycle (Categorize, Select, Implement, Assess, Authorize, Monitor). If your study guide pre-dates NIST RMF 7-step (2018+), get newer material."
+  - question: "Do I need GRC work experience to take CGRC?"
+    answer: "Yes — 2 years of cumulative paid work experience in at least 2 of the 7 CGRC domains. If you don't yet have the experience, you can sit the exam and become an Associate of ISC² — you have 3 years from passing to gain the experience and convert to full CGRC status. Common qualifying roles: GRC analyst, risk manager, compliance officer, internal auditor, security control assessor, government contractor handling FedRAMP / FISMA workloads."
+  - question: "How is CGRC different from CISSP?"
+    answer: "CGRC is narrower and deeper — focused entirely on the risk management framework, control selection, assessment, and ongoing compliance lifecycle. CISSP is broader and shallower — covers 8 domains across all of cybersecurity (architecture, asset security, comms, IAM, ops, etc.) at a manager level. GRC roles typically value CGRC more than CISSP. Pure security architecture roles value CISSP more. Many senior compliance professionals carry both."
+  - question: "How long does CGRC take to prepare for?"
+    answer: "Four to eight weeks of focused study for candidates already working in GRC. Longer (12-16 weeks) if you're transitioning from a different security speciality. The exam covers 7 domains heavily based on NIST RMF — start with Implementation of Security and Privacy Controls (17%, the largest weight) and Security and Privacy Governance (16%). The [official ISC² Study Guide](https://www.isc2.org/certifications/cgrc) is the canonical resource — pair it with practice questions for the multiple-choice exam format."
+  - question: "Is CGRC worth $599 for a private-sector role?"
+    answer: "Depends on your target. CGRC is especially valuable for: US government contractors (FedRAMP, FISMA, DoD work), healthcare (HIPAA program managers), financial services (SOX, GLBA compliance), and any role tied to NIST 800-53 controls. For pure private-sector security engineering or generic IT, the $599 fee plus annual maintenance ($135) might be better spent on CISSP or a cloud security cert. CGRC pays off where NIST RMF or FedRAMP appears in the job description."
 ---
 ## About the CGRC Exam
 

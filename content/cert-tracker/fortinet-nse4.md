@@ -11,6 +11,18 @@ exam_category: "Fortinet"
 vendor: "fortinet"
 manual: false
 guided_slug: "fortinet-nse4"
+faq_intro: "The NSE4 questions I hear most from network security engineers — usually 'is Fortinet worth it vs Palo Alto or Cisco?' and 'how is the exam actually free?'"
+faq:
+  - question: "Is the NSE4 exam really free?"
+    answer: "Yes — but with a catch. Fortinet's NSE certification path makes the NSE 4 exam free if you complete their official training (FortiGate Security and FortiGate Infrastructure courses) through Fortinet's [NSE Training Institute](https://training.fortinet.com/). The training itself is also free (you create an account, watch the videos, do the labs). Self-study without training is not eligible for the free exam. Effectively: pay with your time (around 40-60 hours of training), get the cert at zero cost."
+  - question: "Is Fortinet NSE 4 worth getting if I have CCNA Security or PCNSA?"
+    answer: "Depends on your target jobs. Service providers, MSSPs, and any enterprise with a Fortinet footprint value NSE4. If you're in a Cisco-only or Palo Alto-only environment, the time is better spent on the vendor in front of you. NSE4 specifically covers FortiGate firewall operations — different config model than Cisco ASA / FTD or PAN-OS. Multi-vendor security engineers carry several vendor certs; junior engineers usually focus on one."
+  - question: "How long does NSE4 take to prepare for?"
+    answer: "Eight to twelve weeks if you go through the official free training start-to-finish. Shorter (4-6 weeks) if you have hands-on FortiGate experience and just need the cert recognition. The exam itself is 60 minutes / 35 questions — short by enterprise-cert standards. Time investment is mostly in the training videos and lab exercises (which you also need for the free exam voucher)."
+  - question: "What FortiOS version does NSE4 cover?"
+    answer: "FortiOS 7.6 for the current NSE 4 - FortiOS 7.6 Administrator exam. Fortinet updates the exam blueprint when major FortiOS versions ship — older study material (FortiOS 7.0 or earlier) is missing features around ZTNA, SASE integration, and FortiAI. Use the [Fortinet documentation library](https://docs.fortinet.com/) to track changes between versions if you're studying with older material."
+  - question: "Does NSE4 expire and how do I renew?"
+    answer: "Yes — NSE certifications are valid for 2 years (shorter than most enterprise certs because Fortinet ships meaningful updates more often). Renewal is done by passing the current version of NSE4 (or progressing to NSE5 / NSE7 in the same track). Fortinet's [NSE recertification policy](https://training.fortinet.com/) details the requirements. If you let it lapse, you reinstate by passing the current version."
 ---
 ## About the NSE4 Exam
 
