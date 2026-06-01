@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Jun 2026 05:12:45 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2026 12:08:02 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Some users may have been unable to setup Multi-Factor Authentication (MFA) or access the mysignins.microsoft.com website</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1329260</link>
+      <description>[Microsoft 365 suite] Users may have been unable to setup MFA or access the mysignins.microsoft.com website.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1329260</guid>
+      <pubDate>Mon, 01 Jun 2026 05:50:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Some users may be unable to create new online meetings from shared calendar events in Exchange Online</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1327187</link>
@@ -107,6 +116,15 @@ We detected this issue through our automated monitoring systems after observing 
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1320293</guid>
       <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users may be unable to view the body of edited Exchange Online email messages from the Sent folder</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1318421</link>
+      <description>[Exchange Online] Users may be unable to view the body of edited Exchange Online email messages from the Sent folder.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1318421</guid>
+      <pubDate>Fri, 22 May 2026 03:24:46 +0000</pubDate>
     </item>
     <item>
       <title>[Planner] Some users may encounter issues accessing features in the Microsoft Planner application</title>
@@ -440,24 +458,6 @@ We detected this issue through our automated monitoring systems after observing 
       <category>serviceRestored</category>
       <guid isPermaLink="false">SP1296487</guid>
       <pubDate>Thu, 30 Apr 2026 07:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Some users may have been unable to successfully invoke Power Automate flows from their SharePoint (SPFx) applications </title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1301507</link>
-      <description>[SharePoint Online] Users may have been unable to successfully invoke Power Automate flows from their SPFx applications.</description>
-      <category>SharePoint Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">SP1301507</guid>
-      <pubDate>Wed, 29 Apr 2026 23:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Some users may be unable to access links to other apps provided by Microsoft 365 Copilot Chat prompts</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1300750</link>
-      <description>[Microsoft 365 Copilot Chat] Users may have been unable to access links to other apps provided by Copilot Chat prompts.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1300750</guid>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
