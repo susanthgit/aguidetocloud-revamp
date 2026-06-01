@@ -5,8 +5,35 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Jun 2026 12:08:02 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2026 18:15:16 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to access the Microsoft Copilot (Microsoft 365) desktop or web app</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1329665</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access the Copilot desktop or web app.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1329665</guid>
+      <pubDate>Mon, 01 Jun 2026 13:55:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Unable to open files in Office for the web or Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1329446</link>
+      <description>[Microsoft 365 suite] Users may have been unable to open files in Office for the web or Microsoft Teams.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1329446</guid>
+      <pubDate>Mon, 01 Jun 2026 12:43:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Unable to open files in Office for the web.</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1329374</link>
+      <description>[SharePoint Online] Users may be unable to open files in Office for the web.</description>
+      <category>SharePoint Online</category>
+      <category>falsePositive</category>
+      <guid isPermaLink="false">SP1329374</guid>
+      <pubDate>Mon, 01 Jun 2026 12:42:01 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Some users may have been unable to setup Multi-Factor Authentication (MFA) or access the mysignins.microsoft.com website</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1329260</link>
@@ -176,7 +203,7 @@ We detected this issue through our automated monitoring systems after observing 
       <link>https://www.aguidetocloud.com/service-health/#MO1321911</link>
       <description>[Microsoft 365 suite] Admins were unable to view usage reports in the Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1321911</guid>
       <pubDate>Mon, 18 May 2026 23:00:00 +0000</pubDate>
     </item>
@@ -431,33 +458,6 @@ We detected this issue through our automated monitoring systems after observing 
       <category>serviceRestored</category>
       <guid isPermaLink="false">CR1308631</guid>
       <pubDate>Sat, 02 May 2026 18:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Viva] Users may be unable to access Community Analytics in Microsoft Viva Engage</title>
-      <link>https://www.aguidetocloud.com/service-health/#MV1300072</link>
-      <description>[Microsoft Viva] Users may have been unable to access Community Analytics in Microsoft Viva Engage.</description>
-      <category>Microsoft Viva</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MV1300072</guid>
-      <pubDate>Fri, 01 May 2026 21:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft OneDrive] Users may not be able to load the search bar in Microsoft OneDrive</title>
-      <link>https://www.aguidetocloud.com/service-health/#OD1296516</link>
-      <description>[Microsoft OneDrive] Users may not have been able to load the search bar in OneDrive.</description>
-      <category>Microsoft OneDrive</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">OD1296516</guid>
-      <pubDate>Thu, 30 Apr 2026 07:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Users may not be able to load the search bar in SharePoint Online sites</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1296487</link>
-      <description>[SharePoint Online] Users may not have been able to load the search bar in SharePoint Online sites.</description>
-      <category>SharePoint Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">SP1296487</guid>
-      <pubDate>Thu, 30 Apr 2026 07:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
