@@ -7,6 +7,7 @@ sitemap:
   priority: 0.9
 card_tag: "Copilot"
 tag_class: "ai"
+faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
 faq:
   - question: "What is grounding in Microsoft 365 Copilot?"
     answer: "Grounding is the process of enriching your prompt with your organisation's actual data — emails, documents, chats — before sending it to the AI model. It uses the Semantic Index and Microsoft Graph to find relevant context. Without grounding, Copilot would give generic AI answers instead of responses specific to your organisation."

@@ -5,6 +5,7 @@ date: 2026-04-09
 lastmod: 2026-05-08
 card_tag: "Copilot"
 tag_class: "ai"
+faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
 faq:
   - question: "Why is Microsoft removing free Copilot Chat from Office apps?"
     answer: "Only about 3% of Microsoft 365 customers pay for the Copilot add-on licence. Microsoft offered free Copilot Chat in September 2025, hoping users would upgrade. That strategy didn't generate enough conversions, so Microsoft is tightening the gap between free and paid to drive licence adoption."

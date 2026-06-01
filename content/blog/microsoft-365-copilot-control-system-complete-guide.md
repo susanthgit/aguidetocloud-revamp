@@ -5,6 +5,7 @@ date: 2026-04-19
 lastmod: 2026-05-08
 card_tag: "Copilot"
 tag_class: "ai"
+faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
 faq:
   - question: "What is the Copilot Control System?"
     answer: "The Copilot Control System (CCS) is a governance framework — not a product and not a separate licence. It's a collection of integrated controls across Microsoft 365 that help IT teams secure, manage, and measure how people use Copilot and agents. Think of it as the operations manual for AI in your organisation. The controls live inside tools you probably already own — the M365 Admin Center, Purview, Defender, SharePoint Admin, and Power Platform Admin Center."

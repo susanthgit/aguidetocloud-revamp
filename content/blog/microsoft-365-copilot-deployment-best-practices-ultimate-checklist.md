@@ -5,6 +5,7 @@ date: 2026-04-14
 lastmod: 2026-05-08
 card_tag: "Copilot"
 tag_class: "ai"
+faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
 faq:
   - question: "What is the minimum licence needed to deploy Microsoft 365 Copilot?"
     answer: "You need a base Microsoft 365 licence (Business Basic/Standard/Premium, E3, or E5) plus the Microsoft 365 Copilot add-on ($30/user/month enterprise, $21/user/month business). Copilot cannot run as a standalone licence."

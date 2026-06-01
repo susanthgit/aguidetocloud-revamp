@@ -7,6 +7,7 @@ card_tag: "Copilot"
 tag_class: "ai"
 sitemap:
   priority: 0.9
+faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
 faq:
   - question: "What is Microsoft Copilot Cowork?"
     answer: "Copilot Cowork is a new AI agent inside Microsoft 365 that doesn't just answer your questions — it actually does the work. You describe an outcome (like 'prep me for tomorrow's client meeting'), and Cowork autonomously plans the steps, executes them across Outlook, Teams, Word, Excel, and SharePoint, and checks in with you before doing anything sensitive."

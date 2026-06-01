@@ -14,6 +14,7 @@ founder_note: |
   They're not identical. The $10/month difference between them is the single most important $10 in Microsoft's entire AI lineup — and most people get it wrong. This is the version of the answer I wish I could just send by link.
 
   If you only remember one thing: **Copilot Pro is for your personal life. Microsoft 365 Copilot is for your work life *(the [licensed guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/) explains what the work version unlocks).*** Buying the wrong one is the most expensive mistake here.
+faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
 faq:
   - question: "What is the difference between Copilot Pro and Microsoft 365 Copilot?"
     answer: "Copilot Pro ($20/month) is a personal consumer subscription that adds AI to your own Word, Excel, PowerPoint and Outlook. Microsoft 365 Copilot ($30/user/month) is an enterprise product your IT admin deploys — it adds AI to your work apps AND grounds it on your organisation's emails, files, meetings and Teams chats. The difference is the data Copilot can see."

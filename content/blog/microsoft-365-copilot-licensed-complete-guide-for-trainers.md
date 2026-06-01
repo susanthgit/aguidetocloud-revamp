@@ -5,6 +5,7 @@ date: 2026-04-12
 lastmod: 2026-05-08
 card_tag: "Copilot"
 tag_class: "ai"
+faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
 faq:
   - question: "What is the Microsoft 365 Copilot licence?"
     answer: "Microsoft 365 Copilot is a paid add-on licence ($30/user/month for enterprise, $21 for business) that unlocks the full AI experience across all Microsoft 365 apps. It adds work data grounding via Microsoft Graph, deep in-app integration, advanced agents like Researcher and Analyst, Notebooks, priority access, and Anthropic Claude model choice."

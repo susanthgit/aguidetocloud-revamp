@@ -12,6 +12,7 @@ founder_note: |
   E7 caught me off guard when it dropped. Took me a weekend of reading licensing PDFs and a few coffees with the EA team to figure out what was actually new versus what was repackaged. This page is the version I wish I'd had before that weekend started.
 
   If you're reading this because someone in leadership asked *"should we move to E7?"* — start with the [Who should upgrade](#who-should-upgrade) section, then come back to the rest. That's the order I'd recommend.
+faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
 faq:
   - question: "What is Microsoft 365 E7?"
     answer: "Microsoft 365 E7, also known as the Frontier Suite, is Microsoft's new top-tier enterprise plan. It bundles Microsoft 365 E5, Microsoft 365 Copilot, Microsoft Entra Suite, and Agent 365 into a single SKU at $99/user/month *(the [Agent 365 security guide](/blog/agent-365-security-governance-complete-guide/) covers the governance piece).*"

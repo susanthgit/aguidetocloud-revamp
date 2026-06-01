@@ -12,6 +12,7 @@ founder_note: |
   Microsoft gave us three different ways to build agents. The official docs are split across three Learn sites and none of them put the three side-by-side to help you decide. So I wrote the version I wished I'd had after the first customer asked.
 
   If you only remember one thing — start with Agent Builder. It's free with Copilot, and you can promote anything you build into Copilot Studio later without losing work.
+faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
 faq:
   - question: "Can I start with Agent Builder and move to Copilot Studio later?"
     answer: "Yes. Microsoft built a direct promotion path. You can copy any Agent Builder agent into Copilot Studio. Your instructions and knowledge carry over."

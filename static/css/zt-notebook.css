@@ -821,3 +821,127 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
   text-align: center;
   width: auto;
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   FAQ — auto-rendered from frontmatter `faq:` block.
+   Schema (FAQPage JSON-LD) is generated in seo-jsonld.html for ALL blogs;
+   this section adds the VISIBLE reader Q&A. Opt out per-page with
+   `faq_render: false`. Section lives BETWEEN body and founder note,
+   so it's scoped under .zt-reading--notebook (NOT .nb-body) and must
+   restate width + heading-anchor styles that .nb-body owns.
+   ═══════════════════════════════════════════════════════════ */
+
+.zt-reading--notebook .nb-faq {
+  max-width: 720px;
+  margin: 64px 0 0;
+  padding-top: 28px;
+  border-top: 1px dashed var(--rule);
+}
+
+.zt-reading--notebook .nb-faq-heading {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.1;
+  margin: 0 0 24px;
+  color: var(--ink);
+  letter-spacing: 0;
+}
+
+.zt-reading--notebook .nb-faq-item {
+  padding: 18px 0 22px;
+  border-bottom: 1px dashed var(--rule);
+}
+.zt-reading--notebook .nb-faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.zt-reading--notebook .nb-faq-q {
+  font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.35;
+  margin: 0 0 10px;
+  color: var(--ink);
+  letter-spacing: 0;
+  position: relative;
+}
+.zt-reading--notebook .nb-faq-q .nb-faq-q-text {
+  /* keeps anchor link from being underlined by question hover */
+  display: inline;
+}
+
+.zt-reading--notebook .nb-faq-a {
+  font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  font-size: var(--reading-font-size, 17px);
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.zt-reading--notebook .nb-faq-a > *:first-child { margin-top: 0; }
+.zt-reading--notebook .nb-faq-a > *:last-child { margin-bottom: 0; }
+.zt-reading--notebook .nb-faq-a p {
+  margin: 0 0 12px;
+}
+/* FAQ content lives outside .nb-body so it doesn't inherit body's wrap rule */
+.zt-reading--notebook .nb-faq-a p,
+.zt-reading--notebook .nb-faq-a li,
+.zt-reading--notebook .nb-faq-a a,
+.zt-reading--notebook .nb-faq-a code {
+  hyphens: auto;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.zt-reading--notebook .nb-faq-a a {
+  color: var(--pen);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.zt-reading--notebook .nb-faq-a a:hover {
+  color: var(--pen-soft);
+}
+.zt-reading--notebook .nb-faq-a code {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.9em;
+  background: var(--paper-deep);
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: var(--ink);
+}
+.zt-reading--notebook .nb-faq-a ul,
+.zt-reading--notebook .nb-faq-a ol {
+  margin: 8px 0 12px;
+  padding-left: 24px;
+}
+.zt-reading--notebook .nb-faq-a li {
+  margin-bottom: 4px;
+}
+
+/* Heading anchor — same hover-reveal pattern as .nb-body but scoped to FAQ */
+.zt-reading--notebook .nb-faq .heading-anchor {
+  color: var(--pen);
+  font-family: 'Caveat', cursive;
+  font-weight: 600;
+  font-size: 0.75em;
+  margin-left: 8px;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+.zt-reading--notebook .nb-faq-q:hover .heading-anchor,
+.zt-reading--notebook .nb-faq-q:focus-within .heading-anchor {
+  opacity: 1;
+}
+
+/* Mobile — keep readable, tighten margins */
+@media (max-width: 768px) {
+  .zt-reading--notebook .nb-faq { margin-top: 48px; }
+  .zt-reading--notebook .nb-faq-heading { font-size: 32px; }
+  .zt-reading--notebook .nb-faq-q { font-size: 18px; }
+}
+@media (max-width: 640px) {
+  .zt-reading--notebook .nb-faq-heading { font-size: 28px; margin-bottom: 18px; }
+  .zt-reading--notebook .nb-faq-item { padding: 16px 0 18px; }
+}

@@ -8,6 +8,7 @@ tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins.jpg"]
 og_headline: "M365 Copilot Content safety"
 og_glyph: "layers"
+faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
 faq:
   - question: "Can I completely disable all Copilot content filters?"
     answer: "No. Core responsible AI protections — prompt injection defence, copyright safeguards, biosecurity measures, and image safety filters — are always enforced and cannot be turned off. The harmful content protection toggle only affects text responses in Copilot Chat for specific content categories like violence, sexual material, hate speech, and self-harm."

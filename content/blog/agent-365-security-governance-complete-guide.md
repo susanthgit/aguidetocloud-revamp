@@ -5,6 +5,7 @@ date: 2026-04-30
 lastmod: 2026-05-01
 card_tag: "AI Agents"
 tag_class: "ai"
+faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
 faq:
   - question: "What is Agent 365?"
     answer: "Think of Agent 365 as the HR department for your AI agents. Just like Entra manages user identities and Intune manages devices, Agent 365 manages AI agents — their identity, permissions, lifecycle, and compliance. It's not where you build agents (that's Copilot Studio). It's where you govern them."

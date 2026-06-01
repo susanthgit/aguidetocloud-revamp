@@ -17,6 +17,7 @@ founder_note: |
   This post is the SharePoint half of the answer. It covers RSS, RCD, RAC and SharePoint Advanced Management — the controls that decide what Copilot can and can't surface from SharePoint. Other parts of the toolkit (Conditional Access, DLP for Copilot, Purview DSPM for AI) deserve their own posts — links at the bottom when they're ready *(for the admin side, see the [CCS guide](/blog/microsoft-365-copilot-control-system-complete-guide/)).*
 
   If your CISO is asking, this is the post to send.
+faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
 faq:
   - question: "What is Restricted SharePoint Search (RSS)?"
     answer: "Restricted SharePoint Search is a tenant-wide setting that limits Microsoft Search and Microsoft 365 Copilot to an allow-list of up to 100 SharePoint sites. Anything not on the list is excluded from organisation-wide search and Copilot grounding — but permissions are not changed. Microsoft explicitly describes RSS as a temporary safety net while you audit and fix permissions, not a long-term control."

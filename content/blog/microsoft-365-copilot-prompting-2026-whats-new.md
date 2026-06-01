@@ -16,6 +16,7 @@ founder_note: |
   Honest take? Most M365 Copilot users I meet are still prompting like it's 2024. The Field Guide on this site teaches that layer — and you should master it first. This upgrade brief is the layer on top. Skim it once. Pick one or two things to try this week. Come back when something else lands. *(For the monthly release notes, check the [May 2026 update](/blog/microsoft-365-copilot-may-2026-updates/) and the [April 2026 update](/blog/microsoft-365-copilot-april-2026-updates/).)*
 
   If you haven't read the [Prompt Engineering Field Guide](/blog/prompt-engineering-microsoft-365-copilot/) yet, **read that first**. Everything here assumes you already know what Goal · Context · Expectations · Source means and that iteration is a habit.
+faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
 faq:
   - question: "What is Copilot Notebooks and why does it matter for prompting?"
     answer: "Copilot Notebooks is a shared AI-powered workspace where you pin references (files, emails, meeting recaps, web pages, OneNote sections) and prompt across the whole notebook. The references stay attached across sessions — so you don't re-attach the same files every time you want to ask a question. For multi-source prompting (compare these three docs against our policy), Notebooks is the surface that finally makes the workflow practical."
