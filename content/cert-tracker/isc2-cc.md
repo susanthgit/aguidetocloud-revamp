@@ -26,7 +26,7 @@ faq:
 ---
 ## About the CC Exam
 
-> Your entry into cybersecurity — free exam voucher available
+> Your entry into cybersecurity — USD $199 exam, free study materials from ISC²
 
 The (ISC)² Certified in Cybersecurity (CC) certification validates foundational knowledge in cybersecurity principles, network security, access controls, security operations, and incident response — designed for career changers, students, and IT professionals entering cybersecurity.
 
