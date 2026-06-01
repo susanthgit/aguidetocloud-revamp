@@ -849,6 +849,15 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
   letter-spacing: 0;
 }
 
+.zt-reading--notebook .nb-faq-intro {
+  font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  font-size: var(--reading-font-size, 17px);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin: -8px 0 20px;
+}
+
 .zt-reading--notebook .nb-faq-item {
   padding: 18px 0 22px;
   border-bottom: 1px dashed var(--rule);

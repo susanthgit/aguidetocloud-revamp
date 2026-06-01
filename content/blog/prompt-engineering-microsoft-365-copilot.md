@@ -16,7 +16,7 @@ founder_note: |
   Honest take? Most people overcomplicate this. The official Microsoft framework is four blocks. Add one habit on top — iterate — and you have a working skill in an afternoon. The rest of this post is the slow, plain-English version of those five things, plus the per-app tips that took me longer to learn than I'd like to admit.
 
   If you only have ten minutes, jump straight to the [Cheat Sheet](#cheat-sheet) — print it, screenshot it, stick it next to your monitor. You'll come back to the deeper sections when you hit a wall.
-faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
+faq_intro: "The most common questions I get from people new to prompting Microsoft 365 Copilot."
 faq:
   - question: "What is prompt engineering?"
     answer: "Prompt engineering is the skill of writing clear, useful instructions for an AI tool like Microsoft 365 Copilot. It's not coding — it's communication. The clearer your brief, the better the answer. Microsoft's official framework breaks a good prompt into four blocks: Goal, Context, Expectations, and Source. Master those plus the habit of iterating and you have the skill."
@@ -888,8 +888,4 @@ You now have the framework, the per-app tips, the privacy guardrails, and a prac
 You don't need a course. You need the habit. Try the framework on your next email reply. Iterate once. Notice what changed. Do it again tomorrow. By the end of a week, prompting will feel as ordinary as writing.
 
 — Sush
-
-## FAQ {#faq}
-
-The most common questions I get from people new to prompting Microsoft 365 Copilot.
 
