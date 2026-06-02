@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 02 Jun 2026 10:53:54 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 16:53:08 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] We're looking into a potential problem impacting Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1331875</link>
+      <description>[Microsoft Copilot (Microsoft 365)] We're checking for potential impact to your users.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1331875</guid>
+      <pubDate>Tue, 02 Jun 2026 16:00:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Issue with webhook-based task notifications in Microsoft To Do</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1331639</link>
+      <description>[Microsoft 365 suite] Users are unable to receive webhook-based task notifications in Microsoft To Do.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1331639</guid>
+      <pubDate>Tue, 02 Jun 2026 13:55:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to access the Microsoft Copilot (Microsoft 365) desktop or web app</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1329665</link>
@@ -24,15 +42,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1329446</guid>
       <pubDate>Mon, 01 Jun 2026 12:43:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Unable to open files in Office for the web.</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1329374</link>
-      <description>[SharePoint Online] Users may be unable to open files in Office for the web.</description>
-      <category>SharePoint Online</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">SP1329374</guid>
-      <pubDate>Mon, 01 Jun 2026 12:42:01 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some users may have been unable to setup Multi-Factor Authentication (MFA) or access the mysignins.microsoft.com website</title>
@@ -450,15 +459,6 @@ We detected this issue through our automated monitoring systems after observing 
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">DZ1299600</guid>
       <pubDate>Sun, 03 May 2026 08:52:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Dynamics 365 Apps] Queried data from computed columns return duplicate fields where the logical/physical names differ</title>
-      <link>https://www.aguidetocloud.com/service-health/#CR1308631</link>
-      <description>[Dynamics 365 Apps] Queried data from computed columns had returned duplicate fields where the logical/physical names differ.</description>
-      <category>Dynamics 365 Apps</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CR1308631</guid>
-      <pubDate>Sat, 02 May 2026 18:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
