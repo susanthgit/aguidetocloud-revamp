@@ -502,7 +502,7 @@
    FOUNDER NOTE — handwritten closing letter
    ═══════════════════════════════════════════════════════════ */
 .zt-reading--notebook .nb-founder-note {
-  margin-top: 64px;
+  margin: 64px auto 0;
   background: var(--paper-deep);
   border: 1px dashed var(--ink-faint);
   padding: 32px 36px;
@@ -834,7 +834,7 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
 
 .zt-reading--notebook .nb-faq {
   max-width: 720px;
-  margin: 64px 0 0;
+  margin: 64px auto 0;
   padding-top: 28px;
   border-top: 1px dashed var(--rule);
 }

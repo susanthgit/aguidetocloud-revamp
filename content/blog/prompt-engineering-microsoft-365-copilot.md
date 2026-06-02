@@ -69,10 +69,9 @@ I had to look this up three times before it clicked. Then I taught it to a recru
 
 </div>
 
-<!--
-TODO 2026-06-02 ATLAS: Executive Field Guide is currently draft. When it is undrafted, uncomment this callout.
-> 💡 **Tip —** **Executive or board member?** This guide is calibrated for individual contributors. For leadership-level patterns — board prep, decision support, governance, accountability — see the [Copilot for Executives Field Guide](/blog/copilot-for-executives-field-guide/) instead.
--->
+> 💡 **Tip — Leading people?** Two companion field guides go deeper on leadership-level Copilot use:
+> - **[Copilot for Executives Field Guide](/blog/copilot-for-executives-field-guide/)** — for C-suite and board members. Board prep, decision support, governance, 10 role playbooks.
+> - **[Copilot for People Leaders Field Guide](/blog/copilot-for-people-leaders-field-guide/)** — for managers running teams. 1:1s, team meetings, performance, hiring, coaching.
 
 > ⏱ **Start in 60 seconds — actually try this before reading further**
 >

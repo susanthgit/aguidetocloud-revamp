@@ -68,10 +68,9 @@ This is the role-specific companion to the [Prompt Engineering hub guide](/blog/
 
 </div>
 
-<!--
-TODO 2026-06-02 ATLAS: Executive Field Guide is currently draft. When it is undrafted, uncomment this callout.
-> 💡 **Tip —** **Are you an executive or board member?** This playbook is calibrated for individual-contributor roles. For leadership-level patterns — board prep, decision support, governance, accountability — head to the [Copilot for Executives Field Guide](/blog/copilot-for-executives-field-guide/) instead. Different content shape, calibrated for leadership stakes.
--->
+> 💡 **Tip — Leading people?** This playbook is calibrated for individual-contributor roles. For leadership-level patterns, two companion field guides cover the work:
+> - **[Copilot for Executives Field Guide](/blog/copilot-for-executives-field-guide/)** — board prep, leadership comms, decision support, governance. C-suite role playbooks (CEO, CFO, COO, CIO, CHRO, CMO, CISO, Board, Chief of Staff).
+> - **[Copilot for People Leaders Field Guide](/blog/copilot-for-people-leaders-field-guide/)** — 1:1s, team meetings, performance check-ins, hiring, coaching, recognition. Written for managers running teams.
 
 > 🏃 **TL;DR for skimmers**
 >
