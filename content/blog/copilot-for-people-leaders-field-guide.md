@@ -231,19 +231,21 @@ The strongest pattern: **using Copilot to stress-test your own thinking, not to 
 
 **3. Options comparison.** When you're choosing between three or four genuine alternatives, ask Copilot to lay out the trade-offs in a structured table. Force structure. Force trade-offs. The output is the start of your decision conversation, not the end of it.
 
-### Worked example — board paper brief-down
+### Worked example — long-document brief-down
+
+**Setup:** A 25-page project paper, strategy doc, or planning paper your skip-level (or a peer manager) forwarded to you to review for next week's meeting. You've got 90 minutes between meetings; reading end-to-end costs 60. You want to walk in calibrated, not cold.
 
 **Prompt:**
 
-> *Summarise this board paper into a 90-second briefing for the CEO who hasn't read it yet. Use four sections: (1) bottom line in one sentence, (2) the three options on the table with one-line trade-offs each, (3) the top 3 risks I should be alert to, (4) the specific decisions I'm being asked to make.*
+> *Summarise this paper into a 90-second briefing for me as the team's manager. Use four sections: (1) bottom line in one sentence, (2) the three options on the table with one-line trade-offs each, (3) the top 3 risks I should be alert to for my team, (4) the specific decisions I'm being asked to make or weigh in on. Don't add your own recommendation — show me the structure so I can decide.*
 
-**Why this prompt works:** It tells Copilot the audience (CEO who hasn't read it), the time budget (90 seconds), the structure (four numbered sections), and the format of each section. It also strips the editorial preference (briefing, not summary) so you don't get a generic regurgitation.
+**Why this prompt works:** It tells Copilot the audience (you as a manager, not a generic reader), the time budget (90 seconds), the structure (four numbered sections), and the format of each section. It also strips Copilot's reflex to recommend — *"show me the structure so I can decide"* keeps the decision where it belongs.
 
-![Board paper brief prompt](/images/blog/copilot-for-executives/01a-board-paper-brief-prompt.webp)
-*Setup: the prompt with the board paper .docx attached to Copilot Chat. Notice the file chip — that's the grounding signal.*
+![Long-document brief prompt](/images/blog/copilot-for-executives/01a-board-paper-brief-prompt.webp)
+*Setup: the prompt with the source document attached to Copilot Chat. Notice the file chip — that's the grounding signal. (Screenshot is from the companion exec guide using a board paper; the PL setup uses a project paper / strategy doc the same way.)*
 
 
-![Board paper brief response](/images/blog/copilot-for-executives/01b-board-paper-brief-response.webp)
+![Structured 4-section response](/images/blog/copilot-for-executives/01b-board-paper-brief-response.webp)
 *The structured response: bottom line, 3 options with trade-offs, top 3 risks, decisions required. Source chip at the bottom proves grounding.*
 
 
@@ -251,21 +253,21 @@ The strongest pattern: **using Copilot to stress-test your own thinking, not to 
 
 After the brief above lands, follow up:
 
-> *Now play devil's advocate. Make the strongest possible case for Option C using only what's in this paper. Be specific.*
+> *Now play devil's advocate. Make the strongest possible case for Option C using only what's in this paper. Be specific. Don't water it down to be polite — give me the sharp version of the counter-argument.*
 
-This is the prompt that earns the most "oh, that's clever" reactions in leader demos. It's also the most under-used. Most people stop at the first prompt. The compounding value is in the second.
+This is the prompt that earns the most "oh, that's clever" reactions in leader demos. It's also the most under-used. Most managers stop at the first prompt. The compounding value is in the second — particularly before you're about to push back on a team member's recommendation. Hearing the strongest version of their case before the meeting often changes how you arrive at the conversation.
 
 ![Devil's advocate Option C response](/images/blog/copilot-for-executives/02-devil-advocate.webp)
-*Copilot rebuilds the strongest case for Option C using only quotes from the paper. The "Devil's advocate implication" hooks frame the analysis as a contrarian view, not management's recommendation.*
+*Copilot rebuilds the strongest case for Option C using only quotes from the source paper. The "Devil's advocate implication" hooks frame the analysis as a contrarian view, not your own recommendation.*
 
 
 ### Worked example — options comparison
 
 For a decision-mode prompt that keeps you in the driver's seat:
 
-> *Compare Options A, B, and C from the attached strategy paper across four dimensions: short-term EBITDA impact, medium-term optionality, organisational disruption, and signalling effect to the market. Use a table. Don't recommend — I'll decide.*
+> *Compare Options A, B, and C from the attached paper across four dimensions: (1) short-term team impact — how much capacity hit, how much disruption to in-flight work; (2) medium-term capability built — what does each leave my team better at; (3) change-management complexity — how hard is each to actually land with the team; (4) signalling effect — what does picking each say to the team about what we value. Use a table. Don't recommend — I'll decide.*
 
-Notice the last clause: "Don't recommend — I'll decide." It's worth saying out loud. Copilot is trained to be helpful, and helpful sometimes means recommending. When you want pure structure for your judgement, ask for pure structure.
+Notice the last clause: *"Don't recommend — I'll decide."* It's worth saying out loud. Copilot is trained to be helpful, and helpful sometimes means recommending. When you want pure structure for your judgement, ask for pure structure.
 
 > > 💡 **Tip —** For the most-prepared 5% of the people leaders I work with, Strategy & Decision Support is the cluster they automate first — typically by saving 3-5 of these prompts as templates they re-use weekly. The Prompt Gallery inside Copilot Chat is the right place to store them.
 
@@ -301,11 +303,11 @@ The five numbered requirements aren't bureaucratic — they're surgical. Each on
 
 You now have two versions. You pick. You edit. Your voice is intact. The iteration cost has collapsed.
 
-### Worked example — board chair reply
+### Worked example — skip-level escalation reply
 
-The hardest emails to start are the ones where the stakes are high and the relationship dynamics matter. A board chair has sent you a pre-read with three sharp questions and a closing line about trust. The temptation is to draft six times. The pragmatic move:
+The hardest emails to start are the ones where the stakes are high and the relationship dynamics matter. Your skip-level has sent you a pre-read with three sharp questions about a slipped delivery, a resource ask, and a closing note about trust. The temptation is to draft six times. The pragmatic move:
 
-> *Draft a reply to this email from the Board Chair. Direct, candid, no defensiveness, no excuses. For her first question, acknowledge this is the first surfacing of the revised number, explain the two drivers honestly, and propose a process for surfacing similar timeline changes earlier. For her second question, admit it wasn't included, commit to a Tuesday delivery. For her trading update concern, agree and commit to a revised paragraph two by Tuesday close of business. End with a short note acknowledging the trust point she raised in her closing paragraph. Three or four short paragraphs total. Warm but plainspoken.*
+> *Draft a reply to this email from my skip-level. Direct, candid, no defensiveness, no excuses. For her first question on the [X] timeline — acknowledge this is the first formal surfacing of the revised date, explain the two drivers honestly (under-capacity in [area] and dependency on [team]), and propose a process for surfacing similar slips earlier. For her second question on the resource ask — admit it wasn't in the original brief, commit to a follow-up by Thursday with a sharper number. For her concern about the team's pace overall — agree the signal is real, name the two things I'm doing about it, no more. End with a short note acknowledging the trust point she raised in her closing paragraph. Three or four short paragraphs total. Warm but plainspoken.*
 
 The output is rarely send-ready. It is reliably 20 minutes closer to send-ready than a blank page. That's the win.
 
@@ -535,9 +537,9 @@ Read the ones relevant to you. Skim the rest. The order roughly follows the freq
 
 3. **The follow-up habit.** Most managers end conversations after the first response. The strategic value is in the second and third prompt — "make the opposite case", "what's missing", "play devil's advocate". The first prompt gets you the brief. The second prompt sharpens your thinking.
 
-**Worked example — multi-source briefing:**
+**Worked example — cross-source team check:**
 
-> *Pull from /June board paper, /May P&L, and /competitor watch May 2026 — give me a one-page strategic brief on where we're vulnerable to the predictive logistics threat. Be specific about which competitor, which customers are most exposed, and which of our planned actions reduces or doesn't reduce that vulnerability.*
+> *Pull from /Q1 OKRs file, /team status March-May 2026, and /this week's 1:1 notes — give me a one-page brief on where my team is most off-track against what we committed to in Q1. Be specific about which workstream, which person owns it, and what kind of intervention would help: coaching · re-prioritisation · a resource ask to my skip-level · just acknowledgement. Quote evidence from specific files for each. Don't tell me what to do about individuals — that's my conversation, not yours.*
 
 **Limit:** Copilot Chat is generalist. For deep data work, hand off to Analyst. For deep research, hand off to Researcher. Don't try to do everything in chat.
 
@@ -724,19 +726,19 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
 
 **Three patterns:**
 
-1. **Pre-board market scan.** Before each board meeting, kick off Researcher on the state of your sector:
+1. **Hiring-market intelligence.** Before opening a role, kick off Researcher on the talent market:
 
-   > *Research the state of the New Zealand logistics sector over the past 6 months. Focus on: (1) major customer wins and losses by the top 5 national operators, (2) any acquisitions, divestments, or trading updates, (3) any moves into AI-enabled service offerings, (4) any regulatory changes or competition commission activity. Give me a 1-page briefing structured for a board pre-read. Cite all sources. Flag anything you're not confident about.*
+   > *Research the New Zealand talent market for [role title] over the past 6 months. Focus on: (1) typical salary ranges with cited recruiter / market sources, (2) the 3-5 most-asked-for skills in JDs from comparable companies, (3) any flagged shifts in candidate expectations (hybrid, AI tooling, autonomy, manager-fit signals). Give me a 1-page briefing structured for a hiring intake conversation with my recruiter. Cite all sources. Flag what I should NOT rely on without further verification.*
 
-2. **Competitor deep dive.** Before a customer pitch where the competitor's offering matters:
+2. **Competitor deep dive.** When the question is about a peer team or competitor approach worth knowing — for hiring positioning, for team-strategy benchmarking, for understanding what other managers in your space are doing:
 
-   > *Research [competitor name]'s position in the [sector] market. Their products, pricing model where public, customer wins announced in the last 12 months, leadership team, any reported customer satisfaction or service quality signals, and the most recent published financials or analyst notes if available. 2-page briefing. Cite all sources. Flag what I should NOT rely on without further verification.*
+   > *Research [competitor / peer-org name]'s position in the [function / sector] space. Their products or service offerings, their hiring patterns where public, their reported team practices, leadership team, any reported employee-experience or service-quality signals, and the most recent published news or analyst notes if available. 2-page briefing. Cite all sources. Flag what I should NOT rely on without further verification.*
 
-3. **Regulatory environment scan.** For any leader working in a regulated industry:
+3. **Manager-skill briefing.** When you want to upskill yourself on a specific people-leadership topic before a tough conversation or planning cycle:
 
-   > *Research the regulatory environment for [sector] in New Zealand. Focus on (1) any consultations or draft regulations from the relevant regulators in the past 12 months, (2) any enforcement actions, (3) any policy speeches by relevant ministers signalling forthcoming change, (4) cross-Tasman comparisons where Australian regulators have moved on similar matters. 1-page briefing structured for a board risk committee. Cite all sources.*
+   > *Research the published patterns for [topic — e.g., "managing a team transitioning to AI-tooling daily use" / "running performance conversations remotely" / "scaling a team from 8 to 18 over 6 months"]. What's worked across published case studies? What's not worked? What capabilities do managers need to build? Cite sources. Flag what's marketing fluff vs. genuine research. 1-page briefing.*
 
-**Limit:** Researcher's coverage of paywalled content and private databases is limited. Don't expect it to find the proprietary report your strategy consultancy wrote. Use it for the open-web part of the research, then ask your strategy team to fill the gaps.
+**Limit:** Researcher's coverage of paywalled content and private databases is limited. Don't expect it to find the proprietary report your HR consultancy wrote. Use it for the open-web part of the research, then ask your HR business partner to fill the gaps.
 
 ---
 
@@ -748,23 +750,23 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
 
 **Four patterns:**
 
-1. **Scenario modelling without queuing for an analyst.** What-if questions that used to take a day now take 10 minutes:
+1. **Team capacity 3-scenario modelling.** What-if questions about your team's workload that used to take an HR partner half a day:
 
-   > *Using the Group P&L data in the attached financials, model three full-year FY28 scenarios using the assumptions on the Scenario sheet: Base, Downside, Upside. For each scenario, show modelled Revenue, Gross Profit, Opex, EBITDA, and EBITDA Margin. Then tell me which scenario breaches our 14% EBITDA covenant floor. Show your workings.*
+   > *Using the current team workload data attached (rows = team members, columns = sprint / week, values = % utilisation) plus the assumptions on the new incoming project (resource ask, deadline, dependencies), model three scenarios. (1) Base: everyone stays on current allocation, new project absorbs 20% of two specific people's time. (2) Stretch: 10% of every team member's capacity goes to the new project. (3) Re-prioritise: we drop [workstream X] to free capacity for the new project. For each scenario, show: which team members move above 90% utilisation, what slips elsewhere, and the people-risk signals I should be alert to. Show your working. Don't recommend which scenario to propose — show me the structure so I can decide which to take to my skip-level.*
 
-2. **Sensitivity analysis.** When you want to know what matters most:
+2. **Capacity sensitivity check.** From the same data, the prompt that surfaces hidden risk:
 
-   > *Now show me the single biggest sensitivity in the Downside scenario. If we could only protect ONE driver to keep us above the covenant, which would do the most? Show the workings.*
+   > *Now show me: in the Stretch scenario, who's most at risk of burnout based on their utilisation pattern over the last 3 months in the attached data? Pattern-only — quote the utilisation evidence. Don't speculate about individuals' personal lives or motivations. Just where the data is telling you the pattern is concerning.*
 
 ![Analyst prompt and code execution](/images/blog/copilot-for-executives/05a-analyst-prompt-code.webp)
-*Analyst (the Copilot agent) doesn't just answer — it writes and runs Python against your spreadsheet. The visible "Coding and executing" with actual Python is the differentiator: most people leaders have never seen Copilot do this. (The screenshot here uses a finance worked example carried over from the companion exec guide — a PL-flavoured rewrite with team-capacity and workload-distribution worked examples is coming in a follow-up.)*
+*Analyst (the Copilot agent) doesn't just answer — it writes and runs Python against your spreadsheet. The visible "Coding and executing" with actual Python is the differentiator: most people leaders have never seen Copilot do this. (Screenshot from the companion exec guide using finance data; the PL equivalent runs the same way against team capacity data.)*
 
 
 ![Analyst three-scenario output with math shown](/images/blog/copilot-for-executives/05b-analyst-output.webp)
-*The three-scenario table with workings: Base 14.19% (just above covenant), Downside 8.14% (breaches), Upside 16.15%. Every number traceable to a formula — the CFO can audit it.*
+*The three-scenario table with workings: every cell traceable to a formula, so anyone you share with — HR partner, your skip-level, finance — can audit how the answer was computed.*
 
 
-3. **Comparing two business cases.** When two teams have submitted different views:
+3. **Comparing two business cases.** When two team members (or two peer teams) have submitted different views on the same investment:
 
    > *Two teams have submitted business cases for the same investment — see attached. Compare them across: NPV, payback period, key sensitivities, embedded assumptions. Surface where they fundamentally disagree on inputs, not just outputs. Don't recommend — I'll decide.*
 
@@ -888,11 +890,11 @@ When someone new joins and needs to be productive fast:
 
 **Three patterns:**
 
-1. **One-page strategy memo for the board.** Inside a Page (started from a Notebook source for grounding):
+1. **One-page team-quarter memo for your skip-level.** Inside a Page (started from your team Notebook source for grounding):
 
-   > *Create a one-page strategy memo for the leadership team on the Q1 FY27 strategic response. Sections: (1) Context — 2 sentences. (2) Problem — 3 bullets. (3) Options A / B / C — one short paragraph each. (4) Recommendation from the leadership team with reasoning — 3 bullets. (5) Decision required — numbered list. Use the board paper, financials, risk register, and competitor watch in this notebook as source. Keep it under 400 words total. Plain English, no buzzwords.*
+   > *Create a one-page memo for my skip-level on what my team should focus on for the next quarter. Sections: (1) Context — 2 sentences on where the team is right now. (2) Three options — what we could prioritise, with one-line trade-offs each. (3) Recommendation — which option, why, and what I'd need from my skip-level to make it work. (4) What we'd deprioritise to make room — be specific. (5) Decision required — one question I need her to answer. Plain English. No buzzwords. Under 400 words.*
 
-   Then edit the recommendation manually, then prompt in-Page:
+   Then edit the recommendation manually based on what you actually want to say, then prompt in-Page:
 
    > *Tighten the recommendation section using my edits as the new direction. Keep the reasoning bullets to 12 words each.*
 
