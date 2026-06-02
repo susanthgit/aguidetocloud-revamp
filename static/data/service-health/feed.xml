@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Jun 2026 23:43:48 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 04:58:26 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to access the Microsoft Copilot (Microsoft 365) desktop or web app</title>
@@ -53,6 +53,16 @@
       <pubDate>Sat, 30 May 2026 09:11:59 +0000</pubDate>
     </item>
     <item>
+      <title>[Azure] Azure incident affecting West US 2</title>
+      <link>https://www.aguidetocloud.com/service-health/#AZ-20260501-2</link>
+      <description>[Azure] Between 04:24 on 29 May 2026 and 02:30 UTC on 30 May 2026, customers with resources in the West US 2 region may have experienced failures when attempting to access or manage Azure services in the region. Impact included connectivity failures, resource unavailability, and failures when attempting to create, update, or scale resources. The issue was triggered by a severe thunderstorm with lightning strikes that resulted in utility power loss to multiple datacenter facilities serving the region.
+Ba</description>
+      <category>Azure</category>
+      <category>postIncidentReviewPublished</category>
+      <guid isPermaLink="false">AZ-20260501-2</guid>
+      <pubDate>Sat, 30 May 2026 02:30:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may not have seen responses from Microsoft Copilot (Microsoft 365) custom engine agents</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1328187</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may not have seen responses from Microsoft Copilot (Microsoft 365) custom engine agents.</description>
@@ -60,15 +70,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1328187</guid>
       <pubDate>Fri, 29 May 2026 21:45:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Azure] Azure incident affecting West US 2</title>
-      <link>https://www.aguidetocloud.com/service-health/#AZ-20260501-2</link>
-      <description>[Azure] Between 04:24 UTC and 20:18 UTC on 29 May 2026, a service disruption affected multiple Azure services in the West US 2 region. Impacted customers experienced service connectivity failures, timeouts, and elevated error rates when attempting to access resources in the region. Additionally, customers may have experienced an inability to deploy new resources or scale existing workloads, intermittent availability where some requests succeeded while others failed depending on which infrastructure node</description>
-      <category>Azure</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">AZ-20260501-2</guid>
-      <pubDate>Fri, 29 May 2026 20:18:00 +0000</pubDate>
     </item>
     <item>
       <title>[Power BI] Users may be unable to initiate Spark sessions or open and perform actions in Microsoft Fabric Notebooks</title>
@@ -90,13 +91,13 @@
     </item>
     <item>
       <title>[Azure] Azure incident affecting West US 2</title>
-      <link>https://www.aguidetocloud.com/service-health/#AZ-20260501-1</link>
+      <link>https://www.aguidetocloud.com/service-health/#AZ-GHRP-84G</link>
       <description>[Azure] Between 09:39 UTC and 17:05 UTC on 29 May 2026, a platform issue resulted in impact to the Azure OpenAI service across multiple regions. Customers may have experienced degraded service health where requests intermittently failed, returned HTTP 5XX errors, or experienced increased latency.
 What do we know so far?
 We detected this issue through our automated monitoring systems after observing a drop in call success rates. Our investigation found that a backend service upon which Azure OpenAI depen</description>
       <category>Azure</category>
       <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">AZ-20260501-1</guid>
+      <guid isPermaLink="false">AZ-GHRP-84G</guid>
       <pubDate>Fri, 29 May 2026 17:05:00 +0000</pubDate>
     </item>
     <item>
