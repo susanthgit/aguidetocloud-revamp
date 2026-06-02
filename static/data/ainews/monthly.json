@@ -1,6 +1,76 @@
 {
   "articles": [
     {
+      "id": "f22c8462ac5dd4a314ea95083b23aed2",
+      "title": "Angry devs vow to flee GitHub Copilot as metered billing takes hold",
+      "url": "https://www.theregister.com/ai-and-ml/2026/06/02/github-copilot-users-threaten-exit-as-metered-billing-kicks-in/5249826",
+      "source": "The Register AI",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-06-02T01:20:51+02:00",
+      "snippet": "'16% of my monthly Pro+ allowance. Gone. For basically nothing'",
+      "image": "https://image.theregister.com/?imageId=5249860&width=800",
+      "ai_summary": "",
+      "published_display": "51m ago"
+    },
+    {
+      "id": "cc69cea5bb9531bf9a9e89f72d119231",
+      "title": "Shai-Hulud malware worms Red Hat npm package versions downloaded 80K times a week",
+      "url": "https://www.theregister.com/security/2026/06/01/shai-hulud-malware-infects-red-hat-npm-packages-downloaded-80k-times-weekly/5249803",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-01T23:54:07+02:00",
+      "snippet": "TeamPCP? Or copycat malware dev?",
+      "image": "https://image.theregister.com/?imageId=5249823&width=800",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
+      "id": "b3b9abd5e3fa7dd6e5fdfd41cd1917c8",
+      "title": "Alphabet plans to raise $80B to pay for AI buildout",
+      "url": "https://techcrunch.com/2026/06/01/alphabet-plans-to-raise-80-billion-to-pay-for-ai-buildout/",
+      "source": "TechCrunch AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-01T22:55:09+00:00",
+      "snippet": "\"The company is experiencing strong demand for its AI solutions and services from enterprises and consumers, at levels that are exceeding the company’s available supply,\" Alphabet said in its statement.",
+      "image": "https://techcrunch.com/wp-content/uploads/2025/02/GettyImages-2173545265.jpg?resize=1200,800",
+      "ai_summary": "",
+      "published_display": "1h ago"
+    },
+    {
+      "id": "ac6e97861821f12e8683cb1f5b0b4703",
+      "title": "Reference your own AWS Secrets Manager secrets in Amazon Bedrock AgentCore Identity",
+      "url": "https://aws.amazon.com/blogs/machine-learning/reference-your-own-aws-secrets-manager-secrets-in-amazon-bedrock-agentcore-identity/",
+      "source": "AWS Machine Learning Blog",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-06-01T22:16:28+00:00",
+      "snippet": "Today, we’re excited to announce the ability to reference a secret in AWS Secrets Manager for AgentCore Identity, so you can reference your own preconfigured secret from Secrets Manager and retain full control over how it is managed. With this ability, you can extend your organization’s existing secrets governance processes to AgentCore. You can provide an existing, preconfigured AWS Secrets Manager secret to use with your credential provider resources. You retain full control over its encryptio",
+      "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/06/01/ML-21022-1.png",
+      "ai_summary": "",
+      "published_display": "1h ago"
+    },
+    {
+      "id": "7f03388879533f82caad0e464b6c5c77",
+      "title": "Transforming rare cancer research with Amazon Quick: Integrating biomedical databases for breakthrough discoveries",
+      "url": "https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/",
+      "source": "AWS Machine Learning Blog",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-06-01T21:54:16+00:00",
+      "snippet": "In this post, we walk through how to use Amazon Quick Research to integrate biomedical data sources for rare cancer research. The walkthrough uses pediatric sarcoma as the research domain and draws on publicly available datasets from PubMed and other open biomedical repositories. It covers the end-to-end workflow: defining a research objective, configuring data sources, reviewing the AI-generated research plan, running the investigation, and iterating on results using the revision and versioning",
+      "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/27/ML-20129-2.jpg",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
       "id": "0abca1382a4a1038aac4e917af5c78c3",
       "title": "Election interlopers register 5K+ domains, hope to catch some voting phish",
       "url": "https://www.theregister.com/security/2026/06/01/5k-election-domains-registered-ahead-of-us-midterms/5249764",
@@ -12,7 +82,35 @@
       "snippet": "Hacking voting machines is so 2017. Phishing, impersonation pose the real election risks",
       "image": "https://image.theregister.com/?imageId=222504&width=800",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "4h ago"
+    },
+    {
+      "id": "961e6b6aa55d03885ed2d382bf5fe27b",
+      "title": "Nvidia chases $200B CPU market with AI agent PCs from Microsoft, Dell, and HP",
+      "url": "https://techcrunch.com/2026/06/01/nvidia-chases-200b-cpu-market-with-ai-agent-pcs-from-microsoft-dell-and-hp/",
+      "source": "TechCrunch AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-01T21:35:00+00:00",
+      "snippet": "If Nvidia has cracked a way to bring AI agents easily, safely, and usefully to the masses, it could — and should — be big.",
+      "image": "https://techcrunch.com/wp-content/uploads/2025/03/GettyImages-2205761886.jpg?resize=1200,828",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
+      "id": "c077fd0ffbaab8d292c93441e846a74c",
+      "title": "OpenAI models and Codex on Amazon Bedrock are now generally available",
+      "url": "https://aws.amazon.com/blogs/machine-learning/openai-models-and-codex-on-amazon-bedrock-are-now-generally-available/",
+      "source": "AWS Machine Learning Blog",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-06-01T21:31:12+00:00",
+      "snippet": "GPT-5.5, GPT-5.4, and Codex are now generally available on Amazon Bedrock. Deploy them in production applications and agents today, on Bedrock’s high performance inference engine.&nbsp;",
+      "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/22/Screenshot-2026-05-22-at-1.18.28 PM-100x89.png",
+      "ai_summary": "",
+      "published_display": "2h ago"
     },
     {
       "id": "5b391d40d02542bda1df7df020a4c075",
@@ -26,7 +124,7 @@
       "snippet": "Researchers at UCSD have successfully implemented DFlash, a block-diffusion speculative decoding method, on Google TPUs to bypass the sequential bottlenecks of traditional autoregressive drafting. By \"painting\" entire blocks of candidate tokens in a single forward pass rather than predicting them one-by-one, the system achieved average speedups of 3.13x, with peak performance nearly doubling that of existing methods like EAGLE-3. This open-source integration into the vLLM ecosystem optimizes TPU",
       "image": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_Generated_Image_5uj3px5uj3.2e16d0ba.fill-1200x600.jpg",
       "ai_summary": "",
-      "published_display": "1m ago"
+      "published_display": "3h ago"
     },
     {
       "id": "8b058ed94b09b9ff0d1310286b586a11",
@@ -40,7 +138,7 @@
       "snippet": "First it tops OpenAI's valuation, then it beats Altman to the IPO punch",
       "image": "https://image.theregister.com/?imageId=4093866&width=800",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "3b8e06361ea70be7f873f89a79b0c38d",
@@ -54,7 +152,7 @@
       "snippet": "The lawsuit partially revolves around a shooting at Florida State University last year, and ChatGPT's alleged role in the incident.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/05/GettyImages-2273245180.jpg?resize=1200,800",
       "ai_summary": "",
-      "published_display": "51m ago"
+      "published_display": "4h ago"
     },
     {
       "id": "4466c9fa8269ff9102fe74e300cfce22",
@@ -68,7 +166,21 @@
       "snippet": "Anyone who has downloaded affected Red Hat packages should investigate immediately.",
       "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/06/redhat-1152x648.jpg",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "4h ago"
+    },
+    {
+      "id": "c2849b7aba7c333fec3a182c8ec63b83",
+      "title": "Dozens of Red Hat packages backdoored through its official NPM channel",
+      "url": "https://arstechnica.com/security/2026/06/dozens-of-red-hat-packages-backdoored-through-its-offical-npm-channel/",
+      "source": "Ars Technica",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-01T19:49:09+00:00",
+      "snippet": "Anyone who has downloaded affected Red Hat packages should investigate immediately.",
+      "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/06/redhat-1152x648.jpg",
+      "ai_summary": "",
+      "published_display": "4h ago"
     },
     {
       "id": "2d09ef4fb10a0c493e1d9c615c938efd",
@@ -82,7 +194,7 @@
       "snippet": "Installing a VPN on your smart TV blocks hackers from accessing your network and stealing your data. But there are other benefits, too.",
       "image": "https://www.zdnet.com/a/img/resize/d114422cbb5f76ab47c986783df5e3f6eddfad5a/2024/12/11/27d9b222-c0fa-4504-9c2b-72e8aefe6844/amazon-fire-tv-omni-qled-65in-04.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "4h ago"
     },
     {
       "id": "08e69e2429da5cd7057fc849fccf6220",
@@ -96,7 +208,7 @@
       "snippet": "I've tried so many methods to reboot my router, but the best solution costs less than a cup of Joe.",
       "image": "https://www.zdnet.com/a/img/resize/f882fb9db23eed4bf49f2d42d64ca76708e2a84f/2026/04/18/960b816f-7456-416c-90db-aed4e02608b8/img-3775.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "b03ad57263734f46ef32731ec4d0ca18",
@@ -110,7 +222,7 @@
       "snippet": "While deploying Model Context Protocol (MCP) servers in production, enterprises need fine-grained access control across servers, observability into which teams use which tools, security guarantees against data exfiltration, and centralized credential management, all at scale. Amazon Bedrock AgentCore Gateway sits between MCP servers and the clients that consume them, centralizing credential management, observability, and secure […]",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/19/ML-20987-1.png",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "a026325ca1a9a350afb876bfb13cb218",
@@ -124,7 +236,7 @@
       "snippet": "China's support is greater relative to semiconductor industry revenue",
       "image": "https://image.theregister.com/?imageId=1673877&width=800",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "eaf004c31def892e9f2fa2dd155dfebe",
@@ -138,7 +250,7 @@
       "snippet": "The company says it needs \"significant\" water resources to cool its data centers, and that access to abundant, affordable water is a challenge.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/05/GettyImages-2259661359.jpg?w=1024",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "8e3fd60dcebf4951dda0b7217a5fbe81",
@@ -152,7 +264,7 @@
       "snippet": "MX Linux has released a version that includes certain features and software that make it a brilliant option for computers that are 1-3 years old.",
       "image": "https://www.zdnet.com/a/img/resize/313f1851882e912f6732fad63372481f5e228853/2026/06/01/0e0e5829-bd34-40d6-b559-1d6790e51a48/mxlinuxlaptophero.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "de7131058e96435828b855dfeea220c4",
@@ -166,7 +278,7 @@
       "snippet": "In addition to the built-in Gamesnacks, these titles will make car downtime less boring.",
       "image": "https://www.zdnet.com/a/img/resize/87e60a21eb690d52265a71a0f94728c2b8f8dc1a/2026/06/01/4357e1bb-3471-4357-9227-7812e27509ea/pxl-20260601-132258586.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "11a3674232dcc86d2bf4463d2ecacdf9",
@@ -180,7 +292,7 @@
       "snippet": "In this post, we use a lakehouse data agent to demonstrate how you can use Policy for deterministic access control and Lambda interceptors for dynamic validation. We then show how to combine Lambda interceptors and Policy to implement a geography-based access control which requires both dynamic validation and deterministic access control.",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/29/ML-20712-1.png",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "8aa6c38e29615e4ceae9efb1ef08524e",
@@ -194,7 +306,7 @@
       "snippet": "Kai is an extension for RAD Studio (Delphi and C++ Builder) that integrates with external AI providers",
       "image": "https://image.theregister.com/?imageId=5249692&width=800",
       "ai_summary": "",
-      "published_display": "5h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "31ab2bdc79cb8e4af8f9e3d37eac214f",
@@ -208,7 +320,7 @@
       "snippet": "Save 57% on this Ryobi lithium-ion battery set for your power tools, and get the tool of your choice totally free. Here's what to know.",
       "image": "https://www.zdnet.com/a/img/resize/84dc1805998f503f06d43b8d8df006b6a7c0cef6/2026/06/01/b96a866c-c3fc-44cd-b653-56ca2c546756/untitled-design-2026-06-01t125320-186.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "e550aba7757a009f5890521bc093da8b",
@@ -222,7 +334,7 @@
       "snippet": "In this post, we address several key risks that surface when designing an agentic payment system, and how to address them with the capabilities of AgentCore payments.",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/29/ML-21076-1.png",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "59c7687d90b729b3149ae9b84753eb78",
@@ -236,7 +348,7 @@
       "snippet": "The AI giant behind Claude submitted paperwork on Monday that would take it public, just a couple of weeks after SpaceX’s splashy IPO announcement.",
       "image": "https://media.wired.com/photos/6a1db04538f4e0fcb2641f17/master/pass/Anthropic-Goes-Public-Business-2274306161.jpg",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "4510f0904490356761f34fcb19a69b55",
@@ -250,7 +362,21 @@
       "snippet": "The MSI Raider 16 Max HX combines powerful hardware with a revamped cooling system and a 240Hz OLED screen.",
       "image": "https://www.zdnet.com/a/img/resize/827c61ca4a43dfc54dbe12af856551a195be0acd/2026/05/27/6443a0a4-8278-43ad-a48e-5fc678100664/msi-raider-16-hx-image-2-main-image.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "7h ago"
+    },
+    {
+      "id": "40a1960f15aae7b32a9b608ab2ce8f9a",
+      "title": "Our views on AI policy and political advocacy",
+      "url": "https://openai.com/index/our-views-on-ai-policy-and-political-advocacy",
+      "source": "OpenAI Blog",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-01T17:00:00+00:00",
+      "snippet": "Our approach to AI policy and political advocacy, transparency, support for thoughtful regulation and AI safety, and that no outside political group speaks on the company’s behalf.",
+      "image": "https://images.ctfassets.net/kftzwdyauwt9/2t7PnZhv9RSkCpyADp8h6J/8e94542c974c268eac270cd244dd6055/Political-advocacy-16x9.png?w=1600&amp;h=900&amp;fit=fill",
+      "ai_summary": "",
+      "published_display": "7h ago"
     },
     {
       "id": "d91b263533ad4c709794dbd22c769a95",
@@ -264,7 +390,7 @@
       "snippet": "Nvidia's announcement that it's getting into the consumer laptop chip space with RTX Spark is huge. Apple has proved for years that Arm-based chips can perform incredibly well while also delivering great battery life - at least on the Mac. In the Windows world, performance hasn't fully matched up under Qualcomm chips, mostly in the [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/05/Screenshot_20260531_212701.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "52m ago"
+      "published_display": "4h ago"
     },
     {
       "id": "c3addf925e039d633a1d56d958411058",
@@ -278,7 +404,7 @@
       "snippet": "Google's new \"24/7\" AI agent, Gemini Spark, can be shockingly good at doing things on your behalf. But I'm not sure it's worth the financial cost and potential privacy tradeoffs. The company gave me access to Spark last week. Google advertises Spark as an AI agent that can take on tasks and work on them [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/lcimg-0ebbe911-9fbb-4f68-97b0-b7361d7cb53c.jpeg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "55m ago"
+      "published_display": "4h ago"
     },
     {
       "id": "fb8433839a7cc34557eb2f91c0156c61",
@@ -292,7 +418,7 @@
       "snippet": "A collage of I/O-related images, including the Antigravity Coffee Co. pop-up, a colorful jellyfish and a still from the Timmy TPU video. The word AI repeats three times on the left of the image, and there are colorful icons, including a sparkle, as well.",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AI_IO.max-600x600.format-webp.webp",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "abb135ab89bd3d54b77a6194e87657e7",
@@ -306,7 +432,7 @@
       "snippet": "Meta's AI support chatbot helped hackers hijack Instagram accounts, as reported earlier by 404 Media. In a video shared on Telegram, a hacker shows how they could take over an account by asking Meta's chatbot to switch the email associated with someone else's profile and then reset the password. The issue, which Meta says has [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/meta-chatbot-support.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "4h ago"
     },
     {
       "id": "c2066bef833b873038c8b376a0a2b871",
@@ -320,7 +446,7 @@
       "snippet": "As announced in our recent blog post, usage-based billing for GitHub Copilot is now live for all users and Copilot code review consumes GitHub Actions minutes, in addition to GitHub&#8230;\nThe post Updates to GitHub Copilot billing and plans appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/themes/github-2021-child/dist/img/social-v3-new-releases.jpg",
       "ai_summary": "",
-      "published_display": "6h ago"
+      "published_display": "10h ago"
     },
     {
       "id": "ce33fc5691608b291853c7581a3ce40b",
@@ -334,7 +460,7 @@
       "snippet": "After months of speculation about whether OpenAI or Anthropic would be first in their race to IPO, Anthropic on Monday reached a key milestone: filing to kick off the process with the U.S. Securities and Exchange Commission. The filing sets the stage for what's sure to be a massive IPO. As of its fundraise last [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25469941/STK202_DARIO_AMODEI_CVIRGINIA_D.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "71b3577e63ca152c2484a8acf742588a",
@@ -348,7 +474,7 @@
       "snippet": "OpenAI breaks ground on a 1GW data center project in Michigan as part of Stargate, building AI infrastructure to expand access, create jobs, and support communities.",
       "image": "https://images.ctfassets.net/kftzwdyauwt9/31ZX9grNOOF2NspFEFK6t2/a35c75365f4573555cab5a1a1054649b/infrastructure-michigan-16x9.png?w=1600&amp;h=900&amp;fit=fill",
       "ai_summary": "",
-      "published_display": "8h ago"
+      "published_display": "12h ago"
     },
     {
       "id": "4068f1b5294f52cfbe03e9c3abe44ccc",
@@ -362,7 +488,7 @@
       "snippet": "Dozens of people have complained to the Federal Trade Commission about Norse Atlantic Airways’ tech-first customer service operation. Some said they lost thousands of dollars.",
       "image": "https://media.wired.com/photos/6a15c83805d6069616b25809/master/pass/Norse-Atlantic-Airways-Went-Tech-First-With-Customer-Service-Business-2151560857.jpg",
       "ai_summary": "",
-      "published_display": "9h ago"
+      "published_display": "13h ago"
     },
     {
       "id": "72418cf85d0bd9863abd641dd70a23ba",
@@ -376,7 +502,7 @@
       "snippet": "Microsoft is heading to San Francisco this week in a bid to win back developers at its Build conference. I've been attending Build since the days when Microsoft called it the Professional Developers Conference, and I can't remember a more pivotal moment. As Microsoft continues to reshuffle its entire business around AI, it's moving Build [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/03/MS_BUILD.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "6h ago"
+      "published_display": "9h ago"
     },
     {
       "id": "b20c029449d0244c33b53c308a4e8485",
@@ -390,7 +516,623 @@
       "snippet": "Today I’m talking with Harvey Mason Jr., who is CEO of the Recording Academy — that’s the outfit that puts on the Grammy Awards. I last talked to Harvey in 2024, when it was obvious that generative AI would upend the music industry, but still not exactly clear how that would happen.&#160; Well, it’s been [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/DCD_20260601_Mason_Grammys.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "6h ago"
+      "published_display": "9h ago"
+    },
+    {
+      "id": "dcd0411de47b3e9cfb8e510b67414087",
+      "title": "Strava blames zero-code AI apps and scrapers as it tightens API access",
+      "url": "https://www.theverge.com/gadgets/940854/strava-restricts-api-access-ai-apps",
+      "source": "The Verge AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-01T10:06:44-04:00",
+      "snippet": "The popular fitness-tracking platform, Strava, is restricting access to its API as part of efforts to clamp down on AI scraping, as reported earlier by TechCrunch. Developers who want to build an app using Strava's data now need to pay for a flat $11.99 / month subscription. In an update on its developer hub, Strava [&#8230;]",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/10/STKB305_STRAVA_B.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "ai_summary": "",
+      "published_display": "10h ago"
+    },
+    {
+      "id": "7aae3eaaeb7d5ce853642be3f9bf5464",
+      "title": "OpenAI frontier models and Codex are now available on AWS",
+      "url": "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws",
+      "source": "OpenAI Blog",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-01T10:00:00+00:00",
+      "snippet": "OpenAI frontier models and Codex are now generally available on AWS, giving enterprises a new path to build with OpenAI through the AWS environments, controls, and procurement workflows they already use. Customers can get started with OpenAI on AWS and move faster from evaluation to production.",
+      "image": "https://images.ctfassets.net/kftzwdyauwt9/2Tbsus4QAtPDAlsIM3vYO2/87f4c6894832d7937e54ecb3c245fdbe/OAI_AWS_Partnership_16x9_Art_Card.png?w=1600&amp;h=900&amp;fit=fill",
+      "ai_summary": "",
+      "published_display": "14h ago"
+    },
+    {
+      "id": "9c3ce60d7d99b78ebae6531aa3a958c2",
+      "title": "China has approved the world’s first invasive brain-computer chip—here’s what’s next",
+      "url": "https://www.technologyreview.com/2026/06/01/1138133/china-world-first-brain-chip/",
+      "source": "MIT Technology Review",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-01T09:09:00+00:00",
+      "snippet": "One day last October, sitting in the courtyard of his house in China’s Henan province, Dong Hui decided to see if he could hold a pen to write.&#160; Dong, 39, had sustained spinal cord injuries in a car accident six years earlier that left him paralyzed from the neck down. Slowly but determinedly, he wrote&#8230;",
+      "image": "https://wp.technologyreview.com/wp-content/uploads/2026/05/china-bci.jpg?resize=1200,600",
+      "ai_summary": "",
+      "published_display": "15h ago"
+    },
+    {
+      "id": "3036cb5d4caf56edfe3c467252ea7067",
+      "title": "toposync-vision-cuda 0.7.4",
+      "url": "https://pypi.org/project/toposync-vision-cuda/0.7.4/",
+      "source": "Pypi.org",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-06-01T00:10:08+00:00",
+      "snippet": "Toposync application bundle with ONNX Runtime CUDA acceleration.",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "Jun 01, 00:10"
+    },
+    {
+      "id": "a152158b82a5a044612739096e866cf8",
+      "title": "evledger added to PyPI",
+      "url": "https://pypi.org/project/evledger/",
+      "source": "Pypi.org",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-06-01T00:09:03+00:00",
+      "snippet": "A git-backed, append-only, machine-partitioned CloudEvents 1.0 event ledger (JSONL) — library, CLI, MCP server, and read-only web visualizer. Stdlib-only core.",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "Jun 01, 00:09"
+    },
+    {
+      "id": "eb0802bc00030667843b5ae8ca7febed",
+      "title": "SpaceX Says It’s Sparking One Of Galaxy’s Most Advanced Civilizations",
+      "url": "https://www.forbes.com/sites/kevinholdenplatt/2026/05/31/spacex-says-its-sparking-one-of-galaxys-most-advanced-civilizations/",
+      "source": "Forbes",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-06-01T00:07:24+00:00",
+      "snippet": "One of the most fantastical claims SpaceX is making during the countdown to its IPO is that it is helping create one of the most advanced civilizations in the Milky Way.",
+      "image": "https://imageio.forbes.com/specials-images/imageserve/68f94e65dd358adcf64ab95f/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+      "ai_summary": "",
+      "published_display": "Jun 01, 00:07"
+    },
+    {
+      "id": "4ff2d568ec822dd3e63d7c35a3c07002",
+      "title": "Karpathy LLM Wiki pattern integrated into Obsidian agenic workflow",
+      "url": "https://github.com/pssah4/vault-operator",
+      "source": "Github.com",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-06-01T00:03:11+00:00",
+      "snippet": "Real AI agent for your vault. Coworker, Copilot &amp; thinking partner, that maintains your memory &amp; knowledge, adapts to your workflows, uses plugins, skills &amp; tools with full safety contr...",
+      "image": "https://opengraph.githubassets.com/695f63de2de8bf580217ee56aa6bae0ed76dba4f51e1182381a6e510586be74c/pssah4/vault-operator",
+      "ai_summary": "",
+      "published_display": "Jun 01, 00:03"
+    },
+    {
+      "id": "2f27c92b90ebb1154f8871a646dbc807",
+      "title": "Some Things I Think I Think: Red Sox need to get their stories straight on player injuries",
+      "url": "https://www.masslive.com/redsox/2026/05/some-things-i-think-i-think-red-sox-need-to-get-their-stories-straight-on-player-injuries.html",
+      "source": "MassLive.com",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-06-01T00:01:05+00:00",
+      "snippet": "Random thoughts about (mostly) sports topics.",
+      "image": "https://s.yimg.com/ny/api/res/1.2/wT4w1ElJP6dtI9jXtLm8xg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA7Y2Y9d2VicA--/https://media.zenfs.com/en/masslive_articles_390/8caef646e8820adb1b94e3bc919f5c68",
+      "ai_summary": "",
+      "published_display": "Jun 01, 00:01"
+    },
+    {
+      "id": "ff8e30ea44aade16ca5c202f78943bd7",
+      "title": "Pwn2Own Berlin 2026: On the Ground With TrendAI™ ZDI's Biggest AI Showdown Yet",
+      "url": "https://www.trendmicro.com/en_us/research/26/f/pwn2own-berlin-2026.html",
+      "source": "Trendmicro.com",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-01T00:00:00+00:00",
+      "snippet": "47 zero-days fell at Pwn2Own Berlin 2026 for US$1,298,250 in payouts. TrendAI™ was on the ground all three days — here's what we saw.",
+      "image": "https://www.trendmicro.com/content/dam/trendmicro/global/en/research/thumbnails/26/f/pwnownberlin_cover.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 00:00"
+    },
+    {
+      "id": "f44d01e74abc01d3c8d3bbf5213a3a3f",
+      "title": "Bob Belderbos: AI Human-in-the-loop: News Digest Triage Telegram Bot",
+      "url": "https://belderbos.dev/blog/human-in-the-loop-telegram-bot-python/",
+      "source": "Belderbos.dev",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-01T00:00:00+00:00",
+      "snippet": "A trend digest tells you what to read. This Telegram bot lets you tag and file each story with one tap; the human-in-the-loop pattern in 175 lines of Python.",
+      "image": "https://belderbos.dev/images/og/human-in-the-loop-telegram-bot-python.png",
+      "ai_summary": "",
+      "published_display": "Jun 01, 00:00"
+    },
+    {
+      "id": "aa891aa380735ea00bcfd3c4cdbd52ae",
+      "title": "The Four Signals of AI Observability",
+      "url": "https://thoughtbot.com/blog/the-four-signals-of-ai-observability",
+      "source": "Thoughtbot.com",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-01T00:00:00+00:00",
+      "snippet": "Treat your AI feature like a software you can watch, not a model you hope works.",
+      "image": "https://images.prismic.io/thoughtbot-website/aEccKLh8WN-LV5_o_development-article-background.png?auto=format%2Ccompress&blend-mode=normal&blend-x=0&blend-y=0&blend=https%3A%2F%2Fimages.prismic.io%2Fthoughtbot-website%2FZ1tQFpbqstJ98cGT_development.png&mark-x=356&mark-y=100&mark64=aHR0cHM6Ly9hc3NldHMuaW1naXgubmV0L350ZXh0Lz90eHQtbGVhZD0tMTUmdHh0LXRyYWNrPTAmdHh0NjQ9VkdobElFWnZkWElnVTJsbmJtRnNjeUJ2WmlCQlNTQlBZbk5sY25aaFltbHNhWFI1JnR4dGNscj1mNWY1ZjUmdHh0Zm9udD1JQk1QbGV4U2Fuc0pQLVNlbWlCb2xkJnR4dHBhZD0wJnR4dHNpemU9NzYmdz04MDA%3D&txt-align=center%2Cmiddle&txt-color=f5f5f5&txt-fit=max&txt-font=IBMPlexSansJP-SemiBold&txt-size=24&txt-x=391&txt-y=526&txt=Matheus+Sales",
+      "ai_summary": "",
+      "published_display": "Jun 01, 00:00"
+    },
+    {
+      "id": "a8d27e004d98147dd701a7ab0cf95afc",
+      "title": "Free Systems Trains Claude directly",
+      "url": "https://freesystems.substack.com/p/free-systems-trains-claude-directly",
+      "source": "Substack.com",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-01T00:00:00+00:00",
+      "snippet": "In this week's System Check: Anthropic adopts the Dictatorship Eval, I develop a new research agenda on AI and the concentration of power, and more.",
+      "image": "https://substackcdn.com/image/fetch/$s_!ieLo!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdd902702-5a4f-4ee9-8d62-a9843475e1f2_1356x1052.png",
+      "ai_summary": "",
+      "published_display": "Jun 01, 00:00"
+    },
+    {
+      "id": "70144311bca5739ddca98bd86b93e55c",
+      "title": "クオンタムソリューションズ、Integrated Capital（Asia）と日本 AIDC プロジェクトに関する協業 MOU を締結",
+      "url": "https://prtimes.jp/main/html/rd/p/000000056.000077168.html",
+      "source": "Prtimes.jp",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-06-01T00:00:00+00:00",
+      "snippet": "[クオンタムソリューションズ株式会社]\n[画像: https://prcdn.freetls.fastly.net/release_image/77168/56/77168-56-70939ea27ae947044508b09d5c158d22-1632x640.png?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&...",
+      "image": "https://prcdn.freetls.fastly.net/release_image/77168/56/77168-56-70939ea27ae947044508b09d5c158d22-1632x640.png?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+      "ai_summary": "",
+      "published_display": "Jun 01, 00:00"
+    },
+    {
+      "id": "abbcd7f15a0f2c2dd5fb8a320868ee9b",
+      "title": "Our goodpractice Package Has New Superpowers",
+      "url": "https://www.r-bloggers.com/2026/05/our-goodpractice-package-has-new-superpowers/",
+      "source": "R-bloggers.com",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-06-01T00:00:00+00:00",
+      "snippet": "The goodpractice package has been recommended by rOpenSci since it was first started just over 10 years ago by Gábor Csárdi.\nWe used to ask our editors to manually run goodpractice on all packages submitted to software peer-review, and then to ask aut...\nCont…",
+      "image": "https://www.r-bloggers.com/wp-content/uploads/2016/04/R_02_2016-05-01.png",
+      "ai_summary": "",
+      "published_display": "Jun 01, 00:00"
+    },
+    {
+      "id": "0a6a4cc4997f1726054a14ba7a6bcfdb",
+      "title": "lingo-loop 0.1.4",
+      "url": "https://pypi.org/project/lingo-loop/0.1.4/",
+      "source": "Pypi.org",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-05-31T23:57:17+00:00",
+      "snippet": "Local-first Claude Code language tutor",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "May 31, 23:57"
+    },
+    {
+      "id": "4bad728668753eb80df11220fa8c62fe",
+      "title": "claude-code-bridge 0.9.0",
+      "url": "https://pypi.org/project/claude-code-bridge/0.9.0/",
+      "source": "Pypi.org",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-05-31T23:56:38+00:00",
+      "snippet": "Real-time cross-machine MCP relay for Claude Code agents — send and receive messages across named channels.",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "May 31, 23:56"
+    },
+    {
+      "id": "c75cd8e14099120ed5bd395e145147bd",
+      "title": "hol-guard 2.0.398",
+      "url": "https://pypi.org/project/hol-guard/2.0.398/",
+      "source": "Pypi.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-05-31T23:55:43+00:00",
+      "snippet": "Protect local AI harnesses with HOL Guard before tools run in Codex, Claude Code, Cursor, Gemini, and OpenCode.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "May 31, 23:55"
+    },
+    {
+      "id": "12c10f0f3f2ca256d2e9bc9bc3e3a2d1",
+      "title": "finch-cli added to PyPI",
+      "url": "https://pypi.org/project/finch-cli/",
+      "source": "Pypi.org",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-05-31T23:40:39+00:00",
+      "snippet": "Tailor your resume to any job posting from your terminal.",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "May 31, 23:40"
+    },
+    {
+      "id": "c99ea28dab65362e10324ec510c2fde9",
+      "title": "simplicio-prompt 1.12.3",
+      "url": "https://pypi.org/project/simplicio-prompt/1.12.3/",
+      "source": "Pypi.org",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-05-31T23:38:54+00:00",
+      "snippet": "Tuple-Space + Yool safe-speed runtime kernel: lazy 1,000,000+ subagent batch_spawn, adaptive lane concurrency, and a dependency-free OpenAI-compatible provider client for real subagents on DeepSeek / MiMo / OpenRouter / local LLMs.",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "May 31, 23:38"
+    },
+    {
+      "id": "99c858e203918f7009aa5f1219848dd8",
+      "title": "Apple AI glasses launch pushed back to late 2027, Vision Air to arrive by 2029: report - 9to5Mac",
+      "url": "https://slashdot.org/firehose.pl?op=view&amp;id=183496162",
+      "source": "Slashdot.org",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-05-31T23:32:18+00:00",
+      "snippet": "Apple AI glasses launch pushed back to late 2027, Vision Air to arrive by 2029: report9to5Mac Apple Seeks to Disrupt the Glasses Market the Way It Did With WatchesBloomberg.com Apple’s strategy for smart glasses is the same as smart watchesThe Verge Apple Is …",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "May 31, 23:32"
+    },
+    {
+      "id": "69c70acc78a0a77306b9959fbeb4aa79",
+      "title": "able-harness-kit 0.2.0",
+      "url": "https://pypi.org/project/able-harness-kit/0.2.0/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-05-31T23:17:16+00:00",
+      "snippet": "Thin, backend-neutral agent-harness middlewares for LangChain / deepagents: loop guard, binary-read guard, tool-result budget.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "May 31, 23:17"
+    },
+    {
+      "id": "aa9033e614aecc676af4ede082980566",
+      "title": "repowire 0.14.17",
+      "url": "https://pypi.org/project/repowire/0.14.17/",
+      "source": "Pypi.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-05-31T22:59:51+00:00",
+      "snippet": "Mesh network for AI coding agents - enables Claude Code, Codex, Gemini, and OpenCode sessions to communicate",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "May 31, 22:59"
+    },
+    {
+      "id": "49667b13ff38d81150620f13056ba921",
+      "title": "hol-guard 2.0.397",
+      "url": "https://pypi.org/project/hol-guard/2.0.397/",
+      "source": "Pypi.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-05-31T22:55:34+00:00",
+      "snippet": "Protect local AI harnesses with HOL Guard before tools run in Codex, Claude Code, Cursor, Gemini, and OpenCode.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "May 31, 22:55"
+    },
+    {
+      "id": "7b4a48fd5b0a046ef5c789652129a8de",
+      "title": "databricks-mlflow-export-import added to PyPI",
+      "url": "https://pypi.org/project/databricks-mlflow-export-import/",
+      "source": "Pypi.org",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-05-31T22:55:22+00:00",
+      "snippet": "Copy MLflow objects (experiments, runs or registered models) to another tracking server",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "May 31, 22:55"
+    },
+    {
+      "id": "81bd6c834b10700d2ca61ae87ee645a8",
+      "title": "tensorfeed 2.2.0",
+      "url": "https://pypi.org/project/tensorfeed/2.2.0/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-05-31T22:50:25+00:00",
+      "snippet": "Python SDK for the TensorFeed.ai API: AI news, status, model pricing, premium routing + history series + webhook watches, LangChain/CrewAI tool factories, agent payments via USDC on Base (optional web3 auto-send)",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "May 31, 22:50"
+    },
+    {
+      "id": "40015ff4ab60b8bf245ec681ab1cd96a",
+      "title": "langchain-pi 0.4.0",
+      "url": "https://pypi.org/project/langchain-pi/0.4.0/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-05-31T22:48:33+00:00",
+      "snippet": "LangChain BaseChatModel adapter for Pi (@earendil-works/pi-ai) via a Node sidecar — use Pi with any provider, model and auth from LangChain/LangGraph in Python. Includes a native opencode/Zen chat model (no pi).",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "May 31, 22:48"
+    },
+    {
+      "id": "72411e1fca9c8d601ce58e666fb68afa",
+      "title": "remove-ai-watermarks 0.8.2",
+      "url": "https://pypi.org/project/remove-ai-watermarks/0.8.2/",
+      "source": "Pypi.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-05-31T22:48:11+00:00",
+      "snippet": "Remove visible and invisible AI watermarks from images (Gemini / Nano Banana, ChatGPT, Stable Diffusion)",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "May 31, 22:48"
+    },
+    {
+      "id": "b35382ceddf58821ce613fe2705fc046",
+      "title": "graphifyy 0.8.27",
+      "url": "https://pypi.org/project/graphifyy/0.8.27/",
+      "source": "Pypi.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-05-31T22:45:27+00:00",
+      "snippet": "AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, Aider, OpenClaw, Factory Droid, Trae, Hermes, Kiro, Pi, Devin CLI, Google Antigravity) - turn any folder of code, docs, papers, images, or videos into a queryable knowledge graph",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "May 31, 22:45"
+    },
+    {
+      "id": "1c25e840ad4c8dd96e32c1768311715b",
+      "title": "TWiT 1086: The Great Beagle Migration - Pope Leo XIV's 1st Encyclical & Ferrari's 1st EV",
+      "url": "https://twit.tv/shows/this-week-in-tech/episodes/1086",
+      "source": "Twit.tv",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-05-31T22:40:23+00:00",
+      "snippet": "Explore everything from explosive technology for space to electric technology for the road. Leo, Molly, Gary, and Sam have deep discussions on Magnifica Humanitas takeaways, Wikipedia drama, Peter Thiel's mvoe to Argentina, and more! <ul> \n<li>US Space Force …",
+      "image": "https://elroy.twit.tv/sites/default/files/images/episodes/2026/05/861582/hero/TWIT1086_thumbnail.jpg",
+      "ai_summary": "",
+      "published_display": "May 31, 22:40"
+    },
+    {
+      "id": "4412f1f601763d4eb53b8a3056a2171e",
+      "title": "langchain-pi 0.3.0",
+      "url": "https://pypi.org/project/langchain-pi/0.3.0/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-05-31T22:28:34+00:00",
+      "snippet": "LangChain BaseChatModel adapter for Pi (@earendil-works/pi-ai) via a Node sidecar — use Pi with any provider, model and auth from LangChain/LangGraph in Python. Includes a native opencode/Zen chat model (no pi).",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "May 31, 22:28"
+    },
+    {
+      "id": "e28dbde369f014bc13e6c22b9d114bc5",
+      "title": "The SpaceX Roadshow Is Expected to Launch in Days. A Wall Street Veteran Says What You Learn Before It Starts Matters More Than Anything That Comes After",
+      "url": "https://www.globenewswire.com/news-release/2026/05/31/3303954/0/en/The-SpaceX-Roadshow-Is-Expected-to-Launch-in-Days-A-Wall-Street-Veteran-Says-What-You-Learn-Before-It-Starts-Matters-More-Than-Anything-That-Comes-After.html",
+      "source": "GlobeNewswire",
+      "category_id": "rumours",
+      "category_name": "Rumours & Gossip",
+      "category_emoji": "🗣️",
+      "published": "2026-05-31T22:27:00+00:00",
+      "snippet": "James Altucher has released a free video he calls the only preparation most people will need — but only if they watch it before June 8. James Altucher has released a free video he calls the only preparation most people will need — but only if they watch it be…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "May 31, 22:27"
+    },
+    {
+      "id": "3f49095400ae7dd7b366437d4f5ce81d",
+      "title": "voxtral-mcp 0.5.0",
+      "url": "https://pypi.org/project/voxtral-mcp/0.5.0/",
+      "source": "Pypi.org",
+      "category_id": "mistral",
+      "category_name": "Mistral",
+      "category_emoji": "🇪🇺",
+      "published": "2026-05-31T22:24:48+00:00",
+      "snippet": "MCP server wrapping Mistral Voxtral 4B TTS (via mlx-audio) for Claude Code on Apple Silicon — in-process, streaming, gap-free playback",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "May 31, 22:24"
+    },
+    {
+      "id": "c376b70b3b0cb279cd1619f5d393fdcf",
+      "title": "voxtral-mcp added to PyPI",
+      "url": "https://pypi.org/project/voxtral-mcp/",
+      "source": "Pypi.org",
+      "category_id": "mistral",
+      "category_name": "Mistral",
+      "category_emoji": "🇪🇺",
+      "published": "2026-05-31T22:24:42+00:00",
+      "snippet": "MCP server wrapping Mistral Voxtral 4B TTS (via mlx-audio) for Claude Code on Apple Silicon — in-process, streaming, gap-free playback",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "May 31, 22:24"
+    },
+    {
+      "id": "9c2fc5d3d595820b948c1275ff5f527c",
+      "title": "langchain-pi 0.2.1",
+      "url": "https://pypi.org/project/langchain-pi/0.2.1/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-05-31T22:14:02+00:00",
+      "snippet": "LangChain BaseChatModel adapter for Pi (@earendil-works/pi-ai) via a Node sidecar — use Pi with any provider, model and auth from LangChain/LangGraph in Python. Includes a native opencode/Zen chat model (no pi).",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "May 31, 22:14"
+    },
+    {
+      "id": "2953e6a43d90985695819c2896c58fcb",
+      "title": "Is AI replacing jobs? How 17 job types feel the effects",
+      "url": "https://www.techtarget.com/searchenterpriseai/feature/Is-AI-replacing-jobs-How-17-job-types-feel-the-effects",
+      "source": "Techtarget.com",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-05-31T22:07:00+00:00",
+      "snippet": "AI has threatened various jobs since ChatGPT came out. New data shows where the threat is real and where it's imagined.",
+      "image": "https://www.techtarget.com/rms/onlineimages/ai_a377464305.jpg",
+      "ai_summary": "",
+      "published_display": "May 31, 22:07"
+    },
+    {
+      "id": "4d79aada45251465dded6053663a3a68",
+      "title": "東急不動産HDグループのDX推進を担うTFHD digitalへ「Microsoft 365 Copilot研修」を実施",
+      "url": "https://prtimes.jp/main/html/rd/p/000000106.000125579.html",
+      "source": "Prtimes.jp",
+      "category_id": "m365-copilot",
+      "category_name": "M365 Copilot",
+      "category_emoji": "✨",
+      "published": "2026-05-31T22:00:00+00:00",
+      "snippet": "[アンドドット株式会社]\n[画像1: https://prcdn.freetls.fastly.net/release_image/125579/106/125579-106-95abcc08303fbfd5aabaf4ecb8ad4b63-1208x638.png?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds...",
+      "image": "https://prcdn.freetls.fastly.net/release_image/125579/106/125579-106-95abcc08303fbfd5aabaf4ecb8ad4b63-1208x638.png?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+      "ai_summary": "",
+      "published_display": "May 31, 22:00"
+    },
+    {
+      "id": "d58d871a3105e57884309c8efb5b17c9",
+      "title": "Web3 Has No Safe AI. DMind AI Just Quantified the Gap -- and KDD 2026 Made It Official.",
+      "url": "https://www.prnewswire.com/news-releases/web3-has-no-safe-ai-dmind-ai-just-quantified-the-gap--and-kdd-2026-made-it-official-302786392.html",
+      "source": "PRNewswire",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-05-31T22:00:00+00:00",
+      "snippet": "The first peer-reviewed Web3 AI benchmark tests 31 top models — including GPT-5, Claude, and Gemini — across 3,543 expert questions. The verdict: no system is ready for the field's highest-stakes tasks. SINGAPORE, May 31, 2026 /PRNewswire/ -- Medical AI has M…",
+      "image": "https://mma.prnewswire.com/media/2991390/1779722212199.jpg?p=facebook",
+      "ai_summary": "",
+      "published_display": "May 31, 22:00"
+    },
+    {
+      "id": "1ca02fc1add67e52470fbf09ea93fbc9",
+      "title": "agi-app-pytorch-playground 2026.5.31.post1",
+      "url": "https://pypi.org/project/agi-app-pytorch-playground/2026.5.31.post1/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-05-31T21:56:11+00:00",
+      "snippet": "AGILAB PyTorch playground app for reproducible neural-network experiments",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "May 31, 21:56"
+    },
+    {
+      "id": "349b6619bbbd2a1a6df01a3be8096aaf",
+      "title": "SoftBank Group to Build Massive AI Data Center in France",
+      "url": "https://newsonjapan.com/article/149464.php",
+      "source": "Newsonjapan.com",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-05-31T21:53:38+00:00",
+      "snippet": "SoftBank Group announced on May 31st that it will build a data center in France dedicated to artificial intelligence (AI), with total investment potentially reaching approximately 14 trillion yen. (News On Japan)",
+      "image": "https://i2.ytimg.com/vi/00lVGFV_sSg/maxresdefault.jpg",
+      "ai_summary": "",
+      "published_display": "May 31, 21:53"
+    },
+    {
+      "id": "481a37c3316fd7f22d83e91f77572e98",
+      "title": "hol-guard 2.0.395",
+      "url": "https://pypi.org/project/hol-guard/2.0.395/",
+      "source": "Pypi.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-05-31T21:51:38+00:00",
+      "snippet": "Protect local AI harnesses with HOL Guard before tools run in Codex, Claude Code, Cursor, Gemini, and OpenCode.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "May 31, 21:51"
+    },
+    {
+      "id": "f02a941f10a7de29cf0dffc6aaf657f9",
+      "title": "iOS 28 Will Reportedly Be 'Far More Significant' Than iOS 27",
+      "url": "https://www.macrumors.com/2026/05/31/ios-28-far-more-significant-rumor/",
+      "source": "MacRumors",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-05-31T21:44:33+00:00",
+      "snippet": "While we are still a week away from Apple unveiling iOS 27, Bloomberg's Mark Gurman has just shared the first rumor regarding iOS 28.\n\n\n\n\n\nIn his Power On newsletter today, he said that iOS 28 will be \"far more significant\" than iOS 27, but he did not provide…",
+      "image": "https://images.macrumors.com/t/YCZjPv2v9UGoJROkYTCOYxi8XFc=/2500x/article-new/2026/05/Low-Angle-iPhone-Purple.jpg",
+      "ai_summary": "",
+      "published_display": "May 31, 21:44"
+    },
+    {
+      "id": "9e8546e369aa2b507d34284099d2a024",
+      "title": "agentgrep 0.1.0a15",
+      "url": "https://pypi.org/project/agentgrep/0.1.0a15/",
+      "source": "Pypi.org",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-05-31T21:35:17+00:00",
+      "snippet": "Read-only search for local AI agent prompts and history (Codex, Claude Code, Cursor, Gemini, Grok, Pi, OpenCode)",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "May 31, 21:35"
+    },
+    {
+      "id": "20ba65a281f7e4442dbc66b50e6f3ea7",
+      "title": "Taiwan Semiconductor Manufacturing (TSM): Leopold Aschenbrenner Takes Bearish View",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-manufacturing-tsm-leopold-212817394.html",
+      "source": "Yahoo Entertainment",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-05-31T21:28:17+00:00",
+      "snippet": "We just covered From Fired Researcher to $13.7 Billion King: How Leopold Aschenbrenner Broke the Hedge Fund World and Taiwan Semiconductor Manufacturing...",
+      "image": "https://s.yimg.com/os/en/insidermonkey.com/66f2716ea9ff8023f78e373107823cd1",
+      "ai_summary": "",
+      "published_display": "May 31, 21:28"
+    },
+    {
+      "id": "316177ed309c8b9cc399c5e351d5fcf7",
+      "title": "Apple delays its Samsung smart glasses competitor to 2027",
+      "url": "https://www.sammobile.com/news/apple-delays-its-samsung-smart-glasses-competitor-to-2027/",
+      "source": "SamMobile",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-05-31T21:03:21+00:00",
+      "snippet": "In addition to the intelligent eyewear it's developing alongside Google, Qualcomm, Warby Parker, and Gentle Monster, Samsung also has its own Galaxy-branded smart glasses in the pipeline that may launch later this year. Apple was expected to come out with a c…",
+      "image": "https://www.sammobile.com/wp-content/uploads/2025/10/Apple-iPhone-17-Pro-Max-vs-Samsung-Galaxy-S25-Ultra-Camera-Design-1200x675.jpeg",
+      "ai_summary": "",
+      "published_display": "May 31, 21:03"
     },
     {
       "id": "44fdfb41f6a202bbdbd57a2b1c0f5f18",
@@ -687,6 +1429,20 @@
       "published_display": "May 31, 19:21"
     },
     {
+      "id": "1c6c55b597fe91aa90af812328203801",
+      "title": "Google's Gemini 3.5 Flash costs 3x the model it replaced, and the era of cheap AI is ending",
+      "url": "https://www.xda-developers.com/google-gemini-3-5-flash-costs-3x-model-replaced-cheap-ai-ending/",
+      "source": "XDA Developers",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-05-31T19:07:21+00:00",
+      "snippet": "Google's Gemini 3.5 Flash costs 3x the model it replaced, and the era of cheap AI is endingxda-developers.com",
+      "image": "https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2026/05/gemini-3-5-flash-feature-image-1.jpg?w=1600&h=900&fit=crop",
+      "ai_summary": "",
+      "published_display": "May 31, 19:07"
+    },
+    {
       "id": "9b041061bac9606e91bb541485a01676",
       "title": "plumbline-bench added to PyPI",
       "url": "https://pypi.org/project/plumbline-bench/",
@@ -727,6 +1483,20 @@
       "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
       "ai_summary": "",
       "published_display": "May 31, 18:51"
+    },
+    {
+      "id": "862827328db9969356405d1288cb8f4d",
+      "title": "agentgrep 0.1.0a14",
+      "url": "https://pypi.org/project/agentgrep/0.1.0a14/",
+      "source": "Pypi.org",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-05-31T18:45:59+00:00",
+      "snippet": "Read-only search for local AI agent prompts and history (Codex, Claude Code, Cursor, Gemini, Grok, Pi, OpenCode)",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "May 31, 18:45"
     },
     {
       "id": "10fe75e49361c219f1cc098fb5849a0a",
@@ -799,6 +1569,20 @@
       "published_display": "May 31, 17:54"
     },
     {
+      "id": "055393629d51ab85474bd348eb4d372f",
+      "title": "Maryland Governor Signs K-12 AI Bill Under Microsoft's Watchful Eye",
+      "url": "https://slashdot.org/submission/17347712/maryland-governor-signs-k-12-ai-bill-under-microsofts-watchful-eye",
+      "source": "Slashdot.org",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-05-31T17:42:34+00:00",
+      "snippet": "\"Thank you, Gov. Wes Moore, for signing SB 720 into law yesterday!\" exclaimed Microsoft Sr. Director of Education and Workforce Policy Allyson Knox in a LinkedIn post celebrating the passage of the Artificial Intelligence Ready Schools Act. \"Microsoft was pro…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "May 31, 17:42"
+    },
+    {
       "id": "d751a33f5244c0f9d52cdae6cbdaac4e",
       "title": "Apple iOS 27 Release Date: When You Can Download And Test The New iPhone Update - Forbes",
       "url": "https://slashdot.org/firehose.pl?op=view&amp;id=183491400",
@@ -841,6 +1625,20 @@
       "published_display": "May 31, 17:12"
     },
     {
+      "id": "41fb475db5147508ed6aaa2fe86965fa",
+      "title": "Apple’s plan to challenge the Meta Ray-Ban smart glasses is cocky, but it also makes sense",
+      "url": "https://www.phonearena.com/news/apples-plan-to-challenge-meta-ray-ban-smart-glasses-is-cocky-but-makes-sense_id180773",
+      "source": "PhoneArena",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-05-31T16:52:23+00:00",
+      "snippet": "Apple is about to enter the smart glasses market to take on the Meta Ray-Ban with a very confident plan.",
+      "image": "https://m-cdn.phonearena.com/images/article/180773-wide-two_1200/Apples-plan-to-challenge-the-Meta-Ray-Ban-smart-glasses-is-cocky-but-it-also-makes-sense.jpg",
+      "ai_summary": "",
+      "published_display": "May 31, 16:52"
+    },
+    {
       "id": "2222affce9411f0adf9ff3088c37c033",
       "title": "China just told its tech giants to stop fighting on price and start investing in AI",
       "url": "https://thenextweb.com/news/china-platform-regulation-ai-investment-qiushi-signal/",
@@ -881,6 +1679,20 @@
       "image": "https://opengraph.githubassets.com/dbe4ba3fe8e69e5c0a029b556cb3fbe135008b4381c1c0884c556ee4ea9e2ec9/patrickxia/entropic",
       "ai_summary": "",
       "published_display": "May 31, 15:04"
+    },
+    {
+      "id": "813f03f5350dd33e62c310e274f4426a",
+      "title": "Sandisk Stock Has Soared Over 4,000% Over the Past Year. Wall Street’s Still Chasing the Stock",
+      "url": "https://www.barchart.com/story/news/2223510/sandisk-stock-has-soared-over-4-000-over-the-past-year-wall-streets-still-chasing-the-stock",
+      "source": "Barchart.com",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-05-31T15:00:02+00:00",
+      "snippet": "Sandisk’s valuation still looks relatively modest despite a massive rally, keeping bullish momentum alive in the AI memory trade.",
+      "image": "https://s.yimg.com/ny/api/res/1.2/.akibQsdTmXcdrA3ACIAsA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03OTg-/https://media.zenfs.com/en/barchart_com_477/e7d9281efcd52df9885e2aa41365a29b",
+      "ai_summary": "",
+      "published_display": "May 31, 15:00"
     },
     {
       "id": "5ba93ae6f9b0fcf6512b620871dfb131",
@@ -939,6 +1751,20 @@
       "published_display": "May 31, 10:26"
     },
     {
+      "id": "1f3cc28464f853ed66762b47e2e4556c",
+      "title": "SoftBank says it will invest up to €75B to build French data centers",
+      "url": "https://techcrunch.com/2026/05/30/softbank-says-it-will-invest-up-to-e75-billion-to-build-french-data-centers/",
+      "source": "TechCrunch AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-05-30T21:45:00+00:00",
+      "snippet": "The goal, the firm said, is to develop and operate up to 5 gigawatts of additional data center capacity.",
+      "image": "https://techcrunch.com/wp-content/uploads/2025/07/GettyImages-2224533087.jpg?w=1024",
+      "ai_summary": "",
+      "published_display": "May 30, 21:45"
+    },
+    {
       "id": "60dc96ceb70c5d09e455c604c7eae19c",
       "title": "‘What a joke’: GitHub Copilot’s new token-based billing spurs consternation among devs",
       "url": "https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs/",
@@ -953,6 +1779,6 @@
       "published_display": "May 30, 16:30"
     }
   ],
-  "generated_at": "2026-06-01T20:55:04.404613+00:00",
+  "generated_at": "2026-06-02T00:12:02.064878+00:00",
   "period": "June 2026"
 }

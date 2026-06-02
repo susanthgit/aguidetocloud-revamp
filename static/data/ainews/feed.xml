@@ -5,42 +5,66 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Jun 2026 20:55:04 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 00:12:02 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Election interlopers register 5K+ domains, hope to catch some voting phish</title>
-      <link>https://www.theregister.com/security/2026/06/01/5k-election-domains-registered-ahead-of-us-midterms/5249764</link>
+      <title>Angry devs vow to flee GitHub Copilot as metered billing takes hold</title>
+      <link>https://www.theregister.com/ai-and-ml/2026/06/02/github-copilot-users-threaten-exit-as-metered-billing-kicks-in/5249826</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Tue, 02 Jun 2026 01:20:51 +0200</pubDate>
+      <guid>https://www.theregister.com/ai-and-ml/2026/06/02/github-copilot-users-threaten-exit-as-metered-billing-kicks-in/5249826</guid>
+    </item>
+    <item>
+      <title>Shai-Hulud malware worms Red Hat npm package versions downloaded 80K times a week</title>
+      <link>https://www.theregister.com/security/2026/06/01/shai-hulud-malware-infects-red-hat-npm-packages-downloaded-80k-times-weekly/5249803</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Mon, 01 Jun 2026 21:46:47 +0200</pubDate>
-      <guid>https://www.theregister.com/security/2026/06/01/5k-election-domains-registered-ahead-of-us-midterms/5249764</guid>
+      <pubDate>Mon, 01 Jun 2026 23:54:07 +0200</pubDate>
+      <guid>https://www.theregister.com/security/2026/06/01/shai-hulud-malware-infects-red-hat-npm-packages-downloaded-80k-times-weekly/5249803</guid>
     </item>
     <item>
-      <title>Supercharging LLM inference on Google TPUs: Achieving 3X speedups with diffusion-style speculative decoding</title>
-      <link>https://developers.googleblog.com/supercharging-llm-inference-on-google-tpus-achieving-3x-speedups-with-diffusion-style-speculative-decoding/</link>
+      <title>Alphabet plans to raise $80B to pay for AI buildout</title>
+      <link>https://techcrunch.com/2026/06/01/alphabet-plans-to-raise-80-billion-to-pay-for-ai-buildout/</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 01 Jun 2026 20:53:53 +0000</pubDate>
-      <guid>https://developers.googleblog.com/supercharging-llm-inference-on-google-tpus-achieving-3x-speedups-with-diffusion-style-speculative-decoding/</guid>
+      <category>Top Stories</category>
+      <pubDate>Mon, 01 Jun 2026 22:55:09 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/06/01/alphabet-plans-to-raise-80-billion-to-pay-for-ai-buildout/</guid>
     </item>
     <item>
-      <title>Anthropic, now atop the AI bubble, files for its IPO</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/06/01/anthropic-now-atop-the-ai-bubble-files-for-its-ipo/5249753</link>
+      <title>Reference your own AWS Secrets Manager secrets in Amazon Bedrock AgentCore Identity</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/reference-your-own-aws-secrets-manager-secrets-in-amazon-bedrock-agentcore-identity/</link>
       <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 01 Jun 2026 20:12:22 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/06/01/anthropic-now-atop-the-ai-bubble-files-for-its-ipo/5249753</guid>
+      <category>Amazon</category>
+      <pubDate>Mon, 01 Jun 2026 22:16:28 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/reference-your-own-aws-secrets-manager-secrets-in-amazon-bedrock-agentcore-identity/</guid>
     </item>
     <item>
-      <title>Florida sues OpenAI, Sam Altman, in first-of-its-kind lawsuit over violent incidents</title>
-      <link>https://techcrunch.com/2026/06/01/florida-sues-openai-sam-altman-in-first-of-its-kind-lawsuit-over-violent-incidents/</link>
+      <title>Transforming rare cancer research with Amazon Quick: Integrating biomedical databases for breakthrough discoveries</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/</link>
       <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 01 Jun 2026 20:03:40 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/06/01/florida-sues-openai-sam-altman-in-first-of-its-kind-lawsuit-over-violent-incidents/</guid>
+      <category>Amazon</category>
+      <pubDate>Mon, 01 Jun 2026 21:54:16 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/</guid>
     </item>
     <item>
-      <title>Dozens of Red Hat packages backdoored through its offical NPM channel</title>
+      <title>Nvidia chases $200B CPU market with AI agent PCs from Microsoft, Dell, and HP</title>
+      <link>https://techcrunch.com/2026/06/01/nvidia-chases-200b-cpu-market-with-ai-agent-pcs-from-microsoft-dell-and-hp/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Mon, 01 Jun 2026 21:35:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/06/01/nvidia-chases-200b-cpu-market-with-ai-agent-pcs-from-microsoft-dell-and-hp/</guid>
+    </item>
+    <item>
+      <title>OpenAI models and Codex on Amazon Bedrock are now generally available</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/openai-models-and-codex-on-amazon-bedrock-are-now-generally-available/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Mon, 01 Jun 2026 21:31:12 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/openai-models-and-codex-on-amazon-bedrock-are-now-generally-available/</guid>
+    </item>
+    <item>
+      <title>Dozens of Red Hat packages backdoored through its official NPM channel</title>
       <link>https://arstechnica.com/security/2026/06/dozens-of-red-hat-packages-backdoored-through-its-offical-npm-channel/</link>
       <description></description>
       <category>Top Stories</category>
@@ -48,364 +72,340 @@
       <guid>https://arstechnica.com/security/2026/06/dozens-of-red-hat-packages-backdoored-through-its-offical-npm-channel/</guid>
     </item>
     <item>
-      <title>Why I just connected my living room TV to a router VPN (and you should, too)</title>
-      <link>https://www.zdnet.com/article/how-to-add-a-vpn-to-your-smart-tv/</link>
+      <title>Our views on AI policy and political advocacy</title>
+      <link>https://openai.com/index/our-views-on-ai-policy-and-political-advocacy</link>
       <description></description>
-      <category>Industry</category>
-      <pubDate>Mon, 01 Jun 2026 19:38:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/how-to-add-a-vpn-to-your-smart-tv/</guid>
+      <category>OpenAI</category>
+      <pubDate>Mon, 01 Jun 2026 17:00:00 +0000</pubDate>
+      <guid>https://openai.com/index/our-views-on-ai-policy-and-political-advocacy</guid>
     </item>
     <item>
-      <title>This $4 router reboot timer is the cheap internet fix I didn't know I needed - and it works reliably</title>
-      <link>https://www.zdnet.com/article/router-rebooter-review/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Mon, 01 Jun 2026 18:50:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/router-rebooter-review/</guid>
-    </item>
-    <item>
-      <title>Extending MCP support for Amazon Bedrock AgentCore Gateway</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/extending-mcp-support-for-amazon-bedrock-agentcore-gateway-2/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Mon, 01 Jun 2026 18:35:03 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/extending-mcp-support-for-amazon-bedrock-agentcore-gateway-2/</guid>
-    </item>
-    <item>
-      <title>US firms still dominate chip subsidies</title>
-      <link>https://www.theregister.com/systems/2026/06/01/us-firms-still-dominate-chip-subsidies/5249668</link>
+      <title>Strava blames zero-code AI apps and scrapers as it tightens API access</title>
+      <link>https://www.theverge.com/gadgets/940854/strava-restricts-api-access-ai-apps</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Mon, 01 Jun 2026 18:21:06 +0200</pubDate>
-      <guid>https://www.theregister.com/systems/2026/06/01/us-firms-still-dominate-chip-subsidies/5249668</guid>
+      <pubDate>Mon, 01 Jun 2026 10:06:44 -0400</pubDate>
+      <guid>https://www.theverge.com/gadgets/940854/strava-restricts-api-access-ai-apps</guid>
     </item>
     <item>
-      <title>Water access is now a risk factor in SpaceX’s IPO</title>
-      <link>https://techcrunch.com/2026/06/01/water-access-is-now-a-risk-factor-in-spacexs-ipo/</link>
+      <title>OpenAI frontier models and Codex are now available on AWS</title>
+      <link>https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 01 Jun 2026 10:00:00 +0000</pubDate>
+      <guid>https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws</guid>
+    </item>
+    <item>
+      <title>China has approved the world’s first invasive brain-computer chip—here’s what’s next</title>
+      <link>https://www.technologyreview.com/2026/06/01/1138133/china-world-first-brain-chip/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Mon, 01 Jun 2026 18:19:53 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/06/01/water-access-is-now-a-risk-factor-in-spacexs-ipo/</guid>
+      <pubDate>Mon, 01 Jun 2026 09:09:00 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/06/01/1138133/china-world-first-brain-chip/</guid>
     </item>
     <item>
-      <title>New PC? This MX Linux version is the best distro for you</title>
-      <link>https://www.zdnet.com/article/mx-linux-xfce-ahs-might-be-the-best-distribution-for-newer-hardware/</link>
+      <title>toposync-vision-cuda 0.7.4</title>
+      <link>https://pypi.org/project/toposync-vision-cuda/0.7.4/</link>
       <description></description>
-      <category>Industry</category>
-      <pubDate>Mon, 01 Jun 2026 18:04:28 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/mx-linux-xfce-ahs-might-be-the-best-distribution-for-newer-hardware/</guid>
+      <category>NVIDIA</category>
+      <pubDate>Mon, 01 Jun 2026 00:10:08 +0000</pubDate>
+      <guid>https://pypi.org/project/toposync-vision-cuda/0.7.4/</guid>
     </item>
     <item>
-      <title>You can play Angry Birds on Android Auto, plus 4 more popular games - here's how</title>
-      <link>https://www.zdnet.com/article/play-angry-birds-on-android-auto-plus-more-games/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Mon, 01 Jun 2026 17:55:23 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/play-angry-birds-on-android-auto-plus-more-games/</guid>
-    </item>
-    <item>
-      <title>Secure AI agents with Policy and Lambda interceptors in Amazon Bedrock AgentCore gateway</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-and-lambda-interceptors-in-amazon-bedrock-agentcore-gateway/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Mon, 01 Jun 2026 17:54:22 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/secure-ai-agents-with-policy-and-lambda-interceptors-in-amazon-bedrock-agentcore-gateway/</guid>
-    </item>
-    <item>
-      <title>Agentic AI arrives for Delphi and C++ Builder</title>
-      <link>https://www.theregister.com/devops/2026/06/01/agentic-ai-arrives-for-delphi-and-c-builder/5249638</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 01 Jun 2026 17:45:00 +0200</pubDate>
-      <guid>https://www.theregister.com/devops/2026/06/01/agentic-ai-arrives-for-delphi-and-c-builder/5249638</guid>
-    </item>
-    <item>
-      <title>Home Depot will give you a free Ryobi power tool with this battery set - and I'd recommend it</title>
-      <link>https://www.zdnet.com/article/ryobi-tool-bogo-deal-home-depot/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Mon, 01 Jun 2026 17:35:04 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/ryobi-tool-bogo-deal-home-depot/</guid>
-    </item>
-    <item>
-      <title>Enable safe agentic payments with built-in guardrails using Amazon Bedrock AgentCore payments</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/enable-safe-agentic-payments-with-built-in-guardrails-using-amazon-bedrock-agentcore-payments/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Mon, 01 Jun 2026 17:30:12 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/enable-safe-agentic-payments-with-built-in-guardrails-using-amazon-bedrock-agentcore-payments/</guid>
-    </item>
-    <item>
-      <title>Anthropic Confidentially Files for What Could Be the Largest IPO Ever</title>
-      <link>https://www.wired.com/story/anthropic-files-s1-ipo-sec/</link>
+      <title>evledger added to PyPI</title>
+      <link>https://pypi.org/project/evledger/</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Mon, 01 Jun 2026 17:17:58 +0000</pubDate>
-      <guid>https://www.wired.com/story/anthropic-files-s1-ipo-sec/</guid>
+      <pubDate>Mon, 01 Jun 2026 00:09:03 +0000</pubDate>
+      <guid>https://pypi.org/project/evledger/</guid>
     </item>
     <item>
-      <title>I ditched my office desktop PC for a gaming laptop, and it's a serious productivity upgrade</title>
-      <link>https://www.zdnet.com/article/msi-raider-16-max-hx-review/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Mon, 01 Jun 2026 17:00:40 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/msi-raider-16-max-hx-review/</guid>
-    </item>
-    <item>
-      <title>This could be Windows’ M1 moment — but expect it to cost a ton</title>
-      <link>https://www.theverge.com/tech/941215/windows-laptops-nvidia-rtx-spark-apple-m1-arm-price-ram</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 01 Jun 2026 16:02:31 -0400</pubDate>
-      <guid>https://www.theverge.com/tech/941215/windows-laptops-nvidia-rtx-spark-apple-m1-arm-price-ram</guid>
-    </item>
-    <item>
-      <title>Gemini’s new AI agent is about as good as Google’s demo</title>
-      <link>https://www.theverge.com/tech/941138/google-gemini-spark-ai-agent-hands-on</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 01 Jun 2026 16:00:00 -0400</pubDate>
-      <guid>https://www.theverge.com/tech/941138/google-gemini-spark-ai-agent-hands-on</guid>
-    </item>
-    <item>
-      <title>How we used Gemini to build Google I/O 2026</title>
-      <link>https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 01 Jun 2026 16:00:00 +0000</pubDate>
-      <guid>https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/</guid>
-    </item>
-    <item>
-      <title>Meta&amp;#8217;s own AI was exploited to hijack Instagram accounts</title>
-      <link>https://www.theverge.com/tech/941179/meta-instagram-ai-support-chatbot-exploit-hacked</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 01 Jun 2026 15:20:47 -0400</pubDate>
-      <guid>https://www.theverge.com/tech/941179/meta-instagram-ai-support-chatbot-exploit-hacked</guid>
-    </item>
-    <item>
-      <title>Updates to GitHub Copilot billing and plans</title>
-      <link>https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Mon, 01 Jun 2026 14:00:26 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans</guid>
-    </item>
-    <item>
-      <title>Anthropic has officially filed to go public</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/941016/anthropic-has-officially-filed-to-go-public</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 01 Jun 2026 12:40:38 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/941016/anthropic-has-officially-filed-to-go-public</guid>
-    </item>
-    <item>
-      <title>Building the infrastructure for the Intelligence Age in Michigan</title>
-      <link>https://openai.com/index/stargate-michigan-data-center</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 01 Jun 2026 12:00:00 +0000</pubDate>
-      <guid>https://openai.com/index/stargate-michigan-data-center</guid>
-    </item>
-    <item>
-      <title>Norse Atlantic Airways Offers Dirt-Cheap Tickets. There’s a Catch</title>
-      <link>https://www.wired.com/story/norse-airlines-ftc-complaints-ai-scams/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 01 Jun 2026 11:00:00 +0000</pubDate>
-      <guid>https://www.wired.com/story/norse-airlines-ftc-complaints-ai-scams/</guid>
-    </item>
-    <item>
-      <title>Microsoft to unveil new AI models and Windows improvements at Build</title>
-      <link>https://www.theverge.com/report/940861/microsoft-build-ai-models-windows-dev-mode-what-to-expect</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 01 Jun 2026 10:39:03 -0400</pubDate>
-      <guid>https://www.theverge.com/report/940861/microsoft-build-ai-models-windows-dev-mode-what-to-expect</guid>
-    </item>
-    <item>
-      <title>AI is blowing up music. How should the Grammys handle it?</title>
-      <link>https://www.theverge.com/podcast/940831/ai-grammys-music-recording-harvey-mason</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 01 Jun 2026 10:30:00 -0400</pubDate>
-      <guid>https://www.theverge.com/podcast/940831/ai-grammys-music-recording-harvey-mason</guid>
-    </item>
-    <item>
-      <title>Grok responds to Corey Quinn's piece on Grok + Bedrock</title>
-      <link>https://slashdot.org/submission/17347718/grok-responds-to-corey-quinns-piece-on-grok--bedrock</link>
+      <title>SpaceX Says It’s Sparking One Of Galaxy’s Most Advanced Civilizations</title>
+      <link>https://www.forbes.com/sites/kevinholdenplatt/2026/05/31/spacex-says-its-sparking-one-of-galaxys-most-advanced-civilizations/</link>
       <description></description>
       <category>xAI</category>
-      <pubDate>Sun, 31 May 2026 20:51:33 +0000</pubDate>
-      <guid>https://slashdot.org/submission/17347718/grok-responds-to-corey-quinns-piece-on-grok--bedrock</guid>
+      <pubDate>Mon, 01 Jun 2026 00:07:24 +0000</pubDate>
+      <guid>https://www.forbes.com/sites/kevinholdenplatt/2026/05/31/spacex-says-its-sparking-one-of-galaxys-most-advanced-civilizations/</guid>
     </item>
     <item>
-      <title>Names off, names on</title>
-      <link>https://www.artsjournal.com/2026/05/names-off-names-on.html</link>
+      <title>Karpathy LLM Wiki pattern integrated into Obsidian agenic workflow</title>
+      <link>https://github.com/pssah4/vault-operator</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Mon, 01 Jun 2026 00:03:11 +0000</pubDate>
+      <guid>https://github.com/pssah4/vault-operator</guid>
+    </item>
+    <item>
+      <title>Some Things I Think I Think: Red Sox need to get their stories straight on player injuries</title>
+      <link>https://www.masslive.com/redsox/2026/05/some-things-i-think-i-think-red-sox-need-to-get-their-stories-straight-on-player-injuries.html</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Sun, 31 May 2026 20:50:16 +0000</pubDate>
-      <guid>https://www.artsjournal.com/2026/05/names-off-names-on.html</guid>
+      <pubDate>Mon, 01 Jun 2026 00:01:05 +0000</pubDate>
+      <guid>https://www.masslive.com/redsox/2026/05/some-things-i-think-i-think-red-sox-need-to-get-their-stories-straight-on-player-injuries.html</guid>
     </item>
     <item>
-      <title>openlcm added to PyPI</title>
-      <link>https://pypi.org/project/openlcm/</link>
+      <title>Pwn2Own Berlin 2026: On the Ground With TrendAI™ ZDI's Biggest AI Showdown Yet</title>
+      <link>https://www.trendmicro.com/en_us/research/26/f/pwn2own-berlin-2026.html</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.trendmicro.com/en_us/research/26/f/pwn2own-berlin-2026.html</guid>
+    </item>
+    <item>
+      <title>Bob Belderbos: AI Human-in-the-loop: News Digest Triage Telegram Bot</title>
+      <link>https://belderbos.dev/blog/human-in-the-loop-telegram-bot-python/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Sun, 31 May 2026 20:49:40 +0000</pubDate>
-      <guid>https://pypi.org/project/openlcm/</guid>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://belderbos.dev/blog/human-in-the-loop-telegram-bot-python/</guid>
     </item>
     <item>
-      <title>graqle 0.65.0</title>
-      <link>https://pypi.org/project/graqle/0.65.0/</link>
+      <title>The Four Signals of AI Observability</title>
+      <link>https://thoughtbot.com/blog/the-four-signals-of-ai-observability</link>
       <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 31 May 2026 20:47:19 +0000</pubDate>
-      <guid>https://pypi.org/project/graqle/0.65.0/</guid>
+      <category>OpenAI</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://thoughtbot.com/blog/the-four-signals-of-ai-observability</guid>
     </item>
     <item>
-      <title>U.S. takes step to halt Nvidia AI chip shipments to Chinese firms outside China</title>
-      <link>https://www.cnbc.com/2026/05/31/us-takes-step-to-halt-nvidia-ai-chip-shipments-to-chinese-firms-outside-china.html</link>
+      <title>Free Systems Trains Claude directly</title>
+      <link>https://freesystems.substack.com/p/free-systems-trains-claude-directly</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://freesystems.substack.com/p/free-systems-trains-claude-directly</guid>
+    </item>
+    <item>
+      <title>クオンタムソリューションズ、Integrated Capital（Asia）と日本 AIDC プロジェクトに関する協業 MOU を締結</title>
+      <link>https://prtimes.jp/main/html/rd/p/000000056.000077168.html</link>
       <description></description>
       <category>NVIDIA</category>
-      <pubDate>Sun, 31 May 2026 20:45:01 +0000</pubDate>
-      <guid>https://www.cnbc.com/2026/05/31/us-takes-step-to-halt-nvidia-ai-chip-shipments-to-chinese-firms-outside-china.html</guid>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://prtimes.jp/main/html/rd/p/000000056.000077168.html</guid>
     </item>
     <item>
-      <title>Team Global Express has the logistics for AI use in place</title>
-      <link>https://www.itnews.com.au/news/team-global-express-has-the-logistics-for-ai-use-in-place-626143</link>
+      <title>Our goodpractice Package Has New Superpowers</title>
+      <link>https://www.r-bloggers.com/2026/05/our-goodpractice-package-has-new-superpowers/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.r-bloggers.com/2026/05/our-goodpractice-package-has-new-superpowers/</guid>
+    </item>
+    <item>
+      <title>lingo-loop 0.1.4</title>
+      <link>https://pypi.org/project/lingo-loop/0.1.4/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Sun, 31 May 2026 23:57:17 +0000</pubDate>
+      <guid>https://pypi.org/project/lingo-loop/0.1.4/</guid>
+    </item>
+    <item>
+      <title>claude-code-bridge 0.9.0</title>
+      <link>https://pypi.org/project/claude-code-bridge/0.9.0/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Sun, 31 May 2026 23:56:38 +0000</pubDate>
+      <guid>https://pypi.org/project/claude-code-bridge/0.9.0/</guid>
+    </item>
+    <item>
+      <title>hol-guard 2.0.398</title>
+      <link>https://pypi.org/project/hol-guard/2.0.398/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sun, 31 May 2026 23:55:43 +0000</pubDate>
+      <guid>https://pypi.org/project/hol-guard/2.0.398/</guid>
+    </item>
+    <item>
+      <title>finch-cli added to PyPI</title>
+      <link>https://pypi.org/project/finch-cli/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sun, 31 May 2026 23:40:39 +0000</pubDate>
+      <guid>https://pypi.org/project/finch-cli/</guid>
+    </item>
+    <item>
+      <title>simplicio-prompt 1.12.3</title>
+      <link>https://pypi.org/project/simplicio-prompt/1.12.3/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sun, 31 May 2026 23:38:54 +0000</pubDate>
+      <guid>https://pypi.org/project/simplicio-prompt/1.12.3/</guid>
+    </item>
+    <item>
+      <title>Apple AI glasses launch pushed back to late 2027, Vision Air to arrive by 2029: report - 9to5Mac</title>
+      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=183496162</link>
+      <description></description>
+      <category>Apple</category>
+      <pubDate>Sun, 31 May 2026 23:32:18 +0000</pubDate>
+      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=183496162</guid>
+    </item>
+    <item>
+      <title>able-harness-kit 0.2.0</title>
+      <link>https://pypi.org/project/able-harness-kit/0.2.0/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Sun, 31 May 2026 23:17:16 +0000</pubDate>
+      <guid>https://pypi.org/project/able-harness-kit/0.2.0/</guid>
+    </item>
+    <item>
+      <title>repowire 0.14.17</title>
+      <link>https://pypi.org/project/repowire/0.14.17/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sun, 31 May 2026 22:59:51 +0000</pubDate>
+      <guid>https://pypi.org/project/repowire/0.14.17/</guid>
+    </item>
+    <item>
+      <title>hol-guard 2.0.397</title>
+      <link>https://pypi.org/project/hol-guard/2.0.397/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sun, 31 May 2026 22:55:34 +0000</pubDate>
+      <guid>https://pypi.org/project/hol-guard/2.0.397/</guid>
+    </item>
+    <item>
+      <title>databricks-mlflow-export-import added to PyPI</title>
+      <link>https://pypi.org/project/databricks-mlflow-export-import/</link>
       <description></description>
       <category>Amazon</category>
-      <pubDate>Sun, 31 May 2026 20:41:00 +0000</pubDate>
-      <guid>https://www.itnews.com.au/news/team-global-express-has-the-logistics-for-ai-use-in-place-626143</guid>
+      <pubDate>Sun, 31 May 2026 22:55:22 +0000</pubDate>
+      <guid>https://pypi.org/project/databricks-mlflow-export-import/</guid>
     </item>
     <item>
-      <title>ModelHub – China's best AI models for developers, DeepSeek API, pay 33x less</title>
-      <link>https://betalist.com/startups/modelhub</link>
+      <title>tensorfeed 2.2.0</title>
+      <link>https://pypi.org/project/tensorfeed/2.2.0/</link>
       <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sun, 31 May 2026 20:40:00 +0000</pubDate>
-      <guid>https://betalist.com/startups/modelhub</guid>
+      <category>Open Source</category>
+      <pubDate>Sun, 31 May 2026 22:50:25 +0000</pubDate>
+      <guid>https://pypi.org/project/tensorfeed/2.2.0/</guid>
     </item>
     <item>
-      <title>memorised-them-all 1.1.0</title>
-      <link>https://pypi.org/project/memorised-them-all/1.1.0/</link>
+      <title>langchain-pi 0.4.0</title>
+      <link>https://pypi.org/project/langchain-pi/0.4.0/</link>
       <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 31 May 2026 20:38:56 +0000</pubDate>
-      <guid>https://pypi.org/project/memorised-them-all/1.1.0/</guid>
+      <category>Open Source</category>
+      <pubDate>Sun, 31 May 2026 22:48:33 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-pi/0.4.0/</guid>
     </item>
     <item>
-      <title>ChatGPT for Google Sheets Exfiltrates Workbooks</title>
-      <link>https://www.promptarmor.com/resources/gpt-for-google-sheets-data-exfiltration</link>
+      <title>remove-ai-watermarks 0.8.2</title>
+      <link>https://pypi.org/project/remove-ai-watermarks/0.8.2/</link>
       <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sun, 31 May 2026 20:35:38 +0000</pubDate>
-      <guid>https://www.promptarmor.com/resources/gpt-for-google-sheets-data-exfiltration</guid>
+      <category>Google</category>
+      <pubDate>Sun, 31 May 2026 22:48:11 +0000</pubDate>
+      <guid>https://pypi.org/project/remove-ai-watermarks/0.8.2/</guid>
     </item>
     <item>
-      <title>Someone allegedly found a Pixel Watch 5 in the ocean</title>
-      <link>http://9to5google.com/2026/05/31/someone-allegedly-found-a-pixel-watch-5-in-the-ocean/</link>
+      <title>graphifyy 0.8.27</title>
+      <link>https://pypi.org/project/graphifyy/0.8.27/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sun, 31 May 2026 22:45:27 +0000</pubDate>
+      <guid>https://pypi.org/project/graphifyy/0.8.27/</guid>
+    </item>
+    <item>
+      <title>TWiT 1086: The Great Beagle Migration - Pope Leo XIV's 1st Encyclical &amp; Ferrari's 1st EV</title>
+      <link>https://twit.tv/shows/this-week-in-tech/episodes/1086</link>
+      <description></description>
+      <category>Apple</category>
+      <pubDate>Sun, 31 May 2026 22:40:23 +0000</pubDate>
+      <guid>https://twit.tv/shows/this-week-in-tech/episodes/1086</guid>
+    </item>
+    <item>
+      <title>langchain-pi 0.3.0</title>
+      <link>https://pypi.org/project/langchain-pi/0.3.0/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Sun, 31 May 2026 22:28:34 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-pi/0.3.0/</guid>
+    </item>
+    <item>
+      <title>The SpaceX Roadshow Is Expected to Launch in Days. A Wall Street Veteran Says What You Learn Before It Starts Matters More Than Anything That Comes After</title>
+      <link>https://www.globenewswire.com/news-release/2026/05/31/3303954/0/en/The-SpaceX-Roadshow-Is-Expected-to-Launch-in-Days-A-Wall-Street-Veteran-Says-What-You-Learn-Before-It-Starts-Matters-More-Than-Anything-That-Comes-After.html</link>
       <description></description>
       <category>Rumours &amp; Gossip</category>
-      <pubDate>Sun, 31 May 2026 20:35:00 +0000</pubDate>
-      <guid>http://9to5google.com/2026/05/31/someone-allegedly-found-a-pixel-watch-5-in-the-ocean/</guid>
+      <pubDate>Sun, 31 May 2026 22:27:00 +0000</pubDate>
+      <guid>https://www.globenewswire.com/news-release/2026/05/31/3303954/0/en/The-SpaceX-Roadshow-Is-Expected-to-Launch-in-Days-A-Wall-Street-Veteran-Says-What-You-Learn-Before-It-Starts-Matters-More-Than-Anything-That-Comes-After.html</guid>
     </item>
     <item>
-      <title>superharness 1.69.5</title>
-      <link>https://pypi.org/project/superharness/1.69.5/</link>
+      <title>voxtral-mcp 0.5.0</title>
+      <link>https://pypi.org/project/voxtral-mcp/0.5.0/</link>
       <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 31 May 2026 20:33:58 +0000</pubDate>
-      <guid>https://pypi.org/project/superharness/1.69.5/</guid>
+      <category>Mistral</category>
+      <pubDate>Sun, 31 May 2026 22:24:48 +0000</pubDate>
+      <guid>https://pypi.org/project/voxtral-mcp/0.5.0/</guid>
     </item>
     <item>
-      <title>langchain-pi 0.1.1</title>
-      <link>https://pypi.org/project/langchain-pi/0.1.1/</link>
+      <title>voxtral-mcp added to PyPI</title>
+      <link>https://pypi.org/project/voxtral-mcp/</link>
       <description></description>
-      <category>Open Source</category>
-      <pubDate>Sun, 31 May 2026 20:19:24 +0000</pubDate>
-      <guid>https://pypi.org/project/langchain-pi/0.1.1/</guid>
+      <category>Mistral</category>
+      <pubDate>Sun, 31 May 2026 22:24:42 +0000</pubDate>
+      <guid>https://pypi.org/project/voxtral-mcp/</guid>
     </item>
     <item>
-      <title>langchain-pi added to PyPI</title>
-      <link>https://pypi.org/project/langchain-pi/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Sun, 31 May 2026 19:55:18 +0000</pubDate>
-      <guid>https://pypi.org/project/langchain-pi/</guid>
-    </item>
-    <item>
-      <title>langchain-pi 0.1.0</title>
-      <link>https://pypi.org/project/langchain-pi/0.1.0/</link>
+      <title>langchain-pi 0.2.1</title>
+      <link>https://pypi.org/project/langchain-pi/0.2.1/</link>
       <description></description>
       <category>Open Source</category>
-      <pubDate>Sun, 31 May 2026 19:55:18 +0000</pubDate>
-      <guid>https://pypi.org/project/langchain-pi/0.1.0/</guid>
+      <pubDate>Sun, 31 May 2026 22:14:02 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-pi/0.2.1/</guid>
     </item>
     <item>
-      <title>dire-rapids 0.3.1</title>
-      <link>https://pypi.org/project/dire-rapids/0.3.1/</link>
+      <title>Is AI replacing jobs? How 17 job types feel the effects</title>
+      <link>https://www.techtarget.com/searchenterpriseai/feature/Is-AI-replacing-jobs-How-17-job-types-feel-the-effects</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Sun, 31 May 2026 22:07:00 +0000</pubDate>
+      <guid>https://www.techtarget.com/searchenterpriseai/feature/Is-AI-replacing-jobs-How-17-job-types-feel-the-effects</guid>
+    </item>
+    <item>
+      <title>東急不動産HDグループのDX推進を担うTFHD digitalへ「Microsoft 365 Copilot研修」を実施</title>
+      <link>https://prtimes.jp/main/html/rd/p/000000106.000125579.html</link>
+      <description></description>
+      <category>M365 Copilot</category>
+      <pubDate>Sun, 31 May 2026 22:00:00 +0000</pubDate>
+      <guid>https://prtimes.jp/main/html/rd/p/000000106.000125579.html</guid>
+    </item>
+    <item>
+      <title>Web3 Has No Safe AI. DMind AI Just Quantified the Gap -- and KDD 2026 Made It Official.</title>
+      <link>https://www.prnewswire.com/news-releases/web3-has-no-safe-ai-dmind-ai-just-quantified-the-gap--and-kdd-2026-made-it-official-302786392.html</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sun, 31 May 2026 22:00:00 +0000</pubDate>
+      <guid>https://www.prnewswire.com/news-releases/web3-has-no-safe-ai-dmind-ai-just-quantified-the-gap--and-kdd-2026-made-it-official-302786392.html</guid>
+    </item>
+    <item>
+      <title>agi-app-pytorch-playground 2026.5.31.post1</title>
+      <link>https://pypi.org/project/agi-app-pytorch-playground/2026.5.31.post1/</link>
       <description></description>
       <category>Meta</category>
-      <pubDate>Sun, 31 May 2026 19:37:14 +0000</pubDate>
-      <guid>https://pypi.org/project/dire-rapids/0.3.1/</guid>
+      <pubDate>Sun, 31 May 2026 21:56:11 +0000</pubDate>
+      <guid>https://pypi.org/project/agi-app-pytorch-playground/2026.5.31.post1/</guid>
     </item>
     <item>
-      <title>Navigating the AI-First Marketing Revolution of 2026 | Linkplus</title>
-      <link>https://linkplus.marketing/blog/navigating-the-ai-first-marketing-revolution-of-2026</link>
+      <title>SoftBank Group to Build Massive AI Data Center in France</title>
+      <link>https://newsonjapan.com/article/149464.php</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Sun, 31 May 2026 21:53:38 +0000</pubDate>
+      <guid>https://newsonjapan.com/article/149464.php</guid>
+    </item>
+    <item>
+      <title>hol-guard 2.0.395</title>
+      <link>https://pypi.org/project/hol-guard/2.0.395/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Sun, 31 May 2026 19:32:35 +0000</pubDate>
-      <guid>https://linkplus.marketing/blog/navigating-the-ai-first-marketing-revolution-of-2026</guid>
+      <pubDate>Sun, 31 May 2026 21:51:38 +0000</pubDate>
+      <guid>https://pypi.org/project/hol-guard/2.0.395/</guid>
     </item>
     <item>
-      <title>abstract-hugpy 0.1.375</title>
-      <link>https://pypi.org/project/abstract-hugpy/0.1.375/</link>
+      <title>iOS 28 Will Reportedly Be 'Far More Significant' Than iOS 27</title>
+      <link>https://www.macrumors.com/2026/05/31/ios-28-far-more-significant-rumor/</link>
       <description></description>
-      <category>Open Source</category>
-      <pubDate>Sun, 31 May 2026 19:29:27 +0000</pubDate>
-      <guid>https://pypi.org/project/abstract-hugpy/0.1.375/</guid>
-    </item>
-    <item>
-      <title>remove-ai-watermarks 0.8.0</title>
-      <link>https://pypi.org/project/remove-ai-watermarks/0.8.0/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sun, 31 May 2026 19:26:28 +0000</pubDate>
-      <guid>https://pypi.org/project/remove-ai-watermarks/0.8.0/</guid>
-    </item>
-    <item>
-      <title>haney 0.1.0</title>
-      <link>https://pypi.org/project/haney/0.1.0/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sun, 31 May 2026 19:23:49 +0000</pubDate>
-      <guid>https://pypi.org/project/haney/0.1.0/</guid>
-    </item>
-    <item>
-      <title>haney added to PyPI</title>
-      <link>https://pypi.org/project/haney/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sun, 31 May 2026 19:23:49 +0000</pubDate>
-      <guid>https://pypi.org/project/haney/</guid>
-    </item>
-    <item>
-      <title>openjobs-langchain 3.0.3</title>
-      <link>https://pypi.org/project/openjobs-langchain/3.0.3/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Sun, 31 May 2026 19:21:09 +0000</pubDate>
-      <guid>https://pypi.org/project/openjobs-langchain/3.0.3/</guid>
-    </item>
-    <item>
-      <title>plumbline-bench added to PyPI</title>
-      <link>https://pypi.org/project/plumbline-bench/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sun, 31 May 2026 19:03:19 +0000</pubDate>
-      <guid>https://pypi.org/project/plumbline-bench/</guid>
+      <category>Apple</category>
+      <pubDate>Sun, 31 May 2026 21:44:33 +0000</pubDate>
+      <guid>https://www.macrumors.com/2026/05/31/ios-28-far-more-significant-rumor/</guid>
     </item>
   </channel>
 </rss>
