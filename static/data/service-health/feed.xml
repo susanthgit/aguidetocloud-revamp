@@ -5,14 +5,23 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 02 Jun 2026 16:53:08 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 21:22:41 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may intermittently be unable to complete Microsoft 365 Copilot requests or receive responses</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1332783</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may intermittently be unable to complete Copilot requests or receive responses.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">CP1332783</guid>
+      <pubDate>Tue, 02 Jun 2026 20:41:58 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] We're looking into a potential problem impacting Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1331875</link>
       <description>[Microsoft Copilot (Microsoft 365)] We're checking for potential impact to your users.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>falsePositive</category>
       <guid isPermaLink="false">CP1331875</guid>
       <pubDate>Tue, 02 Jun 2026 16:00:57 +0000</pubDate>
     </item>
@@ -450,15 +459,6 @@ We detected this issue through our automated monitoring systems after observing 
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1304747</guid>
       <pubDate>Sun, 03 May 2026 11:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Some users may receive false positive alerts from Microsoft Defender Antivirus for specific certificates</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1299600</link>
-      <description>[Microsoft Defender XDR] Users received false positive alerts from Defender Antivirus and see legitimate files or certificates quarantined.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">DZ1299600</guid>
-      <pubDate>Sun, 03 May 2026 08:52:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
