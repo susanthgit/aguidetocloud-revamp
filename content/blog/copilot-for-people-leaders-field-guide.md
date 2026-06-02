@@ -567,7 +567,7 @@ Read the ones relevant to you. Skim the rest. The order roughly follows the freq
 *The 6-row action table: who · subject · what they need · deadline. 412 emails compressed to 6 decisions in a single Copilot turn.*
 
 
-2. **Drafting high-stakes replies.** When the email matters and you don't have time to start from scratch — the board chair email, the customer escalation, the regulator's preliminary question. Copilot starts you 20 minutes closer to send-ready. You still own the editorial pass.
+2. **Drafting high-stakes replies.** When the email matters and you don't have time to start from scratch — the skip-level escalation, the difficult-team-member reply, the customer escalation that landed in your inbox. Copilot starts you 20 minutes closer to send-ready. You still own the editorial pass.
 
 3. **Tone calibration.** Same content, three audiences (your team, your skip-level, all-staff). Same content, three tones (direct, warm, urgent). The variations are cheap; the editorial judgement stays human.
 
