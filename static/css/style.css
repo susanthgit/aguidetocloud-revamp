@@ -3393,9 +3393,26 @@ pre.mermaid {
   .site-nav, .global-btt, .feedback-fab,
   .back-nav-link, footer { display: none !important; }
 
-  /* Ensure full width */
-  .blog-content, .content, main, article {
+  /* Hide chrome that bleeds into print on notebook blogs (added 3 Jun 2026) */
+  cosmos-bar, .cosmos-bar,
+  .zt-sidebar, .zt-toc, .zt-toc-mobile, .zt-companion,
+  .zt-reading-toolbar,
+  [class^="zt-toolbar"], [class*=" zt-toolbar"],
+  .zt-focus-toggle,
+  .blog-pn-nav, .blog-pn-link, .blog-pn-prev, .blog-pn-next,
+  .theme-toggle, .hamburger,
+  .post-share, .share-buttons { display: none !important; }
+
+  /* Reclaim full width when sidebars are hidden */
+  .blog-content, .content, main, article,
+  .zt-layout, .zt-main, .nb-page, .nb-content,
+  .zt-reading, .zt-reading--notebook,
+  .zt-reading-content {
     max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    grid-template-columns: 1fr !important;
+    width: auto !important;
   }
 
   /* Page break control */
