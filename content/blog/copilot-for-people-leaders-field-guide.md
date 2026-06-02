@@ -619,23 +619,29 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
 
 **Why it matters for people leaders:** Manager output skews to Word more often than people expect — team status updates, 1:1 follow-up notes, promotion justifications, recognition write-ups, onboarding plans, performance check-in prep notes, hiring intake docs. Anywhere the writing has to be specific, fair, and yours, Word + Copilot earns its keep.
 
-> 📝 **Heads up — this section needs a Phase 2 rewrite.** Several worked examples below are still framed for executive-grade output (board paper polish, board-table reading). The patterns transfer — but a deeper PL-focused rewrite (with worked examples for 1:1 follow-up notes, recognition write-ups, promotion justifications, status updates) is coming in a follow-up to this guide.
+**Two universal patterns plus one PL-specific worked example:**
 
-**Four patterns:**
+**1. Refine, don't rewrite.** Treat Copilot as a refiner of your voice. Give it specific, numbered changes. Vague *"improve this"* prompts produce vague improvements. Surgical prompts produce surgical changes.
 
-1. **Refine, don't rewrite.** Treat Copilot as a refiner of your voice. Give it specific, numbered changes. Vague "improve this" prompts produce vague improvements. Surgical prompts produce surgical changes.
+**2. Restructure long documents.** When a draft has the right content but the wrong shape:
 
-2. **Restructure long documents.** When a draft has the right content but the wrong shape:
+   > *Restructure this document. The current order doesn't work for the audience [your team / your skip-level / HR / hiring panel]. Move the recommendation to the front, push the analysis behind it. Tighten any section that runs over 200 words. Preserve every factual claim — don't add or remove substance.*
 
-   > *Restructure this document. The current order doesn't work for the audience (the board). Move the recommendation to the front, push the analysis behind it, keep the appendices where they are. Tighten any section that runs over 200 words. Preserve every factual claim — don't add or remove substance.*
+**Worked example — Recognition write-up that doesn't sound like everyone else's:**
 
-3. **The board-paper polish prompt.** For any document that goes to a board, regulator, or senior audience:
+**Setup:** Someone on your team has done genuinely good work, and it's recognition cycle — year-end kudos form, peer-nomination, promotion submission. Whatever you write here ends up in an HR system, in front of a panel, possibly on a recognition wall. The trap is generic praise that doesn't carry weight — *"great job", "exceeded expectations", "strong performer"*. The good ones are SPECIFIC and STORIED.
 
-   > *Read this document as if you were the most cynical reader at the board table. Where is the language soft when it should be direct? Where am I claiming success when the evidence is mixed? Where is a hedge masking a real risk? Quote the specific phrases.*
+> *Draft a recognition write-up for [name] for the year-end kudos cycle [or: peer-nomination form / promotion case — pick one]. Length: under 200 words. Structure: (1) the SPECIFIC thing they did, with concrete detail — the project name, the deliverable, the timeframe; (2) the IMPACT — what changed because of them, named beneficiaries, measurable difference where possible; (3) the QUALITY they showed that made it possible — name the actual quality, with an example of how it showed up; (4) one sentence about what I want the reader to know about how I see this person. Tone: specific, warm, no corporate clichés ("rockstar", "crushing it", "absolute legend", "above and beyond", "key player"). Should sound like me writing personally about a person I know, not a manager filling in a form.*
 
-4. **Compare versions.** Two drafts of the same memo:
+**Why it works:** Forces specifics over generics — the #1 failure mode of recognition writing. The audience-and-purpose line tells Copilot the register. The *"no clichés"* instruction is what separates a recognition that lands from a recognition that gets skimmed. The fourth section makes it personal — your read on the human, not just their work output.
 
-   > *Compare these two versions of the strategy memo. What's better in version A? What's better in version B? Recommend which structural elements to keep from each.*
+**Hard line callout:** Recognition is YOUR voice, not Copilot's. Edit the output until it sounds like you. If the Copilot draft makes you write a sentence you wouldn't normally write, don't ship it. And never ask Copilot to draft the same recognition for two different people with different details — sounds rehearsed, feels rehearsed, the recipient always knows.
+
+**Optional follow-up — the public-read version:**
+
+> *Now rewrite this recognition as a 1-sentence shoutout I could read aloud at the next team meeting. Keep the specifics. Lose the formal register.*
+
+(For when the recognition cycle asks you to both write the formal submission AND say it publicly. Two versions, same person, one prompt apart.)
 
 **Limit:** Word + Copilot doesn't know your house style or your unwritten conventions. If your organisation has a Style Guide, paste it in or upload it as a reference each time. Otherwise Copilot will default to generic professional writing.
 
@@ -645,39 +651,37 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
 
 **What it is:** Copilot inside Microsoft Excel — formula assistance, analysis, commentary, chart suggestion, pattern detection.
 
-**Why it matters for people leaders:** Most managers are not running EBITDA scenarios. They're running team capacity sheets, sprint velocity, headcount trackers, pulse-survey results, project status roll-ups. Excel + Copilot does the bridging — turning rows of team data into a narrative your team or your manager can read.
+**Why it matters for people leaders:** Most managers are not running EBITDA scenarios. They're running team capacity sheets, 1:1 cadence trackers, hiring funnels, pulse-survey results, project status roll-ups. Excel + Copilot does the bridging — turning rows of people-data into a narrative you can actually act on.
 
-> 📝 **Heads up — this section needs a Phase 2 rewrite.** The worked examples below are still board / P&L / EBITDA / variance-commentary flavoured (carried over from the companion [Executives field guide](/blog/copilot-for-executives-field-guide/)). A deeper PL-focused rewrite — with worked examples for sprint capacity analysis, pulse-survey synthesis, headcount tracker pattern detection, and project status roll-up to your manager — is coming in a follow-up.
+**Two patterns that earn their keep for people leaders:**
 
-**Four patterns:**
+**1. The 1:1 cadence honesty check.** The Excel use most managers never make and would benefit from most.
 
-1. **Variance commentary.** Numbers turn into board-ready language. Synozur's Copilot Navigator cites one early CFO adopter who cut a 3-hour reporting cycle to 30 minutes using this pattern.
+**Setup:** A simple sheet — columns: *Direct report name · Last 1:1 date · Agreed cadence (weekly / fortnightly / monthly) · Skip count this quarter*. You probably already have this, even if you haven't called it a tracker.
 
-   > *Analyse this Group P&L sheet. Write variance commentary I can read at the board: the top 5 variances larger than 5% ranked by absolute dollar impact, the most likely business story behind each, and which variances most threaten our forecast. Use the data only — flag anywhere you're inferring. Plain English. No accounting jargon.*
+> *Looking at this 1:1 cadence tracker, who am I behind on? Show me direct reports where the gap between their last 1:1 and today exceeds the agreed cadence. Rank by how far behind. Don't speculate why — just show me the pattern. Don't recommend what to do about it — that's my conversation, not yours.*
 
-![Excel with Copilot side panel — variance commentary prompt](/images/blog/copilot-for-executives/06a-excel-prompt.webp)
-*Excel + Copilot pane in one frame. The Excel data is the source on the left; the Copilot prompt is in the side pane on the right. Suggested actions at the bottom hint at what else Copilot can do for this sheet.*
+**Why it works:** Forces honesty about something most managers drift on without noticing. Pattern-only — no judgement about WHY you're behind. Outputs a list of names + days-overdue, nothing more. The *"don't recommend what to do"* line keeps the hard line in play even on something that feels innocuous.
 
+**Hard line callout:** This output is data about how YOU are leading, not data about your team. Don't paste it into a Teams chat with HR. Don't share it with peers. It's a self-check, full stop.
 
-![Board-ready variance commentary output](/images/blog/copilot-for-executives/06b-excel-output.webp)
-*Board-ready commentary: ranked variances, dollar impact, business story per row. Critically — Copilot flags "Inference:" on lines where it's drawing conclusions vs reading data. That distinction is the CFO-trust signal.*
+**Optional follow-up — the catch-up message draft:**
 
+> *For each direct report I'm behind on by more than 2 weeks, draft a short Teams message proposing a 1:1 this week. Acknowledge the gap honestly. Plain English — no "let's connect" / "let's touch base" / "let's circle back".*
 
-2. **Pattern detection.** Ask Copilot to find what you'd miss:
+**2. The hiring funnel — where's it breaking down?**
 
-   > *Look across the entire monthly P&L for the past 12 months. What patterns am I missing? Be specific — name three patterns and quote the lines that support each.*
+**Setup:** A hiring tracker — columns: *Candidate name (or ID for privacy) · Role · Stage (sourced / screened / interview1 / interview2 / offer / hired / declined) · Date entered stage · Source (recruiter / referral / inbound)*.
 
-3. **Quick scenario calculations.** For manager what-ifs that don't need the full Analyst agent:
+> *Looking at this hiring tracker, where is the pipeline breaking down? Show me: (1) drop-off rate at each stage, (2) which stage has the longest dwell time — where candidates wait the longest before the next action, (3) any patterns by source — referrals vs recruiter-sourced vs inbound. Don't tell me which candidate to hire and don't rank candidates. Show me where the PROCESS is leaking.*
 
-   > *If our gross margin compresses by another 1 percentage point in Q3 and Q4, what's the EBITDA impact, and how much would we need to cut Opex to hold EBITDA flat? Show your working.*
+**Why it works:** Reframes the question from *"who's the best candidate?"* (which Copilot must never answer) to *"where is OUR pipeline broken?"* (which is a process question Copilot is good at). Stages with long dwell time usually mean *we're* slow, not that the candidate is wrong. The discipline of asking about process not people is what makes this safe.
 
-4. **Translation for the non-finance audience.** When you need to brief a non-finance leadership colleague:
+**Hard line callout:** Copilot never scores candidates, never ranks candidates, never recommends who to hire. The hiring decision is yours and your interview panel's. Copilot helps you see where your hiring **machine** is failing — that's a leader's question, and one Copilot answers well.
 
-   > *Take this finance dashboard. Translate it for a head of operations who's brilliant but not finance-trained. Use plain English. Show the three things that should genuinely worry them and the two things they shouldn't worry about. Cite specific numbers.*
+**Limit:** Excel + Copilot is reliable on what's in the cells. It's less reliable when you ask it to infer the *why* behind the numbers — it'll guess, and sometimes guess wrong. Always cross-check the narrative against your own knowledge before sharing the output anywhere.
 
-**Limit:** Excel + Copilot is reliable on what's in the cells. It's less reliable when you ask it to infer the *why* behind the numbers — it'll guess and sometimes guess wrong. Always cross-check the narrative against your own knowledge before using it in a board context.
-
-**Important:** For genuine multi-scenario modelling with workings shown — the kind that the CFO will audit — use Analyst, not in-Excel Copilot. (See Analyst below.)
+**Important:** For genuine multi-scenario modelling with workings shown — team capacity rebalance models, sprint-velocity what-ifs — use Analyst, not in-Excel Copilot. (See Analyst below.)
 
 ---
 
@@ -685,25 +689,30 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
 
 **What it is:** Copilot inside PowerPoint — slide creation, design suggestions, content restructuring, speaker note drafting.
 
-**Why it matters for people leaders:** Managers consume more decks than they make. But for the decks you DO make — team all-hands, project status, monthly metrics, the upward briefing to your skip-level — PowerPoint + Copilot accelerates the worst part of deck work: starting from a blank slide.
+**Why it matters for people leaders:** Managers consume more decks than they make. But for the decks you DO make — most commonly your monthly or quarterly team all-hands — PowerPoint + Copilot accelerates the worst part of deck work: starting from a blank slide *and* the 32-slide corporate-template death-march.
 
-> 📝 **Heads up — this section needs a Phase 2 rewrite.** Worked examples below are still board / town-hall / customer-pitch flavoured. A PL-focused rewrite (team all-hands deck · project status deck · monthly metrics deck) is coming in a follow-up.
+**One pattern that earns its keep — the monthly team all-hands deck:**
 
-**Three patterns:**
+**Setup:** Day before your monthly team all-hands. You have: last month's recap, team status updates, the skip-level brief you sent up, pulse-survey data if you have it. You want a deck that lands warm + honest + clear about what's next — without an exhausting 32-slide march.
 
-1. **Bullet-to-deck.** Take a Word document or set of bullet points and ask Copilot to structure it as slides:
+**Prompt:**
 
-   > *Turn this strategy memo into a 6-slide board update. One slide per section. Title each slide so it reads as a sentence — the audience should know the punchline from the title alone. Speaker notes for me on each slide.*
+> *Build a 10-slide deck for my monthly team all-hands. Audience: my team of [N] — they already know each other, no corporate polish needed. Structure: (1) opening slide — what we're going to cover, one sentence each; (2-4) what we shipped this month — 3 slides, one per major piece of work, name the people who carried each; (5) what didn't go to plan — 1 honest slide, what we learned, no blame; (6-7) what's next — 2 slides, the work in flight + the decisions we owe each other this month; (8) recognition — name 3-5 people doing things others should know about, with the specific thing they did; (9) team voice — themes from last pulse or 1:1 round, what I'm hearing back; (10) closing slide — what I want them to take into next month, one sentence. Title each slide as a SENTENCE — the audience should know the punchline from the title alone, even if they don't read the bullets. Speaker notes for me on each. Plain English. No corporate clichés. Sources: [Notebook with last month's team files attached].*
 
-2. **Tighten an existing deck.** Long decks that go to the board:
+**Why it works:**
 
-   > *Review this 28-slide deck. Identify slides that are too dense, slides that duplicate each other, and slides that could be cut without losing substance. Suggest a tighter 18-slide version. Tell me which slides to move to an appendix.*
+- 10 slides is a cap that forces editorial discipline — the deck stays watchable
+- Title-as-sentence is the single biggest "tighten the deck" instruction Copilot understands well
+- Structure is half look-back / half look-forward — managers default to one or the other; this forces both
+- Slide 5 (*"what didn't go to plan"*) is the honest-leadership signal; teams notice when it's there and notice harder when it's absent
+- Slide 9 (team voice) forces you to actually use the pulse data you collected, not just file it
 
-3. **Speaker notes for someone else's deck.** When a colleague has built the deck but you're presenting it:
+**Hard line callout:**
 
-   > *I'm presenting this deck on Thursday. Draft speaker notes for me — the things I should add verbally that aren't on the slides. Focus on the why, not the what. The audience is our top-50 customer leadership team.*
+- The recognition slide names individuals. Triple-check it. Copilot can hallucinate *"[name] delivered [project]"* — confirm the names against your actual notes before this deck goes live in front of the team.
+- The *"what didn't go to plan"* slide should be edited by YOU, not Copilot. The framing of what didn't work and what you learned is the leadership artifact. Don't outsource the framing.
 
-**Limit:** PowerPoint + Copilot is good at structure and content. It's average at visual design — don't expect it to make your deck visually beautiful. For high-stakes visual work, lean on a real designer.
+**Limit:** Copilot's PowerPoint output is functional, not beautiful. For the visual layer, lean on your org's slide template or a real designer. The Copilot value is in structure, content, and speaker notes — not visual design.
 
 ---
 
@@ -818,58 +827,54 @@ You'll find it in the **Agent Store** inside Copilot Chat. Available via the Mic
 
 **Why it matters for people leaders:** This is the most under-known feature for managers in Microsoft 365 Copilot. If you remember nothing else from this guide, set up one Notebook for your next quarterly check-in cycle, hiring round, or major project. It will change how you work.
 
-> 📝 **Heads up — the worked examples below are still board-prep flavoured** (carried over from the companion Executives guide). The cluster 4 Notebooks section above ([U4: Notebooks for Team Prep](#u4)) has the PL-tuned versions — quarterly check-in Notebooks, hiring-round Notebooks, project-cycle Notebooks. A full rewrite of this feature section to match is coming in a follow-up.
+**The prototypical PL Notebook is "[Project name] — active"** with these sources loaded:
+- The project plan
+- Every status update file from the last 3-6 months
+- Retro notes from any mid-project pause
+- The most recent team meeting recaps that touched the project
+- Any decision logs you've kept
 
-**The prototypical leader-level Notebook is "Board Prep — [Month]"** (carried over from the companion exec guide) with these sources loaded:
-- The latest board paper
-- The financials pack
-- The risk register
-- The competitor watch
-- Recent material correspondence (regulator letters, key customer threads)
-- Last month's board minutes
-- Any matters arising from prior meetings
+Every prompt you make inside that Notebook is grounded against this working set. (For other PL Notebook recipes — quarterly check-in for a direct report, hiring round for a role, OKR-drafting cycle — see [U4 above](#u4).)
 
-For PL-tuned Notebook recipes — quarterly check-in for [team member], hiring round for [role], project cycle for [project] — see [U4 above](#u4).
+**Three worked examples — the project-cycle Notebook:**
 
-Every prompt you make inside that Notebook is grounded against this working set.
+**1. Cross-file project question — where are we really?**
 
-**Five patterns:**
+> *Across all files in this project Notebook, where are we against the original plan? Three sections: (1) which milestones we've hit on time, with the date; (2) which are slipping, with the actual vs planned date and the reason from the most recent status update; (3) which haven't been touched in 4+ weeks — they may be silently at risk. Quote evidence from specific files for each. Don't recommend re-planning — just show me where we are.*
 
-1. **Cross-file board prep questions.** Inside the Notebook:
+**Why it works:** Forces a holistic view across many status docs that would take you 40 minutes to read end-to-end. The *"silently at risk"* lens is the value-add — most project Notebooks find a slipping milestone this way that nobody had flagged out loud yet. *"Don't recommend re-planning"* keeps the hard line — the re-plan is your conversation with the team, not Copilot's call.
 
-   > *Across all files in this notebook, which of our Top 15 risks are most reinforced by what we're seeing in competitor activity and Q1 financials? Give me three risks ranked by combined evidence, and for each one, quote the specific lines from each source that supports the ranking.*
-
-![Creating a Notebook with 4 sources](/images/blog/copilot-for-executives/04a-notebook-setup.webp)
-*Notebook creation: four sources attached (board paper, risk register, financials, competitor watch). Sources show as chips in the side panel; Copilot will ground every prompt against this set by default.*
+![Notebook with 4 project sources attached](/images/blog/copilot-for-executives/04a-notebook-setup.webp)
+*Notebook creation with multiple sources attached. The sources show as chips in the side panel; Copilot will ground every prompt against this working set by default. (Screenshot from the companion exec guide using board-prep sources — the equivalent PL setup uses project plan, status updates, retro notes, and team-meeting recaps.)*
 
 
-![Notebook auto-generated summary view](/images/blog/copilot-for-executives/04b-notebook-auto-summary.webp)
-*The under-known Notebook power: Copilot auto-generates a strategic overview with key insights and suggested references AS SOON AS sources are added. You don't have to ask — the Notebook starts thinking for you.*
+![Notebook auto-generated overview](/images/blog/copilot-for-executives/04b-notebook-auto-summary.webp)
+*The under-known Notebook power: Copilot auto-generates an overview with key insights and suggested questions AS SOON AS sources are added. You don't have to ask — the Notebook starts thinking for you.*
 
 
-![Cross-file response inside Notebook](/images/blog/copilot-for-executives/04c-notebook-cross-file.webp)
-*The cross-file question lands: Copilot ranks risks by combined evidence drawing on multiple sources simultaneously. Citation chips show which source each line came from.*
+![Cross-file response with citations](/images/blog/copilot-for-executives/04c-notebook-cross-file.webp)
+*The cross-file question lands: Copilot draws on multiple sources simultaneously. Citation chips show which source each line came from — the discipline that makes the output trustworthy.*
 
 
-2. **Pattern hunting.** The prompt that occasionally produces "huh, I hadn't put those together":
+**2. Closing the loop at project end — the recognition catch.**
 
-   > *Looking across the board paper, the risk register, and the competitor watch, what story is being told that we haven't yet explicitly named? Be specific — name the pattern and quote the supporting evidence.*
+At the end of the project cycle, after the retro:
 
-3. **Pre-board sanity check.** The night before:
+> *We're closing this project Notebook. Summarise: (1) the 3 things that worked that I should carry to my next project, (2) the 3 things that didn't, with my observations from across status updates and retrospective notes, (3) any commitments the team made that we didn't honour — fairly, no blame, (4) the 2-3 people whose contribution was bigger than their visibility — for me to recognise separately. Format as a forward-looking note to me as the leader on my next project.*
 
-   > *Stress test this board paper. The Chair has flagged that she wants paragraph 2 of the trading update to be more direct. Re-read everything in the notebook and tell me where else my language is softer than the evidence warrants. Quote specific phrases.*
+**Why it works:** The fourth section is the under-known one — surfaces invisible contributors who'd otherwise go unrecognised (the person who quietly fixed three things, the person whose 1:1 you keep skipping who actually carried a workstream). *"Fairly, no blame"* is the hard-line discipline — retrospective output can go bad fast if Copilot drifts into accusations. The *"forward-looking note to me"* framing keeps it as personal learning, not a corporate post-mortem document.
 
-4. **Compound memory across cycles.** At the end of each board prep cycle:
+**3. Onboarding a new team member onto an in-flight project.**
 
-   > *Summarise everything I should retain from this notebook for next quarter's board prep. What questions did the board ask this cycle that I should pre-empt next cycle? What did we promise to come back on? Format as a forward-looking note to myself.*
+When someone new joins and needs to be productive fast:
 
-5. **Onboarding a new team member.** When someone joins your team:
+> *Using everything in this Notebook, write a 2-page primer for [new joiner name] who's starting in 2 weeks and will need to ramp on this project. Sections: (1) project purpose in 2 sentences, (2) current state — where we are vs original plan, in plain English, (3) the 3-5 things they'll need to understand fast — concepts, names, decisions already made, (4) the people they'll work with and what each owns, (5) the 3 most-likely first questions they'll have, with my answer to each. Warm, no jargon, written as if I'm walking them through it over coffee.*
 
-   > *Using everything in this team Notebook, write a 2-page primer for [name] joining the team next Monday: who the team is and what each person owns, our current top 3 priorities, the customers / stakeholders they'll interact with, the working rituals (standup, 1:1, retro), the docs they should read in their first week. Plain English, warm, no jargon.*
+**Why it works:** Compresses 6 months of project context into a primer the new joiner can read in 10 minutes. The *"first questions they'll have"* section is the empathy move — most managers skip it; the new joiner appreciates it more than any other section. *"Walking them through it over coffee"* is the voice instruction Copilot understands.
 
 **Best practice:** Close out Notebooks at end of cycle. Start a fresh one for the next cycle. The cognitive value is in keeping the working surface clean, not in accumulating an ever-growing pile. Treat Notebooks like project folders, not archives.
 
-**Limit:** Notebooks can ground against **up to 300 files**. When you add a shared location (a SharePoint site or a folder), Copilot selects up to 300 relevant files for grounding. Add the most important files directly rather than relying on relevance selection. If you find yourself wanting genuinely different working surfaces (board prep vs. quarterly planning vs. customer briefings), split them into separate Notebooks — the cognitive value is in keeping each surface focused.
+**Limit:** Notebooks can ground against **up to 300 files**. When you add a shared location (a SharePoint site or a folder), Copilot selects up to 300 relevant files for grounding. Add the most important files directly rather than relying on relevance selection. If you find yourself wanting genuinely different working surfaces (one project vs another vs quarterly planning), split them into separate Notebooks — the cognitive value is in keeping each surface focused.
 
 ---
 
