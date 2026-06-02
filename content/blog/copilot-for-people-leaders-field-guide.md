@@ -23,28 +23,16 @@ faq:
     answer: "No. Copilot shortens the drafting tax that sits between people on your team and the judgement work they're paid for. What changes is what they're doing in the gaps — fewer hours building first drafts of reports, fewer hours rebuilding the same meeting recap, more hours on the work that needed their brain. If anything, Copilot makes the people on your team more valuable, not less. Your job as a people leader is to make sure the time Copilot saves goes back into work that matters — deeper customer conversations, sharper team coordination, more time thinking — not into more meetings."
   - question: "Can I trust Copilot with 1:1 notes, feedback drafts, and team-sensitive material?"
     answer: "Microsoft 365 Copilot (the licensed enterprise version your organisation pays for) keeps your prompts and any grounded data inside your tenant boundary. Microsoft does not use them to train models. The technology is enterprise-graded for this purpose. What's still on you is your organisation's classification rules — many companies treat performance-related content as Restricted and require additional handling. Check with your HR and CIO before pasting anything sensitive about a named individual, and never paste anything about a team member into a consumer chat tool like ChatGPT or Claude.ai. Those are different products with different boundaries."
-  - question: "What happens if Copilot gets the numbers wrong?"
-    answer: "It can, and it will, occasionally. The defensive posture for executives is the same one you'd apply to a graduate analyst on day one: trust nothing without a source link, validate anything you'd put in front of a board, and never publish a number Copilot generated without checking it against the underlying spreadsheet or system of record. The good news — Copilot increasingly cites its sources. The discipline of clicking the citation before quoting the number is the entire defence."
-  - question: "Who owns the decision when Copilot helped me make it?"
-    answer: "You do. Always. There is no version of the answer where Copilot is the decision-maker for a board decision, a hiring decision, a customer commitment, a regulatory disclosure, or anything else that lands on a leader's desk. The framing I use with executives I coach: 'Copilot drafts. You decide.' This isn't a soft line — it's the hard line that makes the whole thing safe."
-  - question: "How do I lead my organisation through Copilot adoption when I'm still learning it myself?"
-    answer: "Visibly. The most successful exec adoption stories I've seen are not the leaders who waited until they were expert. They were the leaders who said openly in all-hands meetings: 'I'm using this, here's what's worked for me this week, here's what didn't, here's what I'm trying next.' That kind of leadership in public turns Copilot adoption from an IT project into a culture moment. The leaders who delegated adoption entirely to IT or to a Centre of Excellence saw flat numbers, regardless of training investment."
-  - question: "What's the difference between Copilot Chat and Copilot inside Word, Excel, Outlook for me as a people leader?"
-    answer: "Use Copilot Chat (at microsoft365.com/chat) when the work spans multiple files, emails, meetings, or sources — including 1:1 prep that pulls from a team member's recent work across the tenant. Use Copilot inside Word, Excel, PowerPoint, or Outlook when the task is rooted in one document or message you have open — refining a recognition message, drafting a status update, polishing a team comm. As a rule of thumb: Chat for thinking, in-app Copilot for tightening. Most people leader value compounds in Chat for prep work, and in Outlook + Word for drafting."
-  - question: "Is my Copilot prompt visible to my IT team?"
-    answer: "Prompts and responses are stored as part of the Microsoft 365 audit log, which your IT and Compliance teams can access for legitimate purposes (e.g., legal hold, investigation of a suspected policy breach). They are not casually browsed. They are protected by the same access controls as the rest of your tenant data. If you're typing something you wouldn't want a colleague to read back in a year, that's a sign you probably shouldn't be typing it at all — into Copilot or anywhere else."
-  - question: "What if I'm travelling and using Copilot on a personal device or via hotel Wi-Fi?"
-    answer: "Use it the same way you'd use any work app — through your authenticated work account, with multi-factor authentication, ideally on a device your IT team has enrolled. The Copilot conversation itself is encrypted in transit. The two real risks are shoulder-surfing in airport lounges and signing in on a kiosk device you don't fully control. Same hygiene as Outlook on the road."
-  - question: "What's the single biggest mistake executives make with Copilot in the first month?"
-    answer: "Asking it to make the decision. 'Should I approve this strategy option?' 'Should we hire this candidate?' 'Should we accept this contract?' Every time you phrase a prompt as a decision request, you've turned Copilot into a decision-maker rather than a thinking partner. The fix is mechanical — rewrite the prompt to ask for analysis, comparison, or a structured summary. Then you decide from the structured view. It's a habit, and it takes two weeks to install."
-  - question: "How long does it take to actually feel productive with Copilot as an exec?"
-    answer: "Faster than for most other roles, because the time you save is concentrated in things you do every day — meeting prep, meeting recap, email drafting, board paper review. Most executives I coach report a noticeable productivity shift within the first week, settled into a habit within the first month, and asking 'how did I do this before' by the second month. The 30-day rhythm at the end of this guide is calibrated for that arc."
+  - question: "Who owns the decision when Copilot helped me decide?"
+    answer: "You do. Always. There is no version of the answer where Copilot is the decision-maker for a hiring decision, a performance rating, a promotion call, or a difficult-conversation outcome. The framing: 'Copilot drafts. You decide.' This isn't a soft line — it's the hard line that makes the whole thing safe. It matters more for people leaders than for any other role, because more of your work is direct conversations with named individuals."
+  - question: "What's the single biggest mistake people leaders make with Copilot in the first month?"
+    answer: "Asking it to make the call on a person. 'Who should I promote?' 'Is [name] a flight risk?' 'Should we let [name] go?' Every time you phrase a prompt as a people-decision request, you've turned Copilot into a decision-maker rather than a thinking partner — and you've also stored a record of asking Copilot to judge a named individual, which is bad on its own. The fix is mechanical — rewrite the prompt to ask for evidence gathering, pattern observation, or a structured prep. Then you decide from the structured view. It's a habit, and it takes two weeks to install."
+  - question: "How long does it take to feel genuinely productive with Copilot as a people leader?"
+    answer: "Most managers I coach report a noticeable shift within the first week (meeting recaps, inbox triage), settled into a habit within the first month (1:1 prep, team status drafting), and asking 'how did I do this before' by the second month (recognition writing, hiring intake, performance prep). The 30-day rhythm at the end of this guide is calibrated for that arc. Skip the agent layer for the first 90 days — those compound later, after the daily habits are solid."
   - question: "Where should a brand-new people leader start with Copilot?"
-    answer: "The [First 90 days for a new people leader](#first90-pl) section maps out the calibrated arc. Short version: week 1 is meeting recap habit; week 2 is 1:1 prep habit; week 3 is team comms refinement; week 4 is install one scheduled prompt. By the end of the first month you should have meaningful muscle on the four highest-leverage patterns for managers. Skip the agent layer and the custom-agent layer for the first 90 days — those compound later, after the daily habits are solid."
+    answer: "The [First 90 days for a new people leader](#first90-pl) section maps out the calibrated arc. Short version: week 1 is meeting recap habit; week 2 is 1:1 prep habit; week 3 is team comms refinement; week 4 is install one scheduled prompt. By the end of the first month you should have meaningful muscle on the four highest-leverage patterns for managers."
   - question: "I'm an executive, not a people leader — is there a version of this guide for me?"
-    answer: "Yes — the [Copilot for Executives Field Guide](/blog/copilot-for-executives-field-guide/) is the companion piece, calibrated for C-suite work (board prep, regulator interactions, M&A, town halls, crisis comms). Same framework, different scenarios and cadence."
-  - question: "Where do I go after this guide?"
-    answer: "Three doors. (1) The [Prompt Engineering Field Guide](/blog/prompt-engineering-microsoft-365-copilot/) — for the four-block framework that underpins every prompt in this guide. (2) The [Persona Playbook](/blog/microsoft-365-copilot-by-persona-playbook/) — for your direct reports' role-specific patterns. (3) The [Cowork guide](/blog/microsoft-copilot-cowork-complete-guide/) — for Cowork, the new autonomous multi-app agent that's a different beast to anything else covered here. After those, the best thing you can do is block 30 minutes a week to try one new pattern."
+    answer: "Yes — the [Copilot for Executives Field Guide](/blog/copilot-for-executives-field-guide/) is the companion piece, calibrated for C-suite work (board prep, regulator interactions, M&A, town halls, crisis comms). Same framework, different scenarios and cadence. (And if you're an exec who ALSO manages a team — most are — the patterns in this PL guide apply to your direct-reports work too.)"
 images: ["images/og/blog/copilot-for-people-leaders-field-guide.jpg"]
 og_headline: "Copilot for People Leaders"
 og_glyph: "compare"
@@ -88,7 +76,7 @@ This is that framing — calibrated for managers running teams. The companion pi
 
 🚀 **Start here:**
 
-1. [Why Copilot matters for executives now](#why)
+1. [Why Copilot matters for people leaders now](#why)
 2. [Copilot in plain language for leaders](#plain)
 3. [The hard line — what Copilot must NOT do](#hard-line)
 
@@ -146,31 +134,21 @@ This is that framing — calibrated for managers running teams. The companion pi
 
 ---
 
-<h2 id="reading-note">A quick note on the worked examples</h2>
-
-This guide has two halves. The **first half** (Why Copilot matters · the seven use-case clusters · the 16 feature deep-dives · trust & governance) covers the universal patterns — and the worked examples in those sections deliberately use a *mix* of scenarios (some manager-flavoured, some executive-flavoured, some individual-contributor) so the patterns transfer cleanly to any team-leadership context.
-
-The **second half** is people-leader-specific: the [People Leader role playbook](#r-pl), the [13 named scenarios](#scenarios-pl) (1:1 prep, team meeting recap, performance check-in, recognition, feedback, hiring, coaching, wellbeing, status updates, onboarding, career, workload, OKRs), the [15-prompt PL pack](#p-pl), the [people leader 30-day rhythm](#rhythm-pl), and the [people leader first-90-days](#first90-pl).
-
-**If you only have 5 minutes:** jump straight to the [People Leader role playbook](#r-pl), skim the [13 scenarios](#scenarios-pl), bookmark the [15-prompt pack](#p-pl), and come back for the universal half when you have more time.
-
----
-
 <h2 id="why">Why Copilot matters for people leaders now</h2>
 
 There's a version of this conversation where I'd start by quoting analyst stats on productivity gains. I'm not going to. The data is real, but it's not what changes minds in a board room. What changes minds is this:
 
 **Four things compound for people leaders that don't compound the same way for individual contributors:**
 
-**1. Drafting cost has collapsed.** Every executive I know spends a meaningful portion of their week producing first drafts — board commentary, leadership messages, stakeholder follow-ups, talking points. The marginal cost of a first draft is now close to zero. The marginal cost of getting from a first draft to a finished piece of work is still your judgement, but the staircase you're climbing starts on the fifth floor, not the ground. Microsoft's own enterprise-wide deployment (covering 300,000+ employees and external staff per the [public InsideTrack documentation](https://www.microsoft.com/insidetrack/blog/microsoft-365-copilot-for-executives-sharing-our-deployment-and-adoption-journey-at-microsoft/)) describes drafting and synthesis work as the most-cited productivity gain across roles. Published case material from early CFO adopters has reported meaningfully shortened monthly reporting cycles — sometimes by an hour or more — though precise gains vary by team and starting baseline.
+**1. Drafting cost has collapsed.** Every people leader I know spends a meaningful portion of their week producing first drafts — team status updates, 1:1 follow-ups, recognition messages, project briefs, hiring intake docs. The marginal cost of a first draft is now close to zero. The marginal cost of getting from first draft to a finished piece of work is still your judgement — but you're starting on the fifth floor, not the ground. Microsoft's own internal manager-enablement materials describe drafting and synthesis as the most-cited productivity gain across the manager population.
 
 **2. Synthesis across sources is now ambient.** A typical people-leader day touches twenty to forty different sources of information — emails, meetings, project files, team chats, 1:1 notes, customer feedback, status reports. Inbox volume varies by role and organisation, but **50–200 emails per day** is a typical range for managers running teams. Until 2024, synthesising those was either done badly (in your head, between meetings) or not at all. Copilot makes lightweight synthesis a few-second prompt away — without you needing to hire an analyst or take work home.
 
-**3. The strategic edge shifts from "what you know" to "what you ask".** Executives have always been judged on the quality of their questions. What's changed is that the cost of getting an answer to a sharp question is now measured in seconds, not days. The executives who win this transition are the ones who get faster at asking better questions, not the ones who get faster at memorising more things.
+**3. The strategic edge shifts from "what you know" to "what you ask".** Managers have always been judged on the quality of their attention and the sharpness of their questions. What's changed is that the cost of getting a useful answer to a sharp question is now measured in seconds, not days. The managers who win this transition are the ones who get faster at asking better questions about their team, their work, and their context — not the ones who get faster at memorising more things.
 
-**4. Visible people-leader modelling is the largest team-level adoption multiplier.** Published case studies of high-adoption organisations consistently show that team-level Copilot use scales when the manager uses it visibly in team meetings, talks about it openly, and shares both wins and stumbles. Where the manager is silent or sceptical, team adoption flat-lines regardless of company-level investment. Your team is watching what you do, not what the company-wide rollout email said.
+**4. Visible manager modelling is the largest team-level adoption multiplier.** Team-level Copilot use scales when the manager uses it visibly in team meetings, talks about it openly, and shares both wins and stumbles. Where the manager is silent or sceptical, team adoption flat-lines regardless of company-level investment. Your team is watching what you do, not what the company-wide rollout email said.
 
-> > 💡 **Tip —** If you do nothing else after reading this post, install one habit: every time you're about to ask a colleague to "look into X for the board", ask Copilot first. Then ask your colleague to validate. You'll find roughly half of your "look into" requests resolve in 90 seconds.
+> > 💡 **Tip —** If you do nothing else after reading this post, install one habit: every time you're about to ask a team member to "look into X for the next status update", ask Copilot first. Then ask the team member to validate. You'll find roughly half of your "look into" requests resolve in 90 seconds — and you free your team for work that genuinely needs their brain.
 
 ---
 
@@ -184,7 +162,7 @@ Microsoft 365 Copilot is an AI assistant that sits across the Microsoft 365 apps
 
 ### What it does
 
-Three categories cover 95% of how an executive will use it:
+Three categories cover 95% of how a people leader will use it:
 
 - **It drafts.** Emails, summaries, board commentary, leadership messages, briefing notes.
 - **It analyses.** Documents you upload or reference, spreadsheets, meeting transcripts, sets of files.
@@ -192,12 +170,12 @@ Three categories cover 95% of how an executive will use it:
 
 ### What it does NOT do (read this twice)
 
-- It does not have your job context outside the M365 tenant. It doesn't know about your strategy unless you've put your strategy into M365 in a form it can read.
-- It does not make decisions for you. Every output is a draft for your judgement.
+- It does not have your team context outside the M365 tenant. It doesn't know your team's working norms, individual personalities, or political dynamics unless you've put that context into M365 in a form it can read.
+- It does not make decisions about people for you. Every output about a team member is a draft for your judgement.
 - Memory features can save preferences across sessions, but behaviour varies by tenant configuration and user controls. Don't assume continuity; review what's actually saved.
 - It does not learn from your individual prompts to improve its own model. Your prompts stay in your tenant.
 
-> > ⚠️ **Heads up —** The biggest source of executive disappointment in the first month is unspoken expectation. Executives assume Copilot knows the company's strategy, the org chart, the political dynamics, and the recent context — because they would. It doesn't. The fix is to ground it explicitly with the documents and context it needs. Once you've installed that habit, the perception flips.
+> > ⚠️ **Heads up —** The biggest source of leader disappointment in the first month is unspoken expectation. Leaders assume Copilot knows the team's history, the in-flight projects, the relationship dynamics, and the recent context — because they would. It doesn't. The fix is to ground it explicitly with the documents and context it needs. Once you've installed that habit, the perception flips.
 
 ### Where your data goes
 
@@ -219,7 +197,7 @@ For deeper governance reading, see the [SharePoint oversharing controls guide](/
 
 <h2 id="hard-line">The hard line — what Copilot must NOT do for a people leader</h2>
 
-Before we get into use cases, the hard line. This is the thing I cover first in every executive session.
+Before we get into use cases, the hard line. This is the thing I cover first in every people-leader session.
 
 {{< hi >}}Copilot drafts. You decide.{{< /hi >}}
 
@@ -227,13 +205,13 @@ That's it. That's the whole rule.
 
 Concretely, that means Copilot must not be the basis (or the sole basis) for:
 
-- A **hiring**, performance, promotion, or termination decision about an individual.
+- A **hiring**, performance, promotion, or termination decision about a person on your team.
 - A **lending**, credit, or insurance decision about a customer.
-- A **financial commitment** to the board, regulator, or market.
+- A **financial commitment** to your manager, the board, regulator, or market.
 - A **safety** decision in an operational context.
-- Any decision a regulator would want to see human reasoning behind.
+- Any decision a regulator — or your HR team — would want to see human reasoning behind.
 
-This is not a soft preference. In most jurisdictions, it's a hardening regulatory expectation. In all jurisdictions, it's basic professional accountability. The reason it sits at the top of the field guide and not buried in the governance section is that the temptation to outsource judgement only grows the more useful Copilot becomes. Install the rule early. Lead with it visibly. Hold yourself to it.
+This is not a soft preference. In most jurisdictions, it's a growing regulatory expectation. In all jurisdictions, it's basic professional accountability — and for a people leader it's also basic trust with the people you lead. The reason it sits at the top of the field guide and not buried in the governance section is that the temptation to outsource judgement only grows the more useful Copilot becomes. Install the rule early. Lead with it visibly. Hold yourself to it.
 
 > > 💡 **Tip —** A useful prompt-rewriting habit: every time you catch yourself typing "should we...", rewrite it as "compare for me..." or "what are the trade-offs of...". The first asks Copilot to decide. The second asks Copilot to structure your thinking so that you can decide. Same task, completely different relationship.
 
@@ -241,15 +219,15 @@ This is not a soft preference. In most jurisdictions, it's a hardening regulator
 
 <h2 id="u1">1 · Strategy & Decision Support</h2>
 
-The category executives reach for first, and the category where Copilot's value compounds fastest.
+The category people leaders reach for first, and the category where Copilot's value compounds fastest. (Heads up — the worked examples in this section are deliberately written at a strategy-doc / leadership-paper grain. For the day-to-day people-leader scenarios — 1:1s, recognition, hiring, performance check-ins — see the [13 named scenarios](#scenarios-pl) below.)
 
 ### What "good" looks like here
 
-The strongest pattern: **using Copilot to stress-test your own thinking, not to do your thinking for you.** Three sub-patterns are doing most of the heavy lifting for the executives I coach:
+The strongest pattern: **using Copilot to stress-test your own thinking, not to do your thinking for you.** Three sub-patterns are doing most of the heavy lifting for the people leaders I coach:
 
-**1. Board paper brief-down.** Take a 40-page board pack. Drop it into Copilot Chat. Ask for a 90-second briefing structured around bottom line, options, risks, decisions required. Read the brief on the way to the meeting. Use the original paper for any item that needs deeper attention. Reclaim two hours.
+**1. Long-document brief-down.** Take a 25-page strategy doc, a long project paper, or a board read-out your skip-level forwarded you. Drop it into Copilot Chat. Ask for a 90-second briefing structured around bottom line, options, risks, decisions required of you. Read the brief on the way to the meeting. Use the original paper for any item that needs deeper attention. Reclaim two hours.
 
-**2. Devil's advocate.** Take any recommendation — yours or your team's — and ask Copilot to build the strongest possible counter-case using only the source material. The output is rarely an actual change of mind. The output is usually a sharpening of your reasoning before you walk into the room.
+**2. Devil's advocate.** Take any recommendation — yours or a team member's — and ask Copilot to build the strongest possible counter-case using only the source material. The output is rarely an actual change of mind. The output is usually a sharpening of your reasoning before you walk into the room.
 
 **3. Options comparison.** When you're choosing between three or four genuine alternatives, ask Copilot to lay out the trade-offs in a structured table. Force structure. Force trade-offs. The output is the start of your decision conversation, not the end of it.
 
@@ -275,7 +253,7 @@ After the brief above lands, follow up:
 
 > *Now play devil's advocate. Make the strongest possible case for Option C using only what's in this paper. Be specific.*
 
-This is the prompt that earns the most "oh, that's clever" reactions in executive demos. It's also the most under-used. Most people stop at the first prompt. The compounding value is in the second.
+This is the prompt that earns the most "oh, that's clever" reactions in leader demos. It's also the most under-used. Most people stop at the first prompt. The compounding value is in the second.
 
 ![Devil's advocate Option C response](/images/blog/copilot-for-executives/02-devil-advocate.webp)
 *Copilot rebuilds the strongest case for Option C using only quotes from the paper. The "Devil's advocate implication" hooks frame the analysis as a contrarian view, not management's recommendation.*
@@ -289,7 +267,7 @@ For a decision-mode prompt that keeps you in the driver's seat:
 
 Notice the last clause: "Don't recommend — I'll decide." It's worth saying out loud. Copilot is trained to be helpful, and helpful sometimes means recommending. When you want pure structure for your judgement, ask for pure structure.
 
-> > 💡 **Tip —** For the most-prepared 5% of the executives I work with, Strategy & Decision Support is the cluster they automate first — typically by saving 3-5 of these prompts as templates they re-use weekly. The Prompt Gallery inside Copilot Chat is the right place to store them.
+> > 💡 **Tip —** For the most-prepared 5% of the people leaders I work with, Strategy & Decision Support is the cluster they automate first — typically by saving 3-5 of these prompts as templates they re-use weekly. The Prompt Gallery inside Copilot Chat is the right place to store them.
 
 ---
 
@@ -299,15 +277,15 @@ The category where Copilot looks the most obvious from the outside ("oh, it writ
 
 ### What "good" looks like here
 
-The trap is treating Copilot as a writer. It's not. Copilot is a refiner. Your voice still has to come from you. What changes is the cost of iteration — going from version 1 to version 4 of an exec message used to be an hour of staring at a screen. Now it's two minutes.
+The trap is treating Copilot as a writer. It's not. Copilot is a refiner. Your voice still has to come from you. What changes is the cost of iteration — going from version 1 to version 4 of a team message used to be an hour of staring at a screen. Now it's two minutes.
 
 Three sub-patterns dominate:
 
 **1. Acknowledgement before action.** When something has gone wrong — a results miss, a public criticism, a team setback — the hardest part of the comms is the first sentence. Use Copilot to draft three different opening paragraphs that acknowledge without being defensive. Pick the one closest to your voice. Edit. Send.
 
-**2. Tone calibration.** Same content, three different audiences (board, exec team, all-staff). Same message, three different tones (direct, warm, urgent). Copilot makes the variations cheap; you keep the editorial judgement.
+**2. Tone calibration.** Same content, three different audiences (your team, your skip-level, all-staff). Same message, three different tones (direct, warm, urgent). Copilot makes the variations cheap; you keep the editorial judgement.
 
-**3. Pre-meeting talking points.** Before any high-stakes meeting — board, regulator, major customer, senior all-hands — paste the agenda into Copilot, attach the relevant context documents, and ask for talking points structured around your three intended outcomes. Edit ruthlessly. Carry into the meeting.
+**3. Pre-meeting talking points.** Before any high-stakes meeting — performance check-in, escalation call, major project review, team all-hands — paste the agenda into Copilot, attach the relevant context documents, and ask for talking points structured around your three intended outcomes. Edit ruthlessly. Carry into the meeting.
 
 ### Worked example — town hall refinement
 
@@ -337,7 +315,7 @@ The output is rarely send-ready. It is reliably 20 minutes closer to send-ready 
 
 <h2 id="u3">3 · Time & Meetings</h2>
 
-The category where the biggest behavioural shift happens, often without the executive noticing.
+The category where the biggest behavioural shift happens, often without the people leader noticing.
 
 ### What "good" looks like here
 
@@ -349,63 +327,65 @@ Three sub-patterns:
 
 **3. Catch up on a meeting you couldn't attend.** Joined late, missed entirely, or only listened to half. Copilot turns the recording into "what was decided, what was disputed, what was unresolved, what was unsaid" in seconds.
 
-### Worked example — board meeting recap
+### Worked example — team meeting recap
 
 Inside the Teams meeting recap (or pasting a transcript into Copilot Chat):
 
-> *Summarise this meeting into four sections: (1) decisions made and by whom, (2) actions assigned with owner and due date, (3) outstanding questions for next meeting, (4) tone observations — anything in the language that suggests under-the-surface tension I should be alert to.*
+> *Summarise this meeting into four sections: (1) decisions made and by whom, (2) actions assigned with owner and due date, (3) outstanding questions for next meeting, (4) tone observations — anything in the language that suggests under-the-surface tension I should be alert to as the team's manager. Quote specific phrases.*
 
-The fourth section is the executive-specific addition. Operational meeting recaps stop at decisions and actions. Executive meeting recaps benefit from the unsaid signal — who was quiet, where the tension surfaced, which language was sharper than the words alone.
+The fourth section is the people-leader-specific addition. Operational meeting recaps stop at decisions and actions. Leadership meeting recaps benefit from the unsaid signal — who was quiet, where the tension surfaced, which language was sharper than the words alone. (For a deeper version tuned to your weekly team meeting, see [Scenario 22 below](#s-22).)
 
 ### Worked example — meeting prep
 
-The day before a quarterly business review:
+The day before a project review with one of your teams:
 
-> *I have a quarterly business review with [Division X] tomorrow morning. Pull together: (1) the last three months of significant emails from that team, (2) any major files they've shared with me, (3) anything from our last QBR meeting that was left as unresolved, (4) any commitments I made to them I should be tracking. Structured as a one-page brief.*
+> *I have a project review with [Project X] tomorrow morning. Pull together: (1) the last three months of significant emails from that team, (2) any major files they've shared with me, (3) anything from our last project review that was left as unresolved, (4) any commitments I made to them I should be tracking. Structured as a one-page brief.*
 
-The output is rarely complete the first time. The second prompt — "what's missing" — usually fills the gaps. Two iterations, one page of prep, ten minutes total. The QBR itself runs differently when you walk in calibrated.
+The output is rarely complete the first time. The second prompt — "what's missing" — usually fills the gaps. Two iterations, one page of prep, ten minutes total. The review itself runs differently when you walk in calibrated.
 
-> > 💡 **Tip —** The single highest-ROI prompt in Time & Meetings is one most executives never try: "What's likely to come up in this meeting that I haven't been thinking about?" It surfaces a thread from a recent email, a customer escalation, a competitor move. Make it a Monday morning prompt for your toughest meeting of the week.
+> > 💡 **Tip —** The single highest-ROI prompt in Time & Meetings is one most people leaders never try: "What's likely to come up in this meeting that I haven't been thinking about?" It surfaces a thread from a recent email, a team-member concern, a delivery risk. Make it a Monday morning prompt for your toughest meeting of the week.
 
 ---
 
 <h2 id="u4">4 · Notebooks for Team Prep</h2>
 
-The most under-known executive feature in Microsoft 365 Copilot. If you're new to Notebooks, this section will be the most useful one in this guide.
+The most under-known people-leader feature in Microsoft 365 Copilot. If you're new to Notebooks, this section will be the most useful one in this guide.
 
 ### What a Notebook actually is
 
 A Notebook in Microsoft 365 Copilot Chat is a workspace where you've grounded a set of files (and optionally links, pages, and other sources). Every prompt you make inside that Notebook is grounded against those sources by default. Notebooks persist — you can come back to one next week and pick up where you left off.
 
-For executives, the prototypical Notebook is "Board Prep — [Month]". The sources are: the latest board paper, the financials, the risk register, the competitor watch, recent material correspondence, last month's board minutes. Every prompt is grounded against that working set. The grounded set goes away when you close the Notebook out at the end of the cycle.
+For people leaders, the prototypical Notebooks are: *"[Team Member Name] — quarterly check-in prep"*, *"Hiring round — [Role name]"*, *"[Project name] — weekly review"*, *"Q3 OKR drafting"*. The sources you load are the docs you'd already gather for that workstream — 1:1 notes, project files, role briefs, goal documents, the agreed inputs only. Every prompt is grounded against that working set. The grounded set goes away when you close the Notebook out at the end of the cycle.
 
-### Why this matters at the executive level
+### Why this matters for people leaders
 
 Without Notebooks, the way most people use Copilot is: paste file, ask question, get answer, repeat. The friction is constant, the grounding is one-shot, and the cognitive overhead of "which file was that in" doesn't go away.
 
-With Notebooks, you set up the working surface once, then think against it. The grounded set is the same for every prompt. Cross-file questions become trivial. The cognitive load drops.
+With Notebooks, you set up the working surface once, then think against it. The grounded set is the same for every prompt. Cross-file questions become trivial. The cognitive load drops — and the privacy discipline tightens, because you control exactly what's in the working set.
 
-### Worked example — cross-file board prep
+### Worked example — cross-file team-member prep
 
-Inside a Notebook with the board paper, risk register, financials, and competitor watch loaded:
+Inside a Notebook called *"[Team member name] — quarterly check-in"* with their goals doc, recent 1:1 notes, the projects they've owned this cycle, and the development objectives you agreed in the last cycle:
 
-> *Across all the files in this notebook, which of our Top 15 risks are most reinforced by what we're seeing in competitor activity and Q1 financials? Give me three risks ranked by combined evidence, and for each one, quote the specific lines from each source that supports the ranking.*
+> *Across all the files in this notebook, prepare me for the quarterly check-in with [name]. Three sections: (1) the commitments they made last cycle and how they tracked, with quoted evidence from the files, (2) what they've grown in over the cycle, with specific examples, (3) the three open questions I should bring to the conversation. Don't recommend a rating — help me prepare to listen and discuss.*
 
-The output should cite specific lines from specific files. The discipline of asking for quoted evidence keeps Copilot honest and gives you a fast read of which risks are now genuinely board-conversation-worthy.
+The output should cite specific lines from specific files. The discipline of asking for quoted evidence keeps Copilot honest and keeps the hard line — "Copilot drafts, you decide" — visibly in play for performance work.
 
-### Worked example — pattern hunting
+### Worked example — pattern hunting across team signals
 
-> *Looking across the board paper, the risk register, and the competitor watch, what story is being told that we haven't yet explicitly named? Be specific — name the pattern and quote the supporting evidence.*
+In a Notebook with your last 8 weeks of team meeting recaps, 1:1 notes (your own only), and project status updates:
 
-This is one of those prompts that occasionally produces a "huh, I hadn't put those together" insight. It also occasionally produces nothing useful — Copilot is not infallible at pattern recognition. The two-minute cost makes it worth trying anyway.
+> *Looking across the team meeting recaps, my 1:1 notes, and the project status files in this notebook, what story is being told about the team that I haven't yet explicitly named? Be specific — name the pattern and quote the supporting evidence. Don't speculate about individuals — patterns only.*
 
-### Worked example — closing the loop
+This is one of those prompts that occasionally produces a "huh, I hadn't put those together" insight. It also occasionally produces nothing useful — Copilot is not infallible at pattern recognition. The two-minute cost makes it worth trying anyway. The "patterns only, not individuals" instruction is the privacy discipline (same as the wellbeing prompt in [Scenario 28](#s-28)).
 
-At the end of a board prep cycle:
+### Worked example — closing the loop on a cycle
 
-> *Summarise everything I should retain from this notebook for next quarter's board prep. What questions did the board ask this cycle that I should pre-empt next cycle? What did we promise to come back on?*
+At the end of a quarterly check-in round, a hiring round, a project cycle:
 
-Closing-the-loop prompts are how Notebooks compound across cycles. The first cycle, the prompt produces a short list. By the third cycle, the prompt produces a working memory of how your board engages — which questions recur, which commitments outlast which board members, which themes need refreshing.
+> *Summarise everything I should retain from this notebook for next cycle. What questions came up this cycle that I should pre-empt next cycle? What did I commit to come back on? Anything I noticed about my own pattern as a leader that's worth bringing forward?*
+
+Closing-the-loop prompts are how Notebooks compound across cycles. The first cycle, the prompt produces a short list. By the third cycle, the prompt produces a working memory of how your team engages — which themes recur, which commitments outlast which quarters, which of your own patterns are working and which aren't.
 
 > > ⚠️ **Heads up —** Notebooks are not a permanent archive. Close them out at end of cycle (delete or rename), and start a fresh one for the next cycle. The cognitive value is in keeping the working surface clean, not in accumulating an ever-growing pile of "everything I've ever worked on".
 
@@ -413,31 +393,31 @@ Closing-the-loop prompts are how Notebooks compound across cycles. The first cyc
 
 <h2 id="u5">5 · Researcher and Analyst — agentic depth on demand</h2>
 
-The two standalone agents that are the biggest "thinking partner" unlock for executives in 2026. (Note: these are *not* Cowork — Cowork is a separate agent that does autonomous multi-app work. See [cluster 7 below](#u7) and the [Cowork guide](/blog/microsoft-copilot-cowork-complete-guide/).)
+The two standalone agents that are the biggest "thinking partner" unlock for people leaders in 2026. (Note: these are *not* Cowork — Cowork is a separate agent that does autonomous multi-app work. See [cluster 7 below](#u7) and the [Cowork guide](/blog/microsoft-copilot-cowork-complete-guide/).)
 
-### Researcher — the executive's research analyst
+### Researcher — the people-leader's research assistant
 
 Researcher is a deep-research agent inside Microsoft 365 Copilot. You give it a structured research brief, it goes away for 5-15 minutes and produces a sourced briefing.
 
-For executives, the most useful pattern is **pre-board market scans**. Before each board meeting, kick off a Researcher task on the state of your sector. Specify the time window, the segments, the questions you want answered. Come back to a structured briefing with citations.
+For people leaders, the most useful patterns are **hiring-market intelligence, manager skill briefs, and team-context scans**. Before opening a role, kick off a Researcher task on the talent market. Before a difficult coaching conversation, kick off a Researcher task on the topic. Before your team's next planning cycle, kick off a Researcher task on the external context that might affect their roadmap.
 
-**Worked example:**
+**Worked example (hiring):**
 
-> *Research the state of the New Zealand logistics sector over the past 6 months. Focus on: (1) major customer wins and losses by the top 5 national operators, (2) any acquisitions, divestments, or trading updates, (3) any moves into AI-enabled service offerings, (4) any regulatory changes or competition commission activity. Give me a 1-page briefing structured for a board pre-read. Cite all sources. Flag anything you're not confident about.*
+> *Research the New Zealand talent market for [role title] over the past 6 months. Focus on: (1) typical salary ranges (cite recruiter / market sources), (2) the 3-5 most-asked-for skills in JDs from comparable companies, (3) any flagged shifts in candidate expectations (hybrid, AI tooling, autonomy). Give me a 1-page briefing structured for a hiring intake conversation with my recruiter. Cite all sources. Flag anything you're not confident about.*
 
-The output is not a replacement for your Head of Strategy. It's a co-worker for her — she validates and supplements, rather than doing the gathering work herself.
+The output is not a replacement for your recruiter or HR partner. It's a co-worker for them — they validate and supplement, rather than doing the gathering work themselves.
 
-### Analyst — the executive's scenario modeller
+### Analyst — the people-leader's data assistant
 
 Analyst is a data-analysis agent. You give it a question and a data source. It models the answer, shows its workings, and lets you iterate.
 
-For executives, the most useful pattern is **scenario modelling on financial data without queuing for an analyst**. Quick what-if questions that used to take a day now take ten minutes — and the workings are visible, so you can hand the output to your CFO for audit.
+For people leaders, the most useful patterns are **team capacity analysis, workload distribution, hiring funnel stats**. Quick what-if questions that used to take a week's wait on a finance partner now take ten minutes — and the workings are visible, so anyone you share with can audit.
 
-**Worked example:**
+**Worked example (team workload):**
 
-> *Using the Group P&L data in the attached financials, model three full-year scenarios using the assumptions on the Scenario sheet: Base, Downside, Upside. For each, show modelled Revenue, Gross Profit, Opex, EBITDA, and EBITDA Margin. Then tell me which scenario breaches our 14% EBITDA covenant floor. Show your workings.*
+> *Using the team capacity sheet attached, show me which team members are running above 90% utilisation across the last 4 sprints, what their main workstreams are, and where I might be able to rebalance to give them 1-2 days of slack. Show your working. Don't make individual recommendations — show me the data clearly and I'll decide.*
 
-The output is reproducible. The CFO can audit it. You can argue with it. That last point is the most important — Analyst is the cluster where Copilot stops being a writing assistant and becomes something closer to a thinking partner.
+The output is reproducible. You can argue with it. You can share the same answer with HR or your skip-level. That last point is the most important — Analyst is the cluster where Copilot stops being a writing assistant and becomes something closer to a thinking partner for your team-management decisions.
 
 > > 💡 **Tip —** Researcher and Analyst take longer than chat (5-15 minutes vs. seconds). The mental model is different — kick one off, switch to another task, come back to the output. Treat them like email-a-junior-analyst, not like ask-a-chat-window. (Cowork is different again — it does multi-app work autonomously, not single-task deep work. See [cluster 7 below](#u7).)
 
@@ -445,15 +425,15 @@ The output is reproducible. The CFO can audit it. You can argue with it. That la
 
 <h2 id="u6">6 · Search across M365</h2>
 
-The least-flashy executive use case, and possibly the most economically valuable for organisations with sprawled content estates.
+The least-flashy people-leader use case, and possibly the most economically valuable for organisations with sprawled content estates.
 
 ### What it is
 
 Microsoft 365 Copilot Chat doubles as a permission-aware search box across your email, files, meetings, SharePoint sites, and Teams chats. Anything you have permission to see, Copilot can find and summarise.
 
-### Why this matters at the executive level
+### Why this matters for people leaders
 
-Executives spend more time than they admit hunting for a document. The most recent draft of a strategy paper, the policy you remember someone circulating last year, the customer email that referenced the contract clause. Copilot turns those hunts into 30-second tasks — with the file or message cited so you can open the source.
+Managers spend more time than they admit hunting for a document. The most recent draft of a team-member's job description, the policy you remember someone circulating last year, the customer email that referenced the project commitment, the goal-setting template HR sent you in Q1. Copilot turns those hunts into 30-second tasks — with the file or message cited so you can open the source.
 
 ### Worked example — find and summarise
 
@@ -465,11 +445,11 @@ The output should cite the file (with a path you can click) and produce a manage
 
 Once you have the file:
 
-> *What does this policy NOT cover that a CEO would expect it to cover? Be specific. Reference the document.*
+> *What does this policy NOT cover that a people leader would expect it to cover when they have a team using Copilot daily? Be specific. Reference the document.*
 
-The critique pattern works particularly well on internal policies, strategy documents, and exec papers — documents written by smart people, where the gaps are subtle and worth surfacing.
+The critique pattern works particularly well on internal policies, manager-enablement docs, and HR templates — documents written by smart people, where the gaps are subtle and worth surfacing for the people who'll have to use them in real conversations.
 
-> > ⚠️ **Heads up —** Permission-aware search is exactly that — permission-aware. If a document is over-shared on SharePoint, Copilot will surface it to anyone who can technically access it, even if the original author intended a narrower audience. Combined with Notebooks and Cross-File reasoning, over-sharing becomes more discoverable. The [SharePoint oversharing controls guide](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/) is required reading for any executive responsible for information governance.
+> > ⚠️ **Heads up —** Permission-aware search is exactly that — permission-aware. If a document is over-shared on SharePoint, Copilot will surface it to anyone who can technically access it, even if the original author intended a narrower audience. Combined with Notebooks and Cross-File reasoning, over-sharing becomes more discoverable. The [SharePoint oversharing controls guide](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/) is required reading for any leader responsible for sensitive team data — even just routine 1:1 notes can become more findable than you expected.
 
 ---
 
@@ -481,29 +461,29 @@ The critique pattern works particularly well on internal policies, strategy docu
 
 Cowork is the third wave of Copilot — Assistant (2023) → Agent Builder (2025) → **Cowork (2026)**. Where Copilot Chat answers a question and Researcher/Analyst do deep single-task work, Cowork takes an *outcome* you describe and executes a multi-step plan across your M365 suite, with human-in-the-loop checkpoints at sensitive moments. It is a separate agent, not a label for Researcher and Analyst.
 
-### What "good" looks like at the executive level
+### What "good" looks like for people leaders
 
-The strongest pattern: **describe an outcome, let Cowork plan and execute, approve at the checkpoints.** The temptation is to let Cowork run end-to-end — particularly on the boring stuff. Resist that for anything customer-facing. The checkpoints are where the human judgement that protects your reputation lives.
+The strongest pattern: **describe an outcome, let Cowork plan and execute, approve at the checkpoints.** The temptation is to let Cowork run end-to-end — particularly on the boring stuff. Resist that for anything that lands on a team member's inbox or calendar. The checkpoints are where the human judgement that protects your relationship with the team lives.
 
-Three sub-patterns dominate at the executive level:
+Three sub-patterns dominate for people leaders:
 
 **1. Morning routines.** Cowork does the 20-minute morning inbox + calendar + Teams scan in 60 seconds and shows you the structured "what needs you" output. You approve any drafted replies before they send.
 
-**2. Customer / stakeholder preparation.** Cowork pulls all the threads on a given customer or meeting topic across email, Teams, SharePoint, and recent meetings, drafts the briefing document, and drafts the confirmation email — all from one prompt. You review before send.
+**2. 1:1 / project meeting preparation.** Cowork pulls all the threads on a given direct report or project across email, Teams, SharePoint, and recent meetings, drafts the briefing document, and drafts the confirmation email — all from one prompt. You review before send.
 
-**3. Cross-app deliverable creation.** Cowork takes an email brief, gathers your materials, does fresh research, builds the deck, drafts the reply email. The complete workflow from "request arrived" to "deliverable ready for review" — without context switches.
+**3. Weekly team update creation.** Cowork takes the week's activity, gathers the threads, drafts the team status update or the upward-to-your-manager status, posts to Teams or sends to your manager as a draft. The complete workflow from "Friday afternoon" to "status ready for your approval" — without context switches.
 
 ### Worked example — meeting prep autopilot
 
-> *"I have a meeting with [customer name] about [topic] coming up this week. Look at my calendar to find the meeting, then search my recent emails and Teams chats for context about [customer] or this topic. Find the most relevant presentation or document I've used recently on this topic from OneDrive or SharePoint. Create a 1-page Word briefing with: the meeting objective, key attendees, 3 talking points based on what I've discussed with them before, and a link to the deck. Then draft a confirmation email to the attendees attaching the briefing."*
+> *"I have a project review with [project lead name] coming up this week. Look at my calendar to find the meeting, then search my recent emails and Teams chats for context about this project. Find the most relevant project plan or status doc from OneDrive or SharePoint. Create a 1-page Word briefing with: the meeting objective, key attendees, 3 talking points based on what we discussed last time, and a link to the doc. Then draft a confirmation email to the attendees attaching the briefing."*
 
-**What Cowork does:** Finds the meeting on your calendar → digs through your email and Teams history with that contact → locates the right files in SharePoint → creates a briefing document → drafts a confirmation email. Skills: Calendar → Enterprise Search → Word → Email. You approve at each major checkpoint before anything is sent.
+**What Cowork does:** Finds the meeting on your calendar → digs through your email and Teams history → locates the right files in SharePoint → creates a briefing document → drafts a confirmation email. Skills: Calendar → Enterprise Search → Word → Email. You approve at each major checkpoint before anything is sent.
 
-### Worked example — weekly executive update
+### Worked example — weekly team update
 
-> *"It's the end of the week. Review my calendar, sent emails, and Teams messages from this week. Create a structured weekly update: (1) key meetings I attended and what was discussed, (2) any customer or partner interactions, (3) content I created or shared, (4) open follow-ups I still need to action, (5) what's coming next week based on my calendar. Format as a professional but concise Teams post, then post it to the [team channel] channel for my approval."*
+> *"It's the end of the week. Review my calendar, sent emails, and Teams messages from this week. Create a structured weekly update: (1) key meetings I attended and what was discussed, (2) any customer or partner interactions my team handled, (3) what the team shipped, (4) open follow-ups I still need to action, (5) what's coming next week based on my calendar. Format as a professional but concise Teams post, then post it to the [team channel] channel for my approval."*
 
-The weekly update most leaders never write because nobody has time. Cowork compresses it into a two-minute approval.
+The weekly update most managers never write because nobody has time. Cowork compresses it into a two-minute approval.
 
 ### The Frontier prerequisites
 
@@ -533,11 +513,11 @@ Sush's [Microsoft Copilot Cowork — Plain-English Guide](/blog/microsoft-copilo
 
 <h2 id="features">Each Copilot feature, called out individually</h2>
 
-The clusters above are the *why*. This section is the *what* — the actual surfaces inside Microsoft 365 Copilot, one at a time, with what each one is genuinely good at for executives, what to use it for, and where the limits are.
+The clusters above are the *why*. This section is the *what* — the actual surfaces inside Microsoft 365 Copilot, one at a time, with what each one is genuinely good at for people leaders, what to use it for, and where the limits are.
 
-Read the ones relevant to you. Skim the rest. The order roughly follows the frequency that executives actually reach for each feature in their first 90 days.
+Read the ones relevant to you. Skim the rest. The order roughly follows the frequency that managers actually reach for each feature in their first 90 days.
 
-> ⚠️ **Before you try this — feature availability varies.** Not every feature below will be available to every executive immediately. **Memory · Scheduled prompts · Researcher · Analyst · Cowork · Notebooks · Teams transcripts · Custom agents (Copilot Studio)** all depend on your licensing tier, your admin's tenant policy, your region's rollout schedule, and (in some cases) optional connected-experiences settings being enabled. **Cowork specifically requires Frontier program enrolment and Anthropic enabled as a subprocessor** — that one is the most common reason it's not visible in NZ tenants yet. If a feature isn't there for you, ask your IT/CIO contact — it's usually a configuration question, not a capability gap.
+> ⚠️ **Before you try this — feature availability varies.** Not every feature below will be available to every people leader immediately. **Memory · Scheduled prompts · Researcher · Analyst · Cowork · Notebooks · Teams transcripts · Custom agents (Copilot Studio)** all depend on your licensing tier, your admin's tenant policy, your region's rollout schedule, and (in some cases) optional connected-experiences settings being enabled. **Cowork specifically requires Frontier program enrolment and Anthropic enabled as a subprocessor** — that one is the most common reason it's not visible in NZ tenants yet. If a feature isn't there for you, ask your IT/CIO contact — it's usually a configuration question, not a capability gap.
 
 ---
 
@@ -545,15 +525,15 @@ Read the ones relevant to you. Skim the rest. The order roughly follows the freq
 
 **What it is:** The general-purpose chat surface at *microsoft365.com/chat* (or the Copilot icon in the M365 app launcher, or the standalone Copilot app on Windows). The biggest single surface area inside the entire Copilot product.
 
-**Why it matters for executives:** This is where most of your strategic Copilot work will happen. Multi-source reasoning, document grounding, cross-app questions, the launching pad for Researcher and Analyst, and the home of every prompt that doesn't sit naturally inside a specific app.
+**Why it matters for people leaders:** This is where most of your high-leverage Copilot work will happen. Multi-source reasoning across team members + projects + recent meetings, document grounding for 1:1 prep and recognition writing, cross-app questions, the launching pad for Researcher and Analyst, and the home of every prompt that doesn't sit naturally inside a specific app.
 
-**Three patterns that compound for executives:**
+**Three patterns that compound for people leaders:**
 
-1. **Always-on grounding via /file or attach.** When asking anything about specific content, attach the file or use the slash-command to ground the prompt. Untethered prompts produce untethered answers.
+1. **Always-on grounding via /file or attach.** When asking anything about specific content — a team-member's project doc, a 1:1 notes file, a JD — attach it or use the slash-command to ground the prompt. Untethered prompts produce untethered answers.
 
-2. **Cross-source comparison.** "Compare /Q1 strategy with /board minutes from March — where are we on the commitments we made?" That kind of question used to take a chief of staff a morning. Copilot Chat lands it in 30 seconds.
+2. **Cross-source comparison.** "Compare /Q1 OKRs with /team status from March — where are we on the commitments we made?" That kind of question used to take a half-day of digging through Teams and OneDrive. Copilot Chat lands it in 30 seconds.
 
-3. **The follow-up habit.** Most executives end conversations after the first response. The strategic value is in the second and third prompt — "make the opposite case", "what's missing", "play devil's advocate". The first prompt gets you the brief. The second prompt sharpens your thinking.
+3. **The follow-up habit.** Most managers end conversations after the first response. The strategic value is in the second and third prompt — "make the opposite case", "what's missing", "play devil's advocate". The first prompt gets you the brief. The second prompt sharpens your thinking.
 
 **Worked example — multi-source briefing:**
 
@@ -587,7 +567,7 @@ Read the ones relevant to you. Skim the rest. The order roughly follows the freq
 
 2. **Drafting high-stakes replies.** When the email matters and you don't have time to start from scratch — the board chair email, the customer escalation, the regulator's preliminary question. Copilot starts you 20 minutes closer to send-ready. You still own the editorial pass.
 
-3. **Tone calibration.** Same content, three audiences (board, exec team, all-staff). Same content, three tones (direct, warm, urgent). The variations are cheap; the editorial judgement stays human.
+3. **Tone calibration.** Same content, three audiences (your team, your skip-level, all-staff). Same content, three tones (direct, warm, urgent). The variations are cheap; the editorial judgement stays human.
 
 4. **Summarise long threads.** A 40-message email thread distils to "decisions made, actions assigned, who's frustrated with whom" in seconds. Particularly useful for the threads that exploded while you were in back-to-back meetings.
 
@@ -609,7 +589,7 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
 
 **What it is:** Copilot inside Microsoft Teams meetings — covers live in-meeting prompting, the post-meeting recap, transcript-based summarisation, and the Intelligent Recap pane.
 
-**Why it matters for executives:** Executive calendars are denser than anyone else's calendar. Microsoft's published Customer Zero adoption findings consistently show meeting-related use as a top driver of perceived Copilot productivity gain — partly because it's where the time waste was largest pre-Copilot.
+**Why it matters for people leaders:** Manager calendars are typically denser than the team they lead — back-to-back 1:1s, project syncs, escalation calls, skip-levels with your own manager. Meeting-related Copilot use consistently shows up as the top driver of "I got my Friday afternoon back" feedback from managers in the first month.
 
 **Five patterns:**
 
@@ -617,17 +597,17 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
 
    > *I have a meeting in 45 minutes with [name] about [topic]. Pull the recent emails, last meeting notes, files we've shared, and any project updates. Give me a one-page brief structured as: who's coming · what we last left unresolved · what they're likely to ask me · what I should be prepared to commit to. Plain English.*
 
-2. **Recap any meeting in 60 seconds.** Recorded Teams meetings now produce structured recaps automatically. The shift is using them — not just letting them sit. Read the recap before you read the chat thread. Pull actions from it. Time saved per week is typically 90 minutes for an executive.
+2. **Recap any meeting in 60 seconds.** Recorded Teams meetings now produce structured recaps automatically. The shift is using them — not just letting them sit. Read the recap before you read the chat thread. Pull actions from it. Time saved per week is typically 90 minutes for a manager running a team.
 
 3. **Catch up on a meeting you couldn't attend.** Joined late, missed entirely, or only listened to half. Copilot Chat with the meeting attached as source turns the recording into "what was decided, what was disputed, what was unresolved, what was unsaid" in seconds.
 
 4. **In-meeting Copilot.** During the meeting itself, the in-meeting Copilot panel can answer "what have we agreed so far?" or "what did [person] say earlier?" without breaking flow. Useful for back-half meetings where you've lost the thread.
 
-5. **The tone observations prompt.** This is the executive-specific addition. After any leadership meeting:
+5. **The tone observations prompt.** This is the people-leader-specific addition. After any team meeting or skip-level:
 
-   > *Summarise this meeting into: (1) decisions and who carried them, (2) actions assigned with owner and due date, (3) outstanding questions. Then add a fourth section — "tone observations" — anything in the language that suggests under-the-surface tension I should be alert to. Quote the specific lines.*
+   > *Summarise this meeting into: (1) decisions and who carried them, (2) actions assigned with owner and due date, (3) outstanding questions. Then add a fourth section — "tone observations" — anything in the language that suggests under-the-surface tension I should be alert to as the team's manager. Quote the specific lines.*
 
-   The fourth section is the one that earns the most "huh, I missed that" reactions when an executive first runs it.
+   The fourth section is the one that earns the most "huh, I missed that" reactions when a manager first runs it.
 
 **Limit:** Copilot doesn't pick up body language, side conversations in the room, or anything someone deliberately didn't say. It analyses the spoken content. Your in-person read is still essential.
 
@@ -637,7 +617,9 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
 
 **What it is:** Copilot inside Microsoft Word — drafting, refining, summarising, restructuring, and the side-by-side Copilot pane.
 
-**Why it matters for executives:** Executive output skews to Word more than any other app — board papers, strategy memos, customer letters, formal communications, regulator responses. Anywhere the editorial standard is high, Word + Copilot earns its keep.
+**Why it matters for people leaders:** Manager output skews to Word more often than people expect — team status updates, 1:1 follow-up notes, promotion justifications, recognition write-ups, onboarding plans, performance check-in prep notes, hiring intake docs. Anywhere the writing has to be specific, fair, and yours, Word + Copilot earns its keep.
+
+> 📝 **Heads up — this section needs a Phase 2 rewrite.** Several worked examples below are still framed for executive-grade output (board paper polish, board-table reading). The patterns transfer — but a deeper PL-focused rewrite (with worked examples for 1:1 follow-up notes, recognition write-ups, promotion justifications, status updates) is coming in a follow-up to this guide.
 
 **Four patterns:**
 
@@ -663,7 +645,9 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
 
 **What it is:** Copilot inside Microsoft Excel — formula assistance, analysis, commentary, chart suggestion, pattern detection.
 
-**Why it matters for executives:** Most executives are not the people writing Excel formulas. They're the people reading Excel outputs. Excel + Copilot does the bridging — turning numbers into narrative without a finance analyst in the loop.
+**Why it matters for people leaders:** Most managers are not running EBITDA scenarios. They're running team capacity sheets, sprint velocity, headcount trackers, pulse-survey results, project status roll-ups. Excel + Copilot does the bridging — turning rows of team data into a narrative your team or your manager can read.
+
+> 📝 **Heads up — this section needs a Phase 2 rewrite.** The worked examples below are still board / P&L / EBITDA / variance-commentary flavoured (carried over from the companion [Executives field guide](/blog/copilot-for-executives-field-guide/)). A deeper PL-focused rewrite — with worked examples for sprint capacity analysis, pulse-survey synthesis, headcount tracker pattern detection, and project status roll-up to your manager — is coming in a follow-up.
 
 **Four patterns:**
 
@@ -683,7 +667,7 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
 
    > *Look across the entire monthly P&L for the past 12 months. What patterns am I missing? Be specific — name three patterns and quote the lines that support each.*
 
-3. **Quick scenario calculations.** For executive what-ifs that don't need the full Analyst agent:
+3. **Quick scenario calculations.** For manager what-ifs that don't need the full Analyst agent:
 
    > *If our gross margin compresses by another 1 percentage point in Q3 and Q4, what's the EBITDA impact, and how much would we need to cut Opex to hold EBITDA flat? Show your working.*
 
@@ -701,7 +685,9 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
 
 **What it is:** Copilot inside PowerPoint — slide creation, design suggestions, content restructuring, speaker note drafting.
 
-**Why it matters for executives:** Executives consume more decks than they make. But for the decks you DO make — board updates, town hall material, customer-facing pitches — PowerPoint + Copilot accelerates the worst part of deck work: starting from a blank slide.
+**Why it matters for people leaders:** Managers consume more decks than they make. But for the decks you DO make — team all-hands, project status, monthly metrics, the upward briefing to your skip-level — PowerPoint + Copilot accelerates the worst part of deck work: starting from a blank slide.
+
+> 📝 **Heads up — this section needs a Phase 2 rewrite.** Worked examples below are still board / town-hall / customer-pitch flavoured. A PL-focused rewrite (team all-hands deck · project status deck · monthly metrics deck) is coming in a follow-up.
 
 **Three patterns:**
 
@@ -725,7 +711,7 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
 
 **What it is:** Researcher is a deep-research agent inside Microsoft 365 Copilot. You give it a structured research brief; it goes away for 5–15 minutes and produces a sourced briefing with citations. It is not part of Cowork — it is its own agent, surfaced under **Agents** in Copilot Chat and pre-installed for M365 Copilot licensed users (subject to your tenant's admin controls).
 
-**Why it matters for executives:** This is the closest thing in M365 Copilot to having a junior strategy analyst on call. Researcher excels at the work executives most often delegate — pre-board market scans, competitor intelligence, sector trend snapshots, regulatory environment summaries.
+**Why it matters for people leaders:** This is the closest thing in M365 Copilot to having a research assistant on call. Researcher excels at the work managers most often delegate or skip — hiring-market intelligence, learning resources for a coaching topic, industry context for the team's roadmap, competitor or comparable-team patterns you don't have time to research yourself.
 
 **Three patterns:**
 
@@ -737,7 +723,7 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
 
    > *Research [competitor name]'s position in the [sector] market. Their products, pricing model where public, customer wins announced in the last 12 months, leadership team, any reported customer satisfaction or service quality signals, and the most recent published financials or analyst notes if available. 2-page briefing. Cite all sources. Flag what I should NOT rely on without further verification.*
 
-3. **Regulatory environment scan.** For any executive working in a regulated industry:
+3. **Regulatory environment scan.** For any leader working in a regulated industry:
 
    > *Research the regulatory environment for [sector] in New Zealand. Focus on (1) any consultations or draft regulations from the relevant regulators in the past 12 months, (2) any enforcement actions, (3) any policy speeches by relevant ministers signalling forthcoming change, (4) cross-Tasman comparisons where Australian regulators have moved on similar matters. 1-page briefing structured for a board risk committee. Cite all sources.*
 
@@ -749,7 +735,7 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
 
 **What it is:** Analyst is a data-analysis agent inside Microsoft 365 Copilot. You give it a question and a data source; it models the answer, shows its workings, and lets you iterate. It is not part of Cowork — it is its own agent, surfaced under **Agents** in Copilot Chat and pre-installed for M365 Copilot licensed users (subject to your tenant's admin controls).
 
-**Why it matters for executives:** Analyst is where Copilot stops being a writing assistant and becomes something closer to a thinking partner. The outputs are reproducible, the workings are visible, the CFO can audit them. This is the cluster where the most under-known executive productivity unlock currently sits.
+**Why it matters for people leaders:** Analyst is where Copilot stops being a writing assistant and becomes something closer to a thinking partner for team-management data. The outputs are reproducible, the workings are visible, anyone you share with (your HR partner, your skip-level, finance) can audit them. This is the cluster where the most under-known people-leader productivity unlock currently sits.
 
 **Four patterns:**
 
@@ -762,7 +748,7 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
    > *Now show me the single biggest sensitivity in the Downside scenario. If we could only protect ONE driver to keep us above the covenant, which would do the most? Show the workings.*
 
 ![Analyst prompt and code execution](/images/blog/copilot-for-executives/05a-analyst-prompt-code.webp)
-*Analyst (the Copilot agent) doesn't just answer — it writes and runs Python against your spreadsheet. The visible "Coding and executing" with actual Python is the differentiator: most execs have never seen Copilot do this.*
+*Analyst (the Copilot agent) doesn't just answer — it writes and runs Python against your spreadsheet. The visible "Coding and executing" with actual Python is the differentiator: most people leaders have never seen Copilot do this. (The screenshot here uses a finance worked example carried over from the companion exec guide — a PL-flavoured rewrite with team-capacity and workload-distribution worked examples is coming in a follow-up.)*
 
 
 ![Analyst three-scenario output with math shown](/images/blog/copilot-for-executives/05b-analyst-output.webp)
@@ -791,9 +777,9 @@ The first draft is rarely send-ready. It is reliably 20 minutes closer to send-r
 
 You'll find it in the **Agent Store** inside Copilot Chat. Available via the Microsoft **Frontier program** (early access — see the [Cowork complete guide](/blog/microsoft-copilot-cowork-complete-guide/) for the enrolment specifics). Requires Anthropic enabled as a subprocessor at the tenant level.
 
-**Why it matters for executives:** This is the agent that changes Copilot from "tool I open to draft something" to "colleague who takes ownership of a multi-step task". It is the closest current product to "delegate to an AI staff member" — with the human-in-loop checkpoints that make it safe at executive stakes.
+**Why it matters for people leaders:** This is the agent that changes Copilot from "tool I open to draft something" to "colleague who takes ownership of a multi-step task". It is the closest current product to "delegate to an AI staff member" — with the human-in-loop checkpoints that make it safe for the work managers care about most (team-facing comms, 1:1 prep, status updates).
 
-**Five Cowork patterns that earn their keep at executive level:**
+**Five Cowork patterns that earn their keep for people leaders:**
 
 1. **Morning triage and priority setter.** One prompt — Cowork reads your calendar, scans overnight emails, checks Teams messages, prioritises your morning, and drafts replies to your top two urgent items. It shows you the plan first; you approve, it sends. The 20-minute morning ritual becomes 60 seconds.
 
@@ -803,7 +789,7 @@ You'll find it in the **Agent Store** inside Copilot Chat. Available via the Mic
 
 3. **Post-session follow-up machine.** Cowork takes the meeting you just finished, finds the recording, locates shared materials, reads the transcript, drafts a follow-up email with summary + recording link + Q&A invite. You approve, it sends.
 
-4. **Weekly executive update generator.** End-of-week — Cowork reviews your calendar, sent emails, and Teams messages from the week, builds a structured update covering meetings · customer interactions · content shared · open follow-ups · next-week preview, and posts it to your leadership team channel for approval.
+4. **Weekly team update generator.** End-of-week — Cowork reviews your calendar, sent emails, and Teams messages from the week, builds a structured update covering meetings · team interactions · what shipped · open follow-ups · next-week preview, and posts it to your team channel for approval. Or the same workflow upward — drafts your fortnightly status to your skip-level as an email draft for your review.
 
 5. **Customer deliverable from email brief.** Five-step Cowork workflow: find the brief in your inbox · gather your existing materials from OneDrive/SharePoint · do fresh research via Microsoft Learn and web · build a polished deck covering every agenda item · draft a reply attaching the deck. All from one prompt. You approve at each major checkpoint.
 
@@ -822,7 +808,7 @@ You'll find it in the **Agent Store** inside Copilot Chat. Available via the Mic
 - **Best at coordination, preparation, and routine multi-step work.** Not designed for strategy, relationship building, creative thinking, or genuinely judgement-shaped decisions. Use it for the busywork; reserve your brain for the work that actually needs it.
 - **Sensitive actions still require human approval.** Always. By design.
 
-**Critical executive note:** Cowork is the cluster where the "Copilot drafts, you decide" hard line gets the most stress-tested. The temptation is to let Cowork run end-to-end on customer comms or board-bound documents. Don't. The checkpoint moments — where Cowork asks "should I send this?" — are the moments where the editorial judgement that protects your reputation lives.
+**Critical people-leader note:** Cowork is the cluster where the "Copilot drafts, you decide" hard line gets the most stress-tested. The temptation is to let Cowork run end-to-end on team-facing comms or 1:1 prep documents. Don't. The checkpoint moments — where Cowork asks "should I send this?" — are the moments where the editorial judgement that protects your relationship with the team lives.
 
 **Reading further:** Sush's [Microsoft Copilot Cowork — Plain-English Guide](/blog/microsoft-copilot-cowork-complete-guide/) is the definitive customer-facing walkthrough — six high-impact prompts, the agentic harness explained, how Cowork differs from Claude Cowork, and how to get your tenant enrolled in Frontier.
 
@@ -830,9 +816,11 @@ You'll find it in the **Agent Store** inside Copilot Chat. Available via the Mic
 
 **What it is:** A workspace inside Copilot Chat where you've grounded a set of supported source files (Word, Excel, PowerPoint, PDF, Loop, OneNote pages, Copilot Pages). Every prompt you make inside that Notebook is grounded against those sources by default. Notebooks persist until you delete them — you can come back to one next week and pick up where you left off. Notebooks do **not** browse the general web — for that, hand off to Researcher or use Copilot Chat with web search enabled.
 
-**Why it matters for executives:** This is the most under-known executive feature in Microsoft 365 Copilot. If you remember nothing else from this guide, set up one Notebook for your next board prep cycle. It will change how you work.
+**Why it matters for people leaders:** This is the most under-known feature for managers in Microsoft 365 Copilot. If you remember nothing else from this guide, set up one Notebook for your next quarterly check-in cycle, hiring round, or major project. It will change how you work.
 
-**The prototypical executive Notebook is "Board Prep — [Month]"** with these sources loaded:
+> 📝 **Heads up — the worked examples below are still board-prep flavoured** (carried over from the companion Executives guide). The cluster 4 Notebooks section above ([U4: Notebooks for Team Prep](#u4)) has the PL-tuned versions — quarterly check-in Notebooks, hiring-round Notebooks, project-cycle Notebooks. A full rewrite of this feature section to match is coming in a follow-up.
+
+**The prototypical leader-level Notebook is "Board Prep — [Month]"** (carried over from the companion exec guide) with these sources loaded:
 - The latest board paper
 - The financials pack
 - The risk register
@@ -840,6 +828,8 @@ You'll find it in the **Agent Store** inside Copilot Chat. Available via the Mic
 - Recent material correspondence (regulator letters, key customer threads)
 - Last month's board minutes
 - Any matters arising from prior meetings
+
+For PL-tuned Notebook recipes — quarterly check-in for [team member], hiring round for [role], project cycle for [project] — see [U4 above](#u4).
 
 Every prompt you make inside that Notebook is grounded against this working set.
 
@@ -873,9 +863,9 @@ Every prompt you make inside that Notebook is grounded against this working set.
 
    > *Summarise everything I should retain from this notebook for next quarter's board prep. What questions did the board ask this cycle that I should pre-empt next cycle? What did we promise to come back on? Format as a forward-looking note to myself.*
 
-5. **Onboarding a new exec.** When a new ELT member joins:
+5. **Onboarding a new team member.** When someone joins your team:
 
-   > *Using everything in this Board Prep notebook, write a 2-page primer for a new ELT member on the strategic context, the current state of the business, and the open questions in front of the board. Plain English, candid, no jargon.*
+   > *Using everything in this team Notebook, write a 2-page primer for [name] joining the team next Monday: who the team is and what each person owns, our current top 3 priorities, the customers / stakeholders they'll interact with, the working rituals (standup, 1:1, retro), the docs they should read in their first week. Plain English, warm, no jargon.*
 
 **Best practice:** Close out Notebooks at end of cycle. Start a fresh one for the next cycle. The cognitive value is in keeping the working surface clean, not in accumulating an ever-growing pile. Treat Notebooks like project folders, not archives.
 
@@ -887,19 +877,21 @@ Every prompt you make inside that Notebook is grounded against this working set.
 
 **What it is:** Copilot Pages is a live, editable canvas where you and Copilot co-author together. The output of any Copilot Chat response can be sent to a Page, where you can edit, refine, and continue prompting against the live canvas. Pages can be shared with colleagues for collaboration.
 
-**Why it matters for executives:** Pages takes care of the blank-page problem. It's not a one-shot generator — it's a canvas you shape live with Copilot as co-author. Particularly useful for strategy memos, exec offsite preparation, board update drafts, and any document where the iteration is the work.
+**Why it matters for people leaders:** Pages takes care of the blank-page problem. It's not a one-shot generator — it's a canvas you shape live with Copilot as co-author. Particularly useful for team OKR drafting, hiring-round planning docs, project retrospective notes, and any document where the iteration is the work and you want a teammate (Copilot or human) editing alongside you.
+
+> 📝 **Heads up — the worked examples below are still board / ELT flavoured.** A PL-focused rewrite (team OKR Page · hiring intake Page · retrospective Page · onboarding plan Page) is coming in a follow-up.
 
 **Three patterns:**
 
 1. **One-page strategy memo for the board.** Inside a Page (started from a Notebook source for grounding):
 
-   > *Create a one-page strategy memo for the board on the Q1 FY27 strategic response. Sections: (1) Context — 2 sentences. (2) Problem — 3 bullets. (3) Options A / B / C — one short paragraph each. (4) Recommendation from the executive team with reasoning — 3 bullets. (5) Decision required — numbered list. Use the board paper, financials, risk register, and competitor watch in this notebook as source. Keep it under 400 words total. Plain English, no buzzwords.*
+   > *Create a one-page strategy memo for the leadership team on the Q1 FY27 strategic response. Sections: (1) Context — 2 sentences. (2) Problem — 3 bullets. (3) Options A / B / C — one short paragraph each. (4) Recommendation from the leadership team with reasoning — 3 bullets. (5) Decision required — numbered list. Use the board paper, financials, risk register, and competitor watch in this notebook as source. Keep it under 400 words total. Plain English, no buzzwords.*
 
    Then edit the recommendation manually, then prompt in-Page:
 
    > *Tighten the recommendation section using my edits as the new direction. Keep the reasoning bullets to 12 words each.*
 
-2. **Co-authored exec offsite agenda.** When the exec team needs to shape an offsite together:
+2. **Co-authored leadership-team offsite agenda.** When your peers + manager need to shape an offsite together:
 
    - One leader starts a Page with a draft agenda
    - Each ELT member edits live (Page collaboration like a Word document)
@@ -916,7 +908,7 @@ Every prompt you make inside that Notebook is grounded against this working set.
 
 **What it is:** Copilot Chat doubles as a permission-aware search box across your email, files, meetings, SharePoint sites, and Teams chats. Anything you have permission to see, Copilot can find and summarise.
 
-**Why it matters for executives:** Executives spend more time than they admit hunting for a document. The most recent draft of a strategy paper, the policy you remember someone circulating last year, the customer email that referenced a specific contract clause. M365 Search via Copilot Chat turns those hunts into 30-second tasks — with the file or message cited so you can open the source.
+**Why it matters for people leaders:** Managers spend more time than they admit hunting for a document. The most recent draft of a team-member's JD, the policy you remember someone circulating last year, the customer email that referenced a project commitment, the OKR template HR sent in Q1. M365 Search via Copilot Chat turns those hunts into 30-second tasks — with the file or message cited so you can open the source.
 
 **Four patterns:**
 
@@ -934,37 +926,37 @@ Every prompt you make inside that Notebook is grounded against this working set.
 
 4. **The critique pattern.** Once you have any document:
 
-   > *What does this policy NOT cover that a CEO would expect it to cover? Be specific. Reference the document.*
+   > *What does this policy NOT cover that a people leader running a team in real life would expect it to cover? Be specific. Reference the document.*
 
-   This pattern works especially well on internal policies, strategy documents, and exec papers — documents written by smart people, where the gaps are subtle and worth surfacing.
+   This pattern works especially well on internal policies, manager-enablement guides, and HR templates — documents written by smart people, where the gaps are subtle and worth surfacing for the people who'll have to use them in real team conversations.
 
-**Limit:** Permission-aware search is exactly that — permission-aware. If a document is over-shared on SharePoint, Copilot will surface it to anyone who can technically access it, even if the original author intended a narrower audience. Combined with Notebooks and Cross-File reasoning, over-sharing becomes more discoverable. The [SharePoint oversharing controls guide](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/) is required reading for any executive responsible for information governance.
+**Limit:** Permission-aware search is exactly that — permission-aware. If a document is over-shared on SharePoint, Copilot will surface it to anyone who can technically access it, even if the original author intended a narrower audience. Combined with Notebooks and Cross-File reasoning, over-sharing becomes more discoverable. The [SharePoint oversharing controls guide](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/) is required reading for any leader responsible for sensitive team data — even routine 1:1 notes can become more findable than you expected.
 
 ---
 
-<h3 id="f-memory">Memory — the under-known executive lever</h3>
+<h3 id="f-memory">Memory — the under-known people-leader lever</h3>
 
 **What it is:** Copilot Memory (in preview at the time of writing) can save preferences, facts, context, and inferred chat-history details across sessions. Memory entries are stored in your Exchange mailbox and are governed the same way other mailbox content is — your admins can review or remove memory via Microsoft Purview and Microsoft Graph. What gets saved depends on your tenant configuration, your admin controls, and (for explicit saves) your own confirmation.
 
-**Why it matters for executives:** The re-priming tax is enormous for executives. Every time you start a new Copilot conversation, you give the same context — your role, your industry, your common preferences. Memory removes that. Once installed, your Copilot conversations start from "knows me" rather than "starts cold".
+**Why it matters for people leaders:** The re-priming tax adds up. Every time you start a new Copilot conversation, you give the same context — your role, your team, your common preferences. Memory removes that. Once installed, your Copilot conversations start from "knows me" rather than "starts cold".
 
 **Four memory entries worth installing in your first week:**
 
 1. **Your role and context:**
-   > *Remember: I'm the CEO of Kauri Pacific Group, a diversified NZ business with Health, Logistics, and Energy divisions. We operate primarily in NZ with limited Australian exposure. We're an unlisted company with a strong governance board.*
+   > *Remember: I'm a [role] leading a team of [N] people at [company]. We're a [function — Engineering / Sales / Customer Success / etc.] team focused on [outcome]. We work in [region] primarily, with some cross-region collaboration.*
 
 2. **Your preference for tone:**
-   > *Remember: I prefer plain English in all outputs. No corporate buzzwords ("leverage", "doubling down", "synergy"). Direct, even when uncomfortable. Avoid hedge words ("perhaps", "it could be argued"). If you're uncertain, say uncertain.*
+   > *Remember: I prefer plain English in all outputs. No corporate buzzwords ("leverage", "doubling down", "synergy", "crushing it", "rockstar"). Direct, even when uncomfortable. Avoid hedge words ("perhaps", "it could be argued"). If you're uncertain, say uncertain.*
 
 3. **Your preferred format:**
    > *Remember: I prefer structured outputs — bullets, tables, numbered lists. Maximum 200 words per section unless I ask for depth. Always end with a section called "What would you double-check" so I know where to apply my judgement.*
 
-4. **Your team and key collaborators (light context only):**
-   > *Remember: I manage a team of [N] people. My most frequent collaborators outside my team are [my manager's name + role], [HR/People business partner], [closest peer manager]. When I reference any of them by first name, use this context. Do not save personal details about my direct reports — those go in 1:1-specific prompts, not Memory.*
+4. **Your team and key collaborators (light context only — no individual data):**
+   > *Remember: My most frequent collaborators outside my own team are [my manager's name + role], [HR/People business partner], [closest peer manager]. When I reference any of them by first name, use this context. Do not save personal details about my direct reports — those go in 1:1-specific prompts and Notebooks, not Memory.*
 
    The last clause matters. Memory is mailbox-stored and discoverable via Microsoft 365 compliance tooling. Personal details about named team members do not belong in long-term Memory entries.
 
-Once these four facts are installed, the typical executive prompt drops from 4 lines to 1 line of intent. The savings compound across hundreds of prompts a month.
+Once these four facts are installed, the typical manager prompt drops from 4 lines to 1 line of intent. The savings compound across hundreds of prompts a month.
 
 **Limit:** Memory is not infinite. You can install dozens of facts but not hundreds. Prioritise the facts that re-occur in 80% of your prompts. Review memory monthly — delete anything you've stopped using.
 
@@ -972,64 +964,64 @@ Once these four facts are installed, the typical executive prompt drops from 4 l
 
 ---
 
-<h3 id="f-agents">Custom agents (Copilot Studio) — the most underused executive lever</h3>
+<h3 id="f-agents">Custom agents (Copilot Studio) — the most underused people-leader lever</h3>
 
 **What it is:** Copilot Studio is the low-code platform where you can build custom agents — purpose-built versions of Copilot configured for a specific task, with their own knowledge sources, instructions, tools, and triggers.
 
-**Why it matters for executives:** This is the layer most executives never reach. They use Copilot for the typing-tax reduction (drafting, summarising) but never get to the agent layer. **Custom agents are where Copilot starts doing role-specific multi-step work that's calibrated to your job, not a generic chat experience.** For *recurring* automated rituals (the weekly briefing, the monthly summary), the right tool is usually a **Scheduled prompt** (see below) or, for genuinely multi-app autonomous workflows, **Cowork**. Custom agents are about *role fit* — Studio agents and Power Automate-backed agents extend Copilot for a specific job; the scheduling/automation layer is a separate concern.
+**Why it matters for people leaders:** This is the layer most managers never reach. They use Copilot for the typing-tax reduction (drafting, summarising) but never get to the agent layer. **Custom agents are where Copilot starts doing role-specific multi-step work that's calibrated to your job, not a generic chat experience.** For *recurring* automated rituals (the weekly 1:1 prep, the fortnightly status nudge), the right tool is usually a **Scheduled prompt** (see below) or, for genuinely multi-app autonomous workflows, **Cowork**. Custom agents are about *role fit* — Studio agents and Power Automate-backed agents extend Copilot for a specific job; the scheduling/automation layer is a separate concern.
 
-**Three executive agent patterns:**
+**Three people-leader agent patterns:**
 
-1. **The Daily Briefing Agent (Monday morning).** A scheduled agent that runs every Monday 06:00 and saves a 4-minute exec briefing to your Drafts:
+1. **The Monday Morning Team-Ahead Agent.** A scheduled agent that runs every Monday 06:00 and saves a 4-minute briefing to your Drafts:
 
-   - Sources: your inbox, your meeting recaps, your KPI dashboard, your competitor watch
-   - Structure: week ahead · last week's changes · decisions waiting for you · outstanding commitments · "what I'd flag if I were your Chief of Staff"
+   - Sources: your inbox, your meeting recaps, your team's status updates, the team OKR doc
+   - Structure: team week ahead · last week's changes · decisions waiting for you · outstanding commitments your direct reports made · "what I'd flag if I were your skip-level"
    - Trigger: scheduled (weekly Monday 06:00)
    - Delivery: draft email to your inbox
 
-2. **The Pre-Customer-Meeting Agent.** Triggered by a calendar event for any top-20 customer meeting:
+2. **The Pre-1:1 Prep Agent.** Triggered by a calendar event for any recurring direct-report 1:1:
 
-   - Sources: customer profile, last 12 months of correspondence, last 6 months of meetings, contract status
-   - Structure: customer context · what they're likely to raise · open commitments · suggested talking points
-   - Trigger: 2 hours before any top-20 customer meeting
-   - Delivery: Teams chat to you
+   - Sources: that team member's recent emails, recent meeting recaps, project status they own, your own 1:1 notes file
+   - Structure: what they're likely to want to discuss · what you should be alert to · what to ask them to think harder about · what to explicitly acknowledge they've done well
+   - Trigger: 2 hours before any direct-report 1:1
+   - Delivery: Teams chat to you (private)
 
-3. **The Board-Prep Agent.** Triggered manually 5 days before each board meeting:
+3. **The Quarterly Check-In Prep Agent.** Triggered manually 5 days before each direct-report quarterly check-in:
 
-   - Sources: previous 3 board papers, all board commitments since last meeting, latest financials, latest risk register
-   - Structure: thematic continuity · open commitments status · risk movements · suggested additional pre-reads to circulate
+   - Sources: their goal doc, projects they've owned this cycle, your own 1:1 notes from the quarter, the development objectives you agreed last cycle
+   - Structure: commitments tracked · what they delivered beyond commitments · what they struggled with · what they've grown in · three open questions for the conversation
    - Trigger: manual
    - Delivery: written brief saved to your OneDrive
 
-**The pattern is replicable** across your leadership team. Each leader can sponsor an agent calibrated to their week. CFO might want a daily financial pulse agent. CRO might want a daily pipeline-health agent. Chief of Staff might want a daily decisions-pending agent. The shape is the same — the source data and the questions change.
+**The pattern is replicable** across your team-management cadence. Each people leader can sponsor an agent calibrated to their week. A sales-team manager might want a daily pipeline-health agent. An engineering manager might want a sprint-velocity-pulse agent. A customer-success manager might want a customer-renewal-risk agent. The shape is the same — the source data and the questions change.
 
-**Limit:** Building agents requires either internal capability or a vendor partner. Most executives won't build them themselves. The value is in *sponsoring* and *defining* them — the IT team or partner builds them to your spec.
+**Limit:** Building agents requires either internal capability or a vendor partner. Most people leaders won't build them themselves. The value is in *sponsoring* and *defining* them — the IT team or partner builds them to your spec.
 
-**Critical:** Custom agents must be designed and tested for least-privilege access. Confirm whether each agent action runs with user-delegated permissions, agent/service credentials, or scoped data sources — Copilot Studio supports several patterns. An agent built for the CEO could potentially access what the CEO can access, but the design choices determine actual scope. Test access carefully before turning the agent live.
+**Critical:** Custom agents must be designed and tested for least-privilege access. Confirm whether each agent action runs with user-delegated permissions, agent/service credentials, or scoped data sources — Copilot Studio supports several patterns. An agent built for a people leader could potentially access what the leader can access, but the design choices determine actual scope. Test access carefully before turning the agent live — particularly for any agent that touches files about named team members.
 
 ---
 
-<h3 id="f-scheduled">Scheduled prompts — the executive's overnight assistant</h3>
+<h3 id="f-scheduled">Scheduled prompts — the people leader's overnight assistant</h3>
 
 **What it is:** A Copilot Chat prompt that runs automatically on a recurring schedule (daily, weekly, monthly) and delivers the output to your inbox without you opening Copilot.
 
-**Why it matters for executives:** This is the most under-used feature in M365 Copilot. Once you've set one up, your relationship with Copilot changes — from a tool you open to a recurring workflow that runs without you needing to remember.
+**Why it matters for people leaders:** This is the most under-used feature in M365 Copilot. Once you've set one up, your relationship with Copilot changes — from a tool you open to a recurring workflow that runs without you needing to remember.
 
 **Four patterns worth installing in your first month:**
 
 1. **Monday morning week-ahead briefing.** Every Monday 06:00:
 
-   > *Summarise last week's emails, meetings, and Teams chats from a project / customer / topic focus. What changed? What's pending my decision? What did I commit to that I haven't yet delivered? Email me a 1-page digest before standup.*
+   > *Summarise last week's emails, meetings, and Teams chats from my team and our key projects. What changed? What's pending my decision? What did I commit to that I haven't yet delivered? Email me a 1-page digest before standup.*
 
 2. **Friday afternoon plan-ahead.** Every Friday 16:00:
 
    > *Look at next week on my calendar. For each meeting, surface: what's the latest from each attendee, what we last left unresolved, what I might need to prepare. Email me a Monday-prep brief.*
 
-3. **Monthly briefing.** First business day of each month — a 7-section monthly executive briefing structured around: the number that matters most · three things going well · three things to be alert to · decisions waiting for you · customer pulse · team pulse · "what I'd flag if I were your Chief of Staff". Paste it straight into Copilot Chat's scheduling.
+3. **Monthly team-health briefing.** First business day of each month — a 7-section monthly briefing structured around: the number that matters most for the team · three things going well · three things to be alert to · decisions waiting for you · customer / stakeholder pulse · team pulse · "what I'd flag if I were your skip-level". Paste it straight into Copilot Chat's scheduling.
 
-4. **Quarterly board prep nudge.** Once each quarter, 5 days before the board meeting:
+4. **Quarterly check-in nudge.** Once each quarter, 5 days before the team's check-in cycle:
 
-   > *Review the last three board meeting recaps. List every commitment we made to the board that hasn't been formally closed out. For each, status, owner, and what to bring forward at next meeting.*
+   > *Review my 1:1 notes from this cycle. For each direct report, list the commitments they made, the development objectives we agreed, and any wins or struggles I noted. Format as one card per team member.*
 
 **The mental shift this enables:** Copilot becomes part of your weekly rhythm, not a tool you have to remember to open. The recurring brief arrives in your inbox without you triggering it.
 
@@ -1037,31 +1029,31 @@ Once these four facts are installed, the typical executive prompt drops from 4 l
 
 ---
 
-<h3 id="f-labels">Sensitivity labels — what executives need to know</h3>
+<h3 id="f-labels">Sensitivity labels — what people leaders need to know</h3>
 
 **What it is:** Sensitivity labels are a Microsoft Purview feature that classifies content (Public, General, Confidential, Strictly Confidential, etc.) and controls who can access and share it. Copilot respects labels, permissions, and Rights Management protections — confirm in your tenant exactly how generated files, Pages, and emails are labelled, because behaviour varies by surface and configuration.
 
-**Why it matters for executives:** This is the technical-sounding governance feature that determines whether your AI strategy is safe at scale. Get it right and you can let your organisation use Copilot freely on sensitive data. Get it wrong and Copilot becomes a leakage vector.
+**Why it matters for people leaders:** This is the technical-sounding governance feature that determines whether your team-related Copilot use is safe at scale. Get it right and you can use Copilot freely on 1:1 notes, performance prep, and hiring docs. Get it wrong and Copilot becomes a leakage vector for the most personal data you handle as a manager.
 
-**What you should ask your CIO:**
+**What you should ask your CIO or HR business partner:**
 
-1. **Do we have sensitivity labels defined?** Most organisations have 3-5 levels.
-2. **What's the default label for new content?** Microsoft's internal default is `Confidential\Internal Only`. Yours should be at least that strict.
+1. **Do we have sensitivity labels defined?** Most organisations have 3-5 levels. Check whether HR-related content (1:1 notes, performance prep, hiring docs) has its own label or sits under "Confidential".
+2. **What's the default label for new content?** Microsoft's internal default is `Confidential\Internal Only`. Anything you write about a named team member should be at least that strict.
 3. **Do labels flow through Copilot — and on which surfaces?** Labels are inherited *where supported* (typically Word, Outlook, and other native file outputs). Behaviour for Pages, Notebooks, and Chat-generated content can vary by tenant configuration. Get specifics from your IT team, surface by surface.
-4. **What happens when someone tries to share Strictly Confidential content?** There should be technical guardrails, not just policy.
+4. **What happens when someone tries to share Strictly Confidential content?** There should be technical guardrails, not just policy — particularly important for anything you've written about an individual team member.
 5. **How do we audit labelled content access?** Microsoft Purview gives you the visibility — make sure it's actually being reviewed.
 
 **For your own content:**
 
-- Label your inbox-saved drafts, especially anything pre-board or pre-release
-- Label any Pages you start with sensitive content
-- Label Notebooks for team prep cycles so the working surface inherits the right protection
+- Label your inbox-saved drafts, especially anything pre-promotion-cycle, pre-performance-cycle, or pre-hiring-decision
+- Label any Pages you start with team-member-named content
+- Label Notebooks for quarterly check-in prep cycles so the working surface inherits the right protection
 
-**Critical executive behaviour to model:**
+**Critical people-leader behaviour to model:**
 
-In your visible Copilot usage in front of the organisation, *explicitly call out labels*. "I'm using my Board Prep Notebook which is labelled Restricted. Anything I generate from this notebook should inherit that label where the surface supports it — Word documents, Outlook emails, and other native outputs typically do; confirm with your IT team how label inheritance behaves for Pages, Notebooks, and Copilot Chat exports in your tenant." This is a small thing that sets a big norm.
+In your visible Copilot usage in front of your team, *explicitly call out labels*. "I'm using a Notebook for my quarterly check-in prep which is labelled Restricted. Anything I generate from this notebook should inherit that label where the surface supports it — Word documents, Outlook emails, and other native outputs typically do; confirm with your IT team how label inheritance behaves for Pages, Notebooks, and Copilot Chat exports in your tenant." This is a small thing that sets a big norm — your team will trust you more with their data, not less, when they see you treat labels seriously.
 
-**Reading further:** The [SharePoint oversharing controls guide](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/) is the right next read for any executive responsible for information governance. The [content safety controls guide](/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins/) is the deeper technical companion.
+**Reading further:** The [SharePoint oversharing controls guide](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/) is the right next read for any leader responsible for sensitive team data. The [content safety controls guide](/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins/) is the deeper technical companion.
 
 ---
 
@@ -1142,9 +1134,11 @@ Six patterns repeat across people leader Copilot adoption — and they hold whet
 1. **The first month is small wins.** Drafting tax reduction, meeting prep, inbox triage. Don't try to do strategic work in week one — build the muscle on operational work first.
 2. **The second month is compounding.** Notebooks for repeating prep cycles, scheduled prompts for recurring rituals, memory installation for cross-session efficiency.
 3. **The third month is compounding.** Researcher for things you'd otherwise delegate. Analyst for things you'd otherwise commission. The shift from typing-tax assistant to thinking partner.
-4. **The sixth month is agents.** Custom agents for your unique recurring patterns. This is the executive-grade Copilot move that most leaders never reach.
+4. **The sixth month is agents.** Custom agents for your unique recurring patterns. This is the advanced Copilot move that most leaders never reach.
+
 5. **The hard line never moves.** Copilot drafts; you decide. Forever. In every role.
-6. **The most adoption-positive behaviour is visible failure-sharing.** Every executive who built a strong adoption culture in their division did this. The ones who tried to perform perfectly with Copilot left their teams quietly wondering why their own usage felt clunkier.
+
+6. **The most adoption-positive behaviour is visible failure-sharing.** Every leader who built a strong adoption culture on their team did this. The ones who tried to perform perfectly with Copilot left their teams quietly wondering why their own usage felt clunkier.
 
 ---
 
@@ -1383,7 +1377,7 @@ If you also want the 65+ executive prompt library (CEO · CFO · COO · CIO/CISO
 
 <h2 id="trust-deep">Trust, governance, accountability — the deeper picture</h2>
 
-The trust section earlier in this guide covered the essentials. This section unpacks the deeper picture for executives who are leading the governance conversation in their organisation — and that's most CEOs and CIOs at this point in the adoption curve.
+The trust section earlier in this guide covered the essentials. This section unpacks the deeper picture for leaders who are influencing the governance conversation in their organisation — for people leaders that means contributing to the manager-enablement track, partnering with HR on data handling, and modelling the right behaviours visibly. (For the full executive-grade governance picture — AI CoE, CEO/CIO accountability, group-licensing, regulator engagement — see the companion [Copilot for Executives Field Guide](/blog/copilot-for-executives-field-guide/).)
 
 ### The AI Centre of Excellence pattern
 
@@ -1397,15 +1391,15 @@ The CoE's job is to be the connective tissue between:
 
 Without a CoE, these conversations happen in separate rooms and the gaps are where adoption friction or governance failure lives.
 
-### The five governance questions every executive should be asking quarterly
+### The five governance questions every people leader should be asking quarterly
 
-These are the questions to put on your leadership team agenda once a quarter, regardless of who's the formal owner:
+These are the questions to put on your team or leadership-peer agenda once a quarter, regardless of who's the formal owner:
 
-1. **Adoption health.** What % of licensed users are active? Where are the dead pockets and what's the intervention plan?
-2. **Use-case quality.** What are the top 5 use cases by reported value, and what's the next 5 we're investing in?
-3. **Governance health.** What did the audit log surface this quarter? Any patterns that suggest policy refresh is needed?
-4. **Risk posture.** What's changed in the risk register? Where is the AI risk profile trending — better or worse?
-5. **Investment efficiency.** Are we spending appropriately on Copilot licenses vs. realised value? Are there agent investments we should make next quarter?
+1. **Adoption health on my team.** What % of my team are using Copilot regularly? Where are the dead pockets and what's my intervention plan as their manager?
+2. **Use-case quality.** What are the top 5 patterns my team has adopted, and which ones are saving them genuinely useful time vs. just adding novelty?
+3. **Governance health.** Am I or anyone on my team putting individual-data content into Copilot that shouldn't be there? Have I checked with HR recently on what the line is?
+4. **Trust posture with the team.** Have I been visibly modelling "Copilot drafts, you decide" in front of the team? Or have I slipped into letting Copilot do too much?
+5. **My own depth.** Am I still in the typing-tax phase of Copilot use, or have I moved into the thinking-partner phase (Researcher, Analyst, Notebooks for compounding cycles)?
 
 Five questions. Quarterly. Same five every time. The discipline of asking them consistently is the discipline. The answers will improve over time; the consistency of asking is what builds the muscle.
 
@@ -1419,23 +1413,24 @@ Microsoft's internal Customer Zero deployment ran in four phases (engineers → 
 - **Works councils and regional regulators are not afterthoughts.** Engage them early — particularly in Europe — to avoid late-stage rollout friction.
 - **The CEO and CIO are seen as accountable.** Even if delegated operationally, the visible accountability has to be at the top.
 
-### When NOT to use Copilot — the executive-level list
+### When NOT to use Copilot — the people-leader list
 
-The hard line is the foundational rule. Beyond it, three categories where the risk-reward is unfavourable enough that the discipline is "default to NOT using Copilot":
+The hard line is the foundational rule. Beyond it, four categories where the risk-reward is unfavourable enough that the discipline is "default to NOT using Copilot":
 
-1. **Disciplinary or grievance proceedings.** AI in the loop on an individual employee matter creates a defensibility problem. Use Copilot for general background reading only.
-2. **Market-sensitive timing decisions.** Trading update timing, M&A announcements, results day. The marginal value of AI is small; the risk if a prompt is later subpoenaed is real.
-3. **Anything you wouldn't want a transcript of your reasoning in a regulatory submission.** Copilot prompts are stored. If you'd be uncomfortable with the transcript being read back later, the conversation should happen elsewhere.
+1. **Disciplinary, grievance, or formal performance-improvement proceedings.** AI in the loop on an individual employee matter creates a defensibility problem. Use Copilot for general background reading only — never for drafting documents that will go into an HR file.
+2. **Reference checks (giving or receiving).** Don't use Copilot to draft what you'd say about a former direct report; don't use it to "summarise" a reference call you took on a candidate. Both create stored records of judgements about named individuals that don't belong in a Copilot transcript.
+3. **Anything you wouldn't want a transcript of in front of an employee, an HR audit, or a regulator.** Copilot prompts are stored. If you'd be uncomfortable with the transcript being read back later by the person you were writing about, the conversation should happen elsewhere.
+4. **Spontaneous emotional responses.** When a team member sends something that frustrates or upsets you, don't ask Copilot to "help me reply" in the moment. Sleep on it. Use Copilot the next morning for a calmer, more deliberate draft.
 
 ### The single most damaging governance failure pattern
 
 Most governance failures in Copilot deployments don't come from technical leakage — Microsoft's platform is well-engineered for that. They come from **cultural drift**:
 
-- Staff start treating Copilot's outputs as decisions rather than drafts.
-- Leaders stop reviewing AI-assisted work as carefully as they used to.
-- "Copilot said" becomes a perceived basis for action.
+- Team members start treating Copilot's outputs as decisions rather than drafts.
+- Managers stop reviewing AI-assisted work as carefully as they used to.
+- "Copilot said" becomes a perceived basis for action — including action about people.
 
-This is the pattern to watch for and counter. The behaviours that prevent it are in the *What executives must model* section earlier in this guide.
+This is the pattern to watch for and counter. The behaviours that prevent it are in the *What people leaders must model* section earlier in this guide.
 
 ---
 
@@ -1445,39 +1440,39 @@ Six failure patterns repeat across leadership Copilot adoption — executive and
 
 ### Pattern 1 — The Over-Enthusiast
 
-**What it looks like:** Executive becomes a vocal Copilot champion, uses it visibly, but stops applying editorial discipline. AI-generated content starts going out under their name with minimal review.
+**What it looks like:** Leader becomes a vocal Copilot champion, uses it visibly, but stops applying editorial discipline. AI-generated content starts going out under their name with minimal review.
 
-**What it costs:** Reputation damage when AI-shaped errors surface — a wrong customer name, a fabricated stat, an off-tone phrase that lands badly. Once the team perceives "they're not really reading what they sign", trust drops.
+**What it costs:** Reputation damage when AI-shaped errors surface — a wrong team member's name, a fabricated stat, an off-tone phrase that lands badly. Once the team perceives "they're not really reading what they sign", trust drops.
 
-**The fix:** A personal commitment to editorial discipline that the executive can verbalise. "I always edit. Always. Even when I'm tired." Make the commitment visible to your team. They'll calibrate.
+**The fix:** A personal commitment to editorial discipline that you can verbalise. "I always edit. Always. Even when I'm tired." Make the commitment visible to your team. They'll calibrate.
 
 ### Pattern 2 — The Silent Sceptic
 
-**What it looks like:** Executive privately uses Copilot but never speaks of it. Their team senses they don't endorse it, even though they technically permit it.
+**What it looks like:** Leader privately uses Copilot but never speaks of it. Their team senses they don't endorse it, even though they technically permit it.
 
-**What it costs:** Their team's adoption flat-lines. Without visible executive endorsement, middle managers err on the side of caution and don't push their teams either.
+**What it costs:** Their team's adoption flat-lines. Without visible leader endorsement, team members err on the side of caution and don't push themselves either.
 
-**The fix:** Pick one weekly all-hands or leadership meeting to share one specific Copilot use. Make it a habit. Even three minutes of "here's what I tried this week" shifts the cultural ground.
+**The fix:** Pick one weekly team meeting or 1:1 round to share one specific Copilot use. Make it a habit. Even three minutes of "here's what I tried this week" shifts the cultural ground.
 
 ### Pattern 3 — The Over-Delegator
 
-**What it looks like:** Executive treats Copilot as a junior they can outsource thinking to. "Copilot, what should we do about [strategic question]?" Then takes the answer as input to a decision.
+**What it looks like:** Leader treats Copilot as a junior they can outsource thinking to. "Copilot, what should I do about [team issue]?" Then takes the answer as input to a decision about a person.
 
-**What it costs:** Decisions made with shallower reasoning than the executive normally applies. Over time, the executive's thinking quality degrades because they're not exercising the muscle.
+**What it costs:** Decisions made with shallower reasoning than the leader normally applies. Over time, the leader's thinking quality degrades because they're not exercising the muscle — and team-level decisions are particularly costly to get wrong this way.
 
-**The fix:** Discipline of always asking Copilot for structured analysis, never for recommendation. "Compare for me, don't tell me." Restore the executive judgement as the place decisions happen.
+**The fix:** Discipline of always asking Copilot for structured analysis, never for recommendation. "Compare for me, don't tell me." Restore your judgement as the place decisions happen — especially decisions about people.
 
 ### Pattern 4 — The Under-Discloser
 
-**What it looks like:** Executive uses Copilot meaningfully for high-stakes work (board papers, regulator letters, customer responses) but doesn't disclose AI involvement when asked. Or worse, denies it.
+**What it looks like:** Leader uses Copilot meaningfully for important comms (performance prep, recognition messages, hiring docs) but doesn't disclose AI involvement when asked. Or worse, denies it.
 
-**What it costs:** When the AI involvement surfaces later (which it often does — colleagues, journalists, regulators ask), trust drops. The non-disclosure is the issue, not the use.
+**What it costs:** When the AI involvement surfaces later (which it often does — team members, HR, peers ask), trust drops. The non-disclosure is the issue, not the use.
 
-**The fix:** Default to transparency. "Yes, Copilot helped with the first draft; I edited it and own the final." This is the modelling that protects you and the organisation. Hiding AI use is the failure mode, not using AI.
+**The fix:** Default to transparency. "Yes, Copilot helped with the first draft; I edited it and own the final." This is the modelling that protects you and the team's trust. Hiding AI use is the failure mode, not using AI.
 
 ### Pattern 5 — The Experimenter-Without-Discipline
 
-**What it looks like:** Executive tries lots of Copilot things, doesn't stick with any. Three months in, they don't have habits, just dabbling.
+**What it looks like:** Leader tries lots of Copilot things, doesn't stick with any. Three months in, they don't have habits, just dabbling.
 
 **What it costs:** Plateau without compounding. The 30-day rhythm and the habit-building never lock in.
 
@@ -1485,11 +1480,11 @@ Six failure patterns repeat across leadership Copilot adoption — executive and
 
 ### Pattern 6 — The IT-Project Treator
 
-**What it looks like:** Executive treats Copilot rollout as an IT initiative. Delegates fully to the CIO. Doesn't visibly engage. Doesn't participate in shaping the AI Use Policy or the governance approach.
+**What it looks like:** Leader treats Copilot rollout as an IT initiative. Delegates fully to the CIO. Doesn't visibly engage. Doesn't participate in shaping the AI Use Policy or the governance approach.
 
-**What it costs:** Adoption stays operationally-driven, never gets the cultural lift that executive sponsorship provides. The CIO has to fight for engagement that should have been freely given.
+**What it costs:** Adoption stays operationally-driven, never gets the cultural lift that visible leader sponsorship provides. The CIO has to fight for engagement that should have been freely given.
 
-**The fix:** Executive sponsorship requires visible participation. Not "I support this" in a town hall — "I am personally involved in shaping how we use this safely and well, here's what I'm thinking, here's what I'm asking the team."
+**The fix:** Leader sponsorship requires visible participation. Not "I support this" in a team meeting — "I am personally involved in shaping how we use this safely and well on my team, here's what I'm thinking, here's what I'm asking the team."
 
 ---
 
