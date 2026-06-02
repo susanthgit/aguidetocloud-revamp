@@ -1,0 +1,168 @@
+# Executive prompt library — source of truth
+# Rendered via {{< prompt-pack file="executives" id="p-..." >}} shortcode
+# 6 packs · 60 prompts total
+
+[[pack]]
+id = "p-ceo"
+title = "CEO starter pack"
+count = 10
+persona = "ceo"
+
+[[pack.prompts]]
+text = "Summarise this board paper into a 90-second briefing structured as bottom line · options · risks · decisions required."
+[[pack.prompts]]
+text = "Make the strongest possible case for [the option I didn't recommend], using only the evidence in this paper."
+[[pack.prompts]]
+text = "Triage everything in my inbox from the last 24 hours. Show me only the 6-10 things that need my decision before noon."
+[[pack.prompts]]
+text = "Refine this town hall message — cut to under 200 words, replace every buzzword, add an acknowledgement, end with a specific ask."
+[[pack.prompts]]
+text = "Re-read this draft as if you were a sceptical [audience]. What lands? What feels hollow? Quote specific phrases."
+[[pack.prompts]]
+text = "I have a meeting in 45 minutes with [name] about [topic]. Pull the recent emails, files, and meeting notes. Give me a one-page brief."
+[[pack.prompts]]
+text = "Summarise this meeting into decisions · actions with owner and date · outstanding questions. Then add a fourth section — tone observations — anything that suggests under-the-surface tension."
+[[pack.prompts]]
+text = "Across the files in this notebook, what story is being told that we haven't yet explicitly named? Quote the supporting evidence."
+[[pack.prompts]]
+text = "What does this policy NOT cover that a CEO would expect it to cover? Be specific."
+[[pack.prompts]]
+text = "Set up a scheduled prompt: every Monday 06:00, email me a 1-page week-ahead briefing structured as [my preferred structure]. Save to drafts so I can edit before any onward send."
+
+[[pack]]
+id = "p-cfo"
+title = "CFO starter pack"
+count = 10
+persona = "cfo"
+
+[[pack.prompts]]
+text = "Analyse this Group P&L sheet. Write variance commentary for the board: top 5 variances over 5% by absolute impact, the story behind each, which most threaten our forecast. Plain English."
+[[pack.prompts]]
+text = "Compare these two versions of the forecast. What changed in assumption, not just figure?"
+[[pack.prompts]]
+text = "Model three scenarios — Base, Downside, Upside — using these assumptions. Show: Revenue, GP, Opex, EBITDA, EBITDA Margin. Which breaches the covenant floor? Show workings."
+annotation = "[→ Analyst]"
+[[pack.prompts]]
+text = "What's the single biggest sensitivity in the Downside scenario? If I could only protect ONE driver, which?"
+annotation = "[→ Analyst]"
+[[pack.prompts]]
+text = "Draft my CFO commentary for the trading update — paragraph 2 specifically. Direct about the EBITDA miss. No hedging. 80 words."
+[[pack.prompts]]
+text = "Compare these two investment business cases. Surface where they fundamentally disagree on inputs, not just outputs. Don't recommend."
+annotation = "[→ Analyst]"
+[[pack.prompts]]
+text = "Draft the response to the bank's covenant inquiry. Acknowledge the breach risk in Downside, explain the mitigation plan, propose a quarterly review cadence. House style: direct."
+[[pack.prompts]]
+text = "Pull the latest from FP&A on operating cash flow. Tell me where the working capital movements are most likely to surprise the board."
+[[pack.prompts]]
+text = "Read this draft regulator response from legal. Where is the tone lawyered when it should be CFO-on-the-record?"
+[[pack.prompts]]
+text = "Audit-trail summary — for any output above where I used Copilot meaningfully, document the source data, the prompt, the human review step, and the sign-off. Format for working papers."
+
+[[pack]]
+id = "p-coo"
+title = "COO starter pack"
+count = 10
+persona = "coo"
+
+[[pack.prompts]]
+text = "Summarise all bottleneck reports across our 12 hubs this month. For each, the data, the affected site, the proposed mitigation, the owner."
+[[pack.prompts]]
+text = "Across our 12 hubs, which has the largest variance in cost-per-parcel? What's the story behind each outlier?"
+[[pack.prompts]]
+text = "Draft an action plan for the Christchurch capacity issue. Immediate (7 days), short-term (30 days), medium-term (next quarter). Owner, dependency, success criterion for each."
+[[pack.prompts]]
+text = "Turn that action plan into a Teams Planner-ready format I can assign."
+[[pack.prompts]]
+text = "Pull from this week's ops review minutes. List every action that was assigned and is now overdue. Who, what, when, status."
+[[pack.prompts]]
+text = "Compare the safety incident reports from the last 12 months. Are there patterns — by site, by time of day, by shift handover? Quote specific incidents."
+[[pack.prompts]]
+text = "Looking at our supplier scorecard data, which suppliers have shown the largest service-level slippage this quarter? Story behind each."
+[[pack.prompts]]
+text = "Predictive logistics MVP — across the engineering updates, customer feedback, and competitor watch, what's the highest-confidence go/no-go signal for the August launch?"
+[[pack.prompts]]
+text = "Summarise the customer escalations that came through this week. By urgency, by customer, by the action needed from me."
+[[pack.prompts]]
+text = "Pull from my calendar next week. For each operations meeting, what should I be most prepared for? Surface anything from the last week's signals."
+
+[[pack]]
+id = "p-cio"
+title = "CIO / CISO starter pack"
+count = 10
+persona = "cio-ciso"
+
+[[pack.prompts]]
+text = "From Viva Insights, who has Copilot licenses but no active use? Group by division and by role. Recommended outreach approach for each group."
+[[pack.prompts]]
+text = "From the Purview oversharing report, which SharePoint sites have the largest cross-site sharing footprint that's inconsistent with their sensitivity? Top 10."
+[[pack.prompts]]
+text = "From the audit log, identify any Copilot prompts from the last 30 days that may have crossed our AI Use Policy guidance. Group by pattern. Don't name individuals — name patterns."
+[[pack.prompts]]
+text = "Brief the board on this quarter's Copilot adoption. Active users %, top-3 use cases by division, top-3 blockers we know about, top-3 actions for next quarter."
+[[pack.prompts]]
+text = "Draft the executive comms for the upcoming Copilot Studio agent governance framework. Plain English, frame as enablement not control."
+[[pack.prompts]]
+text = "For each of our 10 custom agents already live, check: who owns it, when it was last reviewed, what data it accesses, whether the access scope is still right."
+[[pack.prompts]]
+text = "Pull the latest from Microsoft Defender XDR on phishing patterns targeting our staff. Are any specifically targeting Copilot users? Patterns to watch?"
+[[pack.prompts]]
+text = "Draft the AI risk register update for risk committee. Include: data loss via consumer AI tools, oversharing surfaced via Copilot reasoning, prompt injection via document inputs, vendor concentration risk. Severity, mitigation, owner."
+[[pack.prompts]]
+text = "Review our incident response runbook. Where does it need AI-aware additions? Be specific — clauses, not principles."
+[[pack.prompts]]
+text = "Set up a scheduled prompt: monthly first business day, summarise our Copilot governance health — adoption, oversharing, audit log patterns, open governance actions. Email me a 1-page digest."
+
+[[pack]]
+id = "p-comms"
+title = "Leadership communication pack"
+count = 10
+persona = "leadership-comms"
+
+[[pack.prompts]]
+text = "Refine this town hall message: cut to <200 words, replace every buzzword, add a one-sentence acknowledgement of [the difficult thing], end with a specific ask."
+[[pack.prompts]]
+text = "Same message, more direct tone — the kind a CEO would use when they want the leadership team to read and act."
+[[pack.prompts]]
+text = "Same message, warmer tone — the kind a CEO would use when the audience needs to feel acknowledged before they hear the ask."
+[[pack.prompts]]
+text = "Draft a reply to this email from [counterparty]. Direct, candid, no defensiveness, no excuses. [Specific points to address]. End with a short acknowledgement of [tone point]. 3-4 short paragraphs."
+[[pack.prompts]]
+text = "Coach mode: read this draft I've prepared. Where am I being defensive or evasive without realising it? Where is a phrase soft when it should be direct? Quote specific phrases."
+[[pack.prompts]]
+text = "Draft the company-wide email announcing [the change]. Sections: what · why · what it means for you · what to do next · who to contact. Maximum 250 words. Plain English."
+[[pack.prompts]]
+text = "Draft three subject lines for the email above. One direct, one curiosity-driven, one neutral. Which is most likely to be opened?"
+[[pack.prompts]]
+text = "Draft my LinkedIn post on [topic]. Short. First-person. Avoid 'I'm thrilled to announce' / 'humbled to share' opening. Open with the substance, not the framing."
+[[pack.prompts]]
+text = "Read my draft customer letter. Where would a sceptical customer find the language soft or evasive? Quote specific phrases."
+[[pack.prompts]]
+text = "Draft my closing comments for [tomorrow's event]. 3 minutes spoken. One memorable line. No clichés."
+
+[[pack]]
+id = "p-think"
+title = "Thinking-partner pack"
+count = 10
+persona = "thinking-partner"
+
+[[pack.prompts]]
+text = "Play devil's advocate. Make the strongest possible case against [my recommendation], using only the evidence I've shared with you."
+[[pack.prompts]]
+text = "What am I most likely to be missing in this analysis? Be specific."
+[[pack.prompts]]
+text = "What's the second-order consequence of [the decision I'm considering] that I might not have thought about?"
+[[pack.prompts]]
+text = "Steelman [counterparty's position] for me. Make the strongest version of their argument, even if you disagree."
+[[pack.prompts]]
+text = "What's the pattern across all of these [emails / meetings / reports] that I might not be naming?"
+[[pack.prompts]]
+text = "Compare [Option A] and [Option B] across [dimensions]. Don't recommend. I'll decide."
+[[pack.prompts]]
+text = "If I'm wrong about [this assumption], what would the world look like in 6 months? Be specific."
+[[pack.prompts]]
+text = "What's the question I should be asking that I'm not asking?"
+[[pack.prompts]]
+text = "Quote me back the three lines from this document that I most need to take seriously, even if I'd rather not."
+[[pack.prompts]]
+text = "Summarise where my thinking has changed across this conversation. Where am I now compared to where I started?"

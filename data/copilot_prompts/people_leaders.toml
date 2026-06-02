@@ -1,0 +1,68 @@
+# People Leader prompt library — source of truth
+# Rendered via {{< prompt-pack file="people_leaders" id="p-pl" >}} shortcode
+# Edits here update both the blog inline AND any future /prompts/ standalone page
+
+[[pack]]
+id = "p-pl"
+title = "People Leader starter pack"
+count = 18
+persona = "people-leader"
+
+[[pack.prompts]]
+text = "I have my regular 1:1 tomorrow with [name]. Pull recent emails, meetings we've both been in, Teams chats, and any project status they've owned. Help me prepare: what they'll want to discuss, what I should be alert to, what I should ask them to think harder about, what I should explicitly acknowledge. Don't summarise their performance — help me prepare to listen."
+
+[[pack.prompts]]
+text = "Summarise this team meeting into: decisions made and by whom, commitments with owner and date, unresolved topics, and 'what I'd flag as a leader' — anything that suggests under-the-surface friction. Quote specific phrases."
+
+[[pack.prompts]]
+text = "Across the files in this [direct report]-check-in notebook, prepare me for the quarterly check-in: what they committed to and how it tracked, what they delivered beyond commitments, what they struggled with, what they've grown in, the three open questions I should bring. Don't recommend a rating — help me prepare to listen."
+
+[[pack.prompts]]
+text = "Draft a thank-you message to [name] recognising [specific work]. Tone: specific, warm, no corporate clichés. Three short paragraphs: what they did, why it mattered, what I want them to know about how I see them. Plain English."
+
+[[pack.prompts]]
+text = "I need to give difficult feedback to [name] about [topic]. Help me prepare: the specific evidence in plain language, the impact on team/work/person, what I want them to do differently as a request not a verdict, the questions I should be ready to answer about my own role, what I should NOT say even if true."
+
+[[pack.prompts]]
+text = "Help me prepare a structured hiring brief for [role]. Use the intake notes attached. Sections: role purpose in 2 sentences, 3 must-have skills with one behavioural question per skill that tests without leading, 3 nice-to-have skills, 5 inclusive behavioural questions to ask all candidates consistently (focus on the work, not 'culture fit'), 3 topics where unsolicited examples would be useful signal. Don't suggest candidates, scoring rubrics, or ranking guidance."
+
+[[pack.prompts]]
+text = "Help me prepare a coaching conversation with [name] about [topic]. Structure: specific moments I've observed, two or three reasons from their perspective, open questions to explore together, what I could offer to help, how I want them to leave feeling. Real conversation guide, not a checklist."
+
+[[pack.prompts]]
+text = "Across my team's collaboration patterns from the last 4 weeks, what signals suggest wellbeing or morale is shifting? Patterns only, never individuals. Quote evidence. Suggest 3 questions for my next 1:1 round that explore the patterns without leading the witness."
+
+[[pack.prompts]]
+text = "Looking at my calendar, sent emails, and Teams messages from the last 2 weeks, draft my fortnightly status update for [manager name]. Sections: 3 things shipped, 3 in flight with dates, decisions I'm asking for, people/capacity signals, what's next. Maximum 350 words. Save to drafts."
+
+[[pack.prompts]]
+text = "[Name] joins the team Monday. Generate the onboarding pack: welcome email from me, team announcement, week-1 calendar with recommended 1:1s, curated reading list of top 5 docs, 30/60/90-day check-in template. All as drafts."
+
+[[pack.prompts]]
+text = "Help me prepare for a career conversation with [name]. Sections: strengths I see with examples, development areas I see with honesty, two or three plausible next-step paths, questions to ask them to lead the conversation, resources I'm ready to offer. No corporate framework — a real conversation."
+
+[[pack.prompts]]
+text = "Across my team's recent project activity, meeting load, and email volume, describe the workload picture. Who's carrying the heaviest load and why, who has spare capacity, any over-collaboration patterns, any patterns suggesting someone is over-extending silently. Don't recommend reassignments."
+
+[[pack.prompts]]
+text = "Draft 5 candidate OKRs for my team this quarter, based on our function's outcomes, current projects, and skip-level priorities. For each: objective in plain English, 3 key results with measurable thresholds, best-positioned owner, honest difficulty read. Don't pick which 3 we'll commit to — help me prepare candidates for the goal-setting session."
+
+[[pack.prompts]]
+text = "Set up a scheduled prompt: every Monday 06:00, pull last week's team activity (meetings I led, decisions made, emails sent on team's behalf, customer escalations if any), and draft my Monday team standup briefing — what we shipped, what's open, what I want the team focusing on. Save to drafts so I can edit."
+
+[[pack.prompts]]
+text = "Across all the files I've been writing about [direct report] over the past quarter (1:1 notes, meeting recaps, feedback I've drafted but not sent), what's the pattern of growth I'm seeing? What's the pattern of friction? What should I bring to their next check-in that I might be forgetting?"
+
+# NEW prompts added 3 Jun 2026 — calendar audit · 1:1 cadence drift · comms audit (drafted by Atlas, voice-checked by Sush this session)
+
+[[pack.prompts]]
+text = "Look at my calendar across the last 8 weeks. Show me where my time has actually gone, by category — 1:1s with direct reports · skip-levels · team meetings I led · cross-functional meetings I attended · internal admin · external (customer/partner/exec sponsor). Don't recommend changes. Just show me the picture honestly, and flag any week where the mix looks meaningfully different from the others."
+note = "Calendar audit — for surfacing how your time-spend has actually drifted from how you THINK you're spending it"
+
+[[pack.prompts]]
+text = "For each of my direct reports, when was our last actual (not just scheduled) 1:1, how often have we been meeting on average over the last 12 weeks, and how does that compare to the cadence I told them to expect when they joined the team or moved into the role. Don't tell me who to prioritise — show me where the cadence drift is worst and let me decide."
+note = "1:1 cadence drift — for catching when 'we'll meet every fortnight' has quietly become 'we last met 6 weeks ago'"
+
+[[pack.prompts]]
+text = "Across the messages I've sent to my team — Teams, email, channel posts — in the last 4 weeks, what's the pattern of how I'm communicating? Tone signals (warmth, urgency, directiveness), the topics I keep returning to, the ones I'm avoiding (compared to what my direct reports are raising in their updates), and the gap between how often I message individuals vs the group. Patterns only, no individual call-outs. Don't tell me what to do — that's my conversation to have, not yours."
+note = "Comms audit — for noticing the leadership signals you're sending that you didn't realise you were sending"

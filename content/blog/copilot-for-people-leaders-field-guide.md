@@ -1241,37 +1241,7 @@ If you also want the 65+ executive prompt library (CEO · CFO · COO · CIO/CISO
 
 ---
 
-<h3 id="p-pl">People Leader starter pack (15 prompts)</h3>
-
-1. *"I have my regular 1:1 tomorrow with [name]. Pull recent emails, meetings we've both been in, Teams chats, and any project status they've owned. Help me prepare: what they'll want to discuss, what I should be alert to, what I should ask them to think harder about, what I should explicitly acknowledge. Don't summarise their performance — help me prepare to listen."*
-
-2. *"Summarise this team meeting into: decisions made and by whom, commitments with owner and date, unresolved topics, and 'what I'd flag as a leader' — anything that suggests under-the-surface friction. Quote specific phrases."*
-
-3. *"Across the files in this [direct report]-check-in notebook, prepare me for the quarterly check-in: what they committed to and how it tracked, what they delivered beyond commitments, what they struggled with, what they've grown in, the three open questions I should bring. Don't recommend a rating — help me prepare to listen."*
-
-4. *"Draft a thank-you message to [name] recognising [specific work]. Tone: specific, warm, no corporate clichés. Three short paragraphs: what they did, why it mattered, what I want them to know about how I see them. Plain English."*
-
-5. *"I need to give difficult feedback to [name] about [topic]. Help me prepare: the specific evidence in plain language, the impact on team/work/person, what I want them to do differently as a request not a verdict, the questions I should be ready to answer about my own role, what I should NOT say even if true."*
-
-6. *"Help me prepare a structured hiring brief for [role]. Use the intake notes attached. Sections: role purpose in 2 sentences, 3 must-have skills with one behavioural question per skill that tests without leading, 3 nice-to-have skills, 5 inclusive behavioural questions to ask all candidates consistently (focus on the work, not 'culture fit'), 3 topics where unsolicited examples would be useful signal. Don't suggest candidates, scoring rubrics, or ranking guidance."*
-
-7. *"Help me prepare a coaching conversation with [name] about [topic]. Structure: specific moments I've observed, two or three reasons from their perspective, open questions to explore together, what I could offer to help, how I want them to leave feeling. Real conversation guide, not a checklist."*
-
-8. *"Across my team's collaboration patterns from the last 4 weeks, what signals suggest wellbeing or morale is shifting? Patterns only, never individuals. Quote evidence. Suggest 3 questions for my next 1:1 round that explore the patterns without leading the witness."*
-
-9. *"Looking at my calendar, sent emails, and Teams messages from the last 2 weeks, draft my fortnightly status update for [manager name]. Sections: 3 things shipped, 3 in flight with dates, decisions I'm asking for, people/capacity signals, what's next. Maximum 350 words. Save to drafts."*
-
-10. *"[Name] joins the team Monday. Generate the onboarding pack: welcome email from me, team announcement, week-1 calendar with recommended 1:1s, curated reading list of top 5 docs, 30/60/90-day check-in template. All as drafts."*
-
-11. *"Help me prepare for a career conversation with [name]. Sections: strengths I see with examples, development areas I see with honesty, two or three plausible next-step paths, questions to ask them to lead the conversation, resources I'm ready to offer. No corporate framework — a real conversation."*
-
-12. *"Across my team's recent project activity, meeting load, and email volume, describe the workload picture. Who's carrying the heaviest load and why, who has spare capacity, any over-collaboration patterns, any patterns suggesting someone is over-extending silently. Don't recommend reassignments."*
-
-13. *"Draft 5 candidate OKRs for my team this quarter, based on our function's outcomes, current projects, and skip-level priorities. For each: objective in plain English, 3 key results with measurable thresholds, best-positioned owner, honest difficulty read. Don't pick which 3 we'll commit to — help me prepare candidates for the goal-setting session."*
-
-14. *"Set up a scheduled prompt: every Monday 06:00, pull last week's team activity (meetings I led, decisions made, emails sent on team's behalf, customer escalations if any), and draft my Monday team standup briefing — what we shipped, what's open, what I want the team focusing on. Save to drafts so I can edit."*
-
-15. *"Across all the files I've been writing about [direct report] over the past quarter (1:1 notes, meeting recaps, feedback I've drafted but not sent), what's the pattern of growth I'm seeing? What's the pattern of friction? What should I bring to their next check-in that I might be forgetting?"*
+{{< prompt-pack file="people_leaders" id="p-pl" >}}
 
 ---
 
@@ -1281,15 +1251,7 @@ The trust section earlier in this guide covered the essentials. This section unp
 
 ### The AI Centre of Excellence pattern
 
-Microsoft's enterprise-wide deployment (300,000+ employees and external staff) centred on an internal AI Centre of Excellence (CoE) bringing together IT, HR, Legal, Security, Communications, and senior business representation. This is the canonical pattern for organisations above ~500 staff. Smaller organisations can adopt a lighter version — a virtual team with monthly cadence and one named accountable executive.
-
-The CoE's job is to be the connective tissue between:
-- The technical platform (governed by IT/security)
-- The behavioural rollout (driven by HR, Comms, business)
-- The risk posture (curated by Legal, Compliance, Risk)
-- The use-case acceleration (sponsored by business leaders)
-
-Without a CoE, these conversations happen in separate rooms and the gaps are where adoption friction or governance failure lives.
+Microsoft's AI CoE pattern — the internal Centre of Excellence bringing IT, HR, Legal, Security, Communications, and senior business representation together as the connective tissue across platform · behavioural rollout · risk posture · use-case acceleration — is documented in detail in the [exec guide governance section](/blog/copilot-for-executives-field-guide/#trust-deep). For people leaders, the implication is that you're one of the seats around the table: contributing to the manager-enablement track, partnering with HR on data handling, and being the visible signal of how the policy lands inside the team.
 
 ### The five governance questions every people leader should be asking quarterly
 
@@ -1305,13 +1267,7 @@ Five questions. Quarterly. Same five every time. The discipline of asking them c
 
 ### What the Microsoft Customer Zero deployment learned (and what to lift)
 
-Microsoft's internal Customer Zero deployment ran in four phases (engineers → sales/marketing → support/HR/legal/security → all-staff). The lessons worth lifting for any organisation:
-
-- **Pre-adoption comms strategy is the most underrated work.** Most early support requests are "when do I get access?" Plan for this; pre-write the responses.
-- **Top-down sensitivity label defaults.** Default everything to "Confidential\Internal Only" or stricter. It's the foundation everything else stands on.
-- **Group-based licensing.** Don't license user-by-user; license by group. Keeps the licensing aligned with business intent, makes scaling cheap, lets you adjust quickly.
-- **Works councils and regional regulators are not afterthoughts.** Engage them early — particularly in Europe — to avoid late-stage rollout friction.
-- **The CEO and CIO are seen as accountable.** Even if delegated operationally, the visible accountability has to be at the top.
+The full Customer Zero lessons — four-phase rollout, group-based licensing, works councils, CEO/CIO accountability — sit in the [exec guide governance section](/blog/copilot-for-executives-field-guide/#trust-deep). The single lesson worth lifting specifically into your manager toolkit: **top-down sensitivity label defaults** ("Confidential\Internal Only" or stricter as the default) — that one decision protects your team's pasting habits from day one, before any 1:1 about Copilot etiquette is even necessary.
 
 ### When NOT to use Copilot — the people-leader list
 

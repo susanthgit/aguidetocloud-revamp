@@ -102,7 +102,7 @@ This is that framing. It's what I'd say if I had 45 minutes with you and one whi
 **🗂 Reference — come back when you need a specific thing**
 
 - **Features:** [Copilot Chat](#f-chat) · [Outlook](#f-outlook) · [Teams](#f-teams) · [Word](#f-word) · [Excel](#f-excel) · [PowerPoint](#f-ppt) · [Researcher](#f-researcher) · [Analyst](#f-analyst) · [Cowork](#f-cowork) · [Notebooks](#f-notebooks) · [Pages](#f-pages) · [Search](#f-search) · [Memory](#f-memory) · [Custom agents](#f-agents) · [Scheduled prompts](#f-scheduled) · [Sensitivity labels](#f-labels)
-- **C-suite playbooks:** [CEO](#r-ceo) · [CFO](#r-cfo) · [COO](#r-coo) · [CIO/CTO](#r-cio) · [CHRO](#r-chro) · [CMO](#r-cmo) · [CISO](#r-ciso) · [CSO/CRO](#r-cso) · [Board](#r-board) · [Chief of Staff / EA](#r-eoc)
+- **C-suite playbooks:** [CEO](#r-ceo) · [CFO](#r-cfo) · [COO](#r-coo) · [CIO/CTO](#r-cio) · [CHRO](#r-chro) · [CMO](#r-cmo) · [CISO](#r-ciso) · [CSO/CRO](#r-cso) · [Board](#r-board) · [Chief of Staff / EA](#r-eoc) · [You're also a people leader](#r-pl-exec)
 - **Use-case clusters:** [1 Strategy](#u1) · [2 Comms](#u2) · [3 Time & Meetings](#u3) · [4 Notebooks](#u4) · [5 Researcher/Analyst](#u5) · [6 Search](#u6) · [7 Cowork](#u7)
 - **Scenarios + prompts:** [20 exec scenarios](#scenarios) · [60+ prompt library](#prompts) · [Three prompt patterns](#patterns)
 - **Governance:** [Trust essentials](#trust) · [Trust deep](#trust-deep) · [What to model](#model) · [Failure patterns](#failures)
@@ -1216,6 +1216,38 @@ Six patterns repeat across every executive role, regardless of seat at the table
 
 ---
 
+<h2 id="r-pl-exec">👥 You are also a people leader (probably)</h2>
+
+Most executives don't ONLY do executive work. You almost certainly have 4-15 direct reports who are themselves managers, and you almost certainly do 1:1s, recognition, hiring, performance check-ins, and skip-level conversations as part of your week. The patterns in the [Copilot for People Leaders Field Guide](/blog/copilot-for-people-leaders-field-guide/) all apply — but here are 3 of the highest-leverage PL scenarios calibrated for the manager-of-managers level. The full playbook is the companion guide.
+
+### 1:1 with a manager direct report
+
+The PL field guide covers the 1:1 prep flow. The exec twist: you're not asking "how is your team doing" (that's their job to know), you're asking "what's developing your leaders". Reframe the Copilot prompt accordingly.
+
+> *"My 1:1 with [manager's name] is tomorrow. Look at their team's outputs this fortnight (status updates, project shipments, any wins they've shared), the team-health signals from their last 1:1 with me, and the 2-3 things I've been asking them to develop. Give me a structured 30-min agenda focused on: (1) what's the highest-leverage stretch I'm under-asking from them, (2) where might they be over-protecting their team from useful pressure, (3) what's the one feedback they'd benefit most from hearing from me. Don't tell me to do or say anything — just surface the picture."*
+
+This is where Copilot's value compounds most for execs — your direct reports are themselves time-constrained leaders, and your 30 minutes a fortnight is the highest-leverage development you give them. Don't outsource the conversation; do use Copilot to make sure you walk in already noticing what they'd be working hardest to articulate themselves.
+
+### Recognition for a leader's team win
+
+When a leader on your team has shipped something significant, the standard recognition is "congrats to the team". The recognition that actually develops the leader is recognition of HOW they set their team up to win — what they delegated and to whom, what they protected, what they pushed back on. Copilot is built for this kind of synthesis.
+
+> *"[Leader's name] just shipped [project / milestone]. Look at the team's contributions across SharePoint and Teams over the past quarter, and the patterns of how [leader's name] has been delegating, recognising, and removing blockers. Draft a 4-sentence Teams DM to them that names what they DID specifically as a leader (not what the team delivered). Warm but specific. No clichés (no 'crushing it', no 'leveraged', no 'doubling down'). Include one observation about a leadership choice they made that I want them to keep doing."*
+
+The output is rarely send-as-is. The structured noticing it forces — what did this leader actually do that made the team's work possible — is half the value, even before you edit it into your voice.
+
+### Skip-level prep
+
+Skip-levels are the highest-leverage cultural-health signal an exec has, AND they're the hardest to prep — because the patterns that matter are the ones that DON'T appear in your direct reports' status updates. Copilot's synthesis is genuinely useful here, pulling threads across multiple skip-level signals to surface the "what's the pattern" question for you.
+
+> *"I have skip-level conversations with [team A, B, C] this month. Look at the recent meeting summaries, project updates, and any Teams chats my direct reports have in those team channels. Don't tell me who's struggling or who's leading. Show me: (1) which themes are being raised at the team layer that haven't surfaced in my 1:1s with their managers, (2) which questions team members are asking that suggest they don't have full context from their manager, (3) where the leader's voice is consistently positive while the team's signals are mixed. Patterns only, no recommendations about individuals."*
+
+The hard discipline is the same as elsewhere in this guide — Copilot surfaces the picture, you decide what to do with it. Skip-levels are where that discipline matters most because the conversation is one-on-one with a junior team member who has no idea you've been doing Copilot synthesis on their team's signals. They deserve your full presence in that conversation, not a recital of what Copilot told you about their reality.
+
+> 📖 **Want the full PL playbook?** Sush's [Copilot for People Leaders Field Guide](/blog/copilot-for-people-leaders-field-guide/) is the companion piece — 16 features calibrated for managers, the People Leader role playbook, 13 named PL scenarios (1:1 prep · team recap · performance check-in · recognition · feedback · hiring · coaching · wellbeing · status update · onboarding · career · workload · OKRs), 18 PL prompts (now including calendar audit · 1:1 cadence drift · comms audit), and a first-90-days starter for new managers.
+
+---
+
 <h2 id="scenarios">Scenario library — 20 named executive scenarios</h2>
 
 The patterns above give you the *how*. This section gives you the *when* — twenty named scenarios that recur in executive work, with the prompt scaffolding that lands first time. Bookmark this section; the patterns repeat.
@@ -1507,93 +1539,27 @@ A copy-paste library of prompts that have landed well in real executive sessions
 
 ---
 
-<h3 id="p-ceo">CEO starter pack (10 prompts)</h3>
-
-1. *"Summarise this board paper into a 90-second briefing structured as bottom line · options · risks · decisions required."*
-2. *"Make the strongest possible case for [the option I didn't recommend], using only the evidence in this paper."*
-3. *"Triage everything in my inbox from the last 24 hours. Show me only the 6-10 things that need my decision before noon."*
-4. *"Refine this town hall message — cut to under 200 words, replace every buzzword, add an acknowledgement, end with a specific ask."*
-5. *"Re-read this draft as if you were a sceptical [audience]. What lands? What feels hollow? Quote specific phrases."*
-6. *"I have a meeting in 45 minutes with [name] about [topic]. Pull the recent emails, files, and meeting notes. Give me a one-page brief."*
-7. *"Summarise this meeting into decisions · actions with owner and date · outstanding questions. Then add a fourth section — tone observations — anything that suggests under-the-surface tension."*
-8. *"Across the files in this notebook, what story is being told that we haven't yet explicitly named? Quote the supporting evidence."*
-9. *"What does this policy NOT cover that a CEO would expect it to cover? Be specific."*
-10. *"Set up a scheduled prompt: every Monday 06:00, email me a 1-page week-ahead briefing structured as [my preferred structure]. Save to drafts so I can edit before any onward send."*
+{{< prompt-pack file="executives" id="p-ceo" >}}
 
 ---
 
-<h3 id="p-cfo">CFO starter pack (10 prompts)</h3>
-
-1. *"Analyse this Group P&L sheet. Write variance commentary for the board: top 5 variances over 5% by absolute impact, the story behind each, which most threaten our forecast. Plain English."*
-2. *"Compare these two versions of the forecast. What changed in assumption, not just figure?"*
-3. *"Model three scenarios — Base, Downside, Upside — using these assumptions. Show: Revenue, GP, Opex, EBITDA, EBITDA Margin. Which breaches the covenant floor? Show workings." [→ Analyst]*
-4. *"What's the single biggest sensitivity in the Downside scenario? If I could only protect ONE driver, which?" [→ Analyst]*
-5. *"Draft my CFO commentary for the trading update — paragraph 2 specifically. Direct about the EBITDA miss. No hedging. 80 words."*
-6. *"Compare these two investment business cases. Surface where they fundamentally disagree on inputs, not just outputs. Don't recommend." [→ Analyst]*
-7. *"Draft the response to the bank's covenant inquiry. Acknowledge the breach risk in Downside, explain the mitigation plan, propose a quarterly review cadence. House style: direct."*
-8. *"Pull the latest from FP&A on operating cash flow. Tell me where the working capital movements are most likely to surprise the board."*
-9. *"Read this draft regulator response from legal. Where is the tone lawyered when it should be CFO-on-the-record?"*
-10. *"Audit-trail summary — for any output above where I used Copilot meaningfully, document the source data, the prompt, the human review step, and the sign-off. Format for working papers."*
+{{< prompt-pack file="executives" id="p-cfo" >}}
 
 ---
 
-<h3 id="p-coo">COO starter pack (10 prompts)</h3>
-
-1. *"Summarise all bottleneck reports across our 12 hubs this month. For each, the data, the affected site, the proposed mitigation, the owner."*
-2. *"Across our 12 hubs, which has the largest variance in cost-per-parcel? What's the story behind each outlier?"*
-3. *"Draft an action plan for the Christchurch capacity issue. Immediate (7 days), short-term (30 days), medium-term (next quarter). Owner, dependency, success criterion for each."*
-4. *"Turn that action plan into a Teams Planner-ready format I can assign."*
-5. *"Pull from this week's ops review minutes. List every action that was assigned and is now overdue. Who, what, when, status."*
-6. *"Compare the safety incident reports from the last 12 months. Are there patterns — by site, by time of day, by shift handover? Quote specific incidents."*
-7. *"Looking at our supplier scorecard data, which suppliers have shown the largest service-level slippage this quarter? Story behind each."*
-8. *"Predictive logistics MVP — across the engineering updates, customer feedback, and competitor watch, what's the highest-confidence go/no-go signal for the August launch?"*
-9. *"Summarise the customer escalations that came through this week. By urgency, by customer, by the action needed from me."*
-10. *"Pull from my calendar next week. For each operations meeting, what should I be most prepared for? Surface anything from the last week's signals."*
+{{< prompt-pack file="executives" id="p-coo" >}}
 
 ---
 
-<h3 id="p-cio">CIO / CISO starter pack (10 prompts)</h3>
-
-1. *"From Viva Insights, who has Copilot licenses but no active use? Group by division and by role. Recommended outreach approach for each group."*
-2. *"From the Purview oversharing report, which SharePoint sites have the largest cross-site sharing footprint that's inconsistent with their sensitivity? Top 10."*
-3. *"From the audit log, identify any Copilot prompts from the last 30 days that may have crossed our AI Use Policy guidance. Group by pattern. Don't name individuals — name patterns."*
-4. *"Brief the board on this quarter's Copilot adoption. Active users %, top-3 use cases by division, top-3 blockers we know about, top-3 actions for next quarter."*
-5. *"Draft the executive comms for the upcoming Copilot Studio agent governance framework. Plain English, frame as enablement not control."*
-6. *"For each of our 10 custom agents already live, check: who owns it, when it was last reviewed, what data it accesses, whether the access scope is still right."*
-7. *"Pull the latest from Microsoft Defender XDR on phishing patterns targeting our staff. Are any specifically targeting Copilot users? Patterns to watch?"*
-8. *"Draft the AI risk register update for risk committee. Include: data loss via consumer AI tools, oversharing surfaced via Copilot reasoning, prompt injection via document inputs, vendor concentration risk. Severity, mitigation, owner."*
-9. *"Review our incident response runbook. Where does it need AI-aware additions? Be specific — clauses, not principles."*
-10. *"Set up a scheduled prompt: monthly first business day, summarise our Copilot governance health — adoption, oversharing, audit log patterns, open governance actions. Email me a 1-page digest."*
+{{< prompt-pack file="executives" id="p-cio" >}}
 
 ---
 
-<h3 id="p-comms">Leadership communication pack (10 prompts)</h3>
-
-1. *"Refine this town hall message: cut to <200 words, replace every buzzword, add a one-sentence acknowledgement of [the difficult thing], end with a specific ask."*
-2. *"Same message, more direct tone — the kind a CEO would use when they want the leadership team to read and act."*
-3. *"Same message, warmer tone — the kind a CEO would use when the audience needs to feel acknowledged before they hear the ask."*
-4. *"Draft a reply to this email from [counterparty]. Direct, candid, no defensiveness, no excuses. [Specific points to address]. End with a short acknowledgement of [tone point]. 3-4 short paragraphs."*
-5. *"Coach mode: read this draft I've prepared. Where am I being defensive or evasive without realising it? Where is a phrase soft when it should be direct? Quote specific phrases."*
-6. *"Draft the company-wide email announcing [the change]. Sections: what · why · what it means for you · what to do next · who to contact. Maximum 250 words. Plain English."*
-7. *"Draft three subject lines for the email above. One direct, one curiosity-driven, one neutral. Which is most likely to be opened?"*
-8. *"Draft my LinkedIn post on [topic]. Short. First-person. Avoid 'I'm thrilled to announce' / 'humbled to share' opening. Open with the substance, not the framing."*
-9. *"Read my draft customer letter. Where would a sceptical customer find the language soft or evasive? Quote specific phrases."*
-10. *"Draft my closing comments for [tomorrow's event]. 3 minutes spoken. One memorable line. No clichés."*
+{{< prompt-pack file="executives" id="p-comms" >}}
 
 ---
 
-<h3 id="p-think">Thinking-partner pack (10 prompts)</h3>
-
-1. *"Play devil's advocate. Make the strongest possible case against [my recommendation], using only the evidence I've shared with you."*
-2. *"What am I most likely to be missing in this analysis? Be specific."*
-3. *"What's the second-order consequence of [the decision I'm considering] that I might not have thought about?"*
-4. *"Steelman [counterparty's position] for me. Make the strongest version of their argument, even if you disagree."*
-5. *"What's the pattern across all of these [emails / meetings / reports] that I might not be naming?"*
-6. *"Compare [Option A] and [Option B] across [dimensions]. Don't recommend. I'll decide."*
-7. *"If I'm wrong about [this assumption], what would the world look like in 6 months? Be specific."*
-8. *"What's the question I should be asking that I'm not asking?"*
-9. *"Quote me back the three lines from this document that I most need to take seriously, even if I'd rather not."*
-10. *"Summarise where my thinking has changed across this conversation. Where am I now compared to where I started?"*
+{{< prompt-pack file="executives" id="p-think" >}}
 
 ---
 

@@ -1,0 +1,30 @@
+{{- /* Prompt pack — renders a numbered prompt library section from a data file.
+       Usage: {{< prompt-pack file="people_leaders" id="p-pl" >}}
+              {{< prompt-pack file="executives" id="p-ceo" >}}
+       Reads from: site.Data.copilot_prompts.<file>
+       Renders: <h3> + numbered ordered list with each prompt as italic quote.
+       Source-of-truth for prompts; future /prompts/ standalone page can render the same data.
+       Added 3 Jun 2026 — Phase 3 prompt library spinoff (Option C). */ -}}
+{{- $file := .Get "file" -}}
+{{- $id := .Get "id" -}}
+{{- $data := index site.Data.copilot_prompts $file -}}
+{{- $matched := false -}}
+{{- range $data.pack -}}
+  {{- if eq .id $id -}}
+    {{- $matched = true -}}
+<section class="prompt-pack" id="{{ .id }}">
+<h3 class="prompt-pack-title">{{ .title }} ({{ .count }} prompts)</h3>
+{{- with .intro }}
+<p class="prompt-pack-intro">{{ . | markdownify }}</p>
+{{- end }}
+<ol class="prompt-pack-list">
+{{- range .prompts }}
+<li class="prompt-pack-item"><em>&ldquo;{{ .text }}&rdquo;</em>{{ with .annotation }} <span class="prompt-annotation">{{ . }}</span>{{ end }}{{ with .note }}<div class="prompt-note">{{ . }}</div>{{ end }}</li>
+{{- end }}
+</ol>
+</section>
+  {{- end -}}
+{{- end -}}
+{{- if not $matched -}}
+<p class="prompt-pack-error">⚠️ Prompt pack <code>{{ $id }}</code> not found in <code>data/copilot_prompts/{{ $file }}.toml</code></p>
+{{- end -}}
