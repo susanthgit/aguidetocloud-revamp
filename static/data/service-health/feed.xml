@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 03 Jun 2026 11:21:29 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2026 17:12:24 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Defender XDR] Some admins may be unable to access and manage configured GDAP tenants in Microsoft Defender</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1333265</link>
+      <description>[Microsoft Defender XDR] Admins may be unable to access and manage configured GDAP tenants in Microsoft Defender.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">DZ1333265</guid>
+      <pubDate>Wed, 03 Jun 2026 10:43:36 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may see latency when using tools and chats in the Microsoft 365 Copilot app</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1332829</link>
@@ -15,15 +24,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1332829</guid>
       <pubDate>Tue, 02 Jun 2026 22:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some users' Windows devices with policies configured to prevent auto updates may be installing drivers</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1332784</link>
-      <description>[Microsoft 365 suite] Users' Windows devices with configured policies to prevent auto updates might be installing drivers. </description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MO1332784</guid>
-      <pubDate>Tue, 02 Jun 2026 20:30:15 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] We're looking into a potential problem impacting Microsoft 365 Copilot</title>
@@ -42,6 +42,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1331639</guid>
       <pubDate>Tue, 02 Jun 2026 13:55:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Some users' Windows devices with policies configured to prevent auto updates may be installing drivers</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1332784</link>
+      <description>[Microsoft 365 suite] Users' Windows devices with configured policies to prevent auto updates might be installing drivers. </description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1332784</guid>
+      <pubDate>Tue, 02 Jun 2026 13:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may intermittently be unable to complete Microsoft 365 Copilot requests or receive responses</title>
@@ -75,9 +84,9 @@
       <link>https://www.aguidetocloud.com/service-health/#MO1329260</link>
       <description>[Microsoft 365 suite] Users may have been unable to setup MFA or access the mysignins.microsoft.com website.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1329260</guid>
-      <pubDate>Mon, 01 Jun 2026 05:50:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jun 2026 07:05:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may be unable to create new online meetings from shared calendar events in Exchange Online</title>
@@ -209,15 +218,6 @@ We detected this issue through our automated monitoring systems after observing 
       <pubDate>Wed, 20 May 2026 07:30:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users' draft generation prompts to Microsoft 365 Copilot may not complete in the classic Outlook desktop app Build 2605</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1324075</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users' draft generation prompts to Copilot may not have completed in the classic Outlook desktop app Build 2605.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">CP1324075</guid>
-      <pubDate>Wed, 20 May 2026 01:27:00 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Intune] Some users' Microsoft Intune devices may be unable to retrieve Intune Management Agent scripts from the service</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1317808</link>
       <description>[Microsoft Intune] Users' Microsoft Intune devices may have been unable to retrieve Intune Management Agent scripts from the service.</description>
@@ -252,6 +252,15 @@ We detected this issue through our automated monitoring systems after observing 
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">PB1314779</guid>
       <pubDate>Mon, 18 May 2026 13:53:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users' draft generation prompts to Microsoft 365 Copilot may not complete in the classic Outlook desktop app Build 2605</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1324075</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users' draft generation prompts to Copilot may not have completed in the classic Outlook desktop app Build 2605.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>postIncidentReviewPublished</category>
+      <guid isPermaLink="false">CP1324075</guid>
+      <pubDate>Mon, 18 May 2026 06:27:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users may be unable to access Copilot Voice in Microsoft 365 Copilot Chat or conduct voice conversations</title>
@@ -450,15 +459,6 @@ We detected this issue through our automated monitoring systems after observing 
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1304825</guid>
       <pubDate>Tue, 05 May 2026 15:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users' prompts to Copilot Studio agents that leverage the Microsoft Teams channel connector may fail</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1323874</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users' prompts to Copilot Studio agents that leveraged the Microsoft Teams channel connector may have failed.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1323874</guid>
-      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
