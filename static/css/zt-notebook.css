@@ -572,6 +572,19 @@
   .zt-reading--notebook .nb-brand { font-size: 24px; }
   .zt-reading--notebook .nb-h1 { font-size: 22px; }
   .zt-reading--notebook .nb-pen-note { font-size: 19px; }
+
+  /* ── Mobile reading mode — hide all pre-title chrome per Sush 2026-06-04 ──
+     On mobile the only things above the H1 should be GONE entirely.
+     This gives a clean Title → Content read with no distractions:
+       • Masthead (Field Journal brand + reading toolbar + Vol/date line)
+       • Mobile meta line (date · author · read time)
+     Reading toolbar (Share / A−/A/A+ / Focus) lives inside the masthead,
+     so hiding the masthead naturally removes it on mobile too.
+     Desktop is unaffected (everything still renders above the title there). */
+  .zt-reading--notebook .nb-masthead,
+  .zt-reading--notebook .nb-meta.nb-meta--top {
+    display: none;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════
