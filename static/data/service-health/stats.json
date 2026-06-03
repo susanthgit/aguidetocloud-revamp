@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T21:28:50.164539+00:00",
+  "generated_at": "2026-06-03T23:58:08.126582+00:00",
   "total_incidents_tracked": 104,
   "services": [
     {
@@ -20,8 +20,8 @@
       "short_name": "M365 Suite",
       "icon": "📦",
       "total_incidents": 21,
-      "active_incidents": 2,
-      "avg_duration_minutes": 4852,
+      "active_incidents": 1,
+      "avg_duration_minutes": 4625,
       "last_incident": "2026-06-03T18:30:00+00:00",
       "classifications": {
         "advisory": 11,
