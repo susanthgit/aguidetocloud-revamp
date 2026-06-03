@@ -5,16 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 03 Jun 2026 00:00:13 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2026 05:09:19 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may see latency when using tools and chats in the Microsoft 365 Copilot app</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1332829</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may see latency when using tools and chats in the Microsoft 365 Copilot app.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have seen latency when using tools and chats in the Microsoft 365 Copilot app.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>investigating</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1332829</guid>
-      <pubDate>Tue, 02 Jun 2026 22:55:32 +0000</pubDate>
+      <pubDate>Tue, 02 Jun 2026 22:30:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some users' Windows devices with policies configured to prevent auto updates may be installing drivers</title>
@@ -141,7 +141,7 @@ We detected this issue through our automated monitoring systems after observing 
       <link>https://www.aguidetocloud.com/service-health/#CP1326225</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to use Microsoft 365 Copilot.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CP1326225</guid>
       <pubDate>Fri, 29 May 2026 15:26:33 +0000</pubDate>
     </item>
