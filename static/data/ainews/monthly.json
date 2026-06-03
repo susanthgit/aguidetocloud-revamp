@@ -1,6 +1,146 @@
 {
   "articles": [
     {
+      "id": "474f847f8296eaf367a38a9a668bf0b5",
+      "title": "A Smarter Google AI Edge Gallery: MCP integration, notifications, and session continuity",
+      "url": "https://developers.googleblog.com/a-smarter-google-ai-edge-gallery-mcp-integration-notifications-and-session-continuity/",
+      "source": "Google Developers Blog",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-06-03T00:25:35.287955+00:00",
+      "snippet": "The Google AI Edge Gallery app has expanded its on-device AI capabilities by introducing experimental support for the open-source Model Context Protocol (MCP) on Android, allowing Gemma 4 to coordinate complex tasks across external data sources like Google Workspace and Google Maps. To enable more proactive and persistent user interactions, the update adds a \"Schedule Notification\" skill for automating routines and a persistent chat history feature that restores long session contexts nearly inst",
+      "image": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_Generated_Image_eutazteuta.2e16d0ba.fill-1200x600.jpg",
+      "ai_summary": "",
+      "published_display": "1m ago"
+    },
+    {
+      "id": "b5b8be05262fc9e41192abbb8147bfe4",
+      "title": "Blazing fast on-device GenAI with LiteRT-LM",
+      "url": "https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/",
+      "source": "Google Developers Blog",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-06-03T00:25:35.287936+00:00",
+      "snippet": "Google AI Edge’s LiteRT-LM provides a production-proven, highly optimized infrastructure for running Gemma 4 across cross-platform mobile and edge environments. It actively unlocks the model's native multimodal and agentic features on-device by utilizing memory-efficient dynamic loading, Multi-Token Prediction for up to a 2.2x speedup, and advanced orchestration tools like Thinking Mode and Constrained Decoding. Furthermore, the engine is rapidly expanding its integration surfaces beyond Android",
+      "image": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_Generated_Image_7r4n957r4n.2e16d0ba.fill-1200x600.jpg",
+      "ai_summary": "",
+      "published_display": "1m ago"
+    },
+    {
+      "id": "f5b5589d08c66168518560ba1ea063c1",
+      "title": "All the news from the Google I/O 2026 Developer keynote",
+      "url": "https://developers.googleblog.com/all-the-news-from-the-google-io-2026-developer-keynote/",
+      "source": "Google Developers Blog",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-06-03T00:25:35.287917+00:00",
+      "snippet": "Google announced the transition from assistive AI to independent agents, highlighting the launch of the Gemini 3.5 series and major updates to its Antigravity agent-first development platform. For mobile developers, the post introduces new Android CLI tools, the Android Bench evaluation leaderboard, and an automated Migration agent designed to rapidly convert various frameworks into native Kotlin code. Web development is also being transformed through Chrome DevTools for agents, the HTML-in-Canv",
+      "image": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GoogleForDevelopers-ComboIO-Wagta.2e16d0ba.fill-1200x600_984jqJ0.png",
+      "ai_summary": "",
+      "published_display": "1m ago"
+    },
+    {
+      "id": "944c930cb4fc0bcb3c8ecf2c0d3931e3",
+      "title": "One Year of Innovation: Celebrating 100k Members in the Google Cloud x NVIDIA Developer Community",
+      "url": "https://developers.googleblog.com/one-year-of-innovation-celebrating-100k-members-in-the-google-cloud-x-nvidia-developer-community/",
+      "source": "Google Developers Blog",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-06-03T00:25:35.287898+00:00",
+      "snippet": "The Google Cloud and NVIDIA developer community is celebrating its first anniversary with 100,000 members and a renewed focus on providing builders with advanced AI infrastructure and resources. To accelerate development, the community offers curated learning pathways for mastering LLM optimization, GPU-accelerated data analytics, and monthly expert-led webinars. Moving into its second year, the initiative will expand to include hands-on labs, engineering events, and specialized content focused ",
+      "image": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/0049-GDP-NVIDIA_x_Google_Cloud_De.2e16d0ba.fill-1200x600.png",
+      "ai_summary": "",
+      "published_display": "1m ago"
+    },
+    {
+      "id": "bfa4a265f96413018955118127b3c6e1",
+      "title": "GPT-4.1 deprecated",
+      "url": "https://github.blog/changelog/2026-06-02-gpt-4-1-deprecated",
+      "source": "GitHub Changelog",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-06-02T23:58:52+00:00",
+      "snippet": "We have deprecated GPT-4.1 across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) today, June 1, 2026. Model Deprecation date Suggested alternative&#8230;\nThe post GPT-4.1 deprecated appeared first on The GitHub Blog.",
+      "image": "https://github.blog/wp-content/uploads/2026/06/601025857-364fc300-ae67-4fda-94f2-e8c55dbc17c8.jpg",
+      "ai_summary": "",
+      "published_display": "28m ago"
+    },
+    {
+      "id": "c16f372dccbee2bcccde431dcc08f35d",
+      "title": "'Dumbass' criminal breaks the 'first rule of ransomware club'",
+      "url": "https://www.theregister.com/cyber-crime/2026/06/02/dumbass-criminal-breaks-the-first-rule-of-ransomware-club/5250380",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-02T23:58:34+02:00",
+      "snippet": "You don't infect anyone in Russia or other CIS countries",
+      "image": "https://image.theregister.com/?imageId=5250399&width=800",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
+      "id": "1ff7acf35c228f0ed92b9662b72bb58d",
+      "title": "Contentful is a shot in the arm for Salesforce's 'headless' bet",
+      "url": "https://www.theregister.com/saas/2026/06/02/contentful-tops-off-salesforces-headless-bet-analyst-says/5250357",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-02T23:20:21+02:00",
+      "snippet": "Lacking an enterprise content layer for Headless 360, CRM titan went shopping",
+      "image": "https://image.theregister.com/?imageId=5250377&width=800",
+      "ai_summary": "",
+      "published_display": "3h ago"
+    },
+    {
+      "id": "c3d805f961f39af0fb544f9f0b0d40a4",
+      "title": "Cyera eyes $12B valuation at 80x ARR multiple despite operating losses",
+      "url": "https://techcrunch.com/2026/06/02/cyera-eyes-12b-valuation-at-80x-arr-multiple-despite-operating-losses/",
+      "source": "TechCrunch AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-02T22:50:56+00:00",
+      "snippet": "The cybersecurity company is nearing a $300 million round led by Evolution Equity Partners.",
+      "image": "https://techcrunch.com/wp-content/uploads/2024/01/Cybersecurity-padlocks-Getty.jpg?resize=1200,675",
+      "ai_summary": "",
+      "published_display": "1h ago"
+    },
+    {
+      "id": "f406be685badc2869bf82839b53024bb",
+      "title": "Industrial Software Leaders Build Secure, Autonomous AI Engineers With NVIDIA NemoClaw",
+      "url": "https://blogs.nvidia.com/blog/industrial-software-leaders-secure-autonomous-ai-engineers-nemoclaw/",
+      "source": "NVIDIA Blog",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-06-02T22:00:58+00:00",
+      "snippet": "Accelerated computing has revolutionized industrial engineering, compressing simulation times from weeks to hours.  Today’s remaining challenges sit in the end-to-end workflow surrounding the simulations: computer-aided design, meshing, simulation setup and debugging, as well as post-processing and generating summary reports of these processes.  At GTC Taipei at COMPUTEX, NVIDIA and more than a dozen engineering software [&#8230;]",
+      "image": "https://blogs.nvidia.com/wp-content/uploads/2026/06/industrial-ai-engineers-kv-1920x1080-1.jpg",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
+      "id": "808527184572ca095fbf2bb934d8b603",
+      "title": "Trump's AI E-(I)-O could let feds pick winners and losers",
+      "url": "https://www.theregister.com/ai-and-ml/2026/06/02/trump-ai-executive-order-sets-30-day-frontier-model-review/5250322",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-02T21:59:35+02:00",
+      "snippet": "Government gets a say in 'trusted partner' access, and that worries policy experts",
+      "image": "https://image.theregister.com/?imageId=261924&width=800",
+      "ai_summary": "",
+      "published_display": "4h ago"
+    },
+    {
       "id": "00a275ae5e7c2524ba7f7be23e5729f4",
       "title": "Cisco sings Mythos' praises - but doesn't say how many bugs the model uncovered",
       "url": "https://www.theregister.com/ai-and-ml/2026/06/02/cisco-praises-ai-bug-hunt-wont-reveal-flaw-tally/5250291",
@@ -12,7 +152,7 @@
       "snippet": "Meanwhile, Anthropic adds 150 partners to Project Glasswing",
       "image": "https://image.theregister.com/?imageId=241299&width=800",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "5a1c0a8bb9f1f22e4b9c2cdb4239d038",
@@ -26,7 +166,7 @@
       "snippet": "The Google Tensor ML SDK is graduating to its Beta phase, allowing developers to build and deploy high-performance machine learning models directly onto the TPU of Google Pixel 10 devices. By integrating with LiteRT, Google's edge deployment framework, the SDK provides a unified workflow for developers to convert, compile, and run PyTorch or TFLite models with robust fallback options. Additionally, a new model garden offers over 100 classic and generative AI models, including Gemma 3, enabling l",
       "image": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image_3.2e16d0ba.fill-1200x600.png",
       "ai_summary": "",
-      "published_display": "1m ago"
+      "published_display": "4h ago"
     },
     {
       "id": "669bbda9a7e70ad49846568ee2291b91",
@@ -40,7 +180,7 @@
       "snippet": "Google is unifying its AI terminal tools by transitioning the community-focused Gemini CLI into Antigravity CLI, a new agent-first platform built for complex, multi-agent workflows. This new Go-based tool offers faster execution, asynchronous processing, and a unified architecture that syncs with the Antigravity 2.0 desktop application. While enterprise customers will maintain existing access, individual and free users must transition to the new platform before Gemini CLI stops serving requests ",
       "image": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GeminiCLI-AntigravityCLI_1200x630.2e16d0ba.fill-1200x600.png",
       "ai_summary": "",
-      "published_display": "1m ago"
+      "published_display": "4h ago"
     },
     {
       "id": "a6d4040518814afd8ec65e9895f5bbdf",
@@ -54,7 +194,21 @@
       "snippet": "Uber's cutback has occurred after the company had reportedly encouraged staff to use AI as much as possible.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/03/claude-app-centered-in-ai-apps-GettyImages-2167861906.jpg?resize=1200,801",
       "ai_summary": "",
-      "published_display": "56m ago"
+      "published_display": "5h ago"
+    },
+    {
+      "id": "1e8ed1fd21816b8d871a85b41652e8de",
+      "title": "Uber caps employee AI spending after blowing through budget in 4 months",
+      "url": "https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/",
+      "source": "TechCrunch AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-02T19:11:48+00:00",
+      "snippet": "Uber's cutback has occurred after the company had reportedly encouraged staff to use AI as much as possible.",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/03/claude-app-centered-in-ai-apps-GettyImages-2167861906.jpg?resize=1200,801",
+      "ai_summary": "",
+      "published_display": "5h ago"
     },
     {
       "id": "c050e5b2add995df1baf66832bab5e1c",
@@ -68,7 +222,7 @@
       "snippet": "Not every new model is all it's cracked up to be. Our tracker keeps each release in context with its peers, so you know which models are worth your time.",
       "image": "https://www.zdnet.com/a/img/resize/74710075980703b5ab9f92922e9799c16a68509c/2026/05/28/f76541f4-e504-44cb-a790-447da79a5f2c/ai-tracker-1.png?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "8d929448020069b7ed9d2c7aca68b3a9",
@@ -82,7 +236,7 @@
       "snippet": "Microsoft on Tuesday took the wraps off Adaptive Spec-driven Scoring for Evaluation and Regression Testing, an open source framework for spinning up AI evaluations.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/06/GettyImages-172665283.jpg?resize=1200,900",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "8bc0ea08b81eda19a368fde1a853e95c",
@@ -96,7 +250,7 @@
       "snippet": "The agentic AI moment has arrived, but delivering on its promise requires more than good models. It also takes fast hardware, secure runtimes, a responsive data layer and models tuned for long-running reasoning. NVIDIA and Microsoft are bringing that full stack to developers across Windows devices, Azure cloud and local deployments. At Microsoft Build, NVIDIA [&#8230;]",
       "image": "https://blogs.nvidia.com/wp-content/uploads/2026/06/logo-lockup-corp-blog-microsoft-1280x680-4999350.png",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "071795091b689eafaeb6da65a9a722da",
@@ -110,7 +264,7 @@
       "snippet": "Microsoft's Build 2026 security news centers on an agentic AI vulnerability system designed to find real exploitable flaws, connect them to Defender and GitHub, and help developers fix them faster.",
       "image": "https://www.zdnet.com/a/img/resize/b02a56afdc4eb3525c03b4de622b606fb67dd9ef/2026/06/02/f7d4d4a9-4e0c-480b-92f3-b6f9d4fec486/gettyimages-2274012942.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "a075ff7f373cdc7a16e1a2d9b05647d9",
@@ -124,7 +278,7 @@
       "snippet": "I've spent the past few weeks using the new Amazfit Cheetah 2 Pro for all my activities, including running and golfing. Here's how it fared.",
       "image": "https://www.zdnet.com/a/img/resize/7dc6a51b19cb85b5f67551642ad23e874775f76f/2026/05/31/48a6c842-7348-44b9-b922-34ca20c314b9/amazfit-active-3-premium3.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "f267ae8cff50548f3ac579d1fca3ea50",
@@ -138,7 +292,7 @@
       "snippet": "Microsoft AI has fully joined the conversation with MAI-Thinking-1, alongside new coding, image, and voice models.",
       "image": "https://www.zdnet.com/a/img/resize/8319189c081438a1e8a9b3353e8fcedde9259e49/2026/06/02/f53f236a-9f66-47dc-91d3-dfab44a6bcee/screenshot-2026-06-02-at-2-36-38pm.png?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "4309aad9e66534a607d5b0175b26616b",
@@ -152,7 +306,7 @@
       "snippet": "Young professionals may be perfectly productive while working from home, says the New York Fed, but the quality of their output isn't so great, so companies don't want to hire them",
       "image": "https://image.theregister.com/?imageId=5250288&width=800",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "52be52d1c889fdfe29d98c95d8dfed23",
@@ -166,7 +320,7 @@
       "snippet": "Nvidia just announced its new RTX Spark CPU on models from all the major PC brands. These four look the most interesting.",
       "image": "https://www.zdnet.com/a/img/resize/d8d4cec4c5b69f95864b8b3d5e0b0924411cccb4/2026/06/02/39a2b721-fde3-4d40-b5b0-9d76ef86ca8f/dsc05177.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "7dbb1eb1a81c33d4d59b922ddef24d0b",
@@ -180,7 +334,7 @@
       "snippet": "The caveat is that one of the world's most famous living directors is using the tech solely for storyboarding.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/06/GettyImages-2244067270.jpg?resize=1200,800",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "c13c10c9cd024b6d0df282d6ee7f5ca0",
@@ -194,7 +348,7 @@
       "snippet": "Launched at Build, Microsoft Scout is a new AI assistant meant to bring the power and flexibility of OpenClaw into the Microsoft 365 system.",
       "image": "https://techcrunch.com/wp-content/uploads/2025/07/microsoft-logo-1865237814.jpg?resize=1200,863",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "6e2b311b663d572580ac35db916d63f1",
@@ -208,7 +362,7 @@
       "snippet": "As people increasingly refuse to answer calls from unknown numbers, scammers are shifting their tactics by spoofing trusted phone numbers and using AI deepfake technology to sound like authority figures, family members, or employers.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/06/fake-call-detection.png?resize=1200,640",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "ff7e0ecfe0e4275dc97f00a1580099f8",
@@ -222,7 +376,7 @@
       "snippet": "The specification lets developer, compliance, and security teams define their own policies for agents to follow in portable policy files.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/06/GettyImages-2276155467.jpg?resize=1200,833",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "f50951affe0806bda7ef291b80aa29ad",
@@ -236,7 +390,7 @@
       "snippet": "Microsoft’s OpenClaw-style agent appears in Teams, just like a human colleague, and automates your dull office tasks.",
       "image": "https://media.wired.com/photos/6a1e1d3c70c7c8b915b99802/master/pass/Microsoft-Debuts-Scout-a-Workplace-AI-Agent-Gear.jpg",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "698ebebc7bef979c14b1cc788ad30d02",
@@ -250,7 +404,7 @@
       "snippet": "The class action lawsuit, filed in Seattle by Virginia resident Charles Sigwalt, claims that Ring's Familiar Faces feature stores images of passersby without consent.",
       "image": "https://techcrunch.com/wp-content/uploads/2022/08/GettyImages-621058316.jpg?resize=1200,930",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "4d7629aaac8a2ac4ae64693b5a4f539a",
@@ -264,7 +418,7 @@
       "snippet": "High radix, low latency and low power is what AI datacenters crave, the chipmaker says",
       "image": "https://image.theregister.com/?imageId=4093879&width=800",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "a83d10f69137635e8f5a3026022c5c00",
@@ -278,7 +432,7 @@
       "snippet": "Fine-tuning for domain-specific tasks means improving performance in one area without degrading the model’s general capabilities, and getting that balance right is harder than it looks. This post walks through how to navigate that balance, from selecting the right customization strategy for your data and task, to configuring the training parameters that most influence outcomes, like learning rate, batch size, and checkpointing. We also cover the common mistakes that lead to wasted training runs ",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/29/ML-20384-1.png",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "e0c5ccf3befa3e99510ae47c3f3e09d7",
@@ -292,7 +446,7 @@
       "snippet": "The GitHub Copilot app technical preview is now available to all existing Copilot Pro, Pro+, Business, and Enterprise customers. Download the Copilot app for Windows, macOS, or Linux to get&#8230;\nThe post Expanded technical preview availability for the GitHub Copilot app appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/uploads/2026/07/599715325-5025a589-c7c5-4452-a8af-5052d8d348b1.jpg",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "9794b75c4039c511f500e4e3019c9438",
@@ -306,7 +460,7 @@
       "snippet": "In this post, we'll walk through implementing object detection with Amazon Nova 2 Lite. You'll learn how to deploy an object detection application using Amazon Bedrock, AWS Lambda, and Amazon API Gateway. You'll also learn how to craft effective prompts, process structured JSON output, and visualize results. We explore practical applications across manufacturing, agriculture, and logistics.",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/23/image-ML200421.png",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "dbb8f7fffbfd0a3493272723f729401a",
@@ -320,7 +474,7 @@
       "snippet": "At Microsoft Build 2026, GitHub introduced new tools, updates, and surfaces so agents can work the way you already work.\nThe post GitHub Copilot app: The agent-native desktop experience appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/uploads/2026/06/CCRPlatform_BlogImage_01.jpg?resize=1024%2C637",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "df381e2b99aa13f70dc9c5704c2c4fbc",
@@ -334,7 +488,7 @@
       "snippet": "The GitHub Copilot SDK is now generally available. You can embed GitHub Copilot&#8217;s agentic engine into your own applications, services, and developer tools with a stable API and production-ready support.&#8230;\nThe post Copilot SDK is now generally available appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/uploads/2026/07/599783371-fbde803d-b96d-49f1-b692-dc87b33e30d3.jpg",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "4d922fd77ef3bf24f6498abef5204b83",
@@ -348,7 +502,7 @@
       "snippet": "GitHub Copilot CLI is getting a major refresh at Microsoft Build 2026. Rubber duck, prompt scheduling, and voice input are generally available today, and a new experimental terminal interface&#8212;including tabs&#8230;\nThe post Copilot CLI: Improved UI, rubber duck, prompt scheduling, and voice input appeared first on The GitHub Blog.",
       "image": "https://github.com/user-attachments/assets/7f207b41-c289-42f0-a3d3-5b9d8e7afdb1",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "861e206d56d649c723f6a5a8ca872da2",
@@ -362,7 +516,7 @@
       "snippet": "GitHub Copilot can now run inside secure, isolated sandboxes, both locally on your machine and in the cloud. Sandboxed Copilot experiences provide isolated environments for Copilot&#8217;s tool execution locally as&#8230;\nThe post Cloud and local sandboxes for GitHub Copilot now in public preview appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/uploads/2026/07/601053253-2277c9fc-7466-458b-9d7e-08e04a20ec0b.jpg",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "fc04ab9fec5775b217009ace6d9a5ddb",
@@ -376,7 +530,7 @@
       "snippet": "GitHub Copilot code review for Azure Repos is now available in technical preview, bringing on demand pull request reviews directly into your Azure DevOps workflow. How it works Once enabled&#8230;\nThe post GitHub Copilot code review for Azure Repos is now in technical preview appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/uploads/2026/07/599853652-5addafa7-68ac-4f58-8ae2-01d079bdbc8b.jpg",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "1fef963f0e105831e481a7547855669a",
@@ -390,7 +544,7 @@
       "snippet": "Copilot code review adapts to your team&#8217;s tools and standards and scales its depth to the complexity of each change. Today we&#8217;re shipping two public previews on a unified agent&#8230;\nThe post Shape Copilot code review around your team appeared first on The GitHub Blog.",
       "image": "https://github.com/user-attachments/assets/dde1fb41-c4b9-4409-80a4-f8498f1c7308",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "a81a9d8b3bd98cb3763cc439a67a5968",
@@ -404,7 +558,21 @@
       "snippet": "Agent apps are AI agents from GitHub partners, installable from the GitHub Marketplace, and integrated directly into GitHub. You install an agent app just like any other GitHub App from&#8230;\nThe post Extend GitHub with agent apps appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/uploads/2026/07/599766737-2eccf450-798c-41ee-9b1e-58be387db523.jpg",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "7h ago"
+    },
+    {
+      "id": "09bc73029f6d385b517257ded84e3f72",
+      "title": "Enhanced performance for server consolidation with Intel Xeon 6+",
+      "url": "https://www.theregister.com/systems/2026/06/02/enhanced-performance-for-server-consolidation-with-intel-xeon-6/5249881",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-02T17:00:00+02:00",
+      "snippet": "SPONSORED POST: How Intel’s first 18A data center CPU delivers efficiency and TCO gains, with Intel's Kira Boyko",
+      "image": "https://image.theregister.com/?imageId=5218918&width=800",
+      "ai_summary": "",
+      "published_display": "9h ago"
     },
     {
       "id": "bfe55a86d40d04aea35386c31d19923d",
@@ -418,7 +586,7 @@
       "snippet": "Microsoft's Work IQ could make enterprise AI agents dramatically smarter, but the shift to agent-first IT brings serious questions about cost, governance, data exposure, and operational risk.",
       "image": "https://www.zdnet.com/a/img/resize/ae13b4559cdcf3d0e1ac9980c042430cb300afe3/2026/06/02/4e485360-83cb-41be-ad46-04ac691b6dc3/gettyimages-2272950838.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "afeef29875d2ab8396c1a4e8e739f7a4",
@@ -432,7 +600,7 @@
       "snippet": "I expected the Vivo X300 Ultra to wipe the floor with Samsung's Galaxy S26 Ultra, but the latter impressed me in ways I didn't expect.",
       "image": "https://www.zdnet.com/a/img/resize/e4d78912e6e89c8c655a1df58d625a2ac23e389a/2026/06/02/63647305-9dca-4312-8175-37827ed5aba7/1000056450.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "3b3c4f441f48a0fc778e51b26c5c9635",
@@ -446,7 +614,7 @@
       "snippet": "Today's vehicles know where we live, how much we weigh, and what we had for dinner. Here's what happens to all that information, and how you can reduce the data flow.",
       "image": "https://www.zdnet.com/a/img/resize/61969a749a15f32790463b6905fe954f51492cda/2026/05/27/cb39517e-469e-47f1-abda-021cc7d630fb/pxl-20260527-211059652.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "718de9b5305203271196f05a9482ceed",
@@ -460,7 +628,7 @@
       "snippet": "Amazon Prime Day is still weeks away, but top phone deals from Samsung, Google, and Motorola are already live.",
       "image": "https://www.zdnet.com/a/img/resize/47461e993bdc184a9bf939f6a59e52818f2b8e64/2026/05/26/b3ff652f-8a2a-4485-a817-2a75f4cb77e9/zdnet-primeday-phones.png?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "5892bab01626601700bc446f36407e90",
@@ -474,7 +642,7 @@
       "snippet": "With Copilot CLI now available in GitHub Copilot for JetBrains IDEs, this update centers on new capabilities for Copilot CLI sessions, while also delivering a broader set of agentic improvements.&#8230;\nThe post Introducing Copilot CLI and agentic capabilities enhancements in JetBrains IDEs appeared first on The GitHub Blog.",
       "image": "https://github.com/user-attachments/assets/425cb970-a0b7-4166-806f-33c08511a2de",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "6376d9775c4f2ca03c12599790bbdf63",
@@ -488,7 +656,7 @@
       "snippet": "Two Gemini models are now available across additional GitHub Copilot surfaces. Gemini 3.1 Pro (Preview) and Gemini 3.5 Flash can now be used in: Copilot CLI Copilot cloud agent GitHub&#8230;\nThe post Gemini models in Copilot CLI, cloud agent, and the Copilot app appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/uploads/2026/05/github-copilot-social-card-1.png",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "27c5e40ee58c6cf86ab42ef691d7b2c1",
@@ -502,7 +670,21 @@
       "snippet": "This release of GitHub Copilot in Eclipse packs a lot: a refreshed chat experience, deeper visibility into your session context, BYOK for Business and Enterprise, better ABAP support, and brand&#8230;\nThe post GitHub Copilot in Eclipse: BYOK, skills, and chat updates appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/uploads/2026/06/600268395-e33e3461-3b16-4814-a430-89bc3f86fc2b.jpg",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "7h ago"
+    },
+    {
+      "id": "d812749885d27043e317f51002c08609",
+      "title": "Trump signs narrower executive order on AI oversight after industry objections",
+      "url": "https://techcrunch.com/2026/06/02/trump-signs-narrower-executive-order-on-ai-oversight-after-industry-objections/",
+      "source": "TechCrunch AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-02T16:23:08+00:00",
+      "snippet": "After industry objections, President Trump signed a revised AI executive order requiring only voluntary prerelease government reviews of advanced models.",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/06/GettyImages-2277839095.jpg?w=1024",
+      "ai_summary": "",
+      "published_display": "8h ago"
     },
     {
       "id": "7d6b8a740e21598c552f348bcbdc5124",
@@ -516,7 +698,35 @@
       "snippet": "OpenAI released a set of six plug-ins aimed at specific jobs: data analytics, creative production, sales, product design, equity investing, and investment banking. Available from within the Codex app, each of the new tools bundles integrations, instructions, and context to allow Codex to approximate a specific job.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/05/openai-logo-code-background.jpg?resize=1200,798",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "8h ago"
+    },
+    {
+      "id": "feff6be137d1c8a2330bea31dd348795",
+      "title": "Amazon has discounted this 75-inch Hisense TV by over $500 - and I highly recommend it",
+      "url": "https://www.zdnet.com/article/hisense-u6-pro-amazon-deal/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-06-02T15:55:00+00:00",
+      "snippet": "The Hisense U6 Pro is a solid midrange Mini LED TV, and an even better buy at this price.",
+      "image": "https://www.zdnet.com/a/img/resize/d12ebaa49dbf1adf8773434e782e5349837d91e3/2026/05/29/7e0bcf6b-ecbf-4661-8549-9975c27fce47/hisense-u6-pro-2.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "8h ago"
+    },
+    {
+      "id": "0e51b57b7912f0528539f9846a20f6f8",
+      "title": "Forget Amazon - these are the best Costco deals I've found this week",
+      "url": "https://www.zdnet.com/article/best-early-amazon-prime-day-costco-deals-2026/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-06-02T15:51:40+00:00",
+      "snippet": "Prime Day may be coming soon, but Costco already has great discounts live on home essentials, top tech, and more.",
+      "image": "https://www.zdnet.com/a/img/resize/710c42c728ffbcf510ae033bc7a58692b58696bd/2026/05/26/16e65a72-6c73-44f8-8538-c619bfd1a3bc/zdnet-primeday-costco.png?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "8h ago"
     },
     {
       "id": "7e79f6b79a0c92cb73e360ea33197142",
@@ -530,7 +740,7 @@
       "snippet": "This post walks through how Baz built their Spec Review agent using Amazon Bedrock and Amazon Bedrock AgentCore. We'll cover the architecture decisions, implementation details, and the business outcomes they achieved by leveraging these AWS services to automate their code review process",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/26/ML-19914-image-1-scaled.jpeg",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "bbc1f049df061eb48a40cc561913aa79",
@@ -544,7 +754,7 @@
       "snippet": "Opal, the company famous for making a fancy webcam, has pivoted to making other consumer electronics. Fueled by big investments from OpenAI and Samsung, it’s working on an audio gadget first.",
       "image": "https://media.wired.com/photos/6a1db2153696beebf95db3a0/master/pass/Opal_Tadpole_01.jpg",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "cb30e6395ae7a3d9030071beb20317d4",
@@ -558,7 +768,49 @@
       "snippet": "Microsoft just kicked off Build 2026 with a keynote from CEO Satya Nadella and other company leaders. As expected, it was filled with announcements, ranging from new Surface hardware to an always-on personal assistant and updates across Microsoft's in-house AI models. If you didn't watch the event live, you can catch up on all the [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/nadella-build-2026.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "44m ago"
+      "published_display": "5h ago"
+    },
+    {
+      "id": "9e229ff7046254617b5d27cbac6817ac",
+      "title": "Microsoft Build 2026: The 7 biggest announcements",
+      "url": "https://www.theverge.com/tech/941738/microsoft-build-2026-biggest-announcements",
+      "source": "The Verge AI",
+      "category_id": "microsoft",
+      "category_name": "Microsoft",
+      "category_emoji": "🟦",
+      "published": "2026-06-02T15:23:52-04:00",
+      "snippet": "Microsoft just kicked off Build 2026 with a keynote from CEO Satya Nadella and other company leaders. As expected, it was filled with announcements, ranging from new Surface hardware to an always-on personal assistant and updates across Microsoft's in-house AI models. If you didn't watch the event live, you can catch up on all the [&#8230;]",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/nadella-build-2026.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "ai_summary": "",
+      "published_display": "5h ago"
+    },
+    {
+      "id": "08f2256a3ecfd2135f44356ecf7c379a",
+      "title": "I found 15 Amazon deals on editor-approved tech already live for Prime Day",
+      "url": "https://www.zdnet.com/article/best-early-amazon-prime-day-deals-2026/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-06-02T15:00:18+00:00",
+      "snippet": "Amazon's Prime Day sale returns this month. These are our favorite early deals you can shop now.",
+      "image": "https://www.zdnet.com/a/img/resize/4fe7bcf30a3f303363bad0049ce88e6a2f0bd95e/2026/05/26/2fd5eb5b-46bb-41db-bfb5-d8bbe0e813d7/zdnet-primeday-tech-promo.png?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "9h ago"
+    },
+    {
+      "id": "476d53b343771a53c522d5903554de45",
+      "title": "Trump signs executive order to review AI models before they’re released",
+      "url": "https://www.theverge.com/policy/941775/trump-ai-executive-order",
+      "source": "The Verge AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-02T14:33:42-04:00",
+      "snippet": "President Donald Trump signed an executive order Tuesday creating a \"voluntary framework\" for AI companies to share their frontier models with the federal government before they're released \"to promote secure innovation and strengthen the cybersecurity of critical infrastructure.\" The order says the US AI industry has succeeded in part \"because we refuse to stifle this [&#8230;]",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/09/STK466_ELECTION_2024_CVirginia_E.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "ai_summary": "",
+      "published_display": "5h ago"
     },
     {
       "id": "8dc3ed604e81f0513f78b7ce39970e5c",
@@ -572,7 +824,35 @@
       "snippet": "Microsoft announced a bunch of new in-house AI models at Build 2026, including a new \"flagship\" model: MAI-Thinking-1. It's an ambitious step into model development for Microsoft, which introduced its initial in-house models last year - before then, it had relied on OpenAI's models. The two companies recently renegotiated their deal to loosen ties. According [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25832912/STK095_MICROSOFT_2_CVirginia_A.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "6h ago"
+    },
+    {
+      "id": "3fc82f096265b7054fcc32e30ce886cd",
+      "title": "Microsoft Scout is a new AI personal assistant built on OpenClaw",
+      "url": "https://www.theverge.com/news/939713/microsoft-scout-assistant-openclaw",
+      "source": "The Verge AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-02T14:00:00-04:00",
+      "snippet": "Much like Google, Microsoft is launching its own version of OpenClaw. Microsoft Scout is an always-on assistant that integrates into Microsoft 365 apps like Outlook, OneDrive, and Microsoft Teams, allowing businesses to assign a virtual assistant to employees to help with organizing calendars, expense reporting, email drafts, and much more. Unlike Copilot that lives inside [&#8230;]",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/Microsoft-Scout.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "ai_summary": "",
+      "published_display": "6h ago"
+    },
+    {
+      "id": "93d01493c15dc78e0ed0a32b2ad0f5ad",
+      "title": "Google’s Phone app will tell you if a scammer is impersonating one of your contacts",
+      "url": "https://www.theverge.com/tech/941517/google-phone-scammer-ai-impersonation",
+      "source": "The Verge AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-02T14:00:00-04:00",
+      "snippet": "Google is launching a new feature for its Phone app that aims to protect you from AI impersonation scams. Now, when you receive a call from a scammer that appears to be coming from the same number as one of your contacts, Phone by Google will flag the call as suspicious so you can hang [&#8230;]",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/0.-Fake-call-detection-header.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "ai_summary": "",
+      "published_display": "6h ago"
     },
     {
       "id": "80988d411eff3cacad78e40c37a3f149",
@@ -586,7 +866,7 @@
       "snippet": "Travelers built an AI-powered Claim Assistant with OpenAI to guide customers through filing claims, provide 24/7 support, and scale operations during peak demand.",
       "image": "https://images.ctfassets.net/kftzwdyauwt9/1TKzfygwesdyzOr4VDrizK/11ece0fda61af10b34d4127f7a977eac/oai_Travelers_SEO.png?w=1600&amp;h=900&amp;fit=fill",
       "ai_summary": "",
-      "published_display": "8h ago"
+      "published_display": "12h ago"
     },
     {
       "id": "a89d210b11f3463b7139312517b57fad",
@@ -600,7 +880,7 @@
       "snippet": "Microsoft Build 2026 kicked off with a keynote presentation that introduced some developer-focused Windows updates, an OpenClaw-based AI assistant called Scout, the new Majorana 2 quantum computing chip, and a Surface mini PC designed for AI developers. Microsoft also rolled out a new Android-based OS called Project Solara that’s designed for gadgets that run AI [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/03/STK095_MICROSOFT_2_CVirginia_C.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "4f456e4ddc2c7239911cf7d08ef9bdb6",
@@ -614,7 +894,833 @@
       "snippet": "Discover new Codex plugins, sites, and annotations that help analysts, marketers, designers, investors, and other teams get more done with AI.",
       "image": "https://images.ctfassets.net/kftzwdyauwt9/4Dvw4ZQ90swvHAxpe8tf49/b38745978bd83b554ac8e4f5865cee37/16x9_SEO_Preview.png?w=1600&amp;h=900&amp;fit=fill",
       "ai_summary": "",
-      "published_display": "11h ago"
+      "published_display": "15h ago"
+    },
+    {
+      "id": "3f1fd4b68411fe0e5519d5ffcae09f1a",
+      "title": "RuntimeWire – Track AI startup funding, launches, and infrastructure shifts in real time",
+      "url": "https://betalist.com/startups/runtimewire",
+      "source": "Betalist.com",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-06-02T00:25:00+00:00",
+      "snippet": "Track AI startup funding, launches, and infrastructure shifts in real time",
+      "image": "https://resize.imagekit.co/zXuqAnVpmhQAR82cqBiCpRqQrwUFnW_-C7tA9QdaypE/plain/s3://betalist-production/t8po4y5qrpmh76rd2mtun11grm5c",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:25"
+    },
+    {
+      "id": "468cf0dce90d9dde9aac368fb8d8ec3b",
+      "title": "‘The Metaverse Fever Dream’",
+      "url": "https://pxlnv.com/blog/metaverse-fever-dream/",
+      "source": "Pxlnv.com",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-02T00:24:39+00:00",
+      "snippet": "1. Meta You probably know the gist. Predictions and dire warnings of a future lived in an immersive virtual world had been around for decades before Neal Stephenson solidified the concept in his 1992 novel “Snow Crash”, but Stephenson called it the “metaverse…",
+      "image": "https://pxlnv.com/apple-touch-icon.png",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:24"
+    },
+    {
+      "id": "ce0cf68156e1d66aba8e2c00e87f0105",
+      "title": "Frits Thaulow: Master of Light, Water, and Northern Atmosphere",
+      "url": "https://www.vintag.es/2026/06/frits-thaulow.html",
+      "source": "Vintag.es",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-06-02T00:22:05+00:00",
+      "snippet": "Frits Thaulow (1847–1906) was a prominent Norwegian painter and one of the most important figures in Scandinavian Impressionism. Renowned fo...",
+      "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1VuYLgN67v7Dq6YX4TNt-tTaHIyOP-3adXkHxb72X76yrnLP8kkoy279U63qYqgIX20cf9OzQSVI9UVliYhrXKJje4z4wMOJDLCL5iAD_4xF3QyJXUACNOJJiWwPiZ3U5AnzrabD3Y3y2NIIqh1iL_E0AZ72mzLPMtwxPCWh136OXl4tlukuiMwerBUBV/w1200-h630-p-k-no-nu/frits-thaulow-1.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:22"
+    },
+    {
+      "id": "5af36bb4d00a8c52d6fc68addfbb41e8",
+      "title": "What's gonna happen to software engineers?",
+      "url": "https://yakko.dev/blog/whats-gonna-happen-to-software-developers",
+      "source": "Yakko.dev",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-06-02T00:21:14+00:00",
+      "snippet": "Yakko Majuri's blog about software engineering, startups, AI agents, and open source — by the founder of Skald Labs and former PostHog engineer.",
+      "image": "https://yakko.dev/og/whats-gonna-happen-to-software-developers.png",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:21"
+    },
+    {
+      "id": "9d1789370ec2db0f6b06258cd0145e17",
+      "title": "Silicon Valley's new slogan: Let's get physical",
+      "url": "https://www.businessinsider.com/silicon-valleys-new-slogan-lets-get-physical-2026-6",
+      "source": "Business Insider",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-02T00:19:41+00:00",
+      "snippet": "Silicon Valley's AI boom is moving into robotics as OpenAI, Meta, Tesla, and startups race to give AI a body.",
+      "image": "https://i.insider.com/6a1e0288b4fb977f359831aa?width=1200&format=jpeg",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:19"
+    },
+    {
+      "id": "c472fdf7b8d8b9338e94c05a6589ccaa",
+      "title": "Who Is Who in the Banks vs. Stablecoin-Yield Battle",
+      "url": "https://www.pymnts.com/cryptocurrency/2026/who-is-who-in-the-banks-vs-stablecoin-yield-battle/",
+      "source": "pymnts.com",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-06-02T00:17:09+00:00",
+      "snippet": "The stablecoin debate is no longer primarily about crypto. It is about banking power. And if the back-and-forth over the weekend between Coinbase and JPMorgan Chase is to be taken at face value, it might not even be much of a debate anymore, either. Asked abo…",
+      "image": "https://www.pymnts.com/wp-content/uploads/2026/06/Senate-banks-stablecoins-11.png",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:17"
+    },
+    {
+      "id": "eb5dd835eeaa4f4e154d0ba53cd393bd",
+      "title": "Florida sues OpenAI over ChatGPT's alleged body count",
+      "url": "https://boingboing.net/2026/06/01/florida-sues-openai-over-chatgpts-alleged-body-count.html",
+      "source": "Boing Boing",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-02T00:16:06+00:00",
+      "snippet": "Florida has become the first state to sue OpenAI and Sam Altman over alleged harms from ChatGPT.\nThe lawsuit, filed by Attorney General James Uthmeier, accuses OpenAI of rushing unsafe products into the world, marketing ChatGPT as safe and reliable, and ignor…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:16"
+    },
+    {
+      "id": "7899852c37f8715404cd46ceafa4b4cd",
+      "title": "alter-runtime added to PyPI",
+      "url": "https://pypi.org/project/alter-runtime/",
+      "source": "Pypi.org",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-06-02T00:10:17+00:00",
+      "snippet": "~Alter Identity Runtime - local sovereign daemon for the continuous identity field. Subscribes to per-~handle Cloudflare Durable Objects, exposes Unix socket + D-Bus + CLI surfaces, falls back gracefully to direct MCP polling.",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:10"
+    },
+    {
+      "id": "c7fa5fcaf3387230dec36020dd645547",
+      "title": "Snowflake and Anthropic Accelerate Enterprise AI Adoption Driven by Rising Demand for Governed AI",
+      "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/snowflake-and-anthropic-accelerate-enterprise-ai-adoption-driven-by-rising-demand-for-governed-ai",
+      "source": "Financial Post",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-06-02T00:09:59+00:00",
+      "snippet": "Accelerating Enterprise Adoption: Snowflake and Anthropic’s momentum reflects accelerating enterprise adoption, with customers including Basis, Block, Carvana, eSentire, Indeed, Notion, and more Trusted AI for the Enterprise: Snowflake Cortex AI makes AI read…",
+      "image": "https://smartcdn.gprod.postmedia.digital/financialpost/wp-content/uploads/2026/06/bw20260601623088_snowflake_anthropic.jpeg",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:09"
+    },
+    {
+      "id": "d8caf704232ecc039c8b6ccfae695814",
+      "title": "How did the Meta AI bot breach happen? #world",
+      "url": "https://alltoc.com/world/how-did-the-meta-ai-bot-breach-happen",
+      "source": "Alltoc.com",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-06-02T00:03:45+00:00",
+      "snippet": "What happened Hackers reportedly used Meta’s AI powered support chatbot to infiltrate the Obama White House Instagram account. Meta confirmed the breach, raising concerns about account protection measures that rely on AI assisted processes. Why it matters Soc…",
+      "image": "https://alltoc.com/cdn/1048/og.png",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:03"
+    },
+    {
+      "id": "72459df4ee98986b7eb793fe496f1416",
+      "title": "janus-remote 0.15.4",
+      "url": "https://pypi.org/project/janus-remote/0.15.4/",
+      "source": "Pypi.org",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-06-02T00:03:32+00:00",
+      "snippet": "Voice-to-text paste and approval bridge for Claude CLI on remote SSH sessions",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:03"
+    },
+    {
+      "id": "bace3cfdcfd588025f781295751abed7",
+      "title": "Why did GitHub Copilot billing anger developers? #tech",
+      "url": "https://alltoc.com/tech/why-did-github-copilot-billing-anger-developers",
+      "source": "Alltoc.com",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-06-02T00:01:52+00:00",
+      "snippet": "What changed GitHub Copilot is moving from a flat, request based billing approach to a usage based model. As that pricing shift rolls out, developers say their costs can spike quickly—burning through a month’s worth of credits in just hours. What developers a…",
+      "image": "https://alltoc.com/cdn/1048/og.png",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:01"
+    },
+    {
+      "id": "c576559d666fc02c93273eda4f974bcf",
+      "title": "XRP Inflows Hit Their Lowest Level Of The Year: Is Selling Pressure Fading?",
+      "url": "https://bitcoinist.com/xrp-inflows-hit-their-lowest-level-of-the-year/",
+      "source": "Bitcoinist",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-02T00:00:52+00:00",
+      "snippet": "XRP is holding critical support around $1.30 as selling pressure tests a level that bulls have been defending through weeks of market uncertainty. The price is at a genuine inflection point — and an Arab Chain analysis tracking Binance inflow data has identif…",
+      "image": "https://bitcoinist.com/wp-content/uploads/2026/06/Untitled-design-54.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:00"
+    },
+    {
+      "id": "72eeb2610f2b3d7791a9b288af396f87",
+      "title": "The essential Elastic 2026 wrap-up for Microsoft Build attendees and Azure developers",
+      "url": "https://www.elastic.co/blog/microsoft-build-2026-wrap-up",
+      "source": "Elastic.co",
+      "category_id": "microsoft",
+      "category_name": "Microsoft",
+      "category_emoji": "🟦",
+      "published": "2026-06-02T00:00:00+00:00",
+      "snippet": "Elastic's 2026 releases included multimodal search via Elastic Inference Service, OpenTelemetry metrics at 3.75 bytes per data point, agent context memory at scale, and open source CI/CD pipeline security. It’s the catch-up your stack needs.",
+      "image": "https://static-www.elastic.co/v3/assets/bltefdd0b53724fa2ce/bltc1dfaeb4ff9108a9/6a1e3cf42dfae8995d09db54/MS-Build.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:00"
+    },
+    {
+      "id": "d76efbde365134555a2a2d2e1aa1b614",
+      "title": "‘Virtual cells’ aim to turn raw data into predictive models of biology",
+      "url": "https://www.nature.com/articles/d41586-026-01731-1",
+      "source": "Nature.com",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-06-02T00:00:00+00:00",
+      "snippet": "Simulations of biological systems could transform biomedical research, but researchers are still learning how to reproduce life’s complexity without drowning in data.",
+      "image": "https://media.nature.com/lw1200/magazine-assets/d41586-026-01731-1/d41586-026-01731-1_52481618.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:00"
+    },
+    {
+      "id": "6e6ba44f2e7175a2c2922a80c673b323",
+      "title": "Will AI ruin the social sciences — or revolutionize them?",
+      "url": "https://www.nature.com/articles/d41586-026-01726-y",
+      "source": "Nature.com",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-02T00:00:00+00:00",
+      "snippet": "The technology can whip up spurious findings and pollute survey responses, but it could also make research more rigorous.",
+      "image": "https://media.nature.com/lw1200/magazine-assets/d41586-026-01726-y/d41586-026-01726-y_52496404.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:00"
+    },
+    {
+      "id": "5513d90a097c0000b8db2242a3ac1055",
+      "title": "Top SAN products powering enterprise IT strategy",
+      "url": "https://www.techtarget.com/searchstorage/feature/7-leading-storage-area-network-products-and-vendors",
+      "source": "Techtarget.com",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-06-02T00:00:00+00:00",
+      "snippet": "Selecting the right SAN products is vital to enabling a modern data strategy that drives operational efficiency and enterprise ROI.",
+      "image": "https://www.techtarget.com/visuals/searchSoftwareQuality/testing_bestpractices/softwarequality_article_016.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:00"
+    },
+    {
+      "id": "44b5ac0af3fb909c2a461c049901e606",
+      "title": "How to vet an npm package in 2026",
+      "url": "https://javascriptweekly.com/issues/788",
+      "source": "Javascriptweekly.com",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-06-02T00:00:00+00:00",
+      "snippet": "<table>\n <tr><td>\n \n <table><tr>\n<td>#​788 — June 2, 2026\r\n</td>\n<td>Read on the Web\r\n</td>\n</tr></table>\n\n<table><tr><td></td></tr></table>\n \n <table><tr><td>JavaScript Weekly\r\n</td></tr></table>\n<table><tr><td>\n \n</td></tr></table>\n\n<table><tr><td>\n \n Hocus…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:00"
+    },
+    {
+      "id": "a369fd3d6b3558555159dab0db48e60a",
+      "title": "Accelerate autoscaling inference in Red Hat AI with Everpure",
+      "url": "https://www.redhat.com/en/blog/accelerate-autoscaling-inference-red-hat-ai-everpure",
+      "source": "Redhat.com",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-06-02T00:00:00+00:00",
+      "snippet": "As agentic systems become common in the enterprise, it's clear to anyone concerned about sovereignty in AI factories: Inference is the hard part to scale.One of the many benefits of a sovereign cloud is agency in how you accomplish your operations. Sovereign …",
+      "image": "https://www.redhat.com/themes/custom/rhdc/img/red-hat-social-share.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:00"
+    },
+    {
+      "id": "89f1f73f8636a054eeb3743d3b82c9f1",
+      "title": "Senior Machine Learning Scientist",
+      "url": "https://nlppeople.com/job/senior-machine-learning-scientist-29/",
+      "source": "Nlppeople.com",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-06-02T00:00:00+00:00",
+      "snippet": "Senior Data Scientist  UK or Poland (Remote or Hybrid, it’s up to you!)  Dependent on experience  Be part of our success with the opportunity to join our company equity scheme Our Perks ❤️ Monthly Health & Wellness budget, increasing with length of serv…",
+      "image": "https://s0.wp.com/i/blank.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:00"
+    },
+    {
+      "id": "4639cc901f02e3d0d42df6a443cb7d1e",
+      "title": "Applied AI ML Lead – DocAI",
+      "url": "https://nlppeople.com/job/applied-ai-ml-lead-docai-2/",
+      "source": "Nlppeople.com",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-06-02T00:00:00+00:00",
+      "snippet": "Take a technical leadership position within JPMorgan’s Commercial & Investment Bank, where you’ll harness cutting-edge AI techniques to revolutionize business decisions and automate processes. As an Applied AI / ML Lead – Vice President – Machine Learning Eng…",
+      "image": "https://s0.wp.com/i/blank.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 02, 00:00"
+    },
+    {
+      "id": "12ead815c0eb8c51926b2a2ea8376865",
+      "title": "IT stocks rally as AI deals, valuations draw investors",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/it-stocks-rally-as-ai-deals-valuations-draw-investors/articleshow/131452361.cms",
+      "source": "The Times of India",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-01T23:57:09+00:00",
+      "snippet": "Indian IT stocks saw a significant surge on Monday, outperforming the broader market. The Nifty IT index reached its highest point since April 23. This rally was driven by attractive stock valuations and new AI partnerships. Investors are showing renewed inte…",
+      "image": "https://img.etimg.com/thumb/msid-131452362,width-1200,height-630,imgsize-16064,overlay-etmarkets/articleshow.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:57"
+    },
+    {
+      "id": "8082510cb1ff3019200e8b07c10b902d",
+      "title": "Can AI Prevent the Next Subway Delay?",
+      "url": "https://www.pymnts.com/news/artificial-intelligence/2026/can-ai-prevent-the-next-subway-delay/",
+      "source": "pymnts.com",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-06-01T23:56:14+00:00",
+      "snippet": "New York City transit agencies are expanding artificial intelligence (AI) pilots aimed at detecting subway infrastructure problems before they cause delays, targeting a maintenance challenge that has persisted across one of the world’s most heavily used rail …",
+      "image": "https://www.pymnts.com/wp-content/uploads/2026/06/New-York-subway-delays-AI.jpeg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:56"
+    },
+    {
+      "id": "7f8039a61b37c294af964e29d4171646",
+      "title": "Alphabet's AI Push: Google parent to raise $80 billion from stock sale; Berkshire Hathaway invest $10 billion more",
+      "url": "https://www.livemint.com/companies/news/alphabets-ai-push-google-parent-to-raise-80-billion-from-stock-sale-berkshire-hathaway-invest-10-billion-more-11780357114598.html",
+      "source": "Livemint",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-06-01T23:56:10+00:00",
+      "snippet": "Alphabet's AI push intensifies as Google's parent raises $80 billion in stock, anchored by a fresh $10 billion investment from Berkshire Hathaway to expand AI infrastructure.",
+      "image": "https://www.livemint.com/lm-img/img/2026/06/01/1600x900/logo/Sundar_Pichai_1780357277783_1780357277977_2c89fdf7-1fa4-4daf-92bc-7c9ce8e9f4b5.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:56"
+    },
+    {
+      "id": "e462e04b6a437bf15d62b691bedcd30a",
+      "title": "Perplexity CEO on AI spending",
+      "url": "https://4sysops.com/archives/perplexity-ceo-on-ai-spending/",
+      "source": "4sysops.com",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-06-01T23:54:44+00:00",
+      "snippet": "Enterprise spending on artificial intelligence is expected to become significantly more efficient as organizations seek better returns on investment. Future advancements will likely focus on increased control over token usage to prevent massive unexpected cos…",
+      "image": "https://4sysops.com/wp-content/uploads/2026/06/moving-toward-a-hybrid-orchestration-of-server-and-local-ai-compute.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:54"
+    },
+    {
+      "id": "d98d32c6dc30a751a6d99e08095a7fab",
+      "title": "cubic 0.7.0a9",
+      "url": "https://pypi.org/project/cubic/0.7.0a9/",
+      "source": "Pypi.org",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-06-01T23:54:16+00:00",
+      "snippet": "CUDA-accelerated 3D BioImage Computing",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:54"
+    },
+    {
+      "id": "03e2dc796019e20ba3dbc5e9c4d224a6",
+      "title": "pullwise 0.2.0",
+      "url": "https://pypi.org/project/pullwise/0.2.0/",
+      "source": "Pypi.org",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-01T23:54:04+00:00",
+      "snippet": "AI-powered PR descriptions, labels, and code review using OpenAI",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:54"
+    },
+    {
+      "id": "14b26dcfbb9f79834815217e23864a7d",
+      "title": "AI costs how much? GitHub Copilot users react to new usage-based pricing system.",
+      "url": "https://slashdot.org/firehose.pl?op=view&amp;id=183546398",
+      "source": "Slashdot.org",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-06-01T23:52:04+00:00",
+      "snippet": "Some report burning through their whole monthly \"AI credit\" allotment in a single day.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:52"
+    },
+    {
+      "id": "31e56fb5f0f3acbd729d4fb14ae7029a",
+      "title": "langchain-content-normalizer 0.1.6",
+      "url": "https://pypi.org/project/langchain-content-normalizer/0.1.6/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-06-01T23:51:43+00:00",
+      "snippet": "Normalize LangChain, MCP, and multimodal content blocks into provider-ready text and image payloads.",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:51"
+    },
+    {
+      "id": "6608c0a6a0237240a9f60c8ba881883e",
+      "title": "Deploy Self-Evolving Agents for Faster, More Secure Research with a Hermes Agent and NVIDIA NemoClaw",
+      "url": "https://developer.nvidia.com/blog/deploy-self-evolving-agents-for-faster-more-secure-research-with-a-hermes-agent-and-nvidia-nemoclaw/",
+      "source": "Nvidia.com",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-06-01T23:49:45+00:00",
+      "snippet": "AI agents are a powerful tool for synthesizing data to accelerate research, summarize information, and help teams make decisions faster. But combining internal...",
+      "image": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/05/NemoClaw-Hermes.webp",
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:49"
+    },
+    {
+      "id": "8c0a91b94970b916fcc4e25b0b8ce1d7",
+      "title": "langchain-content-normalizer 0.1.5",
+      "url": "https://pypi.org/project/langchain-content-normalizer/0.1.5/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-06-01T23:37:31+00:00",
+      "snippet": "Normalize LangChain, MCP, and multimodal content blocks into provider-ready text and image payloads.",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:37"
+    },
+    {
+      "id": "f0520016089e6526a605172bfddb4adb",
+      "title": "DeepSeek's pricing move could redistribute value across AI hardware market",
+      "url": "https://www.digitimes.com/news/a20260601PD213/deepseek-ai-api-price-hardware.html",
+      "source": "Digitimes",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-06-01T23:37:06+00:00",
+      "snippet": "Chinese AI startup DeepSeek said it will permanently cut the API price of its flagship model by 75% from June 1, prompting debate across the global AI industry. Amazon AWS said the move may matter less as a price war than as a bid to change how AI infrastruct…",
+      "image": "https://img.digitimes.com/newsshow/20260601pd213_files/1_b.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:37"
+    },
+    {
+      "id": "6b2f20676f4229ba8245bfebba3e6ff2",
+      "title": "langchain-content-normalizer 0.1.4",
+      "url": "https://pypi.org/project/langchain-content-normalizer/0.1.4/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-06-01T23:24:29+00:00",
+      "snippet": "Normalize LangChain, MCP, and multimodal content blocks into provider-ready text and image payloads.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:24"
+    },
+    {
+      "id": "81cfcc7c38955b0f48bcf2dc19200030",
+      "title": "NY Fed Finds Remote Work, Not AI, Killed Entry-Level Jobs",
+      "url": "https://www.pymnts.com/economy/2026/ny-fed-finds-remote-work-not-ai-killed-entry-level-jobs/",
+      "source": "pymnts.com",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-06-01T23:13:29+00:00",
+      "snippet": "Artificial intelligence may not be the cause of the sharp rise in youth unemployment, according to a Federal Reserve of New York blog post. Instead, remote work accounts for 64% of the increase, New York Fed research economist Natalia Emanuel, University of V…",
+      "image": "https://www.pymnts.com/wp-content/uploads/2026/06/college-grads-AI-1.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:13"
+    },
+    {
+      "id": "3b8fae2bc3eee229ad2b7440bc1df0ff",
+      "title": "Samsung's Galaxy Z Fold8 wide foldable spotted in the wild",
+      "url": "https://www.gsmarena.com/samsungs_galaxy_z_fold8_wide_foldable_spotted_in_the_wild-news-73078.php",
+      "source": "GSMArena.com",
+      "category_id": "rumours",
+      "category_name": "Rumours & Gossip",
+      "category_emoji": "🗣️",
+      "published": "2026-06-01T23:12:01+00:00",
+      "snippet": "Samsung is expected to launch its next foldables in July. Recent leaks suggest that the rumored wide-screen foldable could be called the Galaxy Z Fold8, while the Galaxy Z Fold7 successor may be known as the Galaxy Z Fold8 Ultra. Ahead of anything official, t…",
+      "image": "https://fdn.gsmarena.com/imgroot/news/26/06/samsung-galaxy-z-fold8-wide-real-life-leak/-952x498w6/gsmarena_00.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:12"
+    },
+    {
+      "id": "10e87f967c6602a3ca811515429e6921",
+      "title": "Eric Schmidt scores victory in case brought by ex-girlfriend who accused him of rape — as arbitrator decides she must pay him $10M+",
+      "url": "https://pagesix.com/2026/06/01/celebrity-news/eric-schmidt-scores-victory-in-case-brought-by-ex-girlfriend/",
+      "source": "Page Six",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-06-01T23:11:47+00:00",
+      "snippet": "\"I find that Ritter’s statement that she was raped by Schmidt to be false,\" the arbitrator wrote in the case — adding that Michelle Ritter engaged \"in defamation ... \"",
+      "image": "https://pagesix.com/wp-content/uploads/sites/3/2026/06/newspress-collage-3rrg1g1ag-1780355457620.jpg?quality=75&strip=all&1780341082&w=1200",
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:11"
+    },
+    {
+      "id": "e23cee2dbf7c992dcca1b6c6965cd89d",
+      "title": "langchain-content-normalizer 0.1.3",
+      "url": "https://pypi.org/project/langchain-content-normalizer/0.1.3/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-06-01T23:10:35+00:00",
+      "snippet": "Normalize LangChain, MCP, and multimodal content blocks into provider-ready text and image payloads.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:10"
+    },
+    {
+      "id": "e38c8c009c117bf434efe491eab88475",
+      "title": "handycode 2.3.1",
+      "url": "https://pypi.org/project/handycode/2.3.1/",
+      "source": "Pypi.org",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-06-01T23:06:39+00:00",
+      "snippet": "AI Code Assistant for DeepSeek",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:06"
+    },
+    {
+      "id": "c24be7c732f8b2759fc5c21d8e6f88d2",
+      "title": "CNBC's The China Connection newsletter: China learns to build without Nvidia",
+      "url": "https://www.cnbc.com/2026/06/01/china-learns-to-build-without-nvidia.html",
+      "source": "CNBC",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-06-01T23:00:01+00:00",
+      "snippet": "Chinese companies are increasingly seeking Nvidia alternatives to develop self-sufficient systems, even if their own tech remains in the early stages.",
+      "image": "https://image.cnbcfm.com/api/v1/image/108312339-1779872990944-gettyimages-2226453643-2025_WAIC_Held_in_Shanghai.jpeg?v=1779873044&w=1920&h=1080",
+      "ai_summary": "",
+      "published_display": "Jun 01, 23:00"
+    },
+    {
+      "id": "298c3e2c044aa20b63e4497474a257a5",
+      "title": "CoolIT Systems Demonstrates 15kW Coldplate, Extending Single-Phase DLC Roadmap Far Beyond 2030",
+      "url": "https://www.prnewswire.com/news-releases/coolit-systems-demonstrates-15kw-coldplate-extending-single-phase-dlc-roadmap-far-beyond-2030-302787344.html",
+      "source": "PRNewswire",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-06-01T22:58:00+00:00",
+      "snippet": "The design delivers nearly 4x the capacity of CoolIT's previously demonstrated coldplate, extending the leadership of single-phase direct liquid cooling for multiple generations of AI infrastructure CALGARY, AB, June 1, 2026 /PRNewswire/ -- CoolIT Systems (Co…",
+      "image": "https://mma.prnewswire.com/media/2992204/CoolIT_Systems_Inc_Logo.jpg?p=facebook",
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:58"
+    },
+    {
+      "id": "71ae3cdabc7fd6d689b14d9d2d8ce3c4",
+      "title": "Deploy Agentic-Ready AI at the Edge with Memory Efficiency in NVIDIA JetPack 7.2",
+      "url": "https://developer.nvidia.com/blog/deploy-agentic-ready-ai-at-the-edge-with-memory-efficiency-in-nvidia-jetpack-7-2/",
+      "source": "Nvidia.com",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-06-01T22:54:28+00:00",
+      "snippet": "As AI agents move from the digital world to the physical environment, they can readily use NVIDIA Jetson to accelerate real-world deployment with optimized...",
+      "image": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/06/robotics-jetpack-7-2.webp",
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:54"
+    },
+    {
+      "id": "94d7fcf6665ad9b45ded4d711f5759c4",
+      "title": "Nvidia Releases Its Best Open AI Model Yet—But Still Lags Behind China",
+      "url": "https://decrypt.co/369689/nvidia-open-ai-model-nemotron-3-ultra",
+      "source": "Decrypt",
+      "category_id": "mistral",
+      "category_name": "Mistral",
+      "category_emoji": "🇪🇺",
+      "published": "2026-06-01T22:46:04+00:00",
+      "snippet": "Nvidia's Nemotron 3 Ultra tops every American open-weight AI system by a wide margin—but still trails the Chinese-led frontier.",
+      "image": "https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2025/09/nvidia-logo-decrypt-style-01-gID_7.png",
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:46"
+    },
+    {
+      "id": "40641860b2974bee055434d2d93fd84d",
+      "title": "6 Best Smart Glasses on Amazon (No Big Brands) 2026",
+      "url": "https://the-gadgeteer.com/2026/06/01/best-smart-glasses-amazon-2026/",
+      "source": "The Gadgeteer",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-06-01T22:40:35+00:00",
+      "snippet": "Meta Ray-Ban gets the magazine covers. Amazon’s smart-glasses category gets everyone else. And “everyone else” is doing more interesting work than the headlines suggest. AI assistants on open-ear frames, real Micro-OLED AR displays, 4K POV camera frames, and …",
+      "image": "https://the-gadgeteer.com/wp-content/uploads/2026/06/6-Best-Smart-Glasses-on-Amazon-No-Big-Brands-2026.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:40"
+    },
+    {
+      "id": "cccd28e5b5afa9cf68db3f88176b6e9a",
+      "title": "SymphonyAI Brings AI-Powered Assortment and Space Platform to Global CPGs, Compressing Category Review Cycles from Weeks to Days",
+      "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/symphonyai-brings-ai-powered-assortment-and-space-platform-to-global-cpgs-compressing-category-review-cycles-from-weeks-to-days",
+      "source": "Financial Post",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-06-01T22:38:23+00:00",
+      "snippet": "CINDE Assortment and Space closes the loop between assortment, planogram, and in-store execution, proven across 500-plus global CPG deployments PALO ALTO, Calif. — Planogram compliance failures, undetected out-of-stocks, and the lag between headquarters plann…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:38"
+    },
+    {
+      "id": "e2344818892c1e747b58abe1eb4f50a6",
+      "title": "langchain-content-normalizer 0.1.0",
+      "url": "https://pypi.org/project/langchain-content-normalizer/0.1.0/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-06-01T22:38:23+00:00",
+      "snippet": "Normalize LangChain, MCP, and multimodal content blocks into provider-ready text and image payloads.",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:38"
+    },
+    {
+      "id": "41ba61a287302b03a10b3a63847f4a63",
+      "title": "handycode 2.2.1",
+      "url": "https://pypi.org/project/handycode/2.2.1/",
+      "source": "Pypi.org",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-06-01T22:38:03+00:00",
+      "snippet": "AI Code Assistant for DeepSeek",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:38"
+    },
+    {
+      "id": "c819942fa71c79ac61fc404525138cdc",
+      "title": "OpenAI frontier models and Codex arrive on Amazon Bedrock",
+      "url": "https://4sysops.com/archives/openai-frontier-models-and-codex-arrive-on-amazon-bedrock/",
+      "source": "4sysops.com",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-06-01T22:31:25+00:00",
+      "snippet": "OpenAI has made its frontier models and Codex generally available on the Amazon Web Services platform. This integration allows organizations to deploy advanced artificial intelligence capabilities using their existing AWS security, compliance, and billing wor…",
+      "image": "https://4sysops.com/wp-content/uploads/2026/06/openai-frontier-models-and-codex-arrive-on-amazon-bedrock.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:31"
+    },
+    {
+      "id": "a7cfef162250b3ee658a494b961328d0",
+      "title": "GitHub Copilot transitions to token-based billing and introduces user budgets",
+      "url": "https://4sysops.com/archives/github-copilot-transitions-to-token-based-billing-and-introduces-user-budgets/",
+      "source": "4sysops.com",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-06-01T22:31:20+00:00",
+      "snippet": "GitHub has officially transitioned its Copilot AI platform from flat-rate subscriptions to a usage-based billing model. This new system utilizes GitHub AI Credits to track consumption across all available service plans. While each plan includes a baseline of …",
+      "image": "https://4sysops.com/wp-content/uploads/2026/06/github-copilot-transitions-to-token-based-billing-and-introduces-user-budgets.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:31"
+    },
+    {
+      "id": "f3045c6a4d0b3b1ec069db6299592663",
+      "title": "SymphonyAI Launches CINDE Retail Media Intelligence to Connect Merchandising and Media for Mid-to-Large Grocers",
+      "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/symphonyai-launches-cinde-retail-media-intelligence-to-connect-merchandising-and-media-for-mid-to-large-grocers",
+      "source": "Financial Post",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-06-01T22:07:54+00:00",
+      "snippet": "CINDE RMI connects merchandising and retail media in a single closed-loop platform — without replacing your existing retail media stack PALO ALTO, Calif. — Retail media has become the fastest-growing profit line in grocery, yet the billions of dollars CPG adv…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:07"
+    },
+    {
+      "id": "67314cda21da0dfd8c88980d7ab3ebae",
+      "title": "Alphabet plans $80 billion stock sale as AI spending surges",
+      "url": "https://www.dw.com/en/alphabet-plans-80-billion-stock-sale-as-ai-spending-surges/a-77383080",
+      "source": "DW (English)",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-06-01T22:05:00+00:00",
+      "snippet": "The Google parent company's announcement comes on the same day as Anthropic said it had confidentially filed paperwork for an initial public offering",
+      "image": "https://static.dw.com/image/77383030_6.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:05"
+    },
+    {
+      "id": "18239c217e443a54837658fa50c496d5",
+      "title": "Bernie Sanders Continues to Be Only Democrat(ish) Lawmaker Willing to Govern on AI",
+      "url": "https://gizmodo.com/bernie-sanders-continues-to-be-only-democrat-willing-to-govern-on-ai-proposes-public-ownership-2000765960",
+      "source": "Gizmodo.com",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-06-01T22:02:45+00:00",
+      "snippet": "By proposing public ownership, at least he's trying.",
+      "image": "https://gizmodo.com/app/uploads/2026/03/BernieSandersClaude-1200x675.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:02"
+    },
+    {
+      "id": "101f1e8c7510efc1ffb30a080f7ff95e",
+      "title": "azure-ai-agentserver-optimization added to PyPI",
+      "url": "https://pypi.org/project/azure-ai-agentserver-optimization/",
+      "source": "Pypi.org",
+      "category_id": "microsoft",
+      "category_name": "Microsoft",
+      "category_emoji": "🟦",
+      "published": "2026-06-01T22:01:00+00:00",
+      "snippet": "Optimization config loader for Azure AI Hosted Agents",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:01"
+    },
+    {
+      "id": "ddf882f4f2d795d5f915aedbb75b3756",
+      "title": "Bernie Sanders Proposes To Seize Half-Ownership of Large AI Firms!",
+      "url": "https://freebeacon.substack.com/p/bernie-sanders-proposes-to-seize",
+      "source": "Substack.com",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-06-01T22:00:13+00:00",
+      "snippet": "'A one-time 50 percent tax' inspired by a Columbia law journal article",
+      "image": "https://substackcdn.com/image/fetch/$s_!cxVl!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7e96d7c9-bd07-4cb4-b982-1f8afb143f3f_1243x1147.png",
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:00"
+    },
+    {
+      "id": "9176fe8232437cdbad5b38fcb6c0dcd1",
+      "title": "Fox News Poll: 'Resilient discontent' defines the US mood at 250th anniversary",
+      "url": "https://www.foxnews.com/politics/fox-news-poll-resilient-discontent-defines-u-s-mood-250th-anniversary",
+      "source": "Fox News",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-06-01T22:00:02+00:00",
+      "snippet": "Two-thirds of American voters describe the U.S. in negative terms, yet 81% still prefer living here as the nation approaches its 250th anniversary.",
+      "image": "https://static.foxnews.com/foxnews.com/content/uploads/2026/05/america-250-may-17-02.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:00"
+    },
+    {
+      "id": "4e5d08cb39fe3652823d67a329011a17",
+      "title": "ZetaChain: The Private Memory Layer for AI",
+      "url": "https://www.globenewswire.com/news-release/2026/06/01/3304774/0/en/ZetaChain-The-Private-Memory-Layer-for-AI.html",
+      "source": "GlobeNewswire",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-06-01T22:00:00+00:00",
+      "snippet": "ZetaChain announces Anuma and its evolution into the private memory layer for AI, building user-owned memory across models and apps....",
+      "image": "https://ml.globenewswire.com/Resource/Download/56099918-4da5-457e-b47a-1b2ffb76e4c8",
+      "ai_summary": "",
+      "published_display": "Jun 01, 22:00"
+    },
+    {
+      "id": "865146f62f96bddec2921d8a170a9382",
+      "title": "Apple MacBook Air (2026) 15 in. Notebook Apple M5 10-Core CPU and GPU, 16 GB RAM, 512 GB SSD $1089.99 at P.C. Richard (1 replies)",
+      "url": "https://slickdeals.net/f/19584543-apple-macbook-air-2026-15-in-notebook-apple-m5-10-core-cpu-and-gpu-16-gb-ram-512-gb-ssd-1089-99-at-p-c-richard",
+      "source": "Slickdeals.net",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-06-01T21:58:34+00:00",
+      "snippet": "Apple MacBook Air (2026) 15 in. Notebook with Apple Intelligence, Apple M5 10-Core CPU, 10-Core GPU, 16 GB RAM, 512 GB SSD, up to 18 Hrs. of Battery Life & Mac OS - Available in Midnight, Silver,",
+      "image": "https://slickdeals.net/attachment/5/4/6/0/7/3/450x450/20559609.thumb",
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:58"
+    },
+    {
+      "id": "b62c17843b3c582873ba313f4bf6ad81",
+      "title": "The Therapeutic Industrial Complex",
+      "url": "https://www.psychologytoday.com/us/blog/authenticity-101/202605/the-therapeutic-industrial-complex",
+      "source": "Psychology Today",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-06-01T21:51:17+00:00",
+      "snippet": "We are now living inside the Therapeutic Industrial Complex governed by a matrix of VC-backed digital mental health platforms, insurance companies, and big pharma.",
+      "image": "https://cdn2.psychologytoday.com/assets/styles/manual_crop_1_91_1_1528x800/public/field_blog_entry_images/2026-06/pexels-markus-winkler-1430818-19835654.jpg?itok=4Ggv-mP9",
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:51"
+    },
+    {
+      "id": "522c3a476c81acae4680445180da23f3",
+      "title": "AI giant Anthropic confidentially files for IPO",
+      "url": "https://japantoday.com/category/tech/ai-giant-anthropic-confidentially-files-for-ipo",
+      "source": "Japan Today",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-06-01T21:48:54+00:00",
+      "snippet": "AI giant Anthropic, the maker of the Claude chatbot, announced Monday that it had filed confidentially for an initial public offering (IPO), as Silicon Valley AI companies look to raise the enormous sums needed to fuel the sector's rapid expansion. A confiden…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:48"
+    },
+    {
+      "id": "80fa1c8f63eea2cccd8dbc048f572bde",
+      "title": "Used/Like New: Apple AirPods Pro 3 Wireless Earbuds w/ ANC $151 + Free S&H",
+      "url": "https://slickdeals.net/f/19584072-used-like-new-apple-airpods-pro-3-wireless-earbuds-w-anc-151-free-s-h",
+      "source": "Slickdeals.net",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-06-01T21:48:50+00:00",
+      "snippet": "Amazon Resale via Amazon has Used/Like New: Apple AirPods Pro 3 Wireless Earbuds w/ ANC (MFHP4LL/A) on sale for $189.05 - $37.81 (20%) auto-applied at checkout = $151.24. Shipping is free.\r\n\r\nThanks t",
+      "image": "https://slickdeals.net/attachment/9/2/3/2/7/8/3/450x450/20558286.thumb",
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:48"
     },
     {
       "id": "0abca1382a4a1038aac4e917af5c78c3",
@@ -631,6 +1737,188 @@
       "published_display": "Jun 01, 21:46"
     },
     {
+      "id": "5b4b7e137d96d19e36bd56ab99f0fa09",
+      "title": "Red Hat npm packages compromised to steal developer credentials",
+      "url": "https://www.bleepingcomputer.com/news/security/red-hat-npm-packages-compromised-to-steal-developer-credentials/",
+      "source": "BleepingComputer",
+      "category_id": "mistral",
+      "category_name": "Mistral",
+      "category_emoji": "🇪🇺",
+      "published": "2026-06-01T21:38:29+00:00",
+      "snippet": "More than 30 npm packages under Red Hat's '@redhat-cloud-services' namespace were compromised in a supply-chain attack that distributed a new variant of the Shai-Hulud credential-stealing malware, dubbed \"Miasma.\" [...]",
+      "image": "https://www.bleepstatic.com/content/hl-images/2025/10/02/redhat-header-vign.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:38"
+    },
+    {
+      "id": "07844b0294cacb06940a906f2ce73afc",
+      "title": "handycode 2.1.3",
+      "url": "https://pypi.org/project/handycode/2.1.3/",
+      "source": "Pypi.org",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-06-01T21:35:27+00:00",
+      "snippet": "AI Code Assistant for DeepSeek",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:35"
+    },
+    {
+      "id": "78b8590b60df922a342d0fa82e089788",
+      "title": "Get started with OpenAI GPT-5.5, GPT-5.4 models, and Codex on Amazon Bedrock",
+      "url": "https://aws.amazon.com/blogs/aws/get-started-with-openai-gpt-5-5-gpt-5-4-models-and-codex-on-amazon-bedrock/",
+      "source": "Amazon.com",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-06-01T21:33:28+00:00",
+      "snippet": "OpenAI frontier models GPT-5.5 and GPT-5.4, and Codex, the OpenAI coding agent, are now generally available on Amazon Bedrock. Deploy frontier models on Bedrock's high performance inference engine with built-in security, governance, and pay-per-token pricing.",
+      "image": "https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2026/05/24/News-Blog-Featured-Images-25-2.png",
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:33"
+    },
+    {
+      "id": "ea98fb6a340803f69b9fc1f34a7ccde0",
+      "title": "33+ gift ideas for dads that will make you the favorite child this Father’s Day 2026",
+      "url": "https://nypost.com/shopping/best-fathers-day-gifts-ideas-2026/",
+      "source": "New York Post",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-06-01T21:30:00+00:00",
+      "snippet": "Get something fun for your dad this Father's Day!",
+      "image": "https://nypost.com/wp-content/uploads/sites/2/2026/06/happy-pappy-gift-guide-001.jpg?quality=75&strip=all&w=1200",
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:30"
+    },
+    {
+      "id": "0e5fd916d433992a9826e16439b7f500",
+      "title": "Java News Roundup: OpenJDK JEPs, Hazelcast, Quarkus, Hibernate, Koog, JHipster, Introducing Endive",
+      "url": "https://www.infoq.com/news/2026/06/java-news-roundup-may25-2026/",
+      "source": "InfoQ.com",
+      "category_id": "mistral",
+      "category_name": "Mistral",
+      "category_emoji": "🇪🇺",
+      "published": "2026-06-01T21:30:00+00:00",
+      "snippet": "This week's Java roundup for May 25th, 2026, features news highlighting: lifecycle changes with two of the JEPs that were targeted for JDK 27; the GA release of Koog 1.0; point releases of Hazelcast, Quarkus, Hibernate and JHipster; the eighth milestone relea…",
+      "image": "https://res.infoq.com/news/2026/06/java-news-roundup-may25-2026/en/headerimage/java-news-roundup-image-1780348608154.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:30"
+    },
+    {
+      "id": "df2c92a6c24da2d88081b9b504509974",
+      "title": "github-copilot-sdk 1.0.0b12",
+      "url": "https://pypi.org/project/github-copilot-sdk/1.0.0b12/",
+      "source": "Pypi.org",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-06-01T21:26:02+00:00",
+      "snippet": "Python SDK for GitHub Copilot CLI",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:26"
+    },
+    {
+      "id": "294b8f7277ed331f72762bce14871c04",
+      "title": "handycode 2.1.2",
+      "url": "https://pypi.org/project/handycode/2.1.2/",
+      "source": "Pypi.org",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-06-01T21:23:33+00:00",
+      "snippet": "AI Code Assistant for DeepSeek",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:23"
+    },
+    {
+      "id": "5f2ae45fa6f02ebab901d293ba091091",
+      "title": "Singapore court denies xAI’s requests for documents in lawsuit against Apple and OpenAI",
+      "url": "https://9to5mac.com/2026/06/01/singapore-court-denies-xais-requests-for-documents-in-lawsuit-against-apple-and-openai/",
+      "source": "9to5Mac",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-06-01T21:18:37+00:00",
+      "snippet": "Singapore has rejected xAI’s requests for documents from local companies as part of Elon Musk’s lawsuit against Apple and OpenAI. Here are the details.\n\n\n\n more…",
+      "image": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2025/10/Apple-asks-judge-to-dismiss-absurd-AI-claim-by-Elon-Musk.webp?resize=1200%2C628&quality=82&strip=all&ssl=1",
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:18"
+    },
+    {
+      "id": "ae3feee31ea1f8eadd05f058d3c3e77f",
+      "title": "Google Encloses The Web",
+      "url": "https://battellemedia.com/archives/2026/06/google-encloses-the-web",
+      "source": "Battellemedia.com",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-06-01T21:06:29+00:00",
+      "snippet": "Last month Google announced the most significant change to its search product since its launch in 1998. Its iconic search box, which I’ve long compared to a command line for the Internet, has been redesigned to incorporate multi-modal chatbot capabilities. In…",
+      "image": "https://battellemedia.com/wp-content/uploads/2026/06/Google-Search-AI-question-1024x654.png",
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:06"
+    },
+    {
+      "id": "fe1f5200ab6db085e510e39b57e2e7e7",
+      "title": "Morgan Stanley reiterates $330 price target with bull-case $440",
+      "url": "https://asymco.com/2026/06/01/morgan-stanley-reiterates-330-price-target-with-bull-case-440/",
+      "source": "Asymco.com",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-06-01T21:01:37+00:00",
+      "snippet": "AI or bust Morgan Stanley analyst Erik Woodring believes Apple’s upcoming Worldwide Developers Conference could begin to change that perception. The 5-star analyst reiterated his Overweight rating and $330 price target, arguing that a successful AI strategy c…",
+      "image": "https://asymco.com/wp-content/uploads/2026/06/image.png",
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:01"
+    },
+    {
+      "id": "24b82102b55eaa98ad9dadd0691abaf2",
+      "title": "Save 20% Off the Apple AirPods Pro 3 Earbuds and Treat Dad for Father's Day",
+      "url": "https://www.ign.com/articles/apple-airpods-pro-3-earbuds-deal-amazon-fathers-day-sale",
+      "source": "IGN",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-06-01T21:00:00+00:00",
+      "snippet": "The best noise canceling earbuds for iPhone.",
+      "image": "https://assets-prd.ignimgs.com/2026/06/01/appleairpodspro32-1780347067450.jpg?width=1280&format=jpg&auto=webp&quality=80",
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:00"
+    },
+    {
+      "id": "978657c926f0c7311351cd7b0acb143c",
+      "title": "Would You Rather Live Near A Battery Energy Storage System or a Nuclear Plant",
+      "url": "https://wattsupwiththat.com/2026/06/01/would-you-rather-live-near-a-battery-energy-storage-system-or-a-nuclear-plant/",
+      "source": "Wattsupwiththat.com",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-06-01T21:00:00+00:00",
+      "snippet": "“From a public safety standpoint, if you’ve decommissioned three nuclear reactors, why would you want to install a BESS facility in populated areas that is far less safe?”\nThe post Would You Rather Live Near A Battery Energy Storage System or a Nuclear Plant …",
+      "image": "https://i0.wp.com/wattsupwiththat.com/wp-content/uploads/2026/06/Energy-storage-versus-nuclear-power-comparison.webp?fit=1024%2C512&quality=75&ssl=1",
+      "ai_summary": "",
+      "published_display": "Jun 01, 21:00"
+    },
+    {
+      "id": "669bf7a0603485a5da5e30f2fccaf1ed",
+      "title": "HBF faces AI agent to members for first time",
+      "url": "https://www.itnews.com.au/news/hbf-faces-ai-agent-to-members-for-first-time-626295",
+      "source": "iTnews",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-06-01T20:57:00+00:00",
+      "snippet": "More interactive \"authenticated\" AI to follow.",
+      "image": "https://i.nextmedia.com.au/News/Sanjeev_Gupta_HBF_Salesforce_Financial_Summit_2026.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 20:57"
+    },
+    {
       "id": "5b391d40d02542bda1df7df020a4c075",
       "title": "Supercharging LLM inference on Google TPUs: Achieving 3X speedups with diffusion-style speculative decoding",
       "url": "https://developers.googleblog.com/supercharging-llm-inference-on-google-tpus-achieving-3x-speedups-with-diffusion-style-speculative-decoding/",
@@ -642,7 +1930,63 @@
       "snippet": "Researchers at UCSD have successfully implemented DFlash, a block-diffusion speculative decoding method, on Google TPUs to bypass the sequential bottlenecks of traditional autoregressive drafting. By \"painting\" entire blocks of candidate tokens in a single forward pass rather than predicting them one-by-one, the system achieved average speedups of 3.13x, with peak performance nearly doubling that of existing methods like EAGLE-3. This open-source integration into the vLLM ecosystem optimizes TPU",
       "image": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_Generated_Image_5uj3px5uj3.2e16d0ba.fill-1200x600.jpg",
       "ai_summary": "",
-      "published_display": "23h ago"
+      "published_display": "Jun 01, 20:53"
+    },
+    {
+      "id": "db970ac4ca3f36594cc0394416913d72",
+      "title": "Is Context Engineering the New AEO Secret Sauce?",
+      "url": "https://www.cmswire.com/digital-marketing/is-context-engineering-the-new-aeo-secret-sauce/",
+      "source": "CMSWire",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-06-01T20:51:59+00:00",
+      "snippet": "Most brands are optimizing content for AI search. The ones winning are fixing the infrastructure underneath it first.\nContinue reading...",
+      "image": "https://www.cmswire.com/-/media/a5a51694767f467ea4f87f2776df886a.ashx",
+      "ai_summary": "",
+      "published_display": "Jun 01, 20:51"
+    },
+    {
+      "id": "851e5576695d19ea447b48b5bb9f447e",
+      "title": "iOS 27 could make it way easier to split the bill",
+      "url": "https://www.cultofmac.com/news/ios-27-could-make-it-way-easier-to-split-the-bill",
+      "source": "Cult of Mac",
+      "category_id": "rumours",
+      "category_name": "Rumours & Gossip",
+      "category_emoji": "🗣️",
+      "published": "2026-06-01T20:21:04+00:00",
+      "snippet": "Looks like a very convenient bill-splitting tool is coming to iOS 27. Should make those awkward group purchases like dinners a lot easier.\n(via Cult of Mac - Your source for the latest Apple news, rumors, analysis, reviews, how-tos and deals.)",
+      "image": "https://www.cultofmac.com/wp-content/uploads/2026/06/people-splitting-the-bill-with-credit-cards.jpg.webp",
+      "ai_summary": "",
+      "published_display": "Jun 01, 20:21"
+    },
+    {
+      "id": "c9a42d0f870863e7fa8d9feb9e9c8baa",
+      "title": "github-copilot-sdk 1.0.0b11",
+      "url": "https://pypi.org/project/github-copilot-sdk/1.0.0b11/",
+      "source": "Pypi.org",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-06-01T20:20:01+00:00",
+      "snippet": "Python SDK for GitHub Copilot CLI",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 01, 20:20"
+    },
+    {
+      "id": "99efc08a52c570e8e5739372aeab0b1d",
+      "title": "Microsoft and Google are late to AI coding, but 'absolutely critical' they compete for growth",
+      "url": "https://www.cnbc.com/2026/06/01/microsoft-and-google-take-on-anthropic-and-openai-in-ai-coding-models.html",
+      "source": "CNBC",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-06-01T20:18:21+00:00",
+      "snippet": "Coding tools are becoming an increasingly big target for Google and Microsoft as they try to catch up to Anthropic and OpenAI.",
+      "image": "https://image.cnbcfm.com/api/v1/image/108314167-1780095631300-gettyimages-2262969404-20090101260225-99-646956.jpeg?v=1780095752&w=1920&h=1080",
+      "ai_summary": "",
+      "published_display": "Jun 01, 20:18"
     },
     {
       "id": "8b058ed94b09b9ff0d1310286b586a11",
@@ -657,6 +2001,20 @@
       "image": "https://image.theregister.com/?imageId=4093866&width=800",
       "ai_summary": "",
       "published_display": "Jun 01, 20:12"
+    },
+    {
+      "id": "4a9c2d2221a468e1c606896ad973aa9d",
+      "title": "agentops-accelerator 0.3.6",
+      "url": "https://pypi.org/project/agentops-accelerator/0.3.6/",
+      "source": "Pypi.org",
+      "category_id": "microsoft",
+      "category_name": "Microsoft",
+      "category_emoji": "🟦",
+      "published": "2026-06-01T20:08:52+00:00",
+      "snippet": "Release readiness gates and evidence for Microsoft Foundry agents",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 01, 20:08"
     },
     {
       "id": "3b8e06361ea70be7f873f89a79b0c38d",
@@ -963,6 +2321,20 @@
       "published": "2026-06-01T19:12:43+00:00",
       "snippet": "Here’s how this unified-memory superchip will upend the CPU wars, rescue Windows on Arm gaming, and set an expensive new bar for local AI.\nNvidia kicked Computex off with massive news: a major consumer laptop play, powering a new class of AI PCs with a laptop…",
       "image": "https://sm.pcmag.com/t/pcmag_uk/opinion/n/nvidias-rt/nvidias-rtx-spark-is-an-earthquake-for-the-pc-industry-heres_ajt6.1200.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 01, 19:12"
+    },
+    {
+      "id": "7a1342b301498c5dbffdc9650f4368cb",
+      "title": "Nvidia’s RTX Spark Is an Earthquake for the PC Industry. Here’s How I See the Landscape Shifting",
+      "url": "https://uk.pcmag.com/laptops/165285/nvidias-rtx-spark-is-an-earthquake-for-the-pc-industry-computex-2026",
+      "source": "PCMag.com",
+      "category_id": "m365-copilot",
+      "category_name": "M365 Copilot",
+      "category_emoji": "✨",
+      "published": "2026-06-01T19:12:43+00:00",
+      "snippet": "Here’s how this unified-memory superchip will upend the CPU wars, rescue Windows on Arm gaming, and set an expensive new bar for local AI.\nNvidia kicked Computex off with massive news: a major consumer laptop play, powering a new class of AI PCs with a laptop…",
+      "image": "https://sm.pcmag.com/t/pcmag_uk/opinion/n/nvidias-rt/nvidias-rtx-spark-is-an-earthquake-for-the-pc-industry-heres_z6re.1200.jpg",
       "ai_summary": "",
       "published_display": "Jun 01, 19:12"
     },
@@ -2563,6 +3935,6 @@
       "published_display": "May 30, 16:30"
     }
   ],
-  "generated_at": "2026-06-02T20:08:01.618213+00:00",
+  "generated_at": "2026-06-03T00:27:15.284827+00:00",
   "period": "June 2026"
 }

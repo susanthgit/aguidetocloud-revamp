@@ -5,34 +5,90 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Tue, 02 Jun 2026 20:08:01 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2026 00:27:15 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Cisco sings Mythos' praises - but doesn't say how many bugs the model uncovered</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/06/02/cisco-praises-ai-bug-hunt-wont-reveal-flaw-tally/5250291</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Tue, 02 Jun 2026 20:35:24 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/06/02/cisco-praises-ai-bug-hunt-wont-reveal-flaw-tally/5250291</guid>
-    </item>
-    <item>
-      <title>Google Tensor SDK Beta with LiteRT</title>
-      <link>https://developers.googleblog.com/google-tensor-sdk-beta-with-litert/</link>
+      <title>A Smarter Google AI Edge Gallery: MCP integration, notifications, and session continuity</title>
+      <link>https://developers.googleblog.com/a-smarter-google-ai-edge-gallery-mcp-integration-notifications-and-session-continuity/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Tue, 02 Jun 2026 20:06:11 +0000</pubDate>
-      <guid>https://developers.googleblog.com/google-tensor-sdk-beta-with-litert/</guid>
+      <pubDate>Wed, 03 Jun 2026 00:25:35 +0000</pubDate>
+      <guid>https://developers.googleblog.com/a-smarter-google-ai-edge-gallery-mcp-integration-notifications-and-session-continuity/</guid>
     </item>
     <item>
-      <title>An important update: Transitioning Gemini CLI to Antigravity CLI</title>
-      <link>https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/</link>
+      <title>Blazing fast on-device GenAI with LiteRT-LM</title>
+      <link>https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Tue, 02 Jun 2026 20:06:11 +0000</pubDate>
-      <guid>https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/</guid>
+      <pubDate>Wed, 03 Jun 2026 00:25:35 +0000</pubDate>
+      <guid>https://developers.googleblog.com/blazing-fast-on-device-genai-with-litert-lm/</guid>
     </item>
     <item>
-      <title>Uber caps employee AI spending after blowing through budget in four months</title>
+      <title>All the news from the Google I/O 2026 Developer keynote</title>
+      <link>https://developers.googleblog.com/all-the-news-from-the-google-io-2026-developer-keynote/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Wed, 03 Jun 2026 00:25:35 +0000</pubDate>
+      <guid>https://developers.googleblog.com/all-the-news-from-the-google-io-2026-developer-keynote/</guid>
+    </item>
+    <item>
+      <title>One Year of Innovation: Celebrating 100k Members in the Google Cloud x NVIDIA Developer Community</title>
+      <link>https://developers.googleblog.com/one-year-of-innovation-celebrating-100k-members-in-the-google-cloud-x-nvidia-developer-community/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Wed, 03 Jun 2026 00:25:35 +0000</pubDate>
+      <guid>https://developers.googleblog.com/one-year-of-innovation-celebrating-100k-members-in-the-google-cloud-x-nvidia-developer-community/</guid>
+    </item>
+    <item>
+      <title>GPT-4.1 deprecated</title>
+      <link>https://github.blog/changelog/2026-06-02-gpt-4-1-deprecated</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Tue, 02 Jun 2026 23:58:52 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-06-02-gpt-4-1-deprecated</guid>
+    </item>
+    <item>
+      <title>'Dumbass' criminal breaks the 'first rule of ransomware club'</title>
+      <link>https://www.theregister.com/cyber-crime/2026/06/02/dumbass-criminal-breaks-the-first-rule-of-ransomware-club/5250380</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 02 Jun 2026 23:58:34 +0200</pubDate>
+      <guid>https://www.theregister.com/cyber-crime/2026/06/02/dumbass-criminal-breaks-the-first-rule-of-ransomware-club/5250380</guid>
+    </item>
+    <item>
+      <title>Contentful is a shot in the arm for Salesforce's 'headless' bet</title>
+      <link>https://www.theregister.com/saas/2026/06/02/contentful-tops-off-salesforces-headless-bet-analyst-says/5250357</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 02 Jun 2026 23:20:21 +0200</pubDate>
+      <guid>https://www.theregister.com/saas/2026/06/02/contentful-tops-off-salesforces-headless-bet-analyst-says/5250357</guid>
+    </item>
+    <item>
+      <title>Cyera eyes $12B valuation at 80x ARR multiple despite operating losses</title>
+      <link>https://techcrunch.com/2026/06/02/cyera-eyes-12b-valuation-at-80x-arr-multiple-despite-operating-losses/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 02 Jun 2026 22:50:56 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/06/02/cyera-eyes-12b-valuation-at-80x-arr-multiple-despite-operating-losses/</guid>
+    </item>
+    <item>
+      <title>Industrial Software Leaders Build Secure, Autonomous AI Engineers With NVIDIA NemoClaw</title>
+      <link>https://blogs.nvidia.com/blog/industrial-software-leaders-secure-autonomous-ai-engineers-nemoclaw/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Tue, 02 Jun 2026 22:00:58 +0000</pubDate>
+      <guid>https://blogs.nvidia.com/blog/industrial-software-leaders-secure-autonomous-ai-engineers-nemoclaw/</guid>
+    </item>
+    <item>
+      <title>Trump's AI E-(I)-O could let feds pick winners and losers</title>
+      <link>https://www.theregister.com/ai-and-ml/2026/06/02/trump-ai-executive-order-sets-30-day-frontier-model-review/5250322</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 02 Jun 2026 21:59:35 +0200</pubDate>
+      <guid>https://www.theregister.com/ai-and-ml/2026/06/02/trump-ai-executive-order-sets-30-day-frontier-model-review/5250322</guid>
+    </item>
+    <item>
+      <title>Uber caps employee AI spending after blowing through budget in 4 months</title>
       <link>https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/</link>
       <description></description>
       <category>Top Stories</category>
@@ -40,287 +96,39 @@
       <guid>https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/</guid>
     </item>
     <item>
-      <title>AI Model Release Tracker: Microsoft AI's first reasoning model arrives</title>
-      <link>https://www.zdnet.com/article/ai-model-release-tracker/</link>
-      <description></description>
-      <category>Microsoft</category>
-      <pubDate>Tue, 02 Jun 2026 19:06:19 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/ai-model-release-tracker/</guid>
-    </item>
-    <item>
-      <title>New Microsoft tool lets devs spin up AI behavior tests using text descriptions</title>
-      <link>https://techcrunch.com/2026/06/02/new-microsoft-tool-lets-devs-spin-up-ai-behavior-tests-using-text-descriptions/</link>
+      <title>Enhanced performance for server consolidation with Intel Xeon 6+</title>
+      <link>https://www.theregister.com/systems/2026/06/02/enhanced-performance-for-server-consolidation-with-intel-xeon-6/5249881</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Tue, 02 Jun 2026 19:02:21 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/06/02/new-microsoft-tool-lets-devs-spin-up-ai-behavior-tests-using-text-descriptions/</guid>
+      <pubDate>Tue, 02 Jun 2026 17:00:00 +0200</pubDate>
+      <guid>https://www.theregister.com/systems/2026/06/02/enhanced-performance-for-server-consolidation-with-intel-xeon-6/5249881</guid>
     </item>
     <item>
-      <title>NVIDIA Partners With Microsoft on Unified Stack for Agentic AI Deployment, From Windows Devices to Cloud to Local</title>
-      <link>https://blogs.nvidia.com/blog/microsoft-build-windows-local-cloud-devices/</link>
+      <title>Trump signs narrower executive order on AI oversight after industry objections</title>
+      <link>https://techcrunch.com/2026/06/02/trump-signs-narrower-executive-order-on-ai-oversight-after-industry-objections/</link>
       <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Tue, 02 Jun 2026 19:00:08 +0000</pubDate>
-      <guid>https://blogs.nvidia.com/blog/microsoft-build-windows-local-cloud-devices/</guid>
+      <category>Top Stories</category>
+      <pubDate>Tue, 02 Jun 2026 16:23:08 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/06/02/trump-signs-narrower-executive-order-on-ai-oversight-after-industry-objections/</guid>
     </item>
     <item>
-      <title>Build 2026: Microsoft's MDASH exits preview with 100+ specialized threat-hunting AI agents</title>
-      <link>https://www.zdnet.com/article/build-2026-mdash-security-ai-agents/</link>
+      <title>Amazon has discounted this 75-inch Hisense TV by over $500 - and I highly recommend it</title>
+      <link>https://www.zdnet.com/article/hisense-u6-pro-amazon-deal/</link>
       <description></description>
       <category>Industry</category>
-      <pubDate>Tue, 02 Jun 2026 19:00:04 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/build-2026-mdash-security-ai-agents/</guid>
+      <pubDate>Tue, 02 Jun 2026 15:55:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/hisense-u6-pro-amazon-deal/</guid>
     </item>
     <item>
-      <title>I replaced my Garmin with this Amazfit watch for fitness, and it's a worthy alternative</title>
-      <link>https://www.zdnet.com/article/amazfit-cheetah-2-pro-review/</link>
+      <title>Forget Amazon - these are the best Costco deals I've found this week</title>
+      <link>https://www.zdnet.com/article/best-early-amazon-prime-day-costco-deals-2026/</link>
       <description></description>
       <category>Industry</category>
-      <pubDate>Tue, 02 Jun 2026 19:00:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/amazfit-cheetah-2-pro-review/</guid>
+      <pubDate>Tue, 02 Jun 2026 15:51:40 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/best-early-amazon-prime-day-costco-deals-2026/</guid>
     </item>
     <item>
-      <title>Microsoft's first reasoning model is one of 7 AIs just released at Build - what we know so far</title>
-      <link>https://www.zdnet.com/article/all-the-new-ai-models-microsoft-just-launched-at-build/</link>
-      <description></description>
-      <category>Microsoft</category>
-      <pubDate>Tue, 02 Jun 2026 18:38:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/all-the-new-ai-models-microsoft-just-launched-at-build/</guid>
-    </item>
-    <item>
-      <title>Remote work – not AI – is killing job prospects for the youth</title>
-      <link>https://www.theregister.com/cxo/2026/06/02/remote-work-not-ai-is-killing-job-prospects-for-the-youth/5250241</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 02 Jun 2026 18:27:34 +0200</pubDate>
-      <guid>https://www.theregister.com/cxo/2026/06/02/remote-work-not-ai-is-killing-job-prospects-for-the-youth/5250241</guid>
-    </item>
-    <item>
-      <title>4 Nvidia RTX Spark laptops I'm most excited to try - including Microsoft's new Ultra</title>
-      <link>https://www.zdnet.com/article/all-the-new-pcs-powered-by-nvidias-new-n1x-cpu/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Tue, 02 Jun 2026 18:24:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/all-the-new-pcs-powered-by-nvidias-new-n1x-cpu/</guid>
-    </item>
-    <item>
-      <title>Martin Scorsese becomes the latest — and most unlikely — Hollywood voice for AI</title>
-      <link>https://techcrunch.com/2026/06/02/martin-scorsese-becomes-the-latest-and-most-unlikely-hollywood-voice-for-ai/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 02 Jun 2026 18:16:53 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/06/02/martin-scorsese-becomes-the-latest-and-most-unlikely-hollywood-voice-for-ai/</guid>
-    </item>
-    <item>
-      <title>Microsoft launches Scout, an OpenClaw-inspired personal assistant</title>
-      <link>https://techcrunch.com/2026/06/02/microsoft-launches-scout-an-openclaw-inspired-personal-assistant/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 02 Jun 2026 18:02:44 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/06/02/microsoft-launches-scout-an-openclaw-inspired-personal-assistant/</guid>
-    </item>
-    <item>
-      <title>Google rolls out fake call detection to protect against AI deepfake impersonation scams</title>
-      <link>https://techcrunch.com/2026/06/02/google-rolls-out-fake-call-detection-to-protect-against-ai-deepfake-impersonation-scams/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 02 Jun 2026 18:00:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/06/02/google-rolls-out-fake-call-detection-to-protect-against-ai-deepfake-impersonation-scams/</guid>
-    </item>
-    <item>
-      <title>Microsoft offers devs a better way to control AI agent behavior</title>
-      <link>https://techcrunch.com/2026/06/02/microsoft-offers-devs-a-better-way-to-control-ai-agent-behavior/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 02 Jun 2026 18:00:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/06/02/microsoft-offers-devs-a-better-way-to-control-ai-agent-behavior/</guid>
-    </item>
-    <item>
-      <title>Meet Microsoft Scout, Your AI Coworker That Never Logs Off</title>
-      <link>https://www.wired.com/story/meet-microsoft-scout-your-ai-coworker-that-never-logs-off/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 02 Jun 2026 18:00:00 +0000</pubDate>
-      <guid>https://www.wired.com/story/meet-microsoft-scout-your-ai-coworker-that-never-logs-off/</guid>
-    </item>
-    <item>
-      <title>Amazon faces class action lawsuit over Ring facial-recognition feature</title>
-      <link>https://techcrunch.com/2026/06/02/amazon-faces-class-action-lawsuit-over-ring-facial-recognition-feature/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 02 Jun 2026 17:47:28 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/06/02/amazon-faces-class-action-lawsuit-over-ring-facial-recognition-feature/</guid>
-    </item>
-    <item>
-      <title>Marvell enters the AI network fray with 102.4 Tbps switch silicon</title>
-      <link>https://www.theregister.com/networks/2026/06/02/marvell-enters-the-ai-network-fray-with-1024-tbps-switch-silicon/5250180</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 02 Jun 2026 17:45:00 +0200</pubDate>
-      <guid>https://www.theregister.com/networks/2026/06/02/marvell-enters-the-ai-network-fray-with-1024-tbps-switch-silicon/5250180</guid>
-    </item>
-    <item>
-      <title>The art and science of hyperparameter optimization on Amazon Nova Forge</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/the-art-and-science-of-hyperparameter-optimization-on-amazon-nova-forge/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Tue, 02 Jun 2026 17:39:03 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/the-art-and-science-of-hyperparameter-optimization-on-amazon-nova-forge/</guid>
-    </item>
-    <item>
-      <title>Expanded technical preview availability for the GitHub Copilot app</title>
-      <link>https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 02 Jun 2026 17:36:00 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app</guid>
-    </item>
-    <item>
-      <title>Object detection with Amazon Nova 2 Lite</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/object-detection-with-amazon-nova-2-lite/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Tue, 02 Jun 2026 17:31:11 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/object-detection-with-amazon-nova-2-lite/</guid>
-    </item>
-    <item>
-      <title>GitHub Copilot app: The agent-native desktop experience</title>
-      <link>https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 02 Jun 2026 17:30:03 +0000</pubDate>
-      <guid>https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/</guid>
-    </item>
-    <item>
-      <title>Copilot SDK is now generally available</title>
-      <link>https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 02 Jun 2026 17:30:00 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available</guid>
-    </item>
-    <item>
-      <title>Copilot CLI: Improved UI, rubber duck, prompt scheduling, and voice input</title>
-      <link>https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 02 Jun 2026 17:27:00 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input</guid>
-    </item>
-    <item>
-      <title>Cloud and local sandboxes for GitHub Copilot now in public preview</title>
-      <link>https://github.blog/changelog/2026-06-02-cloud-and-local-sandboxes-for-github-copilot-now-in-public-preview</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 02 Jun 2026 17:25:00 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-02-cloud-and-local-sandboxes-for-github-copilot-now-in-public-preview</guid>
-    </item>
-    <item>
-      <title>GitHub Copilot code review for Azure Repos is now in technical preview</title>
-      <link>https://github.blog/changelog/2026-06-02-github-copilot-code-review-for-azure-repos-is-now-in-technical-preview</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 02 Jun 2026 17:22:00 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-02-github-copilot-code-review-for-azure-repos-is-now-in-technical-preview</guid>
-    </item>
-    <item>
-      <title>Shape Copilot code review around your team</title>
-      <link>https://github.blog/changelog/2026-06-02-shape-copilot-code-review-around-your-team</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 02 Jun 2026 17:22:00 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-02-shape-copilot-code-review-around-your-team</guid>
-    </item>
-    <item>
-      <title>Extend GitHub with agent apps</title>
-      <link>https://github.blog/changelog/2026-06-02-extend-github-with-agent-apps</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 02 Jun 2026 17:20:00 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-02-extend-github-with-agent-apps</guid>
-    </item>
-    <item>
-      <title>Work IQ is Microsoft's big bet on agent-first enterprise IT, and I have questions</title>
-      <link>https://www.zdnet.com/article/work-iq-is-microsofts-big-bet-on-agent-first-enterprise-software/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Tue, 02 Jun 2026 17:00:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/work-iq-is-microsofts-big-bet-on-agent-first-enterprise-software/</guid>
-    </item>
-    <item>
-      <title>I compared the two best Android camera phones in 2026 - and it's surprisingly close</title>
-      <link>https://www.zdnet.com/article/samsung-galaxy-s26-ultra-vs-vivo-x300-ultra-camera-comparison/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Tue, 02 Jun 2026 16:56:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/samsung-galaxy-s26-ultra-vs-vivo-x300-ultra-camera-comparison/</guid>
-    </item>
-    <item>
-      <title>Your car is following you - how to reclaim your data privacy on the open road</title>
-      <link>https://www.zdnet.com/article/your-car-is-following-you-how-to-reclaim-data-privacy/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Tue, 02 Jun 2026 16:43:22 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/your-car-is-following-you-how-to-reclaim-data-privacy/</guid>
-    </item>
-    <item>
-      <title>I'm a phone reviewer - these are the 5 early Prime Day phone deals I'd recommend</title>
-      <link>https://www.zdnet.com/article/best-early-amazon-prime-day-phone-deals-2026/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Tue, 02 Jun 2026 16:41:54 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/best-early-amazon-prime-day-phone-deals-2026/</guid>
-    </item>
-    <item>
-      <title>Introducing Copilot CLI and agentic capabilities enhancements in JetBrains IDEs</title>
-      <link>https://github.blog/changelog/2026-06-02-introducing-copilot-cli-and-agentic-capabilities-enhancements-in-jetbrains-ides</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 02 Jun 2026 16:30:40 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-02-introducing-copilot-cli-and-agentic-capabilities-enhancements-in-jetbrains-ides</guid>
-    </item>
-    <item>
-      <title>Gemini models in Copilot CLI, cloud agent, and the Copilot app</title>
-      <link>https://github.blog/changelog/2026-06-02-gemini-models-in-copilot-cli-cloud-agent-and-the-copilot-app</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 02 Jun 2026 16:30:04 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-02-gemini-models-in-copilot-cli-cloud-agent-and-the-copilot-app</guid>
-    </item>
-    <item>
-      <title>GitHub Copilot in Eclipse: BYOK, skills, and chat updates</title>
-      <link>https://github.blog/changelog/2026-06-02-github-copilot-in-eclipse-byok-skills-and-chat-updates</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 02 Jun 2026 16:30:00 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-02-github-copilot-in-eclipse-byok-skills-and-chat-updates</guid>
-    </item>
-    <item>
-      <title>OpenAI launches new Codex tools for white-collar work</title>
-      <link>https://techcrunch.com/2026/06/02/openai-launches-new-codex-tools-for-white-collar-work/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 02 Jun 2026 16:00:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/06/02/openai-launches-new-codex-tools-for-white-collar-work/</guid>
-    </item>
-    <item>
-      <title>How Baz improved its AI Agent Code Review accuracy using Amazon Bedrock AgentCore</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/how-baz-improved-its-ai-agent-code-review-accuracy-using-amazon-bedrock-agentcore/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Tue, 02 Jun 2026 15:45:11 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/how-baz-improved-its-ai-agent-code-review-accuracy-using-amazon-bedrock-agentcore/</guid>
-    </item>
-    <item>
-      <title>Flush With Cash From OpenAI, Opal Is Making an AI-Powered Audio Gadget</title>
-      <link>https://www.wired.com/story/opal-electronics-openai-investment-ai-powered-audio-gadget/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 02 Jun 2026 15:30:00 +0000</pubDate>
-      <guid>https://www.wired.com/story/opal-electronics-openai-investment-ai-powered-audio-gadget/</guid>
-    </item>
-    <item>
-      <title>Microsoft Build 2026: the 7 biggest announcements</title>
+      <title>Microsoft Build 2026: The 7 biggest announcements</title>
       <link>https://www.theverge.com/tech/941738/microsoft-build-2026-biggest-announcements</link>
       <description></description>
       <category>Microsoft</category>
@@ -328,84 +136,276 @@
       <guid>https://www.theverge.com/tech/941738/microsoft-build-2026-biggest-announcements</guid>
     </item>
     <item>
-      <title>Microsoft’s first advanced reasoning AI is here</title>
-      <link>https://www.theverge.com/tech/941664/microsoft-ai-model-reasoning-mai-thinking-1-build-2026</link>
+      <title>I found 15 Amazon deals on editor-approved tech already live for Prime Day</title>
+      <link>https://www.zdnet.com/article/best-early-amazon-prime-day-deals-2026/</link>
       <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 02 Jun 2026 14:12:44 -0400</pubDate>
-      <guid>https://www.theverge.com/tech/941664/microsoft-ai-model-reasoning-mai-thinking-1-build-2026</guid>
+      <category>Industry</category>
+      <pubDate>Tue, 02 Jun 2026 15:00:18 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/best-early-amazon-prime-day-deals-2026/</guid>
     </item>
     <item>
-      <title>Travelers deploys AI-powered claims countrywide with OpenAI</title>
-      <link>https://openai.com/index/travelers</link>
+      <title>Trump signs executive order to review AI models before they’re released</title>
+      <link>https://www.theverge.com/policy/941775/trump-ai-executive-order</link>
       <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 02 Jun 2026 12:00:00 +0000</pubDate>
-      <guid>https://openai.com/index/travelers</guid>
+      <category>Top Stories</category>
+      <pubDate>Tue, 02 Jun 2026 14:33:42 -0400</pubDate>
+      <guid>https://www.theverge.com/policy/941775/trump-ai-executive-order</guid>
     </item>
     <item>
-      <title>Microsoft Build 2026: All the news about Windows, AI, RTX Spark, and more</title>
-      <link>https://www.theverge.com/tech/941668/microsoft-build-may-2026-live-news-updates</link>
+      <title>Microsoft Scout is a new AI personal assistant built on OpenClaw</title>
+      <link>https://www.theverge.com/news/939713/microsoft-scout-assistant-openclaw</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 02 Jun 2026 14:00:00 -0400</pubDate>
+      <guid>https://www.theverge.com/news/939713/microsoft-scout-assistant-openclaw</guid>
+    </item>
+    <item>
+      <title>Google’s Phone app will tell you if a scammer is impersonating one of your contacts</title>
+      <link>https://www.theverge.com/tech/941517/google-phone-scammer-ai-impersonation</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 02 Jun 2026 14:00:00 -0400</pubDate>
+      <guid>https://www.theverge.com/tech/941517/google-phone-scammer-ai-impersonation</guid>
+    </item>
+    <item>
+      <title>RuntimeWire – Track AI startup funding, launches, and infrastructure shifts in real time</title>
+      <link>https://betalist.com/startups/runtimewire</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Tue, 02 Jun 2026 00:25:00 +0000</pubDate>
+      <guid>https://betalist.com/startups/runtimewire</guid>
+    </item>
+    <item>
+      <title>‘The Metaverse Fever Dream’</title>
+      <link>https://pxlnv.com/blog/metaverse-fever-dream/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 02 Jun 2026 00:24:39 +0000</pubDate>
+      <guid>https://pxlnv.com/blog/metaverse-fever-dream/</guid>
+    </item>
+    <item>
+      <title>Frits Thaulow: Master of Light, Water, and Northern Atmosphere</title>
+      <link>https://www.vintag.es/2026/06/frits-thaulow.html</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 02 Jun 2026 00:22:05 +0000</pubDate>
+      <guid>https://www.vintag.es/2026/06/frits-thaulow.html</guid>
+    </item>
+    <item>
+      <title>What's gonna happen to software engineers?</title>
+      <link>https://yakko.dev/blog/whats-gonna-happen-to-software-developers</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 02 Jun 2026 00:21:14 +0000</pubDate>
+      <guid>https://yakko.dev/blog/whats-gonna-happen-to-software-developers</guid>
+    </item>
+    <item>
+      <title>Silicon Valley's new slogan: Let's get physical</title>
+      <link>https://www.businessinsider.com/silicon-valleys-new-slogan-lets-get-physical-2026-6</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 02 Jun 2026 00:19:41 +0000</pubDate>
+      <guid>https://www.businessinsider.com/silicon-valleys-new-slogan-lets-get-physical-2026-6</guid>
+    </item>
+    <item>
+      <title>Who Is Who in the Banks vs. Stablecoin-Yield Battle</title>
+      <link>https://www.pymnts.com/cryptocurrency/2026/who-is-who-in-the-banks-vs-stablecoin-yield-battle/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 02 Jun 2026 00:17:09 +0000</pubDate>
+      <guid>https://www.pymnts.com/cryptocurrency/2026/who-is-who-in-the-banks-vs-stablecoin-yield-battle/</guid>
+    </item>
+    <item>
+      <title>Florida sues OpenAI over ChatGPT's alleged body count</title>
+      <link>https://boingboing.net/2026/06/01/florida-sues-openai-over-chatgpts-alleged-body-count.html</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 02 Jun 2026 00:16:06 +0000</pubDate>
+      <guid>https://boingboing.net/2026/06/01/florida-sues-openai-over-chatgpts-alleged-body-count.html</guid>
+    </item>
+    <item>
+      <title>alter-runtime added to PyPI</title>
+      <link>https://pypi.org/project/alter-runtime/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 02 Jun 2026 00:10:17 +0000</pubDate>
+      <guid>https://pypi.org/project/alter-runtime/</guid>
+    </item>
+    <item>
+      <title>Snowflake and Anthropic Accelerate Enterprise AI Adoption Driven by Rising Demand for Governed AI</title>
+      <link>https://financialpost.com/pmn/business-wire-news-releases-pmn/snowflake-and-anthropic-accelerate-enterprise-ai-adoption-driven-by-rising-demand-for-governed-ai</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 02 Jun 2026 00:09:59 +0000</pubDate>
+      <guid>https://financialpost.com/pmn/business-wire-news-releases-pmn/snowflake-and-anthropic-accelerate-enterprise-ai-adoption-driven-by-rising-demand-for-governed-ai</guid>
+    </item>
+    <item>
+      <title>How did the Meta AI bot breach happen? #world</title>
+      <link>https://alltoc.com/world/how-did-the-meta-ai-bot-breach-happen</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Tue, 02 Jun 2026 00:03:45 +0000</pubDate>
+      <guid>https://alltoc.com/world/how-did-the-meta-ai-bot-breach-happen</guid>
+    </item>
+    <item>
+      <title>janus-remote 0.15.4</title>
+      <link>https://pypi.org/project/janus-remote/0.15.4/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 02 Jun 2026 00:03:32 +0000</pubDate>
+      <guid>https://pypi.org/project/janus-remote/0.15.4/</guid>
+    </item>
+    <item>
+      <title>Why did GitHub Copilot billing anger developers? #tech</title>
+      <link>https://alltoc.com/tech/why-did-github-copilot-billing-anger-developers</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Tue, 02 Jun 2026 00:01:52 +0000</pubDate>
+      <guid>https://alltoc.com/tech/why-did-github-copilot-billing-anger-developers</guid>
+    </item>
+    <item>
+      <title>XRP Inflows Hit Their Lowest Level Of The Year: Is Selling Pressure Fading?</title>
+      <link>https://bitcoinist.com/xrp-inflows-hit-their-lowest-level-of-the-year/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 02 Jun 2026 00:00:52 +0000</pubDate>
+      <guid>https://bitcoinist.com/xrp-inflows-hit-their-lowest-level-of-the-year/</guid>
+    </item>
+    <item>
+      <title>The essential Elastic 2026 wrap-up for Microsoft Build attendees and Azure developers</title>
+      <link>https://www.elastic.co/blog/microsoft-build-2026-wrap-up</link>
       <description></description>
       <category>Microsoft</category>
-      <pubDate>Tue, 02 Jun 2026 11:59:58 -0400</pubDate>
-      <guid>https://www.theverge.com/tech/941668/microsoft-build-may-2026-live-news-updates</guid>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.elastic.co/blog/microsoft-build-2026-wrap-up</guid>
     </item>
     <item>
-      <title>Codex for every role, tool, and workflow</title>
-      <link>https://openai.com/index/codex-for-every-role-tool-workflow</link>
+      <title>‘Virtual cells’ aim to turn raw data into predictive models of biology</title>
+      <link>https://www.nature.com/articles/d41586-026-01731-1</link>
+      <description></description>
+      <category>AI Foundry</category>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.nature.com/articles/d41586-026-01731-1</guid>
+    </item>
+    <item>
+      <title>Will AI ruin the social sciences — or revolutionize them?</title>
+      <link>https://www.nature.com/articles/d41586-026-01726-y</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Tue, 02 Jun 2026 09:00:00 +0000</pubDate>
-      <guid>https://openai.com/index/codex-for-every-role-tool-workflow</guid>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.nature.com/articles/d41586-026-01726-y</guid>
     </item>
     <item>
-      <title>Claude Lemieux's death fuels CTE research with help from ex-players</title>
-      <link>https://www.palmbeachpost.com/story/sports/nhl/2026/06/01/claude-lemieux-death-nhl-players-cte-study/90354107007/</link>
+      <title>Top SAN products powering enterprise IT strategy</title>
+      <link>https://www.techtarget.com/searchstorage/feature/7-leading-storage-area-network-products-and-vendors</link>
       <description></description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 01 Jun 2026 20:03:05 +0000</pubDate>
-      <guid>https://www.palmbeachpost.com/story/sports/nhl/2026/06/01/claude-lemieux-death-nhl-players-cte-study/90354107007/</guid>
+      <category>NVIDIA</category>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.techtarget.com/searchstorage/feature/7-leading-storage-area-network-products-and-vendors</guid>
     </item>
     <item>
-      <title>Nvidia CEO Jensen Huang hosts South Korean tech leaders at Taipei dinner</title>
-      <link>https://cryptobriefing.com/nvidia-huang-korean-partner-night-taipei/</link>
+      <title>How to vet an npm package in 2026</title>
+      <link>https://javascriptweekly.com/issues/788</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://javascriptweekly.com/issues/788</guid>
+    </item>
+    <item>
+      <title>Accelerate autoscaling inference in Red Hat AI with Everpure</title>
+      <link>https://www.redhat.com/en/blog/accelerate-autoscaling-inference-red-hat-ai-everpure</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.redhat.com/en/blog/accelerate-autoscaling-inference-red-hat-ai-everpure</guid>
+    </item>
+    <item>
+      <title>Senior Machine Learning Scientist</title>
+      <link>https://nlppeople.com/job/senior-machine-learning-scientist-29/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://nlppeople.com/job/senior-machine-learning-scientist-29/</guid>
+    </item>
+    <item>
+      <title>Applied AI ML Lead – DocAI</title>
+      <link>https://nlppeople.com/job/applied-ai-ml-lead-docai-2/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://nlppeople.com/job/applied-ai-ml-lead-docai-2/</guid>
+    </item>
+    <item>
+      <title>IT stocks rally as AI deals, valuations draw investors</title>
+      <link>https://economictimes.indiatimes.com/markets/stocks/news/it-stocks-rally-as-ai-deals-valuations-draw-investors/articleshow/131452361.cms</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Mon, 01 Jun 2026 20:01:07 +0000</pubDate>
-      <guid>https://cryptobriefing.com/nvidia-huang-korean-partner-night-taipei/</guid>
+      <pubDate>Mon, 01 Jun 2026 23:57:09 +0000</pubDate>
+      <guid>https://economictimes.indiatimes.com/markets/stocks/news/it-stocks-rally-as-ai-deals-valuations-draw-investors/articleshow/131452361.cms</guid>
     </item>
     <item>
-      <title>Florida sues OpenAI, Altman, says ChatGPT harms kids</title>
-      <link>https://punchng.com/florida-sues-openai-ceo-altman-over-chatgpt-harm-to-minors/</link>
+      <title>Can AI Prevent the Next Subway Delay?</title>
+      <link>https://www.pymnts.com/news/artificial-intelligence/2026/can-ai-prevent-the-next-subway-delay/</link>
+      <description></description>
+      <category>AI Foundry</category>
+      <pubDate>Mon, 01 Jun 2026 23:56:14 +0000</pubDate>
+      <guid>https://www.pymnts.com/news/artificial-intelligence/2026/can-ai-prevent-the-next-subway-delay/</guid>
+    </item>
+    <item>
+      <title>Alphabet's AI Push: Google parent to raise $80 billion from stock sale; Berkshire Hathaway invest $10 billion more</title>
+      <link>https://www.livemint.com/companies/news/alphabets-ai-push-google-parent-to-raise-80-billion-from-stock-sale-berkshire-hathaway-invest-10-billion-more-11780357114598.html</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Mon, 01 Jun 2026 23:56:10 +0000</pubDate>
+      <guid>https://www.livemint.com/companies/news/alphabets-ai-push-google-parent-to-raise-80-billion-from-stock-sale-berkshire-hathaway-invest-10-billion-more-11780357114598.html</guid>
+    </item>
+    <item>
+      <title>Perplexity CEO on AI spending</title>
+      <link>https://4sysops.com/archives/perplexity-ceo-on-ai-spending/</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Mon, 01 Jun 2026 23:54:44 +0000</pubDate>
+      <guid>https://4sysops.com/archives/perplexity-ceo-on-ai-spending/</guid>
+    </item>
+    <item>
+      <title>cubic 0.7.0a9</title>
+      <link>https://pypi.org/project/cubic/0.7.0a9/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Mon, 01 Jun 2026 23:54:16 +0000</pubDate>
+      <guid>https://pypi.org/project/cubic/0.7.0a9/</guid>
+    </item>
+    <item>
+      <title>pullwise 0.2.0</title>
+      <link>https://pypi.org/project/pullwise/0.2.0/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Mon, 01 Jun 2026 20:01:05 +0000</pubDate>
-      <guid>https://punchng.com/florida-sues-openai-ceo-altman-over-chatgpt-harm-to-minors/</guid>
+      <pubDate>Mon, 01 Jun 2026 23:54:04 +0000</pubDate>
+      <guid>https://pypi.org/project/pullwise/0.2.0/</guid>
     </item>
     <item>
-      <title>claude-code-statusline 0.13.7</title>
-      <link>https://pypi.org/project/claude-code-statusline/0.13.7/</link>
+      <title>AI costs how much? GitHub Copilot users react to new usage-based pricing system.</title>
+      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=183546398</link>
       <description></description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 01 Jun 2026 19:59:07 +0000</pubDate>
-      <guid>https://pypi.org/project/claude-code-statusline/0.13.7/</guid>
+      <category>GitHub Copilot</category>
+      <pubDate>Mon, 01 Jun 2026 23:52:04 +0000</pubDate>
+      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=183546398</guid>
     </item>
     <item>
-      <title>phantom-audio 1.3.1</title>
-      <link>https://pypi.org/project/phantom-audio/1.3.1/</link>
+      <title>langchain-content-normalizer 0.1.6</title>
+      <link>https://pypi.org/project/langchain-content-normalizer/0.1.6/</link>
       <description></description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 01 Jun 2026 19:58:24 +0000</pubDate>
-      <guid>https://pypi.org/project/phantom-audio/1.3.1/</guid>
+      <category>Open Source</category>
+      <pubDate>Mon, 01 Jun 2026 23:51:43 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-content-normalizer/0.1.6/</guid>
     </item>
     <item>
-      <title>Stocks Up as Trump Cites Rapid Pace in Iran Talks: Markets Wrap</title>
-      <link>https://financialpost.com/pmn/business-pmn/stocks-up-as-trump-cites-rapid-pace-in-iran-talks-markets-wrap-2</link>
+      <title>Deploy Self-Evolving Agents for Faster, More Secure Research with a Hermes Agent and NVIDIA NemoClaw</title>
+      <link>https://developer.nvidia.com/blog/deploy-self-evolving-agents-for-faster-more-secure-research-with-a-hermes-agent-and-nvidia-nemoclaw/</link>
       <description></description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 01 Jun 2026 19:47:16 +0000</pubDate>
-      <guid>https://financialpost.com/pmn/business-pmn/stocks-up-as-trump-cites-rapid-pace-in-iran-talks-markets-wrap-2</guid>
+      <category>GitHub Copilot</category>
+      <pubDate>Mon, 01 Jun 2026 23:49:45 +0000</pubDate>
+      <guid>https://developer.nvidia.com/blog/deploy-self-evolving-agents-for-faster-more-secure-research-with-a-hermes-agent-and-nvidia-nemoclaw/</guid>
     </item>
   </channel>
 </rss>
