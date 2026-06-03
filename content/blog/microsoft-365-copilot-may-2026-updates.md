@@ -4,7 +4,7 @@ description: "All 53 Microsoft 365 Copilot updates for May 2026 — federated co
 date: 2026-05-29
 lastmod: 2026-05-31
 youtube_id: "qNcbrSZtbNs"
-card_tag: "What's New in Copilot"
+card_tag: "What's New"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-may-2026-updates.jpg"]
 og_headline: "What's New in Copilot — May 2026"

@@ -4,7 +4,7 @@ description: "All 45 Microsoft 365 Copilot updates for February 2026 — Agent M
 date: 2026-02-23
 lastmod: 2026-05-30
 youtube_id: "TKr-WB38ixQ"
-card_tag: "What's New in Copilot"
+card_tag: "What's New"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-february-2026-updates.jpg"]
 og_headline: "What's New in Copilot — February 2026"

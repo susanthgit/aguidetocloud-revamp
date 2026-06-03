@@ -4,7 +4,7 @@ description: "Build 2026 in plain English — Microsoft IQ, Microsoft Foundry ag
 date: 2026-06-03
 lastmod: 2026-06-03
 youtube_id: ""
-card_tag: "Microsoft Build 2026"
+card_tag: "What's New"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-build-2026-recap.jpg"]
 og_headline: "Build 2026 — All AI Announcements"

@@ -4,7 +4,7 @@ description: "Microsoft 365 Copilot for people leaders — plain English. 1:1s, 
 date: 2026-06-01
 lastmod: 2026-06-02
 draft: false
-card_tag: "People Leaders"
+card_tag: "Prompt Engineering"
 tag_class: "ai"
 layout: "notebook"
 stamp: "field guide"

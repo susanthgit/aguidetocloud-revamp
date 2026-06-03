@@ -4,7 +4,7 @@ description: "Microsoft 365 Copilot for executives — plain English. Board prep
 date: 2026-06-01
 lastmod: 2026-06-02
 draft: false
-card_tag: "Executives"
+card_tag: "Prompt Engineering"
 tag_class: "ai"
 layout: "notebook"
 stamp: "field guide"

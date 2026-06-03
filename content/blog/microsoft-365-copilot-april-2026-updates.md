@@ -4,7 +4,7 @@ description: "All 41 Microsoft 365 Copilot updates for April 2026 — PowerPoint
 date: 2026-04-29
 lastmod: 2026-05-30
 youtube_id: "ax6KMZMoIt4"
-card_tag: "What's New in Copilot"
+card_tag: "What's New"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-april-2026-updates.jpg"]
 og_headline: "What's New in Copilot — April 2026"

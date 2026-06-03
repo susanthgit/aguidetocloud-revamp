@@ -4,7 +4,7 @@ description: "All 36 Microsoft 365 Copilot updates for March 2026 — Excel edit
 date: 2026-03-17
 lastmod: 2026-05-30
 youtube_id: "FHD3Sez_MeU"
-card_tag: "What's New in Copilot"
+card_tag: "What's New"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-march-2026-updates.jpg"]
 og_headline: "What's New in Copilot — March 2026"

@@ -4,7 +4,7 @@ description: "All 30 Microsoft 365 Copilot updates for January 2026 — Writing 
 date: 2026-01-18
 lastmod: 2026-05-30
 youtube_id: "iDKpW_F18YI"
-card_tag: "What's New in Copilot"
+card_tag: "What's New"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-january-2026-updates.jpg"]
 og_headline: "What's New in Copilot — January 2026"
