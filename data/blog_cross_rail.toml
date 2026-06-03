@@ -1,0 +1,164 @@
+#  ═══════════════════════════════════════════════════════════════════════════
+#  BLOG CROSS-LINK RAIL — Curated "popular" picks
+#  ═══════════════════════════════════════════════════════════════════════════
+#
+#  Drives the right-rail cross-links shown on:
+#    - /blog/                  (blog landing)
+#    - /blog/<any-post>/       (every single blog post)
+#
+#  HOW TO EDIT:
+#    - Pick 4 items per section (no more — the rail length is balanced for 4×5)
+#    - Items render in the exact order listed below
+#    - `name` is the only thing shown — keep it SHORT (codes / short labels)
+#    - Optional `tag` (small label above name) and `tagline` (line beneath name)
+#      fields are supported by the partial but intentionally left empty for
+#      visual restraint per Sush 2026-06-03
+#
+#  WHY CURATED (NOT DATA-DRIVEN):
+#    - Sush chose curated for editorial control on 3 June 2026
+#    - Pattern matches data/mind_maps/featured.toml curation approach
+#    - Promote items based on GSC weekly + Stripe weekly reports
+#
+#  Last reviewed: 2026-06-03
+#  ═══════════════════════════════════════════════════════════════════════════
+
+# ── Section 1: Popular practice exams ──────────────────────────────────────
+[practice_exams]
+title = "Popular practice exams"
+view_all_url = "/cert-tracker/"
+view_all_label = "All exams"
+
+[[practice_exams.items]]
+url = "/cert-tracker/az-104/"
+name = "AZ-104"
+
+[[practice_exams.items]]
+url = "/cert-tracker/ai-901/"
+name = "AI-901"
+
+[[practice_exams.items]]
+url = "/cert-tracker/ai-200/"
+name = "AI-200"
+
+[[practice_exams.items]]
+url = "/cert-tracker/sc-500/"
+name = "SC-500"
+
+[[practice_exams.items]]
+url = "/cert-tracker/ab-900/"
+name = "AB-900"
+
+# ── Section 2: Popular study guides ────────────────────────────────────────
+[study_guides]
+title = "Popular study guides"
+view_all_url = "/study-guides/"
+view_all_label = "All study guides"
+
+[[study_guides.items]]
+url = "/guided/az-900/"
+name = "AZ-900"
+
+[[study_guides.items]]
+url = "/guided/az-140/"
+name = "AZ-140"
+
+[[study_guides.items]]
+url = "/guided/sc-100/"
+name = "SC-100"
+
+[[study_guides.items]]
+url = "/guided/md-102/"
+name = "MD-102"
+
+[[study_guides.items]]
+url = "/guided/dp-300/"
+name = "DP-300"
+
+# ── Section 3: Popular tools ───────────────────────────────────────────────
+[tools]
+title = "Popular tools"
+view_all_url = "/free-tools/"
+view_all_label = "All 56 free tools"
+
+[[tools.items]]
+url = "/prompt-polisher/"
+name = "Prompt Polisher"
+
+[[tools.items]]
+url = "/m365-roadmap/"
+name = "M365 Roadmap"
+
+[[tools.items]]
+url = "/token-calculator/"
+name = "AI Token Calculator"
+
+[[tools.items]]
+url = "/copilot-frontier-map/"
+name = "Copilot Frontier Map"
+
+[[tools.items]]
+url = "/instruct-builder/"
+name = "Instruction Builder"
+
+# ── Section 4: Popular videos ──────────────────────────────────────────────
+#
+# 🚨 STRICT RULE — Links MUST go to actual video pages under /ai-hub/,
+#                  /cloud-labs/, /certifications/, /exam-qa/, /interview-prep/
+#                  or /music/ — NOT to blog posts (even blog posts that embed
+#                  a YouTube video have their own page and don't belong here).
+#                  Sush corrected this on 3 June 2026 after a fabricated entry
+#                  ("Microsoft Build 2026 recap" — a blog, not a video).
+#
+# To find current top-4 by views, run:
+#   @('ai-hub','cloud-labs','certifications','exam-qa','interview-prep','music') | ForEach-Object {
+#     Get-ChildItem "content\$_\*.md" -File -ErrorAction SilentlyContinue
+#   } | ForEach-Object {
+#     $title = ((Select-String -Path $_ -Pattern '^title:' | Select -First 1).Line) -replace '^title:\s*"?([^"]*)"?\s*$', '$1'
+#     $views = ((Select-String -Path $_ -Pattern '^views:' | Select -First 1).Line) -replace '^views:\s*(\d+).*$', '$1'
+#     if ($views -match '^\d+$') { [pscustomobject]@{ views=[int]$views; title=$title; slug=$_.BaseName; section=$_.Directory.Name } }
+#   } | Sort views -Desc | Select -First 4 | Format-Table
+#
+# Top 4 as of 2026-06-03 (by YouTube view count):
+
+[videos]
+title = "Popular videos"
+view_all_url = "/videos/"
+view_all_label = "All videos"
+
+[[videos.items]]
+url = "/certifications/az-104-full-course-microsoft-azure-administrator-certification-training/"
+name = "AZ-104 Full Course"
+
+[[videos.items]]
+url = "/certifications/az-900-full-course-microsoft-azure-fundamentals-certification-training/"
+name = "AZ-900 Full Course"
+
+[[videos.items]]
+url = "/certifications/ms-900-full-course-microsoft-365-fundamentals-certification-training/"
+name = "MS-900 Full Course"
+
+[[videos.items]]
+url = "/certifications/az-204-full-course-azure-developer-certification-training/"
+name = "AZ-204 Full Course"
+
+# ── Section 5: Popular mind maps ───────────────────────────────────────────
+[mindmaps]
+title = "Popular mind maps"
+view_all_url = "/mind-maps/"
+view_all_label = "All 69 mind maps"
+
+[[mindmaps.items]]
+url = "/mind-maps/copilot-7-layers/"
+name = "Copilot · 7 layers"
+
+[[mindmaps.items]]
+url = "/mind-maps/conditional-access-flow/"
+name = "Conditional Access flow"
+
+[[mindmaps.items]]
+url = "/mind-maps/defender-family/"
+name = "The Defender family"
+
+[[mindmaps.items]]
+url = "/mind-maps/m365-files-where/"
+name = "Where M365 files live"

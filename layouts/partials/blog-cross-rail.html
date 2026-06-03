@@ -1,0 +1,32 @@
+{{/*
+  blog-cross-rail.html — Curated "popular" cross-links rail.
+
+  Renders 5 sections (practice exams · study guides · tools · videos · mind maps)
+  from data/blog_cross_rail.toml. Used in BOTH:
+    - layouts/blog/list.html     (via blog-list-companion.html)
+    - layouts/blog/single.html   (via inline call)
+
+  Single source of truth: data/blog_cross_rail.toml.
+  Edit picks there; this template doesn't need to change when items rotate.
+*/}}
+
+{{ $rail := hugo.Data.blog_cross_rail }}
+{{ $sections := slice $rail.practice_exams $rail.study_guides $rail.tools $rail.videos $rail.mindmaps }}
+
+{{ range $section := $sections }}
+{{ if and $section $section.items }}
+<div class="zt-companion-section zt-cross-rail-section">
+  <p class="zt-companion-title">{{ $section.title }}</p>
+  {{ range $section.items }}
+  <a href="{{ .url }}" class="zt-companion-link"{{ if or .external $section.external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+    {{ with .tag }}<span class="zt-companion-link-tag">{{ . }}</span>{{ end }}
+    <span class="zt-companion-link-title">{{ .name }}</span>
+    {{ with .tagline }}<span class="zt-cross-rail-tagline">{{ . }}</span>{{ end }}
+  </a>
+  {{ end }}
+  {{ with $section.view_all_url }}
+  <a href="{{ . }}" class="zt-cross-rail-viewall"{{ if $section.external }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ $section.view_all_label | default "View all" }} →</a>
+  {{ end }}
+</div>
+{{ end }}
+{{ end }}

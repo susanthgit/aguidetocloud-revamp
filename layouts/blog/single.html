@@ -30,8 +30,6 @@
 
   {{/* ── CENTER: Main content ── */}}
   <article class="zt-reading-content">
-    {{ partial "blog-prev-next.html" . }}
-
     <h1>{{ .Title }}</h1>
 
     {{/* Meta line */}}
@@ -109,6 +107,9 @@
     </div>
     {{ end }}
 
+    {{/* Prev/next blog navigation — moved to bottom per Sush 2026-06-03 */}}
+    {{ partial "blog-prev-next.html" . }}
+
     {{ partial "back-nav" (dict "Page" . "URL" "/blog/" "Label" "Blog") }}
   </article>
 
@@ -132,7 +133,10 @@
     </div>
     {{ end }}
 
-    {{/* Related articles */}}
+    {{/* Curated popular cross-links — single source of truth in data/blog_cross_rail.toml */}}
+    {{ partial "blog-cross-rail.html" . }}
+
+    {{/* Related articles — at the bottom of the stack per Sush 2026-06-03 */}}
     <div class="zt-companion-section">
       <p class="zt-companion-title">More articles</p>
       {{ $related := first 5 (where (where .Site.RegularPages "Section" "blog") ".Permalink" "!=" .Permalink) }}

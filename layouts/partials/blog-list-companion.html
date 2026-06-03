@@ -1,25 +1,16 @@
 {{/*
   blog-list-companion.html — Right companion sidebar for blog index page.
-  Shows popular articles, study guides CTA, and YouTube.
+  Renders the curated cross-link rail (5 sections from data/blog_cross_rail.toml)
+  followed by the Learn & certify CTA cluster.
+
+  Companion sidebar for individual blog posts lives inline in layouts/blog/single.html
+  and uses the same blog-cross-rail.html partial — single source of truth.
 */}}
 
-{{/* Popular tools */}}
-{{ $tools := (index hugo.Data "toolkit_nav").tools }}
-<div class="zt-companion-section">
-  <p class="zt-companion-title">Popular tools</p>
-  {{ $count := 0 }}
-  {{ range $tools }}
-    {{ if lt $count 5 }}
-    <a href="{{ .url }}" class="zt-companion-link zt-companion-link--inline">
-      <span class="zt-companion-link-tag">{{ partial "icon.html" (dict "name" (.icon | default "") "size" 14 "stroke" 1.5 "fallback" .emoji) }}</span>
-      <span class="zt-companion-link-title">{{ .name }}</span>
-    </a>
-    {{ $count = add $count 1 }}
-    {{ end }}
-  {{ end }}
-</div>
+{{/* Curated popular cross-links (practice exams · study guides · tools · videos · mind maps) */}}
+{{ partial "blog-cross-rail.html" . }}
 
-{{/* Study guides CTA */}}
+{{/* Learn & certify CTA — kept for direct, low-friction entry points */}}
 <div class="zt-companion-section">
   <p class="zt-companion-title">Learn & certify</p>
   <div class="zt-companion-cta">

@@ -31,33 +31,28 @@
 
   {{/* ── CENTER: Notebook page ── */}}
   <article class="zt-reading-content nb-page">
-    {{ partial "blog-prev-next.html" . }}
-
-    {{/* Masthead — like the mockup */}}
+    {{/* Masthead — Brand · Reading toolbar · Volume/date line */}}
     <header class="nb-masthead">
       <div class="nb-brand"><span class="nb-strike">draft notes</span> Field Journal</div>
+
+      {{/* Reading toolbar — moved inside masthead per Sush 2026-06-03 */}}
+      <div class="zt-reading-actions nb-toolbar-slot">
+        <div class="zt-reading-toolbar">
+          <button aria-label="Share this article" class="zt-toolbar-btn" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href})}else{navigator.clipboard.writeText(location.href).then(function(){this.textContent='✓ Copied';var b=this;setTimeout(function(){b.textContent='Share'},2000)}.bind(this))}">Share</button>
+          <div class="zt-toolbar-group" role="group" aria-label="Font size">
+            <button aria-label="Small text" data-fontsize="14" title="Small">A<small>−</small></button>
+            <button aria-label="Default text" data-fontsize="16" title="Default" class="is-active">A</button>
+            <button aria-label="Large text" data-fontsize="18" title="Large">A<small>+</small></button>
+          </div>
+          <button aria-label="Toggle focus mode" class="zt-toolbar-btn zt-focus-toggle" title="Focus mode">Focus</button>
+        </div>
+      </div>
+
       <div class="nb-meta-line">Vol. {{ .Date.Format "2006" }} &middot; {{ .Date.Format "2 Jan 2006" }}{{ if .Params.card_tag }} &middot; {{ .Params.card_tag }}{{ end }}</div>
     </header>
 
-    {{/* Status stamp — explicit `stamp:` frontmatter wins; else auto from age/lastmod */}}
-    {{ $daysSince := div (sub now.Unix .Date.Unix) 86400 }}
-    {{ if .Params.stamp }}
-      <span class="nb-stamp">{{ .Params.stamp }}</span>
-    {{ else if $isUpdated }}
-      <span class="nb-stamp nb-stamp--updated">updated &middot; {{ .Lastmod.Format "2 Jan 2006" }}</span>
-    {{ else if le $daysSince 14 }}
-      <span class="nb-stamp">fresh &middot; v1</span>
-    {{ end }}
-
-    <h1 class="nb-h1">{{ .Title }}<span class="nb-h1-underline" aria-hidden="true"></span></h1>
-
-    {{/* Pen-note hook — author's red-ink one-liner under the title */}}
-    {{ with .Params.intro_note }}
-    <p class="nb-pen-note">{{ . }}</p>
-    {{ end }}
-
-    {{/* Meta line — typewriter style */}}
-    <p class="nb-meta">
+    {{/* Meta line — typewriter style — moved ABOVE the H1 per Sush 2026-06-03 */}}
+    <p class="nb-meta nb-meta--top">
       {{ if .Params.card_tag }}<span class="nb-sticker">{{ .Params.card_tag }}</span>{{ end }}
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
       <span class="nb-meta-sep">·</span>
@@ -66,18 +61,12 @@
       <span>{{ $readTime }} min read</span>
     </p>
 
-    {{/* Reading toolbar — kept (Sush still wants share, font, focus) */}}
-    <div class="zt-reading-actions">
-      <div class="zt-reading-toolbar">
-        <button aria-label="Share this article" class="zt-toolbar-btn" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href})}else{navigator.clipboard.writeText(location.href).then(function(){this.textContent='✓ Copied';var b=this;setTimeout(function(){b.textContent='Share'},2000)}.bind(this))}">Share</button>
-        <div class="zt-toolbar-group" role="group" aria-label="Font size">
-          <button aria-label="Small text" data-fontsize="14" title="Small">A<small>−</small></button>
-          <button aria-label="Default text" data-fontsize="16" title="Default" class="is-active">A</button>
-          <button aria-label="Large text" data-fontsize="18" title="Large">A<small>+</small></button>
-        </div>
-        <button aria-label="Toggle focus mode" class="zt-toolbar-btn zt-focus-toggle" title="Focus mode">Focus</button>
-      </div>
-    </div>
+    <h1 class="nb-h1">{{ .Title }}<span class="nb-h1-underline" aria-hidden="true"></span></h1>
+
+    {{/* Pen-note hook — author's red-ink one-liner under the title */}}
+    {{ with .Params.intro_note }}
+    <p class="nb-pen-note">{{ . }}</p>
+    {{ end }}
 
     {{/* Mobile TOC */}}
     <details class="zt-toc-mobile">
@@ -119,6 +108,9 @@
       <span class="nb-sig">— Sush</span>
     </aside>
 
+    {{/* Prev/next blog navigation — moved to bottom per Sush 2026-06-03 */}}
+    {{ partial "blog-prev-next.html" . }}
+
     {{ partial "back-nav" (dict "Page" . "URL" "/blog/" "Label" "Blog") }}
   </article>
 
@@ -137,6 +129,10 @@
     </div>
     {{ end }}
 
+    {{/* Curated popular cross-links — single source of truth in data/blog_cross_rail.toml */}}
+    {{ partial "blog-cross-rail.html" . }}
+
+    {{/* Related articles — at the bottom of the stack per Sush 2026-06-03 */}}
     <div class="zt-companion-section">
       <p class="zt-companion-title">More articles</p>
       {{ $related := first 5 (where (where .Site.RegularPages "Section" "blog") ".Permalink" "!=" .Permalink) }}
