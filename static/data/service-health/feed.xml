@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Jun 2026 20:22:03 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jun 2026 23:21:38 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users may receive no response when prompting Microsoft 365 Copilot Chat using the Claude Opus model </title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1352001</link>
+      <description>[Microsoft 365 Copilot Chat] Users may receive no response when prompting Copilot Chat using the Claude Opus model.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CW1352001</guid>
+      <pubDate>Thu, 04 Jun 2026 20:35:37 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Users may fail to retrieve Microsoft OneNote content using Microsoft Graph APIs</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1338742</link>
@@ -450,15 +459,6 @@ We detected this issue through our automated monitoring systems after observing 
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1301759</guid>
       <pubDate>Tue, 05 May 2026 19:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users may be unable to view on-premises or cross-tenant free/busy availability when scheduling meetings</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1304825</link>
-      <description>[Exchange Online] Users may have been unable to view on-premises or cross-tenant free/busy availability when scheduling meetings.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1304825</guid>
-      <pubDate>Tue, 05 May 2026 15:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
