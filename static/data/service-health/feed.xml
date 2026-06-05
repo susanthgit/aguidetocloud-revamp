@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 05 Jun 2026 12:50:39 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jun 2026 16:37:47 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users may receive no response when prompting Microsoft 365 Copilot Chat using the Claude Opus model </title>
@@ -24,15 +24,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1338742</guid>
       <pubDate>Wed, 03 Jun 2026 18:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Some admins may be unable to access and manage configured GDAP tenants in Microsoft Defender</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1333265</link>
-      <description>[Microsoft Defender XDR] Admins may be unable to access and manage configured GDAP tenants in Microsoft Defender.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">DZ1333265</guid>
-      <pubDate>Wed, 03 Jun 2026 10:43:36 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may see latency when using tools and chats in the Microsoft 365 Copilot app</title>
@@ -162,6 +153,15 @@ We detected this issue through our automated monitoring systems after observing 
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CP1326225</guid>
       <pubDate>Fri, 29 May 2026 15:26:33 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Defender XDR] Some admins may be unable to access and manage configured GDAP tenants in Microsoft Defender</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1333265</link>
+      <description>[Microsoft Defender XDR] Admins may be unable to access and manage configured GDAP tenants in Microsoft Defender.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">DZ1333265</guid>
+      <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may see older draft email messages appear as recently modified in Exchange Online</title>
