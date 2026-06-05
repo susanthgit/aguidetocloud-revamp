@@ -1,6 +1,7 @@
 ---
 title: "What’s New in Microsoft 365 Copilot – March 2026 | 25 Updates You Shouldn’t Miss"
 description: "Watch Whats New in Microsoft 365 Copilot  March 2026 | 25 Updates You Shouldnt Miss - free hands-on tutorial by Susanth Sutheesh on A Guide to Cloud & AI."
+canonical_url: "https://www.aguidetocloud.com/blog/microsoft-365-copilot-march-2026-updates/"
 date: 2026-03-17
 youtube_id: "FHD3Sez_MeU"
 card_tag: "What's New"
