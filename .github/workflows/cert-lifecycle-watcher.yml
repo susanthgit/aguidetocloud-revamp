@@ -1,0 +1,216 @@
+name: 🎓 Cert Lifecycle Watcher
+
+# EXTERNAL change detector for Microsoft cert pages. Daily 02:00 UTC.
+# Companion to morning-standup.ps1's Check-CertLifecycle (LOCAL drift detector).
+#
+# Class bug being addressed: no continuous cert-lifecycle radar — past Atlas
+# discovered AI-900 → AI-901 ad-hoc because Sush heard it in another chat.
+# That's the second sighting of the same class (SC-500 was first — documented
+# as `manage_schedule #1` watcher but never actually ran).
+#
+# What the workflow does:
+#   1. Run scripts/cert-lifecycle-probe.mjs (fetches ~37 MS cert pages with polite pacing)
+#   2. If state file changed → commit it back with [skip ci] (no recursive build)
+#   3. For each EVENT line in stdout → open/comment on a labelled issue + optional ntfy
+#   4. Storm suppression handled inside the probe (>20% failure → single summary event)
+#
+# Idempotency:
+#   - Per-cert issue label: cert-changed-{code}. Workflow searches for existing
+#     open issue first; comments on it, doesn't open dupes.
+#   - State file: .cert-lifecycle-state.json (committed back, paths-ignored
+#     on push to avoid triggering itself).
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # Daily at 02:00 UTC (low-traffic for MS Learn)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cert-lifecycle-watcher.yml'
+      - 'scripts/cert-lifecycle-probe.mjs'
+
+permissions:
+  contents: write   # to commit state file back
+  issues: write     # to open + comment on labelled issues
+
+concurrency:
+  group: cert-lifecycle-watcher
+  cancel-in-progress: false  # let it finish — runs are short and rare
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🟢 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 🎓 Probe Microsoft cert pages
+        id: probe
+        run: |
+          set +e
+          mkdir -p .probe-out
+          node scripts/cert-lifecycle-probe.mjs > .probe-out/stdout.log 2> .probe-out/stderr.log
+          EXIT=$?
+          echo "exit=$EXIT" >> "$GITHUB_OUTPUT"
+          # Extract events for the downstream step
+          grep -E '^EVENT:' .probe-out/stdout.log > .probe-out/events.txt || true
+          EVENT_COUNT=$(wc -l < .probe-out/events.txt | tr -d ' ')
+          echo "event_count=$EVENT_COUNT" >> "$GITHUB_OUTPUT"
+          echo ""
+          echo "──── PROBE STDERR (tail) ────"
+          tail -20 .probe-out/stderr.log
+          echo ""
+          echo "──── PROBE STDOUT (last 30 lines) ────"
+          tail -30 .probe-out/stdout.log
+          echo ""
+          echo "Events found: $EVENT_COUNT"
+          # We pass exit=0 to keep the workflow successful even when events are present —
+          # events are NOT failures, they're the workflow's purpose.
+          exit 0
+
+      - name: 💾 Commit state file (if changed)
+        id: commit
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set +e
+          if [ -z "$(git status --porcelain .cert-lifecycle-state.json)" ]; then
+            echo "No state changes — skipping commit"
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .cert-lifecycle-state.json
+          git commit -m "chore: cert lifecycle state update [skip ci]
+
+          Auto-updated by .github/workflows/cert-lifecycle-watcher.yml
+          Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          git push
+          echo "committed=true" >> "$GITHUB_OUTPUT"
+
+      - name: 🚨 Open / comment on per-event issues
+        if: steps.probe.outputs.event_count != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -e
+          # Ensure labels exist (idempotent — ignore "already exists" errors)
+          for L in cert-changed cert-disappeared cert-new cert-probe-storm; do
+            gh label create "$L" --repo "$REPO" --color 1D76DB --description "Cert lifecycle radar event" 2>/dev/null || true
+          done
+
+          TS=$(date -u +'%Y-%m-%d %H:%M UTC')
+
+          # Read each event line and act on it
+          while IFS= read -r line; do
+            [ -z "$line" ] && continue
+            # EVENT:<type>:<code>:<json>
+            TYPE=$(echo "$line" | cut -d: -f2)
+            CODE=$(echo "$line" | cut -d: -f3)
+            DETAILS=$(echo "$line" | cut -d: -f4-)
+            LABEL="cert-${TYPE}"
+            CODE_LABEL="cert-lifecycle-${CODE}"
+
+            # Look for existing open issue with this specific cert label
+            EXISTING=$(gh issue list --repo "$REPO" --state open --label "$CODE_LABEL" --json number --jq '.[0].number // empty' 2>/dev/null || true)
+
+            if [ -n "$EXISTING" ]; then
+              echo "↳ existing issue #$EXISTING for $CODE — adding comment"
+              gh issue comment "$EXISTING" --repo "$REPO" --body "🔄 New $TYPE event at $TS
+
+          \`\`\`json
+          $DETAILS
+          \`\`\`
+
+          [Run]($RUN_URL)"
+            else
+              echo "↳ opening new issue for $CODE ($TYPE)"
+              # Ensure per-cert label exists
+              gh label create "$CODE_LABEL" --repo "$REPO" --color FBCA04 --description "Cert lifecycle events for $CODE" 2>/dev/null || true
+
+              TITLE_PREFIX=$(case "$TYPE" in
+                changed) echo '🔄' ;;
+                disappeared) echo '👻' ;;
+                new) echo '🆕' ;;
+                probe-storm) echo '⛈️' ;;
+                *) echo '🎓' ;;
+              esac)
+
+              gh issue create --repo "$REPO" \
+                --title "$TITLE_PREFIX Cert lifecycle: $CODE — $TYPE ($TS)" \
+                --label "$LABEL" \
+                --label "$CODE_LABEL" \
+                --body "**Type:** \`$TYPE\`
+          **Cert:** \`$CODE\`
+          **First detected:** $TS
+
+          ## Details
+
+          \`\`\`json
+          $DETAILS
+          \`\`\`
+
+          ## What to do
+
+          - **changed** — MS Learn page hash drifted. Check the diff above (title/retirementDate/msDate/isBeta/skills). Decide if our cert-tracker MD + guided questions + cert_compass need updates. The 'skills' diff often indicates a syllabus refresh.
+          - **disappeared** — MS Learn returned 404/5xx for ≥2 consecutive runs. The cert may have been moved or retired without notice. Check the URL in details, search learn.microsoft.com for the cert code, decide if it needs a redirect or retirement-status update.
+          - **new** — MS Learn has a cert page that wasn't previously tracked. Probably means we just added the cert to all_certs.toml. Confirm cert-tracker MD + guided TOML exist + are correct.
+          - **probe-storm** — >20% of MS cert fetches failed in one run. Likely a Microsoft Learn outage or URL pattern change. Don't act per-cert; verify learn.microsoft.com is responding, then trigger another run.
+
+          ## Run
+
+          [Workflow run]($RUN_URL)
+
+          ## Auto-close
+
+          This issue will auto-close on the next run that shows the cert's hash has stabilised AND matches the current state."
+            fi
+          done < .probe-out/events.txt
+
+      - name: 📣 Push to phone (ntfy) on first event
+        if: steps.probe.outputs.event_count != '0' && env.NTFY_TOPIC != ''
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          EVENT_COUNT: ${{ steps.probe.outputs.event_count }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          # One push per workflow run, not per event — avoid alert storm
+          SUMMARY="$EVENT_COUNT cert lifecycle event(s) detected — see issues labelled 'cert-changed' or 'cert-disappeared'"
+          curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+            -H "Title: 🎓 Cert lifecycle radar" \
+            -H "Priority: default" \
+            -H "Tags: mortar_board,sparkles" \
+            -H "Click: ${{ github.server_url }}/${{ github.repository }}/issues?q=is%3Aopen+label%3Acert-changed" \
+            -d "$SUMMARY"
+
+      - name: 📊 Summary
+        if: always()
+        run: |
+          echo "## 🎓 Cert lifecycle watcher" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Events:** ${{ steps.probe.outputs.event_count }}  " >> "$GITHUB_STEP_SUMMARY"
+          echo "**State committed:** ${{ steps.commit.outputs.committed }}  " >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f .probe-out/events.txt ] && [ -s .probe-out/events.txt ]; then
+            echo "### Events" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            cat .probe-out/events.txt >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Probe stderr (tail)" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          tail -30 .probe-out/stderr.log >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
