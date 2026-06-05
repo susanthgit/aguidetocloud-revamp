@@ -1,0 +1,508 @@
+{
+  "lastRun": "2026-06-05T01:46:11.568Z",
+  "certs": {
+    "ab-900": {
+      "hash": "a669d15506f52877",
+      "title": "Microsoft 365 Certified: Copilot and Agent Administration Fundamentals - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Identify the core features and objects of Microsoft 365 services"
+      ],
+      "lastSeenOK": "2026-06-05T01:42:49.156Z",
+      "consecutive404": 0
+    },
+    "ai-901": {
+      "hash": "8448ffc59aedf338",
+      "title": "Exam AI-901: Microsoft Azure AI Fundamentals (beta) - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": true,
+      "examLastUpdatedText": "April 15, 2026",
+      "skills": [
+        "Identify AI concepts and responsibilities|40–45%",
+        "Implement AI solutions by using Microsoft Foundry|55–60%"
+      ],
+      "lastSeenOK": "2026-06-05T01:42:54.257Z",
+      "consecutive404": 0
+    },
+    "az-900": {
+      "hash": "0abaf4eec085ae7a",
+      "title": "Microsoft Certified: Azure Fundamentals - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Describe Azure architecture and services",
+        "Describe Azure management and governance",
+        "Describe cloud concepts"
+      ],
+      "lastSeenOK": "2026-06-05T01:42:59.408Z",
+      "consecutive404": 0
+    },
+    "dp-800": {
+      "consecutive404": 1,
+      "lastFailStatus": 404,
+      "lastFailAt": "2026-06-05T01:43:04.495Z"
+    },
+    "dp-900": {
+      "hash": "415d31d0b0df72d0",
+      "title": "Microsoft Certified: Azure Data Fundamentals - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Describe an analytics workload on Azure",
+        "Describe considerations for working with non-relational data on Azure",
+        "Describe core data concepts",
+        "Identify considerations for relational data on Azure"
+      ],
+      "lastSeenOK": "2026-06-05T01:43:09.674Z",
+      "consecutive404": 0
+    },
+    "ms-700": {
+      "hash": "764f7cd259a55315",
+      "title": "Microsoft 365 Certified: Teams Administrator Associate - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Configure and manage a Teams environment",
+        "Manage meetings and calling",
+        "Manage teams, channels, chats, and apps",
+        "Monitor, report on, and troubleshoot Teams"
+      ],
+      "lastSeenOK": "2026-06-05T01:43:15.146Z",
+      "consecutive404": 0
+    },
+    "sc-900": {
+      "hash": "ada1efe3a7d1099d",
+      "title": "Microsoft Certified: Security, Compliance, and Identity Fundamentals - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Describe the capabilities of Microsoft Entra",
+        "Describe the capabilities of Microsoft compliance solutions",
+        "Describe the capabilities of Microsoft security solutions",
+        "Describe the concepts of security, compliance, and identity"
+      ],
+      "lastSeenOK": "2026-06-05T01:43:20.377Z",
+      "consecutive404": 0
+    },
+    "dp-300": {
+      "hash": "607e645dc64c975c",
+      "title": "Microsoft Certified: Azure Database Administrator Associate - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Configure and manage automation of tasks",
+        "Implement a secure environment",
+        "Monitor, configure, and optimize database resources",
+        "Plan and configure a high availability and disaster recovery (HA/DR) environment",
+        "Plan and implement data platform resources"
+      ],
+      "lastSeenOK": "2026-06-05T01:43:25.794Z",
+      "consecutive404": 0
+    },
+    "pl-900": {
+      "hash": "df12e1056152b73d",
+      "title": "Microsoft Certified: Power Platform Fundamentals - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Describe the business value of Microsoft Power Platform",
+        "Develop tailored business solutions.",
+        "Manage the Microsoft Power Platform environment"
+      ],
+      "lastSeenOK": "2026-06-05T01:43:31.136Z",
+      "consecutive404": 0
+    },
+    "ab-730": {
+      "hash": "0c1c8c35a086a06b",
+      "title": "Microsoft Certified: AI Business Professional - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Manage prompts and conversations by using AI"
+      ],
+      "lastSeenOK": "2026-06-05T01:43:36.262Z",
+      "consecutive404": 0
+    },
+    "ab-620": {
+      "consecutive404": 1,
+      "lastFailStatus": 404,
+      "lastFailAt": "2026-06-05T01:43:41.345Z"
+    },
+    "ab-731": {
+      "hash": "b09ecbc059749cdc",
+      "title": "Microsoft Certified: AI Transformation Leader - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Identify an implementation and adoption strategy for Microsoft’s AI apps and services",
+        "Identify benefits, capabilities, and opportunities for Microsoft’s AI apps and services",
+        "Identify the business value of generative AI solutions"
+      ],
+      "lastSeenOK": "2026-06-05T01:43:46.657Z",
+      "consecutive404": 0
+    },
+    "ai-103": {
+      "hash": "2f6cdd48db7a0321",
+      "title": "Microsoft Certified: Azure AI Apps and Agents Developer Associate (beta) - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": true,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Implement computer vision solutions",
+        "Implement generative AI and agentic solutions",
+        "Implement information extraction solutions",
+        "Implement text analysis solutions",
+        "Plan and manage an Azure AI solution"
+      ],
+      "lastSeenOK": "2026-06-05T01:43:52.015Z",
+      "consecutive404": 0
+    },
+    "az-120": {
+      "hash": "323db3f4fb22b537",
+      "title": "Microsoft Certified:  Azure for SAP Workloads Specialty - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Design and implement an infrastructure to support SAP workloads on Azure",
+        "Design and implement high availability and disaster recovery (HA/DR)",
+        "Maintain SAP workloads on Azure",
+        "Migrate SAP workloads to Azure"
+      ],
+      "lastSeenOK": "2026-06-05T01:44:01.594Z",
+      "consecutive404": 0
+    },
+    "ai-200": {
+      "hash": "1052633650230c7b",
+      "title": "Microsoft Certified: Azure AI Cloud Developer Associate (beta) - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": true,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Develop AI solutions by using Azure data management services",
+        "Develop containerized solutions on Azure",
+        "Secure, monitor, troubleshoot Azure solutions"
+      ],
+      "lastSeenOK": "2026-06-05T01:44:09.477Z",
+      "consecutive404": 0
+    },
+    "ai-300": {
+      "hash": "638a32b4cac54dc2",
+      "title": "Microsoft Certified: Machine Learning Operations Engineer Associate - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Design and implement a GenAIOps infrastructure",
+        "Design and implement an MLOps infrastructure",
+        "Implement generative AI quality assurance and observability",
+        "Implement machine learning model lifecycle and operations"
+      ],
+      "lastSeenOK": "2026-06-05T01:44:14.847Z",
+      "consecutive404": 0
+    },
+    "az-104": {
+      "hash": "d815f1cf5d47e0f5",
+      "title": "Microsoft Certified: Azure Administrator Associate - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Deploy and manage Azure compute resources",
+        "Implement and manage storage",
+        "Implement and manage virtual networking",
+        "Manage Azure identities and governance",
+        "Monitor and maintain Azure resources"
+      ],
+      "lastSeenOK": "2026-06-05T01:44:20.619Z",
+      "consecutive404": 0
+    },
+    "az-140": {
+      "hash": "ff64738844292782",
+      "title": "Microsoft Certified: Azure Virtual Desktop Specialty - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Monitor and maintain an Azure Virtual Desktop infrastructure",
+        "Plan and implement an Azure Virtual Desktop infrastructure",
+        "Plan and implement identity and security",
+        "Plan and implement user environments and apps"
+      ],
+      "lastSeenOK": "2026-06-05T01:44:25.901Z",
+      "consecutive404": 0
+    },
+    "az-700": {
+      "hash": "c4bdfcf0ed95b58b",
+      "title": "Microsoft Certified: Azure Network Engineer Associate - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Design and implement application delivery services",
+        "Design and implement core networking infrastructure",
+        "Design and implement private access to Azure services",
+        "Design, implement, and manage connectivity services",
+        "Secure network connectivity to Azure resources"
+      ],
+      "lastSeenOK": "2026-06-05T01:44:31.370Z",
+      "consecutive404": 0
+    },
+    "dp-600": {
+      "hash": "6139e45e831b840a",
+      "title": "Microsoft Certified: Fabric Analytics Engineer Associate - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Implement and manage semantic models",
+        "Maintain a data analytics solution",
+        "Secure and maintain analytics assets"
+      ],
+      "lastSeenOK": "2026-06-05T01:44:36.742Z",
+      "consecutive404": 0
+    },
+    "dp-700": {
+      "hash": "b1808e9538368f17",
+      "title": "Microsoft Certified: Fabric Data Engineer Associate - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Implement and manage an analytics solution",
+        "Monitor and optimize an analytics solution"
+      ],
+      "lastSeenOK": "2026-06-05T01:44:41.957Z",
+      "consecutive404": 0
+    },
+    "dp-750": {
+      "consecutive404": 1,
+      "lastFailStatus": 404,
+      "lastFailAt": "2026-06-05T01:44:47.222Z"
+    },
+    "md-102": {
+      "hash": "cc4947766024aea7",
+      "title": "Microsoft 365 Certified: Endpoint Administrator Associate - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Manage and maintain devices",
+        "Manage applications"
+      ],
+      "lastSeenOK": "2026-06-05T01:44:52.689Z",
+      "consecutive404": 0
+    },
+    "pl-300": {
+      "hash": "e2cc7f2dc9be1541",
+      "title": "Microsoft Certified: Power BI Data Analyst Associate - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Manage and secure Power BI"
+      ],
+      "lastSeenOK": "2026-06-05T01:44:57.962Z",
+      "consecutive404": 0
+    },
+    "pl-400": {
+      "hash": "a61e0d2d2bca1632",
+      "title": "Microsoft Certified: Power Platform Developer Associate - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Build Power Platform solutions",
+        "Create a technical design",
+        "Develop integrations",
+        "Implement Power Apps improvements"
+      ],
+      "lastSeenOK": "2026-06-05T01:45:03.258Z",
+      "consecutive404": 0
+    },
+    "sc-200": {
+      "hash": "9b016331ebd8b926",
+      "title": "Microsoft Certified: Security Operations Analyst Associate - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Manage a security operations environment"
+      ],
+      "lastSeenOK": "2026-06-05T01:45:08.524Z",
+      "consecutive404": 0
+    },
+    "sc-300": {
+      "hash": "b52c80e7aca43649",
+      "title": "Microsoft Certified: Identity and Access Administrator Associate - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Implement and manage user identities",
+        "Implement authentication and access management",
+        "Plan and implement identity governance",
+        "Plan and implement workload identities"
+      ],
+      "lastSeenOK": "2026-06-05T01:45:13.792Z",
+      "consecutive404": 0
+    },
+    "sc-500": {
+      "consecutive404": 1,
+      "lastFailStatus": 404,
+      "lastFailAt": "2026-06-05T01:45:20.404Z"
+    },
+    "sc-401": {
+      "hash": "9e8e0f1cd3c80676",
+      "title": "Microsoft Certified: Information Security Administrator Associate - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Implement data loss prevention and retention",
+        "Implement information protection",
+        "Manage risks, alerts, and activities"
+      ],
+      "lastSeenOK": "2026-06-05T01:45:25.918Z",
+      "consecutive404": 0
+    },
+    "ab-100": {
+      "hash": "db8e72707c9ae907",
+      "title": "Microsoft Certified: Agentic AI Business Solutions Architect - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Deploy AI-powered business solutions",
+        "Design AI-powered business solutions",
+        "Plan AI-powered business solutions"
+      ],
+      "lastSeenOK": "2026-06-05T01:45:31.191Z",
+      "consecutive404": 0
+    },
+    "mb-800": {
+      "hash": "1c0477847e2f4a21",
+      "title": "Microsoft Certified: Dynamics 365 Business Central Functional Consultant Associate - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Configure financials",
+        "Configure sales and purchasing"
+      ],
+      "lastSeenOK": "2026-06-05T01:45:38.424Z",
+      "consecutive404": 0
+    },
+    "mb-500": {
+      "hash": "50751431a90bb62e",
+      "title": "Microsoft Certified: Dynamics 365: Finance and Operations Apps Developer Associate - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Apply developer tools",
+        "Create and modify finance and operations app reports and workspaces.",
+        "Design and develop AOT elements",
+        "Develop and test code",
+        "Develop business logic by using X++.",
+        "Implement reporting",
+        "Implement security and optimize performance",
+        "Integrate and manage data solutions",
+        "Manage implementations by using application lifecycle management (ALM).",
+        "Monitor performance.",
+        "Plan architecture and solution design"
+      ],
+      "lastSeenOK": "2026-06-05T01:45:43.873Z",
+      "consecutive404": 0
+    },
+    "az-305": {
+      "hash": "b73adb2ae50bcd74",
+      "title": "Exam AZ-305: Designing Microsoft Azure Infrastructure Solutions - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": "April 17, 2026",
+      "skills": [
+        "Design business continuity solutions|15–20%",
+        "Design data storage solutions|20–25%",
+        "Design identity, governance, and monitoring solutions|25–30%",
+        "Design infrastructure solutions|30–35%"
+      ],
+      "lastSeenOK": "2026-06-05T01:45:48.999Z",
+      "consecutive404": 0
+    },
+    "az-400": {
+      "hash": "2372f140e4d0b427",
+      "title": "Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": "April 24, 2026",
+      "skills": [
+        "Design and implement a source control strategy|10–15%",
+        "Design and implement build and release pipelines|50-55%",
+        "Design and implement processes and communications|10–15%",
+        "Develop a security and compliance plan|10–15%",
+        "Implement an instrumentation strategy|5–10%"
+      ],
+      "lastSeenOK": "2026-06-05T01:45:54.169Z",
+      "consecutive404": 0
+    },
+    "ms-102": {
+      "hash": "f03c9900e20d6c32",
+      "title": "Exam MS-102: Microsoft 365 Administrator - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": "April 28, 2026",
+      "skills": [
+        "Deploy and manage a Microsoft 365 tenant|10-15%",
+        "Implement and manage Microsoft Entra identity and access|25-30%",
+        "Manage compliance by using Microsoft Purview|15–20%",
+        "Manage security and threats by using Microsoft Defender XDR|35–40%",
+        "Work with architects and other administrators responsible for workloads, infrastructure, identity, security, compliance, endpoints, and applications."
+      ],
+      "lastSeenOK": "2026-06-05T01:45:59.205Z",
+      "consecutive404": 0
+    },
+    "sc-100": {
+      "hash": "9140abb7cd8dd257",
+      "title": "Exam SC-100: Microsoft Cybersecurity Architect - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": "April 27, 2026",
+      "skills": [
+        "Design security operations, identity, and compliance capabilities|25–30%",
+        "Design security solutions for applications and data|20–25%",
+        "Design security solutions for infrastructure|25–30%",
+        "Design solutions that align with security best practices and priorities|20–25%"
+      ],
+      "lastSeenOK": "2026-06-05T01:46:04.341Z",
+      "consecutive404": 0
+    },
+    "dp-420": {
+      "hash": "85c37d9a8d2426e5",
+      "title": "Microsoft Certified: Azure Cosmos DB Developer Specialty - Certifications | Microsoft Learn",
+      "retirementDate": null,
+      "isBeta": false,
+      "examLastUpdatedText": null,
+      "skills": [
+        "Create appropriate indexing policies.",
+        "Design and implement data distribution",
+        "Design and implement data models",
+        "Integrate an Azure Cosmos DB solution",
+        "Maintain an Azure Cosmos DB solution",
+        "Use PowerShell."
+      ],
+      "lastSeenOK": "2026-06-05T01:46:11.568Z",
+      "consecutive404": 0
+    }
+  }
+}
