@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 05 Jun 2026 16:37:47 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jun 2026 20:07:49 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Users may receive no response when prompting Microsoft 365 Copilot Chat using the Claude Opus model </title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1352001</link>
-      <description>[Microsoft 365 Copilot Chat] Users may receive no response when prompting Copilot Chat using the Claude Opus model.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CW1352001</guid>
-      <pubDate>Thu, 04 Jun 2026 20:35:37 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft 365 suite] Users may fail to retrieve Microsoft OneNote content using Microsoft Graph APIs</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1338742</link>
@@ -69,6 +60,15 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CP1329665</guid>
       <pubDate>Mon, 01 Jun 2026 13:10:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users may have received no response when prompting Microsoft 365 Copilot Chat using the Claude Opus model </title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1352001</link>
+      <description>[Microsoft 365 Copilot Chat] Users may have received no response when prompting Copilot Chat using the Claude Opus model.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1352001</guid>
+      <pubDate>Mon, 01 Jun 2026 13:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Unable to open files in Office for the web or Microsoft Teams</title>

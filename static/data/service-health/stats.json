@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T16:37:47.066212+00:00",
+  "generated_at": "2026-06-05T20:07:48.490626+00:00",
   "total_incidents_tracked": 104,
   "services": [
     {
@@ -59,9 +59,9 @@
       "short_name": "Copilot Chat",
       "icon": "💭",
       "total_incidents": 7,
-      "active_incidents": 1,
-      "avg_duration_minutes": 5347,
-      "last_incident": "2026-06-04T20:35:37.707000+00:00",
+      "active_incidents": 0,
+      "avg_duration_minutes": 5437,
+      "last_incident": "2026-06-01T13:00:00+00:00",
       "classifications": {
         "incident": 4,
         "advisory": 3
