@@ -1,31 +1,30 @@
 {
-  "generated": "2026-06-06T08:04:28.490302+00:00",
+  "generated": "2026-06-07T08:31:58.767279+00:00",
   "total": 52,
-  "active": 35,
-  "passed": 17,
-  "action_required": 34,
+  "active": 34,
+  "passed": 18,
+  "action_required": 33,
   "urgency": {
-    "critical": 1,
     "warning": 32,
     "watch": 2
   },
   "categories": {
-    "windows": 6,
     "sharepoint": 3,
     "office-apps": 6,
     "azure": 17,
     "exchange": 2,
-    "entra": 1
+    "entra": 1,
+    "windows": 5
   },
   "types": {
-    "end-of-support": 19,
+    "end-of-support": 18,
     "retirement": 16
   },
   "next_deadline": {
-    "title": "Microsoft Configuration Manager Version 2409 End of Support",
-    "deadline": "2026-06-06",
-    "days_remaining": 0,
-    "urgency": "critical"
+    "title": "SharePoint Server 2016 End of Support",
+    "deadline": "2026-07-14",
+    "days_remaining": 37,
+    "urgency": "warning"
   },
   "category_meta": {
     "sharepoint": {
