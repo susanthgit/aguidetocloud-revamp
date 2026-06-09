@@ -1,6 +1,286 @@
 {
   "articles": [
     {
+      "id": "9d86d8dd37e73592bf0719a776fb44b1",
+      "title": "Norks blast 250+ fake job offers to developers over 6 weeks to try and snarf creds and crypto",
+      "url": "https://www.theregister.com/security/2026/06/08/suspected-norks-send-250-fake-dev-job-pitches-to-steal-crypto/5252526",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-09T00:13:20+02:00",
+      "snippet": "When an unsolicited job offer sounds too good to be true …",
+      "image": "https://image.theregister.com/?imageId=260157&width=800",
+      "ai_summary": "",
+      "published_display": "1h ago"
+    },
+    {
+      "id": "cdfddd4d2bcac25ae8743ab5ba4f86a9",
+      "title": "3 new MacOS 27 features make it worth upgrading right away for me - Siri included",
+      "url": "https://www.zdnet.com/article/macos-27-best-new-features/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-06-08T23:50:00+00:00",
+      "snippet": "Apple's upcoming MacOS 27 Golden Gate is light on new features, focusing instead on a reworked Siri.",
+      "image": "https://www.zdnet.com/a/img/resize/ae6debb515df911cd7cb045fd39cb28463038b5d/2026/06/01/20479eba-2206-40d1-a708-085c12f8cea0/zdnet-os16-os-apple-wwdc-2025-0158.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "14m ago"
+    },
+    {
+      "id": "13e3a01c1e22a5269e84829927b72ac1",
+      "title": "Apple’s Orwellian device controls for tots also mean more work for parents",
+      "url": "https://www.theregister.com/personal-tech/2026/06/08/apples-orwellian-device-controls-for-tots-also-mean-more-work-for-parents/5252515",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-08T23:28:59+02:00",
+      "snippet": "The new features ignore the argument that if parents wanted to spend more time on their kids, they wouldn't have supplied them with an iPad or iPhone in the first place.",
+      "image": "https://image.theregister.com/?imageId=5252542&width=800",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
+      "id": "76c83dd603fcb358c2498152fd06ab34",
+      "title": "As a parent, I'm beyond excited about iOS 27's child safety features - how they're better now",
+      "url": "https://www.zdnet.com/article/apple-ios-27-ipados-macos-wwdc-2026-parental-controls/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-06-08T23:24:00+00:00",
+      "snippet": "From stronger controls over web browsing and shortcuts to limit screen time, Apple just announced much-needed child-safety features for its OS.",
+      "image": "https://www.zdnet.com/a/img/resize/27270f18bb66dec80fea3438a867283f5acc8ccc/2026/06/08/5f2e7566-0afd-4395-9baa-9e30bf93060b/1.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "40m ago"
+    },
+    {
+      "id": "d04c282ff05f7d93f7cd497c9b635ae8",
+      "title": "The AirPods getting a custom equalizer with iOS 27 is a bigger deal than you think",
+      "url": "https://www.zdnet.com/article/airpods-custom-eq-news/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-06-08T23:19:00+00:00",
+      "snippet": "Despite flying under the radar during the WWDC keynote, a custom EQ for AirPods is a feature I'm most excited for this fall.",
+      "image": "https://www.zdnet.com/a/img/resize/3b8d5209a24b7ba349cfcdf3023b042aca1d7d82/2025/09/27/476a91ef-6ebe-452c-98a6-55dcd0233ffd/app3-1.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "45m ago"
+    },
+    {
+      "id": "d3b1b156800652a93d7606eed08d5d17",
+      "title": "How to download the iOS 27 developer beta right now (and which models support it)",
+      "url": "https://www.zdnet.com/article/how-to-download-ios-27-developer-beta/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-06-08T23:14:00+00:00",
+      "snippet": "Apple's WWDC 2026 was full of updates for the daily iPhone user experience -  here's how you can try iOS 27 early for free.",
+      "image": "https://www.zdnet.com/a/img/resize/d869eab0c01b746c3fb3096c670c6efa8ae6aaa6/2026/02/28/90cb8f4f-2b7c-4af7-8ba6-87b379bf15db/dsc09247.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "50m ago"
+    },
+    {
+      "id": "5288f9db02103ac2908579fd4784de2e",
+      "title": "As OpenAI files for IPO, Sam Altman’s eye-scanning company is doing layoffs, report says",
+      "url": "https://techcrunch.com/2026/06/08/as-openai-files-for-ipo-sam-altmans-eye-scanning-company-is-doing-layoffs-report-says/",
+      "source": "TechCrunch AI",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-08T22:41:45+00:00",
+      "snippet": "Tools for Humanity, Sam Altman's identify verification company, is reportedly struggling to generate revenue and will downsize its staff.",
+      "image": "https://techcrunch.com/wp-content/uploads/2023/07/Worldcoin-Project-Co-founders-Alex-Blania-L-and-Sam-Altman-R.jpg?resize=1200,800",
+      "ai_summary": "",
+      "published_display": "1h ago"
+    },
+    {
+      "id": "7beefdb99c57aad5be5acb27b37b0c9f",
+      "title": "Apple’s WWDC AI demos looked more real after $250M false ad settlement",
+      "url": "https://techcrunch.com/2026/06/08/apples-wwdc-ai-demos-looked-more-real-after-250m-false-ad-settlement/",
+      "source": "TechCrunch AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-08T22:39:57+00:00",
+      "snippet": "The vibe of Apple's 2026 WWDC keynote felt like a spouse proudly listing all the honey-do-list items tackled. One subtle example: the many AI demos of someone standing, phone in hand.",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/06/Apple-iOS-27-demo.png?resize=1200,677",
+      "ai_summary": "",
+      "published_display": "1h ago"
+    },
+    {
+      "id": "97e937a9f4b3f03954ff72028378d564",
+      "title": "It's do or die for Apple AI",
+      "url": "https://www.theregister.com/ai-and-ml/2026/06/08/its-do-or-die-for-apple-ai/5252479",
+      "source": "The Register AI",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-06-08T22:32:18+02:00",
+      "snippet": "WWDC announcements earned tempered praise from analysts, with an emphasis on the word 'if'",
+      "image": "https://image.theregister.com/?imageId=256031&width=800",
+      "ai_summary": "",
+      "published_display": "3h ago"
+    },
+    {
+      "id": "e892ae073608efaf2a36d12c5f4aa52a",
+      "title": "The iPadOS 27 developer beta is here - how to download it",
+      "url": "https://www.zdnet.com/article/how-to-download-ipados-27-developer-beta/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-06-08T22:18:08+00:00",
+      "snippet": "Apple has released the first iPadOS 27 beta, offering early access to an upgraded Siri, new Safari features, and more.",
+      "image": "https://www.zdnet.com/a/img/resize/3524ba095658334dd3d018390156006ebd517761/2026/03/04/0f612594-ad9b-4eb3-a698-1e88812802de/dsc09743.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "1h ago"
+    },
+    {
+      "id": "3ef5908704f93e48b6e5fbd7321e0578",
+      "title": "These 2 iOS 27 upgrades will solve more of my daily problems than Siri AI ever will",
+      "url": "https://www.zdnet.com/article/ios-27-connectivity-upgrades/",
+      "source": "ZDNet AI",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-06-08T21:42:26+00:00",
+      "snippet": "Enhancements to foundational technologies are always welcomed - and potentially more useful - than the flashier ones.",
+      "image": "https://www.zdnet.com/a/img/resize/7ce30181ebe91a1a028248ba714f1c311113ad68/2026/02/28/c8225621-a628-4a8c-8f3f-d27626f9bf41/dsc09236.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
+      "id": "6d01d513cb49a8c70cb749b6dd5db597",
+      "title": "OpenAI Confidentially Files for IPO on the Heels of SpaceX and Anthropic",
+      "url": "https://www.wired.com/story/openai-confidentially-files-for-ipo/",
+      "source": "Wired AI",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-08T21:31:58+00:00",
+      "snippet": "The ChatGPT-maker announced it has filed paperwork to go public, just a week after rival Anthropic took the same step.",
+      "image": "https://media.wired.com/photos/6a0f431f2e3deb13670a3fb1/master/pass/OpenAI-IPO-Business-2265445220.jpg",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
+      "id": "aecaa55e13a382256bb186c2f2e3d526",
+      "title": "OpenAI files confidentially for IPO, following Anthropic",
+      "url": "https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/",
+      "source": "TechCrunch AI",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-08T21:29:57+00:00",
+      "snippet": "The filing comes a little more than a week after its main rival, Anthropic, also filed to go public, ramping up the race between the two AI firms.",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/02/modi-openai-anthropic-2261854815.jpg?resize=1200,800",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
+      "id": "d473e5e92adfde8eae7235290895b03c",
+      "title": "Apple plays catch-up at WWDC",
+      "url": "https://techcrunch.com/2026/06/08/apple-plays-catch-up-at-wwdc/",
+      "source": "TechCrunch AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-08T21:15:42+00:00",
+      "snippet": "Apple spent much of its WWDC keynote highlighting fixes, performance improvements, and long-requested features before unveiling its upgraded AI-powered Siri, signaling that the company wants users to see AI as just one part of a broader effort to improve its software.",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/06/tim-cook-wwdc-2026.jpeg?resize=1200,677",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
+      "id": "f93dcb7f58206d6d1738f87b81523db5",
+      "title": "I quit Safari for Chrome, but these new MacOS 27 features could pull me back",
+      "url": "https://www.zdnet.com/article/i-quit-safari-for-chrome-but-these-new-macos-27-features-could-pull-me-back/",
+      "source": "ZDNet AI",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-06-08T21:12:50+00:00",
+      "snippet": "Safari is getting a glow-up with Apple Intelligence, and I'm all set to make it my default browser, again.",
+      "image": "https://www.zdnet.com/a/img/resize/c34dd8520a77fa4e73d749eb63ea60c01d42fdd3/2026/06/08/6669aada-fbfd-419d-89c1-1e9bcdada75b/img-20260609-014750.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
+      "id": "91f847a1615de66c4bcf7e6709deadbc",
+      "title": "Apple WWDC 2026 live: Biggest news on Siri AI, Tim Cook, iOS 27 developer beta, more",
+      "url": "https://www.zdnet.com/article/apple-wwdc-live-blog-06-08-2026/",
+      "source": "ZDNet AI",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-06-08T21:12:00+00:00",
+      "snippet": "We're reporting live from Apple Park to cover the company's annual developer conference. Here is the latest news.",
+      "image": "https://www.zdnet.com/a/img/resize/9218fdb5fd5624b6bf14b084881c61af70b574ae/2026/06/08/df021a3d-8bfa-497a-92ac-b1fdce6804b6/img-2327.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
+      "id": "7911a01c7ec615544a40ded97de16e21",
+      "title": "Apple bets cheaper AI will woo small developers",
+      "url": "https://techcrunch.com/2026/06/08/apple-bets-cheaper-ai-will-woo-small-developers/",
+      "source": "TechCrunch AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-08T20:53:55+00:00",
+      "snippet": "As AI experimentation grows more expensive, Apple is waiving cloud API costs for developers with fewer than 2 million first-time App Store downloads.",
+      "image": "https://techcrunch.com/wp-content/uploads/2025/12/app-of-the-year.jpg?resize=1200,722",
+      "ai_summary": "",
+      "published_display": "3h ago"
+    },
+    {
+      "id": "fce642eb4c3a865c2249eec137196f40",
+      "title": "WatchOS 27 has arrived: How to download the developer beta now",
+      "url": "https://www.zdnet.com/article/how-to-download-watch0s-27-developer-beta/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-06-08T20:46:34+00:00",
+      "snippet": "Apple's WWDC event just elevated every basic user's experience - even on your smartwatch. Here's how to get WatchOS 27 early.",
+      "image": "https://www.zdnet.com/a/img/resize/920a3fcf704b0d9f6efccc173eb7f92394a71aee/2025/09/17/82951a35-41c8-4d28-9868-6cd5f4e1a034/img-0061.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "3h ago"
+    },
+    {
+      "id": "cfb51a170f139a2e7ea3ece56a3943ac",
+      "title": "iOS 27's Shortcuts upgrade makes automations easy to build - and will save me so much time",
+      "url": "https://www.zdnet.com/article/ios-27-shortcuts-upgrade-makes-automations-easy/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-06-08T20:32:00+00:00",
+      "snippet": "Apple announced several updates to iOS 27 at WWDC, including an AI feature that will greatly improve the Shortcuts app experience.",
+      "image": "https://www.zdnet.com/a/img/resize/dbe0694a33987c0d5d871185fea4275043274d42/2024/05/27/856c2908-a99d-4a2a-a4d8-1146ecfcd825/clicks-keyboard4.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "3h ago"
+    },
+    {
+      "id": "b258b5a1546eeee620e671571d607a21",
+      "title": "The new Siri AI could cost you - here's why",
+      "url": "https://www.zdnet.com/article/the-new-siri-ai-could-cost-you-heres-why/",
+      "source": "ZDNet AI",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-06-08T20:20:57+00:00",
+      "snippet": "Apple unveiled a revamped Siri at WWDC on Monday, but is it enough to put the company back in the AI race?",
+      "image": "https://www.zdnet.com/a/img/resize/f61703aaf150b045ec1bc88fef0561745896faf0/2026/06/08/cfb2ef71-5e47-46f1-8664-31c1b20f2bbe/gettyimages-2279919960-cropped.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "3h ago"
+    },
+    {
       "id": "3094473b0c2ae2a6b5134ac1cebb868d",
       "title": "WWDC 2026: Everything announced on Siri AI, iOS 27, Apple Intelligence and more",
       "url": "https://techcrunch.com/2026/06/08/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/",
@@ -12,7 +292,21 @@
       "snippet": "Apple&#8217;s WWDC 2026 event kicked off this morning at 10 a.m. PT at Apple Park, starting a week full of expected announcements around Siri, iOS 27, Apple Intelligence and more, along with developer events and demos. This year&#8217;s event is particularly notable for a couple things. It marks CEO Tim Cook&#8217;s last with the company, [&#8230;]",
       "image": "https://techcrunch.com/wp-content/uploads/2026/06/apple-siri-ai-use-cases.png?w=1186",
       "ai_summary": "",
-      "published_display": "7m ago"
+      "published_display": "4h ago"
+    },
+    {
+      "id": "6c175c7e364ec520a41fc98b7e6db9ed",
+      "title": "Ransomware crims got a month-long head start on Check Point VPN 0-day that now has a fix",
+      "url": "https://www.theregister.com/cyber-crime/2026/06/08/attackers-had-month-long-head-start-on-patched-check-point-vpn-zero-day/5252438",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-08T19:10:31+02:00",
+      "snippet": "Scumbags, including a Qilin ransomware affiliate, began hitting this hole May 7",
+      "image": "https://image.theregister.com/?imageId=5252476&width=800",
+      "ai_summary": "",
+      "published_display": "6h ago"
     },
     {
       "id": "8c49c81d11f79a6834b721036710c01c",
@@ -26,7 +320,7 @@
       "snippet": "Four approaches can dramatically improve the performance and trustworthiness of AI agents in operational environments.",
       "image": "https://cdn.amazon.science/dims4/default/fefd037/2147483647/strip/true/crop/1920x1008+0+36/resize/1200x630!/quality/90/?url=https%3A%2F%2Famzn-science-production-science.s3.us-east-1.amazonaws.com%2Fscience%2F00%2Ff3%2F0325df924561b91de469b0f01226%2Fgroundingaiagents-01-16x9.png",
       "ai_summary": "",
-      "published_display": "21m ago"
+      "published_display": "5h ago"
     },
     {
       "id": "36e165476620b2a6d33b44a9787b2209",
@@ -40,7 +334,7 @@
       "snippet": "Apple is adding new AI-powered features to Safari, Shortcuts, and Password apps.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/06/Screenshot-2026-06-08-at-2.02.26-PM.png?resize=1200,663",
       "ai_summary": "",
-      "published_display": "32m ago"
+      "published_display": "5h ago"
     },
     {
       "id": "1bdec3715a1ca6ca3ea68669ded54c90",
@@ -54,7 +348,7 @@
       "snippet": "Shortcuts gets an AI upgrade, letting you describe the workflow you want in a prompt.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/06/shortcuts-at-2.26.16-PM.jpg?resize=1200,666",
       "ai_summary": "",
-      "published_display": "36m ago"
+      "published_display": "5h ago"
     },
     {
       "id": "455642f0eb8841097a01fa057fd13c89",
@@ -68,7 +362,7 @@
       "snippet": "Apple's AI image generator is getting a makeover that could make it more competitive.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/06/Screenshot-2026-06-08-at-2.01.54-PM.png?resize=1200,670",
       "ai_summary": "",
-      "published_display": "43m ago"
+      "published_display": "5h ago"
     },
     {
       "id": "f21c2760fd2586829278aacf28a6fba1",
@@ -82,7 +376,7 @@
       "snippet": "A new spatial \"Reframe\" feature will let users use AI to adjust perspectives.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/06/Screenshot-2026-06-08-at-2.07.32-PM.jpg?resize=1200,675",
       "ai_summary": "",
-      "published_display": "45m ago"
+      "published_display": "5h ago"
     },
     {
       "id": "e068815bc038fb065f2df246ce666c23",
@@ -96,7 +390,21 @@
       "snippet": "73 packages run self-replicating stealer as soon as they're opened by an AI agent.",
       "image": "https://cdn.arstechnica.net/wp-content/uploads/2025/09/microsoft-logo-1024x648.jpg",
       "ai_summary": "",
-      "published_display": "47m ago"
+      "published_display": "5h ago"
+    },
+    {
+      "id": "ecba486648f59f9bc860368c10992e3a",
+      "title": "Canonical sends Ubuntu into the AI agent era",
+      "url": "https://www.theregister.com/software/2026/06/08/canonical-sends-ubuntu-into-the-ai-agent-era/5252373",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-08T18:34:02+02:00",
+      "snippet": "Sandboxed LLM dev environments lead the show, but accessibility may be the real prize",
+      "image": "https://image.theregister.com/?imageId=5252431&width=800",
+      "ai_summary": "",
+      "published_display": "7h ago"
     },
     {
       "id": "f0033956bb17000943fb5c12f6c9964b",
@@ -110,7 +418,7 @@
       "snippet": "Siri is finally getting its own app.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/06/apple-wwdc-2026.jpg?resize=1200,736",
       "ai_summary": "",
-      "published_display": "47m ago"
+      "published_display": "5h ago"
     },
     {
       "id": "d7b1451746f943821d742fb1232f7707",
@@ -124,7 +432,21 @@
       "snippet": "We're reporting live from Apple Park to cover the company's annual developer conference. Stay tuned for the latest news.",
       "image": "https://www.zdnet.com/a/img/resize/110fdb1f00e035080fa496fdda6c7f976b9eea3b/2026/06/08/96506164-017c-4f31-8241-a5b80a43fdaf/image-20260608-095757-016.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "53m ago"
+      "published_display": "5h ago"
+    },
+    {
+      "id": "b99c6ad6be48887468016adf986d845b",
+      "title": "ZTE Demonstrates Integrated AI, Connectivity and Digital Utility Technologies at TNB Energy Transition Conference",
+      "url": "https://www.theregister.com/ai-and-ml/2026/06/08/zte-demonstrates-integrated-ai-connectivity-and-digital-utility-technologies-at-tnb-energy-transition-conference/5252434",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-08T18:25:02+02:00",
+      "snippet": "PARTNER CONTENT: Driving Grid Modernization and Energy Transition in Malaysia Through Advanced AI and Smart Infrastructure Solutions",
+      "image": "https://image.theregister.com/?imageId=5252449&width=800",
+      "ai_summary": "",
+      "published_display": "7h ago"
     },
     {
       "id": "1d9a1a97c881cad3effc5700c25b4061",
@@ -138,7 +460,21 @@
       "snippet": "\"If you're grabbing a bite with friends and point your iPhone at the bill, then [you can] select what you ordered to split the tab with Apple Cash,\" said Apple VP of Software Sebastien Marineau-Mes.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/06/Screenshot-2026-06-08-at-1.49.10-PM-1.png?resize=1200,666",
       "ai_summary": "",
-      "published_display": "58m ago"
+      "published_display": "5h ago"
+    },
+    {
+      "id": "71579e02158f721d9f2a4160d5c33c49",
+      "title": "NASA's Secret: Moon astronauts will be rocking Prada underwear",
+      "url": "https://www.theregister.com/offbeat/2026/06/08/nasa-moon-astronauts-get-prada-designed-base-layer/5252311",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-08T18:21:25+02:00",
+      "snippet": "What, you think any old liquid-cooled bodysuit would be acceptable to pair with such a fashionable outer layer?",
+      "image": "https://image.theregister.com/?imageId=5252359&width=800",
+      "ai_summary": "",
+      "published_display": "7h ago"
     },
     {
       "id": "fcc7f70c9f6433f5af21072f38144471",
@@ -152,7 +488,7 @@
       "snippet": "From a stand-alone app to a Google Gemini partnership, here’s everything you need to know from WWDC 2026 about Apple’s upcoming overhaul of Siri.",
       "image": "https://media.wired.com/photos/6a2710703d01e9a6c2f2cfec/master/pass/Apple-Siri-AI-architecture-diagram-260608.jpg",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "a1361c122b511227ace4db639e9e4f19",
@@ -166,7 +502,7 @@
       "snippet": "Apple's WWDC 2026 was full of updates for the daily iPhone user experience -  here's how you can try iOS 27 early for free.",
       "image": "https://www.zdnet.com/a/img/resize/d869eab0c01b746c3fb3096c670c6efa8ae6aaa6/2026/02/28/90cb8f4f-2b7c-4af7-8ba6-87b379bf15db/dsc09247.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "4b1719b29571ecadcc707f9b3d0c00f3",
@@ -179,6 +515,20 @@
       "published": "2026-06-08T18:15:00+00:00",
       "snippet": "Here's a breakdown of which iPhone models will support the next iOS update - and which ones Apple is leaving behind.",
       "image": "https://www.zdnet.com/a/img/resize/26758f875394bc3283fb91455b56739344455c15/2026/03/13/fb209dc1-749b-42ae-930b-ed040efe8185/dsc09785.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "5h ago"
+    },
+    {
+      "id": "a3e0cb0dec4228bc6225ccc708f48059",
+      "title": "Apple is using AI to fix Safari’s extension problem",
+      "url": "https://www.theverge.com/tech/946345/apple-safari-ai-update-extensions",
+      "source": "The Verge AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-06-08T18:14:17-04:00",
+      "snippet": "Apple is trying to solve one of Safari's biggest weaknesses with AI. Safari has long lacked the robust library of extensions that its rivals have, mainly due to the stringent development requirements from Apple. But now, Apple is inviting users to essentially vibe-code their own extensions. In a demo shared by Apple, the company showed [&#8230;]",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/describe-extension-safari.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
       "published_display": "1h ago"
     },
@@ -194,7 +544,7 @@
       "snippet": "Despite flying under the WWDC radar, a custom EQ for AirPods is a feature I'm most excited for this fall.",
       "image": "https://www.zdnet.com/a/img/resize/3b8d5209a24b7ba349cfcdf3023b042aca1d7d82/2025/09/27/476a91ef-6ebe-452c-98a6-55dcd0233ffd/app3-1.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "7811af8cc3a72f5da3d13eb014c3fe82",
@@ -208,7 +558,7 @@
       "snippet": "The idea behind the new \"Siri AI\" is to turn the assistant from a voice controlled assistant into an AI companion that can do a lot more.",
       "image": "https://techcrunch.com/wp-content/uploads/2024/10/apple-siri-header.jpg?resize=1200,800",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "b05e5aabf641c1fa5ffbb4ea53e15752",
@@ -222,7 +572,7 @@
       "snippet": "Meanwhile, 13 schools in Wales affected by separate attack",
       "image": "https://image.theregister.com/?imageId=5252409&width=800",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "00a22ca5e93035c14cc0affa082a6b31",
@@ -236,7 +586,7 @@
       "snippet": "The British government thinks a state-backed infrastructure initiative will help supercharge homegrown chip startups.",
       "image": "https://media.wired.com/photos/6a26d742255fdba4ebd668f3/master/pass/GettyImages-2267728396.jpg",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "58c802b6b4b3eba33a1964f05b97b11d",
@@ -250,7 +600,7 @@
       "snippet": "For decades, I've recommended the open-source OS to new and experienced computer users alike. But hey, I'm not oblivious to its handful of faults.",
       "image": "https://www.zdnet.com/a/img/resize/5c19b1e20ca3bcbb0a6dae74595c8e24b54e9a20/2026/06/08/f2c0a12e-7e57-48d0-b446-ed2d9ba33843/gripeshero.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "136da8e5093de8574d8c15338ee60efe",
@@ -264,7 +614,7 @@
       "snippet": "The code WIRED identified is gone from the latest version of Meta AI, the companion app for the company’s smart glasses. Meta won’t say why or whether it’s coming back.",
       "image": "https://media.wired.com/photos/6a26baa814f2ec6e95bd841b/master/pass/GettyImages-2235451108.jpg",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "5c1ee19a46f67a6b674883d2acd559c1",
@@ -278,7 +628,7 @@
       "snippet": "Orbital broadband biz will miss its July 30 deadline to have 1,616 spacecraft in place",
       "image": "https://image.theregister.com/?imageId=5230051&width=800",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "d90a0dba80c21b14fb0918d5ee2ec2b1",
@@ -292,7 +642,7 @@
       "snippet": "The harnesses that mediate between models and tools in agentic systems are becoming their own performance bottleneck, but a few simple design principles can fix what ails them.",
       "image": "https://cdn.amazon.science/dims4/default/e480c1c/2147483647/strip/true/crop/1920x1008+0+36/resize/1200x630!/quality/90/?url=https%3A%2F%2Famzn-science-production-science.s3.us-east-1.amazonaws.com%2Fscience%2F70%2F66%2Ff607b3084255b8539cdeec1a5f7c%2Freasoning-nudge-16x9.jpg",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "875db6656e4c43333de9936f5b601217",
@@ -306,7 +656,7 @@
       "snippet": "With access to the latest generative AI models and high-performance accelerated compute in high global demand, AWS customers need tools to take advantage of model availability and capacity across multiple AWS Regions, while still meeting their security and privacy requirements. cross-Region Inference (CRIS) on Amazon Bedrock meets these needs by automatically routing requests across multiple […]",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/26/ML-20090-image-1.png",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "626745d630613d9ffede0ad3bb3e1516",
@@ -320,7 +670,7 @@
       "snippet": "Amazon Bedrock AgentCore Runtime gives each agent session its own isolated microVM with a persistent workspace, secure tool access through Gateway, and built-in observability—so you can run Claude Code, Codex, Kiro, and Cursor in parallel without sharing secrets, ports, or filesystems. Close the lid, go to dinner, and pick up where you left off tomorrow.",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/06/05/biker_image_higher_resolution-1024x768.png",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "d1e5c42b398e8916aece83940e4f4ac0",
@@ -334,7 +684,7 @@
       "snippet": "In this post, we introduce mathematical optimization, explain how it fits within the broader AI landscape, and showcase real-world success stories where the Innovation Center has partnered with customers to deliver concrete results.",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/06/03/20177-1.png",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "152293a946571b365af041fca6cc0352",
@@ -348,7 +698,35 @@
       "snippet": "GitHub Enterprise Cloud with Enterprise Managed Users (EMUs) can now enforce GitHub&#8217;s native IP allow list configuration across user namespaces. This feature is now generally available. EMUs allow the enterprise&#8230;\nThe post IP allow list coverage for EMU namespaces in general availability appeared first on The GitHub Blog.",
       "image": "https://github.com/user-attachments/assets/d3e7f212-8f59-4cee-acae-a6790463b459",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "7h ago"
+    },
+    {
+      "id": "b6e4ae654c106455fbfdc26cb998ccb3",
+      "title": "End-to-end encrypted ML inference with Amazon SageMaker AI and FHE",
+      "url": "https://aws.amazon.com/blogs/machine-learning/end-to-end-encrypted-ml-inference-with-amazon-sagemaker-ai-and-fhe/",
+      "source": "AWS Machine Learning Blog",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-06-08T16:14:14+00:00",
+      "snippet": "This blog has previously discussed FHE for ML inference in the post Enable fully homomorphic encryption with Amazon SageMaker endpoints for secure, real-time inferencing, but this post goes a little further. That previous post showed how to implement FHE-based inference 'from scratch' by hand-crafting a linear-regression algorithm using a low-level library called SEAL. Instead, this post shows a much more flexible and higher-level approach based on concrete-ml, a high-level library built specifi",
+      "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/19/ML-18990-1.png",
+      "ai_summary": "",
+      "published_display": "7h ago"
+    },
+    {
+      "id": "f63ceee5d5fbe4863b1e6bb69cc6fbbb",
+      "title": "Amazon Quick ARNs: Cross-account migration and namespace permissions",
+      "url": "https://aws.amazon.com/blogs/machine-learning/amazon-quick-arns-cross-account-migration-and-namespace-permissions/",
+      "source": "AWS Machine Learning Blog",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-06-08T16:07:29+00:00",
+      "snippet": "In this post, we cover the structure of Amazon Quick ARNs and provide a practical mental model for working with them. By the end, you can look at an ARN and immediately understand what it means for your migration strategy, diagnose permission issues faster, and design multi-tenant architectures with confidence.",
+      "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/06/02/ML-20693-1.png",
+      "ai_summary": "",
+      "published_display": "7h ago"
     },
     {
       "id": "5ae620e6db5d96e2b44170e16ba8a9a8",
@@ -362,7 +740,21 @@
       "snippet": "Find the answers to some of the most common GitHub-related questions.\nThe post GitHub for Beginners: Answers to some common questions appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/uploads/2026/06/GIT952_THUMB_GFB_B.png?fit=1280%2C720",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "8h ago"
+    },
+    {
+      "id": "1dc98e28f4eb287c9fb1dd05c26d9fa5",
+      "title": "Evaluate your Amazon Nova Sonic voice agent at scale, no microphone required",
+      "url": "https://aws.amazon.com/blogs/machine-learning/evaluate-your-amazon-nova-sonic-voice-agent-at-scale-no-microphone-required/",
+      "source": "AWS Machine Learning Blog",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-06-08T15:57:45+00:00",
+      "snippet": "In this post, we walk you through the Nova Sonic Test Harness, an open source framework that we built to solve both problems. It serves as a rapid iteration tool for tuning system prompts and tool configurations (run a conversation, see results, adjust, repeat) and as a comprehensive evaluation framework for validating voice agent quality at scale. It runs complete multi-turn conversations with Amazon Nova Sonic automatically, evaluates them using LLM-as-judge techniques, and can even detect cas",
+      "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/26/ML-21086-1.png",
+      "ai_summary": "",
+      "published_display": "8h ago"
     },
     {
       "id": "39912633b5863478b77e0c4ba1a31480",
@@ -376,7 +768,21 @@
       "snippet": "Apple's WWDC nears: Here's what you can look forward to.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/03/Apple-WWDC26-event-branding_big.jpg.large_.jpg?w=980",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "8h ago"
+    },
+    {
+      "id": "6e10af65da8d57d61ba883c8a782abff",
+      "title": "Confidential submission of draft S-1 to the SEC",
+      "url": "https://openai.com/index/openai-submits-confidential-s-1",
+      "source": "OpenAI Blog",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-08T14:00:00+00:00",
+      "snippet": "OpenAI confirms a confidential S-1 submission to the SEC and has not yet determined timing for further action.",
+      "image": "https://images.ctfassets.net/kftzwdyauwt9/1kKjVqt4LdJo6DAWO4rklb/93d7ae2d6a5cb70b17fd5ff440552291/confidential-submission-of-draft-s-1-to-the-sec-16x9.png?w=1600&amp;h=900&amp;fit=fill",
+      "ai_summary": "",
+      "published_display": "10h ago"
     },
     {
       "id": "2707604fdc8a84fc93c4302607ea6515",
@@ -390,7 +796,7 @@
       "snippet": "Two years after first revealing its plans for Apple Intelligence and a smarter Siri that never fully materialized, at WWDC, Apple just revealed a new set of AI features and a smarter, more personalized Siri. Apple calls Siri AI an \"entirely new version of Siri\" and says it's both more conversational and more capable than [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/Apple-announces-Siri-AI-and-its-next-generation-of-Apple-Intelligence.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "cbffe548ffb0d6e82f4c2a9b6d0c3cfe",
@@ -404,7 +810,49 @@
       "snippet": "Google is rolling out \"across the board\" updates to NotebookLM. The AI-powered note-taking app now uses Google's upgraded Gemini 3.5 model, which will allow it to respond with \"more accurate and reliable information,\" according to a blog post on Monday. Launched in 2023, NotebookLM allows you to interact with your notes and sources using AI, [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/NotebookLM-Welcome.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "8h ago"
+    },
+    {
+      "id": "24275ef39171b7bc10e1014322e5fdcb",
+      "title": "Built to benefit everyone: our plan",
+      "url": "https://openai.com/index/built-to-benefit-everyone-our-plan",
+      "source": "OpenAI Blog",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-08T01:30:00+00:00",
+      "snippet": "A vision for the future of AI, focusing on access, safety, and shared prosperity as OpenAI works to ensure AGI benefits everyone.",
+      "image": "https://images.ctfassets.net/kftzwdyauwt9/VbCQBEe5vEJDMV5yTqtj6/e4b96c472e5d8cc0aea5a24c46070675/Art_Card_1920x1080_Sam__1___1_.png?w=1600&amp;h=900&amp;fit=fill",
+      "ai_summary": "",
+      "published_display": "22h ago"
+    },
+    {
+      "id": "30920cfae4aeb08376bd964e6f5f8715",
+      "title": "Why did OpenAI overhaul ChatGPT? #tech",
+      "url": "https://alltoc.com/tech/why-did-openai-overhaul-chatgpt",
+      "source": "Alltoc.com",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-08T00:02:04+00:00",
+      "snippet": "OpenAI is reshaping ChatGPT into a “super app” OpenAI is reportedly preparing major changes to ChatGPT that would expand it beyond a chat interface into a broader product that can act like a hub for tools and workflows. Financial Times reporting describes a “…",
+      "image": "https://alltoc.com/cdn/1048/og.png",
+      "ai_summary": "",
+      "published_display": "Jun 08, 00:02"
+    },
+    {
+      "id": "7d8959cc9671577c24ca37dec1fa6325",
+      "title": "In the AI gold rush, everyone is selling the same shovels",
+      "url": "https://www.businessinsider.com/everyone-is-building-everything-openai-anthropic-lovable-cursor-canva-2026-6",
+      "source": "Business Insider",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-06-08T00:00:01+00:00",
+      "snippet": "Companies are ruthlessly invading each other's turf. Ever-increasing valuations mean companies need to find new sources of revenue.",
+      "image": "https://i.insider.com/6a23659b2e5a80cfe0504232?width=1200&format=jpeg",
+      "ai_summary": "",
+      "published_display": "Jun 08, 00:00"
     },
     {
       "id": "56f0f9af5f4c00de02879afae4c0fcee",
@@ -418,7 +866,469 @@
       "snippet": "OpenAI launches the Economic Research Exchange to study AI’s impact on jobs, productivity, and the economy. Applications are now open for selected research projects.",
       "image": "https://images.ctfassets.net/kftzwdyauwt9/51xw2pFq7Z8Cur501DVgKi/4c1c938e8553611ca250e45531796660/seo_image.png?w=1600&amp;h=900&amp;fit=fill",
       "ai_summary": "",
-      "published_display": "19h ago"
+      "published_display": "Jun 08, 00:00"
+    },
+    {
+      "id": "4d824579652fea55a079a86b4e48ee1e",
+      "title": "A single reinforcement learning model to unify habit formation and Pavlovian-instrumental interaction",
+      "url": "https://www.nature.com/articles/s41598-026-55166-9",
+      "source": "Nature.com",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-06-08T00:00:00+00:00",
+      "snippet": "Scientific Reports - A single reinforcement learning model to unify habit formation and Pavlovian-instrumental interaction",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 08, 00:00"
+    },
+    {
+      "id": "e0f13a23406ac39f265b352ed06e41bd",
+      "title": "Why agentic AI needs an open inference stack",
+      "url": "https://www.redhat.com/en/blog/why-agentic-ai-needs-open-inference-stack",
+      "source": "Redhat.com",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-06-08T00:00:00+00:00",
+      "snippet": "\"Every AI lab is losing money serving your company right now. They know it. And they are doing it on purpose.\"That was the opening line of an article that landed in my inbox the same week 3 numbers crystallized to make it clear why open inference is no longer…",
+      "image": "https://www.redhat.com/themes/custom/rhdc/img/red-hat-social-share.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 08, 00:00"
+    },
+    {
+      "id": "0155522af2b20e7b3b8ecb311a236805",
+      "title": "A scalable approach to investigating sequence-to-function predictions from personal genomes",
+      "url": "https://www.nature.com/articles/s41592-026-03124-8",
+      "source": "Nature.com",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-06-08T00:00:00+00:00",
+      "snippet": "Modeling the effect of DNA sequence variation on phenotypes such as gene expression faces unique challenges when deciphering inter-individual variation. This study presents a scalable and efficient sequence-to-function modeling framework for personal genome a…",
+      "image": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41592-026-03124-8/MediaObjects/41592_2026_3124_Fig1_HTML.png",
+      "ai_summary": "",
+      "published_display": "Jun 08, 00:00"
+    },
+    {
+      "id": "4cea52a7870848dc89e8c7c699eb457b",
+      "title": "Chromatix: a differentiable, GPU-accelerated wave-optics library",
+      "url": "https://www.nature.com/articles/s41592-026-03121-x",
+      "source": "Nature.com",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-06-08T00:00:00+00:00",
+      "snippet": "Based on JAX, Chromatix provides a standardized framework for developing, sharing and reusing wave-optics simulations. The capabilities are demonstrated in a number of computational microscopy applications.",
+      "image": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41592-026-03121-x/MediaObjects/41592_2026_3121_Fig1_HTML.png",
+      "ai_summary": "",
+      "published_display": "Jun 08, 00:00"
+    },
+    {
+      "id": "bea5c52e14309ec4cbaa405cfeb6da31",
+      "title": "Daily Hacker News for 2026-06-07",
+      "url": "https://www.daemonology.net/hn-daily/2026-06-07.html",
+      "source": "Daemonology.net",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-06-08T00:00:00+00:00",
+      "snippet": "The 10 highest-rated articles on\nHacker News\non June 07, 2026 which have not appeared on any previous\nHacker News Daily\nare:\n<ul>\n<li>\nAsk HN: Why is the HN crowd so anti-AI?\n(comments)\n</li>\n<li>\nPokemon Emerald Ported to WebAssembly (100k FPS)\n(comments)\n</…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 08, 00:00"
+    },
+    {
+      "id": "a82f3331b3c7537ed3c4bfcde6cce4b0",
+      "title": "Governing Claude Enterprise in Environments Where Inline Controls Can't Go",
+      "url": "https://www.trendmicro.com/en_us/research/26/f/governing-claude-enterprise.html",
+      "source": "Trendmicro.com",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-06-08T00:00:00+00:00",
+      "snippet": "TrendAI™ integrates Anthropic's Claude Compliance API into TrendAI Vision One™ through two collectors that bring AI-aware visibility and detection to Claude Enterprise usage: one keeps all data inside the environment, while the other feeds TrendAI Vision One™…",
+      "image": "https://www.trendmicro.com/content/dam/trendmicro/global/en/research/thumbnails/26/f/governing_claude_thumbnail.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 08, 00:00"
+    },
+    {
+      "id": "24a8c03ef064cfa29bd3beb666a5898f",
+      "title": "Enforcing Your Ruby Style Guide on AI-Generated Code",
+      "url": "https://thoughtbot.com/blog/enforcing-your-ruby-style-guide-on-ai-generated-code",
+      "source": "Thoughtbot.com",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-06-08T00:00:00+00:00",
+      "snippet": "A Rails-flavored guide to wrapping Claude Code in the checks, conventions, and feedback loops that make agent output more trustworthy.",
+      "image": "https://images.prismic.io/thoughtbot-website/aEccKLh8WN-LV5_o_development-article-background.png?auto=format%2Ccompress&blend-mode=normal&blend-x=0&blend-y=0&blend=https%3A%2F%2Fimages.prismic.io%2Fthoughtbot-website%2FZ1tQFpbqstJ98cGT_development.png&mark-x=356&mark-y=100&mark64=aHR0cHM6Ly9hc3NldHMuaW1naXgubmV0L350ZXh0Lz90eHQtbGVhZD0tMTUmdHh0LXRyYWNrPTAmdHh0NjQ9Ulc1bWIzSmphVzVuSUZsdmRYSWdVblZpZVNCVGRIbHNaU0JIZFdsa1pTQnZiaUJCU1MxSFpXNWxjbUYwWldRZ1EyOWtaUSUzRCUzRCZ0eHRjbHI9ZjVmNWY1JnR4dGZvbnQ9SUJNUGxleFNhbnNKUC1TZW1pQm9sZCZ0eHRwYWQ9MCZ0eHRzaXplPTc2Jnc9ODAw&txt-align=center%2Cmiddle&txt-color=f5f5f5&txt-fit=max&txt-font=IBMPlexSansJP-SemiBold&txt-size=24&txt-x=391&txt-y=526&txt=Daniel+Garcia",
+      "ai_summary": "",
+      "published_display": "Jun 08, 00:00"
+    },
+    {
+      "id": "2406abb8bde2fe26cfdeed8e17d2774c",
+      "title": "llama-cpp-python 0.3.28",
+      "url": "https://pypi.org/project/llama-cpp-python/0.3.28/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-06-07T23:54:28+00:00",
+      "snippet": "Python bindings for the llama.cpp library",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "Jun 07, 23:54"
+    },
+    {
+      "id": "9d3dabcf4583092ba52bb2053e96b9e0",
+      "title": "meshagent-anthropic 0.44.10",
+      "url": "https://pypi.org/project/meshagent-anthropic/0.44.10/",
+      "source": "Pypi.org",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-06-07T23:53:41+00:00",
+      "snippet": "Anthropic Building Blocks for Meshagent",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 07, 23:53"
+    },
+    {
+      "id": "15161ad3ffaf1f4d564ff95e546c2b44",
+      "title": "django-agentic 0.7.2",
+      "url": "https://pypi.org/project/django-agentic/0.7.2/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-06-07T23:52:05+00:00",
+      "snippet": "AI framework for Django — LangGraph + LangChain. Entity-aware agents, credit management, usage logging, prompt caching, HITL.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 07, 23:52"
+    },
+    {
+      "id": "2e13465a70a83b868dc73dbca4fb98eb",
+      "title": "clawmetry 0.12.469",
+      "url": "https://pypi.org/project/clawmetry/0.12.469/",
+      "source": "Pypi.org",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-06-07T23:51:50+00:00",
+      "snippet": "ClawMetry - Real-time observability for 12 AI agent runtimes (OpenClaw, NVIDIA NemoClaw, Claude Code, Codex & more)",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 07, 23:51"
+    },
+    {
+      "id": "4901d9e1b75fc79ae82156b630463dcd",
+      "title": "xAI recruits Chinese AI tutors in push into China",
+      "url": "https://www.digitimes.com/news/a20260605PD230/xai-elon-musk-market-language.html",
+      "source": "Digitimes",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-06-07T23:41:23+00:00",
+      "snippet": "Elon Musk's xAI has quietly posted a new \"AI Tutor-Chinese\" role on its Greenhouse hiring platform, signaling a push to strengthen Grok's multilingual audio capabilities and position the chatbot for entry into the China market. The job offers US$35 to US$45 a…",
+      "image": "https://img.digitimes.com/newsshow/20260605pd230_files/2_b.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 07, 23:41"
+    },
+    {
+      "id": "6861eafbf831ccd92358b254a39d109f",
+      "title": "Mondo Llama Color-Your-Own Tree House Fort for $15 + free shipping",
+      "url": "https://www.dealnews.com/products/Mondo-Llama-Color-Your-Own-Tree-House-Fort/499063.html",
+      "source": "Dealnews.com",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-06-07T23:40:23+00:00",
+      "snippet": "eBay offers the Mondo Llama Color-Your-Own Tree House Fort for $14.99. That's half off the list price. Shipping is free. Buy Now at eBay\r\n Features\r\n <ul> <li>measures 47.5\" x 35\" x 35\"</li> <li>Forest Stewardship Council Certified</li> <li>Model: 92032667</l…",
+      "image": "https://d.dlnws.com/64599/1780875447-colorful-childrens-playhouse-tree-design-bomv.webp?h=1000&w=1000",
+      "ai_summary": "",
+      "published_display": "Jun 07, 23:40"
+    },
+    {
+      "id": "0f96582f3f97a9f2852a7bb675e6e49b",
+      "title": "sahara-memory added to PyPI",
+      "url": "https://pypi.org/project/sahara-memory/",
+      "source": "Pypi.org",
+      "category_id": "mistral",
+      "category_name": "Mistral",
+      "category_emoji": "🇪🇺",
+      "published": "2026-06-07T23:39:27+00:00",
+      "snippet": "Extended storage, searchable memory and instant retrieval",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "Jun 07, 23:39"
+    },
+    {
+      "id": "2159553afe9e62cc242c23fdb6fb90ae",
+      "title": "Trump considers US government equity stakes in AI companies, plans executive summit",
+      "url": "https://cryptobriefing.com/trump-us-government-stake-ai-companies/",
+      "source": "Crypto Briefing",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-06-07T23:26:43+00:00",
+      "snippet": "Government equity in AI firms could reshape tech regulation, potentially skewing competition and influencing market dynamics and valuations.\nThe post Trump considers US government equity stakes in AI companies, plans executive summit appeared first on Crypto …",
+      "image": "https://static.cryptobriefing.com/wp-content/uploads/2026/06/07192642/trump-makes-it-easier-to-fire-thousands-of-federal-workers-2-1-800x420.jpeg",
+      "ai_summary": "",
+      "published_display": "Jun 07, 23:26"
+    },
+    {
+      "id": "3858c13ef3b0a6504ab7204fc0388a89",
+      "title": "nervapack added to PyPI",
+      "url": "https://pypi.org/project/nervapack/",
+      "source": "Pypi.org",
+      "category_id": "mistral",
+      "category_name": "Mistral",
+      "category_emoji": "🇪🇺",
+      "published": "2026-06-07T23:24:29+00:00",
+      "snippet": "Privacy-first, offline knowledge graph for developers",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "Jun 07, 23:24"
+    },
+    {
+      "id": "c14564b611772691e7ee59b5b39412b5",
+      "title": "Hands on with Intelligent Terminal, an AI-powered Windows Terminal",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/hands-on-with-intelligent-terminal-an-ai-powered-windows-terminal/",
+      "source": "BleepingComputer",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-06-07T23:20:02+00:00",
+      "snippet": "Microsoft has created an open-source fork of Windows Terminal called \"Intelligent Terminal,\" and it allows you to use AI directly inside Terminal without interfering with the regular session. [...]",
+      "image": "https://www.bleepstatic.com/content/hl-images/2022/09/13/Windows_Terminal.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 07, 23:20"
+    },
+    {
+      "id": "e37baccc43f202bb6366004fab16a650",
+      "title": "pfd-gste 0.1.0",
+      "url": "https://pypi.org/project/pfd-gste/0.1.0/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-06-07T23:19:11+00:00",
+      "snippet": "Reusable PyTorch modules for pathology-focused feature gating and guided token reweighting.",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "Jun 07, 23:19"
+    },
+    {
+      "id": "fd6fd958461e3053c4434119c98ed958",
+      "title": "Odysight.ai® Establishes At-The-Market (ATM) Program of up to $20 Million to Enhance Financial Flexibility",
+      "url": "https://www.globenewswire.com/news-release/2026/06/07/3307754/0/en/Odysight-ai-Establishes-At-The-Market-ATM-Program-of-up-to-20-Million-to-Enhance-Financial-Flexibility.html",
+      "source": "GlobeNewswire",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-06-07T23:15:00+00:00",
+      "snippet": "Ramat Gan, Israel, June 07, 2026 (GLOBE NEWSWIRE) -- Odysight.ai® (NASDAQ/TASE: ODYS) today announced that, as part of a planned step to expand the Company’s financing toolkit in the U.S. capital market, it has filed a prospectus supplement with the U.S. Secu…",
+      "image": "https://ml.globenewswire.com/Resource/Download/fe840a3d-d94f-4b27-ba22-45a8615ddcfb",
+      "ai_summary": "",
+      "published_display": "Jun 07, 23:15"
+    },
+    {
+      "id": "16870306951221753dff4986c8ef6c59",
+      "title": "gemini-faf-mcp 2.4.1",
+      "url": "https://pypi.org/project/gemini-faf-mcp/2.4.1/",
+      "source": "Pypi.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-06-07T23:12:06+00:00",
+      "snippet": "Persistent Project Context for Google Gemini. IANA-registered .faf format, MCP server + Cloud Run REST API, unifies CLAUDE.md, GEMINI.md, AGENTS.md.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 07, 23:12"
+    },
+    {
+      "id": "f071336937ee168decadbc7d7b4a9ffd",
+      "title": "NVIDIA and SK hynix Announce Multiyear Technology Partnership to Advance Memory for AI Factories",
+      "url": "https://nvidianews.nvidia.com/news/sk-hynix-ai-factory",
+      "source": "Nvidia.com",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-06-07T23:00:00+00:00",
+      "snippet": "NVIDIA and SK hynix today announced a multiyear technology partnership to advance next-generation memory for the global AI factory buildout and accelerate semiconductor design and manufacturing.",
+      "image": "https://iprsoftwaremedia.com/219/files/202606/a21bcb532771f27266fe94a96c884769/6a25ccf93d6332f4f6ff121d_nvidia-sk-hynix/nvidia-sk-hynix_4f03a261-71ba-47b3-b2bb-508efe4156f3-prv.png",
+      "ai_summary": "",
+      "published_display": "Jun 07, 23:00"
+    },
+    {
+      "id": "fd75e2066b6c22294f78ceb4d50b05d2",
+      "title": "ultimate-gemini-mcp 6.0.12",
+      "url": "https://pypi.org/project/ultimate-gemini-mcp/6.0.12/",
+      "source": "Pypi.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-06-07T22:59:12+00:00",
+      "snippet": "Gemini 3.1 Flash Image MCP server - fast image generation with advanced reasoning, 512px-4K resolution, up to 14 reference images, Google Search grounding, and configurable thinking mode",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 07, 22:59"
+    },
+    {
+      "id": "0323f6322295403d00f692fa66b4df49",
+      "title": "Google leases massive AI compute capacity from SpaceX in multi-billion dollar deal",
+      "url": "https://4sysops.com/archives/google-leases-massive-ai-compute-capacity-from-spacex-in-multi-billion-dollar-deal/",
+      "source": "4sysops.com",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-06-07T22:49:36+00:00",
+      "snippet": "Google has entered into a significant infrastructure agreement to pay SpaceX $920 million monthly for access to specialized artificial intelligence computing resources. Starting in October 2026 and running through June 2029, the deal provides Google with appr…",
+      "image": "https://4sysops.com/wp-content/uploads/2026/06/google-leases-massive-ai-compute-capacity-from-spacex-in-multi-billion-dollar-deal.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 07, 22:49"
+    },
+    {
+      "id": "cb7e73123e7a84eb6eda948c6d3580c7",
+      "title": "Jim Chanos Stunned As Donald Trump And Bernie Sanders Find Common Ground on Government-Owned Stocks: 'What Do You Call It...?'",
+      "url": "https://finance.yahoo.com/economy/policy/articles/jim-chanos-stunned-donald-trump-220114172.html",
+      "source": "Yahoo Entertainment",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-06-07T22:01:14+00:00",
+      "snippet": "Noted short-seller Jim Chanos recently expressed his bewilderment over the shared viewpoint of President Donald Trump and Sen. Bernie Sanders (I-Vt.), a...",
+      "image": "https://s.yimg.com/os/en/benzinga_79/a9a72e1f8725057694a21a22ea5be7e7",
+      "ai_summary": "",
+      "published_display": "Jun 07, 22:01"
+    },
+    {
+      "id": "aad0d12d5988b7c1cdd6f5718d451bca",
+      "title": "I created a complex presentation using Claude Design, Copilot in PowerPoint, and Gemini in Google Slides – only one of them did a professional job",
+      "url": "https://www.xda-developers.com/created-presentation-claude-design-copilot-powerpoint-one-professional/",
+      "source": "XDA Developers",
+      "category_id": "microsoft",
+      "category_name": "Microsoft",
+      "category_emoji": "🟦",
+      "published": "2026-06-07T22:00:24+00:00",
+      "snippet": "The great AI slide battle.",
+      "image": "https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2026/06/comparing-claude-design-copilot-powerpoint-gemini-slides.jpg?w=1600&h=900&fit=crop",
+      "ai_summary": "",
+      "published_display": "Jun 07, 22:00"
+    },
+    {
+      "id": "0b1e7791718efc81de04f12a8083d6f7",
+      "title": "AI自己進化始まる　そのうち自我のようなものが芽生えるの？",
+      "url": "https://honwaka2ch.livedoor.biz/archives/11048161.html",
+      "source": "Livedoor.biz",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-06-07T22:00:08+00:00",
+      "snippet": "https://news.yahoo.co.jp/articles/68026fdb6679cbd890366341b4a75ebef851f71b2 名前：[] 投稿日：2026/06/07(日) 07:02:43.88 ID:vHhU6aXl0.netつまりまだまだ足りないということか9 名前：[] 投稿日：2026/06/07(日) 07:09:08.85 ID:p7yhrSEI0.net確かに最近geminiが冷た...",
+      "image": "https://livedoor.blogimg.jp/honwaka2ch/imgs/b/4/b45abfe8-s.png",
+      "ai_summary": "",
+      "published_display": "Jun 07, 22:00"
+    },
+    {
+      "id": "58858dffc1da604c684652d56e926630",
+      "title": "unison-langchain 0.2.0",
+      "url": "https://pypi.org/project/unison-langchain/0.2.0/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-06-07T21:47:04+00:00",
+      "snippet": "Stream-optimized, x402-gated grounding retrievers for LangChain and CrewAI",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 07, 21:47"
+    },
+    {
+      "id": "d648f17447af5b9477e4fca907439f36",
+      "title": "abstract-hugpy-dev 0.0.25",
+      "url": "https://pypi.org/project/abstract-hugpy-dev/0.0.25/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-06-07T21:17:12+00:00",
+      "snippet": "The `abstract_hugpy_dev` module is designed to facilitate hugging face modules",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Jun 07, 21:17"
+    },
+    {
+      "id": "d74c57d6b1792e9f513b031ed6970f8e",
+      "title": "agentgrep 0.1.0a19",
+      "url": "https://pypi.org/project/agentgrep/0.1.0a19/",
+      "source": "Pypi.org",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-06-07T20:54:42+00:00",
+      "snippet": "Read-only search for local AI agent prompts and history (Codex, Claude Code, Cursor, Gemini, Grok, Pi, OpenCode)",
+      "image": "https://pypi.org/static/images/twitter.abaf4b19.webp",
+      "ai_summary": "",
+      "published_display": "Jun 07, 20:54"
+    },
+    {
+      "id": "4d41fd66700c0bd5d31568d731f14273",
+      "title": "Texas Court Orders Google to Remove Information Posted by User Regarding xAI-Linked Data Center",
+      "url": "https://reason.com/volokh/2026/06/08/texas-court-orders-google-to-remove-information-posted-by-user-regarding-xai-linked-data-center/",
+      "source": "Reason",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-06-07T20:31:31+00:00",
+      "snippet": "Excerpts from an order issued May 19 by Tarrant County District Court Judge Megan Fahey, in CTC Property LLC v.…\nThe post Texas Court Orders Google to Remove Information Posted by User Regarding xAI-Linked Data Center appeared first on Reason.com.",
+      "image": "https://d2eehagpk5cl65.cloudfront.net/img/q60/uploads/2021/11/reason-logo-featured-placeholder.jpg.webp",
+      "ai_summary": "",
+      "published_display": "Jun 07, 20:31"
+    },
+    {
+      "id": "7f6cd673f2ec9f386720219277eecc64",
+      "title": "These open-source tools do what Claude charges for, and some do it better",
+      "url": "https://www.xda-developers.com/open-source-tools-do-what-claude-charges-for-and-some-do-it-better/",
+      "source": "XDA Developers",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-06-07T20:30:23+00:00",
+      "snippet": "Your wallet is going to love this list",
+      "image": "https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2026/06/1780604996556.jpg?w=1600&h=900&fit=crop",
+      "ai_summary": "",
+      "published_display": "Jun 07, 20:30"
+    },
+    {
+      "id": "714ea39c9c5bc059ab419540a3c88c07",
+      "title": "Show HN: Nightwatch, The open-source, read-only AI SRE",
+      "url": "https://github.com/ninoxAI/nightwatch",
+      "source": "Github.com",
+      "category_id": "mistral",
+      "category_name": "Mistral",
+      "category_emoji": "🇪🇺",
+      "published": "2026-06-07T20:24:36+00:00",
+      "snippet": "nightwatch is a local-first, read-only layer on top of your monitoring. it groups alert storm into incidents, flags noisy checks and has an agent that can investigate for you live systems. You can e.g. jump from the incident into the agent directly.the reason…",
+      "image": "https://repository-images.githubusercontent.com/1259765994/e218d7d0-6d64-412a-9b38-5315634081c1",
+      "ai_summary": "",
+      "published_display": "Jun 07, 20:24"
+    },
+    {
+      "id": "dad75f5b93f17d59a75c333de97cf5c9",
+      "title": "How to Improve Your AI Search Optimization Workflows | Similarweb",
+      "url": "https://www.similarweb.com/blog/marketing/geo/ai-search-optimization-workflows/",
+      "source": "Similarweb.com",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-06-07T20:17:27+00:00",
+      "snippet": "Tracking your AI visibility is one thing. Knowing what to do about it is a completely different challenge. Most teams I talk to are sitting on dashboards full of data, brand mention rates, citation share, competitor benchmarks, and sentiment breakdowns. They …",
+      "image": "https://www.similarweb.com/blog/wp-content/uploads/2026/06/attachment-Copy-of-Blog-OG-Image-Templates-AI-based-63.png",
+      "ai_summary": "",
+      "published_display": "Jun 07, 20:17"
     },
     {
       "id": "6c7f9c291d52dc02193e9c8be24607a6",
@@ -1091,6 +2001,20 @@
       "image": "https://s.yimg.com/os/en/insidermonkey.com/d4e2c6efa016d7d7b331abb44b39326f",
       "ai_summary": "",
       "published_display": "Jun 07, 14:53"
+    },
+    {
+      "id": "e7c4cec20e6a30f8903cf1ab14bc6d52",
+      "title": "Microsoft Announces Majorana 2 Quantum Chip as Wedbush Calls It Another ‘Validation’ for the Industry",
+      "url": "https://www.barchart.com/story/news/2346995/microsoft-announces-majorana-2-quantum-chip-as-wedbush-calls-it-another-validation-for-the-industry",
+      "source": "Barchart.com",
+      "category_id": "microsoft",
+      "category_name": "Microsoft",
+      "category_emoji": "🟦",
+      "published": "2026-06-07T14:15:02+00:00",
+      "snippet": "Microsoft declared its Majorana 2 topological quantum processor, a second-generation chip aimed at significantly improving qubit reliability and scalability....",
+      "image": "https://s.yimg.com/lo/mysterio/api/64AF4F72C7F96478F53A3DF4D6F97C993A1E0CDDA6A0A1B426847F541A4485C1/subgraphmysterio/resizefill_w1200_h800;quality_80;format_webp/https:%2F%2Fmedia.zenfs.com%2Fen%2Fbarchart_com_477%2F91294aaacdd7339f5d87cfb430fbeba2",
+      "ai_summary": "",
+      "published_display": "Jun 07, 14:15"
     },
     {
       "id": "889a6be12b6ff403f19136b17bbeeba6",
@@ -1875,6 +2799,20 @@
       "image": null,
       "ai_summary": "",
       "published_display": "Jun 06, 14:04"
+    },
+    {
+      "id": "4b0baa98149d517694056323921c309e",
+      "title": "Google Throwing an Extra Billion Dollars a Month at SpaceX to Feed Its AI Addiction",
+      "url": "https://www.jezebel.com/google-paying-spacex-billion-dollars-a-month-ai-storage-orbital-datacenters",
+      "source": "Jezebel",
+      "category_id": "rumours",
+      "category_name": "Rumours & Gossip",
+      "category_emoji": "🗣️",
+      "published": "2026-06-06T14:00:35+00:00",
+      "snippet": "Elon Musk's SpaceX has been attempting to move from a \"user\" to a \"dealer\" position when it comes to the tech industry's increasingly fiending AI addiction lately,...",
+      "image": "https://img.pastemagazine.com/wp-content/avuploads/2026/06/06135751/spacex-feature.jpg",
+      "ai_summary": "",
+      "published_display": "Jun 06, 14:00"
     },
     {
       "id": "c2bd25bdf8ac56d6a900087b454ae5be",
@@ -10431,6 +11369,6 @@
       "published_display": "May 30, 16:30"
     }
   ],
-  "generated_at": "2026-06-08T19:21:38.429566+00:00",
+  "generated_at": "2026-06-09T00:04:06.382611+00:00",
   "period": "June 2026"
 }
