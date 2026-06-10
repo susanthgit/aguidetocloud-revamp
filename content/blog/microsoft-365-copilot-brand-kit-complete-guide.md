@@ -2,7 +2,7 @@
 title: "M365 Copilot Brand Kit — Templates, Images, Brand Checker"
 description: "Build PowerPoint templates that work inside and outside Copilot, set up Brand Images, run Brand Checker, position Designer vs Adobe Express."
 date: 2026-04-15
-lastmod: 2026-05-12
+lastmod: 2026-06-10
 card_tag: "Copilot"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -46,7 +46,7 @@ tags:
   - governance
 layout: "notebook"
 stamp: "guide"
-intro_note: "↗ wrote this after two T3 sessions, expanded after every customer conversation that followed"
+intro_note: "↗ wrote this after two T3 sessions, expanded after every customer conversation that followed (and again in June 2026 after a deep dive on template optimisation)"
 founder_note: |
   I wrapped up two Train-the-Trainer sessions and "how do I make Copilot use our brand?" came up in every single one. Then every customer session added a new question: how do we add stock images, who actually manages this, what's the difference between Designer and Adobe Express, do I really need an OAL? This guide grew to answer all of it. Brand managers and IT admins still keep landing here from opposite directions — this is the post I send to either side that catches them up to the other. The Brand Checker section is the one most people overlook and the one that does the most work, but the [PowerPoint Template](#building-a-powerpoint-template-inside-and-outside-copilot) and [Stock Images](#stock-images-and-brand-images--what-goes-where) sections are the ones that take the most weight off marketing teams.
 ---
@@ -268,6 +268,8 @@ flowchart TD
 **Rule of thumb:**
 > Templates teach Copilot. Brand Kit governs the rules. OAL supplies the assets. Brand Checker enforces.
 
+> 💡 **Template precedence — which one wins?** When Copilot needs a template for generation, it looks in this order: (1) **Brand Kit templates first** (highest priority), then (2) **OAL templates** as backup, then (3) **Microsoft default templates** as last resort. So if you upload a template to both your Brand Kit AND your OAL, the Brand Kit version is what Copilot uses for generation. The OAL copy still serves users opening it from File → New — that's why putting the same `.potx` in both places is a perfectly reasonable pattern.
+
 You don't need every piece on day one. Start with a Brand Kit and one good template. Add an OAL when you're ready to invest in approved imagery. Add Brand Checker as soon as your team is generating Copilot decks regularly.
 
 ## What Licence Do You Need?
@@ -328,6 +330,28 @@ When you give the PowerPoint Agent a prompt, it:
 4. **Generates a complete deck** — with speaker notes, visuals, and on-brand formatting
 
 This isn't just applying a theme — the agent understands and replicates your brand's entire presentation approach. It's a multi-turn conversation: the agent asks clarifying questions, iterates based on your feedback, and produces polished slides.
+
+#### How the Agent Actually Works — Plan → Execute → Review → Deliver
+
+Under the hood, the PowerPoint Agent isn't one-shot generation. It runs a self-correcting **agentic loop**:
+
+```mermaid
+flowchart LR
+    A["Plan<br/><br/>Interpret your prompt<br/>Decide tools + order"]
+    B["Execute<br/><br/>Generate slides using<br/>templates + brand assets<br/>+ your prompt"]
+    C["Review<br/><br/>Did it actually do<br/>what was asked?"]
+    D["Deliver<br/><br/>Final on-brand deck"]
+    A --> B --> C --> D
+    C -.->|"If not, replan"| A
+```
+
+That's why a Copilot-generated deck can take a few minutes (or longer for big decks) — it's not just text generation, it's reasoning over layouts, objects, structure, and brand rules across many slides at once. The review step can send the agent back to re-plan if the output didn't meet the prompt.
+
+Three things the agent does that a basic text generator doesn't:
+
+1. **Complex planning** — handles multi-slide, multi-step asks like *"create a 10-slide proposal in the company template with charts on slides 4–6 and a closing call-to-action"*
+2. **Grounding** — pulls context from your work files (Work IQ), the web, and the current presentation, not just the prompt
+3. **Brand use** — autonomously uses your Brand Kit assets, your template layouts, your colours, your fonts, and your brand voice without you having to ask for each one explicitly
 
 > 💡 **Key difference:** The PowerPoint Agent lives inside the **M365 Copilot app** — you don't need to open PowerPoint first. The agent creates the deck for you, and you can then open it in PowerPoint to refine. Similarly, there's a **Word Agent** and **Excel Agent** for creating documents and spreadsheets from Copilot Chat.
 
@@ -413,6 +437,17 @@ Not every Brand Kit needs to be organisation-wide. Microsoft gives you three lev
 | **Personal** | Any Copilot user | Only the creator | Individual use |
 
 > 💡 **Tip:** Most organisations should start with **one official Brand Kit** for the corporate brand. Then add shared kits for sub-brands, product lines, or acquired entities as needed. Don't overcomplicate it on day one.
+
+### Multi-Geo and Multi-Region Branding — Two Patterns
+
+If your organisation operates across geos with regional variations (different imagery, regional logos, language-specific fonts, region-specific compliance copy), there are two practical patterns:
+
+| Pattern | When to use | How |
+|---|---|---|
+| **Shared Brand Kits per geo** | Parent brand stays the same, regional assets vary | Set up the regional kits as **Shared Brand Kits** and share them only with users in that geo or org. Each user picks the kit relevant to their region when generating content. |
+| **Replicated Official kits per geo** | Governance requires a separate "official" kit per region (e.g., legal entity differences) | Duplicate the official Brand Kit per region and customise it with region-specific imagery, icons, templates, and voice. Each becomes its own official kit visible to users in that region. |
+
+Both approaches work — choose based on your governance model and how strictly each region needs to be policed. Microsoft has indicated they're working on more refined geo/group-targeting controls for official kits; check Message Center for updates.
 
 ## Admin Setup — Step by Step
 
@@ -587,11 +622,57 @@ This is the single biggest thing that separates a good template from a bad one.
 
 Insert placeholders via **Slide Master → Insert Placeholder**. Keep them readable, non-overlapping, and consistent across layouts.
 
-### Include 12+ Representative Layouts
+### Sample Slides — The Strongest Signal You Can Give Copilot
 
-Microsoft recommends including a variety of slide types. The more realistic examples in your template, the better Copilot's output.
+This is the single most important section I've added since I first wrote this guide. After two more T3 sessions and a lot of customer questions, the same thing kept coming up: **sample slides matter more than people think**, and most enterprise templates don't have enough of them.
 
-> 💡 The grouping below is my practical categorisation — the underlying slide types align with Microsoft's representative recommendations, but the headings are mine.
+Microsoft has been clear about this in their template optimisation guidance: *"Copilot primarily uses your sample slides, and secondarily your template's structure and layouts."* ([Microsoft Support — Keep your presentation on-brand with Copilot](https://support.microsoft.com/en-gb/topic/keep-your-presentation-on-brand-with-copilot-046c23d5-012e-49e0-8579-fe49302959fc))
+
+Think of your template as four layers, each doing a different job:
+
+| Element | What it is | What it does for Copilot |
+|---|---|---|
+| **Slide Master** | The top-level design layer | Defines global rules — theme colours, theme fonts, default styles, logos. Inherited by every layout below. |
+| **Layouts** | Reusable slide blueprints | Pre-defined arrangements of placeholders. Each layout says "this slide is for a title", "this is for content + an image", and so on. |
+| **Placeholders** | Semantic structure inside layouts | Defined containers (title, body, image, chart, table). Tell Copilot what *kind* of content goes where. |
+| **Sample slides** | Concrete instances of layouts, with real content | Real slides built using those layouts, with realistic content density, composition, and visual hierarchy. **This is what Copilot actually learns your brand from.** |
+
+And a fifth thing worth calling out:
+
+> 💡 **Placeholder text is for styling cues, not instructions.** Copilot does **not** read "Add title here" as a semantic instruction. It reads the placeholder text for *styling information* — font family, size, casing, bold/italic, colour, heading-vs-body treatment — and uses the placeholder TYPE + POSITION + SIZE for intent. So use real words or lorem ipsum; what matters is how the text is *styled*, not what it says. Copilot also differentiates between image, icon, SmartArt, and chart placeholders — so an icon placeholder won't get a full-bleed photo, and a chart placeholder won't get a static image. Match the type to the content type.
+
+#### Why Sample Slides Matter So Much
+
+Sample slides are the difference between Copilot understanding your brand in theory versus understanding how your brand actually presents content in practice. Microsoft's own words: *"If your template does not contain enough sample slides, Copilot falls back to the Slide Master — which may result in less optimal output: generic layouts, minimal formatting, slides that do not match brand intent."*
+
+What Copilot extracts from a good sample slide:
+
+- **Layout choice** — which layout is right for this slide intent
+- **Placeholder usage** — which placeholders work together on a slide
+- **Content density** — how much text and imagery your brand fits per slide
+- **Visual hierarchy** — what's biggest, what supports, what's tertiary
+- **Object relationships** — how charts, text, icons, and images sit together
+
+Without sample slides, Copilot has the structure but no examples of how it's used in practice — like giving someone a floor plan with no photos of how the rooms are actually furnished.
+
+#### How Many Sample Slides Per Intent?
+
+| Question | Practical answer |
+|---|---|
+| Per slide *intent* (title, agenda, content, etc.) | **4–6 sample slides** showing realistic variation |
+| Per layout in your template | Don't aim for one sample per layout — focus on the intents your team actually uses |
+| Minimum useful total | Fewer than 3 sample slides → Copilot mostly falls back to the Slide Master |
+| Maximum useful | Some brands cover everything in ~20 slides; large global brands often have 100+ |
+
+> ⚠️ **A subtle but important behaviour:** Microsoft has confirmed *"Copilot never changes the font size or placeholder size."* If your generated content needs more room than the placeholder allows, Copilot adds more design elements (extra process steps, more rows in a table, additional bullets) rather than resizing the placeholder or shrinking the font. Plan placeholder sizes for the content density you actually want — don't expect Copilot to make text fit by shrinking it.
+
+> 💡 **Slide Master vs Sample Slides — which wins?** When suitable sample slides exist, Copilot prioritises those over the Slide Master, and the output follows the sample slide's layout and styling. The Slide Master is the *fallback* — used when sample slides aren't there or aren't appropriate for the intent. Don't think of Slide Master as the primary teaching tool; think of it as the safety net.
+
+### Recommended Sample Slide Types
+
+Cover the common intents most decks use, then add specialised ones based on the slides your team actually builds. This list aligns with [Microsoft's recommendations](https://support.microsoft.com/en-gb/topic/keep-your-presentation-on-brand-with-copilot-046c23d5-012e-49e0-8579-fe49302959fc) for representative coverage.
+
+> 💡 The grouping below is my practical categorisation — the underlying slide types come straight from Microsoft's template optimisation guidance, but the headings are mine.
 
 | Category | Layouts to include |
 |---|---|
@@ -634,6 +715,21 @@ A great template is also accessible. Bake this in once, save everyone time later
 | Alt text fields on all image placeholders | Screen readers, plus searchable in OAL |
 | Consistent reading order | Tab order matches visual order |
 | No critical info conveyed by colour alone | Add an icon or label too |
+
+### Keep Instructional Slides Out of the Template
+
+If you've ever opened an org template and seen slides that say "DO NOT EDIT" or "This template is for proposals only" — those are *instructional slides*. They exist to coach humans, but they create a problem when Copilot uses the template: Copilot can mistake them for content samples and try to reproduce their content and style.
+
+Microsoft's explicit guidance: *"Keep your template focused on reusable layouts and place any instructional or guidance content outside the template."* ([Microsoft Support](https://support.microsoft.com/en-gb/topic/keep-your-presentation-on-brand-with-copilot-046c23d5-012e-49e0-8579-fe49302959fc))
+
+Two practical patterns:
+
+| Pattern | What it looks like | Best for |
+|---|---|---|
+| **Two-file approach** | A thin `.potx` for users with only the layouts they need + a separate richer "sample reference deck" that lives in your Brand Kit and is what Copilot learns from | Larger brands with mature governance |
+| **One-file approach** | Keep instructional content minimal, separate it visually from sample content, and make instructional slides clearly different (no real content, no styling that mimics samples) | Smaller orgs or where two files would be too much overhead |
+
+If you must keep "do not edit" style slides in a shared template, label them clearly and make them visually distinct from your sample slides. Better: move that guidance to a wiki page, a SharePoint page, or your brand intranet — somewhere Copilot won't try to learn from it.
 
 ### Save It as a Real Template — `.potx`, Not `.pptx`
 
@@ -691,6 +787,27 @@ A template isn't a one-off. Plan for change:
 - **Single source of truth** — keep only the **current** version in the OAL. Archive prior versions elsewhere.
 - **Communicate changes** — when you swap a template, tell users. Otherwise you'll see decks built on the old one for months.
 - **Sunset old templates** — if the company rebrands, retire old templates from the OAL after a transition period (a quarter is reasonable).
+
+### Template Optimisation Checklist — Is Your Template Ready for Copilot?
+
+Run through this before you upload your template to Brand Kit. This is the checklist I use with customers — it covers what Microsoft's PowerPoint Experiences team recommends for enterprise template reviews:
+
+- [ ] **Sample slides exist** — 4–6 per common intent (title, agenda, content, data viz, process, etc.)
+- [ ] **Sample slides show different content densities** — light, medium, heavy versions of similar layouts
+- [ ] **Placeholders are used everywhere** — not text boxes — for title, body, image, chart, table content
+- [ ] **Placeholder types match content types** — image placeholders for images, icon placeholders for icons, chart placeholders for charts, no crossover
+- [ ] **Placeholders don't overlap** other objects — negative space matters for how Copilot reads layouts
+- [ ] **Placeholder text styles content properly** — font, size, casing, bold, colour reflect what Copilot should apply (not instructions written to humans)
+- [ ] **Theme colours, theme fonts, theme effects** are defined in Slide Master (not hard-coded per slide)
+- [ ] **Instructional / "do not edit" slides** are minimal or moved out of the template entirely
+- [ ] **Sample slides have clear, recognisable purpose** — each intent obvious at a glance
+- [ ] **Complete end-to-end slides** — not isolated icons, charts, or shapes lying around as "library" slides
+- [ ] **No floating text boxes** overlapping placeholders
+- [ ] **Tested standalone** — you can open from File → New and build a deck without Copilot, and it makes sense
+- [ ] **Tested with Copilot** — generated a test deck through Brand Kit + ran Brand Reviewer
+- [ ] **Saved as `.potx`** for OAL distribution (or `.pptx` if going straight to Brand Kit only)
+
+If the answer to most of these is "yes", the template is ready. If you're missing more than two or three, fix those first — uploading a weak template to Brand Kit just gives Copilot weaker signals.
 
 ## Stock Images and Brand Images — What Goes Where
 
@@ -871,6 +988,50 @@ Brand Checker scans your entire presentation against your Brand Kit and flags:
 5. Review and accept the fixes — you stay in control
 
 > 💡 **Heads-up:** Brand Checker is good at the structural stuff (colours, fonts, layout). It's less reliable on nuanced calls (is this *photo style* really off-brand?). Treat its suggestions as a strong first pass, not the final word.
+
+### Walkthrough — What It Looks Like on My Build (June 2026)
+
+> 🔄 **Reality check:** Copilot's UI shifts constantly. The "automatic scan + one-click fixes" description above is the broader documented behaviour, but when I ran a brand review in my tenant this week, the entry point looked different — there wasn't a dedicated "Brand Reviewer" button I could spot in the ribbon. So I just typed what I wanted into the Copilot pane and it worked. Yours may look different by next month — that's normal for any feature this new.
+
+Here's what I actually saw on my build, end to end. Three screenshots, three steps:
+
+**Step 1 — Open the Copilot pane and just ask.**
+
+<figure>
+  <img src="/images/blog/brand-kit/brand-reviewer-01-prompt-input.webp"
+       alt="PowerPoint with the Copilot side panel open on the right. A red circle highlights the prompt input box containing the typed phrase 'check this presentation against my brand'. Below the input are suggestion chips like 'Summarize this presentation', 'Clean up the layout of this slide', and 'Add an on-brand slide about description'. The slide visible on the left shows a 'Good Prompt' anatomy with bullet points."
+       loading="lazy"
+       style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid #e5e5e5; border-radius: 6px;" />
+  <figcaption style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+    On my build today, I couldn't spot a dedicated Brand Reviewer button — but typing <em>"check this presentation against my brand"</em> into the Copilot pane kicked off the same workflow. The magic phrase, for now: works.
+  </figcaption>
+</figure>
+
+**Step 2 — Copilot asks which Brand Kit to compare against.**
+
+<figure>
+  <img src="/images/blog/brand-kit/brand-reviewer-02-template-choice.webp"
+       alt="Copilot side panel showing question 1 of 2: 'Which brand template should I compare this presentation against?' Four radio button options listed: Zava Template, Xbox brand template, Adventure Works Light, and Adventure Works. Below the options is an 'Enter another option' input field and a 'Skip all' button."
+       loading="lazy"
+       style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid #e5e5e5; border-radius: 6px; max-width: 700px;" />
+  <figcaption style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+    Copilot picks up that there could be more than one Brand Kit to compare against and asks you to choose. Microsoft ships demo kits (Zava, Xbox, Adventure Works) you can test against — handy if your own kit isn't fully published yet. After this it asks which dimensions to check — Colours and fonts, Logo and imagery, Layout and structure, or all of the above.
+  </figcaption>
+</figure>
+
+**Step 3 — The payoff: a detailed brand-by-brand audit.**
+
+<figure>
+  <img src="/images/blog/brand-kit/brand-reviewer-03-audit-output.webp"
+       alt="Copilot's detailed brand check output for a test presentation compared to the Xbox brand template. Sections for Typography (Aptos Display vs Segoe UI — Not compliant), Color palette (generic Office hex codes vs Xbox greens, neutral grays, accent purple/blue — No overlap), Logo and imagery (no Xbox brand mark, default Office layouts not 200+ Xbox layouts), and Layout and structure (Standard Office masters vs rich Xbox layout system — Structural mismatch). A 'Bottom line' header is visible at the bottom of the panel."
+       loading="lazy"
+       style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid #e5e5e5; border-radius: 6px; max-width: 800px;" />
+  <figcaption style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+    Then a detailed brand-by-brand comparison — Typography, Colour palette, Logo and imagery, Layout and structure — each with Current vs Brand spec vs Verdict, plus a bottom-line summary. On my build today, one-click fixes weren't surfaced; it's a thorough report you act on manually. That may change with the next release — track Message Center.
+  </figcaption>
+</figure>
+
+> 💡 **Why this matters for your customer conversations:** The blog-quoted "runs automatically, includes one-click fixes" framing is the *direction* Microsoft is heading, but on the builds most enterprises have today, Brand Reviewer is a *conversational analyst* — you ask, it produces a structured report, you decide what to fix. That's still hugely valuable (a brand manager doesn't have to manually review every deck), but it's worth setting that expectation with leadership before someone Googles a Microsoft blog and expects an auto-fix experience that hasn't landed in their channel yet.
 
 See [How the Pieces Work Together](#how-the-pieces-work-together) above for how templates, Brand Kit, OAL, and Brand Checker relate.
 
@@ -1105,6 +1266,14 @@ Mostly no today. Copilot writing in Outlook reflects your tenant defaults, but e
 - [Copilot Feature Matrix](/copilot-matrix/) — compare what's available in each tier
 - [Licensing Simplifier](/licensing/) — understand every M365 licence and what it includes
 - [Prompt Library](/prompts/) — 84 ready-to-use prompts across 8 platforms
+
+**Additional Microsoft resources:**
+
+- [Keep your presentation on-brand with Copilot — Microsoft Support](https://support.microsoft.com/en-gb/topic/keep-your-presentation-on-brand-with-copilot-046c23d5-012e-49e0-8579-fe49302959fc) — Microsoft's deepest treatment of template optimisation, sample slides, content density, and placeholder usage
+- [Create and manage official Brand kits in the Microsoft 365 Copilot app — Microsoft Support](https://support.microsoft.com/en-us/Microsoft-365-Copilot/create-and-manage-official-brand-kits-in-the-microsoft-365-copilot-app) — the canonical setup guide for brand managers
+- [Use guidelines to manage brand kits in the Microsoft 365 Copilot app — Microsoft Support](https://support.microsoft.com/en-us/microsoft-365-copilot/use-guidelines-to-manage-brand-kits-in-the-microsoft-365-copilot-app) — managing the brand guidelines PDF that Copilot extracts from
+- [Use branded templates in the Microsoft 365 Copilot app — Microsoft Support](https://support.microsoft.com/en-us/Microsoft-365-Copilot/use-branded-templates-in-the-microsoft-365-copilot-app) — where templates show up for end users in the Create flow
+- [Microsoft 365 Copilot Success Kit](https://adoption.microsoft.com/en-us/copilot/success-kit/) — Microsoft's adoption resources, including readiness frameworks
 
 ---
 
