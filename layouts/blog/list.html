@@ -49,15 +49,18 @@
     {{/* Filter status — shows count when sidebar filter is active */}}
     <p class="zt-blog-filter-status" id="blog-filter-status" hidden></p>
 
-    {{/* Article listing — River Rows with cluster support + pinned positions */}}
-    {{/* Cluster metadata — declared once, shared across clusters
-         after: render cluster AFTER N standalone rows have been shown (0 = render at hub date) */}}
+    {{/* Article listing — River Rows with cluster support + explicit ordering */}}
+    {{/* Cluster metadata. ``after: 99`` = always catch-all (renders at end in $catchOrder).
+         Use ``after: 0`` to render at hub date (in chronological flow). */}}
     {{ $clusterMeta := dict
-      "whats-new"          (dict "label" "★ Start here · What's new"    "spokeLabel" "— Past recaps —" "spokeCap" 5 "linkText" "→ See all monthly recaps" "after" 1)
-      "fundamentals"       (dict "label" "★ Start here · M365 Copilot"  "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 2)
-      "it-admins"          (dict "label" "★ Start here · IT Admins"     "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 3)
-      "prompt-engineering" (dict "label" "★ Start here · Prompting"     "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 4)
+      "whats-new"          (dict "label" "★ Start here · What's new"    "spokeLabel" "— Past recaps —" "spokeCap" 5 "linkText" "→ See all monthly recaps" "after" 99)
+      "prompt-engineering" (dict "label" "★ Start here · Prompting"     "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 99)
+      "fundamentals"       (dict "label" "★ Start here · M365 Copilot"  "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 99)
+      "it-admins"          (dict "label" "★ Start here · IT Admins"     "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 99)
+      "ai-agents"          (dict "label" "★ Start here · AI Agents"     "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 99)
     }}
+    {{/* Catch-all render order (Sush-specified — overrides alphabetical dict iteration) */}}
+    {{ $catchOrder := slice "whats-new" "prompt-engineering" "fundamentals" "it-admins" "ai-agents" }}
 
     {{/* Discover cluster IDs present in this listing */}}
     {{ $clusterIds := slice }}
@@ -144,11 +147,12 @@
         {{/* renderAs "deferred" or "spoke" → skip; rendered separately */}}
       {{ end }}
 
-      {{/* Render any deferred clusters that didn't slot in (after > total standalones) */}}
-      {{ range $pcid, $pmeta := $clusterMeta }}
-        {{ if and (gt (default 0 $pmeta.after) 0) (not (in $renderedClusters $pcid)) }}
-          {{ $pcluster := index $clusters $pcid }}
+      {{/* Catch-all: render deferred clusters in explicit $catchOrder (not alphabetical) */}}
+      {{ range $cid := $catchOrder }}
+        {{ if not (in $renderedClusters $cid) }}
+          {{ $pcluster := index $clusters $cid }}
           {{ if $pcluster }}
+            {{ $pmeta := index $clusterMeta $cid }}
             {{ partial "blog-cluster-card.html" (dict "hub" $pcluster.hub "spokes" $pcluster.spokes "meta" $pmeta) }}
           {{ end }}
         {{ end }}
