@@ -1,5 +1,6 @@
 ---
 title: "Microsoft Copilot Cowork — Plain-English Guide"
+list_title: "Microsoft Copilot Cowork — The Complete Guide"
 description: "Plain-English guide to Copilot Cowork — Microsoft's biggest AI leap since 2023. Real-world scenarios, how it differs from regular Copilot."
 date: 2026-04-22
 lastmod: 2026-05-08

@@ -1,5 +1,6 @@
 ---
 title: "Microsoft 365 Copilot January 2026 Recap: 30 Updates"
+list_title: "M365 Copilot — January Recap: 30 Updates"
 description: "All 30 Microsoft 365 Copilot updates for January 2026 — Writing Coaching in Word, Model Selector, Agent Mode in Excel, video creation upgrades, and more."
 date: 2026-01-18
 lastmod: 2026-05-30

@@ -1,5 +1,6 @@
 ---
 title: "Agent 365 Security Guide — Entra, Purview, Defender"
+list_title: "Agent 365 Security — The Complete Guide (Entra, Purview, Defender)"
 description: "Agent 365 just went GA. Here's how Entra, Purview, and Defender secure your AI agents — with real screenshots, scenarios, and no marketing fluff."
 date: 2026-04-30
 lastmod: 2026-05-01

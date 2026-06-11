@@ -1,5 +1,6 @@
 ---
 title: "M365 Agent Builder — Plain-English Field Guide"
+list_title: "M365 Agent Builder — The Complete Guide"
 description: "Plain-English field guide to M365 Agent Builder: 6 agents to build, the CAPS technique, hidden scheduled-prompt workflow, the gotchas docs miss."
 date: 2026-05-16
 lastmod: 2026-05-19

@@ -1,5 +1,6 @@
 ---
 title: "M365 Copilot Deployment — IT Admin Checklist"
+list_title: "M365 Copilot Deployment — The Complete Guide (IT admin checklist)"
 description: "Deployment checklist for M365 Copilot — licensing, security, governance, data readiness, adoption, monitoring, real-world best practices."
 date: 2026-04-14
 lastmod: 2026-05-08

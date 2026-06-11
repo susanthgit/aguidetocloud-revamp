@@ -1,5 +1,6 @@
 ---
 title: "M365 Copilot Chat — Train-the-Trainer Guide (free tier)"
+list_title: "M365 Copilot Chat (free tier) — Train-the-Trainer Guide"
 description: "Train-the-Trainer guide for free M365 Copilot Chat. Features, security, prompting, agents, Pages, memory, custom instructions, model picker."
 date: 2026-04-12
 lastmod: 2026-05-08

@@ -1,5 +1,6 @@
 ---
 title: "Microsoft Build 2026 Recap — All AI Announcements"
+list_title: "Microsoft Build 2026 — The Recap (all AI announcements)"
 description: "Build 2026 in plain English — Microsoft IQ, Microsoft Foundry agents, Copilot Credits, Agent 365 expansion, and what changes Monday."
 date: 2026-06-03
 lastmod: 2026-06-03

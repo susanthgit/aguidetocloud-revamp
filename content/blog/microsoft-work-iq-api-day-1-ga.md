@@ -1,5 +1,6 @@
 ---
 title: "Microsoft Work IQ API — Day-1 Hands-On Walkthrough"
+list_title: "Microsoft Work IQ API — The Complete Guide"
 description: "Microsoft Work IQ API goes GA on 16 June 2026 — plain-English guide: 10 verbs, admin consent, Copilot Credits pricing, and 3 use cases on a lab tenant."
 date: 2026-06-16
 lastmod: 2026-06-16

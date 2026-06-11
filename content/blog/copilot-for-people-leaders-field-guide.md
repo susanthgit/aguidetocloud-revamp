@@ -1,5 +1,6 @@
 ---
 title: "Copilot for People Leaders — The Field Guide"
+list_title: "Copilot for People Leaders — The Complete Guide"
 description: "Microsoft 365 Copilot for people leaders — plain English. 1:1s, team comms, performance, recognition, hiring, wellbeing. Copilot drafts, you decide."
 date: 2026-06-01
 lastmod: 2026-06-02

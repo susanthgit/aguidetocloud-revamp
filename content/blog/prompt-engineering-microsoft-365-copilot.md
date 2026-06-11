@@ -1,5 +1,6 @@
 ---
 title: "Prompt Engineering for Microsoft 365 Copilot — Field Guide"
+list_title: "Prompt Engineering for M365 Copilot — The Complete Guide"
 description: "Brief Microsoft 365 Copilot like a capable new colleague. Microsoft's 4-block framework, slash-command grounding, per-app prompts, mistakes to avoid."
 date: 2026-05-25
 lastmod: 2026-05-27

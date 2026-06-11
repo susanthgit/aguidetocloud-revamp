@@ -1,5 +1,6 @@
 ---
 title: "M365 Copilot Chat — April 15 Changes for IT Admins"
+list_title: "M365 Copilot Chat — April 15 Changes (IT Admin Update)"
 description: "Microsoft is removing free Copilot Chat from Word/Excel/PPT/OneNote for unlicensed users April 15. MC1253858, MC1253863, Chat Basic explained."
 date: 2026-04-09
 lastmod: 2026-05-08
