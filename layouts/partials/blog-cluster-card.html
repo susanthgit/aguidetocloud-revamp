@@ -1,0 +1,56 @@
+{{/*
+  blog-cluster-card.html — Renders a Style B cluster card (hub + capped spokes + see-all link).
+  Used by layouts/blog/list.html when a post has hub_id and is the cluster's hub.
+
+  Params:
+    .hub     → the hub page object
+    .spokes  → []Page sorted newest first
+    .meta    → dict { label, spokeLabel, spokeCap (0 = no cap), linkText }
+
+  Hub-selection convention (handled by caller, not here):
+    - If any post in the cluster has `hub: true`, that post is the hub
+    - Otherwise the newest post (by date) in the cluster is the hub (auto-rotates)
+*/}}
+{{ $hub := .hub }}
+{{ $spokes := .spokes }}
+{{ $meta := .meta }}
+{{ $cap := default 0 $meta.spokeCap }}
+{{ $shownSpokes := $spokes }}
+{{ $hasOverflow := false }}
+{{ if and (gt $cap 0) (gt (len $spokes) $cap) }}
+  {{ $shownSpokes = first $cap $spokes }}
+  {{ $hasOverflow = true }}
+{{ end }}
+
+{{/* list_title fallback — listing-only override, never touches SEO surface */}}
+{{ $hubTitle := $hub.Title }}
+{{ with $hub.Params.list_title }}{{ $hubTitle = . }}{{ end }}
+
+<div class="zt-blog-cluster" data-tag="{{ $hub.Params.card_tag }}">
+  {{ with $meta.label }}<span class="zt-blog-cluster-label">{{ . }}</span>{{ end }}
+
+  <a href="{{ $hub.RelPermalink }}" class="zt-blog-row is-hub">
+    <div class="zt-blog-row-meta">
+      <span class="zt-blog-row-date">{{ with $hub.Params.card_tag }}<span class="zt-blog-row-tag-wrap"><span class="zt-blog-row-tag">{{ . }}</span> · </span>{{ end }}{{ $hub.Date.Format "Jan 2006" }} · {{ $hub.ReadingTime }} min</span>
+    </div>
+    <h2 class="zt-blog-row-title">{{ $hubTitle }}</h2>
+  </a>
+
+  {{ if $shownSpokes }}
+    {{ with $meta.spokeLabel }}<span class="zt-blog-cluster-spoke-label">{{ . }}</span>{{ end }}
+    <div class="zt-blog-cluster-spokes">
+      {{ range $shownSpokes }}
+        {{ $sTitle := .Title }}
+        {{ with .Params.list_title }}{{ $sTitle = . }}{{ end }}
+        <a href="{{ .RelPermalink }}" class="zt-blog-cluster-spoke">
+          <span class="zt-blog-cluster-spoke-arrow">→</span>
+          <span class="zt-blog-cluster-spoke-title">{{ $sTitle }}</span>
+          <span class="zt-blog-cluster-spoke-min">{{ .ReadingTime }} min</span>
+        </a>
+      {{ end }}
+    </div>
+    {{ if $hasOverflow }}
+      <a href="/blog/?tag={{ $hub.Params.card_tag | urlquery }}" class="zt-blog-cluster-see-all">{{ default "→ See all" $meta.linkText }}</a>
+    {{ end }}
+  {{ end }}
+</div>

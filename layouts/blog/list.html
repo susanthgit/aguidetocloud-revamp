@@ -49,15 +49,71 @@
     {{/* Filter status — shows count when sidebar filter is active */}}
     <p class="zt-blog-filter-status" id="blog-filter-status" hidden></p>
 
-    {{/* Article listing — River Rows */}}
+    {{/* Article listing — River Rows with cluster support */}}
+    {{/* Cluster metadata — declared once, shared across clusters */}}
+    {{ $clusterMeta := dict
+      "prompt-engineering" (dict "label" "★ Start here · Prompting" "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "")
+      "whats-new"          (dict "label" "★ Start here · What's new" "spokeLabel" "— Past recaps —" "spokeCap" 5 "linkText" "→ See all monthly recaps")
+    }}
+
+    {{/* Discover cluster IDs present in this listing */}}
+    {{ $clusterIds := slice }}
+    {{ range .Pages }}
+      {{ with .Params.hub_id }}
+        {{ if not (in $clusterIds .) }}
+          {{ $clusterIds = $clusterIds | append . }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Resolve hub + spokes for each cluster (explicit `hub: true` wins; else newest by date) */}}
+    {{ $clusters := dict }}
+    {{ range $cid := $clusterIds }}
+      {{ $posts := where $.Pages "Params.hub_id" $cid }}
+      {{ $hub := index (sort $posts "Date" "desc") 0 }}
+      {{ range $posts }}
+        {{ if eq .Params.hub true }}
+          {{ $hub = . }}
+        {{ end }}
+      {{ end }}
+      {{ $spokes := slice }}
+      {{ range $posts }}
+        {{ if ne .RelPermalink $hub.RelPermalink }}
+          {{ $spokes = $spokes | append . }}
+        {{ end }}
+      {{ end }}
+      {{ $spokes = sort $spokes "Date" "desc" }}
+      {{ $clusters = merge $clusters (dict $cid (dict "hub" $hub "spokes" $spokes)) }}
+    {{ end }}
+
     <div class="zt-blog-list zt-blog-list--river" id="blog-list">
       {{ range .Pages.ByDate.Reverse }}
-      <a href="{{ .RelPermalink }}" class="zt-blog-row{{ if and (gt (div (sub now.Unix .Date.Unix) 86400) 0) (le (div (sub now.Unix .Date.Unix) 86400) 14) }} zt-blog-row--new{{ end }}" data-tag="{{ .Params.card_tag }}">
-        <div class="zt-blog-row-meta">
-          <span class="zt-blog-row-date">{{ with .Params.card_tag }}<span class="zt-blog-row-tag-wrap"><span class="zt-blog-row-tag">{{ . }}</span> · </span>{{ end }}{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min</span>
-        </div>
-        <h2 class="zt-blog-row-title">{{ .Title }}</h2>
-      </a>
+        {{ $cid := .Params.hub_id }}
+        {{ $renderAs := "standalone" }}
+        {{ if $cid }}
+          {{ $cluster := index $clusters $cid }}
+          {{ if eq $cluster.hub.RelPermalink .RelPermalink }}
+            {{ $renderAs = "cluster" }}
+          {{ else }}
+            {{ $renderAs = "spoke" }}
+          {{ end }}
+        {{ end }}
+
+        {{ if eq $renderAs "cluster" }}
+          {{ $cluster := index $clusters $cid }}
+          {{ $meta := index $clusterMeta $cid }}
+          {{ partial "blog-cluster-card.html" (dict "hub" . "spokes" $cluster.spokes "meta" $meta) }}
+        {{ else if eq $renderAs "standalone" }}
+          {{ $title := .Title }}
+          {{ with .Params.list_title }}{{ $title = . }}{{ end }}
+          <a href="{{ .RelPermalink }}" class="zt-blog-row{{ if and (gt (div (sub now.Unix .Date.Unix) 86400) 0) (le (div (sub now.Unix .Date.Unix) 86400) 14) }} zt-blog-row--new{{ end }}" data-tag="{{ .Params.card_tag }}">
+            <div class="zt-blog-row-meta">
+              <span class="zt-blog-row-date">{{ with .Params.card_tag }}<span class="zt-blog-row-tag-wrap"><span class="zt-blog-row-tag">{{ . }}</span> · </span>{{ end }}{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min</span>
+            </div>
+            <h2 class="zt-blog-row-title">{{ $title }}</h2>
+          </a>
+        {{ end }}
+        {{/* renderAs "spoke" → skip; rendered inside its cluster card */}}
       {{ end }}
     </div>
 
@@ -86,7 +142,7 @@
 
 <script>
 (function(){
-  var cards = document.querySelectorAll('.zt-blog-row, .zt-blog-entry, .zt-blog-card');
+  var cards = document.querySelectorAll('.zt-blog-row, .zt-blog-entry, .zt-blog-card, .zt-blog-cluster');
   var allPills = document.querySelectorAll('.zt-blog-filter, .zt-blog-nav-cat');
   var statusEl = document.getElementById('blog-filter-status');
   var totalCount = cards.length;

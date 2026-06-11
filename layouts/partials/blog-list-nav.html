@@ -34,7 +34,9 @@
   <p class="zt-blog-nav-label">All articles</p>
   {{ range $allPosts.ByDate.Reverse }}
   <a href="{{ .RelPermalink }}" class="zt-blog-nav-link">
-    <span class="zt-blog-nav-link-title">{{ .Title | truncate 60 }}</span>
+    {{ $navTitle := .Title }}
+    {{ with .Params.list_title }}{{ $navTitle = . }}{{ end }}
+    <span class="zt-blog-nav-link-title">{{ $navTitle | truncate 60 }}</span>
     <span class="zt-blog-nav-link-date">{{ .Date.Format "Jan 06" }}</span>
   </a>
   {{ end }}

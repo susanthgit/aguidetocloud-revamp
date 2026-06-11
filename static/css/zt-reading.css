@@ -1765,6 +1765,111 @@ pre:hover .code-copy-btn { opacity: 1; }
 }
 
 /* ═══════════════════════════════════════════════════════════
+   🌱 BLOG CLUSTERS — Style B container card (hub + spokes)
+   Used by layouts/partials/blog-cluster-card.html
+   ═══════════════════════════════════════════════════════════ */
+.zt-blog-cluster {
+  background: var(--bg-surface, #FBF4E8);
+  border: 1px solid var(--border-emphasis, #D4C4A8);
+  border-radius: var(--radius-md, 10px);
+  padding: var(--space-5, 24px);
+  margin: var(--space-3, 12px) calc(-1 * var(--space-3, 12px));
+  position: relative;
+}
+.zt-blog-cluster-label {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--accent, #6366F1);
+  background: rgba(99, 102, 241, 0.10);
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-3, 12px);
+}
+html[data-theme="dark"] .zt-blog-cluster-label {
+  background: rgba(129, 140, 248, 0.12);
+}
+.zt-blog-cluster .zt-blog-row.is-hub {
+  padding: 0 0 var(--space-4, 16px);
+  margin: 0;
+  border-bottom: 1px solid var(--border, #E5D9C3);
+  border-radius: 0;
+}
+.zt-blog-cluster .zt-blog-row.is-hub:hover {
+  background: transparent;
+  border-left: none;
+  padding-left: 0;
+}
+.zt-blog-cluster .zt-blog-row.is-hub .zt-blog-row-title {
+  font-size: var(--zen-text-md, 1.05rem);
+  font-weight: 600;
+}
+.zt-blog-cluster-spoke-label {
+  display: block;
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--text-tertiary, #7A6B58);
+  font-style: italic;
+  margin: var(--space-4, 16px) 0 var(--space-2, 8px);
+}
+.zt-blog-cluster-spokes {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.zt-blog-cluster-spoke {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3, 12px);
+  padding: var(--space-2, 8px) var(--space-3, 12px);
+  margin: 0 calc(-1 * var(--space-3, 12px));
+  text-decoration: none;
+  color: var(--text-secondary, #5C4E3C);
+  border-radius: var(--radius-sm, 6px);
+  font-size: 0.82rem;
+  transition: background 150ms ease-out;
+}
+.zt-blog-cluster-spoke:hover {
+  background: var(--bg-elevated, #F5ECD8);
+  color: var(--accent, #6366F1);
+}
+.zt-blog-cluster-spoke-arrow {
+  color: var(--text-tertiary, #7A6B58);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.zt-blog-cluster-spoke-title { flex: 1; }
+.zt-blog-cluster-spoke-min {
+  color: var(--text-muted, #9A8B78);
+  font-size: var(--text-caption, 0.75rem);
+  flex-shrink: 0;
+}
+.zt-blog-cluster-see-all {
+  display: block;
+  margin-top: var(--space-3, 12px);
+  font-size: var(--text-caption, 0.75rem);
+  color: var(--accent, #6366F1);
+  text-decoration: none;
+  padding-top: var(--space-2, 8px);
+  border-top: 1px dashed var(--border, #E5D9C3);
+}
+.zt-blog-cluster-see-all:hover { text-decoration: underline; }
+
+/* Cluster card — mobile */
+@media (max-width: 768px) {
+  .zt-blog-cluster { padding: var(--space-4, 16px); }
+  .zt-blog-cluster-spoke {
+    flex-wrap: wrap;
+    padding: var(--space-2, 8px);
+  }
+  .zt-blog-cluster-spoke-title { font-size: 0.85rem; min-width: 0; }
+  .zt-blog-cluster .zt-blog-row.is-hub .zt-blog-row-title {
+    font-size: 1rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
    🌸 ZEN DIAGRAMS — Light dot-grid canvas + fullscreen
    Stripe Docs style: light canvas, white nodes, soft lines.
    ═══════════════════════════════════════════════════════════ */
