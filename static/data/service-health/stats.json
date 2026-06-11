@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-06-11T10:56:40.834856+00:00",
+  "generated_at": "2026-06-11T16:18:58.105596+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 24,
-      "active_incidents": 1,
+      "total_incidents": 25,
+      "active_incidents": 2,
       "avg_duration_minutes": 6626,
-      "last_incident": "2026-06-09T06:00:00+00:00",
+      "last_incident": "2026-06-11T15:28:27.350000+00:00",
       "classifications": {
-        "advisory": 12,
+        "advisory": 13,
         "incident": 12
       }
     },
@@ -19,25 +19,25 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 20,
+      "total_incidents": 18,
       "active_incidents": 3,
-      "avg_duration_minutes": 5107,
+      "avg_duration_minutes": 5029,
       "last_incident": "2026-06-10T20:28:50.620000+00:00",
       "classifications": {
-        "advisory": 13,
-        "incident": 7
+        "advisory": 12,
+        "incident": 6
       }
     },
     {
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 13,
+      "total_incidents": 14,
       "active_incidents": 3,
-      "avg_duration_minutes": 15494,
-      "last_incident": "2026-05-30T09:11:59.853000+00:00",
+      "avg_duration_minutes": 14227,
+      "last_incident": "2026-06-11T11:04:47.993000+00:00",
       "classifications": {
-        "advisory": 11,
+        "advisory": 12,
         "incident": 2
       }
     },
@@ -219,8 +219,8 @@
   "monthly": [
     {
       "month": "2026-06",
-      "incident_count": 15,
-      "services_affected": 4
+      "incident_count": 17,
+      "services_affected": 5
     },
     {
       "month": "2026-05",
@@ -229,7 +229,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 42,
+      "incident_count": 40,
       "services_affected": 12
     }
   ]

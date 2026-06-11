@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Jun 2026 10:56:41 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 16:18:58 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may encounter an error when using the Microsoft 365 Copilot rewrite feature in classic Outlook</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1387482</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may encounter an error when using the Copilot rewrite feature in classic Outlook.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">CP1387482</guid>
+      <pubDate>Thu, 11 Jun 2026 15:28:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Some users may encounter an error when using the Microsoft 365 Copilot rewrite feature in classic Outlook</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1387205</link>
+      <description>[Exchange Online] Users may encounter an error when using the Copilot rewrite feature in classic Outlook.</description>
+      <category>Exchange Online</category>
+      <category>falsePositive</category>
+      <guid isPermaLink="false">EX1387205</guid>
+      <pubDate>Thu, 11 Jun 2026 11:04:47 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] June 9 security update notes aren’t available on learn.microsoft.com for Microsoft 365 apps &amp; Office</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1386645</link>
@@ -441,24 +459,6 @@ We detected this issue through our automated monitoring systems after observing 
       <category>serviceDegradation</category>
       <guid isPermaLink="false">EX1310533</guid>
       <pubDate>Mon, 11 May 2026 07:01:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Admins' Copilot usage and chat report data may be delayed from appearing in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1307847</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins' Copilot usage and chat report data may have been delayed from appearing in the Microsoft 365 admin center.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1307847</guid>
-      <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Admins may see Microsoft 365 Copilot reports delayed by up to one day within the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1304233</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins may have seen Copilot reports delayed by up to one day within the Microsoft 365 admin center.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1304233</guid>
-      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
