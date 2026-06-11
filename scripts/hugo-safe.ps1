@@ -68,6 +68,32 @@ if (-not $isServer) {
             }
         }
     }
+
+    # 3c. Microsoft posture guardrail — fires on ANY content/*.md change
+    # (added 2026-06-11 after the Work IQ Day-1 GA cleanup). Scans all content/
+    # for phrasings that demean / criticise Microsoft. Sush works at MSFT NZ;
+    # aguidetocloud.com content reads as coming from a Microsoft employee.
+    # Rule source: learning-docs/docs/reference/voice-and-tone.md
+    #              § Microsoft posture (MANDATORY)
+    $anyContentChanged = $changedFiles | Where-Object { $_ -match '^content/.*\.md$' }
+    if ($anyContentChanged) {
+        Write-Host "📝 Content changed — running Microsoft posture guardrail..." -ForegroundColor Cyan
+        $msPostureScript = Join-Path $PSScriptRoot "check-ms-posture.mjs"
+        if (Test-Path $msPostureScript) {
+            $msPostureOutput = & node $msPostureScript 2>&1
+            $msPostureExit = $LASTEXITCODE
+            if ($msPostureExit -ne 0) {
+                Write-Host "❌ BLOCKED: Microsoft posture guardrail failed!" -ForegroundColor Red
+                $msPostureOutput | Where-Object { $_ -match "🔴|content/|match:|preview:|fix:" } | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+                Write-Host "  Sush works at Microsoft NZ — never demean Microsoft in content." -ForegroundColor Yellow
+                Write-Host "  Escape hatch: add <!-- ms-posture-allow --> on the line above if legitimately neutral." -ForegroundColor Yellow
+                Pop-Location
+                exit 1
+            } else {
+                Write-Host "✅ Microsoft posture guardrail clean." -ForegroundColor Green
+            }
+        }
+    }
 }
 
 # 4. Run Hugo with the passed arguments

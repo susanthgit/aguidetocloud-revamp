@@ -15,8 +15,13 @@
      hardcoded counts in og_headline, Quick Jump anchor presence) — only fires
      when content/blog/ changes detected. Added 2026-05-29 after the 28-broken-
      alt-attribute incident; see incident-log.md.
-  6. Parallel-safe staging guard (Lesson 61): only files YOU modified are staged
-  7. Bi-mode contrast sanity check (advisory — Lesson 63): flags new light-mode failures
+  6. Microsoft posture guardrail — scans content/ for phrasings that demean
+     or take a snarky tone about Microsoft. Sush works at Microsoft NZ; every-
+     thing under aguidetocloud.com reads as coming from a Microsoft employee.
+     Added 2026-06-11 after the Work IQ Day-1 GA blog cleanup (9 anti-MS
+     phrasings had to be scrubbed before publish).
+  7. Parallel-safe staging guard (Lesson 61): only files YOU modified are staged
+  8. Bi-mode contrast sanity check (advisory — Lesson 63): flags new light-mode failures
 
   Exit code 0 = safe to push. Exit code 1 = BLOCKED.
 #>
@@ -35,7 +40,7 @@ $failed = $false
 Write-Host "`n🔍 Pre-push checks..." -ForegroundColor Cyan
 
 # ─── CHECK 1: cache_version bump ───
-Write-Host "`n[1/5] Checking cache_version..." -NoNewline
+Write-Host "`n[1/6] Checking cache_version..." -NoNewline
 
 # Get files changed since origin/main (what would be pushed)
 $changedFiles = git diff --name-only origin/main HEAD 2>$null
@@ -70,7 +75,7 @@ if ($cssJsChanged -and -not $configChanged) {
 
 # ─── CHECK 2: Hugo build ───
 if (-not $SkipBuild) {
-    Write-Host "`n[2/5] Hugo build..." -NoNewline
+    Write-Host "`n[2/6] Hugo build..." -NoNewline
     $buildOutput = & hugo --quiet 2>&1
     if ($LASTEXITCODE -ne 0) {
         Write-Host " ❌ BLOCKED" -ForegroundColor Red
@@ -81,11 +86,11 @@ if (-not $SkipBuild) {
         Write-Host " ✅ Build succeeded" -ForegroundColor Green
     }
 } else {
-    Write-Host "`n[2/5] Hugo build... ⏭ skipped (-SkipBuild)" -ForegroundColor DarkGray
+    Write-Host "`n[2/6] Hugo build... ⏭ skipped (-SkipBuild)" -ForegroundColor DarkGray
 }
 
 # ─── CHECK 3: Template markers ───
-Write-Host "`n[3/5] Checking for template errors in output..." -NoNewline
+Write-Host "`n[3/6] Checking for template errors in output..." -NoNewline
 $publicDir = Join-Path $repoRoot "public"
 if (Test-Path $publicDir) {
     $badFiles = Get-ChildItem -Path $publicDir -Recurse -Include "*.html" |
@@ -104,7 +109,7 @@ if (Test-Path $publicDir) {
 }
 
 # ─── CHECK 4: Blog SEO + OG image guardrail (content/blog/ changes only) ───
-Write-Host "`n[4/5] Blog SEO + OG image..." -NoNewline
+Write-Host "`n[4/6] Blog SEO + OG image..." -NoNewline
 $blogChanged = $changedFiles | Where-Object { $_ -match '^content/blog/.*\.md$' }
 if (-not $blogChanged) {
     Write-Host " ⏭ No blog content changes (skip)" -ForegroundColor DarkGray
@@ -130,7 +135,7 @@ if (-not $blogChanged) {
 # Hugo's HTML minifier silently "fixes" alt="A "thing"" by swapping to single quotes,
 # which masks the source bug. This check parses the source markdown directly.
 # Also catches hardcoded counts in og_headline (decay bug) and broken Quick Jump anchors.
-Write-Host "`n[5/5] Blog HTML hygiene..." -NoNewline
+Write-Host "`n[5/6] Blog HTML hygiene..." -NoNewline
 if (-not $blogChanged) {
     Write-Host " ⏭ No blog content changes (skip)" -ForegroundColor DarkGray
 } else {
@@ -146,6 +151,36 @@ if (-not $blogChanged) {
         }
     } else {
         Write-Host " ⏭ check-blog-html.mjs not found" -ForegroundColor DarkGray
+    }
+}
+
+# ─── CHECK 6: Microsoft posture guardrail (any content/ change) ───
+# Added 2026-06-11 after the Work IQ Day-1 GA blog cleanup — 9 anti-MS
+# phrasings had to be scrubbed before publish. Sush works at Microsoft NZ;
+# every aguidetocloud.com page reads as coming from a Microsoft employee.
+# Rule source: learning-docs/docs/reference/voice-and-tone.md
+#              § Microsoft posture (MANDATORY)
+# Fires when ANY content/*.md changes (not just blog) — catches licensing,
+# cert-tracker, AI Hub edits too. Fast scan (~2-3s over ~1,100 files).
+Write-Host "`n[6/6] Microsoft posture..." -NoNewline
+$contentChanged = $changedFiles | Where-Object { $_ -match '^content/.*\.md$' }
+if (-not $contentChanged) {
+    Write-Host " ⏭ No content changes (skip)" -ForegroundColor DarkGray
+} else {
+    $msPostureScript = Join-Path $PSScriptRoot "check-ms-posture.mjs"
+    if (Test-Path $msPostureScript) {
+        $msPostureOutput = & node $msPostureScript 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host " ❌ BLOCKED" -ForegroundColor Red
+            $msPostureOutput | Where-Object { $_ -match "🔴|content/|match:|preview:|fix:" } | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+            Write-Host "  Sush works at Microsoft NZ — never demean Microsoft in content." -ForegroundColor Yellow
+            Write-Host "  Escape hatch: add <!-- ms-posture-allow --> on the line above if legitimately neutral." -ForegroundColor Yellow
+            $failed = $true
+        } else {
+            Write-Host " ✅ No demeaning-Microsoft phrasings detected" -ForegroundColor Green
+        }
+    } else {
+        Write-Host " ⏭ check-ms-posture.mjs not found" -ForegroundColor DarkGray
     }
 }
 
