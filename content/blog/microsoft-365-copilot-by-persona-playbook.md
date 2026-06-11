@@ -1,6 +1,7 @@
 ---
 title: "Microsoft 365 Copilot — A Playbook for 5 Personas"
 list_title: "M365 Copilot for 5 Personas — The Complete Playbook"
+hub_id: "prompt-engineering"
 description: "Copilot prompts for Recruiters, Operations, Finance, IT Admin, Sales & Marketing — daily workflows, worked examples, and the guardrails that matter."
 date: 2026-05-25
 lastmod: 2026-05-27

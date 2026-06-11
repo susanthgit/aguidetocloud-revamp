@@ -1,6 +1,7 @@
 ---
 title: "Microsoft 365 Copilot March 2026 Recap: 36 Updates"
 list_title: "M365 Copilot — March Recap: 36 Updates"
+hub_id: "whats-new"
 description: "All 36 Microsoft 365 Copilot updates for March 2026 — Excel editing for Chat users, scheduling, PowerPoint editing, new connectors, admin controls."
 date: 2026-03-17
 lastmod: 2026-05-30

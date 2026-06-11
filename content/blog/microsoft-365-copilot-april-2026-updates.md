@@ -1,6 +1,7 @@
 ---
 title: "Microsoft 365 Copilot April 2026 Recap: 41 Updates"
 list_title: "M365 Copilot — April Recap: 41 Updates"
+hub_id: "whats-new"
 description: "All 41 Microsoft 365 Copilot updates for April 2026 — PowerPoint Agent, Excel Agent, Hey Copilot wake word, MCP connectors. What shipped, what's next."
 date: 2026-04-29
 lastmod: 2026-05-30

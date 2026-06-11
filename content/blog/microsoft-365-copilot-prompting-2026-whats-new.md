@@ -1,6 +1,7 @@
 ---
 title: "Microsoft 365 Copilot Prompting — What's New 2026"
 list_title: "M365 Copilot Prompting — What's New 2026"
+hub_id: "prompt-engineering"
 description: "Notebooks, Researcher, Analyst, Work IQ, model choice, Memory, multimodal. The 2026 prompting layer that sits on top of the four-block framework."
 date: 2026-05-27
 lastmod: 2026-05-27

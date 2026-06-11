@@ -1,6 +1,7 @@
 ---
 title: "Copilot for Executives — The Field Guide"
 list_title: "Copilot for Executives — The Complete Guide"
+hub_id: "prompt-engineering"
 description: "Microsoft 365 Copilot for executives — plain English. Board prep, leadership comms, decision support, trust and governance. What works and what doesn't."
 date: 2026-06-01
 lastmod: 2026-06-02

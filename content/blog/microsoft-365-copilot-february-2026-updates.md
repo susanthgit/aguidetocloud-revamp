@@ -1,6 +1,7 @@
 ---
 title: "Microsoft 365 Copilot February 2026 Recap: 45 Updates"
 list_title: "M365 Copilot — February Recap: 45 Updates"
+hub_id: "whats-new"
 description: "All 45 Microsoft 365 Copilot updates for February 2026 — Agent Mode in Excel for Chat users, Copilot Pages upgrades, Outlook expansion, new connectors."
 date: 2026-02-23
 lastmod: 2026-05-30
