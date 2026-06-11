@@ -29,7 +29,7 @@ faq:
   - question: "Can I just use Microsoft Scout instead of installing anything separately?"
     answer: "If Scout is already installed, you have workiq bundled — try workiq --version in your terminal to confirm. You still need the admin to have granted tenant consent (step 1 of the admin journey) and you still need to run workiq accept-eula once before first use. After that, you can use Work IQ from terminal, from Copilot CLI, OR keep going through Scout — same backend either way."
   - question: "Can my agent run without a user signed in (app-only auth)?"
-    answer: "No. Work IQ supports Microsoft Entra delegated auth only. On-behalf-of (OBO) flows work, but application-only auth — the pattern most batch jobs and unattended agents rely on — is not supported. Every Work IQ call has to run in the context of a signed-in user. This is the constraint that catches most existing automation architectures by surprise."
+    answer: "No. Work IQ supports Microsoft Entra delegated auth only. On-behalf-of (OBO) flows work, but application-only auth — the pattern most batch jobs and unattended agents rely on — is not supported. Every Work IQ call has to run in the context of a signed-in user. This is the constraint to plan around when migrating existing automation."
   - question: "How does an admin enable Work IQ for the tenant?"
     answer: "Open one URL while signed in as a Global Admin (or Cloud Application Admin / Application Admin / Privileged Role Admin), click Accept, and you've granted tenant-wide consent for the 7 delegated Graph permissions Work IQ uses. The URL pattern is in the Quick Start at github.com/microsoft/work-iq. If you hit AADSTS650052 / Access Denied, run the `Enable-WorkIQToolsForTenant.ps1` script — it provisions the missing service principals that the consent flow assumes are already in your tenant."
   - question: "What permissions does Work IQ request?"
@@ -38,8 +38,8 @@ faq:
     answer: "Six entity tools (fetch, create_entity, update_entity, delete_entity, do_action, call_function), two Copilot tools (ask, list_agents), and two schema tools (get_schema, search_paths). Microsoft's design principle is *fewer tools, more paths*. Instead of growing the tool surface every time a new workload ships, new workloads just expose new resource paths — fetch /me/messages, fetch /me/events, fetch /me/chats — and the same 10 verbs continue to cover them. Agents discover available paths at runtime via search_paths and get_schema instead of pre-loading thousands of type definitions."
   - question: "Which protocols does Work IQ support?"
     answer: "Three. Agent-to-Agent (A2A — JSON-RPC over HTTPS, for one agent delegating to another). Model Context Protocol (MCP — local stdio via the workiq CLI, or remote via the hosted Work IQ MCP server, for AI assistants like Copilot CLI, VS Code, Claude Desktop). REST (coming soon, for plain HTTP-calling apps). Pick whichever fits your agent or app architecture — Microsoft considers them peers, not a layered stack."
-  - question: "What's the catch?"
-    answer: "Two things, honestly. (1) Delegated-only auth means no batch / no app-only scenarios — your agent always runs as a user. (2) On Day 1, Microsoft's pricing breakdown for Tools fixed-fee and per-model token rates is the part most likely to need verifying in the wild — confirm against your own usage in the new admin-centre cost dashboard before committing to budgets."
+  - question: "What should I watch out for?"
+    answer: "Two things to plan around. (1) Delegated-only auth means no batch / no app-only scenarios — your agent always runs as a user. (2) Pricing details are still being finalised pre-GA; once Day 1 lands, the new admin-centre cost dashboard is the source of truth for both Tools fixed-fee and per-model token rates. Verify against your own usage there before committing to budgets."
   - question: "If I already use Microsoft Graph today, should I switch?"
     answer: "Not all of it — and not in a rush. For the parts of your stack that are an agent reasoning over M365 context, Work IQ is the foundation Microsoft now recommends. For batch jobs, scheduled imports, app-only services, and anything that needs to run without a user — stay on Graph. The two will coexist for a long time."
 images: ["images/og/blog/microsoft-work-iq-api-day-1-ga.jpg"]
@@ -56,11 +56,11 @@ sitemap:
   priority: 0.85
 layout: "notebook"
 stamp: "deep dive"
-intro_note: "↗ a follow-along guide written from Day 1 of GA — admin enablement + the user install + three real demos, all walked end-to-end on a lab tenant"
+intro_note: "↗ a follow-along guide to the Work IQ API GA — admin enablement, the user install, and three real demos, all walked end-to-end on a lab tenant"
 founder_note: |
-  Work IQ is one of those launches where the headlines say "another API" and the engineering reality is "a different shape of API entirely." I wanted to write the guide I wish someone had written for me — the one that walks BOTH halves of the experience end-to-end so the reader can follow along on their own tenant. The admin half is *one URL click* plus a known-trap workaround. The user half is *one install and one EULA* plus your first query. Together they're maybe twenty minutes of clicking. Most of the rest of the post is the part Microsoft doesn't always lead with — the 10 verbs, why there are only 10, what it actually costs, and three real demos on a lab tenant so you can see what good looks like before you commit to building.
+  Work IQ is the kind of release that's much bigger than its headline. Calling it "another Microsoft API" really undersells what changes — this is the first M365 API designed for agents from the ground up, with a tool surface deliberately kept tiny (10 verbs) so it stays tractable for any model. I wanted to write the guide I wish someone had written for me: a walk-through of BOTH halves of the experience end-to-end, so you can follow along on your own tenant. The admin half is *one URL click* plus a known-trap workaround. The user half is *one install and one EULA* plus your first query. Together they're maybe twenty minutes of clicking. Most of this post is what comes after that twenty minutes — the 10 verbs, why there are only 10, what it actually costs, and three real demos on a lab tenant so you can see what good looks like before you commit to building.
 
-  Honest take? The 80% fewer tokens / 2× faster claims are Microsoft's, and I'll keep updating this post as I measure against my own tenant. The architectural reason they could plausibly be true is real (server-side context packaging > orchestration-layer stitching), but trust-then-verify is the rule with any vendor's first-party benchmarks. If you spot anything out of date or measure something different against your tenant — [send me feedback](/feedback/) and I'll update.
+  A note on the numbers: the 80% fewer tokens / 2× faster figures are Microsoft's own internal benchmarks, and the architectural reason they're plausible is solid — server-side context packaging beats client-side stitching every time, and that's exactly what Work IQ does. I'm planning to measure directionally on my own tenant once GA lands and update the post with what I see. If you spot anything out of date or measure differently against your tenant — [send me feedback](/feedback/) and I'll update.
 ---
 
 Microsoft's Work IQ API goes generally available on **16 June 2026**. Ahead of GA, I walked through every part of it on a lab tenant — both halves. The **admin half** (one URL + one workaround for the famous AADSTS650052 trap). The **user half** (four install paths to choose from + the EULA). And three real walkthroughs against a synthetic *Project Adventure* dataset so you can see what good looks like before you build. This post is the plain-English version of what I learned, structured so any team can follow along on their own tenant.
@@ -139,7 +139,7 @@ Microsoft's pitch comes with four quantitative claims, all from their own intern
 | Efficiency | 80% fewer tokens used vs raw-Graph approaches in coding harnesses |
 | Scale | Architected for the high-frequency continuous traffic agents generate, not human-app patterns |
 
-These are Microsoft's numbers. I'm planning to verify the 80% / 2× claims directionally — the same question asked via `workiq ask` versus the equivalent raw-Graph chain, with token counts captured on both sides. I'll update this post when I have the measurement. The *architectural reason* the claims could plausibly be true is real (server-side context packaging beats client-side stitching) — but trust-then-verify is the rule with any vendor's first-party benchmarks.
+These are Microsoft's published numbers. I'm planning to measure them directionally on my own tenant — the same question asked via `workiq ask` versus the equivalent raw-Graph chain, with token counts captured on both sides — and update this post with what I see. The *architectural reason* the gains are plausible is solid: server-side context packaging beats client-side stitching every time, and that's exactly what Work IQ does.
 
 ## The Four Components of Work IQ
 
@@ -158,12 +158,12 @@ If you want a one-glance picture of how the four components, three protocols, an
 
 ```mermaid
 flowchart TD
-    A["You / your agent code"]
-    A --> B["1. Pick a protocol<br/>A2A · MCP (local stdio) · Remote MCP · REST (coming soon)"]
-    B --> C["2. Call one of the 4 Work IQ components"]
-    C --> D["• Chat — full Copilot answer with citations<br/>• Context — pre-digested grounding blocks<br/>• Tools — 10 generic verbs against resource paths<br/>• Workspaces — per-agent scratch space inside the tenant trust boundary"]
-    D --> E["3. Work IQ orchestrates server-side<br/>Microsoft Graph (Entity tools) + M365 Copilot (Chat + Copilot tools)"]
-    E --> F["4. Permission-trimmed answer back to your agent"]
+    A["Your agent code"] --> B["Pick a protocol<br/>A2A · MCP · REST"]
+    B --> C["Work IQ"]
+    C --> D["Chat<br/>Copilot answer + citations"]
+    C --> E["Context<br/>Grounding blocks"]
+    C --> F["Tools<br/>10 generic verbs"]
+    C --> G["Workspaces<br/>Per-agent scratch"]
 ```
 
 You pick a protocol, call one or more of the four components, and Work IQ does the orchestration into Graph or Copilot for you. Your code never has to wire those parts together itself.
@@ -182,7 +182,7 @@ The 10, organised by category:
 | **Copilot tools** | `ask` · `list_agents` | Invoke M365 Copilot for natural-language reasoning · discover available agents |
 | **Schema tools** | `get_schema` · `search_paths` | Runtime introspection — discover available paths and retrieve OpenAPI schemas on demand |
 
-{{< margin >}}Heads up: Microsoft's own MCP overview page introduces these as "four categories" in its prose but the table below shows three (Entity, Copilot, Schema). 6 + 2 + 2 = 10 either way; the four-categories text appears to be a documentation bug. Three is right.{{< /margin >}}
+{{< margin >}}Heads up: the MCP overview page on Microsoft Learn introduces these as "four categories" in its prose, but the table directly below shows three (Entity, Copilot, Schema), and so does the Tool Reference. 6 + 2 + 2 = 10 either way — three is the count to use in your design notes.{{< /margin >}}
 
 The design principle Microsoft repeats every chance they get: ***fewer tools, more paths***. When a new workload ships — say, Loop pages — Microsoft doesn't add a `getLoopPage` verb. They add a `/me/loopPages` resource path. Your agent calls `fetch /me/loopPages`. The tool surface stays at 10 forever.
 
@@ -263,7 +263,7 @@ Sign in as a **Global Admin** (or Cloud Application Admin, Application Admin, or
 
 <figure>
   <img src="/images/blog/workiq-ga-2026/workiq-02-admin-consent-prompt.webp" alt="Microsoft admin consent prompt for Work IQ CLI showing Microsoft Corporation as verified publisher and a list of more than twenty requested permissions." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid #ECE4D2; border-radius: 4px;" />
-  <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">The live consent dialog asks for more than the seven Graph scopes the doc lists — also fourteen MCP-server scopes and "Ask Work IQ agents on behalf of the user." Microsoft's docs understate the surface.</figcaption>
+  <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">The live consent dialog covers the seven Graph scopes plus fourteen MCP-server scopes and "Ask Work IQ agents on behalf of the user" — about twenty-three permissions in total. Worth a heads-up before you click Accept; the live prompt itself is the source of truth on what's being requested.</figcaption>
 </figure>
 
 <figure>
@@ -336,7 +336,7 @@ After the script finishes, **re-try the consent URL** from Admin Step 2 — it'l
 
 {{< hi >}}If you're reading this *before* clicking the consent URL: just run `Enable-WorkIQToolsForTenant.ps1` first. It works whether your tenant needs the workaround or not. Five minutes of friction saved.{{< /hi >}}
 
-{{< hi >}}**Heads up on the companion Verify script.** The repo ships a read-only `Verify-WorkIQTenant.ps1` next to the Enable script — handy in theory for checking what's missing without changing anything. As of writing it has a PowerShell parse error in the current GitHub copy and won't run. Skip Verify and run Enable directly; Enable is idempotent, so running it on a tenant that doesn't need the workaround won't break anything. Microsoft will probably fix Verify soon.{{< /hi >}}
+{{< hi >}}**Heads up on the companion Verify script.** The repo ships a read-only `Verify-WorkIQTenant.ps1` next to the Enable script — handy in theory for checking what's missing without changing anything. As of writing it has a PowerShell parse error in the current GitHub copy and won't run. Skip Verify and run Enable directly; Enable is idempotent, so running it on a tenant that doesn't need the workaround won't break anything. Keep an eye on the GitHub repo — this is the kind of small thing that usually gets patched quickly.{{< /hi >}}
 
 <figure>
   <img src="/images/blog/workiq-ga-2026/workiq-04z-bonus-verify-script-bug.webp" alt="PowerShell terminal showing the Verify-WorkIQTenant.ps1 script throwing a 'Missing closing }' parse error before it can do anything useful." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
@@ -670,7 +670,7 @@ Work IQ being a *layer* — not a product end-users open — means the visible c
 In the spirit of *honest > charming*, here's what surprised me on Day 1.
 
 1. **Delegated-only auth is a real constraint.** If your existing architecture relies on app-only / unattended-agent / service-principal auth (most batch jobs, most scheduled imports), Work IQ is not for you yet. Microsoft has been clear they don't support it. This rules out a lot of analytics, reporting, and back-office automation patterns. Use Graph for those.
-2. **Pricing transparency is improving but isn't fully there yet.** The Tools fixed-fee and per-model token rates I cited above are the best community consensus on Day 1. Microsoft's own pricing page deserves to be your source of truth — verify everything against your own admin-centre usage dashboard before committing to budgets.
+2. **Pricing details are still rolling out.** The Tools fixed-fee and per-model token rates I cited above are the best community consensus pre-GA. Microsoft's pricing page and the new admin-centre cost dashboard are the source of truth — verify against your own usage before committing to budgets.
 3. **The first call is slower than subsequent ones.** Semantic-index warmup matters. Build for the warm-path numbers, but flag the cold-path latency to users in any UX where the first query is "instant" expectations.
 4. **Agents need to be taught to use the resource-path style.** The shift from `sendMail`-as-tool to `do_action /me/sendMail`-as-resource-path is genuinely different. Your prompts and your agent system messages need updating. Don't expect a one-line swap to work out of the box.
 5. **REST is "coming soon" — A2A and MCP are GA today.** If your architecture wants plain HTTPS REST and can't use MCP or A2A, you're waiting. No date announced.
