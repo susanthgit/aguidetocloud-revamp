@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T16:18:58.105596+00:00",
+  "generated_at": "2026-06-11T20:33:30.067469+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -20,12 +20,12 @@
       "short_name": "M365 Suite",
       "icon": "📦",
       "total_incidents": 18,
-      "active_incidents": 3,
-      "avg_duration_minutes": 5029,
+      "active_incidents": 2,
+      "avg_duration_minutes": 4669,
       "last_incident": "2026-06-10T20:28:50.620000+00:00",
       "classifications": {
-        "advisory": 12,
-        "incident": 6
+        "advisory": 11,
+        "incident": 7
       }
     },
     {
@@ -99,7 +99,7 @@
       "icon": "☁️",
       "total_incidents": 3,
       "active_incidents": 0,
-      "avg_duration_minutes": 12718,
+      "avg_duration_minutes": 13198,
       "last_incident": "2026-05-30T02:30:00+00:00",
       "classifications": {
         "incident": 3
@@ -219,7 +219,7 @@
   "monthly": [
     {
       "month": "2026-06",
-      "incident_count": 17,
+      "incident_count": 16,
       "services_affected": 5
     },
     {
@@ -229,7 +229,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 40,
+      "incident_count": 41,
       "services_affected": 12
     }
   ]
