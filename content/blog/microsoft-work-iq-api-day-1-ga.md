@@ -63,7 +63,7 @@ founder_note: |
   Honest take? The 80% fewer tokens / 2× faster claims are Microsoft's, and I'll keep updating this post as I measure against my own tenant. The architectural reason they could plausibly be true is real (server-side context packaging > orchestration-layer stitching), but trust-then-verify is the rule with any vendor's first-party benchmarks. If you spot anything out of date or measure something different against your tenant — [send me feedback](/feedback/) and I'll update.
 ---
 
-I just spent Day 1 of Microsoft's Work IQ API general availability walking through every part of it on a lab tenant — both halves of it. The **admin half** (one URL + one workaround for the famous AADSTS650052 trap). The **user half** (four install paths to choose from + the EULA). And three real walkthroughs against a synthetic *Project Adventure* dataset so you can see what good looks like before you build. This post is the plain-English version of what I learned, structured so any team can follow along on their own tenant.
+Microsoft's Work IQ API goes generally available on **16 June 2026**. Ahead of GA, I walked through every part of it on a lab tenant — both halves. The **admin half** (one URL + one workaround for the famous AADSTS650052 trap). The **user half** (four install paths to choose from + the EULA). And three real walkthroughs against a synthetic *Project Adventure* dataset so you can see what good looks like before you build. This post is the plain-English version of what I learned, structured so any team can follow along on their own tenant.
 
 If you've been reading the announcement headlines and wondering *"is this another Microsoft Graph?"* — the short answer is **no, it's a different shape of API**. The long answer is the rest of this post.
 
@@ -71,7 +71,7 @@ I also built [**two tiny working samples**](https://github.com/susanthgit/aguide
 
 <div class="living-doc-banner">
 
-🔄 This is a living document. The AI world changes every day — features roll out, names change, and new capabilities appear. If you spot anything out of date, please [send me feedback](/feedback/) and I'll update it. Last verified: 16 June 2026.
+🔄 This is a living document. The AI world changes every day — features roll out, names change, and new capabilities appear. If you spot anything out of date, please [send me feedback](/feedback/) and I'll update it. Last verified: 11 June 2026 (pre-GA on a lab tenant — refreshed on / after 16 June with live production checks).
 
 </div>
 
@@ -88,6 +88,7 @@ I also built [**two tiny working samples**](https://github.com/susanthgit/aguide
 - [What It Costs — Copilot Credits Explained](#what-it-costs--copilot-credits-explained)
 - [What Changes When This Lands — Outlook, Scout, Custom Apps](#what-changes-when-this-lands--outlook-scout-custom-apps)
 - [The Honest Limitations](#the-honest-limitations)
+- [Top 5 Errors You'll Hit (And What To Do)](#top-5-errors-youll-hit-and-what-to-do)
 - [Where To Go Next](#where-to-go-next)
 
 ## The Translator Analogy — What Work IQ Actually Is
@@ -152,6 +153,20 @@ Work IQ has four parts. Microsoft sometimes calls them "components", sometimes "
 | **Workspaces** | Per-agent durable scratch space inside the tenant trust boundary | Long-running agents (Microsoft Scout, or any custom agent that needs memory between calls) that need to stash intermediate state without leaking it outside the tenant |
 
 Most early Work IQ integrations will combine Context + Tools. Chat is the heaviest call (it does all the reasoning Copilot would). Workspaces is mostly relevant for larger orgs running long-lived agents — only matters if your agent runs longer than a single request/response.
+
+If you want a one-glance picture of how the four components, three protocols, and your code fit together:
+
+```mermaid
+flowchart TD
+    A["You / your agent code"]
+    A --> B["1. Pick a protocol<br/>A2A · MCP (local stdio) · Remote MCP · REST (coming soon)"]
+    B --> C["2. Call one of the 4 Work IQ components"]
+    C --> D["• Chat — full Copilot answer with citations<br/>• Context — pre-digested grounding blocks<br/>• Tools — 10 generic verbs against resource paths<br/>• Workspaces — per-agent scratch space inside the tenant trust boundary"]
+    D --> E["3. Work IQ orchestrates server-side<br/>Microsoft Graph (Entity tools) + M365 Copilot (Chat + Copilot tools)"]
+    E --> F["4. Permission-trimmed answer back to your agent"]
+```
+
+You pick a protocol, call one or more of the four components, and Work IQ does the orchestration into Graph or Copilot for you. Your code never has to wire those parts together itself.
 
 ## The 10 Verbs — A Jeweller's Screwdriver, Not An IKEA Box
 
@@ -243,6 +258,8 @@ Sign in as a **Global Admin** (or Cloud Application Admin, Application Admin, or
 | `Chat.Read` | User chat messages |
 | `ChannelMessage.Read.All` | All Teams channel messages |
 | `ExternalItem.Read.All` | External items (Copilot connectors) |
+
+{{< hi >}}**What this consent does NOT grant — for admins worried about scope.** Every scope above is **read-only**. Work IQ cannot write to mailboxes, edit calendar events, send mail, modify Teams channels, or change SharePoint content with this consent. It cannot read other admins' mailboxes outside the user's own delegated permissions. It cannot bypass Conditional Access, DLP, sensitivity labels, or Purview policies — those still apply to every Graph call Work IQ makes on a user's behalf. It cannot access non-M365 data (Power BI datasets, Intune devices, Defender alerts, third-party SaaS). The only "write" pathway is the separate `do_action` / `create_entity` Tools, and those require the **end user's own delegated permissions** at call time — the admin consent here doesn't pre-authorise them.{{< /hi >}}
 
 <figure>
   <img src="/images/blog/workiq-ga-2026/workiq-02-admin-consent-prompt.webp" alt="Microsoft admin consent prompt for Work IQ CLI showing Microsoft Corporation as verified publisher and a list of more than twenty requested permissions." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid #ECE4D2; border-radius: 4px;" />
@@ -616,6 +633,26 @@ Work IQ is the *first* product managed through this dashboard — Copilot Studio
 - Heavy multi-turn agent loops on GPT-5.5 with a lot of tool calls can add up — that's where the spending-limit configuration earns its keep.
 - The honest planning posture: turn on PAYG with a per-user daily cap for the first two weeks, watch the dashboard, then formalise budgets.
 
+### A worked example — 50-user pilot
+
+Let's make the abstract concrete. Imagine a 50-user pilot — say, your customer-success team — using a Work IQ-powered agent for a *"what's new on my accounts today?"* morning brief each weekday morning. Each brief averages 3 Work IQ calls (Tools + Context + Chat). Numbers are based on the expected GA rates above; verify against your own admin-centre dashboard once GA lands.
+
+| Line item | Calculation | Monthly $ (GPT-5 mini default) | Monthly $ (GPT-5.5 powerful) |
+|---|---|---|---|
+| **Tools** (fixed 5 cr / call) | 50 users × 1 brief × 3 tool-style calls/brief × 22 working days × 5 cr × $0.01 | **$165** | $165 |
+| **Chat + Context** (variable, token-based — ~2K input / 1K output per brief) | 50 × 1 × 22 × (2K input + 1K cached + 1K output) | **~$15 input + $44 output ≈ $59** | $220 + $660 = **~$880** |
+| **Subtotal Work IQ** | — | **~$224 / month** | **~$1,045 / month** |
+| **Per-user Copilot licences** (prerequisite — $30 / user / month) | 50 × $30 | **$1,500 / month** | $1,500 / month |
+| **Total monthly cost** | — | **~$1,724 / month** ($34.48 / user) | **~$2,545 / month** ($50.90 / user) |
+
+A few honest reads on these numbers:
+- **The Copilot licences are by far the dominant cost.** Work IQ consumption is a rounding error on a small pilot at default-model rates.
+- **Model choice is where things move.** GPT-5.5 costs ~15× more per output token than GPT-5 mini. Don't reach for the powerful model unless the use case demonstrably needs it.
+- **Output tokens are the lever.** A morning brief that returns "in 4 bullets" rather than "in 4 paragraphs" can halve your Chat bill.
+- **Cap before you scale.** Set a per-user daily Work IQ spending limit at $1 or $2 the first two weeks of the pilot. The admin-centre dashboard will tell you whether to relax or tighten before you roll out to the wider org.
+
+{{< margin >}}These figures are illustrative — pre-GA model rates and an assumed token budget. Treat as ballpark planning, not contract numbers. The admin-centre cost dashboard is your source of truth once GA lands.{{< /margin >}}
+
 ## What Changes When This Lands — Outlook, Scout, Custom Apps
 
 Work IQ being a *layer* — not a product end-users open — means the visible changes show up in other Microsoft surfaces over time.
@@ -637,6 +674,22 @@ In the spirit of *honest > charming*, here's what surprised me on Day 1.
 3. **The first call is slower than subsequent ones.** Semantic-index warmup matters. Build for the warm-path numbers, but flag the cold-path latency to users in any UX where the first query is "instant" expectations.
 4. **Agents need to be taught to use the resource-path style.** The shift from `sendMail`-as-tool to `do_action /me/sendMail`-as-resource-path is genuinely different. Your prompts and your agent system messages need updating. Don't expect a one-line swap to work out of the box.
 5. **REST is "coming soon" — A2A and MCP are GA today.** If your architecture wants plain HTTPS REST and can't use MCP or A2A, you're waiting. No date announced.
+
+## Top 5 Errors You'll Hit (And What To Do)
+
+Save yourself the doomscroll. Five errors cover ~90% of the support questions in the first month of using Work IQ. Quick-reference here, full context lives in the relevant sections above.
+
+| Error you'll see | Most likely cause | First thing to try |
+|---|---|---|
+| **AADSTS650052** — *"The app needs access to a service…that your org has not subscribed to."* on the admin consent URL | The parent Work IQ service principal (`fdcc1f02-fc51-4226-8753-f668596af7f7`) isn't yet provisioned in your tenant — Quick Start consent URL assumes it is | Run `.\scripts\Enable-WorkIQToolsForTenant.ps1` from the [microsoft/work-iq](https://github.com/microsoft/work-iq) repo. Idempotent — safe to re-run. Then re-try the consent URL. (Full context: [Admin Step 2.5](#admin-step-25--if-step-2-failed-with-aadsts650052)) |
+| **AADSTS50058** / *"no user signed in"* on `workiq accept-eula` | Cancelled the sign-in pop / signed in with a personal Microsoft account by mistake | Re-run `workiq accept-eula` and sign in with the work account that has the Copilot licence assigned |
+| **WAM / "user cancelled"** on `workiq accept-eula` inside Copilot CLI, SSH, conhost, or a CI runner | Work IQ MSAL uses WAM (Windows Account Manager), which needs a windowed terminal with a parent HWND it can attach to | Run `workiq accept-eula` from a regular Windows Terminal or PowerShell window first (one-time). Token caches, then any embedded terminal works |
+| `workiq ask` returns *"User does not have access to Microsoft 365 Copilot"* | Account is signed in correctly but doesn't have a Copilot licence assigned | Have an admin assign a Microsoft 365 Copilot licence in `admin.microsoft.com → Billing → Licenses → Microsoft 365 Copilot → Assign licenses` |
+| Your MCP-based code picks up the **wrong account** even though you passed `--account user@tenant` | The `workiq mcp` server silently ignores `--account` and `WORKIQ_ACCOUNT` env var — defaults to the last-cached account in `~/.workiq/` | For multi-tenant dev workstations, isolate accounts with `$env:USERPROFILE` reassignment per session, OR call A2A REST directly (see [the samples repo](https://github.com/susanthgit/aguidetocloud-workiq-samples) — MSAL device-code per-tenant, no MCP server) |
+
+Two general debug tools worth knowing:
+- `workiq ask --verbose` — prints the conversation ID and request ID; pair with `workiq debug <conversationId>` to generate a shareable diagnostic link Microsoft support can read.
+- `workiq logout` — clears the MSAL token cache. Useful when you suspect token staleness.
 
 ## Where To Go Next
 
