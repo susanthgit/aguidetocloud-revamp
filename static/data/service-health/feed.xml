@@ -5,8 +5,62 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 05 Jun 2026 20:07:49 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 03:33:41 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] June 9 security update notes aren’t available on learn.microsoft.com for Microsoft 365 apps &amp; Office</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1386645</link>
+      <description>[Microsoft 365 suite] June 9 security update notes aren’t available on learn.microsoft.com for Microsoft 365 apps &amp;amp; Office.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1386645</guid>
+      <pubDate>Wed, 10 Jun 2026 20:28:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Users may be unable to access Excel files through browser from SharePoint Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1386381</link>
+      <description>[SharePoint Online] Users may be unable to access Excel files through browser from SharePoint Online.</description>
+      <category>SharePoint Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">SP1386381</guid>
+      <pubDate>Wed, 10 Jun 2026 14:50:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Admins' Microsoft 365 Copilot usage reports within the Microsoft 365 admin center may be delayed</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1385610</link>
+      <description>[Microsoft 365 suite] Admins' Microsoft 365 Copilot usage reports within the Microsoft 365 admin center may be delayed.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1385610</guid>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may experience degradation with Microsoft 365 Copilot responses after uploading a file</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1386444</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may experience degradation with Copilot responses after uploading a file.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1386444</guid>
+      <pubDate>Tue, 09 Jun 2026 06:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Some users may experience degradation with Microsoft 365 Copilot Chat responses after uploading a file</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1386443</link>
+      <description>[Microsoft 365 Copilot Chat] Users may experience degradation with Copilot Chat responses after uploading a file.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CW1386443</guid>
+      <pubDate>Tue, 09 Jun 2026 06:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] We're looking into a potential problem impacting Microsoft 365 Copilot Chat</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1386431</link>
+      <description>[Microsoft 365 suite] We're checking for potential impact to your users.</description>
+      <category>Microsoft 365 suite</category>
+      <category>falsePositive</category>
+      <guid isPermaLink="false">MO1386431</guid>
+      <pubDate>Tue, 09 Jun 2026 06:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Users may fail to retrieve Microsoft OneNote content using Microsoft Graph APIs</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1338742</link>
@@ -86,7 +140,7 @@
       <category>Microsoft 365 suite</category>
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1329260</guid>
-      <pubDate>Mon, 01 Jun 2026 07:05:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jun 2026 07:10:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may be unable to create new online meetings from shared calendar events in Exchange Online</title>
@@ -157,9 +211,9 @@ We detected this issue through our automated monitoring systems after observing 
     <item>
       <title>[Microsoft Defender XDR] Some admins may be unable to access and manage configured GDAP tenants in Microsoft Defender</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1333265</link>
-      <description>[Microsoft Defender XDR] Admins may be unable to access and manage configured GDAP tenants in Microsoft Defender.</description>
+      <description>[Microsoft Defender XDR] Admins may have been unable to access and manage configured GDAP tenants in Microsoft Defender.</description>
       <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1333265</guid>
       <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
     </item>
@@ -198,15 +252,6 @@ We detected this issue through our automated monitoring systems after observing 
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1320293</guid>
       <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be unable to view the body of edited Exchange Online email messages from the Sent folder</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1318421</link>
-      <description>[Exchange Online] Users may be unable to view the body of edited Exchange Online email messages from the Sent folder.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1318421</guid>
-      <pubDate>Fri, 22 May 2026 03:24:46 +0000</pubDate>
     </item>
     <item>
       <title>[Planner] Some users may encounter issues accessing features in the Microsoft Planner application</title>
@@ -407,15 +452,6 @@ We detected this issue through our automated monitoring systems after observing 
       <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Defender XDR] Some users may be unable to view Microsoft Defender for Endpoint manual actions through the Action center</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1304997</link>
-      <description>[Microsoft Defender XDR] Users may be unable to view Microsoft Defender for Endpoint manual actions through the Action center.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">DZ1304997</guid>
-      <pubDate>Sat, 09 May 2026 09:27:25 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may see Microsoft 365 Copilot reports delayed by up to one day within the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1304233</link>
       <description>[Microsoft Copilot (Microsoft 365)] Admins may have seen Copilot reports delayed by up to one day within the Microsoft 365 admin center.</description>
@@ -423,42 +459,6 @@ We detected this issue through our automated monitoring systems after observing 
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1304233</guid>
       <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Admins may see Microsoft 365 Copilot Chat reports delayed by up to one day within the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1304234</link>
-      <description>[Microsoft 365 Copilot Chat] Admins may have seen Copilot Chat reports delayed by up to one day within the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1304234</guid>
-      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may intermittently receive blank responses from Analyst agent in Microsoft Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1318025</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have intermittently received blank responses from Analyst agent in Microsoft Copilot.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1318025</guid>
-      <pubDate>Wed, 06 May 2026 07:44:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to create or use SharePoint Online Copilot embedded agents within Microsoft 365 Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1301811</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to create or use SharePoint Online Copilot embedded agents within Copilot.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1301811</guid>
-      <pubDate>Tue, 05 May 2026 22:20:10 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Intune] Users may experience failures when enrolling Apple devices in Microsoft Intune</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1301759</link>
-      <description>[Microsoft Intune] Users may have experienced failures when enrolling Apple devices in Microsoft Intune.</description>
-      <category>Microsoft Intune</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">IT1301759</guid>
-      <pubDate>Tue, 05 May 2026 19:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
