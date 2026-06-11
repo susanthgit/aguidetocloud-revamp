@@ -49,11 +49,14 @@
     {{/* Filter status — shows count when sidebar filter is active */}}
     <p class="zt-blog-filter-status" id="blog-filter-status" hidden></p>
 
-    {{/* Article listing — River Rows with cluster support */}}
-    {{/* Cluster metadata — declared once, shared across clusters */}}
+    {{/* Article listing — River Rows with cluster support + pinned positions */}}
+    {{/* Cluster metadata — declared once, shared across clusters
+         after: render cluster AFTER N standalone rows have been shown (0 = render at hub date) */}}
     {{ $clusterMeta := dict
-      "prompt-engineering" (dict "label" "★ Start here · Prompting" "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "")
-      "whats-new"          (dict "label" "★ Start here · What's new" "spokeLabel" "— Past recaps —" "spokeCap" 5 "linkText" "→ See all monthly recaps")
+      "whats-new"          (dict "label" "★ Start here · What's new"    "spokeLabel" "— Past recaps —" "spokeCap" 5 "linkText" "→ See all monthly recaps" "after" 1)
+      "fundamentals"       (dict "label" "★ Start here · M365 Copilot"  "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 2)
+      "it-admins"          (dict "label" "★ Start here · IT Admins"     "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 3)
+      "prompt-engineering" (dict "label" "★ Start here · Prompting"     "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 4)
     }}
 
     {{/* Discover cluster IDs present in this listing */}}
@@ -87,23 +90,48 @@
     {{ end }}
 
     <div class="zt-blog-list zt-blog-list--river" id="blog-list">
+      {{ $standaloneCount := 0 }}
+      {{ $renderedClusters := slice }}
       {{ range .Pages.ByDate.Reverse }}
         {{ $cid := .Params.hub_id }}
         {{ $renderAs := "standalone" }}
         {{ if $cid }}
           {{ $cluster := index $clusters $cid }}
           {{ if eq $cluster.hub.RelPermalink .RelPermalink }}
-            {{ $renderAs = "cluster" }}
+            {{ $meta := index $clusterMeta $cid }}
+            {{ $after := default 0 $meta.after }}
+            {{ if eq $after 0 }}
+              {{ $renderAs = "cluster" }}
+            {{ else }}
+              {{ $renderAs = "deferred" }}
+            {{ end }}
           {{ else }}
             {{ $renderAs = "spoke" }}
           {{ end }}
         {{ end }}
 
+        {{/* Before rendering a standalone, check if any deferred cluster slots in NOW */}}
+        {{ if eq $renderAs "standalone" }}
+          {{ range $pcid, $pmeta := $clusterMeta }}
+            {{ $pafter := default 0 $pmeta.after }}
+            {{ if and (gt $pafter 0) (eq $pafter $standaloneCount) (not (in $renderedClusters $pcid)) }}
+              {{ $pcluster := index $clusters $pcid }}
+              {{ if $pcluster }}
+                {{ partial "blog-cluster-card.html" (dict "hub" $pcluster.hub "spokes" $pcluster.spokes "meta" $pmeta) }}
+                {{ $renderedClusters = $renderedClusters | append $pcid }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+
+        {{/* Render this item */}}
         {{ if eq $renderAs "cluster" }}
           {{ $cluster := index $clusters $cid }}
           {{ $meta := index $clusterMeta $cid }}
           {{ partial "blog-cluster-card.html" (dict "hub" . "spokes" $cluster.spokes "meta" $meta) }}
+          {{ $renderedClusters = $renderedClusters | append $cid }}
         {{ else if eq $renderAs "standalone" }}
+          {{ $standaloneCount = add $standaloneCount 1 }}
           {{ $title := .Title }}
           {{ with .Params.list_title }}{{ $title = . }}{{ end }}
           <a href="{{ .RelPermalink }}" class="zt-blog-row{{ if and (gt (div (sub now.Unix .Date.Unix) 86400) 0) (le (div (sub now.Unix .Date.Unix) 86400) 14) }} zt-blog-row--new{{ end }}" data-tag="{{ .Params.card_tag }}">
@@ -113,7 +141,17 @@
             <h2 class="zt-blog-row-title">{{ $title }}</h2>
           </a>
         {{ end }}
-        {{/* renderAs "spoke" → skip; rendered inside its cluster card */}}
+        {{/* renderAs "deferred" or "spoke" → skip; rendered separately */}}
+      {{ end }}
+
+      {{/* Render any deferred clusters that didn't slot in (after > total standalones) */}}
+      {{ range $pcid, $pmeta := $clusterMeta }}
+        {{ if and (gt (default 0 $pmeta.after) 0) (not (in $renderedClusters $pcid)) }}
+          {{ $pcluster := index $clusters $pcid }}
+          {{ if $pcluster }}
+            {{ partial "blog-cluster-card.html" (dict "hub" $pcluster.hub "spokes" $pcluster.spokes "meta" $pmeta) }}
+          {{ end }}
+        {{ end }}
       {{ end }}
     </div>
 

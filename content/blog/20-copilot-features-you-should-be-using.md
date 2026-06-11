@@ -1,5 +1,6 @@
 ---
 title: "22 M365 Copilot Features You're Probably Not Using"
+hub_id: "fundamentals"
 description: "22 M365 Copilot features as a journey from quick wins to power moves. Sample prompts, real customer cases, custom templates."
 date: 2026-04-21
 lastmod: 2026-05-08

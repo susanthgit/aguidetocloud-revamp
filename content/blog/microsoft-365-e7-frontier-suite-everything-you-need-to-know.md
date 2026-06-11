@@ -1,6 +1,7 @@
 ---
 title: "Microsoft 365 E7 (Frontier Suite) — Plain-English Guide"
 list_title: "Microsoft 365 E7 (Frontier Suite) — The Complete Guide"
+hub_id: "it-admins"
 description: "The new $99/user/mo Frontier Suite — what's included, E3/E5/E7 comparison, Agent 365, pricing, GA'd 1 May 2026, licensing essentials."
 date: 2026-04-10
 lastmod: 2026-05-13

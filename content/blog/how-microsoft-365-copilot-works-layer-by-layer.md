@@ -1,6 +1,8 @@
 ---
 title: "How M365 Copilot Works: LLM, Graph Grounding, Semantic Index"
 list_title: "How M365 Copilot Works — Plain-English Guide"
+hub: true
+hub_id: "fundamentals"
 description: "Layer-by-layer guide to Microsoft 365 Copilot: Orchestrator, Semantic Index, Microsoft Graph grounding, LLM choice. How prompts become answers — explained."
 date: 2026-05-01
 lastmod: 2026-05-01
