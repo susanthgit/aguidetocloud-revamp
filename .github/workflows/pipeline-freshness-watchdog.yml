@@ -135,14 +135,20 @@ jobs:
               f.write(f"summary={summary}\n")
               f.write(f"reasons={json.dumps(reasons)}\n")
 
-          sys.exit(0 if status == "healthy" else 1)
+          # Always exit 0 — workflow status stays green, signal goes via
+          # the `alert` job (issue create/comment + ntfy). Previously exited 1
+          # on staleness, which made every stale-detection run also email
+          # Sush as a "scheduled workflow failed" notification on top of the
+          # issue notification. The issue + ntfy are already the signal.
+          sys.exit(0)
           PY
 
   # ── On failure: open/comment on issue + optional ntfy ──
   alert:
     runs-on: ubuntu-latest
     needs: probe
-    if: failure() || needs.probe.outputs.status != 'healthy'
+    # probe step now always exits 0, so check the status output instead of failure()
+    if: needs.probe.outputs.status != 'healthy'
     permissions:
       issues: write
     steps:
