@@ -1,6 +1,6 @@
 ---
 title: "Microsoft Work IQ API — Day-1 Hands-On Walkthrough"
-description: "Microsoft Work IQ goes GA on 16 June 2026. The plain-English guide — what it actually does, the 10 verbs, admin consent, Copilot Credits, and 3 use cases tested on Day 1."
+description: "Microsoft Work IQ API goes GA on 16 June 2026 — plain-English guide: 10 verbs, admin consent, Copilot Credits pricing, and 3 use cases on a lab tenant."
 date: 2026-06-16
 lastmod: 2026-06-16
 draft: false
@@ -49,12 +49,9 @@ tags:
   - microsoft-365
   - copilot
   - work-iq
-  - agents
   - api
   - mcp
-  - developers
-  - admin
-  - governance
+  - agents
 sitemap:
   priority: 0.85
 layout: "notebook"
@@ -70,6 +67,8 @@ I just spent Day 1 of Microsoft's Work IQ API general availability walking throu
 
 If you've been reading the announcement headlines and wondering *"is this another Microsoft Graph?"* — the short answer is **no, it's a different shape of API**. The long answer is the rest of this post.
 
+I also built [**two tiny working samples**](https://github.com/susanthgit/aguidetocloud-workiq-samples) you can fork on Day 1 — a morning brief generator (Node script) and an embeddable web-app (Express + browser UI). Both call Work IQ directly via the A2A protocol. Links + full walkthrough later in this post.
+
 <div class="living-doc-banner">
 
 🔄 This is a living document. The AI world changes every day — features roll out, names change, and new capabilities appear. If you spot anything out of date, please [send me feedback](/feedback/) and I'll update it. Last verified: 16 June 2026.
@@ -79,6 +78,7 @@ If you've been reading the announcement headlines and wondering *"is this anothe
 **Quick Links**
 
 - [The Translator Analogy — What Work IQ Actually Is](#the-translator-analogy--what-work-iq-actually-is)
+- [When to Reach for Work IQ vs Microsoft Graph](#when-to-reach-for-work-iq-vs-microsoft-graph)
 - [What Microsoft Announced, In 12 Plain Words](#what-microsoft-announced-in-12-plain-words)
 - [The Four Components of Work IQ](#the-four-components-of-work-iq)
 - [The 10 Verbs — A Jeweller's Screwdriver, Not An IKEA Box](#the-10-verbs--a-jewellers-screwdriver-not-an-ikea-box)
@@ -102,11 +102,28 @@ Both layers exist. Both are useful. They do different jobs.
 
 {{< margin >}}Heads up: this metaphor isn't a perfect map. Graph isn't *just* the raw data — it has its own enrichment. But "raw transcript vs translator" is the closest one-line analogy I've found for the shape difference between the two surfaces.{{< /margin >}}
 
-That shape difference is why Microsoft is pitching Work IQ as **the recommended foundation for new agentic applications on M365 data**. Agents are not browser users. They don't want a paginated list of 500 messages; they want the *meaning*. Work IQ packages the meaning server-side, before the answer leaves the building.
+That shape difference is why Microsoft is pitching Work IQ as **the recommended foundation for new agent applications on M365 data**. Agents are not browser users. They don't want a paginated list of 500 messages; they want the *meaning*. Work IQ packages the meaning server-side, before the answer leaves the building.
+
+## When to Reach for Work IQ vs Microsoft Graph
+
+The honest follow-up to the translator analogy: *"so do I throw Graph away?"* No. Pick whichever fits the job in front of you.
+
+| Scenario | Work IQ | Microsoft Graph | Why |
+|---|---|---|---|
+| Agent answering an end-user question over their M365 content | ✅ | — | Server-side context packaging + delegated auth = built for this |
+| Building a Copilot-style "what changed on Project Adventure this week?" surface | ✅ | — | Chat + Context APIs do the orchestration for you |
+| Scheduled nightly export of mailbox / SharePoint / Teams data | — | ✅ | Work IQ has no app-only auth — Graph batch jobs are right tool |
+| Sending mail / creating events on a user's behalf inside an agent flow | ✅ | ✅ | Both work; Work IQ Tools (`do_action /me/sendMail`) keeps your agent on one API surface |
+| Running an unattended back-office automation as a service principal | — | ✅ | Application-only auth not supported on Work IQ |
+| Building a Teams bot that responds when a user @-mentions it | ✅ | — | The agent always has a signed-in user context, so Work IQ fits |
+| Pulling Power BI datasets / Intune device records / Defender alerts | — | ✅ | Outside the M365-content scope Work IQ covers today |
+| Migrating an existing Graph-based assistant to take advantage of Copilot's reasoning | ✅ (Chat + Context) | ✅ (keep your Graph plumbing) | Hybrid is normal — most teams will run both for a long time |
+
+The pattern: if your agent runs **as a signed-in user reasoning over M365 content**, start with Work IQ. If your code runs **as a service** (batch, background, unattended) or touches **non-M365 data**, stay on Graph. The two are designed to coexist.
 
 ## What Microsoft Announced, In 12 Plain Words
 
-Microsoft's announcement, paraphrased: *"a workplace intelligence layer that delivers semantic understanding of everything happening across your business — context, relationships, and patterns — so agents can deliver faster, more accurate, more secure responses than connector-only approaches."*
+Microsoft's announcement, paraphrased: *"a workplace intelligence layer that gives agents a real understanding of everything happening across your business — context, relationships, and patterns — so agents can deliver faster, more accurate, more secure responses than connector-only approaches."*
 
 That's 30 enterprise words. The 12-word version: **"the brain that's behind Copilot is now its own API for your agents."**
 
@@ -123,8 +140,6 @@ Microsoft's pitch comes with four quantitative claims, all from their own intern
 
 These are Microsoft's numbers. I'm planning to verify the 80% / 2× claims directionally — the same question asked via `workiq ask` versus the equivalent raw-Graph chain, with token counts captured on both sides. I'll update this post when I have the measurement. The *architectural reason* the claims could plausibly be true is real (server-side context packaging beats client-side stitching) — but trust-then-verify is the rule with any vendor's first-party benchmarks.
 
-<!-- VOICE-REVIEW: hook + 12 plain words section -->
-
 ## The Four Components of Work IQ
 
 Work IQ has four parts. Microsoft sometimes calls them "components", sometimes "domains", sometimes "layers" — same thing.
@@ -134,11 +149,9 @@ Work IQ has four parts. Microsoft sometimes calls them "components", sometimes "
 | **Chat** | Programmatic access to the full M365 Copilot reasoning stack — the answer Copilot would give a user, with citations | Your agent needs an *answer*, not raw data — same as if a user asked Copilot directly |
 | **Context** | Same source content Copilot would aggregate for an answer — but returned as agent-ready context blocks, not a synthesized response | Your agent has its own reasoning logic and just wants the *grounded context* to think with |
 | **Tools** | 10 generic verbs against resource paths (Entity tools via Microsoft Graph; Copilot tools invoke M365 Copilot; Schema tools introspect Work IQ's own path registry) | Your agent needs to *do things* — send mail, create events, upload files — not just read |
-| **Workspaces** | Per-agent durable scratch space inside the tenant trust boundary | Long-running agents (Microsoft Scout, custom autopilots) that need to stash intermediate state without leaking it outside the tenant |
+| **Workspaces** | Per-agent durable scratch space inside the tenant trust boundary | Long-running agents (Microsoft Scout, or any custom agent that needs memory between calls) that need to stash intermediate state without leaking it outside the tenant |
 
-Most early Work IQ integrations will combine Context + Tools. Chat is the heaviest call (it does all the reasoning Copilot would). Workspaces is the most enterprise-y (only matters if your agent runs longer than a single request/response).
-
-<!-- VOICE-REVIEW: four components section -->
+Most early Work IQ integrations will combine Context + Tools. Chat is the heaviest call (it does all the reasoning Copilot would). Workspaces is mostly relevant for larger orgs running long-lived agents — only matters if your agent runs longer than a single request/response.
 
 ## The 10 Verbs — A Jeweller's Screwdriver, Not An IKEA Box
 
@@ -176,8 +189,6 @@ list_agents                                     → discover available agents
 get_schema /me/events                           → OpenAPI for the calendar resource
 ```
 
-<!-- VOICE-REVIEW: 10 verbs section -->
-
 ## Setup — The Admin Journey (One URL + One Workaround)
 
 This is the part the IT admin does once for the whole tenant. If you're not the admin, send this section to whoever is — they need 15 minutes.
@@ -208,8 +219,6 @@ Work IQ rides on Microsoft 365 Copilot. Open the M365 admin centre → **Billing
 
 If you don't have licences yet, that's the slowest step in this whole process — there's a 24-hour propagation lag after you assign them. Plan ahead.
 
-<!-- screenshot needed [ADMIN]: M365 admin centre → Billing → Licenses showing Microsoft 365 Copilot row with seats — workiq-01-admin-licenses.webp -->
-
 <figure>
   <img src="/images/blog/workiq-ga-2026/workiq-01-admin-licenses.webp" alt="Microsoft 365 admin centre on the Licenses page, with the Microsoft 365 Copilot row highlighted by a red outline. Twenty-four of twenty-five seats assigned. Lab tenant shown (Contoso)." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
   <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">Admin centre → Billing → Licenses. The Microsoft 365 Copilot row is your Work IQ prereq.</figcaption>
@@ -234,9 +243,6 @@ Sign in as a **Global Admin** (or Cloud Application Admin, Application Admin, or
 | `Chat.Read` | User chat messages |
 | `ChannelMessage.Read.All` | All Teams channel messages |
 | `ExternalItem.Read.All` | External items (Copilot connectors) |
-
-<!-- screenshot needed [ADMIN]: admin consent prompt page showing the 7 permissions before Accept — workiq-02-admin-consent-prompt.webp -->
-<!-- screenshot needed [ADMIN]: post-Accept success screen — workiq-03-admin-consent-accepted.webp -->
 
 <figure>
   <img src="/images/blog/workiq-ga-2026/workiq-02-admin-consent-prompt.webp" alt="Microsoft admin consent prompt for Work IQ CLI showing Microsoft Corporation as verified publisher and a list of more than twenty requested permissions." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid #ECE4D2; border-radius: 4px;" />
@@ -301,8 +307,6 @@ pwsh -ExecutionPolicy Bypass -File .\scripts\Enable-WorkIQToolsForTenant.ps1
 
 After the script finishes, **re-try the consent URL** from Admin Step 2 — it'll go through.
 
-<!-- screenshot needed [ADMIN]: PowerShell terminal showing Enable-WorkIQToolsForTenant.ps1 — capture the moment the browser pop appears for Connect-MgGraph (split-screen if possible) — workiq-04-admin-enable-script.webp -->
-
 <figure>
   <img src="/images/blog/workiq-ga-2026/workiq-04b-admin-script-consent-dialog.webp" alt="Microsoft Graph Command Line Tools requesting four delegated permissions including manage all delegated permission grants, read and write all applications, maintain access, and view users' basic profile. A 'Consent on behalf of your organization' checkbox is ticked." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid #ECE4D2; border-radius: 4px;" />
   <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">The script's <em>own</em> auth prompt. Tick "Consent on behalf of your organization" and Accept. This is the script asking — separate from the Work IQ consent in Step 2.</figcaption>
@@ -328,16 +332,12 @@ After consent, head to **[Microsoft Entra admin centre](https://entra.microsoft.
 
 To view this page you need at least **Cloud Application Administrator** or **Application Administrator** (read access). Global Admin works too.
 
-<!-- screenshot needed [ADMIN]: Entra Enterprise Applications page showing Work IQ CLI + related Work IQ SPs — workiq-05-admin-entra-apps.webp -->
-
 <figure>
   <img src="/images/blog/workiq-ga-2026/workiq-05-admin-entra-apps.webp" alt="Microsoft Entra admin centre search dropdown showing 'Enterprise applications (10)' with the Work IQ CLI, Work IQ Word MCP, Work IQ Calendar MCP, Work IQ Mail MCP, Work IQ Copilot MCP, Work IQ User MCP, Work IQ Teams MCP service principals listed." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
   <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">A faster way to verify than clicking through menus — type "work iq" in the Entra search bar and you should see all ten service principals grouped under Enterprise applications.</figcaption>
 </figure>
 
 That completes the admin journey. Your users can now install + use Work IQ.
-
-<!-- VOICE-REVIEW: admin journey section -->
 
 ## Setup — The User Journey (Pick An Install Path)
 
@@ -382,9 +382,6 @@ You: Summarise emails from Sarah about the budget.
 You: Find documents I worked on yesterday.
 ```
 
-<!-- screenshot needed [USER]: Copilot CLI showing /plugin marketplace add output then /plugin install workiq@work-iq output — workiq-06-user-cli-plugin-install.webp -->
-<!-- screenshot needed [USER]: Copilot CLI session after restart, asking a first question via workiq tool — workiq-07-user-cli-first-ask.webp -->
-
 <figure>
   <img src="/images/blog/workiq-ga-2026/workiq-06a-cli-marketplace-already-registered.webp" alt="GitHub Copilot CLI showing the /plugin marketplace add microsoft/work-iq command returning an error 'Marketplace work-iq already registered' — meaning Microsoft Scout or a previous install already added it." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
   <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">Honest-take moment: if you're already on Microsoft Scout, the marketplace is pre-registered. The "already registered" error is fine — just continue to the install command.</figcaption>
@@ -410,8 +407,6 @@ If your daily driver is VS Code (or VS Code Insiders) and you'd prefer a button 
 
 Click the **"Install in VS Code"** badge in the GitHub README — VS Code opens with an MCP install dialog pre-filled. Click **Install**, and Work IQ is registered as an MCP server in your VS Code workspace. Copilot Chat in VS Code can then call Work IQ as a tool.
 
-<!-- screenshot needed [USER]: GitHub README showing the "Install in VS Code" badge buttons — workiq-08-user-vscode-badge.webp -->
-<!-- screenshot needed [USER]: VS Code MCP install dialog pre-filled with the workiq config — workiq-09-user-vscode-install-dialog.webp -->
 <!-- skipped: 08, 09 — install-paths section demoted; samples section below shows real-world build patterns instead -->
 
 There's an equivalent badge for **VS Code Insiders** in the same README.
@@ -437,7 +432,6 @@ If you see something like `0.4.1.19742+d4efecc4df...`, you're set — Scout ship
 
 If `workiq` is not found even after a Scout install, the bundled shim lives at `%USERPROFILE%\.copilot\bin\workiq.cmd` — open a new terminal (or restart your existing one) so the updated PATH takes effect.
 
-<!-- screenshot needed [USER]: terminal showing workiq --version returning the Scout-bundled version — workiq-10-user-scout-bundled.webp -->
 <!-- skipped: 10 — covered by the marketplace-already-registered screenshot above (same insight) -->
 
 ### Path D — npm global / npx (universal terminal path)
@@ -492,8 +486,6 @@ This pops a browser for Microsoft sign-in. Use your work account — the one tha
 | "User account is not yet provisioned for Work IQ" | Admin consent hasn't been granted for your tenant yet, OR your Copilot licence is still propagating (up to 24h) | Wait 24h after licence assignment · ask your admin to verify the Admin Journey was completed |
 | "License required" | You don't have a Copilot licence | Ask your admin to assign Microsoft 365 Copilot to your account |
 
-<!-- screenshot needed [USER]: workiq accept-eula browser flow showing the Microsoft sign-in page — workiq-11-user-eula-signin.webp -->
-<!-- screenshot needed [USER]: terminal output after accept-eula succeeds — workiq-12-user-eula-accepted.webp -->
 <!-- skipped 11+12: generic Microsoft sign-in pages, don't add reader value -->
 
 ### Your first query (the moment it clicks)
@@ -508,12 +500,9 @@ Replace `<your-work-email>` with your full UPN — e.g., `admin@contoso.onmicros
 
 **Don't know your tenant domain?** Sign in to [outlook.office365.com](https://outlook.office365.com) — the email address in the top-right corner is your UPN. Your tenant domain is everything after the `@`.
 
-<!-- screenshot needed [USER]: terminal showing first verbose ask response with conversationId + the actual calendar answer — workiq-13-user-first-query.webp -->
 <!-- skipped 13: CLI first query — the install paths above demonstrate the plugin works; for richer real-world output see the Build Something section below -->
 
 That's the user journey. Five minutes if you're on the Copilot CLI plugin path, ten minutes via VS Code, less than that if Scout is already on the box.
-
-<!-- VOICE-REVIEW: user journey section -->
 
 ## Build Something With It — Two Samples + The Repo
 
@@ -533,14 +522,14 @@ A 190-line Node.js script that runs once at 8am, asks Work IQ three orchestrated
 - *"What's on my calendar today and tomorrow?"*
 - *"What commitments have I made that I haven't followed up on?"*
 
-Schedule it with **Windows Task Scheduler** or **cron** and you've got an auto-generated brief in your inbox every morning — built on top of Work IQ's agentic orchestration, not a single CLI question. The script makes three sequential A2A calls and stitches the results.
+Schedule it with **Windows Task Scheduler** or **cron** and you've got an auto-generated brief in your inbox every morning — built on top of Work IQ's agent orchestration, not a single CLI question. The script makes three sequential A2A calls and stitches the results.
 
 <figure>
   <img src="/images/blog/workiq-ga-2026/workiq-24-brief-rendered.webp" alt="VS Code showing the morning brief output as markdown — six themed sections on Project Adventure with bold labels for sources, clean markdown structure, no long URLs and no citation noise." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
   <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">What the script produces — six themed sections on Project Adventure, clean <strong>bold</strong> labels for sources, citation noise stripped. The script's <code>cleanForBrief()</code> post-processor handles that — Work IQ's raw output has long Outlook/SharePoint URLs and inline citation markers that look terrible in a markdown file; the cleaner makes them readable.</figcaption>
 </figure>
 
-It's adaptable. Pipe it into email with `nodemailer`. Post it to a Teams incoming webhook. Render as HTML and serve. The brief is just markdown — go nuts.
+It's adaptable. Pipe it into email with `nodemailer`. Post it to a Teams incoming webhook. Render as HTML and serve. The brief is just markdown — adapt it to your workflow.
 
 ### Sample 2 — Web-app (`web-app/`)
 
@@ -587,8 +576,6 @@ These samples are deliberately small + unopinionated. Real production runs would
 
 If you build something interesting on top of these, [send me a link](/feedback/) — I'd love to feature what the community builds first.
 
-<!-- VOICE-REVIEW: build something section -->
-
 ## What It Costs — Copilot Credits Explained
 
 Work IQ API usage is billed through **Copilot Credits**, a consumption model. There's no separate per-user licence on top of the M365 Copilot licence the user already needs.
@@ -602,7 +589,7 @@ Work IQ API usage is billed through **Copilot Credits**, a consumption model. Th
 | **Tools** (the 10 verbs) | **Fixed** per call | Each invocation of `fetch`, `do_action`, `create_entity`, etc. is a flat per-call charge regardless of token count. Expected rate at GA: 5 credits per call ($0.05) — confirm against your own usage. |
 | **Chat + Context** | **Variable**, token-based | Charged per input + output tokens, varies by model. The model selection (GPT-5.5 vs GPT-5 mini vs Claude Sonnet 4.6, etc.) is the biggest cost lever you control. |
 
-The per-model token rates published by Microsoft are denominated in credits per million tokens. Expected rates at GA, based on the broader Copilot Credits pricing ecosystem:
+The per-model token rates published by Microsoft are denominated in credits per million tokens. Expected rates at GA, based on the broader Copilot Credits pricing model:
 
 | Model | Input ($/1M tok) | Cached input | Output ($/1M tok) |
 |---|---|---|---|
@@ -621,10 +608,6 @@ The **new admin-centre cost dashboard** that launched with Work IQ is where this
 
 Work IQ is the *first* product managed through this dashboard — Copilot Studio and others migrate in over time. If you've ever wished M365 admin centre had real cost controls on Copilot consumption, this is the first version of that.
 
-<!-- screenshot needed [ADMIN]: admin centre Copilot Credits dashboard — overview tab — workiq-19-cost-overview.webp -->
-<!-- screenshot needed [ADMIN]: spending limit configuration screen — workiq-20-cost-spending-limit.webp -->
-<!-- post-GA pending: cost dashboard didn't exist until June 16; will be added once captured -->
-
 > _Cost dashboard screenshots will land here once Microsoft ships the new admin-centre Copilot Credits surface (post-GA day). The post is updated when they do._
 
 **Plain-English summary on cost:**
@@ -633,21 +616,17 @@ Work IQ is the *first* product managed through this dashboard — Copilot Studio
 - Heavy multi-turn agent loops on GPT-5.5 with a lot of tool calls can add up — that's where the spending-limit configuration earns its keep.
 - The honest planning posture: turn on PAYG with a per-user daily cap for the first two weeks, watch the dashboard, then formalise budgets.
 
-<!-- VOICE-REVIEW: cost section -->
-
 ## What Changes When This Lands — Outlook, Scout, Custom Apps
 
-Work IQ being a *foundation* — not a product end-users open — means the visible changes show up in other Microsoft surfaces over time.
+Work IQ being a *layer* — not a product end-users open — means the visible changes show up in other Microsoft surfaces over time.
 
 **Microsoft Scout** — the [first Autopilot agent Microsoft announced](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/) on 2 June 2026 — builds context powered by Work IQ over time. Per the Scout announcement, Scout *"builds context powered by Work IQ, learning how you work, what you care about, and what needs to happen next."* It's open-source-based (OpenClaw) and lives across Teams, Outlook, OneDrive, SharePoint. When you ask Scout to "block prep time for Thursday's customer meeting" or "flag any decisions that have been stalled for more than 5 days", what's happening underneath is Scout's reasoning loop calling Work IQ's Tools, Context, and Chat APIs in a sequence.
 
-**Custom apps built by partners and ISVs** — every agent platform that supports MCP can now point a tool config at the Work IQ MCP server and instantly gain semantic understanding of any user's M365 tenant. That includes Claude Desktop, every IDE with MCP support, custom agent frameworks like LangGraph and AutoGen, and any product anyone builds on top of MCP. The bar to integrate is lower than it's ever been — five lines of JSON config.
+**Custom apps built by partners and ISVs** — every agent platform that supports MCP can now point a tool config at the Work IQ MCP server and gain access to any user's M365 tenant in a structured way. That includes Claude Desktop, every IDE with MCP support, custom agent frameworks like LangGraph and AutoGen, and any product anyone builds on top of MCP. The bar to integrate is lower than it's ever been — five lines of JSON config.
 
-**Inside the M365 chrome itself** — Microsoft signals that more of Outlook's commitments tracking, Teams' decision-extraction, OneDrive's smart-folder behaviour will increasingly be backed by Work IQ as a shared substrate. You won't see Work IQ as a UI; you'll see Outlook quietly getting smarter about what you've committed to.
+**Inside the M365 chrome itself** — Microsoft signals that more of Outlook's commitments tracking, Teams' decision-extraction, OneDrive's smart-folder behaviour will increasingly be backed by Work IQ as a shared back-end. You won't see Work IQ as a UI; you'll see Outlook quietly getting smarter about what you've committed to.
 
-**What does NOT change** — Microsoft Graph is not deprecated. Work IQ is *the recommended foundation for new agentic applications*. For batch jobs, scheduled imports, app-only services, and existing automations that work — stay on Graph. The two coexist for the long haul.
-
-<!-- VOICE-REVIEW: what changes section -->
+**What does NOT change** — Microsoft Graph is not deprecated. Work IQ is *the recommended foundation for new agent applications*. For batch jobs, scheduled imports, app-only services, and existing automations that work — stay on Graph. The two coexist for the long haul.
 
 ## The Honest Limitations
 
@@ -658,8 +637,6 @@ In the spirit of *honest > charming*, here's what surprised me on Day 1.
 3. **The first call is slower than subsequent ones.** Semantic-index warmup matters. Build for the warm-path numbers, but flag the cold-path latency to users in any UX where the first query is "instant" expectations.
 4. **Agents need to be taught to use the resource-path style.** The shift from `sendMail`-as-tool to `do_action /me/sendMail`-as-resource-path is genuinely different. Your prompts and your agent system messages need updating. Don't expect a one-line swap to work out of the box.
 5. **REST is "coming soon" — A2A and MCP are GA today.** If your architecture wants plain HTTPS REST and can't use MCP or A2A, you're waiting. No date announced.
-
-<!-- VOICE-REVIEW: limitations section -->
 
 ## Where To Go Next
 
