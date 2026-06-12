@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 12 Jun 2026 15:35:51 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2026 18:18:43 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users are unable to access Microsoft 365 Copilot Chat or portal.office.com</title>
@@ -33,15 +33,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1387482</guid>
       <pubDate>Thu, 11 Jun 2026 15:28:27 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users may encounter an error when using the Microsoft 365 Copilot rewrite feature in classic Outlook</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1387205</link>
-      <description>[Exchange Online] Users may encounter an error when using the Copilot rewrite feature in classic Outlook.</description>
-      <category>Exchange Online</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">EX1387205</guid>
-      <pubDate>Thu, 11 Jun 2026 11:04:47 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] June 9 security update notes aren’t available on learn.microsoft.com for Microsoft 365 apps &amp; Office</title>
@@ -174,7 +165,7 @@
       <link>https://www.aguidetocloud.com/service-health/#EX1327187</link>
       <description>[Exchange Online] Users may have been unable to create new online meetings from shared calendar events in Exchange Online.</description>
       <category>Exchange Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">EX1327187</guid>
       <pubDate>Sat, 30 May 2026 09:11:59 +0000</pubDate>
     </item>
@@ -458,6 +449,15 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1307899</guid>
       <pubDate>Mon, 11 May 2026 23:05:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users may be unable to view free/busy status for Gmail users within the Exchange Online calendar</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1310533</link>
+      <description>[Exchange Online] Users may be unable to view free/busy status for Gmail users within the Exchange Online calendar.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1310533</guid>
+      <pubDate>Mon, 11 May 2026 07:01:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

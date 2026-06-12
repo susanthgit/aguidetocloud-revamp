@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-12T15:35:51.184142+00:00",
+  "generated_at": "2026-06-12T18:18:42.653040+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -33,9 +33,9 @@
       "short_name": "Exchange",
       "icon": "📧",
       "total_incidents": 13,
-      "active_incidents": 3,
-      "avg_duration_minutes": 14402,
-      "last_incident": "2026-06-11T11:04:47.993000+00:00",
+      "active_incidents": 2,
+      "avg_duration_minutes": 15792,
+      "last_incident": "2026-05-30T09:11:59.853000+00:00",
       "classifications": {
         "advisory": 11,
         "incident": 2
@@ -219,8 +219,8 @@
   "monthly": [
     {
       "month": "2026-06",
-      "incident_count": 18,
-      "services_affected": 5
+      "incident_count": 17,
+      "services_affected": 4
     },
     {
       "month": "2026-05",
@@ -229,7 +229,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 39,
+      "incident_count": 40,
       "services_affected": 12
     }
   ]
