@@ -58,9 +58,10 @@
       "fundamentals"       (dict "label" "★ Start here · M365 Copilot"  "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 99)
       "it-admins"          (dict "label" "★ Start here · IT Admins"     "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 99)
       "ai-agents"          (dict "label" "★ Start here · AI Agents"     "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 99)
+      "scout"              (dict "label" "★ Start here · Microsoft Scout" "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 99)
     }}
     {{/* Catch-all render order (Sush-specified — overrides alphabetical dict iteration) */}}
-    {{ $catchOrder := slice "whats-new" "prompt-engineering" "fundamentals" "it-admins" "ai-agents" }}
+    {{ $catchOrder := slice "scout" "whats-new" "prompt-engineering" "fundamentals" "it-admins" "ai-agents" }}
 
     {{/* Discover cluster IDs present in this listing */}}
     {{ $clusterIds := slice }}
@@ -95,6 +96,15 @@
     <div class="zt-blog-list zt-blog-list--river" id="blog-list">
       {{ $standaloneCount := 0 }}
       {{ $renderedClusters := slice }}
+
+      {{/* Pinned: explicitly render the Scout cluster card FIRST regardless of date (Sush-pinned). */}}
+      {{ $scoutCluster := index $clusters "scout" }}
+      {{ if $scoutCluster }}
+        {{ $scoutMeta := index $clusterMeta "scout" }}
+        {{ partial "blog-cluster-card.html" (dict "hub" $scoutCluster.hub "spokes" $scoutCluster.spokes "meta" $scoutMeta) }}
+        {{ $renderedClusters = $renderedClusters | append "scout" }}
+      {{ end }}
+
       {{ range .Pages.ByDate.Reverse }}
         {{ $cid := .Params.hub_id }}
         {{ $renderAs := "standalone" }}
