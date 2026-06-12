@@ -2,7 +2,7 @@
 title: "Microsoft Scout — MCP Servers & Custom Skills"
 description: "Add MCP servers and author custom SKILL.md skills for Microsoft Scout — bundled servers, runtime patterns, OAuth, markdown-not-code authoring."
 date: 2026-06-12
-lastmod: 2026-06-12
+lastmod: 2026-06-13
 draft: false
 card_tag: "Scout"
 tag_class: "ai"
@@ -114,7 +114,9 @@ Each MCP server has its own permission scope. Scout asks for your approval befor
 
 For tightening MCP permissions org-wide, see the [secure-config spoke rows 6, 7, 8](/blog/microsoft-scout-secure-configuration-25-settings/).
 
-<!-- 📸 Screenshot 65 — MCP OAuth consent dialog (placeholder) -->
+<!-- Shot 65 (MCP OAuth consent dialog) deferred — requires adding a remote OAuth MCP, captured in a future Phase B+ revision -->
+
+The OAuth consent dialog that appears for HTTP MCPs at first-connect is shown in the [secure-config spoke row 8](/blog/microsoft-scout-secure-configuration-25-settings/) discussion — capture pending in a future revision of this post.
 
 ---
 

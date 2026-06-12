@@ -2,7 +2,7 @@
 title: "Microsoft Scout — All 7 Bundled Skills Explained"
 description: "Microsoft Scout ships seven bundled skills — docx, xlsx, pptx, Loop, web artifacts, Excalidraw, expense report. What each does and when Scout uses it."
 date: 2026-06-12
-lastmod: 2026-06-12
+lastmod: 2026-06-13
 draft: false
 card_tag: "Scout"
 tag_class: "ai"
@@ -59,7 +59,155 @@ Skills in Scout are markdown files (one folder per skill, with a `SKILL.md` and 
 
 You can also add your own custom skills by dropping a `SKILL.md` into your skills directory (Scout reads from `~/.copilot/skills/` — the same folder Copilot CLI uses, which is why some of my skills carry across from my Clawpilot days). More on authoring skills in the [MCP & custom skills spoke](/blog/microsoft-scout-mcp-servers-and-custom-skills/).
 
-<!-- 📸 Screenshots 30-36 — one shot per skill in action (placeholders to capture in Scout) -->
+<!-- Skills in action gallery with copyable prompts — Phase B 2026-06-12 -->
+
+## Skills in action — see them work, copy the prompts
+
+The seven bundled skills above aren't theoretical — they fire when the language model picks them based on what you ask. Here's six of them in action below (the seventh, `web-artifacts-builder`, was the cost dashboard at the top of this post — same pattern, different output type). **Every prompt is copy-paste ready** and uses fake numbers so you can re-run them safely in any tenant for customer demos or pilots.
+
+### `docx` — draft a Word memo from one prompt
+
+<p><img src="/images/blog/scout-complete-guide/30-scout-skill-docx-running.png" alt="Microsoft Scout's chat panel in dark mode. A user prompt at the top reads 'Draft a one-page Microsoft Word memo titled Cloud Cost Optimization — Field Notes for FY26'. Scout's expanded chain-of-thought shows 'Thought for 14s' and the model deciding 'I'll build the memo with docx-js and save it to Downloads. Let me check prerequisites and then generate.' A 'Used 1 tool' line is followed by a second thought 'Now I'm setting up the memo structure' and 'Used 1 tool · Running powershell' with the reply 'Good — docx@9.6.1 is installed. Building the memo now.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Scout names the `docx` skill and the underlying library (`docx-js` / `docx@9.6.1`) right inside its chain-of-thought. The model picks the skill from the SKILL.md description; you don't call it by name.*
+
+**Prompt to try it yourself** *(copy-paste — works in any Scout install):*
+
+```text
+Draft a one-page Microsoft Word memo titled "Cloud Cost Optimization — Field Notes for FY26".
+Use fake numbers throughout. Sections: Executive Summary, Top 3 Wasteful Patterns, 3 Quick Wins, Next 30-Day Plan.
+Save to my Downloads folder as cloud-cost-fy26-memo.docx.
+```
+
+<p><img src="/images/blog/scout-complete-guide/30b-scout-skill-docx-word-output.png" alt="The generated Microsoft Word document opened, showing a fully formatted memo. Title in navy serif 'Cloud Cost Optimization — Field Notes for FY26', subtitle 'Internal memo • Cloud Platform Practice', header rows for To (FY26 Cloud Steering Committee), From (Sush — Cloud Platform Practice), Date (12 June 2026), and Re (Field-tested patterns for trimming FY26 cloud run-rate). The Executive Summary references illustrative figures 4.2M run-rate, 680K recoverable, 240K in 90 days. Top 3 Wasteful Patterns numbered list visible: Always-on dev/test 210K per year, Hot-tier storage for cold workloads 185K per year, Missed reservation coverage 165K per year." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*What Scout produced in one prompt — a real `.docx` with a proper header, section structure, and numbered lists. All figures are illustrative per the prompt instruction. Saved straight to your Downloads folder, ready to refine.*
+
+### `xlsx` — build a real `.xlsx` with live formulas
+
+<p><img src="/images/blog/scout-complete-guide/31b-scout-skill-xlsx-running.png" alt="Microsoft Scout's chain-of-thought panel showing Scout deciding 'I need to use the xlsx skill to create the workbook since that's a required first step. I'm planning to create an Excel workbook with training budget data organized by quarter, including columns for course type, attendees, cost per seat, and totals, plus a summary sheet with quarterly subtotals and a bar chart visualization.' A 'Used 1 tool · Running skill' line is shown below." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Scout names the skill explicitly — *"I need to use the xlsx skill"* — before doing anything. That's the routing logic working out loud.*
+
+**Prompt to try it yourself:**
+
+```text
+Create an Excel workbook called fy26-training-budget.xlsx in my Downloads folder.
+Track team training spend across 4 quarters with these columns: Quarter, Course Type, Attendees, Cost per Seat, Total.
+Use fake numbers. Add a SUM total row, a quarterly subtotal column with SUMIF, and a quarterly bar chart sheet.
+```
+
+<p><img src="/images/blog/scout-complete-guide/31c-scout-skill-xlsx-excel-output.png" alt="The generated Microsoft Excel workbook open in the Excel app. Title cell 'FY26 Team Training Budget' merged across the top, headers Quarter, Course Type, Attendees, Cost per Seat, Total, Quarterly Subtotal. Twelve fake data rows covering Q1 through Q4 FY26 with public Microsoft course names like AZ-900, AI-900 Bootcamp, Power Platform Workshop, Security Copilot Workshop, Copilot Studio Deep Dive, Azure DevOps Certification, AI Engineer Cert AI-102, Data Analytics Bootcamp, Power BI Advanced. The bottom TOTAL row shows All Quarters 71 attendees 71,455 dollars. The Quarterly Subtotal column shows live SUMIF results 11,080 / 16,300 / 23,975 / 20,100. The Excel formula bar at the top is showing the A1 cell content." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The workbook with live `SUMIF` formulas in the Quarterly Subtotal column, an additive `SUM` total of $71,455 across 12 fake training lines. Course names are public Microsoft titles; the numbers are made-up. Bar-chart sheet is a separate tab.*
+
+### `pptx` — slide deck from one prompt
+
+<p><img src="/images/blog/scout-complete-guide/32-scout-skill-pptx-running.png" alt="Microsoft Scout's chain-of-thought showing 'Thought for 6s' and the reasoning 'I'll use the pptx skill to create the PowerPoint presentation for the user. I'll use pptxgenjs to build a clean Microsoft-style presentation with' (text truncated). A 'Used 1 tool · Running skill' line below." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Scout names both the SKILL (`pptx`) and the underlying library (`pptxgenjs`). Same routing pattern as docx and xlsx.*
+
+**Prompt to try it yourself:**
+
+```text
+Create a 5-slide PowerPoint deck called fy26-q1-cloud-review.pptx in my Downloads folder.
+Title slide: "FY26 Q1 Cloud Practice — Field Review".
+Slides: 1) Executive Summary, 2) ACR Trend (small bar chart with fake quarterly numbers),
+3) Top 3 Wins, 4) Top 3 Risks, 5) FY26 Q2 Focus Areas.
+Use a clean Microsoft-style design with consistent header style.
+```
+
+<p><img src="/images/blog/scout-complete-guide/32b-scout-skill-pptx-output.png" alt="A vertical strip showing all six slides Scout produced. Title slide in dark navy 'FY26 Q1 Cloud Practice / Field Review' with subtitle 'Quarter-close read on ACR, wins, risks and where we double down next'. Slide 2 Executive Summary with four KPI tiles (5.8M Quarterly ACR, 3 Net New MACC, 11 Workshops Shipped, 72% Deployment Health) and a Quarter at a glance bullet list. Slide 3 ACR Trend Trailing 4 Quarters with a bar chart Azure Consumed Revenue showing fake quarterly numbers. Slide 4 Top 3 Wins with three columns Account A Datacenter Exit 1.2M Migration, Account B AI Foundry Expansion 850K, Account C Sentinel SecOps Rollout 640K Security. Slide 5 Top 3 Risks with HIGH HIGH MED tags. Slide 6 FY26 Q2 Focus Areas as a four-box grid. The title slide footer where the author name and role were displayed is solid blocked with the label author role redacted." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*A full six-slide deck with proper Microsoft-style design, KPI tiles, a bar chart, multi-column layouts, and a risk grid — from one prompt. (The title-slide author footer is redacted because this preview run used my own name; you'd get your own.)*
+
+### `loop` — careful keyboard, no API needed
+
+The `loop` skill is fundamentally different from the file-manipulating skills above. Microsoft Loop has no public API, so the SKILL.md body is literally a Playwright recipe — *Navigate to loop.microsoft.com, click "Create new" → "Page", click the title area and type…* The language model follows those steps as a careful keyboard.
+
+<p><img src="/images/blog/scout-complete-guide/33-scout-skill-loop-running.png" alt="Microsoft Scout's chain-of-thought showing it sign in to Loop, inspect six workspaces, and refuse to guess. Reasoning text reads 'I'm signed in but don't see a workspace explicitly named My workspace — Sush has 6 workspaces, with Ideas and Copilot looking like personal ones (no shared members shown). Let me ask which to use rather than guess.' Followed by 'Sush — none of your Loop workspaces is named My workspace. You have:' (text truncated)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*This is the *"careful keyboard"* pattern at work. Scout signs in, inspects the workspace tree, infers which spaces are personal vs shared, and **asks before guessing**. That's not a bolt-on guardrail — it's literally instructed in the SKILL.md body.*
+
+**Prompt to try it yourself:**
+
+```text
+Create a Loop component in my personal Loop workspace.
+Title: "Cloud Practice Q1 Field Review — checklist".
+Add a checklist with these items: Review FY26 ACR trend / Confirm top 3 wins / Triage top 3 risks / Lock Q2 focus areas / Send memo to steering committee.
+Add a heading "Owner & timeline" with one line: "Owner: Cloud Practice Lead · Due: end of Q1 review week".
+```
+
+<p><img src="/images/blog/scout-complete-guide/33b-scout-skill-loop-output.png" alt="A Microsoft Loop page rendered in the browser, titled 'Cloud Practice Q1 Field Review — checklist' inside a General channel. The page shows a 5-item open-circle checklist: Review FY26 ACR trend, Confirm top 3 wins, Triage top 3 risks, Lock Q2 focus areas, Send memo to steering committee. The user avatar in the top header has been replaced with a generic outlined circle labelled user (the original profile photo was redacted)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The Loop page Scout drove the browser to create, with the exact checklist you asked for. Behind that single image: open browser → wait for auth → navigate the workspace tree → click Create → type title → add checklist items one by one — every click is the language model following the SKILL.md recipe.*
+
+### `excalidraw` — generate a diagram
+
+<p><img src="/images/blog/scout-complete-guide/34-scout-skill-excalidraw-running.png" alt="Microsoft Scout's chain-of-thought showing 'Thought for 5s' and the reasoning 'I'll use the excalidraw skill to create the diagram for the user. I'm planning out the Excalidraw diagram structure with the user at the top, Microsoft Scout as the central hub, and four connected components branching out: Work IQ MCP and Playwright MCP on the right side, plus the bundled skills and another component on the left.' A 'Used 1 tool · Running skill' line below." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Scout reasons through the layout before generating, then fires the `excalidraw` skill to produce the `.excalidraw` JSON file.*
+
+**Prompt to try it yourself:**
+
+```text
+Create an Excalidraw diagram saved as scout-architecture.excalidraw in my Downloads folder,
+showing Microsoft Scout's high-level architecture:
+- a 'User' box at the top with an arrow pointing down to a central 'Microsoft Scout' box
+- 'Microsoft Scout' connects with arrows to four surrounding boxes:
+  'Work IQ MCP' (right), 'Playwright MCP' (bottom-right), '7 Bundled Skills' (bottom-left), 'Shell + Local Files' (left)
+Use simple sketched boxes and arrows. Microsoft-friendly colors.
+```
+
+<p><img src="/images/blog/scout-complete-guide/34b-scout-skill-excalidraw-diagram.png" alt="The Excalidraw web app showing the rendered diagram in Excalidraw's signature hand-sketched style. Title 'Microsoft Scout — High-Level Architecture' at the top. A User box at top centre connected by a downward arrow to a central light-blue dashed-border Microsoft Scout box. Four colored boxes are connected to the central Scout box via arrows: Shell + Local Files in grey on the left, Work IQ MCP in purple on the right, 7 Bundled Skills in orange on the bottom-left, and Playwright MCP in green on the bottom-right." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Open the saved `.excalidraw` file at [aka.ms/excalidraw](https://aka.ms/excalidraw) (Microsoft's hosted Excalidraw) and the diagram renders in the hand-sketched style. From here you can re-arrange boxes, change colors, or export to PNG/SVG.*
+
+### `expense-report` — sophisticated plan with safety rails
+
+The `expense-report` skill is the most enterprise-shaped of the bundle — AMEX matching, hotel itemisation, the principle that **the user always submits themselves**. To safely show it off without firing into a real MyExpense tenant, ask Scout to *describe* the plan rather than execute it.
+
+<p><img src="/images/blog/scout-complete-guide/35b-scout-skill-expense-plan.png" alt="Microsoft Scout's response panel showing a 9-row deterministic plan table. The columns are #, Phase, What happens. Rows: 1 Collect and parse receipt for 90 NZD and the invoice date. 2 Pattern check looking at prior internet expense reports. 3 Open new report dialog clicking +New expense report but not creating yet. 4 with a red marker Preview and confirm waiting for the user's OK. 5 Create draft setting Include open expenses to Add none. 6 AMEX match trying to match 90 dollars against an existing unattached AMEX line first. 7 Attach receipt in one pass with no separate attachment round. 8 Final verification confirming no red icons, receipt count equals line count, NZD plus country equals NZ. 9 Stop and hand back, telling the user it's ready, with the emphasised line 'I never click Submit.' Below the table is a separate section 'How AMEX matching works (the interesting part)' with a 3-row table showing Primary deterministic, Secondary proximity, and No match passes." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Nine phases. Two-pass AMEX matching logic. **"I never click Submit."** That's not bolt-on safety — it's how the SKILL.md is engineered.*
+
+**Prompt to try it yourself** *(safe for any tenant — Scout describes, doesn't execute):*
+
+```text
+I have a home-office internet reimbursement for June 2026 ($90 NZD).
+DON'T open MyExpense or submit anything — just describe the steps you'd take,
+which skill you'd use, and how AMEX matching works. Show me your plan.
+```
+
+<p><img src="/images/blog/scout-complete-guide/35c-scout-skill-expense-disclaimer.png" alt="A 'What I will NOT do' bold heading followed by a 5-bullet red-X list: Open MyExpense per your instruction today, Submit the report (ever — skill principle), Mark anything as Personal Expense, Change payment method, Use a non-default URL. The closing line reads 'Ready when you are — just say go and point me at the receipt.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Scout's own "what I will NOT do" list — five hard limits, in plain language. The `Submit the report (ever — skill principle)` line is the one to point at when a security reviewer asks how human-in-the-loop is enforced.*
+
+---
+
+## Skills compose — Scout chains them automatically
+
+Skills don't just fire in isolation. When a prompt spans multiple skills, Scout plans the chain and routes through each one in sequence — without you having to call them by name.
+
+<p><img src="/images/blog/scout-complete-guide/36-scout-skill-chain-planning.png" alt="Microsoft Scout's planning panel showing 'Thought for 19s' and detailed reasoning about reading the FY26 training budget spreadsheet, identifying the top three spending categories, then creating a Word document with budget reallocation recommendations for FY27. Below the reasoning, a 'Running tools...' section shows 6 sequential tool fires stacked: Running skill, Running skill, Running powershell, Running powershell, Running powershell, Running powershell." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Six sequential tool fires queued in one chain — two skills (`xlsx` to read the budget, `docx` to write the memo) plus four `powershell` calls for the file plumbing in between. All from one prompt.*
+
+**Prompt to try it yourself** *(re-uses the xlsx file from the earlier xlsx demo — make sure it's still in Downloads):*
+
+```text
+Take fy26-training-budget.xlsx from my Downloads.
+Summarize the top 3 spending categories, then write a one-page Word memo
+called fy27-training-budget-recommendations.docx recommending budget reallocations
+for FY27 based on what's expensive vs strategically important.
+Save the memo to my Downloads.
+```
+
+<p><img src="/images/blog/scout-complete-guide/36b-scout-skill-chain-analysis.png" alt="Microsoft Scout's mid-chain response showing 'Thought for 108s' and 'Used 2 tools'. Scout reports 'Got the data. Now analyzing and building the memo.' The key finding is highlighted: 'Top 3 by course spend: Architecting Azure (11k) · AI-102 (10.8k) · Data Analytics Bootcamp (8.8k) = 43% of 71,455 total.' Then 'Let me set up the memo build.' Below another thought 'Thought for 8s' with reasoning about memo structure and 'Now I'll write a Node script that generates the DOCX file and saves it to the Downloads folder, then validate the output.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Mid-chain Scout has read the workbook, computed the top-3 spending categories ($30,575 = 43% of $71,455), and is about to compose the memo. The continuity is automatic — Scout knows the `.xlsx` lives in Downloads because the earlier step put it there.*
+
+That's seven skills, one chain, one memo on the other side. The cost dashboard at the top of this post and the diagrams above all came out of this same routing pattern.
 
 ### How I actually use these — lived examples
 
@@ -83,7 +231,7 @@ Scout ships with two MCP (Model Context Protocol) servers bundled at install tim
 
 You can add your own MCP servers through Scout's settings — bring in third-party MCPs from the catalog, install local stdio MCPs, or wire up remote HTTP MCPs with OAuth. Covered in the [MCP & custom skills spoke](/blog/microsoft-scout-mcp-servers-and-custom-skills/).
 
-<!-- 📸 Screenshot 37 — Scout's MCP servers list showing the two bundled servers (placeholder) -->
+<!-- Shot 37 already wired in the MCP & Custom Skills spoke (canonical location) — no duplicate here -->
 
 The MCP servers panel itself lives inside Scout's Extensions menu and there's a per-server permission controller deeper in Settings → Manage Permissions. The full walkthrough — with the Extensions UI screenshots and the per-MCP toggle pattern — is in the [MCP servers spoke](/blog/microsoft-scout-mcp-servers-and-custom-skills/#where-mcp-servers-live-in-scouts-ui-a-visual-walkthrough).
 
@@ -102,7 +250,21 @@ There's a third file in the install, `playwright-init-egress-block.js`, that add
 
 Full coverage of the egress policy and the rest of the secure-config surface is in the [secure-config spoke](/blog/microsoft-scout-secure-configuration-25-settings/).
 
-<!-- 📸 Screenshot 38 — Scout driving the browser via Playwright (placeholder) -->
+<p><img src="/images/blog/scout-complete-guide/38-scout-skill-playwright-running.png" alt="Microsoft Scout's chain-of-thought panel showing it attempt to launch Playwright but hit a conflict. The reasoning text reads 'The Edge browser is already running with the same user data directory, which is blocking Playwright from launching a new instance. I'll retry the launch since sometimes it resolves after a moment, but if it persists, I can fall back to fetching the page directly through web_fetch or curl to still get the blog titles without needing the actual browser session.' Below is a 'Used 1 tool' line and 'Navigating to https://www.aguidetocloud.com/blog/'." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Scout hits a real-world Playwright conflict (Edge already running with the same user-data dir), and instead of dying, it reasons out a fallback — `web_fetch` or `curl` to still complete the task. That graceful-degradation pattern is wired into the Playwright skill's instructions, not bolted on.*
+
+**Prompt to try it yourself** *(targets a public URL — safe in any tenant):*
+
+```text
+Open https://www.aguidetocloud.com/blog/ in a browser using Playwright.
+Capture the first 3 visible blog post titles from the top of the page.
+Tell me which one was published most recently and what cluster it belongs to.
+```
+
+<p><img src="/images/blog/scout-complete-guide/38b-scout-skill-playwright-blog-titles.png" alt="Microsoft Scout's response with a heading 'Top 3 visible blog post titles (in render order)' followed by a 4-column table with columns #, Title, Stamp on listing, Cluster, article:published_time. Row 1 is 'Scout: Complete Guide (hub)' tagged Jun 2026 with 27 min read time, identified as 'Microsoft Scout (hub of a 6-post cluster — banner Start here Microsoft Scout sits directly above it; 5 spoke links below for Admin install, Bundled skills, Automations/memory, MCP servers, Secure configuration)' with published time 2026-06-12. Row 2 is 'Microsoft Work IQ API — The Complete Guide' tagged Jun 2026 33 min, identified as Work IQ standalone post, published 2026-06-16. Row 3 is 'Agent 365 Security — The Complete Guide (Entra, Purview, Defender)' tagged Apr 2026 23 min, identified as AI Agents 3-post category, published 2026-04-30." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Scout navigated the page, scraped the visible posts, parsed the cluster mechanics ("hub of a 6-post cluster · banner 'Start here · Microsoft Scout'"), and identified the most-recent post by `article:published_time` metadata. Meta-loop: Scout reading the blog about Scout 🦞.*
 
 ---
 

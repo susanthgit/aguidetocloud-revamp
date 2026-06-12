@@ -2,7 +2,7 @@
 title: "Microsoft Scout — The Complete Guide"
 description: "What Microsoft Scout is, how it differs from Copilot, how to install through the Frontier preview program, and where to go deeper on secure configuration."
 date: 2026-06-12
-lastmod: 2026-06-12
+lastmod: 2026-06-13
 draft: false
 hub_id: "scout"
 hub: true
@@ -528,6 +528,7 @@ If you're an end user whose admin has already done the gating work, your checkli
 
 A living changelog. Updated every time Microsoft ships, or I find something worth flagging.
 
+- **13 June 2026 (v0.3)** — Phase B screenshot expansion. Added 13 new screenshots across the spokes: live demos of all 7 bundled skills with **copy-paste prompts** in code blocks for customer demos and pilots (`docx`, `xlsx`, `pptx`, `loop`, `excalidraw`, `expense-report`, plus a cross-skill chain and a Playwright browser demo). Added the Microsoft Forms attestation page (welcome terms + form fields) to the admin-install spoke so admins can see exactly what they're accepting. Added Privacy & Data section and the Allow/Deny permission card to the secure-config spoke under "What the most-asked-about UI rows actually look like." A handful of Phase B captures (fresh-install wizard, CDX-Intune walkthrough, GitHub Copilot license assignment screen) are still pending a clean-machine capture session — they'll land in v0.4.
 - **12 June 2026 (v0.2)** — Pivoted to hub-and-spoke architecture. Hub trimmed to ~5k words covering identity, vs-Copilot positioning, pricing/access, and honest take. Five new spokes published: [Admin Install & Frontier Setup](/blog/microsoft-scout-admin-install-frontier-enrollment/) · [All 7 Bundled Skills Explained](/blog/microsoft-scout-bundled-skills-and-features/) · [Secure Configuration Guide](/blog/microsoft-scout-secure-configuration-25-settings/) · [MCP Servers & Custom Skills](/blog/microsoft-scout-mcp-servers-and-custom-skills/) · [Automations, Memory, Heartbeats](/blog/microsoft-scout-automations-memory-heartbeats/). Each spoke is independently bookmarkable and SEO-targeted.
 - **12 June 2026 (v0.1)** — First publish. Covers Scout `0.23.0.20260608.1` and the Frontier program access model as documented at Microsoft Build 2026.
 

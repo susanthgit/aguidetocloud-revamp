@@ -2,7 +2,7 @@
 title: "Microsoft Scout — Admin Install & Frontier Setup"
 description: "Step-by-step admin install for Microsoft Scout: Frontier enrollment in the Microsoft 365 admin center, Intune policy, attestation, GitHub Copilot license."
 date: 2026-06-12
-lastmod: 2026-06-12
+lastmod: 2026-06-13
 draft: false
 card_tag: "Scout"
 tag_class: "ai"
@@ -139,7 +139,13 @@ Because Microsoft Scout can route data outside Microsoft 365 to third-party infe
 
 The attestation lives in a Microsoft Forms-based [M365 Admin Frontier organisation sign-up form](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyKGkCGRU0tBnsDASQkbqxJUOUROWUI4SFc5MFI5TTZJSU5MWExFRDZDMC4u). Open it as a tenant admin and walk through the questions. Microsoft links to this form from the [official admin-access overview](https://learn.microsoft.com/en-us/microsoft-scout/admin-access-overview).
 
-<!-- 📸 Screenshot 20 placeholder — Microsoft Forms attestation page (coming in a future revision) -->
+<p><img src="/images/blog/scout-complete-guide/20-scout-frontier-attestation-terms.png" alt="The Microsoft Forms attestation page titled 'M365 Admin - Microsoft Scout Sign-up Form for Your Organization — via the Frontier program'. The welcome paragraph reads 'Welcome to the early access preview of Microsoft Scout. Microsoft Scout is an optional desktop app that allows end users to delegate work. The AI app can reason over Microsoft 365 data, local files, and web browser, and can take actions on users' behalf...' Below the welcome is a bulleted terms list starting with 'By clicking Accept, you agree on behalf of your organization that:' and includes 9 bullets covering: Preview status under Microsoft Product Terms and DPA, Processing via GitHub Copilot (governed by GitHub Customer Agreement, not the M365 DPA — M365 data residency and DLP do not apply), Autonomous execution mode (Scout can take actions without per-step approval if configured), Sensitivity labels (Scout displays existing labels but doesn't apply new ones), Data residency (EU Data Boundary does NOT apply during Preview), Microsoft Scout configuration session and memory data (stored in user's OneDrive, covered by Purview/DPA), Diagnostic and telemetry data, and Work IQ CLI (signals from M365 may flow to GitHub Copilot)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The attestation isn't just a tick-box — it's a 9-point organisational commitment that names every concession your tenant is making during the Preview. Worth reading carefully: **EU Data Boundary doesn't apply**, **sensitivity labels are read but not applied**, **GitHub Copilot processes Scout prompts under the GitHub Customer Agreement** (not your M365 DPA), and **automation configurations are your responsibility, not Microsoft's**. If any of those is a non-starter for your tenant, you've found your blocker before Scout is even installed.*
+
+<p><img src="/images/blog/scout-complete-guide/20b-scout-frontier-attestation-form-fields.png" alt="The Microsoft Forms attestation page lower portion showing the actual form input fields. A note says 'When you submit this form, it will not automatically collect your details like name and email address unless you provide it yourself.' Three required questions are visible: Question 1 'I have read and accept the terms above on behalf of my organization' with a single Accept radio button. Question 2 'Name of organization' with an empty text input. Question 3 'Tenant ID' with the hint 'You can find your Tenant ID in the Azure portal under Azure Active Directory' and an empty text input. A teal Submit button sits at the bottom." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Three required fields after the terms: **Accept** radio, **Name of organization**, and **Tenant ID**. The Tenant ID hint tells you to look it up in the Azure portal under Azure Active Directory — that's the GUID your tenant is identified by; it'll be the same one your Intune policy targets. The form doesn't collect your name or email unless you choose to add them.*
 
 ### Gate 2.3 — Provision GitHub Copilot licenses
 

@@ -2,7 +2,7 @@
 title: "Microsoft Scout — Secure Configuration Guide"
 description: "Every Scout setting that matters — default, recommended value, and why. The secure-config reference for IT admins running Scout in Frontier preview."
 date: 2026-06-12
-lastmod: 2026-06-12
+lastmod: 2026-06-13
 draft: false
 card_tag: "Scout"
 tag_class: "ai"
@@ -79,7 +79,7 @@ If your situation doesn't match any of the three, the full table below is the lo
 | # | Setting | Where to change | Microsoft default | Sush's recommendation | Why |
 |---|---|---|---|---|---|
 | 1 | **Telemetry region** | Scout argv `--telemetry-region=` OR auto-detect | Auto | Pin to your data-residency region (e.g. `EU`) | Some EU tenants prefer the strongest possible region pin even when auto-detect already lands them in the right place. |
-| 2 | **Usage telemetry** | Scout Settings → Privacy | On | Off in regulated tenants | Default usage telemetry is anonymised and helps Microsoft improve the product. Off makes sense only when your tenant's data classification can't tolerate any outbound product analytics. |
+| 2 | **Usage telemetry** | Scout Settings → Privacy → Enable collecting telemetry | On | Off in regulated tenants | The actual UI label is "Enable collecting telemetry" and Scout's own description confirms "No conversation content is collected" — only session/feature usage events. Off makes sense only when your tenant's data classification can't tolerate any outbound product analytics. Changes take effect after restarting Scout. |
 | 3 | **Crash reporting** | Scout Settings → Privacy | On | On in most cases; off only if your incident-response playbook requires it | Crash reports help Microsoft fix the bugs that hit you. Most tenants keep it on. Off is a regulated-tenant decision. |
 | 4 | **Memory cloud sync** | Scout Settings → Memory | On | Keep on for most users; consider local-only for handlers of highly sensitive data | Cloud sync is what lets Scout build context across devices over time. The trade-off is that memory entries (which may include excerpts of your prompts) travel through Microsoft cloud services. Most users want the sync; a small minority of high-sensitivity users prefer the local-only mode. |
 | 5 | **Memory export** | Scout Settings → Memory | Allowed | Disabled in tenants where users could exfiltrate sensitive memory content | Memory export is a useful feature for backing up your Scout history. In a high-trust tenant, leave it on. In a low-trust scenario (e.g. contractors), disable to remove an exfiltration path. |
@@ -109,7 +109,25 @@ If your situation doesn't match any of the three, the full table below is the lo
 | 29 | **Data retention — auto-delete sessions** | Scout Settings → Data Retention → Auto-delete sessions after | Never | Align to your retention policy (30 / 60 / 90 days are common picks) | Default keeps full conversation history forever; regulated tenants need this to match their existing data-retention rules. |
 | 30 | **Default workspace location** | Scout Settings → Workspaces → Default file location | OneDrive-for-Business path under your account | Override per user if they handle classified data outside the default workspace | Workspace scope drives the file-access permissions — the right location is the difference between "Scout can only touch this folder" and "Scout can wander your whole disk." Pair with row 23 `RestrictToWorkspace` ADMX for enforcement. |
 
-<!-- 📸 Screenshots 40-59 — one screenshot per UI-accessible row in the table above (placeholders to capture in Scout) -->
+<!-- Per-row UI screenshots for the most-asked-about rows — Phase B 2026-06-12 -->
+
+---
+
+## What the most-asked-about UI rows actually look like
+
+Two of the rows in the table above generate the most "what does this actually look like?" questions in IT-team Slack threads. Here they are, captured from a live install — these are the screenshots you'll point at when a colleague needs to see the UI before they're comfortable approving a setting.
+
+### Row 2 — Privacy & Data section (Enable collecting telemetry)
+
+<p><img src="/images/blog/scout-complete-guide/40-02-scout-settings-privacy-data.png" alt="A tight crop of Microsoft Scout's Settings page showing the 'PRIVACY & DATA' section. The descriptive text reads 'Microsoft Scout collects operational data (such as session and feature usage events) to help improve quality and performance. No conversation content is collected.' with a link 'Microsoft Privacy Statement' next to it. Below is the 'Enable collecting telemetry' toggle (currently switched on) and a sub-line 'Changes take effect after restarting Microsoft Scout.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The Privacy & Data panel as it ships. Two facts worth quoting verbatim to a security reviewer: **"No conversation content is collected"** (only session/feature usage events) and **"Changes take effect after restarting Microsoft Scout"** (you need to restart the app for the toggle to actually apply, not just close-and-reopen the Settings pane).*
+
+### Row 28 — the permission card non-workspace file writes hit
+
+<p><img src="/images/blog/scout-complete-guide/34c-scout-permission-card-allow-deny.png" alt="A Microsoft Scout permission card titled 'Save File · file edit · Create file'. A code block shows the file path that triggered the prompt: File: C:\Users\&lt;user&gt;\Downloads\scout-architecture.excalidraw. The body text reads 'This is outside your workspace. Always allow grants Microsoft Scout write access to everything in this folder: C:\Users\&lt;user&gt;\Do...' Four action buttons across the bottom: Allow (highlighted), Allow for session, Allow everywhere, Deny." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The card that surfaces every time Scout wants to touch a file **outside** the configured workspace. Four buttons: **Allow** (one-shot), **Allow for session** (until Scout restarts), **Allow everywhere** (permanent — Scout writes a new auto-approve rule), **Deny** (one-shot block). The combination of this card + ADMX `RestrictToWorkspace` (row 23) + ADMX `ForcePrompt` (row 24) is your three-layer file-system control surface. Username redacted in the screenshot — your install will show your actual path.*
 
 ---
 
