@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Jun 2026 23:51:45 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2026 04:59:36 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users are unable to access Microsoft 365 Copilot Chat or portal.office.com</title>
@@ -216,11 +216,10 @@ Ba</description>
       <pubDate>Fri, 29 May 2026 17:25:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Azure] Azure incident affecting West US 2</title>
+      <title>[Azure] Azure incident affecting Australia East, Sweden Central, West US 2</title>
       <link>https://www.aguidetocloud.com/service-health/#AZ-GHRP-84G</link>
-      <description>[Azure] Between 09:39 UTC and 17:05 UTC on 29 May 2026, a platform issue resulted in impact to the Azure OpenAI service across multiple regions. Customers may have experienced degraded service health where requests intermittently failed, returned HTTP 5XX errors, or experienced increased latency.
-What do we know so far?
-We detected this issue through our automated monitoring systems after observing a drop in call success rates. Our investigation found that a backend service upon which Azure OpenAI depen</description>
+      <description>[Azure] Between 09:39 UTC and 17:05 UTC on 29 May 2026, customers using the Azure OpenAI Service may have experienced increased latency, intermittent request failures, timeouts, and/or HTTP 5XX errors when submitting inference requests. The impact was more pronounced in regions in Europe and Australia East that were directly processing the highest levels of affected traffic.
+The incident was triggered by an upstream change that altered how certain capacity-related failures were surfaced, which led to a </description>
       <category>Azure</category>
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">AZ-GHRP-84G</guid>
