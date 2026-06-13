@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 13 Jun 2026 19:51:49 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2026 21:35:51 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users may not see accurate usage data for Copilot Chat in usage reports within the admin center</title>
@@ -105,6 +105,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1332784</guid>
       <pubDate>Tue, 02 Jun 2026 13:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users may not see accurate usage data for Microsoft 365 Copilot Chat in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1390285</link>
+      <description>[Microsoft 365 Copilot Chat] Users may not see accurate usage data for Copilot Chat in usage reports within the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CW1390285</guid>
+      <pubDate>Tue, 02 Jun 2026 10:05:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may intermittently be unable to complete Microsoft 365 Copilot requests or receive responses</title>
@@ -449,15 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceDegradation</category>
       <guid isPermaLink="false">EX1310533</guid>
       <pubDate>Mon, 11 May 2026 07:01:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Admins' Copilot usage and chat report data may be delayed from appearing in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1307847</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins' Copilot usage and chat report data may have been delayed from appearing in the Microsoft 365 admin center.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1307847</guid>
-      <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
