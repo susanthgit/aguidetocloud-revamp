@@ -5,14 +5,14 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 13 Jun 2026 21:35:51 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2026 23:19:48 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users may not see accurate usage data for Copilot Chat in usage reports within the admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1388943</link>
       <description>[Microsoft 365 suite] Users may not see accurate usage data for Copilot Chat in usage reports within the admin center.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>falsePositive</category>
       <guid isPermaLink="false">MO1388943</guid>
       <pubDate>Fri, 12 Jun 2026 20:43:26 +0000</pubDate>
     </item>
