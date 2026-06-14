@@ -4,7 +4,7 @@ list_title: "Microsoft Copilot Cowork — The Complete Guide"
 description: "Plain-English guide to Copilot Cowork — Microsoft's biggest AI leap since 2023. Real-world scenarios, how it differs from regular Copilot."
 date: 2026-04-22
 lastmod: 2026-05-08
-card_tag: "Copilot"
+card_tag: "Cowork"
 tag_class: "ai"
 sitemap:
   priority: 0.9
@@ -38,18 +38,21 @@ og_glyph: "layers"
 tags:
   - microsoft-365
   - copilot
+  - cowork
   - ai
   - productivity
 layout: "notebook"
 stamp: "guide"
-intro_note: "↗ for everyone trying to figure out Cowork before it lands in their org"
+hub: true
+hub_id: "cowork"
+intro_note: "↗ everything you need to know about Microsoft 365 Copilot Cowork in plain English — the agent that takes action across your M365 apps"
 founder_note: |
   Cowork is the biggest shift since Copilot launched, and the official docs do not quite explain how different it is. This is the version I keep linking customers to when they ask. The agentic harness section is where most of the confusion lives — start there if nothing else.
 ---
 
 <div class="living-doc-banner">
 
-This is a living document. The AI landscape moves fast — features ship, names change, and what's in preview today might be GA tomorrow. If you spot anything out of date or inaccurate, please [send me feedback](/feedback/) and I'll update it. Last verified: April 2026.
+This is a living document. The AI landscape moves fast — features ship, names change, and what's in preview today might be GA tomorrow. If you spot anything out of date or inaccurate, please [send me feedback](/feedback/) and I'll update it. Last verified: June 2026.
 
 </div>
 
@@ -671,7 +674,7 @@ If you're an IT admin, here's how to turn it on:
 | **M365 Copilot add-on** (on E3 or E5) + Frontier | $30/user/month + opt-in | Cowork via Frontier preview |
 | **[Microsoft 365 E7](/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know/)** (Frontier Suite) | $99/user/month | Cowork + Agent 365 + Entra Suite + everything in E5 |
 
-> 📝 **Good to know:** Cowork is currently browser and desktop only (no mobile yet). It's English-only at launch. Features may change before general availability.
+> 📝 **Good to know:** Cowork runs on browser, desktop, and mobile (iOS + Android via the Microsoft 365 Copilot app). It's English-only at launch — more languages coming.
 
 📖 [Copilot Cowork: Now available in Frontier](https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/)
 
