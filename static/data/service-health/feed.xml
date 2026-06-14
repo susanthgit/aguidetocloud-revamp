@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 14 Jun 2026 19:54:48 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2026 21:36:24 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to access a recently introduced feature in the Microsoft Copilot Studio Agent Builder</title>
@@ -113,15 +113,6 @@
       <category>Microsoft 365 Copilot Chat</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CW1390285</guid>
-      <pubDate>Tue, 02 Jun 2026 10:05:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users may not see accurate usage data for Copilot Chat in usage reports within the admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1388943</link>
-      <description>[Microsoft 365 suite] Users may not see accurate usage data for Copilot Chat in usage reports within the admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">MO1388943</guid>
       <pubDate>Tue, 02 Jun 2026 10:05:00 +0000</pubDate>
     </item>
     <item>
@@ -458,6 +449,15 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1307899</guid>
       <pubDate>Mon, 11 May 2026 23:05:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users may be unable to view free/busy status for Gmail users within the Exchange Online calendar</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1310533</link>
+      <description>[Exchange Online] Users may be unable to view free/busy status for Gmail users within the Exchange Online calendar.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1310533</guid>
+      <pubDate>Mon, 11 May 2026 07:01:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
