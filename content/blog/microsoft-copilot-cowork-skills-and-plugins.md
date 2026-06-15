@@ -531,15 +531,67 @@ Adding more bullets inside existing sections doesn't satisfy points 4 and 5 — 
 
 <p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/73-cowork-skill-d-tweaked-html-report.png" alt="The HTML Skill Quality Report for new-account-research-brief tweaked version. Green celebration banner labelled NEW-ACCOUNT-RESEARCH-BRIEF with the heading 'This skill is ready to share' and the standard message 'Everything important is in place.' Below: circular score 97 out of 100 in a green ring; three pill tags — Meets the bar to publish (green), Risk: high (red outline), Grounding: PASS (green). Below: 'What's already working' section with four green-tick bullets — It switches on at the right time. It knows what to do. It stays in its lane. It handles surprises safely." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-### What this means for skill iteration
+### Pattern C — structural restructure to reach 100
 
-| Lesson | Practical rule |
+Per Pattern B above, `new-account-research-brief` capped at 97/100. The scorer wanted two NEW H2-level sections (`## Edge Cases` and `## Fallback Procedures`) — not more bullets. I asked Cowork to add them.
+
+This time the score hit a clean **100/100**.
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/74-cowork-skill-d-pushed-to-100-html.png" alt="The HTML Skill Quality Report for new-account-research-brief after the structural restructure. Green celebration banner labelled NEW-ACCOUNT-RESEARCH-BRIEF with the heading 'This skill is ready to share' and the message 'Everything important is in place. Nice work — you can rely on this one.' Below: a big circular score showing 100 out of 100 in a thick green ring. Right of the circle the text reads 'Here's the overall health score for this skill. It clears the minimum quality bar, so it's safe to publish or share.' Three pill tags — Meets the bar to publish (green), Risk: high (red outline), Grounding: PASS (green)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/75-cowork-skill-d-pushed-to-100-summary.png" alt="Cowork's chat summary 'Done. Here's the result, Susanth:'. A Before/After dimension table follows with a Skill updated label new-account-research-brief. Rows: Trigger Clarity 25/25 → 25/25, Instruction Specificity 25/25 → 25/25, Scope Boundaries 25/25 → 25/25, Robustness 22/25 → 25/25 with a green tick mark on the After cell. Total row 97/100 → 100/100. Below the table: Grade Excellent — MVB gate passed (80 threshold, high-risk tier). What was added (appended after Guardrails, no existing content touched): hash-hash Edge Cases — 6 numbered scenarios covering subsidiary ambiguity, zero-results plus spelling suggestions, M&A detection, conflicting public facts, departed-colleague labelling, and sanctions/reputational flags with a top-of-briefing due-diligence block. hash-hash Fallback Procedures — 5 numbered procedures covering Deep Research outage, SharePoint zero-match expansion, calendar timeout, People API rate-limiting with batch retry, and DOCX skill failure with markdown fallback. The quality report is saved to skill-quality-report.html. Changes will sync to your OneDrive within about 35 seconds." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### What the rubric is actually looking for
+
+Robustness 25/25 needs ALL of these — not any one alone:
+
+| Sub-pattern | What "satisfied" looks like |
 |---|---|
-| **The 100 ceiling is reachable but rubric-dependent.** | Some skills will hit 100 with bullet-level tweaks. Others need structural changes (new H2 sections). |
-| **Cowork self-corrects when it can.** | Apply your tweak and let Cowork iterate against its own scorer — don't stop at the first 98. |
-| **Above ~95 is great; chasing 100 has diminishing returns.** | A 97 with the right intent is more useful than a 100 with padding. Don't add Edge Cases sections just to chase the number — add them if the skill genuinely needs them. |
-| **The "improvements list empty" signal matters.** | When Cowork reports "the improvements list is empty", the scorer has nothing left to suggest. That's the practical ceiling for the current structure. |
-| **Two patterns produce different ceilings.** | Internal-only read-only skills can reach 100 with bullet tweaks. External-facing or file-generating skills often cap at ~96-97 unless you restructure. |
+| Many explicit guardrails | 9-13 numbered rules in the Guardrails section |
+| Failure handling | Rules that name specific failure modes ("if X then Y") |
+| Confirmation gates | Rules using the pattern "confirm before X" |
+| **Dedicated Edge Cases H2 section** | An H2 heading + numbered list of negative-path scenarios with handling logic per case |
+| **Dedicated Fallback Procedures H2 section** | An H2 heading + numbered list of fallback steps per service/data-source failure |
+
+Skill D had 4 of 5 with the bullet tweaks. Adding the missing 2 H2 sections produced the perfect score.
+
+### Skill D's final structure (12 sections total)
+
+After the restructure, the SKILL.md now has 12 H2 sections instead of 8:
+
+1. YAML frontmatter
+2. Overview
+3. When to Use
+4. When NOT to Use *(4 sibling delegations)*
+5. Quick Start
+6. Core Instructions *(7 numbered steps with named tool calls)*
+7. Output
+8. Formatting rules
+9. Guardrails *(13 numbered rules)*
+10. **Edge Cases** *(6 negative-path scenarios with handling)* ← NEW
+11. **Fallback Procedures** *(5 service/data-source failure paths)* ← NEW
+12. Templates / Output examples
+
+This is now the **canonical reference structure** for any skill that needs to reach 100/100 — every section above contributes to a specific sub-pattern in the rubric.
+
+### Final scoreboard across all worked examples
+
+| Skill | First score | After bullet tweaks | After structural restructure | Ceiling reason |
+|---|---|---|---|---|
+| C `friday-portfolio-digest` | 96 | **100** (autonomous self-correction) | — | Hit perfect via Pattern A |
+| D `new-account-research-brief` | 95 | 97 (rubric cap) | **100** (Pattern C — added 2 H2 sections) | Hit perfect via Pattern C |
+| E `cowork-skill-author` | 98 | — | — | Near-ceiling at create; focused scope keeps it at 98 |
+| F `linkedin-carousel-microsoft` | 91 | — | — | External-facing inherent ceiling (~96 reachable; not worth chasing) |
+
+**Three Patterns observed** — each illustrative for different skill types:
+
+| Pattern | When it applies | Worked example |
+|---|---|---|
+| **A — autonomous self-correction** | Skill is structurally close to 100, just needs scorer-pattern-matching | Skill C |
+| **B — bullet tweaks hit a ceiling** | More guardrails / more delegations only push so far | Skill D first iteration |
+| **C — structural restructure** | Rubric needs new H2 sections, not more bullets | Skill D second iteration |
+
+> 💡 **Practical guidance for skill authors:** Use Patterns A and B first. Move to Pattern C only when the improvements list is empty AND the skill genuinely benefits from edge-case + fallback documentation (most real production skills do). Don't add ceremonial H2 sections to chase the score on a simple skill — keep the SKILL.md proportional to the skill's complexity.
 
 ---
 
