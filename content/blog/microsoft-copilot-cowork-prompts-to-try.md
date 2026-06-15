@@ -138,7 +138,55 @@ This is **end-to-end validation** of the Edge Cases section we added during the 
 - ✅ Cited where it looked (internal + public web + demo repo content) so I can verify the search was actually thorough.
 - ✅ Most importantly: the Edge Case behaviour we *designed yesterday* fired *exactly as written* in production today. Design → restructure → test, end-to-end.
 
-**Would I demo this to a customer?** Yes — this is one of the best demos in my pocket now. It shows Cowork *refusing to fabricate* on a customer name that doesn't exist, instead of confidently producing a plausible-sounding but invented briefing. Customers worry about hallucination; this is the antidote.
+### Skill: `cowork-skill-author` — *⭐⭐⭐⭐ · Tested 16 Jun 2026 (recursive meta-test)*
+
+**Trigger phrase used:** `author me a skill that produces a daily standup recap from my last 24 hours of Teams DMs, rendered as a self-contained HTML web-app I can bookmark and revisit. Standard tier.` (plus specifications about grouping, action items, refresh button, and a Scheduled hint)
+
+**Why a recursive test:** the meta-skill should be able to CREATE another skill. The best way to test that is to actually ask it for a new skill we wanted anyway — the `daily-teams-recap` HTML dashboard.
+
+**What I asked it to do:** the full brief above — design a Teams DM recap that renders as a bookmarkable HTML dashboard, NOT a Word doc, with a fixed filename so the bookmark stays stable, and a hint that it should work with Cowork's Scheduled feature for nightly auto-refresh.
+
+### What Cowork did
+
+The meta-skill orchestrated a full skill-creation pipeline:
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/89-cowork-test-e-meta-skill-thought-process.png" alt="Cowork's expanded Thought process during the meta-skill invocation. Top line reads 'Reviewed custom skill Cowork skill author'. Below: a paragraph explaining 'The cowork-skill-author skill has loaded and provided its instructions. Now I need to follow its core instructions to author the daily-teams-recap skill. Let me draft the SKILL.md and then invoke the skills (Skill Management) skill to write, validate, and score it.' Then 'Let me draft the complete 8-section SKILL.md for this skill:' followed by 'Skill name: daily-teams-recap'. A YAML code block follows showing the frontmatter being written live — name daily-teams-recap, multi-line description starting Produces a daily standup recap from the last 24 hours of Teams DMs, rendered as a self-contained HTML web-app the user can bookmark and revisit. Designed to be scheduled via Cowork's Scheduled feature for an automatic morning refresh — so by 7am every weekday the dashboard is current without manual effort. Use-when trigger phrases listed — daily teams recap, what did I miss in Teams yesterday, generate my standup dashboard, refresh my teams recap, teams DM summary for today's standup, who needs a reply in Teams. Below the YAML: notes about needing to use GetDefaultDrive to retrieve the drive ID, CallGraph for the Teams DM API." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+Then the meta-skill **handed off** to the built-in `Skill Management` (`skills`) skill — exactly the architecture the SKILL.md design called for:
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/90-cowork-test-e-skill-management-handoff.png" alt="The pivot from cowork-skill-author meta-skill to the built-in Skill Management skill. Top line reads 'I'll draft the full 8-section SKILL.md now, then hand it to Skill Management to write, validate, and score.' Below: a 'Preparing to manage skills' status with a Thought process panel listing the 5-step skill-creation pipeline — 1. Validate the name first, 2. Write the SKILL.md file, 3. Run validate and score scripts, 4. Generate the quality report, 5. Show results. Closing line: 'Let me start executing these steps.' Below: a 'Checking skill name and slot availability' status indicator with a 'Show more' link." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### The generated skill's quality report — 91/100 with the now-familiar pattern
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/91-cowork-test-e-generated-skill-quality-report.png" alt="The Skill Quality Report chat card for the meta-generated daily-teams-recap skill. Header: skill name daily-teams-recap with subtitle Skill Quality Report. Score: 91 out of 100 with an Excellent green badge in the top-right. Below the header is a row of four pills — MVB PASS ≥70 (green), Risk: Medium (orange), Safety: PASS (green), Grounding: PASS (green). Below: Dimension Scores section with four bars — Trigger Clarity 25/25 full green, Instruction Specificity 22/25 nearly full green, Scope Boundaries 25/25 full green, Robustness 19/25 with a dark or amber-coloured bar (not green), matching the same external-facing-Robustness-ceiling pattern as skill F earlier." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### The bonus discovery — a NEW `Scheduled` trigger phrase category
+
+This is the most interesting finding of the entire test. The generated skill's trigger phrases include a category I haven't seen documented anywhere else:
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/92-cowork-test-e-trigger-phrases-and-scheduled-pattern.png" alt="Cowork's trigger phrases section and explanatory narrative for daily-teams-recap. Trigger Phrases header followed by four rows — Primary 'daily teams recap', Alternative 'generate my standup dashboard', Alternative 'who needs a reply in Teams', Scheduled 'Set up in Cowork Scheduled → 7am weekdays'. Below: 'Quality report saved — skill is live and ready to use.' Then Cowork's narrative: 'Your daily-teams-recap skill is live and scored 91 / Excellent — the highest grade tier, well above the 70 publish bar. The 3-point gap on Instruction Specificity is benign (the scorer pattern-matched the Output section slightly differently than expected — the content is complete). No action needed.' Below: 'To run it now, just say: \"daily teams recap\" or \"generate my standup dashboard\"'. Then 'To schedule it for 7am weekdays, say: \"Schedule my daily teams recap for 7am every weekday\". Cowork will set up a recurring task so the HTML dashboard at daily-teams-recap.html is refreshed automatically before every standup — bookmark that path once and it stays current. The quality report is also in skill-quality-report.html.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+The **`Scheduled`** trigger row bakes the webapp-auto-refresh pattern into the skill itself. The bookmark stays at the same OneDrive URL; Cowork's Scheduled feature re-runs the skill on a cadence; the HTML dashboard is fresh every morning before standup.
+
+**This is the missing piece for "skill as a webapp":**
+
+| Without Scheduled | With Scheduled |
+|---|---|
+| Skill runs when you invoke it | Skill runs on a recurring cadence (7am weekdays in this case) |
+| HTML file generated → opens stale until you re-invoke | HTML file refreshed automatically → bookmark always current |
+| Behaves like a Word doc | Behaves like a bookmarkable mini-dashboard |
+| Manual workflow | Hands-off workflow |
+
+**Why 4 stars ⭐⭐⭐⭐:**
+
+- ✅ Meta-skill orchestration worked end-to-end (cowork-skill-author → Skill Management → SKILL.md written + scored + ready).
+- ✅ The generated skill is genuinely useful — bookmarkable HTML dashboard with auto-refresh hint.
+- ✅ Surfaced the **new `Scheduled` trigger category** — a pattern worth documenting separately.
+- ✅ Cowork's narrative explanation includes both the run-now invocation AND the schedule-it invocation — great onboarding for the user.
+- 🟡 Score is 91/100 — the same external-facing Robustness ceiling we hit with skill F. Pattern C structural restructure (adding `## Edge Cases` and `## Fallback Procedures` H2 sections) would push this to ~96 if you want to chase the score. Logged as a follow-up.
+- 🟡 Haven't actually run the new daily-teams-recap skill yet to see the HTML dashboard render — that's the obvious next test. Stay tuned.
+
+**Would I demo this to a customer?** Absolutely — but the demo is now TWO-step: invoke the meta-skill, then invoke the generated skill. That's actually a clearer narrative for "agents building agents" than the single-skill demo path.
 
 ---
 
