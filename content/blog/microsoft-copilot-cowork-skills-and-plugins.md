@@ -381,6 +381,52 @@ What this tells you:
 
 ---
 
+## Worked Example #3 — building a `cowork-skill-author` meta-skill (and the UI evolves)
+
+The third example is a **meta-skill** — a skill that creates other skills. Its job is to take a one-line brief from me and produce a high-quality SKILL.md against the 8-section pattern, every time, with the quality scoring automatically run on each new skill it authors.
+
+This worked example also surfaces something interesting: **Cowork's Skill Quality Report UI is evolving rapidly.** The card shown here is materially different from the earlier two — Microsoft is iterating on this surface week to week. The signal value is unchanged, but the layout and labels are not yet stable. Treat this as a snapshot, not a contract.
+
+### The create prompt
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/50-cowork-skill-e-prompt.png" alt="The Cowork task input box showing the typed create-prompt for a cowork-skill-author meta-skill. Visible text reads: 'Create a custom skill called cowork-skill-author with these instructions: This is a meta-skill: it CREATES other Cowork skills following the standard high-quality 8-section pattern. Use when I want to bulk-author new skills against a quality bar rather than typing each one from scratch. 1. Gather context (never invent) — From my single-sentence brief, derive: skill name (lowercase-hyphenated), one-paragraph description, and the workflow I want it to follow. Check the Skill Management skill is available (Cowork's built-in skill-creation tool). This skill orchestrates it; it does not write.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### The result — 98/100 with a brand-new 3-column card
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/52-cowork-skill-e-quality-report-98.png" alt="Cowork's Skill Quality Report card for the cowork-skill-author meta-skill in a new layout. Header: skill name 'cowork-skill-author' with subtitle 'Skill Quality Report' and an Excellent green badge. A three-column header panel shows Score 98 out of 100, MVB Gate PASS (floor: 80), Risk Tier High (guardrails present). Below: Dimension Breakdown — Trigger Clarity 25/25 (7 trigger phrases, exclusion clause), Instruction Specificity 25/25 (72 workflow lines, tools named, Quick Start), Scope Boundaries 23/25 (When NOT to Use section, focused scope), Robustness 25/25 (9 guardrail rules, missing-data handling, confirmation gates). Below that a new Safety Signals section with three rows — Destructive scope WARN (mentions destructive actions in context of flagging them; guardrails present), People-profiling scope WARN (mentions profiling to prohibit it; guardrails present), Faithfulness PASS (instructs grounding / no-fabrication). Below: Trigger phrases to use this skill listed — author me a skill, build me a skill that, create a skill for, spin up a skill, I need a skill that, skill-author build, skill-author batch. Final note: cowork-skill-author is live — scored 98/Excellent, MVB passed." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### What's new in this card vs the earlier ones
+
+| Element | Skills C + D (earlier card) | Skill E (this card) |
+|---|---|---|
+| **Header layout** | Single-row: title + score badge | **Three-column** — Score \| MVB Gate \| Risk Tier — each with its own labelled panel |
+| **Threshold label** | "Publish Bar: ≥80" or "Publish bar (MVB ≥ 70)" | **"MVB Gate: PASS · floor: 80"** — terminology shifted from *Publish bar* to *MVB Gate* |
+| **Risk Tier presentation** | Listed in the dimension area | Promoted to a top-row column with a one-line qualifier ("guardrails present") |
+| **New Safety Signals section** | Not present | **Separate from Risk Tier** — itemises specific scope flags (Destructive scope, People-profiling scope, Faithfulness) with WARN/PASS per row |
+| **Workflow-size measurement** | Implicit | Explicit — "72 workflow lines" shown as the Instruction Specificity rationale |
+| **Context-aware classification** | Implicit | **Visible reasoning** — e.g. "mentions destructive actions in context of flagging them" recognises the skill is *prohibiting* destructive actions, not performing them |
+
+### Cowork is context-aware, not just keyword-matching
+
+The single most interesting thing in this card is the per-signal rationale:
+
+> **Destructive scope** — WARN — "mentions destructive actions *in context of flagging them*; guardrails present"
+>
+> **People-profiling scope** — WARN — "mentions profiling *to prohibit it*; guardrails present"
+
+Cowork's classifier reads the intent. A skill that *prohibits* destructive actions isn't penalised the same way as one that *performs* them — but it still surfaces the WARN so a reviewer can confirm the intent is correctly framed. That's a thoughtful design choice and it matters for any team reviewing skills at scale.
+
+### The stubborn -2 on Scope Boundaries
+
+All three skills lost 2 points on Scope Boundaries (got 23/25 once and 25/25 once across this set). Pattern observed:
+
+- The full 25/25 was earned by `new-account-research-brief` with **explicit delegation to 4 named sibling skills** (`customer-session-prep`, `inbox-drafts`, `meeting-recap`, `customer-session-followup`)
+- The 23/25 was earned by skills with fewer named sibling delegations (2-3) even with strong When NOT to Use sections
+
+If full marks on Scope Boundaries matters for your team's library, name at least 4 sibling skills in the When NOT to Use section.
+
+---
+
 ## Path 2 — Custom skills via Copilot Studio (low-code, for admins)
 
 If you're an IT admin or power user, [Copilot Studio](https://copilotstudio.microsoft.com) lets you build custom skills using Power Automate flows, API connectors, or AI-powered topics. Once published, they appear as callable actions inside Cowork.
