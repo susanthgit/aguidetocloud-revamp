@@ -483,6 +483,66 @@ The scorer also surfaces a new qualifier next to the Risk Tier: **"Behavioural r
 
 ---
 
+## Iterating an existing skill — push the score higher
+
+A skill doesn't have to be perfect on the first try. Cowork's `Skill Management` skill can update an existing SKILL.md based on your refinement instructions — and the quality scorer re-runs automatically every time. Two patterns are worth knowing.
+
+### Pattern A — tweak that hits perfect 100
+
+I asked Cowork to update `friday-portfolio-digest` (which had scored 96/100) with two changes: expand "When NOT to Use" from 2 sibling delegations to 6, and add 3 more guardrails (including confirmation gates).
+
+The update worked — and revealed something important: **Cowork's scorer can self-correct mid-run.**
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/70-cowork-skill-c-tweaked-quality-report-100.png" alt="The Skill Quality Report for friday-portfolio-digest version 2 after the tweak. Above the report a narrative line reads: Validation passes. Score is 98 out of 100. Trigger clarity, instruction specificity, and scope boundaries are all 25/25. Robustness is at 23/25, missing the +3 confirmation-gate credit because the scorer's pattern (confirm before) is not in the new rule text. One small re-word of rule 9 fixes it while keeping the intent identical. Below: the final report header friday-portfolio-digest Skill Quality Report. Big score 100 out of 100 with an Excellent green badge. Dimensions section with all four marked Perfect (green badge) at 25/25 — Trigger Clarity (6 trigger phrases · exclusion clause in description), Instruction Specificity (69 workflow lines · Quick Start block · named tools · output format), Scope Boundaries (When NOT to Use: 7 bullets · 6 named sibling skill delegations), Robustness (13 guardrail rules · failure handling · 2 confirmation gates · free-mail filter). Gates and Safety section: MVB gate PASS (score 100, floor 70), Faithfulness PASS — no-fabrication instructions present, Safety note: people-profiling scope WARN — expected for a contact-triage skill, Dimensions below 25: None." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+What happened in that header narrative:
+
+1. Cowork applied the tweak I asked for
+2. Ran the scorer — got 98/100
+3. **Cowork itself noticed Robustness was 23/25** because the scorer's specific text pattern (`confirm before`) wasn't matched, even though my new guardrails had the same INTENT
+4. Cowork **re-worded rule 9 itself** to include the matching pattern, without me asking
+5. Re-ran the scorer — landed on 100/100
+
+That's autonomous skill improvement. The lesson: when you tweak a skill, Cowork doesn't just apply-and-stop — it iterates against its own scorer until it's hit the wall.
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/71-cowork-skill-c-tweak-summary.png" alt="Cowork's chat summary of the friday-portfolio-digest tweak. Headline 'Done, Susanth. Here's the summary of what changed and the final result:'. 'What was updated' section with two bullets: When NOT to Use expanded from 4 bullets to 7, each delegating to a named sibling skill — customer-session-prep, inbox-drafts, meeting-recap, meeting-intel, morning-briefing, weekly-team-update, new-account-research-brief — and a send-never reminder. Guardrails grew from 8 to 11 rules — the three additions add a 10-customer confirmation gate (surfaces count first), a single-signal noise gate (possibly noise — confirm placeholder), and a free-mail domain filter (gmail, outlook, yahoo, hotmail, icloud, proton.me). Score result table with four rows showing Before 25 / After 25 for Trigger Clarity, Before 25 / After 25 for Instruction Specificity, Before 25 / After 25 for Scope Boundaries, Before 23 / After 25 for Robustness in bold, and Total Before 96 / After 100. Closing line: No dimensions below 25. All gates pass. Changes will sync to OneDrive within about 35 seconds." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### Pattern B — tweak that hits a structural ceiling
+
+I tried the same trick on `new-account-research-brief` (which had scored 95/100). Asked Cowork to add 5 more guardrails — push Robustness from 20 to 25.
+
+The skill went from 95 → 97. **Not 100.** Cowork explained why.
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/72-cowork-skill-d-tweaked-comparison-95-to-97.png" alt="A Before/After quality score comparison card for new-account-research-brief. Subtitle 'After adding 5 new guardrails'. Two big score circles side by side with an arrow between — Before 95 Excellent (blue), After 97 Excellent (green). Dimension table with Before / After / Max columns — Trigger Clarity 25/25/25 unchanged, Instruction Specificity 25/25/25 unchanged, Scope Boundaries 25/25/25 unchanged, Robustness 20/22 with green triangle up indicator/25 (up by 2). Metadata rows — Guardrails 8 → 13 (+5 added), MVB gate ≥80 PASS, Faithfulness PASS instructs grounding / no-fabrication, Safety WARN high-risk skill (touches sensitive data); behavioral review recommended. Below: 97/100 Excellent. Up from 95. The Robustness dimension moved from 20 to 22, with 13 guardrails now in the file (up from 8). All 5 new rules are live — 1. Confirmation gate (zero internal plus zero web results trigger ask for spelling before continuing). 2. 24-month web filter (stale news excluded unless foundational fact). 3. Source preference (own site, Reuters, Bloomberg, NZ Herald, AFR first; blogs/forums last). 4. Employee privacy (name plus role plus LinkedIn URL only; no salary or personal detail). 5. Stale colleague flag (18-month threshold triggers stale — confirm still at Microsoft placeholder). Closing diagnostic: On the remaining 3 points: The scorer's Robustness rubric caps at 22/25 for the current pattern mix — it's looking for a specific combination of negative-path handling, edge-case examples, and fallback instructions beyond guardrail count. The three other dimensions are already at 25/25, and the improvements list is empty, meaning the scorer has no further actionable suggestions. 97 is effectively the ceiling the rubric can reach for this skill's structure without adding a dedicated Edge Cases or Fallback Procedures section to the SKILL.md body — which would be a larger structural change. Happy to do that if you want to chase 100." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+The diagnostic at the bottom is the takeaway:
+
+> *"The scorer's Robustness rubric caps at 22/25 for the current pattern mix — it's looking for a specific combination of negative-path handling, edge-case examples, and fallback instructions beyond guardrail count… 97 is effectively the ceiling the rubric can reach for this skill's structure without adding a dedicated **Edge Cases** or **Fallback Procedures** section to the SKILL.md body."*
+
+Translation: **the rubric has sub-patterns inside each dimension.** For Robustness to hit 25/25 on a skill like this, the scorer is looking for:
+
+1. ✓ Lots of explicit guardrails (we had 13)
+2. ✓ Failure handling (we had it)
+3. ✓ Confirmation gates (we had them)
+4. ✗ A dedicated `## Edge Cases` H2 section (we didn't have one)
+5. ✗ A dedicated `## Fallback Procedures` H2 section (we didn't have one)
+
+Adding more bullets inside existing sections doesn't satisfy points 4 and 5 — the scorer wants distinct H2 sections. Cowork offered to add them ("Happy to do that if you want to chase 100").
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/73-cowork-skill-d-tweaked-html-report.png" alt="The HTML Skill Quality Report for new-account-research-brief tweaked version. Green celebration banner labelled NEW-ACCOUNT-RESEARCH-BRIEF with the heading 'This skill is ready to share' and the standard message 'Everything important is in place.' Below: circular score 97 out of 100 in a green ring; three pill tags — Meets the bar to publish (green), Risk: high (red outline), Grounding: PASS (green). Below: 'What's already working' section with four green-tick bullets — It switches on at the right time. It knows what to do. It stays in its lane. It handles surprises safely." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### What this means for skill iteration
+
+| Lesson | Practical rule |
+|---|---|
+| **The 100 ceiling is reachable but rubric-dependent.** | Some skills will hit 100 with bullet-level tweaks. Others need structural changes (new H2 sections). |
+| **Cowork self-corrects when it can.** | Apply your tweak and let Cowork iterate against its own scorer — don't stop at the first 98. |
+| **Above ~95 is great; chasing 100 has diminishing returns.** | A 97 with the right intent is more useful than a 100 with padding. Don't add Edge Cases sections just to chase the number — add them if the skill genuinely needs them. |
+| **The "improvements list empty" signal matters.** | When Cowork reports "the improvements list is empty", the scorer has nothing left to suggest. That's the practical ceiling for the current structure. |
+| **Two patterns produce different ceilings.** | Internal-only read-only skills can reach 100 with bullet tweaks. External-facing or file-generating skills often cap at ~96-97 unless you restructure. |
+
+---
+
 ## Path 2 — Custom skills via Copilot Studio (low-code, for admins)
 
 If you're an IT admin or power user, [Copilot Studio](https://copilotstudio.microsoft.com) lets you build custom skills using Power Automate flows, API connectors, or AI-powered topics. Once published, they appear as callable actions inside Cowork.
