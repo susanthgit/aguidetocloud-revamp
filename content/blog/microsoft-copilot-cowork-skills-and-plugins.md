@@ -39,81 +39,216 @@ founder_note: |
 
 ## TL;DR
 
-- Cowork ships with a set of built-in skills covering core M365 apps
-- Three ways to add more: **plugins**, **custom SKILL.md files** in OneDrive (no-code), or **Copilot Studio** (low-code / pro-code)
+- Cowork ships with **13 built-in skills, organised into 5 categories** (Communication · Documents · Calendar · Search · Automation)
+- A **skill** is a reusable recipe in your OneDrive — different from a **prompt**, which is a one-time instruction
+- Three ways to add custom skills: **OneDrive SKILL.md** (no-code), **Copilot Studio** (low-code), **Agents SDK** (pro-code)
 - Microsoft maintains four official plugin pages on Microsoft Learn for full reference
+- The fastest way to see what your tenant has: ask Cowork *"What skills do you have available?"* — it lists every one with a description
 
 ---
 
-## Built-in skills — 13 in 5 categories
+## Skill vs prompt — the simple mental model
 
-Cowork ships with **13 built-in skills, organised in 5 categories**. The category structure below mirrors [Microsoft's official Cowork Collective labs](https://github.com/microsoft/agent-academy/tree/main/docs/cowork-collective) (the authoritative source).
+This is the question I get asked first. Plain English:
 
-| Category | What it covers |
+|  | **Prompt** | **Skill** |
+|---|---|---|
+| **What it is** | A one-time instruction you type | A reusable recipe Cowork can run again |
+| **Where it lives** | In the chat, gone when the chat ends | In your OneDrive at `Documents/Cowork/Skills/<name>/SKILL.md` |
+| **Who can call it** | Just you, in that moment | Cowork itself — it picks the skill based on your wording |
+| **When to use it** | One-off ask · novel scenario · exploration | Same workflow you do every week · multi-step thing you keep re-typing · something a teammate would also benefit from |
+| **Analogy** | Hand-writing instructions for a colleague each time | Putting a recipe card in a recipe box — the colleague reads the card and follows the steps |
+
+**The key idea:** a prompt tells Cowork what to do *right now*. A skill teaches Cowork *how* to do it whenever asked. Skills also compose — one skill can hand off to another, building up multi-stage workflows.
+
+---
+
+## Where to find skills in the UI
+
+Cowork keeps all of this behind a single **Customize** door. Three clicks to get there.
+
+### Step 1 — Open the attach menu
+
+From the Cowork landing, click the **`+` button** to the left of the task input. A menu opens with four options. Pick the bottom one: **Customize · Manage skills & plugins**.
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/20-cowork-customize-menu-entry.png" alt="Cowork landing page with the plus button highlighted in a red box. The attach menu is open showing four options — Add work context, Upload images and files, Attach cloud files, and Customize · Manage skills and plugins (also highlighted in red with the cursor pointer hovering on it)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### Step 2 — Land on the Customize page
+
+The Customize page has two tabs at the top: **Plugins** and **Skills**. Click **Skills**.
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/21-cowork-customize-tabs.png" alt="Customize page header showing a back arrow labelled Cowork, the page title Customize, two pill-shaped tabs labelled Plugins and Skills with Skills highlighted in a red box, and search and Add controls on the right." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### Step 3 — See what's installed
+
+The Skills tab is split into two sections:
+
+- **Your skills** — custom skills you've added (or your IT team has rolled out)
+- **Built-in** — pre-installed skills Cowork leverages automatically
+
+You can toggle any skill on or off here. Disabled skills won't be picked by Cowork even if you ask for them by name.
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/22-cowork-skills-page-overview.png" alt="The Skills tab inside Cowork Customize. Two section headings highlighted in red boxes — Your skills and Built-in. Three custom skills are visible in Your skills (customer-session-followup, customer-session-prep, inbox-drafts) each with a toggle on the right. A Show more link sits below. The Built-in section begins underneath with the first three pre-installed skills (PDF, Word, Excel)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+---
+
+## The 13 built-in skills — what your tenant actually shows
+
+Microsoft's [Agent Academy Cowork Collective](https://github.com/microsoft/agent-academy/tree/main/docs/cowork-collective) describes Cowork as shipping with 13 built-in skills in 5 categories. Here's the exact list as it appears in the Skills page UI:
+
+| # | Skill | What it does (UI description) |
+|---|---|---|
+| 1 | **PDF** | Read, create, and manipulate PDF documents |
+| 2 | **Word** | Read, create, and edit Word documents |
+| 3 | **Excel** | Read, create, and manipulate Excel spreadsheets |
+| 4 | **PowerPoint** | Read, create, and edit PowerPoint presentations |
+| 5 | **html** | Create, edit, and validate standalone single-file HTML |
+| 6 | **Calendar Management** | Full-spectrum calendar management with purpose-aware classification, block defense, and tiered logic |
+| 7 | **Daily Briefing** | Aggregated morning brief from calendar, email, Teams |
+| 8 | **Meetings** | Meeting intelligence, summaries, and prep |
+| 9 | **Scheduling** | Calendar scheduling and management |
+| 10 | **Communications** | Audience-adaptive communications |
+| 11 | **Skill Management** | Create, validate, and manage personal Cowork skills and instructions |
+| 12 | **goal** | Set a standing goal — the agent keeps working until the condition is met or the effort limit is reached |
+| 13 | **debug-trajectory** | (Manual trigger only) Renders the current session's transcript as a self-contained HTML attachment |
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/23-cowork-built-in-skills-list.png" alt="The Built-in skills section inside Cowork's Customize page, scrolled to show all 13 pre-installed skills in a vertical list — PDF, Word, Excel, PowerPoint, html, Calendar Management, Daily Briefing, Meetings, Scheduling, Communications, Skill Management, goal, and debug-trajectory — each with a one-line description and a toggle on the right. A Show less link is visible at the bottom confirming this is the full list." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+Mapping back to the 5 Agent Academy categories:
+
+| Category | UI skills |
 |---|---|
-| **Communication** | Draft and send emails, post to Teams channels and chats, manage your inbox |
-| **Documents** | Create Word documents, Excel spreadsheets, PowerPoint presentations, and PDFs |
-| **Calendar** | Schedule meetings using natural language, manage calendar conflicts, get daily briefings |
-| **Search** | Find information and people across your organisation, perform deep research |
-| **Automation** | Run prompts on a schedule for recurring tasks |
+| **Communication** | Communications (the rest sits under task-orchestration patterns Cowork handles automatically — see the Naming convention note below) |
+| **Documents** | PDF, Word, Excel, PowerPoint, html |
+| **Calendar** | Calendar Management, Daily Briefing, Meetings, Scheduling |
+| **Search** | Built into Cowork's task-planning — surfaces through Daily Briefing, Meetings, and the cross-app reach |
+| **Automation** | goal (long-running standing goals), Skill Management (creating and managing skills) |
 
-<!-- TODO Atlas/Sush: enumerate the exact 13 individual skill names from Sush's tenant during testing. Current verified source (agent-academy) confirms the count + 5-category structure; individual-skill enumeration in the hub body is one-place-only and should be reconciled. -->
+---
 
-> 💡 **Recent change worth knowing:** Cowork now auto-approves emails sent to yourself — no approval prompt for self-emails. Other actions still require approval. (Source: [Microsoft Agent Academy Cowork Collective — Badge Bandit](https://github.com/microsoft/agent-academy/blob/main/docs/cowork-collective/badge-check/index.md).)
+## Ask Cowork what it can do — the easy way
+
+If you'd rather not click around the Customize page, **ask Cowork directly**. The single best discovery prompt:
+
+<div class="prompt-cards">
+
+> What built-in skills do you have available? List each by name with a one-line description of what it does.
+
+</div>
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/24-cowork-ask-skills-prompt.png" alt="The Cowork task input box showing the typed prompt 'What built-in skills do you have available? List each by name with a one-line description of what it does.' ready to be submitted, with the formatting and microphone icons on the right of the input." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+Cowork responds with a grouped list — both the built-in skills it ships with AND any custom skills you've added, all together:
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/25-cowork-skills-response.png" alt="Cowork's response listing 21 skills grouped into five categories — Document Creation (work-doc, work-presentation, work-spreadsheet, docx, xlsx, pptx, pdf, html), Productivity and Calendar (daily-briefing, calendar-management, schedule-meeting, meeting-intel, meeting-recap, inbox-drafts, stakeholder-comms), Customer Sessions (customer-session-prep, customer-session-followup), Research and Analysis (deep-research, render-ui), and Skills and Configuration (skills, update-config)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### Naming convention — UI labels vs skill IDs
+
+You'll notice the response uses names like `schedule-meeting`, `meeting-intel`, `pdf`, `html` — the lowercase, hyphenated **internal skill IDs**. The Customize UI shows the friendly labels (Scheduling, Meetings, PDF, html).
+
+When you write a custom skill that references built-in skills, use the **skill IDs** — that's what Cowork's planner matches against. When you're explaining Cowork to a colleague, use the **UI labels** — they're easier to read.
 
 ---
 
 ## How plugins extend Cowork
 
-What plugins are, when to use them, where to find the official Microsoft catalog.
+Built-in skills cover the M365 apps you live in. **Plugins** extend Cowork to systems outside M365 — your CRM, your ticketing system, your project management tool, your data warehouse.
 
 Microsoft maintains four reference pages on Microsoft Learn:
-- **Available plugins for Copilot Cowork** — the catalog
-- **Use plugins with Copilot Cowork** — end-user guide
-- **Build plugins for Copilot Cowork** — developer reference
-- **Manage plugins for Copilot Cowork** — admin governance
 
-<!-- Sush — once GA settles and Microsoft removes the (Frontier) suffix from these pages, link them directly with the new URLs -->
+| Page | When to read |
+|---|---|
+| **Available plugins for Copilot Cowork** | Browse the catalog before deciding to build your own |
+| **Use plugins with Copilot Cowork** | End-user guide — how to invoke a plugin in a task |
+| **Build plugins for Copilot Cowork** | Developer reference for new plugins |
+| **Manage plugins for Copilot Cowork** | Admin governance, approvals, scope, audit |
 
----
-
-## Custom skills via OneDrive (no-code)
-
-<!-- PRE-GA EXPANSION — content extracted from hub lines 583-614 -->
-
-Two methods that both work — asking Cowork to create the SKILL.md, or uploading the file yourself.
+<!-- Sush — once GA settles and Microsoft removes the (Frontier) suffix from these pages, link them directly with the post-GA URLs -->
 
 ---
 
-## Custom skills via Copilot Studio (low-code)
+## Custom skills — three paths
 
-<!-- PRE-GA EXPANSION — content extracted from hub lines 616-619 -->
+You're not limited to what Microsoft ships. There are three ways to add your own.
 
-For admins and power users.
+### Path 1 — Custom skills via OneDrive (no-code, works today)
 
+This is the easiest path — no admin involvement, no app installs.
+
+**Method A — Ask Cowork to create it for you (fastest):**
+
+Tell Cowork in chat: *"Create a custom skill called [name] with these instructions: [your steps]"* — Cowork validates the skill, writes the SKILL.md file, and syncs it to your OneDrive automatically within ~35 seconds. Ready to use immediately.
+
+**Method B — Upload the file manually to OneDrive:**
+
+1. Open your **OneDrive** — navigate to `Documents → Cowork → Skills` (create these folders if they don't exist)
+2. Create a **subfolder** for your skill (e.g., `morning-briefing`)
+3. Inside that subfolder, create a file called **`SKILL.md`**
+4. Use this minimal pattern:
+
+```markdown
+---
+name: Morning Briefing
+description: >-
+  Summarises my day from calendar, email, and Teams. Use when I say
+  "morning briefing", "what's on today", or "what do I need to know
+  this morning".
 ---
 
-## Custom skills via the Agents SDK (pro-code)
+# Morning Briefing
 
-<!-- PRE-GA EXPANSION — content extracted from hub lines 620-622 -->
+## 1. Gather context first (never invent)
+- Calendar — today's meetings with times and attendees
+- Email — top 3 unread emails needing my response before first meeting
+- Teams — any urgent messages I haven't responded to
 
-For developers — .NET, JavaScript, or Python.
+## 2. Output
+A scannable bullet list grouped by Calendar / Email / Teams,
+followed by "Top 3 priorities" picked from across all three.
+```
+
+5. Save it — Cowork **automatically discovers** all skills in this folder at the start of every conversation.
+
+Both methods produce the same result. Method A is great for quick personal skills; Method B is useful when you want to pre-build and distribute skill files across a team.
+
+You can create up to **50 custom skills** per user. Each file must be under 1 MB.
+
+#### The SKILL.md pattern that works in practice
+
+Real custom skills I use day-to-day all follow the same four-section pattern. Worth copying:
+
+| Section | Purpose |
+|---|---|
+| YAML frontmatter (`name:` + `description:`) | The skill ID and the trigger phrases Cowork's planner uses to decide when to call this skill |
+| **1. Gather context first** | What Cowork should retrieve from M365 before doing anything (calendar, email, Teams, files) — with explicit "never invent" placeholders for missing facts |
+| **2. Structure** | The shape of the output (length, sections, format) |
+| **3. Tone & safety** | Voice rules, what to strip if the output is going to an external audience, draft-don't-send guardrails |
+| **4. Output & delivery** | Where to save the artefact (`output/` folder, Draft folder, etc.), and whether to send or hold for review |
+
+The "never invent" line is the most important habit. It tells Cowork to leave a clearly-marked placeholder (e.g. `[confirm date]`) rather than guessing. That single discipline is the difference between a skill that's safe to demo and one that occasionally embarrasses you in front of a customer.
+
+### Path 2 — Custom skills via Copilot Studio (low-code, for admins)
+
+If you're an IT admin or power user, [Copilot Studio](https://copilotstudio.microsoft.com) lets you build custom skills using Power Automate flows, API connectors, or AI-powered topics. Once published, they appear as callable actions inside Cowork.
+
+### Path 3 — Pro-code skills (for developers)
+
+For full control, the [Microsoft 365 Agents SDK](https://github.com/microsoft/Agents) lets developers build skills in .NET, JavaScript, or Python. Register them in Copilot Studio and they become available inside Cowork — just like any built-in skill.
 
 ---
 
 ## Where to find more skills
 
-<!-- PRE-GA EXPANSION — content extracted from hub lines 624-635 -->
+| Resource | What's there |
+|---|---|
+| [microsoft/skills on GitHub](https://github.com/microsoft/skills) | 130+ pre-built skills, ready to deploy or customise |
+| [microsoft/CopilotStudioSamples](https://github.com/microsoft/CopilotStudioSamples) | Agent and skill samples for real business scenarios |
+| [microsoft/Agents](https://github.com/microsoft/Agents) | SDK for building your own custom skills |
+| [Copilot Studio Sample Gallery](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/agent-samples) | Official curated samples from Microsoft |
 
-GitHub repos, sample galleries, and the Microsoft Learn skill index.
+> ⚠️ **Admin tip:** Before adding third-party skills, review the permissions they request. Each skill accesses data on behalf of the user — so treat skill approval the same way you'd treat an app approval in Entra ID. Start with a pilot group.
 
----
-
-## Admin watch-outs when adding third-party skills
-
-<!-- PRE-GA EXPANSION — content extracted from hub lines 633-635 -->
-
-Treat skill approval the way you treat app approval in Entra ID.
+📖 [Add and manage skills in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-use-skills)
 
 ---
 
