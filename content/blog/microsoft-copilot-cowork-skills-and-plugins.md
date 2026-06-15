@@ -285,6 +285,102 @@ The final chat summary tells you what the skill is, the score, the trigger phras
 
 ---
 
+## The Skill Quality Report — the friendly HTML version
+
+Alongside the technical Dimension Breakdown card in chat, Cowork also writes a standalone `skill-quality-report.html` file to the task output folder. Same data, much friendlier presentation — designed for a human reader to skim in 30 seconds.
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/34-cowork-skill-quality-report-html-ready.png" alt="The standalone skill-quality-report.html file opened from a Cowork task output folder. Top: a green celebration banner labelled FRIDAY-PORTFOLIO-DIGEST with the heading 'This skill is ready to share' and the message 'Everything important is in place. Nice work — you can rely on this one.' Below: a big circular score showing 96 out of 100 in a green ring, with three pill tags — Meets the bar to publish (green), Risk: medium (orange), Grounding: PASS (green). Below the score: section heading 'What's already working' with a thumbs-up emoji and four green-tick bullets — It switches on at the right time. It knows what to do. It stays in its lane. It handles surprises safely." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### Friendly names — the same four dimensions, in plain English
+
+The chat card uses technical names (Trigger Clarity, Instruction Specificity, Scope Boundaries, Robustness). The HTML report uses the friendly version. Mapping for reference:
+
+| Chat card (technical) | HTML report (friendly) | The plain-English question it answers |
+|---|---|---|
+| Trigger Clarity | **Switches on at the right time** | Does Copilot know when to reach for this skill? |
+| Instruction Specificity | **Knows what to do** | Are the steps clear enough to get the same result every time? |
+| Scope Boundaries | **Stays in its lane** | Does it avoid stepping on other skills' jobs? |
+| Robustness | **Handles surprises safely** | Does it check before risky actions and never make things up? |
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/35-cowork-skill-quality-report-html-four-things.png" alt="The same skill-quality-report.html scrolled to the section titled 'The four things that make a skill dependable'. Four rows each with a smiling-face emoji, the dimension name, a one-line question, and a Strong label on the right with a green progress bar underneath — Switches on at the right time (Does Copilot know when to reach for this skill?), Knows what to do (Are the steps clear enough to get the same result every time?), Stays in its lane (Does it avoid stepping on other skills' jobs?), Handles surprises safely (Does it check before risky actions and never make things up?). Below the four-things section is an orange-tinted warning panel headed 'Please double-check the safety items' with a single bullet — Touches 'people-profiling' scope (WARN)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### Safety warnings — scope flags you should know about
+
+Below the four-dimension scores, the HTML report surfaces a "Please double-check the safety items" panel listing any sensitive scopes the skill touches. For the `friday-portfolio-digest` example above, Cowork flagged **`people-profiling` (WARN)** because the skill scans other people's emails and meeting attendee lists to classify customers.
+
+Common scope flags worth knowing:
+
+| Scope flag | What it means | When it fires |
+|---|---|---|
+| `people-profiling` | The skill reads or classifies data about other identifiable people | Skills that scan email/meeting/Teams data with attendee or sender attribution |
+| `external-data-egress` | The skill writes to a system outside your tenant | Skills that post to third-party APIs, public web forms, or external CRMs |
+| `mass-communication` | The skill sends to many recipients at once | Skills that draft or send broadcast emails or Teams channel posts |
+| `irreversible-action` | The skill performs actions that can't be undone | Skills that delete files, cancel meetings, or move calendar events permanently |
+
+A WARN doesn't block publication — it's a reminder to double-check the skill handles the sensitive scope responsibly. The `friday-portfolio-digest` skill is read-only and never sends anything, so the people-profiling WARN is acceptable.
+
+### Technical details for the curious
+
+The HTML report also has a collapsible "Technical details" section at the bottom showing the machine-readable classifications behind the friendly summary.
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/36-cowork-skill-quality-report-html-technical-details.png" alt="The same skill-quality-report.html scrolled further to two more sections. First a panel titled 'Do this next' with the message 'Nothing urgent — this skill is in great shape' and a celebration emoji. Below it a collapsible section 'Technical details (for the curious)' expanded to show three rows of metadata — Score: 96 out of 100, Publish bar: 70. Risk factors: takes actions (autonomy / blast radius). Grounding: instructs grounding / no-fabrication. Below those rows is a small table titled Dimension and Score with four rows — Switches on at the right time 25/25, Knows what to do 25/25, Stays in its lane 23/25, Handles surprises safely 23/25." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+These machine-readable values are the ones to reference if you're building an admin dashboard, a skill governance audit, or a CI check that wants to enforce a minimum publish score across a team's shared skill library.
+
+---
+
+## Worked Example #2 — building a `new-account-research-brief` skill
+
+To show what the scoring looks like for a higher-risk skill, here's a second worked example. The intent: when I'm about to engage a brand-new customer for the first time, I want Cowork to produce a "what we know about Contoso" briefing — fanning out across my email, Teams, SharePoint, calendar, and the public web simultaneously, and identifying which colleagues have already touched the account.
+
+This skill is **more ambitious than `friday-portfolio-digest`**:
+- It uses **Deep Research** (touches the public web)
+- It does **people-profiling** at scale (matches every internal colleague who has interacted with the customer)
+- It produces a Word briefing for me to read pre-meeting
+
+I expected the Risk tier to escalate. It did.
+
+### The create prompt
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/40-cowork-skill-d-prompt.png" alt="The Cowork task input box showing the typed create-prompt for a new-account-research-brief skill. The visible text reads: 'Create a custom skill called new-account-research-brief with these instructions: This skill produces a what we know about customer briefing when I'm about to engage a new account for the first time — gathers everything in my M365 plus the public web, classifies by source, and tells me who in my org has touched them already. 1. Gather context (never invent) — Email — search Inbox plus Sent Items for any past correspondence with anyone at customer (match by email domain).'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### Cowork's planning
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/41-cowork-skill-d-thought-process.png" alt="Cowork's expanded thought-process panel for the new-account-research-brief skill creation. Shows the same 5-step pipeline as before. Notes 'Name is valid, 5 of 50 slots used' (one more than the previous skill). Plans to integrate six data sources — Email, Teams, SharePoint/OneDrive, People, Public web via Deep Research, Calendar — produce a Word briefing with specific sections, and provide clear trigger phrases." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### The score — 95/100, Risk: HIGH
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/42-cowork-skill-d-dimension-breakdown.png" alt="Cowork's Dimension Breakdown chat card for the new-account-research-brief skill. Score: 95 out of 100 with an Excellent green badge. Publish Bar shows green tick Pass (greater than or equal to 80). Faithfulness shows green tick Pass. Dimension table — Trigger Clarity 25/25 (note: 8 trigger phrases plus exclusion clauses), Instruction Specificity 25/25 (numbered workflow, named tools, output format, Quick Start), Scope Boundaries 25/25 (When NOT to Use section, delegates to 4 named skills), Robustness 20/25 (6 guardrail rules plus missing-data handling). Trigger phrases listed: research customer, new account brief for customer, what do we know about customer, first-meeting prep for customer, tell me about customer, plus 3 more. Delegates to: customer-session-prep, inbox-drafts, meeting-recap, customer-session-followup. Quality report path: output/skill-quality-report.html." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/44-cowork-skill-d-quality-report-html-risk-high.png" alt="The standalone HTML quality report for the new-account-research-brief skill opened in a viewer. Top: green celebration banner labelled NEW-ACCOUNT-RESEARCH-BRIEF with the heading 'This skill is ready to share' and the standard message 'Everything important is in place.' Below: circular score showing 95 out of 100 in a green ring, three pill tags — Meets the bar to publish (green), Risk: high (red outline) and Grounding: PASS (green). Lower section 'What's already working' with four green-tick bullets." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### What changed vs `friday-portfolio-digest`
+
+Two skills, two scores, two risk tiers. The pattern is informative.
+
+| | `friday-portfolio-digest` | `new-account-research-brief` |
+|---|---|---|
+| **Score** | 96 / 100 | 95 / 100 |
+| **Risk tier** | Medium | **High** |
+| **Trigger Clarity** | 25/25 (6 phrases) | 25/25 (8 phrases) |
+| **Instruction Specificity** | 25/25 | 25/25 |
+| **Scope Boundaries** | 23/25 (2 sibling skills) | **25/25** (4 sibling skills) |
+| **Robustness** | 23/25 (10 guardrails) | **20/25** (6 guardrails) |
+| **Risk factors** | Touches `people-profiling` | Touches `people-profiling` + uses Deep Research (public web) + writes Word doc |
+
+What this tells you:
+- **More explicit sibling delegation → higher Scope Boundaries.** Naming 4 sibling skills in "When NOT to Use" got the full 25/25.
+- **More guardrails matter more than I realised.** 6 guardrails got 20/25; 10 got 23/25. Aim for 8-10+ explicit numbered guardrails for full marks.
+- **Risk tier escalates when you add capabilities, not when you add guardrails.** Even with the same care, a skill that touches the public web AND people data AND writes documents will land on **High** — which is fine, it's a signal not a blocker. The publish bar still passes.
+
+> 💡 **The publish bar has two visible tiers.** The HTML report says Publish bar: 70 (MVB — Minimum Viable Bar). The chat card for higher-risk skills like this one shows the threshold as ≥80 (the Excellent tier). A skill scoring 75 would publish (clears MVB) but wouldn't earn the Excellent banner — useful when you want to lift quality across a shared team library.
+
+### Final chat summary
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/43-cowork-skill-d-creation-summary.png" alt="Cowork's final chat summary for the new-account-research-brief skill. Headline: 'Your new-account-research-brief skill is live and scored 95 out of 100 — Excellent.' Below: a 'What it does' paragraph explaining the skill fans out across the user's M365 (email, Teams, SharePoint, calendar) and the public web simultaneously, identifies which Microsoft colleagues have touched the account, produces a Word briefing plus a 3-bullet TL;DR in chat, and never sends anything (for the user's eyes only). Below that: a list of five trigger phrases with a customer placeholder — Research customer, New account brief for customer, What do we know about customer, First-meeting prep for customer, Tell me about customer (external company). Closing note that the full quality report is in skill-quality-report.html and the skill syncs to OneDrive within about 35 seconds. An attached file is shown: skill-quality-report.html." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+---
+
 ## Path 2 — Custom skills via Copilot Studio (low-code, for admins)
 
 If you're an IT admin or power user, [Copilot Studio](https://copilotstudio.microsoft.com) lets you build custom skills using Power Automate flows, API connectors, or AI-powered topics. Once published, they appear as callable actions inside Cowork.
