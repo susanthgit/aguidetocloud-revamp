@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T12:39:17.300144+00:00",
+  "generated_at": "2026-06-15T18:45:17.777344+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -19,12 +19,12 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 17,
+      "total_incidents": 16,
       "active_incidents": 1,
-      "avg_duration_minutes": 4867,
+      "avg_duration_minutes": 4519,
       "last_incident": "2026-06-11T21:12:12+00:00",
       "classifications": {
-        "advisory": 10,
+        "advisory": 9,
         "incident": 7
       }
     },
@@ -33,8 +33,8 @@
       "short_name": "Exchange",
       "icon": "📧",
       "total_incidents": 12,
-      "active_incidents": 2,
-      "avg_duration_minutes": 16136,
+      "active_incidents": 1,
+      "avg_duration_minutes": 19046,
       "last_incident": "2026-05-30T09:11:59.853000+00:00",
       "classifications": {
         "advisory": 10,
@@ -42,29 +42,29 @@
       }
     },
     {
-      "service": "Microsoft 365 Copilot Chat",
-      "short_name": "Copilot Chat",
-      "icon": "💭",
-      "total_incidents": 10,
-      "active_incidents": 2,
-      "avg_duration_minutes": 5209,
-      "last_incident": "2026-06-15T06:12:24.447000+00:00",
-      "classifications": {
-        "incident": 5,
-        "advisory": 5
-      }
-    },
-    {
       "service": "Microsoft Defender XDR",
       "short_name": "Defender",
       "icon": "🛡️",
-      "total_incidents": 8,
-      "active_incidents": 0,
+      "total_incidents": 9,
+      "active_incidents": 1,
       "avg_duration_minutes": 13814,
-      "last_incident": "2026-05-28T00:00:00+00:00",
+      "last_incident": "2026-06-15T16:19:58.127000+00:00",
       "classifications": {
-        "advisory": 7,
+        "advisory": 8,
         "incident": 1
+      }
+    },
+    {
+      "service": "Microsoft 365 Copilot Chat",
+      "short_name": "Copilot Chat",
+      "icon": "💭",
+      "total_incidents": 9,
+      "active_incidents": 2,
+      "avg_duration_minutes": 5824,
+      "last_incident": "2026-06-12T04:00:00+00:00",
+      "classifications": {
+        "incident": 5,
+        "advisory": 4
       }
     },
     {
@@ -94,6 +94,18 @@
       }
     },
     {
+      "service": "Microsoft Viva",
+      "short_name": "Viva",
+      "icon": "🌱",
+      "total_incidents": 3,
+      "active_incidents": 1,
+      "avg_duration_minutes": 3200,
+      "last_incident": "2026-06-14T20:12:00+00:00",
+      "classifications": {
+        "advisory": 3
+      }
+    },
+    {
       "service": "Azure",
       "short_name": "Azure",
       "icon": "☁️",
@@ -116,18 +128,6 @@
       "classifications": {
         "advisory": 2,
         "incident": 1
-      }
-    },
-    {
-      "service": "Microsoft Viva",
-      "short_name": "Viva",
-      "icon": "🌱",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 3200,
-      "last_incident": "2026-05-16T22:00:00+00:00",
-      "classifications": {
-        "advisory": 2
       }
     },
     {
@@ -219,8 +219,8 @@
   "monthly": [
     {
       "month": "2026-06",
-      "incident_count": 18,
-      "services_affected": 4
+      "incident_count": 20,
+      "services_affected": 6
     },
     {
       "month": "2026-05",
@@ -229,7 +229,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 39,
+      "incident_count": 37,
       "services_affected": 12
     }
   ]
