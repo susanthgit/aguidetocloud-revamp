@@ -215,19 +215,77 @@ You can create up to **50 custom skills** per user. Each file must be under 1 MB
 
 #### The SKILL.md pattern that works in practice
 
-Real custom skills I use day-to-day all follow the same four-section pattern. Worth copying:
+Cowork now standardises a richer SKILL.md structure than the earlier minimal template — and it auto-scores skills against this structure (see "Cowork scores your skill" below). When you use Method A and ask Cowork to create a skill for you, the file Cowork writes follows this 8-section pattern:
 
 | Section | Purpose |
 |---|---|
-| YAML frontmatter (`name:` + `description:`) | The skill ID and the trigger phrases Cowork's planner uses to decide when to call this skill |
-| **1. Gather context first** | What Cowork should retrieve from M365 before doing anything (calendar, email, Teams, files) — with explicit "never invent" placeholders for missing facts |
-| **2. Structure** | The shape of the output (length, sections, format) |
-| **3. Tone & safety** | Voice rules, what to strip if the output is going to an external audience, draft-don't-send guardrails |
-| **4. Output & delivery** | Where to save the artefact (`output/` folder, Draft folder, etc.), and whether to send or hold for review |
+| **YAML frontmatter** — `name:`, `description:` (with trigger phrases), `cowork:` extension (`category:` + `icon:`) | The skill ID, the trigger phrases Cowork's planner matches against, and category/icon metadata for the Skills UI |
+| **Overview** | One paragraph — what this skill does and what gets produced |
+| **When to Use** | Trigger scenarios written as user-facing examples |
+| **When NOT to Use** | What this skill is *not* for, plus explicit handoff to sibling skills ("for X, use the `<other-skill>` skill instead") — this is the section Cowork scores most heavily on **Scope Boundaries** |
+| **Quick Start** | A condensed numbered workflow showing the steps Cowork will run end-to-end |
+| **Core Instructions** | The full numbered Step 1 → Step N detail. Every tool call named explicitly (`ListCalendarView`, `ListMessages`, etc.). Every parameter spelled out |
+| **Output** | The exact shape of the artefact — example tables, formatting rules, file naming |
+| **Guardrails** | Numbered list of explicit rules — what NOT to do, what to never invent, when to leave `[confirm]` placeholders. Cowork scores this section directly under **Robustness** |
 
 The "never invent" line is the most important habit. It tells Cowork to leave a clearly-marked placeholder (e.g. `[confirm date]`) rather than guessing. That single discipline is the difference between a skill that's safe to demo and one that occasionally embarrasses you in front of a customer.
 
-### Path 2 — Custom skills via Copilot Studio (low-code, for admins)
+---
+
+## Cowork's 5-step skill creation pipeline
+
+When you ask Cowork to create a skill (Method A above), it runs through a deterministic 5-step pipeline rather than just writing a file blind:
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/31-cowork-skill-creation-thought-process.png" alt="Cowork's Thought process panel expanded during skill creation. Shows the planning workflow with five numbered steps — 1. Validate the name, 2. Draft and write the SKILL.md, 3. Auto-validate and score, 4. Generate quality report, 5. Show summary. Below the list, Cowork notes that the name is valid and the user is at 4 of 50 skills used." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+The pipeline:
+
+| Step | What happens |
+|---|---|
+| 1. Validate the name | Checks the skill name is unique in your library and that you're under the 50-skill quota |
+| 2. Draft and write the SKILL.md | Generates the SKILL.md file following the 8-section pattern above, writes it to your OneDrive `Documents/Cowork/Skills/<name>/` folder |
+| 3. **Auto-validate and score** | Scores the just-written skill against four quality dimensions (Trigger Clarity, Instruction Specificity, Scope Boundaries, Robustness) plus three hard gates (Publish bar MVB ≥ 70, No-fabrication check, Risk tier classification) |
+| 4. **Generate quality report** | Produces a standalone `skill-quality-report.html` file in the task output folder showing the score breakdown |
+| 5. Show summary | Sends a final chat summary with the trigger phrases, what the skill does, and the score |
+
+This is new behaviour — older Cowork builds wrote the SKILL.md and stopped there. The validation + scoring + report pattern means a custom skill arrives audit-ready.
+
+---
+
+## Cowork scores your skill — Skill Quality Report
+
+After writing the SKILL.md, Cowork displays a **Skill Quality Report** card in the chat. The score is out of 100, computed from four 25-point dimensions, with three hard gates that decide whether the skill is publishable.
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/32-cowork-skill-quality-dimension-breakdown.png" alt="Cowork's Skill Quality Report card showing a sample skill scoring 96 out of 100 with an Excellent green badge. A full-width green progress bar sits below the title. The Dimension Breakdown lists four scored dimensions — Trigger Clarity 25 of 25 with note '6 trigger phrases plus exclusion clause', Instruction Specificity 25 of 25 with note 'Numbered workflow, named tools, output format, Quick Start', Scope Boundaries 23 of 25 with note 'When NOT to Use section, delegation to sibling skills', and Robustness 23 of 25 with note '10 guardrail rules, missing-data handling'. Below the dimensions are three rows — Publish bar (MVB greater than or equal to 70) marked PASS, No-fabrication check marked PASS, and Risk tier shown as Medium (read-only, no writes). A note on the right reads Syncing to OneDrive (about 35 seconds), and the six trigger phrases that fire the skill are listed at the bottom." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### The four dimensions
+
+| Dimension | Max | What earns full marks |
+|---|---|---|
+| **Trigger Clarity** | 25 | Multiple trigger phrases (≈5+), distinct wording (not just synonyms), and a "Do NOT use for…" exclusion clause that delegates to sibling skills |
+| **Instruction Specificity** | 25 | Numbered Core Instructions workflow, every tool call named (`ListCalendarView`, `docx`, etc.), explicit Output format with example tables, a Quick Start condensed view |
+| **Scope Boundaries** | 25 | "When NOT to Use" section that explicitly delegates to sibling skills, clear in-scope vs out-of-scope boundary |
+| **Robustness** | 25 | Multiple explicit guardrail rules (10 is a strong baseline), missing-data handling with `[confirm]` placeholders, "never invent" discipline |
+
+### The three hard gates
+
+| Gate | What it means |
+|---|---|
+| **Publish bar (MVB ≥ 70)** | Minimum Viable Bar — skills scoring under 70 are flagged as not-publishable; Cowork won't promote them as ready-to-use |
+| **No-fabrication check** | Validates the skill enforces "never invent" discipline — placeholders for missing facts rather than guesses |
+| **Risk tier** | Classified Low / Medium / High based on what the skill writes or sends. *Read-only* skills (only retrieves data, doesn't post or send) get **Medium**; skills that send emails or post to Teams without checkpoints get **High** |
+
+### What you see in the chat after creation
+
+The final chat summary tells you what the skill is, the score, the trigger phrases, and attaches the standalone `skill-quality-report.html` file for review later.
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/33-cowork-skill-creation-summary.png" alt="Cowork's final chat summary after creating a skill. Headline reads 'Your friday-portfolio-digest skill is live and scored 96 out of 100 — Excellent, well above the 70 publish bar.' Lists six trigger phrases — friday portfolio digest, weekly customer touchpoint review, who do I need to stay in touch with, friday customer review, portfolio check, and who needs a touchpoint before the weekend. Below that, six numbered steps describe what the skill does — scans calendar for external attendees, checks sent items for outbound emails, checks inbox for inbound flagged messages, marks orgs with no touchpoint in 14 plus days as Stale, produces a scannable digest with Active / Awaiting Reply / Stale / Top 3 sections and saves a .docx file named friday-portfolio-digest-2026-06-15.docx, and never sends or posts anything. Closing note says the quality report is saved to files and changes will appear in OneDrive within about 35 seconds. An attached file shown is skill-quality-report.html." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+> 💡 **Use the scoring to tune your prompts.** When I asked Cowork to create the `friday-portfolio-digest` skill above, the first generation scored 96 — the 4 lost points came from two dimensions (Scope Boundaries and Robustness) where my create-prompt could have been more explicit. If a skill scores below the Publish bar, re-issue the create-prompt with more guardrails, more sibling-skill delegation, and more specific tool names. Cowork will re-score the next version. It's a working feedback loop.
+
+---
+
+## Path 2 — Custom skills via Copilot Studio (low-code, for admins)
 
 If you're an IT admin or power user, [Copilot Studio](https://copilotstudio.microsoft.com) lets you build custom skills using Power Automate flows, API connectors, or AI-powered topics. Once published, they appear as callable actions inside Cowork.
 
