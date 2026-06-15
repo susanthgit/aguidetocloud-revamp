@@ -95,7 +95,50 @@ And the Word document version saved to `output/friday-portfolio-digest-2026-06-1
 - 🟡 One Active row had `[confirm]` against the org name because the skill couldn't disambiguate a parent-org / subsidiary lookup (which is exactly what the Edge Cases section in the skill flagged as a known scenario — so this is correct behaviour, just costs a star until I tweak the disambiguation rule).
 - 🟡 The Word doc rendered fine but used the default Word template — would be nicer on a custom Friday-digest template. Easy follow-up.
 
-**Would I demo this to a customer?** Yes — with the same redaction discipline I used above. The output structure alone is compelling: customers immediately see how Cowork translates their M365 data into a Friday-afternoon decision artefact.
+### Skill: `new-account-research-brief` — *⭐⭐⭐⭐⭐ · Tested 16 Jun 2026*
+
+**Trigger phrase used:** `research Contoso Airlines NZ`
+
+**Why a fictional customer:** the previous-day test on a real prospect surfaced rich account intelligence — including internal Microsoft engagement notes that aren't appropriate for a public blog. Re-running on Microsoft's own fictional `Contoso Airlines NZ` brand gave us a clean, publishable test AND happened to demonstrate the most interesting Edge Case in the SKILL.md.
+
+**What I asked it to do:** the one-line trigger above.
+
+**The setup — typing the prompt:**
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/85-cowork-test-d-fictional-prompt.png" alt="A Cowork chat bubble in the top-right of the conversation showing the typed user input 'research Contoso Airlines NZ'. No other text or response is visible yet — the rest of the conversation area is empty." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+**Cowork's Thought process (expanded):**
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/86-cowork-test-d-thought-process.png" alt="Cowork's expanded Thought process panel during the research request. The first paragraph reads: 'The user wants me to research Contoso Airlines NZ. Let me think about this — Contoso is a fictional company name used by Microsoft in demos and examples. Contoso Airlines NZ is likely a fictional / demo company, not a real airline in New Zealand.' The second paragraph reads: 'However, given that Susanth is a Sr Solution Engineer in NZ Specialist Sales for Modern Work at Microsoft, he might be asking about a real customer called Contoso Airlines or a company that uses that name, or he might be using Contoso as a codename for a real airline customer.' A 'Working on your request' status indicator appears at the bottom." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+Two things worth pausing on here:
+
+1. **Cowork grounded on my Microsoft directory profile.** It knows my exact role and team — "Sr Solution Engineer in NZ Specialist Sales for Modern Work" — without me telling it. That context shapes how it interprets ambiguous requests.
+2. **Cowork reasoned about intent, not just keywords.** Even when the keyword `Contoso` strongly signals "fictional", Cowork stopped to consider whether I might be using the fictional name as a codename for a real customer. That's a much more useful reasoning style than literal-matching.
+
+**The Edge Case response — exactly as the SKILL.md designed:**
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/87-cowork-test-d-edge-case-zero-results.png" alt="Cowork's response to the Contoso Airlines NZ research request. Headline 'Heads up, Susanth — Contoso Airlines is not a real company.' explains that Contoso is Microsoft's fictional demo / training brand (like Contoso Ltd or Blue Yonder Airlines) used in Azure and Microsoft 365 sample applications. 'Zero real signals found:' header followed by three bullets — No internal email, Teams, or calendar matches. No public web results for a real business. The only Contoso Airlines hits were Microsoft's own demo GitHub repos and training materials. 'Did you mean one of these?' header followed by a two-column table titled Real NZ airline and Notes with four rows — Air New Zealand (Flag carrier, largest NZ airline, Auckland HQ), Sounds Air (Regional carrier, Nelson / Picton), Originair (Regional, Nelson Airport), Sunair (Regional, Tauranga). Closing line: 'Or, if Contoso Airlines NZ is a codename you're using for a real customer, let me know the actual company name and I'll run the full account brief. What were you looking for?'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+This is **end-to-end validation** of the Edge Cases section we added during the Pattern C structural restructure ([see Skill D second iteration in the Skills + Plugins spoke](/blog/microsoft-copilot-cowork-skills-and-plugins/#pattern-c--structural-restructure-to-reach-100)). The behaviour matches the design line by line:
+
+| Designed behaviour (Edge Case #2 in the SKILL.md) | Actual behaviour |
+|---|---|
+| Detect zero-internal + zero-public scenario | ✅ "Zero real signals found:" with 3 bullets enumerating where it looked |
+| Cite where signals came from (or didn't) | ✅ "The only Contoso Airlines hits were Microsoft's own demo GitHub repos and training materials" |
+| Suggest likely-correct spellings | ✅ Table of 4 real NZ airlines (a small Levenshtein-style suggestion set) |
+| Offer codename-handling fallback | ✅ "if 'Contoso Airlines NZ' is a codename you're using for a real customer, let me know the actual company name" |
+| Never generate a blank or fabricated briefing | ✅ Refused to generate research; asked for clarification instead |
+
+**Why 5 stars ⭐⭐⭐⭐⭐:**
+
+- ✅ Cowork recognised the fictional-customer scenario without me having to tell it.
+- ✅ Honoured every guardrail in the SKILL.md — no fabricated research, explicit zero-results enumeration, plain-English suggestion table.
+- ✅ Surfaced the codename-handling path the SKILL.md asked for.
+- ✅ Cited where it looked (internal + public web + demo repo content) so I can verify the search was actually thorough.
+- ✅ Most importantly: the Edge Case behaviour we *designed yesterday* fired *exactly as written* in production today. Design → restructure → test, end-to-end.
+
+**Would I demo this to a customer?** Yes — this is one of the best demos in my pocket now. It shows Cowork *refusing to fabricate* on a customer name that doesn't exist, instead of confidently producing a plausible-sounding but invented briefing. Customers worry about hallucination; this is the antidote.
 
 ---
 
