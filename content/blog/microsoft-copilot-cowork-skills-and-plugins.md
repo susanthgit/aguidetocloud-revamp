@@ -427,6 +427,62 @@ If full marks on Scope Boundaries matters for your team's library, name at least
 
 ---
 
+## Worked Example #4 — building a `linkedin-carousel-microsoft` skill (and the first amber bar)
+
+The fourth example builds a skill that produces an external-facing artefact — a LinkedIn carousel deck about a Microsoft product topic (Copilot, Cowork, Scout, etc). The output is a .pptx that I export to PDF and upload to LinkedIn as a document carousel.
+
+This skill behaves differently from the first three in one important way: it generates an artefact that LEAVES my tenant. That changes the scoring.
+
+### The create prompt
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/60-cowork-skill-f-prompt.png" alt="The Cowork landing page showing the typed create-prompt for a linkedin-carousel-microsoft skill. Visible text reads: 'Create a custom skill called linkedin-carousel-microsoft with these instructions: This skill produces a LinkedIn carousel as a PowerPoint deck (.pptx) about a Microsoft product topic — Copilot, Cowork, Scout, Microsoft 365 E7, Frontier, Agent Builder, Copilot Studio, Foundry, or related capabilities. Visual style matches my aguidetocloud.com blog's notebook aesthetic: cream paper background, ink-blue text, pen-red accents, handwritten title font, no emoji in slide bodies. Use when I want a visual multi-slide carousel for LinkedIn — not just a text post.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### The result — 91/100 with the first amber bar of the series
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/61-cowork-skill-f-quality-report-91.png" alt="Cowork's Quality Report card for the linkedin-carousel-microsoft skill in yet another evolved layout. Header: skill name with subtitle 'Personal skill · writing · SlideText' and an Excellent green badge on the right. Three-column header row showing — Overall Score 91 out of 100 (MVB passed, threshold 80), Risk Tier High (Behavioural review recommended), Skill Slot 8 out of 50 (42 slots remaining). Below: Dimension Scores section with four bars — Trigger Clarity 25/25 full green bar, Instruction Specificity 22/25 nearly-full green bar, Scope Boundaries 25/25 full green bar, Robustness 19/25 amber/yellow bar (the first non-green bar in the series). Triggers section lists six numbered trigger phrases including linkedin carousel about topic, draft a linkedin carousel on topic, carousel for the new feature, linkedin visual post on topic, build a carousel about topic, share microsoft topic as a linkedin carousel. Footer notes the quality report is saved as skill-quality-report-linkedin-carousel.html and will sync to OneDrive in about 35 seconds." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### Why the score dropped — Cowork explains it
+
+The chat summary for this skill is more diagnostic than the earlier ones. Cowork explains where each point was lost AND why some of those losses are acceptable.
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/62-cowork-skill-f-creation-summary.png" alt="Cowork's final chat summary for the linkedin-carousel-microsoft skill in a diagnostic narrative format. Headline: 'linkedin-carousel-microsoft is created and live. Here's the summary.' Score 91/100 — Excellent — well above the 80 MVB publish bar. A bulleted breakdown follows — Perfect scores on Trigger Clarity and Scope Boundaries (6 trigger phrases, full delegation map to sibling skills, airtight exclusions). 22/25 Instruction Specificity (the scorer noted no explicit tool names in the description block; tools are named inside the body, which is correct for skills this complex). 19/25 Robustness (solid guardrails but a high-risk skill by nature — file generation plus external-facing content; a behavioural test run would push this higher). Below: Risk tier is High because it generates files and produces externally-visible content — the scorer recommends a real-world behavioural test before relying on it in front of customers. That just means try it once on a topic you know well and check the output. Closing line: It will sync to your OneDrive in about 35 seconds at Documents/Cowork/. Three example invocations are shown — LinkedIn carousel about Microsoft 365 Copilot pages, Build a carousel about Copilot Studio agent builder, Draft a linkedin carousel on Frontier. Attached file: skill-quality-report-linkedin-carousel.html." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+### What the amber bar means — Robustness has an external-facing ceiling
+
+The first three worked examples all stayed inside the tenant — read from M365, wrote a Word doc to OneDrive, surfaced output in chat. Cowork's scorer treats those as **lower-blast-radius** skills and rewards them with full Robustness if the guardrails are explicit.
+
+This fourth skill is different. It produces a deck that I export to PDF and upload to LinkedIn — an **externally-visible artefact**. Even with the same care given to guardrails, the scorer drops Robustness by 5-6 points because the blast radius extends beyond the tenant.
+
+The scorer also surfaces a new qualifier next to the Risk Tier: **"Behavioural review recommended."** Plain English translation: run the skill once on a topic you know well, audit the output by hand, *then* trust it in front of customers.
+
+### New things in this card vs the earlier three
+
+| Element | Earlier worked examples | This card |
+|---|---|---|
+| **Skill classification** | Not shown | New subtitle: `Personal skill · writing · SlideText` — Cowork tags every skill with Type · Category · Subtype |
+| **Header layout** | 2-column or 3-column with MVB Gate | New 3-column: **Overall Score · Risk Tier · Skill Slot** (slot counter promoted to its own column) |
+| **Risk Tier qualifier** | Listed plainly | Now includes guidance text — *"Behavioural review recommended"* for High-risk skills |
+| **Bar colours** | All green | **First amber bar observed** — Robustness 19/25 renders amber, not green, signalling "real but not full marks" |
+| **Quality report filename** | Generic `skill-quality-report.html` | Skill-specific suffix: `skill-quality-report-linkedin-carousel.html` |
+| **Chat summary tone** | Compact list | Diagnostic narrative — explains *why* each point was lost AND when the loss is acceptable |
+
+---
+
+## What the 4 worked examples teach us
+
+| Insight | Where it came from |
+|---|---|
+| **Score is reliably ≥ 90 when the create-prompt covers the 8-section pattern.** All four skills landed 91-98. | All 4 worked examples |
+| **Full Trigger Clarity (25/25) needs 6+ trigger phrases + an exclusion clause.** Easy points if you remember. | All 4 |
+| **Full Scope Boundaries (25/25) needs 4+ named sibling skills in "When NOT to Use".** Two delegations gets you 23. Four gets you 25. | Skills C (23/25, 2 siblings) vs D (25/25, 4 siblings) |
+| **Full Robustness (25/25) needs ~9-10 explicit numbered guardrails + confirmation gates.** Fewer drops you to 20-23. | Skills C (10 guardrails, 23/25) vs D (6 guardrails, 20/25) vs E (9 guardrails + confirmation gates, 25/25) |
+| **External-facing skills have an inherent Robustness ceiling.** Even strong guardrails won't push past ~19-21/25 if the artefact leaves your tenant. | Skill F (file gen + external-facing → 19/25 amber bar) |
+| **Risk Tier escalates with capabilities, not with care.** Adding Deep Research, people-profiling, or external delivery escalates you to High no matter how clean the guardrails are. | Skills D and F |
+| **Cowork's scorer reads intent, not just keywords.** A skill that prohibits destructive actions is recognised as flagging-them-to-block, not performing-them. | Skill E (Destructive scope WARN with "in context of flagging them") |
+| **The Quality Report UI is iterating fast.** I saw four materially different card layouts within an hour, plus a friendly HTML report surface that uses different language entirely. Treat any specific screenshot as a snapshot, not a contract. | All 4 worked examples |
+
+---
+
 ## Path 2 — Custom skills via Copilot Studio (low-code, for admins)
 
 If you're an IT admin or power user, [Copilot Studio](https://copilotstudio.microsoft.com) lets you build custom skills using Power Automate flows, API connectors, or AI-powered topics. Once published, they appear as callable actions inside Cowork.
