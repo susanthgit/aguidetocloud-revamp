@@ -114,9 +114,13 @@ One prompt. Multiple apps. Real work done. And it asked before doing anything se
 
 ### What Does Cowork Actually Look Like?
 
-When you open Copilot (in Teams, Outlook, or the web app), you'll find Cowork in the **Agent Store** — it appears as an agent you can add to your Copilot experience. Once added, you interact with it through the same chat interface you already know.
+Cowork has its own surface inside Microsoft 365 Copilot — open it directly at **`m365.cloud.microsoft/agents/cowork`**. The landing greets you with *"Hi, what can I do for you?"* and a single task input that simply says *"Start a task…"* That phrasing is the whole mental shift: this is a task-handler, not a chat box.
 
-The difference is what happens after you send a message. Instead of an instant reply, Cowork shows you a **plan** — a list of steps it's going to take. You can review the plan, adjust it, or let it run. As it works, you'll see progress updates, and it'll pause at checkpoints to ask for your input.
+The left side rail keeps the history of every task you've handed off — persistent, searchable, with a **Scheduled** view for recurring work. **New task**, **Search**, **Scheduled**, and **Customize** are the core controls.
+
+The landing page also surfaces two helper sections: **"Needs your attention"** (tasks already in flight that want your input) and **"Try these next"** (suggested workflows like *Organize my inbox*, *Arrange my week*, *Prep for a meeting*).
+
+When you do start a task, instead of an instant reply Cowork shows you a **plan** — the list of steps it's going to take. You can review the plan, adjust it, or let it run. As it works you'll see progress updates, and it'll pause at checkpoints to ask for your input.
 
 It feels less like chatting with a bot and more like delegating to a very organised team member who keeps you in the loop.
 
@@ -562,22 +566,17 @@ This is also the part that makes Cowork genuinely extensible — you're not limi
 
 ### Built-in Cowork Skills
 
-These come with Cowork out of the box. No setup, no configuration — they just work:
+Cowork ships with **13 built-in skills, organised into 5 categories**. They cover the M365 apps you live in — no setup, no configuration. Counts and skill names are based on [Microsoft's official Cowork labs](https://github.com/microsoft/agent-academy/tree/main/docs/cowork-collective).
 
-| Skill | What It Does |
+| Category | What Cowork can do out of the box |
 |---|---|
-| **Email** | Reads, searches, drafts and queues Outlook emails |
-| **Calendar** | Reads meetings, finds free slots, creates and updates events |
-| **Teams** | Reads chat history, posts to channels, sends direct messages |
-| **Enterprise Search** | Finds and retrieves files across SharePoint and OneDrive |
-| **Word** | Creates and edits documents |
-| **Excel** | Reads, writes and analyses spreadsheets |
-| **PowerPoint** | Builds and edits slide decks |
-| **Daily Briefing** | Summarises your day — meetings, emails, open actions |
-| **Deep Research** | Searches the web and Microsoft Learn for up-to-date information |
-| **Communications** | Orchestrates multi-channel drafts across email, Teams and documents |
+| **Communication** | Draft and send emails, post to Teams channels and chats, manage your inbox (sort, delete, reply inline) |
+| **Documents** | Create Word documents, Excel spreadsheets, PowerPoint presentations, and PDFs |
+| **Calendar** | Schedule meetings using natural language, manage calendar conflicts, get daily briefings |
+| **Search** | Find information and people across your organisation, perform deep research |
+| **Automation** | Run prompts on a schedule for recurring tasks |
 
-Ten skills working together is already powerful. But here's where it gets interesting.
+13 individual skills inside those 5 categories already covers most cross-app workflows. But here's where it gets interesting — you can add more.
 
 ### Adding More Skills
 
@@ -798,6 +797,12 @@ No. Cowork is brilliant at coordination, preparation, and routine multi-step tas
 - [20 Microsoft 365 Copilot Features You Should Be Using Right Now](/blog/20-copilot-features-you-should-be-using/)
 - [Agent Builder vs Copilot Studio vs Foundry — Which One Should You Use?](/blog/agent-builder-vs-copilot-studio-vs-foundry/)
 - [Microsoft 365 Copilot March 2026 Updates](/blog/microsoft-365-copilot-march-2026-updates/)
+
+## Official Microsoft references
+
+- [Microsoft Learn — Copilot Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) — the authoritative product docs
+- [Microsoft Agent Academy — Cowork Collective](https://github.com/microsoft/agent-academy/tree/main/docs/cowork-collective) — Microsoft's official hands-on labs (Badge Bandit, Vacay, Audit Ace)
+- [Microsoft 365 Frontier program](https://adoption.microsoft.com/en-us/copilot/frontier-program/) — preview enrollment
 
 ---
 

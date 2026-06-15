@@ -45,13 +45,21 @@ founder_note: |
 
 ---
 
-## Built-in skills
+## Built-in skills — 13 in 5 categories
 
-<!-- PRE-GA EXPANSION — content extracted from hub lines 560-577 -->
+Cowork ships with **13 built-in skills, organised in 5 categories**. The category structure below mirrors [Microsoft's official Cowork Collective labs](https://github.com/microsoft/agent-academy/tree/main/docs/cowork-collective) (the authoritative source).
 
-<!-- TODO Atlas/Sush: verify exact built-in skill count and descriptions from Sush's tenant during testing today. Hub body table currently shows 10 skills; hub FAQ says 13. Reconcile to the actual tenant state. -->
+| Category | What it covers |
+|---|---|
+| **Communication** | Draft and send emails, post to Teams channels and chats, manage your inbox |
+| **Documents** | Create Word documents, Excel spreadsheets, PowerPoint presentations, and PDFs |
+| **Calendar** | Schedule meetings using natural language, manage calendar conflicts, get daily briefings |
+| **Search** | Find information and people across your organisation, perform deep research |
+| **Automation** | Run prompts on a schedule for recurring tasks |
 
-The hub's built-in skills section currently lists ten skills. Sush is verifying the exact set on his tenant during pre-GA testing — this page updates with the reconciled list.
+<!-- TODO Atlas/Sush: enumerate the exact 13 individual skill names from Sush's tenant during testing. Current verified source (agent-academy) confirms the count + 5-category structure; individual-skill enumeration in the hub body is one-place-only and should be reconciled. -->
+
+> 💡 **Recent change worth knowing:** Cowork now auto-approves emails sent to yourself — no approval prompt for self-emails. Other actions still require approval. (Source: [Microsoft Agent Academy Cowork Collective — Badge Bandit](https://github.com/microsoft/agent-academy/blob/main/docs/cowork-collective/badge-check/index.md).)
 
 ---
 
@@ -116,3 +124,21 @@ Treat skill approval the way you treat app approval in Entra ID.
 - [Cowork: Prompts to try](/blog/microsoft-copilot-cowork-prompts-to-try/)
 - [Cowork: Pricing and cost management](/blog/microsoft-copilot-cowork-pricing-cost-management/)
 - [Cowork: Admin enablement and governance](/blog/microsoft-copilot-cowork-admin-and-governance/)
+
+## Official Microsoft references for skills + plugins
+
+- [Microsoft Learn — Copilot Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/)
+- [Microsoft Agent Academy — Cowork Collective](https://github.com/microsoft/agent-academy/tree/main/docs/cowork-collective) — official hands-on labs:
+  - [Badge Bandit](https://github.com/microsoft/agent-academy/blob/main/docs/cowork-collective/badge-check/index.md) — 25 min · CSV analysis + styled HTML report email
+  - [Vacay (Out-of-Office Prep)](https://github.com/microsoft/agent-academy/blob/main/docs/cowork-collective/out-of-office-prep/index.md) — 20 min · full OOO handoff in one conversation
+  - [Audit Ace](https://github.com/microsoft/agent-academy/blob/main/docs/cowork-collective/compliance-packet/index.md) — 25 min · compliance packet assembly
+
+## Community Cowork skill libraries (with attribution)
+
+The Cowork developer community is publishing creative skill patterns publicly. One worth a look if you build custom skills:
+
+- [`ITSpecialist111/Copilot-Cowork-Skills`](https://github.com/ITSpecialist111/Copilot-Cowork-Skills) — a personal research repository containing two interesting patterns:
+  - **`skill-factory`** — a meta-skill that batch-creates other skill packages to a defined quality bar
+  - **`rfp-agent-swarm`** — a 7-skill pipeline for RFP response work (intake → fit assessment → drafting → human gates → review → assembly), shared substrate, 4 hard human-approval gates
+
+> ⚠️ **Note on community content:** Community repos like the one above are independent research artefacts, not Microsoft products. The author of that repo states this clearly. They can be excellent learning material but should always be validated against [Microsoft Learn — Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) before being used with real data.

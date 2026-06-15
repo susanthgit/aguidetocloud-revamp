@@ -47,9 +47,18 @@ founder_note: |
 
 ## Step 1 — Open Cowork
 
-<!-- SCREENSHOT: agent store inside Copilot Chat showing Cowork tile — Sush to capture from tenant -->
+Cowork lives at its own URL inside Microsoft 365 Copilot — open **`m365.cloud.microsoft/agents/cowork`** directly in your browser. It's a dedicated surface, not a tile inside another app.
 
-Where Cowork lives in the Copilot Chat interface, how to add it to your favourites, and what the entry experience looks like.
+The landing page is built around two things: an input box that says **"Start a task…"** (not "Send a message") and a left side rail with your task history. The core controls in the rail are **New task**, **Search**, **Scheduled**, and **Customize**.
+
+Before you type anything, two helper sections sit on the landing page:
+
+- **Needs your attention** — Cowork tasks already in flight that want your input (an approval, a clarification, a decision)
+- **Try these next** — suggested workflows like *Organize my inbox*, *Arrange my week*, *Prep for a meeting* — good for first-time exploration
+
+<!-- SCREENSHOT (Sush to capture clean — current capture had a side-slider rendering issue): 00-hero-cowork-main-window.png — full Cowork landing showing the dedicated surface, side rail, greeting, input, and helper sections -->
+
+> 💡 **Mental model shift:** Cowork's input says *"Start a task…"* on purpose. Where Copilot Chat is a conversation, Cowork is a delegation. You're handing off work, not chatting through it.
 
 ---
 
