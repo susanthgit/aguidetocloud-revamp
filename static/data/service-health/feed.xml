@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 15 Jun 2026 18:45:18 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2026 22:26:55 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Defender XDR] Some users may be unable to begin onboarding for Microsoft Defender for Endpoint or Defender for Office 365</title>
@@ -134,9 +134,9 @@
       <pubDate>Tue, 02 Jun 2026 13:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft 365 Copilot Chat] Users may not see accurate usage data for Microsoft 365 Copilot Chat in the Microsoft 365 admin center</title>
+      <title>[Microsoft 365 Copilot Chat] Admins may not see accurate usage data for Microsoft 365 Copilot Chat in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1390285</link>
-      <description>[Microsoft 365 Copilot Chat] Users may not see accurate usage data for Copilot Chat in usage reports within the Microsoft 365 admin center.</description>
+      <description>[Microsoft 365 Copilot Chat] Admins may not see accurate usage data for Copilot Chat in the Microsoft 365 admin center.</description>
       <category>Microsoft 365 Copilot Chat</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CW1390285</guid>
