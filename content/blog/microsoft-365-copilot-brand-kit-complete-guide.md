@@ -4,7 +4,7 @@ list_title: "M365 Copilot Brand Kit — The Complete Guide"
 hub_id: "it-admins"
 description: "Build PowerPoint templates that work inside and outside Copilot, set up Brand Images, run Brand Checker, position Designer vs Adobe Express."
 date: 2026-04-15
-lastmod: 2026-06-10
+lastmod: 2026-06-16
 card_tag: "Copilot"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -56,6 +56,10 @@ founder_note: |
 I just wrapped up two Train-the-Trainer sessions on Microsoft 365 Copilot, and one question came up more than any other: **"How do I make Copilot use our brand?"** — followed closely by "What's a Brand Kit?", "How do I create one?", and "Will Copilot actually use our PowerPoint templates?"
 
 If you've been wondering the same thing, this guide is for you.
+
+<p><img src="/images/blog/brand-kit/01-create-brand-hero.webp" alt="The Microsoft 365 Copilot Create canvas with the Brand panel open on the right — showing an 'XBox brand' asset set and Microsoft brand assets, so Copilot can generate on-brand visuals" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft Learn — Enterprise Brand Manager](https://learn.microsoft.com/copilot/microsoft-365/enterprise-brand-manager) — the Brand panel inside Microsoft 365 Copilot Create, where your organisation's brand assets become available for on-brand content. (Microsoft demo data.)*
 
 <div class="living-doc-banner">
 
@@ -164,6 +168,10 @@ flowchart TD
 ## What's Inside a Brand Kit?
 
 A Brand Kit is more than just a logo and a colour code. Here's everything you can include:
+
+<p><img src="/images/blog/brand-kit/02-brand-kit-logos-colours.webp" alt="A Brand Kit being defined in the Microsoft 365 Copilot app — Contoso logo variations, a colour palette, and a 'Publish as Official brand kit' confirmation dialog" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft Support — Create and manage official Brand kits](https://support.microsoft.com/en-us/Microsoft-365-Copilot/create-and-manage-official-brand-kits-in-the-microsoft-365-copilot-app) — logos and a colour palette inside a Brand kit, ready to publish to the whole organisation. (Microsoft demo data.)*
 
 ### Visual Identity
 
@@ -316,6 +324,10 @@ Brand Kit itself doesn't have a separate price tag, but a few adjacent things do
 
 This is where it gets practical. Brand Kit doesn't work the same way in every app — PowerPoint has the deepest integration, while Excel is more limited. Here's the honest breakdown:
 
+<p><img src="/images/blog/brand-kit/03-brand-kits-in-create.webp" alt="The Create menu in the Microsoft 365 Copilot app — options to create a Presentation, Document or Infographic with Copilot, start from Brand templates, and a 'Manage brand kits' entry, alongside on-brand poster examples" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft Support — Create and manage official Brand kits](https://support.microsoft.com/en-us/Microsoft-365-Copilot/create-and-manage-official-brand-kits-in-the-microsoft-365-copilot-app) — where Brand kits and brand templates surface in the Create experience. (Microsoft demo data.)*
+
 ### PowerPoint — The Star of the Show
 
 PowerPoint has the richest Brand Kit integration by far. There are two distinct approaches — a **new way** and a **traditional way**:
@@ -455,6 +467,10 @@ Both approaches work — choose based on your governance model and how strictly 
 
 Setting up Brand Kit has two required steps and one recommended step. Here's the exact walkthrough:
 
+<p><img src="/images/blog/brand-kit/04-brand-manager-policy.webp" alt="The Microsoft 365 Apps admin centre Policy Management wizard creating an 'Elevated role for enterprise brand managers' configuration, across Basics, Scope, Policies and Review steps" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft Learn — Enterprise Brand Manager](https://learn.microsoft.com/copilot/microsoft-365/enterprise-brand-manager) — creating the brand-manager policy at config.office.com (Policy Management). (Microsoft demo data.)*
+
 ### Step 1: Assign the Brand Manager Role (Required)
 
 Brand managers are the people who create and publish official Brand Kits. Only they can make a Brand Kit "official" (available to the entire tenant).
@@ -550,6 +566,10 @@ Need help building these PowerShell commands? Try our [PowerShell Command Builde
 ## Governance — Who Owns What
 
 Once Brand Kit is live, the question becomes operational: who can change what, who reviews changes, and what happens when someone leaves? Customers in IT and brand teams keep asking, so here's how I think about it.
+
+<p><img src="/images/blog/brand-kit/05-brand-manager-role.webp" alt="The 'Elevated role for enterprise brand managers' policy detail — platforms (Windows, Mac, iOS, Android, Office on the web), the Enabled configuration setting, and the brand managers security-group email" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft Learn — Enterprise Brand Manager](https://learn.microsoft.com/copilot/microsoft-365/enterprise-brand-manager) — the brand-manager role bound to a security group, the control that decides who can publish official Brand kits. (Microsoft demo data.)*
 
 ### Roles and responsibilities
 
