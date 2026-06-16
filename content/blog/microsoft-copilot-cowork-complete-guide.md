@@ -416,6 +416,8 @@ Each wave didn't replace the previous one — it added a new layer. You can stil
 
 Here's where it gets exciting. Let me walk you through what Cowork can do for different roles. These aren't hypothetical — they're based on the capabilities available at general availability.
 
+> **New to Cowork? Start with a "Snack."** The quickest wins are small, one-or-two-source tasks — tidy your week, write your status, prep one meeting. Once you trust the pattern, work up to bigger "Meal" and "Feast" tasks. The [prompts spoke](/blog/microsoft-copilot-cowork-prompts-to-try/) lays out the full **Snack → Meal → Feast** ladder with copy-paste prompts and a rough cost for each.
+
 ### 🧑‍💻 IT Admin
 
 <span class="cowork-persona it">IT Administration</span>
@@ -867,6 +869,14 @@ Copilot Cowork is a new AI agent inside Microsoft 365 that doesn't just answer y
 ### How is Copilot Cowork different from regular Microsoft 365 Copilot?
 
 Regular Copilot is reactive — you ask, it answers, one app at a time. Cowork is proactive and cross-app — you describe a goal, it builds a plan, executes across multiple apps simultaneously, runs in the background for minutes or hours, and checks in at decision points. Think assistant vs colleague.
+
+### When should I use Cowork instead of regular Copilot Chat?
+
+Quick rule: if you'll read the answer and move on, that's **Chat**. If you'd have to open three or four apps and spend half an hour stitching it together, that's **Cowork**. Chat is the assistant in the moment; Cowork is the colleague you hand a whole task to — it plans the steps, works across your apps for minutes or hours, and checks in before anything sensitive.
+
+### Does Cowork work on my phone?
+
+Yes. Cowork runs in the browser at **m365.cloud.microsoft**, in the Microsoft 365 Copilot desktop app (Windows and Mac), and in the Microsoft 365 Copilot mobile app on **iOS and Android**. Because it runs in the cloud, a task you kick off keeps going even after you close your laptop.
 
 ### What is an agentic harness?
 

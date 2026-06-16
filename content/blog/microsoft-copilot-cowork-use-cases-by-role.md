@@ -136,6 +136,12 @@ And to close the loop after the meeting:
 
 </div>
 
+**More sales plays worth a try** — each tagged with its [task tier](/blog/microsoft-copilot-cowork-prompts-to-try/):
+
+- **Monday account sweep** *(Meal)* — *"Every Monday, look across my accounts — recent emails, meetings, and open threads — and give me the three things that need my attention this week, with a suggested next step for each."*
+- **1:1 prep on one account** *(Meal)* — *"I have a 1:1 about [account] tomorrow. Pull our recent history — emails, meetings, open actions — into a one-page picture so I walk in current."*
+- **Find the best place to grow** *(Feast)* — *"Look across my accounts and suggest where there's room to expand, with the signal behind each suggestion."* (Needs your CRM connected as a plugin, or an exported account list — see the [assumption above](#how-to-read-this-page).)
+
 **Realistic time saved:** Pre-call research that's normally 30–45 minutes of digging becomes a one-page brief you review and tidy in 10–15.
 
 **Watch-out:** Cowork drafts the follow-up; you still own the relationship. Read every customer-facing word before it sends — that's exactly what the checkpoint is for.
@@ -276,6 +282,13 @@ For staying ahead of the market:
 > - Draft talking points your team can use in customer conversations
 
 </div>
+
+**More marketing plays worth a try** — each tagged with its [task tier](/blog/microsoft-copilot-cowork-prompts-to-try/):
+
+- **Monday standup brief** *(Snack)* — *"Pull my week's progress, blockers, and what's next into a short standup update — from my calendar, sent mail, and Teams."*
+- **Campaign board from a brief** *(Meal)* — *"Turn this campaign brief into a working board — workstreams, owners, and key dates — so we're not building it from a blank page."*
+- **Launch kit in one pass** *(Feast)* — *"From our approved messaging, draft the launch kit: a customer email, a blog draft, three social posts, and a one-page sales sheet — all on-message. Show me each for review."*
+- **Messaging-drift audit** *(Feast)* — *"Check every asset in [folder] against our approved messaging and flag anywhere the wording has drifted — without changing anything."*
 
 **Realistic time saved:** A competitor round-up plus talking points goes from an afternoon of work to a draft you refine in 15–20 minutes.
 

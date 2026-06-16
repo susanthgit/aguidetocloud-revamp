@@ -1,5 +1,5 @@
 ---
-title: "Microsoft Copilot Cowork — 6 Free Prompts to Try"
+title: "Microsoft Copilot Cowork — Free Prompts to Try"
 list_title: "Cowork: Prompts to try"
 description: "A living-doc with 6 free Microsoft Copilot Cowork prompts to try — each with a usefulness rating and tested-on date. Updated as I test more."
 date: 2026-06-15
@@ -48,6 +48,22 @@ founder_note: |
 | 🕓 pending | Not yet tested in production |
 
 Each prompt also shows when it was last tested. If you spot one that drifts, [send me feedback](/feedback/) — I will re-test and update.
+
+---
+
+## Which task should you try first? Snack, Meal, or Feast
+
+Not every task is the same size — and the size is roughly what it [costs](/blog/microsoft-copilot-cowork-pricing-cost-management/), too. A simple way to pick your first one:
+
+| Tier | Think of it as | What it looks like | Roughly what it costs |
+|---|---|---|---|
+| **Snack** | A quick errand | One or two sources, one short result | a *light* task — about 100–300 credits (~$1–3 pay-as-you-go) |
+| **Meal** | An hour you'd rather hand off | A few sources, a few steps, one or two finished things | a *medium* task — about 400–700 credits (~$4–7) |
+| **Feast** | A half-day project | Lots of sources, deep thinking, a whole set of outputs | a *heavy* task — 700+ credits (~$7 and up) |
+
+**The honest rule of thumb: start with a Snack.** Pick one small thing you already do every week, hand it over, and watch how Cowork plans it. Once you trust the pattern, work up to Meals and Feasts — and turn the ones you repeat into a [saved skill](/blog/microsoft-copilot-cowork-skills-and-plugins/). Each prompt below is tagged with its tier.
+
+> Credit ranges are illustrative — from Microsoft's GA blog, not a fixed price list. The [pricing spoke](/blog/microsoft-copilot-cowork-pricing-cost-management/) has the full story.
 
 ---
 
@@ -184,7 +200,7 @@ The **`Scheduled`** trigger row bakes the webapp-auto-refresh pattern into the s
 - ✅ Surfaced the **new `Scheduled` trigger category** — a pattern worth documenting separately.
 - ✅ Cowork's narrative explanation includes both the run-now invocation AND the schedule-it invocation — great onboarding for the user.
 - 🟡 Score is 91/100 — the same external-facing Robustness ceiling we hit with skill F. Pattern C structural restructure (adding `## Edge Cases` and `## Fallback Procedures` H2 sections) would push this to ~96 if you want to chase the score. Logged as a follow-up.
-- 🟡 Haven't actually run the new daily-teams-recap skill yet to see the HTML dashboard render — that's the obvious next test. Stay tuned.
+- ✅ And I did run it — see the next section, where the generated skill produced the live HTML dashboard end-to-end.
 
 **Would I demo this to a customer?** Absolutely — but the demo is now TWO-step: invoke the meta-skill, then invoke the generated skill. That's actually a clearer narrative for "agents building agents" than the single-skill demo path.
 
@@ -262,7 +278,7 @@ And the chat surfaced a per-slide summary, a ready-to-paste LinkedIn caption (18
 
 ## ☀️ Morning Triage and Priority Setter
 
-*Tested: 🕓 pending as a standalone prompt · Best for: everyone — start your day in 60 seconds instead of 20 minutes of inbox scrolling*
+*Tier: **Snack** (light) · Tested: 🕓 pending as a standalone prompt · Best for: everyone — start your day in 60 seconds instead of 20 minutes of inbox scrolling*
 
 Copy this, run it first thing in the morning:
 
@@ -286,7 +302,7 @@ Copy this, run it first thing in the morning:
 
 ## 🎯 Meeting Prep Autopilot
 
-*Tested: 🕓 pending as a standalone prompt — the custom-skill version of this workflow tested well · Best for: anyone with customer meetings, stakeholder reviews, or project check-ins*
+*Tier: **Meal** (medium) · Tested: 🕓 pending as a standalone prompt — the custom-skill version of this workflow tested well · Best for: anyone with customer meetings, stakeholder reviews, or project check-ins*
 
 <div class="prompt-cards">
 
@@ -302,7 +318,7 @@ Copy this, run it first thing in the morning:
 
 ## 📬 Post-Session Follow-Up Machine
 
-*Tested: 🕓 pending as a standalone prompt · Best for: trainers, presenters, sales reps — anyone who runs sessions and needs to follow up afterwards*
+*Tier: **Meal** (medium) · Tested: 🕓 pending as a standalone prompt · Best for: trainers, presenters, sales reps — anyone who runs sessions and needs to follow up afterwards*
 
 <div class="prompt-cards">
 
@@ -323,7 +339,7 @@ Copy this, run it first thing in the morning:
 
 ## 📊 Weekly Team Update Generator
 
-*Tested: 🕓 pending as a standalone prompt · Best for: team leads, project managers, and anyone whose manager asks "what did you work on this week?"*
+*Tier: **Meal** (medium) · Tested: 🕓 pending as a standalone prompt · Best for: team leads, project managers, and anyone whose manager asks "what did you work on this week?"*
 
 <div class="prompt-cards">
 
@@ -344,7 +360,7 @@ Copy this, run it first thing in the morning:
 
 ## 📚 Knowledge Pack Builder
 
-*Tested: 🕓 pending as a standalone prompt · Best for: subject matter experts, consultants, presales — anyone who repeatedly answers the same complex questions*
+*Tier: **Meal** (medium) · Tested: 🕓 pending as a standalone prompt · Best for: subject matter experts, consultants, presales — anyone who repeatedly answers the same complex questions*
 
 <div class="prompt-cards">
 
@@ -360,7 +376,7 @@ Copy this, run it first thing in the morning:
 
 ## 🏢 Customer Deliverable From Email Brief
 
-*Tested: 🕓 pending as a standalone prompt · Best for: anyone who receives a brief or request via email and needs to deliver something back — slides, reports, proposals*
+*Tier: **Feast** (heavy) · Tested: 🕓 pending as a standalone prompt · Best for: anyone who receives a brief or request via email and needs to deliver something back — slides, reports, proposals*
 
 This is the showcase prompt — the one I open demos with, because it shows Cowork's full multi-step, multi-app power from a single instruction.
 
@@ -383,6 +399,64 @@ This is the showcase prompt — the one I open demos with, because it shows Cowo
 **What Cowork does:** reads a customer's email, extracts their requirements, searches your existing materials, researches the latest information, builds a complete slide deck structured around their brief, and drafts a delivery email — all from one prompt. What normally takes 2-3 hours, done in minutes. Skills: Communications → Search → Deep Research → PowerPoint → Communications.
 
 > 💡 **Demo tip:** start a customer demo with the Morning Triage prompt (universal, instant reaction), then show this one to demonstrate the full multi-step power. The gap between "regular Copilot" and "Cowork" clicks the moment people watch it execute across five apps from a single instruction.
+
+---
+
+## The Out-of-Office Handoff
+
+*Tier: **Feast** (heavy) · Tested: 🕓 pending as a standalone prompt · Best for: anyone taking leave who doesn't want things to stall while they're gone*
+
+The idea: step away knowing nothing in flight will quietly stall while you're out. Instead of a one-line "I'm away" auto-reply, you hand the loose ends to the right people.
+
+<div class="prompt-cards">
+
+> I'm out of office from **[start date]** to **[end date]**. Help me hand off cleanly.
+>
+> 1. Look through my calendar, recent emails, and Teams chats and find everything that's mid-flight — open questions waiting on me, decisions due while I'm away, and meetings I own.
+> 2. For each one, suggest who should cover it, and draft a short handoff note to that person with the context they'll need.
+> 3. Draft an out-of-office reply that points people to the right cover person by topic — not just "I'm away."
+> 4. Show me everything for approval before sending anything.
+
+</div>
+
+**What Cowork does:** reads across your calendar, inbox, and chats to find the loose ends, works out who should cover what, and drafts the handoff notes plus a genuinely useful auto-reply. Skills: Daily Briefing → Search → Communications.
+
+Here's the shape of how it thinks it through:
+
+```mermaid
+flowchart TD
+  A[You give the dates] --> B[Scan calendar, email, Teams]
+  B --> C[Find everything mid-flight]
+  C --> D[Match each item to a cover person]
+  D --> E[Draft a handoff note per item]
+  E --> F[Draft a topic-aware out-of-office reply]
+  F --> G[Pause for your approval]
+  G --> H[Send once you say go]
+```
+
+> 💡 Run this the afternoon before you leave. If you take leave often, save it as a skill so next time it's a single line.
+
+---
+
+## Deep Research With a Citation Map
+
+*Tier: **Feast** (heavy) · Tested: 🕓 pending as a standalone prompt · Best for: anyone sitting on a folder of documents they keep meaning to read*
+
+This one moves you from "I have a pile of documents to get through" to "I have a short brief I can act on — and I can see where every point came from."
+
+<div class="prompt-cards">
+
+> I need to get on top of **[topic]**.
+>
+> Read the documents in **[OneDrive/SharePoint folder]**, plus anything relevant you find in my recent emails and meetings on this topic.
+>
+> Give me back a structured brief: the key findings, the open questions, and a clear recommendation. For every claim, show me which source it came from so I can check it. Save it as a single HTML page I can bookmark and re-open.
+
+</div>
+
+**What Cowork does:** reads across a folder (and your related work), pulls the threads into a findings-and-recommendation brief, and keeps a map of which source backs each point — so you're never trusting a summary blind. Skills: Search → Deep Research → html.
+
+> 💡 The "show me which source each point came from" line is the part worth keeping. A summary you can't trace back is just a nicer-looking guess.
 
 ---
 

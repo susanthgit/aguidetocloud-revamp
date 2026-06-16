@@ -103,6 +103,8 @@ From the Frontier preview, Microsoft saw three common task shapes. The credit ra
 
 > These ranges assume Anthropic **Opus 4.8** (the model Microsoft used to build its estimator). A lighter model lowers the cost, and Microsoft's upcoming **Cowork 1** model is designed to handle everyday tasks at substantially lower cost.
 
+> These three sizes line up with the **Snack / Meal / Feast** ladder in the [prompts spoke](/blog/microsoft-copilot-cowork-prompts-to-try/) — a Snack is a light task, a Feast is a heavy one. To see real, copy-paste prompts at each size, start there.
+
 ---
 
 ## Who runs Cowork, and how much
@@ -189,6 +191,12 @@ The honest answer: it depends on how much real work your team hands to Cowork �
 
 **Do I need a Microsoft 365 Copilot licence for Cowork?**
 Yes. The Microsoft 365 Copilot seat is required — it's the entry point. Cowork's actual task work is then billed on top, on a usage basis in Copilot Credits.
+
+**Why does Cowork cost extra on top of my Copilot seat?**
+Because the two do different shapes of work. Your Copilot seat is a flat, predictable monthly fee for everyday help — Chat and Copilot inside Word, Excel, Outlook, and Teams. Cowork's long-running, multi-step tasks use a variable amount of model, context, tools, and runtime each time, so they're billed on what they actually use. Pay-for-what-you-use keeps one team's heavy month out of everyone else's flat fee.
+
+**What happens if I run out of credits in the middle of a task?**
+Admins set the spending limits, so usage can't quietly run away. If you need more to finish something, you can request additional credits from inside Cowork. And if your organisation prepaid (P3), those credits are used first and anything beyond them rolls to pay-as-you-go automatically — a task won't just stop dead because the prepaid block emptied.
 
 **What's a Copilot Credit worth?**
 On pay-as-you-go, **$0.01 per credit**. So a light task (≈100–300 credits) is roughly $1–$3, and a heavy one (700+) is about $7 and up. Prepaid (P3) commits to a volume for a discount.

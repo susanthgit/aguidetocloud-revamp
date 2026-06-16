@@ -178,6 +178,15 @@ When you write a custom skill that references built-in skills, use the **skill I
 
 Built-in skills cover the M365 apps you live in. **Plugins** extend Cowork to systems outside M365 — your CRM, your ticketing system, your project management tool, your data warehouse.
 
+### In plain English — connector vs plugin
+
+Two words get thrown around a lot here. The simplest way to hold them:
+
+- A **connector** is the *bridge*. It lets Cowork safely reach into another app — Dynamics 365, Fabric, Power BI — and pull data across (and in some cases, send updates back).
+- A **plugin** is the bridge *plus the know-how*. It packages one or more connectors with the instructions Cowork needs to actually do a job with them.
+
+And one phrase worth knowing: if a plugin says **read & write**, Cowork can both *look at* data in that app and — where it's configured and you approve it — *make changes* (like creating or updating a record), not just view it. **Read** means look-only.
+
 Microsoft maintains four reference pages on Microsoft Learn:
 
 | Page | When to read |
@@ -196,6 +205,19 @@ At GA (June 2026), Microsoft shipped the first wave of partner plugins, with mor
 - **Also generally available:** Microsoft **Fabric**, plus **Dynamics 365** Sales, Customer Service, and ERP apps
 
 The catalog grows over time — check Microsoft's [Copilot Cowork docs](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) for the current list. Treat each plugin as its own governance decision (consent, connector credentials, data handling, audit) — see the [admin & governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).
+
+### What a plugin actually unlocks
+
+The names matter less than the *job* each one lets Cowork finish without leaving the task. A few examples:
+
+| If you want Cowork to… | A plugin like… | …lets it |
+|---|---|---|
+| Turn a document into a visual | **Miro** | build a flowchart, mindmap, or framework board from your content |
+| Spin up a project board | **monday.com** | create the board, workstreams, and owners — not just describe them |
+| Build an on-brand deck | **Templafy** (coming soon) | apply your real templates and brand, not a generic theme |
+| Reach your data and BI | **Microsoft Fabric** | pull from your data estate so the work is grounded in real numbers |
+
+The pattern: a plugin turns "Cowork can tell you about it" into "Cowork can go do it in that tool." Each one is still a governance decision first — connect the ones your team actually needs, and treat the rest as off until reviewed.
 
 ---
 
