@@ -200,6 +200,10 @@ This is where the 2025 change actually helps you. {{< hi >}}The old Copilot Pro 
 
 Microsoft 365 Copilot is a **completely different product**, sold to organisations through your IT admin.
 
+<p><img src="/images/blog/copilot-pro-vs/01-m365-copilot-app.webp" alt="The Microsoft 365 Copilot app showing the work experience — a left sidebar with Agents, Notebooks and Tasks, a 'Work IQ' toggle, and a mobile view with a 'Search in my org' prompt, illustrating that the work version is grounded on your organisation's data" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft 365 blog — a new design for Microsoft 365 Copilot (28 May 2026)](https://www.microsoft.com/en-us/microsoft-365/blog/2026/05/28/introducing-a-new-design-for-microsoft-365-copilot/) — the Microsoft 365 Copilot app. Note "Work IQ" and "Search in my org": the work version is grounded on your organisation's emails, files and chats. (Microsoft demo data.)*
+
 ### What you get for $30/user/month
 
 {{< margin >}}$30/user/month is the standard enterprise add-on price (on top of your base plan). Small-business plans can come in lower — check Microsoft's current pricing for your channel.{{< /margin >}}
@@ -212,6 +216,10 @@ Microsoft 365 Copilot is a **completely different product**, sold to organisatio
 - **Interactive use of Copilot Studio** (autonomous agents and Studio credits are a separate add-on)
 - **IT admin controls** — Purview audit, eDiscovery, sensitivity labels, content safety, conditional access, restricted SharePoint search
 - **Enterprise data protection** — your prompts and responses are not used to train AI models, they stay inside Microsoft's service boundary, they're auditable
+
+<p><img src="/images/blog/copilot-pro-vs/02-copilot-in-powerpoint.webp" alt="Microsoft 365 Copilot working inside PowerPoint on a 'Monthly Operations Report' deck, with the Copilot pane offering to create or edit slides and an 'Allow editing / Chat only' control" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft 365 blog — agentic capabilities in Word, Excel and PowerPoint are GA (22 Apr 2026)](https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/) — Copilot editing a presentation directly inside PowerPoint. (Microsoft demo data.)*
 
 ### What you need underneath
 
