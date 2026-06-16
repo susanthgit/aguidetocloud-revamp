@@ -86,7 +86,7 @@ Copilot Credits have a short history worth knowing, because the older term still
 - **On 1 September 2025** — Microsoft changed the common currency from **messages to Copilot Credits**. Crucially, the **prepaid pack quantity and the pay-as-you-go rate didn't change** — what changed is the *name* and the *way usage is counted*: from a flat per-message tally to **feature-based rates**, where different actions cost different amounts.
 - **Through 2026** — Microsoft's agent and Work IQ documentation positions Copilot Credits as the **consumption meter for agent work across its AI services** — Copilot Studio, Microsoft 365 Copilot Chat agents, and agents calling Microsoft's Work IQ APIs. Per-user Copilot stays for *people*; **agent work is measured in credits** — even though a lot of internal, licensed usage is zero-rated.
 
-So if you see "messages" in an old doc or an existing capacity pack, read it as Copilot Credits. → For how this fits the wider 2026 agent shift, see [Microsoft Build 2026 Recap — Copilot Credits](/blog/microsoft-build-2026-recap/#3-copilot-credits--the-consumption-meter-has-a-name).
+So if you see "messages" in an old doc or an existing capacity pack, read it as Copilot Credits. → **Migrating from old message packs, dashboards or budgets?** See [Copilot Messages vs Copilot Credits — What Changed?](/blog/copilot-messages-vs-copilot-credits/). For how this fits the wider 2026 agent shift, see [Microsoft Build 2026 Recap — Copilot Credits](/blog/microsoft-build-2026-recap/#3-copilot-credits--the-consumption-meter-has-a-name).
 
 ---
 
