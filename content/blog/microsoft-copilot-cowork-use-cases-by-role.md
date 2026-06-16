@@ -45,6 +45,8 @@ Each role section has:
 - **Realistic time saved** — based on a typical week
 - **Watch-out** — what to brief the user on before they try it
 
+> 💡 **One assumption throughout:** these scenarios assume the data lives in your Microsoft 365 — Outlook, Teams, SharePoint, OneDrive, calendar, meeting transcripts — or in an approved Cowork plugin or custom skill. If a system is external (Salesforce, ServiceNow, an HR or expense platform, Entra admin reports), Cowork needs a connecting plugin, a custom skill, or an exported file first.
+
 ---
 
 ## 🧑‍💻 IT Admin
@@ -134,7 +136,7 @@ And to close the loop after the meeting:
 
 </div>
 
-**Realistic time saved:** Pre-call research that's normally 30–45 minutes of digging turns into a one-page brief in a couple of minutes.
+**Realistic time saved:** Pre-call research that's normally 30–45 minutes of digging becomes a one-page brief you review and tidy in 10–15.
 
 **Watch-out:** Cowork drafts the follow-up; you still own the relationship. Read every customer-facing word before it sends — that's exactly what the checkpoint is for.
 
@@ -158,7 +160,7 @@ And to close the loop after the meeting:
 > - Check the onboarding checklist in SharePoint
 > - Verify IT equipment has been ordered (search emails)
 > - Draft a welcome email with the first-week schedule
-> - Create a Teams channel for the new hire's team
+> - Draft the welcome post and set up a SharePoint/OneDrive folder for onboarding materials
 > - **Check in** before sending anything
 
 </div>
@@ -275,7 +277,7 @@ For staying ahead of the market:
 
 </div>
 
-**Realistic time saved:** A competitor round-up plus talking points goes from an afternoon to a coffee break.
+**Realistic time saved:** A competitor round-up plus talking points goes from an afternoon of work to a draft you refine in 15–20 minutes.
 
 **Watch-out:** Brand tone is yours to approve. Cowork drafts; you sign off the voice every time.
 

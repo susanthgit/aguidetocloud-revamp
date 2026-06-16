@@ -23,7 +23,7 @@ faq:
   - question: "What is the Microsoft Frontier program?"
     answer: "Frontier is Microsoft's early access program for cutting-edge Copilot features. Global Admins can opt in via the M365 Admin Center. It gives your organisation access to features like Cowork before they reach general availability."
   - question: "Can Copilot Cowork send emails without my permission?"
-    answer: "No. Cowork requires your explicit approval before taking sensitive actions like sending emails, scheduling meetings, or sharing files. It always checks in at critical decision points — you stay in control."
+    answer: "No. Cowork requires your explicit approval before taking sensitive actions like sending emails, posting to Teams, or scheduling meetings. It always checks in at critical decision points — you stay in control."
   - question: "How is Copilot Cowork different from Claude Cowork?"
     answer: "Copilot Cowork runs in the cloud inside your M365 tenant with full enterprise governance (Entra ID, Purview DLP, audit trails). Claude Cowork is desktop-first with local file access and third-party connectors, plus enterprise admin controls on higher tiers. Copilot Cowork is built for managed enterprise environments; Claude Cowork is built for individual power users and mixed-tool setups."
   - question: "What AI model does Copilot Cowork use?"
@@ -95,7 +95,7 @@ This guide is the **hub** of a 7-part Cowork series. Read it end-to-end for the 
 **Run Cowork in your org**
 
 - **[Admin enablement & governance](/blog/microsoft-copilot-cowork-admin-and-governance/)** — turning it on, the built-in governance controls, the SharePoint oversharing check, and a pilot rollout playbook.
-- **[Pricing & cost management](/blog/microsoft-copilot-cowork-pricing-cost-management/)** — the new hybrid model (entry seat + consumption) and how to keep an eye on what it costs.
+- **[Pricing & cost management](/blog/microsoft-copilot-cowork-pricing-cost-management/)** — how Cowork is licensed, and how to keep an eye on what it costs.
 
 **Extend Cowork**
 
@@ -135,7 +135,7 @@ One prompt. Multiple apps. Real work done. And it asked before doing anything se
 
 ### What Does Cowork Actually Look Like?
 
-Cowork has its own surface inside Microsoft 365 Copilot — open it directly at **`m365.cloud.microsoft/agents/cowork`**. The landing greets you with *"Hi, what can I do for you?"* and a single task input that simply says *"Start a task…"* That phrasing is the whole mental shift: this is a task-handler, not a chat box.
+Cowork lives inside Microsoft 365 Copilot — open **`m365.cloud.microsoft`** in your browser (or the Microsoft 365 Copilot desktop or mobile app) and select **Cowork**; if you don't see it, look under **All agents** (in the Frontier preview it shows as *"Cowork (Frontier)"*). It opens into its own task workspace — the input simply says *"Start a task…"*, and that phrasing is the whole mental shift: this is a task-handler, not a chat box.
 
 The left side rail keeps the history of every task you've handed off — persistent, searchable, with a **Scheduled** view for recurring work. **New task**, **Search**, **Scheduled**, and **Customize** are the core controls.
 
@@ -736,7 +736,7 @@ If you're an IT admin, here's how to turn it on:
 
 1. **Enrol in Frontier:** Go to [M365 Admin Center](https://admin.microsoft.com) → Copilot → Settings → Frontier → Opt in
 2. **Enable Anthropic:** Copilot → Settings → AI providers → Enable Anthropic (required — off by default in EU tenants)
-3. **Cowork becomes available:** Once Frontier is enabled, licensed users can find and install Cowork from the **Agent Store** inside Copilot — no separate deployment needed
+3. **Cowork becomes available:** Once Frontier is enabled, licensed users open Cowork at **m365.cloud.microsoft** (or the Microsoft 365 Copilot app) — selecting it directly or finding it under **All agents** — no separate deployment needed
 4. **Control access (optional):** If you want to restrict who can use Cowork, go to Copilot → Agents → All Agents → Find "Cowork" → Set availability for specific groups
 5. **Communicate:** Let your users know it's available and what to expect
 
@@ -832,7 +832,7 @@ An agentic harness is the orchestration framework that makes Cowork possible. It
 
 ### How do I get Copilot Cowork?
 
-Your IT admin needs to enrol the tenant in the [Microsoft Frontier program](https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-overview#frontier) via the M365 Admin Center (Copilot → Settings → Frontier) and enable Anthropic as a subprocessor. Once enabled, licensed users can find and install Cowork from the Agent Store inside Copilot.
+Your IT admin needs to enrol the tenant in the [Microsoft Frontier program](https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-overview#frontier) via the M365 Admin Center (Copilot → Settings → Copilot Frontier) and enable Anthropic as a subprocessor. Once enabled, licensed users open Cowork at **m365.cloud.microsoft** (or the Microsoft 365 Copilot app), selecting it directly or finding it under **All agents**.
 
 📖 [Manage Cowork for your organisation](https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/)
 
@@ -842,7 +842,7 @@ No. You need a Microsoft 365 Copilot licence (the $30/user/month add-on) and you
 
 ### Can Copilot Cowork send emails without my permission?
 
-No. Cowork requires your explicit approval before taking sensitive actions like sending emails, scheduling meetings, or sharing files. It always checks in at critical decision points — you stay in control.
+No. Cowork requires your explicit approval before taking sensitive actions like sending emails, posting to Teams, or scheduling meetings. It always checks in at critical decision points — you stay in control.
 
 ### How is Copilot Cowork different from Claude Cowork?
 
@@ -858,7 +858,7 @@ Yes. Cowork operates within your existing Microsoft 365 permissions. It can only
 
 ### Can I add extra capabilities to Cowork?
 
-Yes — through **Skills**. Cowork ships with **13 built-in skills** covering the core M365 apps (Email, Scheduling, Calendar Management, Meetings, Teams, Enterprise Search, Word, Excel, PowerPoint, PDF, Daily Briefing, Deep Research, and Communications). You can add custom skills by creating `SKILL.md` files in your OneDrive at `Documents/Cowork/Skills/` — no code or admin needed. For more advanced scenarios, you can also build skills in Copilot Studio (low-code) or using the [Microsoft 365 Agents SDK](https://github.com/microsoft/Agents) (pro-code).
+Yes — through **Skills**. Cowork ships with **13 built-in skills**: Word, Excel, PowerPoint, PDF, Email, Scheduling, Calendar Management, Meetings, Daily Briefing, Enterprise Search, Communications, Deep Research, and Adaptive Cards. You can add custom skills by creating `SKILL.md` files in your OneDrive at `Documents/Cowork/Skills/` — no code or admin needed. For more advanced scenarios, you can also build skills in Copilot Studio (low-code) or using the [Microsoft 365 Agents SDK](https://github.com/microsoft/Agents) (pro-code).
 
 ### Will Copilot Cowork replace my job?
 

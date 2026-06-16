@@ -38,16 +38,16 @@ founder_note: |
 
 ## TL;DR
 
-- **Where to find Cowork** — Agent Store inside Microsoft 365 Copilot Chat
+- **Where to find Cowork** — at **m365.cloud.microsoft** (browser) or the Microsoft 365 Copilot desktop/mobile app — select Cowork, or find it under **All agents**
 - **How to start a task** — describe an outcome, not a process
-- **What to expect** — Cowork shows you a plan first, then runs it with checkpoints
+- **What to expect** — Cowork works through the steps in front of you, pausing for your approval at sensitive actions
 - **How to stay in control** — pause, redirect, or stop at any time
 
 ---
 
 ## Step 1 — Open Cowork
 
-Cowork lives at its own URL inside Microsoft 365 Copilot — open **`m365.cloud.microsoft/agents/cowork`** directly in your browser. It's a dedicated surface, not a tile inside another app.
+Cowork lives inside Microsoft 365 Copilot — open **`m365.cloud.microsoft`** in your browser (or use the Microsoft 365 Copilot desktop or mobile app) and select **Cowork**. If you don't see it, look under **All agents** — in the Frontier preview it shows as *"Cowork (Frontier)."* It opens into its own full task workspace, not just a chat box.
 
 The landing page is built around two things: an input box that says **"Start a task…"** (not "Send a message") and a left side rail with your task history. The core controls in the rail are **New task**, **Search**, **Scheduled**, and **Customize**.
 
@@ -76,43 +76,44 @@ Why? Cowork's planner is good at decomposing outcomes into steps. Pre-decomposed
 
 ---
 
-## Step 3 — Review the plan Cowork generates
+## Step 3 — Follow along as Cowork works through the steps
 
-<!-- SCREENSHOT: plan view with numbered steps and "Approve" / "Modify" buttons — Sush to capture from tenant -->
+<!-- SCREENSHOT: the side panel showing steps appearing one by one as Cowork works — Sush to capture from tenant -->
 
-This is the step most people skim — and it's the one that saves you the most time. Before Cowork touches anything, it shows you a **plan**: a numbered list of the steps it intends to take, and which apps or skills it'll use at each one (e.g. *"1. Search Outlook and Teams for Contoso → 2. Pull the latest proposal from SharePoint → 3. Draft a briefing in Word"*).
+Cowork doesn't disappear and hand back a finished result. It **breaks your request into steps and works through them one by one**, showing each step in the conversation (and in the side panel) as it goes — so you can follow along and see exactly how it interpreted your outcome.
 
-You have three options:
+This is the part most people skim, and it's the one that keeps you in control:
 
-- **Approve as-is** — the plan looks right, let it run.
-- **Modify a step** — change, reorder, or remove a step before it runs ("skip the Teams search, just use email").
-- **Reject and re-prompt** — the plan misunderstood you. Re-word your outcome and try again.
+- **Watch the early steps.** They tell you how Cowork understood the request — if it's heading the wrong way, you'll spot it immediately.
+- **Interrupt to steer.** At any point you can jump in with extra context or a correction ("use the latest proposal, not the March one") and Cowork adjusts.
+- **Sensitive actions wait for you.** Cowork runs the low-risk steps on its own but pauses for approval before anything that sends or changes something — that's the next step.
 
-The plan is your **early-warning system**. It's far cheaper to fix a wrong assumption here — before any work happens — than to unpick the output afterwards. On your first few runs, read it properly: it's the clearest window into how Cowork interpreted what you asked for.
+It's far cheaper to redirect early — while Cowork is still gathering and drafting — than to unpick the output afterwards.
 
 ---
 
 ## Step 4 — Approval checkpoints
 
-Cowork runs on its own for the low-risk steps, but it **pauses at sensitive actions** to ask permission first. This is the safety rail that makes delegating comfortable.
+Cowork runs on its own for the low-risk steps, but it **pauses before any action that sends or changes something** to ask permission first. This is the safety rail that makes delegating comfortable.
 
-**What triggers a checkpoint** — anything hard to undo or that leaves your hands:
+**What triggers a checkpoint** — the actions that send or change something:
 
-- Sending or replying to email
-- Scheduling, cancelling, or rescheduling meetings
-- Sharing or posting files
-- Posting to a Teams channel
-- Anything customer- or externally-facing
+- **Send** an email (draft, reply, or forward)
+- **Post** a message to a Teams channel or chat
+- **Create** or change a meeting on your calendar
+- **Create** a document or a SharePoint/OneDrive folder
 
-**What it looks like:** Cowork stops, shows you exactly what it's about to do (the draft email, the meeting change), and waits. Sometimes it asks a clarifying question first — *"I found an NDA in the shared folder — include contract details?"*
+Cowork tags medium- and high-risk actions with a risk indicator, and the approval button matches the action.
+
+**What it looks like:** Cowork stops, shows you exactly what it's about to do (the draft email, the meeting), and waits. Sometimes it asks a clarifying question first — *"I found an NDA in the shared folder — include contract details?"*
 
 **Your moves at a checkpoint:**
 
-- **Approve** — looks good, go ahead.
-- **Edit, then approve** — fix the draft first, then let it send.
-- **Decline** — don't do this step; Cowork moves on or asks what you'd prefer.
+- **Approve** — the button matches the action (**Send**, **Post**, **Create**).
+- **Cancel** — stop the action; Cowork moves on or asks what you'd prefer.
+- **Skip future prompts** — a dropdown lets you stop being asked for similar low-risk actions. Use it sparingly: it trades safety for speed.
 
-> 💡 Treat the checkpoint as a *real* review, not a reflex click — especially for anything that leaves your tenant. (For how admins use checkpoints as a governance control, see the [Admin & governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).)
+> 💡 Treat each checkpoint as a *real* review, not a reflex click — especially for anything that leaves your tenant. (For how admins use checkpoints as a governance control, see the [Admin & governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).)
 
 ---
 
