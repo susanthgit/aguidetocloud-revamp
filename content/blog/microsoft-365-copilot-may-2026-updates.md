@@ -1,10 +1,10 @@
 ---
-title: "Microsoft 365 Copilot May 2026 Recap: 53 Updates"
+title: "What's New in Microsoft 365 Copilot: May 2026"
 list_title: "M365 Copilot — May Recap: 53 Updates"
 hub_id: "whats-new"
-description: "All 53 Microsoft 365 Copilot updates for May 2026 — federated connectors, GPT-5.5, Plan mode, video recap in Teams, voice chat, DLP for prompts."
+description: "All 53 Microsoft 365 Copilot updates for May 2026, explained in plain English — federated connectors, GPT-5.5, Plan mode, voice chat, and DLP."
 date: 2026-05-29
-lastmod: 2026-05-31
+lastmod: 2026-06-16
 youtube_id: "qNcbrSZtbNs"
 card_tag: "What's New"
 tag_class: "ai"
@@ -35,7 +35,9 @@ founder_note: |
   Until May 2026 I had a head start. My colleague [Shelly Blackley](https://www.linkedin.com/in/shelly-blackley-3636a57) quietly maintained the monthly "What's new in M365 Copilot" pack inside Microsoft, and her work was the foundation I built each recap on. May was her last month with us — from here I'm reading every Message Center post on my own. I'll miss her dearly and wish her every success in her next chapter outside Microsoft.
 ---
 
-May 2026 has a lot of practical Copilot changes — **53 updates** focused around connectors, notebooks, Excel and mobile. **Federated connectors built on MCP** bring live, real-time data into Copilot from partners like Canva, HubSpot, Linear, LSEG, Moody's and Notion. **GPT-5.5 Instant** lands in Copilot Chat. **Copilot Notebooks** picks up generation for PowerPoint, Word and Excel (in Frontier preview). **Plan mode in Excel** and **Python in Copilot for Excel** finally make spreadsheet edits transparent before they apply. And the mobile app gets a chat-first redesign with liquid glass styling.
+**The short version — what's new in Microsoft 365 Copilot for May 2026:** 53 updates, and three matter most. **Federated MCP connectors** pull live third-party data (Canva, HubSpot, Linear, LSEG, Moody's, Notion) into Copilot at prompt time. **GPT-5.5 Instant** lands in Copilot Chat. **Plan mode in Excel** shows you Copilot's steps before it touches your workbook.
+
+The rest — **Copilot Notebooks** generating PowerPoint, Word and Excel, a **chat-first mobile redesign**, **Teams call delegation**, **voice chat**, and **DLP-aware prompt redirects** in Edge — is below, each explained in plain English with what it actually means for you.
 
 📅 **2026 monthly recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · May (you are here)
 
