@@ -1,6 +1,7 @@
 ---
 title: "Agent 365 Security Guide — Entra, Purview, Defender"
 list_title: "Agent 365 Security — The Complete Guide (Entra, Purview, Defender)"
+hub_id: "ai-agents"
 description: "Agent 365 just went GA. Here's how Entra, Purview, and Defender secure your AI agents — with real screenshots, scenarios, and no marketing fluff."
 date: 2026-04-30
 lastmod: 2026-05-01
@@ -324,7 +325,7 @@ Every single arrow in that diagram is a point where sensitive data could leak. T
 - **Agent → Tools/APIs:** The agent calls an external API and sends data outside your tenant
 - **Agent → Agent:** One agent passes data to another — and that second agent has different permissions
 
-This is where Purview comes in. It monitors **every one of these data flows** and applies your DLP policies, sensitivity labels, and compliance controls at each step.
+This is where Purview comes in. Agent activity is automatically captured for **audit and classification**, and you can bring your DLP policies, sensitivity labels and compliance controls to bear on agents too — once you include agent instances in those policies (it's not fully automatic).
 
 ### The Scenario
 
@@ -338,7 +339,7 @@ And here's what Purview did when the agent tried to email that externally:
 
 **Blocked.** The message was rejected because it contained sensitive information that can't be shared outside the organisation. The same DLP policy that would stop a human from sending this email? It stopped the agent too.
 
-This is the key insight and it's worth repeating: **Purview doesn't care whether a human or an agent is doing the sharing.** Your existing DLP investment extends to agents automatically.
+This is the key insight and it's worth repeating: **Purview doesn't care whether a human or an agent is doing the sharing.** Your existing DLP investment **can extend to agents** — once agent instances are included in your DLP policies.
 
 ### The Full Picture — What Purview Now Covers
 
@@ -463,7 +464,7 @@ flowchart TD
     G --> H["Agent flow cancelled"]
 ```
 
-The key thing: Defender sits **between the agent and its tools**. It evaluates every tool call in real-time — before the tool actually runs. If the call looks malicious (like an agent trying to send data to an external endpoint after being jailbroken), Defender blocks it before any damage is done.
+The key thing: Defender sits **between the agent and its tools**. It can evaluate tool calls in real-time — before the tool actually runs — for supported tool invocations (this real-time protection is currently in **preview**). If the call looks malicious (like an agent trying to send data to an external endpoint after being jailbroken), Defender can block it before any damage is done.
 
 Here's a real incident from the demo. An attacker tried to jailbreak a customer support agent:
 
@@ -481,9 +482,9 @@ See that? Email trigger → MCP Server → Send email → **securityWebhookBlock
 
 ### Hunt for Threats — KQL for Agents
 
-For security teams that like to go deep, Defender exposes agent data in Advanced Hunting. There's a new `AIAgentsInfo` table:
+For security teams that like to go deep, Defender exposes agent data in Advanced Hunting. There's a new `AgentsInfo` table:
 
-<p><img src="/images/blog/agent-365-security/defender-advanced-hunting.webp" alt="Advanced Hunting KQL query against the AIAgentsInfo table showing agent creation time, creator, tools, and platform details" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/agent-365-security/defender-advanced-hunting.webp" alt="Advanced Hunting KQL query against the AgentsInfo table showing agent creation time, creator, tools, and platform details" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 And `CloudAppEvents` now includes `CopilotInteraction` as an action type:
 

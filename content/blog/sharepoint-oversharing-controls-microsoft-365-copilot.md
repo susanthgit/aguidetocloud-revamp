@@ -1,9 +1,10 @@
 ---
 title: "SharePoint Oversharing Controls for Microsoft 365 Copilot"
+list_title: "SharePoint Oversharing Controls for Copilot"
 description: "RSS, RCD, RAC and SharePoint Advanced Management — the SharePoint controls that stop Copilot surfacing what you didn't realise was overshared."
 date: 2026-05-13
-lastmod: 2026-05-13
-draft: true
+lastmod: 2026-06-16
+hub_id: "it-admins"
 card_tag: "Security"
 tag_class: "security"
 layout: "notebook"
@@ -36,7 +37,7 @@ faq:
   - question: "What is Microsoft's official blueprint for SharePoint oversharing before Copilot rollout?"
     answer: "Microsoft publishes 'Secure and govern Microsoft 365 Copilot: Foundational deployment guidance', a three-pillar framework: (1) Remediate Oversharing — fix existing permission sprawl, (2) Set Up Guardrails — enforce labels, sharing defaults, RAC, (3) Meet Regulations — retention, audit, compliance. Inside Pillar 1, Microsoft recommends a remediation sequence: turn on Restricted SharePoint Search as a safety net, run the SharePoint Advanced Management Content Management Assessment, fix permissions and apply RCD or RAC where needed, then disable RSS. Available at aka.ms/Copilot/SecureGovernBlueprintLearn."
 images: ["images/og/blog/sharepoint-oversharing-controls-microsoft-365-copilot.jpg"]
-og_headline: "SharePoint oversharing, fenced for Copilot"
+og_headline: "Oversharing, fenced for Copilot"
 og_glyph: "list"
 tags:
   - microsoft-365
@@ -476,7 +477,7 @@ The four-step sequence inside Pillar 1 (RSS → SAM CMA → fix → disable RSS)
 Oversharing is one of four layers of Copilot data control. This post is layer one — the SharePoint piece. The other three deserve their own posts because they're complete topics in their own right:
 
 - **Conditional Access for Copilot** — how to require compliant devices, MFA, or named locations before Copilot will respond. The gotcha most admins miss: a Conditional Access policy targeting "Office 365" doesn't reliably catch Copilot — the right setup pattern deserves its own post.
-- **DLP for Microsoft 365 Copilot** — the only control that can say *"even if the user has access, Copilot must not use this content."* Item-level sensitivity labels enforce EXTRACT denial via encryption; the dedicated Copilot DLP location adds prompt-level blocking and label-based response suppression — post coming.
+- **DLP for Microsoft 365 Copilot** — the only control that can say *"even if the user has access, Copilot must not use this content."* Item-level sensitivity labels enforce EXTRACT denial via encryption; the dedicated Copilot DLP location can suppress labelled content from Copilot responses (GA — though it may still surface as a citation), with sensitive-info-type prompt blocking in preview — post coming.
 - **Microsoft Purview DSPM for AI** — the observability layer that tells you whether all the controls above are actually working. Weekly oversharing risk assessments, AI Activity Explorer, one-click remediation policies — post coming.
 
 For the broader umbrella framework, see [Copilot Control System — the plain-English guide](/blog/microsoft-365-copilot-control-system-complete-guide/). For the architecture that sits underneath all of this, see [How Microsoft 365 Copilot works, layer by layer](/blog/how-microsoft-365-copilot-works-layer-by-layer/).

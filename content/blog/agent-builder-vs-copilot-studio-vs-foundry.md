@@ -269,7 +269,7 @@ Compare this to Copilot Studio doing similar work: ~500–1,000 credits/day × $
 | Foundry agents in production | ✅ Need governance |
 | 50+ agents across org | ✅ Absolutely |
 
-> 📚 Use our [Agent 365 Planner](/agent-365-planner/) for an interactive governance assessment. Compare plans including E7 with our [Licensing Simplifier](/licensing/).
+> 📚 Use our [Agent 365 Planner](/agent-365-planner/) for an interactive governance assessment. Compare plans including E7 with our [Licensing Simplifier](/licensing/). For the deep security stack — Entra, Purview and Defender — see the [Agent 365 Security Guide](/blog/agent-365-security-governance-complete-guide/).
 
 ## The Graduation Path {#graduation}
 
