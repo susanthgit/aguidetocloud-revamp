@@ -5,7 +5,7 @@ hub: true
 hub_id: "it-admins"
 description: "Deployment checklist for M365 Copilot — licensing, security, governance, data readiness, adoption, monitoring, real-world best practices."
 date: 2026-04-14
-lastmod: 2026-05-08
+lastmod: 2026-06-16
 card_tag: "Copilot"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -48,6 +48,10 @@ founder_note: |
 Deploying Copilot is like moving house. You wouldn't throw everything in a truck and hope for the best — you'd sort through your stuff first, label the boxes, and unpack room by room *(the [how-it-works explainer](/blog/how-microsoft-365-copilot-works-layer-by-layer/) is a good pre-read for admins).* The organisations that rush past the "sorting" phase are the ones that end up with Copilot surfacing confidential HR documents to people who shouldn't see them.
 
 This guide gives you the complete, phased checklist — from planning through optimisation — so your deployment succeeds the first time.
+
+<p><img src="/images/blog/deployment-checklist/hero-copilot-dashboard.webp" alt="The Microsoft Copilot Dashboard showing Copilot licensed employees, active Copilot users, adoption by group, and an export-data option" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [my Microsoft 365 Copilot — May 2026 updates](/blog/microsoft-365-copilot-may-2026-updates/) — the Microsoft Copilot Dashboard, your post-deployment scoreboard: who's licensed, who's actually using Copilot, and how adoption is trending. (Microsoft demo data.)*
 
 **Quick links:**
 
@@ -109,6 +113,10 @@ flowchart TD
 ---
 
 ## What Licence Do You Need?
+
+<p><img src="/images/blog/deployment-checklist/01-admin-billing-credits.webp" alt="The Microsoft 365 admin center Billing and usage page, managing pay-as-you-go billing and Copilot Credits / capacity-pack policies for Microsoft 365 Copilot Chat" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [my Microsoft 365 Copilot — May 2026 updates](/blog/microsoft-365-copilot-may-2026-updates/) — beyond the base licence and Copilot add-on, the admin center is also where you manage pay-as-you-go billing and Copilot Credits. (Microsoft demo data.)*
 
 | What You Need | Details |
 |--------------|---------|
@@ -199,6 +207,10 @@ Define what "success" means before deployment:
 This is the "sorting through your stuff before packing" phase — and it's the one most organisations rush past. Don't.
 
 > ⚠️ **This is the most critical phase.** Most Copilot issues trace back to governance gaps that existed before Copilot arrived. Fix them now or fix them in a crisis later.
+
+<p><img src="/images/blog/deployment-checklist/02-purview-dlp-copilot.webp" alt="A Microsoft Purview Data Loss Prevention policy named 'Safeguard sensitive data in Microsoft 365 Copilot interactions', with an action to restrict Copilot from processing sensitive content" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [my Microsoft 365 Copilot — May 2026 updates](/blog/microsoft-365-copilot-may-2026-updates/) — Phase 2 in action: a Purview DLP policy that stops Copilot processing sensitive content. Set governance controls like this before you roll out. (Microsoft demo data.)*
 
 ### 2.1 Audit SharePoint & OneDrive Permissions
 
@@ -306,6 +318,10 @@ Configure how Copilot handles sensitive topics and web content:
 ## Phase 3: Configure & Deploy
 
 Now you're actually "moving in." The boxes are sorted (Phase 2), and it's time to start unpacking — room by room, not all at once.
+
+<p><img src="/images/blog/deployment-checklist/03-copilot-app-features.webp" alt="The Microsoft 365 Copilot app left navigation showing New chat, Search, Library, Create, Agents and Notebooks — the app features IT admins can show or hide" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft Learn — Copilot app settings for IT admins](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-app-admin-settings) — part of configuring the experience: the Copilot app nav features you show or hide via Cloud Policy. (Microsoft demo data.)*
 
 ### 3.1 Technical Prerequisites
 
