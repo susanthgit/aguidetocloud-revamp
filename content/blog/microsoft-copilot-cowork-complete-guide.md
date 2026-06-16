@@ -285,6 +285,8 @@ Now that you know what Cowork is, here's the fun part — trying it yourself. Th
 
 **🎤 If you're demoing Cowork to others**, start with Prompt 1 (Morning Triage) — it's universal and gets instant reactions. Then show Prompt 6 (Customer Deliverable) to demonstrate the full multi-step power. The gap between "regular Copilot" and "Cowork" clicks immediately when people see it execute across 5 apps from a single instruction.
 
+→ **Want more?** The full rated prompt library — tested on a real tenant, with usefulness scores — lives in **[Cowork: Prompts to try](/blog/microsoft-copilot-cowork-prompts-to-try/)**.
+
 ---
 
 ## How is This Different from Regular Copilot?
@@ -606,6 +608,8 @@ Here's where it gets exciting. Let me walk you through what Cowork can do for di
 
 </div>
 
+→ **This is a taste.** All seven roles — IT, Sales, HR, Finance, Marketing, Executive, and customer-facing — with the prompts, the steps Cowork runs, realistic time saved, and the watch-outs, are in **[Cowork: Use cases by role](/blog/microsoft-copilot-cowork-use-cases-by-role/)**.
+
 ---
 
 ## What is an Agentic Harness — and Why Does Copilot Cowork Need One?
@@ -712,6 +716,8 @@ For full control, the [Microsoft 365 Agents SDK](https://github.com/microsoft/Ag
 
 📖 [Add and manage skills in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-use-skills)
 
+→ **Go deeper:** the full built-in skill list, the `SKILL.md` authoring pattern, the skill quality-scoring system, and four worked custom-skill examples are in **[Cowork: Skills & plugins](/blog/microsoft-copilot-cowork-skills-and-plugins/)**.
+
 ---
 
 ## How to Get Microsoft Copilot Cowork
@@ -752,6 +758,8 @@ If you're an IT admin, here's how to turn it on:
 > 📝 **Good to know:** Cowork runs on browser, desktop, and mobile (iOS + Android via the Microsoft 365 Copilot app). It's English-only at launch — more languages coming.
 
 📖 [Copilot Cowork: Now available in Frontier](https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/)
+
+→ **For admins:** the full enablement steps, governance controls, SharePoint oversharing check, and pilot rollout playbook are in **[Cowork: Admin enablement & governance](/blog/microsoft-copilot-cowork-admin-and-governance/)** — and how Cowork is licensed and costed in **[Cowork: Pricing & cost management](/blog/microsoft-copilot-cowork-pricing-cost-management/)**.
 
 ---
 
@@ -879,6 +887,19 @@ No. Cowork is brilliant at coordination, preparation, and routine multi-step tas
 - [Microsoft Learn — Copilot Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) — the authoritative product docs
 - [Microsoft Agent Academy — Cowork Collective](https://github.com/microsoft/agent-academy/tree/main/docs/cowork-collective) — Microsoft's official hands-on labs (Badge Bandit, Vacay, Audit Ace)
 - [Microsoft 365 Frontier program](https://adoption.microsoft.com/en-us/copilot/frontier-program/) — preview enrollment
+
+---
+
+## Continue the Cowork series
+
+This guide is the hub. Each spoke is a bookmarkable deep-dive:
+
+- **[How to use it, step by step](/blog/microsoft-copilot-cowork-how-to-use-step-by-step/)** — the practical walkthrough
+- **[Prompts to try](/blog/microsoft-copilot-cowork-prompts-to-try/)** — copy-paste prompts with usefulness ratings
+- **[Use cases by role](/blog/microsoft-copilot-cowork-use-cases-by-role/)** — what seven roles actually do with it
+- **[Skills & plugins](/blog/microsoft-copilot-cowork-skills-and-plugins/)** — built-in skills + authoring your own
+- **[Admin enablement & governance](/blog/microsoft-copilot-cowork-admin-and-governance/)** — turn it on, lock it down, roll it out
+- **[Pricing & cost management](/blog/microsoft-copilot-cowork-pricing-cost-management/)** — how it's licensed and costed
 
 ---
 
