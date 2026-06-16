@@ -24,7 +24,7 @@ faq:
   - question: "Is Copilot Pro still available in 2026?"
     answer: "No. Microsoft retired the standalone $20/month Copilot Pro in late 2025. Existing subscribers can keep using it until they cancel or support ends on 1 August 2026. For new sign-ups, Microsoft 365 Premium is the consumer plan that carries Copilot Pro's features forward."
   - question: "What replaced Copilot Pro?"
-    answer: "Microsoft 365 Premium (~$19.99/month). It bundles what Copilot Pro offered — AI in the Word, Excel, PowerPoint and Outlook apps, priority model access and higher usage limits — together with the Microsoft 365 apps and 1 TB of storage. Microsoft 365 Personal and Family plans also now include Copilot for the subscription owner."
+    answer: "Microsoft 365 Premium (~$19.99/month). It bundles what Copilot Pro offered — AI in the Word, Excel, PowerPoint and Outlook apps, priority model access and higher usage limits — together with the Microsoft 365 apps and up to 6 TB of storage. Microsoft 365 Personal and Family plans also now include Copilot for the subscription owner."
   - question: "Is Microsoft Copilot free?"
     answer: "There is a genuinely free tier. Free Copilot (the web and app chat, formerly Bing Chat) costs nothing. For organisations, Microsoft 365 Copilot Chat is an enterprise-data-protected chat experience included at no additional cost with eligible Microsoft 365 subscriptions. What's not free is the in-app AI inside Word, Excel, PowerPoint and Outlook, and the work version grounded on your company's data — those come with Microsoft 365 Premium (personal) and Microsoft 365 Copilot (work)."
   - question: "What is the difference between Copilot Pro and Microsoft 365 Copilot?"
@@ -65,13 +65,13 @@ founder_note: |
 |---|---|---|---|---|
 | **Free Copilot** | Anyone | Free | No (personal chat) | Casual chat, web answers, drafting |
 | **Microsoft 365 Copilot Chat** | Organisations | Included with eligible M365 plans | Enterprise-protected chat only | Secure AI chat without a per-seat licence |
-| **Microsoft 365 Premium** | Individuals | ~$19.99/month | No (personal) | AI in your *personal* Office apps + 1 TB |
+| **Microsoft 365 Premium** | Individuals | ~$19.99/month | No (personal) | AI in your *personal* Office apps + up to 6 TB |
 | **Microsoft 365 Copilot** | Organisations | $30/user/mo, annual *(+ base M365)* | **Yes — your Graph** | Work, grounded on your own data |
 | **Copilot Studio** | Agent builders | Pay-as-you-go (Copilot Credits) | Depends on the agent | Building custom agents |
 | **Copilot Credits** | *(the meter, not a plan)* | Consumption-based | — | Paying for agent & advanced AI actions |
 | **Copilot Pro** *(retired)* | — | No longer sold | — | Existing subscribers only, until 1 Aug 2026 |
 
-*All-in note: **Copilot Pro was retired in late 2025** — Microsoft 365 Premium (~$19.99/month) is its consumer replacement and bundles Copilot in the Office apps with 1 TB of storage. Microsoft 365 Copilot's $30 is an add-on that sits on top of a qualifying base plan (Business Basic/Standard/Premium, Microsoft 365 E3/E5, Office 365 E1/E3/E5, F-plans and more).*
+*All-in note: **Copilot Pro was retired in late 2025** — Microsoft 365 Premium (~$19.99/month) is its consumer replacement and bundles Copilot in the Office apps with up to 6 TB of storage. Microsoft 365 Copilot's $30 is an add-on that sits on top of a qualifying base plan (Business Basic/Standard/Premium, Microsoft 365 E3/E5, Office 365 E1/E3/E5, F-plans and more).*
 
 ---
 
@@ -96,7 +96,7 @@ The web and app chat (what used to be called Bing Chat). Costs nothing, no subsc
 If your organisation has an eligible Microsoft 365 subscription, your people get an **enterprise-data-protected** chat experience at no additional cost — prompts and responses aren't used to train models, and it stays inside your tenant's protection. Admins can then switch on **pay-as-you-go agents** (billed in Copilot Credits) without licensing every user.
 
 ### Microsoft 365 Premium — the consumer Copilot plan (~$19.99/month)
-This is the personal plan for AI *inside* your own Word, Excel, PowerPoint and Outlook, plus the highest consumer Copilot usage limits and 1 TB of storage. It's for *your* files — it cannot see a work account's data.
+This is the personal plan for AI *inside* your own Word, Excel, PowerPoint and Outlook, plus the highest consumer Copilot usage limits and up to 6 TB of storage. It's for *your* files — it cannot see a work account's data.
 
 > **What happened to Copilot Pro?** Microsoft **retired the standalone $20/month Copilot Pro in late 2025** and rolled its features into **Microsoft 365 Premium**. If you already subscribe to Copilot Pro you can keep using it until you cancel or support ends on **1 August 2026**; after that, Microsoft 365 Premium (or a Personal/Family plan, which now include Copilot for the subscription owner) is how you get Copilot in your Office apps.
 
@@ -118,7 +118,7 @@ Since **1 September 2025**, Copilot Credits are the metered currency Microsoft u
 
 ## The hidden costs nobody mentions
 
-- **Copilot Pro is gone — don't go looking for it.** The standalone $20/month plan was retired in late 2025; **Microsoft 365 Premium (~$19.99/month)** is the consumer replacement, and it bundles 1 TB of storage so it's closer to all-in.
+- **Copilot Pro is gone — don't go looking for it.** The standalone $20/month plan was retired in late 2025; **Microsoft 365 Premium (~$19.99/month)** is the consumer replacement, and it bundles up to 6 TB of storage so it's closer to all-in.
 - **Microsoft 365 Copilot isn't really $30.** It's an add-on that sits *on top of* a qualifying base plan — if you don't already have one, that's an extra cost before the $30.
 - **Agents can be metered separately.** Copilot Studio and pay-as-you-go agents draw Copilot Credits — useful, but a line item to watch with our [token calculator](/token-calculator/).
 - **Annual commitment.** Microsoft 365 Copilot is typically billed annually — budget for the year, not the month.
