@@ -290,6 +290,33 @@ Copilot Cowork is like hiring a café manager. You say "set up the morning cater
 
 ---
 
+## What to use when — M365 Copilot vs Cowork vs Scout
+
+By 2026 Microsoft has three distinct shapes of AI help, and the question I get asked most is "which one do I reach for?" Here's the honest breakdown. They're not competing products — they're different tools for different shapes of work.
+
+| | **M365 Copilot (Chat)** | **Copilot Cowork** | **[Microsoft Scout](/blog/microsoft-scout-complete-guide/)** |
+|---|---|---|---|
+| **Category** | Assistant | Agentic task-doer | Autopilot |
+| **Shape of help** | You ask, it answers — in the moment | You describe an outcome, it executes across your M365 apps | It works continuously in the background, on its own identity |
+| **Where it runs** | Inside your M365 apps (Word, Teams, Outlook, web) | Its own surface inside M365 (cloud) | A desktop app (Windows + macOS) |
+| **How long** | Instant response | Minutes to hours per task | Always-on — heartbeats, schedules, sub-agents |
+| **You steer it** | Constantly — every prompt | At checkpoints — it plans, you approve | Rarely — you hand off work and it holds the line |
+| **Best for** | Quick drafting, summarising, Q&A in the flow of work | Multi-step, cross-app work you'd normally stitch together by hand | Long-running autonomous work while your attention is elsewhere |
+| **Reach** | The app you're in | All your M365 data (email, Teams, files, calendar) | Local machine + browser + M365 + shell + MCP |
+| **Example** | "Summarise this thread" | "Prep me for Friday's board meeting" | "Watch this folder and re-run the report whenever the data changes" |
+
+### The one-line way to remember it
+
+- **Chat** is what you actively steer — the assistant in the moment.
+- **Cowork** is what you delegate a task to — the colleague who plans, executes across your apps, and checks in.
+- **Scout** is what holds the line while you do something else — the autopilot working in the background.
+
+Most people who use one end up using all three. They don't replace each other — they cover different shapes of work. (For the deep dive on the autopilot category, see the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/).)
+
+<!-- TODO Atlas/Sush GA-day: Microsoft showed a 'what to use when' slide in the GA pre-call. Once an equivalent framing is PUBLIC (GA blog / Learn), cross-check this table against Microsoft's official positioning and align wording. This table is built ENTIRELY from already-published positioning in Sush's own Scout + Cowork blogs — no internal-slide content used. Verify + enrich at GA if Microsoft publishes their own comparison. -->
+
+---
+
 ## The Three Waves of Copilot
 
 To understand where Cowork fits, it helps to see the bigger picture. Copilot hasn't stood still since 2023 — it's been evolving in waves:
