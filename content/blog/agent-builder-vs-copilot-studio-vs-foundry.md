@@ -5,7 +5,7 @@ hub: true
 hub_id: "ai-agents"
 description: "Full comparison with pricing, licensing, and a decision framework — which Microsoft AI agent platform should IT admins pick?"
 date: 2026-04-17
-lastmod: 2026-05-08
+lastmod: 2026-06-16
 card_tag: "AI Agents"
 tag_class: "ai"
 layout: "notebook"
@@ -47,6 +47,10 @@ tags:
 Microsoft now gives you **three different ways** to build AI agents. If you're an IT admin or decision-maker trying to figure out which one to use, you're not alone — this is one of the most common questions I hear from customers.
 
 I wrote this guide because the official docs are spread across three different Learn sites, and nobody puts all three side-by-side in a way that helps you **decide**. That's what this post does.
+
+<p><img src="/images/blog/agent-builder-vs/hero-which-builder.webp" alt="The Microsoft Copilot Studio home screen asking 'What would you like to build?', with an Agent / Workflow toggle and options to start an agent, a workflow, or a computer-using agent" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft Learn — Copilot Studio overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio) — every one of Microsoft's agent builders starts from a moment like this. This guide helps you pick which one. (Microsoft demo data.)*
 
 **Quick links:**
 
@@ -135,6 +139,10 @@ This is always the first question. Here's the honest answer — more nuanced tha
 
 Agent Builder lives inside M365 Copilot. Open Copilot, click "New agent", start talking. *(The step-by-step version lives in the [Agent Builder field guide](/blog/m365-agent-builder-explained/).)*
 
+<p><img src="/images/blog/agent-builder-vs/01-agent-builder.webp" alt="The Agent Builder 'New Agent' screen in Microsoft 365 Copilot — a simple prompt that reads 'What can I take off your hands today?' with a message box and a 'Skip to configure' link" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft Learn — Agent Builder in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder) — the lightweight, no-code path: describe what you want in plain English. (Microsoft demo data.)*
+
 ### What it can do
 
 - Answer questions from SharePoint (up to 100 files), OneDrive, web (4 URLs), uploaded files (20), and Teams chats (5)
@@ -156,6 +164,10 @@ Agent Builder lives inside M365 Copilot. Open Copilot, click "New agent", start 
 ## Copilot Studio — The Home Kitchen {#copilot-studio}
 
 Copilot Studio is where most IT admins will spend their time. Think of it as Power Automate for AI agents.
+
+<p><img src="/images/blog/agent-builder-vs/02-copilot-studio.webp" alt="The Copilot Studio agent Overview page — single-page authoring with the agent name and description, a 'Select your agent's model' dropdown set to GPT-4.1, an Instructions section, and a Knowledge section" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft Learn — Copilot Studio quickstart](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-get-started) — the redesigned single-page authoring: instructions, model and knowledge all in one place. (Microsoft demo data.)*
 
 ### What it adds over Agent Builder
 
@@ -188,6 +200,10 @@ If your agent needs to **do something** (create a ticket, update a record, send 
 ## Azure AI Foundry — The Restaurant Kitchen {#foundry}
 
 Azure AI Foundry (recently rebranded "Microsoft Foundry") is for developers. If nobody on your team writes Python or C#, you don't need this — but understand what it is so you can have the right conversation when someone asks "can we do more?"
+
+<p><img src="/images/blog/agent-builder-vs/03-foundry-portal.webp" alt="The Microsoft Foundry portal showing a hosted customer-service-agent in the Build view, with Agents, Deployments, Tools, Knowledge and Guardrails in the left navigation and a guardrail blocking a harmful prompt in the playground" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [my Build 2026 recap](/blog/microsoft-build-2026-recap/) (originally Microsoft Foundry DevBlogs) — the new Microsoft Foundry portal: a hosted agent with built-in guardrails blocking a harmful prompt at the input stage. (Microsoft demo data.)*
 
 ### What only Foundry can do
 
