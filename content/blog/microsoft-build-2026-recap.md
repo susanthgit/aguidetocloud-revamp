@@ -396,7 +396,7 @@ What Scout can do (from the official [Microsoft Learn overview](https://learn.mi
 <p>💡 <strong>What kind of agent is being described:</strong> picture a personal AI co-founder that lives on your desktop, has its own permissioned identity in your tenant, watches the calendar / Teams / inbox proactively, runs background heartbeats every 15–120 min, lets you load custom skills as <code>SKILL.md</code> files, and asks for approval before sensitive actions. <em>Yes — it's effectively the GitHub Copilot CLI architecture, scaled up to M365-native + autonomous. Same DNA, bigger surface.</em></p>
 </blockquote>
 
-📖 [Introducing Microsoft Scout — M365 Blog](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/) · [Microsoft Scout overview (Learn)](https://learn.microsoft.com/en-us/microsoft-scout/overview) · [Microsoft Scout FAQ (Learn)](https://learn.microsoft.com/en-us/microsoft-scout/faq) · [Frontier program](https://adoption.microsoft.com/en-us/copilot/frontier-program/)
+📖 **Go deeper on our site: [Microsoft Scout — The Complete Guide](/blog/microsoft-scout-complete-guide/)** — what it is, the two-gate admin install, all 7 bundled skills, and the secure-config reference · [Introducing Microsoft Scout — M365 Blog](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/) · [Microsoft Scout overview (Learn)](https://learn.microsoft.com/en-us/microsoft-scout/overview) · [Microsoft Scout FAQ (Learn)](https://learn.microsoft.com/en-us/microsoft-scout/faq) · [Frontier program](https://adoption.microsoft.com/en-us/copilot/frontier-program/)
 
 ### Project Solara — chip-to-cloud platform for an agent-first world
 
@@ -729,6 +729,7 @@ If you find a claim in this post that doesn't match the live Microsoft announcem
 
 ## Where to go next
 
+- **🛰️ [Microsoft Scout — The Complete Guide](/blog/microsoft-scout-complete-guide/)** — the headline Build 2026 reveal in full: what it is, the two-gate admin setup, all 7 skills, MCP servers, and secure configuration
 - **🌱 [Prompting Field Guide](/blog/prompt-engineering-microsoft-365-copilot/)** — the fundamentals that still apply on top of every Build 2026 feature
 - **🆕 [2026 Prompting Upgrade Brief](/blog/microsoft-365-copilot-prompting-2026-whats-new/)** — Notebooks, Researcher, Analyst, Memory — the layer Build builds on
 - **🏗️ [Agent Builder vs Copilot Studio vs Foundry](/blog/agent-builder-vs-copilot-studio-vs-foundry/)** — the three-kitchens decision guide

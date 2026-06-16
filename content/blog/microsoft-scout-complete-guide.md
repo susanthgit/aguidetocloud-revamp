@@ -2,7 +2,7 @@
 title: "Microsoft Scout — The Complete Guide"
 description: "What Microsoft Scout is, how it differs from Copilot, how to install through the Frontier preview program, and where to go deeper on secure configuration."
 date: 2026-06-12
-lastmod: 2026-06-13
+lastmod: 2026-06-16
 draft: false
 hub_id: "scout"
 hub: true
@@ -32,8 +32,10 @@ faq:
     answer: "Copilot answers your question in the moment — you type, it replies, the conversation is the thing. Scout keeps working in the background, with its own identity, on the tasks you handed it before. Microsoft introduced a new category name to make the distinction clear: chat is what you actively steer; an Autopilot is what holds the line while you do something else. Both are useful; they're different tools."
   - question: "Can I just download and install Scout right now?"
     answer: "You can download the installer at aka.ms/msscout right now, but sign-in only succeeds after your organisation has completed two admin gates (Frontier in the M365 admin centre, plus an Intune policy and attestation form). If those aren't done, sign-in is blocked and the app doesn't show a clear in-product indication of why — the fix lives on the admin side."
+  - question: "I keep seeing 'Ask your admin to enable Microsoft Scout' — what should I check?"
+    answer: "That message is the organisation-not-enabled gate, and Scout signs in to Microsoft 365 *before* the GitHub step — so it most likely points to the admin side rather than a GitHub-license problem. It usually means an admin-side gate isn't effective for your user or device yet: Frontier not turned on for your account (or your sign-in UPN missing from the Specific-users list), the Intune policy not yet applied to your device, your account missing a Microsoft 365 Copilot license, or you're still inside the up-to-3-hour propagation window after an admin change. One thing that catches people out: the attestation step is just completing a form to record your opt-in — the docs don't mention an approval reply coming back, so 'no response yet' usually isn't your blocker. Full self-diagnosis checklist (including the case where you're the admin and the user at once) is in the [Admin Install & Frontier Setup spoke](/blog/microsoft-scout-admin-install-frontier-enrollment/#troubleshooting-ask-your-admin-to-enable-microsoft-scout)."
   - question: "What licenses do I need for Scout?"
-    answer: "Three things — a Microsoft 365 Copilot license, a GitHub Copilot Business or Enterprise license (Scout uses your GitHub account for token billing), and your organisation enrolled in the Microsoft Frontier program. Frontier itself is included with eligible Microsoft 365 subscriptions; Scout has no separate per-seat price during preview."
+    answer: "Three things — a Microsoft 365 Copilot license, a GitHub Copilot Business or Enterprise license (Scout uses your GitHub account for token billing — a Business/Enterprise trial works while it's active if the seat is assigned to your GitHub account; the individual Free, Pro, and Pro+ plans aren't listed as qualifying), and your organisation enrolled in the Microsoft Frontier program. Frontier itself is included with eligible Microsoft 365 subscriptions; Scout has no separate per-seat price during preview."
   - question: "What does 'Autopilot' actually mean?"
     answer: "It's Microsoft's name for a new category — agents that work continuously in the background, with their own Entra identity, taking action under the permissions and policies you and your organisation set. The defining feature: it doesn't need to be prompted each time. It holds your context and keeps working when your attention is elsewhere."
   - question: "Where does Scout store its memory?"
@@ -70,7 +72,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **This is a living guide.** Scout is in Frontier preview — releases ship roughly weekly, settings change, new skills land. I update this post every time Microsoft ships something new or I find something worth calling out. If you spot anything out of date, [send me feedback](/feedback/) and I'll patch it. **Last verified: 12 June 2026 · Scout version 0.23.0.20260608.1.**
+🔄 **This is a living guide.** Scout is in Frontier preview — releases ship roughly weekly, settings change, new skills land. I update this post every time Microsoft ships something new or I find something worth calling out. If you spot anything out of date, [send me feedback](/feedback/) and I'll patch it. **Last verified: 16 June 2026 · Scout version 0.23.0.20260608.1.**
 
 </div>
 

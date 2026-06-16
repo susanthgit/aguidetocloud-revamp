@@ -1,6 +1,6 @@
 {
   "copilot-model-choice": {
-    "hash": "0afaaffa7044e626",
+    "hash": "f1a06f2a8521f4b8",
     "keywords": {
       "claude": 10,
       "anthropic": 14,
@@ -9,10 +9,10 @@
       "multi-model": 1,
       "openai": 4
     },
-    "last_checked": "2026-06-01T15:30:00.864843+00:00"
+    "last_checked": "2026-06-15T15:21:43.991855+00:00"
   },
   "copilot-studio-models": {
-    "hash": "4909cfbb0c4c9c44",
+    "hash": "c2cc0ec719f36168",
     "keywords": {
       "claude": 4,
       "gpt": 9,
@@ -20,21 +20,21 @@
       "model selection": 3,
       "choose model": 0
     },
-    "last_checked": "2026-06-01T15:30:01.011512+00:00"
+    "last_checked": "2026-06-15T15:21:44.091727+00:00"
   },
   "copilot-privacy": {
-    "hash": "b623cdd41a497e4d",
+    "hash": "f62136180793af9a",
     "keywords": {
-      "model": 18,
+      "model": 23,
       "sub-processor": 0,
       "anthropic": 6,
       "openai": 5,
       "data processing": 0
     },
-    "last_checked": "2026-06-01T15:30:01.158725+00:00"
+    "last_checked": "2026-06-15T15:21:44.174232+00:00"
   },
   "copilot-overview": {
-    "hash": "570fae3fdd031be3",
+    "hash": "326b5e1573691f9b",
     "keywords": {
       "model": 3,
       "gpt": 0,
@@ -42,10 +42,10 @@
       "phi": 0,
       "reasoning": 0
     },
-    "last_checked": "2026-06-01T15:30:01.506092+00:00"
+    "last_checked": "2026-06-15T15:21:44.344725+00:00"
   },
   "copilot-admin": {
-    "hash": "f28f91933ee5d486",
+    "hash": "efc8cb61779bd35b",
     "keywords": {
       "model": 1,
       "anthropic": 0,
@@ -53,6 +53,6 @@
       "multi-model": 0,
       "frontier": 0
     },
-    "last_checked": "2026-06-01T15:30:01.749405+00:00"
+    "last_checked": "2026-06-15T15:21:44.631443+00:00"
   }
 }

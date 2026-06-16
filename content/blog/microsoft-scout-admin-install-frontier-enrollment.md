@@ -2,7 +2,7 @@
 title: "Microsoft Scout — Admin Install & Frontier Setup"
 description: "Step-by-step admin install for Microsoft Scout: Frontier enrollment in the Microsoft 365 admin center, Intune policy, attestation, GitHub Copilot license."
 date: 2026-06-12
-lastmod: 2026-06-13
+lastmod: 2026-06-16
 draft: false
 card_tag: "Scout"
 tag_class: "ai"
@@ -29,7 +29,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the admin-install spoke. Frontier ships weekly — this page updates as the gates change. **Last verified: 12 June 2026 · Scout version 0.23.0.20260608.1.**
+🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the admin-install spoke. Frontier ships weekly — this page updates as the gates change. **Last verified: 16 June 2026 · Scout version 0.23.0.20260608.1.**
 
 </div>
 
@@ -147,9 +147,13 @@ The attestation lives in a Microsoft Forms-based [M365 Admin Frontier organisati
 
 *Three required fields after the terms: **Accept** radio, **Name of organization**, and **Tenant ID**. The Tenant ID hint tells you to look it up in the Azure portal under Azure Active Directory — that's the GUID your tenant is identified by; it'll be the same one your Intune policy targets. The form doesn't collect your name or email unless you choose to add them.*
 
+> **Submitting the form is the step — there's no approval email to wait on.** Microsoft's docs describe this gate as completing the form to *record* your organisation's opt-in; they don't mention any reply, approval workflow, or status that comes back to you. So if you've submitted it, don't treat "no response yet" as your blocker — move on and check the other gates. (If sign-in still fails after **all three** Gate 2 actions are done *and* you've allowed propagation time, that's a Frontier-feedback escalation, not a "still waiting on the form" situation.)
+
 ### Gate 2.3 — Provision GitHub Copilot licenses
 
 Admins must ensure that users who'll use Scout have **GitHub Copilot Business or Enterprise** licenses assigned. This step is only required if users aren't already licensed.
+
+> **Does a trial count? Does it have to be the paid plan?** The Scout docs require a GitHub Copilot **Business or Enterprise** license — so **Business is enough; you don't need Enterprise specifically.** The individual plans — GitHub Copilot **Free, Pro, and Pro+** — aren't listed as qualifying. On trials: if your Business/Enterprise *trial* assigns that same Business/Enterprise entitlement to the GitHub account you sign in with, it should satisfy the prerequisite while the trial is active — **verify the seat is actually assigned** in your GitHub org's Copilot settings, and remember you'll need a paid Business/Enterprise seat once the trial ends. The seat has to be on the **GitHub account you use at Scout's "Sign in to GitHub" step** — and because that step comes *after* the organisation gate, a GitHub-license problem shows up as a GitHub sign-in failure, **not** as the "hasn't been set up for your organization" message.
 
 For more information, see:
 
@@ -174,6 +178,42 @@ If users report sign-in problems, verify both gates first before investigating t
 | Gate 2.1 | Intune → Devices → Configuration → Scout policy | Policy assigned to user's device, last sync recent |
 | Gate 2.2 | Internal record from the Forms submission | Attestation submitted by a tenant admin |
 | Gate 2.3 | GitHub.com org → Settings → Copilot → Access | User's GitHub account has a GitHub Copilot Business or Enterprise seat |
+
+---
+
+## Troubleshooting: "Ask your admin to enable Microsoft Scout"
+
+The single most-reported Scout sign-in message is some version of this:
+
+> **Ask your admin to enable Microsoft Scout.** Microsoft Scout hasn't been set up for your organization yet. Once your admin has enabled it, come back here to get started.
+
+Two things to know before you start chasing it:
+
+- **This is the *organisation-not-enabled* gate.** Scout signs in to Microsoft 365 *before* the "Sign in to GitHub" step — so this particular message most likely points to the Microsoft 365 / Frontier / Intune admin setup rather than your GitHub license. (A GitHub-license problem typically shows up later, as a GitHub sign-in failure.)
+- **The app can't tell you *which* admin gate is missing.** Microsoft's own docs note it doesn't show a clear in-product indication of why. So you work through the gates in order until one turns out to be incomplete.
+
+Here's the order I'd check — fastest-and-most-likely first:
+
+1. **Did you wait?** Admin changes — especially the **Copilot Frontier** save — take *up to ~3 hours* to propagate. If you changed anything recently, give it time, fully quit Scout, and relaunch.
+2. **Is *your own* account in scope?** If Gate 1 was set to **Specific users**, your own sign-in account (UPN) has to be in that list. While piloting, the simplest check is to confirm you're listed — or switch to **All users**.
+3. **Does your account have a Microsoft 365 Copilot license?** Frontier needs one *per user*. Without it the Frontier toggle won't even render for the admin, and your sign-in won't pass.
+4. **Did the Intune policy actually reach your device?** "Configured in Intune" and "applied on this machine" are different things. On the device: **Settings → Accounts → Access work or school → (your account) → Info → Sync**, let it finish, then relaunch Scout.
+5. **Is the attestation submitted?** Yes/no only — and remember there's **no reply to wait for** (see Gate 2.2 above). Submitting the form *is* the completion.
+6. **Is your tenant actually Frontier-eligible?** If the **Copilot Frontier** setting doesn't even appear under M365 admin centre → Copilot → Settings, your tenant isn't enrolled in the Frontier program yet — and that enrollment is the prerequisite for everything else here.
+
+Cross-reference each step against the [gate-verification table above](#what-happens-if-any-gate-is-incomplete) to see what "green" looks like.
+
+### If you're the admin *and* the user
+
+A lot of people hitting this are a single person on their own tenant — they enrolled in Frontier themselves and are trying to set Scout up end-to-end, admin hat and user hat at once. If that's you:
+
+- You have to actually complete **all of Gate 1 and Gate 2** yourself, in your own M365 admin centre and Intune — there's no separate "admin" who does it for you. One person wearing both hats is fine; the steps still all have to be done.
+- Walk this page top to bottom, in order. The most common miss for solo admins is **#2** (your own UPN not in the Specific-users list) and **#4** (Intune policy configured but never synced to the device).
+- If the **Copilot Frontier** setting isn't in your admin centre at all, that's **#6** — your tenant isn't Frontier-enrolled, and that's the first thing to fix.
+
+### Still stuck after all three gates are green?
+
+If Gate 1 and Gate 2.1, 2.2, and 2.3 are all genuinely complete, you've waited out the propagation window, and sign-in *still* fails — that's the point to raise it through the **Frontier feedback channel**. You've done everything that lives on the admin and client side; anything past that is server-side enablement that Microsoft needs to look at.
 
 ---
 

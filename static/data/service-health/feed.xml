@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 14 Jun 2026 21:36:24 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2026 22:26:55 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Defender XDR] Some users may be unable to begin onboarding for Microsoft Defender for Endpoint or Defender for Office 365</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1392272</link>
+      <description>[Microsoft Defender XDR] Users may be unable to begin onboarding for Microsoft Defender for Endpoint or Defender for Office 365.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">DZ1392272</guid>
+      <pubDate>Mon, 15 Jun 2026 16:19:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Viva] Users may see stale data in Copilot dashboards and analyst workbench reports in Microsoft Viva Insights</title>
+      <link>https://www.aguidetocloud.com/service-health/#MV1392264</link>
+      <description>[Microsoft Viva] Users may see stale data in Copilot dashboards and analyst workbench reports in Microsoft Viva Insights. </description>
+      <category>Microsoft Viva</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MV1392264</guid>
+      <pubDate>Sun, 14 Jun 2026 20:12:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to access a recently introduced feature in the Microsoft Copilot Studio Agent Builder</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1390337</link>
@@ -15,6 +33,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1390337</guid>
       <pubDate>Sat, 13 Jun 2026 22:44:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users are unable to submit a prompt in Microsoft 365 Copilot Chat and receive an error message</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1391746</link>
+      <description>[Microsoft 365 Copilot Chat] Users are unable to submit a prompt in Microsoft 365 Copilot Chat and receive an error message.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CW1391746</guid>
+      <pubDate>Fri, 12 Jun 2026 04:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Users are unable to access Microsoft 365 Copilot Chat or portal.office.com</title>
@@ -107,9 +134,9 @@
       <pubDate>Tue, 02 Jun 2026 13:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft 365 Copilot Chat] Users may not see accurate usage data for Microsoft 365 Copilot Chat in the Microsoft 365 admin center</title>
+      <title>[Microsoft 365 Copilot Chat] Admins may not see accurate usage data for Microsoft 365 Copilot Chat in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1390285</link>
-      <description>[Microsoft 365 Copilot Chat] Users may not see accurate usage data for Copilot Chat in usage reports within the Microsoft 365 admin center.</description>
+      <description>[Microsoft 365 Copilot Chat] Admins may not see accurate usage data for Copilot Chat in the Microsoft 365 admin center.</description>
       <category>Microsoft 365 Copilot Chat</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CW1390285</guid>
@@ -431,33 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">OP1313047</guid>
       <pubDate>Tue, 12 May 2026 21:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some admins may experience delays of up to 72 hours receiving app usage reports in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1308654</link>
-      <description>[Microsoft 365 suite] Admins may have experienced delays of up to 72 hours receiving app usage reports in the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1308654</guid>
-      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users’ text may turn blank when translated from the reading pane in Outlook desktop and Outlook on the web</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1307899</link>
-      <description>[Exchange Online] Users’ text may turn blank when translated from the reading pane in Outlook desktop and Outlook on the web.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1307899</guid>
-      <pubDate>Mon, 11 May 2026 23:05:19 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be unable to view free/busy status for Gmail users within the Exchange Online calendar</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1310533</link>
-      <description>[Exchange Online] Users may be unable to view free/busy status for Gmail users within the Exchange Online calendar.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1310533</guid>
-      <pubDate>Mon, 11 May 2026 07:01:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

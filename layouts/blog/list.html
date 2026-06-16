@@ -60,9 +60,10 @@
       "ai-agents"          (dict "label" "★ Start here · AI Agents"     "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 99)
       "scout"              (dict "label" "★ Start here · Microsoft Scout" "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 99)
       "cowork"             (dict "label" "★ Start here · Cowork"          "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 99)
+      "copilot-pricing"    (dict "label" "★ Start here · Copilot Pricing" "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 99)
     }}
     {{/* Catch-all render order (Sush-specified — overrides alphabetical dict iteration) */}}
-    {{ $catchOrder := slice "scout" "cowork" "whats-new" "prompt-engineering" "fundamentals" "it-admins" "ai-agents" }}
+    {{ $catchOrder := slice "scout" "cowork" "whats-new" "copilot-pricing" "prompt-engineering" "fundamentals" "it-admins" "ai-agents" }}
 
     {{/* Discover cluster IDs present in this listing */}}
     {{ $clusterIds := slice }}
