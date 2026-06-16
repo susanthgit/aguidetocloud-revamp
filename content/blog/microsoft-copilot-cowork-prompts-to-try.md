@@ -188,6 +188,33 @@ The **`Scheduled`** trigger row bakes the webapp-auto-refresh pattern into the s
 
 **Would I demo this to a customer?** Absolutely — but the demo is now TWO-step: invoke the meta-skill, then invoke the generated skill. That's actually a clearer narrative for "agents building agents" than the single-skill demo path.
 
+### Then I ran the generated skill — and the webapp came to life
+
+The real test of "skill as a bookmarkable webapp" is running the generated skill and seeing the HTML actually render. So I invoked `daily teams recap`.
+
+First, Cowork paused for approval before writing to my OneDrive — the human-in-the-loop checkpoint in action:
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/95-cowork-test-e-folder-approval-gate.png" alt="Cowork's approval gate for a OneDrive write. Text reads 'Cowork folder found. No Dashboards subfolder yet — creating it, then uploading.' Below: a 'Creating folder Dashboards' status and a Create folder? confirmation card with a cloud icon, a Name field showing Dashboards, and Cancel and Create buttons. A note at the bottom reads 'Sending a message below will discard your edits and cancel the above actions.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+Once I approved, Cowork's Workspace panel showed the task decomposing in real time:
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/96-cowork-test-e-workspace-plan-output.png" alt="Cowork's Workspace side panel during the dashboard build. A Plan section marked 2 of 3 with three steps — a ticked 'Fetch all Teams DM chats from the last 24 hours', a ticked 'Classify messages — action items and decisions', and an in-progress 'Building your dashboard' with a filled pink dot. An Output section showing one item, daily-teams-recap.html. A Skills and Plugins section showing one item, the daily-teams-recap skill." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+And then the dashboard rendered — exactly the bookmarkable web-app we designed:
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/94-cowork-test-e-html-dashboard-rendered.png" alt="The rendered daily-teams-recap.html dashboard opened in a viewer. Title 'Teams Recap — Tuesday, 16 June 2026' with a subtitle 'Last 24 hours · 5 conversations' and a blue Refresh button in the top-right. A cream-coloured Action Items — Reply Owed panel with a count badge of 1 contains a single checklist row that has been redacted for privacy. A blue Decisions panel with a count badge of 0 reads 'No decisions surfaced in the last 24h'. A Messages by Sender section lists five collapsible sender rows, each with the sender name redacted but the message count preserved — 3 messages, 8 messages, 6 messages, 12 messages, and 2 messages. A footer reads 'Generated: Tuesday 16 June 2026 · 11:30am NZST'." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+This is the payoff of the whole Word-vs-HTML decision. The output is:
+
+- **A real mini-dashboard** — action items at the top (1 reply owed), decisions section (0 today), messages grouped by sender with collapsible sections and message counts
+- **Bookmarkable** — it lives at a fixed OneDrive path (`Documents/Cowork/Dashboards/daily-teams-recap.html`), so the bookmark stays stable
+- **Self-dating** — the footer shows exactly when it was generated, so I always know how fresh the data is
+- **Has a Refresh button** — a visual cue to re-run the skill (or let the Scheduled cadence do it)
+
+Compared to a Word doc that I'd open, read once, and lose in my Files — this is something I actually *return to*. Sush's instinct ("why can't this be a webapp I bookmark?") was the right product question, and Cowork's `html` skill plus the `Scheduled` trigger made it real.
+
+> 💡 **The Word-vs-HTML decision rule:** if the output is a one-time artefact (a briefing for one meeting, a proposal draft), use the `docx` skill. If it's something you return to repeatedly and want current (a daily dashboard, a portfolio tracker, a status board), use the `html` skill with a fixed filename + the Scheduled trigger. Same data, very different shelf life.
+
 ---
 
 ## ☀️ Morning Triage and Priority Setter
