@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Copilot Cowork — New 2026 Pricing Guide"
 list_title: "Cowork: Pricing and cost management"
-description: "Microsoft Copilot Cowork pricing guide in plain English — the new 2-part hybrid model, decision framework, and worked cost-management examples."
+description: "Microsoft Copilot Cowork pricing in plain English — the new two-part model (Copilot seat + Copilot Credits), what drives cost, and how to manage it."
 date: 2026-06-15
 lastmod: 2026-06-15
 draft: false
@@ -38,163 +38,89 @@ founder_note: |
 
 ## TL;DR
 
-<!-- TODO Atlas/Sush: confirm every bullet against official Microsoft GA sources before this ships. Structure pre-staged 16 Jun; figures land at GA. -->
-
-- Cowork uses a **hybrid pricing model** — a Copilot entry-point seat plus usage-based consumption for Cowork's heavier multi-step work
-- Consumption is billed in **Copilot Credits**, available **pay-as-you-go** or **prepurchased**
-- Cost is driven by **4 factors**: the **model** used, the **tools** invoked, the **runtime** of the task, and the **context** pulled in
-- A built-in **FinOps Experience** gives admins visibility, budgets, and controls over credit consumption
-- Decision framework: light users may stay near the entry seat; heavy users move into consumption territory
+- Cowork uses a **two-part pricing model** — a **Microsoft 365 Copilot seat** per user, **plus usage-based consumption** for Cowork's heavier multi-step work.
+- Consumption is billed in **Copilot Credits**, available **pay-as-you-go** or **prepurchased** — the same usage-based model Microsoft introduced with the [Work IQ APIs](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/announcing-the-new-work-iq-apis/).
+- What a task consumes depends on **the model it uses, the tools it calls, and the context it pulls in** — light tasks are cheap; long, multi-step tasks on a heavy model cost more.
+- A built-in **cost-management (FinOps) experience** in the admin centre gives admins usage visibility, billing setup, and spending limits.
+- **Exact seat price, credit rates, and any free allotments land at GA** — this page updates with the real Microsoft figures then.
 
 ---
 
-## What changed at GA
+## The two parts of the model
 
-<!-- PRE-GA STUB — fill from official Microsoft GA blog + Microsoft Learn after 17 Jun NZST. Source todos: ga-pricing-4-factors, ga-copilot-credits, ga-finops-experience. -->
+Cowork's cost has two layers. Getting the difference clear is the key to estimating it.
 
-This section gets the headline pricing announcement from Microsoft on GA day — the entry-seat price, the credit model, and how the Frontier-preview access path transitions to GA.
+### Part 1 — The Microsoft 365 Copilot seat (per user)
 
----
-
-## The two parts of the new model
-
-### Part 1 — The Copilot entry point (per-seat)
-
-The baseline seat that gives a user access to Cowork. What's included, who it's for, what it costs — confirmed at GA.
+The baseline licence that gives a user access to Cowork: a **Microsoft 365 Copilot seat** on top of an eligible Microsoft 365 plan. This is the predictable, per-user part of the bill — the same Copilot licence that powers Chat and the in-app Copilot experiences.
 
 ### Part 2 — Consumption (Copilot Credits)
 
-The usage-based layer for Cowork's heavier work, billed in Copilot Credits and driven by the 4 factors below.
+Cowork's agentic work — planning and running multi-step tasks across your apps — draws on a **usage-based** layer billed in **Copilot Credits**. This is the part that flexes with how much your team actually delegates to Cowork. You buy credits two ways:
+
+- **Pay-as-you-go** — you consume credits as tasks run, billed in arrears. Best for spiky or unpredictable usage with no upfront commitment.
+- **Prepurchased** — you buy a block of credits upfront, typically at a better effective rate. Best for steady, predictable usage and budget certainty.
+
+> 🚧 **Exact credit unit, rates, free allotments, and the entry-seat price land at GA.** Nothing on this page is a real number yet — it updates with official Microsoft figures on GA day.
 
 ---
 
-## What drives the cost — the 4 factors
+## What drives consumption
 
-> 🚧 **Structure pre-staged 16 Jun 2026 · figures land at GA.** The cost model below is scaffolded from the GA announcement structure. Exact rates, units, and any free allotments are filled in from official Microsoft sources on GA day — nothing here is a real number yet.
+A few things determine how many credits a task draws, and the pattern is intuitive:
 
-Cowork consumption pricing is driven by **four factors**. Understanding these four is the key to estimating and controlling cost:
+| What | Effect on cost |
+|---|---|
+| **The model** a task uses | Higher-capability models cost more per unit of work than lighter ones |
+| **The tools / skills** a task calls | More tool calls — document creation, search, plugins — means more consumption |
+| **The context** a task pulls in | More data grounding (emails, files, meetings) means more consumption |
+| **How much the task does** | Longer, multi-step tasks naturally consume more than a quick single-skill task |
 
-| # | Factor | What it means | What raises it |
-|---|---|---|---|
-| 1 | **Model** | Which AI model Cowork uses for a task | Higher-capability models cost more per unit of work than lighter ones |
-| 2 | **Tools** | The skills and tools a task invokes (document creation, search, plugins) | More tool calls in a task = more consumption |
-| 3 | **Runtime** | How long a task runs — Cowork tasks can run for minutes or hours | Longer-running, multi-step tasks consume more |
-| 4 | **Context** | How much context the task pulls in (emails, files, meetings, data) | Larger context windows / more data grounding = more consumption |
+> Microsoft's public Work IQ pricing describes a **fixed component for tools** and a **variable component for chat and context**. The exact factor names, units, and rates for Cowork are confirmed against official Microsoft sources at GA.
 
-<!-- TODO Atlas/Sush GA-day: verify these 4 factor names against the official Microsoft GA blog + Microsoft Learn. Pre-call shorthand was Model / Tools / Runtime / Context — confirm Microsoft's public naming matches before this ships. Add per-factor rate detail once published. Source = ga-pricing-4-factors todo. -->
-
-The practical implication: a quick single-skill task on a light model with little context is cheap. A long-running, multi-skill task on a high-capability model that grounds across your whole mailbox is the expensive end of the spectrum. Most real-world tasks sit in between.
+The practical takeaway: a quick single-skill task on a light model with little context is cheap. A long-running, multi-skill task on a high-capability model grounded across your whole mailbox is the expensive end. Most real tasks sit in between — which is why the cost controls below matter.
 
 ---
 
-## Copilot Credits — how consumption is billed
+## Managing the cost — the FinOps experience
 
-> 🚧 **Structure pre-staged 16 Jun 2026 · figures land at GA.**
+Microsoft provides a **cost-management (FinOps) experience** in the Microsoft 365 admin centre for the Copilot Credits model. Per Microsoft's public Work IQ announcement, admins can:
 
-Cowork consumption is billed through **Copilot Credits**. There are two ways to buy them:
+- **Review credit usage** — who's consuming, on what, how much
+- **Configure billing** — choose prepaid or pay-as-you-go
+- **Set spending limits** — caps for tenants, groups, and users
+- **Monitor requests** — keep an eye on consumption across agents and services
 
-### Pay-as-you-go (PAYG)
-
-<!-- TODO Atlas/Sush GA-day: verify the PAYG model from official Microsoft sources. What's the credit unit? Is there a monthly free allotment per licensed user? How does PAYG get enabled (Azure subscription link)? Source = ga-copilot-credits todo. -->
-
-You consume credits as tasks run, billed in arrears. Best for teams with unpredictable or spiky usage who don't want to commit upfront.
-
-### Prepurchased credits
-
-<!-- TODO Atlas/Sush GA-day: verify the prepurchase/commitment model. Volume discount tiers? Expiry on prepurchased credits? How they're bought (admin centre / EA / MCA)? -->
-
-You buy a block of credits upfront, typically at a better effective rate. Best for teams with steady, predictable Cowork usage who want budget certainty.
-
-### How credits map to the 4 factors
-
-<!-- TODO Atlas/Sush GA-day: once rates are public, add the worked mapping showing how a task's Model + Tools + Runtime + Context translate into a credit cost. This is the section customers will reference most. -->
-
-The four cost factors above are what each task draws credits against. A worked example with real credit costs lands here on GA day.
-
----
-
-## The FinOps Experience
-
-> 🚧 **Structure pre-staged 16 Jun 2026 · details land at GA.**
-
-Microsoft is introducing a **FinOps Experience** for Cowork — a cost-management surface for tracking, modelling, and controlling Copilot Credit consumption across your organisation.
-
-<!-- TODO Atlas/Sush GA-day: verify the FinOps Experience from official Microsoft Learn / M365 admin docs. Where does it live (M365 admin centre? a dedicated cost dashboard?)? What can admins actually DO in it — budgets, alerts, per-user caps, per-department chargeback, forecasting? Screenshots from Sush's tenant once GA-enabled. Source = ga-finops-experience todo. Do NOT publish internal pre-call details — only what Microsoft makes public. -->
-
-What we expect it to cover (to be confirmed against public docs at GA):
-
-- **Usage visibility** — who's consuming credits, on what, how much
-- **Budgets and alerts** — set spend thresholds, get warned before overrun
-- **Cost modelling** — forecast consumption before you commit
-- **Controls** — per-user or per-group caps to prevent runaway spend
-
-Screenshots from a live tenant land here once the FinOps Experience is enabled post-GA.
+> 🚧 The exact dashboard location, the full set of controls, and tenant screenshots land here after GA.
 
 ---
 
 ## When per-seat is enough vs when consumption kicks in
 
-A decision framework based on typical Cowork use patterns.
+A rough decision framework based on typical Cowork use:
 
-| Pattern | Likely model |
+| Pattern | Likely shape of the bill |
 |---|---|
-| Light Cowork use (a few tasks per week per user) | Entry seat may cover it |
-| Heavy Cowork use (multiple long-running tasks daily) | Entry seat + consumption credits |
-| Mixed team (some heavy users, mostly light) | Entry seat + consumption with admin caps via FinOps |
+| Light use (a few tasks per week per user) | Mostly the per-seat layer |
+| Heavy use (multiple long-running tasks daily) | Per-seat + meaningful consumption |
+| Mixed team (a few heavy users, mostly light) | Per-seat + consumption, with admin caps to contain the heavy users |
 
----
-
-## How to estimate consumption for your org
-
-A practical worked example template — once GA pricing lands, this becomes a real worked example mapping a typical week of tasks to the 4 factors and a credit cost.
-
----
-
-## Cost-tracking dashboard
-
-Where admins see Cowork usage and cost — the FinOps Experience (above) is the primary surface. Screenshots from Sush's tenant land here post-GA.
-
----
-
-## Procurement and billing notes
-
-How Cowork credits show up on your Microsoft bill, EA vs MCA differences, PAYG vs prepurchase mechanics.
-
----
-
-## ⏳ Grace period and billing setup (16–30 June 2026)
-
-> 🚧 **Structure pre-staged 16 Jun 2026 · exact rules confirmed at GA.** This is time-sensitive billing guidance — every date and rule below is verified against official Microsoft sources before it ships. Do not act on this section until it shows a "verified" date.
-
-There's a **transition window** for organisations moving from the Frontier preview into the GA billing model.
-
-<!-- TODO Atlas/Sush GA-day: HIGH STAKES — verify EVERY detail below against official Microsoft Learn / M365 admin centre / Message Center before publishing. Billing-guidance errors cause real customer financial confusion. Confirm: exact grace dates, who qualifies, what admins must do, what happens if they miss the deadline, how to get support. Source = ga-grace-period-billing todo (internal GA pre-call — NOT publishable until public). -->
-
-| Question | What to confirm at GA |
-|---|---|
-| **How long is the grace period?** | Pre-call indicated **16 June → 30 June 2026** (two weeks). Confirm exact end date. |
-| **Who qualifies?** | Pre-call indicated **organisations with active Cowork users in Frontier prior to 16 June**. Confirm the qualification rule. |
-| **What must admins do?** | Pre-call indicated **set up and enable usage billing before 1 July**. Confirm the exact admin steps + where in the admin centre. |
-| **What happens if you miss it?** | Confirm the consequence (does consumption pause, block, or fall back to a default?). |
-| **Where to get help?** | Pre-call mentioned the account team. Confirm the official support path for customers. |
-
-### Admin action checklist (to finalise at GA)
-
-Once verified, this becomes a clear "do this by 1 July" checklist for IT admins:
-
-1. ☐ Confirm whether your org qualifies (active Frontier Cowork usage before 16 June)
-2. ☐ Set up usage billing in the admin centre *(exact location confirmed at GA)*
-3. ☐ Enable Copilot Credits (PAYG or prepurchase) before 1 July
-4. ☐ Set budgets / caps in the FinOps Experience if you want spend control from day one
-5. ☐ Contact your account team or Microsoft support if anything is unclear
-
-> ⚠️ **If your organisation used Cowork during the Frontier preview, don't ignore this window.** The grace period is the bridge from "free preview" to "metered GA" — missing the billing-enablement step could interrupt access. (Exact consequence confirmed at GA.)
+Once GA rates are public, this page adds a **worked example** mapping a typical week of tasks to a real credit cost.
 
 ---
 
 ## Frequently asked questions
 
-<!-- PRE-GA STUB — populated post-GA from real customer questions -->
+**Is Cowork covered by my Microsoft 365 Copilot licence?**
+The Copilot seat is the entry point, but Cowork's heavier agentic work also draws on the consumption layer (Copilot Credits). The exact split is confirmed at GA.
+
+**Can I cap what my team spends?**
+Yes — the cost-management experience lets admins set spending limits per tenant, group, and user.
+
+**Pay-as-you-go or prepurchase — which should I pick?**
+PAYG suits spiky, unpredictable usage; prepurchase suits steady usage and gives budget certainty (usually at a better effective rate).
+
+*(More questions get added here as real customer ones come in post-GA.)*
 
 ---
 
