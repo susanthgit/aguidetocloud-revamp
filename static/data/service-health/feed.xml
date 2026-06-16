@@ -5,16 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 16 Jun 2026 11:32:08 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2026 17:18:40 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft Defender XDR] Some users may be unable to begin onboarding for Microsoft Defender for Endpoint or Defender for Office 365</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1392272</link>
-      <description>[Microsoft Defender XDR] Users may be unable to begin onboarding for Microsoft Defender for Endpoint or Defender for Office 365.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">DZ1392272</guid>
-      <pubDate>Mon, 15 Jun 2026 16:19:58 +0000</pubDate>
+      <title>[Microsoft Copilot (Microsoft 365)] We're looking into a potential problem impacting Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1393482</link>
+      <description>[Microsoft Copilot (Microsoft 365)] We're checking for potential impact to your users.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>falsePositive</category>
+      <guid isPermaLink="false">CP1393482</guid>
+      <pubDate>Tue, 16 Jun 2026 15:55:02 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Viva] Users may see stale data in Copilot dashboards and analyst workbench reports in Microsoft Viva Insights</title>
@@ -69,6 +69,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">SP1386381</guid>
       <pubDate>Wed, 10 Jun 2026 14:50:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Defender XDR] Some users may have been unable to begin onboarding for Microsoft Defender for Endpoint or Defender for Office 365</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1392272</link>
+      <description>[Microsoft Defender XDR] Users may have been unable to begin onboarding for Microsoft Defender for Endpoint or Defender for Office 365.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">DZ1392272</guid>
+      <pubDate>Wed, 10 Jun 2026 08:50:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Admins' Microsoft 365 Copilot usage reports within the Microsoft 365 admin center may be delayed</title>
@@ -449,15 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">OP1310599</guid>
       <pubDate>Tue, 12 May 2026 22:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 apps] Users may be unable to install Microsoft 365 apps on their Windows device</title>
-      <link>https://www.aguidetocloud.com/service-health/#OP1313047</link>
-      <description>[Microsoft 365 apps] Users may have been unable to install Microsoft 365 apps on their Windows device.</description>
-      <category>Microsoft 365 apps</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">OP1313047</guid>
-      <pubDate>Tue, 12 May 2026 21:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

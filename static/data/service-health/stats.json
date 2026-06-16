@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T11:32:08.138821+00:00",
+  "generated_at": "2026-06-16T17:18:39.457339+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -8,11 +8,11 @@
       "icon": "🤖",
       "total_incidents": 26,
       "active_incidents": 1,
-      "avg_duration_minutes": 6245,
-      "last_incident": "2026-06-13T22:44:03+00:00",
+      "avg_duration_minutes": 6032,
+      "last_incident": "2026-06-16T15:55:02.980000+00:00",
       "classifications": {
-        "advisory": 14,
-        "incident": 12
+        "advisory": 15,
+        "incident": 11
       }
     },
     {
@@ -42,19 +42,6 @@
       }
     },
     {
-      "service": "Microsoft Defender XDR",
-      "short_name": "Defender",
-      "icon": "🛡️",
-      "total_incidents": 9,
-      "active_incidents": 1,
-      "avg_duration_minutes": 13814,
-      "last_incident": "2026-06-15T16:19:58.127000+00:00",
-      "classifications": {
-        "advisory": 8,
-        "incident": 1
-      }
-    },
-    {
       "service": "Microsoft 365 Copilot Chat",
       "short_name": "Copilot Chat",
       "icon": "💭",
@@ -65,6 +52,19 @@
       "classifications": {
         "advisory": 4,
         "incident": 5
+      }
+    },
+    {
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
+      "total_incidents": 9,
+      "active_incidents": 0,
+      "avg_duration_minutes": 13154,
+      "last_incident": "2026-06-10T08:50:00+00:00",
+      "classifications": {
+        "advisory": 8,
+        "incident": 1
       }
     },
     {
@@ -219,7 +219,7 @@
   "monthly": [
     {
       "month": "2026-06",
-      "incident_count": 20,
+      "incident_count": 21,
       "services_affected": 6
     },
     {
@@ -229,7 +229,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 37,
+      "incident_count": 36,
       "services_affected": 12
     }
   ]
