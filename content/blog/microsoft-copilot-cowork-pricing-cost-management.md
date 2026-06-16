@@ -3,7 +3,7 @@ title: "Microsoft Copilot Cowork — New 2026 Pricing Guide"
 list_title: "Cowork: Pricing and cost management"
 description: "Microsoft Copilot Cowork pricing in plain English — the new two-part model (Copilot seat + Copilot Credits), what drives cost, and how to manage it."
 date: 2026-06-15
-lastmod: 2026-06-15
+lastmod: 2026-06-17
 draft: false
 card_tag: "Cowork"
 tag_class: "ai"
@@ -28,99 +28,188 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Pricing details land at GA on 17 June 2026 NZST — this page updates with exact rates and worked examples then. **Last verified: 15 June 2026 · pre-GA structure.**
+🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork reached **general availability worldwide on 16 June 2026** — this page now reflects the official GA pricing model (Copilot Credits, usage-based billing, and the Cost Management dashboard). **Last verified: 17 June 2026 · GA day.**
 
 </div>
 
 *The hub for this series — [Microsoft Copilot Cowork — The Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) — covers what Cowork is, how it works, and the honest take. This spoke is the pricing and cost-management reference.*
 
+<p><img src="/images/blog/cowork/pricing-usage-billing-4inputs.webp" alt="Microsoft's Copilot Cowork usage-based billing diagram — an example task's Models, Context, Tools, and Runtime combine to determine the number of Copilot Credits it consumes" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft 365 Blog — Copilot Cowork is now generally available](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/)*
+
 ---
 
 ## TL;DR
 
-- Cowork uses a **two-part pricing model** — a **Microsoft 365 Copilot seat** per user, **plus usage-based consumption** for Cowork's heavier multi-step work.
-- Consumption is billed in **Copilot Credits**, available **pay-as-you-go** or **prepurchased** — the same usage-based model Microsoft introduced with the [Work IQ APIs](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/announcing-the-new-work-iq-apis/).
-- What a task consumes depends on **the model it uses, the tools it calls, and the context it pulls in** — light tasks are cheap; long, multi-step tasks on a heavy model cost more.
-- A built-in **cost-management (FinOps) experience** in the admin centre gives admins usage visibility, billing setup, and spending limits.
-- **Exact seat price, credit rates, and any free allotments land at GA** — this page updates with the real Microsoft figures then.
+- Cowork needs a **Microsoft 365 Copilot seat** for each user — and then bills the actual Cowork work on a **usage basis**, paid in **Copilot Credits**.
+- Each task's credit cost comes from **four things**: the **models** it runs, the **context** it pulls in, the **tools** it calls, and the **runtime** it needs.
+- Microsoft sorts tasks into **light (≈100–300 credits), medium (≈400–700), and heavy (700+)** — a quick summary is cheap; a deep multi-output report costs more.
+- Two ways to pay: **pay-as-you-go at $0.01 per Copilot Credit**, or **prepaid (P3)** — commit to a volume up front for a discount.
+- Admins manage it all from a **Cost Management dashboard** in the Microsoft 365 admin center: spending limits, alerts, and usage reporting per user, group, and tenant. **Cowork is off by default.**
+- In Microsoft's own testing, Copilot Cowork came out **30–40% cheaper** than running Claude Cowork through its Microsoft 365 connector on the same model.
 
 ---
 
-## The two parts of the model
+## The bill has two parts
 
-Cowork's cost has two layers. Getting the difference clear is the key to estimating it.
+Getting these two layers straight is the whole game when you're estimating Cowork.
 
-### Part 1 — The Microsoft 365 Copilot seat (per user)
+### Part 1 — the Microsoft 365 Copilot seat (predictable, per user)
 
-The baseline licence that gives a user access to Cowork: a **Microsoft 365 Copilot seat** on top of an eligible Microsoft 365 plan. This is the predictable, per-user part of the bill — the same Copilot licence that powers Chat and the in-app Copilot experiences.
+Cowork requires the **Microsoft 365 Copilot User Subscription License** — the same Copilot seat that powers Chat and the in-app experiences. That one seat already includes a lot:
 
-### Part 2 — Consumption (Copilot Credits)
+- **Copilot Chat**, and **Copilot in Word, Excel, PowerPoint, Outlook, and Teams**
+- The **Work IQ** context engine that grounds answers in your real work
+- A **multi-model system** with frontier intelligence
+- Pre-built agents like **Researcher** and **Analyst**, plus custom agents from **Agent Builder**
 
-Cowork's agentic work — planning and running multi-step tasks across your apps — draws on a **usage-based** layer billed in **Copilot Credits**. This is the part that flexes with how much your team actually delegates to Cowork. You buy credits two ways:
+That's the steady, predictable, per-user-per-month part of the bill.
 
-- **Pay-as-you-go** — you consume credits as tasks run, billed in arrears. Best for spiky or unpredictable usage with no upfront commitment.
-- **Prepurchased** — you buy a block of credits upfront, typically at a better effective rate. Best for steady, predictable usage and budget certainty.
+### Part 2 — Cowork usage (Copilot Credits)
 
-> 🚧 **Exact credit unit, rates, free allotments, and the entry-seat price land at GA.** Nothing on this page is a real number yet — it updates with official Microsoft figures on GA day.
+Cowork's heavier, multi-step work is billed **on usage**, denominated in **Copilot Credits**. This is the part that flexes with how much your team actually hands to Cowork. A team that runs a few light tasks a week barely touches it; a team running long, multi-output tasks all day will see real consumption.
 
 ---
 
-## What drives consumption
+## What a task actually costs — the four inputs
 
-A few things determine how many credits a task draws, and the pattern is intuitive:
+Microsoft prices each Cowork task from **four inputs**:
 
-| What | Effect on cost |
+| Input | What it means |
 |---|---|
-| **The model** a task uses | Higher-capability models cost more per unit of work than lighter ones |
-| **The tools / skills** a task calls | More tool calls — document creation, search, plugins — means more consumption |
-| **The context** a task pulls in | More data grounding (emails, files, meetings) means more consumption |
-| **How much the task does** | Longer, multi-step tasks naturally consume more than a quick single-skill task |
+| **Models** | The AI model chosen for the task — higher-capability models cost more per unit of work |
+| **Context** | Understanding the people, roles, and history behind the work, drawn from emails, files, meetings, and past interactions |
+| **Tools** | The actions taken to get work done — sending emails, scheduling meetings, updating documents, and more |
+| **Runtime** | The managed cloud orchestration that keeps agents working across the task, including long-running work |
 
-> Microsoft's public Work IQ pricing describes a **fixed component for tools** and a **variable component for chat and context**. The exact factor names, units, and rates for Cowork are confirmed against official Microsoft sources at GA.
-
-The practical takeaway: a quick single-skill task on a light model with little context is cheap. A long-running, multi-skill task on a high-capability model grounded across your whole mailbox is the expensive end. Most real tasks sit in between — which is why the cost controls below matter.
+Add those up and you get the number of Copilot Credits a task consumes. The intuition is simple: a quick single-step task on a light model with little context is cheap; a long, multi-tool task on a top model grounded across your whole mailbox is the expensive end.
 
 ---
 
-## Managing the cost — the FinOps experience
+## Light, medium, heavy — what tasks really cost
 
-Microsoft provides a **cost-management (FinOps) experience** in the Microsoft 365 admin centre for the Copilot Credits model. Per Microsoft's public Work IQ announcement, admins can:
+<p><img src="/images/blog/cowork/pricing-task-types.webp" alt="Microsoft's Copilot Cowork task-types infographic — light tasks 100 to 300 credits, medium tasks 400 to 700 credits, heavy tasks over 700 credits, each with an example prompt" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-- **Review credit usage** — who's consuming, on what, how much
-- **Configure billing** — choose prepaid or pay-as-you-go
-- **Set spending limits** — caps for tenants, groups, and users
-- **Monitor requests** — keep an eye on consumption across agents and services
+*Source: [Microsoft 365 Blog — Copilot Cowork is now generally available](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/)*
 
-> 🚧 The exact dashboard location, the full set of controls, and tenant screenshots land here after GA.
+From the Frontier preview, Microsoft saw three common task shapes — and published rough credit ranges for each:
+
+| Task type | What it looks like | Est. Copilot Credits | Roughly, at $0.01/credit (PayGo) |
+|---|---|---|---|
+| **Light** | A few sources, light reasoning, one short deliverable (e.g. a Monday status update) | **100–300** | ~$1–$3 |
+| **Medium** | Many sources, structured reasoning, two or more outputs (e.g. a meeting-prep doc + Excel + slide) | **400–700** | ~$4–$7 |
+| **Heavy** | Broad aggregation, deep reasoning, many outputs (e.g. classify six months of usage data into a leadership report) | **700+** | ~$7+ |
+
+> These ranges assume Anthropic **Opus 4.8** (the model Microsoft used to build its estimator). A lighter model lowers the cost, and Microsoft's upcoming **Cowork 1** model is designed to handle everyday tasks at substantially lower cost.
 
 ---
 
-## When per-seat is enough vs when consumption kicks in
+## Who runs Cowork, and how much
 
-A rough decision framework based on typical Cowork use:
+<p><img src="/images/blog/cowork/pricing-user-personas.webp" alt="Microsoft's Copilot Cowork user-personas infographic — corporate knowledge workers, management and senior leaders, customer-facing knowledge workers, and technical workers, each with different work patterns" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-| Pattern | Likely shape of the bill |
-|---|---|
-| Light use (a few tasks per week per user) | Mostly the per-seat layer |
-| Heavy use (multiple long-running tasks daily) | Per-seat + meaningful consumption |
-| Mixed team (a few heavy users, mostly light) | Per-seat + consumption, with admin caps to contain the heavy users |
+*Source: [Microsoft 365 Blog — Copilot Cowork is now generally available](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/)*
 
-Once GA rates are public, this page adds a **worked example** mapping a typical week of tasks to a real credit cost.
+Microsoft also mapped four user personas with different usage patterns — handy when you're estimating across a whole team rather than one task:
+
+- **Corporate knowledge workers** — shifting priorities, heavy email and chat, lots of docs and decks
+- **Management and senior leaders** — want headlines, risks, and recommendations; decide more than they create
+- **Customer-facing knowledge workers** — balance external customers and internal teams; organised by account, anchored in relationship history
+- **Technical workers** — need deep focus blocks; produce code, designs, or systems, often outside the Office apps
+
+To model your own mix, Microsoft publishes a [Customer Cowork Estimator spreadsheet](https://aka.ms/CustomerCoworkEstimator) — plug in users per persona and their expected light, medium, and heavy volumes, and it sums an estimate you can refine over time.
+
+---
+
+## How you pay — pay-as-you-go or prepaid
+
+Two billing options, both set up in the admin center:
+
+| Option | How it works | Best for |
+|---|---|---|
+| **Pay-as-you-go (PayGo)** | Consume credits as tasks run, billed in arrears at **$0.01 per Copilot Credit** | Spiky or unpredictable usage, no upfront commitment |
+| **Prepaid (P3)** | Commit to a usage volume up front in exchange for a **discount** | Steady, predictable usage and budget certainty |
+
+> **Grace period for Frontier customers:** billing for Cowork started on **16 June 2026**. Tenants that had at least one user running Cowork in the Frontier program (30 March–16 June 2026) get a grace period and **won't be billed until 1 July 2026** — time to set spending limits and allocate budgets before usage ramps.
+
+---
+
+## Models and cost
+
+You're not locked into one model — and the model you pick is one of the biggest cost levers:
+
+- At GA, Cowork runs on **Anthropic Opus 4.8** and **Sonnet 4.6**.
+- In **Frontier**, you can also use **GPT 5.5**, and pick the model per task with the model picker to manage cost.
+- **Cowork 1**, Microsoft's own fine-tuned model, is coming in the weeks after GA — built to handle everyday tasks at substantially lower cost.
+
+Microsoft also expects per-task costs to fall over time as models get cheaper, model-to-task matching improves, and context and tool use become more efficient.
+
+---
+
+## Managing the cost — the Cost Management dashboard
+
+Usage-based billing makes cost visibility essential. Microsoft ships a **Cost Management dashboard** in the Microsoft 365 admin center, organised around three jobs:
+
+**Control — decide when Cowork turns on, who gets it, and how much they can spend**
+
+- **Off by default** — admins choose when to enable Cowork and who gets access
+- **Spending limits** at tenant, group, and user levels, including user-level caps inside group policies
+- **Customisable usage alerts** — set the thresholds that matter and choose who gets notified
+- **User-initiated credit requests** — a user who needs more credits to finish a task can request them from inside Cowork
+
+**Visibility — see what's being used and what it costs**
+
+- **Usage reporting** by user, group, and feature — an **Overview** tab for a real-time snapshot of consumption and remaining capacity, and a **Consumption** tab to drill into patterns by user, group, service, or agent
+- **Per-task pricing in credits** shown to users as they run a task (coming soon after GA)
+
+**Efficiency — options to keep cost down**
+
+- The **PayGo vs P3** choice above
+- **Model choice** in Frontier to manage cost-per-task
+
+Setting it up is a guided flow: enable usage-based billing (prepaid P3, pay-as-you-go, or existing capacity), optionally connect an Azure subscription for billing at scale, define spending policies for who can consume and how much, and set hard limits so nothing runs away from you.
+
+---
+
+## So what will it actually cost us?
+
+The honest answer: it depends on how much real work your team hands to Cowork — which is exactly why the seat-plus-usage model exists. A practical way to budget:
+
+1. **Start with seats** — one Microsoft 365 Copilot seat per Cowork user (the predictable part).
+2. **Estimate usage** — use the [estimator](https://aka.ms/CustomerCoworkEstimator) with your persona mix and expected light/medium/heavy volumes.
+3. **Cap it** — set spending limits and alerts before you roll out, so the consumption layer can't surprise you.
+4. **Watch and tune** — use the Overview and Consumption tabs to see the real cost drivers, then adjust policies and model choices.
 
 ---
 
 ## Frequently asked questions
 
-**Is Cowork covered by my Microsoft 365 Copilot licence?**
-The Copilot seat is the entry point, but Cowork's heavier agentic work also draws on the consumption layer (Copilot Credits). The exact split is confirmed at GA.
+**Do I need a Microsoft 365 Copilot licence for Cowork?**
+Yes. The Microsoft 365 Copilot seat is required — it's the entry point. Cowork's actual task work is then billed on top, on a usage basis in Copilot Credits.
+
+**What's a Copilot Credit worth?**
+On pay-as-you-go, **$0.01 per credit**. So a light task (≈100–300 credits) is roughly $1–$3, and a heavy one (700+) is about $7 and up. Prepaid (P3) commits to a volume for a discount.
 
 **Can I cap what my team spends?**
-Yes — the cost-management experience lets admins set spending limits per tenant, group, and user.
+Yes. The Cost Management dashboard lets admins set spending limits per tenant, group, and user, plus alerts — and Cowork stays off until an admin turns it on.
 
-**Pay-as-you-go or prepurchase — which should I pick?**
-PAYG suits spiky, unpredictable usage; prepurchase suits steady usage and gives budget certainty (usually at a better effective rate).
+**Pay-as-you-go or prepaid — which should I pick?**
+PayGo suits spiky, unpredictable usage with no commitment; prepaid (P3) suits steady usage and gives budget certainty at a better effective rate.
 
-*(More questions get added here as real customer ones come in post-GA.)*
+**We were in the Frontier preview — when does billing start?**
+Billing began 16 June 2026, but Frontier tenants with Cowork usage between 30 March and 16 June get a grace period and aren't billed until **1 July 2026**.
+
+**How can I make Cowork cheaper?**
+Pick a lighter model where it fits (and watch for Cowork 1), keep tasks scoped, and use spending limits. Microsoft also expects costs to fall over time as models and routing improve.
+
+---
+
+## Microsoft's official pricing sources
+
+- 📖 [Copilot Cowork is now generally available](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/) — the GA announcement, with the pricing model and cost-management features
+- 📖 [Usage-based billing and cost management for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits) — Microsoft Learn
+- 📊 [Customer Cowork Estimator](https://aka.ms/CustomerCoworkEstimator) — model your own credit usage
 
 ---
 

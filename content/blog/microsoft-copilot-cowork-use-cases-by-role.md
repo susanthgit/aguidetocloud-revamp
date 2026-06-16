@@ -3,7 +3,7 @@ title: "Microsoft Copilot Cowork — Complete Use-Cases Guide"
 list_title: "Cowork: Use cases by role"
 description: "Complete guide to 7 Microsoft Copilot Cowork scenarios for IT, Sales, HR, Finance, Marketing, Executive, and customer-facing roles. Prompts and outcomes."
 date: 2026-06-15
-lastmod: 2026-06-15
+lastmod: 2026-06-17
 draft: false
 card_tag: "Cowork"
 tag_class: "ai"
@@ -28,7 +28,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Living doc — new scenarios get added as I test them or hear them from customers. **Last verified: 15 June 2026 · pre-GA draft, scenarios proven in Frontier preview.**
+🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork is **generally available** as of 16 June 2026. Living doc — new scenarios get added as I test them or hear them from customers. **Last verified: 17 June 2026 · GA day.**
 
 </div>
 

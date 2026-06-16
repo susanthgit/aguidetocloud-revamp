@@ -3,7 +3,7 @@ title: "Microsoft Copilot Cowork — Complete Skills Guide"
 list_title: "Cowork: Skills and plugins"
 description: "Complete guide to all built-in Microsoft Copilot Cowork skills plus 3 ways to extend (plugins, custom SKILL.md, Copilot Studio). With Learn references."
 date: 2026-06-15
-lastmod: 2026-06-15
+lastmod: 2026-06-17
 draft: false
 card_tag: "Cowork"
 tag_class: "ai"
@@ -29,7 +29,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Skill catalog refreshes as Microsoft adds more — this page tracks each release. **Last verified: 15 June 2026 · pre-GA structure.**
+🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork reached **general availability on 16 June 2026**, with the first wave of partner plugins now live — this page tracks each release. **Last verified: 17 June 2026 · GA day.**
 
 </div>
 
@@ -42,7 +42,7 @@ founder_note: |
 - Cowork ships with **13 built-in skills, organised into 5 categories** (Communication · Documents · Calendar · Search · Automation)
 - A **skill** is a reusable recipe in your OneDrive — different from a **prompt**, which is a one-time instruction
 - Three ways to add custom skills: **OneDrive SKILL.md** (no-code), **Copilot Studio** (low-code), **Agents SDK** (pro-code)
-- Microsoft maintains four official plugin pages on Microsoft Learn for full reference
+- Microsoft maintains four official plugin pages on Microsoft Learn for full reference — and the first wave of partner plugins (Harvey, Miro, monday.com, Moody's, and more) is **live at GA**
 - The fastest way to see what your tenant has: ask Cowork *"What skills do you have available?"* — it lists every one with a description
 
 ---
@@ -124,6 +124,8 @@ Mapping back to the 5 Agent Academy categories:
 | **Search** | Built into Cowork's task-planning — surfaces through Daily Briefing, Meetings, and the cross-app reach |
 | **Automation** | goal (long-running standing goals), Skill Management (creating and managing skills) |
 
+> 📎 **Two valid lists — here's why.** The screenshot above is your tenant's **Customize panel**, which surfaces some internal skill IDs (`html`, `goal`, `debug-trajectory`, `Skill Management`). Microsoft's [official Cowork docs](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) describe the 13 built-in skills with friendlier names: **Word, Excel, PowerPoint, PDF, Email, Scheduling, Calendar Management, Meetings, Daily Briefing, Enterprise Search, Communications, Deep Research, and Adaptive Cards.** Same engine, different labels — the panel shows what's wired up under the hood, the docs show the grouped names. Both are correct. (You can also add up to **50 custom skills** of your own.)
+
 ---
 
 ## Ask Cowork what it can do — the easy way
@@ -163,7 +165,15 @@ Microsoft maintains four reference pages on Microsoft Learn:
 | **Build plugins for Copilot Cowork** | Developer reference for new plugins |
 | **Manage plugins for Copilot Cowork** | Admin governance, approvals, scope, audit |
 
-<!-- Sush — once GA settles and Microsoft removes the (Frontier) suffix from these pages, link them directly with the post-GA URLs -->
+### Plugins available at general availability
+
+At GA (June 2026), Microsoft shipped the first wave of partner plugins, with more on the way:
+
+- **Available now:** Enosix · Harvey · LSEG · Miro · monday.com · Moody's · Morningstar · S&P Global Energy · TeamsMaestro
+- **Coming soon:** Adobe · Atlassian · Box · Canva · CB Insights · Databricks · MoneyForward · Templafy
+- **Also generally available:** Microsoft **Fabric**, plus **Dynamics 365** Sales, Customer Service, and ERP apps
+
+The catalog grows over time — check Microsoft's [Copilot Cowork docs](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) for the current list. Treat each plugin as its own governance decision (consent, connector credentials, data handling, audit) — see the [admin & governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).
 
 ---
 

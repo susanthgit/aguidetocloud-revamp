@@ -3,7 +3,7 @@ title: "Microsoft Copilot Cowork — 6 Free Prompts to Try"
 list_title: "Cowork: Prompts to try"
 description: "A living-doc with 6 free Microsoft Copilot Cowork prompts to try — each with a usefulness rating and tested-on date. Updated as I test more."
 date: 2026-06-15
-lastmod: 2026-06-15
+lastmod: 2026-06-17
 draft: false
 card_tag: "Cowork"
 tag_class: "ai"
@@ -28,7 +28,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Living doc — new prompts added as I test them, usefulness ratings updated based on real demo results. **Last verified: 15 June 2026 · pre-GA initial set.**
+🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork is **generally available** as of 16 June 2026. Living doc — new prompts added as I test them, usefulness ratings updated based on real demo results. **Last verified: 17 June 2026 · GA day.**
 
 </div>
 

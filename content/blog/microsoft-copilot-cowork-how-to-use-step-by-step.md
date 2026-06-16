@@ -3,7 +3,7 @@ title: "Microsoft Copilot Cowork — Step-by-Step How-To Guide"
 list_title: "Cowork: How to use it step by step"
 description: "Microsoft Copilot Cowork step-by-step tutorial — 7 lessons covering opening it, outcome prompts, plan review, approval checkpoints, troubleshooting."
 date: 2026-06-15
-lastmod: 2026-06-15
+lastmod: 2026-06-17
 draft: false
 card_tag: "Cowork"
 tag_class: "ai"
@@ -28,7 +28,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Screenshots from my tenant land as I capture each step — check back for visual updates. **Last verified: 15 June 2026 · pre-GA structure.**
+🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork is **generally available** as of 16 June 2026. Screenshots from my tenant land as I capture each step — check back for visual updates. **Last verified: 17 June 2026 · GA day.**
 
 </div>
 
@@ -47,7 +47,7 @@ founder_note: |
 
 ## Step 1 — Open Cowork
 
-Cowork lives inside Microsoft 365 Copilot — open **`m365.cloud.microsoft`** in your browser (or use the Microsoft 365 Copilot desktop or mobile app) and select **Cowork**. If you don't see it, look under **All agents** — in the Frontier preview it shows as *"Cowork (Frontier)."* It opens into its own full task workspace, not just a chat box.
+Cowork lives inside Microsoft 365 Copilot — open **`m365.cloud.microsoft`** in your browser (or use the Microsoft 365 Copilot desktop or mobile app) and switch from **Chat** to **Cowork** using the toggle next to the chat box. If you don't see it yet, look under **All agents**. It opens into its own full task workspace, not just a chat box.
 
 The landing page is built around two things: an input box that says **"Start a task…"** (not "Send a message") and a left side rail with your task history. The core controls in the rail are **New task**, **Search**, **Scheduled**, and **Customize**.
 
@@ -133,7 +133,7 @@ You're never locked into a runaway task. If a plan looked right but the executio
 
 The most common first-run snags, and how to recover:
 
-- **Cowork doesn't show up** → almost always a licence or tenant-config issue, not a bug. Check you have a Microsoft 365 Copilot licence and that your admin has enabled Cowork (Frontier opt-in + Anthropic on). Full checklist in the [Admin & governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).
+- **Cowork doesn't show up** → almost always a licence or tenant-config issue, not a bug. Check you have a Microsoft 365 Copilot licence and that your admin has enabled Cowork (it's off by default) with usage billing set up and Anthropic on. Full checklist in the [Admin & governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).
 - **A step fails partway through** → Cowork usually tells you which step and why (a file it couldn't reach, a permission it doesn't have). Re-run just that step, or adjust the prompt to point it at something it can access.
 - **It runs longer than expected** → big, vague outcomes spawn long plans. If it feels like it's going in circles, stop it and narrow the ask ("just the email, not the deck too").
 - **It accesses the wrong file** → usually two files with similar names, or messy SharePoint permissions surfacing something unexpected. Redirect it to the right file by name, and flag the permissions issue to your admin.

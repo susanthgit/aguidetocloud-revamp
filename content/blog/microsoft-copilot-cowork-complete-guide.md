@@ -1,9 +1,9 @@
 ---
 title: "Microsoft Copilot Cowork — Plain-English Guide"
 list_title: "Microsoft Copilot Cowork — The Complete Guide"
-description: "Plain-English guide to Copilot Cowork — Microsoft's biggest AI leap since 2023. Real-world scenarios, how it differs from regular Copilot."
+description: "Plain-English guide to Copilot Cowork — now generally available worldwide. Real-world scenarios, GA pricing, and how it differs from regular Copilot."
 date: 2026-04-22
-lastmod: 2026-05-08
+lastmod: 2026-06-17
 card_tag: "Cowork"
 tag_class: "ai"
 sitemap:
@@ -17,17 +17,17 @@ faq:
   - question: "What is an agentic harness?"
     answer: "An agentic harness is the orchestration framework that makes Cowork possible. It coordinates multiple specialist AI agents, provides shared context (via Work IQ), enforces enterprise governance (Entra ID, audit trails, DLP), and ensures human-in-the-loop checkpoints for sensitive actions."
   - question: "How do I get Copilot Cowork?"
-    answer: "Copilot Cowork is currently available through the Microsoft Frontier program. Your IT admin needs to enrol the tenant in Frontier via the M365 Admin Center (Copilot > Settings > Frontier), enable Anthropic as a subprocessor, and then make the Cowork agent available to users or groups."
+    answer: "Copilot Cowork is generally available to Microsoft 365 Copilot customers worldwide as of 16 June 2026. Each user needs a Microsoft 365 Copilot licence, and an admin enables Cowork in the Microsoft 365 admin center (it's off by default) and sets up usage-based billing. Users then open it from the Microsoft 365 Copilot app or m365.cloud.microsoft."
   - question: "Is Copilot Cowork free?"
-    answer: "No. You need a Microsoft 365 Copilot licence (the $30/user/month add-on) and your tenant must be enrolled in the Frontier program. Cowork is also included in the upcoming Microsoft 365 E7 plan at $99/user/month."
+    answer: "No. Cowork needs a Microsoft 365 Copilot licence (the $30/user/month seat) as the entry point, and the actual Cowork tasks are billed on usage in Copilot Credits — pay-as-you-go at $0.01 per credit, or prepaid for a discount. Admins can set spending limits, and Cowork is off until they turn it on."
   - question: "What is the Microsoft Frontier program?"
-    answer: "Frontier is Microsoft's early access program for cutting-edge Copilot features. Global Admins can opt in via the M365 Admin Center. It gives your organisation access to features like Cowork before they reach general availability."
+    answer: "Frontier is Microsoft's early access program for cutting-edge Copilot features. Cowork itself reached general availability on 16 June 2026, so you no longer need Frontier for Cowork — but Frontier still gates the newest capabilities, like the GPT 5.5 model choice and browser use via Edge."
   - question: "Can Copilot Cowork send emails without my permission?"
     answer: "No. Cowork requires your explicit approval before taking sensitive actions like sending emails, posting to Teams, or scheduling meetings. It always checks in at critical decision points — you stay in control."
   - question: "How is Copilot Cowork different from Claude Cowork?"
     answer: "Copilot Cowork runs in the cloud inside your M365 tenant with full enterprise governance (Entra ID, Purview DLP, audit trails). Claude Cowork is desktop-first with local file access and third-party connectors, plus enterprise admin controls on higher tiers. Copilot Cowork is built for managed enterprise environments; Claude Cowork is built for individual power users and mixed-tool setups."
   - question: "What AI model does Copilot Cowork use?"
-    answer: "Copilot Cowork uses Microsoft's multi-model approach, which includes Anthropic's Claude for agentic reasoning in supported experiences. Your admin controls which AI providers are enabled for your tenant."
+    answer: "Copilot Cowork uses Microsoft's multi-model approach. At general availability it runs on Anthropic Opus 4.8 and Sonnet 4.6; in Frontier you can also pick GPT 5.5, and Microsoft's own fine-tuned Cowork 1 model is coming soon. You choose the model per task, and your admin controls which providers are enabled."
   - question: "Does Copilot Cowork work with my existing data permissions?"
     answer: "Yes. Cowork operates within your existing Microsoft 365 permissions. It can only access data that you already have access to — it doesn't bypass SharePoint permissions, Conditional Access policies, or DLP rules."
   - question: "Will Copilot Cowork replace my job?"
@@ -52,9 +52,13 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-This is a living document. The AI landscape moves fast — features ship, names change, and what's in preview today might be GA tomorrow. If you spot anything out of date or inaccurate, please [send me feedback](/feedback/) and I'll update it. Last verified: June 2026.
+This is a living document. The AI landscape moves fast — features ship, names change, and what's in preview today is GA tomorrow. **Copilot Cowork reached general availability worldwide on 16 June 2026**, and this guide now reflects the official GA capabilities, pricing, and governance. If you spot anything out of date, please [send me feedback](/feedback/) and I'll update it. Last verified: 17 June 2026.
 
 </div>
+
+<p><img src="/images/blog/cowork/hero-cowork-dashboard.png" alt="The Microsoft Copilot Cowork dashboard at general availability — a Chat and Cowork toggle, the open model picker showing Auto, GPT 5.5, Claude Opus 4.8, and Cowork 1, a Start a task box, and suggested tasks like Organize my inbox and Arrange my week" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The Copilot Cowork experience at GA — the model picker (Auto · GPT 5.5 · Claude Opus 4.8 · Cowork 1) and the new Chat ⇄ Cowork toggle. Source: [Microsoft 365 Blog — Copilot Cowork is now generally available](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/)*
 
 Remember when Copilot first launched back in 2023? You could ask it to summarise an email, draft a paragraph in Word, or make a chart in Excel. It was genuinely impressive. But every time you wanted to do something across multiple apps — like "prep me for a meeting using info from my emails, Teams chats, and SharePoint files" — you had to prompt each app separately, copy-paste between them, and stitch it all together yourself.
 
@@ -76,9 +80,21 @@ This guide explains everything — in plain language, with real scenarios, and h
 - **Three waves of Copilot:** Assistant (2023) → Agent Builder (2025) → **Cowork (2026)**
 - **How it works:** Describe an outcome → Cowork builds a plan → executes across apps → checks in with you
 - **Enterprise-safe:** Entra ID permissions, Purview DLP, full audit trail, human-in-the-loop
-- **Available now** via the [Frontier program](https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-overview#frontier) — currently rolling out in select markets, starting with US English
-- **Requires:** Microsoft 365 Copilot licence + Frontier enrollment + Anthropic enabled
+- **Generally available worldwide** since 16 June 2026 to Microsoft 365 Copilot customers — no Frontier enrolment needed
+- **Requires:** a Microsoft 365 Copilot licence, plus usage-based **Copilot Credits** for the work Cowork runs (admins turn it on — it's off by default)
 - **Not the same as Claude Cowork** — Copilot Cowork runs in your tenant (cloud), Claude runs on your desktop (local)
+
+---
+
+## What's new at general availability (16 June 2026)
+
+Copilot Cowork went **generally available worldwide** on 16 June 2026. After three months in the Frontier preview — where **more than half of the Fortune 500** tried it — here's what landed at GA:
+
+- **Model choice** — pick the model per task: Anthropic **Opus 4.8** and **Sonnet 4.6** at GA, **GPT 5.5** in Frontier, and the fine-tuned **Cowork 1** coming soon for everyday tasks at lower cost.
+- **Usage-based pricing** — a Microsoft 365 Copilot seat plus **Copilot Credits** for the work Cowork runs, with a **Cost Management dashboard** for spending limits, alerts, and reporting. ([Pricing spoke →](/blog/microsoft-copilot-cowork-pricing-cost-management/))
+- **Plugins** — nine partner plugins available now (Enosix, Harvey, LSEG, Miro, monday.com, Moody's, Morningstar, S&P Global Energy, TeamsMaestro), more on the way, plus Microsoft Fabric and Dynamics 365. ([Skills & plugins spoke →](/blog/microsoft-copilot-cowork-skills-and-plugins/))
+- **Enterprise security at GA** — Cowork's prompts, responses, and outputs flow through your existing Microsoft 365 controls: audit log, DSPM, eDiscovery, Insider Risk Management, and Communication Compliance, with sensitivity labels inherited end-to-end. ([Admin & governance spoke →](/blog/microsoft-copilot-cowork-admin-and-governance/))
+- **Lower cost than the alternative** — in Microsoft's own testing, Copilot Cowork ran **30–40% cheaper** than Claude Cowork through its Microsoft 365 connector on the same model.
 
 ---
 
@@ -135,7 +151,7 @@ One prompt. Multiple apps. Real work done. And it asked before doing anything se
 
 ### What Does Cowork Actually Look Like?
 
-Cowork lives inside Microsoft 365 Copilot — open **`m365.cloud.microsoft`** in your browser (or the Microsoft 365 Copilot desktop or mobile app) and select **Cowork**; if you don't see it, look under **All agents** (in the Frontier preview it shows as *"Cowork (Frontier)"*). It opens into its own task workspace — the input simply says *"Start a task…"*, and that phrasing is the whole mental shift: this is a task-handler, not a chat box.
+Cowork lives inside Microsoft 365 Copilot — open **`m365.cloud.microsoft`** in your browser (or the Microsoft 365 Copilot desktop or mobile app) and switch from **Chat** to **Cowork** using the toggle next to the chat box; if you don't see it yet, look under **All agents**. It opens into its own task workspace — the input simply says *"Start a task…"*, and that phrasing is the whole mental shift: this is a task-handler, not a chat box.
 
 The left side rail keeps the history of every task you've handed off — persistent, searchable, with a **Scheduled** view for recurring work. **New task**, **Search**, **Scheduled**, and **Customize** are the core controls.
 
@@ -364,8 +380,6 @@ My honest rule of thumb: *if I'll read the answer and move on → Chat. If I'd h
 
 Most people who use one end up using all three. They don't replace each other — they cover different shapes of work. (For the deep dive on the autopilot category, see the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/).)
 
-<!-- GA-day verify: cross-check this whole "what to use when" section (attribute table + task table) against Microsoft's PUBLIC "what to use when" positioning (GA blog / Learn) once published, and align wording before this goes live to main. -->
-
 ---
 
 ## The Three Waves of Copilot
@@ -384,7 +398,7 @@ Each wave didn't replace the previous one — it added a new layer. You can stil
 
 ## Real Scenarios — What Can Cowork Actually Do?
 
-Here's where it gets exciting. Let me walk you through what Cowork can do for different roles. These aren't hypothetical — they're based on the capabilities available in the Frontier preview today.
+Here's where it gets exciting. Let me walk you through what Cowork can do for different roles. These aren't hypothetical — they're based on the capabilities available at general availability.
 
 ### 🧑‍💻 IT Admin
 
@@ -724,40 +738,42 @@ For full control, the [Microsoft 365 Agents SDK](https://github.com/microsoft/Ag
 
 Yes, you can get it now — but with a few caveats.
 
-Copilot Cowork is currently available through the **[Microsoft Frontier program](https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-overview#frontier)**. This is Microsoft's early access program for cutting-edge features. It's rolling out in **select markets starting with US English** — more regions and languages are coming.
+Copilot Cowork is **generally available to Microsoft 365 Copilot customers worldwide** as of 16 June 2026 — you no longer need the Frontier early-access program to use it. Each user needs a Microsoft 365 Copilot licence, an admin turns Cowork on (it's off by default) and sets up usage-based billing, and then it's there.
 
 ### Why Can't I See Cowork?
 
 If you open Copilot and don't see Cowork, it's one of these reasons:
 
-1. **Your org hasn't enrolled in Frontier** — it's an opt-in, not automatic
-2. **Your admin hasn't enabled Anthropic** as a subprocessor (Cowork uses Claude under the hood)
-3. **You don't have a Copilot licence** — you need the paid M365 Copilot add-on ($30/user/month)
+1. **Your admin hasn't turned Cowork on** — it's off by default, so an admin has to enable it in the Microsoft 365 admin center
+2. **Usage-based billing isn't set up yet** — Cowork's task work is billed in Copilot Credits, so an admin needs to enable billing (pay-as-you-go or prepaid)
+3. **You don't have a Copilot licence** — you need the paid M365 Copilot seat ($30/user/month)
 4. **Your admin may have restricted access** to specific groups
-5. **Your region or language isn't supported yet** — currently US English first
+5. **Anthropic isn't enabled** as a model provider — Cowork uses Claude under the hood, and it can be off by default in some tenants
 
 ### How to Get Access (Admin Steps)
 
 If you're an IT admin, here's how to turn it on:
 
-1. **Enrol in Frontier:** Go to [M365 Admin Center](https://admin.microsoft.com) → Copilot → Settings → Frontier → Opt in
-2. **Enable Anthropic:** Copilot → Settings → AI providers → Enable Anthropic (required — off by default in EU tenants)
-3. **Cowork becomes available:** Once Frontier is enabled, licensed users open Cowork at **m365.cloud.microsoft** (or the Microsoft 365 Copilot app) — selecting it directly or finding it under **All agents** — no separate deployment needed
-4. **Control access (optional):** If you want to restrict who can use Cowork, go to Copilot → Agents → All Agents → Find "Cowork" → Set availability for specific groups
+1. **Turn Cowork on:** Go to the [M365 Admin Center](https://admin.microsoft.com) → Copilot → enable Cowork (it's off by default) and choose who gets access — start with a pilot group
+2. **Set up usage-based billing:** In the Cost Management dashboard, enable billing (pay-as-you-go or prepaid), set spending limits, and add usage alerts before anyone starts running tasks
+3. **Enable Anthropic:** Make sure Anthropic is enabled as a model provider (Cowork uses Claude under the hood — it can be off by default in some tenants)
+4. **Cowork becomes available:** Licensed, enabled users open Cowork from **m365.cloud.microsoft** (or the Microsoft 365 Copilot app) — switching from Chat to Cowork — no separate deployment needed
 5. **Communicate:** Let your users know it's available and what to expect
 
 > ⚠️ **Before you enable it broadly:** Review your [SharePoint permissions](https://learn.microsoft.com/en-us/sharepoint/modern-experience-sharing-permissions) and [information governance](https://learn.microsoft.com/en-us/purview/information-governance-solution). Cowork can access anything the user can access — so if your permissions are messy, Cowork will surface that mess. Start with a pilot group. *(For the full remediation playbook, see [SharePoint oversharing controls for Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/).)*
 
 ### Licensing
 
+Cowork has a two-part cost: a per-user Microsoft 365 Copilot seat, plus usage-based Copilot Credits for the work it runs. The full breakdown is in the **[pricing spoke](/blog/microsoft-copilot-cowork-pricing-cost-management/)** — here's the short version:
+
 | Route | Price | What You Get |
 |-------|-------|-------------|
-| **M365 Copilot add-on** (on E3 or E5) + Frontier | $30/user/month + opt-in | Cowork via Frontier preview |
-| **[Microsoft 365 E7](/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know/)** (Frontier Suite) | $99/user/month | Cowork + Agent 365 + Entra Suite + everything in E5 |
+| **M365 Copilot seat** (on E3 or E5) + Copilot Credits | $30/user/month + usage | Cowork at GA — the seat is the entry point, tasks billed in credits ($0.01/credit PayGo, or prepaid) |
+| **[Microsoft 365 E7](/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know/)** (Frontier Suite) | $99/user/month | Bundles the Copilot seat with Agent 365, Entra Suite, and everything in E5 (Cowork usage still billed in credits) |
 
-> 📝 **Good to know:** Cowork runs on browser, desktop, and mobile (iOS + Android via the Microsoft 365 Copilot app). It's English-only at launch — more languages coming.
+> 📝 **Good to know:** Cowork runs on browser, desktop, and mobile (iOS + Android via the Microsoft 365 Copilot app), and it's generally available worldwide.
 
-📖 [Copilot Cowork: Now available in Frontier](https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/)
+📖 [Copilot Cowork is now generally available](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/)
 
 → **For admins:** the full enablement steps, governance controls, SharePoint oversharing check, and pilot rollout playbook are in **[Cowork: Admin enablement & governance](/blog/microsoft-copilot-cowork-admin-and-governance/)** — and how Cowork is licensed and costed in **[Cowork: Pricing & cost management](/blog/microsoft-copilot-cowork-pricing-cost-management/)**.
 
@@ -779,9 +795,11 @@ Anthropic (the company behind Claude) also launched their own "Cowork" product. 
 | **Governance** | Full enterprise stack (Purview DLP, audit, Conditional Access) | Local sandbox, RBAC, with enterprise governance on higher tiers |
 | **Best for** | Enterprise teams working inside Microsoft 365 | Individual power users, mixed-tool environments |
 | **AI Model** | Multi-model (including Anthropic Claude) | Claude only |
-| **Price** | $30/mo (Copilot licence) or $99/mo (E7) | $20/mo (Pro), $100/mo (Max), Enterprise custom |
+| **Price** | $30/mo Copilot seat + usage-based Copilot Credits | $20/mo (Pro), $100/mo (Max), Enterprise custom |
 
 ### The Honest Take
+
+> 📊 **On cost:** In Microsoft's own June 2026 testing (125 runs across light, medium, and heavy prompts on Opus 4.8), Copilot Cowork came out **30–40% cheaper** than running Claude Cowork through its Microsoft 365 connector on the same model. Your mileage will vary with usage and configuration — but the cloud-runtime efficiency is a real cost lever. ([Microsoft's methodology](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/).)
 
 **If your organisation is all-in on Microsoft 365** — Copilot Cowork is the clear choice. It understands your organisational context (who reports to whom, which projects are active, what meetings happened), operates within your compliance framework, and your IT team can govern it.
 
@@ -813,7 +831,7 @@ The honest truth? Cowork is brilliant at 80% of coordination work and occasional
 Let's keep it real:
 
 - ⚠️ **External systems need Skills** — Cowork doesn't connect to Salesforce, Jira, or SAP out of the box, but partner Skills available in the Agent Store can bridge this gap. See the [Skills section](#extend-cowork-with-skills) above.
-- ❌ **English only** at launch — more languages coming
+- ⚠️ **Language support varies by region** — Cowork is generally available worldwide; confirm full coverage for your users
 - ❌ **No offline mode** — it's cloud-based, needs internet
 - ❌ **Won't replace deep expertise** — it's great at coordination tasks, not strategic thinking
 - ❌ **Permissions amplifier** — if your SharePoint permissions are messy, Cowork will surface that mess to users who shouldn't see it
@@ -840,13 +858,13 @@ An agentic harness is the orchestration framework that makes Cowork possible. It
 
 ### How do I get Copilot Cowork?
 
-Your IT admin needs to enrol the tenant in the [Microsoft Frontier program](https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-overview#frontier) via the M365 Admin Center (Copilot → Settings → Copilot Frontier) and enable Anthropic as a subprocessor. Once enabled, licensed users open Cowork at **m365.cloud.microsoft** (or the Microsoft 365 Copilot app), selecting it directly or finding it under **All agents**.
+Cowork is generally available worldwide as of 16 June 2026. Each user needs a Microsoft 365 Copilot licence; an admin enables Cowork in the Microsoft 365 admin center (it's off by default), sets up usage-based billing, and makes sure Anthropic is enabled as a model provider. Licensed, enabled users then open Cowork at **m365.cloud.microsoft** (or the Microsoft 365 Copilot app) by switching from Chat to Cowork.
 
-📖 [Manage Cowork for your organisation](https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/)
+📖 [Copilot Cowork is now generally available](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/)
 
 ### Is Copilot Cowork free?
 
-No. You need a Microsoft 365 Copilot licence (the $30/user/month add-on) and your tenant must be enrolled in the Frontier program. Cowork is also included in the upcoming [Microsoft 365 E7](/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know/) plan at $99/user/month.
+No. You need a Microsoft 365 Copilot licence (the $30/user/month seat) as the entry point, and Cowork's actual task work is billed on usage in Copilot Credits — $0.01 per credit pay-as-you-go, or prepaid for a discount. Admins can cap spending, and Cowork is off until they turn it on. (Full detail in the [pricing spoke](/blog/microsoft-copilot-cowork-pricing-cost-management/).)
 
 ### Can Copilot Cowork send emails without my permission?
 
@@ -858,7 +876,7 @@ Copilot Cowork runs in the cloud inside your M365 tenant with full enterprise go
 
 ### What AI model does Copilot Cowork use?
 
-Copilot Cowork uses Microsoft's multi-model approach, which includes Anthropic's Claude for agentic reasoning in supported experiences. Your admin controls which AI providers are enabled for your tenant.
+Copilot Cowork uses Microsoft's multi-model approach. At general availability it runs on Anthropic **Opus 4.8** and **Sonnet 4.6**; in Frontier you can also pick **GPT 5.5**, and Microsoft's own fine-tuned **Cowork 1** model is coming soon. You choose per task with the model picker, and your admin controls which providers are enabled.
 
 ### Does Copilot Cowork work with my existing data permissions?
 
@@ -903,4 +921,4 @@ This guide is the hub. Each spoke is a bookmarkable deep-dive:
 
 ---
 
-> **Disclaimer:** The views and opinions expressed in this article are my own and do not represent the official positions of Microsoft. All pricing mentioned is in USD and was sourced from official Microsoft pricing pages at the time of writing — pricing, features, and availability are subject to change. Copilot Cowork is currently in Frontier preview and features may change before general availability. Always refer to [official Microsoft documentation](https://learn.microsoft.com) for the most up-to-date information.
+> **Disclaimer:** The views and opinions expressed in this article are my own and do not represent the official positions of Microsoft. All pricing mentioned is in USD and was sourced from official Microsoft pricing pages at the time of writing — pricing, features, and availability are subject to change. Copilot Cowork reached general availability on 16 June 2026; some capabilities (such as the GPT 5.5 model choice and browser use via Edge) remain in the Frontier early-access program. Always refer to [official Microsoft documentation](https://learn.microsoft.com) for the most up-to-date information.
