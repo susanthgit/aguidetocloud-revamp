@@ -305,6 +305,34 @@ By 2026 Microsoft has three distinct shapes of AI help, and the question I get a
 | **Reach** | The app you're in | All your M365 data (email, Teams, files, calendar) | Local machine + browser + M365 + shell + MCP |
 | **Example** | "Summarise this thread" | "Prep me for Friday's board meeting" | "Watch this folder and re-run the report whenever the data changes" |
 
+### Same task, different tool — the right one for the job
+
+Here's the part people find most useful. A lot of these jobs *work* in more than one tool — the real question is which one is **built** for it. Read the columns left → right as a spectrum: **simpler and faster** on the left, **more autonomous** on the right.
+
+| The job to be done | M365 Copilot (Chat) | Cowork | Scout |
+|---|---|---|---|
+| Brainstorm an idea or find an answer fast | ★ | ✓ | ✓ |
+| Catch up on email and meetings | ★ | ✓ | ✓ |
+| Draft or edit one artifact — doc, deck, email, sheet | ★ | ✓ | ✓ |
+| Deep research and analysis on a topic | ★ | ✓ | ✓ |
+| Produce several artifacts in a single job | — | ★ | ✓ |
+| Run a multi-step business process across systems | — | ★ | ✓ |
+| Always-on — manage and coordinate my day | — | — | ★ |
+
+**★** = the tool built for this job · **✓** = can also do it · **—** = not what it's for
+
+> 💡 The pattern: the *simpler, in-the-moment* jobs at the top are Copilot Chat's home turf — and Cowork and Scout can do them too. The *multi-step, multi-artifact* jobs in the middle are where Cowork earns its place. The *never-stops, runs-without-me* job at the bottom is Scout's alone.
+
+#### From my own week
+
+Three real examples of how I split work across the three:
+
+- **"Summarise where this email thread landed"** → **Chat.** I'll read it and move on — no need to delegate.
+- **"Prep me for Thursday's customer session and draft the follow-up after"** → **Cowork.** That's four apps and the better part of an hour I'd rather hand off — and I want a checkpoint before anything goes near the customer.
+- **"Keep the account tracker current as new emails land"** → **Scout.** It should just keep happening without me asking.
+
+My honest rule of thumb: *if I'll read the answer and move on → Chat. If I'd have to open four apps to get it done → Cowork. If it should keep happening while I'm asleep → Scout.*
+
 ### The one-line way to remember it
 
 - **Chat** is what you actively steer — the assistant in the moment.
@@ -313,7 +341,7 @@ By 2026 Microsoft has three distinct shapes of AI help, and the question I get a
 
 Most people who use one end up using all three. They don't replace each other — they cover different shapes of work. (For the deep dive on the autopilot category, see the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/).)
 
-<!-- TODO Atlas/Sush GA-day: Microsoft showed a 'what to use when' slide in the GA pre-call. Once an equivalent framing is PUBLIC (GA blog / Learn), cross-check this table against Microsoft's official positioning and align wording. This table is built ENTIRELY from already-published positioning in Sush's own Scout + Cowork blogs — no internal-slide content used. Verify + enrich at GA if Microsoft publishes their own comparison. -->
+<!-- GA-day verify: cross-check this whole "what to use when" section (attribute table + task table) against Microsoft's PUBLIC "what to use when" positioning (GA blog / Learn) once published, and align wording before this goes live to main. -->
 
 ---
 
