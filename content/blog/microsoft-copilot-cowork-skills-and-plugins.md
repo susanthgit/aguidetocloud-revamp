@@ -219,6 +219,22 @@ The names matter less than the *job* each one lets Cowork finish without leaving
 
 The pattern: a plugin turns "Cowork can tell you about it" into "Cowork can go do it in that tool." Each one is still a governance decision first — connect the ones your team actually needs, and treat the rest as off until reviewed.
 
+### The GA line-up, grouped by what they're for
+
+The first wave skews toward finance, research, and visual work. Here's the quick "is this even relevant to us?" read. Exact capabilities — and whether a given plugin is read-only or read &amp; write — live in Microsoft's plugin catalog, so treat every row as a governance decision first, not a green light.
+
+| What you're trying to reach | Plugins live at GA | Who'd use it |
+|---|---|---|
+| **Financial, market &amp; research data** | LSEG · Moody's · Morningstar · S&amp;P Global Energy | Finance, research, risk, and investment teams |
+| **Legal &amp; professional work** | Harvey | Legal, compliance, professional services |
+| **Enterprise records (SAP)** | Enosix | Sales and service teams working off SAP data |
+| **Visual &amp; project work** | Miro · monday.com | Marketing, product, programme management |
+| **Meetings &amp; scheduling** | TeamsMaestro | Anyone living in back-to-back meetings |
+
+Generally available alongside them: Microsoft **Fabric** (your data estate) and **Dynamics 365** Sales, Customer Service, and ERP. The **coming-soon** set (Adobe, Atlassian, Box, Canva, CB Insights, Databricks, MoneyForward, Templafy — full list just above) spans documents, design, dev tooling, data, and brand templates.
+
+Whatever the source, the rule holds: a plugin is a new door into your data — open the ones a team genuinely needs, and leave the rest off until reviewed. The admin checklist for that review is in the [admin &amp; governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).
+
 ---
 
 ## Custom skills — three paths

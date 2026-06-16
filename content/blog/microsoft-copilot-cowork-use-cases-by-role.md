@@ -49,6 +49,21 @@ Each role section has:
 
 ---
 
+## The four Cowork personas — and where these roles fit
+
+Microsoft groups Cowork users into four personas, each with a different mix of light, medium, and heavy tasks — it's the same lens the [pricing spoke](/blog/microsoft-copilot-cowork-pricing-cost-management/) uses to estimate cost. Here's how the seven roles below map onto them:
+
+| Microsoft persona | What it means | Roles on this page |
+|---|---|---|
+| **Corporate knowledge workers** | The day-to-day "produce and coordinate" core — reports, docs, follow-ups | HR · Finance · Marketing |
+| **Management & senior leaders** | Time, decisions, and prep — lots of triage and briefing | Executive |
+| **Customer-facing knowledge workers** | Work that wraps around external meetings — prep before, follow-up after | Sales · Customer-facing |
+| **Technical workers** | Hands-on with systems and data, often across several tools | IT Admin |
+
+The mapping isn't rigid — plenty of people wear two hats — but it's a useful way to picture who runs which kind of task, and therefore where your Cowork credits go.
+
+---
+
 ## 🧑‍💻 IT Admin
 
 <span class="cowork-persona it">IT Administration</span>
@@ -64,7 +79,7 @@ Each role section has:
 <div class="cowork-scenario">
 
 > **Cowork will:**
-> - Pull your [Entra ID sign-in reports](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins) and MFA registration data
+> - Pull MFA numbers from an exported [Entra ID sign-in report](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins) you share, or via an approved Graph/Entra plugin (the built-in skills don't reach Entra admin reports directly)
 > - Check your Teams channel for recent security discussions
 > - Draft a status email with the numbers and the trend
 > - **Check in** before sending to the security distribution list
@@ -189,6 +204,12 @@ For the sensitive, theme-finding work:
 
 </div>
 
+**More HR plays worth a try** — each tagged with its [task tier](/blog/microsoft-copilot-cowork-prompts-to-try/):
+
+- **New-hire welcome pack** *(Snack)* — *"Draft a warm welcome email and first-week schedule for [name] starting Monday, from our standard onboarding checklist."*
+- **Onboarding coordinator** *(Meal)* — *"Walk our onboarding checklist for [name], check what's already done across email and SharePoint, and tell me what's still open — then draft the bits that are ready."*
+- **Review-cycle theme map** *(Feast)* — *"Pull this round of performance reviews into anonymised themes — strengths, common gaps, and where managers disagree — without naming anyone."*
+
 **Realistic time saved:** Onboarding prep that's normally scattered across five systems becomes one coordinated pass you sign off.
 
 **Watch-out:** Performance and review content is sensitive. Keep the "flag before sharing" checkpoint on, and make sure the output is anonymised before it leaves your hands.
@@ -235,6 +256,12 @@ And the monthly expense reconciliation:
 > - **Check in:** "Three claims exceed the $500 limit — should I send them back to the submitters?"
 
 </div>
+
+**More finance plays worth a try** — each tagged with its [task tier](/blog/microsoft-copilot-cowork-prompts-to-try/):
+
+- **Month-end status line** *(Snack)* — *"Give me a two-line read on where we are against budget this month, from the latest actuals in [file]."*
+- **Variance pack with commentary** *(Meal)* — *"Build the Q2 variance report from the approved budget and the actuals file — flag anything over 10% and draft a short note on each."*
+- **Spend-drift review** *(Feast)* — *"Look across the last two quarters of spend and tell me where costs are drifting, with the signal behind each flag."* (Needs the data in Excel or a connected source — see the [assumption above](#how-to-read-this-page).)
 
 **Realistic time saved:** Variance reporting that can eat half a day becomes a solid first draft you refine.
 
@@ -338,6 +365,12 @@ And before the big meeting:
 
 </div>
 
+**More executive plays worth a try** — each tagged with its [task tier](/blog/microsoft-copilot-cowork-prompts-to-try/):
+
+- **Daily clear-down** *(Snack)* — *"Triage my inbox from overnight — what actually needs me today, and what can wait or be delegated?"*
+- **Pre-1:1 brief** *(Meal)* — *"Before my 1:1 with [name], pull our recent threads, open actions, and anything they flagged into a one-page picture."*
+- **Board-pack reader** *(Feast)* — *"Read the board pack for Thursday and give me the decisions I'm being asked to make, the numbers behind each, and the three questions I should push on."*
+
 **Realistic time saved:** Calendar triage and board prep — the two things that always slip — get handed off and come back as a draft.
 
 **Watch-out:** Cowork will *propose* reschedules; it won't send them without your nod. Keep the checkpoint on so nothing leaves your calendar by surprise.
@@ -386,6 +419,12 @@ Then, after the session:
 > - **Check in** before a single word goes to the customer
 
 </div>
+
+**More customer-facing plays worth a try** — each tagged with its [task tier](/blog/microsoft-copilot-cowork-prompts-to-try/):
+
+- **Pre-call refresher** *(Snack)* — *"Two-minute version: where did we leave things with [account], and what did I promise to send?"*
+- **Session prep brief** *(Meal)* — *"I have a session with [account] on [topic] on Thursday — pull our history, the last deck, and the latest from Microsoft Learn into a one-page brief."*
+- **Follow-up kit** *(Feast)* — *"From today's session transcript: draft the recap email, the action list, and the one-pager I promised — show me each before anything goes to the customer."*
 
 **Realistic time saved:** The prep-and-follow-up that wraps around every customer call is the part I now delegate — easily an hour back on a heavy meeting day.
 
