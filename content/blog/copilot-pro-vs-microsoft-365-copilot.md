@@ -4,7 +4,7 @@ list_title: "Copilot Pro vs M365 Copilot — Which Do You Need?"
 hub_id: "copilot-pricing"
 description: "Copilot Pro ($20) vs Microsoft 365 Copilot ($30): feature comparison, hidden costs, real scenarios, and how to pick the right one in 2026."
 date: 2026-05-13
-lastmod: 2026-05-13
+lastmod: 2026-06-16
 card_tag: "Copilot"
 tag_class: "ai"
 layout: "notebook"
@@ -52,6 +52,8 @@ tags:
 sitemap:
   priority: 0.9
 ---
+
+> 🔄 **2026 update — Copilot Pro has been retired.** Microsoft stopped selling the standalone $20/month Copilot Pro in late 2025; existing subscribers keep access until **1 August 2026**. The consumer replacement is **Microsoft 365 Premium** (~$19.99/month — Copilot in the Office apps + 1 TB). The personal-vs-work decision below is still exactly right — just read "Copilot Pro" as "the personal plan", which today means Microsoft 365 Premium. For the full tier-by-tier picture, see **[Microsoft Copilot Pricing & Tiers Explained](/blog/microsoft-copilot-pricing-tiers-explained/)**.
 
 Microsoft sells **two products with almost the same name**, both called "Copilot", and the difference between them is the single most confusing $10/month decision in their entire AI lineup.
 
