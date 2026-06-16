@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T22:26:54.938326+00:00",
+  "generated_at": "2026-06-16T05:28:13.530102+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -21,8 +21,8 @@
       "icon": "📦",
       "total_incidents": 16,
       "active_incidents": 1,
-      "avg_duration_minutes": 4519,
-      "last_incident": "2026-06-11T21:12:12+00:00",
+      "avg_duration_minutes": 4524,
+      "last_incident": "2026-06-11T20:00:00+00:00",
       "classifications": {
         "advisory": 9,
         "incident": 7
@@ -59,12 +59,12 @@
       "short_name": "Copilot Chat",
       "icon": "💭",
       "total_incidents": 9,
-      "active_incidents": 2,
-      "avg_duration_minutes": 5824,
+      "active_incidents": 1,
+      "avg_duration_minutes": 5778,
       "last_incident": "2026-06-12T04:00:00+00:00",
       "classifications": {
-        "incident": 5,
-        "advisory": 4
+        "advisory": 4,
+        "incident": 5
       }
     },
     {
@@ -98,8 +98,8 @@
       "short_name": "Viva",
       "icon": "🌱",
       "total_incidents": 3,
-      "active_incidents": 1,
-      "avg_duration_minutes": 3200,
+      "active_incidents": 0,
+      "avg_duration_minutes": 2767,
       "last_incident": "2026-06-14T20:12:00+00:00",
       "classifications": {
         "advisory": 3
