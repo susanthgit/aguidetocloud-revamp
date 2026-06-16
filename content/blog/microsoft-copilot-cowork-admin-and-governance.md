@@ -43,8 +43,8 @@ founder_note: |
 - **It inherits user permissions** — it can only reach what the user already can; it acts *as* them, inside the same guardrails
 - **Set up billing and spend caps before users start** — task work is billed in Copilot Credits, so wire up the Cost Management dashboard, set limits, and turn on alerts first
 - **Audit SharePoint before broad rollout** — Cowork surfaces over-sharing fast
-- **Pilot first** — start with 10–20 users, set a spend cap, review in Purview, then decide go/no-go
-- **Governance is enterprise-grade** — Entra ID, audit log, DSPM, eDiscovery, Insider Risk, Data Lifecycle Management, and Communication Compliance at GA (DLP coming soon)
+- **Pilot first** — start with 10–20 users, set a spend cap, review the outputs and spend, then decide go/no-go
+- **Governance is identity-bound** — Cowork acts as the user, with sensitivity labels, encryption handling, and Communication Compliance supported today; several other Purview controls (audit, eDiscovery, DSPM, Insider Risk, DLP, and more) aren't enabled for Cowork yet — check the [Cowork Purview page](https://learn.microsoft.com/en-us/purview/ai-copilot-cowork)
 
 ---
 
@@ -54,9 +54,9 @@ Five moves take you from "off by default" to "rolled out with the budget under c
 
 ```mermaid
 flowchart TD
-  A[Turn Cowork on - off by default] --> B[Set up billing and spend caps]
-  B --> C[Pilot with 10-20 users, scoped access]
-  C --> D[Audit usage and access in Purview]
+  A[Make Cowork visible - Copilot Settings] --> B[Set up billing and a spending policy]
+  B --> C[Pilot via a Specific-groups policy]
+  C --> D[Review usage and what it did]
   D --> E{Go or no-go?}
   E -->|Go| F[Expand to more groups]
   E -->|Not yet| C
@@ -70,10 +70,10 @@ The order matters: billing and caps come *before* the pilot, so no one runs up a
 
 If you're an IT admin, here's how to turn Cowork on:
 
-1. **Turn Cowork on** — in the [Microsoft 365 admin center](https://admin.microsoft.com) → Copilot, enable Cowork and choose who gets access (No access / All users / Specific users). Cowork is **off by default** — it's off until you enable it.
-2. **Set up usage-based billing** — Cowork's task work is billed in Copilot Credits, so set up billing and spend caps before users start running tasks. Full walkthrough in the next section.
+1. **Make Cowork discoverable** — in the [Microsoft 365 admin center](https://admin.microsoft.com) → **Copilot → Settings**, turn on **"AI experiences enabled by usage-based billing."** This controls *visibility* — whether users can see Cowork. It's **off by default**.
+2. **Set up billing and a spending policy** — go to **Copilot → Cost Management** and select **Get Started**. Activating usage-based billing with a spending policy is what actually *turns Cowork on* and scopes who can use it (**All users** or **Specific groups**). Its work is billed in Copilot Credits, so do this before users start. Full walkthrough in the next section.
 3. **Check model availability** — Cowork runs on Anthropic models (Opus 4.8, Sonnet 4.6) through Microsoft's multi-model system. If your tenant manages AI model providers, confirm Cowork's models are allowed.
-4. **Scope the pilot** — three levers people mix up: *availability* (who's allowed), *deployment/pinning* (whether it shows in their Copilot rail), and *plugins* (what it can reach — see governance below). Keep availability to your pilot group first (Specific users). Pilot-first is the sane default.
+4. **Scope the pilot** — keep access tight at first. In your Cost Management spending policy, target **Specific groups** (a security group of your pilot users) rather than All users, and decide separately which **plugins** Cowork can reach (see governance below). Pilot-first is the sane default.
 5. **Communicate** — tell your users it's available, what it does, and that it checks in before sensitive actions.
 
 > ⚠️ **Do this before you enable it broadly:** review your [SharePoint permissions](https://learn.microsoft.com/en-us/sharepoint/modern-experience-sharing-permissions) and [information governance](https://learn.microsoft.com/en-us/purview/information-governance-solution) first. Cowork can reach anything the user can reach — so if your permissions are messy, Cowork surfaces that mess. Full remediation playbook: [SharePoint oversharing controls for Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/).
@@ -107,11 +107,11 @@ Full reference: [Copilot Credits and cost management on Microsoft Learn](https:/
 
 The five usual suspects, in rough order of likelihood:
 
-1. **An admin hasn't turned Cowork on** — it's off by default, so someone has to enable it in the Microsoft 365 admin center.
-2. **Usage-based billing isn't set up** — Cowork's work is billed in Copilot Credits, so an admin needs to enable billing first.
-3. **No Copilot licence** — the user needs the paid Microsoft 365 Copilot seat.
-4. **Access is group-restricted** — an admin scoped Cowork to specific groups, and this user isn't in one.
-5. **Model providers aren't configured** — if your tenant manages AI model providers, Cowork's models may need to be allowed first.
+1. **The discovery setting is off** — "AI experiences enabled by usage-based billing" (Copilot → Settings) hasn't been turned on, so Cowork stays hidden.
+2. **Usage-based billing isn't set up** — Cowork is gated by usage-based billing, so until an admin creates a spending policy in Copilot → Cost Management, there's nothing to use. (A user can request access from inside the experience; it shows up in the admin's credit requests.)
+3. **No Copilot licence** — the user needs the paid Microsoft 365 Copilot seat (the USL).
+4. **They're not in a spending policy** — access is scoped by policy; if the user isn't in the All-users policy or a Specific-groups policy that includes Cowork, they won't see it.
+5. **The region or models aren't available** — Cowork runs on Anthropic models and is limited to Anthropic-supported regions; if your tenant manages model providers, those models may need to be allowed first.
 
 If you've ruled out all five and a licensed user still can't see it, give it time to propagate — tenant changes can take a while to roll through — before raising a ticket.
 
@@ -121,25 +121,33 @@ If you've ruled out all five and a licensed user still can't see it, give it tim
 
 The single most reassuring thing about Cowork for an admin: **it inherits the user's identity and permissions.** It can't see, touch, or send anything the user couldn't already — it's acting *as* them, inside the same guardrails.
 
-Here's the enterprise stack it plugs into out of the box — and where each piece stands at general availability:
+Here's what actually protects Cowork today, and what's still on the way. Because Cowork runs long, multi-step work across apps, **Microsoft documents its compliance support separately** from the rest of Microsoft 365 Copilot — and several Purview solutions aren't enabled for Cowork yet. Plan against the [Cowork Purview support table](https://learn.microsoft.com/en-us/purview/ai-copilot-cowork) for the current status.
 
-| Control | What it does for Cowork | Status at GA |
+**Protecting Cowork today:**
+
+| Control | What it does for Cowork | Status |
 |---|---|---|
-| **Entra ID** | Cowork acts under the user's identity and permissions — no new standing access is created. | Live |
-| **Sensitivity labels** | Purview sensitivity labels are inherited and displayed end-to-end on Cowork's inputs and outputs. | Live |
-| **Unified audit log** | Cowork's prompts, responses, and actions land in the audit log — you can see what ran, when, and on whose behalf. | Live |
-| **DSPM for AI** | Data Security Posture Management gives visibility into Cowork's AI activity and the data it touches. | Live |
-| **eDiscovery** | Cowork content is discoverable for legal hold and investigation workflows. | Live |
-| **Insider Risk Management** | Cowork activity is in scope for insider-risk policies. | Live |
-| **Data Lifecycle Management** | Retention and lifecycle policies apply to Cowork content. | GA 22 June 2026 |
-| **Communication Compliance** | Cowork communications are in scope for Communication Compliance policies. | Live |
-| **Conditional Access** | Sign-in conditions (device, location, risk) apply to Microsoft 365 Copilot, Cowork included. | Live |
-| **Human-in-the-loop checkpoints** | Sensitive actions pause for explicit user approval (see below) — a governance lever, not just a UX nicety. | Live |
-| **Data Loss Prevention (DLP)** | Policies that would gate what Cowork can draft, share, or send. | Coming soon |
+| **Entra ID identity** | Cowork acts under the user's identity and permissions — no new standing access is created. | Live |
+| **Approval checkpoints** | Sensitive actions pause for explicit user approval (see below) — a real governance lever, not just UX. | Live |
+| **Sensitivity labels** | Labels are displayed, and inherited onto new Word/PowerPoint/Outlook content Cowork creates from labelled sources. | Supported |
+| **Encryption handling** | Encrypted content is honoured — Cowork checks the VIEW and EXTRACT usage rights before returning data. | Supported |
+| **Communication Compliance** | Cowork prompts and responses are in scope for Communication Compliance policies. | Supported |
+| **Conditional Access** | Sign-in conditions (device, location, risk) apply through Microsoft 365 sign-in. | Live |
 
-None of this is bolted on after the fact — Cowork's prompts, responses, and generated artifacts flow through the same Microsoft 365 compliance framework as the rest of your tenant: governed, discoverable, and retained.
+**Not enabled for Cowork yet** — confirm current status on the [Cowork Purview page](https://learn.microsoft.com/en-us/purview/ai-copilot-cowork) before you rely on any of these:
 
-> ⏳ **One gap to know at GA: Data Loss Prevention (DLP) for Cowork is *coming soon*.** Until it ships, don't assume DLP policies gate what Cowork drafts and sends — lean on the approval checkpoints and the controls above. As always for an agentic tool, confirm the exact coverage against Microsoft's GA documentation and your own tenant policies before you rely on any single control.
+| Purview solution | Status for Cowork |
+|---|---|
+| **Auditing** (unified audit log) | Not yet |
+| **DSPM / DSPM for AI** | Not yet |
+| **eDiscovery** | Not yet |
+| **Insider Risk Management** | Not yet |
+| **Data Lifecycle Management** | Not yet |
+| **Data Loss Prevention (DLP)** | Coming soon |
+| **Data classification** | Not yet |
+| **Compliance Manager** | Not yet |
+
+> ⏳ **Read this before you promise compliance coverage.** Cowork's Purview support is narrower than the rest of Microsoft 365 Copilot today, and it's a moving target. Microsoft's GA announcement described a broader protected surface as the goal, but the **Cowork-specific Purview page is the one to plan against** — and right now it marks auditing, eDiscovery, DSPM, Insider Risk, Data Lifecycle Management, DLP, data classification, and Compliance Manager as not supported for Cowork. Don't assume any of those capture or gate Cowork activity until that page says otherwise.
 
 ## Approving plugins and custom skills — the review
 
@@ -151,12 +159,12 @@ Out of the box, Cowork reaches your Microsoft 365 — Outlook, Teams, SharePoint
 Treat **each plugin as its own decision**, one at a time — not a blanket "allow all." A short review to run before you approve one:
 
 1. **Who's asking, and for what job?** Name the actual workflow — "Sales wants monday.com so Cowork can build campaign boards." If there's no real job behind it, it doesn't need to be on.
-2. **What can it reach — read, or read &amp; write?** A *read* plugin can only look; a *read &amp; write* plugin can change or create records in that system. Read-only is the safer default; allow write only where the workflow genuinely needs it.
+2. **What can it reach — and can it write?** Many connectors are read-only; some can also write (create or update records in that system). Read-only is the safer default; allow write only where the workflow genuinely needs it.
 3. **Whose credentials does it use?** Confirm how the connector signs in and whose access it inherits, so the plugin can't quietly reach further than the user could.
 4. **Where does the data go?** Check what leaves your tenant, where it lands, and whether that's acceptable for the data classes involved.
-5. **Is it audited?** Plugin activity should show up in your audit trail like everything else. If you can't see it, you can't govern it.
+5. **How will you keep an eye on it?** Plugin oversight for Cowork is still maturing (see the compliance note above), so lean on the approval checkpoints and a deliberate review rather than assuming full audit coverage.
 
-Microsoft keeps a dedicated **"Manage plugins for Copilot Cowork"** page on Microsoft Learn for the admin controls — approvals, scope, and audit. Default posture: everything off until reviewed, then on for the teams with a real use for it.
+Microsoft keeps a dedicated **"Manage plugins for Copilot Cowork"** page on Microsoft Learn for the admin controls — admins can deploy plugins to the org or specific groups, and restrict which plugins are visible in the store. A sensible default: keep them off until reviewed, then enable the ones a team genuinely needs.
 
 ---
 
@@ -175,14 +183,14 @@ Don't roll Cowork out to everyone on day one. A scoped pilot tells you what it a
 A practical pilot plan:
 
 1. **Pick a small group** — about 10–20 users across 2–3 roles, so you see a real spread of light, medium, and heavy tasks.
-2. **Scope access to just that group** — set availability to *Specific users*, not *All users* (see [enablement](#how-to-enable-cowork-at-ga)).
+2. **Scope access to just that group** — in your Cost Management spending policy, target **Specific groups** (a security group of your pilot users), not All users (see [enablement](#how-to-enable-cowork-at-ga)).
 3. **Set a spend cap for the pilot group** — a group-level budget with user-level caps inside it, plus an alert at, say, 75% of the cap so nothing is a surprise.
 4. **Brief the group** — what Cowork does, the approval-checkpoint pattern, what's safe to automate, and what to escalate.
 5. **Run for 2–4 weeks** and collect both numbers (credit usage, which tasks) and feel (what saved time, what missed).
-6. **Audit in Purview** — check the audit log for what Cowork actually did, and use the pilot as a forcing function to fix any SharePoint oversharing it surfaced.
+6. **Review what it did** — go through the conversations and outputs Cowork produced (auditing for Cowork isn't in Purview yet — see governance above), and use the pilot as a forcing function to fix any SharePoint oversharing it surfaced.
 7. **Decide go / no-go** against criteria you set up front — for example: *spend stayed within cap, no governance surprises, and the group would miss it if you took it away.*
 
-A concrete starter policy you can adapt: **10–20 users · Specific-users access · a group spend cap with a 75% alert · 3-week run · weekly Purview check · expand only if spend held and no oversharing surfaced.**
+A concrete starter policy you can adapt: **10–20 users · Specific-groups access (a pilot security group) · a group spend cap with a 75% alert · 3-week run · weekly review of outputs and spend · expand only if spend held and no oversharing surfaced.**
 
 ---
 
@@ -195,7 +203,7 @@ The checkpoint system is Cowork's most important governance feature, and it's wo
 - **You can redirect mid-task.** "Actually, focus on the financial data, not the customer emails" — and it adapts within the current task.
 - **A "skip future prompts" option exists.** A dropdown lets users stop being asked for similar low-risk actions — convenient, but it trades safety for speed.
 
-For an admin, the honest framing is that checkpoints **reduce the blast radius — they're not a substitute for review.** A user can still approve the wrong action, or switch off prompts for an action type. And not everything is gated — drafting, reorganising files, or moving calendar items can happen inside a run. So the realistic worst case isn't "nothing"; it's "a user approved something they shouldn't have." Brief your people to treat each approval as a real decision, and to keep the skip-prompts option for genuinely low-stakes, repetitive work.
+For an admin, the honest framing is that checkpoints **reduce the blast radius — they're not a substitute for review.** A user can still approve the wrong action, or switch off prompts for an action type. And not every internal step shows a prompt — the gate is for sensitive actions like sending, posting, scheduling, and creating, each with a risk indicator on the medium- and high-risk ones. So the realistic worst case isn't "nothing"; it's "a user approved something they shouldn't have." Brief your people to treat each approval as a real decision, and to keep the skip-prompts option for genuinely low-stakes, repetitive work.
 
 ---
 
@@ -207,11 +215,11 @@ When you bring Cowork to a security or legal reviewer, here's the short brief �
 - **It's identity-bound.** Cowork acts as the signed-in user, under their Entra ID — it creates no new standing access and can't reach anything the user couldn't already.
 - **Permissions are inherited, not widened.** If a user can't open a file today, Cowork can't either.
 - **Sensitivity labels follow the data** end-to-end, on what goes in and what comes out.
-- **It's auditable and discoverable.** Prompts, responses, and actions land in the unified audit log and are in scope for eDiscovery, Insider Risk, Data Lifecycle Management, and Communication Compliance.
+- **What's covered today:** sensitivity labels are displayed and inherited, encrypted content is honoured, and Cowork prompts and responses are in scope for **Communication Compliance**.
 - **Sensitive actions wait for a human.** Sending, posting, scheduling, and creating each pause for explicit approval.
-- **One gap to name honestly:** Data Loss Prevention (DLP) for Cowork is **coming soon**, not live at GA — so until it ships, don't assume DLP policies gate what Cowork drafts or sends. Lean on the approval checkpoints and the controls above, and confirm exact coverage against Microsoft's GA documentation.
+- **Name the gaps honestly:** Cowork's Purview coverage is narrower than the rest of Microsoft 365 Copilot today. Per Microsoft's [Cowork Purview page](https://learn.microsoft.com/en-us/purview/ai-copilot-cowork), **auditing, eDiscovery, DSPM, Insider Risk, Data Lifecycle Management, DLP, data classification, and Compliance Manager are not yet supported for Cowork** — so don't assume those capture or gate Cowork activity. Lean on identity, permissions, and the approval gate, and check that page for current status.
 
-The one-paragraph version: *Cowork operates inside your existing Microsoft 365 trust boundary, as the user, with the same permissions and the same compliance tooling as the rest of your tenant — plus an approval gate on anything that sends or changes something. DLP support is still on the way; plan around that one.*
+The one-paragraph version: *Cowork operates inside your existing Microsoft 365 trust boundary, as the user, with the same permissions as the rest of your tenant, sensitivity-label and encryption handling, Communication Compliance support, and an approval gate on anything that sends or changes something. Several other Purview controls — auditing, eDiscovery, DSPM, Insider Risk, Data Lifecycle Management, DLP, data classification, and Compliance Manager — aren't enabled for Cowork yet, so plan around those and track the Cowork Purview page.*
 
 ---
 
@@ -219,11 +227,11 @@ The one-paragraph version: *Cowork operates inside your existing Microsoft 365 t
 
 Set expectations honestly with your leadership and users — over-promising is the fastest way to lose a pilot:
 
-- **External systems need Skills or plugins.** Cowork doesn't connect to Salesforce, Jira, or SAP out of the box; partner plugins from the Microsoft 365 App Store and custom skills can bridge the gap. (See the [Skills & plugins spoke](/blog/microsoft-copilot-cowork-skills-and-plugins/).)
-- **Check language coverage for your region** — Cowork is generally available worldwide, but confirm full language support for your users.
-- **No offline mode** — it's cloud-based and needs a connection.
-- **Won't replace deep expertise** — it's strong at coordination, not strategic judgement.
-- **It's a permissions amplifier** — if your SharePoint permissions are messy, Cowork makes that mess visible to users who shouldn't see it. This is the one to fix *before* rollout, not after.
+- **Documented limits (from Microsoft's FAQ):** Cowork can't access or edit files stored **locally** on a device (it works in OneDrive and SharePoint); it **can't delete** files or folders in OneDrive or SharePoint; it **can't read encrypted files**, even if the user has access; and **attachments must be under 200 MB**.
+- **Custom skills aren't validated by Microsoft** — user-created `SKILL.md` skills run as written, so review their outputs.
+- **Region-limited** — Cowork runs on Anthropic models and is currently limited to **Anthropic-supported regions**, so "available worldwide" comes with that caveat. Confirm availability for your users.
+- **External systems need plugins or skills** — Cowork reaches your Microsoft 365 out of the box; a CRM, ticketing tool, or data warehouse needs a plugin, a custom skill, or an exported file. (See the [Skills &amp; plugins spoke](/blog/microsoft-copilot-cowork-skills-and-plugins/).)
+- **It's a permissions amplifier** — if your SharePoint permissions are messy, Cowork makes that mess visible to users who shouldn't see it. Fix this *before* rollout, not after.
 
 These are solvable, and several are on Microsoft's roadmap — but check Microsoft's GA documentation before treating any limit as temporary, and know them before you promise the world.
 

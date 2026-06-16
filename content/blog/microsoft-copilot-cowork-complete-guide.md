@@ -25,7 +25,7 @@ faq:
   - question: "Can Copilot Cowork send emails without my permission?"
     answer: "No. Cowork requires your explicit approval before taking sensitive actions like sending emails, posting to Teams, or scheduling meetings. It always checks in at critical decision points — you stay in control."
   - question: "How is Copilot Cowork different from Claude Cowork?"
-    answer: "Copilot Cowork runs in the cloud inside your M365 tenant with full enterprise governance (Entra ID, audit log, and Microsoft Purview compliance controls). Claude Cowork is desktop-first with local file access and third-party connectors, plus enterprise admin controls on higher tiers. Copilot Cowork is built for managed enterprise environments; Claude Cowork is built for individual power users and mixed-tool setups."
+    answer: "Copilot Cowork runs in the cloud inside your M365 tenant with enterprise governance — it acts as the user under Entra ID, with sensitivity labels and Microsoft Purview controls (more rolling out for Cowork). Claude Cowork is desktop-first with local file access and third-party connectors, plus enterprise admin controls on higher tiers. Copilot Cowork is built for managed enterprise environments; Claude Cowork is built for individual power users and mixed-tool setups."
   - question: "What AI model does Copilot Cowork use?"
     answer: "Copilot Cowork uses Microsoft's multi-model approach. At general availability it runs on Anthropic Opus 4.8 and Sonnet 4.6; in Frontier you can also pick GPT 5.5, and Microsoft's own fine-tuned Cowork 1 model is coming soon. You choose the model per task, and your admin controls which providers are enabled."
   - question: "Does Copilot Cowork work with my existing data permissions?"
@@ -79,7 +79,7 @@ This guide explains everything — in plain language, with real scenarios, and h
 - **Copilot Cowork** = AI that doesn't just answer questions — it does the work across your entire M365 suite
 - **Three waves of Copilot:** Assistant (2023) → Agent Builder (2025) → **Cowork (2026)**
 - **How it works:** Describe an outcome → Cowork builds a plan → executes across apps → checks in with you
-- **Enterprise-safe:** Entra ID permissions, audit log, sensitivity labels, full human-in-the-loop control
+- **Enterprise-safe:** Entra ID permissions, sensitivity labels, Communication Compliance, full human-in-the-loop control
 - **Generally available worldwide** since 16 June 2026 to Microsoft 365 Copilot customers — no Frontier enrolment needed
 - **Requires:** a Microsoft 365 Copilot licence, plus usage-based **Copilot Credits** for the work Cowork runs (admins turn it on — it's off by default)
 - **Not the same as Claude Cowork** — Copilot Cowork runs in your tenant (cloud), Claude runs on your desktop (local)
@@ -93,7 +93,7 @@ Copilot Cowork went **generally available worldwide** on 16 June 2026. After thr
 - **Model choice** — pick the model per task: Anthropic **Opus 4.8** and **Sonnet 4.6** at GA, **GPT 5.5** in Frontier, and the fine-tuned **Cowork 1** coming soon for everyday tasks at lower cost.
 - **Usage-based pricing** — a Microsoft 365 Copilot seat plus **Copilot Credits** for the work Cowork runs, with a **Cost Management dashboard** for spending limits, alerts, and reporting. ([Pricing spoke →](/blog/microsoft-copilot-cowork-pricing-cost-management/))
 - **Plugins** — nine partner plugins available now (Enosix, Harvey, LSEG, Miro, monday.com, Moody's, Morningstar, S&P Global Energy, TeamsMaestro), more on the way, plus Microsoft Fabric and Dynamics 365 (Sales, Customer Service, ERP). ([Skills & plugins spoke →](/blog/microsoft-copilot-cowork-skills-and-plugins/))
-- **Enterprise security at GA** — Cowork's prompts, responses, and outputs flow through your existing Microsoft 365 controls: audit log, DSPM, eDiscovery, Insider Risk Management, and Communication Compliance, with sensitivity labels inherited end-to-end. ([Admin & governance spoke →](/blog/microsoft-copilot-cowork-admin-and-governance/))
+- **Enterprise security at GA** — Cowork runs inside your Microsoft 365 trust boundary, acting as the user with their permissions, plus an approval gate on sensitive actions. Sensitivity labels, encryption handling, and Communication Compliance are supported today; several other Purview controls (audit, eDiscovery, DSPM, Insider Risk, DLP, and more) aren't enabled for Cowork yet. ([Admin & governance spoke →](/blog/microsoft-copilot-cowork-admin-and-governance/))
 - **Lower cost than the alternative** — in Microsoft's own testing, Copilot Cowork ran **30–40% cheaper** than Claude Cowork through its Microsoft 365 connector on the same model.
 
 > 🌐 **One to watch:** **browser use via Edge** — letting Cowork browse the web through a local Edge browser under your enterprise policies — is available in the **Frontier** early-access program, not yet GA.
@@ -450,7 +450,7 @@ The **agentic harness** is everything that prevents that:
 |-----------|-------------|-------------|
 | **Orchestration** | Breaks your goal into steps and delegates to specialist agents | One AI doesn't do everything — specialists handle what they're best at |
 | **Context (Work IQ)** | Shared memory across all agents — your emails, files, calendar, org chart | Agents understand YOUR work, not just generic knowledge |
-| **Governance** | Entra ID, audit log, Microsoft Purview compliance controls | Agents follow the same rules as your employees |
+| **Governance** | Entra ID identity, sensitivity labels, Microsoft Purview controls (more rolling out) | Agents follow the same rules as your employees |
 | **Human checkpoints** | Pauses and asks before sensitive actions | You always stay in control |
 | **Multi-model** | Can use GPT-4, Claude, or other models | Best model for each task, not one-size-fits-all |
 
@@ -600,7 +600,7 @@ Anthropic (the company behind Claude) also launched their own "Cowork" product. 
 | **Runs where** | ☁️ Cloud — inside your M365 tenant | 💻 Desktop-first — on your local machine |
 | **Managed by** | Your IT admin (Entra ID, policies) | Individual user (Team/Enterprise admin controls also available) |
 | **Accesses** | All your M365 data (email, Teams, SharePoint, etc.) | Local files + growing library of third-party MCP connectors |
-| **Governance** | Full enterprise stack (audit log, DSPM, eDiscovery, Conditional Access; DLP coming soon) | Local sandbox, RBAC, with enterprise governance on higher tiers |
+| **Governance** | Identity-bound (Entra ID), approval gate, sensitivity labels + Communication Compliance; more Purview controls rolling out | Local sandbox, RBAC, with enterprise governance on higher tiers |
 | **Best for** | Enterprise teams working inside Microsoft 365 | Individual power users, mixed-tool environments |
 | **AI Model** | Multi-model (including Anthropic Claude) | Claude only |
 | **Price** | $30/mo Copilot seat + usage-based Copilot Credits | $20/mo (Pro), $100/mo (Max), Enterprise custom |
@@ -688,7 +688,7 @@ No. Cowork requires your explicit approval before taking sensitive actions like 
 
 ### How is Copilot Cowork different from Claude Cowork?
 
-Copilot Cowork runs in the cloud inside your M365 tenant with full enterprise governance (Entra ID, audit log, and Microsoft Purview compliance controls). Claude Cowork runs locally on your desktop with sandboxed file access and connects to third-party tools via [MCP connectors](https://modelcontextprotocol.io/). Copilot Cowork is built for managed enterprise environments; Claude Cowork is built for individual power users.
+Copilot Cowork runs in the cloud inside your M365 tenant with enterprise governance — it acts as the user under Entra ID, with sensitivity labels and Microsoft Purview controls (more rolling out for Cowork). Claude Cowork runs locally on your desktop with sandboxed file access and connects to third-party tools via [MCP connectors](https://modelcontextprotocol.io/). Copilot Cowork is built for managed enterprise environments; Claude Cowork is built for individual power users.
 
 ### What AI model does Copilot Cowork use?
 
