@@ -52,9 +52,11 @@ If you're an IT admin, here's how to turn Cowork on:
 
 1. **Turn Cowork on** — in the [Microsoft 365 admin center](https://admin.microsoft.com) → Copilot, enable Cowork and choose who gets access (No access / All users / Specific users). Cowork is **off by default** — it's off until you enable it.
 2. **Set up usage-based billing** — Cowork's task work is billed in Copilot Credits, so open the **Cost Management dashboard**, enable billing (pay-as-you-go or prepaid), and set spending limits and usage alerts before users start running tasks. (See the [pricing spoke](/blog/microsoft-copilot-cowork-pricing-cost-management/).)
-3. **Enable Anthropic** — make sure Anthropic is enabled as a model provider; Cowork uses Claude under the hood through Microsoft's multi-model approach, and it can be off by default in some tenants.
+3. **Check model availability** — Cowork runs on Anthropic models (Opus 4.8, Sonnet 4.6) through Microsoft's multi-model system. If your tenant manages AI model providers, confirm Cowork's models are allowed.
 4. **Scope the pilot** — three levers people mix up: *availability* (who's allowed), *deployment/pinning* (whether it shows in their Copilot rail), and *plugins* (what it can reach — see governance below). Keep availability to your pilot group first (Specific users). Pilot-first is the sane default.
 5. **Communicate** — tell your users it's available, what it does, and that it checks in before sensitive actions.
+
+> 💳 **Frontier grace period:** if your tenant had Cowork users in the Frontier program (30 March–16 June 2026), you're not billed for Cowork until **1 July 2026** — use that window to set spending limits and allocate budgets before usage ramps. ([Pricing spoke](/blog/microsoft-copilot-cowork-pricing-cost-management/).)
 
 > ⚠️ **Do this before you enable it broadly:** review your [SharePoint permissions](https://learn.microsoft.com/en-us/sharepoint/modern-experience-sharing-permissions) and [information governance](https://learn.microsoft.com/en-us/purview/information-governance-solution) first. Cowork can reach anything the user can reach — so if your permissions are messy, Cowork surfaces that mess. Full remediation playbook: [SharePoint oversharing controls for Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/).
 
@@ -68,7 +70,7 @@ The five usual suspects, in rough order of likelihood:
 2. **Usage-based billing isn't set up** — Cowork's work is billed in Copilot Credits, so an admin needs to enable billing first.
 3. **No Copilot licence** — the user needs the paid Microsoft 365 Copilot seat.
 4. **Access is group-restricted** — an admin scoped Cowork to specific groups, and this user isn't in one.
-5. **Anthropic isn't enabled** as a model provider — Cowork needs it, and it can be off by default in some tenants.
+5. **Model providers aren't configured** — if your tenant manages AI model providers, Cowork's models may need to be allowed first.
 
 If you've ruled out all five and a licensed user still can't see it, give it time to propagate — tenant changes can take a while to roll through — before raising a ticket.
 
@@ -88,7 +90,7 @@ Here's the enterprise stack it plugs into out of the box:
 | **DSPM for AI** | Data Security Posture Management gives visibility into Cowork's AI activity and the data it touches. |
 | **eDiscovery** | Cowork content is discoverable for legal hold and investigation workflows. |
 | **Insider Risk Management** | Cowork activity is in scope for insider-risk policies. |
-| **Data Lifecycle Management** | Retention and lifecycle policies apply to Cowork content (rolling out worldwide in the week after GA). |
+| **Data Lifecycle Management** | Retention and lifecycle policies apply to Cowork content (GA 22 June 2026 — about a week after the rest). |
 | **Communication Compliance** | Cowork communications are in scope for Communication Compliance policies. |
 | **Conditional Access** | Sign-in conditions (device, location, risk) apply to Microsoft 365 Copilot, Cowork included. |
 | **Human-in-the-loop checkpoints** | Sensitive actions pause for explicit user approval (see below) — a governance lever, not just a UX nicety. |

@@ -47,7 +47,7 @@ founder_note: |
 - Microsoft sorts tasks into **light (≈100–300 credits), medium (≈400–700), and heavy (700+)** — a quick summary is cheap; a deep multi-output report costs more.
 - Two ways to pay: **pay-as-you-go at $0.01 per Copilot Credit**, or **prepaid (P3)** — commit to a volume up front for a discount.
 - Admins manage it all from a **Cost Management dashboard** in the Microsoft 365 admin center: spending limits, alerts, and usage reporting per user, group, and tenant. **Cowork is off by default.**
-- In Microsoft's own testing, Copilot Cowork came out **30–40% cheaper** than running Claude Cowork through its Microsoft 365 connector on the same model.
+- In Microsoft's own testing (an internal study on the same model), Copilot Cowork came out **30–40% cheaper** than running Claude Cowork through its Microsoft 365 connector — actual savings vary with usage.
 
 ---
 
@@ -93,7 +93,7 @@ Add those up and you get the number of Copilot Credits a task consumes. The intu
 
 *Source: [Microsoft 365 Blog — Copilot Cowork is now generally available](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/)*
 
-From the Frontier preview, Microsoft saw three common task shapes — and published rough credit ranges for each:
+From the Frontier preview, Microsoft saw three common task shapes. The credit ranges below come from Microsoft's GA blog — treat them as **illustrative estimates, not fixed billing tiers** (the actual credits a task uses will vary):
 
 | Task type | What it looks like | Est. Copilot Credits | Roughly, at $0.01/credit (PayGo) |
 |---|---|---|---|
@@ -130,6 +130,8 @@ Two billing options, both set up in the admin center:
 |---|---|---|
 | **Pay-as-you-go (PayGo)** | Consume credits as tasks run, billed in arrears at **$0.01 per Copilot Credit** | Spiky or unpredictable usage, no upfront commitment |
 | **Prepaid (P3)** | Commit to a usage volume up front in exchange for a **discount** | Steady, predictable usage and budget certainty |
+
+> **They're not either/or:** P3 layers on top of pay-as-you-go. Your prepaid credits are consumed first, and anything beyond them automatically falls back to PayGo — so a task never just stops mid-run because the prepaid block ran out.
 
 > **Grace period for Frontier customers:** billing for Cowork started on **16 June 2026**. Tenants that had at least one user running Cowork in the Frontier program (30 March–16 June 2026) get a grace period and **won't be billed until 1 July 2026** — time to set spending limits and allocate budgets before usage ramps.
 

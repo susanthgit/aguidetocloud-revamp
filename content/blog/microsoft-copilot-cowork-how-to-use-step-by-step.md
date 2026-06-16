@@ -133,7 +133,7 @@ You're never locked into a runaway task. If a plan looked right but the executio
 
 The most common first-run snags, and how to recover:
 
-- **Cowork doesn't show up** → almost always a licence or tenant-config issue, not a bug. Check you have a Microsoft 365 Copilot licence and that your admin has enabled Cowork (it's off by default) with usage billing set up and Anthropic on. Full checklist in the [Admin & governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).
+- **Cowork doesn't show up** → almost always a licence or tenant-config issue, not a bug. Check you have a Microsoft 365 Copilot licence and that your admin has enabled Cowork (it's off by default) with usage billing set up. Full checklist in the [Admin & governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).
 - **A step fails partway through** → Cowork usually tells you which step and why (a file it couldn't reach, a permission it doesn't have). Re-run just that step, or adjust the prompt to point it at something it can access.
 - **It runs longer than expected** → big, vague outcomes spawn long plans. If it feels like it's going in circles, stop it and narrow the ask ("just the email, not the deck too").
 - **It accesses the wrong file** → usually two files with similar names, or messy SharePoint permissions surfacing something unexpected. Redirect it to the right file by name, and flag the permissions issue to your admin.

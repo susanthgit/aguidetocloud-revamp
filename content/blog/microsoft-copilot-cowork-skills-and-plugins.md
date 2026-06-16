@@ -92,9 +92,31 @@ You can toggle any skill on or off here. Disabled skills won't be picked by Cowo
 
 ---
 
-## The 13 built-in skills — what your tenant actually shows
+## The 13 built-in skills
 
-Microsoft's [Agent Academy Cowork Collective](https://github.com/microsoft/agent-academy/tree/main/docs/cowork-collective) describes Cowork as shipping with 13 built-in skills in 5 categories. Here's the exact list as it appears in the Skills page UI:
+Microsoft's official [Cowork documentation](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) lists **13 built-in skills** — the canonical set every tenant gets:
+
+| # | Skill | What it covers |
+|---|---|---|
+| 1 | **Word** | Read, create, and edit Word documents |
+| 2 | **Excel** | Read, create, and manipulate Excel spreadsheets |
+| 3 | **PowerPoint** | Read, create, and edit PowerPoint presentations |
+| 4 | **PDF** | Read, create, and manipulate PDF documents |
+| 5 | **Email** | Draft, reply, forward, and send through Outlook |
+| 6 | **Scheduling** | Schedule meetings and manage your calendar |
+| 7 | **Calendar Management** | Full-spectrum calendar management |
+| 8 | **Meetings** | Meeting intelligence, summaries, and prep |
+| 9 | **Daily Briefing** | Aggregated morning brief from calendar, email, and Teams |
+| 10 | **Enterprise Search** | Search across your organisation's content |
+| 11 | **Communications** | Audience-adaptive communications |
+| 12 | **Deep Research** | Synthesise multiple sources into a comprehensive report |
+| 13 | **Adaptive Cards** | Render structured, interactive cards |
+
+You can also add **up to 50 custom skills** of your own — more on that below.
+
+### What you'll actually see in your tenant's Customize panel
+
+The Customize UI surfaces the same engine, but it shows the **internal skill IDs** — so a few names differ from the official list (you'll spot `html`, `goal`, `debug-trajectory`, and `Skill Management` in place of Email, Enterprise Search, Deep Research, and Adaptive Cards). Here's the exact list as it appears in my tenant:
 
 | # | Skill | What it does (UI description) |
 |---|---|---|
@@ -124,7 +146,7 @@ Mapping back to the 5 Agent Academy categories:
 | **Search** | Built into Cowork's task-planning — surfaces through Daily Briefing, Meetings, and the cross-app reach |
 | **Automation** | goal (long-running standing goals), Skill Management (creating and managing skills) |
 
-> 📎 **Two valid lists — here's why.** The screenshot above is your tenant's **Customize panel**, which surfaces some internal skill IDs (`html`, `goal`, `debug-trajectory`, `Skill Management`). Microsoft's [official Cowork docs](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) describe the 13 built-in skills with friendlier names: **Word, Excel, PowerPoint, PDF, Email, Scheduling, Calendar Management, Meetings, Daily Briefing, Enterprise Search, Communications, Deep Research, and Adaptive Cards.** Same engine, different labels — the panel shows what's wired up under the hood, the docs show the grouped names. Both are correct. (You can also add up to **50 custom skills** of your own.)
+> 📎 **Same engine, two label sets.** The official Learn names (top of this section) are the canonical taxonomy; the Customize panel shows the internal IDs. When you write a custom skill that calls a built-in, use the tenant ID (e.g. `pdf`, `html`); when you explain Cowork to a colleague, use the official names.
 
 ---
 
