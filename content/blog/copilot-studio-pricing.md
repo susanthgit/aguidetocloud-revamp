@@ -115,7 +115,7 @@ Copilot Studio has three ways to pay (Microsoft labels them **Licence**, **Pre-p
 
 Since **1 September 2025**, Copilot Studio is metered in **Copilot Credits** — they replaced the old "messages" unit (the pack sizes and rates didn't change, just the name and how usage is counted). The important part: **consumption is feature-based**, so one user turn can burn several credits depending on what the agent does.
 
-Published per-action rates:
+Published per-action rates (the headline ones):
 
 | Action | Copilot Credits |
 |---|---|
@@ -123,10 +123,8 @@ Published per-action rates:
 | Generative answer | 2 |
 | Agent action | 5 |
 | Tenant graph grounding (Microsoft 365 data) | 10 |
-| Agent flow actions | 13 per 100 actions |
-| AI tools (basic / standard / premium) | 1 / 15 / 100 per 10 responses |
-| Content processing | 8 per page |
-| Voice — classic / GenAI / premium GenAI | 10 / 35 / 75 per minute |
+
+The full denomination table — voice, AI tools, content processing, agent flows and reasoning models — lives in the **[Copilot Credits rate card](/blog/copilot-credits-explained/#rate-card)**.
 
 {{< margin >}}Don't budget "one chat = one credit." A single question that grounds on your tenant data and takes an action can be 2 + 5 + 10 credits.{{< /margin >}}
 

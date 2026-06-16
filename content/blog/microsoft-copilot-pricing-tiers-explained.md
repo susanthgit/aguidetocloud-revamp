@@ -32,7 +32,7 @@ faq:
   - question: "What are Copilot Credits?"
     answer: "Copilot Credits are the metered currency Microsoft has used since 1 September 2025 (they replaced the older per-message billing). Instead of a flat per-user licence, certain advanced AI features and agent actions are billed by the credit — a pay-as-you-go model an admin enables. They're how Microsoft meters agent work in Copilot Chat and Copilot Studio."
   - question: "How much does Copilot Studio cost?"
-    answer: "Copilot Studio is pay-as-you-go. It's billed in Copilot Credits — either pay-as-you-go or prepaid — and some employee-facing agent usage is zero-rated for Microsoft 365 Copilot customers within fair-use limits. Exact rates change, so confirm current pricing on Microsoft's Copilot Studio pricing page. A dedicated Copilot Studio pricing spoke is coming in this cluster."
+    answer: "Copilot Studio is pay-as-you-go. It's billed in Copilot Credits — either pay-as-you-go or prepaid — and some employee-facing agent usage is zero-rated for Microsoft 365 Copilot customers within fair-use limits. Exact rates change, so confirm current pricing on Microsoft's Copilot Studio pricing page. The dedicated Copilot Studio pricing guide in this cluster has the full breakdown."
   - question: "Do I need a Microsoft 365 licence to use Copilot?"
     answer: "For free chat, no — Free Copilot works with any account. For in-app AI in your personal Office apps you need a consumer plan such as Microsoft 365 Premium (or a Personal/Family plan, which now include Copilot for the owner). For Microsoft 365 Copilot (the work version) you need a qualifying base plan — Business Basic/Standard/Premium, Microsoft 365 E3/E5, Office 365 E1/E3/E5, F-plans and more — before you can add the $30 Copilot licence."
   - question: "Which Copilot tier is right for me?"
@@ -106,11 +106,11 @@ The work version. Your IT admin deploys it as an add-on to a qualifying base pla
 
 ### Copilot Studio — pay-as-you-go
 Where you build *custom* agents — the ones that take actions, call APIs, and run workflows. Pricing is consumption-based — **pay-as-you-go or prepaid Copilot Credits** — with some employee-facing agent usage zero-rated for Microsoft 365 Copilot customers (within fair-use limits).
-→ *Dedicated Copilot Studio pricing spoke coming in this cluster.* For the build-tool comparison, see [Agent Builder vs Copilot Studio vs Foundry](/blog/agent-builder-vs-copilot-studio-vs-foundry/).
+→ **[Is Copilot Studio Free? Pricing & Credits Explained](/blog/copilot-studio-pricing/)** — the dedicated pricing guide. For the build-tool comparison, see [Agent Builder vs Copilot Studio vs Foundry](/blog/agent-builder-vs-copilot-studio-vs-foundry/).
 
 ### Copilot Credits — the meter, not a plan
 Since **1 September 2025**, Copilot Credits are the metered currency Microsoft uses for advanced AI and agent actions (they replaced the older per-message billing). Rather than a flat per-user fee, certain actions draw down credits an admin has enabled — the pay-as-you-go backbone behind Copilot Chat agents and Copilot Studio.
-→ *Dedicated Copilot Credits spoke coming in this cluster.*
+→ **[What Are Copilot Credits? Rates & Costs Explained](/blog/copilot-credits-explained/)** — the dedicated credits guide.
 
 <!-- 📸 Screenshot placeholder: admin centre → Copilot → Billing / usage (pay-as-you-go toggle) — Sush to capture -->
 
@@ -131,4 +131,6 @@ Since **1 September 2025**, Copilot Credits are the metered currency Microsoft u
 - **[Microsoft 365 Copilot (Licensed) — what the work version unlocks](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/)**
 - **[Microsoft 365 Copilot Chat — the free tier, explained](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/)**
 - **[How Microsoft 365 Copilot works, layer by layer](/blog/how-microsoft-365-copilot-works-layer-by-layer/)** — why the work version costs more
-- *Coming in this cluster:* What replaced Copilot Pro (Microsoft 365 Premium explained) · Copilot Free vs Premium vs Microsoft 365 Copilot · Copilot Studio pricing · Copilot Credits explained
+- **[Is Copilot Pro Discontinued? Microsoft 365 Premium Explained](/blog/microsoft-365-premium-explained/)** — what replaced Copilot Pro
+- **[Is Copilot Studio Free? Pricing & Credits Explained](/blog/copilot-studio-pricing/)** — what a Copilot Studio build costs
+- **[What Are Copilot Credits? Rates & Costs Explained](/blog/copilot-credits-explained/)** — the agent-work meter, explained
