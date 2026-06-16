@@ -80,30 +80,63 @@ Why? Cowork's planner is good at decomposing outcomes into steps. Pre-decomposed
 
 <!-- SCREENSHOT: plan view with numbered steps and "Approve" / "Modify" buttons — Sush to capture from tenant -->
 
-When Cowork has read your prompt, it shows you a plan before running. You can approve as-is, modify a step, or reject and re-prompt.
+This is the step most people skim — and it's the one that saves you the most time. Before Cowork touches anything, it shows you a **plan**: a numbered list of the steps it intends to take, and which apps or skills it'll use at each one (e.g. *"1. Search Outlook and Teams for Contoso → 2. Pull the latest proposal from SharePoint → 3. Draft a briefing in Word"*).
+
+You have three options:
+
+- **Approve as-is** — the plan looks right, let it run.
+- **Modify a step** — change, reorder, or remove a step before it runs ("skip the Teams search, just use email").
+- **Reject and re-prompt** — the plan misunderstood you. Re-word your outcome and try again.
+
+The plan is your **early-warning system**. It's far cheaper to fix a wrong assumption here — before any work happens — than to unpick the output afterwards. On your first few runs, read it properly: it's the clearest window into how Cowork interpreted what you asked for.
 
 ---
 
 ## Step 4 — Approval checkpoints
 
-Cowork pauses at sensitive actions to ask permission. What triggers a checkpoint, how to approve, how to redirect mid-task.
+Cowork runs on its own for the low-risk steps, but it **pauses at sensitive actions** to ask permission first. This is the safety rail that makes delegating comfortable.
+
+**What triggers a checkpoint** — anything hard to undo or that leaves your hands:
+
+- Sending or replying to email
+- Scheduling, cancelling, or rescheduling meetings
+- Sharing or posting files
+- Posting to a Teams channel
+- Anything customer- or externally-facing
+
+**What it looks like:** Cowork stops, shows you exactly what it's about to do (the draft email, the meeting change), and waits. Sometimes it asks a clarifying question first — *"I found an NDA in the shared folder — include contract details?"*
+
+**Your moves at a checkpoint:**
+
+- **Approve** — looks good, go ahead.
+- **Edit, then approve** — fix the draft first, then let it send.
+- **Decline** — don't do this step; Cowork moves on or asks what you'd prefer.
+
+> 💡 Treat the checkpoint as a *real* review, not a reflex click — especially for anything that leaves your tenant. (For how admins use checkpoints as a governance control, see the [Admin & governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).)
 
 ---
 
 ## Step 5 — Stop or redirect mid-task
 
-How to pause Cowork in flight, redirect to a different goal, or stop entirely. The "I can stop it at any time" promise is real and matters.
+The "I can stop it at any time" promise is real, and it's worth knowing how — it's what lets you hand off work without feeling like you've lost the wheel.
+
+- **Pause / stop** — hit stop and Cowork halts immediately. Nothing that needed a checkpoint will have gone out, so a stop is always safe.
+- **Redirect** — you don't have to start over. Just tell it what changed: *"Actually, focus on the financial data, not the customer emails,"* and it adjusts the rest of the run.
+- **Abandon** — end the task entirely. Any drafts or partial work it already produced stay behind for you to keep or bin — nothing is forced through.
+
+You're never locked into a runaway task. If a plan looked right but the execution drifts, stop it, tweak your wording, and run again — that loop is the normal way to work with Cowork, not a sign of failure.
 
 ---
 
 ## Step 6 — Troubleshooting
 
-Common things that go wrong on first use, and how to recover:
+The most common first-run snags, and how to recover:
 
-- Cowork doesn't show up in the Agent Store → likely a licence or tenant config issue
-- A skill fails partway through → why, and how to retry
-- Cowork "loops" or runs longer than expected → how to spot it and what to do
-- Cowork accesses the wrong file → why this happens and how to redirect
+- **Cowork doesn't show up** → almost always a licence or tenant-config issue, not a bug. Check you have a Microsoft 365 Copilot licence and that your admin has enabled Cowork (Frontier opt-in + Anthropic on). Full checklist in the [Admin & governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).
+- **A step fails partway through** → Cowork usually tells you which step and why (a file it couldn't reach, a permission it doesn't have). Re-run just that step, or adjust the prompt to point it at something it can access.
+- **It runs longer than expected** → big, vague outcomes spawn long plans. If it feels like it's going in circles, stop it and narrow the ask ("just the email, not the deck too").
+- **It accesses the wrong file** → usually two files with similar names, or messy SharePoint permissions surfacing something unexpected. Redirect it to the right file by name, and flag the permissions issue to your admin.
+- **The output isn't quite right** → remember Step 3. Nine times out of ten a weak result traces back to an outcome that was too vague — sharpen the prompt and the plan improves.
 
 ---
 
