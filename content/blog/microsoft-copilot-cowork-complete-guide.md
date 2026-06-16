@@ -66,7 +66,7 @@ Instead of being an assistant that waits for your instructions, {{< hi >}}Cowork
 
 This guide explains everything — in plain language, with real scenarios, and honest opinions on what's great and what's not quite there yet.
 
-**Quick links:** [🚀 6 Prompts to Try Today](#6-high-impact-cowork-prompts-you-can-use-today) · [What is Cowork?](#what-is-copilot-cowork) · [Regular Copilot vs Cowork](#how-is-this-different-from-regular-copilot) · [Scenarios by role](#real-scenarios--what-can-cowork-actually-do) · [What's an Agentic Harness?](#what-is-an-agentic-harness--and-why-does-copilot-cowork-need-one) · [Skills & Extending Cowork](#extend-cowork-with-skills) · [How to get it](#how-to-get-microsoft-copilot-cowork) · [Cowork vs Claude Cowork](#copilot-cowork-vs-claude-cowork) · [FAQ](#frequently-asked-questions)
+**Quick links:** [📍 Pick your path (all 6 spokes)](#pick-your-path--the-cowork-series) · [🚀 6 Prompts to Try Today](#6-high-impact-cowork-prompts-you-can-use-today) · [What is Cowork?](#what-is-copilot-cowork) · [Regular Copilot vs Cowork](#how-is-this-different-from-regular-copilot) · [Scenarios by role](#real-scenarios--what-can-cowork-actually-do) · [What's an Agentic Harness?](#what-is-an-agentic-harness--and-why-does-copilot-cowork-need-one) · [Skills & Extending Cowork](#extend-cowork-with-skills) · [How to get it](#how-to-get-microsoft-copilot-cowork) · [Cowork vs Claude Cowork](#copilot-cowork-vs-claude-cowork) · [FAQ](#frequently-asked-questions)
 
 ---
 
@@ -79,6 +79,27 @@ This guide explains everything — in plain language, with real scenarios, and h
 - **Available now** via the [Frontier program](https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-overview#frontier) — currently rolling out in select markets, starting with US English
 - **Requires:** Microsoft 365 Copilot licence + Frontier enrollment + Anthropic enabled
 - **Not the same as Claude Cowork** — Copilot Cowork runs in your tenant (cloud), Claude runs on your desktop (local)
+
+---
+
+## Pick your path — the Cowork series
+
+This guide is the **hub** of a 7-part Cowork series. Read it end-to-end for the full picture, or jump straight to the spoke that matches what you need — each one is its own bookmarkable deep-dive.
+
+**Start here · learn to use Cowork**
+
+- **[How to use it, step by step](/blog/microsoft-copilot-cowork-how-to-use-step-by-step/)** — find Cowork in your tenant, write outcome-first prompts, review the plan, approve checkpoints, and troubleshoot the first-run snags.
+- **[Prompts to try](/blog/microsoft-copilot-cowork-prompts-to-try/)** — copy-paste prompts with honest usefulness ratings, tested on a real tenant. (See also the [Cowork prompts collection](/prompts/copilot-cowork/).)
+- **[Use cases by role](/blog/microsoft-copilot-cowork-use-cases-by-role/)** — what IT, Sales, HR, Finance, Marketing, Executive, and customer-facing teams actually do with it.
+
+**Run Cowork in your org**
+
+- **[Admin enablement & governance](/blog/microsoft-copilot-cowork-admin-and-governance/)** — turning it on, the built-in governance controls, the SharePoint oversharing check, and a pilot rollout playbook.
+- **[Pricing & cost management](/blog/microsoft-copilot-cowork-pricing-cost-management/)** — the new hybrid model (entry seat + consumption) and how to keep an eye on what it costs.
+
+**Extend Cowork**
+
+- **[Skills & plugins](/blog/microsoft-copilot-cowork-skills-and-plugins/)** — the built-in skills, plus authoring your own custom skills, with four worked examples end-to-end.
 
 ---
 
