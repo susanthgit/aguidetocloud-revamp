@@ -36,6 +36,10 @@ const HARDCODED_COUNT_PATTERNS = [
 // Attribute names that legitimately follow an `alt=`
 const NEXT_ATTRS = ['loading', 'src', 'class', 'style', 'width', 'height', 'title', 'id', 'srcset', 'sizes', 'decoding', 'fetchpriority']
 
+// Files that intentionally do NOT use the notebook blog layout (section index, etc.)
+// Add a filename here only for a DELIBERATE exception — see check #6 below.
+const NOTEBOOK_EXEMPT = new Set(['_index.md'])
+
 function isMonthlyRecap(fname) {
   return /microsoft-365-copilot-(january|february|march|april|may|june|july|august|september|october|november|december)-\d{4}-updates\.md/i.test(fname)
 }
@@ -43,6 +47,18 @@ function isMonthlyRecap(fname) {
 for (const fname of blogFiles) {
   const relPath = `content/blog/${fname}`
   const text = readFileSync(join(blogDir, fname), 'utf-8')
+
+  // --- 6: notebook layout convention (set 2026-06-16) ---
+  // The site blog style is `layout: "notebook"` (41/46 posts at time of writing).
+  // Leakage post-mortem: new pricing spokes were copied from a sibling that itself
+  // lacked the field, so they silently shipped in the default layout (no notebook
+  // chrome). No gate caught it because SEO/HTML/posture checks never looked at layout.
+  // This enforces the convention; add deliberate exceptions to NOTEBOOK_EXEMPT above.
+  if (!NOTEBOOK_EXEMPT.has(fname)) {
+    if (!/^layout:\s*["']?notebook["']?\s*$/m.test(text)) {
+      errors.push(`${relPath} missing \`layout: "notebook"\` — the site blog style (nearly every post uses it). Add it to the front matter (with \`stamp\` + \`intro_note\`), or allowlist this file in NOTEBOOK_EXEMPT if it is a deliberate non-notebook page.`)
+    }
+  }
 
   // --- 1/2/3: <img> tag checks ---
   const imgTagRe = /<img\b[^>]*?\/?>/gi

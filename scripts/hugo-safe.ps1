@@ -94,6 +94,28 @@ if (-not $isServer) {
             }
         }
     }
+
+    # 3d. Blog HTML hygiene guardrail — fires when blog content changed.
+    # (added 2026-06-16 after the notebook-layout leakage: 4 pricing spokes
+    # shipped in the DEFAULT layout because no gate checked `layout: notebook`.
+    # Also covers img alt/src hygiene + monthly-recap anchor checks.)
+    if ($blogChanged) {
+        Write-Host "📝 Blog content changed — running blog HTML hygiene guardrail..." -ForegroundColor Cyan
+        $blogHtmlScript = Join-Path $PSScriptRoot "check-blog-html.mjs"
+        if (Test-Path $blogHtmlScript) {
+            $blogHtmlOutput = & node $blogHtmlScript 2>&1
+            $blogHtmlExit = $LASTEXITCODE
+            if ($blogHtmlExit -ne 0) {
+                Write-Host "❌ BLOCKED: Blog HTML hygiene guardrail failed!" -ForegroundColor Red
+                $blogHtmlOutput | Where-Object { $_ -match "content/|missing|ERRORS|BLOCKED" } | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+                Write-Host "  Fix: every blog post needs layout: 'notebook' (+ stamp + intro_note), valid img alt/src." -ForegroundColor Yellow
+                Pop-Location
+                exit 1
+            } else {
+                Write-Host "✅ Blog HTML hygiene guardrail clean." -ForegroundColor Green
+            }
+        }
+    }
 }
 
 # 4. Run Hugo with the passed arguments

@@ -7,6 +7,9 @@ date: 2026-06-16
 lastmod: 2026-06-16
 card_tag: "Copilot"
 tag_class: "ai"
+layout: "notebook"
+stamp: "what changed"
+intro_note: "↗ the word on your usage page changed — here's what that actually means"
 images: ["images/og/blog/copilot-messages-vs-copilot-credits.jpg"]
 og_headline: "Copilot Messages vs Credits"
 og_glyph: "compare"

@@ -7,6 +7,9 @@ date: 2026-06-16
 lastmod: 2026-06-16
 card_tag: "AI Agents"
 tag_class: "ai"
+layout: "notebook"
+stamp: "pricing guide"
+intro_note: "↗ 'is Copilot Studio free?' — yes, no, and it depends (here's the line)"
 images: ["images/og/blog/copilot-studio-pricing.jpg"]
 og_headline: "Is Copilot Studio Free?"
 og_glyph: "compare"
@@ -25,7 +28,7 @@ faq:
   - question: "What is a Copilot Credit?"
     answer: "Copilot Credits are the billing unit Microsoft moved Copilot Studio to on 1 September 2025 (they replaced the old per-message billing — the pack quantities and rates didn't change, just the name and the way usage is counted). Different actions consume different amounts: a classic answer is 1 credit, a generative answer 2, an agent action 5, tenant graph grounding 10, and so on. One user turn can burn several credit types."
   - question: "Do unused Copilot Studio credits roll over?"
-    answer: "No. Prepaid Copilot Credit capacity is monthly — unused credits don't carry into the next month, and if you exhaust the pack, usage can be limited. Pay-as-you-go has no monthly cap but no discount either: you're billed for the actual credits used at $0.01 each. So right-size your prepaid packs, or stay on pay-as-you-go while usage is still unpredictable."
+    answer: "No. Prepaid Copilot Credit capacity is monthly — unused credits don't carry into the next month, and if you exhaust the pack, usage can be limited. Pay-as-you-go isn't bounded by a prepaid pack and has no discount either — you're billed for the actual credits used at $0.01 each, and admins can still set per-agent monthly limits. So right-size your prepaid packs, or stay on pay-as-you-go while usage is still unpredictable."
   - question: "What's the difference between Agent Builder and Copilot Studio for cost?"
     answer: "Microsoft 365 Copilot Agent Builder is the lightweight, in-context builder included for Microsoft 365 Copilot licensed users — great for internal Microsoft 365 agents at no extra charge. Standalone Copilot Studio is what you need (and pay for) when you publish to external channels, let unlicensed users access the agent, or want pay-as-you-go / prepaid capacity. Rule of thumb: internal + licensed = Agent Builder; external or at-scale = Copilot Studio."
 sitemap:
@@ -60,7 +63,7 @@ founder_note: |
 | Agent used by **authenticated, Microsoft 365 Copilot–licensed** users **inside** Microsoft 365 Copilot / Teams / SharePoint | Generally **included / zero-rated** (fair-use limits) |
 | The same agent exposed **outside** those Microsoft 365 surfaces | **Yes** |
 | **External / customer-facing / anonymous** users, or users **without** a Microsoft 365 Copilot licence | **Yes** |
-| **Autonomous / scheduled / triggered** runs and agent actions | **Yes** |
+| **Autonomous / scheduled / triggered** agent runs | **Yes** |
 | Premium connectors, Dataverse, Power Automate, Azure services the agent calls | Separate costs (not Copilot Credits) |
 
 The phrase to remember: it's included **only when** usage is internal, authenticated, licensed, *and* on a Microsoft 365 Copilot surface. Anything past that, the meter runs.
@@ -103,7 +106,7 @@ Copilot Studio has three ways to pay (Microsoft labels them **Licence**, **Pre-p
 | **Prepaid capacity pack** | A monthly subscription block of credits | **$200 per 25,000 credits / month** (≈$0.008/credit if fully used) | Predictable, steady usage |
 | **Pre-purchase plan** | Bulk **Copilot Credit Commit Units (CCCUs)** bought up front | Volume/agreement pricing | Larger, committed rollouts |
 
-⚠️ **Prepaid credits don't roll over** — unused credits in a month are lost, and capacity can be enforced if you go over. Pay-as-you-go has no cap but no discount either.
+⚠️ **Prepaid credits don't roll over** — unused credits in a month are lost, and capacity can be enforced if you go over. Pay-as-you-go isn't bounded by a prepaid pack, but no discount either.
 
 **Which should you choose?** Use **pay-as-you-go** for pilots and unpredictable or low volume; **prepaid capacity** once usage is steady and consistently near or above 25,000 credits/month; and the **pre-purchase plan (CCCUs)** for larger committed rollouts your procurement prefers to handle up front.
 

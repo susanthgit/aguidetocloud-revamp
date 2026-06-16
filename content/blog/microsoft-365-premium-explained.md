@@ -7,6 +7,9 @@ date: 2026-06-16
 lastmod: 2026-06-16
 card_tag: "Copilot"
 tag_class: "ai"
+layout: "notebook"
+stamp: "upgrade brief"
+intro_note: "← where did Copilot Pro go? the short, honest version"
 images: ["images/og/blog/microsoft-365-premium-explained.jpg"]
 og_headline: "Is Copilot Pro Discontinued?"
 og_glyph: "compare"
@@ -17,7 +20,7 @@ tags:
   - microsoft-365-premium
 faq:
   - question: "Is Copilot Pro discontinued?"
-    answer: "Yes — for consumers. Microsoft stopped selling the standalone $20/month Copilot Pro in late 2025. If you already subscribe, you keep access until you cancel or support ends on 1 August 2026; it just won't renew after that. There's no new sign-up for Copilot Pro any more — the consumer plan is now Microsoft 365 Premium."
+    answer: "Yes — for consumers. Microsoft stopped selling the standalone $20/month Copilot Pro in late 2025. If you already subscribe, you keep access until you cancel or support ends on 1 August 2026; it just won't renew after that. There's no new sign-up for Copilot Pro any more — the consumer plan that carries its features forward is Microsoft 365 Premium."
   - question: "What replaced Copilot Pro?"
     answer: "Microsoft 365 Premium (~$19.99/month, or $199.99/year). It carries Copilot Pro's features forward — AI inside Word, Excel, PowerPoint and Outlook, priority model access and higher usage limits — and bundles them with the Microsoft 365 apps and up to 6 TB of OneDrive storage in one plan, so there's no separate base subscription to add."
   - question: "How much is Microsoft 365 Premium?"
@@ -128,7 +131,7 @@ First, don't panic — **nothing is forced on you.** Microsoft isn't moving you 
 1. **Decide if you still want Copilot in your Office apps.** If you do, you'll move to Microsoft 365 Premium. If you only ever used the free web chat, you can let Pro lapse and lose nothing important.
 2. **Check your account.** Go to your [Microsoft account subscriptions page](https://account.microsoft.com/services) to see your Copilot Pro renewal/end date and what you're currently paying.
 3. **Switch when you're ready.** Subscribe to **Microsoft 365 Premium** from [microsoft.com/microsoft-365](https://www.microsoft.com/microsoft-365). If you already pay for Microsoft 365 Personal or Family, the upgrade path is linked from your account — Microsoft documents an upgrade credit for your remaining time when you switch, so check the Services & subscriptions page for your exact figure before you confirm.
-4. **If you do nothing:** your Copilot Pro stops at its end date and you stop being charged. Your Office apps keep working. You lose the *Copilot Pro* boosts inside them — but if you also have Microsoft 365 Personal or Family, those plans now include some Copilot for the owner, and the free Copilot web chat stays either way.
+4. **If you do nothing:** your Copilot Pro stops at its end date and you stop being charged. Any Office apps covered by your Microsoft 365 subscription keep working. You lose the *Copilot Pro* boosts inside them — but if you also have Microsoft 365 Personal or Family, those plans now include some Copilot for the owner, and the free Copilot web chat stays either way.
 
 ### Before you switch — a 6-point checklist
 

@@ -7,6 +7,9 @@ date: 2026-06-16
 lastmod: 2026-06-16
 card_tag: "Copilot"
 tag_class: "ai"
+layout: "notebook"
+stamp: "credits explained"
+intro_note: "← so what *is* a Copilot Credit? the meter, minus the jargon"
 images: ["images/og/blog/copilot-credits-explained.jpg"]
 og_headline: "What Are Copilot Credits?"
 og_glyph: "list"
