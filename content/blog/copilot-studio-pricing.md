@@ -146,6 +146,8 @@ If you have **Microsoft 365 Copilot**, a lot of Copilot Studio usage is **zero-r
 
 So the mental model: **internal + licensed + Microsoft 365 surface = mostly free; everything past that = metered.**
 
+→ Wondering specifically whether a **Microsoft 365 Copilot licence** covers credits? See [Does Microsoft 365 Copilot include Copilot Credits?](/blog/copilot-credits-explained/#does-microsoft-365-copilot-include-copilot-credits)
+
 ---
 
 ## What changes your cost? {#cost-drivers}

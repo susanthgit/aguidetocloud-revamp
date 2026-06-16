@@ -110,7 +110,7 @@ Where you build *custom* agents — the ones that take actions, call APIs, and r
 
 ### Copilot Credits — the meter, not a plan
 Since **1 September 2025**, Copilot Credits are the metered currency Microsoft uses for advanced AI and agent actions (they replaced the older per-message billing). Rather than a flat per-user fee, certain actions draw down credits an admin has enabled — the pay-as-you-go backbone behind Copilot Chat agents and Copilot Studio.
-→ **[What Are Copilot Credits? Rates & Costs Explained](/blog/copilot-credits-explained/)** — the dedicated credits guide.
+→ **[What Are Copilot Credits? Rates & Costs Explained](/blog/copilot-credits-explained/)** — the dedicated credits guide. Not sure if your Microsoft 365 Copilot licence already covers it? → [Does Microsoft 365 Copilot include Copilot Credits?](/blog/copilot-credits-explained/#does-microsoft-365-copilot-include-copilot-credits)
 
 <!-- 📸 Screenshot placeholder: admin centre → Copilot → Billing / usage (pay-as-you-go toggle) — Sush to capture -->
 

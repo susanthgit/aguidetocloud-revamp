@@ -32,7 +32,7 @@ faq:
   - question: "Do Copilot Credits expire or roll over?"
     answer: "Prepaid capacity packs are monthly — they replenish each month, and unused prepaid credits do not roll over to the next month. Pay-as-you-go has no monthly cap and nothing to lose, because you're billed only for the credits you actually use at $0.01 each. Pre-purchased CCCUs are a one-year prepaid commitment bought up front."
   - question: "Are Copilot Credits included with Microsoft 365 Copilot?"
-    answer: "Partly. For Microsoft 365 Copilot licensed users, employee-facing agent usage inside Microsoft 365 Copilot, Teams or SharePoint is zero-rated within fair-use limits — including classic and generative answers, agent actions and Microsoft Graph grounding. It is not zero-rated for external or customer-facing agents, unlicensed users, or standalone channels; those consume paid Copilot Credits."
+    answer: "Not as a credit allowance — a Microsoft 365 Copilot licence doesn't come with a monthly bucket of credits. But a lot of usage is zero-rated: for licensed users, employee-facing agents inside Microsoft 365 Copilot, Teams or SharePoint run without paid credits, within fair-use limits (classic and generative answers, agent actions and Microsoft Graph grounding). You still pay credits for external or customer-facing agents, unlicensed users, and standalone channels."
   - question: "Are Copilot Credits the same as Azure OpenAI tokens?"
     answer: "No. Tokens measure raw model input and output at the API level. Copilot Credits are Microsoft's product-level billing meter for Copilot agent actions — answering, grounding, taking an action, running a flow. A single credit-charged action may use many tokens underneath, but you're billed in credits, not tokens, for Copilot Studio and Copilot agent usage."
   - question: "How do I see my Copilot Credit usage?"
@@ -156,9 +156,34 @@ Just as important as what costs credits is what doesn't:
 
 - **Per-user subscriptions.** Free Copilot, Microsoft 365 Premium and the human-facing Microsoft 365 Copilot experience are flat subscriptions — using Copilot as a person doesn't burn credits.
 - **Building and testing.** The Copilot Studio trial and in-context Agent Builder let you create and try agents — basic building and testing generally doesn't require paid consumption; publishing and real usage is where credits start.
-- **Internal, licensed, in-Microsoft-365 agent use.** For **Microsoft 365 Copilot licensed** users, employee-facing agents running **inside Microsoft 365 Copilot, Teams or SharePoint** are **zero-rated** within fair-use limits — including classic answers, generative answers, agent actions, Microsoft Graph grounding, agent flows and AI tools.
+- **Internal, licensed, in-Microsoft-365 agent use.** A lot of employee-facing usage is **zero-rated** for **Microsoft 365 Copilot licensed** users — the [decision table below](#does-microsoft-365-copilot-include-copilot-credits) shows exactly when.
 
-⚠️ "Zero-rated" isn't quite "unlimited free credits" — it's *included within fair-use limits* for that specific employee-facing scenario. Push past it — external or customer-facing agents, unlicensed users, or standalone channels (public web, phone, messaging apps) — and the meter runs.
+⚠️ "Zero-rated" isn't quite "unlimited free credits" — it's *included within fair-use limits* for that specific employee-facing scenario.
+
+### Does Microsoft 365 Copilot include Copilot Credits? {#does-microsoft-365-copilot-include-copilot-credits}
+
+A common question, so here's the direct answer: **no — a Microsoft 365 Copilot licence doesn't come with a monthly allowance of Copilot Credits.** What it gives you is **zero-rated** usage for the right scenarios, not a credit balance you can spend anywhere.
+
+**Included (zero-rated) when *all* of these are true:**
+- The user has a **Microsoft 365 Copilot licence**
+- The agent is **employee-facing / internal**
+- It runs **inside Microsoft 365 Copilot, Teams or SharePoint**
+- Usage stays within **fair-use limits**
+
+**You still buy credits for:**
+- **External / customer-facing** agents
+- **Unlicensed** users (no Microsoft 365 Copilot licence)
+- **Standalone channels** — public web, phone, messaging apps
+- **Autonomous, scheduled or triggered** runs, and any usage **outside the licensed, employee-facing Microsoft 365 boundary**
+
+**The decision line:** if it's internal **and** licensed **and** on a Microsoft 365 surface **and** within fair-use limits, you probably don't need to buy credits. If any part of that sentence is false, budget for credits.
+
+| Scenario | Credits needed? |
+|---|---|
+| Licensed employees using an internal HR agent inside Teams | **No** — zero-rated (fair-use) |
+| That same agent opened to **customers** on your public website | **Yes** |
+| **Unlicensed** staff using an internal agent | **Yes** |
+| An **autonomous or scheduled** agent run — even for internal operations | **Yes** — autonomous agent actions consume credits |
 
 ---
 
