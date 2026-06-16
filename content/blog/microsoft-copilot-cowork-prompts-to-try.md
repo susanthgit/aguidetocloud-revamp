@@ -217,6 +217,49 @@ Compared to a Word doc that I'd open, read once, and lose in my Files — this i
 
 ---
 
+### Skill: `linkedin-carousel-microsoft` — *⭐⭐⭐⭐⭐ · Tested 16 Jun 2026*
+
+**Trigger phrase used:** `linkedin carousel about Cowork's built-in skill quality scoring`
+
+**Why this topic:** the most meta test possible — a LinkedIn carousel ABOUT the skill quality scoring feature we'd just spent hours discovering. On-brand, demo-ready, and a real post I might actually publish.
+
+**The make-or-break question:** would the notebook aesthetic from my blog (cream paper, ink-blue text, pen-red underlines, handwritten title font, no emoji) actually survive translation into a PowerPoint slide? That's the whole reason this skill exists.
+
+**What Cowork did (in ~3 minutes):**
+
+It followed its own 8-step SKILL.md workflow:
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/98-cowork-test-f-thought-process.png" alt="Cowork's thought process for the LinkedIn carousel. Top line reads 'Reviewed custom skill Linkedin carousel microsoft'. Below: 'The user wants a LinkedIn carousel about Cowork's built-in skill quality scoring. This is a specific topic, so I can proceed directly without clarification.' Then an eight-step plan — 1. Topic is clear: Cowork's built-in skill quality scoring, 2. Research the topic via deep-research, 3. Check for template in OneDrive, 4. Plan slide structure, 5. Apply visual spec, 6. Voice tests, 7. Generate files, 8. Surface summary in chat. A status line reads 'Searched the web, found 10 results.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+It generated BOTH a .pptx (for editing) and a .pdf (for LinkedIn's document-upload format), exactly as the SKILL.md specified:
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/99-cowork-test-f-workspace-pptx-pdf.png" alt="Cowork's Workspace panel for the carousel build. Plan marked 3 of 3 with three ticked steps — Research Cowork skill quality scoring, Check OneDrive for carousel template, Generate carousel PPTX and PDF. An Output section with two files — linkedin-carousel-cowork-skill-quality dot pptx and the matching dot pdf. A Skills and Plugins section listing three — the linkedin-carousel skill, Deep Research, and PowerPoint." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+And the chat surfaced a per-slide summary, a ready-to-paste LinkedIn caption (189 characters), and suggested hashtags:
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/100-cowork-test-f-slide-summary.png" alt="The seven-slide carousel summary in chat. Slide 1 TITLE 'Cowork grades your skills before you do' with a subtitle about built-in quality scoring and a red underline note. Slide 2 THE QUESTION 'Have you ever built a custom skill in Cowork and wondered if it will actually trigger when you need it?' with a tilted margin note 'the moment of doubt'. Slide 3 INSIGHT 1 'Every skill gets evaluated before it goes live' with a margin note 'automatic, not manual'. Slide 4 INSIGHT 2 'Four dimensions. One honest report.' listing Clarity, Specificity, Scope, Robustness, with a margin note 'your skill's report card' and a faded source note in brackets reading confirm — source: Microsoft community. Slide 5 INSIGHT 3 'Transparency, not just a pass or fail'. Slide 6 TAKEAWAY 'Cowork tells you exactly why a skill is ready — before you have to ask.' Slide 7 RESOURCES plus CTA linking the Cowork overview on learn.microsoft.com, the complete guide on aguidetocloud.com, and the Frontier program, with footer Sush · aguidetocloud.com." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+**The payoff — the rendered title slide:**
+
+<p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/102-cowork-test-f-title-slide-rendered.png" alt="The rendered title slide of the LinkedIn carousel. A cream paper background. A large ink-blue handwritten-style title reading 'Cowork grades your skills before you do' across two lines. A pen-red horizontal underline sits beneath the title. Below, in a monospace typewriter font, the subtitle reads 'How built-in quality scoring makes custom automation better'. No emoji anywhere — the whole slide matches the aguidetocloud.com notebook aesthetic." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+**It worked.** Cream paper, ink-blue handwritten title, the pen-red underline, the monospace subtitle, zero emoji. The skill translated my blog's CSS notebook aesthetic into a real PowerPoint slide.
+
+**Why 5 stars ⭐⭐⭐⭐⭐:**
+
+- ✅ **The aesthetic survived translation** — this was the make-or-break test and it passed. Cream background, ink-blue title, pen-red underline, typewriter subtitle, no emoji.
+- ✅ Generated both .pptx (edit) and .pdf (LinkedIn upload) without being reminded.
+- ✅ Followed the 3-hook formula across 7 slides — hook → question → insights → takeaway → resources.
+- ✅ Caption came in at 189 characters (inside LinkedIn's sweet spot) with relevant hashtags.
+- ✅ **The no-fabrication guardrail fired inside the generated content** — Slide 4 carried a `[confirm — source: Microsoft community]` note flagging a claim it couldn't fully verify. The skill polices its own facts.
+- ✅ Resources slide cited the official Microsoft Learn Cowork page + my own blog hub — exactly the references I'd want.
+
+**Would I demo this to a customer?** Yes, and I'd go further — I'd actually post it. This is the first skill output of the four that's ready to ship externally with no edits. The fact that it self-flagged the one unverifiable claim means I know exactly what to double-check before publishing.
+
+**One honest caveat:** the score on this skill was 91/100 (the external-facing Robustness ceiling), and Cowork recommended a "behavioural review" before relying on it. This test WAS that behavioural review — and it passed. So the 91 is more reassuring now than it looked on paper.
+
+---
+
 ## ☀️ Morning Triage and Priority Setter
 
 *Tested: 🕓 pending · Rating: 🕓 pending · Best for: everyone*

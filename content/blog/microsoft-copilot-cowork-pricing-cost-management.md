@@ -162,6 +162,36 @@ How Cowork credits show up on your Microsoft bill, EA vs MCA differences, PAYG v
 
 ---
 
+## ⏳ Grace period and billing setup (16–30 June 2026)
+
+> 🚧 **Structure pre-staged 16 Jun 2026 · exact rules confirmed at GA.** This is time-sensitive billing guidance — every date and rule below is verified against official Microsoft sources before it ships. Do not act on this section until it shows a "verified" date.
+
+There's a **transition window** for organisations moving from the Frontier preview into the GA billing model.
+
+<!-- TODO Atlas/Sush GA-day: HIGH STAKES — verify EVERY detail below against official Microsoft Learn / M365 admin centre / Message Center before publishing. Billing-guidance errors cause real customer financial confusion. Confirm: exact grace dates, who qualifies, what admins must do, what happens if they miss the deadline, how to get support. Source = ga-grace-period-billing todo (internal GA pre-call — NOT publishable until public). -->
+
+| Question | What to confirm at GA |
+|---|---|
+| **How long is the grace period?** | Pre-call indicated **16 June → 30 June 2026** (two weeks). Confirm exact end date. |
+| **Who qualifies?** | Pre-call indicated **organisations with active Cowork users in Frontier prior to 16 June**. Confirm the qualification rule. |
+| **What must admins do?** | Pre-call indicated **set up and enable usage billing before 1 July**. Confirm the exact admin steps + where in the admin centre. |
+| **What happens if you miss it?** | Confirm the consequence (does consumption pause, block, or fall back to a default?). |
+| **Where to get help?** | Pre-call mentioned the account team. Confirm the official support path for customers. |
+
+### Admin action checklist (to finalise at GA)
+
+Once verified, this becomes a clear "do this by 1 July" checklist for IT admins:
+
+1. ☐ Confirm whether your org qualifies (active Frontier Cowork usage before 16 June)
+2. ☐ Set up usage billing in the admin centre *(exact location confirmed at GA)*
+3. ☐ Enable Copilot Credits (PAYG or prepurchase) before 1 July
+4. ☐ Set budgets / caps in the FinOps Experience if you want spend control from day one
+5. ☐ Contact your account team or Microsoft support if anything is unclear
+
+> ⚠️ **If your organisation used Cowork during the Frontier preview, don't ignore this window.** The grace period is the bridge from "free preview" to "metered GA" — missing the billing-enablement step could interrupt access. (Exact consequence confirmed at GA.)
+
+---
+
 ## Frequently asked questions
 
 <!-- PRE-GA STUB — populated post-GA from real customer questions -->
