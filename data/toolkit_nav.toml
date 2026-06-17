@@ -246,6 +246,18 @@ visual = "gauge"
 is_tool = true
 
 [[tools]]
+url = "/cowork-cost-calculator/"
+emoji = "💸"
+icon = "dollar-sign"
+name = "Cowork Cost Calculator"
+short = "Cowork Cost"
+desc = "Estimate your monthly Microsoft Copilot Cowork burn — model usage, see the rate, control spend"
+color = "#6366F1"
+category = "copilot-ai"
+visual = "gauge"
+is_tool = true
+
+[[tools]]
 url = "/token-calculator/"
 emoji = "🪙"
 icon = "dollar-sign"

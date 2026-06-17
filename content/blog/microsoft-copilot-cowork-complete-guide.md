@@ -579,6 +579,8 @@ Cowork has a two-part cost: a per-user Microsoft 365 Copilot seat, plus usage-ba
 | **M365 Copilot seat** (on E3 or E5) + Copilot Credits | $30/user/month + usage | Cowork at GA — the seat is the entry point, tasks billed in credits ($0.01/credit PayGo, or prepaid) |
 | **[Microsoft 365 E7](/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know/)** (Frontier Suite) | $99/user/month | Bundles the Copilot seat with Agent 365, Entra Suite, and everything in E5 (Cowork usage still billed in credits) |
 
+Want a number for your team? Our free **[Cowork Cost Calculator](/cowork-cost-calculator/)** models the monthly burn — set users, prompts per month, and task complexity to see it live.
+
 > 📝 **Good to know:** Cowork runs on browser, desktop, and mobile (iOS + Android via the Microsoft 365 Copilot app), and it's generally available worldwide.
 
 📖 [Copilot Cowork is now generally available](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/)
