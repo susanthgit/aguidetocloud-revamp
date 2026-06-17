@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 16 Jun 2026 23:45:55 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2026 05:10:51 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[SharePoint Online] Admins may be unable to configure search schema mappings in SharePoint Online</title>
@@ -433,6 +433,15 @@ The incident was triggered by an upstream change that altered how certain capaci
       <pubDate>Thu, 14 May 2026 01:40:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Exchange Online] Users may be unable to see the free/busy status of multiple cross-tenant mailboxes in Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1386636</link>
+      <description>[Exchange Online] Users may be unable to see the free/busy status of multiple cross-tenant mailboxes in Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1386636</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft 365 suite] Users may be unable to initiate Office app installations in the My Account portal found within portal.office.com </title>
       <link>https://www.aguidetocloud.com/service-health/#MO1309601</link>
       <description>[Microsoft 365 suite] Users may have been unable to initiate Office app installations in the My Account portal found within portal.office.com.</description>
@@ -449,15 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>investigationSuspended</category>
       <guid isPermaLink="false">SP1314602</guid>
       <pubDate>Wed, 13 May 2026 18:01:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users are unable to access Microsoft 365 services in South America</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1309330</link>
-      <description>[Microsoft 365 suite] Some users were unable to access Microsoft 365 services.</description>
-      <category>Microsoft 365 suite</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">MO1309330</guid>
-      <pubDate>Wed, 13 May 2026 13:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
