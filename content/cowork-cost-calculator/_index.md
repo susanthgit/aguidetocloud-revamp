@@ -12,7 +12,11 @@ sitemap:
   changefreq: monthly
 faq:
   - question: "How does this calculator estimate costs?"
-    answer: "We model your usage pattern (users × prompts/month × task complexity) against Microsoft's GA credit guidance: light tasks ~20 credits, medium ~100 credits, heavy ~400 credits. PayGo rate is $0.01 per Copilot Credit. Your actual burn depends on model choice, tools called, and context size."
+    answer: "We model consumption by worker group — corporate knowledge workers, management & senior leaders, customer-facing workers, and technical workers. For each group you set how many people use Cowork and how their tasks split across light, medium, and heavy, then we apply Microsoft's GA credit guidance (light ~20 credits, medium ~100, heavy ~400 per prompt) and sum across groups. The result is a low–high range in both dollars and Copilot Credits. PayGo rate is $0.01 per credit; your actual burn depends on model choice, tools called, and context size."
+  - question: "Why do you show both dollars and credits?"
+    answer: "They're the same thing at two layers. Copilot Credits are the unit Microsoft's admin Cost Management dashboard meters, and prepaid capacity packs are sold in credits. Dollars are simply credits × $0.01 (PayGo). Your admin tools speak in credits; your finance team speaks in dollars — so we surface both, with dollars as the headline."
+  - question: "Why model by worker group instead of one number?"
+    answer: "Because a technical team and an exec team burn Cowork very differently — heavy multi-tool research vs. a few light briefs. Modelling each group separately (and its own light/medium/heavy split) gives a number you can actually defend to finance, rather than a single blended guess. If you'd rather keep it simple, just put everyone in one group and use the standard split."
   - question: "What's included in the M365 Copilot seat cost?"
     answer: "The $30/user/month M365 Copilot licence is required before Cowork can be enabled. That seat cost includes Researcher, Analyst, and Office agents (Word, Excel, PowerPoint, Outlook, Teams, OneNote). Cowork is the metered layer on top — it's for multi-step orchestration across tools."
   - question: "Should I use PayGo or prepaid capacity packs?"

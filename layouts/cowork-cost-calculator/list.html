@@ -46,84 +46,164 @@
     </div>
 
     {{/* ════════════════════════════════════════════════════════════════
-         TAB 1: CALCULATOR
+         TAB 1: CALCULATOR (persona consumption model)
          ════════════════════════════════════════════════════════════════ */}}
     <div class="cowcalc-panel active" role="tabpanel" id="panel-calculator" aria-labelledby="tab-btn-calculator">
-      <div class="cowcalc-hero">
-        <h2 class="cowcalc-hero-title">Your Cowork Usage Model</h2>
-        <p class="cowcalc-hero-subtitle">Adjust the inputs below to model your team's expected Cowork usage. The burn rate updates live — your numbers never leave this page.</p>
 
-        <div class="cowcalc-grid">
-          {{/* Left: Inputs */}}
-          <div class="cowcalc-inputs">
-            <div class="cowcalc-input-group">
-              <label for="in-users" class="cowcalc-label">Number of Cowork users</label>
-              <input type="number" id="in-users" class="cowcalc-input" value="45" min="1" max="10000">
-              <span class="cowcalc-help">How many people will use Cowork in your pilot or rollout?</span>
-            </div>
+      {{/* ── STEP 1: personas ── */}}
+      <section class="cowcalc-step">
+        <div class="cowcalc-step-head"><span class="cowcalc-step-num">1</span><h2 class="cowcalc-step-title">Who's using Cowork?</h2></div>
+        <p class="cowcalc-step-sub">Add the people who'll actually use Cowork, grouped by the kind of work they do. Different teams burn credits very differently — modelling them separately gives a number you can defend. Everything updates live and never leaves your browser.</p>
 
-            <div class="cowcalc-input-group">
-              <label for="in-prompts" class="cowcalc-label">Average prompts per user per month</label>
-              <input type="number" id="in-prompts" class="cowcalc-input" value="60" min="1" max="500">
-              <span class="cowcalc-help">Rule of thumb: 3/day × 20 working days = 60/month</span>
-            </div>
-
-            <div class="cowcalc-input-group">
-              <label class="cowcalc-label">Task complexity mix</label>
-              <div class="cowcalc-mix">
-                <div class="cowcalc-chip">
-                  <strong id="pct-light">60%</strong>
-                  <span>Light</span>
-                </div>
-                <div class="cowcalc-chip">
-                  <strong id="pct-medium">30%</strong>
-                  <span>Medium</span>
-                </div>
-                <div class="cowcalc-chip">
-                  <strong id="pct-heavy">10%</strong>
-                  <span>Heavy</span>
-                </div>
-              </div>
-              <input type="range" id="in-complexity" class="cowcalc-slider" min="0" max="100" value="30" step="10" aria-label="Task complexity mix">
-              <div class="cowcalc-slider-labels">
-                <span>Mostly light</span>
-                <span>Balanced</span>
-                <span>Mostly heavy</span>
-              </div>
-            </div>
+        <div class="cowcalc-personas">
+          <div class="cowcalc-persona" data-persona="corp">
+            <div class="cowcalc-persona-ico">{{ partial "icon.html" (dict "name" "book-open" "size" 18 "stroke" 1.5) }}</div>
+            <div class="cowcalc-persona-name">Corporate knowledge workers</div>
+            <p class="cowcalc-persona-desc">Juggle shifting priorities, live in email and chat, turn out documents, decks, and spreadsheets.</p>
+            <label class="cowcalc-persona-users"><span># Users</span><input type="number" id="users-corp" min="0" max="100000" value="25"></label>
           </div>
 
-          {{/* Right: Output */}}
-          <div class="cowcalc-output">
-            <div class="cowcalc-big">
-              <div class="cowcalc-big-label">Monthly Variable Spend</div>
-              <div class="cowcalc-big-amount" id="out-burn">$2,592</div>
-              <div class="cowcalc-big-sub">on top of your M365 Copilot seats</div>
-            </div>
+          <div class="cowcalc-persona" data-persona="mgmt">
+            <div class="cowcalc-persona-ico">{{ partial "icon.html" (dict "name" "chart-bar" "size" 18 "stroke" 1.5) }}</div>
+            <div class="cowcalc-persona-name">Management &amp; senior leaders</div>
+            <p class="cowcalc-persona-desc">Want headlines, risks, and recommendations. Decide more than they create; calendars full of high-stakes meetings.</p>
+            <label class="cowcalc-persona-users"><span># Users</span><input type="number" id="users-mgmt" min="0" max="100000" value="5"></label>
+          </div>
 
-            <div class="cowcalc-breakdown">
-              <div class="cowcalc-row">
-                <span class="cowcalc-key">M365 Copilot seats (<span id="out-seat-users">45</span> × $30)</span>
-                <span class="cowcalc-val" id="out-seat-cost">$1,350</span>
-              </div>
-              <div class="cowcalc-row">
-                <span class="cowcalc-key">Total credits consumed</span>
-                <span class="cowcalc-val" id="out-credits">259,200</span>
-              </div>
-              <div class="cowcalc-row">
-                <span class="cowcalc-key">Average per user</span>
-                <span class="cowcalc-val" id="out-avg">$58/mo</span>
-              </div>
-              <div class="cowcalc-row cowcalc-row-total">
-                <span class="cowcalc-key-total">All-in monthly cost</span>
-                <span class="cowcalc-val-total" id="out-allin">$3,942</span>
-              </div>
-            </div>
+          <div class="cowcalc-persona" data-persona="cust">
+            <div class="cowcalc-persona-ico">{{ partial "icon.html" (dict "name" "message-square" "size" 18 "stroke" 1.5) }}</div>
+            <div class="cowcalc-persona-name">Customer-facing workers</div>
+            <p class="cowcalc-persona-desc">Balance external customers and internal teams. Organised by account, anchored in relationship history.</p>
+            <label class="cowcalc-persona-users"><span># Users</span><input type="number" id="users-cust" min="0" max="100000" value="12"></label>
+          </div>
+
+          <div class="cowcalc-persona" data-persona="tech">
+            <div class="cowcalc-persona-ico">{{ partial "icon.html" (dict "name" "bolt" "size" 18 "stroke" 1.5) }}</div>
+            <div class="cowcalc-persona-name">Technical workers</div>
+            <p class="cowcalc-persona-desc">Need deep focus blocks. Produce code, designs, or systems — often outside the Office apps.</p>
+            <label class="cowcalc-persona-users"><span># Users</span><input type="number" id="users-tech" min="0" max="100000" value="8"></label>
           </div>
         </div>
-      </div>
+        <div class="cowcalc-persona-total">Total Cowork users: <strong id="total-users">50</strong></div>
+      </section>
 
-      <p class="cowcalc-methodology" style="margin-top:1.5rem">Want the assumptions behind these numbers? Switch to the <strong>Usage Patterns</strong> tab for common scenarios, the comparison table, and the full methodology.</p>
+      {{/* ── STEP 2: intensity ── */}}
+      <section class="cowcalc-step">
+        <div class="cowcalc-step-head"><span class="cowcalc-step-num">2</span><h2 class="cowcalc-step-title">How intensely will they use it?</h2></div>
+        <p class="cowcalc-step-sub">Split each group across light, medium, and heavy tasks. Start from a standard split, then fine-tune any group. Percentages should add to 100.</p>
+
+        <div class="cowcalc-assumptions">
+          <label class="cowcalc-assumption"><span>Prompts per user / day</span><input type="number" id="prompts-day" min="0" max="100" step="0.5" value="3"></label>
+          <label class="cowcalc-assumption"><span>Working days / month</span><input type="number" id="work-days" min="1" max="31" value="20"></label>
+          <span class="cowcalc-assumption-note">3 / day × 20 days ≈ 60 prompts / user / month</span>
+        </div>
+
+        <div class="cowcalc-split-bar">
+          <span class="cowcalc-split-label">Standard split</span>
+          <label>Light <input type="number" id="split-light" min="0" max="100" value="60">%</label>
+          <label>Medium <input type="number" id="split-medium" min="0" max="100" value="30">%</label>
+          <label>Heavy <input type="number" id="split-heavy" min="0" max="100" value="10">%</label>
+          <button type="button" id="apply-split" class="cowcalc-apply-btn">Apply to all</button>
+          <span id="split-sum" class="cowcalc-sum cowcalc-sum-ok">✓ 100%</span>
+        </div>
+
+        <div class="cowcalc-table-wrap">
+          <table class="cowcalc-intensity-table">
+            <thead>
+              <tr><th>Group</th><th class="cowcalc-right">Light %</th><th class="cowcalc-right">Medium %</th><th class="cowcalc-right">Heavy %</th><th class="cowcalc-right">Sum</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Corporate knowledge</td>
+                <td class="cowcalc-right"><input type="number" id="int-corp-light" min="0" max="100" value="60"></td>
+                <td class="cowcalc-right"><input type="number" id="int-corp-medium" min="0" max="100" value="30"></td>
+                <td class="cowcalc-right"><input type="number" id="int-corp-heavy" min="0" max="100" value="10"></td>
+                <td class="cowcalc-right"><span id="sum-corp" class="cowcalc-sum cowcalc-sum-ok">✓ 100%</span></td>
+              </tr>
+              <tr>
+                <td>Management &amp; leaders</td>
+                <td class="cowcalc-right"><input type="number" id="int-mgmt-light" min="0" max="100" value="60"></td>
+                <td class="cowcalc-right"><input type="number" id="int-mgmt-medium" min="0" max="100" value="30"></td>
+                <td class="cowcalc-right"><input type="number" id="int-mgmt-heavy" min="0" max="100" value="10"></td>
+                <td class="cowcalc-right"><span id="sum-mgmt" class="cowcalc-sum cowcalc-sum-ok">✓ 100%</span></td>
+              </tr>
+              <tr>
+                <td>Customer-facing</td>
+                <td class="cowcalc-right"><input type="number" id="int-cust-light" min="0" max="100" value="60"></td>
+                <td class="cowcalc-right"><input type="number" id="int-cust-medium" min="0" max="100" value="30"></td>
+                <td class="cowcalc-right"><input type="number" id="int-cust-heavy" min="0" max="100" value="10"></td>
+                <td class="cowcalc-right"><span id="sum-cust" class="cowcalc-sum cowcalc-sum-ok">✓ 100%</span></td>
+              </tr>
+              <tr>
+                <td>Technical</td>
+                <td class="cowcalc-right"><input type="number" id="int-tech-light" min="0" max="100" value="60"></td>
+                <td class="cowcalc-right"><input type="number" id="int-tech-medium" min="0" max="100" value="30"></td>
+                <td class="cowcalc-right"><input type="number" id="int-tech-heavy" min="0" max="100" value="10"></td>
+                <td class="cowcalc-right"><span id="sum-tech" class="cowcalc-sum cowcalc-sum-ok">✓ 100%</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <details class="cowcalc-explainer">
+          <summary>What do Light / Medium / Heavy mean?</summary>
+          <div class="cowcalc-explainer-body">
+            <p><strong>Light (~20 credits / prompt):</strong> quick briefs from a few files, simple coordination, a tidy-up of your week.</p>
+            <p><strong>Medium (~100 credits / prompt):</strong> multi-step workflows, a research memo grounded in your M365 data, prep across two or three sources.</p>
+            <p><strong>Heavy (~400 credits / prompt):</strong> long-running, multi-tool orchestration with lots of context — research + draft + deck in one go.</p>
+            <p class="cowcalc-explainer-note">These are typical mid-points. Real per-task credits range widely (light 5–50, medium 50–200, heavy 200–1000+) depending on the model picked, tools called, and context size. The range band in Step 3 reflects that.</p>
+          </div>
+        </details>
+      </section>
+
+      {{/* ── STEP 3: estimate ── */}}
+      <section class="cowcalc-step">
+        <div class="cowcalc-step-head"><span class="cowcalc-step-num">3</span><h2 class="cowcalc-step-title">What it'll cost</h2></div>
+
+        <div class="cowcalc-output-v2">
+          <div class="cowcalc-big">
+            <div class="cowcalc-big-label">Estimated monthly variable spend</div>
+            <div class="cowcalc-big-amount" id="out-burn-range">$1,850 – $3,540</div>
+            <div class="cowcalc-big-sub" id="out-burn-mid">~$2,460 typical · on top of your M365 Copilot seats</div>
+          </div>
+
+          <div class="cowcalc-metrics">
+            <div class="cowcalc-metric">
+              <span class="cowcalc-metric-label">Copilot Credits / month</span>
+              <span class="cowcalc-metric-value" id="out-credits-range">185K – 354K</span>
+            </div>
+            <div class="cowcalc-metric">
+              <span class="cowcalc-metric-label">Credits / day</span>
+              <span class="cowcalc-metric-value" id="out-credits-day">~12K</span>
+            </div>
+            <div class="cowcalc-metric">
+              <span class="cowcalc-metric-label">M365 Copilot seats</span>
+              <span class="cowcalc-metric-value" id="out-seats">50 × $30 = $1,500</span>
+            </div>
+            <div class="cowcalc-metric">
+              <span class="cowcalc-metric-label">Variable per user</span>
+              <span class="cowcalc-metric-value" id="out-avg-user">$37 – $71/mo</span>
+            </div>
+            <div class="cowcalc-metric cowcalc-metric-highlight">
+              <span class="cowcalc-metric-label">All-in monthly (seats + usage)</span>
+              <span class="cowcalc-metric-value" id="out-allin-range">$3,350 – $5,040</span>
+            </div>
+          </div>
+
+          <div class="cowcalc-table-wrap">
+            <table class="cowcalc-table">
+              <thead>
+                <tr><th>Group</th><th class="cowcalc-right">Users</th><th class="cowcalc-right">Credits / mo (typical)</th><th class="cowcalc-right">Variable $ / mo</th></tr>
+              </thead>
+              <tbody id="persona-breakdown"></tbody>
+            </table>
+          </div>
+
+          <p class="cowcalc-disclaimer"><strong>Estimate only.</strong> Credit figures are directional, not a billing quote. Actual Cowork credit consumption varies with the model picked (Opus 4.8 / Sonnet 4.6 / GPT 5.5), tools called, context size, and runtime — and Microsoft expects per-task cost to fall over time. Dollar figures use the PayGo rate of $0.01 / Copilot Credit; prepaid capacity packs are effectively cheaper. Use this for budgeting, not purchasing.</p>
+        </div>
+
+        <p class="cowcalc-step-sub" style="margin-top:1.25rem">Want quick scenarios, the alternatives comparison, and cost controls? See the <strong>Usage Patterns</strong> tab.</p>
+      </section>
     </div>
 
     {{/* ════════════════════════════════════════════════════════════════
@@ -132,39 +212,39 @@
     <div class="cowcalc-panel" role="tabpanel" id="panel-patterns" aria-labelledby="tab-btn-patterns">
 
       <section class="cowcalc-section cowcalc-section-first">
-        <h2 class="cowcalc-section-title">Common Usage Patterns</h2>
-        <p class="cowcalc-section-subtitle">Real scenarios based on Microsoft's GA guidance and early Frontier adopters. Click any pattern to load it into the Calculator tab.</p>
+        <h2 class="cowcalc-section-title">Quick-start scenarios</h2>
+        <p class="cowcalc-section-subtitle">Click any scenario to load a realistic persona mix into the Calculator tab, then fine-tune from there.</p>
 
         <div class="cowcalc-preset-grid">
-          <div class="cowcalc-preset" data-preset="light" role="button" tabindex="0" onclick="loadPreset('light')">
-            <div class="cowcalc-preset-title">Light Users</div>
-            <div class="cowcalc-preset-burn" data-burn="light">$864</div>
-            <div class="cowcalc-preset-desc">30 users × 40 prompts/mo, mostly light tasks. Sporadic use, basic coordination.</div>
+          <div class="cowcalc-preset" data-preset="pilot" role="button" tabindex="0" onclick="loadPreset('pilot')">
+            <div class="cowcalc-preset-title">Small pilot</div>
+            <div class="cowcalc-preset-burn" data-burn="pilot">~$900/mo</div>
+            <div class="cowcalc-preset-desc">25 users, mostly corporate knowledge workers, light-leaning (70/25/5). A cautious first cohort.</div>
           </div>
 
           <div class="cowcalc-preset" data-preset="balanced" role="button" tabindex="0" onclick="loadPreset('balanced')">
-            <div class="cowcalc-preset-title">Balanced Pilot</div>
-            <div class="cowcalc-preset-burn" data-burn="balanced">$2,592</div>
-            <div class="cowcalc-preset-desc">45 users × 60 prompts/mo, 60/30/10 mix. Typical pilot cohort.</div>
+            <div class="cowcalc-preset-title">Balanced rollout</div>
+            <div class="cowcalc-preset-burn" data-burn="balanced">~$2,500/mo</div>
+            <div class="cowcalc-preset-desc">85 users across all four groups, standard 60/30/10 split. A typical team-wide rollout.</div>
           </div>
 
-          <div class="cowcalc-preset" data-preset="heavy" role="button" tabindex="0" onclick="loadPreset('heavy')">
-            <div class="cowcalc-preset-title">Power Users</div>
-            <div class="cowcalc-preset-burn" data-burn="heavy">$8,640</div>
-            <div class="cowcalc-preset-desc">60 users × 80 prompts/mo, 40/40/20 mix. Research, content, multi-step workflows.</div>
+          <div class="cowcalc-preset" data-preset="power" role="button" tabindex="0" onclick="loadPreset('power')">
+            <div class="cowcalc-preset-title">Power users</div>
+            <div class="cowcalc-preset-burn" data-burn="power">~$6,000/mo</div>
+            <div class="cowcalc-preset-desc">70 users weighted to technical + customer-facing, heavier 40/40/20 mix. Research and multi-step work.</div>
           </div>
 
           <div class="cowcalc-preset" data-preset="runaway" role="button" tabindex="0" onclick="loadPreset('runaway')">
             <div class="cowcalc-preset-title">Runaway (uncapped)</div>
-            <div class="cowcalc-preset-burn" data-burn="runaway">$21,600</div>
-            <div class="cowcalc-preset-desc">100 users × 120 prompts/mo, 30/40/30 mix. No caps, habit-forming use.</div>
+            <div class="cowcalc-preset-burn" data-burn="runaway">~$12,000/mo</div>
+            <div class="cowcalc-preset-desc">110 users, heavy 30/40/30 mix, no caps. What habit-forming use looks like with no controls.</div>
           </div>
         </div>
       </section>
 
       {{/* ── Comparison Table ── */}}
       <section class="cowcalc-section">
-        <h2 class="cowcalc-section-title">How Cowork Compares to Alternatives</h2>
+        <h2 class="cowcalc-section-title">How Cowork compares to alternatives</h2>
         <p class="cowcalc-section-subtitle">Same task, different pricing models. Your mileage will vary based on actual use.</p>
 
         <div class="cowcalc-table-wrap">
@@ -201,9 +281,9 @@
                 <td class="cowcalc-right">Quota</td>
               </tr>
               <tr>
-                <td>Monthly recurring: 60 prompts, balanced mix</td>
+                <td>Monthly recurring: balanced mix</td>
                 <td class="cowcalc-included">$30/user</td>
-                <td class="cowcalc-metered cowcalc-right">$30 + $58/user</td>
+                <td class="cowcalc-metered cowcalc-right">$30 + usage/user</td>
                 <td class="cowcalc-right">$20/user</td>
                 <td class="cowcalc-right">$30/user</td>
               </tr>
@@ -214,7 +294,7 @@
 
       {{/* ── Controls ── */}}
       <section class="cowcalc-controls">
-        <h3>How to Control Your Cowork Burn</h3>
+        <h3>How to control your Cowork burn</h3>
         <ul>
           <li><strong>Set hard caps and alerts</strong> in M365 admin center → Copilot → Cost Management. Caps stop spend before it happens; alerts tell you when thresholds hit.</li>
           <li><strong>Scope to groups, not "All users"</strong> in your spending policy. Start with a pilot cohort, measure their patterns for 30 days, then decide whether to expand.</li>
@@ -226,21 +306,22 @@
 
       {{/* ── Methodology ── */}}
       <section class="cowcalc-methodology">
-        <h3>How This Calculator Works</h3>
-        <p><strong>Inputs:</strong> You provide the number of Cowork users, average prompts per user per month, and the task complexity mix (light/medium/heavy).</p>
+        <h3>How this calculator works</h3>
+        <p><strong>The model:</strong> for each of the four worker groups, you set how many people use Cowork and how their tasks split across light, medium, and heavy. We multiply users by your prompts-per-day × working-days assumption to get monthly prompts, then apply a typical credit cost per task type and sum across all groups.</p>
 
-        <p><strong>Credit estimates:</strong> Based on Microsoft's GA guidance, we model:</p>
+        <p><strong>Credit estimates</strong> (typical mid-points from Microsoft's GA guidance):</p>
         <ul>
-          <li><strong>Light tasks</strong> (quick briefs, simple coordination): ~20 credits per prompt (range: 5–50)</li>
-          <li><strong>Medium tasks</strong> (multi-step workflows, grounded research): ~100 credits per prompt (range: 50–200)</li>
-          <li><strong>Heavy tasks</strong> (long-running, multi-tool, high-context): ~400 credits per prompt (range: 200–1000+)</li>
+          <li><strong>Light</strong> ~20 credits / prompt (full range 5–50)</li>
+          <li><strong>Medium</strong> ~100 credits / prompt (full range 50–200)</li>
+          <li><strong>Heavy</strong> ~400 credits / prompt (full range 200–1000+)</li>
         </ul>
+        <p>The <strong>low–high band</strong> in Step 3 uses a typical spread around those mid-points (roughly light 15–30, medium 75–150, heavy 300–550) so the range stays credible rather than swinging across the full extremes.</p>
 
-        <p><strong>Billing rate:</strong> PayGo = $0.01 per Copilot Credit. If you're using prepaid capacity packs, the per-credit cost is effectively lower, but the estimator shows PayGo for transparency.</p>
+        <p><strong>Dollars and credits:</strong> we show both because they're the same thing at two layers — Copilot Credits are what the admin Cost Management dashboard meters, and dollars are credits × $0.01 (PayGo). Prepaid capacity packs are effectively cheaper per credit. Microsoft's admin tools and prepaid packs speak in credits; your finance team speaks in dollars — so we surface both.</p>
 
-        <p><strong>Caveats:</strong> Actual costs will vary. This is a directional model, not a billing forecast. Your real burn depends on which models users pick, what tools they call, how much context each task needs, and runtime. Microsoft expects per-task costs to fall over time as models get cheaper and Cowork gets better at model-to-task matching.</p>
+        <p><strong>Caveats:</strong> this is a directional model, not a billing forecast. Real burn depends on which models users pick, the tools each task calls, context size, and runtime. Microsoft expects per-task cost to fall over time as models get cheaper and Cowork gets better at matching the model to the task.</p>
 
-        <p><strong>Sources:</strong> <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/" target="_blank" rel="noopener">Microsoft 365 Blog — Copilot Cowork GA</a> · <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits" target="_blank" rel="noopener">Usage-based billing overview (Microsoft Learn)</a></p>
+        <p><strong>Sources:</strong> <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/" target="_blank" rel="noopener">Microsoft 365 Blog — Copilot Cowork GA</a> · <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits" target="_blank" rel="noopener">Usage-based billing overview (Microsoft Learn)</a> · for the official Microsoft persona estimator, ask your Microsoft account team about the <a href="https://aka.ms/CustomerCoworkEstimator" target="_blank" rel="noopener">Customer Cowork Estimator</a>.</p>
       </section>
 
       {{/* ── Deep Dive CTA ── */}}
@@ -289,7 +370,7 @@
   {{/* Hidden block for Pagefind search indexing */}}
   <div data-pagefind-body aria-hidden="true" style="display:none">
     <h2>Cowork Cost Calculator</h2>
-    <p>Estimate how much Microsoft Copilot Cowork will cost your team each month. Model your usage pattern — users, prompts per month, task complexity mix — and see the variable burn rate on top of your M365 Copilot seats. Compare Cowork PayGo against Claude Pro and Claude Team. Get control recommendations: spending caps, group scoping, consumption monitoring. Based on Microsoft's GA credit guidance and usage-based billing.</p>
+    <p>Estimate how much Microsoft Copilot Cowork will cost your team each month. Model consumption by worker persona — corporate knowledge workers, management and senior leaders, customer-facing workers, technical workers — set the light, medium, and heavy task mix per group, and see the monthly burn as a low–high range in both dollars and Copilot Credits. Compare Cowork PayGo against Claude Pro and Claude Team. Get control recommendations: spending caps, group scoping, consumption monitoring. Based on Microsoft's GA credit guidance and usage-based billing.</p>
   </div>
 
 </div>{{/* .cowcalc-page */}}
