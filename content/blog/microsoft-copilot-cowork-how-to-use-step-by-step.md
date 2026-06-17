@@ -28,7 +28,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork is **generally available** as of 16 June 2026. Screenshots from my tenant land as I capture each step — check back for visual updates. **Last verified: 17 June 2026 · GA day.**
+🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork is **generally available** as of 16 June 2026 — now walked through with real screenshots from my tenant. **Last verified: 17 June 2026 · GA day.**
 
 </div>
 
@@ -56,7 +56,13 @@ Before you type anything, two helper sections sit on the landing page:
 - **Needs your attention** — Cowork tasks already in flight that want your input (an approval, a clarification, a decision)
 - **Try these next** — suggested workflows like *Organize my inbox*, *Arrange my week*, *Prep for a meeting* — good for first-time exploration
 
-<!-- SCREENSHOT (Sush to capture clean — current capture had a side-slider rendering issue): 00-hero-cowork-main-window.png — full Cowork landing showing the dedicated surface, side rail, greeting, input, and helper sections -->
+<p><img src="/images/blog/cowork/howto-01-home.webp" alt="Microsoft 365 Copilot Cowork home — a dedicated task workspace with a Start a task input box, a left rail (New task, My tasks, Scheduled, Customize), a Needs your input section, and Try these next suggestion cards, with the model picker set to Auto." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The Cowork home — note it says **Start a task**, not "send a message", plus the **Try these next** cards and the **Auto** model picker. (Demo capture; one internal file name is blocked.)*
+
+<p><img src="/images/blog/cowork/howto-02-task-ideas.webp" alt="Cowork Task ideas gallery showing suggested tasks grouped by topic — Triage, Research, Create, Meetings, Automate — including OOO handover pack, Newsletter brief, Calendar audit, Unread email triage, Stakeholder check-in, Morning briefing, and End of day wrap-up." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The built-in **Task ideas** gallery — a quick way to see the kinds of work Cowork is built for, grouped by topic.*
 
 > 💡 **Mental model shift:** Cowork's input says *"Start a task…"* on purpose. Where Copilot Chat is a conversation, Cowork is a delegation. You're handing off work, not chatting through it.
 
@@ -74,11 +80,21 @@ This is the single biggest mindset shift. Most people start by listing steps. Co
 
 Why? Cowork's planner is good at decomposing outcomes into steps. Pre-decomposed prompts skip the part Cowork is designed to do.
 
+<p><img src="/images/blog/cowork/howto-03-prompt.webp" alt="Cowork input box with an outcome-style task typed in: Help me organize my week. Please review my Outlook calendar." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*An outcome-first prompt in the **Start a task** box — describe the result you want, not the steps.*
+
 ---
 
 ## Step 3 — Follow along as Cowork works through the steps
 
-<!-- SCREENSHOT: the side panel showing steps appearing one by one as Cowork works — Sush to capture from tenant -->
+<p><img src="/images/blog/cowork/howto-04-thinking.webp" alt="Cowork thought-process view showing its reasoning as it plans the task — recognizing the request to organize the week, invoking the Calendar Management skill, and gathering context like identity, timezone, and org details in parallel." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Cowork's **thought process** — it reads the outcome, picks the right skill (here, Calendar Management), and gathers context before it acts.*
+
+<p><img src="/images/blog/cowork/howto-05-steps.webp" alt="Cowork workspace Steps panel listing a four-step plan — Gathering context, Scan calendar and classify events, Triage and present recommendations, Execute changes and update memory — with the Calendar Management skill listed under Skills and Plugins." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The **Steps** panel — Cowork's plan, laid out so you can follow along (and stop it if it heads the wrong way).*
 
 Cowork doesn't disappear and hand back a finished result. It **breaks your request into steps and works through them one by one**, showing each step in the conversation (and in the side panel) as it goes — so you can follow along and see exactly how it interpreted your outcome.
 
@@ -89,6 +105,10 @@ This is the part most people skim, and it's the one that keeps you in control:
 - **Sensitive actions wait for you.** Cowork runs the low-risk steps on its own but pauses for approval before anything that sends or changes something — that's the next step.
 
 It's far cheaper to redirect early — while Cowork is still gathering and drafting — than to unpick the output afterwards.
+
+<p><img src="/images/blog/cowork/howto-06-output.webp" alt="Cowork output — a Calendar Summary for the week with an At a Glance table showing total calendar entries, meetings with other people, working-hours meeting time, early-morning sessions, after-hours sessions, conflicts to resolve, duplicate option pairs, and ghost events." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*And the result — a clean weekly **calendar summary** from that run. (Real outputs run longer; this is the top of it.)*
 
 ---
 
@@ -107,11 +127,19 @@ Cowork tags medium- and high-risk actions with a risk indicator, and the approva
 
 **What it looks like:** Cowork stops, shows you exactly what it's about to do (the draft email, the meeting), and waits. Sometimes it asks a clarifying question first — *"I found an NDA in the shared folder — include contract details?"*
 
+<p><img src="/images/blog/cowork/howto-07-approval.webp" alt="Cowork approval card titled Send email with a To field, a Subject of Hello, a short body, a note that it was sent by Copilot Cowork, and Cancel and Send buttons. The recipient email address is redacted." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The **approval card** — Cowork shows the exact email and waits. Nothing leaves until you click **Send**. (Recipient address redacted; it was a test to myself.)*
+
 **Your moves at a checkpoint:**
 
 - **Approve** — the button matches the action (**Send**, **Post**, **Create**).
 - **Cancel** — stop the action; Cowork moves on or asks what you'd prefer.
 - **Skip future prompts** — a dropdown lets you stop being asked for similar low-risk actions. Use it sparingly: it trades safety for speed.
+
+<p><img src="/images/blog/cowork/howto-08-skip.webp" alt="The Send button dropdown in Cowork showing skip-future-prompt options — only to a specific redacted address, only to recipients in your own domain, and always allow Send email with attachments." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The **Don't ask again** dropdown, under the Send button — stop being prompted for similar low-risk sends. Convenient, but it trades safety for speed, so scope it tightly.*
 
 > 💡 Treat each checkpoint as a *real* review, not a reflex click — especially for anything that leaves your tenant. (For how admins use checkpoints as a governance control, see the [Admin & governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).)
 
