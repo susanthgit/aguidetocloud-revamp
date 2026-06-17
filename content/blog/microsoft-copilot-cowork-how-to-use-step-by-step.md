@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Copilot Cowork — Step-by-Step How-To Guide"
 list_title: "Cowork: How to use it step by step"
-description: "Microsoft Copilot Cowork step-by-step tutorial — 7 lessons covering opening it, outcome prompts, plan review, approval checkpoints, troubleshooting."
+description: "Microsoft Copilot Cowork step-by-step tutorial — prerequisites, finding it, outcome-first prompts, approval checkpoints, and troubleshooting."
 date: 2026-06-15
 lastmod: 2026-06-17
 draft: false
@@ -42,6 +42,18 @@ founder_note: |
 - **How to start a task** — describe an outcome, not a process
 - **What to expect** — Cowork works through the steps in front of you, pausing for your approval at sensitive actions
 - **How to stay in control** — pause, redirect, or stop at any time
+
+---
+
+## Before you start — three things you need
+
+Cowork won't appear for everyone on day one. Three boxes have to be ticked first — if it's missing, this is almost always why:
+
+1. **A Microsoft 365 Copilot licence** ($30/user/month) — Cowork is part of Microsoft 365 Copilot, so the seat is the entry point.
+2. **Your admin has turned Cowork on** — it's **off by default**. An admin enables it, and chooses who gets access, from the Microsoft 365 admin centre.
+3. **Usage billing is set up** — Cowork tasks are billed on usage (Copilot Credits), so an admin sets up pay-as-you-go or prepaid, plus a spending limit, before it runs.
+
+If all three are in place and you still can't see it, give it a few minutes after enablement, then refresh. The full admin-side checklist is in the [Admin &amp; governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).
 
 ---
 
@@ -104,11 +116,13 @@ This is the part most people skim, and it's the one that keeps you in control:
 - **Interrupt to steer.** At any point you can jump in with extra context or a correction ("use the latest proposal, not the March one") and Cowork adjusts.
 - **Sensitive actions wait for you.** Cowork runs the low-risk steps on its own but pauses for approval before anything that sends or changes something — that's the next step.
 
-It's far cheaper to redirect early — while Cowork is still gathering and drafting — than to unpick the output afterwards.
+It's far less work — and fewer credits — to redirect early, while Cowork is still gathering and drafting, than to unpick the output afterwards.
 
 <p><img src="/images/blog/cowork/howto-06-output.webp" alt="Cowork output — a Calendar Summary for the week with an At a Glance table showing total calendar entries, meetings with other people, working-hours meeting time, early-morning sessions, after-hours sessions, conflicts to resolve, duplicate option pairs, and ghost events." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *And the result — a clean weekly **calendar summary** from that run. (Real outputs run longer; this is the top of it.)*
+
+That was one complete task, start to finish: you typed an outcome — *"help me organise my week"* — Cowork picked the **Calendar Management** skill, gathered context, and planned four steps; you watched it scan and classify your calendar; and it handed back a clean weekly summary, pausing for your approval before changing anything. A few minutes, one prompt, and you stayed in control the whole way. That's the shape of almost every Cowork task — the rest of this guide is just the details that make each part go smoothly.
 
 ---
 
@@ -135,11 +149,11 @@ Cowork tags medium- and high-risk actions with a risk indicator, and the approva
 
 - **Approve** — the button matches the action (**Send**, **Post**, **Create**).
 - **Cancel** — stop the action; Cowork moves on or asks what you'd prefer.
-- **Skip future prompts** — a dropdown lets you stop being asked for similar low-risk actions. Use it sparingly: it trades safety for speed.
+- **Skip future prompts** — a dropdown lets you stop being asked for *similar* actions. The narrow options (a single address, or recipients in your own domain) are reasonable; the widest one — *"always allow Send email with attachments"* — is a blanket permission to send files without asking again, so avoid it unless you really mean it, and scope to your own domain at most.
 
 <p><img src="/images/blog/cowork/howto-08-skip.webp" alt="The Send button dropdown in Cowork showing skip-future-prompt options — only to a specific redacted address, only to recipients in your own domain, and always allow Send email with attachments." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The **Don't ask again** dropdown, under the Send button — stop being prompted for similar low-risk sends. Convenient, but it trades safety for speed, so scope it tightly.*
+*The **Don't ask again** dropdown, under the Send button — scope it to a single address or your own domain. The broadest option (always allow sends with attachments) is the one to avoid unless you genuinely need it.*
 
 > 💡 Treat each checkpoint as a *real* review, not a reflex click — especially for anything that leaves your tenant. (For how admins use checkpoints as a governance control, see the [Admin & governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).)
 

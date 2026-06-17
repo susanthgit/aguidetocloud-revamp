@@ -84,7 +84,7 @@ The Customize page has two tabs at the top: **Plugins** and **Skills**. Click **
 The Skills tab is split into two sections:
 
 - **Your skills** — custom skills you've added (or your IT team has rolled out)
-- **Built-in** — pre-installed skills Cowork leverages automatically
+- **Built-in** — pre-installed skills Cowork uses automatically
 
 You can toggle any skill on or off here. Disabled skills won't be picked by Cowork even if you ask for them by name.
 

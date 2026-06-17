@@ -99,14 +99,19 @@ A second one I lean on for the weekly ops review:
 > **Cowork will:**
 > - Search your inbox and Teams for VPN-related messages
 > - Pull relevant documents from SharePoint
-> - Create a Word document with a summary and trends
-> - Add it to the meeting invite as an attachment
+> - **Check in**, then create a Word summary with the trends and attach it to the Friday ops-review invite
 
 </div>
 
 **Realistic time saved:** A weekly security or ops status that used to mean an hour of report-pulling and writing becomes ten minutes of review.
 
 **Watch-out:** Cowork only sees what *you* can see — it won't surface sign-in data you don't already have rights to. Always read the numbers yourself before they go to a security DL.
+
+**More IT plays worth a try** — each tagged with its [task tier](/blog/microsoft-copilot-cowork-prompts-to-try/):
+
+- **Daily sign-in anomaly sweep** *(Snack)* — *"From this morning's exported Entra sign-in report, flag anything unusual — failed-MFA spikes, sign-ins from new locations, or risky users — and give me a short list to check."* (Needs the report exported, or an approved Entra/Graph plugin.)
+- **Weekly patch + ticket digest** *(Meal)* — *"Pull this week's patch-status export and the related support tickets, and give me a one-page digest: what's patched, what's outstanding, and the ticket themes worth raising at the ops review."*
+- **Incident timeline reconstruction** *(Feast)* — *"For [incident], rebuild the timeline from my email, Teams, and the ticket export — who was involved, what changed when, and the open follow-ups — into a single write-up I can share."*
 
 ---
 
