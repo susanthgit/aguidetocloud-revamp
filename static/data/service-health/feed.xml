@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 16 Jun 2026 23:45:55 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2026 22:11:14 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Power BI] Users may see blank reports when downloading PBIX files from semantic models within Power BI</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1394805</link>
+      <description>[Power BI] Users may have seen blank reports when downloading PBIX files from semantic models within Power BI.</description>
+      <category>Power BI</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">PB1394805</guid>
+      <pubDate>Wed, 17 Jun 2026 07:55:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Purview] Users may experience delays in Data Loss Prevention (DLP) alerts being generated or delivered in Microsoft Purview</title>
+      <link>https://www.aguidetocloud.com/service-health/#MP1394693</link>
+      <description>[Microsoft Purview] Users may have experienced delays in Data Loss Prevention alerts being generated or delivered in Microsoft Purview.</description>
+      <category>Microsoft Purview</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MP1394693</guid>
+      <pubDate>Wed, 17 Jun 2026 07:51:00 +0000</pubDate>
+    </item>
     <item>
       <title>[SharePoint Online] Admins may be unable to configure search schema mappings in SharePoint Online</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1393483</link>
@@ -15,15 +33,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">SP1393483</guid>
       <pubDate>Tue, 16 Jun 2026 16:02:13 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] We're looking into a potential problem impacting Microsoft 365 Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1393482</link>
-      <description>[Microsoft Copilot (Microsoft 365)] We're checking for potential impact to your users.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">CP1393482</guid>
-      <pubDate>Tue, 16 Jun 2026 15:55:02 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Viva] Users may see stale data in Copilot dashboards and analyst workbench reports in Microsoft Viva Insights</title>
@@ -48,7 +57,7 @@
       <link>https://www.aguidetocloud.com/service-health/#CW1391746</link>
       <description>[Microsoft 365 Copilot Chat] Users are unable to submit a prompt in Microsoft 365 Copilot Chat and receive an error message.</description>
       <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CW1391746</guid>
       <pubDate>Fri, 12 Jun 2026 04:00:00 +0000</pubDate>
     </item>
@@ -69,15 +78,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1387482</guid>
       <pubDate>Thu, 11 Jun 2026 15:28:27 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Users may be unable to access Excel files through browser from SharePoint Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1386381</link>
-      <description>[SharePoint Online] Users may be unable to access Excel files through browser from SharePoint Online.</description>
-      <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">SP1386381</guid>
-      <pubDate>Wed, 10 Jun 2026 14:50:49 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Some users may have been unable to begin onboarding for Microsoft Defender for Endpoint or Defender for Office 365</title>
@@ -114,6 +114,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1386443</guid>
       <pubDate>Tue, 09 Jun 2026 06:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Users may be unable to access Excel files through browser from SharePoint Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1386381</link>
+      <description>[SharePoint Online] Users may be unable to access Excel files through browser from SharePoint Online.</description>
+      <category>SharePoint Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">SP1386381</guid>
+      <pubDate>Mon, 08 Jun 2026 03:43:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Users may fail to retrieve Microsoft OneNote content using Microsoft Graph APIs</title>
@@ -433,6 +442,15 @@ The incident was triggered by an upstream change that altered how certain capaci
       <pubDate>Thu, 14 May 2026 01:40:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Exchange Online] Users may be unable to see the free/busy status of multiple cross-tenant mailboxes in Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1386636</link>
+      <description>[Exchange Online] Users may have been unable to see the free/busy status of multiple cross-tenant mailboxes in Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">EX1386636</guid>
+      <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft 365 suite] Users may be unable to initiate Office app installations in the My Account portal found within portal.office.com </title>
       <link>https://www.aguidetocloud.com/service-health/#MO1309601</link>
       <description>[Microsoft 365 suite] Users may have been unable to initiate Office app installations in the My Account portal found within portal.office.com.</description>
@@ -440,24 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1309601</guid>
       <pubDate>Wed, 13 May 2026 18:55:19 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Users may be unable to edit pages using SharePoint Designer</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1314602</link>
-      <description>[SharePoint Online] Users may be unable to edit pages using SharePoint Designer.</description>
-      <category>SharePoint Online</category>
-      <category>investigationSuspended</category>
-      <guid isPermaLink="false">SP1314602</guid>
-      <pubDate>Wed, 13 May 2026 18:01:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users are unable to access Microsoft 365 services in South America</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1309330</link>
-      <description>[Microsoft 365 suite] Some users were unable to access Microsoft 365 services.</description>
-      <category>Microsoft 365 suite</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">MO1309330</guid>
-      <pubDate>Wed, 13 May 2026 13:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

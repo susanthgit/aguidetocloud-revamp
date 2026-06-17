@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-06-16T23:45:55.454432+00:00",
+  "generated_at": "2026-06-17T22:11:14.231720+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 26,
+      "total_incidents": 24,
       "active_incidents": 1,
-      "avg_duration_minutes": 6032,
-      "last_incident": "2026-06-16T15:55:02.980000+00:00",
+      "avg_duration_minutes": 6172,
+      "last_incident": "2026-06-13T22:44:03+00:00",
       "classifications": {
-        "advisory": 15,
-        "incident": 11
+        "advisory": 14,
+        "incident": 10
       }
     },
     {
@@ -34,7 +34,7 @@
       "icon": "📧",
       "total_incidents": 11,
       "active_incidents": 1,
-      "avg_duration_minutes": 20393,
+      "avg_duration_minutes": 24395,
       "last_incident": "2026-05-30T09:11:59.853000+00:00",
       "classifications": {
         "advisory": 10,
@@ -94,6 +94,31 @@
       }
     },
     {
+      "service": "Power BI",
+      "short_name": "Power BI",
+      "icon": "📊",
+      "total_incidents": 4,
+      "active_incidents": 1,
+      "avg_duration_minutes": 932,
+      "last_incident": "2026-06-17T07:55:00+00:00",
+      "classifications": {
+        "advisory": 3,
+        "incident": 1
+      }
+    },
+    {
+      "service": "Microsoft Purview",
+      "short_name": "Purview",
+      "icon": "🔍",
+      "total_incidents": 3,
+      "active_incidents": 0,
+      "avg_duration_minutes": 4468,
+      "last_incident": "2026-06-17T07:51:00+00:00",
+      "classifications": {
+        "advisory": 3
+      }
+    },
+    {
       "service": "Microsoft Viva",
       "short_name": "Viva",
       "icon": "🌱",
@@ -115,19 +140,6 @@
       "last_incident": "2026-05-30T02:30:00+00:00",
       "classifications": {
         "incident": 3
-      }
-    },
-    {
-      "service": "Power BI",
-      "short_name": "Power BI",
-      "icon": "📊",
-      "total_incidents": 3,
-      "active_incidents": 0,
-      "avg_duration_minutes": 932,
-      "last_incident": "2026-05-29T18:55:00+00:00",
-      "classifications": {
-        "advisory": 2,
-        "incident": 1
       }
     },
     {
@@ -153,18 +165,6 @@
       "classifications": {
         "incident": 1,
         "advisory": 1
-      }
-    },
-    {
-      "service": "Microsoft Purview",
-      "short_name": "Purview",
-      "icon": "🔍",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 6411,
-      "last_incident": "2026-04-24T15:04:41.097000+00:00",
-      "classifications": {
-        "advisory": 2
       }
     },
     {
@@ -219,17 +219,17 @@
   "monthly": [
     {
       "month": "2026-06",
-      "incident_count": 22,
-      "services_affected": 6
+      "incident_count": 23,
+      "services_affected": 8
     },
     {
       "month": "2026-05",
-      "incident_count": 46,
+      "incident_count": 47,
       "services_affected": 13
     },
     {
       "month": "2026-04",
-      "incident_count": 35,
+      "incident_count": 33,
       "services_affected": 12
     }
   ]
