@@ -201,7 +201,7 @@
   });
   // ── Prompt card copy buttons ──
   document.querySelectorAll('.prompt-cards').forEach(function(card) {
-    var bq = card.querySelector('blockquote'); if (!bq) return;
+    var bqs = card.querySelectorAll('blockquote'); if (bqs.length !== 1) return; var bq = bqs[0];
     var btn = document.createElement('button'); btn.className = 'prompt-copy-btn'; btn.textContent = 'Copy';
     btn.setAttribute('aria-label', 'Copy prompt to clipboard');
     btn.addEventListener('click', function() {
