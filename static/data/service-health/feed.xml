@@ -5,16 +5,25 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 17 Jun 2026 16:00:23 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2026 18:30:39 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Power BI] Users may see blank reports when downloading PBIX files from semantic models within Power BI</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1394805</link>
+      <description>[Power BI] Users may have seen blank reports when downloading PBIX files from semantic models within Power BI.</description>
+      <category>Power BI</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">PB1394805</guid>
+      <pubDate>Wed, 17 Jun 2026 17:50:47 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Purview] Users may experience delays in Data Loss Prevention (DLP) alerts being generated or delivered in Microsoft Purview</title>
       <link>https://www.aguidetocloud.com/service-health/#MP1394693</link>
-      <description>[Microsoft Purview] Users may experience delays in Data Loss Prevention (DLP) alerts being generated or delivered in Microsoft Purview.</description>
+      <description>[Microsoft Purview] Users may have experienced delays in Data Loss Prevention alerts being generated or delivered in Microsoft Purview.</description>
       <category>Microsoft Purview</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MP1394693</guid>
-      <pubDate>Wed, 17 Jun 2026 14:26:53 +0000</pubDate>
+      <pubDate>Wed, 17 Jun 2026 07:51:00 +0000</pubDate>
     </item>
     <item>
       <title>[SharePoint Online] Admins may be unable to configure search schema mappings in SharePoint Online</title>
@@ -24,15 +33,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">SP1393483</guid>
       <pubDate>Tue, 16 Jun 2026 16:02:13 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] We're looking into a potential problem impacting Microsoft 365 Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1393482</link>
-      <description>[Microsoft Copilot (Microsoft 365)] We're checking for potential impact to your users.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">CP1393482</guid>
-      <pubDate>Tue, 16 Jun 2026 15:55:02 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Viva] Users may see stale data in Copilot dashboards and analyst workbench reports in Microsoft Viva Insights</title>
@@ -57,7 +57,7 @@
       <link>https://www.aguidetocloud.com/service-health/#CW1391746</link>
       <description>[Microsoft 365 Copilot Chat] Users are unable to submit a prompt in Microsoft 365 Copilot Chat and receive an error message.</description>
       <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CW1391746</guid>
       <pubDate>Fri, 12 Jun 2026 04:00:00 +0000</pubDate>
     </item>
