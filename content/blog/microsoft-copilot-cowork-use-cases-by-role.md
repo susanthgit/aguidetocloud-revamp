@@ -60,7 +60,7 @@ Microsoft groups Cowork users into four personas, each with a different mix of l
 | **Customer-facing knowledge workers** | Work that wraps around external meetings — prep before, follow-up after | Sales · Customer-facing |
 | **Technical workers** | Hands-on with systems and data, often across several tools | IT Admin |
 
-The mapping isn't rigid — plenty of people wear two hats — but it's a useful way to picture who runs which kind of task, and therefore where your Cowork credits go.
+The mapping isn't rigid — plenty of people wear two hats — but it's a useful way to picture who runs which kind of task, and therefore where your Cowork credits go. To put a number on it, run your team through the **[Cowork Cost Calculator](/cowork-cost-calculator/)**.
 
 ---
 

@@ -120,6 +120,7 @@ body.page-cowork-cost-calculator .zt-reading--tool-detail > .zt-companion { disp
 .cowcalc-pill.active { background: var(--accent-strong, #4F46E5); color: #fff; }
 .cowcalc-pill:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 .cowcalc-usage-caption { font-size: 0.86rem; color: var(--text-secondary); margin: 0.85rem 0 0; line-height: 1.5; max-width: 56ch; }
+.cowcalc-controls-note { margin: 1.5rem 0 0; font-size: 0.8rem; color: var(--text-tertiary); line-height: 1.5; padding-top: 1rem; border-top: 1px solid var(--border); }
 
 /* ── Habit strip ── */
 .cowcalc-habit-sec { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }

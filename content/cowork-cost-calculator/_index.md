@@ -1,6 +1,6 @@
 ---
-title: "Cowork Cost Calculator — Estimate Your Monthly Copilot Cowork Burn"
-description: "Interactive calculator showing how much Microsoft Copilot Cowork will cost your team each month. Model your usage patterns, see the burn rate, compare alternatives, and get control recommendations."
+title: "Cowork Cost Calculator — Estimate Your Monthly Copilot Burn"
+description: "Estimate how much Microsoft Copilot Cowork will cost your team each month — the seat-vs-meter split, the all-in total, and how to control the spend."
 type: "cowork-cost-calculator"
 layout: "list"
 url: "/cowork-cost-calculator/"

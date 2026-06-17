@@ -120,7 +120,7 @@ Microsoft also mapped four user personas with different usage patterns — handy
 - **Customer-facing knowledge workers** — balance external customers and internal teams; organised by account, anchored in relationship history
 - **Technical workers** — need deep focus blocks; produce code, designs, or systems, often outside the Office apps
 
-To model your own mix, use our free **[Cowork Cost Calculator](/cowork-cost-calculator/)** — set your users, prompts per month, and task complexity to see the monthly burn live. Microsoft also publishes an official [Customer Cowork Estimator spreadsheet](https://aka.ms/CustomerCoworkEstimator) — plug in users per persona and their expected light, medium, and heavy volumes, and it sums an estimate you can refine over time.
+To model your own mix, use our free **[Cowork Cost Calculator](/cowork-cost-calculator/)** — pick your team size and a usage level (light, balanced, or heavy) to see the monthly burn, the seat-vs-meter split, and the all-in total live, in your currency. Microsoft also publishes an official [Customer Cowork Estimator spreadsheet](https://aka.ms/CustomerCoworkEstimator) — plug in users per persona and their expected light, medium, and heavy volumes, and it sums an estimate you can refine over time.
 
 ---
 

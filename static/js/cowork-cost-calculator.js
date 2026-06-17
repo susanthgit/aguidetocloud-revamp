@@ -105,6 +105,8 @@
     setHabit('habit-day', HEAVY_TASK_CREDITS * 20);
     setHabit('habit-team', HEAVY_TASK_CREDITS * 4.33 * 20);
 
+    if ($('out-meter-sr')) $('out-meter-sr').textContent = 'Estimated monthly Cowork usage ' + fmtMoney(varMid) + ' typical, range ' + fmtMoney(varLo) + ' to ' + fmtMoney(varHi) + '. All-in ' + fmtMoney(allinMid) + ' per month.';
+
     const fx = $('cowcalc-fx-note');
     if (fx) fx.textContent = CUR === 'USD'
       ? 'Microsoft bills Cowork in US dollars.'
@@ -139,7 +141,11 @@
   function init() {
     if ($('num-users')) $('num-users').addEventListener('input', compute);
     if ($('cowcalc-currency')) $('cowcalc-currency').addEventListener('change', (e) => { CUR = e.target.value; compute(); });
-    document.querySelectorAll('.cowcalc-pill').forEach((p) => p.addEventListener('click', () => setLevel(p.getAttribute('data-usage'))));
+    document.querySelectorAll('.cowcalc-pill').forEach((p) => {
+      p.addEventListener('click', () => setLevel(p.getAttribute('data-usage')));
+      p.addEventListener('mouseenter', () => { if ($('usage-caption')) $('usage-caption').textContent = USAGE[p.getAttribute('data-usage')].cap; });
+      p.addEventListener('mouseleave', () => { if ($('usage-caption')) $('usage-caption').textContent = USAGE[LEVEL].cap; });
+    });
     document.querySelectorAll('.cowcalc-tab').forEach((btn) => btn.addEventListener('click', () => activateTab(btn.getAttribute('data-tab'))));
     setLevel('balanced');
   }

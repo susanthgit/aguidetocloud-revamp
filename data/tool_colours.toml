@@ -226,6 +226,17 @@ category = "Compare"
 css_namespace = "tokcalc-*"
 body_class = "page-token-calculator"
 
+[[tools]]
+name = "Cowork Cost Calculator"
+slug = "cowork-cost-calculator"
+hex = "#6366F1"
+hue = 239
+name_friendly = "Zen Indigo"
+category = "Compare"
+css_namespace = "cowcalc-*"
+body_class = "page-cowork-cost-calculator"
+# NOTE: Uses the global Zen indigo accent (var(--accent)) per the one-accent rule; OG icon tile colour comes from toolkit_nav.toml color.
+
 # ── Admin & Security ──────────────────────────────────────────────────────────
 
 [[tools]]
