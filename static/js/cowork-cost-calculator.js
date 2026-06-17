@@ -42,20 +42,24 @@
 
   // ── Count-up meter ──
   const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let meterRAF = null, meterCurrent = 0;
   function animateMeter(el, to) {
     if (!el) return;
     const symbol = cur().symbol;
-    const from = parseFloat(el.dataset.val || '0');
-    if (reduceMotion || Math.abs(to - from) < 1) { el.textContent = symbol + fmtN(to); el.dataset.val = to; return; }
+    if (meterRAF) { cancelAnimationFrame(meterRAF); meterRAF = null; }
+    const from = meterCurrent;
+    if (reduceMotion || Math.abs(to - from) < 1) { meterCurrent = to; el.textContent = symbol + fmtN(to); el.dataset.val = to; return; }
     let start = null; const dur = 480;
     function step(ts) {
       if (!start) start = ts;
       const t = Math.min(1, (ts - start) / dur);
       const e = 1 - Math.pow(1 - t, 3);
-      el.textContent = symbol + fmtN(from + (to - from) * e);
-      if (t < 1) requestAnimationFrame(step); else { el.textContent = symbol + fmtN(to); el.dataset.val = to; }
+      meterCurrent = from + (to - from) * e;
+      el.textContent = symbol + fmtN(meterCurrent);
+      if (t < 1) { meterRAF = requestAnimationFrame(step); }
+      else { meterCurrent = to; el.textContent = symbol + fmtN(to); el.dataset.val = to; meterRAF = null; }
     }
-    requestAnimationFrame(step);
+    meterRAF = requestAnimationFrame(step);
   }
 
   function compute() {
@@ -134,7 +138,7 @@
 
   function init() {
     if ($('num-users')) $('num-users').addEventListener('input', compute);
-    if ($('cowcalc-currency')) $('cowcalc-currency').addEventListener('change', (e) => { CUR = e.target.value; if ($('out-meter')) $('out-meter').dataset.val = '0'; compute(); });
+    if ($('cowcalc-currency')) $('cowcalc-currency').addEventListener('change', (e) => { CUR = e.target.value; compute(); });
     document.querySelectorAll('.cowcalc-pill').forEach((p) => p.addEventListener('click', () => setLevel(p.getAttribute('data-usage'))));
     document.querySelectorAll('.cowcalc-tab').forEach((btn) => btn.addEventListener('click', () => activateTab(btn.getAttribute('data-tab'))));
     setLevel('balanced');
