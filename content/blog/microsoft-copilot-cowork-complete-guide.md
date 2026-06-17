@@ -694,6 +694,8 @@ Copilot Cowork runs in the cloud inside your M365 tenant with enterprise governa
 
 Copilot Cowork uses Microsoft's multi-model approach. At general availability it runs on Anthropic **Opus 4.8** and **Sonnet 4.6**; in Frontier you can also pick **GPT 5.5**, and Microsoft's own fine-tuned **Cowork 1** model is coming soon. You choose per task with the model picker, and your admin controls which providers are enabled.
 
+<p><img src="/images/blog/cowork/model-picker.webp" alt="Cowork model picker dropdown menu showing five options — Auto (recommended), Claude Sonnet 4.6, Claude Opus 4.8, GPT 5.5, and Sonnet + Opus Advisor. The Auto option is selected and highlighted, showing the description 'Automatically chooses the best model for your task'." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 ### Does Copilot Cowork work with my existing data permissions?
 
 Yes. Cowork operates within your existing Microsoft 365 permissions. It can only access data that you already have access to — it doesn't bypass SharePoint permissions or [Conditional Access](https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview) policies. This is why cleaning up permissions BEFORE enabling Cowork is so important.

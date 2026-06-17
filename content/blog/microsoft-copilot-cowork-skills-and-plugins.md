@@ -90,6 +90,10 @@ You can toggle any skill on or off here. Disabled skills won't be picked by Cowo
 
 <p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/22-cowork-skills-page-overview.png" alt="The Skills tab inside Cowork Customize. Two section headings highlighted in red boxes — Your skills and Built-in. Three custom skills are visible in Your skills (customer-session-followup, customer-session-prep, inbox-drafts) each with a toggle on the right. A Show more link sits below. The Built-in section begins underneath with the first three pre-installed skills (PDF, Word, Excel)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
+The **Plugins tab** lives alongside Skills — same Customize door. Microsoft first-party Dynamics 365 plugins (Fabric IQ, Sales, ERP apps, Customer Service) show here as **Installed** and can be toggled on/off. Third-party and partner plugins (once admin-approved at the tenant level) appear here too. If your tenant hasn't approved any plugins yet, or if you haven't installed any from the Discover gallery below, this tab shows just the Microsoft first-party set.
+
+<p><img src="/images/blog/cowork/plugins-manage.webp" alt="Cowork Customize page, Plugins tab. Shows Installed section with four Microsoft Dynamics 365 plugins — Fabric IQ, Dynamics 365 Sales, Dynamics 365 ERP apps, and Dynamics 365 Customer Service. Each plugin has a toggle switch on the right (all shown as off). The heading reads 'Specify which plugins Cowork should reference when doing a task.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 ---
 
 ## The 13 built-in skills
@@ -205,6 +209,10 @@ At GA (June 2026), Microsoft shipped the first wave of partner plugins, with mor
 - **Also generally available:** Microsoft **Fabric**, plus **Dynamics 365** Sales, Customer Service, and ERP apps
 
 The catalog grows over time — check Microsoft's [Copilot Cowork docs](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) for the current list. Treat each plugin as its own governance decision (consent, connector credentials, data handling, audit) — see the [admin & governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).
+
+To browse the full GA catalog, open Cowork, click **Customize**, switch to the **Plugins** tab, then scroll down to the **Discover** section. Microsoft's official plugin gallery shows every available plugin with a one-line description and a lock icon indicating tenant admin approval is required before you can install it.
+
+<p><img src="/images/blog/cowork/plugins-catalog.webp" alt="Cowork Discover gallery showing 11 partner plugins available at GA — AI Meeting Notes TeamsMaestro, Box, enosix arnold for Copilot Cowork, Flow Studio MCP Copilot Cowork, Harvey (legal AI assistant), LSEG Cowork, Miro Cowork, monday.com, Moody's Credit MCP, Morningstar, and S&P Global Energy. Each plugin card shows a logo, name, lock icon, and brief description. The page header reads 'Plugins help Cowork extend its capabilities by connecting to external tools, services, and bundled skills.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 ### What a plugin actually unlocks
 
