@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T11:15:51.111771+00:00",
+  "generated_at": "2026-06-17T16:00:22.980800+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -32,12 +32,12 @@
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 12,
+      "total_incidents": 11,
       "active_incidents": 2,
-      "avg_duration_minutes": 20393,
+      "avg_duration_minutes": 22113,
       "last_incident": "2026-05-30T09:11:59.853000+00:00",
       "classifications": {
-        "advisory": 11,
+        "advisory": 10,
         "incident": 1
       }
     },
@@ -91,6 +91,18 @@
       "classifications": {
         "advisory": 5,
         "incident": 1
+      }
+    },
+    {
+      "service": "Microsoft Purview",
+      "short_name": "Purview",
+      "icon": "🔍",
+      "total_incidents": 3,
+      "active_incidents": 1,
+      "avg_duration_minutes": 6411,
+      "last_incident": "2026-06-17T14:26:53.747000+00:00",
+      "classifications": {
+        "advisory": 3
       }
     },
     {
@@ -156,18 +168,6 @@
       }
     },
     {
-      "service": "Microsoft Purview",
-      "short_name": "Purview",
-      "icon": "🔍",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 6411,
-      "last_incident": "2026-04-24T15:04:41.097000+00:00",
-      "classifications": {
-        "advisory": 2
-      }
-    },
-    {
       "service": "Planner",
       "short_name": "Planner",
       "icon": "📋",
@@ -219,8 +219,8 @@
   "monthly": [
     {
       "month": "2026-06",
-      "incident_count": 22,
-      "services_affected": 6
+      "incident_count": 23,
+      "services_affected": 7
     },
     {
       "month": "2026-05",
@@ -229,7 +229,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 34,
+      "incident_count": 33,
       "services_affected": 12
     }
   ]

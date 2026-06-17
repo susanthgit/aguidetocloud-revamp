@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 17 Jun 2026 11:15:51 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2026 16:00:23 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Purview] Users may experience delays in Data Loss Prevention (DLP) alerts being generated or delivered in Microsoft Purview</title>
+      <link>https://www.aguidetocloud.com/service-health/#MP1394693</link>
+      <description>[Microsoft Purview] Users may experience delays in Data Loss Prevention (DLP) alerts being generated or delivered in Microsoft Purview.</description>
+      <category>Microsoft Purview</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MP1394693</guid>
+      <pubDate>Wed, 17 Jun 2026 14:26:53 +0000</pubDate>
+    </item>
     <item>
       <title>[SharePoint Online] Admins may be unable to configure search schema mappings in SharePoint Online</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1393483</link>
@@ -449,15 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1309601</guid>
       <pubDate>Wed, 13 May 2026 18:55:19 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Users may be unable to edit pages using SharePoint Designer</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1314602</link>
-      <description>[SharePoint Online] Users may be unable to edit pages using SharePoint Designer.</description>
-      <category>SharePoint Online</category>
-      <category>investigationSuspended</category>
-      <guid isPermaLink="false">SP1314602</guid>
-      <pubDate>Wed, 13 May 2026 18:01:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
