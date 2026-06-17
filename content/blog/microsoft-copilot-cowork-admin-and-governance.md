@@ -76,6 +76,10 @@ If you're an IT admin, here's how to turn Cowork on:
 4. **Scope the pilot** — keep access tight at first. In your Cost Management spending policy, target **Specific groups** (a security group of your pilot users) rather than All users, and decide separately which **plugins** Cowork can reach (see governance below). Pilot-first is the sane default.
 5. **Communicate** — tell your users it's available, what it does, and that it checks in before sensitive actions.
 
+<p><img src="/images/blog/cowork/admin-01-discovery-setting.webp" alt="Microsoft 365 admin center side panel titled AI experiences enabled by usage-based billing, with a checkbox to allow users to discover and use AI experiences enabled by usage-based billing in Microsoft 365 Copilot, and a note to go to Copilot Cost management to grant access." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Step 1 — the discovery setting under **Copilot → Settings**. It even tells you the next move: go to **Cost management** to grant access. (Shown in a demo tenant.)*
+
 > ⚠️ **Do this before you enable it broadly:** review your [SharePoint permissions](https://learn.microsoft.com/en-us/sharepoint/modern-experience-sharing-permissions) and [information governance](https://learn.microsoft.com/en-us/purview/information-governance-solution) first. Cowork can reach anything the user can reach — so if your permissions are messy, Cowork surfaces that mess. Full remediation playbook: [SharePoint oversharing controls for Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/).
 
 ---
@@ -83,6 +87,10 @@ If you're an IT admin, here's how to turn Cowork on:
 ## Set up billing and cost controls
 
 Cowork's task work is billed in **Copilot Credits** — usage-based, on top of the Microsoft 365 Copilot licence each user already needs. The price of each task comes from four things: the model it uses, how much context it retrieves, how many tool calls it makes, and how long it runs. Because that varies task to task, the most important admin job at rollout is to **set the budget guardrails before anyone starts**.
+
+<p><img src="/images/blog/cowork/admin-02-cost-management.webp" alt="Cost management dashboard in the Microsoft 365 admin center showing a banner that billing does not start until after June 30, a note that it applies to Copilot Cowork and Work IQ API, and a Get started button." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The Cost Management dashboard (**Copilot → Cost management**). Note the two banners: billing doesn't start until after the grace period, and this experience covers Cowork and the Work IQ API today.*
 
 It all lives in one place: the **Cost Management dashboard** in the [Microsoft 365 admin center](https://admin.microsoft.com). The order I'd do it in:
 
@@ -100,6 +108,30 @@ Two honest notes:
 - **Cost drifts down over time** — models get cheaper, Cowork gets better at matching the right model to a task, and context and tool use get more efficient. So treat your first month's numbers as a starting point to refine, not a fixed cost.
 
 Full reference: [Copilot Credits and cost management on Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits). Our deep dive is the [pricing &amp; cost-management spoke](/blog/microsoft-copilot-cowork-pricing-cost-management/).
+
+### What the setup looks like, step by step
+
+Selecting **Get started** walks you through one short wizard. Here's the whole thing end to end (from a demo tenant, identifiers redacted):
+
+<p><img src="/images/blog/cowork/admin-03-spending-policy.webp" alt="Activate the default spending policy panel with a Billing method section, the subscription value redacted, and a choice between Don't limit monthly spending and Limit monthly spending." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*1. **Activate the default spending policy** — pick the billing method (subscription redacted) and choose whether to cap monthly spend.*
+
+<p><img src="/images/blog/cowork/admin-04-alerts.webp" alt="Spending policy panel showing an optional monthly per-user spending limit and a Define alerts section with three recipients redacted who receive a weekly email when spend reaches a threshold." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*2. **Caps and alerts** — add an optional per-user limit, and choose who gets the weekly spend alert (recipients redacted).*
+
+<p><img src="/images/blog/cowork/admin-05-policy-summary.webp" alt="All Users Policy review summary showing User and group access set to All users, Agents and services set to Copilot Cowork and Work IQ API, Billing method Pay-as-you-go with the subscription redacted, Monthly spending limit Unlimited, and Alerts on." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*3. **Review the policy.** This is the one that matters: **User and group access = All users** and **Agents and services = Copilot Cowork**. Switch access to **Specific groups** to scope a pilot instead.*
+
+<p><img src="/images/blog/cowork/admin-06-config-active.webp" alt="Cost management Configuration tab confirming the default spending policy is activated, with a prepaid P3 note and a policy table listing the All Users Policy as Active for Copilot Cowork at 200 credits per user per month." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*4. **Once active**, the **Configuration** tab lists your policy (here, 200 credits per user per month). **Overview** and **Consumption** are where you watch spend, and prepaid **P3** credits live here too.*
+
+<p><img src="/images/blog/cowork/admin-07-available.webp" alt="Success screen reading AI experiences enabled by usage-based billing are now available to all users, with a Manage configuration button." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*5. **Done** — Cowork is live for the people in that policy. Add more policies any time to scope specific groups or services.*
 
 ---
 
