@@ -6,6 +6,13 @@
 
 .cowcalc-container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 4rem; }
 
+/* Widen THIS tool only — drop the right companion rail so the card fills the
+   middle of the page instead of a ~600px column squeezed between two sidebars. */
+body.page-cowork-cost-calculator .zt-reading--tool-detail > .zt-companion { display: none; }
+@media (min-width: 1024px) {
+  body.page-cowork-cost-calculator .zt-reading--tool-detail { grid-template-columns: var(--sidebar-width, 250px) minmax(0, 1fr); }
+}
+
 /* ── Zen underline tabs ── */
 .cowcalc-tabs {
   display: flex; gap: 0; padding: 0; background: transparent; border: none;
@@ -32,14 +39,21 @@
 /* ══════════════════════════════════════════════════════
    THE METER (calculator tab)
    ══════════════════════════════════════════════════════ */
-.cowcalc-simple { max-width: 720px; margin: 0 auto; }
-
-.cowcalc-frame { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 1.5rem; max-width: 62ch; }
+.cowcalc-frame { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 1.5rem; max-width: 64ch; }
 .cowcalc-frame strong { color: var(--text-primary); }
 
-.cowcalc-meter {
+/* one unified card: controls | meter readout (fills the content column) */
+.cowcalc-meter-card {
   background: var(--bg-elevated); border: 1px solid var(--border);
-  border-top: 3px solid var(--accent); border-radius: var(--radius-lg, 16px); padding: 1.6rem 1.75rem;
+  border-top: 3px solid var(--accent); border-radius: var(--radius-lg, 16px); overflow: hidden;
+}
+.cowcalc-meter-grid { display: flex; flex-direction: column; }
+.cowcalc-controls-col { padding: 1.5rem 1.6rem; }
+.cowcalc-readout-col { order: -1; padding: 1.6rem 1.75rem; border-bottom: 1px solid var(--border); }
+@media (min-width: 820px) {
+  .cowcalc-meter-grid { display: grid; grid-template-columns: 0.82fr 1.18fr; align-items: stretch; }
+  .cowcalc-controls-col { border-right: 1px solid var(--border); display: flex; flex-direction: column; justify-content: flex-start; }
+  .cowcalc-readout-col { order: 0; border-bottom: none; padding: 1.75rem 2rem; }
 }
 .cowcalc-meter-top { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
 .cowcalc-meter-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); font-family: var(--zen-font-mono, monospace); }
@@ -84,8 +98,8 @@
 
 .cowcalc-fx-note { font-size: 0.75rem; color: var(--text-tertiary); margin: 0.9rem 0 0; line-height: 1.45; }
 
-/* ── Two questions ── */
-.cowcalc-inputs-simple { margin-top: 2rem; }
+/* ── Two questions (inside the card's controls column) ── */
+.cowcalc-controls-col .cowcalc-field:last-child, .cowcalc-field-last { margin-bottom: 0; }
 .cowcalc-field { margin-bottom: 1.75rem; }
 .cowcalc-field:last-child { margin-bottom: 0; }
 .cowcalc-field-label { display: block; font-weight: 600; color: var(--text-primary); margin-bottom: 0.7rem; font-size: 1.02rem; }

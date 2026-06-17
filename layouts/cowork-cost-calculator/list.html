@@ -46,86 +46,89 @@
     </div>
 
     {{/* ════════════════════════════════════════════════════════════════
-         TAB 1: CALCULATOR — the meter
+         TAB 1: CALCULATOR — one card: controls | meter readout
          ════════════════════════════════════════════════════════════════ */}}
     <div class="cowcalc-panel active" role="tabpanel" id="panel-calculator" aria-labelledby="tab-btn-calculator">
-      <div class="cowcalc-simple">
 
-        {{/* framing */}}
-        <p class="cowcalc-frame">Your Microsoft 365 Copilot seat is a flat <strong>$30</strong>. Cowork is <strong>metered</strong> on top — billed by usage in Copilot Credits. Here's what to budget, and how to keep it in check.</p>
+      <p class="cowcalc-frame">Your Microsoft 365 Copilot seat is a flat <strong>$30</strong>. Cowork is <strong>metered</strong> on top — billed by usage in Copilot Credits. Here's what to budget, and how to keep it in check.</p>
 
-        {{/* ── The meter ── */}}
-        <div class="cowcalc-meter">
-          <div class="cowcalc-meter-top">
-            <span class="cowcalc-meter-label">Estimated monthly Cowork usage</span>
-            <select id="cowcalc-currency" class="cowcalc-currency" aria-label="Display currency">
-              <option value="USD" selected>$ USD</option>
-              <option value="GBP">£ GBP</option>
-              <option value="EUR">€ EUR</option>
-              <option value="AUD">A$ AUD</option>
-              <option value="NZD">NZ$ NZD</option>
-            </select>
-          </div>
+      <div class="cowcalc-meter-card">
+        <div class="cowcalc-meter-grid">
 
-          <div class="cowcalc-meter-read">
-            <div class="cowcalc-meter-num" id="out-meter" data-val="0">$10,500</div>
-            <div class="cowcalc-meter-unit" id="out-range">range $7,500 – $15,000 · billed in Copilot Credits @ $0.01</div>
-          </div>
-
-          {{/* seat-vs-meter split */}}
-          <div class="cowcalc-split">
-            <div class="cowcalc-split-track" aria-hidden="true">
-              <div class="cowcalc-split-seat" id="split-seat" style="width:12%"></div>
-              <div class="cowcalc-split-meter" id="split-meter" style="width:88%"></div>
+          {{/* ── Controls ── */}}
+          <div class="cowcalc-controls-col">
+            <div class="cowcalc-field">
+              <label class="cowcalc-field-label" for="num-users">How many people will use Cowork?</label>
+              <input type="number" id="num-users" class="cowcalc-num" min="1" max="100000" value="50">
             </div>
-            <div class="cowcalc-split-legend">
-              <span class="cowcalc-split-item"><i class="cowcalc-dot cowcalc-dot-seat"></i>M365 seats <b id="split-seat-val">$1,500</b></span>
-              <span class="cowcalc-split-item"><i class="cowcalc-dot cowcalc-dot-meter"></i>Cowork meter <b id="split-meter-val">~$10,500</b></span>
-              <span class="cowcalc-split-item cowcalc-split-allin">All-in <b id="split-allin">$12,000</b>/mo</span>
+            <div class="cowcalc-field cowcalc-field-last">
+              <span class="cowcalc-field-label">How heavily will they use it?</span>
+              <div class="cowcalc-usage-pills" role="group" aria-label="Usage level">
+                <button type="button" class="cowcalc-pill" data-usage="light" aria-pressed="false">Light</button>
+                <button type="button" class="cowcalc-pill active" data-usage="balanced" aria-pressed="true">Balanced</button>
+                <button type="button" class="cowcalc-pill" data-usage="heavy" aria-pressed="false">Heavy</button>
+              </div>
+              <p class="cowcalc-usage-caption" id="usage-caption">Balanced — Microsoft's own default assumption: a typical mix of quick tasks and regular multi-step jobs.</p>
             </div>
           </div>
 
-          <p class="cowcalc-verdict" id="out-verdict">At this usage, the Cowork meter is about <strong>7.0×</strong> your seat bill — worth modelling, and setting spend caps, before a broad rollout.</p>
+          {{/* ── Meter readout ── */}}
+          <div class="cowcalc-readout-col">
+            <div class="cowcalc-meter-top">
+              <span class="cowcalc-meter-label">Estimated monthly Cowork usage</span>
+              <select id="cowcalc-currency" class="cowcalc-currency" aria-label="Display currency">
+                <option value="USD" selected>$ USD</option>
+                <option value="GBP">£ GBP</option>
+                <option value="EUR">€ EUR</option>
+                <option value="AUD">A$ AUD</option>
+                <option value="NZD">NZ$ NZD</option>
+              </select>
+            </div>
 
-          <div class="cowcalc-meter-chips">
-            <div class="cowcalc-chip-metric"><span class="cowcalc-chip-label">Copilot Credits / month</span><span class="cowcalc-chip-value" id="out-credits">750K – 1.5M</span></div>
-            <div class="cowcalc-chip-metric"><span class="cowcalc-chip-label">Variable / user / mo</span><span class="cowcalc-chip-value" id="out-peruser">$150 – $300</span></div>
-            <div class="cowcalc-chip-metric"><span class="cowcalc-chip-label">M365 seats</span><span class="cowcalc-chip-value" id="out-seats-line">50 × $30</span></div>
+            <div class="cowcalc-meter-read">
+              <div class="cowcalc-meter-num" id="out-meter" data-val="0">$10,500</div>
+              <div class="cowcalc-meter-unit" id="out-range">range $7,500 – $15,000 · billed in Copilot Credits @ $0.01</div>
+            </div>
+
+            {{/* seat-vs-meter split */}}
+            <div class="cowcalc-split">
+              <div class="cowcalc-split-track" aria-hidden="true">
+                <div class="cowcalc-split-seat" id="split-seat" style="width:12%"></div>
+                <div class="cowcalc-split-meter" id="split-meter" style="width:88%"></div>
+              </div>
+              <div class="cowcalc-split-legend">
+                <span class="cowcalc-split-item"><i class="cowcalc-dot cowcalc-dot-seat"></i>M365 seats <b id="split-seat-val">$1,500</b></span>
+                <span class="cowcalc-split-item"><i class="cowcalc-dot cowcalc-dot-meter"></i>Cowork meter <b id="split-meter-val">~$10,500</b></span>
+                <span class="cowcalc-split-item cowcalc-split-allin">All-in <b id="split-allin">$12,000</b>/mo</span>
+              </div>
+            </div>
+
+            <p class="cowcalc-verdict" id="out-verdict">At this usage, the Cowork meter is about <strong>7.0×</strong> your seat bill — worth modelling, and setting spend caps, before a broad rollout.</p>
+
+            <div class="cowcalc-meter-chips">
+              <div class="cowcalc-chip-metric"><span class="cowcalc-chip-label">Copilot Credits / month</span><span class="cowcalc-chip-value" id="out-credits">750K – 1.5M</span></div>
+              <div class="cowcalc-chip-metric"><span class="cowcalc-chip-label">Variable / user / mo</span><span class="cowcalc-chip-value" id="out-peruser">$150 – $300</span></div>
+              <div class="cowcalc-chip-metric"><span class="cowcalc-chip-label">M365 seats</span><span class="cowcalc-chip-value" id="out-seats-line">50 × $30</span></div>
+            </div>
+            <p class="cowcalc-fx-note" id="cowcalc-fx-note"></p>
           </div>
-          <p class="cowcalc-fx-note" id="cowcalc-fx-note"></p>
+
         </div>
-
-        {{/* ── Two questions ── */}}
-        <div class="cowcalc-inputs-simple">
-          <div class="cowcalc-field">
-            <label class="cowcalc-field-label" for="num-users">How many people will use Cowork?</label>
-            <input type="number" id="num-users" class="cowcalc-num" min="1" max="100000" value="50">
-          </div>
-          <div class="cowcalc-field">
-            <span class="cowcalc-field-label">How heavily will they use it?</span>
-            <div class="cowcalc-usage-pills" role="group" aria-label="Usage level">
-              <button type="button" class="cowcalc-pill" data-usage="light" aria-pressed="false">Light</button>
-              <button type="button" class="cowcalc-pill active" data-usage="balanced" aria-pressed="true">Balanced</button>
-              <button type="button" class="cowcalc-pill" data-usage="heavy" aria-pressed="false">Heavy</button>
-            </div>
-            <p class="cowcalc-usage-caption" id="usage-caption">Balanced — Microsoft's own default assumption: a typical mix of quick tasks and regular multi-step jobs.</p>
-          </div>
-        </div>
-
-        {{/* ── Habit strip ── */}}
-        <section class="cowcalc-habit-sec">
-          <h3 class="cowcalc-habit-title">What if Cowork becomes the habit?</h3>
-          <p class="cowcalc-habit-sub">One heavy Cowork run is roughly <strong>$25</strong>. The cost is in the repeats — and many of these are tasks your $30 seat already includes.</p>
-          <div class="cowcalc-habit">
-            <div class="cowcalc-habit-cell"><div class="cowcalc-habit-amt" id="habit-month">~$25</div><div class="cowcalc-habit-lab">One heavy report a month</div></div>
-            <div class="cowcalc-habit-cell"><div class="cowcalc-habit-amt" id="habit-week">~$108</div><div class="cowcalc-habit-lab">One a week</div></div>
-            <div class="cowcalc-habit-cell"><div class="cowcalc-habit-amt" id="habit-day">~$500</div><div class="cowcalc-habit-lab">One every workday</div></div>
-            <div class="cowcalc-habit-cell"><div class="cowcalc-habit-amt" id="habit-team">~$2,165</div><div class="cowcalc-habit-lab">20 people, one a week each</div></div>
-          </div>
-        </section>
-
-        <p class="cowcalc-disclaimer cowcalc-disclaimer-foot"><strong>Estimate only — not a billing quote.</strong> Calibrated to Microsoft's Customer Cowork Estimator (≈ $120–410 / user / month). Real burn varies with the model picked, tools called, and context. <button type="button" class="cowcalc-inline-link" onclick="cowcalcGotoDetails()">How we estimate ›</button></p>
       </div>
+
+      {{/* ── Habit strip ── */}}
+      <section class="cowcalc-habit-sec">
+        <h3 class="cowcalc-habit-title">What if Cowork becomes the habit?</h3>
+        <p class="cowcalc-habit-sub">One heavy Cowork run is roughly <strong>$25</strong>. The cost is in the repeats — and many of these are tasks your $30 seat already includes.</p>
+        <div class="cowcalc-habit">
+          <div class="cowcalc-habit-cell"><div class="cowcalc-habit-amt" id="habit-month">~$25</div><div class="cowcalc-habit-lab">One heavy report a month</div></div>
+          <div class="cowcalc-habit-cell"><div class="cowcalc-habit-amt" id="habit-week">~$108</div><div class="cowcalc-habit-lab">One a week</div></div>
+          <div class="cowcalc-habit-cell"><div class="cowcalc-habit-amt" id="habit-day">~$500</div><div class="cowcalc-habit-lab">One every workday</div></div>
+          <div class="cowcalc-habit-cell"><div class="cowcalc-habit-amt" id="habit-team">~$2,165</div><div class="cowcalc-habit-lab">20 people, one a week each</div></div>
+        </div>
+      </section>
+
+      <p class="cowcalc-disclaimer cowcalc-disclaimer-foot"><strong>Estimate only — not a billing quote.</strong> Calibrated to Microsoft's Customer Cowork Estimator (≈ $120–410 / user / month). Real burn varies with the model picked, tools called, and context. <button type="button" class="cowcalc-inline-link" onclick="cowcalcGotoDetails()">How we estimate ›</button></p>
     </div>
 
     {{/* ════════════════════════════════════════════════════════════════
