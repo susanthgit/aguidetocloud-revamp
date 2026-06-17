@@ -1,7 +1,7 @@
 /* ── Cowork Cost Calculator ──
    Accent: zen indigo (var(--accent)) · Namespace: .cowcalc-*
-   Zen-migrated: canonical Zen semantic tokens only (light/dark via toggle).
-   v4: simple model — two questions, answer on top.
+   Zen-migrated: canonical Zen semantic tokens only · NO gradients/glows.
+   v5: "the meter" instrument — calibrated to Microsoft's estimator.
 */
 
 .cowcalc-container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 4rem; }
@@ -30,41 +30,59 @@
 @media (prefers-reduced-motion: reduce) { .cowcalc-panel.active { animation: none; } }
 
 /* ══════════════════════════════════════════════════════
-   SIMPLE CALCULATOR (centered, answer on top)
+   THE METER (calculator tab)
    ══════════════════════════════════════════════════════ */
-.cowcalc-simple { max-width: 620px; margin: 0 auto; }
+.cowcalc-simple { max-width: 720px; margin: 0 auto; }
 
-/* ── Result card ── */
-.cowcalc-result {
-  background: linear-gradient(135deg, var(--accent-subtle) 0%, var(--bg-elevated) 100%);
-  border: 1px solid var(--border); border-radius: var(--radius-lg, 16px); padding: 1.75rem;
+.cowcalc-frame { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 1.5rem; max-width: 62ch; }
+.cowcalc-frame strong { color: var(--text-primary); }
+
+.cowcalc-meter {
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-top: 3px solid var(--accent); border-radius: var(--radius-lg, 16px); padding: 1.6rem 1.75rem;
 }
-.cowcalc-result-head { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
-.cowcalc-result-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); }
+.cowcalc-meter-top { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+.cowcalc-meter-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); font-family: var(--zen-font-mono, monospace); }
 .cowcalc-currency {
   padding: 0.35rem 0.55rem; border: 1px solid var(--border); border-radius: var(--radius-sm, 6px);
   background: var(--bg-surface); color: var(--text-primary); font-size: 0.82rem; cursor: pointer;
 }
 .cowcalc-currency:focus { outline: 2px solid var(--accent); outline-offset: 0; }
-.cowcalc-big-amount {
-  font-family: var(--zen-font-mono, monospace); font-size: clamp(1.9rem, 6vw, 2.75rem);
-  font-weight: 700; color: var(--accent); line-height: 1.1; word-break: break-word;
-}
-.cowcalc-big-sub { font-size: 14px; color: var(--text-secondary); margin-top: 0.5rem; }
 
-.cowcalc-result-chips { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 1.25rem; }
-@media (max-width: 480px) { .cowcalc-result-chips { grid-template-columns: 1fr; } }
-.cowcalc-chip-metric {
-  background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md, 10px);
-  padding: 0.7rem 0.85rem; display: flex; flex-direction: column; gap: 0.3rem;
+.cowcalc-meter-num {
+  font-family: var(--zen-font-mono, monospace); font-size: clamp(2.5rem, 9vw, 3.6rem);
+  font-weight: 700; color: var(--accent); line-height: 1; letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
 }
-.cowcalc-chip-label { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.02em; color: var(--text-secondary); }
-.cowcalc-chip-value { font-family: var(--zen-font-mono, monospace); font-weight: 700; color: var(--text-primary); font-size: 1rem; }
-.cowcalc-chip-highlight { border-color: var(--accent); background: var(--accent-subtle); }
-.cowcalc-chip-highlight .cowcalc-chip-value { color: var(--accent); }
+.cowcalc-meter-unit { font-family: var(--zen-font-mono, monospace); font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-tertiary); margin-top: 0.55rem; }
 
-.cowcalc-peruser { font-size: 0.85rem; color: var(--text-secondary); margin: 0.9rem 0 0; font-family: var(--zen-font-mono, monospace); }
-.cowcalc-fx-note { font-size: 0.75rem; color: var(--text-tertiary); margin: 0.75rem 0 0; line-height: 1.45; }
+/* ── Seat-vs-meter split bar ── */
+.cowcalc-split { margin-top: 1.4rem; }
+.cowcalc-split-track { display: flex; height: 34px; border-radius: var(--radius-sm, 6px); overflow: hidden; background: var(--bg-surface); border: 1px solid var(--border); }
+.cowcalc-split-seat { background: var(--text-tertiary); min-width: 2px; }
+.cowcalc-split-meter { background: var(--accent); min-width: 2px; }
+.cowcalc-split-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem 1.2rem; margin-top: 0.7rem; font-size: 0.83rem; color: var(--text-secondary); }
+.cowcalc-split-item { display: inline-flex; align-items: center; gap: 0.4rem; }
+.cowcalc-split-item b { color: var(--text-primary); font-family: var(--zen-font-mono, monospace); font-weight: 600; }
+.cowcalc-dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; flex: 0 0 auto; }
+.cowcalc-dot-seat { background: var(--text-tertiary); }
+.cowcalc-dot-meter { background: var(--accent); }
+.cowcalc-split-allin { margin-left: auto; }
+.cowcalc-split-allin b { color: var(--accent); }
+
+.cowcalc-verdict {
+  margin: 1.2rem 0 0; padding: 0.85rem 1rem; background: var(--accent-subtle); border: 1px solid var(--border);
+  border-left: 3px solid var(--accent); border-radius: var(--radius-md, 10px); font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;
+}
+.cowcalc-verdict strong { color: var(--accent); }
+
+.cowcalc-meter-chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-top: 1.2rem; }
+@media (max-width: 520px) { .cowcalc-meter-chips { grid-template-columns: 1fr; } }
+.cowcalc-chip-metric { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md, 10px); padding: 0.65rem 0.8rem; display: flex; flex-direction: column; gap: 0.25rem; }
+.cowcalc-chip-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.02em; color: var(--text-secondary); }
+.cowcalc-chip-value { font-family: var(--zen-font-mono, monospace); font-weight: 700; color: var(--text-primary); font-size: 0.95rem; }
+
+.cowcalc-fx-note { font-size: 0.75rem; color: var(--text-tertiary); margin: 0.9rem 0 0; line-height: 1.45; }
 
 /* ── Two questions ── */
 .cowcalc-inputs-simple { margin-top: 2rem; }
@@ -87,24 +105,33 @@
 .cowcalc-pill:hover:not(.active) { background: var(--accent-subtle); color: var(--accent); }
 .cowcalc-pill.active { background: var(--accent); color: #fff; }
 .cowcalc-pill:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-.cowcalc-usage-caption { font-size: 0.86rem; color: var(--text-secondary); margin: 0.85rem 0 0; line-height: 1.5; max-width: 52ch; }
+.cowcalc-usage-caption { font-size: 0.86rem; color: var(--text-secondary); margin: 0.85rem 0 0; line-height: 1.5; max-width: 56ch; }
+
+/* ── Habit strip ── */
+.cowcalc-habit-sec { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.cowcalc-habit-title { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.4rem; }
+.cowcalc-habit-sub { font-size: 0.9rem; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+.cowcalc-habit-sub strong { color: var(--text-primary); }
+.cowcalc-habit { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-top: 1.1rem; }
+@media (max-width: 640px) { .cowcalc-habit { grid-template-columns: repeat(2, 1fr); } }
+.cowcalc-habit-cell { border: 1px solid var(--border); border-radius: var(--radius-md, 10px); padding: 1rem; background: var(--bg-surface); }
+.cowcalc-habit-amt { font-family: var(--zen-font-mono, monospace); font-weight: 700; font-size: 1.4rem; color: var(--accent); }
+.cowcalc-habit-lab { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.35rem; line-height: 1.35; }
 
 .cowcalc-disclaimer { font-size: 0.78rem; color: var(--text-tertiary); line-height: 1.5; }
 .cowcalc-disclaimer strong { color: var(--text-secondary); }
 .cowcalc-disclaimer-foot { margin: 2rem 0 0; padding-top: 1.25rem; border-top: 1px solid var(--border); }
-.cowcalc-inline-link {
-  background: none; border: none; padding: 0; color: var(--accent); font: inherit; font-weight: 600;
-  cursor: pointer; text-decoration: none;
-}
+.cowcalc-inline-link { background: none; border: none; padding: 0; color: var(--accent); font: inherit; font-weight: 600; cursor: pointer; }
 .cowcalc-inline-link:hover { text-decoration: underline; }
 
 /* ══════════════════════════════════════════════════════
-   TAB 2: COMPARE & CONTROL (reference)
+   TAB 2: COMPARE & CONTROL
    ══════════════════════════════════════════════════════ */
 .cowcalc-section { margin-top: 3rem; }
 .cowcalc-section-first { margin-top: 0; }
 .cowcalc-section-title { font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0; }
-.cowcalc-section-subtitle { color: var(--text-secondary); margin: 0 0 1rem 0; }
+.cowcalc-section-subtitle { color: var(--text-secondary); margin: 0 0 1rem 0; line-height: 1.55; }
+.cowcalc-fineprint { font-size: 0.8rem; color: var(--text-tertiary); margin-top: 0.85rem; line-height: 1.55; }
 
 .cowcalc-table-wrap { overflow-x: auto; margin-top: 1rem; }
 .cowcalc-table { width: 100%; border-collapse: collapse; }
@@ -113,6 +140,13 @@
 .cowcalc-right { text-align: right; font-family: var(--zen-font-mono, monospace); }
 .cowcalc-included { color: var(--success); font-weight: 600; }
 .cowcalc-metered { color: var(--accent); font-weight: 600; }
+
+.cowcalc-guide { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; }
+@media (max-width: 760px) { .cowcalc-guide { grid-template-columns: 1fr; } }
+.cowcalc-gcard { border: 1px solid var(--border); border-radius: var(--radius-md, 10px); padding: 1.25rem; background: var(--bg-surface); }
+.cowcalc-gwhen { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary); font-family: var(--zen-font-mono, monospace); }
+.cowcalc-gcard h3 { font-size: 1.05rem; color: var(--text-primary); margin: 0.45rem 0 0.5rem; }
+.cowcalc-gcard p { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.5; margin: 0; }
 
 .cowcalc-controls { margin-top: 3rem; background: var(--bg-elevated); border: 1px solid var(--border); border-left: 3px solid var(--warning); border-radius: var(--radius-lg, 16px); padding: 1.5rem; }
 .cowcalc-controls h3 { color: var(--text-primary); margin: 0 0 1rem 0; }
@@ -134,10 +168,8 @@
 .cowcalc-btn { display: inline-block; padding: 0.75rem 1.5rem; background: var(--accent-strong, #4F46E5); color: #fff; border-radius: var(--radius-md, 10px); text-decoration: none; font-weight: 600; transition: opacity 0.2s ease-out; }
 .cowcalc-btn:hover { opacity: 0.9; }
 
-/* ── FAQ ── */
 .cowcalc-faq-heading { font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin: 0 0 1.5rem 0; }
 
-/* ── Cross-tool CTAs ── */
 .cowcalc-cross-tools { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.5rem; }
 .cowcalc-cross-link {
   display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.85rem;

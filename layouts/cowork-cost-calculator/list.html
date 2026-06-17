@@ -46,15 +46,18 @@
     </div>
 
     {{/* ════════════════════════════════════════════════════════════════
-         TAB 1: CALCULATOR — two questions, answer on top
+         TAB 1: CALCULATOR — the meter
          ════════════════════════════════════════════════════════════════ */}}
     <div class="cowcalc-panel active" role="tabpanel" id="panel-calculator" aria-labelledby="tab-btn-calculator">
       <div class="cowcalc-simple">
 
-        {{/* ── The answer ── */}}
-        <div class="cowcalc-result">
-          <div class="cowcalc-result-head">
-            <span class="cowcalc-result-label">Estimated monthly Cowork usage</span>
+        {{/* framing */}}
+        <p class="cowcalc-frame">Your Microsoft 365 Copilot seat is a flat <strong>$30</strong>. Cowork is <strong>metered</strong> on top — billed by usage in Copilot Credits. Here's what to budget, and how to keep it in check.</p>
+
+        {{/* ── The meter ── */}}
+        <div class="cowcalc-meter">
+          <div class="cowcalc-meter-top">
+            <span class="cowcalc-meter-label">Estimated monthly Cowork usage</span>
             <select id="cowcalc-currency" class="cowcalc-currency" aria-label="Display currency">
               <option value="USD" selected>$ USD</option>
               <option value="GBP">£ GBP</option>
@@ -63,20 +66,32 @@
               <option value="NZD">NZ$ NZD</option>
             </select>
           </div>
-          <div class="cowcalc-big-amount" id="out-burn-range">$1,845 – $3,540</div>
-          <div class="cowcalc-big-sub" id="out-burn-mid">~$2,460 typical · on top of your M365 Copilot seats</div>
 
-          <div class="cowcalc-result-chips">
-            <div class="cowcalc-chip-metric cowcalc-chip-highlight">
-              <span class="cowcalc-chip-label">All-in / month (seats + usage)</span>
-              <span class="cowcalc-chip-value" id="out-allin-range">$3,345 – $5,040</span>
+          <div class="cowcalc-meter-read">
+            <div class="cowcalc-meter-num" id="out-meter" data-val="0">$10,500</div>
+            <div class="cowcalc-meter-unit" id="out-range">range $7,500 – $15,000 · billed in Copilot Credits @ $0.01</div>
+          </div>
+
+          {{/* seat-vs-meter split */}}
+          <div class="cowcalc-split">
+            <div class="cowcalc-split-track" aria-hidden="true">
+              <div class="cowcalc-split-seat" id="split-seat" style="width:12%"></div>
+              <div class="cowcalc-split-meter" id="split-meter" style="width:88%"></div>
             </div>
-            <div class="cowcalc-chip-metric">
-              <span class="cowcalc-chip-label">Copilot Credits / month</span>
-              <span class="cowcalc-chip-value" id="out-credits-range">185K – 354K</span>
+            <div class="cowcalc-split-legend">
+              <span class="cowcalc-split-item"><i class="cowcalc-dot cowcalc-dot-seat"></i>M365 seats <b id="split-seat-val">$1,500</b></span>
+              <span class="cowcalc-split-item"><i class="cowcalc-dot cowcalc-dot-meter"></i>Cowork meter <b id="split-meter-val">~$10,500</b></span>
+              <span class="cowcalc-split-item cowcalc-split-allin">All-in <b id="split-allin">$12,000</b>/mo</span>
             </div>
           </div>
-          <p class="cowcalc-peruser" id="out-avg-user">≈ $37 – $71 per user / month</p>
+
+          <p class="cowcalc-verdict" id="out-verdict">At this usage, the Cowork meter is about <strong>7.0×</strong> your seat bill — worth modelling, and setting spend caps, before a broad rollout.</p>
+
+          <div class="cowcalc-meter-chips">
+            <div class="cowcalc-chip-metric"><span class="cowcalc-chip-label">Copilot Credits / month</span><span class="cowcalc-chip-value" id="out-credits">750K – 1.5M</span></div>
+            <div class="cowcalc-chip-metric"><span class="cowcalc-chip-label">Variable / user / mo</span><span class="cowcalc-chip-value" id="out-peruser">$150 – $300</span></div>
+            <div class="cowcalc-chip-metric"><span class="cowcalc-chip-label">M365 seats</span><span class="cowcalc-chip-value" id="out-seats-line">50 × $30</span></div>
+          </div>
           <p class="cowcalc-fx-note" id="cowcalc-fx-note"></p>
         </div>
 
@@ -93,11 +108,23 @@
               <button type="button" class="cowcalc-pill active" data-usage="balanced" aria-pressed="true">Balanced</button>
               <button type="button" class="cowcalc-pill" data-usage="heavy" aria-pressed="false">Heavy</button>
             </div>
-            <p class="cowcalc-usage-caption" id="usage-caption">Balanced — a typical mix of quick tasks and the occasional deep, multi-step job (roughly 60 prompts a month each).</p>
+            <p class="cowcalc-usage-caption" id="usage-caption">Balanced — Microsoft's own default assumption: a typical mix of quick tasks and regular multi-step jobs.</p>
           </div>
         </div>
 
-        <p class="cowcalc-disclaimer cowcalc-disclaimer-foot"><strong>Estimate only — not a billing quote.</strong> Real burn varies with the model picked, tools called, and context. $ uses the PayGo rate of $0.01 / Copilot Credit. <button type="button" class="cowcalc-inline-link" onclick="cowcalcGotoDetails()">How we estimate ›</button></p>
+        {{/* ── Habit strip ── */}}
+        <section class="cowcalc-habit-sec">
+          <h3 class="cowcalc-habit-title">What if Cowork becomes the habit?</h3>
+          <p class="cowcalc-habit-sub">One heavy Cowork run is roughly <strong>$25</strong>. The cost is in the repeats — and many of these are tasks your $30 seat already includes.</p>
+          <div class="cowcalc-habit">
+            <div class="cowcalc-habit-cell"><div class="cowcalc-habit-amt" id="habit-month">~$25</div><div class="cowcalc-habit-lab">One heavy report a month</div></div>
+            <div class="cowcalc-habit-cell"><div class="cowcalc-habit-amt" id="habit-week">~$108</div><div class="cowcalc-habit-lab">One a week</div></div>
+            <div class="cowcalc-habit-cell"><div class="cowcalc-habit-amt" id="habit-day">~$500</div><div class="cowcalc-habit-lab">One every workday</div></div>
+            <div class="cowcalc-habit-cell"><div class="cowcalc-habit-amt" id="habit-team">~$2,165</div><div class="cowcalc-habit-lab">20 people, one a week each</div></div>
+          </div>
+        </section>
+
+        <p class="cowcalc-disclaimer cowcalc-disclaimer-foot"><strong>Estimate only — not a billing quote.</strong> Calibrated to Microsoft's Customer Cowork Estimator (≈ $120–410 / user / month). Real burn varies with the model picked, tools called, and context. <button type="button" class="cowcalc-inline-link" onclick="cowcalcGotoDetails()">How we estimate ›</button></p>
       </div>
     </div>
 
@@ -107,46 +134,68 @@
     <div class="cowcalc-panel" role="tabpanel" id="panel-patterns" aria-labelledby="tab-btn-patterns">
 
       <section class="cowcalc-section cowcalc-section-first">
-        <h2 class="cowcalc-section-title">How Cowork compares to alternatives</h2>
-        <p class="cowcalc-section-subtitle">Same task, different pricing models. Your mileage will vary based on actual use.</p>
+        <h2 class="cowcalc-section-title">One task, three prices</h2>
+        <p class="cowcalc-section-subtitle">The same piece of work is priced very differently depending on where you run it. Your $30 Copilot seat already includes a lot — Cowork is the metered layer for unattended, multi-tool jobs.</p>
         <div class="cowcalc-table-wrap">
           <table class="cowcalc-table">
             <thead>
-              <tr><th>Scenario</th><th>M365 Copilot (seat)</th><th class="cowcalc-right">Cowork (PayGo)</th><th class="cowcalc-right">Claude Pro</th><th class="cowcalc-right">Claude Team</th></tr>
+              <tr><th>Task</th><th>M365 Copilot (seat)</th><th class="cowcalc-right">Cowork (PayGo)</th><th class="cowcalc-right">Claude Pro / Team</th></tr>
             </thead>
             <tbody>
-              <tr><td>Quick brief from a few files</td><td class="cowcalc-included">Included</td><td class="cowcalc-metered cowcalc-right">$0.20–0.50</td><td class="cowcalc-right">Quota</td><td class="cowcalc-right">Quota</td></tr>
-              <tr><td>Research memo grounded in M365</td><td class="cowcalc-included">Included (Researcher)</td><td class="cowcalc-metered cowcalc-right">$1.00–2.00</td><td class="cowcalc-right">N/A</td><td class="cowcalc-right">N/A</td></tr>
-              <tr><td>Multi-step task (schedule + email + deck)</td><td>Separate tools</td><td class="cowcalc-metered cowcalc-right">$2.00–4.00</td><td class="cowcalc-right">Quota</td><td class="cowcalc-right">Quota</td></tr>
-              <tr><td>Monthly recurring: balanced mix</td><td class="cowcalc-included">$30/user</td><td class="cowcalc-metered cowcalc-right">$30 + usage/user</td><td class="cowcalc-right">$20/user</td><td class="cowcalc-right">$30/user</td></tr>
+              <tr><td>Quick brief from a few files &amp; web pages</td><td class="cowcalc-included">Included</td><td class="cowcalc-metered cowcalc-right">~$1.25</td><td class="cowcalc-right">Quota</td></tr>
+              <tr><td>Cited research memo for a meeting</td><td class="cowcalc-included">Included (Researcher)</td><td class="cowcalc-metered cowcalc-right">~$5.00</td><td class="cowcalc-right">Quota / N/A</td></tr>
+              <tr><td>Workbook + slide deck from several sources</td><td class="cowcalc-included">Included (Excel / PPT agents)</td><td class="cowcalc-metered cowcalc-right">~$25.00</td><td class="cowcalc-right">Quota</td></tr>
+              <tr><td>Long unattended agent loop, lots of retrieval</td><td>Use Cowork for this</td><td class="cowcalc-metered cowcalc-right">~$25.00+</td><td class="cowcalc-right">Quota</td></tr>
             </tbody>
           </table>
+        </div>
+        <p class="cowcalc-fineprint">Cowork figures use the estimator's light / medium / heavy credit bands at $0.01 / credit. The point isn't that Cowork is dear — it's that most everyday tasks are already in your seat, so Cowork pays off when you genuinely need unattended, end-to-end runs.</p>
+      </section>
+
+      <section class="cowcalc-section">
+        <h2 class="cowcalc-section-title">Where should the work go?</h2>
+        <div class="cowcalc-guide">
+          <div class="cowcalc-gcard">
+            <div class="cowcalc-gwhen">Default · already in your seat</div>
+            <h3>Stay in M365 Copilot</h3>
+            <p>"Research it, summarise it, turn it into a doc / workbook / deck, let me edit" is already in the $30 seat via Researcher, Analyst, and the Office agents. No meter for these.</p>
+          </div>
+          <div class="cowcalc-gcard">
+            <div class="cowcalc-gwhen">When "help me" becomes "go do it"</div>
+            <h3>Reach for Cowork</h3>
+            <p>Worth it when you genuinely value unattended runtime, multi-tool coordination, and long follow-through across M365. Turn it on deliberately — with tenant / group / user caps, alerts, and a budget.</p>
+          </div>
+          <div class="cowcalc-gcard">
+            <div class="cowcalc-gwhen">When you want predictable budget</div>
+            <h3>Weigh the alternatives</h3>
+            <p>Quota-based tools (e.g. Claude Pro / Team) trade transparency for a flat fee — handy for budgeting, less clear on true usage. Microsoft notes Cowork ran 30–40% cheaper than Claude Cowork in its own M365-connected tests.</p>
+          </div>
         </div>
       </section>
 
       <section class="cowcalc-controls">
-        <h3>How to control your Cowork burn</h3>
+        <h3>How to keep Cowork spend in check</h3>
         <ul>
           <li><strong>Set hard caps and alerts</strong> in M365 admin center → Copilot → Cost Management. Caps stop spend before it happens; alerts tell you when thresholds hit.</li>
           <li><strong>Scope to groups, not "All users"</strong> in your spending policy. Start with a pilot cohort, measure their patterns for 30 days, then decide whether to expand.</li>
-          <li><strong>Check the Consumption tab weekly</strong> — usage by user, group, service. Find the heavy users and ask them what they're getting for the spend.</li>
-          <li><strong>Teach the difference between Copilot (included) and Cowork (metered)</strong> — most everyday tasks already work in the $30 seat via Researcher, Analyst, and Office agents. Cowork is for multi-tool orchestration.</li>
-          <li><strong>Use any transition runway before billing starts</strong> — if you joined through the Frontier preview, check your tenant's billing start date in the admin center and use the runway to set caps and train users.</li>
+          <li><strong>Check the Consumption tab weekly</strong> — usage by user, group, service. Find the heavy users and see what they're getting for the spend.</li>
+          <li><strong>Teach the line between Copilot (included) and Cowork (metered)</strong> — most everyday tasks already work in the $30 seat. Cowork is for unattended multi-tool orchestration.</li>
+          <li><strong>Consider prepaid capacity packs</strong> — at scale, prepaid credits ($0.008 vs $0.01 PayGo) are effectively cheaper than pay-as-you-go.</li>
         </ul>
       </section>
 
       <section class="cowcalc-methodology">
         <h3>How this calculator works</h3>
-        <p><strong>The model:</strong> we multiply your number of users by a typical credits-per-user-per-month figure for the usage level you pick — <strong>Light</strong>, <strong>Balanced</strong>, or <strong>Heavy</strong> — then convert credits to dollars at $0.01 each (PayGo).</p>
-        <p><strong>Where the usage levels come from</strong> (Microsoft's GA credit guidance — light ~20, medium ~100, heavy ~400 credits per prompt, across a typical monthly prompt count):</p>
+        <p><strong>The model:</strong> we multiply your number of users by a typical credits-per-user-per-month figure for the usage level you pick, then convert credits to dollars at $0.01 each (PayGo). The result is shown as a low–high range.</p>
+        <p><strong>Calibration:</strong> the levels are anchored to <strong>Microsoft's own Customer Cowork Estimator</strong>, whose default assumption is roughly <strong>$120–410 per user per month</strong> in credits on top of the seat:</p>
         <ul>
-          <li><strong>Light</strong> ≈ 1,150–2,220 credits / user / month — occasional, mostly quick tasks.</li>
-          <li><strong>Balanced</strong> ≈ 3,690–7,080 credits / user / month — a typical mix.</li>
-          <li><strong>Heavy</strong> ≈ 9,600–18,200 credits / user / month — frequent, multi-tool work.</li>
+          <li><strong>Light</strong> ≈ $60–130 / user / month — lighter than Microsoft's default.</li>
+          <li><strong>Balanced</strong> ≈ $150–300 / user / month — Microsoft's default assumption.</li>
+          <li><strong>Heavy</strong> ≈ $320–520 / user / month — frequent, multi-tool use.</li>
         </ul>
-        <p>The low–high band reflects the real spread in per-task credit cost. <strong>Different teams differ:</strong> if your light users and power users are very different, run the calculator twice and add the results.</p>
-        <p><strong>Dollars and credits:</strong> Copilot Credits are what the admin Cost Management dashboard meters; dollars are credits × $0.01 (PayGo). Prepaid capacity packs are effectively cheaper per credit. <strong>Currencies</strong> other than USD are an approximate conversion for budgeting — Microsoft bills Cowork in USD.</p>
-        <p><strong>Sources:</strong> <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/" target="_blank" rel="noopener">Microsoft 365 Blog — Copilot Cowork GA</a> · <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits" target="_blank" rel="noopener">Usage-based billing overview (Microsoft Learn)</a> · for a detailed per-persona model, ask your Microsoft account team about the <a href="https://aka.ms/CustomerCoworkEstimator" target="_blank" rel="noopener">Customer Cowork Estimator</a>.</p>
+        <p><strong>Dollars and credits:</strong> Copilot Credits are what the admin Cost Management dashboard meters; dollars are credits × $0.01 (PayGo). Prepaid capacity packs are effectively cheaper. <strong>Currencies</strong> other than USD are an approximate conversion for budgeting — Microsoft bills Cowork in USD.</p>
+        <p><strong>Caveats:</strong> a directional model, not a billing forecast — Microsoft's estimator defaults are aggregated Frontier data and "may not predict future outcomes." Real burn depends on the model picked, tools called, context, and runtime; the cheaper "Cowork 1" model is coming. Use this for budgeting, not purchasing.</p>
+        <p><strong>Sources:</strong> <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/" target="_blank" rel="noopener">Microsoft 365 Blog — Copilot Cowork GA</a> · <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits" target="_blank" rel="noopener">Usage-based billing &amp; Copilot Credits (Microsoft Learn)</a> · your Microsoft account team can share the <a href="https://aka.ms/CustomerCoworkEstimator" target="_blank" rel="noopener">Customer Cowork Estimator</a> workbook.</p>
       </section>
 
       <div class="cowcalc-cta">
@@ -194,7 +243,7 @@
   {{/* Hidden block for Pagefind search indexing */}}
   <div data-pagefind-body aria-hidden="true" style="display:none">
     <h2>Cowork Cost Calculator</h2>
-    <p>Estimate how much Microsoft Copilot Cowork will cost your team each month. Enter how many people will use Cowork and pick a usage level — light, balanced, or heavy — to see the monthly burn as a low–high range in both dollars and Copilot Credits. Choose your currency: USD, GBP, EUR, AUD, NZD. Compare Cowork PayGo against Claude Pro and Claude Team, and get cost-control tips: spending caps, group scoping, consumption monitoring. Based on Microsoft's GA credit guidance and usage-based billing.</p>
+    <p>Estimate how much Microsoft Copilot Cowork will cost your team each month. Your M365 Copilot seat is a flat $30; Cowork is metered on top in Copilot Credits. Enter how many people will use Cowork and pick a usage level — light, balanced, or heavy — to see the monthly meter as a low–high range in dollars and credits, plus the seat-vs-meter split and the all-in total. Calibrated to Microsoft's Customer Cowork Estimator (about $120 to $410 per user per month). Choose your currency: USD, GBP, EUR, AUD, NZD. Compare task prices against M365 Copilot and Claude, and get cost-control tips: spending caps, group scoping, consumption monitoring, prepaid capacity packs.</p>
   </div>
 
 </div>{{/* .cowcalc-page */}}
