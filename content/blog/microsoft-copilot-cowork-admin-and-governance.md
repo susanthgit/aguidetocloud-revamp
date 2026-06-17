@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Copilot Cowork — Complete Admin Playbook"
 list_title: "Cowork: Admin enablement and governance"
-description: "Microsoft Copilot Cowork admin guide — turning it on, 4 governance controls, oversharing protection, 5-step pilot rollout, troubleshooting tips."
+description: "Microsoft Copilot Cowork admin guide: turning it on, governance controls, oversharing protection, a pilot rollout playbook, and troubleshooting."
 date: 2026-06-15
 lastmod: 2026-06-17
 draft: false
@@ -165,25 +165,25 @@ Here's what actually protects Cowork today, and what's still on the way. Because
 |---|---|---|
 | **Entra ID identity** | Cowork acts under the user's identity and permissions — no new standing access is created. | Live |
 | **Approval checkpoints** | Sensitive actions pause for explicit user approval (see below) — a real governance lever, not just UX. | Live |
+| **Conditional Access** | Sign-in conditions (device, location, risk) apply through Microsoft 365 sign-in. | Live |
 | **Sensitivity labels** | Labels are displayed, and inherited onto new Word/PowerPoint/Outlook content Cowork creates from labelled sources. | Supported |
 | **Encryption handling** | Encrypted content is honoured — Cowork checks the VIEW and EXTRACT usage rights before returning data. | Supported |
 | **Communication Compliance** | Cowork prompts and responses are in scope for Communication Compliance policies. | Supported |
-| **Conditional Access** | Sign-in conditions (device, location, risk) apply through Microsoft 365 sign-in. | Live |
+| **Auditing** (unified audit log) | Cowork prompts, responses, and actions are captured in the Purview audit log. | Supported at GA |
+| **DSPM / DSPM for AI** | Cowork AI activity shows in DSPM for AI (activity explorer) for data-risk insights and one-click policies. | Supported at GA |
+| **eDiscovery** | Cowork content is discoverable for legal holds and investigations. | Supported at GA |
+| **Insider Risk Management** | Cowork activity is in scope for Insider Risk Management policies. | Supported at GA |
 
-**Not enabled for Cowork yet** — confirm current status on the [Cowork Purview page](https://learn.microsoft.com/en-us/purview/ai-copilot-cowork) before you rely on any of these:
+**Still rolling out** — confirm current status on the [Cowork Purview page](https://learn.microsoft.com/en-us/purview/ai-copilot-cowork) before you rely on any of these:
 
 | Purview solution | Status for Cowork |
 |---|---|
-| **Auditing** (unified audit log) | Not yet |
-| **DSPM / DSPM for AI** | Not yet |
-| **eDiscovery** | Not yet |
-| **Insider Risk Management** | Not yet |
-| **Data Lifecycle Management** | Not yet |
+| **Data Lifecycle Management** | GA 22 June 2026 (per Microsoft's GA announcement) |
 | **Data Loss Prevention (DLP)** | Coming soon |
-| **Data classification** | Not yet |
-| **Compliance Manager** | Not yet |
+| **Data classification** | Not supported yet |
+| **Compliance Manager** | Not supported yet |
 
-> ⏳ **Read this before you promise compliance coverage.** Cowork's Purview support is narrower than the rest of Microsoft 365 Copilot today, and it's a moving target. Microsoft's GA announcement described a broader protected surface as the goal, but the **Cowork-specific Purview page is the one to plan against** — and right now it marks auditing, eDiscovery, DSPM, Insider Risk, Data Lifecycle Management, DLP, data classification, and Compliance Manager as not supported for Cowork. Don't assume any of those capture or gate Cowork activity until that page says otherwise.
+> ⏳ **Read this before you promise compliance coverage.** Cowork's Purview support is documented separately from the rest of Microsoft 365 Copilot, and it's a moving target. The good news at GA: audit log, DSPM, eDiscovery, Insider Risk Management, Communication Compliance, sensitivity labels, and encryption handling are all supported. Still to come: **Data Lifecycle Management (GA 22 June 2026)** and **Data Loss Prevention (coming soon)** — and **data classification** and **Compliance Manager** aren't supported for Cowork yet. The **Cowork-specific Purview page is the one to plan against**, so confirm current status there before you rely on any single control.
 
 ## Approving plugins and custom skills — the review
 
@@ -223,7 +223,7 @@ A practical pilot plan:
 3. **Set a spend cap for the pilot group** — a group-level budget with user-level caps inside it, plus an alert at, say, 75% of the cap so nothing is a surprise.
 4. **Brief the group** — what Cowork does, the approval-checkpoint pattern, what's safe to automate, and what to escalate.
 5. **Run for 2–4 weeks** and collect both numbers (credit usage, which tasks) and feel (what saved time, what missed).
-6. **Review what it did** — go through the conversations and outputs Cowork produced (auditing for Cowork isn't in Purview yet — see governance above), and use the pilot as a forcing function to fix any SharePoint oversharing it surfaced.
+6. **Review what it did** — go through the conversations and outputs Cowork produced (Cowork activity is captured in the Purview audit log — see governance above), and use the pilot as a forcing function to fix any SharePoint oversharing it surfaced.
 7. **Decide go / no-go** against criteria you set up front — for example: *spend stayed within cap, no governance surprises, and the group would miss it if you took it away.*
 
 A concrete starter policy you can adapt: **10–20 users · Specific-groups access (a pilot security group) · a group spend cap with a 75% alert · 3-week run · weekly review of outputs and spend · expand only if spend held and no oversharing surfaced.**
@@ -253,9 +253,9 @@ When you bring Cowork to a security or legal reviewer, here's the short brief �
 - **Sensitivity labels follow the data** end-to-end, on what goes in and what comes out.
 - **What's covered today:** sensitivity labels are displayed and inherited, encrypted content is honoured, and Cowork prompts and responses are in scope for **Communication Compliance**.
 - **Sensitive actions wait for a human.** Sending, posting, scheduling, and creating each pause for explicit approval.
-- **Name the gaps honestly:** Cowork's Purview coverage is narrower than the rest of Microsoft 365 Copilot today. Per Microsoft's [Cowork Purview page](https://learn.microsoft.com/en-us/purview/ai-copilot-cowork), **auditing, eDiscovery, DSPM, Insider Risk, Data Lifecycle Management, DLP, data classification, and Compliance Manager are not yet supported for Cowork** — so don't assume those capture or gate Cowork activity. Lean on identity, permissions, and the approval gate, and check that page for current status.
+- **Name the gaps honestly:** Cowork's Purview support is documented separately from the rest of Microsoft 365 Copilot. Per Microsoft's [Cowork Purview page](https://learn.microsoft.com/en-us/purview/ai-copilot-cowork), supported at GA are auditing, eDiscovery, DSPM, Insider Risk Management, Communication Compliance, sensitivity labels, and encryption handling. The gaps to plan around: **Data Lifecycle Management (GA 22 June 2026), Data Loss Prevention (coming soon), data classification, and Compliance Manager.** Check that page for current status.
 
-The one-paragraph version: *Cowork operates inside your existing Microsoft 365 trust boundary, as the user, with the same permissions as the rest of your tenant, sensitivity-label and encryption handling, Communication Compliance support, and an approval gate on anything that sends or changes something. Several other Purview controls — auditing, eDiscovery, DSPM, Insider Risk, Data Lifecycle Management, DLP, data classification, and Compliance Manager — aren't enabled for Cowork yet, so plan around those and track the Cowork Purview page.*
+The one-paragraph version: *Cowork operates inside your existing Microsoft 365 trust boundary, as the user, with the same permissions as the rest of your tenant, sensitivity-label and encryption handling, Communication Compliance support, and an approval gate on anything that sends or changes something. Auditing, eDiscovery, DSPM, and Insider Risk Management are supported at GA; Data Lifecycle Management (GA 22 June 2026), Data Loss Prevention (coming soon), data classification, and Compliance Manager are still rolling out — so plan around those and track the Cowork Purview page.*
 
 ---
 
@@ -263,7 +263,7 @@ The one-paragraph version: *Cowork operates inside your existing Microsoft 365 t
 
 Set expectations honestly with your leadership and users — over-promising is the fastest way to lose a pilot:
 
-- **Documented limits (from Microsoft's FAQ):** Cowork can't access or edit files stored **locally** on a device (it works in OneDrive and SharePoint); it **can't delete** files or folders in OneDrive or SharePoint; it **can't read encrypted files**, even if the user has access; and **attachments must be under 200 MB**.
+- **Documented limits (from Microsoft's FAQ):** Cowork can't access or edit files stored **locally** on a device (it works in OneDrive and SharePoint); it **can't delete** files or folders in OneDrive or SharePoint; and **attachments must be under 200 MB**. (Encrypted content is handled per the user's usage rights — see the protection table above.)
 - **Custom skills aren't validated by Microsoft** — user-created `SKILL.md` skills run as written, so review their outputs.
 - **Region-limited** — Cowork runs on Anthropic models and is currently limited to **Anthropic-supported regions**, so "available worldwide" comes with that caveat. Confirm availability for your users.
 - **External systems need plugins or skills** — Cowork reaches your Microsoft 365 out of the box; a CRM, ticketing tool, or data warehouse needs a plugin, a custom skill, or an exported file. (See the [Skills &amp; plugins spoke](/blog/microsoft-copilot-cowork-skills-and-plugins/).)

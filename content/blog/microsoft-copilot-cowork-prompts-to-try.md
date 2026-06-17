@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Copilot Cowork — Free Prompts to Try"
 list_title: "Cowork: Prompts to try"
-description: "A living-doc with 6 free Microsoft Copilot Cowork prompts to try — each with a usefulness rating and tested-on date. Updated as I test more."
+description: "A living-doc of free Microsoft Copilot Cowork prompts to try — each with a usefulness rating and tested-on date. Updated as I test more."
 date: 2026-06-15
 lastmod: 2026-06-17
 draft: false
@@ -36,21 +36,6 @@ founder_note: |
 
 ---
 
-## How to read the ratings
-
-| Rating | Meaning |
-|---|---|
-| ⭐⭐⭐⭐⭐ | Works reliably across multiple tries — safe to demo |
-| ⭐⭐⭐⭐ | Works most of the time — minor variation in output |
-| ⭐⭐⭐ | Works but needs tuning per scenario |
-| ⭐⭐ | Works sometimes — not yet demo-ready |
-| ⭐ | Interesting but unreliable |
-| 🕓 pending | Not yet tested in production |
-
-Each prompt also shows when it was last tested. If you spot one that drifts, [send me feedback](/feedback/) — I will re-test and update.
-
----
-
 ## Which task should you try first? Snack, Meal, or Feast
 
 Not every task is the same size — and the size is roughly what it [costs](/blog/microsoft-copilot-cowork-pricing-cost-management/), too. A simple way to pick your first one:
@@ -64,6 +49,213 @@ Not every task is the same size — and the size is roughly what it [costs](/blo
 **The honest rule of thumb: start with a Snack.** Pick one small thing you already do every week, hand it over, and watch how Cowork plans it. Once you trust the pattern, work up to Meals and Feasts — and turn the ones you repeat into a [saved skill](/blog/microsoft-copilot-cowork-skills-and-plugins/). Each prompt below is tagged with its tier.
 
 > Credit ranges are illustrative — from Microsoft's GA blog, not a fixed price list. The [pricing spoke](/blog/microsoft-copilot-cowork-pricing-cost-management/) has the full story.
+
+---
+
+## ☀️ Morning Triage and Priority Setter
+
+*Tier: **Snack** (light) · Tested: 🕓 pending as a standalone prompt · Best for: everyone — start your day in 60 seconds instead of 20 minutes of inbox scrolling*
+
+Copy this, run it first thing in the morning:
+
+<div class="prompt-cards">
+
+> Good morning! Give me a full briefing for today:
+> 1. What meetings do I have today — list them with times and who's attending
+> 2. What are my most important unread emails from overnight — flag anything that needs a response before my first meeting
+> 3. Any urgent or time-sensitive Teams messages I haven't responded to
+> 4. Based on all of this, recommend the 3 things I should prioritise this morning
+>
+> Then draft quick reply emails for the top 2 urgent items — keep them professional, friendly, and under 3 sentences each. Show me for approval.
+
+</div>
+
+**What Cowork does:** reads your calendar, scans unread emails, checks Teams messages, prioritises your morning, and drafts replies — all before your first coffee is cold. Skills chained: Daily Briefing → Calendar → Communications.
+
+> 💡 If you run this every day, turn it into a custom skill (see the [Skills + Plugins spoke](/blog/microsoft-copilot-cowork-skills-and-plugins/#custom-skills--three-paths)) and schedule it for 7am — then it's waiting for you when you sit down.
+
+---
+
+## 🎯 Meeting Prep Autopilot
+
+*Tier: **Meal** (medium) · Tested: 🕓 pending as a standalone prompt — the custom-skill version of this workflow tested well · Best for: anyone with customer meetings, stakeholder reviews, or project check-ins*
+
+<div class="prompt-cards">
+
+> I have a meeting with **[customer/stakeholder name]** about **[topic, e.g. "quarterly review", "project kickoff", "budget approval"]** coming up this week. Look at my calendar to find the meeting, then search my recent emails and Teams chats for any context about **[customer/stakeholder name]** or this topic. Find the most relevant presentation or document I've used recently on this topic from my OneDrive or SharePoint. Create a 1-page Word briefing with: the meeting objective, key attendees, 3 talking points based on what I've discussed with them before, and a link to the deck. Then draft an email to the attendees confirming the session and attaching the briefing.
+
+</div>
+
+**What Cowork does:** finds the meeting on your calendar, digs through your email and Teams history with that person, locates the right files in SharePoint, creates a briefing document, and drafts a confirmation email — all from one prompt. Skills: Calendar → Search → Word → Communications.
+
+> 💡 This is the exact workflow my `customer-session-prep` custom skill automates — see the [Skills + Plugins spoke](/blog/microsoft-copilot-cowork-skills-and-plugins/) for how I turned a one-off prompt like this into a reusable skill.
+
+---
+
+## 📬 Post-Session Follow-Up Machine
+
+*Tier: **Meal** (medium) · Tested: 🕓 pending as a standalone prompt · Best for: trainers, presenters, sales reps — anyone who runs sessions and needs to follow up afterwards*
+
+<div class="prompt-cards">
+
+> I just finished a **[session type, e.g. "training session", "client demo", "team workshop"]**. Look at my most recent meeting that ended in the last 2 hours. Find the recording, any slides or documents that were shared during or before that meeting, and summarise the key topics covered based on the meeting transcript. Then draft a follow-up email to all attendees with:
+> - A thank you and 2-sentence summary of what we covered
+> - Links to the recording and slides
+> - A "Questions?" section inviting them to reply
+>
+> Send it from my Outlook — show me for review before sending.
+
+</div>
+
+**What Cowork does:** finds the meeting you just finished, locates the recording and shared materials, reads the transcript for key points, and drafts a complete follow-up email with everything linked — ready for you to review and send. Skills: Meetings → Search → Communications.
+
+> 💡 Cowork drafts but never auto-sends external email — it always shows you the draft first. Good. The custom-skill version (`customer-session-followup`) adds a "strip anything internal before it goes to a customer" guardrail.
+
+---
+
+## 📊 Weekly Team Update Generator
+
+*Tier: **Meal** (medium) · Tested: 🕓 pending as a standalone prompt · Best for: team leads, project managers, and anyone whose manager asks "what did you work on this week?"*
+
+<div class="prompt-cards">
+
+> It's the end of the week. Review my calendar, sent emails, and Teams messages from this week. Create a structured weekly update that includes:
+> 1. Key meetings I attended and what was discussed (1 line each)
+> 2. Any customer or partner interactions
+> 3. Content I created or shared (decks, docs, links)
+> 4. Open follow-ups I still need to action
+> 5. What's coming next week based on my calendar
+>
+> Format it as a professional but concise Teams-friendly post, then post it to the **[team channel name, e.g. "Project Alpha", "NZ Sales Team"]** channel for my approval.
+
+</div>
+
+**What Cowork does:** reviews your entire week across Calendar, Email, and Teams, creates a structured summary, and posts it to your team channel — with your approval before it goes live. The weekly update nobody has time to write, written in 2 minutes. Skills: Calendar → Search → Communications.
+
+---
+
+## 📚 Knowledge Pack Builder
+
+*Tier: **Meal** (medium) · Tested: 🕓 pending as a standalone prompt · Best for: subject matter experts, consultants, presales — anyone who repeatedly answers the same complex questions*
+
+<div class="prompt-cards">
+
+> A **[recipient role, e.g. "customer CISO", "project sponsor", "new team member"]** has asked me about **[topic, e.g. "Copilot governance and security controls", "our data migration approach", "onboarding process"]**. Search my OneDrive, SharePoint, and recent emails for any documents, presentations, or materials I've shared or worked on about this topic. Also do a deep research on the latest information from Microsoft Learn about **[topic]**.
+>
+> Create a polished 2-page Word document titled **"[Document title, e.g. 'M365 Copilot Governance Quick Guide']"** that covers the key areas a **[recipient role]** needs to know. Then draft an email to **[recipient name]** attaching this document with a brief "here's what you asked for" message. Show me everything for review.
+
+</div>
+
+**What Cowork does:** combines your internal knowledge (SharePoint files, past emails) with fresh external research (Microsoft Learn), creates a polished document, and drafts a delivery email — turning a 2-hour research task into a 5-minute approval. Skills: Search → Deep Research → Word → Communications.
+
+---
+
+## 🏢 Customer Deliverable From Email Brief
+
+*Tier: **Feast** (heavy) · Tested: 🕓 pending as a standalone prompt · Best for: anyone who receives a brief or request via email and needs to deliver something back — slides, reports, proposals*
+
+This is the showcase prompt — the one I open demos with, because it shows Cowork's full multi-step, multi-app power from a single instruction.
+
+<div class="prompt-cards">
+
+> I need to prepare a **[deliverable type, e.g. "slide deck", "report", "proposal"]** for an upcoming session with **[customer/team name]**.
+>
+> **Step 1 — Find the brief:** Search my emails for a message from **[contact name]** at **[company name]** about **[topic, e.g. "executive training session", "quarterly review", "project kickoff"]**. Extract every topic and agenda item they listed.
+>
+> **Step 2 — Gather my materials:** Search my OneDrive and SharePoint for any existing decks, documents, or materials I've used on this topic recently.
+>
+> **Step 3 — Research:** Do a deep research on the latest information about **[topic]** from Microsoft Learn and the web.
+>
+> **Step 4 — Build the deliverable:** Using the brief as the structure and my materials plus research as content, create a clean, professional PowerPoint presentation covering every item from the brief. Keep it **[audience]-friendly** — no jargon, focus on outcomes. Each slide should answer "why should a busy **[audience role]** care about this?" Make it work as both a presentation AND a standalone cheat sheet they can reference later.
+>
+> **Step 5 — Draft the reply:** Draft an email to **[contact name]** attaching the deck, confirming I've covered all their agenda items, and asking if there's anything to adjust. Show me everything for review before sending.
+
+</div>
+
+**What Cowork does:** reads a customer's email, extracts their requirements, searches your existing materials, researches the latest information, builds a complete slide deck structured around their brief, and drafts a delivery email — all from one prompt. What normally takes 2-3 hours, done in minutes. Skills: Communications → Search → Deep Research → PowerPoint → Communications.
+
+> 💡 **Demo tip:** start a customer demo with the Morning Triage prompt (universal, instant reaction), then show this one to demonstrate the full multi-step power. The gap between "regular Copilot" and "Cowork" clicks the moment people watch it execute across five apps from a single instruction.
+
+---
+
+## The Out-of-Office Handoff
+
+*Tier: **Feast** (heavy) · Tested: 🕓 pending as a standalone prompt · Best for: anyone taking leave who doesn't want things to stall while they're gone*
+
+The idea: step away knowing nothing in flight will quietly stall while you're out. Instead of a one-line "I'm away" auto-reply, you hand the loose ends to the right people.
+
+<div class="prompt-cards">
+
+> I'm out of office from **[start date]** to **[end date]**. Help me hand off cleanly.
+>
+> 1. Look through my calendar, recent emails, and Teams chats and find everything that's mid-flight — open questions waiting on me, decisions due while I'm away, and meetings I own.
+> 2. For each one, suggest who should cover it, and draft a short handoff note to that person with the context they'll need.
+> 3. Draft an out-of-office reply that points people to the right cover person by topic — not just "I'm away."
+> 4. Show me everything for approval before sending anything.
+
+</div>
+
+**What Cowork does:** reads across your calendar, inbox, and chats to find the loose ends, works out who should cover what, and drafts the handoff notes plus a genuinely useful auto-reply. Skills: Daily Briefing → Search → Communications.
+
+Here's the shape of how it thinks it through:
+
+```mermaid
+flowchart TD
+  A[You give the dates] --> B[Scan calendar, email, Teams]
+  B --> C[Find everything mid-flight]
+  C --> D[Match each item to a cover person]
+  D --> E[Draft a handoff note per item]
+  E --> F[Draft a topic-aware out-of-office reply]
+  F --> G[Pause for your approval]
+  G --> H[Send once you say go]
+```
+
+> 💡 Run this the afternoon before you leave. If you take leave often, save it as a skill so next time it's a single line.
+
+---
+
+## Deep Research With a Citation Map
+
+*Tier: **Feast** (heavy) · Tested: 🕓 pending as a standalone prompt · Best for: anyone sitting on a folder of documents they keep meaning to read*
+
+This one moves you from "I have a pile of documents to get through" to "I have a short brief I can act on — and I can see where every point came from."
+
+<div class="prompt-cards">
+
+> I need to get on top of **[topic]**.
+>
+> Read the documents in **[OneDrive/SharePoint folder]**, plus anything relevant you find in my recent emails and meetings on this topic.
+>
+> Give me back a structured brief: the key findings, the open questions, and a clear recommendation. For every claim, show me which source it came from so I can check it. Save it as a single HTML page I can bookmark and re-open.
+
+</div>
+
+**What Cowork does:** reads across a folder (and your related work), pulls the threads into a findings-and-recommendation brief, and keeps a map of which source backs each point — so you're never trusting a summary blind. Skills: Search → Deep Research → html.
+
+> 💡 The "show me which source each point came from" line is the part worth keeping. A summary you can't trace back is just a nicer-looking guess.
+
+---
+
+## Want more prompts?
+
+The companion [Cowork Prompts library at /prompts/copilot-cowork/](/prompts/copilot-cowork/) holds fourteen individual prompt cards — each with the prompt, the scenario, and the expected outcome. Use those for quick reference; come back here for the curated demo-ready set with ratings.
+
+---
+
+*Past the prompts? The rest of this page is a bonus lab — real, dated, rated runs of custom skills I built and tested in my own tenant (outputs sanitised). It's the evidence behind the ratings, not more prompts to copy.*
+
+## How to read the ratings
+
+| Rating | Meaning |
+|---|---|
+| ⭐⭐⭐⭐⭐ | Works reliably across multiple tries — safe to demo |
+| ⭐⭐⭐⭐ | Works most of the time — minor variation in output |
+| ⭐⭐⭐ | Works but needs tuning per scenario |
+| ⭐⭐ | Works sometimes — not yet demo-ready |
+| ⭐ | Interesting but unreliable |
+| 🕓 pending | Not yet tested in production |
+
+Each prompt also shows when it was last tested. If you spot one that drifts, [send me feedback](/feedback/) — I will re-test and update.
 
 ---
 
@@ -273,196 +465,6 @@ And the chat surfaced a per-slide summary, a ready-to-paste LinkedIn caption (18
 **Would I demo this to a customer?** Yes, and I'd go further — I'd actually post it. This is the first skill output of the four that's ready to ship externally with no edits. The fact that it self-flagged the one unverifiable claim means I know exactly what to double-check before publishing.
 
 **One honest caveat:** the score on this skill was 91/100 (the external-facing Robustness ceiling), and Cowork recommended a "behavioural review" before relying on it. This test WAS that behavioural review — and it passed. So the 91 is more reassuring now than it looked on paper.
-
----
-
-## ☀️ Morning Triage and Priority Setter
-
-*Tier: **Snack** (light) · Tested: 🕓 pending as a standalone prompt · Best for: everyone — start your day in 60 seconds instead of 20 minutes of inbox scrolling*
-
-Copy this, run it first thing in the morning:
-
-<div class="prompt-cards">
-
-> Good morning! Give me a full briefing for today:
-> 1. What meetings do I have today — list them with times and who's attending
-> 2. What are my most important unread emails from overnight — flag anything that needs a response before my first meeting
-> 3. Any urgent or time-sensitive Teams messages I haven't responded to
-> 4. Based on all of this, recommend the 3 things I should prioritise this morning
->
-> Then draft quick reply emails for the top 2 urgent items — keep them professional, friendly, and under 3 sentences each. Show me for approval.
-
-</div>
-
-**What Cowork does:** reads your calendar, scans unread emails, checks Teams messages, prioritises your morning, and drafts replies — all before your first coffee is cold. Skills chained: Daily Briefing → Calendar → Communications.
-
-> 💡 If you run this every day, turn it into a custom skill (see the [Skills + Plugins spoke](/blog/microsoft-copilot-cowork-skills-and-plugins/#custom-skills--three-paths)) and schedule it for 7am — then it's waiting for you when you sit down.
-
----
-
-## 🎯 Meeting Prep Autopilot
-
-*Tier: **Meal** (medium) · Tested: 🕓 pending as a standalone prompt — the custom-skill version of this workflow tested well · Best for: anyone with customer meetings, stakeholder reviews, or project check-ins*
-
-<div class="prompt-cards">
-
-> I have a meeting with **[customer/stakeholder name]** about **[topic, e.g. "quarterly review", "project kickoff", "budget approval"]** coming up this week. Look at my calendar to find the meeting, then search my recent emails and Teams chats for any context about **[customer/stakeholder name]** or this topic. Find the most relevant presentation or document I've used recently on this topic from my OneDrive or SharePoint. Create a 1-page Word briefing with: the meeting objective, key attendees, 3 talking points based on what I've discussed with them before, and a link to the deck. Then draft an email to the attendees confirming the session and attaching the briefing.
-
-</div>
-
-**What Cowork does:** finds the meeting on your calendar, digs through your email and Teams history with that person, locates the right files in SharePoint, creates a briefing document, and drafts a confirmation email — all from one prompt. Skills: Calendar → Search → Word → Communications.
-
-> 💡 This is the exact workflow my `customer-session-prep` custom skill automates — see the [Skills + Plugins spoke](/blog/microsoft-copilot-cowork-skills-and-plugins/) for how I turned a one-off prompt like this into a reusable skill.
-
----
-
-## 📬 Post-Session Follow-Up Machine
-
-*Tier: **Meal** (medium) · Tested: 🕓 pending as a standalone prompt · Best for: trainers, presenters, sales reps — anyone who runs sessions and needs to follow up afterwards*
-
-<div class="prompt-cards">
-
-> I just finished a **[session type, e.g. "training session", "client demo", "team workshop"]**. Look at my most recent meeting that ended in the last 2 hours. Find the recording, any slides or documents that were shared during or before that meeting, and summarise the key topics covered based on the meeting transcript. Then draft a follow-up email to all attendees with:
-> - A thank you and 2-sentence summary of what we covered
-> - Links to the recording and slides
-> - A "Questions?" section inviting them to reply
->
-> Send it from my Outlook — show me for review before sending.
-
-</div>
-
-**What Cowork does:** finds the meeting you just finished, locates the recording and shared materials, reads the transcript for key points, and drafts a complete follow-up email with everything linked — ready for you to review and send. Skills: Meetings → Search → Communications.
-
-> 💡 Cowork drafts but never auto-sends external email — it always shows you the draft first. Good. The custom-skill version (`customer-session-followup`) adds a "strip anything internal before it goes to a customer" guardrail.
-
----
-
-## 📊 Weekly Team Update Generator
-
-*Tier: **Meal** (medium) · Tested: 🕓 pending as a standalone prompt · Best for: team leads, project managers, and anyone whose manager asks "what did you work on this week?"*
-
-<div class="prompt-cards">
-
-> It's the end of the week. Review my calendar, sent emails, and Teams messages from this week. Create a structured weekly update that includes:
-> 1. Key meetings I attended and what was discussed (1 line each)
-> 2. Any customer or partner interactions
-> 3. Content I created or shared (decks, docs, links)
-> 4. Open follow-ups I still need to action
-> 5. What's coming next week based on my calendar
->
-> Format it as a professional but concise Teams-friendly post, then post it to the **[team channel name, e.g. "Project Alpha", "NZ Sales Team"]** channel for my approval.
-
-</div>
-
-**What Cowork does:** reviews your entire week across Calendar, Email, and Teams, creates a structured summary, and posts it to your team channel — with your approval before it goes live. The weekly update nobody has time to write, written in 2 minutes. Skills: Calendar → Search → Communications.
-
----
-
-## 📚 Knowledge Pack Builder
-
-*Tier: **Meal** (medium) · Tested: 🕓 pending as a standalone prompt · Best for: subject matter experts, consultants, presales — anyone who repeatedly answers the same complex questions*
-
-<div class="prompt-cards">
-
-> A **[recipient role, e.g. "customer CISO", "project sponsor", "new team member"]** has asked me about **[topic, e.g. "Copilot governance and security controls", "our data migration approach", "onboarding process"]**. Search my OneDrive, SharePoint, and recent emails for any documents, presentations, or materials I've shared or worked on about this topic. Also do a deep research on the latest information from Microsoft Learn about **[topic]**.
->
-> Create a polished 2-page Word document titled **"[Document title, e.g. 'M365 Copilot Governance Quick Guide']"** that covers the key areas a **[recipient role]** needs to know. Then draft an email to **[recipient name]** attaching this document with a brief "here's what you asked for" message. Show me everything for review.
-
-</div>
-
-**What Cowork does:** combines your internal knowledge (SharePoint files, past emails) with fresh external research (Microsoft Learn), creates a polished document, and drafts a delivery email — turning a 2-hour research task into a 5-minute approval. Skills: Search → Deep Research → Word → Communications.
-
----
-
-## 🏢 Customer Deliverable From Email Brief
-
-*Tier: **Feast** (heavy) · Tested: 🕓 pending as a standalone prompt · Best for: anyone who receives a brief or request via email and needs to deliver something back — slides, reports, proposals*
-
-This is the showcase prompt — the one I open demos with, because it shows Cowork's full multi-step, multi-app power from a single instruction.
-
-<div class="prompt-cards">
-
-> I need to prepare a **[deliverable type, e.g. "slide deck", "report", "proposal"]** for an upcoming session with **[customer/team name]**.
->
-> **Step 1 — Find the brief:** Search my emails for a message from **[contact name]** at **[company name]** about **[topic, e.g. "executive training session", "quarterly review", "project kickoff"]**. Extract every topic and agenda item they listed.
->
-> **Step 2 — Gather my materials:** Search my OneDrive and SharePoint for any existing decks, documents, or materials I've used on this topic recently.
->
-> **Step 3 — Research:** Do a deep research on the latest information about **[topic]** from Microsoft Learn and the web.
->
-> **Step 4 — Build the deliverable:** Using the brief as the structure and my materials plus research as content, create a clean, professional PowerPoint presentation covering every item from the brief. Keep it **[audience]-friendly** — no jargon, focus on outcomes. Each slide should answer "why should a busy **[audience role]** care about this?" Make it work as both a presentation AND a standalone cheat sheet they can reference later.
->
-> **Step 5 — Draft the reply:** Draft an email to **[contact name]** attaching the deck, confirming I've covered all their agenda items, and asking if there's anything to adjust. Show me everything for review before sending.
-
-</div>
-
-**What Cowork does:** reads a customer's email, extracts their requirements, searches your existing materials, researches the latest information, builds a complete slide deck structured around their brief, and drafts a delivery email — all from one prompt. What normally takes 2-3 hours, done in minutes. Skills: Communications → Search → Deep Research → PowerPoint → Communications.
-
-> 💡 **Demo tip:** start a customer demo with the Morning Triage prompt (universal, instant reaction), then show this one to demonstrate the full multi-step power. The gap between "regular Copilot" and "Cowork" clicks the moment people watch it execute across five apps from a single instruction.
-
----
-
-## The Out-of-Office Handoff
-
-*Tier: **Feast** (heavy) · Tested: 🕓 pending as a standalone prompt · Best for: anyone taking leave who doesn't want things to stall while they're gone*
-
-The idea: step away knowing nothing in flight will quietly stall while you're out. Instead of a one-line "I'm away" auto-reply, you hand the loose ends to the right people.
-
-<div class="prompt-cards">
-
-> I'm out of office from **[start date]** to **[end date]**. Help me hand off cleanly.
->
-> 1. Look through my calendar, recent emails, and Teams chats and find everything that's mid-flight — open questions waiting on me, decisions due while I'm away, and meetings I own.
-> 2. For each one, suggest who should cover it, and draft a short handoff note to that person with the context they'll need.
-> 3. Draft an out-of-office reply that points people to the right cover person by topic — not just "I'm away."
-> 4. Show me everything for approval before sending anything.
-
-</div>
-
-**What Cowork does:** reads across your calendar, inbox, and chats to find the loose ends, works out who should cover what, and drafts the handoff notes plus a genuinely useful auto-reply. Skills: Daily Briefing → Search → Communications.
-
-Here's the shape of how it thinks it through:
-
-```mermaid
-flowchart TD
-  A[You give the dates] --> B[Scan calendar, email, Teams]
-  B --> C[Find everything mid-flight]
-  C --> D[Match each item to a cover person]
-  D --> E[Draft a handoff note per item]
-  E --> F[Draft a topic-aware out-of-office reply]
-  F --> G[Pause for your approval]
-  G --> H[Send once you say go]
-```
-
-> 💡 Run this the afternoon before you leave. If you take leave often, save it as a skill so next time it's a single line.
-
----
-
-## Deep Research With a Citation Map
-
-*Tier: **Feast** (heavy) · Tested: 🕓 pending as a standalone prompt · Best for: anyone sitting on a folder of documents they keep meaning to read*
-
-This one moves you from "I have a pile of documents to get through" to "I have a short brief I can act on — and I can see where every point came from."
-
-<div class="prompt-cards">
-
-> I need to get on top of **[topic]**.
->
-> Read the documents in **[OneDrive/SharePoint folder]**, plus anything relevant you find in my recent emails and meetings on this topic.
->
-> Give me back a structured brief: the key findings, the open questions, and a clear recommendation. For every claim, show me which source it came from so I can check it. Save it as a single HTML page I can bookmark and re-open.
-
-</div>
-
-**What Cowork does:** reads across a folder (and your related work), pulls the threads into a findings-and-recommendation brief, and keeps a map of which source backs each point — so you're never trusting a summary blind. Skills: Search → Deep Research → html.
-
-> 💡 The "show me which source each point came from" line is the part worth keeping. A summary you can't trace back is just a nicer-looking guess.
-
----
-
-## Want more prompts?
-
-The companion [Cowork Prompts library at /prompts/copilot-cowork/](/prompts/copilot-cowork/) holds fourteen individual prompt cards — each with the prompt, the scenario, and the expected outcome. Use those for quick reference; come back here for the curated demo-ready set with ratings.
 
 ---
 

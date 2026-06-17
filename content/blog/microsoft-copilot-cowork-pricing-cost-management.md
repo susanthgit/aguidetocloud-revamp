@@ -57,7 +57,7 @@ Getting these two layers straight is the whole game when you're estimating Cowor
 
 ### Part 1 — the Microsoft 365 Copilot seat (predictable, per user)
 
-Cowork requires the **Microsoft 365 Copilot User Subscription License** — the same Copilot seat that powers Chat and the in-app experiences. That one seat already includes a lot:
+Cowork requires the **Microsoft 365 Copilot User Subscription License** — the same Copilot seat (listed at **$30 per user per month**) that powers Chat and the in-app experiences. That one seat already includes a lot:
 
 - **Copilot Chat**, and **Copilot in Word, Excel, PowerPoint, Outlook, and Teams**
 - The **Work IQ** context engine that grounds answers in your real work

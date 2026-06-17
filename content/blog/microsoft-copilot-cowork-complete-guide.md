@@ -452,7 +452,7 @@ The **agentic harness** is everything that prevents that:
 | **Context (Work IQ)** | Shared memory across all agents — your emails, files, calendar, org chart | Agents understand YOUR work, not just generic knowledge |
 | **Governance** | Entra ID identity, sensitivity labels, Microsoft Purview controls (more rolling out) | Agents follow the same rules as your employees |
 | **Human checkpoints** | Pauses and asks before sensitive actions | You always stay in control |
-| **Multi-model** | Can use GPT-4, Claude, or other models | Best model for each task, not one-size-fits-all |
+| **Multi-model** | Can use different models (Claude, GPT, and more) | Best model for each task, not one-size-fits-all |
 
 That's it. The "agentic harness" is just the **framework that keeps AI agents productive, safe, and accountable**. It's the difference between giving someone a set of power tools with safety goggles, instruction manuals, and supervision versus just handing them a chainsaw and walking away.
 

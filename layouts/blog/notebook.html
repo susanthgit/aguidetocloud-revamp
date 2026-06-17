@@ -199,6 +199,17 @@
     link.href = '#' + h.id; link.className = 'heading-anchor'; link.setAttribute('aria-label', 'Link to this section');
     link.textContent = '#'; h.appendChild(link);
   });
+  // ── Prompt card copy buttons ──
+  document.querySelectorAll('.prompt-cards').forEach(function(card) {
+    var bq = card.querySelector('blockquote'); if (!bq) return;
+    var btn = document.createElement('button'); btn.className = 'prompt-copy-btn'; btn.textContent = 'Copy';
+    btn.setAttribute('aria-label', 'Copy prompt to clipboard');
+    btn.addEventListener('click', function() {
+      var text = bq.innerText.replace(/^\s*Prompt:\s*/i, '').trim();
+      navigator.clipboard.writeText(text).then(function(){btn.textContent='✓ Copied';btn.classList.add('copied');setTimeout(function(){btn.textContent='Copy';btn.classList.remove('copied');},2000);}).catch(function(){btn.textContent='Failed';setTimeout(function(){btn.textContent='Copy';},2000);});
+    });
+    card.appendChild(btn);
+  });
   // ── Code copy (skip mermaid) ──
   body.querySelectorAll('pre').forEach(function(pre) {
     if (pre.classList.contains('mermaid')) return;
