@@ -3,7 +3,7 @@ title: "22 M365 Copilot Features You're Probably Not Using"
 hub_id: "fundamentals"
 description: "22 M365 Copilot features as a journey from quick wins to power moves. Sample prompts, real customer cases, custom templates."
 date: 2026-04-21
-lastmod: 2026-05-08
+lastmod: 2026-06-18
 card_tag: "Copilot"
 tag_class: "ai"
 images: ["images/og/blog/20-copilot-features-you-should-be-using.jpg"]
@@ -52,6 +52,8 @@ founder_note: |
 Let me paint the picture I see most weeks.
 
 Your company has bought M365 Copilot for you. It's sitting right there — in Teams, Outlook, Word, Excel, PowerPoint. You've tried it a few times. Typed *"summarise this"*. Maybe *"draft an email"*. And honestly? It was… fine. Not life-changing. Just fine.
+
+<p><img src="/images/blog/20-features/hero-copilot-model-picker.webp" alt="The Microsoft 365 Copilot chat app with the model picker open — Auto, Quick Response, Think Deeper, Opus (Claude) and GPT 5.5 / 5.2 — plus a Work IQ toggle" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 I get it. I was there too.
 
@@ -137,6 +139,8 @@ These features take literally two minutes to try. Zero learning curve. You'll us
 
 ### 1. Teams Meeting Recap (with Custom Summary Templates)
 
+<p><img src="/images/blog/20-features/01-teams-recap.webp" alt="A Microsoft Teams meeting recap with an AI-generated summary — Notes, AI summary, Custom summary, Mentions and Transcript tabs alongside the recorded meeting and speaker timeline" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 Most people think Meeting Recap is for meetings they missed. Honest take? It's better for the ones you actually sat through.
 
 I had to be told this twice before it clicked. You've been in the room for 60 minutes. You remember the first 10 minutes, the bit where someone said your name, and one decision that might've been a decision or might've been a passing comment. The transcript is sitting there. Recap reads it for you.
@@ -214,6 +218,8 @@ The default recap is the full newspaper. A custom template is your personalised 
 
 ### 2. Copilot in Outlook + Custom Email Instructions
 
+<p><img src="/images/blog/20-features/02-outlook.webp" alt="Microsoft 365 Copilot in Outlook drafting an email with a structured summary and timeline, and a Copilot pane suggesting refinements like adding owners per step" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 What percentage of your workday do you spend on email?
 
 For most knowledge workers it's around 28%. More than a quarter of your life at work, reading and replying. Microsoft Research found Copilot users reclaim about 30 minutes a week from email alone. That's a solid coffee break, every week, back in your pocket.
@@ -276,6 +282,8 @@ You can set **persistent Copilot instructions for email drafting** that apply ev
 ---
 
 ### 3. Enterprise Search — Find Anything
+
+<p><img src="/images/blog/20-features/03-search.webp" alt="Copilot Search answering 'who is in the Marketing department?' with Modified, Type and Person filters" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 We've all been there. *"I know that document exists. Someone shared it. In Teams. Or was it email? Maybe SharePoint?"*
 
@@ -414,6 +422,8 @@ If Level 1 was "wait, it can do that?" — Level 2 is "why didn't I know this so
 
 ### 6. Agentic Copilot in Word (formerly "Edit with Copilot")
 
+<p><img src="/images/blog/20-features/06-word.webp" alt="The Word agent in Microsoft 365 Copilot prompting 'Describe the document you want to create' with sample ideas like a project status update and a strategic planning document" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 Forget what you know about *"Copilot drafts a document".*
 
 **Agentic capabilities in Word** went GA in April 2026. Instead of generating text and walking away, Copilot now **works alongside you** — like an editor sitting next to you. It rewrites sections, restructures paragraphs, checks consistency, takes multi-step actions in the doc, and explains every change. You review, give feedback, it iterates.
@@ -454,6 +464,8 @@ Old Copilot was like handing work to an intern. Agentic Copilot is collaborating
 
 ### 7. Agentic Copilot in Excel
 
+<p><img src="/images/blog/20-features/07-excel-plan-mode.webp" alt="Copilot in Excel showing Plan Mode — a step-by-step plan to build a dashboard with a PivotTable and charts, shown before any changes are made to the workbook" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 If Excel formulas make your eyes glaze over, this one's for you.
 
 You describe what you want in plain English — and Copilot builds it. Analysis, charts, pivot tables, data cleaning, all through conversation, not formulas.
@@ -493,6 +505,8 @@ The trick most people miss: you can ask Copilot to **explain** complex formulas 
 ---
 
 ### 8. Agentic Copilot in PowerPoint
+
+<p><img src="/images/blog/20-features/08-powerpoint.webp" alt="Microsoft 365 Copilot in PowerPoint with a prompt to transform the text on a slide into a chart and ask clarifying questions first" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 Every slide deck you've ever sent had one slide you spent 80% of the time on. You know the one.
 
@@ -624,6 +638,8 @@ You don't need any extra tools — right inside M365 Copilot, you can ask for an
 
 ### 13. Copilot Pages — Your Collaborative AI Canvas
 
+<p><img src="/images/blog/20-features/13-pages.webp" alt="Microsoft 365 Copilot creating a Copilot Page — a collaborative canvas with structured headings generated from a chat answer, ready to share and co-edit" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 This is one of the most underrated features in the whole Copilot lineup.
 
 **What is a Page?** When Copilot gives you a great response in chat, click **Edit in Pages** and it becomes a living, collaborative document. Not a saved chat — a proper editable, shareable workspace where you and Copilot (and your colleagues) keep refining together.
@@ -676,6 +692,8 @@ These take a bit more effort to learn. The payoff is worth it.
 ---
 
 ### 14. Researcher Agent — Your Personal Research Team
+
+<p><img src="/images/blog/20-features/14-researcher.webp" alt="The Researcher agent in Microsoft 365 Copilot using connected sources, including LSEG, to answer a detailed financial question, with a sources picker open" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 This is the feature that made me rethink what Copilot actually is.
 
@@ -767,6 +785,8 @@ In M365 Copilot Chat, click the attachment icon, upload your spreadsheet (Excel 
 
 ### 16. Copilot Notebooks — Your AI Project Workspace
 
+<p><img src="/images/blog/20-features/16-notebooks.webp" alt="A Microsoft 365 Copilot Notebook gathering references and created content for a project, with a chat panel to summarise key themes across the sources" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 Regular Copilot chat is like a text conversation — great in the moment, scattered and hard to find later. Copilot Pages (#13) are great when you want one polished output to share. Notebooks are different again.
 
 Notebooks are designed for **ongoing projects** — multi-day, multi-week, evolving. They keep your prompts, context, references and outputs together in a three-column workspace. Add files — Word, Excel, PowerPoint, PDFs — as references, and Copilot reasons across all of them together.
@@ -832,6 +852,8 @@ No more remembering to check something every Monday. No more manually pulling to
 ---
 
 ### 18. Agent Builder — Build Your Own AI Experts
+
+<p><img src="/images/blog/20-features/18-agent-builder.webp" alt="The Agent Builder 'Build an agent to save you time' screen in Microsoft 365 Copilot, with a box to describe the agent and starter templates like Plan My Day and Status Update Agent" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 Now we're cooking.
 
@@ -903,6 +925,8 @@ Things I use this for almost weekly:
 
 ### 20. Connectors — Bring Outside Data In
 
+<p><img src="/images/blog/20-features/20-connectors.webp" alt="The Copilot Chat Sources settings showing connected sources like LSEG, Moody's and HubSpot, plus more to connect such as Notion, Canva, Linear and Intercom" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 ⚠️ **Heads-up:** Connectors need your IT admin to enable them. Once they're on, here's what becomes possible.
 
 Most knowledge work doesn't live entirely in Microsoft 365. You've got tasks in Asana or Jira. Tickets in ServiceNow. Customer data in Salesforce or Dynamics. Files in Box or S3.
@@ -944,6 +968,8 @@ Two final features — your secret weapon for better prompting, and a peek at wh
 ---
 
 ### 21. The Prompt Gallery — Your Secret Weapon
+
+<p><img src="/images/blog/20-features/21-prompt-gallery.webp" alt="The Copilot Prompt Gallery with suggested prompts filtered by Task, Job type and Copilot agent, showing cards you can use or save" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 I've put this near the end on purpose. Honestly? It might be the feature with the highest long-term impact.
 
