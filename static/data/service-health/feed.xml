@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 18 Jun 2026 04:58:51 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2026 10:45:42 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Power BI] Users may see blank reports when downloading PBIX files from semantic models within Power BI</title>
@@ -26,9 +26,9 @@
       <pubDate>Wed, 17 Jun 2026 07:51:00 +0000</pubDate>
     </item>
     <item>
-      <title>[SharePoint Online] Admins may be unable to configure search schema mappings in SharePoint Online</title>
+      <title>[SharePoint Online] Admins may be unable to see the configuration search schema mappings in SharePoint Online</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1393483</link>
-      <description>[SharePoint Online] Admins may be unable to configure search schema mappings in SharePoint Online.</description>
+      <description>[SharePoint Online] Admins may be unable to see the configuration search schema mappings in SharePoint Online.</description>
       <category>SharePoint Online</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">SP1393483</guid>
