@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T18:33:56.096989+00:00",
+  "generated_at": "2026-06-18T22:23:45.388178+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -46,8 +46,8 @@
       "short_name": "Copilot Chat",
       "icon": "💭",
       "total_incidents": 10,
-      "active_incidents": 1,
-      "avg_duration_minutes": 5370,
+      "active_incidents": 0,
+      "avg_duration_minutes": 7179,
       "last_incident": "2026-06-16T14:00:00+00:00",
       "classifications": {
         "advisory": 5,
@@ -74,7 +74,7 @@
       "total_incidents": 7,
       "active_incidents": 1,
       "avg_duration_minutes": 11700,
-      "last_incident": "2026-06-18T17:59:19+00:00",
+      "last_incident": "2026-06-15T18:00:00+00:00",
       "classifications": {
         "advisory": 5,
         "incident": 2
@@ -85,8 +85,8 @@
       "short_name": "SharePoint",
       "icon": "📄",
       "total_incidents": 6,
-      "active_incidents": 2,
-      "avg_duration_minutes": 5914,
+      "active_incidents": 1,
+      "avg_duration_minutes": 7803,
       "last_incident": "2026-06-16T16:02:13.243000+00:00",
       "classifications": {
         "advisory": 5,
