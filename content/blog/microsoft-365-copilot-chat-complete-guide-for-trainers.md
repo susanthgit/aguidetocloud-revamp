@@ -4,7 +4,7 @@ list_title: "M365 Copilot Chat (free tier) — Train-the-Trainer Guide"
 hub_id: "fundamentals"
 description: "Train-the-Trainer guide for free M365 Copilot Chat. Features, security, prompting, agents, Pages, memory, custom instructions, model picker."
 date: 2026-04-12
-lastmod: 2026-05-08
+lastmod: 2026-06-18
 card_tag: "Copilot"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -57,6 +57,10 @@ I wrote this for **AI Change Leads**, **Digital Champions**, and anyone running 
 This is a living document. The AI landscape changes fast — features get added, renamed, or retired. Bookmark this page rather than printing it, so you always have the latest version. If you spot something outdated, please [let me know](/feedback/) and I'll update it.
 
 </div>
+
+<p><img src="/images/blog/chat-trainers/hero-copilot-chat.webp" alt="The Microsoft 365 Copilot Chat home with the model picker open (Auto, Quick Response, Think Deeper, GPT 5.5 and 5.2) — the free Chat experience, with no Work IQ toggle" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Copilot Chat — the free experience included with Microsoft 365. Notice there's no **Work IQ** toggle: that's the paid, work-grounded Copilot. This guide is everything you get without the $30 licence.*
 
 **Table of Contents**
 
@@ -186,6 +190,10 @@ This is the section that matters most when you're standing in front of a room of
 
 Here's how to answer that confidently.
 
+<p><img src="/images/blog/chat-trainers/01-edp-indicator.webp" alt="A shield in Microsoft 365 Copilot Chat with the tooltip 'Enterprise data protection applies to this chat'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The trust signal to lead with: a shield in Copilot Chat confirming "Enterprise data protection applies to this chat." Show your room this first.*
+
 ### What Is Enterprise Data Protection?
 
 Think of it like your phone's encryption — it protects everything automatically, you don't have to turn it on. Enterprise Data Protection means Copilot Chat is covered by the **same security commitments** that protect your emails in Exchange and your files in SharePoint. Every user signed in with a work account gets this automatically.
@@ -281,6 +289,10 @@ For large organisations, frame it as:
 ## Deep Dive: Copilot Chat Features
 
 Now let's get into the features your users can use **today**. Even as a free tool, Copilot Chat is surprisingly powerful. Here's how to teach each feature effectively. *(For the full practical feature tour across free and paid, see [22 Copilot features you're probably not using](/blog/20-copilot-features-you-should-be-using/).)*
+
+<p><img src="/images/blog/chat-trainers/02-enterprise-search.webp" alt="Copilot enterprise search for 'Acme' with results grouped across SharePoint, Microsoft 365 Copilot Chats, Teams, Calendar and Outlook Mail" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [my Microsoft 365 Copilot — February 2026 updates](/blog/microsoft-365-copilot-february-2026-updates/) — enterprise search finds and groups results across SharePoint, Teams, email and chats. (Microsoft demo data.)*
 
 ```mermaid
 flowchart TD
@@ -643,6 +655,10 @@ Paid M365 Copilot users get **priority access** — faster, more consistent avai
 ## Copilot Chat Inside Microsoft 365 Apps
 
 Here's something your trainees might not realise — Copilot Chat doesn't just live in the Copilot app. It also shows up as a **side panel** inside some Microsoft 365 apps. What free users get depends on the app:
+
+<p><img src="/images/blog/chat-trainers/03-teams-copilot-pane.webp" alt="Microsoft 365 Copilot Chat as a side panel inside a Microsoft Teams chat, summarising the conversation and listing open items" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [my Microsoft 365 Copilot — March 2026 updates](/blog/microsoft-365-copilot-march-2026-updates/) — Copilot Chat as a side panel inside a Teams chat, summarising and pulling out the open items. (Microsoft demo data.)*
 
 ### Outlook — ✅ Available for All Users
 
