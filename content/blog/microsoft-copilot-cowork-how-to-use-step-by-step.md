@@ -3,7 +3,7 @@ title: "Microsoft Copilot Cowork — Step-by-Step How-To Guide"
 list_title: "Cowork: How to use it step by step"
 description: "Microsoft Copilot Cowork step-by-step tutorial — prerequisites, finding it, outcome-first prompts, approval checkpoints, and troubleshooting."
 date: 2026-06-15
-lastmod: 2026-06-17
+lastmod: 2026-06-18
 draft: false
 card_tag: "Cowork"
 tag_class: "ai"
@@ -34,6 +34,8 @@ founder_note: |
 
 *The hub for this series — [Microsoft Copilot Cowork — The Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) — covers what Cowork is and the agentic harness. This spoke is the step-by-step how-to reference.*
 
+<p><img src="/images/blog/cowork-how-to/hero-cowork-home.webp" alt="The Microsoft 365 Copilot Cowork home screen — the Chat and Cowork tabs, a 'What can I move forward?' task box, and a list of tasks and suggestions" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 ---
 
 ## TL;DR
@@ -59,6 +61,8 @@ If all three are in place and you still can't see it, give it a few minutes afte
 
 ## Step 1 — Open Cowork
 
+<p><img src="/images/blog/cowork-how-to/01-task-ideas.webp" alt="The Cowork 'Task ideas' panel with suggested tasks like an OOO handover pack, newsletter brief, calendar audit and morning briefing, grouped by topic" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 Cowork lives inside Microsoft 365 Copilot — open **`m365.cloud.microsoft`** in your browser (or use the Microsoft 365 Copilot desktop or mobile app) and switch from **Chat** to **Cowork** using the toggle next to the chat box. If you don't see it yet, look under **All agents**. It opens into its own full task workspace, not just a chat box.
 
 The landing page is built around two things: an input box that says **"Start a task…"** (not "Send a message") and a left side rail with your task history. The core controls in the rail are **New task**, **Search**, **Scheduled**, and **Customize**.
@@ -82,6 +86,8 @@ Before you type anything, two helper sections sit on the landing page:
 
 ## Step 2 — Write a good prompt (outcome-first, not process-first)
 
+<p><img src="/images/blog/cowork-how-to/02-prompt.webp" alt="A Cowork task prompt written outcome-first — 'Help me organize my week. Please review my Outlook calendar' — with a bulleted summary of what to show" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 This is the single biggest mindset shift. Most people start by listing steps. Cowork works best when you describe what you want done.
 
 **Process prompt (works less well):**
@@ -99,6 +105,8 @@ Why? Cowork's planner is good at decomposing outcomes into steps. Pre-decomposed
 ---
 
 ## Step 3 — Follow along as Cowork works through the steps
+
+<p><img src="/images/blog/cowork-how-to/03-steps.webp" alt="The Cowork Workspace panel showing the task broken into steps (0 of 4) — gathering context, scanning the calendar, triaging recommendations, and executing changes" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 <p><img src="/images/blog/cowork/howto-04-thinking.webp" alt="Cowork thought-process view showing its reasoning as it plans the task — recognizing the request to organize the week, invoking the Calendar Management skill, and gathering context like identity, timezone, and org details in parallel." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -127,6 +135,8 @@ That was one complete task, start to finish: you typed an outcome — *"help me 
 ---
 
 ## Step 4 — Approval checkpoints
+
+<p><img src="/images/blog/cowork-how-to/04-approval.webp" alt="A Cowork approval checkpoint — a 'Send email?' card with a draft and editable body, and Cancel / Send buttons, shown before the action runs" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 Cowork runs on its own for the low-risk steps, but it **pauses before any action that sends or changes something** to ask permission first. This is the safety rail that makes delegating comfortable.
 
@@ -160,6 +170,8 @@ Cowork tags medium- and high-risk actions with a risk indicator, and the approva
 ---
 
 ## Step 5 — Stop or redirect mid-task
+
+<p><img src="/images/blog/cowork-how-to/05-skip.webp" alt="The Cowork Send control expanded with allow-options, letting you approve once or set an always-allow rule to control how Cowork proceeds" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 The "I can stop it at any time" promise is real, and it's worth knowing how — it's what lets you hand off work without feeling like you've lost the wheel.
 
