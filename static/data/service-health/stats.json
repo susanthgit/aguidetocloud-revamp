@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T23:48:59.965762+00:00",
+  "generated_at": "2026-06-18T04:58:50.602423+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -33,9 +33,9 @@
       "short_name": "Exchange",
       "icon": "📧",
       "total_incidents": 11,
-      "active_incidents": 1,
-      "avg_duration_minutes": 24395,
-      "last_incident": "2026-05-30T09:11:59.853000+00:00",
+      "active_incidents": 2,
+      "avg_duration_minutes": 24266,
+      "last_incident": "2026-06-16T00:51:00+00:00",
       "classifications": {
         "advisory": 10,
         "incident": 1
@@ -45,12 +45,12 @@
       "service": "Microsoft 365 Copilot Chat",
       "short_name": "Copilot Chat",
       "icon": "💭",
-      "total_incidents": 9,
+      "total_incidents": 10,
       "active_incidents": 1,
-      "avg_duration_minutes": 5778,
-      "last_incident": "2026-06-12T04:00:00+00:00",
+      "avg_duration_minutes": 5370,
+      "last_incident": "2026-06-16T14:00:00+00:00",
       "classifications": {
-        "advisory": 4,
+        "advisory": 5,
         "incident": 5
       }
     },
@@ -68,19 +68,6 @@
       }
     },
     {
-      "service": "Microsoft Intune",
-      "short_name": "Intune",
-      "icon": "📱",
-      "total_incidents": 7,
-      "active_incidents": 0,
-      "avg_duration_minutes": 10566,
-      "last_incident": "2026-05-20T00:29:00+00:00",
-      "classifications": {
-        "advisory": 5,
-        "incident": 2
-      }
-    },
-    {
       "service": "SharePoint Online",
       "short_name": "SharePoint",
       "icon": "📄",
@@ -91,6 +78,19 @@
       "classifications": {
         "advisory": 5,
         "incident": 1
+      }
+    },
+    {
+      "service": "Microsoft Intune",
+      "short_name": "Intune",
+      "icon": "📱",
+      "total_incidents": 6,
+      "active_incidents": 0,
+      "avg_duration_minutes": 11700,
+      "last_incident": "2026-05-20T00:29:00+00:00",
+      "classifications": {
+        "advisory": 4,
+        "incident": 2
       }
     },
     {
@@ -219,8 +219,8 @@
   "monthly": [
     {
       "month": "2026-06",
-      "incident_count": 23,
-      "services_affected": 8
+      "incident_count": 25,
+      "services_affected": 9
     },
     {
       "month": "2026-05",
@@ -229,7 +229,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 33,
+      "incident_count": 31,
       "services_affected": 12
     }
   ]

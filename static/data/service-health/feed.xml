@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 17 Jun 2026 23:49:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2026 04:58:51 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Power BI] Users may see blank reports when downloading PBIX files from semantic models within Power BI</title>
@@ -33,6 +33,24 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">SP1393483</guid>
       <pubDate>Tue, 16 Jun 2026 16:02:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Some users may see multiple impact scenarios for Microsoft Copilot Researcher</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1395054</link>
+      <description>[Microsoft 365 Copilot Chat] Users may have seen multiple impact scenarios for Microsoft Copilot Researcher.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1395054</guid>
+      <pubDate>Tue, 16 Jun 2026 14:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users' Input Method Editor (IME) for Japanese/Korean input may be disabled and may switch to English in Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1392948</link>
+      <description>[Exchange Online] Users' IME for Japanese/Korean input may be disabled and may switch to English in Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1392948</guid>
+      <pubDate>Tue, 16 Jun 2026 00:51:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Viva] Users may see stale data in Copilot dashboards and analyst workbench reports in Microsoft Viva Insights</title>
@@ -440,24 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CW1310341</guid>
       <pubDate>Thu, 14 May 2026 01:40:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be unable to see the free/busy status of multiple cross-tenant mailboxes in Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1386636</link>
-      <description>[Exchange Online] Users may have been unable to see the free/busy status of multiple cross-tenant mailboxes in Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1386636</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users may be unable to initiate Office app installations in the My Account portal found within portal.office.com </title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1309601</link>
-      <description>[Microsoft 365 suite] Users may have been unable to initiate Office app installations in the My Account portal found within portal.office.com.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1309601</guid>
-      <pubDate>Wed, 13 May 2026 18:55:19 +0000</pubDate>
     </item>
   </channel>
 </rss>
