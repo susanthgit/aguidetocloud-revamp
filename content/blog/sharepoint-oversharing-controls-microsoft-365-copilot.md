@@ -3,7 +3,7 @@ title: "SharePoint Oversharing Controls for Microsoft 365 Copilot"
 list_title: "SharePoint Oversharing Controls for Copilot"
 description: "RSS, RCD, RAC and SharePoint Advanced Management — the SharePoint controls that stop Copilot surfacing what you didn't realise was overshared."
 date: 2026-05-13
-lastmod: 2026-06-16
+lastmod: 2026-06-18
 hub_id: "it-admins"
 card_tag: "Security"
 tag_class: "security"
@@ -88,6 +88,10 @@ The fix isn't to slow Copilot down. The fix is to use the four controls below in
 </div>
 
 ---
+
+<p><img src="/images/blog/sharepoint-oversharing/hero-dag-landing.webp" alt="SharePoint admin center Data access governance page showing snapshot and activity reports for finding oversharing before deploying Copilot." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Data access governance reports](https://learn.microsoft.com/en-us/sharepoint/data-access-governance-reports) — Microsoft. This is the "building survey" the whole post is about. (Microsoft demo data.)*
 
 ## The Mental Model — A Library, Doors and a Building Survey {#mental-model}
 
@@ -230,6 +234,10 @@ Microsoft recommends disabling RSS once permissions are cleaned up and RCD or RA
 
 ## RCD — Making a Site AI-Invisible {#rcd}
 
+<p><img src="/images/blog/sharepoint-oversharing/02-rcd-toggle.webp" alt="SharePoint site Settings tab showing the Restrict content from Microsoft 365 Copilot toggle set to On." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Restrict discovery of SharePoint sites and content](https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery) — Microsoft. The "Restrict content from Microsoft 365 Copilot" toggle, per-site. (Microsoft demo data.)*
+
 **Restricted Content Discovery (RCD)** is a per-site toggle that excludes one specific SharePoint site from tenant-wide search and Copilot Chat grounding — while leaving the site fully accessible to its members.
 
 It's the surgical opposite of RSS. RSS is an allow-list applied to the whole tenant. RCD is a denylist applied site by site.
@@ -291,6 +299,10 @@ Don't blanket-apply RCD to half your tenant. Microsoft explicitly warns that ove
 ---
 
 ## RAC — The Membership Fence {#rac}
+
+<p><img src="/images/blog/sharepoint-oversharing/03-rac-sitelevel.webp" alt="SharePoint admin center Access control page with the Site-level access restriction panel, Enable site access restriction checked." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Restrict SharePoint site access with groups](https://learn.microsoft.com/en-us/sharepoint/restricted-access-control) — Microsoft. Turn this on at the org level first, then apply per site. (Microsoft demo data.)*
 
 **Restricted Access Control (RAC)** is the only one of the three fences that actually changes access. It limits a SharePoint site to members of one or more named Entra security groups or Microsoft 365 groups — and blocks everyone else, regardless of existing permissions, sharing links, or historical access.
 
@@ -390,6 +402,10 @@ Set-SPOTenant -RequireAnonymousLinksExpireInDays 30
 ---
 
 ## The "Everyone Except External Users" Landmine {#eeeu}
+
+<p><img src="/images/blog/sharepoint-oversharing/01-dag-report-table.webp" alt="SharePoint data access governance report listing the top 100 sites by unique user count, with columns for EEEU permissions, guest access, and sharing links." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Site permissions report](https://learn.microsoft.com/en-us/sharepoint/data-access-governance-site-permissions-report) — Microsoft. The EEEU permission count column is the one to scan first. (Microsoft demo data.)*
 
 If there's one thing in this post that will change your Copilot rollout the most, it's auditing for EEEU.
 
