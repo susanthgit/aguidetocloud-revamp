@@ -130,6 +130,23 @@
         </div>
       </section>
 
+      {{/* ── Exact credit-cost check (precise alternative to the estimate above) ── */}}
+      <section class="cowcalc-cc">
+        <h3 class="cowcalc-cc-title">Already know a task's credits? Do the exact maths</h3>
+        <p class="cowcalc-cc-intro">The Light / Balanced / Heavy levels above are estimates. If your admin <strong>Consumption</strong> dashboard shows a task's real credit cost, drop it in here to project running it repeatedly — no guessing. Uses the currency you picked above.</p>
+        <div class="cowcalc-cc-calc">
+          <label class="cowcalc-cc-field"><span>Credits per run</span><input type="number" id="cc-credits" min="0" max="100000000" value="2500"></label>
+          <span class="cowcalc-cc-op" aria-hidden="true">×</span>
+          <label class="cowcalc-cc-field"><span>Runs per month</span><input type="number" id="cc-runs" min="0" max="1000000" value="20"></label>
+          <span class="cowcalc-cc-op" aria-hidden="true">=</span>
+          <div class="cowcalc-cc-result">
+            <div class="cowcalc-cc-cost" id="cc-cost">$500</div>
+            <div class="cowcalc-cc-sub" id="cc-sub">per month · 50K credits · $25 per run</div>
+          </div>
+        </div>
+        <span class="sr-only" aria-live="polite" id="cc-sr"></span>
+      </section>
+
       <p class="cowcalc-disclaimer cowcalc-disclaimer-foot"><strong>Estimate only — not a billing quote.</strong> Calibrated to Microsoft's Customer Cowork Estimator (≈ $120–410 / user / month). Real burn varies with the model picked, tools called, and context. <button type="button" class="cowcalc-inline-link" onclick="cowcalcGotoDetails()">How we estimate ›</button></p>
     </div>
 

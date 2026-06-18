@@ -114,6 +114,18 @@
   }
   function setHabit(id, credits) { const el = $(id); if (el) el.textContent = '~' + fmtMoney(credits * CREDIT_COST); }
 
+  // ── Exact credit-cost check (independent of the estimate; currency-aware) ──
+  function computeCredit() {
+    const credits = Math.max(0, num($('cc-credits'), 0));
+    const runs = Math.max(0, num($('cc-runs'), 0));
+    const total = credits * runs;
+    const cost = total * CREDIT_COST;
+    const perRun = credits * CREDIT_COST;
+    if ($('cc-cost')) $('cc-cost').textContent = fmtMoney(cost);
+    if ($('cc-sub')) $('cc-sub').textContent = 'per month · ' + fmtCompact(total) + ' credits · ' + fmtMoney(perRun) + ' per run';
+    if ($('cc-sr')) $('cc-sr').textContent = 'Exact credit cost ' + fmtMoney(cost) + ' per month — ' + runs + ' runs at ' + fmtCompact(credits) + ' credits each, ' + fmtMoney(perRun) + ' per run.';
+  }
+
   function setLevel(level) {
     if (!USAGE[level]) return;
     LEVEL = level;
@@ -140,14 +152,16 @@
 
   function init() {
     if ($('num-users')) $('num-users').addEventListener('input', compute);
-    if ($('cowcalc-currency')) $('cowcalc-currency').addEventListener('change', (e) => { CUR = e.target.value; compute(); });
+    if ($('cowcalc-currency')) $('cowcalc-currency').addEventListener('change', (e) => { CUR = e.target.value; compute(); computeCredit(); });
     document.querySelectorAll('.cowcalc-pill').forEach((p) => {
       p.addEventListener('click', () => setLevel(p.getAttribute('data-usage')));
       p.addEventListener('mouseenter', () => { if ($('usage-caption')) $('usage-caption').textContent = USAGE[p.getAttribute('data-usage')].cap; });
       p.addEventListener('mouseleave', () => { if ($('usage-caption')) $('usage-caption').textContent = USAGE[LEVEL].cap; });
     });
     document.querySelectorAll('.cowcalc-tab').forEach((btn) => btn.addEventListener('click', () => activateTab(btn.getAttribute('data-tab'))));
+    ['cc-credits', 'cc-runs'].forEach((id) => { const el = $(id); if (el) el.addEventListener('input', computeCredit); });
     setLevel('balanced');
+    computeCredit();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

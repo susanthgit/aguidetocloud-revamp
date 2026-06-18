@@ -133,6 +133,22 @@ body.page-cowork-cost-calculator .zt-reading--tool-detail > .zt-companion { disp
 .cowcalc-habit-amt { font-family: var(--zen-font-mono, monospace); font-weight: 700; font-size: 1.4rem; color: var(--accent); }
 .cowcalc-habit-lab { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.35rem; line-height: 1.35; }
 
+/* ── Exact credit-cost check ── */
+.cowcalc-cc { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.cowcalc-cc-title { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.4rem; }
+.cowcalc-cc-intro { font-size: 0.9rem; color: var(--text-secondary); margin: 0 0 1.25rem; line-height: 1.5; max-width: 70ch; }
+.cowcalc-cc-intro strong { color: var(--text-primary); }
+.cowcalc-cc-calc { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.85rem 1rem; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-lg, 16px); padding: 1.25rem 1.4rem; }
+.cowcalc-cc-field { display: flex; flex-direction: column; gap: 0.35rem; }
+.cowcalc-cc-field span { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-secondary); }
+.cowcalc-cc-field input { width: 140px; padding: 0.55rem 0.7rem; border: 1px solid var(--border); border-radius: var(--radius-md, 10px); font-family: var(--zen-font-mono, monospace); font-size: 1rem; background: var(--bg-surface); color: var(--text-primary); }
+.cowcalc-cc-field input:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
+.cowcalc-cc-op { font-family: var(--zen-font-mono, monospace); font-size: 1.3rem; color: var(--text-tertiary); padding-bottom: 0.45rem; }
+.cowcalc-cc-result { margin-left: auto; text-align: right; }
+.cowcalc-cc-cost { font-family: var(--zen-font-mono, monospace); font-size: 1.85rem; font-weight: 700; color: var(--accent); line-height: 1; }
+.cowcalc-cc-sub { font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.35rem; font-family: var(--zen-font-mono, monospace); }
+@media (max-width: 560px) { .cowcalc-cc-result { margin-left: 0; width: 100%; text-align: left; } .cowcalc-cc-op { display: none; } }
+
 .cowcalc-disclaimer { font-size: 0.78rem; color: var(--text-tertiary); line-height: 1.5; }
 .cowcalc-disclaimer strong { color: var(--text-secondary); }
 .cowcalc-disclaimer-foot { margin: 2rem 0 0; padding-top: 1.25rem; border-top: 1px solid var(--border); }
