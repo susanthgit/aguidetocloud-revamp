@@ -5,7 +5,7 @@ hub: true
 hub_id: "fundamentals"
 description: "Layer-by-layer guide to Microsoft 365 Copilot: Orchestrator, Semantic Index, Microsoft Graph grounding, LLM choice. How prompts become answers — explained."
 date: 2026-05-01
-lastmod: 2026-05-01
+lastmod: 2026-06-18
 sitemap:
   priority: 0.9
 card_tag: "Copilot"
@@ -65,7 +65,7 @@ So let me try something different. Let me walk you through what happens — step
 
 <div class="living-doc-banner">
 
-🔄 This is a living document. Microsoft updates Copilot's architecture regularly — most recently adding Anthropic Claude as an optional sub-processor and expanding the Semantic Index. If something here becomes outdated, please [let me know](/feedback/) and I'll update it.
+🔄 This is a living document. Microsoft updates Copilot's architecture regularly — the model layer now routes across multiple frontier models (with Anthropic Claude available as an optional sub-processor), while the grounding and agent layers keep evolving. If something here becomes outdated, please [let me know](/feedback/) and I'll update it.
 
 </div>
 
