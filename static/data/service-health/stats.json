@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T10:45:41.920537+00:00",
+  "generated_at": "2026-06-18T15:50:21.039631+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -58,12 +58,12 @@
       "service": "Microsoft Defender XDR",
       "short_name": "Defender",
       "icon": "🛡️",
-      "total_incidents": 9,
+      "total_incidents": 10,
       "active_incidents": 0,
-      "avg_duration_minutes": 13154,
+      "avg_duration_minutes": 16907,
       "last_incident": "2026-06-10T08:50:00+00:00",
       "classifications": {
-        "advisory": 8,
+        "advisory": 9,
         "incident": 1
       }
     },
@@ -202,18 +202,6 @@
       "classifications": {
         "incident": 1
       }
-    },
-    {
-      "service": "Universal Print",
-      "short_name": "Print",
-      "icon": "🖨️",
-      "total_incidents": 1,
-      "active_incidents": 0,
-      "avg_duration_minutes": 31440,
-      "last_incident": "2026-04-14T04:00:00+00:00",
-      "classifications": {
-        "incident": 1
-      }
     }
   ],
   "monthly": [
@@ -224,13 +212,13 @@
     },
     {
       "month": "2026-05",
-      "incident_count": 47,
+      "incident_count": 48,
       "services_affected": 13
     },
     {
       "month": "2026-04",
-      "incident_count": 31,
-      "services_affected": 12
+      "incident_count": 30,
+      "services_affected": 11
     }
   ]
 }
