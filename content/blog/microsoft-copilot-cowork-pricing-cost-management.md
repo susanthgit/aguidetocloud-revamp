@@ -107,6 +107,22 @@ From the Frontier preview, Microsoft saw three common task shapes. The credit ra
 
 ---
 
+## Know your exact per-task cost — the `/cost` command
+
+The ranges above are estimates. Cowork can tell you the **exact** number for a task you've actually run. When a task finishes, type **`/cost`** in the task window and Cowork replies with the precise credits it used so far:
+
+<p><img src="/images/blog/cowork/cost-command-credits.webp" alt="Microsoft Copilot Cowork showing the /cost command — a user types /cost in the task window and Cowork replies with a gauge icon and the line '379.6 credits used for this task so far'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+That one number is genuinely useful. Whether you're an admin sizing a rollout or an **individual making the case for your own Cowork seat**, you can take a task you run regularly, see what it really costs, and project it:
+
+1. Run the task once and type `/cost` — note the credits (here, **379.6**).
+2. Decide how often you'd run it in a month (say **20 times**).
+3. Drop both numbers into the **[Cowork Cost Calculator](/cowork-cost-calculator/)** — its credit-check works out the monthly cost in your currency (≈ **$76 a month** at $0.01 per credit, in this example).
+
+Now you have a real, defensible figure instead of a guess — the kind of number that turns *"I think this would help"* into *"this saves me hours for about $76 a month."*
+
+---
+
 ## Who runs Cowork, and how much
 
 <p><img src="/images/blog/cowork/pricing-user-personas.webp" alt="Microsoft's Copilot Cowork user-personas infographic — corporate knowledge workers, management and senior leaders, customer-facing knowledge workers, and technical workers, each with different work patterns" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
@@ -165,7 +181,7 @@ Usage-based billing makes cost visibility essential. Microsoft ships a **Cost Ma
 **Visibility — see what's being used and what it costs**
 
 - **Usage reporting** by user, group, and feature — an **Overview** tab for a real-time snapshot of consumption and remaining capacity, and a **Consumption** tab to drill into patterns by user, group, service, or agent
-- **Per-task pricing in credits** shown to users as they run a task (coming soon after GA)
+- **Per-task pricing in credits** — users can type `/cost` in any task window to see the exact credits a task has used so far (see ["Know your exact per-task cost"](#know-your-exact-per-task-cost--the-cost-command) above)
 
 **Efficiency — options to keep cost down**
 

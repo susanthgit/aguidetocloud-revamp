@@ -177,6 +177,10 @@ When you do start a task, instead of an instant reply Cowork shows you a **plan*
 
 It feels less like chatting with a bot and more like delegating to a very organised team member who keeps you in the loop.
 
+One small but genuinely useful detail: Cowork can tell you what a task cost. Type **`/cost`** in the task window and it shows the exact credits used so far — handy for working out the real price of the tasks you run most, or for making the case for your own seat. Drop that number into our free **[Cowork Cost Calculator](/cowork-cost-calculator/)** to see it in dollars (or your currency).
+
+<p><img src="/images/blog/cowork/cost-command-credits.webp" alt="Microsoft Copilot Cowork showing the /cost command — a user types /cost in the task window and Cowork replies with a gauge icon and the line '379.6 credits used for this task so far'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 📖 [Official announcement: Copilot Cowork — A new way of getting work done](https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/copilot-cowork-a-new-way-of-getting-work-done/)
 
 ---

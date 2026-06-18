@@ -138,6 +138,9 @@ body.page-cowork-cost-calculator .zt-reading--tool-detail > .zt-companion { disp
 .cowcalc-cc-title { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.4rem; }
 .cowcalc-cc-intro { font-size: 0.9rem; color: var(--text-secondary); margin: 0 0 1.25rem; line-height: 1.5; max-width: 70ch; }
 .cowcalc-cc-intro strong { color: var(--text-primary); }
+.cowcalc-cc-tip { font-size: 0.85rem; color: var(--text-secondary); background: var(--accent-subtle); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius-md, 10px); padding: 0.7rem 0.9rem; margin: 0 0 1.25rem; line-height: 1.55; }
+.cowcalc-cc-tip strong { color: var(--accent); }
+.cowcalc-cc-tip code { font-family: var(--zen-font-mono, monospace); background: var(--bg-surface); border: 1px solid var(--border); border-radius: 4px; padding: 0.05rem 0.35rem; font-size: 0.9em; color: var(--text-primary); }
 .cowcalc-cc-calc { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.85rem 1rem; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-lg, 16px); padding: 1.25rem 1.4rem; }
 .cowcalc-cc-field { display: flex; flex-direction: column; gap: 0.35rem; }
 .cowcalc-cc-field span { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-secondary); }
