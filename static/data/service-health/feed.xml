@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 18 Jun 2026 15:50:21 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2026 18:33:56 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Intune] We're looking into a potential problem impacting Microsoft Intune</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1396117</link>
+      <description>[Microsoft Intune] We're checking for potential impact to your users.</description>
+      <category>Microsoft Intune</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">IT1396117</guid>
+      <pubDate>Thu, 18 Jun 2026 17:59:19 +0000</pubDate>
+    </item>
     <item>
       <title>[Power BI] Users may see blank reports when downloading PBIX files from semantic models within Power BI</title>
       <link>https://www.aguidetocloud.com/service-health/#PB1394805</link>
@@ -89,9 +98,9 @@
       <pubDate>Thu, 11 Jun 2026 20:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may encounter an error when using the Microsoft 365 Copilot rewrite feature in classic Outlook</title>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to leverage the Microsoft 365 Copilot rewrite feature in classic Outlook</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1387482</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may encounter an error when using the Copilot rewrite feature in classic Outlook.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to leverage the Copilot rewrite feature in classic Outlook.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1387482</guid>
@@ -449,15 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1310977</guid>
       <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Some users may be unable to access Microsoft 365 Copilot Chat via any connection method</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1310341</link>
-      <description>[Microsoft 365 Copilot Chat] Users may have been unable to access Microsoft 365 Copilot Chat via any connection method.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">CW1310341</guid>
-      <pubDate>Thu, 14 May 2026 01:40:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

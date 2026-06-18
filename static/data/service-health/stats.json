@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T15:50:21.039631+00:00",
+  "generated_at": "2026-06-18T18:33:56.096989+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -32,12 +32,12 @@
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 11,
+      "total_incidents": 10,
       "active_incidents": 2,
-      "avg_duration_minutes": 24266,
+      "avg_duration_minutes": 24846,
       "last_incident": "2026-06-16T00:51:00+00:00",
       "classifications": {
-        "advisory": 10,
+        "advisory": 9,
         "incident": 1
       }
     },
@@ -68,6 +68,19 @@
       }
     },
     {
+      "service": "Microsoft Intune",
+      "short_name": "Intune",
+      "icon": "📱",
+      "total_incidents": 7,
+      "active_incidents": 1,
+      "avg_duration_minutes": 11700,
+      "last_incident": "2026-06-18T17:59:19+00:00",
+      "classifications": {
+        "advisory": 5,
+        "incident": 2
+      }
+    },
+    {
       "service": "SharePoint Online",
       "short_name": "SharePoint",
       "icon": "📄",
@@ -78,19 +91,6 @@
       "classifications": {
         "advisory": 5,
         "incident": 1
-      }
-    },
-    {
-      "service": "Microsoft Intune",
-      "short_name": "Intune",
-      "icon": "📱",
-      "total_incidents": 6,
-      "active_incidents": 0,
-      "avg_duration_minutes": 11700,
-      "last_incident": "2026-05-20T00:29:00+00:00",
-      "classifications": {
-        "advisory": 4,
-        "incident": 2
       }
     },
     {
@@ -207,8 +207,8 @@
   "monthly": [
     {
       "month": "2026-06",
-      "incident_count": 25,
-      "services_affected": 9
+      "incident_count": 26,
+      "services_affected": 10
     },
     {
       "month": "2026-05",
@@ -217,7 +217,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 30,
+      "incident_count": 29,
       "services_affected": 11
     }
   ]
