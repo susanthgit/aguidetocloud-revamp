@@ -9,9 +9,27 @@
   // Microsoft's 2026 Customer Cowork Estimator workbook defaults.
   // Bands × $0.01 = $/user/month.
   const USAGE = {
-    light:    { lo: 7000,  mid: 8225,  hi: 10000, cap: 'Light — lower-volume users, close to the manager / senior leader default mix in Microsoft\u2019s estimator.' },
-    balanced: { lo: 14250, mid: 14625, hi: 15000, cap: 'Balanced — typical corporate or customer-facing knowledge worker mix from Microsoft\u2019s estimator defaults.' },
-    heavy:    { lo: 20000, mid: 22800, hi: 26000, cap: 'Heavy — technical or power users with more frequent heavy prompts in the estimator defaults.' }
+    light: {
+      lo: 7000, mid: 8225, hi: 10000,
+      cap: 'Light — lower-volume users, close to the manager / senior leader default mix in Microsoft\u2019s estimator.',
+      persona: 'Manager / senior leader style use',
+      mix: 'About 13 light, 6 medium, and 3 heavy prompts each month.',
+      explain: 'Good for occasional Cowork use: a few larger tasks a month, not a daily habit.'
+    },
+    balanced: {
+      lo: 14250, mid: 14625, hi: 15000,
+      cap: 'Medium — typical corporate or customer-facing knowledge worker mix from Microsoft\u2019s estimator defaults.',
+      persona: 'Corporate or customer-facing user',
+      mix: 'About 17–22 light, 11–13 medium, and 5 heavy prompts each month.',
+      explain: 'This is Microsoft\u2019s normal working-user style estimate: repeated monthly use, not one task.'
+    },
+    heavy: {
+      lo: 20000, mid: 22800, hi: 26000,
+      cap: 'Heavy — technical or power users with more frequent heavy prompts in the estimator defaults.',
+      persona: 'Technical / power user',
+      mix: 'About 12 light, 9 medium, and 14 heavy prompts each month.',
+      explain: 'Use this for people who run deeper, multi-tool Cowork jobs often.'
+    }
   };
   let LEVEL = 'balanced';
 
@@ -32,6 +50,7 @@
   const cur = () => CURRENCIES[CUR] || CURRENCIES.USD;
   const fmtN = (n) => Math.round(n).toLocaleString('en-US');
   const fmtMoney = (n) => cur().symbol + fmtN(n * cur().rate);
+  const fmtUsd = (n) => '$' + fmtN(n);
   function fmtCompact(n) {
     n = Math.round(n);
     if (n >= 1e6) return (n / 1e6).toFixed(n >= 1e7 ? 0 : 1).replace(/\.0$/, '') + 'M';
@@ -71,6 +90,7 @@
     const seats = users * SEAT;
     const allinMid = seats + varMid;
     const perLo = u.lo * CREDIT_COST, perHi = u.hi * CREDIT_COST;
+    const perMid = u.mid * CREDIT_COST;
     const mult = seats > 0 ? varMid / seats : 0;
 
     // Meter (typical, animated) + range
@@ -98,6 +118,14 @@
     if ($('out-credits')) $('out-credits').textContent = fmtCompact(credLo) + ' – ' + fmtCompact(credHi);
     if ($('out-peruser')) $('out-peruser').textContent = fmtMoney(perLo) + ' – ' + fmtMoney(perHi);
     if ($('out-seats-line')) $('out-seats-line').textContent = users.toLocaleString('en-US') + ' × ' + fmtMoney(SEAT);
+    if ($('out-persona')) $('out-persona').textContent = u.persona;
+    if ($('out-persona-detail')) $('out-persona-detail').textContent = u.mix;
+    if ($('out-explain-credits')) $('out-explain-credits').textContent = fmtCompact(u.mid) + ' credits';
+    if ($('out-explain-usd')) $('out-explain-usd').textContent = fmtUsd(perMid);
+    if ($('out-explain-local')) $('out-explain-local').textContent = fmtMoney(perMid);
+    if ($('out-explain-copy')) $('out-explain-copy').textContent = u.explain;
+    if ($('out-explain-math')) $('out-explain-math').textContent = fmtCompact(u.mid) + ' credits × $0.01 = ' + fmtUsd(perMid) + ' per user/month' + (CUR === 'USD' ? '.' : ' (shown as ' + fmtMoney(perMid) + ' in ' + CUR + ').');
+    if ($('out-ae-talktrack')) $('out-ae-talktrack').textContent = 'This is a monthly budgeting estimate for repeated Cowork use. For a real task, run it once, type /cost, then multiply the exact credits by expected monthly runs.';
 
     // Habit strip (fixed illustration of recurring heavy runs)
     setHabit('habit-month', HEAVY_TASK_CREDITS * 1);
