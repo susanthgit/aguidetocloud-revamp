@@ -1,23 +1,23 @@
 // Cowork Cost Calculator — "the meter" instrument
 // Namespace: cowcalc · Calibrated to Microsoft's Customer Cowork Estimator
-// (≈ $120–410 / user / month default range; credits @ $0.01 PayGo).
+// (default persona mixes ≈ $82–228 / user / month; credits @ $0.01 PayGo).
 
 (function () {
   'use strict';
 
-  // Credits per user / month (low–mid–high) per usage level, calibrated so
-  // Balanced ≈ Microsoft's own default assumption (~$210/user) and Light/Heavy
-  // bracket the published $120–410 range. Bands × $0.01 = $/user/month.
+  // Credits per user / month (low–mid–high) per usage level, calibrated to
+  // Microsoft's 2026 Customer Cowork Estimator workbook defaults.
+  // Bands × $0.01 = $/user/month.
   const USAGE = {
-    light:    { lo: 6000,  mid: 9000,  hi: 13000, cap: 'Light — lighter than Microsoft\u2019s default: occasional quick briefs and the odd report.' },
-    balanced: { lo: 15000, mid: 21000, hi: 30000, cap: 'Balanced — Microsoft\u2019s own default assumption: a typical mix of quick tasks and regular multi-step jobs.' },
-    heavy:    { lo: 32000, mid: 40000, hi: 52000, cap: 'Heavy — power users running research and multi-tool work most days.' }
+    light:    { lo: 7000,  mid: 8225,  hi: 10000, cap: 'Light — lower-volume users, close to the manager / senior leader default mix in Microsoft\u2019s estimator.' },
+    balanced: { lo: 14250, mid: 14625, hi: 15000, cap: 'Balanced — typical corporate or customer-facing knowledge worker mix from Microsoft\u2019s estimator defaults.' },
+    heavy:    { lo: 20000, mid: 22800, hi: 26000, cap: 'Heavy — technical or power users with more frequent heavy prompts in the estimator defaults.' }
   };
   let LEVEL = 'balanced';
 
   const CREDIT_COST = 0.01;  // PayGo $ per Copilot Credit (USD)
   const SEAT = 30;           // M365 Copilot seat $/user/month (USD)
-  const HEAVY_TASK_CREDITS = 2500; // one heavy Cowork run (estimator heavy band)
+  const HEAVY_TASK_CREDITS = 1200; // one heavy Cowork run (estimator heavy band)
 
   const CURRENCIES = {
     USD: { symbol: '$',   rate: 1 },
