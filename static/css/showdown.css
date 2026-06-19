@@ -376,6 +376,10 @@
   color: var(--showdown-yellow);
   font-style: italic;
 }
+.showdown-saving {
+  color: color-mix(in srgb, var(--success) 70%, var(--text-primary));
+  font-weight: 600;
+}
 
 /* ── Strengths & Weaknesses ── */
 .showdown-strengths-grid {

@@ -316,7 +316,7 @@
       }
 
       const annualText = custom ? '—' : (ap === 0 ? '—' : (ap > 0 ? `$${ap}` : '—'));
-      const savings = (!custom && mp > 0 && ap > 0 && ap < mp) ? ` <small style="color:var(--showdown-green)">(${Math.round((1 - ap / mp) * 100)}% off)</small>` : '';
+      const savings = (!custom && mp > 0 && ap > 0 && ap < mp) ? ` <small class="showdown-saving">(${Math.round((1 - ap / mp) * 100)}% off)</small>` : '';
 
       return `<tr>
         <td>${prov.logo_emoji || ''} ${esc(prov.name || r.provider)}</td>

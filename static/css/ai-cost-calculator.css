@@ -129,7 +129,7 @@
 .aicost-conf-btn.active {
   background: var(--accent-subtle);
   border-color: var(--accent);
-  color: var(--accent-hover);
+  color: var(--text-primary);
 }
 
 /* ── Warning Cards ── */
@@ -202,11 +202,11 @@
   justify-content: center;
   background: var(--accent-subtle);
   border-radius: 50%;
-  color: var(--accent-hover);
+  color: var(--text-primary);
   font-size: 0.72rem;
   font-weight: 600;
 }
-.aicost-board-bullet strong { color: var(--accent-hover); }
+.aicost-board-bullet strong { color: var(--text-primary); }
 
 /* ── History Delta ── */
 .aicost-delta {
@@ -349,7 +349,7 @@
 .aicost-radio.selected {
   background: var(--accent-subtle);
   border-color: var(--accent);
-  color: var(--accent-hover);
+  color: var(--text-primary);
 }
 .aicost-radio input[type="radio"] { accent-color: var(--accent); }
 
@@ -385,7 +385,7 @@
   font-size: 0.78rem;
   white-space: nowrap;
 }
-.aicost-check.checked .aicost-check-price { color: var(--accent); }
+.aicost-check.checked .aicost-check-price { color: var(--text-primary); }
 .aicost-check-included {
   margin-left: auto;
   color: var(--aicost-green);
@@ -474,7 +474,7 @@
   line-height: 1.6;
   margin-top: 0.75rem;
 }
-.aicost-narrative strong { color: var(--accent-hover); }
+.aicost-narrative strong { color: var(--text-primary); }
 
 /* ── Expandable Categories (Detailed Breakdown) ── */
 .aicost-category {
@@ -986,7 +986,7 @@
   background: var(--accent-subtle);
 }
 .aicost-total-card.total-highlight .aicost-total-value {
-  color: var(--accent-hover);
+  color: var(--text-primary);
 }
 
 /* ── Print Styles ── */

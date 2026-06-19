@@ -535,9 +535,9 @@ a:hover {
   font-weight: 700;
   font-family: var(--font-heading);
   white-space: nowrap;
-  border: 1px solid var(--accent);
+  border: 1px solid var(--accent-strong, var(--accent));
   border-radius: var(--radius-sm);
-  background: var(--accent);
+  background: var(--accent-strong, var(--accent));
   color: #fff;
   text-decoration: none;
   transition: background-color 200ms ease-out, border-color 200ms ease-out;

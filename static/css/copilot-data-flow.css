@@ -84,11 +84,11 @@
 .cdf-scenario-btn.active {
   border-color: var(--accent);
   background: var(--accent-subtle);
-  color: var(--accent);
+  color: var(--text-primary);
   font-weight: 600;
 }
 .cdf-scenario-btn svg { color: var(--text-muted); }
-.cdf-scenario-btn.active svg { color: var(--accent); }
+.cdf-scenario-btn.active svg { color: var(--text-primary); }
 
 /* Boundary legend */
 .cdf-boundary-legend {
@@ -203,7 +203,7 @@
   text-transform: uppercase;
   letter-spacing: 0.3px;
 }
-.cdf-flow-boundary.cdf-b-microsoft { background: var(--accent-subtle); color: var(--accent); }
+.cdf-flow-boundary.cdf-b-microsoft { background: var(--accent-subtle); color: var(--text-primary); }
 .cdf-flow-boundary.cdf-b-external { background: var(--bg-elevated); color: var(--warning); }
 .cdf-flow-boundary.cdf-b-sub-processor { background: var(--bg-elevated); color: var(--error); }
 .cdf-flow-boundary.cdf-b-your-device { background: var(--bg-elevated); color: var(--text-muted); }
@@ -223,7 +223,7 @@
 }
 .cdf-arrow-text {
   font-size: var(--text-lg);
-  color: var(--border-emphasis);
+  color: var(--text-tertiary);
 }
 .cdf-flow-arrow.cdf-arrow-animated {
   animation: cdf-arrow-pulse 400ms ease-out;
@@ -249,7 +249,7 @@
   padding: 0 var(--space-2);
   white-space: nowrap;
 }
-.cdf-zs-microsoft, .cdf-zs-your-device { background: var(--accent-subtle); color: var(--accent); }
+.cdf-zs-microsoft, .cdf-zs-your-device { background: var(--accent-subtle); color: var(--text-primary); }
 .cdf-zs-external { background: var(--bg-elevated); color: var(--warning); }
 .cdf-zs-sub-processor { background: var(--bg-elevated); color: var(--error); }
 

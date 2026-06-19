@@ -161,7 +161,7 @@
   padding: 0.12rem 0.4rem; border-radius: var(--radius-sm, 6px);
   text-transform: uppercase; letter-spacing: 0.02em;
 }
-.tokcalc-badge-green { background: var(--accent-subtle); color: var(--success, #22C55E); }
+.tokcalc-badge-green { background: var(--accent-subtle); color: var(--text-primary); }
 .tokcalc-badge-amber { background: color-mix(in srgb, var(--warning) 15%, transparent); color: var(--warning, #F59E0B); }
 
 /* ── Disclaimer ── */
@@ -246,7 +246,7 @@ details[open] > .tokcalc-advanced-trigger::before { content: '▾ '; }
 }
 .tokcalc-tier-btn:hover { background: var(--border); color: var(--text-primary); }
 .tokcalc-tier-btn.active {
-  background: var(--accent-subtle); border-color: var(--accent); color: var(--accent-hover);
+  background: var(--accent-subtle); border-color: var(--accent); color: var(--text-primary);
 }
 
 /* ── Verdict Card (Feature 1) ── */
@@ -257,7 +257,7 @@ details[open] > .tokcalc-advanced-trigger::before { content: '▾ '; }
   margin-bottom: 0.75rem;
 }
 .tokcalc-verdict:empty { display: none; }
-.tokcalc-verdict strong { color: var(--accent-hover); }
+.tokcalc-verdict strong { color: var(--text-primary); }
 .tokcalc-verdict-warn { color: var(--warning); }
 
 /* ── Over-budget rows (Feature 3) ── */
@@ -330,7 +330,7 @@ details[open] > .tokcalc-advanced-trigger::before { content: '▾ '; }
   margin-top: 0.75rem;
 }
 .tokcalc-btn {
-  padding: 5px 14px; background: var(--accent); color: #fff;
+  padding: 5px 14px; background: var(--accent-strong, var(--accent)); color: #fff;
   border: none; border-radius: var(--radius-sm, 6px);
   font-size: 0.82rem; font-weight: 600; cursor: pointer;
   transition: background-color 150ms ease-out;

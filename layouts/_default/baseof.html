@@ -121,7 +121,7 @@
   <a href="#main-content" class="skip-link">Skip to content</a>
   {{ partial "cosmos-bar.html" . }}
   {{ partial "nav.html" . }}
-  {{/* 🌸 3-column tool layout: $isToolPage already defined in <head> for CSS loading */}}
+    {{/* 🌸 Tool layout: $isToolPage already defined in <head> for CSS loading */}}
   {{/* Note: /free-tools/ has its own zt-reading grid in list.html — not wrapped here */}}
   <main id="main-content" data-pagefind-body>
     {{ $isMindMaps := eq .Section "mind-maps" }}
@@ -139,7 +139,7 @@
       </aside>
     </div>
     {{ else if $isToolPage }}
-    <div class="zt-reading zt-reading--tool-detail">
+    <div class="zt-reading zt-reading--tool-detail zt-reading--tool-main">
       <aside class="zt-sidebar zt-sidebar--tools" aria-label="Tool navigation" data-pagefind-ignore>
         {{ partial "tools-nav.html" . }}
       </aside>

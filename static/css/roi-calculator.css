@@ -204,7 +204,7 @@
 .roi-radio:has(input:checked) {
   border-color: var(--accent);
   background: var(--accent-subtle);
-  color: var(--accent-hover);
+  color: var(--text-primary);
 }
 .roi-radio input[type="radio"] {
   appearance: none;
@@ -308,7 +308,7 @@
   font-size: var(--text-caption);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   margin-bottom: 0.35rem;
 }
 .roi-big-value {
@@ -316,7 +316,7 @@
   font-family: var(--font-sans);
   font-size: var(--text-h1);
   font-weight: 600;
-  color: var(--accent-hover);
+  color: var(--text-primary);
 }
 
 /* ── Mini Bar Chart ── */
@@ -332,7 +332,7 @@
 .roi-bar-label {
   width: 55px;
   font-size: var(--text-caption);
-  color: var(--text-muted);
+  color: var(--text-secondary);
   text-align: right;
 }
 .roi-bar-track {
@@ -352,21 +352,20 @@
 .roi-bar-val {
   font-size: var(--text-caption);
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   min-width: 70px;
 }
 
 /* ── Source Note ── */
 .roi-source-note {
   font-size: var(--text-caption);
-  color: var(--text-muted);
-  opacity: 0.7;
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 .roi-source-note a {
-  color: var(--accent);
+  color: var(--text-primary);
   text-decoration: underline;
-  text-decoration-color: var(--accent);
+  text-decoration-color: var(--text-primary);
 }
 
 /* ════════════════════════════════════════════════
@@ -1021,7 +1020,7 @@
 }
 .roi-bench-above {
   background: var(--accent-subtle); border: 1px solid color-mix(in srgb, var(--success) 20%, transparent);
-  color: var(--success);
+  color: var(--text-primary);
 }
 .roi-bench-below {
   background: color-mix(in srgb, var(--warning) 8%, transparent); border: 1px solid color-mix(in srgb, var(--warning) 20%, transparent);

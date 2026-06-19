@@ -6,13 +6,6 @@
 
 .cowcalc-container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 4rem; }
 
-/* Widen THIS tool only — drop the right companion rail so the card fills the
-   middle of the page instead of a ~600px column squeezed between two sidebars. */
-body.page-cowork-cost-calculator .zt-reading--tool-detail > .zt-companion { display: none; }
-@media (min-width: 1024px) {
-  body.page-cowork-cost-calculator .zt-reading--tool-detail { grid-template-columns: var(--sidebar-width, 250px) minmax(0, 1fr); }
-}
-
 /* ── Zen underline tabs ── */
 .cowcalc-tabs {
   display: flex; gap: 0; padding: 0; background: transparent; border: none;
@@ -88,7 +81,7 @@ body.page-cowork-cost-calculator .zt-reading--tool-detail > .zt-companion { disp
   margin: 1.2rem 0 0; padding: 0.85rem 1rem; background: var(--accent-subtle); border: 1px solid var(--border);
   border-left: 3px solid var(--accent); border-radius: var(--radius-md, 10px); font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;
 }
-.cowcalc-verdict strong { color: var(--accent); }
+.cowcalc-verdict strong { color: var(--text-primary); }
 
 .cowcalc-meter-chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-top: 1.2rem; }
 @media (max-width: 520px) { .cowcalc-meter-chips { grid-template-columns: 1fr; } }
@@ -174,7 +167,8 @@ body.page-cowork-cost-calculator .zt-reading--tool-detail > .zt-companion { disp
 .cowcalc-cc-intro { font-size: 0.9rem; color: var(--text-secondary); margin: 0 0 1.25rem; line-height: 1.5; max-width: 70ch; }
 .cowcalc-cc-intro strong { color: var(--text-primary); }
 .cowcalc-cc-tip { font-size: 0.85rem; color: var(--text-secondary); background: var(--accent-subtle); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius-md, 10px); padding: 0.7rem 0.9rem; margin: 0 0 1.25rem; line-height: 1.55; }
-.cowcalc-cc-tip strong { color: var(--accent); }
+.cowcalc-cc-tip strong { color: var(--text-primary); }
+.cowcalc-cc-tip a { color: var(--text-primary); font-weight: 600; }
 .cowcalc-cc-tip code { font-family: var(--zen-font-mono, monospace); background: var(--bg-surface); border: 1px solid var(--border); border-radius: 4px; padding: 0.05rem 0.35rem; font-size: 0.9em; color: var(--text-primary); }
 .cowcalc-cc-calc { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.85rem 1rem; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-lg, 16px); padding: 1.25rem 1.4rem; }
 .cowcalc-cc-field { display: flex; flex-direction: column; gap: 0.35rem; }

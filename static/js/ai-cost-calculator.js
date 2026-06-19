@@ -70,6 +70,17 @@
   function fmtK(n) { return n >= 1000 ? (n / 1000).toFixed(1) + 'K' : String(Math.round(n)); }
   function pct(n) { return Math.round(n) + '%'; }
   function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+  function cssVar(name, fallback) {
+    var v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    return v || fallback;
+  }
+  function chartTheme() {
+    return {
+      text: cssVar('--text-secondary', '#525252'),
+      muted: cssVar('--text-tertiary', '#737373'),
+      grid: cssVar('--border', '#E5E5E5')
+    };
+  }
 
   function getImplBucket(users) {
     if (users < 100) return IMPL.small || {};
@@ -570,6 +581,7 @@
   function renderDonut() {
     var canvas = $('chart-donut');
     if (!canvas) return;
+    var theme = chartTheme();
 
     var data = [
       S.costs.licensing,
@@ -599,7 +611,7 @@
         maintainAspectRatio: true,
         cutout: '65%',
         plugins: {
-          legend: { display: true, position: 'bottom', labels: { color: 'rgba(255,255,255,0.6)', font: { size: 11 }, padding: 12 } },
+          legend: { display: true, position: 'bottom', labels: { color: theme.text, font: { size: 11 }, padding: 12 } },
           tooltip: {
             callbacks: {
               label: function (ctx) { return ctx.label + ': ' + fmt(ctx.parsed) + ' (' + pct(ctx.parsed / S.year1 * 100) + ')'; }
@@ -1002,6 +1014,7 @@
   function renderTimeline() {
     var canvas = $('chart-timeline');
     if (!canvas || typeof Chart === 'undefined') return;
+    var theme = chartTheme();
 
     var rollout = ROLLOUTS[S.rolloutPreset] || ROLLOUTS.phased || { phases: [15,15,40,40,70,100,100,100,100,100,100,100] };
     var phases = rollout.phases || [];
@@ -1085,11 +1098,11 @@
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-          x: { stacked: true, ticks: { color: 'rgba(255,255,255,0.5)', font: { size: 10 } }, grid: { display: false } },
-          y: { stacked: true, ticks: { color: 'rgba(255,255,255,0.5)', callback: function (v) { return fmt(v); } }, grid: { color: 'rgba(255,255,255,0.05)' } }
+          x: { stacked: true, ticks: { color: theme.muted, font: { size: 10 } }, grid: { display: false } },
+          y: { stacked: true, ticks: { color: theme.muted, callback: function (v) { return fmt(v); } }, grid: { color: theme.grid } }
         },
         plugins: {
-          legend: { position: 'bottom', labels: { color: 'rgba(255,255,255,0.6)', font: { size: 11 }, padding: 12 } },
+          legend: { position: 'bottom', labels: { color: theme.text, font: { size: 11 }, padding: 12 } },
           tooltip: { callbacks: { label: function (ctx) { return ctx.dataset.label + ': ' + fmt(ctx.parsed.y); } } }
         }
       }
@@ -1261,6 +1274,7 @@
     var canvas = $('chart-crossover');
     var resultEl = $('crossover-result');
     if (!canvas || typeof Chart === 'undefined') return;
+    var theme = chartTheme();
 
     var actionsPerDay = parseInt(($('cpa-actions') || {}).value) || 30;
     var copilotCost = PLATFORMS['m365-copilot'] ? PLATFORMS['m365-copilot'].price_per_user : 30;
@@ -1298,11 +1312,11 @@
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-          x: { title: { display: true, text: 'Actions per user per day', color: 'rgba(255,255,255,0.5)' }, ticks: { color: 'rgba(255,255,255,0.5)' }, grid: { display: false } },
-          y: { title: { display: true, text: 'Monthly cost per user ($)', color: 'rgba(255,255,255,0.5)' }, ticks: { color: 'rgba(255,255,255,0.5)', callback: function (v) { return '$' + v; } }, grid: { color: 'rgba(255,255,255,0.05)' } }
+          x: { title: { display: true, text: 'Actions per user per day', color: theme.muted }, ticks: { color: theme.muted }, grid: { display: false } },
+          y: { title: { display: true, text: 'Monthly cost per user ($)', color: theme.muted }, ticks: { color: theme.muted, callback: function (v) { return '$' + v; } }, grid: { color: theme.grid } }
         },
         plugins: {
-          legend: { position: 'bottom', labels: { color: 'rgba(255,255,255,0.6)', font: { size: 11 } } }
+          legend: { position: 'bottom', labels: { color: theme.text, font: { size: 11 } } }
         }
       }
     });
@@ -1328,6 +1342,21 @@
           '<div class="aicost-explanation">Plus Copilot includes M365 integration, security guardrails, and enterprise governance — no extra setup needed.</div>';
       }
     }
+  }
+
+  function initThemeObserver() {
+    if (typeof MutationObserver === 'undefined') return;
+    var scheduled = false;
+    new MutationObserver(function (mutations) {
+      if (!mutations.some(function (m) { return m.attributeName === 'data-theme'; }) || scheduled) return;
+      scheduled = true;
+      window.requestAnimationFrame(function () {
+        scheduled = false;
+        renderDonut();
+        if ($('panel-timeline') && $('panel-timeline').classList.contains('active')) renderTimeline();
+        if ($('panel-export') && $('panel-export').classList.contains('active')) renderCrossover();
+      });
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
   }
 
   /* ── RENDER: ROI Quick View ──────────────────────────────────── */
@@ -1784,6 +1813,7 @@
     initTabs();
     initInputSync();
     initUseCasePresets();
+    initThemeObserver();
 
     // Load state: URL params > localStorage > defaults
     var loaded = loadFromUrl() || loadFromStorage();
