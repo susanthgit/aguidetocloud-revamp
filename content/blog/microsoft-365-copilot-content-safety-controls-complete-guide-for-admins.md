@@ -4,7 +4,7 @@ list_title: "M365 Copilot Content Safety — The Complete Guide (for IT Admins)"
 hub_id: "it-admins"
 description: "How M365 Copilot handles harmful content, sensitivity labels, web search, and admin controls. Step-by-step config, scenarios, best practices."
 date: 2026-04-14
-lastmod: 2026-05-08
+lastmod: 2026-06-18
 card_tag: "Copilot"
 tag_class: "ai"
 images: ["images/og/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins.jpg"]
@@ -51,6 +51,10 @@ You actually have **four**. And understanding which one does what is {{< hi >}}t
 {{< margin >}}Had this exact conversation last quarter — twice.{{< /margin >}}
 
 This guide covers every content safety lever you have, when to use each one, and exactly how to set them up.
+
+<p><img src="/images/blog/content-safety/hero-admin-policy-management.webp" alt="The Microsoft 365 Apps admin center Policy Management wizard with the 'Adjust responsible AI protections for Microsoft 365 Copilot' policy in the list" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft Learn — Manage harmful content protection for Microsoft 365 Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/harmful-content-protection-copilot-chat) — content safety controls live in the Microsoft 365 Apps admin center (config.office.com), not the Microsoft 365 admin center. (Microsoft demo data.)*
 
 **Quick links:**
 
@@ -164,6 +168,10 @@ These are the safety features that are always on. Think of them like the fire al
 
 This is the big one — the control that generates the most questions. Introduced in **September 2025** via [MC1133507](https://learn.microsoft.com/en-us/copilot/microsoft-365/harmful-content-protection-copilot-chat).
 
+<p><img src="/images/blog/content-safety/01-harmful-content-toggle.webp" alt="The More menu in Microsoft 365 Copilot Chat showing the Web search and Harmful content protection toggles, both switched on" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft Learn — Manage harmful content protection](https://learn.microsoft.com/en-us/microsoft-365/copilot/harmful-content-protection-copilot-chat) — the Harmful content protection toggle (and the Web search toggle of Layer 4) live in Copilot Chat's More menu. Only users in the policy see it. (Microsoft demo data.)*
+
 ### What It Filters (When Enabled)
 
 By default, Copilot Chat will block or limit responses about:
@@ -238,6 +246,10 @@ flowchart TD
 
 If you've decided some users need the toggle, here's how to set it up. The whole process takes about 10 minutes — but the policy can take up to 24 hours to apply.
 
+<p><img src="/images/blog/content-safety/02-adjust-protections-policy.webp" alt="The 'Adjust responsible AI protections for Microsoft 365 Copilot' Cloud Policy set to Enabled, with the option to provide users the choice to adjust harmful content protection" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft Learn — Manage harmful content protection](https://learn.microsoft.com/en-us/microsoft-365/copilot/harmful-content-protection-copilot-chat) — the policy flyout: set Configuration to Enabled, then choose whether to give users the toggle. (Microsoft demo data.)*
+
 ### What You Need First
 
 - ✅ Microsoft 365 Copilot licences assigned to the target users
@@ -283,6 +295,10 @@ If you've decided some users need the toggle, here's how to set it up. The whole
 ## Layer 3: Data Access — Who Sees What
 
 This is where I see the most confusion. People mix up "content safety" (what topics Copilot will discuss) with "data access" (what files Copilot can find). They're completely separate systems.
+
+<p><img src="/images/blog/content-safety/03-purview-dlp.webp" alt="A Microsoft Purview Data Loss Prevention policy that restricts Microsoft 365 Copilot from processing sensitive content in user prompts" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [my Microsoft 365 Copilot — May 2026 updates](/blog/microsoft-365-copilot-may-2026-updates/) — data access is governed by permissions, sensitivity labels and Purview DLP (shown here), not by the harmful-content toggle. (Microsoft demo data.)*
 
 Here's the simplest way I can explain it:
 

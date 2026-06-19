@@ -2,9 +2,9 @@
 title: "Agent 365 Security Guide — Entra, Purview, Defender"
 list_title: "Agent 365 Security — The Complete Guide (Entra, Purview, Defender)"
 hub_id: "ai-agents"
-description: "Agent 365 just went GA. Here's how Entra, Purview, and Defender secure your AI agents — with real screenshots, scenarios, and no marketing fluff."
+description: "Agent 365 is now GA. Here's how Entra, Purview, and Defender secure your AI agents — with real screenshots, scenarios, and no marketing fluff."
 date: 2026-04-30
-lastmod: 2026-05-01
+lastmod: 2026-06-18
 card_tag: "AI Agents"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -62,7 +62,7 @@ I see this all the time with customers. Someone in Marketing builds an agent tha
 
 That's the gap. We've got Entra for people, Intune for devices — but until now, nothing for agents.
 
-**Agent 365 went live today** (May 1, 2026), and it's Microsoft's answer to this problem. Think of it as the HR department, security team, and compliance office — all rolled into one — but for your AI agents. It ties together Entra, Purview, and Defender into a unified governance layer *(the [CCS guide](/blog/microsoft-365-copilot-control-system-complete-guide/) explains how this differs from Copilot governance).*
+**Agent 365 went live on May 1, 2026**, and it's Microsoft's answer to this problem. Think of it as the HR department, security team, and compliance office — all rolled into one — but for your AI agents. It ties together Entra, Purview, and Defender into a unified governance layer *(the [CCS guide](/blog/microsoft-365-copilot-control-system-complete-guide/) explains how this differs from Copilot governance).*
 
 This guide is my breakdown of what Agent 365 actually does, how it works under the hood, and what you should do about it this week. No sales pitch. Just the stuff that matters for IT admins.
 
@@ -76,7 +76,7 @@ This guide is my breakdown of what Agent 365 actually does, how it works under t
 
 <div class="living-doc-banner">
 
-🔄 This is a living document. Agent 365 just hit GA today (May 1, 2026) and features are rolling out fast. If something here becomes outdated, please [let me know](/feedback/) and I'll update it.
+🔄 This is a living document. Agent 365 reached GA on May 1, 2026, and features are still rolling out fast. If something here becomes outdated, please [let me know](/feedback/) and I'll update it.
 
 </div>
 

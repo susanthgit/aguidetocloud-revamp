@@ -4,7 +4,7 @@ list_title: "M365 Copilot (licensed) — Train-the-Trainer Guide"
 hub_id: "fundamentals"
 description: "Train-the-Trainer guide for the licensed M365 Copilot. Every app (Word, Excel, PPT, Outlook, Teams), Researcher, Analyst, agents, rollout tips."
 date: 2026-04-12
-lastmod: 2026-05-08
+lastmod: 2026-06-18
 card_tag: "Copilot"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -85,6 +85,8 @@ This is a living document. Bookmark this page rather than printing it — the AI
 - [FAQ](#frequently-asked-questions)
 
 ---
+
+<p><img src="/images/blog/licensed-trainers/hero-licensed-copilot.webp" alt="The Microsoft 365 Copilot app (licensed) — the left sidebar shows Search, Library, Create, agents (Researcher, Analyst, Sales, Cowork) and the Word agent, with a box to describe the document to create" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 ## What Does the Microsoft 365 Copilot Licence Unlock?
 
@@ -306,6 +308,8 @@ flowchart TD
 
 ## Copilot in Excel
 
+<p><img src="/images/blog/licensed-trainers/01-excel.webp" alt="Copilot in Excel desktop with an Agent mode option to allow direct edits to the workbook, alongside a data table" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 Copilot in Excel turns data analysis from a specialist skill into something every knowledge worker can do. The standout feature is **Edit with Copilot** (formerly Agent Mode) — where Copilot directly modifies your spreadsheet.
 
 ### What Licensed Users Can Do
@@ -330,6 +334,8 @@ Copilot in Excel turns data analysis from a specialist skill into something ever
 ---
 
 ## Copilot in PowerPoint
+
+<p><img src="/images/blog/licensed-trainers/02-powerpoint.webp" alt="Copilot in PowerPoint with 'Let's edit your presentation' and a prompt to create an executive summary slide, plus suggested edits" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 Copilot in PowerPoint turns ideas into presentations — from a prompt, a Word document, or even a PDF. It handles design, content, speaker notes, and translations.
 
@@ -476,6 +482,8 @@ Copilot in Loop enables AI-assisted collaborative content creation. Your team ca
 
 ## Researcher & Analyst — Advanced Reasoning Agents
 
+<p><img src="/images/blog/licensed-trainers/03-researcher.webp" alt="The Researcher agent in Microsoft 365 Copilot using connected work sources, including LSEG, to answer a detailed financial question" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 These are the **premium agents** exclusive to licensed users. They represent a significant step up from regular Copilot chat.
 
 ### 🔬 Researcher
@@ -601,6 +609,8 @@ With the paid licence, users get **comprehensive agent access** — no metering,
 
 ## Anthropic Claude — Model Choice
 
+<p><img src="/images/blog/licensed-trainers/04-claude.webp" alt="The Copilot model picker in Word showing Anthropic Claude options (Claude Opus 4.6 and Claude Sonnet 4.6) alongside a grounded document" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
 Microsoft 365 Copilot now offers **model choice** — users can select between **OpenAI GPT** and **Anthropic Claude** models in certain apps. This is a significant advantage for users who want to compare outputs or leverage Claude's strengths in specific tasks.
 
 ### Where Claude Is Available
@@ -661,6 +671,8 @@ In supported apps, users see a **model selector** in the UI — typically at the
 ---
 
 ## AI-Powered Enterprise Search
+
+<p><img src="/images/blog/licensed-trainers/05-search.webp" alt="Copilot enterprise search across your organisation with a Type filter (Word, Excel, PowerPoint, PDF, Copilot Chats, Notebooks) and recent files" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 This is one of those features that sounds boring until you see it in action. For licensed users, search stops being "find a document" and becomes "find the answer" — across your entire organisation's data.
 

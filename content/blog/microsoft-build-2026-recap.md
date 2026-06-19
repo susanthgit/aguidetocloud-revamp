@@ -1,10 +1,10 @@
 ---
-title: "Microsoft Build 2026 Recap — All AI Announcements"
+title: "Microsoft Build 2026 Book of News — AI Recap"
 list_title: "Microsoft Build 2026 — The Recap (all AI announcements)"
 hub_id: "whats-new"
-description: "Build 2026 in plain English — Microsoft IQ, Microsoft Foundry agents, Copilot Credits, Agent 365 expansion, and what changes Monday."
+description: "Microsoft Build 2026 Book of News in plain English — Microsoft IQ, Foundry agents, Copilot Credits, Agent 365, and what changes Monday."
 date: 2026-06-03
-lastmod: 2026-06-03
+lastmod: 2026-06-18
 youtube_id: ""
 card_tag: "What's New"
 tag_class: "ai"

@@ -4,7 +4,7 @@ list_title: "Copilot Control System (CCS) — The Complete Guide"
 hub_id: "it-admins"
 description: "What CCS is, how it differs from Agent 365, and the 3 pillars of M365 AI governance — security, management, measurement."
 date: 2026-04-19
-lastmod: 2026-05-08
+lastmod: 2026-06-18
 card_tag: "Copilot"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -79,6 +79,10 @@ If someone stops you in the hallway and asks "what's the Copilot Control System?
 
 ---
 
+<p><img src="/images/blog/control-system/hero-ccs-framework.webp" alt="The Copilot Control System framework showing three pillars — Security and Governance, Management Controls, and Measurement and Reporting — governing Microsoft 365 Copilot and agents." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Copilot Control System overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-control-system/overview) — Microsoft. The three pillars below map exactly to this framework.*
+
 ## So What Is CCS, Really?
 
 Let's start with what CCS is *not* — because that clears up most of the confusion.
@@ -144,6 +148,10 @@ When you deploy Copilot, people start interacting with organisational data in ne
 
 > 💡 **The thing most admins miss:** The biggest "Copilot security risk" isn't actually a Copilot problem. It's an oversharing problem that already existed — Copilot just makes it visible. If someone in Marketing can already access the CEO's performance reviews in SharePoint, Copilot will surface that document when asked. Fix permissions first, then layer Copilot on top.
 
+<p><img src="/images/blog/control-system/01-security-dspm.webp" alt="Microsoft Purview Data Security Posture Management for AI dashboard showing setup tasks, oversharing recommendations, and Copilot interaction reports." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Data Security Posture Management for AI](https://learn.microsoft.com/en-us/purview/dspm-for-ai) — Microsoft. This is where Pillar 1 lives: oversharing risk, AI activity insights, and one-click protection policies. (Microsoft demo data.)*
+
 ### ⚙️ Pillar 2: Management Controls
 
 I call this the "who gets what" pillar. It's less glamorous than security, but it's where most of the day-to-day admin work happens.
@@ -166,6 +174,10 @@ These controls live across the M365 Admin Center, Power Platform Admin Center, a
 
 > 📌 **My recommendation:** Never go tenant-wide on day one. Start with IT or a pilot group, get comfortable with the controls, then expand. Every organisation I've seen rush a Copilot rollout regretted it.
 
+<p><img src="/images/blog/control-system/02-management-billing.webp" alt="Microsoft 365 admin center Billing and usage page managing pay-as-you-go billing and Copilot Credit policies for Microsoft 365 Copilot Chat." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Copilot Control System — management controls](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-control-system/management-controls) — Microsoft. Pillar 2 is where licensing, pay-as-you-go metering, and agent lifecycle get configured in the M365 admin center. (Microsoft demo data.)*
+
 ### 📊 Pillar 3: Measurement & Reporting
 
 This is the pillar people ignore — until renewal season. Then suddenly everyone wants numbers.
@@ -185,6 +197,10 @@ This is the pillar that gets you budget for year two. Your CFO doesn't care abou
 The main tool here is **Copilot Analytics**, available in the M365 Admin Center and through Viva Insights.
 
 > Situation: Your CIO asks in a quarterly review: "We spent $360,000 on Copilot licences last year. What did we get for it?" Without Pillar 3, you're scrambling for anecdotes. *With* Pillar 3, you pull up a dashboard showing 29% faster task completion, 40% of users active weekly, and 14,000 hours of meetings summarised. That's not a cost — that's an investment with receipts.
+
+<p><img src="/images/blog/control-system/03-measurement-usage.webp" alt="Microsoft 365 Copilot usage report in the admin center showing enabled users, active users, active users rate, active agent users, total prompts submitted, and average prompts per user." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Source: [Microsoft 365 Copilot usage report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-usage) — Microsoft. Pillar 3 in one screen: the adoption and engagement numbers your CFO actually asks for. (Microsoft demo data.)*
 
 ---
 
