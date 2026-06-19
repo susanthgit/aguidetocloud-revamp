@@ -5,58 +5,146 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Thu, 18 Jun 2026 19:26:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jun 2026 00:25:19 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Midjourney pivots from AI image generation to body scanning medical spa where patients bathe in 'golden light'</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/06/18/midjourney-pivots-from-ai-image-generation-to-body-scanning-medical-spa-where-patients-bathe-in-golden-light/5258429</link>
+      <title>Upcoming deprecation of Opus 4.6 (fast)</title>
+      <link>https://github.blog/changelog/2026-06-18-upcoming-deprecation-of-opus-4-6-fast</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Thu, 18 Jun 2026 23:58:34 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-06-18-upcoming-deprecation-of-opus-4-6-fast</guid>
+    </item>
+    <item>
+      <title>2,000 retired Google Pixel phones get a second life as a private cloud</title>
+      <link>https://www.theregister.com/on-prem/2026/06/18/2000-retired-google-pixel-phones-get-a-second-life-as-a-private-cloud/5258035</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Thu, 18 Jun 2026 20:18:25 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/06/18/midjourney-pivots-from-ai-image-generation-to-body-scanning-medical-spa-where-patients-bathe-in-golden-light/5258429</guid>
+      <pubDate>Thu, 18 Jun 2026 23:39:28 +0200</pubDate>
+      <guid>https://www.theregister.com/on-prem/2026/06/18/2000-retired-google-pixel-phones-get-a-second-life-as-a-private-cloud/5258035</guid>
     </item>
     <item>
-      <title>Committed skeptic finds himself warming to new Amazon AI products that actually don't suck</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/06/18/committed-skeptic-finds-himself-warming-to-new-amazon-ai-products-that-actually-dont-suck/5258414</link>
+      <title>Monitor and debug generative AI inference with SageMaker detailed metrics and Insights dashboard on CloudWatch</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/monitor-and-debug-generative-ai-inference-with-sagemaker-detailed-metrics-and-insights-dashboard-on-cloudwatch/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Thu, 18 Jun 2026 23:31:58 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/monitor-and-debug-generative-ai-inference-with-sagemaker-detailed-metrics-and-insights-dashboard-on-cloudwatch/</guid>
+    </item>
+    <item>
+      <title>How the Peter Thiel-Linked Dialog Club Secretly Ranks Its Members</title>
+      <link>https://www.wired.com/story/how-peter-thiels-private-dialog-club-secretly-ranks-its-members/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Thu, 18 Jun 2026 19:30:00 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/06/18/committed-skeptic-finds-himself-warming-to-new-amazon-ai-products-that-actually-dont-suck/5258414</guid>
+      <pubDate>Thu, 18 Jun 2026 22:12:45 +0000</pubDate>
+      <guid>https://www.wired.com/story/how-peter-thiels-private-dialog-club-secretly-ranks-its-members/</guid>
     </item>
     <item>
-      <title>Empowering Service Providers and Hardware Partners with Gemini for Home</title>
-      <link>https://developers.googleblog.com/empowering-service-providers-and-hardware-partners-with-gemini-for-home/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Thu, 18 Jun 2026 19:24:56 +0000</pubDate>
-      <guid>https://developers.googleblog.com/empowering-service-providers-and-hardware-partners-with-gemini-for-home/</guid>
-    </item>
-    <item>
-      <title>Announcing ADK for Kotlin and ADK for Android 0.1.0: Building AI Agents on Android and Beyond</title>
-      <link>https://developers.googleblog.com/adk-kotlin-android-building-ai-agents/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Thu, 18 Jun 2026 19:24:56 +0000</pubDate>
-      <guid>https://developers.googleblog.com/adk-kotlin-android-building-ai-agents/</guid>
-    </item>
-    <item>
-      <title>How A2A is Building a World of Collaborative Agents</title>
-      <link>https://developers.googleblog.com/how-a2a-is-building-a-world-of-collaborative-agents/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Thu, 18 Jun 2026 19:24:56 +0000</pubDate>
-      <guid>https://developers.googleblog.com/how-a2a-is-building-a-world-of-collaborative-agents/</guid>
-    </item>
-    <item>
-      <title>Citrix now lets you run virtual desktops like a cost-conscious private equityeer</title>
-      <link>https://www.theregister.com/virtualization/2026/06/18/citrixs-daas-flex-aims-to-delay-pricey-pc-upgrades/5258476</link>
+      <title>AI inference startup Baseten reportedly raising $1.5B months after its last mega-round</title>
+      <link>https://techcrunch.com/2026/06/18/ai-inference-startup-baseten-reportedly-raising-1-5b-months-after-its-last-mega-round/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Thu, 18 Jun 2026 18:59:51 +0200</pubDate>
-      <guid>https://www.theregister.com/virtualization/2026/06/18/citrixs-daas-flex-aims-to-delay-pricey-pc-upgrades/5258476</guid>
+      <pubDate>Thu, 18 Jun 2026 21:20:13 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/06/18/ai-inference-startup-baseten-reportedly-raising-1-5b-months-after-its-last-mega-round/</guid>
     </item>
     <item>
-      <title>Almost half of U.S. singles feel negatively about AI in dating, Match says</title>
+      <title>Google Home Speaker vs. Amazon Echo Dot Max: I compared the $99 smart hubs by the specs</title>
+      <link>https://www.zdnet.com/article/google-home-speaker-vs-amazon-echo-dot-max/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Thu, 18 Jun 2026 21:13:31 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/google-home-speaker-vs-amazon-echo-dot-max/</guid>
+    </item>
+    <item>
+      <title>I'm a smart home reviewer, and these are the only deals I'm shopping this Prime Day</title>
+      <link>https://www.zdnet.com/article/amazon-prime-day-2026-security-camera-deals/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Thu, 18 Jun 2026 21:11:31 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/amazon-prime-day-2026-security-camera-deals/</guid>
+    </item>
+    <item>
+      <title>The White House Is Making Up Its Rules for AI in Real Time</title>
+      <link>https://www.wired.com/story/anthropic-mythos-export-controls-ai-regulations/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Thu, 18 Jun 2026 21:03:43 +0000</pubDate>
+      <guid>https://www.wired.com/story/anthropic-mythos-export-controls-ai-regulations/</guid>
+    </item>
+    <item>
+      <title>Snap spins off AI video team into new company, Dotmo, due to costs</title>
+      <link>https://techcrunch.com/2026/06/18/snap-spins-off-ai-video-team-into-new-company-dotmo-due-to-costs/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Thu, 18 Jun 2026 20:30:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/06/18/snap-spins-off-ai-video-team-into-new-company-dotmo-due-to-costs/</guid>
+    </item>
+    <item>
+      <title>I recommend these Garmin smartwatches for almost every situation (and price range)</title>
+      <link>https://www.zdnet.com/article/garmin-smartwatch-deals-roundup-prime-day/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Thu, 18 Jun 2026 20:19:50 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/garmin-smartwatch-deals-roundup-prime-day/</guid>
+    </item>
+    <item>
+      <title>MAI-Code-1-Flash available on more Copilot surfaces</title>
+      <link>https://github.blog/changelog/2026-06-18-mai-code-1-flash-available-on-more-copilot-surfaces</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Thu, 18 Jun 2026 20:11:24 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-06-18-mai-code-1-flash-available-on-more-copilot-surfaces</guid>
+    </item>
+    <item>
+      <title>How FERC’s Large-Load Interconnection Actions Help Address Grid Stress, Improve Affordability</title>
+      <link>https://blogs.nvidia.com/blog/ferc-large-load-interconnection/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Thu, 18 Jun 2026 20:00:27 +0000</pubDate>
+      <guid>https://blogs.nvidia.com/blog/ferc-large-load-interconnection/</guid>
+    </item>
+    <item>
+      <title>I've lived with solar power at home for years - 12 myths you can safely ignore in 2026</title>
+      <link>https://www.zdnet.com/article/home-solar-power-myths-debunked/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Thu, 18 Jun 2026 20:00:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/home-solar-power-myths-debunked/</guid>
+    </item>
+    <item>
+      <title>OpenAI is bringing on some big guns in the lead-up to its IPO</title>
+      <link>https://techcrunch.com/2026/06/18/openai-is-bringing-on-some-big-guns-in-the-lead-up-to-its-ipo/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Thu, 18 Jun 2026 19:59:22 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/06/18/openai-is-bringing-on-some-big-guns-in-the-lead-up-to-its-ipo/</guid>
+    </item>
+    <item>
+      <title>Apple patches high-severity eavesdropping vulnerability in Beats Studio Buds</title>
+      <link>https://arstechnica.com/apple/2026/06/apple-patches-high-severity-eavesdropping-vulnerability-in-beats-studio-buds/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Thu, 18 Jun 2026 19:41:35 +0000</pubDate>
+      <guid>https://arstechnica.com/apple/2026/06/apple-patches-high-severity-eavesdropping-vulnerability-in-beats-studio-buds/</guid>
+    </item>
+    <item>
+      <title>Meta’s AI Workers Are Revolting, Peter Thiel’s Secret Society, and SBF’s Plea to Trump</title>
+      <link>https://www.wired.com/story/uncanny-valley-podcast-meta-ai-workers-revolting-peter-thiel-secret-society-sbf-plea-to-trump/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Thu, 18 Jun 2026 19:29:51 +0000</pubDate>
+      <guid>https://www.wired.com/story/uncanny-valley-podcast-meta-ai-workers-revolting-peter-thiel-secret-society-sbf-plea-to-trump/</guid>
+    </item>
+    <item>
+      <title>Copilot code review: AGENTS.md support and UI improvements</title>
+      <link>https://github.blog/changelog/2026-06-18-copilot-code-review-agents-md-support-and-ui-improvements</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Thu, 18 Jun 2026 19:11:51 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-06-18-copilot-code-review-agents-md-support-and-ui-improvements</guid>
+    </item>
+    <item>
+      <title>Almost half of US singles feel negatively about AI in dating, Match says</title>
       <link>https://techcrunch.com/2026/06/18/almost-half-of-u-s-singles-feel-negatively-about-ai-in-dating-match-says/</link>
       <description></description>
       <category>Top Stories</category>
@@ -64,348 +152,260 @@
       <guid>https://techcrunch.com/2026/06/18/almost-half-of-u-s-singles-feel-negatively-about-ai-in-dating-match-says/</guid>
     </item>
     <item>
-      <title>Amazon hopes to challenge Nvidia more directly by selling its AI chips</title>
-      <link>https://techcrunch.com/2026/06/18/amazon-hopes-to-challenge-nvidia-more-directly-by-selling-its-ai-chips/</link>
+      <title>Detecting Duplicate Issues – Public Preview and issue fields MCP support for GitHub Issues</title>
+      <link>https://github.blog/changelog/2026-06-18-duplicate-detection-and-issue-fields-mcp-support-for-github-issues</link>
       <description></description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 18 Jun 2026 18:22:13 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/06/18/amazon-hopes-to-challenge-nvidia-more-directly-by-selling-its-ai-chips/</guid>
+      <category>GitHub Copilot</category>
+      <pubDate>Thu, 18 Jun 2026 18:04:33 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-06-18-duplicate-detection-and-issue-fields-mcp-support-for-github-issues</guid>
     </item>
     <item>
-      <title>I tested a $15 smart switch and uncovered a $1,500-a-year energy waste in the kitchen</title>
-      <link>https://www.zdnet.com/article/switchbot-relay-switch-review/</link>
+      <title>The smartphone era created an attention crisis. Slowtech is fixing it</title>
+      <link>https://techcrunch.com/2026/06/18/the-smartphone-era-created-an-attention-crisis-slowtech-is-fixing-it/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Thu, 18 Jun 2026 17:16:30 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/06/18/the-smartphone-era-created-an-attention-crisis-slowtech-is-fixing-it/</guid>
+    </item>
+    <item>
+      <title>The AI tipping point: where enterprise AI runs at scale</title>
+      <link>https://www.theregister.com/ai-and-ml/2026/06/18/the-ai-tipping-point-where-enterprise-ai-runs-at-scale/5258147</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Thu, 18 Jun 2026 17:00:00 +0200</pubDate>
+      <guid>https://www.theregister.com/ai-and-ml/2026/06/18/the-ai-tipping-point-where-enterprise-ai-runs-at-scale/5258147</guid>
+    </item>
+    <item>
+      <title>Google told researcher 'Nice catch!' Then denied bug bounty for flaw it still hasn't fixed</title>
+      <link>https://www.theregister.com/security/2026/06/18/google-told-researcher-nice-catch-then-denied-bug-bounty-for-flaw-it-still-hasnt-fixed/5258076</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Thu, 18 Jun 2026 17:00:00 +0200</pubDate>
+      <guid>https://www.theregister.com/security/2026/06/18/google-told-researcher-nice-catch-then-denied-bug-bounty-for-flaw-it-still-hasnt-fixed/5258076</guid>
+    </item>
+    <item>
+      <title>This Bluetooth tracker uses LoRa mesh networks to find things - and I couldn't believe the accuracy</title>
+      <link>https://www.zdnet.com/article/sensecap-t1000-e-tracker-card-airtag-alternative-review/</link>
       <description></description>
       <category>Industry</category>
-      <pubDate>Thu, 18 Jun 2026 18:22:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/switchbot-relay-switch-review/</guid>
+      <pubDate>Thu, 18 Jun 2026 15:21:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/sensecap-t1000-e-tracker-card-airtag-alternative-review/</guid>
     </item>
     <item>
-      <title>MosaicLeaks: Can your research agent keep a secret?</title>
-      <link>https://huggingface.co/blog/ServiceNow/mosaicleaks</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Thu, 18 Jun 2026 18:13:13 +0000</pubDate>
-      <guid>https://huggingface.co/blog/ServiceNow/mosaicleaks</guid>
-    </item>
-    <item>
-      <title>Canonical reveals Myna, its local speech-to-text app</title>
-      <link>https://www.theregister.com/os-platforms/2026/06/18/canonical-unveils-myna-speech-to-text-app-for-ubuntu-2610/5258376</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 18 Jun 2026 18:04:09 +0200</pubDate>
-      <guid>https://www.theregister.com/os-platforms/2026/06/18/canonical-unveils-myna-speech-to-text-app-for-ubuntu-2610/5258376</guid>
-    </item>
-    <item>
-      <title>AI data centers just got a government-mandated fast lane to the grid</title>
-      <link>https://techcrunch.com/2026/06/18/ai-data-centers-just-got-a-government-mandated-fast-lane-to-the-grid/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 18 Jun 2026 17:49:23 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/06/18/ai-data-centers-just-got-a-government-mandated-fast-lane-to-the-grid/</guid>
-    </item>
-    <item>
-      <title>Before SpaceX IPO, investors in China secretly acquired stakes</title>
-      <link>https://arstechnica.com/information-technology/2026/06/before-spacex-ipo-investors-in-china-secretly-acquired-stakes/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 18 Jun 2026 17:42:18 +0000</pubDate>
-      <guid>https://arstechnica.com/information-technology/2026/06/before-spacex-ipo-investors-in-china-secretly-acquired-stakes/</guid>
-    </item>
-    <item>
-      <title>Amazon Bedrock AgentCore harness is now generally available: Go from idea to production-grade agent in minutes</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-harness-is-now-generally-available-go-from-idea-to-production-grade-agent-in-minutes/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Thu, 18 Jun 2026 17:32:22 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-harness-is-now-generally-available-go-from-idea-to-production-grade-agent-in-minutes/</guid>
-    </item>
-    <item>
-      <title>This $17 solar panel effectively gave my doorbell camera infinite battery life - how I set it up</title>
-      <link>https://www.zdnet.com/article/everexceed-5v-solar-panel-review/</link>
+      <title>How I'm using a $13 smart plug to automate my house appliances - and you can too</title>
+      <link>https://www.zdnet.com/article/amazon-smart-plug-deal-amazon-prime-day-deal-2026/</link>
       <description></description>
       <category>Industry</category>
-      <pubDate>Thu, 18 Jun 2026 17:30:45 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/everexceed-5v-solar-panel-review/</guid>
+      <pubDate>Thu, 18 Jun 2026 14:53:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/amazon-smart-plug-deal-amazon-prime-day-deal-2026/</guid>
     </item>
     <item>
-      <title>NASA payload to ride commercial Mars orbiter from rocket biz yet to reach orbit</title>
-      <link>https://www.theregister.com/science/2026/06/18/nasa-payload-to-ride-commercial-mars-orbiter-from-rocket-biz-yet-to-reach-orbit/5258341</link>
+      <title>Best Buy Gaming Deals might be better than Amazon's early Prime Day sale</title>
+      <link>https://www.zdnet.com/article/best-buy-gaming-deals-amazon-prime-day-2026/</link>
       <description></description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 18 Jun 2026 17:25:15 +0200</pubDate>
-      <guid>https://www.theregister.com/science/2026/06/18/nasa-payload-to-ride-commercial-mars-orbiter-from-rocket-biz-yet-to-reach-orbit/5258341</guid>
+      <category>Industry</category>
+      <pubDate>Thu, 18 Jun 2026 14:53:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/best-buy-gaming-deals-amazon-prime-day-2026/</guid>
     </item>
     <item>
-      <title>ZTE and China Telecom Guangdong advance cross‑vendor IP network simulation pilots, paving the way for intelligent network operations</title>
-      <link>https://www.theregister.com/networks/2026/06/18/zte-and-china-telecom-guangdong-advance-crossvendor-ip-network-simulation-pilots-paving-the-way-for-intelligent-network-operations/5258361</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 18 Jun 2026 17:21:55 +0200</pubDate>
-      <guid>https://www.theregister.com/networks/2026/06/18/zte-and-china-telecom-guangdong-advance-crossvendor-ip-network-simulation-pilots-paving-the-way-for-intelligent-network-operations/5258361</guid>
-    </item>
-    <item>
-      <title>New usage analytics and updated spend controls for enterprises</title>
-      <link>https://openai.com/index/chatgpt-enterprise-spend-controls</link>
+      <title>Sam Altman wins the Noam Shazeer sweepstakes, leaving Musk on the sidelines</title>
+      <link>https://cryptobriefing.com/altman-wins-shazeer-sweepstakes-not-musk/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Thu, 18 Jun 2026 17:00:00 +0000</pubDate>
-      <guid>https://openai.com/index/chatgpt-enterprise-spend-controls</guid>
+      <pubDate>Thu, 18 Jun 2026 00:19:54 +0000</pubDate>
+      <guid>https://cryptobriefing.com/altman-wins-shazeer-sweepstakes-not-musk/</guid>
     </item>
     <item>
-      <title>Get a Walmart Plus membership for 50% off right now</title>
-      <link>https://www.zdnet.com/article/walmart-plus-membership-amazon-prime-day-deal-2026/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Thu, 18 Jun 2026 16:56:08 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/walmart-plus-membership-amazon-prime-day-deal-2026/</guid>
-    </item>
-    <item>
-      <title>The best Sam's Club deals to compete with Prime Day 2026 (including half off membership)</title>
-      <link>https://www.zdnet.com/article/best-early-amazon-prime-day-sams-club-deals-2026/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Thu, 18 Jun 2026 16:53:10 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/best-early-amazon-prime-day-sams-club-deals-2026/</guid>
-    </item>
-    <item>
-      <title>Apple confirms price increases are coming - how much will it cost you?</title>
-      <link>https://www.zdnet.com/article/apple-product-price-increases-iphone/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Thu, 18 Jun 2026 16:34:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/apple-product-price-increases-iphone/</guid>
-    </item>
-    <item>
-      <title>Finally, a Windows laptop I'd seriously consider as a MacBook Neo competitor</title>
-      <link>https://www.zdnet.com/article/hp-omnibook-3-2026-review/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Thu, 18 Jun 2026 16:33:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/hp-omnibook-3-2026-review/</guid>
-    </item>
-    <item>
-      <title>Copilot-authored pull requests now included in author searches</title>
-      <link>https://github.blog/changelog/2026-06-18-copilot-authored-pull-requests-now-included-in-author-searches</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Thu, 18 Jun 2026 16:24:05 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-18-copilot-authored-pull-requests-now-included-in-author-searches</guid>
-    </item>
-    <item>
-      <title>Repository switcher generally available in global navigation</title>
-      <link>https://github.blog/changelog/2026-06-18-repository-switcher-generally-available-in-global-navigation</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Thu, 18 Jun 2026 16:23:00 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-18-repository-switcher-generally-available-in-global-navigation</guid>
-    </item>
-    <item>
-      <title>I'm turning my old tech into Amazon gift cards and discounts before Prime Day - here's how</title>
-      <link>https://www.zdnet.com/article/how-to-trade-old-tech-for-amazon-gift-cards-discounts/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Thu, 18 Jun 2026 16:07:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/how-to-trade-old-tech-for-amazon-gift-cards-discounts/</guid>
-    </item>
-    <item>
-      <title>How pull request limits are cutting down the noise</title>
-      <link>https://github.blog/open-source/maintainers/how-pull-request-limits-are-cutting-down-the-noise/</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Thu, 18 Jun 2026 16:00:00 +0000</pubDate>
-      <guid>https://github.blog/open-source/maintainers/how-pull-request-limits-are-cutting-down-the-noise/</guid>
-    </item>
-    <item>
-      <title>Actions: Build custom images from custom images</title>
-      <link>https://github.blog/changelog/2026-06-18-actions-build-custom-images-from-custom-images</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Thu, 18 Jun 2026 15:32:44 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-18-actions-build-custom-images-from-custom-images</guid>
-    </item>
-    <item>
-      <title>I put Siri AI through the same tests I use for ChatGPT and Gemini on MacOS 27 - here's how it did</title>
-      <link>https://www.zdnet.com/article/new-siri-ai-apple-intelligence-test-on-mac/</link>
+      <title>Inside India newsletter: Anthropic curbs ignite AI debate in India — efforts 'too slow, way too small'</title>
+      <link>https://www.cnbc.com/2026/06/18/anthropic-curbs-sovereign-ai-inside-india.html</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Thu, 18 Jun 2026 15:00:48 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/new-siri-ai-apple-intelligence-test-on-mac/</guid>
+      <pubDate>Thu, 18 Jun 2026 00:18:48 +0000</pubDate>
+      <guid>https://www.cnbc.com/2026/06/18/anthropic-curbs-sovereign-ai-inside-india.html</guid>
     </item>
     <item>
-      <title>Safer pull_request_target defaults for GitHub Actions checkout</title>
-      <link>https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout</link>
+      <title>job-cannon added to PyPI</title>
+      <link>https://pypi.org/project/job-cannon/</link>
       <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Thu, 18 Jun 2026 14:06:55 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout</guid>
+      <category>Google</category>
+      <pubDate>Thu, 18 Jun 2026 00:18:15 +0000</pubDate>
+      <guid>https://pypi.org/project/job-cannon/</guid>
     </item>
     <item>
-      <title>Control who and what triggers GitHub Actions workflows</title>
-      <link>https://github.blog/changelog/2026-06-18-control-who-and-what-triggers-github-actions-workflows</link>
+      <title>Using Grok to Bomb Iran and the Twisted Dream of Causing Death Without ‘Killing’</title>
+      <link>https://gizmodo.com/using-grok-to-bomb-iran-and-the-twisted-dream-of-causing-death-without-killing-2000773399</link>
       <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Thu, 18 Jun 2026 14:06:18 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-06-18-control-who-and-what-triggers-github-actions-workflows</guid>
+      <category>Anthropic</category>
+      <pubDate>Thu, 18 Jun 2026 00:17:13 +0000</pubDate>
+      <guid>https://gizmodo.com/using-grok-to-bomb-iran-and-the-twisted-dream-of-causing-death-without-killing-2000773399</guid>
     </item>
     <item>
-      <title>Improving health intelligence in ChatGPT</title>
-      <link>https://openai.com/index/improving-health-intelligence-in-chatgpt</link>
+      <title>AI regulation has a democracy problem</title>
+      <link>https://biztoc.com/x/2015d74d0aa97e80</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Thu, 18 Jun 2026 00:16:47 +0000</pubDate>
+      <guid>https://biztoc.com/x/2015d74d0aa97e80</guid>
+    </item>
+    <item>
+      <title>Visa and Mastercard Put Tokens in Charge of AI Commerce</title>
+      <link>https://biztoc.com/x/a7376a88759b3a46</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Thu, 18 Jun 2026 11:00:00 +0000</pubDate>
-      <guid>https://openai.com/index/improving-health-intelligence-in-chatgpt</guid>
+      <pubDate>Thu, 18 Jun 2026 00:16:30 +0000</pubDate>
+      <guid>https://biztoc.com/x/a7376a88759b3a46</guid>
     </item>
     <item>
-      <title>Using AI to help physicians diagnose rare genetic diseases affecting children</title>
-      <link>https://openai.com/index/diagnose-rare-childhood-diseases</link>
+      <title>Why Databricks may have an answer for agent chaos</title>
+      <link>https://biztoc.com/x/1e0216b9dd0d7431</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Thu, 18 Jun 2026 00:16:29 +0000</pubDate>
+      <guid>https://biztoc.com/x/1e0216b9dd0d7431</guid>
+    </item>
+    <item>
+      <title>Everything you need to know from State of Unreal 2026: Unreal Engine 6, Unreal Engine 5.8, and $1bn paid to UEFN devs</title>
+      <link>https://www.gamesindustry.biz/everything-you-need-to-know-from-state-of-unreal-2026-unreal-engine-6-unreal-engine-58-and-1bn-paid-to-fortnite-devs</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Thu, 18 Jun 2026 00:12:49 +0000</pubDate>
+      <guid>https://www.gamesindustry.biz/everything-you-need-to-know-from-state-of-unreal-2026-unreal-engine-6-unreal-engine-58-and-1bn-paid-to-fortnite-devs</guid>
+    </item>
+    <item>
+      <title>Long Horizon: How Atlassian Built a Reasoning Engine for Complex AI Tasks</title>
+      <link>https://www.atlassian.com/blog/how-we-build/rovo-long-horizon-reasoning-engine</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Thu, 18 Jun 2026 08:00:00 +0000</pubDate>
-      <guid>https://openai.com/index/diagnose-rare-childhood-diseases</guid>
+      <pubDate>Thu, 18 Jun 2026 00:11:03 +0000</pubDate>
+      <guid>https://www.atlassian.com/blog/how-we-build/rovo-long-horizon-reasoning-engine</guid>
     </item>
     <item>
-      <title>Beyond LoRA: Can you beat the most popular fine-tuning technique?</title>
-      <link>https://huggingface.co/blog/peft-beyond-lora</link>
+      <title>Kiwi founder Jeff Hawke secures $529m for Odyssey AI with backers including Amazon, Icehouse Ventures</title>
+      <link>https://www.nzherald.co.nz/business/kiwi-founder-jeff-hawke-secures-529m-for-odyssey-ai-with-backers-including-amazon-icehouse-ventures/2G42UFXPPNGYFKFM43WR6XWNTU/</link>
       <description></description>
-      <category>Open Source</category>
+      <category>OpenAI</category>
+      <pubDate>Thu, 18 Jun 2026 00:09:42 +0000</pubDate>
+      <guid>https://www.nzherald.co.nz/business/kiwi-founder-jeff-hawke-secures-529m-for-odyssey-ai-with-backers-including-amazon-icehouse-ventures/2G42UFXPPNGYFKFM43WR6XWNTU/</guid>
+    </item>
+    <item>
+      <title>Google's Nest Audio and Mini are officially discontinued, but here's what that actually means</title>
+      <link>https://www.androidpolice.com/the-google-nest-audio-and-mini-are-now-officially-dead/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Thu, 18 Jun 2026 00:03:58 +0000</pubDate>
+      <guid>https://www.androidpolice.com/the-google-nest-audio-and-mini-are-now-officially-dead/</guid>
+    </item>
+    <item>
+      <title>Siri, from Chump to Champ?</title>
+      <link>https://www.geekculture.com/joyoftech/joyarchives/3267.html</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Thu, 18 Jun 2026 00:00:32 +0000</pubDate>
+      <guid>https://www.geekculture.com/joyoftech/joyarchives/3267.html</guid>
+    </item>
+    <item>
+      <title>Codex AppのCDP capabilityでChatGPT WebのDOM・通信・APIレスポンスを観測してみた</title>
+      <link>https://dev.classmethod.jp/articles/codex-app-cdp-chatgpt/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Thu, 18 Jun 2026 00:00:16 +0000</pubDate>
+      <guid>https://dev.classmethod.jp/articles/codex-app-cdp-chatgpt/</guid>
+    </item>
+    <item>
+      <title>Is AI ruining our skills? Early results are in — and they’re not good</title>
+      <link>https://www.nature.com/articles/d41586-026-01947-1</link>
+      <description></description>
+      <category>Google</category>
       <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://huggingface.co/blog/peft-beyond-lora</guid>
+      <guid>https://www.nature.com/articles/d41586-026-01947-1</guid>
     </item>
     <item>
-      <title>Telepatia raises $33M Series A led by a16z to build an AI Doctor for Latin American hospitals</title>
-      <link>https://cryptobriefing.com/telepatia-33m-series-a-a16z-ai-doctor/</link>
+      <title>Genetic and health determinants of cancer risk in Bangladeshi and Pakistani individuals in the UK</title>
+      <link>https://www.nature.com/articles/s41467-026-74415-z</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.nature.com/articles/s41467-026-74415-z</guid>
+    </item>
+    <item>
+      <title>Building the Agentic SOC: A new model for financial services</title>
+      <link>https://www.elastic.co/blog/agentic-soc-for-financial-services</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.elastic.co/blog/agentic-soc-for-financial-services</guid>
+    </item>
+    <item>
+      <title>hol-guard 2.0.789</title>
+      <link>https://pypi.org/project/hol-guard/2.0.789/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Wed, 17 Jun 2026 23:54:55 +0000</pubDate>
+      <guid>https://pypi.org/project/hol-guard/2.0.789/</guid>
+    </item>
+    <item>
+      <title>It’s the dawn of AI lifestyle creep with AI devices, clumsy kitsch, and good ideas</title>
+      <link>https://www.digitaljournal.com/article/its-the-dawn-of-ai-lifestyle-creep-with-ai-devices-clumsy-kitsch-and-good-ideas/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Wed, 17 Jun 2026 23:50:18 +0000</pubDate>
+      <guid>https://www.digitaljournal.com/article/its-the-dawn-of-ai-lifestyle-creep-with-ai-devices-clumsy-kitsch-and-good-ideas/</guid>
+    </item>
+    <item>
+      <title>iris-security-langchain 0.2.0</title>
+      <link>https://pypi.org/project/iris-security-langchain/0.2.0/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Wed, 17 Jun 2026 23:48:52 +0000</pubDate>
+      <guid>https://pypi.org/project/iris-security-langchain/0.2.0/</guid>
+    </item>
+    <item>
+      <title>iPhone 18 Pro’s smaller Dynamic Island might let Siri AI assume its true shape</title>
+      <link>https://www.cultofmac.com/news/iphone-18-pro-design-change-dynamic-island-siri-ai</link>
+      <description></description>
+      <category>Apple</category>
+      <pubDate>Wed, 17 Jun 2026 23:41:18 +0000</pubDate>
+      <guid>https://www.cultofmac.com/news/iphone-18-pro-design-change-dynamic-island-siri-ai</guid>
+    </item>
+    <item>
+      <title>AI is hurting Apple in more ways than one: it may force iPhone price increases</title>
+      <link>https://techcrunch.com/2026/06/17/ai-is-hurting-apple-in-more-ways-than-one-it-may-force-iphone-price-increases/</link>
+      <description></description>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>Wed, 17 Jun 2026 23:28:21 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/06/17/ai-is-hurting-apple-in-more-ways-than-one-it-may-force-iphone-price-increases/</guid>
+    </item>
+    <item>
+      <title>iPadOS 27 Compatible iPad Models: Will Your iPad Run iPadOS 27?</title>
+      <link>https://osxdaily.com/2026/06/17/ipados-27-compatible-ipad-models-will-your-ipad-run-ipados-27/</link>
+      <description></description>
+      <category>Apple</category>
+      <pubDate>Wed, 17 Jun 2026 23:24:44 +0000</pubDate>
+      <guid>https://osxdaily.com/2026/06/17/ipados-27-compatible-ipad-models-will-your-ipad-run-ipados-27/</guid>
+    </item>
+    <item>
+      <title>Mother Nature AI Reveals Three-Specialist AI Platform as It Approaches 5 Million Users and Launches $8.5 Million Capital Raise</title>
+      <link>https://www.globenewswire.com/news-release/2026/06/17/3313876/0/en/Mother-Nature-AI-Reveals-Three-Specialist-AI-Platform-as-It-Approaches-5-Million-Users-and-Launches-8-5-Million-Capital-Raise.html</link>
       <description></description>
       <category>AI Foundry</category>
-      <pubDate>Wed, 17 Jun 2026 19:23:40 +0000</pubDate>
-      <guid>https://cryptobriefing.com/telepatia-33m-series-a-a16z-ai-doctor/</guid>
+      <pubDate>Wed, 17 Jun 2026 23:22:00 +0000</pubDate>
+      <guid>https://www.globenewswire.com/news-release/2026/06/17/3313876/0/en/Mother-Nature-AI-Reveals-Three-Specialist-AI-Platform-as-It-Approaches-5-Million-Users-and-Launches-8-5-Million-Capital-Raise.html</guid>
     </item>
     <item>
-      <title>Trump's DoJ files motion to dismiss NAACP air pollution lawsuit against Musk's xAI data center near Memphis. Because that's what rich white men do [Murica]</title>
-      <link>https://www.fark.com/comments/14101888/Trumps-DoJ-files-motion-to-dismiss-NAACP-air-pollution-lawsuit-against-Musks-xAI-data-center-near-Memphis-Because-thats-what-rich-white-men-do</link>
-      <description></description>
-      <category>xAI</category>
-      <pubDate>Wed, 17 Jun 2026 19:21:54 +0000</pubDate>
-      <guid>https://www.fark.com/comments/14101888/Trumps-DoJ-files-motion-to-dismiss-NAACP-air-pollution-lawsuit-against-Musks-xAI-data-center-near-Memphis-Because-thats-what-rich-white-men-do</guid>
-    </item>
-    <item>
-      <title>Prediction markets have, predictably, been given a boost by the summer of sports</title>
-      <link>https://sherwood.news/tech/prediction-markets-have-predictably-been-given-a-boost-by-the-summer-of-sports/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Wed, 17 Jun 2026 19:20:31 +0000</pubDate>
-      <guid>https://sherwood.news/tech/prediction-markets-have-predictably-been-given-a-boost-by-the-summer-of-sports/</guid>
-    </item>
-    <item>
-      <title>In game theory, generalists sometimes win out over specialists</title>
-      <link>https://news.mit.edu/2026/game-theory-generalists-sometimes-win-out-over-specialists-0617</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Wed, 17 Jun 2026 19:20:00 +0000</pubDate>
-      <guid>https://news.mit.edu/2026/game-theory-generalists-sometimes-win-out-over-specialists-0617</guid>
-    </item>
-    <item>
-      <title>AI factory 'brings into doubt' future of Tasmania's Marinus Link</title>
-      <link>https://www.abc.net.au/news/2026-06-18/tasmania-marinus-link-firmus-data-centres-business-case/106810484</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Wed, 17 Jun 2026 19:18:44 +0000</pubDate>
-      <guid>https://www.abc.net.au/news/2026-06-18/tasmania-marinus-link-firmus-data-centres-business-case/106810484</guid>
-    </item>
-    <item>
-      <title>Ursula von der Leyen highlights US-EU cooperation on AI models at G7 summit</title>
-      <link>https://cryptobriefing.com/eu-us-ai-cooperation-g7-summit/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Wed, 17 Jun 2026 19:18:25 +0000</pubDate>
-      <guid>https://cryptobriefing.com/eu-us-ai-cooperation-g7-summit/</guid>
-    </item>
-    <item>
-      <title>I barely use Gemini's default chatbot after trying the new Gemini Live interface</title>
-      <link>https://www.androidcentral.com/apps-software/ai/i-barely-use-chatbot-after-trying-new-gemini-live</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Wed, 17 Jun 2026 19:16:22 +0000</pubDate>
-      <guid>https://www.androidcentral.com/apps-software/ai/i-barely-use-chatbot-after-trying-new-gemini-live</guid>
-    </item>
-    <item>
-      <title>doberman-core added to PyPI</title>
-      <link>https://pypi.org/project/doberman-core/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Wed, 17 Jun 2026 19:16:08 +0000</pubDate>
-      <guid>https://pypi.org/project/doberman-core/</guid>
-    </item>
-    <item>
-      <title>OpenAI launches scheduled tasks in ChatGPT, details here</title>
-      <link>https://9to5mac.com/2026/06/17/openai-launches-scheduled-tasks-in-chatgpt-details-here/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Wed, 17 Jun 2026 19:15:21 +0000</pubDate>
-      <guid>https://9to5mac.com/2026/06/17/openai-launches-scheduled-tasks-in-chatgpt-details-here/</guid>
-    </item>
-    <item>
-      <title>AWS Glue Interactive Sessions now support Spark Connect for interactive workloads</title>
-      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/aws-glue-interactive-sessions-spark-connect-smus-notebooks</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Wed, 17 Jun 2026 19:15:00 +0000</pubDate>
-      <guid>https://aws.amazon.com/about-aws/whats-new/2026/06/aws-glue-interactive-sessions-spark-connect-smus-notebooks</guid>
-    </item>
-    <item>
-      <title>novalab-adk 2.12.0</title>
-      <link>https://pypi.org/project/novalab-adk/2.12.0/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Wed, 17 Jun 2026 19:14:54 +0000</pubDate>
-      <guid>https://pypi.org/project/novalab-adk/2.12.0/</guid>
-    </item>
-    <item>
-      <title>Managing the Change When Your New Team Member is an AI Agent</title>
-      <link>https://bradenkelley.com/2026/06/ai-agent-coworker-change-management/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Wed, 17 Jun 2026 19:13:16 +0000</pubDate>
-      <guid>https://bradenkelley.com/2026/06/ai-agent-coworker-change-management/</guid>
-    </item>
-    <item>
-      <title>Unreal Engine 5.8 introduces experimental MCP server support, letting AI assistants build games from inside the editor</title>
-      <link>https://cryptobriefing.com/unreal-engine-5-8-mcp-server-support/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Wed, 17 Jun 2026 19:10:29 +0000</pubDate>
-      <guid>https://cryptobriefing.com/unreal-engine-5-8-mcp-server-support/</guid>
-    </item>
-    <item>
-      <title>knowledgebase-cli 0.3.1</title>
-      <link>https://pypi.org/project/knowledgebase-cli/0.3.1/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Wed, 17 Jun 2026 19:04:24 +0000</pubDate>
-      <guid>https://pypi.org/project/knowledgebase-cli/0.3.1/</guid>
-    </item>
-    <item>
-      <title>knowledgebase-cli added to PyPI</title>
-      <link>https://pypi.org/project/knowledgebase-cli/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Wed, 17 Jun 2026 19:04:24 +0000</pubDate>
-      <guid>https://pypi.org/project/knowledgebase-cli/</guid>
-    </item>
-    <item>
-      <title>torchsurv 0.2.0</title>
-      <link>https://pypi.org/project/torchsurv/0.2.0/</link>
+      <title>ncut-pytorch 3.1.1</title>
+      <link>https://pypi.org/project/ncut-pytorch/3.1.1/</link>
       <description></description>
       <category>Meta</category>
-      <pubDate>Wed, 17 Jun 2026 19:02:16 +0000</pubDate>
-      <guid>https://pypi.org/project/torchsurv/0.2.0/</guid>
+      <pubDate>Wed, 17 Jun 2026 23:16:02 +0000</pubDate>
+      <guid>https://pypi.org/project/ncut-pytorch/3.1.1/</guid>
     </item>
     <item>
-      <title>Gavin Newsom solicited $340M in ‘behested payments’ from special interests, filings reveal</title>
-      <link>https://nypost.com/2026/06/17/us-news/gavin-newsom-solicited-340m-in-behested-payments-from-special-interests/</link>
+      <title>OpenAI launches LifeSciBench to evaluate AI in life sciences</title>
+      <link>https://cryptobriefing.com/openai-lifescibench-ai-life-sciences/</link>
       <description></description>
       <category>xAI</category>
-      <pubDate>Wed, 17 Jun 2026 19:01:36 +0000</pubDate>
-      <guid>https://nypost.com/2026/06/17/us-news/gavin-newsom-solicited-340m-in-behested-payments-from-special-interests/</guid>
+      <pubDate>Wed, 17 Jun 2026 23:15:32 +0000</pubDate>
+      <guid>https://cryptobriefing.com/openai-lifescibench-ai-life-sciences/</guid>
     </item>
   </channel>
 </rss>
