@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 20 Jun 2026 17:44:05 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2026 19:52:32 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Purview] We've detected a Microsoft Purview Data Loss Prevention issue in your environment</title>
@@ -73,9 +73,9 @@
     <item>
       <title>[Microsoft Intune] Admins can't interact with Microsoft Intune Suite features in the Intune admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1396117</link>
-      <description>[Microsoft Intune] Admins can't interact with Intune Suite features in the Intune admin center.</description>
+      <description>[Microsoft Intune] Admins couldn't interact with Intune Suite features in the Intune admin center.</description>
       <category>Microsoft Intune</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">IT1396117</guid>
       <pubDate>Mon, 15 Jun 2026 18:00:00 +0000</pubDate>
     </item>
