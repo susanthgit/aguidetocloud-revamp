@@ -19,6 +19,12 @@ permissions:
   issues: write    # for opening alert issues using github.token
   contents: read
 
+env:
+  # Paid canary cert for the synthetic checkout. MUST stay PAID (NOT in
+  # guided/src/lib/access.ts FREE_CERTS) or this monitor false-alarms. az-900
+  # became free 2026-06-20 and broke this — hence az-104.
+  CANARY_CERT: az-104
+
 jobs:
   health-check:
     runs-on: ubuntu-latest
@@ -85,16 +91,16 @@ jobs:
             exit 0
           fi
 
-          # Hit /api/checkout with az-900, follow Stripe URL to extract session_id,
-          # then retrieve session from Stripe and assert metadata is correct.
-          # This catches the 3 May bug where certCode shipped as 'guided' instead.
-          # Retry up to 3 times to absorb deploy-switchover blips.
+          # Hit /api/checkout with the paid canary ($CANARY_CERT), follow the
+          # Stripe URL to extract session_id, then retrieve the session from Stripe
+          # and assert metadata is correct. Catches the 3 May bug where certCode
+          # shipped as 'guided'. Retry up to 3 times to absorb deploy-switchover blips.
           set +e
           RESP=""
           for attempt in 1 2 3; do
             RESP=$(curl -sf -X POST "https://www.aguidetocloud.com/guided/api/checkout" \
               -H "Content-Type: application/json" \
-              -d '{"productType":"cert","certCode":"az-900","vendorSlug":"microsoft"}')
+              -d "{\"productType\":\"cert\",\"certCode\":\"$CANARY_CERT\",\"vendorSlug\":\"microsoft\"}")
             CURL_EXIT=$?
             if [ $CURL_EXIT -eq 0 ] && [ -n "$RESP" ]; then break; fi
             echo "Attempt $attempt: curl exited $CURL_EXIT, retrying in 10s..."
@@ -119,8 +125,8 @@ jobs:
           CERT_CODE=$(echo "$SESSION" | python3 -c "import sys,json; print(json.load(sys.stdin).get('metadata',{}).get('certCode',''))")
           PRODUCT_TYPE=$(echo "$SESSION" | python3 -c "import sys,json; print(json.load(sys.stdin).get('metadata',{}).get('productType',''))")
 
-          if [ "$CERT_CODE" != "az-900" ]; then
-            echo "::error::Synthetic checkout had wrong certCode: '$CERT_CODE' (expected 'az-900'). Slug bug regression!"
+          if [ "$CERT_CODE" != "$CANARY_CERT" ]; then
+            echo "::error::Synthetic checkout had wrong certCode: '$CERT_CODE' (expected '$CANARY_CERT'). Slug bug regression!"
             exit 1
           fi
           if [ "$PRODUCT_TYPE" != "cert" ]; then

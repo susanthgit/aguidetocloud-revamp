@@ -17,6 +17,12 @@ on:
 
 env:
   PROD_URL: https://www.aguidetocloud.com
+  # Paid canary cert for checkout + unlock-button assertions. MUST stay a PAID
+  # cert (i.e. NOT in guided/src/lib/access.ts FREE_CERTS). If it ever becomes
+  # free, these checks will false-alarm — switch to another paid cert. az-900
+  # became free 2026-06-20 and broke this monitor; that's the whole reason these
+  # steps use $CANARY_CERT instead of a hardcoded az-900.
+  CANARY_CERT: az-104
 
 permissions:
   issues: write
@@ -41,7 +47,7 @@ jobs:
 
       - name: 📝 Questions JSON
         run: |
-          curl -sf "$PROD_URL/guided/data/questions/az-900.json" \
+          curl -sf "$PROD_URL/guided/data/questions/$CANARY_CERT.json" \
             | head -c 50 | grep -q '\[{"meta"' \
             || (echo "::error::Questions JSON malformed" && exit 1)
 
@@ -49,18 +55,34 @@ jobs:
         run: |
           RESP=$(curl -sf -X POST "$PROD_URL/guided/api/checkout" \
             -H "Content-Type: application/json" \
-            -d '{"productType":"cert","certCode":"az-900","vendorSlug":"microsoft"}')
+            -d "{\"productType\":\"cert\",\"certCode\":\"$CANARY_CERT\",\"vendorSlug\":\"microsoft\"}")
           echo "$RESP" | grep -q '"url":"https://checkout.stripe.com' \
             || (echo "::error::Checkout API did not return Stripe URL: $RESP" && exit 1)
 
+      - name: 🆓 Free cert correctly refuses checkout (az-900 invariant)
+        run: |
+          # GROWING GUARDRAIL (2026-06-22): az-900 is free (guided FREE_CERTS), so
+          # checkout MUST refuse it with HTTP 400. Turns the 2026-06-20 regression
+          # into a tested invariant and documents why the paid canary is NOT az-900.
+          CODE=$(curl -s -o /tmp/free.json -w "%{http_code}" -X POST "$PROD_URL/guided/api/checkout" \
+            -H "Content-Type: application/json" \
+            -d '{"productType":"cert","certCode":"az-900","vendorSlug":"microsoft"}')
+          if [ "$CODE" != "400" ]; then
+            echo "::error::Free cert az-900 checkout should return 400, got $CODE: $(cat /tmp/free.json)"
+            exit 1
+          fi
+          grep -qi 'free\|no checkout required' /tmp/free.json \
+            || (echo "::error::az-900 free-cert 400 body unexpected: $(cat /tmp/free.json)" && exit 1)
+          echo "✅ Free cert az-900 correctly refused with 400"
+
       - name: 🎯 Practice page renders
         run: |
-          curl -sf -o /dev/null -w "%{http_code}" "$PROD_URL/guided/az-900/practice/" | grep -q '^200$' \
+          curl -sf -o /dev/null -w "%{http_code}" "$PROD_URL/guided/$CANARY_CERT/practice/" | grep -q '^200$' \
             || (echo "::error::Practice page not 200" && exit 1)
 
       - name: 🔘 Cert landing has unlock button (no checkout-loop anchor)
         run: |
-          BODY=$(curl -sf "$PROD_URL/guided/az-900/")
+          BODY=$(curl -sf "$PROD_URL/guided/$CANARY_CERT/")
           # Must have button id (the 3 May fix)
           echo "$BODY" | grep -q 'id="cert-unlock-btn"' \
             || (echo "::error::Cert landing missing cert-unlock-btn" && exit 1)
@@ -72,7 +94,7 @@ jobs:
 
       - name: 🔘 Practice page has unlock button (no loop anchor)
         run: |
-          BODY=$(curl -sf "$PROD_URL/guided/az-900/practice/")
+          BODY=$(curl -sf "$PROD_URL/guided/$CANARY_CERT/practice/")
           echo "$BODY" | grep -q 'id="practice-unlock-btn"' \
             || echo "::warning::Practice page missing practice-unlock-btn (may be intentional after activation flow change)"
           if echo "$BODY" | grep -q 'href="[^"]*?checkout=1'; then
