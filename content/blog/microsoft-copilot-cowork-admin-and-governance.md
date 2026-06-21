@@ -3,7 +3,7 @@ title: "Microsoft Copilot Cowork — Complete Admin Playbook"
 list_title: "Cowork: Admin enablement and governance"
 description: "Microsoft Copilot Cowork admin guide: turning it on, governance controls, oversharing protection, a pilot rollout playbook, and troubleshooting."
 date: 2026-06-15
-lastmod: 2026-06-17
+lastmod: 2026-06-22
 draft: false
 card_tag: "Cowork"
 tag_class: "ai"
@@ -29,7 +29,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork reached **general availability on 16 June 2026** — this page reflects the GA enablement path and governance stack. **Last verified: 17 June 2026 · GA day.**
+🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork reached **general availability on 16 June 2026** — this page reflects the GA enablement path and governance stack. **Last verified: 22 June 2026.**
 
 </div>
 
@@ -70,7 +70,7 @@ The order matters: billing and caps come *before* the pilot, so no one runs up a
 
 If you're an IT admin, here's how to turn Cowork on:
 
-1. **Make Cowork discoverable** — in the [Microsoft 365 admin center](https://admin.microsoft.com) → **Copilot → Settings**, turn on **"AI experiences enabled by usage-based billing."** This controls *visibility* — whether users can see Cowork. It's **off by default**.
+1. **Make Cowork discoverable** — in the [Microsoft 365 admin center](https://admin.microsoft.com) → **Copilot → Settings**, turn on **"AI experiences enabled by usage-based billing."** This controls *visibility* — whether users can see Cowork. It's **off by default**. One nuance worth knowing: **setting up usage-based billing for a user overrides this toggle.** A user who's in a spending policy will see Cowork even when discovery is off — so the toggle really only hides Cowork from users you *haven't* set up for usage-based billing yet ([Microsoft's own words](https://learn.microsoft.com/en-us/microsoft-365/copilot/discovery-setting-ai-experiences)).
 2. **Set up billing and a spending policy** — go to **Copilot → Cost Management** and select **Get Started**. Activating usage-based billing with a spending policy is what actually *turns Cowork on* and scopes who can use it (**All users** or **Specific groups**). Its work is billed in Copilot Credits, so do this before users start. Full walkthrough in the next section.
 3. **Check model availability** — Cowork runs on Anthropic models (Opus 4.8, Sonnet 4.6) through Microsoft's multi-model system. If your tenant manages AI model providers, confirm Cowork's models are allowed.
 4. **Scope the pilot** — keep access tight at first. In your Cost Management spending policy, target **Specific groups** (a security group of your pilot users) rather than All users, and decide separately which **plugins** Cowork can reach (see governance below). Pilot-first is the sane default.
@@ -143,13 +143,24 @@ Selecting **Get started** walks you through one short wizard. Here's the whole t
 
 The five usual suspects, in rough order of likelihood:
 
-1. **The discovery setting is off** — "AI experiences enabled by usage-based billing" (Copilot → Settings) hasn't been turned on, so Cowork stays hidden.
+1. **The discovery setting is off** — "AI experiences enabled by usage-based billing" (Copilot → Settings) hasn't been turned on, so Cowork stays hidden *for anyone who isn't already set up for usage-based billing.* (If a user is in a spending policy, that overrides this toggle and they'll still see it — so this one mostly bites users you haven't added to a policy yet.)
 2. **Usage-based billing isn't set up** — Cowork is gated by usage-based billing, so until an admin creates a spending policy in Copilot → Cost Management, there's nothing to use. (A user can request access from inside the experience; it shows up in the admin's credit requests.)
 3. **No Copilot licence** — the user needs the paid Microsoft 365 Copilot seat (the USL).
 4. **They're not in a spending policy** — access is scoped by policy; if the user isn't in the All-users policy or a Specific-groups policy that includes Cowork, they won't see it.
 5. **The region or models aren't available** — Cowork runs on Anthropic models and is limited to Anthropic-supported regions; if your tenant manages model providers, those models may need to be allowed first.
 
 If you've ruled out all five and a licensed user still can't see it, give it time to propagate — tenant changes can take a while to roll through — before raising a ticket.
+
+### "Cowork disappeared for people who already had it" — the Frontier-to-GA gotcha
+
+A common one right after GA: people who were using Cowork during the **Frontier program** suddenly can't see it. Usually that's not a bug — it's the GA gating kicking in. At GA, Cowork sits behind two gates that weren't there in the preview: the **discovery setting** (off by default) and a **usage-based billing spending policy**. If neither is in place for those users, Cowork drops out of their Microsoft 365 Copilot.
+
+To bring it back, do **either** (ideally both):
+
+- **Turn on the discovery setting** (Copilot → Settings) so Cowork is visible tenant-wide, **and/or**
+- **Set up a spending policy** (Copilot → Cost Management) that includes those users — that's what actually lets them *use* it, and it overrides the discovery toggle for everyone it covers.
+
+Keep one thing separate in your head: the **grace period** is about *billing*, not visibility. If your tenant qualifies, you're not billed until **1 July 2026** — but the grace period doesn't make Cowork appear on its own. Discovery plus a spending policy is what controls who sees and uses it. So if Cowork went missing, look at the gates, not the grace period.
 
 ---
 
