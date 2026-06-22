@@ -111,7 +111,7 @@ Two honest notes:
 - **The per-task price shown to the user, in credits, is coming soon after GA.** At launch a user can request more credits from inside Cowork when they hit a wall, but the live "this task cost X credits" readout for them is still rolling out.
 - **Cost drifts down over time** — models get cheaper, Cowork gets better at matching the right model to a task, and context and tool use get more efficient. So treat your first month's numbers as a starting point to refine, not a fixed cost.
 
-Full reference: [Copilot Credits and cost management on Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits). Our deep dive is the [pricing &amp; cost-management spoke](/blog/microsoft-copilot-cowork-pricing-cost-management/).
+Full reference: [Copilot Credits and cost management on Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits). Our deep dive is the [pricing &amp; cost-management spoke](/blog/microsoft-copilot-cowork-pricing-cost-management/). For the full cross-service cost-management picture — spending policies, the two admin centres, P3, and roles — see **[Microsoft 365 Copilot Cost Management &amp; Billing](/blog/microsoft-365-copilot-cost-management/)**.
 
 ### What the setup looks like, step by step
 
@@ -139,7 +139,7 @@ Selecting **Get started** walks you through one short wizard. Here's the whole t
 
 ---
 
-## Why a user can't see Cowork in Microsoft 365 Copilot
+## Why a user can't see Cowork in Microsoft 365 Copilot {#why-a-user-cant-see-cowork-in-microsoft-365-copilot}
 
 The five usual suspects, in rough order of likelihood:
 

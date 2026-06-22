@@ -236,3 +236,4 @@ Before you switch on paid usage:
 - **[Copilot Pro vs Microsoft 365 Copilot](/blog/copilot-pro-vs-microsoft-365-copilot/)** — personal vs work (the subscriptions, not the meter)
 - **[Microsoft Build 2026 Recap](/blog/microsoft-build-2026-recap/#3-copilot-credits--the-consumption-meter-has-a-name)** — how Copilot Credits fit the wider 2026 agent shift
 - **[Token Calculator](/token-calculator/)** — model the cost of AI usage
+- **[Microsoft 365 Copilot Cost Management & Billing](/blog/microsoft-365-copilot-cost-management/)** — how usage is billed and controlled: the admin Cost Management dashboard, spending policies, P3, and the P1/P2/P3 myth

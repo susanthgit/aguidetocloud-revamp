@@ -619,6 +619,8 @@ The **new admin-centre cost dashboard** that launched with Work IQ is where this
 
 Work IQ is the *first* product managed through this dashboard — Copilot Studio and others migrate in over time. If you've ever wished M365 admin centre had real cost controls on Copilot consumption, this is the first version of that.
 
+→ **Full walkthrough of that dashboard** — spending policies, pay-as-you-go vs prepaid vs the P3 pre-purchase, admin roles, and screenshots — is in **[Microsoft 365 Copilot Cost Management & Billing](/blog/microsoft-365-copilot-cost-management/)**.
+
 > _Cost dashboard screenshots will land here once Microsoft ships the new admin-centre Copilot Credits surface (post-GA day). The post is updated when they do._
 
 **Plain-English summary on cost:**

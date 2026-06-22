@@ -190,6 +190,8 @@ Usage-based billing makes cost visibility essential. Microsoft ships a **Cost Ma
 
 Setting it up is a guided flow: enable usage-based billing (prepaid P3, pay-as-you-go, or existing capacity), optionally connect an Azure subscription for billing at scale, define spending policies for who can consume and how much, and set hard limits so nothing runs away from you.
 
+→ **For the full cross-service picture** — spending policies, the two admin centres, the P3 pre-purchase in detail, admin roles, and the P1/P2/P3 myth — see **[Microsoft 365 Copilot Cost Management & Billing](/blog/microsoft-365-copilot-cost-management/)**.
+
 ---
 
 ## So what will it actually cost us?
