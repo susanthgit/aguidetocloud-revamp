@@ -70,7 +70,6 @@ founder_note: |
 - **Not in government clouds** (GCC, GCC High, DoD) yet.
 
 > 🧭 **Jump to:** [What it is](#what) · [Analyst vs Copilot in Excel](#vs) · [How to use it](#how) · [Example prompts](#prompts) · [Researcher or Analyst?](#siblings) · [Licensing](#licensing) · [Limits](#limits) · [Sources](#sources)
-
 ---
 
 ## What Analyst actually is {#what}
@@ -108,15 +107,33 @@ If your data lives in one sheet, Copilot in Excel is right there. If the story i
 
 ---
 
-## Example prompts to start with {#prompts}
+## Example prompts — what you can actually ask it {#prompts}
 
-Straight from Microsoft's guidance — attach your files first, then ask:
+The pattern that works every time: **attach your files first, then ask a specific question** — not "analyse this," but "compare X by Y and tell me the trend." Microsoft's own starter prompts, plus more in the same shape, grouped by the job you're doing:
+
+**Sales & revenue** *(Microsoft's own example prompts)*
 
 > 📎 *"Compare sales data by region and quarter and highlight key trends."*
 
 > 📎 *"Identify top-performing products or services based on customer engagement metrics."*
 
-The pattern that works: **point it at the files, then ask a specific question** about what you want to learn — not "analyse this," but "compare X by Y and tell me the trend."
+**Customers & retention** *(based on Microsoft's described use cases)*
+
+> 📎 *"Identify our top customers who aren't fully using the products they've purchased."*
+
+> 📎 *"Show how discounts affected customer behaviour over the last year."*
+
+**Product & marketing**
+
+> 📎 *"Visualise product sentiment and usage trends to inform our go-to-market plan."*
+
+> 📎 *"Find the outliers in this dataset and explain what might be driving them."*
+
+Microsoft's own write-up describes people using Analyst to assess how discounts affect customer behaviour, find customers who aren't fully using what they bought, and visualise sentiment and usage trends — the kind of question you'd normally hand to a data analyst and wait a day for.
+
+> 🧩 **A good habit:** ask one clear question per run. If you need five things, that's often five sharper prompts — each gets a cleaner answer than one sprawling "tell me everything about this data."
+
+> 📎 **Tip:** because Analyst can **run code**, you can use the **code-view option** to inspect the Python it ran — so you (or a real analyst) can check the method, not just the answer.
 
 ---
 
@@ -137,7 +154,7 @@ Both are reasoning agents, both sit under **Agents** in Microsoft 365 Copilot, a
 
 - **Licence:** a **Microsoft 365 Copilot** licence. Analyst debuted in April 2025 through the Frontier program and reached **general availability on 2 June 2025**.
 - **Where:** the **Microsoft 365 Copilot** app, under **Agents**.
-- **Allowance:** included with the licence; at general availability a Microsoft 365 Copilot licence included **25 combined** Researcher + Analyst queries a month, and like Researcher the figure has moved since — confirm the current number in Microsoft's docs.
+- **Allowance:** included with the licence; at general availability a Microsoft 365 Copilot licence included **25 combined** Researcher + Analyst queries a month, and like Researcher that figure may change — confirm the current number in Microsoft's docs.
 
 ---
 
@@ -146,7 +163,7 @@ Both are reasoning agents, both sit under **Agents** in Microsoft 365 Copilot, a
 - **Check the output.** It's labelled as possibly incorrect — sanity-check the numbers and confirm it answered the question you meant.
 - **It needs the data attached.** Analyst works on the files you give it; point it at the right sources for a useful answer.
 - **Fewer languages than Researcher.** At general availability Analyst supported **8 languages** (Researcher supported 37), with more added since — check Microsoft's docs if you work in a non-English language.
-- **Allowance:** at GA a Microsoft 365 Copilot licence included **25 combined** Researcher + Analyst queries a month; the figure has evolved since, so confirm the current number.
+- **Allowance:** at GA a Microsoft 365 Copilot licence included **25 combined** Researcher + Analyst queries a month; that figure may change, so confirm the current number.
 - **Government clouds:** not available in **GCC, GCC High or DoD** yet.
 
 ---
