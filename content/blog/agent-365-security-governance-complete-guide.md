@@ -606,6 +606,9 @@ The features are enterprise-grade, but the problems are universal. Even a 50-per
 **"What about agents built outside Microsoft platforms?"**
 Agent 365 is designed for interoperability. Defender already discovers non-Microsoft agents. The roadmap includes deeper third-party integration. But today, the strongest governance story is for agents built in Copilot Studio and Foundry.
 
+**"Which agents am I actually governing here?"**
+Both the ones you build and the ones Microsoft ships. For the full list of Microsoft's built-in agents — Facilitator, the Planner Agent, the SharePoint agents and the rest — and how each one is turned on, see [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/). Agent 365 governs all of them from one place.
+
 ---
 
 *This guide is based on Microsoft's "Unlocking Agent 365 Security and Governance" briefing and my own experience helping customers plan agent governance. All screenshots show demo environments — your tenant will look different. This is a living document that I'll keep updating as Agent 365 evolves.*

@@ -509,3 +509,10 @@ Yes, and they're different per platform. Agent Builder: up to 100 SharePoint fil
 - [Licensing Simplifier](/licensing/) — compare M365 plans
 - [AI Cost Calculator](/ai-cost-calculator/) — model total AI costs
 - [ROI Calculator](/roi-calculator/) — calculate Copilot ROI
+
+---
+
+**Related reading:**
+
+- [Microsoft 365's Built-in Agents — the complete guide](/blog/microsoft-365-built-in-agents/) — the agents Microsoft *ships* (Facilitator, the Planner Agent, SharePoint agents), as opposed to the ones you build with the tools above
+- [Agent 365: Security &amp; Governance](/blog/agent-365-security-governance-complete-guide/) — observe, govern and secure every agent you build or use

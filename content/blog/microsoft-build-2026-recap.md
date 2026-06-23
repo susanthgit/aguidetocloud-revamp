@@ -734,6 +734,7 @@ If you find a claim in this post that doesn't match the live Microsoft announcem
 - **🆕 [2026 Prompting Upgrade Brief](/blog/microsoft-365-copilot-prompting-2026-whats-new/)** — Notebooks, Researcher, Analyst, Memory — the layer Build builds on
 - **🏗️ [Agent Builder vs Copilot Studio vs Foundry](/blog/agent-builder-vs-copilot-studio-vs-foundry/)** — the three-kitchens decision guide
 - **🛡️ [Agent 365 Security & Governance](/blog/agent-365-security-governance-complete-guide/)** — the governance reading that pairs with Agent Control Specification and observability
+- **🤖 [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/)** — the agents Microsoft ships inside Teams, Planner and SharePoint, and how to switch each one on
 - **📅 Monthly recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · [May](/blog/microsoft-365-copilot-may-2026-updates/)
 
 ---
