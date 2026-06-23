@@ -260,12 +260,20 @@
         </div>
       </div>
 
+      {{ if eq (int $guidedCert.price_practice) 0 }}
+      <div class="zt-cert-exam-price"><strong>Free</strong> &middot; full access, no payment</div>
+
+      <div class="zt-cert-exam-ctas">
+        <a href="/guided/{{ $guidedSlug }}/practice/" class="zt-cert-btn zt-cert-btn--buy">Start practice (free) →</a>
+      </div>
+      {{ else }}
       <div class="zt-cert-exam-price">From <strong>${{ $guidedCert.price_practice }}</strong>/cert</div>
 
       <div class="zt-cert-exam-ctas">
         <a href="/guided/{{ $guidedSlug }}/practice/" class="zt-cert-btn zt-cert-btn--secondary">Try Free →</a>
         <a href="/guided/{{ $guidedSlug }}/?checkout=1" class="zt-cert-btn zt-cert-btn--buy">Unlock ${{ $guidedCert.price_practice }} →</a>
       </div>
+      {{ end }}
       {{ end }}
 
       <ul class="zt-cert-exam-features">

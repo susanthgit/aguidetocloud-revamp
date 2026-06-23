@@ -166,7 +166,7 @@ function readAllCerts() {
         accent: data.accent || '',
         featured: data.featured || false,
         order: data.order || 999,
-        price_practice: data.price_practice || 19,
+        price_practice: data.free_practice ? 0 : (data.price_practice ?? 9),
         last_updated: data.last_updated || '',
         exam_updated: data.exam_updated || '',
         // Official exam details
