@@ -1,7 +1,8 @@
 ---
 title: "Microsoft 365's Built-in Agents: The Complete Guide"
 list_title: "Built-in Microsoft 365 Agents"
-hub_id: "ai-agents"
+hub_id: "built-in-agents"
+hub: true
 description: "The agents Microsoft ships inside Microsoft 365 — Facilitator, Planner, SharePoint and more: what each one does, where it lives, and how to turn it on."
 date: 2026-06-23
 lastmod: 2026-06-23

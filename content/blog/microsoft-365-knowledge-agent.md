@@ -1,7 +1,7 @@
 ---
 title: "The SharePoint Knowledge Agent, Explained"
 list_title: "Knowledge Agent (SharePoint)"
-hub_id: "ai-agents"
+hub_id: "built-in-agents"
 description: "The SharePoint Knowledge Agent tidies your document libraries with AI — auto-filled metadata columns, rules and curated views. Here's how it works."
 date: 2026-06-23
 lastmod: 2026-06-23

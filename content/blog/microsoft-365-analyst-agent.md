@@ -1,7 +1,7 @@
 ---
 title: "The Analyst Agent in Microsoft 365 Copilot"
 list_title: "Analyst Agent (Copilot)"
-hub_id: "ai-agents"
+hub_id: "built-in-agents"
 description: "What the Analyst agent in Microsoft 365 Copilot does — turns raw data from Excel, CSV and other files into plain-English insights, charts and tables."
 date: 2026-06-23
 lastmod: 2026-06-23

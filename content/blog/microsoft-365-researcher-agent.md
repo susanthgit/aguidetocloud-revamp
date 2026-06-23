@@ -1,7 +1,7 @@
 ---
 title: "The Researcher Agent in Microsoft 365 Copilot"
 list_title: "Researcher Agent (Copilot)"
-hub_id: "ai-agents"
+hub_id: "built-in-agents"
 description: "What the Researcher agent in Microsoft 365 Copilot does — deep, multi-step research across your work and the web, returned as a source-cited report."
 date: 2026-06-23
 lastmod: 2026-06-23

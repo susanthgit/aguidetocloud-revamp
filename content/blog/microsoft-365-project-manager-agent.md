@@ -1,7 +1,7 @@
 ---
 title: "The Planner Agent (formerly Project Manager Agent)"
 list_title: "Planner Agent (Project Manager)"
-hub_id: "ai-agents"
+hub_id: "built-in-agents"
 description: "The Microsoft Planner Agent — formerly the Project Manager agent — builds task plans from goals, works tasks you assign it, and writes status reports."
 date: 2026-06-23
 lastmod: 2026-06-23

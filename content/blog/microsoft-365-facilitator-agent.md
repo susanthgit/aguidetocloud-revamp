@@ -1,7 +1,7 @@
 ---
 title: "The Microsoft 365 Facilitator Agent in Teams"
 list_title: "Facilitator Agent (Teams meetings)"
-hub_id: "ai-agents"
+hub_id: "built-in-agents"
 description: "How the Microsoft 365 Facilitator agent runs your Teams meetings — shared notes, an agenda timer, Q&A, task tracking and a recap. Setup and limits."
 date: 2026-06-23
 lastmod: 2026-06-23
