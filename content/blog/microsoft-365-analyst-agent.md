@@ -54,7 +54,9 @@ founder_note: |
 
 *The hub for this series — [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) — maps every agent Microsoft ships. This spoke is the detailed walkthrough of Analyst; its sibling is the [Researcher agent](/blog/microsoft-365-researcher-agent/).*
 
-<p><img src="/images/blog/microsoft-365-analyst-agent/01-analyst-agents-nav.webp" alt="The left navigation of the Microsoft 365 Copilot app showing the Agents group, with Researcher and Analyst listed at the top, followed by Idea Coach, Prompt Coach and Surveys, plus All agents and Create agent links." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/microsoft-365-analyst-agent/01-analyst-home.webp" alt="The Analyst agent home in the Microsoft 365 Copilot app, headed 'Analyst — Created by Microsoft', with a 'What do you want to analyze today?' prompt box and three prompt-starter cards: Analyze data, Get insights, and Visualize." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The Analyst home in the Microsoft 365 Copilot app — find it under **Agents**, next to Researcher. The three starter cards (Analyze data, Get insights, Visualize) are a quick way in. (Screenshots here use a fictional sample dataset.)*
 
 *Where to find Analyst: under **Agents** in the Microsoft 365 Copilot app, right next to Researcher.*
 
@@ -105,6 +107,10 @@ If your data lives in one sheet, Copilot in Excel is right there. If the story i
 4. Let it work — it consolidates and analyses the data, reasoning through it step by step.
 5. **Read the report** — plain-English findings with the charts and tables to back them up.
 
+<p><img src="/images/blog/microsoft-365-analyst-agent/02-analyst-data.webp" alt="The Analyst conversation showing an attached file chip labelled Contoso-Coffee-Sales, the typed prompt 'Compare revenue by region and quarter, highlight the key trends, and visualise it as a chart', and a data-table preview titled Contoso Coffee Sales Sample with Region, Quarter, Product and Units Sold columns of sample coffee sales data." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Attach your data, then ask in plain English. Here a sample sales spreadsheet is attached and the question is "compare revenue by region and quarter… and visualise it as a chart." Analyst echoes the data it's working from, then gets to work.*
+
 ---
 
 ## Example prompts — what you can actually ask it {#prompts}
@@ -130,6 +136,12 @@ The pattern that works every time: **attach your files first, then ask a specifi
 > 📎 *"Find the outliers in this dataset and explain what might be driving them."*
 
 Microsoft's own write-up describes people using Analyst to assess how discounts affect customer behaviour, find customers who aren't fully using what they bought, and visualise sentiment and usage trends — the kind of question you'd normally hand to a data analyst and wait a day for.
+
+Ask it to compare and it does the maths for you — pivoting your raw rows into a clean table you can actually read (and it'll draw the chart from the same data too):
+
+<p><img src="/images/blog/microsoft-365-analyst-agent/03-analyst-result.webp" alt="An Analyst result table titled 'Revenue by Region and Quarter', with rows for Q1 to Q4 and columns for East, North, South and West showing computed revenue figures — for example Q4 reads East 57000, North 66300, South 64800 and West 68700. Below the table is a response toolbar that includes a Sources button." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*What comes back: Analyst has pivoted the raw spreadsheet into revenue by region and quarter, figures computed for you — and the totals it worked out put West and South ahead with East trailing. The **Sources** button (bottom) shows the file it drew the numbers from.*
 
 > 🧩 **A good habit:** ask one clear question per run. If you need five things, that's often five sharper prompts — each gets a cleaner answer than one sprawling "tell me everything about this data."
 
