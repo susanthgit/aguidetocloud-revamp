@@ -133,6 +133,7 @@ function getExamCategory(cert) {
     'paloalto': 'Palo Alto',
     'eccouncil': 'EC-Council',
     'fortinet': 'Fortinet',
+    'github': 'GitHub',
   };
   return vendorCategoryMap[cert.vendor] || cert.vendor;
 }

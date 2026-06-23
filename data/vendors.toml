@@ -132,3 +132,13 @@ logo_emoji = "🛡️"
 official_url = "https://training.fortinet.com/local/staticpage/view.php?page=certifications"
 cert_path_note = "Fortinet NSE follows levels 1-8. NSE 4 (FortiGate) is the standard starting point for network security professionals."
 order = 13
+
+[[vendor]]
+slug = "github"
+name = "GitHub"
+short_name = "GitHub"
+accent = "#0969DA"
+logo_emoji = "🐙"
+official_url = "https://resources.github.com/learn/certifications/"
+cert_path_note = "Start with GitHub Foundations (fundamentals), then specialise: Actions, Administration, Advanced Security, and the GitHub Copilot certification."
+order = 14
