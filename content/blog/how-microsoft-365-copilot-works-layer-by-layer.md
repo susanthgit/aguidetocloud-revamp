@@ -576,4 +576,5 @@ If you found this useful, these guides go deeper into specific areas:
 - **[Copilot Model Map](/copilot-model-map/)** — Which AI models power which Copilot features — GPT, Claude, Phi mapped across 16 features
 - **[The Copilot Control System](/blog/microsoft-365-copilot-control-system-complete-guide/)** — How the governance framework works for managing Copilot across your organisation
 - **[Agent 365 Security & Governance](/blog/agent-365-security-governance-complete-guide/)** — When you go beyond Copilot into AI agents, this is how you govern them
+- **[Copilot vs Agents vs Copilot Studio: What to Use When](/blog/copilot-vs-agents-vs-copilot-studio/)** — Now you know how Copilot works, this is the plain-English guide to choosing between just asking Copilot, using a built-in agent, or building your own
 - **[Copilot Deployment Checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/)** — Step-by-step deployment guide with everything you need before, during, and after rollout

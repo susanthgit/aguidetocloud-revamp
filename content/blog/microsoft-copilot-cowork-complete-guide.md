@@ -722,6 +722,7 @@ No. Cowork is brilliant at coordination, preparation, and routine multi-step tas
 - [Microsoft 365 Copilot Chat April 2026 Changes — What Every IT Admin Needs to Know](/blog/microsoft-365-copilot-chat-april-2026-changes-what-admins-need-to-know/)
 - [20 Microsoft 365 Copilot Features You Should Be Using Right Now](/blog/20-copilot-features-you-should-be-using/)
 - [Agent Builder vs Copilot Studio vs Foundry — Which One Should You Use?](/blog/agent-builder-vs-copilot-studio-vs-foundry/)
+- [Copilot vs Agents vs Copilot Studio: What to Use When](/blog/copilot-vs-agents-vs-copilot-studio/) — the plain-English decision guide: just ask Copilot, switch on a built-in agent, or build your own?
 - [Microsoft 365 Copilot March 2026 Updates](/blog/microsoft-365-copilot-march-2026-updates/)
 
 ## Official Microsoft references
