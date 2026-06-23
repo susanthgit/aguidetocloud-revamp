@@ -95,8 +95,8 @@ Here's the built-in agents worth knowing — what each does in one line, where i
 | **Interpreter** | Real-time voice interpretation across 9 languages in meetings | Teams meetings | M365 Copilot | GA |
 | **[Knowledge Agent](#sharepoint)** | Tidies a SharePoint library — auto-tags, sets rules, builds views | SharePoint | M365 Copilot | Preview |
 | **[SharePoint agents](#sharepoint)** | Answer questions grounded in a site's files, per your permissions | SharePoint sites | M365 Copilot **or** pay-as-you-go | GA |
-| **Researcher** | Deep, source-cited research across your work data and the web | Copilot Chat | M365 Copilot | GA |
-| **Analyst** | Advanced data analysis — runs Python over your data | Copilot Chat | M365 Copilot | GA |
+| **[Researcher](#chat)** | Deep, source-cited research across your work data and the web | Copilot Chat | M365 Copilot / Premium | GA |
+| **[Analyst](#chat)** | Advanced data analysis — turns your spreadsheets into insights | Copilot Chat | M365 Copilot | GA |
 | **[Community Agent](#viva)** | A community expert that answers and posts verified answers | Viva Engage | M365 Copilot* | Newer — docs thin |
 | **Employee Self-Service** | Answers HR and IT policy questions | Copilot Chat | M365 Copilot | Preview |
 | **Skills agent** | Finds people by skills across the organisation | Copilot app | M365 Copilot | Rolling out |
@@ -201,11 +201,11 @@ When someone asks a question in the community, the agent can draft an answer gro
 
 Three more built-in agents live in the Microsoft 365 Copilot app and Copilot Chat rather than in a single app:
 
-- **Researcher** — runs deep, multi-step research across your work data *and* the web, and hands back a **source-cited report**. Generally available.
-- **Analyst** — does serious data analysis, including **writing and running Python** over data you give it, with its reasoning shown. Generally available.
+- **Researcher** — runs deep, multi-step research across your work data *and* the web, and hands back a **source-cited report**. Generally available. → [full walkthrough](/blog/microsoft-365-researcher-agent/)
+- **Analyst** — does serious data analysis, turning your **spreadsheets and files** into insights with charts (it can write and run code to get there). Generally available. → [full walkthrough](/blog/microsoft-365-analyst-agent/)
 - **Employee Self-Service** and the **Skills agent** — answer HR/IT policy questions and help find people by skill, respectively; newer and still rolling out.
 
-Researcher and Analyst come with a monthly query allowance on a Copilot licence — the exact figure has shifted during preview, so check the current Microsoft 365 Copilot docs before quoting it. One admin nuance worth flagging: these two sit in the core Copilot chat experience and are managed separately from the standard agent settings.
+Researcher and Analyst come with a monthly query allowance on a qualifying licence (a Microsoft 365 Copilot licence, or Microsoft 365 Premium for Researcher) — the exact figure has shifted during rollout, so check the current Microsoft 365 Copilot docs before quoting it. One admin nuance worth flagging: these two sit in the core Copilot chat experience and are managed separately from the standard agent settings.
 
 ---
 
@@ -281,8 +281,10 @@ The public, primary references behind this page:
 - [Set up the Channel Agent for Teams](https://learn.microsoft.com/en-us/microsoftteams/set-up-channel-agent-teams)
 - [FAQ about agents in Microsoft Teams (Facilitator & Channel Agent — limits, languages, performance)](https://support.microsoft.com/en-us/office/frequently-asked-questions-about-facilitator-in-microsoft-teams-f7317b78-fd53-4cfe-88f0-f0a0751a4150)
 - [Interpreter agent in Teams](https://learn.microsoft.com/en-us/microsoftteams/interpreter-agent-teams)
-- [Access the Planner Agent](https://support.microsoft.com/en-us/office/access-project-manager-agent-86bf60a1-239d-4c37-b7b6-9a4111e1cc02)
+- [Access the Planner Agent](https://support.microsoft.com/en-us/planner/copilot/access-planner-agent)
 - [Get started with agents in SharePoint](https://learn.microsoft.com/en-us/sharepoint/get-started-sharepoint-agents)
+- [Get started with Researcher in Microsoft 365 Copilot](https://support.microsoft.com/en-us/topic/get-started-with-researcher-in-microsoft-365-copilot-e63ab760-f3de-4c47-ae87-dad601b0e9c4)
+- [Get started with Analyst in Microsoft 365 Copilot](https://support.microsoft.com/en-us/topic/get-started-with-analyst-in-microsoft-365-copilot-ff505b9c-a06c-4be9-b855-69d89b1d25d2)
 - [Microsoft 365 Copilot in Viva Engage](https://learn.microsoft.com/en-us/viva/engage/configure-microsoft-365-copilot-in-viva-engage)
 - [Agent registry in the Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry)
 - [Microsoft Agent 365 overview](https://learn.microsoft.com/en-us/microsoft-agent-365/overview)
@@ -297,6 +299,8 @@ This overview is the hub. The deep walkthroughs:
 - **[The Microsoft 365 Facilitator Agent in Teams](/blog/microsoft-365-facilitator-agent/)** — meetings: notes, agenda, Q&A, tasks, recaps
 - **[The Planner Agent (Project Manager agent)](/blog/microsoft-365-project-manager-agent/)** — plans from goals, status reports, grounding in your files
 - **[The SharePoint Knowledge Agent](/blog/microsoft-365-knowledge-agent/)** — auto-tagging, rules and curated views
+- **[The Researcher Agent](/blog/microsoft-365-researcher-agent/)** — deep, multi-step research with a cited report
+- **[The Analyst Agent](/blog/microsoft-365-analyst-agent/)** — turns your spreadsheets and files into data insights
 
 And if you'd rather **build** an agent than use a built-in one:
 
