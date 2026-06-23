@@ -213,6 +213,10 @@ Researcher and Analyst come with a monthly query allowance on a Copilot licence 
 
 For most of these agents, the **on-switch is the licence**: assign a Microsoft 365 Copilot licence and the agent becomes available. Beyond that, here's where you actually control them.
 
+<p><img src="/images/blog/microsoft-365-built-in-agents/01-admin-agents-registry.webp" alt="The Microsoft 365 admin center with the Agents section open on the All agents Registry tab, showing counters for Total agents, Agents at risk, Ownerless agents and Blocked agents, and a table of agents — including Researcher from Microsoft alongside Copilot Studio and Foundry agents — with availability, risk, active-user and last-updated columns." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The **Microsoft 365 admin center → Agents → Registry** — where every agent in the tenant shows up: Microsoft's built-in ones (like Researcher) alongside the rest, with risk and usage at a glance.*
+
 | Control plane | What you do there |
 |---|---|
 | **Microsoft 365 admin center → Agents** | The main one. The **Registry** lists every agent in the tenant; **Agent settings** controls allowed types, sharing, and user access. You can bulk-install Microsoft's first-party agents here. |
