@@ -2722,6 +2722,27 @@ exam_cost = "$99 USD"
 exam_duration = 100
 exam_passing_score = "700 / 1000"
 guided_url = "/guided/gh-200/"
+[[cert]]
+slug = "gh-100"
+vendor = "github"
+code = "GH-100"
+name = "GitHub Administration"
+tagline = "Master GitHub Enterprise administration — identities and SSO/SCIM, access and permissions at scale, deployment and licensing, security and compliance governance, Actions administration, and Packages management."
+exam_category = "GitHub"
+level = "specialty"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 730
+featured = false
+price_practice = 9
+exam_url = "https://learn.github.com/certifications"
+exam_cost = "$99 USD"
+exam_duration = 100
+exam_passing_score = "Not published by GitHub"
+guided_url = "/guided/gh-100/"
+
 [cert_map."ab-900"]
 vendor = "microsoft"
 code = "AB-900"
@@ -6065,3 +6086,29 @@ exam_prerequisites = "None (working knowledge of GitHub recommended)"
 exam_question_types = ["Multiple choice", "Multiple response"]
 guided_url = "/guided/gh-200/"
 practice_url = "/guided/gh-200/practice/"
+
+[cert_map."gh-100"]
+vendor = "github"
+code = "GH-100"
+name = "GitHub Administration"
+tagline = "Master GitHub Enterprise administration — identities and SSO/SCIM, access and permissions at scale, deployment and licensing, security and compliance governance, Actions administration, and Packages management."
+exam_category = "GitHub"
+level = "specialty"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 730
+featured = false
+price_practice = 9
+exam_url = "https://learn.github.com/certifications"
+exam_cost = "$99 USD"
+exam_duration = 100
+exam_passing_score = "Not published by GitHub"
+exam_questions_real = "~60"
+exam_provider = "Pearson VUE"
+exam_validity = "2 years"
+exam_prerequisites = "None (intermediate GitHub Enterprise administration experience recommended)"
+exam_question_types = ["Multiple choice", "Multiple response"]
+guided_url = "/guided/gh-100/"
+practice_url = "/guided/gh-100/practice/"
