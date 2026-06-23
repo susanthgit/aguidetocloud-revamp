@@ -3,7 +3,7 @@ title: "Microsoft Copilot Cowork — Complete Skills Guide"
 list_title: "Cowork: Skills and plugins"
 description: "Complete guide to all built-in Microsoft Copilot Cowork skills plus 3 ways to extend (plugins, custom SKILL.md, Copilot Studio). With Learn references."
 date: 2026-06-15
-lastmod: 2026-06-17
+lastmod: 2026-06-23
 draft: false
 card_tag: "Cowork"
 tag_class: "ai"
@@ -117,6 +117,10 @@ Microsoft's official [Cowork documentation](https://learn.microsoft.com/en-us/mi
 | 13 | **Adaptive Cards** | Render structured, interactive cards |
 
 You can also add **up to 50 custom skills** of your own — more on that below.
+
+<p><img src="/images/blog/cowork/cowork-inline-skill-picker.webp" alt="The Cowork task box with the inline picker open after typing a slash — a Search field and tabs (All, Skills, People, Files, Meetings, Emails, Chats, Channels, Sites), listing built-in skills PDF, Word, Excel, PowerPoint, Calendar Management, and Daily Briefing, each with a one-line description." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*A faster way to reach a skill: type **`/`** in the task box and the inline picker surfaces your skills (and people, files, meetings…) on the fly — no need to open the Customize page. (Microsoft demo tenant.)*
 
 ### What you'll actually see in your tenant's Customize panel
 
