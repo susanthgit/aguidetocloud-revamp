@@ -69,7 +69,7 @@ founder_note: |
 - It can use **files you add to the plan** as grounding, and it **cites** what it used.
 - **Not in government clouds**; supports the Copilot languages **except Hebrew and Arabic**.
 
-> 🧭 **Jump to:** [What it is & the rename](#what) · [A plan from a goal](#goals) · [Ground it in your files](#ground) · [Chat & assign work](#chat) · [Status reports](#reports) · [Licensing](#licensing) · [Limits](#limits) · [Sources](#sources)
+> 🧭 **Jump to:** [What it is & the rename](#what) · [How to access it](#access) · [A plan from a goal](#goals) · [Ground it in your files](#ground) · [Chat & assign work](#chat) · [Status reports](#reports) · [Licensing](#licensing) · [Troubleshooting](#troubleshooting) · [Limits](#limits) · [Sources](#sources)
 
 ---
 
@@ -80,6 +80,23 @@ The **Planner Agent** is a teammate that lives inside a Planner plan. In Microso
 First, the name. You'll see this called both **"Project Manager agent"** and **"Planner Agent"** — Microsoft **renamed** it to the Planner Agent, and that's the current name, but the product still shows "Project Manager" in a few spots (like the board column above) and some older help pages haven't caught up. Same agent, two names.
 
 You work with it the way you'd work with a person: there's an **Assign to Project Manager** lane on the board, and moving a task there hands the agent the job.
+
+---
+
+## How to access it, step by step {#access}
+
+Good news: there's almost nothing to "install." The Planner Agent is **on by default** in shared plans for anyone with a Microsoft 365 Copilot licence. Here's how you actually reach it.
+
+**In a basic plan** (shared with a Microsoft 365 Group):
+
+1. Create or open a basic plan shared with a group.
+2. Open the agent from the **floating button in the bottom-right** of the plan. From there you can upload files as context under **Knowledge sources**.
+3. **Assign a task to "Planner Agent"** to put it to work — you're added to the task too, so you can follow its progress.
+4. Once the plan has **at least 10 tasks**, open the **Reports** tab to generate a status report.
+
+**In a premium plan:** it's enabled by default — open any shared premium plan and assign a task, or use the **Goals** view to turn a goal into a plan (premium only).
+
+> 📎 **Three places it shows up:** inside a **Planner** plan (the floating button), in the **Planner app in Teams**, and as the **Planner Agent in Microsoft 365 Copilot Chat** — a separate chat experience where you can ask about your tasks and plans across all your Planner work.
 
 ---
 
@@ -127,6 +144,10 @@ Open the agent from the floating button and you get a chat panel with prompt sta
 
 To put it to work on a specific task, **assign that task to "Planner Agent."** It reads the task in the context of the whole plan, does the job, and returns the result inside the task — and you're added as a watcher so you see when it's done.
 
+<p><img src="/images/blog/microsoft-365-project-manager-agent/09-pma-task-output.webp" alt="A Planner task 'Conduct market research for AI-powered wellness rings' open in detail, marked Ready, with a banner noting the Project Manager agent is using the latest web content, then a 'Project Manager in Planner — Latest status' section with a Regenerate button and the agent's generated market-research report embedded inside the task." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*What you get back lands **inside the task** as a Loop page, with a **Regenerate** button — so you can give feedback and have it try again without ever leaving the task. (The banner notes the agent is using the latest web content, governed by an admin setting.)*
+
 ---
 
 ## Status reports {#reports}
@@ -157,6 +178,21 @@ There's no separate per-message charge in Microsoft's public docs — the agent 
 
 ---
 
+## Troubleshooting — common questions {#troubleshooting}
+
+The questions that come up most, with plain answers:
+
+| Question | Answer |
+|---|---|
+| **"Why can't I access or use the agent?"** | You need a **Microsoft 365 Copilot** licence. Without it you can still collaborate on the plan — you just can't interact with the agent. |
+| **"Others can see the plan but can't use the agent — why?"** | Same reason: only people with a Copilot licence can assign tasks to it or chat with it. |
+| **"It gave me instructions instead of doing the work."** | That's by design. For anything it can't carry out itself (a physical task, or work outside Planner), it hands you a plan of action rather than pretending to finish it. |
+| **"Why aren't tasks generating from my goal?"** | Turning a goal into a task list is a **premium** feature — it needs a Planner Plan 1 (or Project Plan 3/5) on top of your Copilot licence. |
+| **"Where does it actually live?"** | Three places: a Planner plan (floating button), the Planner app in Teams, and Copilot Chat — see [How to access it](#access). |
+| **"Do I have to check its work?"** | Yes — it's built with a **human in the loop**. Planner flags AI output as possibly incorrect, so review before you share. |
+
+---
+
 ## Limits and good-to-knows {#limits}
 
 - **Status reports need ≥10 tasks** in the plan before the agent will write one.
@@ -169,7 +205,7 @@ There's no separate per-message charge in Microsoft's public docs — the agent 
 
 ## Official Microsoft sources {#sources}
 
-- [Access the Planner Agent (licensing, access, board, reports, goals)](https://support.microsoft.com/en-us/office/access-project-manager-agent-86bf60a1-239d-4c37-b7b6-9a4111e1cc02)
+- [Access the Planner Agent (licensing, basic vs premium, board, reports, goals)](https://support.microsoft.com/en-us/planner/copilot/access-planner-agent)
 - [Planner Agent FAQ (GA status, capabilities, languages)](https://support.microsoft.com/en-us/office/frequently-asked-questions-about-project-manager-agent-ab2bc39a-edec-4d4d-8e86-2cc927870096)
 - [What is the Planner Agent in Copilot? (the Copilot Chat surface)](https://support.microsoft.com/en-us/planner/what-is-planner-agent-in-copilot)
 - [Microsoft Planner plans and pricing](https://www.microsoft.com/en-us/microsoft-365/planner/microsoft-planner-plans-and-pricing)

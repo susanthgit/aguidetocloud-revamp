@@ -66,7 +66,7 @@ founder_note: |
 - **On-switch:** a **Microsoft 365 Copilot** licence **and** your site/tenant opted in to the **AI in SharePoint** (a.k.a. Copilot in SharePoint) **public preview**.
 - It's in **preview** — Microsoft has shuffled the name (Knowledge Agent → AI in SharePoint → Copilot in SharePoint), so expect change.
 
-> 🧭 **Jump to:** [What it is](#what) · [Auto-fill metadata](#metadata) · [Set up rules](#rules) · [Curated views](#views) · [It won't touch your files](#safe) · [The other SharePoint agents](#qa) · [Turn it on](#enable) · [Sources](#sources)
+> 🧭 **Jump to:** [What it is](#what) · [Auto-fill metadata](#metadata) · [Set up rules](#rules) · [Curated views](#views) · [It won't touch your files](#safe) · [The other SharePoint agents](#qa) · [Turn it on](#enable) · [Admin & security](#admin) · [Common questions](#troubleshooting) · [Sources](#sources)
 
 ---
 
@@ -77,6 +77,10 @@ The **Knowledge Agent** is an AI assistant built into SharePoint that keeps a do
 One heads-up on naming, because it's genuinely confusing: Microsoft now documents this under **"Copilot in SharePoint"** (which the docs say was *"previously referred to as AI in SharePoint"*), while the agent itself is still labelled **"Knowledge Agent (preview)"** in the product. Same capability — the brand is just settling.
 
 And the bigger distinction, which the next sections build on: this agent works on the library's **structure**. The other SharePoint agent — covered [below](#qa) — works on its **content**.
+
+<p><img src="/images/blog/microsoft-365-knowledge-agent/06-knowledge-before-entry.webp" alt="A SharePoint document library for a Zava Product Team site showing an untagged list of files — Core Pitch.docx, Fall campaign.docx, Fiber Presentation.pptx and more — with only Name, Modified and Modified By columns, and an Open Knowledge Agent floating button in the bottom-right corner." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The starting point: a library with no consistent tags. You open the agent from the **Open Knowledge Agent** button in the bottom-right, and it goes to work on the mess.*
 
 ---
 
@@ -157,6 +161,32 @@ For the **question-answering agents in SharePoint** (GA): no activation needed �
 
 ---
 
+## Admin, access & security {#admin}
+
+Two questions come up the moment anyone serious looks at this: *who can use it*, and *can it leak data?*
+
+- **It's security-trimmed.** Agents in SharePoint answer the same way Copilot in other Microsoft 365 apps does: based on **what that user is already allowed to see**. So the agent won't surface a file to someone who couldn't already open it.
+- **Who gets access.** Two paths — a **Microsoft 365 Copilot** licence, or, for unlicensed users, the **pay-as-you-go** billing an admin sets up (scoped by security group).
+- **Fine-grained control.** Under the Copilot licence, an admin can turn the **"Microsoft 365 Copilot for SharePoint"** service plan on or off per user — but note it also controls Copilot in **OneDrive** and SharePoint **page authoring** for that person, so it isn't a SharePoint-agents-only switch.
+- **Removing the ready-made agent.** Admins can take the ready-made agent off specific sites using a **restricted content discovery** policy, from the SharePoint admin center.
+
+---
+
+## Common questions about the answering agents {#troubleshooting}
+
+The questions people ask once a question-answering SharePoint agent is live:
+
+| Question | Answer |
+|---|---|
+| **"Why can't it see all our company knowledge?"** | An agent is only grounded in the **specific SharePoint sources** (sites and files) it's scoped to — not everything in the tenant. Widen the sources if it's missing things. |
+| **"Can I connect Confluence or other tools?"** | Microsoft's docs describe a SharePoint agent's sources as SharePoint **sites, pages, files and libraries**. Non-SharePoint systems like Confluence aren't sources you add — check current docs if that changes. |
+| **"Why are the answers vague or incomplete?"** | Check the agent's **scope and your permissions** — answers depend on the SharePoint sources it's pointed at and what you can access. Narrowing it to a tighter, well-organised set of documents (what the **Knowledge Agent** above does) usually sharpens them. |
+| **"It's missing content I know is there."** | Check what the agent is **scoped to** — a ready-made agent only sees its **own site**; a custom agent only sees the **sites, pages and files you explicitly add**. If the content lives elsewhere, add that source, or use a custom agent with wider scope. |
+| **"Why does it answer differently from Copilot Chat?"** | Because it's **scoped to your SharePoint content**, not the open web. That narrower focus is the point — more relevant answers from your site — but it means it won't reach everywhere Copilot Chat can. |
+| **"Why can't I create or edit an agent?"** | You need **edit permissions** on the SharePoint site or library where the agent lives. |
+
+---
+
 ## Official Microsoft sources {#sources}
 
 - [Organize files in a library with Knowledge Agent (support)](https://support.microsoft.com/en-us/sharepoint/ai-copilot/organize-files-in-a-library)
@@ -165,6 +195,7 @@ For the **question-answering agents in SharePoint** (GA): no activation needed �
 - [Introducing Knowledge Agent in SharePoint (Microsoft Community Hub)](https://techcommunity.microsoft.com/blog/spblog/introducing-knowledge-agent-in-sharepoint/4454154)
 - [Get started with agents in SharePoint — admin (the Q&A agents)](https://learn.microsoft.com/en-us/sharepoint/get-started-sharepoint-agents)
 - [Get started with agents in SharePoint — end user](https://support.microsoft.com/en-us/office/get-started-with-agents-in-sharepoint-69e2faf9-2c1e-4baa-8305-23e625021bcf)
+- [Manage access to agents in SharePoint (admin — licensing, security trimming)](https://learn.microsoft.com/en-us/sharepoint/manage-access-agents-in-sharepoint)
 - [Pay-as-you-go billing for SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/sharepoint-agents-azure-billing)
 
 ---

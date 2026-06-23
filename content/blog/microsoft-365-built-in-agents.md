@@ -53,7 +53,7 @@ founder_note: |
 
 **The short version:** Microsoft 365 now comes with a growing set of **built-in agents** — small, focused AI helpers that Microsoft builds and drops straight into the apps you already use. Facilitator runs your Teams meetings. The Planner Agent builds and works task plans. Agents in SharePoint answer questions about your files. There's one in Teams channels, one in Viva Engage, and more in Copilot Chat. This is the guide to all of them: what each does, where it lives, how to switch it on, and what it needs.
 
-> 🧭 **Jump to:** [What's a "built-in" agent?](#what) · [The full lineup](#lineup) · [In Teams](#teams) · [In Planner](#planner) · [In SharePoint](#sharepoint) · [In Viva Engage](#viva) · [In Copilot Chat](#chat) · [How to turn them on](#enable) · [What they cost](#cost) · [Which agent for which job](#which) · [Sources](#sources) · [The rest of this guide](#cluster)
+> 🧭 **Jump to:** [What's a "built-in" agent?](#what) · [The full lineup](#lineup) · [In Teams](#teams) · [In Planner](#planner) · [In SharePoint](#sharepoint) · [In Viva Engage](#viva) · [In Copilot Chat](#chat) · [How to turn them on](#enable) · [What they cost](#cost) · [Which agent for which job](#which) · [What trips people up](#gotchas) · [Sources](#sources) · [The rest of this guide](#cluster)
 
 ---
 
@@ -185,6 +185,10 @@ Viva Engage communities can have a **Community Agent** — an agent that acts li
 
 When someone asks a question in the community, the agent can draft an answer grounded in those sources; once an expert verifies it, it's marked as a **verified answer** for everyone who finds the thread later.
 
+<p><img src="/images/blog/microsoft-365-communities-agent/03-communities-review-approve.webp" alt="A Viva Engage Community agent's drafted answer with an expandable Reasoning section listing the steps it took — searching the community and pulling SharePoint documentation — and Approve, Edit and dismiss buttons for a human reviewer." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The human-in-the-loop step: the agent drafts an answer (in this preview it even shows an expandable **Reasoning** trace), then a community expert **approves** or edits it before it posts.*
+
 <p><img src="/images/blog/microsoft-365-communities-agent/02-communities-verified.webp" alt="A Viva Engage community called Product Sales Support with 1,516 members, showing a member's question about ZavaCore Fiber smart apparel answered by the Product Sales Support agent with a Verified answer badge, marked as verified by a named expert." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *A question in a Viva Engage community answered by the Community Agent and marked as a **verified answer** by a named expert.*
@@ -250,6 +254,20 @@ Where the public docs don't spell out metering for a specific agent, we've said 
 
 ---
 
+## The 5 things that trip people up {#gotchas}
+
+Across every built-in agent, the same five confusions come up again and again. Learn them once and most "it's not working" moments solve themselves:
+
+1. **"Why can't I see it?" — it's almost always the licence or the surface.** Most of these need a **Microsoft 365 Copilot** licence, and each only appears in *its* place — Facilitator in a *scheduled* Teams meeting, the Planner Agent inside a *shared* plan, the Channel Agent in a *standard* channel. Wrong surface, no agent.
+2. **Each agent has a dependency people forget.** Facilitator needs **Loop experiences** on and a real meeting with enough discussion; the Planner Agent needs a **premium plan** to turn a goal into a plan; SharePoint agents need their **knowledge sources scoped**. Miss the dependency and the agent looks "broken" when it's just unfed.
+3. **Permissions and sharing bite — especially Loop and SharePoint.** Facilitator's notes are a **Loop file**, so empty or invisible notes are usually a sharing/permission issue. SharePoint agents only ever answer from **what you can already see** — which is a safeguard, not a bug.
+4. **Expectation vs reality — they won't magically do everything.** Each agent has a **bounded scope** — it uses the sources Microsoft documents for that surface, doesn't auto-assign owners for you, and doesn't quietly reach across your whole tenant. When one "gives instructions instead of doing the work," that's by design for a task it can't safely complete itself.
+5. **Knowing where each one actually lives.** Teams vs Planner vs SharePoint vs Viva vs Copilot Chat — the single biggest time-waster is looking for an agent in the wrong app. The [lineup table](#lineup) is your map.
+
+> 📎 **The pattern:** nearly every problem is one of these five — licence, dependency, permissions, expectations, or location. Check them in that order.
+
+---
+
 ## Official Microsoft sources {#sources}
 
 The public, primary references behind this page:
@@ -257,6 +275,7 @@ The public, primary references behind this page:
 - [AI tools and agents in Microsoft Teams (overview)](https://learn.microsoft.com/en-us/microsoftteams/copilot-ai-agents-overview)
 - [Facilitator in Microsoft Teams](https://learn.microsoft.com/en-us/microsoftteams/facilitator-teams)
 - [Set up the Channel Agent for Teams](https://learn.microsoft.com/en-us/microsoftteams/set-up-channel-agent-teams)
+- [FAQ about agents in Microsoft Teams (Facilitator & Channel Agent — limits, languages, performance)](https://support.microsoft.com/en-us/office/frequently-asked-questions-about-facilitator-in-microsoft-teams-f7317b78-fd53-4cfe-88f0-f0a0751a4150)
 - [Interpreter agent in Teams](https://learn.microsoft.com/en-us/microsoftteams/interpreter-agent-teams)
 - [Access the Planner Agent](https://support.microsoft.com/en-us/office/access-project-manager-agent-86bf60a1-239d-4c37-b7b6-9a4111e1cc02)
 - [Get started with agents in SharePoint](https://learn.microsoft.com/en-us/sharepoint/get-started-sharepoint-agents)

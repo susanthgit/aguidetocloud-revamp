@@ -69,7 +69,7 @@ founder_note: |
 - **Notes** are saved as a **`.loop` file** in the OneDrive of whoever turned Facilitator on. **Nearly 40 languages**, one per meeting.
 - **Not in government clouds** (GCC, GCC High, DoD) yet.
 
-> 🧭 **Jump to:** [What it is](#what) · [Where it works](#where) · [Turn it on](#enable) · [The agenda & timer](#agenda) · [Ask it questions](#qa) · [Track tasks](#tasks) · [Draft a document](#draft) · [Teams Rooms](#rooms) · [The recap](#recap) · [Limits](#limits) · [Sources](#sources)
+> 🧭 **Jump to:** [What it is](#what) · [Where it works](#where) · [Turn it on](#enable) · [The agenda & timer](#agenda) · [Ask it questions](#qa) · [Track tasks](#tasks) · [Draft a document](#draft) · [Teams Rooms](#rooms) · [The recap](#recap) · [Troubleshooting](#troubleshooting) · [Limits](#limits) · [Sources](#sources)
 
 ---
 
@@ -177,6 +177,23 @@ When the meeting ends, Facilitator posts a clean rundown — decisions, open que
 <p><img src="/images/blog/microsoft-365-facilitator-agent/07-facilitator-recap.webp" alt="The Teams meeting chat after the meeting ended, showing 'Meeting ended: 27m 38s', a meeting recap card with Transcript and Attendance buttons, and a Facilitator message saying 'that's a wrap' with a recap card summarising Decisions, an Open question, and the Agenda." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *The end-of-meeting recap — decisions and open questions, captured without anyone scribing.*
+
+---
+
+## Troubleshooting — why isn't Facilitator working? {#troubleshooting}
+
+The most common "it's not doing anything" moments, and what's usually behind them:
+
+| What you're seeing | The usual cause — and the fix |
+|---|---|
+| **Facilitator isn't there / I can't turn it on** | It only runs in **scheduled** meetings — not "Meet now", calls, or channel meetings. You also need a **Microsoft 365 Copilot** licence, **Loop experiences** turned on, and your admin to have it **allowed** (it is by default). Check those four and it comes back. |
+| **It's on, but nothing's happening** | Facilitator needs a **recent, substantive amount of discussion** before it writes anything — Microsoft notes it may even show an error if there isn't enough yet. Give it a few minutes of real conversation. |
+| **The notes are empty, or some people can't see them** | The notes live in a **Loop file** in OneDrive, so this is usually a Loop sharing/permission issue — and **external participants can't access the notes** at all. |
+| **The notes are credited to a person, not Facilitator** | That's expected — Microsoft attributes the generated notes to a participant, not to the agent. |
+| **Speakers aren't named correctly in a Teams Room** | Turn on **voice recognition** for the room. Without it, anything said in the room is attributed to the *room*, not the individual speakers. |
+| **It captured an action but you still own the follow-up** | Facilitator captures decisions and actions, but you stay in control of who owns what — review them, assign owners yourself (or ask it to create the task in Planner), and acknowledge completed items in the meeting chat so its list stays current. |
+
+> 📎 **The one-line mental model:** Facilitator works from the scheduled meeting — it tracks progress from the **Teams chat and transcript**, and answers from the meeting's notes and the web. Give it a real meeting with a Copilot licence and Loop turned on and it works; ask it about anything outside that meeting, and it can't help.
 
 ---
 
