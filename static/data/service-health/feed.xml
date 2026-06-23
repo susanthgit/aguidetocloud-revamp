@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Jun 2026 12:45:19 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 16:39:09 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Power BI] Users may be intermittently unable to export reports with sensitivity labels in Power BI</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1402061</link>
+      <description>[Power BI] Users may be intermittently unable to export reports with sensitivity labels in Power BI.</description>
+      <category>Power BI</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">PB1402061</guid>
+      <pubDate>Tue, 23 Jun 2026 15:27:40 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Investigating user reports of issues with various Microsoft 365 services</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1400794</link>
@@ -449,15 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1314072</guid>
       <pubDate>Sun, 17 May 2026 03:07:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Viva] Some users may see that some Viva Engage message posting operations are failing</title>
-      <link>https://www.aguidetocloud.com/service-health/#MV1315266</link>
-      <description>[Microsoft Viva] Users may have seen that some Viva Engage message posting operations were failing.</description>
-      <category>Microsoft Viva</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MV1315266</guid>
-      <pubDate>Sat, 16 May 2026 22:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
