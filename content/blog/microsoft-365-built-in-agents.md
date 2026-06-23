@@ -78,7 +78,7 @@ There are two kinds of agent in the Microsoft 365 world, and it's worth being cl
 - **Agents Microsoft ships (built-in / first-party).** Microsoft builds them, names them, and turns them on inside the apps. You don't design them — you allow them, licence them, and use them. That's everything on this page.
 - **Agents you build.** You create these for your own scenarios with **Agent Builder** (no-code, inside the Copilot app) or **Copilot Studio** (for richer, connected, autonomous agents). Microsoft's own words: *"Microsoft and its partners offer a variety of prebuilt agents. You can also build your own using both low-code and pro-code tools."*
 
-> 📎 **If you're here to build your own agent**, start with [Microsoft 365 Agent Builder, explained](/blog/m365-agent-builder-explained/) and [Agent Builder vs Copilot Studio vs Foundry](/blog/agent-builder-vs-copilot-studio-vs-foundry/). This guide stays on the agents Microsoft *gives* you.
+> 📎 **If you're here to build your own agent**, start with [Microsoft 365 Agent Builder, explained](/blog/m365-agent-builder-explained/) and [Agent Builder vs Copilot Studio vs Foundry](/blog/agent-builder-vs-copilot-studio-vs-foundry/). And if you're not even sure whether to *build* one or just *use* one, [Copilot vs Agents vs Copilot Studio: what to use when](/blog/copilot-vs-agents-vs-copilot-studio/) is the plain-English decision guide. This guide stays on the agents Microsoft *gives* you.
 
 The Microsoft 365 admin center sorts every agent in your tenant into four buckets — **Microsoft agents**, **partner-built**, **published by your org**, and **shared by a creator**. The built-in agents in this guide are the first bucket: *"agents built and maintained by Microsoft."*
 

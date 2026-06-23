@@ -1348,6 +1348,7 @@ You've now got the mental model, the build flow, the instruction template, the C
 - **I want to watch it done** → watch the **[M365 Copilot Agent Builder Hands-on Lab](/ai-hub/m365-copilot-studio-lite-or-agent-builder-hands-on-lab-create-your-own-ai-agent-/)** (my YouTube walkthrough, about 10 minutes).
 - **I need something more advanced** → read **[Agent Builder vs Copilot Studio vs Foundry (2026 Guide)](/blog/agent-builder-vs-copilot-studio-vs-foundry/)** for the full decision framework.
 - **I'd rather use the agents Microsoft already ships** → read **[Microsoft 365's Built-in Agents — the complete guide](/blog/microsoft-365-built-in-agents/)** for Facilitator, the Planner Agent, the SharePoint agents and the rest.
+- **I'm not even sure I need to build anything** → start with **[Copilot vs Agents vs Copilot Studio: what to use when](/blog/copilot-vs-agents-vs-copilot-studio/)** — the plain-English decision guide for picking the lowest-effort option that does the job.
 
 **Coming next in this series:** a standalone guide to the **Agent Instruction Builder Agent** — a meta-agent that helps you write instructions for your own agents, with copy-paste recipes for the most common business scenarios. [Let me know](/feedback/) if you'd like a heads-up when it ships.
 
