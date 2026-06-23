@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T16:39:09.167004+00:00",
+  "generated_at": "2026-06-23T20:20:45.444287+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -98,9 +98,9 @@
       "short_name": "Power BI",
       "icon": "📊",
       "total_incidents": 5,
-      "active_incidents": 2,
-      "avg_duration_minutes": 932,
-      "last_incident": "2026-06-23T15:27:40.497000+00:00",
+      "active_incidents": 1,
+      "avg_duration_minutes": 748,
+      "last_incident": "2026-06-23T13:50:00+00:00",
       "classifications": {
         "advisory": 4,
         "incident": 1
