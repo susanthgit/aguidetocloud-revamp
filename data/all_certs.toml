@@ -2743,6 +2743,27 @@ exam_duration = 100
 exam_passing_score = "Not published by GitHub"
 guided_url = "/guided/gh-100/"
 
+[[cert]]
+slug = "gh-500"
+vendor = "github"
+code = "GH-500"
+name = "GitHub Advanced Security"
+tagline = "Master GitHub Advanced Security (GHAS) — Code Security with CodeQL, Secret Protection with push protection, supply chain security with Dependabot and dependency review, security operations and campaigns, and enterprise security administration."
+exam_category = "GitHub"
+level = "specialty"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 740
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/github-advanced-security/"
+exam_cost = "$99 USD"
+exam_duration = 100
+exam_passing_score = "700 / 1000"
+guided_url = "/guided/gh-500/"
+
 [cert_map."ab-900"]
 vendor = "microsoft"
 code = "AB-900"
@@ -6112,3 +6133,29 @@ exam_prerequisites = "None (intermediate GitHub Enterprise administration experi
 exam_question_types = ["Multiple choice", "Multiple response"]
 guided_url = "/guided/gh-100/"
 practice_url = "/guided/gh-100/practice/"
+
+[cert_map."gh-500"]
+vendor = "github"
+code = "GH-500"
+name = "GitHub Advanced Security"
+tagline = "Master GitHub Advanced Security (GHAS) — Code Security with CodeQL, Secret Protection with push protection, supply chain security with Dependabot and dependency review, security operations and campaigns, and enterprise security administration."
+exam_category = "GitHub"
+level = "specialty"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 740
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/github-advanced-security/"
+exam_cost = "$99 USD"
+exam_duration = 100
+exam_passing_score = "700 / 1000"
+exam_questions_real = "~40-60"
+exam_provider = "Pearson VUE"
+exam_validity = "2 years"
+exam_prerequisites = "None (working knowledge of GitHub, CI/CD, and secure development recommended)"
+exam_question_types = ["Multiple choice", "Multiple response"]
+guided_url = "/guided/gh-500/"
+practice_url = "/guided/gh-500/practice/"
