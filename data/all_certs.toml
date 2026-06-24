@@ -6374,3 +6374,46 @@ exam_prerequisites = "None (no hands-on experience required; a recommended start
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/oci-foundations/"
 practice_url = "/guided/oci-foundations/practice/"
+
+
+[[cert]]
+slug = "mongodb-associate-developer"
+vendor = "mongodb"
+code = "MONGODB-ASSOCIATE-DEVELOPER"
+name = "MongoDB Associate Developer"
+tagline = "Master the MongoDB Associate Developer certification (C100DEV) - the document model and BSON, CRUD operations and the MongoDB Query Language, the aggregation framework, indexes and query performance, data modeling, developer tooling, and the official language drivers."
+exam_category = "MongoDB"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 790
+featured = false
+price_practice = 9
+
+[cert_map."mongodb-associate-developer"]
+vendor = "mongodb"
+code = "MONGODB-ASSOCIATE-DEVELOPER"
+name = "MongoDB Associate Developer"
+tagline = "Master the MongoDB Associate Developer certification (C100DEV) - the document model and BSON, CRUD operations and the MongoDB Query Language, the aggregation framework, indexes and query performance, data modeling, developer tooling, and the official language drivers."
+exam_category = "MongoDB"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 790
+featured = false
+price_practice = 9
+exam_url = "https://learn.mongodb.com/pages/mongodb-associate-developer-exam"
+exam_cost = "$150 USD"
+exam_duration = 75
+exam_passing_score = "Scaled pass/fail (not publicly published)"
+exam_questions_real = "53"
+exam_provider = "MongoDB University (online proctored)"
+exam_validity = "3 years"
+exam_prerequisites = "None (familiarity with one supported driver language recommended)"
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/mongodb-associate-developer/"
+practice_url = "/guided/mongodb-associate-developer/practice/"

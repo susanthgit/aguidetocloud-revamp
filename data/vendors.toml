@@ -172,3 +172,14 @@ logo_emoji = "🔴"
 official_url = "https://education.oracle.com/certification"
 cert_path_note = "Start with OCI Foundations, then Architect Associate, and advance to Architect Professional and specialty tracks (Developer, Security, Networking, Data Science, Generative AI)."
 order = 17
+
+
+[[vendor]]
+slug = "mongodb"
+name = "MongoDB"
+short_name = "MongoDB"
+accent = "#00684A"
+logo_emoji = "🍃"
+official_url = "https://learn.mongodb.com/pages/certification"
+cert_path_note = "Start with the MongoDB Associate Developer (application development), then the MongoDB Associate Database Administrator (operations). Both are role-based associate credentials built on the document model and Atlas."
+order = 18
