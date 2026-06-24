@@ -136,6 +136,7 @@ function getExamCategory(cert) {
     'github': 'GitHub',
     'snowflake': 'Snowflake',
     'databricks': 'Databricks',
+    'oracle': 'Oracle',
   };
   return vendorCategoryMap[cert.vendor] || cert.vendor;
 }

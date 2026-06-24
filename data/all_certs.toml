@@ -6243,3 +6243,45 @@ exam_prerequisites = "None (course attendance + 6 months hands-on Databricks exp
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/databricks-de-associate/"
 practice_url = "/guided/databricks-de-associate/practice/"
+
+[[cert]]
+slug = "oci-architect-associate"
+vendor = "oracle"
+code = "OCI-ARCHITECT-ASSOCIATE"
+name = "Cloud Infrastructure 2026 Architect Associate"
+tagline = "Master the Oracle Cloud Infrastructure (OCI) 2026 Architect Associate exam (1Z0-1072-26) - Identity and Access Management with identity domains and policies, Networking with VCNs and connectivity, Compute shapes and scaling, Object/Block/File Storage, Oracle databases and Autonomous Database, and Observability and Management."
+exam_category = "Oracle"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 780
+featured = false
+price_practice = 9
+
+[cert_map."oci-architect-associate"]
+vendor = "oracle"
+code = "OCI-ARCHITECT-ASSOCIATE"
+name = "Cloud Infrastructure 2026 Architect Associate"
+tagline = "Master the Oracle Cloud Infrastructure (OCI) 2026 Architect Associate exam (1Z0-1072-26) - Identity and Access Management with identity domains and policies, Networking with VCNs and connectivity, Compute shapes and scaling, Object/Block/File Storage, Oracle databases and Autonomous Database, and Observability and Management."
+exam_category = "Oracle"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 780
+featured = false
+price_practice = 9
+exam_url = "https://education.oracle.com/oracle-cloud-infrastructure-architect-associate/pexam_1Z0-1072-26"
+exam_cost = "$245 USD"
+exam_duration = 90
+exam_passing_score = "68% (verify at Oracle registration)"
+exam_questions_real = "55"
+exam_provider = "Oracle University / Pearson VUE (online proctored or test center)"
+exam_validity = "Subject to Oracle Recertification policy"
+exam_prerequisites = "None (OCI fundamentals and hands-on experience with IAM, Networking, Compute, and Storage recommended)"
+exam_question_types = ["Multiple choice", "Multiple response"]
+guided_url = "/guided/oci-architect-associate/"
+practice_url = "/guided/oci-architect-associate/practice/"

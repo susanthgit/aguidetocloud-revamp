@@ -162,3 +162,13 @@ logo_emoji = "🧱"
 official_url = "https://www.databricks.com/learn/certification"
 cert_path_note = "Start with the Data Engineer Associate (or Data Analyst Associate), then advance to Professional and specialty tracks (Machine Learning, Platform Architect, Generative AI Engineer)."
 order = 16
+
+[[vendor]]
+slug = "oracle"
+name = "Oracle"
+short_name = "Oracle"
+accent = "#C74634"
+logo_emoji = "🔴"
+official_url = "https://education.oracle.com/certification"
+cert_path_note = "Start with OCI Foundations, then Architect Associate, and advance to Architect Professional and specialty tracks (Developer, Security, Networking, Data Science, Generative AI)."
+order = 17
