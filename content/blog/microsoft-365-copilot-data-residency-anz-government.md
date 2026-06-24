@@ -313,6 +313,10 @@ For Australian and New Zealand government readers, this is the section that matt
 - The **Microsoft 365 / Office 365 platform** that Copilot runs on has been **IRAP-assessed at the PROTECTED classification**, and Copilot runs on that assessed platform. (Treat "runs on the assessed platform" as informal shorthand, not a formal IRAP scope statement — see Caveat 2.) Microsoft was the first public cloud provider to reach PROTECTED, and the assessed platforms include Azure, Office 365, Dynamics 365, Microsoft Managed Desktop and Windows 365.
 - **New Zealand agencies can use Microsoft's IRAP reports too** — the New Zealand assurance frameworks are close enough to the ISM that the IRAP assessments are accepted as an input.
 
+<p><img src="/images/blog/copilot-security-qa/stp-australia-irap.webp" alt="The Microsoft Service Trust Portal Australia IRAP page listing applicable assessment documents, including an M365 IRAP Cloud Security Assessment Report dated 2026 and an Azure, Dynamics 365 and Online Services IRAP report" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The Service Trust Portal's Australia IRAP page is where the actual reports live — including a current **M365 IRAP Cloud Security Assessment Report (2026)**. The catalogue is public; downloading the reports themselves needs a Microsoft account sign-in — and reading the report is how you confirm exactly which services are in scope.*
+
 **The two honest caveats a good assessor will want stated:**
 
 > ⚠️ **Caveat 1 — IRAP is an *input*, not an Authority to Operate.** An IRAP assessment evaluates Microsoft's platform controls. It does **not** authorise *your* system. Your agency still runs its own risk assessment, engages its own IRAP assessor for *your* specific deployment, applies its own compensating controls, and issues its own authorisation. The ACSC guidance is explicit that agencies authorise on a risk-managed basis — inheriting Microsoft's controls is the start of your assessment, not the end.
