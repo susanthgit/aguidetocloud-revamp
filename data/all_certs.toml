@@ -1710,6 +1710,27 @@ exam_passing_score = ""
 guided_url = "/guided/gcp-cloud-digital-leader/"
 
 [[cert]]
+slug = "gcp-generative-ai-leader"
+vendor = "gcp"
+code = "GENERATIVE-AI-LEADER"
+name = "Google Cloud Generative AI Leader"
+tagline = "Lead your organization's generative AI strategy on Google Cloud - Gemini, Vertex AI, RAG, and responsible AI, no coding required."
+exam_category = "GCP"
+level = "beginner"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 111
+featured = false
+price_practice = 9
+exam_url = "https://cloud.google.com/learn/certification/generative-ai-leader"
+exam_cost = "$99 USD"
+exam_duration = 90
+exam_passing_score = ""
+guided_url = "/guided/gcp-generative-ai-leader/"
+
+[[cert]]
 slug = "gcp-cloud-architect"
 vendor = "gcp"
 code = "CLOUD-ARCHITECT"
@@ -4860,6 +4881,32 @@ exam_prerequisites = "None"
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/gcp-cloud-digital-leader/"
 practice_url = "/guided/gcp-cloud-digital-leader/practice/"
+
+[cert_map."gcp-generative-ai-leader"]
+vendor = "gcp"
+code = "GENERATIVE-AI-LEADER"
+name = "Google Cloud Generative AI Leader"
+tagline = "Lead your organization's generative AI strategy on Google Cloud - Gemini, Vertex AI, RAG, and responsible AI, no coding required."
+exam_category = "GCP"
+level = "beginner"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 111
+featured = false
+price_practice = 9
+exam_url = "https://cloud.google.com/learn/certification/generative-ai-leader"
+exam_cost = "$99 USD"
+exam_duration = 90
+exam_passing_score = ""
+exam_questions_real = "50-60"
+exam_provider = "Kryterion"
+exam_validity = "3 years"
+exam_prerequisites = "None"
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/gcp-generative-ai-leader/"
+practice_url = "/guided/gcp-generative-ai-leader/practice/"
 
 [cert_map."gcp-cloud-architect"]
 vendor = "gcp"
