@@ -1,6 +1,6 @@
 ---
 title: "What's New in Microsoft 365 Copilot: June 2026"
-list_title: "M365 Copilot — June Recap: Build 2026 + Cowork GA"
+list_title: "M365 Copilot — June Recap: 31 Updates"
 hub_id: "whats-new"
 description: "June 2026 brought Build: Microsoft Scout, Copilot Cowork GA, Claude in Copilot Chat, Federated Connectors GA and Word edits by default — in plain English."
 date: 2026-06-24
