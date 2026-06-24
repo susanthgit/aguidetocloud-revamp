@@ -434,6 +434,7 @@ No — Microsoft Cloud for Sovereignty is primarily an Azure framework. ANZ gove
 - [Microsoft 365 Copilot Security: Top Questions Answered](/blog/microsoft-365-copilot-security-questions-answered/) *(the security pillar this residency deep-dive belongs to)*
 - [SharePoint Oversharing Controls for Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/)
 - [Copilot Certifications & Compliance for RFPs](/blog/microsoft-365-copilot-compliance-certifications-rfp/) *(what it's certified against, and how to prove it)*
+- [Copilot Agents & Studio — Data-Flow Governance](/blog/microsoft-365-copilot-agents-data-flow-governance/) *(where agent data goes, and how to govern it)*
 - [The Copilot Control System Explained](/blog/microsoft-365-copilot-control-system-complete-guide/)
 - [Microsoft 365 Copilot Deployment — The Complete Guide](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) *(the IT-admin checklist that anchors this cluster)*
 - [Agent 365 Security — Entra, Purview, Defender](/blog/agent-365-security-governance-complete-guide/)

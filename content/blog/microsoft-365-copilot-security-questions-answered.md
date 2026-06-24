@@ -595,6 +595,7 @@ Inside the Microsoft 365 service boundary, with data-residency commitments via A
 - [Microsoft 365 Copilot Deployment — The Complete Guide](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) *(the IT-admin checklist that anchors this cluster)*
 - [Copilot Data Residency & Sovereignty (ANZ & Government)](/blog/microsoft-365-copilot-data-residency-anz-government/) *(where your data lives, plus IRAP and sovereignty — the deep dive)*
 - [Copilot Certifications & Compliance for RFPs](/blog/microsoft-365-copilot-compliance-certifications-rfp/) *(what it's certified against, and how to prove it)*
+- [Copilot Agents & Studio — Data-Flow Governance](/blog/microsoft-365-copilot-agents-data-flow-governance/) *(where agent data goes, and how to govern it)*
 - [The Copilot Control System Explained](/blog/microsoft-365-copilot-control-system-complete-guide/)
 - [Copilot Content Safety Controls for Admins](/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins/)
 - [SharePoint Oversharing Controls for Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/)

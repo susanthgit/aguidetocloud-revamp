@@ -416,6 +416,7 @@ Compliance is shared — Microsoft attests the platform; you configure your tena
 
 - [Microsoft 365 Copilot Security: Top Questions Answered](/blog/microsoft-365-copilot-security-questions-answered/) *(the security pillar this guide belongs to)*
 - [Copilot Data Residency & Sovereignty for ANZ & Government](/blog/microsoft-365-copilot-data-residency-anz-government/) *(where the data lives — the residency companion)*
+- [Copilot Agents & Studio — Data-Flow Governance](/blog/microsoft-365-copilot-agents-data-flow-governance/) *(where agent data goes, and how to govern it)*
 - [The Copilot Control System Explained](/blog/microsoft-365-copilot-control-system-complete-guide/)
 - [SharePoint Oversharing Controls for Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/)
 - [Agent 365 Security — Entra, Purview, Defender](/blog/agent-365-security-governance-complete-guide/)
