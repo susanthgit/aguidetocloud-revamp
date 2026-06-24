@@ -6201,3 +6201,45 @@ exam_prerequisites = "None (6+ months of hands-on Snowflake experience recommend
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/snowpro-core/"
 practice_url = "/guided/snowpro-core/practice/"
+
+[[cert]]
+slug = "databricks-de-associate"
+vendor = "databricks"
+code = "DATABRICKS-DE-ASSOCIATE"
+name = "Certified Data Engineer Associate"
+tagline = "Master the Databricks Certified Data Engineer Associate exam (May 2026) - the Data Intelligence Platform and lakehouse architecture, data ingestion and loading, transformation and modeling with PySpark and Spark SQL, Lakeflow Jobs orchestration, CI/CD with Databricks Asset Bundles, troubleshooting and optimization, and Unity Catalog governance and security."
+exam_category = "Databricks"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 770
+featured = false
+price_practice = 9
+
+[cert_map."databricks-de-associate"]
+vendor = "databricks"
+code = "DATABRICKS-DE-ASSOCIATE"
+name = "Certified Data Engineer Associate"
+tagline = "Master the Databricks Certified Data Engineer Associate exam (May 2026) - the Data Intelligence Platform and lakehouse architecture, data ingestion and loading, transformation and modeling with PySpark and Spark SQL, Lakeflow Jobs orchestration, CI/CD with Databricks Asset Bundles, troubleshooting and optimization, and Unity Catalog governance and security."
+exam_category = "Databricks"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 770
+featured = false
+price_practice = 9
+exam_url = "https://www.databricks.com/learn/certification/data-engineer-associate"
+exam_cost = "$200 USD"
+exam_duration = 90
+exam_passing_score = "Not officially published (~70%)"
+exam_questions_real = "45"
+exam_provider = "Databricks (online or test center, proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "None (course attendance + 6 months hands-on Databricks experience recommended)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/databricks-de-associate/"
+practice_url = "/guided/databricks-de-associate/practice/"

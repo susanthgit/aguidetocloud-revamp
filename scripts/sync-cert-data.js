@@ -135,6 +135,7 @@ function getExamCategory(cert) {
     'fortinet': 'Fortinet',
     'github': 'GitHub',
     'snowflake': 'Snowflake',
+    'databricks': 'Databricks',
   };
   return vendorCategoryMap[cert.vendor] || cert.vendor;
 }
