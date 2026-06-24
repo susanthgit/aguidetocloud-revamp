@@ -6285,3 +6285,45 @@ exam_prerequisites = "None (OCI fundamentals and hands-on experience with IAM, N
 exam_question_types = ["Multiple choice", "Multiple response"]
 guided_url = "/guided/oci-architect-associate/"
 practice_url = "/guided/oci-architect-associate/practice/"
+
+[[cert]]
+slug = "oci-foundations"
+vendor = "oracle"
+code = "OCI-FOUNDATIONS"
+name = "Cloud Infrastructure 2026 Foundations Associate"
+tagline = "Master the Oracle Cloud Infrastructure (OCI) 2026 Foundations Associate exam (1Z0-1085-26) - OCI distributed cloud, regions and availability domains, the core Compute, Networking, and Storage services, the shared security model with IAM and OCI security services, and OCI pricing, cost management, and support."
+exam_category = "Oracle"
+level = "foundational"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 775
+featured = false
+price_practice = 9
+
+[cert_map."oci-foundations"]
+vendor = "oracle"
+code = "OCI-FOUNDATIONS"
+name = "Cloud Infrastructure 2026 Foundations Associate"
+tagline = "Master the Oracle Cloud Infrastructure (OCI) 2026 Foundations Associate exam (1Z0-1085-26) - OCI distributed cloud, regions and availability domains, the core Compute, Networking, and Storage services, the shared security model with IAM and OCI security services, and OCI pricing, cost management, and support."
+exam_category = "Oracle"
+level = "foundational"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 775
+featured = false
+price_practice = 9
+exam_url = "https://education.oracle.com/oracle-cloud-infrastructure-2026-foundations-associate/pexam_1Z0-1085-26"
+exam_cost = "Free (no exam fee listed on the official Oracle exam page; verify at registration)"
+exam_duration = 60
+exam_passing_score = "65% (verify at Oracle registration)"
+exam_questions_real = "40"
+exam_provider = "Oracle University / Pearson VUE (online proctored or test center)"
+exam_validity = "Valid for 24 months (Oracle Recertification policy)"
+exam_prerequisites = "None (no hands-on experience required; a recommended starting point for OCI certifications)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/oci-foundations/"
+practice_url = "/guided/oci-foundations/practice/"
