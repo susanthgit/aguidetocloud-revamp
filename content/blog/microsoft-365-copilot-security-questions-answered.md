@@ -480,7 +480,7 @@ Yes — it only surfaces what a user can already access. Which means your **over
 Not through the native Microsoft 365 audit log — that only captures Microsoft Copilot. You *can* still govern other AI tools with Purview, two ways: **Endpoint DLP** can warn or block staff from pasting sensitive data into generative-AI websites (e.g. stop a credit-card number going into ChatGPT), and Purview can **audit non-Microsoft AI interactions** — but that runs on **pay-as-you-go billing** (it's not part of your E3 or E5 subscription) and needs devices onboarded plus the Purview browser extension. So: Microsoft Copilot = audited in the box; everything else = an E5/Purview + pay-as-you-go add-on.
 
 **"Where does our data live?"**
-Prompts, responses and Graph data stay inside the Microsoft 365 service boundary, with data-residency commitments via the Product Terms, Advanced Data Residency and Multi-Geo (Microsoft 365 Copilot has been a covered data-residency workload since 1 March 2024). The exception, again, is web queries (separate Bing service, outside the EU Data Boundary). Knowing the region your data sits in doesn't change who can access it — access is still governed by your tenant's identity and permissions, not the data-centre location.
+Prompts, responses and Graph data stay inside the Microsoft 365 service boundary, with data-residency commitments via the Product Terms, Advanced Data Residency and Multi-Geo (Microsoft 365 Copilot has been a covered data-residency workload since 1 March 2024). The exception, again, is web queries (separate Bing service, outside the EU Data Boundary). Knowing the region your data sits in doesn't change who can access it — access is still governed by your tenant's identity and permissions, not the data-centre location. → [Copilot data residency & sovereignty for ANZ and government](/blog/microsoft-365-copilot-data-residency-anz-government/).
 
 **"Is it isolated from other Microsoft customers?"**
 Yes — logical tenant isolation through Microsoft Entra authorisation and role-based access control, with encryption at rest and in transit.
@@ -593,6 +593,7 @@ Inside the Microsoft 365 service boundary, with data-residency commitments via A
 ## Related guides
 
 - [Microsoft 365 Copilot Deployment — The Complete Guide](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) *(the IT-admin checklist that anchors this cluster)*
+- [Copilot Data Residency & Sovereignty (ANZ & Government)](/blog/microsoft-365-copilot-data-residency-anz-government/) *(where your data lives, plus IRAP and sovereignty — the deep dive)*
 - [The Copilot Control System Explained](/blog/microsoft-365-copilot-control-system-complete-guide/)
 - [Copilot Content Safety Controls for Admins](/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins/)
 - [SharePoint Oversharing Controls for Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/)
