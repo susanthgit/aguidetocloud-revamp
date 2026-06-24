@@ -18,6 +18,12 @@ faq:
     answer: "Not through the native Microsoft 365 audit log, which only covers Microsoft Copilot. You can govern other AI tools with Microsoft Purview: Endpoint DLP can warn or block staff pasting sensitive data into generative-AI websites, and Purview can audit non-Microsoft AI interactions — but that uses pay-as-you-go billing (not included in E3 or E5) and requires onboarded devices plus the Purview browser extension."
   - question: "Does the physical location of the servers affect who can access our data?"
     answer: "No. Microsoft 365 Copilot data stays within the Microsoft 365 service boundary and access is governed by your tenant's identity and permissions — not by which data centre region holds the data. Knowing the region matters for data-residency commitments, but it does not give any external party access to your information."
+  - question: "Is our data at risk if staff use the free Microsoft 365 Copilot Chat without a licence?"
+    answer: "No — as long as they are signed in with their work or school account, Copilot Chat provides Enterprise Data Protection at no extra cost and their prompts and responses aren't used to train the foundation models. The visible signal is the green shield in the chat. The risk is consumer Copilot (a personal Microsoft account, or not signed in), which runs under consumer terms outside your tenant's protection. Use Conditional Access to require the work-account sign-in."
+  - question: "What compliance certifications does Microsoft 365 Copilot have?"
+    answer: "Copilot inherits the Microsoft 365 compliance posture — including ISO/IEC 27001, ISO/IEC 27018, SOC, HIPAA and GDPR — plus ISO/IEC 42001 for AI management systems, and IRAP at the platform level for Australian and New Zealand government. HIPAA does not extend to web search queries, and an IRAP assessment is an input to your own authorisation rather than an automatic authority to operate. Confirm the current scope for your cloud in the Microsoft Service Trust Portal."
+  - question: "How do we handle a Privacy Act or GDPR data subject request involving Copilot data?"
+    answer: "Run a Microsoft Purview eDiscovery search scoped to that individual's mailbox using the 'Copilot activity' condition, then export the results. Because Copilot interactions are stored in the user's Exchange mailbox, they are retrievable the same way as the user's email."
   - question: "Is web grounding enabled by default in Microsoft 365 Copilot?"
     answer: "On a commercial tenant, yes — web search is on by default if the admin hasn't configured the policy (unless optional connected experiences are turned off). US Government clouds (GCC, GCC High, DoD) are the exception: web search is available but off by default. Admins control it with the 'Allow web search in Copilot' policy in the Microsoft 365 Apps Cloud Policy service."
   - question: "What does Microsoft 365 Copilot send to the web when it does a search?"
@@ -70,6 +76,7 @@ So here are the answers — in plain English, with the **official Microsoft docu
 
 - [The 30-second answer](#the-30-second-answer)
 - [First: which Copilot are we talking about?](#first-which-copilot-are-we-talking-about)
+- [Signed in vs signed out: the Copilot Chat boundary](#signed-in-vs-signed-out-the-copilot-chat-boundary)
 - [Web grounding: defaults and controls](#web-grounding-defaults-and-controls)
 - [What actually gets sent to the web?](#what-actually-gets-sent-to-the-web)
 - [Can we restrict Copilot access to Outlook?](#can-we-restrict-copilot-access-to-outlook)
@@ -80,7 +87,9 @@ So here are the answers — in plain English, with the **official Microsoft docu
 - [What can you do at each licence level? (E3 vs E5/Purview)](#what-can-you-actually-do-at-each-licence-level-e3-vs-e5--purview)
 - [Retention and records](#retention-and-records)
 - [Governing new AI features as they ship](#governing-new-ai-features-as-they-ship)
+- [Compliance certifications: the RFP answer](#compliance-certifications-the-rfp-answer)
 - [The other questions security teams always ask](#the-other-questions-security-teams-always-ask)
+- [Common misconceptions (the gotchas)](#common-misconceptions-the-gotchas-that-catch-teams-out)
 - [Your first week: a security checklist](#your-first-week-a-security-checklist)
 - [FAQ](#frequently-asked-questions)
 
@@ -134,6 +143,25 @@ This trips up almost every security review, so let's clear it up before anything
 The one line worth memorising: **both run under the same enterprise terms** — the [Microsoft Products and Services Data Protection Addendum](https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA) and the Product Terms, with **Microsoft acting as your data processor**. Both honour your identity model and permissions, and — when they're working over your Microsoft 365 content — your sensitivity labels, retention and audit apply. (Exactly how labels and retention behave depends on whether Copilot is touching Graph content, an uploaded file, chat history, an agent, or the open web — I'll call out the differences as we go.)
 
 *Source: [Enterprise data protection in Microsoft 365 Copilot and Copilot Chat](https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection).*
+
+---
+
+## Signed in vs signed out: the Copilot Chat boundary
+
+This is one of the most important — and most missed — questions a security team can ask: **does the protection depend on how a user signs in?** Yes, and it's worth getting exactly right.
+
+When staff use **Copilot Chat signed in with their work or school (Microsoft Entra) account**, they're in the **enterprise** experience: Enterprise Data Protection applies, prompts and responses **aren't used to train the foundation models**, interactions are logged for audit and eDiscovery, and your DLP and policies apply. The visible signal is the **green shield** at the top of the chat — that shield means EDP is on. Crucially, **this doesn't need a Copilot licence**: even unlicensed staff get enterprise data protection in Copilot Chat, as long as they're signed in with the work account.
+
+The risk is the *other* door — **consumer Copilot**. If a user opens Copilot with a **personal Microsoft account, or not signed in at all**, that's outside your tenant. It runs under the consumer Microsoft Services Agreement, not your enterprise terms — so your EDP, DLP and audit don't reach it.
+
+**The two questions customers actually ask, answered plainly:**
+
+- *"If someone uses the free version without a Copilot licence, is their data used to train the model?"* → **No** — provided they're signed in with their work account (look for the green shield). EDP covers the free Copilot Chat too.
+- *"What happens if a user isn't authenticated / signed in?"* → They're not in your protected experience. EDP and DLP apply to the signed-in enterprise experience; they don't extend to consumer Copilot.
+
+**What to do about it:** use **Conditional Access** to require the work-account sign-in so users land in the protected experience, tell people to look for the green shield, and treat consumer AI like any other shadow-AI tool — govern it with Endpoint DLP (see [other AI tools](#the-other-questions-security-teams-always-ask) below).
+
+*Sources: [Privacy and protections in Copilot Chat](https://learn.microsoft.com/en-us/copilot/privacy-and-protections) · [Microsoft Copilot overview](https://learn.microsoft.com/en-us/copilot/overview).*
 
 ---
 
@@ -417,6 +445,26 @@ Three things working together:
 
 ---
 
+## Compliance certifications: the RFP answer
+
+Every security questionnaire and RFP asks the same thing: *"what's it certified against?"* Copilot is built on Microsoft 365 and inherits that compliance posture, plus AI-specific attestations:
+
+| Standard | Covers |
+|---|---|
+| **ISO/IEC 42001** | AI management systems — the AI-specific standard, and the headline one to lead with |
+| **ISO/IEC 27001** | Information security management |
+| **ISO/IEC 27018** | Protection of personal data in the cloud |
+| **SOC 1 / 2 / 3** | Service-organisation controls (via the Microsoft 365 platform) |
+| **HIPAA** | US healthcare — the **core product is in scope; web search queries are NOT covered** |
+| **GDPR** | EU data protection — Microsoft as processor |
+| **IRAP** | Australian/NZ government — assessed at the Microsoft 365 platform level |
+
+**The honest framing for an RFP:** Copilot rides on Microsoft 365's certifications, with **ISO 42001** as the standout AI-management attestation. Two caveats a good reviewer will want stated: **HIPAA doesn't extend to web queries**, and an **IRAP assessment is an input to your own authorisation, not an automatic authority-to-operate** — each agency still runs its own security assessment. For the current, authoritative list and the exact scope for *your* cloud, send reviewers to the **Microsoft Service Trust Portal** ([servicetrust.microsoft.com](https://servicetrust.microsoft.com)) — that's the source of record an auditor will accept.
+
+*Sources: [Data, privacy & security for M365 Copilot — regulatory compliance](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy#meeting-regulatory-compliance-requirements) · [Microsoft Service Trust Portal](https://servicetrust.microsoft.com).*
+
+---
+
 ## The other questions security teams always ask
 
 The six above are the deep ones. Here are the rapid-fire questions that come up just as often — with the short, honest answer and where to go deeper.
@@ -449,8 +497,36 @@ For the standard Anthropic models, Anthropic operates as a **Microsoft subproces
 - There's a separate, **default-off** category called **"Preview models with Data Retention."** For *those* specific preview models, Anthropic acts as an **independent data processor under its own terms and Anthropic does retain your data** — so they stay off unless an admin explicitly opts in. Don't confuse the two.
 - Anthropic models are **out of scope for the EU Data Boundary**.
 
+**"How do we handle a Privacy Act / GDPR data subject request that involves Copilot data?"**
+The documented path is an **eDiscovery** search scoped to that individual's mailbox (the "Copilot activity" condition), then export. Because Copilot interactions live in the user's mailbox, they're retrievable the same way as their mail. (If you use Microsoft Priva for subject-rights requests, confirm its current Copilot coverage with your account team — eDiscovery is the confirmed route.)
+
+**"Does Copilot honour Information Barriers?"**
+Copilot only ever surfaces content a user can already access — so where an Information Barrier blocks a user's access to someone else's content, that content isn't available to *their* Copilot either. Validate against your specific IB configuration before relying on it.
+
+**"What about Microsoft support access — Customer Lockbox?"**
+Customer Lockbox lets you approve or reject the rare cases where a Microsoft support engineer needs access to content to resolve a ticket. It's an **E5** capability and is **opt-in — off by default**, so turn it on (admin centre → Org settings → Security & privacy) if you want that approval gate.
+
+**"What do we do if someone pastes secrets or regulated data into Copilot?"**
+Treat it as a data-spillage incident: run an **eDiscovery** search to find the interaction, **purge** the items (eDiscovery purge, with the right roles), **rotate** any exposed secrets, and review your DLP/label policies so the same paste is blocked next time.
+
 **"How do we govern this at the platform level?"**
 That's the Copilot Control System — the built-in framework for managing how people use Copilot. → [The Copilot Control System explained](/blog/microsoft-365-copilot-control-system-complete-guide/). For agents at scale, that's Agent 365. → [Agent 365 security guide](/blog/agent-365-security-governance-complete-guide/).
+
+---
+
+## Common misconceptions (the gotchas that catch teams out)
+
+A few things that surprise even experienced admins — worth knowing before they bite:
+
+- **A label on a *site* or *Team* doesn't protect the *files* inside it.** Container labels (SharePoint site, Team, Microsoft 365 Group) aren't inherited by items — each file needs its own label for Copilot to honour it.
+- **"Deleted from the Copilot app" ≠ deleted.** What a user sees in the UI isn't the source of truth for retention — verify through eDiscovery.
+- **Restricted SharePoint Search isn't a security boundary.** It reduces discoverability while you remediate; users can still reach files they own or were shared. Fix permissions for real control.
+- **Copilot only reads the *primary* mailbox.** Archive, shared, group and delegate mailboxes are out of scope.
+- **Teams meeting-chat labels aren't recognised by Copilot** (yet) — meeting *invites* and calendar events are, but meeting and channel chat summaries don't carry the label.
+- **Files encrypted with user-defined permissions block agents** — even for read/summarise — unless the file is open in the app.
+- **Auditing non-Microsoft AI isn't free or automatic** — it needs pay-as-you-go billing plus device onboarding, separate from the included Copilot audit.
+
+*Sources: [Copilot data-protection considerations](https://learn.microsoft.com/en-us/purview/ai-m365-copilot-considerations) · [Restricted SharePoint Search](https://learn.microsoft.com/en-us/sharepoint/restricted-sharepoint-search).*
 
 ---
 
@@ -499,6 +575,18 @@ For audit and discovery, yes (it's logged as BizChat and is collectable). Premiu
 
 **How do we keep up with new AI features?**
 DSPM for AI to monitor, Message center for 30-day notice, and Deferred release to hold features for 30 days while you validate.
+
+**Is our data at risk if staff use the free Copilot Chat without a licence?**
+No — as long as they're signed in with their work account (look for the green shield), they get Enterprise Data Protection and their data isn't used to train models, no licence required. The risk is consumer Copilot (personal account or not signed in), which is outside your tenant's protection. Require work-account sign-in with Conditional Access.
+
+**What compliance certifications does Copilot have?**
+It inherits Microsoft 365's posture — ISO 27001, ISO 27018, SOC, HIPAA, GDPR — plus ISO 42001 for AI management systems, and IRAP at the platform level for ANZ government. Confirm exact scope for your cloud in the Microsoft Service Trust Portal.
+
+**How do we handle a Privacy Act or GDPR data subject request involving Copilot?**
+Run an eDiscovery search scoped to that user's mailbox using the "Copilot activity" condition, then export — Copilot interactions are retrievable the same way as the user's mail.
+
+**Where is our Copilot data stored?**
+Inside the Microsoft 365 service boundary, with data-residency commitments via Advanced Data Residency and Multi-Geo. The region doesn't change who can access it — that's still governed by your identity and permissions. (Web queries are the exception — separate Bing service.)
 
 ---
 
