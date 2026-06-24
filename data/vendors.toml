@@ -183,3 +183,13 @@ logo_emoji = "🍃"
 official_url = "https://learn.mongodb.com/pages/certification"
 cert_path_note = "Start with the MongoDB Associate Developer (application development), then the MongoDB Associate Database Administrator (operations). Both are role-based associate credentials built on the document model and Atlas."
 order = 18
+
+[[vendor]]
+slug = "splunk"
+name = "Splunk"
+short_name = "Splunk"
+accent = "#65A637"
+logo_emoji = "🔍"
+official_url = "https://www.splunk.com/en_us/training/certification-track.html"
+cert_path_note = "Start with the Splunk Core Certified User, then the Splunk Core Certified Power User (SPL, knowledge objects, data models, and the CIM), and advance to the Splunk Enterprise Certified Admin and specialty tracks."
+order = 19

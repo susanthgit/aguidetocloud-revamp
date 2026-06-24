@@ -138,6 +138,7 @@ function getExamCategory(cert) {
     'databricks': 'Databricks',
     'oracle': 'Oracle',
     'mongodb': 'MongoDB',
+    'splunk': 'Splunk',
   };
   return vendorCategoryMap[cert.vendor] || cert.vendor;
 }

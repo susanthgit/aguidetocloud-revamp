@@ -6417,3 +6417,44 @@ exam_prerequisites = "None (familiarity with one supported driver language recom
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/mongodb-associate-developer/"
 practice_url = "/guided/mongodb-associate-developer/practice/"
+
+[[cert]]
+slug = "splunk-core-power-user"
+vendor = "splunk"
+code = "SPLUNK-CORE-POWER-USER"
+name = "Splunk Core Certified Power User"
+tagline = "Master the Splunk Core Certified Power User exam - the Search Processing Language (SPL) and transforming commands, filtering and formatting with eval, correlating events with transactions, field extractions, aliases and calculated fields, tags and event types, macros, workflow actions, data models and Pivot, and the Common Information Model (CIM)."
+exam_category = "Splunk"
+level = "core"
+status = "active"
+modules = 0
+questions = 250
+domains = 10
+order = 778
+featured = false
+price_practice = 9
+
+[cert_map."splunk-core-power-user"]
+vendor = "splunk"
+code = "SPLUNK-CORE-POWER-USER"
+name = "Splunk Core Certified Power User"
+tagline = "Master the Splunk Core Certified Power User exam - the Search Processing Language (SPL) and transforming commands, filtering and formatting with eval, correlating events with transactions, field extractions, aliases and calculated fields, tags and event types, macros, workflow actions, data models and Pivot, and the Common Information Model (CIM)."
+exam_category = "Splunk"
+level = "core"
+status = "active"
+modules = 0
+questions = 250
+domains = 10
+order = 778
+featured = false
+price_practice = 9
+exam_url = "https://www.splunk.com/en_us/training/certification-track/splunk-core-certified-power-user.html"
+exam_cost = "$130 USD"
+exam_duration = 60
+exam_passing_score = "700 / 1000"
+exam_questions_real = "65"
+exam_provider = "Splunk (Pearson VUE)"
+exam_prerequisites = "None required (Splunk Core Certified User recommended first)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/splunk-core-power-user/"
+practice_url = "/guided/splunk-core-power-user/practice/"
