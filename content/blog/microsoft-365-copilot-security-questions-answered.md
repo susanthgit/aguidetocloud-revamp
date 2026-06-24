@@ -4,7 +4,7 @@ list_title: "Copilot Security Questions — Answered (IT Admin FAQ)"
 hub_id: "it-admins"
 description: "Plain answers to the top Microsoft 365 Copilot security questions — web grounding, data privacy, Outlook access, audit, retention and AI governance."
 date: 2026-06-24
-lastmod: 2026-06-24
+lastmod: 2026-06-25
 card_tag: "Security"
 tag_class: "security"
 images: ["images/og/blog/microsoft-365-copilot-security-questions-answered.jpg"]
@@ -316,7 +316,7 @@ None of this is Copilot-specific — but a security reviewer *will* ask "what st
 
 **The questions:** What can we audit? Can we search everyone at once instead of trawling individual histories? Does it support discovery and legal hold?
 
-**What's captured:** every Copilot interaction generates an event in the Microsoft Purview **unified audit log** — activity `CopilotInteraction`, with the user, the app, the time, and the resources (files, emails) the interaction referenced, including available sensitivity-label metadata. Free Copilot Chat is logged too — you'll see `AppHost = BizChat`. This is part of **Audit (Standard)**, with no extra step and no extra charge for Microsoft's own Copilots. Important nuance: the audit event records *that* an interaction happened and what it referenced — **the actual prompt and response text lives in the user's mailbox** and is retrieved through eDiscovery (more on that just below).
+**What's captured:** every Copilot interaction generates an event in the Microsoft Purview **unified audit log** — activity `CopilotInteraction`, with the user, the app, the time, and the resources (files, emails) the interaction referenced, including available sensitivity-label metadata. Free Copilot Chat is logged too — you'll see `AppHost = BizChat` (one nuance worth capturing for an audit query: Copilot Chat opened from the **Edge sidebar, Windows Copilot or copilot.cloud.microsoft.com** logs as `AppHost = Bing`, not `BizChat` — so include both values when you search, or you'll miss a whole surface). This is part of **Audit (Standard)**, with no extra step and no extra charge for Microsoft's own Copilots. Important nuance: the audit event records *that* an interaction happened and what it referenced — **the actual prompt and response text lives in the user's mailbox** and is retrieved through eDiscovery (more on that just below).
 
 **Searching at scale — without per-user trawling:**
 
@@ -413,7 +413,7 @@ First, two things that catch people out:
 **What I'd recommend for a records-conscious organisation:**
 
 - Apply a Data Lifecycle Management retention policy on the "Microsoft Copilot experiences" location, set to your records schedule.
-- Use retention labels plus the "cloud attachments" option to preserve the versions of files Copilot referenced.
+- Use retention labels plus the "cloud attachments" option to preserve the versions of files **users reference in their prompts** — note that files Copilot itself *surfaces* in a response aren't captured this way, so rely on the mailbox retention policy and eDiscovery for those.
 - Treat eDiscovery as your system of record for verification.
 - Map the controls to your obligations with Compliance Manager's AI assessment templates.
 
@@ -429,7 +429,7 @@ One honest gap: Microsoft doesn't publish country-specific records guidance, so 
 
 Three things working together:
 
-1. **Watch — DSPM for AI.** Microsoft Purview **Data Security Posture Management for AI** is the "front door" for discovering and monitoring AI use across Copilot, agents and other AI apps. It keeps an inventory of every AI app and agent active in the last 30 days and runs weekly data-risk assessments.
+1. **Watch — DSPM for AI.** Microsoft Purview **Data Security Posture Management for AI** is the "front door" for discovering and monitoring AI use across Copilot, agents and other AI apps. It keeps an inventory of every AI app and agent active in the last 30 days and runs weekly data-risk assessments (run automatically across your top 100 SharePoint sites by usage, with broader custom assessments available).
 
 2. **Get notice — the Message center.** The Microsoft 365 **Message center** is where upcoming changes land. The **"Major update"** tag gives you **at least 30 days' notice** when something needs action, it explicitly covers "a new service or app deployed with default settings turned on," and you can get a weekly digest.
 
