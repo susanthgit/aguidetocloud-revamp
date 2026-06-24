@@ -142,3 +142,13 @@ logo_emoji = "🐙"
 official_url = "https://resources.github.com/learn/certifications/"
 cert_path_note = "Start with GitHub Foundations (fundamentals), then specialise: Actions, Administration, Advanced Security, and the GitHub Copilot certification."
 order = 14
+
+[[vendor]]
+slug = "snowflake"
+name = "Snowflake"
+short_name = "Snowflake"
+accent = "#29B5E8"
+logo_emoji = "❄️"
+official_url = "https://www.snowflake.com/en/certifications/"
+cert_path_note = "Start with SnowPro Core (foundational), then specialise: SnowPro Advanced (Architect, Data Engineer, Administrator, Data Analyst, Data Scientist)."
+order = 15

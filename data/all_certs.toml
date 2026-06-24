@@ -6159,3 +6159,45 @@ exam_prerequisites = "None (working knowledge of GitHub, CI/CD, and secure devel
 exam_question_types = ["Multiple choice", "Multiple response"]
 guided_url = "/guided/gh-500/"
 practice_url = "/guided/gh-500/practice/"
+
+[[cert]]
+slug = "snowpro-core"
+vendor = "snowflake"
+code = "SNOWPRO-CORE"
+name = "SnowPro Core Certification"
+tagline = "Master the Snowflake SnowPro Core Certification (COF-C03) - the AI Data Cloud architecture, account management and data governance, data loading and unloading, performance optimization and querying, and Secure Data Sharing collaboration."
+exam_category = "Snowflake"
+level = "core"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 760
+featured = false
+price_practice = 9
+
+[cert_map."snowpro-core"]
+vendor = "snowflake"
+code = "SNOWPRO-CORE"
+name = "SnowPro Core Certification"
+tagline = "Master the Snowflake SnowPro Core Certification (COF-C03) - the AI Data Cloud architecture, account management and data governance, data loading and unloading, performance optimization and querying, and Secure Data Sharing collaboration."
+exam_category = "Snowflake"
+level = "core"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 760
+featured = false
+price_practice = 9
+exam_url = "https://learn.snowflake.com/en/certifications/snowpro-core-c03/"
+exam_cost = "$175 USD"
+exam_duration = 115
+exam_passing_score = "750 / 1000 (scaled)"
+exam_questions_real = "100"
+exam_provider = "Snowflake (Pearson VUE / online proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "None (6+ months of hands-on Snowflake experience recommended)"
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/snowpro-core/"
+practice_url = "/guided/snowpro-core/practice/"

@@ -134,6 +134,7 @@ function getExamCategory(cert) {
     'eccouncil': 'EC-Council',
     'fortinet': 'Fortinet',
     'github': 'GitHub',
+    'snowflake': 'Snowflake',
   };
   return vendorCategoryMap[cert.vendor] || cert.vendor;
 }
