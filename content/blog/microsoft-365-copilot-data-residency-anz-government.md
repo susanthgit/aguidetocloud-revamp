@@ -339,7 +339,7 @@ ANZ teams sometimes ask whether they should be in a "government cloud." For Micr
 | **GCC High** | US defence contractors, ITAR data | DISA SRG L4 |
 | **DoD** | US Department of Defense | DISA SRG L5 |
 
-These are **not available to Australian or New Zealand government** agencies, and Anthropic models aren't available in them. (Microsoft 365 Copilot *is* available in **GCC** for eligible US agencies — but not in GCC High or DoD.) The ANZ government path is the **commercial cloud** with IRAP — not a US government cloud. (One small but useful detail that *does* travel: in those government clouds **web search is off by default**, which is a sensible posture to mirror voluntarily in any sovereignty-sensitive commercial tenant.)
+These are **not available to Australian or New Zealand government** agencies, and Anthropic models aren't available in them. (Microsoft 365 Copilot *is* available to eligible US agencies in Microsoft's government clouds, and is in scope for FedRAMP there — confirm the current per-tier status across GCC, GCC High and DoD on the Service Trust Portal.) The ANZ government path is the **commercial cloud** with IRAP — not a US government cloud. (One small but useful detail that *does* travel: in those government clouds **web search is off by default**, which is a sensible posture to mirror voluntarily in any sovereignty-sensitive commercial tenant.)
 
 *Source: [Microsoft 365 Government — how to buy](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/microsoft-365-government-how-to-buy).*
 
@@ -433,6 +433,7 @@ No — Microsoft Cloud for Sovereignty is primarily an Azure framework. ANZ gove
 
 - [Microsoft 365 Copilot Security: Top Questions Answered](/blog/microsoft-365-copilot-security-questions-answered/) *(the security pillar this residency deep-dive belongs to)*
 - [SharePoint Oversharing Controls for Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/)
+- [Copilot Certifications & Compliance for RFPs](/blog/microsoft-365-copilot-compliance-certifications-rfp/) *(what it's certified against, and how to prove it)*
 - [The Copilot Control System Explained](/blog/microsoft-365-copilot-control-system-complete-guide/)
 - [Microsoft 365 Copilot Deployment — The Complete Guide](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) *(the IT-admin checklist that anchors this cluster)*
 - [Agent 365 Security — Entra, Purview, Defender](/blog/agent-365-security-governance-complete-guide/)
