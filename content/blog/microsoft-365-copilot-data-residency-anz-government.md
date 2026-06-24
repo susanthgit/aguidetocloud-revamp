@@ -25,7 +25,7 @@ faq:
   - question: "What is Multi-Geo and how does Copilot use it?"
     answer: "Multi-Geo Capabilities let you pin individual users' data to specific geographies using a Preferred Data Location (PDL). Copilot honours it — a user whose PDL is NZL has their Copilot interaction history stored in New Zealand; if a PDL isn't set, the data goes to the tenant's primary geography. One trade-off: buying Multi-Geo opts the whole tenant out of the EU Data Boundary."
   - question: "Is Microsoft 365 Copilot IRAP assessed at PROTECTED for Australian and New Zealand government?"
-    answer: "The Microsoft 365 (Office 365) platform Copilot runs on has IRAP assessments at the PROTECTED classification, and Copilot inherits that platform posture. But Microsoft 365 Copilot is not separately enumerated in the IRAP scope documentation published on Microsoft Learn, and the most recent publicly documented assessment predates Copilot's general availability. Confirm Copilot's current in-scope status in the Microsoft Service Trust Portal or with your Microsoft account team before you rely on it in an assessment."
+    answer: "The Microsoft 365 (Office 365) platform Copilot runs on has IRAP assessments at the PROTECTED classification, and Copilot runs on that assessed platform. But Microsoft 365 Copilot is not separately enumerated in the IRAP scope documentation published on Microsoft Learn, and the most recent publicly documented assessment predates Copilot's general availability. Confirm Copilot's current in-scope status in the Microsoft Service Trust Portal or with your Microsoft account team before you rely on it in an assessment."
   - question: "Does an IRAP assessment mean Copilot is automatically authorised for our agency?"
     answer: "No. An IRAP assessment is an independent assessment of Microsoft's platform controls — it is an input to your agency's own Security Assessment and Authorisation, not an automatic Authority to Operate. Each agency still runs its own risk assessment, engages its own IRAP assessor for its specific deployment, and authorises the system itself. New Zealand agencies can use Microsoft's IRAP reports the same way, as an input to their own assurance process."
   - question: "Are Anthropic (Claude) models a data sovereignty concern for ANZ government?"
@@ -60,9 +60,9 @@ So here it is in plain English, with the **official Microsoft documentation link
 
 {{< margin >}}This started as a public-sector sovereignty review. The questions are universal — every regulated organisation asks them.{{< /margin >}}
 
-<p><img src="/images/blog/copilot-security-qa/demo-purview-security-home.webp" alt="Microsoft Purview home page showing a compliance posture score and a posture breakdown across HIPAA, ISO, PCI and NIST standards" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-security-qa/hero-anz-data-residency.webp" alt="Diagram titled 'Where your Copilot data lives' for Australia and New Zealand: an Australian tenant stores Microsoft 365 Copilot data in-country at rest by default, while a New Zealand tenant defaults to the Asia-Pacific region unless Advanced Data Residency or Multi-Geo is added; the optional web search query to Bing is shown as the one exception that leaves the Microsoft 365 service boundary" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*Sovereignty questions ultimately roll up to your compliance posture — which standards you can evidence, and where. (Microsoft demo environment.)*
+*Australia gets in-country residency by default; New Zealand needs Advanced Data Residency or Multi-Geo. The optional web query to Bing is the one thing that crosses the boundary.*
 
 **Quick links:**
 
@@ -154,9 +154,11 @@ Start with the foundation, because the rest builds on it. Microsoft 365 Copilot 
 - Your **prompts**, the **data they retrieve** through Microsoft Graph, and the **generated responses** all remain within the Microsoft 365 service boundary, under the same privacy, security and compliance commitments as the rest of your tenant.
 - Processing uses **Azure OpenAI**, not OpenAI's public service. Azure OpenAI **doesn't cache your content**.
 - Your prompts, responses and Graph data are **not used to train** the foundation models.
-- **Microsoft Graph data isn't copied into a Copilot store** — Copilot reads your existing email, files and chats in place, under their existing permissions and residency.
+- **Your source content isn't copied into a separate Copilot store** — Copilot reads your existing email, files and chats in place through Microsoft Graph, under their existing permissions and residency. It *does* build a **semantic index** of your organisation's content to ground answers — and that index is **covered by the same at-rest residency commitment** as your interaction data, so it stays in your committed geography too.
 
 Microsoft 365 Copilot has been a **covered data-residency workload since 1 March 2024** (Copilot Chat was added on 1 September 2025) — meaning it's explicitly inside the contractual residency commitments described below, not an exception bolted on the side.
+
+> **Scope note:** throughout this guide, "Copilot" means **Microsoft 365 Copilot and Copilot Chat**. Agents you build in **Copilot Studio** have their own, more variable residency characteristics and are a separate topic — don't assume the commitments here apply unchanged to a custom agent.
 
 > **Why "service boundary" matters more than "data centre":** the boundary is the security and compliance perimeter — isolation, encryption, no training, no caching. *Residency* then narrows down which **region** inside that boundary your data sits in. A reviewer needs both answers; they're different guarantees.
 
@@ -173,7 +175,7 @@ Microsoft makes residency commitments through **four mechanisms**. Knowing which
 | **Product Terms** (baseline) | Stores core service data — including Copilot interactions — at rest only within your geography, *for the geographies on the committed list*. | Included with a qualifying Microsoft 365 / Office 365 licence. No add-on. |
 | **Advanced Data Residency (ADR)** | A durable, contractual commitment to your **local country/region**, expanded to more workloads, plus migration services. | Paid add-on. Requires **100% seat coverage**. Adds geographies (like New Zealand) the baseline doesn't cover. |
 | **Multi-Geo** | Per-**user** data location via a Preferred Data Location (PDL), across satellite geographies. | Paid add-on (minimum 5% of users). |
-| **EU Data Boundary** | Stores *and processes* EU/EFTA customer data within the EU boundary. | Automatic for EU/EFTA sign-up locations (not relevant to ANZ). |
+| **EU Data Boundary** | Stores *and processes* EU/EFTA customer data within the EU boundary — including **LLM inference** (ANZ has no equivalent processing boundary). | Automatic for EU/EFTA sign-up locations (not relevant to ANZ). |
 
 Two things this table quietly tells you, both of which matter enormously for New Zealand:
 
@@ -257,7 +259,7 @@ So the precise, honest answer to *"does our data leave the region?"* is: **your 
 
 When **web search is on**, Copilot can send a search query to Bing — and that's the one path where data handling genuinely changes. I cover this in depth in the [security questions guide](/blog/microsoft-365-copilot-security-questions-answered/#what-actually-gets-sent-to-the-web), so here's the residency-relevant summary:
 
-- Copilot sends a **generated query of a few words**, with **user and tenant identifiers removed** — never your full prompt, files or emails.
+- Copilot sends a **generated query of a few words**, with **user and tenant identifiers removed** (your Microsoft Entra username, domain and tenant ID). Your **full prompt is generally not sent** — with one documented exception: a **very short prompt** (like "local weather") can be sent verbatim. Your **files and emails are never sent**.
 - The **Bing search service operates separately** from Microsoft 365. For these queries Microsoft acts as an **independent data controller**, not your processor.
 - As a result, the **Data Protection Addendum and the EU Data Boundary don't apply** to the generated web queries (and neither does HIPAA).
 - The queries aren't used to train models, improve Bing, or build ad profiles — they're treated as customer confidential information.
@@ -272,7 +274,7 @@ One honest nuance: even with identifiers stripped, the search *terms* can still 
 
 A newer consideration, and one ANZ government teams should decide on deliberately. Microsoft 365 Copilot can now use **Anthropic (Claude) models** alongside the OpenAI ones, with Anthropic acting as a **Microsoft subprocessor**. For the standard Anthropic models your data isn't stored by or used to train Anthropic, and the Customer Copyright Commitment still applies — but for residency and sovereignty there are specifics that matter:
 
-- They are **on by default for most commercial-cloud tenants outside the EU/EFTA and the UK** — which **includes Australia and New Zealand**.
+- They are **on by default for most commercial-cloud tenants outside the EU/EFTA and the UK** — which **includes Australia and New Zealand**. (As of April 2026, EU/EFTA and UK customers can also *opt in* via a new admin-center setting — but ANZ is on by default, and Anthropic stays outside the EU Data Boundary and in-country processing commitments regardless.)
 - They are **out of scope for the EU Data Boundary** and for **in-country LLM processing commitments**. So even if your data *rests* in Australia or New Zealand, Anthropic processing may not follow that in-country line.
 - They are **not available in US government or sovereign clouds** at all (no FedRAMP authorisation yet).
 - There's a separate, **default-off** category — *"Preview models with Data Retention"* — where Anthropic acts under its own terms and **does retain data**. Keep those off unless you've explicitly decided otherwise.
@@ -292,11 +294,12 @@ This came up almost word-for-word in a real review: *"we know the servers are in
 - Copilot data sits behind **logical tenant isolation** through Microsoft Entra authentication and role-based access control.
 - It's **encrypted at rest and in transit**.
 - It's reachable only by **identities your tenant authorises** — Copilot only ever surfaces content a user already has permission to open.
-- **Microsoft support engineers don't get standing access** to your content. If you enable **Customer Lockbox**, any access needed to service a ticket requires *your* explicit approval — it's **opt-in and off by default** (typically E5 / Purview-level licensing, so confirm yours) and it covers Microsoft 365 Copilot interactions.
+- **Microsoft support engineers don't get standing access** to your content. If you enable **Customer Lockbox**, any access needed to service a ticket requires *your* explicit approval — it's **opt-in and off by default**. It's included in **Microsoft 365 / Office 365 E5** and available to **E3** tenants via the **E5 Compliance add-on** (confirm your SKU). Copilot interactions are covered through **Exchange Online's** Lockbox mechanism, because Copilot interaction history is stored in the user's Exchange Online mailbox.
+- For agencies that need to hold the **encryption keys** themselves, Microsoft 365 **Customer Key** (bring-your-own-key) lets you supply root keys through Azure Key Vault — so content can't be decrypted by Microsoft, even under a compelled-access demand. Residency answers *where* your data sits; Customer Key answers *who can decrypt it* — a related but separate sovereignty control.
 
 So the precise reassurance for a reviewer is: knowing the region tells an attacker nothing useful, because access never depends on location — it depends on identity and permissions, which are yours to control.
 
-*Sources: [Microsoft 365 Copilot privacy](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy) · [Customer Lockbox](https://learn.microsoft.com/en-us/purview/customer-lockbox-requests).*
+*Sources: [Microsoft 365 Copilot privacy](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy) · [Customer Lockbox](https://learn.microsoft.com/en-us/purview/customer-lockbox-requests) · [Customer Key overview](https://learn.microsoft.com/en-us/purview/customer-key-overview).*
 
 ---
 
@@ -307,7 +310,7 @@ For Australian and New Zealand government readers, this is the section that matt
 **What's true:**
 
 - **IRAP** (the Infosec Registered Assessors Program, governed by the Australian Cyber Security Centre) provides independent assessment of a system's controls against the Australian Government **Information Security Manual (ISM)**.
-- The **Microsoft 365 / Office 365 platform** that Copilot runs on has been **IRAP-assessed at the PROTECTED classification**, and Copilot inherits that platform posture. Microsoft was the first public cloud provider to reach PROTECTED, and the assessed platforms include Azure, Office 365, Dynamics 365, Microsoft Managed Desktop and Windows 365.
+- The **Microsoft 365 / Office 365 platform** that Copilot runs on has been **IRAP-assessed at the PROTECTED classification**, and Copilot runs on that assessed platform. (Treat "runs on the assessed platform" as informal shorthand, not a formal IRAP scope statement — see Caveat 2.) Microsoft was the first public cloud provider to reach PROTECTED, and the assessed platforms include Azure, Office 365, Dynamics 365, Microsoft Managed Desktop and Windows 365.
 - **New Zealand agencies can use Microsoft's IRAP reports too** — the New Zealand assurance frameworks are close enough to the ISM that the IRAP assessments are accepted as an input.
 
 **The two honest caveats a good assessor will want stated:**
@@ -332,7 +335,7 @@ ANZ teams sometimes ask whether they should be in a "government cloud." For Micr
 | **GCC High** | US defence contractors, ITAR data | DISA SRG L4 |
 | **DoD** | US Department of Defense | DISA SRG L5 |
 
-These are **not available to Australian or New Zealand government** agencies, and Anthropic models aren't available in them. The ANZ government path is the **commercial cloud** with IRAP — not a US government cloud. (One small but useful detail that *does* travel: in those government clouds **web search is off by default**, which is a sensible posture to mirror voluntarily in any sovereignty-sensitive commercial tenant.)
+These are **not available to Australian or New Zealand government** agencies, and Anthropic models aren't available in them. (Microsoft 365 Copilot *is* available in **GCC** for eligible US agencies — but not in GCC High or DoD.) The ANZ government path is the **commercial cloud** with IRAP — not a US government cloud. (One small but useful detail that *does* travel: in those government clouds **web search is off by default**, which is a sensible posture to mirror voluntarily in any sovereignty-sensitive commercial tenant.)
 
 *Source: [Microsoft 365 Government — how to buy](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/microsoft-365-government-how-to-buy).*
 
