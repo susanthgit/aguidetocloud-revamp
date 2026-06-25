@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 25 Jun 2026 12:32:19 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2026 16:34:30 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Power BI] Users may be intermittently unable to export reports with sensitivity labels in Power BI</title>
@@ -15,15 +15,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1402061</guid>
       <pubDate>Tue, 23 Jun 2026 13:50:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Investigating user reports of issues with various Microsoft 365 services</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1400794</link>
-      <description>[Microsoft 365 suite] Users reported issues with Microsoft 365 services.</description>
-      <category>Microsoft 365 suite</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">MO1400794</guid>
-      <pubDate>Mon, 22 Jun 2026 13:09:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Purview] We've detected a Microsoft Purview Data Loss Prevention issue in your environment</title>
@@ -458,6 +449,15 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1314072</guid>
       <pubDate>Sun, 17 May 2026 03:07:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Viva] Some users may see that some Viva Engage message posting operations are failing</title>
+      <link>https://www.aguidetocloud.com/service-health/#MV1315266</link>
+      <description>[Microsoft Viva] Users may have seen that some Viva Engage message posting operations were failing.</description>
+      <category>Microsoft Viva</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MV1315266</guid>
+      <pubDate>Sat, 16 May 2026 22:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
