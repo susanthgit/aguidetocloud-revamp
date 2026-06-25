@@ -248,3 +248,4 @@ Pick a lighter model where it fits (and watch for Cowork 1), keep tasks scoped, 
 - [Cowork: Prompts to try](/blog/microsoft-copilot-cowork-prompts-to-try/)
 - [Cowork: Skills and plugins](/blog/microsoft-copilot-cowork-skills-and-plugins/)
 - [Cowork: Admin enablement and governance](/blog/microsoft-copilot-cowork-admin-and-governance/)
+- [Cowork: On mobile](/blog/microsoft-copilot-cowork-mobile/)

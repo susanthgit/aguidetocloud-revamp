@@ -475,3 +475,4 @@ And the chat surfaced a per-slide summary, a ready-to-paste LinkedIn caption (18
 - [Cowork: Pricing and cost management](/blog/microsoft-copilot-cowork-pricing-cost-management/)
 - [Cowork: Skills and plugins](/blog/microsoft-copilot-cowork-skills-and-plugins/)
 - [Cowork: Admin enablement and governance](/blog/microsoft-copilot-cowork-admin-and-governance/)
+- [Cowork: On mobile](/blog/microsoft-copilot-cowork-mobile/)

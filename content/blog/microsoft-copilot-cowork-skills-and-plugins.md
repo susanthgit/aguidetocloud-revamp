@@ -709,6 +709,7 @@ For full control, the [Microsoft 365 Agents SDK](https://github.com/microsoft/Ag
 - [Cowork: Prompts to try](/blog/microsoft-copilot-cowork-prompts-to-try/)
 - [Cowork: Pricing and cost management](/blog/microsoft-copilot-cowork-pricing-cost-management/)
 - [Cowork: Admin enablement and governance](/blog/microsoft-copilot-cowork-admin-and-governance/)
+- [Cowork: On mobile](/blog/microsoft-copilot-cowork-mobile/)
 
 ## Official Microsoft references for skills + plugins
 

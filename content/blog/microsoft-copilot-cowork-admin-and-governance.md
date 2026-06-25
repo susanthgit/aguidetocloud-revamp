@@ -307,3 +307,4 @@ Cowork is new and evolving fast. For the current, authoritative list of limitati
 - [Cowork: Prompts to try](/blog/microsoft-copilot-cowork-prompts-to-try/)
 - [Cowork: Pricing and cost management](/blog/microsoft-copilot-cowork-pricing-cost-management/)
 - [Cowork: Skills and plugins](/blog/microsoft-copilot-cowork-skills-and-plugins/)
+- [Cowork: On mobile](/blog/microsoft-copilot-cowork-mobile/)
