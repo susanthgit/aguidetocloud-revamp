@@ -4,7 +4,7 @@ list_title: "Copilot Cost Management & Billing"
 hub_id: "copilot-pricing"
 description: "How Microsoft Copilot usage is billed and controlled: pay-as-you-go vs prepaid vs P3, spending policies, the Cost Management dashboard, and admin roles."
 date: 2026-06-23
-lastmod: 2026-06-23
+lastmod: 2026-06-25
 draft: false
 card_tag: "Copilot"
 tag_class: "ai"
@@ -51,7 +51,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** Prices are published US list rates, current as of June 2026; actual pricing varies by currency, region and agreement, and Microsoft's figures are estimates, not quotes. Confirm in [Microsoft Learn — usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits). **Last verified: 23 June 2026.**
+🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** Prices are published US list rates, current as of June 2026; actual pricing varies by currency, region and agreement, and Microsoft's figures are estimates, not quotes. Confirm in [Microsoft Learn — usage-based billing](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits). **Last verified: 25 June 2026.**
 
 </div>
 
@@ -216,9 +216,9 @@ A couple of things the public docs *don't* spell out (so don't promise them): th
 
 ## Inside the Cost Management dashboard — a walkthrough {#walkthrough}
 
-Here's the new **Microsoft 365 admin center → Copilot → Cost Management** experience, step by step. (Screens are from a Microsoft demo tenant.)
+Here's the new **Microsoft 365 admin center → Copilot → Cost Management** experience, step by step. (Screens are from Microsoft's Cost Management demo environment, so the names and figures are sample data.)
 
-<p><img src="/images/blog/cost-management/01-cost-management-home.webp" alt="Microsoft 365 admin center Cost management page with an Unlock AI experiences enabled by usage-based billing heading, a Get started button, and two cards — Copilot Cowork (showing 9 pending requests) and Work IQ API." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/cost-management/cm-home.webp" alt="Microsoft 365 admin center Cost management page with an Unlock AI experiences enabled by usage-based billing heading, a Get started button, and two cards — Copilot Cowork (showing 9 pending requests) and Work IQ API." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *The Cost Management home — **Copilot → Cost Management**. **Get started** activates usage-based billing; the cards show the services it covers today (note the "9 pending requests" signal on Cowork).*
 
@@ -238,9 +238,9 @@ In **Cost Management**, select **Get Started**. The default policy is what *unlo
 
 **Avoid:** activating an **uncapped All-users policy** unless finance has explicitly approved open-ended pay-as-you-go.
 
-<p><img src="/images/blog/cost-management/03-default-spending-policy.webp" alt="Activate the default spending policy panel showing a note that 12 users have requested access to Copilot Cowork, a Billing method subscription selector, a Set the monthly spending limit choice of Don't limit or Limit, an optional per-user limit toggle, and Activate, Customize setup configuration, and Cancel buttons." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/cost-management/cm-default-policy.webp" alt="Activate the default spending policy panel — Limit monthly spending selected with a 50,000-credit monthly budget, an optional per-user cap of 1,000 credits, Define alerts switched on with recipients, an alert threshold, and Activate and Cancel buttons." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*Step 2 — the **Activate the default spending policy** panel: pick the billing method, choose whether to cap monthly spend, and set an optional per-user limit.*
+*Step 2 — the **Activate the default spending policy** panel: cap the policy's monthly spend (here 50,000 credits), add an optional per-user limit (1,000), switch on email alerts, then **Activate**.*
 
 ### Step 3 — scope tighter with targeted policies
 
@@ -248,23 +248,31 @@ Beyond the default **All users** policy, add **Specific-groups** policies (via s
 
 **Do this:** make **Specific groups** your default rollout pattern — it's how you keep a pilot contained. Leave **auto-include new services** *off* for conservative tenants; turn it on only if you want future metered services covered automatically.
 
-<p><img src="/images/blog/cost-management/04-spending-policy-scope.webp" alt="Add spending policy wizard, Applies to step, showing a Name this policy field and a choice of who the policy applies to — All users (selected), Specific groups, or Specific users (coming soon)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/cost-management/cm-policy-scope.webp" alt="Add spending policy wizard, Applies-to step — a Name this policy field set to Power users, and a choice of who the policy applies to: All users, Specific groups (selected), or Specific users (coming soon), above a searchable list of security groups such as All Company, Marketing, and Product Dev." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *Step 3 — scope a policy to **All users** or **Specific groups** (via security groups). The step rail on the left shows the rest of the wizard.*
 
-<p><img src="/images/blog/cost-management/05-agents-and-services.webp" alt="Add spending policy wizard, Agents and services step, with checkboxes for Copilot Cowork (Copilot license required) and Work IQ API, and a toggle to Allow new services and agents as they become available." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/cost-management/cm-policy-limits.webp" alt="Add spending policy wizard, Set limits and alerts step — a choice between Don't limit monthly spending and Limit monthly spending (selected), a monthly spending limit field, an optional per-user budget toggle, and a Define alerts toggle." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Step 3 (continued) — **Set limits and alerts**: cap the policy's monthly spend, optionally add a per-user budget, and switch on email alerts so spend never surprises you.*
+
+<p><img src="/images/blog/cost-management/cm-policy-agents.webp" alt="Add spending policy wizard, Agents and services step, with checkboxes for Copilot Cowork (Copilot license required) and Work IQ API, and a toggle to Allow new services and agents as they become available." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *Step 3 (continued) — choose which **agents and services** the policy can spend on. Today that's **Copilot Cowork** and the **Work IQ API**, with a toggle to auto-include new ones.*
 
-<p><img src="/images/blog/cost-management/09-review-and-create.webp" alt="Add spending policy wizard, Review and create step, summarising the policy — Policy name Power users, Scope 3 groups selected, Services Copilot Cowork and Work IQ API, the billing-method subscription, and Limits and alerts of 50,000 credits per month and 1,000 credits per user." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/cost-management/cm-policy-review.webp" alt="Add spending policy wizard, Review and create step, summarising the policy — Policy name Power users, Scope 3 groups selected, Services Copilot Cowork and Work IQ API, the billing-method subscription, and Limits and alerts of 50,000 credits per month and 1,000 credits per month per user." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *Step 3 (review) — the **Review & create** screen lays out the whole policy in one place — scope, services, billing method, and limits — before you commit.*
+
+<p><img src="/images/blog/cost-management/cm-config-active.webp" alt="Cost management Configuration tab showing a You've activated the default spending policy confirmation and a policy table listing the All Users Policy and a Power users policy, both Active, each covering Copilot Cowork and Work IQ API at 50,000 credits per month." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Once created, every policy shows up on the **Configuration** tab — here the default **All Users Policy** and the targeted **Power users** policy, both active. Where they overlap, the most targeted policy wins.*
 
 ### Step 4 — buy prepaid credits (optional)
 
 From **Configuration**, **Buy prepaid credits** walks you through the **P3 Pre-Purchase Plan** — pick the subscription, choose the commit amount, check out. Those credits are then drawn down first.
 
-<p><img src="/images/blog/cost-management/06-buy-prepaid-p3.webp" alt="Buy credits panel in the Microsoft 365 admin center showing Buy prepaid credits and save more with a prepurchase plan (P3), a subscription selector, and credit-amount options from 300,000 up to 300,000,000 credits, with a Go to checkout button." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/cost-management/cm-buy-prepaid.webp" alt="Buy credits panel in the Microsoft 365 admin center showing Buy prepaid credits and save more with a prepurchase plan (P3), a subscription selector, and credit-amount options from 300,000 up to 300,000,000 credits, with a Go to checkout button." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *Step 4 — the **Buy credits** panel: it literally reads "prepurchase plan (P3)". Pick a subscription and a credit volume; overage falls back to pay-as-you-go.*
 
@@ -273,17 +281,25 @@ From **Configuration**, **Buy prepaid credits** walks you through the **P3 Pre-P
 - The **Overview** tab is your snapshot: total credits used, the **prepaid vs pay-as-you-go** split, active users, **top actions** (credit requests, who's near a limit), and the consumption trend.
 - The **Consumption** tab is the drill-down — usage by **user, group, or agent/service** over time, with each user's limit, recent activity, and session count. These are your **FinOps** views for finding the cost drivers.
 
-<p><img src="/images/blog/cost-management/07-overview-tab.webp" alt="Cost management Overview tab with four counters — Total Copilot Credits used 85,462, Prepaid capacity pack credits used 72,000 of 100,000, Pay-as-you-go credits used 13,462, and Active users 4,684 — above a Top actions row showing users requesting credit increases and policies and users at or above 90 percent of their spending limit." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/cost-management/cm-overview.webp" alt="Cost management Overview tab with four counters — Total Copilot Credits used 85,462, Prepaid capacity pack credits used 72,000 of 100,000, Pay-as-you-go credits used 13,462, and Active users 4,684 — above a Top actions row showing users requesting credit increases and policies and users at or above 90 percent of their spending limit." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *The **Overview** tab — total credits used, the prepaid-vs-pay-as-you-go split, active users, and a **Top actions** row flagging credit requests and anyone near a limit.*
 
-<p><img src="/images/blog/cost-management/08-consumption-tab.webp" alt="Cost management Consumption tab, Users view, listing each user's monthly credit limit, total credits used, Microsoft 365 Copilot licence status, and last activity date, with pivots for Users, Groups, and Agents and services." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/cost-management/cm-consumption-users.webp" alt="Cost management Consumption tab, Users view, listing each user's monthly credit limit, total credits used, Microsoft 365 Copilot licence status, and last activity date, with pivots for Users, Groups, and Agents and services." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *The **Consumption** tab — drill into usage by user (shown), group, or service, with each user's limit, spend, licence status, and last activity. (Demo data.)*
 
-<p><img src="/images/blog/cost-management/11-consumption-groups.webp" alt="Cost management Consumption tab, Groups view, listing each group's user count, total credits used, and average credits per user per day, for groups such as Marketing, Engineering, Sales, and Finance." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/cost-management/cm-user-drilldown.webp" alt="A single user's drill-down pane for Priya Raman — a credit-request banner, total credits spent this month of 2,400 against a 5,000 limit (48 percent used), spending-policy details, and a daily credit-usage chart for the past 30 days." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Drill into any user — here **Priya Raman**, who hit her limit and requested more: 2,400 of 5,000 credits used, her policy details, and a 30-day usage trend. This is the FinOps view for spotting heavy users.*
+
+<p><img src="/images/blog/cost-management/cm-consumption-groups.webp" alt="Cost management Consumption tab, Groups view, listing each group's user count, total credits used, and average credits per user per day, for groups such as Marketing, Engineering, Sales, and Finance." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *The same **Consumption** tab pivoted to **Groups** — total spend and average per-user-per-day for each team, so you can see which groups drive the cost. You can **export** this view for finance.*
+
+<p><img src="/images/blog/cost-management/cm-consumption-agents.webp" alt="Cost management Consumption tab pivoted to Agents and services, listing Copilot Cowork with 32,500 credits used by 120 active users and the Work IQ API with 3,100 credits used by 9 active users." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*And pivoted to **Agents and services** — which metered service is actually burning the credits. Today that's **Copilot Cowork** and the **Work IQ API**.*
 
 ---
 
@@ -295,7 +311,7 @@ When you set a spending limit, it's a **hard cap**, not a soft warning — and y
 - Access **resumes when credits reset on the first** of the next month.
 - A user who's blocked can **request access or more credits** from inside the experience. The request lands in the admin's **credit-requests** queue (surfaced under **Top Actions → View requests**), where you can add them to a policy, raise a limit, or onboard a whole group.
 
-<p><img src="/images/blog/cost-management/10-near-limit.webp" alt="Two Cost Management cards flagged Needs action — Policies at greater than or equal to 90 percent of spending limit, with progress bars for several group policies, and Users at greater than or equal to 90 percent of spending limit showing one user near their cap." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/cost-management/cm-near-limit.webp" alt="Two Cost Management cards flagged Needs action — Policies at greater than or equal to 90 percent of spending limit, with progress bars for several group policies, and Users at greater than or equal to 90 percent of spending limit showing one user near their cap." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *The dashboard flags **policies and users at ≥90% of their limit** so you can act before service stops — raise the limit, or let the credit-request flow handle it.*
 
