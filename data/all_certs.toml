@@ -6623,3 +6623,44 @@ exam_prerequisites = "None (OCI fundamentals plus hands-on experience with OCI I
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/oci-security-professional/"
 practice_url = "/guided/oci-security-professional/practice/"
+
+[[cert]]
+slug = "oci-networking-professional"
+vendor = "oracle"
+code = "OCI-NETWORKING-PROFESSIONAL"
+name = "Cloud Infrastructure 2026 Networking Professional"
+tagline = "Master the Oracle Cloud Infrastructure (OCI) 2026 Networking Professional exam (1Z0-1124-26) - Virtual Cloud Network design and IPv4/IPv6 addressing, gateways and route tables, OCI Load Balancer and Network Load Balancer, public and private DNS with Traffic Management steering, hybrid connectivity with Dynamic Routing Gateways, FastConnect and Site-to-Site VPN, transitive routing, network security with Network Firewall, WAF and Zero Trust Packet Routing, workload migration, and network troubleshooting."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 787
+featured = false
+price_practice = 9
+
+[cert_map."oci-networking-professional"]
+vendor = "oracle"
+code = "OCI-NETWORKING-PROFESSIONAL"
+name = "Cloud Infrastructure 2026 Networking Professional"
+tagline = "Master the Oracle Cloud Infrastructure (OCI) 2026 Networking Professional exam (1Z0-1124-26) - Virtual Cloud Network design and IPv4/IPv6 addressing, gateways and route tables, OCI Load Balancer and Network Load Balancer, public and private DNS with Traffic Management steering, hybrid connectivity with Dynamic Routing Gateways, FastConnect and Site-to-Site VPN, transitive routing, network security with Network Firewall, WAF and Zero Trust Packet Routing, workload migration, and network troubleshooting."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 787
+featured = false
+price_practice = 9
+exam_url = "https://education.oracle.com/oracle-cloud-infrastructure-2026-networking-professional/pexam_1Z0-1124-26"
+exam_cost = "$245 USD"
+exam_duration = 90
+exam_passing_score = "68% (verify at Oracle registration)"
+exam_questions_real = "50"
+exam_provider = "Oracle University / Pearson VUE (online proctored or test center)"
+exam_prerequisites = "None (OCI fundamentals plus hands-on experience with OCI networking, VCNs, and hybrid connectivity recommended)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/oci-networking-professional/"
+practice_url = "/guided/oci-networking-professional/practice/"
