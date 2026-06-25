@@ -6582,3 +6582,44 @@ exam_prerequisites = "None (OCI fundamentals plus hands-on experience with micro
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/oci-developer-professional/"
 practice_url = "/guided/oci-developer-professional/practice/"
+
+[[cert]]
+slug = "oci-security-professional"
+vendor = "oracle"
+code = "OCI-SECURITY-PROFESSIONAL"
+name = "Cloud Infrastructure 2026 Security Professional"
+tagline = "Master the Oracle Cloud Infrastructure (OCI) 2026 Security Professional exam (1Z0-1104-26) - IAM and identity domains, network and infrastructure security with Security Lists, NSGs, Zero Trust Packet Routing and Network Firewall, application and data security with WAF, Certificates, Vault/KMS and Data Safe, cloud security posture with Cloud Guard, Security Zones, Vulnerability Scanning and Bastion, and security operations with Audit, Logging, Events and Service Connector Hub."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 786
+featured = false
+price_practice = 9
+
+[cert_map."oci-security-professional"]
+vendor = "oracle"
+code = "OCI-SECURITY-PROFESSIONAL"
+name = "Cloud Infrastructure 2026 Security Professional"
+tagline = "Master the Oracle Cloud Infrastructure (OCI) 2026 Security Professional exam (1Z0-1104-26) - IAM and identity domains, network and infrastructure security with Security Lists, NSGs, Zero Trust Packet Routing and Network Firewall, application and data security with WAF, Certificates, Vault/KMS and Data Safe, cloud security posture with Cloud Guard, Security Zones, Vulnerability Scanning and Bastion, and security operations with Audit, Logging, Events and Service Connector Hub."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 786
+featured = false
+price_practice = 9
+exam_url = "https://education.oracle.com/oracle-cloud-infrastructure-security-professional/pexam_1Z0-1104-26"
+exam_cost = "$245 USD"
+exam_duration = 90
+exam_passing_score = "68% (verify at Oracle registration)"
+exam_questions_real = "50"
+exam_provider = "Oracle University / Pearson VUE (online proctored or test center)"
+exam_prerequisites = "None (OCI fundamentals plus hands-on experience with OCI IAM, networking, and security services recommended)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/oci-security-professional/"
+practice_url = "/guided/oci-security-professional/practice/"
