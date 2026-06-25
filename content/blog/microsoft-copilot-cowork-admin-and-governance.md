@@ -3,7 +3,7 @@ title: "Microsoft Copilot Cowork — Complete Admin Playbook"
 list_title: "Cowork: Admin enablement and governance"
 description: "Microsoft Copilot Cowork admin guide: turning it on, governance controls, oversharing protection, a pilot rollout playbook, and troubleshooting."
 date: 2026-06-15
-lastmod: 2026-06-22
+lastmod: 2026-06-25
 draft: false
 card_tag: "Cowork"
 tag_class: "ai"
@@ -29,7 +29,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork reached **general availability on 16 June 2026** — this page reflects the GA enablement path and governance stack. **Last verified: 22 June 2026.**
+🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork reached **general availability on 16 June 2026** — this page reflects the GA enablement path and governance stack. **Last verified: 25 June 2026.**
 
 </div>
 
@@ -103,6 +103,16 @@ It all lives in one place: the **Cost Management dashboard** in the [Microsoft 3
 <p><img src="/images/blog/cowork/cost-overview.webp" alt="Cost Management Overview tab showing four credit counters (Total Copilot Credits used, Prepaid capacity pack credits used, Pay-as-you-go credits used, Active users of Copilot Credits — all showing 0). Below that, a Monitor section with six insight cards: Groups spending the least credits, Groups spending the most credits, Spending trend, Agents and services spending the most credits, and Users spending the most credits. All cards show empty state messages 'No credits spent yet this month'. Two informational banners at top: grace period message and Cowork + Work IQ API scope notice." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 <p><img src="/images/blog/cowork/cost-consumption.webp" alt="Cost Management Consumption tab showing Copilot credit usage heading with three pivot tabs — Users (selected), Groups, and Agents and services (all showing 0 items). Below that, two filter pills (Microsoft 365 Copilot License, Copilot credits requested), a Search users box, Month to date dropdown, Export and Manage Columns buttons. The main content area shows '0 items' — empty state." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+Those two tabs are empty here because no credits have been spent yet. **Once usage starts, the same views fill in** — this is what you'll actually be watching:
+
+<p><img src="/images/blog/cowork/cost-overview-populated.webp" alt="Cost management Overview tab with four counters — Total Copilot Credits used 85,462, Prepaid capacity pack credits used 72,000 of 100,000, Pay-as-you-go credits used 13,462, and Active users 4,684 — above a Top actions row showing users requesting credit increases and policies and users at or above 90 percent of their spending limit." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The **Overview** tab once credits are flowing — total used, the prepaid-vs-pay-as-you-go split, active users, and a **Top actions** row flagging anyone near a limit.*
+
+<p><img src="/images/blog/cowork/cost-consumption-populated.webp" alt="Cost management Consumption tab, Users view, listing each user's monthly credit limit, total credits used, Microsoft 365 Copilot licence status, and last activity date, with pivots for Users, Groups, and Agents and services." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*And the **Consumption** tab with real data — drill into any user, group, or service to find your heavy users and cost drivers. (Full populated walkthrough in the [Cost Management hub](/blog/microsoft-365-copilot-cost-management/#walkthrough).)*
 
 > 💳 **Frontier grace period — your setup window.** If your tenant had at least one user who *used* Cowork in the Frontier program (30 March–16 June 2026), you get a grace period: you're **not billed for Cowork until 1 July 2026**. Treat that window as free setup time — turn on billing, set your caps and alerts, and allocate budgets *before* the meter starts. (Full detail in the [pricing spoke](/blog/microsoft-copilot-cowork-pricing-cost-management/).)
 
