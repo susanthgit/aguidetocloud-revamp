@@ -4,7 +4,7 @@ list_title: "Copilot Data Residency & Sovereignty (ANZ & Government)"
 hub_id: "it-admins"
 description: "Where Microsoft 365 Copilot data lives in Australia & New Zealand — residency, ADR, Multi-Geo, EU Data Boundary, IRAP and sovereignty, in plain English."
 date: 2026-06-24
-lastmod: 2026-06-24
+lastmod: 2026-06-25
 card_tag: "Security"
 tag_class: "security"
 images: ["images/og/blog/microsoft-365-copilot-data-residency-anz-government.jpg"]
@@ -267,6 +267,14 @@ When **web search is on**, Copilot can send a search query to Bing — and that'
 One honest nuance: even with identifiers stripped, the search *terms* can still reflect the **topic** of your prompt. So for a sovereignty-focused organisation, the clean control is simple: **turn web grounding off** — or use Microsoft Purview DLP to restrict how Copilot handles sensitive content in prompts and web searches (covered in the [security questions guide](/blog/microsoft-365-copilot-security-questions-answered/#what-actually-gets-sent-to-the-web)).
 
 *Sources: [Manage public web access in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/manage-public-web-access) · [Enterprise data protection](https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection).*
+
+---
+
+## Does any government make you turn web grounding off?
+
+Short answer: **no — not as a published mandate.** We looked across ASD/ACSC's [Blueprint for Secure Cloud](https://blueprint.asd.gov.au/) (which configures Microsoft 365 against the ISM), the DTA's [AI policy and technical standard](https://www.digital.gov.au/policy/ai), and Microsoft's own guidance. **No Australian — or New Zealand — government agency publishes a specific directive to disable web grounding in Microsoft 365 Copilot.** What the frameworks *do* say is that every agency should have an AI usage policy and assess its own data-flow risks. So whether to turn web grounding off is a decision you document under your own policy, not one handed down from above.
+
+The basis for *considering* it is the same point as the web-query exception above: web search queries leave the Microsoft 365 Data Protection Addendum perimeter and are handled by Bing under the Microsoft Services Agreement, with Microsoft acting as an independent data *controller*. That is exactly why US Government clouds ship with web search **off by default**. For a sensitive-data agency, disabling web grounding — or scoping it with Purview DLP — is a reasonable, defensible control. Just record it as your own risk decision.
 
 ---
 
