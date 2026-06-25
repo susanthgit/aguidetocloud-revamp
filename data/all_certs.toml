@@ -6500,3 +6500,44 @@ exam_prerequisites = "None required (Splunk Core Certified User recommended firs
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/splunk-core-power-user/"
 practice_url = "/guided/splunk-core-power-user/practice/"
+
+[[cert]]
+slug = "splunk-enterprise-admin"
+vendor = "splunk"
+code = "SPLUNK-ENTERPRISE-ADMIN"
+name = "Splunk Enterprise Certified Admin"
+tagline = "Master the Splunk Enterprise Certified Admin exam (SPLK-1003) - Splunk components and license management, configuration files and precedence with btool, indexes and bucket retention, users and roles and LDAP/SAML/MFA authentication, forwarders and outputs.conf, the deployment server and Forwarder Management, distributed search, monitor/network/scripted/agentless inputs, and parsing and transforming raw data with props.conf, transforms.conf, and SEDCMD."
+exam_category = "Splunk"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 9
+order = 779
+featured = false
+price_practice = 9
+
+[cert_map."splunk-enterprise-admin"]
+vendor = "splunk"
+code = "SPLUNK-ENTERPRISE-ADMIN"
+name = "Splunk Enterprise Certified Admin"
+tagline = "Master the Splunk Enterprise Certified Admin exam (SPLK-1003) - Splunk components and license management, configuration files and precedence with btool, indexes and bucket retention, users and roles and LDAP/SAML/MFA authentication, forwarders and outputs.conf, the deployment server and Forwarder Management, distributed search, monitor/network/scripted/agentless inputs, and parsing and transforming raw data with props.conf, transforms.conf, and SEDCMD."
+exam_category = "Splunk"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 9
+order = 779
+featured = false
+price_practice = 9
+exam_url = "https://www.splunk.com/en_us/training/certification-track/splunk-enterprise-certified-admin.html"
+exam_cost = "$130 USD"
+exam_duration = 60
+exam_passing_score = "Scaled score (pass/fail)"
+exam_questions_real = "56"
+exam_provider = "Splunk (Pearson VUE)"
+exam_prerequisites = "Splunk Core Certified Power User"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/splunk-enterprise-admin/"
+practice_url = "/guided/splunk-enterprise-admin/practice/"
