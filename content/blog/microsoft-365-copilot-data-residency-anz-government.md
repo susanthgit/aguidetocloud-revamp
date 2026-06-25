@@ -270,11 +270,11 @@ One honest nuance: even with identifiers stripped, the search *terms* can still 
 
 ---
 
-## Does any government make you turn web grounding off?
+## Does any government mandate turning web grounding off?
 
-Short answer: **no — not as a published mandate.** We looked across ASD/ACSC's [Blueprint for Secure Cloud](https://blueprint.asd.gov.au/) (which configures Microsoft 365 against the ISM), the DTA's [AI policy and technical standard](https://www.digital.gov.au/policy/ai), and Microsoft's own guidance. **No Australian — or New Zealand — government agency publishes a specific directive to disable web grounding in Microsoft 365 Copilot.** What the frameworks *do* say is that every agency should have an AI usage policy and assess its own data-flow risks. So whether to turn web grounding off is a decision you document under your own policy, not one handed down from above.
+Short answer: **no — not as a published mandate.** We looked across ASD/ACSC's [Blueprint for Secure Cloud](https://blueprint.asd.gov.au/) and the DTA's [AI policy and technical standard](https://www.digital.gov.au/policy/ai). **No Australian — or New Zealand — government agency publishes a specific directive to disable web grounding in Microsoft 365 Copilot.** The frameworks instead require each agency to hold an AI usage policy and assess its own data-flow risks — so it's a decision you document under your own policy, not one handed down from above.
 
-The basis for *considering* it is the same point as the web-query exception above: web search queries leave the Microsoft 365 Data Protection Addendum perimeter and are handled by Bing under the Microsoft Services Agreement, with Microsoft acting as an independent data *controller*. That is exactly why US Government clouds ship with web search **off by default**. For a sensitive-data agency, disabling web grounding — or scoping it with Purview DLP — is a reasonable, defensible control. Just record it as your own risk decision.
+Why it comes up is the [web-query exception](#the-web-query-exception) above — those queries sit outside the DPA, which is why US Government clouds ship with web search **off by default**. And it isn't gov-only: regulated organisations across financial services and healthcare make the same call. The general controls and the "who turns it off" note live in the [main security guide](/blog/microsoft-365-copilot-security-questions-answered/#web-grounding-defaults-and-controls).
 
 ---
 
