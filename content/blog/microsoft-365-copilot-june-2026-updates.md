@@ -21,7 +21,7 @@ faq:
   - question: "What is Microsoft Scout?"
     answer: "Microsoft Scout is Microsoft's first 'Autopilot' agent, unveiled at Microsoft Build 2026. It's an always-on desktop app (Windows 11+ and macOS 12+) that works on your files, runs commands, drives a browser and connects to Microsoft 365 — acting in the background under its own Microsoft Entra identity. It's built on the OpenClaw open-source project and grounded by Work IQ, and is currently available in the Frontier preview program."
   - question: "Is Copilot Cowork generally available?"
-    answer: "Yes. Copilot Cowork reached general availability on 16 June 2026. Cowork is the agentic Copilot that does longer, multi-step tasks across apps in a secure cloud sandbox, so work keeps running even when your device is off. It's off by default (an admin enables it), billed on consumption (pay-as-you-go at $0.01 per Copilot Credit, or a prepaid plan), ships with 13 built-in skills, and works in the browser, desktop and mobile apps, and in Outlook and Teams."
+    answer: "Yes. Copilot Cowork reached general availability on 16 June 2026. Cowork is the agentic Copilot that does longer, multi-step tasks across apps in a secure cloud-hosted environment, so work keeps running even when your device is off. It's off by default (an admin enables it), billed on consumption (pay-as-you-go at $0.01 per Copilot Credit, or a prepaid plan), ships with 13 built-in skills, and works in the browser, desktop and mobile apps, and in Outlook and Teams."
   - question: "How do I use Claude in Microsoft 365 Copilot?"
     answer: "In Copilot Chat, open the model switcher next to Work IQ — it's labelled 'Auto' by default. Alongside the response styles (Auto, Quick Response, Think Deeper) you'll see the model families: Opus (Anthropic's Claude) and GPT (OpenAI). Pick Opus to use Claude for deep analysis, long-document understanding or structured, multi-step output."
 layout: "notebook"
@@ -107,7 +107,7 @@ Scout is in the **Frontier preview** today, and needs a Microsoft 365 Copilot li
 
 *For: Microsoft 365 Copilot–licensed users (an admin enables it) · Generally available — 16 June*
 
-**Copilot Cowork** reached **general availability** on **16 June 2026**. Where Copilot Chat answers questions, **Cowork does the work** — longer, multi-step tasks that span several apps. It runs in a **secure cloud sandbox**, which means your **tasks keep going even when your laptop is off**, and your files aren't stored on the device.
+**Copilot Cowork** reached **general availability** on **16 June 2026**. Where Copilot Chat answers questions, **Cowork does the work** — longer, multi-step tasks that span several apps. It runs in a **secure cloud-hosted environment**, which means your **tasks keep going even when your laptop is off**, and your files aren't stored on the device.
 
 A few things worth knowing:
 
@@ -136,7 +136,7 @@ The base licence is the **Microsoft 365 Copilot** subscription.
 
 ## 3. Anthropic's Claude in Microsoft 365 Copilot
 
-*For: Copilot Chat users (where your admin allows the model) · Rolling out — Android, Windows, iOS, Mac and Web*
+*For: Copilot Chat users (where your admin allows the model) · Generally available — Android, Windows, iOS, Mac and Web*
 
 You can now choose **Anthropic's Claude** as a model inside **Copilot Chat** — useful for deep analysis, understanding long documents, and producing well-structured, multi-step output.
 
@@ -174,7 +174,7 @@ We covered the first wave of connectors (Canva, HubSpot, Linear, LSEG, Moody's, 
 
 ## 5. Copilot edits your Word document by default
 
-*For: Word on the web · Rolling out*
+*For: Word on the web · Available now*
 
 In **Word on the web**, Copilot's default chat can now **edit your document directly** — no more switching "edit mode" on first. Ask it to rewrite a paragraph, add a section or fix formatting, and the change lands **straight in the document**. Every edit is **reviewable and reversible**, and you can switch the behaviour off if you'd rather Copilot only suggest.
 
