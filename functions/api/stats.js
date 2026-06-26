@@ -875,7 +875,7 @@ async function handleMainStats(env, url) {
     const [pagesRes, trendRes, summaryRes, geoRes, deviceRes, sourceRes, wowRes, todayRes, toolTrendRes, gscRes] = await Promise.all([
       ga4RunReport(token, { dateRanges: [{ startDate: sd, endDate: ed }], dimensions: [{ name: 'pagePath' }],
         metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }],
-        orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }], limit: 50 }),
+        orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }], limit: 250 }),
       ga4RunReport(token, { dateRanges: [{ startDate: sd, endDate: ed }], dimensions: [{ name: 'date' }],
         metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }, { name: 'sessions' }],
         orderBys: [{ dimension: { dimensionName: 'date' }, desc: false }] }),
@@ -937,7 +937,7 @@ async function handleMainStats(env, url) {
       }
     }
     const tool_trends = {};
-    for (const toolId of leaderboard.slice(0, 10).map(t => t.tool)) {
+    for (const toolId of leaderboard.slice(0, 20).map(t => t.tool)) {
       if (toolTrends[toolId]) { const sorted = Object.keys(toolTrends[toolId]).sort(); tool_trends[toolId] = sorted.map(d => toolTrends[toolId][d]); }
     }
 

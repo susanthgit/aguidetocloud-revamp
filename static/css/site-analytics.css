@@ -1,6 +1,6 @@
 /* ===========================================
-   Site Analytics Dashboard — Steel
-   Accent: #64748B
+   Site Analytics Dashboard — Zen
+   Accent: var(--accent) (indigo, theme-aware)
    Namespace: .siteana-*
    =========================================== */
 
@@ -53,8 +53,8 @@
   flex-direction: column;
   align-items: center;
   padding: 1rem 0.75rem;
-  background: color-mix(in srgb, var(--teal) 6%, transparent);
-  border: 1px solid color-mix(in srgb, var(--teal) 15%, transparent);
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
   border-radius: 16px;
   min-width: 0;
   text-align: center;
@@ -154,14 +154,13 @@
 .siteana-panel { display: none; }
 .siteana-panel.active { display: block; }
 
-/* Phase 16 P3b: reserve height on JS-hydrated content containers to kill CLS=0.244.
-   These cards initially show "Loading…" placeholders, then JS replaces innerHTML
-   with leaderboard rows / charts. Without min-height the shrink during innerHTML
-   swap registers as layout shift. Values match typical hydrated content sizes. */
-#sa-leaderboard { min-height: 2400px; }
-#sa-rising, #sa-gems { min-height: 400px; }
-#sa-category-bars { min-height: 320px; }
-#sa-featured-body { min-height: 220px; }
+/* Reserve height on JS-hydrated containers to limit CLS, right-sized to the actual
+   rendered content so there is no empty gap. The leaderboard ranks a variable number
+   of tools, so it sizes to its rows naturally (no fixed over-reserve). */
+#sa-leaderboard { min-height: 0; }
+#sa-rising, #sa-gems { min-height: 250px; }
+#sa-category-bars { min-height: 215px; }
+#sa-featured-body { min-height: 175px; }
 
 /* Grid */
 .siteana-grid-2 {
@@ -208,7 +207,7 @@
   grid-template-columns: 2rem 1fr auto 3.5rem;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.75rem 0;
+  padding: 0.5rem 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -1208,8 +1207,8 @@
 
 /* ── HEARTBEAT PULSE ──────────────── */
 .siteana-heartbeat-stat {
-  border-color: color-mix(in srgb, var(--error) 30%, transparent) !important;
-  background: color-mix(in srgb, var(--error) 6%, transparent) !important;
+  border-color: color-mix(in srgb, var(--accent) 12%, transparent) !important;
+  background: color-mix(in srgb, var(--accent) 5%, transparent) !important;
 }
 
 /* ── STAT SPARKLINES ─────────────── */
@@ -1784,7 +1783,7 @@
   transition: background 0.2s;
 }
 
-.siteana-btn-primary:hover { background: #7c8da0; }
+.siteana-btn-primary:hover { background: var(--accent-hover); }
 
 .siteana-btn-secondary {
   background: var(--bg-elevated);

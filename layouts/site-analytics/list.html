@@ -662,6 +662,17 @@
     'security-toolkit':'#41A235','ai-cost-calculator':'#66C559','agent-365-planner':'#00A4EF',
     'purview-starter':'#84CC16','world-clock':'#0EA5E9'
   };
+  // Zen: indigo accent for decorative tints; coherent cool palette for categorical charts only.
+  var CHART_PALETTE = ['#6366F1','#22D3EE','#A78BFA','#0EA5E9','#818CF8','#2DD4BF','#C4B5FD','#64748B'];
+  function chartInk() {
+    var s = getComputedStyle(document.documentElement);
+    return {
+      text: (s.getPropertyValue('--text-secondary') || '#404040').trim(),
+      tick: (s.getPropertyValue('--text-tertiary') || '#737373').trim(),
+      grid: (s.getPropertyValue('--border') || '#E5E5E5').trim()
+    };
+  }
+  function accentNow() { return (getComputedStyle(document.documentElement).getPropertyValue('--accent') || '#6366F1').trim(); }
   var TOOL_URLS = {
     'ai-news':'/ai-news/','m365-roadmap':'/m365-roadmap/','prompt-library':'/prompts/',
     'licensing':'/licensing/','prompt-polisher':'/prompt-polisher/','copilot-readiness':'/copilot-readiness/',
@@ -856,6 +867,23 @@
   }
   setInterval(updateRefreshTime, 60000);
 
+  // Re-render charts (not the animated counts) when the light/dark theme toggles so
+  // chart text + on-canvas colours follow the active theme.
+  function restyleCharts() {
+    if (!_cachedData || !_cachedData.ga4) return;
+    var ga4 = _cachedData.ga4;
+    if (ga4.trend) renderTrend(ga4.trend);
+    if (ga4.leaderboard) { renderActivity(ga4.leaderboard); renderLeaderboard(ga4.leaderboard, ga4.tool_trends); }
+    if (ga4.top_pages) renderContentSplit(ga4.top_pages);
+  }
+  try {
+    new MutationObserver(function(muts) {
+      for (var i = 0; i < muts.length; i++) {
+        if (muts[i].attributeName === 'data-theme') { restyleCharts(); break; }
+      }
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  } catch (e) {}
+
   function setWow(id, pct) {
     var el = document.getElementById(id); if (!el) return;
     el.className = 'siteana-wow ' + (pct > 0 ? 'siteana-wow-up' : pct < 0 ? 'siteana-wow-down' : 'siteana-wow-flat');
@@ -877,14 +905,14 @@
     var tagline = TOOL_TAGLINES[tool.tool] || '';
     var rank = lb.indexOf(tool) + 1;
     el.innerHTML = '<div class="siteana-featured-inner">'
-      + '<a href="' + esc(url) + '" class="siteana-featured-name" style="--tint:' + color + '">' + esc(name) + '</a>'
+      + '<a href="' + esc(url) + '" class="siteana-featured-name" style="--tint:var(--accent)">' + esc(name) + '</a>'
       + '<p class="siteana-featured-tagline">' + esc(tagline) + '</p>'
       + '<div class="siteana-featured-stats">'
       + '<span>' + roundK(tool.views) + ' views</span>'
       + '<span>' + roundK(tool.users) + ' users</span>'
       + '<span>#' + rank + ' overall</span>'
       + '</div>'
-      + '<a href="' + esc(url) + '" class="siteana-featured-cta" style="--tint:' + color + '">Try it now &rarr;</a>'
+      + '<a href="' + esc(url) + '" class="siteana-featured-cta" style="--tint:var(--accent)">Try it now &rarr;</a>'
       + '</div>';
   }
 
@@ -907,7 +935,7 @@
       var color = COLORS[s.tool] || '#64748B';
       var url = TOOL_URLS[s.tool] || '/';
       return '<div class="siteana-rising-item">'
-        + '<a href="' + esc(url) + '" class="siteana-lb-name siteana-lb-link" style="--tint:' + color + '">' + esc(name) + '</a>'
+        + '<a href="' + esc(url) + '" class="siteana-lb-name siteana-lb-link">' + esc(name) + '</a>'
         + '<span class="siteana-rising-pct">\u2191 ' + s.growth + '%</span></div>';
     }).join('');
   }
@@ -924,7 +952,7 @@
       var url = TOOL_URLS[t.tool] || '/';
       var tagline = TOOL_TAGLINES[t.tool] || '';
       return '<div class="siteana-gem-item">'
-        + '<a href="' + esc(url) + '" class="siteana-lb-name siteana-lb-link" style="--tint:' + color + '">' + esc(name) + '</a>'
+        + '<a href="' + esc(url) + '" class="siteana-lb-name siteana-lb-link">' + esc(name) + '</a>'
         + '<span class="siteana-gem-tagline">' + esc(tagline.length > 50 ? tagline.slice(0,50)+'...' : tagline) + '</span>'
         + '<span class="siteana-gem-views">' + roundK(t.views) + ' views</span></div>';
     }).join('');
@@ -1032,10 +1060,9 @@
     el.innerHTML = sorted.map(function(cat) {
       var pct = Math.round((catViews[cat] / max) * 100);
       var label = CAT_LABELS[cat] || cat;
-      var color = CAT_COLORS[cat] || '#64748B';
       return '<div class="siteana-cat-row">'
-        + '<span class="siteana-cat-label" style="--tint:' + color + '">' + esc(label) + '</span>'
-        + '<div class="siteana-cat-bar-wrap"><div class="siteana-cat-bar" style="--bar-w:' + pct + '%;--tint:' + color + '"></div></div>'
+        + '<span class="siteana-cat-label">' + esc(label) + '</span>'
+        + '<div class="siteana-cat-bar-wrap"><div class="siteana-cat-bar" style="--bar-w:' + pct + '%;--tint:var(--accent)"></div></div>'
         + '<span class="siteana-cat-views">' + roundK(catViews[cat]) + '</span>'
         + '</div>';
     }).join('');
@@ -1054,12 +1081,12 @@
     });
     var labels = Object.keys(buckets).filter(function(k){return buckets[k]>0;});
     var data = labels.map(function(k){return buckets[k];});
-    var colors = { 'Tools': '#64748B', 'Blog': '#0EA5E9', 'Homepage': '#A78BFA', 'Other': '#6B7280' };
+    var colors = { 'Tools': CHART_PALETTE[0], 'Blog': CHART_PALETTE[1], 'Homepage': CHART_PALETTE[2], 'Other': CHART_PALETTE[7] };
     if (_contentSplitChart) { _contentSplitChart.destroy(); _contentSplitChart = null; }
     _contentSplitChart = new Chart(ctx, {
       type: 'doughnut',
-      data: { labels: labels, datasets: [{ data: data, backgroundColor: labels.map(function(l){return colors[l]||'#64748B';}), borderWidth: 0 }] },
-      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: 'rgba(255,255,255,0.6)', font: { family: 'Inter', size: 11 }, padding: 10, boxWidth: 12 } } } }
+      data: { labels: labels, datasets: [{ data: data, backgroundColor: labels.map(function(l){return colors[l]||CHART_PALETTE[7];}), borderWidth: 0 }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: chartInk().text, font: { family: 'Inter', size: 11 }, padding: 10, boxWidth: 12 } } } }
     });
   }
 
@@ -1121,12 +1148,12 @@
     _trendChart = new Chart(ctx, {
       type: 'line',
       data: { labels: trend.map(function(d){return d.date.slice(5);}), datasets: [
-        { label: 'Views', data: trend.map(function(d){return d.views;}), borderColor: '#64748B', backgroundColor: 'rgba(100,116,139,0.1)', fill: true, tension: 0.4, pointRadius: 3 },
-        { label: 'Users', data: trend.map(function(d){return d.users;}), borderColor: '#ff66ff', backgroundColor: 'rgba(255,102,255,0.1)', fill: true, tension: 0.4, pointRadius: 3 }
+        { label: 'Views', data: trend.map(function(d){return d.views;}), borderColor: '#6366F1', backgroundColor: 'rgba(99,102,241,0.1)', fill: true, tension: 0.4, pointRadius: 3 },
+        { label: 'Users', data: trend.map(function(d){return d.users;}), borderColor: '#A78BFA', backgroundColor: 'rgba(167,139,250,0.1)', fill: true, tension: 0.4, pointRadius: 3 }
       ]},
       options: { responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { labels: { color: 'rgba(255,255,255,0.6)', font: { family: 'Inter' } } } },
-        scales: { x: { ticks: { color: 'rgba(255,255,255,0.4)' }, grid: { color: 'rgba(255,255,255,0.05)' } }, y: { beginAtZero: true, ticks: { color: 'rgba(255,255,255,0.4)' }, grid: { color: 'rgba(255,255,255,0.05)' } } }
+        plugins: { legend: { labels: { color: chartInk().text, font: { family: 'Inter' } } } },
+        scales: { x: { ticks: { color: chartInk().tick }, grid: { color: chartInk().grid } }, y: { beginAtZero: true, ticks: { color: chartInk().tick }, grid: { color: chartInk().grid } } }
       }
     });
   }
@@ -1137,15 +1164,15 @@
     if (_activityChart) { _activityChart.destroy(); _activityChart = null; }
     _activityChart = new Chart(ctx, {
       type: 'doughnut',
-      data: { labels: top8.map(function(t){return TOOLS[t.tool]||t.tool;}), datasets: [{ data: top8.map(function(t){return t.total;}), backgroundColor: top8.map(function(t){return COLORS[t.tool]||'#64748B';}), borderWidth: 0 }] },
-      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: 'rgba(255,255,255,0.6)', font: { family: 'Inter', size: 11 }, padding: 10, boxWidth: 12 } } } }
+      data: { labels: top8.map(function(t){return TOOLS[t.tool]||t.tool;}), datasets: [{ data: top8.map(function(t){return t.total;}), backgroundColor: top8.map(function(t, i){return CHART_PALETTE[i % CHART_PALETTE.length];}), borderWidth: 0 }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: chartInk().text, font: { family: 'Inter', size: 11 }, padding: 10, boxWidth: 12 } } } }
     });
   }
 
   function renderLeaderboard(lb, trends) {
     var el = document.getElementById('sa-leaderboard'); if (!el || !lb.length) return;
     var max = lb[0].total || 1;
-    var DEFAULT_SHOW = 15;
+    var DEFAULT_SHOW = 20;
     var showAll = false;
 
     function buildRows(items) {
@@ -1158,9 +1185,9 @@
         var spark = (trends && trends[t.tool]) ? '<canvas class="siteana-sparkline" id="sp-' + t.tool + '" width="60" height="20"></canvas>' : '';
         var newBadge = (t._isNew) ? ' <span class="siteana-new-badge">NEW</span>' : '';
         return '<div class="siteana-lb-item"><span class="siteana-lb-rank ' + rank + '">' + (i+1) + '</span>'
-          + '<div class="siteana-lb-info"><div class="siteana-lb-name-row"><a href="' + esc(url) + '" class="siteana-lb-name" style="--tint:' + color + '">' + esc(name) + '</a>' + newBadge + spark + '</div>'
+          + '<div class="siteana-lb-info"><div class="siteana-lb-name-row"><a href="' + esc(url) + '" class="siteana-lb-name">' + esc(name) + '</a>' + newBadge + spark + '</div>'
           + '<span class="siteana-lb-count">' + roundK(t.views) + ' views \u00B7 ' + roundK(t.users) + ' users</span></div>'
-          + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="--bar-w:' + pct + '%;--tint:' + color + '"></div></div>'
+          + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="--bar-w:' + pct + '%;--tint:var(--accent)"></div></div>'
           + '<span class="siteana-lb-total">' + roundK(t.total) + '</span></div>';
       }).join('');
     }
@@ -1171,7 +1198,7 @@
       el.innerHTML = buildRows(visible)
         + (lb.length > DEFAULT_SHOW ? '<button class="siteana-lb-toggle" id="sa-lb-toggle">' + toggleText + '</button>' : '');
       if (trends) visible.forEach(function(t) {
-        if (trends[t.tool]) drawSparkline(document.getElementById('sp-' + t.tool), trends[t.tool], COLORS[t.tool] || '#64748B');
+        if (trends[t.tool]) drawSparkline(document.getElementById('sp-' + t.tool), trends[t.tool], accentNow());
       });
       var btn = document.getElementById('sa-lb-toggle');
       if (btn) btn.addEventListener('click', function() { showAll = !showAll; draw(); });
@@ -1311,14 +1338,14 @@
                 data:{
                   labels: trend.map(function(d){ var p=d.date.split('-'); return p[1]+'/'+p[2]; }),
                   datasets:[
-                    { label:'Views', data:trend.map(function(d){return d.views;}), borderColor:'#00A4EF', backgroundColor:'rgba(0,164,239,0.1)', fill:true, tension:0.3, pointRadius:0, borderWidth:2 },
+                    { label:'Views', data:trend.map(function(d){return d.views;}), borderColor:'#6366F1', backgroundColor:'rgba(99,102,241,0.1)', fill:true, tension:0.3, pointRadius:0, borderWidth:2 },
                     { label:'Users', data:trend.map(function(d){return d.users;}), borderColor:'#A78BFA', backgroundColor:'transparent', tension:0.3, pointRadius:0, borderWidth:2, borderDash:[4,4] }
                   ]
                 },
                 options:{ responsive:true, maintainAspectRatio:false,
-                  plugins:{ legend:{ display:true, labels:{ color:'rgba(255,255,255,0.6)', boxWidth:12, padding:12, font:{size:11} } } },
-                  scales:{ x:{ ticks:{ color:'rgba(255,255,255,0.4)', maxTicksLimit:8, font:{size:10} }, grid:{display:false} },
-                    y:{ ticks:{ color:'rgba(255,255,255,0.4)', font:{size:10} }, grid:{ color:'rgba(255,255,255,0.05)' }, beginAtZero:true } }
+                  plugins:{ legend:{ display:true, labels:{ color:chartInk().text, boxWidth:12, padding:12, font:{size:11} } } },
+                  scales:{ x:{ ticks:{ color:chartInk().tick, maxTicksLimit:8, font:{size:10} }, grid:{display:false} },
+                    y:{ ticks:{ color:chartInk().tick, font:{size:10} }, grid:{ color:chartInk().grid }, beginAtZero:true } }
                 }
               });
             }
@@ -1327,15 +1354,15 @@
           // Mode doughnut
           var modes = data.modes || {};
           var mKeys = Object.keys(modes);
-          var MCOL = { study:'#10B981', exam:'#F59E0B', flashcards:'#A78BFA', domain:'#00A4EF', weak:'#EC4899' };
+          var MCOL = { study:CHART_PALETTE[0], exam:CHART_PALETTE[1], flashcards:CHART_PALETTE[2], domain:CHART_PALETTE[3], weak:CHART_PALETTE[4] };
           var MLAB = { study:'Study', exam:'Exam', flashcards:'Flashcards', domain:'Domain Focus', weak:'Weak Areas' };
           var mCanvas = document.getElementById('gd-mode-chart');
           if (mCanvas && mKeys.length && typeof Chart !== 'undefined') {
             new Chart(mCanvas, { type:'doughnut', data:{
               labels: mKeys.map(function(k){return MLAB[k]||k;}),
-              datasets:[{ data:mKeys.map(function(k){return modes[k];}), backgroundColor:mKeys.map(function(k){return MCOL[k]||'#64748B';}), borderWidth:0 }]
+              datasets:[{ data:mKeys.map(function(k){return modes[k];}), backgroundColor:mKeys.map(function(k){return MCOL[k]||CHART_PALETTE[7];}), borderWidth:0 }]
             }, options:{ responsive:true, maintainAspectRatio:false, cutout:'65%',
-              plugins:{ legend:{ display:true, position:'bottom', labels:{ color:'rgba(255,255,255,0.6)', padding:10, boxWidth:10, font:{size:11} } } } }
+              plugins:{ legend:{ display:true, position:'bottom', labels:{ color:chartInk().text, padding:10, boxWidth:10, font:{size:11} } } } }
             });
           } else {
             var mLeg = document.getElementById('gd-mode-legend');
