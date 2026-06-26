@@ -169,7 +169,7 @@
 
   function platCard(name, supported, total, color) {
     var pct = total > 0 ? Math.round((supported / total) * 100) : 0;
-    return '<div style="text-align:center;min-width:100px"><div style="font-size:1.5rem;font-weight:700;color:' + esc(color) + '">' + pct + '%</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.5)">' + esc(name) + '</div><div style="font-size:0.65rem;color:rgba(255,255,255,0.35)">' + supported + '/' + total + '</div></div>';
+    return '<div style="text-align:center;min-width:100px"><div style="font-size:1.5rem;font-weight:700;color:' + esc(color) + '">' + pct + '%</div><div style="font-size:0.75rem;color:var(--text-tertiary)">' + esc(name) + '</div><div style="font-size:0.65rem;color:var(--text-muted)">' + supported + '/' + total + '</div></div>';
   }
 
   /* ═══ CUSTOM SCENARIO INPUT (#3) ═══ */

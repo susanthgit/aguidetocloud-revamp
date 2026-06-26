@@ -277,7 +277,7 @@
     scoreEl.innerHTML =
       '<div class="ptester-score-ring">' +
         '<svg width="200" height="200" viewBox="0 0 200 200">' +
-          '<circle cx="100" cy="100" r="' + r + '" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12"/>' +
+          '<circle cx="100" cy="100" r="' + r + '" fill="none" stroke="var(--border)" stroke-width="12"/>' +
           '<circle cx="100" cy="100" r="' + r + '" fill="none" stroke="' + esc(color) + '" stroke-width="12" ' +
             'stroke-linecap="round" stroke-dasharray="' + circ.toFixed(1) + '" ' +
             'stroke-dashoffset="' + offset.toFixed(1) + '" ' +

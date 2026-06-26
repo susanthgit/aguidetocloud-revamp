@@ -35,7 +35,7 @@
     document.getElementById('rename-count').textContent = `Showing ${results.length} of ${ALL.length} products`;
 
     if (results.length === 0) {
-      el.innerHTML = '<p style="text-align:center;color:rgba(255,255,255,0.4);padding:2rem">No products found. Try a different search term.</p>';
+      el.innerHTML = '<p style="text-align:center;color:var(--text-tertiary);padding:2rem">No products found. Try a different search term.</p>';
       return;
     }
 
@@ -61,7 +61,7 @@
           </div>
           ${p.description ? `<div class="rename-card-desc">${esc(p.description)}</div>` : ''}
           ${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" class="rename-card-link">Official docs ↗</a>` : ''}
-          ${renames.length > 0 ? `<div class="rename-timeline">${timeline}</div>` : '<div style="color:rgba(255,255,255,0.3);font-size:0.8rem;margin-top:0.5rem">No recorded renames</div>'}
+          ${renames.length > 0 ? `<div class="rename-timeline">${timeline}</div>` : '<div style="color:var(--text-muted);font-size:0.8rem;margin-top:0.5rem">No recorded renames</div>'}
         </div>
       `;
     }).join('');
@@ -75,7 +75,7 @@
       .sort((a, b) => b.count - a.count);
 
     const el = document.getElementById('rename-leaderboard');
-    el.innerHTML = '<h3 style="color:rgba(255,255,255,0.8);margin-bottom:1rem">🏆 Most Renamed Products</h3>' +
+    el.innerHTML = '<h3 style="color:var(--text-secondary);margin-bottom:1rem">🏆 Most Renamed Products</h3>' +
       sorted.map((p, i) => `
         <div class="rename-lb-item">
           <span class="rename-lb-rank">${i + 1}</span>
