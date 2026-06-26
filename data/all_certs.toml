@@ -6584,6 +6584,47 @@ guided_url = "/guided/oci-developer-professional/"
 practice_url = "/guided/oci-developer-professional/practice/"
 
 [[cert]]
+slug = "oci-devops-professional"
+vendor = "oracle"
+code = "OCI-DEVOPS-PROFESSIONAL"
+name = "Cloud Infrastructure 2026 DevOps Professional"
+tagline = "Master the Oracle Cloud Infrastructure (OCI) 2026 DevOps Professional exam (1Z0-1109-26) - DevOps principles and microservices, containerization with Docker, OCIR and OCI Container Instances, infrastructure as code with Terraform and OCI Resource Manager, the OCI DevOps service with Code Repositories, Build and Deployment Pipelines, Artifacts and deployment strategies, Oracle Kubernetes Engine (OKE), DevSecOps with OCI Vault and image signing, and monitoring and observability with OCI Monitoring, Logging and Events."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 786
+featured = false
+price_practice = 9
+
+[cert_map."oci-devops-professional"]
+vendor = "oracle"
+code = "OCI-DEVOPS-PROFESSIONAL"
+name = "Cloud Infrastructure 2026 DevOps Professional"
+tagline = "Master the Oracle Cloud Infrastructure (OCI) 2026 DevOps Professional exam (1Z0-1109-26) - DevOps principles and microservices, containerization with Docker, OCIR and OCI Container Instances, infrastructure as code with Terraform and OCI Resource Manager, the OCI DevOps service with Code Repositories, Build and Deployment Pipelines, Artifacts and deployment strategies, Oracle Kubernetes Engine (OKE), DevSecOps with OCI Vault and image signing, and monitoring and observability with OCI Monitoring, Logging and Events."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 786
+featured = false
+price_practice = 9
+exam_url = "https://education.oracle.com/oracle-cloud-infrastructure-2026-devops-professional/pexam_1Z0-1109-26"
+exam_cost = "$245 USD"
+exam_duration = 90
+exam_passing_score = "68% (verify at Oracle registration)"
+exam_questions_real = "50"
+exam_provider = "Oracle University / Pearson VUE (online proctored or test center)"
+exam_prerequisites = "None (OCI fundamentals plus hands-on experience with Docker, Kubernetes/OKE, the OCI DevOps service, Terraform/Resource Manager, and OCI security recommended)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/oci-devops-professional/"
+practice_url = "/guided/oci-devops-professional/practice/"
+
+[[cert]]
 slug = "oci-security-professional"
 vendor = "oracle"
 code = "OCI-SECURITY-PROFESSIONAL"
