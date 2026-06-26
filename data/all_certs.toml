@@ -6787,3 +6787,44 @@ exam_prerequisites = "None formal (Python and ML fundamentals plus hands-on OCI 
 exam_question_types = ["Multiple choice", "Multiple response"]
 guided_url = "/guided/oci-data-science-professional/"
 practice_url = "/guided/oci-data-science-professional/practice/"
+
+
+[[cert]]
+slug = "oci-architect-professional"
+vendor = "oracle"
+code = "OCI-ARCHITECT-PROFESSIONAL"
+name = "Cloud Infrastructure 2026 Architect Professional"
+tagline = "Master the Oracle Cloud Infrastructure (OCI) 2026 Architect Professional exam (1Z0-997-26) - architecting high availability and disaster recovery with Full Stack DR, cloud-native solutions on OKE, Functions and API Gateway, Infrastructure as Code with Terraform and Resource Manager, Base Database and Autonomous Database design, security with IAM, Vault, Network Firewall and WAF, hybrid and multicloud architectures with FastConnect, Oracle Interconnect for Azure, Oracle Database@Azure and Oracle Cloud VMware Solution, workload and database migration, and observability with Monitoring, Logging and APM."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 794
+featured = false
+price_practice = 9
+
+[cert_map."oci-architect-professional"]
+vendor = "oracle"
+code = "OCI-ARCHITECT-PROFESSIONAL"
+name = "Cloud Infrastructure 2026 Architect Professional"
+tagline = "Master the Oracle Cloud Infrastructure (OCI) 2026 Architect Professional exam (1Z0-997-26) - architecting high availability and disaster recovery with Full Stack DR, cloud-native solutions on OKE, Functions and API Gateway, Infrastructure as Code with Terraform and Resource Manager, Base Database and Autonomous Database design, security with IAM, Vault, Network Firewall and WAF, hybrid and multicloud architectures with FastConnect, Oracle Interconnect for Azure, Oracle Database@Azure and Oracle Cloud VMware Solution, workload and database migration, and observability with Monitoring, Logging and APM."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 794
+featured = false
+price_practice = 9
+exam_url = "https://education.oracle.com/oracle-cloud-infrastructure-2026-architect-professional/pexam_1Z0-997-26"
+exam_cost = "$245 USD"
+exam_duration = 90
+exam_passing_score = "68% (verify at Oracle registration)"
+exam_questions_real = "50"
+exam_provider = "Oracle University / Pearson VUE (online proctored or test center)"
+exam_prerequisites = "None (OCI Architect Associate-level knowledge plus hands-on experience architecting OCI solutions recommended)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/oci-architect-professional/"
