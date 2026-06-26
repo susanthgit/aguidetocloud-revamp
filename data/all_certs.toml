@@ -6746,3 +6746,44 @@ exam_prerequisites = "Splunk Core Certified Power User"
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/splunk-cloud-admin/"
 practice_url = "/guided/splunk-cloud-admin/practice/"
+
+[[cert]]
+slug = "oci-data-science-professional"
+vendor = "oracle"
+code = "OCI-DATA-SCIENCE-PROFESSIONAL"
+name = "Cloud Infrastructure 2026 Data Science Professional"
+tagline = "Master the Oracle Cloud Infrastructure (OCI) 2026 Data Science Professional exam (1Z0-1110-26) - building, training, deploying and operating machine-learning models on the OCI Data Science service with the Accelerated Data Science (ADS) SDK, Oracle AutoML, the Model Catalog and Model Deployments, Jobs and ML Pipelines, OCI Generative AI and LangChain, and end-to-end MLOps."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 788
+featured = false
+price_practice = 9
+
+[cert_map."oci-data-science-professional"]
+vendor = "oracle"
+code = "OCI-DATA-SCIENCE-PROFESSIONAL"
+name = "Cloud Infrastructure 2026 Data Science Professional"
+tagline = "Master the Oracle Cloud Infrastructure (OCI) 2026 Data Science Professional exam (1Z0-1110-26) - building, training, deploying and operating machine-learning models on the OCI Data Science service with the Accelerated Data Science (ADS) SDK, Oracle AutoML, the Model Catalog and Model Deployments, Jobs and ML Pipelines, OCI Generative AI and LangChain, and end-to-end MLOps."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 788
+featured = false
+price_practice = 9
+exam_url = "https://education.oracle.com/oracle-cloud-infrastructure-data-science-professional/pexam_1Z0-1110-26"
+exam_cost = "$245 USD"
+exam_duration = 90
+exam_passing_score = "68%"
+exam_questions_real = "50"
+exam_provider = "Oracle University / Pearson VUE (online proctored or test center)"
+exam_prerequisites = "None formal (Python and ML fundamentals plus hands-on OCI Data Science experience recommended)"
+exam_question_types = ["Multiple choice", "Multiple response"]
+guided_url = "/guided/oci-data-science-professional/"
+practice_url = "/guided/oci-data-science-professional/practice/"
