@@ -841,7 +841,7 @@
   fetch(API + '?ytreach=1').then(function(r){return r.json();}).then(function(d){
     if (!d || !d.subscribers) return;
     var c = document.getElementById('sa-ytreach-card'), el = document.getElementById('sa-ytreach');
-    if (c && el) { el.innerHTML = 'On <a href="https://www.youtube.com/channel/UCYN12Rlv9hgZlWJa1XPfdyg" class="siteana-lb-link" target="_blank" rel="noopener">YouTube</a>, <b>' + roundK(d.subscribers) + '</b> people subscribe and our videos have been watched <b>' + roundK(d.views) + '</b> times.'; c.style.display = ''; }
+    if (c && el) { el.innerHTML = 'On <a href="https://www.youtube.com/channel/UCYN12Rlv9hgZlWJa1XPfdyg" class="siteana-lb-link" target="_blank" rel="noopener">YouTube</a>, <b>' + bigN(d.subscribers) + '</b> people subscribe and our videos have been watched <b>' + bigN(d.views) + '</b> times.'; c.style.display = ''; }
   }).catch(function(){});
   // ── Date-range selector ──
   (function() {
@@ -935,6 +935,7 @@
     var ago = Math.round((Date.now() - _lastRefresh) / 60000);
     el.textContent = ago < 1 ? 'Data refreshed just now' : 'Data from ' + ago + ' min ago · Auto-refreshes every 5 min';
   }
+  function bigN(n) { n = n || 0; return n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? (n / 1e3).toFixed(1) + 'K' : '' + n; }
   function formatDur(s) { s = Math.round(s || 0); if (s < 60) return s + 's'; var mn = Math.floor(s / 60), r = s % 60; return r ? mn + 'm ' + r + 's' : mn + 'm'; }
   function prettyPath(p) { if (!p || p === '/') return 'Homepage'; var seg = p.replace(/\/$/, '').split('/').filter(Boolean); var last = seg[seg.length - 1] || p; return last.replace(/[-_]/g, ' ').replace(/\b\w/g, function(c) { return c.toUpperCase(); }); }
   function computeTopRising(lb, trends) {
