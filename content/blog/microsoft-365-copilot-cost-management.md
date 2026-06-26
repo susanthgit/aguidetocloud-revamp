@@ -199,6 +199,8 @@ Because they're real — just for a **completely different product**. **P1 and P
 
 If you've decided on the annual route, here's how it actually works ([Microsoft Learn — Azure](https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/copilot-credit-p3)).
 
+{{< margin >}}This is the *Copilot Credit* Pre-Purchase Plan. Microsoft also sells **Agent** and **GitHub** pre-purchase plans that share the "P3" badge — see [Copilot & GitHub Pre-Purchase Plans (P3)](/blog/microsoft-copilot-github-pre-purchase-plans-p3/) for which plan covers Copilot, Cowork or GitHub.{{< /margin >}}
+
 - **It's an Azure reservation.** You buy the **Copilot Credit Pre-Purchase Plan** in the Azure portal (Reservations), or directly from **Cost Management → Buy prepaid credits** in the Microsoft 365 admin center.
 - **The unit is the CCCU** — Copilot Credit Commit Unit. **One CCCU pays down $1 of Copilot Credit usage** (about 100 credits at $0.01). If usage generates a $100 retail cost, 100 CCCUs are consumed.
 - **It's a one-year term**, drawn down as you use credits, and set to **auto-renew by default**.
@@ -442,3 +444,4 @@ The public, primary references behind this page:
 - **[Cowork: Admin enablement & governance](/blog/microsoft-copilot-cowork-admin-and-governance/)** — turning Cowork on and locking it down
 - **[Cowork Cost Calculator](/cowork-cost-calculator/)** — model your expected monthly credit spend
 - **[Microsoft Copilot Pricing & Tiers Explained](/blog/microsoft-copilot-pricing-tiers-explained/)** — the hub: every Copilot plan on one page
+- **[Copilot & GitHub Pre-Purchase Plans (P3) Explained](/blog/microsoft-copilot-github-pre-purchase-plans-p3/)** — the four "P3" plans, and whether GitHub credits can pay for Cowork

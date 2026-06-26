@@ -42,6 +42,8 @@ faq:
     answer: "The main view is the Power Platform admin centre, under Licensing then Copilot Studio — it shows prepaid capacity, pay-as-you-go credits, consumption by product and environment, and billed versus non-billable credits. For Microsoft 365 Copilot Chat agents you pick the Copilot Chat environment. Some Copilot Chat billing setup also lives in the Microsoft 365 admin centre."
   - question: "What happens if I run out of Copilot Credits?"
     answer: "It depends how your tenant is set up. On a prepaid capacity pack alone, usage can be limited once the monthly pack is exhausted. If you also enable pay-as-you-go, overage is billed at $0.01 per credit through Azure so the agent keeps working. Admins can set monthly consumption limits per agent and alerts to avoid surprises."
+  - question: "Can I use my GitHub Copilot credits for Copilot or Cowork?"
+    answer: "No. GitHub Copilot is billed through GitHub and meters its AI usage in GitHub AI Credits, separate from Microsoft's Copilot Credits. Neither can be spent on Copilot agents or Cowork. The one prepaid plan that can cover both worlds is the Microsoft Agent Pre-Purchase Plan — see our guide to the Copilot and GitHub pre-purchase plans for the full breakdown."
 sitemap:
   priority: 0.8
 founder_note: |
@@ -237,3 +239,4 @@ Before you switch on paid usage:
 - **[Microsoft Build 2026 Recap](/blog/microsoft-build-2026-recap/#3-copilot-credits--the-consumption-meter-has-a-name)** — how Copilot Credits fit the wider 2026 agent shift
 - **[Token Calculator](/token-calculator/)** — model the cost of AI usage
 - **[Microsoft 365 Copilot Cost Management & Billing](/blog/microsoft-365-copilot-cost-management/)** — how usage is billed and controlled: the admin Cost Management dashboard, spending policies, P3, and the P1/P2/P3 myth
+- **[Copilot & GitHub Pre-Purchase Plans (P3) Explained](/blog/microsoft-copilot-github-pre-purchase-plans-p3/)** — the four pre-purchase plans, and whether GitHub credits can pay for Cowork

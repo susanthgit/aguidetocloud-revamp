@@ -153,6 +153,8 @@ Two billing options, both set up in the admin center:
 
 > **Grace period for Frontier customers:** billing for Cowork started on **16 June 2026**. Tenants that had at least one user running Cowork in the Frontier program (30 March–16 June 2026) get a grace period and **won't be billed until 1 July 2026** — time to set spending limits and allocate budgets before usage ramps.
 
+> **Already paying for GitHub Copilot?** Its GitHub AI Credits can't be spent on Cowork — they're separate products on separate meters. The one prepaid plan that covers **both** is the Microsoft Agent Pre-Purchase Plan. See [Copilot & GitHub Pre-Purchase Plans (P3) Explained](/blog/microsoft-copilot-github-pre-purchase-plans-p3/).
+
 ---
 
 ## Models and cost
