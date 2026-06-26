@@ -6869,3 +6869,45 @@ exam_prerequisites = "None (course attendance + 6 months hands-on machine learni
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/databricks-ml-associate/"
 practice_url = "/guided/databricks-ml-associate/practice/"
+
+[[cert]]
+slug = "databricks-de-professional"
+vendor = "databricks"
+code = "DATABRICKS-DE-PROFESSIONAL"
+name = "Certified Data Engineer Professional"
+tagline = "Master the Databricks Certified Data Engineer Professional exam (30 Nov 2025 guide) - building production data pipelines with Lakeflow Spark Declarative Pipelines and Auto Loader, Databricks Asset Bundles and CI/CD with Git Folders, advanced Spark SQL and PySpark transformations, cost and performance optimization with deletion vectors and Liquid Clustering, data security with row filters and column masks, Unity Catalog governance, Delta Sharing and Lakehouse Federation, observability with system tables, and debugging and deployment."
+exam_category = "Databricks"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 776
+featured = false
+price_practice = 9
+
+[cert_map."databricks-de-professional"]
+vendor = "databricks"
+code = "DATABRICKS-DE-PROFESSIONAL"
+name = "Certified Data Engineer Professional"
+tagline = "Master the Databricks Certified Data Engineer Professional exam (30 Nov 2025 guide) - building production data pipelines with Lakeflow Spark Declarative Pipelines and Auto Loader, Databricks Asset Bundles and CI/CD with Git Folders, advanced Spark SQL and PySpark transformations, cost and performance optimization with deletion vectors and Liquid Clustering, data security with row filters and column masks, Unity Catalog governance, Delta Sharing and Lakehouse Federation, observability with system tables, and debugging and deployment."
+exam_category = "Databricks"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 776
+featured = false
+price_practice = 9
+exam_url = "https://www.databricks.com/learn/certification/data-engineer-professional"
+exam_cost = "$200 USD"
+exam_duration = 120
+exam_passing_score = "Not officially published (~70%)"
+exam_questions_real = "59"
+exam_provider = "Databricks (online or test center, proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "None (advanced data engineering hands-on experience recommended)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/databricks-de-professional/"
+practice_url = "/guided/databricks-de-professional/practice/"
