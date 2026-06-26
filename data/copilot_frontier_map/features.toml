@@ -7,7 +7,7 @@
 # Status values: frontier | ga | expected | paused | withdrawn
 # Evidence levels: official (MS blog/docs) | roadmap (M365 roadmap) | blog (3rd party confirmed)
 #
-# Last global update: 2026-05-02
+# Last global update: 2026-06-27 (Cowork → GA; Microsoft Scout added; Frontier roster re-verified vs June 2026 Microsoft sources)
 # ============================================================================
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -15,33 +15,33 @@
 # ═══════════════════════════════════════════════════════════════════════════════
 
 [[features]]
-id = "copilot-cowork"
-name = "Copilot Cowork"
+id = "microsoft-scout"
+name = "Microsoft Scout"
 app = "Microsoft 365"
-app_icon = "brain"
+app_icon = "search"
 status = "frontier"
-frontier_date = "2026-03-31"
+frontier_date = "2026-06-02"
 expected_ga = "TBA"
 actual_ga = ""
-last_status_change = "2026-03-31"
-ai_models = ["Anthropic Claude", "Microsoft (GPT)"]
-description = "An autonomous execution agent that plans, coordinates, and performs multi-step, long-running work across your entire Microsoft 365 environment. Unlike standard Copilot which responds to one prompt at a time, Cowork takes a goal and breaks it into steps — drafting documents, sending emails, scheduling meetings, and tracking progress over time."
-value_prop = "Delegate complex workflows end-to-end instead of doing them step by step. Describe the outcome you want, and Cowork plans and executes across apps."
-use_cases = ["Project coordination and status reports", "Onboarding new team members", "Budget preparation and tracking", "Research and report generation", "Event planning and coordination"]
-who_benefits = ["Project managers", "Team leads", "Executives", "Anyone managing multi-step workflows"]
-skills = ["Word", "Excel", "PowerPoint", "PDF", "Email", "Scheduling", "Calendar", "Meetings", "Daily Briefing", "Enterprise Search", "Communications", "Deep Research", "Adaptive Cards"]
-custom_skills = "Up to 20 custom skills per tenant via SKILL.md files in OneDrive"
-licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment"
-admin_action_required = "Enable Frontier programme in M365 Admin Centre. Approve Anthropic as a sub-processor (required — Claude powers the execution engine)."
-availability_scope = "Global. EU/EFTA/UK tenants must explicitly opt in to Anthropic sub-processor (disabled by default in these regions)."
+last_status_change = "2026-06-02"
+ai_models = []
+description = "An always-on personal agent, available in Frontier to a limited set of customers. Scout spans cloud, desktop, and web — connecting with Teams, Outlook, OneDrive, and SharePoint, plus the everyday data people use most including chats, emails, calendar, and contacts. You engage with Scout in Teams, and can expand what it acts on through the desktop app, including browser activity, local resources, and Model Context Protocol (MCP) servers."
+value_prop = "Hand off ongoing work to a personal agent that runs continuously across your apps and data, then pick up where it left off — in Teams or via the desktop app."
+use_cases = ["Ongoing personal task management across Teams, Outlook, and files", "Acting on chats, emails, calendar, and contacts", "Extending actions to browser activity and local resources via the desktop app", "Connecting to Model Context Protocol (MCP) servers"]
+who_benefits = ["Information workers", "Anyone wanting an always-on personal agent", "Power users who connect external tools via MCP"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment (limited customer availability at launch)"
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre. Admin controls are available to manage access, budgets, and usage."
+availability_scope = "Frontier — a limited set of customers at launch. Usage-based pricing; details to be shared by Microsoft."
 evidence_level = "official"
 source_urls = [
-  "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/",
-  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+  "https://www.microsoft.com/microsoft-365/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/",
+  "https://learn.microsoft.com/partner-center/announcements/2026-june"
 ]
-status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
-last_verified = "2026-05-02"
-notes = "Requires explicit user approval for actions like sending emails or modifying files. All actions logged in Purview Audit."
+status_source_url = "https://learn.microsoft.com/partner-center/announcements/2026-june"
+last_verified = "2026-06-27"
+notes = "Introduced 2 June 2026 alongside Copilot Cowork's general availability. Usage-based pricing with Copilot Credits; pricing details to be shared by Microsoft. Operates within Microsoft 365 security, compliance, and governance controls."
 
 [[features]]
 id = "researcher-multi-model"
@@ -69,7 +69,7 @@ source_urls = [
   "https://www.neowin.net/news/microsofts-copilot-cowork-is-now-available-via-the-frontier-program/"
 ]
 status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
-last_verified = "2026-05-02"
+last_verified = "2026-06-27"
 notes = "Critique and Model Council are new Frontier-exclusive capabilities layered on top of the existing Researcher agent."
 
 [[features]]
@@ -97,7 +97,7 @@ source_urls = [
   "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
 ]
 status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
-last_verified = "2026-05-02"
+last_verified = "2026-06-27"
 notes = "Backed by Microsoft 365 security, privacy, and compliance features. Works within existing document permissions."
 
 [[features]]
@@ -125,7 +125,7 @@ source_urls = [
   "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
 ]
 status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
-last_verified = "2026-05-02"
+last_verified = "2026-06-27"
 notes = "Actions like sending emails or accepting meetings require user approval."
 
 [[features]]
@@ -153,7 +153,7 @@ source_urls = [
   "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
 ]
 status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
-last_verified = "2026-05-02"
+last_verified = "2026-06-27"
 notes = "Requires Teams Phone licence in addition to Copilot. Call delegation operates within tenant compliance boundaries."
 
 [[features]]
@@ -181,7 +181,7 @@ source_urls = [
   "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
 ]
 status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
-last_verified = "2026-05-02"
+last_verified = "2026-06-27"
 notes = "Leverages Work IQ to pull relevant context from your organisation's data."
 
 [[features]]
@@ -209,7 +209,7 @@ source_urls = [
   "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
 ]
 status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
-last_verified = "2026-05-02"
+last_verified = "2026-06-27"
 notes = "Emails sent via this feature go through standard Outlook compliance and retention policies."
 
 [[features]]
@@ -237,12 +237,42 @@ source_urls = [
   "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
 ]
 status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
-last_verified = "2026-05-02"
+last_verified = "2026-06-27"
 notes = "Works within existing Planner permissions and plan membership."
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # RECENTLY GRADUATED — Frontier → GA
 # ═══════════════════════════════════════════════════════════════════════════════
+
+[[features]]
+id = "copilot-cowork"
+name = "Copilot Cowork"
+app = "Microsoft 365"
+app_icon = "brain"
+status = "ga"
+frontier_date = "2026-03-31"
+expected_ga = ""
+actual_ga = "2026-06-16"
+last_status_change = "2026-06-16"
+ai_models = ["Anthropic Claude (Opus 4.8, Opus, Sonnet)", "Microsoft (GPT)"]
+description = "An agentic system for complex, long-running, multi-step work across Microsoft 365 and connected systems. Cowork takes a goal and breaks it into steps — drafting documents, sending emails, scheduling meetings, generating images, using a browser, and tracking progress over time — operating within existing Microsoft 365 security, compliance, and governance controls."
+value_prop = "Delegate complex workflows end-to-end instead of doing them step by step. Describe the outcome you want, and Cowork plans and executes across apps."
+use_cases = ["Project coordination and status reports", "Onboarding new team members", "Budget preparation and tracking", "Research and report generation", "Event planning and coordination"]
+who_benefits = ["Project managers", "Team leads", "Executives", "Anyone managing multi-step workflows"]
+skills = ["Word", "Excel", "PowerPoint", "PDF", "Email", "Scheduling", "Calendar", "Meetings", "Daily Briefing", "Enterprise Search", "Communications", "Deep Research", "Adaptive Cards", "Image generation", "Browser use"]
+custom_skills = "Up to 20 custom skills per tenant via SKILL.md files in OneDrive"
+licensing_prereqs = "Microsoft 365 Copilot licence + usage-based billing with Copilot Credits"
+admin_action_required = "Approve Anthropic as a sub-processor (Claude powers the execution engine). Manage access, budgets, and usage via admin controls."
+availability_scope = "Generally available to all Microsoft 365 Copilot tenants worldwide in tier-1 languages. EU/EFTA/UK tenants must explicitly opt in to the Anthropic sub-processor."
+evidence_level = "official"
+source_urls = [
+  "https://aka.ms/CoworkGA",
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/cowork",
+  "https://learn.microsoft.com/microsoft-365/copilot/cowork/whats-new"
+]
+status_source_url = "https://learn.microsoft.com/partner-center/announcements/2026-june"
+last_verified = "2026-06-27"
+notes = "Reached general availability on 16 June 2026. GA adds a model picker (Auto or a specific model, including Claude Opus 4.8), image generation, browser use, a Customize page, new security and compliance capabilities, partner and Dynamics 365 plugins, and consumption billing via Copilot Credits. Actions like sending emails or modifying files require user approval; all actions are logged in Purview Audit."
 
 [[features]]
 id = "scheduled-prompting"
