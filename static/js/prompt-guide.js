@@ -734,7 +734,7 @@
         fb.style.color = '#FBBF24';
       } else {
         fb.textContent = 'Start writing — we\'ll detect which techniques you use...';
-        fb.style.color = 'rgba(255,255,255,0.4)';
+        fb.style.color = 'var(--text-tertiary)';
       }
     });
   }
@@ -883,10 +883,10 @@
     var quizBody = $('#pguide-quiz-body');
     var challengeList = $('#pguide-challenge-list');
     if (quizBody && !quizBody.innerHTML.trim()) {
-      quizBody.innerHTML = '<p style="color:rgba(255,255,255,0.4);text-align:center;padding:2rem">Loading quiz questions...</p>';
+      quizBody.innerHTML = '<p style="color:var(--text-tertiary);text-align:center;padding:2rem">Loading quiz questions...</p>';
     }
     if (challengeList && !challengeList.innerHTML.trim()) {
-      challengeList.innerHTML = '<p style="color:rgba(255,255,255,0.4);text-align:center;padding:2rem">Loading challenges...</p>';
+      challengeList.innerHTML = '<p style="color:var(--text-tertiary);text-align:center;padding:2rem">Loading challenges...</p>';
     }
   }
 

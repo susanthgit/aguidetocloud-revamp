@@ -872,7 +872,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1rem;
-  min-height: 800px; /* Phase 16 P4: reserve height to prevent CLS while JS hydrates curated palettes */
+}
+
+/* Anti-CLS reserve ONLY for the curated grid that hydrates via JS.
+   Scoped to the ID so the (often-empty) #palette-fav-grid which shares the
+   .palette-explore-grid class does not reserve 800px of blank space. */
+#palette-explore-grid {
+  min-height: 800px;
 }
 
 .palette-explore-card {
