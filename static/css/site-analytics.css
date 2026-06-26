@@ -2245,7 +2245,7 @@
 .sa-rt-row { display: grid; grid-template-columns: minmax(120px, 1fr) minmax(80px, 2fr) 32px; gap: 10px; align-items: center; padding: 3px 0; }
 .sa-rt-name { font-size: 0.82rem; color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .sa-rt-bar-wrap { height: 8px; border-radius: 4px; background: var(--border); overflow: hidden; }
-.sa-rt-bar-fill { height: 100%; border-radius: 4px; background: var(--success); transition: width 0.5s ease; }
+.sa-rt-bar-fill { height: 100%; border-radius: 4px; background: var(--accent); transition: width 0.5s ease; }
 .sa-rt-count { font-size: 0.82rem; font-weight: 600; color: var(--accent); text-align: right; }
 @media (max-width: 768px) { .sa-rt-row { grid-template-columns: minmax(80px, 1fr) minmax(60px, 1.5fr) 28px; } .sa-rt-name { font-size: 0.78rem; } }
 
