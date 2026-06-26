@@ -3009,3 +3009,21 @@ a.siteana-useful-name:hover { color: var(--accent); }
   .siteana-useful-row { grid-template-columns: 5.5rem 1fr auto; gap: 0.5rem; }
 }
 
+/* ── Release 2: methodology + notable days ── */
+.siteana-method { margin: 0.5rem 0 0; }
+.siteana-method-row {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.siteana-method-row:last-child { border-bottom: none; }
+.siteana-method dt { font-weight: 600; font-size: 0.85rem; color: var(--text-primary); }
+.siteana-method dd { margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+.siteana-method dd b { color: var(--text-primary); font-weight: 600; }
+.siteana-notable { margin: 0.85rem 0 0; font-size: 0.82rem; color: var(--text-secondary); }
+@media (max-width: 560px) {
+  .siteana-method-row { grid-template-columns: 1fr; gap: 0.2rem; }
+}
+

@@ -117,8 +117,9 @@
     <div class="siteana-card">
       <h3 class="siteana-card-title">Traffic Trend</h3>
       <div style="position:relative;height:220px">
-        <canvas id="sa-trend-chart" aria-label="30-day traffic trend chart"></canvas>
+        <canvas id="sa-trend-chart" aria-label="Traffic trend chart"></canvas>
       </div>
+      <p class="siteana-notable" id="sa-notable"></p>
     </div>
 
     <!-- Heatmap Calendar -->
@@ -513,10 +514,10 @@
       <div id="sa-search-queries"><p class="siteana-hint">Loading search data...</p></div>
     </div>
 
-    <!-- SEO Opportunities -->
-    <div class="siteana-card siteana-deep-cta is-warning">
-      <h3 class="siteana-card-title">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} SEO Opportunities</h3>
-      <p class="siteana-hint">Queries ranking #4–10 with high impressions — one optimisation away from page 1</p>
+    <!-- Topics people are looking for -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">{{ partial "icon.html" (dict "name" "target" "size" 14 "stroke" 1.5) }} Topics people are looking for</h3>
+      <p class="siteana-hint">Lots of people search these and we land near the top &mdash; the answers we're working to make even better</p>
       <div id="sa-seo-opps"><p class="siteana-hint">Loading...</p></div>
     </div>
   </div>
@@ -606,6 +607,20 @@
     <div class="siteana-card siteana-funfacts-card">
       <h3 class="siteana-card-title">Fun Facts</h3>
       <div class="siteana-funfacts" id="sa-funfacts"></div>
+    </div>
+
+    <!-- How this data works -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">How this data works</h3>
+      <p class="siteana-hint">Honest about what these numbers mean &mdash; and what they don't</p>
+      <dl class="siteana-method">
+        <div class="siteana-method-row"><dt>What's counted</dt><dd>A <b>page view</b> is one page opening; a <b>unique user</b> is one anonymised browser over the selected range. No logins, no profiles.</dd></div>
+        <div class="siteana-method-row"><dt>Where it comes from</dt><dd>Google Analytics 4 for traffic, Google Search Console for search. Both are sampled and modelled, so totals are approximate.</dd></div>
+        <div class="siteana-method-row"><dt>How fresh</dt><dd>Traffic updates within minutes (cached 5 min). Search Console runs about 48 hours behind. "Live now" is real-time.</dd></div>
+        <div class="siteana-method-row"><dt>Why it may differ</dt><dd>Ad-blockers, privacy browsers and GA4's modelling mean these counts won't match a server log exactly. They show the shape, not a precise tally.</dd></div>
+        <div class="siteana-method-row"><dt>Privacy</dt><dd>Everything here is aggregated and anonymous &mdash; no personal data is stored or shown, and tiny segments are hidden.</dd></div>
+        <div class="siteana-method-row"><dt>No money</dt><dd>This is a usefulness dashboard, not a business one. Revenue is deliberately left off &mdash; it's not what this page is about.</dd></div>
+      </dl>
     </div>
 
     <!-- Open Data -->
@@ -951,6 +966,21 @@
     }).join('');
   }
 
+  function renderNotableDays(trend) {
+    var el = document.getElementById('sa-notable'); if (!el) return;
+    if (!trend || trend.length < 5) { el.textContent = ''; return; }
+    var vals = trend.map(function(d){return d.views;});
+    var avg = vals.reduce(function(a,b){return a+b;},0) / vals.length;
+    var peakIdx = 0; for (var i = 1; i < vals.length; i++) { if (vals[i] > vals[peakIdx]) peakIdx = i; }
+    var peak = trend[peakIdx];
+    if (avg <= 0 || peak.views < avg * 1.4) { el.textContent = ''; return; }
+    var mult = (peak.views / avg).toFixed(1);
+    var dp = peak.date.split('-');
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var label = (months[parseInt(dp[1], 10) - 1] || '') + ' ' + parseInt(dp[2], 10);
+    el.textContent = 'Busiest day: ' + label + ' \u2014 ' + roundK(peak.views) + ' views, about ' + mult + '\u00D7 a typical day.';
+  }
+
   function render(data) {
     _cachedData = data;
     _lastRefresh = Date.now();
@@ -965,7 +995,7 @@
     var ppsEl = document.getElementById('sa-pps'); if (ppsEl) { ppsEl.textContent = pps; ppsEl.classList.remove('siteana-skeleton'); }
     if (ga4.change) { setWow('sa-wow-views', ga4.change.views); setWow('sa-wow-users', ga4.change.users); setWow('sa-wow-sessions', ga4.change.sessions); }
     else { ['sa-wow-views','sa-wow-users','sa-wow-sessions'].forEach(function(id){ var e=document.getElementById(id); if(e) e.style.display='none'; }); }
-    if (ga4.trend) { renderTrend(ga4.trend); renderStatSparklines(ga4.trend); renderHeatmap(ga4.trend); }
+    if (ga4.trend) { renderTrend(ga4.trend); renderStatSparklines(ga4.trend); renderHeatmap(ga4.trend); renderNotableDays(ga4.trend); }
     if (ga4.leaderboard) { renderLeaderboard(ga4.leaderboard, ga4.tool_trends); renderActivity(ga4.leaderboard); renderFeatured(ga4.leaderboard); renderRisingStars(ga4.leaderboard, ga4.tool_trends); renderHiddenGems(ga4.leaderboard); renderMilestoneNext(ga4.totals); renderImpact(ga4.leaderboard, ga4.totals); renderCategoryBars(ga4.leaderboard); }
     renderList('sa-countries', ga4.countries, 'country', 'users', true);
     renderList('sa-sources', ga4.sources, 'source', 'sessions', false);
@@ -1123,14 +1153,11 @@
     var el = document.getElementById('sa-seo-opps'); if (!el) return;
     var opps = queries.filter(function(q) { return q.position > 3 && q.position <= 10 && q.impressions >= 200; });
     opps.sort(function(a,b) { return b.impressions - a.impressions; });
-    if (!opps.length) { el.innerHTML = '<p class="siteana-hint">No opportunities found — all high-impression queries are already top 3! 🎉</p>'; return; }
+    if (!opps.length) { el.innerHTML = '<p class="siteana-hint">We\u2019re already near the top for the busiest searches.</p>'; return; }
     el.innerHTML = opps.slice(0, 8).map(function(q) {
-      var ctr = q.impressions > 0 ? ((q.clicks / q.impressions) * 100).toFixed(1) : '0';
-      var potentialClicks = Math.round(q.impressions * 0.25) - q.clicks;
       return '<div class="siteana-opp-item">'
         + '<div class="siteana-opp-query">' + esc(q.query) + '</div>'
-        + '<div class="siteana-opp-stats">Position #' + Math.round(q.position) + ' · ' + roundK(q.impressions) + ' impressions · ' + ctr + '% CTR</div>'
-        + (potentialClicks > 0 ? '<div class="siteana-opp-uplift">↑ Moving to top 3 could add ~' + potentialClicks + ' clicks/month</div>' : '')
+        + '<div class="siteana-opp-stats">Searched ~' + roundK(q.impressions) + ' times this period &middot; we usually appear around #' + Math.round(q.position) + '</div>'
         + '</div>';
     }).join('');
   }
