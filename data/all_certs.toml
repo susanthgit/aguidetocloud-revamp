@@ -6953,3 +6953,45 @@ exam_prerequisites = "None (related training + ~6 months hands-on Data Analyst e
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/databricks-data-analyst-associate/"
 practice_url = "/guided/databricks-data-analyst-associate/practice/"
+
+[[cert]]
+slug = "snowpro-advanced-architect"
+vendor = "snowflake"
+code = "SNOWPRO-ADVANCED-ARCHITECT"
+name = "SnowPro Advanced: Architect"
+tagline = "Master the Snowflake SnowPro Advanced: Architect certification (ARA-C01) - account and security architecture, the Snowflake AI Data Cloud architecture and business continuity, data engineering pipeline design, and performance and cost optimization."
+exam_category = "Snowflake"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 761
+featured = false
+price_practice = 9
+
+[cert_map."snowpro-advanced-architect"]
+vendor = "snowflake"
+code = "SNOWPRO-ADVANCED-ARCHITECT"
+name = "SnowPro Advanced: Architect"
+tagline = "Master the Snowflake SnowPro Advanced: Architect certification (ARA-C01) - account and security architecture, the Snowflake AI Data Cloud architecture and business continuity, data engineering pipeline design, and performance and cost optimization."
+exam_category = "Snowflake"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 761
+featured = false
+price_practice = 9
+exam_url = "https://learn.snowflake.com/en/certifications/snowpro-advanced-architect/"
+exam_cost = "$375 USD"
+exam_duration = 115
+exam_passing_score = "750 / 1000 (scaled)"
+exam_questions_real = "65"
+exam_provider = "Snowflake (Pearson VUE / online proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "SnowPro Core Certified"
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/snowpro-advanced-architect/"
+practice_url = "/guided/snowpro-advanced-architect/practice/"
