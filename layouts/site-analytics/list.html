@@ -40,7 +40,7 @@
       <span class="siteana-stat-num siteana-skeleton" id="sa-total-views">—</span>
       <canvas class="siteana-stat-spark" id="sa-spark-views" width="60" height="16"></canvas>
       <span class="siteana-wow" id="sa-wow-views" style="display:none"></span>
-      <span class="siteana-stat-label">Page Views (30d)</span>
+      <span class="siteana-stat-label">Page Views</span>
     </div>
     <div class="siteana-stat">
       <span class="siteana-stat-num siteana-skeleton" id="sa-total-users">—</span>
@@ -65,6 +65,14 @@
 
   <!-- Refresh indicator -->
   <div class="siteana-refreshed" id="sa-refreshed"></div>
+
+  <!-- Date range selector -->
+  <div class="siteana-range-bar" role="group" aria-label="Date range">
+    <button class="siteana-range-btn" type="button" data-range="7d">7 days</button>
+    <button class="siteana-range-btn siteana-range-active" type="button" data-range="30d">30 days</button>
+    <button class="siteana-range-btn" type="button" data-range="90d">90 days</button>
+    <button class="siteana-range-btn" type="button" data-range="all">All time</button>
+  </div>
 
   <!-- Tabs -->
   <div class="siteana-tabs" role="tablist">
@@ -92,9 +100,22 @@
       </div>
     </div>
 
+    <!-- Audience this period -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Audience this period</h3>
+      <p class="siteana-hint">How people engage &mdash; aggregated and anonymous</p>
+      <div class="siteana-content-stats">
+        <div class="siteana-content-item"><span class="siteana-content-num is-purple" id="sa-eng-time">&mdash;</span><span>Avg engaged time</span></div>
+        <div class="siteana-content-item"><span class="siteana-content-num is-purple" id="sa-eng-rate">&mdash;</span><span>Engagement rate</span></div>
+        <div class="siteana-content-item"><span class="siteana-content-num is-purple" id="sa-eng-visit">&mdash;</span><span>Avg visit length</span></div>
+      </div>
+      <div class="siteana-nvr" id="sa-nvr"></div>
+      <p class="siteana-humans" id="sa-humans"></p>
+    </div>
+
     <!-- Traffic Trend -->
     <div class="siteana-card">
-      <h3 class="siteana-card-title">30-Day Traffic Trend</h3>
+      <h3 class="siteana-card-title">Traffic Trend</h3>
       <div style="position:relative;height:220px">
         <canvas id="sa-trend-chart" aria-label="30-day traffic trend chart"></canvas>
       </div>
@@ -103,7 +124,7 @@
     <!-- Heatmap Calendar -->
     <div class="siteana-card">
       <h3 class="siteana-card-title">Daily Activity</h3>
-      <p class="siteana-hint">Traffic intensity over the last 30 days</p>
+      <p class="siteana-hint">Traffic intensity over the selected range</p>
       <div class="siteana-heatmap-grid" id="sa-heatmap"></div>
       <div class="siteana-hm-legend">
         <span>Less</span>
@@ -135,7 +156,7 @@
       </div>
       <div class="siteana-card siteana-transparency">
         <h3>Transparency Note</h3>
-        <p>Traffic from Google Analytics (30-day window). All counts are approximate and anonymous — no personal data stored.</p>
+        <p>Traffic from Google Analytics (selected window). All counts are approximate and anonymous &mdash; no personal data stored.</p>
         <p>This data is real and unfiltered. <a href="#" data-tab-link="about" class="siteana-learn-link">Learn how it's collected →</a></p>
       </div>
     </div>
@@ -143,6 +164,13 @@
 
   <!-- ═══════════ Tab 2: Tools ═══════════ -->
   <div class="siteana-panel active" id="panel-tools" role="tabpanel">
+
+    <!-- Most useful right now -->
+    <div class="siteana-card siteana-useful-card">
+      <h3 class="siteana-card-title">Most useful right now</h3>
+      <p class="siteana-hint">What people like you are finding most useful this period</p>
+      <div id="sa-most-useful" class="siteana-useful-grid"><p class="siteana-hint">Loading&hellip;</p></div>
+    </div>
 
     <!-- Full Leaderboard (FIRST — it's what people come for) -->
     <div class="siteana-card">
@@ -340,6 +368,13 @@
       <h3 class="siteana-card-title">Top Pages</h3>
       <p class="siteana-hint">Most visited pages across the entire site</p>
       <div id="sa-top-pages"><p class="siteana-hint">Loading...</p></div>
+    </div>
+
+    <!-- Where people arrive -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Where people arrive</h3>
+      <p class="siteana-hint">Top entry pages &mdash; the first thing visitors land on</p>
+      <div id="sa-landing"><p class="siteana-hint">Loading&hellip;</p></div>
     </div>
 
     <!-- Content Freshness -->
@@ -628,6 +663,7 @@
   var _trendChart = null, _activityChart = null;
   var _realtimeTimer = null;
   var _cachedData = null;
+  var _range = '30d';
 
   var TOOLS = {
     'ai-news':'AI News','m365-roadmap':'M365 Roadmap','prompt-library':'Prompt Library',
@@ -760,7 +796,22 @@
   });
 
   // ── Fetch main data ──
-  fetch(API + '?range=30d').then(function(r) { return r.json(); }).then(render).catch(function() {});
+  function loadStats() {
+    fetch(API + '?range=' + _range).then(function(r) { return r.json(); }).then(render).catch(function() {});
+  }
+  loadStats();
+  // ── Date-range selector ──
+  (function() {
+    var bar = document.querySelector('.siteana-range-bar'); if (!bar) return;
+    bar.addEventListener('click', function(e) {
+      var btn = e.target && e.target.closest ? e.target.closest('.siteana-range-btn') : null; if (!btn) return;
+      _range = btn.getAttribute('data-range');
+      var btns = bar.querySelectorAll('.siteana-range-btn');
+      for (var i = 0; i < btns.length; i++) btns[i].classList.toggle('siteana-range-active', btns[i] === btn);
+      ['sa-total-views','sa-total-users','sa-total-sessions','sa-pps','sa-eng-time','sa-eng-rate','sa-eng-visit'].forEach(function(id) { var el = document.getElementById(id); if (el) el.classList.add('siteana-skeleton'); });
+      loadStats();
+    });
+  })();
 
   // ── Realtime polling (visibility-gated) ──
   function pollRealtime() {
@@ -841,6 +892,65 @@
     var ago = Math.round((Date.now() - _lastRefresh) / 60000);
     el.textContent = ago < 1 ? 'Data refreshed just now' : 'Data from ' + ago + ' min ago · Auto-refreshes every 5 min';
   }
+  function formatDur(s) { s = Math.round(s || 0); if (s < 60) return s + 's'; var mn = Math.floor(s / 60), r = s % 60; return r ? mn + 'm ' + r + 's' : mn + 'm'; }
+  function prettyPath(p) { if (!p || p === '/') return 'Homepage'; var seg = p.replace(/\/$/, '').split('/').filter(Boolean); var last = seg[seg.length - 1] || p; return last.replace(/[-_]/g, ' ').replace(/\b\w/g, function(c) { return c.toUpperCase(); }); }
+  function computeTopRising(lb, trends) {
+    if (!trends) return null;
+    var best = null;
+    lb.forEach(function(t) {
+      var d = trends[t.tool]; if (!d || d.length < 14) return;
+      var recent = d.slice(-7).reduce(function(a, b) { return a + b; }, 0);
+      var prior = d.slice(-14, -7).reduce(function(a, b) { return a + b; }, 0);
+      if (prior > 10) { var g = Math.round(((recent - prior) / prior) * 100); if (g > 0 && (!best || g > best.growth)) best = { tool: t.tool, growth: g }; }
+    });
+    return best;
+  }
+  function renderMostUseful(ga4, gsc) {
+    var el = document.getElementById('sa-most-useful'); if (!el) return;
+    var rows = [];
+    if (ga4.leaderboard && ga4.leaderboard[0]) { var t = ga4.leaderboard[0]; rows.push({ tag: 'Most used', name: TOOLS[t.tool] || t.tool, url: TOOL_URLS[t.tool] || '/', meta: roundK(t.views) + ' views' }); }
+    var rise = computeTopRising(ga4.leaderboard || [], ga4.tool_trends);
+    if (rise) rows.push({ tag: 'Rising fastest', name: TOOLS[rise.tool] || rise.tool, url: TOOL_URLS[rise.tool] || '/', meta: '\u2191 ' + rise.growth + '%' });
+    if (ga4.blog_pages && ga4.blog_pages[0]) { var b = ga4.blog_pages[0]; rows.push({ tag: 'Most read', name: prettyPath(b.path), url: b.path, meta: roundK(b.views) + ' views' }); }
+    if (gsc && gsc.queries && gsc.queries.length) { var q = gsc.queries.slice().sort(function(a, b) { return b.clicks - a.clicks; })[0]; if (q && q.clicks > 0) rows.push({ tag: 'Most searched', name: '\u201C' + q.query + '\u201D', url: null, meta: roundK(q.clicks) + ' clicks' }); }
+    if (ga4.landing && ga4.landing[0]) { var l = ga4.landing[0]; rows.push({ tag: 'Top entry point', name: prettyPath(l.path), url: l.path, meta: roundK(l.sessions) + ' arrivals' }); }
+    if (!rows.length) { el.innerHTML = '<p class="siteana-hint">Collecting data\u2026</p>'; return; }
+    el.innerHTML = rows.map(function(r) {
+      var name = r.url ? '<a href="' + esc(r.url) + '" class="siteana-useful-name">' + esc(r.name) + '</a>' : '<span class="siteana-useful-name">' + esc(r.name) + '</span>';
+      return '<div class="siteana-useful-row"><span class="siteana-useful-tag">' + r.tag + '</span>' + name + '<span class="siteana-useful-meta">' + esc(r.meta) + '</span></div>';
+    }).join('');
+  }
+  function renderAudience(ga4) {
+    var e = ga4.engagement || {};
+    var set = function(id, v) { var el = document.getElementById(id); if (el) { el.textContent = v; el.classList.remove('siteana-skeleton'); } };
+    set('sa-eng-time', formatDur(e.avgEngagedSec));
+    set('sa-eng-rate', Math.round((e.engagementRate || 0) * 100) + '%');
+    set('sa-eng-visit', formatDur(e.avgSessionSec));
+    var nvrEl = document.getElementById('sa-nvr');
+    if (nvrEl && ga4.newReturning) {
+      var nw = ga4.newReturning.new || 0, rt = ga4.newReturning.returning || 0, tot = nw + rt;
+      var pct = tot > 0 ? Math.round((nw / tot) * 100) : 0;
+      nvrEl.innerHTML = '<div class="siteana-nvr-head"><span>New learners <b>' + roundK(nw) + '</b></span><span>Returning readers <b>' + roundK(rt) + '</b></span></div>'
+        + '<div class="siteana-nvr-bar"><div class="siteana-nvr-fill" style="width:' + pct + '%"></div></div>';
+    }
+    var hEl = document.getElementById('sa-humans');
+    if (hEl && ga4.totals && ga4.trend && ga4.trend.length) {
+      var days = ga4.trend.length;
+      hEl.textContent = 'On an average day, about ' + roundK(Math.round(ga4.totals.users / days)) + ' people read ' + roundK(Math.round(ga4.totals.views / days)) + ' pages here.';
+    }
+  }
+  function renderLanding(landing) {
+    var el = document.getElementById('sa-landing'); if (!el) return;
+    if (!landing || !landing.length) { el.innerHTML = '<p class="siteana-hint">No data yet</p>'; return; }
+    var max = landing[0].sessions || 1;
+    el.innerHTML = landing.map(function(p, i) {
+      return '<div class="siteana-lb-item"><span class="siteana-lb-rank">' + (i + 1) + '</span>'
+        + '<span class="siteana-lb-name"><a href="' + esc(p.path) + '" class="siteana-lb-link">' + esc(prettyPath(p.path)) + '</a></span>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="--bar-w:' + Math.round((p.sessions / max) * 100) + '%;--tint:var(--accent)"></div></div>'
+        + '<span class="siteana-lb-total">' + roundK(p.sessions) + '</span></div>';
+    }).join('');
+  }
+
   function render(data) {
     _cachedData = data;
     _lastRefresh = Date.now();
@@ -853,13 +963,17 @@
     // Pages per session
     var pps = ga4.totals.sessions > 0 ? (ga4.totals.views / ga4.totals.sessions).toFixed(1) : '—';
     var ppsEl = document.getElementById('sa-pps'); if (ppsEl) { ppsEl.textContent = pps; ppsEl.classList.remove('siteana-skeleton'); }
-    if (ga4.wow && ga4.wow.change) { setWow('sa-wow-views', ga4.wow.change.views); setWow('sa-wow-users', ga4.wow.change.users); setWow('sa-wow-sessions', ga4.wow.change.sessions); }
+    if (ga4.change) { setWow('sa-wow-views', ga4.change.views); setWow('sa-wow-users', ga4.change.users); setWow('sa-wow-sessions', ga4.change.sessions); }
+    else { ['sa-wow-views','sa-wow-users','sa-wow-sessions'].forEach(function(id){ var e=document.getElementById(id); if(e) e.style.display='none'; }); }
     if (ga4.trend) { renderTrend(ga4.trend); renderStatSparklines(ga4.trend); renderHeatmap(ga4.trend); }
     if (ga4.leaderboard) { renderLeaderboard(ga4.leaderboard, ga4.tool_trends); renderActivity(ga4.leaderboard); renderFeatured(ga4.leaderboard); renderRisingStars(ga4.leaderboard, ga4.tool_trends); renderHiddenGems(ga4.leaderboard); renderMilestoneNext(ga4.totals); renderImpact(ga4.leaderboard, ga4.totals); renderCategoryBars(ga4.leaderboard); }
     renderList('sa-countries', ga4.countries, 'country', 'users', true);
     renderList('sa-sources', ga4.sources, 'source', 'sessions', false);
     renderList('sa-devices', ga4.devices, 'device', 'users', false);
     if (ga4.top_pages) { renderPages('sa-top-pages', ga4.top_pages, 20); renderContentSplit(ga4.top_pages); renderGuidedPages(ga4.top_pages); }
+    renderMostUseful(ga4, data.gsc);
+    renderAudience(ga4);
+    if (ga4.landing) renderLanding(ga4.landing);
     if (ga4.blog_pages) renderPages('sa-blog-pages', ga4.blog_pages, 15);
     if (data.gsc && data.gsc.queries) renderSearchQueries(data.gsc.queries);
     renderFunFacts(ga4);
@@ -1433,7 +1547,7 @@
   function numK(n) { if (!n) return '0'; if (n >= 1000) return (n/1000).toFixed(1)+'k'; return String(n); }
 
   // Auto-refresh every 5 min
-  setInterval(function() { fetch(API + '?range=30d').then(function(r){return r.json();}).then(render).catch(function(){}); }, 300000);
+  setInterval(function() { fetch(API + '?range=' + _range).then(function(r){return r.json();}).then(render).catch(function(){}); }, 300000);
 })();
 </script>
 

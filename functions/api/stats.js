@@ -171,6 +171,22 @@ function getRangeDates(range, start, end) {
   return { startDate: '30daysAgo', endDate: 'today' };
 }
 
+function getPrevRangeDates(range) {
+  if (range === '7d') return { startDate: '14daysAgo', endDate: '8daysAgo' };
+  if (range === '90d') return { startDate: '180daysAgo', endDate: '91daysAgo' };
+  if (range === 'all' || range === 'custom') return null;
+  return { startDate: '60daysAgo', endDate: '31daysAgo' };
+}
+
+// Float-preserving row parser (engagementRate/averageSessionDuration are floats; parseRows int-truncates them).
+function parseRowsF(res) {
+  if (!res?.rows) return [];
+  return res.rows.map(r => ({
+    dimensions: (r.dimensionValues || []).map(d => d.value),
+    metrics: (r.metricValues || []).map(m => parseFloat(m.value) || 0)
+  }));
+}
+
 function getMonday(d) {
   d = new Date(d); const day = d.getUTCDay(); const diff = day === 0 ? -6 : 1 - day;
   d.setUTCDate(d.getUTCDate() + diff); return d;
@@ -867,20 +883,21 @@ async function handleMainStats(env, url) {
     return jsonRes(cacheStore[cacheKey].data);
 
   const dateRange = getRangeDates(range, url.searchParams.get('start'), url.searchParams.get('end'));
+  const prevRange = getPrevRangeDates(range);
   const token = await getToken(env);
   const response = { ga4: null, gsc: null, custom: null, range, updated: new Date().toISOString() };
 
   if (token) {
     const sd = dateRange.startDate, ed = dateRange.endDate;
-    const [pagesRes, trendRes, summaryRes, geoRes, deviceRes, sourceRes, wowRes, todayRes, toolTrendRes, gscRes] = await Promise.all([
+    const [pagesRes, trendRes, summaryRes, geoRes, deviceRes, sourceRes, wowRes, todayRes, toolTrendRes, gscRes, nvrRes, landingRes] = await Promise.all([
       ga4RunReport(token, { dateRanges: [{ startDate: sd, endDate: ed }], dimensions: [{ name: 'pagePath' }],
         metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }],
         orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }], limit: 250 }),
       ga4RunReport(token, { dateRanges: [{ startDate: sd, endDate: ed }], dimensions: [{ name: 'date' }],
         metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }, { name: 'sessions' }],
         orderBys: [{ dimension: { dimensionName: 'date' }, desc: false }] }),
-      ga4RunReport(token, { dateRanges: [{ startDate: sd, endDate: ed }],
-        metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }, { name: 'sessions' }] }),
+      ga4RunReport(token, { dateRanges: prevRange ? [{ startDate: sd, endDate: ed, name: 'cur' }, { startDate: prevRange.startDate, endDate: prevRange.endDate, name: 'prev' }] : [{ startDate: sd, endDate: ed }],
+        metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }, { name: 'sessions' }, { name: 'newUsers' }, { name: 'engagementRate' }, { name: 'userEngagementDuration' }, { name: 'averageSessionDuration' }, { name: 'engagedSessions' }] }),
       ga4RunReport(token, { dateRanges: [{ startDate: sd, endDate: ed }], dimensions: [{ name: 'country' }],
         metrics: [{ name: 'activeUsers' }], orderBys: [{ metric: { metricName: 'activeUsers' }, desc: true }], limit: 15 }),
       ga4RunReport(token, { dateRanges: [{ startDate: sd, endDate: ed }], dimensions: [{ name: 'deviceCategory' }],
@@ -894,7 +911,11 @@ async function handleMainStats(env, url) {
         metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }, { name: 'sessions' }] }),
       ga4RunReport(token, { dateRanges: [{ startDate: sd, endDate: ed }], dimensions: [{ name: 'pagePath' }, { name: 'date' }],
         metrics: [{ name: 'screenPageViews' }], orderBys: [{ dimension: { dimensionName: 'date' }, desc: false }], limit: 10000 }),
-      gscQuery(token, { startDate: resolveDate(sd), endDate: resolveDate(ed), dimensions: ['query'], rowLimit: 50, type: 'web' }).catch(() => ({ rows: [] }))
+      gscQuery(token, { startDate: resolveDate(sd), endDate: resolveDate(ed), dimensions: ['query'], rowLimit: 50, type: 'web' }).catch(() => ({ rows: [] })),
+      ga4RunReport(token, { dateRanges: [{ startDate: sd, endDate: ed }], dimensions: [{ name: 'newVsReturning' }],
+        metrics: [{ name: 'activeUsers' }, { name: 'sessions' }] }).catch(() => ({ rows: [] })),
+      ga4RunReport(token, { dateRanges: [{ startDate: sd, endDate: ed }], dimensions: [{ name: 'landingPage' }],
+        metrics: [{ name: 'sessions' }, { name: 'activeUsers' }], orderBys: [{ metric: { metricName: 'sessions' }, desc: true }], limit: 12 }).catch(() => ({ rows: [] }))
     ]);
 
     const pageRows = parseRows(pagesRes);
@@ -913,7 +934,28 @@ async function handleMainStats(env, url) {
     const leaderboard = Object.entries(toolStats).map(([tool, d]) => ({ tool, views: d.views, users: d.users, total: d.views })).sort((a, b) => b.total - a.total);
     const trend = parseRows(trendRes).map(r => { const raw = r.dimensions[0]; return { date: `${raw.slice(0,4)}-${raw.slice(4,6)}-${raw.slice(6,8)}`, views: r.metrics[0], users: r.metrics[1], sessions: r.metrics[2] || 0 }; });
     const weekly = aggregateWeekly(trend);
-    const summaryRows = parseRows(summaryRes), todayRows = parseRows(todayRes);
+    const sRows = parseRowsF(summaryRes), todayRows = parseRows(todayRes);
+    let curS, prevS;
+    if (prevRange && sRows.length >= 2) {
+      curS = sRows.find(r => r.dimensions[0] === 'cur') || sRows[0];
+      prevS = sRows.find(r => r.dimensions[0] === 'prev') || sRows[1];
+    } else { curS = sRows[0]; prevS = null; }
+    const m = (curS && curS.metrics) ? curS.metrics : [];
+    const pctC = (c, p) => p > 0 ? Math.round(((c - p) / p) * 100) : (c > 0 ? 100 : 0);
+    const change = prevS ? { views: pctC(m[0], prevS.metrics[0]), users: pctC(m[1], prevS.metrics[1]), sessions: pctC(m[2], prevS.metrics[2]) } : null;
+    const engagement = {
+      newUsers: Math.round(m[3] || 0),
+      engagementRate: m[4] || 0,
+      avgEngagedSec: (m[1] > 0) ? Math.round((m[5] || 0) / m[1]) : 0,
+      avgSessionSec: Math.round(m[6] || 0),
+      engagedSessions: Math.round(m[7] || 0)
+    };
+    const nvr = { new: 0, returning: 0 };
+    for (const r of parseRows(nvrRes)) { const k = (r.dimensions[0] || '').toLowerCase(); if (k === 'new') nvr.new = r.metrics[0]; else if (k === 'returning') nvr.returning = r.metrics[0]; }
+    const landing = parseRows(landingRes)
+      .filter(r => r.dimensions[0] && r.dimensions[0] !== '(not set)')
+      .map(r => ({ path: r.dimensions[0], sessions: r.metrics[0], users: r.metrics[1] }))
+      .slice(0, 10);
 
     const wowRows = parseRows(wowRes);
     let wow = null;
@@ -942,8 +984,9 @@ async function handleMainStats(env, url) {
     }
 
     response.ga4 = {
-      totals: { views: summaryRows[0]?.metrics[0] || 0, users: summaryRows[0]?.metrics[1] || 0, sessions: summaryRows[0]?.metrics[2] || 0 },
+      totals: { views: m[0] || 0, users: m[1] || 0, sessions: m[2] || 0 },
       today: { views: todayRows[0]?.metrics[0] || 0, users: todayRows[0]?.metrics[1] || 0 },
+      engagement, newReturning: nvr, landing, change,
       leaderboard, trend, weekly, tool_trends,
       top_pages: topPages.slice(0, 30),
       blog_pages: topPages.filter(p => p.path.startsWith('/blog/')).slice(0, 15),

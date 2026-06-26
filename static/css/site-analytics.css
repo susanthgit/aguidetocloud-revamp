@@ -2938,3 +2938,74 @@
   width: var(--bar-w, 0%);
 }
 
+/* ── Release 1: date range selector ── */
+.siteana-range-bar {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  margin: 0 0 1.25rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.siteana-range-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font: 600 0.82rem 'Inter', sans-serif;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.siteana-range-btn:hover { color: var(--text-primary); }
+.siteana-range-btn.siteana-range-active {
+  background: var(--bg-surface);
+  color: var(--accent);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--text-primary) 8%, transparent);
+}
+
+/* ── Release 1: "Most useful right now" ── */
+.siteana-useful-grid { display: flex; flex-direction: column; }
+.siteana-useful-row {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.siteana-useful-row:last-child { border-bottom: none; }
+.siteana-useful-tag {
+  font-size: 0.66rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+.siteana-useful-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+a.siteana-useful-name:hover { color: var(--accent); }
+.siteana-useful-meta { font-size: 0.8rem; font-weight: 600; color: var(--accent); white-space: nowrap; }
+
+/* ── Release 1: new vs returning + average-day line ── */
+.siteana-nvr { margin-top: 1rem; }
+.siteana-nvr-head { display: flex; justify-content: space-between; gap: 0.5rem; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.4rem; }
+.siteana-nvr-head b { color: var(--text-primary); }
+.siteana-nvr-bar { height: 8px; border-radius: 4px; background: color-mix(in srgb, var(--accent) 18%, transparent); overflow: hidden; }
+.siteana-nvr-fill { height: 100%; border-radius: 4px; background: var(--accent); transition: width 0.6s ease; }
+.siteana-humans { margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary); font-style: italic; }
+
+@media (max-width: 560px) {
+  .siteana-range-bar { display: flex; width: 100%; }
+  .siteana-range-btn { flex: 1; padding: 0.4rem 0.3rem; text-align: center; }
+  .siteana-useful-row { grid-template-columns: 5.5rem 1fr auto; gap: 0.5rem; }
+}
+
