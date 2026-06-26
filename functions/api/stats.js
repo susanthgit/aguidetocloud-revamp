@@ -947,7 +947,7 @@ async function handleMainStats(env, url) {
       ga4RunReport(token, { dateRanges: [{ startDate: 'today', endDate: 'today' }],
         metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }, { name: 'sessions' }] }),
       ga4RunReport(token, { dateRanges: [{ startDate: sd, endDate: ed }], dimensions: [{ name: 'pagePath' }, { name: 'date' }],
-        metrics: [{ name: 'screenPageViews' }], orderBys: [{ dimension: { dimensionName: 'date' }, desc: false }], limit: 10000 }),
+        metrics: [{ name: 'screenPageViews' }], orderBys: [{ dimension: { dimensionName: 'date' }, desc: false }], limit: 30000 }),
       gscQuery(token, { startDate: resolveDate(sd), endDate: resolveDate(ed), dimensions: ['query'], rowLimit: 50, type: 'web' }).catch(() => ({ rows: [] })),
       ga4RunReport(token, { dateRanges: [{ startDate: sd, endDate: ed }], dimensions: [{ name: 'newVsReturning' }],
         metrics: [{ name: 'activeUsers' }, { name: 'sessions' }] }).catch(() => ({ rows: [] })),
