@@ -6705,3 +6705,44 @@ exam_prerequisites = "None (OCI fundamentals plus hands-on experience with OCI n
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/oci-networking-professional/"
 practice_url = "/guided/oci-networking-professional/practice/"
+
+[[cert]]
+slug = "splunk-cloud-admin"
+vendor = "splunk"
+code = "SPLUNK-CLOUD-ADMIN"
+name = "Splunk Cloud Certified Admin"
+tagline = "Master the Splunk Cloud Certified Admin exam (SPLK-1005) - the Splunk Cloud Platform topology and the admin-vs-Splunk responsibility split, index management and configuration-file precedence with btool, user roles and LDAP/AD/SAML authentication, installing Cloud-vetted and private apps, getting data into Splunk Cloud with universal and heavy forwarders and the Deployment Server, monitor, network, scripted, Windows and HTTP Event Collector (HEC) inputs, fine-tuning inputs and the parsing phase (line breaking and timestamps with Data Preview), manipulating raw data with props.conf, transforms.conf and SEDCMD, and working with Splunk Cloud Support."
+exam_category = "Splunk"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 778
+featured = false
+price_practice = 9
+
+[cert_map."splunk-cloud-admin"]
+vendor = "splunk"
+code = "SPLUNK-CLOUD-ADMIN"
+name = "Splunk Cloud Certified Admin"
+tagline = "Master the Splunk Cloud Certified Admin exam (SPLK-1005) - the Splunk Cloud Platform topology and the admin-vs-Splunk responsibility split, index management and configuration-file precedence with btool, user roles and LDAP/AD/SAML authentication, installing Cloud-vetted and private apps, getting data into Splunk Cloud with universal and heavy forwarders and the Deployment Server, monitor, network, scripted, Windows and HTTP Event Collector (HEC) inputs, fine-tuning inputs and the parsing phase (line breaking and timestamps with Data Preview), manipulating raw data with props.conf, transforms.conf and SEDCMD, and working with Splunk Cloud Support."
+exam_category = "Splunk"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 778
+featured = false
+price_practice = 9
+exam_url = "https://www.splunk.com/en_us/training/certification-track/splunk-cloud-certified-admin.html"
+exam_cost = "$130 USD"
+exam_duration = 75
+exam_passing_score = "Scaled score (pass/fail)"
+exam_questions_real = "60"
+exam_provider = "Splunk (Pearson VUE, online proctored)"
+exam_prerequisites = "Splunk Core Certified Power User"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/splunk-cloud-admin/"
+practice_url = "/guided/splunk-cloud-admin/practice/"
