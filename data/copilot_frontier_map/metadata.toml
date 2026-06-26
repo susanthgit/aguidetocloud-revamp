@@ -3,13 +3,13 @@
 # ============================================================================
 # Overview of the Frontier programme and the three-tier release model.
 # All content must be sourced from public Microsoft documentation.
-# Last updated: 2026-05-02
+# Last updated: 2026-06-27
 # ============================================================================
 
 [programme]
 name = "Microsoft 365 Copilot Frontier Programme"
 tagline = "Early access to the next wave of Copilot AI capabilities"
-last_updated = "2026-05-02"
+last_updated = "2026-06-27"
 description = "The Frontier programme is Microsoft's opt-in early-access programme that lets organisations trial experimental and upcoming Copilot AI capabilities before general availability. Features in Frontier are production-quality but may evolve, change, or be withdrawn based on real-world feedback."
 how_to_enrol = "Tenant admins enable Frontier via the Microsoft 365 Admin Centre → Settings → Org settings → Copilot → Frontier programme."
 key_facts = [
