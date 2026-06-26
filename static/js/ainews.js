@@ -216,6 +216,17 @@ function escapeHtml(str) {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+// Decode HTML entities (e.g. &#160;, &#8230;, &amp;) from feed text to real characters.
+// Safe: a <textarea> treats its content as plain text (RCDATA) so tags are NOT executed;
+// we read .value (text only). Apply BEFORE escapeHtml so escaping isn't double-encoded.
+function decodeEntities(str) {
+  if (!str) return '';
+  if (str.indexOf('&') === -1) return str;
+  var ta = document.createElement('textarea');
+  ta.innerHTML = str;
+  return ta.value;
+}
+
 function isMicrosoftCat(cat) {
   var lower = cat.toLowerCase();
   return MICROSOFT_CATS.some(function (m) { return lower.indexOf(m) !== -1; });
@@ -305,7 +316,7 @@ function renderNews(data, view) {
     html += '<span class="ainews-breaking-label">BREAKING</span>';
     html += '<ul class="ainews-breaking-list">';
     html += breakingArticles.map(function (a) {
-      return '<li><a href="' + escapeHtml(a.url || a.link || '#') + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(a.title) + '</a></li>';
+      return '<li><a href="' + escapeHtml(a.url || a.link || '#') + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(decodeEntities(a.title)) + '</a></li>';
     }).join('');
     html += '</ul></div>';
   }
@@ -317,7 +328,7 @@ function renderNews(data, view) {
     html += '<div class="ainews-briefing-header">Today\'s AI Briefing</div>';
     html += '<ul class="ainews-briefing-list">';
     briefing.forEach(function (bullet) {
-      html += '<li>' + escapeHtml(bullet) + '</li>';
+      html += '<li>' + escapeHtml(decodeEntities(bullet)) + '</li>';
     });
     html += '</ul></div>';
   }
@@ -662,15 +673,15 @@ function estimateReadTime(text) {
 
 function getArticleVars(article) {
   var cat = article.category_name || article.category || 'General';
-  var summary = article.ai_summary || article.snippet || '';
+  var summary = decodeEntities(article.ai_summary || article.snippet || '');
   return {
     cat: cat,
     emoji: article.category_emoji || '',
     summary: summary,
-    whyMatters: article.why_it_matters || '',
+    whyMatters: decodeEntities(article.why_it_matters || ''),
     source: article.source || '',
     url: article.url || article.link || '#',
-    title: article.title || 'Untitled',
+    title: decodeEntities(article.title || 'Untitled'),
     time: timeAgo(article.published),
     readTime: estimateReadTime(summary + ' ' + (article.why_it_matters || '')),
     favicon: getFaviconUrl(article.url || article.link || ''),

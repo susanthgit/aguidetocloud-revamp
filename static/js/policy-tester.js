@@ -282,7 +282,7 @@
             'stroke-linecap="round" stroke-dasharray="' + circ.toFixed(1) + '" ' +
             'stroke-dashoffset="' + offset.toFixed(1) + '" ' +
             'transform="rotate(-90 100 100)" class="ptester-ring-bar"/>' +
-          '<text x="100" y="92" text-anchor="middle" fill="#fff" font-size="42" font-weight="700">' + s + '</text>' +
+          '<text x="100" y="92" text-anchor="middle" fill="var(--text-primary)" font-size="42" font-weight="700">' + s + '</text>' +
           '<text x="100" y="118" text-anchor="middle" fill="' + esc(color) + '" font-size="16" font-weight="600">' + esc(label) + '</text>' +
         '</svg>' +
       '</div>';
