@@ -175,7 +175,7 @@
     <!-- Full Leaderboard (FIRST — it's what people come for) -->
     <div class="siteana-card">
       <h3 class="siteana-card-title">Tool Leaderboard</h3>
-      <p class="siteana-hint">All {{ $tc }} free tools ranked by page views (30 days)</p>
+      <p class="siteana-hint">All {{ $tc }} free tools &mdash; ranked by page views in the selected range</p>
       <div id="sa-leaderboard"><p class="siteana-hint" style="text-align:center;padding:2rem 0">Loading leaderboard...</p></div>
     </div>
 
@@ -866,8 +866,8 @@
   function renderStatSparklines(trend) {
     if (!trend || trend.length < 7) return;
     var last7 = trend.slice(-7);
-    drawSparkline(document.getElementById('sa-spark-views'), last7.map(function(d){return d.views;}), '#64748B');
-    drawSparkline(document.getElementById('sa-spark-users'), last7.map(function(d){return d.users;}), '#ff66ff');
+    drawSparkline(document.getElementById('sa-spark-views'), last7.map(function(d){return d.views;}), accentNow());
+    drawSparkline(document.getElementById('sa-spark-users'), last7.map(function(d){return d.users;}), accentNow());
   }
 
   // ── Heatmap Calendar ──
@@ -945,7 +945,7 @@
     var max = landing[0].sessions || 1;
     el.innerHTML = landing.map(function(p, i) {
       return '<div class="siteana-lb-item"><span class="siteana-lb-rank">' + (i + 1) + '</span>'
-        + '<span class="siteana-lb-name"><a href="' + esc(p.path) + '" class="siteana-lb-link">' + esc(prettyPath(p.path)) + '</a></span>'
+        + '<a href="' + esc(p.path) + '" class="siteana-lb-name siteana-lb-link">' + esc(prettyPath(p.path)) + '</a>'
         + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="--bar-w:' + Math.round((p.sessions / max) * 100) + '%;--tint:var(--accent)"></div></div>'
         + '<span class="siteana-lb-total">' + roundK(p.sessions) + '</span></div>';
     }).join('');
