@@ -2785,6 +2785,22 @@ exam_duration = 100
 exam_passing_score = "700 / 1000"
 guided_url = "/guided/gh-500/"
 
+[[cert]]
+slug = "databricks-data-analyst-associate"
+vendor = "databricks"
+code = "DATABRICKS-DATA-ANALYST-ASSOCIATE"
+name = "Certified Data Analyst Associate"
+tagline = "Master the Databricks Certified Data Analyst Associate exam (Oct 2025 guide) - analyzing data with Databricks SQL and SQL Warehouses, the Databricks Assistant, joins, aggregations and set operations, managed and external tables, materialized views and Delta Lake time travel, query optimization with Photon, query history and Liquid Clustering, AI/BI Dashboards and visualizations, AI/BI Genie spaces, dimensional data modeling, and securing data with Unity Catalog."
+exam_category = "Databricks"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 777
+featured = false
+price_practice = 9
+
 [cert_map."ab-900"]
 vendor = "microsoft"
 code = "AB-900"
@@ -6911,3 +6927,29 @@ exam_prerequisites = "None (advanced data engineering hands-on experience recomm
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/databricks-de-professional/"
 practice_url = "/guided/databricks-de-professional/practice/"
+
+[cert_map."databricks-data-analyst-associate"]
+vendor = "databricks"
+code = "DATABRICKS-DATA-ANALYST-ASSOCIATE"
+name = "Certified Data Analyst Associate"
+tagline = "Master the Databricks Certified Data Analyst Associate exam (Oct 2025 guide) - analyzing data with Databricks SQL and SQL Warehouses, the Databricks Assistant, joins, aggregations and set operations, managed and external tables, materialized views and Delta Lake time travel, query optimization with Photon, query history and Liquid Clustering, AI/BI Dashboards and visualizations, AI/BI Genie spaces, dimensional data modeling, and securing data with Unity Catalog."
+exam_category = "Databricks"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 777
+featured = false
+price_practice = 9
+exam_url = "https://www.databricks.com/learn/certification/data-analyst-associate"
+exam_cost = "$200 USD"
+exam_duration = 90
+exam_passing_score = "Not officially published (pass/fail)"
+exam_questions_real = "45"
+exam_provider = "Databricks (Webassessor/Kryterion; online or test center, proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "None (related training + ~6 months hands-on Data Analyst experience recommended)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/databricks-data-analyst-associate/"
+practice_url = "/guided/databricks-data-analyst-associate/practice/"
