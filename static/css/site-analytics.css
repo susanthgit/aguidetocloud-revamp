@@ -3027,3 +3027,26 @@ a.siteana-useful-name:hover { color: var(--accent); }
   .siteana-method-row { grid-template-columns: 1fr; gap: 0.2rem; }
 }
 
+/* ── Release 3: Core Web Vitals + reach ── */
+.siteana-vitals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 0.5rem; }
+.siteana-vital {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 0.85rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.siteana-vital-label { font-size: 0.8rem; font-weight: 600; color: var(--text-primary); }
+.siteana-vital-val { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--accent); line-height: 1.1; }
+.siteana-vital-rate { font-size: 0.7rem; font-weight: 600; padding: 0.1rem 0.45rem; border-radius: 999px; }
+.siteana-vital-rate.is-good { color: var(--success); background: color-mix(in srgb, var(--success) 14%, transparent); }
+.siteana-vital-rate.is-ni { color: var(--warning); background: color-mix(in srgb, var(--warning) 14%, transparent); }
+.siteana-vital-rate.is-poor { color: var(--error); background: color-mix(in srgb, var(--error) 14%, transparent); }
+.siteana-vital-sub { font-size: 0.72rem; color: var(--text-muted); }
+.siteana-ytreach { margin: 0.5rem 0 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+.siteana-ytreach b { color: var(--text-primary); }
+@media (max-width: 560px) { .siteana-vitals { grid-template-columns: 1fr; } }
+

@@ -111,6 +111,7 @@
       </div>
       <div class="siteana-nvr" id="sa-nvr"></div>
       <p class="siteana-humans" id="sa-humans"></p>
+      <p class="siteana-humans" id="sa-learning"></p>
     </div>
 
     <!-- Traffic Trend -->
@@ -378,6 +379,13 @@
       <div id="sa-landing"><p class="siteana-hint">Loading&hellip;</p></div>
     </div>
 
+    <!-- Evergreen guides -->
+    <div class="siteana-card">
+      <h3 class="siteana-card-title">Evergreen guides</h3>
+      <p class="siteana-hint">Pages people keep coming back to &mdash; steady traffic across the range, not one-off spikes</p>
+      <div id="sa-evergreen"><p class="siteana-hint">Loading&hellip;</p></div>
+    </div>
+
     <!-- Content Freshness -->
     <div class="siteana-card">
       <h3 class="siteana-card-title">Content Freshness</h3>
@@ -623,6 +631,20 @@
       </dl>
     </div>
 
+    <!-- Site speed (Core Web Vitals) -->
+    <div class="siteana-card" id="sa-vitals-card" style="display:none">
+      <h3 class="siteana-card-title">Site speed &mdash; real Chrome users</h3>
+      <p class="siteana-hint">Core Web Vitals from Google's Chrome UX Report (28-day field data)</p>
+      <div class="siteana-vitals" id="sa-vitals"></div>
+    </div>
+
+    <!-- Beyond this site (YouTube reach) -->
+    <div class="siteana-card" id="sa-ytreach-card" style="display:none">
+      <h3 class="siteana-card-title">Beyond this site</h3>
+      <p class="siteana-hint">Other places people learn with A Guide to Cloud</p>
+      <p class="siteana-ytreach" id="sa-ytreach"></p>
+    </div>
+
     <!-- Open Data -->
     <div class="siteana-card siteana-opendata-card">
       <h3 class="siteana-card-title">Open Data</h3>
@@ -815,6 +837,12 @@
     fetch(API + '?range=' + _range).then(function(r) { return r.json(); }).then(render).catch(function() {});
   }
   loadStats();
+  // ── YouTube reach (Story tab, lazy) ──
+  fetch(API + '?ytreach=1').then(function(r){return r.json();}).then(function(d){
+    if (!d || !d.subscribers) return;
+    var c = document.getElementById('sa-ytreach-card'), el = document.getElementById('sa-ytreach');
+    if (c && el) { el.innerHTML = 'On <a href="https://www.youtube.com/channel/UCYN12Rlv9hgZlWJa1XPfdyg" class="siteana-lb-link" target="_blank" rel="noopener">YouTube</a>, <b>' + roundK(d.subscribers) + '</b> people subscribe and our videos have been watched <b>' + roundK(d.views) + '</b> times.'; c.style.display = ''; }
+  }).catch(function(){});
   // ── Date-range selector ──
   (function() {
     var bar = document.querySelector('.siteana-range-bar'); if (!bar) return;
@@ -953,6 +981,10 @@
       var days = ga4.trend.length;
       hEl.textContent = 'On an average day, about ' + roundK(Math.round(ga4.totals.users / days)) + ' people read ' + roundK(Math.round(ga4.totals.views / days)) + ' pages here.';
     }
+    var lEl = document.getElementById('sa-learning');
+    if (lEl && ga4.engagement && ga4.engagement.totalEngagedSec) {
+      lEl.textContent = 'That\u2019s about ' + roundK(Math.round(ga4.engagement.totalEngagedSec / 3600)) + ' hours of reading and learning, delivered free.';
+    }
   }
   function renderLanding(landing) {
     var el = document.getElementById('sa-landing'); if (!el) return;
@@ -981,6 +1013,40 @@
     el.textContent = 'Busiest day: ' + label + ' \u2014 ' + roundK(peak.views) + ' views, about ' + mult + '\u00D7 a typical day.';
   }
 
+  function renderEvergreen(list) {
+    var el = document.getElementById('sa-evergreen'); if (!el) return;
+    if (!list || !list.length) { el.innerHTML = '<p class="siteana-hint">Not enough history yet for the selected range.</p>'; return; }
+    var max = list[0].total || 1;
+    el.innerHTML = list.map(function(p, i) {
+      return '<div class="siteana-lb-item"><span class="siteana-lb-rank">' + (i + 1) + '</span>'
+        + '<a href="' + esc(p.path) + '" class="siteana-lb-name siteana-lb-link">' + esc(prettyPath(p.path)) + '</a>'
+        + '<div class="siteana-lb-bar-wrap"><div class="siteana-lb-bar" style="--bar-w:' + Math.round((p.total / max) * 100) + '%;--tint:var(--accent)"></div></div>'
+        + '<span class="siteana-lb-total">' + roundK(p.total) + '</span></div>';
+    }).join('');
+  }
+  function renderVitals(wv) {
+    var card = document.getElementById('sa-vitals-card'), el = document.getElementById('sa-vitals');
+    if (!card || !el) return;
+    if (!wv) { card.style.display = 'none'; return; }
+    var defs = [
+      { o: wv.lcp, label: 'Loads fast', sub: 'Largest paint', good: 2500, ni: 4000, fmt: function(v){ return v >= 1000 ? (v/1000).toFixed(1) + 's' : Math.round(v) + 'ms'; } },
+      { o: wv.inp, label: 'Responds quickly', sub: 'Interaction', good: 200, ni: 500, fmt: function(v){ return Math.round(v) + 'ms'; } },
+      { o: wv.cls, label: 'Stays stable', sub: 'Layout shift', good: 0.1, ni: 0.25, fmt: function(v){ return Number(v).toFixed(2); } }
+    ];
+    var rows = defs.filter(function(d){ return d.o && d.o.p75 != null; });
+    if (!rows.length) { card.style.display = 'none'; return; }
+    card.style.display = '';
+    el.innerHTML = rows.map(function(d){
+      var v = d.o.p75;
+      var rate = v <= d.good ? 'good' : v <= d.ni ? 'ni' : 'poor';
+      var rlabel = rate === 'good' ? 'Good' : rate === 'ni' ? 'OK' : 'Slow';
+      return '<div class="siteana-vital"><span class="siteana-vital-label">' + d.label + '</span>'
+        + '<span class="siteana-vital-val">' + d.fmt(v) + '</span>'
+        + '<span class="siteana-vital-rate is-' + rate + '">' + rlabel + '</span>'
+        + '<span class="siteana-vital-sub">' + d.sub + '</span></div>';
+    }).join('');
+  }
+
   function render(data) {
     _cachedData = data;
     _lastRefresh = Date.now();
@@ -1004,6 +1070,8 @@
     renderMostUseful(ga4, data.gsc);
     renderAudience(ga4);
     if (ga4.landing) renderLanding(ga4.landing);
+    if (ga4.evergreen) renderEvergreen(ga4.evergreen);
+    renderVitals(ga4.webVitals);
     if (ga4.blog_pages) renderPages('sa-blog-pages', ga4.blog_pages, 15);
     if (data.gsc && data.gsc.queries) renderSearchQueries(data.gsc.queries);
     renderFunFacts(ga4);

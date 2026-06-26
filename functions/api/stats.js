@@ -187,6 +187,29 @@ function parseRowsF(res) {
   }));
 }
 
+// Core Web Vitals from the Chrome UX Report (field data, real Chrome users). Returns null
+// if the CrUX API is disabled or the origin has no data — the UI hides the card when null.
+async function getCruxVitals(env) {
+  const key = env.YOUTUBE_API_KEY;
+  if (!key) return null;
+  try {
+    const res = await fetch('https://chromeuxreport.googleapis.com/v1/records:queryRecord?key=' + key, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ origin: 'https://www.aguidetocloud.com' })
+    });
+    if (!res.ok) return null;
+    const j = await res.json();
+    const mx = j.record && j.record.metrics; if (!mx) return null;
+    const pick = (k) => {
+      const x = mx[k]; if (!x || !x.percentiles) return null;
+      return { p75: parseFloat(x.percentiles.p75), good: (x.histogram && x.histogram[0]) ? Math.round((x.histogram[0].density || 0) * 100) : null };
+    };
+    const out = { lcp: pick('largest_contentful_paint'), inp: pick('interaction_to_next_paint'), cls: pick('cumulative_layout_shift') };
+    if (!out.lcp && !out.inp && !out.cls) return null;
+    return out;
+  } catch (e) { return null; }
+}
+
 function getMonday(d) {
   d = new Date(d); const day = d.getUTCDay(); const diff = day === 0 ? -6 : 1 - day;
   d.setUTCDate(d.getUTCDate() + diff); return d;
@@ -875,6 +898,20 @@ async function handleYouTube(env) {
 
 // ── Endpoint: Main Analytics ─────────────────────────────────────
 
+async function handleYtReach(env) {
+  const now = Date.now();
+  if (cacheStore.ytreach && now - cacheStore.ytreach.time < 3600000) return jsonRes(cacheStore.ytreach.data);
+  const key = env.YOUTUBE_API_KEY;
+  if (!key) return jsonRes({ error: 'no key' });
+  try {
+    const r = await ytApi('channels', { id: MAIN_CH, part: 'statistics' }, key);
+    const s = (r.items && r.items[0] && r.items[0].statistics) || {};
+    const data = { subscribers: parseInt(s.subscriberCount) || 0, views: parseInt(s.viewCount) || 0, videos: parseInt(s.videoCount) || 0 };
+    cacheStore.ytreach = { data, time: now };
+    return jsonRes(data);
+  } catch (e) { return jsonRes({ error: 'failed' }); }
+}
+
 async function handleMainStats(env, url) {
   const range = url.searchParams.get('range') || '30d';
   const now = Date.now();
@@ -889,7 +926,7 @@ async function handleMainStats(env, url) {
 
   if (token) {
     const sd = dateRange.startDate, ed = dateRange.endDate;
-    const [pagesRes, trendRes, summaryRes, geoRes, deviceRes, sourceRes, wowRes, todayRes, toolTrendRes, gscRes, nvrRes, landingRes] = await Promise.all([
+    const [pagesRes, trendRes, summaryRes, geoRes, deviceRes, sourceRes, wowRes, todayRes, toolTrendRes, gscRes, nvrRes, landingRes, webVitals] = await Promise.all([
       ga4RunReport(token, { dateRanges: [{ startDate: sd, endDate: ed }], dimensions: [{ name: 'pagePath' }],
         metrics: [{ name: 'screenPageViews' }, { name: 'activeUsers' }],
         orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }], limit: 250 }),
@@ -915,7 +952,8 @@ async function handleMainStats(env, url) {
       ga4RunReport(token, { dateRanges: [{ startDate: sd, endDate: ed }], dimensions: [{ name: 'newVsReturning' }],
         metrics: [{ name: 'activeUsers' }, { name: 'sessions' }] }).catch(() => ({ rows: [] })),
       ga4RunReport(token, { dateRanges: [{ startDate: sd, endDate: ed }], dimensions: [{ name: 'landingPage' }],
-        metrics: [{ name: 'sessions' }, { name: 'activeUsers' }], orderBys: [{ metric: { metricName: 'sessions' }, desc: true }], limit: 12 }).catch(() => ({ rows: [] }))
+        metrics: [{ name: 'sessions' }, { name: 'activeUsers' }], orderBys: [{ metric: { metricName: 'sessions' }, desc: true }], limit: 12 }).catch(() => ({ rows: [] })),
+      getCruxVitals(env)
     ]);
 
     const pageRows = parseRows(pagesRes);
@@ -948,7 +986,8 @@ async function handleMainStats(env, url) {
       engagementRate: m[4] || 0,
       avgEngagedSec: (m[1] > 0) ? Math.round((m[5] || 0) / m[1]) : 0,
       avgSessionSec: Math.round(m[6] || 0),
-      engagedSessions: Math.round(m[7] || 0)
+      engagedSessions: Math.round(m[7] || 0),
+      totalEngagedSec: Math.round(m[5] || 0)
     };
     const nvr = { new: 0, returning: 0 };
     for (const r of parseRows(nvrRes)) { const k = (r.dimensions[0] || '').toLowerCase(); if (k === 'new') nvr.new = r.metrics[0]; else if (k === 'returning') nvr.returning = r.metrics[0]; }
@@ -968,9 +1007,12 @@ async function handleMainStats(env, url) {
 
     // Tool sparklines
     const toolTrends = {};
+    const pageDays = {};
     for (const r of parseRows(toolTrendRes)) {
       const pagePath = r.dimensions[0], rawDate = r.dimensions[1], views = r.metrics[0];
       const date = `${rawDate.slice(0,4)}-${rawDate.slice(4,6)}-${rawDate.slice(6,8)}`;
+      if (!pageDays[pagePath]) pageDays[pagePath] = { days: new Set(), total: 0 };
+      pageDays[pagePath].days.add(date); pageDays[pagePath].total += views;
       for (const [prefix, toolId] of Object.entries(TOOL_PATHS)) {
         if (pagePath === prefix || pagePath.startsWith(prefix)) {
           if (!toolTrends[toolId]) toolTrends[toolId] = {};
@@ -978,6 +1020,13 @@ async function handleMainStats(env, url) {
         }
       }
     }
+    const _totalDays = trend.length || 1;
+    const evergreen = Object.entries(pageDays)
+      .map(([path, d]) => ({ path, total: d.total, coverage: d.days.size / _totalDays }))
+      .filter(p => p.coverage >= 0.6 && p.total >= 50 && p.path !== '/')
+      .sort((a, b) => b.total - a.total)
+      .slice(0, 8)
+      .map(p => ({ path: p.path, total: p.total, coverage: Math.round(p.coverage * 100) }));
     const tool_trends = {};
     for (const toolId of leaderboard.slice(0, 20).map(t => t.tool)) {
       if (toolTrends[toolId]) { const sorted = Object.keys(toolTrends[toolId]).sort(); tool_trends[toolId] = sorted.map(d => toolTrends[toolId][d]); }
@@ -986,7 +1035,7 @@ async function handleMainStats(env, url) {
     response.ga4 = {
       totals: { views: m[0] || 0, users: m[1] || 0, sessions: m[2] || 0 },
       today: { views: todayRows[0]?.metrics[0] || 0, users: todayRows[0]?.metrics[1] || 0 },
-      engagement, newReturning: nvr, landing, change,
+      engagement, newReturning: nvr, landing, change, evergreen, webVitals,
       leaderboard, trend, weekly, tool_trends,
       top_pages: topPages.slice(0, 30),
       blog_pages: topPages.filter(p => p.path.startsWith('/blog/')).slice(0, 15),
@@ -1207,6 +1256,7 @@ export async function onRequestGet(context) {
     if (url.searchParams.get('latestvideo') === '1') return await handleLatestVideo(env);
     if (url.searchParams.get('biolinks') === '1') return await handleBioLinks(env);
     if (url.searchParams.get('youtube') === '1') return await handleYouTube(env);
+    if (url.searchParams.get('ytreach') === '1') return await handleYtReach(env);
     if (url.searchParams.get('guided') === '1') return await handleGuided(env);
     return await handleMainStats(env, url);
   } catch (e) {
