@@ -28,11 +28,37 @@ jobs:
         id: check
         run: python scripts/check-data-freshness.py
 
-      - name: 📝 Create issue if stale data found
+      - name: 📝 Create / update the rolling freshness issue
         if: steps.check.outputs.issues_found == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          gh issue create \
-            --title "🔍 Data freshness alert — $(date -u +%Y-%m-%d)" \
-            --body-file freshness-report.md
+          set -e
+          gh label create "data-freshness" --repo "$REPO" --color D93F0B --description "Rolling data staleness alert" 2>/dev/null || true
+          TS=$(date -u +'%Y-%m-%d %H:%M UTC')
+          { echo "## 🔍 Data Freshness Report"; echo "_Updated: $TS · [run]($RUN_URL)_"; echo ""; cat freshness-report.md; } > freshness-body.md
+          # Dedup: reuse ONE open rolling issue (label data-freshness) instead of a new issue each run.
+          EXISTING=$(gh issue list --repo "$REPO" --state open --label "data-freshness" --json number --jq '.[0].number // empty' 2>/dev/null || true)
+          if [ -n "$EXISTING" ]; then
+            echo "↳ updating rolling issue #$EXISTING"
+            gh issue edit "$EXISTING" --repo "$REPO" --body-file freshness-body.md
+          else
+            echo "↳ opening rolling freshness issue"
+            gh issue create --repo "$REPO" --label "data-freshness" \
+              --title "🔍 Data freshness — staleness detected" \
+              --body-file freshness-body.md
+          fi
+
+      - name: 📣 Push to phone (ntfy)
+        if: steps.check.outputs.issues_found == 'true' && env.NTFY_TOPIC != ''
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+            -H "Title: 🔍 Data freshness" \
+            -H "Priority: default" \
+            -H "Tags: mag,hourglass_flowing_sand" \
+            -H "Click: ${{ github.server_url }}/${{ github.repository }}/issues?q=is%3Aopen+label%3Adata-freshness" \
+            -d "Stale data detected — see the rolling 'data-freshness' issue."

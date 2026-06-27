@@ -1,0 +1,154 @@
+name: 🛰️ Data Source Watch
+
+# Unified source-change detector for the manually-maintained data tools:
+#   Copilot Model Map · Copilot Frontier Map · AI Mapper · Cert Compass
+#
+# These tools have NO clean Microsoft/vendor JSON feed (unlike roadmap/deprecation),
+# so they can't auto-sync. Instead this watcher hashes + keyword-tracks each tool's
+# source pages and ALERTS (deduped issue + ntfy) when a page MEANINGFULLY changes —
+# so the data never goes silently stale again. A human (or scheduled Atlas refresh)
+# then updates the TOML. Supersedes model-map-freshness.yml (model-map folded in).
+#
+# Signal = keyword-count delta (not raw hash) so dynamic pricing/marketing pages
+# don't create false positives (verified: immediate re-run emits 0 events).
+#
+# Idempotency:
+#   - Per-tool label: data-watch-<tool>. Workflow comments on the existing open
+#     issue for that tool instead of opening dupes.
+#   - State file scripts/data-source-watch-state.json committed back with [skip ci].
+
+on:
+  schedule:
+    - cron: '0 3 * * 1'   # Mondays 03:00 UTC (slow-changing pages; matches MSFT scouting cadence)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/data-source-watch.yml'
+      - 'scripts/watch-data-sources.py'
+
+permissions:
+  contents: write   # commit state file back
+  issues: write     # open + comment on labelled issues
+
+concurrency:
+  group: data-source-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 📦 Install dependencies
+        run: pip install requests --quiet
+
+      - name: 🛰️ Probe data sources
+        id: probe
+        run: |
+          set +e
+          mkdir -p .watch-out
+          python scripts/watch-data-sources.py > .watch-out/stdout.log 2> .watch-out/stderr.log
+          grep -E '^EVENT:source-changed:' .watch-out/stdout.log > .watch-out/events.txt || true
+          EVENT_COUNT=$(wc -l < .watch-out/events.txt | tr -d ' ')
+          echo "event_count=$EVENT_COUNT" >> "$GITHUB_OUTPUT"
+          echo "──── STDOUT (tail) ────"
+          tail -40 .watch-out/stdout.log
+          echo ""
+          echo "Change events: $EVENT_COUNT"
+          exit 0
+
+      - name: 💾 Commit state file (if changed)
+        id: commit
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set +e
+          if [ -z "$(git status --porcelain scripts/data-source-watch-state.json)" ]; then
+            echo "No state changes — skipping commit"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add scripts/data-source-watch-state.json
+          git commit -m "chore: data source watch state update [skip ci]
+
+          Auto-updated by .github/workflows/data-source-watch.yml
+          Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          git pull --rebase --autostash || true
+          git push
+
+      - name: 🚨 Open / comment on per-tool issues
+        if: steps.probe.outputs.event_count != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -e
+          gh label create "data-source-changed" --repo "$REPO" --color 1D76DB --description "A watched data source page changed" 2>/dev/null || true
+          TS=$(date -u +'%Y-%m-%d %H:%M UTC')
+
+          # Group event lines by tool so we open ONE issue/comment per tool, not per source.
+          TOOLS=$(cut -d: -f3 .watch-out/events.txt | sort -u)
+          for TOOL in $TOOLS; do
+            TOOL_LABEL="data-watch-${TOOL}"
+            gh label create "$TOOL_LABEL" --repo "$REPO" --color FBCA04 --description "Source-change events for $TOOL" 2>/dev/null || true
+
+            # Build the details body from all events for this tool
+            DETAILS=$(grep -E "^EVENT:source-changed:${TOOL}:" .watch-out/events.txt | sed "s/^EVENT:source-changed:${TOOL}://" )
+            BODY=$(printf '**Tool:** `%s`\n**Detected:** %s\n\n## Sources that changed\n\n```json\n%s\n```\n\n## What to do\n\n1. Open the source URL(s) above and check what changed (new feature, GA, price, cert, model).\n2. Update the matching data file:\n   - `model-map` → `data/copilot_model_map/*.toml`\n   - `frontier-map` → `data/copilot_frontier_map/features.toml` (+ `metadata.toml` last_updated)\n   - `ai-mapper` → `data/ai-mapper/services.toml`\n   - `cert-compass` → `data/cert_compass/*.toml`\n3. Bump the relevant `last_verified` / `last_updated`, rebuild, deploy.\n4. (Or ask Atlas: "refresh the %s data".)\n\n[Workflow run](%s)\n\n_This issue is reused for this tool — new changes are added as comments. Close it once the data is refreshed._' "$TOOL" "$TS" "$DETAILS" "$TOOL" "$RUN_URL")
+
+            EXISTING=$(gh issue list --repo "$REPO" --state open --label "$TOOL_LABEL" --json number --jq '.[0].number // empty' 2>/dev/null || true)
+            if [ -n "$EXISTING" ]; then
+              echo "↳ existing #$EXISTING for $TOOL — commenting"
+              gh issue comment "$EXISTING" --repo "$REPO" --body "🔄 More source changes at $TS
+
+          \`\`\`json
+          $DETAILS
+          \`\`\`
+
+          [Run]($RUN_URL)"
+            else
+              echo "↳ opening issue for $TOOL"
+              gh issue create --repo "$REPO" \
+                --title "🛰️ Data source changed: $TOOL ($TS)" \
+                --label "data-source-changed" \
+                --label "$TOOL_LABEL" \
+                --body "$BODY"
+            fi
+          done
+
+      - name: 📣 Push to phone (ntfy)
+        if: steps.probe.outputs.event_count != '0' && env.NTFY_TOPIC != ''
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          EVENT_COUNT: ${{ steps.probe.outputs.event_count }}
+        run: |
+          curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+            -H "Title: 🛰️ Data source changed" \
+            -H "Priority: default" \
+            -H "Tags: satellite,arrows_counterclockwise" \
+            -H "Click: ${{ github.server_url }}/${{ github.repository }}/issues?q=is%3Aopen+label%3Adata-source-changed" \
+            -d "$EVENT_COUNT data source change event(s) — Model Map / Frontier / AI Mapper / Cert Compass. See issues labelled data-source-changed."
+
+      - name: 📊 Summary
+        if: always()
+        run: |
+          echo "## 🛰️ Data Source Watch" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Change events:** ${{ steps.probe.outputs.event_count }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          tail -40 .watch-out/stdout.log >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
