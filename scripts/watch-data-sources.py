@@ -119,6 +119,17 @@ def keyword_counts(html, keywords):
     return {kw: low.count(kw.lower()) for kw in keywords}
 
 
+def meaningful_delta(old, new):
+    """True only for a change worth a human glance — filters dynamic-page noise.
+    - a keyword appearing or disappearing (presence flip) is always meaningful
+    - otherwise the change must be >= max(3, 15% of the larger count)
+      so e.g. a high-count generic word drifting 398->399 is ignored, while a
+      model name going 2->8 or a feature 0->5 is flagged."""
+    if (old == 0) != (new == 0):
+        return True
+    return abs(new - old) >= max(3, int(0.15 * max(old, new)))
+
+
 def emit(event_type, tool, payload):
     print("EVENT:" + event_type + ":" + tool + ":" + json.dumps(payload, separators=(",", ":")))
 
@@ -149,11 +160,11 @@ def main():
             chash = hashlib.sha256(html.encode("utf-8", "ignore")).hexdigest()[:16]
             prev_counts = prev.get("keywords", {})
 
-            # Compute keyword deltas vs baseline
+            # Compute MEANINGFUL keyword deltas vs baseline (filters dynamic-page noise)
             deltas = {}
             for kw, c in counts.items():
                 pc = prev_counts.get(kw, 0)
-                if c != pc:
+                if meaningful_delta(pc, c):
                     deltas[kw] = str(pc) + "->" + str(c)
 
             if prev_counts and deltas:
