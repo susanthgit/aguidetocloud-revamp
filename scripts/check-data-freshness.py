@@ -308,7 +308,7 @@ def main():
     report = "\n".join(report_lines)
 
     # Write report file
-    with open("freshness-report.md", "w") as f:
+    with open("freshness-report.md", "w", encoding="utf-8") as f:
         f.write(report)
 
     # Set GitHub Actions output
