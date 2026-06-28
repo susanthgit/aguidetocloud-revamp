@@ -7038,3 +7038,42 @@ exam_prerequisites = "None (related training + ~1 year hands-on Databricks ML ex
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/databricks-ml-professional/"
 practice_url = "/guided/databricks-ml-professional/practice/"
+
+
+[[cert]]
+slug = "snowpro-advanced-data-engineer"
+vendor = "snowflake"
+code = "SNOWPRO-ADVANCED-DATA-ENGINEER"
+name = "SnowPro Advanced: Data Engineer"
+tagline = "Master the Snowflake SnowPro Advanced: Data Engineer certification (DEA-C02) - data movement and ingestion pipelines, performance optimization, storage and data protection, data governance, and data transformation."
+exam_category = "Snowflake"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+
+[cert_map."snowpro-advanced-data-engineer"]
+vendor = "snowflake"
+code = "SNOWPRO-ADVANCED-DATA-ENGINEER"
+name = "SnowPro Advanced: Data Engineer"
+tagline = "Master the Snowflake SnowPro Advanced: Data Engineer certification (DEA-C02) - data movement and ingestion pipelines, performance optimization, storage and data protection, data governance, and data transformation."
+exam_category = "Snowflake"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 762
+featured = false
+price_practice = 9
+exam_url = "https://learn.snowflake.com/en/certifications/snowpro-advanced-dataengineer-C02/"
+exam_cost = "$375 USD"
+exam_duration = 115
+exam_passing_score = "750 / 1000 (scaled)"
+exam_questions_real = "65"
+exam_provider = "Snowflake (Pearson VUE / online proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "SnowPro Core Certified"
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/snowpro-advanced-data-engineer/"
+practice_url = "/guided/snowpro-advanced-data-engineer/practice/"
