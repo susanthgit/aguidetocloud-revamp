@@ -6995,3 +6995,46 @@ exam_prerequisites = "SnowPro Core Certified"
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/snowpro-advanced-architect/"
 practice_url = "/guided/snowpro-advanced-architect/practice/"
+
+
+[[cert]]
+slug = "databricks-ml-professional"
+vendor = "databricks"
+code = "DATABRICKS-ML-PROFESSIONAL"
+name = "Certified Machine Learning Professional"
+tagline = "Master the Databricks Certified Machine Learning Professional certification (Sept 2025 guide) - distributed model development with Spark ML, scaling and tuning with Optuna and Ray, advanced MLflow and the FeatureEngineering Client, MLOps with Databricks Asset Bundles and Lakehouse Monitoring, and model deployment on Databricks Model Serving."
+exam_category = "Databricks"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 3
+order = 778
+featured = false
+price_practice = 9
+
+[cert_map."databricks-ml-professional"]
+vendor = "databricks"
+code = "DATABRICKS-ML-PROFESSIONAL"
+name = "Certified Machine Learning Professional"
+tagline = "Master the Databricks Certified Machine Learning Professional certification (Sept 2025 guide) - distributed model development with Spark ML, scaling and tuning with Optuna and Ray, advanced MLflow and the FeatureEngineering Client, MLOps with Databricks Asset Bundles and Lakehouse Monitoring, and model deployment on Databricks Model Serving."
+exam_category = "Databricks"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 3
+order = 778
+featured = false
+price_practice = 9
+exam_url = "https://www.databricks.com/learn/certification/machine-learning-professional"
+exam_cost = "$200 USD"
+exam_duration = 120
+exam_passing_score = "Not officially published (pass/fail)"
+exam_questions_real = "59"
+exam_provider = "Databricks (Kryterion Webassessor; online proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "None (related training + ~1 year hands-on Databricks ML experience recommended)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/databricks-ml-professional/"
+practice_url = "/guided/databricks-ml-professional/practice/"
