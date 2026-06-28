@@ -11,8 +11,8 @@
   ],
   "category": "Security",
   "status": "active",
-  "updated_at": "2026-03-19 18:11:00+00:00",
-  "skills_date": "April 16, 2026",
+  "updated_at": "2026-06-26 19:26:00+00:00",
+  "skills_date": "July 28, 2026",
   "skills_at_a_glance": [
     {
       "area": "Manage a security operations environment",
@@ -74,7 +74,7 @@
         "Investigate and remediate compromised identities that are identified by Microsoft Entra ID",
         "Investigate and remediate security alerts from Microsoft Defender for Identity",
         "Investigate and remediate alerts and incidents identified by Microsoft Sentinel",
-        "Investigate incidents by using agentic AI, including embedded Copilot for Security",
+        "Investigate incidents by using agentic AI, including embedded Microsoft Security Copilot",
         "Investigate complex attacks, such as multi-stage, multi-domain, and lateral movement",
         "Manage security incidents by using case management"
       ],
@@ -85,8 +85,8 @@
         "Investigate and remediate incidents identified by automatic attack disruption"
       ],
       "Investigate Microsoft 365 activities to identify threats": [
-        "Investigate threats by using Audit from Microsoft Purview",
-        "Investigate threats by using Content Search in Microsoft Purview",
+        "Investigate threats by using Microsoft Purview Audit",
+        "Investigate threats by using Content search in Microsoft Purview eDiscovery",
         "Investigate threats by using Microsoft Graph activity logs"
       ]
     },

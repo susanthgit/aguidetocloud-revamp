@@ -11,8 +11,8 @@
   ],
   "category": "Data",
   "status": "active",
-  "updated_at": "2025-12-05 03:46:00+00:00",
-  "skills_date": "November 1, 2024",
+  "updated_at": "2026-06-23 18:41:00+00:00",
+  "skills_date": "July 21, 2026",
   "skills_at_a_glance": [
     {
       "area": "Describe core data concepts",
@@ -34,13 +34,14 @@
   "skills_detailed": {
     "Describe core data concepts (25–30%)": {
       "Describe ways to represent data": [
-        "Describe features of structured data",
-        "Describe features of semi-structured",
-        "Describe features of unstructured data"
+        "Describe the features of structured data",
+        "Describe the features of semi-structured data",
+        "Describe the features of unstructured data"
       ],
       "Identify options for data storage": [
         "Describe common formats for data files",
-        "Describe types of databases"
+        "Describe features of common data stores including databases",
+        "Identify Azure datastores for common use cases"
       ],
       "Describe common data workloads": [
         "Describe features of transactional workloads",
@@ -60,17 +61,17 @@
         "Identify common database objects"
       ],
       "Describe relational Azure data services": [
-        "Describe the Azure SQL family of products including Azure SQL Database, Azure SQL Managed Instance, and SQL Server on Azure Virtual Machines",
+        "Describe the Azure SQL family of products, including Azure SQL Database, Azure SQL Managed Instance, and SQL Server on Azure Virtual Machines",
         "Identify Azure database services for open-source database systems"
       ]
     },
     "Describe considerations for working with non-relational data on Azure (15–20%)": {
-      "Describe capabilities of Azure storage": [
-        "Describe Azure Blob storage",
-        "Describe Azure File storage",
-        "Describe Azure Table storage"
+      "Describe the capabilities of Azure storage": [
+        "Describe features of Azure Blob storage",
+        "Describe features of Azure Files",
+        "Describe features of Azure Table storage"
       ],
-      "Describe capabilities and features of Azure Cosmos DB": [
+      "Describe the capabilities and features of Azure Cosmos DB": [
         "Identify use cases for Azure Cosmos DB",
         "Describe Azure Cosmos DB APIs"
       ]
@@ -81,12 +82,12 @@
         "Describe options for analytical data stores",
         "Describe Microsoft cloud services for large-scale analytics, including Azure Databricks and Microsoft Fabric"
       ],
-      "Describe consideration for real-time data analytics": [
+      "Describe considerations for real-time data analytics": [
         "Describe the difference between batch and streaming data",
         "Identify Microsoft cloud services for real-time analytics"
       ],
       "Describe data visualization in Microsoft Power BI": [
-        "Identify capabilities of Power BI",
+        "Identify the capabilities of Power BI",
         "Describe features of data models in Power BI",
         "Identify appropriate visualizations for data"
       ]

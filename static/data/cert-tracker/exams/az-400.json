@@ -11,8 +11,8 @@
   ],
   "category": "Azure",
   "status": "active",
-  "updated_at": "2026-03-26 06:04:00+00:00",
-  "skills_date": "April 24, 2026",
+  "updated_at": "2026-06-26 19:26:00+00:00",
+  "skills_date": "July 27, 2026",
   "skills_at_a_glance": [
     {
       "area": "Design and implement processes and communications",
@@ -39,7 +39,7 @@
     "Design and implement processes and communications (10–15%)": {
       "Design and implement traceability and flow of work": [
         "Design and implement a structure for the flow of work, including GitHub Flow",
-        "Design and implement a strategy for feedback cycles, including notifications and GitHub issues",
+        "Design and implement a strategy for feedback cycles, including notifications and GitHub Issues",
         "Design and implement integration for tracking work, including GitHub projects, Azure Boards, and repositories",
         "Design and implement source, bug, and quality traceability"
       ],
@@ -144,23 +144,23 @@
       "Automate security and compliance scanning": [
         "Design a strategy for security and compliance scanning, including dependency, code, secret, and licensing scanning",
         "Configure Microsoft Defender for Cloud DevOps Security",
-        "Configure GitHub Advanced Security for both GitHub and Azure DevOps",
+        "Configure GitHub Advanced Security for GitHub and GitHub Advanced Security for Azure DevOps",
         "Integrate GitHub Advanced Security with Microsoft Defender for Cloud",
         "Automate container scanning, including scanning container images and configuring an action to run CodeQL analysis in a container",
-        "Automate analysis of licensing, vulnerabilities, and versioning of open-source components by using Dependabot alerts"
+        "Automate analysis of vulnerabilities of open-source components by using Dependabot alerts"
       ]
     },
     "Implement an instrumentation strategy (5–10%)": {
       "Configure monitoring for a DevOps environment": [
         "Configure Azure Monitor and Azure Monitor Logs to integrate with DevOps tools",
-        "Configure collection of telemetry by using Application Insights, VM Insights, Container Insights, Azure Monitor for Storage, and Azure Monitor for Networks",
+        "Configure collection of telemetry by using Azure Monitor Application Insights, Azure VM Insights, Azure Container Insights, Azure Monitor for Storage, and Azure Monitor for Networks",
         "Configure monitoring in GitHub, including enabling insights and creating and configuring charts",
         "Configure alerts for events in GitHub Actions and Azure Pipelines"
       ],
       "Analyze metrics from instrumentation": [
         "Inspect infrastructure performance indicators, including CPU, memory, disk, and network",
         "Analyze metrics by using collected telemetry, including usage and application performance",
-        "Inspect distributed tracing by using Application Insights",
+        "Inspect distributed tracing by using Azure Monitor Application Insights",
         "Interrogate logs using basic Kusto Query Language (KQL) queries"
       ]
     }

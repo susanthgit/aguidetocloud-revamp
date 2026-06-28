@@ -10,113 +10,94 @@
   ],
   "category": "Power Platform",
   "status": "active",
-  "updated_at": "2025-12-05 03:46:00+00:00",
-  "skills_date": "June 20, 2025",
+  "updated_at": "2026-06-24 17:54:00+00:00",
+  "skills_date": "July 24, 2026",
   "skills_at_a_glance": [
     {
       "area": "Describe the business value of Microsoft Power Platform",
-      "weight": "15-20%"
+      "weight": "5-10%"
     },
     {
       "area": "Manage the Microsoft Power Platform environment",
-      "weight": "15-20%"
+      "weight": "20-25%"
     },
     {
       "area": "Demonstrate the capabilities of Power Apps",
-      "weight": "25-30%"
+      "weight": "20-25%"
     },
     {
       "area": "Demonstrate the capabilities of Power Automate",
-      "weight": "15-20%"
+      "weight": "20-25%"
     },
     {
-      "area": "Demonstrate the capabilities of Power Pages",
-      "weight": "10-15%"
+      "area": "Describe features and capabilities of agents in Microsoft Copilot Studio",
+      "weight": "20-25%"
     }
   ],
   "skills_detailed": {
-    "Describe the business value of Microsoft Power Platform (15–20%)": {
+    "Describe the business value of Microsoft Power Platform (5–10%)": {
       "Describe the business value of Microsoft Power Platform services": [
         "Describe the value of Microsoft Power Apps to build applications",
         "Describe the value of Microsoft Power Automate to automate processes",
-        "Describe the value of Microsoft Power Pages to build websites",
-        "Describe the value of connectors to integrate services and data",
         "Describe the value of Microsoft Dataverse to organize business data",
-        "Describe the value of Copilots and generative AI features in Microsoft Power Platform",
-        "Describe the value of Copilot Studio",
-        "Describe the value of Power FX as a low-code solution"
-      ],
-      "Describe the business value of extending business solutions by using Microsoft Power Platform": [
-        "Describe how Microsoft Power Platform business solutions work together with Microsoft 365 apps and services, including Microsoft Teams",
-        "Describe how Microsoft Power Platform services work together"
+        "Describe the value of connectors to integrate services and data for apps and flows",
+        "Describe the value of Microsoft Power Pages to build websites",
+        "Describe the value of generative AI features in Microsoft Power Platform",
+        "Describe the value of Copilot Studio to create agents"
       ]
     },
-    "Manage the Microsoft Power Platform environment (15–20%)": {
+    "Manage the Microsoft Power Platform environment (20–25%)": {
       "Describe Microsoft Dataverse": [
         "Describe differences between traditional databases and Dataverse",
-        "Describe tables, columns, and relationships in Dataverse",
-        "Describe the options for business logic in Dataverse",
-        "Create and modify tables and columns through conversations",
-        "Describe options for importing and exporting data"
+        "Describe tables, columns, and relationships",
+        "Describe table forms and views",
+        "Describe the options for business logic in Dataverse, including Power Fx",
+        "Describe how to use AI to create and edit tables, columns, and relationships"
       ],
       "Describe Microsoft Power Platform administration and governance": [
-        "Describe the Microsoft Power Platform security model",
         "Describe environments",
-        "Describe the different Microsoft Power Platform admin centers and portals",
-        "Describe how Microsoft Power Platform supports data privacy and accessibility guidelines"
+        "Describe the Microsoft Power Platform security model",
+        "Describe how Microsoft Power Platform supports data privacy and accessibility guidelines",
+        "Describe the monitoring and analytics capabilities of the Microsoft Power Platform",
+        "Describe application lifecycle management (ALM) with Microsoft Power Platform pipelines"
       ]
     },
-    "Demonstrate the capabilities of Power Apps (25–30%)": {
-      "Identify Power Apps capabilities": [
+    "Demonstrate the capabilities of Power Apps (20–25%)": {
+      "Describe Power Apps capabilities and use cases": [
         "Describe use cases for and capabilities of canvas apps",
         "Describe use cases for and capabilities of model-driven apps",
-        "Explore model-driven app features"
+        "Describe use cases for and capabilities of Plan designer",
+        "Describe use cases for and capabilities of code apps"
       ],
-      "Build a canvas app": [
-        "Connect to data sources by using connectors",
-        "Describe common controls",
-        "Build responsive pages by using containers",
-        "Describe the capabilities of Copilot controls",
-        "Share a canvas app"
-      ],
-      "Build a model-driven app": [
-        "Create a model-driven app from tables",
-        "Modify forms",
-        "Create and modify views",
-        "Share a model-driven app"
+      "Describe how to build basic apps by using Power Apps": [
+        "Describe how to use AI to create a canvas app",
+        "Describe how to use AI to create a model-driven app",
+        "Describe creating AI-powered apps by using the vibe experience"
       ]
     },
-    "Demonstrate the capabilities of Power Automate (15–20%)": {
-      "Identify Power Automate components": [
+    "Demonstrate the capabilities of Power Automate (20–25%)": {
+      "Describe Power Automate use cases and capabilities": [
         "Describe use cases for cloud and desktop flows",
-        "Describe use cases for cloud flow templates",
-        "Describe how Power Automate cloud flows use connector triggers and actions",
-        "Describe Power Automate use cases for approvals, Microsoft Teams, Outlook, SharePoint, Forms, and document automation",
-        "Describe the Power Automate apps including Power Automate for Desktop, Power Automate mobile, and the Power Automate maker portal",
-        "Describe actions for Power Automate desktop flows",
-        "Describe Process Mining",
-        "Describe loops and branching in cloud flows"
+        "Describe Power Automate use cases for approvals, Microsoft Teams, Outlook, SharePoint, Forms, and document automation"
       ],
-      "Build a Power Automate flow": [
-        "Create a cloud flow by using an instant, automated, or scheduled trigger",
-        "Create and modify cloud flows through conversations",
-        "Run and monitor cloud flows",
-        "Test a cloud flow",
-        "Share a cloud flow"
+      "Describe how to build basic flows by using Power Automate": [
+        "Describe connector triggers and actions for cloud flows",
+        "Describe how to use AI to create and modify cloud flows",
+        "Describe how to use AI to create and modify desktop flows"
       ]
     },
-    "Demonstrate the capabilities of Power Pages (10–15%)": {
-      "Describe the capabilities of Power Pages": [
-        "Describe use cases for Power Pages",
-        "Describe methods for creating sites",
-        "Describe Power Pages security concepts"
+    "Describe features and capabilities of agents in Microsoft Copilot Studio (20–25%)": {
+      "Describe how to build agents in Copilot Studio": [
+        "Describe use cases for agents",
+        "Describe how to build agent conversation paths by using topics",
+        "Describe how to use knowledge sources in agents",
+        "Describe how tools, including MCP servers and agent flows, are used in agents",
+        "Describe how to publish agents by using channels"
       ],
-      "Create a Power Pages site": [
-        "Create and modify Power Pages sites by using Copilot",
-        "Describe design studio workspaces",
-        "Create and modify pages",
-        "Configure Power Pages components",
-        "Modify a Power Pages theme"
+      "Describe how to manage agents in Copilot Studio": [
+        "Describe use cases and capabilities for Microsoft Agent 365",
+        "Describe how to monitor Copilot Studio agent usage and adoption",
+        "Describe agent evaluations"
       ]
     }
   },

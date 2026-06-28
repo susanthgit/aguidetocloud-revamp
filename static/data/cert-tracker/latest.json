@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21T08:59:09Z",
+  "generated_at": "2026-06-28T08:23:11Z",
   "exam_count": 52,
   "categories": [
     "AI",
@@ -31,8 +31,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2025-12-16 17:07:00+00:00",
-      "skills_date": "January 14, 2026",
+      "updated_at": "2026-06-22 23:35:00+00:00",
+      "skills_date": "July 20, 2026",
       "skill_areas": 3,
       "total_objectives": 57,
       "skills_at_a_glance": [
@@ -290,8 +290,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-03-26 06:04:00+00:00",
-      "skills_date": "April 24, 2026",
+      "updated_at": "2026-06-26 19:26:00+00:00",
+      "skills_date": "July 27, 2026",
       "skill_areas": 5,
       "total_objectives": 86,
       "skills_at_a_glance": [
@@ -337,10 +337,10 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2025-12-05 03:46:00+00:00",
-      "skills_date": "November 1, 2024",
+      "updated_at": "2026-06-23 18:41:00+00:00",
+      "skills_date": "July 21, 2026",
       "skill_areas": 4,
-      "total_objectives": 29,
+      "total_objectives": 30,
       "skills_at_a_glance": [
         {
           "area": "Describe core data concepts",
@@ -787,26 +787,30 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-03-27 23:35:00+00:00",
-      "skills_date": "April 28, 2026",
-      "skill_areas": 4,
-      "total_objectives": 61,
+      "updated_at": "2026-06-24 17:54:00+00:00",
+      "skills_date": "July 24, 2026",
+      "skill_areas": 5,
+      "total_objectives": 83,
       "skills_at_a_glance": [
         {
           "area": "Prepare infrastructure for devices",
-          "weight": "25-30%"
+          "weight": "20-25%"
         },
         {
           "area": "Manage and maintain devices",
-          "weight": "30-35%"
-        },
-        {
-          "area": "Manage applications",
-          "weight": "15-20%"
+          "weight": "25-30%"
         },
         {
           "area": "Protect devices",
           "weight": "15-20%"
+        },
+        {
+          "area": "Manage and secure applications",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Optimize endpoint operations by using automation, monitoring, and reporting",
+          "weight": "10-15%"
         }
       ],
       "has_changes": false,
@@ -957,30 +961,30 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2025-12-05 03:46:00+00:00",
-      "skills_date": "June 20, 2025",
+      "updated_at": "2026-06-24 17:54:00+00:00",
+      "skills_date": "July 24, 2026",
       "skill_areas": 5,
-      "total_objectives": 52,
+      "total_objectives": 37,
       "skills_at_a_glance": [
         {
           "area": "Describe the business value of Microsoft Power Platform",
-          "weight": "15-20%"
+          "weight": "5-10%"
         },
         {
           "area": "Manage the Microsoft Power Platform environment",
-          "weight": "15-20%"
+          "weight": "20-25%"
         },
         {
           "area": "Demonstrate the capabilities of Power Apps",
-          "weight": "25-30%"
+          "weight": "20-25%"
         },
         {
           "area": "Demonstrate the capabilities of Power Automate",
-          "weight": "15-20%"
+          "weight": "20-25%"
         },
         {
-          "area": "Demonstrate the capabilities of Power Pages",
-          "weight": "10-15%"
+          "area": "Describe features and capabilities of agents in Microsoft Copilot Studio",
+          "weight": "20-25%"
         }
       ],
       "has_changes": false,
@@ -1139,10 +1143,10 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2025-12-05 03:46:00+00:00",
-      "skills_date": "November 7, 2025",
+      "updated_at": "2026-06-26 19:26:00+00:00",
+      "skills_date": "July 28, 2026",
       "skill_areas": 4,
-      "total_objectives": 59,
+      "total_objectives": 58,
       "skills_at_a_glance": [
         {
           "area": "Describe the concepts of security, compliance, and identity",
@@ -1182,8 +1186,8 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-03-19 18:11:00+00:00",
-      "skills_date": "April 16, 2026",
+      "updated_at": "2026-06-26 19:26:00+00:00",
+      "skills_date": "July 28, 2026",
       "skill_areas": 3,
       "total_objectives": 54,
       "skills_at_a_glance": [

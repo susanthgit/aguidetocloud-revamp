@@ -12,8 +12,8 @@
   ],
   "category": "Security",
   "status": "active",
-  "updated_at": "2025-12-05 03:46:00+00:00",
-  "skills_date": "November 7, 2025",
+  "updated_at": "2026-06-26 19:26:00+00:00",
+  "skills_date": "July 28, 2026",
   "skills_at_a_glance": [
     {
       "area": "Describe the concepts of security, compliance, and identity",
@@ -53,7 +53,7 @@
     "Describe the capabilities of Microsoft Entra (25–30%)": {
       "Describe function and identity types of Microsoft Entra ID": [
         "Describe Microsoft Entra ID",
-        "Describe types of identities",
+        "Describe types of identities, including agent ID",
         "Describe hybrid identity"
       ],
       "Describe authentication capabilities of Microsoft Entra ID": [
@@ -62,7 +62,7 @@
         "Describe password protection and management capabilities"
       ],
       "Describe access management capabilities of Microsoft Entra ID": [
-        "Describe Conditional Access",
+        "Describe Microsoft Entra Conditional Access",
         "Describe Microsoft Entra roles and role-based access control (RBAC)"
       ],
       "Describe identity protection and governance capabilities of Microsoft Entra": [
@@ -74,9 +74,9 @@
     },
     "Describe the capabilities of Microsoft security solutions (35–40%)": {
       "Describe core infrastructure security services in Azure": [
-        "Describe Azure distributed denial-of-service (DDoS) Protection",
+        "Describe Azure DDoS Protection",
         "Describe Azure Firewall",
-        "Describe Web Application Firewall (WAF)",
+        "Describe Azure Web Application Firewall (WAF)",
         "Describe network segmentation with Azure virtual networks",
         "Describe network security groups (NSGs)",
         "Describe Azure Bastion",
@@ -106,8 +106,7 @@
     "Describe the capabilities of Microsoft compliance solutions (20–25%)": {
       "Describe Microsoft Service Trust Portal and privacy principles": [
         "Describe the Service Trust Portal offerings",
-        "Describe the privacy principles of Microsoft",
-        "Describe Microsoft Priva"
+        "Describe the privacy principles of Microsoft"
       ],
       "Describe compliance management capabilities of Microsoft Purview": [
         "Describe the Microsoft Purview portal",
