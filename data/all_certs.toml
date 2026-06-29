@@ -7315,3 +7315,45 @@ exam_prerequisites = "None (data modeling experience recommended)"
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/mongodb-associate-data-modeler/"
 practice_url = "/guided/mongodb-associate-data-modeler/practice/"
+
+[[cert]]
+slug = "splunk-core-user"
+vendor = "splunk"
+code = "SPLUNK-CORE-USER"
+name = "Splunk Core Certified User"
+tagline = "Master the Splunk Core Certified User exam (SPLK-1001) - entry-level Splunk fundamentals: components and apps, searches with the time-range picker and timeline, fields and the fields sidebar, the search pipeline (table, rename, fields, dedup, sort), transforming commands (top, rare, stats), reports and dashboards, CSV lookups, and scheduled reports and alerts."
+exam_category = "Splunk"
+level = "entry"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 779
+featured = false
+price_practice = 9
+
+[cert_map."splunk-core-user"]
+vendor = "splunk"
+code = "SPLUNK-CORE-USER"
+name = "Splunk Core Certified User"
+tagline = "Master the Splunk Core Certified User exam (SPLK-1001) - entry-level Splunk fundamentals: components and apps, searches with the time-range picker and timeline, fields and the fields sidebar, the search pipeline (table, rename, fields, dedup, sort), transforming commands (top, rare, stats), reports and dashboards, CSV lookups, and scheduled reports and alerts."
+exam_category = "Splunk"
+level = "entry"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 779
+featured = false
+price_practice = 9
+exam_url = "https://www.splunk.com/en_us/training/certification-track/splunk-core-certified-user.html"
+exam_cost = "$130 USD"
+exam_duration = 60
+exam_passing_score = "70% (pass/fail)"
+exam_questions_real = "60"
+exam_provider = "Splunk (Pearson VUE)"
+exam_validity = "3 years"
+exam_prerequisites = "None"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/splunk-core-user/"
+practice_url = "/guided/splunk-core-user/practice/"
