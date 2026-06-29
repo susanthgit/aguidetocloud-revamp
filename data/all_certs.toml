@@ -7116,3 +7116,41 @@ exam_prerequisites = "SnowPro Core Certified"
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/snowpro-advanced-data-scientist/"
 practice_url = "/guided/snowpro-advanced-data-scientist/practice/"
+
+[[cert]]
+slug = "snowpro-advanced-administrator"
+vendor = "snowflake"
+code = "SNOWPRO-ADVANCED-ADMINISTRATOR"
+name = "SnowPro Advanced: Administrator"
+tagline = "Master the Snowflake SnowPro Advanced: Administrator certification (ADA-C02) - security, RBAC and user administration, account management and governance, data and object management, performance monitoring and tuning, data sharing, and disaster recovery."
+exam_category = "Snowflake"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+
+[cert_map."snowpro-advanced-administrator"]
+vendor = "snowflake"
+code = "SNOWPRO-ADVANCED-ADMINISTRATOR"
+name = "SnowPro Advanced: Administrator"
+tagline = "Master the Snowflake SnowPro Advanced: Administrator certification (ADA-C02) - security, RBAC and user administration, account management and governance, data and object management, performance monitoring and tuning, data sharing, and disaster recovery."
+exam_category = "Snowflake"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 800
+featured = false
+price_practice = 9
+exam_url = "https://learn.snowflake.com/en/certifications/snowpro-advanced-administrator-c02/"
+exam_cost = "$375 USD"
+exam_duration = 115
+exam_passing_score = "750 / 1000 (scaled)"
+exam_questions_real = "65"
+exam_provider = "Snowflake (Pearson VUE / online proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "SnowPro Core Certified"
+exam_question_types = ["Multiple choice", "Multiple select", "Interactive"]
+guided_url = "/guided/snowpro-advanced-administrator/"
+practice_url = "/guided/snowpro-advanced-administrator/practice/"
