@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T16:06:24.078309+00:00",
+  "generated_at": "2026-06-29T18:19:30.582835+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -19,12 +19,12 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 16,
+      "total_incidents": 15,
       "active_incidents": 0,
-      "avg_duration_minutes": 6383,
+      "avg_duration_minutes": 6740,
       "last_incident": "2026-06-11T20:00:00+00:00",
       "classifications": {
-        "incident": 7,
+        "incident": 6,
         "advisory": 9
       }
     },
@@ -32,12 +32,12 @@
       "service": "Microsoft 365 Copilot Chat",
       "short_name": "Copilot Chat",
       "icon": "💭",
-      "total_incidents": 10,
+      "total_incidents": 11,
       "active_incidents": 0,
-      "avg_duration_minutes": 7179,
-      "last_incident": "2026-06-16T14:00:00+00:00",
+      "avg_duration_minutes": 6529,
+      "last_incident": "2026-06-29T15:40:37+00:00",
       "classifications": {
-        "advisory": 5,
+        "advisory": 6,
         "incident": 5
       }
     },
@@ -72,12 +72,12 @@
       "short_name": "SharePoint",
       "icon": "📄",
       "total_incidents": 8,
-      "active_incidents": 2,
-      "avg_duration_minutes": 6517,
+      "active_incidents": 1,
+      "avg_duration_minutes": 5608,
       "last_incident": "2026-06-29T14:42:50.303000+00:00",
       "classifications": {
-        "incident": 3,
-        "advisory": 5
+        "advisory": 5,
+        "incident": 3
       }
     },
     {
@@ -94,18 +94,6 @@
       }
     },
     {
-      "service": "Microsoft Purview",
-      "short_name": "Purview",
-      "icon": "🔍",
-      "total_incidents": 4,
-      "active_incidents": 1,
-      "avg_duration_minutes": 4468,
-      "last_incident": "2026-06-20T00:03:43+00:00",
-      "classifications": {
-        "advisory": 4
-      }
-    },
-    {
       "service": "Power BI",
       "short_name": "Power BI",
       "icon": "📊",
@@ -116,6 +104,30 @@
       "classifications": {
         "advisory": 3,
         "incident": 1
+      }
+    },
+    {
+      "service": "Microsoft Purview",
+      "short_name": "Purview",
+      "icon": "🔍",
+      "total_incidents": 3,
+      "active_incidents": 1,
+      "avg_duration_minutes": 368,
+      "last_incident": "2026-06-20T00:03:43+00:00",
+      "classifications": {
+        "advisory": 3
+      }
+    },
+    {
+      "service": "Microsoft OneDrive",
+      "short_name": "OneDrive",
+      "icon": "☁️",
+      "total_incidents": 3,
+      "active_incidents": 0,
+      "avg_duration_minutes": 294,
+      "last_incident": "2026-06-29T14:42:55.213000+00:00",
+      "classifications": {
+        "incident": 3
       }
     },
     {
@@ -140,18 +152,6 @@
       "last_incident": "2026-05-30T02:30:00+00:00",
       "classifications": {
         "incident": 3
-      }
-    },
-    {
-      "service": "Microsoft OneDrive",
-      "short_name": "OneDrive",
-      "icon": "☁️",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 364,
-      "last_incident": "2026-06-26T14:05:30+00:00",
-      "classifications": {
-        "incident": 2
       }
     },
     {
@@ -207,7 +207,7 @@
   "monthly": [
     {
       "month": "2026-06",
-      "incident_count": 31,
+      "incident_count": 33,
       "services_affected": 11
     },
     {
@@ -217,7 +217,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 24,
+      "incident_count": 22,
       "services_affected": 10
     }
   ]

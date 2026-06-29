@@ -5,14 +5,32 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 29 Jun 2026 16:06:24 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jun 2026 18:19:31 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users had access to scheduled prompts in Microsoft 365 Copilot Chat when they shouldn't have</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1409007</link>
+      <description>[Microsoft 365 Copilot Chat] Users had access to scheduled prompts in Copilot Chat when they shouldn't have.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1409007</guid>
+      <pubDate>Mon, 29 Jun 2026 15:40:37 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft OneDrive] Users may be unable to access Microsoft OneDrive content and may notice delays or navigation errors</title>
+      <link>https://www.aguidetocloud.com/service-health/#OD1408897</link>
+      <description>[Microsoft OneDrive] Users may be unable to access OneDrive content and may notice delays or navigation errors.</description>
+      <category>Microsoft OneDrive</category>
+      <category>falsePositive</category>
+      <guid isPermaLink="false">OD1408897</guid>
+      <pubDate>Mon, 29 Jun 2026 14:42:55 +0000</pubDate>
+    </item>
     <item>
       <title>[SharePoint Online] Users may be unable to access SharePoint Online sites and may notice delays or navigation errors</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1408896</link>
       <description>[SharePoint Online] Users may be unable to access SharePoint Online sites and may notice delays or navigation errors.</description>
       <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
+      <category>falsePositive</category>
       <guid isPermaLink="false">SP1408896</guid>
       <pubDate>Mon, 29 Jun 2026 14:42:50 +0000</pubDate>
     </item>
@@ -440,24 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1321911</guid>
       <pubDate>Mon, 18 May 2026 23:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Users may be unable to access or may experience delays when accessing Microsoft Fabric</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1314779</link>
-      <description>[Power BI] Users may have been unable to access or may have experienced delays when accessing Microsoft Fabric.</description>
-      <category>Power BI</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">PB1314779</guid>
-      <pubDate>Mon, 18 May 2026 13:53:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users' draft generation prompts to Microsoft 365 Copilot may not complete in the classic Outlook desktop app Build 2605</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1324075</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users' draft generation prompts to Copilot may not have completed in the classic Outlook desktop app Build 2605.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">CP1324075</guid>
-      <pubDate>Mon, 18 May 2026 06:27:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
