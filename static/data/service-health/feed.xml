@@ -5,14 +5,14 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 29 Jun 2026 21:42:44 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jun 2026 23:14:15 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may not see the search bar or features when creating Microsoft 365 Copilot notebooks on the desktop client</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1409187</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may not see the search bar or features when creating Copilot notebooks on the desktop client.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>investigating</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1409187</guid>
       <pubDate>Mon, 29 Jun 2026 19:34:28 +0000</pubDate>
     </item>
