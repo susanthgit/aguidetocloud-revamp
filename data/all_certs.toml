@@ -7273,3 +7273,45 @@ exam_provider = "Snowflake (Pearson VUE / online proctored)"
 exam_validity = "2 years"
 exam_prerequisites = "SnowPro Core Certified"
 exam_question_types = ["Multiple choice", "Multiple select", "Interactive"]
+
+[[cert]]
+slug = "mongodb-associate-data-modeler"
+vendor = "mongodb"
+code = "MONGODB-ASSOCIATE-DATA-MODELER"
+name = "MongoDB Associate Data Modeler"
+tagline = "Master the MongoDB Associate Data Modeler certification (C100DM) - workload-driven schema design, embedding vs referencing, relationships, schema design patterns and anti-patterns, schema evolution and versioning, and indexing/CRUD/consistency."
+exam_category = "MongoDB"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 792
+featured = false
+price_practice = 9
+
+[cert_map."mongodb-associate-data-modeler"]
+vendor = "mongodb"
+code = "MONGODB-ASSOCIATE-DATA-MODELER"
+name = "MongoDB Associate Data Modeler"
+tagline = "Master the MongoDB Associate Data Modeler certification (C100DM) - workload-driven schema design, embedding vs referencing, relationships, schema design patterns and anti-patterns, schema evolution and versioning, and indexing/CRUD/consistency."
+exam_category = "MongoDB"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 792
+featured = false
+price_practice = 9
+exam_url = "https://learn.mongodb.com/pages/mongodb-associate-data-modeler-exam"
+exam_cost = "$150 USD"
+exam_duration = 75
+exam_passing_score = "~60% (pass/fail; cut not publicly published)"
+exam_questions_real = "53"
+exam_provider = "MongoDB University (online proctored)"
+exam_validity = "3 years"
+exam_prerequisites = "None (data modeling experience recommended)"
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/mongodb-associate-data-modeler/"
+practice_url = "/guided/mongodb-associate-data-modeler/practice/"
