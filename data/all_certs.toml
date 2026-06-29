@@ -6477,6 +6477,49 @@ guided_url = "/guided/mongodb-associate-developer/"
 practice_url = "/guided/mongodb-associate-developer/practice/"
 
 [[cert]]
+slug = "mongodb-associate-dba"
+vendor = "mongodb"
+code = "MONGODB-ASSOCIATE-DBA"
+name = "MongoDB Associate Database Administrator"
+tagline = "Master the MongoDB Associate Database Administrator certification (C100DBA) - mongod/mongos server administration, the WiredTiger storage engine, replication and replica sets, sharded clusters and shard-key design, security and RBAC, backup and recovery, and monitoring."
+exam_category = "MongoDB"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 791
+featured = false
+price_practice = 9
+
+[cert_map."mongodb-associate-dba"]
+vendor = "mongodb"
+code = "MONGODB-ASSOCIATE-DBA"
+name = "MongoDB Associate Database Administrator"
+tagline = "Master the MongoDB Associate Database Administrator certification (C100DBA) - mongod/mongos server administration, the WiredTiger storage engine, replication and replica sets, sharded clusters and shard-key design, security and RBAC, backup and recovery, and monitoring."
+exam_category = "MongoDB"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 791
+featured = false
+price_practice = 9
+exam_url = "https://learn.mongodb.com/pages/mongodb-associate-database-administrator-exam"
+exam_cost = "$150 USD"
+exam_duration = 75
+exam_passing_score = "~65% (pass/fail; cut not publicly published)"
+exam_questions_real = "62"
+exam_provider = "MongoDB University (online proctored)"
+exam_validity = "3 years"
+exam_prerequisites = "None (~6 months MongoDB administration experience recommended)"
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/mongodb-associate-dba/"
+practice_url = "/guided/mongodb-associate-dba/practice/"
+
+
+[[cert]]
 slug = "splunk-core-power-user"
 vendor = "splunk"
 code = "SPLUNK-CORE-POWER-USER"
