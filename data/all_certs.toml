@@ -7190,3 +7190,43 @@ exam_provider = "Snowflake (Pearson VUE / online proctored)"
 exam_validity = "2 years"
 exam_prerequisites = "SnowPro Core Certified"
 exam_question_types = ["Multiple choice", "Multiple select", "Interactive"]
+
+[[cert]]
+slug = "snowpro-advanced-security-engineer"
+vendor = "snowflake"
+code = "SNOWPRO-ADVANCED-SECURITY-ENGINEER"
+name = "SnowPro Advanced: Security Engineer"
+tagline = "Master the Snowflake SnowPro Advanced: Security Engineer certification (SEA-C01) - access control and identity, data protection and governance, auditing and compliance, threats and incident response, and securing AI/ML and applications."
+exam_category = "Snowflake"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 797
+featured = false
+price_practice = 9
+
+[cert_map."snowpro-advanced-security-engineer"]
+vendor = "snowflake"
+code = "SNOWPRO-ADVANCED-SECURITY-ENGINEER"
+name = "SnowPro Advanced: Security Engineer"
+tagline = "Master the Snowflake SnowPro Advanced: Security Engineer certification (SEA-C01) - access control and identity, data protection and governance, auditing and compliance, threats and incident response, and securing AI/ML and applications."
+exam_category = "Snowflake"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 797
+featured = false
+price_practice = 9
+exam_url = "https://learn.snowflake.com/en/certifications/snowpro-advanced-securityengineer/"
+exam_cost = "$375 USD"
+exam_duration = 115
+exam_passing_score = "750 / 1000 (scaled)"
+exam_questions_real = "65"
+exam_provider = "Snowflake (Pearson VUE / online proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "SnowPro Core Certified"
+exam_question_types = ["Multiple choice", "Multiple select", "Interactive"]
