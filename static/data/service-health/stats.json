@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-06-29T18:19:30.582835+00:00",
+  "generated_at": "2026-06-29T21:42:43.561266+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 23,
-      "active_incidents": 1,
+      "total_incidents": 24,
+      "active_incidents": 2,
       "avg_duration_minutes": 6451,
-      "last_incident": "2026-06-13T22:44:03+00:00",
+      "last_incident": "2026-06-29T19:34:28.650000+00:00",
       "classifications": {
-        "advisory": 13,
-        "incident": 10
+        "incident": 11,
+        "advisory": 13
       }
     },
     {
@@ -42,19 +42,6 @@
       }
     },
     {
-      "service": "Microsoft Defender XDR",
-      "short_name": "Defender",
-      "icon": "🛡️",
-      "total_incidents": 10,
-      "active_incidents": 0,
-      "avg_duration_minutes": 16907,
-      "last_incident": "2026-06-10T08:50:00+00:00",
-      "classifications": {
-        "advisory": 9,
-        "incident": 1
-      }
-    },
-    {
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
@@ -62,6 +49,19 @@
       "active_incidents": 0,
       "avg_duration_minutes": 15323,
       "last_incident": "2026-06-17T06:00:00+00:00",
+      "classifications": {
+        "advisory": 8,
+        "incident": 1
+      }
+    },
+    {
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
+      "total_incidents": 9,
+      "active_incidents": 0,
+      "avg_duration_minutes": 18219,
+      "last_incident": "2026-06-10T08:50:00+00:00",
       "classifications": {
         "advisory": 8,
         "incident": 1
@@ -207,7 +207,7 @@
   "monthly": [
     {
       "month": "2026-06",
-      "incident_count": 33,
+      "incident_count": 34,
       "services_affected": 11
     },
     {
@@ -217,7 +217,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 22,
+      "incident_count": 21,
       "services_affected": 10
     }
   ]

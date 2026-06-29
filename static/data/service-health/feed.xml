@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 29 Jun 2026 18:19:31 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jun 2026 21:42:44 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may not see the search bar or features when creating Microsoft 365 Copilot notebooks on the desktop client</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1409187</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may not see the search bar or features when creating Copilot notebooks on the desktop client.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">CP1409187</guid>
+      <pubDate>Mon, 29 Jun 2026 19:34:28 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users had access to scheduled prompts in Microsoft 365 Copilot Chat when they shouldn't have</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1409007</link>
@@ -449,15 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1316808</guid>
       <pubDate>Tue, 19 May 2026 20:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some admins may be unable to view usage reports in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1321911</link>
-      <description>[Microsoft 365 suite] Admins were unable to view usage reports in the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">MO1321911</guid>
-      <pubDate>Mon, 18 May 2026 23:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
