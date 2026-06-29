@@ -7077,3 +7077,42 @@ exam_prerequisites = "SnowPro Core Certified"
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/snowpro-advanced-data-engineer/"
 practice_url = "/guided/snowpro-advanced-data-engineer/practice/"
+
+
+[[cert]]
+slug = "snowpro-advanced-data-scientist"
+vendor = "snowflake"
+code = "SNOWPRO-ADVANCED-DATA-SCIENTIST"
+name = "SnowPro Advanced: Data Scientist"
+tagline = "Master the Snowflake SnowPro Advanced: Data Scientist certification (DSA-C03) - data science concepts, data preparation and feature engineering, model development, and model deployment in Snowflake."
+exam_category = "Snowflake"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+
+[cert_map."snowpro-advanced-data-scientist"]
+vendor = "snowflake"
+code = "SNOWPRO-ADVANCED-DATA-SCIENTIST"
+name = "SnowPro Advanced: Data Scientist"
+tagline = "Master the Snowflake SnowPro Advanced: Data Scientist certification (DSA-C03) - data science concepts, data preparation and feature engineering, model development, and model deployment in Snowflake."
+exam_category = "Snowflake"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 795
+featured = false
+price_practice = 9
+exam_url = "https://learn.snowflake.com/en/certifications/snowpro-advanced-datascientistC03/"
+exam_cost = "$375 USD"
+exam_duration = 115
+exam_passing_score = "750 / 1000 (scaled)"
+exam_questions_real = "65"
+exam_provider = "Snowflake (Pearson VUE / online proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "SnowPro Core Certified"
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/snowpro-advanced-data-scientist/"
+practice_url = "/guided/snowpro-advanced-data-scientist/practice/"
