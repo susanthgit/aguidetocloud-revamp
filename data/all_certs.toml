@@ -7154,3 +7154,39 @@ exam_prerequisites = "SnowPro Core Certified"
 exam_question_types = ["Multiple choice", "Multiple select", "Interactive"]
 guided_url = "/guided/snowpro-advanced-administrator/"
 practice_url = "/guided/snowpro-advanced-administrator/practice/"
+
+[[cert]]
+slug = "snowpro-advanced-data-analyst"
+vendor = "snowflake"
+code = "SNOWPRO-ADVANCED-DATA-ANALYST"
+name = "SnowPro Advanced: Data Analyst"
+tagline = "Master the Snowflake SnowPro Advanced: Data Analyst certification (DAA-C01) - data ingestion and preparation, transformation and modeling, advanced analysis, and presentation and visualization in Snowflake."
+exam_category = "Snowflake"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+
+[cert_map."snowpro-advanced-data-analyst"]
+vendor = "snowflake"
+code = "SNOWPRO-ADVANCED-DATA-ANALYST"
+name = "SnowPro Advanced: Data Analyst"
+tagline = "Master the Snowflake SnowPro Advanced: Data Analyst certification (DAA-C01) - data ingestion and preparation, transformation and modeling, advanced analysis, and presentation and visualization in Snowflake."
+exam_category = "Snowflake"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 796
+featured = false
+price_practice = 9
+exam_url = "https://learn.snowflake.com/en/certifications/snowpro-advanced-dataanalyst/"
+exam_cost = "$375 USD"
+exam_duration = 115
+exam_passing_score = "750 / 1000 (scaled)"
+exam_questions_real = "65"
+exam_provider = "Snowflake (Pearson VUE / online proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "SnowPro Core Certified"
+exam_question_types = ["Multiple choice", "Multiple select", "Interactive"]
