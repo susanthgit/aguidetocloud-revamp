@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 30 Jun 2026 16:29:41 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 20:15:31 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may not see the search bar or features when creating Microsoft 365 Copilot notebooks on the desktop client</title>
@@ -26,24 +26,6 @@
       <pubDate>Mon, 29 Jun 2026 15:40:37 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft OneDrive] Users may be unable to access Microsoft OneDrive content and may notice delays or navigation errors</title>
-      <link>https://www.aguidetocloud.com/service-health/#OD1408897</link>
-      <description>[Microsoft OneDrive] Users may be unable to access OneDrive content and may notice delays or navigation errors.</description>
-      <category>Microsoft OneDrive</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">OD1408897</guid>
-      <pubDate>Mon, 29 Jun 2026 14:42:55 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Users may be unable to access SharePoint Online sites and may notice delays or navigation errors</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1408896</link>
-      <description>[SharePoint Online] Users may be unable to access SharePoint Online sites and may notice delays or navigation errors.</description>
-      <category>SharePoint Online</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">SP1408896</guid>
-      <pubDate>Mon, 29 Jun 2026 14:42:50 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft OneDrive] Some users may be unable to access or experienced degraded performance when using Microsoft OneDrive</title>
       <link>https://www.aguidetocloud.com/service-health/#OD1405074</link>
       <description>[Microsoft OneDrive] Users may have been unable to access or experienced degraded performance when using OneDrive.</description>
@@ -60,6 +42,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">SP1405058</guid>
       <pubDate>Fri, 26 Jun 2026 13:30:15 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to generate content from the Copilot web app Create feature or see new Create experiences</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1410413</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to generate content from the Copilot web app Create feature or see new Create experiences.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">CP1410413</guid>
+      <pubDate>Thu, 25 Jun 2026 12:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to view SharePoint Online files that are linked by Microsoft 365 Copilot Chat or Copilot agents</title>
@@ -181,9 +172,9 @@
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to leverage the Microsoft 365 Copilot rewrite feature in classic Outlook</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1387482</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to leverage the Copilot rewrite feature in classic Outlook.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to leverage the Copilot rewrite feature in classic Outlook.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1387482</guid>
       <pubDate>Thu, 11 Jun 2026 15:28:27 +0000</pubDate>
     </item>
@@ -458,6 +449,15 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1317808</guid>
       <pubDate>Wed, 20 May 2026 00:29:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Intune] Users’ mobile application management (MAM) apps may crash if launched on devices running Android 17 QRP1 beta 3</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1316808</link>
+      <description>[Microsoft Intune] Users’ MAM apps may have crashed if launched on an Android device with the Android 17 QRP1 beta 3 update.</description>
+      <category>Microsoft Intune</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">IT1316808</guid>
+      <pubDate>Tue, 19 May 2026 20:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
