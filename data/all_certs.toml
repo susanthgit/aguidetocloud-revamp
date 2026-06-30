@@ -7563,3 +7563,44 @@ exam_prerequisites = "None for the exam; CCNP Security requires SCOR 350-701 plu
 exam_question_types = ["Multiple choice", "Drag-and-drop", "Simulation"]
 guided_url = "/guided/cisco-sise/"
 practice_url = "/guided/cisco-sise/practice/"
+
+[[cert]]
+slug = "cisco-autocor"
+vendor = "cisco"
+code = "CISCO-AUTOCOR"
+name = "Designing, Deploying and Managing Network Automation Systems (CCNP AUTOCOR 350-901)"
+tagline = "Master the Cisco Certified Automation core AUTOCOR 350-901 (v2.0) - network automation with Ansible, Terraform, RESTCONF/YANG and Python; infrastructure as code with Git, GitLab CE CI/CD, Cisco Modeling Labs and Docker; operations with model-driven telemetry, logging, pyATS validation, TLS and secure coding; and AI in automation with MCP servers, FastMCP and LLM-driven agents."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 210
+featured = false
+price_practice = 9
+
+[cert_map."cisco-autocor"]
+vendor = "cisco"
+code = "CISCO-AUTOCOR"
+name = "Designing, Deploying and Managing Network Automation Systems (CCNP AUTOCOR 350-901)"
+tagline = "Master the Cisco Certified Automation core AUTOCOR 350-901 (v2.0) - network automation with Ansible, Terraform, RESTCONF/YANG and Python; infrastructure as code with Git, GitLab CE CI/CD, Cisco Modeling Labs and Docker; operations with model-driven telemetry, logging, pyATS validation, TLS and secure coding; and AI in automation with MCP servers, FastMCP and LLM-driven agents."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 210
+featured = false
+price_practice = 9
+exam_url = "https://www.cisco.com/site/us/en/learn/training-certifications/exams/autocor.html"
+exam_cost = "$400 USD"
+exam_duration = 120
+exam_passing_score = "Variable by exam form (Cisco does not publish a fixed cut score)"
+exam_questions_real = "~90-110"
+exam_provider = "Pearson VUE"
+exam_prerequisites = "None for the exam; CCNP Automation requires AUTOCOR 350-901 plus one concentration such as 300-435 ENAUTO or 300-635 DCNAUTO; also the core exam for CCIE Automation"
+exam_question_types = ["Multiple choice", "Drag-and-drop", "Simulation"]
+guided_url = "/guided/cisco-autocor/"
+practice_url = "/guided/cisco-autocor/practice/"
