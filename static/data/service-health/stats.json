@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T09:58:20.088677+00:00",
+  "generated_at": "2026-06-30T12:22:32.837437+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -9,10 +9,10 @@
       "total_incidents": 25,
       "active_incidents": 3,
       "avg_duration_minutes": 6451,
-      "last_incident": "2026-06-29T21:33:39.280000+00:00",
+      "last_incident": "2026-06-29T19:34:28.650000+00:00",
       "classifications": {
-        "advisory": 14,
-        "incident": 11
+        "incident": 11,
+        "advisory": 14
       }
     },
     {

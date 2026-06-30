@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 30 Jun 2026 09:58:20 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 12:22:33 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to view SharePoint Online files that are linked by Microsoft 365 Copilot Chat or Copilot agents</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1409288</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to view SharePoint Online files that are linked by Copilot Chat or Copilot agents.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1409288</guid>
-      <pubDate>Mon, 29 Jun 2026 21:33:39 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may not see the search bar or features when creating Microsoft 365 Copilot notebooks on the desktop client</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1409187</link>
@@ -69,6 +60,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">SP1405058</guid>
       <pubDate>Fri, 26 Jun 2026 13:30:15 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to view SharePoint Online files that are linked by Microsoft 365 Copilot Chat or Copilot agents</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1409288</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to view SharePoint Online files that are linked by Copilot Chat or Copilot agents.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1409288</guid>
+      <pubDate>Tue, 23 Jun 2026 17:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Power BI] Users may be intermittently unable to export reports with sensitivity labels in Power BI</title>
