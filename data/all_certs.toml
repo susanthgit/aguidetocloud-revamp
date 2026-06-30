@@ -7398,3 +7398,44 @@ exam_prerequisites = "None for the exam; CCNP Enterprise requires ENCOR 350-401 
 exam_question_types = ["Multiple choice", "Drag-and-drop", "Simulation"]
 guided_url = "/guided/cisco-ensdwi/"
 practice_url = "/guided/cisco-ensdwi/practice/"
+
+[[cert]]
+slug = "paloalto-cloud-security-professional"
+vendor = "paloalto"
+code = "CLOUD-SECURITY-PROFESSIONAL"
+name = "Palo Alto Networks Certified Cloud Security Professional (CloudSec-Pro)"
+tagline = "Master Cortex Cloud (formerly Prisma Cloud) CNAPP - cloud posture (CSPM/KSPM/AI-SPM/DSPM), cloud runtime (CWP/CDR/WAAS), application security (ASPM/SCA/IaC/secrets), and Cortex and SOC fundamentals."
+exam_category = "Palo Alto"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 207
+featured = false
+price_practice = 9
+
+[cert_map."paloalto-cloud-security-professional"]
+vendor = "paloalto"
+code = "CLOUD-SECURITY-PROFESSIONAL"
+name = "Palo Alto Networks Certified Cloud Security Professional (CloudSec-Pro)"
+tagline = "Master Cortex Cloud (formerly Prisma Cloud) CNAPP - cloud posture (CSPM/KSPM/AI-SPM/DSPM), cloud runtime (CWP/CDR/WAAS), application security (ASPM/SCA/IaC/secrets), and Cortex and SOC fundamentals."
+exam_category = "Palo Alto"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 207
+featured = false
+price_practice = 9
+exam_url = "https://www.paloaltonetworks.com/services/education/palo-alto-networks-cloudsec-professional"
+exam_cost = "$200 USD"
+exam_duration = 90
+exam_passing_score = "860 / 1000 (scaled)"
+exam_questions_real = "75-85"
+exam_provider = "Pearson VUE"
+exam_prerequisites = "None required; recommended for cloud security administrators, SOC analysts, and cloud security engineers"
+exam_question_types = ["Multiple choice", "Matching", "Scenario-based"]
+guided_url = "/guided/paloalto-cloud-security-professional/"
+practice_url = "/guided/paloalto-cloud-security-professional/practice/"
