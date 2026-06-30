@@ -7522,3 +7522,44 @@ exam_prerequisites = "None for the exam; CCNP Security requires SCOR 350-701 plu
 exam_question_types = ["Multiple choice", "Drag-and-drop", "Simulation"]
 guided_url = "/guided/cisco-sncf/"
 practice_url = "/guided/cisco-sncf/practice/"
+
+[[cert]]
+slug = "cisco-sise"
+vendor = "cisco"
+code = "CISCO-SISE"
+name = "Implementing and Configuring Cisco ISE (CCNP SISE 300-715)"
+tagline = "Master the Cisco CCNP SISE 300-715 concentration - Cisco Identity Services Engine deployment and node personas, 802.1X and MAB and IBNS 2.0 access, TrustSec and SGT, policy sets and authorization, web auth and guest and sponsor portals, profiling and probes, BYOD with the internal CA, endpoint posture and compliance, and TACACS+ device administration."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 209
+featured = false
+price_practice = 9
+
+[cert_map."cisco-sise"]
+vendor = "cisco"
+code = "CISCO-SISE"
+name = "Implementing and Configuring Cisco ISE (CCNP SISE 300-715)"
+tagline = "Master the Cisco CCNP SISE 300-715 concentration - Cisco Identity Services Engine deployment and node personas, 802.1X and MAB and IBNS 2.0 access, TrustSec and SGT, policy sets and authorization, web auth and guest and sponsor portals, profiling and probes, BYOD with the internal CA, endpoint posture and compliance, and TACACS+ device administration."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 209
+featured = false
+price_practice = 9
+exam_url = "https://www.cisco.com/site/us/en/learn/training-certifications/exams/sise.html"
+exam_cost = "$300 USD"
+exam_duration = 90
+exam_passing_score = "Variable by exam form (Cisco does not publish a fixed cut score)"
+exam_questions_real = "~55-65"
+exam_provider = "Pearson VUE"
+exam_prerequisites = "None for the exam; CCNP Security requires SCOR 350-701 plus one concentration exam such as SISE 300-715"
+exam_question_types = ["Multiple choice", "Drag-and-drop", "Simulation"]
+guided_url = "/guided/cisco-sise/"
+practice_url = "/guided/cisco-sise/practice/"
