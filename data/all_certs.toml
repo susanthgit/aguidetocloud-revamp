@@ -7439,3 +7439,44 @@ exam_prerequisites = "None required; recommended for cloud security administrato
 exam_question_types = ["Multiple choice", "Matching", "Scenario-based"]
 guided_url = "/guided/paloalto-cloud-security-professional/"
 practice_url = "/guided/paloalto-cloud-security-professional/practice/"
+
+[[cert]]
+slug = "fortinet-fcss-sdwan"
+vendor = "fortinet"
+code = "FORTINET-FCSS-SDWAN"
+name = "Fortinet FCSS - SD-WAN 7.6 Architect (FCSS_SDW-7.6-AR)"
+tagline = "Master the Fortinet FCSS SD-WAN 7.6 Architect exam - SD-WAN members, zones and performance SLAs, SD-WAN rules and routing, FortiManager centralized deployment with SD-WAN Manager and overlay orchestration, hub-and-spoke IPsec, ADVPN, multihub/multiregion large deployments, and end-to-end SD-WAN troubleshooting on FortiOS 7.6."
+exam_category = "Fortinet"
+level = "expert"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 208
+featured = false
+price_practice = 9
+
+[cert_map."fortinet-fcss-sdwan"]
+vendor = "fortinet"
+code = "FORTINET-FCSS-SDWAN"
+name = "Fortinet FCSS - SD-WAN 7.6 Architect (FCSS_SDW-7.6-AR)"
+tagline = "Master the Fortinet FCSS SD-WAN 7.6 Architect exam - SD-WAN members, zones and performance SLAs, SD-WAN rules and routing, FortiManager centralized deployment with SD-WAN Manager and overlay orchestration, hub-and-spoke IPsec, ADVPN, multihub/multiregion large deployments, and end-to-end SD-WAN troubleshooting on FortiOS 7.6."
+exam_category = "Fortinet"
+level = "expert"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 208
+featured = false
+price_practice = 9
+exam_url = "https://training.fortinet.com/local/staticpage/view.php?page=certifications"
+exam_cost = "$200 USD"
+exam_duration = 75
+exam_passing_score = "Pass / fail (Fortinet does not publish a numeric cut score)"
+exam_questions_real = "38"
+exam_provider = "Pearson VUE"
+exam_prerequisites = "None required to sit the exam; recommended FCSS - SD-WAN 7.6 Core Operations and Large Deployment courses plus FCP - FortiGate 7.6 and FCP - FortiManager 7.6 Administrator"
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/fortinet-fcss-sdwan/"
+practice_url = "/guided/fortinet-fcss-sdwan/practice/"
