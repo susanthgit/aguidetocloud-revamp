@@ -7794,3 +7794,44 @@ exam_duration = 90
 exam_passing_score = "Variable by exam form (Cisco does not publish a fixed cut score)"
 exam_questions_real = "~55-65"
 exam_provider = "Pearson VUE"
+
+  [[cert]]
+  slug = "paloalto-sse-engineer"
+  vendor = "paloalto"
+  code = "PALOALTO-SSE-ENGINEER"
+  name = "Palo Alto Networks Certified Security Service Edge (SSE) Engineer (SSE-Engineer)"
+  tagline = "Master the Palo Alto Networks SSE Engineer exam - plan, deploy, secure, operate, and troubleshoot Prisma Access (Prisma SASE): mobile users and Explicit Proxy, remote networks, service connections, Colo-Connect and ZTNA Connector, Cloud Identity Engine, Prisma Browser, SaaS Security, Enterprise DLP, AI Access Security, Remote Browser Isolation, decryption, Strata Cloud Manager and Panorama, Strata Logging Service, and end-to-end troubleshooting."
+  exam_category = "Palo Alto"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 798
+  featured = false
+  price_practice = 9
+
+  [cert_map."paloalto-sse-engineer"]
+  vendor = "paloalto"
+  code = "PALOALTO-SSE-ENGINEER"
+  name = "Palo Alto Networks Certified Security Service Edge (SSE) Engineer (SSE-Engineer)"
+  tagline = "Master the Palo Alto Networks SSE Engineer exam - plan, deploy, secure, operate, and troubleshoot Prisma Access (Prisma SASE): mobile users and Explicit Proxy, remote networks, service connections, Colo-Connect and ZTNA Connector, Cloud Identity Engine, Prisma Browser, SaaS Security, Enterprise DLP, AI Access Security, Remote Browser Isolation, decryption, Strata Cloud Manager and Panorama, Strata Logging Service, and end-to-end troubleshooting."
+  exam_category = "Palo Alto"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 798
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.paloaltonetworks.com/services/education/palo-alto-networks-sse-engineer"
+  exam_cost = "$250 USD"
+  exam_duration = 90
+  exam_passing_score = "860 / 1000 (scaled)"
+  exam_questions_real = "50"
+  exam_provider = "Pearson VUE"
+  exam_prerequisites = "None required; recommended for SSE and SASE engineers, professional-services consultants, and staff who deploy, operate, and troubleshoot Prisma Access"
+  exam_question_types = ["Multiple choice", "Matching", "Ordering"]
+  guided_url = "/guided/paloalto-sse-engineer/"
+  practice_url = "/guided/paloalto-sse-engineer/practice/"
