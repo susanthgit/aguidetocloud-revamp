@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Jul 2026 04:50:55 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2026 10:09:19 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Users may have been unable to access sign-out button or account details across multiple Microsoft 365 web services</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1410980</link>
+      <description>[Microsoft 365 suite] Users may have been unable to access sign-out button or account details across multiple Microsoft 365 web services.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1410980</guid>
+      <pubDate>Wed, 01 Jul 2026 08:47:40 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Defender XDR] Users can’t access the Microsoft Defender for Endpoint on Linux service upon rebooting after a version upgrade</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1410811</link>
@@ -449,15 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1320293</guid>
       <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Planner] Some users may encounter issues accessing features in the Microsoft Planner application</title>
-      <link>https://www.aguidetocloud.com/service-health/#PL1317706</link>
-      <description>[Planner] Users may have encountered issues accessing features in the Microsoft Planner application.</description>
-      <category>Planner</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PL1317706</guid>
-      <pubDate>Thu, 21 May 2026 13:19:09 +0000</pubDate>
     </item>
   </channel>
 </rss>
