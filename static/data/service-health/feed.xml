@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Jul 2026 12:45:24 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2026 16:37:24 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft 365 suite] Users may have been unable to access sign-out button or account details across multiple Microsoft 365 web services</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1410980</link>
-      <description>[Microsoft 365 suite] Users may have been unable to access sign-out button or account details across multiple Microsoft 365 web services.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1410980</guid>
-      <pubDate>Wed, 01 Jul 2026 08:47:40 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft Defender XDR] Users can’t access the Microsoft Defender for Endpoint on Linux service upon rebooting after a version upgrade</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1410811</link>
@@ -24,6 +15,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">DZ1410811</guid>
       <pubDate>Wed, 01 Jul 2026 03:50:11 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Users may have been unable to access sign-out button or account details across multiple Microsoft 365 web services</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1410980</link>
+      <description>[Microsoft 365 suite] Users may have been unable to access sign-out button or account details across multiple Microsoft 365 web services.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1410980</guid>
+      <pubDate>Tue, 30 Jun 2026 17:22:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may encounter crashes in the classic Outlook desktop app when right clicking in an email message</title>

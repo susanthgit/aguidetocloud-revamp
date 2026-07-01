@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T12:45:24.077334+00:00",
+  "generated_at": "2026-07-01T16:37:24.036029+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -21,8 +21,8 @@
       "icon": "📦",
       "total_incidents": 14,
       "active_incidents": 0,
-      "avg_duration_minutes": 4860,
-      "last_incident": "2026-07-01T08:47:40.747000+00:00",
+      "avg_duration_minutes": 4919,
+      "last_incident": "2026-06-30T17:22:00+00:00",
       "classifications": {
         "advisory": 9,
         "incident": 5
@@ -207,12 +207,12 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 2,
-      "services_affected": 2
+      "incident_count": 1,
+      "services_affected": 1
     },
     {
       "month": "2026-06",
-      "incident_count": 36,
+      "incident_count": 37,
       "services_affected": 12
     },
     {
