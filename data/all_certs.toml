@@ -7720,3 +7720,40 @@ exam_duration = 90
 exam_passing_score = "Variable by exam form (Cisco does not publish a fixed cut score)"
 exam_questions_real = "~60-65"
 exam_provider = "Pearson VUE"
+
+[[cert]]
+slug = "cisco-dcid"
+vendor = "cisco"
+code = "CISCO-DCID"
+name = "Designing Cisco Data Center Infrastructure (CCNP DCID 300-610)"
+tagline = "Master the Cisco CCNP DCID 300-610 concentration (v1.2) - design a Cisco data center for traditional and AI/ML workloads: network design (AI/ML networking, RoCEv2 vs InfiniBand, lossless Ethernet, vPC, VXLAN BGP EVPN, VRF-lite, DCI, Nexus Dashboard); compute design (UCS B/C/X-Series, Fabric Interconnect switch vs end-host mode, VIC adapters and service profiles); storage network design (Fibre Channel port types and oversubscription, VSAN, FCoE, iSCSI multipathing); and automation design (Cisco Intersight, NX-API, Ansible, Python, Terraform, service-profile templates, Intersight Cloud Orchestrator)."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 217
+featured = false
+price_practice = 9
+
+[cert_map."cisco-dcid"]
+vendor = "cisco"
+code = "CISCO-DCID"
+name = "Designing Cisco Data Center Infrastructure (CCNP DCID 300-610)"
+tagline = "Master the Cisco CCNP DCID 300-610 concentration (v1.2) - design a Cisco data center for traditional and AI/ML workloads: network design (AI/ML networking, RoCEv2 vs InfiniBand, lossless Ethernet, vPC, VXLAN BGP EVPN, VRF-lite, DCI, Nexus Dashboard); compute design (UCS B/C/X-Series, Fabric Interconnect switch vs end-host mode, VIC adapters and service profiles); storage network design (Fibre Channel port types and oversubscription, VSAN, FCoE, iSCSI multipathing); and automation design (Cisco Intersight, NX-API, Ansible, Python, Terraform, service-profile templates, Intersight Cloud Orchestrator)."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 217
+featured = false
+price_practice = 9
+exam_url = "https://www.cisco.com/site/us/en/learn/training-certifications/exams/dcid.html"
+exam_cost = "$300 USD"
+exam_duration = 90
+exam_passing_score = "Variable by exam form (Cisco does not publish a fixed cut score)"
+exam_questions_real = "~55-65"
+exam_provider = "Pearson VUE"
