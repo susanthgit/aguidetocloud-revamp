@@ -7757,3 +7757,40 @@ exam_duration = 90
 exam_passing_score = "Variable by exam form (Cisco does not publish a fixed cut score)"
 exam_questions_real = "~55-65"
 exam_provider = "Pearson VUE"
+
+[[cert]]
+slug = "cisco-dcit"
+vendor = "cisco"
+code = "CISCO-DCIT"
+name = "Troubleshooting Cisco Data Center Infrastructure (CCNP DCIT 300-615)"
+tagline = "Master the Cisco CCNP DCIT 300-615 concentration (v1.2) - troubleshoot a Cisco data center end to end: network (routing OSPF/BGP/PIM/FHRP, switching RSTP+/LACP/vPC, VXLAN BGP EVPN, ACI packet forwarding); compute platforms (UCS discovery, firmware/interoperability, Fabric Interconnect modes, VLAN/VSAN/vNIC/vHBA connectivity, pools, policies, templates, service-profile association); storage network (Fibre Channel physical/FLOGI, FCNS, port types, NPV/NPIV, VSAN, zoning, FCoE); automation (EEM, Scheduler, Guest Shell, Python, NX-API, NETCONF/RESTCONF, Ansible, Terraform, Intersight); and management and operations (Nexus Dashboard/NDFC, Cisco Intersight, firmware upgrades, ACI security domains and RBAC, first-hop security)."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 218
+featured = false
+price_practice = 9
+
+[cert_map."cisco-dcit"]
+vendor = "cisco"
+code = "CISCO-DCIT"
+name = "Troubleshooting Cisco Data Center Infrastructure (CCNP DCIT 300-615)"
+tagline = "Master the Cisco CCNP DCIT 300-615 concentration (v1.2) - troubleshoot a Cisco data center end to end: network (routing OSPF/BGP/PIM/FHRP, switching RSTP+/LACP/vPC, VXLAN BGP EVPN, ACI packet forwarding); compute platforms (UCS discovery, firmware/interoperability, Fabric Interconnect modes, VLAN/VSAN/vNIC/vHBA connectivity, pools, policies, templates, service-profile association); storage network (Fibre Channel physical/FLOGI, FCNS, port types, NPV/NPIV, VSAN, zoning, FCoE); automation (EEM, Scheduler, Guest Shell, Python, NX-API, NETCONF/RESTCONF, Ansible, Terraform, Intersight); and management and operations (Nexus Dashboard/NDFC, Cisco Intersight, firmware upgrades, ACI security domains and RBAC, first-hop security)."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 218
+featured = false
+price_practice = 9
+exam_url = "https://www.cisco.com/site/us/en/learn/training-certifications/exams/dcit.html"
+exam_cost = "$300 USD"
+exam_duration = 90
+exam_passing_score = "Variable by exam form (Cisco does not publish a fixed cut score)"
+exam_questions_real = "~55-65"
+exam_provider = "Pearson VUE"
