@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-06-30T23:36:33.140964+00:00",
+  "generated_at": "2026-07-01T04:50:55.218095+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 25,
+      "total_incidents": 24,
       "active_incidents": 3,
-      "avg_duration_minutes": 7622,
+      "avg_duration_minutes": 7982,
       "last_incident": "2026-06-29T19:34:28.650000+00:00",
       "classifications": {
-        "incident": 13,
+        "incident": 12,
         "advisory": 12
       }
     },
@@ -58,12 +58,12 @@
       "service": "Microsoft Defender XDR",
       "short_name": "Defender",
       "icon": "🛡️",
-      "total_incidents": 9,
-      "active_incidents": 0,
+      "total_incidents": 10,
+      "active_incidents": 1,
       "avg_duration_minutes": 18219,
-      "last_incident": "2026-06-10T08:50:00+00:00",
+      "last_incident": "2026-07-01T03:50:11+00:00",
       "classifications": {
-        "advisory": 8,
+        "advisory": 9,
         "incident": 1
       }
     },
@@ -107,19 +107,6 @@
       }
     },
     {
-      "service": "Windows 365",
-      "short_name": "Windows 365",
-      "icon": "⚙️",
-      "total_incidents": 3,
-      "active_incidents": 1,
-      "avg_duration_minutes": 2550,
-      "last_incident": "2026-06-30T23:02:08.060000+00:00",
-      "classifications": {
-        "advisory": 2,
-        "incident": 1
-      }
-    },
-    {
       "service": "Microsoft Purview",
       "short_name": "Purview",
       "icon": "🔍",
@@ -141,6 +128,19 @@
       "last_incident": "2026-06-14T20:12:00+00:00",
       "classifications": {
         "advisory": 3
+      }
+    },
+    {
+      "service": "Windows 365",
+      "short_name": "Windows 365",
+      "icon": "⚙️",
+      "total_incidents": 3,
+      "active_incidents": 0,
+      "avg_duration_minutes": 12434,
+      "last_incident": "2026-06-08T15:00:00+00:00",
+      "classifications": {
+        "advisory": 2,
+        "incident": 1
       }
     },
     {
@@ -206,6 +206,11 @@
   ],
   "monthly": [
     {
+      "month": "2026-07",
+      "incident_count": 1,
+      "services_affected": 1
+    },
+    {
       "month": "2026-06",
       "incident_count": 36,
       "services_affected": 12
@@ -217,7 +222,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 19,
+      "incident_count": 18,
       "services_affected": 10
     }
   ]

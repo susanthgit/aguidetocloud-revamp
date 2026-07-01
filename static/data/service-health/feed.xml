@@ -5,16 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 30 Jun 2026 23:36:33 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2026 04:50:55 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Windows 365] Users may see intermittent performance and connectivity issues with their Windows 365 Cloud PC</title>
-      <link>https://www.aguidetocloud.com/service-health/#WP1410526</link>
-      <description>[Windows 365] Users may have seen intermittent performance and connectivity issues with their Windows 365 Cloud PC.</description>
-      <category>Windows 365</category>
-      <category>investigating</category>
-      <guid isPermaLink="false">WP1410526</guid>
-      <pubDate>Tue, 30 Jun 2026 23:02:08 +0000</pubDate>
+      <title>[Microsoft Defender XDR] Users can’t access the Microsoft Defender for Endpoint on Linux service upon rebooting after a version upgrade</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1410811</link>
+      <description>[Microsoft Defender XDR] Users can’t access the Microsoft Defender for Endpoint on Linux service upon rebooting after a version upgrade.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">DZ1410811</guid>
+      <pubDate>Wed, 01 Jul 2026 03:50:11 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may encounter crashes in the classic Outlook desktop app when right clicking in an email message</title>
@@ -233,6 +233,15 @@
       <pubDate>Tue, 09 Jun 2026 06:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Windows 365] Users may see intermittent performance and connectivity issues affecting their Windows 365 Cloud PCs</title>
+      <link>https://www.aguidetocloud.com/service-health/#WP1410526</link>
+      <description>[Windows 365] Users may have seen intermittent performance and connectivity issues affecting their Cloud PCs.</description>
+      <category>Windows 365</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">WP1410526</guid>
+      <pubDate>Mon, 08 Jun 2026 15:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[SharePoint Online] Users may be unable to access Excel files through web browsers from SharePoint Online</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1386381</link>
       <description>[SharePoint Online] Users may have been unable to access Excel files through web browsers from SharePoint Online.</description>
@@ -449,15 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">PL1317706</guid>
       <pubDate>Thu, 21 May 2026 13:19:09 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Some admins may experience a gap in security telemetry data and alerts in Microsoft Defender for Endpoint and Identity</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1316705</link>
-      <description>[Microsoft Defender XDR] Admins may experience a gap in security telemetry data and alerts in Microsoft Defender for Endpoint and Identity.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">DZ1316705</guid>
-      <pubDate>Wed, 20 May 2026 07:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
