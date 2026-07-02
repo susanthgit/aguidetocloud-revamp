@@ -7917,3 +7917,43 @@ exam_provider = "Pearson VUE"
 exam_question_types = ["Multiple choice", "Multiple select", "Drag-and-drop"]
 guided_url = "/guided/cisco-enarsi/"
 practice_url = "/guided/cisco-enarsi/practice/"
+
+[[cert]]
+slug = "cisco-ensld"
+vendor = "cisco"
+code = "CISCO-ENSLD"
+name = "Designing Cisco Enterprise Networks (CCNP ENSLD 300-420)"
+tagline = "Master the Cisco CCNP ENSLD 300-420 concentration (v1.1, refreshed Jul-2025) - DESIGN advanced enterprise networks on Cisco IOS/IOS-XE, SD-Access, and SD-WAN: advanced addressing and routing (structured IPv4/IPv6 plans and scalable IS-IS/EIGRP/OSPF/BGP designs plus IPv6 migration); advanced enterprise campus (FHRP/BFD high availability, Layer 2 STP/loop-free/security, multicampus Layer 3, and SD-Access architecture and fabric design); WAN (MPLS L3VPN/Metro Ethernet/DWDM connectivity, DMVPN/IPsec/GET VPN site-to-site design, WAN high availability, and Cisco SD-WAN architecture and design); network services (DiffServ/IntServ QoS design, network management, and multicast with PIM/SSM/MSDP); and automation and AI (IETF/OpenConfig/Cisco YANG, NETCONF/RESTCONF, model-driven telemetry, gRPC/gNMI, and cloud connectivity and service models)."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 221
+featured = false
+price_practice = 9
+
+[cert_map."cisco-ensld"]
+vendor = "cisco"
+code = "CISCO-ENSLD"
+name = "Designing Cisco Enterprise Networks (CCNP ENSLD 300-420)"
+tagline = "Master the Cisco CCNP ENSLD 300-420 concentration (v1.1, refreshed Jul-2025) - DESIGN advanced enterprise networks on Cisco IOS/IOS-XE, SD-Access, and SD-WAN: advanced addressing and routing (structured IPv4/IPv6 plans and scalable IS-IS/EIGRP/OSPF/BGP designs plus IPv6 migration); advanced enterprise campus (FHRP/BFD high availability, Layer 2 STP/loop-free/security, multicampus Layer 3, and SD-Access architecture and fabric design); WAN (MPLS L3VPN/Metro Ethernet/DWDM connectivity, DMVPN/IPsec/GET VPN site-to-site design, WAN high availability, and Cisco SD-WAN architecture and design); network services (DiffServ/IntServ QoS design, network management, and multicast with PIM/SSM/MSDP); and automation and AI (IETF/OpenConfig/Cisco YANG, NETCONF/RESTCONF, model-driven telemetry, gRPC/gNMI, and cloud connectivity and service models)."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 221
+featured = false
+price_practice = 9
+exam_url = "https://www.cisco.com/site/us/en/learn/training-certifications/exams/ensld.html"
+exam_cost = "$300 USD"
+exam_duration = 90
+exam_passing_score = "Variable by exam form (Cisco does not publish a fixed cut score)"
+exam_questions_real = "~55-65"
+exam_provider = "Pearson VUE"
+exam_question_types = ["Multiple choice", "Multiple select", "Drag-and-drop"]
+guided_url = "/guided/cisco-ensld/"
+practice_url = "/guided/cisco-ensld/practice/"
