@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T23:40:16.057929+00:00",
+  "generated_at": "2026-07-02T04:18:27.205608+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -19,13 +19,13 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 14,
+      "total_incidents": 15,
       "active_incidents": 0,
-      "avg_duration_minutes": 4919,
-      "last_incident": "2026-06-30T17:22:00+00:00",
+      "avg_duration_minutes": 4615,
+      "last_incident": "2026-07-01T20:00:00+00:00",
       "classifications": {
-        "advisory": 9,
-        "incident": 5
+        "incident": 6,
+        "advisory": 9
       }
     },
     {
@@ -131,19 +131,6 @@
       }
     },
     {
-      "service": "Windows 365",
-      "short_name": "Windows 365",
-      "icon": "⚙️",
-      "total_incidents": 3,
-      "active_incidents": 0,
-      "avg_duration_minutes": 12434,
-      "last_incident": "2026-06-08T15:00:00+00:00",
-      "classifications": {
-        "advisory": 2,
-        "incident": 1
-      }
-    },
-    {
       "service": "Azure",
       "short_name": "Azure",
       "icon": "☁️",
@@ -165,6 +152,19 @@
       "last_incident": "2026-06-26T14:05:30+00:00",
       "classifications": {
         "incident": 2
+      }
+    },
+    {
+      "service": "Windows 365",
+      "short_name": "Windows 365",
+      "icon": "⚙️",
+      "total_incidents": 2,
+      "active_incidents": 0,
+      "avg_duration_minutes": 16341,
+      "last_incident": "2026-06-08T15:00:00+00:00",
+      "classifications": {
+        "advisory": 1,
+        "incident": 1
       }
     },
     {
@@ -207,8 +207,8 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 1,
-      "services_affected": 1
+      "incident_count": 2,
+      "services_affected": 2
     },
     {
       "month": "2026-06",
@@ -222,7 +222,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 17,
+      "incident_count": 16,
       "services_affected": 9
     }
   ]

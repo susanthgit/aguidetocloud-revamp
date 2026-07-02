@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Jul 2026 23:40:16 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2026 04:18:28 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Due to a third-party networking issue, users in Australia may be unable to access Microsoft 365 services</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1411776</link>
+      <description>[Microsoft 365 suite] Due to a third-party networking issue, users in Australia may have been unable to access Microsoft 365 services.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1411776</guid>
+      <pubDate>Wed, 01 Jul 2026 20:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Defender XDR] Users can’t access the Microsoft Defender for Endpoint on Linux service upon rebooting after a version upgrade</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1410811</link>
@@ -449,15 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1321282</guid>
       <pubDate>Sun, 24 May 2026 23:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some admins' Copilot usage and chat report data may be delayed from appearing in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1320293</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins' Copilot usage and chat report data may have been delayed from appearing in the Microsoft 365 admin center.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1320293</guid>
-      <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
