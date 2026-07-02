@@ -7835,3 +7835,44 @@ exam_provider = "Pearson VUE"
   exam_question_types = ["Multiple choice", "Matching", "Ordering"]
   guided_url = "/guided/paloalto-sse-engineer/"
   practice_url = "/guided/paloalto-sse-engineer/practice/"
+
+  [[cert]]
+  slug = "eccouncil-ctia"
+  vendor = "eccouncil"
+  code = "ECCOUNCIL-CTIA"
+  name = "EC-Council Certified Threat Intelligence Analyst (CTIA)"
+  tagline = "Master the EC-Council CTIA exam (312-85) - the cyber threat intelligence lifecycle, the four CTI types and their consumers, the Cyber Kill Chain, MITRE ATT&CK and the Diamond Model, indicators of compromise and the Pyramid of Pain, requirements and PIR planning, OSINT and feed collection, processing and enrichment, structured analytic techniques, source-reliability scoring, reporting with STIX/TAXII and MISP, the Traffic Light Protocol, threat hunting, and CTI in SOC operations, incident response, and risk management."
+  exam_category = "EC-Council"
+  level = "intermediate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 8
+  order = 816
+  featured = false
+  price_practice = 9
+
+  [cert_map."eccouncil-ctia"]
+  vendor = "eccouncil"
+  code = "ECCOUNCIL-CTIA"
+  name = "EC-Council Certified Threat Intelligence Analyst (CTIA)"
+  tagline = "Master the EC-Council CTIA exam (312-85) - the cyber threat intelligence lifecycle, the four CTI types and their consumers, the Cyber Kill Chain, MITRE ATT&CK and the Diamond Model, indicators of compromise and the Pyramid of Pain, requirements and PIR planning, OSINT and feed collection, processing and enrichment, structured analytic techniques, source-reliability scoring, reporting with STIX/TAXII and MISP, the Traffic Light Protocol, threat hunting, and CTI in SOC operations, incident response, and risk management."
+  exam_category = "EC-Council"
+  level = "intermediate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 8
+  order = 816
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.eccouncil.org/train-certify/certified-threat-intelligence-analyst-ctia/"
+  exam_cost = "$450 USD"
+  exam_duration = 120
+  exam_passing_score = "70% (form-dependent)"
+  exam_questions_real = "50"
+  exam_provider = "ECC Exam Portal (EC-Council)"
+  exam_prerequisites = "Official EC-Council CTIA training or an eligibility application (2+ years of information-security experience)"
+  exam_question_types = ["Multiple choice"]
+  guided_url = "/guided/eccouncil-ctia/"
+  practice_url = "/guided/eccouncil-ctia/practice/"
