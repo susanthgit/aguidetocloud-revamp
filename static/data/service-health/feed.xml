@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 02 Jul 2026 09:29:49 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2026 12:20:12 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may experience errors when using Researcher in Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1412052</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may experience errors when using Researcher in Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1412052</guid>
+      <pubDate>Thu, 02 Jul 2026 09:47:56 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Due to a third-party networking issue, users in Australia may be unable to access Microsoft 365 services</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1411776</link>
@@ -449,15 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1322422</guid>
       <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users were intermittently unable to access Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1321282</link>
-      <description>[Exchange Online] Users were intermittently unable to access Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1321282</guid>
-      <pubDate>Sun, 24 May 2026 23:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
