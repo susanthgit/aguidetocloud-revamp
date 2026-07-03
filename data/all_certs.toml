@@ -8037,3 +8037,42 @@ exam_provider = "Pearson VUE"
 exam_question_types = ["Multiple choice", "Multiple select", "Drag-and-drop"]
 guided_url = "/guided/cisco-wlsi/"
 practice_url = "/guided/cisco-wlsi/practice/"
+
+  [[cert]]
+  slug = "cisco-wlsd"
+  vendor = "cisco"
+  code = "CISCO-WLSD"
+  name = "Designing Cisco Wireless Networks (CCNP WLSD 300-110)"
+  tagline = "Master the Cisco WLSD 300-110 concentration exam (v1.2) - the DESIGN concentration of the new standalone CCNP Wireless track - end to end: wireless site surveys (collecting design requirements and evaluating constraints such as client density, real-time applications, AP and antenna type, deployment type, and security; material attenuation; Layer 1, pre-deployment, post-deployment, and predictive site surveys; and planning tools including Ekahau, Hamina, Chanalyzer, and spectrum analyzers); wired and wireless infrastructure design (AP power, cabling, switch port capacity, mounting and grounding; WLC and AP licensing by architecture; radio management with RRM and Cisco Catalyst Center AI-Enhanced RRM, RF/Radio profiles, and RxSOP; design requirements for data, voice and video, and location networks including Cisco Spaces; high-density design; and wireless bridging and mesh with modes of operation, Ethernet bridging, and WGB roaming); mobility (designing mobility groups by role, optimizing client roaming, validating mobility tunneling for the data and control path, and Site Tags); and WLAN high availability (controller HA with LAG, Stateful Switchover, and controller priority and redundancy including Anchor; and AP HA with prioritization, primary/secondary/tertiary fall-back, and the Embedded Wireless Controller)."
+  exam_category = "Cisco"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 818
+  featured = false
+
+[cert_map."cisco-wlsd"]
+vendor = "cisco"
+code = "CISCO-WLSD"
+name = "Designing Cisco Wireless Networks (CCNP WLSD 300-110)"
+tagline = "Master the Cisco WLSD 300-110 concentration exam (v1.2) - the DESIGN concentration of the new standalone CCNP Wireless track - end to end: wireless site surveys (collecting design requirements and evaluating constraints such as client density, real-time applications, AP and antenna type, deployment type, and security; material attenuation; Layer 1, pre-deployment, post-deployment, and predictive site surveys; and planning tools including Ekahau, Hamina, Chanalyzer, and spectrum analyzers); wired and wireless infrastructure design (AP power, cabling, switch port capacity, mounting and grounding; WLC and AP licensing by architecture; radio management with RRM and Cisco Catalyst Center AI-Enhanced RRM, RF/Radio profiles, and RxSOP; design requirements for data, voice and video, and location networks including Cisco Spaces; high-density design; and wireless bridging and mesh with modes of operation, Ethernet bridging, and WGB roaming); mobility (designing mobility groups by role, optimizing client roaming, validating mobility tunneling for the data and control path, and Site Tags); and WLAN high availability (controller HA with LAG, Stateful Switchover, and controller priority and redundancy including Anchor; and AP HA with prioritization, primary/secondary/tertiary fall-back, and the Embedded Wireless Controller)."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 818
+featured = false
+price_practice = 9
+exam_url = "https://www.cisco.com/site/us/en/learn/training-certifications/exams/wlsd.html"
+exam_cost = "$400 USD"
+exam_duration = 120
+exam_passing_score = "Variable by exam form (Cisco does not publish a fixed cut score)"
+exam_questions_real = "~55-65"
+exam_provider = "Pearson VUE"
+exam_question_types = ["Multiple choice", "Multiple select", "Drag-and-drop"]
+guided_url = "/guided/cisco-wlsd/"
+practice_url = "/guided/cisco-wlsd/practice/"
