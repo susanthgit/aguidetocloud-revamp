@@ -8118,3 +8118,51 @@ practice_url = "/guided/cisco-wlsd/practice/"
   exam_question_types = ["Multiple choice"]
   guided_url = "/guided/eccouncil-ccse/"
   practice_url = "/guided/eccouncil-ccse/practice/"
+
+
+[[cert]]
+slug = "juniper-jncia-cloud"
+vendor = "juniper"
+code = "JNCIA-CLOUD"
+name = "Juniper Networks Certified Associate - Cloud (JNCIA-Cloud)"
+tagline = "Cloud, SDN, NFV, virtualization, and orchestration with OpenStack, Kubernetes, and OpenShift"
+exam_category = "Juniper"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 216
+featured = false
+price_practice = 9
+exam_url = "https://www.juniper.net/us/en/training/certification/tracks/cloud/jncia-cloud.html"
+exam_cost = "$200 USD"
+exam_duration = 90
+exam_passing_score = ""
+guided_url = "/guided/juniper-jncia-cloud/"
+
+[cert_map."juniper-jncia-cloud"]
+vendor = "juniper"
+code = "JNCIA-CLOUD"
+name = "Juniper Networks Certified Associate - Cloud (JNCIA-Cloud)"
+tagline = "Cloud, SDN, NFV, virtualization, and orchestration with OpenStack, Kubernetes, and OpenShift"
+exam_category = "Juniper"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 216
+featured = false
+price_practice = 9
+exam_url = "https://www.juniper.net/us/en/training/certification/tracks/cloud/jncia-cloud.html"
+exam_cost = "$200 USD"
+exam_duration = 90
+exam_passing_score = ""
+exam_questions_real = "65"
+exam_provider = "Pearson VUE"
+exam_validity = "3 years"
+exam_prerequisites = "None"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/juniper-jncia-cloud/"
+practice_url = "/guided/juniper-jncia-cloud/practice/"
