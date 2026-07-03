@@ -8076,3 +8076,45 @@ exam_provider = "Pearson VUE"
 exam_question_types = ["Multiple choice", "Multiple select", "Drag-and-drop"]
 guided_url = "/guided/cisco-wlsd/"
 practice_url = "/guided/cisco-wlsd/practice/"
+
+
+[[cert]]
+  slug = "eccouncil-ccse"
+  vendor = "eccouncil"
+  code = "ECCOUNCIL-CCSE"
+  name = "EC-Council Certified Cloud Security Engineer (C|CSE)"
+  tagline = "Master the EC-Council C|CSE exam (312-40) - securing AWS, Azure, and GCP across the shared responsibility model, platform and infrastructure security, cloud application and DevSecOps security, data security and key management, operation security and posture management, cloud penetration testing, incident detection and response with SOAR, cloud forensics, business continuity and disaster recovery, and governance, risk, and compliance with standards such as ISO/IEC 27017, PCI DSS, and HIPAA."
+  exam_category = "EC-Council"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 11
+  order = 820
+  featured = false
+  price_practice = 9
+
+[cert_map."eccouncil-ccse"]
+  vendor = "eccouncil"
+  code = "ECCOUNCIL-CCSE"
+  name = "EC-Council Certified Cloud Security Engineer (C|CSE)"
+  tagline = "Master the EC-Council C|CSE exam (312-40) - securing AWS, Azure, and GCP across the shared responsibility model, platform and infrastructure security, cloud application and DevSecOps security, data security and key management, operation security and posture management, cloud penetration testing, incident detection and response with SOAR, cloud forensics, business continuity and disaster recovery, and governance, risk, and compliance with standards such as ISO/IEC 27017, PCI DSS, and HIPAA."
+  exam_category = "EC-Council"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 11
+  order = 820
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.eccouncil.org/train-certify/certified-cloud-security-engineer-course-ccse/"
+  exam_cost = "$550 USD"
+  exam_duration = 240
+  exam_passing_score = "70% (form-dependent)"
+  exam_questions_real = "125"
+  exam_provider = "ECC Exam Portal (EC-Council)"
+  exam_prerequisites = "No mandatory prerequisite; an active exam voucher is required. Official EC-Council C|CSE training is recommended."
+  exam_question_types = ["Multiple choice"]
+  guided_url = "/guided/eccouncil-ccse/"
+  practice_url = "/guided/eccouncil-ccse/practice/"
