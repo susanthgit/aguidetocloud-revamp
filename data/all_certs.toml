@@ -7997,3 +7997,43 @@ exam_provider = "Pearson VUE"
 exam_question_types = ["Multiple choice", "Multiple select", "Drag-and-drop"]
 guided_url = "/guided/cisco-wlcor/"
 practice_url = "/guided/cisco-wlcor/practice/"
+
+[[cert]]
+slug = "cisco-wlsi"
+vendor = "cisco"
+code = "CISCO-WLSI"
+name = "Implementing Cisco Wireless Advanced Solutions (CCNP WLSI 300-120)"
+tagline = "Master the Cisco WLSI 300-120 implementation concentration (v1.2) of the new standalone CCNP Wireless track: FlexConnect (switching and operating modes, groups and roaming, split tunneling and fault tolerance, VLAN-based central switching and Flex ACL, Smart AP image upgrade, and OfficeExtend); QoS on a wireless network (wired-to-wireless mapping, the Catalyst 9800 metal profiles, per-client rate limiting, Call Admission Control, and AVC); multicast (delivery modes, IGMP snooping, mDNS/Bonjour gateway, and Multicast Direct/VideoStream); location services (deploying CMX and Cisco Spaces with the Spaces Connector, and client, RFID-tag, interferer, and rogue tracking); advanced location services (detect and locate, analytics, presence services, captive portals, connectors, location-aware guest portals, and wIPS using Cisco Catalyst Center); security for wireless client connectivity (client profiling on WLC and ISE, BYOD and guest with CWA and LWA, native supplicant and certificate provisioning, and Identity-Based Networking with VLAN/QoS/ACL authorization); monitoring (Catalyst Center reports and Assurance, alarm and rogue management, RF interferer management, and troubleshooting client connectivity across the WLC, ISE, and Catalyst Center); and device hardening (RADIUS and TACACS+ admin access controls, 802.1X access-point authentication, and Control Plane ACLs on the controller)."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 817
+featured = false
+price_practice = 9
+
+[cert_map."cisco-wlsi"]
+vendor = "cisco"
+code = "CISCO-WLSI"
+name = "Implementing Cisco Wireless Advanced Solutions (CCNP WLSI 300-120)"
+tagline = "Master the Cisco WLSI 300-120 implementation concentration (v1.2) of the new standalone CCNP Wireless track: FlexConnect (switching and operating modes, groups and roaming, split tunneling and fault tolerance, VLAN-based central switching and Flex ACL, Smart AP image upgrade, and OfficeExtend); QoS on a wireless network (wired-to-wireless mapping, the Catalyst 9800 metal profiles, per-client rate limiting, Call Admission Control, and AVC); multicast (delivery modes, IGMP snooping, mDNS/Bonjour gateway, and Multicast Direct/VideoStream); location services (deploying CMX and Cisco Spaces with the Spaces Connector, and client, RFID-tag, interferer, and rogue tracking); advanced location services (detect and locate, analytics, presence services, captive portals, connectors, location-aware guest portals, and wIPS using Cisco Catalyst Center); security for wireless client connectivity (client profiling on WLC and ISE, BYOD and guest with CWA and LWA, native supplicant and certificate provisioning, and Identity-Based Networking with VLAN/QoS/ACL authorization); monitoring (Catalyst Center reports and Assurance, alarm and rogue management, RF interferer management, and troubleshooting client connectivity across the WLC, ISE, and Catalyst Center); and device hardening (RADIUS and TACACS+ admin access controls, 802.1X access-point authentication, and Control Plane ACLs on the controller)."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 817
+featured = false
+price_practice = 9
+exam_url = "https://www.cisco.com/site/us/en/learn/training-certifications/exams/wlsi.html"
+exam_cost = "$400 USD"
+exam_duration = 120
+exam_passing_score = "Variable by exam form (Cisco does not publish a fixed cut score)"
+exam_questions_real = "~55-65"
+exam_provider = "Pearson VUE"
+exam_question_types = ["Multiple choice", "Multiple select", "Drag-and-drop"]
+guided_url = "/guided/cisco-wlsi/"
+practice_url = "/guided/cisco-wlsi/practice/"
