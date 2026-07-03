@@ -8166,3 +8166,44 @@ exam_prerequisites = "None"
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/juniper-jncia-cloud/"
 practice_url = "/guided/juniper-jncia-cloud/practice/"
+
+[[cert]]
+slug = "eccouncil-ecih"
+vendor = "eccouncil"
+code = "ECCOUNCIL-ECIH"
+name = "EC-Council Certified Incident Handler (E|CIH)"
+tagline = "Master the EC-Council E|CIH exam (212-89) - the full incident handling and response (IH&R) lifecycle from preparation, detection and recording, triage and notification, containment, evidence gathering, forensic analysis, eradication, and recovery through post-incident review, plus forensic readiness and first response, the order of volatility and chain of custody, and handling malware, email, network, web-application, cloud (AWS, Azure, and GCP), insider-threat, and endpoint (mobile, IoT, and OT/ICS) incidents aligned to NIST SP 800-61, ISO/IEC 27035, SANS PICERL, and MITRE ATT&CK."
+exam_category = "EC-Council"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 10
+order = 817
+featured = false
+price_practice = 9
+
+[cert_map."eccouncil-ecih"]
+vendor = "eccouncil"
+code = "ECCOUNCIL-ECIH"
+name = "EC-Council Certified Incident Handler (E|CIH)"
+tagline = "Master the EC-Council E|CIH exam (212-89) - the full incident handling and response (IH&R) lifecycle from preparation, detection and recording, triage and notification, containment, evidence gathering, forensic analysis, eradication, and recovery through post-incident review, plus forensic readiness and first response, the order of volatility and chain of custody, and handling malware, email, network, web-application, cloud (AWS, Azure, and GCP), insider-threat, and endpoint (mobile, IoT, and OT/ICS) incidents aligned to NIST SP 800-61, ISO/IEC 27035, SANS PICERL, and MITRE ATT&CK."
+exam_category = "EC-Council"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 10
+order = 817
+featured = false
+price_practice = 9
+exam_url = "https://www.eccouncil.org/train-certify/ec-council-certified-incident-handler-ecih/"
+exam_cost = "$450 USD"
+exam_duration = 180
+exam_passing_score = "70% (form-dependent)"
+exam_questions_real = "100"
+exam_provider = "ECC Exam Portal (EC-Council)"
+exam_prerequisites = "No mandatory prerequisite with official EC-Council ECIH v3 training (voucher typically included); without training, an eligibility application with 1+ year of information-security experience and a $100 application fee."
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/eccouncil-ecih/"
+practice_url = "/guided/eccouncil-ecih/practice/"
