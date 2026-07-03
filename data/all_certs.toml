@@ -7957,3 +7957,43 @@ exam_provider = "Pearson VUE"
 exam_question_types = ["Multiple choice", "Multiple select", "Drag-and-drop"]
 guided_url = "/guided/cisco-ensld/"
 practice_url = "/guided/cisco-ensld/practice/"
+
+[[cert]]
+slug = "cisco-wlcor"
+vendor = "cisco"
+code = "CISCO-WLCOR"
+name = "Implementing and Operating Cisco Wireless Core Technologies (CCNP WLCOR 350-101)"
+tagline = "Master the Cisco WLCOR 350-101 core exam (v1.0) - the CORE of the new standalone CCNP Wireless track and a CCIE Wireless qualifying exam: RF fundamentals (propagation, RSSI/SNR signal measurements, RF math and EIRP, and antennas); 802.11 technology fundamentals (Wi-Fi governance, channels and power, modulation, channel width, MIMO/MU-MIMO/MLO, topologies, and frame types); wireless network implementation (Cisco architectures, physical infrastructure, and AP/WLC/dashboard management access); wireless network operation (Catalyst 9800 initial setup, CAPWAP AP discovery and join, AP modes, WLAN access, and client management across WLC, Meraki Dashboard, Catalyst Center, ISE, and Cisco Spaces); client connectivity (WPA2/WPA3 and 802.1X/EAP authentication, multi-OS supplicants, roaming, and guest networking); wireless monitoring and management (maintenance, client monitoring, troubleshooting, and platform integrations); and automation and AI (Python, NETCONF/YANG, wireless APIs, and Catalyst Center AI Analytics, AI Operations, and AI-RRM)."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 816
+featured = false
+price_practice = 9
+
+[cert_map."cisco-wlcor"]
+vendor = "cisco"
+code = "CISCO-WLCOR"
+name = "Implementing and Operating Cisco Wireless Core Technologies (CCNP WLCOR 350-101)"
+tagline = "Master the Cisco WLCOR 350-101 core exam (v1.0) - the CORE of the new standalone CCNP Wireless track and a CCIE Wireless qualifying exam: RF fundamentals (propagation, RSSI/SNR signal measurements, RF math and EIRP, and antennas); 802.11 technology fundamentals (Wi-Fi governance, channels and power, modulation, channel width, MIMO/MU-MIMO/MLO, topologies, and frame types); wireless network implementation (Cisco architectures, physical infrastructure, and AP/WLC/dashboard management access); wireless network operation (Catalyst 9800 initial setup, CAPWAP AP discovery and join, AP modes, WLAN access, and client management across WLC, Meraki Dashboard, Catalyst Center, ISE, and Cisco Spaces); client connectivity (WPA2/WPA3 and 802.1X/EAP authentication, multi-OS supplicants, roaming, and guest networking); wireless monitoring and management (maintenance, client monitoring, troubleshooting, and platform integrations); and automation and AI (Python, NETCONF/YANG, wireless APIs, and Catalyst Center AI Analytics, AI Operations, and AI-RRM)."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 816
+featured = false
+price_practice = 9
+exam_url = "https://www.cisco.com/site/us/en/learn/training-certifications/exams/wlcor.html"
+exam_cost = "$400 USD"
+exam_duration = 120
+exam_passing_score = "Variable by exam form (Cisco does not publish a fixed cut score)"
+exam_questions_real = "~90-110"
+exam_provider = "Pearson VUE"
+exam_question_types = ["Multiple choice", "Multiple select", "Drag-and-drop"]
+guided_url = "/guided/cisco-wlcor/"
+practice_url = "/guided/cisco-wlcor/practice/"
