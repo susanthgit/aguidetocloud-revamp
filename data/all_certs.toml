@@ -8207,3 +8207,44 @@ exam_prerequisites = "No mandatory prerequisite with official EC-Council ECIH v3
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/eccouncil-ecih/"
 practice_url = "/guided/eccouncil-ecih/practice/"
+
+[[cert]]
+slug = "eccouncil-csa"
+vendor = "eccouncil"
+code = "ECCOUNCIL-CSA"
+name = "EC-Council Certified SOC Analyst (CSA)"
+tagline = "Master the EC-Council CSA v2 exam (312-39) - the full SOC-analyst workflow: SOC operations and management, cyber threats and IoCs mapped to the Cyber Kill Chain and MITRE ATT&CK, log management across Windows, Linux, and cloud sources, incident detection and triage with SIEM (including AI-enabled SIEM and SIGMA rules), proactive threat detection with cyber threat intelligence and threat hunting, incident response across network, application, email, insider, and malware incidents, forensic investigation and static/dynamic malware analysis, and SOC for cloud environments across Azure Sentinel, AWS Security Hub, and GCP Security Command Center."
+exam_category = "EC-Council"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 820
+featured = false
+price_practice = 9
+
+[cert_map."eccouncil-csa"]
+vendor = "eccouncil"
+code = "ECCOUNCIL-CSA"
+name = "EC-Council Certified SOC Analyst (CSA)"
+tagline = "Master the EC-Council CSA v2 exam (312-39) - the full SOC-analyst workflow: SOC operations and management, cyber threats and IoCs mapped to the Cyber Kill Chain and MITRE ATT&CK, log management across Windows, Linux, and cloud sources, incident detection and triage with SIEM (including AI-enabled SIEM and SIGMA rules), proactive threat detection with cyber threat intelligence and threat hunting, incident response across network, application, email, insider, and malware incidents, forensic investigation and static/dynamic malware analysis, and SOC for cloud environments across Azure Sentinel, AWS Security Hub, and GCP Security Command Center."
+exam_category = "EC-Council"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 820
+featured = false
+price_practice = 9
+exam_url = "https://www.eccouncil.org/train-certify/certified-soc-analyst-csa/"
+exam_cost = "$450 USD"
+exam_duration = 180
+exam_passing_score = "70% (form-dependent)"
+exam_questions_real = "100"
+exam_provider = "ECC Exam Portal (EC-Council)"
+exam_prerequisites = "No mandatory work-experience prerequisite; aimed at current and aspiring Tier I and Tier II SOC analysts. With official EC-Council CSA v2 training an exam voucher is typically included; without training, an eligibility application may apply."
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/eccouncil-csa/"
+practice_url = "/guided/eccouncil-csa/practice/"
