@@ -8295,3 +8295,44 @@ exam_prerequisites = "JNCIA-SEC recommended (no hard prerequisite)"
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/juniper-jncis-sec/"
 practice_url = "/guided/juniper-jncis-sec/practice/"
+
+[[cert]]
+slug = "eccouncil-cciso"
+vendor = "eccouncil"
+code = "ECCOUNCIL-CCISO"
+name = "EC-Council Certified Chief Information Security Officer (CCISO)"
+tagline = "Master the EC-Council CCISO exam (712-50) - the executive information-security leadership credential built to the current v4 blueprint: governance, risk, compliance and audit management; organizational executive leadership; information security controls, program management and operations; core security competencies at the program level; and strategic planning, finance, procurement, and third-party management."
+exam_category = "EC-Council"
+level = "expert"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 825
+featured = false
+price_practice = 9
+
+[cert_map."eccouncil-cciso"]
+vendor = "eccouncil"
+code = "ECCOUNCIL-CCISO"
+name = "EC-Council Certified Chief Information Security Officer (CCISO)"
+tagline = "Master the EC-Council CCISO exam (712-50) - the executive information-security leadership credential built to the current v4 blueprint: governance, risk, compliance and audit management; organizational executive leadership; information security controls, program management and operations; core security competencies at the program level; and strategic planning, finance, procurement, and third-party management."
+exam_category = "EC-Council"
+level = "expert"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 825
+featured = false
+price_practice = 9
+exam_url = "https://www.eccouncil.org/train-certify/certified-chief-information-security-officer-cciso/"
+exam_cost = "$999 USD"
+exam_duration = 150
+exam_passing_score = "Variable cut score by form (60%-85%)"
+exam_questions_real = "150"
+exam_provider = "ECC Exam Portal (EC-Council)"
+exam_prerequisites = "Certification (not the practice test) has an experience requirement: self-study candidates need 5 years of information-security experience in each of the 5 CCISO domains (overlap allowed); candidates who complete official EC-Council CCISO training need 5 years in 3 of the 5 domains. A $100 application fee applies when applying without official training."
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/eccouncil-cciso/"
+practice_url = "/guided/eccouncil-cciso/practice/"
