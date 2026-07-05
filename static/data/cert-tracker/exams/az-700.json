@@ -10,8 +10,8 @@
   ],
   "category": "Azure",
   "status": "active",
-  "updated_at": "2026-03-26 06:04:00+00:00",
-  "skills_date": "April 24, 2026",
+  "updated_at": "2026-06-29 23:01:00+00:00",
+  "skills_date": "July 27, 2026",
   "skills_at_a_glance": [
     {
       "area": "Design and implement core networking infrastructure",
@@ -42,9 +42,9 @@
         "Plan and configure subnetting for services, including virtual network gateways, private endpoints, service endpoints, firewalls, application gateways, VNet-integrated platform services, and Azure Bastion",
         "Plan and configure subnet delegation",
         "Plan and configure shared or dedicated subnets",
-        "Create a prefix for public IP addresses",
+        "Create a Public IP Prefix",
         "Choose when to use a public IP address prefix",
-        "Plan and implement a custom public IP address prefix (bring your own IP)",
+        "Plan and implement a Custom IP address prefix (bring your own IP)",
         "Create a public IP address",
         "Associate public IP addresses to resources"
       ],
@@ -75,8 +75,8 @@
         "Monitor and troubleshoot networks by using Azure Monitor for Networks",
         "Activate and monitor distributed denial-of-service (DDoS) protection",
         "Evaluate network security recommendations identified by Microsoft Defender for Cloud Secure Score",
-        "Evaluate network security recommendations identified by Microsoft Defender for Cloud attack oaths",
-        "Identify network resources by using Microsoft Defender for Cloud Security Explorer"
+        "Evaluate network security recommendations identified by Microsoft Defender for Cloud attack path analysis",
+        "Identify network resources by using Cloud Security Explorer in Microsoft Defender for Cloud"
       ]
     },
     "Design, implement, and manage connectivity services (20–25%)": {
@@ -184,7 +184,7 @@
     "Design and implement Azure network security services (15–20%)": {
       "Implement and manage network security groups": [
         "Create a network security group (NSG)",
-        "Associate a NSG to a resource",
+        "Associate a NSG to a subnet or network interface",
         "Create an application security group (ASG)",
         "Associate an ASG to a network interface",
         "Create and configure NSG inbound and outbound security rules",

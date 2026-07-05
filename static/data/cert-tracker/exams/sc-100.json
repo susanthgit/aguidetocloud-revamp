@@ -12,8 +12,8 @@
   ],
   "category": "Security",
   "status": "active",
-  "updated_at": "2026-03-27 23:35:00+00:00",
-  "skills_date": "April 27, 2026",
+  "updated_at": "2026-06-29 23:01:00+00:00",
+  "skills_date": "July 28, 2026",
   "skills_at_a_glance": [
     {
       "area": "Design solutions that align with security best practices and priorities",
@@ -40,14 +40,16 @@
         "Design solutions for mitigating ransomware attacks, including prioritization of BCDR and privileged access",
         "Evaluate solutions for security updates"
       ],
-      "Design solutions that align with the Microsoft Cybersecurity Reference Architectures (MCRA) and Microsoft cloud security benchmark (MCSB)": [
+      "Design solutions that align with the Microsoft Cybersecurity Reference Architectures (MCRA) and Microsoft Cloud Security Benchmark (MCSB)": [
         "Design solutions that align with best practices for cybersecurity capabilities and controls",
         "Design solutions that align with best practices for protecting against insider, external, and supply chain attacks",
-        "Design solutions that align with best practices for Zero Trust security, including A Rapid modernization plan for Zero Trust (RaMP)"
+        "Design AI solutions that align to the Microsoft Cloud Security Benchmark.",
+        "Design solutions that align with the Zero Trust adoption framework"
       ],
-      "Design solutions that align with the Microsoft Cloud Adoption Framework for Azure and the Microsoft Azure Well-Architected Framework": [
+      "Design solutions that align with the Microsoft Cloud Adoption Framework for Azure (CAF) and the Azure Well-Architected Framework": [
+        "Design a strategy for secure AI adoption",
         "Design a new or evaluate an existing strategy for security and governance based on the Microsoft Cloud Adoption Framework for Azure (CAF) and the Azure Well-Architected Framework (WAF)",
-        "Recommend solutions for security and governance based on the Microsoft Cloud Adoption Framework for Azure (CAF) and the Microsoft Azure Well-Architected Framework",
+        "Recommend solutions for security and governance based on the Microsoft Cloud Adoption Framework for Azure (CAF) and the Azure Well-Architected Framework",
         "Design solutions for implementing and governing security by using Azure landing zones",
         "Design a DevSecOps process that aligns with best practices in the Microsoft Cloud Adoption Framework for Azure (CAF)"
       ]
@@ -62,6 +64,7 @@
         "Design and evaluate threat detection coverage by using MITRE ATT&CK matrices, including Enterprise, Mobile, and industrial control systems (ICS)"
       ],
       "Design solutions for identity and access management": [
+        "Design a solution for agent identities using Microsoft Entra Agent ID and conditional access policies",
         "Design a solution for access to software as a service (SaaS), platform as a service (PaaS), infrastructure as a service (IaaS), hybrid/on-premises, and multicloud resources, including identity, networking, and application controls",
         "Design a solution for Microsoft Entra ID, including hybrid and multi-cloud environments",
         "Design a solution for external identities, including business-to-business (B2B) and decentralized identity",
@@ -82,14 +85,13 @@
       "Design solutions for regulatory compliance": [
         "Translate compliance requirements into security controls",
         "Design a solution to address compliance requirements by using Microsoft Purview",
-        "Design a solution to address privacy requirements, including Microsoft Priva",
         "Design Azure Policy solutions to address security and compliance requirements",
         "Evaluate and validate alignment with regulatory standards and benchmarks by using Microsoft Defender for Cloud"
       ]
     },
     "Design security solutions for infrastructure (25–30%)": {
       "Design solutions for security posture management in hybrid and multicloud environments": [
-        "Evaluate security posture by using Microsoft Defender for Cloud, including the Microsoft cloud security benchmark (MCSB)",
+        "Evaluate security posture by using Microsoft Defender for Cloud, including the Microsoft Cloud Security Benchmark (MCSB)",
         "Evaluate security posture by using Microsoft Secure Score",
         "Design integrated security posture management solutions that include Microsoft Defender for Cloud in hybrid and multi-cloud environments",
         "Select cloud workload protection solutions in Microsoft Defender for Cloud",
@@ -142,6 +144,7 @@
         "Evaluate solutions for data discovery and classification",
         "Specify priorities for mitigating threats to data",
         "Evaluate solutions for encryption of data at rest and in transit, including Azure Key Vault and infrastructure encryption",
+        "Design security for data used in AI workloads",
         "Design a security solution for data in Azure workloads, including Azure SQL, Azure Synapse Analytics, and Azure Cosmos DB",
         "Design a security solution for data in Azure Storage",
         "Design a security solution that includes Microsoft Defender for Storage and Microsoft Defender for Databases"
