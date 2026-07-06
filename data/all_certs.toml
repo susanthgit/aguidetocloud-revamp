@@ -8657,3 +8657,44 @@ exam_prerequisites = "None"
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/juniper-jncia-devops/"
 practice_url = "/guided/juniper-jncia-devops/practice/"
+
+  [[cert]]
+  slug = "paloalto-xsiam-engineer"
+  vendor = "paloalto"
+  code = "PALOALTO-XSIAM-ENGINEER"
+  name = "Palo Alto Networks Certified XSIAM Engineer (XSIAM-Engineer)"
+  tagline = "Master the Palo Alto Networks XSIAM Engineer exam - plan, install, integrate, optimize, and troubleshoot Cortex XSIAM: architecture and sizing, Broker VM and Cortex XDR agent deployment, RBAC and SSO, data-source onboarding (endpoint, network, cloud, identity), automation and threat-intel feed integrations, Marketplace content packs, playbook automation, parsing and data modeling (XDM) rules, correlation/IOC/BIOC/scoring/ASM detection rules, custom dashboards and reports, component updates, exclusions, and end-to-end troubleshooting."
+  exam_category = "Palo Alto"
+  level = "specialty"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 804
+  featured = false
+  price_practice = 9
+
+  [cert_map."paloalto-xsiam-engineer"]
+  vendor = "paloalto"
+  code = "PALOALTO-XSIAM-ENGINEER"
+  name = "Palo Alto Networks Certified XSIAM Engineer (XSIAM-Engineer)"
+  tagline = "Master the Palo Alto Networks XSIAM Engineer exam - plan, install, integrate, optimize, and troubleshoot Cortex XSIAM: architecture and sizing, Broker VM and Cortex XDR agent deployment, RBAC and SSO, data-source onboarding (endpoint, network, cloud, identity), automation and threat-intel feed integrations, Marketplace content packs, playbook automation, parsing and data modeling (XDM) rules, correlation/IOC/BIOC/scoring/ASM detection rules, custom dashboards and reports, component updates, exclusions, and end-to-end troubleshooting."
+  exam_category = "Palo Alto"
+  level = "specialty"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 804
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.paloaltonetworks.com/services/education/palo-alto-networks-xsiam-engineer"
+  exam_cost = "$250 USD"
+  exam_duration = 90
+  exam_passing_score = "Scaled score (approx. 860 / 1000)"
+  exam_questions_real = "75"
+  exam_provider = "Pearson VUE"
+  exam_prerequisites = "None required to sit the exam; recommended for security operations, detection, and platform engineers who deploy, integrate, and operate Cortex XSIAM"
+  exam_question_types = ["Multiple choice", "Matching", "Ordering"]
+  guided_url = "/guided/paloalto-xsiam-engineer/"
+  practice_url = "/guided/paloalto-xsiam-engineer/practice/"
