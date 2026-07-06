@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Jul 2026 15:53:02 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2026 18:19:17 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users in Japan may experience issues accessing Microsoft services including Microsoft Teams and Microsoft 365</title>
@@ -109,9 +109,9 @@
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to generate content through the Microsoft 365 Copilot Create web app</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1410413</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to generate content through the Microsoft 365 Copilot Create web app.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to generate content through the Microsoft 365 Copilot Create web app.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1410413</guid>
       <pubDate>Thu, 25 Jun 2026 12:00:00 +0000</pubDate>
     </item>
