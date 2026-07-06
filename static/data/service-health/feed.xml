@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Jul 2026 10:58:38 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2026 15:53:02 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users in Japan may experience issues accessing Microsoft services including Microsoft Teams and Microsoft 365</title>
@@ -15,6 +15,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1413447</guid>
       <pubDate>Fri, 03 Jul 2026 03:55:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to manage custom Microsoft Graph connectors in Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1412506</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to manage custom Microsoft Graph connectors in Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1412506</guid>
+      <pubDate>Thu, 02 Jul 2026 14:12:49 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may receive response failures or a degraded experience when using Researcher in Microsoft 365 Copilot</title>
@@ -449,15 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1333265</guid>
       <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users may see older draft email messages appear as recently modified in Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1322762</link>
-      <description>[Exchange Online] Users may have seen older draft email messages appear as recently modified in Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1322762</guid>
-      <pubDate>Tue, 26 May 2026 08:15:52 +0000</pubDate>
     </item>
   </channel>
 </rss>
