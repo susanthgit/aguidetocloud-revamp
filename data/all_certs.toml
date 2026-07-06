@@ -8739,3 +8739,44 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice", "Matching", "Ordering"]
   guided_url = "/guided/paloalto-xsiam-analyst/"
   practice_url = "/guided/paloalto-xsiam-analyst/practice/"
+
+  [[cert]]
+  slug = "paloalto-xsoar-engineer"
+  vendor = "paloalto"
+  code = "PALOALTO-XSOAR-ENGINEER"
+  name = "Palo Alto Networks Certified XSOAR Engineer (XSOAR-Engineer)"
+  tagline = "Master the Palo Alto Networks XSOAR Engineer exam - build and maintain Cortex XSOAR: plan authentication and authorization, deploy and load-balance engines, run a dev/prod content lifecycle, manage Marketplace packs and integration instances, engineer the incident lifecycle (classifiers, mappers, incident types, fields, layouts, SLAs, pre/post-processing), develop playbooks and automation scripts (task inputs/outputs, context-data manipulation, task types, sub-playbooks and loops, filters and transformers, the debugger, built-ins, scripts, jobs), operate incidents (states, War Room, relationships, dashboards and reports), and engineer Threat Intelligence Management (indicators, enrichment, source reliability, sharing, exclusion lists)."
+  exam_category = "Palo Alto"
+  level = "specialty"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 5
+  order = 806
+  featured = false
+  price_practice = 9
+
+  [cert_map."paloalto-xsoar-engineer"]
+  vendor = "paloalto"
+  code = "PALOALTO-XSOAR-ENGINEER"
+  name = "Palo Alto Networks Certified XSOAR Engineer (XSOAR-Engineer)"
+  tagline = "Master the Palo Alto Networks XSOAR Engineer exam - build and maintain Cortex XSOAR: plan authentication and authorization, deploy and load-balance engines, run a dev/prod content lifecycle, manage Marketplace packs and integration instances, engineer the incident lifecycle (classifiers, mappers, incident types, fields, layouts, SLAs, pre/post-processing), develop playbooks and automation scripts (task inputs/outputs, context-data manipulation, task types, sub-playbooks and loops, filters and transformers, the debugger, built-ins, scripts, jobs), operate incidents (states, War Room, relationships, dashboards and reports), and engineer Threat Intelligence Management (indicators, enrichment, source reliability, sharing, exclusion lists)."
+  exam_category = "Palo Alto"
+  level = "specialty"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 5
+  order = 806
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.paloaltonetworks.com/services/education/palo-alto-networks-xsoar-engineer"
+  exam_cost = "$250 USD"
+  exam_duration = 90
+  exam_passing_score = "860 on a scale of 300-1000"
+  exam_questions_real = "50"
+  exam_provider = "Pearson VUE"
+  exam_prerequisites = "None required to sit the exam; recommended for security automation engineers, SOAR content developers, and SOC engineers who build and maintain Cortex XSOAR"
+  exam_question_types = ["Multiple choice"]
+  guided_url = "/guided/paloalto-xsoar-engineer/"
+  practice_url = "/guided/paloalto-xsoar-engineer/practice/"
