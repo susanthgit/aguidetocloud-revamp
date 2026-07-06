@@ -8698,3 +8698,44 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice", "Matching", "Ordering"]
   guided_url = "/guided/paloalto-xsiam-engineer/"
   practice_url = "/guided/paloalto-xsiam-engineer/practice/"
+
+  [[cert]]
+  slug = "paloalto-xsiam-analyst"
+  vendor = "paloalto"
+  code = "PALOALTO-XSIAM-ANALYST"
+  name = "Palo Alto Networks Certified XSIAM Analyst (XSIAM-Analyst)"
+  tagline = "Master the Palo Alto Networks XSIAM Analyst exam - triage, investigate, hunt, and respond in Cortex XSIAM: analytic/correlation/IOC/BIOC alert triage and prioritization, incident investigation with Forensics, ITDR, the causality chain and timeline, native automation response, playbook execution, XQL threat hunting over Cortex Data Models, endpoint response, and Threat Intelligence plus Attack Surface Management."
+  exam_category = "Palo Alto"
+  level = "specialty"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 6
+  order = 805
+  featured = false
+  price_practice = 9
+
+  [cert_map."paloalto-xsiam-analyst"]
+  vendor = "paloalto"
+  code = "PALOALTO-XSIAM-ANALYST"
+  name = "Palo Alto Networks Certified XSIAM Analyst (XSIAM-Analyst)"
+  tagline = "Master the Palo Alto Networks XSIAM Analyst exam - triage, investigate, hunt, and respond in Cortex XSIAM: analytic/correlation/IOC/BIOC alert triage and prioritization, incident investigation with Forensics, ITDR, the causality chain and timeline, native automation response, playbook execution, XQL threat hunting over Cortex Data Models, endpoint response, and Threat Intelligence plus Attack Surface Management."
+  exam_category = "Palo Alto"
+  level = "specialty"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 6
+  order = 805
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.paloaltonetworks.com/services/education/palo-alto-networks-xsiam-analyst"
+  exam_cost = "$250 USD"
+  exam_duration = 90
+  exam_passing_score = "Scaled score (approx. 70%)"
+  exam_questions_real = "60"
+  exam_provider = "Pearson VUE"
+  exam_prerequisites = "None required to sit the exam; recommended for SOC analysts, incident responders, and threat hunters who investigate and respond in Cortex XSIAM"
+  exam_question_types = ["Multiple choice", "Matching", "Ordering"]
+  guided_url = "/guided/paloalto-xsiam-analyst/"
+  practice_url = "/guided/paloalto-xsiam-analyst/practice/"
