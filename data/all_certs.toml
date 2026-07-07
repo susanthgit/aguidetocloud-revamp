@@ -8949,3 +8949,45 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice"]
   guided_url = "/guided/cncf-cba/"
   practice_url = "/guided/cncf-cba/practice/"
+
+[[cert]]
+  slug = "cncf-cca"
+  vendor = "cncf"
+  code = "CNCF-CCA"
+  name = "CNCF CCA (Certified Cilium Associate)"
+  tagline = "Prove you can run Kubernetes networking, security, and observability with Cilium and eBPF"
+  exam_category = "CNCF"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 8
+  order = 828
+  featured = false
+  price_practice = 9
+
+  [cert_map."cncf-cca"]
+  vendor = "cncf"
+  code = "CNCF-CCA"
+  name = "CNCF CCA (Certified Cilium Associate)"
+  tagline = "Prove you can run Kubernetes networking, security, and observability with Cilium and eBPF"
+  exam_category = "CNCF"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 8
+  order = 828
+  featured = false
+  price_practice = 9
+  exam_url = "https://training.linuxfoundation.org/certification/cilium-certified-associate-cca/"
+  exam_cost = "$250 USD"
+  exam_duration = 90
+  exam_passing_score = "75%"
+  exam_questions_real = "60"
+  exam_provider = "Linux Foundation / PSI"
+  exam_validity = "2 years"
+  exam_prerequisites = "None"
+  exam_question_types = ["Multiple choice"]
+  guided_url = "/guided/cncf-cca/"
+  practice_url = "/guided/cncf-cca/practice/"
