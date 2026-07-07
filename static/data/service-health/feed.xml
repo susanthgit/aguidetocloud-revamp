@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Jul 2026 07:51:40 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2026 11:17:45 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users in Japan may experience issues accessing Microsoft services including Microsoft Teams and Microsoft 365</title>
@@ -42,15 +42,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1411776</guid>
       <pubDate>Wed, 01 Jul 2026 20:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Users can’t access the Microsoft Defender for Endpoint on Linux service upon rebooting after a version upgrade</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1410811</link>
-      <description>[Microsoft Defender XDR] Users can’t access the Microsoft Defender for Endpoint on Linux service upon rebooting after a version upgrade.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">DZ1410811</guid>
-      <pubDate>Wed, 01 Jul 2026 03:50:11 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Users may have been unable to access sign-out button or account details across multiple Microsoft 365 web services</title>
@@ -96,6 +87,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">OD1405074</guid>
       <pubDate>Fri, 26 Jun 2026 14:05:30 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Defender XDR] Users couldn't access the Microsoft Defender for Endpoint on Linux service upon rebooting after a version upgrade</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1410811</link>
+      <description>[Microsoft Defender XDR] Users couldn't access the Microsoft Defender for Endpoint on Linux service upon rebooting after a version upgrade.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">DZ1410811</guid>
+      <pubDate>Fri, 26 Jun 2026 13:43:00 +0000</pubDate>
     </item>
     <item>
       <title>[SharePoint Online] Users may be unable to access or experience degraded performance when using SharePoint Online</title>

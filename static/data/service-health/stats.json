@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-07T07:51:40.117566+00:00",
+  "generated_at": "2026-07-07T11:17:44.632723+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -59,9 +59,9 @@
       "short_name": "Defender",
       "icon": "🛡️",
       "total_incidents": 9,
-      "active_incidents": 1,
-      "avg_duration_minutes": 19806,
-      "last_incident": "2026-07-01T03:50:11+00:00",
+      "active_incidents": 0,
+      "avg_duration_minutes": 19201,
+      "last_incident": "2026-06-26T13:43:00+00:00",
       "classifications": {
         "advisory": 8,
         "incident": 1
@@ -207,12 +207,12 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 5,
-      "services_affected": 3
+      "incident_count": 4,
+      "services_affected": 2
     },
     {
       "month": "2026-06",
-      "incident_count": 37,
+      "incident_count": 38,
       "services_affected": 12
     },
     {
