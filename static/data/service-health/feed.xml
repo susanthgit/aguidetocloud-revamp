@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Jul 2026 18:15:39 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2026 21:38:37 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users in Japan may experience issues accessing Microsoft services including Microsoft Teams and Microsoft 365</title>
@@ -118,9 +118,9 @@
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to view SharePoint Online files that are linked by Microsoft 365 Copilot Chat or Copilot agents</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1409288</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to view SharePoint Online files that are linked by Copilot Chat or Copilot agents.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to view SharePoint Online files that were linked by Copilot Chat or Copilot agents.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1409288</guid>
       <pubDate>Tue, 23 Jun 2026 17:00:00 +0000</pubDate>
     </item>
