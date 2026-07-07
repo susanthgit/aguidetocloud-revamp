@@ -8780,3 +8780,45 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice"]
   guided_url = "/guided/paloalto-xsoar-engineer/"
   practice_url = "/guided/paloalto-xsoar-engineer/practice/"
+
+  [[cert]]
+  slug = "cncf-pca"
+  vendor = "cncf"
+  code = "CNCF-PCA"
+  name = "CNCF PCA (Prometheus Certified Associate)"
+  tagline = "Monitor cloud native systems with Prometheus and PromQL"
+  exam_category = "CNCF"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 5
+  order = 245
+  featured = false
+  price_practice = 9
+
+  [cert_map."cncf-pca"]
+  vendor = "cncf"
+  code = "CNCF-PCA"
+  name = "CNCF PCA (Prometheus Certified Associate)"
+  tagline = "Monitor cloud native systems with Prometheus and PromQL"
+  exam_category = "CNCF"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 5
+  order = 245
+  featured = false
+  price_practice = 9
+  exam_url = "https://training.linuxfoundation.org/certification/prometheus-certified-associate/"
+  exam_cost = "$250 USD"
+  exam_duration = 90
+  exam_passing_score = "75%"
+  exam_questions_real = "60"
+  exam_provider = "Linux Foundation / PSI"
+  exam_validity = "2 years"
+  exam_prerequisites = "None"
+  exam_question_types = ["Multiple choice"]
+  guided_url = "/guided/cncf-pca/"
+  practice_url = "/guided/cncf-pca/practice/"
