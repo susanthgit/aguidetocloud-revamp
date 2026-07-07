@@ -8864,3 +8864,46 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice"]
   guided_url = "/guided/cncf-capa/"
   practice_url = "/guided/cncf-capa/practice/"
+
+
+[[cert]]
+  slug = "cncf-cgoa"
+  vendor = "cncf"
+  code = "CNCF-CGOA"
+  name = "CNCF CGOA (Certified GitOps Associate)"
+  tagline = "Prove you understand the GitOps operating model - vendor-neutral and tool-agnostic"
+  exam_category = "CNCF"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 5
+  order = 826
+  featured = false
+  price_practice = 9
+
+  [cert_map."cncf-cgoa"]
+  vendor = "cncf"
+  code = "CNCF-CGOA"
+  name = "CNCF CGOA (Certified GitOps Associate)"
+  tagline = "Prove you understand the GitOps operating model - vendor-neutral and tool-agnostic"
+  exam_category = "CNCF"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 5
+  order = 826
+  featured = false
+  price_practice = 9
+  exam_url = "https://training.linuxfoundation.org/certification/certified-gitops-associate-cgoa/"
+  exam_cost = "$250 USD"
+  exam_duration = 90
+  exam_passing_score = "75%"
+  exam_questions_real = "60"
+  exam_provider = "Linux Foundation / PSI"
+  exam_validity = "2 years"
+  exam_prerequisites = "None"
+  exam_question_types = ["Multiple choice"]
+  guided_url = "/guided/cncf-cgoa/"
+  practice_url = "/guided/cncf-cgoa/practice/"
