@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Jul 2026 23:12:58 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 03:39:27 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users in Japan may experience issues accessing Microsoft services including Microsoft Teams and Microsoft 365</title>
@@ -33,6 +33,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1412052</guid>
       <pubDate>Thu, 02 Jul 2026 06:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Users may not receive the join option in Teams iOS for meetings or calls active on another device</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1411708</link>
+      <description>[Microsoft Teams] Users may not receive the join option in Teams iOS for meetings or calls active on another device.</description>
+      <category>Microsoft Teams</category>
+      <category>restoringService</category>
+      <guid isPermaLink="false">TM1411708</guid>
+      <pubDate>Wed, 01 Jul 2026 22:01:33 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Due to a third-party networking issue, users in Australia may be unable to access Microsoft 365 services</title>
@@ -114,6 +123,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1410413</guid>
       <pubDate>Thu, 25 Jun 2026 12:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users may be unable to schedule Microsoft Teams meetings through the classic Outlook desktop client</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1402778</link>
+      <description>[Microsoft Teams] Users may be unable to schedule Microsoft Teams meetings through the classic Outlook desktop client.</description>
+      <category>Microsoft Teams</category>
+      <category>restoringService</category>
+      <guid isPermaLink="false">TM1402778</guid>
+      <pubDate>Wed, 24 Jun 2026 08:27:08 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to view SharePoint Online files that are linked by Microsoft 365 Copilot Chat or Copilot agents</title>
@@ -440,24 +458,6 @@ The incident was triggered by an upstream change that altered how certain capaci
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">AZ-GHRP-84G</guid>
       <pubDate>Fri, 29 May 2026 17:05:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to use Microsoft 365 Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1326225</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to use Microsoft 365 Copilot.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">CP1326225</guid>
-      <pubDate>Fri, 29 May 2026 15:26:33 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Some admins may be unable to access and manage configured GDAP tenants in Microsoft Defender</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1333265</link>
-      <description>[Microsoft Defender XDR] Admins may have been unable to access and manage configured GDAP tenants in Microsoft Defender.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">DZ1333265</guid>
-      <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
