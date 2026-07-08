@@ -5,14 +5,14 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Jul 2026 14:37:10 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 17:49:57 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users may be unable to view or select specific GPT-based models in Microsoft 365 Copilot chat </title>
       <link>https://www.aguidetocloud.com/service-health/#CW1420563</link>
       <description>[Microsoft 365 Copilot Chat] Users may be unable to view or select specific GPT-based models in Microsoft 365 Copilot chat. </description>
       <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceDegradation</category>
+      <category>investigationSuspended</category>
       <guid isPermaLink="false">CW1420563</guid>
       <pubDate>Wed, 08 Jul 2026 01:29:00 +0000</pubDate>
     </item>
@@ -28,9 +28,9 @@
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to manage custom Microsoft Graph connectors in Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1412506</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to manage custom Microsoft Graph connectors in Copilot.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to manage custom Microsoft Graph connectors in Copilot.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1412506</guid>
       <pubDate>Thu, 02 Jul 2026 14:12:49 +0000</pubDate>
     </item>
