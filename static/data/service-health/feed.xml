@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Jul 2026 10:29:43 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 14:37:10 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users may be unable to view or select specific GPT-based models in Microsoft 365 Copilot chat </title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1420563</link>
+      <description>[Microsoft 365 Copilot Chat] Users may be unable to view or select specific GPT-based models in Microsoft 365 Copilot chat. </description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CW1420563</guid>
+      <pubDate>Wed, 08 Jul 2026 01:29:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Users in Japan may experience issues accessing Microsoft services including Microsoft Teams and Microsoft 365</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1413447</link>
@@ -448,16 +457,6 @@ The issue was triggered by a severe thunderstorm that caused utility power distu
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1326627</guid>
       <pubDate>Fri, 29 May 2026 17:25:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Azure] Azure incident affecting Australia East, Sweden Central, West US 2</title>
-      <link>https://www.aguidetocloud.com/service-health/#AZ-GHRP-84G</link>
-      <description>[Azure] Between 09:39 UTC and 17:05 UTC on 29 May 2026, customers using the Azure OpenAI Service may have experienced increased latency, intermittent request failures, timeouts, and/or HTTP 5XX errors when submitting inference requests. The impact was more pronounced in regions in Europe and Australia East that were directly processing the highest levels of affected traffic.
-The incident was triggered by an upstream change that altered how certain capacity-related failures were surfaced, which led to a </description>
-      <category>Azure</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">AZ-GHRP-84G</guid>
-      <pubDate>Fri, 29 May 2026 17:05:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
