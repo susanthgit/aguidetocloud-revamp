@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T15:31:25.815812+00:00",
+  "generated_at": "2026-07-09T18:06:45.351103+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -19,13 +19,13 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 16,
-      "active_incidents": 0,
+      "total_incidents": 17,
+      "active_incidents": 1,
       "avg_duration_minutes": 4329,
-      "last_incident": "2026-07-03T03:55:00+00:00",
+      "last_incident": "2026-07-09T17:54:56.313000+00:00",
       "classifications": {
-        "incident": 7,
-        "advisory": 9
+        "advisory": 10,
+        "incident": 7
       }
     },
     {
@@ -58,12 +58,12 @@
       "service": "Microsoft Defender XDR",
       "short_name": "Defender",
       "icon": "🛡️",
-      "total_incidents": 9,
+      "total_incidents": 8,
       "active_incidents": 0,
-      "avg_duration_minutes": 19201,
+      "avg_duration_minutes": 14010,
       "last_incident": "2026-06-26T13:43:00+00:00",
       "classifications": {
-        "advisory": 8,
+        "advisory": 7,
         "incident": 1
       }
     },
@@ -218,7 +218,7 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 6,
+      "incident_count": 7,
       "services_affected": 4
     },
     {
@@ -233,8 +233,8 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 10,
-      "services_affected": 7
+      "incident_count": 9,
+      "services_affected": 6
     }
   ]
 }

@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Jul 2026 15:31:26 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2026 18:06:45 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Admin's Microsoft 365 Groups, Teams user, and Teams device reports may be delayed in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1421789</link>
+      <description>[Microsoft 365 suite] Admin's Microsoft 365 Groups, Teams user, and Teams device reports may be delayed in the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">MO1421789</guid>
+      <pubDate>Thu, 09 Jul 2026 17:54:56 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users may be unable to view or select specific GPT-based models in Microsoft 365 Copilot chat </title>
       <link>https://www.aguidetocloud.com/service-health/#CW1420563</link>
@@ -448,15 +457,6 @@ The issue was triggered by a severe thunderstorm that caused utility power distu
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1326495</guid>
       <pubDate>Fri, 29 May 2026 18:55:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Users may be unable to perform control plane operations on their capacities in Microsoft Fabric</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1326627</link>
-      <description>[Power BI] Users may have been unable to perform control plane operations on their capacities in Microsoft Fabric.</description>
-      <category>Power BI</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PB1326627</guid>
-      <pubDate>Fri, 29 May 2026 17:25:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
