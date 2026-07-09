@@ -5,14 +5,23 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Jul 2026 18:06:45 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2026 20:00:57 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Defender XDR] Admins may see delays to threat intelligence reports in the Security Operation Center (SOC)</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1421829</link>
+      <description>[Microsoft Defender XDR] Admins may see delays to threat intelligence reports in the SOC.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">DZ1421829</guid>
+      <pubDate>Thu, 09 Jul 2026 19:02:36 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Admin's Microsoft 365 Groups, Teams user, and Teams device reports may be delayed in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1421789</link>
       <description>[Microsoft 365 suite] Admin's Microsoft 365 Groups, Teams user, and Teams device reports may be delayed in the Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
-      <category>investigating</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1421789</guid>
       <pubDate>Thu, 09 Jul 2026 17:54:56 +0000</pubDate>
     </item>
@@ -448,15 +457,6 @@ The issue was triggered by a severe thunderstorm that caused utility power distu
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1328187</guid>
       <pubDate>Fri, 29 May 2026 21:45:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Users may be unable to initiate Spark sessions or open and perform actions in Microsoft Fabric Notebooks</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1326495</link>
-      <description>[Power BI] Users may have been unable to initiate Spark sessions or open and perform actions in Microsoft Fabric Notebooks.</description>
-      <category>Power BI</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PB1326495</guid>
-      <pubDate>Fri, 29 May 2026 18:55:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
