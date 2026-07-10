@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Jul 2026 07:49:12 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2026 11:16:10 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Admin's Microsoft 365 Groups, Teams user, and Teams device reports may be delayed in the Microsoft 365 admin center</title>
@@ -24,6 +24,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1421829</guid>
       <pubDate>Thu, 09 Jul 2026 12:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Unable to access Microsoft Copilot web and the m365.cloud.microsoft URL</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1420954</link>
+      <description>[Microsoft 365 suite] Users may be intermittently unable to access Copilot web and other pages that redirect to the m365.cloud.microsoft URL.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1420954</guid>
+      <pubDate>Thu, 09 Jul 2026 01:27:54 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users may be unable to view or select specific GPT-based models in Microsoft 365 Copilot chat </title>
@@ -152,15 +161,6 @@
       <pubDate>Thu, 25 Jun 2026 12:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Teams] Some users may be unable to schedule Microsoft Teams meetings through the classic Outlook desktop client</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1402778</link>
-      <description>[Microsoft Teams] Users may be unable to schedule Microsoft Teams meetings through the classic Outlook desktop client.</description>
-      <category>Microsoft Teams</category>
-      <category>restoringService</category>
-      <guid isPermaLink="false">TM1402778</guid>
-      <pubDate>Wed, 24 Jun 2026 08:27:08 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to view SharePoint Online files that are linked by Microsoft 365 Copilot Chat or Copilot agents</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1409288</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to view SharePoint Online files that were linked by Copilot Chat or Copilot agents.</description>
@@ -177,6 +177,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1402061</guid>
       <pubDate>Tue, 23 Jun 2026 13:50:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users may have been unable to schedule Microsoft Teams meetings through the classic Outlook desktop client</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1402778</link>
+      <description>[Microsoft Teams] Users may have been unable to schedule Microsoft Teams meetings through the classic Outlook desktop client.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1402778</guid>
+      <pubDate>Mon, 22 Jun 2026 01:16:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Purview] We've detected a Microsoft Purview Data Loss Prevention issue in your environment</title>
@@ -448,15 +457,6 @@ The issue was triggered by a severe thunderstorm that caused utility power distu
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">AZ-20260501-2</guid>
       <pubDate>Sat, 30 May 2026 02:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may not have seen responses from Microsoft Copilot (Microsoft 365) custom engine agents</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1328187</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may not have seen responses from Microsoft Copilot (Microsoft 365) custom engine agents.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1328187</guid>
-      <pubDate>Fri, 29 May 2026 21:45:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
