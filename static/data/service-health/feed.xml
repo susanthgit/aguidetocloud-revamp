@@ -5,25 +5,25 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Jul 2026 11:22:26 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2026 13:51:33 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft OneDrive] Some users may be unable to access Microsoft OneDrive content and may notice delays or navigation errors</title>
+      <title>[Microsoft OneDrive] Some users may have been unable to access Microsoft OneDrive content and may have noticed delays or navigation errors</title>
       <link>https://www.aguidetocloud.com/service-health/#OD1424850</link>
-      <description>[Microsoft OneDrive] Users may be unable to access OneDrive content and may notice delays or navigation errors.</description>
+      <description>[Microsoft OneDrive] Users may have been unable to access OneDrive content and may have noticed delays or navigation errors.</description>
       <category>Microsoft OneDrive</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">OD1424850</guid>
-      <pubDate>Sun, 12 Jul 2026 10:30:44 +0000</pubDate>
+      <pubDate>Sun, 12 Jul 2026 10:20:00 +0000</pubDate>
     </item>
     <item>
-      <title>[SharePoint Online] Some users may be unable to access SharePoint Online sites and may notice delays or navigation errors</title>
+      <title>[SharePoint Online] Some users may have been unable to access SharePoint Online sites and may have noticed delays or navigation errors</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1424849</link>
-      <description>[SharePoint Online] Users may be unable to access SharePoint Online sites and may notice delays or navigation errors.</description>
+      <description>[SharePoint Online] Users may have been unable to access SharePoint Online sites and may have noticed delays or navigation errors.</description>
       <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">SP1424849</guid>
-      <pubDate>Sun, 12 Jul 2026 10:30:40 +0000</pubDate>
+      <pubDate>Sun, 12 Jul 2026 10:20:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Admins may see delays to threat intelligence reports in the Security Operation Center (SOC)</title>
