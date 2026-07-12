@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Jul 2026 10:00:03 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2026 11:22:26 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft OneDrive] Some users may be unable to access Microsoft OneDrive content and may notice delays or navigation errors</title>
+      <link>https://www.aguidetocloud.com/service-health/#OD1424850</link>
+      <description>[Microsoft OneDrive] Users may be unable to access OneDrive content and may notice delays or navigation errors.</description>
+      <category>Microsoft OneDrive</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">OD1424850</guid>
+      <pubDate>Sun, 12 Jul 2026 10:30:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Some users may be unable to access SharePoint Online sites and may notice delays or navigation errors</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1424849</link>
+      <description>[SharePoint Online] Users may be unable to access SharePoint Online sites and may notice delays or navigation errors.</description>
+      <category>SharePoint Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">SP1424849</guid>
+      <pubDate>Sun, 12 Jul 2026 10:30:40 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Defender XDR] Admins may see delays to threat intelligence reports in the Security Operation Center (SOC)</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1421829</link>
@@ -438,25 +456,6 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1329260</guid>
       <pubDate>Mon, 01 Jun 2026 07:10:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users may be unable to create new online meetings from shared calendar events in Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1327187</link>
-      <description>[Exchange Online] Users may have been unable to create new online meetings from shared calendar events in Exchange Online.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1327187</guid>
-      <pubDate>Sat, 30 May 2026 09:11:59 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Azure] Azure incident affecting West US 2</title>
-      <link>https://www.aguidetocloud.com/service-health/#AZ-20260501-2</link>
-      <description>[Azure] Between 04:24 UTC on 29 May and 02:30 UTC on 30 May 2026, customers with resources in the West US 2 region may have experienced failures when attempting to access or manage some Azure services in the region. Impact included connectivity failures, resource unavailability, and service management failures.
-The issue was triggered by a severe thunderstorm that caused utility power disturbances affecting multiple datacenter facilities serving the region. These disturbances led to some cooling systems</description>
-      <category>Azure</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">AZ-20260501-2</guid>
-      <pubDate>Sat, 30 May 2026 02:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

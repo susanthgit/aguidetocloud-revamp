@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-12T10:00:02.495991+00:00",
+  "generated_at": "2026-07-12T11:22:25.523825+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 23,
+      "total_incidents": 22,
       "active_incidents": 0,
-      "avg_duration_minutes": 8008,
+      "avg_duration_minutes": 8366,
       "last_incident": "2026-07-02T14:12:49+00:00",
       "classifications": {
-        "advisory": 12,
+        "advisory": 11,
         "incident": 11
       }
     },
@@ -71,26 +71,13 @@
       "service": "SharePoint Online",
       "short_name": "SharePoint",
       "icon": "📄",
-      "total_incidents": 6,
-      "active_incidents": 1,
+      "total_incidents": 7,
+      "active_incidents": 2,
       "avg_duration_minutes": 6297,
-      "last_incident": "2026-06-26T13:30:15+00:00",
+      "last_incident": "2026-07-12T10:30:40.417000+00:00",
       "classifications": {
-        "advisory": 4,
-        "incident": 2
-      }
-    },
-    {
-      "service": "Microsoft Intune",
-      "short_name": "Intune",
-      "icon": "📱",
-      "total_incidents": 5,
-      "active_incidents": 0,
-      "avg_duration_minutes": 4161,
-      "last_incident": "2026-06-15T18:00:00+00:00",
-      "classifications": {
-        "advisory": 4,
-        "incident": 1
+        "incident": 3,
+        "advisory": 4
       }
     },
     {
@@ -104,6 +91,31 @@
       "classifications": {
         "advisory": 3,
         "incident": 1
+      }
+    },
+    {
+      "service": "Microsoft Intune",
+      "short_name": "Intune",
+      "icon": "📱",
+      "total_incidents": 4,
+      "active_incidents": 0,
+      "avg_duration_minutes": 2862,
+      "last_incident": "2026-06-15T18:00:00+00:00",
+      "classifications": {
+        "advisory": 3,
+        "incident": 1
+      }
+    },
+    {
+      "service": "Microsoft OneDrive",
+      "short_name": "OneDrive",
+      "icon": "☁️",
+      "total_incidents": 3,
+      "active_incidents": 1,
+      "avg_duration_minutes": 364,
+      "last_incident": "2026-07-12T10:30:44.963000+00:00",
+      "classifications": {
+        "incident": 3
       }
     },
     {
@@ -152,18 +164,6 @@
       "last_incident": "2026-06-20T00:03:43+00:00",
       "classifications": {
         "advisory": 2
-      }
-    },
-    {
-      "service": "Microsoft OneDrive",
-      "short_name": "OneDrive",
-      "icon": "☁️",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 364,
-      "last_incident": "2026-06-26T14:05:30+00:00",
-      "classifications": {
-        "incident": 2
       }
     },
     {
@@ -218,8 +218,8 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 9,
-      "services_affected": 5
+      "incident_count": 11,
+      "services_affected": 7
     },
     {
       "month": "2026-06",
@@ -233,8 +233,8 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 7,
-      "services_affected": 6
+      "incident_count": 5,
+      "services_affected": 4
     }
   ]
 }
