@@ -3,7 +3,7 @@ title: "Microsoft Copilot Cowork — Complete Admin Playbook"
 list_title: "Cowork: Admin enablement and governance"
 description: "Microsoft Copilot Cowork admin guide: turning it on, governance controls, oversharing protection, a pilot rollout playbook, and troubleshooting."
 date: 2026-06-15
-lastmod: 2026-06-25
+lastmod: 2026-07-13
 draft: false
 card_tag: "Cowork"
 tag_class: "ai"
@@ -29,7 +29,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork reached **general availability on 16 June 2026** — this page reflects the GA enablement path and governance stack. **Last verified: 25 June 2026.**
+🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork reached **general availability on 16 June 2026** — this page reflects the GA enablement path and governance stack. **Last verified: 13 July 2026.**
 
 </div>
 
@@ -171,6 +171,19 @@ To bring it back, do **either** (ideally both):
 - **Set up a spending policy** (Copilot → Cost Management) that includes those users — that's what actually lets them *use* it, and it overrides the discovery toggle for everyone it covers.
 
 Keep one thing separate in your head: the **grace period** is about *billing*, not visibility. If your tenant qualifies, you're not billed until **1 July 2026** — but the grace period doesn't make Cowork appear on its own. Discovery plus a spending policy is what controls who sees and uses it. So if Cowork went missing, look at the gates, not the grace period.
+
+### "My users clicked 'request access' — where do I approve it?" {#approve-a-cowork-access-request}
+
+If a licensed user opens Cowork before you've set up billing, they'll see a **request access** prompt. Here's the part that trips admins up: **that request is for Copilot Credits (usage-based billing), not a licence.** So when you follow the "View request" alert and it drops you on the *licensing* page, there's nothing to add — your users are already licensed, and licensing was never the gate. It's the spending policy they're missing.
+
+Approve it in the right place:
+
+1. Go to the [Microsoft 365 admin center](https://admin.microsoft.com) → **Copilot → Cost Management → Overview**.
+2. In the **Top actions** section, select **View requests**.
+3. The **Credit requests** page lists each requester with their **licence status** and **current policy** — anyone blocked shows as **"Not in a policy."**
+4. **Add those users to a spending policy** to grant access (or create a new policy scoped to them). If you haven't turned on usage-based billing at all yet, run the [enablement steps above](#how-to-enable-cowork-at-ga) first — activating a spending policy is what actually switches Cowork on.
+
+So the fix for "there's nothing to add on the licensing page" is simple: you're on the wrong page. The access your users need is a **spending policy** in Cost Management, not another licence. Full reference: [Managing usage-based billing and Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits) on Microsoft Learn.
 
 ---
 

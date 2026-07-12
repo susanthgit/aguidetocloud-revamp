@@ -3,7 +3,7 @@ title: "Microsoft Copilot Cowork — Step-by-Step How-To Guide"
 list_title: "Cowork: How to use it step by step"
 description: "Microsoft Copilot Cowork step-by-step tutorial — prerequisites, finding it, outcome-first prompts, approval checkpoints, and troubleshooting."
 date: 2026-06-15
-lastmod: 2026-06-18
+lastmod: 2026-07-13
 draft: false
 card_tag: "Cowork"
 tag_class: "ai"
@@ -28,7 +28,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork is **generally available** as of 16 June 2026 — now walked through with real screenshots from my tenant. **Last verified: 17 June 2026 · GA day.**
+🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork is **generally available** as of 16 June 2026 — now walked through with real screenshots from my tenant. **Last verified: 13 July 2026.**
 
 </div>
 
@@ -40,7 +40,7 @@ founder_note: |
 
 ## TL;DR
 
-- **Where to find Cowork** — at **m365.cloud.microsoft** (browser) or the Microsoft 365 Copilot desktop/mobile app — select Cowork, or find it under **All agents**
+- **Where to find Cowork** — at **m365.cloud.microsoft** (browser), the Microsoft 365 Copilot desktop/mobile app, or in **Outlook and Teams** — select **Cowork** from the **toggle next to Chat**. Some app versions show it in the **left navigation rail** instead, or under **All agents**
 - **How to start a task** — describe an outcome, not a process
 - **What to expect** — Cowork works through the steps in front of you, pausing for your approval at sensitive actions
 - **How to stay in control** — pause, redirect, or stop at any time
@@ -63,7 +63,7 @@ If all three are in place and you still can't see it, give it a few minutes afte
 
 <p><img src="/images/blog/cowork-how-to/01-task-ideas.webp" alt="The Cowork 'Task ideas' panel with suggested tasks like an OOO handover pack, newsletter brief, calendar audit and morning briefing, grouped by topic" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-Cowork lives inside Microsoft 365 Copilot — open **`m365.cloud.microsoft`** in your browser (or use the Microsoft 365 Copilot desktop or mobile app) and switch from **Chat** to **Cowork** using the toggle next to the chat box. If you don't see it yet, look under **All agents**. It opens into its own full task workspace, not just a chat box.
+Cowork lives inside Microsoft 365 Copilot — open **`m365.cloud.microsoft`** in your browser (or use the Microsoft 365 Copilot desktop or mobile app, or find it in **Outlook and Teams**) and switch from **Chat** to **Cowork** using the **toggle next to the chat box**. **Heads-up:** the Microsoft 365 app is rolling out a new layout, so on some tenants Cowork shows in the **left navigation rail** rather than the top toggle — if you don't see the toggle, check the left rail, or look under **All agents**. It opens into its own full task workspace, not just a chat box.
 
 The landing page is built around two things: an input box that says **"Start a task…"** (not "Send a message") and a left side rail with your task history. The core controls in the rail are **New task**, **Search**, **Scheduled**, and **Customize**.
 
