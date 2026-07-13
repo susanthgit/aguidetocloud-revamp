@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Jul 2026 19:44:38 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2026 21:10:33 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[SharePoint Online] Some users' document libraries and list views using multiple group filters may not display results in SharePoint Online</title>
@@ -32,15 +32,6 @@
       <category>Microsoft OneDrive</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">OD1424850</guid>
-      <pubDate>Sun, 12 Jul 2026 10:20:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Some users may have been unable to access SharePoint Online sites and may have noticed delays or navigation errors</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1424849</link>
-      <description>[SharePoint Online] Users may have been unable to access SharePoint Online sites and may have noticed delays or navigation errors.</description>
-      <category>SharePoint Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">SP1424849</guid>
       <pubDate>Sun, 12 Jul 2026 10:20:00 +0000</pubDate>
     </item>
     <item>
@@ -78,15 +69,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1421789</guid>
       <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users are unable to access Microsoft Copilot web and m365.cloud.microsoft</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1420954</link>
-      <description>[Microsoft 365 suite] Users were intermittently unable to access Copilot web and other pages that redirect to the m365.cloud.microsoft URL.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1420954</guid>
-      <pubDate>Tue, 07 Jul 2026 17:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Users in Japan may experience issues accessing Microsoft services including Microsoft Teams and Microsoft 365</title>
@@ -456,6 +438,24 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CP1329665</guid>
       <pubDate>Mon, 01 Jun 2026 13:10:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users may have received no response when prompting Microsoft 365 Copilot Chat using the Claude Opus model </title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1352001</link>
+      <description>[Microsoft 365 Copilot Chat] Users may have received no response when prompting Copilot Chat using the Claude Opus model.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1352001</guid>
+      <pubDate>Mon, 01 Jun 2026 13:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Unable to open files in Office for the web or Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1329446</link>
+      <description>[Microsoft 365 suite] Users may have been unable to open files in Office for the web or Microsoft Teams.</description>
+      <category>Microsoft 365 suite</category>
+      <category>postIncidentReviewPublished</category>
+      <guid isPermaLink="false">MO1329446</guid>
+      <pubDate>Mon, 01 Jun 2026 12:43:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

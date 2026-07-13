@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T19:44:37.679148+00:00",
+  "generated_at": "2026-07-13T21:10:32.550114+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -19,13 +19,13 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 18,
+      "total_incidents": 17,
       "active_incidents": 0,
-      "avg_duration_minutes": 4357,
+      "avg_duration_minutes": 4356,
       "last_incident": "2026-07-08T00:00:00+00:00",
       "classifications": {
         "advisory": 10,
-        "incident": 8
+        "incident": 7
       }
     },
     {
@@ -71,13 +71,13 @@
       "service": "SharePoint Online",
       "short_name": "SharePoint",
       "icon": "📄",
-      "total_incidents": 6,
+      "total_incidents": 7,
       "active_incidents": 2,
-      "avg_duration_minutes": 5706,
+      "avg_duration_minutes": 6297,
       "last_incident": "2026-07-13T06:42:44+00:00",
       "classifications": {
         "incident": 3,
-        "advisory": 3
+        "advisory": 4
       }
     },
     {
@@ -218,7 +218,7 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 14,
+      "incident_count": 12,
       "services_affected": 7
     },
     {
@@ -233,8 +233,8 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 2,
-      "services_affected": 2
+      "incident_count": 4,
+      "services_affected": 3
     }
   ]
 }
