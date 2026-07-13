@@ -9198,3 +9198,45 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_validity = "3 years"
   exam_prerequisites = "None"
   exam_question_types = ["Multiple choice", "Multiple select"]
+
+[[cert]]
+  slug = "splunk-cybersecurity-defense-analyst"
+  vendor = "splunk"
+  code = "SPLUNK-CYBERSECURITY-DEFENSE-ANALYST"
+  name = "Splunk Certified Cybersecurity Defense Analyst"
+  tagline = "Master the Splunk Certified Cybersecurity Defense Analyst exam (SPLK-5001) - SOC operations, MITRE ATT&CK and the NIST Cybersecurity Framework, threat and attack types, the Common Information Model (CIM), Splunk Enterprise Security notable events, Risk-Based Alerting and risk objects, adaptive response, SPL for security investigations, and threat hunting."
+  exam_category = "Splunk"
+  level = "intermediate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 6
+  order = 779
+  featured = false
+  price_practice = 9
+
+[cert_map."splunk-cybersecurity-defense-analyst"]
+  vendor = "splunk"
+  code = "SPLUNK-CYBERSECURITY-DEFENSE-ANALYST"
+  name = "Splunk Certified Cybersecurity Defense Analyst"
+  tagline = "Master the Splunk Certified Cybersecurity Defense Analyst exam (SPLK-5001) - SOC operations, MITRE ATT&CK and the NIST Cybersecurity Framework, threat and attack types, the Common Information Model (CIM), Splunk Enterprise Security notable events, Risk-Based Alerting and risk objects, adaptive response, SPL for security investigations, and threat hunting."
+  exam_category = "Splunk"
+  level = "intermediate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 6
+  order = 779
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.splunk.com/en_us/training/certification-track/splunk-certified-cybersecurity-defense-analyst.html"
+  exam_cost = "$130 USD"
+  exam_duration = 75
+  exam_passing_score = "700 / 1000"
+  exam_questions_real = "66"
+  exam_provider = "Splunk (Pearson VUE)"
+  exam_validity = "3 years"
+  exam_prerequisites = "None required (Splunk Core Power User level and Splunk Enterprise Security familiarity recommended)"
+  exam_question_types = ["Multiple choice", "Multiple response"]
+  guided_url = "/guided/splunk-cybersecurity-defense-analyst/"
+  practice_url = "/guided/splunk-cybersecurity-defense-analyst/practice/"
