@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T07:33:57.625975+00:00",
+  "generated_at": "2026-07-13T11:26:31.868824+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -72,9 +72,9 @@
       "short_name": "SharePoint",
       "icon": "📄",
       "total_incidents": 7,
-      "active_incidents": 1,
-      "avg_duration_minutes": 5251,
-      "last_incident": "2026-07-12T10:20:00+00:00",
+      "active_incidents": 2,
+      "avg_duration_minutes": 4699,
+      "last_incident": "2026-07-13T06:42:44.070000+00:00",
       "classifications": {
         "advisory": 4,
         "incident": 3
@@ -218,7 +218,7 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 12,
+      "incident_count": 13,
       "services_affected": 7
     },
     {
@@ -233,7 +233,7 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 4,
+      "incident_count": 3,
       "services_affected": 3
     }
   ]
