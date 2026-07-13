@@ -9075,3 +9075,45 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice"]
   guided_url = "/guided/cncf-otca/"
   practice_url = "/guided/cncf-otca/practice/"
+
+[[cert]]
+  slug = "databricks-genai-engineer-associate"
+  vendor = "databricks"
+  code = "DATABRICKS-GENAI-ENGINEER-ASSOCIATE"
+  name = "Certified Generative AI Engineer Associate"
+  tagline = "Master the Databricks Certified Generative AI Engineer Associate exam (18 Mar 2026 guide) - designing GenAI applications, RAG data preparation, and building, deploying, governing, evaluating and monitoring LLM and agent applications on Databricks with Mosaic AI Vector Search, Foundation Model APIs, the Agent Framework and Agent Bricks, Model Serving, the AI Gateway, and MLflow 3."
+  exam_category = "Databricks"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 6
+  order = 773
+  featured = false
+  price_practice = 9
+
+  [cert_map."databricks-genai-engineer-associate"]
+  vendor = "databricks"
+  code = "DATABRICKS-GENAI-ENGINEER-ASSOCIATE"
+  name = "Certified Generative AI Engineer Associate"
+  tagline = "Master the Databricks Certified Generative AI Engineer Associate exam (18 Mar 2026 guide) - designing GenAI applications, RAG data preparation, and building, deploying, governing, evaluating and monitoring LLM and agent applications on Databricks with Mosaic AI Vector Search, Foundation Model APIs, the Agent Framework and Agent Bricks, Model Serving, the AI Gateway, and MLflow 3."
+  exam_category = "Databricks"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 6
+  order = 773
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.databricks.com/learn/certification/genai-engineer-associate"
+  exam_cost = "$200 USD"
+  exam_duration = 90
+  exam_passing_score = "Not officially published (pass/fail)"
+  exam_questions_real = "45"
+  exam_provider = "Databricks (online or test center, proctored)"
+  exam_validity = "2 years"
+  exam_prerequisites = "None"
+  exam_question_types = ["Multiple choice"]
+  guided_url = "/guided/databricks-genai-engineer-associate/"
+  practice_url = "/guided/databricks-genai-engineer-associate/practice/"
