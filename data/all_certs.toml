@@ -9158,3 +9158,43 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_validity = "2 years"
   exam_prerequisites = "None"
   exam_question_types = ["Multiple choice"]
+
+[[cert]]
+  slug = "gcp-data-practitioner"
+  vendor = "gcp"
+  code = "DATA-PRACTITIONER"
+  name = "Google Cloud Associate Data Practitioner"
+  tagline = "Ingest, store, analyze, pipeline, and govern data on Google Cloud - BigQuery, Dataflow, Looker, Cloud Storage, and IAM, at associate depth."
+  exam_category = "GCP"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 832
+  featured = false
+  price_practice = 9
+
+[cert_map."gcp-data-practitioner"]
+  vendor = "gcp"
+  code = "DATA-PRACTITIONER"
+  name = "Google Cloud Associate Data Practitioner"
+  tagline = "Ingest, store, analyze, pipeline, and govern data on Google Cloud - BigQuery, Dataflow, Looker, Cloud Storage, and IAM, at associate depth."
+  exam_category = "GCP"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 832
+  featured = false
+  price_practice = 9
+  exam_url = "https://cloud.google.com/learn/certification/data-practitioner"
+  exam_cost = "$125 USD"
+  exam_duration = 120
+  exam_passing_score = "Not published by Google"
+  exam_questions_real = "50-60"
+  exam_provider = "Kryterion (online or onsite proctored)"
+  exam_validity = "3 years"
+  exam_prerequisites = "None"
+  exam_question_types = ["Multiple choice", "Multiple select"]
