@@ -9117,3 +9117,44 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice"]
   guided_url = "/guided/databricks-genai-engineer-associate/"
   practice_url = "/guided/databricks-genai-engineer-associate/practice/"
+
+
+[[cert]]
+  slug = "databricks-spark-developer-associate"
+  vendor = "databricks"
+  code = "DATABRICKS-SPARK-DEVELOPER-ASSOCIATE"
+  name = "Certified Associate Developer for Apache Spark"
+  tagline = "Master the Databricks Certified Associate Developer for Apache Spark exam (current October 2025 guide, Python/PySpark) - Spark architecture and the execution model, the DataFrame and DataSet API, Spark SQL, performance troubleshooting and tuning, Structured Streaming, Spark Connect, and the Pandas API on Spark."
+  exam_category = "Databricks"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 7
+  order = 774
+  featured = false
+  price_practice = 9
+
+[cert_map."databricks-spark-developer-associate"]
+  vendor = "databricks"
+  code = "DATABRICKS-SPARK-DEVELOPER-ASSOCIATE"
+  name = "Certified Associate Developer for Apache Spark"
+  tagline = "Master the Databricks Certified Associate Developer for Apache Spark exam (current October 2025 guide, Python/PySpark) - Spark architecture and the execution model, the DataFrame and DataSet API, Spark SQL, performance troubleshooting and tuning, Structured Streaming, Spark Connect, and the Pandas API on Spark."
+  exam_category = "Databricks"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 7
+  order = 774
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.databricks.com/learn/certification/apache-spark-developer-associate"
+  exam_cost = "$200 USD"
+  exam_duration = 90
+  exam_passing_score = "Not officially published (pass/fail)"
+  exam_questions_real = "45"
+  exam_provider = "Databricks (online or test center, proctored)"
+  exam_validity = "2 years"
+  exam_prerequisites = "None"
+  exam_question_types = ["Multiple choice"]
