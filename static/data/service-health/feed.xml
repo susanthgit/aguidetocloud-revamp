@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Jul 2026 21:10:33 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2026 23:09:19 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[SharePoint Online] Some users' document libraries and list views using multiple group filters may not display results in SharePoint Online</title>
@@ -46,9 +46,9 @@
     <item>
       <title>[Microsoft Teams] Mac users may see distorted content when sharing their full screen in Microsoft Teams meetings or recordings</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1423737</link>
-      <description>[Microsoft Teams] Mac users may see distorted content when sharing their full screen in Microsoft Teams meetings or recordings.</description>
+      <description>[Microsoft Teams] Mac users may have seen distorted content when sharing their full screen in Microsoft Teams meetings or recordings.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1423737</guid>
       <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
     </item>
@@ -69,6 +69,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1421789</guid>
       <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Users are unable to access Microsoft Copilot web and m365.cloud.microsoft</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1420954</link>
+      <description>[Microsoft 365 suite] Users were intermittently unable to access Copilot web and other pages that redirect to the m365.cloud.microsoft URL.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1420954</guid>
+      <pubDate>Tue, 07 Jul 2026 17:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Users in Japan may experience issues accessing Microsoft services including Microsoft Teams and Microsoft 365</title>
@@ -96,15 +105,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1412052</guid>
       <pubDate>Thu, 02 Jul 2026 06:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users may not receive the join option in Teams iOS for meetings or calls active on another device</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1411708</link>
-      <description>[Microsoft Teams] Users may not receive the join option in Teams iOS for meetings or calls active on another device.</description>
-      <category>Microsoft Teams</category>
-      <category>restoringService</category>
-      <guid isPermaLink="false">TM1411708</guid>
-      <pubDate>Wed, 01 Jul 2026 22:01:33 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Due to a third-party networking issue, users in Australia may be unable to access Microsoft 365 services</title>
@@ -323,6 +323,15 @@
       <pubDate>Thu, 11 Jun 2026 15:28:27 +0000</pubDate>
     </item>
     <item>
+      <title>[Microsoft Teams] Users may not receive the join option in Teams iOS for meetings or calls active on another device</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1411708</link>
+      <description>[Microsoft Teams] Users may not have received the join option in Teams iOS for meetings or calls active on another device.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1411708</guid>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Defender XDR] Some users may have been unable to begin onboarding for Microsoft Defender for Endpoint or Defender for Office 365</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1392272</link>
       <description>[Microsoft Defender XDR] Users may have been unable to begin onboarding for Microsoft Defender for Endpoint or Defender for Office 365.</description>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1352001</guid>
       <pubDate>Mon, 01 Jun 2026 13:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Unable to open files in Office for the web or Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1329446</link>
-      <description>[Microsoft 365 suite] Users may have been unable to open files in Office for the web or Microsoft Teams.</description>
-      <category>Microsoft 365 suite</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">MO1329446</guid>
-      <pubDate>Mon, 01 Jun 2026 12:43:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
