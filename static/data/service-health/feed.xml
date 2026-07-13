@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Jul 2026 23:05:34 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2026 03:54:22 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to open or use custom Copilot Agents in Microsoft Copilot Studio and receive an error</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1425545</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to open or use custom Copilot Agents in Microsoft Copilot Studio and receive an error.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1425545</guid>
+      <pubDate>Mon, 13 Jul 2026 02:46:34 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft OneDrive] Some users may have been unable to access Microsoft OneDrive content and may have noticed delays or navigation errors</title>
       <link>https://www.aguidetocloud.com/service-health/#OD1424850</link>
@@ -447,15 +456,6 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1329446</guid>
       <pubDate>Mon, 01 Jun 2026 12:43:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some users may have been unable to setup Multi-Factor Authentication (MFA) or access the mysignins.microsoft.com website</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1329260</link>
-      <description>[Microsoft 365 suite] Users may have been unable to setup MFA or access the mysignins.microsoft.com website.</description>
-      <category>Microsoft 365 suite</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">MO1329260</guid>
-      <pubDate>Mon, 01 Jun 2026 07:10:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
