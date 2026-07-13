@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Jul 2026 15:08:09 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2026 18:04:27 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[SharePoint Online] Some users' document libraries and list views using multiple group filters may not display results in SharePoint Online</title>
@@ -51,6 +51,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1421829</guid>
       <pubDate>Thu, 09 Jul 2026 12:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Mac users may see distorted content when sharing their full screen in Microsoft Teams meetings or recordings</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1423737</link>
+      <description>[Microsoft Teams] Mac users may see distorted content when sharing their full screen in Microsoft Teams meetings or recordings.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1423737</guid>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users may be unable to view or select specific GPT-based models in Microsoft 365 Copilot chat </title>
@@ -447,15 +456,6 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CP1329665</guid>
       <pubDate>Mon, 01 Jun 2026 13:10:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Users may have received no response when prompting Microsoft 365 Copilot Chat using the Claude Opus model </title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1352001</link>
-      <description>[Microsoft 365 Copilot Chat] Users may have received no response when prompting Copilot Chat using the Claude Opus model.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1352001</guid>
-      <pubDate>Mon, 01 Jun 2026 13:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

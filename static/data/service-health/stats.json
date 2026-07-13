@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T15:08:09.046429+00:00",
+  "generated_at": "2026-07-13T18:04:26.443199+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -71,12 +71,12 @@
       "service": "SharePoint Online",
       "short_name": "SharePoint",
       "icon": "📄",
-      "total_incidents": 7,
+      "total_incidents": 6,
       "active_incidents": 2,
-      "avg_duration_minutes": 4699,
+      "avg_duration_minutes": 5706,
       "last_incident": "2026-07-13T06:42:44+00:00",
       "classifications": {
-        "incident": 4,
+        "incident": 3,
         "advisory": 3
       }
     },
@@ -104,6 +104,18 @@
       "classifications": {
         "advisory": 3,
         "incident": 1
+      }
+    },
+    {
+      "service": "Microsoft Teams",
+      "short_name": "Teams",
+      "icon": "💬",
+      "total_incidents": 3,
+      "active_incidents": 2,
+      "avg_duration_minutes": 25169,
+      "last_incident": "2026-07-09T00:00:00+00:00",
+      "classifications": {
+        "advisory": 3
       }
     },
     {
@@ -140,18 +152,6 @@
       "last_incident": "2026-05-30T02:30:00+00:00",
       "classifications": {
         "incident": 3
-      }
-    },
-    {
-      "service": "Microsoft Teams",
-      "short_name": "Teams",
-      "icon": "💬",
-      "total_incidents": 2,
-      "active_incidents": 1,
-      "avg_duration_minutes": 25169,
-      "last_incident": "2026-07-01T22:01:33.537000+00:00",
-      "classifications": {
-        "advisory": 2
       }
     },
     {
@@ -218,7 +218,7 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 13,
+      "incident_count": 14,
       "services_affected": 7
     },
     {
@@ -233,8 +233,8 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 3,
-      "services_affected": 3
+      "incident_count": 2,
+      "services_affected": 2
     }
   ]
 }
