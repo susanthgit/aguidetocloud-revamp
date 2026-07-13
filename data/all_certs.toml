@@ -9240,3 +9240,45 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice", "Multiple response"]
   guided_url = "/guided/splunk-cybersecurity-defense-analyst/"
   practice_url = "/guided/splunk-cybersecurity-defense-analyst/practice/"
+
+[[cert]]
+  slug = "splunk-cybersecurity-defense-engineer"
+  vendor = "splunk"
+  code = "SPLUNK-CYBERSECURITY-DEFENSE-ENGINEER"
+  name = "Splunk Certified Cybersecurity Defense Engineer"
+  tagline = "Master the Splunk Certified Cybersecurity Defense Engineer exam (SPLK-5002) - detection engineering in Splunk Enterprise Security, correlation searches and ES 8 detections, Risk-Based Alerting, CIM data normalization, notable events and findings, the detection lifecycle, threat-intelligence management, REST APIs, and Splunk SOAR playbook automation."
+  exam_category = "Splunk"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 5
+  order = 779
+  featured = false
+  price_practice = 9
+
+[cert_map."splunk-cybersecurity-defense-engineer"]
+  vendor = "splunk"
+  code = "SPLUNK-CYBERSECURITY-DEFENSE-ENGINEER"
+  name = "Splunk Certified Cybersecurity Defense Engineer"
+  tagline = "Master the Splunk Certified Cybersecurity Defense Engineer exam (SPLK-5002) - detection engineering in Splunk Enterprise Security, correlation searches and ES 8 detections, Risk-Based Alerting, CIM data normalization, notable events and findings, the detection lifecycle, threat-intelligence management, REST APIs, and Splunk SOAR playbook automation."
+  exam_category = "Splunk"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 5
+  order = 779
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.splunk.com/en_us/training/certification-track/splunk-certified-cybersecurity-defense-engineer.html"
+  exam_cost = "$130 USD"
+  exam_duration = 75
+  exam_passing_score = "Pass / fail (Splunk does not publicly disclose the cut score)"
+  exam_questions_real = "60"
+  exam_provider = "Splunk (Pearson VUE)"
+  exam_validity = "3 years"
+  exam_prerequisites = "None required (Splunk Power User level and Splunk Enterprise Security + Splunk SOAR familiarity recommended)"
+  exam_question_types = ["Multiple choice", "Multiple response"]
+  guided_url = "/guided/splunk-cybersecurity-defense-engineer/"
+  practice_url = "/guided/splunk-cybersecurity-defense-engineer/practice/"
