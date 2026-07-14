@@ -9366,3 +9366,45 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice", "Multiple select"]
   guided_url = "/guided/fortinet-fcss-security-operations/"
   practice_url = "/guided/fortinet-fcss-security-operations/practice/"
+
+[[cert]]
+  slug = "fortinet-fsm-analyst"
+  vendor = "fortinet"
+  code = "FORTINET-FSM-ANALYST"
+  name = "Fortinet NSE 6 - FortiSIEM 7.4 Analyst (NSE6_FSM_AN-7.4)"
+  tagline = "Master the Fortinet NSE 6 - FortiSIEM 7.4 Analyst exam - using FortiSIEM 7.4 to search, enrich and analyze security events: Analytics search queries with group-by, aggregation, CMDB, lookup-table and nested-query lookups, FortiEDR security settings and playbooks, FortiSIEM rules and subpatterns, incidents, notifications and remediation, and ML, UEBA and ZTNA integration."
+  exam_category = "Fortinet"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 5
+  order = 215
+  featured = false
+  price_practice = 9
+
+[cert_map."fortinet-fsm-analyst"]
+  vendor = "fortinet"
+  code = "FORTINET-FSM-ANALYST"
+  name = "Fortinet NSE 6 - FortiSIEM 7.4 Analyst (NSE6_FSM_AN-7.4)"
+  tagline = "Master the Fortinet NSE 6 - FortiSIEM 7.4 Analyst exam - using FortiSIEM 7.4 to search, enrich and analyze security events: Analytics search queries with group-by, aggregation, CMDB, lookup-table and nested-query lookups, FortiEDR security settings and playbooks, FortiSIEM rules and subpatterns, incidents, notifications and remediation, and ML, UEBA and ZTNA integration."
+  exam_category = "Fortinet"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 5
+  order = 215
+  featured = false
+  price_practice = 9
+  exam_url = "https://training.fortinet.com/local/staticpage/view.php?page=fortisiem_analyst_exam"
+  exam_cost = "$200 USD"
+  exam_duration = 70
+  exam_passing_score = "Pass / fail (Fortinet does not publish a numeric cut score)"
+  exam_questions_real = "35-40"
+  exam_provider = "Pearson VUE"
+  exam_validity = "2 years"
+  exam_prerequisites = "None required to sit the exam; Fortinet recommends a minimum of 6 months of practical FortiSIEM administration, or equivalent SIEM, experience."
+  exam_question_types = ["Multiple choice", "Multiple select"]
+  guided_url = "/guided/fortinet-fsm-analyst/"
+  practice_url = "/guided/fortinet-fsm-analyst/practice/"
