@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T17:32:31.602459+00:00",
+  "generated_at": "2026-07-14T19:40:29.111801+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -32,12 +32,12 @@
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 13,
-      "active_incidents": 2,
+      "total_incidents": 12,
+      "active_incidents": 1,
       "avg_duration_minutes": 12920,
       "last_incident": "2026-07-14T04:22:16+00:00",
       "classifications": {
-        "advisory": 12,
+        "advisory": 11,
         "incident": 1
       }
     },
@@ -119,6 +119,18 @@
       }
     },
     {
+      "service": "Microsoft Viva",
+      "short_name": "Viva",
+      "icon": "🌱",
+      "total_incidents": 3,
+      "active_incidents": 0,
+      "avg_duration_minutes": 2767,
+      "last_incident": "2026-06-14T20:12:00+00:00",
+      "classifications": {
+        "advisory": 3
+      }
+    },
+    {
       "service": "Azure",
       "short_name": "Azure",
       "icon": "☁️",
@@ -152,18 +164,6 @@
       "last_incident": "2026-07-12T10:20:00+00:00",
       "classifications": {
         "incident": 2
-      }
-    },
-    {
-      "service": "Microsoft Viva",
-      "short_name": "Viva",
-      "icon": "🌱",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 2454,
-      "last_incident": "2026-06-14T20:12:00+00:00",
-      "classifications": {
-        "advisory": 2
       }
     },
     {
@@ -218,7 +218,7 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 15,
+      "incident_count": 14,
       "services_affected": 8
     },
     {
@@ -228,7 +228,7 @@
     },
     {
       "month": "2026-05",
-      "incident_count": 47,
+      "incident_count": 48,
       "services_affected": 13
     },
     {
