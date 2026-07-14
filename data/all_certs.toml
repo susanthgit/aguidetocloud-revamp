@@ -9282,3 +9282,45 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice", "Multiple response"]
   guided_url = "/guided/splunk-cybersecurity-defense-engineer/"
   practice_url = "/guided/splunk-cybersecurity-defense-engineer/practice/"
+
+[[cert]]
+  slug = "fortinet-nse7-public-cloud-security"
+  vendor = "fortinet"
+  code = "FORTINET-NSE7-PUBLIC-CLOUD-SECURITY"
+  name = "Fortinet NSE 7 - Public Cloud Security 7.6.4 Architect (NSE7_CDS_AR-7.6)"
+  tagline = "Master the Fortinet NSE 7 - Public Cloud Security 7.6.4 Architect exam - deploying and protecting AWS and Azure workloads with FortiGate-VM, FortiWeb and FortiCNAPP, HA and autoscaling, infrastructure as code with Terraform, Ansible, Azure Bicep and AWS CloudFormation, cloud network monitoring, SDN connectors, and multi-cloud connectivity troubleshooting on FortiOS 7.6."
+  exam_category = "Fortinet"
+  level = "expert"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 213
+  featured = false
+  price_practice = 9
+
+[cert_map."fortinet-nse7-public-cloud-security"]
+  vendor = "fortinet"
+  code = "FORTINET-NSE7-PUBLIC-CLOUD-SECURITY"
+  name = "Fortinet NSE 7 - Public Cloud Security 7.6.4 Architect (NSE7_CDS_AR-7.6)"
+  tagline = "Master the Fortinet NSE 7 - Public Cloud Security 7.6.4 Architect exam - deploying and protecting AWS and Azure workloads with FortiGate-VM, FortiWeb and FortiCNAPP, HA and autoscaling, infrastructure as code with Terraform, Ansible, Azure Bicep and AWS CloudFormation, cloud network monitoring, SDN connectors, and multi-cloud connectivity troubleshooting on FortiOS 7.6."
+  exam_category = "Fortinet"
+  level = "expert"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 213
+  featured = false
+  price_practice = 9
+  exam_url = "https://training.fortinet.com/local/staticpage/view.php?page=public_cloud_security_architect_exam"
+  exam_cost = "$400 USD"
+  exam_duration = 75
+  exam_passing_score = "Pass / fail (Fortinet does not publish a numeric cut score)"
+  exam_questions_real = "35-40"
+  exam_provider = "Pearson VUE"
+  exam_validity = "2 years"
+  exam_prerequisites = "None required to sit the exam; recommended NSE 7 Public Cloud Security 7.6.4 Architect course plus hands-on labs, and roughly two years each with Fortinet security, AWS, and Azure"
+  exam_question_types = ["Multiple choice", "Multiple select"]
+  guided_url = "/guided/fortinet-nse7-public-cloud-security/"
+  practice_url = "/guided/fortinet-nse7-public-cloud-security/practice/"
