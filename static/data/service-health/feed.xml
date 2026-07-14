@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Jul 2026 11:42:21 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 14:09:09 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Exchange Online] Some admins may be unable to make changes to distribution lists in Exchange Online and receive an error</title>
@@ -35,15 +35,6 @@
       <pubDate>Mon, 13 Jul 2026 06:42:44 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to open or use custom Copilot agents in Microsoft 365 Copilot and receive an error</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1425545</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to open or use custom Copilot agents and receive an error.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1425545</guid>
-      <pubDate>Mon, 13 Jul 2026 02:46:34 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft OneDrive] Some users may have been unable to access Microsoft OneDrive content and may have noticed delays or navigation errors</title>
       <link>https://www.aguidetocloud.com/service-health/#OD1424850</link>
       <description>[Microsoft OneDrive] Users may have been unable to access OneDrive content and may have noticed delays or navigation errors.</description>
@@ -51,6 +42,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">OD1424850</guid>
       <pubDate>Sun, 12 Jul 2026 10:20:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may have been unable to open or use custom Copilot agents in Microsoft 365 Copilot and received an error</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1425545</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to open or use custom Copilot agents and received an error.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1425545</guid>
+      <pubDate>Fri, 10 Jul 2026 17:48:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Admins may see delays to threat intelligence reports in the Security Operation Center (SOC)</title>
