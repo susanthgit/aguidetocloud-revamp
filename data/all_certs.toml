@@ -9408,3 +9408,45 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice", "Multiple select"]
   guided_url = "/guided/fortinet-fsm-analyst/"
   practice_url = "/guided/fortinet-fsm-analyst/practice/"
+
+[[cert]]
+  slug = "fortinet-fortindr-cloud-analyst"
+  vendor = "fortinet"
+  code = "FORTINET-FORTINDR-CLOUD-ANALYST"
+  name = "Fortinet NSE 6 - FortiNDR Cloud 26 Analyst (NSE6_NDR_AN-26)"
+  tagline = "Master the Fortinet NSE 6 - FortiNDR Cloud 26 Analyst exam - using FortiNDR Cloud 26 to detect, search, analyze and hunt network threats: the SaaS sensor and metadata architecture, IQL (Intelligence Query Language) searches over Flow, DNS, HTTP, SSL, SMB and DCE/RPC events, detection analysis and tuning, and investigations, FortiEDR integration and TTP-based threat hunting."
+  exam_category = "Fortinet"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 216
+  featured = false
+  price_practice = 9
+
+[cert_map."fortinet-fortindr-cloud-analyst"]
+  vendor = "fortinet"
+  code = "FORTINET-FORTINDR-CLOUD-ANALYST"
+  name = "Fortinet NSE 6 - FortiNDR Cloud 26 Analyst (NSE6_NDR_AN-26)"
+  tagline = "Master the Fortinet NSE 6 - FortiNDR Cloud 26 Analyst exam - using FortiNDR Cloud 26 to detect, search, analyze and hunt network threats: the SaaS sensor and metadata architecture, IQL (Intelligence Query Language) searches over Flow, DNS, HTTP, SSL, SMB and DCE/RPC events, detection analysis and tuning, and investigations, FortiEDR integration and TTP-based threat hunting."
+  exam_category = "Fortinet"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 216
+  featured = false
+  price_practice = 9
+  exam_url = "https://training.fortinet.com/local/staticpage/view.php?page=fortindr_cloud_analyst_exam"
+  exam_cost = "$200 USD"
+  exam_duration = 70
+  exam_passing_score = "Pass / fail (a score report is available from Pearson VUE; Fortinet does not publish a numeric cut score)"
+  exam_questions_real = "30-40"
+  exam_provider = "Pearson VUE"
+  exam_validity = "2 years"
+  exam_prerequisites = "None required to sit the exam; Fortinet recommends a minimum of 6 months of practical FortiNDR Cloud, or equivalent NDR, experience."
+  exam_question_types = ["Multiple choice", "Multiple select"]
+  guided_url = "/guided/fortinet-fortindr-cloud-analyst/"
+  practice_url = "/guided/fortinet-fortindr-cloud-analyst/practice/"
