@@ -9492,3 +9492,45 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice", "Multiple select"]
   guided_url = "/guided/fortinet-fortidlp-administrator/"
   practice_url = "/guided/fortinet-fortidlp-administrator/practice/"
+
+[[cert]]
+  slug = "fortinet-fortiweb-administrator"
+  vendor = "fortinet"
+  code = "FORTINET-FORTIWEB-ADMINISTRATOR"
+  name = "Fortinet NSE 5 - FortiWeb 8.0 Administrator (NSE5_FWB_AD-8.0)"
+  tagline = "Master the Fortinet NSE 5 - FortiWeb 8.0 Administrator exam - deploying and operating FortiWeb, Fortinet's web application firewall and application-delivery controller: operation modes, server policies and SSL/TLS, web-application and API security with signatures, machine learning and bot mitigation, application delivery, DoS, logging and FortiAI, and vulnerability scanning and troubleshooting."
+  exam_category = "Fortinet"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 218
+  featured = false
+  price_practice = 9
+
+[cert_map."fortinet-fortiweb-administrator"]
+  vendor = "fortinet"
+  code = "FORTINET-FORTIWEB-ADMINISTRATOR"
+  name = "Fortinet NSE 5 - FortiWeb 8.0 Administrator (NSE5_FWB_AD-8.0)"
+  tagline = "Master the Fortinet NSE 5 - FortiWeb 8.0 Administrator exam - deploying and operating FortiWeb, Fortinet's web application firewall and application-delivery controller: operation modes, server policies and SSL/TLS, web-application and API security with signatures, machine learning and bot mitigation, application delivery, DoS, logging and FortiAI, and vulnerability scanning and troubleshooting."
+  exam_category = "Fortinet"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 218
+  featured = false
+  price_practice = 9
+  exam_url = "https://training.fortinet.com/local/staticpage/view.php?page=fortiweb_administrator_exam"
+  exam_cost = "$200 USD"
+  exam_duration = 75
+  exam_passing_score = "Pass / fail (a score report is available from your Pearson VUE account; Fortinet does not publish a numeric cut score)"
+  exam_questions_real = "35-40"
+  exam_provider = "Pearson VUE"
+  exam_validity = "2 years"
+  exam_prerequisites = "None required to sit the exam; Fortinet recommends NSE 4 FortiOS Administrator (or equivalent) knowledge plus familiarity with HTTP, HTML, JavaScript, and server-side web technologies. Earning the NSE 5 in Cloud Security certification also requires the NSE 4 FortiOS certification."
+  exam_question_types = ["Multiple choice", "Drag and drop"]
+  guided_url = "/guided/fortinet-fortiweb-administrator/"
+  practice_url = "/guided/fortinet-fortiweb-administrator/practice/"
