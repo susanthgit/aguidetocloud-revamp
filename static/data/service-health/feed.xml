@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Jul 2026 10:07:11 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 11:42:21 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Exchange Online] Some admins may be unable to make changes to distribution lists in Exchange Online and receive an error</title>
@@ -15,6 +15,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">EX1426934</guid>
       <pubDate>Tue, 14 Jul 2026 04:22:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Some users were unable to see conference room availability for Exchange Online through a room-booking application</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1427120</link>
+      <description>[Exchange Online] Users were unable to see conference room availability for Exchange Online through a room-booking application. </description>
+      <category>Exchange Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">EX1427120</guid>
+      <pubDate>Mon, 13 Jul 2026 09:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[SharePoint Online] Some users' document libraries and list views using multiple group filters may not display results in SharePoint Online</title>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1332783</guid>
       <pubDate>Tue, 02 Jun 2026 03:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to access the Microsoft Copilot (Microsoft 365) desktop or web app</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1329665</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access the Copilot desktop or web app.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">CP1329665</guid>
-      <pubDate>Mon, 01 Jun 2026 13:10:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

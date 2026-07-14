@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T10:07:11.347895+00:00",
+  "generated_at": "2026-07-14T11:42:20.576802+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -32,12 +32,12 @@
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 11,
+      "total_incidents": 12,
       "active_incidents": 1,
-      "avg_duration_minutes": 14060,
+      "avg_duration_minutes": 12920,
       "last_incident": "2026-07-14T04:22:16+00:00",
       "classifications": {
-        "advisory": 10,
+        "advisory": 11,
         "incident": 1
       }
     },
@@ -107,18 +107,6 @@
       }
     },
     {
-      "service": "Microsoft OneDrive",
-      "short_name": "OneDrive",
-      "icon": "☁️",
-      "total_incidents": 3,
-      "active_incidents": 0,
-      "avg_duration_minutes": 251,
-      "last_incident": "2026-07-12T10:20:00+00:00",
-      "classifications": {
-        "incident": 3
-      }
-    },
-    {
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
@@ -164,6 +152,18 @@
       "last_incident": "2026-06-20T00:03:43+00:00",
       "classifications": {
         "advisory": 2
+      }
+    },
+    {
+      "service": "Microsoft OneDrive",
+      "short_name": "OneDrive",
+      "icon": "☁️",
+      "total_incidents": 2,
+      "active_incidents": 0,
+      "avg_duration_minutes": 38,
+      "last_incident": "2026-07-12T10:20:00+00:00",
+      "classifications": {
+        "incident": 2
       }
     },
     {
@@ -218,7 +218,7 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 13,
+      "incident_count": 14,
       "services_affected": 8
     },
     {
@@ -233,8 +233,8 @@
     },
     {
       "month": "2026-04",
-      "incident_count": 2,
-      "services_affected": 2
+      "incident_count": 1,
+      "services_affected": 1
     }
   ]
 }
