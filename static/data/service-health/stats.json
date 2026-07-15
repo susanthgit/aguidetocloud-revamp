@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T17:35:22.831499+00:00",
+  "generated_at": "2026-07-15T19:33:43.317910+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -19,12 +19,12 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 18,
-      "active_incidents": 0,
+      "total_incidents": 19,
+      "active_incidents": 1,
       "avg_duration_minutes": 4357,
       "last_incident": "2026-07-08T00:00:00+00:00",
       "classifications": {
-        "advisory": 10,
+        "advisory": 11,
         "incident": 8
       }
     },
@@ -201,18 +201,6 @@
       "classifications": {
         "advisory": 1
       }
-    },
-    {
-      "service": "Dynamics 365 Apps",
-      "short_name": "Dynamics",
-      "icon": "🏢",
-      "total_incidents": 1,
-      "active_incidents": 0,
-      "avg_duration_minutes": 13650,
-      "last_incident": "2026-05-02T18:00:00+00:00",
-      "classifications": {
-        "advisory": 1
-      }
     }
   ],
   "monthly": [
@@ -223,13 +211,13 @@
     },
     {
       "month": "2026-06",
-      "incident_count": 40,
+      "incident_count": 41,
       "services_affected": 13
     },
     {
       "month": "2026-05",
-      "incident_count": 47,
-      "services_affected": 13
+      "incident_count": 46,
+      "services_affected": 12
     },
     {
       "month": "2026-04",
