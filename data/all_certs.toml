@@ -9702,3 +9702,45 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice", "Multiple response", "Matching", "Build-list / ordering"]
   guided_url = "/guided/confluent-ccdak/"
   practice_url = "/guided/confluent-ccdak/practice/"
+
+  [[cert]]
+  slug = "confluent-ccac"
+  vendor = "confluent"
+  code = "CONFLUENT-CCAC"
+  name = "Confluent Certified Cloud Operator (CCAC)"
+  tagline = "Master the Confluent Certified Cloud Operator (CCAC) exam - operating Confluent Cloud in production: choosing Basic, Standard, Enterprise, Dedicated, and Freight clusters and scaling with CKUs and eCKUs; applying RBAC role bindings, service accounts, and scoped API keys; designing PrivateLink, peering, and Transit Gateway networking; replicating and failing over with Cluster Linking and mirror topics; governing data with Stream Governance and Schema Registry; operating managed connectors and serverless Flink; and monitoring throughput, client quotas, and cost with the Metrics API."
+  exam_category = "Confluent"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 7
+  order = 834
+  featured = false
+  price_practice = 9
+
+  [cert_map."confluent-ccac"]
+  vendor = "confluent"
+  code = "CONFLUENT-CCAC"
+  name = "Confluent Certified Cloud Operator (CCAC)"
+  tagline = "Master the Confluent Certified Cloud Operator (CCAC) exam - operating Confluent Cloud in production: choosing Basic, Standard, Enterprise, Dedicated, and Freight clusters and scaling with CKUs and eCKUs; applying RBAC role bindings, service accounts, and scoped API keys; designing PrivateLink, peering, and Transit Gateway networking; replicating and failing over with Cluster Linking and mirror topics; governing data with Stream Governance and Schema Registry; operating managed connectors and serverless Flink; and monitoring throughput, client quotas, and cost with the Metrics API."
+  exam_category = "Confluent"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 7
+  order = 834
+  featured = false
+  price_practice = 9
+  exam_url = "https://training.confluent.io/learn/courses/1103/confluent-cloud-certified-operator"
+  exam_cost = "Confirm current price at Confluent registration"
+  exam_duration = 90
+  exam_passing_score = "Pass / fail (Confluent does not publish a numeric cut score)"
+  exam_questions_real = "Not officially published"
+  exam_provider = "Confluent (Honorlock online proctored)"
+  exam_validity = "2 years"
+  exam_prerequisites = "None required to sit the exam. Confluent recommends hands-on Confluent Cloud operations experience and provides a preparation guide."
+  exam_question_types = ["Multiple choice", "Matching", "List / build-order"]
+  guided_url = "/guided/confluent-ccac/"
+  practice_url = "/guided/confluent-ccac/practice/"
