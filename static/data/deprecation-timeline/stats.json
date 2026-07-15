@@ -1,31 +1,29 @@
 {
-  "generated": "2026-07-14T07:22:38.457015+00:00",
+  "generated": "2026-07-15T07:26:17.933094+00:00",
   "total": 52,
-  "active": 34,
-  "passed": 18,
-  "action_required": 33,
+  "active": 26,
+  "passed": 26,
+  "action_required": 25,
   "urgency": {
-    "critical": 8,
-    "warning": 24,
-    "watch": 2
+    "warning": 25,
+    "watch": 1
   },
   "categories": {
-    "sharepoint": 3,
-    "office-apps": 6,
-    "azure": 17,
+    "azure": 15,
+    "office-apps": 3,
     "exchange": 2,
     "entra": 1,
     "windows": 5
   },
   "types": {
-    "end-of-support": 18,
-    "retirement": 16
+    "retirement": 16,
+    "end-of-support": 10
   },
   "next_deadline": {
-    "title": "SharePoint Server 2016 End of Support",
-    "deadline": "2026-07-14",
-    "days_remaining": 0,
-    "urgency": "critical"
+    "title": "Azure AI Document Intelligence v2.0 API Retirement",
+    "deadline": "2026-08-31",
+    "days_remaining": 47,
+    "urgency": "warning"
   },
   "category_meta": {
     "sharepoint": {
