@@ -203,3 +203,12 @@ logo_emoji = "🌊"
 official_url = "https://www.confluent.io/certification/"
 cert_path_note = "Start with the Confluent Certified Developer for Apache Kafka (CCDAK) - producers, consumers, delivery semantics, Kafka Streams, Kafka Connect, and Schema Registry - then add the Confluent Certified Administrator (CCAAK) and the Confluent Cloud Certified Operator (CCAC)."
 order = 20
+[[vendor]]
+slug = "nutanix"
+name = "Nutanix"
+short_name = "Nutanix"
+accent = "#7C4DFF"
+logo_emoji = "🧱"
+official_url = "https://www.nutanix.com/support-services/training-certification"
+cert_path_note = "Start with the Nutanix Certified Professional - Multicloud Infrastructure (NCP-MCI) - deploying and operating AOS clusters, Prism, AHV workloads, storage, data protection, and cluster operations."
+order = 21

@@ -140,6 +140,7 @@ function getExamCategory(cert) {
     'mongodb': 'MongoDB',
     'splunk': 'Splunk',
     'confluent': 'Confluent',
+    'nutanix': 'Nutanix',
   };
   return vendorCategoryMap[cert.vendor] || cert.vendor;
 }

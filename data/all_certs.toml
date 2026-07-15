@@ -9744,3 +9744,46 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice", "Matching", "List / build-order"]
   guided_url = "/guided/confluent-ccac/"
   practice_url = "/guided/confluent-ccac/practice/"
+
+  [[cert]]
+  slug = "nutanix-ncp-mci"
+  vendor = "nutanix"
+  code = "NUTANIX-NCP-MCI"
+  name = "Nutanix Certified Professional - Multicloud Infrastructure (NCP-MCI)"
+  tagline = "Master the Nutanix Certified Professional - Multicloud Infrastructure (NCP-MCI 7.5) exam - deploying and configuring AOS clusters and Prism Central, managing AHV workloads and storage, protecting data with Protection Domains and Nutanix Disaster Recovery, and operating a Nutanix multicloud platform."
+  exam_category = "Nutanix"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 835
+  featured = false
+  price_practice = 9
+
+[cert_map."nutanix-ncp-mci"]
+  vendor = "nutanix"
+  code = "NUTANIX-NCP-MCI"
+  name = "Nutanix Certified Professional - Multicloud Infrastructure (NCP-MCI)"
+  tagline = "Master the Nutanix Certified Professional - Multicloud Infrastructure (NCP-MCI 7.5) exam - deploying and configuring AOS clusters and Prism Central, managing AHV workloads and storage, protecting data with Protection Domains and Nutanix Disaster Recovery, and operating a Nutanix multicloud platform."
+  exam_category = "Nutanix"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 835
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.nutanix.com/support-services/training-certification/certifications"
+  exam_cost = "$200 USD"
+  exam_duration = 120
+  exam_passing_score = "Approximately 3000 / 6000 (scaled)"
+  exam_questions_real = "75"
+  exam_provider = "Pearson VUE (test center or OnVUE online-proctored)"
+  exam_validity = "2 years"
+  exam_prerequisites = "None required (Nutanix ECA course + ~1 year infrastructure experience recommended)"
+  exam_question_types = ["Multiple choice", "Multiple response"]
+  guided_url = "/guided/nutanix-ncp-mci/"
+  practice_url = "/guided/nutanix-ncp-mci/practice/"
+
