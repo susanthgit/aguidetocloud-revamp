@@ -9618,3 +9618,45 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice", "Drag and drop"]
   guided_url = "/guided/fortinet-fortiedr-administrator/"
   practice_url = "/guided/fortinet-fortiedr-administrator/practice/"
+
+[[cert]]
+  slug = "fortinet-fortimail-administrator"
+  vendor = "fortinet"
+  code = "FORTINET-FORTIMAIL-ADMINISTRATOR"
+  name = "Fortinet NSE 6 - FortiMail 7.4 Administrator (NSE6_FML_AD-7.4)"
+  tagline = "Master the Fortinet NSE 6 - FortiMail 7.4 Administrator exam - deploying and operating FortiMail, Fortinet's MTA-based secure email gateway: Gateway, Transparent, and Server operation modes; protected domains, the mail-processing order, and high availability; access control rules, IP and recipient policies, and SPF/DKIM/DMARC enforcement; session profiles, greylisting, FortiGuard AntiSpam, and impersonation analysis; antivirus, FortiSandbox APT mitigation, Content Disarm, and Click Protection; content filtering and archiving; and TLS, S/MIME, and Identity-Based Encryption (IBE)."
+  exam_category = "Fortinet"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 5
+  order = 221
+  featured = false
+  price_practice = 9
+
+[cert_map."fortinet-fortimail-administrator"]
+  vendor = "fortinet"
+  code = "FORTINET-FORTIMAIL-ADMINISTRATOR"
+  name = "Fortinet NSE 6 - FortiMail 7.4 Administrator (NSE6_FML_AD-7.4)"
+  tagline = "Master the Fortinet NSE 6 - FortiMail 7.4 Administrator exam - deploying and operating FortiMail, Fortinet's MTA-based secure email gateway: Gateway, Transparent, and Server operation modes; protected domains, the mail-processing order, and high availability; access control rules, IP and recipient policies, and SPF/DKIM/DMARC enforcement; session profiles, greylisting, FortiGuard AntiSpam, and impersonation analysis; antivirus, FortiSandbox APT mitigation, Content Disarm, and Click Protection; content filtering and archiving; and TLS, S/MIME, and Identity-Based Encryption (IBE)."
+  exam_category = "Fortinet"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 5
+  order = 221
+  featured = false
+  price_practice = 9
+  exam_url = "https://training.fortinet.com/local/staticpage/view.php?page=fortimail_administrator_exam"
+  exam_cost = "$200 USD"
+  exam_duration = 65
+  exam_passing_score = "Pass / fail (a score report is available from your Pearson VUE account; Fortinet does not publish a numeric cut score)"
+  exam_questions_real = "30-40"
+  exam_provider = "Pearson VUE"
+  exam_validity = "2 years"
+  exam_prerequisites = "None required to sit the exam. Fortinet recommends practical experience administering FortiMail. Passing this individual exam awards the FortiMail exam badge (an NSE 6 individual exam)."
+  exam_question_types = ["Multiple choice", "Drag and drop"]
+  guided_url = "/guided/fortinet-fortimail-administrator/"
+  practice_url = "/guided/fortinet-fortimail-administrator/practice/"
