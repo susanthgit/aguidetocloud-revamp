@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 15 Jul 2026 15:44:57 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2026 17:35:23 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users in North America may be unable to access Microsoft 365 Copilot in Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1428746</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users in North America may have been unable to access Microsoft Copilot in Microsoft Teams.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1428746</guid>
+      <pubDate>Wed, 15 Jul 2026 14:16:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Some users were unable to see conference room availability for Exchange Online through a room-booking application</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1427120</link>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1390285</guid>
       <pubDate>Tue, 02 Jun 2026 10:05:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may intermittently be unable to complete Microsoft 365 Copilot requests or receive responses</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1332783</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have intermittently been unable to complete Copilot requests or receive responses.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1332783</guid>
-      <pubDate>Tue, 02 Jun 2026 03:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
