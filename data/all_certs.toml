@@ -9534,3 +9534,45 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice", "Drag and drop"]
   guided_url = "/guided/fortinet-fortiweb-administrator/"
   practice_url = "/guided/fortinet-fortiweb-administrator/practice/"
+
+[[cert]]
+  slug = "fortinet-forticnapp-analyst"
+  vendor = "fortinet"
+  code = "FORTINET-FORTICNAPP-ANALYST"
+  name = "Fortinet NSE 6 - FortiCNAPP 26 Analyst (FCNAPP-ANA-26)"
+  tagline = "Master the Fortinet NSE 6 - FortiCNAPP 26 Analyst exam - operating FortiCNAPP, Fortinet's cloud-native application protection platform (the rebranded Lacework FortiCNAPP): CNAPP fundamentals and the Polygraph Data Platform, cloud-account onboarding and deployment models, CSPM and non-compliant assets, host and container vulnerability management, code security and shift-left, attack-path analysis and CIEM, compliance reporting, and threat detection, investigation with LQL, and response."
+  exam_category = "Fortinet"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 3
+  order = 219
+  featured = false
+  price_practice = 9
+
+[cert_map."fortinet-forticnapp-analyst"]
+  vendor = "fortinet"
+  code = "FORTINET-FORTICNAPP-ANALYST"
+  name = "Fortinet NSE 6 - FortiCNAPP 26 Analyst (FCNAPP-ANA-26)"
+  tagline = "Master the Fortinet NSE 6 - FortiCNAPP 26 Analyst exam - operating FortiCNAPP, Fortinet's cloud-native application protection platform (the rebranded Lacework FortiCNAPP): CNAPP fundamentals and the Polygraph Data Platform, cloud-account onboarding and deployment models, CSPM and non-compliant assets, host and container vulnerability management, code security and shift-left, attack-path analysis and CIEM, compliance reporting, and threat detection, investigation with LQL, and response."
+  exam_category = "Fortinet"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 3
+  order = 219
+  featured = false
+  price_practice = 9
+  exam_url = "https://training.fortinet.com/local/staticpage/view.php?page=forticnapp_analyst_exam"
+  exam_cost = "$200 USD"
+  exam_duration = 70
+  exam_passing_score = "Pass / fail (a score report is available from your Pearson VUE account; Fortinet does not publish a numeric cut score)"
+  exam_questions_real = "30-40"
+  exam_provider = "Pearson VUE"
+  exam_validity = "2 years"
+  exam_prerequisites = "None required to sit the exam; the NSE 6 in Cloud Security certification requires an active NSE 4 FortiOS certification. Fortinet recommends familiarity with cloud platforms (AWS, Azure, GCP), containers and Kubernetes, and cloud-security concepts such as CSPM, CWPP, and vulnerability management."
+  exam_question_types = ["Multiple choice", "Drag and drop"]
+  guided_url = "/guided/fortinet-forticnapp-analyst/"
+  practice_url = "/guided/fortinet-forticnapp-analyst/practice/"
