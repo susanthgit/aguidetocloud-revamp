@@ -193,3 +193,13 @@ logo_emoji = "🔍"
 official_url = "https://www.splunk.com/en_us/training/certification-track.html"
 cert_path_note = "Start with the Splunk Core Certified User, then the Splunk Core Certified Power User (SPL, knowledge objects, data models, and the CIM), and advance to the Splunk Enterprise Certified Admin and specialty tracks."
 order = 19
+
+[[vendor]]
+slug = "confluent"
+name = "Confluent"
+short_name = "Confluent"
+accent = "#0074A6"
+logo_emoji = "🌊"
+official_url = "https://www.confluent.io/certification/"
+cert_path_note = "Start with the Confluent Certified Developer for Apache Kafka (CCDAK) - producers, consumers, delivery semantics, Kafka Streams, Kafka Connect, and Schema Registry - then add the Confluent Certified Administrator (CCAAK) and the Confluent Cloud Certified Operator (CCAC)."
+order = 20

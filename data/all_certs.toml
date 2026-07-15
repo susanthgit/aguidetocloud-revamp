@@ -9660,3 +9660,45 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice", "Drag and drop"]
   guided_url = "/guided/fortinet-fortimail-administrator/"
   practice_url = "/guided/fortinet-fortimail-administrator/practice/"
+
+  [[cert]]
+  slug = "confluent-ccdak"
+  vendor = "confluent"
+  code = "CONFLUENT-CCDAK"
+  name = "Confluent Certified Developer for Apache Kafka (CCDAK)"
+  tagline = "Master the Confluent Certified Developer for Apache Kafka (CCDAK) exam - building event-streaming applications on Apache Kafka: designing topics, partitions, and keys; tuning producers with acks, idempotence, batching, and compression; managing consumer groups, rebalances, and offset commits; choosing at-least-once, idempotent, and transactional exactly-once delivery; serializing with Avro, Protobuf, and JSON Schema and evolving schemas through Schema Registry compatibility modes; processing streams with Kafka Streams; and moving data with Kafka Connect source and sink connectors."
+  exam_category = "Confluent"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 6
+  order = 833
+  featured = false
+  price_practice = 9
+
+  [cert_map."confluent-ccdak"]
+  vendor = "confluent"
+  code = "CONFLUENT-CCDAK"
+  name = "Confluent Certified Developer for Apache Kafka (CCDAK)"
+  tagline = "Master the Confluent Certified Developer for Apache Kafka (CCDAK) exam - building event-streaming applications on Apache Kafka: designing topics, partitions, and keys; tuning producers with acks, idempotence, batching, and compression; managing consumer groups, rebalances, and offset commits; choosing at-least-once, idempotent, and transactional exactly-once delivery; serializing with Avro, Protobuf, and JSON Schema and evolving schemas through Schema Registry compatibility modes; processing streams with Kafka Streams; and moving data with Kafka Connect source and sink connectors."
+  exam_category = "Confluent"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 6
+  order = 833
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.confluent.io/certification/"
+  exam_cost = "$150 USD"
+  exam_duration = 90
+  exam_passing_score = "Pass / fail (Confluent does not publish a numeric cut score)"
+  exam_questions_real = "~55-60"
+  exam_provider = "Confluent (online proctored)"
+  exam_validity = "2 years"
+  exam_prerequisites = "None required to sit the exam. Confluent recommends 6-12 months of hands-on Apache Kafka application-development experience."
+  exam_question_types = ["Multiple choice", "Multiple response", "Matching", "Build-list / ordering"]
+  guided_url = "/guided/confluent-ccdak/"
+  practice_url = "/guided/confluent-ccdak/practice/"

@@ -139,6 +139,7 @@ function getExamCategory(cert) {
     'oracle': 'Oracle',
     'mongodb': 'MongoDB',
     'splunk': 'Splunk',
+    'confluent': 'Confluent',
   };
   return vendorCategoryMap[cert.vendor] || cert.vendor;
 }
