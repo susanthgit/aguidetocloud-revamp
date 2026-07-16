@@ -9787,3 +9787,45 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   guided_url = "/guided/nutanix-ncp-mci/"
   practice_url = "/guided/nutanix-ncp-mci/practice/"
 
+  [[cert]]
+  slug = "nutanix-nca"
+  vendor = "nutanix"
+  code = "NUTANIX-NCA"
+  name = "Nutanix Certified Associate (NCA)"
+  tagline = "Master the Nutanix Certified Associate (NCA 7.5) exam - the foundational Nutanix credential: recognizing Nutanix Cloud Infrastructure and the wider portfolio and tools, administering VMs, storage, and networking in Prism, configuring and maintaining clusters, and understanding platform health and monitoring."
+  exam_category = "Nutanix"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 836
+  featured = false
+  price_practice = 9
+
+[cert_map."nutanix-nca"]
+  vendor = "nutanix"
+  code = "NUTANIX-NCA"
+  name = "Nutanix Certified Associate (NCA)"
+  tagline = "Master the Nutanix Certified Associate (NCA 7.5) exam - the foundational Nutanix credential: recognizing Nutanix Cloud Infrastructure and the wider portfolio and tools, administering VMs, storage, and networking in Prism, configuring and maintaining clusters, and understanding platform health and monitoring."
+  exam_category = "Nutanix"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 836
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.nutanix.com/support-services/training-certification/certifications"
+  exam_cost = "$100 USD"
+  exam_duration = 90
+  exam_passing_score = "Approximately 3000 / 6000 (scaled)"
+  exam_questions_real = "50"
+  exam_provider = "PSI (test center or online-proctored)"
+  exam_validity = "2 years"
+  exam_prerequisites = "None required (Nutanix Hybrid Cloud Fundamentals course + ~3-6 months infrastructure experience recommended)"
+  exam_question_types = ["Multiple choice", "Multiple response"]
+  guided_url = "/guided/nutanix-nca/"
+  practice_url = "/guided/nutanix-nca/practice/"
+
