@@ -9870,3 +9870,43 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_question_types = ["Multiple choice", "Multiple response"]
   guided_url = "/guided/nutanix-ncp-us/"
   practice_url = "/guided/nutanix-ncp-us/practice/"
+
+[[cert]]
+  slug = "nutanix-ncp-db"
+  vendor = "nutanix"
+  code = "NUTANIX-NCP-DB"
+  name = "Nutanix Certified Professional - Database Automation (NCP-DB)"
+  tagline = "Master the Nutanix Certified Professional - Database Automation (NCP-DB 6.10) exam - deploying and configuring Nutanix Database Service (NDB), provisioning and registering databases across Oracle, SQL Server, MySQL, MariaDB, PostgreSQL, EDB, and MongoDB, patching and upgrading, protecting data with Time Machine SLAs, clones, and DAM policies, and administering profiles, clusters, networks, and access controls."
+  exam_category = "Nutanix"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 6
+  order = 838
+  featured = false
+  price_practice = 9
+
+[cert_map."nutanix-ncp-db"]
+  vendor = "nutanix"
+  code = "NUTANIX-NCP-DB"
+  name = "Nutanix Certified Professional - Database Automation (NCP-DB)"
+  tagline = "Master the Nutanix Certified Professional - Database Automation (NCP-DB 6.10) exam - deploying and configuring Nutanix Database Service (NDB), provisioning and registering databases across Oracle, SQL Server, MySQL, MariaDB, PostgreSQL, EDB, and MongoDB, patching and upgrading, protecting data with Time Machine SLAs, clones, and DAM policies, and administering profiles, clusters, networks, and access controls."
+  exam_category = "Nutanix"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 6
+  order = 838
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.nutanix.com/support-services/training-certification/certifications"
+  exam_cost = "$199 USD"
+  exam_duration = 120
+  exam_passing_score = "Scaled score - confirm at registration"
+  exam_questions_real = "75"
+  exam_provider = "Pearson VUE (test center or OnVUE online-proctored)"
+  exam_validity = "2 years"
+  guided_url = "/guided/nutanix-ncp-db/"
+  practice_url = "/guided/nutanix-ncp-db/practice/"
