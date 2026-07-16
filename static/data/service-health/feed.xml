@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Jul 2026 14:17:35 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jul 2026 17:37:39 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Admins may not see any consumption or charges being recorded for pay-as-you-go (PAYG) Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1429838</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Admins may not see any consumption or charges being recorded for their PAYG Copilot subscription.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1429838</guid>
+      <pubDate>Thu, 16 Jul 2026 16:08:52 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users in North America may be unable to access Microsoft 365 Copilot in Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1428746</link>
@@ -35,15 +44,6 @@
       <pubDate>Mon, 13 Jul 2026 09:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[SharePoint Online] Some users' document libraries and list views using multiple group filters may not display results in SharePoint Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1425697</link>
-      <description>[SharePoint Online] Users' document libraries and list views using multiple group filters may not display results in SharePoint Online.</description>
-      <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">SP1425697</guid>
-      <pubDate>Mon, 13 Jul 2026 06:42:44 +0000</pubDate>
-    </item>
-    <item>
       <title>[Exchange Online] Some admins may be unable to make changes to distribution lists in Exchange Online and receive an error</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1426934</link>
       <description>[Exchange Online] Admins may have been unable to make changes to distribution lists in Exchange Online and received an error.</description>
@@ -69,6 +69,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1425545</guid>
       <pubDate>Fri, 10 Jul 2026 17:48:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Some users' document libraries and list views using multiple group filters may have not displayed results in SharePoint</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1425697</link>
+      <description>[SharePoint Online] Users' document libraries and list views using multiple group filters may have not displayed results in SharePoint.</description>
+      <category>SharePoint Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">SP1425697</guid>
+      <pubDate>Thu, 09 Jul 2026 15:47:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Admins may see delays to threat intelligence reports in the Security Operation Center (SOC)</title>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1332829</guid>
       <pubDate>Tue, 02 Jun 2026 22:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Issue with webhook-based task notifications in Microsoft To Do</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1331639</link>
-      <description>[Microsoft 365 suite] Users are unable to receive webhook-based task notifications in Microsoft To Do.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1331639</guid>
-      <pubDate>Tue, 02 Jun 2026 13:55:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
