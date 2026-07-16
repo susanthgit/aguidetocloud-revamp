@@ -9829,3 +9829,44 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   guided_url = "/guided/nutanix-nca/"
   practice_url = "/guided/nutanix-nca/practice/"
 
+  [[cert]]
+  slug = "nutanix-ncp-us"
+  vendor = "nutanix"
+  code = "NUTANIX-NCP-US"
+  name = "Nutanix Certified Professional - Unified Storage (NCP-US)"
+  tagline = "Master the Nutanix Certified Professional - Unified Storage (NCP-US 6.10) exam - deploying and configuring Nutanix Files, Objects, and Volumes, using File Analytics and Data Lens for data security, protecting data with Smart DR, bucket replication, and Volume Group snapshots, and troubleshooting unified storage."
+  exam_category = "Nutanix"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 837
+  featured = false
+  price_practice = 9
+
+[cert_map."nutanix-ncp-us"]
+  vendor = "nutanix"
+  code = "NUTANIX-NCP-US"
+  name = "Nutanix Certified Professional - Unified Storage (NCP-US)"
+  tagline = "Master the Nutanix Certified Professional - Unified Storage (NCP-US 6.10) exam - deploying and configuring Nutanix Files, Objects, and Volumes, using File Analytics and Data Lens for data security, protecting data with Smart DR, bucket replication, and Volume Group snapshots, and troubleshooting unified storage."
+  exam_category = "Nutanix"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 837
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.nutanix.com/support-services/training-certification/certifications"
+  exam_cost = "$200 USD"
+  exam_duration = 120
+  exam_passing_score = "Approximately 3000 / 6000 (scaled)"
+  exam_questions_real = "75"
+  exam_provider = "Pearson VUE (test center or OnVUE online-proctored)"
+  exam_validity = "2 years"
+  exam_prerequisites = "None required (Nutanix NUSA course + 6-12 months storage experience recommended)"
+  exam_question_types = ["Multiple choice", "Multiple response"]
+  guided_url = "/guided/nutanix-ncp-us/"
+  practice_url = "/guided/nutanix-ncp-us/practice/"
