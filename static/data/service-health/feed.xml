@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Jul 2026 23:08:47 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2026 03:32:41 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may not see any consumption or charges being recorded for pay-as-you-go (PAYG) Microsoft 365 Copilot</title>
@@ -271,9 +271,9 @@
     <item>
       <title>[Microsoft 365 suite] Some admins may see incorrect classifications of Cowork Tasks in Microsoft 365 Copilot Cowork usage reports </title>
       <link>https://www.aguidetocloud.com/service-health/#MO1428775</link>
-      <description>[Microsoft 365 suite] Admins may see incorrect classifications of Cowork Tasks in Copilot Cowork usage reports.</description>
+      <description>[Microsoft 365 suite] Admins may have seen incorrect classifications of Cowork Tasks in Copilot Cowork usage reports.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1428775</guid>
       <pubDate>Wed, 17 Jun 2026 22:07:00 +0000</pubDate>
     </item>
