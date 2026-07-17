@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-07-17T15:35:45.139890+00:00",
+  "generated_at": "2026-07-17T17:21:19.055691+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 26,
+      "total_incidents": 25,
       "active_incidents": 2,
-      "avg_duration_minutes": 7889,
-      "last_incident": "2026-07-17T08:47:31.570000+00:00",
+      "avg_duration_minutes": 6811,
+      "last_incident": "2026-07-17T01:00:00+00:00",
       "classifications": {
         "advisory": 14,
-        "incident": 12
+        "incident": 11
       }
     },
     {
@@ -80,6 +80,19 @@
       }
     },
     {
+      "service": "Microsoft Intune",
+      "short_name": "Intune",
+      "icon": "📱",
+      "total_incidents": 5,
+      "active_incidents": 0,
+      "avg_duration_minutes": 2300,
+      "last_incident": "2026-07-17T15:50:49.013000+00:00",
+      "classifications": {
+        "advisory": 4,
+        "incident": 1
+      }
+    },
+    {
       "service": "Power BI",
       "short_name": "Power BI",
       "icon": "📊",
@@ -87,19 +100,6 @@
       "active_incidents": 0,
       "avg_duration_minutes": 748,
       "last_incident": "2026-06-23T13:50:00+00:00",
-      "classifications": {
-        "advisory": 3,
-        "incident": 1
-      }
-    },
-    {
-      "service": "Microsoft Intune",
-      "short_name": "Intune",
-      "icon": "📱",
-      "total_incidents": 4,
-      "active_incidents": 0,
-      "avg_duration_minutes": 2862,
-      "last_incident": "2026-06-15T18:00:00+00:00",
       "classifications": {
         "advisory": 3,
         "incident": 1
@@ -205,8 +205,8 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 18,
-      "services_affected": 8
+      "incident_count": 19,
+      "services_affected": 9
     },
     {
       "month": "2026-06",
@@ -215,7 +215,7 @@
     },
     {
       "month": "2026-05",
-      "incident_count": 43,
+      "incident_count": 42,
       "services_affected": 12
     },
     {
