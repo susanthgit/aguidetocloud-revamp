@@ -9989,3 +9989,43 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_validity = "CPE maintenance required; active CISM or CISSP prerequisite"
   guided_url = "/guided/isaca-aaism/"
   practice_url = "/guided/isaca-aaism/practice/"
+
+[[cert]]
+  slug = "isaca-aaia"
+  vendor = "isaca"
+  code = "AAIA"
+  name = "ISACA Advanced in AI Audit (AAIA)"
+  tagline = "Plan, test, and report AI audits with confidence"
+  exam_category = "ISACA"
+  level = "advanced"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 3
+  order = 999
+  featured = false
+  price_practice = 9
+
+[cert_map."isaca-aaia"]
+  vendor = "isaca"
+  code = "AAIA"
+  name = "ISACA Advanced in AI Audit (AAIA)"
+  tagline = "Plan, test, and report AI audits with confidence"
+  exam_category = "ISACA"
+  level = "advanced"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 3
+  order = 999
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.isaca.org/credentialing/aaia"
+  exam_cost = "$459 USD (member) / $599 USD"
+  exam_duration = 150
+  exam_passing_score = "450 / 800"
+  exam_questions_real = "90"
+  exam_provider = "PSI"
+  exam_validity = "CPE maintenance required; active CISA or ISACA-approved advanced audit designation prerequisite"
+  guided_url = "/guided/isaca-aaia/"
+  practice_url = "/guided/isaca-aaia/practice/"
