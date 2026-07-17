@@ -10029,3 +10029,44 @@ practice_url = "/guided/juniper-jncia-devops/practice/"
   exam_validity = "CPE maintenance required; active CISA or ISACA-approved advanced audit designation prerequisite"
   guided_url = "/guided/isaca-aaia/"
   practice_url = "/guided/isaca-aaia/practice/"
+
+[[cert]]
+slug = "cisco-scazt"
+vendor = "cisco"
+code = "CISCO-SCAZT"
+name = "Designing and Implementing Secure Cloud Access (CCNP SCAZT 300-740)"
+tagline = "Master the Cisco CCNP Security SCAZT 300-740 concentration - design and implement Secure Cloud Access with the Cisco Secure Access SSE/SASE platform: Zero Trust Network Access (ZTNA), Secure Internet and Private Access, identity and device trust with Duo and Cisco Secure Client, web and DNS and firewall and DLP and threat-protection policies, resource connectors and tunnels, and cloud-delivered operations."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 208
+featured = false
+price_practice = 9
+
+[cert_map."cisco-scazt"]
+vendor = "cisco"
+code = "CISCO-SCAZT"
+name = "Designing and Implementing Secure Cloud Access (CCNP SCAZT 300-740)"
+tagline = "Master the Cisco CCNP Security SCAZT 300-740 concentration - design and implement Secure Cloud Access with the Cisco Secure Access SSE/SASE platform: Zero Trust Network Access (ZTNA), Secure Internet and Private Access, identity and device trust with Duo and Cisco Secure Client, web and DNS and firewall and DLP and threat-protection policies, resource connectors and tunnels, and cloud-delivered operations."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 208
+featured = false
+price_practice = 9
+exam_url = "https://www.cisco.com/site/us/en/learn/training-certifications/exams/scazt.html"
+exam_cost = "$300 USD"
+exam_duration = 90
+exam_passing_score = "~750-850 / 1000 (Cisco does not publish the exact cut score)"
+exam_questions_real = "~55-65"
+exam_provider = "Pearson VUE"
+exam_prerequisites = "None for the exam; CCNP Security requires SCOR 350-701 plus one concentration exam such as SCAZT 300-740"
+exam_question_types = ["Multiple choice", "Drag-and-drop", "Simulation"]
+guided_url = "/guided/cisco-scazt/"
+practice_url = "/guided/cisco-scazt/practice/"
