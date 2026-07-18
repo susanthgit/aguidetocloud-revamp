@@ -10070,3 +10070,44 @@ exam_prerequisites = "None for the exam; CCNP Security requires SCOR 350-701 plu
 exam_question_types = ["Multiple choice", "Drag-and-drop", "Simulation"]
 guided_url = "/guided/cisco-scazt/"
 practice_url = "/guided/cisco-scazt/practice/"
+
+[[cert]]
+slug = "eccouncil-case-java"
+vendor = "eccouncil"
+code = "ECCOUNCIL-CASE-JAVA"
+name = "EC-Council Certified Application Security Engineer - Java (CASE Java 312-96)"
+tagline = "Secure Java development certification - threat-modeled secure design, allowlist input validation and contextual output encoding, injection defense with parameterized queries and the OWASP Java Encoder, authentication and authorization, applied cryptography (JCA/JCE, AES-GCM, SecureRandom), session management and error handling, SAST/DAST/SCA testing, and secure deployment - mapped to the OWASP Top 10 and CWE."
+exam_category = "EC-Council"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 823
+featured = false
+price_practice = 9
+
+[cert_map."eccouncil-case-java"]
+vendor = "eccouncil"
+code = "ECCOUNCIL-CASE-JAVA"
+name = "EC-Council Certified Application Security Engineer - Java (CASE Java 312-96)"
+tagline = "Secure Java development certification - threat-modeled secure design, allowlist input validation and contextual output encoding, injection defense with parameterized queries and the OWASP Java Encoder, authentication and authorization, applied cryptography (JCA/JCE, AES-GCM, SecureRandom), session management and error handling, SAST/DAST/SCA testing, and secure deployment - mapped to the OWASP Top 10 and CWE."
+exam_category = "EC-Council"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 823
+featured = false
+price_practice = 9
+exam_url = "https://www.eccouncil.org/train-certify/certified-application-security-engineer-case-java/"
+exam_cost = "$450 USD (voucher; varies by region)"
+exam_duration = 120
+exam_passing_score = "Cut score varies by exam form (typically 60-85%)"
+exam_questions_real = "50"
+exam_provider = "EC-Council Exam Portal (remotely proctored)"
+exam_prerequisites = "None with official EC-Council CASE Java training; self-study requires an eligibility application (typically 2 or more years of Java or application-development experience) plus a $100 application fee."
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/eccouncil-case-java/"
+practice_url = "/guided/eccouncil-case-java/practice/"
