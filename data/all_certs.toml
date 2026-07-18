@@ -2801,6 +2801,22 @@ order = 777
 featured = false
 price_practice = 9
 
+[[cert]]
+slug = "oci-autonomous-db-professional"
+vendor = "oracle"
+code = "OCI-AUTONOMOUS-DB-PROFESSIONAL"
+name = "Autonomous AI Database Professional"
+tagline = "Master the Oracle Autonomous AI Database Professional exam (1Z0-931-26) - provisioning and managing Autonomous Database Serverless and Dedicated, ECPU scaling and lifecycle, performance tuning with Automatic Indexing and Performance Hub, security with Oracle Data Safe and TDE, the Database Actions tools, Select AI, AI Vector Search, MCP server integration, converged-data analytics, and migration with Data Pump, Zero Downtime Migration, and GoldenGate."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 9
+order = 795
+featured = false
+price_practice = 9
+
 [cert_map."ab-900"]
 vendor = "microsoft"
 code = "AB-900"
@@ -10235,3 +10251,29 @@ exam_prerequisites = "None required"
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/splunk-o11y-cloud-metrics-user/"
 practice_url = "/guided/splunk-o11y-cloud-metrics-user/practice/"
+
+[cert_map."oci-autonomous-db-professional"]
+vendor = "oracle"
+code = "OCI-AUTONOMOUS-DB-PROFESSIONAL"
+name = "Autonomous AI Database Professional"
+tagline = "Master the Oracle Autonomous AI Database Professional exam (1Z0-931-26) - provisioning and managing Autonomous Database Serverless and Dedicated, ECPU scaling and lifecycle, performance tuning with Automatic Indexing and Performance Hub, security with Oracle Data Safe and TDE, the Database Actions tools, Select AI, AI Vector Search, MCP server integration, converged-data analytics, and migration with Data Pump, Zero Downtime Migration, and GoldenGate."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 9
+order = 795
+featured = false
+price_practice = 9
+exam_url = "https://education.oracle.com/oracle-autonomous-ai-database-professional/pexam_1Z0-931-26"
+exam_cost = "$245 USD (verify at Oracle registration)"
+exam_duration = 90
+exam_passing_score = "68%"
+exam_questions_real = "50"
+exam_provider = "Oracle University (Oracle MyLearn / Pearson VUE, online proctored or test center)"
+exam_validity = "Valid for 24 months (Oracle Recertification policy)"
+exam_prerequisites = "None required (Oracle recommends hands-on Autonomous Database experience)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/oci-autonomous-db-professional/"
+practice_url = "/guided/oci-autonomous-db-professional/practice/"
