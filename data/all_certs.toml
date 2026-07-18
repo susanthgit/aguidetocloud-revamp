@@ -10111,3 +10111,44 @@ exam_prerequisites = "None with official EC-Council CASE Java training; self-stu
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/eccouncil-case-java/"
 practice_url = "/guided/eccouncil-case-java/practice/"
+
+[[cert]]
+slug = "eccouncil-eces"
+vendor = "eccouncil"
+code = "ECCOUNCIL-ECES"
+name = "EC-Council Certified Encryption Specialist (ECES 212-81)"
+tagline = "Applied cryptography certification - symmetric and asymmetric algorithms, cipher modes, hash functions, number theory, PKI and digital signatures, SSL/TLS and IPsec, disk and email encryption, and cryptanalysis - grounded in the NIST and FIPS standards."
+exam_category = "EC-Council"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 824
+featured = false
+price_practice = 9
+
+[cert_map."eccouncil-eces"]
+vendor = "eccouncil"
+code = "ECCOUNCIL-ECES"
+name = "EC-Council Certified Encryption Specialist (ECES 212-81)"
+tagline = "Applied cryptography certification - symmetric and asymmetric algorithms, cipher modes, hash functions, number theory, PKI and digital signatures, SSL/TLS and IPsec, disk and email encryption, and cryptanalysis - grounded in the NIST and FIPS standards."
+exam_category = "EC-Council"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 824
+featured = false
+price_practice = 9
+exam_url = "https://www.eccouncil.org/train-certify/ec-council-certified-encryption-specialist-eces/"
+exam_cost = "$249 USD (remotely-proctored voucher; varies by region)"
+exam_duration = 120
+exam_passing_score = "70%"
+exam_questions_real = "50"
+exam_provider = "EC-Council Exam Portal (remotely proctored)"
+exam_prerequisites = "No ECES-specific prerequisite. Official EC-Council ECES training waives the exam-eligibility application; self-study candidates must obtain EC-Council exam eligibility (application) first."
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/eccouncil-eces/"
+practice_url = "/guided/eccouncil-eces/practice/"
