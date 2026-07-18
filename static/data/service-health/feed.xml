@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 18 Jul 2026 17:09:57 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2026 19:20:38 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Intune] Users' newly enrolled Windows devices are marked as non-compliant in Microsoft Intune</title>
@@ -28,11 +28,11 @@
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins in Europe may not see Copilot Cowork reports in the expected timeframe in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1431319</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins in Europe may not see Copilot Cowork reports in the expected timeframe in the Microsoft 365 admin center.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Admins in Europe may have not seen Copilot Cowork reports in the expected timeframe in the Microsoft 365 admin center.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1431319</guid>
-      <pubDate>Fri, 17 Jul 2026 19:28:31 +0000</pubDate>
+      <pubDate>Fri, 17 Jul 2026 19:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Intune] Some users may be unable to export Microsoft Intune reports</title>
