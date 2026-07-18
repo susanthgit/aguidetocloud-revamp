@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 18 Jul 2026 03:26:08 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2026 06:15:39 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Intune] Users' newly enrolled Windows devices are marked as non-compliant in Microsoft Intune</title>
@@ -30,7 +30,7 @@
       <link>https://www.aguidetocloud.com/service-health/#CP1431319</link>
       <description>[Microsoft Copilot (Microsoft 365)] Admins in Europe may not see Copilot Cowork reports in the expected timeframe in the Microsoft 365 admin center.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>investigating</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1431319</guid>
       <pubDate>Fri, 17 Jul 2026 19:28:31 +0000</pubDate>
     </item>
