@@ -10193,3 +10193,45 @@ exam_prerequisites = "None for the exam; CCNP Security requires SCOR 350-701 plu
 exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop"]
 guided_url = "/guided/cisco-sdsi/"
 practice_url = "/guided/cisco-sdsi/practice/"
+
+
+[[cert]]
+slug = "splunk-o11y-cloud-metrics-user"
+vendor = "splunk"
+code = "SPLUNK-O11Y-CLOUD-METRICS-USER"
+name = "Splunk O11y Cloud Certified Metrics User"
+tagline = "Master the Splunk O11y Cloud Certified Metrics User exam (SPLK-4001) - getting metrics in with the OpenTelemetry Collector, the Splunk Infrastructure Monitoring data model (metrics, MTS, datapoints, dimensions vs properties), rollups and analytic functions, building charts and dashboards, alerting with detectors, and troubleshooting Kubernetes with the Navigator and Cluster Analyzer in Splunk Observability Cloud."
+exam_category = "Splunk"
+level = "entry"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 780
+featured = false
+price_practice = 9
+
+[cert_map."splunk-o11y-cloud-metrics-user"]
+vendor = "splunk"
+code = "SPLUNK-O11Y-CLOUD-METRICS-USER"
+name = "Splunk O11y Cloud Certified Metrics User"
+tagline = "Master the Splunk O11y Cloud Certified Metrics User exam (SPLK-4001) - getting metrics in with the OpenTelemetry Collector, the Splunk Infrastructure Monitoring data model (metrics, MTS, datapoints, dimensions vs properties), rollups and analytic functions, building charts and dashboards, alerting with detectors, and troubleshooting Kubernetes with the Navigator and Cluster Analyzer in Splunk Observability Cloud."
+exam_category = "Splunk"
+level = "entry"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 780
+featured = false
+price_practice = 9
+exam_url = "https://www.splunk.com/en_us/training/certification-track/splunk-o11y-cloud-certified-metrics-user.html"
+exam_cost = "$130 USD"
+exam_duration = 60
+exam_passing_score = "Pass / fail"
+exam_questions_real = "54"
+exam_provider = "Splunk (Pearson VUE)"
+exam_prerequisites = "None required"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/splunk-o11y-cloud-metrics-user/"
+practice_url = "/guided/splunk-o11y-cloud-metrics-user/practice/"
