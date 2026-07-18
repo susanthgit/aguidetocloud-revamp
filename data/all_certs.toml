@@ -10152,3 +10152,44 @@ exam_prerequisites = "No ECES-specific prerequisite. Official EC-Council ECES tr
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/eccouncil-eces/"
 practice_url = "/guided/eccouncil-eces/practice/"
+
+[[cert]]
+slug = "cisco-sdsi"
+vendor = "cisco"
+code = "CISCO-SDSI"
+name = "Designing Cisco Security Infrastructure (CCNP SDSI 300-745)"
+tagline = "Master the Cisco CCNP Security SDSI 300-745 concentration - DESIGN enterprise security infrastructure: threat-protection for endpoints, identity and email; architecture for hybrid work, IoT, SaaS and multi-cloud; VPN and tunneling selection; secure management and control planes; firewall, NGFW, WAF, IPS and eBPF selection; application and cloud-native security (CNAPP, microsegmentation, containers, serverless); emerging-tech design for generative AI, ML and post-quantum cryptography; SOC incident response; security frameworks (MITRE ATT&CK and CAPEC, NIST RMF and CSF 2.0, Cisco SAFE); compliance mapping; and AI, security automation and DevSecOps."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 840
+featured = false
+price_practice = 9
+
+[cert_map."cisco-sdsi"]
+vendor = "cisco"
+code = "CISCO-SDSI"
+name = "Designing Cisco Security Infrastructure (CCNP SDSI 300-745)"
+tagline = "Master the Cisco CCNP Security SDSI 300-745 concentration - DESIGN enterprise security infrastructure: threat-protection for endpoints, identity and email; architecture for hybrid work, IoT, SaaS and multi-cloud; VPN and tunneling selection; secure management and control planes; firewall, NGFW, WAF, IPS and eBPF selection; application and cloud-native security (CNAPP, microsegmentation, containers, serverless); emerging-tech design for generative AI, ML and post-quantum cryptography; SOC incident response; security frameworks (MITRE ATT&CK and CAPEC, NIST RMF and CSF 2.0, Cisco SAFE); compliance mapping; and AI, security automation and DevSecOps."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 840
+featured = false
+price_practice = 9
+exam_url = "https://www.cisco.com/site/us/en/learn/training-certifications/exams/sdsi.html"
+exam_cost = "$300 USD"
+exam_duration = 90
+exam_passing_score = "Cisco scales scores 300-1000 and does not publish the exact SDSI cut score"
+exam_questions_real = "~55-65"
+exam_provider = "Pearson VUE"
+exam_prerequisites = "None for the exam; CCNP Security requires SCOR 350-701 plus one concentration exam such as SDSI 300-745"
+exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop"]
+guided_url = "/guided/cisco-sdsi/"
+practice_url = "/guided/cisco-sdsi/practice/"
