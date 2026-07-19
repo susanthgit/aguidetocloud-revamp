@@ -2817,6 +2817,22 @@ order = 795
 featured = false
 price_practice = 9
 
+[[cert]]
+slug = "oci-agentic-ai-db-professional"
+vendor = "oracle"
+code = "OCI-AGENTIC-AI-DB-PROFESSIONAL"
+name = "Agentic AI for Oracle AI Database Professional"
+tagline = "Master the Agentic AI for Oracle AI Database Professional exam (1Z0-1159-26) - building AI agents, RAG, and semantic search inside Oracle Database 23ai and Autonomous AI Database: the VECTOR data type and in-database embeddings, VECTOR_DISTANCE metrics with HNSW and IVF vector indexes, RAG with DBMS_VECTOR_CHAIN, Select AI Agents via DBMS_CLOUD_AI_AGENT, the Autonomous Database MCP Server, and Private Agent Factory governance."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 793
+featured = false
+price_practice = 9
+
 [cert_map."ab-900"]
 vendor = "microsoft"
 code = "AB-900"
@@ -10277,3 +10293,29 @@ exam_prerequisites = "None required (Oracle recommends hands-on Autonomous Datab
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/oci-autonomous-db-professional/"
 practice_url = "/guided/oci-autonomous-db-professional/practice/"
+[cert_map."oci-agentic-ai-db-professional"]
+vendor = "oracle"
+code = "OCI-AGENTIC-AI-DB-PROFESSIONAL"
+name = "Agentic AI for Oracle AI Database Professional"
+tagline = "Master the Agentic AI for Oracle AI Database Professional exam (1Z0-1159-26) - building AI agents, RAG, and semantic search inside Oracle Database 23ai and Autonomous AI Database: the VECTOR data type and in-database embeddings, VECTOR_DISTANCE metrics with HNSW and IVF vector indexes, RAG with DBMS_VECTOR_CHAIN, Select AI Agents via DBMS_CLOUD_AI_AGENT, the Autonomous Database MCP Server, and Private Agent Factory governance."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 793
+featured = false
+price_practice = 9
+exam_url = "https://education.oracle.com/agentic-ai-for-oracle-ai-database-professional/pexam_1Z0-1159-26"
+exam_cost = "$245 USD (verify at Oracle registration)"
+exam_duration = 90
+exam_passing_score = "68%"
+exam_questions_real = "50"
+exam_provider = "Oracle University (Oracle MyLearn / Pearson VUE, online proctored or test center)"
+exam_validity = "Follows the Oracle Cloud Recertification policy"
+exam_prerequisites = "None required (Python and AI/ML knowledge recommended)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/oci-agentic-ai-db-professional/"
+practice_url = "/guided/oci-agentic-ai-db-professional/practice/"
+
