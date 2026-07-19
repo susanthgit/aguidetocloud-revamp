@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 18 Jul 2026 23:05:43 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2026 03:47:37 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Microsoft Copilot (Microsoft 365) usage reports from the Microsoft 365 admin center may be delayed for admins and users</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1432638</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Microsoft Copilot usage reports from the Microsoft 365 admin center may be delayed for admins and users.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1432638</guid>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 apps] Microsoft 365 Apps usage reports from the Microsoft 365 admin center may be delayed for admins and users</title>
+      <link>https://www.aguidetocloud.com/service-health/#OP1432645</link>
+      <description>[Microsoft 365 apps] Microsoft 365 Apps usage reports from the Microsoft 365 admin center may be delayed for admins and users.</description>
+      <category>Microsoft 365 apps</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">OP1432645</guid>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Intune] Users' newly enrolled Windows devices are marked as non-compliant in Microsoft Intune</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1431577</link>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1392272</guid>
       <pubDate>Wed, 10 Jun 2026 08:50:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Admins' Microsoft 365 Copilot usage reports within the Microsoft 365 admin center may be delayed</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1385610</link>
-      <description>[Microsoft 365 suite] Admins' Copilot usage reports within the Microsoft 365 admin center may have been delayed.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1385610</guid>
-      <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may experience degradation with Microsoft 365 Copilot responses after uploading a file</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1386444</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have experienced degradation with Copilot responses after uploading a file.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1386444</guid>
-      <pubDate>Tue, 09 Jun 2026 06:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
