@@ -10319,3 +10319,46 @@ exam_question_types = ["Multiple choice"]
 guided_url = "/guided/oci-agentic-ai-db-professional/"
 practice_url = "/guided/oci-agentic-ai-db-professional/practice/"
 
+
+
+[[cert]]
+slug = "aws-aip-c01"
+vendor = "aws"
+code = "AWS-AIP-C01"
+name = "AWS Certified Generative AI Developer - Professional"
+tagline = "Master the AWS Certified Generative AI Developer - Professional exam (AIP-C01) - building production generative-AI applications on AWS with Amazon Bedrock foundation models, Knowledge Bases and RAG, Bedrock Agents and AgentCore, Guardrails, prompt engineering, agentic AI with Strands Agents and the Model Context Protocol (MCP), safety and governance, cost and performance optimization, and evaluating and troubleshooting GenAI systems in production."
+exam_category = "AWS"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 796
+featured = false
+price_practice = 9
+
+[cert_map."aws-aip-c01"]
+vendor = "aws"
+code = "AWS-AIP-C01"
+name = "AWS Certified Generative AI Developer - Professional"
+tagline = "Master the AWS Certified Generative AI Developer - Professional exam (AIP-C01) - building production generative-AI applications on AWS with Amazon Bedrock foundation models, Knowledge Bases and RAG, Bedrock Agents and AgentCore, Guardrails, prompt engineering, agentic AI with Strands Agents and the Model Context Protocol (MCP), safety and governance, cost and performance optimization, and evaluating and troubleshooting GenAI systems in production."
+exam_category = "AWS"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 796
+featured = false
+price_practice = 9
+exam_url = "https://aws.amazon.com/certification/certified-generative-ai-developer-professional/"
+exam_cost = "$300 USD"
+exam_duration = 180
+exam_passing_score = "750 / 1000"
+exam_questions_real = "75 (65 scored)"
+exam_provider = "Pearson VUE (test center or online proctored)"
+exam_validity = "3 years"
+exam_prerequisites = "None (2+ years building production applications on AWS and 1 year of hands-on GenAI experience recommended)"
+exam_question_types = ["Multiple choice", "Multiple response"]
+guided_url = "/guided/aws-aip-c01/"
+practice_url = "/guided/aws-aip-c01/practice/"
