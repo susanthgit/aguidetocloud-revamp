@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T21:20:28.257453+00:00",
+  "generated_at": "2026-07-20T23:12:23.970290+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -7,9 +7,9 @@
       "short_name": "Copilot",
       "icon": "🤖",
       "total_incidents": 24,
-      "active_incidents": 0,
-      "avg_duration_minutes": 5327,
-      "last_incident": "2026-07-19T00:00:00+00:00",
+      "active_incidents": 1,
+      "avg_duration_minutes": 5440,
+      "last_incident": "2026-07-20T21:57:13.513000+00:00",
       "classifications": {
         "advisory": 14,
         "incident": 10
@@ -109,8 +109,8 @@
       "short_name": "M365 Apps",
       "icon": "💼",
       "total_incidents": 3,
-      "active_incidents": 1,
-      "avg_duration_minutes": 2339,
+      "active_incidents": 0,
+      "avg_duration_minutes": 2461,
       "last_incident": "2026-07-19T00:00:00+00:00",
       "classifications": {
         "advisory": 3
@@ -204,7 +204,7 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 25,
+      "incident_count": 26,
       "services_affected": 10
     },
     {
@@ -214,7 +214,7 @@
     },
     {
       "month": "2026-05",
-      "incident_count": 36,
+      "incident_count": 35,
       "services_affected": 12
     },
     {
