@@ -10362,3 +10362,46 @@ exam_prerequisites = "None (2+ years building production applications on AWS and
 exam_question_types = ["Multiple choice", "Multiple response"]
 guided_url = "/guided/aws-aip-c01/"
 practice_url = "/guided/aws-aip-c01/practice/"
+
+
+[[cert]]
+slug = "gcp-security-operations-engineer"
+vendor = "gcp"
+code = "GCP-SECURITY-OPERATIONS-ENGINEER"
+name = "Google Cloud Professional Security Operations Engineer"
+tagline = "Master the Google Cloud Professional Security Operations Engineer (PSOE) exam - run a modern SOC on Google Security Operations (SecOps SIEM + SOAR): onboard telemetry, normalize logs to the Unified Data Model (UDM), write YARA-L 2.0 detections, tune curated detections and Applied Threat Intelligence, hunt with UDM search and retrohunt, build SOAR playbooks and run the case lifecycle, and use Google Threat Intelligence and Security Command Center to detect, investigate, and respond to threats."
+exam_category = "GCP"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 842
+featured = false
+price_practice = 9
+
+[cert_map."gcp-security-operations-engineer"]
+vendor = "gcp"
+code = "GCP-SECURITY-OPERATIONS-ENGINEER"
+name = "Google Cloud Professional Security Operations Engineer"
+tagline = "Master the Google Cloud Professional Security Operations Engineer (PSOE) exam - run a modern SOC on Google Security Operations (SecOps SIEM + SOAR): onboard telemetry, normalize logs to the Unified Data Model (UDM), write YARA-L 2.0 detections, tune curated detections and Applied Threat Intelligence, hunt with UDM search and retrohunt, build SOAR playbooks and run the case lifecycle, and use Google Threat Intelligence and Security Command Center to detect, investigate, and respond to threats."
+exam_category = "GCP"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 842
+featured = false
+price_practice = 9
+exam_url = "https://cloud.google.com/learn/certification/security-operations-engineer"
+exam_cost = "$200 USD"
+exam_duration = 120
+exam_passing_score = ""
+exam_questions_real = "50-60"
+exam_provider = "Kryterion (online or onsite proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "None (3+ years security experience, incl. 1+ year on Google Cloud, recommended)"
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/gcp-security-operations-engineer/"
+practice_url = "/guided/gcp-security-operations-engineer/practice/"
