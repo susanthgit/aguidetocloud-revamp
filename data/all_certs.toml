@@ -10494,3 +10494,44 @@ exam_prerequisites = "None"
 exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop", "Case study"]
 guided_url = "/guided/ms-721/"
 practice_url = "/guided/ms-721/practice/"
+
+[[cert]]
+slug = "az-802"
+vendor = "microsoft"
+code = "AZ-802"
+name = "Windows Server Administrator Associate"
+tagline = "Administer Windows Server across on-premises, Azure, and hybrid - AD DS, Hyper-V, storage, security, and hybrid management with Azure Arc, Azure File Sync, and Azure Update Manager."
+exam_category = "Azure"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 1001
+featured = false
+
+[cert_map."az-802"]
+vendor = "microsoft"
+code = "AZ-802"
+name = "Windows Server Administrator Associate"
+tagline = "Administer Windows Server across on-premises, Azure, and hybrid - AD DS, Hyper-V, storage, security, and hybrid management with Azure Arc, Azure File Sync, and Azure Update Manager."
+exam_category = "Azure"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 1001
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/windows-server-administrator-associate/"
+exam_cost = "$165 USD"
+exam_duration = 120
+exam_passing_score = "700 / 1000"
+exam_questions_real = "40-60"
+exam_provider = "Pearson VUE"
+exam_validity = "Renew annually (free via Microsoft Learn)"
+exam_prerequisites = "None"
+exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop", "Case study"]
+guided_url = "/guided/az-802/"
+practice_url = "/guided/az-802/practice/"
