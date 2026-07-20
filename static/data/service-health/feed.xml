@@ -5,24 +5,33 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 20 Jul 2026 18:15:46 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 21:20:28 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Microsoft Copilot (Microsoft 365) usage reports from the Microsoft 365 admin center may be delayed for admins and users</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1432638</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Microsoft Copilot usage reports from the Microsoft 365 admin center may be delayed for admins and users.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
+      <title>[Microsoft 365 suite] Admins may be unable to track open email counts in the Microsoft 365 admin center organizational messages</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1434392</link>
+      <description>[Microsoft 365 suite] Admins may be unable to track open email counts in the Microsoft 365 admin center organizational messages.</description>
+      <category>Microsoft 365 suite</category>
       <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1432638</guid>
-      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">MO1434392</guid>
+      <pubDate>Mon, 20 Jul 2026 20:27:05 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 apps] Microsoft 365 Apps usage reports from the Microsoft 365 admin center may be delayed for admins and users</title>
       <link>https://www.aguidetocloud.com/service-health/#OP1432645</link>
-      <description>[Microsoft 365 apps] Microsoft 365 Apps usage reports from the Microsoft 365 admin center may be delayed for admins and users.</description>
+      <description>[Microsoft 365 apps] Microsoft 365 Apps usage reports from the Microsoft 365 admin center may have been delayed for admins and users.</description>
       <category>Microsoft 365 apps</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">OP1432645</guid>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Microsoft Copilot (Microsoft 365) usage reports from the Microsoft 365 admin center may be delayed for admins and users</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1432638</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Microsoft Copilot usage reports from the Microsoft 365 admin center may have been delayed for admins and users.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1432638</guid>
       <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1411708</guid>
       <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Some users may have been unable to begin onboarding for Microsoft Defender for Endpoint or Defender for Office 365</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1392272</link>
-      <description>[Microsoft Defender XDR] Users may have been unable to begin onboarding for Microsoft Defender for Endpoint or Defender for Office 365.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">DZ1392272</guid>
-      <pubDate>Wed, 10 Jun 2026 08:50:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
