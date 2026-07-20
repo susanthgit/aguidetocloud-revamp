@@ -10405,3 +10405,45 @@ exam_prerequisites = "None (3+ years security experience, incl. 1+ year on Googl
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/gcp-security-operations-engineer/"
 practice_url = "/guided/gcp-security-operations-engineer/practice/"
+
+[[cert]]
+slug = "oci-observability-professional"
+vendor = "oracle"
+code = "OCI-OBSERVABILITY-PROFESSIONAL"
+name = "OCI Observability Professional"
+tagline = "Master the Oracle Cloud Infrastructure 2026 Observability Professional exam (1Z0-1111-26) - monitor OCI workloads end to end with the Observability and Management suite: Monitoring with MQL and alarms, Notifications, Events, Connector Hub, Logging, Logging Analytics with Cluster and Link analysis, APM distributed tracing, RUM and Availability Monitoring, and Stack Monitoring."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 789
+featured = false
+price_practice = 9
+
+[cert_map."oci-observability-professional"]
+vendor = "oracle"
+code = "OCI-OBSERVABILITY-PROFESSIONAL"
+name = "OCI Observability Professional"
+tagline = "Master the Oracle Cloud Infrastructure 2026 Observability Professional exam (1Z0-1111-26) - monitor OCI workloads end to end with the Observability and Management suite: Monitoring with MQL and alarms, Notifications, Events, Connector Hub, Logging, Logging Analytics with Cluster and Link analysis, APM distributed tracing, RUM and Availability Monitoring, and Stack Monitoring."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 789
+featured = false
+price_practice = 9
+exam_url = "https://education.oracle.com/oracle-cloud-infrastructure-observability-professional/pexam_1Z0-1111-26"
+exam_cost = "$245 USD (verify at Oracle registration)"
+exam_duration = 90
+exam_passing_score = "68%"
+exam_questions_real = "50"
+exam_provider = "Oracle University (Oracle MyLearn / Pearson VUE, online proctored or test center)"
+exam_validity = "Follows the Oracle Cloud Recertification policy"
+exam_prerequisites = "None required (Oracle recommends hands-on experience operating the OCI Observability and Management services)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/oci-observability-professional/"
+practice_url = "/guided/oci-observability-professional/practice/"
