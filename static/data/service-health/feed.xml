@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 21 Jul 2026 14:17:47 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 17:41:07 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Some users may experience delays receiving notifications for Teams Recap Podcasts in Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1435242</link>
+      <description>[Microsoft Teams] Users may have experienced delays receiving notifications for Teams Recap Podcasts in Microsoft Teams.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1435242</guid>
+      <pubDate>Tue, 21 Jul 2026 04:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to drag and drop files to add references into Microsoft Copilot Notebooks</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1434578</link>
@@ -447,15 +456,6 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1387691</guid>
       <pubDate>Thu, 11 Jun 2026 20:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to leverage the Microsoft 365 Copilot rewrite feature in classic Outlook</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1387482</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to leverage the Copilot rewrite feature in classic Outlook.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1387482</guid>
-      <pubDate>Thu, 11 Jun 2026 15:28:27 +0000</pubDate>
     </item>
   </channel>
 </rss>
