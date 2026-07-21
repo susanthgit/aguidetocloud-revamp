@@ -10657,3 +10657,45 @@ exam_validity = "Does not expire (Oracle Database SQL certifications; verify cur
 exam_prerequisites = "None required (Oracle recommends hands-on SQL experience)"
 guided_url = "/guided/oracle-ai-database-sql/"
 practice_url = "/guided/oracle-ai-database-sql/practice/"
+
+[[cert]]
+slug = "oci-cloud-operations-professional"
+vendor = "oracle"
+code = "OCI-CLOUD-OPERATIONS-PROFESSIONAL"
+name = "OCI Cloud Operations Professional"
+tagline = "Master the Oracle Cloud Infrastructure 2026 Cloud Operations Professional exam (1Z0-1067-26) - run OCI environments day to day: deploy with Resource Manager and the OCI CLI, configure with Ansible and cloud-init, optimize cost with Budgets, Compartment Quotas, Cloud Advisor and Resource Scheduler, ensure reliability with autoscaling and Full Stack Disaster Recovery, manage identity and security with IAM policies, Vault and dynamic groups, and implement observability with alarms, logging, OS Management Hub and troubleshooting."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 790
+featured = false
+price_practice = 9
+
+[cert_map."oci-cloud-operations-professional"]
+vendor = "oracle"
+code = "OCI-CLOUD-OPERATIONS-PROFESSIONAL"
+name = "OCI Cloud Operations Professional"
+tagline = "Master the Oracle Cloud Infrastructure 2026 Cloud Operations Professional exam (1Z0-1067-26) - run OCI environments day to day: deploy with Resource Manager and the OCI CLI, configure with Ansible and cloud-init, optimize cost with Budgets, Compartment Quotas, Cloud Advisor and Resource Scheduler, ensure reliability with autoscaling and Full Stack Disaster Recovery, manage identity and security with IAM policies, Vault and dynamic groups, and implement observability with alarms, logging, OS Management Hub and troubleshooting."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 790
+featured = false
+price_practice = 9
+exam_url = "https://education.oracle.com/oracle-cloud-infrastructure-cloud-ops-professional/pexam_1Z0-1067-26"
+exam_cost = "$245 USD (verify at Oracle registration)"
+exam_duration = 90
+exam_passing_score = "68%"
+exam_questions_real = "50"
+exam_provider = "Oracle University (Oracle MyLearn / Pearson VUE, online proctored or test center)"
+exam_validity = "Follows the Oracle Cloud Recertification policy"
+exam_prerequisites = "None required (Oracle recommends hands-on experience deploying, configuring, and operating OCI resources)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/oci-cloud-operations-professional/"
+practice_url = "/guided/oci-cloud-operations-professional/practice/"
