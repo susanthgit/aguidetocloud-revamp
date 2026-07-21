@@ -10616,3 +10616,44 @@ exam_questions_real = "50"
 exam_provider = "Oracle University / Pearson VUE (online proctored or test center)"
 exam_prerequisites = "None (working Java programming experience recommended)"
 exam_question_types = ["Multiple choice", "Multiple response"]
+
+[[cert]]
+slug = "oracle-ai-database-sql"
+vendor = "oracle"
+code = "ORACLE-AI-DATABASE-SQL"
+name = "AI Database SQL Associate"
+tagline = "Master the Oracle AI Database SQL Associate exam (1Z0-171, Oracle Database 23ai SQL) - SELECT queries with filtering and sorting, single-row / conversion / aggregate functions, joins, subqueries and the SET operators, DML and transaction control, DDL with constraints, views, sequences, synonyms and indexes, controlling user access with GRANT/REVOKE, and the data dictionary and time-zone datatypes."
+exam_category = "Oracle"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 843
+featured = false
+price_practice = 9
+
+[cert_map."oracle-ai-database-sql"]
+vendor = "oracle"
+code = "ORACLE-AI-DATABASE-SQL"
+name = "AI Database SQL Associate"
+tagline = "Master the Oracle AI Database SQL Associate exam (1Z0-171, Oracle Database 23ai SQL) - SELECT queries with filtering and sorting, single-row / conversion / aggregate functions, joins, subqueries and the SET operators, DML and transaction control, DDL with constraints, views, sequences, synonyms and indexes, controlling user access with GRANT/REVOKE, and the data dictionary and time-zone datatypes."
+exam_category = "Oracle"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 843
+featured = false
+price_practice = 9
+exam_url = "https://education.oracle.com/oracle-ai-database-sql-associate/pexam_1Z0-171"
+exam_cost = "$245 USD (verify at Oracle registration)"
+exam_duration = 120
+exam_passing_score = "65%"
+exam_questions_real = "60"
+exam_provider = "Oracle University (Oracle MyLearn / Pearson VUE, online proctored or test center)"
+exam_validity = "Does not expire (Oracle Database SQL certifications; verify current Oracle policy)"
+exam_prerequisites = "None required (Oracle recommends hands-on SQL experience)"
+guided_url = "/guided/oracle-ai-database-sql/"
+practice_url = "/guided/oracle-ai-database-sql/practice/"
