@@ -10535,3 +10535,44 @@ exam_prerequisites = "None"
 exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop", "Case study"]
 guided_url = "/guided/az-802/"
 practice_url = "/guided/az-802/practice/"
+
+[[cert]]
+slug = "ab-210"
+vendor = "microsoft"
+code = "AB-210"
+name = "Dynamics 365 Sales AI Consultant Associate"
+tagline = "Configure AI-enhanced Dynamics 365 Sales - the four sales agents, Copilot, predictive scoring, and the lead-to-cash pipeline."
+exam_category = "Dynamics 365"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 1002
+featured = false
+
+[cert_map."ab-210"]
+vendor = "microsoft"
+code = "AB-210"
+name = "Dynamics 365 Sales AI Consultant Associate"
+tagline = "Configure AI-enhanced Dynamics 365 Sales - the four sales agents, Copilot, predictive scoring, and the lead-to-cash pipeline."
+exam_category = "Dynamics 365"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 1002
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/d365-sales-ai-consultant-associate/"
+exam_cost = "$165 USD"
+exam_duration = 120
+exam_passing_score = "700 / 1000"
+exam_questions_real = "40-60"
+exam_provider = "Pearson VUE"
+exam_validity = "Renew annually (free via Microsoft Learn)"
+exam_prerequisites = "None"
+exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop", "Case study"]
+guided_url = "/guided/ab-210/"
+practice_url = "/guided/ab-210/practice/"
