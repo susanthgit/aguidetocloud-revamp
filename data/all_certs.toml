@@ -10576,3 +10576,43 @@ exam_prerequisites = "None"
 exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop", "Case study"]
 guided_url = "/guided/ab-210/"
 practice_url = "/guided/ab-210/practice/"
+
+
+[[cert]]
+slug = "oracle-java-se-25-developer"
+vendor = "oracle"
+code = "ORACLE-JAVA-SE-25-DEVELOPER"
+name = "Java SE 25 Developer Professional"
+tagline = "Master the Oracle Certified Professional: Java SE 25 Developer exam (1Z0-831) - object-oriented programming with records and sealed types, streams and lambdas, virtual threads and concurrency, the module system, and Java 25 features such as flexible constructor bodies and instance main methods."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 796
+featured = false
+price_practice = 9
+
+[cert_map."oracle-java-se-25-developer"]
+vendor = "oracle"
+code = "ORACLE-JAVA-SE-25-DEVELOPER"
+name = "Java SE 25 Developer Professional"
+tagline = "Master the Oracle Certified Professional: Java SE 25 Developer exam (1Z0-831) - object-oriented programming with records and sealed types, streams and lambdas, virtual threads and concurrency, the module system, and Java 25 features such as flexible constructor bodies and instance main methods."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 796
+featured = false
+price_practice = 9
+exam_url = "https://education.oracle.com/java-se-25-developer-professional/pexam_1Z0-831"
+exam_cost = "$245 USD"
+exam_duration = 120
+exam_passing_score = "68%"
+exam_questions_real = "50"
+exam_provider = "Oracle University / Pearson VUE (online proctored or test center)"
+exam_prerequisites = "None (working Java programming experience recommended)"
+exam_question_types = ["Multiple choice", "Multiple response"]
