@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 21 Jul 2026 17:41:07 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 19:47:33 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Exchange Online] Some users may be unable to view location and subject details for other users' Exchange Online calendar items</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1435168</link>
+      <description>[Exchange Online] Users may be unable to view location and subject details for other users' Exchange Online calendar items.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1435168</guid>
+      <pubDate>Tue, 21 Jul 2026 10:32:16 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Some users may experience delays receiving notifications for Teams Recap Podcasts in Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1435242</link>
@@ -447,15 +456,6 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CW1391746</guid>
       <pubDate>Fri, 12 Jun 2026 04:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users are unable to access Microsoft 365 Copilot Chat or portal.office.com</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1387691</link>
-      <description>[Microsoft 365 suite] Users may have been unable to access Microsoft 365 Copilot Chat or portal.office.com.</description>
-      <category>Microsoft 365 suite</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">MO1387691</guid>
-      <pubDate>Thu, 11 Jun 2026 20:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
