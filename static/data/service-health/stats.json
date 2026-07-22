@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T21:19:32.096707+00:00",
+  "generated_at": "2026-07-22T23:14:14.811556+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -19,12 +19,12 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 21,
+      "total_incidents": 20,
       "active_incidents": 1,
-      "avg_duration_minutes": 6123,
+      "avg_duration_minutes": 6283,
       "last_incident": "2026-07-20T20:27:05.233000+00:00",
       "classifications": {
-        "advisory": 13,
+        "advisory": 12,
         "incident": 8
       }
     },
@@ -55,11 +55,24 @@
       }
     },
     {
+      "service": "SharePoint Online",
+      "short_name": "SharePoint",
+      "icon": "📄",
+      "total_incidents": 6,
+      "active_incidents": 3,
+      "avg_duration_minutes": 6487,
+      "last_incident": "2026-07-09T15:47:00+00:00",
+      "classifications": {
+        "incident": 3,
+        "advisory": 3
+      }
+    },
+    {
       "service": "Microsoft Defender XDR",
       "short_name": "Defender",
       "icon": "🛡️",
       "total_incidents": 6,
-      "active_incidents": 0,
+      "active_incidents": 6,
       "avg_duration_minutes": 15428,
       "last_incident": "2026-07-09T12:00:00+00:00",
       "classifications": {
@@ -67,24 +80,11 @@
       }
     },
     {
-      "service": "SharePoint Online",
-      "short_name": "SharePoint",
-      "icon": "📄",
-      "total_incidents": 5,
-      "active_incidents": 1,
-      "avg_duration_minutes": 8070,
-      "last_incident": "2026-07-09T15:47:00+00:00",
-      "classifications": {
-        "advisory": 3,
-        "incident": 2
-      }
-    },
-    {
       "service": "Microsoft Intune",
       "short_name": "Intune",
       "icon": "📱",
       "total_incidents": 5,
-      "active_incidents": 0,
+      "active_incidents": 5,
       "avg_duration_minutes": 4027,
       "last_incident": "2026-07-17T15:50:49.013000+00:00",
       "classifications": {
@@ -96,7 +96,7 @@
       "short_name": "Teams",
       "icon": "💬",
       "total_incidents": 4,
-      "active_incidents": 0,
+      "active_incidents": 3,
       "avg_duration_minutes": 20022,
       "last_incident": "2026-07-21T04:00:00+00:00",
       "classifications": {
@@ -117,15 +117,15 @@
       }
     },
     {
-      "service": "Microsoft 365 apps",
-      "short_name": "M365 Apps",
-      "icon": "💼",
+      "service": "Microsoft OneDrive",
+      "short_name": "OneDrive",
+      "icon": "☁️",
       "total_incidents": 3,
-      "active_incidents": 0,
-      "avg_duration_minutes": 2461,
-      "last_incident": "2026-07-19T00:00:00+00:00",
+      "active_incidents": 2,
+      "avg_duration_minutes": 77,
+      "last_incident": "2026-07-12T10:20:00+00:00",
       "classifications": {
-        "advisory": 3
+        "incident": 3
       }
     },
     {
@@ -153,25 +153,25 @@
       }
     },
     {
-      "service": "Microsoft OneDrive",
-      "short_name": "OneDrive",
-      "icon": "☁️",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 38,
-      "last_incident": "2026-07-12T10:20:00+00:00",
-      "classifications": {
-        "incident": 2
-      }
-    },
-    {
       "service": "Microsoft Viva",
       "short_name": "Viva",
       "icon": "🌱",
       "total_incidents": 2,
-      "active_incidents": 0,
+      "active_incidents": 2,
       "avg_duration_minutes": 2454,
       "last_incident": "2026-06-14T20:12:00+00:00",
+      "classifications": {
+        "advisory": 2
+      }
+    },
+    {
+      "service": "Microsoft 365 apps",
+      "short_name": "M365 Apps",
+      "icon": "💼",
+      "total_incidents": 2,
+      "active_incidents": 0,
+      "avg_duration_minutes": 2748,
+      "last_incident": "2026-07-19T00:00:00+00:00",
       "classifications": {
         "advisory": 2
       }
@@ -209,12 +209,12 @@
     },
     {
       "month": "2026-06",
-      "incident_count": 41,
+      "incident_count": 43,
       "services_affected": 13
     },
     {
       "month": "2026-05",
-      "incident_count": 33,
+      "incident_count": 31,
       "services_affected": 12
     },
     {
