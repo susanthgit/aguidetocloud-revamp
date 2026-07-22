@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 22 Jul 2026 14:19:04 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 17:38:31 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Exchange Online] Some users may be unable to view location and subject details for other users' Exchange Online calendar items</title>
@@ -116,15 +116,6 @@
       <pubDate>Wed, 15 Jul 2026 14:16:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Exchange Online] Some users may be unable to view mailbox storage data in Outlook and Outlook on the web</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1428537</link>
-      <description>[Exchange Online] Users may be unable to view mailbox storage data in Outlook and Outlook on the web.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1428537</guid>
-      <pubDate>Wed, 15 Jul 2026 11:35:17 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Intune] Users' newly enrolled Windows devices are marked as non-compliant in Microsoft Intune</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1431577</link>
       <description>[Microsoft Intune] Users' newly enrolled Windows devices were marked as non-compliant in Microsoft Intune.</description>
@@ -159,6 +150,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">OD1424850</guid>
       <pubDate>Sun, 12 Jul 2026 10:20:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Some users may be unable to view mailbox storage data in Outlook and Outlook on the web</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1428537</link>
+      <description>[Exchange Online] Users may have been unable to view mailbox storage data in Outlook and Outlook on the web.</description>
+      <category>Exchange Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">EX1428537</guid>
+      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may have been unable to open or use custom Copilot agents in Microsoft 365 Copilot and received an error</title>
