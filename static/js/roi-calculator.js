@@ -38,7 +38,7 @@
     aggressive:   [.50,.58,.70,.74,.78,.80,.83,.85,.87,.88,.89,.90,.91,.91,.92,.92,.93,.93,.93,.94,.94,.94,.95,.95,.95,.95,.95,.95,.95,.95,.95,.95,.95,.95,.95,.95]
   };
 
-  const FORRESTER_BENCHMARK = { smb: 353, enterprise: 116 };
+  const FORRESTER_BENCHMARK = { smb: 243, enterprise: 116 }; // SMB = medium-impact central projection (Forrester Projected TEI for SMB, Oct 2024; full range 132/243/353% low/med/high). Enterprise = Forrester TEI, 2025 (25,000-employee composite).
   const WEEKS_PER_YEAR = 52;
   const HOURS_PER_WEEK = 40;
   const MONTHS_PER_YEAR = 12;
