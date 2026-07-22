@@ -10784,3 +10784,44 @@ exam_prerequisites = "None"
 exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop", "Case study"]
 guided_url = "/guided/ab-250/"
 practice_url = "/guided/ab-250/practice/"
+
+[[cert]]
+slug = "mb-820"
+vendor = "microsoft"
+code = "MB-820"
+name = "Dynamics 365 Business Central Developer Associate"
+tagline = "Build AL extensions for Dynamics 365 Business Central - objects, events, the AL language, testing, telemetry, and REST/API integration."
+exam_category = "Dynamics 365"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 1004
+featured = false
+
+[cert_map."mb-820"]
+vendor = "microsoft"
+code = "MB-820"
+name = "Dynamics 365 Business Central Developer Associate"
+tagline = "Build AL extensions for Dynamics 365 Business Central - objects, events, the AL language, testing, telemetry, and REST/API integration."
+exam_category = "Dynamics 365"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 1004
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/d365-business-central-developer-associate/"
+exam_cost = "$165 USD"
+exam_duration = 100
+exam_passing_score = "700 / 1000"
+exam_questions_real = "40-60"
+exam_provider = "Pearson VUE"
+exam_validity = "Renew annually (free via Microsoft Learn)"
+exam_prerequisites = "None"
+exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop", "Case study"]
+guided_url = "/guided/mb-820/"
+practice_url = "/guided/mb-820/practice/"
