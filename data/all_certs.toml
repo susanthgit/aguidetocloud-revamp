@@ -7119,6 +7119,49 @@ practice_url = "/guided/snowpro-advanced-architect/practice/"
 
 
 [[cert]]
+slug = "snowpro-specialty-native-apps"
+vendor = "snowflake"
+code = "SNOWPRO-SPECIALTY-NATIVE-APPS"
+name = "SnowPro Specialty: Native Apps"
+tagline = "Master the Snowflake SnowPro Specialty: Native Apps certification (NAS-C02) - designing, building, deploying, and managing Snowflake Native Applications across their full lifecycle with the Native App Framework."
+exam_category = "Snowflake"
+level = "specialty"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 767
+featured = false
+price_practice = 9
+
+[cert_map."snowpro-specialty-native-apps"]
+vendor = "snowflake"
+code = "SNOWPRO-SPECIALTY-NATIVE-APPS"
+name = "SnowPro Specialty: Native Apps"
+tagline = "Master the Snowflake SnowPro Specialty: Native Apps certification (NAS-C02) - designing, building, deploying, and managing Snowflake Native Applications across their full lifecycle with the Native App Framework."
+exam_category = "Snowflake"
+level = "specialty"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 767
+featured = false
+price_practice = 9
+exam_url = "https://learn.snowflake.com/en/certifications/snowpro-nativeapps-c02/"
+exam_cost = "$225 USD"
+exam_duration = 85
+exam_passing_score = "750 / 1000 (scaled)"
+exam_questions_real = "55"
+exam_provider = "Snowflake (Pearson VUE / online proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "None (SnowPro Core recommended)"
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/snowpro-specialty-native-apps/"
+practice_url = "/guided/snowpro-specialty-native-apps/practice/"
+
+
+[[cert]]
 slug = "databricks-ml-professional"
 vendor = "databricks"
 code = "DATABRICKS-ML-PROFESSIONAL"
