@@ -10956,3 +10956,51 @@ exam_prerequisites = "None (CKA-level Kubernetes knowledge + NAI Administration 
 exam_question_types = ["Multiple choice", "Multiple response"]
 guided_url = "/guided/nutanix-ncp-ai/"
 practice_url = "/guided/nutanix-ncp-ai/practice/"
+
+
+[[cert]]
+slug = "juniper-jncia-mistai"
+vendor = "juniper"
+code = "JNCIA-MISTAI"
+name = "Juniper Networks Certified Associate - Mist AI (JNCIA-MistAI)"
+tagline = "Juniper Mist cloud-native and AI-native networking: onboarding, the Assurance portfolio, SLEs, Marvis, and vBLE location services"
+exam_category = "Juniper"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 217
+featured = false
+price_practice = 9
+exam_url = "https://www.juniper.net/us/en/training/certification/tracks/mist-ai/jncia-mistai.html"
+exam_cost = "$200 USD"
+exam_duration = 90
+exam_passing_score = ""
+guided_url = "/guided/juniper-jncia-mistai/"
+
+[cert_map."juniper-jncia-mistai"]
+vendor = "juniper"
+code = "JNCIA-MISTAI"
+name = "Juniper Networks Certified Associate - Mist AI (JNCIA-MistAI)"
+tagline = "Juniper Mist cloud-native and AI-native networking: onboarding, the Assurance portfolio, SLEs, Marvis, and vBLE location services"
+exam_category = "Juniper"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 217
+featured = false
+price_practice = 9
+exam_url = "https://www.juniper.net/us/en/training/certification/tracks/mist-ai/jncia-mistai.html"
+exam_cost = "$200 USD"
+exam_duration = 90
+exam_passing_score = ""
+exam_questions_real = "~65"
+exam_provider = "Pearson VUE"
+exam_validity = "3 years"
+exam_prerequisites = "None"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/juniper-jncia-mistai/"
+practice_url = "/guided/juniper-jncia-mistai/practice/"
