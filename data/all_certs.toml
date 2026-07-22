@@ -10914,3 +10914,45 @@ exam_prerequisites = "None"
 exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop", "Case study"]
 guided_url = "/guided/mb-820/"
 practice_url = "/guided/mb-820/practice/"
+
+[[cert]]
+slug = "nutanix-ncp-ai"
+vendor = "nutanix"
+code = "NUTANIX-NCP-AI"
+name = "Nutanix Certified Professional - Artificial Intelligence (NCP-AI)"
+tagline = "Master the Nutanix Certified Professional - Artificial Intelligence (NCP-AI 6.10) exam - deploying Nutanix Enterprise AI (NAI) on Kubernetes, importing LLMs from Hugging Face and NVIDIA NGC, creating GPU-backed inference endpoints and API keys, running day-2 observability and output-quality operations, troubleshooting model-import and cluster-health failures, and connecting OpenAI-compatible applications."
+exam_category = "Nutanix"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 853
+featured = false
+price_practice = 9
+
+[cert_map."nutanix-ncp-ai"]
+vendor = "nutanix"
+code = "NUTANIX-NCP-AI"
+name = "Nutanix Certified Professional - Artificial Intelligence (NCP-AI)"
+tagline = "Master the Nutanix Certified Professional - Artificial Intelligence (NCP-AI 6.10) exam - deploying Nutanix Enterprise AI (NAI) on Kubernetes, importing LLMs from Hugging Face and NVIDIA NGC, creating GPU-backed inference endpoints and API keys, running day-2 observability and output-quality operations, troubleshooting model-import and cluster-health failures, and connecting OpenAI-compatible applications."
+exam_category = "Nutanix"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 853
+featured = false
+price_practice = 9
+exam_url = "https://www.nutanix.com/support-services/training-certification/certifications"
+exam_cost = "$200 USD"
+exam_duration = 120
+exam_passing_score = "3000 on a scaled 1000-6000 range"
+exam_questions_real = "75"
+exam_provider = "Nutanix University (online-proctored or test center)"
+exam_validity = "3 years"
+exam_prerequisites = "None (CKA-level Kubernetes knowledge + NAI Administration course recommended)"
+exam_question_types = ["Multiple choice", "Multiple response"]
+guided_url = "/guided/nutanix-ncp-ai/"
+practice_url = "/guided/nutanix-ncp-ai/practice/"
