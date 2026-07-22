@@ -10699,3 +10699,47 @@ exam_prerequisites = "None required (Oracle recommends hands-on experience deplo
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/oci-cloud-operations-professional/"
 practice_url = "/guided/oci-cloud-operations-professional/practice/"
+
+[[cert]]
+slug = "ai-500"
+vendor = "microsoft"
+code = "AI-500"
+name = "Multi-Agent AI Solutions Expert"
+tagline = "Design and build production multi-agent AI systems on Microsoft Foundry with the Agent Framework, MCP, and A2A."
+exam_category = "AI"
+level = "expert"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 844
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/multi-agent-ai-solutions-expert/"
+exam_cost = "Region-based (verify at Pearson VUE)"
+guided_url = "/guided/ai-500/"
+
+[cert_map."ai-500"]
+vendor = "microsoft"
+code = "AI-500"
+name = "Multi-Agent AI Solutions Expert"
+tagline = "Design and build production multi-agent AI systems on Microsoft Foundry with the Agent Framework, MCP, and A2A."
+exam_category = "AI"
+level = "expert"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 844
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/multi-agent-ai-solutions-expert/"
+exam_cost = "Region-based (verify at Pearson VUE)"
+exam_passing_score = "700 / 1000"
+exam_questions_real = "40-60"
+exam_provider = "Pearson VUE"
+exam_validity = "Renew annually (free online assessment via Microsoft Learn)"
+exam_prerequisites = "None enforced; Python + agentic-AI experience assumed"
+exam_question_types = ["Multiple choice", "Multiple response", "Case study"]
+guided_url = "/guided/ai-500/"
+practice_url = "/guided/ai-500/practice/"
