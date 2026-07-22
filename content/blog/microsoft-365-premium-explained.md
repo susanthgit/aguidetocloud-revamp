@@ -161,5 +161,6 @@ The deciding question is always the same: **whose data should Copilot see — yo
 ## Where to go next
 
 - **[Microsoft Copilot Pricing & Tiers Explained](/blog/microsoft-copilot-pricing-tiers-explained/)** — the hub: every Copilot plan on one page
+- **[Proving Copilot ROI — The Field Guide](/blog/copilot-roi-field-guide/)** — once you've picked a plan, prove it pays for itself
 - **[Copilot Pro vs Microsoft 365 Copilot — Which Do You Need?](/blog/copilot-pro-vs-microsoft-365-copilot/)** — personal vs work, in depth
 - **[How Microsoft 365 Copilot works, layer by layer](/blog/how-microsoft-365-copilot-works-layer-by-layer/)** — why the work version costs more

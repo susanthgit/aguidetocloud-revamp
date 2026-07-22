@@ -438,6 +438,7 @@ The public, primary references behind this page:
 
 ## Where to go next {#next}
 
+- **[Proving Copilot ROI — The Field Guide](/blog/copilot-roi-field-guide/)** — the other half of the cost conversation: turn spend into a defensible ROI story (with the [ROI Calculator](/roi-calculator/))
 - **[What Are Copilot Credits? Rates & Costs](/blog/copilot-credits-explained/)** — the meter and the full per-action rate card
 - **[Copilot Messages vs Copilot Credits — What Changed?](/blog/copilot-messages-vs-copilot-credits/)** — migrating from the old "messages" model
 - **[Cowork: Pricing & cost management](/blog/microsoft-copilot-cowork-pricing-cost-management/)** — what a Cowork task actually costs

@@ -127,6 +127,7 @@ Since **1 September 2025**, Copilot Credits are the metered currency Microsoft u
 
 ## Where to go next
 
+- **[Proving Copilot ROI — The Field Guide](/blog/copilot-roi-field-guide/)** — you know the price; now prove the value. The three pillars, the formulas, and the [ROI Calculator](/roi-calculator/).
 - **[Copilot Pro vs Microsoft 365 Copilot — Which Do You Need?](/blog/copilot-pro-vs-microsoft-365-copilot/)** — the deep head-to-head (the most common buying mistake)
 - **[Microsoft 365 Copilot (Licensed) — what the work version unlocks](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/)**
 - **[Microsoft 365 Copilot Chat — the free tier, explained](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/)**

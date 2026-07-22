@@ -234,6 +234,7 @@ Before you switch on paid usage:
 ## Where to go next
 
 - **[Microsoft Copilot Pricing & Tiers Explained](/blog/microsoft-copilot-pricing-tiers-explained/)** — the hub: every Copilot plan on one page
+- **[Proving Copilot ROI — The Field Guide](/blog/copilot-roi-field-guide/)** — credits are the cost; this is how you prove the return, with the [ROI Calculator](/roi-calculator/)
 - **[Is Copilot Studio Free? Pricing & Credits Explained](/blog/copilot-studio-pricing/)** — what a Copilot Studio build actually costs
 - **[Copilot Pro vs Microsoft 365 Copilot](/blog/copilot-pro-vs-microsoft-365-copilot/)** — personal vs work (the subscriptions, not the meter)
 - **[Microsoft Build 2026 Recap](/blog/microsoft-build-2026-recap/#3-copilot-credits--the-consumption-meter-has-a-name)** — how Copilot Credits fit the wider 2026 agent shift
