@@ -5,18 +5,18 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Jul 2026 21:18:41 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 23:09:08 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Azure] Azure incident affecting West US</title>
-      <link>https://www.aguidetocloud.com/service-health/#AZ-20260701-1</link>
-      <description>[Azure] Between 14:40 UTC and as early as 18:26 UTC on 23 July 2026, customers may have experienced intermittent connectivity failures, increased latency, or difficulty accessing Azure and other Microsoft cloud ( 
-https://status.cloud.microsoft/
- ) services associated with the West US region. Customers whose traffic traversed affected West US network infrastructure may also experience downstream impact. Customers leveraging affected downstream Azure services may have experienced a long tail of impact as</description>
+      <link>https://www.aguidetocloud.com/service-health/#AZ-LYXT-C1Z</link>
+      <description>[Azure] Between 14:44 UTC and 19:41 UTC on 23 July 2026, customers may have experienced connectivity failures, increased latency, or difficulty accessing Azure and other Microsoft cloud services hosted within the West US region. Impact was limited to network traffic entering or exiting the West US region; traffic that remained entirely within the region was not affected.
+Impacted services included, but may have not been limited to:
+App Service, Application Gateway, Application Insights, Azure AD B2C, Az</description>
       <category>Azure</category>
       <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">AZ-20260701-1</guid>
-      <pubDate>Thu, 23 Jul 2026 18:26:00 +0000</pubDate>
+      <guid isPermaLink="false">AZ-LYXT-C1Z</guid>
+      <pubDate>Thu, 23 Jul 2026 19:41:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Issues accessing or using Microsoft 365 services routed through the North America region. </title>
@@ -25,7 +25,7 @@ https://status.cloud.microsoft/
       <category>Microsoft 365 suite</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1437424</guid>
-      <pubDate>Thu, 23 Jul 2026 15:06:42 +0000</pubDate>
+      <pubDate>Thu, 23 Jul 2026 14:44:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] Some users may not receive notifications in the Microsoft Teams desktop client</title>
@@ -57,9 +57,9 @@ https://status.cloud.microsoft/
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to drag and drop files to add references into Microsoft Copilot Notebooks</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1434578</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to drag and drop files to add references into Copilot Notebooks.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to drag and drop files to add references into Copilot Notebooks.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1434578</guid>
       <pubDate>Mon, 20 Jul 2026 21:57:13 +0000</pubDate>
     </item>
@@ -113,7 +113,7 @@ https://status.cloud.microsoft/
       <link>https://www.aguidetocloud.com/service-health/#IT1431093</link>
       <description>[Microsoft Intune] Users may have been unable to export Microsoft Intune reports.</description>
       <category>Microsoft Intune</category>
-      <category>serviceRestored</category>
+      <category>investigating</category>
       <guid isPermaLink="false">IT1431093</guid>
       <pubDate>Fri, 17 Jul 2026 15:50:49 +0000</pubDate>
     </item>
@@ -158,7 +158,7 @@ https://status.cloud.microsoft/
       <link>https://www.aguidetocloud.com/service-health/#IT1431577</link>
       <description>[Microsoft Intune] Users' newly enrolled Windows devices were marked as non-compliant in Microsoft Intune.</description>
       <category>Microsoft Intune</category>
-      <category>serviceRestored</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">IT1431577</guid>
       <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
     </item>
@@ -185,7 +185,7 @@ https://status.cloud.microsoft/
       <link>https://www.aguidetocloud.com/service-health/#OD1424850</link>
       <description>[Microsoft OneDrive] Users may have been unable to access OneDrive content and may have noticed delays or navigation errors.</description>
       <category>Microsoft OneDrive</category>
-      <category>serviceRestored</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">OD1424850</guid>
       <pubDate>Sun, 12 Jul 2026 10:20:00 +0000</pubDate>
     </item>
@@ -212,7 +212,7 @@ https://status.cloud.microsoft/
       <link>https://www.aguidetocloud.com/service-health/#DZ1421829</link>
       <description>[Microsoft Defender XDR] Admins may have seen delays to threat intelligence reports in the SOC.</description>
       <category>Microsoft Defender XDR</category>
-      <category>serviceRestored</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">DZ1421829</guid>
       <pubDate>Thu, 09 Jul 2026 12:00:00 +0000</pubDate>
     </item>
@@ -230,7 +230,7 @@ https://status.cloud.microsoft/
       <link>https://www.aguidetocloud.com/service-health/#TM1423737</link>
       <description>[Microsoft Teams] Mac users may have seen distorted content when sharing their full screen in Microsoft Teams meetings or recordings.</description>
       <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1423737</guid>
       <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
     </item>
@@ -334,6 +334,24 @@ https://status.cloud.microsoft/
       <pubDate>Mon, 29 Jun 2026 15:40:37 +0000</pubDate>
     </item>
     <item>
+      <title>[Microsoft OneDrive] Users may be unable to access Microsoft OneDrive content and may notice delays or navigation errors</title>
+      <link>https://www.aguidetocloud.com/service-health/#OD1408897</link>
+      <description>[Microsoft OneDrive] Users may be unable to access OneDrive content and may notice delays or navigation errors.</description>
+      <category>Microsoft OneDrive</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">OD1408897</guid>
+      <pubDate>Mon, 29 Jun 2026 14:42:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Users may be unable to access SharePoint Online sites and may notice delays or navigation errors</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1408896</link>
+      <description>[SharePoint Online] Users may be unable to access SharePoint Online sites and may notice delays or navigation errors.</description>
+      <category>SharePoint Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">SP1408896</guid>
+      <pubDate>Mon, 29 Jun 2026 14:42:50 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft OneDrive] Some users may be unable to access or experienced degraded performance when using Microsoft OneDrive</title>
       <link>https://www.aguidetocloud.com/service-health/#OD1405074</link>
       <description>[Microsoft OneDrive] Users may have been unable to access or experienced degraded performance when using OneDrive.</description>
@@ -347,7 +365,7 @@ https://status.cloud.microsoft/
       <link>https://www.aguidetocloud.com/service-health/#DZ1410811</link>
       <description>[Microsoft Defender XDR] Users couldn't access the Microsoft Defender for Endpoint on Linux service upon rebooting after a version upgrade.</description>
       <category>Microsoft Defender XDR</category>
-      <category>serviceRestored</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">DZ1410811</guid>
       <pubDate>Fri, 26 Jun 2026 13:43:00 +0000</pubDate>
     </item>
@@ -356,7 +374,7 @@ https://status.cloud.microsoft/
       <link>https://www.aguidetocloud.com/service-health/#SP1405058</link>
       <description>[SharePoint Online] Users may have been unable to access or experience degraded performance when using SharePoint Online.</description>
       <category>SharePoint Online</category>
-      <category>serviceRestored</category>
+      <category>investigating</category>
       <guid isPermaLink="false">SP1405058</guid>
       <pubDate>Fri, 26 Jun 2026 13:30:15 +0000</pubDate>
     </item>
@@ -392,7 +410,7 @@ https://status.cloud.microsoft/
       <link>https://www.aguidetocloud.com/service-health/#TM1436888</link>
       <description>[Microsoft Teams] Admins may have been unable to enforce DLP policies in Microsoft Teams.</description>
       <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1436888</guid>
       <pubDate>Mon, 22 Jun 2026 07:00:00 +0000</pubDate>
     </item>
@@ -401,7 +419,7 @@ https://status.cloud.microsoft/
       <link>https://www.aguidetocloud.com/service-health/#TM1402778</link>
       <description>[Microsoft Teams] Users may have been unable to schedule Microsoft Teams meetings through the classic Outlook desktop client.</description>
       <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
+      <category>restoringService</category>
       <guid isPermaLink="false">TM1402778</guid>
       <pubDate>Mon, 22 Jun 2026 01:16:00 +0000</pubDate>
     </item>
@@ -440,24 +458,6 @@ https://status.cloud.microsoft/
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1394927</guid>
       <pubDate>Wed, 17 Jun 2026 06:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Admins may be unable to see the configuration search schema mappings in SharePoint Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1393483</link>
-      <description>[SharePoint Online] Admins may be unable to see the configuration search schema mappings in SharePoint Online.</description>
-      <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">SP1393483</guid>
-      <pubDate>Tue, 16 Jun 2026 16:02:13 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Some users may see multiple impact scenarios for Microsoft Copilot Researcher</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1395054</link>
-      <description>[Microsoft 365 Copilot Chat] Users may have seen multiple impact scenarios for Microsoft Copilot Researcher.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1395054</guid>
-      <pubDate>Tue, 16 Jun 2026 14:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
