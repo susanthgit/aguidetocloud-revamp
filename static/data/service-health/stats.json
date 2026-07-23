@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-23T10:33:41.795385+00:00",
-  "total_incidents_tracked": 103,
+  "generated_at": "2026-07-23T14:27:17.931956+00:00",
+  "total_incidents_tracked": 102,
   "services": [
     {
       "service": "Microsoft Copilot (Microsoft 365)",
@@ -55,6 +55,18 @@
       }
     },
     {
+      "service": "Microsoft Teams",
+      "short_name": "Teams",
+      "icon": "💬",
+      "total_incidents": 6,
+      "active_incidents": 1,
+      "avg_duration_minutes": 24913,
+      "last_incident": "2026-07-23T11:10:28.387000+00:00",
+      "classifications": {
+        "advisory": 6
+      }
+    },
+    {
       "service": "Microsoft Defender XDR",
       "short_name": "Defender",
       "icon": "🛡️",
@@ -77,18 +89,6 @@
       "classifications": {
         "advisory": 3,
         "incident": 2
-      }
-    },
-    {
-      "service": "Microsoft Teams",
-      "short_name": "Teams",
-      "icon": "💬",
-      "total_incidents": 5,
-      "active_incidents": 0,
-      "avg_duration_minutes": 24913,
-      "last_incident": "2026-07-21T04:00:00+00:00",
-      "classifications": {
-        "advisory": 5
       }
     },
     {
@@ -117,18 +117,6 @@
       }
     },
     {
-      "service": "Azure",
-      "short_name": "Azure",
-      "icon": "☁️",
-      "total_incidents": 3,
-      "active_incidents": 0,
-      "avg_duration_minutes": 0,
-      "last_incident": "2026-05-30T02:30:00+00:00",
-      "classifications": {
-        "incident": 3
-      }
-    },
-    {
       "service": "Microsoft Purview",
       "short_name": "Purview",
       "icon": "🔍",
@@ -136,18 +124,6 @@
       "active_incidents": 1,
       "avg_duration_minutes": 582,
       "last_incident": "2026-06-20T00:03:43+00:00",
-      "classifications": {
-        "advisory": 2
-      }
-    },
-    {
-      "service": "Microsoft 365 apps",
-      "short_name": "M365 Apps",
-      "icon": "💼",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 2748,
-      "last_incident": "2026-07-19T00:00:00+00:00",
       "classifications": {
         "advisory": 2
       }
@@ -174,6 +150,30 @@
       "last_incident": "2026-06-14T20:12:00+00:00",
       "classifications": {
         "advisory": 2
+      }
+    },
+    {
+      "service": "Azure",
+      "short_name": "Azure",
+      "icon": "☁️",
+      "total_incidents": 2,
+      "active_incidents": 0,
+      "avg_duration_minutes": 0,
+      "last_incident": "2026-05-30T02:30:00+00:00",
+      "classifications": {
+        "incident": 2
+      }
+    },
+    {
+      "service": "Microsoft 365 apps",
+      "short_name": "M365 Apps",
+      "icon": "💼",
+      "total_incidents": 1,
+      "active_incidents": 0,
+      "avg_duration_minutes": 2706,
+      "last_incident": "2026-07-19T00:00:00+00:00",
+      "classifications": {
+        "advisory": 1
       }
     },
     {
@@ -204,7 +204,7 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 29,
+      "incident_count": 30,
       "services_affected": 10
     },
     {
@@ -214,13 +214,8 @@
     },
     {
       "month": "2026-05",
-      "incident_count": 31,
-      "services_affected": 12
-    },
-    {
-      "month": "2026-04",
-      "incident_count": 1,
-      "services_affected": 1
+      "incident_count": 30,
+      "services_affected": 11
     }
   ]
 }

@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Jul 2026 10:33:42 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 14:27:18 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Some users may not receive notifications in the Microsoft Teams desktop client</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1437339</link>
+      <description>[Microsoft Teams] Users may not receive notifications in the Microsoft Teams desktop client.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1437339</guid>
+      <pubDate>Thu, 23 Jul 2026 11:10:28 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users may see an error when sending messages from BizChat and the BizChat side pane in Microsoft 365 apps.</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1436954</link>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1396117</guid>
       <pubDate>Mon, 15 Jun 2026 18:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Viva] Users may see stale data in Copilot dashboards and analyst workbench reports in Microsoft Viva Insights</title>
-      <link>https://www.aguidetocloud.com/service-health/#MV1392264</link>
-      <description>[Microsoft Viva] Users may have seen stale data in Copilot dashboards and analyst workbench reports in Microsoft Viva Insights.</description>
-      <category>Microsoft Viva</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MV1392264</guid>
-      <pubDate>Sun, 14 Jun 2026 20:12:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
