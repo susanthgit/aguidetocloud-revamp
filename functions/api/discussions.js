@@ -34,8 +34,21 @@ export async function onRequestGet(context) {
     return new Response(JSON.stringify({ error: 'Not configured' }), { status: 500 });
   }
 
+  // Curated on-site pins — surfaced with the 📌 badge at the top of the Ask
+  // section, independent of GitHub's own pinned discussions. Edit this list to
+  // pin/unpin (by discussion number); order here is the display order.
+  const FEATURED = [26];
+  const featuredQuery = FEATURED.map((n, i) => `
+      f${i}: discussion(number: ${n}) {
+        title url number createdAt
+        category { name }
+        body
+        labels(first: 5) { nodes { name color } }
+        comments(first: 5) { totalCount nodes { body createdAt author { login } } }
+      }`).join('');
+
   const query = `{
-    repository(owner: "susanthgit", name: "aguidetocloud-feedback") {
+    repository(owner: "susanthgit", name: "aguidetocloud-feedback") {${featuredQuery}
       discussions(first: 15, orderBy: {field: CREATED_AT, direction: DESC}) {
         totalCount
         nodes {
@@ -70,9 +83,18 @@ export async function onRequestGet(context) {
     const result = await graphql(pat, query);
     const discussions = result.data?.repository?.discussions?.nodes || [];
     const totalCount = result.data?.repository?.discussions?.totalCount || 0;
-    const pinned = (result.data?.repository?.pinnedDiscussions?.nodes || [])
+    const repo = result.data?.repository || {};
+    const ghPinned = (repo.pinnedDiscussions?.nodes || [])
       .map(n => n.discussion)
       .filter(Boolean);
+    // Curated featured first, then GitHub-pinned — deduped by number.
+    const featured = FEATURED.map((_, i) => repo['f' + i]).filter(Boolean);
+    const seen = new Set();
+    const pinned = [...featured, ...ghPinned].filter(d => {
+      if (!d || seen.has(d.number)) return false;
+      seen.add(d.number);
+      return true;
+    });
 
     return new Response(JSON.stringify({ discussions, totalCount, pinned }), {
       status: 200,

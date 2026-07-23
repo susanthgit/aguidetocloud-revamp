@@ -883,6 +883,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.feedback-acc-num {
+  color: var(--fb-accent);
+  font-weight: 700;
+  margin-right: 0.15rem;
+  font-variant-numeric: tabular-nums;
+}
 .feedback-acc-meta {
   font-size: 0.72rem;
   color: var(--text-secondary);

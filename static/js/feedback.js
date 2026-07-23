@@ -331,7 +331,7 @@
         '<span class="feedback-acc-arrow">▸</span>' +
         '<span class="feedback-acc-emoji">' + emoji + '</span>' +
         '<div class="feedback-acc-info">' +
-          '<div class="feedback-acc-title">' + (isPinned ? '📌 ' : '') + esc(title) + '</div>' +
+          '<div class="feedback-acc-title">' + (isPinned ? '📌 ' : '') + '<span class="feedback-acc-num">#' + d.number + '</span> ' + esc(title) + '</div>' +
           '<div class="feedback-acc-meta">' + esc(catLabel) + ' · ' + dateStr +
             (hasReplies ? ' · ' + d.comments.totalCount + (d.comments.totalCount === 1 ? ' reply' : ' replies') : '') +
           '</div>' +
