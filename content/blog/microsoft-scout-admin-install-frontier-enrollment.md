@@ -211,6 +211,22 @@ A lot of people hitting this are a single person on their own tenant — they en
 - Walk this page top to bottom, in order. The most common miss for solo admins is **#2** (your own UPN not in the Specific-users list) and **#4** (Intune policy configured but never synced to the device).
 - If the **Copilot Frontier** setting isn't in your admin centre at all, that's **#6** — your tenant isn't Frontier-enrolled, and that's the first thing to fix.
 
+### "GitHub sign-in could not be completed"
+
+Different failure, different fix. This one appears *after* your Microsoft 365 sign-in has already succeeded — Scout then asks you to sign in to GitHub (it uses your GitHub account for token billing) and comes back with:
+
+> **GitHub sign-in could not be completed.** You signed in as *(your username)*, but Scout could not verify your GitHub sign-in state. Please retry GitHub sign-in.
+
+So the org gates are green — the block is on the GitHub side. The tell-tale sign is that `gh auth login` in a terminal works fine, yet Scout still won't verify. That almost always means Scout is reading a *different* GitHub identity, or an *un-authorised* token, rather than the seat you expect. Work through these in order:
+
+1. **Same account everywhere.** The GitHub account Scout signs into has to be the exact one that holds your Copilot seat *and* the one your terminal `gh` uses. Signed into two different GitHub accounts (personal vs work)? That mismatch is the single most common cause.
+2. **Authorise the token for SSO.** If your GitHub organisation enforces SAML single sign-on, a login can *succeed* while the token stays un-authorised for that org — which surfaces as "couldn't verify." Run `gh auth login` again, then `gh auth refresh -h github.com`, and **authorise your org** when prompted.
+3. **Reset the GitHub CLI (the app's own advice).** In any terminal: `gh auth logout`, then `gh auth login` — choose **GitHub.com → HTTPS → login with a browser** — then retry sign-in in Scout.
+4. **Clear stale Windows credentials.** Open **Credential Manager → Windows Credentials** and remove any `github.com` / `git:https://github.com` entries pointing at an old account, then re-run step 3. Cached credentials from a previous account silently override the one you just signed in with.
+5. **Confirm the Copilot seat is actually assigned.** A GitHub Copilot **Business** seat has to be *assigned to your specific GitHub login* in the organisation's Copilot settings — not merely available in the org. An unassigned or pending seat verifies as "not licensed."
+
+If all five are clean and it *still* fails, it's server-side — raise it on the [Microsoft Scout resources issue tracker](https://github.com/microsoft/scout-resources/issues) (or the Frontier feedback channel), since that's past anything the admin or client side can fix.
+
 ### Still stuck after all three gates are green?
 
 If Gate 1 and Gate 2.1, 2.2, and 2.3 are all genuinely complete, you've waited out the propagation window, and sign-in *still* fails — that's the point to raise it through the **Frontier feedback channel**. You've done everything that lives on the admin and client side; anything past that is server-side enablement that Microsoft needs to look at.
