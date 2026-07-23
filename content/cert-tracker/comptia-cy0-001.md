@@ -1,6 +1,6 @@
 ---
 title: "CY0-001: CompTIA SecAI+ — Study Guide & Practice Exam"
-description: "Free CY0-001 study guide and 200-question practice exam. CompTIA SecAI+ — exam objectives, study resources, and exam simulation."
+description: "Free CY0-001 study guide and 250-question practice exam. CompTIA SecAI+ — exam objectives, study resources, and exam simulation."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CY0-001"
@@ -16,11 +16,13 @@ guided_slug: "comptia-cy0-001"
 
 > AI security — securing AI systems and using AI for cybersecurity
 
-200 original practice questions for the CompTIA SecAI+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
+250 original practice questions for the CompTIA SecAI+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
 
 ## Who Should Take This Exam?
 
-The CY0-001 is designed for **IT professionals with some hands-on experience**. 6-12 months of hands-on experience recommended.
+The CY0-001 is designed for **cybersecurity professionals who need to secure AI systems, use AI in security operations, and manage AI risk**.
+
+**Recommended experience:** 3-4 years in IT and 2+ years of hands-on cybersecurity. CompTIA recommends Security+, CySA+, PenTest+, or equivalent knowledge, but there is no hard prerequisite.
 
 **Typical study time:** 4-8 weeks of focused study
 
@@ -30,13 +32,14 @@ The CY0-001 is designed for **IT professionals with some hands-on experience**. 
 |--------|-------|
 | **Exam Code** | CY0-001 |
 | **Title** | CompTIA SecAI+ |
-| **Duration** | 165 minutes |
-| **Questions** | Up to 85 |
-| **Pass Score** | Pass / Fail |
-| **Cost** | $404 USD |
+| **Duration** | 60 minutes |
+| **Questions** | Up to 60 |
+| **Pass Score** | 600 / 900 |
+| **Cost** | $298 USD |
 | **Provider** | Pearson VUE |
 | **Validity** | 3 years (renewable via CE) |
-| **Official Page** | [View on CompTIA →](https://www.comptia.org/certifications/securityx) |
+| **Question Types** | Multiple choice, Multiple response, Performance-based |
+| **Official Page** | [View on CompTIA →](https://www.comptia.org/en/certifications/secai/) |
 
 ## Exam Domains & Weights
 
@@ -44,17 +47,17 @@ The CY0-001 exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Basic AI Concepts Related to Cybersecurity | 17% | 34 |
-| Securing AI Systems | 40% | 80 |
-| AI-Assisted Security | 24% | 48 |
-| AI Governance, Risk, and Compliance | 19% | 38 |
-| **Total** | **100%** | **200** |
+| Basic AI Concepts Related to Cybersecurity | 17% | 47 |
+| Securing AI Systems | 40% | 93 |
+| AI-Assisted Security | 24% | 60 |
+| AI Governance, Risk, and Compliance | 19% | 50 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Securing AI Systems** carries the most weight (40%) — start there. **Basic AI Concepts Related to Cybersecurity** has the least (17%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CY0-001 with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CY0-001 with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer
@@ -83,4 +86,4 @@ If you're studying for the CY0-001, you might also be interested in these CompTI
 2. **Use our practice exam** — try the 20 free questions first to gauge your readiness
 3. **Review explanations** — don't just check if you got it right; read why each answer is correct
 4. **Simulate exam conditions** — use the timed exam mode to practice under pressure
-5. **Check the official page** — [official exam details](https://www.comptia.org/certifications/securityx) always have the latest objectives
+5. **Check the official page** — [official exam details](https://www.comptia.org/en/certifications/secai/) always have the latest objectives

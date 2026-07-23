@@ -1283,10 +1283,10 @@ domains = 4
 order = 999
 featured = true
 price_practice = 9
-exam_url = "https://www.comptia.org/certifications/securityx"
-exam_cost = "$404 USD"
-exam_duration = 165
-exam_passing_score = "Pass / Fail"
+exam_url = "https://www.comptia.org/en/certifications/secai/"
+exam_cost = "$298 USD"
+exam_duration = 60
+exam_passing_score = "600 / 900"
 guided_url = "/guided/comptia-cy0-001/"
 
 [[cert]]
@@ -4425,14 +4425,15 @@ domains = 4
 order = 999
 featured = true
 price_practice = 9
-exam_url = "https://www.comptia.org/certifications/securityx"
-exam_cost = "$404 USD"
-exam_duration = 165
-exam_passing_score = "Pass / Fail"
-exam_questions_real = "Up to 85"
+exam_url = "https://www.comptia.org/en/certifications/secai/"
+exam_cost = "$298 USD"
+exam_duration = 60
+exam_passing_score = "600 / 900"
+exam_questions_real = "Up to 60"
 exam_provider = "Pearson VUE"
 exam_validity = "3 years (renewable via CE)"
 exam_prerequisites = "None"
+exam_question_types = ["Multiple choice", "Multiple response", "Performance-based"]
 guided_url = "/guided/comptia-cy0-001/"
 practice_url = "/guided/comptia-cy0-001/practice/"
 
