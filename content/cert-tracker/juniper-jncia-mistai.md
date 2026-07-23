@@ -22,7 +22,7 @@ faq:
   - question: "Do I need Juniper Mist experience or a prerequisite cert?"
     answer: "No prerequisite certification is required. Juniper recommends introductory wireless-networking knowledge as background only. Hands-on time in a Mist dashboard helps a lot — even a trial or lab org lets you see Organizations, Sites, claiming, SLEs, and Marvis Actions in the interface, which makes the recognition-style questions much easier."
   - question: "Where does JNCIA-MistAI lead for my career?"
-    answer: "It is the entry point of the Juniper Mist AI track: Associate (JNCIA-MistAI) then the Specialist exams JNCIS-MistAI-Wireless (JN0-451) and JNCIS-MistAI-Wired (JN0-452), and finally Professional (JNCIP-MistAI, JN0-653). It is a strong fit for network engineers moving into AI-driven, cloud-managed campus networking (Wi-Fi, switching, SD-WAN, and cloud NAC), and it pairs well with a broader wireless or cloud-networking background."
+    answer: "It is the entry point of the Juniper Mist AI track: Associate (JNCIA-MistAI), then either JNCIS-MistAI-Wireless (JN0-452) or JNCIS-MistAI-Wired (JN0-460), followed by Professional (JNCIP-MistAI, JN0-750). It is a strong fit for network engineers moving into AI-driven, cloud-managed campus networking (Wi-Fi, switching, SD-WAN, and cloud NAC), and it pairs well with a broader wireless or cloud-networking background."
 ---
 ## About the JNCIA-MistAI Exam
 
@@ -81,7 +81,7 @@ Prepare for the JNCIA-MistAI with our **250-question practice exam** covering al
 
 ## Juniper Certification Path
 
-Juniper follows: Associate (JNCIA) → Specialist (JNCIS) → Professional (JNCIP) → Expert (JNCIE). On the Mist AI track, JNCIA-MistAI (JN0-253) is the associate entry point, followed by JNCIS-MistAI-Wireless (JN0-451) and JNCIS-MistAI-Wired (JN0-452), then JNCIP-MistAI (JN0-653).
+Juniper follows: Associate (JNCIA) → Specialist (JNCIS) → Professional (JNCIP) → Expert (JNCIE). On the Mist AI track, JNCIA-MistAI (JN0-253) is the associate entry point, followed by either JNCIS-MistAI-Wireless (JN0-452) or JNCIS-MistAI-Wired (JN0-460), then JNCIP-MistAI (JN0-750).
 
 ## Related Juniper Certifications
 
