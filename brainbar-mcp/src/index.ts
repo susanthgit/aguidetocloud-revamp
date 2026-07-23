@@ -225,7 +225,7 @@ async function tool_list_kinds(kind?: string): Promise<{ kind: string; count: nu
 //   1. Search the index for top-K relevant entries (using existing 6-tier ranker)
 //   2. Build a system prompt that REQUIRES grounded citations
 //   3. Pack the entries as user-message context
-//   4. Call Cloudflare Workers AI (free tier, llama-3.1-8b-instruct)
+//   4. Call Cloudflare Workers AI (free tier, llama-3.1-8b-instruct-fast)
 //   5. Return answer + the slugs that were given as context
 //
 // Hallucination guard: the system prompt + the constrained context window
@@ -334,7 +334,7 @@ async function tool_ask(
       answer: "I don't have a cmd entry covering that — try `search <term>` or browse `all`.",
       cited_slugs: [],
       entries_used: [],
-      model: '@cf/meta/llama-3.1-8b-instruct',
+      model: '@cf/meta/llama-3.1-8b-instruct-fast',
     };
   }
 
@@ -363,7 +363,7 @@ async function tool_ask(
 
   const userPrompt = `${allowlistLine}\n\nQ: ${question}\n\nE:\n${contextBlocks}`;
 
-  const model = '@cf/meta/llama-3.1-8b-instruct';
+  const model = '@cf/meta/llama-3.1-8b-instruct-fast';
   let answer = '';
   try {
     const aiResp = await env.AI.run(model, {
@@ -495,7 +495,7 @@ const TOOLS = [
   {
     name: 'cmd_ask',
     description:
-      'Natural-language question over the cmd corpus. Use this when an agent needs a synthesised answer (e.g., "what\'s the difference between MDE Plan 1 and Plan 2?", "what licenses include Conditional Access?") instead of a single-entry lookup. The answer is grounded in cmd entries — it cites every entry it uses by slug in [square-brackets]. If cmd doesn\'t cover the question, returns a "no entry covering that" response. Powered by Cloudflare Workers AI (llama-3.1-8b-instruct).',
+      'Natural-language question over the cmd corpus. Use this when an agent needs a synthesised answer (e.g., "what\'s the difference between MDE Plan 1 and Plan 2?", "what licenses include Conditional Access?") instead of a single-entry lookup. The answer is grounded in cmd entries — it cites every entry it uses by slug in [square-brackets]. If cmd doesn\'t cover the question, returns a "no entry covering that" response. Powered by Cloudflare Workers AI (llama-3.1-8b-instruct-fast).',
     inputSchema: {
       type: 'object',
       properties: {
