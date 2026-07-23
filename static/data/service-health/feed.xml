@@ -5,12 +5,12 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Jul 2026 17:43:25 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 19:41:47 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft 365 suite] Issues accessing or using Microsoft 365 services in the North America region. </title>
+      <title>[Microsoft 365 suite] Issues accessing or using Microsoft 365 services routed through the North America region. </title>
       <link>https://www.aguidetocloud.com/service-health/#MO1437424</link>
-      <description>[Microsoft 365 suite] Users may be experiencing issues accessing or using Microsoft 365 services in the North America region.</description>
+      <description>[Microsoft 365 suite] Users may experience issues accessing or using Microsoft 365 services routed through the North America region.</description>
       <category>Microsoft 365 suite</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1437424</guid>
