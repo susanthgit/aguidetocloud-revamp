@@ -11144,3 +11144,45 @@ exam_prerequisites = "Either JNCIS-MistAI-Wireless or JNCIS-MistAI-Wired"
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/juniper-jncip-mistai/"
 practice_url = "/guided/juniper-jncip-mistai/practice/"
+
+[[cert]]
+slug = "oci-enterprise-ai-professional"
+vendor = "oracle"
+code = "OCI-ENTERPRISE-AI-PROFESSIONAL"
+name = "OCI Enterprise AI Professional"
+tagline = "Master the Oracle Cloud Infrastructure Enterprise AI Professional exam (1Z0-1158-26) - large language models, agentic AI, Enterprise AI Models, OCI Responses API agents and tools, hosted agent deployments, governance, guardrails, observability, and cost optimization."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 845
+featured = false
+price_practice = 9
+
+[cert_map."oci-enterprise-ai-professional"]
+vendor = "oracle"
+code = "OCI-ENTERPRISE-AI-PROFESSIONAL"
+name = "OCI Enterprise AI Professional"
+tagline = "Master the Oracle Cloud Infrastructure Enterprise AI Professional exam (1Z0-1158-26) - large language models, agentic AI, Enterprise AI Models, OCI Responses API agents and tools, hosted agent deployments, governance, guardrails, observability, and cost optimization."
+exam_category = "Oracle"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 845
+featured = false
+price_practice = 9
+exam_url = "https://education.oracle.com/oracle-cloud-infrastructure-enterprise-ai-professional/pexam_1Z0-1158-26"
+exam_cost = "$245 USD (verify at Oracle registration)"
+exam_duration = 90
+exam_passing_score = "68%"
+exam_questions_real = "50"
+exam_provider = "Oracle University / Oracle MyLearn (online certification exam)"
+exam_validity = "Follows the Oracle Cloud Recertification policy"
+exam_prerequisites = "None required (hands-on OCI Generative AI and agent-development experience recommended)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/oci-enterprise-ai-professional/"
+practice_url = "/guided/oci-enterprise-ai-professional/practice/"
