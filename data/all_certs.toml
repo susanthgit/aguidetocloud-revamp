@@ -11186,3 +11186,45 @@ exam_prerequisites = "None required (hands-on OCI Generative AI and agent-develo
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/oci-enterprise-ai-professional/"
 practice_url = "/guided/oci-enterprise-ai-professional/practice/"
+
+[[cert]]
+slug = "mb-310"
+vendor = "microsoft"
+code = "MB-310"
+name = "Dynamics 365 Finance Functional Consultant Associate"
+tagline = "Configure Dynamics 365 Finance - ledgers, journals, cash and bank, accounts receivable and payable, budgeting, subscription billing, and fixed assets."
+exam_category = "Dynamics 365"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 854
+featured = false
+price_practice = 9
+
+[cert_map."mb-310"]
+vendor = "microsoft"
+code = "MB-310"
+name = "Dynamics 365 Finance Functional Consultant Associate"
+tagline = "Configure Dynamics 365 Finance - ledgers, journals, cash and bank, accounts receivable and payable, budgeting, subscription billing, and fixed assets."
+exam_category = "Dynamics 365"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 854
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/d365-functional-consultant-financials/"
+exam_cost = "$165 USD"
+exam_duration = 100
+exam_passing_score = "700 / 1000"
+exam_questions_real = "40-60"
+exam_provider = "Pearson VUE"
+exam_validity = "Renew annually (free via Microsoft Learn)"
+exam_prerequisites = "None"
+exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop", "Case study"]
+guided_url = "/guided/mb-310/"
+practice_url = "/guided/mb-310/practice/"
