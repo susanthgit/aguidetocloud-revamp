@@ -3,7 +3,7 @@ title: "Microsoft Copilot Cowork — Complete Admin Playbook"
 list_title: "Cowork: Admin enablement and governance"
 description: "Microsoft Copilot Cowork admin guide: turning it on, governance controls, oversharing protection, a pilot rollout playbook, and troubleshooting."
 date: 2026-06-15
-lastmod: 2026-07-13
+lastmod: 2026-07-24
 draft: false
 card_tag: "Cowork"
 tag_class: "ai"
@@ -182,6 +182,7 @@ Approve it in the right place:
 2. In the **Top actions** section, select **View requests**.
 3. The **Credit requests** page lists each requester with their **licence status** and **current policy** — anyone blocked shows as **"Not in a policy."**
 4. **Add those users to a spending policy** to grant access (or create a new policy scoped to them). If you haven't turned on usage-based billing at all yet, run the [enablement steps above](#how-to-enable-cowork-at-ga) first — activating a spending policy is what actually switches Cowork on.
+5. **Then give it time to land.** Adding someone to a policy isn't always instant. Like a lot of Microsoft 365 changes, it can take anywhere from a minute to around **30 minutes** to propagate — so if a user still sees the *Request access* nudge right after you add them (even after a browser refresh), that's usually the change catching up, not a broken setup. Wait a short while and refresh before you go hunting for a bug.
 
 So the fix for "there's nothing to add on the licensing page" is simple: you're on the wrong page. The access your users need is a **spending policy** in Cost Management, not another licence. Full reference: [Managing usage-based billing and Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits) on Microsoft Learn.
 
