@@ -5,12 +5,21 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 24 Jul 2026 21:18:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 23:13:56 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft 365 suite] Some admins may see inaccurate status information in the service health section in the Microsoft admin center</title>
+      <title>[Microsoft Purview] Admins may not receive alerts for Microsoft Purview Communication Compliance policies that contain conditions</title>
+      <link>https://www.aguidetocloud.com/service-health/#MP1438577</link>
+      <description>[Microsoft Purview] Admins may not receive alerts for Microsoft Purview Communication Compliance policies that contain conditions. </description>
+      <category>Microsoft Purview</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MP1438577</guid>
+      <pubDate>Fri, 24 Jul 2026 21:56:40 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Some admins may see inaccurate status information in the service health section in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1438482</link>
-      <description>[Microsoft 365 suite] Admins may see inaccurate status information in the service health section in the Microsoft admin center.</description>
+      <description>[Microsoft 365 suite] Admins may see inaccurate status information in the service health section in the Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1438482</guid>
@@ -136,15 +145,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <pubDate>Fri, 17 Jul 2026 15:50:49 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Teams] Some users may not receive notifications in the Microsoft Teams desktop client</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1437339</link>
-      <description>[Microsoft Teams] Users may have not received notifications in the Microsoft Teams desktop client.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1437339</guid>
-      <pubDate>Fri, 17 Jul 2026 06:41:00 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some admins can't access Copilot Agent report data in the Microsoft 365 admin center from July 14, 2026</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1430786</link>
       <description>[Microsoft Copilot (Microsoft 365)] Admins couldn't access Copilot Agent report data in the Microsoft 365 admin center from July 14, 2026.</description>
@@ -161,6 +161,15 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1429838</guid>
       <pubDate>Thu, 16 Jul 2026 16:08:52 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users may not receive notifications in the Microsoft Teams desktop client</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1437339</link>
+      <description>[Microsoft Teams] Users may have not received notifications in the Microsoft Teams desktop client.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1437339</guid>
+      <pubDate>Wed, 15 Jul 2026 23:34:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users in North America may be unable to access Microsoft 365 Copilot in Microsoft Teams</title>
@@ -449,15 +458,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>investigating</category>
       <guid isPermaLink="false">MP1397605</guid>
       <pubDate>Sat, 20 Jun 2026 00:03:43 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some admins may see incorrect classifications of Cowork Tasks in Microsoft 365 Copilot Cowork usage reports </title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1428775</link>
-      <description>[Microsoft 365 suite] Admins may have seen incorrect classifications of Cowork Tasks in Copilot Cowork usage reports.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1428775</guid>
-      <pubDate>Wed, 17 Jun 2026 22:07:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

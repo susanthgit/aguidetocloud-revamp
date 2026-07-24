@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T21:18:29.703513+00:00",
+  "generated_at": "2026-07-24T23:13:56.097949+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -45,13 +45,13 @@
       "service": "Microsoft 365 Copilot Chat",
       "short_name": "Copilot Chat",
       "icon": "💭",
-      "total_incidents": 10,
+      "total_incidents": 9,
       "active_incidents": 0,
-      "avg_duration_minutes": 4380,
+      "avg_duration_minutes": 4774,
       "last_incident": "2026-07-23T03:19:34.423000+00:00",
       "classifications": {
         "advisory": 7,
-        "incident": 3
+        "incident": 2
       }
     },
     {
@@ -60,7 +60,7 @@
       "icon": "💬",
       "total_incidents": 7,
       "active_incidents": 0,
-      "avg_duration_minutes": 19168,
+      "avg_duration_minutes": 19435,
       "last_incident": "2026-07-24T00:54:54+00:00",
       "classifications": {
         "incident": 1,
@@ -118,6 +118,18 @@
       }
     },
     {
+      "service": "Microsoft Purview",
+      "short_name": "Purview",
+      "icon": "🔍",
+      "total_incidents": 3,
+      "active_incidents": 2,
+      "avg_duration_minutes": 582,
+      "last_incident": "2026-07-24T21:56:40.497000+00:00",
+      "classifications": {
+        "advisory": 3
+      }
+    },
+    {
       "service": "Azure",
       "short_name": "Azure",
       "icon": "☁️",
@@ -127,18 +139,6 @@
       "last_incident": "2026-07-23T19:41:00+00:00",
       "classifications": {
         "incident": 3
-      }
-    },
-    {
-      "service": "Microsoft Purview",
-      "short_name": "Purview",
-      "icon": "🔍",
-      "total_incidents": 2,
-      "active_incidents": 1,
-      "avg_duration_minutes": 582,
-      "last_incident": "2026-06-20T00:03:43+00:00",
-      "classifications": {
-        "advisory": 2
       }
     },
     {
@@ -205,8 +205,8 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 36,
-      "services_affected": 11
+      "incident_count": 37,
+      "services_affected": 12
     },
     {
       "month": "2026-06",
@@ -215,7 +215,7 @@
     },
     {
       "month": "2026-05",
-      "incident_count": 25,
+      "incident_count": 24,
       "services_affected": 10
     }
   ]
