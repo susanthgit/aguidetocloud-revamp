@@ -548,7 +548,9 @@
     });
   }
 
+  {{ if os.FileExists (printf "static/data/cert-tracker/exams/%s.json" (lower .Params.exam_code)) }}
   // ── Related exams ──
+  // Build-time file gate prevents handled-but-visible 404s on exams without detail JSON.
   fetch("/data/cert-tracker/exams/" + code.toLowerCase() + ".json")
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(d){
@@ -565,6 +567,7 @@
       document.getElementById("cert-related").style.display = "block";
     })
     .catch(function(){});
+  {{ end }}
 
   // ── Left nav: scroll active cert into view ──
   var nav = document.querySelector('.zt-sidebar--cert .zt-cert-nav');
