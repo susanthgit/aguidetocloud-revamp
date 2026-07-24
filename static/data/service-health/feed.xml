@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 24 Jul 2026 15:42:08 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 17:47:33 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Admins may be unable to access the Microsoft 365 admin center</title>
@@ -212,7 +212,7 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <link>https://www.aguidetocloud.com/service-health/#CP1425545</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to open or use custom Copilot agents and received an error.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CP1425545</guid>
       <pubDate>Fri, 10 Jul 2026 17:48:00 +0000</pubDate>
     </item>
