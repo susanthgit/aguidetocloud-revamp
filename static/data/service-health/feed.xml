@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Jul 2026 23:09:08 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 03:38:33 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Admins may be unable to access the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1437790</link>
+      <description>[Microsoft 365 suite] Admins may have been unable to access the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1437790</guid>
+      <pubDate>Fri, 24 Jul 2026 01:18:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users may be unable to join or create Microsoft Teams meetings or calls</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1437780</link>
+      <description>[Microsoft Teams] Users may be unable to join or create Microsoft Teams meetings or calls.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1437780</guid>
+      <pubDate>Fri, 24 Jul 2026 00:54:54 +0000</pubDate>
+    </item>
     <item>
       <title>[Azure] Azure incident affecting West US</title>
       <link>https://www.aguidetocloud.com/service-health/#AZ-LYXT-C1Z</link>
@@ -28,15 +46,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <pubDate>Thu, 23 Jul 2026 14:44:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Teams] Some users may not receive notifications in the Microsoft Teams desktop client</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1437339</link>
-      <description>[Microsoft Teams] Users may not receive notifications in the Microsoft Teams desktop client.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1437339</guid>
-      <pubDate>Thu, 23 Jul 2026 11:10:28 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft 365 Copilot Chat] Some users may see an error when sending messages from BizChat and the BizChat side pane in Microsoft 365 apps.</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1436954</link>
       <description>[Microsoft 365 Copilot Chat] Some users may have seen an error when sending messages from BizChat and the BizChat side pane in Microsoft 365 apps.</description>
@@ -53,15 +62,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1435242</guid>
       <pubDate>Tue, 21 Jul 2026 04:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to drag and drop files to add references into Microsoft Copilot Notebooks</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1434578</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to drag and drop files to add references into Copilot Notebooks.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1434578</guid>
-      <pubDate>Mon, 20 Jul 2026 21:57:13 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Admins may be unable to track open email counts in the Microsoft 365 admin center organizational messages</title>
@@ -113,9 +113,18 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <link>https://www.aguidetocloud.com/service-health/#IT1431093</link>
       <description>[Microsoft Intune] Users may have been unable to export Microsoft Intune reports.</description>
       <category>Microsoft Intune</category>
-      <category>investigating</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">IT1431093</guid>
       <pubDate>Fri, 17 Jul 2026 15:50:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users may not receive notifications in the Microsoft Teams desktop client</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1437339</link>
+      <description>[Microsoft Teams] Users may have not received notifications in the Microsoft Teams desktop client.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1437339</guid>
+      <pubDate>Fri, 17 Jul 2026 06:41:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some admins can't access Copilot Agent report data in the Microsoft 365 admin center from July 14, 2026</title>
@@ -158,7 +167,7 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <link>https://www.aguidetocloud.com/service-health/#IT1431577</link>
       <description>[Microsoft Intune] Users' newly enrolled Windows devices were marked as non-compliant in Microsoft Intune.</description>
       <category>Microsoft Intune</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">IT1431577</guid>
       <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
     </item>
@@ -185,7 +194,7 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <link>https://www.aguidetocloud.com/service-health/#OD1424850</link>
       <description>[Microsoft OneDrive] Users may have been unable to access OneDrive content and may have noticed delays or navigation errors.</description>
       <category>Microsoft OneDrive</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">OD1424850</guid>
       <pubDate>Sun, 12 Jul 2026 10:20:00 +0000</pubDate>
     </item>
@@ -208,11 +217,20 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <pubDate>Fri, 10 Jul 2026 17:48:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to drag and drop files to add references into Microsoft Copilot Notebooks</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1434578</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to drag and drop files to add references into Copilot Notebooks.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1434578</guid>
+      <pubDate>Thu, 09 Jul 2026 17:54:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Defender XDR] Admins may see delays to threat intelligence reports in the Security Operation Center (SOC)</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1421829</link>
       <description>[Microsoft Defender XDR] Admins may have seen delays to threat intelligence reports in the SOC.</description>
       <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1421829</guid>
       <pubDate>Thu, 09 Jul 2026 12:00:00 +0000</pubDate>
     </item>
@@ -230,7 +248,7 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <link>https://www.aguidetocloud.com/service-health/#TM1423737</link>
       <description>[Microsoft Teams] Mac users may have seen distorted content when sharing their full screen in Microsoft Teams meetings or recordings.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1423737</guid>
       <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
     </item>
@@ -334,24 +352,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <pubDate>Mon, 29 Jun 2026 15:40:37 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft OneDrive] Users may be unable to access Microsoft OneDrive content and may notice delays or navigation errors</title>
-      <link>https://www.aguidetocloud.com/service-health/#OD1408897</link>
-      <description>[Microsoft OneDrive] Users may be unable to access OneDrive content and may notice delays or navigation errors.</description>
-      <category>Microsoft OneDrive</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">OD1408897</guid>
-      <pubDate>Mon, 29 Jun 2026 14:42:55 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Users may be unable to access SharePoint Online sites and may notice delays or navigation errors</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1408896</link>
-      <description>[SharePoint Online] Users may be unable to access SharePoint Online sites and may notice delays or navigation errors.</description>
-      <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">SP1408896</guid>
-      <pubDate>Mon, 29 Jun 2026 14:42:50 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft OneDrive] Some users may be unable to access or experienced degraded performance when using Microsoft OneDrive</title>
       <link>https://www.aguidetocloud.com/service-health/#OD1405074</link>
       <description>[Microsoft OneDrive] Users may have been unable to access or experienced degraded performance when using OneDrive.</description>
@@ -365,7 +365,7 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <link>https://www.aguidetocloud.com/service-health/#DZ1410811</link>
       <description>[Microsoft Defender XDR] Users couldn't access the Microsoft Defender for Endpoint on Linux service upon rebooting after a version upgrade.</description>
       <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1410811</guid>
       <pubDate>Fri, 26 Jun 2026 13:43:00 +0000</pubDate>
     </item>
@@ -374,7 +374,7 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <link>https://www.aguidetocloud.com/service-health/#SP1405058</link>
       <description>[SharePoint Online] Users may have been unable to access or experience degraded performance when using SharePoint Online.</description>
       <category>SharePoint Online</category>
-      <category>investigating</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">SP1405058</guid>
       <pubDate>Fri, 26 Jun 2026 13:30:15 +0000</pubDate>
     </item>
@@ -410,7 +410,7 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <link>https://www.aguidetocloud.com/service-health/#TM1436888</link>
       <description>[Microsoft Teams] Admins may have been unable to enforce DLP policies in Microsoft Teams.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1436888</guid>
       <pubDate>Mon, 22 Jun 2026 07:00:00 +0000</pubDate>
     </item>
@@ -419,7 +419,7 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <link>https://www.aguidetocloud.com/service-health/#TM1402778</link>
       <description>[Microsoft Teams] Users may have been unable to schedule Microsoft Teams meetings through the classic Outlook desktop client.</description>
       <category>Microsoft Teams</category>
-      <category>restoringService</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1402778</guid>
       <pubDate>Mon, 22 Jun 2026 01:16:00 +0000</pubDate>
     </item>
