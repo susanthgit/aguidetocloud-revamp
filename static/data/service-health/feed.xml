@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 25 Jul 2026 17:11:57 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 19:31:09 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Purview] Admins may not receive alerts for Microsoft Purview Communication Compliance policies that contain conditions</title>
@@ -24,15 +24,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1438482</guid>
       <pubDate>Fri, 24 Jul 2026 20:13:54 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Intune] Intune admins may intermittently be unable to complete actions that require Multi Admin Approval</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1438439</link>
-      <description>[Microsoft Intune] Intune admins may intermittently be unable to complete actions that require Multi Admin Approval.</description>
-      <category>Microsoft Intune</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">IT1438439</guid>
-      <pubDate>Fri, 24 Jul 2026 18:17:20 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Admins may be unable to access the Microsoft 365 admin center</title>
@@ -458,6 +449,15 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>investigating</category>
       <guid isPermaLink="false">MP1397605</guid>
       <pubDate>Sat, 20 Jun 2026 00:03:43 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Some admins may see incorrect classifications of Cowork Tasks in Microsoft 365 Copilot Cowork usage reports </title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1428775</link>
+      <description>[Microsoft 365 suite] Admins may have seen incorrect classifications of Cowork Tasks in Copilot Cowork usage reports.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1428775</guid>
+      <pubDate>Wed, 17 Jun 2026 22:07:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
