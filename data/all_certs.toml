@@ -11312,3 +11312,45 @@ exam_prerequisites = "None"
 exam_question_types = ["Multiple choice", "Multiple response", "Case study", "Interactive items may appear"]
 guided_url = "/guided/mb-230/"
 practice_url = "/guided/mb-230/practice/"
+
+[[cert]]
+slug = "nutanix-ncp-ns"
+vendor = "nutanix"
+code = "NUTANIX-NCP-NS"
+name = "Nutanix Certified Professional - Network & Security (NCP-NS)"
+tagline = "Master the Nutanix Certified Professional - Network & Security (NCP-NS 7.5) exam for the NCP-NS 7 credential: configure Flow Virtual Networking 6.0 and Flow Network Security 5.2 through Prism Central 7.3, then troubleshoot connectivity, policy, identity, logging, gateway, controller, MTU, deployment, upgrade, and RBAC decisions."
+exam_category = "Nutanix"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 857
+featured = false
+price_practice = 9
+
+[cert_map."nutanix-ncp-ns"]
+vendor = "nutanix"
+code = "NUTANIX-NCP-NS"
+name = "Nutanix Certified Professional - Network & Security (NCP-NS)"
+tagline = "Master the Nutanix Certified Professional - Network & Security (NCP-NS 7.5) exam for the NCP-NS 7 credential: configure Flow Virtual Networking 6.0 and Flow Network Security 5.2 through Prism Central 7.3, then troubleshoot connectivity, policy, identity, logging, gateway, controller, MTU, deployment, upgrade, and RBAC decisions."
+exam_category = "Nutanix"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 857
+featured = false
+price_practice = 9
+exam_url = "https://www.nutanix.com/content/dam/nutanix/en/resources/datasheets/ds-ebg-ncp-ns.pdf"
+exam_cost = "$200 USD"
+exam_duration = 120
+exam_passing_score = "3000 on a scaled 1000-6000 range"
+exam_questions_real = "75"
+exam_provider = "Nutanix University (remote proctoring or in-person test center)"
+exam_validity = "3 years"
+exam_prerequisites = "No hard prerequisite. Nutanix recommends approximately two years of networking or security experience, at least six months with Nutanix Flow, and the Nutanix Network & Security Administration training."
+exam_question_types = ["Multiple choice", "Multiple response"]
+guided_url = "/guided/nutanix-ncp-ns/"
+practice_url = "/guided/nutanix-ncp-ns/practice/"
