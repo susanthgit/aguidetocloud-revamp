@@ -11270,3 +11270,45 @@ exam_prerequisites = "None"
 exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop", "Case study"]
 guided_url = "/guided/mb-330/"
 practice_url = "/guided/mb-330/practice/"
+
+[[cert]]
+slug = "mb-230"
+vendor = "microsoft"
+code = "MB-230"
+name = "Dynamics 365 Customer Service Functional Consultant Associate"
+tagline = "Configure case management, knowledge, Copilot in Service, SLAs, record routing, the representative workspace, Dataverse extensions, and Customer Voice."
+exam_category = "Dynamics 365"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 3
+order = 856
+featured = false
+price_practice = 9
+
+[cert_map."mb-230"]
+vendor = "microsoft"
+code = "MB-230"
+name = "Dynamics 365 Customer Service Functional Consultant Associate"
+tagline = "Configure case management, knowledge, Copilot in Service, SLAs, record routing, the representative workspace, Dataverse extensions, and Customer Voice."
+exam_category = "Dynamics 365"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 3
+order = 856
+featured = false
+price_practice = 9
+exam_url = "https://learn.microsoft.com/en-us/credentials/certifications/d365-functional-consultant-customer-service-v3/"
+exam_cost = "Region-based (verify at Pearson VUE)"
+exam_duration = 100
+exam_passing_score = "700 / 1000"
+exam_questions_real = "40-60"
+exam_provider = "Pearson VUE"
+exam_validity = "Renew annually (free via Microsoft Learn)"
+exam_prerequisites = "None"
+exam_question_types = ["Multiple choice", "Multiple response", "Case study", "Interactive items may appear"]
+guided_url = "/guided/mb-230/"
+practice_url = "/guided/mb-230/practice/"
