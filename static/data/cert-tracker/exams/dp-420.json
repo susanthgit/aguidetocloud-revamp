@@ -11,8 +11,8 @@
   ],
   "category": "Data",
   "status": "active",
-  "updated_at": "2026-03-20 17:49:00+00:00",
-  "skills_date": "April 20, 2026",
+  "updated_at": "2026-07-21 17:15:00+00:00",
+  "skills_date": "July 21, 2026",
   "skills_at_a_glance": [
     {
       "area": "Design and implement data models",
@@ -61,7 +61,7 @@
       ],
       "Plan and implement sizing and scaling for a database created with Azure Cosmos DB": [
         "Evaluate the throughput and data storage requirements for a specific workload",
-        "Choose between serverless, provisioned and free tier",
+        "Choose between serverless and provisioned throughput; determine when free tier is applicable",
         "Choose when to use database-level provisioned throughput",
         "Design for granular scale units and resource governance",
         "Evaluate the cost of the global distribution of data",
@@ -111,7 +111,7 @@
       "Design and implement a replication strategy for Azure Cosmos DB": [
         "Choose when to distribute data",
         "Define automatic failover policies for regional failure for Azure Cosmos DB for NoSQL",
-        "Perform manual failovers to move single master write regions",
+        "Perform manual failovers to move single-write regions",
         "Choose a consistency model",
         "Identify use cases for different consistency models",
         "Evaluate the impact of consistency model choices on availability and associated request unit (RU) cost",
@@ -129,7 +129,7 @@
         "Configure Azure Cosmos DB Mirroring for Microsoft Fabric",
         "Choose between Azure Cosmos DB Mirroring and the Azure Cosmos DB Spark connector",
         "Enable the analytical store on a container",
-        "Enable a connection to an analytical store and query from Azure Synapse Spark or Azure Synapse SQL",
+        "Enable a connection to an analytical store and query from Azure Synapse Spark or Azure Synapse SQL serverless",
         "Perform a query against the transactional store from Spark",
         "Write data back to the transactional store from Spark",
         "Implement Change Data Capture in the Azure Cosmos DB analytical store",
@@ -188,7 +188,7 @@
         "Restore a database or container from a restore point"
       ],
       "Implement security for an Azure Cosmos DB solution": [
-        "Choose between service-managed and customer-managed encryption keys",
+        "Choose between platform-managed and customer-managed encryption keys",
         "Configure network-level access control for Azure Cosmos DB",
         "Configure data encryption for Azure Cosmos DB",
         "Manage control plane access to Azure Cosmos DB by using Azure role-based access control (RBAC)",
