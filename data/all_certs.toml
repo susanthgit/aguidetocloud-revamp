@@ -11354,3 +11354,45 @@ exam_prerequisites = "No hard prerequisite. Nutanix recommends approximately two
 exam_question_types = ["Multiple choice", "Multiple response"]
 guided_url = "/guided/nutanix-ncp-ns/"
 practice_url = "/guided/nutanix-ncp-ns/practice/"
+
+[[cert]]
+slug = "eccouncil-edrp-v3"
+vendor = "eccouncil"
+code = "ECCOUNCIL-EDRP-V3"
+name = "EC-Council Disaster Recovery Professional (EDRP v3)"
+tagline = "Master business continuity and disaster recovery - risk assessment, BIA, backup and storage strategy, recovery operations, virtualization and system recovery, planning, exercises, maintenance, and training."
+exam_category = "EC-Council"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 858
+featured = false
+price_practice = 9
+
+[cert_map."eccouncil-edrp-v3"]
+vendor = "eccouncil"
+code = "ECCOUNCIL-EDRP-V3"
+name = "EC-Council Disaster Recovery Professional (EDRP v3)"
+tagline = "Master business continuity and disaster recovery - risk assessment, BIA, backup and storage strategy, recovery operations, virtualization and system recovery, planning, exercises, maintenance, and training."
+exam_category = "EC-Council"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 858
+featured = false
+price_practice = 9
+exam_url = "https://www.eccouncil.org/train-certify/business-continuity-and-disaster-recovery-training/"
+exam_cost = "$450 USD (remote-proctor voucher; varies by region, partner, and bundle)"
+exam_duration = 240
+exam_passing_score = "70%"
+exam_questions_real = "150"
+exam_provider = "EC-Council Exam Portal (remote proctoring)"
+exam_validity = "3 years (EC-Council Continuing Education)"
+exam_prerequisites = "Official EC-Council training provides the exam path. Self-study candidates must obtain EC-Council eligibility before purchasing a standalone voucher."
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/eccouncil-edrp-v3/"
+practice_url = "/guided/eccouncil-edrp-v3/practice/"
