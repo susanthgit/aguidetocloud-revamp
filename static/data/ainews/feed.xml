@@ -5,42 +5,178 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Mon, 27 Jul 2026 13:40:14 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 18:23:49 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Tech sector pours $1T into AI and sends customers the bill</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/07/27/tech-sector-pours-1t-into-ai-and-sends-customers-the-bill/5278845</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 27 Jul 2026 15:02:00 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/07/27/tech-sector-pours-1t-into-ai-and-sends-customers-the-bill/5278845</guid>
-    </item>
-    <item>
-      <title>British Army finds a new eye in the sky after Watchkeeper woes</title>
-      <link>https://www.theregister.com/offbeat/2026/07/27/british-army-finds-a-new-eye-in-the-sky-after-watchkeeper-woes/5278859</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 27 Jul 2026 14:33:09 +0200</pubDate>
-      <guid>https://www.theregister.com/offbeat/2026/07/27/british-army-finds-a-new-eye-in-the-sky-after-watchkeeper-woes/5278859</guid>
-    </item>
-    <item>
-      <title>OpenAI's Hugging Face debacle makes a great case for open models</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/07/27/openais-hugging-face-debacle-makes-a-great-case-for-open-models/5278498</link>
+      <title>OpenAI called the Hugging Face attack unprecedented. But we’ve been here before.</title>
+      <link>https://www.technologyreview.com/2026/07/27/1140836/openai-hugging-face-attack-precedent/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Mon, 27 Jul 2026 14:01:00 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/07/27/openais-hugging-face-debacle-makes-a-great-case-for-open-models/5278498</guid>
+      <pubDate>Mon, 27 Jul 2026 18:00:00 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/07/27/1140836/openai-hugging-face-attack-precedent/</guid>
     </item>
     <item>
-      <title>Microsoft seeks Supreme Court lifeline in pre-owned license battle</title>
-      <link>https://www.theregister.com/software/2026/07/27/microsoft-seeks-supreme-court-lifeline-in-pre-owned-license-battle/5278823</link>
+      <title>The harness is all you need (mostly)</title>
+      <link>https://github.blog/company/the-harness-is-all-you-need-mostly/</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Mon, 27 Jul 2026 18:00:00 +0000</pubDate>
+      <guid>https://github.blog/company/the-harness-is-all-you-need-mostly/</guid>
+    </item>
+    <item>
+      <title>I'm recommending this 14-inch HP laptop to almost everyone in 2026 - even with the RAM crisis</title>
+      <link>https://www.zdnet.com/article/hp-omnibook-ultra-14-2026-review/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Mon, 27 Jul 2026 17:54:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/hp-omnibook-ultra-14-2026-review/</guid>
+    </item>
+    <item>
+      <title>OpenAI’s Hugging Face breach has reignited the debate over alignment and control</title>
+      <link>https://techcrunch.com/2026/07/27/openais-hugging-face-breach-has-reignited-the-debate-over-alignment-and-control/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Mon, 27 Jul 2026 17:28:42 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/07/27/openais-hugging-face-breach-has-reignited-the-debate-over-alignment-and-control/</guid>
+    </item>
+    <item>
+      <title>I tested a new Debian Linux loaded with local AI - see if it's right for you</title>
+      <link>https://www.zdnet.com/article/shadowfetch-debian-linux-with-local-ai/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Mon, 27 Jul 2026 16:53:13 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/shadowfetch-debian-linux-with-local-ai/</guid>
+    </item>
+    <item>
+      <title>Threads users can now chat with Meta AI in their DMs</title>
+      <link>https://techcrunch.com/2026/07/27/threads-users-can-now-chat-with-meta-ai-in-their-dms/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Mon, 27 Jul 2026 16:45:24 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/07/27/threads-users-can-now-chat-with-meta-ai-in-their-dms/</guid>
+    </item>
+    <item>
+      <title>Beyond RAG: Task-aware knowledge compression for enterprise AI on AWS</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/beyond-rag-task-aware-knowledge-compression-for-enterprise-ai-on-aws/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Mon, 27 Jul 2026 16:11:32 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/beyond-rag-task-aware-knowledge-compression-for-enterprise-ai-on-aws/</guid>
+    </item>
+    <item>
+      <title>Deepgram enhances Amazon SageMaker AI support with AWS IAM Temporary Delegation</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/deepgram-enhances-amazon-sagemaker-ai-support-with-aws-iam-temporary-delegation/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Mon, 27 Jul 2026 16:07:44 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/deepgram-enhances-amazon-sagemaker-ai-support-with-aws-iam-temporary-delegation/</guid>
+    </item>
+    <item>
+      <title>How Guardoc transforms medical document processing with Amazon Nova models</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/how-guardoc-transforms-medical-document-processing-with-amazon-nova-models/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Mon, 27 Jul 2026 16:05:00 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/how-guardoc-transforms-medical-document-processing-with-amazon-nova-models/</guid>
+    </item>
+    <item>
+      <title>Costco will take your old tech and gift you a gift card - here's what to know</title>
+      <link>https://www.zdnet.com/article/costco-trade-in-offer-old-tech/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Mon, 27 Jul 2026 16:01:10 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/costco-trade-in-offer-old-tech/</guid>
+    </item>
+    <item>
+      <title>GitHub Copilot app for Beginners: Getting started</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-getting-started/</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Mon, 27 Jul 2026 16:00:00 +0000</pubDate>
+      <guid>https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-getting-started/</guid>
+    </item>
+    <item>
+      <title>Google’s AI search is rapidly becoming the default, new data shows</title>
+      <link>https://techcrunch.com/2026/07/27/googles-ai-search-is-rapidly-becoming-the-default-new-data-shows/</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Mon, 27 Jul 2026 15:57:12 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/07/27/googles-ai-search-is-rapidly-becoming-the-default-new-data-shows/</guid>
+    </item>
+    <item>
+      <title>Is open source the answer to rogue AI agents? Nvidia's new alliance says yes</title>
+      <link>https://www.zdnet.com/article/is-open-source-the-answer-to-rogue-ai-security-incidents-nvidia-thinks-so/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Mon, 27 Jul 2026 15:52:15 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/is-open-source-the-answer-to-rogue-ai-security-incidents-nvidia-thinks-so/</guid>
+    </item>
+    <item>
+      <title>Power up your AI infrastructure! A first look at the Smart Systems Stage agenda at TechCrunch Disrupt 2026</title>
+      <link>https://techcrunch.com/2026/07/27/power-up-your-ai-infrastructure-a-first-look-at-the-smart-systems-stage-agenda-at-techcrunch-disrupt-2026/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Mon, 27 Jul 2026 13:30:35 +0200</pubDate>
-      <guid>https://www.theregister.com/software/2026/07/27/microsoft-seeks-supreme-court-lifeline-in-pre-owned-license-battle/5278823</guid>
+      <pubDate>Mon, 27 Jul 2026 15:30:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/07/27/power-up-your-ai-infrastructure-a-first-look-at-the-smart-systems-stage-agenda-at-techcrunch-disrupt-2026/</guid>
     </item>
     <item>
-      <title>Enigma raises $70M to make controlling a robot as easy as adjusting the volume</title>
+      <title>This $9 key physically locks your most addictive apps</title>
+      <link>https://techcrunch.com/2026/07/27/this-9-key-physically-locks-your-most-addictive-apps/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Mon, 27 Jul 2026 15:25:37 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/07/27/this-9-key-physically-locks-your-most-addictive-apps/</guid>
+    </item>
+    <item>
+      <title>Ilya Sutskever’s Safe Superintelligence partners with Nvidia to scale its AI research</title>
+      <link>https://techcrunch.com/2026/07/27/ilya-sutskevers-safe-superintelligence-partners-with-nvidia-to-scale-its-ai-research/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Mon, 27 Jul 2026 15:01:50 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/07/27/ilya-sutskevers-safe-superintelligence-partners-with-nvidia-to-scale-its-ai-research/</guid>
+    </item>
+    <item>
+      <title>I tried Framework's premium 'Linux-first' laptop: consider the bar raised</title>
+      <link>https://www.zdnet.com/article/framework-laptop-13-pro-review/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Mon, 27 Jul 2026 15:00:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/framework-laptop-13-pro-review/</guid>
+    </item>
+    <item>
+      <title>Claude AI shared chats indexed by Google - see if your conversations were exposed</title>
+      <link>https://www.zdnet.com/article/claude-ai-shared-chats-indexed-by-google/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Mon, 27 Jul 2026 14:58:25 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/claude-ai-shared-chats-indexed-by-google/</guid>
+    </item>
+    <item>
+      <title>The best laptop docking stations you can buy: Expert tested</title>
+      <link>https://www.zdnet.com/article/best-laptop-docking-station/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Mon, 27 Jul 2026 14:49:24 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/best-laptop-docking-station/</guid>
+    </item>
+    <item>
+      <title>How lasers could help provide fuel for nuclear reactors</title>
+      <link>https://www.technologyreview.com/2026/07/27/1140798/laser-nuclear-enrichment/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Mon, 27 Jul 2026 14:24:42 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/07/27/1140798/laser-nuclear-enrichment/</guid>
+    </item>
+    <item>
+      <title>Assume AI cybersecurity attacks are the future: 43% of companies have already experienced it</title>
+      <link>https://www.zdnet.com/article/assume-ai-cybersecurity-attacks-are-the-future-43-percent-of-companies-have-already-experienced-it/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Mon, 27 Jul 2026 14:00:40 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/assume-ai-cybersecurity-attacks-are-the-future-43-percent-of-companies-have-already-experienced-it/</guid>
+    </item>
+    <item>
+      <title>Enigma raises $71M to make controlling a robot as easy as adjusting the volume</title>
       <link>https://techcrunch.com/2026/07/27/enigma-raises-70m-to-make-controlling-a-robot-as-easy-as-adjusting-the-volume/</link>
       <description></description>
       <category>Top Stories</category>
@@ -48,364 +184,228 @@
       <guid>https://techcrunch.com/2026/07/27/enigma-raises-70m-to-make-controlling-a-robot-as-easy-as-adjusting-the-volume/</guid>
     </item>
     <item>
-      <title>I found a dual-display USB-C dock with 8 ports - and no bulky AC brick</title>
-      <link>https://www.zdnet.com/article/ezquest-pro-series-8-in-1-hub-no-bulky-ac-brick/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Mon, 27 Jul 2026 12:17:20 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/ezquest-pro-series-8-in-1-hub-no-bulky-ac-brick/</guid>
-    </item>
-    <item>
-      <title>I fixed my home office's spotty Wi-Fi with Samsung's free diagnostic tool - in minutes</title>
-      <link>https://www.zdnet.com/article/samsung-connectivity-labs-wifi-diagnostic-tool-fix-office-setup/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Mon, 27 Jul 2026 12:15:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/samsung-connectivity-labs-wifi-diagnostic-tool-fix-office-setup/</guid>
-    </item>
-    <item>
-      <title>The Download: lasers for nuclear fuel, and organ preservation advances</title>
-      <link>https://www.technologyreview.com/2026/07/27/1140833/the-download-lasers-nuclear-organ-preservation/</link>
+      <title>Why China is giving away its best AI models</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/971444/how-chinese-open-weight-ai-models-impact-us-companies</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Mon, 27 Jul 2026 12:10:00 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/07/27/1140833/the-download-lasers-nuclear-organ-preservation/</guid>
+      <pubDate>Mon, 27 Jul 2026 12:51:50 -0400</pubDate>
+      <guid>https://www.theverge.com/ai-artificial-intelligence/971444/how-chinese-open-weight-ai-models-impact-us-companies</guid>
     </item>
     <item>
-      <title>How would AI data centers in space even work? A former NASA robotics chief explains</title>
-      <link>https://www.zdnet.com/article/how-would-ai-data-centers-in-space-even-work-a-former-nasa-robotics-chief-explains/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Mon, 27 Jul 2026 12:05:41 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/how-would-ai-data-centers-in-space-even-work-a-former-nasa-robotics-chief-explains/</guid>
-    </item>
-    <item>
-      <title>Digital sovereignty is real in Europe. The UK? Not so much</title>
-      <link>https://www.theregister.com/columnists/2026/07/27/digital-sovereignty-is-real-in-europe-the-uk-not-so-much/5276852</link>
+      <title>This Is Donald Trump’s AI Brain Trust</title>
+      <link>https://www.wired.com/story/this-is-donald-trumps-ai-brain-trust/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Mon, 27 Jul 2026 12:00:00 +0200</pubDate>
-      <guid>https://www.theregister.com/columnists/2026/07/27/digital-sovereignty-is-real-in-europe-the-uk-not-so-much/5276852</guid>
+      <pubDate>Mon, 27 Jul 2026 10:00:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/this-is-donald-trumps-ai-brain-trust/</guid>
     </item>
     <item>
-      <title>The path to artificial superintelligence</title>
-      <link>https://www.technologyreview.com/2026/07/27/1140724/the-path-to-artificial-superintelligence/</link>
+      <title>GH-ESD: Grounded Hypothesis-Driven Error Slice Discovery for Instance-Level Vision Tasks</title>
+      <link>https://machinelearning.apple.com/research/gh-esd</link>
       <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 27 Jul 2026 12:00:00 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/07/27/1140724/the-path-to-artificial-superintelligence/</guid>
+      <category>Apple</category>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://machinelearning.apple.com/research/gh-esd</guid>
     </item>
     <item>
-      <title>Closing the data loop in AI-driven drug discovery</title>
-      <link>https://www.technologyreview.com/2026/07/27/1139667/closing-the-data-loop-in-ai-driven-drug-discovery/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 27 Jul 2026 11:40:16 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/07/27/1139667/closing-the-data-loop-in-ai-driven-drug-discovery/</guid>
-    </item>
-    <item>
-      <title>Building the enterprise environment for agentic AI</title>
-      <link>https://www.technologyreview.com/2026/07/27/1140668/building-the-enterprise-environment-for-agentic-ai/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 27 Jul 2026 11:32:58 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/07/27/1140668/building-the-enterprise-environment-for-agentic-ai/</guid>
-    </item>
-    <item>
-      <title>The roller coaster works, but the Six Flags kiosk has gone off the rails</title>
-      <link>https://www.theregister.com/offbeat/2026/07/27/the-roller-coaster-works-but-the-six-flags-kiosk-has-gone-off-the-rails/5276467</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 27 Jul 2026 11:15:00 +0200</pubDate>
-      <guid>https://www.theregister.com/offbeat/2026/07/27/the-roller-coaster-works-but-the-six-flags-kiosk-has-gone-off-the-rails/5276467</guid>
-    </item>
-    <item>
-      <title>NVIDIA Cosmos-H-Dreams: Bringing Real-Time Generative Simulation to Surgical Robotics</title>
-      <link>https://huggingface.co/blog/nvidia/cosmos-h-dreams</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Mon, 27 Jul 2026 09:32:20 +0000</pubDate>
-      <guid>https://huggingface.co/blog/nvidia/cosmos-h-dreams</guid>
-    </item>
-    <item>
-      <title>Industry Leaders Unite in Open Secure AI Alliance for AI Safety and Security</title>
-      <link>https://blogs.nvidia.com/blog/open-secure-ai-alliance/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Mon, 27 Jul 2026 09:00:07 +0000</pubDate>
-      <guid>https://blogs.nvidia.com/blog/open-secure-ai-alliance/</guid>
-    </item>
-    <item>
-      <title>Nvidia, Microsoft launch open AI security alliance — without OpenAI, Google, or Anthropic</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/971281/nvidia-open-secure-ai-alliance-cybersecurity</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 27 Jul 2026 08:06:22 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/971281/nvidia-open-secure-ai-alliance-cybersecurity</guid>
-    </item>
-    <item>
-      <title>How AI is expanding what people do at work</title>
-      <link>https://openai.com/index/how-ai-is-expanding-what-people-do-at-work</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 27 Jul 2026 03:30:00 +0000</pubDate>
-      <guid>https://openai.com/index/how-ai-is-expanding-what-people-do-at-work</guid>
-    </item>
-    <item>
-      <title>flightdeck-connect added to PyPI</title>
-      <link>https://pypi.org/project/flightdeck-connect/</link>
+      <title>Sizing Up The Atlantic, Part 2: How Do The Senators Stack Up Against The Canadiens?</title>
+      <link>https://thehockeynews.com/nhl/ottawa-senators/latest-news/sizing-up-the-atlantic-part-2-how-do-the-senators-stack-up-against-the-canadiens</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Sun, 26 Jul 2026 13:35:04 +0000</pubDate>
-      <guid>https://pypi.org/project/flightdeck-connect/</guid>
+      <pubDate>Sun, 26 Jul 2026 18:21:43 +0000</pubDate>
+      <guid>https://thehockeynews.com/nhl/ottawa-senators/latest-news/sizing-up-the-atlantic-part-2-how-do-the-senators-stack-up-against-the-canadiens</guid>
     </item>
     <item>
-      <title>OpenAI's Rogue AI Models Were Reportedly Acting Like the Guy From Christopher Nolan's 'Memento' - Gizmodo</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=184701718</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sun, 26 Jul 2026 13:33:08 +0000</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=184701718</guid>
-    </item>
-    <item>
-      <title>Show HN: CrispVoice – Studio voice enhancement that never uploads your voice</title>
-      <link>https://github.com/Francium-Tech/CrispVoice</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Sun, 26 Jul 2026 13:25:30 +0000</pubDate>
-      <guid>https://github.com/Francium-Tech/CrispVoice</guid>
-    </item>
-    <item>
-      <title>A Modder’s RTX 4080 Was Enough To Play AAA Games, But Not For Running LLMs, So He Integrated NVIDIA’s Tesla V100 At A Throwaway Price To Run 27B AI Models</title>
-      <link>https://wccftech.com/nvidia-tesla-v100-modded-into-gaming-pc-to-run-aaa-titles-and-27b-ai-models/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sun, 26 Jul 2026 13:23:36 +0000</pubDate>
-      <guid>https://wccftech.com/nvidia-tesla-v100-modded-into-gaming-pc-to-run-aaa-titles-and-27b-ai-models/</guid>
-    </item>
-    <item>
-      <title>Samsung, SK Group's $950 Billion AI Deals With US Tech Giants Draw Questions Over What the Math Really Means</title>
-      <link>https://www.ibtimes.com.au/south-korea-950-billion-ai-chip-deal-1872967</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sun, 26 Jul 2026 13:20:34 +0000</pubDate>
-      <guid>https://www.ibtimes.com.au/south-korea-950-billion-ai-chip-deal-1872967</guid>
-    </item>
-    <item>
-      <title>ultralytics-thop 2.0.22</title>
-      <link>https://pypi.org/project/ultralytics-thop/2.0.22/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Sun, 26 Jul 2026 13:17:06 +0000</pubDate>
-      <guid>https://pypi.org/project/ultralytics-thop/2.0.22/</guid>
-    </item>
-    <item>
-      <title>claude-statusbar 3.32.1</title>
-      <link>https://pypi.org/project/claude-statusbar/3.32.1/</link>
+      <title>10 Stocks Lost Over 40% in 2026 as Investors Dumped Everything AI Might Kill</title>
+      <link>https://beincrypto.com/sp500-worst-stocks-2026-ai-disruption/</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Sun, 26 Jul 2026 13:13:59 +0000</pubDate>
-      <guid>https://pypi.org/project/claude-statusbar/3.32.1/</guid>
+      <pubDate>Sun, 26 Jul 2026 18:19:45 +0000</pubDate>
+      <guid>https://beincrypto.com/sp500-worst-stocks-2026-ai-disruption/</guid>
     </item>
     <item>
-      <title>What a Major Anthropic Chip Deal Really Means for AMD Stock</title>
-      <link>https://biztoc.com/x/804914833d4cafc7</link>
+      <title>language-model-common 2.0.94</title>
+      <link>https://pypi.org/project/language-model-common/2.0.94/</link>
       <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 26 Jul 2026 13:13:09 +0000</pubDate>
-      <guid>https://biztoc.com/x/804914833d4cafc7</guid>
+      <category>Open Source</category>
+      <pubDate>Sun, 26 Jul 2026 18:18:58 +0000</pubDate>
+      <guid>https://pypi.org/project/language-model-common/2.0.94/</guid>
     </item>
     <item>
-      <title>The New AI Superpowers: Focus and Followthrough</title>
-      <link>https://www.rickmanelius.com/p/the-new-ai-superpowers-focus-and</link>
+      <title>Show HN: Readability for web and PDFs with TTS and local AI summary</title>
+      <link>https://github.com/ldenoue/readability-read-aloud-web-pdf-ai-summary</link>
       <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 26 Jul 2026 13:13:03 +0000</pubDate>
-      <guid>https://www.rickmanelius.com/p/the-new-ai-superpowers-focus-and</guid>
+      <category>Open Source</category>
+      <pubDate>Sun, 26 Jul 2026 18:18:42 +0000</pubDate>
+      <guid>https://github.com/ldenoue/readability-read-aloud-web-pdf-ai-summary</guid>
     </item>
     <item>
-      <title>Top Four: Breaking Down The PWHL's Best Bluelines Heading Toward 2026-27</title>
-      <link>https://thehockeynews.com/womens/pwhl/top-four-breaking-down-the-pwhls-best-bluelines-heading-toward-2026-27</link>
+      <title>secondopinion-x402 0.1.0</title>
+      <link>https://pypi.org/project/secondopinion-x402/0.1.0/</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Sun, 26 Jul 2026 13:12:05 +0000</pubDate>
-      <guid>https://thehockeynews.com/womens/pwhl/top-four-breaking-down-the-pwhls-best-bluelines-heading-toward-2026-27</guid>
+      <category>Open Source</category>
+      <pubDate>Sun, 26 Jul 2026 18:17:26 +0000</pubDate>
+      <guid>https://pypi.org/project/secondopinion-x402/0.1.0/</guid>
     </item>
     <item>
-      <title>Betty and Fred’s Story: Building a Life Together – Ed’s Family Visits Chula Vista, July 1944 (Part 2)</title>
-      <link>https://www.blogger.com/browser-not-supported/?ref=/comment/fullpage/post/26204193/4283735414745269290</link>
+      <title>secondopinion-x402 added to PyPI</title>
+      <link>https://pypi.org/project/secondopinion-x402/</link>
       <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 26 Jul 2026 13:12:00 +0000</pubDate>
-      <guid>https://www.blogger.com/browser-not-supported/?ref=/comment/fullpage/post/26204193/4283735414745269290</guid>
+      <category>Open Source</category>
+      <pubDate>Sun, 26 Jul 2026 18:17:26 +0000</pubDate>
+      <guid>https://pypi.org/project/secondopinion-x402/</guid>
     </item>
     <item>
-      <title>It's not just OpenAI models escaping and running riot — experts show how Claude Cowork can break its bonds and access Mac files</title>
-      <link>https://www.techradar.com/pro/security/its-not-just-openai-models-escaping-and-running-riot-experts-show-how-claude-cowork-can-break-its-bonds-and-access-mac-files</link>
+      <title>Requiem for a Field?</title>
+      <link>https://www.math.columbia.edu/~woit/wordpress/?p=15787</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Sun, 26 Jul 2026 13:10:00 +0000</pubDate>
-      <guid>https://www.techradar.com/pro/security/its-not-just-openai-models-escaping-and-running-riot-experts-show-how-claude-cowork-can-break-its-bonds-and-access-mac-files</guid>
+      <pubDate>Sun, 26 Jul 2026 18:15:44 +0000</pubDate>
+      <guid>https://www.math.columbia.edu/~woit/wordpress/?p=15787</guid>
     </item>
     <item>
-      <title>avrvx 0.5.4</title>
-      <link>https://pypi.org/project/avrvx/0.5.4/</link>
+      <title>Sam Altman says we are in the singularity: 'This is the moment'</title>
+      <link>https://biztoc.com/x/eecdee13c58dca2f</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Sun, 26 Jul 2026 13:04:51 +0000</pubDate>
-      <guid>https://pypi.org/project/avrvx/0.5.4/</guid>
+      <pubDate>Sun, 26 Jul 2026 18:14:12 +0000</pubDate>
+      <guid>https://biztoc.com/x/eecdee13c58dca2f</guid>
     </item>
     <item>
-      <title>mentedb-langchain 0.30.0</title>
-      <link>https://pypi.org/project/mentedb-langchain/0.30.0/</link>
+      <title>finops-mcp 0.8.194</title>
+      <link>https://pypi.org/project/finops-mcp/0.8.194/</link>
       <description></description>
-      <category>Open Source</category>
-      <pubDate>Sun, 26 Jul 2026 13:02:48 +0000</pubDate>
-      <guid>https://pypi.org/project/mentedb-langchain/0.30.0/</guid>
+      <category>Anthropic</category>
+      <pubDate>Sun, 26 Jul 2026 18:13:03 +0000</pubDate>
+      <guid>https://pypi.org/project/finops-mcp/0.8.194/</guid>
     </item>
     <item>
-      <title>Show HN: Cuts Long Horizon Inference Costs by 50% via external KV Cache Offload</title>
-      <link>https://github.com/openlake-project/openlake</link>
+      <title>Show HN: I made Claude quiz me on my own code before showing it</title>
+      <link>https://github.com/De-Cri/dont-kick-me-out</link>
       <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sun, 26 Jul 2026 13:02:21 +0000</pubDate>
-      <guid>https://github.com/openlake-project/openlake</guid>
+      <category>Anthropic</category>
+      <pubDate>Sun, 26 Jul 2026 18:11:00 +0000</pubDate>
+      <guid>https://github.com/De-Cri/dont-kick-me-out</guid>
     </item>
     <item>
-      <title>Thinking of Upgrading? The Galaxy Z Fold 8’s Top Features Examined</title>
-      <link>https://www.geeky-gadgets.com/galaxy-z-fold-8-features-2/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sun, 26 Jul 2026 13:00:13 +0000</pubDate>
-      <guid>https://www.geeky-gadgets.com/galaxy-z-fold-8-features-2/</guid>
-    </item>
-    <item>
-      <title>ultralytics-thop 2.0.21</title>
-      <link>https://pypi.org/project/ultralytics-thop/2.0.21/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Sun, 26 Jul 2026 12:58:13 +0000</pubDate>
-      <guid>https://pypi.org/project/ultralytics-thop/2.0.21/</guid>
-    </item>
-    <item>
-      <title>What Sam Altman will tell the White House this week</title>
-      <link>https://biztoc.com/x/1303579a48a4747f</link>
+      <title>verity-guard 0.3.0</title>
+      <link>https://pypi.org/project/verity-guard/0.3.0/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Sun, 26 Jul 2026 12:57:48 +0000</pubDate>
-      <guid>https://biztoc.com/x/1303579a48a4747f</guid>
+      <pubDate>Sun, 26 Jul 2026 18:06:49 +0000</pubDate>
+      <guid>https://pypi.org/project/verity-guard/0.3.0/</guid>
     </item>
     <item>
-      <title>mlsys-lab 0.1.1</title>
-      <link>https://pypi.org/project/mlsys-lab/0.1.1/</link>
+      <title>James Cameron tried to warn us: ‘Skynet Day’ is now shorthand for OpenAI’s agent going rogue and hacking into a startup</title>
+      <link>https://fortune.com/2026/07/26/james-cameron-terminator-skynet-day-openai-ai-agent-hack-hugging-face/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sun, 26 Jul 2026 18:05:25 +0000</pubDate>
+      <guid>https://fortune.com/2026/07/26/james-cameron-terminator-skynet-day-openai-ai-agent-hack-hugging-face/</guid>
+    </item>
+    <item>
+      <title>What OpenAI will show the White House this week</title>
+      <link>https://thenextweb.com/news/altman-white-house-openai-model-preview-agents/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sun, 26 Jul 2026 18:03:12 +0000</pubDate>
+      <guid>https://thenextweb.com/news/altman-white-house-openai-model-preview-agents/</guid>
+    </item>
+    <item>
+      <title>gemini-coax 0.2.4</title>
+      <link>https://pypi.org/project/gemini-coax/0.2.4/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sun, 26 Jul 2026 17:40:43 +0000</pubDate>
+      <guid>https://pypi.org/project/gemini-coax/0.2.4/</guid>
+    </item>
+    <item>
+      <title>GIGABYTE Gaming GeForce RTX 5070 Ti 16GB GDDR7 PCI Express 5.0 ATX Graphics Card $909.99 (7 replies)</title>
+      <link>https://slickdeals.net/f/19810908-gigabyte-gaming-geforce-rtx-5070-ti-16gb-gddr7-pci-express-5-0-atx-graphics-card-909-99</link>
       <description></description>
       <category>NVIDIA</category>
-      <pubDate>Sun, 26 Jul 2026 12:48:48 +0000</pubDate>
-      <guid>https://pypi.org/project/mlsys-lab/0.1.1/</guid>
+      <pubDate>Sun, 26 Jul 2026 17:22:41 +0000</pubDate>
+      <guid>https://slickdeals.net/f/19810908-gigabyte-gaming-geforce-rtx-5070-ti-16gb-gddr7-pci-express-5-0-atx-graphics-card-909-99</guid>
     </item>
     <item>
-      <title>mlsys-lab 0.1.0</title>
-      <link>https://pypi.org/project/mlsys-lab/0.1.0/</link>
+      <title>Show HN: Turn a diff into an evidence-backed Assumption Ledger</title>
+      <link>https://github.com/Teycir/Assumptions</link>
       <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sun, 26 Jul 2026 12:45:58 +0000</pubDate>
-      <guid>https://pypi.org/project/mlsys-lab/0.1.0/</guid>
+      <category>DeepSeek</category>
+      <pubDate>Sun, 26 Jul 2026 17:21:15 +0000</pubDate>
+      <guid>https://github.com/Teycir/Assumptions</guid>
     </item>
     <item>
-      <title>wechatbridge-cli 1.3.3</title>
-      <link>https://pypi.org/project/wechatbridge-cli/1.3.3/</link>
-      <description></description>
-      <category>xAI</category>
-      <pubDate>Sun, 26 Jul 2026 12:42:00 +0000</pubDate>
-      <guid>https://pypi.org/project/wechatbridge-cli/1.3.3/</guid>
-    </item>
-    <item>
-      <title>agentcache-core added to PyPI</title>
-      <link>https://pypi.org/project/agentcache-core/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Sun, 26 Jul 2026 12:38:57 +0000</pubDate>
-      <guid>https://pypi.org/project/agentcache-core/</guid>
-    </item>
-    <item>
-      <title>educhain-dks added to PyPI</title>
-      <link>https://pypi.org/project/educhain-dks/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Sun, 26 Jul 2026 12:36:21 +0000</pubDate>
-      <guid>https://pypi.org/project/educhain-dks/</guid>
-    </item>
-    <item>
-      <title>educhain-dks 1.0.0</title>
-      <link>https://pypi.org/project/educhain-dks/1.0.0/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Sun, 26 Jul 2026 12:36:21 +0000</pubDate>
-      <guid>https://pypi.org/project/educhain-dks/1.0.0/</guid>
-    </item>
-    <item>
-      <title>haru-cli 0.1.6</title>
-      <link>https://pypi.org/project/haru-cli/0.1.6/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Sun, 26 Jul 2026 12:31:27 +0000</pubDate>
-      <guid>https://pypi.org/project/haru-cli/0.1.6/</guid>
-    </item>
-    <item>
-      <title>XFLT Proxy Contest: Why the Board Believes the King Street Sub-Adviser Will Be Beneficial for XFLT Shareholders</title>
-      <link>https://www.globenewswire.com/news-release/2026/07/26/3333201/0/en/XFLT-Proxy-Contest-Why-the-Board-Believes-the-King-Street-Sub-Adviser-Will-Be-Beneficial-for-XFLT-Shareholders.html</link>
-      <description></description>
-      <category>xAI</category>
-      <pubDate>Sun, 26 Jul 2026 12:30:00 +0000</pubDate>
-      <guid>https://www.globenewswire.com/news-release/2026/07/26/3333201/0/en/XFLT-Proxy-Contest-Why-the-Board-Believes-the-King-Street-Sub-Adviser-Will-Be-Beneficial-for-XFLT-Shareholders.html</guid>
-    </item>
-    <item>
-      <title>We May Be Looking At The Debate About AI &amp; Data Centers All Wrong</title>
-      <link>https://cleantechnica.com/2026/07/26/we-may-be-looking-at-the-debate-about-ai-data-centers-all-wrong/</link>
+      <title>Katie Holmes, 47, breaks silence on romance with boytoy Jason Bard Yarmosky as hot new couple put on cozy display</title>
+      <link>https://www.dailymail.com/tvshowbiz/article-16006227/katie-holmes-jason-bard-yarmosky-romance-new-york.html</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Sun, 26 Jul 2026 12:26:48 +0000</pubDate>
-      <guid>https://cleantechnica.com/2026/07/26/we-may-be-looking-at-the-debate-about-ai-data-centers-all-wrong/</guid>
+      <pubDate>Sun, 26 Jul 2026 17:16:56 +0000</pubDate>
+      <guid>https://www.dailymail.com/tvshowbiz/article-16006227/katie-holmes-jason-bard-yarmosky-romance-new-york.html</guid>
     </item>
     <item>
-      <title>Enabling interoperability across disparate health data sources using Large Language Models</title>
-      <link>https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0001511</link>
+      <title>Apple smart glasses might skip the feature I want most</title>
+      <link>https://www.cultofmac.com/news/apple-smart-glasses-privacy-concerns</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Sun, 26 Jul 2026 12:26:34 +0000</pubDate>
-      <guid>https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0001511</guid>
+      <pubDate>Sun, 26 Jul 2026 17:15:45 +0000</pubDate>
+      <guid>https://www.cultofmac.com/news/apple-smart-glasses-privacy-concerns</guid>
     </item>
     <item>
-      <title>yab-ml 0.1.1</title>
-      <link>https://pypi.org/project/yab-ml/0.1.1/</link>
+      <title>agent-catalog-new 0.5.0</title>
+      <link>https://pypi.org/project/agent-catalog-new/0.5.0/</link>
       <description></description>
-      <category>Meta</category>
-      <pubDate>Sun, 26 Jul 2026 12:24:20 +0000</pubDate>
-      <guid>https://pypi.org/project/yab-ml/0.1.1/</guid>
+      <category>Copilot Studio</category>
+      <pubDate>Sun, 26 Jul 2026 17:09:15 +0000</pubDate>
+      <guid>https://pypi.org/project/agent-catalog-new/0.5.0/</guid>
     </item>
     <item>
-      <title>graphifyy 0.9.27</title>
-      <link>https://pypi.org/project/graphifyy/0.9.27/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sun, 26 Jul 2026 12:02:23 +0000</pubDate>
-      <guid>https://pypi.org/project/graphifyy/0.9.27/</guid>
-    </item>
-    <item>
-      <title>Your Horoscope for the Week of July 26</title>
-      <link>https://www.cosmopolitan.com/lifestyle/a73176505/weekly-horoscope-july-26-2026/</link>
+      <title>Google Releases CCaaS 5.0, Adds Disposition Timing and API Chat Routing</title>
+      <link>https://www.cmswire.com/contact-center/google-releases-ccaas-5-0-adds-disposition-timing-and-api-chat-routing/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Sun, 26 Jul 2026 12:00:00 +0000</pubDate>
-      <guid>https://www.cosmopolitan.com/lifestyle/a73176505/weekly-horoscope-july-26-2026/</guid>
+      <pubDate>Sun, 26 Jul 2026 17:08:38 +0000</pubDate>
+      <guid>https://www.cmswire.com/contact-center/google-releases-ccaas-5-0-adds-disposition-timing-and-api-chat-routing/</guid>
     </item>
     <item>
-      <title>haru-cli 0.1.5</title>
-      <link>https://pypi.org/project/haru-cli/0.1.5/</link>
+      <title>Anthropic’s Claude Cowork could escape its local VM and read credentials on a Mac</title>
+      <link>https://thenextweb.com/news/claude-cowork-sandbox-escape-mac-files-sharedroot/</link>
       <description></description>
-      <category>Amazon</category>
-      <pubDate>Sun, 26 Jul 2026 11:59:49 +0000</pubDate>
-      <guid>https://pypi.org/project/haru-cli/0.1.5/</guid>
+      <category>Google</category>
+      <pubDate>Sun, 26 Jul 2026 17:06:27 +0000</pubDate>
+      <guid>https://thenextweb.com/news/claude-cowork-sandbox-escape-mac-files-sharedroot/</guid>
+    </item>
+    <item>
+      <title>Need assistance determining if I have Malware</title>
+      <link>https://www.bleepingcomputer.com/forums/t/817574/need-assistance-determining-if-i-have-malware/</link>
+      <description></description>
+      <category>Microsoft</category>
+      <pubDate>Sun, 26 Jul 2026 17:06:24 +0000</pubDate>
+      <guid>https://www.bleepingcomputer.com/forums/t/817574/need-assistance-determining-if-i-have-malware/</guid>
+    </item>
+    <item>
+      <title>Fed Decision, Tech Earnings and Other Can't Miss Items this Week</title>
+      <link>https://www.barchart.com/story/news/3470026/fed-decision-tech-earnings-and-other-can-t-miss-items-this-week</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sun, 26 Jul 2026 17:00:02 +0000</pubDate>
+      <guid>https://www.barchart.com/story/news/3470026/fed-decision-tech-earnings-and-other-can-t-miss-items-this-week</guid>
+    </item>
+    <item>
+      <title>The Samsung Galaxy Z Fold 8 Ultra's Flex Titanium display is impressive, but another phone is still the creaseless king</title>
+      <link>https://www.techradar.com/phones/samsung-galaxy-phones/the-samsung-galaxy-z-fold-8-ultras-flex-titanium-display-is-impressive-but-another-phone-is-still-the-creaseless-king</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sun, 26 Jul 2026 17:00:00 +0000</pubDate>
+      <guid>https://www.techradar.com/phones/samsung-galaxy-phones/the-samsung-galaxy-z-fold-8-ultras-flex-titanium-display-is-impressive-but-another-phone-is-still-the-creaseless-king</guid>
+    </item>
+    <item>
+      <title>How Many AI Tech Companies Does it Take to Write a Threatening Letter? Fifty!</title>
+      <link>https://slashdot.org/submission/17349310/how-many-ai-tech-companies-does-it-take-to-write-a-threatening-letter-fifty</link>
+      <description></description>
+      <category>Mistral</category>
+      <pubDate>Sun, 26 Jul 2026 16:58:12 +0000</pubDate>
+      <guid>https://slashdot.org/submission/17349310/how-many-ai-tech-companies-does-it-take-to-write-a-threatening-letter-fifty</guid>
     </item>
   </channel>
 </rss>
