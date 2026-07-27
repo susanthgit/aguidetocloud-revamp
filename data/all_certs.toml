@@ -11396,3 +11396,42 @@ exam_prerequisites = "Official EC-Council training provides the exam path. Self-
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/eccouncil-edrp-v3/"
 practice_url = "/guided/eccouncil-edrp-v3/practice/"
+
+[[cert]]
+slug = "paloalto-sdwan-engineer"
+vendor = "paloalto"
+code = "PALOALTO-SDWAN-ENGINEER"
+name = "Palo Alto Networks Certified SD-WAN Engineer"
+tagline = "Design, deploy, operate, and troubleshoot Prisma SD-WAN with ION devices, AppFabric, policy-driven path selection, Strata Cloud Manager, and Unified SASE."
+exam_category = "Palo Alto"
+level = "specialty"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 859
+featured = false
+price_practice = 9
+
+[cert_map."paloalto-sdwan-engineer"]
+vendor = "paloalto"
+code = "PALOALTO-SDWAN-ENGINEER"
+name = "Palo Alto Networks Certified SD-WAN Engineer"
+tagline = "Design, deploy, operate, and troubleshoot Prisma SD-WAN with ION devices, AppFabric, policy-driven path selection, Strata Cloud Manager, and Unified SASE."
+exam_category = "Palo Alto"
+level = "specialty"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 859
+featured = false
+price_practice = 9
+exam_url = "https://www.paloaltonetworks.com/services/education/palo-alto-networks-sd-wan-engineer"
+exam_cost = "$250 USD"
+exam_provider = "Pearson VUE"
+exam_validity = "2 years"
+exam_prerequisites = "No prerequisite exam is published; designed for experienced SD-WAN and SASE engineers, professional services consultants, and network engineers or administrators"
+exam_question_types = ["Multiple choice", "Matching", "Ordering"]
+guided_url = "/guided/paloalto-sdwan-engineer/"
+practice_url = "/guided/paloalto-sdwan-engineer/practice/"
