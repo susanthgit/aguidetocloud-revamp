@@ -1,6 +1,6 @@
 ---
 title: "Certification Study Guides & Practice Exams"
-description: "Free study guides for 149+ certifications from 13 vendors — Microsoft, AWS, CompTIA, Cisco, GCP, ISC², ISACA, HashiCorp & more. Exam objectives + practice."
+description: "Hundreds of free certification study guides across Microsoft, AWS, Cisco, CompTIA, GCP, Oracle, Palo Alto, and more. Exam objectives and practice."
 type: "cert-tracker"
 sitemap:
   priority: 0.9

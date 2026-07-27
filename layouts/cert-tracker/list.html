@@ -1,7 +1,8 @@
 {{ define "main" }}
 <!-- Pagefind: hidden searchable content for this JS-rendered page -->
-{{ $allCerts := site.Data.all_certs.cert }}
-{{ $certCount := len $allCerts }}
+{{ $certPages := where site.RegularPages "Section" "cert-tracker" }}
+{{ $certPages = where $certPages "Layout" "ne" "roadmap" }}
+{{ $certCount := len $certPages }}
 {{ $vendorCount := len site.Data.vendors.vendor }}
 <div data-pagefind-body style="display:none" aria-hidden="true">
   <h2>Certification Study Guides & Practice Exams — {{ $certCount }} Certs, {{ $vendorCount }} Vendors</h2>
@@ -31,7 +32,7 @@
       <div class="cert-guided-banner-content">
         <span class="cert-guided-banner-icon">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }}</span>
         <div>
-          <strong>New: Interactive Study Guides</strong> — Flashcards, exam simulation, spaced repetition, progress tracking. Free forever across 126 certs.
+          <strong>New: Interactive Study Guides</strong> — Flashcards, exam simulation, spaced repetition, progress tracking. Free forever across {{ len site.Data.all_certs.cert }} certs.
         </div>
       </div>
       <a href="/guided/explore/" class="cert-guided-banner-cta">Explore Guided →</a>

@@ -39,10 +39,19 @@
 
     try {
       const data = await fetchData();
-      allExams = data.exams || [];
-      categories = data.categories || [];
+      allExams = mergeExamSources(data.exams || [], window.__allCerts || []);
+      categories = Array.from(new Set([
+        ...(data.categories || []),
+        ...allExams.map((exam) => exam.category).filter(Boolean),
+      ])).sort((a, b) => a.localeCompare(b));
+      const mergedData = {
+        ...data,
+        exams: allExams,
+        exam_count: allExams.length,
+        categories,
+      };
       renderCategoryChips();
-      renderStats(data);
+      renderStats(mergedData);
       renderFreshness(data);
       applyFilters();
       bindEvents();
@@ -71,6 +80,72 @@
     data._cachedAt = Date.now();
     try { sessionStorage.setItem(CACHE_KEY, JSON.stringify(data)); } catch (e) { /* quota */ }
     return data;
+  }
+
+  function normalizeRegistryLevel(level) {
+    const value = (level || "").toLowerCase();
+    if (["beginner", "entry", "foundation", "foundational", "core"].includes(value)) {
+      return "beginner";
+    }
+    if (["intermediate", "associate"].includes(value)) {
+      return "intermediate";
+    }
+    return "advanced";
+  }
+
+  function normalizeRegistryExam(cert) {
+    return {
+      code: cert.code || cert.slug || "",
+      title: cert.name || cert.code || cert.slug || "",
+      level: normalizeRegistryLevel(cert.level),
+      source_level: cert.level || "",
+      category: cert.exam_category || cert.vendor || "Other",
+      status: cert.status || "active",
+      slug: cert.slug || (cert.code || "").toLowerCase(),
+      vendor: cert.vendor || "",
+      tagline: cert.tagline || "",
+      questions: cert.questions || 0,
+      domains: cert.domains || 0,
+      roles: [],
+      products: [],
+      skills_at_a_glance: [],
+      skill_areas: cert.domains || 0,
+      total_objectives: 0,
+      has_changes: false,
+    };
+  }
+
+  function mergeExamSources(latestExams, registryCerts) {
+    const registryByCode = new Map();
+    const registryBySlug = new Map();
+    registryCerts.forEach((cert) => {
+      if (cert.code) registryByCode.set(cert.code.toLowerCase(), cert);
+      if (cert.slug) registryBySlug.set(cert.slug.toLowerCase(), cert);
+    });
+
+    const seenSlugs = new Set();
+    const merged = latestExams.map((exam) => {
+      const codeKey = (exam.code || "").toLowerCase();
+      const registry = registryByCode.get(codeKey) || registryBySlug.get(codeKey);
+      const registryExam = registry ? normalizeRegistryExam(registry) : {};
+      const slug = registryExam.slug || exam.slug || codeKey;
+      seenSlugs.add(slug);
+      return {
+        ...registryExam,
+        ...exam,
+        slug,
+        vendor: registryExam.vendor || exam.vendor || "microsoft",
+        tagline: registryExam.tagline || exam.tagline || "",
+      };
+    });
+
+    registryCerts.forEach((cert) => {
+      const exam = normalizeRegistryExam(cert);
+      if (!exam.slug || seenSlugs.has(exam.slug)) return;
+      seenSlugs.add(exam.slug);
+      merged.push(exam);
+    });
+    return merged;
   }
 
   // ── Render ──
@@ -183,7 +258,8 @@
     const statusLabels = { active: "", retiring: "Retiring", retired: "Retired", beta: "Beta", upcoming: "Upcoming" };
     const status = exam.status || "active";
     const statusBadge = status !== "active" ? `<span class="cert-badge cert-badge-${status}">${statusLabels[status]}</span>` : "";
-    const guidedData = window.__guidedCerts && window.__guidedCerts[exam.code.toLowerCase()];
+    const slug = exam.slug || (exam.code || "").toLowerCase();
+    const guidedData = window.__guidedCerts && window.__guidedCerts[slug];
     const guidedBadge = guidedData ? `<span class="cert-badge cert-badge-guided">Interactive</span>` : "";
     const statusClass = status !== "active" ? ` cert-card-${status}` : "";
 
@@ -198,7 +274,7 @@
     const retiredNote = (status === "retired") ? `<div class="cert-card-status-note cert-card-status-retired">Retired${exam.replacement ? " → " + esc(exam.replacement) : ""}</div>` : "";
     const betaNote = (status === "beta") ? `<div class="cert-card-status-note cert-card-status-beta">Beta${exam.replaces ? " — replaces " + esc(exam.replaces) : ""}</div>` : "";
 
-    const examUrl = `/cert-tracker/${exam.code.toLowerCase()}/`;
+    const examUrl = `/cert-tracker/${slug}/`;
     const objCount = exam.total_objectives || 0;
     const skillAreas = exam.skill_areas || 0;
 
@@ -246,7 +322,7 @@
     }
     if (search) {
       filtered = filtered.filter((e) => {
-        const haystack = `${e.code} ${e.title} ${e.category} ${e.level} ${e.status || ""} ${(e.roles || []).join(" ")} ${(e.products || []).join(" ")}`.toLowerCase();
+        const haystack = `${e.code || ""} ${e.title || ""} ${e.category || ""} ${e.level || ""} ${e.source_level || ""} ${e.status || ""} ${e.vendor || ""} ${e.tagline || ""} ${(e.roles || []).join(" ")} ${(e.products || []).join(" ")}`.toLowerCase();
         return haystack.includes(search);
       });
     }
