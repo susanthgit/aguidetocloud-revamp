@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 27 Jul 2026 19:49:58 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 21:21:16 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Some users may be unable to share files with external recipients through SharePoint Online and Microsoft OneDrive</title>
@@ -32,7 +32,7 @@
       <category>Microsoft Teams</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1437780</guid>
-      <pubDate>Fri, 24 Jul 2026 00:54:54 +0000</pubDate>
+      <pubDate>Fri, 24 Jul 2026 00:25:00 +0000</pubDate>
     </item>
     <item>
       <title>[Azure] Azure incident affecting West US</title>
@@ -183,9 +183,9 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
     <item>
       <title>[Exchange Online] Some users may be unable to view location and subject details for other users' Exchange Online calendar items</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1435168</link>
-      <description>[Exchange Online] Users may be unable to view location and subject details for other users' Exchange Online calendar items.</description>
+      <description>[Exchange Online] Users may have been unable to view location and subject details for other users' Exchange Online calendar items.</description>
       <category>Exchange Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">EX1435168</guid>
       <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
     </item>
