@@ -11435,3 +11435,45 @@ exam_prerequisites = "No prerequisite exam is published; designed for experience
 exam_question_types = ["Multiple choice", "Matching", "Ordering"]
 guided_url = "/guided/paloalto-sdwan-engineer/"
 practice_url = "/guided/paloalto-sdwan-engineer/practice/"
+
+[[cert]]
+slug = "cisco-spcni"
+vendor = "cisco"
+code = "CISCO-SPCNI"
+name = "Designing and Implementing Cisco Service Provider Cloud Network Infrastructure (SPCNI 300-540)"
+tagline = "Master the Cisco SPCNI 300-540 concentration - virtualized architecture, carrier-neutral and cloud interconnect, NFVI high availability, security, assurance, and VNF optimization."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 860
+featured = false
+price_practice = 9
+
+[cert_map."cisco-spcni"]
+vendor = "cisco"
+code = "CISCO-SPCNI"
+name = "Designing and Implementing Cisco Service Provider Cloud Network Infrastructure (SPCNI 300-540)"
+tagline = "Master the Cisco SPCNI 300-540 concentration - virtualized architecture, carrier-neutral and cloud interconnect, NFVI high availability, security, assurance, and VNF optimization."
+exam_category = "Cisco"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 860
+featured = false
+price_practice = 9
+exam_url = "https://www.cisco.com/site/us/en/learn/training-certifications/exams/spcni.html"
+exam_cost = "$300 USD"
+exam_duration = 90
+exam_passing_score = "Cisco does not publish the SPCNI 300-540 cut score"
+exam_questions_real = "Cisco does not publish an exact question count"
+exam_provider = "Pearson VUE (test center or online proctored where available)"
+exam_validity = "3 years"
+exam_prerequisites = "None to sit the exam. Earning CCNP Service Provider requires SPCOR 350-501 plus one concentration exam such as SPCNI 300-540."
+exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop", "Simulation"]
+guided_url = "/guided/cisco-spcni/"
+practice_url = "/guided/cisco-spcni/practice/"
