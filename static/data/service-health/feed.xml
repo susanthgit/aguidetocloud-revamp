@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 27 Jul 2026 21:21:16 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 23:17:21 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Purview]  We’ve detected an issue with auto-created configs for Microsoft Purview inline data protections in Edge for Business </title>
+      <link>https://www.aguidetocloud.com/service-health/#MP1440966</link>
+      <description>[Microsoft Purview] If action isn’t taken, collection and DLP policies for user data uploads to unmanaged apps might not work as expected. </description>
+      <category>Microsoft Purview</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">MP1440966</guid>
+      <pubDate>Mon, 27 Jul 2026 22:50:42 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Purview] We’ve detected an issue with Azure subscription required for Microsoft Purview inline data protections</title>
+      <link>https://www.aguidetocloud.com/service-health/#MP1440962</link>
+      <description>[Microsoft Purview] If action isn't taken, DLP policies targeting user data uploads to unmanaged apps in Edge might not function as expected</description>
+      <category>Microsoft Purview</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">MP1440962</guid>
+      <pubDate>Mon, 27 Jul 2026 22:39:50 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Some users may be unable to share files with external recipients through SharePoint Online and Microsoft OneDrive</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1440526</link>
@@ -30,7 +48,7 @@
       <link>https://www.aguidetocloud.com/service-health/#TM1437780</link>
       <description>[Microsoft Teams] Users may be unable to join or create Microsoft Teams meetings or calls.</description>
       <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">TM1437780</guid>
       <pubDate>Fri, 24 Jul 2026 00:25:00 +0000</pubDate>
     </item>
@@ -50,7 +68,7 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <link>https://www.aguidetocloud.com/service-health/#MO1437424</link>
       <description>[Microsoft 365 suite] Users may have experienced issues accessing or using Microsoft 365 services routed through the North America region.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1437424</guid>
       <pubDate>Thu, 23 Jul 2026 14:44:00 +0000</pubDate>
     </item>
@@ -440,24 +458,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1402061</guid>
       <pubDate>Tue, 23 Jun 2026 13:50:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Admins may be unable to enforce Data Loss Prevention (DLP) policies in Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1436888</link>
-      <description>[Microsoft Teams] Admins may have been unable to enforce DLP policies in Microsoft Teams.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1436888</guid>
-      <pubDate>Mon, 22 Jun 2026 07:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may have been unable to schedule Microsoft Teams meetings through the classic Outlook desktop client</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1402778</link>
-      <description>[Microsoft Teams] Users may have been unable to schedule Microsoft Teams meetings through the classic Outlook desktop client.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1402778</guid>
-      <pubDate>Mon, 22 Jun 2026 01:16:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
