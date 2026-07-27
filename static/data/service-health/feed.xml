@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 27 Jul 2026 11:35:47 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 15:09:39 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Some users may be unable to share files with external recipients through SharePoint Online and Microsoft OneDrive</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1440526</link>
+      <description>[Microsoft 365 suite] Users may be unable to share files with external recipients through SharePoint Online and OneDrive.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1440526</guid>
+      <pubDate>Mon, 27 Jul 2026 14:10:34 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Admins may be unable to access the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1437790</link>
@@ -343,6 +352,15 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <pubDate>Tue, 30 Jun 2026 17:22:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Microsoft Teams] Users may be unable to run run-only workflows from Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1440450</link>
+      <description>[Microsoft Teams] Users may be unable to run run-only workflows from Microsoft Teams.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1440450</guid>
+      <pubDate>Tue, 30 Jun 2026 07:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Exchange Online] Some users may encounter crashes in the classic Outlook desktop app when right clicking in an email message</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1409958</link>
       <description>[Exchange Online] Users may have encountered crashes in the classic Outlook desktop app when right clicking in an email message.</description>
@@ -440,24 +458,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1402778</guid>
       <pubDate>Mon, 22 Jun 2026 01:16:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Purview] We've detected a Microsoft Purview Data Loss Prevention issue in your environment</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1397605</link>
-      <description>[Microsoft Purview] If action isn't taken, you may continue to see an error banner in Microsoft Edge for Business.</description>
-      <category>Microsoft Purview</category>
-      <category>investigating</category>
-      <guid isPermaLink="false">MP1397605</guid>
-      <pubDate>Sat, 20 Jun 2026 00:03:43 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some admins may see incorrect classifications of Cowork Tasks in Microsoft 365 Copilot Cowork usage reports </title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1428775</link>
-      <description>[Microsoft 365 suite] Admins may have seen incorrect classifications of Cowork Tasks in Copilot Cowork usage reports.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1428775</guid>
-      <pubDate>Wed, 17 Jun 2026 22:07:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
