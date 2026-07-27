@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 27 Jul 2026 07:46:29 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 11:35:47 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft Purview] Admins may not receive alerts for Microsoft Purview Communication Compliance policies that contain conditions</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1438577</link>
-      <description>[Microsoft Purview] Admins may not receive alerts for Microsoft Purview Communication Compliance policies that contain conditions. </description>
-      <category>Microsoft Purview</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MP1438577</guid>
-      <pubDate>Fri, 24 Jul 2026 21:56:40 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft 365 suite] Admins may be unable to access the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1437790</link>
@@ -80,6 +71,15 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1435242</guid>
       <pubDate>Tue, 21 Jul 2026 04:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Purview] Admins may not have received alerts for Microsoft Purview Communication Compliance policies that contain conditions</title>
+      <link>https://www.aguidetocloud.com/service-health/#MP1438577</link>
+      <description>[Microsoft Purview] Admins may not have received alerts for Microsoft Purview Communication Compliance policies that contain conditions.</description>
+      <category>Microsoft Purview</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MP1438577</guid>
+      <pubDate>Tue, 21 Jul 2026 02:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Admins may be unable to track open email counts in the Microsoft 365 admin center organizational messages</title>

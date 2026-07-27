@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T07:46:29.096786+00:00",
+  "generated_at": "2026-07-27T11:35:46.898227+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -122,9 +122,9 @@
       "short_name": "Purview",
       "icon": "🔍",
       "total_incidents": 3,
-      "active_incidents": 2,
-      "avg_duration_minutes": 582,
-      "last_incident": "2026-07-24T21:56:40.497000+00:00",
+      "active_incidents": 1,
+      "avg_duration_minutes": 4746,
+      "last_incident": "2026-07-21T02:00:00+00:00",
       "classifications": {
         "advisory": 3
       }
