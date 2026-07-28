@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Jul 2026 10:43:45 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 14:31:52 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Admins can't locate or disable the MailerLite and Miro connectors in the Microsoft 365 admin center </title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1441391</link>
+      <description>[Microsoft 365 suite] Admins can't locate or disable the MailerLite and Miro connectors in the Microsoft 365 admin center. </description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1441391</guid>
+      <pubDate>Tue, 28 Jul 2026 11:09:22 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users’ Microsoft 365 Copilot chats created in Excel, PowerPoint, and Word may display as an untitled chat</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1441063</link>
@@ -449,15 +458,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">SP1405058</guid>
       <pubDate>Fri, 26 Jun 2026 13:30:15 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to generate content through the Microsoft 365 Copilot Create web app</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1410413</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to generate content through the Microsoft 365 Copilot Create web app.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1410413</guid>
-      <pubDate>Thu, 25 Jun 2026 12:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
