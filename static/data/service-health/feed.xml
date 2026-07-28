@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 27 Jul 2026 23:17:21 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 03:30:27 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Some users’ Microsoft 365 Copilot chats created in Excel, PowerPoint, and Word may display as an untitled chat</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1441063</link>
+      <description>[Microsoft 365 Copilot Chat] Users’ Copilot chats created in Excel, PowerPoint, and Word may display as an untitled chat.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CW1441063</guid>
+      <pubDate>Tue, 28 Jul 2026 02:29:48 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Purview]  We’ve detected an issue with auto-created configs for Microsoft Purview inline data protections in Edge for Business </title>
       <link>https://www.aguidetocloud.com/service-health/#MP1440966</link>
@@ -449,15 +458,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1409288</guid>
       <pubDate>Tue, 23 Jun 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Users may be intermittently unable to export reports with sensitivity labels in Power BI</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1402061</link>
-      <description>[Power BI] Users may have been intermittently unable to export reports with sensitivity labels in Power BI.</description>
-      <category>Power BI</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PB1402061</guid>
-      <pubDate>Tue, 23 Jun 2026 13:50:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
