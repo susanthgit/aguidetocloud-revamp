@@ -11477,3 +11477,41 @@ exam_prerequisites = "None to sit the exam. Earning CCNP Service Provider requir
 exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop", "Simulation"]
 guided_url = "/guided/cisco-spcni/"
 practice_url = "/guided/cisco-spcni/practice/"
+
+[[cert]]
+slug = "paloalto-cybersec-practitioner"
+vendor = "paloalto"
+code = "PALOALTO-CYBERSEC-PRACTITIONER"
+name = "Palo Alto Networks Cybersecurity Practitioner"
+tagline = "Apply security across cybersecurity fundamentals, network security, secure access, cloud, endpoint, and security operations - with the Palo Alto Networks portfolio."
+exam_category = "Palo Alto"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 1005
+featured = false
+price_practice = 9
+
+[cert_map."paloalto-cybersec-practitioner"]
+vendor = "paloalto"
+code = "PALOALTO-CYBERSEC-PRACTITIONER"
+name = "Palo Alto Networks Cybersecurity Practitioner"
+tagline = "Apply security across cybersecurity fundamentals, network security, secure access, cloud, endpoint, and security operations - with the Palo Alto Networks portfolio."
+exam_category = "Palo Alto"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 1005
+featured = false
+price_practice = 9
+exam_url = "https://www.paloaltonetworks.com/services/education/panw-cybersecurity-practitioner"
+exam_provider = "Pearson VUE"
+exam_validity = "2 years"
+exam_prerequisites = "None; entry-level (Palo Alto recommends it after the Cybersecurity Apprentice). Palo Alto Networks does not publish a numeric exam code for this certification."
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/paloalto-cybersec-practitioner/"
+practice_url = "/guided/paloalto-cybersec-practitioner/practice/"
