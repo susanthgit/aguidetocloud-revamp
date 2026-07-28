@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Jul 2026 06:37:28 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 10:43:45 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users’ Microsoft 365 Copilot chats created in Excel, PowerPoint, and Word may display as an untitled chat</title>
@@ -15,6 +15,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CW1441063</guid>
       <pubDate>Tue, 28 Jul 2026 02:29:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Users' email messages sent to Microsoft Teams channels may not be formatted correctly</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1441044</link>
+      <description>[Microsoft Teams] Users' email messages sent to Microsoft Teams channels may not be formatted correctly.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1441044</guid>
+      <pubDate>Tue, 28 Jul 2026 01:36:53 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Purview]  We’ve detected an issue with auto-created configs for Microsoft Purview inline data protections in Edge for Business </title>
@@ -449,15 +458,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1410413</guid>
       <pubDate>Thu, 25 Jun 2026 12:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to view SharePoint Online files that are linked by Microsoft 365 Copilot Chat or Copilot agents</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1409288</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to view SharePoint Online files that were linked by Copilot Chat or Copilot agents.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1409288</guid>
-      <pubDate>Tue, 23 Jun 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
