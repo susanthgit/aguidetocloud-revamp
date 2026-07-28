@@ -5,14 +5,14 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Jul 2026 14:31:52 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 17:43:54 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft 365 suite] Admins can't locate or disable the MailerLite and Miro connectors in the Microsoft 365 admin center </title>
+      <title>[Microsoft 365 suite] Admins couldn't locate or disable the MailerLite and Miro connectors in the Microsoft 365 admin center </title>
       <link>https://www.aguidetocloud.com/service-health/#MO1441391</link>
-      <description>[Microsoft 365 suite] Admins can't locate or disable the MailerLite and Miro connectors in the Microsoft 365 admin center. </description>
+      <description>[Microsoft 365 suite] Admins couldn't locate or disable the MailerLite and Miro connectors in the Microsoft 365 admin center. </description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1441391</guid>
       <pubDate>Tue, 28 Jul 2026 11:09:22 +0000</pubDate>
     </item>
@@ -21,7 +21,7 @@
       <link>https://www.aguidetocloud.com/service-health/#CW1441063</link>
       <description>[Microsoft 365 Copilot Chat] Users’ Copilot chats created in Excel, PowerPoint, and Word may display as an untitled chat.</description>
       <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceDegradation</category>
+      <category>falsePositive</category>
       <guid isPermaLink="false">CW1441063</guid>
       <pubDate>Tue, 28 Jul 2026 02:29:48 +0000</pubDate>
     </item>
