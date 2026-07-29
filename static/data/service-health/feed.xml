@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Jul 2026 14:28:35 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 17:33:40 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Exchange Online] Admins are unable to complete some cross-tenant mailbox migrations in Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1442215</link>
+      <description>[Exchange Online] Admins may be unable to perform tenant to tenant migrations and offboarding moves in the Exchange admin center.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1442215</guid>
+      <pubDate>Wed, 29 Jul 2026 13:29:41 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Some users may be unable to create or publish Microsoft Teams town hall or webinar events that include guest users</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1442034</link>
@@ -17,9 +26,9 @@
       <pubDate>Wed, 29 Jul 2026 07:29:23 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users are unable to access Copilot Cowork in Microsoft 365 Copilot chat</title>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to access Copilot Cowork from the Cowork toggle in Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1442025</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users are unable to access Copilot Cowork in Microsoft 365 Copilot chat.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to access Copilot Cowork from the Cowork toggle in Copilot.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1442025</guid>
@@ -33,15 +42,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1441391</guid>
       <pubDate>Tue, 28 Jul 2026 11:09:22 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Some users’ Microsoft 365 Copilot chats created in Excel, PowerPoint, and Word may display as an untitled chat</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1441063</link>
-      <description>[Microsoft 365 Copilot Chat] Users’ Copilot chats created in Excel, PowerPoint, and Word may display as an untitled chat.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">CW1441063</guid>
-      <pubDate>Tue, 28 Jul 2026 02:29:48 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Purview]  We’ve detected an issue with auto-created configs for Microsoft Purview inline data protections in Edge for Business </title>
