@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Jul 2026 06:41:55 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 10:47:15 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Some users may be unable to create or publish Microsoft Teams town hall or webinar events that include guest users</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1442034</link>
+      <description>[Microsoft Teams] Users may be unable to create or publish Microsoft Teams town hall or webinar events that include guest users. </description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1442034</guid>
+      <pubDate>Wed, 29 Jul 2026 07:29:23 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Admins couldn't locate or disable the MailerLite and Miro connectors in the Microsoft 365 admin center </title>
       <link>https://www.aguidetocloud.com/service-health/#MO1441391</link>
@@ -24,15 +33,6 @@
       <category>falsePositive</category>
       <guid isPermaLink="false">CW1441063</guid>
       <pubDate>Tue, 28 Jul 2026 02:29:48 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users' email messages sent to Microsoft Teams channels may not be formatted correctly</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1441044</link>
-      <description>[Microsoft Teams] Users' email messages sent to Microsoft Teams channels may not be formatted correctly.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1441044</guid>
-      <pubDate>Tue, 28 Jul 2026 01:36:53 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Purview]  We’ve detected an issue with auto-created configs for Microsoft Purview inline data protections in Edge for Business </title>
@@ -143,6 +143,15 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>investigationSuspended</category>
       <guid isPermaLink="false">MO1434392</guid>
       <pubDate>Mon, 20 Jul 2026 20:27:05 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Users' email messages sent to Microsoft Teams channels may have been incorrectly formatted </title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1441044</link>
+      <description>[Microsoft Teams] Users' email messages sent to Microsoft Teams channels may have been incorrectly formatted.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1441044</guid>
+      <pubDate>Mon, 20 Jul 2026 14:23:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Microsoft Copilot (Microsoft 365) usage reports from the Microsoft 365 admin center may be delayed for admins and users</title>
@@ -397,9 +406,9 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <pubDate>Tue, 30 Jun 2026 17:22:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Teams] Users may be unable to run run-only workflows from Microsoft Teams</title>
+      <title>[Microsoft Teams] Users may have been unable to run run-only workflows from Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1440450</link>
-      <description>[Microsoft Teams] Users may be unable to run run-only workflows from Microsoft Teams.</description>
+      <description>[Microsoft Teams] Users may have been unable to run run-only workflows from Microsoft Teams.</description>
       <category>Microsoft Teams</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1440450</guid>
@@ -449,15 +458,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1410811</guid>
       <pubDate>Fri, 26 Jun 2026 13:43:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Users may be unable to access or experience degraded performance when using SharePoint Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1405058</link>
-      <description>[SharePoint Online] Users may have been unable to access or experience degraded performance when using SharePoint Online.</description>
-      <category>SharePoint Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">SP1405058</guid>
-      <pubDate>Fri, 26 Jun 2026 13:30:15 +0000</pubDate>
     </item>
   </channel>
 </rss>
