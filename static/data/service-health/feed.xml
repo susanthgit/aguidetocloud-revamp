@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Jul 2026 23:13:13 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 03:33:09 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Admins couldn't locate or disable the MailerLite and Miro connectors in the Microsoft 365 admin center </title>
@@ -140,7 +140,7 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <link>https://www.aguidetocloud.com/service-health/#MO1434392</link>
       <description>[Microsoft 365 suite] Admins may be unable to track open email counts in the Microsoft 365 admin center organizational messages.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>investigationSuspended</category>
       <guid isPermaLink="false">MO1434392</guid>
       <pubDate>Mon, 20 Jul 2026 20:27:05 +0000</pubDate>
     </item>
