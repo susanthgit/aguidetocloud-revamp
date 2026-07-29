@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Jul 2026 10:47:15 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 14:28:35 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Some users may be unable to create or publish Microsoft Teams town hall or webinar events that include guest users</title>
@@ -15,6 +15,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1442034</guid>
       <pubDate>Wed, 29 Jul 2026 07:29:23 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users are unable to access Copilot Cowork in Microsoft 365 Copilot chat</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1442025</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users are unable to access Copilot Cowork in Microsoft 365 Copilot chat.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1442025</guid>
+      <pubDate>Wed, 29 Jul 2026 07:10:16 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Admins couldn't locate or disable the MailerLite and Miro connectors in the Microsoft 365 admin center </title>
@@ -449,15 +458,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">OD1405074</guid>
       <pubDate>Fri, 26 Jun 2026 14:05:30 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Users couldn't access the Microsoft Defender for Endpoint on Linux service upon rebooting after a version upgrade</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1410811</link>
-      <description>[Microsoft Defender XDR] Users couldn't access the Microsoft Defender for Endpoint on Linux service upon rebooting after a version upgrade.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">DZ1410811</guid>
-      <pubDate>Fri, 26 Jun 2026 13:43:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
