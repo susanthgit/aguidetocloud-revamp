@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Jul 2026 17:33:40 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 19:39:32 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Exchange Online] Admins are unable to complete some cross-tenant mailbox migrations in Exchange Online</title>
@@ -116,6 +116,15 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1436954</guid>
       <pubDate>Thu, 23 Jul 2026 03:19:34 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Admins may be unable to export reports to comma separated values (CSVs) in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1442357</link>
+      <description>[Microsoft 365 suite] Admins may be unable to export reports to CSVs in the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1442357</guid>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some admins may see inaccurate status information in the service health section in the Microsoft 365 admin center</title>
@@ -449,15 +458,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1409007</guid>
       <pubDate>Mon, 29 Jun 2026 15:40:37 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft OneDrive] Some users may be unable to access or experienced degraded performance when using Microsoft OneDrive</title>
-      <link>https://www.aguidetocloud.com/service-health/#OD1405074</link>
-      <description>[Microsoft OneDrive] Users may have been unable to access or experienced degraded performance when using OneDrive.</description>
-      <category>Microsoft OneDrive</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">OD1405074</guid>
-      <pubDate>Fri, 26 Jun 2026 14:05:30 +0000</pubDate>
     </item>
   </channel>
 </rss>
