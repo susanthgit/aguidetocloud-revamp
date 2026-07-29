@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Jul 2026 21:10:03 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 23:10:57 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Exchange Online] Admins are unable to complete some cross-tenant mailbox migrations in Exchange Online</title>
@@ -28,9 +28,9 @@
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to access Copilot Cowork from the Cowork toggle in Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1442025</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to access Copilot Cowork from the Cowork toggle in Copilot.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access Copilot Cowork from the Cowork toggle in Copilot.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1442025</guid>
       <pubDate>Wed, 29 Jul 2026 07:10:16 +0000</pubDate>
     </item>
