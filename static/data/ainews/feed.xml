@@ -5,146 +5,82 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Jul 2026 23:57:09 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 07:36:45 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Looks like JFrog's 0-days let OpenAI's models hack Hugging Face</title>
-      <link>https://www.theregister.com/security/2026/07/28/looks-like-jfrogs-0-days-let-openais-models-hack-hugging-face/5280001</link>
+      <title>Big Tech demanding deals that smooth out memory prices, says SK Hynix</title>
+      <link>https://www.theregister.com/systems/2026/07/29/big-tech-demanding-deals-that-smooth-out-memory-prices-says-sk-hynix/5280182</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 29 Jul 2026 07:18:18 +0200</pubDate>
+      <guid>https://www.theregister.com/systems/2026/07/29/big-tech-demanding-deals-that-smooth-out-memory-prices-says-sk-hynix/5280182</guid>
+    </item>
+    <item>
+      <title>America bans imported robots due to supply chain and security risks</title>
+      <link>https://www.theregister.com/security/2026/07/29/america-bans-imported-robots-due-to-supply-chain-and-security-risks/5280145</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 29 Jul 2026 04:16:31 +0200</pubDate>
+      <guid>https://www.theregister.com/security/2026/07/29/america-bans-imported-robots-due-to-supply-chain-and-security-risks/5280145</guid>
+    </item>
+    <item>
+      <title>Grok 4.5 in GitHub Copilot</title>
+      <link>https://x.ai/news/grok-github-copilot</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Wed, 29 Jul 2026 01:51:49 +0000</pubDate>
+      <guid>https://x.ai/news/grok-github-copilot</guid>
+    </item>
+    <item>
+      <title>Introducing Build Mode</title>
+      <link>https://x.ai/news/grok-build-mode</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Wed, 29 Jul 2026 01:51:49 +0000</pubDate>
+      <guid>https://x.ai/news/grok-build-mode</guid>
+    </item>
+    <item>
+      <title>A requiem for Optane, Intel's KV Cache killer that could have eased the RAM price crunch</title>
+      <link>https://www.theregister.com/storage/2026/07/29/a-requiem-for-optane-intels-kv-cache-killer-that-could-have-eased-the-ram-price-crunch/5280063</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 29 Jul 2026 01:27:59 +0200</pubDate>
+      <guid>https://www.theregister.com/storage/2026/07/29/a-requiem-for-optane-intels-kv-cache-killer-that-could-have-eased-the-ram-price-crunch/5280063</guid>
+    </item>
+    <item>
+      <title>MCP gets an enterprise makeover</title>
+      <link>https://www.theregister.com/ai-and-ml/2026/07/29/mcp-gets-an-enterprise-makeover/5280027</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 29 Jul 2026 01:08:02 +0200</pubDate>
+      <guid>https://www.theregister.com/ai-and-ml/2026/07/29/mcp-gets-an-enterprise-makeover/5280027</guid>
+    </item>
+    <item>
+      <title>OpenAI’s Rogue AI Agent Hacked More Than Just Hugging Face</title>
+      <link>https://www.wired.com/story/openais-rogue-ai-agent-hacked-more-than-just-hugging-face/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Wed, 29 Jul 2026 00:01:53 +0200</pubDate>
-      <guid>https://www.theregister.com/security/2026/07/28/looks-like-jfrogs-0-days-let-openais-models-hack-hugging-face/5280001</guid>
+      <pubDate>Wed, 29 Jul 2026 00:15:30 +0000</pubDate>
+      <guid>https://www.wired.com/story/openais-rogue-ai-agent-hacked-more-than-just-hugging-face/</guid>
     </item>
     <item>
-      <title>Build reliable multi-agent applications with ADK Go 2.0. Discover our new graph-based workflow engine, built-in human-in-the-loop, and dynamic orchestration</title>
-      <link>https://developers.googleblog.com/announcing-adk-go-20/</link>
+      <title>Cyera agrees to acquire Oasis Security for $1B to safeguard proliferating AI agents</title>
+      <link>https://techcrunch.com/2026/07/28/cyera-agrees-to-acquire-oasis-security-for-1b-to-safeguard-proliferating-ai-agents/</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Tue, 28 Jul 2026 23:55:32 +0000</pubDate>
-      <guid>https://developers.googleblog.com/announcing-adk-go-20/</guid>
+      <category>Top Stories</category>
+      <pubDate>Wed, 29 Jul 2026 00:09:05 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/07/28/cyera-agrees-to-acquire-oasis-security-for-1b-to-safeguard-proliferating-ai-agents/</guid>
     </item>
     <item>
-      <title>Driving the Agent Quality Flywheel from Your Coding Agent</title>
-      <link>https://developers.googleblog.com/driving-the-agent-quality-flywheel-from-your-coding-agent/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Tue, 28 Jul 2026 23:55:32 +0000</pubDate>
-      <guid>https://developers.googleblog.com/driving-the-agent-quality-flywheel-from-your-coding-agent/</guid>
-    </item>
-    <item>
-      <title>Systems Engineering Playbook: Optimizing Qwen 3.5-397B MoE on Ironwood (TPU7x)</title>
-      <link>https://developers.googleblog.com/systems-engineering-playbook-optimizing-qwen-35-397b-moe-on-ironwood-tpu7x/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Tue, 28 Jul 2026 23:55:32 +0000</pubDate>
-      <guid>https://developers.googleblog.com/systems-engineering-playbook-optimizing-qwen-35-397b-moe-on-ironwood-tpu7x/</guid>
-    </item>
-    <item>
-      <title>GitHub Copilot app usage metrics now expand across report rollups</title>
-      <link>https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups</link>
+      <title>npm publish-time malware scanning and dual-use metadata</title>
+      <link>https://github.blog/changelog/2026-07-28-npm-publish-time-malware-scanning-and-dual-use-metadata</link>
       <description></description>
       <category>GitHub Copilot</category>
-      <pubDate>Tue, 28 Jul 2026 23:35:01 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups</guid>
+      <pubDate>Tue, 28 Jul 2026 22:50:05 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-07-28-npm-publish-time-malware-scanning-and-dual-use-metadata</guid>
     </item>
     <item>
-      <title>Perplexity's tokenmaxxing Model Council gives you multiple bot perspectives</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/07/28/perplexitys-tokenmaxxing-model-council-gives-you-multiple-bot-perspectives/5279972</link>
-      <description></description>
-      <category>Perplexity</category>
-      <pubDate>Tue, 28 Jul 2026 23:26:53 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/07/28/perplexitys-tokenmaxxing-model-council-gives-you-multiple-bot-perspectives/5279972</guid>
-    </item>
-    <item>
-      <title>War machines can run amok with AI in control</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/07/28/war-machines-can-run-amok-with-ai-in-control/5279937</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 28 Jul 2026 21:51:08 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/07/28/war-machines-can-run-amok-with-ai-in-control/5279937</guid>
-    </item>
-    <item>
-      <title>We now have a better understanding how OpenAI hacked into Hugging Face</title>
-      <link>https://arstechnica.com/security/2026/07/jfrog-tries-to-spin-openai-0-day-exploit-of-its-app-into-a-success-story/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 28 Jul 2026 21:36:39 +0000</pubDate>
-      <guid>https://arstechnica.com/security/2026/07/jfrog-tries-to-spin-openai-0-day-exploit-of-its-app-into-a-success-story/</guid>
-    </item>
-    <item>
-      <title>Bot-detection startup Spur nabs $200M from Insight</title>
-      <link>https://techcrunch.com/2026/07/28/bot-detection-startup-spur-nabs-200m-from-insight/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 28 Jul 2026 21:29:34 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/07/28/bot-detection-startup-spur-nabs-200m-from-insight/</guid>
-    </item>
-    <item>
-      <title>Microsoft and Wiz mind-meld agents catch more than 90% of bugs</title>
-      <link>https://www.theregister.com/security/2026/07/28/microsoft-and-wiz-mind-meld-agents-catch-more-than-90-of-bugs/5279914</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 28 Jul 2026 21:21:01 +0200</pubDate>
-      <guid>https://www.theregister.com/security/2026/07/28/microsoft-and-wiz-mind-meld-agents-catch-more-than-90-of-bugs/5279914</guid>
-    </item>
-    <item>
-      <title>MCP startup Runlayer accuses Rippling of stealing its product idea</title>
-      <link>https://techcrunch.com/2026/07/28/mcp-startup-runlayer-accuses-rippling-of-stealing-its-product-idea/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 28 Jul 2026 20:45:12 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/07/28/mcp-startup-runlayer-accuses-rippling-of-stealing-its-product-idea/</guid>
-    </item>
-    <item>
-      <title>Sam Altman is ready to decelerate</title>
-      <link>https://techcrunch.com/2026/07/28/sam-altman-is-ready-to-decelerate/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 28 Jul 2026 20:17:08 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/07/28/sam-altman-is-ready-to-decelerate/</guid>
-    </item>
-    <item>
-      <title>12 keychain gadgets worth carrying every day (and why they're worth it)</title>
-      <link>https://www.zdnet.com/article/best-keychain-gadgets-everyday-carry/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Tue, 28 Jul 2026 19:27:39 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/best-keychain-gadgets-everyday-carry/</guid>
-    </item>
-    <item>
-      <title>Grok 4.5 is now available in GitHub Copilot</title>
-      <link>https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Tue, 28 Jul 2026 19:10:45 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot</guid>
-    </item>
-    <item>
-      <title>How AgentCore Gateway supports the MCP 2026-07-28 spec</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Tue, 28 Jul 2026 19:07:09 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/</guid>
-    </item>
-    <item>
-      <title>AI is storage’s biggest opportunity - and biggest threat</title>
-      <link>https://www.theregister.com/storage/2026/07/28/ai-is-storages-biggest-opportunity-and-biggest-threat/5279607</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 28 Jul 2026 18:51:59 +0200</pubDate>
-      <guid>https://www.theregister.com/storage/2026/07/28/ai-is-storages-biggest-opportunity-and-biggest-threat/5279607</guid>
-    </item>
-    <item>
-      <title>You can lease an iPhone through Klarna now - but should you? I did the math</title>
-      <link>https://www.zdnet.com/article/should-you-finance-pay-in-full-or-apple-upgrade/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Tue, 28 Jul 2026 18:40:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/should-you-finance-pay-in-full-or-apple-upgrade/</guid>
-    </item>
-    <item>
-      <title>AI leaders sign a statement asking the government to do something about automated AI</title>
+      <title>AI leaders sign statement asking the government to do something about automated AI</title>
       <link>https://www.theverge.com/ai-artificial-intelligence/972161/ai-leaders-us-government-openai-anthropic-google-meta</link>
       <description></description>
       <category>OpenAI</category>
@@ -152,260 +88,324 @@
       <guid>https://www.theverge.com/ai-artificial-intelligence/972161/ai-leaders-us-government-openai-anthropic-google-meta</guid>
     </item>
     <item>
-      <title>AI’s finally expensive enough to make Wall Street nervous</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/972119/ai-stock-fall-google-capex</link>
+      <title>Sam Altman says the Hugging Face hack is a reminder that an AI power monopoly could lead to 'long-term disaster' - Business Insider</title>
+      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=184731436</link>
       <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 28 Jul 2026 15:33:03 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/972119/ai-stock-fall-google-capex</guid>
+      <category>OpenAI</category>
+      <pubDate>Tue, 28 Jul 2026 07:32:10 +0000</pubDate>
+      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=184731436</guid>
     </item>
     <item>
-      <title>Recursive Superintelligence signs $410M compute deal with Amazon</title>
-      <link>https://techcrunch.com/2026/07/28/recursive-superintelligence-signs-400-compute-deal-with-amazon/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Tue, 28 Jul 2026 13:19:17 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/07/28/recursive-superintelligence-signs-400-compute-deal-with-amazon/</guid>
-    </item>
-    <item>
-      <title>Memory Efficient Audio Synthesis with Decoupled Temporal Depth Diffusion Transformers</title>
-      <link>https://machinelearning.apple.com/research/audio-synthesis-diffusion-transformers</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>https://machinelearning.apple.com/research/audio-synthesis-diffusion-transformers</guid>
-    </item>
-    <item>
-      <title>From models to chips: Anthropic chip ambitions pull Korea deeper into the AI silicon race</title>
-      <link>https://www.digitimes.com/news/a20260727VL217/sk-hynix-anthropic-silicon-hardware-chips-design.html</link>
+      <title>railmux 0.2.14</title>
+      <link>https://pypi.org/project/railmux/0.2.14/</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Mon, 27 Jul 2026 23:52:20 +0000</pubDate>
-      <guid>https://www.digitimes.com/news/a20260727VL217/sk-hynix-anthropic-silicon-hardware-chips-design.html</guid>
+      <pubDate>Tue, 28 Jul 2026 07:30:39 +0000</pubDate>
+      <guid>https://pypi.org/project/railmux/0.2.14/</guid>
     </item>
     <item>
-      <title>Should we be concerned about an AI "lab leak"?</title>
-      <link>https://biztoc.com/x/deed42ca67dba2ac</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 27 Jul 2026 23:51:45 +0000</pubDate>
-      <guid>https://biztoc.com/x/deed42ca67dba2ac</guid>
-    </item>
-    <item>
-      <title>Meta Wants AI to Become Every Employee’s Coworker</title>
-      <link>https://www.pymnts.com/facebook-meta/2026/meta-wants-ai-to-become-every-employees-coworker/</link>
-      <description></description>
-      <category>Microsoft</category>
-      <pubDate>Mon, 27 Jul 2026 23:49:35 +0000</pubDate>
-      <guid>https://www.pymnts.com/facebook-meta/2026/meta-wants-ai-to-become-every-employees-coworker/</guid>
-    </item>
-    <item>
-      <title>Microsoft touts cost-saving AI model for cybersecurity</title>
-      <link>https://www.cnbc.com/2026/07/27/microsoft-touts-cost-saving-ai-model-for-cybersecurity.html</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Mon, 27 Jul 2026 23:46:25 +0000</pubDate>
-      <guid>https://www.cnbc.com/2026/07/27/microsoft-touts-cost-saving-ai-model-for-cybersecurity.html</guid>
-    </item>
-    <item>
-      <title>Anthropic CEO Dario Amodei says AI company isn't advocating for ban of open-weight models</title>
-      <link>https://www.cnbc.com/2026/07/27/anthropic-ceo-dario-amodei-isnt-advocating-open-weight-model-ban.html</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 27 Jul 2026 23:43:50 +0000</pubDate>
-      <guid>https://www.cnbc.com/2026/07/27/anthropic-ceo-dario-amodei-isnt-advocating-open-weight-model-ban.html</guid>
-    </item>
-    <item>
-      <title>PaLM-rlhf-pytorch 0.7.5</title>
-      <link>https://pypi.org/project/palm-rlhf-pytorch/0.7.5/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Mon, 27 Jul 2026 23:39:49 +0000</pubDate>
-      <guid>https://pypi.org/project/palm-rlhf-pytorch/0.7.5/</guid>
-    </item>
-    <item>
-      <title>flexinference 1.6.7</title>
-      <link>https://pypi.org/project/flexinference/1.6.7/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Mon, 27 Jul 2026 23:39:43 +0000</pubDate>
-      <guid>https://pypi.org/project/flexinference/1.6.7/</guid>
-    </item>
-    <item>
-      <title>agentgrep 0.1.0a44</title>
-      <link>https://pypi.org/project/agentgrep/0.1.0a44/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 27 Jul 2026 23:38:29 +0000</pubDate>
-      <guid>https://pypi.org/project/agentgrep/0.1.0a44/</guid>
-    </item>
-    <item>
-      <title>How AI Can Help You Prep: Prompts and Real-World Uses</title>
-      <link>https://thesurvivalmom.com/ai-prepping-prompts/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 27 Jul 2026 23:29:02 +0000</pubDate>
-      <guid>https://thesurvivalmom.com/ai-prepping-prompts/</guid>
-    </item>
-    <item>
-      <title>Nvidia signs deal to deploy edge AI on future Moon missions — laying the groundwork for a permanent human home in space</title>
-      <link>https://www.techradar.com/pro/nvidia-signs-deal-to-deploy-edge-ai-on-future-moon-missions-laying-the-groundwork-for-a-permanent-human-home-in-space</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Mon, 27 Jul 2026 23:25:00 +0000</pubDate>
-      <guid>https://www.techradar.com/pro/nvidia-signs-deal-to-deploy-edge-ai-on-future-moon-missions-laying-the-groundwork-for-a-permanent-human-home-in-space</guid>
-    </item>
-    <item>
-      <title>diffapqp 0.2.0</title>
-      <link>https://pypi.org/project/diffapqp/0.2.0/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Mon, 27 Jul 2026 23:23:09 +0000</pubDate>
-      <guid>https://pypi.org/project/diffapqp/0.2.0/</guid>
-    </item>
-    <item>
-      <title>Op-Ed: Huge new AI company debt is funding AI moves. How do you trust it?</title>
-      <link>https://www.digitaljournal.com/article/op-ed-huge-new-ai-company-debt-is-funding-ai-moves-how-do-you-trust-it/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 27 Jul 2026 23:22:21 +0000</pubDate>
-      <guid>https://www.digitaljournal.com/article/op-ed-huge-new-ai-company-debt-is-funding-ai-moves-how-do-you-trust-it/</guid>
-    </item>
-    <item>
-      <title>krepis 0.21.0</title>
-      <link>https://pypi.org/project/krepis/0.21.0/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Mon, 27 Jul 2026 23:21:45 +0000</pubDate>
-      <guid>https://pypi.org/project/krepis/0.21.0/</guid>
-    </item>
-    <item>
-      <title>ghostcrawl-langchain 2.3.5</title>
-      <link>https://pypi.org/project/ghostcrawl-langchain/2.3.5/</link>
+      <title>helen-lang 1.29.8</title>
+      <link>https://pypi.org/project/helen-lang/1.29.8/</link>
       <description></description>
       <category>Open Source</category>
-      <pubDate>Mon, 27 Jul 2026 23:20:58 +0000</pubDate>
-      <guid>https://pypi.org/project/ghostcrawl-langchain/2.3.5/</guid>
+      <pubDate>Tue, 28 Jul 2026 07:26:41 +0000</pubDate>
+      <guid>https://pypi.org/project/helen-lang/1.29.8/</guid>
     </item>
     <item>
-      <title>Seven regional blocs redefining AI competition</title>
-      <link>https://punchng.com/seven-regional-blocs-redefining-ai-competition/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Mon, 27 Jul 2026 23:20:03 +0000</pubDate>
-      <guid>https://punchng.com/seven-regional-blocs-redefining-ai-competition/</guid>
-    </item>
-    <item>
-      <title>Enigma raises $71M to develop foundation models for robots</title>
-      <link>https://siliconangle.com/2026/07/27/enigma-raises-71m-develop-foundation-models-robots/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Mon, 27 Jul 2026 23:18:14 +0000</pubDate>
-      <guid>https://siliconangle.com/2026/07/27/enigma-raises-71m-develop-foundation-models-robots/</guid>
-    </item>
-    <item>
-      <title>Nvidia forms industry alliance for open AI security after Hugging Face hack - Reuters</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=184727484</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Mon, 27 Jul 2026 23:12:43 +0000</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=184727484</guid>
-    </item>
-    <item>
-      <title>gguf-server 0.0.2</title>
-      <link>https://pypi.org/project/gguf-server/0.0.2/</link>
+      <title>torch_to_nnef 0.24.4</title>
+      <link>https://pypi.org/project/torch-to-nnef/0.24.4/</link>
       <description></description>
       <category>Meta</category>
-      <pubDate>Mon, 27 Jul 2026 23:06:59 +0000</pubDate>
-      <guid>https://pypi.org/project/gguf-server/0.0.2/</guid>
+      <pubDate>Tue, 28 Jul 2026 07:25:48 +0000</pubDate>
+      <guid>https://pypi.org/project/torch-to-nnef/0.24.4/</guid>
     </item>
     <item>
-      <title>mureo 0.10.31</title>
-      <link>https://pypi.org/project/mureo/0.10.31/</link>
+      <title>How Apple Beat Nvidia Without Winning the AI Chip War: The Strategy That Shocked Investors</title>
+      <link>https://www.successful-blog.com/1/apple-beat-nvidia-ai-chip-strategy/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 28 Jul 2026 07:24:03 +0000</pubDate>
+      <guid>https://www.successful-blog.com/1/apple-beat-nvidia-ai-chip-strategy/</guid>
+    </item>
+    <item>
+      <title>langchain-couchbase 1.1.1</title>
+      <link>https://pypi.org/project/langchain-couchbase/1.1.1/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Tue, 28 Jul 2026 07:22:07 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-couchbase/1.1.1/</guid>
+    </item>
+    <item>
+      <title>【Amazon30％OFFタイムセール】2026年最新「Easerush P12PLUS」12.2インチAndroid 16・Gemini AI・120Hz・2.4K大画面タブレットが32,900円</title>
+      <link>https://prtimes.jp/main/html/rd/p/000000338.000127114.html</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Mon, 27 Jul 2026 23:04:09 +0000</pubDate>
-      <guid>https://pypi.org/project/mureo/0.10.31/</guid>
+      <pubDate>Tue, 28 Jul 2026 07:21:40 +0000</pubDate>
+      <guid>https://prtimes.jp/main/html/rd/p/000000338.000127114.html</guid>
     </item>
     <item>
-      <title>dna-sdk 0.31.1</title>
-      <link>https://pypi.org/project/dna-sdk/0.31.1/</link>
-      <description></description>
-      <category>Copilot Studio</category>
-      <pubDate>Mon, 27 Jul 2026 23:00:31 +0000</pubDate>
-      <guid>https://pypi.org/project/dna-sdk/0.31.1/</guid>
-    </item>
-    <item>
-      <title>Elon Musk: Humans Will Lose Control of AI Within a Decade</title>
-      <link>https://decrypt.co/374488/elon-musk-humans-lose-control-ai-decade</link>
-      <description></description>
-      <category>xAI</category>
-      <pubDate>Mon, 27 Jul 2026 23:00:04 +0000</pubDate>
-      <guid>https://decrypt.co/374488/elon-musk-humans-lose-control-ai-decade</guid>
-    </item>
-    <item>
-      <title>CNBC's The China Connection newsletter: A U.S.-China debate that's becoming bigger than tariffs</title>
-      <link>https://www.cnbc.com/2026/07/27/cnbcs-the-china-connection-newsletter-a-us-china-debate-thats-becoming-bigger-than-tariffs.html</link>
-      <description></description>
-      <category>DeepSeek</category>
-      <pubDate>Mon, 27 Jul 2026 23:00:02 +0000</pubDate>
-      <guid>https://www.cnbc.com/2026/07/27/cnbcs-the-china-connection-newsletter-a-us-china-debate-thats-becoming-bigger-than-tariffs.html</guid>
-    </item>
-    <item>
-      <title>Best AI Note-Taking Tools for Students</title>
-      <link>https://www.asianefficiency.com/productivity/best-ai-note-taking-tools-students/</link>
-      <description></description>
-      <category>Perplexity</category>
-      <pubDate>Mon, 27 Jul 2026 23:00:00 +0000</pubDate>
-      <guid>https://www.asianefficiency.com/productivity/best-ai-note-taking-tools-students/</guid>
-    </item>
-    <item>
-      <title>Too Many AI Tools? How to Create Story Videos In One Workflow With Wondershare Media.io</title>
-      <link>https://hackread.com/ai-tools-create-story-videos-workflow-wondershare-media-io/</link>
+      <title>onegenie 0.1.31</title>
+      <link>https://pypi.org/project/onegenie/0.1.31/</link>
       <description></description>
       <category>AI Foundry</category>
-      <pubDate>Mon, 27 Jul 2026 22:56:11 +0000</pubDate>
-      <guid>https://hackread.com/ai-tools-create-story-videos-workflow-wondershare-media-io/</guid>
+      <pubDate>Tue, 28 Jul 2026 07:21:14 +0000</pubDate>
+      <guid>https://pypi.org/project/onegenie/0.1.31/</guid>
     </item>
     <item>
-      <title>mentedb-langchain 0.32.2</title>
-      <link>https://pypi.org/project/mentedb-langchain/0.32.2/</link>
+      <title>UK lawmaker suing Musk's xAI seeks order to stop Grok generating sexualised images</title>
+      <link>https://www.channelnewsasia.com/business/uk-lawmaker-suing-musks-xai-seeks-order-stop-grok-generating-sexualised-images-6282596</link>
       <description></description>
-      <category>Open Source</category>
-      <pubDate>Mon, 27 Jul 2026 22:44:06 +0000</pubDate>
-      <guid>https://pypi.org/project/mentedb-langchain/0.32.2/</guid>
+      <category>AI Foundry</category>
+      <pubDate>Tue, 28 Jul 2026 07:18:27 +0000</pubDate>
+      <guid>https://www.channelnewsasia.com/business/uk-lawmaker-suing-musks-xai-seeks-order-stop-grok-generating-sexualised-images-6282596</guid>
     </item>
     <item>
-      <title>Microsoft’s first cybersecurity model powers new Project Perception agents</title>
-      <link>https://siliconangle.com/2026/07/27/microsofts-first-cybersecurity-model-powers-new-project-perception-agents/</link>
+      <title>AWS Launches Amazon GuardDuty Investigation Agent to Automate Threat Triage</title>
+      <link>https://www.infoq.com/news/2026/07/guardduty-investigation-agent/</link>
       <description></description>
-      <category>Microsoft</category>
-      <pubDate>Mon, 27 Jul 2026 22:38:47 +0000</pubDate>
-      <guid>https://siliconangle.com/2026/07/27/microsofts-first-cybersecurity-model-powers-new-project-perception-agents/</guid>
+      <category>Google</category>
+      <pubDate>Tue, 28 Jul 2026 07:14:00 +0000</pubDate>
+      <guid>https://www.infoq.com/news/2026/07/guardduty-investigation-agent/</guid>
     </item>
     <item>
-      <title>antigen-model added to PyPI</title>
-      <link>https://pypi.org/project/antigen-model/</link>
+      <title>drissionpage-mcp 0.7.7</title>
+      <link>https://pypi.org/project/drissionpage-mcp/0.7.7/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 28 Jul 2026 07:11:20 +0000</pubDate>
+      <guid>https://pypi.org/project/drissionpage-mcp/0.7.7/</guid>
+    </item>
+    <item>
+      <title>llm-perplexity-agent 0.3.0</title>
+      <link>https://pypi.org/project/llm-perplexity-agent/0.3.0/</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Tue, 28 Jul 2026 07:07:29 +0000</pubDate>
+      <guid>https://pypi.org/project/llm-perplexity-agent/0.3.0/</guid>
+    </item>
+    <item>
+      <title>llm-perplexity-agent added to PyPI</title>
+      <link>https://pypi.org/project/llm-perplexity-agent/</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Tue, 28 Jul 2026 07:07:19 +0000</pubDate>
+      <guid>https://pypi.org/project/llm-perplexity-agent/</guid>
+    </item>
+    <item>
+      <title>perplexity-agent-mcp 0.3.0</title>
+      <link>https://pypi.org/project/perplexity-agent-mcp/0.3.0/</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Tue, 28 Jul 2026 07:06:54 +0000</pubDate>
+      <guid>https://pypi.org/project/perplexity-agent-mcp/0.3.0/</guid>
+    </item>
+    <item>
+      <title>renewable-huber added to PyPI</title>
+      <link>https://pypi.org/project/renewable-huber/</link>
       <description></description>
       <category>NVIDIA</category>
-      <pubDate>Mon, 27 Jul 2026 22:31:09 +0000</pubDate>
-      <guid>https://pypi.org/project/antigen-model/</guid>
+      <pubDate>Tue, 28 Jul 2026 07:06:50 +0000</pubDate>
+      <guid>https://pypi.org/project/renewable-huber/</guid>
     </item>
     <item>
-      <title>The Odyssey got bootlegged on X, but the internet cared more about the memes</title>
-      <link>https://www.techspot.com/news/113257-odyssey-got-bootlegged-x-but-internet-cared-more.html</link>
+      <title>perplexity-agent-mcp added to PyPI</title>
+      <link>https://pypi.org/project/perplexity-agent-mcp/</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Tue, 28 Jul 2026 07:06:49 +0000</pubDate>
+      <guid>https://pypi.org/project/perplexity-agent-mcp/</guid>
+    </item>
+    <item>
+      <title>Hugging Face wants $100mn of compute from OpenAI</title>
+      <link>https://biztoc.com/x/6fd6f1b49abe8c70</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 28 Jul 2026 07:04:58 +0000</pubDate>
+      <guid>https://biztoc.com/x/6fd6f1b49abe8c70</guid>
+    </item>
+    <item>
+      <title>handoff-cli 4.0.0</title>
+      <link>https://pypi.org/project/handoff-cli/4.0.0/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 28 Jul 2026 07:04:11 +0000</pubDate>
+      <guid>https://pypi.org/project/handoff-cli/4.0.0/</guid>
+    </item>
+    <item>
+      <title>image-api-openai 0.0.2</title>
+      <link>https://pypi.org/project/image-api-openai/0.0.2/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 28 Jul 2026 07:02:33 +0000</pubDate>
+      <guid>https://pypi.org/project/image-api-openai/0.0.2/</guid>
+    </item>
+    <item>
+      <title>Nvidia Relinquishes Largest U.S. Company Title to Apple as AI Chip Stocks Slide</title>
+      <link>https://dailyhodl.com/2026/07/28/nvidia-relinquishes-largest-u-s-company-title-to-apple-as-ai-chip-stocks-slide/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 28 Jul 2026 07:01:01 +0000</pubDate>
+      <guid>https://dailyhodl.com/2026/07/28/nvidia-relinquishes-largest-u-s-company-title-to-apple-as-ai-chip-stocks-slide/</guid>
+    </item>
+    <item>
+      <title>Otoy releases OctaneRender 2027.1 in alpha</title>
+      <link>https://www.cgchannel.com/2026/07/otoy-releases-octanerender-2027-1-in-alpha/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Tue, 28 Jul 2026 07:00:43 +0000</pubDate>
+      <guid>https://www.cgchannel.com/2026/07/otoy-releases-octanerender-2027-1-in-alpha/</guid>
+    </item>
+    <item>
+      <title>RandomControl releases Maverick Studio and Maverick Indie 2026.1</title>
+      <link>https://www.cgchannel.com/2026/07/randomcontrol-releases-maverick-studio-and-maverick-indie-2026-1/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Tue, 28 Jul 2026 07:00:39 +0000</pubDate>
+      <guid>https://www.cgchannel.com/2026/07/randomcontrol-releases-maverick-studio-and-maverick-indie-2026-1/</guid>
+    </item>
+    <item>
+      <title>Altimetrik Launches Industrial AI Service Line with Three New Solutions for Autonomous Manufacturing</title>
+      <link>https://www.thehindubusinessline.com/brandhub/pr-release/altimetrik-launches-industrial-ai-service-line-with-three-new-solutions-for-autonomous-manufacturing/article71275870.ece</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 28 Jul 2026 07:00:15 +0000</pubDate>
+      <guid>https://www.thehindubusinessline.com/brandhub/pr-release/altimetrik-launches-industrial-ai-service-line-with-three-new-solutions-for-autonomous-manufacturing/article71275870.ece</guid>
+    </item>
+    <item>
+      <title>Laravel Doctor - AI Friendly Laravel Code Checker</title>
+      <link>https://github.com/sajjadhossainshohag/laravel-doctor?utm_source=laravelnews&amp;utm_medium=link&amp;utm_campaign=laravelnews</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 28 Jul 2026 07:00:00 +0000</pubDate>
+      <guid>https://github.com/sajjadhossainshohag/laravel-doctor?utm_source=laravelnews&amp;utm_medium=link&amp;utm_campaign=laravelnews</guid>
+    </item>
+    <item>
+      <title>Why One Professor Abandoned the AI Resistance</title>
+      <link>https://www.insidehighered.com/news/tech-innovation/artificial-intelligence/2026/07/28/why-one-professor-abandoned-ai-resistance</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 28 Jul 2026 07:00:00 +0000</pubDate>
+      <guid>https://www.insidehighered.com/news/tech-innovation/artificial-intelligence/2026/07/28/why-one-professor-abandoned-ai-resistance</guid>
+    </item>
+    <item>
+      <title>Chip rout deepens on circular funding and China competition fears</title>
+      <link>https://www.irishtimes.com/business/2026/07/28/chip-rout-deepens-on-circular-funding-and-china-competition-fears/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 28 Jul 2026 06:57:53 +0000</pubDate>
+      <guid>https://www.irishtimes.com/business/2026/07/28/chip-rout-deepens-on-circular-funding-and-china-competition-fears/</guid>
+    </item>
+    <item>
+      <title>pyg-nightly 2.9.0.dev20260728</title>
+      <link>https://pypi.org/project/pyg-nightly/2.9.0.dev20260728/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Tue, 28 Jul 2026 06:57:31 +0000</pubDate>
+      <guid>https://pypi.org/project/pyg-nightly/2.9.0.dev20260728/</guid>
+    </item>
+    <item>
+      <title>The AEA presidential election</title>
+      <link>https://marginalrevolution.com/marginalrevolution/2026/07/the-aea-presidential-election.html</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 28 Jul 2026 06:44:56 +0000</pubDate>
+      <guid>https://marginalrevolution.com/marginalrevolution/2026/07/the-aea-presidential-election.html</guid>
+    </item>
+    <item>
+      <title>Gemini app’s latest UI change makes it easier to set up thinking levels, control notifications</title>
+      <link>https://www.androidauthority.com/gemini-app-ui-thinking-level-notification-control-3691833/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 28 Jul 2026 06:34:25 +0000</pubDate>
+      <guid>https://www.androidauthority.com/gemini-app-ui-thinking-level-notification-control-3691833/</guid>
+    </item>
+    <item>
+      <title>AI investment boom faces potential slowdown amid capital spending shift</title>
+      <link>https://cryptobriefing.com/ai-investment-boom-faces-potential-slowdown-amid-capital-spending-shift/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 28 Jul 2026 06:31:09 +0000</pubDate>
+      <guid>https://cryptobriefing.com/ai-investment-boom-faces-potential-slowdown-amid-capital-spending-shift/</guid>
+    </item>
+    <item>
+      <title>Vietnam’s New AI Law and Its Strategic Implications</title>
+      <link>https://thediplomat.com/2026/07/vietnams-new-ai-law-and-its-strategic-implications/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Tue, 28 Jul 2026 06:20:00 +0000</pubDate>
+      <guid>https://thediplomat.com/2026/07/vietnams-new-ai-law-and-its-strategic-implications/</guid>
+    </item>
+    <item>
+      <title>From AI boom to valuation worries: Why investors are rethinking big tech bets</title>
+      <link>https://m.economictimes.com/markets/us-stocks/news/from-ai-boom-to-valuation-worries-why-investors-are-rethinking-big-tech-bets/nvidia-leads-ai-stock-selloff-as-investors-reassess-valuations/slideshow/132677383.cms</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Tue, 28 Jul 2026 06:11:42 +0000</pubDate>
+      <guid>https://m.economictimes.com/markets/us-stocks/news/from-ai-boom-to-valuation-worries-why-investors-are-rethinking-big-tech-bets/nvidia-leads-ai-stock-selloff-as-investors-reassess-valuations/slideshow/132677383.cms</guid>
+    </item>
+    <item>
+      <title>Microsoft Says New Cybersecurity AI Model Helps MDASH Hit 95.95% at Half the Cost</title>
+      <link>https://thehackernews.com/2026/07/microsoft-says-new-cybersecurity-ai.html</link>
+      <description></description>
+      <category>Microsoft</category>
+      <pubDate>Tue, 28 Jul 2026 06:07:22 +0000</pubDate>
+      <guid>https://thehackernews.com/2026/07/microsoft-says-new-cybersecurity-ai.html</guid>
+    </item>
+    <item>
+      <title>Samsung Galaxy S27 Pro and Ultra battery sizes leaked, and they’re a big step up</title>
+      <link>https://www.intomobile.com/2026/07/27/samsung-galaxy-s27-pro-and-ultra-battery-sizes-leaked-and-theyre-a-big-step-up/</link>
+      <description></description>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>Tue, 28 Jul 2026 06:05:54 +0000</pubDate>
+      <guid>https://www.intomobile.com/2026/07/27/samsung-galaxy-s27-pro-and-ultra-battery-sizes-leaked-and-theyre-a-big-step-up/</guid>
+    </item>
+    <item>
+      <title>Trump Expands Consumer Protections as Data Center Energy Demand Sparks Ratepayer Concerns</title>
+      <link>https://www.naturalnews.com/2026-07-28-trump-expands-consumer-protections-data-center-concerns.html</link>
       <description></description>
       <category>xAI</category>
-      <pubDate>Mon, 27 Jul 2026 22:28:00 +0000</pubDate>
-      <guid>https://www.techspot.com/news/113257-odyssey-got-bootlegged-x-but-internet-cared-more.html</guid>
+      <pubDate>Tue, 28 Jul 2026 06:00:00 +0000</pubDate>
+      <guid>https://www.naturalnews.com/2026-07-28-trump-expands-consumer-protections-data-center-concerns.html</guid>
     </item>
     <item>
-      <title>cloudshellgpt 1.0.2</title>
-      <link>https://pypi.org/project/cloudshellgpt/1.0.2/</link>
+      <title>Can llamas have twins?</title>
+      <link>https://www.lifesciencesworld.com/can-llamas-have-twins/</link>
       <description></description>
-      <category>Amazon</category>
-      <pubDate>Mon, 27 Jul 2026 22:18:47 +0000</pubDate>
-      <guid>https://pypi.org/project/cloudshellgpt/1.0.2/</guid>
+      <category>Meta</category>
+      <pubDate>Tue, 28 Jul 2026 05:53:54 +0000</pubDate>
+      <guid>https://www.lifesciencesworld.com/can-llamas-have-twins/</guid>
+    </item>
+    <item>
+      <title>Bücher in Tiefe als Compagnion</title>
+      <link>https://github.com/virgiliojr94/book-to-skill</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Tue, 28 Jul 2026 05:47:01 +0000</pubDate>
+      <guid>https://github.com/virgiliojr94/book-to-skill</guid>
+    </item>
+    <item>
+      <title>AI tools transform the way readers experience books</title>
+      <link>https://www.hurriyetdailynews.com/ai-tools-transform-the-way-readers-experience-books-224884</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 28 Jul 2026 05:46:10 +0000</pubDate>
+      <guid>https://www.hurriyetdailynews.com/ai-tools-transform-the-way-readers-experience-books-224884</guid>
+    </item>
+    <item>
+      <title>NAVER、NVIDIA、Brookfield が韓国の国家 AI ファクトリー インフラ構築を拡大へ</title>
+      <link>https://prtimes.jp/main/html/rd/p/000000638.000012662.html</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Tue, 28 Jul 2026 05:40:52 +0000</pubDate>
+      <guid>https://prtimes.jp/main/html/rd/p/000000638.000012662.html</guid>
+    </item>
+    <item>
+      <title>Humanoid Global Provides Update on Agility Robotics Public Listing &amp; Opens Silicon Valley AI Hub to Scale Digit Deployments</title>
+      <link>https://financialpost.com/globe-newswire/humanoid-global-provides-update-on-agility-robotics-public-listing-opens-silicon-valley-ai-hub-to-scale-digit-deployments</link>
+      <description></description>
+      <category>AI Foundry</category>
+      <pubDate>Tue, 28 Jul 2026 05:31:18 +0000</pubDate>
+      <guid>https://financialpost.com/globe-newswire/humanoid-global-provides-update-on-agility-robotics-public-listing-opens-silicon-valley-ai-hub-to-scale-digit-deployments</guid>
     </item>
   </channel>
 </rss>
