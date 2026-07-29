@@ -49,3 +49,6 @@ playwright-report/
 # Playwright screenshot output (set 2026-05-26)
 tests/screenshots/
 
+
+# Frontier reconcile local cache
+data/copilot_frontier_map/.official-feed-cache.json

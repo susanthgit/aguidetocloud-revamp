@@ -6,7 +6,7 @@ layout: "list"
 sitemap:
   priority: 0.9
   changefreq: "weekly"
-lastmod: 2026-05-02
+lastmod: 2026-07-29
 images: ["images/og/copilot-frontier-map.jpg"]
 faq:
   - question: "What is the Microsoft 365 Copilot Frontier programme?"

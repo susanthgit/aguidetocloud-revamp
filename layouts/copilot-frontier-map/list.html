@@ -80,15 +80,14 @@
 
   {{/* Tabs — nothing above, straight to content */}}
   <div class="cfm-tabs zen-tabs" role="tablist" aria-label="Copilot Frontier Map sections">
-    <button class="cfm-tab zen-tab active" data-tab="pipeline" role="tab" id="tab-pipeline" aria-selected="true" aria-controls="panel-pipeline" tabindex="0">Pipeline</button>
-    <button class="cfm-tab zen-tab" data-tab="explorer" role="tab" id="tab-explorer" aria-selected="false" aria-controls="panel-explorer" tabindex="-1">Explorer</button>
-    <button class="cfm-tab zen-tab" data-tab="timeline" role="tab" id="tab-timeline" aria-selected="false" aria-controls="panel-timeline" tabindex="-1">Timeline</button>
+    <button class="cfm-tab zen-tab active" data-tab="explorer" role="tab" id="tab-explorer" aria-selected="true" aria-controls="panel-explorer" tabindex="0">Timeline</button>
+    <button class="cfm-tab zen-tab" data-tab="pipeline" role="tab" id="tab-pipeline" aria-selected="false" aria-controls="panel-pipeline" tabindex="-1">Pipeline</button>
     <button class="cfm-tab zen-tab" data-tab="compare" role="tab" id="tab-compare" aria-selected="false" aria-controls="panel-compare" tabindex="-1">Compare</button>
     <button class="cfm-tab zen-tab" data-tab="faq" role="tab" id="tab-faq" aria-selected="false" aria-controls="panel-faq" tabindex="-1">FAQ</button>
   </div>
 
   {{/* ═══ TAB: PIPELINE ═══ */}}
-  <div class="cfm-panel" id="panel-pipeline" role="tabpanel" aria-labelledby="tab-pipeline">
+  <div class="cfm-panel" id="panel-pipeline" style="display:none;" role="tabpanel" aria-labelledby="tab-pipeline">
 
     {{/* What's New — compact banner, not a section */}}
     <div class="cfm-whats-new" id="cfm-whats-new">
@@ -140,8 +139,10 @@
     </div>
   </div>
 
-  {{/* ═══ TAB: EXPLORER ═══ */}}
-  <div class="cfm-panel" id="panel-explorer" style="display:none;" role="tabpanel" aria-labelledby="tab-explorer">
+  {{/* ═══ TAB: TIMELINE (merged Explorer + Timeline) ═══ */}}
+  <div class="cfm-panel" id="panel-explorer" role="tabpanel" aria-labelledby="tab-explorer">
+    <p class="cfm-timeline-intro">Every tracked Frontier feature in chronological order — newest first. Filter the list, then click any card to expand its full detail and milestone history.</p>
+    <div class="cfm-pulse" id="cfm-pulse"></div>
     <div class="cfm-filters">
       <div class="cfm-filter-group">
         <label class="cfm-filter-label" for="cfm-filter-status">Status</label>
@@ -166,13 +167,17 @@
       <button class="cfm-filter-reset btn-secondary" id="cfm-filter-reset">Reset</button>
     </div>
 
-    <div class="cfm-explorer-count" id="cfm-explorer-count"></div>
-    <div class="cfm-explorer-grid" id="cfm-explorer-grid"></div>
-  </div>
-
-  {{/* ═══ TAB: TIMELINE ═══ */}}
-  <div class="cfm-panel" id="panel-timeline" style="display:none;" role="tabpanel" aria-labelledby="tab-timeline">
-    <div class="cfm-timeline" id="cfm-timeline"></div>
+    <div class="cfm-timeline-controls">
+      <div class="cfm-explorer-count" id="cfm-explorer-count"></div>
+      <div class="cfm-sort-toggle" role="group" aria-label="Sort timeline">
+        <span class="cfm-sort-label">Sort</span>
+        <button class="cfm-sort-btn active" data-sort="arrival" aria-pressed="true">🔬 Frontier arrival</button>
+        <button class="cfm-sort-btn" data-sort="recent" aria-pressed="false">🕒 Recent change</button>
+      </div>
+    </div>
+    <div class="cfm-timeline-stream" id="cfm-timeline-stream"></div>
+    {{/* Legacy grid kept for backward-compatible JS hooks; hidden and unused */}}
+    <div class="cfm-explorer-grid" id="cfm-explorer-grid" hidden></div>
   </div>
 
   {{/* ═══ TAB: COMPARE ═══ */}}

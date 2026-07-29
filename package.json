@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "verify:frontier": "node scripts/reconcile-frontier.mjs",
     "build:og:blog": "cd scripts/og-generator-blog && node make.mjs",
     "build:og:blog:dry": "cd scripts/og-generator-blog && node make.mjs --dry-run",
     "build:og:blog:force": "cd scripts/og-generator-blog && node make.mjs --force",

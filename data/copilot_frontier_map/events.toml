@@ -170,3 +170,242 @@ from_status = "preview"
 to_status = "ga"
 note = "Agent Mode in Word, Excel, and PowerPoint goes GA — iterative AI collaboration."
 source_url = "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--november--december-2025/4469738"
+
+# ── 2026-07-29 EXPANSION — entered-Frontier events for newly tracked features ──
+
+[[events]]
+feature_id = "excel-copilot-function"
+date = "2025-08-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "The COPILOT function brings LLM text tasks directly into Excel cells (in preview)."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "workflows-agent"
+date = "2025-09-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Automate tasks by describing workflows in natural language across Microsoft 365."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "researcher-cua"
+date = "2025-10-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Researcher with Computer Use (CUA) acts on your behalf via a secure virtual computer."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "app-builder-agent"
+date = "2025-10-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "App Builder agent turns ideas into lightweight, shareable apps — no code."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "agent-365"
+date = "2025-11-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Microsoft Agent 365 — the control plane to observe, govern, and secure AI agents (preview)."
+source_url = "https://www.microsoft.com/en-us/microsoft-agent-365"
+
+[[events]]
+feature_id = "org-insights"
+date = "2025-11-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "AI-powered organizational insights — team composition, skills, and reporting structure."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "learning-agent"
+date = "2025-11-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Personalised AI learning — role-based tips, prompts, and live role-play practice."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "create-video"
+date = "2025-11-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Text-to-video clip generation in Microsoft 365 Copilot Create."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "lists-agent"
+date = "2025-11-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Create structured Microsoft Lists from natural language in Copilot (preview)."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "sharepoint-agent"
+date = "2025-11-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "AI agent that builds ready-to-review SharePoint pages from a described goal (preview)."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "powerpoint-coauthor"
+date = "2025-11-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Collaborate with Copilot to refine slides directly in PowerPoint."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "sales-development-agent"
+date = "2026-02-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Sales Development Agent nurtures leads and progresses pipeline, CRM-connected (agents in preview)."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "researcher-federated-connectors"
+date = "2026-02-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Researcher gains seven read-only connectors (Notion, HubSpot, Linear, Intercom, Canva, and more)."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "copilot-new-design"
+date = "2026-05-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Refreshed Microsoft 365 Copilot app — home, prompting, response layout, and navigation."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "finance-agent"
+date = "2026-05-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Finance Agent delivers centralised, role-aware financial insight for finance teams."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "opal"
+date = "2026-06-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Opal expands agentic capabilities; runs computer-use automation on a Windows 365 Cloud PC."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "copilot-dataverse"
+date = "2026-06-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Business data (Dataverse) grounds Copilot answers in Dynamics 365 and Power Platform data."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "planner-agent-chat"
+date = "2026-06-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Planner Agent chat turns plans into an interactive, AI-powered workspace."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "powerbi-copilot"
+date = "2026-06-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "Ask Copilot questions and get answers grounded in your Power BI data."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+[[events]]
+feature_id = "teams-customer-calling"
+date = "2026-06-01"
+event_type = "entered_frontier"
+from_status = ""
+to_status = "frontier"
+note = "AI voice agent answers, schedules, and routes customer calls; extensible via Copilot Studio."
+source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+
+
+# ── 2026-07-29 QA correction — graduated_ga events for 6 features re-verified to GA ──
+
+[[events]]
+feature_id = "planner-ai"
+date = "2026-03-01"
+event_type = "graduated_ga"
+from_status = "frontier"
+to_status = "ga"
+note = "AI Collaborator in Planner reached GA in all group-based Planner plans for Copilot-licensed users."
+source_url = "https://www.microsoft.com/microsoft-365/roadmap?id=511820"
+
+[[events]]
+feature_id = "researcher-federated-connectors"
+date = "2026-05-05"
+event_type = "graduated_ga"
+from_status = "frontier"
+to_status = "ga"
+note = "General availability of federated Copilot connectors across Copilot Chat, Excel, and Researcher."
+source_url = "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview"
+
+[[events]]
+feature_id = "agent-365"
+date = "2026-05-01"
+event_type = "graduated_ga"
+from_status = "frontier"
+to_status = "ga"
+note = "Microsoft Agent 365 became generally available for the Commercial segment on a per-user basis."
+source_url = "https://learn.microsoft.com/en-us/microsoft-agent-365/overview"
+
+[[events]]
+feature_id = "learning-agent"
+date = "2026-06-02"
+event_type = "graduated_ga"
+from_status = "frontier"
+to_status = "ga"
+note = "Learning Agent in Microsoft 365 Copilot reached general availability."
+source_url = "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/introducing-the-general-availability-of-learning-agent/4524571"
+
+[[events]]
+feature_id = "powerpoint-coauthor"
+date = "2026-04-01"
+event_type = "graduated_ga"
+from_status = "frontier"
+to_status = "ga"
+note = "Conversational Copilot in PowerPoint (create/edit/refine) reached GA on web, Windows, and Mac."
+source_url = "https://www.microsoft.com/microsoft-365/roadmap?id=548520"
+
+[[events]]
+feature_id = "copilot-new-design"
+date = "2026-06-01"
+event_type = "graduated_ga"
+from_status = "frontier"
+to_status = "ga"
+note = "New design for the Microsoft 365 Copilot app began general-availability rollout."
+source_url = "https://www.microsoft.com/microsoft-365/roadmap?id=561488"

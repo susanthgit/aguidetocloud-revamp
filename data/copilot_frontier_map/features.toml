@@ -7,7 +7,7 @@
 # Status values: frontier | ga | expected | paused | withdrawn
 # Evidence levels: official (MS blog/docs) | roadmap (M365 roadmap) | blog (3rd party confirmed)
 #
-# Last global update: 2026-06-27 (Cowork → GA; Microsoft Scout added; Frontier roster re-verified vs June 2026 Microsoft sources)
+# Last global update: 2026-07-29 (full re-sync vs official Microsoft Frontier features page — 20 features added; Cowork/Notebooks/Scout notes refreshed. GPT-5.6 SME/QA pass re-verified all 37 statuses against MS blogs/Learn/Roadmap → 6 corrected frontier→GA: AI Collaborator in Planner, Microsoft Agent 365, Federated Copilot Connectors, Learning Agent, PowerPoint slide co-author, New Copilot design. Result: 22 Frontier / 15 GA.)
 # ============================================================================
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -40,8 +40,9 @@ source_urls = [
   "https://learn.microsoft.com/partner-center/announcements/2026-june"
 ]
 status_source_url = "https://learn.microsoft.com/partner-center/announcements/2026-june"
-last_verified = "2026-06-27"
-notes = "Introduced 2 June 2026 alongside Copilot Cowork's general availability. Usage-based pricing with Copilot Credits; pricing details to be shared by Microsoft. Operates within Microsoft 365 security, compliance, and governance controls."
+official_ref = "june-2026-meet-microsoft-scout-app"
+last_verified = "2026-07-29"
+notes = "Introduced 2 June 2026 alongside Copilot Cowork's general availability. June 2026 also brought the Microsoft Scout desktop app — an AI desktop application that stays connected to your priorities, monitors what matters, and moves work forward across the Microsoft 365 apps you use every day. Usage-based pricing with Copilot Credits; pricing details to be shared by Microsoft. Operates within Microsoft 365 security, compliance, and governance controls."
 
 [[features]]
 id = "researcher-multi-model"
@@ -66,10 +67,12 @@ availability_scope = "Global. Multi-model features require Anthropic opt-in."
 evidence_level = "official"
 source_urls = [
   "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
-  "https://www.neowin.net/news/microsofts-copilot-cowork-is-now-available-via-the-frontier-program/"
+  "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/introducing-multi-model-intelligence-in-researcher/4506011"
 ]
-status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
-last_verified = "2026-06-27"
+status_source_url = "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/introducing-multi-model-intelligence-in-researcher/4506011"
+official_ref = "march-2026-learn-about-the-improved-researcher,-powered-by-multi-model-intelligence"
+stage_evidence = "Microsoft 365 Copilot Blog, 30 Mar 2026: \"Today, Critique and Council are broadly available in the Frontier program.\""
+last_verified = "2026-07-29"
 notes = "Critique and Model Council are new Frontier-exclusive capabilities layered on top of the existing Researcher agent."
 
 [[features]]
@@ -97,6 +100,7 @@ source_urls = [
   "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
 ]
 status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "april-2026-redline-and-review-your-contracts-with-legal-agent-for-word"
 last_verified = "2026-06-27"
 notes = "Backed by Microsoft 365 security, privacy, and compliance features. Works within existing document permissions."
 
@@ -125,6 +129,7 @@ source_urls = [
   "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
 ]
 status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "april-2026-new-agentic-email-and-calendar-experiences-with-copilot-in-outlook"
 last_verified = "2026-06-27"
 notes = "Actions like sending emails or accepting meetings require user approval."
 
@@ -153,6 +158,7 @@ source_urls = [
   "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
 ]
 status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "april-2026-focus-on-the-teams-phone-calls-that-matter-most-with-copilot-call-delegation"
 last_verified = "2026-06-27"
 notes = "Requires Teams Phone licence in addition to Copilot. Call delegation operates within tenant compliance boundaries."
 
@@ -181,6 +187,7 @@ source_urls = [
   "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
 ]
 status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "april-2026-learn-about-the-new-capabilities-of-copilot-in-word"
 last_verified = "2026-06-27"
 notes = "Leverages Work IQ to pull relevant context from your organisation's data."
 
@@ -209,6 +216,7 @@ source_urls = [
   "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
 ]
 status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "march-2026-draft,-edit,-and-send-emails-end-to-end-in-copilot-chat"
 last_verified = "2026-06-27"
 notes = "Emails sent via this feature go through standard Outlook compliance and retention policies."
 
@@ -217,11 +225,11 @@ id = "planner-ai"
 name = "AI Collaborator in Planner"
 app = "Planner"
 app_icon = "check-square"
-status = "frontier"
+status = "ga"
 frontier_date = "2026-03-31"
-expected_ga = "TBA"
-actual_ga = ""
-last_status_change = "2026-03-31"
+expected_ga = ""
+actual_ga = "2026-03-01"
+last_status_change = "2026-03-01"
 ai_models = ["Microsoft (GPT)"]
 description = "Use Copilot alongside your team's work in Microsoft Planner. Generate tasks from goals, execute assigned tasks, take feedback, and write status reports — helping teams plan, execute, and stay aligned without leaving Planner."
 value_prop = "Turn goals into actionable task lists automatically. Get AI-written status reports and task execution within Planner."
@@ -229,16 +237,18 @@ use_cases = ["Auto-generating task lists from project goals", "AI-assisted task 
 who_benefits = ["Project managers", "Scrum masters", "Team leads", "Operations teams"]
 skills = []
 custom_skills = ""
-licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment"
-admin_action_required = "Enable Frontier programme in M365 Admin Centre."
-availability_scope = "Global."
+licensing_prereqs = "Microsoft 365 Copilot licence"
+admin_action_required = "No additional admin action required — generally available."
+availability_scope = "Generally available in all group-based Planner plans (including basic plans) for Microsoft 365 Copilot licensed users."
 evidence_level = "official"
 source_urls = [
-  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+  "https://www.microsoft.com/microsoft-365/roadmap?id=511820"
 ]
-status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
-last_verified = "2026-06-27"
-notes = "Works within existing Planner permissions and plan membership."
+status_source_url = "https://www.microsoft.com/microsoft-365/roadmap?id=511820"
+official_ref = "march-2026-use-microsoft-planner-alongside-your-team-s-work-to-help-you-get-more-done-faster"
+stage_evidence = "Microsoft 365 Roadmap 511820: \"Planner Agent will now be available for M365 Copilot licensed users in all group-based Planner plans, including basic plans.\" Status: General Availability, Launched, March 2026."
+last_verified = "2026-07-29"
+notes = "Graduated from Frontier to GA (March 2026). Distinct from Planner Agent chat (the in-Planner chat experience), which remains in Frontier. Works within existing Planner permissions and plan membership."
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # RECENTLY GRADUATED — Frontier → GA
@@ -254,7 +264,7 @@ frontier_date = "2026-03-31"
 expected_ga = ""
 actual_ga = "2026-06-16"
 last_status_change = "2026-06-16"
-ai_models = ["Anthropic Claude (Opus 4.8, Opus, Sonnet)", "Microsoft (GPT)"]
+ai_models = ["Anthropic Claude (Opus 4.8, Opus, Sonnet)", "OpenAI GPT-5.5", "Microsoft (GPT)"]
 description = "An agentic system for complex, long-running, multi-step work across Microsoft 365 and connected systems. Cowork takes a goal and breaks it into steps — drafting documents, sending emails, scheduling meetings, generating images, using a browser, and tracking progress over time — operating within existing Microsoft 365 security, compliance, and governance controls."
 value_prop = "Delegate complex workflows end-to-end instead of doing them step by step. Describe the outcome you want, and Cowork plans and executes across apps."
 use_cases = ["Project coordination and status reports", "Onboarding new team members", "Budget preparation and tracking", "Research and report generation", "Event planning and coordination"]
@@ -271,8 +281,11 @@ source_urls = [
   "https://learn.microsoft.com/microsoft-365/copilot/cowork/whats-new"
 ]
 status_source_url = "https://learn.microsoft.com/partner-center/announcements/2026-june"
-last_verified = "2026-06-27"
-notes = "Reached general availability on 16 June 2026. GA adds a model picker (Auto or a specific model, including Claude Opus 4.8), image generation, browser use, a Customize page, new security and compliance capabilities, partner and Dynamics 365 plugins, and consumption billing via Copilot Credits. Actions like sending emails or modifying files require user approval; all actions are logged in Purview Audit."
+official_ref = "march-2026-go-from-to-dos-to-done-with-copilot-cowork"
+also_covers = "may-2026-plugins-and-mobile-come-to-copilot-cowork, june-2026-gpt-5-5-now-in-copilot-cowork"
+stage_evidence = "Microsoft Learn (Cowork what's-new) + partner announcement: Copilot Cowork reached general availability on 16 June 2026 with model picker, plugins, and Copilot Credits billing."
+last_verified = "2026-07-29"
+notes = "Reached general availability on 16 June 2026. GA adds a model picker (Auto or a specific model, including Claude Opus 4.8), image generation, browser use, a Customize page, new security and compliance capabilities, partner and Dynamics 365 plugins, and consumption billing via Copilot Credits. May 2026 (Frontier): native, custom, and partner plugins you deploy org-wide, plus Cowork on iOS and Android in the Microsoft 365 Copilot app. June 2026: GPT-5.5 added with model choice — Anthropic for visuals, OpenAI for research reports. Actions like sending emails or modifying files require user approval; all actions are logged in Purview Audit."
 
 [[features]]
 id = "scheduled-prompting"
@@ -299,6 +312,7 @@ source_urls = [
   "https://m365admin.handsontek.net/microsoft-365-copilot-new-scheduled-prompt-features-frontier-tenants/"
 ]
 status_source_url = "https://m365admin.handsontek.net/microsoft-365-copilot-new-scheduled-prompt-features-frontier-tenants/"
+official_ref = ""
 last_verified = "2026-05-02"
 notes = "One of the first features to graduate from Frontier to GA. Originally previewed November 2025."
 
@@ -327,8 +341,9 @@ source_urls = [
   "https://mc.merill.net/message/MC1187387"
 ]
 status_source_url = "https://mc.merill.net/message/MC1187387"
-last_verified = "2026-05-02"
-notes = "Graduated from Frontier to GA. Enhanced reference types (SharePoint, OneNote) significantly expanded usefulness."
+official_ref = "may-2026-copilot-notebooks-adds-new-value-for-frontier-users"
+last_verified = "2026-07-29"
+notes = "Graduated from Frontier to GA. Enhanced reference types (SharePoint, OneNote) significantly expanded usefulness. May 2026 (Frontier): Notebooks add more source types — Teams meetings, Outlook emails, and web content — and can generate more output types, including Excel worksheets and infographics, directly from the notebook."
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # EARLIER GRADUATES — Preview → GA (pre-Frontier branding)
@@ -361,6 +376,8 @@ source_urls = [
   "https://www.microsoft.com/en-us/microsoft-365/blog/2024/09/16/microsoft-365-copilot-wave-2-pages-python-in-excel-and-agents/"
 ]
 status_source_url = "https://www.microsoft.com/en-us/microsoft-365/blog/2024/09/16/microsoft-365-copilot-wave-2-pages-python-in-excel-and-agents/"
+official_ref = ""
+also_covers = "november-2025-visualize-ideas-and-build-experiences-in-copilot-pages"
 last_verified = "2026-05-02"
 notes = "Introduced at Wave 2 (Sep 2024). One of the most requested features, proving AI collaboration works at scale."
 
@@ -389,6 +406,7 @@ source_urls = [
   "https://www.microsoft.com/en-us/microsoft-365/blog/2024/09/16/microsoft-365-copilot-wave-2-pages-python-in-excel-and-agents/"
 ]
 status_source_url = "https://www.microsoft.com/en-us/microsoft-365/blog/2024/09/16/microsoft-365-copilot-wave-2-pages-python-in-excel-and-agents/"
+official_ref = ""
 last_verified = "2026-05-02"
 notes = "Introduced at Wave 2. Python runs securely in the Microsoft Cloud — no local install needed."
 
@@ -417,6 +435,7 @@ source_urls = [
   "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--november--december-2025/4469738"
 ]
 status_source_url = "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--november--december-2025/4469738"
+official_ref = ""
 last_verified = "2026-05-02"
 notes = "Rolled out progressively from late 2025 to early 2026."
 
@@ -445,6 +464,7 @@ source_urls = [
   "https://learn.microsoft.com/en-us/power-platform/release-plan/2025wave1/microsoft-copilot-studio/planned-features"
 ]
 status_source_url = "https://learn.microsoft.com/en-us/power-platform/release-plan/2025wave1/microsoft-copilot-studio/planned-features"
+official_ref = ""
 last_verified = "2026-05-02"
 notes = "Copilot Studio agents can now use real-time knowledge sources and custom connectors."
 
@@ -473,6 +493,7 @@ source_urls = [
   "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--november--december-2025/4469738"
 ]
 status_source_url = "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--november--december-2025/4469738"
+official_ref = ""
 last_verified = "2026-05-02"
 notes = "Powered by the Work IQ layer. Users can view and clear their Copilot memory."
 
@@ -501,5 +522,616 @@ source_urls = [
   "https://www.microsoft.com/en-us/microsoft-365/blog/2024/09/16/microsoft-365-copilot-wave-2-pages-python-in-excel-and-agents/"
 ]
 status_source_url = "https://www.microsoft.com/en-us/microsoft-365/blog/2024/09/16/microsoft-365-copilot-wave-2-pages-python-in-excel-and-agents/"
+official_ref = ""
 last_verified = "2026-05-02"
 notes = "Part of Wave 2 announcements. Dramatically improved presentation creation quality."
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# 2026-07-29 EXPANSION — full re-sync vs official Microsoft Frontier features page
+# (https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features).
+# 20 features added to close the gap between the tracker (17) and the official
+# inventory (33 entries). Public data only — every entry carries source_urls.
+# ═══════════════════════════════════════════════════════════════════════════════
+
+[[features]]
+id = "researcher-cua"
+name = "Researcher with Computer Use (CUA)"
+app = "Copilot Chat"
+app_icon = "cpu"
+status = "frontier"
+frontier_date = "2025-10-01"
+expected_ga = "TBA"
+actual_ga = ""
+last_status_change = "2025-10-01"
+ai_models = ["OpenAI GPT-5"]
+description = "Researcher with Computer Use lets the Researcher agent act on your behalf inside a secure, cloud-based virtual computer. Beyond reasoning over information, it can securely navigate public, gated, and interactive web content — signing in, clicking through pages, and completing multi-step web tasks — to gather information that search alone cannot reach."
+value_prop = "A major leap toward autonomous AI: Researcher doesn't just find information, it operates a secure virtual computer to act on your behalf across the web."
+use_cases = ["Deep research across gated and interactive sites", "Completing multi-step web tasks autonomously", "Gathering data behind sign-ins securely", "Automating repetitive web research"]
+who_benefits = ["Analysts", "Researchers", "Consultants", "Anyone doing web-heavy research"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment"
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre."
+availability_scope = "Frontier programme (early access). Runs in an isolated, secure virtual computer with enterprise protections."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
+  "https://go.microsoft.com/fwlink/?linkid=2357927"
+]
+status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "october-2025-engage-researcher-agent-to-act-on-your-behalf-using-a-secure-virtual-computer"
+stage_evidence = "Microsoft 365 Copilot Blog, 30 Oct 2025: \"Researcher with Computer Use begins rolling out today via the Frontier program for Microsoft 365 Copilot licensed customers.\""
+last_verified = "2026-07-29"
+notes = "Often called Researcher 'Computer Use' (CUA). Introduced October 2025 as an early step toward agents that act, not just reason."
+
+[[features]]
+id = "agent-365"
+name = "Microsoft Agent 365 (Control Plane)"
+app = "Microsoft 365"
+app_icon = "settings"
+status = "ga"
+frontier_date = "2025-11-01"
+expected_ga = ""
+actual_ga = "2026-05-01"
+last_status_change = "2026-05-01"
+ai_models = []
+description = "Microsoft Agent 365 is the control plane for AI agents. It lets IT observe, govern, and secure every agent operating in the organisation — extending identity, security, and management infrastructure from users to agents so teams can confidently deploy, manage, and secure agentic AI."
+value_prop = "Bring AI agents out of the shadows: one control plane to register, monitor, govern, and secure every agent — tackling 'shadow AI' agent sprawl."
+use_cases = ["Governing and securing AI agents at scale", "Discovering and reducing shadow-AI agents", "Applying identity and access controls to agents", "Monitoring agent activity, usage, and cost"]
+who_benefits = ["IT admins", "Security and governance teams", "CISOs", "Platform teams"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft Agent 365 licence (per user, Commercial segment)"
+admin_action_required = "Provision Microsoft Agent 365 for your organisation to register and govern agents."
+availability_scope = "Generally available for the Commercial segment on a per-user basis (since 1 May 2026)."
+evidence_level = "official"
+source_urls = [
+  "https://learn.microsoft.com/en-us/microsoft-agent-365/overview",
+  "https://www.microsoft.com/en-us/microsoft-agent-365"
+]
+status_source_url = "https://learn.microsoft.com/en-us/microsoft-agent-365/overview"
+official_ref = "november-2025-discover-microsoft-agent-365-the-control-plane-for-agents"
+stage_evidence = "Microsoft Learn (Agent 365 overview, updated 30 Jun 2026): \"As of May 1, 2026, Microsoft Agent 365 is generally available for the Commercial segment on a per user basis.\""
+last_verified = "2026-07-29"
+notes = "Graduated to GA on 1 May 2026. Directly addresses 'shadow AI' — the governance and security layer for the growing population of agents across the tenant. Still featured on the official Frontier page as a flagship capability."
+
+[[features]]
+id = "finance-agent"
+name = "Finance Agent (Home + Chat)"
+app = "Microsoft 365"
+app_icon = "chart-bar"
+status = "frontier"
+frontier_date = "2026-05-01"
+expected_ga = "TBA"
+actual_ga = ""
+last_status_change = "2026-05-01"
+ai_models = []
+description = "Finance Agent gives finance teams and their stakeholders a centralised, role-aware view of financial performance and activity. Instead of static reports or ad-hoc requests, users get up-to-date financial insights tailored to their role — with the right permissions and context built in."
+value_prop = "Self-service, role-aware financial insight — current answers without waiting on static reports or ad-hoc data pulls."
+use_cases = ["Role-aware financial performance views", "Ad-hoc financial questions answered in context", "Reducing manual reporting requests", "Permission-scoped financial insight"]
+who_benefits = ["Finance teams", "FP&A", "Controllers", "Business stakeholders"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment"
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre."
+availability_scope = "Frontier programme (early access). Rolling out to enrolled tenants."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
+  "https://go.microsoft.com/fwlink/?LinkId=2373103"
+]
+status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "may-2026-finance-agent-empowers-modern-finance-teams"
+last_verified = "2026-07-29"
+notes = "The new Home workspace and Chat experiences for Finance Agent are in public preview via Frontier (May 2026). The underlying Finance Agent solution is separately generally available; this card tracks the Frontier Home + Chat experiences specifically."
+
+[[features]]
+id = "sales-development-agent"
+name = "Sales Development Agent"
+app = "Microsoft 365"
+app_icon = "chart-bar"
+status = "frontier"
+frontier_date = "2026-02-01"
+expected_ga = "TBA"
+actual_ga = ""
+last_status_change = "2026-02-01"
+ai_models = []
+description = "Sales Development Agent helps sales teams scale their impact — nurturing customer relationships and progressing deals. It supports revenue and pipeline growth with security and governance, and connects with leading CRM systems and the Microsoft 365 apps sales teams already use."
+value_prop = "Scale sales development: an agent that nurtures leads and progresses pipeline while connecting to your CRM and Microsoft 365."
+use_cases = ["Lead nurturing at scale", "Pipeline and revenue growth", "CRM-connected selling", "Follow-up and outreach automation"]
+who_benefits = ["Sales teams", "SDRs and BDRs", "Sales managers", "RevOps"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment"
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre."
+availability_scope = "Frontier programme (agents in preview). Connects with leading CRM systems."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
+  "https://go.microsoft.com/fwlink/?linkid=2357934"
+]
+status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "february-2026-transform-sales-with-sales-development-agent"
+last_verified = "2026-07-29"
+notes = "Listed as 'Agents in preview' (February 2026)."
+
+[[features]]
+id = "opal"
+name = "Opal"
+app = "Microsoft 365"
+app_icon = "cpu"
+status = "frontier"
+frontier_date = "2026-06-01"
+expected_ga = "TBA"
+actual_ga = ""
+last_status_change = "2026-06-01"
+ai_models = []
+description = "Opal carries out work on your behalf. It can access real enterprise applications using computer-use automation on a Windows 365 Cloud PC. Originally released in November 2025, Opal gained expanded agentic capabilities in June 2026 to take on more of your day-to-day work."
+value_prop = "Delegate real application work to an agent that operates a Windows 365 Cloud PC with computer-use automation."
+use_cases = ["Delegating multi-app tasks", "Automating work in line-of-business apps", "Running tasks on a Cloud PC", "Hands-off task completion"]
+who_benefits = ["Information workers", "Operations teams", "Anyone with repetitive app workflows"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment (Windows 365 Cloud PC used for computer-use automation)"
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre."
+availability_scope = "Frontier programme (early access). Uses a Windows 365 Cloud PC."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
+  "https://go.microsoft.com/fwlink/?LinkId=2365928"
+]
+status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "june-2026-opal-helps-you-delegate-work-so-you-can-focus-on-what-matters"
+last_verified = "2026-07-29"
+notes = "Originally released November 2025; expanded agentic capabilities June 2026."
+
+[[features]]
+id = "copilot-dataverse"
+name = "Business Data (Dataverse) in Copilot"
+app = "Microsoft 365"
+app_icon = "chart-bar"
+status = "frontier"
+frontier_date = "2026-06-01"
+expected_ga = "TBA"
+actual_ga = ""
+last_status_change = "2026-06-01"
+ai_models = []
+description = "Business data (Dataverse) brings your operational data into Microsoft 365 Copilot. Copilot combines unified business data — from Dynamics 365 or custom Power Platform apps built on Dataverse — with your Microsoft 365 data (emails, meetings, documents) to deliver grounded, contextual answers."
+value_prop = "Copilot answers grounded in your real business data — Dynamics 365 and Dataverse apps combined with your Microsoft 365 content."
+use_cases = ["Answers grounded in Dynamics 365 and Dataverse", "Blending business and Microsoft 365 data", "Contextual operational insight", "Reducing app-switching for business data"]
+who_benefits = ["Business users", "Dynamics 365 users", "Power Platform makers", "Operations teams"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment"
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre."
+availability_scope = "Frontier programme (early access). Requires Dataverse-backed business data."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
+  "https://go.microsoft.com/fwlink/?LinkId=2372317"
+]
+status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "june-2026-business-data-(dataverse)-in-microsoft-365-copilot-experiences"
+last_verified = "2026-07-29"
+notes = "Announced June 2026."
+
+[[features]]
+id = "planner-agent-chat"
+name = "Planner Agent Chat"
+app = "Planner"
+app_icon = "check-square"
+status = "frontier"
+frontier_date = "2026-06-01"
+expected_ga = "TBA"
+actual_ga = ""
+last_status_change = "2026-06-01"
+ai_models = []
+description = "Planner Agent chat turns your plans into an interactive, AI-powered workspace inside Microsoft Planner. Ask questions about your plans, discover what needs attention, and take action in context — without switching between apps."
+value_prop = "Chat with your plans: ask what needs attention and take action in Planner without leaving it."
+use_cases = ["Conversational plan management", "Surfacing at-risk or overdue work", "Taking action in context", "Status without app-switching"]
+who_benefits = ["Project leads", "Team managers", "Planner users"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment"
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre."
+availability_scope = "Frontier programme (early access)."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
+  "https://go.microsoft.com/fwlink/?LinkId=2372617"
+]
+status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "june-2026-manage-your-plans-with-planner-agent-chat-in-planner"
+last_verified = "2026-07-29"
+notes = "Builds on the AI collaborator in Planner (March 2026) with an in-app chat experience (June 2026)."
+
+[[features]]
+id = "powerbi-copilot"
+name = "Power BI Data in Copilot"
+app = "Copilot Chat"
+app_icon = "chart-bar"
+status = "frontier"
+frontier_date = "2026-06-01"
+expected_ga = "TBA"
+actual_ga = ""
+last_status_change = "2026-06-01"
+ai_models = []
+description = "Ask Copilot questions and get answers grounded in your Power BI data. Governed Power BI datasets become a source Copilot can reason over, so you can query your business metrics conversationally alongside your Microsoft 365 content."
+value_prop = "Conversational answers from your Power BI data — no need to build a report to get a number."
+use_cases = ["Conversational BI queries", "Answers from governed Power BI datasets", "Blending BI with Microsoft 365 context", "Faster data-driven decisions"]
+who_benefits = ["Business analysts", "Data-driven managers", "Power BI users"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment"
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre."
+availability_scope = "Frontier programme (early access). Requires governed Power BI data."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
+  "https://go.microsoft.com/fwlink/?LinkId=2372618"
+]
+status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "june-2026-ask-copilot-questions-and-get-answers-from-your-power-bi-data"
+last_verified = "2026-07-29"
+notes = "Described from the official feature title and Frontier features page; Microsoft's feed blurb for this item was mislabelled with the Notebooks text, so it was not used."
+
+[[features]]
+id = "teams-customer-calling"
+name = "AI Call Answering & Intelligent Routing"
+app = "Teams"
+app_icon = "phone"
+status = "frontier"
+frontier_date = "2026-06-01"
+expected_ga = "TBA"
+actual_ga = ""
+last_status_change = "2026-06-01"
+ai_models = []
+description = "An AI-powered voice agent for customer engagement in Teams. It answers customer questions, schedules appointments, and intelligently routes calls — and can integrate with custom Copilot Studio voice agents for specialised tasks, such as paying a bill over the phone."
+value_prop = "A voice agent that answers, helps, and routes customer calls — extensible with Copilot Studio voice agents."
+use_cases = ["Automated customer call answering", "Appointment scheduling by phone", "Intelligent call routing", "Specialised voice tasks via Copilot Studio"]
+who_benefits = ["Customer service teams", "Contact centres", "Front-desk and reception", "Operations"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment. Copilot Studio for custom voice agents."
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre. Configure Copilot Studio voice agents for specialised tasks."
+availability_scope = "Frontier programme (early access). Customer-facing voice scenarios."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
+  "https://go.microsoft.com/fwlink/?LinkId=2372318"
+]
+status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "june-2026-engage-customers-with-ai-powered-call-answering-and-intelligent-routing"
+last_verified = "2026-07-29"
+notes = "Distinct from Copilot call delegation (which handles the user's own incoming Teams Phone calls). This is a customer-facing voice agent (June 2026)."
+
+[[features]]
+id = "researcher-federated-connectors"
+name = "Federated Copilot Connectors in Researcher"
+app = "Copilot Chat"
+app_icon = "search"
+status = "ga"
+frontier_date = "2026-02-01"
+expected_ga = ""
+actual_ga = "2026-05-05"
+last_status_change = "2026-05-05"
+ai_models = []
+description = "Federated Copilot connectors give Copilot real-time access to third-party data using Model Context Protocol (MCP). Read-only connectors — including Notion, HubSpot, Linear, Intercom, Canva, and more — let users authenticate and pull live data. Available in Microsoft 365 Copilot Chat, Excel, and the Researcher agent."
+value_prop = "Deep research grounded in your real-time SaaS data — connect Notion, HubSpot, Linear, Intercom, Canva and more with a simple sign-in."
+use_cases = ["Research across third-party SaaS data", "Read-only, authenticated data pulls", "Blending external and Microsoft 365 data", "Up-to-date competitive and market research"]
+who_benefits = ["Analysts", "Researchers", "Product and marketing teams", "Consultants"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence"
+admin_action_required = "Microsoft-published connectors are enabled by default (admins can disable). Admins approve partner connectors; a 7-day admin review window applies before user availability."
+availability_scope = "Generally available in Microsoft 365 Copilot Chat, Excel, and Researcher. 15+ Microsoft-published connectors in the Connectors Gallery."
+evidence_level = "official"
+source_urls = [
+  "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview"
+]
+status_source_url = "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/federated-connectors-overview"
+official_ref = "february-2026-get-real-time-data-in-researcher-with-federated-copilot-connectors"
+stage_evidence = "Microsoft 365 Copilot Blog, 5 May 2026: announced \"general availability of federated Copilot connectors\" — \"Today, data through these connectors is available in Microsoft 365 Copilot Chat and Researcher.\" Learn doc (updated 1 Jul 2026): connectors \"enabled by default for a tenant unless admins disable them.\""
+last_verified = "2026-07-29"
+notes = "Graduated to GA (announced 5 May 2026). Entered Frontier in Feb 2026 via Researcher, then reached general availability across Copilot Chat, Excel, and Researcher. Still listed on the official Frontier page (Researcher scenario), but the platform is GA."
+
+[[features]]
+id = "org-insights"
+name = "Organizational Insights"
+app = "Microsoft 365"
+app_icon = "chart-bar"
+status = "frontier"
+frontier_date = "2025-11-01"
+expected_ga = "TBA"
+actual_ga = ""
+last_status_change = "2025-11-01"
+ai_models = []
+description = "Organizational insights help leaders understand their team's composition — reporting structures and distribution across levels, roles, and other org attributes — and discover specific skills or experience within the organisation. Generate reports with data-driven insights about your team."
+value_prop = "Data-driven answers about your org: structure, skills, and experience — on demand."
+use_cases = ["Understanding team composition", "Finding skills and experience internally", "Org-structure reporting", "Data-driven people decisions"]
+who_benefits = ["People managers", "HR and People teams", "Team leads"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment"
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre."
+availability_scope = "Frontier programme (early access)."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
+  "https://go.microsoft.com/fwlink/?linkid=2357748"
+]
+status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "november-2025-lead-your-team-using-ai-powered-organizational-insights"
+last_verified = "2026-07-29"
+notes = "Announced November 2025 ('Lead your team using AI-powered organizational insights')."
+
+[[features]]
+id = "learning-agent"
+name = "AI-Powered Learning"
+app = "Microsoft 365"
+app_icon = "book-open"
+status = "ga"
+frontier_date = "2025-11-01"
+expected_ga = ""
+actual_ga = "2026-06-02"
+last_status_change = "2026-06-02"
+ai_models = []
+description = "Personalised, AI-powered learning helps you get more from Copilot in your specific role. Get tailored tips and suggested prompts, practise live role-plays with AI for role-relevant scenarios, and view company-assigned training and recommended courses."
+value_prop = "Skill up on Copilot for your role — personalised tips, live AI role-plays, and recommended training in one place."
+use_cases = ["Role-based Copilot skilling", "Live AI role-play practice", "Personalised prompt suggestions", "Accessing assigned training"]
+who_benefits = ["All Copilot users", "Enablement and L&D teams", "New starters"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence"
+admin_action_required = "No additional admin action required — the Learning Agent is generally available."
+availability_scope = "Generally available in Microsoft 365 Copilot (since 2 June 2026). Some onboarding subfeatures (e.g. AI Skills Navigator) remain in preview."
+evidence_level = "official"
+source_urls = [
+  "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/introducing-the-general-availability-of-learning-agent/4524571"
+]
+status_source_url = "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/introducing-the-general-availability-of-learning-agent/4524571"
+official_ref = "november-2025-discover-ai-powered-learning-opportunities-personalized-for-your-role-and-work"
+stage_evidence = "Microsoft 365 Copilot Blog, 2 Jun 2026: \"Today we're excited to announce the general availability of Learning Agent in Microsoft 365 Copilot.\""
+last_verified = "2026-07-29"
+notes = "The core Learning Agent graduated to GA on 2 June 2026. AI Skills Navigator and some onboarding subfeatures remain in preview."
+
+[[features]]
+id = "create-video"
+name = "Video Generation in Copilot Create"
+app = "Microsoft 365"
+app_icon = "monitor"
+status = "frontier"
+frontier_date = "2025-11-01"
+expected_ga = "TBA"
+actual_ga = ""
+last_status_change = "2025-11-01"
+ai_models = []
+description = "Generate video in Microsoft 365 Copilot Create. Turn text prompts into short, realistic video clips, add AI-generated clips to your video projects, and edit right alongside voiceovers and music — with enterprise-grade protections."
+value_prop = "Text-to-video inside Copilot Create — generate and edit clips with voiceover and music, protected for enterprise use."
+use_cases = ["Text-to-video clip generation", "Marketing and comms content", "Editing with voiceover and music", "Faster content production"]
+who_benefits = ["Marketing and comms", "Content creators", "Trainers", "Anyone making visual content"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment"
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre."
+availability_scope = "Frontier programme (early access). Enterprise-grade content protections."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
+  "https://go.microsoft.com/fwlink/?linkid=2357745"
+]
+status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "november-2025-generate-video-in-microsoft-365-copilot-create"
+last_verified = "2026-07-29"
+notes = "Announced November 2025."
+
+[[features]]
+id = "lists-agent"
+name = "Microsoft Lists Agent"
+app = "Microsoft 365"
+app_icon = "check-square"
+status = "frontier"
+frontier_date = "2025-11-01"
+expected_ga = "TBA"
+actual_ga = ""
+last_status_change = "2025-11-01"
+ai_models = []
+description = "Create Microsoft Lists from natural language directly in Copilot. Describe the list you need and Copilot builds a structured Microsoft List in SharePoint from your conversation or existing content."
+value_prop = "Describe it, get a structured Microsoft List — no manual column setup."
+use_cases = ["Natural-language list creation", "Turning content into structured lists", "Quick tracking solutions", "SharePoint list scaffolding"]
+who_benefits = ["Business users", "Team leads", "SharePoint users"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment"
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre."
+availability_scope = "In preview. Available via the Agent Store and Microsoft 365 Copilot."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
+  "https://go.microsoft.com/fwlink/?linkid=2347432"
+]
+status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "november-2025-create-microsoft-lists-from-natural-language-directly-in-copilot-using-this-ai-agent"
+last_verified = "2026-07-29"
+notes = "Announced November 2025 (in preview)."
+
+[[features]]
+id = "sharepoint-agent"
+name = "SharePoint Pages Agent"
+app = "SharePoint"
+app_icon = "file-text"
+status = "frontier"
+frontier_date = "2025-11-01"
+expected_ga = "TBA"
+actual_ga = ""
+last_status_change = "2025-11-01"
+ai_models = []
+description = "An AI agent that builds SharePoint pages. Describe your goal in natural language, iterate on the layout and content, then generate a ready-to-review SharePoint page. Available in the Agent Store and usable directly in Microsoft 365 Copilot."
+value_prop = "Go from a described goal to a ready-to-review SharePoint page — iterate on layout and content in natural language."
+use_cases = ["Natural-language page building", "Rapid intranet and page drafts", "Iterating layout with AI", "Publishing-ready SharePoint pages"]
+who_benefits = ["SharePoint authors", "Comms teams", "Intranet owners"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment"
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre."
+availability_scope = "In preview. Available via the Agent Store and Microsoft 365 Copilot."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
+  "https://go.microsoft.com/fwlink/?linkid=2357931"
+]
+status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "november-2025-explore-the-ai-agent-that-helps-you-build-sharepoint-pages"
+last_verified = "2026-07-29"
+notes = "Announced November 2025 (in preview)."
+
+[[features]]
+id = "app-builder-agent"
+name = "App Builder Agent"
+app = "Microsoft 365"
+app_icon = "file-plus"
+status = "frontier"
+frontier_date = "2025-10-01"
+expected_ga = "TBA"
+actual_ga = ""
+last_status_change = "2025-10-01"
+ai_models = []
+description = "App Builder agent turns everyday ideas into lightweight, shareable apps — no coding required. Use prompts to build, iterate, and deploy apps that solve local team challenges, with data stored securely in SharePoint."
+value_prop = "Prompt-to-app: build and share lightweight productivity apps with no code, data secured in SharePoint."
+use_cases = ["No-code app creation from prompts", "Solving local and team problems", "Rapid prototyping", "Team productivity tools"]
+who_benefits = ["Business users", "Team leads", "Citizen developers"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment"
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre."
+availability_scope = "Frontier programme (early access). Data stored securely in SharePoint."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
+  "https://go.microsoft.com/fwlink/?linkid=2357929"
+]
+status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "october-2025-app-builder-agent-helps-turn-everyday-ideas-into-apps-no-coding-required"
+last_verified = "2026-07-29"
+notes = "Announced October 2025 ('Frontier Firm')."
+
+[[features]]
+id = "workflows-agent"
+name = "Automate Tasks Using Natural Language"
+app = "Microsoft 365"
+app_icon = "settings"
+status = "frontier"
+frontier_date = "2025-09-01"
+expected_ga = "TBA"
+actual_ga = ""
+last_status_change = "2025-09-01"
+ai_models = []
+description = "Build and run workflows by simply describing what you want to happen. This agent helps individuals and teams automate repetitive tasks across Microsoft 365 without building a flow by hand."
+value_prop = "Describe a workflow in plain language and let Copilot build and run it — automation without the flowchart."
+use_cases = ["Natural-language workflow building", "Automating repetitive Microsoft 365 tasks", "Personal and team automations", "No-code process automation"]
+who_benefits = ["Information workers", "Operations teams", "Team leads"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment"
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre."
+availability_scope = "Frontier programme (early access)."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
+  "https://go.microsoft.com/fwlink/?linkid=2357644"
+]
+status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "september-2025-automate-tasks-using-natural-language"
+last_verified = "2026-07-29"
+notes = "Announced September 2025 (agents). Distinct from Scheduled Prompting (recurring prompts)."
+
+[[features]]
+id = "excel-copilot-function"
+name = "COPILOT Function in Excel"
+app = "Excel"
+app_icon = "chart-bar"
+status = "frontier"
+frontier_date = "2025-08-01"
+expected_ga = "TBA"
+actual_ga = ""
+last_status_change = "2025-08-01"
+ai_models = []
+description = "The COPILOT function brings LLM power directly into Excel cells. Work with text data in the grid — brainstorm ideas, generate summaries, classify data, and create lists or tables — returning multi-row, multi-column outputs right where you work."
+value_prop = "=COPILOT() in a cell: summarise, classify, and generate structured text data without leaving the grid."
+use_cases = ["In-cell text generation and summarisation", "Classifying data at scale", "Creating lists and tables from prompts", "Spreadsheet-native AI"]
+who_benefits = ["Excel power users", "Analysts", "Marketing and ops teams"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence + Frontier programme enrolment"
+admin_action_required = "Enable the Frontier programme in the Microsoft 365 admin centre."
+availability_scope = "Frontier programme (early access / in preview, August 2025)."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features",
+  "https://go.microsoft.com/fwlink/?linkid=2347856"
+]
+status_source_url = "https://www.microsoft.com/en-us/microsoft-365-copilot/frontier-features"
+official_ref = "august-2025-bring-the-power-of-llms-directly-into-excel-to-analyze-text,-generate-content,-and-work-faster"
+last_verified = "2026-07-29"
+notes = "Distinct from Python in Excel (advanced analysis). The COPILOT function focuses on LLM text tasks in-cell."
+
+[[features]]
+id = "powerpoint-coauthor"
+name = "Collaborate on Slides with Copilot"
+app = "PowerPoint"
+app_icon = "monitor"
+status = "ga"
+frontier_date = "2025-11-01"
+expected_ga = ""
+actual_ga = "2026-04-01"
+last_status_change = "2026-04-01"
+ai_models = []
+description = "Collaborate with Copilot to improve your slides directly in PowerPoint. Tighten messaging, simplify complex content, and turn text into clear visuals while keeping presentations on brand as teams refine slides together."
+value_prop = "Refine slides with Copilot in-app: sharper messaging, simpler content, and on-brand visuals."
+use_cases = ["Improving slide messaging", "Turning text into visuals", "On-brand refinement", "Collaborative slide editing"]
+who_benefits = ["Anyone building decks", "Sales and marketing", "Consultants"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence"
+admin_action_required = "No additional admin action required — generally available."
+availability_scope = "Generally available across PowerPoint on web, Windows, and Mac."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/microsoft-365/roadmap?id=548520"
+]
+status_source_url = "https://www.microsoft.com/microsoft-365/roadmap?id=548520"
+official_ref = "november-2025-collaborate-with-copilot-to-improve-your-slides"
+stage_evidence = "Microsoft 365 Roadmap 548520 / 499655 / 557177: \"Copilot in PowerPoint lets you create, edit, and refine presentations through natural conversation.\" Status: General Availability, Launched (web, Windows, Mac)."
+last_verified = "2026-07-29"
+notes = "Graduated to GA (conversational Copilot in PowerPoint, web/Windows/Mac). Complements Narrative Builder (which drafts a full deck); this focuses on refining existing slides."
+
+[[features]]
+id = "copilot-new-design"
+name = "New Design for Microsoft 365 Copilot"
+app = "Microsoft 365"
+app_icon = "monitor"
+status = "ga"
+frontier_date = "2026-05-01"
+expected_ga = ""
+actual_ga = "2026-06-01"
+last_status_change = "2026-06-01"
+ai_models = []
+description = "A refreshed design for the Microsoft 365 Copilot app that simplifies the experience to drive engagement — including updates to the chat home screen, prompting experience, response layout, and app navigation."
+value_prop = "A simpler, more engaging Copilot app: refreshed home, prompting, responses, and navigation."
+use_cases = ["Simplified chat home", "Improved prompting flow", "Clearer response layout", "Easier app navigation"]
+who_benefits = ["All Copilot users"]
+skills = []
+custom_skills = ""
+licensing_prereqs = "Microsoft 365 Copilot licence"
+admin_action_required = "No additional admin action required — rolling out generally."
+availability_scope = "Generally available (rolling out from June 2026)."
+evidence_level = "official"
+source_urls = [
+  "https://www.microsoft.com/microsoft-365/roadmap?id=561488"
+]
+status_source_url = "https://www.microsoft.com/microsoft-365/roadmap?id=561488"
+official_ref = "may-2026-new-design-for-microsoft-365-copilot"
+stage_evidence = "Microsoft 365 Roadmap 561488: New design for Microsoft 365 Copilot — General Availability, June 2026, status Rolling out."
+last_verified = "2026-07-29"
+notes = "Experience/UX update (not a new agent). Reached GA rollout from June 2026."
+

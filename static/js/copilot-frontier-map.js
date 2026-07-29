@@ -20,6 +20,9 @@
   var statusMap = {};
   statuses.forEach(function (s) { statusMap[s.id] = s; });
   var isCioMode = false;
+  var timelineSort = 'arrival';
+  var recentOnly = false;
+  var RECENT_DAYS = 90;
   var votes = {};
   var watched = {};
   try { votes = JSON.parse(localStorage.getItem('cfm-votes') || '{}'); } catch (_) {}
@@ -197,6 +200,62 @@
     return lines.filter(function (l) { return l !== ''; }).join('\n');
   }
 
+  /* ── Admin-impact badges (shown on collapsed card — "what do I need to do?") ── */
+  function adminImpactBadges(f) {
+    var badges = [];
+    var admin = (f.admin_action_required || '').toLowerCase();
+    var lic = (f.licensing_prereqs || '').toLowerCase();
+    if (f.status === 'frontier') badges.push({ cls: 'frontier', label: '🔬 Enable Frontier' });
+    if (admin.indexOf('anthropic') !== -1 || admin.indexOf('sub-processor') !== -1 || admin.indexOf('subprocessor') !== -1) {
+      badges.push({ cls: 'subproc', label: '🤝 Approve Anthropic' });
+    }
+    if (lic.indexOf('teams phone') !== -1 || admin.indexOf('teams phone') !== -1) {
+      badges.push({ cls: 'licence', label: '🔑 Teams Phone licence' });
+    }
+    if (f.status === 'ga') {
+      var trivial = admin === '' || admin.indexOf('no additional') !== -1 || admin.indexOf('no action') !== -1 || admin.indexOf('no extra') !== -1;
+      badges.push(trivial ? { cls: 'noaction', label: '✅ No extra setup' } : { cls: 'setup', label: '⚙️ Admin setup' });
+    }
+    if (!badges.length) return '';
+    return '<div class="cfm-impact">' + badges.map(function (b) {
+      return '<span class="cfm-impact-badge" data-kind="' + b.cls + '">' + b.label + '</span>';
+    }).join('') + '</div>';
+  }
+
+  /* ── Pulse line (at-a-glance orientation; segments filter the timeline) ── */
+  function renderPulse() {
+    var el = $('#cfm-pulse');
+    if (!el) return;
+    var inFrontier = features.filter(function (f) { return f.status === 'frontier'; }).length;
+    var ga = features.filter(function (f) { return f.status === 'ga'; }).length;
+    var recent = features.filter(function (f) {
+      var d = f.frontier_date || f.actual_ga || '';
+      return d && daysSince(d) <= RECENT_DAYS;
+    }).length;
+    el.innerHTML =
+      '<span class="cfm-pulse-seg" data-act="all"><strong>' + features.length + '</strong> tracked</span>' +
+      '<span class="cfm-pulse-seg" data-act="frontier"><strong>' + inFrontier + '</strong> 🔬 in Frontier</span>' +
+      '<span class="cfm-pulse-seg" data-act="ga"><strong>' + ga + '</strong> ✅ GA</span>' +
+      '<span class="cfm-pulse-seg" data-act="recent"><strong>' + recent + '</strong> 🆕 new (' + RECENT_DAYS + 'd)</span>';
+    $$('#cfm-pulse .cfm-pulse-seg').forEach(function (seg) {
+      seg.addEventListener('click', function () {
+        var act = seg.getAttribute('data-act');
+        var statusSel = $('#cfm-filter-status');
+        if (act === 'recent') {
+          recentOnly = true;
+          if (statusSel) statusSel.value = 'all';
+        } else {
+          recentOnly = false;
+          if (statusSel) statusSel.value = (act === 'all') ? 'all' : act;
+        }
+        $$('#cfm-pulse .cfm-pulse-seg').forEach(function (s) { s.classList.toggle('active', s === seg && act !== 'all'); });
+        applyFilters();
+        var stream = $('#cfm-timeline-stream');
+        if (stream) stream.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  }
+
   /* ── Explorer Tab ── */
   function renderFeatureCard(f) {
     var sm = statusMap[f.status] || {};
@@ -228,6 +287,7 @@
         '<span class="cfm-feature-status-badge" data-status="' + esc(f.status) + '">' + (sm.emoji || '') + ' ' + (sm.label || f.status) + '</span>' +
         '<span class="cfm-feature-expand" aria-hidden="true">▸</span>' +
       '</div>' +
+      adminImpactBadges(f) +
       '<div class="cfm-feature-body">' +
         '<p class="cfm-feature-desc">' + esc(isCioMode && cioDescs[f.id] ? cioDescs[f.id] : f.description) + '</p>' +
         (f.value_prop ? '<div class="cfm-feature-value">💡 ' + esc(f.value_prop) + '</div>' : '') +
@@ -249,9 +309,11 @@
         '</div>' +
         skillsHtml +
         (f.notes ? '<p class="cfm-feature-desc"><strong>Note:</strong> ' + esc(f.notes) + '</p>' : '') +
+        renderMilestoneHistory(f) +
         '<div class="cfm-feature-sources">' + sources + '</div>' +
         '<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">' +
           '<button class="cfm-copy-btn" data-id="' + esc(f.id) + '">📋 Copy summary</button>' +
+          '<button class="cfm-link-btn" data-id="' + esc(f.id) + '">🔗 Copy link</button>' +
           (f.status === 'frontier' ? '<button class="cfm-ask-admin-btn" data-id="' + esc(f.id) + '">📧 Ask Your Admin</button>' : '') +
         '</div>' +
         '<div class="cfm-feature-verified">Last verified: ' + formatDate(f.last_verified) + '</div>' +
@@ -259,23 +321,44 @@
     '</div>';
   }
 
-  function renderExplorer(filtered) {
-    var list = filtered || features;
-    var grid = $('#cfm-explorer-grid');
-    var countEl = $('#cfm-explorer-count');
-    if (!grid) return;
-    grid.innerHTML = list.map(renderFeatureCard).join('');
-    if (countEl) {
-      countEl.textContent = 'Showing ' + list.length + ' of ' + features.length + ' features';
+  /* ── Milestone history (per-feature mini-timeline, shown inside expanded card) ── */
+  function renderMilestoneHistory(f) {
+    var evs = events.filter(function (ev) { return ev.feature_id === f.id; });
+    var items = evs.map(function (ev) {
+      return { date: ev.date, type: ev.event_type, label: eventTypeLabels[ev.event_type] || ev.event_type, note: ev.note || '' };
+    });
+    var hasType = function (t) { return items.some(function (m) { return m.type === t; }); };
+    // Ensure the two key milestones are present even if not logged as events
+    if (f.frontier_date && !hasType('entered_frontier')) {
+      items.push({ date: f.frontier_date, type: 'entered_frontier', label: 'Entered Frontier', note: '' });
     }
-    // Expand/collapse
-    $$('.cfm-feature-header').forEach(function (header) {
+    if (f.actual_ga && !hasType('graduated_ga')) {
+      items.push({ date: f.actual_ga, type: 'graduated_ga', label: 'Graduated to GA', note: '' });
+    }
+    if (!items.length) return '';
+    items.sort(function (a, b) { return (a.date || '').localeCompare(b.date || ''); });
+    return '<div class="cfm-mh">' +
+      '<div class="cfm-mh-title">📅 Milestone history</div>' +
+      items.map(function (m) {
+        return '<div class="cfm-mh-item">' +
+          '<span class="cfm-mh-dot" data-type="' + esc(m.type) + '"></span>' +
+          '<span class="cfm-mh-date">' + formatDate(m.date) + '</span>' +
+          '<span class="cfm-mh-badge" data-type="' + esc(m.type) + '">' + esc(m.label) + '</span>' +
+          (m.note ? '<span class="cfm-mh-note">' + esc(m.note) + '</span>' : '') +
+        '</div>';
+      }).join('') +
+    '</div>';
+  }
+
+  /* ── Shared card interactions (expand/collapse + copy) ── */
+  function attachCardHandlers(scope) {
+    var root = scope || document;
+    root.querySelectorAll('.cfm-feature-header').forEach(function (header) {
       header.addEventListener('click', function () {
         header.closest('.cfm-feature-card').classList.toggle('expanded');
       });
     });
-    // Copy buttons
-    $$('.cfm-copy-btn').forEach(function (btn) {
+    root.querySelectorAll('.cfm-copy-btn').forEach(function (btn) {
       btn.addEventListener('click', function (e) {
         e.stopPropagation();
         var f = featureById(btn.getAttribute('data-id'));
@@ -291,6 +374,95 @@
         });
       });
     });
+    root.querySelectorAll('.cfm-link-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var id = btn.getAttribute('data-id');
+        var url = location.origin + location.pathname + '#feature=' + id;
+        navigator.clipboard.writeText(url).then(function () {
+          btn.textContent = '✅ Link copied!';
+          btn.classList.add('copied');
+          setTimeout(function () { btn.textContent = '🔗 Copy link'; btn.classList.remove('copied'); }, 2000);
+        }).catch(function () {
+          btn.textContent = '❌ Failed';
+          setTimeout(function () { btn.textContent = '🔗 Copy link'; }, 2000);
+        });
+      });
+    });
+  }
+
+  /* ── Chronology helpers ── */
+  var MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  function monthYear(d) {
+    if (!d) return 'Undated';
+    var p = d.split('-');
+    return (MONTH_NAMES[parseInt(p[1], 10) - 1] || '') + ' ' + p[0];
+  }
+  /* Returns {date, verb, kind, secondary, secondaryKind} for a feature under a sort mode.
+     'arrival' keys off the Frontier-entry date; 'recent' keys off the most recent status change.
+     The verb makes the date's meaning explicit so a GA date is never misread as an arrival. */
+  function timelineDateInfo(f, mode) {
+    if (mode === 'recent') {
+      var d = f.last_status_change || f.actual_ga || f.frontier_date || '';
+      if (f.status === 'ga' && f.actual_ga && d === f.actual_ga) {
+        return { date: d, verb: 'Went GA', kind: 'ga',
+          secondary: f.frontier_date ? 'In Frontier since ' + formatDate(f.frontier_date) : '', secondaryKind: 'frontier' };
+      }
+      if (f.status === 'paused') return { date: d, verb: 'Paused', kind: 'paused', secondary: '', secondaryKind: '' };
+      if (f.status === 'withdrawn') return { date: d, verb: 'Withdrawn', kind: 'withdrawn', secondary: '', secondaryKind: '' };
+      return { date: d, verb: 'Entered Frontier', kind: 'frontier', secondary: '', secondaryKind: '' };
+    }
+    // arrival (default)
+    return {
+      date: f.frontier_date || f.actual_ga || '',
+      verb: 'Entered Frontier',
+      kind: 'frontier',
+      secondary: (f.status === 'ga' && f.actual_ga) ? 'Now GA · ' + formatDate(f.actual_ga) : '',
+      secondaryKind: 'ga'
+    };
+  }
+
+  /* ── Timeline Tab (merged Explorer + Timeline) ── */
+  function renderExplorer(filtered) {
+    var list = (filtered || features).slice();
+    var mode = timelineSort;
+    list.forEach(function (f) { f.__tdi = timelineDateInfo(f, mode); });
+    list.sort(function (a, b) { return (b.__tdi.date || '').localeCompare(a.__tdi.date || ''); });
+    var stream = $('#cfm-timeline-stream');
+    var countEl = $('#cfm-explorer-count');
+    if (!stream) return;
+
+    if (!list.length) {
+      stream.innerHTML = '<div class="cfm-col-empty">No features match these filters.</div>';
+      if (countEl) countEl.textContent = 'Showing 0 of ' + features.length + ' features';
+      return;
+    }
+
+    var html = '';
+    var curGroup = '';
+    list.forEach(function (f) {
+      var tdi = f.__tdi;
+      var group = monthYear(tdi.date);
+      if (group !== curGroup) {
+        curGroup = group;
+        html += '<div class="cfm-tl2-group"><span class="cfm-tl2-group-label">' + esc(group) + '</span></div>';
+      }
+      var secondary = tdi.secondary
+        ? '<span class="cfm-tl2-second" data-kind="' + esc(tdi.secondaryKind) + '">' + esc(tdi.secondary) + '</span>'
+        : '';
+      html += '<div class="cfm-tl2-item">' +
+          '<div class="cfm-tl2-rail">' +
+            '<span class="cfm-tl2-dot" data-status="' + esc(f.status) + '"></span>' +
+            '<span class="cfm-tl2-date">' + formatDate(tdi.date) + '</span>' +
+            '<span class="cfm-tl2-railtag" data-status="' + esc(tdi.kind) + '">' + esc(tdi.verb) + '</span>' +
+            secondary +
+          '</div>' +
+          '<div class="cfm-tl2-card">' + renderFeatureCard(f) + '</div>' +
+        '</div>';
+    });
+    stream.innerHTML = html;
+    if (countEl) countEl.textContent = 'Showing ' + list.length + ' of ' + features.length + ' features';
+    attachCardHandlers(stream);
   }
 
   function expandFeature(id) {
@@ -321,6 +493,10 @@
     var region = ($('#cfm-filter-region') || {}).value || 'all';
 
     var filtered = features.filter(function (f) {
+      if (recentOnly) {
+        var rd = f.frontier_date || f.actual_ga || '';
+        if (!rd || daysSince(rd) > RECENT_DAYS) return false;
+      }
       if (status !== 'all' && f.status !== status) return false;
       if (app !== 'all' && f.app !== app) return false;
       if (model !== 'all' && (f.ai_models || []).indexOf(model) === -1) return false;
@@ -441,7 +617,6 @@
     var counts = {
       pipeline: features.length,
       explorer: features.length,
-      timeline: events.length,
       compare: features.length,
       faq: document.querySelectorAll('.cfm-faq-item').length
     };
@@ -683,7 +858,7 @@
     populateFilters();
     initCioMode();
     renderExplorer();
-    renderTimeline();
+    renderPulse();
     populateCompare();
     renderComparison();
     initTierBanner();
@@ -697,9 +872,26 @@
       tab.addEventListener('click', function () { switchTab(tab.getAttribute('data-tab')); });
     });
 
+    // Timeline sort toggle (Frontier arrival vs Recent change)
+    $$('.cfm-sort-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        timelineSort = btn.getAttribute('data-sort') || 'arrival';
+        $$('.cfm-sort-btn').forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        applyFilters();
+      });
+    });
+
     ['cfm-filter-status', 'cfm-filter-app', 'cfm-filter-model', 'cfm-filter-region'].forEach(function (id) {
       var el = document.getElementById(id);
-      if (el) el.addEventListener('change', applyFilters);
+      if (el) el.addEventListener('change', function () {
+        recentOnly = false;
+        $$('#cfm-pulse .cfm-pulse-seg').forEach(function (s) { s.classList.remove('active'); });
+        applyFilters();
+      });
     });
 
     var resetBtn = $('#cfm-filter-reset');
@@ -709,12 +901,20 @@
           var el = document.getElementById(id);
           if (el) el.value = 'all';
         });
+        recentOnly = false;
+        $$('#cfm-pulse .cfm-pulse-seg').forEach(function (s) { s.classList.remove('active'); });
         renderExplorer();
       });
     }
 
     var hash = window.location.hash.replace('#', '');
-    if (hash && document.getElementById('panel-' + hash)) switchTab(hash);
+    if (hash.indexOf('feature=') === 0) {
+      var fid = hash.slice('feature='.length);
+      switchTab('explorer');
+      setTimeout(function () { expandFeature(fid); }, 120);
+    } else if (hash && document.getElementById('panel-' + hash)) {
+      switchTab(hash);
+    }
 
     // CIO Export button
     var exportBtn = $('#cfm-export-cio');
