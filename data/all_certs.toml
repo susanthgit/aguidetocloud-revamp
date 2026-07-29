@@ -11515,3 +11515,45 @@ exam_prerequisites = "None; entry-level (Palo Alto recommends it after the Cyber
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/paloalto-cybersec-practitioner/"
 practice_url = "/guided/paloalto-cybersec-practitioner/practice/"
+
+[[cert]]
+slug = "fortinet-fortinac-f-administrator"
+vendor = "fortinet"
+code = "FORTINET-FORTINAC-F-ADMINISTRATOR"
+name = "Fortinet NSE 6 - FortiNAC-F 7.6 Administrator"
+tagline = "Model network infrastructure, automate access enforcement, operate FortiNAC HA and Manager, integrate FortiGate, VPN, MDM, SNMP, and syslog, and troubleshoot endpoint visibility."
+exam_category = "Fortinet"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 1006
+featured = false
+price_practice = 9
+
+[cert_map."fortinet-fortinac-f-administrator"]
+vendor = "fortinet"
+code = "FORTINET-FORTINAC-F-ADMINISTRATOR"
+name = "Fortinet NSE 6 - FortiNAC-F 7.6 Administrator"
+tagline = "Model network infrastructure, automate access enforcement, operate FortiNAC HA and Manager, integrate FortiGate, VPN, MDM, SNMP, and syslog, and troubleshoot endpoint visibility."
+exam_category = "Fortinet"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 1006
+featured = false
+price_practice = 9
+exam_url = "https://training.fortinet.com/local/staticpage/view.php?page=fortinac_administrator_exam"
+exam_cost = "$200 USD (current NSE 4-6 fee; tax excluded; verify at booking)"
+exam_duration = 70
+exam_passing_score = "Pass / fail (a score report is available from Pearson VUE; Fortinet does not publish a numeric cut score)"
+exam_questions_real = "30-35"
+exam_provider = "Pearson VUE test center or OnVUE online proctoring"
+exam_validity = "2 years"
+exam_prerequisites = "None required to sit the exam. Fortinet recommends at least six months of hands-on experience with FortiNAC-F devices in a network."
+exam_question_types = ["Written questions", "Operational scenarios", "Configuration extracts", "Troubleshooting captures"]
+guided_url = "/guided/fortinet-fortinac-f-administrator/"
+practice_url = "/guided/fortinet-fortinac-f-administrator/practice/"
