@@ -5,90 +5,290 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Thu, 30 Jul 2026 12:29:43 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2026 18:14:48 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Hims &amp; Hers accused of sharing health secrets and hiding the cancel button</title>
-      <link>https://www.theregister.com/legal/2026/07/30/ftc-sues-hims-hers-for-sharing-health-data-with-big-tech/5281092</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 30 Jul 2026 13:45:00 +0200</pubDate>
-      <guid>https://www.theregister.com/legal/2026/07/30/ftc-sues-hims-hers-for-sharing-health-data-with-big-tech/5281092</guid>
-    </item>
-    <item>
-      <title>MariaDB again faces questions over Galera's open source future</title>
-      <link>https://www.theregister.com/databases/2026/07/30/mariadb-again-faces-questions-over-galeras-open-source-future/5280975</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 30 Jul 2026 13:01:00 +0200</pubDate>
-      <guid>https://www.theregister.com/databases/2026/07/30/mariadb-again-faces-questions-over-galeras-open-source-future/5280975</guid>
-    </item>
-    <item>
-      <title>Russian spies take their half-click email attack from Zimbra to Outlook</title>
-      <link>https://www.theregister.com/security/2026/07/30/russian-spies-take-their-half-click-email-attack-from-zimbra-to-outlook/5281033</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 30 Jul 2026 12:29:00 +0200</pubDate>
-      <guid>https://www.theregister.com/security/2026/07/30/russian-spies-take-their-half-click-email-attack-from-zimbra-to-outlook/5281033</guid>
-    </item>
-    <item>
-      <title>A2UI + MCP Apps: Combining the best of declarative and custom agentic UIs</title>
-      <link>https://developers.googleblog.com/a2ui-and-mcp-apps/</link>
+      <title>Building scalable AI agents with modular prompt transpilation</title>
+      <link>https://developers.googleblog.com/building-scalable-ai-agents-with-modular-prompt-transpilation/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Thu, 30 Jul 2026 12:28:17 +0000</pubDate>
-      <guid>https://developers.googleblog.com/a2ui-and-mcp-apps/</guid>
+      <pubDate>Thu, 30 Jul 2026 18:12:55 +0000</pubDate>
+      <guid>https://developers.googleblog.com/building-scalable-ai-agents-with-modular-prompt-transpilation/</guid>
     </item>
     <item>
-      <title>Expanding Choice in Gemini Enterprise Agent Platform: Introducing Grounding with Parallel Web Search</title>
-      <link>https://developers.googleblog.com/expanding-choice-in-gemini-enterprise-agent-platform-introducing-grounding-with-parallel-web-search/</link>
+      <title>How to use Google microbenchmarks for evaluating TPU performance</title>
+      <link>https://developers.googleblog.com/how-to-use-google-microbenchmarks-for-evaluating-tpu-performance/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Thu, 30 Jul 2026 12:28:17 +0000</pubDate>
-      <guid>https://developers.googleblog.com/expanding-choice-in-gemini-enterprise-agent-platform-introducing-grounding-with-parallel-web-search/</guid>
+      <pubDate>Thu, 30 Jul 2026 18:12:55 +0000</pubDate>
+      <guid>https://developers.googleblog.com/how-to-use-google-microbenchmarks-for-evaluating-tpu-performance/</guid>
     </item>
     <item>
-      <title>How I free up Windows disk space and shred sensitive data for free with open-source BleachBit</title>
-      <link>https://www.zdnet.com/article/bleachbit-free-windows-utility-free-up-disk-space/</link>
+      <title>LinkedIn adds a button to report AI-generated ‘slop’</title>
+      <link>https://techcrunch.com/2026/07/30/linkedin-adds-a-button-to-report-ai-generated-slop/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Thu, 30 Jul 2026 18:05:21 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/07/30/linkedin-adds-a-button-to-report-ai-generated-slop/</guid>
+    </item>
+    <item>
+      <title>Nvidia’s Open Source Alliance Snubs OpenAI and Anthropic</title>
+      <link>https://www.wired.com/story/nvidias-open-source-alliance-snubs-openai-and-anthropic/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Thu, 30 Jul 2026 17:51:10 +0000</pubDate>
+      <guid>https://www.wired.com/story/nvidias-open-source-alliance-snubs-openai-and-anthropic/</guid>
+    </item>
+    <item>
+      <title>Reference same-repository actions with self-repository syntax</title>
+      <link>https://github.blog/changelog/2026-07-30-reference-same-repository-actions-with-self-repository-syntax</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Thu, 30 Jul 2026 17:39:46 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-07-30-reference-same-repository-actions-with-self-repository-syntax</guid>
+    </item>
+    <item>
+      <title>Stacked sessions and pull requests in the GitHub Copilot app</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/stacked-sessions-and-pull-requests-in-the-github-copilot-app/</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Thu, 30 Jul 2026 17:30:24 +0000</pubDate>
+      <guid>https://github.blog/ai-and-ml/github-copilot/stacked-sessions-and-pull-requests-in-the-github-copilot-app/</guid>
+    </item>
+    <item>
+      <title>Jailed Flock vandal wipes out three cameras, racks up thousands in damages</title>
+      <link>https://www.theregister.com/security/2026/07/30/jailed-flock-vandal-wipes-out-three-cameras-racks-up-thousands-in-damages/5281224</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Thu, 30 Jul 2026 17:28:00 +0200</pubDate>
+      <guid>https://www.theregister.com/security/2026/07/30/jailed-flock-vandal-wipes-out-three-cameras-racks-up-thousands-in-damages/5281224</guid>
+    </item>
+    <item>
+      <title>How controllers from industrial machinery can coordinate multitask machine learning</title>
+      <link>https://www.amazon.science/blog/how-controllers-from-industrial-machinery-can-coordinate-multitask-machine-learning</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Thu, 30 Jul 2026 17:26:47 +0000</pubDate>
+      <guid>https://www.amazon.science/blog/how-controllers-from-industrial-machinery-can-coordinate-multitask-machine-learning</guid>
+    </item>
+    <item>
+      <title>Deploying Kimi K3 on AWS</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/deploying-kimi-k3-on-aws/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Thu, 30 Jul 2026 17:22:32 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/deploying-kimi-k3-on-aws/</guid>
+    </item>
+    <item>
+      <title>What the FCC ban on foreign-made robot vacuums means for your Roomba</title>
+      <link>https://www.zdnet.com/article/fcc-ban-on-foreign-made-robot-vacuums-and-your-roomba/</link>
       <description></description>
       <category>Industry</category>
-      <pubDate>Thu, 30 Jul 2026 12:25:28 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/bleachbit-free-windows-utility-free-up-disk-space/</guid>
+      <pubDate>Thu, 30 Jul 2026 17:11:47 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/fcc-ban-on-foreign-made-robot-vacuums-and-your-roomba/</guid>
     </item>
     <item>
-      <title>The Download: tricking LLMs, and reviving geothermal plants</title>
-      <link>https://www.technologyreview.com/2026/07/30/1140936/the-download-tricking-llms-reviving-geothermal/</link>
+      <title>Montana’s plan to become an experimental medical hub just pushed forward</title>
+      <link>https://www.technologyreview.com/2026/07/30/1140942/montana-experimental-medical-hub-pushed-forward-right-to-try/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Thu, 30 Jul 2026 12:10:00 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/07/30/1140936/the-download-tricking-llms-reviving-geothermal/</guid>
+      <pubDate>Thu, 30 Jul 2026 17:10:00 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/07/30/1140942/montana-experimental-medical-hub-pushed-forward-right-to-try/</guid>
     </item>
     <item>
-      <title>The majority of corporate IT is now off premises for the first time</title>
-      <link>https://www.theregister.com/off-prem/2026/07/30/the-majority-of-corporate-it-is-now-off-premises-for-the-first-time/5280554</link>
+      <title>I compared these popular sleep earbuds to my Oura Ring 5 - the results surprised me</title>
+      <link>https://www.zdnet.com/article/ozlo-sleepbuds-2-review/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Thu, 30 Jul 2026 17:10:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/ozlo-sleepbuds-2-review/</guid>
+    </item>
+    <item>
+      <title>Chrome Needs Twice-a-Week Patching Thanks to AI Bug Hunting</title>
+      <link>https://www.wired.com/story/chrome-needs-twice-a-week-patching-thanks-to-ai-bug-hunting-for-now/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Thu, 30 Jul 2026 12:00:00 +0200</pubDate>
-      <guid>https://www.theregister.com/off-prem/2026/07/30/the-majority-of-corporate-it-is-now-off-premises-for-the-first-time/5280554</guid>
+      <pubDate>Thu, 30 Jul 2026 17:00:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/chrome-needs-twice-a-week-patching-thanks-to-ai-bug-hunting-for-now/</guid>
     </item>
     <item>
-      <title>30 years ago, AT&amp;T gave Internet Explorer the default advantage</title>
-      <link>https://www.theregister.com/offbeat/2026/07/30/30-years-ago-att-gave-internet-explorer-the-default-advantage/5279373</link>
+      <title>How Yahoo enhances search retargeting using Amazon Bedrock</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/how-yahoo-enhances-search-retargeting-using-amazon-bedrock/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Thu, 30 Jul 2026 16:40:36 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/how-yahoo-enhances-search-retargeting-using-amazon-bedrock/</guid>
+    </item>
+    <item>
+      <title>Americans give all-day school phone bans a ringing endorsement</title>
+      <link>https://www.theregister.com/personal-tech/2026/07/30/americans-give-all-day-school-phone-bans-a-ringing-endorsement/5281186</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Thu, 30 Jul 2026 11:15:00 +0200</pubDate>
-      <guid>https://www.theregister.com/offbeat/2026/07/30/30-years-ago-att-gave-internet-explorer-the-default-advantage/5279373</guid>
+      <pubDate>Thu, 30 Jul 2026 16:31:00 +0200</pubDate>
+      <guid>https://www.theregister.com/personal-tech/2026/07/30/americans-give-all-day-school-phone-bans-a-ringing-endorsement/5281186</guid>
     </item>
     <item>
-      <title>Brighton gig screen goes One Step Beyond with an update pop-up</title>
-      <link>https://www.theregister.com/offbeat/2026/07/30/brighton-gig-screen-goes-one-step-beyond-with-an-update-pop-up/5279823</link>
+      <title>Your Windows download keeps getting bigger, and AI is to blame - here's why it matters</title>
+      <link>https://www.zdnet.com/article/windows-installation-files-getting-bigger-blame-ai/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Thu, 30 Jul 2026 16:18:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/windows-installation-files-getting-bigger-blame-ai/</guid>
+    </item>
+    <item>
+      <title>Stacked pull requests are now in public preview</title>
+      <link>https://github.blog/changelog/2026-07-30-stacked-pull-requests-are-now-in-public-preview</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Thu, 30 Jul 2026 16:14:29 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-07-30-stacked-pull-requests-are-now-in-public-preview</guid>
+    </item>
+    <item>
+      <title>Inference meta-monitoring for Amazon SageMaker AI endpoints with Amazon Quick</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/inference-meta-monitoring-for-amazon-sagemaker-ai-endpoints-with-amazon-quick/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Thu, 30 Jul 2026 16:10:10 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/inference-meta-monitoring-for-amazon-sagemaker-ai-endpoints-with-amazon-quick/</guid>
+    </item>
+    <item>
+      <title>Okta buys AI security startup Permiso; source says for about $200M</title>
+      <link>https://techcrunch.com/2026/07/30/okta-buys-ai-security-startup-permiso-source-says-for-about-200m/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Thu, 30 Jul 2026 10:30:00 +0200</pubDate>
-      <guid>https://www.theregister.com/offbeat/2026/07/30/brighton-gig-screen-goes-one-step-beyond-with-an-update-pop-up/5279823</guid>
+      <pubDate>Thu, 30 Jul 2026 16:09:42 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/07/30/okta-buys-ai-security-startup-permiso-source-says-for-about-200m/</guid>
     </item>
     <item>
-      <title>OpenAI’s Hacking Debacle Was a Human Mistake</title>
+      <title>OpenAI's rogue agent didn't stop at Hugging Face - here's what we know</title>
+      <link>https://www.zdnet.com/article/openais-rogue-ai-models-attacked-other-companies-besides-hugging-face/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Thu, 30 Jul 2026 16:06:50 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/openais-rogue-ai-models-attacked-other-companies-besides-hugging-face/</guid>
+    </item>
+    <item>
+      <title>Introducing explicit prompt caching for OpenAI GPT-5.6 models on Amazon Bedrock</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/introducing-explicit-prompt-caching-for-openai-gpt-5-6-models-on-amazon-bedrock/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Thu, 30 Jul 2026 16:02:32 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/introducing-explicit-prompt-caching-for-openai-gpt-5-6-models-on-amazon-bedrock/</guid>
+    </item>
+    <item>
+      <title>From individual achievement to partner impact</title>
+      <link>https://www.theregister.com/storage/2026/07/30/partner-content/5277414</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Thu, 30 Jul 2026 16:00:00 +0200</pubDate>
+      <guid>https://www.theregister.com/storage/2026/07/30/partner-content/5277414</guid>
+    </item>
+    <item>
+      <title>The New Friend AI Pendant Can Now Talk Back to You</title>
+      <link>https://www.wired.com/story/the-friend-2-necklace-can-talk-back-to-you-now/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Thu, 30 Jul 2026 16:00:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/the-friend-2-necklace-can-talk-back-to-you-now/</guid>
+    </item>
+    <item>
+      <title>Samsung warns memory crunch will last through 2028 as profit rises 19-fold</title>
+      <link>https://www.theregister.com/systems/2026/07/30/samsung-warns-memory-crunch-will-last-through-2028-as-profit-rises-19-fold/5281142</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Thu, 30 Jul 2026 15:50:00 +0200</pubDate>
+      <guid>https://www.theregister.com/systems/2026/07/30/samsung-warns-memory-crunch-will-last-through-2028-as-profit-rises-19-fold/5281142</guid>
+    </item>
+    <item>
+      <title>Meta says AI is making it easier to build new apps — and more are coming</title>
+      <link>https://techcrunch.com/2026/07/30/meta-says-ai-is-making-it-easier-to-build-new-apps-and-more-are-coming/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Thu, 30 Jul 2026 15:41:16 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/07/30/meta-says-ai-is-making-it-easier-to-build-new-apps-and-more-are-coming/</guid>
+    </item>
+    <item>
+      <title>Field service is 95% on board with AI but these legacy issues need attention</title>
+      <link>https://www.zdnet.com/article/state-of-field-service-and-ai-adoption/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Thu, 30 Jul 2026 15:32:27 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/state-of-field-service-and-ai-adoption/</guid>
+    </item>
+    <item>
+      <title>GPU Management: Why Idle GPUs Are the New Grounded Aircraft</title>
+      <link>https://huggingface.co/blog/Dharma-AI/gpu-management</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Thu, 30 Jul 2026 15:09:09 +0000</pubDate>
+      <guid>https://huggingface.co/blog/Dharma-AI/gpu-management</guid>
+    </item>
+    <item>
+      <title>Gemini Robotics 2 Brings Google's AI Into the Physical World</title>
+      <link>https://www.wired.com/story/google-gemini-can-control-humanoid-robots/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Thu, 30 Jul 2026 15:04:22 +0000</pubDate>
+      <guid>https://www.wired.com/story/google-gemini-can-control-humanoid-robots/</guid>
+    </item>
+    <item>
+      <title>GitHub Copilot in Visual Studio — July update</title>
+      <link>https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Thu, 30 Jul 2026 15:01:48 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update</guid>
+    </item>
+    <item>
+      <title>Limit remote control to managed devices</title>
+      <link>https://github.blog/changelog/2026-07-30-limit-remote-control-to-managed-devices</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Thu, 30 Jul 2026 14:54:47 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-07-30-limit-remote-control-to-managed-devices</guid>
+    </item>
+    <item>
+      <title>In the Hugging Face breach, OpenAI’s hacker was noisy and fast — but not unstoppable</title>
+      <link>https://techcrunch.com/2026/07/30/in-the-hugging-face-breach-openais-hacker-was-noisy-and-fast-but-not-unstoppable/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Thu, 30 Jul 2026 14:48:32 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/07/30/in-the-hugging-face-breach-openais-hacker-was-noisy-and-fast-but-not-unstoppable/</guid>
+    </item>
+    <item>
+      <title>Google DeepMind’s new AI model can control a robot’s entire body</title>
+      <link>https://www.theverge.com/tech/973276/google-deepmind-gemini-robotics-2-whole-body</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Thu, 30 Jul 2026 13:18:45 -0400</pubDate>
+      <guid>https://www.theverge.com/tech/973276/google-deepmind-gemini-robotics-2-whole-body</guid>
+    </item>
+    <item>
+      <title>The Galaxy Z Fold 8 is so good, I don't see the point of flip phones any more</title>
+      <link>https://www.zdnet.com/article/the-galaxy-z-fold-8-is-so-good-i-dont-see-the-point-of-flip-phones-any-more/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Thu, 30 Jul 2026 13:12:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/the-galaxy-z-fold-8-is-so-good-i-dont-see-the-point-of-flip-phones-any-more/</guid>
+    </item>
+    <item>
+      <title>Best in Class: Stream PC Games and Study on the Same Laptop With GeForce NOW</title>
+      <link>https://blogs.nvidia.com/blog/geforce-now-thursday-back-to-school-2026/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Thu, 30 Jul 2026 13:00:20 +0000</pubDate>
+      <guid>https://blogs.nvidia.com/blog/geforce-now-thursday-back-to-school-2026/</guid>
+    </item>
+    <item>
+      <title>Google Earth added Nano Banana, and I immediately reimagined Philly with zombies and evil clowns</title>
+      <link>https://www.zdnet.com/article/google-earth-added-nano-banana-and-i-immediately-reimagined-philly-with-zombies-and-evil-clowns/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Thu, 30 Jul 2026 12:30:02 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/google-earth-added-nano-banana-and-i-immediately-reimagined-philly-with-zombies-and-evil-clowns/</guid>
+    </item>
+    <item>
+      <title>OpenAI’s Hacking Debacle Comes Down to Human Error</title>
       <link>https://www.wired.com/story/openais-hacking-debacle-was-a-human-mistake/</link>
       <description></description>
       <category>OpenAI</category>
@@ -96,316 +296,116 @@
       <guid>https://www.wired.com/story/openais-hacking-debacle-was-a-human-mistake/</guid>
     </item>
     <item>
-      <title>A fundamental flaw leaves LLMs strikingly vulnerable to attack</title>
-      <link>https://www.technologyreview.com/2026/07/30/1140927/a-fundamental-flaw-leaves-llms-vulnerable-to-attack/</link>
+      <title>Advancing the price-performance frontier with GPT-5.6</title>
+      <link>https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6</link>
       <description></description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 30 Jul 2026 10:15:19 +0000</pubDate>
-      <guid>https://www.technologyreview.com/2026/07/30/1140927/a-fundamental-flaw-leaves-llms-vulnerable-to-attack/</guid>
+      <category>OpenAI</category>
+      <pubDate>Thu, 30 Jul 2026 10:00:00 +0000</pubDate>
+      <guid>https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6</guid>
     </item>
     <item>
-      <title>LinkedIn Won’t Be Expanding Its Data Centers in the Next Year</title>
-      <link>https://www.wired.com/story/how-linkedin-is-keeping-its-compute-capacity-flat/</link>
+      <title>Dimensionality Reduction Meets Network Science: Sensemaking on UMAP’s kNN Graph</title>
+      <link>https://machinelearning.apple.com/research/umap-knn-graph-sensemaking</link>
       <description></description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 30 Jul 2026 10:15:00 +0000</pubDate>
-      <guid>https://www.wired.com/story/how-linkedin-is-keeping-its-compute-capacity-flat/</guid>
+      <category>Apple</category>
+      <pubDate>Thu, 30 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://machinelearning.apple.com/research/umap-knn-graph-sensemaking</guid>
     </item>
     <item>
-      <title>Amazon is selling this Samsung 2TB SATA SSD for over 60% off right now</title>
-      <link>https://www.zdnet.com/article/samsung-870-evo-ssd-deal/</link>
+      <title>m3-memory 2026.7.29.6</title>
+      <link>https://pypi.org/project/m3-memory/2026.7.29.6/</link>
       <description></description>
-      <category>Industry</category>
-      <pubDate>Thu, 30 Jul 2026 10:00:40 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/samsung-870-evo-ssd-deal/</guid>
+      <category>Google</category>
+      <pubDate>Wed, 29 Jul 2026 18:11:24 +0000</pubDate>
+      <guid>https://pypi.org/project/m3-memory/2026.7.29.6/</guid>
     </item>
     <item>
-      <title>AI Scammers Are Better at Building Trust Than Humans</title>
-      <link>https://www.wired.com/story/ai-scammers-are-better-at-building-trust-than-humans/</link>
+      <title>langchain-daytona 0.0.8</title>
+      <link>https://pypi.org/project/langchain-daytona/0.0.8/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Wed, 29 Jul 2026 18:11:23 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-daytona/0.0.8/</guid>
+    </item>
+    <item>
+      <title>How an OpenAI safety test became a real-world cyberattack on the Hugging Face platform</title>
+      <link>https://theconversation.com/how-an-openai-safety-test-became-a-real-world-cyberattack-on-the-hugging-face-platform-288334</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Wed, 29 Jul 2026 18:10:45 +0000</pubDate>
+      <guid>https://theconversation.com/how-an-openai-safety-test-became-a-real-world-cyberattack-on-the-hugging-face-platform-288334</guid>
+    </item>
+    <item>
+      <title>ckg-nvidia-ai 0.16.5</title>
+      <link>https://pypi.org/project/ckg-nvidia-ai/0.16.5/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Wed, 29 Jul 2026 18:10:45 +0000</pubDate>
+      <guid>https://pypi.org/project/ckg-nvidia-ai/0.16.5/</guid>
+    </item>
+    <item>
+      <title>OpenAI hit its billion-user goal, just seven months late</title>
+      <link>https://thenextweb.com/news/chatgpt-1-billion-weekly-active-users-openai-target/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Wed, 29 Jul 2026 18:10:38 +0000</pubDate>
+      <guid>https://thenextweb.com/news/chatgpt-1-billion-weekly-active-users-openai-target/</guid>
+    </item>
+    <item>
+      <title>Gemini App for macOS Adds New Voice Control Features</title>
+      <link>https://www.thurrott.com/a-i/339795/gemini-app-for-macos-adds-new-voice-control-features</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Wed, 29 Jul 2026 18:09:56 +0000</pubDate>
+      <guid>https://www.thurrott.com/a-i/339795/gemini-app-for-macos-adds-new-voice-control-features</guid>
+    </item>
+    <item>
+      <title>Anthropic CEO Dario Amodei deflects White House scrutiny to Nvidia’s Jensen Huang</title>
+      <link>https://cryptobriefing.com/amodei-deflects-scrutiny-nvidia-huang/</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Thu, 30 Jul 2026 09:30:00 +0000</pubDate>
-      <guid>https://www.wired.com/story/ai-scammers-are-better-at-building-trust-than-humans/</guid>
+      <pubDate>Wed, 29 Jul 2026 18:06:27 +0000</pubDate>
+      <guid>https://cryptobriefing.com/amodei-deflects-scrutiny-nvidia-huang/</guid>
     </item>
     <item>
-      <title>How to qualify for Apple's education discount - and get a $499 MacBook Neo for school</title>
-      <link>https://www.zdnet.com/article/macbook-neo-499-educational-price-how-to/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Thu, 30 Jul 2026 09:00:44 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/macbook-neo-499-educational-price-how-to/</guid>
-    </item>
-    <item>
-      <title>I Got a Free Meal From a Private Chef—Who Filmed It All to Train Robots</title>
-      <link>https://www.wired.com/story/i-let-a-private-chef-film-my-kitchen-for-robot-training-data/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Thu, 30 Jul 2026 09:00:00 +0000</pubDate>
-      <guid>https://www.wired.com/story/i-let-a-private-chef-film-my-kitchen-for-robot-training-data/</guid>
-    </item>
-    <item>
-      <title>This docking station's 'hidden compartment' disrupted my desktop - for the better</title>
-      <link>https://www.zdnet.com/article/satechi-thunderbolt-5-cubedock-review/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Thu, 30 Jul 2026 08:45:54 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/satechi-thunderbolt-5-cubedock-review/</guid>
-    </item>
-    <item>
-      <title>Karnataka tops south in ragging complaints, logs 181 cases since 2022</title>
-      <link>https://timesofindia.indiatimes.com/city/mysuru/karnataka-tops-south-in-ragging-complaints-logs-181-cases-since-2022/articleshow/132712123.cms</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Wed, 29 Jul 2026 12:28:16 +0000</pubDate>
-      <guid>https://timesofindia.indiatimes.com/city/mysuru/karnataka-tops-south-in-ragging-complaints-logs-181-cases-since-2022/articleshow/132712123.cms</guid>
-    </item>
-    <item>
-      <title>Google DeepMind Paper Says LLMs Will Never Replace Human Genius Because They Lack The Creative Leap Necessary To Make New Scientific Theories</title>
-      <link>https://wccftech.com/google-deepmind-paper-llms-cannot-replace-human-genius/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Wed, 29 Jul 2026 12:26:49 +0000</pubDate>
-      <guid>https://wccftech.com/google-deepmind-paper-llms-cannot-replace-human-genius/</guid>
-    </item>
-    <item>
-      <title>Gujarat CM participates in Guru Purnima celebrations at Lusadiya in Arvalli district</title>
-      <link>https://timesofindia.indiatimes.com/city/ahmedabad/gujarat-cm-participates-in-guru-purnima-celebrations-at-lusadiya-in-arvalli-district/articleshow/132712101.cms</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Wed, 29 Jul 2026 12:26:16 +0000</pubDate>
-      <guid>https://timesofindia.indiatimes.com/city/ahmedabad/gujarat-cm-participates-in-guru-purnima-celebrations-at-lusadiya-in-arvalli-district/articleshow/132712101.cms</guid>
-    </item>
-    <item>
-      <title>Muslim man booked for climbing ‘Rath’ in shoes for reel, court sets ‘wash its steps’ as bail condition</title>
-      <link>https://timesofindia.indiatimes.com/city/kolkata/muslim-man-booked-for-climbing-rath-in-shoes-for-reel-court-sets-wash-its-steps-as-bail-condition/articleshow/132712078.cms</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Wed, 29 Jul 2026 12:24:59 +0000</pubDate>
-      <guid>https://timesofindia.indiatimes.com/city/kolkata/muslim-man-booked-for-climbing-rath-in-shoes-for-reel-court-sets-wash-its-steps-as-bail-condition/articleshow/132712078.cms</guid>
-    </item>
-    <item>
-      <title>Grok 4.5 Claims Top Rank on HighWalk Benchmark for Updating Technical Specs from 46 Laravel Commits</title>
-      <link>https://www.ibtimes.com.au/grok-4-5-tops-highwalk-benchmark-1873201</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Wed, 29 Jul 2026 12:23:51 +0000</pubDate>
-      <guid>https://www.ibtimes.com.au/grok-4-5-tops-highwalk-benchmark-1873201</guid>
-    </item>
-    <item>
-      <title>Samsung’s Galaxy Z Fold 8 feels like the future</title>
-      <link>https://www.theverge.com/tech/972387/samsung-galaxy-z-fold-8-review</link>
-      <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Wed, 29 Jul 2026 12:22:03 +0000</pubDate>
-      <guid>https://www.theverge.com/tech/972387/samsung-galaxy-z-fold-8-review</guid>
-    </item>
-    <item>
-      <title>duduclaw 1.46.3</title>
-      <link>https://pypi.org/project/duduclaw/1.46.3/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Wed, 29 Jul 2026 12:21:18 +0000</pubDate>
-      <guid>https://pypi.org/project/duduclaw/1.46.3/</guid>
-    </item>
-    <item>
-      <title>seosiri-bioassay-mcp added to PyPI</title>
-      <link>https://pypi.org/project/seosiri-bioassay-mcp/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Wed, 29 Jul 2026 12:21:17 +0000</pubDate>
-      <guid>https://pypi.org/project/seosiri-bioassay-mcp/</guid>
-    </item>
-    <item>
-      <title>pdf2word-hebrew added to PyPI</title>
-      <link>https://pypi.org/project/pdf2word-hebrew/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Wed, 29 Jul 2026 12:20:23 +0000</pubDate>
-      <guid>https://pypi.org/project/pdf2word-hebrew/</guid>
-    </item>
-    <item>
-      <title>Show HN: Font Lab – live font swapping and text editing on your dev server</title>
-      <link>https://github.com/jmg698/Font-Lab</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Wed, 29 Jul 2026 12:17:23 +0000</pubDate>
-      <guid>https://github.com/jmg698/Font-Lab</guid>
-    </item>
-    <item>
-      <title>AI in healthcare is an evolving landscape of new technologies, productivity benefits and legal uncertainties</title>
-      <link>https://theconversation.com/ai-in-healthcare-is-an-evolving-landscape-of-new-technologies-productivity-benefits-and-legal-uncertainties-286611</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Wed, 29 Jul 2026 12:16:49 +0000</pubDate>
-      <guid>https://theconversation.com/ai-in-healthcare-is-an-evolving-landscape-of-new-technologies-productivity-benefits-and-legal-uncertainties-286611</guid>
-    </item>
-    <item>
-      <title>As AI reshapes newsrooms, leading media outlets are charting different paths for its use</title>
-      <link>https://theconversation.com/as-ai-reshapes-newsrooms-leading-media-outlets-are-charting-different-paths-for-its-use-283565</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Wed, 29 Jul 2026 12:15:33 +0000</pubDate>
-      <guid>https://theconversation.com/as-ai-reshapes-newsrooms-leading-media-outlets-are-charting-different-paths-for-its-use-283565</guid>
-    </item>
-    <item>
-      <title>Google's price hike explanation ignores the real culprit: mandatory AI bloat</title>
-      <link>https://www.androidpolice.com/googles-price-hike-explanation-ignores-the-real-culprit-mandatory-ai-bloat/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Wed, 29 Jul 2026 12:15:16 +0000</pubDate>
-      <guid>https://www.androidpolice.com/googles-price-hike-explanation-ignores-the-real-culprit-mandatory-ai-bloat/</guid>
-    </item>
-    <item>
-      <title>Leaked Gemini 4 Launch Targets August 2026 to Rival ChatGPT</title>
-      <link>https://www.geeky-gadgets.com/google-gemini-4-rumors/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Wed, 29 Jul 2026 12:13:00 +0000</pubDate>
-      <guid>https://www.geeky-gadgets.com/google-gemini-4-rumors/</guid>
-    </item>
-    <item>
-      <title>ghonn-models-pytorch 0.2.0</title>
-      <link>https://pypi.org/project/ghonn-models-pytorch/0.2.0/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Wed, 29 Jul 2026 12:12:41 +0000</pubDate>
-      <guid>https://pypi.org/project/ghonn-models-pytorch/0.2.0/</guid>
-    </item>
-    <item>
-      <title>Show HN: I gave Fable a robot body</title>
-      <link>https://www.talraviv.co/p/i-gave-claude-a-robot-body</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Wed, 29 Jul 2026 12:09:52 +0000</pubDate>
-      <guid>https://www.talraviv.co/p/i-gave-claude-a-robot-body</guid>
-    </item>
-    <item>
-      <title>Vendasta Technologies Inc.: Vendasta Unveils Autonomous AI Employees to Scale Organic Search and Social Marketing for Small Businesses</title>
-      <link>https://www.finanznachrichten.de/nachrichten-2026-07/69154915-vendasta-technologies-inc-vendasta-unveils-autonomous-ai-employees-to-scale-organic-search-and-social-marketing-for-small-businesses-200.htm</link>
-      <description></description>
-      <category>Perplexity</category>
-      <pubDate>Wed, 29 Jul 2026 12:09:38 +0000</pubDate>
-      <guid>https://www.finanznachrichten.de/nachrichten-2026-07/69154915-vendasta-technologies-inc-vendasta-unveils-autonomous-ai-employees-to-scale-organic-search-and-social-marketing-for-small-businesses-200.htm</guid>
-    </item>
-    <item>
-      <title>CBIZ Reports Second-Quarter and First-Half 2026 Financial Results</title>
-      <link>https://www.globenewswire.com/news-release/2026/07/29/3335186/0/en/CBIZ-Reports-Second-Quarter-and-First-Half-2026-Financial-Results.html</link>
-      <description></description>
-      <category>Microsoft</category>
-      <pubDate>Wed, 29 Jul 2026 12:05:00 +0000</pubDate>
-      <guid>https://www.globenewswire.com/news-release/2026/07/29/3335186/0/en/CBIZ-Reports-Second-Quarter-and-First-Half-2026-Financial-Results.html</guid>
-    </item>
-    <item>
-      <title>A new medical AI study found the same flaw in OpenEvidence, OpenAI, Anthropic, and Doximity</title>
-      <link>https://fortune.com/2026/07/29/new-medical-ai-study-same-flaw-openevidence-openai-anthropic-doximity/</link>
-      <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Wed, 29 Jul 2026 12:03:18 +0000</pubDate>
-      <guid>https://fortune.com/2026/07/29/new-medical-ai-study-same-flaw-openevidence-openai-anthropic-doximity/</guid>
-    </item>
-    <item>
-      <title>CTERA Extends Microsoft 365 Copilot to the Enterprise File Estate, with Governed, Classified and Searchable Data to Improve AI Quality and Outcomes</title>
-      <link>https://www.globenewswire.com/news-release/2026/07/29/3335181/0/en/CTERA-Extends-Microsoft-365-Copilot-to-the-Enterprise-File-Estate-with-Governed-Classified-and-Searchable-Data-to-Improve-AI-Quality-and-Outcomes.html</link>
-      <description></description>
-      <category>Microsoft</category>
-      <pubDate>Wed, 29 Jul 2026 12:02:00 +0000</pubDate>
-      <guid>https://www.globenewswire.com/news-release/2026/07/29/3335181/0/en/CTERA-Extends-Microsoft-365-Copilot-to-the-Enterprise-File-Estate-with-Governed-Classified-and-Searchable-Data-to-Improve-AI-Quality-and-Outcomes.html</guid>
-    </item>
-    <item>
-      <title>How Perplexity Actually Picks Sources (I Read The Stream, Not The Answers) via @sejournal, @suganthan</title>
-      <link>https://suganthan.com/blog/how-perplexity-picks-sources/</link>
-      <description></description>
-      <category>Perplexity</category>
-      <pubDate>Wed, 29 Jul 2026 12:01:39 +0000</pubDate>
-      <guid>https://suganthan.com/blog/how-perplexity-picks-sources/</guid>
-    </item>
-    <item>
-      <title>China Hits U.S., Europe With New Rare Earths Export Controls</title>
-      <link>https://legalinsurrection.com/2026/07/china-hits-u-s-europe-with-new-rare-earths-export-controls/</link>
-      <description></description>
-      <category>DeepSeek</category>
-      <pubDate>Wed, 29 Jul 2026 12:00:53 +0000</pubDate>
-      <guid>https://legalinsurrection.com/2026/07/china-hits-u-s-europe-with-new-rare-earths-export-controls/</guid>
-    </item>
-    <item>
-      <title>5 Must-Read Resources for Mastering Small Language Models</title>
-      <link>https://www.kdnuggets.com/5-must-read-resources-for-mastering-small-language-models</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Wed, 29 Jul 2026 12:00:22 +0000</pubDate>
-      <guid>https://www.kdnuggets.com/5-must-read-resources-for-mastering-small-language-models</guid>
-    </item>
-    <item>
-      <title>Ollama vs. LM Studio vs. llama.cpp: Which Local AI Runtime Should You Use in 2026?</title>
-      <link>https://machinelearningmastery.com/ollama-vs-lm-studio-vs-llama-cpp-which-local-ai-runtime-should-you-use-in-2026/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Wed, 29 Jul 2026 12:00:13 +0000</pubDate>
-      <guid>https://machinelearningmastery.com/ollama-vs-lm-studio-vs-llama-cpp-which-local-ai-runtime-should-you-use-in-2026/</guid>
-    </item>
-    <item>
-      <title>Tim Cook’s last earnings call comes at momentous time for Apple with stock at record</title>
-      <link>https://www.cnbc.com/2026/07/29/tim-cooks-last-earnings-call-comes-at-momentous-time-for-apple-.html</link>
-      <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Wed, 29 Jul 2026 12:00:01 +0000</pubDate>
-      <guid>https://www.cnbc.com/2026/07/29/tim-cooks-last-earnings-call-comes-at-momentous-time-for-apple-.html</guid>
-    </item>
-    <item>
-      <title>Microsoft Three-Layer LLM Routing Architecture for AI Agents on AKS</title>
-      <link>https://www.infoq.com/news/2026/07/microsoft-agents-aks-routing/</link>
-      <description></description>
-      <category>Microsoft</category>
-      <pubDate>Wed, 29 Jul 2026 12:00:00 +0000</pubDate>
-      <guid>https://www.infoq.com/news/2026/07/microsoft-agents-aks-routing/</guid>
-    </item>
-    <item>
-      <title>xAI Sues Minnesota Over Imminent Law Banning ‘Nudify’ Apps</title>
-      <link>https://uk.pcmag.com/ai/166433/xai-sues-minnesota-over-imminent-law-banning-nudify-apps</link>
+      <title>xAI sues users amid Grok reckoning over harmful AI outputs</title>
+      <link>https://cryptobriefing.com/xai-sues-users-grok-csam-liability/</link>
       <description></description>
       <category>xAI</category>
-      <pubDate>Wed, 29 Jul 2026 11:58:29 +0000</pubDate>
-      <guid>https://uk.pcmag.com/ai/166433/xai-sues-minnesota-over-imminent-law-banning-nudify-apps</guid>
+      <pubDate>Wed, 29 Jul 2026 18:05:18 +0000</pubDate>
+      <guid>https://cryptobriefing.com/xai-sues-users-grok-csam-liability/</guid>
     </item>
     <item>
-      <title>Elon Musk's xAI sues Minnesota over law banning nudify apps</title>
-      <link>https://www.techspot.com/news/113282-elon-musk-xai-sues-minnesota-over-law-banning.html</link>
+      <title>China and Russia launch 29-nation AI alliance to rival western control of technology</title>
+      <link>https://www.activistpost.com/china-and-russia-launch-29-nation-ai-alliance-to-rival-western-control-of-technology/</link>
       <description></description>
-      <category>xAI</category>
-      <pubDate>Wed, 29 Jul 2026 11:56:00 +0000</pubDate>
-      <guid>https://www.techspot.com/news/113282-elon-musk-xai-sues-minnesota-over-law-banning.html</guid>
+      <category>Anthropic</category>
+      <pubDate>Wed, 29 Jul 2026 18:02:00 +0000</pubDate>
+      <guid>https://www.activistpost.com/china-and-russia-launch-29-nation-ai-alliance-to-rival-western-control-of-technology/</guid>
     </item>
     <item>
-      <title>Document-borne AI worms can self-propagate through Copilot for Word</title>
-      <link>https://enklypesalt.com/posts/context-collapse-part3-ai-worming-through-word/</link>
+      <title>langchain-modal 0.0.6</title>
+      <link>https://pypi.org/project/langchain-modal/0.0.6/</link>
       <description></description>
-      <category>Microsoft</category>
-      <pubDate>Wed, 29 Jul 2026 11:44:33 +0000</pubDate>
-      <guid>https://enklypesalt.com/posts/context-collapse-part3-ai-worming-through-word/</guid>
+      <category>Open Source</category>
+      <pubDate>Wed, 29 Jul 2026 18:02:00 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-modal/0.0.6/</guid>
     </item>
     <item>
-      <title>Fort Knox for Your Prompts: How to Secure PII &amp; Prompts When Connecting to Azure OpenAI</title>
-      <link>https://www.c-sharpcorner.com/article/fort-knox-for-your-prompts-how-to-secure-pii-prompts-when-connecting-to-azure/</link>
+      <title>langchain-vercel-sandbox 0.0.2</title>
+      <link>https://pypi.org/project/langchain-vercel-sandbox/0.0.2/</link>
       <description></description>
-      <category>Microsoft</category>
-      <pubDate>Wed, 29 Jul 2026 11:42:25 +0000</pubDate>
-      <guid>https://www.c-sharpcorner.com/article/fort-knox-for-your-prompts-how-to-secure-pii-prompts-when-connecting-to-azure/</guid>
+      <category>Open Source</category>
+      <pubDate>Wed, 29 Jul 2026 18:01:35 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-vercel-sandbox/0.0.2/</guid>
     </item>
     <item>
-      <title>How to Design and Execute an AI-Powered Performance Marketing Campaign</title>
-      <link>https://affstudio.org/2026/07/29/how-to-design-and-execute-an-ai-powered-performance-marketing-campaign/</link>
+      <title>truecell added to PyPI</title>
+      <link>https://pypi.org/project/truecell/</link>
       <description></description>
-      <category>Perplexity</category>
-      <pubDate>Wed, 29 Jul 2026 11:40:32 +0000</pubDate>
-      <guid>https://affstudio.org/2026/07/29/how-to-design-and-execute-an-ai-powered-performance-marketing-campaign/</guid>
-    </item>
-    <item>
-      <title>mcp-json-soap-sql-queue-file-adapters added to PyPI</title>
-      <link>https://pypi.org/project/mcp-json-soap-sql-queue-file-adapters/</link>
-      <description></description>
-      <category>Microsoft</category>
-      <pubDate>Wed, 29 Jul 2026 11:38:02 +0000</pubDate>
-      <guid>https://pypi.org/project/mcp-json-soap-sql-queue-file-adapters/</guid>
+      <category>Anthropic</category>
+      <pubDate>Wed, 29 Jul 2026 17:53:38 +0000</pubDate>
+      <guid>https://pypi.org/project/truecell/</guid>
     </item>
   </channel>
 </rss>
