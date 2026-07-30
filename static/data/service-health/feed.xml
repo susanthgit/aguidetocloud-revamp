@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Jul 2026 23:10:57 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2026 03:22:24 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Some users may receive an error when they initiate Microsoft 365 Copilot Chat requests</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1442650</link>
+      <description>[Microsoft 365 Copilot Chat] Users may have received an error when they initiated Microsoft 365 Copilot Chat requests. </description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1442650</guid>
+      <pubDate>Wed, 29 Jul 2026 22:45:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Admins are unable to complete some cross-tenant mailbox migrations in Exchange Online</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1442215</link>
@@ -426,7 +435,7 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
     <item>
       <title>[Microsoft Teams] Users may have been unable to run run-only workflows from Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1440450</link>
-      <description>[Microsoft Teams] Users may have been unable to run run-only workflows from Microsoft Teams.</description>
+      <description>[Microsoft Teams] Users may be unable to run run-only workflows from Microsoft Teams.</description>
       <category>Microsoft Teams</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1440450</guid>
@@ -449,15 +458,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1409187</guid>
       <pubDate>Mon, 29 Jun 2026 19:34:28 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Users had access to scheduled prompts in Microsoft 365 Copilot Chat when they shouldn't have</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1409007</link>
-      <description>[Microsoft 365 Copilot Chat] Users had access to scheduled prompts in Copilot Chat when they shouldn't have.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1409007</guid>
-      <pubDate>Mon, 29 Jun 2026 15:40:37 +0000</pubDate>
     </item>
   </channel>
 </rss>

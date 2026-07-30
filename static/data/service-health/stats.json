@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T23:10:57.270085+00:00",
+  "generated_at": "2026-07-30T03:22:23.718764+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -58,12 +58,12 @@
       "service": "Microsoft 365 Copilot Chat",
       "short_name": "Copilot Chat",
       "icon": "💭",
-      "total_incidents": 8,
+      "total_incidents": 9,
       "active_incidents": 0,
-      "avg_duration_minutes": 5204,
-      "last_incident": "2026-07-23T03:19:34.423000+00:00",
+      "avg_duration_minutes": 4647,
+      "last_incident": "2026-07-29T22:45:00+00:00",
       "classifications": {
-        "advisory": 6,
+        "advisory": 7,
         "incident": 2
       }
     },
@@ -105,18 +105,6 @@
       }
     },
     {
-      "service": "Microsoft Intune",
-      "short_name": "Intune",
-      "icon": "📱",
-      "total_incidents": 4,
-      "active_incidents": 0,
-      "avg_duration_minutes": 4586,
-      "last_incident": "2026-07-17T15:50:49.013000+00:00",
-      "classifications": {
-        "advisory": 4
-      }
-    },
-    {
       "service": "Azure",
       "short_name": "Azure",
       "icon": "☁️",
@@ -126,6 +114,18 @@
       "last_incident": "2026-07-23T19:41:00+00:00",
       "classifications": {
         "incident": 3
+      }
+    },
+    {
+      "service": "Microsoft Intune",
+      "short_name": "Intune",
+      "icon": "📱",
+      "total_incidents": 3,
+      "active_incidents": 0,
+      "avg_duration_minutes": 5278,
+      "last_incident": "2026-07-17T15:50:49.013000+00:00",
+      "classifications": {
+        "advisory": 3
       }
     },
     {
@@ -204,7 +204,7 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 45,
+      "incident_count": 46,
       "services_affected": 12
     },
     {
@@ -214,8 +214,8 @@
     },
     {
       "month": "2026-05",
-      "incident_count": 15,
-      "services_affected": 8
+      "incident_count": 14,
+      "services_affected": 7
     }
   ]
 }
