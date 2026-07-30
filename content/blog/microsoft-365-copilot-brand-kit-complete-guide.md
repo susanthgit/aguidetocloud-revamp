@@ -4,7 +4,7 @@ list_title: "M365 Copilot Brand Kit — The Complete Guide"
 hub_id: "it-admins"
 description: "Build PowerPoint templates that work inside and outside Copilot, set up Brand Images, run Brand Checker, position Designer vs Adobe Express."
 date: 2026-04-15
-lastmod: 2026-06-16
+lastmod: 2026-07-31
 card_tag: "Copilot"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -387,6 +387,21 @@ The templates come from your SharePoint Organizational Asset Library (OAL) or yo
 1. Open a Brand Kit PowerPoint template first
 2. Use the Copilot side panel to generate or edit slides
 3. Copilot respects the template's layout, fonts, and branding while replacing content
+
+#### Method 4: Copilot Cowork Brand Templates
+
+There's now a fourth route — and it's the one that trips people up, because it behaves differently from everything above. **[Copilot Cowork](/blog/microsoft-copilot-cowork-complete-guide/)** — generally available since **16 June 2026** — builds a deck directly from a template *file* and carries its full design through, not just the colours.
+
+Cowork can take its template from any of these:
+
+- A **`.potx` you attach** to the conversation (**+ → Upload images and files**)
+- A **template in the root of your OneDrive**
+- Your organisation's **templates published to the SharePoint OAL** — Cowork surfaces the `.potx` files for you to pick
+- A **specific `.pptx` you point it at**, used as the starting deck
+
+The difference from the PowerPoint Agent is *what survives*. Microsoft verifies that Cowork preserves the template's **theme palette, brand fonts, logos, every named layout and the slide master, and the slide geometry / placeholder positions** — it rewrites the text and leaves the design untouched. That's the closest thing today to "use my branded template, exactly." Full detail: [Use brand templates with Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-brand-templates).
+
+> ⚠️ **The trap that catches everyone — a link is not a template.** Paste a **SharePoint link** to your template into the PowerPoint Agent (or any chat), or upload a loose `.pptx` and expect it to rebuild your master slides, and it won't — the chat surfaces read a referenced file as **content (text)**, so you get an *approximation* of your brand, not your actual layouts. (Referencing files inside PowerPoint's own **Agent Mode** is still "coming soon" — [Microsoft's create-a-presentation doc](https://support.microsoft.com/en-us/powerpoint/copilot/create-a-new-presentation-with-copilot-in-powerpoint).) To get your real master slides, the template has to arrive through a **supported path**: published to your **Brand Kit / OAL** (PowerPoint Agent + Narrative Builder), **opened first in the PowerPoint app** ([Start from Template](#method-3-start-from-template)), or **attached / selected in Cowork**. *Verified 31 July 2026.*
 
 ### Word — Templates Plus Copilot (and Word Agent)
 
@@ -1066,6 +1081,7 @@ This is the section people skip until something breaks, then come back to. Bookm
 | Brand Kit not visible to a brand manager | Policy not propagated yet, or wrong group membership | Wait up to 24h, check membership of the security group, confirm policy at config.office.com is **Enabled** and targets the right group |
 | Brand Manager menu missing for everyone | The Enterprise Brand Manager policy was never enabled, or scope is wrong | At config.office.com, confirm the policy applies to "All users" or the right scope, and Apply was clicked |
 | Copilot decks look generic, ignore your template | Template was built with text boxes instead of placeholders, or Slide Master wasn't used | Rebuild the template using Slide Master, Theme Colours, Theme Fonts, and placeholders — see the [template section](#building-a-powerpoint-template-inside-and-outside-copilot) |
+| PowerPoint Agent (or any chat) says "upload the file", or won't use your **SharePoint-linked** template's master slides | You gave a chat surface a **link or a loose upload** — it reads the file as content (text), not as a template | Don't rely on a link. Publish the template to your **Brand Kit / OAL**, **open it first in the PowerPoint app** (Start from Template), or **attach / pick it in [Copilot Cowork](#method-4-copilot-cowork-brand-templates)** |
 | Brand Images not appearing in Insert → Pictures | OAL not connected to PowerPoint, permissions wrong, or 24h propagation hasn't completed | Verify the OAL was registered with the correct `OrgAssetType`, set "Everyone except external users" as Visitors, wait up to 24h |
 | Copilot picks poor or generic images | Sparse library or missing image metadata | Add more approved images, fill in file names / descriptions / tags, consider Syntex auto-tagging |
 | Fonts get replaced in generated decks | The font isn't deployed tenant-wide or isn't licensed for that user's device | Use tenant-safe fonts (Aptos, Segoe UI, Arial) or deploy your custom font via Intune / Endpoint Manager |
@@ -1086,6 +1102,7 @@ I want to be honest about what's still evolving. As of last verified (May 2026):
 | Brand Checker (Brand Reviewer) in PowerPoint | ✓ Generally available | Windows, Mac, Web. Behaviour can differ between Current and Beta Channels. |
 | Select org template in Narrative Builder | ✓ Available | Current Channel |
 | Start from Brand Kit template | ✓ Available | Current Channel |
+| Copilot Cowork brand templates (attach `.potx`, OneDrive, OAL, or a `.pptx` starting deck) | ✓ Generally available | Since 16 June 2026. Preserves theme, fonts, logos, **all named layouts + slide master**, and placeholder geometry |
 | Brand Kit in Create tab (images, banners, posters) | ✓ Available | Web |
 | Upload brand guidelines PDF for AI extraction | ✓ Available | In Brand Kit creation, in supported tenants |
 | Brand Images via SharePoint OAL | ✓ Available | After PowerShell registration |
