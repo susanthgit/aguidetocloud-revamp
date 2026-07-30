@@ -3,7 +3,7 @@ title: "Microsoft Copilot Cowork — Plain-English Guide"
 list_title: "Microsoft Copilot Cowork — The Complete Guide"
 description: "Plain-English guide to Copilot Cowork — now generally available worldwide. Real-world scenarios, GA pricing, and how it differs from regular Copilot."
 date: 2026-04-22
-lastmod: 2026-06-17
+lastmod: 2026-07-31
 card_tag: "Cowork"
 tag_class: "ai"
 sitemap:
@@ -315,6 +315,8 @@ Now that you know what Cowork is, here's the fun part — trying it yourself. Th
 <div class="cowork-scenario">
 
 > **What Cowork does:** This is the ultimate showcase. Cowork reads a customer's email, extracts their requirements, searches your existing materials, researches the latest information, builds a complete slide deck structured around their brief, and drafts a delivery email — all from one prompt. What normally takes 2-3 hours, done in minutes. Skills: Email → Enterprise Search → Deep Research → PowerPoint → Email.
+
+> 💡 **Want that deck on-brand?** Cowork can build it straight into your organisation's PowerPoint template — attach a `.potx`, use one from your OneDrive root, or pick an org template published to SharePoint — and it keeps your slide master, named layouts, fonts, and logos (not just an approximation of your colours). See [Method 4 in the Brand Kit guide](/blog/microsoft-365-copilot-brand-kit-complete-guide/#method-4-copilot-cowork-brand-templates) and Microsoft's [Use brand templates with Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-brand-templates).
 
 </div>
 
