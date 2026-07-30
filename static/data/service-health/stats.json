@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T14:27:55.968470+00:00",
+  "generated_at": "2026-07-30T17:44:59.535503+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -46,12 +46,12 @@
       "short_name": "Teams",
       "icon": "💬",
       "total_incidents": 10,
-      "active_incidents": 2,
-      "avg_duration_minutes": 18382,
+      "active_incidents": 1,
+      "avg_duration_minutes": 16564,
       "last_incident": "2026-07-29T07:29:23.003000+00:00",
       "classifications": {
-        "incident": 2,
-        "advisory": 8
+        "advisory": 8,
+        "incident": 2
       }
     },
     {
@@ -80,18 +80,6 @@
       }
     },
     {
-      "service": "Microsoft Defender XDR",
-      "short_name": "Defender",
-      "icon": "🛡️",
-      "total_incidents": 5,
-      "active_incidents": 0,
-      "avg_duration_minutes": 8377,
-      "last_incident": "2026-07-09T12:00:00+00:00",
-      "classifications": {
-        "advisory": 5
-      }
-    },
-    {
       "service": "SharePoint Online",
       "short_name": "SharePoint",
       "icon": "📄",
@@ -102,6 +90,30 @@
       "classifications": {
         "advisory": 2,
         "incident": 2
+      }
+    },
+    {
+      "service": "Power BI",
+      "short_name": "Power BI",
+      "icon": "📊",
+      "total_incidents": 4,
+      "active_incidents": 0,
+      "avg_duration_minutes": 296,
+      "last_incident": "2026-07-30T14:42:45.570000+00:00",
+      "classifications": {
+        "advisory": 4
+      }
+    },
+    {
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
+      "total_incidents": 4,
+      "active_incidents": 0,
+      "avg_duration_minutes": 10051,
+      "last_incident": "2026-07-09T12:00:00+00:00",
+      "classifications": {
+        "advisory": 4
       }
     },
     {
@@ -124,18 +136,6 @@
       "active_incidents": 0,
       "avg_duration_minutes": 5278,
       "last_incident": "2026-07-17T15:50:49.013000+00:00",
-      "classifications": {
-        "advisory": 3
-      }
-    },
-    {
-      "service": "Power BI",
-      "short_name": "Power BI",
-      "icon": "📊",
-      "total_incidents": 3,
-      "active_incidents": 0,
-      "avg_duration_minutes": 376,
-      "last_incident": "2026-06-23T13:50:00+00:00",
       "classifications": {
         "advisory": 3
       }
@@ -204,8 +204,8 @@
   "monthly": [
     {
       "month": "2026-07",
-      "incident_count": 46,
-      "services_affected": 12
+      "incident_count": 47,
+      "services_affected": 13
     },
     {
       "month": "2026-06",
@@ -214,7 +214,7 @@
     },
     {
       "month": "2026-05",
-      "incident_count": 14,
+      "incident_count": 13,
       "services_affected": 7
     }
   ]
