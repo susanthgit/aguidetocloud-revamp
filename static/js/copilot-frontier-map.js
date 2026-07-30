@@ -22,6 +22,7 @@
   var isCioMode = false;
   var timelineSort = 'arrival';
   var recentOnly = false;
+  var consumptionOnly = false;
   var RECENT_DAYS = 90;
   var votes = {};
   var watched = {};
@@ -191,6 +192,7 @@
       '',
       'AI Models: ' + (f.ai_models || []).join(', '),
       'Licensing: ' + (f.licensing_prereqs || 'N/A'),
+      'Billing: ' + billingLabel(f) + (f.billing_note ? ' — ' + f.billing_note : ''),
       f.admin_action_required ? 'Admin Action: ' + f.admin_action_required : '',
       f.availability_scope ? 'Availability: ' + f.availability_scope : '',
       '',
@@ -205,6 +207,10 @@
     var badges = [];
     var admin = (f.admin_action_required || '').toLowerCase();
     var lic = (f.licensing_prereqs || '').toLowerCase();
+    // Billing badges first — the cost signal the team asked for
+    if (f.billing === 'consumption') badges.push({ cls: 'consumption', label: '💳 Consumption billing' });
+    else if (f.billing === 'consumption-at-ga') badges.push({ cls: 'consumption-ga', label: '⚠️ Moves to consumption at GA' });
+    else if (f.billing === 'separate-licence') badges.push({ cls: 'sep-licence', label: '🔑 Separate licence' });
     if (f.status === 'frontier') badges.push({ cls: 'frontier', label: '🔬 Enable Frontier' });
     if (admin.indexOf('anthropic') !== -1 || admin.indexOf('sub-processor') !== -1 || admin.indexOf('subprocessor') !== -1) {
       badges.push({ cls: 'subproc', label: '🤝 Approve Anthropic' });
@@ -212,14 +218,25 @@
     if (lic.indexOf('teams phone') !== -1 || admin.indexOf('teams phone') !== -1) {
       badges.push({ cls: 'licence', label: '🔑 Teams Phone licence' });
     }
-    if (f.status === 'ga') {
+    if (f.status === 'ga' && f.billing === 'included') {
       var trivial = admin === '' || admin.indexOf('no additional') !== -1 || admin.indexOf('no action') !== -1 || admin.indexOf('no extra') !== -1;
-      badges.push(trivial ? { cls: 'noaction', label: '✅ No extra setup' } : { cls: 'setup', label: '⚙️ Admin setup' });
+      badges.push(trivial ? { cls: 'noaction', label: '✅ Included, no extra setup' } : { cls: 'setup', label: '⚙️ Admin setup' });
     }
     if (!badges.length) return '';
     return '<div class="cfm-impact">' + badges.map(function (b) {
       return '<span class="cfm-impact-badge" data-kind="' + b.cls + '">' + b.label + '</span>';
     }).join('') + '</div>';
+  }
+
+  /* ── Billing label for the expanded meta grid ── */
+  function billingLabel(f) {
+    switch (f.billing) {
+      case 'included': return '💳 Included in Microsoft 365 Copilot licence';
+      case 'consumption': return '💳 Consumption — metered via Copilot Credits (pay-as-you-go)';
+      case 'consumption-at-ga': return '⚠️ Free in Frontier — moves to consumption (Copilot Credits) at GA';
+      case 'separate-licence': return '🔑 Requires a separate paid licence / SKU';
+      default: return 'Not specified';
+    }
   }
 
   /* ── Pulse line (at-a-glance orientation; segments filter the timeline) ── */
@@ -232,20 +249,26 @@
       var d = f.frontier_date || f.actual_ga || '';
       return d && daysSince(d) <= RECENT_DAYS;
     }).length;
+    var consumption = features.filter(function (f) { return f.billing === 'consumption' || f.billing === 'consumption-at-ga'; }).length;
     el.innerHTML =
       '<span class="cfm-pulse-seg" data-act="all"><strong>' + features.length + '</strong> tracked</span>' +
       '<span class="cfm-pulse-seg" data-act="frontier"><strong>' + inFrontier + '</strong> 🔬 in Frontier</span>' +
       '<span class="cfm-pulse-seg" data-act="ga"><strong>' + ga + '</strong> ✅ GA</span>' +
-      '<span class="cfm-pulse-seg" data-act="recent"><strong>' + recent + '</strong> 🆕 new (' + RECENT_DAYS + 'd)</span>';
+      '<span class="cfm-pulse-seg" data-act="recent"><strong>' + recent + '</strong> 🆕 new (' + RECENT_DAYS + 'd)</span>' +
+      (consumption ? '<span class="cfm-pulse-seg" data-act="consumption"><strong>' + consumption + '</strong> 💳 consumption</span>' : '');
     $$('#cfm-pulse .cfm-pulse-seg').forEach(function (seg) {
       seg.addEventListener('click', function () {
         var act = seg.getAttribute('data-act');
         var statusSel = $('#cfm-filter-status');
+        recentOnly = false;
+        consumptionOnly = false;
         if (act === 'recent') {
           recentOnly = true;
           if (statusSel) statusSel.value = 'all';
+        } else if (act === 'consumption') {
+          consumptionOnly = true;
+          if (statusSel) statusSel.value = 'all';
         } else {
-          recentOnly = false;
           if (statusSel) statusSel.value = (act === 'all') ? 'all' : act;
         }
         $$('#cfm-pulse .cfm-pulse-seg').forEach(function (s) { s.classList.toggle('active', s === seg && act !== 'all'); });
@@ -298,6 +321,7 @@
           (f.actual_ga ? '<div class="cfm-meta-item"><strong>Actual GA</strong>' + formatDate(f.actual_ga) + '</div>' : '') +
           daysHtml +
           '<div class="cfm-meta-item"><strong>Licensing</strong>' + esc(f.licensing_prereqs || 'N/A') + '</div>' +
+          '<div class="cfm-meta-item cfm-meta-billing" data-billing="' + esc(f.billing || 'unknown') + '"><strong>Billing</strong>' + esc(billingLabel(f)) + (f.billing_note ? ' <span class="cfm-billing-note">' + esc(f.billing_note) + '</span>' : '') + '</div>' +
           '<div class="cfm-meta-item"><strong>Availability</strong>' + esc(f.availability_scope || 'Global') + '</div>' +
           '<div class="cfm-meta-item"><strong>AI Models</strong>' + (modelBadges || 'Not specified') + '</div>' +
         '</div>' +
@@ -497,6 +521,7 @@
         var rd = f.frontier_date || f.actual_ga || '';
         if (!rd || daysSince(rd) > RECENT_DAYS) return false;
       }
+      if (consumptionOnly && !(f.billing === 'consumption' || f.billing === 'consumption-at-ga')) return false;
       if (status !== 'all' && f.status !== status) return false;
       if (app !== 'all' && f.app !== app) return false;
       if (model !== 'all' && (f.ai_models || []).indexOf(model) === -1) return false;
@@ -889,6 +914,7 @@
       var el = document.getElementById(id);
       if (el) el.addEventListener('change', function () {
         recentOnly = false;
+        consumptionOnly = false;
         $$('#cfm-pulse .cfm-pulse-seg').forEach(function (s) { s.classList.remove('active'); });
         applyFilters();
       });
@@ -902,6 +928,7 @@
           if (el) el.value = 'all';
         });
         recentOnly = false;
+        consumptionOnly = false;
         $$('#cfm-pulse .cfm-pulse-seg').forEach(function (s) { s.classList.remove('active'); });
         renderExplorer();
       });

@@ -6,9 +6,13 @@ layout: "list"
 sitemap:
   priority: 0.9
   changefreq: "weekly"
-lastmod: 2026-07-29
+lastmod: 2026-07-30
 images: ["images/og/copilot-frontier-map.jpg"]
 faq:
+  - question: "Which Frontier features cost extra, and what moves to consumption billing?"
+    answer: "Most Frontier features are included in your existing Microsoft 365 Copilot per-user licence at no extra usage cost. The exceptions are the deeply agentic, long-running features: Copilot Cowork and Microsoft Scout both use usage-based (consumption) billing via Copilot Credits, where admins can set per-user or per-group limits in the Microsoft 365 admin centre. A few capabilities need a separate paid SKU (Microsoft Agent 365 is per-user; Copilot Studio has its own licensing with consumption-based message capacity), and some are included but depend on another licence you may already pay for (Call Delegation and customer call answering need Teams Phone; Opal runs on a Windows 365 Cloud PC; Power BI and Dataverse features use your existing data licensing). Each feature card shows a Billing line and a badge so you can see this at a glance — use the '💳 consumption' pulse filter to list just the metered ones."
+  - question: "If we use a feature for free under Frontier, will it start charging when it hits GA?"
+    answer: "It can. The clearest precedent is Copilot Cowork, which was free to try under Frontier and moved to usage-based Copilot Credits billing when it became generally available in June 2026. Microsoft has not published a blanket list of which Frontier features will become consumption-billed, but the pattern is that autonomous, agentic features (that plan and act over long-running tasks) are the ones most likely to carry consumption costs at GA. Features that are simple in-app Copilot assists have so far stayed included in the Copilot licence. Watch the Billing badge on each card — we update it as Microsoft confirms pricing."
   - question: "What is the Microsoft 365 Copilot Frontier programme?"
     answer: "The Frontier programme is Microsoft's opt-in early-access programme that lets organisations trial experimental and upcoming Copilot AI capabilities before general availability. Features in Frontier are production-quality but may evolve, change, or be withdrawn based on real-world feedback. Tenant admins enable it via the Microsoft 365 Admin Centre."
   - question: "How do I enrol my organisation in the Frontier programme?"

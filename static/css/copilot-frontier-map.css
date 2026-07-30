@@ -1333,6 +1333,18 @@
 .cfm-impact-badge[data-kind="licence"] { background: color-mix(in srgb, var(--warning) 15%, transparent); color: var(--warning); border-color: transparent; }
 .cfm-impact-badge[data-kind="setup"] { background: var(--bg-surface); color: var(--text-secondary); }
 .cfm-impact-badge[data-kind="noaction"] { background: color-mix(in srgb, var(--success) 13%, transparent); color: var(--success); border-color: transparent; }
+/* Billing badges — cost signal */
+.cfm-impact-badge[data-kind="consumption"] { background: color-mix(in srgb, var(--warning) 18%, transparent); color: var(--warning); border-color: transparent; font-weight: 700; }
+.cfm-impact-badge[data-kind="consumption-ga"] { background: color-mix(in srgb, var(--error) 14%, transparent); color: var(--error); border-color: transparent; font-weight: 700; }
+.cfm-impact-badge[data-kind="sep-licence"] { background: color-mix(in srgb, var(--warning) 15%, transparent); color: var(--warning); border-color: transparent; }
+/* Billing row in expanded meta grid */
+.cfm-meta-billing[data-billing="consumption"] strong,
+.cfm-meta-billing[data-billing="consumption-at-ga"] strong { color: var(--warning); }
+.cfm-meta-billing[data-billing="consumption-at-ga"] { color: var(--error); }
+.cfm-billing-note { display: block; margin-top: 2px; font-weight: 400; color: var(--text-muted); font-size: var(--text-xs); }
+/* Consumption pulse segment emphasis */
+.cfm-pulse-seg[data-act="consumption"].active { border-color: var(--warning); background: color-mix(in srgb, var(--warning) 12%, transparent); }
+.cfm-pulse-seg[data-act="consumption"].active strong { color: var(--warning); }
 
 /* ═══ COMPARE (#8) ═══ */
 .cfm-compare-selectors {
