@@ -53,6 +53,7 @@ tags:
   - api
   - mcp
   - agents
+hub_id: "ai-agents"
 sitemap:
   priority: 0.85
 layout: "notebook"
@@ -75,6 +76,8 @@ I also built [**two tiny working samples**](https://github.com/susanthgit/aguide
 🔄 This is a living document. The AI world changes every day — features roll out, names change, and new capabilities appear. If you spot anything out of date, please [send me feedback](/feedback/) and I'll update it. Last verified: 17 June 2026 against Microsoft Learn, Microsoft Licensing, and the microsoft/work-iq GitHub repo.
 
 </div>
+
+*Part of the [Build Your Own Agents guide](/blog/agent-builder-vs-copilot-studio-vs-foundry/) — Work IQ is the workplace-intelligence layer agent builders can use to ground their applications in Microsoft 365 context.*
 
 **Quick Links**
 

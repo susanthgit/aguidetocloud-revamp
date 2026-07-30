@@ -62,9 +62,10 @@
       "scout"              (dict "label" "★ Start here · Microsoft Scout" "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 99)
       "cowork"             (dict "label" "★ Start here · Cowork"          "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 99)
       "copilot-pricing"    (dict "label" "★ Start here · Copilot Pricing" "spokeLabel" "— Deeper dives —" "spokeCap" 0 "linkText" "" "after" 99)
+      "copilot-skills"     (dict "label" "★ Start here · Copilot Skills"  "spokeLabel" "— Skills by surface and job —" "spokeCap" 0 "linkText" "" "after" 99)
     }}
     {{/* Catch-all render order (Sush-specified — overrides alphabetical dict iteration) */}}
-    {{ $catchOrder := slice "scout" "cowork" "whats-new" "copilot-pricing" "prompt-engineering" "fundamentals" "it-admins" "built-in-agents" "ai-agents" }}
+    {{ $catchOrder := slice "scout" "copilot-pricing" "prompt-engineering" "fundamentals" "it-admins" "built-in-agents" "ai-agents" }}
 
     {{/* Discover cluster IDs present in this listing */}}
     {{ $clusterIds := slice }}
@@ -100,20 +101,28 @@
       {{ $standaloneCount := 0 }}
       {{ $renderedClusters := slice }}
 
-      {{/* Pinned: explicitly render the Scout cluster card FIRST regardless of date (Sush-pinned). */}}
-      {{ $scoutCluster := index $clusters "scout" }}
-      {{ if $scoutCluster }}
-        {{ $scoutMeta := index $clusterMeta "scout" }}
-        {{ partial "blog-cluster-card.html" (dict "hub" $scoutCluster.hub "spokes" $scoutCluster.spokes "meta" $scoutMeta) }}
-        {{ $renderedClusters = $renderedClusters | append "scout" }}
-      {{ end }}
-
-      {{/* Pinned: explicitly render the Cowork cluster card SECOND regardless of date (Sush-pinned for GA day — 17 Jun 2026 NZST). */}}
+      {{/* Pinned: explicitly render the Cowork cluster card FIRST. */}}
       {{ $coworkCluster := index $clusters "cowork" }}
       {{ if $coworkCluster }}
         {{ $coworkMeta := index $clusterMeta "cowork" }}
         {{ partial "blog-cluster-card.html" (dict "hub" $coworkCluster.hub "spokes" $coworkCluster.spokes "meta" $coworkMeta) }}
         {{ $renderedClusters = $renderedClusters | append "cowork" }}
+      {{ end }}
+
+      {{/* Pinned: explicitly render the What's New cluster card SECOND. */}}
+      {{ $whatsNewCluster := index $clusters "whats-new" }}
+      {{ if $whatsNewCluster }}
+        {{ $whatsNewMeta := index $clusterMeta "whats-new" }}
+        {{ partial "blog-cluster-card.html" (dict "hub" $whatsNewCluster.hub "spokes" $whatsNewCluster.spokes "meta" $whatsNewMeta) }}
+        {{ $renderedClusters = $renderedClusters | append "whats-new" }}
+      {{ end }}
+
+      {{/* Pinned: explicitly render the Copilot Skills cluster card THIRD. */}}
+      {{ $copilotSkillsCluster := index $clusters "copilot-skills" }}
+      {{ if $copilotSkillsCluster }}
+        {{ $copilotSkillsMeta := index $clusterMeta "copilot-skills" }}
+        {{ partial "blog-cluster-card.html" (dict "hub" $copilotSkillsCluster.hub "spokes" $copilotSkillsCluster.spokes "meta" $copilotSkillsMeta) }}
+        {{ $renderedClusters = $renderedClusters | append "copilot-skills" }}
       {{ end }}
 
       {{ range .Pages.ByDate.Reverse }}

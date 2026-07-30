@@ -2,7 +2,7 @@
 title: "Proving Copilot ROI — The Field Guide"
 list_title: "Proving Copilot ROI — The Complete Field Guide"
 hub_id: "copilot-pricing"
-description: "How to prove Microsoft 365 Copilot ROI in plain English — the three pillars that matter (utilisation, time recaptured, hard-dollar savings), the exact formulas, the tools that measure them, and the mistakes that sink a business case."
+description: "Measure Microsoft 365 Copilot ROI: connect adoption, time saved and financial impact with practical formulas, dashboards and a CFO-ready scorecard."
 date: 2026-07-22
 lastmod: 2026-07-22
 draft: false
