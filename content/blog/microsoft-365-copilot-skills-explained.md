@@ -383,6 +383,26 @@ Scope that statement carefully. It is a documented Cowork plugin and Skill manag
 9. **Check the current package schema.** Microsoft's current Cowork pages show both v1.28 and `devPreview` manifest examples.
 10. **Treat uploads as code-adjacent.** Read a Skill before trusting it, especially when it includes scripts or connectors.
 
+## Find or record a Skill
+
+You do not always need to start from a blank `SKILL.md`.
+
+### Browse CAT Agent Skills
+
+The [CAT Agent Skills gallery](https://microsoft.github.io/cat-agent-skills/) is a Microsoft-hosted community catalogue for Cowork, Copilot Studio and Scout.
+
+As of 31 July 2026, it lists 71 entries from 38 named authors. Downloads can include scripts, references and assets exactly as contributed.
+
+> **Trust the format, then review the content**
+>
+> CAT validates metadata and package shape. It does not publicly claim that every community Skill is security-reviewed, functionally tested or Microsoft-certified. Read the `SKILL.md` and every bundled script before installing.
+
+### Learn from a real workflow
+
+[Microsoft Skill Recorder](/blog/microsoft-skill-recorder-copilot-skills/) is an experimental record-to-Skill source project. It can turn a reviewed workflow analysis into a Scout or Cowork `SKILL.md`, or a Scout automation.
+
+It is not a Microsoft 365 managed service. Analysis sends selected recording data to GitHub Copilot, Copilot Studio output is still coming soon, and v0.3.1 should be tested only with synthetic data in an isolated lab.
+
 ## Pick your path
 
 This is the hub. Each spoke goes deeper into one surface or job.
@@ -392,6 +412,7 @@ This is the hub. Each spoke goes deeper into one surface or job.
 - **[Skills in Word](/blog/microsoft-365-copilot-skills-word/)** — what exists today, what does not have public documentation yet, and how Edit with Copilot fits.
 - **[Cowork Skill packaging and distribution](/blog/microsoft-365-copilot-skills-cowork-packaging-distribution/)** — Microsoft 365 app packages, connectors, MCP, conversion, validation, and publishing.
 - **[Write your first SKILL.md](/blog/write-your-first-skill-md-microsoft-365-copilot/)** — a practical authoring walkthrough with folder rules, references, scripts, and failure patterns.
+- **[Microsoft Skill Recorder](/blog/microsoft-skill-recorder-copilot-skills/)** — record a synthetic workflow, review the inferred steps, and generate a Scout or Cowork Skill.
 - **[Admin and governance for Copilot Skills](/blog/microsoft-365-copilot-skills-admin-governance/)** — tenant deployment, plugin controls, permissions, Purview, DLP precision, and the Information Barriers caveat.
 
 Already using Cowork? The existing [Cowork Skills and plugins guide](/blog/microsoft-copilot-cowork-skills-and-plugins/) covers the end-user Skills page, built-in Skills, and personal creation flow. The new Cowork spoke in this series is intentionally focused on developer packaging and distribution instead of repeating that walkthrough.
@@ -411,3 +432,5 @@ Already using Cowork? The existing [Cowork Skills and plugins guide](/blog/micro
 - [Microsoft 365 Copilot June 2026 feature update](https://techcommunity.microsoft.com/blog/Microsoft365CopilotBlog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 - [Agent Skills specification](https://agentskills.io/specification)
 - [Agent Skills client showcase](https://agentskills.io/clients)
+- [CAT Agent Skills gallery](https://microsoft.github.io/cat-agent-skills/)
+- [Microsoft Skill Recorder](https://github.com/microsoft/skill-recorder)

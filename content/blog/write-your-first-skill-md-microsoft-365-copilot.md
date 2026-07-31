@@ -87,6 +87,19 @@ Instructions go here.
 
 The open format is used by compatible clients including Microsoft Copilot experiences, GitHub Copilot and VS Code, Claude, Gemini CLI, Cursor, OpenAI Codex, and others. Each host still decides where Skills live and which tools or scripts it can run.
 
+## Find an existing Skill first
+
+Before writing from scratch, search the [CAT Agent Skills gallery](https://microsoft.github.io/cat-agent-skills/).
+
+It is a Microsoft-hosted community gallery for Cowork, Copilot Studio and Scout. The gallery can save time, but it is not a security-reviewed marketplace:
+
+- community submissions are shared under MIT;
+- CI validates metadata and structure;
+- scripts, references and assets ship verbatim;
+- Microsoft Support does not support the gallery or individual Skills.
+
+Read the exact `SKILL.md` and bundled files before reuse.
+
 ## Step 1: choose one real task
 
 Good first Skill:
@@ -118,6 +131,20 @@ The strongest Skills capture real expertise:
 - tools or references the agent would not know to use.
 
 If the agent already performs the whole task well without a Skill, the Skill may not add enough value.
+
+### Optional: draft from a recording
+
+[Microsoft Skill Recorder](/blog/microsoft-skill-recorder-copilot-skills/) can reconstruct intent and ordered steps from a recorded task, then draft a Scout or Cowork Skill.
+
+Treat the output as a first draft:
+
+- use synthetic data;
+- review every fixed value and action;
+- compare final `allowed-tools` with the approved plan;
+- remove personal paths, names and secrets;
+- test the Skill against a no-Skill baseline.
+
+Version 0.3.1 does not generate supporting files or Copilot Studio Skills, and cloud analysis receives selected screenshots and activity data.
 
 ## Step 2: create the folder
 
@@ -573,6 +600,7 @@ Test:
 - **[Skills in Excel](/blog/microsoft-365-copilot-skills-excel/)** — end-user Skills and Office.js Preview.
 - **[Skills in Word](/blog/microsoft-365-copilot-skills-word/)** — the honest current state.
 - **[Cowork Skill packaging and distribution](/blog/microsoft-365-copilot-skills-cowork-packaging-distribution/)** — package, connect, test, publish.
+- **[Microsoft Skill Recorder](/blog/microsoft-skill-recorder-copilot-skills/)** — recording-assisted Scout and Cowork Skill drafting.
 - **[Admin and governance for Copilot Skills](/blog/microsoft-365-copilot-skills-admin-governance/)** — controls, permissions, Purview, and rollout.
 
 ## Official public sources
@@ -586,3 +614,5 @@ Test:
 - [Microsoft Learn — build Cowork plugins](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-plugin-development)
 - [Microsoft Support — PowerPoint Skills](https://support.microsoft.com/en-us/powerpoint/copilot/copilot-in-powerpoint-skills)
 - [Microsoft Support — Excel Skills](https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-skills)
+- [CAT Agent Skills gallery](https://microsoft.github.io/cat-agent-skills/)
+- [Microsoft Skill Recorder](https://github.com/microsoft/skill-recorder)
