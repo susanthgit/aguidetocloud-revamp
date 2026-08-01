@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T23:13:38.778748+00:00",
+  "generated_at": "2026-08-01T03:45:51.868791+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -19,12 +19,12 @@
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 22,
+      "total_incidents": 21,
       "active_incidents": 0,
-      "avg_duration_minutes": 5460,
+      "avg_duration_minutes": 5606,
       "last_incident": "2026-07-29T07:10:16.763000+00:00",
       "classifications": {
-        "advisory": 13,
+        "advisory": 12,
         "incident": 9
       }
     },
@@ -72,8 +72,8 @@
       "short_name": "Purview",
       "icon": "🔍",
       "total_incidents": 5,
-      "active_incidents": 3,
-      "avg_duration_minutes": 4746,
+      "active_incidents": 2,
+      "avg_duration_minutes": 23349,
       "last_incident": "2026-07-27T22:50:42.943000+00:00",
       "classifications": {
         "advisory": 5
@@ -141,6 +141,18 @@
       }
     },
     {
+      "service": "Microsoft Viva",
+      "short_name": "Viva",
+      "icon": "🌱",
+      "total_incidents": 2,
+      "active_incidents": 1,
+      "avg_duration_minutes": 1902,
+      "last_incident": "2026-08-01T03:22:27+00:00",
+      "classifications": {
+        "advisory": 2
+      }
+    },
+    {
       "service": "Microsoft OneDrive",
       "short_name": "OneDrive",
       "icon": "☁️",
@@ -165,18 +177,6 @@
       }
     },
     {
-      "service": "Microsoft Viva",
-      "short_name": "Viva",
-      "icon": "🌱",
-      "total_incidents": 1,
-      "active_incidents": 0,
-      "avg_duration_minutes": 1902,
-      "last_incident": "2026-06-14T20:12:00+00:00",
-      "classifications": {
-        "advisory": 1
-      }
-    },
-    {
       "service": "Windows 365",
       "short_name": "Windows 365",
       "icon": "⚙️",
@@ -191,6 +191,11 @@
   ],
   "monthly": [
     {
+      "month": "2026-08",
+      "incident_count": 1,
+      "services_affected": 1
+    },
+    {
       "month": "2026-07",
       "incident_count": 48,
       "services_affected": 13
@@ -202,7 +207,7 @@
     },
     {
       "month": "2026-05",
-      "incident_count": 12,
+      "incident_count": 11,
       "services_affected": 6
     }
   ]

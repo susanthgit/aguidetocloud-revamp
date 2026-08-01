@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 31 Jul 2026 23:13:39 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Aug 2026 03:45:52 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Viva] Some users may experience intermittent access issues or transient errors when accessing the Microsoft Viva Insights web</title>
+      <link>https://www.aguidetocloud.com/service-health/#MV1444510</link>
+      <description>[Microsoft Viva] Users may experience intermittent access issues or transient errors when accessing the Microsoft Viva Insights web app.</description>
+      <category>Microsoft Viva</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">MV1444510</guid>
+      <pubDate>Sat, 01 Aug 2026 03:22:27 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Users may see a banner in the Microsoft Teams desktop app mistakenly stating they are on an old version</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1444037</link>
@@ -449,15 +458,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1410980</guid>
       <pubDate>Tue, 30 Jun 2026 17:22:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users may have been unable to run run-only workflows from Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1440450</link>
-      <description>[Microsoft Teams] Users may be unable to run run-only workflows from Microsoft Teams.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1440450</guid>
-      <pubDate>Tue, 30 Jun 2026 07:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
