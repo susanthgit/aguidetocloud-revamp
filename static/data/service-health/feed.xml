@@ -5,14 +5,14 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Aug 2026 06:38:32 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Aug 2026 10:07:48 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft Viva] Some users may experience intermittent access issues or transient errors when accessing the Microsoft Viva Insights web</title>
+      <title>[Microsoft Viva] Some users may have experienced access issues or transient errors when accessing the Microsoft Viva Insight web app</title>
       <link>https://www.aguidetocloud.com/service-health/#MV1444510</link>
-      <description>[Microsoft Viva] Users may experience intermittent access issues or transient errors when accessing the Microsoft Viva Insights web app.</description>
+      <description>[Microsoft Viva] Users may have experienced access issues or transient errors when accessing the Microsoft Viva Insights web app.</description>
       <category>Microsoft Viva</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MV1444510</guid>
       <pubDate>Sat, 01 Aug 2026 02:43:00 +0000</pubDate>
     </item>
