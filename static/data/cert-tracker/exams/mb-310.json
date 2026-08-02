@@ -10,12 +10,12 @@
   ],
   "category": "Dynamics 365",
   "status": "active",
-  "updated_at": "2025-12-05 03:46:00+00:00",
-  "skills_date": "July 25, 2025",
+  "updated_at": "2026-07-31 18:27:00+00:00",
+  "skills_date": "August 14, 2026",
   "skills_at_a_glance": [
     {
       "area": "Implement financial management",
-      "weight": "40-45%"
+      "weight": "35-40%"
     },
     {
       "area": "Implement accounts receivable, credit, collections, and subscription billing",
@@ -35,30 +35,32 @@
     }
   ],
   "skills_detailed": {
-    "Implement financial management (40–45%)": {
-      "Design and configure the chart of accounts": [
+    "Implement financial management (35–40%)": {
+      "Design and configure the chart of accounts and financial dimensions": [
         "Design and configure financial dimensions",
         "Design and configure the chart of accounts and main accounts",
-        "Configure main accounts categories, ledger account aliases, and balance control accounts",
+        "Configure main account categories, ledger account aliases, and balance control accounts",
         "Configure legal entity overrides for financial dimensions and main accounts",
         "Configure and manage account structures and advanced rules",
-        "Design and configure financial tags"
+        "Design and configure financial tags",
+        "Configure derived dimensions and financial dimension default templates"
       ],
       "Configure ledgers and currencies": [
         "Configure currency exchange types and rates",
         "Configure a currency revaluation posting profile",
-        "Configure accounting and reporting currencies"
+        "Configure accounting and reporting currencies",
+        "Configure ledger calendar and fiscal calendar",
+        "Configure posting layers for ledger transactions",
+        "Configure and process ledger allocation rules"
       ],
       "Implement and manage journals": [
         "Configure journal names and vouchers",
         "Configure journal controls and posting restriction rules",
-        "Implement journal approvals, including workflows",
-        "Configure and use periodic journals",
+        "Configure and process periodic journals",
         "Configure intercompany accounting",
-        "Create templates to edit journals in Microsoft Excel",
+        "Create and modify templates to edit journals in Microsoft Excel",
         "Reverse financial transaction entries",
-        "Configure default descriptions",
-        "Create and use journal entries, including validation and posting manually and by using Microsoft Excel",
+        "Create, validate, and post journal entries manually and by using Microsoft Excel",
         "Configure batch processing of journals"
       ],
       "Implement and manage cash and bank": [
@@ -73,85 +75,71 @@
       ],
       "Perform periodic processes": [
         "Design and configure periodic closing processes and end-of-year processes, including main accounts, reports, and templates",
-        "Perform financial consolidation and elimination processes by using Consolidation online",
-        "Create and manage financial reports, including modifying row, column, and report definitions, and reporting trees",
+        "Perform financial consolidation and elimination processes",
         "Design and configure financial period workspaces and closing schedules",
         "Design and configure legal entity for consolidation and elimination by using Consolidation online",
-        "Design consolidation and elimination by using financial reports",
-        "Configure and process ledger settlements",
-        "Perform general ledger foreign currency revaluation",
-        "Manage the ledger calendar"
+        "Configure and process ledger settlements"
       ],
       "Configure, collect, and report taxes": [
-        "Configure tax groups, tax codes, settlement periods, and authorities",
+        "Configure sales tax groups, item sales tax groups, tax codes, settlement periods, authorities, and tax exemptions",
         "Configure tax ledger posting groups",
         "Settle and post sales tax",
         "Configure withholding tax groups, tax codes, and authorities",
         "Calculate and adjust sales tax"
-      ],
-      "Implement cost management": [
-        "Configure cost groups",
-        "Configure inventory costing versions",
-        "Differentiate between inventory costing methodologies",
-        "Configure item model groups",
-        "Configure item groups and inventory posting profiles",
-        "Perform inventory recalculation, closing, and adjustment processes"
       ]
     },
     "Implement accounts receivable, credit, collections, and subscription billing (15–20%)": {
       "Implement and manage accounts receivable": [
         "Configure customers and customer groups, including configuring shared customers",
         "Configure and process free text invoices, including recurring free text invoices",
-        "Process sales order invoices and credit memos",
+        "Process sales order invoices and credit memos, including prepayments",
         "Configure customer payment methods",
         "Configure accounts receivable charges and apply changes to an invoice",
-        "Manage customer holds",
         "Configure customer posting profiles",
         "Process customer payments",
-        "Configure customer change approvals",
         "Perform accounts receivable foreign currency revaluation",
-        "Configure and use billing classification",
-        "Configure batch processing of free text and sales order invoicing",
-        "Configure bank accounts for customers"
+        "Configure billing classification",
+        "Configure bank accounts for customers",
+        "Process intercompany invoices"
       ],
       "Manage credit and collections": [
         "Configure credit management processes",
         "Configure collections management processes, including collection activities",
         "Manage delinquent customers",
-        "Prepare and send customer account statements",
         "Configure and process collection letters",
         "Configure aging definitions and process aged balances",
         "Process and manage credit holds",
-        "Configure and use customer write-offs",
+        "Configure and process customer write-offs",
         "Configure and process interest notes"
       ],
       "Configure and manage subscription billing": [
         "Generate sales documents by using billing schedules",
         "Manage billing schedules, including price update and hold termination",
         "Configure contract billing, including billing schedule group, item group, and milestone setup",
-        "Configure and use revenue deferrals and recognition, including for charges, deferral defaults, and items deferred by default",
-        "Configure and use expense deferrals and recognition",
-        "Process and manage revenue and expense recognition schedules"
+        "Configure and process revenue deferrals and recognition, including charges",
+        "Configure and process expense deferrals and recognition",
+        "Process and manage revenue and expense recognition schedules",
+        "Configure deferral defaults and items deferred by default"
       ]
     },
     "Implement and manage accounts payable and expenses (10–15%)": {
       "Implement and manage accounts payable": [
         "Configure invoice validation policies and invoice matching setup",
         "Configure vendor groups, vendors, and vendor posting profiles, including configuring shared vendors",
-        "Process purchase order invoices and credit memos, including prepayments",
+        "Process invoices and credit memos, with and without associated purchase orders, including prepayments",
+        "Process intercompany vendor invoices",
         "Configure vendor payment methods",
         "Configure accounts payable charges, and apply changes to an invoice",
-        "Configure bank accounts and bank account approvals for vendors",
-        "Configure vendor change approvals",
+        "Configure vendor bank accounts",
         "Perform accounts payable foreign currency revaluation",
-        "Configure vendor invoice automation",
-        "Process the vendor invoice journal including voyage cost",
-        "Configure and use recurring vendor invoices",
-        "Process and generate vendor payments, centralized payments, and prepayments"
+        "Process the vendor invoice journal",
+        "Configure and process recurring vendor invoices",
+        "Process and generate vendor payments, centralized payments, and prepayments",
+        "Process intercompany vendor invoices"
       ],
-      "Configure and use expense management": [
+      "Configure expense management": [
         "Configure expense management including categories, per diem options, mileage expenses, intercompany expenses, and personal expenses",
-        "Create and manage expense reports"
+        "Create and manage expense reports, including expense report policies"
       ]
     },
     "Manage budgeting (10–15%)": {
@@ -162,15 +150,18 @@
       ],
       "Configure and manage budget controls": [
         "Configure budget controls including budget parameters, budget fund availability options, budget control rules and groups, and over-budget permissions",
-        "Activate or deactivate budget control configurations"
+        "Validate budget control on transactions"
+      ],
+      "Configure and manage budget planning": [
+        "Create and manage budget plans, including scenarios and allocations",
+        "Configure budget planning process, including organization hierarchy"
       ]
     },
     "Manage fixed assets (10–15%)": {
       "Implement and manage fixed assets": [
         "Create and manage fixed asset groups and other fixed asset attributes",
         "Configure fixed asset posting profiles",
-        "Configure fixed asset parameters",
-        "Configure fixed asset books",
+        "Configure fixed asset books, including derived books",
         "Configure depreciation profiles",
         "Create and manage fixed assets",
         "Configure mapping for fixed asset groups and books"
@@ -179,10 +170,8 @@
         "Process fixed asset disposal (sales) by using free text invoices",
         "Process fixed asset acquisitions by using purchase orders, journals, inventory journals, and projects",
         "Create fixed asset budgets and transfer the budgets to the budgeting module",
-        "Process fixed asset depreciation",
-        "Process fixed asset disposals and other transactions by using the fixed asset journal",
-        "Process fixed asset split, reclassification, and transfer",
-        "Process acquisition and depreciation for derived books"
+        "Process fixed asset depreciation, including multi-company",
+        "Process fixed asset split, reclassification, transfer, disposals and other transactions by using the fixed asset journal"
       ]
     }
   },
