@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 03 Aug 2026 11:40:12 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2026 15:11:59 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Some users may be unable to launch the Microsoft Teams Windows desktop client</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1446407</link>
+      <description>[Microsoft Teams] Users may be unable to launch the Microsoft Teams Windows desktop client.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1446407</guid>
+      <pubDate>Mon, 03 Aug 2026 14:15:52 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Viva] Some users may have experienced access issues or transient errors when accessing the Microsoft Viva Insight web app</title>
       <link>https://www.aguidetocloud.com/service-health/#MV1444510</link>
@@ -449,15 +458,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1411776</guid>
       <pubDate>Wed, 01 Jul 2026 20:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users may have been unable to access sign-out button or account details across multiple Microsoft 365 web services</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1410980</link>
-      <description>[Microsoft 365 suite] Users may have been unable to access sign-out button or account details across multiple Microsoft 365 web services.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1410980</guid>
-      <pubDate>Tue, 30 Jun 2026 17:22:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
