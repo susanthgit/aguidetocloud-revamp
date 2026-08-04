@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 21:34:51 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 23:16:07 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Users may be unable to sign into the OneNote Web Clipper</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1447619</link>
+      <description>[Microsoft 365 suite] Users may be unable to sign into the OneNote Web Clipper.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1447619</guid>
+      <pubDate>Tue, 04 Aug 2026 21:54:46 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users' Microsoft 365 Copilot Analyst and Researcher agents may open a new chat window instead of the agents</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1447275</link>
@@ -33,6 +42,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1446653</guid>
       <pubDate>Sat, 01 Aug 2026 01:35:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to access Microsoft 365 Copilot in the browser and may encounter a 400 Request Header error</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1447620</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to access Copilot in the browser and may encounter a 400 Request Header error.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1447620</guid>
+      <pubDate>Fri, 31 Jul 2026 20:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users may be unable to access Microsoft Copilot Chat in the browser and may encounter a 400 Request Header error</title>
@@ -440,24 +458,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>investigationSuspended</category>
       <guid isPermaLink="false">CW1420563</guid>
       <pubDate>Wed, 08 Jul 2026 01:29:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Admins' Microsoft 365 Groups, Teams user, and Teams device reports may be delayed in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1421789</link>
-      <description>[Microsoft 365 suite] Admins' Microsoft 365 Groups, Teams user, and device reports may have been delayed in the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1421789</guid>
-      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users are unable to access Microsoft Copilot web and m365.cloud.microsoft</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1420954</link>
-      <description>[Microsoft 365 suite] Users were intermittently unable to access Copilot web and other pages that redirect to the m365.cloud.microsoft URL.</description>
-      <category>Microsoft 365 suite</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">MO1420954</guid>
-      <pubDate>Tue, 07 Jul 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
