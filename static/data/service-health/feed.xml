@@ -5,16 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 14:36:37 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 18:00:56 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft Teams] Some users may be unable to launch the Microsoft Teams Windows desktop client</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1446407</link>
-      <description>[Microsoft Teams] Users may be unable to launch the Microsoft Teams Windows desktop client.</description>
-      <category>Microsoft Teams</category>
-      <category>falsePositive</category>
-      <guid isPermaLink="false">TM1446407</guid>
-      <pubDate>Mon, 03 Aug 2026 14:15:52 +0000</pubDate>
+      <title>[Microsoft Copilot (Microsoft 365)] Users' Microsoft 365 Copilot Analyst and Researcher agents may open a new chat window instead of the agents</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1447275</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users' Copilot Analyst and Researcher agents may open a new chat window when opened from app store.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1447275</guid>
+      <pubDate>Tue, 04 Aug 2026 14:47:20 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Viva] Some users may have experienced access issues or transient errors when accessing the Microsoft Viva Insight web app</title>
@@ -153,13 +153,13 @@
     </item>
     <item>
       <title>[Azure] Azure incident affecting West US</title>
-      <link>https://www.aguidetocloud.com/service-health/#AZ-LYXT-C1Z</link>
+      <link>https://www.aguidetocloud.com/service-health/#AZ-ZJV6-SGG</link>
       <description>[Azure] Between 14:44 UTC and 19:41 UTC on 23 July 2026, customers may have experienced connectivity failures, increased latency, or difficulty accessing Azure and other Microsoft cloud services hosted within the West US region. Impact was limited to network traffic entering or exiting the West US region; traffic that remained entirely within the region was not affected.
 Impacted services included, but may have not been limited to:
 App Service, Application Gateway, Application Insights, Azure AD B2C, Az</description>
       <category>Azure</category>
       <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">AZ-LYXT-C1Z</guid>
+      <guid isPermaLink="false">AZ-ZJV6-SGG</guid>
       <pubDate>Thu, 23 Jul 2026 19:41:00 +0000</pubDate>
     </item>
     <item>
