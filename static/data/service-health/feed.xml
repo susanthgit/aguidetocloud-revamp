@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 18:00:56 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 19:52:49 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users' Microsoft 365 Copilot Analyst and Researcher agents may open a new chat window instead of the agents</title>
@@ -132,6 +132,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1440526</guid>
       <pubDate>Mon, 27 Jul 2026 14:10:34 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Admins may experience authentication issues or errors preventing access to the Microsoft Teams Call Quality dashboard. </title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1447500</link>
+      <description>[Microsoft Teams] Admins may experience authentication issues or errors preventing access to the Microsoft Teams Call Quality dashboard. </description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1447500</guid>
+      <pubDate>Fri, 24 Jul 2026 21:06:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Admins may be unable to access the Microsoft 365 admin center</title>
@@ -449,15 +458,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1420954</guid>
       <pubDate>Tue, 07 Jul 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users in Japan may experience issues accessing Microsoft services including Microsoft Teams and Microsoft 365</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1413447</link>
-      <description>[Microsoft 365 suite] Users in Japan may have experienced issues accessing Microsoft Teams and Microsoft 365 services.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1413447</guid>
-      <pubDate>Fri, 03 Jul 2026 03:55:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
