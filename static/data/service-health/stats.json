@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T03:32:46.194083+00:00",
+  "generated_at": "2026-08-04T06:37:47.833335+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -79,19 +79,6 @@
       }
     },
     {
-      "service": "Microsoft Intune",
-      "short_name": "Intune",
-      "icon": "📱",
-      "total_incidents": 4,
-      "active_incidents": 1,
-      "avg_duration_minutes": 5278,
-      "last_incident": "2026-07-17T15:50:49.013000+00:00",
-      "classifications": {
-        "incident": 1,
-        "advisory": 3
-      }
-    },
-    {
       "service": "Power BI",
       "short_name": "Power BI",
       "icon": "📊",
@@ -101,6 +88,19 @@
       "last_incident": "2026-07-30T14:42:45.570000+00:00",
       "classifications": {
         "advisory": 4
+      }
+    },
+    {
+      "service": "Microsoft Intune",
+      "short_name": "Intune",
+      "icon": "📱",
+      "total_incidents": 4,
+      "active_incidents": 0,
+      "avg_duration_minutes": 13031,
+      "last_incident": "2026-07-17T15:50:49.013000+00:00",
+      "classifications": {
+        "advisory": 3,
+        "incident": 1
       }
     },
     {

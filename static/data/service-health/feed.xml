@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 03:32:46 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 06:37:48 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Some users may be unable to launch the Microsoft Teams Windows desktop client</title>
@@ -372,9 +372,9 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
     <item>
       <title>[Microsoft Intune] Users may be unable to access Wi-Fi or VPN on Android devices</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1446841</link>
-      <description>[Microsoft Intune] Users may be unable to access their Wi-Fi or VPN on Android devices that require a certificate from Microsoft Intune.</description>
+      <description>[Microsoft Intune] Users may have been unable to access Wi-Fi or VPN on Android devices that required a certificate from Microsoft Intune.</description>
       <category>Microsoft Intune</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">IT1446841</guid>
       <pubDate>Thu, 09 Jul 2026 22:25:00 +0000</pubDate>
     </item>
