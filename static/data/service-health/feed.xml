@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 03 Aug 2026 23:16:44 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 03:32:46 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Some users may be unable to launch the Microsoft Teams Windows desktop client</title>
@@ -28,9 +28,9 @@
     <item>
       <title>[Microsoft Teams] Some users may receive failures when creating channels or adding members to shared channels in Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1446653</link>
-      <description>[Microsoft Teams] Users may receive failures when creating channels or adding members to shared channels in Microsoft Teams.</description>
+      <description>[Microsoft Teams] Users may have received failures when creating channels or adding members to shared channels in Microsoft Teams.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1446653</guid>
       <pubDate>Sat, 01 Aug 2026 01:35:00 +0000</pubDate>
     </item>
@@ -370,6 +370,15 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <pubDate>Fri, 10 Jul 2026 17:48:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Microsoft Intune] Users may be unable to access Wi-Fi or VPN on Android devices</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1446841</link>
+      <description>[Microsoft Intune] Users may be unable to access their Wi-Fi or VPN on Android devices that require a certificate from Microsoft Intune.</description>
+      <category>Microsoft Intune</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">IT1446841</guid>
+      <pubDate>Thu, 09 Jul 2026 22:25:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to drag and drop files to add references into Microsoft Copilot Notebooks</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1434578</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to drag and drop files to add references into Copilot Notebooks.</description>
@@ -449,15 +458,6 @@ App Service, Application Gateway, Application Insights, Azure AD B2C, Az</descri
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1412506</guid>
       <pubDate>Thu, 02 Jul 2026 14:12:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may receive response failures or a degraded experience when using Researcher in Microsoft 365 Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1412052</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have received response failures or a degraded experience when using Researcher in Copilot.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1412052</guid>
-      <pubDate>Thu, 02 Jul 2026 06:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

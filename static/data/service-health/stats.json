@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T23:16:43.792782+00:00",
+  "generated_at": "2026-08-04T03:32:46.194083+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -33,8 +33,8 @@
       "short_name": "Teams",
       "icon": "💬",
       "total_incidents": 13,
-      "active_incidents": 2,
-      "avg_duration_minutes": 13581,
+      "active_incidents": 1,
+      "avg_duration_minutes": 12802,
       "last_incident": "2026-08-03T14:15:52.510000+00:00",
       "classifications": {
         "advisory": 11,
@@ -45,12 +45,12 @@
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 10,
+      "total_incidents": 9,
       "active_incidents": 1,
-      "avg_duration_minutes": 7886,
+      "avg_duration_minutes": 8749,
       "last_incident": "2026-07-29T13:29:41.220000+00:00",
       "classifications": {
-        "advisory": 10
+        "advisory": 9
       }
     },
     {
@@ -76,6 +76,19 @@
       "last_incident": "2026-07-27T22:50:42.943000+00:00",
       "classifications": {
         "advisory": 5
+      }
+    },
+    {
+      "service": "Microsoft Intune",
+      "short_name": "Intune",
+      "icon": "📱",
+      "total_incidents": 4,
+      "active_incidents": 1,
+      "avg_duration_minutes": 5278,
+      "last_incident": "2026-07-17T15:50:49.013000+00:00",
+      "classifications": {
+        "incident": 1,
+        "advisory": 3
       }
     },
     {
@@ -125,18 +138,6 @@
       "last_incident": "2026-07-23T19:41:00+00:00",
       "classifications": {
         "incident": 3
-      }
-    },
-    {
-      "service": "Microsoft Intune",
-      "short_name": "Intune",
-      "icon": "📱",
-      "total_incidents": 3,
-      "active_incidents": 0,
-      "avg_duration_minutes": 5278,
-      "last_incident": "2026-07-17T15:50:49.013000+00:00",
-      "classifications": {
-        "advisory": 3
       }
     },
     {
@@ -196,7 +197,7 @@
     },
     {
       "month": "2026-07",
-      "incident_count": 48,
+      "incident_count": 49,
       "services_affected": 13
     },
     {
@@ -206,7 +207,7 @@
     },
     {
       "month": "2026-05",
-      "incident_count": 9,
+      "incident_count": 8,
       "services_affected": 5
     }
   ]
