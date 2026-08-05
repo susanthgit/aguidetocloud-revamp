@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T14:28:52.825149+00:00",
+  "generated_at": "2026-08-05T17:52:06.821580+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -20,8 +20,8 @@
       "short_name": "Copilot",
       "icon": "🤖",
       "total_incidents": 22,
-      "active_incidents": 2,
-      "avg_duration_minutes": 5877,
+      "active_incidents": 1,
+      "avg_duration_minutes": 5896,
       "last_incident": "2026-08-04T14:47:20.867000+00:00",
       "classifications": {
         "advisory": 13,
@@ -46,8 +46,8 @@
       "short_name": "Copilot Chat",
       "icon": "💭",
       "total_incidents": 10,
-      "active_incidents": 1,
-      "avg_duration_minutes": 4647,
+      "active_incidents": 0,
+      "avg_duration_minutes": 4811,
       "last_incident": "2026-07-31T20:00:00+00:00",
       "classifications": {
         "incident": 3,

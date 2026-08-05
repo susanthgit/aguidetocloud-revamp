@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 14:28:53 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 17:52:07 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users may be unable to sign into the OneNote Web Clipper</title>
@@ -46,18 +46,18 @@
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to access Microsoft 365 Copilot in the browser and may encounter a 400 Request Header error</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1447620</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may be unable to access Copilot in the browser and may encounter a 400 Request Header error.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access Copilot in the browser and may have encountered a 400 Request Header error.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1447620</guid>
       <pubDate>Fri, 31 Jul 2026 20:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users may be unable to access Microsoft Copilot Chat in the browser and may encounter a 400 Request Header error</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1447067</link>
-      <description>[Microsoft 365 Copilot Chat] Users may be unable to access Microsoft Copilot Chat in the browser and may encounter a 400 Request Header error.</description>
+      <description>[Microsoft 365 Copilot Chat] Users may have been unable to access Copilot Chat in the browser and may have encountered a 400 Request Header error.</description>
       <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CW1447067</guid>
       <pubDate>Fri, 31 Jul 2026 20:00:00 +0000</pubDate>
     </item>
@@ -181,9 +181,8 @@
     <item>
       <title>[Azure] Azure incident affecting West US</title>
       <link>https://www.aguidetocloud.com/service-health/#AZ-ZJV6-SGG</link>
-      <description>[Azure] Between 14:44 UTC and 19:41 UTC on 23 July 2026, customers may have experienced connectivity failures, increased latency, or difficulty accessing Azure and other Microsoft cloud services hosted within the West US region. Impact was limited to network traffic entering or exiting the West US region; traffic that remained entirely within the region was not affected.
-Impacted services included, but may have not been limited to:
-App Service, Application Gateway, Application Insights, Azure AD B2C, Az</description>
+      <description>[Azure] Between 14:44 and 19:41 UTC on 23 July 2026, a subset of customers experienced connectivity failures, increased latency, and/or difficulty accessing Azure services hosted within the West US region. Impact was limited to network traffic entering or exiting the region, traffic that remained entirely within the region was not affected.
+Impacted services included: App Service, Application Insights, Azure AD B2C, Azure AI Bot Service, Azure AI Search, Azure API Management, Azure Application Gateway, </description>
       <category>Azure</category>
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">AZ-ZJV6-SGG</guid>
