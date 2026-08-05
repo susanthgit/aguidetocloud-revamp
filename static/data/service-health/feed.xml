@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Aug 2026 21:22:37 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 23:15:42 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Users may be unable to sign into the OneNote Web Clipper</title>
@@ -202,7 +202,7 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <link>https://www.aguidetocloud.com/service-health/#MO1440526</link>
       <description>[Microsoft 365 suite] Users may have been unable to share files with external recipients through SharePoint Online and OneDrive.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1440526</guid>
       <pubDate>Thu, 23 Jul 2026 00:26:00 +0000</pubDate>
     </item>
