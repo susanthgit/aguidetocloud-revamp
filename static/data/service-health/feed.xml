@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 06 Aug 2026 06:42:19 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Aug 2026 10:47:38 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Users may be unable to close the share tray when using the "Share window" feature in Microsoft Teams Town Halls</title>
@@ -15,15 +15,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1448287</guid>
       <pubDate>Wed, 05 Aug 2026 18:39:54 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users may be unable to sign into the OneNote Web Clipper</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1447619</link>
-      <description>[Microsoft 365 suite] Users may be unable to sign into the OneNote Web Clipper.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MO1447619</guid>
-      <pubDate>Tue, 04 Aug 2026 21:54:46 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users' Microsoft 365 Copilot Analyst and Researcher agents may open a new chat window instead of the agents</title>
@@ -159,6 +150,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1447500</guid>
       <pubDate>Fri, 24 Jul 2026 21:06:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Users may be unable to sign into the OneNote Web Clipper</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1447619</link>
+      <description>[Microsoft 365 suite] Users may be unable to sign into the OneNote Web Clipper.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1447619</guid>
+      <pubDate>Fri, 24 Jul 2026 08:06:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Admins may be unable to access the Microsoft 365 admin center</title>
