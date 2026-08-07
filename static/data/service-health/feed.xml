@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 07 Aug 2026 00:12:11 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2026 03:13:14 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may encounter intermittent failures with an error when sending prompts in Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1449264</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may encounter intermittent failures with an error when sending prompts in Copilot Chat in Web mode</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1449264</guid>
+      <pubDate>Fri, 07 Aug 2026 01:40:43 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Admins may be unable to assign Microsoft Teams numbers to resource accounts using multiple methods</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1448902</link>
@@ -172,9 +181,9 @@
     <item>
       <title>[Windows Autopatch] Admins can't manage drivers from the Windows Autopatch groups tab</title>
       <link>https://www.aguidetocloud.com/service-health/#AH1449067</link>
-      <description>[Windows Autopatch] Admins can't manage drivers from the Autopatch groups tab.</description>
+      <description>[Windows Autopatch] Admins couldn't manage drivers from the Autopatch groups tab.</description>
       <category>Windows Autopatch</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">AH1449067</guid>
       <pubDate>Fri, 24 Jul 2026 04:38:00 +0000</pubDate>
     </item>
@@ -448,15 +457,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1434578</guid>
       <pubDate>Thu, 09 Jul 2026 17:54:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Admins may see delays to threat intelligence reports in the Security Operation Center (SOC)</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1421829</link>
-      <description>[Microsoft Defender XDR] Admins may have seen delays to threat intelligence reports in the SOC.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">DZ1421829</guid>
-      <pubDate>Thu, 09 Jul 2026 12:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
