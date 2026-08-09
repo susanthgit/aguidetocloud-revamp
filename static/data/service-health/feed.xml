@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 09 Aug 2026 08:58:08 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Aug 2026 10:49:26 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may encounter intermittent failures with an error when sending prompts in Microsoft 365 Copilot</title>
@@ -42,6 +42,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1447275</guid>
       <pubDate>Tue, 04 Aug 2026 14:47:20 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Power BI] Users may be unable to refresh some Power BI dataflows</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1451187</link>
+      <description>[Power BI] Users may be unable to refresh some Power BI dataflows.</description>
+      <category>Power BI</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">PB1451187</guid>
+      <pubDate>Sun, 02 Aug 2026 04:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Viva] Some users may have experienced access issues or transient errors when accessing the Microsoft Viva Insight web app</title>
@@ -448,15 +457,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1446841</guid>
       <pubDate>Thu, 09 Jul 2026 22:25:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to drag and drop files to add references into Microsoft Copilot Notebooks</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1434578</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to drag and drop files to add references into Copilot Notebooks.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1434578</guid>
-      <pubDate>Thu, 09 Jul 2026 17:54:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
