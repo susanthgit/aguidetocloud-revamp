@@ -184,6 +184,11 @@
 .cowcalc-disclaimer { font-size: 0.78rem; color: var(--text-tertiary); line-height: 1.5; }
 .cowcalc-disclaimer strong { color: var(--text-secondary); }
 .cowcalc-disclaimer-foot { margin: 2rem 0 0; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+.cowcalc-notice { display: flex; gap: 0.7rem; align-items: flex-start; margin: 0 0 1.5rem; padding: 0.95rem 1.1rem; background: var(--surface-subtle, rgba(79, 70, 229, 0.05)); border: 1px solid var(--border); border-left: 3px solid var(--accent-strong, #4F46E5); border-radius: var(--radius-md, 10px); }
+.cowcalc-notice-icon { flex: 0 0 auto; font-size: 1.05rem; line-height: 1.5; color: var(--accent-strong, #4F46E5); }
+.cowcalc-notice-body { font-size: 0.85rem; line-height: 1.55; color: var(--text-secondary); }
+.cowcalc-notice-body strong { color: var(--text-primary); }
+.cowcalc-notice-cta { display: block; margin-top: 0.5rem; }
 .cowcalc-inline-link { background: none; border: none; padding: 0; color: var(--accent); font: inherit; font-weight: 600; cursor: pointer; }
 .cowcalc-inline-link:hover { text-decoration: underline; }
 

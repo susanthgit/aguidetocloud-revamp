@@ -38,6 +38,15 @@
 
 {{ partial "tool-header.html" (dict "page" . "title" "Cowork Cost Calculator") }}
 
+    {{/* ── Prominent pricing disclaimer: real costing needs account-team use-case mapping ── */}}
+    <div class="cowcalc-notice" role="note">
+      <span class="cowcalc-notice-icon" aria-hidden="true">&#9432;</span>
+      <div class="cowcalc-notice-body">
+        <strong>Directional estimate &mdash; not a quote.</strong> Real Cowork pricing is built from your actual use cases: mapping each persona&rsquo;s tasks and deciding <em>which work runs in metered Cowork</em> (usage-based Copilot Credits) versus <em>what the fixed-price&nbsp;$30 Microsoft&nbsp;365 Copilot seat already covers</em>. Most everyday tasks stay on the seat &mdash; Cowork is the metered layer for big, multi-step, unattended jobs.
+        <span class="cowcalc-notice-cta">&#128073; <strong>Talk to your Microsoft account representative</strong> to model real pricing for your use cases with the official <a href="https://aka.ms/CustomerCoworkEstimator" target="_blank" rel="noopener">Customer Cowork Estimator</a>.</span>
+      </div>
+    </div>
+
     {{/* ── Tab Navigation ── */}}
     <div class="cowcalc-tabs" role="tablist" aria-label="Cowork Cost Calculator sections">
       <button class="cowcalc-tab active" role="tab" aria-selected="true" aria-controls="panel-calculator" id="tab-btn-calculator" data-tab="calculator">Calculator</button>
@@ -169,7 +178,7 @@
         </div>
       </section>
 
-      <p class="cowcalc-disclaimer cowcalc-disclaimer-foot"><strong>Estimate only — not a billing quote.</strong> Calibrated to Microsoft's Customer Cowork Estimator defaults (≈ $82–228 / user / month). Real burn varies with the model picked, tools called, and context. <button type="button" class="cowcalc-inline-link" onclick="cowcalcGotoDetails()">How we estimate ›</button></p>
+      <p class="cowcalc-disclaimer cowcalc-disclaimer-foot"><strong>Estimate only — not a billing quote.</strong> Calibrated to Microsoft's Customer Cowork Estimator defaults (≈ $82–228 / user / month). Real burn varies with the model picked, tools called, and context &mdash; for real pricing, <strong>talk to your Microsoft account representative</strong>. <button type="button" class="cowcalc-inline-link" onclick="cowcalcGotoDetails()">How we estimate ›</button></p>
     </div>
 
     {{/* ════════════════════════════════════════════════════════════════

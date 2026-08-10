@@ -5,7 +5,7 @@ type: "cowork-cost-calculator"
 layout: "list"
 url: "/cowork-cost-calculator/"
 date: 2026-06-17
-lastmod: 2026-06-17
+lastmod: 2026-08-10
 images: ["images/og/cowork-cost-calculator.jpg"]
 sitemap:
   priority: 0.85
