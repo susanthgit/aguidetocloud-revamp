@@ -82,6 +82,8 @@ This is the **#1 confusion point**:
 
 > **💡 Tip:** If you're on E5 and buying Copilot ($90 total), compare with E7 at $99 — you get Copilot PLUS Agent 365 and the full Entra Suite for $9 more.
 
+> **💡 Smaller org?** If you have up to **300 seats** on a Microsoft 365 **Business** plan (Basic / Standard / Premium), you can buy **Microsoft 365 Copilot Business** instead — the **same capabilities** at a lower list price (around **$21/user/month**, annual commitment). Organisations above 300 seats use the Microsoft 365 Copilot add-on above. [Copilot Business FAQ ↗](https://learn.microsoft.com/en-us/microsoft-365/copilot/copilot-business-faq)
+
 ## Requirements Before Deploying
 
 1. **Qualifying base licence** — see table above
