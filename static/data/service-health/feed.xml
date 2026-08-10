@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 10 Aug 2026 19:12:15 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2026 20:57:57 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Users' locations may not be accurate during iOS Microsoft Teams emergency calls</title>
@@ -15,6 +15,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1451939</guid>
       <pubDate>Mon, 10 Aug 2026 12:44:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Some admins may see delays for Copilot Adoption and Copilot Readiness reports in Viva Insights and the M365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1452280</link>
+      <description>[Microsoft 365 suite] Admins may see delays for Copilot Adoption and Copilot Readiness reports in Viva Insights and the M365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1452280</guid>
+      <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may encounter intermittent failures with an error when sending prompts in Microsoft 365 Copilot</title>
@@ -33,15 +42,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1448902</guid>
       <pubDate>Thu, 06 Aug 2026 07:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users may be unable to close the share tray when using the "Share window" feature in Microsoft Teams Town Halls</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1448287</link>
-      <description>[Microsoft Teams] Users may be unable to close the share tray when using the "Share window" feature in Microsoft Teams Town Halls.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1448287</guid>
-      <pubDate>Wed, 05 Aug 2026 18:39:54 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users' Microsoft 365 Copilot Analyst and Researcher agents may open a new chat window instead of the agents</title>
