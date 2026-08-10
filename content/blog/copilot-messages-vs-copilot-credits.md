@@ -4,7 +4,7 @@ list_title: "Copilot Messages vs Credits — What Changed?"
 hub_id: "copilot-pricing"
 description: "Copilot Studio 'messages' became Copilot Credits on 1 Sept 2025 — and the way usage is counted changed too. What changed, what didn't, and what to do."
 date: 2026-06-16
-lastmod: 2026-06-16
+lastmod: 2026-08-10
 card_tag: "Copilot"
 tag_class: "ai"
 layout: "notebook"
@@ -23,7 +23,7 @@ faq:
   - question: "What happened to Copilot Studio messages?"
     answer: "They became Copilot Credits on 1 September 2025. Microsoft changed the common currency for Copilot Studio agents from messages to Copilot Credits. Your prepaid packs carried over at the same quantity and the pay-as-you-go rate didn't change — but the way usage is counted moved to feature-based credits, so one message no longer equals one credit."
   - question: "Did Copilot Credits replace Copilot messages?"
-    answer: "Yes. On 1 September 2025 Microsoft changed the common currency for Copilot Studio agents from messages to Copilot Credits. It wasn't only a rename — the way usage is counted also changed, from message-based counting to feature-based rates where different actions cost different amounts. The word 'messages' still appears in some older docs and admin URLs, but the live billing unit is Copilot Credits."
+    answer: "Yes. On 1 September 2025 Microsoft changed the common currency for Copilot Studio agents from messages to Copilot Credits. The practical point is that credits are metered at feature-based rates, where different actions cost different amounts — so one message no longer maps to one credit. The word 'messages' still appears in some older docs and admin URLs, but the live billing unit is Copilot Credits."
   - question: "When did Copilot messages change to Copilot Credits?"
     answer: "1 September 2025. That's the date Microsoft moved the common currency for agents from messages to Copilot Credits. Anything dated before then that talks about 'messages' is using the old term; anything current uses Copilot Credits, even if a page URL or label still says 'messages'."
   - question: "Do my old Copilot Studio message packs still work?"
@@ -48,11 +48,11 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** This page covers the *messages → Copilot Credits* transition. For current rates and pricing, see the [Copilot Credits guide](/blog/copilot-credits-explained/) and confirm figures in [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing). **Last verified: 16 June 2026.**
+🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** This page covers the *messages → Copilot Credits* transition. For current rates and pricing, see the [Copilot Credits guide](/blog/copilot-credits-explained/) and confirm figures in [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing). **Last verified: 10 August 2026.**
 
 </div>
 
-**The short version:** On **1 September 2025**, Microsoft changed the Copilot Studio usage currency from **messages** to **Copilot Credits**. Your **prepaid packs and the pay-as-you-go rate didn't change** — a 25,000-message pack simply became a 25,000-credit pack. What **did** change is the *counting*: usage is now **feature-based**, so "one message = one credit" is no longer a safe assumption. The rename itself didn't create a new charge or make you re-buy anything — but feature-based counting can change how fast you use up capacity.
+**The short version:** On **1 September 2025**, Microsoft changed the Copilot Studio usage currency from **messages** to **Copilot Credits**. Your **prepaid packs and the pay-as-you-go rate didn't change** — a 25,000-message pack simply became a 25,000-credit pack. The practical point that trips people up: credits are metered at **feature-based rates**, so "one message = one credit" is no longer a safe assumption. The rename itself didn't create a new charge or make you re-buy anything — but feature-based rates can change how fast you use up capacity.
 
 <!-- 📸 Screenshot placeholder: Power Platform admin centre showing "Manage Copilot Studio credits and capacity" (note the legacy "messages" in the URL) — Sush to capture -->
 
@@ -114,7 +114,7 @@ The rename doesn't force any action — but it's a good prompt to tidy up:
 2. **Re-estimate in credits.** Use Microsoft's [agent usage estimator](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agent-usage-estimator), based on what your agents do — not old message volumes.
 3. **Spot the expensive features.** Some actions — grounding on tenant data, voice, AI tools — cost far more than a simple answer. The [rate card](/blog/copilot-credits-explained/#rate-card) has the amounts.
 4. **Check paid vs zero-rated.** A lot of internal, licensed Microsoft 365 Copilot usage is zero-rated; the [Credits guide](/blog/copilot-credits-explained/#not) has the boundary.
-5. **Set caps and alerts.** You can set monthly consumption limits per agent and alerts as usage approaches a threshold. (Prepaid overage enforcement kicks in around **125%** of capacity.)
+5. **Set caps and alerts.** You can set monthly consumption limits per agent and alerts as usage approaches a threshold. (Two different thresholds apply: **custom agents are disabled at ~125%** of prepaid capacity, while **agent-flow runs block sooner — as soon as the prepaid pack is fully consumed**, leaving the rest of the agent working.)
 6. **Update your own docs.** Swap "messages" for "Copilot Credits" in internal runbooks so your team isn't working from the old mental model.
 
 ---

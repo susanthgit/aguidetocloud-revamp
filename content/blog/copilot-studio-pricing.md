@@ -4,7 +4,7 @@ list_title: "Is Copilot Studio Free? Pricing & Credits Explained"
 hub_id: "copilot-pricing"
 description: "Is Copilot Studio free? What it costs in 2026 — the trial, what's included with Microsoft 365 Copilot, and Copilot Credits (pay-as-you-go vs prepaid)."
 date: 2026-06-16
-lastmod: 2026-06-16
+lastmod: 2026-08-10
 card_tag: "AI Agents"
 tag_class: "ai"
 layout: "notebook"
@@ -41,11 +41,13 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** Prices are published US list rates, current as of June 2026; actual pricing varies by currency, region and agreement, and Microsoft's figures are estimates, not quotes. Confirm on the [Copilot Studio pricing page](https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/copilot-studio). **Last verified: 16 June 2026.**
+🔄 **Part of the [Microsoft Copilot Pricing & Tiers](/blog/microsoft-copilot-pricing-tiers-explained/) series.** Prices are published US list rates, current as of June 2026; actual pricing varies by currency, region and agreement, and Microsoft's figures are estimates, not quotes. Confirm on the [Copilot Studio pricing page](https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/copilot-studio). **Last verified: 10 August 2026.**
 
 </div>
 
 **The short version:** **You can build and test Copilot Studio agents for free** — there's a trial, and the in-context Agent Builder is included with Microsoft 365 Copilot. **You start paying when you publish and run agents at scale**, billed in **Copilot Credits** — either **pay-as-you-go ($0.01/credit)** or **prepaid ($200 per 25,000 credits/month)**. For Microsoft 365 Copilot users, internal employee-facing agents are largely **zero-rated**.
+
+*One 2026 caveat before you read on: this "free to build, pay to publish" model is the **standard harness**. The newer **GitHub Copilot harness** (GA August 2026) bills differently — usage-based from the moment you start building. [Jump to harnesses ↓](#harnesses)*
 
 <!-- 📸 Screenshot placeholder: Copilot Studio pricing page on microsoft.com (Sush to capture) -->
 
@@ -114,9 +116,21 @@ Copilot Studio has three ways to pay (Microsoft labels them **Licence**, **Pre-p
 
 ---
 
+## Which harness are you building on? {#harnesses}
+
+New in 2026: every Copilot Studio agent now runs on a **harness** — the runtime that sits between your design and the model. **Everything else on this page describes the *standard harness*** (rule-based agents and agent flows), which is where the Copilot Credit rate card and the Microsoft 365 Copilot zero-rating apply. There are now three:
+
+- **Standard harness** — rule-based agents and structured workflows. Billed exactly as this guide describes: **free to build and test, credits once you publish and run at scale.**
+- **GitHub Copilot harness** *(GA 3 August 2026)* — the reasoning-heavy option for multi-step agents and workflows. It uses a **different, usage-based billing model**: credits are charged for LLM tokens, tools (including knowledge and MCP), and the harness itself — and **billing starts the moment you start building.** Creating, previewing, testing and evaluating an agent all consume credits, *unlike* the standard harness, which only bills after publish.
+- **Copilot chat harness** — for extending Microsoft 365 Copilot Chat with your own knowledge; consumption-based or included in the Microsoft 365 Copilot licence.
+
+⚠️ **The "free to build and test" rule only holds on the standard harness.** If you pick the GitHub Copilot harness, assume the meter is running from your first build action. See Microsoft's [Choose a harness](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview) and the [usage-based billing overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview).
+
+---
+
 ## What's a Copilot Credit? (and why it's not "one message") {#credits}
 
-Since **1 September 2025**, Copilot Studio is metered in **Copilot Credits** — they replaced the old "messages" unit (the pack sizes and rates didn't change, just the name and how usage is counted). The important part: **consumption is feature-based**, so one user turn can burn several credits depending on what the agent does.
+Since **1 September 2025**, Copilot Studio is metered in **Copilot Credits** — they replaced the old "messages" unit (the pack sizes and pay-as-you-go rate didn't change; the common currency did). The important part: **credits are consumed at feature-specific rates**, so one user turn can burn several credits depending on what the agent does.
 
 Published per-action rates (the headline ones):
 
@@ -140,7 +154,8 @@ If you have **Microsoft 365 Copilot**, a lot of Copilot Studio usage is **zero-r
 **Included (no extra charge), within fair-use limits:**
 - Agents used by **authenticated Microsoft 365 Copilot licensed users**
 - Running inside **Microsoft 365 Copilot, Teams, or SharePoint**
-- Including classic answers, generative answers, and Microsoft Graph tenant grounding
+- Microsoft headlines **classic answers, generative answers, and Microsoft Graph tenant grounding** — and the billing rate card also shows **agent actions, eligible agent-flow actions, and AI tools / content processing** as *no charge* for these licensed users
+- ⚠️ **Two exceptions still cost credits even for licensed users:** **computer use (CUA)**, and agent flows triggered by anything other than *"when an agent calls the flow."*
 
 **Not included (consumes paid credits):**
 - **External / customer-facing** agents
