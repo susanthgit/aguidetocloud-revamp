@@ -121,7 +121,7 @@
 {{ end }}
 
 {{/* Load correct renderer based on type */}}
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="/js/vendor/d3-7.9.0.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i"></script>
 {{ if $isStatic }}
 <script src="/js/mind-maps-v2.js?v={{ site.Params.cache_version }}"></script>
 {{ else }}

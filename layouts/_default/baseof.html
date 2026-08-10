@@ -106,7 +106,6 @@
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#FAFAFA">
   <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}index.xml">
   <link rel="alternate" type="application/rss+xml" title="AI News Feed" href="{{ .Site.BaseURL }}data/ainews/feed.xml">
   <meta name="author" content="{{ .Site.Params.author }}">
@@ -177,7 +176,7 @@
   {{ if and (or (eq .Section "blog") (eq .Section "cert-tracker")) .IsPage }}<script src="/js/zt-toc.js?v={{ site.Params.cache_version }}" defer></script>{{ end }}
   {{ if and (eq .Section "blog") .IsPage }}<script src="/js/zt-reading-enhance.js?v={{ site.Params.cache_version }}" defer></script>{{ end }}
   {{ if or (findRE "```mermaid" .RawContent) (findRE "<pre class=\"mermaid\"" .Content) (findRE "class=mermaid" .Content) }}
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js" crossorigin="anonymous" integrity="sha384-rbtjAdnIQE/aQJGEgXrVUlMibdfTSa4PQju4HDhN3sR2PmaKFzhEafuePsl9H/9I"></script>
+  <script src="/js/vendor/mermaid-11.4.1.min.js" integrity="sha384-rbtjAdnIQE/aQJGEgXrVUlMibdfTSa4PQju4HDhN3sR2PmaKFzhEafuePsl9H/9I"></script>
   <script>
     (function() {
       /* Mermaid always renders on a dark canvas for maximum contrast —

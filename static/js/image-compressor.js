@@ -149,7 +149,7 @@
     if (heic2anyLoaded) return Promise.resolve();
     return new Promise(function (resolve, reject) {
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js';
+      s.src = '/js/vendor/heic2any-0.0.4.min.js';
       s.crossOrigin = 'anonymous';
       s.onload = function () { heic2anyLoaded = true; resolve(); };
       s.onerror = function () { reject(new Error('Failed to load HEIC converter')); };
@@ -957,7 +957,7 @@
     if (jsZipLoaded) return Promise.resolve();
     return new Promise(function (resolve, reject) {
       var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js';
+      s.src = '/js/vendor/jszip-3.10.1.min.js';
       s.crossOrigin = 'anonymous';
       s.onload = function () { jsZipLoaded = true; resolve(); };
       s.onerror = function () { reject(new Error('Failed to load JSZip')); };
