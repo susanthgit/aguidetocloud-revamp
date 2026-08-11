@@ -5,8 +5,35 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 11 Aug 2026 09:11:31 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 11:02:19 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Some users may be unable to access the Share tab in Microsoft Teams on Android devices</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1452695</link>
+      <description>[Microsoft Teams] Users may be unable to access the Share tab in Microsoft Teams on Android devices.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1452695</guid>
+      <pubDate>Mon, 10 Aug 2026 17:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users may be unable to access the Share tab in Microsoft Teams on Android devices</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1452696</link>
+      <description>[Microsoft Teams] Users may be unable to access the Share tab in Microsoft Teams on Android devices.</description>
+      <category>Microsoft Teams</category>
+      <category>falsePositive</category>
+      <guid isPermaLink="false">TM1452696</guid>
+      <pubDate>Mon, 10 Aug 2026 17:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users may be unable to access the Share tab in Microsoft Teams on Android devices</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1452699</link>
+      <description>[Microsoft Teams] Users may be unable to access the Share tab in Microsoft Teams on Android devices.</description>
+      <category>Microsoft Teams</category>
+      <category>falsePositive</category>
+      <guid isPermaLink="false">TM1452699</guid>
+      <pubDate>Mon, 10 Aug 2026 17:30:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Users' locations may not be accurate during iOS Microsoft Teams emergency calls</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1451939</link>
@@ -430,33 +457,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1427120</guid>
       <pubDate>Mon, 13 Jul 2026 09:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some admins may be unable to make changes to distribution lists in Exchange Online and receive an error</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1426934</link>
-      <description>[Exchange Online] Admins may have been unable to make changes to distribution lists in Exchange Online and received an error.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1426934</guid>
-      <pubDate>Sun, 12 Jul 2026 23:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft OneDrive] Some users may have been unable to access Microsoft OneDrive content and may have noticed delays or navigation errors</title>
-      <link>https://www.aguidetocloud.com/service-health/#OD1424850</link>
-      <description>[Microsoft OneDrive] Users may have been unable to access OneDrive content and may have noticed delays or navigation errors.</description>
-      <category>Microsoft OneDrive</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">OD1424850</guid>
-      <pubDate>Sun, 12 Jul 2026 10:20:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users may be unable to view mailbox storage data in Outlook and Outlook on the web</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1428537</link>
-      <description>[Exchange Online] Users may have been unable to view mailbox storage data in Outlook and Outlook on the web.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1428537</guid>
-      <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
