@@ -54,14 +54,14 @@
         <div class="cwroi-controls">
           <div class="cwroi-field">
             <label class="cwroi-label" for="cwroi-credits">Credits this task used</label>
-            <input type="number" id="cwroi-credits" class="cwroi-num" min="0" max="100000000" step="any" inputmode="decimal" placeholder="e.g. 500" aria-describedby="cwroi-credits-hint">
+            <input type="number" id="cwroi-credits" class="cwroi-num" min="0" max="100000000" step="any" inputmode="decimal" value="500" placeholder="e.g. 500" aria-describedby="cwroi-credits-hint">
             <p class="cwroi-hint" id="cwroi-credits-hint">Run the task and use the credit cost Cowork shows for it (e.g. type <code>/cost</code>), taking the median of a few runs. Confirm billed consumption in <em>Copilot &rarr; Cost Management</em>.</p>
           </div>
 
           <div class="cwroi-field">
             <label class="cwroi-label" for="cwroi-minutes">Minutes it saved you <span class="cwroi-label-opt">(net of your own time)</span></label>
             <div class="cwroi-inline">
-              <input type="number" id="cwroi-minutes" class="cwroi-num cwroi-num-sm" min="0" max="100000" placeholder="e.g. 20" step="any" inputmode="decimal" aria-describedby="cwroi-minutes-hint">
+              <input type="number" id="cwroi-minutes" class="cwroi-num cwroi-num-sm" min="0" max="100000" value="20" placeholder="e.g. 20" step="any" inputmode="decimal" aria-describedby="cwroi-minutes-hint">
               <select id="cwroi-benchmark" class="cwroi-select" aria-label="Fill from a study benchmark">
                 <option value="">Use a study estimate&hellip;</option>
                 <option value="analysis">Analysis &amp; research (~67)</option>
@@ -78,8 +78,11 @@
           </div>
 
         </div>
-        <div class="cwroi-readout is-empty" id="cwroi-readout">
-          <span class="cwroi-readout-label">Break-even</span>
+        <div class="cwroi-readout" id="cwroi-readout">
+          <div class="cwroi-readout-top">
+            <span class="cwroi-readout-label">Break-even</span>
+            <span class="cwroi-example-badge" id="cwroi-example-badge">Example &mdash; edit any field</span>
+          </div>
 
           <div class="cwroi-empty" id="cwroi-empty">
             <div class="cwroi-empty-dash" aria-hidden="true">&mdash;</div>
@@ -87,24 +90,24 @@
           </div>
 
           <div class="cwroi-results">
-          <div class="cwroi-be" id="cwroi-be">&mdash;</div>
-                    <div class="cwroi-be-sub" id="cwroi-be-sub">Enter your task&rsquo;s credits, a credit price, and a labour rate to see its break-even.</div>
+          <div class="cwroi-be" id="cwroi-be"><span class="cwroi-be-val">8.3</span><span class="cwroi-be-unit">min</span></div>
+                    <div class="cwroi-be-sub" id="cwroi-be-sub">to cover this task&rsquo;s $5.00 of credits, at 50% usable time</div>
           <span class="sr-only" aria-live="polite" id="cwroi-sr"></span>
 
-          <p class="cwroi-status" id="cwroi-status">Enter the credits your task used to begin &mdash; type <code>/cost</code> in Cowork to get them.</p>
+          <p class="cwroi-status cwroi-status-ok" id="cwroi-status">Clears break-even &mdash; it saves about <strong>11.7 min</strong> more than its credits cost, at 50% usable.</p>
 
           <div class="cwroi-chips">
-            <div class="cwroi-chip"><span class="cwroi-chip-label">Credit cost</span><span class="cwroi-chip-val" id="cwroi-creditcost">&mdash;</span></div>
-                        <div class="cwroi-chip"><span class="cwroi-chip-label">Capacity value</span><span class="cwroi-chip-val" id="cwroi-capvalue">&mdash;</span></div>
-                        <div class="cwroi-chip"><span class="cwroi-chip-label">Value per $1</span><span class="cwroi-chip-val" id="cwroi-vpd">&mdash;</span></div>
+            <div class="cwroi-chip"><span class="cwroi-chip-label">Credit cost</span><span class="cwroi-chip-val" id="cwroi-creditcost">$5.00</span></div>
+                        <div class="cwroi-chip"><span class="cwroi-chip-label">Capacity value</span><span class="cwroi-chip-val" id="cwroi-capvalue">$12.00</span></div>
+                        <div class="cwroi-chip"><span class="cwroi-chip-label">Value per $1</span><span class="cwroi-chip-val" id="cwroi-vpd">2.4&times;</span></div>
           </div>
 
           <div class="cwroi-sens">
             <div class="cwroi-sens-head">Break-even minutes if usable share is&hellip;</div>
             <div class="cwroi-sens-grid">
-              <div class="cwroi-sens-cell"><span class="cwroi-sens-k">25%</span><span class="cwroi-sens-v" id="cwroi-sens-25">&mdash;</span></div>
-              <div class="cwroi-sens-cell cwroi-sens-cell-mid"><span class="cwroi-sens-k">50%</span><span class="cwroi-sens-v" id="cwroi-sens-50">&mdash;</span></div>
-              <div class="cwroi-sens-cell"><span class="cwroi-sens-k">100%</span><span class="cwroi-sens-v" id="cwroi-sens-100">&mdash;</span></div>
+              <div class="cwroi-sens-cell"><span class="cwroi-sens-k">25%</span><span class="cwroi-sens-v" id="cwroi-sens-25">16.7 min <span class="cwroi-tick cwroi-tick-ok">clears</span></span></div>
+              <div class="cwroi-sens-cell cwroi-sens-cell-mid"><span class="cwroi-sens-k">50%</span><span class="cwroi-sens-v" id="cwroi-sens-50">8.3 min <span class="cwroi-tick cwroi-tick-ok">clears</span></span></div>
+              <div class="cwroi-sens-cell"><span class="cwroi-sens-k">100%</span><span class="cwroi-sens-v" id="cwroi-sens-100">4.2 min <span class="cwroi-tick cwroi-tick-ok">clears</span></span></div>
             </div>
           </div>
 

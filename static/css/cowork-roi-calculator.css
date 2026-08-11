@@ -107,6 +107,9 @@
 
 /* ── Readout ── */
 .cwroi-readout-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); font-family: var(--zen-font-mono, monospace); }
+.cwroi-readout-top { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; flex-wrap: wrap; }
+.cwroi-example-badge { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; font-family: var(--zen-font-mono, monospace); color: var(--accent); background: var(--accent-subtle); border: 1px solid var(--border); padding: 0.15rem 0.55rem; border-radius: 999px; white-space: nowrap; }
+.cwroi-example-badge[hidden] { display: none; }
 .cwroi-be {
   font-family: var(--zen-font-mono, monospace); font-size: clamp(2.5rem, 9vw, 3.6rem);
   font-weight: 700; color: var(--accent); line-height: 1; letter-spacing: -0.02em;

@@ -24,6 +24,7 @@
   };
 
   var share = 0.5; // usable share of saved time (default 50%)
+  var touched = false; // true after the first real user edit — clears the "Example" badge
 
   var $ = function (id) { return document.getElementById(id); };
   function num(el, fb) { var v = parseFloat(el && el.value); return isNaN(v) ? (fb || 0) : v; }
@@ -146,18 +147,26 @@
     compute();
   }
 
+  function markTouched() {
+    if (touched) return;
+    touched = true;
+    var badge = $('cwroi-example-badge');
+    if (badge) badge.hidden = true;
+  }
+
   function init() {
     ['cwroi-credits', 'cwroi-minutes', 'cwroi-rate', 'cwroi-price'].forEach(function (id) {
-      var el = $(id); if (el) el.addEventListener('input', compute);
+      var el = $(id); if (el) el.addEventListener('input', function () { markTouched(); compute(); });
     });
     var b = $('cwroi-benchmark');
     if (b) b.addEventListener('change', function () {
+      markTouched();
       var m = $('cwroi-minutes');
       if (BENCH[b.value] && m) m.value = BENCH[b.value].min;
       compute();
     });
     document.querySelectorAll('.cwroi-share-pill').forEach(function (p) {
-      p.addEventListener('click', function () { setShare(parseFloat(p.getAttribute('data-share')) / 100); });
+      p.addEventListener('click', function () { markTouched(); setShare(parseFloat(p.getAttribute('data-share')) / 100); });
     });
     setShare(0.5);
   }
