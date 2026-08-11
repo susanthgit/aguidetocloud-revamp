@@ -1,0 +1,228 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/cowork-roi-calculator.css?v={{ site.Params.cache_version }}">
+
+{{/* ── SEO: JSON-LD Structured Data ── */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": {{ .Title | jsonify | safeJS }},
+  "description": {{ .Description | jsonify | safeJS }},
+  "url": "{{ .Permalink }}",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "A Guide to Cloud & AI", "url": "{{ .Site.BaseURL }}" }
+}
+</script>
+{{ if .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := .Params.faq }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": {{ $q.question | jsonify | safeJS }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ $q.answer | jsonify | safeJS }} }
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+<div class="cwroi-page">
+  <div class="cwroi-container zt-page">
+
+{{ partial "tool-header.html" (dict "page" . "title" "Cowork Credit Value Calculator") }}
+
+    {{/* ── Honest reframe up front ── */}}
+    <div class="cwroi-notice" role="note">
+      <span class="cwroi-notice-icon" aria-hidden="true">&#9878;</span>
+      <div class="cwroi-notice-body">
+        <strong>Often called a &ldquo;Cowork ROI&rdquo; calculator &mdash; here&rsquo;s the honest version.</strong> Instead of a hype multiple, we show the one number that&rsquo;s hard to argue with: the <em>break-even minutes</em> a single Cowork task must save to cover the Copilot Credits it burns. If your task plausibly saves more than that, the credits pay for themselves in freed time.
+      </div>
+    </div>
+
+    {{/* ── The card: controls | break-even readout ── */}}
+    <div class="cwroi-card">
+      <div class="cwroi-grid">
+
+        {{/* ── Controls ── */}}
+        <div class="cwroi-controls">
+          <div class="cwroi-field">
+            <label class="cwroi-label" for="cwroi-credits">Credits this task used</label>
+            <input type="number" id="cwroi-credits" class="cwroi-num" min="0" max="100000000" value="500" inputmode="numeric">
+            <p class="cwroi-hint">Run the task, type <code>/cost</code> in Cowork, and use the median of a few runs (approximate, per session). Confirm real spend in <em>Copilot &rarr; Cost Management</em>.</p>
+          </div>
+
+          <div class="cwroi-field">
+            <label class="cwroi-label" for="cwroi-minutes">Minutes it saved you <span class="cwroi-label-opt">(net of your own time)</span></label>
+            <div class="cwroi-inline">
+              <input type="number" id="cwroi-minutes" class="cwroi-num cwroi-num-sm" min="0" max="100000" placeholder="e.g. 20" inputmode="numeric">
+              <select id="cwroi-benchmark" class="cwroi-select" aria-label="Fill from a study benchmark">
+                <option value="">Use a study estimate&hellip;</option>
+                <option value="analysis">Analysis &amp; research (~67)</option>
+                <option value="code">Write or debug code (~56)</option>
+                <option value="special">Specialized workflows (~25)</option>
+                <option value="document">Document &amp; content (~24)</option>
+                <option value="meeting">Meeting workflows (~24)</option>
+                <option value="email">Email workflows (~5)</option>
+                <option value="general">General assistance (~5)</option>
+                <option value="comms">Communication (~4)</option>
+              </select>
+            </div>
+            <p class="cwroi-hint">Count only the time you actually got back &mdash; subtract prompting, waiting, and reviewing or fixing the output. Benchmarks are <strong>external study priors, not Cowork measurements</strong>.</p>
+          </div>
+
+          <div class="cwroi-assume">
+            <span class="cwroi-assume-kicker">Assumptions</span>
+
+            <div class="cwroi-assume-row">
+              <label class="cwroi-assume-label" for="cwroi-rate">Loaded labour rate</label>
+              <div class="cwroi-assume-input">
+                <span class="cwroi-affix">$</span>
+                <input type="number" id="cwroi-rate" class="cwroi-num cwroi-num-xs" min="0" max="100000" value="72">
+                <span class="cwroi-affix cwroi-affix-suf">/ hr</span>
+              </div>
+            </div>
+            <p class="cwroi-assume-note">Illustrative default &mdash; change it to your fully-loaded rate. Break-even minutes don&rsquo;t depend on currency, so enter it in yours.</p>
+
+            <div class="cwroi-field-last">
+              <span class="cwroi-assume-label">Usable share of saved time</span>
+              <div class="cwroi-share-pills" role="group" aria-label="Usable share of saved time">
+                <button type="button" class="cwroi-share-pill" data-share="25" aria-pressed="false">25%</button>
+                <button type="button" class="cwroi-share-pill active" data-share="50" aria-pressed="true">50%</button>
+                <button type="button" class="cwroi-share-pill" data-share="100" aria-pressed="false">100%</button>
+              </div>
+              <p class="cwroi-share-caption" id="cwroi-share-caption">Working assumption — about half of freed time turns into useful output. An editorial estimate, not a research figure.</p>
+            </div>
+
+            <div class="cwroi-assume-row cwroi-assume-row-top">
+              <label class="cwroi-assume-label" for="cwroi-price">Credit price</label>
+              <div class="cwroi-assume-input">
+                <span class="cwroi-affix">$</span>
+                <input type="number" id="cwroi-price" class="cwroi-num cwroi-num-xs" min="0" max="10" step="0.001" value="0.01">
+                <span class="cwroi-affix cwroi-affix-suf">/ credit</span>
+              </div>
+            </div>
+            <p class="cwroi-assume-note">$0.01 is the public pay-as-you-go rate; prepaid capacity is lower, so set your effective rate if you have one.</p>
+          </div>
+        </div>
+
+        {{/* ── Break-even readout ── */}}
+        <div class="cwroi-readout">
+          <span class="cwroi-readout-label">Break-even</span>
+          <div class="cwroi-be" id="cwroi-be">8.3 min</div>
+          <div class="cwroi-be-sub" id="cwroi-be-sub">to cover this task&rsquo;s $5.00 of credits, at 50% usable time</div>
+          <span class="sr-only" aria-live="polite" id="cwroi-sr"></span>
+
+          <p class="cwroi-status" id="cwroi-status">Now add the minutes it saved (net of your own time) to test it against break-even &mdash; or pick a benchmark to start.</p>
+
+          <div class="cwroi-chips">
+            <div class="cwroi-chip"><span class="cwroi-chip-label">Credit cost / task</span><span class="cwroi-chip-val" id="cwroi-creditcost">$5.00</span></div>
+            <div class="cwroi-chip"><span class="cwroi-chip-label">Capacity value <small>@ share</small></span><span class="cwroi-chip-val" id="cwroi-capvalue">&mdash;</span></div>
+            <div class="cwroi-chip"><span class="cwroi-chip-label">Value / $1 credits</span><span class="cwroi-chip-val" id="cwroi-vpd">&mdash;</span></div>
+          </div>
+
+          <div class="cwroi-sens">
+            <div class="cwroi-sens-head">Break-even minutes if usable share is&hellip;</div>
+            <div class="cwroi-sens-grid">
+              <div class="cwroi-sens-cell"><span class="cwroi-sens-k">25%</span><span class="cwroi-sens-v" id="cwroi-sens-25">&mdash;</span></div>
+              <div class="cwroi-sens-cell cwroi-sens-cell-mid"><span class="cwroi-sens-k">50%</span><span class="cwroi-sens-v" id="cwroi-sens-50">&mdash;</span></div>
+              <div class="cwroi-sens-cell"><span class="cwroi-sens-k">100%</span><span class="cwroi-sens-v" id="cwroi-sens-100">&mdash;</span></div>
+            </div>
+          </div>
+
+          <p class="cwroi-microcopy">This is <strong>modelled capacity value, not cash saved</strong>. It counts freed staff time, which becomes money only if you actually avoid overtime, backfill, or external spend. It excludes the $30 Microsoft&nbsp;365 Copilot seat, training, and rollout.</p>
+        </div>
+
+      </div>
+    </div>
+
+    {{/* ── Measurement protocol: the honest differentiator ── */}}
+    <section class="cwroi-protocol">
+      <h2 class="cwroi-h2">Get an honest number in five minutes</h2>
+      <p class="cwroi-protocol-intro">The result is only as good as your two inputs. Skip the guesswork and measure a real task &mdash; it&rsquo;s quick:</p>
+      <ol class="cwroi-steps">
+        <li><strong>Pick one repeatable task</strong> you&rsquo;d actually hand to Cowork.</li>
+        <li><strong>Run it 3&ndash;5 times</strong> in fresh sessions, through to an output you&rsquo;d accept. After each, type <code>/cost</code> and note the credits. Enter the <em>median</em> above.</li>
+        <li><strong>Time the human version</strong> honestly &mdash; then subtract the minutes Cowork still costs you (prompting, waiting, reviewing, fixing). The difference is your <em>minutes saved</em>.</li>
+        <li><strong>Read the break-even</strong>, then check it at 25% usable share before you trust it.</li>
+      </ol>
+      <p class="cwroi-protocol-foot">That single measured task tells you more than any preset ever will.</p>
+    </section>
+
+    {{/* ── Assumptions & sources ── */}}
+    <details class="cwroi-ledger">
+      <summary class="cwroi-ledger-sum">Assumptions &amp; sources</summary>
+      <div class="cwroi-ledger-body">
+        <p><strong>The maths.</strong> Break-even minutes = credit&nbsp;cost &times; 60 &divide; (loaded&nbsp;rate &times; usable&nbsp;share), where credit&nbsp;cost = credits &times; price. Capacity value = minutes &times; usable&nbsp;share &times; rate&nbsp;&divide;&nbsp;60. &ldquo;Value per $1&rdquo; is a benefit-cost ratio, <em>not</em> ROI, and never the headline. Task volume deliberately isn&rsquo;t an input &mdash; it cancels out of the ratio (for whole-tenant budgeting, use the <a href="/cowork-cost-calculator/">Cowork Cost Calculator</a>).</p>
+
+        <p><strong>Credit price.</strong> $0.01 per Copilot Credit is Microsoft&rsquo;s public pay-as-you-go rate; prepaid capacity is effectively cheaper. Credits and the Cost Management dashboard are documented in <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits" target="_blank" rel="noopener">Usage-Based Billing &amp; Copilot Credits (Microsoft Learn)</a> and the <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/" target="_blank" rel="noopener">Copilot Cowork GA announcement</a>. The <code>/cost</code> figure is an approximate per-session total &mdash; see it <a href="/blog/microsoft-copilot-cowork-pricing-cost-management/">in action</a>; treat the admin Cost Management dashboard as the source of truth.</p>
+
+        <p><strong>Benchmark minutes are priors, not Cowork data.</strong> The optional per-task-type minutes are external study estimates compiled in Microsoft&rsquo;s open-source <a href="https://github.com/microsoft/Analytics-Hub" target="_blank" rel="noopener">Cowork ROI Model (Analytics Hub)</a>. They come from heterogeneous GenAI, Copilot, and automation studies &mdash; <strong>not measurements of Cowork tasks</strong> &mdash; so they can be optimistic and none is preselected. Your measured figure always wins.</p>
+
+        <table class="cwroi-bench-table">
+          <thead><tr><th>Task type</th><th class="cwroi-right">Prior (min)</th><th>Cited in Microsoft&rsquo;s model</th></tr></thead>
+          <tbody>
+            <tr><td>Analysis &amp; research</td><td class="cwroi-right">67</td><td>Stanford&ndash;World Bank 2025; McKinsey 2023</td></tr>
+            <tr><td>Write or debug code</td><td class="cwroi-right">56</td><td>Cui CACM 2024; Peng et al. 2023</td></tr>
+            <tr><td>Specialized workflows</td><td class="cwroi-right">25</td><td>Forrester TEI 2024; UK GDS 2025</td></tr>
+            <tr><td>Document &amp; content</td><td class="cwroi-right">24</td><td>MS Research 2026; UK GDS</td></tr>
+            <tr><td>Meeting workflows</td><td class="cwroi-right">24</td><td>Cambon et al. MSR 2024; Forrester TEI 2024</td></tr>
+            <tr><td>Email workflows</td><td class="cwroi-right">5</td><td>Noy &amp; Zhang 2023 (NBER w33795)</td></tr>
+            <tr><td>General assistance</td><td class="cwroi-right">5</td><td>Brynjolfsson QJE 2025 (NBER w31161)</td></tr>
+            <tr><td>Communication</td><td class="cwroi-right">4</td><td>Microsoft WTI 2024</td></tr>
+          </tbody>
+        </table>
+
+        <p class="cwroi-ledger-fine"><strong>Honesty notes.</strong> This models incremental Cowork credit economics for one workflow. It is an estimate, not a Microsoft guarantee, and not a cash-flow forecast. Quality gains and quality failures aren&rsquo;t monetised. The 50% usable-share default is an editorial haircut, not a research benchmark. Everything runs in your browser &mdash; nothing you type is uploaded.</p>
+      </div>
+    </details>
+
+    {{/* ── FAQ ── */}}
+    {{ if .Params.faq }}
+    <section class="cwroi-faq">
+      <div class="zt-faq-wrap">
+        <h2 class="cwroi-h2">Frequently asked questions</h2>
+        {{ range $i, $q := .Params.faq }}
+        <details{{ if eq $i 0 }} open{{ end }} class="zt-faq-detail">
+          <summary class="zt-faq-summary">{{ add $i 1 }}. {{ $q.question }}</summary>
+          <p class="zt-faq-answer">{{ $q.answer }}</p>
+        </details>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+  </div>{{/* .cwroi-container */}}
+
+  {{/* ── Ecosystem grid + cross-tool CTAs ── */}}
+  <div class="cwroi-container">
+    {{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "cowork-value") }}
+
+    <div class="cwroi-cross-tools">
+      <a href="/cowork-cost-calculator/" class="cwroi-cross-link">{{ partial "icon.html" (dict "name" "trending-up" "size" 14 "stroke" 1.5) }} What might Cowork cost across my users?</a>
+      <a href="/roi-calculator/" class="cwroi-cross-link">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} Is the $30 Copilot seat worth it?</a>
+      <a href="/blog/microsoft-copilot-cowork-pricing-cost-management/" class="cwroi-cross-link">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }} Cowork Pricing &amp; Cost Management</a>
+      <a href="/blog/microsoft-copilot-cowork-complete-guide/" class="cwroi-cross-link">{{ partial "icon.html" (dict "name" "book-open" "size" 14 "stroke" 1.5) }} The Complete Cowork Guide</a>
+    </div>
+  </div>
+
+  <nav class="zt-nav" aria-label="Tools navigation">
+    <a href="/free-tools/">&larr; All Tools</a>
+  </nav>
+
+  {{/* Hidden block for Pagefind search indexing */}}
+  <div data-pagefind-body aria-hidden="true" style="display:none">
+    <h2>Cowork Credit Value Calculator (Cowork ROI Calculator)</h2>
+    <p>Work out whether a Microsoft Copilot Cowork task is worth the Copilot Credits it burns. Enter the credits the task used — type /cost in Cowork to get them — and the tool shows the break-even minutes: how much time the task must save to cover its credit cost. Add the minutes it actually saved (net of your prompting and review time) to see if it clears break-even, the modelled capacity value, and the value per dollar of credits. Honest by design: break-even minutes rather than a hype ROI multiple, a usable-share of saved time defaulting to 50 percent with 25 and 100 percent sensitivity, capacity value not cash savings, and optional external study benchmarks that are priors, not Cowork measurements. Priced at $0.01 per credit pay-as-you-go, editable for prepaid. Pairs with the Cowork Cost Calculator and the Copilot seat ROI Calculator.</p>
+  </div>
+
+</div>{{/* .cwroi-page */}}
+
+<script src="/js/cowork-roi-calculator.js?v={{ site.Params.cache_version }}" defer></script>
+{{ end }}

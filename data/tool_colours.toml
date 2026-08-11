@@ -237,6 +237,17 @@ css_namespace = "cowcalc-*"
 body_class = "page-cowork-cost-calculator"
 # NOTE: Uses the global Zen indigo accent (var(--accent)) per the one-accent rule; OG icon tile colour comes from toolkit_nav.toml color.
 
+[[tools]]
+name = "Cowork Credit Value Calculator"
+slug = "cowork-roi-calculator"
+hex = "#6366F1"
+hue = 239
+name_friendly = "Zen Indigo"
+category = "Compare"
+css_namespace = "cwroi-*"
+body_class = "page-cowork-roi-calculator"
+# NOTE: Shares the Zen indigo accent with the Cowork Cost Calculator — intentional Cowork Cost<->Value family matching (same precedent as the Copilot Indigo family). Homepage tiles differ by emoji (scales) and visual (bars).
+
 # ── Admin & Security ──────────────────────────────────────────────────────────
 
 [[tools]]

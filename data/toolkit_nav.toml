@@ -258,6 +258,18 @@ visual = "gauge"
 is_tool = true
 
 [[tools]]
+url = "/cowork-roi-calculator/"
+emoji = "⚖️"
+icon = "chart-bar"
+name = "Cowork ROI Calculator"
+short = "Cowork ROI"
+desc = "Is a Cowork task worth its credits? See the break-even minutes it must save — honest, not hype"
+color = "#6366F1"
+category = "copilot-ai"
+visual = "bars"
+is_tool = true
+
+[[tools]]
 url = "/token-calculator/"
 emoji = "🪙"
 icon = "dollar-sign"

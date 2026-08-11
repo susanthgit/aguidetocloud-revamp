@@ -1,0 +1,169 @@
+/* ── Cowork Credit Value Calculator ──
+   Accent: zen indigo (var(--accent)) · Namespace: .cwroi-*
+   Zen-migrated: canonical Zen semantic tokens only · NO gradients/glows.
+   Sibling to the Cowork Cost Calculator; honest break-even instrument.
+*/
+
+.cwroi-container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+.cwroi-h2 { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin: 0 0 0.75rem; }
+
+/* ── Honest reframe notice ── */
+.cwroi-notice {
+  display: flex; gap: 0.85rem; align-items: flex-start;
+  background: var(--accent-subtle); border: 1px solid var(--border);
+  border-left: 3px solid var(--accent); border-radius: var(--radius-md, 10px);
+  padding: 0.9rem 1.1rem; margin: 0 0 1.75rem;
+}
+.cwroi-notice-icon { font-size: 1.3rem; line-height: 1.2; color: var(--accent); flex: 0 0 auto; }
+.cwroi-notice-body { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55; }
+.cwroi-notice-body strong { color: var(--text-primary); }
+
+/* ══════════════════════════════════════════════════════
+   THE CARD — controls | break-even readout
+   ══════════════════════════════════════════════════════ */
+.cwroi-card {
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-top: 3px solid var(--accent); border-radius: var(--radius-lg, 16px); overflow: hidden;
+}
+.cwroi-grid { display: flex; flex-direction: column; }
+.cwroi-controls { padding: 1.5rem 1.6rem; }
+.cwroi-readout { order: -1; padding: 1.6rem 1.75rem; border-bottom: 1px solid var(--border); }
+@media (min-width: 820px) {
+  .cwroi-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: stretch; }
+  .cwroi-controls { border-right: 1px solid var(--border); }
+  .cwroi-readout { order: 0; border-bottom: none; padding: 1.75rem 2rem; }
+}
+
+/* ── Fields ── */
+.cwroi-field { margin-bottom: 1.6rem; }
+.cwroi-field-last { margin-top: 1.3rem; }
+.cwroi-label { display: block; font-weight: 600; color: var(--text-primary); margin-bottom: 0.6rem; font-size: 1.02rem; }
+.cwroi-label-opt { font-weight: 400; color: var(--text-tertiary); font-size: 0.82rem; }
+.cwroi-num {
+  width: 150px; padding: 0.6rem 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-md, 10px);
+  font-family: var(--zen-font-mono, monospace); font-size: 1.1rem; background: var(--bg-surface); color: var(--text-primary);
+}
+.cwroi-num:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
+.cwroi-num-sm { width: 110px; }
+.cwroi-num-xs { width: 90px; font-size: 1rem; }
+.cwroi-hint { margin: 0.55rem 0 0; max-width: 42ch; color: var(--text-tertiary); font-size: 0.78rem; line-height: 1.5; }
+.cwroi-hint code, .cwroi-protocol code {
+  font-family: var(--zen-font-mono, monospace); background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: 4px; padding: 0.05rem 0.35rem; font-size: 0.9em; color: var(--text-primary);
+}
+
+.cwroi-inline { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+.cwroi-select {
+  padding: 0.55rem 0.6rem; border: 1px solid var(--border); border-radius: var(--radius-md, 10px);
+  background: var(--bg-surface); color: var(--text-primary); font-size: 0.86rem; cursor: pointer; max-width: 100%;
+}
+.cwroi-select:focus { outline: 2px solid var(--accent); outline-offset: 0; }
+
+/* ── Assumptions sub-block ── */
+.cwroi-assume {
+  margin-top: 0.5rem; padding: 1.1rem 1.15rem; border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px); background: var(--bg-surface);
+}
+.cwroi-assume-kicker {
+  display: block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--text-tertiary); font-family: var(--zen-font-mono, monospace); margin-bottom: 0.75rem;
+}
+.cwroi-assume-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.cwroi-assume-row-top { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid var(--border); }
+.cwroi-assume-label { font-weight: 600; color: var(--text-primary); font-size: 0.9rem; }
+.cwroi-assume-input { display: inline-flex; align-items: center; gap: 0.35rem; }
+.cwroi-affix { color: var(--text-tertiary); font-size: 0.85rem; font-family: var(--zen-font-mono, monospace); }
+.cwroi-affix-suf { white-space: nowrap; }
+.cwroi-assume-note { margin: 0.5rem 0 0; color: var(--text-tertiary); font-size: 0.75rem; line-height: 1.5; }
+
+/* ── Usable-share pills ── */
+.cwroi-share-pills { display: inline-flex; border: 1px solid var(--border); border-radius: var(--radius-md, 10px); overflow: hidden; margin-top: 0.15rem; }
+.cwroi-share-pill {
+  padding: 0.55rem 1.15rem; background: var(--bg-elevated); border: none; border-right: 1px solid var(--border);
+  color: var(--text-secondary); font-weight: 600; font-size: 0.9rem; cursor: pointer;
+  font-family: var(--zen-font-mono, monospace); transition: background 0.15s ease-out, color 0.15s ease-out;
+}
+.cwroi-share-pill:last-child { border-right: none; }
+.cwroi-share-pill:hover:not(.active) { background: var(--accent-subtle); color: var(--accent); }
+.cwroi-share-pill.active { background: var(--accent-strong, #4F46E5); color: #fff; }
+.cwroi-share-pill:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.cwroi-share-caption { font-size: 0.78rem; color: var(--text-secondary); margin: 0.7rem 0 0; line-height: 1.5; max-width: 52ch; }
+
+/* ── Readout ── */
+.cwroi-readout-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); font-family: var(--zen-font-mono, monospace); }
+.cwroi-be {
+  font-family: var(--zen-font-mono, monospace); font-size: clamp(2.5rem, 9vw, 3.6rem);
+  font-weight: 700; color: var(--accent); line-height: 1; letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums; margin-top: 0.35rem;
+}
+.cwroi-be-sub { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.55rem; line-height: 1.45; max-width: 42ch; }
+
+.cwroi-status {
+  margin: 1.1rem 0 0; padding: 0.8rem 0.95rem; background: var(--bg-surface); border: 1px solid var(--border);
+  border-left: 3px solid var(--text-tertiary); border-radius: var(--radius-md, 10px);
+  font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;
+}
+.cwroi-status strong { color: var(--text-primary); font-family: var(--zen-font-mono, monospace); }
+.cwroi-status-ok { border-left-color: var(--accent); background: var(--accent-subtle); }
+.cwroi-status-warn { border-left-color: #E5A00D; }
+
+.cwroi-chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.55rem; margin-top: 1.1rem; }
+@media (max-width: 520px) { .cwroi-chips { grid-template-columns: 1fr; } }
+.cwroi-chip { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md, 10px); padding: 0.6rem 0.7rem; display: flex; flex-direction: column; gap: 0.25rem; }
+.cwroi-chip-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.02em; color: var(--text-secondary); }
+.cwroi-chip-label small { text-transform: none; letter-spacing: 0; color: var(--text-tertiary); }
+.cwroi-chip-val { font-family: var(--zen-font-mono, monospace); font-weight: 700; color: var(--text-primary); font-size: 1rem; }
+
+/* ── Sensitivity strip ── */
+.cwroi-sens { margin-top: 1.1rem; padding: 0.9rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-md, 10px); background: var(--bg-surface); }
+.cwroi-sens-head { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-secondary); margin-bottom: 0.6rem; font-family: var(--zen-font-mono, monospace); }
+.cwroi-sens-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+.cwroi-sens-cell { text-align: center; padding: 0.5rem 0.4rem; border: 1px solid var(--border); border-radius: var(--radius-sm, 6px); background: var(--bg-elevated); }
+.cwroi-sens-cell-mid { border-color: var(--accent); }
+.cwroi-sens-k { display: block; font-size: 0.7rem; color: var(--text-tertiary); font-family: var(--zen-font-mono, monospace); }
+.cwroi-sens-v { display: block; margin-top: 0.2rem; font-family: var(--zen-font-mono, monospace); font-weight: 700; color: var(--text-primary); font-size: 0.9rem; }
+.cwroi-tick { display: inline-block; margin-top: 0.2rem; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.04em; font-family: var(--zen-font-mono, monospace); padding: 0.05rem 0.3rem; border-radius: 3px; }
+.cwroi-tick-ok { color: var(--accent); background: var(--accent-subtle); }
+.cwroi-tick-no { color: #A16207; background: rgba(229,160,13,0.12); }
+
+.cwroi-microcopy { margin: 1.1rem 0 0; font-size: 0.78rem; color: var(--text-tertiary); line-height: 1.55; }
+.cwroi-microcopy strong { color: var(--text-secondary); }
+
+/* ── Measurement protocol ── */
+.cwroi-protocol { margin-top: 2.5rem; padding: 1.5rem 1.6rem; border: 1px solid var(--border); border-radius: var(--radius-lg, 16px); background: var(--bg-elevated); }
+.cwroi-protocol-intro { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0 0 1rem; max-width: 66ch; }
+.cwroi-steps { margin: 0; padding-left: 1.3rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.65; display: flex; flex-direction: column; gap: 0.5rem; }
+.cwroi-steps strong { color: var(--text-primary); }
+.cwroi-protocol-foot { margin: 1rem 0 0; font-size: 0.85rem; color: var(--text-tertiary); font-style: italic; }
+
+/* ── Assumptions & sources ledger ── */
+.cwroi-ledger { margin-top: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius-md, 10px); background: var(--bg-surface); }
+.cwroi-ledger-sum { cursor: pointer; padding: 0.9rem 1.1rem; font-weight: 600; color: var(--text-primary); font-size: 0.95rem; list-style: none; }
+.cwroi-ledger-sum::-webkit-details-marker { display: none; }
+.cwroi-ledger-sum::before { content: "\203A"; display: inline-block; margin-right: 0.5rem; transition: transform 0.15s ease-out; color: var(--accent); }
+.cwroi-ledger[open] .cwroi-ledger-sum::before { transform: rotate(90deg); }
+.cwroi-ledger-body { padding: 0 1.1rem 1.2rem; }
+.cwroi-ledger-body p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin: 0 0 0.9rem; }
+.cwroi-ledger-body a { color: var(--text-primary); font-weight: 600; }
+.cwroi-ledger-fine { font-size: 0.78rem !important; color: var(--text-tertiary) !important; border-top: 1px solid var(--border); padding-top: 0.9rem; }
+.cwroi-ledger-fine strong { color: var(--text-secondary); }
+
+.cwroi-bench-table { width: 100%; border-collapse: collapse; margin: 0 0 1rem; font-size: 0.82rem; }
+.cwroi-bench-table th, .cwroi-bench-table td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+.cwroi-bench-table th { color: var(--text-tertiary); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; font-weight: 600; }
+.cwroi-bench-table td:first-child { color: var(--text-primary); }
+.cwroi-right { text-align: right; }
+.cwroi-bench-table .cwroi-right { font-family: var(--zen-font-mono, monospace); color: var(--text-primary); }
+
+/* ── FAQ spacing ── */
+.cwroi-faq { margin-top: 2.5rem; }
+
+/* ── Cross-tool links ── */
+.cwroi-cross-tools { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.5rem; }
+.cwroi-cross-link {
+  display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem;
+  border: 1px solid var(--border); border-radius: var(--radius-md, 10px); background: var(--bg-elevated);
+  color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; text-decoration: none;
+  transition: border-color 0.15s ease-out, color 0.15s ease-out;
+}
+.cwroi-cross-link:hover { border-color: var(--accent); color: var(--accent); }

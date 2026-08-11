@@ -152,7 +152,7 @@
       <section class="cowcalc-cc">
         <h3 class="cowcalc-cc-title">Already know a task's exact credits? Do the precise maths</h3>
         <p class="cowcalc-cc-intro">The Light / Medium / Heavy levels above are estimates. If you've already run the task in Cowork, use its <strong>real</strong> credit count instead and project running it repeatedly — in the currency you picked above.</p>
-        <p class="cowcalc-cc-tip"><strong>Tip:</strong> after a Cowork task finishes, type <code>/cost</code> in the task window and Cowork shows exactly how many credits it used (<a href="/blog/microsoft-copilot-cowork-pricing-cost-management/">see it in action</a>) — then paste that number into "Credits per run".</p>
+        <p class="cowcalc-cc-tip"><strong>Tip:</strong> after a Cowork task finishes, type <code>/cost</code> in the task window and Cowork shows exactly how many credits it used (<a href="/blog/microsoft-copilot-cowork-pricing-cost-management/">see it in action</a>) — then paste that number into "Credits per run". Wondering if a task is <em>worth</em> its credits? <a href="/cowork-roi-calculator/">Check its break-even minutes</a>.</p>
         <div class="cowcalc-cc-calc">
           <label class="cowcalc-cc-field"><span>Credits per run</span><input type="number" id="cc-credits" min="0" max="100000000" value="1200"></label>
           <span class="cowcalc-cc-op" aria-hidden="true">×</span>
@@ -282,6 +282,7 @@
     {{ partial "tool-ecosystem.html" (dict "group" "copilot" "active" "cowork-calc") }}
 
     <div class="cowcalc-cross-tools">
+      <a href="/cowork-roi-calculator/" class="cowcalc-cross-link">{{ partial "icon.html" (dict "name" "chart-bar" "size" 14 "stroke" 1.5) }} Is a Cowork task worth its credits?</a>
       <a href="/roi-calculator/" class="cowcalc-cross-link">{{ partial "icon.html" (dict "name" "dollar-sign" "size" 14 "stroke" 1.5) }} Calculate Copilot ROI</a>
       <a href="/ai-cost-calculator/" class="cowcalc-cross-link">{{ partial "icon.html" (dict "name" "dollar" "size" 14 "stroke" 1.5) }} Total AI Cost Calculator</a>
       <a href="/licence-picker/" class="cowcalc-cross-link">{{ partial "icon.html" (dict "name" "shopping-cart" "size" 14 "stroke" 1.5) }} Find the Cheapest Licence Combo</a>
