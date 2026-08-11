@@ -42,7 +42,7 @@
     <div class="cwroi-notice" role="note">
       <span class="cwroi-notice-icon" aria-hidden="true">&#9878;</span>
       <div class="cwroi-notice-body">
-        <strong>Often called a &ldquo;Cowork ROI&rdquo; calculator &mdash; here&rsquo;s the honest version.</strong> Instead of a hype multiple, we show a transparent threshold under your own assumptions: the <em>break-even minutes</em> a single Cowork task must save to cover the Copilot Credits it burns. If your task plausibly saves more than that, the modelled capacity value exceeds the credit cost.
+        <strong>Often called a &ldquo;Cowork ROI&rdquo; calculator &mdash; the honest version.</strong> Enter one task&rsquo;s Copilot Credits and the minutes it saved; we show the <em>break-even minutes</em> it must save to be worth the spend &mdash; not a hype multiple.
       </div>
     </div>
 
@@ -77,44 +77,16 @@
             <p class="cwroi-hint" id="cwroi-minutes-hint">Count only the time you actually got back &mdash; subtract prompting, waiting, and reviewing or fixing the output. Benchmarks are <strong>external study priors, not Cowork measurements</strong>.</p>
           </div>
 
-          <div class="cwroi-assume">
-            <span class="cwroi-assume-kicker">Assumptions</span>
-
-            <div class="cwroi-assume-row">
-              <label class="cwroi-assume-label" for="cwroi-rate">Loaded labour rate</label>
-              <div class="cwroi-assume-input">
-                <span class="cwroi-affix">$</span>
-                <input type="number" id="cwroi-rate" class="cwroi-num cwroi-num-xs" min="0" max="100000" step="any" inputmode="decimal" value="72" aria-describedby="cwroi-rate-note">
-                <span class="cwroi-affix cwroi-affix-suf">/ hr</span>
-              </div>
-            </div>
-            <p class="cwroi-assume-note" id="cwroi-rate-note">Illustrative default &mdash; change it to your fully-loaded rate. Use the <strong>same currency</strong> for the rate and the credit price (convert the $0.01 USD pay-as-you-go price if yours differs).</p>
-
-            <div class="cwroi-field-last">
-              <span class="cwroi-assume-label">Usable share of saved time</span>
-              <div class="cwroi-share-pills" role="group" aria-label="Usable share of saved time">
-                <button type="button" class="cwroi-share-pill" data-share="25" aria-pressed="false">25%</button>
-                <button type="button" class="cwroi-share-pill active" data-share="50" aria-pressed="true">50%</button>
-                <button type="button" class="cwroi-share-pill" data-share="100" aria-pressed="false">100%</button>
-              </div>
-              <p class="cwroi-share-caption" id="cwroi-share-caption">Working assumption — about half of freed time turns into useful output. An editorial estimate, not a research figure.</p>
-            </div>
-
-            <div class="cwroi-assume-row cwroi-assume-row-top">
-              <label class="cwroi-assume-label" for="cwroi-price">Credit price</label>
-              <div class="cwroi-assume-input">
-                <span class="cwroi-affix">$</span>
-                <input type="number" id="cwroi-price" class="cwroi-num cwroi-num-xs" min="0" max="10" step="0.001" value="0.01" aria-describedby="cwroi-price-note">
-                <span class="cwroi-affix cwroi-affix-suf">/ credit</span>
-              </div>
-            </div>
-            <p class="cwroi-assume-note" id="cwroi-price-note">$0.01 is the public pay-as-you-go rate; prepaid capacity is lower, so set your effective rate if you have one.</p>
-          </div>
         </div>
-
-        {{/* ── Break-even readout ── */}}
-        <div class="cwroi-readout">
+        <div class="cwroi-readout is-empty" id="cwroi-readout">
           <span class="cwroi-readout-label">Break-even</span>
+
+          <div class="cwroi-empty" id="cwroi-empty">
+            <div class="cwroi-empty-dash" aria-hidden="true">&mdash;</div>
+            <p>Enter your task&rsquo;s <strong>credits</strong> to see the break-even minutes it must save to be worth the spend.</p>
+          </div>
+
+          <div class="cwroi-results">
           <div class="cwroi-be" id="cwroi-be">&mdash;</div>
                     <div class="cwroi-be-sub" id="cwroi-be-sub">Enter your task&rsquo;s credits, a credit price, and a labour rate to see its break-even.</div>
           <span class="sr-only" aria-live="polite" id="cwroi-sr"></span>
@@ -122,9 +94,9 @@
           <p class="cwroi-status" id="cwroi-status">Enter the credits your task used to begin &mdash; type <code>/cost</code> in Cowork to get them.</p>
 
           <div class="cwroi-chips">
-            <div class="cwroi-chip"><span class="cwroi-chip-label">Credit cost / task</span><span class="cwroi-chip-val" id="cwroi-creditcost">&mdash;</span></div>
-            <div class="cwroi-chip"><span class="cwroi-chip-label">Capacity value <small>@ share</small></span><span class="cwroi-chip-val" id="cwroi-capvalue">&mdash;</span></div>
-            <div class="cwroi-chip"><span class="cwroi-chip-label">Value / $1 credits</span><span class="cwroi-chip-val" id="cwroi-vpd">&mdash;</span></div>
+            <div class="cwroi-chip"><span class="cwroi-chip-label">Credit cost</span><span class="cwroi-chip-val" id="cwroi-creditcost">&mdash;</span></div>
+                        <div class="cwroi-chip"><span class="cwroi-chip-label">Capacity value</span><span class="cwroi-chip-val" id="cwroi-capvalue">&mdash;</span></div>
+                        <div class="cwroi-chip"><span class="cwroi-chip-label">Value per $1</span><span class="cwroi-chip-val" id="cwroi-vpd">&mdash;</span></div>
           </div>
 
           <div class="cwroi-sens">
@@ -136,7 +108,42 @@
             </div>
           </div>
 
-          <p class="cwroi-microcopy">This is <strong>modelled capacity value, not cash saved</strong>. It counts freed staff time, which becomes money only if you actually avoid overtime, backfill, or external spend. It excludes the $30 Microsoft&nbsp;365 Copilot seat, training, and rollout.</p>
+          <p class="cwroi-microcopy"><strong>Capacity value, not cash saved</strong> &mdash; freed time becomes money only if you avoid overtime, backfill, or external spend. Excludes the Copilot seat, training, and rollout.</p>
+          </div>{{/* .cwroi-results */}}
+        </div>{{/* .cwroi-readout */}}
+
+        {{/* ── Assumptions (full-width footer) ── */}}
+        <div class="cwroi-assume">
+          <span class="cwroi-assume-kicker">Assumptions &mdash; edit to match your org</span>
+          <div class="cwroi-assume-grid">
+            <div class="cwroi-assume-item">
+              <label class="cwroi-assume-label" for="cwroi-rate">Loaded labour rate</label>
+              <div class="cwroi-assume-input">
+                <span class="cwroi-affix">$</span>
+                <input type="number" id="cwroi-rate" class="cwroi-num cwroi-num-xs" min="0" max="100000" step="any" inputmode="decimal" value="72" aria-describedby="cwroi-rate-note">
+                <span class="cwroi-affix cwroi-affix-suf">/ hr</span>
+              </div>
+              <p class="cwroi-assume-note" id="cwroi-rate-note">Illustrative &mdash; set your fully-loaded rate. Use the <strong>same currency</strong> as the credit price.</p>
+            </div>
+            <div class="cwroi-assume-item">
+              <span class="cwroi-assume-label" id="cwroi-share-label">Usable share of saved time</span>
+              <div class="cwroi-share-pills" role="group" aria-labelledby="cwroi-share-label">
+                <button type="button" class="cwroi-share-pill" data-share="25" aria-pressed="false">25%</button>
+                <button type="button" class="cwroi-share-pill active" data-share="50" aria-pressed="true">50%</button>
+                <button type="button" class="cwroi-share-pill" data-share="100" aria-pressed="false">100%</button>
+              </div>
+              <p class="cwroi-assume-note" id="cwroi-share-caption">About half of freed time turns into useful output &mdash; an editorial estimate, not a research figure.</p>
+            </div>
+            <div class="cwroi-assume-item">
+              <label class="cwroi-assume-label" for="cwroi-price">Credit price</label>
+              <div class="cwroi-assume-input">
+                <span class="cwroi-affix">$</span>
+                <input type="number" id="cwroi-price" class="cwroi-num cwroi-num-xs" min="0" max="10" step="0.001" value="0.01" aria-describedby="cwroi-price-note">
+                <span class="cwroi-affix cwroi-affix-suf">/ credit</span>
+              </div>
+              <p class="cwroi-assume-note" id="cwroi-price-note">$0.01 public pay-as-you-go; prepaid is lower &mdash; set your effective rate.</p>
+            </div>
+          </div>
         </div>
 
       </div>

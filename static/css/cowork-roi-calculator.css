@@ -27,12 +27,27 @@
 }
 .cwroi-grid { display: flex; flex-direction: column; }
 .cwroi-controls { padding: 1.5rem 1.6rem; }
-.cwroi-readout { order: -1; padding: 1.6rem 1.75rem; border-bottom: 1px solid var(--border); }
+.cwroi-readout { padding: 1.6rem 1.75rem; border-top: 1px solid var(--border); display: flex; flex-direction: column; }
+.cwroi-assume { border-top: 1px solid var(--border); }
 @media (min-width: 820px) {
-  .cwroi-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: stretch; }
-  .cwroi-controls { border-right: 1px solid var(--border); }
-  .cwroi-readout { order: 0; border-bottom: none; padding: 1.75rem 2rem; }
+  .cwroi-grid {
+    display: grid; align-items: start;
+    grid-template-columns: 0.95fr 1.05fr;
+    grid-template-areas: "controls readout" "assume assume";
+  }
+  .cwroi-controls { grid-area: controls; border-right: 1px solid var(--border); }
+  .cwroi-readout { grid-area: readout; border-top: none; padding: 1.75rem 2rem; }
+  .cwroi-assume { grid-area: assume; }
 }
+
+/* ── Empty state ── */
+.cwroi-results { display: flex; flex-direction: column; }
+.cwroi-empty { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; flex: 1 1 auto; gap: 0.7rem; padding: 1.4rem 0 0.6rem; min-height: 150px; }
+.cwroi-empty-dash { font-family: var(--zen-font-mono, monospace); font-size: clamp(2.4rem, 8vw, 3.2rem); font-weight: 700; color: var(--border); line-height: 1; }
+.cwroi-empty p { margin: 0; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.55; max-width: 36ch; }
+.cwroi-empty p strong { color: var(--text-primary); }
+.cwroi-readout.is-empty .cwroi-results { display: none; }
+.cwroi-readout:not(.is-empty) .cwroi-empty { display: none; }
 
 /* ── Fields ── */
 .cwroi-field { margin-bottom: 1.6rem; }
@@ -54,16 +69,16 @@
 
 .cwroi-inline { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
 .cwroi-select {
-  padding: 0.55rem 0.6rem; border: 1px solid var(--border); border-radius: var(--radius-md, 10px);
+  padding: 0.55rem 0.6rem; min-height: 44px; border: 1px solid var(--border); border-radius: var(--radius-md, 10px);
   background: var(--bg-surface); color: var(--text-primary); font-size: 0.86rem; cursor: pointer; max-width: 100%;
 }
 .cwroi-select:focus { outline: 2px solid var(--accent); outline-offset: 0; }
 
 /* ── Assumptions sub-block ── */
-.cwroi-assume {
-  margin-top: 0.5rem; padding: 1.1rem 1.15rem; border: 1px solid var(--border);
-  border-radius: var(--radius-md, 10px); background: var(--bg-surface);
-}
+.cwroi-assume { padding: 1.25rem 1.6rem; background: var(--bg-surface); }
+.cwroi-assume-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem 2rem; }
+@media (max-width: 700px) { .cwroi-assume-grid { grid-template-columns: 1fr; gap: 1.4rem; } }
+.cwroi-assume-item { display: flex; flex-direction: column; gap: 0.5rem; }
 .cwroi-assume-kicker {
   display: block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em;
   color: var(--text-tertiary); font-family: var(--zen-font-mono, monospace); margin-bottom: 0.75rem;
@@ -79,7 +94,8 @@
 /* ── Usable-share pills ── */
 .cwroi-share-pills { display: inline-flex; border: 1px solid var(--border); border-radius: var(--radius-md, 10px); overflow: hidden; margin-top: 0.15rem; }
 .cwroi-share-pill {
-  padding: 0.55rem 1.15rem; background: var(--bg-elevated); border: none; border-right: 1px solid var(--border);
+  padding: 0.55rem 1.15rem; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;
+  background: var(--bg-elevated); border: none; border-right: 1px solid var(--border);
   color: var(--text-secondary); font-weight: 600; font-size: 0.9rem; cursor: pointer;
   font-family: var(--zen-font-mono, monospace); transition: background 0.15s ease-out, color 0.15s ease-out;
 }
@@ -97,6 +113,7 @@
   font-variant-numeric: tabular-nums; margin-top: 0.35rem;
 }
 .cwroi-be-sub { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.55rem; line-height: 1.45; max-width: 42ch; }
+.cwroi-be-unit { font-size: 0.34em; font-weight: 600; color: var(--text-secondary); letter-spacing: 0; margin-left: 0.16em; }
 
 .cwroi-status {
   margin: 1.1rem 0 0; padding: 0.8rem 0.95rem; background: var(--bg-surface); border: 1px solid var(--border);
@@ -122,7 +139,7 @@
 .cwroi-sens-cell-mid { border-color: var(--accent); }
 .cwroi-sens-k { display: block; font-size: 0.7rem; color: var(--text-tertiary); font-family: var(--zen-font-mono, monospace); }
 .cwroi-sens-v { display: block; margin-top: 0.2rem; font-family: var(--zen-font-mono, monospace); font-weight: 700; color: var(--text-primary); font-size: 0.9rem; }
-.cwroi-tick { display: inline-block; margin-top: 0.2rem; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.04em; font-family: var(--zen-font-mono, monospace); padding: 0.05rem 0.3rem; border-radius: 3px; }
+.cwroi-tick { display: inline-block; margin-top: 0.2rem; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; font-family: var(--zen-font-mono, monospace); padding: 0.05rem 0.3rem; border-radius: 3px; }
 .cwroi-tick-ok { color: var(--accent); background: var(--accent-subtle); }
 .cwroi-tick-no { color: var(--badge-amber, #92400E); background: rgba(229,160,13,0.12); }
 

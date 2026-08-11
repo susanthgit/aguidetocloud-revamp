@@ -46,6 +46,11 @@
     if (v > 0 && v < 0.05) return '<0.1\u00d7';
     return (Math.round(v * 10) / 10) + '\u00d7';
   }
+  function heroMins(n) {
+    if (!isFinite(n)) return '\u2014';
+    var m = (Math.round(n * 10) / 10).toLocaleString('en-US');
+    return '<span class="cwroi-be-val">' + m + '</span><span class="cwroi-be-unit">min</span>';
+  }
   // Gross minutes a task must save so its capacity value covers its credit cost.
   function breakEven(costUSD, rate, sh) {
     return (rate > 0 && sh > 0) ? (costUSD * 60) / (rate * sh) : Infinity;
@@ -61,12 +66,14 @@
     var hasPrice   = priceRaw > 0 && isFinite(priceRaw);
     var hasRate    = rateRaw > 0 && isFinite(rateRaw);
 
+    var ro = $('cwroi-readout'); if (ro) ro.classList.toggle('is-empty', !hasCredits);
+
     var cost  = (hasCredits && hasPrice) ? creditsRaw * priceRaw : NaN;  // $ per completed task
     var canBE = isFinite(cost) && cost > 0 && hasRate;                    // enough to break-even
     var be    = canBE ? breakEven(cost, rateRaw, share) : Infinity;
 
     // ── Hero: break-even minutes ──
-    if ($('cwroi-be')) $('cwroi-be').textContent = (canBE && isFinite(be)) ? mins(be) : '\u2014';
+    if ($('cwroi-be')) $('cwroi-be').innerHTML = (canBE && isFinite(be)) ? heroMins(be) : '\u2014';
     if ($('cwroi-be-sub')) $('cwroi-be-sub').textContent = canBE
       ? 'to cover this task\u2019s ' + money(cost) + ' of credits, at ' + Math.round(share * 100) + '% usable time'
       : 'Enter your task\u2019s credits, a credit price, and a labour rate to see its break-even.';
