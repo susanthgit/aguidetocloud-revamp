@@ -29,7 +29,7 @@
 <div class="zt-hub-featured">
   <p class="zt-hub-featured-label">Most useful</p>
   <div class="ft-mini-grid">
-    {{ $featuredSlugs := slice "prompts" "licence-picker" "cert-compass" "ca-builder" "copilot-readiness" }}
+    {{ $featuredSlugs := slice "cert-tracker" "licensing" "cowork-cost-calculator" "prompts" "service-health" "prompt-polisher" }}
     {{ range $slug := $featuredSlugs }}
       {{ range $tools }}
         {{ if and .is_tool (eq (.url | strings.TrimSuffix "/" | strings.TrimPrefix "/") $slug) }}
@@ -37,6 +37,7 @@
           <div class="ft-mini-head">
             <span class="ft-mini-icon">{{ partial "icon.html" (dict "name" (.icon | default "") "size" 18 "stroke" 1.5 "fallback" .emoji) }}</span>
             <span class="ft-mini-name">{{ .name }}</span>
+            {{ if .new }}<span class="ft-mini-new">New</span>{{ end }}
           </div>
           <span class="ft-mini-desc">{{ .desc }}</span>
         </a>
@@ -79,6 +80,7 @@
           <div class="ft-mini-head">
             <span class="ft-mini-icon">{{ partial "icon.html" (dict "name" (.icon | default "") "size" 18 "stroke" 1.5 "fallback" .emoji) }}</span>
             <span class="ft-mini-name">{{ .name }}</span>
+            {{ if .new }}<span class="ft-mini-new">New</span>{{ end }}
           </div>
           <span class="ft-mini-desc">{{ .desc }}</span>
         </a>
