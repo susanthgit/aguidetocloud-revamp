@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 11 Aug 2026 21:00:32 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 22:58:27 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Some users may be unable to access the Share tab in Microsoft Teams on Android devices</title>
@@ -53,9 +53,9 @@
       <pubDate>Mon, 10 Aug 2026 12:44:26 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft 365 suite] Some admins may see delays for Copilot Adoption and Copilot Readiness reports in Viva Insights and the M365 admin center</title>
+      <title>[Microsoft 365 suite] Some admins may see Copilot Adoption and Copilot Readiness report delays in multiple Microsoft 365 services</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1452280</link>
-      <description>[Microsoft 365 suite] Admins may see delays for Copilot Adoption and Copilot Readiness reports in Viva Insights and the M365 admin center.</description>
+      <description>[Microsoft 365 suite] Admins may see Copilot Adoption and Copilot Readiness report delays in multiple Microsoft 365 services.</description>
       <category>Microsoft 365 suite</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1452280</guid>
