@@ -40,6 +40,7 @@ color = "#A78BFA"
 category = "copilot-ai"
 visual = "lines"
 is_tool = true
+popular = true
 
 [[tools]]
 url = "/prompt-polisher/"
@@ -52,6 +53,7 @@ color = "#EC4899"
 category = "copilot-ai"
 visual = "gauge"
 is_tool = true
+popular = true
 
 [[tools]]
 url = "/prompt-guide/"
@@ -196,6 +198,7 @@ color = "#EA580C"
 category = "copilot-ai"
 visual = "wave"
 is_tool = true
+popular = true
 
 [[tools]]
 url = "/deprecation-timeline/"
@@ -256,6 +259,7 @@ color = "#6366F1"
 category = "copilot-ai"
 visual = "gauge"
 is_tool = true
+popular = true
 
 [[tools]]
 url = "/cowork-roi-calculator/"
@@ -305,6 +309,7 @@ color = "#F43F5E"
 category = "admin-security"
 visual = "blocks"
 is_tool = true
+popular = true
 
 [[tools]]
 url = "/ca-builder/"
@@ -413,6 +418,7 @@ color = "#10B981"
 category = "certs"
 visual = "blocks"
 is_tool = true
+popular = true
 
 [[tools]]
 url = "/cert-compass/"

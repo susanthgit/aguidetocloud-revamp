@@ -389,6 +389,20 @@
   line-height: 1.5;
   white-space: nowrap;
 }
+.ft-mini-pop {
+  margin-left: auto;
+  align-self: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--badge-amber, #92400E);
+  background: rgba(229, 160, 13, 0.12);
+  border-radius: 999px;
+  padding: 0.08rem 0.42rem;
+  line-height: 1.5;
+  white-space: nowrap;
+}
 @media (max-width: 480px) {
   .ft-mini-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -429,6 +443,9 @@
     display: none;
   }
   .ft-mini-new {
+    display: none;
+  }
+  .ft-mini-pop {
     display: none;
   }
 }
