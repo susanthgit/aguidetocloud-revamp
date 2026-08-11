@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 11 Aug 2026 02:23:49 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 05:19:30 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Users' locations may not be accurate during iOS Microsoft Teams emergency calls</title>
@@ -165,7 +165,7 @@
       <link>https://www.aguidetocloud.com/service-health/#MP1440966</link>
       <description>[Microsoft Purview] If action isn’t taken, collection and DLP policies for user data uploads to unmanaged apps might not work as expected. </description>
       <category>Microsoft Purview</category>
-      <category>investigating</category>
+      <category>investigationSuspended</category>
       <guid isPermaLink="false">MP1440966</guid>
       <pubDate>Mon, 27 Jul 2026 22:50:42 +0000</pubDate>
     </item>
@@ -174,7 +174,7 @@
       <link>https://www.aguidetocloud.com/service-health/#MP1440962</link>
       <description>[Microsoft Purview] If action isn't taken, DLP policies targeting user data uploads to unmanaged apps in Edge might not function as expected</description>
       <category>Microsoft Purview</category>
-      <category>investigating</category>
+      <category>investigationSuspended</category>
       <guid isPermaLink="false">MP1440962</guid>
       <pubDate>Mon, 27 Jul 2026 22:39:50 +0000</pubDate>
     </item>
