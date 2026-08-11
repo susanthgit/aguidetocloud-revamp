@@ -42,7 +42,7 @@
     <div class="cwroi-notice" role="note">
       <span class="cwroi-notice-icon" aria-hidden="true">&#9878;</span>
       <div class="cwroi-notice-body">
-        <strong>Often called a &ldquo;Cowork ROI&rdquo; calculator &mdash; here&rsquo;s the honest version.</strong> Instead of a hype multiple, we show the one number that&rsquo;s hard to argue with: the <em>break-even minutes</em> a single Cowork task must save to cover the Copilot Credits it burns. If your task plausibly saves more than that, the credits pay for themselves in freed time.
+        <strong>Often called a &ldquo;Cowork ROI&rdquo; calculator &mdash; here&rsquo;s the honest version.</strong> Instead of a hype multiple, we show a transparent threshold under your own assumptions: the <em>break-even minutes</em> a single Cowork task must save to cover the Copilot Credits it burns. If your task plausibly saves more than that, the modelled capacity value exceeds the credit cost.
       </div>
     </div>
 
@@ -54,14 +54,14 @@
         <div class="cwroi-controls">
           <div class="cwroi-field">
             <label class="cwroi-label" for="cwroi-credits">Credits this task used</label>
-            <input type="number" id="cwroi-credits" class="cwroi-num" min="0" max="100000000" value="500" inputmode="numeric">
-            <p class="cwroi-hint">Run the task, type <code>/cost</code> in Cowork, and use the median of a few runs (approximate, per session). Confirm real spend in <em>Copilot &rarr; Cost Management</em>.</p>
+            <input type="number" id="cwroi-credits" class="cwroi-num" min="0" max="100000000" step="any" inputmode="decimal" placeholder="e.g. 500" aria-describedby="cwroi-credits-hint">
+            <p class="cwroi-hint" id="cwroi-credits-hint">Run the task and use the credit cost Cowork shows for it (e.g. type <code>/cost</code>), taking the median of a few runs. Confirm billed consumption in <em>Copilot &rarr; Cost Management</em>.</p>
           </div>
 
           <div class="cwroi-field">
             <label class="cwroi-label" for="cwroi-minutes">Minutes it saved you <span class="cwroi-label-opt">(net of your own time)</span></label>
             <div class="cwroi-inline">
-              <input type="number" id="cwroi-minutes" class="cwroi-num cwroi-num-sm" min="0" max="100000" placeholder="e.g. 20" inputmode="numeric">
+              <input type="number" id="cwroi-minutes" class="cwroi-num cwroi-num-sm" min="0" max="100000" placeholder="e.g. 20" step="any" inputmode="decimal" aria-describedby="cwroi-minutes-hint">
               <select id="cwroi-benchmark" class="cwroi-select" aria-label="Fill from a study benchmark">
                 <option value="">Use a study estimate&hellip;</option>
                 <option value="analysis">Analysis &amp; research (~67)</option>
@@ -74,7 +74,7 @@
                 <option value="comms">Communication (~4)</option>
               </select>
             </div>
-            <p class="cwroi-hint">Count only the time you actually got back &mdash; subtract prompting, waiting, and reviewing or fixing the output. Benchmarks are <strong>external study priors, not Cowork measurements</strong>.</p>
+            <p class="cwroi-hint" id="cwroi-minutes-hint">Count only the time you actually got back &mdash; subtract prompting, waiting, and reviewing or fixing the output. Benchmarks are <strong>external study priors, not Cowork measurements</strong>.</p>
           </div>
 
           <div class="cwroi-assume">
@@ -84,11 +84,11 @@
               <label class="cwroi-assume-label" for="cwroi-rate">Loaded labour rate</label>
               <div class="cwroi-assume-input">
                 <span class="cwroi-affix">$</span>
-                <input type="number" id="cwroi-rate" class="cwroi-num cwroi-num-xs" min="0" max="100000" value="72">
+                <input type="number" id="cwroi-rate" class="cwroi-num cwroi-num-xs" min="0" max="100000" step="any" inputmode="decimal" value="72" aria-describedby="cwroi-rate-note">
                 <span class="cwroi-affix cwroi-affix-suf">/ hr</span>
               </div>
             </div>
-            <p class="cwroi-assume-note">Illustrative default &mdash; change it to your fully-loaded rate. Break-even minutes don&rsquo;t depend on currency, so enter it in yours.</p>
+            <p class="cwroi-assume-note" id="cwroi-rate-note">Illustrative default &mdash; change it to your fully-loaded rate. Use the <strong>same currency</strong> for the rate and the credit price (convert the $0.01 USD pay-as-you-go price if yours differs).</p>
 
             <div class="cwroi-field-last">
               <span class="cwroi-assume-label">Usable share of saved time</span>
@@ -104,25 +104,25 @@
               <label class="cwroi-assume-label" for="cwroi-price">Credit price</label>
               <div class="cwroi-assume-input">
                 <span class="cwroi-affix">$</span>
-                <input type="number" id="cwroi-price" class="cwroi-num cwroi-num-xs" min="0" max="10" step="0.001" value="0.01">
+                <input type="number" id="cwroi-price" class="cwroi-num cwroi-num-xs" min="0" max="10" step="0.001" value="0.01" aria-describedby="cwroi-price-note">
                 <span class="cwroi-affix cwroi-affix-suf">/ credit</span>
               </div>
             </div>
-            <p class="cwroi-assume-note">$0.01 is the public pay-as-you-go rate; prepaid capacity is lower, so set your effective rate if you have one.</p>
+            <p class="cwroi-assume-note" id="cwroi-price-note">$0.01 is the public pay-as-you-go rate; prepaid capacity is lower, so set your effective rate if you have one.</p>
           </div>
         </div>
 
         {{/* ── Break-even readout ── */}}
         <div class="cwroi-readout">
           <span class="cwroi-readout-label">Break-even</span>
-          <div class="cwroi-be" id="cwroi-be">8.3 min</div>
-          <div class="cwroi-be-sub" id="cwroi-be-sub">to cover this task&rsquo;s $5.00 of credits, at 50% usable time</div>
+          <div class="cwroi-be" id="cwroi-be">&mdash;</div>
+                    <div class="cwroi-be-sub" id="cwroi-be-sub">Enter your task&rsquo;s credits, a credit price, and a labour rate to see its break-even.</div>
           <span class="sr-only" aria-live="polite" id="cwroi-sr"></span>
 
-          <p class="cwroi-status" id="cwroi-status">Now add the minutes it saved (net of your own time) to test it against break-even &mdash; or pick a benchmark to start.</p>
+          <p class="cwroi-status" id="cwroi-status">Enter the credits your task used to begin &mdash; type <code>/cost</code> in Cowork to get them.</p>
 
           <div class="cwroi-chips">
-            <div class="cwroi-chip"><span class="cwroi-chip-label">Credit cost / task</span><span class="cwroi-chip-val" id="cwroi-creditcost">$5.00</span></div>
+            <div class="cwroi-chip"><span class="cwroi-chip-label">Credit cost / task</span><span class="cwroi-chip-val" id="cwroi-creditcost">&mdash;</span></div>
             <div class="cwroi-chip"><span class="cwroi-chip-label">Capacity value <small>@ share</small></span><span class="cwroi-chip-val" id="cwroi-capvalue">&mdash;</span></div>
             <div class="cwroi-chip"><span class="cwroi-chip-label">Value / $1 credits</span><span class="cwroi-chip-val" id="cwroi-vpd">&mdash;</span></div>
           </div>
@@ -161,9 +161,10 @@
       <div class="cwroi-ledger-body">
         <p><strong>The maths.</strong> Break-even minutes = credit&nbsp;cost &times; 60 &divide; (loaded&nbsp;rate &times; usable&nbsp;share), where credit&nbsp;cost = credits &times; price. Capacity value = minutes &times; usable&nbsp;share &times; rate&nbsp;&divide;&nbsp;60. &ldquo;Value per $1&rdquo; is a benefit-cost ratio, <em>not</em> ROI, and never the headline. Task volume deliberately isn&rsquo;t an input &mdash; it cancels out of the ratio (for whole-tenant budgeting, use the <a href="/cowork-cost-calculator/">Cowork Cost Calculator</a>).</p>
 
-        <p><strong>Credit price.</strong> $0.01 per Copilot Credit is Microsoft&rsquo;s public pay-as-you-go rate; prepaid capacity is effectively cheaper. Credits and the Cost Management dashboard are documented in <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits" target="_blank" rel="noopener">Usage-Based Billing &amp; Copilot Credits (Microsoft Learn)</a> and the <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/" target="_blank" rel="noopener">Copilot Cowork GA announcement</a>. The <code>/cost</code> figure is an approximate per-session total &mdash; see it <a href="/blog/microsoft-copilot-cowork-pricing-cost-management/">in action</a>; treat the admin Cost Management dashboard as the source of truth.</p>
+        <p><strong>Credit price.</strong> $0.01 per Copilot Credit is Microsoft&rsquo;s public pay-as-you-go rate; prepaid capacity is effectively cheaper. Credits and the Cost Management dashboard are documented in <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits" target="_blank" rel="noopener">Usage-Based Billing &amp; Copilot Credits (Microsoft Learn)</a> and the <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/" target="_blank" rel="noopener">Copilot Cowork GA announcement</a>. The <code>/cost</code> figure is the in-product credit cost Cowork shows for a task &mdash; see it <a href="/blog/microsoft-copilot-cowork-pricing-cost-management/">in action</a>; treat the admin Cost Management dashboard as authoritative for billed consumption.</p>
 
-        <p><strong>Benchmark minutes are priors, not Cowork data.</strong> The optional per-task-type minutes are external study estimates compiled in Microsoft&rsquo;s open-source <a href="https://github.com/microsoft/Analytics-Hub" target="_blank" rel="noopener">Cowork ROI Model (Analytics Hub)</a>. They come from heterogeneous GenAI, Copilot, and automation studies &mdash; <strong>not measurements of Cowork tasks</strong> &mdash; so they can be optimistic and none is preselected. Your measured figure always wins.</p>
+        <p><strong>Benchmark minutes are priors, not Cowork data.</strong> The optional per-task-type minutes and their source labels are reproduced from Microsoft&rsquo;s open-source <a href="https://github.com/microsoft/Analytics-Hub" target="_blank" rel="noopener">Cowork ROI Model (Analytics Hub)</a>, which compiles external GenAI, Copilot, and automation studies &mdash; <strong>not measurements of Cowork tasks</strong>. They can be optimistic, none is preselected, and your measured figure always wins.</p>
+        <p><strong>Scope.</strong> Cowork requires a Microsoft&nbsp;365 Copilot licence (User Subscription License). This tool tests only the <em>incremental</em> Cowork credit economics of one task &mdash; it excludes the $30 seat, training, and rollout.</p>
 
         <table class="cwroi-bench-table">
           <thead><tr><th>Task type</th><th class="cwroi-right">Prior (min)</th><th>Cited in Microsoft&rsquo;s model</th></tr></thead>
@@ -173,7 +174,7 @@
             <tr><td>Specialized workflows</td><td class="cwroi-right">25</td><td>Forrester TEI 2024; UK GDS 2025</td></tr>
             <tr><td>Document &amp; content</td><td class="cwroi-right">24</td><td>MS Research 2026; UK GDS</td></tr>
             <tr><td>Meeting workflows</td><td class="cwroi-right">24</td><td>Cambon et al. MSR 2024; Forrester TEI 2024</td></tr>
-            <tr><td>Email workflows</td><td class="cwroi-right">5</td><td>Noy &amp; Zhang 2023 (NBER w33795)</td></tr>
+            <tr><td>Email workflows</td><td class="cwroi-right">5</td><td>Noy &amp; Zhang, Science 2023; Dillon et&nbsp;al., NBER w33795</td></tr>
             <tr><td>General assistance</td><td class="cwroi-right">5</td><td>Brynjolfsson QJE 2025 (NBER w31161)</td></tr>
             <tr><td>Communication</td><td class="cwroi-right">4</td><td>Microsoft WTI 2024</td></tr>
           </tbody>

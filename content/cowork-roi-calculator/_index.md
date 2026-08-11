@@ -12,11 +12,11 @@ sitemap:
   changefreq: monthly
 faq:
   - question: "What does this Cowork ROI calculator actually tell me?"
-    answer: "It gives you the break-even: how many minutes a single Cowork task must save to cover the Copilot Credits it burns. If the task plausibly saves more time than that, the credit spend pays for itself in freed capacity. You only need one number to start — the credits the task used."
+    answer: "It gives you the break-even: how many minutes a single Cowork task must save to cover the Copilot Credits it burns. If the task plausibly saves more time than that, the modelled capacity value exceeds the credit spend. You only need one number to start — the credits the task used."
   - question: "Why break-even minutes instead of an ROI percentage or multiple?"
-    answer: "Because value divided by cost is a benefit-cost ratio, not ROI — and a headline multiple invites hype. Break-even minutes is honest, hard to game, and independent of how many tasks you run (task volume cancels out of the ratio). We show the value-per-dollar figure too, but only as a secondary, clearly-labelled capacity figure — never as the headline."
+    answer: "Because value divided by cost is a benefit-cost ratio, not ROI — and a headline multiple invites hype. Break-even minutes is transparent and independent of how many tasks you run (task volume cancels out of the ratio). We show the value-per-dollar figure too, but only as a secondary, clearly-labelled capacity figure — never as the headline."
   - question: "Where do I get the credits number for a task?"
-    answer: "Run the task in Cowork, then type /cost in the task window — it shows the credits used so far this session (approximate). Use the median of a few representative runs, and include retries through to an accepted result. For authoritative figures, check Copilot → Cost Management → Consumption in the Microsoft 365 admin center."
+    answer: "Run the task in Cowork, then type /cost in the task window — it shows the credit cost for that task. Use the median of a few representative runs, and include retries through to an accepted result. For billed consumption, check Copilot → Cost Management → Consumption in the Microsoft 365 admin center."
   - question: "What is the 'usable share of saved time' setting?"
     answer: "Freed minutes only create value if they're redeployed to useful work — fragmentation, review, and context-switching eat into that. So we discount saved time by a usable share. The default is 50%, which is an editorial working assumption, not a research finding. Always sanity-check your result at 25% too."
   - question: "Are the benchmark minutes official Microsoft Cowork figures?"

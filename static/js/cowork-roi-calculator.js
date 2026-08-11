@@ -31,14 +31,20 @@
   function money(n) {
     if (!isFinite(n)) return '\u2014';
     var v = Math.round(n * 100) / 100;
+    var small = Math.abs(v) < 1000;
     return '$' + v.toLocaleString('en-US', {
-      minimumFractionDigits: Math.abs(v) < 100 ? 2 : 0,
-      maximumFractionDigits: 2
+      minimumFractionDigits: small ? 2 : 0,
+      maximumFractionDigits: small ? 2 : 0
     });
   }
   function mins(n) {
     if (!isFinite(n)) return '\u2014';
     return (Math.round(n * 10) / 10).toLocaleString('en-US') + ' min';
+  }
+  function fmtMult(v) {
+    if (!isFinite(v) || v < 0) return '\u2014';
+    if (v > 0 && v < 0.05) return '<0.1\u00d7';
+    return (Math.round(v * 10) / 10) + '\u00d7';
   }
   // Gross minutes a task must save so its capacity value covers its credit cost.
   function breakEven(costUSD, rate, sh) {
@@ -46,36 +52,48 @@
   }
 
   function compute() {
-    var credits = Math.max(0, num($('cwroi-credits'), 0));
-    var price   = Math.max(0, num($('cwroi-price'), DEF_PRICE));
-    var rate    = Math.max(0, num($('cwroi-rate'), DEF_RATE));
-    var minutes = Math.max(0, num($('cwroi-minutes'), 0));
+    var creditsRaw = num($('cwroi-credits'), NaN);
+    var priceRaw   = num($('cwroi-price'), NaN);
+    var rateRaw    = num($('cwroi-rate'), NaN);
+    var minutes    = Math.max(0, num($('cwroi-minutes'), 0));
 
-    var cost = credits * price;                 // $ per completed task
-    var be   = breakEven(cost, rate, share);    // minutes needed to break even
+    var hasCredits = creditsRaw > 0 && isFinite(creditsRaw);
+    var hasPrice   = priceRaw > 0 && isFinite(priceRaw);
+    var hasRate    = rateRaw > 0 && isFinite(rateRaw);
+
+    var cost  = (hasCredits && hasPrice) ? creditsRaw * priceRaw : NaN;  // $ per completed task
+    var canBE = isFinite(cost) && cost > 0 && hasRate;                    // enough to break-even
+    var be    = canBE ? breakEven(cost, rateRaw, share) : Infinity;
 
     // ── Hero: break-even minutes ──
-    if ($('cwroi-be')) $('cwroi-be').textContent = (credits > 0 && isFinite(be)) ? mins(be) : '\u2014';
-    if ($('cwroi-be-sub')) $('cwroi-be-sub').textContent = (credits > 0)
+    if ($('cwroi-be')) $('cwroi-be').textContent = (canBE && isFinite(be)) ? mins(be) : '\u2014';
+    if ($('cwroi-be-sub')) $('cwroi-be-sub').textContent = canBE
       ? 'to cover this task\u2019s ' + money(cost) + ' of credits, at ' + Math.round(share * 100) + '% usable time'
-      : 'Enter the credits this task used to see its break-even.';
+      : 'Enter your task\u2019s credits, a credit price, and a labour rate to see its break-even.';
 
-    // ── Supporting figures (only meaningful once minutes are entered) ──
-    var cap = minutes * share * rate / 60;      // modelled capacity value ($)
-    var vpd = cost > 0 ? cap / cost : 0;        // value per $1 of credits (NOT ROI)
-    if ($('cwroi-creditcost')) $('cwroi-creditcost').textContent = money(cost);
-    if ($('cwroi-capvalue'))   $('cwroi-capvalue').textContent   = minutes > 0 ? money(cap) : '\u2014';
-    if ($('cwroi-vpd'))        $('cwroi-vpd').textContent        = (minutes > 0 && cost > 0) ? (Math.round(vpd * 10) / 10) + '\u00d7' : '\u2014';
+    // ── Supporting figures (need a real cost + rate + minutes) ──
+    var cap = (canBE && minutes > 0) ? minutes * share * rateRaw / 60 : NaN;  // capacity value ($)
+    var vpd = (isFinite(cap) && cost > 0) ? cap / cost : NaN;                  // value per $1 (NOT ROI)
+    if ($('cwroi-creditcost')) $('cwroi-creditcost').textContent = isFinite(cost) ? money(cost) : '\u2014';
+    if ($('cwroi-capvalue'))   $('cwroi-capvalue').textContent   = isFinite(cap)  ? money(cap)  : '\u2014';
+    if ($('cwroi-vpd'))        $('cwroi-vpd').textContent        = isFinite(vpd)  ? fmtMult(vpd) : '\u2014';
 
     // ── Status line ──
     var st = $('cwroi-status');
     if (st) {
       var cls = 'cwroi-status';
-      if (credits <= 0) {
-        st.innerHTML = 'Enter the task\u2019s credits to begin.';
+      if (!hasCredits) {
+        st.innerHTML = 'Enter the credits your task used to begin \u2014 type <code>/cost</code> in Cowork to get them.';
+      } else if (!hasPrice) {
+        st.innerHTML = 'Enter a credit price above $0 \u2014 the public pay-as-you-go rate is $0.01.';
+      } else if (!hasRate) {
+        st.innerHTML = 'Enter a loaded labour rate above $0 to compute break-even.';
       } else if (minutes <= 0) {
         st.innerHTML = 'Now add the minutes it saved (net of your own time) to test it against break-even \u2014 or pick a benchmark to start.';
-      } else if (minutes >= be) {
+      } else if (Math.abs(minutes - be) < 0.05) {
+        st.innerHTML = 'Right at break-even \u2014 the time saved just covers its credits, at ' + Math.round(share * 100) + '% usable.';
+        cls += ' cwroi-status-ok';
+      } else if (minutes > be) {
         st.innerHTML = 'Clears break-even \u2014 it saves about <strong>' + mins(minutes - be) + '</strong> more than its credits cost, at ' + Math.round(share * 100) + '% usable.';
         cls += ' cwroi-status-ok';
       } else {
@@ -87,21 +105,21 @@
 
     // ── Sensitivity: break-even minutes at 25 / 50 / 100% usable ──
     [[25, 0.25], [50, 0.5], [100, 1]].forEach(function (p) {
-      var beP = breakEven(cost, rate, p[1]);
+      var beP = canBE ? breakEven(cost, rateRaw, p[1]) : Infinity;
       var cell = $('cwroi-sens-' + p[0]);
       if (!cell) return;
       var mark = '';
-      if (minutes > 0 && isFinite(beP)) {
+      if (canBE && minutes > 0 && isFinite(beP)) {
         mark = minutes >= beP
           ? ' <span class="cwroi-tick cwroi-tick-ok">clears</span>'
           : ' <span class="cwroi-tick cwroi-tick-no">short</span>';
       }
-      cell.innerHTML = (credits > 0 && isFinite(beP) ? mins(beP) : '\u2014') + mark;
+      cell.innerHTML = (canBE && isFinite(beP) ? mins(beP) : '\u2014') + mark;
     });
 
-    if ($('cwroi-sr')) $('cwroi-sr').textContent = credits > 0
+    if ($('cwroi-sr')) $('cwroi-sr').textContent = canBE
       ? 'Break-even ' + mins(be) + ' to cover ' + money(cost) + ' of credits at ' + Math.round(share * 100) + ' percent usable time.' + (minutes > 0 ? (minutes >= be ? ' Your estimate clears it.' : ' Your estimate is below it.') : '')
-      : 'Enter credits to compute break-even.';
+      : 'Enter credits, price and rate to compute break-even.';
   }
 
   function setShare(sh) {
