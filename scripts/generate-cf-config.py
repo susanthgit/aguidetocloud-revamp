@@ -85,7 +85,10 @@ def generate_headers(config):
 
         lines.append(path)
         for key, value in headers.items():
-            lines.append(f"  {key}: {value}")
+            if key.startswith("!"):
+                lines.append(f"  ! {key[1:].strip()}")
+            else:
+                lines.append(f"  {key}: {value}")
         lines.append("")
 
     # Override global X-Frame-Options for /countdown/* (allows embed)

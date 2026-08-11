@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 09 Aug 2026 22:46:11 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 05:19:30 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Users' locations may not be accurate during iOS Microsoft Teams emergency calls</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1451939</link>
+      <description>[Microsoft Teams] Users' locations may not be accurate during iOS Microsoft Teams emergency calls.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1451939</guid>
+      <pubDate>Mon, 10 Aug 2026 12:44:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Some admins may see delays for Copilot Adoption and Copilot Readiness reports in Viva Insights and the M365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1452280</link>
+      <description>[Microsoft 365 suite] Admins may see delays for Copilot Adoption and Copilot Readiness reports in Viva Insights and the M365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1452280</guid>
+      <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may encounter intermittent failures with an error when sending prompts in Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1449264</link>
@@ -26,15 +44,6 @@
       <pubDate>Thu, 06 Aug 2026 07:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Teams] Users may be unable to close the share tray when using the "Share window" feature in Microsoft Teams Town Halls</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1448287</link>
-      <description>[Microsoft Teams] Users may be unable to close the share tray when using the "Share window" feature in Microsoft Teams Town Halls.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1448287</guid>
-      <pubDate>Wed, 05 Aug 2026 18:39:54 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users' Microsoft 365 Copilot Analyst and Researcher agents may open a new chat window instead of the agents</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1447275</link>
       <description>[Microsoft Copilot (Microsoft 365)] Users' Copilot Analyst and Researcher agents may open a new chat window when opened from app store.</description>
@@ -48,7 +57,7 @@
       <link>https://www.aguidetocloud.com/service-health/#PB1451187</link>
       <description>[Power BI] Users may be unable to refresh some Power BI dataflows.</description>
       <category>Power BI</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">PB1451187</guid>
       <pubDate>Sun, 02 Aug 2026 04:00:00 +0000</pubDate>
     </item>
@@ -156,7 +165,7 @@
       <link>https://www.aguidetocloud.com/service-health/#MP1440966</link>
       <description>[Microsoft Purview] If action isn’t taken, collection and DLP policies for user data uploads to unmanaged apps might not work as expected. </description>
       <category>Microsoft Purview</category>
-      <category>investigating</category>
+      <category>investigationSuspended</category>
       <guid isPermaLink="false">MP1440966</guid>
       <pubDate>Mon, 27 Jul 2026 22:50:42 +0000</pubDate>
     </item>
@@ -165,7 +174,7 @@
       <link>https://www.aguidetocloud.com/service-health/#MP1440962</link>
       <description>[Microsoft Purview] If action isn't taken, DLP policies targeting user data uploads to unmanaged apps in Edge might not function as expected</description>
       <category>Microsoft Purview</category>
-      <category>investigating</category>
+      <category>investigationSuspended</category>
       <guid isPermaLink="false">MP1440962</guid>
       <pubDate>Mon, 27 Jul 2026 22:39:50 +0000</pubDate>
     </item>
@@ -448,15 +457,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CP1425545</guid>
       <pubDate>Fri, 10 Jul 2026 17:48:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Intune] Users may be unable to access Wi-Fi or VPN on Android devices</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1446841</link>
-      <description>[Microsoft Intune] Users may have been unable to access Wi-Fi or VPN on Android devices that required a certificate from Microsoft Intune.</description>
-      <category>Microsoft Intune</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">IT1446841</guid>
-      <pubDate>Thu, 09 Jul 2026 22:25:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
