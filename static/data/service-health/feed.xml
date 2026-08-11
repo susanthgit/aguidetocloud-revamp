@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 11 Aug 2026 17:09:26 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 19:16:38 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Some users may be unable to access the Share tab in Microsoft Teams on Android devices</title>
@@ -33,6 +33,15 @@
       <category>falsePositive</category>
       <guid isPermaLink="false">TM1452699</guid>
       <pubDate>Mon, 10 Aug 2026 17:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users may experience failures when generating Microsoft Teams meeting attendance reports</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1452993</link>
+      <description>[Microsoft Teams] Users may experience failures when generating Microsoft Teams meeting attendance reports.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1452993</guid>
+      <pubDate>Mon, 10 Aug 2026 16:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] Users' locations may not be accurate during iOS Microsoft Teams emergency calls</title>
@@ -396,6 +405,15 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <pubDate>Fri, 17 Jul 2026 15:50:49 +0000</pubDate>
     </item>
     <item>
+      <title>[Exchange Online] Some users may see unwanted add-ins appearing automatically across all Outlook clients</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1441488</link>
+      <description>[Exchange Online] Users may see unwanted add-ins appearing automatically across all Outlook clients.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1441488</guid>
+      <pubDate>Fri, 17 Jul 2026 10:26:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some admins can't access Copilot Agent report data in the Microsoft 365 admin center from July 14, 2026</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1430786</link>
       <description>[Microsoft Copilot (Microsoft 365)] Admins couldn't access Copilot Agent report data in the Microsoft 365 admin center from July 14, 2026.</description>
@@ -439,24 +457,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1435168</guid>
       <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Intune] Users' newly enrolled Windows devices are marked as non-compliant in Microsoft Intune</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1431577</link>
-      <description>[Microsoft Intune] Users' newly enrolled Windows devices were marked as non-compliant in Microsoft Intune.</description>
-      <category>Microsoft Intune</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">IT1431577</guid>
-      <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users were unable to see conference room availability for Exchange Online through a room-booking application</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1427120</link>
-      <description>[Exchange Online] Users were unable to see conference room availability for Exchange Online through a room-booking application. </description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1427120</guid>
-      <pubDate>Mon, 13 Jul 2026 09:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

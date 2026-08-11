@@ -1,31 +1,18 @@
 {
-  "generated_at": "2026-08-11T17:09:25.771316+00:00",
+  "generated_at": "2026-08-11T19:16:37.452637+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 19,
-      "active_incidents": 3,
+      "total_incidents": 20,
+      "active_incidents": 4,
       "avg_duration_minutes": 14677,
       "last_incident": "2026-08-10T17:30:00+00:00",
       "classifications": {
-        "advisory": 17,
+        "advisory": 18,
         "incident": 2
-      }
-    },
-    {
-      "service": "Microsoft 365 suite",
-      "short_name": "M365 Suite",
-      "icon": "📦",
-      "total_incidents": 19,
-      "active_incidents": 2,
-      "avg_duration_minutes": 7094,
-      "last_incident": "2026-08-10T00:00:00+00:00",
-      "classifications": {
-        "advisory": 14,
-        "incident": 5
       }
     },
     {
@@ -42,15 +29,28 @@
       }
     },
     {
+      "service": "Microsoft 365 suite",
+      "short_name": "M365 Suite",
+      "icon": "📦",
+      "total_incidents": 18,
+      "active_incidents": 2,
+      "avg_duration_minutes": 7493,
+      "last_incident": "2026-08-10T00:00:00+00:00",
+      "classifications": {
+        "advisory": 13,
+        "incident": 5
+      }
+    },
+    {
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 8,
-      "active_incidents": 1,
+      "total_incidents": 9,
+      "active_incidents": 2,
       "avg_duration_minutes": 7234,
       "last_incident": "2026-07-29T13:29:41.220000+00:00",
       "classifications": {
-        "advisory": 8
+        "advisory": 9
       }
     },
     {
@@ -92,19 +92,6 @@
       }
     },
     {
-      "service": "SharePoint Online",
-      "short_name": "SharePoint",
-      "icon": "📄",
-      "total_incidents": 4,
-      "active_incidents": 0,
-      "avg_duration_minutes": 24963,
-      "last_incident": "2026-07-09T11:12:00+00:00",
-      "classifications": {
-        "incident": 2,
-        "advisory": 2
-      }
-    },
-    {
       "service": "Power BI",
       "short_name": "Power BI",
       "icon": "📊",
@@ -138,6 +125,19 @@
       "last_incident": "2026-07-09T12:00:00+00:00",
       "classifications": {
         "advisory": 3
+      }
+    },
+    {
+      "service": "SharePoint Online",
+      "short_name": "SharePoint",
+      "icon": "📄",
+      "total_incidents": 3,
+      "active_incidents": 0,
+      "avg_duration_minutes": 28166,
+      "last_incident": "2026-07-09T11:12:00+00:00",
+      "classifications": {
+        "incident": 2,
+        "advisory": 1
       }
     },
     {
@@ -204,17 +204,17 @@
   "monthly": [
     {
       "month": "2026-08",
-      "incident_count": 12,
+      "incident_count": 13,
       "services_affected": 6
     },
     {
       "month": "2026-07",
-      "incident_count": 54,
+      "incident_count": 55,
       "services_affected": 14
     },
     {
       "month": "2026-06",
-      "incident_count": 35,
+      "incident_count": 33,
       "services_affected": 13
     },
     {
