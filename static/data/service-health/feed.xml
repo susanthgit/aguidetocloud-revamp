@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 11 Aug 2026 22:58:27 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 02:40:04 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Admins may see incorrect Teams membership information for users in the Teams Admin Center </title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1453149</link>
+      <description>[Microsoft Teams] Admins may have seen incorrect Teams membership information for users in the Teams Admin Center.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1453149</guid>
+      <pubDate>Tue, 11 Aug 2026 23:14:25 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Some users may be unable to access the Share tab in Microsoft Teams on Android devices</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1452695</link>
@@ -448,15 +457,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1428746</guid>
       <pubDate>Wed, 15 Jul 2026 14:16:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Some users may be unable to view location and subject details for other users' Exchange Online calendar items</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1435168</link>
-      <description>[Exchange Online] Users may have been unable to view location and subject details for other users' Exchange Online calendar items.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1435168</guid>
-      <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
