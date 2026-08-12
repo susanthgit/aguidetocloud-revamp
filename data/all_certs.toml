@@ -11557,3 +11557,45 @@ exam_prerequisites = "None required to sit the exam. Fortinet recommends at leas
 exam_question_types = ["Written questions", "Operational scenarios", "Configuration extracts", "Troubleshooting captures"]
 guided_url = "/guided/fortinet-fortinac-f-administrator/"
 practice_url = "/guided/fortinet-fortinac-f-administrator/practice/"
+
+[[cert]]
+  slug = "databricks-context-engineer-associate"
+  vendor = "databricks"
+  code = "DATABRICKS-CONTEXT-ENGINEER-ASSOCIATE"
+  name = "Certified Context Engineer Associate"
+  tagline = "Master the Databricks Certified Context Engineer Associate exam (GA 29 Jul 2026 guide) - engineering the context agents run on: diagnosing the four failure modes (poisoning, distraction, confusion, clash), Databricks AI Search retrieval and AI/BI Genie spaces, durable cross-session memory on Lakebase, MCP tool design, compaction and trimming, and multi-agent shared context, measured with MLflow 3 and governed by Unity Catalog."
+  exam_category = "Databricks"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 7
+  order = 861
+  featured = false
+  price_practice = 9
+
+  [cert_map."databricks-context-engineer-associate"]
+  vendor = "databricks"
+  code = "DATABRICKS-CONTEXT-ENGINEER-ASSOCIATE"
+  name = "Certified Context Engineer Associate"
+  tagline = "Master the Databricks Certified Context Engineer Associate exam (GA 29 Jul 2026 guide) - engineering the context agents run on: diagnosing the four failure modes (poisoning, distraction, confusion, clash), Databricks AI Search retrieval and AI/BI Genie spaces, durable cross-session memory on Lakebase, MCP tool design, compaction and trimming, and multi-agent shared context, measured with MLflow 3 and governed by Unity Catalog."
+  exam_category = "Databricks"
+  level = "associate"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 7
+  order = 861
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.databricks.com/learn/certification/context-engineer-associate"
+  exam_cost = "$200 USD"
+  exam_duration = 90
+  exam_passing_score = "Not officially published (pass/fail)"
+  exam_questions_real = "45"
+  exam_provider = "Databricks (online or test center, proctored)"
+  exam_validity = "2 years"
+  exam_prerequisites = "None"
+  exam_question_types = ["Multiple choice"]
+  guided_url = "/guided/databricks-context-engineer-associate/"
+  practice_url = "/guided/databricks-context-engineer-associate/practice/"
