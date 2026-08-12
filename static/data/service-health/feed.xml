@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 12 Aug 2026 15:11:09 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 17:08:37 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Admins may see incorrect Teams membership information for users in the Teams Admin Center </title>
@@ -53,9 +53,9 @@
       <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Purview] Admins may see communication compliance delays regarding alerts for policies configured to capture specific classifiers</title>
+      <title>[Microsoft Purview] Admins see communication compliance delays regarding alerts for policies configured to capture specific classifiers</title>
       <link>https://www.aguidetocloud.com/service-health/#MP1452564</link>
-      <description>[Microsoft Purview] Admins may see communication compliance delays regarding alerts for policies configured to capture specific classifiers.</description>
+      <description>[Microsoft Purview] Admins see communication compliance delays regarding alerts for policies configured to capture specific classifiers.</description>
       <category>Microsoft Purview</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MP1452564</guid>
