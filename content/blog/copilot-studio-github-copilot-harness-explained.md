@@ -1,0 +1,368 @@
+---
+title: "The GitHub Copilot Harness in Copilot Studio, Explained"
+list_title: "Copilot Studio's GitHub Copilot Harness — Explained Simply"
+hub_id: "ai-agents"
+description: "What is the GitHub Copilot harness in Copilot Studio? A plain-English guide to the three harnesses, what's new, how to build one, and why the credit meter works differently."
+date: 2026-08-11
+lastmod: 2026-08-11
+card_tag: "AI Agents"
+tag_class: "ai"
+layout: "notebook"
+stamp: "new in 2026"
+intro_note: "↗ a customer asked me this last week and I had to go and learn it properly"
+images: ["images/og/blog/copilot-studio-github-copilot-harness-explained.jpg"]
+og_headline: "The GitHub Copilot Harness, Explained"
+og_glyph: "compare"
+tags:
+  - copilot-studio
+  - ai-agents
+  - github-copilot
+  - copilot-credits
+  - harness
+faq:
+  - question: "What is the GitHub Copilot harness in Copilot Studio?"
+    answer: "It's a new runtime and authoring experience in Microsoft Copilot Studio for building reasoning-heavy, multi-step agents. Instead of you drawing out topics and branching flows, you describe what you want in plain language and the harness plans the steps, calls the right tools, works with files, and adjusts when something fails. Microsoft's public docs currently list it as a production-ready preview (first noted June 2026). It's the most capable of Copilot Studio's three harnesses — and it bills differently from the others."
+  - question: "Is the GitHub Copilot harness the same as GitHub Copilot?"
+    answer: "No. GitHub Copilot is the coding assistant developers use in VS Code and on GitHub, billed per seat through GitHub. The GitHub Copilot harness is a runtime option inside Copilot Studio for building business agents. They share a family name and some underlying technology, but they're different products with separate billing. You don't need a GitHub Copilot subscription to use the harness in Copilot Studio."
+  - question: "What is a harness in Copilot Studio?"
+    answer: "Microsoft's definition: a harness is the runtime that sits between your design and the model. You design the agent, the model does the reasoning, and the harness decides when to call the model, what to send it, how to read the answer, and which tools to call. Copilot Studio now has three: the GitHub Copilot harness, the standard harness, and the Copilot chat harness."
+  - question: "How does billing work on the GitHub Copilot harness?"
+    answer: "It uses usage-based billing in Copilot Credits, and — this is the big difference — the meter starts the moment you start building. Creating an agent in natural language, previewing/testing it, and generating or running evaluations all consume credits. On the standard harness those authoring and test steps are not billed. Credits on the GitHub Copilot harness cover the model tokens, the tools it calls, and the harness itself."
+  - question: "Does a Microsoft 365 Copilot licence make the GitHub Copilot harness free?"
+    answer: "No. The zero-rating on the standard and Copilot chat harnesses only applies to an authenticated Microsoft 365 Copilot–licensed user using the agent on an eligible Microsoft 365 surface (Copilot, Teams, SharePoint), within fair-use limits — and it does not apply to the GitHub Copilot harness at all. On this harness, natural-language authoring, testing, evaluating and runtime consume credits regardless of whether the user holds a Microsoft 365 Copilot licence."
+  - question: "How do I build an agent on the GitHub Copilot harness?"
+    answer: "Go to copilotstudio.microsoft.com and open the new experience (turn on the New experience toggle if you don't see it). Describe what you want in plain language, answer the clarifying questions as it builds, then refine on the Build tab, try it on the Preview tab, check quality on the Evaluate tab, and publish. One prerequisite: the natural-language creation experience uses Anthropic models, so an admin must allow Anthropic in the Microsoft 365 admin centre and enable external models for the environment first."
+  - question: "When should I use the GitHub Copilot harness instead of the standard harness?"
+    answer: "Use the GitHub Copilot harness when the agent needs to reason through a longer task, work across several tools, handle files, or run a real business process end to end. Use the standard harness when the scenario is well-defined and rule-based and you want consistent, predictable answers. Use the Copilot chat harness when you just want to extend Microsoft 365 Copilot Chat with your organisation's knowledge."
+  - question: "Where can I see and control credit consumption?"
+    answer: "In the Power Platform admin centre under Licensing then Copilot Studio — it shows prepaid capacity, pay-as-you-go usage, and consumption by environment. Pay-as-you-go is billed at $0.01 per credit through a linked Azure subscription, and admins can set per-agent monthly limits so nothing runs away. Always validate real burn against Microsoft's live usage reports once you're running."
+  - question: "Who can build an agent on the GitHub Copilot harness, and how do we govern it?"
+    answer: "The tenant admin acquires the Copilot Studio tenant licence and assigns per-user Copilot Studio user licences to makers in the Microsoft 365 admin centre; you can further restrict who builds via the Copilot Studio authors setting in the Power Platform admin centre, which points at an Entra security group. People who only use a published agent need no licence, and guest users can't access Copilot Studio. Because the agents run in Power Platform environments, your existing environment strategy and data loss prevention (DLP) policies apply — keep dev, test and production separate, and give a build environment its own capacity budget since credits are consumed from the first build action."
+  - question: "What knowledge and retrieval sources does the GitHub Copilot harness support?"
+    answer: "Add trusted content so the agent grounds answers in your data. On the Build tab: Knowledge covers your own files, SharePoint sites and websites; Microsoft IQ connects the agent to your Microsoft 365 data (emails, files, Teams messages, calendar, people); and Foundry IQ — added from the Build tab's Tools button, not Knowledge — connects a knowledge base already built in Azure AI Foundry. A well-grounded agent can cite sources instead of declining, though grounding doesn't guarantee correctness, so validate answers in Preview and Evaluate. Retrieving from knowledge can add credits too — it's the retrieval and tokens, not the raw size of your data."
+sitemap:
+  priority: 0.8
+founder_note: |
+  A customer asked me "so what's this *GitHub Copilot harness* thing in Copilot Studio, and is it going to blow up my bill?" — and I realised I couldn't answer it cleanly off the top of my head. So I went and learned it properly, and this is the version I wish I'd had that afternoon.
+
+  Here's the honest, plain-English take. A "harness" sounds like jargon, but it's just the engine your agent runs on — and Copilot Studio now has three of them. The newest one, the GitHub Copilot harness, is quietly a big shift: you describe what you want and it works out the steps. The catch worth understanding up front is that it meters differently — the credit clock starts when you *start building*, not when you publish. I'll walk through what it is, how the three compare, how to build one, and where the credits go. Prices and preview status are current as of August 2026 — they'll move, so always confirm on Microsoft Learn before you budget. — Sush
+---
+
+**The short version:** Copilot Studio now runs agents on one of **three "harnesses"** — the engine behind your agent. The new **GitHub Copilot harness** is the most capable: you describe an agent in **plain language** and it **plans, reasons, works with files, and calls tools** to get a job done end to end. The trade-off is billing — it's **usage-based (Copilot Credits) from the moment you start building**, and the "free with Microsoft 365 Copilot" treatment that applies to the other harnesses **doesn't apply here**.
+
+> 🧩 **One thing to get straight first:** the **GitHub Copilot harness** (a runtime *inside Copilot Studio*) is **not** the same as **GitHub Copilot** (the coding assistant developers buy per seat). Same family name, different products, different bills. [Jump to why ↓](#not-github-copilot)
+
+<p><img src="/images/blog/copilot-studio-harness/01-home-new-experience.webp" alt="The new Copilot Studio home experience with a 'New Copilot Studio experience — Try now' banner and a natural-language box reading 'Start building by describing what your agent needs to do'." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*This is the new experience (turn on "New experience" if you don't see it). Instead of drawing out topics and flows, you describe the agent in plain language. (Lab tenant.)*
+
+<div class="living-doc-banner">
+
+🔄 **This is a fast-moving area.** Microsoft's public docs currently list the **GitHub Copilot harness** as a **production-ready preview** (first noted in the Copilot Studio *What's new* for **June 2026**). Feature behaviour and pricing can change before general availability. Always confirm on Microsoft Learn: [Choose a harness](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview) and [usage-based billing overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview). **Last verified: 11 August 2026.**
+
+</div>
+
+---
+
+## Wait — what's a "harness"? {#what-is-a-harness}
+
+I'll be honest: the first time I saw the word "harness" I had to go and look it up too. Here's the way I now think about it.
+
+When you build an agent, three things are in play:
+
+1. **Your design** — what you want the agent to do.
+2. **The model** — the AI that does the reasoning and writing.
+3. **The bit in the middle** — something has to decide *when* to call the model, *what* to send it, how to read the answer, and which tools to call next.
+
+That bit in the middle is the **harness**. In Microsoft's own words:
+
+> "The harness is a *runtime* that exists between the two: it determines when to call the model, what components to send it, interprets what comes back, and calls the right tools."
+> — [Microsoft Learn, *Choose a harness*](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview)
+
+{{< margin >}}If it helps: the model is the engine, your design is the destination, and the harness is the driver deciding the route and when to change gear.{{< /margin >}}
+
+The new part in 2026 is that Microsoft's documentation now describes **three** harnesses — and which one you build on changes what your agent can do **and how you're billed**.
+
+---
+
+## The three harnesses at a glance {#three-harnesses}
+
+Here's the plain-English comparison, straight from Microsoft's *Choose a harness* guidance:
+
+| | **GitHub Copilot harness** | **Standard harness** | **Copilot chat harness** |
+|---|---|---|---|
+| **Best for** | Complex, multi-step business processes | Rule-based agents and structured, repeatable conversations | Extending Microsoft 365 Copilot Chat with your own knowledge |
+| **How it works** | Takes a goal, breaks it into steps, adapts as it goes | Follows the topics and rules you define | Connects your knowledge into Microsoft 365 Copilot |
+| **Recovers from problems** | Retries and finds another path automatically | Follows the paths you built | Not a focus |
+| **Works with files** | Natively creates & edits Word, Excel, PowerPoint, PDF | Not a focus | Not a focus |
+| **Skills & memory** | Yes | Not a focus | Not a focus |
+| **Billing** | **Copilot Credits (usage-based)** | Standard licensing + Copilot Credits | Consumption, or included in the Microsoft 365 Copilot licence |
+
+<p><img src="/images/blog/copilot-studio-harness/02-choose-a-harness.webp" alt="The Copilot Studio create screen showing Agent and Workflow cards both tagged 'GitHub Copilot', a 'Uses Copilot Credits' pill, and an 'Other ways to build' bar for standard agents and flows with rule-based orchestration." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The **"GitHub Copilot"** tags and the **"Uses Copilot Credits"** pill are the tell — this is the metered harness. **"Other ways to build"** at the bottom is where the standard, rule-based agents and flows still live. (Lab tenant.)*
+
+The one-line summary I keep in my head: **standard = follows your rules, GitHub Copilot = figures it out, Copilot chat = grounds Microsoft 365 Copilot in your knowledge.**
+
+---
+
+## When should you use which harness? {#when-to-use}
+
+So which one do you reach for?
+
+- **GitHub Copilot harness** — when the agent needs to **reason through a longer task, work across several tools, handle files, or run a real business process end to end.** (Onboarding, accounts payable, triage-and-route, "read these and decide" work.)
+- **Standard harness** — when the scenario is **well-defined and rule-based** and you want **consistent, predictable** answers. (FAQ bots, structured intake, "always do exactly this" flows.)
+- **Copilot chat harness** — when you just want to **extend Microsoft 365 Copilot Chat with your organisation's knowledge** so people get grounded answers without leaving Copilot.
+
+Or follow the tree:
+
+```mermaid
+flowchart TD
+    A["What are you building?"] --> B{"Just surfacing your knowledge inside Microsoft 365 Copilot Chat?"}
+    B -- Yes --> C["Copilot chat harness"]
+    B -- No --> D{"Is the job well-defined and rule-based?"}
+    D -- "Yes, predictable and scripted" --> E["Standard harness (free to build and test)"]
+    D -- "No, needs judgement" --> F{"Multi-step, many tools, files, or a whole process end to end?"}
+    F -- Yes --> G["GitHub Copilot harness (usage-based credits)"]
+    F -- "Not really" --> E
+```
+
+*(Choosing between build tools — Agent Builder vs Copilot Studio vs Foundry — rather than harnesses within Copilot Studio? That's a different decision: see [Agent Builder vs Copilot Studio vs Foundry](/blog/agent-builder-vs-copilot-studio-vs-foundry/).)*
+
+---
+
+## So what *is* the GitHub Copilot harness? {#github-copilot-harness}
+
+Microsoft describes it as a **redesigned authoring and runtime environment** with a **natural-language-first** approach. Instead of drawing out explicit topics, triggers, and branching flows (the standard-harness way), **you describe your agent in plain language and the system builds the underlying configuration.**
+
+What that unlocks, out of the box:
+
+- **Enhanced orchestration** — it takes a goal, breaks it into steps, and **recovers** when a step fails or the request changes.
+- **Files as first-class** — it can **create and edit Word, Excel, PowerPoint, and PDF** natively, and reason over them.
+- **Tools, knowledge & MCP** — it calls connectors, knowledge sources, MCP servers and **connected agents**, deciding when to use each.
+- **Skills** — reusable, self-contained instruction packages you build once and add to many agents.
+- **Memory** *(preview)* — per-user context so an agent remembers preferences across conversations (it's private from makers, off in group chats and Teams channels, and cleared after ~28 days of inactivity).
+
+Microsoft's example scenario is a good "aha": an **accounts-payable** agent that reads invoices, matches them to purchase orders, and routes the exceptions for approval — the kind of messy, multi-step, decision-heavy process that a rules-based flow struggles with.
+
+{{< margin >}}The mental shift: on the standard harness you *design the path*. On the GitHub Copilot harness you *describe the destination* and it works out the path.{{< /margin >}}
+
+---
+
+## What's new — and why you're suddenly hearing about it {#whats-new}
+
+A quick, honest timeline (from Microsoft's public *What's new* page — I'm sticking to what's actually documented):
+
+- **June 2026** — the new experience shows up in Copilot Studio's *What's new* as a **production-ready preview**: *"The GitHub Copilot harness uses an enhanced orchestration runtime for improved response quality and reasoning, available alongside the classic experience."* Memory, Skills, connected agents and **Microsoft IQ** grounding land around the same time.
+- **As of August 2026** — it's the experience you're guided into at [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com) (toggle **New experience** on if you don't see it). To build the older way, turn the toggle off or choose **"Other ways to build."**
+
+<p><img src="/images/blog/copilot-studio-harness/03-left-nav-change.webp" alt="Before-and-after of the Copilot Studio left navigation: the classic experience shows Agents, Flows, and Tools; the new experience shows Agents and Workflows, where Workflows is the GitHub Copilot harness automation surface." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The new experience has its own left rail — note **Workflows**, the GitHub Copilot harness automation surface. It isn't just a rename: the classic experience keeps **Agents**, **Flows** and **Tools**, and standard-harness agent flows still live there. That's why the menu looks different depending on which experience you're in. (Lab tenant.)*
+
+> ⚠️ **A small but important honesty note on status.** You might see this referred to elsewhere as *"generally available."* As of **August 2026**, Microsoft's **public** documentation still labels it a **production-ready preview** — so that's the wording I'm using here. It's a good reminder to treat the specifics (especially pricing) as **still settling**, and to confirm on Learn before you quote anything to a customer.
+
+---
+
+## Is this the same as GitHub Copilot (the coding one)? No. {#not-github-copilot}
+
+This is the question I get asked most, so let's clear it up.
+
+| | **GitHub Copilot** | **GitHub Copilot harness (in Copilot Studio)** |
+|---|---|---|
+| **What it is** | AI coding assistant for developers | A runtime for building business agents |
+| **Where you use it** | VS Code, JetBrains, github.com | copilotstudio.microsoft.com |
+| **Who it's for** | Software developers | Business makers & enterprise builders |
+| **How it's billed** | Separate GitHub plans (some per user / seat), billed by GitHub | Copilot Credits through Copilot Studio |
+| **Do you need it for the other?** | — | **Not listed as a requirement** — Copilot Studio setup doesn't ask for a GitHub Copilot seat |
+
+The way I explain it: the name points to a shared lineage with GitHub Copilot's agent tooling — but I'll be honest, I couldn't find an official statement spelling out exactly how the two relate under the hood. The part that matters in practice is simpler: **you don't buy GitHub Copilot seats to use it.** Nothing in the Copilot Studio setup asks for one.
+
+{{< margin >}}Two different bills, two different products. If a customer's worried "do we need GitHub licences now?" — the answer is no.{{< /margin >}}
+
+---
+
+## The part everyone asks about: credits & consumption {#credits}
+
+Here's the single most important thing to understand, and the reason I wanted to write this down.
+
+On the **standard harness**, the rule of thumb has always been: **free to build and test, you pay once you publish and run at scale** — and a lot of internal, licensed usage is **zero-rated** (see our [Copilot Studio pricing guide](/blog/copilot-studio-pricing/) and [What are Copilot Credits?](/blog/copilot-credits-explained/)).
+
+**The GitHub Copilot harness changes that rule.** In Microsoft's own words:
+
+> "Unlike the standard harness, which starts billing after publish, the GitHub Copilot harness **charges credits from the moment you start building.** Experiences such as creating an automated solution with natural language, previewing and testing the agent, and generating and creating agent evaluations all consume credits."
+> — [Microsoft Learn, *usage-based billing overview*](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview)
+
+And crucially: **the Microsoft 365 Copilot "no extra charge for licensed users" treatment does *not* apply here.** On this harness, **build, test, evaluate and run all consume credits — regardless of whether the person holds a Microsoft 365 Copilot licence.**
+
+### Where the two models differ — side by side {#billing-compare}
+
+Here's the fuller version you might have seen floating around — same three-column layout, but rebuilt from Microsoft's **public** billing docs, so it's the version you can put in front of a customer:
+
+| | Copilot chat harness | Standard harness | **GitHub Copilot harness** |
+|---|---|---|---|
+| **Agent creation** | | | |
+| Natural-language authoring | *n/a* | Not billed | **Usage-based** |
+| Evaluations | *n/a* | Not billed to build | **Usage-based** |
+| Test / Preview | Not billed | Not billed | **Usage-based** |
+| **Agent runtime** | | | |
+| External channels (web, apps, social) | *n/a* | Published rate card | **Usage-based** |
+| Users **without** a Microsoft 365 Copilot licence | Published rate card | Published rate card | **Usage-based** |
+| Users **with** a Microsoft 365 Copilot licence | Not billed (fair use)* | Not billed (fair use)* | **Usage-based** |
+
+<small>*"Not billed (fair use)" applies only to **employee-facing** use, by an **authenticated Microsoft 365 Copilot–licensed** user, on a **Microsoft 365 surface** (Copilot / Teams / SharePoint), within **fair-use limits**. Outside those conditions the published rate card applies — see the [full boundary here](/blog/copilot-studio-pricing/#included). On the **GitHub Copilot harness**, natural-language authoring, testing, evaluating and runtime all consume Copilot Credits regardless of licence.</small>
+
+The row that changes everything is the last one: on the other two harnesses an **authenticated Microsoft 365 Copilot–licensed** user on an eligible Microsoft 365 surface can be **zero-rated** (within fair-use limits) — on the GitHub Copilot harness that treatment **doesn't apply**.
+
+> 🧮 **Want to model it before you build?** Microsoft has a public [Copilot Studio agent usage estimator](https://microsoft.github.io/copilot-studio-estimator/) — pick agent type, traffic, orchestration, knowledge and tools to forecast credit consumption.
+
+### What actually drives the credit burn {#cost-drivers}
+
+Microsoft describes GitHub-Copilot-harness billing as **usage-based and complexity-tiered**, covering three things: **the model tokens, the tools it calls (knowledge, MCP, connectors), and the harness itself.** So your burn goes up with:
+
+- **Task complexity** — more reasoning steps and retries = more tokens.
+- **How much context** the agent pulls in, and **how much of your data** it reaches into.
+- **The tools and actions** it invokes to finish the job.
+
+> ⚠️ **One honest gap:** for the standard harness Microsoft publishes a neat per-action rate card (a classic answer = 1 credit, a generative answer = 2, an agent action = 5, tenant graph grounding = 10 — full table in [Copilot Credits explained](/blog/copilot-credits-explained/#rate-card)). For the **GitHub Copilot harness**, I could *not* find an equivalent public per-action table — Microsoft describes it as token/complexity-based and shows **ranges**, not fixed per-feature prices. So don't promise a customer a tidy "X credits per run." Pilot it, watch the meter, then model it.
+
+### How you pay, and how to keep it sane {#paying}
+
+- **Pay-as-you-go** — **$0.01 per credit** through a linked **Azure subscription** (set up with a billing policy in the Power Platform admin centre). Best for pilots and unpredictable usage.
+- **Prepaid capacity** — capacity packs / pre-purchased **Copilot Credit Commit Units (CCCUs)** for steady, predictable usage.
+- **Guardrails** — credits are allocated per **environment**, and you watch consumption in the **Power Platform admin centre → Licensing → Copilot Studio**. If an environment runs out — with no pay-as-you-go to cover the overage — agents stop for end users and makers get **blocked** from authoring, previewing and evaluating. (Microsoft allows some overage, *similar to a grace period*, but doesn't publish its size or duration — don't rely on it.) So plan capacity *before* a build sprint — more on controls in [Governance](#governance) below.
+
+{{< margin >}}Because the meter runs during building, treat a build/test sprint as a *consuming* activity, not a free one. Give makers a capacity budget and a limit.{{< /margin >}}
+
+<p><img src="/images/blog/copilot-studio-harness/09-ppac-credit-consumption.webp" alt="Power Platform admin centre, Licensing to Copilot Studio, Summary tab — showing Manage Copilot Credits and Download report buttons, a pay-as-you-go Copilot Credits card, and a prepaid capacity table with a 25,000 Copilot Credits capacity." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*This is the one screen to bookmark: **Power Platform admin centre → Licensing → Copilot Studio**. You manage credits and pull consumption reports here, and see both your **pay-as-you-go** meter and your **prepaid capacity** (a pack is 25,000 credits/month). (Lab tenant — figures zeroed.)*
+
+---
+
+## Governance & keeping costs under control {#governance}
+
+Because the meter runs from the first build action, the questions I get from admins and CISOs are less *"what can it do?"* and more *"who can spend, and how do we cap it?"* Here's what I've been able to confirm from Microsoft's docs.
+
+**Who can build one.** The tenant admin **acquires** the **Copilot Studio tenant licence** and **assigns per-user Copilot Studio user licences** to makers in the Microsoft 365 admin centre. You can further restrict *who* builds through the **Copilot Studio authors** setting in the Power Platform admin centre, which you point at an **Entra security group**. Two reassuring details: people who just *use* a published agent need no special licence, and **guest users can't access Copilot Studio** at all.
+
+**Turn the model on first.** The natural-language *creation* experience runs on **Anthropic models**. An admin has to allow Anthropic in the Microsoft 365 admin centre and enable external models for the environment; without that, natural-language creation is unavailable (the classic build paths still work). Worth checking regional and compliance limits before enabling it.
+
+**Cap the spend.** Copilot Credits are allocated to **environments**. When one runs out, Microsoft's own enforcement kicks in — agents stop responding for end users, and makers are blocked from authoring, previewing and evaluating. Microsoft allows some overage — described as *similar to a grace period* — but doesn't publish how much or for how long, so don't count on it. To manage it you **reallocate capacity**, **buy more**, or **enable pay-as-you-go** (a billing policy linking the environment to an Azure subscription at $0.01/credit). The practical takeaway from "bills from build": give a **maker/build environment its own capacity budget**, kept separate from production.
+
+**Govern it like the rest of Power Platform.** These agents live in **Power Platform environments**, so your existing environment strategy and **data loss prevention (DLP)** policies apply — keep **dev / test / production** separate, watch consumption in the admin centre, and export session logs from the agent's **Monitor** tab for auditing. One reassurance for security teams: Microsoft says each GitHub-Copilot-harness task runs in a **secure sandbox governed by Copilot Studio**.
+
+> ⚠️ Exact admin controls are still settling while the harness is in preview — confirm current behaviour in Microsoft's [enforcement policy](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/enforcement-policy-credits) and [licensing & access](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing) docs before you design a rollout.
+
+---
+
+## How to actually build one {#how-to}
+
+The workflow's friendlier than I expected — here's the shape of it.
+
+> 📋 **Prerequisite worth knowing:** the natural-language creation experience **uses Anthropic models**, and it's only available in environments where **access to Anthropic models is turned on**. If the "describe your agent" box isn't available, that's one of the first things to check — ask your admin whether Anthropic models are enabled for your environment.
+
+1. **Go to [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com).** The new (GitHub Copilot harness) experience is the one you're steered into — if you don't see it, turn on the **New experience** toggle. *(Want the classic builder instead? Turn the toggle off, or choose **"Other ways to build."**)*
+2. **Describe what you want** in plain language — e.g. *"Answer employee questions about our leave and expense policies, and draft a short leave-request summary for a manager."*
+3. **Answer its clarifying questions.** It analyses the request, decides whether you need a workflow, a conversational agent, or both, and builds it in real time while you watch the Steps and Artifacts.
+4. **Refine on the Build tab** — set the agent's instructions (plain-language/Markdown), knowledge, tools, skills, model, and memory.
+5. **Try it on the Preview tab** — an interactive test chat with a chain-of-thought trace. *(Remember: this consumes credits on this harness.)*
+6. **Check quality on the Evaluate tab** — build test cases (by hand, AI-generated, or CSV) and run them. *(Also consumes credits.)*
+7. **Publish** — to Teams, Microsoft 365 Copilot, a website, or other channels.
+8. **Monitor** — track tasks, files accessed, and usage after go-live.
+
+Here's what that looks like in practice — I spun up a simple *Leave & Expense Assistant* to walk through it.
+
+**The Build tab — you write instructions, not flowcharts:**
+
+<p><img src="/images/blog/copilot-studio-harness/05-build-instructions.webp" alt="The Build tab for a 'Leave & Expense Assistant' agent, showing plain-language instructions describing the agent's role, scope, tone, and behaviour." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+<p><img src="/images/blog/copilot-studio-harness/06-build-model-config.webp" alt="The Build tab configuration rail — model set to Claude Opus 5, with Skills, Tools, Knowledge, Connected agents, and a Memory (preview) toggle." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Notice the model picker — you choose the model that powers the agent's reasoning. My lab tenant showed **Claude Opus 5**; the models on offer vary by region and release ring (and some are experimental/preview), so check what's in your own picker. (Separately, the *natural-language creation* experience runs on Anthropic models — which is why an admin has to enable those.)*
+
+**The Preview tab — you can watch it reason:**
+
+<p><img src="/images/blog/copilot-studio-harness/07-preview-reasoning.webp" alt="The Preview tab testing the agent — showing a reasoning trace, a knowledge search, and an honest answer where the agent declines to guess a number it hasn't been given." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*A nice detail: with no company policy document loaded, it **refused to invent a carry-over number** and pointed to the HR service desk instead. In this test, refusing was safer than guessing — the behaviour you'd hope for in front of a customer.*
+
+**The Evaluate tab — test at scale (and yes, it meters):**
+
+<p><img src="/images/blog/copilot-studio-harness/08-evaluate-results.webp" alt="The Evaluate tab results — a test run of 10 auto-generated conversations scored for general quality, with a 20% pass rate, over a 7-minute run." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*I let it auto-generate 10 test conversations and score them. It scored low **on purpose** — with no policy document connected, the honest "I can't confirm that" answers count as low-quality for a real deployment. The point for this post: **generating and running those evaluations consumed credits**, before I ever published. On the standard harness, that authoring and testing would be free.*
+
+**The Monitor tab — where live consumption lands once you publish:**
+
+<p><img src="/images/blog/copilot-studio-harness/10-monitor-billing.webp" alt="The Monitor tab for the agent, showing Overview, a Billing card with a Copilot credits figure, Savings, Reactions, and Tool use sections, with a time-range picker and Download Sessions button." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Everything reads zero here because I only tested in Preview — the **Monitor** tab tracks *published* runtime. But this is the dashboard you'll live in once the agent is real: conversation sessions, **Copilot credits consumed**, savings, and tool use, all in one place (and you can export the session logs for auditing).*
+
+### Make it actually useful: give it knowledge {#grounding}
+
+Remember how my demo agent *refused* to state a carry-over number? That wasn't a bug — it's the honest behaviour you want. But it also shows the flip side: **an agent is only as useful as what you ground it in.** Out of the box it reasons well and knows nothing about *your* organisation.
+
+To make it genuinely helpful, add grounding on the Build tab:
+
+- **Knowledge** — your own files, plus SharePoint sites and public websites.
+- **Microsoft IQ** — connects the agent to your Microsoft 365 data (emails, files, Teams messages, calendar, people) so answers are grounded in your tenant.
+- **Foundry IQ** — added from the Build tab's **Tools** button (not Knowledge) — connects a knowledge base already built and tuned in Azure AI Foundry.
+
+Give the Leave & Expense Assistant the actual leave policy, and when the source contains the answer it can respond *with a citation* instead of declining. Grounding doesn't guarantee correctness, though — validate retrieval and answers in Preview and Evaluate. *(Retrieval and tokens add credits — capability and cost move together.)*
+
+### A few things that surprised me {#gotchas}
+
+Building that little agent taught me more than the docs did. The honest list:
+
+- **You can't switch harnesses later.** An agent built on the GitHub Copilot harness can't be transferred to the standard harness (or vice versa) — you'd rebuild from scratch. So pick the harness deliberately up front.
+- **No Anthropic models, no magic box.** If the "describe your agent" experience isn't there, the Anthropic-models setting is one documented prerequisite worth checking.
+- **Evaluations can look brutal — and that's OK.** My agent scored 20%. The general-quality check rates relevance and completeness (it doesn't compare against expected answers), and an ungrounded agent that keeps saying "I can't confirm that" scores low. Grounding usually moves it.
+- **"Honest refusal" is a feature.** Declining to invent a number was safer than guessing here. Don't mistake "I can't confirm that" for failure.
+- **Monitor stays dark until you publish.** All those zeros aren't a bug — Preview and Evaluate don't count as published runtime.
+- **It's a preview.** Names, screens and especially pricing detail are still moving. I'll keep this post updated.
+
+---
+
+## What I'd tell a customer today {#what-to-know}
+
+If I had five minutes, this is the honest summary I'd give:
+
+- **It's a meaningful step up in capability.** Describe-it-and-it-plans is a different way to build — well suited to messy, multi-step processes.
+- **The billing model is the thing to get right.** On this harness the **meter starts when you start building**, and **a Microsoft 365 Copilot licence doesn't zero-rate it.** Budget for build/test, not just runtime.
+- **It's still a preview** (publicly). Expect change — especially on pricing detail — and confirm on Learn before you quote numbers.
+- **It's not GitHub Copilot.** You don't buy developer seats to use it.
+- **Pilot before you promise.** There's no tidy public per-action price yet, so run a small real workload, read the usage reports, then model the cost.
+
+And if I'm *with* a customer, three questions usually sort out whether this harness even fits:
+
+1. **Is the work predictable, or does it need judgement?** Scripted → standard harness. Judgement across steps → GitHub Copilot harness.
+2. **Who owns the build/test credit budget?** Because the meter runs from the first build action, someone has to own that spend.
+3. **What approved knowledge and tools can it touch?** That decides how useful — and how governable — it'll be.
+
+The simplest rule I'd leave them with: **use it for judgement-heavy work, and budget from the first build session.** I'm still learning this one as it evolves — if you spot something that's moved on since I wrote this, I'd genuinely love to hear it.
+
+---
+
+## Reference: plain-English glossary {#glossary}
+
+The jargon, minus the jargon:
+
+- **Harness** — the runtime "driver" between your design and the AI model; it decides when to call the model, what to send it, and which tools to use. Copilot Studio has three: GitHub Copilot, standard, and Copilot chat.
+- **Orchestration** — the harness working out the *steps* to reach a goal: plan, call a tool, read the result, decide what's next, and recover if something fails.
+- **Copilot Credits** — Microsoft's metering unit for agent work. The GitHub Copilot harness bills in credits for build, test, evaluate *and* run.
+- **Skills** — reusable, self-contained sets of instructions you build once and add to many agents (exportable as Markdown or packages).
+- **Memory** *(preview)* — lets an agent remember context and preferences across conversations, per user (private from makers; cleared after ~28 days of inactivity).
+- **Connected agents** — other Copilot Studio agents your agent can hand work to, so a "front-door" agent routes to specialists (currently limited to other Copilot Studio agents).
+- **Tools** — the connectors, APIs and actions an agent calls to *do* things, not just answer.
+- **MCP (Model Context Protocol)** — an open standard for plugging external tools and data sources into an agent in a consistent way.
+- **Grounding / knowledge** — the trusted content (files, SharePoint, Microsoft 365 data, a Foundry knowledge base) an agent draws on so its answers reflect *your* organisation.
+
+---
+
+## Where to go next
+
+- **[Is Copilot Studio Free? Pricing, Credits & PAYG Explained](/blog/copilot-studio-pricing/)** — the money side, in full (this post's companion).
+- **[What Are Copilot Credits?](/blog/copilot-credits-explained/)** — the meter, the rate card, and what's zero-rated.
+- **[Agent Builder vs Copilot Studio vs Foundry](/blog/agent-builder-vs-copilot-studio-vs-foundry/)** — which build tool to pick in the first place.
+- **Microsoft Learn:** [Choose a harness](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview) · [Usage-based billing overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview) · [Standard harness licensing](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing)

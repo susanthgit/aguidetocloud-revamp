@@ -47,7 +47,7 @@ founder_note: |
 
 **The short version:** **You can build and test Copilot Studio agents for free** — there's a trial, and the in-context Agent Builder is included with Microsoft 365 Copilot. **You start paying when you publish and run agents at scale**, billed in **Copilot Credits** — either **pay-as-you-go ($0.01/credit)** or **prepaid ($200 per 25,000 credits/month)**. For Microsoft 365 Copilot users, internal employee-facing agents are largely **zero-rated**.
 
-*One 2026 caveat before you read on: this "free to build, pay to publish" model is the **standard harness**. The newer **GitHub Copilot harness** (GA August 2026) bills differently — usage-based from the moment you start building. [Jump to harnesses ↓](#harnesses)*
+*One 2026 caveat before you read on: this "free to build, pay to publish" model is the **standard harness**. The newer **GitHub Copilot harness** (production-ready preview) bills differently — usage-based from the moment you start building. [Jump to harnesses ↓](#harnesses)*
 
 <!-- 📸 Screenshot placeholder: Copilot Studio pricing page on microsoft.com (Sush to capture) -->
 
@@ -121,7 +121,7 @@ Copilot Studio has three ways to pay (Microsoft labels them **Licence**, **Pre-p
 New in 2026: every Copilot Studio agent now runs on a **harness** — the runtime that sits between your design and the model. **Everything else on this page describes the *standard harness*** (rule-based agents and agent flows), which is where the Copilot Credit rate card and the Microsoft 365 Copilot zero-rating apply. There are now three:
 
 - **Standard harness** — rule-based agents and structured workflows. Billed exactly as this guide describes: **free to build and test, credits once you publish and run at scale.**
-- **GitHub Copilot harness** *(GA 3 August 2026)* — the reasoning-heavy option for multi-step agents and workflows. It uses a **different, usage-based billing model**: credits are charged for LLM tokens, tools (including knowledge and MCP), and the harness itself — and **billing starts the moment you start building.** Creating, previewing, testing and evaluating an agent all consume credits, *unlike* the standard harness, which only bills after publish.
+- **GitHub Copilot harness** *(production-ready preview)* — the reasoning-heavy option for multi-step agents and workflows. It uses a **different, usage-based billing model**: credits are charged for LLM tokens, tools (including knowledge and MCP), and the harness itself — and **billing starts the moment you start building.** Creating, previewing, testing and evaluating an agent all consume credits, *unlike* the standard harness, which only bills after publish. **→ Full walkthrough: [The GitHub Copilot harness, explained](/blog/copilot-studio-github-copilot-harness-explained/).**
 - **Copilot chat harness** — for extending Microsoft 365 Copilot Chat with your own knowledge; consumption-based or included in the Microsoft 365 Copilot licence.
 
 ⚠️ **The "free to build and test" rule only holds on the standard harness.** If you pick the GitHub Copilot harness, assume the meter is running from your first build action. See Microsoft's [Choose a harness](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview) and the [usage-based billing overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview).
