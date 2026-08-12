@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-08-12T09:21:45.058711+00:00",
+  "generated_at": "2026-08-12T11:08:49.638359+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 21,
+      "total_incidents": 19,
       "active_incidents": 4,
-      "avg_duration_minutes": 13822,
+      "avg_duration_minutes": 15533,
       "last_incident": "2026-08-11T23:14:25.303000+00:00",
       "classifications": {
-        "advisory": 19,
+        "advisory": 17,
         "incident": 2
       }
     },
@@ -92,6 +92,19 @@
       }
     },
     {
+      "service": "SharePoint Online",
+      "short_name": "SharePoint",
+      "icon": "📄",
+      "total_incidents": 4,
+      "active_incidents": 0,
+      "avg_duration_minutes": 24963,
+      "last_incident": "2026-07-09T11:12:00+00:00",
+      "classifications": {
+        "incident": 2,
+        "advisory": 2
+      }
+    },
+    {
       "service": "Power BI",
       "short_name": "Power BI",
       "icon": "📊",
@@ -152,18 +165,6 @@
       }
     },
     {
-      "service": "SharePoint Online",
-      "short_name": "SharePoint",
-      "icon": "📄",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 4924,
-      "last_incident": "2026-07-09T11:12:00+00:00",
-      "classifications": {
-        "incident": 2
-      }
-    },
-    {
       "service": "Windows Autopatch",
       "short_name": "Autopatch",
       "icon": "🪟",
@@ -203,7 +204,7 @@
   "monthly": [
     {
       "month": "2026-08",
-      "incident_count": 14,
+      "incident_count": 12,
       "services_affected": 6
     },
     {
@@ -213,7 +214,7 @@
     },
     {
       "month": "2026-06",
-      "incident_count": 32,
+      "incident_count": 34,
       "services_affected": 13
     },
     {
