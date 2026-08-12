@@ -11599,3 +11599,45 @@ practice_url = "/guided/fortinet-fortinac-f-administrator/practice/"
   exam_question_types = ["Multiple choice"]
   guided_url = "/guided/databricks-context-engineer-associate/"
   practice_url = "/guided/databricks-context-engineer-associate/practice/"
+
+[[cert]]
+  slug = "cisco-cbrfir"
+  vendor = "cisco"
+  code = "CISCO-CBRFIR"
+  name = "Conducting Forensic Analysis and Incident Response Using Cisco Technologies for Cybersecurity (CCNP CBRFIR 300-215)"
+  tagline = "Master the Cisco CCNP Cybersecurity CBRFIR 300-215 concentration - digital forensics fundamentals, YARA rules and deobfuscation, memory and host artifact analysis, MITRE ATT&CK fileless malware techniques, alert triage and correlation, threat intelligence and IOC/IOA analysis, NetFlow and Wireshark traffic analysis, and incident response playbooks."
+  exam_category = "Cisco"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 5
+  order = 222
+  featured = false
+  price_practice = 9
+
+  [cert_map."cisco-cbrfir"]
+  vendor = "cisco"
+  code = "CISCO-CBRFIR"
+  name = "Conducting Forensic Analysis and Incident Response Using Cisco Technologies for Cybersecurity (CCNP CBRFIR 300-215)"
+  tagline = "Master the Cisco CCNP Cybersecurity CBRFIR 300-215 concentration - digital forensics fundamentals, YARA rules and deobfuscation, memory and host artifact analysis, MITRE ATT&CK fileless malware techniques, alert triage and correlation, threat intelligence and IOC/IOA analysis, NetFlow and Wireshark traffic analysis, and incident response playbooks."
+  exam_category = "Cisco"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 5
+  order = 222
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.cisco.com/site/us/en/learn/training-certifications/exams/cbrfir.html"
+  exam_cost = "$300 USD"
+  exam_duration = 90
+  exam_passing_score = "Cisco scales scores 300-1000 and does not publish the exact CBRFIR cut score"
+  exam_questions_real = "~55-65"
+  exam_provider = "Pearson VUE"
+  exam_validity = "3 years"
+  exam_prerequisites = "None for the exam; CCNP Cybersecurity requires the CBRCOR 350-201 core plus one concentration exam such as CBRFIR 300-215"
+  exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop"]
+  guided_url = "/guided/cisco-cbrfir/"
+  practice_url = "/guided/cisco-cbrfir/practice/"
