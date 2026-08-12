@@ -300,7 +300,9 @@ function generateAllCertsToml(certs) {
 
 // ── Generate data/study_modules.toml — interactive study guide curriculum ──
 function generateStudyModulesToml() {
-  const GUIDED_CONTENT_DIR = path.resolve(__dirname, '../../guided/src/content');
+  // Source path is overridable so the generator can point at any Guided checkout
+  // (e.g. a worktree) instead of only the hard-coded sibling directory.
+  const GUIDED_CONTENT_DIR = process.env.GUIDED_CONTENT_DIR || path.resolve(__dirname, '../../guided/src/content');
   const lines = [
     '# Interactive study guide curriculum — Microsoft certs only',
     '# Source: guided/src/content/{cert}/domain-N/*.mdx',
@@ -325,19 +327,29 @@ function generateStudyModulesToml() {
 
     if (domainDirs.length === 0) continue;
 
-    certCount++;
+    // Collect every module for this cert first, then emit in curriculum order.
+    const modules = [];
+    let sourceFileCount = 0;
 
     for (const domDir of domainDirs) {
       const domPath = path.join(certPath, domDir);
       const mdxFiles = fs.readdirSync(domPath).filter(f => f.endsWith('.mdx')).sort();
 
       for (const mdxFile of mdxFiles) {
+        sourceFileCount++;
         const filePath = path.join(domPath, mdxFile);
-        const content = fs.readFileSync(filePath, 'utf8');
+        // Strip a leading UTF-8 BOM so the frontmatter regex still anchors at `---`.
+        // (Some .mdx files were saved with a BOM, which used to make the match fail
+        //  and silently drop the module — e.g. the whole MS-102 Domain 3.)
+        const content = fs.readFileSync(filePath, 'utf8').replace(/^\uFEFF/, '');
 
         // Parse frontmatter
         const fmMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-        if (!fmMatch) continue;
+        if (!fmMatch) {
+          // Fail loudly rather than silently skipping — a module with no parseable
+          // frontmatter is a content bug that must be fixed, not swallowed.
+          throw new Error(`[sync-cert-data] Missing or unparseable frontmatter: ${filePath}`);
+        }
 
         const fm = fmMatch[1];
         const title = (fm.match(/title:\s*"([^"]+)"/) || [])[1] || mdxFile.replace('.mdx', '');
@@ -349,18 +361,50 @@ function generateStudyModulesToml() {
         const moduleSlug = mdxFile.replace('.mdx', '');
         const guidedUrl = `/guided/${certSlug}/${domDir}/${moduleSlug}/`;
 
-        lines.push(`[[${sanitizeModuleKey(certSlug)}]]`);
-        lines.push(`title = "${escapeTOML(title)}"`);
-        lines.push(`domain = "${escapeTOML(domain)}"`);
-        lines.push(`domain_number = ${domainNumber}`);
-        lines.push(`order = ${order}`);
-        lines.push(`is_free = ${isFree}`);
-        lines.push(`estimated_minutes = ${estimatedMinutes}`);
-        lines.push(`url = "${guidedUrl}"`);
-        lines.push('');
-
-        totalModules++;
+        modules.push({ title, domain, domainNumber, order, isFree, estimatedMinutes, url: guidedUrl });
       }
+    }
+
+    // Emit in curriculum order: domain first, then the author-defined `order`.
+    // Filename order (readdir + sort) is alphabetical and does NOT match `order`,
+    // which is what made the compact cert-tracker view disagree with the Astro
+    // full view. Sorting here — the same composite key the Astro app uses — keeps
+    // both views identical. `order` can restart per domain on some certs, so the
+    // domain_number term is required; url is a stable final tie-break.
+    modules.sort((a, b) =>
+      a.domainNumber - b.domainNumber ||
+      a.order - b.order ||
+      a.url.localeCompare(b.url)
+    );
+
+    // Guard: every source .mdx must survive to the output. Catches silent drops
+    // (the BOM bug above) before they ship.
+    if (modules.length !== sourceFileCount) {
+      throw new Error(`[sync-cert-data] ${certSlug}: emitted ${modules.length} of ${sourceFileCount} source modules`);
+    }
+    // Guard: (domain_number, order) must be unique or ordering is ambiguous.
+    const seenOrder = new Set();
+    for (const m of modules) {
+      const key = `${m.domainNumber}:${m.order}`;
+      if (seenOrder.has(key)) {
+        throw new Error(`[sync-cert-data] ${certSlug}: duplicate domain_number/order ${key} ("${m.title}")`);
+      }
+      seenOrder.add(key);
+    }
+
+    certCount++;
+    for (const m of modules) {
+      lines.push(`[[${sanitizeModuleKey(certSlug)}]]`);
+      lines.push(`title = "${escapeTOML(m.title)}"`);
+      lines.push(`domain = "${escapeTOML(m.domain)}"`);
+      lines.push(`domain_number = ${m.domainNumber}`);
+      lines.push(`order = ${m.order}`);
+      lines.push(`is_free = ${m.isFree}`);
+      lines.push(`estimated_minutes = ${m.estimatedMinutes}`);
+      lines.push(`url = "${m.url}"`);
+      lines.push('');
+
+      totalModules++;
     }
   }
 
@@ -617,6 +661,16 @@ function sanitizeKey(slug) {
 // ── Main ──
 function main() {
   const args = process.argv.slice(2);
+
+  // Targeted regeneration of just the study-guide curriculum, without touching
+  // all_certs.toml or the cert-tracker pages. Useful after editing lesson content.
+  if (args.includes('--study-modules')) {
+    console.log('🔄 Sync cert data: study_modules.toml only');
+    generateStudyModulesToml();
+    console.log('\n✅ Sync complete!');
+    return;
+  }
+
   const doData = args.includes('--data') || args.includes('--all') || args.length === 0;
   const doPages = args.includes('--pages') || args.includes('--all');
 

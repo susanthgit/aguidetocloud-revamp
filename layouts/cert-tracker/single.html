@@ -128,11 +128,17 @@
 
       {{/* Curriculum accordion */}}
       <div class="cert-curriculum">
-        {{ $currentDomain := "" }}
-        {{ range $i, $mod := $studyModules2 }}
-          {{ if ne .domain $currentDomain }}
-            {{ if ne $currentDomain "" }}</div></details>{{ end }}
-            {{ $currentDomain = .domain }}
+        {{/* Render in curriculum order: sort by (domain_number, order). Hugo's
+             sort is stable, so sorting by "order" first then "domain_number"
+             yields the same (domain, order) sequence the Astro full view uses —
+             even for certs whose `order` restarts per domain. Group on
+             domain_number (not the display name) so a duplicate name can't
+             split or merge a domain group. */}}
+        {{ $currentDomain := 0 }}
+        {{ range $i, $mod := sort (sort $studyModules2 "order") "domain_number" }}
+          {{ if ne .domain_number $currentDomain }}
+            {{ if ne $currentDomain 0 }}</div></details>{{ end }}
+            {{ $currentDomain = .domain_number }}
             <details class="cert-curriculum-domain" data-domain="{{ .domain_number }}"{{ if eq .domain_number 1 }} open{{ end }}>
               <summary class="cert-curriculum-domain-title">
                 <span>Domain {{ .domain_number }}: {{ .domain }}</span>
@@ -153,7 +159,7 @@
             </div>
           </details>
         {{ end }}
-        {{ if ne $currentDomain "" }}</div></details>{{ end }}
+        {{ if ne $currentDomain 0 }}</div></details>{{ end }}
       </div>
       {{ end }}
 
