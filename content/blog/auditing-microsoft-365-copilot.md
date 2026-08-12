@@ -21,7 +21,7 @@ faq:
   - question: "Does Microsoft 365 Copilot log what users ask it?"
     answer: "Yes, when auditing is on. Supported Microsoft 365 Copilot interactions are written to the Microsoft Purview audit log as CopilotInteraction records. The record identifies who interacted, when, which app or agent was involved, the prompt and response messages, and the resources Copilot referenced (with their sensitivity labels). The actual prompt and response text is retrieved separately by authorised Purview experiences and needs additional permissions. Auditing is on by default for Microsoft 365 E3 and E5, and it lives in Microsoft Purview, not the Microsoft 365 admin center."
   - question: "Where do I find Copilot audit logs?"
-    answer: "In the Microsoft Purview portal (purview.microsoft.com), not the Microsoft 365 admin center. Three related workflows help — they aren't one shared datastore: Audit searches the audit events (filter the CopilotInteraction record type or 'Copilot activities'); DSPM for AI presents the same AI activity as a dashboard (Activity explorer → AI activities); and eDiscovery separately searches the mailbox-backed prompt and response items, and can delete them in a preview workflow for legal cases."
+    answer: "In the Microsoft Purview portal (purview.microsoft.com), not the Microsoft 365 admin center. Three related workflows help — they aren't one shared datastore: Audit searches the audit events (filter the CopilotInteraction record type or 'Copilot activities'); DSPM for AI presents the same AI activity as a dashboard (Activity explorer → AI activities); and eDiscovery separately searches the mailbox-backed prompt and response items, and can delete them for legal cases or data-spillage cleanup."
   - question: "Can my manager or employer read my Copilot prompts?"
     answer: "Being a manager doesn't itself grant access. The audit trail records that an interaction happened, but viewing the actual prompt and response text requires additional, specific Microsoft Purview permissions. A manager — or anyone else — could read that content only if your organisation separately grants those permissions for authorised compliance or investigation work. It isn't open to every admin, and it isn't tied to someone's job title."
   - question: "Are Copilot agents audited too?"
@@ -34,6 +34,10 @@ faq:
     answer: "There's no separate 'Copilot logging' switch — it rides on Microsoft Purview Audit. If auditing is on, supported Copilot interactions are captured. Auditing is on by default for Microsoft 365 E3 and E5. On Microsoft 365 Business plans it may be off, in which case you enable it once in the Purview Audit solution (the 'Start recording user and admin activity' banner)."
   - question: "Can Purview audit non-Microsoft AI apps like ChatGPT or Gemini?"
     answer: "Yes, to a degree. Alongside Microsoft Copilots, Purview can capture interactions with connected/registered AI apps and with unmanaged third-party AI apps such as ChatGPT, Google Gemini, and DeepSeek — the latter detected through browser activity via Microsoft Defender for Cloud Apps. These use the AIAppInteraction and ConnectedAIAppInteraction record types and pay-as-you-go billing with 180-day retention."
+  - question: "Where are Microsoft 365 Copilot prompts and responses stored?"
+    answer: "In a hidden folder inside the user's own Exchange Online mailbox — the same substrate that stores Teams messages. Microsoft's documentation says data from generative AI messages is stored in a hidden folder in the mailbox of the user who runs the AI app; it isn't meant to be opened directly by users or admins, but compliance tools like eDiscovery can search it. Each Copilot turn is stored as an individual message-class item (for example IPM.SkypeTeams.Message.Copilot.BizChat)."
+  - question: "Can Copilot interaction data be deleted, and does clearing my history remove it?"
+    answer: "Copilot data can be deleted three ways, all generally available: automatically when a retention policy for the 'Microsoft Copilot experiences' location expires; by the user clearing their own history in the My Account portal (myaccount.microsoft.com); or by an admin using the eDiscovery search-and-delete workflow via Microsoft Graph. But a user clearing history does not wipe the compliance copy: deleted items move to a hidden SubstrateHolds folder, and if a retention policy, Litigation Hold, or eDiscovery hold applies, permanent deletion is suspended and the content stays discoverable — even in an inactive mailbox after the person leaves."
 images: ["images/og/blog/auditing-microsoft-365-copilot.jpg"]
 og_headline: "Auditing Copilot, end to end"
 og_glyph: "list"
@@ -51,14 +55,14 @@ sitemap:
 
 Here's what I could piece together from the current Microsoft documentation — what's logged in a single Copilot interaction, where to find it, how agents and apps show up, who's actually allowed to read prompts, and how long audit records are kept.
 
-**Quick links:** [TL;DR](#tldr) · [The big picture](#the-big-picture) · [What's in one record](#whats-captured-in-a-single-interaction) · [Where to look](#where-to-look-in-purview) · [Apps & agents](#how-apps-and-agents-show-up) · [Beyond audit](#beyond-audit-the-other-purview-tools) · [Before you search](#before-you-search) · [Privacy](#privacy-who-can-actually-read-prompts) · [Troubleshooting](#troubleshooting-why-you-see-nothing) · [FAQ](#common-questions)
+**Quick links:** [TL;DR](#tldr) · [The big picture](#the-big-picture) · [What's in one record](#whats-captured-in-a-single-interaction) · [Where to look](#where-to-look-in-purview) · [Apps & agents](#how-apps-and-agents-show-up) · [Beyond audit](#beyond-audit-the-other-purview-tools) · [Where the data lives](#where-the-data-lives-and-can-you-delete-it) · [Before you search](#before-you-search) · [Privacy](#privacy-who-can-actually-read-prompts) · [Troubleshooting](#troubleshooting-why-you-see-nothing) · [FAQ](#common-questions)
 
 ## TL;DR
 
 - Supported Copilot interactions are logged to the **Microsoft Purview audit log** as **`CopilotInteraction`** records by Audit (Standard) — when auditing is on (on by default for E3/E5).
 - {{< hi >}}It lives in **Microsoft Purview** (`purview.microsoft.com`), not the Microsoft 365 admin center.{{< /hi >}}
 - The record *identifies* a lot — the **prompt and response** messages, the **files and sites** Copilot used (with sensitivity labels), the **app** and any **agent**, and whether it used the **web**. The prompt/response *text* is stored separately and needs extra permissions to read.
-- Three related Purview workflows help — not one datastore: **Audit** searches the events, **DSPM for AI** shows a dashboard, and **eDiscovery** searches the mailbox-backed content (search is GA, *delete is preview*).
+- Three related Purview workflows help — not one datastore: **Audit** searches the events, **DSPM for AI** shows a dashboard, and **eDiscovery** searches — and can delete — the mailbox-backed content.
 - **Agents are audited too**, and Purview can also audit supported **non-Microsoft AI** apps (ChatGPT, Gemini) once the required collection is set up.
 - **Reading prompt/response text needs extra Purview permissions** — being a manager, or a general admin, doesn't grant it by itself.
 - Retention follows your licence: **E3 = 180 days**, **E5 ≈ 1 year**.
@@ -144,9 +148,9 @@ Open a whole app rather than a single interaction, and DSPM rolls the same data 
 
 *The per-app "Referenced content" rollup — the sensitivity labels and file types Copilot touched. (Lab demo data.)*
 
-### 3. eDiscovery — for legal and investigations *(delete is preview)*
+### 3. eDiscovery — for legal and investigations
 
-For legal hold and investigations, **Purview → eDiscovery** can search Copilot interactions. The **search and delete** workflow for Copilot data (used when responding to accidental exposure of sensitive data) is currently labelled **preview**, so follow the current Microsoft Learn steps.
+For legal hold and investigations, **Purview → eDiscovery** can search Copilot interactions — and, when you need to, delete them (for example to clean up a data-spillage event). It's a proper workflow with its own storage, roles and hold behaviour, so I've given it [its own section below](#where-the-data-lives-and-can-you-delete-it).
 
 ## How apps and agents show up
 
@@ -194,7 +198,7 @@ Auditing is the front door, but Microsoft 365 Copilot interactions are supported
 |---|---|
 | **Audit** | Searchable audit records for supported interactions (this guide's focus) |
 | **DSPM for AI** | Dashboards, insights, and one-click policies for AI activity |
-| **eDiscovery** | Search Copilot data for legal cases (delete = preview) |
+| **eDiscovery** | Search — and delete — Copilot data for legal cases and spillage cleanup |
 | **Communication Compliance** | Flag risky or non-compliant prompts and responses |
 | **Data Loss Prevention** | Evaluate prompts, responses, and grounding content against DLP policy |
 | **Insider Risk Management** | Factor Copilot use into a user's risk score |
@@ -203,6 +207,28 @@ Auditing is the front door, but Microsoft 365 Copilot interactions are supported
 | **Compliance Manager** | Map AI use to regulatory controls |
 
 One detail worth calling out: **admin activity is audited too.** Changes to Copilot settings, plugins, and promptbooks (operations like `UpdateTenantSettings`, `CreatePlugin`, `EnablePromptBook`) are logged alongside user interactions — handy for change tracking and investigations.
+
+## Where the data lives — and can you delete it?
+
+If you're in legal, compliance or security, the audit trail is only half the question. The other half is: *where does the actual prompt-and-response content sit, who can pull it, and can we remove it?* Here's the honest picture.
+
+**Where it's stored.** Every Copilot prompt and response is kept in a **hidden folder in the user's own Exchange Online mailbox** — the same substrate that holds Teams messages. In Microsoft's words: *"Data from generative AI messages is stored in a hidden folder in the mailbox of the user who runs the AI app."* That folder isn't meant for users or admins to open directly; it exists so compliance tools can reach it. Each turn is stored as an individual message-class item (for example `IPM.SkypeTeams.Message.Copilot.BizChat`).
+
+**What eDiscovery shows.** In **Purview → eDiscovery**, you create a case, search the user's mailbox, and add a condition — *Type → Copilot activity*, or a specific item class. Copilot turns come back looking like little emails: a **prompt** item (from the user, to the Copilot app identity) and a **response** item (from the Copilot app, back to the user), including the citations to whatever grounded the answer. You can preview, review and export them (as PST, individual messages, or via Microsoft Graph) — much like mail.
+
+**Can it be deleted? Yes — three ways, all generally available:**
+
+- **On a schedule** — a retention policy for the *Microsoft Copilot experiences* location expires the data automatically. (That's a newer, separate location — Copilot used to share the *Teams chats* one.)
+- **By the user** — people can clear their own Copilot history from the *My Account* portal (`myaccount.microsoft.com`).
+- **By an admin** — the eDiscovery **search-and-delete** workflow (built for data-spillage cleanup) removes matching items via Microsoft Graph, up to 10 per mailbox at a time.
+
+{{< margin >}}A small correction to an earlier version of this post: I'd called that admin delete "preview". It's since gone GA — fixed here. Living document and all that.{{< /margin >}}
+
+**But holds win.** Deleting isn't always gone-for-good. Removed Copilot items move to a hidden **SubstrateHolds** folder and wait there for a timer job to purge them (roughly 1–7 days) — *unless* a retention policy, **Litigation Hold** or **eDiscovery hold** is in force, in which case permanent deletion is suspended and the content stays discoverable. Even when someone leaves and their account is deleted, held Copilot data moves to an **inactive mailbox** and remains searchable. {{< hi >}}So a user "clearing their history" does not wipe the compliance copy.{{< /hi >}}
+
+**Who can actually get to it.** Reading and exporting Copilot content in eDiscovery needs real eDiscovery roles, not a general admin hat: the **eDiscovery Manager** role group to create a case and search, **Reviewer / Preview** rights to read content in a review set, and the **Search And Purge** role (in Organization Management or Data Investigator by default) to delete. It's a small, deliberate set of people.
+
+**One licensing note.** Content search, hold and export of Copilot interactions is available from **Microsoft 365 E3 + the Copilot add-on** upward; the richer *premium* eDiscovery search for Copilot needs **E5 + Copilot** (or the Purview add-ons). The Copilot add-on is the key that unlocks the Copilot-specific rows.
 
 ## Before you search
 
@@ -247,6 +273,12 @@ Not necessarily. "Supported" means a capability *works* for Copilot interactions
 **Are the audit record and the prompt/response content kept and deleted together?**
 No — they're separate. The audit *event* follows audit retention (E3 180 days, E5 ≈ 1 year). The prompt/response *content* is mailbox-backed and follows its own retention and hold policies — that's what eDiscovery searches.
 
+**Where is the actual prompt/response content stored?**
+In a hidden folder in the user's own Exchange Online mailbox — the same place Teams messages live. It's not meant to be opened directly, but compliance tools like eDiscovery can search it.
+
+**If a user clears their Copilot history, is it gone?**
+Not from a compliance point of view. It moves to a hidden SubstrateHolds folder, and while any retention policy, Litigation Hold or eDiscovery hold applies, it stays preserved and discoverable — even in an inactive mailbox after the person leaves.
+
 **Can my manager read my prompts?**
 Not by default. Reading prompt/response content needs specific Microsoft Purview permissions, meant for auditing and compliance — being a manager doesn't itself grant them.
 
@@ -269,7 +301,8 @@ Purview can audit connected and unmanaged third-party AI apps too (ChatGPT, Gemi
 - [Use Microsoft Purview to manage data security & compliance for Microsoft Agent 365](https://learn.microsoft.com/en-us/purview/ai-agent-365) — auditing agents.
 - [Data Security Posture Management (DSPM) for AI](https://learn.microsoft.com/en-us/purview/dspm-for-ai)
 - [Audit log activities — Copilot activities](https://learn.microsoft.com/en-us/purview/audit-log-activities)
-- [Search for and delete Copilot data in eDiscovery (preview)](https://learn.microsoft.com/en-us/purview/edisc-search-copilot-data)
+- [Search for and delete AI application data in eDiscovery](https://learn.microsoft.com/en-us/purview/edisc-search-copilot-data) — where Copilot data is stored, and how to search or delete it.
+- [Learn about retention for Microsoft Copilot](https://learn.microsoft.com/en-us/purview/retention-policies-copilot) — storage, holds, and the SubstrateHolds lifecycle.
 - [Turn auditing on or off](https://learn.microsoft.com/en-us/purview/audit-log-enable-disable)
 - [Data, privacy, and security for web search in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access)
 
