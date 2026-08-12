@@ -1,0 +1,279 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   /ask/ — answered questions as their own indexable pages
+   Zen tokens only (see style.css). Pages carry .zen-migrated, so light/dark
+   both work via the theme toggle.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Shared bits ─────────────────────────────────────────────────────────── */
+
+.ask-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2);
+  font-size: var(--zen-text-sm);
+  color: var(--text-muted);
+}
+.ask-dot { opacity: .5; }
+.ask-cat { color: var(--text-muted); }
+
+.ask-badge {
+  font-size: var(--text-caption);
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+}
+.ask-badge--answered   { background: color-mix(in srgb, var(--success) 14%, transparent); color: var(--success); }
+.ask-badge--shipped    { background: color-mix(in srgb, var(--badge-purple) 16%, transparent); color: var(--badge-purple); }
+.ask-badge--planned    { background: color-mix(in srgb, var(--badge-blue) 16%, transparent); color: var(--badge-blue); }
+.ask-badge--in-progress{ background: color-mix(in srgb, var(--warning) 16%, transparent); color: var(--warning); }
+.ask-badge--wont-fix   { background: var(--bg-elevated); color: var(--text-muted); }
+
+.ask-btn {
+  display: inline-block;
+  background: var(--accent-strong);
+  color: var(--accent-foreground, #fff);
+  font-weight: 600;
+  font-size: var(--zen-text-sm);
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background var(--transition);
+}
+.ask-btn:hover { background: var(--accent-hover); color: var(--accent-foreground, #fff); }
+
+/* ── Index ───────────────────────────────────────────────────────────────── */
+
+.ask-lead {
+  max-width: 640px;
+  margin: 0 auto var(--space-6);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.ask-searchwrap { max-width: 640px; margin: 0 auto var(--space-8); }
+
+.ask-searchbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--bg-surface);
+  border: 2px solid var(--border-emphasis);
+  border-radius: var(--radius-lg);
+  padding: 14px 18px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.ask-searchbox:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-subtle);
+}
+.ask-searchbox svg { flex: none; color: var(--text-muted); }
+#ask-q {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 1.02rem;
+  color: var(--text-primary);
+}
+#ask-q::placeholder { color: var(--text-muted); }
+
+.ask-trust {
+  display: flex;
+  gap: var(--space-2) var(--space-6);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-3);
+  font-size: var(--zen-text-sm);
+  color: var(--text-muted);
+}
+.ask-trust b { color: var(--text-primary); font-weight: 600; }
+
+.ask-filters {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}
+.ask-pill {
+  font: inherit;
+  font-size: var(--zen-text-sm);
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  transition: all var(--transition);
+}
+.ask-pill:hover { border-color: var(--border-emphasis); color: var(--text-primary); }
+.ask-pill[aria-pressed="true"] {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: var(--accent-foreground, #fff);
+}
+
+.ask-cards { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.ask-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.ask-card:hover {
+  border-color: var(--border-emphasis);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+}
+.ask-card-link {
+  display: block;
+  padding: var(--space-4) var(--space-6);
+  text-decoration: none;
+  color: inherit;
+}
+.ask-card-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text-primary);
+  letter-spacing: -.01em;
+}
+.ask-card-excerpt {
+  margin: var(--space-2) 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ask-empty {
+  text-align: center;
+  padding: var(--space-12) var(--space-6);
+  background: var(--bg-surface);
+  border: 1px dashed var(--border-emphasis);
+  border-radius: var(--radius-lg);
+}
+.ask-empty p { margin: 0 0 var(--space-2); color: var(--text-primary); font-weight: 600; }
+.ask-empty span { font-size: 0.9rem; color: var(--text-muted); }
+.ask-empty p:last-child { margin: var(--space-4) 0 0; }
+
+.ask-bottom {
+  margin-top: var(--space-16);
+  padding: var(--space-8);
+  text-align: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.ask-bottom h2 { margin: 0 0 var(--space-2); font-size: var(--text-h3); color: var(--text-primary); }
+.ask-bottom p { max-width: 520px; margin: 0 auto var(--space-4); color: var(--text-muted); font-size: 0.94rem; }
+
+/* ── Single answer page ──────────────────────────────────────────────────── */
+
+.ask-single { max-width: var(--max-reading); margin: 0 auto; }
+
+.ask-crumbs { margin-bottom: var(--space-6); font-size: var(--zen-text-sm); }
+.ask-crumbs a { color: var(--text-muted); text-decoration: none; }
+.ask-crumbs a:hover { color: var(--accent); }
+
+.ask-head { margin-bottom: var(--space-8); }
+.ask-title {
+  margin: 0;
+  font-size: var(--text-h1);
+  line-height: 1.2;
+  letter-spacing: -.02em;
+  color: var(--text-primary);
+}
+
+.ask-body { color: var(--text-secondary); }
+.ask-body h2 {
+  font-size: var(--text-caption);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: var(--space-8) 0 var(--space-3);
+}
+.ask-body h2:first-child { margin-top: 0; }
+.ask-body p { margin: 0 0 var(--space-4); line-height: 1.7; }
+.ask-body ul, .ask-body ol { margin: 0 0 var(--space-4); padding-left: var(--space-6); }
+.ask-body li { margin-bottom: var(--space-2); line-height: 1.65; }
+.ask-body a { color: var(--accent); text-decoration: underline; }
+.ask-body a:hover { color: var(--accent-hover); }
+.ask-body strong { color: var(--text-primary); }
+.ask-body code {
+  font-family: var(--zen-font-mono);
+  font-size: 0.88em;
+  background: var(--bg-elevated);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+}
+.ask-body pre {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  overflow-x: auto;
+}
+.ask-body pre code { background: none; padding: 0; color: var(--text-secondary); }
+.ask-body blockquote {
+  margin: 0 0 var(--space-4);
+  padding-left: var(--space-4);
+  border-left: 3px solid var(--border-emphasis);
+  color: var(--text-muted);
+}
+
+/* The question block reads as quoted input, the answer as the page's own voice. */
+.ask-body h2:first-child + p {
+  padding: var(--space-4);
+  background: var(--bg-elevated);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--border-emphasis);
+}
+
+.ask-foot {
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
+}
+.ask-foot-cta { margin: 0 0 var(--space-2); color: var(--text-secondary); }
+.ask-foot-cta a { color: var(--accent); font-weight: 600; }
+.ask-foot-src { margin: 0; font-size: var(--zen-text-sm); }
+.ask-foot-src a { color: var(--text-muted); text-decoration: none; }
+.ask-foot-src a:hover { color: var(--accent); }
+
+.ask-related {
+  margin-top: var(--space-8);
+  padding: var(--space-6);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.ask-related h2 {
+  margin: 0 0 var(--space-3);
+  font-size: var(--zen-text-sm);
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.ask-related ul { margin: 0; padding-left: var(--space-4); }
+.ask-related li { margin-bottom: var(--space-2); }
+.ask-related a { color: var(--accent); text-decoration: none; }
+.ask-related a:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .ask-card-link { padding: var(--space-4); }
+  .ask-bottom { padding: var(--space-6) var(--space-4); }
+}

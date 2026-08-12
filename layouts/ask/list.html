@@ -1,0 +1,132 @@
+{{ define "main" }}
+{{/* ── /ask/ index — the archive is the hero ────────────────────────────────
+     Search-first: filtering happens over server-rendered cards, so this works
+     with JavaScript disabled and every answer is crawlable from here. */}}
+<link rel="stylesheet" href="/css/zt-reading.css?v={{ site.Params.cache_version }}">
+<link rel="stylesheet" href="/css/ask.css?v={{ site.Params.cache_version }}">
+
+{{ $pages := .Pages.ByDate.Reverse }}
+{{ $cats := slice }}
+{{ range $pages }}{{ $cats = $cats | append .Params.ask_category }}{{ end }}
+{{ $cats = uniq $cats }}
+{{ $statusLabel := dict "shipped" "Shipped" "planned" "Planned" "in-progress" "In progress" "wont-fix" "Won't build" }}
+
+<div class="ask-list zt-page">
+
+  {{ partial "tool-header.html" (dict "page" . "title" "Ask") }}
+
+  <p class="ask-lead">
+    Real questions from readers about Microsoft 365, Copilot, Azure and cert study —
+    each one answered in full. Search before you ask; the answer may already be here.
+  </p>
+
+  <div class="ask-searchwrap">
+    <div class="ask-searchbox">
+      {{ partial "icon.html" (dict "name" "search" "size" 20 "stroke" 1.75) }}
+      <input type="text" id="ask-q" placeholder="What are you stuck on?" autocomplete="off"
+             aria-label="Search answered questions" aria-controls="ask-cards">
+    </div>
+    <div class="ask-trust">
+      <span><b>{{ len $pages }}</b> answered</span>
+      <span><b>100%</b> reply rate</span>
+      <span>no login needed</span>
+    </div>
+  </div>
+
+  {{ if gt (len $cats) 1 }}
+  <div class="ask-filters" id="ask-filters">
+    <button class="ask-pill" aria-pressed="true" data-cat="all">All</button>
+    {{ range $cats }}<button class="ask-pill" aria-pressed="false" data-cat="{{ . }}">{{ . }}</button>{{ end }}
+  </div>
+  {{ end }}
+
+  <div class="ask-cards" id="ask-cards">
+    {{ range $pages }}
+    {{ $status := .Params.ask_status }}
+    <article class="ask-card" data-cat="{{ .Params.ask_category }}"
+             data-text="{{ printf "%s %s" .Title (.Params.ask_question | default "") | lower }}">
+      <a class="ask-card-link" href="{{ .RelPermalink }}">
+        <div class="ask-meta">
+          {{ if $status }}
+            <span class="ask-badge ask-badge--{{ $status }}">{{ index $statusLabel $status | default $status }}</span>
+          {{ else }}
+            <span class="ask-badge ask-badge--answered">Answered</span>
+          {{ end }}
+          <span class="ask-cat">{{ .Params.ask_category }}</span>
+          <span class="ask-dot" aria-hidden="true">·</span>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time>
+        </div>
+        <h2 class="ask-card-title">{{ .Title }}</h2>
+        <p class="ask-card-excerpt">{{ .Description }}</p>
+      </a>
+    </article>
+    {{ end }}
+  </div>
+
+  <div class="ask-empty" id="ask-empty" hidden>
+    <p id="ask-empty-title">Nobody's asked this yet.</p>
+    <span>Ask it and I'll answer — usually within 48 hours.</span>
+    <p><a class="ask-btn" id="ask-cta" href="/feedback/">Ask this question →</a></p>
+  </div>
+
+  <section class="ask-bottom">
+    <h2>Can't find it?</h2>
+    <p>
+      There are no silly questions here. Ask anything about Microsoft 365, Copilot,
+      Azure or cert study — no login, name and email optional, and every question
+      gets a real answer.
+    </p>
+    <p><a class="ask-btn" href="/feedback/">Ask a question →</a></p>
+  </section>
+
+  <nav class="back-nav" aria-label="Back navigation">
+    <a href="/free-tools/" class="back-nav-link">← Back to Toolkit</a>
+  </nav>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var q = document.getElementById('ask-q');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.ask-card'));
+  var empty = document.getElementById('ask-empty');
+  var emptyTitle = document.getElementById('ask-empty-title');
+  var cta = document.getElementById('ask-cta');
+  var filters = document.getElementById('ask-filters');
+  var cat = 'all';
+
+  function apply() {
+    var term = q.value.trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function (c) {
+      var okCat = cat === 'all' || c.dataset.cat === cat;
+      var okTerm = !term || c.dataset.text.indexOf(term) !== -1;
+      var show = okCat && okTerm;
+      c.hidden = !show;
+      if (show) shown++;
+    });
+    empty.hidden = shown > 0;
+    if (!shown) {
+      emptyTitle.textContent = term
+        ? 'No answer for “' + q.value.trim() + '” yet.'
+        : 'Nothing here yet.';
+      // Carry the search straight into the form so nobody retypes their question.
+      cta.href = term ? '/feedback/?category=questions#feedback-form-section' : '/feedback/';
+    }
+  }
+
+  q.addEventListener('input', apply);
+  if (filters) {
+    filters.addEventListener('click', function (e) {
+      var pill = e.target.closest('.ask-pill');
+      if (!pill) return;
+      cat = pill.dataset.cat;
+      Array.prototype.forEach.call(filters.children, function (p) {
+        p.setAttribute('aria-pressed', String(p === pill));
+      });
+      apply();
+    });
+  }
+})();
+</script>
+{{ end }}
