@@ -216,6 +216,32 @@ If you're in legal, compliance or security, the audit trail is only half the que
 
 **What eDiscovery shows.** In **Purview → eDiscovery**, you create a case, search the user's mailbox, and add a condition — *Type → Copilot activity*, or a specific item class. Copilot turns come back looking like little emails: a **prompt** item (from the user, to the Copilot app identity) and a **response** item (from the Copilot app, back to the user), including the citations to whatever grounded the answer. You can preview, review and export them (as PST, individual messages, or via Microsoft Graph) — much like mail.
 
+Here's that whole path in my lab, end to end — from finding eDiscovery to reading a stored Copilot turn:
+
+<p><img src="/images/blog/auditing-microsoft-365-copilot/edisc-01-where.webp" alt="The Microsoft Purview Solutions menu with eDiscovery highlighted, showing that eDiscovery lives in Purview and not the Microsoft 365 admin center." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*1) eDiscovery lives in **Purview → Solutions** — not the Microsoft 365 admin center. (Lab demo.)*
+
+<p><img src="/images/blog/auditing-microsoft-365-copilot/edisc-02-create-case.webp" alt="The eDiscovery New case dialog with a case name filled in and the eDiscovery Premium toggle switched on to unlock searchable Copilot conditions." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*2) Create a case — it's just a container. Flip on **eDiscovery (Premium)** to unlock searchable query conditions. (Lab demo.)*
+
+<p><img src="/images/blog/auditing-microsoft-365-copilot/edisc-03-case-tabs.webp" alt="An eDiscovery case open on the Searches tab, showing the Searches, Hold policies, Review sets, Exports, and Data sources tabs, with the case owner redacted." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*3) Every case has the same tabs: **Searches** finds the data, **Hold policies** preserve it, **Review sets** and **Exports** get it out. (Lab demo.)*
+
+<p><img src="/images/blog/auditing-microsoft-365-copilot/edisc-04-add-sources.webp" alt="The eDiscovery Search for sources panel selecting user mailboxes as data sources, with the user names and email addresses redacted." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*4) Point the search at the user's mailbox — that's where their Copilot turns live. (User details redacted; lab demo.)*
+
+<p><img src="/images/blog/auditing-microsoft-365-copilot/edisc-05-condition.webp" alt="The eDiscovery condition builder with a KeyQL condition set to itemclass:IPM.SkypeTeams.Message.Copilot* and zero errors detected, which returns only Copilot interactions." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*5) The KeyQL condition `itemclass:IPM.SkypeTeams.Message.Copilot*` returns only Copilot turns — "0 errors detected" means it's valid. (Data-source names redacted; lab demo.)*
+
+<p><img src="/images/blog/auditing-microsoft-365-copilot/edisc-06-results.webp" alt="eDiscovery sample results showing Copilot turns as email-like items — a prompt item and a response item — with one item opened to reveal the stored prompt text, and names, addresses and the prompt subject redacted." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*6) The payoff: each turn is stored like a little email — a **prompt** item and a **response** item — and opening one reveals the actual prompt and response text. (Content redacted; lab demo.)*
+
 **Can it be deleted? Yes — three ways, all generally available:**
 
 - **On a schedule** — a retention policy for the *Microsoft Copilot experiences* location expires the data automatically. (That's a newer, separate location — Copilot used to share the *Teams chats* one.)
