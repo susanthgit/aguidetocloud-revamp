@@ -788,6 +788,76 @@
   text-decoration: underline;
 }
 
+/* ── "Your submissions" (local pull-model loop) ── */
+.feedback-mine {
+  margin-top: 2rem;
+  padding: 1rem 1.1rem;
+  background: var(--fb-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
+}
+.feedback-mine-header {
+  margin-bottom: 0.75rem;
+}
+.feedback-mine-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.feedback-mine-subtitle {
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  margin-top: 0.15rem;
+}
+.feedback-mine-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.feedback-mine-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  background: var(--bg-surface, transparent);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.feedback-mine-item:hover {
+  border-color: var(--fb-accent);
+  background: color-mix(in srgb, var(--fb-accent) 6%, transparent);
+}
+.feedback-mine-item-title {
+  font-size: 0.82rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.feedback-mine-item-status {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.feedback-mine-item-status.replied {
+  color: var(--fb-success);
+  background: color-mix(in srgb, var(--success) 12%, transparent);
+}
+.feedback-mine-item-status.waiting {
+  color: var(--text-secondary);
+  background: color-mix(in srgb, var(--text-secondary) 10%, transparent);
+}
+.feedback-mine-item-status.unknown {
+  color: var(--fb-accent);
+  background: color-mix(in srgb, var(--fb-accent) 10%, transparent);
+}
+
 /* ── Responsive additions ── */
 @media (max-width: 640px) {
   .feedback-quick-row {

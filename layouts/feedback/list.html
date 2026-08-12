@@ -135,10 +135,19 @@
 
       <div class="feedback-status" id="fb-status" role="alert" aria-live="polite"></div>
       <div class="feedback-success-detail" id="fb-success-detail" style="display:none">
-        <p>{{ partial "icon.html" (dict "name" "mail" "size" 14 "stroke" 1.5) }} We personally read every submission and respond within <strong>48 hours</strong>.</p>
-        <a id="fb-success-link" href="#" target="_blank" rel="noopener noreferrer" class="feedback-success-link">View your submission on GitHub →</a>
+        <p>{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} There are no accounts here, so I reply <strong>right on this page</strong> — usually within <strong>48 hours</strong>. Bookmark your thread, or just check back under <strong>Your submissions</strong> below.</p>
+        <a id="fb-success-link" href="#" target="_blank" rel="noopener noreferrer" class="feedback-success-link">{{ partial "icon.html" (dict "name" "bookmark" "size" 14 "stroke" 1.5) }} Open your thread →</a>
       </div>
     </form>
+  </div>
+
+  <!-- Your submissions (populated client-side from localStorage; no account needed) -->
+  <div class="feedback-mine" id="fb-mine" hidden>
+    <div class="feedback-mine-header">
+      <div class="feedback-mine-title">{{ partial "icon.html" (dict "name" "bookmark" "size" 14 "stroke" 1.5) }} Your submissions</div>
+      <div class="feedback-mine-subtitle">Saved on this device — check back here to see when I've replied.</div>
+    </div>
+    <div class="feedback-mine-list" id="fb-mine-list"></div>
   </div>
 
   <!-- Past Discussions -->

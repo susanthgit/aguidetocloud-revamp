@@ -124,8 +124,9 @@
         if (res.ok) {
           return res.json().then(function (result) {
             sessionStorage.setItem('fb_last_submit', Date.now().toString());
-            showStatus('success', '✅ Thank you! Your feedback has been submitted.');
+            showStatus('success', '✅ Thank you — this came through. I read and reply to every one personally; my reply will appear right here on this page.');
             if (successDetail && result.url) { successLink.href = result.url; successDetail.style.display = 'block'; }
+            if (result.url) { saveMyThread(result.url, subject); renderMine(); }
             form.reset();
             setupCC('fb-subject', 'fb-subject-count', 150);
             setupCC('fb-message', 'fb-message-count', 2000);
@@ -153,8 +154,46 @@
     statusEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     if (type === 'success') setTimeout(function () {
       statusEl.style.display = 'none';
-      if (successDetail) successDetail.style.display = 'none';
+      // Keep the success detail (bookmark link) visible — it's the user's way back to their thread.
     }, 12000);
+  }
+
+  // ── "Your submissions" — pull-model loop, no email or account needed ──
+  // Threads this browser submitted are remembered locally, then cross-referenced
+  // with the public board so returning visitors can see when a reply has landed.
+  var MY_THREADS_KEY = 'fb_my_threads';
+  var repliesByNumber = {}; // discussion number -> reply count (filled when the board loads)
+
+  function getMyThreads() {
+    try { return JSON.parse(localStorage.getItem(MY_THREADS_KEY) || '[]'); } catch (e) { return []; }
+  }
+  function saveMyThread(url, title) {
+    var m = (url || '').match(/discussions\/(\d+)/);
+    if (!m) return;
+    var num = parseInt(m[1], 10);
+    var threads = getMyThreads().filter(function (t) { return t.number !== num; });
+    threads.unshift({ number: num, url: url, title: (title || ('#' + num)).slice(0, 140), ts: Date.now() });
+    try { localStorage.setItem(MY_THREADS_KEY, JSON.stringify(threads.slice(0, 25))); } catch (e) {}
+  }
+  function renderMine() {
+    var wrap = document.getElementById('fb-mine');
+    var listEl = document.getElementById('fb-mine-list');
+    if (!wrap || !listEl) return;
+    var threads = getMyThreads();
+    if (!threads.length) { wrap.hidden = true; return; }
+    wrap.hidden = false;
+    listEl.innerHTML = threads.map(function (t) {
+      var known = Object.prototype.hasOwnProperty.call(repliesByNumber, t.number);
+      var replies = known ? repliesByNumber[t.number] : -1;
+      var status, cls;
+      if (replies > 0) { status = '✓ Replied'; cls = 'replied'; }
+      else if (replies === 0) { status = 'Awaiting reply'; cls = 'waiting'; }
+      else { status = 'View thread →'; cls = 'unknown'; }
+      return '<a class="feedback-mine-item ' + cls + '" href="' + esc(t.url) + '" target="_blank" rel="noopener noreferrer">' +
+               '<span class="feedback-mine-item-title">#' + t.number + ' · ' + esc(t.title) + '</span>' +
+               '<span class="feedback-mine-item-status ' + cls + '">' + status + '</span>' +
+             '</a>';
+    }).join('');
   }
 
   // ── Load discussions ──
@@ -350,6 +389,10 @@
   var discCtrl = new AbortController();
   var discTimeout = setTimeout(function () { discCtrl.abort(); }, 10000);
 
+  // Show any locally-saved submissions right away; the board fetch below upgrades
+  // each one with a live "Replied / Awaiting reply" status once it resolves.
+  renderMine();
+
   fetch('/api/discussions', { signal: discCtrl.signal }).then(function (res) {
     clearTimeout(discTimeout);
     if (!res.ok) throw new Error('fail');
@@ -357,6 +400,11 @@
   }).then(function (data) {
     var list = data.discussions || [];
     var pinned = data.pinned || [];
+    // Record reply counts so "Your submissions" can show live status.
+    pinned.concat(list).forEach(function (d) {
+      repliesByNumber[d.number] = (d.comments && d.comments.totalCount) || 0;
+    });
+    renderMine();
     if (!list.length && !pinned.length) return;
     recentList.innerHTML = '';
 
