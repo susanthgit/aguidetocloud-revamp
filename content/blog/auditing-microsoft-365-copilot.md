@@ -248,11 +248,35 @@ Here's that whole path in my lab, end to end — from finding eDiscovery to read
 - **By the user** — people can clear their own Copilot history from the *My Account* portal (`myaccount.microsoft.com`).
 - **By an admin** — the eDiscovery **search-and-delete** workflow (built for data-spillage cleanup) removes matching items via Microsoft Graph, up to 10 per mailbox at a time.
 
+The scheduled route is worth seeing, because it shows Copilot has *its own* place in retention now:
+
+<p><img src="/images/blog/auditing-microsoft-365-copilot/edisc-07-retention-location.webp" alt="The Create retention policy locations page in Microsoft Purview Data Lifecycle Management, with the Microsoft Copilot experiences location toggled On — a separate location from Teams chats, which is Off." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Retention policy → locations: **Microsoft Copilot experiences** is its own toggle, separate from **Teams chats**. (Lab demo.)*
+
+<p><img src="/images/blog/auditing-microsoft-365-copilot/edisc-08-retention-schedule.webp" alt="The retention settings step of a Purview retention policy, set to retain items for 7 years and then Delete items automatically at the end of the period." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Set a period, then **Delete items automatically** — that's the scheduled expiry that eventually clears the stored Copilot turns. (Lab demo.)*
+
+And the **user's own** delete looks like this — first the compliance-facing route in the My Account portal, then the everyday one inside the Copilot app:
+
+<p><img src="/images/blog/auditing-microsoft-365-copilot/edisc-09-myaccount-delete.webp" alt="The My Account portal Settings and Privacy page with Copilot activity history expanded, showing the Delete history button a user can select to clear their own Copilot history." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*A user's self-service delete: **My Account → Settings & Privacy → Privacy → Copilot activity history → Delete history**. (Profile details redacted; lab demo.)*
+
+<p><img src="/images/blog/auditing-microsoft-365-copilot/edisc-10-app-delete.webp" alt="The Microsoft 365 Copilot app chat list with a conversation's context menu open, showing Rename, Move to notebook, and Delete options for clearing a single chat." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*The everyday version: inside the Copilot app, the **⋯ → Delete** on a conversation clears that chat. Handy to know — but remember, neither of these wipes the compliance copy if a hold applies. (Lab demo.)*
+
 {{< margin >}}A small correction to an earlier version of this post: I'd called that admin delete "preview". It's since gone GA — fixed here. Living document and all that.{{< /margin >}}
 
 **But holds win.** Deleting isn't always gone-for-good. Removed Copilot items move to a hidden **SubstrateHolds** folder and wait there for a timer job to purge them (roughly 1–7 days) — *unless* a retention policy, **Litigation Hold** or **eDiscovery hold** is in force, in which case permanent deletion is suspended and the content stays discoverable. Even when someone leaves and their account is deleted, held Copilot data moves to an **inactive mailbox** and remains searchable. {{< hi >}}So a user "clearing their history" does not wipe the compliance copy.{{< /hi >}}
 
 **Who can actually get to it.** Reading and exporting Copilot content in eDiscovery needs real eDiscovery roles, not a general admin hat: the **eDiscovery Manager** role group to create a case and search, **Reviewer / Preview** rights to read content in a review set, and the **Search And Purge** role (in Organization Management or Data Investigator by default) to delete. It's a small, deliberate set of people.
+
+<p><img src="/images/blog/auditing-microsoft-365-copilot/edisc-11-roles.webp" alt="The Microsoft Purview role groups list under Settings, Roles and scopes, highlighting the eDiscovery Manager and eDiscovery Reviewer role groups among 75 built-in role groups." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+
+*Purview → Settings → Roles and scopes → Role groups: **eDiscovery Manager** and **eDiscovery Reviewer** are dedicated role groups — reading Copilot content isn't something a general admin can just do. (Lab demo.)*
 
 **One licensing note.** Content search, hold and export of Copilot interactions is available from **Microsoft 365 E3 + the Copilot add-on** upward; the richer *premium* eDiscovery search for Copilot needs **E5 + Copilot** (or the Purview add-ons). The Copilot add-on is the key that unlocks the Copilot-specific rows.
 
