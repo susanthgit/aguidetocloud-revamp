@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 12 Aug 2026 13:40:20 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 15:11:09 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Admins may see incorrect Teams membership information for users in the Teams Admin Center </title>
@@ -159,15 +159,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1442650</guid>
       <pubDate>Wed, 29 Jul 2026 22:45:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Admins are unable to complete some cross-tenant mailbox migrations in Exchange Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1442215</link>
-      <description>[Exchange Online] Admins may be unable to perform tenant to tenant migrations and offboarding moves in the Exchange admin center.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1442215</guid>
-      <pubDate>Wed, 29 Jul 2026 13:29:41 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] Some users may be unable to create or publish Microsoft Teams town hall or webinar events that include guest users</title>
@@ -457,6 +448,15 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>serviceRestored</category>
       <guid isPermaLink="false">IT1431577</guid>
       <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Some users were unable to see conference room availability for Exchange Online through a room-booking application</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1427120</link>
+      <description>[Exchange Online] Users were unable to see conference room availability for Exchange Online through a room-booking application. </description>
+      <category>Exchange Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">EX1427120</guid>
+      <pubDate>Mon, 13 Jul 2026 09:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
