@@ -11641,3 +11641,45 @@ practice_url = "/guided/fortinet-fortinac-f-administrator/practice/"
   exam_question_types = ["Multiple choice", "Multiple response", "Drag-and-drop"]
   guided_url = "/guided/cisco-cbrfir/"
   practice_url = "/guided/cisco-cbrfir/practice/"
+
+[[cert]]
+  slug = "cisco-cbrcor"
+  vendor = "cisco"
+  code = "CISCO-CBRCOR"
+  name = "Performing Cybersecurity Using Cisco Security Technologies (CCNP CBRCOR 350-201)"
+  tagline = "Master the Cisco CCNP Cybersecurity CBRCOR 350-201 core exam - playbooks and incident response, compliance and risk analysis, cloud SecOps, hardening and control-gap diagnosis, risk-informed patch prioritisation, TIP/SIEM/SOAR workflows, DLP and UEBA, packet and log analysis, Snort 3 detection tuning, threat modelling, malware analysis, vulnerability triage with CVSS, and SOAR automation with Python, REST APIs and CI/CD."
+  exam_category = "Cisco"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 223
+  featured = false
+  price_practice = 9
+
+  [cert_map."cisco-cbrcor"]
+  vendor = "cisco"
+  code = "CISCO-CBRCOR"
+  name = "Performing Cybersecurity Using Cisco Security Technologies (CCNP CBRCOR 350-201)"
+  tagline = "Master the Cisco CCNP Cybersecurity CBRCOR 350-201 core exam - playbooks and incident response, compliance and risk analysis, cloud SecOps, hardening and control-gap diagnosis, risk-informed patch prioritisation, TIP/SIEM/SOAR workflows, DLP and UEBA, packet and log analysis, Snort 3 detection tuning, threat modelling, malware analysis, vulnerability triage with CVSS, and SOAR automation with Python, REST APIs and CI/CD."
+  exam_category = "Cisco"
+  level = "professional"
+  status = "active"
+  modules = 0
+  questions = 250
+  domains = 4
+  order = 223
+  featured = false
+  price_practice = 9
+  exam_url = "https://www.cisco.com/site/us/en/learn/training-certifications/exams/cbrcor.html"
+  exam_cost = "$400 USD"
+  exam_duration = 120
+  exam_passing_score = "Cisco scales scores 300-1000 and does not publish the exact CBRCOR cut score"
+  exam_questions_real = "Cisco does not publish an exact question count for CBRCOR 350-201"
+  exam_provider = "Pearson VUE"
+  exam_validity = "3 years"
+  exam_prerequisites = "None to sit the exam; passing earns Cisco Certified Specialist - Cybersecurity Core and satisfies the core-exam requirement for CCNP Cybersecurity, which also needs one concentration exam such as CBRFIR 300-215"
+  exam_question_types = ["Multiple choice", "Multiple response", "Cisco interactive item formats"]
+  guided_url = "/guided/cisco-cbrcor/"
+  practice_url = "/guided/cisco-cbrcor/practice/"
