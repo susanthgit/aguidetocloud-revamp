@@ -11683,3 +11683,44 @@ practice_url = "/guided/fortinet-fortinac-f-administrator/practice/"
   exam_question_types = ["Multiple choice", "Multiple response", "Cisco interactive item formats"]
   guided_url = "/guided/cisco-cbrcor/"
   practice_url = "/guided/cisco-cbrcor/practice/"
+
+[[cert]]
+slug = "nutanix-ncp-bc"
+vendor = "nutanix"
+code = "NUTANIX-NCP-BC"
+name = "Nutanix Certified Professional - Business Continuity (NCP-BC)"
+tagline = "Master the Nutanix Certified Professional - Business Continuity (NCP-BC 7.5) exam for the NCP-BC 7 credential: interpret business continuity requirements and configure protection on Nutanix Disaster Recovery pc.7.5 and Prism Central pc.7.5, then test failover, perform recovery and cleanup, migrate legacy protection domains, and troubleshoot replication, recovery-plan, network, and storage failures."
+exam_category = "Nutanix"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 862
+featured = false
+price_practice = 9
+
+[cert_map."nutanix-ncp-bc"]
+vendor = "nutanix"
+code = "NUTANIX-NCP-BC"
+name = "Nutanix Certified Professional - Business Continuity (NCP-BC)"
+tagline = "Master the Nutanix Certified Professional - Business Continuity (NCP-BC 7.5) exam for the NCP-BC 7 credential: interpret business continuity requirements and configure protection on Nutanix Disaster Recovery pc.7.5 and Prism Central pc.7.5, then test failover, perform recovery and cleanup, migrate legacy protection domains, and troubleshoot replication, recovery-plan, network, and storage failures."
+exam_category = "Nutanix"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 862
+featured = false
+price_practice = 9
+exam_url = "https://www.nutanix.com/content/dam/nutanix/en/resources/datasheets/ds-ebg-ncp-bc.pdf"
+exam_cost = "$200 USD"
+exam_duration = 120
+exam_passing_score = "3000 on a scaled 1000-6000 range"
+exam_questions_real = "75"
+exam_provider = "Nutanix University (remote proctoring or in-person test center)"
+exam_validity = "3 years"
+exam_prerequisites = "No hard prerequisite. Nutanix recommends hands-on experience operating Nutanix Disaster Recovery and the Nutanix Business Continuity Administration course."
+guided_url = "/guided/nutanix-ncp-bc/"
+practice_url = "/guided/nutanix-ncp-bc/practice/"
