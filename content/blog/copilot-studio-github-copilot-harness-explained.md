@@ -2,7 +2,7 @@
 title: "The GitHub Copilot Harness in Copilot Studio, Explained"
 list_title: "Copilot Studio's GitHub Copilot Harness — Explained Simply"
 hub_id: "ai-agents"
-description: "What is the GitHub Copilot harness in Copilot Studio? A plain-English guide to the three harnesses, what's new, how to build one, and why the credit meter works differently."
+description: "What is the GitHub Copilot harness in Copilot Studio? A plain-English guide to the three harnesses, how to build one, and why the credit meter differs."
 date: 2026-08-11
 lastmod: 2026-08-11
 card_tag: "AI Agents"

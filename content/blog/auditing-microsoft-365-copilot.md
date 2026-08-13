@@ -1,7 +1,7 @@
 ---
-title: "Auditing Microsoft 365 Copilot: What's Logged, Where to Find It, and How Long It's Kept"
+title: "Auditing Microsoft 365 Copilot: What's Logged and Kept"
 list_title: "Auditing Microsoft 365 Copilot — A Practical Guide"
-description: "A plain-English guide to auditing Microsoft 365 Copilot: what a Copilot interaction records, where to find it in Microsoft Purview, how supported apps and agents show up, who can read prompts, and how long records are kept."
+description: "A plain-English guide to Microsoft 365 Copilot auditing: what each interaction records, where to find it in Purview, and how long it's kept."
 date: 2026-08-11
 lastmod: 2026-08-11
 hub_id: "it-admins"
