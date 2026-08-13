@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 12 Aug 2026 22:57:26 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 02:42:54 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Admins may see incorrect Teams membership information for users in the Teams Admin Center </title>
@@ -26,11 +26,11 @@
       <pubDate>Mon, 10 Aug 2026 17:30:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Teams] Some users may experience failures when generating Microsoft Teams meeting attendance reports</title>
+      <title>[Microsoft Teams] Some users may be unable to generate Microsoft Teams meeting attendance reports</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1452993</link>
-      <description>[Microsoft Teams] Users may experience failures when generating Microsoft Teams meeting attendance reports.</description>
+      <description>[Microsoft Teams] Users may have been unable to generate Microsoft Teams meeting attendance reports.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1452993</guid>
       <pubDate>Mon, 10 Aug 2026 16:00:00 +0000</pubDate>
     </item>
@@ -46,9 +46,9 @@
     <item>
       <title>[Microsoft 365 suite] Some admins may see Copilot Adoption and Copilot Readiness report delays in multiple Microsoft 365 services</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1452280</link>
-      <description>[Microsoft 365 suite] Admins may see Copilot Adoption and Copilot Readiness report delays in multiple Microsoft 365 services.</description>
+      <description>[Microsoft 365 suite] Admins may have seen Copilot Adoption and Copilot Readiness report delays in multiple Microsoft 365 services.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1452280</guid>
       <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
     </item>
