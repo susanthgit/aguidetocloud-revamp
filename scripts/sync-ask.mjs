@@ -22,6 +22,12 @@
  *   title ("AZ-400", "SC-900"). data/ask_overrides.json lets you set a better
  *   title/slug per discussion number without touching the generated files.
  *
+ * EXCLUSIONS
+ *   Some answered threads shouldn't become permanently-indexed pages even
+ *   though they're substantial: billing/access disputes, private correspondence,
+ *   thank-you notes, rants. Set {"exclude": "reason"} on the discussion number
+ *   in data/ask_overrides.json. They stay visible on /feedback/ either way.
+ *
  * ENV
  *   GITHUB_FEEDBACK_PAT — GitHub PAT with read access to Discussions.
  *     With it: every discussion, paginated.
@@ -191,6 +197,7 @@ function toPage(d, overrides) {
     question,
     answers,
     status,
+    excluded: ov.exclude || null,
     createdAt: d.createdAt,
     answeredAt: answers[0]?.at || d.createdAt,
     url: d.url,
@@ -262,12 +269,14 @@ async function main() {
   console.log(`  ${raw.length} discussion(s) fetched`);
 
   const all = raw.map(d => toPage(d, overrides));
-  const unanswered = all.filter(p => p.answers.length === 0);
-  const thin = all.filter(
+  const excluded = all.filter(p => p.excluded);
+  const candidates = all.filter(p => !p.excluded);
+  const unanswered = candidates.filter(p => p.answers.length === 0);
+  const thin = candidates.filter(
     p => p.answers.length > 0 &&
       p.answers.reduce((n, a) => n + a.body.length, 0) < MIN_ANSWER_CHARS
   );
-  const pages = all.filter(
+  const pages = candidates.filter(
     p => p.answers.length > 0 &&
       p.answers.reduce((n, a) => n + a.body.length, 0) >= MIN_ANSWER_CHARS
   );
@@ -277,6 +286,10 @@ async function main() {
   if (thin.length) {
     console.log(`  ${thin.length} too short (<${MIN_ANSWER_CHARS} chars) → skipped:`);
     for (const p of thin) console.log(`      #${p.number} ${p.title}`);
+  }
+  if (excluded.length) {
+    console.log(`  ${excluded.length} excluded by data/ask_overrides.json:`);
+    for (const p of excluded) console.log(`      #${p.number} ${p.title} — ${p.excluded}`);
   }
 
   // Resolve slug collisions deterministically by discussion number.

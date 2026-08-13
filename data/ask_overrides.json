@@ -4,9 +4,74 @@
     "Askers title their own threads and some are too terse to work as a page title",
     "or a URL ('AZ-400', 'SC-900'). Set a clearer one here, keyed by discussion number.",
     "Titles must describe what was actually asked — never invent a question.",
-    "Omit 'slug' to derive it from the overridden title."
+    "Omit 'slug' to derive it from the overridden title.",
+    "Set 'exclude' with a reason to keep a thread off /ask/ entirely — it stays",
+    "visible on /feedback/, it just doesn't become a permanently-indexed page."
   ],
 
+  "_excluded": "Answered and substantial, but wrong to index forever.",
+
+  "9": {
+    "exclude": "Billing/access dispute resolved privately by email. Indexing 'I did not get access to the certs that I paid for' would make a permanent negative search result against a paid product, and it names the customer."
+  },
+  "13": {
+    "exclude": "Private request for paid 1:1 mentoring, includes the asker's city and LinkedIn approach. Correspondence, not a public answer."
+  },
+  "14": {
+    "exclude": "A thank-you note, not a question. Nothing for a reader to learn."
+  },
+  "24": {
+    "exclude": "A rant about a Microsoft product ('did not sign up for it & it sucks') rather than a question. Serves no reader and reads badly under Sush's byline."
+  },
+
+  "10": {
+    "title": "Exam Mode timer: what happens to answered questions when time runs out?",
+    "slug": "exam-mode-timer-behaviour"
+  },
+  "11": {
+    "title": "Can I configure the enterprise brand manager policy in the M365 Apps Admin Center?",
+    "slug": "m365-brand-manager-policy"
+  },
+  "12": {
+    "title": "Video notes are missing for the Cloud PC / Windows 365 series",
+    "slug": "missing-video-notes-cloud-pc"
+  },
+  "15": {
+    "title": "How is Security Copilot licensed for organisations with M365 E5?",
+    "slug": "security-copilot-licensing-e5"
+  },
+  "16": {
+    "title": "Is SC-500 video training coming?",
+    "slug": "sc-500-video-training"
+  },
+  "17": {
+    "title": "Why does Microsoft Scout say it hasn't been set up for my organisation?",
+    "slug": "microsoft-scout-not-set-up-for-organisation"
+  },
+  "18": {
+    "title": "Do you offer professional services for AI implementation?",
+    "slug": "professional-services-ai-implementation"
+  },
+  "19": {
+    "title": "How do I switch on Copilot Cowork for my organisation?",
+    "slug": "switch-on-copilot-cowork"
+  },
+  "20": {
+    "title": "Where do I access the full Microsoft 365 Copilot licence features?",
+    "slug": "accessing-full-copilot-licence-features"
+  },
+  "21": {
+    "title": "Cowork isn't showing next to Copilot in the M365 app on Windows 11",
+    "slug": "cowork-not-showing-in-m365-app"
+  },
+  "22": {
+    "title": "Users are asked to request Cowork access even though they're licensed",
+    "slug": "cowork-request-access-despite-licence"
+  },
+  "23": {
+    "title": "How do I put our company branding on Teams meeting backgrounds?",
+    "slug": "teams-premium-meeting-branding"
+  },
   "28": {
     "title": "Microsoft Scout setup problem — what to try next",
     "slug": "microsoft-scout-setup-problem"
