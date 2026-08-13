@@ -141,6 +141,7 @@ function getExamCategory(cert) {
     'splunk': 'Splunk',
     'confluent': 'Confluent',
     'nutanix': 'Nutanix',
+    'nvidia': 'NVIDIA',
   };
   return vendorCategoryMap[cert.vendor] || cert.vendor;
 }

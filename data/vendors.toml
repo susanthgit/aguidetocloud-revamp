@@ -212,3 +212,13 @@ logo_emoji = "🧱"
 official_url = "https://www.nutanix.com/support-services/training-certification"
 cert_path_note = "Start with the Nutanix Certified Professional - Multicloud Infrastructure (NCP-MCI) - deploying and operating AOS clusters, Prism, AHV workloads, storage, data protection, and cluster operations."
 order = 21
+
+[[vendor]]
+slug = "nvidia"
+name = "NVIDIA"
+short_name = "NVIDIA"
+accent = "#76B900"
+logo_emoji = "🟩"
+official_url = "https://www.nvidia.com/en-us/learn/certification/"
+cert_path_note = "Start with the NVIDIA-Certified Associate: AI Infrastructure and Operations (NCA-AIIO) - essential AI knowledge, GPU and datacenter infrastructure, and the day-2 operations that keep an AI cluster healthy."
+order = 22

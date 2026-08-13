@@ -11767,3 +11767,44 @@ exam_validity = "3 years"
 exam_prerequisites = "No hard prerequisite. Nutanix recommends hands-on experience operating Nutanix Disaster Recovery and the Nutanix Business Continuity Administration course."
 guided_url = "/guided/nutanix-ncp-bc/"
 practice_url = "/guided/nutanix-ncp-bc/practice/"
+
+[[cert]]
+slug = "nvidia-nca-aiio"
+vendor = "nvidia"
+code = "NVIDIA-NCA-AIIO"
+name = "NVIDIA-Certified Associate: AI Infrastructure and Operations (NCA-AIIO)"
+tagline = "Master the NVIDIA-Certified Associate: AI Infrastructure and Operations (NCA-AIIO) exam: reason about GPU versus CPU workload fit, Tensor Cores and precision formats, the CUDA and NVIDIA AI software stack, DGX and HGX systems, NVLink and InfiniBand fabrics, BlueField DPUs, and the day-2 operations that keep an AI datacenter healthy - monitoring, orchestration, virtualization, and capacity planning."
+exam_category = "NVIDIA"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 3
+order = 863
+featured = false
+price_practice = 9
+
+[cert_map."nvidia-nca-aiio"]
+vendor = "nvidia"
+code = "NVIDIA-NCA-AIIO"
+name = "NVIDIA-Certified Associate: AI Infrastructure and Operations (NCA-AIIO)"
+tagline = "Master the NVIDIA-Certified Associate: AI Infrastructure and Operations (NCA-AIIO) exam: reason about GPU versus CPU workload fit, Tensor Cores and precision formats, the CUDA and NVIDIA AI software stack, DGX and HGX systems, NVLink and InfiniBand fabrics, BlueField DPUs, and the day-2 operations that keep an AI datacenter healthy - monitoring, orchestration, virtualization, and capacity planning."
+exam_category = "NVIDIA"
+level = "associate"
+status = "active"
+modules = 0
+questions = 250
+domains = 3
+order = 863
+featured = false
+price_practice = 9
+exam_url = "https://www.nvidia.com/en-us/learn/certification/ai-infrastructure-operations-associate/"
+exam_cost = "$125 USD"
+exam_duration = 60
+exam_passing_score = "Not published by NVIDIA"
+exam_questions_real = "50"
+exam_provider = "Certiverse (online remote-proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "No hard prerequisite. NVIDIA recommends a basic understanding of datacenter infrastructure along with familiarity with AI, machine learning, and deep learning concepts and the NVIDIA accelerated computing stack."
+guided_url = "/guided/nvidia-nca-aiio/"
+practice_url = "/guided/nvidia-nca-aiio/practice/"
