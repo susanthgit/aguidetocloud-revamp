@@ -35,12 +35,25 @@ $prePush   = Join-Path $hooksDir 'pre-push'
 if (-not (Test-Path $hooksDir)) { New-Item -ItemType Directory -Path $hooksDir -Force | Out-Null }
 
 # Marker lets -Verify tell OUR hook apart from a hand-rolled or third-party one.
-$marker = 'aguidetocloud-pre-push-v1'
+# v2 (2026-08-13): v1 baked $repoRoot in at install time, so installing from a
+# worktree produced a hook that hard-failed every push once that worktree was
+# removed. v2 resolves the path at runtime and fails OPEN. Treat v1 as broken.
+$marker       = 'aguidetocloud-pre-push-v2'
+$legacyMarker = 'aguidetocloud-pre-push-v1'
 
 if ($Verify) {
-    if ((Test-Path $prePush) -and (Get-Content $prePush -Raw) -match $marker) {
-        Write-Host "OK  pre-push hook installed ($prePush)" -ForegroundColor Green
-        exit 0
+    if (Test-Path $prePush) {
+        $body = Get-Content $prePush -Raw
+        if ($body -match $marker) {
+            Write-Host "OK  pre-push hook installed ($prePush)" -ForegroundColor Green
+            exit 0
+        }
+        if ($body -match $legacyMarker) {
+            Write-Host "STALE  v1 pre-push hook found — it hardcodes an install-time path" -ForegroundColor Red
+            Write-Host "       and will BLOCK ALL PUSHES if that path is gone." -ForegroundColor Red
+            Write-Host "  Fix: pwsh scripts/install-git-hooks.ps1" -ForegroundColor Yellow
+            exit 1
+        }
     }
     Write-Host "MISSING  pre-push hook not installed on this device." -ForegroundColor Red
     Write-Host "  Fix: pwsh scripts/install-git-hooks.ps1" -ForegroundColor Yellow
@@ -49,11 +62,24 @@ if ($Verify) {
 
 # Git invokes hooks through sh even on Windows, so the hook is POSIX sh that
 # shells out to pwsh. Keep it FAST — a slow hook is a hook people --no-verify.
+# The hook resolves its own paths at RUNTIME. Never bake $repoRoot in: this file
+# may be run from a worktree that is later deleted, which would leave a hook that
+# points at nothing and hard-fails every push (real incident, 2026-08-13).
 $hook = @"
 #!/bin/sh
 # $marker — installed by scripts/install-git-hooks.ps1. Do not edit by hand.
 # Runs the blog SEO/OG guardrail before push when blog content is in the diff.
-exec pwsh -NoProfile -ExecutionPolicy Bypass -File "$repoRoot/scripts/pre-push-hook.ps1"
+# Paths resolve at runtime so the hook survives worktree removal.
+# FAIL-OPEN by design: a missing guardrail must never block shipping. CI is the
+# device-independent backstop; this hook is the early, local warning.
+ROOT=`$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
+SCRIPT="`$ROOT/scripts/pre-push-hook.ps1"
+if [ ! -f "`$SCRIPT" ]; then
+  echo "pre-push: guardrail not found at `$SCRIPT - skipping (CI still enforces)" >&2
+  exit 0
+fi
+command -v pwsh >/dev/null 2>&1 || { echo "pre-push: pwsh missing - skipping (CI still enforces)" >&2; exit 0; }
+exec pwsh -NoProfile -ExecutionPolicy Bypass -File "`$SCRIPT"
 "@
 # LF endings + no BOM, or sh reports "cannot execute: required file not found".
 [IO.File]::WriteAllText($prePush, ($hook -replace "`r`n", "`n"), (New-Object Text.UTF8Encoding $false))
