@@ -7163,6 +7163,49 @@ practice_url = "/guided/snowpro-specialty-native-apps/practice/"
 
 
 [[cert]]
+slug = "snowpro-specialty-gen-ai"
+vendor = "snowflake"
+code = "SNOWPRO-SPECIALTY-GEN-AI"
+name = "SnowPro Specialty: Gen AI"
+tagline = "Master the Snowflake SnowPro Specialty: Gen AI certification (GES-C02) - building, governing, and optimising generative AI on Snowflake Cortex, from AI SQL functions and RAG to model governance, cost control, and document processing."
+exam_category = "Snowflake"
+level = "specialty"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 863
+featured = false
+price_practice = 9
+
+[cert_map."snowpro-specialty-gen-ai"]
+vendor = "snowflake"
+code = "SNOWPRO-SPECIALTY-GEN-AI"
+name = "SnowPro Specialty: Gen AI"
+tagline = "Master the Snowflake SnowPro Specialty: Gen AI certification (GES-C02) - building, governing, and optimising generative AI on Snowflake Cortex, from AI SQL functions and RAG to model governance, cost control, and document processing."
+exam_category = "Snowflake"
+level = "specialty"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 863
+featured = false
+price_practice = 9
+exam_url = "https://learn.snowflake.com/en/certifications/snowpro-GenAI-C02/"
+exam_cost = "$225 USD"
+exam_duration = 85
+exam_passing_score = "750 / 1000 (scaled)"
+exam_questions_real = "55"
+exam_provider = "Snowflake (Pearson VUE / online proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "None (1+ year of hands-on Gen AI experience on Snowflake, plus Python and SQL, is recommended)"
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/snowpro-specialty-gen-ai/"
+practice_url = "/guided/snowpro-specialty-gen-ai/practice/"
+
+
+[[cert]]
 slug = "databricks-ml-professional"
 vendor = "databricks"
 code = "DATABRICKS-ML-PROFESSIONAL"
