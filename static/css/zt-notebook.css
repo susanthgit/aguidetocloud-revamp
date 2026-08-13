@@ -620,6 +620,21 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
   .zt-reading--notebook .nb-body > table > tbody > tr > td {
     color: var(--ink-soft) !important;
   }
+  /* Column label above each value cell (columns 2+) — same idea as
+     the base theme's version, just in the notebook's typewriter/pen
+     voice instead of the generic indigo accent. */
+  .zt-reading--notebook .zt-table-wrap td[data-label]::before,
+  .zt-reading--notebook .nb-body > table > tbody > tr > td[data-label]::before {
+    content: attr(data-label) !important;
+    display: block !important;
+    font-family: 'Special Elite', monospace !important;
+    font-size: 9px !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: var(--pen) !important;
+    opacity: 0.75;
+    margin-bottom: 3px;
+  }
 }
 
 /* ── 3. Prompt cards — sticker-style ── */

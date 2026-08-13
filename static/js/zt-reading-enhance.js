@@ -21,6 +21,27 @@
       wrapper.className = 'zt-table-wrap';
       table.parentNode.insertBefore(wrapper, table);
       wrapper.appendChild(table);
+
+      /* Mobile stacks each row into a card and hides <thead> entirely.
+         That's fine for 2-column tables (col 1 already reads as the
+         row's own label) but for 3+ column comparison tables the
+         reader has no idea which column a value came from. Copy each
+         header's text onto a data-label attribute on the matching
+         body cells (skip column 1 — it's already styled as the row
+         label) so CSS can show "COLUMN NAME" above each value on
+         narrow screens. */
+      var headerCells = table.querySelectorAll('thead th');
+      if (headerCells.length > 1) {
+        var headerText = Array.prototype.map.call(headerCells, function (th) {
+          return th.textContent.trim();
+        });
+        table.querySelectorAll('tbody tr').forEach(function (tr) {
+          var cells = tr.children;
+          for (var i = 1; i < cells.length && i < headerText.length; i++) {
+            if (headerText[i]) cells[i].setAttribute('data-label', headerText[i]);
+          }
+        });
+      }
     });
   }
 

@@ -543,6 +543,30 @@ pre:hover .code-copy-btn { opacity: 1; }
   .zt-table-wrap td:first-child::after {
     content: '';
   }
+  /* Column label above each value cell — col 1 is already the row's
+     own label (styled above), so this only targets columns 2+ where
+     JS has copied the <thead> text into data-label. Without this,
+     multi-column comparison tables show unlabeled stacked values on
+     mobile with no way to tell which column they came from. */
+  .zt-table-wrap td[data-label]::before,
+  .zt-reading-body > table > tbody > tr > td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--accent, #818CF8);
+    opacity: 0.85;
+    margin-bottom: 2px;
+  }
+  /* Section-divider rows (e.g. a bolded row label with blank data
+     cells) leave empty cards on mobile once thead is hidden — drop
+     the empty cells so the row label shows cleanly on its own. */
+  .zt-table-wrap td:empty,
+  .zt-reading-body > table > tbody > tr > td:empty {
+    display: none;
+  }
   /* Zebra off on mobile — cards have their own bg */
   .zt-reading-body tbody tr:nth-child(even) td {
     background: transparent;
