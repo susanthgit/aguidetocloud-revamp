@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T15:11:30.860148+00:00",
+  "generated_at": "2026-08-13T17:08:44.846078+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -19,12 +19,12 @@
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 19,
+      "total_incidents": 20,
       "active_incidents": 1,
-      "avg_duration_minutes": 6689,
-      "last_incident": "2026-08-07T01:40:43.180000+00:00",
+      "avg_duration_minutes": 6342,
+      "last_incident": "2026-08-13T15:13:00.107000+00:00",
       "classifications": {
-        "advisory": 13,
+        "advisory": 14,
         "incident": 6
       }
     },
@@ -92,19 +92,6 @@
       }
     },
     {
-      "service": "SharePoint Online",
-      "short_name": "SharePoint",
-      "icon": "📄",
-      "total_incidents": 4,
-      "active_incidents": 0,
-      "avg_duration_minutes": 24963,
-      "last_incident": "2026-07-09T11:12:00+00:00",
-      "classifications": {
-        "incident": 2,
-        "advisory": 2
-      }
-    },
-    {
       "service": "Power BI",
       "short_name": "Power BI",
       "icon": "📊",
@@ -138,6 +125,19 @@
       "last_incident": "2026-07-09T12:00:00+00:00",
       "classifications": {
         "advisory": 3
+      }
+    },
+    {
+      "service": "SharePoint Online",
+      "short_name": "SharePoint",
+      "icon": "📄",
+      "total_incidents": 3,
+      "active_incidents": 0,
+      "avg_duration_minutes": 28166,
+      "last_incident": "2026-07-09T11:12:00+00:00",
+      "classifications": {
+        "incident": 2,
+        "advisory": 1
       }
     },
     {
@@ -204,7 +204,7 @@
   "monthly": [
     {
       "month": "2026-08",
-      "incident_count": 13,
+      "incident_count": 14,
       "services_affected": 6
     },
     {
@@ -214,7 +214,7 @@
     },
     {
       "month": "2026-06",
-      "incident_count": 34,
+      "incident_count": 33,
       "services_affected": 13
     },
     {

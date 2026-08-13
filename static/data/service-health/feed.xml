@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 13 Aug 2026 15:11:31 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 17:08:45 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users hosted in Europe may be unable to log into Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1454166</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to log into Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1454166</guid>
+      <pubDate>Thu, 13 Aug 2026 15:13:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Admins may see incorrect Teams membership information for users in the Teams Admin Center </title>
       <link>https://www.aguidetocloud.com/service-health/#TM1453149</link>
@@ -447,15 +456,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>Exchange Online</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">EX1435168</guid>
-      <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Intune] Users' newly enrolled Windows devices are marked as non-compliant in Microsoft Intune</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1431577</link>
-      <description>[Microsoft Intune] Users' newly enrolled Windows devices were marked as non-compliant in Microsoft Intune.</description>
-      <category>Microsoft Intune</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">IT1431577</guid>
       <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
