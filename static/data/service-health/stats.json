@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-08-13T02:42:49.863620+00:00",
+  "generated_at": "2026-08-13T05:46:21.429745+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 19,
-      "active_incidents": 3,
+      "total_incidents": 20,
+      "active_incidents": 4,
       "avg_duration_minutes": 14758,
-      "last_incident": "2026-08-11T23:14:25.303000+00:00",
+      "last_incident": "2026-08-13T03:32:44.437000+00:00",
       "classifications": {
-        "advisory": 17,
+        "advisory": 18,
         "incident": 2
       }
     },
@@ -32,12 +32,12 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 19,
+      "total_incidents": 18,
       "active_incidents": 1,
-      "avg_duration_minutes": 6950,
+      "avg_duration_minutes": 7319,
       "last_incident": "2026-08-10T00:00:00+00:00",
       "classifications": {
-        "advisory": 14,
+        "advisory": 13,
         "incident": 5
       }
     },
@@ -204,7 +204,7 @@
   "monthly": [
     {
       "month": "2026-08",
-      "incident_count": 12,
+      "incident_count": 13,
       "services_affected": 6
     },
     {
@@ -214,7 +214,7 @@
     },
     {
       "month": "2026-06",
-      "incident_count": 35,
+      "incident_count": 34,
       "services_affected": 13
     },
     {
