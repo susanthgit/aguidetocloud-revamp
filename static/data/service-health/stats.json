@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T15:04:14.762880+00:00",
+  "generated_at": "2026-08-14T17:07:14.350868+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -128,6 +128,19 @@
       }
     },
     {
+      "service": "Microsoft 365 apps",
+      "short_name": "M365 Apps",
+      "icon": "💼",
+      "total_incidents": 2,
+      "active_incidents": 1,
+      "avg_duration_minutes": 2706,
+      "last_incident": "2026-08-14T11:51:32.013000+00:00",
+      "classifications": {
+        "incident": 1,
+        "advisory": 1
+      }
+    },
+    {
       "service": "Microsoft Viva",
       "short_name": "Viva",
       "icon": "🌱",
@@ -174,37 +187,13 @@
       "classifications": {
         "advisory": 1
       }
-    },
-    {
-      "service": "Microsoft 365 apps",
-      "short_name": "M365 Apps",
-      "icon": "💼",
-      "total_incidents": 1,
-      "active_incidents": 0,
-      "avg_duration_minutes": 2706,
-      "last_incident": "2026-07-19T00:00:00+00:00",
-      "classifications": {
-        "advisory": 1
-      }
-    },
-    {
-      "service": "Windows 365",
-      "short_name": "Windows 365",
-      "icon": "⚙️",
-      "total_incidents": 1,
-      "active_incidents": 0,
-      "avg_duration_minutes": 32202,
-      "last_incident": "2026-06-08T15:00:00+00:00",
-      "classifications": {
-        "advisory": 1
-      }
     }
   ],
   "monthly": [
     {
       "month": "2026-08",
-      "incident_count": 15,
-      "services_affected": 7
+      "incident_count": 16,
+      "services_affected": 8
     },
     {
       "month": "2026-07",
@@ -213,8 +202,8 @@
     },
     {
       "month": "2026-06",
-      "incident_count": 32,
-      "services_affected": 13
+      "incident_count": 31,
+      "services_affected": 12
     },
     {
       "month": "2026-05",

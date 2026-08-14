@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 14 Aug 2026 15:04:15 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 17:07:15 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 apps] Users may be unable to sign in to OneNote using iOS devices</title>
+      <link>https://www.aguidetocloud.com/service-health/#OP1454727</link>
+      <description>[Microsoft 365 apps] Users may be unable to sign in to OneNote using iOS devices.</description>
+      <category>Microsoft 365 apps</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">OP1454727</guid>
+      <pubDate>Fri, 14 Aug 2026 11:51:32 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users may be intermittently unable to access Microsoft 365 Copilot Chat in Outlook on the web</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1454295</link>
@@ -448,15 +457,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1437339</guid>
       <pubDate>Wed, 15 Jul 2026 23:34:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users in North America may be unable to access Microsoft 365 Copilot in Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1428746</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users in North America may have been unable to access Microsoft Copilot in Microsoft Teams.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1428746</guid>
-      <pubDate>Wed, 15 Jul 2026 14:16:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
