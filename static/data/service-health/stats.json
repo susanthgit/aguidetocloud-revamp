@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T05:43:21.291263+00:00",
+  "generated_at": "2026-08-14T07:46:39.845790+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -42,6 +42,19 @@
       }
     },
     {
+      "service": "Microsoft 365 Copilot Chat",
+      "short_name": "Copilot Chat",
+      "icon": "💭",
+      "total_incidents": 9,
+      "active_incidents": 1,
+      "avg_duration_minutes": 2334,
+      "last_incident": "2026-08-13T20:06:28.547000+00:00",
+      "classifications": {
+        "incident": 3,
+        "advisory": 6
+      }
+    },
+    {
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
@@ -51,19 +64,6 @@
       "last_incident": "2026-07-17T10:26:00+00:00",
       "classifications": {
         "advisory": 8
-      }
-    },
-    {
-      "service": "Microsoft 365 Copilot Chat",
-      "short_name": "Copilot Chat",
-      "icon": "💭",
-      "total_incidents": 8,
-      "active_incidents": 0,
-      "avg_duration_minutes": 2334,
-      "last_incident": "2026-07-31T20:00:00+00:00",
-      "classifications": {
-        "incident": 2,
-        "advisory": 6
       }
     },
     {
@@ -128,19 +128,6 @@
       }
     },
     {
-      "service": "SharePoint Online",
-      "short_name": "SharePoint",
-      "icon": "📄",
-      "total_incidents": 3,
-      "active_incidents": 0,
-      "avg_duration_minutes": 28166,
-      "last_incident": "2026-07-09T11:12:00+00:00",
-      "classifications": {
-        "incident": 2,
-        "advisory": 1
-      }
-    },
-    {
       "service": "Microsoft Viva",
       "short_name": "Viva",
       "icon": "🌱",
@@ -160,6 +147,18 @@
       "active_incidents": 0,
       "avg_duration_minutes": 38,
       "last_incident": "2026-07-12T10:20:00+00:00",
+      "classifications": {
+        "incident": 2
+      }
+    },
+    {
+      "service": "SharePoint Online",
+      "short_name": "SharePoint",
+      "icon": "📄",
+      "total_incidents": 2,
+      "active_incidents": 0,
+      "avg_duration_minutes": 4924,
+      "last_incident": "2026-07-09T11:12:00+00:00",
       "classifications": {
         "incident": 2
       }
@@ -204,8 +203,8 @@
   "monthly": [
     {
       "month": "2026-08",
-      "incident_count": 14,
-      "services_affected": 6
+      "incident_count": 15,
+      "services_affected": 7
     },
     {
       "month": "2026-07",
@@ -214,7 +213,7 @@
     },
     {
       "month": "2026-06",
-      "incident_count": 33,
+      "incident_count": 32,
       "services_affected": 13
     },
     {
