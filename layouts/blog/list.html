@@ -31,23 +31,18 @@
       <cite class="zt-hub-voice-cite">@lalitds · YouTube</cite>
     </blockquote>
 
-    {{/* Inline category filters */}}
-    {{ $tags := dict }}
-    {{ range .Pages }}
-      {{ with .Params.card_tag }}
-        {{ $count := index $tags . | default 0 }}
-        {{ $tags = merge $tags (dict . (add $count 1)) }}
-      {{ end }}
-    {{ end }}
-    <div class="zt-blog-filters" role="group" aria-label="Filter by category">
-      <button class="zt-blog-filter active" data-filter="">All</button>
-      {{ range $tag, $count := $tags }}
-      <button class="zt-blog-filter" data-filter="{{ $tag }}">{{ $tag }} <span class="zt-blog-filter-count">{{ $count }}</span></button>
-      {{ end }}
+    {{/* View switcher — one panel, two renderings of the same posts.
+         Hidden until the controller unhides it, so no-JS readers never see inert
+         buttons; they keep the full server-rendered hub-and-spoke view. */}}
+    <div class="zt-blog-viewswitch" id="blog-viewswitch" hidden>
+      <div class="zt-blog-viewgroup" role="group" aria-label="Choose how articles are listed">
+        <button type="button" class="zt-blog-viewbtn active" data-view="topics" aria-pressed="true" aria-controls="blog-list">Hub &amp; spoke</button>
+        <button type="button" class="zt-blog-viewbtn" data-view="latest" aria-pressed="false" aria-controls="blog-list">By release date</button>
+      </div>
+      <span class="zt-blog-viewhint" id="blog-view-hint" role="status">Grouped by topic — start here first</span>
     </div>
-
-    {{/* Filter status — shows count when sidebar filter is active */}}
-    <p class="zt-blog-filter-status" id="blog-filter-status" hidden></p>
+    <script>document.getElementById('blog-viewswitch').hidden = false;</script>
+    <p class="zt-blog-viewstatus" id="blog-view-status" role="status" hidden></p>
 
     {{/* Article listing — River Rows with cluster support + explicit ordering */}}
     {{/* Cluster metadata. ``after: 99`` = always catch-all (renders at end in $catchOrder).
@@ -171,7 +166,7 @@
             <div class="zt-blog-row-meta">
               <span class="zt-blog-row-date">{{ with .Params.card_tag }}<span class="zt-blog-row-tag-wrap"><span class="zt-blog-row-tag">{{ . }}</span> · </span>{{ end }}{{ .Date.Format "Jan 2006" }} · {{ .ReadingTime }} min</span>
             </div>
-            <h2 class="zt-blog-row-title">{{ $title }}</h2>
+            <h2 class="zt-blog-row-title">{{ if and (gt (div (sub now.Unix .Date.Unix) 86400) 0) (le (div (sub now.Unix .Date.Unix) 86400) 14) }}<span class="sr-only">New — </span>{{ end }}{{ $title }}</h2>
           </a>
         {{ end }}
         {{/* renderAs "deferred" or "spoke" → skip; rendered separately */}}
@@ -188,6 +183,21 @@
         {{ end }}
       {{ end }}
     </div>
+
+    {{/* Post data for the "Latest" rendering — no extra links in initial HTML */}}
+    {{ $postData := slice }}
+    {{ range .Pages.ByDate.Reverse }}
+      {{ $t := .Title }}{{ with .Params.list_title }}{{ $t = . }}{{ end }}
+      {{ $age := div (sub now.Unix .Date.Unix) 86400 }}
+      {{ $postData = $postData | append (dict
+          "u" .RelPermalink
+          "t" $t
+          "d" (.Date.Format "Jan 2006")
+          "r" .ReadingTime
+          "g" (default "" .Params.card_tag)
+          "n" (and (gt $age 0) (le $age 14))) }}
+    {{ end }}
+    <script>var BLOG_POSTS = {{ $postData | jsonify | safeJS }};</script>
 
     {{/* Newsletter — readers who scrolled to the end are most likely to subscribe */}}
     <section class="zh-newsletter" style="margin-top: 64px;">
@@ -214,56 +224,146 @@
 
 <script>
 (function(){
-  var cards = document.querySelectorAll('.zt-blog-row, .zt-blog-entry, .zt-blog-card, .zt-blog-cluster');
-  var allPills = document.querySelectorAll('.zt-blog-filter, .zt-blog-nav-cat');
-  var statusEl = document.getElementById('blog-filter-status');
-  var totalCount = cards.length;
-  var currentTag = '';
+  var listEl   = document.getElementById('blog-list');
+  if (!listEl) return;
 
-  // Initialize from URL ?tag= param
-  var params = new URLSearchParams(window.location.search);
-  if (params.has('tag')) currentTag = params.get('tag');
+  var topicsHTML = listEl.innerHTML;              // server-rendered hub-and-spoke
+  var posts      = window.BLOG_POSTS || [];
+  var statusEl   = document.getElementById('blog-view-status');
+  var hintEl     = document.getElementById('blog-view-hint');
+  var viewBtns   = document.querySelectorAll('.zt-blog-viewbtn');
+  var popular    = {};                            // "/blog/slug/" -> true
+  var activeTag  = '';                            // only set via ?tag= deep link
+  var currentView = 'topics';
 
-  function setFilter(tag) {
-    currentTag = tag;
-    // Update URL without reload
-    var url = new URL(window.location);
-    if (tag) { url.searchParams.set('tag', tag); } else { url.searchParams.delete('tag'); }
-    history.replaceState(null, '', url);
+  var HINTS = {
+    topics: 'Grouped by topic — start here first',
+    latest: 'Newest first — all ' + posts.length + ' articles'
+  };
 
-    // Sync all pill sets (inline + sidebar)
-    allPills.forEach(function(b) {
-      var isMatch = (b.dataset.filter || '') === tag;
-      b.classList.toggle('active', isMatch);
+  function esc(s){
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+      return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c];
     });
+  }
 
-    // Filter cards with fade
-    var visibleCount = 0;
-    cards.forEach(function(el) {
-      var show = !tag || el.dataset.tag === tag;
-      el.style.display = show ? '' : 'none';
-      if (show) visibleCount++;
-    });
+  function renderLatest(){
+    var out = [];
+    for (var i = 0; i < posts.length; i++){
+      var p = posts[i];
+      if (activeTag && p.g !== activeTag) continue;
+      out.push(
+        '<a href="' + esc(p.u) + '" class="zt-blog-row' + (p.n ? ' zt-blog-row--new' : '') + '" data-tag="' + esc(p.g) + '">' +
+          '<div class="zt-blog-row-meta"><span class="zt-blog-row-date">' +
+            (p.g ? '<span class="zt-blog-row-tag-wrap"><span class="zt-blog-row-tag">' + esc(p.g) + '</span> · </span>' : '') +
+            esc(p.d) + ' · ' + esc(p.r) + ' min</span></div>' +
+          '<h2 class="zt-blog-row-title">' + (p.n ? '<span class="sr-only">New — </span>' : '') + esc(p.t) + '</h2>' +
+        '</a>'
+      );
+    }
+    listEl.innerHTML = out.join('');
+  }
 
-    // Update filter status
-    if (tag && statusEl) {
-      statusEl.textContent = 'Showing ' + visibleCount + ' of ' + totalCount + ' articles';
-      statusEl.hidden = false;
-    } else if (statusEl) {
-      statusEl.hidden = true;
+  // "Most viewed" pill — real 30-day GA4 data, already served by /api/stats
+  function applyPopular(){
+    for (var path in popular){
+      if (!Object.prototype.hasOwnProperty.call(popular, path)) continue;
+      var a = listEl.querySelector('a[href="' + path + '"]');
+      if (!a || a.querySelector('.zt-blog-pop')) continue;
+      var pill = document.createElement('span');
+      pill.className = 'zt-blog-pop';
+      pill.textContent = 'Most viewed · 30d';
+      var meta = a.querySelector('.zt-blog-row-date');
+      if (meta) { meta.appendChild(document.createTextNode(' · ')); meta.appendChild(pill); }
+      else { a.appendChild(pill); }
     }
   }
 
-  // Bind all filter buttons
-  allPills.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var tag = this.dataset.filter || '';
-      setFilter(this.classList.contains('active') && tag ? '' : tag);
+  function setView(view){
+    currentView = view;
+
+    if (view === 'latest') { renderLatest(); }
+    else { listEl.innerHTML = topicsHTML; }
+
+    applyPopular();
+
+    viewBtns.forEach(function(b){
+      var on = b.dataset.view === view;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    if (hintEl) hintEl.textContent = HINTS[view];
+
+    try { localStorage.setItem('blog-view', view); } catch(e){}
+    var url = new URL(window.location);
+    if (view === 'latest') { url.searchParams.set('view', 'latest'); } else { url.searchParams.delete('view'); }
+    history.replaceState(null, '', url);
+  }
+
+  viewBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if (activeTag) clearTag();
+      setView(this.dataset.view);
     });
   });
 
-  // Apply initial filter
-  if (currentTag) setFilter(currentTag);
+  // ?tag= deep link (the cluster "See all →" links). A topic query is inherently
+  // a flat list, so it renders in the by-date view rather than the cluster view.
+  function clearTag(){
+    activeTag = '';
+    if (statusEl) statusEl.hidden = true;
+    var url = new URL(window.location);
+    url.searchParams.delete('tag');
+    history.replaceState(null, '', url);
+  }
+
+  function applyTag(tag){
+    var n = 0;
+    posts.forEach(function(p){ if (p.g === tag) n++; });
+    if (!n) return false;                       // unknown tag — show everything
+    activeTag = tag;
+    setView('latest');
+    // The hint's "all 72 articles" claim is false while a tag is applied —
+    // the status line below carries the real count.
+    if (hintEl) hintEl.textContent = 'Newest first';
+    if (statusEl){
+      statusEl.innerHTML = 'Showing ' + n + ' article' + (n === 1 ? '' : 's') +
+        ' tagged <strong>' + esc(tag) + '</strong> · ' +
+        '<button type="button" class="zt-blog-clear">Show all</button>';
+      statusEl.hidden = false;
+      var clr = statusEl.querySelector('.zt-blog-clear');
+      if (clr) clr.addEventListener('click', function(){ clearTag(); setView('latest'); });
+    }
+    return true;
+  }
+
+  // Initial state — a ?tag= deep link wins, then ?view=, then saved preference
+  var params = new URLSearchParams(window.location.search);
+  var tagParam = params.get('tag');
+  if (!tagParam || !applyTag(tagParam)){
+    var wanted = params.get('view');
+    if (!wanted){ try { wanted = localStorage.getItem('blog-view'); } catch(e){} }
+    if (wanted === 'latest') setView('latest');
+  }
+
+  fetch('/api/stats')
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      var rows = (d && d.ga4 && d.ga4.blog_pages) || [];
+      var known = {}, fresh = {};
+      posts.forEach(function(p){ known[p.u] = 1; if (p.n) fresh[p.u] = 1; });
+      // Take the genuine top 5 first, THEN drop any that already carry the New
+      // dot. Never backfill — promoting #6 would make the "top 5" claim false.
+      var top = [];
+      for (var i = 0; i < rows.length && top.length < 5; i++){
+        var path = rows[i] && rows[i].path;
+        if (!path || path === '/blog/' || !known[path]) continue;
+        top.push(path);
+      }
+      top.forEach(function(path){ if (!fresh[path]) popular[path] = true; });
+      applyPopular();
+    })
+    .catch(function(){ /* pill is additive — silence is the correct failure */ });
 })();
 </script>
 

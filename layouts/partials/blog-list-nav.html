@@ -1,6 +1,9 @@
 {{/*
   blog-list-nav.html — Left sidebar navigation for blog index page.
-  Shows categories with counts + all articles listed by date.
+  Lists all articles by date. Category filters were removed 2026-08-14: the
+  centre panel's Hub & spoke / By release date switcher replaced them, and the
+  cluster-based markup could not filter correctly (Security/Work IQ/Business
+  Value returned empty results on production).
 */}}
 
 {{ $allPosts := where site.RegularPages "Section" "blog" }}
@@ -10,24 +13,6 @@
 
 {{/* Header */}}
 <a href="/blog/" class="zt-cert-nav-header active">{{ partial "icon.html" (dict "name" "file-text" "size" 14 "stroke" 1.5) }} All Articles</a>
-
-{{/* Categories */}}
-<div class="zt-blog-nav-section">
-  <p class="zt-blog-nav-label">Categories</p>
-  {{ $tags := dict }}
-  {{ range $allPosts }}
-    {{ with .Params.card_tag }}
-      {{ $count := index $tags . | default 0 }}
-      {{ $tags = merge $tags (dict . (add $count 1)) }}
-    {{ end }}
-  {{ end }}
-  {{ range $tag, $count := $tags }}
-  <button class="zt-blog-nav-cat" data-filter="{{ $tag }}">
-    <span>{{ $tag }}</span>
-    <span class="zt-blog-nav-count">{{ $count }}</span>
-  </button>
-  {{ end }}
-</div>
 
 {{/* All posts */}}
 <div class="zt-blog-nav-section">
