@@ -36,7 +36,7 @@ founder_note: |
   The second half is the awkward part. A strict comparison showed 32 things my June and July recaps had missed. I would rather show that gap plainly, with the real dates on it, than quietly pretend those features launched in August.
 ---
 
-**The short version - what's new in Microsoft 365 Copilot for August 2026:** Excel got a theme design skill, Power BI grounding and support for workbooks with AutoSave turned off. PowerPoint can assign tasks from comments. Copilot Notebooks accept Markdown. The Copilot mobile app started sending push notifications, Claude Fable 5 arrived in Cowork in Preview, Cowork tasks can now be triggered by an event rather than a schedule, and admins picked up an Agent 365 Dashboard plus three changes to Cost Management that need action. One announced admin control, domain exclusion for web grounding, was rolled back by Microsoft on 4 August.
+**The short version - what's new in Microsoft 365 Copilot for August 2026:** Excel got a theme design skill, Power BI grounding and support for workbooks with AutoSave turned off. PowerPoint can assign tasks from comments. Copilot Notebooks accept Markdown. The Copilot mobile app was said to have started sending push notifications - though the roadmap disagrees, so check section 7 - Claude Fable 5 arrived in Cowork in Preview, Cowork tasks can now be triggered by an event rather than a schedule, and admins picked up an Agent 365 Dashboard plus three changes to Cost Management, one of which needs action. One announced admin control, domain exclusion for web grounding, was rolled back by Microsoft on 4 August.
 
 Sections **1 to 26** are the current updates. Sections **27 to 58** are a clearly-labelled **late catch-up** of items I missed from June — real dates kept, nothing relabelled as August. If you want the method behind that split, [how this issue was put together](#how-this-issue-was-put-together) is at the end.
 
@@ -51,7 +51,7 @@ Sections **1 to 26** are the current updates. Sections **27 to 58** are a clearl
 Four things explain most of this month:
 
 1. **Excel had the biggest month.** A theme design skill that formats a whole sheet in one pass, a brand kit skill that applies your organisation's approved colours and fonts, grounding in Power BI reports that respects row-level security, and support for cloud-saved workbooks with AutoSave switched off.
-2. **Copilot started reaching out.** The mobile app now sends push notifications like *Your Day at a Glance*, which is the first time Copilot tells you when it is worth opening rather than waiting to be asked.
+2. **Copilot started reaching out - on paper.** Microsoft says the mobile app now sends push notifications like *Your Day at a Glance*, the first time the Copilot *mobile app* tells you when it is worth opening rather than waiting to be asked. The roadmap still says September, so see section 7 before you plan around it.
 3. **Documents got their admin work done for them.** Word can build and maintain a table of contents, headers, footers and footnotes. PowerPoint can write, reply to and resolve comments, and will soon assign them as tasks.
 4. **The admin layer got sharper edges.** An Agent 365 Dashboard, a heatmap of which sites your agents are reaching into, and three Cost Management changes - one of which needs you to recreate your existing alerts. Domain exclusion for web grounding was also announced, then rolled back on 4 August - so that one is a heads-up, not a task.
 
@@ -100,7 +100,7 @@ The catch-up checks from the June roundup are further down, with sections 27 to 
 
 ## Current August updates
 
-**Sections 1 to 5 carry August timing.** Section 5 is split across two months — TXT and RTF landed in July, Markdown lands in August — so read that one carefully. Everything from section 6 onwards rolled out in July or June.
+**Sections 1 to 5 carry August timing.** Section 5 is split across two months — TXT and RTF landed in July, Markdown lands in August — so read that one carefully. Everything from section 6 to section 26 rolled out in July or June.
 
 **Section 22 is the odd one out.** Microsoft announced it in July and then withdrew it in August. It is here because you may have read the announcement, not because it is something you can use.
 
@@ -199,9 +199,9 @@ That means you can create a document, a spreadsheet or a deck without leaving th
 
 ## 7. The Copilot mobile app sends push notifications
 
-*For: Microsoft 365 Copilot mobile app · iOS and Android · Microsoft 365 Copilot licence required · Rolled out July 2026*
+*For: Microsoft 365 Copilot mobile app · iOS and Android · Microsoft 365 Copilot licence required · Rolled out July 2026 · Timing disputed, see below*
 
-The Copilot mobile app can now send **push notifications** so you can catch up without opening Outlook, Teams and everything else in turn. You get prompts like *Your Day at a Glance* and *Items waiting for you*.
+Microsoft's July roundup says the Copilot mobile app can now send **push notifications** so you can catch up without opening Outlook, Teams and everything else in turn. You get prompts like *Your Day at a Glance* and *Items waiting for you*.
 
 Open the notification and the app is already showing the answer to that prompt, rather than an empty chat box.
 
@@ -211,6 +211,10 @@ Open the notification and the app is already showing the answer to that prompt, 
 
 <p><img src="/images/blog/copilot-august-2026/official-05-push-day-at-a-glance.webp" alt="Official Microsoft image of a Your Day at a Glance push notification from the Microsoft 365 Copilot mobile app." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup. UI and availability may vary by tenant and rollout.</em></p>
+
+<blockquote class="callout callout-warn">
+<p><strong>Timing disputed - check before you promise this to anyone.</strong> Microsoft's July roundup states plainly that this feature <em>"rolled out in July"</em>. The matching roadmap entry disagrees: <a href="https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&amp;searchterms=560339">560339</a> still reads <em>In development</em> with general availability given as <strong>September 2026</strong>, and it was last updated on <strong>10 August 2026</strong> - after the roundup was published. My own rule for this issue is that the later Microsoft source wins, and the later source here is the roadmap. So treat September as the date to plan around, and treat any earlier sighting in your tenant as a bonus rather than the norm.</p>
+</blockquote>
 
 📖 [M365 Roadmap 560339](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=560339) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -254,6 +258,9 @@ The example in Microsoft's own image is the giveaway: you write the task, and Co
 <blockquote class="callout callout-warn">
 <p><strong>Frontier, for now.</strong> Microsoft describes this as rolling out in July to <strong>Frontier</strong> - the early-access programme - not to every tenant. If you cannot find it, that is probably why.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-august-2026/official-07-cowork-event-task.webp" alt="Cowork showing a Set up trigger card for a task named Renewal email to account brief and what-if model, with When set to I receive an email, From set to renewal, and Run in set to New conversation each time." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup. UI and availability may vary by tenant and rollout.</em></p>
 
 📖 [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -433,6 +440,9 @@ A new Power Automate action, **Generate document from form (Preview)**, builds a
 <blockquote class="callout callout-warn">
 <p><strong>Status disagreement.</strong> The roadmap entry still reads <em>In development</em> while Microsoft's roundup describes it as having rolled out in June. Treat the preview label as the reliable part.</p>
 </blockquote>
+
+<p><img src="/images/blog/copilot-august-2026/official-19-docgen-form-preview.webp" alt="The Generate a document from a form (preview) action in Power Automate, with Site Address, Document Library Name set to RFPs and Form Name set to RFQ Demo, plus advanced parameters for Sales representative and Type of quote. The flow beside it runs When an item is created into the generate action." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup. UI and availability may vary by tenant and rollout.</em></p>
 
 📖 [M365 Roadmap 561026](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561026) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -788,7 +798,7 @@ The workflow has a step worth knowing about. In the walkthrough Microsoft publis
 
 Word's agentic Copilot editing reached **iPhone and iPad**, so users could draft, add and refine document content from iOS. The core editing flow no longer depended on returning to a desktop first.
 
-Microsoft later published a Word for iPad example showing a user reviewing and applying Copilot edits directly in the document. The image below is iPad-specific; the June roundup described the broader iOS rollout.
+Microsoft later published a Word for iPad example showing a user reviewing and applying Copilot edits directly in the document. That example is iPad-specific; the June roundup described the broader iOS rollout.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Mobile editing is usually where small changes wait until later. Bringing the Copilot edit-and-apply loop to iOS lets the document move while the reviewer is away from the desk.</p>
@@ -977,7 +987,7 @@ The same surface includes reporting, budgets, alerts and hard caps. The overview
 
 ## 54. A team-level view of Copilot credit spend
 
-*For: Viva Insights · Copilot Analytics · Rolled out July 2026 · Late catch-up*
+*For: Viva Insights · Copilot Analytics · Rolled out June 2026 · Late catch-up*
 
 Copilot Analytics in **Viva Insights** gained a view of **AI spend - Copilot credit usage - at group and team level**, rather than only tenant-wide totals. The services in scope are **Cowork and the Work IQ API**, and it appears both as a dashboard and in Advanced insights.
 
@@ -988,7 +998,7 @@ Access is narrower than "any admin": Microsoft scopes the dashboard experience t
 </blockquote>
 
 <blockquote class="callout callout-ref">
-<p><strong>This moved up from my horizon list, and corrects an error.</strong> I previously wrote that I could not find a matching roadmap entry for it. That was wrong - it is roadmap 566302, and it now reads <em>Launched</em>.</p>
+<p><strong>This moved up from my horizon list.</strong> My June recap listed it as something you would <em>be able to</em> do, with roadmap 566302 already linked. That entry now reads <em>Launched</em> with general availability given as June 2026, so it has earned a section of its own rather than a line on a watchlist.</p>
 </blockquote>
 
 📖 [M365 Roadmap 566302](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=566302) · [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
