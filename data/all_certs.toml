@@ -11784,6 +11784,22 @@ order = 863
 featured = false
 price_practice = 9
 
+[[cert]]
+slug = "nvidia-ncp-ain"
+vendor = "nvidia"
+code = "NVIDIA-NCP-AIN"
+name = "NVIDIA-Certified Professional: AI Networking (NCP-AIN)"
+tagline = "Master the NVIDIA-Certified Professional: AI Networking (NCP-AIN) exam: configure Spectrum-X switches for RoCE, tune ECN, PFC, QoS and adaptive routing, isolate tenants with BGP-EVPN and InfiniBand partition keys, run the Subnet Manager in high availability, monitor fabrics with UFM, NetQ and What Just Happened, deploy the NVIDIA Network Operator on Kubernetes, and diagnose AI fabrics with ibdiagnet, iblinkinfo and the perftest suite."
+exam_category = "NVIDIA"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 864
+featured = false
+price_practice = 9
+
 [cert_map."nvidia-nca-aiio"]
 vendor = "nvidia"
 code = "NVIDIA-NCA-AIIO"
@@ -11808,3 +11824,28 @@ exam_validity = "2 years"
 exam_prerequisites = "No hard prerequisite. NVIDIA recommends a basic understanding of datacenter infrastructure along with familiarity with AI, machine learning, and deep learning concepts and the NVIDIA accelerated computing stack."
 guided_url = "/guided/nvidia-nca-aiio/"
 practice_url = "/guided/nvidia-nca-aiio/practice/"
+
+[cert_map."nvidia-ncp-ain"]
+vendor = "nvidia"
+code = "NVIDIA-NCP-AIN"
+name = "NVIDIA-Certified Professional: AI Networking (NCP-AIN)"
+tagline = "Master the NVIDIA-Certified Professional: AI Networking (NCP-AIN) exam: configure Spectrum-X switches for RoCE, tune ECN, PFC, QoS and adaptive routing, isolate tenants with BGP-EVPN and InfiniBand partition keys, run the Subnet Manager in high availability, monitor fabrics with UFM, NetQ and What Just Happened, deploy the NVIDIA Network Operator on Kubernetes, and diagnose AI fabrics with ibdiagnet, iblinkinfo and the perftest suite."
+exam_category = "NVIDIA"
+level = "professional"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 864
+featured = false
+price_practice = 9
+exam_url = "https://www.nvidia.com/en-us/learn/certification/ai-networking-professional/"
+exam_cost = "$400 USD"
+exam_duration = 120
+exam_passing_score = "Not published by NVIDIA"
+exam_questions_real = "70-75"
+exam_provider = "Certiverse (online remote-proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "No hard prerequisite. NVIDIA recommends 2-3 years of professional experience in data center environments working with NVIDIA networking hardware, including Spectrum Ethernet and Quantum InfiniBand fabrics."
+guided_url = "/guided/nvidia-ncp-ain/"
+practice_url = "/guided/nvidia-ncp-ain/practice/"
