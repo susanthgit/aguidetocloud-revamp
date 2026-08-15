@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 14 Aug 2026 22:38:15 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Aug 2026 01:46:47 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 apps] Users may be unable to sign in to OneNote using iOS devices</title>
@@ -19,11 +19,11 @@
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users may be intermittently unable to access Microsoft 365 Copilot Chat in Outlook on the web</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1454295</link>
-      <description>[Microsoft 365 Copilot Chat] Users may be intermittently unable to access Copilot Chat in Outlook on the web.</description>
+      <description>[Microsoft 365 Copilot Chat] Users may have intermittently been unable to access Copilot Chat in Outlook on the web.</description>
       <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CW1454295</guid>
-      <pubDate>Thu, 13 Aug 2026 20:06:28 +0000</pubDate>
+      <pubDate>Thu, 13 Aug 2026 17:26:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users hosted in Europe may be unable to log into Microsoft 365 Copilot</title>
