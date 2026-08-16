@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 16 Aug 2026 12:57:24 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Aug 2026 14:35:27 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 apps] Users may be unable to sign in to OneNote using iOS devices</title>
@@ -53,11 +53,11 @@
       <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Teams] Some users may be unable to access the Share tab in Microsoft Teams on Android devices</title>
+      <title>[Microsoft Teams] Some users may have been unable to access the Share tab in Microsoft Teams on Android devices</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1452695</link>
-      <description>[Microsoft Teams] Users may be unable to access the Share tab in Microsoft Teams on Android devices.</description>
+      <description>[Microsoft Teams] Users may have been unable to access the Share tab in Microsoft Teams on Android devices.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1452695</guid>
       <pubDate>Mon, 10 Aug 2026 17:30:00 +0000</pubDate>
     </item>
