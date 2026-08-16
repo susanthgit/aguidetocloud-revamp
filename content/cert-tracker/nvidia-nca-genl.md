@@ -4,7 +4,7 @@ description: "NVIDIA NCA-GENL study guide and 250-question practice exam coverin
 type: "cert-tracker"
 layout: "single"
 exam_code: "NVIDIA-NCA-GENL"
-exam_title: "NVIDIA-Certified Associate: Generative AI LLMs (NCA-GENL)"
+exam_title: "NVIDIA-Certified Associate: Generative AI LLMs"
 exam_level: "intermediate"
 exam_status: "active"
 exam_category: "NVIDIA"
