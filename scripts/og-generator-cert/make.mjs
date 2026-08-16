@@ -34,6 +34,10 @@ const GUIDED_CERTS_DIR      = path.resolve(REPO_ROOT, '..', 'guided', 'src', 'co
 const MODE       = (process.argv.find(a => a.startsWith('--mode='))?.split('=')[1] || 'study').toLowerCase();
 const DRY_RUN    = process.argv.includes('--dry-run');
 const FORCE_ALL  = process.argv.includes('--force');
+// --only=<slug> renders a single cert. Used by the new-cert factory so a brand-new
+// cert can get its OG images without re-rendering the whole backlog of certs that
+// have no image yet (they render regardless of cache, since existsSync(out) is false).
+const ONLY       = process.argv.find(a => a.startsWith('--only='))?.split('=')[1] || null;
 
 if (!['study', 'practice'].includes(MODE)) {
   console.error(`Unknown mode: ${MODE}. Use --mode=study or --mode=practice.`);
@@ -299,8 +303,15 @@ function discoverPractice() {
 // ---------- Main ----------
 async function main() {
   fs.mkdirSync(CFG.outDir, { recursive: true });
-  const cache = FORCE_ALL ? {} : loadCache();
-  const certs = MODE === 'study' ? discoverStudy() : discoverPractice();
+  // When scoped with --only, never reset the cache to {} — that would drop every
+  // other cert's entry and force a full re-render on the next unscoped run.
+  const cache = (FORCE_ALL && !ONLY) ? {} : loadCache();
+  const certs = (MODE === 'study' ? discoverStudy() : discoverPractice())
+    .filter(c => !ONLY || c.slug === ONLY);
+  if (ONLY && certs.length === 0) {
+    console.error(`--only=${ONLY}: no live cert with that slug in ${MODE} mode`);
+    process.exit(1);
+  }
 
   console.log(`AGTC cert OG generator — V3 dark · family-band`);
   console.log(`Mode: ${MODE} (${CFG.label})`);
