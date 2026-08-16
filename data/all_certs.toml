@@ -11959,6 +11959,27 @@ exam_duration = 60
 exam_passing_score = "Not published by NVIDIA"
 guided_url = "/guided/nvidia-nca-genl/"
 
+[[cert]]
+slug = "nvidia-nca-genm"
+vendor = "nvidia"
+code = "NVIDIA-NCA-GENM"
+name = "NVIDIA-Certified Associate: Generative AI Multimodal (NCA-GENM)"
+tagline = "Master the NVIDIA-Certified Associate: Generative AI Multimodal (NCA-GENM) exam: keep multimodal training stable, fuse text, image, audio and time-series data early, late or with cross-attention, build U-Nets and CLIP-conditioned diffusion, run honest experiments with FID, CLIPScore and WER, ship on Riva, NeMo, Triton and ACE, and keep it all trustworthy."
+exam_category = "NVIDIA"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 868
+featured = false
+price_practice = 9
+exam_url = "https://www.nvidia.com/en-us/learn/certification/generative-ai-multimodal-associate/"
+exam_cost = "$125 USD"
+exam_duration = 60
+exam_passing_score = "Not published by NVIDIA"
+guided_url = "/guided/nvidia-nca-genm/"
+
 [cert_map."nvidia-nca-genl"]
 vendor = "nvidia"
 code = "NVIDIA-NCA-GENL"
@@ -11984,3 +12005,29 @@ exam_prerequisites = "No hard prerequisite. NVIDIA recommends familiarity with P
 exam_question_types = ["Multiple choice", "Multiple response"]
 guided_url = "/guided/nvidia-nca-genl/"
 practice_url = "/guided/nvidia-nca-genl/practice/"
+
+[cert_map."nvidia-nca-genm"]
+vendor = "nvidia"
+code = "NVIDIA-NCA-GENM"
+name = "NVIDIA-Certified Associate: Generative AI Multimodal (NCA-GENM)"
+tagline = "Master the NVIDIA-Certified Associate: Generative AI Multimodal (NCA-GENM) exam: keep multimodal training stable, fuse text, image, audio and time-series data early, late or with cross-attention, build U-Nets and CLIP-conditioned diffusion, run honest experiments with FID, CLIPScore and WER, ship on Riva, NeMo, Triton and ACE, and keep it all trustworthy."
+exam_category = "NVIDIA"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 868
+featured = false
+price_practice = 9
+exam_url = "https://www.nvidia.com/en-us/learn/certification/generative-ai-multimodal-associate/"
+exam_cost = "$125 USD"
+exam_duration = 60
+exam_passing_score = "Not published by NVIDIA"
+exam_questions_real = "50-60"
+exam_provider = "Certiverse (online remote-proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "No hard prerequisite. NVIDIA states candidates should have a basic understanding of generative AI. The study guide describes the role as an associate developer contributing to the development, programming and quality assurance of generative AI multimodal models, including curating and annotating audio, video and image datasets, performing prompt engineering, selecting models, and running experiments such as A/B tests, and recommends knowledge of Python and AI frameworks such as PyTorch or TensorFlow together with a solid understanding of neural networks and deep learning models."
+exam_question_types = ["Multiple choice", "Multiple response"]
+guided_url = "/guided/nvidia-nca-genm/"
+practice_url = "/guided/nvidia-nca-genm/practice/"
