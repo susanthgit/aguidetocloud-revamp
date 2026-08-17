@@ -652,21 +652,31 @@
   overflow-y: auto;
   min-height: 120px; /* reserved so JS population doesn't shift the sidebar */
   scrollbar-width: thin;
+  /* Reclaim the deep indent the shared tool nav uses — thread titles are
+     sentences and need every pixel of line width they can get. */
+  margin-left: 10px;
+  padding-left: 8px;
 }
+/* Number inline with the title: 2 lines per thread instead of 3, so roughly a
+   third more of the board is reachable without scrolling the sidebar. */
 .fb-nav-link {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  flex-direction: row;
+  align-items: baseline;
   justify-content: flex-start;
-  gap: 0.15rem;
+  gap: 0.3rem;
+  padding: 0.2rem 0.4rem 0.2rem 0.5rem;
 }
 .fb-nav-num {
+  flex: 0 0 auto;
   font-size: 0.65rem;
   font-weight: 600;
   color: var(--text-tertiary, var(--text-secondary));
   letter-spacing: 0.02em;
 }
 .fb-nav-title {
+  flex: 1 1 auto;
+  min-width: 0; /* without this a flex child refuses to shrink and overflows */
   font-size: 0.72rem;
   line-height: 1.3;
   /* .zt-lic-nav-link-name ships white-space:nowrap for single-line tool names;
@@ -677,11 +687,6 @@
   line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-/* Tighter rows so more threads fit without scrolling. */
-.fb-nav-link {
-  padding-top: 0.2rem;
-  padding-bottom: 0.2rem;
 }
 .fb-nav-msg {
   padding: 0.75rem 1rem;
