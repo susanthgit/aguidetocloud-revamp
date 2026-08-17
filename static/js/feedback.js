@@ -490,9 +490,11 @@
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
         e.preventDefault();
         revealThread(d.number);
-        // Keep the URL in sync so threads are bookmarkable and Back works.
-        if (window.history && history.pushState) {
-          history.pushState(null, '', '#discussion-' + d.number);
+        // replaceState, not pushState: the URL stays shareable/bookmarkable,
+        // but 34 threads don't bury the user's real Back target under 34
+        // history entries that each look like a no-op when reversed.
+        if (window.history && history.replaceState) {
+          history.replaceState(null, '', '#discussion-' + d.number);
         }
       });
       navBox.appendChild(a);

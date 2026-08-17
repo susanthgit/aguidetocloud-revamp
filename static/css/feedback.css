@@ -686,6 +686,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+/* A deep-linked or sidebar-clicked thread must not land under the sticky
+   site nav (61px desktop / 57px mobile) — it scrolled the title out of sight. */
+.feedback-acc {
+  scroll-margin-top: 80px;
+}
+
 .fb-nav-msg {
   padding: 0.75rem 1rem;
   margin: 0;

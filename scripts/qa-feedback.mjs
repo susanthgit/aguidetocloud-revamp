@@ -57,7 +57,17 @@ const d = await dpage.evaluate(() => {
 });
 
 check('No pinned thread', d.pinnedRows === 0 && !d.firstRowText.includes('📌'), `pinned rows=${d.pinnedRows}, first="${d.firstRowText.slice(0, 50)}"`);
-check('Newest thread first (#41)', d.firstRowText.includes('#41'), `first row = "${d.firstRowText.slice(0, 50)}"`);
+// Don't hard-code the newest number — the whole point of the page is that
+// people keep adding threads. Ask the API what "newest" is right now.
+const apiNewest = await (async () => {
+  try {
+    const r = await fetch(base + '/api/discussions');
+    const j = await r.json();
+    return j.discussions?.[0]?.number ?? null;
+  } catch { return null; }
+})();
+check('Newest thread first', apiNewest !== null && d.firstRowText.includes('#' + apiNewest),
+  `API newest=#${apiNewest}, first row = "${d.firstRowText.slice(0, 50)}"`);
 check('Desktop: hero below the threads', d.heroTop && d.recentTop && d.heroTop > d.recentTop, `hero top=${d.heroTop}, threads top=${d.recentTop}`);
 check('Desktop: hero above Back to Toolkit', d.heroTop && d.backNavTop && d.heroTop < d.backNavTop, `hero top=${d.heroTop}, back-nav top=${d.backNavTop}`);
 check('Sidebar font reduced', parseFloat(d.titleFont) <= 12, `.fb-nav-title font-size=${d.titleFont}`);
@@ -110,10 +120,21 @@ if (targetNum) {
     const row = document.getElementById('discussion-' + n);
     const body = row?.querySelector('.feedback-acc-body');
     const r = row?.getBoundingClientRect();
-    return { expanded: body ? !body.hidden : false, inView: r ? r.top > -50 && r.top < window.innerHeight : false };
+    const title = row?.querySelector('.feedback-acc-title')?.getBoundingClientRect();
+    const sticky = [...document.querySelectorAll('nav,header')]
+      .filter(e => ['sticky', 'fixed'].includes(getComputedStyle(e).position))
+      .reduce((m, e) => Math.max(m, e.getBoundingClientRect().bottom), 0);
+    return {
+      expanded: body ? !body.hidden : false,
+      inView: r ? r.top > -50 && r.top < window.innerHeight : false,
+      titleTop: title ? Math.round(title.top) : null,
+      navBottom: Math.round(sticky),
+    };
   }, targetNum);
   check('Sidebar click expands thread', nav.expanded, `#${targetNum} body visible = ${nav.expanded}`);
   check('Sidebar click scrolls into view', nav.inView, `#${targetNum} in viewport = ${nav.inView}`);
+  check('Clicked thread clears the sticky nav', nav.titleTop !== null && nav.titleTop >= nav.navBottom,
+    `title top=${nav.titleTop}px, sticky nav bottom=${nav.navBottom}px`);
 }
 
 // Search must still work with every row present
