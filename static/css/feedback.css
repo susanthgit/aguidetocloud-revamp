@@ -636,24 +636,11 @@
     gap: 0.6rem;
   }
 
-  /* ── Mobile: demote the 🌱 safe-space hero below the form ──
-     On a 390×844 screen the hero ate 470px (56%) of the first view before
-     anyone could see a single control. Reordering visually rather than in the
-     DOM keeps desktop untouched.
-     ⚠️ GUARDRAIL: .feedback-hero must stay free of links/buttons. It has no
-     focusable children today, which is the only reason the visual/DOM order
-     split is safe (WCAG 2.4.3 never engages). Adding one would need this
-     block reworked into a DOM move. */
-  .feedback-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .feedback-hero {
-    order: 10;
-    margin: 2rem 0 0;
-  }
-  .feedback-container .back-nav {
-    order: 20;
+  /* ── Mobile: hide the threads intro copy ──
+     The heading + explainer cost ~120px above the fold. The threads below are
+     self-explanatory. Search stays — it's functional, not decorative. */
+  .feedback-recent-title-wrap {
+    display: none;
   }
 }
 
@@ -674,14 +661,14 @@
   gap: 0.15rem;
 }
 .fb-nav-num {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 600;
   color: var(--text-tertiary, var(--text-secondary));
   letter-spacing: 0.02em;
 }
 .fb-nav-title {
-  font-size: 0.8rem;
-  line-height: 1.35;
+  font-size: 0.72rem;
+  line-height: 1.3;
   /* .zt-lic-nav-link-name ships white-space:nowrap for single-line tool names;
      thread titles are sentences, so let them wrap and clamp at two lines. */
   white-space: normal;
@@ -690,6 +677,11 @@
   line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+/* Tighter rows so more threads fit without scrolling. */
+.fb-nav-link {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
 }
 .fb-nav-msg {
   padding: 0.75rem 1rem;

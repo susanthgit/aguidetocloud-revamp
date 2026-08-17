@@ -406,7 +406,11 @@
       repliesByNumber[d.number] = (d.comments && d.comments.totalCount) || 0;
     });
     renderMine();
-    if (!list.length && !pinned.length) return;
+    if (!list.length && !pinned.length) {
+      // Sidebar must still resolve, or it sits on "Loading questions…" forever.
+      buildThreadNav([], [], {});
+      return;
+    }
     recentList.innerHTML = '';
 
     // Render pinned first (deduplicate from main list)
@@ -435,6 +439,7 @@
     }
 
     buildThreadNav(pinned, list, pinnedIds);
+    openFromHash();
   }).catch(function () {
     // Previously silent — a GitHub outage or rate-limit rendered as an empty
     // board, which reads as "nobody has ever asked a question".
@@ -481,8 +486,14 @@
       a.appendChild(num);
       a.appendChild(name);
       a.addEventListener('click', function (e) {
+        // Let ctrl/cmd/middle-click open a new tab normally.
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
         e.preventDefault();
         revealThread(d.number);
+        // Keep the URL in sync so threads are bookmarkable and Back works.
+        if (window.history && history.pushState) {
+          history.pushState(null, '', '#discussion-' + d.number);
+        }
       });
       navBox.appendChild(a);
     });
@@ -525,5 +536,14 @@
     var link = document.querySelector('.fb-nav-link[href="#discussion-' + number + '"]');
     if (link) link.classList.add('active');
   }
+
+  // Deep links: rows render async, so the browser's native anchor jump fires
+  // before #discussion-N exists. Re-run it once the list is on the page, and
+  // again on Back/Forward.
+  function openFromHash() {
+    var m = /^#discussion-(\d+)$/.exec(window.location.hash || '');
+    if (m) revealThread(m[1]);
+  }
+  window.addEventListener('hashchange', openFromHash);
 
 })();

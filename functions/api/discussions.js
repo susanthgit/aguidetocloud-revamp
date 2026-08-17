@@ -48,7 +48,9 @@ export async function onRequestGet(context) {
   // Curated on-site pins — surfaced with the 📌 badge at the top of the Ask
   // section, independent of GitHub's own pinned discussions. Edit this list to
   // pin/unpin (by discussion number); order here is the display order.
-  const FEATURED = [41];
+  // Pinning is off for now (revisit later). Add numbers here to re-pin, e.g.
+  // [41]; order in this list is the display order.
+  const FEATURED = [];
   const featuredQuery = FEATURED.map((n, i) => `
       f${i}: discussion(number: ${n}) {
         title url number createdAt

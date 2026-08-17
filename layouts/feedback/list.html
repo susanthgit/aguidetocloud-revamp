@@ -11,39 +11,6 @@
 
 {{ partial "tool-header.html" (dict "page" . "title" "Community Feedback") }}
 
-  {{/* ── Safe-space hero — explicit framing: read, answered, public thread ── */}}
-  <section class="feedback-hero" aria-labelledby="feedback-hero-title">
-    <h2 id="feedback-hero-title" class="feedback-hero-title">
-      🌱 A safe space to ask anything
-    </h2>
-    <p class="feedback-hero-lead">
-      Stuck on a Microsoft 365 or AI concept? Found a bug? Want a new feature? Drop it here — there are no silly questions, and every submission is read by Susanth personally.
-    </p>
-    <ul class="feedback-hero-pillars" role="list">
-      <li>
-        <span class="feedback-hero-pillar-icon" aria-hidden="true">{{ partial "icon.html" (dict "name" "shield" "size" 16 "stroke" 1.5) }}</span>
-        <div>
-          <strong>No login. No email needed.</strong>
-          <span>Stay anonymous if you want — name and email are optional.</span>
-        </div>
-      </li>
-      <li>
-        <span class="feedback-hero-pillar-icon" aria-hidden="true">{{ partial "icon.html" (dict "name" "mail" "size" 16 "stroke" 1.5) }}</span>
-        <div>
-          <strong>Read and answered within 48 hours.</strong>
-          <span>Every question is a chance to make the site better. We mean it.</span>
-        </div>
-      </li>
-      <li>
-        <span class="feedback-hero-pillar-icon" aria-hidden="true">{{ partial "icon.html" (dict "name" "message-square" "size" 16 "stroke" 1.5) }}</span>
-        <div>
-          <strong>All Q&amp;A is public.</strong>
-          <span>Scroll down to see what others asked and what we're working on right now.</span>
-        </div>
-      </li>
-    </ul>
-  </section>
-
   {{/* ── Tabs ── */}}
   <div class="feedback-tabs" role="tablist">
     <button class="feedback-tab active" role="tab" aria-selected="true" data-tab="submit">{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Submit Feedback</button>
@@ -204,6 +171,41 @@
       </details>
     </div>
   </div>
+
+  {{/* ── Safe-space hero — moved below the form + threads (desktop and mobile).
+       It was eating 470px (56%) of a 390×844 first screen. Kept in DOM order
+       rather than reordered with CSS so reading order matches visual order. ── */}}
+  <section class="feedback-hero" aria-labelledby="feedback-hero-title">
+    <h2 id="feedback-hero-title" class="feedback-hero-title">
+      🌱 A safe space to ask anything
+    </h2>
+    <p class="feedback-hero-lead">
+      Stuck on a Microsoft 365 or AI concept? Found a bug? Want a new feature? Drop it here — there are no silly questions, and every submission is read by Susanth personally.
+    </p>
+    <ul class="feedback-hero-pillars" role="list">
+      <li>
+        <span class="feedback-hero-pillar-icon" aria-hidden="true">{{ partial "icon.html" (dict "name" "shield" "size" 16 "stroke" 1.5) }}</span>
+        <div>
+          <strong>No login. No email needed.</strong>
+          <span>Stay anonymous if you want — name and email are optional.</span>
+        </div>
+      </li>
+      <li>
+        <span class="feedback-hero-pillar-icon" aria-hidden="true">{{ partial "icon.html" (dict "name" "mail" "size" 16 "stroke" 1.5) }}</span>
+        <div>
+          <strong>Read and answered within 48 hours.</strong>
+          <span>Every question is a chance to make the site better. We mean it.</span>
+        </div>
+      </li>
+      <li>
+        <span class="feedback-hero-pillar-icon" aria-hidden="true">{{ partial "icon.html" (dict "name" "message-square" "size" 16 "stroke" 1.5) }}</span>
+        <div>
+          <strong>All Q&amp;A is public.</strong>
+          <span>Scroll up to see what others asked and what we're working on right now.</span>
+        </div>
+      </li>
+    </ul>
+  </section>
 
   {{ partial "back-nav" (dict "Page" . "URL" "/free-tools/" "Label" "Toolkit") }}
 
