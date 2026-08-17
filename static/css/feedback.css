@@ -669,8 +669,9 @@
 .fb-nav-link {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
   gap: 0.15rem;
-  align-items: flex-start;
 }
 .fb-nav-num {
   font-size: 0.7rem;
@@ -681,6 +682,9 @@
 .fb-nav-title {
   font-size: 0.8rem;
   line-height: 1.35;
+  /* .zt-lic-nav-link-name ships white-space:nowrap for single-line tool names;
+     thread titles are sentences, so let them wrap and clamp at two lines. */
+  white-space: normal;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
