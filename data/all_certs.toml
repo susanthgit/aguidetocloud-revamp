@@ -2854,6 +2854,27 @@ order = 793
 featured = false
 price_practice = 9
 
+[[cert]]
+slug = "nvidia-ncp-ads"
+vendor = "nvidia"
+code = "NVIDIA-NCP-ADS"
+name = "NVIDIA-Certified Professional: Accelerated Data Science (NCP-ADS)"
+tagline = "Master the NVIDIA-Certified Professional: Accelerated Data Science (NCP-ADS) exam: detect anomalies in time series, analyse graphs at scale with cuGraph, design accelerated ETL that reduces shuffle, scale with Dask across multiple GPUs, profile training with DLProf, do the device-memory arithmetic before it OOMs, benchmark honestly, and deploy and monitor models on Triton."
+exam_category = "NVIDIA"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 869
+featured = false
+price_practice = 9
+exam_url = "https://www.nvidia.com/en-us/learn/certification/accelerated-data-science-professional/"
+exam_cost = "$200 USD"
+exam_duration = 120
+exam_passing_score = "Not published by NVIDIA"
+guided_url = "/guided/nvidia-ncp-ads/"
+
 [cert_map."ab-900"]
 vendor = "microsoft"
 code = "AB-900"
@@ -12031,3 +12052,29 @@ exam_prerequisites = "No hard prerequisite. NVIDIA states candidates should have
 exam_question_types = ["Multiple choice", "Multiple response"]
 guided_url = "/guided/nvidia-nca-genm/"
 practice_url = "/guided/nvidia-nca-genm/practice/"
+
+[cert_map."nvidia-ncp-ads"]
+vendor = "nvidia"
+code = "NVIDIA-NCP-ADS"
+name = "NVIDIA-Certified Professional: Accelerated Data Science (NCP-ADS)"
+tagline = "Master the NVIDIA-Certified Professional: Accelerated Data Science (NCP-ADS) exam: detect anomalies in time series, analyse graphs at scale with cuGraph, design accelerated ETL that reduces shuffle, scale with Dask across multiple GPUs, profile training with DLProf, do the device-memory arithmetic before it OOMs, benchmark honestly, and deploy and monitor models on Triton."
+exam_category = "NVIDIA"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 869
+featured = false
+price_practice = 9
+exam_url = "https://www.nvidia.com/en-us/learn/certification/accelerated-data-science-professional/"
+exam_cost = "$200 USD"
+exam_duration = 120
+exam_passing_score = "Not published by NVIDIA"
+exam_questions_real = "60-70"
+exam_provider = "Certiverse (online remote-proctored)"
+exam_validity = "2 years"
+exam_prerequisites = "No hard prerequisite. NVIDIA recommends two to three years of hands-on experience in accelerated data science, a strong foundation in machine learning and GPU-accelerated computing, experience with GPU-based optimisation strategies and accelerated data manipulation, and a deep understanding of end-to-end data science workflows from preparation through model deployment."
+exam_question_types = ["Multiple choice", "Multiple response"]
+guided_url = "/guided/nvidia-ncp-ads/"
+practice_url = "/guided/nvidia-ncp-ads/practice/"
