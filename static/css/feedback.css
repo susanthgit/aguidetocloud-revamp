@@ -676,17 +676,15 @@
 }
 .fb-nav-title {
   flex: 1 1 auto;
-  min-width: 0; /* without this a flex child refuses to shrink and overflows */
+  min-width: 0; /* without this a flex child refuses to shrink, so the text
+                   overflows the sidebar instead of triggering the ellipsis */
   font-size: 0.72rem;
   line-height: 1.3;
-  /* .zt-lic-nav-link-name ships white-space:nowrap for single-line tool names;
-     thread titles are sentences, so let them wrap and clamp at two lines. */
-  white-space: normal;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
+  /* One line per thread. min-width:0 above is what makes text-overflow
+     actually fire here — without it the title clipped mid-word with no "…". */
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 .fb-nav-msg {
   padding: 0.75rem 1rem;
