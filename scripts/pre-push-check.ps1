@@ -40,7 +40,7 @@ $failed = $false
 Write-Host "`n🔍 Pre-push checks..." -ForegroundColor Cyan
 
 # ─── CHECK 1: cache_version bump ───
-Write-Host "`n[1/6] Checking cache_version..." -NoNewline
+Write-Host "`n[1/7] Checking cache_version..." -NoNewline
 
 # Get files changed since origin/main (what would be pushed)
 $changedFiles = git diff --name-only origin/main HEAD 2>$null
@@ -75,7 +75,7 @@ if ($cssJsChanged -and -not $configChanged) {
 
 # ─── CHECK 2: Hugo build ───
 if (-not $SkipBuild) {
-    Write-Host "`n[2/6] Hugo build..." -NoNewline
+    Write-Host "`n[2/7] Hugo build..." -NoNewline
     $buildOutput = & hugo --quiet 2>&1
     if ($LASTEXITCODE -ne 0) {
         Write-Host " ❌ BLOCKED" -ForegroundColor Red
@@ -86,11 +86,11 @@ if (-not $SkipBuild) {
         Write-Host " ✅ Build succeeded" -ForegroundColor Green
     }
 } else {
-    Write-Host "`n[2/6] Hugo build... ⏭ skipped (-SkipBuild)" -ForegroundColor DarkGray
+    Write-Host "`n[2/7] Hugo build... ⏭ skipped (-SkipBuild)" -ForegroundColor DarkGray
 }
 
 # ─── CHECK 3: Template markers ───
-Write-Host "`n[3/6] Checking for template errors in output..." -NoNewline
+Write-Host "`n[3/7] Checking for template errors in output..." -NoNewline
 $publicDir = Join-Path $repoRoot "public"
 if (Test-Path $publicDir) {
     $badFiles = Get-ChildItem -Path $publicDir -Recurse -Include "*.html" |
@@ -109,7 +109,7 @@ if (Test-Path $publicDir) {
 }
 
 # ─── CHECK 4: Blog SEO + OG image guardrail (content/blog/ changes only) ───
-Write-Host "`n[4/6] Blog SEO + OG image..." -NoNewline
+Write-Host "`n[4/7] Blog SEO + OG image..." -NoNewline
 $blogChanged = $changedFiles | Where-Object { $_ -match '^content/blog/.*\.md$' }
 if (-not $blogChanged) {
     Write-Host " ⏭ No blog content changes (skip)" -ForegroundColor DarkGray
@@ -135,7 +135,7 @@ if (-not $blogChanged) {
 # Hugo's HTML minifier silently "fixes" alt="A "thing"" by swapping to single quotes,
 # which masks the source bug. This check parses the source markdown directly.
 # Also catches hardcoded counts in og_headline (decay bug) and broken Quick Jump anchors.
-Write-Host "`n[5/6] Blog HTML hygiene..." -NoNewline
+Write-Host "`n[5/7] Blog HTML hygiene..." -NoNewline
 if (-not $blogChanged) {
     Write-Host " ⏭ No blog content changes (skip)" -ForegroundColor DarkGray
 } else {
@@ -162,7 +162,7 @@ if (-not $blogChanged) {
 #              § Microsoft posture (MANDATORY)
 # Fires when ANY content/*.md changes (not just blog) — catches licensing,
 # cert-tracker, AI Hub edits too. Fast scan (~2-3s over ~1,100 files).
-Write-Host "`n[6/6] Microsoft posture..." -NoNewline
+Write-Host "`n[6/7] Microsoft posture..." -NoNewline
 $contentChanged = $changedFiles | Where-Object { $_ -match '^content/.*\.md$' }
 if (-not $contentChanged) {
     Write-Host " ⏭ No content changes (skip)" -ForegroundColor DarkGray
@@ -181,6 +181,37 @@ if (-not $contentChanged) {
         }
     } else {
         Write-Host " ⏭ check-ms-posture.mjs not found" -ForegroundColor DarkGray
+    }
+}
+
+# ─── CHECK 7: Mobile grid invariant (always) ───
+# Added 2026-08-17 after the .zt-reading--tool-main regression. Commit 0bcc363e
+# (2026-06-19) appended a desktop 2-column grid ~3400 lines BELOW the shared
+# mobile reset. Both selectors are specificity (0,1,0) and media queries add no
+# specificity, so the later desktop rule won on phones: all 56 tool pages
+# squeezed content into a 250px track on a 390px screen with a dead track
+# beside it. Shipped silently, live-broken ~2 months, found only by user report.
+# Static parse — no browser, no dev server, runs in milliseconds.
+Write-Host "`n[7/7] Mobile grid invariant..." -NoNewline
+# Runs unconditionally: it is a millisecond static parse, and a change-file
+# trigger is exactly how this class of bug hides (the trigger never fires for
+# the file you forgot to list — including the guard itself).
+$gridScript = Join-Path $PSScriptRoot "check-mobile-grid.mjs"
+if (-not (Test-Path $gridScript)) {
+    Write-Host " ❌ BLOCKED" -ForegroundColor Red
+    Write-Host "  check-mobile-grid.mjs is missing — the mobile layout guard cannot run." -ForegroundColor Yellow
+    Write-Host "  Restore it (git checkout scripts/check-mobile-grid.mjs) before pushing." -ForegroundColor Yellow
+    $failed = $true
+} else {
+    $gridOutput = & node $gridScript 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host " ❌ BLOCKED" -ForegroundColor Red
+        $gridOutput | Where-Object { $_ -match "unguarded|grid tracks|track list|Fix —|@media|zt-reading|regression class" } | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+        Write-Host "  A .zt-reading variant sets a multi-column grid with no mobile collapse." -ForegroundColor Yellow
+        Write-Host "  Verify live after deploy: node scripts/check-mobile-grid.mjs --live https://www.aguidetocloud.com" -ForegroundColor Yellow
+        $failed = $true
+    } else {
+        Write-Host " ✅ All .zt-reading variants collapse to one column on mobile" -ForegroundColor Green
     }
 }
 
