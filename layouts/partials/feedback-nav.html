@@ -1,0 +1,30 @@
+{{/*
+  feedback-nav.html — Left sidebar for /feedback/ ONLY.
+
+  Replaces (does not extend) tools-nav.html on the feedback page, so 34+ thread
+  links never get buried under the 56-tool categories, and the landmark is
+  labelled "Feedback thread navigation" rather than "Tool navigation".
+
+  The list is populated by feedback.js from the same /api/discussions payload
+  the page already fetches — no second request. This file renders a static
+  shell with reserved height so the sidebar doesn't shift when it fills.
+
+  Note: .zt-sidebar is display:none at <=1024px, so this is desktop-only by
+  design. Mobile users get every thread in the main list instead.
+*/}}
+
+<nav class="zt-lic-nav" aria-label="Feedback threads">
+
+<a href="/free-tools/" class="zt-lic-nav-header">{{ partial "icon.html" (dict "name" "wrench" "size" 16 "stroke" 1.5) }} All Free Tools</a>
+
+<details class="zt-lic-nav-group" open>
+  <summary class="zt-lic-nav-cat">
+    <span>{{ partial "icon.html" (dict "name" "message-square" "size" 14 "stroke" 1.5) }} Jump to a question</span>
+    <span class="zt-lic-nav-count" id="fb-nav-count" aria-hidden="true">·</span>
+  </summary>
+  <div class="zt-lic-nav-links fb-nav-links" id="fb-nav-links" aria-busy="true" aria-live="polite">
+    <p class="fb-nav-msg">Loading questions…</p>
+  </div>
+</details>
+
+</nav>

@@ -138,9 +138,12 @@
       </aside>
     </div>
     {{ else if $isToolPage }}
+    {{ $isFeedback := hasPrefix .RelPermalink "/feedback/" }}
     <div class="zt-reading zt-reading--tool-detail zt-reading--tool-main">
-      <aside class="zt-sidebar zt-sidebar--tools" aria-label="Tool navigation" data-pagefind-ignore>
-        {{ partial "tools-nav.html" . }}
+      {{/* Feedback swaps the shared tools nav for a jump-to-thread index.
+           Scoped here so the other ~56 tool pages are untouched. */}}
+      <aside class="zt-sidebar zt-sidebar--tools" aria-label="{{ if $isFeedback }}Feedback thread navigation{{ else }}Tool navigation{{ end }}" data-pagefind-ignore>
+        {{ if $isFeedback }}{{ partial "feedback-nav.html" . }}{{ else }}{{ partial "tools-nav.html" . }}{{ end }}
       </aside>
       <div class="zt-reading-content zt-tool-center">
         {{ block "main" . }}{{ end }}

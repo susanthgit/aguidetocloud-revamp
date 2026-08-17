@@ -17,7 +17,18 @@ async function graphql(pat, query) {
     },
     body: JSON.stringify({ query }),
   });
-  return res.json();
+
+  // Without these two guards a 401 / 403 / rate-limit answer from GitHub falls
+  // through as "no discussions", so the board renders empty and looks like
+  // nobody has ever asked a question. Fail loudly instead.
+  if (!res.ok) {
+    throw new Error(`GitHub API returned HTTP ${res.status}`);
+  }
+  const json = await res.json();
+  if (json.errors?.length) {
+    throw new Error(`GitHub GraphQL error: ${json.errors[0].message}`);
+  }
+  return json;
 }
 
 export async function onRequestGet(context) {
@@ -37,7 +48,7 @@ export async function onRequestGet(context) {
   // Curated on-site pins — surfaced with the 📌 badge at the top of the Ask
   // section, independent of GitHub's own pinned discussions. Edit this list to
   // pin/unpin (by discussion number); order here is the display order.
-  const FEATURED = [26];
+  const FEATURED = [41];
   const featuredQuery = FEATURED.map((n, i) => `
       f${i}: discussion(number: ${n}) {
         title url number createdAt
@@ -49,8 +60,9 @@ export async function onRequestGet(context) {
 
   const query = `{
     repository(owner: "susanthgit", name: "aguidetocloud-feedback") {${featuredQuery}
-      discussions(first: 15, orderBy: {field: CREATED_AT, direction: DESC}) {
+      discussions(first: 50, orderBy: {field: CREATED_AT, direction: DESC}) {
         totalCount
+        pageInfo { hasNextPage }
         nodes {
           title url number createdAt
           category { name }
@@ -83,6 +95,10 @@ export async function onRequestGet(context) {
     const result = await graphql(pat, query);
     const discussions = result.data?.repository?.discussions?.nodes || [];
     const totalCount = result.data?.repository?.discussions?.totalCount || 0;
+    // True only if the board ever outgrows the 50-thread fetch. Surfaces a
+    // "browse the rest on GitHub" link rather than silently hiding threads
+    // again — which is the bug this whole change exists to kill.
+    const hasMore = result.data?.repository?.discussions?.pageInfo?.hasNextPage || false;
     const repo = result.data?.repository || {};
     const ghPinned = (repo.pinnedDiscussions?.nodes || [])
       .map(n => n.discussion)
@@ -96,7 +112,7 @@ export async function onRequestGet(context) {
       return true;
     });
 
-    return new Response(JSON.stringify({ discussions, totalCount, pinned }), {
+    return new Response(JSON.stringify({ discussions, totalCount, hasMore, pinned }), {
       status: 200,
       headers: {
         'Content-Type': 'application/json',

@@ -635,6 +635,68 @@
     text-align: center;
     gap: 0.6rem;
   }
+
+  /* ── Mobile: demote the 🌱 safe-space hero below the form ──
+     On a 390×844 screen the hero ate 470px (56%) of the first view before
+     anyone could see a single control. Reordering visually rather than in the
+     DOM keeps desktop untouched.
+     ⚠️ GUARDRAIL: .feedback-hero must stay free of links/buttons. It has no
+     focusable children today, which is the only reason the visual/DOM order
+     split is safe (WCAG 2.4.3 never engages). Adding one would need this
+     block reworked into a DOM move. */
+  .feedback-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .feedback-hero {
+    order: 10;
+    margin: 2rem 0 0;
+  }
+  .feedback-container .back-nav {
+    order: 20;
+  }
+}
+
+/* ── Sidebar thread index (/feedback/ only, desktop only) ──
+   Reuses .zt-lic-nav-* base styles from zt-reading.css; these are refinements
+   only, so the sidebar still looks right before this stylesheet parses. */
+.fb-nav-links {
+  max-height: calc(100vh - 260px);
+  overflow-y: auto;
+  min-height: 120px; /* reserved so JS population doesn't shift the sidebar */
+  scrollbar-width: thin;
+}
+.fb-nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  align-items: flex-start;
+}
+.fb-nav-num {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-tertiary, var(--text-secondary));
+  letter-spacing: 0.02em;
+}
+.fb-nav-title {
+  font-size: 0.8rem;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.fb-nav-msg {
+  padding: 0.75rem 1rem;
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+.fb-nav-more {
+  display: block;
+  margin-top: 1rem;
 }
 
 /* ── Focus visible (accessibility) ── */

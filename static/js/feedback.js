@@ -365,6 +365,7 @@
 
     var row = document.createElement('div');
     row.className = 'feedback-acc' + (isPinned ? ' feedback-acc-pinned' : '');
+    row.id = 'discussion-' + d.number;
     row.innerHTML =
       '<div class="feedback-acc-header" role="button" tabindex="0" aria-expanded="false">' +
         '<span class="feedback-acc-arrow">▸</span>' +
@@ -420,6 +421,109 @@
       if (pinnedIds[d.number]) return;
       recentList.appendChild(buildRow(d, false));
     });
-  }).catch(function () { /* silent */ });
+
+    // Safety net: if the board ever outgrows the 50-thread fetch, say so out
+    // loud instead of silently hiding threads again.
+    if (data.hasMore) {
+      var more = document.createElement('a');
+      more.className = 'feedback-acc-link fb-nav-more';
+      more.href = 'https://github.com/susanthgit/aguidetocloud-feedback/discussions';
+      more.target = '_blank';
+      more.rel = 'noopener noreferrer';
+      more.textContent = 'Browse the full archive on GitHub →';
+      recentList.appendChild(more);
+    }
+
+    buildThreadNav(pinned, list, pinnedIds);
+  }).catch(function () {
+    // Previously silent — a GitHub outage or rate-limit rendered as an empty
+    // board, which reads as "nobody has ever asked a question".
+    if (recentList) {
+      recentList.innerHTML =
+        '<p class="fb-nav-msg">Couldn\'t load the questions just now. ' +
+        '<a href="https://github.com/susanthgit/aguidetocloud-feedback/discussions" ' +
+        'target="_blank" rel="noopener noreferrer">Read them on GitHub</a> ' +
+        'or refresh the page.</p>';
+    }
+    var navBox = document.getElementById('fb-nav-links');
+    if (navBox) {
+      navBox.setAttribute('aria-busy', 'false');
+      navBox.innerHTML = '<p class="fb-nav-msg">Couldn\'t load questions.</p>';
+    }
+  });
+
+  // ── Sidebar thread index (desktop only — .zt-sidebar is hidden <=1024px) ──
+  function buildThreadNav(pinned, list, pinnedIds) {
+    var navBox = document.getElementById('fb-nav-links');
+    if (!navBox) return;
+
+    var ordered = pinned.concat(list.filter(function (d) { return !pinnedIds[d.number]; }));
+    navBox.setAttribute('aria-busy', 'false');
+    navBox.innerHTML = '';
+
+    if (!ordered.length) {
+      navBox.innerHTML = '<p class="fb-nav-msg">No questions yet.</p>';
+      return;
+    }
+
+    ordered.forEach(function (d, i) {
+      var a = document.createElement('a');
+      a.className = 'zt-lic-nav-link fb-nav-link';
+      a.href = '#discussion-' + d.number;
+      var num = document.createElement('span');
+      num.className = 'fb-nav-num';
+      num.textContent = (pinned.length && i < pinned.length ? '📌 ' : '') + '#' + d.number;
+      var name = document.createElement('span');
+      name.className = 'zt-lic-nav-link-name fb-nav-title';
+      // textContent, never innerHTML — titles are anonymous public input.
+      name.textContent = stripCat(d.title);
+      a.title = stripCat(d.title);
+      a.appendChild(num);
+      a.appendChild(name);
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        revealThread(d.number);
+      });
+      navBox.appendChild(a);
+    });
+
+    var count = document.getElementById('fb-nav-count');
+    if (count) count.textContent = ordered.length;
+  }
+
+  // Titles arrive as "[💬 General] Real question here" — the bracket prefix is
+  // noise in a narrow sidebar.
+  function stripCat(t) {
+    return String(t || '').replace(/^\s*\[[^\]]*\]\s*/, '') || String(t || '');
+  }
+
+  // One operation: switch to the right tab, clear any filter hiding the row,
+  // expand it, then scroll. Skipping any step leaves the user staring at a
+  // page that didn't visibly move.
+  function revealThread(number) {
+    var submitTab = document.querySelector('.feedback-tab[data-tab="submit"]');
+    if (submitTab && !submitTab.classList.contains('active')) submitTab.click();
+
+    var search = document.getElementById('fb-search');
+    if (search && search.value) {
+      search.value = '';
+      search.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+
+    var row = document.getElementById('discussion-' + number);
+    if (!row) return;
+    row.style.display = '';
+
+    var header = row.querySelector('.feedback-acc-header');
+    var body = row.querySelector('.feedback-acc-body');
+    if (header && body && body.hidden) header.click();
+
+    row.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('.fb-nav-link.active').forEach(function (el) {
+      el.classList.remove('active');
+    });
+    var link = document.querySelector('.fb-nav-link[href="#discussion-' + number + '"]');
+    if (link) link.classList.add('active');
+  }
 
 })();
