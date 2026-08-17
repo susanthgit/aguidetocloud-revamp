@@ -71,25 +71,12 @@ for (const vp of viewports) {
           mainCount: get('main, [role=main]').length,
           navCount: get('nav, [role=navigation]').length,
           asideCount: get('aside, [role=complementary]').length,
-          stamp: !!document.querySelector('.zt-about-stamp'),
-          stampLabel: document.querySelector('.zt-about-stamp')?.getAttribute('aria-label') || null,
-          cosmosCtaHref: document.querySelector('.zt-about-cta-cosmos')?.getAttribute('href') || null,
-          cosmosCtaLabel: document.querySelector('.zt-about-cta-cosmos')?.getAttribute('aria-label') || null,
           chipsCount: get('.zt-about-chip').length,
+          chipLabels: get('.zt-about-chip').map(a => a.textContent?.trim()).filter(Boolean),
           chipsLabel: document.querySelector('.zt-about-chips')?.getAttribute('aria-label') || null,
-          marginPresent: !!document.querySelector('.zt-about-margin'),
-          marginText: document.querySelector('.zt-about-margin')?.textContent?.trim() || null,
-          planetsCount: get('.zt-about-planet').length,
-          planetsVisible: (() => {
-            const el = document.querySelector('.zt-about-planets');
-            if (!el) return false;
-            const cs = getComputedStyle(el);
-            return cs.display !== 'none' && cs.visibility !== 'hidden';
-          })(),
+          cosmosElementsCount: get('.zt-about-stamp, .zt-about-cta-cosmos, .zt-about-margin, .zt-about-planets, .zt-about-planet, .zt-companion-planets').length,
           resumeLinkPresent: !!document.querySelector('.zt-about-resume-link a'),
           resumeLinkHref: document.querySelector('.zt-about-resume-link a')?.getAttribute('href') || null,
-          companionPlanets: !!document.querySelector('.zt-companion-planets'),
-          companionPlanetsCount: get('.zt-companion-planets .zt-companion-link').length,
           oldDownloadButton: get('.zt-about-btn').length, // should be 0
           oldExploreCta: get('.zt-companion-cta-btn').length, // should be 0
           // Pagefind
@@ -98,9 +85,6 @@ for (const vp of viewports) {
           headshotAlt: document.querySelector('.zt-about-headshot')?.getAttribute('alt') || null,
           // External links security
           externalChips: get('.zt-about-chip[href^="http"]').map(a => ({
-            href: a.href, target: a.getAttribute('target'), rel: a.getAttribute('rel')
-          })),
-          externalPlanets: get('.zt-about-planet[href^="http"]').map(a => ({
             href: a.href, target: a.getAttribute('target'), rel: a.getAttribute('rel')
           })),
           // Cosmos-bar mounted?
@@ -123,10 +107,11 @@ for (const vp of viewports) {
       findings.viewports.push({
         viewport: vp.name,
         h1OK: checks.h1Count === 1,
-        plantsVisible: checks.planetsVisible,
+        cosmosRemoved: checks.cosmosElementsCount === 0,
         oldButtonsAbsent: checks.oldDownloadButton === 0 && checks.oldExploreCta === 0,
         chipsCount: checks.chipsCount,
-        planetsCount: checks.planetsCount,
+        chipsCorrect: checks.chipsCount === 5 &&
+          checks.chipLabels.join('|') === '↗ all links|YouTube|Bites|LinkedIn|Ko-fi',
         consoleErrors: consoleMsgs.filter(m => m.type === 'error').length,
         failedRequests: failedReqs.length,
       });
@@ -154,11 +139,7 @@ for (const vp of viewports) {
       return getComputedStyle(el).display === 'none';
     };
     return {
-      stampHidden: isHidden('.zt-about-stamp'),
-      ctaRowHidden: isHidden('.zt-about-cta-row'),
-      marginHidden: isHidden('.zt-about-margin'),
-      planetsHidden: isHidden('.zt-about-planets'),
-      companionPlanetsHidden: isHidden('.zt-companion-planets'),
+      profileLinksHidden: isHidden('.zt-about-chips'),
       resumeVisible: !isHidden('.zt-about-resume-link'),
     };
   });
@@ -222,7 +203,7 @@ console.log(`URL: ${URL}\n`);
 
 console.log('— Per-viewport structural —');
 for (const v of findings.viewports) {
-  console.log(`  ${v.viewport.padEnd(15)} h1OK=${v.h1OK} planets=${v.plantsVisible?'shown':'hidden'} chips=${v.chipsCount} planetCards=${v.planetsCount} oldRemoved=${v.oldButtonsAbsent} consoleErr=${v.consoleErrors} netFail=${v.failedRequests}`);
+  console.log(`  ${v.viewport.padEnd(15)} h1OK=${v.h1OK} cosmosRemoved=${v.cosmosRemoved} chips=${v.chipsCount} chipsCorrect=${v.chipsCorrect} oldRemoved=${v.oldButtonsAbsent} consoleErr=${v.consoleErrors} netFail=${v.failedRequests}`);
 }
 
 console.log('\n— A11y structure (1440px) —');
@@ -230,16 +211,13 @@ const a = findings.a11y;
 console.log(`  H1 count: ${a.h1Count}    H1: ${(a.h1Text||[]).join(' | ')}`);
 console.log(`  Landmarks: main=${a.mainCount} nav=${a.navCount} aside=${a.asideCount}`);
 console.log(`  Headshot alt: "${a.headshotAlt}"`);
-console.log(`  Stamp aria: "${a.stampLabel}"`);
-console.log(`  Cosmos CTA: ${a.cosmosCtaHref} aria-label="${a.cosmosCtaLabel}"`);
+console.log(`  About-page cosmos elements: ${a.cosmosElementsCount} (must be 0)`);
+console.log(`  Hero links: ${(a.chipLabels||[]).join(' · ')} (must be ↗ all links · YouTube · Bites · LinkedIn · Ko-fi)`);
 console.log(`  Resume link href: ${a.resumeLinkHref}`);
 console.log(`  Old "Download Resume" button count: ${a.oldDownloadButton} (must be 0)`);
 console.log(`  Old explore CTA button count: ${a.oldExploreCta} (must be 0)`);
 console.log(`  External chip target=_blank+rel=noopener:`);
 for (const c of (a.externalChips||[])) console.log(`    ${c.href.padEnd(60)} target=${c.target} rel=${c.rel}`);
-console.log(`  External planet target=_blank+rel=noopener:`);
-for (const p of (a.externalPlanets||[])) console.log(`    ${p.href.padEnd(60)} target=${p.target} rel=${p.rel}`);
-
 console.log('\n— Print preview —');
 console.log(`  ${JSON.stringify(findings.print)}`);
 
