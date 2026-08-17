@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 17 Aug 2026 16:41:22 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2026 18:54:57 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may experience issues accessing or using Microsoft 365 Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1456526</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may experience issues accessing or using Copilot</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>investigating</category>
-      <guid isPermaLink="false">CP1456526</guid>
-      <pubDate>Mon, 17 Aug 2026 15:07:09 +0000</pubDate>
-    </item>
     <item>
       <title>[Microsoft 365 suite] Some users may be unable to search for content in SharePoint Online, OneDrive, Outlook on the web, or Outlook desktop</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1456424</link>
@@ -457,6 +448,15 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>serviceDegradation</category>
       <guid isPermaLink="false">EX1441488</guid>
       <pubDate>Fri, 17 Jul 2026 10:26:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some admins can't access Copilot Agent report data in the Microsoft 365 admin center from July 14, 2026</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1430786</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Admins couldn't access Copilot Agent report data in the Microsoft 365 admin center from July 14, 2026.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1430786</guid>
+      <pubDate>Fri, 17 Jul 2026 01:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
