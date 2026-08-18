@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T07:00:32.797390+00:00",
+  "generated_at": "2026-08-18T08:50:34.423251+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -19,12 +19,12 @@
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 19,
+      "total_incidents": 20,
       "active_incidents": 1,
-      "avg_duration_minutes": 6493,
-      "last_incident": "2026-08-13T15:13:00.107000+00:00",
+      "avg_duration_minutes": 6186,
+      "last_incident": "2026-08-17T19:30:00+00:00",
       "classifications": {
-        "advisory": 12,
+        "advisory": 13,
         "incident": 7
       }
     },
@@ -46,12 +46,12 @@
       "short_name": "Exchange",
       "icon": "📧",
       "total_incidents": 9,
-      "active_incidents": 2,
-      "avg_duration_minutes": 7234,
-      "last_incident": "2026-08-18T03:25:40.210000+00:00",
+      "active_incidents": 1,
+      "avg_duration_minutes": 6387,
+      "last_incident": "2026-08-17T23:38:00+00:00",
       "classifications": {
-        "incident": 1,
-        "advisory": 8
+        "advisory": 8,
+        "incident": 1
       }
     },
     {
@@ -117,18 +117,6 @@
       }
     },
     {
-      "service": "Microsoft Defender XDR",
-      "short_name": "Defender",
-      "icon": "🛡️",
-      "total_incidents": 3,
-      "active_incidents": 0,
-      "avg_duration_minutes": 7679,
-      "last_incident": "2026-07-09T12:00:00+00:00",
-      "classifications": {
-        "advisory": 3
-      }
-    },
-    {
       "service": "Microsoft 365 apps",
       "short_name": "M365 Apps",
       "icon": "💼",
@@ -166,6 +154,18 @@
       }
     },
     {
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
+      "total_incidents": 2,
+      "active_incidents": 0,
+      "avg_duration_minutes": 7584,
+      "last_incident": "2026-07-09T12:00:00+00:00",
+      "classifications": {
+        "advisory": 2
+      }
+    },
+    {
       "service": "SharePoint Online",
       "short_name": "SharePoint",
       "icon": "📄",
@@ -193,7 +193,7 @@
   "monthly": [
     {
       "month": "2026-08",
-      "incident_count": 18,
+      "incident_count": 19,
       "services_affected": 9
     },
     {
@@ -203,7 +203,7 @@
     },
     {
       "month": "2026-06",
-      "incident_count": 28,
+      "incident_count": 27,
       "services_affected": 12
     },
     {
