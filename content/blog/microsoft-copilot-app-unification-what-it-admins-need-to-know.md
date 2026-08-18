@@ -2,8 +2,8 @@
 title: "Copilot Apps Are Merging: What IT Admins Need to Check"
 list_title: "Copilot App Unification: The Admin Guide"
 description: "Microsoft is merging the personal and work Copilot apps. The work address moves to copilot.cloud.microsoft — not copilot.microsoft.com. What to check."
-date: 2026-08-18
-lastmod: 2026-08-18
+date: 2026-08-19
+lastmod: 2026-08-19
 hub_id: "it-admins"
 card_tag: "Copilot"
 tag_class: "ai"
@@ -17,14 +17,14 @@ founder_note: |
 
   So if you blocked `copilot.microsoft.com` to stop staff signing into personal Copilot, your work service probably still loads. Probably. There are two common rule patterns that still bite you, and I'll show you how to check both in about ten minutes.
 
-  I'll also show you the more uncomfortable thing I found while checking: Microsoft's own documentation says it *doesn't recommend and cannot support* blocking Copilot at the network level at all. If a firewall rule is your entire personal-account strategy, this post is worth twenty minutes of your time.
+  I'll also show you the more uncomfortable thing I found while checking: Microsoft's own documentation says it *doesn't recommend and cannot support* managing Microsoft 365 Copilot Chat through network-level restrictions — and that a web block, whatever else it does, was never an identity control. If a firewall rule is your entire personal-account strategy, this post is worth twenty minutes of your time.
 faq:
   - question: "Is Microsoft 365 Copilot moving to copilot.microsoft.com?"
     answer: "No. The work Copilot web address is moving from m365.cloud.microsoft to copilot.cloud.microsoft. The address copilot.microsoft.com remains the personal, consumer entry point — Microsoft's own management documentation lists it under entry points for users signed in with a personal Microsoft account. They are different addresses, so a rule matching one does not automatically match the other. An organisation that blocked copilot.microsoft.com has not, by that action alone, blocked Microsoft 365 Copilot."
   - question: "Will blocking copilot.microsoft.com break Microsoft 365 Copilot for my users?"
     answer: "Not on its own. Two rule patterns commonly cause trouble. First, if your block is a broad keyword, regex or web-category rule built around the word 'copilot', it can also match copilot.cloud.microsoft, which is your work service. Second, if your allow-list names individual addresses such as m365.cloud.microsoft rather than covering the new host, the new address is not included. Other proxy controls can also interfere — TLS inspection or an inconsistent rule across the cloud.microsoft domain. Test https://copilot.cloud.microsoft from a managed device to find out."
   - question: "What domain should I allow for Microsoft 365 Copilot?"
-    answer: "In the Worldwide cloud, which also covers GCC, check that the wildcard *.cloud.microsoft is allowed. In Microsoft's 'Microsoft 365 URLs and IP address ranges' documentation this is endpoint set ID 184, over TCP 443 and UDP 443, and it is marked as Required. The endpoint web service returns only the wildcard under set 184 — it does not enumerate copilot.cloud.microsoft or m365.cloud.microsoft individually. Note that this wildcard is the domain to verify for this particular URL change; it is not a complete Microsoft 365 or Copilot allow list, and GCC High, DoD and 21Vianet use different domains and different endpoint sets. Microsoft's guidance for the cloud.microsoft domain is that customers who manually update endpoints should ensure *.cloud.microsoft and other required domains are included in their allow list to prevent connectivity and service incidents."
+    answer: "In the Worldwide cloud, which also covers GCC, check that the wildcard *.cloud.microsoft is allowed. In Microsoft's 'Microsoft 365 URLs and IP address ranges' documentation this is endpoint set ID 184, over TCP 443 and UDP 443, and it is marked as Required. The endpoint web service returns only the wildcard under set 184 — it does not enumerate copilot.cloud.microsoft or m365.cloud.microsoft individually. Also allow the two companion domains *.static.microsoft and *.usercontent.microsoft, which the endpoints web service returns under set 193 even though the Learn HTML page shows them under 184 — so allow all three by name rather than importing a set ID. Note that this wildcard is the domain to verify for this particular URL change; it is not a complete Microsoft 365 or Copilot allow list, and GCC High, DoD and 21Vianet use different domains and different endpoint sets. Microsoft's guidance for the cloud.microsoft domain is that customers who manually update endpoints should ensure *.cloud.microsoft and other required domains are included in their allow list to prevent connectivity and service incidents."
   - question: "How do I stop staff signing into Copilot with a personal Microsoft account?"
     answer: "Use Tenant Restrictions v2. Microsoft's Copilot management documentation states directly that to manage user sign-in to Microsoft 365 apps using a personal account, you should use tenant restrictions V2. The same page says Microsoft does not recommend and cannot support attempts to manage Copilot Chat through network-level restrictions such as selective domain, URL, IP blocking or network-protocol filtering, because Copilot Chat is deeply integrated with applications and such restrictions can lead to unpredictable results."
   - question: "Is Tenant Restrictions v2 generally available?"
@@ -48,7 +48,7 @@ sitemap:
   priority: 0.9
 ---
 
-**Last verified: 18 August 2026.** This is a live rollout and Microsoft's documentation is still moving. Where something isn't confirmed by Microsoft, I say so rather than filling the gap. There's a [changelog](#changelog) at the bottom.
+**Last verified: 19 August 2026.** This is a live rollout and Microsoft's documentation is still moving. Where something isn't confirmed by Microsoft, I say so rather than filling the gap. There's a [changelog](#changelog) at the bottom.
 
 ## The 60-second answer
 
@@ -59,8 +59,8 @@ If you read nothing else, read this table.
 | "Work Copilot is moving to `copilot.microsoft.com`" | **No.** It's moving to `copilot.cloud.microsoft` |
 | "We blocked `copilot.microsoft.com`, so we've broken Copilot" | **Almost certainly not.** Different address — but test to confirm |
 | "So we don't need to do anything" | **Not quite.** Two common rule patterns still break — [check yours](#checker) |
-| "Our web block stops staff using personal Copilot" | **It only ever covered one way in.** Microsoft lists six personal entry points, and says it doesn't support network blocking for this |
-| "What should we actually allow?" | `*.cloud.microsoft` — endpoint set **184**, marked Required. Allow its two companions too: `*.static.microsoft` and `*.usercontent.microsoft`. [Different in GCC High, DoD and 21Vianet](#sovereign) |
+| "Our web block stops staff using personal Copilot" | **It covers some ways in, not all.** Microsoft lists six personal entry points; I tested them and at least three never touch the address you blocked |
+| "What should we actually allow?" | `*.cloud.microsoft` (endpoint set **184**) plus `*.static.microsoft` and `*.usercontent.microsoft` (the web service returns these as set **193**). All three Required — [allow by name, not by set ID](#domains). [Different in GCC High, DoD and 21Vianet](#sovereign) |
 | "What actually stops personal accounts?" | **Tenant Restrictions v2.** Sign-in control, not a firewall rule |
 
 {{< margin >}}I'm a Copilot Solution Engineer at Microsoft NZ, but this is my personal guide — not official Microsoft support guidance. The product, date and policy claims below come from Microsoft's public documentation; the DNS and HTTP results are point-in-time tests you can re-run yourself, and anything operational I've flagged as my own observation. Every source is [listed at the bottom](#sources) so you can check my work.{{< /margin >}}
@@ -83,7 +83,7 @@ Other proxy controls can interfere too — TLS inspection, or a rule applied une
 
 ## Check yours {#checker}
 
-Four questions. Two verdicts — because "can Copilot load?" and "are personal accounts actually controlled?" are different problems with different fixes, and conflating them is how admins end up confidently wrong.
+Four questions. Two verdicts — because "can Copilot load?" and "are personal accounts actually controlled?" are different problems with different fixes, and conflating them is how a team ends up confident about a gap it hasn't closed.
 
 {{< copilot-checker >}}
 
@@ -97,7 +97,19 @@ The short version. The [full checklist](#full-checklist) is further down if you 
 4. **Leave the old address allowed.** Microsoft's documentation still references `m365.cloud.microsoft`, and I found no published retirement notice. Allow both.
 5. **Check who owns personal-account sign-in.** If the answer is "the firewall", read the [section on that](#personal) — it's the part of this post that matters most.
 
-![Microsoft's endpoint list showing three domains under endpoint set 184, all marked Required: cloud.microsoft, static.microsoft and usercontent.microsoft](/images/blog/copilot-app-unification/02-unified-domains-184.webp "All three sit in endpoint set 184 and all three are marked Required, so allow the set rather than one wildcard")
+### The three domains — and the set-ID trap {#domains}
+
+![Microsoft's endpoint list showing three domains — cloud.microsoft, static.microsoft and usercontent.microsoft — each marked Required, with ID 184 shown against all three](/images/blog/copilot-app-unification/02-unified-domains-184.webp "Microsoft's Learn page shows all three under ID 184 — but the endpoints web service your tooling imports returns static and usercontent under 193. Allow all three by name, not by set ID")
+
+{{< hi >}}**Do not allow-list by set ID alone — this is the trap in this whole post.**{{< /hi >}} The screenshot above is Microsoft's Learn page, and it shows all three domains against ID **184**. But the [endpoints web service](https://endpoints.office.com/endpoints/worldwide) — the machine-readable feed your firewall and proxy tooling actually imports — returns something different. I queried it while writing this:
+
+| Domain | Learn HTML page says | Endpoints web service says |
+|---|---|---|
+| `*.cloud.microsoft` | 184 | **184** |
+| `*.static.microsoft` | 184 | **193** |
+| `*.usercontent.microsoft` | 184 | **193** |
+
+Both are Microsoft, and they disagree. I queried the web service on **19 August 2026** and got the split above. If you import "set 184" and trust it, you get **one of the three required domains** — and you land in exactly the half-working state described below, where Copilot loads but pieces of it quietly don't. Allow all three **by name**. Re-check the web service yourself rather than taking my word or the HTML page's.
 
 ## What actually changed
 
@@ -197,7 +209,7 @@ Two things worth knowing before you go looking for the setting:
 
 **Does that mean you can defer this particular change?** Microsoft's announcement doesn't say, and I'm not going to guess. Check whether your Message Center post for it carries the *"Deferred feature"* tag — that tag is the answer, not anything I can tell you.
 
-{{< margin >}}**The line in that documentation that stopped me.** Microsoft's examples of a "major update" — the kind that earns you 30 days' notice — include *"URL changes if the new URL isn't `*.cloud.microsoft`"*. Read that carefully. This change is `m365.cloud.microsoft` → `copilot.cloud.microsoft`: both **inside** the wildcard, so it doesn't trip that particular example. That isn't proof it isn't a major update — Microsoft's list is examples, not a complete test, and a change could qualify on some other ground. But it's a strong hint about how Microsoft thinks about URL changes, and one more argument for allowing `*.cloud.microsoft` rather than naming hosts one at a time. The change-management policy already assumes you did.{{< /margin >}}
+{{< margin >}}**The line in that documentation that stopped me.** Microsoft's examples of a "major update" — the kind that earns you 30 days' notice — include *"URL changes if the new URL isn't `*.cloud.microsoft`"*. Read that carefully. This change is `m365.cloud.microsoft` → `copilot.cloud.microsoft`: both **inside** the wildcard, so it doesn't trip that particular example. That isn't proof it isn't a major update — Microsoft's list is examples, not a complete test, and a change could qualify on some other ground. But it's a hint about how Microsoft thinks about URL changes, and one more argument for allowing `*.cloud.microsoft` rather than naming hosts one at a time. Note the same list also includes rebranding that might cause end-user confusion or help-desk calls — which this change plainly could. So don't read this as "it won't be a major update". Read it as: the URL move alone doesn't trip that example, and only the *"Deferred feature"* tag in your Message Center settles whether you can defer it.{{< /margin >}}
 
 ## The part most admins get wrong {#personal}
 
@@ -229,7 +241,15 @@ The supported answer, from the same page:
 
 TRv2 works at sign-in, so it doesn't care which address the user found. That's why it's Microsoft's supported control for this. But go in with clear eyes.
 
-{{< hi >}}**Two prerequisites before you plan anything.** Microsoft lists **Microsoft Entra ID P1 or P2** as a requirement for configuring tenant restrictions, and you need an account with at least the **Security Administrator** role.{{< /hi >}} If your licensing doesn't include P1, this is a budget conversation before it's a technical one — worth finding out on day one rather than day thirty.
+{{< hi >}}**Read the name literally: it controls *sign-in*. That defines its edges.**{{< /hi >}} Three limits follow from that, and none of them are reasons to avoid TRv2 — they're reasons not to over-claim it once it's on:
+
+- **A policy on its own enforces nothing.** TRv2 needs a cloud policy *and* a path that carries the signal — Global Secure Access, a corporate proxy injecting the header, or Windows device management. Creating the policy and skipping the enforcement path is the most expensive way to feel protected.
+- **It governs Microsoft account sign-in.** Microsoft's own support page says consumer Copilot users may have signed up with a *"personal Microsoft, Google or Apple email"*. TRv2 is an Entra control over Microsoft-account sign-in; I've seen nothing first-party establishing that it covers a Google or Apple identity. Treat that as unverified, not as covered.
+- **Signed-out use isn't a sign-in event.** If a consumer surface can be used without signing in at all, a sign-in control has nothing to act on.
+
+So the honest claim is narrower than "TRv2 stops personal Copilot". It's: *TRv2 is the supported way to stop personal **Microsoft account** sign-in on the paths your enforcement method actually covers.* That's still far better than a firewall rule — it just isn't a force field, and your security team will respect the distinction more than the overstatement.
+
+{{< hi >}}**Two prerequisites before you plan anything.** Microsoft lists **Microsoft Entra ID P1 or P2** as a requirement for configuring tenant restrictions, and you need an account with at least the **Security Administrator** role.{{< /hi >}} If your licensing doesn't include P1, this is a budget conversation before it's a technical one — worth finding out on day one rather than day thirty. Universal tenant restrictions via Global Secure Access carry their own licensing and configuration requirements on top, so price the method you actually pick.
 
 **What's ready, what isn't:**
 
@@ -257,7 +277,7 @@ Read the middle row again, too: proxy header injection covers **Chrome**, and Wi
 - − **No per-user granularity for personal accounts.** Microsoft states the policy applies to all users of Microsoft accounts. You do get application-level granularity.
 - − It doesn't block non-user device traffic — Autopilot, Windows Update, organisational data collection.
 - − It doesn't cover B2B authentication of consumer accounts or passthrough authentication.
-- − Documented unsupported scenarios include anonymous access to consumer OneDrive, non-Microsoft-account access to partner apps, and a token copied from a home machine to a work machine *and then used to reach a third-party app such as Slack*. That last one is narrower than it sounds — read it properly before you quote it at anyone.
+- − Documented unsupported scenarios include anonymous access to consumer OneDrive, non-Microsoft-account access to partner apps, and a token copied from a home machine to a work machine *and then used to reach a third-party app such as Slack*. That last one is narrower than it sounds — worth reading in full before it goes in a risk register.
 
 If you go the proxy route, three things that coverage table doesn't tell you:
 
@@ -275,14 +295,18 @@ And watch the platform scoping carefully, because it's easy to misread. Microsof
 
 Everything above assumes the **Worldwide** cloud, which also covers GCC. If you're somewhere else, the domain is different — and copying `*.cloud.microsoft` into your allow-list won't help you.
 
-I queried Microsoft's endpoint web service for each cloud on 18 August 2026:
+I queried Microsoft's endpoint web service for each cloud on **19 August 2026**. Every sovereign cloud publishes its own equivalent of all three domains:
 
-| Your cloud | The wildcard to look for | Endpoint set |
+| Your cloud | The three domains to look for | Endpoint set |
 |---|---|---|
-| Worldwide (and GCC) | `*.cloud.microsoft` | 184 |
-| GCC High | `*.usgovcloud.microsoft` | 23 |
-| DoD | `*.usgovcloud.microsoft` | 12 |
-| 21Vianet (China) | No `cloud.microsoft` domain published | — |
+| Worldwide (and GCC) | `*.cloud.microsoft` · `*.static.microsoft` · `*.usercontent.microsoft` | **184** + **193** + **193** |
+| GCC High | `*.usgovcloud.microsoft` · `*.usgovcloud-static.microsoft` · `*.usgovcloud-usercontent.microsoft` | **23** (all three) |
+| DoD | `*.usgovcloud.microsoft` · `*.usgovcloud-static.microsoft` · `*.usgovcloud-usercontent.microsoft` | **12** (all three) |
+| 21Vianet (China) | `*.sovcloud.cn` · `*.sovcloud-static.cn` · `*.sovcloud-usercontent.cn` | **22** (all three) |
+
+There's a small mercy here: in the sovereign clouds all three domains sit in **one** set, so importing that set actually gets you everything. It's only the Worldwide cloud where they're split across two — which is exactly where [the set-ID trap](#domains) bites.
+
+One caveat worth stating plainly: I've verified the **domains and set numbers** above from Microsoft's live endpoint web service. I have **not** verified that the unified Copilot app has shipped in these clouds, or when it will. Sovereign clouds routinely lag Worldwide by months, and Microsoft hasn't published a sovereign timeline for this change. Treat the rows above as "the domains to have ready", not "this is live for you today".
 
 Each cloud publishes its own endpoint list and the set numbers differ between them. Use your own cloud's documentation — not this post, and not a Worldwide article someone forwarded you.
 
@@ -300,8 +324,9 @@ This is the Copilot-specific discovery and testing. Your own change process will
 
 **Fix**
 
-4. Add `*.cloud.microsoft` where your tooling supports wildcards — endpoint set **184**, TCP 443 and UDP 443, marked Required. Microsoft's own wording is to add it to organisational allow lists *where appropriate*. If you can't use wildcards, add `copilot.cloud.microsoft` explicitly and keep the list in step with Microsoft's published endpoint data. This is the domain to verify **for this change** — it isn't a complete Microsoft 365 allow-list, and [sovereign clouds use different domains](#sovereign).
-5. While you're there, allow the other two **unified domains** Microsoft lists alongside it: `*.static.microsoft` (static content on CDNs) and `*.usercontent.microsoft` (content that needs domain isolation). Allowing the first and missing these two is a common way to get a half-working experience rather than a clean failure you'd notice.
+4. Add `*.cloud.microsoft` where your tooling supports wildcards — endpoint set **184**, TCP 443 and UDP 443, marked Required. Microsoft's own wording is to add it to organisational allow lists *where appropriate*. This is the domain to verify **for this change** — it isn't a complete Microsoft 365 allow-list, and [sovereign clouds use different domains](#sovereign).
+   {{< hi >}}**If your tooling can't do wildcards,** adding `copilot.cloud.microsoft` on its own is a **stopgap, not a fix.**{{< /hi >}} Microsoft publishes a wildcard here precisely because more than one hostname lives under `cloud.microsoft`, and it doesn't enumerate them individually — so a single-host allow gets sign-in working while leaving you exposed to the next hostname Microsoft adds, with no notice. Treat it as a temporary unblock, and put "get wildcard support, or subscribe to the endpoint web service and automate the list" on the actual fix list.
+5. While you're there, allow the other two **unified domains** Microsoft lists alongside it: `*.static.microsoft` (static content on CDNs) and `*.usercontent.microsoft` (content that needs domain isolation). {{< hi >}}Add these two **by name**, not by importing set 184 — the endpoints web service returns them under set **193**, even though the Learn HTML page shows 184.{{< /hi >}} Allowing the first and missing these two is a common way to get a half-working experience rather than a clean failure you'd notice.
 6. Keep `m365.cloud.microsoft` allowed. Microsoft's docs still reference it and I found no published retirement notice. {{< hi >}}Then update everything else that still *identifies* work Copilot by that old host{{< /hi >}} — CASB/SSE app definitions, DLP policy scopes, SIEM detections and dashboards, app-control rules and any reporting that keys off the URL. A network rule you fixed and a DLP policy you forgot is how a control quietly stops matching the traffic it was written for. Re-run your own detections after the change and confirm they still fire.
 7. Fix a broad `copilot` rule by **adding a higher-priority allow for the work address**, not by loosening the deny. Narrowing the deny to the exact consumer host reopens `copilot.com`, `copilot.ai` and `bing.com/copilotsearch` — don't do that until the account-level control is actually in place and your security owner has agreed.
 
@@ -343,7 +368,7 @@ Less than you'd fear, for work. Microsoft says work and school users see the Mic
 
 The mobile work sits on the personal side. Microsoft says users of the consumer Copilot mobile app need to download an updated version to keep using it, and users of the Microsoft 365 Copilot mobile app with a personal account may get an auto-update or may have to request one manually. If personal Copilot is on managed phones in your estate, that's the change your users will actually notice.
 
-## Still unknown as of 18 August 2026 {#unknown}
+## Still unknown as of 19 August 2026 {#unknown}
 
 I'd rather leave these open than guess. If you've seen first-party confirmation of any of them, [tell me](/contact/) and I'll update the post.
 
@@ -354,7 +379,7 @@ I'd rather leave these open than guess. If you've seen first-party confirmation 
 | Does the Recall filter policy need re-applying to the new app? | Reported by community blogs. I could not confirm it in public Microsoft documentation. If Recall filtering matters to you, verify it yourself rather than trusting any blog. |
 | What's the package family name for AppLocker or WDAC? | Not published first-party that I could find. Only the Store product ID is. Don't copy a package name from a blog into an app-control policy. |
 
-One more thing worth knowing: Microsoft's Copilot management page still says the Microsoft Copilot app doesn't work for commercial users authenticating with a Microsoft Entra account. That describes the situation *before* this change. So right now Microsoft's own pages disagree with each other — that's a documentation conflict, not something I can promise will be tidied up on any particular date. If you're reading that page this week, that's why it doesn't match what you're seeing.
+One more thing worth knowing: Microsoft's Copilot management page still says the Microsoft Copilot app doesn't work for commercial users authenticating with a Microsoft Entra account. That reflects the pre-transition state. So one public Microsoft page currently reads differently from another — a documentation lag during a live rollout, not something I can promise will be reconciled on any particular date. If you're reading that page this week, that's why it doesn't match what you're seeing. It's also the second such conflict in this post, after the endpoint set IDs — during a rollout, prefer the machine-readable feed and your own tenant over any single page.
 
 ## Where this comes from {#sources}
 
@@ -365,7 +390,7 @@ The product, date and policy claims above trace to these public Microsoft pages.
 | [Partner Center — August 2026 announcements](https://learn.microsoft.com/partner-center/announcements/2026-august) | The URL move to `copilot.cloud.microsoft`, automatic redirect, the "unless access is blocked" warning, the 18 August and mid-September dates |
 | [What's changing with Copilot](https://support.microsoft.com/en-us/microsoft-365-copilot/learning/changes-microsoft-copilot-app) | One app for personal, work and school accounts, account switcher, data separation, and the retiring features |
 | [Manage Microsoft 365 Copilot Chat](https://learn.microsoft.com/copilot/manage) | That `copilot.cloud.microsoft` is a work entry point, the six personal entry points, the statement that network-level blocking isn't recommended or supported, and the pointer to Tenant Restrictions v2 |
-| [Microsoft 365 URLs and IP address ranges](https://learn.microsoft.com/microsoft-365/enterprise/urls-and-ip-address-ranges) | Endpoint set 184, `*.cloud.microsoft`, TCP/UDP 443, Required |
+| [Microsoft 365 URLs and IP address ranges](https://learn.microsoft.com/microsoft-365/enterprise/urls-and-ip-address-ranges) | Endpoint set 184, `*.cloud.microsoft`, TCP/UDP 443, Required. The HTML page shows the two companion domains under 184; the web service returns them under 193 |
 | [GCC High](https://learn.microsoft.com/microsoft-365/enterprise/microsoft-365-u-s-government-gcc-high-endpoints) and [DoD](https://learn.microsoft.com/microsoft-365/enterprise/microsoft-365-u-s-government-dod-endpoints) endpoints | The different domains and endpoint sets used by sovereign clouds |
 | [Tenant restrictions v2](https://learn.microsoft.com/entra/external-id/tenant-restrictions-v2) | GA vs preview, the P1/P2 prerequisite, the three enforcement methods and their coverage, and the documented limits |
 | [Deploy the Microsoft 365 Copilot app](https://learn.microsoft.com/microsoft-365/copilot/deploy-microsoft-365-copilot-app) | Automatic installation behaviour, the domains needed to install and update, and the Store identifier |
@@ -379,4 +404,4 @@ Your `copilot.microsoft.com` block probably didn't break Microsoft 365 Copilot. 
 
 | Date | Change |
 |---|---|
-| 18 Aug 2026 | First published. Verified against Microsoft documentation current at this date. |
+| 19 Aug 2026 | First published. Verified against Microsoft documentation and live endpoint data current at this date. |
