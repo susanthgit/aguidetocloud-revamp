@@ -97,7 +97,7 @@
 
   <div class="cpchk-out" role="status" aria-live="polite" tabindex="-1"></div>
 
-  <p class="cpchk-foot">This asks you what your policies say &mdash; it can't inspect them. It won't see proxy configuration files, TLS inspection, DNS filtering, split tunnels or Conditional Access. Treat the result as a place to start testing, not proof.</p>
+  <p class="cpchk-foot">This asks you what your policies say &mdash; it can't inspect them. It won't see proxy configuration files, TLS inspection, DNS filtering, split tunnels or Conditional Access. Endpoint set 184 and <code>*.cloud.microsoft</code> assume the <strong>Worldwide</strong> cloud, which includes GCC; GCC High, DoD and 21Vianet use different domains and different set numbers. Treat the result as a place to start testing, not proof.</p>
 
   <noscript>
     <div class="cpchk-ns">
@@ -106,10 +106,10 @@
         <caption>Can your people reach work Copilot?</caption>
         <thead><tr><th>If this is you</th><th>Work access</th><th>What to do</th></tr></thead>
         <tbody>
-          <tr><td><code>copilot.cloud.microsoft</code> doesn't load</td><td>Blocked today</td><td>Add <code>*.cloud.microsoft</code> (endpoint set 184) before the redirect reaches you</td></tr>
+          <tr><td><code>copilot.cloud.microsoft</code> doesn't load</td><td>Blocked today</td><td>Read your deny logs to find what blocked it, then confirm <code>*.cloud.microsoft</code> (endpoint set 184) is allowed</td></tr>
           <tr><td>You allow named hosts, not the wildcard</td><td>At risk</td><td>Add the wildcard <code>*.cloud.microsoft</code> where your tooling supports it</td></tr>
           <tr><td>You block on the keyword <code>copilot</code> or a category</td><td>At risk</td><td>Check the rule can't match <code>copilot.cloud.microsoft</code></td></tr>
-          <tr><td>Wildcard allowed, only the exact consumer host blocked, new URL loads</td><td>Browser path looks ready</td><td>Re-test after the redirect lands, and test desktop and mobile separately</td></tr>
+          <tr><td>Wildcard allowed, new URL loads, and your consumer block is either the exact host only or absent</td><td>Page load looks ready</td><td>Sign in and run a real prompt, then test desktop and mobile separately</td></tr>
         </tbody>
       </table>
       <table>
@@ -140,7 +140,7 @@
 
   function workVerdict(q1, q2, q3) {
     if (q1 === 'no') {
-      return ['risk', 'Blocked today', 'The new work address already fails from a managed device. When the redirect reaches your tenant, Copilot on the web stops loading for those users.', 'Allow <strong>*.cloud.microsoft</strong> &mdash; that is endpoint set <strong>184</strong>, TCP/UDP 443, marked Required. Then re-test.'];
+      return ['risk', 'Blocked today', 'The new work address already fails from a managed device. When the redirect reaches your tenant, Copilot on the web stops loading for those users.', 'Read your proxy and DNS deny logs to find <em>what</em> blocked it &mdash; a failed load can also be TLS inspection, DNS filtering or a different required endpoint, not just a domain rule. Then confirm <strong>*.cloud.microsoft</strong> (endpoint set <strong>184</strong>, TCP/UDP 443, Required) is allowed, and re-test.'];
     }
     if (q2 === 'fqdn') {
       return ['risk', 'Brittle allow-list', 'Listing individual addresses works right up until Microsoft adds one. <code>copilot.cloud.microsoft</code> is exactly that case &mdash; and it is not listed in the endpoint data, only the wildcard is.', 'Add the wildcard <strong>*.cloud.microsoft</strong> where your tooling supports it. If it does not, add <code>copilot.cloud.microsoft</code> explicitly and keep the list in step with Microsoft&rsquo;s endpoint data.'];
@@ -149,14 +149,14 @@
       return ['risk', 'Your block may be too wide', 'A keyword, regex or category rule built around the word <em>copilot</em> can match <code>copilot.cloud.microsoft</code> &mdash; your <em>work</em> service &mdash; not just the consumer one.', 'Test the rule against the new work address specifically. Narrow it to the exact consumer host if it matches.'];
     }
     if (q1 === 'yes' && q2 === 'wildcard' && (q3 === 'exact' || q3 === 'none')) {
-      return ['ok', 'Basic web reachability looks ready', 'The wildcard covers the new address, it loads today, and your consumer block is narrow enough not to catch it. That is the browser path only &mdash; it says nothing about TLS inspection, desktop, mobile or WebSockets.', 'Re-test once the redirect actually lands on your tenant, and test desktop and mobile separately.'];
+      return ['ok', 'Basic web reachability looks ready', 'The wildcard covers the new address, it loads today, and your consumer block is narrow enough not to catch it. That is a page load on one browser path only &mdash; it says nothing about TLS inspection, desktop, mobile, WebSockets, or whether an authenticated session with files and prompts actually works.', 'Re-test once the redirect actually lands on your tenant, sign in and run a real prompt, and test desktop and mobile separately.'];
     }
     return ['test', 'Test before you assume', 'There is at least one thing here you are not certain about, and uncertainty is what turns into a service desk queue.', 'Open <strong>https://copilot.cloud.microsoft</strong> from a managed device, then read your allow-list rather than recalling it.'];
   }
 
   function personalVerdict(q3, q4) {
     if (q4 === 'verified') {
-      return ['ok', 'Verified on the platforms you tested', 'Tenant Restrictions v2 works at sign-in, so it does not care which address the user found. You have tested it, which is the part most organisations skip.', 'Re-test whenever you add a browser, platform or device type. Microsoft describes Global Secure Access as the option covering any operating system, browser or device form factor, and Windows device management as the one that can enforce the data plane as well as sign-in.'];
+      return ['ok', 'Verified on the platforms you tested', 'Tenant Restrictions v2 works at sign-in, so it does not care which address the user found. You have tested it, which is the part most organisations skip.', 'Re-test whenever you add a browser, platform or device type. Microsoft describes Global Secure Access as covering any operating system, browser or device form factor &mdash; though its data plane protection is documented for Microsoft Graph only &mdash; and Windows device management, which Microsoft lists as preview, as the option that enforces the data plane more broadly.'];
     }
     if (q4 === 'configured') {
       return ['test', 'Configured, but coverage is unverified', 'A policy that exists is not the same as a policy that blocks. Each enforcement method covers a different slice of an estate, and the gaps are quiet ones.', 'Try signing in with a personal Microsoft account on every browser and device type you care about, then check your method against Microsoft&rsquo;s Tenant Restrictions v2 page.'];
