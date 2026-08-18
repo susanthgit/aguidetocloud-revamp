@@ -60,12 +60,12 @@ If you read nothing else, read this table.
 | "We blocked `copilot.microsoft.com`, so we've broken Copilot" | **Almost certainly not.** Different address — but test to confirm |
 | "So we don't need to do anything" | **Not quite.** Two common rule patterns still break — [check yours](#checker) |
 | "Our web block stops staff using personal Copilot" | **It only ever covered one way in.** Microsoft lists six personal entry points, and says it doesn't support network blocking for this |
-| "What should we actually allow?" | The wildcard `*.cloud.microsoft` — endpoint set **184**, marked Required. [Different if you're in GCC High, DoD or 21Vianet](#sovereign) |
+| "What should we actually allow?" | `*.cloud.microsoft` — endpoint set **184**, marked Required. Allow its two companions too: `*.static.microsoft` and `*.usercontent.microsoft`. [Different in GCC High, DoD and 21Vianet](#sovereign) |
 | "What actually stops personal accounts?" | **Tenant Restrictions v2.** Sign-in control, not a firewall rule |
 
 {{< margin >}}I'm a Copilot Solution Engineer at Microsoft NZ. Everything below comes from Microsoft's public documentation or from tests you can run yourself — every source is [listed at the bottom](#sources) so you can check my work.{{< /margin >}}
 
-<!-- SCREENSHOT 1 — see shot-list item 1 -->
+![Microsoft Edge with the address bar showing https://copilot.cloud.microsoft, the tab titled "Copilot | AI chat for work", and the page headline "Copilot, AI built for work"](/images/blog/copilot-app-unification/01-copilot-cloud-microsoft-address-bar.webp "Work Copilot lives at copilot.cloud.microsoft. The consumer app keeps copilot.microsoft.com. Different addresses, different domains.")
 
 ## Which orgs actually break
 
@@ -97,7 +97,7 @@ The short version. The [full checklist](#full-checklist) is further down if you 
 4. **Leave the old address allowed.** Microsoft's documentation still references `m365.cloud.microsoft`, and I found no published retirement notice. Allow both.
 5. **Check who owns personal-account sign-in.** If the answer is "the firewall", read the [section on that](#personal) — it's the part of this post that matters most.
 
-<!-- SCREENSHOT 2 — see shot-list item 2 -->
+![Microsoft's endpoint list showing three domains under endpoint set 184, all marked Required: cloud.microsoft, static.microsoft and usercontent.microsoft](/images/blog/copilot-app-unification/02-unified-domains-184.webp "All three sit in endpoint set 184 and all three are marked Required, so allow the set rather than one wildcard")
 
 ## What actually changed
 
@@ -249,7 +249,7 @@ Get the exact header names and values from Microsoft's Tenant Restrictions v2 pa
 
 And if a platform in your estate can't do break-and-inspect at all, TRv2 simply won't work there. Microsoft points those cases at Conditional Access device-compliance rules and B2B collaboration restrictions instead — worth knowing so you don't quietly assume coverage you don't have.
 
-<!-- SCREENSHOT 3 — see shot-list item 3 -->
+![Microsoft's comparison of tenant restrictions v1 and v2, showing that v2 is managed by a cloud policy in the cross-tenant access policy rather than by a proxy header](/images/blog/copilot-app-unification/03-tenant-restrictions-v2-enforcement.webp "Tenant Restrictions v2 is a sign-in policy you set in Entra, not a network rule. Note the Windows device management option, the one that also covers the data plane, is still in preview.")
 
 ## If you're in GCC High, DoD or 21Vianet {#sovereign}
 
@@ -279,22 +279,23 @@ Copy this into your change ticket.
 **Fix**
 
 4. Add `*.cloud.microsoft` where your tooling supports wildcards — endpoint set **184**, TCP 443 and UDP 443, marked Required. Microsoft's own wording is to add it to organisational allow lists *where appropriate*. If you can't use wildcards, add `copilot.cloud.microsoft` explicitly and keep the list in step with Microsoft's published endpoint data. This is the domain to verify **for this change** — it isn't a complete Microsoft 365 allow-list, and [sovereign clouds use different domains](#sovereign).
-5. Keep `m365.cloud.microsoft` allowed. Microsoft's docs still reference it and I found no published retirement notice.
-6. Narrow any broad `copilot` rule so it can't match `copilot.cloud.microsoft`.
+5. While you're there, allow the other two **unified domains** Microsoft lists alongside it: `*.static.microsoft` (static content on CDNs) and `*.usercontent.microsoft` (content that needs domain isolation). Allowing the first and missing these two is a common way to get a half-working experience rather than a clean failure you'd notice.
+6. Keep `m365.cloud.microsoft` allowed. Microsoft's docs still reference it and I found no published retirement notice.
+7. Narrow any broad `copilot` rule so it can't match `copilot.cloud.microsoft`.
 
 **Test**
 
-7. Load `https://copilot.cloud.microsoft` directly from a managed device.
-8. Test the old address too, and watch what happens when the redirect fires.
-9. Test WebSockets. Microsoft's own connectivity tool at `https://connectivity.m365.cloud.microsoft` includes a WebSocket connection test for Copilot.
-10. Test more than one path: in-office, VPN, split tunnel, remote, mobile.
-11. Test web, desktop and mobile separately — they don't fail the same way.
+8. Load `https://copilot.cloud.microsoft` directly from a managed device.
+9. Test the old address too, and watch what happens when the redirect fires.
+10. Test WebSockets. Microsoft's own connectivity tool at `https://connectivity.m365.cloud.microsoft` includes a WebSocket connection test for Copilot.
+11. Test more than one path: in-office, VPN, split tunnel, remote, mobile.
+12. Test web, desktop and mobile separately — they don't fail the same way.
 
 **Then**
 
-12. Watch proxy deny logs for `cloud.microsoft` for a fortnight.
-13. Tell your service desk what the new address looks like, so a "Copilot is broken" ticket gets diagnosed in one minute instead of thirty.
-14. Decide who owns personal-account sign-in — and whether that's really the firewall team.
+13. Watch proxy deny logs for `cloud.microsoft` for a fortnight.
+14. Tell your service desk what the new address looks like, so a "Copilot is broken" ticket gets diagnosed in one minute instead of thirty.
+15. Decide who owns personal-account sign-in — and whether that's really the firewall team.
 
 ## The desktop app
 
