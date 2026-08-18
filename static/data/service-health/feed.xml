@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Aug 2026 14:48:37 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 16:45:43 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Some users may experience degraded video quality when screen sharing using the Microsoft Teams web client</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1457081</link>
+      <description>[Microsoft Teams] Users may experience degraded video quality when screen sharing using the Microsoft Teams web client.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1457081</guid>
+      <pubDate>Tue, 18 Aug 2026 15:33:13 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Some users may be unable to send or receive new Exchange Online email through the native iOS mail app</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1456866</link>
@@ -448,15 +457,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1431319</guid>
       <pubDate>Fri, 17 Jul 2026 19:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Intune] Some users may be unable to export Microsoft Intune reports</title>
-      <link>https://www.aguidetocloud.com/service-health/#IT1431093</link>
-      <description>[Microsoft Intune] Users may have been unable to export Microsoft Intune reports.</description>
-      <category>Microsoft Intune</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">IT1431093</guid>
-      <pubDate>Fri, 17 Jul 2026 15:50:49 +0000</pubDate>
     </item>
   </channel>
 </rss>
