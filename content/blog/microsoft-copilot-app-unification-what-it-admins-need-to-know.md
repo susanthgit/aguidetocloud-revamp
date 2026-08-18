@@ -65,7 +65,7 @@ If you read nothing else, read this table.
 
 {{< margin >}}I'm a Copilot Solution Engineer at Microsoft NZ. Everything below comes from Microsoft's public documentation or from tests you can run yourself — every source is [listed at the bottom](#sources) so you can check my work.{{< /margin >}}
 
-![Microsoft Edge with the address bar showing https://copilot.cloud.microsoft, the tab titled "Copilot | AI chat for work", and the page headline "Copilot, AI built for work"](/images/blog/copilot-app-unification/01-copilot-cloud-microsoft-address-bar.webp "Work Copilot lives at copilot.cloud.microsoft. The consumer app keeps copilot.microsoft.com. Different addresses, different domains.")
+![The work Copilot app signed in, with the address bar showing https://copilot.cloud.microsoft/chat, Chat and Cowork tabs, and a left sidebar with New chat, Search, Library, Agents and Skills, Notebooks. The address is enlarged underneath so it is readable](/images/blog/copilot-app-unification/01-copilot-cloud-microsoft-app.webp "The work app signed in, running at copilot.cloud.microsoft. The consumer app keeps copilot.microsoft.com. Different addresses, different domains. Chat history and pinned agents blanked out.")
 
 ## Which orgs actually break
 
