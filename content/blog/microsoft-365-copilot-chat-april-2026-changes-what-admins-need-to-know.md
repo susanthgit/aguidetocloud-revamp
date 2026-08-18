@@ -4,7 +4,7 @@ list_title: "M365 Copilot Chat — April 15 Changes (IT Admin Update)"
 hub_id: "it-admins"
 description: "Microsoft is removing free Copilot Chat from Word/Excel/PPT/OneNote for unlicensed users April 15. MC1253858, MC1253863, Chat Basic explained."
 date: 2026-04-09
-lastmod: 2026-05-08
+lastmod: 2026-08-19
 card_tag: "Copilot"
 tag_class: "ai"
 faq_render: false  # manual rich FAQ exists in body — migrate to frontmatter later
@@ -328,6 +328,7 @@ Enterprise (>300 users): **$30/user/month**. Business (<300 users): **$21/user/m
 
 ## Related Articles
 
+- [Copilot App Unification: The Admin Guide](/blog/microsoft-copilot-app-unification-what-it-admins-need-to-know/) — the August 2026 app merge, the new work address, and why a `copilot.microsoft.com` block never controlled personal accounts
 - [Microsoft 365 Copilot Chat — Train-the-Trainer Guide](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/) — what this April change means for the people running training sessions
 - [Microsoft 365 Copilot Licensed — Train-the-Trainer Guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/) — for the licensed users who get Claude and everything else
 - [Copilot Pro vs Microsoft 365 Copilot](/blog/copilot-pro-vs-microsoft-365-copilot/) — the licensing decision in plain English

@@ -3,7 +3,7 @@ title: "Auditing Microsoft 365 Copilot: What's Logged and Kept"
 list_title: "Auditing Microsoft 365 Copilot — A Practical Guide"
 description: "A plain-English guide to Microsoft 365 Copilot auditing: what each interaction records, where to find it in Purview, and how long it's kept."
 date: 2026-08-11
-lastmod: 2026-08-11
+lastmod: 2026-08-19
 hub_id: "it-admins"
 card_tag: "Security"
 tag_class: "security"
@@ -342,6 +342,7 @@ Purview can audit connected and unmanaged third-party AI apps too (ChatGPT, Gemi
 - [Copilot Control System — the complete guide](/blog/microsoft-365-copilot-control-system-complete-guide/) — which admin portal owns which control.
 - [SharePoint oversharing controls for Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/) — what Copilot can and can't surface.
 - [Copilot deployment best practices — the checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) — where auditing fits in a rollout.
+- [Copilot app unification — the admin guide](/blog/microsoft-copilot-app-unification-what-it-admins-need-to-know/) — the August 2026 app merge and the new `copilot.cloud.microsoft` address.
 
 ### Sources
 

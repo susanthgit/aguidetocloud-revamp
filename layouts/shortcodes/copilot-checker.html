@@ -1,0 +1,207 @@
+{{- /* Copilot readiness checker — Aug 2026 Copilot app unification.
+       Usage: {{< copilot-checker >}}
+       Self-contained. No external JS, no storage, no telemetry, no network calls.
+       Returns TWO independent verdicts because network reachability and
+       personal-account control are different problems with different controls.
+       Design-system rules: tokens only, no gradients/glows, no backdrop-filter,
+       transitions <=200ms, works light + dark, never colour-only meaning.
+       Added 18 Aug 2026. */ -}}
+<style>
+.cpchk{border:1px solid var(--rule);background:var(--paper-deep);padding:1.4rem 1.3rem;margin:2.2rem 0;border-radius:2px}
+.cpchk-h{font-family:var(--font-mono,ui-monospace,monospace);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 .3rem}
+.cpchk-lede{color:var(--ink-soft);font-size:.95rem;margin:0 0 1.3rem;line-height:1.5}
+.cpchk fieldset{border:0;border-top:1px solid var(--grid-line);margin:0 0 1.1rem;padding:1rem 0 0}
+.cpchk fieldset:first-of-type{border-top:0;padding-top:0}
+.cpchk legend{font-weight:600;color:var(--ink);font-size:.97rem;padding:0;margin-bottom:.6rem;line-height:1.45}
+.cpchk-opts{display:flex;flex-direction:column;gap:.42rem}
+.cpchk-opt{display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;color:var(--ink-soft);font-size:.92rem;line-height:1.45;padding:.34rem .5rem;border-radius:2px;transition:background-color 150ms ease-out,color 150ms ease-out}
+.cpchk-opt:hover{background:var(--paper);color:var(--ink)}
+.cpchk-opt input{margin:.28rem 0 0;flex:0 0 auto;accent-color:var(--ink);min-width:16px;min-height:16px}
+.cpchk-opt input:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.cpchk-actions{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin-top:.4rem}
+.cpchk-btn{font:inherit;font-size:.9rem;font-weight:600;padding:.6rem 1.2rem;border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:2px;cursor:pointer;transition:opacity 150ms ease-out}
+.cpchk-btn:hover{opacity:.85}
+.cpchk-btn:focus-visible{outline:2px solid var(--pen);outline-offset:2px}
+.cpchk-reset{font:inherit;font-size:.86rem;padding:.6rem .4rem;border:0;background:none;color:var(--ink-faint);cursor:pointer;text-decoration:underline}
+.cpchk-reset:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.cpchk-out:empty{display:none}
+.cpchk-out{margin-top:1.4rem;display:grid;gap:.9rem}
+.cpchk-card{border:1px solid var(--rule);border-left:3px solid var(--ink-faint);background:var(--paper);padding:.95rem 1.05rem;border-radius:2px}
+.cpchk-card[data-tone="ok"]{border-left-color:var(--ink-green)}
+.cpchk-card[data-tone="risk"]{border-left-color:var(--pen)}
+.cpchk-card[data-tone="test"]{border-left-color:var(--rule)}
+.cpchk-cat{font-family:var(--font-mono,ui-monospace,monospace);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 .3rem}
+.cpchk-verdict{font-weight:700;color:var(--ink);margin:0 0 .45rem;font-size:1.02rem;line-height:1.35}
+.cpchk-mark{font-family:var(--font-mono,ui-monospace,monospace);margin-right:.4rem}
+.cpchk-card[data-tone="ok"] .cpchk-mark{color:var(--ink-green)}
+.cpchk-card[data-tone="risk"] .cpchk-mark{color:var(--pen)}
+.cpchk-why{color:var(--ink-soft);font-size:.92rem;margin:0 0 .5rem;line-height:1.55}
+.cpchk-do{color:var(--ink);font-size:.92rem;margin:0;line-height:1.55}
+.cpchk-do strong{font-weight:600}
+.cpchk-foot{margin-top:1.1rem;padding-top:.8rem;border-top:1px solid var(--grid-line);color:var(--ink-faint);font-size:.83rem;line-height:1.5}
+.cpchk-ns table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:.8rem}
+.cpchk-ns th,.cpchk-ns td{border:1px solid var(--rule);padding:.5rem .6rem;text-align:left;vertical-align:top}
+.cpchk-ns th{background:var(--paper);color:var(--ink);font-weight:600}
+@media (max-width:600px){.cpchk{padding:1.1rem .95rem}.cpchk-btn,.cpchk-reset{width:100%;text-align:center}}
+@media (prefers-reduced-motion:reduce){.cpchk-opt,.cpchk-btn{transition:none}}
+</style>
+
+<div class="cpchk">
+  <p class="cpchk-h">Interactive · 4 questions</p>
+  <p class="cpchk-lede">Answer from what your firewall, proxy and identity policies <em>actually</em> say &mdash; not what you think they say. Nothing is sent anywhere; this runs entirely in your browser.</p>
+
+  <form class="cpchk-form">
+    <fieldset>
+      <legend>1. From a managed device on the corporate network, does <code>https://copilot.cloud.microsoft</code> load?</legend>
+      <div class="cpchk-opts">
+        <label class="cpchk-opt"><input type="radio" name="q1" value="yes"><span>Yes &mdash; it loads fine</span></label>
+        <label class="cpchk-opt"><input type="radio" name="q1" value="no"><span>No &mdash; blocked, times out, or shows a proxy error</span></label>
+        <label class="cpchk-opt"><input type="radio" name="q1" value="untested"><span>I haven't tested it</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. How does your allow-list cover Microsoft 365?</legend>
+      <div class="cpchk-opts">
+        <label class="cpchk-opt"><input type="radio" name="q2" value="wildcard"><span>Wildcard &mdash; we allow <code>*.cloud.microsoft</code></span></label>
+        <label class="cpchk-opt"><input type="radio" name="q2" value="fqdn"><span>Named hosts &mdash; we list individual addresses like <code>m365.cloud.microsoft</code></span></label>
+        <label class="cpchk-opt"><input type="radio" name="q2" value="unknown"><span>I'm not sure how it's written</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. How do you currently stop staff using <em>personal</em> Copilot?</legend>
+      <div class="cpchk-opts">
+        <label class="cpchk-opt"><input type="radio" name="q3" value="exact"><span>We block the exact address <code>copilot.microsoft.com</code></span></label>
+        <label class="cpchk-opt"><input type="radio" name="q3" value="broad"><span>A broad rule &mdash; a keyword like <code>copilot</code>, a regex, or a web category</span></label>
+        <label class="cpchk-opt"><input type="radio" name="q3" value="none"><span>We don't block it</span></label>
+        <label class="cpchk-opt"><input type="radio" name="q3" value="unknown"><span>I'm not sure</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Is personal Microsoft account sign-in governed by Tenant Restrictions v2?</legend>
+      <div class="cpchk-opts">
+        <label class="cpchk-opt"><input type="radio" name="q4" value="verified"><span>Yes &mdash; and we've <em>tested</em> that it blocks personal sign-in on the browsers and devices we care about</span></label>
+        <label class="cpchk-opt"><input type="radio" name="q4" value="configured"><span>TRv2 is configured, but we haven't verified what it actually covers</span></label>
+        <label class="cpchk-opt"><input type="radio" name="q4" value="no"><span>No &mdash; we rely on network blocking only</span></label>
+        <label class="cpchk-opt"><input type="radio" name="q4" value="unknown"><span>I'm not sure</span></label>
+      </div>
+    </fieldset>
+
+    <div class="cpchk-actions">
+      <button type="submit" class="cpchk-btn">Show my two verdicts</button>
+      <button type="button" class="cpchk-reset">Start over</button>
+    </div>
+  </form>
+
+  <div class="cpchk-out" role="status" aria-live="polite" tabindex="-1"></div>
+
+  <p class="cpchk-foot">This asks you what your policies say &mdash; it can't inspect them. It won't see proxy configuration files, TLS inspection, DNS filtering, split tunnels or Conditional Access. Endpoint set 184 and <code>*.cloud.microsoft</code> assume the <strong>Worldwide</strong> cloud, which includes GCC; GCC High, DoD and 21Vianet use different domains and different set numbers. Treat the result as a place to start testing, not proof.</p>
+
+  <noscript>
+    <div class="cpchk-ns">
+      <p><strong>JavaScript is off &mdash; here's the same logic as a table.</strong></p>
+      <table>
+        <caption>Can your people reach work Copilot?</caption>
+        <thead><tr><th>If this is you</th><th>Work access</th><th>What to do</th></tr></thead>
+        <tbody>
+          <tr><td><code>copilot.cloud.microsoft</code> doesn't load</td><td>Blocked today</td><td>Read your deny logs to find what blocked it, then confirm <code>*.cloud.microsoft</code> (endpoint set 184) is allowed</td></tr>
+          <tr><td>You allow named hosts, not the wildcard</td><td>At risk</td><td>Add the wildcard <code>*.cloud.microsoft</code> where your tooling supports it</td></tr>
+          <tr><td>You block on the keyword <code>copilot</code> or a category</td><td>At risk</td><td>Check the rule can't match <code>copilot.cloud.microsoft</code></td></tr>
+          <tr><td>Wildcard allowed, new URL loads, and your consumer block is either the exact host only or absent</td><td>Page load looks ready</td><td>Sign in and run a real prompt, then test desktop and mobile separately</td></tr>
+        </tbody>
+      </table>
+      <table>
+        <caption>Can they still sign in with a personal account?</caption>
+        <thead><tr><th>If this is you</th><th>Personal-account control</th><th>What to do</th></tr></thead>
+        <tbody>
+          <tr><td>TRv2 enforced and tested on your platforms</td><td>Verified where tested</td><td>Re-test whenever you add a browser, platform or device type</td></tr>
+          <tr><td>TRv2 configured but never verified</td><td>Coverage unknown</td><td>Try a personal sign-in on each browser and device type you care about</td></tr>
+          <tr><td>You rely on blocking a web address</td><td>Leaky</td><td>Microsoft doesn't support network blocking for this &mdash; move to TRv2</td></tr>
+          <tr><td>Nothing you know of</td><td>No control identified</td><td>Decide if that's intentional, then look at TRv2</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </noscript>
+</div>
+
+<script>
+(function () {
+  var root = document.currentScript.previousElementSibling;
+  if (!root || !root.classList.contains('cpchk')) { return; }
+  var form = root.querySelector('.cpchk-form');
+  var out = root.querySelector('.cpchk-out');
+
+  function val(name) {
+    var el = form.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : '';
+  }
+
+  function workVerdict(q1, q2, q3) {
+    if (q1 === 'no') {
+      return ['risk', 'Blocked today', 'The new work address already fails from a managed device. When the redirect reaches your tenant, Copilot on the web stops loading for those users.', 'Read your proxy and DNS deny logs to find <em>what</em> blocked it &mdash; a failed load can also be TLS inspection, DNS filtering or a different required endpoint, not just a domain rule. Then confirm <strong>*.cloud.microsoft</strong> (endpoint set <strong>184</strong>, TCP/UDP 443, Required) is allowed, and re-test.'];
+    }
+    if (q2 === 'fqdn') {
+      return ['risk', 'Brittle allow-list', 'Listing individual addresses works right up until Microsoft adds one. <code>copilot.cloud.microsoft</code> is exactly that case &mdash; and it is not listed in the endpoint data, only the wildcard is.', 'Add the wildcard <strong>*.cloud.microsoft</strong> where your tooling supports it. If it does not, add <code>copilot.cloud.microsoft</code> explicitly and keep the list in step with Microsoft&rsquo;s endpoint data.'];
+    }
+    if (q3 === 'broad') {
+      return ['risk', 'Your block may be too wide', 'A keyword, regex or category rule built around the word <em>copilot</em> can match <code>copilot.cloud.microsoft</code> &mdash; your <em>work</em> service &mdash; not just the consumer one.', 'Test the rule against the new work address specifically. If it matches, fix it by adding a higher-priority <em>allow</em> for the work address rather than loosening the deny &mdash; narrowing the deny to the exact consumer host reopens the other consumer entry points.'];
+    }
+    if (q1 === 'yes' && q2 === 'wildcard' && (q3 === 'exact' || q3 === 'none')) {
+      return ['ok', 'Basic web reachability looks ready', 'The wildcard covers the new address, it loads today, and your consumer block is narrow enough not to catch it. That is a page load on one browser path only &mdash; it says nothing about TLS inspection, desktop, mobile, WebSockets, or whether an authenticated session with files and prompts actually works.', 'Re-test once the redirect actually lands on your tenant, sign in and run a real prompt, and test desktop and mobile separately.'];
+    }
+    return ['test', 'Test before you assume', 'There is at least one thing here you are not certain about, and uncertainty is what turns into a service desk queue.', 'Open <strong>https://copilot.cloud.microsoft</strong> from a managed device, then read your allow-list rather than recalling it.'];
+  }
+
+  function personalVerdict(q3, q4) {
+    if (q4 === 'verified') {
+      return ['ok', 'Verified on the platforms you tested', 'Tenant Restrictions v2 acts at sign-in, so it does not depend on which address the user found &mdash; provided your enforcement path actually carries the signal. You have tested it, which is the part most organisations skip. Note it governs Microsoft account sign-in; consumer Copilot also allows Google and Apple sign-in, which this does not establish coverage for.', 'Re-test whenever you add a browser, platform or device type. Microsoft describes Global Secure Access as covering any operating system, browser or device form factor &mdash; though its data plane protection is documented for Microsoft Graph only &mdash; and Windows device management, which Microsoft lists as preview, as the option that enforces the data plane more broadly.'];
+    }
+    if (q4 === 'configured') {
+      return ['test', 'Configured, but coverage is unverified', 'A policy that exists is not the same as a policy that blocks. Each enforcement method covers a different slice of an estate, and the gaps are quiet ones.', 'Try signing in with a personal Microsoft account on every browser and device type you care about, then check your method against Microsoft&rsquo;s Tenant Restrictions v2 page.'];
+    }
+    if (q3 === 'exact' || q3 === 'broad') {
+      return ['risk', 'Leaky &mdash; a web block is not an account block', 'Personal Copilot was never one address. Microsoft lists the app on web, desktop and mobile plus <code>copilot.microsoft.com</code>, <code>bing.com/chat</code>, <code>bing.com/copilotsearch</code>, <code>copilot.com</code> and <code>copilot.ai</code>. Microsoft also says plainly that it does not recommend and cannot support managing this with network-level restrictions.', 'If the goal is really "no personal accounts at work", move to <strong>Tenant Restrictions v2</strong>. Keep the web block if you like &mdash; just stop treating it as the control.'];
+    }
+    if (q3 === 'none' && q4 === 'no') {
+      return ['test', 'No account-level control identified', 'Nothing you have described governs personal-account sign-in. Something else in your tenant might &mdash; Conditional Access, device policy or an identity control this checker cannot see.', 'Confirm whether that is deliberate. If it is not, Tenant Restrictions v2 is the supported way to change it.'];
+    }
+    return ['test', 'Worth a review', 'You are not sure what governs personal account sign-in, which usually means nobody owns it.', 'Find out whether Tenant Restrictions v2 exists in your tenant before you change any firewall rule.'];
+  }
+
+  function card(cat, res) {
+    var mark = res[0] === 'ok' ? '&#10003;' : (res[0] === 'risk' ? '&minus;' : '&bull;');
+    return '<div class="cpchk-card" data-tone="' + res[0] + '">' +
+      '<p class="cpchk-cat">' + cat + '</p>' +
+      '<p class="cpchk-verdict"><span class="cpchk-mark" aria-hidden="true">' + mark + '</span>' + res[1] + '</p>' +
+      '<p class="cpchk-why">' + res[2] + '</p>' +
+      '<p class="cpchk-do"><strong>Do this:</strong> ' + res[3] + '</p>' +
+      '</div>';
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var names = ['q1', 'q2', 'q3', 'q4'];
+    var missing = names.filter(function (n) { return !val(n); });
+    if (missing.length) {
+      out.innerHTML = '<div class="cpchk-card" data-tone="test"><p class="cpchk-verdict">Answer all four first</p><p class="cpchk-why">Each answer changes one of the two verdicts, so a partial answer would be misleading.</p></div>';
+      out.focus();
+      var first = form.querySelector('input[name="' + missing[0] + '"]');
+      if (first) { first.focus(); }
+      return;
+    }
+    var q1 = val('q1'), q2 = val('q2'), q3 = val('q3'), q4 = val('q4');
+    out.innerHTML = card('Verdict 1 &mdash; can work Copilot load?', workVerdict(q1, q2, q3)) +
+      card('Verdict 2 &mdash; is personal account sign-in actually controlled?', personalVerdict(q3, q4));
+    out.focus();
+  });
+
+  root.querySelector('.cpchk-reset').addEventListener('click', function () {
+    form.reset();
+    out.innerHTML = '';
+    var first = form.querySelector('input[name="q1"]');
+    if (first) { first.focus(); }
+  });
+})();
+</script>
