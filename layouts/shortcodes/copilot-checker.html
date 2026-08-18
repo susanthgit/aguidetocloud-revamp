@@ -146,7 +146,7 @@
       return ['risk', 'Brittle allow-list', 'Listing individual addresses works right up until Microsoft adds one. <code>copilot.cloud.microsoft</code> is exactly that case &mdash; and it is not listed in the endpoint data, only the wildcard is.', 'Add the wildcard <strong>*.cloud.microsoft</strong> where your tooling supports it. If it does not, add <code>copilot.cloud.microsoft</code> explicitly and keep the list in step with Microsoft&rsquo;s endpoint data.'];
     }
     if (q3 === 'broad') {
-      return ['risk', 'Your block may be too wide', 'A keyword, regex or category rule built around the word <em>copilot</em> can match <code>copilot.cloud.microsoft</code> &mdash; your <em>work</em> service &mdash; not just the consumer one.', 'Test the rule against the new work address specifically. Narrow it to the exact consumer host if it matches.'];
+      return ['risk', 'Your block may be too wide', 'A keyword, regex or category rule built around the word <em>copilot</em> can match <code>copilot.cloud.microsoft</code> &mdash; your <em>work</em> service &mdash; not just the consumer one.', 'Test the rule against the new work address specifically. If it matches, fix it by adding a higher-priority <em>allow</em> for the work address rather than loosening the deny &mdash; narrowing the deny to the exact consumer host reopens the other consumer entry points.'];
     }
     if (q1 === 'yes' && q2 === 'wildcard' && (q3 === 'exact' || q3 === 'none')) {
       return ['ok', 'Basic web reachability looks ready', 'The wildcard covers the new address, it loads today, and your consumer block is narrow enough not to catch it. That is a page load on one browser path only &mdash; it says nothing about TLS inspection, desktop, mobile, WebSockets, or whether an authenticated session with files and prompts actually works.', 'Re-test once the redirect actually lands on your tenant, sign in and run a real prompt, and test desktop and mobile separately.'];
@@ -193,7 +193,7 @@
     }
     var q1 = val('q1'), q2 = val('q2'), q3 = val('q3'), q4 = val('q4');
     out.innerHTML = card('Verdict 1 &mdash; can work Copilot load?', workVerdict(q1, q2, q3)) +
-      card('Verdict 2 &mdash; is personal Copilot actually controlled?', personalVerdict(q3, q4));
+      card('Verdict 2 &mdash; is personal account sign-in actually controlled?', personalVerdict(q3, q4));
     out.focus();
   });
 

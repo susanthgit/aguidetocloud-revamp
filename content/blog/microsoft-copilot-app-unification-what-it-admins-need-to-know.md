@@ -63,17 +63,17 @@ If you read nothing else, read this table.
 | "What should we actually allow?" | `*.cloud.microsoft` — endpoint set **184**, marked Required. Allow its two companions too: `*.static.microsoft` and `*.usercontent.microsoft`. [Different in GCC High, DoD and 21Vianet](#sovereign) |
 | "What actually stops personal accounts?" | **Tenant Restrictions v2.** Sign-in control, not a firewall rule |
 
-{{< margin >}}I'm a Copilot Solution Engineer at Microsoft NZ. Everything below comes from Microsoft's public documentation or from tests you can run yourself — every source is [listed at the bottom](#sources) so you can check my work.{{< /margin >}}
+{{< margin >}}I'm a Copilot Solution Engineer at Microsoft NZ, but this is my personal guide — not official Microsoft support guidance. The product, date and policy claims below come from Microsoft's public documentation; the DNS and HTTP results are point-in-time tests you can re-run yourself, and anything operational I've flagged as my own observation. Every source is [listed at the bottom](#sources) so you can check my work.{{< /margin >}}
 
 ![The work Copilot app signed in, with the address bar showing https://copilot.cloud.microsoft/chat, Chat and Cowork tabs, and a left sidebar with New chat, Search, Library, Agents and Skills, Notebooks. The address is enlarged underneath so it is readable](/images/blog/copilot-app-unification/01-copilot-cloud-microsoft-app.webp "The work app signed in, running at copilot.cloud.microsoft. The consumer app keeps copilot.microsoft.com. Different addresses, different domains. Chat history and pinned agents blanked out.")
 
 ## Which orgs actually break
 
-Three setups. Most organisations are case A, where nothing breaks. Two of them bite.
+Three setups. Case A is the one where this change passes you by. The other two bite.
 
 | | Your setup | Impact | Urgency |
 |---|---|---|---|
-| **A** | You allow `*.cloud.microsoft` and block the exact host `copilot.microsoft.com` | ✓ Nothing breaks | Test and move on |
+| **A** | You allow `*.cloud.microsoft` and block the exact host `copilot.microsoft.com` | ✓ This change shouldn't break it — test to confirm | Test and move on |
 | **B** | Your allow-list names individual hosts, and `copilot.cloud.microsoft` isn't one of them | − New address isn't covered — Copilot stops loading | Fix this week |
 | **C** | You block on a keyword, regex or web category containing *copilot* | − Your rule may also block your **own work service** | Fix this week |
 
@@ -91,7 +91,7 @@ Four questions. Two verdicts — because "can Copilot load?" and "are personal a
 
 The short version. The [full checklist](#full-checklist) is further down if you want every step.
 
-1. **Test it.** Open `https://copilot.cloud.microsoft` from a managed device on the corporate network. This single test answers most of the question.
+1. **Test it.** Open `https://copilot.cloud.microsoft` from a managed device on the corporate network. That tells you whether the new address is reachable from that device, on that network path. Sign in and send a prompt too — a page that loads isn't the same as a service that works.
 2. **Read your allow-list — don't recall it.** Search your proxy, firewall and web filter for `cloud.microsoft`. If you see named hosts instead of the wildcard, that's case B.
 3. **Search for the word `copilot` in your block rules.** If a rule uses a keyword, regex or category rather than the exact hostname, test it against `copilot.cloud.microsoft` specifically. That's case C.
 4. **Leave the old address allowed.** Microsoft's documentation still references `m365.cloud.microsoft`, and I found no published retirement notice. Allow both.
@@ -108,10 +108,13 @@ The short version. The [full checklist](#full-checklist) is further down if you 
 | Work web address | `m365.cloud.microsoft` | `copilot.cloud.microsoft` |
 | Personal web address | `copilot.microsoft.com` | `copilot.microsoft.com` — still listed as a personal entry point |
 | Work and personal data | Separate | Still separate |
+| What your users see | The icon and name they know | **A new icon and a new name** — on Windows, Mac and mobile |
 
-The account switcher stays. Work and personal data does not flow between the two sides.
+The account switcher stays. Microsoft says work and personal experiences remain separate by design, and that data doesn't flow between them. {{< hi >}}Read that as a *service* boundary, not a data-loss control.{{< /hi >}} It means the two sides don't share data behind the scenes. It doesn't stop a user copying a paragraph out of a work chat and pasting it into a personal one — that's still your DLP and your user education, exactly as it was before.
 
-{{< hi >}}The single most useful sentence in Microsoft's partner announcement is this one: users are automatically redirected to the new address *unless access to the new URL is blocked within their organization*.{{< /hi >}} That's the whole risk, in Microsoft's own words. If you've blocked the new address — deliberately or by accident — your users don't get redirected. They get an error.
+{{< hi >}}**The icon and the name are the bit your service desk will feel first.**{{< /hi >}} For work and school accounts Microsoft describes the rest as minimal changes — but users will see the Microsoft 365 Copilot icon and name update if they have Copilot on Windows, Mac or a mobile device. An icon that changes overnight with no warning generates "is this a virus?" tickets. One line in your comms beforehand can prevent a lot of them.
+
+{{< hi >}}The single most useful sentence in Microsoft's partner announcement is this one: users are automatically redirected to the new address *unless access to the new URL is blocked within their organization*.{{< /hi >}} That's the immediate availability risk, in Microsoft's own words. If you've blocked the new address — deliberately or by accident — your users don't get redirected. They get an error.
 
 ## Four different questions, four different owners
 
@@ -121,14 +124,25 @@ Most of the confusion I see comes from treating these as one thing. They aren't 
 |---|---|
 | Can work Copilot load at all? | Network — proxy, firewall, DNS, TLS inspection |
 | Can users sign in with a **personal** account? | Identity — Tenant Restrictions v2 |
-| Is the app installed / available? | Integrated Apps, Intune, Store, app control |
-| Is work data protected? | Microsoft 365 security, compliance and governance |
+| Is the app installed / available? | Integrated Apps, Intune, Store, app control — these live in the [Copilot Control System](/blog/microsoft-365-copilot-control-system-complete-guide/) |
+| Is work data protected? | Microsoft 365 security, compliance and governance — [the security questions admins ask most](/blog/microsoft-365-copilot-security-questions-answered/) |
 
 A firewall rule cannot answer question two properly. That's the heart of this post.
 
 ## How I checked the domain claim
 
-You don't have to take my word that these are different addresses. You can check it yourself in about thirty seconds.
+You don't have to take my word that these are different addresses. You can check it yourself in about thirty seconds. From any Windows admin machine:
+
+```powershell
+# Where does the new work address actually point?
+Resolve-DnsName copilot.cloud.microsoft | Select-Object Name, Type, NameHost
+
+# Can this machine reach it, through whatever proxy it's using?
+Invoke-WebRequest -Uri https://copilot.cloud.microsoft -UseBasicParsing |
+  Select-Object StatusCode
+```
+
+Two things that will save you a wrong answer. `Invoke-WebRequest` uses the default proxy available to that PowerShell process — run it in the affected user's context on a managed device, because an admin jump box may not reproduce the path a real user takes through Edge, the desktop app or a phone. `Test-NetConnection` opens a raw socket and can sail straight past the proxy that would have blocked a real user, so it can hand you a confident false pass — and it can equally false-*fail* where direct egress is blocked but the proxy works fine. And don't add `-Method Head`: the service answered HEAD with `405 Method Not Allowed` when I tested it on 18 August 2026, which looks like a block and isn't one.
 
 On 18 August 2026, from New Zealand, unauthenticated, I resolved each address:
 
@@ -174,10 +188,12 @@ Two things worth knowing before you go looking for the setting:
 - {{< hi >}}This new model currently applies **only to Microsoft 365 Copilot updates** that Microsoft tags as *both* a major update *and* "deferred capable" in the Message Center.{{< /hi >}} Microsoft says it will expand it across other services over time.
 - It isn't available in GCC, GCC High or DoD. Those environments continue with the older targeted and standard release options.
 - You'll need the Office Apps Admin, Security Admin or AI Admin role to configure it.
-- You can set an organisation-wide default and add exceptions for specific groups — but there's a cap of **100 exception entries**, and a change can take **up to 24 hours** to take effect.
+- You can set an organisation-wide default and add exceptions for specific groups — but the cap is **100 users, not 100 entries**. Microsoft counts *each user inside a security group* individually, so one 500-person group doesn't fit. A change can also take **up to 24 hours** to take effect.
 - {{< hi >}}Moving people onto Deferred can *remove* features they already have{{< /hi >}}, if those features haven't reached the deferred ring yet. Say that out loud before you move an executive who has got used to something.
 
 **Where to find it:** Microsoft 365 admin center → **Copilot** → **Settings** → **All Settings** → **Copilot release preferences**.
+
+{{< hi >}}And here's the sentence that explains why this change may reach you more quietly than you'd expect.{{< /hi >}} Microsoft's own definition of a "major update" — the class that earns 30 days' notice — includes rebranding that might cause end-user confusion or help-desk load, **"or URL changes if the new URL isn't `*.cloud.microsoft`"**. The new work address *is* `copilot.cloud.microsoft`. By Microsoft's own rule, a move to a `*.cloud.microsoft` address is exactly the kind of URL change that doesn't automatically qualify on the URL grounds alone. Don't wait for a loud announcement to go and check your proxy.
 
 **Does that mean you can defer this particular change?** Microsoft's announcement doesn't say, and I'm not going to guess. Check whether your Message Center post for it carries the *"Deferred feature"* tag — that tag is the answer, not anything I can tell you.
 
@@ -193,21 +209,25 @@ A lot of organisations blocked `copilot.microsoft.com` believing it stopped staf
 
 One blocked address out of six-plus. And that's before anyone opens a phone on mobile data.
 
+I tested what a `copilot.microsoft.com` block actually catches. `bing.com/chat` returns a 302 straight into `copilot.microsoft.com`, so a block does stop that one. But `bing.com/copilotsearch` answers on `bing.com` and stays there, `copilot.com` answers on its own host, and `copilot.ai` 301s to `copilot.com`. Three of those never touch the address you blocked. {{< hi >}}So the honest read is not "your block does nothing" — it is "your block covers the paths it covers, and at least three documented entry points aren't among them."{{< /hi >}} That is a reasonable layer. It is not an account control.
+
 Microsoft is also unusually direct about the approach itself:
 
 > Microsoft doesn't recommend and cannot support attempts to manage Microsoft 365 Copilot Chat and related settings through network-level restrictions such as selective domain, URL, IP blocking, or network-protocol filtering. Because Microsoft 365 Copilot Chat is deeply integrated with applications, such network-level restrictions can lead to unpredictable results.
 
-Read that twice if your personal-account strategy is a firewall rule. It isn't just leaky — it's explicitly unsupported, and it can produce side effects in the work service you *do* want running.
+Read that twice if your personal-account strategy is a firewall rule. Note the exact scope: Microsoft is talking about *managing Microsoft 365 Copilot Chat and related settings* this way. It isn't saying every consumer-domain block is forbidden — it's saying network filtering is the wrong instrument for this job, and that it can produce side effects in the work service you *do* want running.
 
 The supported answer, from the same page:
 
 > To manage user sign-in to Microsoft 365 apps by using a personal account, use tenant restrictions V2.
 
-{{< hi >}}Blocking a website and blocking an account are different jobs. Only one of them survives a user opening a different address.{{< /hi >}}
+{{< hi >}}Blocking a website and blocking an account are different jobs. Only the account policy is designed to keep working when the user opens a different address.{{< /hi >}}
+
+🔗 **Go deeper:** This isn't the first admin-facing Copilot Chat change to catch people out — the [April 2026 Copilot Chat changes](/blog/microsoft-365-copilot-chat-april-2026-changes-what-admins-need-to-know/) followed the same pattern, and the controls in that post still apply.
 
 ## Tenant Restrictions v2, honestly
 
-TRv2 works at sign-in, so it doesn't care which address the user found. That's exactly why it's the right tool. But go in with clear eyes.
+TRv2 works at sign-in, so it doesn't care which address the user found. That's why it's Microsoft's supported control for this. But go in with clear eyes.
 
 {{< hi >}}**Two prerequisites before you plan anything.** Microsoft lists **Microsoft Entra ID P1 or P2** as a requirement for configuring tenant restrictions, and you need an account with at least the **Security Administrator** role.{{< /hi >}} If your licensing doesn't include P1, this is a budget conversation before it's a technical one — worth finding out on day one rather than day thirty.
 
@@ -241,13 +261,13 @@ Read the middle row again, too: proxy header injection covers **Chrome**, and Wi
 
 If you go the proxy route, three things that coverage table doesn't tell you:
 
-- **It needs TLS decryption.** The header has to be inserted into traffic heading to Microsoft's sign-in domains, which means breaking and inspecting those specific domains. Microsoft explicitly calls this a valid exception to its usual "don't inspect Microsoft 365 traffic" guidance — so your network team can stop arguing about whether it's allowed.
+- **It needs TLS decryption.** The header has to be inserted into traffic heading to Microsoft's sign-in domains, which means breaking and inspecting those specific domains. Microsoft explicitly calls this a valid exception to its usual "don't inspect Microsoft 365 traffic" guidance. That settles whether it's *permitted* — your own security and privacy review still decides whether it's right for you.
 - **The header goes to four domains, not one:** `login.live.com`, `login.microsoft.com`, `login.microsoftonline.com` and `login.windows.net`.
 - **If you already run tenant restrictions v1, the old header actively fights the new one.** Microsoft says to stop sending `restrict-msa` to `login.live.com`, because the old instruction conflicts with the new policy. If someone set this up years ago and has since left, this is the landmine.
 
 Get the exact header names and values from Microsoft's Tenant Restrictions v2 page rather than from any blog, including this one. Tenant restrictions has both a v1 and a v2 generation, they use different headers, and mixing them up is an easy and expensive mistake.
 
-And if a platform in your estate can't do break-and-inspect at all, TRv2 simply won't work there. Microsoft points those cases at Conditional Access device-compliance rules and B2B collaboration restrictions instead — worth knowing so you don't quietly assume coverage you don't have.
+And watch the platform scoping carefully, because it's easy to misread. Microsoft's blunt line — that tenant restrictions v2 doesn't work where a platform can't do break-and-inspect — sits in the context of the **corporate-proxy method**, which depends on your network being able to inject the header. It is not a statement that every tenant restrictions v2 method fails on non-Windows. Microsoft points those proxy-blocked cases at Conditional Access device-compliance rules and B2B collaboration restrictions instead. Check the limitation against **the specific method you pick**, not against tenant restrictions v2 as a whole — that's the difference between coverage you have and coverage you assume.
 
 ![Microsoft's comparison of tenant restrictions v1 and v2, showing that v2 is managed by a cloud policy in the cross-tenant access policy rather than by a proxy header](/images/blog/copilot-app-unification/03-tenant-restrictions-v2-enforcement.webp "Tenant Restrictions v2 is a sign-in policy you set in Entra, not a network rule. Note the Windows device management option, the one that also covers the data plane, is still in preview.")
 
@@ -266,13 +286,15 @@ I queried Microsoft's endpoint web service for each cloud on 18 August 2026:
 
 Each cloud publishes its own endpoint list and the set numbers differ between them. Use your own cloud's documentation — not this post, and not a Worldwide article someone forwarded you.
 
+🔗 **Go deeper:** If sovereignty is the reason you're reading this, the full picture — where Copilot data is processed, what Microsoft commits to, and what it doesn't — is in [Copilot data residency and sovereignty for ANZ government](/blog/microsoft-365-copilot-data-residency-anz-government/).
+
 ## The full checklist {#full-checklist}
 
-Copy this into your change ticket.
+This is the Copilot-specific discovery and testing. Your own change process will want its own pilot scope, rollback and evidence on top.
 
 **Find what you've got**
 
-1. Search proxy, firewall, web filter and DNS filtering for: `m365.cloud.microsoft`, `copilot.cloud.microsoft`, `*.cloud.microsoft`, `copilot.microsoft.com`, and any bare `copilot` string.
+1. Search proxy, firewall, web filter and DNS filtering for: `m365.cloud.microsoft`, `copilot.cloud.microsoft`, `*.cloud.microsoft`, `copilot.microsoft.com`, and any bare `copilot` string. Then search the same strings somewhere most people forget — your CASB or SSE **app definitions**, because plenty of products classify Copilot as an *app* rather than a URL, plus DLP rules, SIEM detections and dashboards, and app-control allow-lists. Anything keyed to the old hostname doesn't error when the host changes. It just quietly stops matching.
 2. Check managed bookmarks, proxy configuration (PAC) files, browser URL policies, intranet links and any documentation pointing staff at the old address.
 3. Note whether TLS inspection applies to `cloud.microsoft`.
 
@@ -280,8 +302,8 @@ Copy this into your change ticket.
 
 4. Add `*.cloud.microsoft` where your tooling supports wildcards — endpoint set **184**, TCP 443 and UDP 443, marked Required. Microsoft's own wording is to add it to organisational allow lists *where appropriate*. If you can't use wildcards, add `copilot.cloud.microsoft` explicitly and keep the list in step with Microsoft's published endpoint data. This is the domain to verify **for this change** — it isn't a complete Microsoft 365 allow-list, and [sovereign clouds use different domains](#sovereign).
 5. While you're there, allow the other two **unified domains** Microsoft lists alongside it: `*.static.microsoft` (static content on CDNs) and `*.usercontent.microsoft` (content that needs domain isolation). Allowing the first and missing these two is a common way to get a half-working experience rather than a clean failure you'd notice.
-6. Keep `m365.cloud.microsoft` allowed. Microsoft's docs still reference it and I found no published retirement notice.
-7. Narrow any broad `copilot` rule so it can't match `copilot.cloud.microsoft`.
+6. Keep `m365.cloud.microsoft` allowed. Microsoft's docs still reference it and I found no published retirement notice. {{< hi >}}Then update everything else that still *identifies* work Copilot by that old host{{< /hi >}} — CASB/SSE app definitions, DLP policy scopes, SIEM detections and dashboards, app-control rules and any reporting that keys off the URL. A network rule you fixed and a DLP policy you forgot is how a control quietly stops matching the traffic it was written for. Re-run your own detections after the change and confirm they still fire.
+7. Fix a broad `copilot` rule by **adding a higher-priority allow for the work address**, not by loosening the deny. Narrowing the deny to the exact consumer host reopens `copilot.com`, `copilot.ai` and `bing.com/copilotsearch` — don't do that until the account-level control is actually in place and your security owner has agreed.
 
 **Test**
 
@@ -313,6 +335,14 @@ If you deploy it deliberately through Intune instead, the Store identifier Micro
 
 Most of that is Microsoft Store plumbing. It's a very common gap: the web address gets allowed, everyone declares victory, and then the app won't install or update on locked-down devices. If your organisation blocks the Store outright, Microsoft publishes a direct download at `go.microsoft.com/fwlink/?linkid=2325486`.
 
+🔗 **Go deeper:** If you're standing this up properly rather than reacting to a URL change, the [M365 Copilot deployment checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) covers the rest of the rollout.
+
+### And mobile?
+
+Less than you'd fear, for work. Microsoft says work and school users see the Microsoft 365 Copilot icon and name update if Copilot is installed on Windows, Mac or a mobile device, and otherwise describes the changes as minimal. Microsoft's announcement identifies no mobile-specific URL change — but that isn't the same as "mobile has no network dependencies", so test the mobile app separately against your normal Microsoft 365 endpoint policy rather than assuming it rides along.
+
+The mobile work sits on the personal side. Microsoft says users of the consumer Copilot mobile app need to download an updated version to keep using it, and users of the Microsoft 365 Copilot mobile app with a personal account may get an auto-update or may have to request one manually. If personal Copilot is on managed phones in your estate, that's the change your users will actually notice.
+
 ## Still unknown as of 18 August 2026 {#unknown}
 
 I'd rather leave these open than guess. If you've seen first-party confirmation of any of them, [tell me](/contact/) and I'll update the post.
@@ -328,7 +358,7 @@ One more thing worth knowing: Microsoft's Copilot management page still says the
 
 ## Where this comes from {#sources}
 
-Every factual claim above traces to one of these public Microsoft pages. No internal sources, no Message Center content — if I couldn't source it publicly, it went in the *Still unknown* table instead.
+The product, date and policy claims above trace to these public Microsoft pages. DNS and HTTP results are point-in-time tests from 18 August 2026 that you can re-run. No internal sources, no Message Center content — if I couldn't source it publicly, it went in the *Still unknown* table instead.
 
 | Source | What it backs up |
 |---|---|
