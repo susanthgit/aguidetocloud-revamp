@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Aug 2026 13:05:31 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2026 14:49:14 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Users in South America may be unable to use multiple Microsoft 365 services</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1457636</link>
+      <description>[Microsoft 365 suite] Users in South America may be unable to access or degraded functionality with multiple Microsoft 365 services.</description>
+      <category>Microsoft 365 suite</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">MO1457636</guid>
+      <pubDate>Wed, 19 Aug 2026 14:34:10 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Some users may experience degraded video quality when screen sharing using the Microsoft Teams web client</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1457081</link>
@@ -448,15 +457,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1431590</guid>
       <pubDate>Sat, 18 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Admins in Europe may not see Copilot Cowork reports in the expected timeframe in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1431319</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins in Europe may have not seen Copilot Cowork reports in the expected timeframe in the Microsoft 365 admin center.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1431319</guid>
-      <pubDate>Fri, 17 Jul 2026 19:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
