@@ -5,407 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Aug 2026 17:24:14 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2026 23:20:26 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Offering Zero Data Retention for frontier models</title>
-      <link>https://openai.com/index/our-commitment-to-zero-data-retention</link>
+      <title>'Not a theoretical risk,' feds warn as attackers use AI-made code to hack critical infrastructure controllers</title>
+      <link>https://www.theregister.com/security/2026/08/19/not-a-theoretical-risk-feds-warn-as-attackers-use-ai-made-code-to-hack-critical-infrastructure-controllers/5289960</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Thu, 20 Aug 2026 00:38:41 +0200</pubDate>
+      <guid>https://www.theregister.com/security/2026/08/19/not-a-theoretical-risk-feds-warn-as-attackers-use-ai-made-code-to-hack-critical-infrastructure-controllers/5289960</guid>
+    </item>
+    <item>
+      <title>Domain and publish date filters for Web Search on AgentCore</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/domain-and-publish-date-filters-for-web-search-on-agentcore/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Wed, 19 Aug 2026 22:13:20 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/domain-and-publish-date-filters-for-web-search-on-agentcore/</guid>
+    </item>
+    <item>
+      <title>OpenAI seeks to one-up Anthropic with new customer privacy protections</title>
+      <link>https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Wed, 19 Aug 2026 22:10:46 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/</guid>
+    </item>
+    <item>
+      <title>Automate Document Processing with Quick Automate and the IDP Accelerator</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/automate-document-processing-with-quick-automate-and-the-idp-accelerator/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Wed, 19 Aug 2026 22:09:56 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/automate-document-processing-with-quick-automate-and-the-idp-accelerator/</guid>
+    </item>
+    <item>
+      <title>Asynchronous patterns for calling Amazon Bedrock AgentCore agents in serverless pipelines</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/asynchronous-patterns-for-calling-amazon-bedrock-agentcore-agents-in-serverless-pipelines/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Wed, 19 Aug 2026 22:06:09 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/asynchronous-patterns-for-calling-amazon-bedrock-agentcore-agents-in-serverless-pipelines/</guid>
+    </item>
+    <item>
+      <title>SvelteKit 3 puts heat on Next.js with radical approach to RPCs</title>
+      <link>https://www.theregister.com/devops/2026/08/19/sveltekit-3-puts-heat-on-nextjs-with-radical-approach-to-rpcs/5289925</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 19 Aug 2026 22:00:03 +0200</pubDate>
+      <guid>https://www.theregister.com/devops/2026/08/19/sveltekit-3-puts-heat-on-nextjs-with-radical-approach-to-rpcs/5289925</guid>
+    </item>
+    <item>
+      <title>Cognition CEO denies report that SpaceX tried to acquire the startup</title>
+      <link>https://techcrunch.com/2026/08/19/cognition-ceo-denies-report-that-spacex-tried-to-acquire-the-startup/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Wed, 19 Aug 2026 21:51:23 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/08/19/cognition-ceo-denies-report-that-spacex-tried-to-acquire-the-startup/</guid>
+    </item>
+    <item>
+      <title>Google pits Marvell against Broadcom as it chases AI crown</title>
+      <link>https://www.theregister.com/off-prem/2026/08/19/google-pits-marvell-against-broadcom-as-it-chases-ai-crown/5289902</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 19 Aug 2026 21:33:15 +0200</pubDate>
+      <guid>https://www.theregister.com/off-prem/2026/08/19/google-pits-marvell-against-broadcom-as-it-chases-ai-crown/5289902</guid>
+    </item>
+    <item>
+      <title>Dev taps Claude Code to craft custom printer driver for macOS</title>
+      <link>https://www.theregister.com/ai-and-ml/2026/08/19/dev-taps-claude-code-to-craft-custom-printer-driver-for-macos/5289875</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Wed, 19 Aug 2026 21:31:33 +0200</pubDate>
+      <guid>https://www.theregister.com/ai-and-ml/2026/08/19/dev-taps-claude-code-to-craft-custom-printer-driver-for-macos/5289875</guid>
+    </item>
+    <item>
+      <title>CodeQL 2.26.3 improves GitHub Actions queries and JavaScript modeling</title>
+      <link>https://github.blog/changelog/2026-08-19-codeql-2-26-3-improves-github-actions-queries-and-javascript-modeling</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Wed, 19 Aug 2026 21:09:30 +0000</pubDate>
+      <guid>https://github.blog/changelog/2026-08-19-codeql-2-26-3-improves-github-actions-queries-and-javascript-modeling</guid>
+    </item>
+    <item>
+      <title>How Fanatics Betting and Gaming built a multi-agent customer support system</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/how-fanatics-betting-and-gaming-built-a-multi-agent-customer-support-system/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Wed, 19 Aug 2026 20:40:45 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/how-fanatics-betting-and-gaming-built-a-multi-agent-customer-support-system/</guid>
+    </item>
+    <item>
+      <title>KnowledgeForge: mining gold from the ITSM ticket graveyard</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/knowledgeforge-mining-gold-from-the-itsm-ticket-graveyard/</link>
+      <description></description>
+      <category>Amazon</category>
+      <pubDate>Wed, 19 Aug 2026 20:36:50 +0000</pubDate>
+      <guid>https://aws.amazon.com/blogs/machine-learning/knowledgeforge-mining-gold-from-the-itsm-ticket-graveyard/</guid>
+    </item>
+    <item>
+      <title>ICE boss to agents: Leave the Meta spy glasses at home</title>
+      <link>https://www.theregister.com/security/2026/08/19/ice-boss-to-agents-leave-the-meta-spy-glasses-at-home/5289826</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 19 Aug 2026 20:16:46 +0200</pubDate>
+      <guid>https://www.theregister.com/security/2026/08/19/ice-boss-to-agents-leave-the-meta-spy-glasses-at-home/5289826</guid>
+    </item>
+    <item>
+      <title>I Saw the Future of AI in a Robot That Can Learn on the Spot</title>
+      <link>https://www.wired.com/story/generalist-ai-robots-learn-like-clever-toddlers/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 19 Aug 2026 19:30:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/generalist-ai-robots-learn-like-clever-toddlers/</guid>
+    </item>
+    <item>
+      <title>AI was supposed to win people over by now — it hasn’t</title>
+      <link>https://techcrunch.com/2026/08/19/ai-was-supposed-to-win-people-over-by-now-it-hasnt/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 19 Aug 2026 19:11:40 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/08/19/ai-was-supposed-to-win-people-over-by-now-it-hasnt/</guid>
+    </item>
+    <item>
+      <title>Google packs Search and Gemini with new AI study tools</title>
+      <link>https://techcrunch.com/2026/08/19/google-launches-new-study-tools-for-students-across-search-and-gemini/</link>
       <description></description>
       <category>OpenAI</category>
       <pubDate>Wed, 19 Aug 2026 19:00:00 +0000</pubDate>
-      <guid>https://openai.com/index/our-commitment-to-zero-data-retention</guid>
+      <guid>https://techcrunch.com/2026/08/19/google-launches-new-study-tools-for-students-across-search-and-gemini/</guid>
     </item>
     <item>
-      <title>Epic Games dismisses Apple's simplified EU App Store fees as 'junk'</title>
-      <link>https://www.theregister.com/personal-tech/2026/08/19/epic-games-dismisses-apples-simplified-eu-app-store-fees-as-junk/5289794</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 19 Aug 2026 18:21:48 +0200</pubDate>
-      <guid>https://www.theregister.com/personal-tech/2026/08/19/epic-games-dismisses-apples-simplified-eu-app-store-fees-as-junk/5289794</guid>
-    </item>
-    <item>
-      <title>Flock surveillance backlash mounts as fiendish Halloween plans circulate</title>
-      <link>https://www.theregister.com/security/2026/08/19/flock-surveillance-backlash-mounts-as-fiendish-halloween-plans-circulate/5289701</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 19 Aug 2026 18:08:00 +0200</pubDate>
-      <guid>https://www.theregister.com/security/2026/08/19/flock-surveillance-backlash-mounts-as-fiendish-halloween-plans-circulate/5289701</guid>
-    </item>
-    <item>
-      <title>More than half of Americans now view AI negatively</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/08/19/more-than-half-of-americans-now-view-ai-negatively/5289736</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 19 Aug 2026 17:25:24 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/08/19/more-than-half-of-americans-now-view-ai-negatively/5289736</guid>
-    </item>
-    <item>
-      <title>Can MainstreamOS finally make Linux a household name? I tried it to find out</title>
-      <link>https://www.zdnet.com/article/mainstreamos-linux-distro-arch-hyprland/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Wed, 19 Aug 2026 17:20:50 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/mainstreamos-linux-distro-arch-hyprland/</guid>
-    </item>
-    <item>
-      <title>Your Comcast router doubles as a motion detector now - and a potential police informant</title>
-      <link>https://www.zdnet.com/article/comcast-routers-detect-motion/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Wed, 19 Aug 2026 17:13:57 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/comcast-routers-detect-motion/</guid>
-    </item>
-    <item>
-      <title>Coders Say They Already Found Workarounds to Claude’s Invisible Watermarks</title>
-      <link>https://www.wired.com/story/coders-say-they-already-found-workarounds-to-claudes-invisible-watermarks/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Wed, 19 Aug 2026 16:44:07 +0000</pubDate>
-      <guid>https://www.wired.com/story/coders-say-they-already-found-workarounds-to-claudes-invisible-watermarks/</guid>
-    </item>
-    <item>
-      <title>After testing the Pixel 11, I feel fine about skipping the Pro models - here's why</title>
-      <link>https://www.zdnet.com/article/google-pixel-11-first-look/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Wed, 19 Aug 2026 16:35:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/google-pixel-11-first-look/</guid>
-    </item>
-    <item>
-      <title>ISS spacewalkers discover there's no such thing as a quick antenna job</title>
-      <link>https://www.theregister.com/science/2026/08/19/iss-spacewalkers-discover-theres-no-such-thing-as-a-quick-antenna-job/5289644</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 19 Aug 2026 16:07:00 +0200</pubDate>
-      <guid>https://www.theregister.com/science/2026/08/19/iss-spacewalkers-discover-theres-no-such-thing-as-a-quick-antenna-job/5289644</guid>
-    </item>
-    <item>
-      <title>I replaced my Samsung with the Google Pixel 11 Pro Fold - a week later, I'm going back</title>
-      <link>https://www.zdnet.com/article/google-pixel-11-pro-fold-review/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Wed, 19 Aug 2026 16:01:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/google-pixel-11-pro-fold-review/</guid>
-    </item>
-    <item>
-      <title>I've tested dozens of rugged smartwatches - this one's battery is on a different level</title>
-      <link>https://www.zdnet.com/article/suunto-core-2-review/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Wed, 19 Aug 2026 16:01:00 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/suunto-core-2-review/</guid>
-    </item>
-    <item>
-      <title>Pixel 11 XL Pro: Google's big flagship is more Pro than ever, but the camera is no big thing</title>
-      <link>https://www.zdnet.com/article/pixel-11-pro-xl-review/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Wed, 19 Aug 2026 16:00:46 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/pixel-11-pro-xl-review/</guid>
-    </item>
-    <item>
-      <title>I tried the Fairphone 6+ and - hoo boy! - this repairable phone could be the one</title>
-      <link>https://www.zdnet.com/article/repairable-phones-finally-hit-the-us-market/</link>
-      <description></description>
-      <category>Industry</category>
-      <pubDate>Wed, 19 Aug 2026 15:53:08 +0000</pubDate>
-      <guid>https://www.zdnet.com/article/repairable-phones-finally-hit-the-us-market/</guid>
-    </item>
-    <item>
-      <title>TerraPower’s nuclear reactor has a secret weapon for powering AI data centers</title>
-      <link>https://techcrunch.com/2026/08/19/terrapowers-nuclear-reactor-has-a-secret-weapon-for-powering-ai-data-centers/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 19 Aug 2026 15:44:53 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/08/19/terrapowers-nuclear-reactor-has-a-secret-weapon-for-powering-ai-data-centers/</guid>
-    </item>
-    <item>
-      <title>Comcast gives its Wi-Fi motion detector a security makeover</title>
-      <link>https://www.theregister.com/security/2026/08/19/comcast-gives-its-wi-fi-motion-detector-a-security-makeover/5289572</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 19 Aug 2026 15:14:00 +0200</pubDate>
-      <guid>https://www.theregister.com/security/2026/08/19/comcast-gives-its-wi-fi-motion-detector-a-security-makeover/5289572</guid>
-    </item>
-    <item>
-      <title>Amazon makes its AI-powered Alexa+ free on Fire TV, no Prime required</title>
-      <link>https://techcrunch.com/2026/08/19/amazon-makes-its-ai-powered-alexa-free-on-fire-tv-no-prime-required/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 19 Aug 2026 15:00:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/08/19/amazon-makes-its-ai-powered-alexa-free-on-fire-tv-no-prime-required/</guid>
-    </item>
-    <item>
-      <title>Postgres pioneer credits Oracle with helping his database take over the world</title>
-      <link>https://www.theregister.com/databases/2026/08/19/postgres-pioneer-credits-oracle-with-helping-his-database-take-over-the-world/5289087</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 19 Aug 2026 14:37:00 +0200</pubDate>
-      <guid>https://www.theregister.com/databases/2026/08/19/postgres-pioneer-credits-oracle-with-helping-his-database-take-over-the-world/5289087</guid>
-    </item>
-    <item>
-      <title>Calendly throws its hat into meeting note-taker circus</title>
-      <link>https://techcrunch.com/2026/08/19/calendly-throws-its-hat-into-meeting-note-taker-circus/</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 19 Aug 2026 14:09:39 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/08/19/calendly-throws-its-hat-into-meeting-note-taker-circus/</guid>
-    </item>
-    <item>
-      <title>LFM2.5 Q4\_0 Checkpoints from Quantization-Aware Distillation</title>
-      <link>https://huggingface.co/blog/LiquidAI/qad</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Wed, 19 Aug 2026 13:48:49 +0000</pubDate>
-      <guid>https://huggingface.co/blog/LiquidAI/qad</guid>
-    </item>
-    <item>
-      <title>GitHub blames 8-hour outage on autoscaling fail and VS Code retry storm</title>
-      <link>https://www.theregister.com/saas/2026/08/19/github-blames-8-hour-outage-on-autoscaling-fail-and-vs-code-retry-storm/5289547</link>
-      <description></description>
-      <category>Top Stories</category>
-      <pubDate>Wed, 19 Aug 2026 13:40:00 +0200</pubDate>
-      <guid>https://www.theregister.com/saas/2026/08/19/github-blames-8-hour-outage-on-autoscaling-fail-and-vs-code-retry-storm/5289547</guid>
-    </item>
-    <item>
-      <title>OpenAI hit the brakes. Now what?</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/982323/openai-hit-brakes-voluntary-pacing-ai</link>
+      <title>Offering Zero Data Retention for frontier models</title>
+      <link>https://openai.com/index/offering-zero-data-retention-for-frontier-models</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Wed, 19 Aug 2026 13:10:09 -0400</pubDate>
-      <guid>https://www.theverge.com/ai-artificial-intelligence/982323/openai-hit-brakes-voluntary-pacing-ai</guid>
+      <pubDate>Wed, 19 Aug 2026 19:00:00 +0000</pubDate>
+      <guid>https://openai.com/index/offering-zero-data-retention-for-frontier-models</guid>
     </item>
     <item>
-      <title>Meta AI is getting a Mac app</title>
-      <link>https://www.theverge.com/tech/982270/meta-ai-mac-app</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Wed, 19 Aug 2026 13:00:00 -0400</pubDate>
-      <guid>https://www.theverge.com/tech/982270/meta-ai-mac-app</guid>
-    </item>
-    <item>
-      <title>Track organization code quality trends</title>
-      <link>https://github.blog/changelog/2026-08-19-track-organization-code-quality-trends</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Wed, 19 Aug 2026 12:56:57 +0000</pubDate>
-      <guid>https://github.blog/changelog/2026-08-19-track-organization-code-quality-trends</guid>
-    </item>
-    <item>
-      <title>Replit expands access to software creation with GPT-5.6 Luna</title>
-      <link>https://openai.com/index/replit</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Wed, 19 Aug 2026 07:00:00 +0000</pubDate>
-      <guid>https://openai.com/index/replit</guid>
-    </item>
-    <item>
-      <title>Examining Human-Like Behaviors in LLMs: A Multi-Dimensional Analysis of Model Behaviors, User Factors, and System Prompts</title>
-      <link>https://machinelearning.apple.com/research/human-like-behaviors-llms</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>https://machinelearning.apple.com/research/human-like-behaviors-llms</guid>
-    </item>
-    <item>
-      <title>The P-Completeness of Inverted Index Traversal: On the Complexity of Evaluating Boolean Query DAGs</title>
-      <link>https://machinelearning.apple.com/research/the-p-completeness-of-inverted-index-traversal</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>https://machinelearning.apple.com/research/the-p-completeness-of-inverted-index-traversal</guid>
-    </item>
-    <item>
-      <title>crisol added to PyPI</title>
-      <link>https://pypi.org/project/crisol/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Tue, 18 Aug 2026 17:21:55 +0000</pubDate>
-      <guid>https://pypi.org/project/crisol/</guid>
-    </item>
-    <item>
-      <title>Google Is Paying $10 Million to Use Spirit Airlines Data to Train Its AI Models</title>
-      <link>https://decrypt.co/375883/google-spirit-airlines-data-train-ai</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 18 Aug 2026 17:19:44 +0000</pubDate>
-      <guid>https://decrypt.co/375883/google-spirit-airlines-data-train-ai</guid>
-    </item>
-    <item>
-      <title>OpenAI introduces ‘ChatGPT for Teens’ experience amid scrutiny over child safety</title>
-      <link>https://biztoc.com/x/5c6d186f929b139b</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 18 Aug 2026 17:14:58 +0000</pubDate>
-      <guid>https://biztoc.com/x/5c6d186f929b139b</guid>
-    </item>
-    <item>
-      <title>OpenAI builds offerings on consent as it expands ChatGPT ads to Europe</title>
-      <link>https://biztoc.com/x/3d2cb1e6ded9ec5e</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 18 Aug 2026 17:12:58 +0000</pubDate>
-      <guid>https://biztoc.com/x/3d2cb1e6ded9ec5e</guid>
-    </item>
-    <item>
-      <title>Musician Ashley MacIsaac ends lawsuit over Google AI summary falsely labelling him a sex offender</title>
-      <link>https://www.cbc.ca/news/entertainment/macisaac-google-lawsuit-ends-9.7310819</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Tue, 18 Aug 2026 17:10:10 +0000</pubDate>
-      <guid>https://www.cbc.ca/news/entertainment/macisaac-google-lawsuit-ends-9.7310819</guid>
-    </item>
-    <item>
-      <title>Lenovo's upcoming MacBook Neo rival gets detailed in leaked spec sheets</title>
-      <link>https://www.notebookcheck.net/Lenovo-s-upcoming-MacBook-Neo-rival-gets-detailed-in-leaked-spec-sheets.1371422.0.html</link>
-      <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Tue, 18 Aug 2026 17:09:00 +0000</pubDate>
-      <guid>https://www.notebookcheck.net/Lenovo-s-upcoming-MacBook-Neo-rival-gets-detailed-in-leaked-spec-sheets.1371422.0.html</guid>
-    </item>
-    <item>
-      <title>pixtreme 1.2.1</title>
-      <link>https://pypi.org/project/pixtreme/1.2.1/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Tue, 18 Aug 2026 17:07:40 +0000</pubDate>
-      <guid>https://pypi.org/project/pixtreme/1.2.1/</guid>
-    </item>
-    <item>
-      <title>jaxmg 1.1.0</title>
-      <link>https://pypi.org/project/jaxmg/1.1.0/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Tue, 18 Aug 2026 17:00:55 +0000</pubDate>
-      <guid>https://pypi.org/project/jaxmg/1.1.0/</guid>
-    </item>
-    <item>
-      <title>Copper Development Association Updates Supplier Database to Help Industry Find Domestic Sources of Copper &amp; Copper Alloy Products</title>
-      <link>https://www.prnewswire.com/news-releases/copper-development-association-updates-supplier-database-to-help-industry-find-domestic-sources-of-copper--copper-alloy-products-302854248.html</link>
-      <description></description>
-      <category>Perplexity</category>
-      <pubDate>Tue, 18 Aug 2026 17:00:00 +0000</pubDate>
-      <guid>https://www.prnewswire.com/news-releases/copper-development-association-updates-supplier-database-to-help-industry-find-domestic-sources-of-copper--copper-alloy-products-302854248.html</guid>
-    </item>
-    <item>
-      <title>Syneos Health Advances AI-Powered Clinical Ecosystem to Optimize Trial Performance and Speed Decision-Making</title>
-      <link>https://www.manilatimes.net/2026/08/18/tmt-newswire/globenewswire/syneos-health-advances-ai-powered-clinical-ecosystem-to-optimize-trial-performance-and-speed-decision-making/2407655</link>
-      <description></description>
-      <category>M365 Copilot</category>
-      <pubDate>Tue, 18 Aug 2026 16:57:56 +0000</pubDate>
-      <guid>https://www.manilatimes.net/2026/08/18/tmt-newswire/globenewswire/syneos-health-advances-ai-powered-clinical-ecosystem-to-optimize-trial-performance-and-speed-decision-making/2407655</guid>
-    </item>
-    <item>
-      <title>macOS 27 Golden Gate makes one design decision that I would change for MacBooks</title>
-      <link>https://9to5mac.com/2026/08/18/macos-27-golden-gate-makes-one-design-decision-that-i-would-change-for-macbooks/</link>
-      <description></description>
-      <category>Apple</category>
-      <pubDate>Tue, 18 Aug 2026 16:56:43 +0000</pubDate>
-      <guid>https://9to5mac.com/2026/08/18/macos-27-golden-gate-makes-one-design-decision-that-i-would-change-for-macbooks/</guid>
-    </item>
-    <item>
-      <title>Neocloud Stocks Plummet on Rising Overspend Fears. CoreWeave Down 7%, Nebius Down 5%, Terawulf Down 6%</title>
-      <link>https://247wallst.com/investing/2026/08/18/neocloud-stocks-plummet-on-rising-overspend-fears-coreweave-down-7-nebius-down-5-terawulf-down-6/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Tue, 18 Aug 2026 16:55:17 +0000</pubDate>
-      <guid>https://247wallst.com/investing/2026/08/18/neocloud-stocks-plummet-on-rising-overspend-fears-coreweave-down-7-nebius-down-5-terawulf-down-6/</guid>
-    </item>
-    <item>
-      <title>adafactor8bit 0.4.3</title>
-      <link>https://pypi.org/project/adafactor8bit/0.4.3/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Tue, 18 Aug 2026 16:54:47 +0000</pubDate>
-      <guid>https://pypi.org/project/adafactor8bit/0.4.3/</guid>
-    </item>
-    <item>
-      <title>Microsoft is Consolidating and Will Be More Expensive Soon, So I Keep Buying</title>
-      <link>https://247wallst.com/investing/2026/08/18/microsoft-is-consolidating-and-will-be-more-expensive-soon-so-i-keep-buying/</link>
-      <description></description>
-      <category>M365 Copilot</category>
-      <pubDate>Tue, 18 Aug 2026 16:50:09 +0000</pubDate>
-      <guid>https://247wallst.com/investing/2026/08/18/microsoft-is-consolidating-and-will-be-more-expensive-soon-so-i-keep-buying/</guid>
-    </item>
-    <item>
-      <title>Anthropic seeks $1B loans to boost AI growth, valuation expectations</title>
-      <link>https://cryptobriefing.com/anthropic-seeks-1b-loans-to-boost-ai-growth-valuation-expectations/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Tue, 18 Aug 2026 16:49:45 +0000</pubDate>
-      <guid>https://cryptobriefing.com/anthropic-seeks-1b-loans-to-boost-ai-growth-valuation-expectations/</guid>
-    </item>
-    <item>
-      <title>Anthropic is said to ask lead banks to lend about $1.25B each</title>
-      <link>https://cryptobriefing.com/anthropic-is-said-to-ask-lead-banks-to-lend-about-125b-each/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Tue, 18 Aug 2026 16:49:26 +0000</pubDate>
-      <guid>https://cryptobriefing.com/anthropic-is-said-to-ask-lead-banks-to-lend-about-125b-each/</guid>
-    </item>
-    <item>
-      <title>langchain-tokportal added to PyPI</title>
-      <link>https://pypi.org/project/langchain-tokportal/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Tue, 18 Aug 2026 16:47:58 +0000</pubDate>
-      <guid>https://pypi.org/project/langchain-tokportal/</guid>
-    </item>
-    <item>
-      <title>langchain-tacnode 0.1.0</title>
-      <link>https://pypi.org/project/langchain-tacnode/0.1.0/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Tue, 18 Aug 2026 16:47:47 +0000</pubDate>
-      <guid>https://pypi.org/project/langchain-tacnode/0.1.0/</guid>
-    </item>
-    <item>
-      <title>langchain-tacnode added to PyPI</title>
-      <link>https://pypi.org/project/langchain-tacnode/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Tue, 18 Aug 2026 16:47:43 +0000</pubDate>
-      <guid>https://pypi.org/project/langchain-tacnode/</guid>
-    </item>
-    <item>
-      <title>Anthropic pre-IPO credit facility set to climb past $10B target</title>
-      <link>https://cryptobriefing.com/anthropic-pre-ipo-credit-facility-set-to-climb-past-10b-target/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Tue, 18 Aug 2026 16:45:45 +0000</pubDate>
-      <guid>https://cryptobriefing.com/anthropic-pre-ipo-credit-facility-set-to-climb-past-10b-target/</guid>
-    </item>
-    <item>
-      <title>spmd-types 0.2.4</title>
-      <link>https://pypi.org/project/spmd-types/0.2.4/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Tue, 18 Aug 2026 16:42:43 +0000</pubDate>
-      <guid>https://pypi.org/project/spmd-types/0.2.4/</guid>
-    </item>
-    <item>
-      <title>Powering agentic AI with real-time streaming data on AWS</title>
-      <link>https://aws.amazon.com/blogs/big-data/powering-agentic-ai-with-real-time-streaming-data-on-aws/</link>
-      <description></description>
-      <category>Amazon</category>
-      <pubDate>Tue, 18 Aug 2026 16:42:15 +0000</pubDate>
-      <guid>https://aws.amazon.com/blogs/big-data/powering-agentic-ai-with-real-time-streaming-data-on-aws/</guid>
-    </item>
-    <item>
-      <title>harbor-dsh-evolution 0.4.0</title>
-      <link>https://pypi.org/project/harbor-dsh-evolution/0.4.0/</link>
-      <description></description>
-      <category>DeepSeek</category>
-      <pubDate>Tue, 18 Aug 2026 16:39:43 +0000</pubDate>
-      <guid>https://pypi.org/project/harbor-dsh-evolution/0.4.0/</guid>
-    </item>
-    <item>
-      <title>/C O R R E C T I O N -- Breezeline/</title>
-      <link>https://www.prnewswire.com/news-releases/breezeline-teams-up-with-directv-to-launch-new-streaming-bundle-302854347.html</link>
+      <title>5 new ways to level up your learning with Search</title>
+      <link>https://blog.google/products-and-platforms/products/search/back-to-school-study-tools/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Tue, 18 Aug 2026 16:36:00 +0000</pubDate>
-      <guid>https://www.prnewswire.com/news-releases/breezeline-teams-up-with-directv-to-launch-new-streaming-bundle-302854347.html</guid>
+      <pubDate>Wed, 19 Aug 2026 19:00:00 +0000</pubDate>
+      <guid>https://blog.google/products-and-platforms/products/search/back-to-school-study-tools/</guid>
+    </item>
+    <item>
+      <title>Researchers say OpenAI revoked their access to limited cyber program</title>
+      <link>https://techcrunch.com/2026/08/19/researchers-complain-that-openai-revoked-their-access-to-limited-cyber-program/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Wed, 19 Aug 2026 18:46:14 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/08/19/researchers-complain-that-openai-revoked-their-access-to-limited-cyber-program/</guid>
+    </item>
+    <item>
+      <title>GitHub Copilot app for Beginners: Managing your work</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-managing-your-work/</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Wed, 19 Aug 2026 17:50:23 +0000</pubDate>
+      <guid>https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-managing-your-work/</guid>
+    </item>
+    <item>
+      <title>Meet the startup helping Wall Street put a price on AI compute</title>
+      <link>https://techcrunch.com/video/meet-the-startup-helping-wall-street-put-a-price-on-ai-compute/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 19 Aug 2026 17:26:48 +0000</pubDate>
+      <guid>https://techcrunch.com/video/meet-the-startup-helping-wall-street-put-a-price-on-ai-compute/</guid>
+    </item>
+    <item>
+      <title>Google Gemini is getting a dedicated student hub</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/982425/google-gemini-student-hub</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Wed, 19 Aug 2026 15:00:00 -0400</pubDate>
+      <guid>https://www.theverge.com/ai-artificial-intelligence/982425/google-gemini-student-hub</guid>
+    </item>
+    <item>
+      <title>The best Android phones of 2026: Expert tested and reviewed</title>
+      <link>https://www.zdnet.com/article/best-android-phone/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Wed, 19 Aug 2026 14:19:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/best-android-phone/</guid>
+    </item>
+    <item>
+      <title>VentureBeat names Rob Strechay as its first Lead Analyst, expanding its enterprise AI research push</title>
+      <link>https://venturebeat.com/ai/venturebeat-names-rob-strechay-as-its-first-lead-analyst-expanding-its-enterprise-ai-research-push</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Wed, 19 Aug 2026 14:18:12 +0000</pubDate>
+      <guid>https://venturebeat.com/ai/venturebeat-names-rob-strechay-as-its-first-lead-analyst-expanding-its-enterprise-ai-research-push</guid>
+    </item>
+    <item>
+      <title>Best robot vacuum mops of 2026: Expert tested</title>
+      <link>https://www.zdnet.com/article/best-robot-vacuum-mop/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Wed, 19 Aug 2026 14:12:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/best-robot-vacuum-mop/</guid>
+    </item>
+    <item>
+      <title>The best TVs of 2026: Expert tested and recommended</title>
+      <link>https://www.zdnet.com/article/best-tv/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Wed, 19 Aug 2026 13:36:00 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/best-tv/</guid>
+    </item>
+    <item>
+      <title>I tested Bose's new midrange headphones - now the pricey Ultras feel redundant</title>
+      <link>https://www.zdnet.com/article/bose-quietcomfort-headphones-2-review/</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Wed, 19 Aug 2026 13:30:50 +0000</pubDate>
+      <guid>https://www.zdnet.com/article/bose-quietcomfort-headphones-2-review/</guid>
+    </item>
+    <item>
+      <title>Scotland's AI Growth Zone gets a wee £300M power-up</title>
+      <link>https://www.theregister.com/on-prem/2026/08/19/scotlands-ai-growth-zone-gets-a-wee-300m-power-up/5289042</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 19 Aug 2026 13:02:00 +0200</pubDate>
+      <guid>https://www.theregister.com/on-prem/2026/08/19/scotlands-ai-growth-zone-gets-a-wee-300m-power-up/5289042</guid>
+    </item>
+    <item>
+      <title>SAP consultant job ads overshoot final offers by up to 12%, recruiter claims</title>
+      <link>https://www.theregister.com/software/2026/08/19/sap-consultant-job-ads-overshoot-final-offers-by-up-to-12-recruiter-claims/5289467</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 19 Aug 2026 12:10:00 +0200</pubDate>
+      <guid>https://www.theregister.com/software/2026/08/19/sap-consultant-job-ads-overshoot-final-offers-by-up-to-12-recruiter-claims/5289467</guid>
+    </item>
+    <item>
+      <title>The Download: AI’s self-improvement problem, and what’s driving the heat</title>
+      <link>https://www.technologyreview.com/2026/08/19/1140195/the-download-ai-recursive-self-improvement-problem-heatwave-causes/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Wed, 19 Aug 2026 12:10:00 +0000</pubDate>
+      <guid>https://www.technologyreview.com/2026/08/19/1140195/the-download-ai-recursive-self-improvement-problem-heatwave-causes/</guid>
+    </item>
+    <item>
+      <title>Anthropic’s pre-IPO credit facility set to exceed $10B as banks scramble for a seat at the table</title>
+      <link>https://cryptobriefing.com/anthropic-pre-ipo-credit-facility-exceeds-10b/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 18 Aug 2026 23:14:53 +0000</pubDate>
+      <guid>https://cryptobriefing.com/anthropic-pre-ipo-credit-facility-exceeds-10b/</guid>
+    </item>
+    <item>
+      <title>Marketing Context Collector — a Grok Bot prompt you can copy | botdirectory.ai</title>
+      <link>https://botdirectory.ai/bots/marketing-context-collector/</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Tue, 18 Aug 2026 23:14:25 +0000</pubDate>
+      <guid>https://botdirectory.ai/bots/marketing-context-collector/</guid>
+    </item>
+    <item>
+      <title>safer-dependencies v0.6.0</title>
+      <link>https://kitploit.com/en/posts/github-robert-auger-safer-dependencies-v060</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 18 Aug 2026 23:09:06 +0000</pubDate>
+      <guid>https://kitploit.com/en/posts/github-robert-auger-safer-dependencies-v060</guid>
+    </item>
+    <item>
+      <title>Anthropic’s Claude autonomously designs protein binders, achieving 27% hit rate</title>
+      <link>https://cryptobriefing.com/anthropic-claude-protein-binder-design/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 18 Aug 2026 23:08:21 +0000</pubDate>
+      <guid>https://cryptobriefing.com/anthropic-claude-protein-binder-design/</guid>
+    </item>
+    <item>
+      <title>hellyee added to PyPI</title>
+      <link>https://pypi.org/project/hellyee/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Tue, 18 Aug 2026 23:07:35 +0000</pubDate>
+      <guid>https://pypi.org/project/hellyee/</guid>
+    </item>
+    <item>
+      <title>Ubiquiti sued by Ukrainian families over claims its tech powered Russian battlefield drones</title>
+      <link>https://www.techradar.com/pro/ubiquiti-sued-by-ukrainian-families-over-claims-its-tech-powered-russian-battlefield-drones</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Tue, 18 Aug 2026 23:05:00 +0000</pubDate>
+      <guid>https://www.techradar.com/pro/ubiquiti-sued-by-ukrainian-families-over-claims-its-tech-powered-russian-battlefield-drones</guid>
+    </item>
+    <item>
+      <title>Someone tweeted 'Stop chat gpt' in 2012, but it likely wasn't a prophecy</title>
+      <link>https://www.snopes.com//fact-check/stop-chat-gpt-tweet-2012/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 18 Aug 2026 23:03:00 +0000</pubDate>
+      <guid>https://www.snopes.com//fact-check/stop-chat-gpt-tweet-2012/</guid>
+    </item>
+    <item>
+      <title>Show HN: Maritime, a platform for running AI agents for $1 a month</title>
+      <link>https://maritime.sh</link>
+      <description></description>
+      <category>DeepSeek</category>
+      <pubDate>Tue, 18 Aug 2026 23:02:32 +0000</pubDate>
+      <guid>https://maritime.sh</guid>
+    </item>
+    <item>
+      <title>universal-memory-mcp 0.1.2</title>
+      <link>https://pypi.org/project/universal-memory-mcp/0.1.2/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Tue, 18 Aug 2026 23:01:05 +0000</pubDate>
+      <guid>https://pypi.org/project/universal-memory-mcp/0.1.2/</guid>
+    </item>
+    <item>
+      <title>conquer3d 0.5.8</title>
+      <link>https://pypi.org/project/conquer3d/0.5.8/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Tue, 18 Aug 2026 23:00:07 +0000</pubDate>
+      <guid>https://pypi.org/project/conquer3d/0.5.8/</guid>
+    </item>
+    <item>
+      <title>The First All-Female Combat Team in US Military History Isn’t Happy With Taylor Sheridan’s ‘Lioness’</title>
+      <link>https://thoughtcatalog.com/january-nelson/2026/08/the-first-all-female-combat-team-in-us-military-history-isnt-happy-with-taylor-sheridans-lioness/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 18 Aug 2026 22:48:19 +0000</pubDate>
+      <guid>https://thoughtcatalog.com/january-nelson/2026/08/the-first-all-female-combat-team-in-us-military-history-isnt-happy-with-taylor-sheridans-lioness/</guid>
+    </item>
+    <item>
+      <title>composio-langchain 0.20.0</title>
+      <link>https://pypi.org/project/composio-langchain/0.20.0/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Tue, 18 Aug 2026 22:47:26 +0000</pubDate>
+      <guid>https://pypi.org/project/composio-langchain/0.20.0/</guid>
+    </item>
+    <item>
+      <title>composio-google-adk 0.20.0</title>
+      <link>https://pypi.org/project/composio-google-adk/0.20.0/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 18 Aug 2026 22:47:25 +0000</pubDate>
+      <guid>https://pypi.org/project/composio-google-adk/0.20.0/</guid>
+    </item>
+    <item>
+      <title>composio-google 0.20.0</title>
+      <link>https://pypi.org/project/composio-google/0.20.0/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 18 Aug 2026 22:47:24 +0000</pubDate>
+      <guid>https://pypi.org/project/composio-google/0.20.0/</guid>
+    </item>
+    <item>
+      <title>composio-gemini 0.20.0</title>
+      <link>https://pypi.org/project/composio-gemini/0.20.0/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 18 Aug 2026 22:47:23 +0000</pubDate>
+      <guid>https://pypi.org/project/composio-gemini/0.20.0/</guid>
+    </item>
+    <item>
+      <title>Some Switching to Grok Bot and SuperGrok Tier</title>
+      <link>https://www.nextbigfuture.com/2026/08/some-switching-to-grok-bot-and-supergrok-tier.html</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Tue, 18 Aug 2026 22:45:41 +0000</pubDate>
+      <guid>https://www.nextbigfuture.com/2026/08/some-switching-to-grok-bot-and-supergrok-tier.html</guid>
+    </item>
+    <item>
+      <title>agentabacus added to PyPI</title>
+      <link>https://pypi.org/project/agentabacus/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Tue, 18 Aug 2026 22:41:21 +0000</pubDate>
+      <guid>https://pypi.org/project/agentabacus/</guid>
+    </item>
+    <item>
+      <title>Brands Are Losing Shelf Space to AI Algorithms</title>
+      <link>https://www.pymnts.com/news/retail/2026/brands-are-losing-shelf-space-to-ai-algorithms/</link>
+      <description></description>
+      <category>Mistral</category>
+      <pubDate>Tue, 18 Aug 2026 22:38:18 +0000</pubDate>
+      <guid>https://www.pymnts.com/news/retail/2026/brands-are-losing-shelf-space-to-ai-algorithms/</guid>
+    </item>
+    <item>
+      <title>leader-agent added to PyPI</title>
+      <link>https://pypi.org/project/leader-agent/</link>
+      <description></description>
+      <category>Microsoft</category>
+      <pubDate>Tue, 18 Aug 2026 22:28:07 +0000</pubDate>
+      <guid>https://pypi.org/project/leader-agent/</guid>
+    </item>
+    <item>
+      <title>FBI Plans $88M AI Infrastructure Investment</title>
+      <link>https://www.pymnts.com/news/artificial-intelligence/2026/fbi-plans-88m-ai-infrastructure-investment/</link>
+      <description></description>
+      <category>AI Foundry</category>
+      <pubDate>Tue, 18 Aug 2026 21:58:16 +0000</pubDate>
+      <guid>https://www.pymnts.com/news/artificial-intelligence/2026/fbi-plans-88m-ai-infrastructure-investment/</guid>
     </item>
   </channel>
 </rss>
