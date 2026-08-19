@@ -5,16 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Aug 2026 14:49:14 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2026 16:44:02 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft 365 suite] Users in South America may be unable to use multiple Microsoft 365 services</title>
+      <title>[Microsoft 365 suite] Users in South America may have been unable to use multiple Microsoft 365 services</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1457636</link>
-      <description>[Microsoft 365 suite] Users in South America may be unable to access or degraded functionality with multiple Microsoft 365 services.</description>
+      <description>[Microsoft 365 suite] Users in South America may have been unable to access or experience degraded functionality with multiple services.</description>
       <category>Microsoft 365 suite</category>
-      <category>investigating</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1457636</guid>
-      <pubDate>Wed, 19 Aug 2026 14:34:10 +0000</pubDate>
+      <pubDate>Wed, 19 Aug 2026 14:15:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] Some users may experience degraded video quality when screen sharing using the Microsoft Teams web client</title>
@@ -136,9 +136,9 @@
     <item>
       <title>[Microsoft Purview] Admins see communication compliance delays regarding alerts for policies configured to capture specific classifiers</title>
       <link>https://www.aguidetocloud.com/service-health/#MP1452564</link>
-      <description>[Microsoft Purview] Admins see communication compliance delays regarding alerts for policies configured to capture specific classifiers.</description>
+      <description>[Microsoft Purview] Admins saw communication compliance delays regarding alerts for policies configured to capture specific classifiers.</description>
       <category>Microsoft Purview</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MP1452564</guid>
       <pubDate>Fri, 07 Aug 2026 14:00:00 +0000</pubDate>
     </item>
