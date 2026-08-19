@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T18:50:38.370855+00:00",
+  "generated_at": "2026-08-19T20:41:54.259136+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -16,19 +16,6 @@
       }
     },
     {
-      "service": "Microsoft 365 suite",
-      "short_name": "M365 Suite",
-      "icon": "📦",
-      "total_incidents": 19,
-      "active_incidents": 2,
-      "avg_duration_minutes": 7070,
-      "last_incident": "2026-08-19T14:15:00+00:00",
-      "classifications": {
-        "incident": 7,
-        "advisory": 12
-      }
-    },
-    {
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
@@ -39,6 +26,19 @@
       "classifications": {
         "advisory": 12,
         "incident": 7
+      }
+    },
+    {
+      "service": "Microsoft 365 suite",
+      "short_name": "M365 Suite",
+      "icon": "📦",
+      "total_incidents": 18,
+      "active_incidents": 2,
+      "avg_duration_minutes": 7479,
+      "last_incident": "2026-08-19T14:15:00+00:00",
+      "classifications": {
+        "incident": 6,
+        "advisory": 12
       }
     },
     {
@@ -94,6 +94,19 @@
       }
     },
     {
+      "service": "Microsoft 365 apps",
+      "short_name": "M365 Apps",
+      "icon": "💼",
+      "total_incidents": 3,
+      "active_incidents": 2,
+      "avg_duration_minutes": 2706,
+      "last_incident": "2026-08-19T19:58:14.883000+00:00",
+      "classifications": {
+        "advisory": 2,
+        "incident": 1
+      }
+    },
+    {
       "service": "Power BI",
       "short_name": "Power BI",
       "icon": "📊",
@@ -115,19 +128,6 @@
       "last_incident": "2026-07-23T19:41:00+00:00",
       "classifications": {
         "incident": 3
-      }
-    },
-    {
-      "service": "Microsoft 365 apps",
-      "short_name": "M365 Apps",
-      "icon": "💼",
-      "total_incidents": 2,
-      "active_incidents": 1,
-      "avg_duration_minutes": 2706,
-      "last_incident": "2026-08-14T11:51:32.013000+00:00",
-      "classifications": {
-        "incident": 1,
-        "advisory": 1
       }
     },
     {
@@ -194,7 +194,7 @@
   "monthly": [
     {
       "month": "2026-08",
-      "incident_count": 21,
+      "incident_count": 22,
       "services_affected": 9
     },
     {
@@ -204,7 +204,7 @@
     },
     {
       "month": "2026-06",
-      "incident_count": 25,
+      "incident_count": 24,
       "services_affected": 12
     },
     {
