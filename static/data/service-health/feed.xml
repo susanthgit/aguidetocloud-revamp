@@ -5,16 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Aug 2026 20:41:55 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2026 22:37:03 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft 365 apps] We're looking into a potential problem impacting Microsoft 365 apps</title>
+      <title>[Microsoft 365 apps] Admins may not see data in multiple tabs within the Microsoft 365 apps admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#OP1457784</link>
-      <description>[Microsoft 365 apps] We're checking for potential impact to your users.</description>
+      <description>[Microsoft 365 apps] Admins may not have seen data in multiple tabs within the Microsoft 365 apps admin center.</description>
       <category>Microsoft 365 apps</category>
-      <category>investigating</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">OP1457784</guid>
-      <pubDate>Wed, 19 Aug 2026 19:58:14 +0000</pubDate>
+      <pubDate>Wed, 19 Aug 2026 17:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Users in South America may have been unable to use multiple Microsoft 365 services</title>
