@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 20 Aug 2026 20:42:01 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2026 22:41:12 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may experience inconsistencies with Microsoft 365 Copilot features</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1458413</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may experience inconsistencies across Copilot features including chat, agent availability, and Microsoft 365 apps.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1458413</guid>
+      <pubDate>Thu, 20 Aug 2026 21:53:58 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Admins can't identify who deleted a Viva Engage community or its Microsoft 365 Group in Microsoft Entra ID audit logs</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1457843</link>
@@ -448,15 +457,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1441044</guid>
       <pubDate>Mon, 20 Jul 2026 14:23:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Microsoft Copilot (Microsoft 365) usage reports from the Microsoft 365 admin center may be delayed for admins and users</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1432638</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Microsoft Copilot usage reports from the Microsoft 365 admin center may have been delayed for admins and users.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1432638</guid>
-      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
