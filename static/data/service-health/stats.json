@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T22:37:02.770287+00:00",
+  "generated_at": "2026-08-20T01:48:23.617671+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -16,6 +16,19 @@
       }
     },
     {
+      "service": "Microsoft 365 suite",
+      "short_name": "M365 Suite",
+      "icon": "📦",
+      "total_incidents": 19,
+      "active_incidents": 3,
+      "avg_duration_minutes": 7479,
+      "last_incident": "2026-08-19T22:38:36.783000+00:00",
+      "classifications": {
+        "advisory": 13,
+        "incident": 6
+      }
+    },
+    {
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
@@ -26,19 +39,6 @@
       "classifications": {
         "advisory": 12,
         "incident": 7
-      }
-    },
-    {
-      "service": "Microsoft 365 suite",
-      "short_name": "M365 Suite",
-      "icon": "📦",
-      "total_incidents": 18,
-      "active_incidents": 2,
-      "avg_duration_minutes": 7479,
-      "last_incident": "2026-08-19T14:15:00+00:00",
-      "classifications": {
-        "incident": 6,
-        "advisory": 12
       }
     },
     {
@@ -58,12 +58,12 @@
       "service": "Microsoft 365 Copilot Chat",
       "short_name": "Copilot Chat",
       "icon": "💭",
-      "total_incidents": 8,
+      "total_incidents": 7,
       "active_incidents": 0,
-      "avg_duration_minutes": 2115,
+      "avg_duration_minutes": 1639,
       "last_incident": "2026-08-13T17:26:00+00:00",
       "classifications": {
-        "incident": 3,
+        "incident": 2,
         "advisory": 5
       }
     },
@@ -194,7 +194,7 @@
   "monthly": [
     {
       "month": "2026-08",
-      "incident_count": 22,
+      "incident_count": 23,
       "services_affected": 9
     },
     {
@@ -204,7 +204,7 @@
     },
     {
       "month": "2026-06",
-      "incident_count": 24,
+      "incident_count": 23,
       "services_affected": 12
     },
     {

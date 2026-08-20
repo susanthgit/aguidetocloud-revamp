@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Aug 2026 22:37:03 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2026 01:48:24 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Admins can't identify who deleted a Viva Engage community or its Microsoft 365 Group in Microsoft Entra ID audit logs</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1457843</link>
+      <description>[Microsoft 365 suite] Admins can't identify who deleted a Viva Engage community or its Microsoft 365 Group in Entra ID audit logs.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1457843</guid>
+      <pubDate>Wed, 19 Aug 2026 22:38:36 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 apps] Admins may not see data in multiple tabs within the Microsoft 365 apps admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#OP1457784</link>
@@ -447,15 +456,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>Microsoft Copilot (Microsoft 365)</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1432638</guid>
-      <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 apps] Microsoft 365 Apps usage reports from the Microsoft 365 admin center may be delayed for admins and users</title>
-      <link>https://www.aguidetocloud.com/service-health/#OP1432645</link>
-      <description>[Microsoft 365 apps] Microsoft 365 Apps usage reports from the Microsoft 365 admin center may have been delayed for admins and users.</description>
-      <category>Microsoft 365 apps</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">OP1432645</guid>
       <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
