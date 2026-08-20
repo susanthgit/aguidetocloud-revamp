@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 20 Aug 2026 16:47:57 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2026 18:55:52 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft 365 suite] Admins can't identify who deleted a Viva Engage community or its Microsoft 365 Group in Microsoft Entra ID audit logs</title>
@@ -33,15 +33,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1457636</guid>
       <pubDate>Wed, 19 Aug 2026 14:15:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may experience degraded video quality when screen sharing using the Microsoft Teams web client and VDI</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1457081</link>
-      <description>[Microsoft Teams] Users may experience degraded video quality when screen sharing using the Microsoft Teams web client and VDI.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1457081</guid>
-      <pubDate>Tue, 18 Aug 2026 15:33:13 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may be unable to send or receive new Exchange Online email through the native iOS mail app</title>
@@ -96,6 +87,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1454166</guid>
       <pubDate>Thu, 13 Aug 2026 15:13:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users may experience degraded video quality when screen sharing using the Microsoft Teams web client and VDI</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1457081</link>
+      <description>[Microsoft Teams] Users may experience degraded video quality when screen sharing using the Microsoft Teams web client and VDI.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1457081</guid>
+      <pubDate>Thu, 13 Aug 2026 08:21:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] Admins may see incorrect Teams membership information for users in the Teams Admin Center </title>
