@@ -140,9 +140,10 @@ for (const fname of blogFiles) {
     const anchorRefs = [...text.matchAll(/\(#(\d+)[a-z0-9-]*\)/gi)].map(m => parseInt(m[1], 10))
     const uniqueAnchorNums = new Set(anchorRefs)
 
-    // Extract present section numbers from ## N. Heading
+    // Extract present section numbers from `## N.` or `### N.` headings.
+    // H3 supported because grouped issues nest updates under H2 product areas.
     const headingNums = new Set()
-    for (const m of text.matchAll(/^##\s+(\d+)\.\s/gm)) {
+    for (const m of text.matchAll(/^#{2,3}\s+(\d+)\.\s/gm)) {
       headingNums.add(parseInt(m[1], 10))
     }
     // Also gather connectors-table numbers (## New Copilot Connectors table)
