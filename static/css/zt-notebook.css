@@ -251,7 +251,7 @@
    BODY — keep readable Source Sans, add notebook personality
    ═══════════════════════════════════════════════════════════ */
 .zt-reading--notebook .nb-body {
-  font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
   font-size: var(--reading-font-size, 17px);
   line-height: 1.7;
   color: var(--ink-soft);
@@ -296,7 +296,7 @@
   letter-spacing: 0;
 }
 .zt-reading--notebook .nb-body h4 {
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: Inter, sans-serif;
   font-weight: 700;
   font-size: 18px;
   text-transform: uppercase;
@@ -375,7 +375,7 @@
   border: 1px dashed var(--ink-faint);
   border-radius: 0;
   color: var(--ink-soft);
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 16px;
   line-height: 1.55;
   position: relative;
@@ -721,7 +721,7 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
   margin: 14px 0;
 }
 .zt-reading--notebook .nb-body details > summary {
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: Inter, sans-serif;
   font-weight: 600;
   color: var(--ink);
   cursor: pointer;
@@ -845,7 +845,7 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
 .zt-reading--notebook .nb-body .nb-mark {
   display: inline-block;
   width: 1.1em;
-  font-family: 'Caveat', 'Source Sans 3', sans-serif;
+  font-family: 'Caveat', Inter, sans-serif;
   font-size: 1.15em;
   line-height: 1;
   text-align: center;
@@ -900,7 +900,7 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
 }
 
 .zt-reading--notebook .nb-faq-intro {
-  font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
   font-size: var(--reading-font-size, 17px);
   line-height: 1.6;
   color: var(--ink-soft);
@@ -918,7 +918,7 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
 }
 
 .zt-reading--notebook .nb-faq-q {
-  font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
   font-weight: 700;
   font-size: 19px;
   line-height: 1.35;
@@ -933,7 +933,7 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
 }
 
 .zt-reading--notebook .nb-faq-a {
-  font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
   font-size: var(--reading-font-size, 17px);
   line-height: 1.7;
   color: var(--ink-soft);
@@ -948,7 +948,7 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
 .zt-reading--notebook .nb-faq-a li,
 .zt-reading--notebook .nb-faq-a a,
 .zt-reading--notebook .nb-faq-a code {
-  hyphens: auto;
+  hyphens: manual;
   overflow-wrap: anywhere;
   word-break: normal;
 }
@@ -1004,3 +1004,301 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
   .zt-reading--notebook .nb-faq-heading { font-size: 28px; margin-bottom: 18px; }
   .zt-reading--notebook .nb-faq-item { padding: 16px 0 18px; }
 }
+
+
+/* ============================================================
+   REFINED READING LAYER - added 2026-08-21
+   Appended deliberately: these rules are designed to win on source
+   order at equal specificity. See blog-notebook-system.md.
+   ============================================================ */
+/* ══════════════════════════════════════════════════════════════════
+   REFINED · READING-FIRST PATCH  ·  Path A (zero added font bytes)
+   Target: .zt-reading--notebook  →  reaches 74 of 75 blog posts
+   Principle: reading experience beats decoration. Nothing here adds
+   a byte of download. Every rule is legibility, measure, or rhythm.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── 1. BODY TYPE ────────────────────────────────────────────────
+   Was: 'Source Sans 3' — declared in 9 places, never served, so
+   every visitor got their OS default. Inter is ALREADY self-hosted
+   (400–800, 118 KB already on the wire) and is a proper text face.
+   Cost of this change: 0 bytes.
+   Size: 19px. Production also needs zt-reading-enhance.js:49
+   SIZES = [17, 19, 21] (default 19) — it writes an inline style
+   that beats every stylesheet rule. */
+/* ARCHITECTURE: the pixel values live HERE, not in JS.
+   Previously zt-reading-enhance.js wrote `--reading-font-size: 16px`
+   as an INLINE STYLE on this very element, which beats every
+   stylesheet rule — so a CSS-only size change was a silent no-op
+   (measured: body stayed 16px with the patch applied).
+   The JS now only sets data-reading-size="s|m|l". Nothing is written
+   inline, so the cascade is winnable AND a responsive default is
+   possible for the first time.
+
+   Measured chars/line at 720px with Inter (ideal band 60-75):
+     19px → 76-77 chars     20px → 72 chars
+   Desktop takes 20px. Phones stay at 19px, because 20px there makes
+   already-short lines choppy (31-32 chars vs 33-34). */
+.zt-reading--notebook {
+  --reading-font-size: 19px;
+  --nb-para-gap: 1.43em;    /* 0.85 × line-height, scales with size automatically */
+}
+.zt-reading--notebook[data-reading-size="s"] { --reading-font-size: 17px; }
+.zt-reading--notebook[data-reading-size="l"] { --reading-font-size: 21px; }
+
+@media (min-width: 900px) {
+  .zt-reading--notebook                        { --reading-font-size: 20px; }
+  .zt-reading--notebook[data-reading-size="s"] { --reading-font-size: 18px; }
+  .zt-reading--notebook[data-reading-size="l"] { --reading-font-size: 22px; }
+}
+
+.zt-reading.zt-reading--notebook .nb-body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: var(--reading-font-size);
+  line-height: 1.68;
+  letter-spacing: -0.003em;
+  font-synthesis-weight: none;
+  max-width: 720px;
+}
+
+/* NOTE: the measure is fixed by GROWING THE TYPE, not by narrowing the
+   column. Measured on the live post at 720px with Inter:
+     16px → 90 chars   19px → 75   21px → 73   22px → 67   23px → 62
+   So 22px hits the classic 66-char target at the existing full width.
+   An earlier draft capped text at 620px and hit the same 67 chars, but
+   left the text as a narrow ribbon inside a wide sheet and shrank the
+   38 screenshots. Same measure, worse layout — rejected. */
+
+/* ── 2. LINE BREAKING ────────────────────────────────────────────
+   zt-notebook.css:786 sets hyphens:auto on .nb-body p / li directly,
+   so a rule on .nb-body loses. Must match the same targets.
+   Produces "reas-oning", "gov-ernance", "groun-ded" at 720px.
+   Hyphenation genuinely helps on a narrow phone column, so it is
+   restored below 600px rather than removed outright. */
+.zt-reading--notebook .nb-body p,
+.zt-reading--notebook .nb-body li,
+.zt-reading--notebook .nb-body dd {
+  hyphens: none;
+  overflow-wrap: break-word;     /* gentler than `anywhere` */
+  text-wrap: pretty;             /* kills orphans / one-word last lines */
+}
+
+.zt-reading--notebook .nb-body h2,
+.zt-reading--notebook .nb-body h3,
+.zt-reading--notebook .nb-body h4 {
+  text-wrap: balance;            /* headings break evenly, no lone word */
+}
+
+/* ── 3. PARAGRAPH RHYTHM ─────────────────────────────────────────
+   Measured 18px gap against a 27.2px line-height = 0.66×.
+   Paragraphs ran together with no breath between thoughts. */
+.zt-reading--notebook .nb-body > p {
+  margin-block: 0 var(--nb-para-gap);
+}
+.zt-reading--notebook .nb-body > ul,
+.zt-reading--notebook .nb-body > ol {
+  margin-block: 0 var(--nb-para-gap);
+}
+.zt-reading--notebook .nb-body li + li {
+  margin-top: 8px;
+}
+
+/* ── 4. EMPHASIS ─────────────────────────────────────────────────
+   Opening paragraphs are almost entirely bold, which devalues it.
+   zt-notebook.css:312 targets `p strong` / `li strong` and also
+   darkens the colour to var(--ink) — that colour shift alone still
+   reads as emphasis, so 600 is plenty. Must match its specificity. */
+.zt-reading--notebook .nb-body p strong,
+.zt-reading--notebook .nb-body li strong,
+.zt-reading--notebook .nb-body p b,
+.zt-reading--notebook .nb-body li b {
+  font-weight: 600;
+}
+
+/* ── 5. HEADING SCALE ────────────────────────────────────────────
+   BUG — the hierarchy is INVERTED. Verified in source, not assumed:
+   zt-notebook.css:155  .nb-h1  clamp(22px, 2.8vw, 30px)
+   zt-notebook.css:266  h2      38px  (fixed)
+   zt-notebook.css:289  h3      30px  (fixed)
+   So on desktop H2 (38) is LARGER than the article title (30), and
+   H3 (30) equals it. On a 390px phone it is worse — H1 collapses to
+   22px while H2 stays pinned at 38px, 73% larger than the title.
+   Caveat stays: it is the blog's identity and the reason this does
+   not look like every other tech blog. Only the scale is corrected,
+   and h2/h3 become fluid so the phone stops inverting.
+     Desktop  H1 48 > H2 34 > H3 26 > H4 18
+     Mobile   H1 34 > H2 28 > H3 23 > H4 18   */
+.zt-reading.zt-reading--notebook .nb-h1 {
+  font-size: clamp(34px, 4.6vw, 48px);
+  line-height: 1.08;
+}
+.zt-reading--notebook .nb-h1-underline {
+  height: 5px;              /* was 4px — optical balance under a larger title */
+}
+.zt-reading--notebook .nb-body h2 {
+  font-size: clamp(28px, 2.6vw, 34px);
+  margin-top: 64px;
+  margin-bottom: 18px;
+  line-height: 1.15;
+}
+.zt-reading--notebook .nb-body h3 {
+  font-size: clamp(23px, 2.0vw, 26px);
+  margin-top: 40px;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+/* ── 6. THE SHEET ────────────────────────────────────────────────
+   Surface, not decoration: dark mode measured 1.13:1 between paper
+   and desk, so the page had no edge. A hairline + the paper lift
+   restore it. Ink lifted to hold contrast (9.57 → 9.89:1).
+   No gradients, no glow, no glassmorphism. Zero bytes. */
+.zt-reading--notebook .nb-page {
+  border: 1px solid var(--nb-edge, rgba(184, 174, 146, 0.45));
+}
+[data-theme="dark"] .zt-reading--notebook {
+  --paper:   #191F33;
+  --nb-edge: rgba(140, 152, 186, 0.22);
+  --ink:     #EEE9DC;
+  --ink-soft:#CFC9B9;
+}
+
+/* ── 7. MOBILE ───────────────────────────────────────────────────
+   Phone measure already fine (~40 chars). Restore hyphenation where
+   a narrow column genuinely needs it. */
+@media (max-width: 600px) {
+.zt-reading--notebook {
+  --reading-font-size: 19px;
+  --nb-para-gap: 1.35em;
+}
+  /* Hyphenation stays OFF on phones too. An earlier draft restored it
+     below 600px for a tighter rag, but `hyphens: auto` is dictionary-
+     driven and reintroduces exactly the breaks this release removes
+     ("reas-oning", "gov-ernance"). overflow-wrap handles long URLs. */
+  .zt-reading--notebook .nb-body p,
+  .zt-reading--notebook .nb-body li {
+    overflow-wrap: break-word;
+  }
+}
+
+/* ── 9. LINKS — indigo navigates, red annotates ───────────────────
+   zt-notebook.css:322 colours every body link with --pen: the same
+   red as the H1 scribble, the H2 rules, list markers, heading
+   anchors and figure captions. When the annotation colour is also
+   the link colour, neither reads as a signal.
+   MEASURED on notebook paper #F4EFE3, not assumed:
+     Zen accent #6366F1 → 3.89:1   FAILS AA
+     indigo     #4F46E5 → 5.48:1   passes (current red is 5.17)
+   The house Zen indigo is tuned for white; cream paper eats it, so
+   the notebook needs the darker shade. Dark #A5B4FC → 8.82:1.
+   Heading anchors keep --pen automatically: their rule at :336 is
+   specificity 0,3,0 and beats the 0,2,1 link rule below. */
+.zt-reading--notebook {
+  --link:      #4F46E5;
+  --link-soft: #A5A0EE;
+}
+[data-theme="dark"] .zt-reading--notebook {
+  --link:      #A5B4FC;
+  --link-soft: #6E79B8;
+}
+.zt-reading--notebook .nb-body a {
+  color: var(--link);
+  text-decoration-color: var(--link-soft);
+}
+.zt-reading--notebook .nb-body a:hover {
+  text-decoration-color: var(--link);
+}
+
+/* ── 10. MUTED TEXT — light mode fails AA ─────────────────────────
+   --ink-faint #6E7892 on paper measures 3.84:1, under the 4.5:1
+   floor for body-size text. It sets text in exactly three places
+   (zt-notebook.css:102, :108, :193) and borders in eight others,
+   where the 3:1 non-text rule applies and a darker value is simply
+   a slightly stronger hairline — no downside.
+   Dark mode already passes at 4.88:1 and is left alone.
+     #626B7C → 4.68:1 */
+.zt-reading--notebook {
+  --ink-faint: #626B7C;
+}
+
+/* ── 11. HEADING PERMALINKS — reachable by keyboard ───────────────
+   zt-notebook.css:335 sets .heading-anchor to opacity:0 and reveals
+   it only on h2/h3/h4 :hover. A keyboard user can Tab onto the
+   anchor but never sees where they are — an invisible focus target.
+   :focus-within catches the anchor being focused inside its heading;
+   :focus-visible catches the anchor directly. */
+.zt-reading--notebook .nb-body h2:focus-within .heading-anchor,
+.zt-reading--notebook .nb-body h3:focus-within .heading-anchor,
+.zt-reading--notebook .nb-body h4:focus-within .heading-anchor,
+.zt-reading--notebook .nb-body .heading-anchor:focus-visible {
+  opacity: 1;
+}
+
+/* ── 12. BARE SCREENSHOTS — give them a visible edge ──────────────
+   PREMISE CHECKED BEFORE FIXING. The screenshots are not unstyled:
+   609 <img> tags across the blog carry an inline style, 587 of them
+   `border:1px solid var(--border); border-radius:var(--radius-md)`.
+   So they DO have a border, and --border is properly themed
+   (#E5E5E5 light / #262626 dark) — there is no dark-mode leak here,
+   unlike the 17 inline caption colours.
+   The real defect is that the border is invisible. Measured against
+   the cream paper #F4EFE3:
+     border #E5E5E5      → 1.10:1   invisible
+     white screenshot    → 1.15:1   invisible
+     notebook --rule     → 1.93:1   visible, warm, on-palette
+   A white Microsoft UI screenshot therefore has no discernible edge
+   in light mode. Dark mode is fine — a bright screenshot on a dark
+   page defines its own edge — so this is scoped to light only.
+
+   FIX: the inline style reads var(--border), and a custom property
+   is resolved against the ELEMENT'S OWN computed value. Setting
+   --border on the image itself therefore redirects that inline
+   declaration — no !important, no content edits, and a blast radius
+   of exactly one element type. zt-notebook.css uses var(--border)
+   zero times, so nothing else in the notebook is affected. */
+.zt-reading--notebook .nb-body p > img:only-child,
+.zt-reading--notebook .nb-body li > img:only-child,
+.zt-reading--notebook .nb-body > img {
+  --border: #B8AE92;          /* = notebook --rule; 1.93:1 on paper */
+  --radius-md: 3px;           /* a pasted print, not a UI card */
+  box-shadow: 2px 3px 0 rgba(27, 42, 74, 0.06);
+}
+[data-theme="dark"] .zt-reading--notebook .nb-body p > img:only-child,
+[data-theme="dark"] .zt-reading--notebook .nb-body li > img:only-child,
+[data-theme="dark"] .zt-reading--notebook .nb-body > img {
+  --border: #2A3148;          /* = notebook --rule, dark */
+  box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.35);
+}
+
+/* ── 8. RESPECT MOTION PREFERENCE ────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .zt-reading--notebook * { animation: none !important; transition: none !important; }
+}
+
+/* ── 14. SECONDARY SURFACES — keep pace with the body ─────────────
+   The base sheet sizes these in fixed px, tuned when body copy was
+   16px. Body is now 19–20px and reader-adjustable, so a 16px pull
+   quote and a 15px table cell read as *smaller than the prose they
+   support* — the page looks half-migrated.
+
+   Switched to `em`, so each one is a ratio of whatever the reader
+   has chosen. Values picked so MOBILE is effectively unchanged
+   (19px body) and DESKTOP gains 1–2px:
+
+     blockquote  16px -> 0.9em   = 17.1 mobile / 18 desktop
+     h4          18px -> 1em     = 19    mobile / 20 desktop
+     figcaption  19px -> 1em     = 19    mobile / 20 desktop  (Caveat
+                                   has a small x-height; it needs the
+                                   extra px more than Inter does)
+     td          15px -> 0.8em   = 15.2  mobile / 16 desktop
+     th          11px -> 0.6em   = 11.4  mobile / 12 desktop
+
+   Tables deliberately move least — these posts carry dense feature
+   comparisons and the wrapper scrolls horizontally on a phone.
+   Growing cells materially would trade a reading win for a
+   side-scrolling loss. */
+.zt-reading--notebook .nb-body blockquote { font-size: 0.9em; }
+.zt-reading--notebook .nb-body h4         { font-size: 1em; }
+.zt-reading--notebook .nb-body figcaption { font-size: 1em; }
+.zt-reading--notebook .nb-body td         { font-size: 0.8em; }
+.zt-reading--notebook .nb-body th         { font-size: 0.6em; }

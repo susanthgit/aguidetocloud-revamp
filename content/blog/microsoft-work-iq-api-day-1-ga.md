@@ -243,8 +243,8 @@ But Microsoft Learn and the GitHub admin guide still tie specific surfaces to Mi
 If your rollout does require Copilot licences, assign them first and allow for propagation. Some tenants can take up to 24 hours before the entitlement is visible everywhere.
 
 <figure>
-  <img src="/images/blog/workiq-ga-2026/workiq-01-admin-licenses.webp" alt="Microsoft 365 admin centre on the Licenses page, with the Microsoft 365 Copilot row highlighted by a red outline. Twenty-four of twenty-five seats assigned. Lab tenant shown (Contoso)." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
-  <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">Admin centre → Billing → Licenses. For CLI / REST rollouts, check whether the signed-in users have Microsoft 365 Copilot assigned.</figcaption>
+  <img src="/images/blog/workiq-ga-2026/workiq-01-admin-licenses.webp" alt="Microsoft 365 admin centre on the Licenses page, with the Microsoft 365 Copilot row highlighted by a red outline. Twenty-four of twenty-five seats assigned. Lab tenant shown (Contoso)." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid var(--border); border-radius: 4px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.4rem; font-style: italic;">Admin centre → Billing → Licenses. For CLI / REST rollouts, check whether the signed-in users have Microsoft 365 Copilot assigned.</figcaption>
 </figure>
 
 ### Admin Step 2 — Click the consent URL
@@ -270,13 +270,13 @@ Sign in as a **Global Admin** (or Cloud Application Admin, Application Admin, or
 {{< hi >}}**What this consent does NOT grant — for admins worried about scope.** Every scope above is **read-only**. Work IQ cannot write to mailboxes, edit calendar events, send mail, modify Teams channels, or change SharePoint content with this consent. It cannot read other admins' mailboxes outside the user's own delegated permissions. It cannot bypass Conditional Access, DLP, sensitivity labels, or Purview policies — those still apply to every Graph call Work IQ makes on a user's behalf. It cannot access non-M365 data (Power BI datasets, Intune devices, Defender alerts, third-party SaaS). The only "write" pathway is the separate `do_action` / `create_entity` Tools, and those require the **end user's own delegated permissions** at call time — the admin consent here doesn't pre-authorise them.{{< /hi >}}
 
 <figure>
-  <img src="/images/blog/workiq-ga-2026/workiq-02-admin-consent-prompt.webp" alt="Microsoft admin consent prompt for Work IQ CLI showing Microsoft Corporation as verified publisher and a list of more than twenty requested permissions." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid #ECE4D2; border-radius: 4px;" />
-  <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">The live consent dialog covers the seven Graph scopes plus fourteen MCP-server scopes and "Ask Work IQ agents on behalf of the user" — about twenty-three permissions in total. Worth a heads-up before you click Accept; the live prompt itself is the source of truth on what's being requested.</figcaption>
+  <img src="/images/blog/workiq-ga-2026/workiq-02-admin-consent-prompt.webp" alt="Microsoft admin consent prompt for Work IQ CLI showing Microsoft Corporation as verified publisher and a list of more than twenty requested permissions." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid var(--border); border-radius: 4px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.4rem; font-style: italic;">The live consent dialog covers the seven Graph scopes plus fourteen MCP-server scopes and "Ask Work IQ agents on behalf of the user" — about twenty-three permissions in total. Worth a heads-up before you click Accept; the live prompt itself is the source of truth on what's being requested.</figcaption>
 </figure>
 
 <figure>
-  <img src="/images/blog/workiq-ga-2026/workiq-03-admin-consent-accepted.webp" alt="After clicking Accept the browser shows a 'can't reach this page' error for 127.0.0.1, but the URL bar contains admin_consent=True — which means consent did succeed." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
-  <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">After Accept you get a localhost-refused page — that's normal. The Quick Start URL uses localhost as its callback. Look for <code>admin_consent=True</code> in the URL bar; that's the success signal.</figcaption>
+  <img src="/images/blog/workiq-ga-2026/workiq-03-admin-consent-accepted.webp" alt="After clicking Accept the browser shows a 'can't reach this page' error for 127.0.0.1, but the URL bar contains admin_consent=True — which means consent did succeed." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid var(--border); border-radius: 4px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.4rem; font-style: italic;">After Accept you get a localhost-refused page — that's normal. The Quick Start URL uses localhost as its callback. Look for <code>admin_consent=True</code> in the URL bar; that's the success signal.</figcaption>
 </figure>
 
 ### Admin Step 2.5 — The AADSTS650052 trap
@@ -289,8 +289,8 @@ your organization has not subscribed to or enabled.
 ```
 
 <figure>
-  <img src="/images/blog/workiq-ga-2026/workiq-02b-admin-aadsts650052-error.webp" alt="Browser error page after clicking the Quick Start consent URL. The page body says 'Hmmm... can't reach this page' but the URL bar contains the AADSTS650052 error." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
-  <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">Hit this on the Quick Start URL? Don't panic. It just means the script below needs to run first.</figcaption>
+  <img src="/images/blog/workiq-ga-2026/workiq-02b-admin-aadsts650052-error.webp" alt="Browser error page after clicking the Quick Start consent URL. The page body says 'Hmmm... can't reach this page' but the URL bar contains the AADSTS650052 error." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1rem 0; border: 1px solid var(--border); border-radius: 4px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.4rem; font-style: italic;">Hit this on the Quick Start URL? Don't panic. It just means the script below needs to run first.</figcaption>
 </figure>
 
 This is not your fault. The **Work IQ Tools MCP Server** resource (and a few related ones — Mail, Calendar, Teams, OneDrive, SharePoint, Word, Admin, Me, M365 Copilot) doesn't have a service principal auto-provisioned in your tenant. The consent flow assumes they do and stops.
@@ -333,13 +333,13 @@ pwsh -ExecutionPolicy Bypass -File .\scripts\Enable-WorkIQToolsForTenant.ps1
 After the script finishes, **re-try the consent URL** from Admin Step 2 — it'll go through.
 
 <figure>
-  <img src="/images/blog/workiq-ga-2026/workiq-04b-admin-script-consent-dialog.webp" alt="Microsoft Graph Command Line Tools requesting four delegated permissions including manage all delegated permission grants, read and write all applications, maintain access, and view users' basic profile. A 'Consent on behalf of your organization' checkbox is ticked." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid #ECE4D2; border-radius: 4px;" />
-  <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">The script's <em>own</em> auth prompt. Tick "Consent on behalf of your organization" and Accept. This is the script asking — separate from the Work IQ consent in Step 2.</figcaption>
+  <img src="/images/blog/workiq-ga-2026/workiq-04b-admin-script-consent-dialog.webp" alt="Microsoft Graph Command Line Tools requesting four delegated permissions including manage all delegated permission grants, read and write all applications, maintain access, and view users' basic profile. A 'Consent on behalf of your organization' checkbox is ticked." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid var(--border); border-radius: 4px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.4rem; font-style: italic;">The script's <em>own</em> auth prompt. Tick "Consent on behalf of your organization" and Accept. This is the script asking — separate from the Work IQ consent in Step 2.</figcaption>
 </figure>
 
 <figure>
-  <img src="/images/blog/workiq-ga-2026/workiq-04-admin-enable-script-success.webp" alt="PowerShell terminal showing the Enable-WorkIQToolsForTenant.ps1 script granting admin consent for multiple MCP servers including SharePoint, Admin, Word, and M365 Copilot, ending with the green message 'Work IQ tenant enablement complete!'" loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
-  <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">"Work IQ tenant enablement complete!" — what you want to see. Now go re-try the consent URL.</figcaption>
+  <img src="/images/blog/workiq-ga-2026/workiq-04-admin-enable-script-success.webp" alt="PowerShell terminal showing the Enable-WorkIQToolsForTenant.ps1 script granting admin consent for multiple MCP servers including SharePoint, Admin, Word, and M365 Copilot, ending with the green message 'Work IQ tenant enablement complete!'" loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid var(--border); border-radius: 4px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.4rem; font-style: italic;">"Work IQ tenant enablement complete!" — what you want to see. Now go re-try the consent URL.</figcaption>
 </figure>
 
 {{< hi >}}If you're reading this *before* clicking the consent URL: just run `Enable-WorkIQToolsForTenant.ps1` first. It works whether your tenant needs the workaround or not. Five minutes of friction saved.{{< /hi >}}
@@ -353,8 +353,8 @@ After consent, head to **[Microsoft Entra admin centre](https://entra.microsoft.
 To view this page you need at least **Cloud Application Administrator** or **Application Administrator** (read access). Global Admin works too.
 
 <figure>
-  <img src="/images/blog/workiq-ga-2026/workiq-05-admin-entra-apps.webp" alt="Microsoft Entra admin centre search dropdown showing 'Enterprise applications (10)' with the Work IQ CLI, Work IQ Word MCP, Work IQ Calendar MCP, Work IQ Mail MCP, Work IQ Copilot MCP, Work IQ User MCP, Work IQ Teams MCP service principals listed." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
-  <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">A faster way to verify than clicking through menus — type "work iq" in the Entra search bar and you should see all ten service principals grouped under Enterprise applications.</figcaption>
+  <img src="/images/blog/workiq-ga-2026/workiq-05-admin-entra-apps.webp" alt="Microsoft Entra admin centre search dropdown showing 'Enterprise applications (10)' with the Work IQ CLI, Work IQ Word MCP, Work IQ Calendar MCP, Work IQ Mail MCP, Work IQ Copilot MCP, Work IQ User MCP, Work IQ Teams MCP service principals listed." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid var(--border); border-radius: 4px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.4rem; font-style: italic;">A faster way to verify than clicking through menus — type "work iq" in the Entra search bar and you should see all ten service principals grouped under Enterprise applications.</figcaption>
 </figure>
 
 That completes the admin journey. Your users can now install + use Work IQ.
@@ -403,13 +403,13 @@ You: Find documents I worked on yesterday.
 ```
 
 <figure>
-  <img src="/images/blog/workiq-ga-2026/workiq-06a-cli-marketplace-already-registered.webp" alt="GitHub Copilot CLI showing the /plugin marketplace add microsoft/work-iq command returning an error 'Marketplace work-iq already registered' — meaning Microsoft Scout or a previous install already added it." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
-  <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">Honest-take moment: if you're already on Microsoft Scout, the marketplace is pre-registered. The "already registered" error is fine — just continue to the install command.</figcaption>
+  <img src="/images/blog/workiq-ga-2026/workiq-06a-cli-marketplace-already-registered.webp" alt="GitHub Copilot CLI showing the /plugin marketplace add microsoft/work-iq command returning an error 'Marketplace work-iq already registered' — meaning Microsoft Scout or a previous install already added it." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid var(--border); border-radius: 4px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.4rem; font-style: italic;">Honest-take moment: if you're already on Microsoft Scout, the marketplace is pre-registered. The "already registered" error is fine — just continue to the install command.</figcaption>
 </figure>
 
 <figure>
-  <img src="/images/blog/workiq-ga-2026/workiq-06-cli-plugin-install.webp" alt="GitHub Copilot CLI showing /plugin install workiq@work-iq completing with 'Plugin workiq installed successfully.'" loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
-  <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">The install is idempotent — runs cleanly whether the marketplace was already there or not.</figcaption>
+  <img src="/images/blog/workiq-ga-2026/workiq-06-cli-plugin-install.webp" alt="GitHub Copilot CLI showing /plugin install workiq@work-iq completing with 'Plugin workiq installed successfully.'" loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid var(--border); border-radius: 4px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.4rem; font-style: italic;">The install is idempotent — runs cleanly whether the marketplace was already there or not.</figcaption>
 </figure>
 
 ### Path B — VS Code one-click install (GUI-driven, no terminal-typing)
@@ -545,8 +545,8 @@ A 190-line Node.js script that runs once at 8am, asks Work IQ three orchestrated
 Schedule it with **Windows Task Scheduler** or **cron** and you've got an auto-generated brief in your inbox every morning — built on top of Work IQ's agent orchestration, not a single CLI question. The script makes three sequential A2A calls and stitches the results.
 
 <figure>
-  <img src="/images/blog/workiq-ga-2026/workiq-24-brief-rendered.webp" alt="VS Code showing the morning brief output as markdown — six themed sections on Project Adventure with bold labels for sources, clean markdown structure, no long URLs and no citation noise." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
-  <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">What the script produces — six themed sections on Project Adventure, clean <strong>bold</strong> labels for sources, citation noise stripped. The script's <code>cleanForBrief()</code> post-processor handles that — Work IQ's raw output has long Outlook/SharePoint URLs and inline citation markers that look terrible in a markdown file; the cleaner makes them readable.</figcaption>
+  <img src="/images/blog/workiq-ga-2026/workiq-24-brief-rendered.webp" alt="VS Code showing the morning brief output as markdown — six themed sections on Project Adventure with bold labels for sources, clean markdown structure, no long URLs and no citation noise." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid var(--border); border-radius: 4px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.4rem; font-style: italic;">What the script produces — six themed sections on Project Adventure, clean <strong>bold</strong> labels for sources, citation noise stripped. The script's <code>cleanForBrief()</code> post-processor handles that — Work IQ's raw output has long Outlook/SharePoint URLs and inline citation markers that look terrible in a markdown file; the cleaner makes them readable.</figcaption>
 </figure>
 
 It's adaptable. Pipe it into email with `nodemailer`. Post it to a Teams incoming webhook. Render as HTML and serve. The brief is just markdown — adapt it to your workflow.
@@ -558,18 +558,18 @@ A tiny Express server + single-page HTML interface (~270 lines) for asking Work 
 The full UX, three screenshots:
 
 <figure>
-  <img src="/images/blog/workiq-ga-2026/workiq-21-webapp-empty-state.webp" alt="Web-app landing state — clean page with a single input field, a green Ask button, and four example chips (today's calendar / project status / open commitments / find specific emails)." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
-  <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">Empty state — just an input, four example chips, your account chip in the header.</figcaption>
+  <img src="/images/blog/workiq-ga-2026/workiq-21-webapp-empty-state.webp" alt="Web-app landing state — clean page with a single input field, a green Ask button, and four example chips (today's calendar / project status / open commitments / find specific emails)." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid var(--border); border-radius: 4px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.4rem; font-style: italic;">Empty state — just an input, four example chips, your account chip in the header.</figcaption>
 </figure>
 
 <figure>
-  <img src="/images/blog/workiq-ga-2026/workiq-22-webapp-loading.webp" alt="Web-app showing the loading state — the user's question is pinned in a card with the italic placeholder 'Asking Work IQ...' while waiting for the API response." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
-  <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">When you ask: question pins to the top, answer card shows "Asking Work IQ…" Work IQ A2A typically takes 10–30 seconds — honest about the latency.</figcaption>
+  <img src="/images/blog/workiq-ga-2026/workiq-22-webapp-loading.webp" alt="Web-app showing the loading state — the user's question is pinned in a card with the italic placeholder 'Asking Work IQ...' while waiting for the API response." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid var(--border); border-radius: 4px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.4rem; font-style: italic;">When you ask: question pins to the top, answer card shows "Asking Work IQ…" Work IQ A2A typically takes 10–30 seconds — honest about the latency.</figcaption>
 </figure>
 
 <figure>
-  <img src="/images/blog/workiq-ga-2026/workiq-23-webapp-answer.webp" alt="Web-app showing a full Project Adventure answer — properly rendered markdown with headers (Overall status / Recent activity / Product delivery direction), clickable links to source items, and citation chips next to claims." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid #ECE4D2; border-radius: 4px;" />
-  <figcaption style="text-align: center; font-size: 0.85rem; color: #6E7892; margin-top: 0.4rem; font-style: italic;">The answer — rendered markdown with sectioned structure, clickable source links, citation chips. All of that comes from the A2A endpoint; the frontend just runs <code>marked</code> + <code>DOMPurify</code> on the response.</figcaption>
+  <img src="/images/blog/workiq-ga-2026/workiq-23-webapp-answer.webp" alt="Web-app showing a full Project Adventure answer — properly rendered markdown with headers (Overall status / Recent activity / Product delivery direction), clickable links to source items, and citation chips next to claims." loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 1.5rem 0; border: 1px solid var(--border); border-radius: 4px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.4rem; font-style: italic;">The answer — rendered markdown with sectioned structure, clickable source links, citation chips. All of that comes from the A2A endpoint; the frontend just runs <code>marked</code> + <code>DOMPurify</code> on the response.</figcaption>
 </figure>
 
 The frontend is ~200 lines of vanilla HTML/CSS/JS — no React, no build step. Backend is ~150 lines of Express + MSAL. Multi-turn conversations work via Work IQ's `contextId` (the server holds a Map of conversationId → A2A contextId across turns).

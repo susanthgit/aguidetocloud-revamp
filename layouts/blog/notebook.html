@@ -15,8 +15,9 @@
   <script>
     (function(){
       var r=document.querySelector('.zt-reading');if(!r)return;
-      var fs=localStorage.getItem('zt-reading-font-size');
-      if(fs==='14'||fs==='18'){r.style.setProperty('--reading-font-size',fs+'px');}
+      var fs=localStorage.getItem('zt-reading-size');
+      if(fs!=='s'&&fs!=='l'){var lg=localStorage.getItem('zt-reading-font-size');fs=lg==='14'?'s':(lg==='18'?'l':null);}
+      if(fs)r.setAttribute('data-reading-size',fs);
       if(localStorage.getItem('zt-reading-focus')==='1')r.classList.add('zt-reading--focused');
     })();
   </script>
@@ -40,9 +41,9 @@
         <div class="zt-reading-toolbar">
           <button aria-label="Share this article" class="zt-toolbar-btn" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href})}else{navigator.clipboard.writeText(location.href).then(function(){this.textContent='✓ Copied';var b=this;setTimeout(function(){b.textContent='Share'},2000)}.bind(this))}">Share</button>
           <div class="zt-toolbar-group" role="group" aria-label="Font size">
-            <button aria-label="Small text" data-fontsize="14" title="Small">A<small>−</small></button>
-            <button aria-label="Default text" data-fontsize="16" title="Default" class="is-active">A</button>
-            <button aria-label="Large text" data-fontsize="18" title="Large">A<small>+</small></button>
+            <button aria-label="Small text" data-fontsize="s" title="Small">A<small>−</small></button>
+            <button aria-label="Default text" data-fontsize="m" title="Default" class="is-active">A</button>
+            <button aria-label="Large text" data-fontsize="l" title="Large">A<small>+</small></button>
           </div>
           <button aria-label="Toggle focus mode" class="zt-toolbar-btn zt-focus-toggle" title="Focus mode">Focus</button>
         </div>

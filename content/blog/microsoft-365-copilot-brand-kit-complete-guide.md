@@ -964,7 +964,7 @@ Customers ask: "we already have Designer; do we need Adobe Express? And how does
     loading="lazy"
     style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto;"
   />
-  <figcaption style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.5rem;">
     Save or share:
     <a href="/diagrams/brand-kit-decision-tree.png" download>PNG (high-res, LinkedIn-ready)</a> ·
     <a href="/diagrams/brand-kit-decision-tree.svg" download>SVG (vector)</a> ·
@@ -1038,8 +1038,8 @@ Here's what I actually saw on my build, end to end. Three screenshots, three ste
   <img src="/images/blog/brand-kit/brand-reviewer-01-prompt-input.webp"
        alt="PowerPoint with the Copilot side panel open on the right. A red circle highlights the prompt input box containing the typed phrase 'check this presentation against my brand'. Below the input are suggestion chips like 'Summarize this presentation', 'Clean up the layout of this slide', and 'Add an on-brand slide about description'. The slide visible on the left shows a 'Good Prompt' anatomy with bullet points."
        loading="lazy"
-       style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid #e5e5e5; border-radius: 6px;" />
-  <figcaption style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+       style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid var(--border); border-radius: 6px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.5rem;">
     On my build today, I couldn't spot a dedicated Brand Reviewer button — but typing <em>"check this presentation against my brand"</em> into the Copilot pane kicked off the same workflow. The magic phrase, for now: works.
   </figcaption>
 </figure>
@@ -1050,8 +1050,8 @@ Here's what I actually saw on my build, end to end. Three screenshots, three ste
   <img src="/images/blog/brand-kit/brand-reviewer-02-template-choice.webp"
        alt="Copilot side panel showing question 1 of 2: 'Which brand template should I compare this presentation against?' Four radio button options listed: Zava Template, Xbox brand template, Adventure Works Light, and Adventure Works. Below the options is an 'Enter another option' input field and a 'Skip all' button."
        loading="lazy"
-       style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid #e5e5e5; border-radius: 6px; max-width: 700px;" />
-  <figcaption style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+       style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid var(--border); border-radius: 6px; max-width: 700px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.5rem;">
     Copilot picks up that there could be more than one Brand Kit to compare against and asks you to choose. Microsoft ships demo kits (Zava, Xbox, Adventure Works) you can test against — handy if your own kit isn't fully published yet. After this it asks which dimensions to check — Colours and fonts, Logo and imagery, Layout and structure, or all of the above.
   </figcaption>
 </figure>
@@ -1062,8 +1062,8 @@ Here's what I actually saw on my build, end to end. Three screenshots, three ste
   <img src="/images/blog/brand-kit/brand-reviewer-03-audit-output.webp"
        alt="Copilot's detailed brand check output for a test presentation compared to the Xbox brand template. Sections for Typography (Aptos Display vs Segoe UI — Not compliant), Color palette (generic Office hex codes vs Xbox greens, neutral grays, accent purple/blue — No overlap), Logo and imagery (no Xbox brand mark, default Office layouts not 200+ Xbox layouts), and Layout and structure (Standard Office masters vs rich Xbox layout system — Structural mismatch). A 'Bottom line' header is visible at the bottom of the panel."
        loading="lazy"
-       style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid #e5e5e5; border-radius: 6px; max-width: 800px;" />
-  <figcaption style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+       style="max-width: 100%; height: auto; display: block; margin: 1.5rem auto; border: 1px solid var(--border); border-radius: 6px; max-width: 800px;" />
+  <figcaption style="text-align: center; font-size: 0.85em; color: var(--ink-soft); margin-top: 0.5rem;">
     Then a detailed brand-by-brand comparison — Typography, Colour palette, Logo and imagery, Layout and structure — each with Current vs Brand spec vs Verdict, plus a bottom-line summary. On my build today, one-click fixes weren't surfaced; it's a thorough report you act on manually. That may change with the next release — track Message Center.
   </figcaption>
 </figure>

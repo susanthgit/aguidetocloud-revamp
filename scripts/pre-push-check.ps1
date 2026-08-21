@@ -42,10 +42,15 @@ Write-Host "`n🔍 Pre-push checks..." -ForegroundColor Cyan
 # ─── CHECK 1: cache_version bump ───
 Write-Host "`n[1/7] Checking cache_version..." -NoNewline
 
-# Get files changed since origin/main (what would be pushed)
+# Get files changed since origin/main (what would be pushed).
+# 🔴 Whichever range produces this file list, every later `git diff` in this
+# check MUST reuse it. See the BUGFIX note at check 1b below.
+$usingWorkingTree = $false
 $changedFiles = git diff --name-only origin/main HEAD 2>$null
 if (-not $changedFiles) {
-    # If no diff from origin, check staged + unstaged
+    # Nothing committed yet (HEAD == origin/main): fall back to the working
+    # tree, staged + unstaged.
+    $usingWorkingTree = $true
     $changedFiles = git diff --name-only HEAD 2>$null
 }
 
@@ -60,8 +65,17 @@ if ($cssJsChanged -and -not $configChanged) {
     Write-Host "  Fix: bump cache_version in hugo.toml (e.g. 2026042805 → 2026042806)" -ForegroundColor Yellow
     $failed = $true
 } elseif ($cssJsChanged -and $configChanged) {
-    # Double-check that cache_version actually changed in the diff
-    $tomlDiff = git diff origin/main HEAD -- hugo.toml 2>$null
+    # Double-check that cache_version actually changed in the diff.
+    # BUGFIX 2026-08-21: this line hardcoded `origin/main HEAD`, while the file
+    # list above may have come from the working-tree fallback. With work still
+    # uncommitted (HEAD == origin/main) that range is EMPTY, so a correctly
+    # bumped cache_version was invisible and the push was false-blocked every
+    # time. Detection and verification must use the SAME range.
+    $tomlDiff = if ($usingWorkingTree) {
+        git diff HEAD -- hugo.toml 2>$null
+    } else {
+        git diff origin/main HEAD -- hugo.toml 2>$null
+    }
     if ($tomlDiff -match 'cache_version') {
         Write-Host " ✅ cache_version bumped" -ForegroundColor Green
     } else {

@@ -60,6 +60,22 @@ for (const fname of blogFiles) {
     }
   }
 
+  // --- 7: no hardcoded hex colours in inline styles (set 2026-08-21) ---
+  // Inline `style="... #ECE4D2 ..."` beats every stylesheet, so a hardcoded
+  // colour cannot follow the light/dark theme and cannot be corrected later
+  // without editing content. Real defects this caught on the day it was added:
+  //   · 17 <figcaption> pinned to #6E7892 / #666 — unreadable in dark mode
+  //   · 13 <img> bordered #ECE4D2 on #F4EFE3 paper — contrast 1.06, invisible
+  // Use a custom property instead: var(--ink-soft), var(--border), var(--pen).
+  // They are themed, and the notebook layer can re-point them per surface.
+  const hexStyleRe = /<[a-z]+\b[^>]*\bstyle="[^"]*#[0-9A-Fa-f]{3,8}\b[^"]*"[^>]*>/gi
+  let hexMatch
+  while ((hexMatch = hexStyleRe.exec(text)) !== null) {
+    const lineNo = text.substring(0, hexMatch.index).split('\n').length
+    const hex = (hexMatch[0].match(/#[0-9A-Fa-f]{3,8}\b/) || [''])[0]
+    errors.push(`${relPath}:${lineNo} hardcoded colour ${hex} in an inline style — it will not follow dark mode. Use a themed custom property (var(--ink-soft), var(--border), var(--pen)) instead.`)
+  }
+
   // --- 1/2/3: <img> tag checks ---
   const imgTagRe = /<img\b[^>]*?\/?>/gi
   let imgMatch
