@@ -910,11 +910,23 @@ BYTES = b"not a real webp, only its existence is asserted"
 # The site is served case-sensitively, so a link that differs only in
 # capitalisation resolves locally on Windows and 404s in public. Path.resolve()
 # cannot see this: it rewrites the path to the on-disk casing, so the check
-# ends up comparing a name with itself.
+# ends up comparing a name with itself. On a case-SENSITIVE filesystem the OS
+# already refuses the lookup, so the outcome is the same - blocked - by a
+# different route. Both are asserted; the platform is probed, not assumed,
+# because macOS runners are case-insensitive too.
+def _fs_case_insensitive() -> bool:
+    with tempfile.TemporaryDirectory() as td:
+        (Path(td) / "CaseProbe.tmp").write_bytes(b"")
+        return (Path(td) / "caseprobe.tmp").exists()
+
+
+CASE_BLIND_FS = _fs_case_insensitive()
+
 errs, _ = lint_files(post(section(1, body_extra='<img src="/i/CaseShot.webp" alt="x">')),
                      {"/i/caseshot.webp": BYTES})
 check("an image whose capitalisation differs from the file on disk is an error",
-      has(errs, "capitalisation differs"), "; ".join(errs))
+      has(errs, "capitalisation differs") if CASE_BLIND_FS
+      else has(errs, "missing on disk"), "; ".join(errs))
 
 errs, _ = lint_files(post(section(1, body_extra='<img src="/i/shot.webp" alt="x">')),
                      {"/i/shot.webp": BYTES})

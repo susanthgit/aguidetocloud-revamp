@@ -30,6 +30,7 @@ import os
 import pathlib
 import subprocess
 import sys
+import tempfile
 
 HERE = pathlib.Path(__file__).resolve().parent
 TOOL = HERE / "monthly-blog-qa.py"
@@ -138,7 +139,8 @@ MUTATIONS = [
     # ---- round 4: what a URL really serves, and what a reader really sees.
     ("image casing is checked against the case-sensitive host",
      '        if part not in _dir_names(str(cur)):\n            return False',
-     '        if False:\n            return False'),
+     '        if False:\n            return False',
+     "CASE_BLIND_FS"),
     ("an image path may not walk out of static/",
      "    if any(seg == '..' for seg in parts):".replace("'", '"'),
      "    if False:"),
@@ -159,12 +161,34 @@ MUTATIONS = [
 ]
 
 
+def _fs_case_insensitive() -> bool:
+    """Probed, never assumed: macOS runners are case-insensitive too."""
+    with tempfile.TemporaryDirectory() as td:
+        (pathlib.Path(td) / "CaseProbe.tmp").write_bytes(b"")
+        return (pathlib.Path(td) / "caseprobe.tmp").exists()
+
+
+# Some guards are only observable where the platform does not already provide
+# the guarantee. On a case-SENSITIVE filesystem the OS itself refuses a
+# mis-cased lookup, so deleting the casing check changes nothing a test could
+# see. That is a fact about the platform, not a blind spot in the suite, and
+# it is reported as N/A rather than quietly counted as a pass.
+CONDITIONS = {"CASE_BLIND_FS": _fs_case_insensitive()}
+
+
 def main() -> int:
     original = TOOL.read_text(encoding="utf-8")
     env = {**os.environ, "PYTHONIOENCODING": "utf-8"}
     bad = 0
+    skipped = 0
     try:
-        for name, find, repl in MUTATIONS:
+        for mutation in MUTATIONS:
+            name, find, repl = mutation[0], mutation[1], mutation[2]
+            cond = mutation[3] if len(mutation) > 3 else None
+            if cond and not CONDITIONS[cond]:
+                print(f"  n/a    {name}: not observable on this platform ({cond})")
+                skipped += 1
+                continue
             hits = original.count(find)
             if hits != 1:
                 print(f"  SKIP   {name}: anchor matched {hits}x, expected 1")
@@ -184,8 +208,9 @@ def main() -> int:
     finally:
         TOOL.write_text(original, encoding="utf-8")
 
-    total = len(MUTATIONS)
-    print(f"\n{total - bad}/{total} mutations caught")
+    total = len(MUTATIONS) - skipped
+    print(f"\n{total - bad}/{total} mutations caught"
+          + (f" ({skipped} n/a on this platform)" if skipped else ""))
     if bad:
         print("A MISS means the suite cannot see that guard disappear.")
     return 1 if bad else 0
