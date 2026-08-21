@@ -1,0 +1,1139 @@
+{
+ "schema": 1,
+ "slug": "microsoft-365-copilot-august-2026-updates",
+ "tool_version": "1.0.0",
+ "generated_at": "2026-08-21T05:32:15.602862+00:00",
+ "post": {
+  "path": "content/blog/microsoft-365-copilot-august-2026-updates.md",
+  "sha256": "d7c8e86f3c7267fe403c6cb4f694ba9a6ddbbd138ebcd11e90e414beccf8bcb3",
+  "sections": 59
+ },
+ "roadmap_snapshot": {
+  "path": "static/data/roadmap/latest.json",
+  "generated_at": "2026-08-20T05:38:18.757411+00:00",
+  "item_count": 1803,
+  "sha256": "e3737e5003645660acfef597a8e1e49ee32676367a09b7948c31ec232e28b11d"
+ },
+ "sections": [
+  {
+   "section": 1,
+   "title": "Excel gets a theme design skill",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 2,
+   "title": "Excel can ground its analysis in Power BI data",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 3,
+   "title": "Copilot in Excel works in more cloud-saved workbooks",
+   "roadmap_ids": [],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via learn.microsoft.com, support.microsoft.com, techcommunity.microsoft.com."
+  },
+  {
+   "section": 4,
+   "title": "Excel can format a workbook with your brand kit",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 5,
+   "title": "Excel skills package repeatable workflows",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 6,
+   "title": "Excel Personalization remembers how you work",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 7,
+   "title": "A `.Rules` sheet keeps workbook-specific standards",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 8,
+   "title": "PowerPoint can assign tasks inside comments",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 9,
+   "title": "PowerPoint skills make repeatable deck work reusable",
+   "roadmap_ids": [],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via support.microsoft.com, techcommunity.microsoft.com."
+  },
+  {
+   "section": 10,
+   "title": "PowerPoint can write, reply to and resolve comments",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 11,
+   "title": "Copilot in PowerPoint on iOS and iPad can plan multi-step work",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 12,
+   "title": "PowerPoint gained an admin-approved Brand Kit Picker",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com. Nearest feed candidate 566351 (PowerPoint: Create on brand presentations with additional brand assets) is a different feature - it covers brand assets, not the admin-approved Brand Kit Picker - so it is not cited."
+  },
+  {
+   "section": 13,
+   "title": "PowerPoint referencing SharePoint libraries and OneDrive folders",
+   "roadmap_ids": [
+    "555894",
+    "555895",
+    "555897"
+   ],
+   "source_urls": 5,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "555894": "In development",
+    "555895": "In development",
+    "555897": "In development"
+   }
+  },
+  {
+   "section": 14,
+   "title": "Word added Anthropic model choice for editing",
+   "roadmap_ids": [
+    "558440"
+   ],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "558440": "Launched"
+   }
+  },
+  {
+   "section": 15,
+   "title": "Word can build tables of contents, headers, footers and footnotes",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 16,
+   "title": "Copilot Catchup shows what changed in a document",
+   "roadmap_ids": [
+    "489825"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "489825": "In development"
+   }
+  },
+  {
+   "section": 17,
+   "title": "Word can generate an image for the document",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via support.microsoft.com, techcommunity.microsoft.com."
+  },
+  {
+   "section": 18,
+   "title": "Agentic editing reached Word on iPhone and iPad",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 19,
+   "title": "Word preserves Copilot Chat history",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 20,
+   "title": "Word can apply edits requested in comments",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 21,
+   "title": "Classic Outlook gained direct Copilot settings",
+   "roadmap_ids": [
+    "561491"
+   ],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "561491": "Rolling out"
+   }
+  },
+  {
+   "section": 22,
+   "title": "Teams gets a dedicated Meeting recaps app",
+   "roadmap_ids": [
+    "564614"
+   ],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "564614": "Rolling out"
+   }
+  },
+  {
+   "section": 23,
+   "title": "SharePoint news pages can be listened to",
+   "roadmap_ids": [
+    "562018"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "562018": "In development"
+   }
+  },
+  {
+   "section": 24,
+   "title": "Power Automate can generate a document from a SharePoint form",
+   "roadmap_ids": [
+    "561026"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "561026": "In development"
+   }
+  },
+  {
+   "section": 25,
+   "title": "Add the Word, Excel and PowerPoint agents straight into a chat",
+   "roadmap_ids": [
+    "543420",
+    "543421",
+    "543422"
+   ],
+   "source_urls": 4,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "543420": "Rolling out",
+    "543421": "Launched",
+    "543422": "Rolling out"
+   }
+  },
+  {
+   "section": 26,
+   "title": "Copilot Chat can ground answers in Power BI",
+   "roadmap_ids": [
+    "567891"
+   ],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "567891": "In development"
+   }
+  },
+  {
+   "section": 27,
+   "title": "Regenerate lets you retry or switch model",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 28,
+   "title": "The Copilot mobile app sends push notifications",
+   "roadmap_ids": [
+    "560339"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "560339": "In development"
+   }
+  },
+  {
+   "section": 29,
+   "title": "Copilot Notebooks accept Markdown, TXT and RTF files",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 30,
+   "title": "Copilot Notebooks expanded to Chat users",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 31,
+   "title": "Outlook emails can be added to a Copilot Notebook",
+   "roadmap_ids": [
+    "564910"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "564910": "Launched"
+   }
+  },
+  {
+   "section": 32,
+   "title": "Copilot Search answers got shorter, with a clearer way to continue",
+   "roadmap_ids": [
+    "562354"
+   ],
+   "source_urls": 2,
+   "images": 2,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "562354": "Rolling out"
+   }
+  },
+  {
+   "section": 33,
+   "title": "Add and manage your own sources, and point a prompt at one",
+   "roadmap_ids": [
+    "496596"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "496596": "Rolling out"
+   }
+  },
+  {
+   "section": 34,
+   "title": "Copilot connectors reach DoD tenants",
+   "roadmap_ids": [
+    "512428"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "512428": "Launched"
+   }
+  },
+  {
+   "section": 35,
+   "title": "More Copilot connectors, aimed at specific industries",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via learn.microsoft.com, techcommunity.microsoft.com."
+  },
+  {
+   "section": 36,
+   "title": "Researcher lets users choose models and modes",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via support.microsoft.com, techcommunity.microsoft.com."
+  },
+  {
+   "section": 37,
+   "title": "Planner Agent adds task cards and plan management",
+   "roadmap_ids": [
+    "516576"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "516576": "Launched"
+   }
+  },
+  {
+   "section": 38,
+   "title": "Claude Fable 5 (Preview) arrives in Cowork",
+   "roadmap_ids": [],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "Copilot Cowork is not published to the Microsoft 365 roadmap at all. Verified, not assumed: a token search of the full local feed (static/data/roadmap/latest.json) returned no entry sharing two or more significant words with this heading. Announced via learn.microsoft.com, techcommunity.microsoft.com."
+  },
+  {
+   "section": 39,
+   "title": "Cowork tasks can be triggered by an event, not just a schedule",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "Copilot Cowork is not published to the Microsoft 365 roadmap at all. Verified, not assumed: a token search of the full local feed (static/data/roadmap/latest.json) returned no entry sharing two or more significant words with this heading. Announced via learn.microsoft.com, techcommunity.microsoft.com."
+  },
+  {
+   "section": 40,
+   "title": "Cowork can choose the model for the job",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "Copilot Cowork is not published to the Microsoft 365 roadmap at all. Verified, not assumed: a token search of the full local feed (static/data/roadmap/latest.json) returned no entry sharing two or more significant words with this heading. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 41,
+   "title": "Cowork's plugin catalogue expanded",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "Copilot Cowork is not published to the Microsoft 365 roadmap at all. Verified, not assumed: a token search of the full local feed (static/data/roadmap/latest.json) returned no entry sharing two or more significant words with this heading. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 42,
+   "title": "Cowork's Customize tab gained skill authoring",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "Copilot Cowork is not published to the Microsoft 365 roadmap at all. Verified, not assumed: a token search of the full local feed (static/data/roadmap/latest.json) returned no entry sharing two or more significant words with this heading. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 43,
+   "title": "Cowork can create and edit visuals",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "Copilot Cowork is not published to the Microsoft 365 roadmap at all. Verified, not assumed: a token search of the full local feed (static/data/roadmap/latest.json) returned no entry sharing two or more significant words with this heading. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 44,
+   "title": "Cowork can use your organisational PowerPoint templates",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "Copilot Cowork is not published to the Microsoft 365 roadmap at all. Verified, not assumed: a token search of the full local feed (static/data/roadmap/latest.json) returned no entry sharing two or more significant words with this heading. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 45,
+   "title": "Cowork can work through the Edge browser",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "Copilot Cowork is not published to the Microsoft 365 roadmap at all. Verified, not assumed: a token search of the full local feed (static/data/roadmap/latest.json) returned no entry sharing two or more significant words with this heading. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 46,
+   "title": "Cowork sends approval and completion notifications",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "Copilot Cowork is not published to the Microsoft 365 roadmap at all. Verified, not assumed: a token search of the full local feed (static/data/roadmap/latest.json) returned no entry sharing two or more significant words with this heading. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 47,
+   "title": "Cost Management: better alerts, clearer policy logic, kinder overages",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via learn.microsoft.com, techcommunity.microsoft.com."
+  },
+  {
+   "section": 48,
+   "title": "The Cost Management Dashboard covers the full spend workflow",
+   "roadmap_ids": [],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via learn.microsoft.com, techcommunity.microsoft.com."
+  },
+  {
+   "section": 49,
+   "title": "A team-level view of Copilot credit spend",
+   "roadmap_ids": [
+    "566302"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "566302": "Launched"
+   }
+  },
+  {
+   "section": 50,
+   "title": "A heatmap showing which sites agents are accessing",
+   "roadmap_ids": [
+    "565027"
+   ],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "565027": "In development"
+   }
+  },
+  {
+   "section": 51,
+   "title": "An Agent 365 Dashboard lands in Copilot Analytics",
+   "roadmap_ids": [
+    "567667"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "567667": "In development"
+   }
+  },
+  {
+   "section": 52,
+   "title": "A usage report for Copilot connectors",
+   "roadmap_ids": [
+    "519571"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "519571": "In development"
+   }
+  },
+  {
+   "section": 53,
+   "title": "The Copilot Chat usage report reaches GCC, GCC High and DoD",
+   "roadmap_ids": [
+    "567121"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "567121": "In development"
+   }
+  },
+  {
+   "section": 54,
+   "title": "Agent metrics support custom adoption reporting",
+   "roadmap_ids": [
+    "562412"
+   ],
+   "source_urls": 2,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "562412": "In development"
+   }
+  },
+  {
+   "section": 55,
+   "title": "Domain exclusion for web grounding was announced, then rolled back",
+   "roadmap_ids": [
+    "503144"
+   ],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "503144": "Launched"
+   }
+  },
+  {
+   "section": 56,
+   "title": "Admins can control Copilot Vision screen and camera sharing",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com. Nearest feed candidates 561037 (Vision can analyze...) and 500376 (Admin control for org-wide agent sharing) are the capability and a different admin control respectively, not this screen/camera setting, so neither is cited."
+  },
+  {
+   "section": 57,
+   "title": "Microsoft Purview controls now cover Cowork",
+   "roadmap_ids": [],
+   "source_urls": 1,
+   "images": 1,
+   "disposition": "no_roadmap_row",
+   "reason": "No roadmap row. Verified, not assumed: the full local feed was searched by title tokens and every candidate sharing two or more significant words was unrelated on inspection. Shipped via the monthly announcement rather than a roadmap item. Announced via techcommunity.microsoft.com."
+  },
+  {
+   "section": 58,
+   "title": "Organizational Messages reached hybrid-joined devices",
+   "roadmap_ids": [
+    "503564"
+   ],
+   "source_urls": 3,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "503564": "In development"
+   }
+  },
+  {
+   "section": 59,
+   "title": "A Purview DLP control keeps external email out of Copilot",
+   "roadmap_ids": [
+    "561552"
+   ],
+   "source_urls": 4,
+   "images": 1,
+   "disposition": "roadmap_id",
+   "roadmap_status": {
+    "561552": "In development"
+   }
+  }
+ ],
+ "images": [
+  {
+   "section": 1,
+   "src": "/images/blog/copilot-august-2026/s01-theme-design-composite.webp",
+   "alt": "Two-part image. The upper half is Microsoft's official example of a themed ESG Performance Report in Excel, with a coordinated teal and green palette across the metric tables, a summary scorecard and a stacked bar chart. The lower half is a capture from my own tenant showing the Copilot prompt box with @th typed, and the filtered skill list where theme-design appears tagged Formatting.",
+   "exists": true,
+   "sha256": "bc938099f4d89d19532818eada3ad47790c22299ee3ad05920052f33ff54ef66",
+   "observed": true
+  },
+  {
+   "section": 2,
+   "src": "/images/blog/copilot-august-2026/s02-excel-powerbi-composite.webp",
+   "alt": "Three panels from my own tenant. First, the Excel Copilot prompt box with a Power BI report attached as a chip and a question typed asking for a filtered table. Second, Copilot replying that the semantic-model query returned a sizeable result file and that it is checking row counts and video URLs. Third, the finished result reporting a table created with 94 sessions, and a Sources block citing the Power BI report.",
+   "exists": true,
+   "sha256": "ed989a059464d9477e9bf9cbde1299701715fa321b4599ea10d0e045d18de701",
+   "observed": true
+  },
+  {
+   "section": 3,
+   "src": "/images/blog/copilot-august-2026/s03-excel-autosave-off.webp",
+   "alt": "Two Copilot panes from my own tenant, side by side, with a strip at the top showing the Excel AutoSave toggle switched off for both. On the left, in Allow editing mode, a banner reads that AutoSave is off with a green Turn on AutoSave button, and the prompt box is greyed out with a blocked cursor over it. On the right, in Chat only mode, the same pane is headed Let's analyze together and the Message Copilot box is active, with suggestion chips underneath.",
+   "exists": true,
+   "sha256": "57a6c8734b58fbf31a87a70c75f36a5d3121a19a171da3ccf7db906ae35bb9b6",
+   "observed": true
+  },
+  {
+   "section": 4,
+   "src": "/images/blog/copilot-august-2026/official-11-excel-brand-kit-annotated.webp",
+   "alt": "Official Microsoft image of an Excel workbook titled Marketing Expense Report. A red box at the top marks a dark navy header band carrying the Zava logo and an italic note reading Dummy FY2026 campaign spend analysis, Zava Brand Kit applied. A second red box at the bottom marks two charts, Monthly Budget Spend and Revenue and Actual Spend by Channel, drawn in the same navy and pale blue palette. Between them sit a key performance summary and monthly trend and channel performance tables.",
+   "exists": true,
+   "sha256": "ecf385c8a9f00cc75a7f2ba78a0429a8a12b6d2a23b893b8eb148fc47ce238fa",
+   "observed": true
+  },
+  {
+   "section": 5,
+   "src": "/images/blog/copilot-august-2026/june-s48-excel-skills-annotated.webp",
+   "alt": "A Manage Skills dialog in Copilot for Excel listing Custom skills, Finance and Formatting, each with a toggle switched on.",
+   "exists": true,
+   "sha256": "a094ebdda340035f1fcd9affc953e131c94e51de8a1f913721abe4d7f99654bf",
+   "observed": true
+  },
+  {
+   "section": 6,
+   "src": "/images/blog/copilot-august-2026/june-s49-excel-personalization-annotated.webp",
+   "alt": "A Customize Copilot dialog in Excel containing the text Always format currency with a dollar prefix and two decimal places, and use the date format DD-MMM-YYYY.",
+   "exists": true,
+   "sha256": "66800f3b151e4eceffa207a736950584c26d037069bbf2d682b814f64cdeb855",
+   "observed": true
+  },
+  {
+   "section": 7,
+   "src": "/images/blog/copilot-august-2026/june-s50-excel-rules-sheet-annotated.webp",
+   "alt": "An Excel worksheet with example Copilot rules in column A and two sheet tabs at the bottom, .Rules and Fiscal Report.",
+   "exists": true,
+   "sha256": "8b3855a0818bbb70efb99d93678112e8fa66fa987c5a52370b60a6c560166d79",
+   "observed": true
+  },
+  {
+   "section": 8,
+   "src": "/images/blog/copilot-august-2026/s04-powerpoint-comment-tasks.webp",
+   "alt": "Four panels from my own tenant. First, a PowerPoint comment reading This slide is out of date. Second, the Copilot pane with the typed prompt Turn the comments on this deck into assigned tasks and notify the right people, boxed in red. Third, a Copilot card headed Which of the two should I do, with Reply to each comment and Add an action-items slide both ticked, and the line about tagging the named people so they are notified boxed in red. Fourth, Copilot's answer after sixteen steps confirming both pieces are in, with its own limitation boxed in red: it cannot send notifications or at-mention people.",
+   "exists": true,
+   "sha256": "9a80283c91e2e30d7d1711eaf542bb14498566997ee04b3d5347b2e878152f28",
+   "observed": true
+  },
+  {
+   "section": 9,
+   "src": "/images/blog/copilot-august-2026/official-13-ppt-custom-skills-annotated.webp",
+   "alt": "The Manage skills pane in PowerPoint. A red box marks the line explaining that skill files uploaded to your Skills OneDrive folder will appear here. A second red box marks two custom skills, audience-adapter and storytelling-coach, each with an Edit and Delete link and an on toggle.",
+   "exists": true,
+   "sha256": "ce911388434e621f3c8d94b1401a173928263087fa05423d229dcce4c39440cf",
+   "observed": true
+  },
+  {
+   "section": 10,
+   "src": "/images/blog/copilot-august-2026/s13-powerpoint-comment-resolve.webp",
+   "alt": "Three panels from PowerPoint. Before: the Comments pane showing an open thread reading This slide is out of date, with a reply logging a task, and box 1 marking the two stacked icons at the top right that switch the side panel between Comments and Copilot. Copilot does the work: the Copilot pane echoing the typed request to resolve the comment on slide 4, followed by Reasoned in 5 steps and, in box 2, Copilot's confirmation that it replied on the thread and marked it resolved. After: the Comments pane again, with box 3 marking a Resolved header and box 4 marking the newly added reply saying the slide can be removed, attributed to Susanth Sutheesh and timestamped August 21 2026 at 8:54 AM.",
+   "exists": true,
+   "sha256": "fbeb6704c76838165d60cf495da32f203e770301040b851be91f26ae3b0a5914",
+   "observed": true
+  },
+  {
+   "section": 11,
+   "src": "/images/blog/copilot-august-2026/official-14-ppt-ipad-annotated.webp",
+   "alt": "Official Microsoft image of PowerPoint on an iPad showing a title slide reading Pathways to Innovation, Charting Our Future at Arches National Park Offsite. A red box marks a mode picker offering Allow Editing, described as Edit with Copilot and currently ticked, and Chat Only, described as Ask Copilot. A second red box marks the prompt bar beneath it, labelled Edit with Copilot.",
+   "exists": true,
+   "sha256": "8171c1381d0dd07801fee57d452265be98dc90d0a8aa7af28b69b5a050680dfa",
+   "observed": true
+  },
+  {
+   "section": 12,
+   "src": "/images/blog/copilot-august-2026/june-s45-ppt-brand-picker-annotated.webp",
+   "alt": "PowerPoint on the web with an empty title slide and the Copilot pane open, showing a plus menu with Add work content, Upload images and files, Select brands, and All skills.",
+   "exists": true,
+   "sha256": "4b7c4220aafc06aa793166872bcfac100dc6189f996e2b3b8617fab84fbd37d4",
+   "observed": true
+  },
+  {
+   "section": 13,
+   "src": "/images/blog/copilot-august-2026/lab-s47-ppt-sharepoint-folder-to-deck-annotated.webp",
+   "alt": "A three-panel screenshot. Panel one shows a SharePoint document library called Contoso HR Policies and Guidance, with a folder named hiring selected and boxed in red and a context menu open on Copy link. Panel two shows the Copilot pane in PowerPoint holding a pasted SharePoint link, boxed in red, with the tenant name and the sharing token covered by grey redaction bars so that only the scheme and the folder path remain readable, followed by the words create a presentation from this document, and a Copilot card reading Reasoned in 10 steps. Panel three shows the resulting PowerPoint deck, with the slide thumbnail rail boxed in red around four generated slides and the open title slide reading Organization Restructure Plan beneath a Contoso HR Policies and Guidance label.",
+   "exists": true,
+   "sha256": "ace10fea48d13b0099061b6eaa20599c5ea31b37f6d844a5aa350fdff44d2b47",
+   "observed": true
+  },
+  {
+   "section": 14,
+   "src": "/images/blog/copilot-august-2026/june-s39-word-model-menu-annotated.webp",
+   "alt": "A Copilot pane menu with a Model group listing Auto with a tick, Claude and GPT, each with a submenu arrow.",
+   "exists": true,
+   "sha256": "cf60d295b96129935ea28cee021ea54734e39f2c22b7cd7a709290e3d20aed77",
+   "observed": true
+  },
+  {
+   "section": 15,
+   "src": "/images/blog/copilot-august-2026/official-10-word-table-of-contents-annotated.webp",
+   "alt": "Official Microsoft image of Word with the References ribbon open. A red box in the document marks a clickable table of contents inserted below the subtitle, listing Market and Competitive Analysis, Service Overview and Benefits of Flexible Workspaces, Launch Strategy and Conclusion with page numbers. A second red box in the Copilot pane on the right marks the prompt Insert a table of contents, the line Reasoning completed in 2 steps, and Copilot's reply saying it inserted a clickable table of contents below the subtitle covering heading levels 1 to 3, ready to refresh in Word if the headings change.",
+   "exists": true,
+   "sha256": "5c81f776d57ec5d7632cbaedc2b1c082215e9e380c0a56a215315221a4e8884a",
+   "observed": true
+  },
+  {
+   "section": 16,
+   "src": "/images/blog/copilot-august-2026/june-36-word-catchup.webp",
+   "alt": "A Word document with a Catch up control in the ribbon, a summary card pinned above the document, and the Copilot pane offering Catch me up on this document, Ask a question about this document and Suggest ways to improve this document.",
+   "exists": true,
+   "sha256": "9f681804328a521adb81c02fcda06605acab6e70ac9009512177fa897d8e6de1",
+   "observed": true
+  },
+  {
+   "section": 17,
+   "src": "/images/blog/copilot-august-2026/june-s41-word-image-gen-annotated.webp",
+   "alt": "A Copilot pane showing the prompt Create an image of the KPI dashboard metrics, a generated Zava KPI Dashboard Snapshot image, and a reply confirming the image was inserted under a heading.",
+   "exists": true,
+   "sha256": "4fe04d084ab513245b5b350f4e72b59793e335e4851b6b68da263c1faa610bb3",
+   "observed": true
+  },
+  {
+   "section": 18,
+   "src": "/images/blog/copilot-august-2026/june-s42-word-ipad-agentic-annotated.webp",
+   "alt": "Two iPads side by side showing the same Word project proposal, one with the Edit with Copilot bar and suggested prompts open, the other with a new Introduction section added and a review bar reading 1 of 2 edits.",
+   "exists": true,
+   "sha256": "f8b234d6bc736858c2501dc172991d0784ffd74f35af58bd63cb40e746d77f29",
+   "observed": true
+  },
+  {
+   "section": 19,
+   "src": "/images/blog/copilot-august-2026/lab-s43-word-copilot-chat-history-annotated.webp",
+   "alt": "Two panels from Word for the web. Left: the Copilot pane header, with a hamburger Navigation button boxed in red and its tooltip reading Navigation. Right: the flyout that button opens, showing Current chat above a list headed Chats in Word containing two earlier conversations, boxed in red.",
+   "exists": true,
+   "sha256": "5ee111d26f69dabe90abfa0c7725887d4a1d8488b06696c8a79cddea18cc5a8a",
+   "observed": true
+  },
+  {
+   "section": 20,
+   "src": "/images/blog/copilot-august-2026/lab-s44-word-copilot-comment-to-edit-annotated.webp",
+   "alt": "Three panels from Word for the web. Panel one: the Comments pane showing a single comment reading convert these items into tables, boxed in red. Panel two: the Copilot pane, where the typed prompt reads can you action the comment in this doc, above a Reasoned in 5 steps control and a plan boxed in red that ends with the words then resolve the comment. Panel three: Copilot's closing message, with the phrase and resolved the comment boxed in red.",
+   "exists": true,
+   "sha256": "983c98f7ed686d7bba53104177bc409b0ac1866d581bf29092114dae69b3b2b2",
+   "observed": true
+  },
+  {
+   "section": 21,
+   "src": "/images/blog/copilot-august-2026/lab-s38-classic-outlook-copilot-settings-annotated.webp",
+   "alt": "A four-panel screenshot composite from Classic Outlook for Windows. Panel one shows the File then Info page, with a red box around a Copilot Settings button sitting below Account Settings and above Automatic Replies. Panel two shows the Copilot Settings dialog on the Preferences tab, with a red box around a Turn on Copilot toggle that is switched on, above a note that Copilot queries and Outlook content are not used to train foundation models. Panel three shows the Prioritize tab, with a red box around a Let Copilot prioritize my email on arrival toggle, below it a ticked option to show AI-generated summaries in the message list and an unticked Apply low priority label option. Panel four shows the Draft instructions tab, with a red box around a Use custom instructions when drafting email toggle above a text box holding written tone instructions. The account address is masked in every panel.",
+   "exists": true,
+   "sha256": "7ea1c4254bcb337933918e2996d05d8b2b40ed06b9b38989213a12e6da48d918",
+   "observed": true
+  },
+  {
+   "section": 22,
+   "src": "/images/blog/copilot-august-2026/official-16-teams-recaps-app-annotated.webp",
+   "alt": "Official Microsoft image of Teams with a Meeting recap app open. A red box on the far left marks a Meeting recap entry pinned in the Teams app rail. A second red box marks the app header, showing the name Meeting recap with its own Home and Audio recaps tabs. A third red box marks a row of filter chips reading All, Favourites, Mentions, Missed and Followed. Below sits a list of meetings grouped by This week and Last week, each with a Recap button.",
+   "exists": true,
+   "sha256": "5d03cca6737c3d0993920d0f2f901e5b1db28742336d47b2d33772e908faf3cb",
+   "observed": true
+  },
+  {
+   "section": 23,
+   "src": "/images/blog/copilot-august-2026/official-18-sharepoint-news-audio-annotated.webp",
+   "alt": "A SharePoint news page with a red box around the Play audio overview button in the top bar, and a second red box around the audio overview player that opens over the article with playback speed, skip controls and an AI-generated content may be incorrect notice.",
+   "exists": true,
+   "sha256": "41fb7c4cb1add135dac27b3742dee66e7ab952883592af156b81d99d6ba1d401",
+   "observed": true
+  },
+  {
+   "section": 24,
+   "src": "/images/blog/copilot-august-2026/official-19-docgen-form-preview-annotated.webp",
+   "alt": "The Generate a document from a form (preview) action in Power Automate. A red box marks the three required parameters: Site Address, Document Library Name set to RFPs and Form Name set to RFQ Demo. A second red box marks the advanced parameters, showing 15 of 16 fields with Sales representative and Type of quote mapped from the form. The flow beside it runs When an item is created into the generate action.",
+   "exists": true,
+   "sha256": "82abce4a8969135ef1780a0af662731da6978f0f23e5d14e49ea9e9c3f3d4810",
+   "observed": true
+  },
+  {
+   "section": 25,
+   "src": "/images/blog/copilot-august-2026/official-02-word-agent-mention.webp",
+   "alt": "Official Microsoft image of a Copilot Chat prompt where the Word agent has been added by @mentioning it.",
+   "exists": true,
+   "sha256": "3b02881b7468333d3701229620a10cc570bdd21afb0fb20e6392a98eb3d22148",
+   "observed": true
+  },
+  {
+   "section": 26,
+   "src": "/images/blog/copilot-august-2026/lab-s34-copilot-powerbi-grounding-annotated.webp",
+   "alt": "Two panels from my own tenant. Top: the Copilot Chat source-scope row with the plus-two overflow open, listing Power BI alongside Other. Bottom: an answer reporting seventy-nine published Copilot-related sessions, with the citation tooltip showing a Power BI report and a powerbi.com address. The report name and the file name beneath it are masked.",
+   "exists": true,
+   "sha256": "11503e835a9ac81af6979fc383df8e8048fd7fb85cbe3fa914d0a791546f8288",
+   "observed": true
+  },
+  {
+   "section": 27,
+   "src": "/images/blog/copilot-august-2026/june-s35-model-switch-annotated.webp",
+   "alt": "Microsoft 365 Copilot Chat showing an answer with an open menu containing Try Again and Switch model, and a model list with Auto, Quick response, Think deeper, Claude and GPT.",
+   "exists": true,
+   "sha256": "d92fffd29a26ef24483bd927ca271090f6218f30f03e8cf8f4aa64d1abf09487",
+   "observed": true
+  },
+  {
+   "section": 28,
+   "src": "/images/blog/copilot-august-2026/official-05-push-day-at-a-glance-annotated.webp",
+   "alt": "Official Microsoft image in two panels. Left, a phone lock screen where a red box marks a Your Day at a Glance notification reading Tailored insights from your emails and meetings activity. Right, the Copilot app opened to a Summary of the day, where a second red box marks an Important emails heading and the line Showing top 3 emails from the last 24 hours, followed by three summarised emails tagged High priority and Need attention.",
+   "exists": true,
+   "sha256": "8e95dca16dcf7435b2cc470aa20bb72d96be294f2942308b3c00aaa3ce554b1a",
+   "observed": true
+  },
+  {
+   "section": 29,
+   "src": "/images/blog/copilot-august-2026/official-09-notebook-md-txt-rtf-annotated.webp",
+   "alt": "Official Microsoft image of a Copilot Notebook References list. Pills down the left label three of the entries Markdown, TXT and RTF, and a red box groups those three rows together: Incident-report, EQQ-Meeting-Transcript and Product-briefing-notes. Below the box sit ordinary PowerPoint and Excel references.",
+   "exists": true,
+   "sha256": "fb19fa28b3e91b971da0addc1fe510567c83824f39295a3a065cca0aff19afdf",
+   "observed": true
+  },
+  {
+   "section": 30,
+   "src": "/images/blog/copilot-august-2026/june-s36-notebooks-chat-users-annotated.webp",
+   "alt": "A Copilot Notebook called Marketing Launch open in OneNote on the web, with a References list in the left rail and an Ask about your content Copilot pane on the right.",
+   "exists": true,
+   "sha256": "784418db120748a6bfa7066c403f124de7220e7d5cbd4bcb931582409ad0639e",
+   "observed": true
+  },
+  {
+   "section": 31,
+   "src": "/images/blog/copilot-august-2026/june-s37-outlook-to-notebook-annotated.webp",
+   "alt": "Microsoft illustration showing labels for Teams meetings, Outlook emails and Web pages beside a Copilot Notebook References list containing Marketing Team Sync, Weekly Top of Mind and Microsoft.com.",
+   "exists": true,
+   "sha256": "d71ee1dba984133a0b7c4d3dda769af123d29e928dd236c6981bea770057ba69",
+   "observed": true
+  },
+  {
+   "section": 32,
+   "src": "/images/blog/copilot-august-2026/s10-search-concise-answer.webp",
+   "alt": "Copilot Search in my own tenant, with Search selected in the left rail. Box 1 marks the search box containing the query about what is latest in Copilot in the month of July, with a Did you mean correction beneath it. The Copilot answer card returns one short paragraph summarising July's updates with two numbered citations and an AI-generated content may be incorrect badge. Box 2 marks the Continue reading button below the faded-out end of that answer. Box 3 marks the file results underneath, two PowerPoint files each showing a sensitivity label shield.",
+   "exists": true,
+   "sha256": "558b202798e182b68ab88474bad6f9cafc7a5c545d03cc40f7cb9831ad959b3c",
+   "observed": true
+  },
+  {
+   "section": 32,
+   "src": "/images/blog/copilot-august-2026/s10b-ask-copilot-chat-rail.webp",
+   "alt": "The expanded Copilot Search answer on the left, now three paragraphs long. Box 1 marks an Ask Copilot button beneath the finished answer, next to thumbs up and thumbs down icons and a References row. On the right, Copilot Chat is open in the side rail: box 2 marks the original question repeated as a user message at the top, and box 3 marks the Message Copilot composer at the bottom of the rail.",
+   "exists": true,
+   "sha256": "7e5e5a1f1a68900902b86525fa2924461adc1ef3a3bb1a04daf13f9557921bea",
+   "observed": true
+  },
+  {
+   "section": 33,
+   "src": "/images/blog/copilot-august-2026/official-04-copilot-search-sources-annotated.webp",
+   "alt": "Official Microsoft image of the Copilot sources rail, where third-party connectors appear alongside SharePoint as selectable sources for a prompt.",
+   "exists": true,
+   "sha256": "3806ef71c5a40c8a7caf02cb35023468681fe60deed029de5624723eb9770fb6",
+   "observed": true
+  },
+  {
+   "section": 34,
+   "src": "/images/blog/copilot-august-2026/s19-gov-cloud-connector-progression.webp",
+   "alt": "A four-step diagram titled Copilot connectors across the US government clouds. Commercial, GCC and GCC High are each shown as already available in muted boxes joined by arrows. The fourth box, DoD, is outlined in red and labelled June 2026. A note underneath reads that this includes Atlassian Jira and Confluence, and that content is indexed into Microsoft Graph and stays inside the tenant boundary with existing permissions, compliance policies and security controls still governing access.",
+   "exists": true,
+   "sha256": "fe0257b30a1d94009def167ac908d84dc5d8786a29cbf4d992151abe978512f8",
+   "observed": true
+  },
+  {
+   "section": 35,
+   "src": "/images/blog/copilot-august-2026/s20-industry-connectors.webp",
+   "alt": "A five-row chart titled Copilot connectors added in July 2026, grouped by the industries Microsoft named, with a count of 15 connectors marked in red. Financial services lists Daloopa, FactSet, Fitch Solutions, Morningstar, PitchBook and S and P Global. Professional services lists Dice, Forrester and HG Insights. Industrial and manufacturing lists Infor Nexus and Sight Machine. Healthcare and life sciences lists Article Galaxy and Nyquist AI. Retail and consumer goods lists Passby Pulse and Polar Analytics.",
+   "exists": true,
+   "sha256": "1736e91c5e1d0391e0a0af56ac2e2a9ea94696c2e925bb0493a9ef24c710ba04",
+   "observed": true
+  },
+  {
+   "section": 36,
+   "src": "/images/blog/copilot-august-2026/official-s51-researcher-model-choice-annotated.webp",
+   "alt": "Two Researcher model pickers side by side, one with Auto selected and one with Model Council selected, each listing Auto, Model Council, GPT and Claude with the reasoning each one uses.",
+   "exists": true,
+   "sha256": "28dd34bfc730d6df28f4e63e36b794c041d61ea6261303aa7ab98a0c3c327cb6",
+   "observed": true
+  },
+  {
+   "section": 37,
+   "src": "/images/blog/copilot-august-2026/june-48-planner-agent-annotated.webp",
+   "alt": "The Planner Agent in Microsoft 365 Copilot drafting a Contoso spring marketing campaign plan. A red box marks the Draft label and the Save plan button. A second red box marks a Remove task tooltip over a task in the drafted plan.",
+   "exists": true,
+   "sha256": "c6a7028bf1236c6d859e3958a47811e9311bcf54ba6f7eae6458372245b588b3",
+   "observed": true
+  },
+  {
+   "section": 38,
+   "src": "/images/blog/copilot-august-2026/official-03-model-picker-annotated.webp",
+   "alt": "Official Microsoft image of the Copilot Cowork model picker, open and listing Auto, GPT-5.6 Sol which is ticked, GPT-5.6 Terra, GPT-5.5 Frontier, Claude Sonnet 5, Claude Opus 4.8 and, marked with a red box at the bottom of the list, Claude Fable 5 Preview.",
+   "exists": true,
+   "sha256": "f4bfe039342587cb87ac89c3daade9c856245c1afec0ecf3553ea1484a08b1bb",
+   "observed": true
+  },
+  {
+   "section": 39,
+   "src": "/images/blog/copilot-august-2026/official-07-cowork-event-task-annotated.webp",
+   "alt": "Cowork showing a Set up trigger card. A red box surrounds the whole trigger definition: Name set to Renewal email to account brief and what-if model, When set to I receive an email, From set to renewal, and Run in set to New conversation each time. Below the box, a Then do this instruction block spells out how to qualify the email and what to pull from the CRM.",
+   "exists": true,
+   "sha256": "6e703f2829a2b4ac1a5ebecba001f305fd9a0836c5713ab82636d0053882fd09",
+   "observed": true
+  },
+  {
+   "section": 40,
+   "src": "/images/blog/copilot-august-2026/june-25-cowork-model-choice-annotated.webp",
+   "alt": "The Copilot Cowork model picker. A red box marks the Auto control in the top bar. A second red box marks the models listed below Auto: GPT 5.5, Claude Opus 4.8, Claude Sonnet 4.6 and Cowork 1.",
+   "exists": true,
+   "sha256": "b48859fa7c8f869334846d3ad5a0d2a073a281951ba74c035cd395a939676c8e",
+   "observed": true
+  },
+  {
+   "section": 41,
+   "src": "/images/blog/copilot-august-2026/june-26-cowork-plugins-annotated.webp",
+   "alt": "The Customize page in Copilot Cowork. A red box marks the Upload plugin button. A second red box marks the Installed section with Dynamics 365 ERP Apps and a toggle. A third red box marks the Discover grid of third-party plugins including Adobe, Canva, Box, Miro, Harvey and monday.com.",
+   "exists": true,
+   "sha256": "86584d27312eb5df3f89b6076254678c45b6791104a4eed1bd4eef10c0a0be3a",
+   "observed": true
+  },
+  {
+   "section": 42,
+   "src": "/images/blog/copilot-august-2026/official-09-cowork-customize-skills-annotated.webp",
+   "alt": "Cowork Customize screen on the Skills tab, with the Add menu open showing Create new and Upload skill, above a list of the user's own skills.",
+   "exists": true,
+   "sha256": "59e1864e274a339af0c13eb6ca1ec625aaecc0048b179d4c30aa797620377400",
+   "observed": true
+  },
+  {
+   "section": 43,
+   "src": "/images/blog/copilot-august-2026/june-27-cowork-visual-creation-annotated.webp",
+   "alt": "A Copilot Cowork exchange. A red box marks the prompt, which reads Help me create a mockup of our new product. Below it Cowork replies with an image of coloured draped fabric labelled the Zava Prisme textile for the product launch.",
+   "exists": true,
+   "sha256": "fe5d48dafc4b95981b399c26cf438f48e228348d08290301bb2903b29a9b04f3",
+   "observed": true
+  },
+  {
+   "section": 44,
+   "src": "/images/blog/copilot-august-2026/june-28-cowork-branded-template-annotated.webp",
+   "alt": "A completed Copilot Cowork task. A red box marks three generated files in the left pane: Zava Customer Brief in Word, Zava Marketing in PowerPoint and Zava Customer Data in Excel. A second red box marks the Edit in PowerPoint button. A third red box marks the slide preview, which carries a Zava logo block and brand-coloured section labels.",
+   "exists": true,
+   "sha256": "b952484a6c0227f108d5d9eef0c22d469e263932695883500b9b40010bfb29d8",
+   "observed": true
+  },
+  {
+   "section": 45,
+   "src": "/images/blog/copilot-august-2026/june-29-cowork-edge-browser-annotated.webp",
+   "alt": "A Copilot Cowork task submitting an expense report. A red box marks the line reading Navigated to MyExpense and added receipts. A second red box marks a card headed Action needed in the browser, asking the user to enter their email and password and click Continue to sign in, with Not now and Sign in buttons.",
+   "exists": true,
+   "sha256": "f41bb344a4fa033d252c81706587ccf813754eb7b1f8a72ef666209d5397c83c",
+   "observed": true
+  },
+  {
+   "section": 46,
+   "src": "/images/blog/copilot-august-2026/june-30-cowork-notification-annotated.webp",
+   "alt": "A phone lock screen at 9:41 on Thursday, March 18. A red box marks a Copilot notification reading Task complete, your competitive analysis slides were completed successfully, tap to view the results and refine.",
+   "exists": true,
+   "sha256": "28f62b207c9dd99b9dd1d8722f96ed8f626efd5ea142218ee0476992c96f6279",
+   "observed": true
+  },
+  {
+   "section": 47,
+   "src": "/images/blog/copilot-august-2026/official-24-cost-management-annotated.webp",
+   "alt": "Official Microsoft image of the Cost Management area in the Microsoft 365 admin center showing spending policies and alerts.",
+   "exists": true,
+   "sha256": "e502a2de4993b5cf90dfc71e321fa9ff4b4ade6e18b80926e7240bac4ccca7e1",
+   "observed": true
+  },
+  {
+   "section": 48,
+   "src": "/images/blog/copilot-august-2026/june-49-cost-management-annotated.webp",
+   "alt": "The Cost management page in the Microsoft 365 admin center. A red box marks the notice reading that this applies to Copilot Cowork and Work IQ API right now. A second red box marks four tiles: total Copilot Credits used 85,462, prepaid capacity pack credits used 72,000 of 100,000, pay-as-you-go credits used 13,462 and active users of Copilot Credits 4,684. A third red box marks the Policies at or above 90 percent of spending limit card, flagged Needs action.",
+   "exists": true,
+   "sha256": "4f6fdd854f49af2a9f1f7036f02027c830da3114d49d4aa71e4a37ed7b9f5992",
+   "observed": true
+  },
+  {
+   "section": 49,
+   "src": "/images/blog/copilot-august-2026/created-s54-credit-spend-by-team.webp",
+   "alt": "A diagram contrasting one tenant-wide figure of 85,462 Copilot credits with the same spend broken down by team, and a strip listing who can see the dashboard.",
+   "exists": true,
+   "sha256": "657d62830e9c61ce83bb0dc85cbd64f2f77591bb8474310816765697320613fe",
+   "observed": true
+  },
+  {
+   "section": 50,
+   "src": "/images/blog/copilot-august-2026/official-17-sharepoint-access-heatmap-annotated.webp",
+   "alt": "Agent access report in the SharePoint admin center. A red box marks the Agent Access Heat Map by Sites, a grid of agent type against business group. A second red box marks the governance actions in the side panel: Restrict site access, Restrict content discovery and View site.",
+   "exists": true,
+   "sha256": "00790b9eda9fd985f70171e53eba0955956a9020bdc11463ef138e1db03ea8ba",
+   "observed": true
+  },
+  {
+   "section": 51,
+   "src": "/images/blog/copilot-august-2026/official-21-agent365-dashboard-annotated.webp",
+   "alt": "The Agent 365 Dashboard in Viva Insights. A red box marks the Overview, Adoption and Impact tabs. A second red box marks the Activity rate card showing 438 available agents split 230 active and 208 inactive. A third red box marks the Creators donut showing 230 active agents built by User 206, Your org 4, Microsoft 8 and Microsoft partner 12.",
+   "exists": true,
+   "sha256": "61f0562a9e7edd4a2fa1d293e0934685f8c46295792b5caa892487d31d065606",
+   "observed": true
+  },
+  {
+   "section": 52,
+   "src": "/images/blog/copilot-august-2026/official-22-connectors-usage-report.webp",
+   "alt": "Official Microsoft image of the Copilot Connectors usage report in the Microsoft 365 admin center, with Microsoft's own red boxes around the Connectors entry in the Reports nav and the report title. The report shows 11 connections used by Copilot, 7 used by agents, 527 active connector users and 865 connector responses.",
+   "exists": true,
+   "sha256": "08be4293a0033df5ea35bba6ab4cdd40245e11f020c7fafa7f66af764309d9de",
+   "observed": true
+  },
+  {
+   "section": 53,
+   "src": "/images/blog/copilot-august-2026/official-23-chat-usage-report-annotated.webp",
+   "alt": "The Microsoft 365 Copilot Chat usage report in the admin center. A red box marks the line explaining the report covers Copilot Chat users who do not have a Microsoft 365 Copilot license. A second red box marks the headline numbers: 15,535 active users, 9,788 average daily active users and 921,455 prompts submitted.",
+   "exists": true,
+   "sha256": "61017da28738fd16c6813ebf3a246f7f568a4c051efbd7437f57b84b6eace92a",
+   "observed": true
+  },
+  {
+   "section": 54,
+   "src": "/images/blog/copilot-august-2026/june-s55-analyst-workbench-annotated.webp",
+   "alt": "Microsoft Viva Insights Create analysis page showing an Agent query with a query name, description, custom time period, and selected metrics including Agent responses generated and Copilot credits used for agents.",
+   "exists": true,
+   "sha256": "14c03324f73b77ae9c2cec72510bfc980f7c038a9cddac2b6a1fda1e30388155",
+   "observed": true
+  },
+  {
+   "section": 55,
+   "src": "/images/blog/copilot-august-2026/s22-domain-exclusion-timeline.webp",
+   "alt": "A timeline titled Domain exclusion for web grounding, announced then withdrawn. A green marker at July 2026 is labelled Announced, with a note that admins could exclude up to 1,000 domains from web grounding. A red crossed-out marker at 4 August 2026 is labelled Rolled back, quoting Microsoft saying it has been rolled back at this time and that they are actively evaluating next steps. The line continues past that point as a dashed line marked no return date.",
+   "exists": true,
+   "sha256": "68b43537db2a45e8b283d05ef7dca49455351afcf66eac086eb7c28c5c3755be",
+   "observed": true
+  },
+  {
+   "section": 56,
+   "src": "/images/blog/copilot-august-2026/june-s57-vision-screen-camera-annotated.webp",
+   "alt": "An admin panel titled Screen and camera sharing with two separate sections, Screens and Cameras, each offering All users or No users, with No users selected in both.",
+   "exists": true,
+   "sha256": "1f840a61ace4dee92ffa1e8aaa3c9afceb52dec40edfd300e6a273f4498fe023",
+   "observed": true
+  },
+  {
+   "section": 57,
+   "src": "/images/blog/copilot-august-2026/june-s58-purview-dspm-cowork-annotated.webp",
+   "alt": "Microsoft Purview DSPM Activity Explorer listing AI Interaction records with an App accessed in column showing Cowork and CoworkChat, and a details pane for a selected AI Interaction.",
+   "exists": true,
+   "sha256": "5f3835469c47769824ffd1d9a0e64d3c7b284a5d54517c90c8d2b375730ec31e",
+   "observed": true
+  },
+  {
+   "section": 58,
+   "src": "/images/blog/copilot-august-2026/created-s56-orgmsg-device-join.webp",
+   "alt": "A diagram of three device join states \u2014 Microsoft Entra joined, Microsoft Entra hybrid joined and on-premises Active Directory only \u2014 showing which ones an Organizational Message can reach.",
+   "exists": true,
+   "sha256": "954b56653e9c0c06bc6b1c94d23f092b25fd2c64950a3e5d646d7d9778722bf9",
+   "observed": true
+  },
+  {
+   "section": 59,
+   "src": "/images/blog/copilot-august-2026/official-20-purview-dlp-external-annotated.webp",
+   "alt": "Microsoft Purview Create rule page showing a condition of Email is received from People outside my organization, and an action of Restrict Copilot from processing content with Accessing knowledge sources set to Block.",
+   "exists": true,
+   "sha256": "13bec7a5300d919740d1573feed088ef4d7f71fb89ef332564ae8b05a735d65d",
+   "observed": true
+  }
+ ],
+ "unresolved_sections": [],
+ "unobserved_images": [],
+ "state": "pass"
+}
