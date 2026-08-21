@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 21 Aug 2026 18:52:26 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2026 20:36:50 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may experience inconsistencies with Microsoft 365 Copilot features</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1458413</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may experience inconsistencies across Copilot features including chat, agent availability, and Microsoft 365 apps.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1458413</guid>
+      <pubDate>Fri, 21 Aug 2026 06:30:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Admins may encounter reporting delays across multiple Microsoft 365 admin centers and Viva Insights</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1458983</link>
@@ -17,13 +26,13 @@
       <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may experience inconsistencies with Microsoft 365 Copilot features</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1458413</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may experience inconsistencies across Copilot features including chat, agent availability, and Microsoft 365 apps.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
+      <title>[Exchange Online] Users may be unable to complete mailbox offboarding because the migration task is blocked and can’t finish</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1458145</link>
+      <description>[Exchange Online] Users may be unable to complete mailbox offboarding because the migration task is blocked and can’t finish.</description>
+      <category>Exchange Online</category>
       <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1458413</guid>
-      <pubDate>Thu, 20 Aug 2026 21:53:58 +0000</pubDate>
+      <guid isPermaLink="false">EX1458145</guid>
+      <pubDate>Thu, 20 Aug 2026 12:23:15 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Admins can't identify who deleted a Viva Engage community or its Microsoft 365 Group in Microsoft Entra ID audit logs</title>
@@ -448,15 +457,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1435242</guid>
       <pubDate>Tue, 21 Jul 2026 04:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Purview] Admins may not have received alerts for Microsoft Purview Communication Compliance policies that contain conditions</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1438577</link>
-      <description>[Microsoft Purview] Admins may not have received alerts for Microsoft Purview Communication Compliance policies that contain conditions.</description>
-      <category>Microsoft Purview</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MP1438577</guid>
-      <pubDate>Tue, 21 Jul 2026 02:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
