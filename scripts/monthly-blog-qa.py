@@ -38,6 +38,7 @@ import hashlib
 import json
 import re
 import sys
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -631,6 +632,15 @@ def cmd_inspect(args) -> int:
 # grandfathered list must only ever shrink.
 ENFORCEMENT_START = (2026, 8)
 
+# The shrink-only invariant, enforced rather than merely asserted in a comment.
+# Filename order alone is not enough: a backdated issue - december-2025 - sorts
+# before the cutoff, so a slug appended to the JSON would have been accepted and
+# silently skipped. The JSON may only ever be a SUBSET of this.
+LEGACY_SLUGS = frozenset({
+    f"microsoft-365-copilot-{m}-2026-updates"
+    for m in ("january", "february", "march", "april", "may", "june", "july")
+})
+
 
 def post_ym(post: Path) -> tuple[int, int]:
     m = POST_RE.match(post.stem)
@@ -649,11 +659,16 @@ def load_baseline() -> tuple[set[str], list[str]]:
     slugs = data.get("slugs") if isinstance(data, dict) else None
     if not isinstance(slugs, list):
         return set(), ["legacy baseline has no 'slugs' list"]
+    if not all(isinstance(s, str) for s in slugs):
+        return set(), ["legacy baseline contains a non-string slug"]
     errs = []
     if len(set(slugs)) != len(slugs):
         errs.append("legacy baseline contains duplicate slugs")
     known = {slug_of(p): p for p in discover_posts()}
     for s in slugs:
+        if s not in LEGACY_SLUGS:
+            errs.append(f"legacy baseline lists {s!r}, which is not one of the "
+                        "original pre-tool issues - this list may shrink, never grow")
         p = known.get(s)
         if p is None:
             errs.append(f"legacy baseline lists {s!r}, which is not a post")
@@ -664,15 +679,17 @@ def load_baseline() -> tuple[set[str], list[str]]:
     return set(slugs), errs
 
 
-def structured_observations(slug: str) -> dict[str, int]:
-    """sha256 -> section, for hashes backed by a real Observed block.
+def structured_observations(slug: str) -> set[tuple[int, str]]:
+    """(section, sha256) pairs backed by a real Observed block.
 
-    observation_index accepts any bare 64-hex string as proof, so a hash pasted
-    with no prose reads as reviewed. A receipt is only worth trusting if the
-    evidence behind it has the shape of an observation.
+    The pair matters, not just the hash. observation_index accepts any bare
+    64-hex string as proof, and a hash-only index lets an observation written
+    under §5 certify an image embedded in §40 - prose describing an entirely
+    different feature would satisfy the gate. cmd_crosscheck already binds
+    hash to section; this now agrees with it.
     """
     blocks, _ = observation_blocks(QA_DIR / f"{slug}.images.md")
-    return {b["sha256"]: b["n"] for b in blocks if b["observed"].strip()}
+    return {(b["n"], b["sha256"]) for b in blocks if b["observed"].strip()}
 
 
 def verify_receipt(post: Path) -> list[str]:
@@ -700,7 +717,10 @@ def verify_receipt(post: Path) -> list[str]:
     if receipt.get("state") != "pass":
         fails.append(f"receipt state is {receipt.get('state')!r}, not 'pass' - a "
                      "degraded audit cannot certify itself")
-    if receipt.get("post", {}).get("sha256") != sha256_textfile(post):
+    head = receipt.get("post")
+    if not isinstance(head, dict):
+        return fails + ["receipt field post is missing or not an object"]
+    if head.get("sha256") != sha256_textfile(post):
         fails.append("receipt is stale - written for different post content; "
                      "re-run the audit")
     for key in ("unresolved_sections", "unobserved_images"):
@@ -715,52 +735,100 @@ def verify_receipt(post: Path) -> list[str]:
     # leaves the markdown - and therefore the post hash - untouched, so the stale
     # arrays still pass. Measured: appending one byte to a reviewed image kept
     # verify-receipt green while audit on the same state reported the failure.
-    live = image_rows([s for s in parse_sections(read(post)) if s["kind"] == "heading"])
+    secs = [s for s in parse_sections(read(post)) if s["kind"] == "heading"]
+
+    # The section evidence is checked too, not just the images. Deleting the
+    # sections array, flipping one disposition to unresolved, or zeroing
+    # post.sections all left the receipt green while it still claimed every
+    # section was resolved.
+    rec_secs = receipt.get("sections")
+    if not isinstance(rec_secs, list) or any(not isinstance(r, dict) for r in rec_secs):
+        fails.append("receipt field sections is missing, not a list, or malformed")
+    else:
+        live_ns = [s["n"] for s in secs]
+        if [r.get("section") for r in rec_secs] != live_ns:
+            fails.append("receipt sections do not match the post's own sections")
+        stuck = [r.get("section") for r in rec_secs
+                 if r.get("disposition") == "unresolved"]
+        if stuck:
+            fails.append(f"receipt records {len(stuck)} unresolved section(s): {stuck[:5]}")
+        if head.get("sections") != len(live_ns):
+            fails.append(f"receipt post.sections is {head.get('sections')!r}, but the "
+                         f"post has {len(live_ns)}")
+
+    live = image_rows(secs)
     obs = structured_observations(slug)
-    recorded = {r.get("src"): r for r in receipt.get("images", []) if isinstance(r, dict)}
+    rec_imgs = receipt.get("images")
+    if not isinstance(rec_imgs, list):
+        fails.append("receipt field images is missing or not a list")
+        rec_imgs = []
+    if any(not isinstance(r, dict) for r in rec_imgs):
+        fails.append("receipt images contains a malformed record")
+    # An exact multiset of (section, src, sha256), NOT a dict keyed by src: one
+    # src can legitimately appear in two sections, and collapsing them let a
+    # duplicated record carrying a wrong section and hash hide behind a correct
+    # one further down the list.
+    recorded = Counter((r.get("section"), r.get("src"), r.get("sha256"))
+                       for r in rec_imgs if isinstance(r, dict))
     for r in live:
-        was = recorded.get(r["src"])
-        if was is None:
-            fails.append(f"§{r['section']} {r['src']} is not in the receipt")
-        elif not r["exists"]:
+        if not r["exists"]:
             fails.append(f"§{r['section']} {r['src']} is missing from disk")
-        elif was.get("sha256") != r["sha256"]:
+            continue
+        key = (r["section"], r["src"], r["sha256"])
+        if recorded.get(key, 0) > 0:
+            recorded[key] -= 1
+            if (r["section"], r["sha256"]) not in obs:
+                fails.append(f"§{r['section']} {r['src']} has no written observation")
+            continue
+        alt = [k for k in recorded if k[1] == r["src"] and recorded[k] > 0]
+        if any(k[2] != r["sha256"] for k in alt):
             fails.append(f"§{r['section']} {r['src']} has changed since the receipt")
-        elif r["sha256"] not in obs:
-            fails.append(f"§{r['section']} {r['src']} has no written observation")
-    for src in sorted(set(recorded) - {r["src"] for r in live}):
-        fails.append(f"{src} is in the receipt but no longer used by the post")
+        elif alt:
+            fails.append(f"§{r['section']} {r['src']} is recorded under section "
+                         f"{alt[0][0]}, not {r['section']}")
+        else:
+            fails.append(f"§{r['section']} {r['src']} is not in the receipt")
+        if alt:
+            recorded[alt[0]] -= 1
+    for key in sorted((k for k, n in recorded.items() if n > 0), key=str):
+        fails.append(f"{key[1]} is in the receipt but no longer used by the post")
     return fails
 
 
 def cmd_verify_receipt(args) -> int:
     baseline, errs = load_baseline()
+    # Surfaced BEFORE either branch. Single-post mode used to compute these and
+    # throw them away, so `verify-receipt --post august` reported the gated post
+    # as grandfathered and exited 0 off a baseline that had already failed
+    # validation - the one command a human runs by hand was the one that lied.
+    rc = 0
+    for e in errs:
+        print(f"  FAIL  {e}")
+        rc = 1
+
     if not getattr(args, "all", False):
         post = resolve_post(args.post)
         slug = slug_of(post)
         if slug in baseline:
             print(f"[receipt] {slug} predates enforcement - grandfathered")
-            return 0
+            return rc
         if is_draft(read(post)):
             print(f"[receipt] {slug} is still a draft - receipt not required yet")
-            return 0
+            return rc
         fails = verify_receipt(post)
         for m in fails:
             print(f"  FAIL  {slug}: {m}")
         if fails:
             return 1
-        print(f"  ok    {slug}: receipt matches content and observed evidence")
-        return 0
+        if rc == 0:
+            print(f"  ok    {slug}: receipt matches content and observed evidence")
+        return rc
 
     posts = discover_posts()
     if not posts:
         print("  FAIL  no monthly posts found - the corpus check has nothing to "
               "verify, which is a failure and not a pass")
         return 1
-    rc = 0
-    for e in errs:
-        print(f"  FAIL  {e}")
-        rc = 1
     checked = skipped = 0
     for p in posts:
         slug = slug_of(p)

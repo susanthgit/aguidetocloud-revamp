@@ -391,7 +391,9 @@ def receipts(*, text=None, edit=None, touch_image=False, observations=OBS_BLOCK,
             receipt = {
                 "schema": mbq.RECEIPT_SCHEMA,
                 "slug": mbq.slug_of(p),
-                "post": {"sha256": mbq.sha256_textfile(p) if not empty else ""},
+                "post": {"sha256": mbq.sha256_textfile(p) if not empty else "",
+                         "sections": 1},
+                "sections": [{"section": 7, "disposition": "roadmap_id"}],
                 "images": [{"section": 7, "src": IMG_SRC, "sha256": sha}],
                 "unresolved_sections": [],
                 "unobserved_images": [],
@@ -528,6 +530,72 @@ check("one failing post does not stop the corpus check reaching the others",
 _c, _out = receipts(all_=True, empty=True, observations="")
 check("a corpus check that finds no posts fails instead of passing vacuously",
       _c == 1 and "no monthly posts" in _out, _out)
+
+
+# ---- the six Gate B findings, each with the test that was missing -----------
+# All six reproduced against the live August receipt before being fixed. Four
+# PASSED verification while the receipt lied; two crashed with a traceback
+# instead of a named failure.
+
+_c, _out = receipts(edit=lambda r: r.__delitem__("sections"))
+check("a receipt with its section evidence deleted does not verify",
+      _c == 1 and "sections is missing" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r["sections"][0].__setitem__(
+    "disposition", "unresolved"))
+check("a receipt recording an unresolved section does not verify",
+      _c == 1 and "unresolved section" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r["post"].__setitem__("sections", 0))
+check("a receipt whose section count disagrees with the post does not verify",
+      _c == 1 and "post.sections" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r["sections"].append(
+    {"section": 99, "disposition": "roadmap_id"}))
+check("a receipt covering a section the post does not have is caught",
+      _c == 1 and "do not match" in _out, _out)
+
+# The dict-keyed-by-src version silently let the later, correct record overwrite
+# the earlier bad one, so a wrong section and a wrong hash both disappeared.
+_c, _out = receipts(edit=lambda r: r["images"].insert(
+    0, dict(r["images"][0], section=999, sha256="0" * 64)))
+check("a duplicated image record with a wrong section and hash is not collapsed away",
+      _c == 1, _out)
+
+_c, _out = receipts(edit=lambda r: r["images"][0].__setitem__("section", 999))
+check("an image recorded under the wrong section is caught",
+      _c == 1 and "recorded under section" in _out, _out)
+
+# An observation is bound to (section, hash), not the hash alone: otherwise prose
+# written for §5 certifies an image embedded in §40.
+_c, _out = receipts(observations=OBS_BLOCK.replace("## §7", "## §999"))
+check("an observation filed under another section does not certify the image",
+      _c == 1 and "no written observation" in _out, _out)
+
+# Valid JSON, invalid types. These failed closed but by traceback, which is not
+# the actionable diagnostic the gate is supposed to print in a blocked push.
+for _field in ("post", "images"):
+    _c, _out = receipts(edit=lambda r, f=_field: r.__setitem__(f, None))
+    check(f"a receipt with {_field}: null fails by name rather than raising",
+          _c == 1 and f"{_field} is missing" in _out, _out)
+
+_c, _out = receipts(all_=True, baseline={"slugs": [[]]})
+check("a non-string baseline slug fails by name rather than raising",
+      _c == 1 and "non-string" in _out, _out)
+
+# Filename order is not enough: a backdated issue sorts before the cutoff, so the
+# baseline is checked against a hardcoded allowlist that can only shrink.
+_c, _out = receipts(all_=True, baseline={"slugs": [
+    "microsoft-365-copilot-december-2025-updates"]},
+    extra=("microsoft-365-copilot-december-2025-updates.md",))
+check("a backdated post cannot be added to the baseline to skip the gate",
+      _c == 1 and "may shrink, never grow" in _out, _out)
+
+# The command a human runs by hand used to compute baseline errors and discard
+# them, so it reported a gated post as grandfathered and exited 0.
+_c, _out = receipts(baseline={"slugs": ["microsoft-365-copilot-august-2026-updates"]})
+check("single-post mode does not pass off an invalid baseline",
+      _c == 1 and "enforcement start" in _out, _out)
 
 
 # ------------------------------------------------------------------- report
