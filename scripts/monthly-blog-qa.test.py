@@ -393,7 +393,13 @@ def receipts(*, text=None, edit=None, touch_image=False, observations=OBS_BLOCK,
                 "slug": mbq.slug_of(p),
                 "post": {"sha256": mbq.sha256_textfile(p) if not empty else "",
                          "sections": 1},
-                "sections": [{"section": 7, "disposition": "roadmap_id"}],
+                # Faithful to what cmd_audit actually writes: a roadmap_id
+                # disposition always carries the IDs it read from the post and
+                # a per-ID feed status. A fixture thinner than the real thing
+                # cannot exercise the checks that read those fields.
+                "sections": [{"section": 7, "disposition": "roadmap_id",
+                              "roadmap_ids": ["496596"],
+                              "roadmap_status": {"496596": "Launched"}}],
                 "images": [{"section": 7, "src": IMG_SRC, "sha256": sha}],
                 "unresolved_sections": [],
                 "unobserved_images": [],
@@ -614,12 +620,22 @@ _c, _out = receipts(edit=lambda r: r["sections"][0].pop("disposition") and None)
 check("a section with no disposition at all is not accepted as evidence",
       _c == 1 and "unrecognised disposition" in _out, _out)
 
-# Python hashes True and 1 identically, so a JSON `true` used to pass itself
-# off as section 1 in both the section list and the image multiset.
-_c, _out = receipts(edit=lambda r: [r["sections"][0].__setitem__("section", True),
-                                    r["images"][0].__setitem__("section", True)] and None)
-check("a JSON true does not masquerade as section 1",
-      _c == 1, _out)
+# Python compares [True] == [1] and [1.0] == [1]. The first version of this
+# test used the shared §7 fixture, so True != 7 and it failed on the sequence
+# check - passing for the wrong reason and proving nothing. It now uses a live
+# §1 post so the alias is genuinely indistinguishable without a type guard.
+_ONE = published(section(1, body_extra=IMG))
+for _alias in (True, 1.0):
+    _c, _out = receipts(text=_ONE,
+                        edit=lambda r, a=_alias: [
+                            r["sections"][0].__setitem__("section", a),
+                            r["images"][0].__setitem__("section", 1)] and None)
+    check(f"a JSON {_alias!r} does not masquerade as section 1",
+          _c == 1 and "do not match the post" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r["images"][0].__setitem__("section", True))
+check("a JSON true does not masquerade as an image's section 1",
+      _c == 1 and "malformed image record" in _out, _out)
 
 _c, _out = receipts(edit=lambda r: r["post"].__setitem__("sections", True))
 check("a JSON true does not masquerade as the section count",
@@ -650,6 +666,156 @@ _c, _out = receipts(baseline={"slugs": ["microsoft-365-copilot-august-2026-updat
                     write_receipt=False)
 check("a rejected baseline slug is not also called grandfathered",
       _c == 1 and "grandfathered" not in _out, _out)
+
+
+# ---- Gate B round 3: the extractor and the derivation ----------------------
+# Two classes, not seven bugs. (a) The tool's view of the post was narrower
+# than the post: a Markdown image and a numbered table row were invisible to
+# audit and verification while every surface reported clean. (b) The receipt
+# was trusted for claims that can be re-derived offline from the post itself.
+
+for _form, _label in [
+    (f'![Screenshot]({IMG_SRC})', "a Markdown image"),
+    (f"<img src='{IMG_SRC}' alt='x'>", "an HTML image with single quotes"),
+    (f'<IMG SRC="{IMG_SRC}" ALT="x">', "an uppercase HTML image tag"),
+    (f'<img\n  src="{IMG_SRC}"\n  alt="x" />', "a self-closing multi-line img"),
+]:
+    _secs = mbq.parse_sections(post(section(1, body_extra=_form)))
+    check(f"{_label} is visible to the extractor",
+          len(_secs) == 1 and [i["src"] for i in _secs[0]["images"]] == [IMG_SRC],
+          repr(_secs and _secs[0]["images"]))
+
+_md = mbq.parse_sections(post(section(1, body_extra=f'![The alt text]({IMG_SRC})')))
+check("a Markdown image keeps its alt text",
+      _md[0]["images"][0]["alt"] == "The alt text", repr(_md[0]["images"]))
+
+# A numbered connector-table row is a real entry - check-blog-html.mjs counts
+# it for Quick Jump - but audit and verify filtered to heading-shaped sections
+# only, so a published numbered entry could be audited zero times and still
+# report "sections: 0" and PASS.
+_TBL_POST = ("---\ntitle: Test\n---\n\n## Microsoft 365 apps\n\n"
+             "| # | Feature | Roadmap |\n|---|---|---|\n"
+             "| 1 | **A connector** | [496596](https://example.com) |\n")
+check("a numbered table row is parsed as a section",
+      [(s["n"], s["kind"]) for s in mbq.parse_sections(_TBL_POST)] == [(1, "table-row")],
+      repr(mbq.parse_sections(_TBL_POST)))
+
+# The positive case is what proves audit and verify actually COVER it. Asserting
+# only that the parser finds the row left both filters free to discard it while
+# the suite stayed green - the parser was never the half that was broken. A row
+# carries no source line, so it resolves only through a written disposition;
+# that is fail-closed by design, not an oversight.
+_c, _out = receipts(text=_TBL_POST, observations=None,
+                    edit=lambda r: [r.__setitem__("sections", [
+                        {"section": 1, "disposition": "no_roadmap_row"}]),
+                        r.__setitem__("images", [])] and None)
+check("a numbered table row is verified like any other section", _c == 0, _out)
+
+# A valid disposition word is not evidence: these are claims about the live
+# post, and both halves are checkable without touching the roadmap feed.
+_c, _out = receipts(text=published(section(1, body_extra=IMG, source=None)),
+                    edit=lambda r: [r["sections"][0].__setitem__("section", 1),
+                                    r["images"][0].__setitem__("section", 1)] and None)
+check("'roadmap_id' is refused when the post cites no roadmap ID",
+      _c == 1 and "cites no roadmap ID" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r["sections"][0].__setitem__(
+    "roadmap_status", {"496596": "NOT-IN-FEED"}))
+check("'roadmap_id' is refused when the receipt itself admits NOT-IN-FEED",
+      _c == 1 and "absent from the feed" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r["sections"][0].__setitem__(
+    "roadmap_ids", ["999999"]))
+check("a receipt cannot rewrite which roadmap IDs the post cites",
+      _c == 1 and "but the post cites" in _out, _out)
+
+
+def dispositions(raw):
+    """Load a synthetic dispositions file through the real validator."""
+    original = mbq.QA_DIR
+    with tempfile.TemporaryDirectory() as td:
+        qa = Path(td).resolve()
+        mbq.QA_DIR = qa
+        try:
+            (qa / "slug.dispositions.json").write_text(
+                raw if isinstance(raw, str) else json.dumps(raw), encoding="utf-8")
+            return mbq.load_dispositions("slug")
+        finally:
+            mbq.QA_DIR = original
+
+
+# The dispositions file is author-controlled and feeds straight into the
+# receipt, so it is validated as strictly as the receipt. It used to be handed
+# to .get() unchecked: a JSON array raised AttributeError instead of a named
+# failure, and an invented word was copied into a PASS receipt that the
+# verifier then rejected at push time - the same audit/verify disagreement
+# round 2 was supposed to have eliminated.
+for _raw, _want in [
+    ("[]", "must be an object"),
+    ("{", "not valid JSON"),
+    ({"1": {"disposition": "banana", "reason": "r"}}, "unrecognised disposition"),
+    ({"1": {"disposition": "roadmap_id", "reason": "r"}}, "may not claim 'roadmap_id'"),
+    ({"1": {"disposition": "unresolved", "reason": "r"}}, "explains nothing"),
+    ({"1": {"disposition": "not_applicable"}}, "needs a written reason"),
+    ({"1": {"disposition": "not_applicable", "reason": "   "}}, "needs a written reason"),
+    ({"1": "not an object"}, "must be an object"),
+    ({"one": {"disposition": "not_applicable", "reason": "r"}}, "not a section number"),
+]:
+    _recs, _errs = dispositions(_raw)
+    check(f"dispositions file rejects {str(_raw)[:44]!r}",
+          _recs == {} and any(_want in e for e in _errs), f"{_recs} {_errs}")
+
+_recs, _errs = dispositions({"1": {"disposition": "no_roadmap_row", "reason": "  ok  "}})
+check("a valid disposition is accepted and its reason trimmed",
+      _errs == [] and _recs == {"1": {"disposition": "no_roadmap_row", "reason": "ok"}},
+      f"{_recs} {_errs}")
+
+
+def audits(*, text, dispositions_raw=None, feed_ids=("496596",)):
+    """Drive the real audit command inside a synthetic repo root.
+
+    receipts() covers the verify half. The audit half had no end-to-end test at
+    all, so a mutation that made cmd_audit heading-only stayed green: nothing
+    ever asked audit what it could SEE.
+    """
+    original = (mbq.REPO, mbq.BLOG, mbq.QA_DIR, mbq.ROADMAP_FEED)
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td).resolve()
+        blog = root / "content" / "blog"
+        qa = root / "qa"
+        for d in (blog, qa):
+            d.mkdir(parents=True, exist_ok=True)
+        feed = root / "roadmap.json"
+        feed.write_text(json.dumps({"generated_at": "2026-08-01T00:00:00Z", "items": [
+            {"id": i, "title": "t", "status": "Launched"} for i in feed_ids]}),
+            encoding="utf-8")
+        mbq.REPO, mbq.BLOG, mbq.QA_DIR, mbq.ROADMAP_FEED = root, blog, qa, feed
+        try:
+            p = blog / "microsoft-365-copilot-august-2026-updates.md"
+            p.write_text(text, encoding="utf-8")
+            if dispositions_raw is not None:
+                (qa / f"{mbq.slug_of(p)}.dispositions.json").write_text(
+                    dispositions_raw if isinstance(dispositions_raw, str)
+                    else json.dumps(dispositions_raw), encoding="utf-8")
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                code = mbq.cmd_audit(types.SimpleNamespace(
+                    post=str(p), write_receipt=False, allow_degraded=False))
+            return code, buf.getvalue()
+        finally:
+            mbq.REPO, mbq.BLOG, mbq.QA_DIR, mbq.ROADMAP_FEED = original
+
+
+# A numbered table row is a published entry. When audit filtered to headings it
+# reported "sections: 0" and PASSED a post that had entries it had never looked
+# at - the quietest possible failure, because every surface said clean.
+_c, _out = audits(text=_TBL_POST)
+check("audit sees a numbered table row and refuses to pass it unexplained",
+      _c == 1 and "1" in _out, _out)
+
+_c, _out = audits(text=_TBL_POST, dispositions_raw={
+    "1": {"disposition": "no_roadmap_row", "reason": "a table row, no source line"}})
+check("a written disposition resolves the table row audit", _c == 0, _out)
 
 
 # ------------------------------------------------------------------- report

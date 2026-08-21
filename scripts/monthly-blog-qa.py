@@ -69,13 +69,46 @@ SECTION_RE = re.compile(r"^(#{2,3})\s+(\d+)\.\s+(.+?)\s*$", re.M)
 TABLE_ROW_RE = re.compile(r"^\|\s*(\d+)\s*\|", re.M)
 ROADMAP_ID_RE = re.compile(r"\b(\d{6})\b")
 URL_RE = re.compile(r"https?://[^\s)\]<>\"']+")
-IMG_RE = re.compile(r'<img\s+[^>]*src="([^"]+)"[^>]*>')
+# Every form an image can take, in one place. This used to match lowercase raw
+# HTML with a double-quoted src and nothing else, so a perfectly ordinary
+# Markdown screenshot was invisible to lint, audit, the receipt and the
+# observation requirement all at once - published, unreviewed, and silently
+# absent from the count the author reads. An extractor narrower than the post
+# is the most dangerous kind of bug here, because every surface reports clean.
+IMG_RE = re.compile(
+    r"""!\[(?P<mdalt>[^\]]*)\]\(\s*(?P<mdsrc>[^)\s]+)[^)]*\)"""
+    r"""|<img\s+(?P<tag>[^>]*?)/?>""",
+    re.I | re.S)
+SRC_ATTR_RE = re.compile(r"""\bsrc\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))""", re.I)
+ALT_ATTR_RE = re.compile(r"""\balt\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))""", re.I)
 # Markdown and HTML links, both normalised to (label, url). Source lines are
 # markdown today, but an issue that switches to HTML must not silently lose
 # its citation checks.
 LINK_RE = re.compile(r"\[([^\]]*)\]\(([^)\s]+)[^)]*\)")
 ANCHOR_RE = re.compile(r'<a\s+[^>]*href="([^"]+)"[^>]*>(.*?)</a>', re.S)
-ALT_RE = re.compile(r'alt="([^"]*)"')
+
+
+def extract_images(body: str) -> list:
+    """Every image in `body`, Markdown or HTML, as {"src", "alt"}.
+
+    One extractor, used by lint, audit, the receipt and verification, so the
+    four can never disagree about what the post contains.
+    """
+    out = []
+    for m in IMG_RE.finditer(body):
+        if m.group("mdsrc") is not None:
+            src, alt = m.group("mdsrc"), m.group("mdalt") or ""
+        else:
+            tag = m.group("tag") or ""
+            sm, am = SRC_ATTR_RE.search(tag), ALT_ATTR_RE.search(tag)
+            if not sm:
+                continue
+            src = next(g for g in sm.groups() if g is not None)
+            alt = next((g for g in am.groups() if g is not None), "") if am else ""
+        src = src.strip()
+        if src:
+            out.append({"src": src, "alt": alt.strip()})
+    return out
 
 
 # ---------------------------------------------------------------- discovery
@@ -224,11 +257,7 @@ def derive(body: str) -> dict:
     fm = re.search(r"^\*For:\s*(.+?)\*\s*$", body, re.M)
     if fm:
         for_line = fm.group(1).strip()
-    imgs = []
-    for m in IMG_RE.finditer(body):
-        tag = m.group(0)
-        alt = ALT_RE.search(tag)
-        imgs.append({"src": m.group(1), "alt": alt.group(1) if alt else ""})
+    imgs = extract_images(body)
     return {
         "for": for_line,
         "roadmap_ids": sorted(ids),
@@ -456,10 +485,23 @@ def cmd_audit(args) -> int:
     post = resolve_post(args.post)
     slug = slug_of(post)
     text = read(post)
-    secs = [s for s in parse_sections(text) if s["kind"] == "heading"]
+    # Every entry parse_sections finds, not just the heading-shaped ones. Audit
+    # and verify used to filter to kind == "heading" while the parser
+    # deliberately also recognises numbered connector-table rows - so a
+    # published numbered entry could be audited zero times and still report a
+    # clean PASS with "sections: 0". A section the parser can see must be a
+    # section the gate covers; table rows carry roadmap IDs and sources like
+    # any other entry, and the dispositions file is the escape hatch when one
+    # genuinely is not a feature.
+    secs = sorted(parse_sections(text), key=lambda s: s["n"])
     data, items = load_feed()
     by_id = index_by_id(items)
-    manual = load_dispositions(slug)
+    manual, manual_errs = load_dispositions(slug)
+    if manual_errs:
+        for e in manual_errs:
+            print(f"DISPOSITIONS: {e}")
+        print("state       : fail")
+        return 1
 
     rows, unresolved = [], []
     for s in secs:
@@ -471,13 +513,23 @@ def cmd_audit(args) -> int:
             d["disposition"] = "roadmap_id"
             d["roadmap_status"] = {rid: (by_id.get(rid, {}).get("status") or "NOT-IN-FEED")
                                    for rid in s["roadmap_ids"]}
+            # An override may explain an ID the feed has dropped, but it may not
+            # relabel it "roadmap_id" - that word means "the feed corroborates
+            # this", and a NOT-IN-FEED id is precisely the case where it does
+            # not. Previously any truthy override silently suppressed the
+            # failure while the receipt still recorded roadmap_id next to its
+            # own NOT-IN-FEED status, a contradiction the verifier then accepted.
             for rid, st in d["roadmap_status"].items():
-                if st == "NOT-IN-FEED" and not override:
-                    d["disposition"] = "unresolved"
-                    d["reason"] = f"cites {rid} which is absent from the feed"
+                if st == "NOT-IN-FEED":
+                    if override:
+                        d["disposition"] = override["disposition"]
+                        d["reason"] = override["reason"]
+                    else:
+                        d["disposition"] = "unresolved"
+                        d["reason"] = f"cites {rid} which is absent from the feed"
         elif override:
-            d["disposition"] = override.get("disposition", "unresolved")
-            d["reason"] = override.get("reason", "")
+            d["disposition"] = override["disposition"]
+            d["reason"] = override["reason"]
         else:
             d["disposition"] = "unresolved"
             d["reason"] = "no roadmap id and no recorded disposition"
@@ -537,9 +589,53 @@ def cmd_audit(args) -> int:
     return 0 if state == "pass" else (0 if args.allow_degraded else 1)
 
 
-def load_dispositions(slug: str) -> dict:
+def load_dispositions(slug: str) -> tuple[dict, list[str]]:
+    """Manual dispositions, validated. Returns (records, errors).
+
+    This file is author-controlled and feeds straight into the receipt, so it
+    is validated as strictly as the receipt itself. It used to be handed to
+    `.get()` unchecked - a JSON array raised AttributeError instead of a named
+    failure, and an invented disposition string was copied into a PASS receipt
+    that the verifier then rejected at push time.
+    """
     f = QA_DIR / f"{slug}.dispositions.json"
-    return json.loads(read(f)) if f.exists() else {}
+    if not f.exists():
+        return {}, []
+    try:
+        raw = json.loads(read(f))
+    except json.JSONDecodeError as e:
+        return {}, [f"{f.name} is not valid JSON: {e}"]
+    if not isinstance(raw, dict):
+        return {}, [f"{f.name} must be an object keyed by section number, "
+                    f"not {type(raw).__name__}"]
+    out, errs = {}, []
+    for k, v in raw.items():
+        if not (isinstance(k, str) and k.isdigit()):
+            errs.append(f"{f.name}: {k!r} is not a section number")
+            continue
+        if not isinstance(v, dict):
+            errs.append(f"{f.name}: section {k} must be an object")
+            continue
+        d, reason = v.get("disposition"), v.get("reason")
+        if d not in DISPOSITIONS:
+            errs.append(f"{f.name}: section {k} has an unrecognised "
+                        f"disposition {d!r} - allowed: {', '.join(DISPOSITIONS)}")
+            continue
+        # "roadmap_id" means the feed corroborates this section. An author
+        # cannot assert that by hand; it is derived or it is not true.
+        if d == "roadmap_id":
+            errs.append(f"{f.name}: section {k} may not claim 'roadmap_id' by "
+                        "hand - that disposition is derived from the feed")
+            continue
+        if d == "unresolved":
+            errs.append(f"{f.name}: section {k} records 'unresolved', which "
+                        "explains nothing - remove it or give a real reason")
+            continue
+        if not (isinstance(reason, str) and reason.strip()):
+            errs.append(f"{f.name}: section {k} needs a written reason")
+            continue
+        out[k] = {"disposition": d, "reason": reason.strip()}
+    return out, errs
 
 
 # ------------------------------------------------------------------- images
@@ -754,7 +850,9 @@ def verify_receipt(post: Path) -> list[str]:
     # leaves the markdown - and therefore the post hash - untouched, so the stale
     # arrays still pass. Measured: appending one byte to a reviewed image kept
     # verify-receipt green while audit on the same state reported the failure.
-    secs = [s for s in parse_sections(read(post)) if s["kind"] == "heading"]
+    # Same section set as cmd_audit, for the same reason: the two halves of the
+    # gate must never disagree about what a section is.
+    secs = sorted(parse_sections(read(post)), key=lambda s: s["n"])
 
     # The section evidence is checked too, not just the images. Deleting the
     # sections array, flipping one disposition to unresolved, or zeroing
@@ -765,7 +863,11 @@ def verify_receipt(post: Path) -> list[str]:
         fails.append("receipt field sections is missing, not a list, or malformed")
     else:
         live_ns = [s["n"] for s in secs]
-        if [r.get("section") for r in rec_secs] != live_ns:
+        # is_int on each record too, not only on post.sections. Python compares
+        # [True] == [1] and [1.0] == [1], so a JSON true or 1.0 used to pass
+        # itself off as section 1 and the sequence check saw nothing wrong.
+        if [r.get("section") for r in rec_secs] != live_ns or \
+                not all(is_int(r.get("section")) for r in rec_secs):
             fails.append("receipt sections do not match the post's own sections")
         # Every disposition must be one the tool itself can produce. Rejecting
         # only the literal "unresolved" left the hole half open: a missing, null
@@ -779,6 +881,33 @@ def verify_receipt(post: Path) -> list[str]:
                  if r.get("disposition") == "unresolved"]
         if stuck:
             fails.append(f"receipt records {len(stuck)} unresolved section(s): {stuck[:5]}")
+        # A valid word is not evidence. "roadmap_id" is a claim about the live
+        # post - that this section cites a roadmap ID the feed corroborated -
+        # and both halves of that claim are checkable here without the feed.
+        # Without this, an author could relabel any unresolved section
+        # "roadmap_id" and the receipt verified clean.
+        live_ids = {s["n"]: set(s["roadmap_ids"]) for s in secs}
+        for r in rec_secs:
+            if r.get("disposition") != "roadmap_id":
+                continue
+            n = r.get("section")
+            if not live_ids.get(n):
+                fails.append(f"§{n} is recorded as 'roadmap_id' but cites no "
+                             "roadmap ID in the post")
+                continue
+            rec_ids = r.get("roadmap_ids")
+            if not isinstance(rec_ids, list) or set(rec_ids) != live_ids[n]:
+                fails.append(f"§{n} records roadmap IDs {rec_ids!r}, but the "
+                             f"post cites {sorted(live_ids[n])}")
+            st = r.get("roadmap_status")
+            if not isinstance(st, dict) or set(st) != live_ids[n]:
+                fails.append(f"§{n} is recorded as 'roadmap_id' without a "
+                             "status for every ID it cites")
+            elif "NOT-IN-FEED" in st.values():
+                # The receipt's own admission contradicts its disposition.
+                missing = sorted(k for k, v in st.items() if v == "NOT-IN-FEED")
+                fails.append(f"§{n} is recorded as 'roadmap_id' but its own "
+                             f"status says {missing} are absent from the feed")
         if not is_int(head.get("sections")) or head.get("sections") != len(live_ns):
             fails.append(f"receipt post.sections is {head.get('sections')!r}, but the "
                          f"post has {len(live_ns)}")
