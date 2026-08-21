@@ -1110,15 +1110,26 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
 }
 
 /* ── 4. EMPHASIS ─────────────────────────────────────────────────
-   Opening paragraphs are almost entirely bold, which devalues it.
-   zt-notebook.css:312 targets `p strong` / `li strong` and also
-   darkens the colour to var(--ink) — that colour shift alone still
-   reads as emphasis, so 600 is plenty. Must match its specificity. */
+   REVERTED to 700 on 21 Aug 2026. This block previously set 600 to
+   soften the over-bolding Sush flagged. Measured on production after
+   shipping: Inter 600 renders as a real semibold (400=274.3px,
+   600=279.9px, 700=282.7px for the same string — genuine weights, not
+   synthetic), but the step down was enough that Sush could no longer
+   see the emphasis at all.
+
+   That was the wrong lever. Weakening EVERY bold to fix "too many
+   bolds" degrades legitimate emphasis everywhere instead of fixing
+   the density. Emphasis you cannot see is a reading-experience
+   regression, and reading experience is the priority.
+
+   The real fix is fewer bolds — 74 posts, 11,250 bold runs, median
+   22.9 per 1k words. That is its own session; handoff written.
+   Colour still shifts to var(--ink) on top of the weight. */
 .zt-reading--notebook .nb-body p strong,
 .zt-reading--notebook .nb-body li strong,
 .zt-reading--notebook .nb-body p b,
 .zt-reading--notebook .nb-body li b {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* ── 5. HEADING SCALE ────────────────────────────────────────────
@@ -1329,33 +1340,37 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
 
 
 /* ─────────────────────────────────────────────────────────────────────
-   §15 · H3 "update" tick — 2026-08-21
+   §15 · H3 update underline — 2026-08-21 (revised same day)
    ─────────────────────────────────────────────────────────────────────
    H2 already carries a full-width pen rule; H3 carried nothing. In a
    recap post that means the numbered updates read as emphasised prose
    rather than headings — the August 2026 post has 10 H2 sections and
    59 H3 updates, and every one of those 59 was unmarked.
 
-   Deliberately NOT the H2 treatment. All three options were mocked on
-   the live page and compared side by side first: a full-width 3px rule
-   repeated under 59 consecutive H3s flattens the H2-vs-H3 hierarchy and
-   crowds the "For: … · Rolling out …" line that follows each update.
-   A short tick is the notebook grammar — a long rule marks a section,
-   a short tick marks an item.
+   FIRST SHIPPED as a short 54px tick, on the argument that a full-width
+   rule repeated under 59 consecutive H3s would flatten the H2-vs-H3
+   hierarchy. Sush reviewed it live and asked for the full underline
+   anyway, explicitly across every H3 in the blog. His call — he owns
+   the product; the pushback was made, heard, and overruled.
+
+   Hierarchy is preserved by WEIGHT rather than length: h2 is 3px,
+   h3 is 2px. Both span the column. Change 2px -> 3px here to make
+   them identical.
 
    Scope note: .nb-body only. The FAQ block renders OUTSIDE .nb-body
-   (notebook.html:101) and its questions are also h3, so they are not
-   touched. Checked before shipping, not assumed. */
+   (notebook.html:101) and its questions are also h3, so accordion
+   questions keep their own styling. Checked before shipping, not
+   assumed. */
 .zt-reading--notebook .nb-body h3 {
-  margin-bottom: 16px;   /* was 12px — the tick needs room before the next line */
+  margin-bottom: 16px;   /* was 12px — the rule needs room before the next line */
 }
 .zt-reading--notebook .nb-body h3::after {
   content: "";
   display: block;
-  width: 54px;
+  width: 100%;
   height: 2px;
   background: var(--pen);
-  margin-top: 6px;
+  margin-top: 5px;
   border-radius: 2px;
-  transform: rotate(-0.5deg);
+  transform: rotate(-0.4deg);
 }
