@@ -573,7 +573,7 @@ One thing Microsoft's note does not say is whether a Copilot licence is needed t
 <p><img src="/images/blog/copilot-august-2026/official-02-word-agent-mention.webp" alt="Official Microsoft image of a Copilot Chat prompt where the Word agent has been added by @mentioning it." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup. UI and availability may vary by tenant and rollout.</em></p>
 
-📖 [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
+📖 [Roadmap 543420](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=543420) · [543422](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=543422) · [543421](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=543421) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
 ### 26. Copilot Chat can ground answers in Power BI
 
@@ -993,7 +993,7 @@ The policy logic point is the one that trips people up: a spending policy sets a
 
 📎 We go deeper on the numbers in our **[Copilot cost management guide →](/blog/microsoft-365-copilot-cost-management/)** and **[Copilot credits explained →](/blog/copilot-credits-explained/)**.
 
-📖 [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
+📖 [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332) · [Usage-based billing and cost management for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits)
 
 ### 48. The Cost Management Dashboard covers the full spend workflow
 
@@ -1012,7 +1012,7 @@ The same surface includes reporting, budgets, alerts and hard caps. The overview
 <p><img src="/images/blog/copilot-august-2026/june-49-cost-management-annotated.webp" alt="The Cost management page in the Microsoft 365 admin center. A red box marks the notice reading that this applies to Copilot Cowork and Work IQ API right now. A second red box marks four tiles: total Copilot Credits used 85,462, prepaid capacity pack credits used 72,000 of 100,000, pay-as-you-go credits used 13,462 and active users of Copilot Credits 4,684. A third red box marks the Policies at or above 90 percent of spending limit card, flagged Needs action." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> read this first, the console covers Cowork and the Work IQ API and nothing else yet. <strong>2</strong> prepaid and pay-as-you-go are counted separately. <strong>3</strong> and it will tell you which policies are about to hit their ceiling. UI and availability may vary by tenant and rollout.</em></p>
 
-📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
+📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572) · [Usage-based billing and cost management for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits)
 
 ### 49. A team-level view of Copilot credit spend
 
