@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-08-21T14:50:11.353713+00:00",
+  "generated_at": "2026-08-21T16:48:15.260398+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 21,
+      "total_incidents": 22,
       "active_incidents": 3,
-      "avg_duration_minutes": 12987,
+      "avg_duration_minutes": 14550,
       "last_incident": "2026-08-13T08:21:00+00:00",
       "classifications": {
-        "advisory": 19,
+        "advisory": 20,
         "incident": 2
       }
     },
@@ -131,18 +131,6 @@
       }
     },
     {
-      "service": "Microsoft Viva",
-      "short_name": "Viva",
-      "icon": "🌱",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 1032,
-      "last_incident": "2026-08-01T02:43:00+00:00",
-      "classifications": {
-        "advisory": 2
-      }
-    },
-    {
       "service": "Microsoft OneDrive",
       "short_name": "OneDrive",
       "icon": "☁️",
@@ -179,6 +167,18 @@
       }
     },
     {
+      "service": "Microsoft Viva",
+      "short_name": "Viva",
+      "icon": "🌱",
+      "total_incidents": 1,
+      "active_incidents": 0,
+      "avg_duration_minutes": 163,
+      "last_incident": "2026-08-01T02:43:00+00:00",
+      "classifications": {
+        "advisory": 1
+      }
+    },
+    {
       "service": "Windows Autopatch",
       "short_name": "Autopatch",
       "icon": "🪟",
@@ -199,13 +199,13 @@
     },
     {
       "month": "2026-07",
-      "incident_count": 55,
+      "incident_count": 56,
       "services_affected": 14
     },
     {
       "month": "2026-06",
-      "incident_count": 22,
-      "services_affected": 12
+      "incident_count": 21,
+      "services_affected": 11
     },
     {
       "month": "2026-05",

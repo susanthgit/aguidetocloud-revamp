@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 21 Aug 2026 14:50:12 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2026 16:48:15 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may experience inconsistencies with Microsoft 365 Copilot features</title>
@@ -39,7 +39,7 @@
       <link>https://www.aguidetocloud.com/service-health/#MO1457636</link>
       <description>[Microsoft 365 suite] Users in South America may have been unable to access or experience degraded functionality with multiple services.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1457636</guid>
       <pubDate>Wed, 19 Aug 2026 14:15:00 +0000</pubDate>
     </item>
@@ -396,6 +396,15 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <pubDate>Thu, 23 Jul 2026 00:26:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Microsoft Teams] Some users may see outdated activity data in Microsoft Teams usage reports</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1452826</link>
+      <description>[Microsoft Teams] Users have may seen outdated activity data in Microsoft Teams usage reports.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1452826</guid>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Teams] Users are experiencing license syncing issues in Microsoft Teams Rooms Pro Management Portal reports</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1456370</link>
       <description>[Microsoft Teams] Users were experiencing license syncing issues in Microsoft Teams Rooms Pro Management Portal reports.</description>
@@ -448,15 +457,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>investigationSuspended</category>
       <guid isPermaLink="false">MO1434392</guid>
       <pubDate>Mon, 20 Jul 2026 20:27:05 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users' email messages sent to Microsoft Teams channels may have been incorrectly formatted </title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1441044</link>
-      <description>[Microsoft Teams] Users' email messages sent to Microsoft Teams channels may have been incorrectly formatted.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1441044</guid>
-      <pubDate>Mon, 20 Jul 2026 14:23:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
