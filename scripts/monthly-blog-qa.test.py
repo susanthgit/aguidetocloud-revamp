@@ -185,6 +185,77 @@ check("link extraction ignores in-repo image paths",
 check("link extraction strips trailing punctuation",
       "https://support.microsoft.com/c" in _links, str(_links))
 
+# ---------------------------------------------------------------- crosscheck
+# The defect this exists for was real: the August §13 prose said "Five slides are
+# visible in the thumbnail rail" over a screenshot showing four. The wording below
+# is verbatim from both sides of that mistake (observation via git 1c624bdb^), and
+# it is the only proof the matcher would have caught it in the wild rather than
+# only catching a fixture written after the fact.
+_OBS_OLD = ("**3 \u00b7 Copilot builds the deck:** four red-boxed slide thumbnails and a "
+            "title slide \"CONTOSO HR POLICIES\".")
+_PROSE_OLD = "Five slides are visible in the thumbnail rail of my capture."
+_PROSE_NEW = "Four slides are visible in the thumbnail rail of my capture."
+
+
+def _cross(prose: str, observed: str) -> list:
+    hits = []
+    for pv, pn, _ in mbq.numeric_pairs(prose):
+        for ov, on, _ in mbq.numeric_pairs(observed):
+            if (pn & on) and pv != ov:
+                hits.append((pv, ov))
+    return hits
+
+
+check("crosscheck catches the real historical 'Five slides' defect",
+      bool(_cross(_PROSE_OLD, _OBS_OLD)), str(_cross(_PROSE_OLD, _OBS_OLD)))
+check("crosscheck stays silent once the prose was corrected",
+      not _cross(_PROSE_NEW, _OBS_OLD))
+
+# "seventy-nine" must not read as nine. This flagged CORRECT prose as a defect.
+check("crosscheck does not split hyphenated number words",
+      not _cross("Seventy-nine sessions are shown here.", "**79 published sessions**"))
+
+# Authors bold the numbers that matter most; markdown must not blind the matcher.
+check("crosscheck sees numbers wrapped in markdown emphasis",
+      bool(_cross("Five slides are visible.", "rail with **exactly four** numbered slides")))
+
+# "Red box 1 on the sheet tab" labels an annotation; it counts nothing.
+check("crosscheck ignores red-box annotation labels",
+      not _cross("Two sheet tabs are visible.", "Red box 1 on the sheet tab named .Rules"))
+
+# "2026" must not yield 026, and "iPhone" must not yield one.
+check("crosscheck does not read digits out of a year",
+      not _cross("The 2026 roundup is shown here.", "**26 items** listed"))
+check("crosscheck does not read 'one' out of 'iPhone'",
+      not _cross("An iPhone is shown here.", "two phone screens"))
+
+# One screenshot may legitimately carry several qualified counts of one noun.
+# These are candidates a human dismisses, not errors - which is exactly why this
+# command is advisory and stays out of the push gate.
+check("crosscheck reports qualified same-noun counts as candidates",
+      bool(_cross("438 available agents are shown.", "**230 Active agents**")))
+
+# Only sentences that refer to the picture can make a claim about the picture.
+check("image cue matches a sentence about the screenshot",
+      bool(mbq.IMAGE_CUE.search("Five slides are visible in the thumbnail rail.")))
+check("image cue skips narrative statistics",
+      not mbq.IMAGE_CUE.search("Microsoft says the rollout completes in September."))
+
+# The Verdict prose narrates the defect and quotes the WRONG number while
+# explaining the fix. Reading it as evidence flags the corrected post.
+_obs_md = Path(tempfile.mkdtemp()) / "x.images.md"
+_obs_md.write_text(
+    "## \u00a713 \u2014 A thing\n"
+    "`" + "a" * 64 + "`\n\n"
+    "**Observed:** rail with exactly four numbered slides.\n\n"
+    "**Verdict:** \u2705 MATCH - prose had claimed Five slides; the rail shows four.\n",
+    encoding="utf-8")
+_blocks = mbq.observation_blocks(_obs_md)
+check("observation parsing binds a section to its image hash",
+      len(_blocks) == 1 and _blocks[0]["sha256"] == "a" * 64)
+check("observation parsing excludes the Verdict narrative",
+      "Five slides" not in _blocks[0]["observed"])
+
 # ------------------------------------------------------------------- report
 if _failures:
     print(f"FAIL {len(_failures)} of {_ran} self-tests failed:")

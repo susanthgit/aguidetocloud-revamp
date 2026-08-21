@@ -625,6 +625,142 @@ def cmd_verify_receipt(args) -> int:
 
 # --------------------------------------------------------------------- main
 
+NUMBER_WORDS = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
+                "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12}
+
+# Every guard below closes a false positive measured against the live August issue.
+# The naive form raised 46 on a post with no defects left in it; this raises 9.
+#   (?<![\d.,])   "2026" must not yield 026, "365" must not yield 365
+#   (?<![A-Za-z-]) "iPhone"->one, "written"->ten, "seventy-nine"->nine
+#                  (the last flagged CORRECT prose as a defect)
+#   (?<![Bb]ox )  the observation convention "Red box 1 on the sheet tab" labels an
+#                 annotation; it counts nothing
+NUM_RE = (r"(?<![\d.,])(?<![A-Za-z-])(?<![Bb]ox )(?:\d{1,3}|"
+          + "|".join(NUMBER_WORDS) + r")\b")
+
+# Only a sentence that refers to the picture can make a claim about the picture.
+IMAGE_CUE = re.compile(
+    r"\b(visible|shown|shows|showing|pictured|screenshot|screen|image|capture|"
+    r"thumbnail|rail|panel|pane|diagram|highlighted|boxed|above|below|here)\b", re.I)
+
+_STOPWORDS = {"the", "and", "with", "that", "for", "are", "was", "its", "you", "your"}
+
+
+def _stem(w: str) -> str:
+    """Crude, deliberately consistent stem.
+
+    Must unify singular with plural or it misses the defect it exists for: the
+    observation says "slide thumbnails" while the prose says "slides", and
+    stripping only the plural suffix leaves 'slide' against 'slid'. Linguistic
+    accuracy is irrelevant here; applying the same mangling to both sides is not.
+    """
+    w = w.lower().strip(".,;:()`*\"'")
+    for suf in ("ies", "es", "s"):
+        if w.endswith(suf) and len(w) > 3:
+            w = w[: -len(suf)] + ("y" if suf == "ies" else "")
+            break
+    if w.endswith("e") and len(w) > 3:
+        w = w[:-1]
+    return w
+
+
+def numeric_pairs(text: str, window: int = 3) -> list[tuple[int, set, str]]:
+    """(value, {noun stems}, context) for every number in `text`.
+
+    The window is load-bearing. Real writing says "four NUMBERED slides" against
+    "Five slides"; a strict next-token rule compares 'numbered' to 'slide' and so
+    misses the exact defect this exists to catch. Markdown emphasis is stripped
+    first because authors bold precisely the numbers that matter
+    ("**exactly four** numbered slides"), which otherwise breaks tokenisation.
+    """
+    out: list[tuple[int, set, str]] = []
+    text = re.sub(r"[*_`]+", " ", text)
+    for mt in re.finditer(NUM_RE + r"\s+((?:[A-Za-z][\w-]*\s+){0,%d}[A-Za-z][\w-]*)" % window,
+                          text, re.I):
+        tok = mt.group(0).split()[0].lower()
+        val = int(tok) if tok.isdigit() else NUMBER_WORDS.get(tok)
+        if val is None:
+            continue
+        nouns = {_stem(w) for w in mt.group(1).split() if len(_stem(w)) > 2} - _STOPWORDS
+        out.append((val, nouns, " ".join(mt.group(0).split())[:58]))
+    return out
+
+
+def observation_blocks(audit_md: Path) -> list[dict]:
+    """Per-section observations, scoped to the Observed prose and bound to a hash.
+
+    Scoping matters: the Verdict prose narrates the defect and quotes the WRONG
+    number while explaining the fix, so reading a whole block flags the corrected
+    post. Hash binding matters because an observation of a replaced image is not
+    evidence about the image now on the page.
+    """
+    if not audit_md.exists():
+        return []
+    blocks = []
+    for mt in re.finditer(r"## §(\d+)\s*—.*?(?=\n## §|\Z)", read(audit_md), re.S):
+        raw = mt.group(0)
+        sha = re.search(r"`([0-9a-f]{64})`", raw)
+        seen = re.search(r"\*\*Observed[^:]*:\*\*(.*?)(?=\n\*\*Verdict|\Z)", raw, re.S)
+        if sha and seen:
+            blocks.append({"n": int(mt.group(1)), "sha256": sha.group(1),
+                           "observed": seen.group(1)})
+    return blocks
+
+
+def cmd_crosscheck(args) -> int:
+    """Surface prose whose numbers disagree with the recorded observation.
+
+    Deliberately NOT a push gate, and that is the whole finding. Measured against
+    the live August issue it raises 9 candidates where only one was ever a real
+    defect, and the 9 are irreducible: a section may legitimately say "438
+    available agents" and "230 active agents" of one screenshot. Nine lines to
+    eyeball once a month is a good deal for a human and a terrible one for a hook,
+    because a gate that cries wolf teaches --no-verify and would take the working
+    self-tests, lint and SEO guards down with it.
+
+    It also cannot see a claim whose number FOLLOWS the noun ("Unique agents ...
+    125"), so a clean run is not proof of agreement. It narrows human attention;
+    it does not replace the read-back.
+    """
+    post = resolve_post(args.post)
+    secs = {s["n"]: s for s in parse_sections(read(post)) if s["kind"] == "heading"}
+    current = {}
+    for row in image_rows(list(secs.values())):
+        current.setdefault(row["section"], set()).add(row["sha256"])
+
+    candidates, skipped = [], 0
+    for blk in observation_blocks(QA_DIR / f"{slug_of(post)}.images.md"):
+        sec = secs.get(blk["n"])
+        if not sec:
+            continue
+        if blk["sha256"] not in current.get(blk["n"], set()):
+            skipped += 1          # observation describes an image no longer here
+            continue
+        prose = "\n".join(s for s in re.split(r"(?<=[.!?])\s+|\n\n", sec.get("body") or "")
+                          if IMAGE_CUE.search(s))
+        obs_pairs = numeric_pairs(blk["observed"])
+        seen = set()
+        for pv, pn, pctx in numeric_pairs(prose):
+            for ov, on, octx in obs_pairs:
+                shared = pn & on
+                if not shared or pv == ov:
+                    continue
+                key = (blk["n"], tuple(sorted(shared)), pv, ov)
+                if key in seen:
+                    continue
+                seen.add(key)
+                candidates.append((blk["n"], sorted(shared), pv, pctx, ov, octx))
+
+    for n, shared, pv, pctx, ov, octx in candidates:
+        print(f"  §{n:<3} [{','.join(shared)}] prose says {pv} — {pctx!r}")
+        print(f"       {'':<{len(str(n)) + 4}}observation says {ov} — {octx!r}")
+    print(f"[crosscheck] {len(candidates)} candidate(s) to eyeball"
+          + (f", {skipped} observation(s) skipped (image replaced since)" if skipped else ""))
+    if candidates and args.strict:
+        return 1
+    return 0
+
+
 def external_links(text: str) -> list[str]:
     """Every distinct outbound http(s) URL in a post, markdown and raw HTML alike."""
     md = re.findall(r"\[[^\]]*\]\((https?://[^)\s]+)\)", text)
@@ -721,6 +857,13 @@ def main() -> int:
     p.add_argument("--timeout", type=int, default=30)
     p.add_argument("--workers", type=int, default=12)
     p.set_defaults(fn=cmd_links)
+
+    p = sub.add_parser("crosscheck",
+                       help="prose numbers vs recorded observation (advisory; not a push gate)")
+    p.add_argument("--post")
+    p.add_argument("--strict", action="store_true",
+                   help="exit 1 on candidates; for deliberate use, never the hook")
+    p.set_defaults(fn=cmd_crosscheck)
 
     args = ap.parse_args()
     return args.fn(args)
