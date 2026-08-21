@@ -40,7 +40,7 @@ $failed = $false
 Write-Host "`n🔍 Pre-push checks..." -ForegroundColor Cyan
 
 # ─── CHECK 1: cache_version bump ───
-Write-Host "`n[1/7] Checking cache_version..." -NoNewline
+Write-Host "`n[1/8] Checking cache_version..." -NoNewline
 
 # Get files that would be pushed = committed-but-unpushed UNION uncommitted working tree.
 # 🔴 Whichever range produces this file list, every later `git diff` in this
@@ -92,7 +92,7 @@ if ($cssJsChanged -and -not $configChanged) {
 
 # ─── CHECK 2: Hugo build ───
 if (-not $SkipBuild) {
-    Write-Host "`n[2/7] Hugo build..." -NoNewline
+    Write-Host "`n[2/8] Hugo build..." -NoNewline
     $buildOutput = & hugo --quiet 2>&1
     if ($LASTEXITCODE -ne 0) {
         Write-Host " ❌ BLOCKED" -ForegroundColor Red
@@ -103,11 +103,11 @@ if (-not $SkipBuild) {
         Write-Host " ✅ Build succeeded" -ForegroundColor Green
     }
 } else {
-    Write-Host "`n[2/7] Hugo build... ⏭ skipped (-SkipBuild)" -ForegroundColor DarkGray
+    Write-Host "`n[2/8] Hugo build... ⏭ skipped (-SkipBuild)" -ForegroundColor DarkGray
 }
 
 # ─── CHECK 3: Template markers ───
-Write-Host "`n[3/7] Checking for template errors in output..." -NoNewline
+Write-Host "`n[3/8] Checking for template errors in output..." -NoNewline
 $publicDir = Join-Path $repoRoot "public"
 if (Test-Path $publicDir) {
     $badFiles = Get-ChildItem -Path $publicDir -Recurse -Include "*.html" |
@@ -126,7 +126,7 @@ if (Test-Path $publicDir) {
 }
 
 # ─── CHECK 4: Blog SEO + OG image guardrail (content/blog/ changes only) ───
-Write-Host "`n[4/7] Blog SEO + OG image..." -NoNewline
+Write-Host "`n[4/8] Blog SEO + OG image..." -NoNewline
 $blogChanged = $changedFiles | Where-Object { $_ -match '^content/blog/.*\.md$' }
 if (-not $blogChanged) {
     Write-Host " ⏭ No blog content changes (skip)" -ForegroundColor DarkGray
@@ -152,7 +152,7 @@ if (-not $blogChanged) {
 # Hugo's HTML minifier silently "fixes" alt="A "thing"" by swapping to single quotes,
 # which masks the source bug. This check parses the source markdown directly.
 # Also catches hardcoded counts in og_headline (decay bug) and broken Quick Jump anchors.
-Write-Host "`n[5/7] Blog HTML hygiene..." -NoNewline
+Write-Host "`n[5/8] Blog HTML hygiene..." -NoNewline
 if (-not $blogChanged) {
     Write-Host " ⏭ No blog content changes (skip)" -ForegroundColor DarkGray
 } else {
@@ -179,7 +179,7 @@ if (-not $blogChanged) {
 #              § Microsoft posture (MANDATORY)
 # Fires when ANY content/*.md changes (not just blog) — catches licensing,
 # cert-tracker, AI Hub edits too. Fast scan (~2-3s over ~1,100 files).
-Write-Host "`n[6/7] Microsoft posture..." -NoNewline
+Write-Host "`n[6/8] Microsoft posture..." -NoNewline
 $contentChanged = $changedFiles | Where-Object { $_ -match '^content/.*\.md$' }
 if (-not $contentChanged) {
     Write-Host " ⏭ No content changes (skip)" -ForegroundColor DarkGray
@@ -209,7 +209,7 @@ if (-not $contentChanged) {
 # squeezed content into a 250px track on a 390px screen with a dead track
 # beside it. Shipped silently, live-broken ~2 months, found only by user report.
 # Static parse — no browser, no dev server, runs in milliseconds.
-Write-Host "`n[7/7] Mobile grid invariant..." -NoNewline
+Write-Host "`n[7/8] Mobile grid invariant..." -NoNewline
 # Runs unconditionally: it is a millisecond static parse, and a change-file
 # trigger is exactly how this class of bug hides (the trigger never fires for
 # the file you forgot to list — including the guard itself).
@@ -229,6 +229,34 @@ if (-not (Test-Path $gridScript)) {
         $failed = $true
     } else {
         Write-Host " ✅ All .zt-reading variants collapse to one column on mobile" -ForegroundColor Green
+    }
+}
+
+# ─── CHECK 8: Blog reading invariants (always) ───
+# Added 2026-08-21 after five typography waves produced five regressions in one
+# day — a stale duplicate size declaration, `strong` softened until emphasis was
+# invisible, a link colour that failed AA on cream, an underline that overshot
+# its heading, and 22 ghost-framed images that passed a GREEN verifier because
+# the test treated "no image found" as a pass.
+# Static parse of zt-notebook.css — milliseconds, no browser, no dev server —
+# so it runs unconditionally rather than on a change trigger. Per Rule #14b, a
+# guard that depends on someone remembering to run it is already dead.
+Write-Host "`n[8/8] Blog reading invariants..." -NoNewline
+$readingScript = Join-Path $PSScriptRoot "check-blog-reading.mjs"
+if (-not (Test-Path $readingScript)) {
+    Write-Host " ❌ BLOCKED" -ForegroundColor Red
+    Write-Host "  check-blog-reading.mjs is missing — the reading guard cannot run." -ForegroundColor Yellow
+    Write-Host "  Restore it (git checkout scripts/check-blog-reading.mjs) before pushing." -ForegroundColor Yellow
+    $failed = $true
+} else {
+    $readingOutput = & node $readingScript 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host " ❌ BLOCKED" -ForegroundColor Red
+        $readingOutput | Where-Object { $_ -match 'FAIL|why it is guarded|regressed' } | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+        $failed = $true
+    } else {
+        Write-Host " ✅ Type scale, emphasis, link contrast, heading rules and image frames all hold" -ForegroundColor Green
+        $readingOutput | Where-Object { $_ -match '^\s+!\s' } | ForEach-Object { Write-Host "  $_" -ForegroundColor DarkYellow }
     }
 }
 
@@ -261,6 +289,39 @@ if ($cssJsChanged -and -not $SkipContrast) {
         Remove-Item env:BIMODE_QUICK -ErrorAction SilentlyContinue
         Write-Host "  (Advisory only — see audit-output/bi-mode-contrast.json for detail)" -ForegroundColor DarkGray
     }
+}
+
+# ─── ADVISORY CHECK: Blog voice (non-blocking) ───
+# Added 2026-08-21. Two different questions, two different scripts:
+#   ai-writing-audit.mjs      SURFACE   — do the WORDS read as machine-made?
+#                                         (github.com/conorbronsdon/avoid-ai-writing)
+#   proof-of-thought-audit.mjs SUBSTANCE — is there evidence a human did the work?
+#                                         (stopsloppypasta.ai)
+#
+# Deliberately ADVISORY, never blocking. Voice is the author's call, and both
+# standards state plainly that they produce signals, not proof — they also fire
+# harder on second-language writers and on technical genres, which is exactly
+# this blog. A blocking gate here would be a machine overruling a human about
+# his own voice. The job is to surface drift, not to enforce a style.
+if ($blogChanged) {
+    Write-Host "`n[Advisory] Blog voice drift..." -ForegroundColor DarkCyan
+    foreach ($voice in @(
+        @{ script = "ai-writing-audit.mjs";      label = "surface (word choice, em dash + bold density)" },
+        @{ script = "proof-of-thought-audit.mjs"; label = "substance (first-hand evidence, reader tax)" }
+    )) {
+        $vs = Join-Path $PSScriptRoot $voice.script
+        if (Test-Path $vs) {
+            Write-Host "  $($voice.label)" -ForegroundColor DarkGray
+            & node $vs 2>&1 |
+                Where-Object { $_ -match 'em dash|bold /1k|Tier 1|WEIGHTED|zero experience|unearned authority|hollow scaffolding|first-hand experience' } |
+                Select-Object -First 6 |
+                ForEach-Object { Write-Host "    $_" -ForegroundColor DarkGray }
+        } else {
+            Write-Host "  ⏭ $($voice.script) not found" -ForegroundColor DarkGray
+        }
+    }
+    Write-Host "  (Advisory only — run either script directly for the full report)" -ForegroundColor DarkGray
+    Write-Host "  Voice gate: learning-docs/docs/reference/blog-voice-guide.md" -ForegroundColor DarkGray
 }
 
 Write-Host ""
