@@ -1,8 +1,8 @@
 ---
 title: "What's New in Microsoft 365 Copilot: August 2026"
-list_title: "M365 Copilot — August Recap: 58 Updates"
+list_title: "M365 Copilot — August Recap: 59 Updates"
 hub_id: "whats-new"
-description: "August 2026 Microsoft 365 Copilot updates: 58 changes across Excel, PowerPoint, Word, Chat, Cowork and admin, each with the date Microsoft gave it."
+description: "August 2026 Microsoft 365 Copilot updates: 59 changes across Excel, PowerPoint, Word, Chat, Cowork and admin, each with the date Microsoft gave it."
 date: 2026-08-19 # Placeholder only. Set the real publish date before going live - must be 2026-08-21 or later, because sections 3, 13 and 21 cite reproductions dated 21 August 2026.
 lastmod: 2026-08-19 # Placeholder only.
 draft: true
@@ -18,7 +18,7 @@ tags:
   - news
 faq:
   - question: "What's new in Microsoft 365 Copilot in August 2026?"
-    answer: "Fifty-eight changes, grouped by product area. Seven carry August timing: an Excel theme design skill, Power BI grounding in Excel, Copilot in Excel working in cloud-saved workbooks with AutoSave off, PowerPoint skills, assigning tasks from PowerPoint comments, Anthropic model choice in Word, and Markdown support in Copilot Notebooks. Most of the rest rolled out in July or June and keep the date Microsoft gave them. Six carry a timing caveat - three have a date Microsoft's own sources disagree on, two are still marked In development on the roadmap, and one does not reach broad availability until September - and each of those sections flags it. Section 55 goes the other way: Microsoft announced domain exclusion for web grounding in July and rolled it back on 4 August 2026, so it is included as a withdrawn announcement rather than a rollout."
+    answer: "Fifty-nine changes, grouped by product area. Seven carry August timing: an Excel theme design skill, Power BI grounding in Excel, Copilot in Excel working in cloud-saved workbooks with AutoSave off, PowerPoint skills, assigning tasks from PowerPoint comments, Anthropic model choice in Word, and Markdown support in Copilot Notebooks. Most of the rest rolled out in July or June and keep the date Microsoft gave them. Six carry a timing caveat - three have a date Microsoft's own sources disagree on, two are still marked In development on the roadmap, and one does not reach broad availability until September - and each of those sections flags it. Section 55 goes the other way: Microsoft announced domain exclusion for web grounding in July and rolled it back on 4 August 2026, so it is included as a withdrawn announcement rather than a rollout."
   - question: "Why do some sections say they rolled out in June or July?"
     answer: "Because I write these in the middle of the month, before Microsoft publishes its own roundup, so every issue misses a few things. When I find them, they go into the next issue with the real date attached rather than repackaged as this month's news. Thirty-two of the items here came from a strict comparison against Microsoft's official June roundup. Each keeps the rollout timing Microsoft stated, shown in the For: line under its heading."
   - question: "Which items in this issue need admin attention?"
@@ -38,7 +38,7 @@ founder_note: |
 
 **The short version — what's new in Microsoft 365 Copilot for August 2026:** Excel got a theme design skill, Power BI grounding and support for workbooks with AutoSave turned off. PowerPoint can assign tasks from comments. Copilot Notebooks accept Markdown. The Copilot mobile app was said to have started sending push notifications — though the roadmap disagrees, so check section 28 — Claude Fable 5 arrived in Cowork in Preview, Cowork tasks can now be triggered by an event rather than a schedule, and admins picked up an Agent 365 Dashboard plus three changes to Cost Management, one of which needs action. One announced admin control, domain exclusion for web grounding, was rolled back by Microsoft on 4 August.
 
-Everything is grouped by where you will actually meet it — Microsoft 365 apps first, then Copilot Chat and agents, then Cowork, then admin, analytics and governance — and numbered 1 to 58 straight through.
+Everything is grouped by where you will actually meet it — Microsoft 365 apps first, then Copilot Chat and agents, then Cowork, then admin, analytics and governance — and numbered 1 to 59 straight through.
 
 **A note on dates.** I write these in the middle of the month, before Microsoft publishes its own roundup, so every issue misses a few things. When I find them, they go into the next issue carrying the real date Microsoft gave them rather than repackaged as this month's news. That is why some sections below say June or July, and it is deliberate. Seven items carry genuine August timing — sections 1, 2, 3, 8, 9, 14 and 29 — and one, section 55, was announced in July and withdrawn on 4 August. [How this issue was put together](#how-this-issue-was-put-together) has the detail.
 
@@ -66,7 +66,7 @@ Four things explain most of this month:
 Start with these three. They are the items where doing nothing has a cost:
 
 1. **Recreate spending alerts on existing Cost Management policies.** The alerts improved, and Microsoft's guidance is to recreate alerts on existing policies. Microsoft does not spell out what happens to one you leave alone, so if a notification matters to you, recreate it rather than assume.
-2. **Look at the Purview DLP control for external email.** In Public Preview, it stops Copilot using emails from external senders as grounding data. External email is the one input to your tenant that someone outside it writes. It has no numbered section here because [June's recap](/blog/microsoft-365-copilot-june-2026-updates/) already covered it — but it is still the admin item most worth acting on.
+2. **Look at the Purview DLP control for external email.** In Public Preview, it stops Copilot using emails from external senders as grounding data. External email is the one input to your tenant that someone outside it writes — and Microsoft's own reason for the control is prompt injection. Section 59 has the detail.
 3. **Open the Agent Access Insights heatmap.** It gets you closer to the question everyone actually asks about agents — which sites are they reaching into, and how often?
 
 Then, when you have time:
@@ -74,9 +74,6 @@ Then, when you have time:
 4. **Check whether Claude Fable 5 should be on.** It is in Preview and off by default in Cowork, so it will not appear for users unless you enable it — and enabling it means prompts and responses for that model are retained by the model provider.
 5. **Open the Agent 365 Dashboard.** You will find it in Copilot Analytics in the Viva Insights web app, not the Microsoft 365 admin center. Agents accumulate quietly; this is where you notice.
 6. **Un-plan domain exclusion.** If July's announcement made it into a rollout plan or a governance document, take it out — Microsoft rolled the feature back on 4 August 2026.
-
-<p><img src="/images/blog/copilot-august-2026/official-20-purview-dlp-external-annotated.webp" alt="Microsoft Purview Create rule page showing a condition of Email is received from People outside my organization, and an action of Restrict Copilot from processing content with Accessing knowledge sources set to Block." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Checklist item 2, since it is the one worth acting on. Official Microsoft image from the July roundup, callouts mine — the condition that catches external mail, and the Block action that stops it grounding Copilot answers. UI and availability may vary by tenant and rollout.</em></p>
 
 More admin-facing changes are grouped together from section 47 onwards.
 
@@ -1198,6 +1195,31 @@ Microsoft Learn confirms that hybrid-joined devices are supported, but the publi
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the join states &mdash; not a screenshot. The only public image is a general Organizational Messages landing page, which would not show you this change at all. The red card is the one June added.</em></p>
 
 📖 [M365 Roadmap 503564](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=503564) · [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572) · [Organizational Messages in Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/admin/misc/organizational-messages-microsoft-365?view=o365-worldwide)
+
+### 59. A Purview DLP control keeps external email out of Copilot
+
+*For: Microsoft Purview + Microsoft 365 Copilot and Copilot Chat · Public Preview June 2026 · GA scheduled January 2027*
+
+Microsoft Purview gained a Data Loss Prevention control that stops Microsoft 365 Copilot and Copilot Chat using **emails from external senders** as grounding data. With it on, Copilot excludes those emails from grounding, summarisation and citation, and carries on using your internal Microsoft 365 content where permitted. Microsoft's June roundup adds that agents built in Copilot Studio and published into Microsoft 365 Copilot are covered too, where they use only Microsoft 365 data. The user's own access to the email is untouched — this changes only what Copilot is allowed to read.
+
+It is an ordinary DLP rule rather than a switch, so nothing happens until somebody builds it. On screen the condition reads **Email is received from → People outside my organization** and the action is **Restrict Copilot from processing content** with **Accessing knowledge sources** set to **Block**. Microsoft's documentation labels the same pair **External users** and **Prevent Copilot from processing content** — so the label in the docs is not always the label on the screen.
+
+Two things worth knowing before you pilot it. The rule reads **metadata only**: it compares the sender's domain against your tenant's accepted domains and never inspects the body of the message. And the location is offered only in the **Custom** policy template, and selecting it switches every other location in that policy off — so this rule ends up living in a policy of its own.
+
+Microsoft's reason for building it is not the usual data-leak framing. The control, Microsoft's documentation says, "helps organizations reduce the risk of **prompt injection** and untrusted data influence."
+
+<blockquote class="callout callout-tip">
+<p><strong>Why this matters:</strong> most Copilot governance is aimed at stopping your data getting out. This one points the other way — at what gets in. Copilot reads an email from outside your organisation with the same willingness it reads one from your own team, and this is the control that lets you say otherwise.</p>
+</blockquote>
+
+<blockquote class="callout callout-warn">
+<p><strong>Preview, and the GA date has moved.</strong> Microsoft's June roundup gave general availability as July 2026, with the standing caveat that its dates are "tentative and subject to change". Roadmap 561552 now reads <em>In development</em>, with general availability scheduled for <strong>January 2027</strong> — six months later. Policy edits can also take up to four hours to appear in Copilot, so leave a gap between changing something and testing it. Worth piloting and planning around; not yet worth depending on.</p>
+</blockquote>
+
+<p><img src="/images/blog/copilot-august-2026/official-20-purview-dlp-external-annotated.webp" alt="Microsoft Purview Create rule page showing a condition of Email is received from People outside my organization, and an action of Restrict Copilot from processing content with Accessing knowledge sources set to Block." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, callouts mine — the condition that catches external mail, and the Block action that stops it grounding Copilot answers. UI and availability may vary by tenant and rollout.</em></p>
+
+📖 [M365 Roadmap 561552](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561552) · [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332) · [Purview DLP for Microsoft 365 Copilot and Copilot Chat](https://learn.microsoft.com/en-us/purview/dlp-microsoft365-copilot-location-learn-about)
 
 ---
 
