@@ -598,6 +598,60 @@ check("single-post mode does not pass off an invalid baseline",
       _c == 1 and "enforcement start" in _out, _out)
 
 
+# ---- Gate B round 2: four more findings, same discipline --------------------
+# All four reproduced before being fixed. Two let a receipt PASS while lying,
+# one crashed with a traceback instead of a named failure, and one was a FALSE
+# POSITIVE - `audit` reporting PASS then writing a receipt its own verifier
+# rejected, which would have blocked an honest push.
+
+for _d in (None, "banana"):
+    _c, _out = receipts(edit=lambda r, d=_d: r["sections"][0].__setitem__(
+        "disposition", d))
+    check(f"a section disposition of {_d!r} is not accepted as evidence",
+          _c == 1 and "unrecognised disposition" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r["sections"][0].pop("disposition") and None)
+check("a section with no disposition at all is not accepted as evidence",
+      _c == 1 and "unrecognised disposition" in _out, _out)
+
+# Python hashes True and 1 identically, so a JSON `true` used to pass itself
+# off as section 1 in both the section list and the image multiset.
+_c, _out = receipts(edit=lambda r: [r["sections"][0].__setitem__("section", True),
+                                    r["images"][0].__setitem__("section", True)] and None)
+check("a JSON true does not masquerade as section 1",
+      _c == 1, _out)
+
+_c, _out = receipts(edit=lambda r: r["post"].__setitem__("sections", True))
+check("a JSON true does not masquerade as the section count",
+      _c == 1 and "post.sections" in _out, _out)
+
+# Unhashable nested values aborted Counter construction with a traceback.
+for _bad in ([], {}, "7"):
+    _c, _out = receipts(edit=lambda r, b=_bad: r["images"][0].__setitem__("section", b))
+    check(f"an image record with section {_bad!r} fails by name, not by raising",
+          _c == 1 and "malformed image record" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r["images"][0].__setitem__("sha256", 123))
+check("an image record with a non-string hash fails by name, not by raising",
+      _c == 1 and "malformed image record" in _out, _out)
+
+# A surplus record now names its section and count, so two distinct leftovers
+# can no longer print the same undifferentiated line.
+_c, _out = receipts(edit=lambda r: r["images"].append(
+    dict(r["images"][0], section=41)))
+check("a surplus receipt image names the section it was recorded under",
+      _c == 1 and "§41" in _out and "no longer" in _out, _out)
+
+
+# A rejected baseline slug must not also be announced as grandfathered: the
+# exit code was always right, but printing both lines told the author their
+# post was exempt in the same breath as refusing it.
+_c, _out = receipts(baseline={"slugs": ["microsoft-365-copilot-august-2026-updates"]},
+                    write_receipt=False)
+check("a rejected baseline slug is not also called grandfathered",
+      _c == 1 and "grandfathered" not in _out, _out)
+
+
 # ------------------------------------------------------------------- report
 if _failures:
     print(f"FAIL {len(_failures)} of {_ran} self-tests failed:")

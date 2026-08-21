@@ -57,16 +57,15 @@ MUTATIONS = [
     ("no section may be recorded unresolved",
      '        if stuck:', '        if False:'),
     ("post.sections must agree with the live count",
-     'if head.get("sections") != len(live_ns):', 'if False:'),
+     'if not is_int(head.get("sections")) or head.get("sections") != len(live_ns):',
+     'if not is_int(head.get("sections")):'),
     ("observation is bound to (section, hash), not the hash alone",
      'if (r["section"], r["sha256"]) not in obs:',
      'if r["sha256"] not in {h for _, h in obs}:'),
     ("image records are a multiset, not collapsed by src",
-     '    recorded = Counter((r.get("section"), r.get("src"), r.get("sha256"))\n'
-     '                       for r in rec_imgs if isinstance(r, dict))',
-     '    recorded = Counter((r.get("section"), r.get("src"), r.get("sha256"))\n'
-     '                       for r in {r.get("src"): r for r in rec_imgs'
-     ' if isinstance(r, dict)}.values())'),
+     '    recorded = Counter((r["section"], r["src"], r["sha256"]) for r in well_typed)',
+     '    recorded = Counter((r["section"], r["src"], r["sha256"])\n'
+     '                       for r in {r["src"]: r for r in well_typed}.values())'),
     ("baseline may shrink, never grow",
      '        if s not in LEGACY_SLUGS:', '        if False:'),
     ("baseline errors are surfaced before the single-post branch",
@@ -74,6 +73,20 @@ MUTATIONS = [
      '    rc = 0\n'),
     ("nested receipt types validated before use",
      '    if not isinstance(head, dict):', '    if False:'),
+    ("every disposition must be one the tool can produce",
+     '               if r.get("disposition") not in DISPOSITIONS]',
+     '               if r.get("disposition") == "\\x00never"]'),
+    ("post.sections must be a real int, not a bool",
+     '        if not is_int(head.get("sections")) or head.get("sections") != len(live_ns):',
+     '        if head.get("sections") != len(live_ns):'),
+    ("image records are typed before the multiset is built",
+     '        if (isinstance(r, dict) and is_int(r.get("section"))',
+     '        if (isinstance(r, dict) and r.get("section") is not None'),
+    ("a surplus receipt image names its section",
+     '        fails.append(f"§{key[0]} {key[1]} is in the receipt{times} but no longer "',
+     '        fails.append(f"{key[1]} is in the receipt but no longer "'),
+    ("only validated baseline slugs are grandfathered",
+     '        if ok:', '        if True:'),
 ]
 
 

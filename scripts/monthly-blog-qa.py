@@ -486,10 +486,14 @@ def cmd_audit(args) -> int:
         rows.append(d)
 
     imgs = image_rows(secs)
-    audit_md = QA_DIR / f"{slug}.images.md"
-    observed = observation_index(audit_md)
+    # Section-bound, exactly as verify_receipt requires. These two used to
+    # disagree: audit accepted a bare hash, so an image legitimately reused in
+    # two sections with one write-up audited PASS and then had its own receipt
+    # rejected at push time. A gate whose two halves disagree is worse than no
+    # gate - it blocks an honest post with a message the author just saw pass.
+    observed = structured_observations(slug)
     for r in imgs:
-        r["observed"] = r["sha256"] in observed if r["sha256"] else False
+        r["observed"] = bool(r["sha256"]) and (r["section"], r["sha256"]) in observed
     unobserved = [r["src"] for r in imgs if not r["observed"]]
 
     state = "pass"
@@ -665,18 +669,33 @@ def load_baseline() -> tuple[set[str], list[str]]:
     if len(set(slugs)) != len(slugs):
         errs.append("legacy baseline contains duplicate slugs")
     known = {slug_of(p): p for p in discover_posts()}
+    valid = set()
     for s in slugs:
+        ok = True
         if s not in LEGACY_SLUGS:
             errs.append(f"legacy baseline lists {s!r}, which is not one of the "
                         "original pre-tool issues - this list may shrink, never grow")
+            ok = False
         p = known.get(s)
         if p is None:
             errs.append(f"legacy baseline lists {s!r}, which is not a post")
+            ok = False
         elif post_ym(p) >= ENFORCEMENT_START:
             errs.append(
                 f"legacy baseline lists {s!r}, which is not before the enforcement "
                 f"start {ENFORCEMENT_START[0]}-{ENFORCEMENT_START[1]:02d}")
-    return set(slugs), errs
+            ok = False
+        if ok:
+            valid.add(s)
+    # Only validated members are returned, so a rejected slug can never also
+    # print "predates enforcement - grandfathered" alongside its own error.
+    return valid, errs
+
+
+def is_int(v) -> bool:
+    """A real integer. Excludes bool, because True == 1 and hashes identically,
+    so a JSON `true` would otherwise pass itself off as section 1."""
+    return isinstance(v, int) and not isinstance(v, bool)
 
 
 def structured_observations(slug: str) -> set[tuple[int, str]]:
@@ -748,11 +767,19 @@ def verify_receipt(post: Path) -> list[str]:
         live_ns = [s["n"] for s in secs]
         if [r.get("section") for r in rec_secs] != live_ns:
             fails.append("receipt sections do not match the post's own sections")
+        # Every disposition must be one the tool itself can produce. Rejecting
+        # only the literal "unresolved" left the hole half open: a missing, null
+        # or invented disposition sailed through while claiming to be evidence.
+        bad = [r.get("section") for r in rec_secs
+               if r.get("disposition") not in DISPOSITIONS]
+        if bad:
+            fails.append(f"receipt has {len(bad)} section(s) with a missing or "
+                         f"unrecognised disposition: {bad[:5]}")
         stuck = [r.get("section") for r in rec_secs
                  if r.get("disposition") == "unresolved"]
         if stuck:
             fails.append(f"receipt records {len(stuck)} unresolved section(s): {stuck[:5]}")
-        if head.get("sections") != len(live_ns):
+        if not is_int(head.get("sections")) or head.get("sections") != len(live_ns):
             fails.append(f"receipt post.sections is {head.get('sections')!r}, but the "
                          f"post has {len(live_ns)}")
 
@@ -762,36 +789,59 @@ def verify_receipt(post: Path) -> list[str]:
     if not isinstance(rec_imgs, list):
         fails.append("receipt field images is missing or not a list")
         rec_imgs = []
-    if any(not isinstance(r, dict) for r in rec_imgs):
-        fails.append("receipt images contains a malformed record")
+    # Typed before use, not merely shaped. An unhashable nested value used to
+    # abort Counter construction with a traceback, and because Python hashes
+    # True and 1 identically, a JSON `true` passed itself off as section 1.
+    well_typed = []
+    malformed = 0
+    for r in rec_imgs:
+        if (isinstance(r, dict) and is_int(r.get("section"))
+                and isinstance(r.get("src"), str) and r.get("src")
+                and isinstance(r.get("sha256"), str)):
+            well_typed.append(r)
+        else:
+            malformed += 1
+    if malformed:
+        fails.append(f"receipt has {malformed} malformed image record(s)")
     # An exact multiset of (section, src, sha256), NOT a dict keyed by src: one
     # src can legitimately appear in two sections, and collapsing them let a
     # duplicated record carrying a wrong section and hash hide behind a correct
     # one further down the list.
-    recorded = Counter((r.get("section"), r.get("src"), r.get("sha256"))
-                       for r in rec_imgs if isinstance(r, dict))
+    recorded = Counter((r["section"], r["src"], r["sha256"]) for r in well_typed)
+    # Two passes. Exact matches are consumed first so that a genuinely correct
+    # record can never be eaten by an earlier mismatch in another section -
+    # greedy single-pass matching made the diagnostics depend on receipt order,
+    # cascading one real defect into several misleading ones.
+    unmatched = []
     for r in live:
         if not r["exists"]:
             fails.append(f"§{r['section']} {r['src']} is missing from disk")
             continue
         key = (r["section"], r["src"], r["sha256"])
-        if recorded.get(key, 0) > 0:
+        if recorded[key] > 0:
             recorded[key] -= 1
             if (r["section"], r["sha256"]) not in obs:
                 fails.append(f"§{r['section']} {r['src']} has no written observation")
-            continue
-        alt = [k for k in recorded if k[1] == r["src"] and recorded[k] > 0]
-        if any(k[2] != r["sha256"] for k in alt):
+        else:
+            unmatched.append(r)
+    for r in unmatched:
+        same_section = [k for k in recorded
+                        if recorded[k] > 0 and k[1] == r["src"] and k[0] == r["section"]]
+        elsewhere = [k for k in recorded
+                     if recorded[k] > 0 and k[1] == r["src"] and k[2] == r["sha256"]]
+        if same_section:
             fails.append(f"§{r['section']} {r['src']} has changed since the receipt")
-        elif alt:
+            recorded[same_section[0]] -= 1
+        elif elsewhere:
             fails.append(f"§{r['section']} {r['src']} is recorded under section "
-                         f"{alt[0][0]}, not {r['section']}")
+                         f"{elsewhere[0][0]}, not {r['section']}")
+            recorded[elsewhere[0]] -= 1
         else:
             fails.append(f"§{r['section']} {r['src']} is not in the receipt")
-        if alt:
-            recorded[alt[0]] -= 1
-    for key in sorted((k for k, n in recorded.items() if n > 0), key=str):
-        fails.append(f"{key[1]} is in the receipt but no longer used by the post")
+    for key, n in sorted(((k, n) for k, n in recorded.items() if n > 0), key=str):
+        times = "" if n == 1 else f" x{n}"
+        fails.append(f"§{key[0]} {key[1]} is in the receipt{times} but no longer "
+                     "used by the post")
     return fails
 
 
