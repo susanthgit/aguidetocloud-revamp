@@ -158,6 +158,12 @@ MUTATIONS = [
      '                elif False:'),
     ("a corroborated section cannot be relabelled by hand",
      '            elif d != "roadmap_id":', '            elif False:'),
+    # The regression the September rehearsal caught: a Path on an image row is
+    # not JSON serialisable, and rows are written into the committed receipt.
+    # A green suite saw nothing - only running a whole fresh month did.
+    ("no live filesystem object is placed on an image row",
+     '                "exists": ok,',
+     '                "exists": ok,\n                "path": disk,'),
 ]
 
 

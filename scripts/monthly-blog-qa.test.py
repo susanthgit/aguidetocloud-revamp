@@ -1069,6 +1069,146 @@ check("a malformed section value fails by name, not by traceback",
       _c == 1 and "Traceback" not in _out, _out)
 
 
+# ------------------------------------------------- next month, end to end
+# Every other test hunts the FALSE NEGATIVE - a lie the gate lets through.
+# This one hunts the FALSE POSITIVE, which is just as damaging: a gate that
+# blocks an honest post teaches the author to reach for --no-verify, and then
+# it protects nothing. It runs a realistic *unpublished* month through lint,
+# audit, receipt-writing, verify and the image manifest in one pass.
+#
+# It earned its place. As a scratch script it caught a regression no green
+# suite could see: an image row carried a Path under a "path" key, and image
+# rows are serialised into the committed receipt, so the very first September
+# audit would have died on "Object of type WindowsPath is not JSON
+# serializable". Nothing here asserts August's content - it must keep working
+# for a month nobody has written yet.
+def rehearsal():
+    """Drive a realistic fresh month end to end inside a synthetic repo."""
+    ids = ["498877", "501234", "512001", "523456"]
+    srcs = [f"/images/blog/copilot-september-2026/{n}" for n in (
+        "01-excel-forecast.webp", "02-word-citations.webp",
+        "03-cowork-recurring.webp", "04-no-roadmap.webp")]
+    bk = "\U0001F4D6"          # the 📖 marker a real source line starts with
+    post = (
+        "---\ntitle: \"What's New in Microsoft 365 Copilot - September 2026\"\n"
+        "date: 2026-09-15\ndraft: false\n---\n\nIntro prose.\n\n"
+        "## 1. Excel gains a forecasting skill\n\n"
+        "*For: anyone who builds forecasts in Excel*\n\nBody prose.\n\n"
+        f"{bk} Source: [Roadmap {ids[0]}](https://www.microsoft.com/en-us/"
+        f"microsoft-365/roadmap?id={ids[0]})\n\n"
+        f'<img src="{srcs[0]}" alt="Excel forecasting" loading="lazy">\n\n'
+        "## 2. Word can cite its own sources\n\n"
+        "*For: anyone drafting research documents*\n\nBody prose.\n\n"
+        f"{bk} Source: [Roadmap {ids[1]}](https://www.microsoft.com/en-us/"
+        f"microsoft-365/roadmap?id={ids[1]})\n\n"
+        # A multi-line <img> tag: real posts wrap them, and a regex that
+        # assumed one line would silently lose the image.
+        f'<img\n  src="{srcs[1]}"\n  alt="Word citations"\n  loading="lazy" />\n\n'
+        "## 3. Cowork schedules recurring reviews\n\n"
+        "*For: anyone running a weekly review*\n\n"
+        "Two citations on one source line is legitimate and happens most "
+        "months.\n\n"
+        f"{bk} Sources: [Roadmap {ids[2]}](https://www.microsoft.com/en-us/"
+        f"microsoft-365/roadmap?id={ids[2]}) and [{ids[3]}]"
+        f"(https://www.microsoft.com/en-us/microsoft-365/roadmap?id={ids[3]})\n\n"
+        f"![Cowork recurring review]({srcs[2]})\n\n"
+        "## 4. A change Microsoft has not put on the roadmap\n\n"
+        "*For: admins watching the release notes*\n\n"
+        "Some useful things never get a roadmap entry. They are still cited -"
+        " just not to a roadmap URL - which is what the disposition covers.\n\n"
+        f"{bk} Source: [Message center summary](https://learn.microsoft.com/"
+        "en-us/microsoft-365/admin/manage/message-center)\n\n"
+        f'<img src="{srcs[3]}" alt="An unlisted change">\n')
+
+    original = (mbq.REPO, mbq.BLOG, mbq.QA_DIR, mbq.ROADMAP_FEED)
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td).resolve()
+        blog, qa = root / "content" / "blog", root / "qa"
+        for d in (blog, qa):
+            d.mkdir(parents=True, exist_ok=True)
+        feed = root / "roadmap.json"
+        feed.write_text(json.dumps({"generated_at": "2026-09-01T00:00:00Z",
+            "items": [{"id": i, "title": f"Item {i}", "status": "Launched"}
+                      for i in ids]}), encoding="utf-8")
+        mbq.REPO, mbq.BLOG, mbq.QA_DIR, mbq.ROADMAP_FEED = root, blog, qa, feed
+        try:
+            p = blog / "microsoft-365-copilot-september-2026-updates.md"
+            p.write_text(post, encoding="utf-8")
+            slug = mbq.slug_of(p)
+
+            hashes = {}
+            for i, s in enumerate(srcs):
+                f = root / "static" / s.lstrip("/")
+                f.parent.mkdir(parents=True, exist_ok=True)
+                f.write_bytes(b"webp bytes %d" % i)
+                hashes[s] = mbq.sha256_file(f)
+
+            # The real ledger shape: "## §N — src", a backticked sha256, and a
+            # bold **Observed:** block. The scratch version of this rehearsal
+            # used "- observed:" and only PRINTED its results, so it never
+            # noticed the gate had rejected all four images.
+            lines = ["# Image observations", ""]
+            for n, s in zip([1, 2, 3, 4], srcs):
+                lines += [f"## \u00a7{n} \u2014 {s}", "",
+                          f"- src: `{s}`", f"- sha256: `{hashes[s]}`", "",
+                          f"**Observed:** A screenshot showing feature {n}.", ""]
+            (qa / f"{slug}.images.md").write_text("\n".join(lines),
+                                                  encoding="utf-8")
+            (qa / f"{slug}.dispositions.json").write_text(json.dumps({
+                "4": {"disposition": "no_roadmap_row",
+                      "reason": "Microsoft shipped this without a roadmap "
+                                "entry; confirmed absent from the feed"}}),
+                encoding="utf-8")
+
+            def run(fn, **kw):
+                buf = io.StringIO()
+                with contextlib.redirect_stdout(buf):
+                    code = fn(types.SimpleNamespace(**kw))
+                return code, buf.getvalue()
+
+            out = {}
+            out["lint"] = run(mbq.cmd_lint, post=str(p), strict=False,
+                              changed=False)
+            out["audit"] = run(mbq.cmd_audit, post=str(p), write_receipt=True,
+                               allow_degraded=False)
+            out["verify"] = run(mbq.cmd_verify_receipt, post=str(p), all=False)
+            out["manifest"] = run(mbq.cmd_images, post=str(p),
+                                  action="manifest", max_width=None)
+            out["receipt"] = (qa / f"{slug}.json").read_text(encoding="utf-8")
+            return out
+        finally:
+            mbq.REPO, mbq.BLOG, mbq.QA_DIR, mbq.ROADMAP_FEED = original
+
+
+_r = rehearsal()
+
+check("a clean unpublished month passes lint", _r["lint"][0] == 0, _r["lint"][1])
+check("a clean unpublished month passes audit", _r["audit"][0] == 0,
+      _r["audit"][1])
+check("the receipt audit wrote verifies", _r["verify"][0] == 0, _r["verify"][1])
+check("the image manifest builds for a fresh month", _r["manifest"][0] == 0,
+      _r["manifest"][1])
+
+# All four sections are seen, including the one with no roadmap row and the one
+# whose <img> tag spans several lines.
+_rec = json.loads(_r["receipt"])
+check("every section of a fresh month reaches the receipt",
+      len(_rec.get("sections", [])) == 4, str(sorted(
+          str(s.get("section")) for s in _rec.get("sections", []))))
+check("a section citing two roadmap ids is corroborated, not queried",
+      all(s.get("disposition") == "roadmap_id"
+          for s in _rec["sections"] if s.get("section") != 4),
+      str([(s.get("section"), s.get("disposition")) for s in _rec["sections"]]))
+
+# The regression that started this: a receipt must be JSON a *different*
+# machine can read, so nothing on it may be a live filesystem object, and no
+# absolute local path may leak into a file that is hashed and shared.
+check("the receipt is round-trippable json with no machine paths",
+      json.dumps(_rec) and "\\\\" not in _r["receipt"]
+      and ":/" not in _r["receipt"].replace("https:/", "").replace("http:/", ""),
+      _r["receipt"][:400])
+
+
 # ------------------------------------------------------------------- report
 if _failures:
     print(f"FAIL {len(_failures)} of {_ran} self-tests failed:")
