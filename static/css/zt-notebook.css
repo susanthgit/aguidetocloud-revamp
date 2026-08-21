@@ -1354,15 +1354,24 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
    the product; the pushback was made, heard, and overruled.
 
    Hierarchy is preserved by WEIGHT rather than length: h2 is 3px,
-   h3 is 2px. Both span the column. Change 2px -> 3px here to make
-   them identical.
+   h3 is 2px. Change 2px -> 3px here to make them identical.
+
+   WIDTH — the rule matches the heading TEXT, not the column. Same
+   mechanism h2 already uses (zt-notebook.css:278 `display:
+   inline-block; max-width: 100%`): the heading box shrinks to fit its
+   text, so `width: 100%` on the ::after resolves to the text width.
+   Without inline-block an h3 is block-level, the rule runs the full
+   content column and overshoots the words — which is exactly what
+   shipped in d51a72de and had to be corrected.
 
    Scope note: .nb-body only. The FAQ block renders OUTSIDE .nb-body
    (notebook.html:101) and its questions are also h3, so accordion
    questions keep their own styling. Checked before shipping, not
    assumed. */
 .zt-reading--notebook .nb-body h3 {
-  margin-bottom: 16px;   /* was 12px — the rule needs room before the next line */
+  display: inline-block;   /* shrink-to-fit so the rule hugs the text */
+  max-width: 100%;
+  margin-bottom: 16px;     /* was 12px — the rule needs room before the next line */
 }
 .zt-reading--notebook .nb-body h3::after {
   content: "";
