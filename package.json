@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "verify:frontier": "node scripts/reconcile-frontier.mjs",
+    "qa:monthly-copilot": "python scripts/monthly-blog-qa.py lint",
+    "qa:monthly-copilot:test": "python scripts/monthly-blog-qa.test.py",
     "build:og:blog": "cd scripts/og-generator-blog && node make.mjs",
     "build:og:blog:dry": "cd scripts/og-generator-blog && node make.mjs --dry-run",
     "build:og:blog:force": "cd scripts/og-generator-blog && node make.mjs --force",

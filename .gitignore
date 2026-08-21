@@ -52,3 +52,6 @@ tests/screenshots/
 
 # Frontier reconcile local cache
 data/copilot_frontier_map/.official-feed-cache.json
+
+# monthly-blog-qa vision cache (downscaled PNGs, never committed)
+.qa-cache/

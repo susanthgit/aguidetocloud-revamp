@@ -1,0 +1,65 @@
+{
+  "_README": [
+    "Documented historical anomalies in ALREADY-PUBLISHED issues.",
+    "",
+    "New invariants must not block unrelated work on old posts, but a blanket",
+    "suppression would hide real regressions. So every entry names the post, the",
+    "check code, the section where relevant, and WHY it is acceptable.",
+    "",
+    "Do NOT add entries here to silence a problem in the issue you are currently",
+    "writing. Fix the post instead. This file is for history that is already live",
+    "and not worth rewriting.",
+    "",
+    "Codes: no-for-line | no-source-line | no-source-url | numbering",
+    "       roadmap-not-in-feed | roadmap-link-mismatch"
+  ],
+
+  "microsoft-365-copilot-may-2026-updates": [
+    {
+      "code": "roadmap-not-in-feed",
+      "section": 33,
+      "why": "M365 Roadmap 531759 ('Scheduled Prompts for Agents') was cited when the issue was written and has since been withdrawn from Microsoft's published roadmap feed. Verified as a genuine withdrawal rather than a typo: the same id is cited independently in the July 2026 issue for the same named feature. The citation was accurate on the date of publication, so the live post is left as-is."
+    },
+    {
+      "code": "roadmap-not-in-feed",
+      "section": 47,
+      "why": "M365 Roadmap 660076 ('Create Charts on SharePoint Pages with AI') has been withdrawn from the published feed since this issue went out. Accurate when written; not worth rewriting a live post."
+    }
+  ],
+
+  "microsoft-365-copilot-july-2026-updates": [
+    {
+      "code": "roadmap-not-in-feed",
+      "section": 17,
+      "why": "M365 Roadmap 531759 ('Scheduled prompts for agents') - the same withdrawn item recorded against May §33. Two independent citations of the same id for the same feature name is what rules out a typo."
+    }
+  ],
+
+  "microsoft-365-copilot-march-2026-updates": [
+    {
+      "code": "no-source-url",
+      "section": 27,
+      "why": "The source line reads 'No public M365 Roadmap ID listed for this feature.' - a deliberate, honest statement that no citable source existed, rather than a missing citation. It is the only source line across all issues with no URL."
+    }
+  ],
+
+  "microsoft-365-copilot-april-2026-updates": [
+    {
+      "code": "numbering",
+      "why": "The New Copilot Connectors table numbers its rows 26-33, which overlaps heading '## 29. No-Code Publishing for Azure AI Foundry Agents' and leaves 34 unused. A pre-existing collision in a published issue; renumbering it now would break every inbound Quick Jump anchor and any external link."
+    },
+    { "code": "no-for-line", "section": 1,  "why": "April predates the '*For:*' audience/timing convention, which was adopted partway through the series. Sections written before the convention have no such line." },
+    { "code": "no-for-line", "section": 2,  "why": "Predates the '*For:*' convention." },
+    { "code": "no-for-line", "section": 6,  "why": "Predates the '*For:*' convention." },
+    { "code": "no-for-line", "section": 7,  "why": "Predates the '*For:*' convention." },
+    { "code": "no-for-line", "section": 9,  "why": "Predates the '*For:*' convention." },
+    { "code": "no-for-line", "section": 10, "why": "Predates the '*For:*' convention." },
+    { "code": "no-for-line", "section": 11, "why": "Predates the '*For:*' convention." },
+    { "code": "no-for-line", "section": 13, "why": "Predates the '*For:*' convention." },
+    { "code": "no-for-line", "section": 14, "why": "Predates the '*For:*' convention." },
+    { "code": "no-for-line", "section": 17, "why": "Predates the '*For:*' convention." },
+    { "code": "no-for-line", "section": 18, "why": "Predates the '*For:*' convention." },
+    { "code": "no-for-line", "section": 19, "why": "Predates the '*For:*' convention." },
+    { "code": "no-for-line", "section": 21, "why": "Predates the '*For:*' convention." }
+  ]
+}

@@ -1,0 +1,62 @@
+name: Monthly Copilot round-up invariants
+
+# The monthly "What's New in Microsoft 365 Copilot" issues are long (the August
+# 2026 edition ran 59 sections and 60 images) and their defects are the quiet
+# kind: a roadmap ID cited with no matching entry, a source line with no URL,
+# an image referenced but never actually eyeballed. scripts/monthly-blog-qa.py
+# encodes those as offline invariants.
+#
+# This is the backstop, not the first line of defence. The git pre-push hook
+# runs the same lint locally, but it deliberately FAILS OPEN when Python is
+# unavailable so that a machine without Python can still push. CI has Python
+# guaranteed, so here the check is unconditional and covers the whole corpus
+# rather than just the posts in one push.
+#
+# Origin: 21 August 2026 QA pass on the August issue.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/blog/microsoft-365-copilot-*-updates.md'
+      - 'scripts/monthly-blog-qa.py'
+      - 'scripts/monthly-blog-qa.test.py'
+      - 'qa/monthly-copilot/**'
+      - 'static/data/roadmap/latest.json'
+      - '.github/workflows/monthly-copilot-qa.yml'
+  pull_request:
+    paths:
+      - 'content/blog/microsoft-365-copilot-*-updates.md'
+      - 'scripts/monthly-blog-qa.py'
+      - 'scripts/monthly-blog-qa.test.py'
+      - 'qa/monthly-copilot/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  invariants:
+    name: Lint every monthly issue
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up Python
+        uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
+        with:
+          python-version: '3.12'
+
+      # The guard's own logic is verified before its verdict is trusted.
+      # A check that has never been watched failing is not a check.
+      - name: Self-tests
+        run: python scripts/monthly-blog-qa.test.py
+
+      # Whole corpus, not just changed files: an exceptions.json edit or a
+      # roadmap feed refresh can invalidate a post nobody touched.
+      - name: Lint all monthly issues
+        run: python scripts/monthly-blog-qa.py lint

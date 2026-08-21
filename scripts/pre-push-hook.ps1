@@ -69,8 +69,39 @@ if ($guardChanged) {
     }
 }
 
+# ── monthly-blog-qa self-test (~0.4s) — only when the guard's own logic moves ──
+# Deliberately ABOVE the "no blog content, exit quietly" gate below. A push that
+# changes only monthly-blog-qa.py carries no blog markdown, so testing it after
+# that gate would mean the guard's own regressions are the one thing it never
+# checks. Findings name sections as "§12"; without PYTHONIOENCODING the console
+# decodes Python's UTF-8 as the OEM codepage and mangles them.
+$env:PYTHONIOENCODING = 'utf-8'
+$prevEnc = [Console]::OutputEncoding
+try { [Console]::OutputEncoding = [Text.Encoding]::UTF8 } catch { }
+
+$qa = Join-Path $repoRoot 'scripts/monthly-blog-qa.py'
+$py = Get-Command python -ErrorAction SilentlyContinue
+$qaChanged = $changed | Where-Object { $_ -match '^scripts/monthly-blog-qa(\.test)?\.py$' }
+if ($qaChanged -and $py) {
+    $qaTest = Join-Path $repoRoot 'scripts/monthly-blog-qa.test.py'
+    if (Test-Path $qaTest) {
+        Write-Host "[pre-push] monthly-blog-qa changed - running its self-tests..." -ForegroundColor Cyan
+        & python $qaTest 2>&1 | Out-String -Stream | Where-Object { $_ -match 'FAIL|failed|passed' } | ForEach-Object { Write-Host $_ }
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host ""
+            Write-Host "  PUSH BLOCKED - monthly-blog-qa no longer detects its own regression shapes." -ForegroundColor Red
+            Write-Host "  Run: python scripts/monthly-blog-qa.test.py" -ForegroundColor Yellow
+            exit 1
+        }
+    }
+}
+
 $blogChanged = $changed | Where-Object { $_ -match '^content/blog/.*\.md$' -or $_ -match '^static/images/og/blog/' }
-if (-not $blogChanged) { exit 0 }   # silent: nothing to say, don't add push noise
+
+if (-not $blogChanged) {
+    try { [Console]::OutputEncoding = $prevEnc } catch { }
+    exit 0   # silent: nothing to say, don't add push noise
+}
 
 Write-Host "[pre-push] blog content in this push - running SEO + OG guardrail..." -ForegroundColor Cyan
 $seo = Join-Path $repoRoot 'scripts/check-seo-lengths.ps1'
@@ -86,4 +117,29 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 Write-Host "[pre-push] SEO + OG guardrail passed." -ForegroundColor Green
+
+# ── Monthly Copilot round-up invariants (only when one is in the push) ──
+# 2026-08-21: the August issue shipped 59 sections / 60 images. Three defect
+# classes were found by hand that no existing guard could see: a roadmap ID
+# cited with no matching entry, a heading whose For: date contradicted its own
+# image, and images referenced but never eyeballed (Rule #8). scripts/monthly-
+# blog-qa.py encodes those as offline invariants. The tool does its own precise
+# post-detection, so this only pre-gates on "any blog markdown" to keep pushes
+# with no blog content free. Fails OPEN when Python is unavailable: a machine
+# without Python must not be unable to push. Its self-test runs earlier, above
+# the no-blog-content gate, so the guard's own logic is never the untested part.
+if ((Test-Path $qa) -and $py) {
+    & python $qa lint --changed 2>&1 | Out-String -Stream | Where-Object { $_ -match '\S' } | ForEach-Object { Write-Host $_ }
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host ""
+        Write-Host "  PUSH BLOCKED - monthly Copilot round-up failed its invariants." -ForegroundColor Red
+        Write-Host "  Run: python scripts/monthly-blog-qa.py lint --changed" -ForegroundColor Yellow
+        Write-Host "  Images not yet eyeballed: python scripts/monthly-blog-qa.py images manifest --post <month>" -ForegroundColor Yellow
+        Write-Host "  Genuinely need to push anyway: git push --no-verify" -ForegroundColor DarkGray
+        exit 1
+    }
+    try { [Console]::OutputEncoding = $prevEnc } catch { }
+} elseif (Test-Path $qa) {
+    Write-Host "[pre-push] python not found - monthly round-up guard skipped" -ForegroundColor DarkGray
+}
 exit 0
