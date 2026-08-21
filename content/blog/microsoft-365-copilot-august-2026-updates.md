@@ -3,8 +3,8 @@ title: "What's New in Microsoft 365 Copilot: August 2026"
 list_title: "M365 Copilot — August Recap: 59 Updates"
 hub_id: "whats-new"
 description: "August 2026 Microsoft 365 Copilot updates: 59 changes across Excel, PowerPoint, Word, Chat, Cowork and admin, each with the date Microsoft gave it."
-date: 2026-08-19 # Placeholder only. Set the real publish date before going live - must be 2026-08-21 or later, because sections 3, 13 and 21 cite reproductions dated 21 August 2026.
-lastmod: 2026-08-19 # Placeholder only.
+date: 2026-08-21
+lastmod: 2026-08-21
 draft: true
 youtube_id: ""
 card_tag: "What's New"
@@ -40,7 +40,7 @@ founder_note: |
 
 Everything is grouped by where you will actually meet it — Microsoft 365 apps first, then Copilot Chat and agents, then Cowork, then admin, analytics and governance — and numbered 1 to 59 straight through.
 
-**A note on dates.** I write these in the middle of the month, before Microsoft publishes its own roundup, so every issue misses a few things. When I find them, they go into the next issue carrying the real date Microsoft gave them rather than repackaged as this month's news. That is why some sections below say June or July, and it is deliberate. Seven items carry genuine August timing — sections 1, 2, 3, 8, 9, 14 and 29 — and one, section 55, was announced in July and withdrawn on 4 August. [How this issue was put together](#how-this-issue-was-put-together) has the detail.
+**How this issue works.** Every issue sweeps for the Copilot changes I have not covered yet — whichever month Microsoft shipped them — and files each one under the product area where you will actually meet it. Every item keeps the real date Microsoft gave it, shown in the *For:* line. So August items sit here alongside June and July ones, and September will work the same way. That is the design rather than a gap: the point is that nothing useful gets lost just because it missed a publishing window. Seven items carry August timing — sections 1, 2, 3, 8, 9, 14 and 29 — and one, section 55, was announced in July and withdrawn on 4 August. [How this issue was put together](#how-this-issue-was-put-together) has the detail.
 
 **2026 monthly recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · [May](/blog/microsoft-365-copilot-may-2026-updates/) · [June](/blog/microsoft-365-copilot-june-2026-updates/) · [July](/blog/microsoft-365-copilot-july-2026-updates/) · August (you are here)
 
@@ -355,7 +355,7 @@ The feature is about control over the editing approach, not just access to anoth
 </blockquote>
 
 <blockquote class="callout callout-warn">
-<p><strong>Timing correction:</strong> Microsoft announced this in the June roundup, but the <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes">release notes</a> place general availability in the <strong>11 August 2026</strong> batch, <strong>for Word on the web</strong>. If you read the June announcement as "available now", that was early.</p>
+<p><strong>Timing correction:</strong> Microsoft announced this in the June roundup, but the <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes">release notes</a> place general availability in the <strong>11 August 2026</strong> batch, <strong>for Word on the web</strong>. Roadmap 558440 reads differently again — Launched, with GA given as May 2026. Microsoft's published dates do not reconcile, so treat the 11 August web batch as the date you can actually verify.</p>
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-s39-word-model-menu-annotated.webp" alt="A Copilot pane menu with a Model group listing Auto with a tick, Claude and GPT, each with a submenu arrow." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
@@ -725,7 +725,7 @@ One clarification, because the wording invites the wrong reading: users are not 
 <p><img src="/images/blog/copilot-august-2026/official-04-copilot-search-sources-annotated.webp" alt="Official Microsoft image of the Copilot sources rail, where third-party connectors appear alongside SharePoint as selectable sources for a prompt." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, with my annotation added. UI and availability may vary by tenant and rollout.</em></p>
 
-📖 [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
+📖 [M365 Roadmap 496596](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=496596) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
 ### 34. Copilot connectors reach DoD tenants
 
@@ -942,7 +942,7 @@ Cowork gained the ability to use **Microsoft Edge** across business systems, web
 
 The official image also shows an approval boundary: when the browser needs a sign-in, Cowork pauses and asks the user to continue. Browser access does not mean invisible access to every system.
 
-**One update since June.** Microsoft's July roundup describes browser automation more broadly rather than as an Edge-and-Frontier-only capability, so this appears to have widened after the June announcement. I have kept the June framing here because that is what Microsoft stated at the time.
+**One update since June.** Microsoft's July roundup dropped the Frontier qualifier, but Microsoft's [current Cowork change log](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/whats-new) still lists this as **Local browser use (Frontier)** and states it is in Frontier and requires Edge to be installed. Plan on Frontier availability unless that product documentation changes.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> A lot of real work ends in a browser-only system. Reaching that last mile is what turns "prepare the expense report" into "the receipts are ready in the expense tool."</p>
@@ -1037,7 +1037,7 @@ Access is narrower than "any admin": Microsoft scopes the dashboard experience t
 
 ### 50. A heatmap showing which sites agents are accessing
 
-*For: SharePoint and OneDrive · Agent Access Insights · Rolled out July 2026*
+*For: SharePoint and OneDrive · Agent Access Insights · Rolled out July 2026 · roadmap 565027 still reads In development*
 
 **Agent Access Insights** now includes a **heatmap** of agent activity across **SharePoint sites and OneDrive accounts**. You can see how requests are distributed, which sites are busiest, and where activity is concentrated — Microsoft documents a site-level view with up to 20 agents listed per site, not a file-by-file read list.
 
@@ -1056,7 +1056,7 @@ One thing to plan for before you go looking: without a SharePoint Advanced Manag
 
 ### 51. An Agent 365 Dashboard lands in Copilot Analytics
 
-*For: Copilot Analytics in the Viva Insights web app · Generally available July 2026*
+*For: Copilot Analytics in the Viva Insights web app · Announced July 2026 · roadmap 567667 still lists it in development*
 
 The **Agent 365 Dashboard** gives eligible leaders and analysts a consolidated view of agent activity across the tenant.
 
@@ -1088,7 +1088,7 @@ A **Copilot connectors usage report** is available in **Public Preview**, showin
 
 ### 53. The Copilot Chat usage report reaches GCC, GCC High and DoD
 
-*For: Microsoft 365 admin center · GCC, GCC High, DoD · Rolled out July 2026*
+*For: Microsoft 365 admin center · GCC, GCC High, DoD · Rolled out July 2026 · roadmap 567121 still reads In development*
 
 The **Microsoft 365 Copilot Chat usage report** is now available in **GCC, GCC High and DoD** tenants, so government customers get the same adoption reporting commercial tenants have.
 
@@ -1132,7 +1132,7 @@ On **4 August 2026**, Microsoft rolled the feature back. Their update says the c
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own timeline of the two announcements — not a screenshot. There is nothing to capture: the setting never reached my tenant, and it is gone from Microsoft's own guidance. The dashed line is the bit that matters.</em></p>
 
 <blockquote class="callout callout-warn">
-<p><strong>Do not plan around this.</strong> If you read the July roundup and added domain exclusion to a rollout plan or a governance document, take it back out. There is no replacement control yet, and Microsoft has not given a return date. Web grounding is back to being broadly on or off.</p>
+<p><strong>Do not plan around this.</strong> If you read the July roundup and added domain exclusion to a rollout plan or a governance document, take it back out. There is no replacement <strong>per-domain allow/block list</strong>, and Microsoft has not given a return date. The broad web-grounding setting is back to on or off — though <a href="https://learn.microsoft.com/en-us/purview/dlp-microsoft365-copilot-location-learn-about">Purview DLP</a> can still block external web search conditionally, when a prompt contains configured sensitive information types, while Copilot keeps answering from permitted internal sources.</p>
 </blockquote>
 
 <blockquote class="callout callout-tip">
@@ -1154,7 +1154,7 @@ The panel in Microsoft's June article shows **All users** and **No users** choic
 </blockquote>
 
 <blockquote class="callout callout-warn">
-<p><strong>Check this one against your own tenant.</strong> Microsoft's current documentation describes a single combined <strong>Screen and camera sharing</strong> setting under Copilot actions, on by default, while the June article implied two independently scoped controls. The panel below shows how both can be true at once: one setting carrying that combined name, with screens and cameras chosen separately inside it. What I still cannot confirm is the default state, so check it rather than assume it. <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-page#vision-in-microsoft-365-copilot">Current Learn documentation</a>.</p>
+<p><strong>Check this one against your own tenant.</strong> Microsoft's current documentation describes a single combined <strong>Screen and camera sharing</strong> setting under Copilot actions, while the June article implied two independently scoped controls. The panel below shows how both can be true at once: one setting carrying that combined name, with screens and cameras chosen separately inside it. What I still cannot confirm is the default state, so check it rather than assume it. <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-page#vision-in-microsoft-365-copilot">Current Learn documentation</a>.</p>
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-s57-vision-screen-camera-annotated.webp" alt="An admin panel titled Screen and camera sharing with two separate sections, Screens and Cameras, each offering All users or No users, with No users selected in both." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
