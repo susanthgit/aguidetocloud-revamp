@@ -4,7 +4,7 @@ list_title: "M365 Copilot — July Recap: 40+ Updates"
 hub_id: "whats-new"
 description: "July 2026 Copilot: two new AI models, Notebooks that build Word, Excel and PowerPoint, and Outlook Chat over your whole inbox — in plain English."
 date: 2026-07-20
-lastmod: 2026-07-24
+lastmod: 2026-08-13
 youtube_id: ""
 card_tag: "What's New"
 tag_class: "ai"
@@ -72,24 +72,14 @@ Six things worth doing this month, in priority order:
 
 ---
 
-## Quick Jump
-
-**The big headlines:** [New models — GPT-5.6 & Claude Sonnet 5](#1-two-new-frontier-models--gpt-56-and-claude-sonnet-5--land-in-copilot) · [Outlook Chat over your whole inbox](#3-copilot-chat-in-outlook-now-reads-your-whole-inbox-not-just-one-thread) · [Notebooks build Word/Excel/PowerPoint](#2-copilot-notebooks-can-now-build-a-word-doc-excel-sheet-or-powerpoint-deck) · [PowerPoint Agent Mode + Work IQ](#4-powerpoint-agent-mode-builds-your-deck-from-your-own-work-work-iq) · [Watermarks for AI content](#26-watermarks-for-ai-generated-video-and-audio)
-
-**More highlights:** [Mind maps in Notebooks](#12-mind-maps-in-copilot-notebooks) · [Capture conversations on your phone](#13-capture-conversations-on-your-phone--audio-photos-and-notes-in-one-go) · [Sensitivity labels carry over](#28-copilot-generated-files-inherit-sensitivity-labels) · [New image model in PowerPoint](#7-a-new-microsoft-image-model-in-powerpoint) · [Open files inside Copilot Chat](#14-open-word-excel-powerpoint-and-pdf-files-right-inside-copilot-chat)
-
-**The rest:** [Teams meeting → deck](#8-turn-a-teams-meeting-or-chat-into-a-powerpoint-deck) · [Reuse an existing deck](#9-reuse-the-content-and-style-of-an-existing-deck) · [Brand kit for visuals in Chat](#10-apply-your-brand-kit-and-style-to-visuals-in-copilot-chat) · [Build a brand kit from guidelines](#11-build-a-brand-kit-from-your-brand-guidelines) · [Search people by department](#15-copilot-search-now-finds-people-by-department) · [Word Audio Overview voice Q&A](#16-word-audio-overview-ask-questions-out-loud-while-you-listen) · [Launch Copilot on iPhone](#31-launch-copilot-on-your-iphone-with-the-action-button-or-siri) · [Company-wide prompts](#23-publish-company-wide-prompts-in-the-copilot-prompt-gallery) · [Dashboard counts everyone](#29-the-copilot-dashboard-now-counts-everyone-licensed-or-not) · [Copilot in Business SKUs](#27-copilot-now-comes-built-into-new-microsoft-365-business-skus) · [Viva Glint Copilot Highlights](#30-viva-glint-plain-english-survey-insights-with-copilot-highlights) · [Copilot in SharePoint](#6-copilot-in-sharepoint-builds-the-report-not-just-finds-it) · [Microsoft Scout upgrade](#5-microsoft-scout-grows-up-with-model-choice-and-approval-first-controls) · [MCP agents in Office + Catalyst](#20-mcp-agents-now-work-inside-office-apps-and-catalyst) · [Scheduled prompts for agents](#17-scheduled-prompts-for-agents) · [Agent tasks in the taskbar](#21-long-running-agent-tasks-show-progress-in-the-windows-taskbar) · [Submit agents to the Agent Store](#18-submit-your-own-agents-to-the-agent-store) · [Share agents to Teams](#19-share-an-agent-straight-to-a-teams-team) · [Sales Agent GA](#22-sales-agent-reached-general-availability) · [Federated Connectors](#25-federated-copilot-connectors-now-managed-in-the-admin-centre) · [Agent 365 security](#24-agent-security-moves-under-microsoft-agent-365)
-
-**Going deeper:** [Agents & Copilot Studio](#agents--copilot-studio--july-at-a-glance) · [Admin, governance & security](#admin-governance--security--july-at-a-glance) · [On the horizon](#on-the-horizon--in-development-for-august-and-september-2026)
-
 ## 1. Two new frontier models — GPT-5.6 and Claude Sonnet 5 — land in Copilot
 
-*For: GPT-5.6 in Word, Excel, PowerPoint, Chat and Cowork · Claude Sonnet 5 in PowerPoint and Cowork · Rolling out · availability varies by region and tenant*
+*For: GPT-5.6 in Word, Excel, PowerPoint, Chat and Cowork · Claude Sonnet 5 in PowerPoint and Cowork, and in Word from 11 August · Rolling out · availability varies by region and tenant*
 
 Two brand-new frontier models arrived in Microsoft 365 Copilot this month:
 
 - **OpenAI's GPT-5.6** *(from 9 July)* — rolling out across **Word, Excel, PowerPoint, Copilot Chat and Cowork**. OpenAI and Microsoft tuned it together for knowledge work, and it's now the **preferred model** for Copilot — so Copilot may pick it automatically where the model is available.
-- **Anthropic's Claude Sonnet 5** *(from 2 July)* — a new frontier model rolling out in **Copilot Cowork and Copilot in PowerPoint**, built for **multi-step work** across documents, spreadsheets and slides.
+- **Anthropic's Claude Sonnet 5** *(from 2 July)* — a new frontier model rolling out in **Copilot Cowork and Copilot in PowerPoint**, built for **multi-step work** across documents, spreadsheets and slides. **Copilot in Word followed on 11 August 2026.**
 
 Availability varies by region and tenant. **OpenAI-operated models are tenant-controlled**: eligible commercial tenants become enabled for all users from **24 July 2026** unless admins select **No users** under **Copilot → Settings → AI providers operating as Microsoft subprocessors**. **Claude Sonnet 5 access is also admin-managed** and varies by region. Users can choose GPT-5.6 directly where model selection is available.
 
@@ -635,7 +625,7 @@ A few roadmap items still in development when I checked on **23 July 2026**. The
 - **Deep citations in Copilot** — jump to the relevant part of a Word or PowerPoint source first, with meetings, web and PDF references following. **Preview August; GA September 2026.** *([Roadmap 523223](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=523223))*
 - **Better search matches from scanned PDFs and text inside images** embedded in Word, Excel and PowerPoint files. **GA August 2026.** *([Roadmap 559613](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559613))*
 - **Session and response sharing in Copilot** — share a full chat session or one response through a read-only link. **GA August 2026.** *([Roadmap 562353](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=562353))*
-- **Structured document generation with form-driven SharePoint templates** for contracts, agreements, proposals and HR documents. **GA September 2026.** *([Roadmap 545896](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=545896))*
+- **Structured document generation with form-driven SharePoint templates** for contracts, agreements, proposals and HR documents. The **Generate document from form** action is **already available in Power Automate (Preview)** — map data inputs to predefined template fields and generate the document automatically. **GA September 2026.** *([Roadmap 545896](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=545896))*
 - **Export row-level Copilot metrics from the Copilot Dashboard** for your own reporting and deeper analysis. **Preview now; GA August 2026.** *([Roadmap 500872](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=500872))*
 - **Use Agent 365 agents as connected agents** in Copilot Chat, Agent Builder or Copilot Studio when they implement the Agent2Agent protocol. **GA August 2026.** *([Roadmap 567670](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=567670))*
 - **Planner capabilities in Copilot Cowork** — view and update plans, buckets, goals and tasks, then carry out the work across Microsoft 365 with your approval. **GA September 2026.** *([Roadmap 567315](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=567315))*

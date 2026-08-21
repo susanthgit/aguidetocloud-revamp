@@ -65,24 +65,6 @@ Five admin checks worth doing this month, in priority order:
 
 ---
 
-## Quick Jump
-
-**Agents & Copilot Chat:** [Edit with Copilot in Excel](#1-edit-with-copilot-agent-mode-in-excel) · [Scheduling with Copilot](#4-scheduling-with-copilot) · [Agents in Classic Outlook](#9-agents-in-classic-outlook) · [Word Agent](#16-word-agent) · [SharePoint List Agent](#17-sharepoint-list-agent)
-
-**Files, OneDrive & SharePoint:** [Finder integration](#3-copilot-with-onedrive-files-in-macos-finder) · [Share with Summary](#5-share-with-summary-for-onedrive-files) · [Floating Copilot button](#6-floating-copilot-button-in-onedrive) · [Loop Notebooks in ContextIQ](#7-loop-notebooks-in-contextiq) · [Review PDFs](#8-review-pdfs-with-copilot) · [SharePoint metadata](#20-metadata-support-for-sharepoint-queries)
-
-**Voice, Audio & Memory:** [Audio Overview of Meetings](#10-audio-overview-of-meetings) · [Enhanced Memory](#15-enhanced-memory-with-work-data) · [Voice chats reference Memory](#18-voice-chats-reference-memory) · [Voice support in Word & PowerPoint](#19-voice-support-in-word--powerpoint) · [Viva Connections AI audio overview](#26-viva-connections-ai-audio-overview)
-
-**PowerPoint, Meetings & Mobile:** [Copilot can edit PowerPoint](#13-copilot-can-edit-powerpoint) · [Prepare for meetings in Outlook mobile](#22-prepare-for-meetings-in-outlook-mobile) · [Copilot in Teams chats and meetings](#23-copilot-chat-for-teams-chats-channels-calling--meetings)
-
-**Edge & Web:** [Ask Copilot from Edge](#11-ask-copilot-from-edge-address-bar) · [Summarise & Explain in PDF Reader](#12-summarise--explain-in-pdf-reader) · [Multiple Edge tabs](#24-copilot-chat-across-multiple-edge-tabs) · [Ground Copilot in YouTube](#25-ground-copilot-in-youtube-videos)
-
-**Connectors & Search:** [Copilot Search Admin Experience](#27-copilot-search-admin-experience) · [ServiceNow permissions](#29-servicenow-edit-permissions) · [5 new connectors](#new-copilot-connectors) · [ServiceNow query filters](#35-servicenow-connector-edit-user-mappings--query-filters)
-
-**Admin, Governance & Insights:** [Chat History](#2-chat-history-update) · [Watermarks](#14-watermarks-for-ai-generated-content) · [Copilot Notebooks overview](#21-overview-page-in-copilot-notebooks) · [People Skills](#28-people-skills-expanded-ai-for-e3e5) · [Teams Organisation Evaluation Score](#36-teams-organisation-evaluation-score)
-
----
-
 ## 1. Edit with Copilot (Agent Mode) in Excel
 
 *For: All users*

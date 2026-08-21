@@ -65,22 +65,6 @@ Five admin checks worth doing this month, in priority order:
 
 ---
 
-## Quick Jump
-
-**Word & Writing:** [Writing Coaching](#1-writing-coaching-in-word) · [Recent Prompts](#2-recent-prompts-in-draft-with-copilot-in-word) · [Precise Text Selection](#6-precise-text-selection-in-word) · [Voice support](#23-voice-support-in-word-and-powerpoint)
-
-**Agents & Builder:** [Generate files from agents](#3-generate-word-excel-and-powerpoint-files-from-agents) · [GPT-5 in Agent Builder](#12-gpt-5-in-agent-builder) · [Agent Mode in Excel](#18-agent-mode-in-excel) · [Larger file upload](#30-larger-file-upload-in-copilot-studio-agent-builder)
-
-**Copilot Chat, Search & App:** [Model Selector](#4-model-selector-in-microsoft-365-copilot) · [Updated navigation pane](#5-updated-navigation-pane) · [Calendar Search](#10-calendar-search-in-copilot-search) · [Library](#11-library-in-the-microsoft-365-copilot-app) · [Teams Channels](#17-teams-channels-in-context-iq) · [App canvas button](#19-copilot-chat-button-moves-to-the-app-canvas) · [Past chat search](#20-search-past-copilot-chat-conversations) · [Source-specific filters](#21-copilot-search-source-specific-filters) · [Session persistence](#26-session-persistence-enhancement) · [Rich Bing cards](#27-rich-bing-web-answer-cards) · [Memory and Personalisation](#28-memory-and-personalisation-updates) · [Loop Notebooks](#29-loop-notebooks-in-context-iq)
-
-**Outlook, Meetings & Dashboard:** [Edit in Outlook](#7-continue-editing-in-outlook-from-copilot-chat) · [Meeting metrics](#15-copilot-dashboard-updated-meeting-metrics) · [Chat adoption metrics](#16-copilot-dashboard-chat-adoption-metrics) · [Meeting recap notes](#22-customise-ai-generated-notes-in-meeting-recap)
-
-**PowerPoint, Pages & Video:** [PowerPoint from Pages](#8-powerpoint-grounded-on-copilot-pages) · [Video creation](#9-video-creation-updates-in-microsoft-365-copilot) · [File preview on Android](#24-file-preview-and-chat-on-android) · [Video recap](#25-video-recap-in-copilot-chat)
-
-**SharePoint & Collaboration:** [Sharing Copilot Notebooks](#13-sharing-copilot-notebooks) · [Sections with Copilot](#14-sharepoint-sections-with-copilot)
-
----
-
 ## 1. Writing Coaching in Word
 
 *For: Word users · Available now*

@@ -67,26 +67,6 @@ Five admin checks worth doing this month, in priority order:
 
 ---
 
-## Quick Jump
-
-**New Agents:** [PowerPoint Agent](#3-powerpoint-agent) · [Excel Agent](#4-excel-agent) · [Word Agent](#5-word-agent) · [Planner Agent](#8-planner-agent) · [SharePoint List Agent](#9-sharepoint-list-agent) · [Interpreter Agent](#14-interpreter-agent-in-teams-rooms-on-windows)
-
-**Voice & Audio:** [Voice Chat](#1-voice-chat-in-microsoft-365-copilot) · [Audio Overviews in Word](#2-audio-overviews-in-word-documents) · ["Hey Copilot" Wake Word](#22-hey-copilot-wake-word-on-windows) · [News Audio Briefing](#19-news-ai-audio-briefing-in-viva-connections-mobile)
-
-**PowerPoint & Presentations:** [Copilot Edits PowerPoint](#6-copilot-can-edit-your-powerpoint) · [Edit Images](#10-quickly-edit-images-in-powerpoint) · [Contextual Explanations](#11-contextual-explanations-in-powerpoint)
-
-**Mobile:** [Meeting Prep in Outlook](#17-prepare-for-meetings-in-outlook-mobile) · [Pages in Outlook Mobile](#18-copilot-pages-in-outlook-mobile)
-
-**Copilot Connectors:** [8 new connectors](#new-copilot-connectors) — GitLab, Asana, Monday.com, Guru, Coda, Zendesk, Egnyte, Amazon S3
-
-**Admin & Governance:** [Optimize View](#23-copilot-settings--optimize-view-in-admin-center) · [Agent Metadata Export](#24-agent-metadata-in-inventory-export) · [Purview IRM Report](#25-purview-insider-risk-management--pay-as-you-go-usage-report) · [Purview DLP for Prompts](#39-purview-dlp-for-microsoft-365-copilot-prompts) · [Custom MCP Connectors](#35-custom-mcp-connectors-in-m365-admin-center)
-
-**Analytics & Insights:** [Satisfaction Rate](#38-satisfaction-rate-metric-in-copilot-dashboard) · [Power User Insights](#40-copilot-analytics-power-bi-update-with-power-user-insights) · [Broader Dashboard Access](#41-copilot-dashboard--broader-access-to-copilot-chat-insights) · [Studio Agent Report](#37-copilot-studio-agent-report-in-viva-insights)
-
-**Everything Else:** [Notebooks Overview](#7-overview-page-in-copilot-notebooks) · [AI Workflows](#15-ai-workflows-in-the-workflows-app) · [Code Interpreter + Search](#16-code-interpreter-analyses-chat-search-files) · [AI in SharePoint](#20-ai-in-sharepoint-formerly-knowledge-agent) · [Channel Agent Updates](#21-teams-channel-agent-updates) · [Declarative Agent Images](#12-declarative-agents-understand-embedded-images) · [Calendar Delegates](#13-calendar-search-for-email-delegates) · [Foundry Agent Publishing](#29-no-code-publishing-for-azure-ai-foundry-agents) · [Embedded Knowledge](#36-embedded-knowledge-for-declarative-agents-teams-toolkit)
-
----
-
 ## 1. Voice Chat in Microsoft 365 Copilot
 
 Voice in Microsoft 365 Copilot brings a natural, **hands-free conversational experience** to your desktop and mobile devices. Speak directly to Copilot to search for information, catch up between meetings, brainstorm out loud, and do it all in multiple languages — like talking to a colleague who never forgets anything.
@@ -179,7 +159,7 @@ The **Excel Agent** turns data into clear charts, summaries, and insights using 
 
 ## 6. Copilot Can Edit Your PowerPoint
 
-*🔄 First introduced in [March 2026](/blog/microsoft-365-copilot-march-2026-updates/#13-copilot-can-edit-presentations-in-powerpoint) — now generally available.*
+*🔄 First introduced in [March 2026](/blog/microsoft-365-copilot-march-2026-updates/#13-copilot-can-edit-powerpoint) — now generally available.*
 
 Copilot in PowerPoint now lets you **create, edit, and refine presentations** through natural conversation — directly in your presentation, not just the side panel. You can generate slides, update content, improve layouts, and polish design while preserving formatting, structure, and branding.
 

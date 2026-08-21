@@ -65,24 +65,6 @@ Five admin checks worth doing this month, in priority order:
 
 ---
 
-## Quick Jump
-
-**Copilot Chat, Pages & Agents:** [Agent Mode in Excel](#1-agent-mode-in-excel-for-copilot-chat-users) · [Modify Copilot Pages](#8-chat-can-modify-copilot-pages) · [Ask about open Pages](#9-ask-questions-about-open-copilot-pages) · [Auto-generated Pages](#10-auto-generated-copilot-pages) · [PowerPoint from Pages](#11-powerpoint-from-copilot-pages) · [AI-generated agent icons](#15-ai-generated-agent-icons) · [Agents in OneDrive](#19-agents-in-onedrive) · [Edit Scheduled Prompts](#21-edit-scheduled-prompts) · [Scheduling with Copilot](#22-scheduling-with-copilot) · [Agents in Classic Outlook](#23-agents-in-classic-outlook)
-
-**Word, PowerPoint & Excel:** [Steer presentation length](#3-steer-presentation-length-tone-style-and-ai-images-in-powerpoint) · [Auto-Summary in Word](#6-auto-summary-on-file-open-in-word) · [Comments Summary](#7-document-comments-summary-in-word) · [Python-powered answers](#12-improved-python-powered-answers-in-excel) · [Designer](#16-designer-in-microsoft-365-copilot) · [Voice Q&A during Read Aloud](#26-voice-qa-during-read-aloud-in-word) · [Agent Mode in Excel desktop](#30-agent-mode-in-excel-desktop-apps) · [Scatter image effect](#31-scatter-image-effect) · [Edit images in PowerPoint](#33-edit-images-in-powerpoint) · [Formula auto-completion](#37-formula-auto-completion-in-excel)
-
-**Search & Discovery:** [Source-specific filters](#4-copilot-search-source-specific-filters) · [Channels in Context IQ](#13-teams-channels-in-context-iq) · [Filter as you type](#27-filter-search-as-you-type-in-copilot-search) · [Department matches](#28-copilot-search-matches-on-department) · [Discover People](#29-copilot-search-discovers-people)
-
-**Files, OneDrive & SharePoint:** [Finder integration](#2-copilot-with-onedrive-files-in-finder) · [Android file preview](#5-file-preview-and-chat-on-android) · [SharePoint actions](#18-copilot-actions-in-sharepoint-document-libraries) · [Share with Summary](#24-share-with-summary-for-onedrive-files) · [Floating Copilot icon](#25-floating-copilot-icon-in-file-previewer)
-
-**Outlook, Teams & Meetings:** [Summarise email without a licence](#14-summarise-email-without-a-copilot-licence-in-outlook) · [Facilitator in Teams](#17-facilitator-in-teams) · [Full inbox and calendar in Outlook](#20-copilot-chat-in-outlook-can-use-your-full-inbox-and-calendar) · [Meeting recap summarises screen content](#34-meeting-recap-summarises-screen-content) · [Calendar search for delegates](#35-calendar-search-for-email-delegates)
-
-**Personalisation & Productivity:** [Updated Copilot Notebooks](#32-updated-copilot-notebooks-interface) · [Memory and Personalisation](#36-memory-and-personalisation-updates)
-
-**Copilot Connectors:** [8 new connectors](#new-copilot-connectors) — Dropbox, Miro, ServiceNow, Aha!, Shortcut, GitLab, and Bitbucket
-
----
-
 ## 1. Agent Mode in Excel for Copilot Chat Users
 
 *For: Microsoft 365 users without a paid Copilot licence*

@@ -69,30 +69,6 @@ Five admin checks worth doing this month, in priority order:
 
 ---
 
-## Quick Jump
-
-**The Big Headlines:** [Federated MCP Connectors](#1-federated-copilot-connectors-with-mcp) · [GPT-5.5 Instant](#2-gpt-55-instant-in-microsoft-365-copilot) · [Mobile App Refresh](#3-microsoft-365-copilot-mobile-app--chat-first-redesign) · [Branded Footer](#4-branded-footer-in-the-microsoft-365-copilot-app) · [Voice Chat](#41-voice-chat-in-microsoft-365-copilot)
-
-**Copilot Notebooks & Pages Wave:** [Generate PowerPoint](#5-create-powerpoint-presentations-from-copilot-notebooks) · [Generate Word](#6-create-word-documents-from-copilot-notebooks) · [Generate Excel](#7-create-excel-spreadsheets-from-copilot-notebooks) · [Mind Maps](#8-mind-maps-in-copilot-notebooks) · [Web Links as References](#9-web-link-as-a-reference-in-copilot-notebooks) · [Edit Pages with Chat](#10-edit-copilot-pages-with-chat-in-notebooks) · [Teams Meetings as References](#11-teams-meetings-in-copilot-notebooks) · [Multimodal Capture in OneNote iOS](#12-multimodal-capture-in-copilot-notebooks-onenote-iphone) · [Copilot in Pages — Write/Code/Create](#49-copilot-in-pages--write-code-and-create)
-
-**Excel & PowerPoint:** [Plan Mode in Excel](#13-plan-mode-for-copilot-in-excel) · [Python in Copilot Excel](#14-python-when-editing-with-copilot-in-excel) · [Image Model Choice in PowerPoint](#15-create-and-edit-images-with-the-model-of-your-choice-in-powerpoint) · [Smarter Visual Understanding](#16-copilot-chat--smarter-visual-understanding-embedded-images) · [Public Web Grounding](#17-public-website-grounding-for-copilot-in-powerpoint) · [PPT Web Home Create](#43-create-with-copilot-from-the-powerpoint-web-home) · [Executive Summary Slide](#44-executive-summary-slide-in-powerpoint)
-
-**Word:** [Claude in Copilot for Word](#18-claude-model-for-copilot-in-word)
-
-**Outlook:** [Draft Coaching](#19-draft-coaching-feedback-in-outlook) · [Conversational Email Drafting](#20-draft-edit-and-format-emails-conversationally) · [First Draft in Canvas](#21-first-draft-in-the-canvas-for-copilot-in-outlook) · [Account Selector in Side Pane](#22-account-selector-in-the-outlook-copilot-side-pane) · [List Email Attachments](#42-list-email-attachments-in-copilot)
-
-**Teams & Meetings:** [Call Delegation](#23-copilot-call-delegation-in-microsoft-teams) · [Consecutive Interpretation](#24-consecutive-interpretation-in-teams-interpreter) · [Sharing Recap Access](#25-share-recap-access-in-microsoft-teams) · [Delete Meeting-Generated Content](#26-delete-meeting-generated-content-in-recap) · [Video Recap](#45-video-recap-in-teams)
-
-**Mobile & Edge:** [Voice Notes in Mobile](#27-capture-voice-notes-in-the-microsoft-365-copilot-mobile-app) · [Edge Copilot New Tab Page](#28-microsoft-edge--copilot-new-tab-page) · [Edge DLP Redirect](#29-microsoft-edge-v148--redirect-to-m365-copilot-when-dlp-blocks-a-prompt) · [Edge Work Browsing History](#30-microsoft-edge--send-work-browsing-history-to-copilot) · [Outlook Mobile Voice Triage](#51-triage-your-inbox-by-voice-in-outlook-mobile)
-
-**Agents:** [Submit Agents to Store via Builder](#31-submit-agents-to-agent-store-from-agent-builder) · [Agent Lifecycle Automation](#32-admin-rules-for-agent-lifecycle-automation) · [Scheduled Prompts for Agents](#33-scheduled-prompts-for-agents) · [SharePoint Agents in Teams Chat](#34-chat-one-on-one-with-sharepoint-agents-in-teams) · [Share Agents to a Teams team](#50-share-agents-to-a-microsoft-teams-team)
-
-**OneDrive, SharePoint, Forms & Video:** [Ready-to-Use Prompts in OneDrive](#35-ready-to-use-prompts-in-onedrive-file-preview) · [AI Video Drafts with Animations](#36-ai-generated-video-drafts-with-text-animations) · [Live FAQ in SharePoint](#46-create-a-live-faq-in-sharepoint) · [Charts on SharePoint with AI](#47-create-charts-on-sharepoint-pages-with-ai) · [Surveys Agent in Forms](#48-surveys-agent-in-microsoft-forms)
-
-**Admin, Governance & Insights:** [Power User Insights](#37-power-user-insights-in-copilot-dashboard) · [Export by Day](#38-copilot-dashboard--export-by-day) · [Prepaid Capacity Packs Only](#39-microsoft-365-admin-center--prepaid-capacity-pack-billing) · [Purview DSPM](#40-new-microsoft-purview-data-security-posture-management-experience) · [Purview DLP for Copilot prompts](#52-purview-dlp-for-m365-copilot--safeguard-prompts) · [AI Content Watermarks](#53-watermarks-for-ai-generated-content)
-
----
-
 ## 1. Federated Copilot Connectors (with MCP)
 
 *For: All users (admin configures connectors) · Generally available in admin center, user experience rolling out*

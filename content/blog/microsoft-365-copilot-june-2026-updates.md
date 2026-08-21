@@ -63,17 +63,6 @@ Five things worth doing this month, in priority order:
 
 ---
 
-## Quick Jump
-
-**The big headlines:** [Microsoft Scout](#1-microsoft-scout--microsofts-first-autopilot-agent) · [Cowork is GA](#2-copilot-cowork-is-now-generally-available) · [Claude in Copilot](#3-anthropics-claude-in-microsoft-365-copilot) · [Federated Connectors GA](#4-federated-copilot-connectors--now-generally-available) · [Word edits by default](#5-copilot-edits-your-word-document-by-default)
-
-**More highlights:** [Copilot Vision](#6-copilot-vision--show-copilot-your-screen) · [Work IQ APIs GA](#7-the-work-iq-apis-reached-general-availability) · [FLUX.2 in PowerPoint](#8-a-new-image-model--flux2-flex--in-powerpoint) · [Outlook rewrite](#9-outlook-highlight-a-passage-and-ask-copilot-to-rewrite-it) · [Planner My Tasks](#10-planner-a-redesigned-my-tasks-with-copilot-surfacing-your-priorities)
-
-**The rest:** [Copilot in model-driven apps](#11-copilot-inside-model-driven-power-apps) · [OneDrive rename](#12-onedrive-copilot-suggests-a-better-file-name) · [Explain shapes & images](#13-explain-now-works-on-shapes-and-images-in-powerpoint) · [Brand images from many libraries](#14-copilot-can-use-brand-images-from-multiple-sharepoint-libraries) · [Infinite scroll](#15-infinite-scroll-in-your-copilot-chat-history) · [15Five connector](#16-a-new-15five-connector-for-copilot) · [Edge refresh](#17-a-refreshed-look-for-copilot-in-microsoft-edge)
-
-**Going deeper:** [Agents & Copilot Studio](#agents--copilot-studio--june-at-a-glance) · [Admin, governance & security](#admin-governance--security--june-at-a-glance) · [On the horizon](#on-the-horizon--announced-in-june-arriving-soon)
-
-**Going deeper:** [Agents & Copilot Studio](#agents--copilot-studio--june-at-a-glance) · [Admin, governance & security](#admin-governance--security--june-at-a-glance) · [On the horizon](#on-the-horizon--announced-in-june-arriving-soon)
 ## 1. Microsoft Scout — Microsoft's first Autopilot agent
 
 *For: Frontier-program users (admin-gated) · Preview · Windows 11+ and macOS 12+*
