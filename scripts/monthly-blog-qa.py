@@ -625,6 +625,60 @@ def cmd_verify_receipt(args) -> int:
 
 # --------------------------------------------------------------------- main
 
+def external_links(text: str) -> list[str]:
+    """Every distinct outbound http(s) URL in a post, markdown and raw HTML alike."""
+    md = re.findall(r"\[[^\]]*\]\((https?://[^)\s]+)\)", text)
+    href = re.findall(r'href="(https?://[^"]+)"', text)
+    src = re.findall(r'src="(https?://[^"]+)"', text)
+    return sorted({u.rstrip(".,;") for u in md + href + src})
+
+
+def cmd_links(args) -> int:
+    """Check outbound links resolve.
+
+    Network-bound, so this is deliberately NOT in the push gate - a flaky
+    connection must never block a push. Run it before flipping draft: false.
+
+    It exists because link rot is invisible to every offline check here, and
+    because it is genuinely easy to cite a URL that was never real: of four
+    Learn pages a web search proposed for the August issue, three were 404.
+    """
+    import concurrent.futures as cf
+    import urllib.error
+    import urllib.request
+
+    ua = "Mozilla/5.0 (compatible; aguidetocloud-linkcheck/1.0)"
+
+    def check(url: str):
+        req = urllib.request.Request(url, headers={"User-Agent": ua})
+        try:
+            with urllib.request.urlopen(req, timeout=args.timeout) as r:
+                return url, r.status
+        except urllib.error.HTTPError as e:
+            return url, e.code
+        except Exception as e:
+            return url, f"ERR {type(e).__name__}"
+
+    rc = 0
+    posts = [resolve_post(args.post)] if args.post else discover_posts()
+    for post in posts:
+        slug = slug_of(post)
+        urls = external_links(read(post))
+        bad = []
+        with cf.ThreadPoolExecutor(max_workers=args.workers) as ex:
+            for url, status in ex.map(check, urls):
+                if status != 200:
+                    bad.append((url, status))
+        if bad:
+            rc = 1
+            print(f"  FAIL  {slug}: {len(bad)} of {len(urls)} link(s) not 200")
+            for url, status in sorted(bad, key=lambda b: str(b[1])):
+                print(f"          {status}  {url}")
+        else:
+            print(f"  ok    {slug}: {len(urls)} link(s), all 200")
+    return rc
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(prog="monthly-blog-qa")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -661,6 +715,12 @@ def main() -> int:
     p = sub.add_parser("verify-receipt")
     p.add_argument("--post")
     p.set_defaults(fn=cmd_verify_receipt)
+
+    p = sub.add_parser("links", help="check outbound links resolve (network; not a push gate)")
+    p.add_argument("--post")
+    p.add_argument("--timeout", type=int, default=30)
+    p.add_argument("--workers", type=int, default=12)
+    p.set_defaults(fn=cmd_links)
 
     args = ap.parse_args()
     return args.fn(args)

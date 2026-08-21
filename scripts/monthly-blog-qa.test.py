@@ -168,6 +168,23 @@ check("image missing on disk is an error", has(errs, "image missing on disk"))
 errs, _ = lint(post(section(1, body_extra=f'<img src="{IMG_SRC}" alt="">')))
 check("empty alt text is an error", has(errs, "empty alt"))
 
+# --------------------------------------------------------------- link extract
+# The links command is network-bound, so only its offline half is tested here:
+# extraction must find URLs in markdown AND raw HTML, dedupe, and ignore the
+# in-repo image paths that make up most of a monthly post.
+_links = mbq.external_links(
+    'See [docs](https://learn.microsoft.com/a) and [same](https://learn.microsoft.com/a).\n'
+    '<a href="https://www.microsoft.com/b">b</a>\n'
+    '<img src="/images/blog/local.webp" alt="local">\n'
+    'Trailing punctuation: [c](https://support.microsoft.com/c).\n'
+)
+check("link extraction dedupes repeated urls", _links.count("https://learn.microsoft.com/a") == 1)
+check("link extraction reads raw html href", "https://www.microsoft.com/b" in _links)
+check("link extraction ignores in-repo image paths",
+      not any(u.startswith("/images") for u in _links))
+check("link extraction strips trailing punctuation",
+      "https://support.microsoft.com/c" in _links, str(_links))
+
 # ------------------------------------------------------------------- report
 if _failures:
     print(f"FAIL {len(_failures)} of {_ran} self-tests failed:")
