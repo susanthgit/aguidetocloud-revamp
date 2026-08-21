@@ -5,7 +5,7 @@ hub_id: "whats-new"
 description: "August 2026 Microsoft 365 Copilot updates: 59 changes across Excel, PowerPoint, Word, Chat, Cowork and admin, each with the date Microsoft gave it."
 date: 2026-08-21
 lastmod: 2026-08-21
-draft: true
+draft: false
 youtube_id: ""
 card_tag: "What's New"
 tag_class: "ai"
