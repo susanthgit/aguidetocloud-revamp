@@ -704,10 +704,14 @@ check("a numbered table row is parsed as a section",
 # only that the parser finds the row left both filters free to discard it while
 # the suite stayed green - the parser was never the half that was broken. A row
 # carries no source line, so it resolves only through a written disposition;
-# that is fail-closed by design, not an oversight.
+# that is fail-closed by design, not an oversight. The reason is not decoration:
+# per-record validation runs for EVERY disposition, so a row filed as
+# 'no_roadmap_row' owes the same written evidence as a heading would.
 _c, _out = receipts(text=_TBL_POST, observations=None,
                     edit=lambda r: [r.__setitem__("sections", [
-                        {"section": 1, "disposition": "no_roadmap_row"}]),
+                        {"section": 1, "disposition": "no_roadmap_row",
+                         "reason": "Connector table row; the roadmap ID is "
+                                   "cited inline and needs no separate entry."}]),
                         r.__setitem__("images", [])] and None)
 check("a numbered table row is verified like any other section", _c == 0, _out)
 
@@ -868,6 +872,189 @@ _out = manifest(text=published(section(7, body_extra=IMG)),
                 ledger=OBS_BLOCK.replace("§7", "§5"))
 check("manifest binds an observation to its section, not the hash alone",
       "TODO" in _out and "ok " not in _out and "0 observed" in _out, _out)
+
+
+# ------------------------------------------- round 4: what a URL really serves
+#
+# Every guard below was found by an independent reviewer of the real diff and
+# then reproduced against the live tool. They lived only in a scratch probe,
+# which by the law of dead mechanisms means they were not protected at all -
+# so they are asserted here, where the pre-push hook runs them.
+
+
+def lint_files(text: str, files: dict[str, bytes] | None = None,
+               feed=FEED, exc=None):
+    """Lint synthetic markdown against a synthetic static/ tree.
+
+    lint() writes one fixture at IMG_SRC. These cases turn on which file
+    exists and under exactly what name, so the caller supplies the tree.
+    """
+    original = mbq.REPO
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        for rel, data in (files or {}).items():
+            f = root / "static" / rel.lstrip("/")
+            f.parent.mkdir(parents=True, exist_ok=True)
+            f.write_bytes(data)
+        mbq.REPO = root
+        try:
+            p = root / "microsoft-365-copilot-testmonth-2026-updates.md"
+            p.write_text(text, encoding="utf-8")
+            return mbq.lint_post(p, exc or {}, feed)
+        finally:
+            mbq.REPO = original
+
+
+BYTES = b"not a real webp, only its existence is asserted"
+
+# The site is served case-sensitively, so a link that differs only in
+# capitalisation resolves locally on Windows and 404s in public. Path.resolve()
+# cannot see this: it rewrites the path to the on-disk casing, so the check
+# ends up comparing a name with itself.
+errs, _ = lint_files(post(section(1, body_extra='<img src="/i/CaseShot.webp" alt="x">')),
+                     {"/i/caseshot.webp": BYTES})
+check("an image whose capitalisation differs from the file on disk is an error",
+      has(errs, "capitalisation differs"), "; ".join(errs))
+
+errs, _ = lint_files(post(section(1, body_extra='<img src="/i/shot.webp" alt="x">')),
+                     {"/i/shot.webp": BYTES})
+check("an exactly-matching image name is accepted", not errs, "; ".join(errs))
+
+# A cache-busting query is part of ordinary URLs and must not be mistaken for
+# part of the filename.
+errs, _ = lint_files(post(section(1, body_extra='<img src="/i/shot.webp?v=2" alt="x">')),
+                     {"/i/shot.webp": BYTES})
+check("a cache-busting query string still resolves to the file",
+      not errs, "; ".join(errs))
+
+# Containment is structural: a traversal must be refused outright rather than
+# resolved and then compared, which is what let it certify a file outside
+# static/ in the first place.
+errs, _ = lint_files(post(section(1, body_extra='<img src="../outside.webp" alt="x">')),
+                     {"/i/shot.webp": BYTES})
+check("an image path that escapes static/ is refused",
+      has(errs, "not site-absolute"), "; ".join(errs))
+
+# The dangerous form is site-absolute AND traversing: it passes the
+# starts-with-'/' check, so only the explicit '..' refusal stops it certifying
+# a file outside static/ entirely.
+errs, _ = lint_files(
+    post(section(1, body_extra='<img src="/i/../../outside.webp" alt="x">')),
+    {"/i/shot.webp": BYTES})
+check("a site-absolute image path containing .. is refused",
+      has(errs, "walks out of the site"), "; ".join(errs))
+
+# Markup inside a fence is an EXAMPLE. Treating it as published output made the
+# gate demand a screenshot observation for an image no reader ever sees.
+errs, _ = lint_files(post(section(1, body_extra='```html\n<img src="/i/nope.webp" alt="">\n```')),
+                     {"/i/shot.webp": BYTES})
+check("an image inside a fenced code block is not a published image",
+      not errs, "; ".join(errs))
+
+# The mirror of the above: a real image must still be seen when a fence exists
+# elsewhere in the same section, or masking would hide live content.
+errs, _ = lint_files(
+    post(section(1, body_extra='```html\n<img src="/i/nope.webp" alt="">\n```\n\n'
+                               '<img src="/i/shot.webp" alt="">')),
+    {"/i/shot.webp": BYTES})
+check("masking a fence does not hide a real image beside it",
+      has(errs, "empty alt"), "; ".join(errs))
+
+# Reference-style Markdown is ordinary Markdown. Missing it meant a screenshot
+# could be published with no coverage at all.
+errs, _ = lint_files(
+    post(section(1, body_extra='![a screenshot][ref]\n\n[ref]: /i/shot.webp')),
+    {"/i/shot.webp": BYTES})
+check("a reference-style Markdown image is seen", not errs, "; ".join(errs))
+
+errs, _ = lint_files(
+    post(section(1, body_extra='![a screenshot][ref]\n\n[ref]: /i/gone.webp')),
+    {"/i/shot.webp": BYTES})
+check("a reference-style image is checked against disk like any other",
+      has(errs, "missing on disk"), "; ".join(errs))
+
+# An image before section 1 belongs to no section, so no observation can ever
+# name it: it would be published entirely unreviewed while the count read 0
+# outstanding.
+errs, _ = lint_files(
+    '---\ntitle: Test\ndraft: true\n---\n\n<img src="/i/hero.webp" alt="hero">\n\n'
+    + section(1, body_extra='<img src="/i/shot.webp" alt="x">'),
+    {"/i/hero.webp": BYTES, "/i/shot.webp": BYTES})
+check("an image outside every numbered section is an error",
+      has(errs, "outside every numbered section"), "; ".join(errs))
+
+# A comment is not published text. Letting it declare a section meant the
+# author owed evidence for something no reader could ever see.
+errs, _ = lint_files("---\ntitle: Test\ndraft: true\n---\n\n"
+                     "<!--\n### 1. A commented-out heading\n-->\n",
+                     {"/i/shot.webp": BYTES})
+check("a heading inside an HTML comment declares no section",
+      has(errs, "ZERO numbered sections"), "; ".join(errs))
+
+# An ordinary comparison table has a numeric first column too. Promoting it
+# invented sections the author was then asked to justify.
+_ord = post(section(1, body_extra="| # | Plan | Price |\n|---|---|---|\n"
+                                  "| 1 | Business | $12 |\n| 2 | Premium | $30 |"))
+check("an ordinary comparison table is not promoted to feature sections",
+      [(s["n"], s["kind"]) for s in mbq.parse_sections(_ord)] == [(1, "heading")],
+      repr([(s["n"], s["kind"]) for s in mbq.parse_sections(_ord)]))
+
+# ...while a connector table that continues the post's numbering is. Measured
+# against the eight published issues, real connector tables appear both after
+# the last heading and in the gaps between headings.
+_conn = post(section(1), "| # | Connector | Roadmap |\n|---|---|---|\n"
+                         f"| 2 | **A connector** | [496596]({ROADMAP}496596) |")
+check("a connector table continuing the numbering IS promoted",
+      [(s["n"], s["kind"]) for s in mbq.parse_sections(_conn)]
+      == [(1, "heading"), (2, "table-row")],
+      repr([(s["n"], s["kind"]) for s in mbq.parse_sections(_conn)]))
+
+# March numbers its connectors 30-34 between headings 29 and 35. An earlier
+# rule keyed on Quick Jump anchors, which March never lists, and five real
+# entries with genuine roadmap IDs vanished from the gate.
+_gap = post(section(1), section(3),
+            "| # | Connector | Roadmap |\n|---|---|---|\n"
+            f"| 2 | **Fills the gap** | [496596]({ROADMAP}496596) |")
+check("a connector table filling a gap between headings IS promoted",
+      sorted((s["n"], s["kind"]) for s in mbq.parse_sections(_gap))
+      == [(1, "heading"), (2, "table-row"), (3, "heading")],
+      repr(sorted((s["n"], s["kind"]) for s in mbq.parse_sections(_gap))))
+
+# A row numbered like an existing heading is a real defect in the post. It must
+# stay visible: silently dropping it is the fail-open shape this gate exists to
+# prevent, and April really does number two different features 29.
+_dup = post(section(1), "| # | Connector | Roadmap |\n|---|---|---|\n"
+                        f"| 1 | **Collides** | [496596]({ROADMAP}496596) |")
+_e, _ = lint_files(_dup, {"/i/shot.webp": BYTES})
+check("a table row colliding with a heading number is reported, not dropped",
+      has(_e, "duplicate section numbers"), "; ".join(_e))
+
+# str.strip() leaves zero-width characters standing, so a reason of U+200B
+# alone read as written evidence - and audit accepted what verify rejected.
+# The reason must be load-bearing for this to mean anything: a section citing
+# no roadmap ID, filed by hand, is exactly where the writing IS the evidence.
+_c, _out = receipts(text=published(section(1, body_extra=IMG, source=None)),
+                    observations=OBS_BLOCK.replace("\u00a77", "\u00a71"),
+                    edit=lambda r: [r["sections"].__setitem__(0, {
+                        "section": 1, "disposition": "no_roadmap_row",
+                        "reason": "\u200b"}),
+                        r["images"][0].__setitem__("section", 1)] and None)
+check("a zero-width reason is not written evidence",
+      _c == 1 and "no written reason" in _out, _out)
+
+# Per-record validation once ran only for 'roadmap_id', so relabelling a
+# corroborated section as a manual disposition skipped every check that would
+# have contradicted it.
+_c, _out = receipts(edit=lambda r: r["sections"][0].__setitem__(
+    "disposition", "no_roadmap_row"))
+check("swapping a corroborated section to a manual disposition is refused",
+      _c == 1 and "corroborated" in _out, _out)
+
+# A malformed section value must fail by name, never by traceback: a crash in
+# the hook reads as tooling noise and gets bypassed.
+_c, _out = receipts(edit=lambda r: r["sections"][0].__setitem__("section", []))
+check("a malformed section value fails by name, not by traceback",
+      _c == 1 and "Traceback" not in _out, _out)
 
 
 # ------------------------------------------------------------------- report

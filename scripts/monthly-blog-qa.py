@@ -34,6 +34,7 @@ Design constraints, each one paid for:
 from __future__ import annotations
 
 import argparse
+import functools
 import hashlib
 import json
 import re
@@ -87,8 +88,132 @@ ALT_ATTR_RE = re.compile(r"""\balt\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))""",
 LINK_RE = re.compile(r"\[([^\]]*)\]\(([^)\s]+)[^)]*\)")
 ANCHOR_RE = re.compile(r'<a\s+[^>]*href="([^"]+)"[^>]*>(.*?)</a>', re.S)
 
+# Reference-style images resolve through a definition elsewhere in the file.
+# Goldmark renders them exactly like inline images, so a screenshot written
+# this way is published and reviewed by nobody if the extractor cannot see it.
+REF_DEF_RE = re.compile(r"^ {0,3}\[([^\]\n]+)\]:\s*<?(\S+?)>?\s*$", re.M)
+REF_IMG_RE = re.compile(r"!\[(?P<refalt>[^\]]*)\]\[(?P<refid>[^\]]*)\]")
 
-def extract_images(body: str) -> list:
+# Everything a reader never sees. Hidden text must not be able to satisfy a
+# gate, and a fenced example of <img> markup must not be mistaken for a
+# published screenshot - the first direction certifies work nobody did, the
+# second blocks a push over a code sample. Both were reproducible.
+COMMENT_RE = re.compile(r"<!--.*?-->", re.S)
+FENCE_RE = re.compile(r"^(?P<f>```+|~~~+)[^\n]*\n.*?^(?P=f)[^\n]*$", re.M | re.S)
+INLINE_CODE_RE = re.compile(r"`[^`\n]+`")
+# A reason made only of zero-width characters reads as empty to every human
+# and as written evidence to str.strip(), which leaves them standing.
+INVISIBLE_RE = re.compile(r"[\s\u00a0\u200b-\u200f\u2028\u2029\ufeff]")
+
+
+def visible(text: str) -> str:
+    """`text` with everything the rendered page never shows blanked out.
+
+    Characters are replaced with spaces rather than deleted so that every
+    offset, line number and section span still lines up with the real file.
+    """
+    def blank(m: re.Match) -> str:
+        return re.sub(r"[^\n]", " ", m.group(0))
+    out = COMMENT_RE.sub(blank, text)
+    out = FENCE_RE.sub(blank, out)
+    return INLINE_CODE_RE.sub(blank, out)
+
+
+def blank_text(s) -> bool:
+    """True when `s` carries no visible character at all."""
+    return not isinstance(s, str) or not INVISIBLE_RE.sub("", s)
+
+
+@functools.lru_cache(maxsize=4096)
+def _dir_names_at(d: str, mtime: float) -> frozenset:
+    try:
+        return frozenset(e.name for e in Path(d).iterdir())
+    except OSError:
+        return frozenset()
+
+
+def _dir_names(d: str) -> frozenset:
+    """Names in `d`, cached against the directory's own mtime.
+
+    Keying on mtime rather than path alone means adding or removing a file
+    invalidates the entry by itself, so a cached listing can never certify a
+    file that has since been renamed.
+    """
+    try:
+        return _dir_names_at(d, Path(d).stat().st_mtime)
+    except OSError:
+        return frozenset()
+
+
+def static_path(src: str) -> tuple[Path | None, str | None]:
+    """Resolve an image URL to the file that will be served at it.
+
+    Returns (path, error). `path` is None when the URL names no local file we
+    can check; `error` is None when that is legitimate (a remote or data URL).
+
+    This is deliberately stricter than `REPO / "static" / src.lstrip("/")`,
+    which it replaces. That expression followed `..` out of the site, treated
+    `?v=2` as part of the filename, and - because Windows matches filenames
+    case-insensitively - certified `/images/blog/shot.webp` against a file
+    actually named `Shot.webp`. The site is served from a case-sensitive host,
+    so that last one is a broken image in public that every local gate calls
+    fine.
+    """
+    raw = (src or "").strip()
+    if not raw:
+        return None, "empty image src"
+    # Query and fragment are URL syntax, never filename characters.
+    raw = raw.split("#", 1)[0].split("?", 1)[0].strip()
+    if not raw:
+        return None, f"image src is only a query or fragment - {src!r}"
+    low = raw.lower()
+    if low.startswith(("http://", "https://", "//", "data:", "mailto:")):
+        return None, None                      # not ours to check
+    if "\\" in raw:
+        return None, f"image src uses backslashes, not URL separators - {src!r}"
+    if not raw.startswith("/"):
+        return None, f"image src is not site-absolute - {src!r}"
+    # Built by joining the REQUESTED components, never resolve()d. On Windows
+    # resolve() rewrites a path to the casing found on disk, which silently
+    # destroys the mismatch this function exists to detect. Containment is
+    # guaranteed structurally instead, by refusing '..' outright.
+    parts = [seg for seg in raw.lstrip("/").split("/") if seg and seg != "."]
+    if any(seg == ".." for seg in parts):
+        return None, f"image src walks out of the site with '..' - {src!r}"
+    if not parts:
+        return None, f"image src resolves to static/ itself - {src!r}"
+    root = (REPO / "static").resolve()
+    return root.joinpath(*parts), None
+
+
+def exists_exact(path: Path | None) -> bool:
+    """True only when every path component matches its on-disk casing.
+
+    `Path.exists()` is case-insensitive on Windows, so a screenshot stored as
+    `Shot.webp` and linked as `shot.webp` passes locally and 404s on the
+    case-sensitive host that actually serves the site.
+    """
+    if path is None or not path.exists():
+        return False
+    root = (REPO / "static").resolve()
+    try:
+        parts = path.relative_to(root).parts
+    except ValueError:
+        return False
+    cur = root
+    for part in parts:
+        if part not in _dir_names(str(cur)):
+            return False
+        cur = cur / part
+    return True
+
+
+def image_refs(text: str) -> dict:
+    """Link-reference definitions, lowercased, for reference-style images."""
+    return {k.strip().lower(): v.strip() for k, v in REF_DEF_RE.findall(text)}
+
+
+def extract_images(body: str, refs: dict | None = None) -> list:
     """Every image in `body`, Markdown or HTML, as {"src", "alt"}.
 
     One extractor, used by lint, audit, the receipt and verification, so the
@@ -108,6 +233,14 @@ def extract_images(body: str) -> list:
         src = src.strip()
         if src:
             out.append({"src": src, "alt": alt.strip()})
+    # Reference-style images, resolved through the document's definitions.
+    # `![Shot][]` is the collapsed form, where the alt text is also the label.
+    for m in REF_IMG_RE.finditer(body):
+        alt = m.group("refalt") or ""
+        key = (m.group("refid") or alt).strip().lower()
+        src = (refs or {}).get(key, "")
+        if src:
+            out.append({"src": src.strip(), "alt": alt.strip()})
     return out
 
 
@@ -205,31 +338,118 @@ class Section(dict):
     """A numbered entry: heading level, number, title, body and derived fields."""
 
 
+def _table_blocks(text: str) -> list[list[tuple[int, int, int]]]:
+    """Numbered rows grouped by the table they sit in.
+
+    A table is a run of consecutive lines starting with '|'. Each entry is
+    (number, start_offset, end_offset) for rows whose first cell is a number.
+    Grouping matters because "is this a feature entry?" is a property of the
+    table, not of one row: an ordinary pricing table and a connector table
+    both have a numeric first column.
+    """
+    blocks: list[list[tuple[int, int, int]]] = []
+    current: list[tuple[int, int, int]] = []
+    in_table = False
+    pos = 0
+    for line in text.splitlines(keepends=True):
+        if line.lstrip().startswith("|"):
+            in_table = True
+            m = TABLE_ROW_RE.match(line)
+            if m:
+                current.append((int(m.group(1)), pos, pos + len(line.rstrip("\r\n"))))
+        elif in_table:
+            in_table = False
+            if current:
+                blocks.append(current)
+            current = []
+        pos += len(line)
+    if current:
+        blocks.append(current)
+    return blocks
+
+
 def parse_sections(text: str) -> list[Section]:
-    marks = list(SECTION_RE.finditer(text))
+    # Everything below reads the VISIBLE document. Scanning raw Markdown let
+    # an HTML comment fabricate a numbered section that no reader ever sees,
+    # and made a fenced <img> example fail the push as a missing screenshot.
+    refs = image_refs(text)
+    text = visible(text)
+    # Which numbered table rows are feature entries, decided per TABLE rather
+    # than per row. Measured across the eight published issues: all 21 real
+    # connector rows cite a roadmap URL, and they appear both mid-post
+    # (March 30-34, April 26-33, filling gaps between headings) and after the
+    # last heading (February 38-45). Two earlier rules both failed on real
+    # data - promoting every numeric first column invented phantom sections
+    # from an ordinary "| 1 | Business |" pricing table, and keying on Quick
+    # Jump dropped March's five real connectors, which its Quick Jump never
+    # lists. check-blog-html.mjs is permissive here on purpose; it answers the
+    # different question "may an anchor point at this number?".
+    head_ns = {int(m.group(2)) for m in SECTION_RE.finditer(text)}
+    hmax = max(head_ns) if head_ns else 0
+    gaps = {n for n in range(1, hmax) if n not in head_ns}
+    promoted = []
+    for block in _table_blocks(text):
+        ns = [n for n, _, _ in block]
+        cites = any("roadmap" in text[a:b].lower() for _, a, b in block)
+        fills = any(n in gaps for n in ns)
+        run = [n for n in ns if n > hmax]
+        # "Extends" means the table starts where the headings stopped. Testing
+        # ns[0] > hmax rather than counting rows is what separates a connector
+        # table (February starts at 38 after heading 37) from an ordinary
+        # pricing table that restarts its own numbering at 1.
+        extends = bool(run) and ns[0] > hmax and run == list(
+            range(hmax + 1, hmax + 1 + len(run))
+        )
+        if not (cites or fills or extends):
+            continue
+        # A row colliding with a heading number is NOT dropped: April really
+        # does number two different features 29, and the duplicate-number
+        # check is the only thing that says so. Skipping the row silenced a
+        # real defect, which is exactly the fail-open shape this gate exists
+        # to prevent.
+        promoted.extend(block)
+
+    # A heading's body runs to the next numbered heading, so a table sitting
+    # under it is inside that body too. Without blanking the promoted rows,
+    # a screenshot in one is attributed to BOTH the row and the enclosing
+    # heading, and the author is asked to observe the same image twice.
+    body_src = text
+    if promoted:
+        chars = list(text)
+        for _, a, b in promoted:
+            for i in range(a, b):
+                if chars[i] != "\n":
+                    chars[i] = " "
+        body_src = "".join(chars)
+
+    marks = list(SECTION_RE.finditer(body_src))
     out: list[Section] = []
     for i, m in enumerate(marks):
-        end = marks[i + 1].start() if i + 1 < len(marks) else len(text)
-        body = text[m.start():end]
+        end = marks[i + 1].start() if i + 1 < len(marks) else len(body_src)
+        body = body_src[m.start():end]
         out.append(Section(
             n=int(m.group(2)),
             level=len(m.group(1)),
             title=m.group(3).strip(),
             body=body,
             kind="heading",
-            **derive(body),
+            **derive(body, refs),
         ))
-    for m in TABLE_ROW_RE.finditer(text):
-        line_end = text.find("\n", m.start())
-        row = text[m.start():line_end if line_end > 0 else len(text)]
-        out.append(Section(n=int(m.group(1)), level=0, title=row.strip()[:120],
-                           body=row, kind="table-row", **derive(row)))
+    for n, a, b in promoted:
+        row = text[a:b]
+        out.append(Section(n=n, level=0, title=row.strip()[:120],
+                           body=row, kind="table-row", **derive(row, refs)))
     out.sort(key=lambda s: (s["n"], s["kind"] != "heading"))
     return out
 
 
-def derive(body: str) -> dict:
+def derive(body: str, refs: dict | None = None) -> dict:
     source_lines = [ln for ln in body.splitlines() if ln.lstrip().startswith("\U0001F4D6")]
+    # A connector row carries its citation inline, with no source line at all.
+    # Reading only 📖 lines made a row citing a real roadmap URL parse as
+    # citing nothing, so a mismatched link inside one was never compared.
+    if not source_lines and body.lstrip().startswith("|"):
+        source_lines = [body]
     source_blob = "\n".join(source_lines)
     ids = set()
     # Compared per LINK, not per line. A source line legitimately carries
@@ -257,7 +477,7 @@ def derive(body: str) -> dict:
     fm = re.search(r"^\*For:\s*(.+?)\*\s*$", body, re.M)
     if fm:
         for_line = fm.group(1).strip()
-    imgs = extract_images(body)
+    imgs = extract_images(body, refs)
     return {
         "for": for_line,
         "roadmap_ids": sorted(ids),
@@ -266,6 +486,27 @@ def derive(body: str) -> dict:
         "source_urls": URL_RE.findall(source_blob),
         "images": imgs,
     }
+
+
+def orphan_images(text: str, secs: list[Section]) -> list[dict]:
+    """Images in the visible document that no numbered section contains.
+
+    The gate can only demand an observation for an image it can attribute to
+    a section, so anything outside them - a hero shot above section 1, for
+    instance - used to vanish from lint, audit, the receipt and the manifest
+    simultaneously, all of which then reported a complete count.
+    """
+    refs = image_refs(text)
+    whole = extract_images(visible(text), refs)
+    seen = Counter((i["src"], i["alt"]) for s in secs for i in s["images"])
+    out = []
+    for img in whole:
+        key = (img["src"], img["alt"])
+        if seen[key]:
+            seen[key] -= 1
+        else:
+            out.append(img)
+    return out
 
 
 # --------------------------------------------------------------- exceptions
@@ -337,24 +578,39 @@ def lint_post(post: Path, exc: dict,
             f"{slug}: gaps in section numbering {missing}")
 
     for s in secs:
-        if s["kind"] == "table-row":
-            continue
         tag = f"{slug} §{s['n']}"
-        if not s["for"]:
-            (warns if excused(exc, slug, "no-for-line", s["n"]) else errs).append(
-                f"{tag}: no *For:* line")
-        if s["source_lines"] == 0:
-            (warns if excused(exc, slug, "no-source-line", s["n"]) else errs).append(
-                f"{tag}: no source line")
-        elif not s["source_urls"]:
-            (warns if excused(exc, slug, "no-source-url", s["n"]) else errs).append(
-                f"{tag}: source line present but contains no URL")
+        if s["kind"] != "table-row":
+            if not s["for"]:
+                (warns if excused(exc, slug, "no-for-line", s["n"]) else errs).append(
+                    f"{tag}: no *For:* line")
+            if s["source_lines"] == 0:
+                (warns if excused(exc, slug, "no-source-line", s["n"]) else errs).append(
+                    f"{tag}: no source line")
+            elif not s["source_urls"]:
+                (warns if excused(exc, slug, "no-source-url", s["n"]) else errs).append(
+                    f"{tag}: source line present but contains no URL")
+        # Images are checked for EVERY kind. A screenshot under a numbered
+        # connector row is still a published screenshot; skipping the whole
+        # row let one ship with an empty alt and no file on disk.
         for img in s["images"]:
-            disk = REPO / "static" / img["src"].lstrip("/")
-            if not disk.exists():
-                errs.append(f"{tag}: image missing on disk - {img['src']}")
+            disk, err = static_path(img["src"])
+            if err:
+                errs.append(f"{tag}: {err}")
+            elif disk is not None and not exists_exact(disk):
+                errs.append(
+                    f"{tag}: image missing on disk - {img['src']}"
+                    + (" (a file exists but its capitalisation differs; the site "
+                       "is served case-sensitively, so this 404s in public)"
+                       if disk.exists() else ""))
             if not img["alt"].strip():
                 errs.append(f"{tag}: image has empty alt - {img['src']}")
+
+    # An image outside every numbered section is invisible to the audit, the
+    # receipt and the observation requirement all at once - it publishes
+    # unreviewed while every surface reports a clean, complete count.
+    for img in orphan_images(text, secs):
+        errs.append(f"{slug}: image sits outside every numbered section, so no "
+                    f"observation can ever cover it - {img['src']}")
 
     for s in secs:
         for rid in s["roadmap_ids"]:
@@ -494,6 +750,24 @@ def cmd_audit(args) -> int:
     # any other entry, and the dispositions file is the escape hatch when one
     # genuinely is not a feature.
     secs = sorted(parse_sections(text), key=lambda s: s["n"])
+    # A post that parses to nothing must never report a clean audit. With zero
+    # sections every count below is trivially satisfied, so the summary reads
+    # exactly like a complete pass. lint already refuses this; the gate that
+    # writes the receipt has to refuse it too.
+    if not secs:
+        print(f"{slug}: parsed ZERO numbered sections - the parser or the post "
+              "grammar changed. Never treat this as a pass.")
+        print("state       : FAIL")
+        return 1
+    # An image outside every numbered section can never be attributed to one,
+    # so no observation can cover it and it publishes unreviewed while the
+    # image count still reads complete.
+    strays = orphan_images(text, secs)
+    if strays:
+        for o in strays:
+            print(f"{slug}: image outside every numbered section - {o['src']}")
+        print("state       : FAIL")
+        return 1
     data, items = load_feed()
     by_id = index_by_id(items)
     manual, manual_errs = load_dispositions(slug)
@@ -631,7 +905,10 @@ def load_dispositions(slug: str) -> tuple[dict, list[str]]:
             errs.append(f"{f.name}: section {k} records 'unresolved', which "
                         "explains nothing - remove it or give a real reason")
             continue
-        if not (isinstance(reason, str) and reason.strip()):
+        if blank_text(reason):
+            # str.strip() leaves zero-width characters standing, so a reason of
+            # U+200B alone used to satisfy audit and then fail verification -
+            # the two halves of the gate disagreeing about the same record.
             errs.append(f"{f.name}: section {k} needs a written reason")
             continue
         out[k] = {"disposition": d, "reason": reason.strip()}
@@ -640,19 +917,38 @@ def load_dispositions(slug: str) -> tuple[dict, list[str]]:
 
 # ------------------------------------------------------------------- images
 
+def row_path(row: dict) -> Path | None:
+    """The on-disk file an image row refers to, or None.
+
+    Resolved on demand rather than stored on the row: rows are serialised
+    into the committed receipt, and a Path is not JSON serialisable - nor
+    would an absolute machine-specific path belong in a receipt that is
+    hashed and read on other machines. Going through static_path() keeps the
+    single-resolver guarantee that lint and the manifest can never disagree
+    about which file a URL serves.
+    """
+    disk, err = static_path(row["src"])
+    if err is not None or disk is None or not exists_exact(disk):
+        return None
+    return disk
+
+
 def image_rows(secs: list[Section]) -> list[dict]:
     rows = []
     for s in secs:
         for img in s["images"]:
-            disk = REPO / "static" / img["src"].lstrip("/")
+            # One resolver, shared with lint, so the two can never disagree
+            # about whether a file will actually be served at this URL.
+            disk, err = static_path(img["src"])
+            ok = err is None and disk is not None and exists_exact(disk)
             rows.append({
                 "section": s["n"],
                 "src": img["src"],
                 "alt": img["alt"],
-                "exists": disk.exists(),
+                "exists": ok,
                 # Identity is the CONTENT hash, not the filename. Replacing an
                 # image under the same name must lose its reviewed status.
-                "sha256": sha256_file(disk) if disk.exists() else "",
+                "sha256": sha256_file(disk) if ok else "",
             })
     return rows
 
@@ -699,7 +995,10 @@ def cmd_images(args) -> int:
             dst = outdir / f"{r['sha256'][:16]}.png"
             if dst.exists():
                 continue
-            im = Image.open(REPO / "static" / r["src"].lstrip("/")).convert("RGB")
+            src = row_path(r)
+            if src is None:
+                continue
+            im = Image.open(src).convert("RGB")
             if im.width > args.max_width:
                 im = im.resize((args.max_width,
                                 round(im.height * args.max_width / im.width)))
@@ -860,6 +1159,18 @@ def verify_receipt(post: Path) -> list[str]:
     # gate must never disagree about what a section is.
     secs = sorted(parse_sections(read(post)), key=lambda s: s["n"])
 
+    # Non-vacuity, checked here too and not only in lint. A post that parses to
+    # nothing has nothing to contradict, so every array below is trivially
+    # consistent and the receipt certifies an empty audit as a pass.
+    if not secs:
+        fails.append("the post parses to ZERO numbered sections, so this receipt "
+                     "certifies nothing - never treat that as a pass")
+    orphans = orphan_images(read(post), secs)
+    if orphans:
+        fails.append(f"{len(orphans)} image(s) sit outside every numbered section, "
+                     f"so no observation can cover them: "
+                     f"{[o['src'] for o in orphans][:3]}")
+
     # The section evidence is checked too, not just the images. Deleting the
     # sections array, flipping one disposition to unresolved, or zeroing
     # post.sections all left the receipt green while it still claimed every
@@ -887,33 +1198,53 @@ def verify_receipt(post: Path) -> list[str]:
                  if r.get("disposition") == "unresolved"]
         if stuck:
             fails.append(f"receipt records {len(stuck)} unresolved section(s): {stuck[:5]}")
-        # A valid word is not evidence. "roadmap_id" is a claim about the live
-        # post - that this section cites a roadmap ID the feed corroborated -
-        # and both halves of that claim are checkable here without the feed.
-        # Without this, an author could relabel any unresolved section
-        # "roadmap_id" and the receipt verified clean.
+        # A valid word is not evidence. Detailed checking used to run only when
+        # the disposition already said "roadmap_id", so relabelling a section
+        # "no_roadmap_row" skipped every comparison below and verified clean -
+        # a record cmd_audit could never have emitted for that section. The
+        # post is the authority on what a section cites, for EVERY disposition.
         live_ids = {s["n"]: set(s["roadmap_ids"]) for s in secs}
         for r in rec_secs:
-            if r.get("disposition") != "roadmap_id":
-                continue
             n = r.get("section")
-            if not live_ids.get(n):
-                fails.append(f"§{n} is recorded as 'roadmap_id' but cites no "
-                             "roadmap ID in the post")
+            if not is_int(n):
+                continue          # already reported by the shape check above
+            n = int(n)
+            d = r.get("disposition")
+            ids = live_ids.get(n, set())
+            if not ids:
+                if d == "roadmap_id":
+                    fails.append(f"§{n} is recorded as 'roadmap_id' but cites no "
+                                 "roadmap ID in the post")
+                elif d in DISPOSITIONS and blank_text(r.get("reason")):
+                    # str.strip() leaves zero-width characters standing, so a
+                    # reason of U+200B alone used to read as written evidence.
+                    fails.append(f"§{n} is filed as {d!r} with no written reason")
                 continue
             rec_ids = r.get("roadmap_ids")
-            if not isinstance(rec_ids, list) or set(rec_ids) != live_ids[n]:
+            if not isinstance(rec_ids, list) \
+                    or not all(isinstance(x, str) for x in rec_ids) \
+                    or set(rec_ids) != ids:
                 fails.append(f"§{n} records roadmap IDs {rec_ids!r}, but the "
-                             f"post cites {sorted(live_ids[n])}")
+                             f"post cites {sorted(ids)}")
             st = r.get("roadmap_status")
-            if not isinstance(st, dict) or set(st) != live_ids[n]:
-                fails.append(f"§{n} is recorded as 'roadmap_id' without a "
-                             "status for every ID it cites")
+            if not isinstance(st, dict) or set(st) != ids \
+                    or not all(isinstance(v, str) and not blank_text(v)
+                               for v in st.values()):
+                fails.append(f"§{n} cites {sorted(ids)} without a recorded "
+                             "status for every one of them")
             elif "NOT-IN-FEED" in st.values():
-                # The receipt's own admission contradicts its disposition.
                 missing = sorted(k for k, v in st.items() if v == "NOT-IN-FEED")
-                fails.append(f"§{n} is recorded as 'roadmap_id' but its own "
-                             f"status says {missing} are absent from the feed")
+                if d == "roadmap_id":
+                    # The receipt's own admission contradicts its disposition.
+                    fails.append(f"§{n} is recorded as 'roadmap_id' but its own "
+                                 f"status says {missing} are absent from the feed")
+                elif blank_text(r.get("reason")):
+                    fails.append(f"§{n} is filed as {d!r} with no written reason")
+            elif d != "roadmap_id":
+                # Every ID it cites was corroborated, by its own record. No
+                # manual disposition can be the honest answer for that.
+                fails.append(f"§{n} cites {sorted(ids)}, which its own receipt "
+                             f"records as corroborated, yet it is filed as {d!r}")
         if not is_int(head.get("sections")) or head.get("sections") != len(live_ns):
             fails.append(f"receipt post.sections is {head.get('sections')!r}, but the "
                          f"post has {len(live_ns)}")

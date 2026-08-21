@@ -106,15 +106,18 @@ MUTATIONS = [
      '{sum(1 for r in rows if r[\'sha256\'] in {h for _, h in obs})} observed'),
     ("verify covers every section the parser finds, not only headings",
      '    secs = sorted(parse_sections(read(post)), key=lambda s: s["n"])\n\n'
-     '    # The section evidence is checked too',
+     '    # Non-vacuity, checked here too and not only in lint.',
      '    secs = [s for s in parse_sections(read(post)) if s["kind"] == "heading"]\n\n'
-     '    # The section evidence is checked too'),
+     '    # Non-vacuity, checked here too and not only in lint.'),
     ("roadmap_id requires the live post to cite an ID",
-     '            if not live_ids.get(n):', '            if False:'),
+     '            ids = live_ids.get(n, set())\n            if not ids:',
+     '            ids = live_ids.get(n, set())\n            if False:'),
     ("roadmap_id is refused when the receipt admits NOT-IN-FEED",
      '            elif "NOT-IN-FEED" in st.values():', '            elif False:'),
     ("the receipt cannot rewrite which roadmap IDs the post cites",
-     '            if not isinstance(rec_ids, list) or set(rec_ids) != live_ids[n]:',
+     '            if not isinstance(rec_ids, list) \\\n'
+     '                    or not all(isinstance(x, str) for x in rec_ids) \\\n'
+     '                    or set(rec_ids) != ids:',
      '            if False:'),
     ("each receipt section number must be a real int",
      '                not all(is_int(r.get("section")) for r in rec_secs):',
@@ -122,11 +125,37 @@ MUTATIONS = [
     ("the dispositions file is validated, not trusted",
      '        if d not in DISPOSITIONS:', '        if False:'),
     ("an author cannot assert roadmap_id by hand",
-     '        if d == "roadmap_id":', '        if False:'),
+     '        # cannot assert that by hand; it is derived or it is not true.\n'
+     '        if d == "roadmap_id":',
+     '        # cannot assert that by hand; it is derived or it is not true.\n'
+     '        if False:'),
     ("the dispositions file must be an object",
      '    if not isinstance(raw, dict):', '    if False:'),
     ("a manual disposition needs a written reason",
-     '        if not (isinstance(reason, str) and reason.strip()):', '        if False:'),
+     '            continue\n        if blank_text(reason):',
+     '            continue\n        if False:'),
+
+    # ---- round 4: what a URL really serves, and what a reader really sees.
+    ("image casing is checked against the case-sensitive host",
+     '        if part not in _dir_names(str(cur)):\n            return False',
+     '        if False:\n            return False'),
+    ("an image path may not walk out of static/",
+     "    if any(seg == '..' for seg in parts):".replace("'", '"'),
+     "    if False:"),
+    ("HTML comments are blanked before parsing",
+     '    out = COMMENT_RE.sub(blank, text)', '    out = text'),
+    ("fenced code blocks are blanked before parsing",
+     '    out = FENCE_RE.sub(blank, out)', '    pass'),
+    ("reference-style Markdown images are extracted",
+     '    for m in REF_IMG_RE.finditer(body):', '    for m in []:'),
+    ("images outside every numbered section are reported",
+     '        else:\n            out.append(img)\n    return out',
+     '        else:\n            pass\n    return out'),
+    ("every disposition is validated, not only roadmap_id",
+     '                elif d in DISPOSITIONS and blank_text(r.get("reason")):',
+     '                elif False:'),
+    ("a corroborated section cannot be relabelled by hand",
+     '            elif d != "roadmap_id":', '            elif False:'),
 ]
 
 
