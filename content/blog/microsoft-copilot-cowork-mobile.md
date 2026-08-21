@@ -28,7 +28,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork is **generally available** as of 16 June 2026, including in the Microsoft 365 Copilot mobile app. **Last verified: 25 June 2026.**
+🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork is **generally available** as of 16 June 2026, including in the Microsoft 365 Copilot mobile app. Last verified: 25 June 2026.
 
 </div>
 
@@ -49,7 +49,7 @@ founder_note: |
 
 ## Can you actually use Cowork on a phone? {#can-you}
 
-Yes. Cowork is part of **Microsoft 365 Copilot**, so it shows up in the **Microsoft 365 Copilot mobile app** (iOS and Android) the same way it appears in the browser at **m365.cloud.microsoft** — once your admin has turned it on for you. There's no separate "Cowork app" to install: if you have the Microsoft 365 Copilot app and a licence, and your admin has enabled Cowork for your account, it's there.
+Yes. Cowork is part of **Microsoft 365 Copilot**, so it shows up in the Microsoft 365 Copilot mobile app (iOS and Android) the same way it appears in the browser at m365.cloud.microsoft — once your admin has turned it on for you. There's no separate "Cowork app" to install: if you have the Microsoft 365 Copilot app and a licence, and your admin has enabled Cowork for your account, it's there.
 
 The mobile home is the same idea as the desktop: a **"Start a task"** box and a few quick-start tiles — *Organize my inbox, Arrange my week, Prep for a meeting, Research a company* — so you can kick something off in one tap.
 
@@ -57,9 +57,9 @@ The mobile home is the same idea as the desktop: a **"Start a task"** box and a 
 
 ---
 
-## What mobile is genuinely good for {#what-its-good-for}
+## What mobile is good for {#what-its-good-for}
 
-Mobile Cowork shines when you want to **delegate a job and walk away** — not babysit it. The sweet spot is the moment you think of something between meetings and want it moving before you forget:
+Mobile Cowork shines when you want to delegate a job and walk away — not babysit it. The sweet spot is the moment you think of something between meetings and want it moving before you forget:
 
 - *"Triage my inbox and flag anything that needs me today."*
 - *"Pull the key points from this morning's project chat into a spreadsheet."*
@@ -71,13 +71,13 @@ You describe the **outcome**, tap send, and Cowork starts planning and working �
 
 ## Start on your phone, finish on your desktop {#cross-device}
 
-This is the part that matters most, and it's easy to miss: **the task isn't tied to the phone.**
+This is the part that matters most, and it's easy to miss: the task isn't tied to the phone.
 
 <p><img src="/images/blog/cowork-mobile/cowork-mobile-task.webp" alt="Copilot Cowork working on a task in the mobile app — a live checklist of steps (Get chat message, List teams, List channels, Creating spreadsheet) and a running narration that reads 'Got the full transcript. 12 solid ideas from Elliot Woodward and Miguel Garcia at Fabrikam. Now building the spreadsheet and finding the engineering team simultaneously.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-You can watch Cowork work the steps in real time on the phone — reading a meeting chat, listing teams and channels, building a spreadsheet — and then **just put your phone away.** Your laptop can be closed on your desk; the task keeps running in the cloud. When you sit back down, it's **the same conversation and the same context**, picked up exactly where you left it.
+You can watch Cowork work the steps in real time on the phone — reading a meeting chat, listing teams and channels, building a spreadsheet — and then **just put your phone away.** Your laptop can be closed on your desk; the task keeps running in the cloud. When you sit back down, it's the same conversation and the same context, picked up exactly where you left it.
 
-That's the mental shift: mobile isn't a cut-down Cowork, it's **the same Cowork with a second front door.** Kick off in the taxi queue, review the finished deck at your desk.
+That's the mental shift: mobile isn't a cut-down Cowork, it's the same Cowork with a second front door. Kick off in the taxi queue, review the finished deck at your desk.
 
 ---
 
@@ -93,13 +93,13 @@ Both surfaces drive the same task, but they're not equally suited to every job. 
 | Checking progress between meetings | Fine-tuning a prompt over several iterations |
 | Prep tasks for a meeting you're walking into | Anything you'd rather do on a big screen |
 
-The point isn't that mobile is limited — it's that **delegation and approvals travel well to a phone, deep review doesn't.** Use each for what it's best at; the task bridges both.
+The point isn't that mobile is limited — it's that delegation and approvals travel well to a phone, deep review doesn't. Use each for what it's best at; the task bridges both.
 
 ---
 
 ## Approvals still apply on your phone {#approvals}
 
-Cowork's safety model doesn't loosen just because you're on mobile. When it's about to do something that affects other people or systems — the demo shows it **posting to a Teams channel** — it still **pauses and asks for your approval first**, on the phone exactly as it would on the desktop. You stay the one who says yes.
+Cowork's safety model doesn't loosen just because you're on mobile. When it's about to do something that affects other people or systems — the demo shows it **posting to a Teams channel** — it still pauses and asks for your approval first, on the phone exactly as it would on the desktop. You stay the one who says yes.
 
 That matters for governance: the same human-in-the-loop checkpoint your admin is counting on is in your pocket, not bypassed by the smaller screen. The full picture of what Cowork can and can't reach, and how admins govern it, is in the [admin & governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).
 

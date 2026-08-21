@@ -58,13 +58,13 @@ founder_note: |
 
 </div>
 
-**The short version:** Copilot Credits are Microsoft's **metered currency for agent work** — the unit consumed when an agent answers, takes an action, or grounds on your data. They're **not** a Copilot plan or licence. You buy them **pay-as-you-go ($0.01/credit)** or in **prepaid packs**, and a lot of internal, licensed Microsoft 365 Copilot usage is **zero-rated**.
+**The short version:** Copilot Credits are Microsoft's **metered currency for agent work** — the unit consumed when an agent answers, takes an action, or grounds on your data. They're not a Copilot plan or licence. You buy them pay-as-you-go ($0.01/credit) or in prepaid packs, and a lot of internal, licensed Microsoft 365 Copilot usage is zero-rated.
 
 <!-- 📸 Screenshot placeholder: Power Platform admin centre → Licensing → Copilot Studio (credit consumption view) — Sush to capture -->
 
 ---
 
-> 🧩 **Quick disambiguation — three things people mix up:**
+> 🧩 Quick disambiguation — three things people mix up:
 > - **Copilot Credits** = the *meter* for agent work (this page).
 > - **Copilot Pro / Microsoft 365 Premium / Microsoft 365 Copilot** = per-*user subscriptions* for human-facing Copilot.
 > - **Azure OpenAI tokens** = raw *model usage* at the API level.
@@ -77,7 +77,7 @@ founder_note: |
 
 A **Copilot Credit** is a unit of consumption. When a Copilot agent does something — answers a question, runs an action, grounds an answer on your tenant's data — Microsoft measures that work in credits and draws them down from capacity your admin has set up.
 
-The key idea: **it's a meter, not a seat.** A per-user licence (Microsoft 365 Copilot is $30/user/month on the enterprise list; smaller organisations can instead buy **Microsoft 365 Copilot Business** — same capabilities, a lower list price of around $21/user/month, for up to 300 seats on a Microsoft 365 Business plan) is a flat subscription for a *person*. Credits are *usage-based* — they only move when an agent actually does work. Think electricity: the connection is your subscription; the kilowatt-hours are the credits.
+The key idea: it's a meter, not a seat. A per-user licence (Microsoft 365 Copilot is $30/user/month on the enterprise list; smaller organisations can instead buy **Microsoft 365 Copilot Business** — same capabilities, a lower list price of around $21/user/month, for up to 300 seats on a Microsoft 365 Business plan) is a flat subscription for a *person*. Credits are *usage-based* — they only move when an agent actually does work. Think electricity: the connection is your subscription; the kilowatt-hours are the credits.
 
 {{< margin >}}A credit isn't "one message". Consumption is feature-based — a single question that grounds on your data and takes an action can spend several credits at once.{{< /margin >}}
 
@@ -88,16 +88,16 @@ The key idea: **it's a meter, not a seat.** A per-user licence (Microsoft 365 Co
 Copilot Credits have a short history worth knowing, because the older term still floats around:
 
 - **Before 1 September 2025** — agent usage in Copilot Studio was counted in **messages**, sold in prepaid packs or pay-as-you-go.
-- **On 1 September 2025** — Microsoft changed the common currency from **messages to Copilot Credits**. Crucially, the **prepaid pack quantity and the pay-as-you-go rate didn't change** — what changed is the *name* and the *way usage is counted*: from a flat per-message tally to **feature-based rates**, where different actions cost different amounts.
-- **Through 2026** — Microsoft's documentation positions Copilot Credits as the **consumption meter for agent work across its AI services** — Copilot Studio (including the new **GitHub Copilot harness**), Microsoft 365 Copilot Chat agents, SharePoint agents, the Microsoft Copilot **Retrieval API**, **Copilot Cowork**, and agents calling Microsoft's **Work IQ** APIs. Per-user Copilot stays for *people*; **agent work is measured in credits** — even though a lot of internal, licensed usage is zero-rated.
+- **On 1 September 2025** — Microsoft changed the common currency from **messages to Copilot Credits**. Crucially, the prepaid pack quantity and the pay-as-you-go rate didn't change — what changed is the *name* and the *way usage is counted*: from a flat per-message tally to feature-based rates, where different actions cost different amounts.
+- **Through 2026** — Microsoft's documentation positions Copilot Credits as the consumption meter for agent work across its AI services — Copilot Studio (including the new **GitHub Copilot harness**), Microsoft 365 Copilot Chat agents, SharePoint agents, the Microsoft Copilot Retrieval API, Copilot Cowork, and agents calling Microsoft's Work IQ APIs. Per-user Copilot stays for *people*; agent work is measured in credits — even though a lot of internal, licensed usage is zero-rated.
 
-So if you see "messages" in an old doc or an existing capacity pack, read it as Copilot Credits. → **Migrating from old message packs, dashboards or budgets?** See [Copilot Messages vs Copilot Credits — What Changed?](/blog/copilot-messages-vs-copilot-credits/). For how this fits the wider 2026 agent shift, see [Microsoft Build 2026 Recap — Copilot Credits](/blog/microsoft-build-2026-recap/#3-copilot-credits--the-consumption-meter-has-a-name).
+So if you see "messages" in an old doc or an existing capacity pack, read it as Copilot Credits. → Migrating from old message packs, dashboards or budgets? See [Copilot Messages vs Copilot Credits — What Changed?](/blog/copilot-messages-vs-copilot-credits/). For how this fits the wider 2026 agent shift, see [Microsoft Build 2026 Recap — Copilot Credits](/blog/microsoft-build-2026-recap/#3-copilot-credits--the-consumption-meter-has-a-name).
 
 ---
 
 ## Where Copilot Credits are used {#where}
 
-Credits are Microsoft's **cross-surface** agent currency — they're not only a Copilot Studio thing. The first rows below are the **paid** cases; the **zero-rated** row near the bottom is the big exception for licensed internal use:
+Credits are Microsoft's **cross-surface** agent currency — they're not only a Copilot Studio thing. The first rows below are the paid cases; the zero-rated row near the bottom is the big exception for licensed internal use:
 
 | Surface | Copilot Credits consumed? |
 |---|---|
@@ -112,13 +112,13 @@ Credits are Microsoft's **cross-surface** agent currency — they're not only a 
 | Employee-facing agents used by **licensed Microsoft 365 Copilot** users **inside** Microsoft 365 Copilot / Teams / SharePoint | **Zero-rated** (fair-use limits) |
 | Per-user Copilot for **people** (Free, Microsoft 365 Premium, Microsoft 365 Copilot chat) | **No** — that's a subscription, not credits |
 
-The mental model: **people using Copilot = subscriptions; agents doing work = credits** — with internal, licensed, in-Microsoft-365 agent use mostly zero-rated.
+The mental model: people using Copilot = subscriptions; agents doing work = credits — with internal, licensed, in-Microsoft-365 agent use mostly zero-rated.
 
 ---
 
 ## How much does a Copilot Credit cost? {#cost}
 
-There are three ways to pay for credits. Microsoft labels them **pay-as-you-go**, **prepaid capacity packs**, and the **pre-purchase plan**:
+There are three ways to pay for credits. Microsoft labels them **pay-as-you-go**, prepaid capacity packs, and the pre-purchase plan:
 
 | Way to buy | What it is | Headline rate (US, Jun 2026) | Best for |
 |---|---|---|---|
@@ -148,11 +148,11 @@ This is the part people most want, and it's why "one chat = one credit" is the w
 | Content processing | 8 per page |
 | Voice — classic / GenAI / premium GenAI | 10 / 35 / 75 per minute |
 
-A single user turn can stack several of these. Ask an agent a question that grounds on your tenant data *and* takes an action, and you've spent roughly **2 + 10 + 5 = 17 credits** on one turn — about 17 cents pay-as-you-go.
+A single user turn can stack several of these. Ask an agent a question that grounds on your tenant data *and* takes an action, and you've spent roughly 2 + 10 + 5 = 17 credits on one turn — about 17 cents pay-as-you-go.
 
 A rate shown "per 1,000 tokens" or "per minute" is still billed in **Copilot Credits** — it's a credit denomination, not a separate Azure OpenAI token bill.
 
-⚠️ **Computer use (CUA) is the exception to watch.** It's billed at the **agent action rate (5 credits)**, and it runs on Standard or Premium models (premium models such as Claude Opus 4.6 cost more). Crucially, *unlike* ordinary agent actions, **computer use is NOT zero-rated for Microsoft 365 Copilot licensed users** — so even internal, licensed use of CUA consumes paid credits.
+⚠️ **Computer use (CUA) is the exception to watch.** It's billed at the **agent action rate (5 credits)**, and it runs on Standard or Premium models (premium models such as Claude Opus 4.6 cost more). Crucially, *unlike* ordinary agent actions, computer use is NOT zero-rated for Microsoft 365 Copilot licensed users — so even internal, licensed use of CUA consumes paid credits.
 
 {{< margin >}}The big spenders to watch: tenant graph grounding (10), voice (up to 75/min), premium AI tools (100 per 10 responses) and reasoning models. Classic and generative answers are the cheap part.{{< /margin >}}
 
@@ -165,29 +165,29 @@ A rate shown "per 1,000 tokens" or "per minute" is still billed in **Copilot Cre
 Just as important as what costs credits is what doesn't:
 
 - **Per-user subscriptions.** Free Copilot, Microsoft 365 Premium and the human-facing Microsoft 365 Copilot experience are flat subscriptions — using Copilot as a person doesn't burn credits.
-- **Building and testing.** The Copilot Studio trial and in-context Agent Builder let you create and try agents — basic building and testing generally doesn't require paid consumption; publishing and real usage is where credits start. *(This holds on the **standard harness**. Agents on the newer **GitHub Copilot harness** are billed usage-based from the moment you start building — see [Copilot Studio pricing](/blog/copilot-studio-pricing/#harnesses).)*
-- **Internal, licensed, in-Microsoft-365 agent use.** A lot of employee-facing usage is **zero-rated** for **Microsoft 365 Copilot licensed** users — the [decision table below](#does-microsoft-365-copilot-include-copilot-credits) shows exactly when.
+- **Building and testing.** The Copilot Studio trial and in-context Agent Builder let you create and try agents — basic building and testing generally doesn't require paid consumption; publishing and real usage is where credits start. *(This holds on the **standard harness**. Agents on the newer GitHub Copilot harness are billed usage-based from the moment you start building — see [Copilot Studio pricing](/blog/copilot-studio-pricing/#harnesses).)*
+- **Internal, licensed, in-Microsoft-365 agent use.** A lot of employee-facing usage is zero-rated for **Microsoft 365 Copilot licensed** users — the [decision table below](#does-microsoft-365-copilot-include-copilot-credits) shows exactly when.
 
 ⚠️ "Zero-rated" isn't quite "unlimited free credits" — it's *included within fair-use limits* for that specific employee-facing scenario.
 
 ### Does Microsoft 365 Copilot include Copilot Credits? {#does-microsoft-365-copilot-include-copilot-credits}
 
-A common question, so here's the direct answer: **no — a Microsoft 365 Copilot licence doesn't come with a monthly allowance of Copilot Credits.** What it gives you is **zero-rated** usage for the right scenarios, not a credit balance you can spend anywhere.
+A common question, so here's the direct answer: no — a Microsoft 365 Copilot licence doesn't come with a monthly allowance of Copilot Credits. What it gives you is zero-rated usage for the right scenarios, not a credit balance you can spend anywhere.
 
 **Included (zero-rated) when *all* of these are true:**
 - The user has a **Microsoft 365 Copilot licence**
 - The agent is **employee-facing / internal**
-- It runs **inside Microsoft 365 Copilot, Teams or SharePoint**
+- It runs inside Microsoft 365 Copilot, Teams or SharePoint
 - Usage stays within **fair-use limits**
 
 **You still buy credits for:**
 - **External / customer-facing** agents
 - **Unlicensed** users (no Microsoft 365 Copilot licence)
 - **Standalone channels** — public web, phone, messaging apps
-- **Autonomous, scheduled or triggered** runs, and any usage **outside the licensed, employee-facing Microsoft 365 boundary**
+- **Autonomous, scheduled or triggered** runs, and any usage outside the licensed, employee-facing Microsoft 365 boundary
 - **Computer use (CUA)**, and agent flows *not* triggered by "when an agent calls the flow" — these still consume credits even for Microsoft 365 Copilot licensed users
 
-**The decision line:** if it's internal **and** licensed **and** on a Microsoft 365 surface **and** within fair-use limits, you probably don't need to buy credits. If any part of that sentence is false, budget for credits.
+**The decision line:** if it's internal **and** licensed and on a Microsoft 365 surface and within fair-use limits, you probably don't need to buy credits. If any part of that sentence is false, budget for credits.
 
 | Scenario | Credits needed? |
 |---|---|
@@ -204,8 +204,8 @@ A common question, so here's the direct answer: **no — a Microsoft 365 Copilot
 
 This is the **credit** side of the bill. For a full Copilot Studio build estimate — channels, connectors, licensing — use the [Copilot Studio pricing guide](/blog/copilot-studio-pricing/).
 
-> **Monthly credits ≈ users × interactions per user × credits per interaction**
-> then **× $0.01** (pay-as-you-go) or compare against **$200 / 25,000-credit** packs.
+> Monthly credits ≈ users × interactions per user × credits per interaction
+> then **× $0.01** (pay-as-you-go) or compare against $200 / 25,000-credit packs.
 
 Worked example *(a paid scenario — say a customer-facing agent, or unlicensed users)*: 200 users × 20 interactions/month × ~8 credits each ≈ **32,000 credits/month**. Three ways that lands:
 
@@ -219,10 +219,10 @@ Worked example *(a paid scenario — say a customer-facing agent, or unlicensed 
 
 Consumption billing is **off by default** — turning it on is also where you set the guardrails:
 
-- **Activate deliberately.** A tenant admin enables credits in the **Microsoft 365 admin centre** (for Copilot Chat agents) or links an environment to an Azure subscription with a **billing policy** in the **Power Platform admin centre** (for Copilot Studio). That activation step is where you set the rules of the road.
+- **Activate deliberately.** A tenant admin enables credits in the **Microsoft 365 admin centre** (for Copilot Chat agents) or links an environment to an Azure subscription with a billing policy in the Power Platform admin centre (for Copilot Studio). That activation step is where you set the rules of the road.
 - **Use credit policies.** You can run up to **10 Copilot credit policies** per tenant, scoping which agents and services can spend, and (for Copilot Chat) running prepaid-only without Azure pay-as-you-go.
-- **Cap per agent.** Admins can set **monthly consumption limits on individual agents**, plus alert emails as usage approaches a threshold.
-- **Monitor usage.** For Copilot Studio, the **Power Platform admin centre → Licensing → Copilot Studio** view shows prepaid capacity, pay-as-you-go credits, consumption by product and environment, and billed versus non-billable credits. For Microsoft 365 pay-as-you-go, billing also surfaces in the **Microsoft 365 admin centre** and **Azure Cost Management**.
+- **Cap per agent.** Admins can set monthly consumption limits on individual agents, plus alert emails as usage approaches a threshold.
+- **Monitor usage.** For Copilot Studio, the Power Platform admin centre → Licensing → Copilot Studio view shows prepaid capacity, pay-as-you-go credits, consumption by product and environment, and billed versus non-billable credits. For Microsoft 365 pay-as-you-go, billing also surfaces in the Microsoft 365 admin centre and **Azure Cost Management**.
 - **Separate dev / test / production** environments so experiments don't draw down production capacity.
 
 ---

@@ -29,7 +29,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the feature-tour spoke. Bundled skills can change between releases — this page updates as Microsoft ships. **Last verified: 12 June 2026 · Scout version 0.23.0.20260608.1.**
+🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the feature-tour spoke. Bundled skills can change between releases — this page updates as Microsoft ships. Last verified: 12 June 2026 · Scout version 0.23.0.20260608.1.
 
 </div>
 
@@ -107,7 +107,7 @@ Use fake numbers. Add a SUM total row, a quarterly subtotal column with SUMIF, a
 
 *Scout names both the SKILL (`pptx`) and the underlying library (`pptxgenjs`). Same routing pattern as docx and xlsx.*
 
-**Prompt to try it yourself:**
+Prompt to try it yourself:
 
 ```text
 Create a 5-slide PowerPoint deck called fy26-q1-cloud-review.pptx in my Downloads folder.
@@ -129,7 +129,7 @@ The `loop` skill is fundamentally different from the file-manipulating skills ab
 
 *This is the *"careful keyboard"* pattern at work. Scout signs in, inspects the workspace tree, infers which spaces are personal vs shared, and **asks before guessing**. That's not a bolt-on guardrail — it's literally instructed in the SKILL.md body.*
 
-**Prompt to try it yourself:**
+Prompt to try it yourself:
 
 ```text
 Create a Loop component in my personal Loop workspace.
@@ -148,7 +148,7 @@ Add a heading "Owner & timeline" with one line: "Owner: Cloud Practice Lead · D
 
 *Scout reasons through the layout before generating, then fires the `excalidraw` skill to produce the `.excalidraw` JSON file.*
 
-**Prompt to try it yourself:**
+Prompt to try it yourself:
 
 ```text
 Create an Excalidraw diagram saved as scout-architecture.excalidraw in my Downloads folder,

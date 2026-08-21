@@ -109,7 +109,7 @@ The short version. The [full checklist](#full-checklist) is further down if you 
 | `*.static.microsoft` | 184 | **193** |
 | `*.usercontent.microsoft` | 184 | **193** |
 
-Both are Microsoft, and they disagree. I queried the web service on **19 August 2026** and got the split above. If you import "set 184" and trust it, you get **one of the three required domains** — and you land in exactly the half-working state described below, where Copilot loads but pieces of it quietly don't. Allow all three **by name**. Re-check the web service yourself rather than taking my word or the HTML page's.
+Both are Microsoft, and they disagree. I queried the web service on **19 August 2026** and got the split above. If you import "set 184" and trust it, you get one of the three required domains — and you land in exactly the half-working state described below, where Copilot loads but pieces of it quietly don't. Allow all three by name. Re-check the web service yourself rather than taking my word or the HTML page's.
 
 ## What actually changed
 
@@ -187,7 +187,7 @@ I've deliberately not published tenant-level rollout ring dates. Those come thro
 
 This is the question I'd ask next, and there's now a public answer worth knowing.
 
-Microsoft has moved to a three-tier release model — **Frontier**, **Standard** and **Deferred**. Standard is the default. Deferred gives you an extra **30 days** after broad Standard release before a major update reaches your users, and those features are tagged *"Deferred feature"* in the Message Center.
+Microsoft has moved to a three-tier release model — **Frontier**, Standard and Deferred. Standard is the default. Deferred gives you an extra 30 days after broad Standard release before a major update reaches your users, and those features are tagged *"Deferred feature"* in the Message Center.
 
 | Option | What it means for you |
 |---|---|
@@ -200,10 +200,10 @@ Two things worth knowing before you go looking for the setting:
 - {{< hi >}}This new model currently applies **only to Microsoft 365 Copilot updates** that Microsoft tags as *both* a major update *and* "deferred capable" in the Message Center.{{< /hi >}} Microsoft says it will expand it across other services over time.
 - It isn't available in GCC, GCC High or DoD. Those environments continue with the older targeted and standard release options.
 - You'll need the Office Apps Admin, Security Admin or AI Admin role to configure it.
-- You can set an organisation-wide default and add exceptions for specific groups — but the cap is **100 users, not 100 entries**. Microsoft counts *each user inside a security group* individually, so one 500-person group doesn't fit. A change can also take **up to 24 hours** to take effect.
+- You can set an organisation-wide default and add exceptions for specific groups — but the cap is **100 users, not 100 entries**. Microsoft counts *each user inside a security group* individually, so one 500-person group doesn't fit. A change can also take up to 24 hours to take effect.
 - {{< hi >}}Moving people onto Deferred can *remove* features they already have{{< /hi >}}, if those features haven't reached the deferred ring yet. Say that out loud before you move an executive who has got used to something.
 
-**Where to find it:** Microsoft 365 admin center → **Copilot** → **Settings** → **All Settings** → **Copilot release preferences**.
+**Where to find it:** Microsoft 365 admin center → **Copilot** → Settings → All Settings → Copilot release preferences.
 
 {{< hi >}}And here's the sentence that explains why this change may reach you more quietly than you'd expect.{{< /hi >}} Microsoft's own definition of a "major update" — the class that earns 30 days' notice — includes rebranding that might cause end-user confusion or help-desk load, **"or URL changes if the new URL isn't `*.cloud.microsoft`"**. The new work address *is* `copilot.cloud.microsoft`. By Microsoft's own rule, a move to a `*.cloud.microsoft` address is exactly the kind of URL change that doesn't automatically qualify on the URL grounds alone. Don't wait for a loud announcement to go and check your proxy.
 
@@ -270,9 +270,9 @@ The sign-in piece — the part most admins want — is GA. The article itself ca
 
 This table is the one to take to your identity team. {{< hi >}}These three are not interchangeable. Global Secure Access is the only one Microsoft describes as covering any operating system, browser or device form factor — but its data plane protection is documented for Microsoft Graph only. Windows device management is the one documented for enforcing the data plane more broadly, and Microsoft lists that option as preview.{{< /hi >}} Choosing on convenience rather than coverage leaves a gap you'll believe is closed.
 
-Read the middle row again, too: proxy header injection covers **Chrome**, and Windows device management covers **Edge**. Neither line mentions Firefox. If your estate is mixed, work out which browser is covered by which method before you tell anyone this is handled.
+Read the middle row again, too: proxy header injection covers **Chrome**, and Windows device management covers Edge. Neither line mentions Firefox. If your estate is mixed, work out which browser is covered by which method before you tell anyone this is handled.
 
-**Limits worth knowing before you promise anything:**
+Limits worth knowing before you promise anything:
 
 - − **No per-user granularity for personal accounts.** Microsoft states the policy applies to all users of Microsoft accounts. You do get application-level granularity.
 - − It doesn't block non-user device traffic — Autopilot, Windows Update, organisational data collection.
@@ -287,7 +287,7 @@ If you go the proxy route, three things that coverage table doesn't tell you:
 
 Get the exact header names and values from Microsoft's Tenant Restrictions v2 page rather than from any blog, including this one. Tenant restrictions has both a v1 and a v2 generation, they use different headers, and mixing them up is an easy and expensive mistake.
 
-And watch the platform scoping carefully, because it's easy to misread. Microsoft's blunt line — that tenant restrictions v2 doesn't work where a platform can't do break-and-inspect — sits in the context of the **corporate-proxy method**, which depends on your network being able to inject the header. It is not a statement that every tenant restrictions v2 method fails on non-Windows. Microsoft points those proxy-blocked cases at Conditional Access device-compliance rules and B2B collaboration restrictions instead. Check the limitation against **the specific method you pick**, not against tenant restrictions v2 as a whole — that's the difference between coverage you have and coverage you assume.
+And watch the platform scoping carefully, because it's easy to misread. Microsoft's blunt line — that tenant restrictions v2 doesn't work where a platform can't do break-and-inspect — sits in the context of the **corporate-proxy method**, which depends on your network being able to inject the header. It is not a statement that every tenant restrictions v2 method fails on non-Windows. Microsoft points those proxy-blocked cases at Conditional Access device-compliance rules and B2B collaboration restrictions instead. Check the limitation against the specific method you pick, not against tenant restrictions v2 as a whole — that's the difference between coverage you have and coverage you assume.
 
 ![Microsoft's comparison of tenant restrictions v1 and v2, showing that v2 is managed by a cloud policy in the cross-tenant access policy rather than by a proxy header](/images/blog/copilot-app-unification/03-tenant-restrictions-v2-enforcement.webp "Tenant Restrictions v2 is a sign-in policy you set in Entra, not a network rule. Note the Windows device management option, the one that also covers the data plane, is still in preview.")
 
@@ -295,7 +295,7 @@ And watch the platform scoping carefully, because it's easy to misread. Microsof
 
 Everything above assumes the **Worldwide** cloud, which also covers GCC. If you're somewhere else, the domain is different — and copying `*.cloud.microsoft` into your allow-list won't help you.
 
-I queried Microsoft's endpoint web service for each cloud on **19 August 2026**. Every sovereign cloud publishes its own equivalent of all three domains:
+I queried Microsoft's endpoint web service for each cloud on 19 August 2026. Every sovereign cloud publishes its own equivalent of all three domains:
 
 | Your cloud | The three domains to look for | Endpoint set |
 |---|---|---|
@@ -306,7 +306,7 @@ I queried Microsoft's endpoint web service for each cloud on **19 August 2026**.
 
 There's a small mercy here: in the sovereign clouds all three domains sit in **one** set, so importing that set actually gets you everything. It's only the Worldwide cloud where they're split across two — which is exactly where [the set-ID trap](#domains) bites.
 
-One caveat worth stating plainly: I've verified the **domains and set numbers** above from Microsoft's live endpoint web service. I have **not** verified that the unified Copilot app has shipped in these clouds, or when it will. Sovereign clouds routinely lag Worldwide by months, and Microsoft hasn't published a sovereign timeline for this change. Treat the rows above as "the domains to have ready", not "this is live for you today".
+One caveat worth stating plainly: I've verified the **domains and set numbers** above from Microsoft's live endpoint web service. I have not verified that the unified Copilot app has shipped in these clouds, or when it will. Sovereign clouds routinely lag Worldwide by months, and Microsoft hasn't published a sovereign timeline for this change. Treat the rows above as "the domains to have ready", not "this is live for you today".
 
 Each cloud publishes its own endpoint list and the set numbers differ between them. Use your own cloud's documentation — not this post, and not a Worldwide article someone forwarded you.
 
@@ -324,11 +324,11 @@ This is the Copilot-specific discovery and testing. Your own change process will
 
 **Fix**
 
-4. Add `*.cloud.microsoft` where your tooling supports wildcards — endpoint set **184**, TCP 443 and UDP 443, marked Required. Microsoft's own wording is to add it to organisational allow lists *where appropriate*. This is the domain to verify **for this change** — it isn't a complete Microsoft 365 allow-list, and [sovereign clouds use different domains](#sovereign).
+4. Add `*.cloud.microsoft` where your tooling supports wildcards — endpoint set **184**, TCP 443 and UDP 443, marked Required. Microsoft's own wording is to add it to organisational allow lists *where appropriate*. This is the domain to verify for this change — it isn't a complete Microsoft 365 allow-list, and [sovereign clouds use different domains](#sovereign).
    {{< hi >}}**If your tooling can't do wildcards,** adding `copilot.cloud.microsoft` on its own is a **stopgap, not a fix.**{{< /hi >}} Microsoft publishes a wildcard here precisely because more than one hostname lives under `cloud.microsoft`, and it doesn't enumerate them individually — so a single-host allow gets sign-in working while leaving you exposed to the next hostname Microsoft adds, with no notice. Treat it as a temporary unblock, and put "get wildcard support, or subscribe to the endpoint web service and automate the list" on the actual fix list.
 5. While you're there, allow the other two **unified domains** Microsoft lists alongside it: `*.static.microsoft` (static content on CDNs) and `*.usercontent.microsoft` (content that needs domain isolation). {{< hi >}}Add these two **by name**, not by importing set 184 — the endpoints web service returns them under set **193**, even though the Learn HTML page shows 184.{{< /hi >}} Allowing the first and missing these two is a common way to get a half-working experience rather than a clean failure you'd notice.
 6. Keep `m365.cloud.microsoft` allowed. Microsoft's docs still reference it and I found no published retirement notice. {{< hi >}}Then update everything else that still *identifies* work Copilot by that old host{{< /hi >}} — CASB/SSE app definitions, DLP policy scopes, SIEM detections and dashboards, app-control rules and any reporting that keys off the URL. A network rule you fixed and a DLP policy you forgot is how a control quietly stops matching the traffic it was written for. Re-run your own detections after the change and confirm they still fire.
-7. Fix a broad `copilot` rule by **adding a higher-priority allow for the work address**, not by loosening the deny. Narrowing the deny to the exact consumer host reopens `copilot.com`, `copilot.ai` and `bing.com/copilotsearch` — don't do that until the account-level control is actually in place and your security owner has agreed.
+7. Fix a broad `copilot` rule by adding a higher-priority allow for the work address, not by loosening the deny. Narrowing the deny to the exact consumer host reopens `copilot.com`, `copilot.ai` and `bing.com/copilotsearch` — don't do that until the account-level control is actually in place and your security owner has agreed.
 
 **Test**
 
@@ -350,7 +350,7 @@ Separate question, and one people miss: the desktop app can install itself.
 
 Windows devices running Microsoft 365 Apps **Version 2511** or later install the Microsoft 365 Copilot app automatically. Devices on the Semi-Annual Enterprise Channel don't. Customers in the European Economic Area can't enable it.
 
-To turn that off: **Microsoft 365 Apps admin center** (`config.office.com/officeSettings`) → **Customization** → **Device Configuration** → **Modern Apps settings** → **Microsoft 365 Copilot app** → clear **Enable automatic installation of Microsoft 365 Copilot app** → **Save**.
+To turn that off: **Microsoft 365 Apps admin center** (`config.office.com/officeSettings`) → Customization → Device Configuration → Modern Apps settings → Microsoft 365 Copilot app → clear Enable automatic installation of Microsoft 365 Copilot app → Save.
 
 If you deploy it deliberately through Intune instead, the Store identifier Microsoft uses in its own download link is `9WZDNCRD29V9`.
 

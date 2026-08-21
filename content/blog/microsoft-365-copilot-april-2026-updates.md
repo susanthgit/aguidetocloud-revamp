@@ -57,13 +57,13 @@ Five admin checks worth doing this month, in priority order:
 
 1. **Publish your wake-word guidance before broad adoption.** Wake-word activation raises legitimate privacy and compliance questions even though it only listens when called. **Action:** Check the available Microsoft 365 Copilot and Windows controls in your tenant before promising any tenant-wide allow/restrict policy — your control plane depends on your licensing and current tenant configuration. Then update your AI usage policy and brief users on the wake-word setting in the Copilot app (Settings → Quick View).
 
-2. **Enable Purview DLP for Copilot prompts** if you have not already. The new real-time DLP control (feature #39) blocks Copilot from returning answers when prompts contain sensitive data — critical for regulated industries. **Action:** Microsoft Purview → DLP → create a policy targeted at the new "Microsoft 365 Copilot prompts" surface.
+2. **Enable Purview DLP for Copilot prompts** if you have not already. The new real-time DLP control (feature #39) blocks Copilot from returning answers when prompts contain sensitive data — critical for regulated industries. Action: Microsoft Purview → DLP → create a policy targeted at the new "Microsoft 365 Copilot prompts" surface.
 
 3. **Decide which productivity agents to enable.** PowerPoint, Excel, and Word agents are all gated by tenant-level admin toggles. Decide whether to enable for all, for licensed users only, or for a pilot group. *My note:* start with a pilot if you need usage or governance evidence before broad rollout.
 
 4. **Pilot Custom MCP connectors with one internal system — only where you already have a suitable read-only MCP endpoint and authentication path.** Pick a low-risk line-of-business system (HR knowledge base, finance docs, project tracker) and stand up an MCP connector for it. This puts your team ahead of the May federated-connectors wave and builds the muscle for MCP-based extensibility. *Note:* you will also need Microsoft Entra ID setup and the appropriate admin roles (Global or AI admin) for the registration step.
 
-5. **Review the eight new third-party connectors** (GitLab Issues · Asana · Monday.com · Guru · Coda · Zendesk Help Center · Egnyte · Amazon S3). Decide which to deploy based on what your teams actually use. **Action:** Microsoft 365 admin center → Copilot → Connectors → Gallery.
+5. **Review the eight new third-party connectors** (GitLab Issues · Asana · Monday.com · Guru · Coda · Zendesk Help Center · Egnyte · Amazon S3). Decide which to deploy based on what your teams actually use. Action: Microsoft 365 admin center → Copilot → Connectors → Gallery.
 
 ---
 
@@ -85,7 +85,7 @@ Voice in Microsoft 365 Copilot brings a natural, **hands-free conversational exp
 
 ## 2. Audio Overviews in Word Documents
 
-Copilot can now generate an **audio overview of your Word document** directly from the Summary tab. Instead of reading through a lengthy report, click the **headphones icon** in the AI Summary area at the top of your document and listen to a spoken recap.
+Copilot can now generate an audio overview of your Word document directly from the Summary tab. Instead of reading through a lengthy report, click the **headphones icon** in the AI Summary area at the top of your document and listen to a spoken recap.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> We all receive documents we need to review but don't have time to sit down and read. Audio overviews let you absorb the key points of a 30-page report while walking to your next meeting, driving, or grabbing coffee. It turns passive documents into on-the-go content.</p>
@@ -93,7 +93,7 @@ Copilot can now generate an **audio overview of your Word document** directly fr
 
 <p><img src="/images/blog/copilot-april-2026/02-audio-overviews-word.webp" alt="A Word document with the AI Summary panel pinned to the top — Summary, Insights, Discussion and Activity tabs. The headphones icon for generating an audio overview lives in this same panel area in the document header." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Open a Word document → look for the **headphones icon** in the AI Summary area at the top.
+**How to find it:** Open a Word document → look for the headphones icon in the AI Summary area at the top.
 
 📖 [M365 Roadmap 492615](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=492615)
 
@@ -101,7 +101,7 @@ Copilot can now generate an **audio overview of your Word document** directly fr
 
 *For: All users · Currently rolling out*
 
-The new **PowerPoint Agent** helps you build polished presentations with strong storytelling and visual structure. It handles research, formatting, and layout so you can focus on your message. *([Brand-aware presentation guide →](/blog/microsoft-365-copilot-brand-kit-complete-guide/))* Use **multi-turn chat** to refine content or open the deck in PowerPoint for full editing and collaboration.
+The new **PowerPoint Agent** helps you build polished presentations with strong storytelling and visual structure. It handles research, formatting, and layout so you can focus on your message. *([Brand-aware presentation guide →](/blog/microsoft-365-copilot-brand-kit-complete-guide/))* Use multi-turn chat to refine content or open the deck in PowerPoint for full editing and collaboration.
 
 **Not to be confused with** Feature #6 (Copilot editing inside PowerPoint) — PowerPoint Agent lives in Copilot Chat and creates entire decks from scratch, while #6 is about editing an existing presentation from within PowerPoint itself.
 
@@ -111,7 +111,7 @@ The new **PowerPoint Agent** helps you build polished presentations with strong 
 
 <p><img src="/images/blog/copilot-april-2026/03-powerpoint-agent.webp" alt="Microsoft 365 Copilot Chat with PowerPoint Agent open from the All Agents rail — composer prompt &quot;Describe the presentation you want to create&quot; plus three starter cards: Impact analysis presentation, Market research, and Project update." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Open Copilot Chat → look for **PowerPoint Agent** under 'All Agents' in the left-hand menu.
+**How to find it:** Open Copilot Chat → look for PowerPoint Agent under 'All Agents' in the left-hand menu.
 
 **Who gets it:** Available to Microsoft 365 users **with or without** a Microsoft 365 Copilot licence (your admin must enable it for your tenant).
 
@@ -131,9 +131,9 @@ The **Excel Agent** turns data into clear charts, summaries, and insights using 
 
 <p><img src="/images/blog/copilot-april-2026/04-excel-agent.webp" alt="Microsoft 365 Copilot Chat with Excel Agent open from the All Agents rail — composer prompt &quot;Describe the workbook you want to create&quot; plus three starter cards: Financial model, Sales performance analysis, and Project tracker." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Open Copilot Chat → look for **Excel Agent** under 'All Agents' in the left-hand menu.
+**How to find it:** Open Copilot Chat → look for Excel Agent under 'All Agents' in the left-hand menu.
 
-**Who gets it:** Available **with or without** a paid Copilot licence (your admin must enable it for your tenant).
+**Who gets it:** Available with or without a paid Copilot licence (your admin must enable it for your tenant).
 
 📖 [M365 Roadmap 543422](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=543422)
 
@@ -153,7 +153,7 @@ The **Excel Agent** turns data into clear charts, summaries, and insights using 
 
 **How to find it:** Open Copilot Chat → look for **Word Agent** under 'All Agents' in the left-hand menu.
 
-**Who gets it:** Available to Microsoft 365 users **with or without** a Copilot licence (your admin must enable it for your tenant).
+**Who gets it:** Available to Microsoft 365 users with or without a Copilot licence (your admin must enable it for your tenant).
 
 📖 [M365 Roadmap 543420](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=543420)
 
@@ -177,7 +177,7 @@ Copilot in PowerPoint now lets you **create, edit, and refine presentations** th
 
 *🔄 First introduced in [March 2026](/blog/microsoft-365-copilot-march-2026-updates/#21-overview-page-in-copilot-notebooks) — now generally available.*
 
-Copilot Notebooks now features a **landing page with AI-powered summaries and insights**. When you open a Notebook, you'll see an overview that helps you quickly understand the key themes and content without scrolling through everything. *([Notebook overview brief →](/blog/microsoft-365-copilot-prompting-2026-whats-new/))*
+Copilot Notebooks now features a landing page with AI-powered summaries and insights. When you open a Notebook, you'll see an overview that helps you quickly understand the key themes and content without scrolling through everything. *([Notebook overview brief →](/blog/microsoft-365-copilot-prompting-2026-whats-new/))*
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Notebooks can grow long and messy. The overview page acts like an executive summary — the moment you open a Notebook, you see the key takeaways without having to scroll through pages of notes. It's particularly useful when you're returning to a Notebook days or weeks later and need to quickly remember where you left off.</p>
@@ -239,7 +239,7 @@ Edit your images **directly in PowerPoint** with Copilot — no need to switch a
 
 ## 11. Contextual Explanations in PowerPoint
 
-Right-click on an **acronym, text box, image, or an entire slide** in PowerPoint and choose 'Explain' to get a Copilot-generated detailed contextual explanation. No more guessing what that abbreviation means in someone else's deck.
+Right-click on an acronym, text box, image, or an entire slide in PowerPoint and choose 'Explain' to get a Copilot-generated detailed contextual explanation. No more guessing what that abbreviation means in someone else's deck.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> We've all opened a presentation from another team and found it full of acronyms and jargon we don't recognise. Instead of Googling or asking the author, you can now right-click and get an instant explanation that understands the context of the presentation. This saves time and reduces misunderstandings.</p>
@@ -253,7 +253,7 @@ Right-click on an **acronym, text box, image, or an entire slide** in PowerPoint
 
 *For: Developers and agent builders*
 
-Declarative Agents can now **interpret and ground responses using images** embedded in Word documents, PowerPoint presentations, and PDFs. This means your agents can extract insights from charts, diagrams, and screenshots — delivering answers that are informed by both text and visual context.
+Declarative Agents can now interpret and ground responses using images embedded in Word documents, PowerPoint presentations, and PDFs. This means your agents can extract insights from charts, diagrams, and screenshots — delivering answers that are informed by both text and visual context.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Until now, Declarative Agents could only read text. If your document had a chart showing quarterly revenue or a diagram explaining a process, the agent couldn't "see" it. Now it can. This is a game-changer for organisations whose knowledge base is full of visual content — engineering diagrams, financial charts, process flows, architecture diagrams — all of which are now accessible to your agents.</p>
@@ -263,7 +263,7 @@ Declarative Agents can now **interpret and ground responses using images** embed
 
 ## 13. Calendar Search for Email Delegates
 
-Delegates with existing calendar access can now **search for meetings using Copilot Chat**. If you manage someone else's calendar, this saves significant time by letting Copilot find and surface meeting details on your behalf.
+Delegates with existing calendar access can now search for meetings using Copilot Chat. If you manage someone else's calendar, this saves significant time by letting Copilot find and surface meeting details on your behalf.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Executive assistants and admins who manage calendars for others have been asking for this. Instead of manually scrolling through someone's calendar to find a specific meeting, you can now ask Copilot "When was Sarah's last meeting with the finance team?" and get an instant answer. It respects existing delegate permissions, so there's no additional setup needed.</p>
@@ -307,7 +307,7 @@ The **Workflows app** in Teams now includes AI-powered templates to automate com
 
 *For: Copilot-licensed users*
 
-Previously, Code Interpreter only worked on files you explicitly uploaded or attached. Now, files that **Copilot Chat finds via enterprise search** can be analysed by Code Interpreter without the need to manually link or upload them.
+Previously, Code Interpreter only worked on files you explicitly uploaded or attached. Now, files that Copilot Chat finds via enterprise search can be analysed by Code Interpreter without the need to manually link or upload them.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> This removes a clunky step from the workflow. Before, you had to search for a file, download it, then upload it to Copilot for analysis. Now the entire pipeline is seamless — ask Copilot about a file, it finds it in your organisation's data, and Code Interpreter can immediately run analysis on it. One question, one answer, no manual steps in between.</p>
@@ -333,7 +333,7 @@ Outlook mobile users can now **prepare for their meetings** using Copilot Chat i
 
 ## 18. Copilot Pages in Outlook Mobile
 
-Continue working with Copilot and colleagues while on the go — you can now **view, edit, and share Copilot Pages** on mobile through Outlook.
+Continue working with Copilot and colleagues while on the go — you can now view, edit, and share Copilot Pages on mobile through Outlook.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Copilot Pages are becoming the go-to format for collaborative AI-generated content. Being able to access, edit, and share them from your phone means you're never out of the loop — whether you're reviewing a colleague's draft on the train or sharing insights from your phone during a quick break.</p>
@@ -343,7 +343,7 @@ Continue working with Copilot and colleagues while on the go — you can now **v
 
 ## 19. News AI Audio Briefing in Viva Connections Mobile
 
-An AI-generated **audio overview of the top 10 news items** is now available in the Viva Connections news reader on Teams mobile (iOS and Android). It plays clips sequentially so you can catch up on company news in a hands-free manner.
+An AI-generated audio overview of the top 10 news items is now available in the Viva Connections news reader on Teams mobile (iOS and Android). It plays clips sequentially so you can catch up on company news in a hands-free manner.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Keeping up with company news is important but rarely urgent enough to sit down and read. This feature turns your organisation's news into a podcast-like experience — listen to the top 10 items while walking, driving, or during downtime. It's a simple but powerful way to keep employees informed and engaged.</p>
@@ -409,7 +409,7 @@ The new **Copilot settings landing experience** in the Microsoft 365 admin cente
 
 <p><img src="/images/blog/copilot-april-2026/23-admin-optimize-view.webp" alt="The Microsoft 365 admin center Copilot settings landing experience — Optimize tab selected, three progress cards visible (Deployment essentials 100% complete, Data security 25% complete with 1 of 4 actions done, User experiences 100% complete) and a Required / Recommended / Optional summary band beneath." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Go to **Microsoft 365 admin center → Copilot → Settings**.
+**How to find it:** Go to Microsoft 365 admin center → Copilot → Settings.
 
 📖 [M365 Roadmap 526793](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=526793)
 
@@ -417,7 +417,7 @@ The new **Copilot settings landing experience** in the Microsoft 365 admin cente
 
 *For: IT admins*
 
-The agent metadata export in the Microsoft 365 admin center now includes expanded fields covering **Capabilities, Data Sources, Actions, Created In, and Created By**. This enables enhanced visibility for auditing, governance, and lifecycle tracking.
+The agent metadata export in the Microsoft 365 admin center now includes expanded fields covering Capabilities, Data Sources, Actions, Created In, and Created By. This enables enhanced visibility for auditing, governance, and lifecycle tracking.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters for admins:</strong> As organisations build more agents, governance becomes critical. Who created this agent? What data can it access? What actions can it take? This expanded metadata export gives admins the visibility they need to audit and manage their agent ecosystem — essential for compliance and security reviews.</p>
@@ -458,7 +458,7 @@ This month brings **eight new Copilot Connectors**, letting you search and inter
 <p>💡 <strong>Why it matters:</strong> Every connector that lands means one fewer tab you need to keep open. If your team uses GitLab for code issues and Asana for project tracking, you can now ask Copilot about both without leaving Microsoft 365. The Amazon S3 connector is especially significant for multi-cloud organisations — Copilot now reaches across cloud boundaries.</p>
 </blockquote>
 
-**How to find it:** Your admin deploys connectors from the **Microsoft 365 admin center → Settings → Copilot → Connectors**. Once deployed, simply ask Copilot a question and it searches the connected system.
+**How to find it:** Your admin deploys connectors from the Microsoft 365 admin center → Settings → Copilot → Connectors. Once deployed, simply ask Copilot a question and it searches the connected system.
 
 ## 29. No-Code Publishing for Azure AI Foundry Agents
 
@@ -476,7 +476,7 @@ Developers can now publish Azure AI Foundry Agents directly to the **Microsoft 3
 
 *For: IT admins and developers*
 
-Admins can now configure **custom Model Context Protocol (MCP) connectors** in the Microsoft 365 admin center and deploy them across the organisation. *([MCP governance guide →](/blog/agent-365-security-governance-complete-guide/))* Unlike traditional Graph connectors that index data, MCP connectors are designed for **real-time, federated access** — allowing Copilot to query external systems on the fly, with users authenticating directly to those systems.
+Admins can now configure custom Model Context Protocol (MCP) connectors in the Microsoft 365 admin center and deploy them across the organisation. *([MCP governance guide →](/blog/agent-365-security-governance-complete-guide/))* Unlike traditional Graph connectors that index data, MCP connectors are designed for **real-time, federated access** — allowing Copilot to query external systems on the fly, with users authenticating directly to those systems.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> MCP is the emerging open standard for connecting AI models to external data and tools. Microsoft supporting custom MCP connectors means your organisation can bring virtually any data source into Copilot — internal databases, custom APIs, proprietary systems — without waiting for Microsoft to build a pre-built connector. Because it's real-time and user-authenticated, there's no stale data and permissions are always respected.</p>
@@ -500,7 +500,7 @@ Developers and makers can now **embed knowledge** (PDF, DOC/DOCX, PPT) directly 
 
 *For: IT admins and Copilot champions*
 
-The Copilot Studio agents report in Viva Insights now includes **agents with 'generative' orchestration** and tracks **autonomous agent adoption and impact** — including maker-led time and cost savings.
+The Copilot Studio agents report in Viva Insights now includes **agents with 'generative' orchestration** and tracks autonomous agent adoption and impact — including maker-led time and cost savings.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> As more teams build agents, leadership needs to measure ROI. This enhanced report doesn't just show usage — it quantifies the time and cost savings from autonomous agents. It's the data you need to justify continued investment in agent development and prove business value to stakeholders.</p>
@@ -518,7 +518,7 @@ Track user sentiment of Microsoft 365 Copilot with a new **satisfaction rate met
 <p>💡 <strong>Why it matters:</strong> Usage numbers alone don't tell you if Copilot is actually helping. A user might use Copilot 50 times a day but only find it useful half the time. The satisfaction rate metric gives admins and leaders a direct signal of perceived value — and lets you spot which groups are struggling (so you can provide targeted training) versus which groups are thriving.</p>
 </blockquote>
 
-**How to find it:** Go to **Viva Insights → Copilot Dashboard → Satisfaction** tab.
+**How to find it:** Go to Viva Insights → Copilot Dashboard → Satisfaction tab.
 
 📖 [M365 Roadmap 496655](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=496655)
 
@@ -540,7 +540,7 @@ Microsoft Purview **Data Loss Prevention** now safeguards prompts containing sen
 
 *For: IT admins and Copilot champions · Currently rolling out*
 
-The updated **Copilot adoption Power BI report** comes with a streamlined UX and new **Power User insights**, helping you understand who your most active Copilot users are and how they're driving value.
+The updated **Copilot adoption Power BI report** comes with a streamlined UX and new Power User insights, helping you understand who your most active Copilot users are and how they're driving value.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Knowing your power users is essential for two reasons: they're your best internal champions for driving adoption, and their usage patterns reveal the most effective ways to use Copilot in your organisation. This report surfaces those insights so you can leverage them for training, change management, and executive storytelling.</p>
@@ -552,7 +552,7 @@ The updated **Copilot adoption Power BI report** comes with a streamlined UX and
 
 *For: IT admins (tenants with 1–49 licences) · Currently rolling out*
 
-Microsoft is expanding access to **M365 Copilot Chat Insights** in the Copilot Dashboard by enabling tenants with **1–49 Copilot licences** — so even smaller organisations can track adoption trends, app-level breakdowns, retention, and more.
+Microsoft is expanding access to **M365 Copilot Chat Insights** in the Copilot Dashboard by enabling tenants with 1–49 Copilot licences — so even smaller organisations can track adoption trends, app-level breakdowns, retention, and more.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Previously, the Copilot Dashboard insights were only available to larger tenants. Smaller organisations — who arguably need these insights the most to prove ROI and justify their investment — were left out. This update levels the playing field, giving every organisation visibility into how Copilot is being used and where it's delivering value.</p>

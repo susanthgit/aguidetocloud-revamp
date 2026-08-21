@@ -46,7 +46,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** The Knowledge Agent is in **public preview** (documented by Microsoft under "Copilot in SharePoint" / "AI in SharePoint"); the question-answering **agents in SharePoint** are generally available. **Last verified: 23 June 2026.**
+🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** The Knowledge Agent is in **public preview** (documented by Microsoft under "Copilot in SharePoint" / "AI in SharePoint"); the question-answering agents in SharePoint are generally available. Last verified: 23 June 2026.
 
 </div>
 
@@ -54,16 +54,16 @@ founder_note: |
 
 <p><img src="/images/blog/microsoft-365-knowledge-agent/01-knowledge-agent-menu.webp" alt="A SharePoint document library with the Knowledge Agent (preview) menu open, offering options to Ask a question, Organize this library (highlighted), Set up rules, Create new view, and See more agents. The library toolbar shows AI actions, Forms, and Classify and extract." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The Knowledge Agent menu in a SharePoint document library — **Organize this library**, **Set up rules**, **Create new view**. This is the agent that tidies the library, not the one that answers questions about it.*
+*The Knowledge Agent menu in a SharePoint document library — **Organize this library**, Set up rules, Create new view. This is the agent that tidies the library, not the one that answers questions about it.*
 
 ---
 
 ## TL;DR
 
-- The **Knowledge Agent** organises a **SharePoint document library** — it suggests and **auto-fills metadata columns**, sets up **rules**, and builds **curated views**.
-- It's **not** the same as the question-answering **agents in SharePoint**. One tidies the shelves; the other is the librarian you ask.
-- It **doesn't move, rename or delete files** — only adds structure. Existing permissions still apply.
-- **On-switch:** a **Microsoft 365 Copilot** licence **and** your site/tenant opted in to the **AI in SharePoint** (a.k.a. Copilot in SharePoint) **public preview**.
+- The **Knowledge Agent** organises a SharePoint document library — it suggests and auto-fills metadata columns, sets up rules, and builds curated views.
+- It's **not** the same as the question-answering agents in SharePoint. One tidies the shelves; the other is the librarian you ask.
+- It doesn't move, rename or delete files — only adds structure. Existing permissions still apply.
+- **On-switch:** a **Microsoft 365 Copilot** licence and your site/tenant opted in to the AI in SharePoint (a.k.a. Copilot in SharePoint) public preview.
 - It's in **preview** — Microsoft has shuffled the name (Knowledge Agent → AI in SharePoint → Copilot in SharePoint), so expect change.
 
 > 🧭 **Jump to:** [What it is](#what) · [Auto-fill metadata](#metadata) · [Set up rules](#rules) · [Curated views](#views) · [It won't touch your files](#safe) · [The other SharePoint agents](#qa) · [Turn it on](#enable) · [Admin & security](#admin) · [Common questions](#troubleshooting) · [Sources](#sources)
@@ -72,11 +72,11 @@ founder_note: |
 
 ## What it is — and the name to watch {#what}
 
-The **Knowledge Agent** is an AI assistant built into SharePoint that keeps a document library **organised** — well-tagged, rule-driven and easy to browse. You open it from a floating button in a document library and pick what you want it to do: **organise the library**, **set up rules**, or **create a view**.
+The Knowledge Agent is an AI assistant built into SharePoint that keeps a document library **organised** — well-tagged, rule-driven and easy to browse. You open it from a floating button in a document library and pick what you want it to do: organise the library, set up rules, or create a view.
 
-One heads-up on naming, because it's genuinely confusing: Microsoft now documents this under **"Copilot in SharePoint"** (which the docs say was *"previously referred to as AI in SharePoint"*), while the agent itself is still labelled **"Knowledge Agent (preview)"** in the product. Same capability — the brand is just settling.
+One heads-up on naming, because it's confusing: Microsoft now documents this under **"Copilot in SharePoint"** (which the docs say was *"previously referred to as AI in SharePoint"*), while the agent itself is still labelled "Knowledge Agent (preview)" in the product. Same capability — the brand is just settling.
 
-And the bigger distinction, which the next sections build on: this agent works on the library's **structure**. The other SharePoint agent — covered [below](#qa) — works on its **content**.
+And the bigger distinction, which the next sections build on: this agent works on the library's **structure**. The other SharePoint agent — covered [below](#qa) — works on its content.
 
 <p><img src="/images/blog/microsoft-365-knowledge-agent/06-knowledge-before-entry.webp" alt="A SharePoint document library for a Zava Product Team site showing an untagged list of files — Core Pitch.docx, Fall campaign.docx, Fiber Presentation.pptx and more — with only Name, Modified and Modified By columns, and an Open Knowledge Agent floating button in the bottom-right corner." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -126,7 +126,7 @@ When you're happy, you save it — either over the current view or as a new one,
 
 ## It won't touch your files {#safe}
 
-Worth saying plainly, because "an AI that reorganises my library" makes people nervous: the Knowledge Agent **does not move, rename or delete files.** It only adds columns, metadata, rules and views. And **existing permissions and access controls still apply** — nobody sees a file through a new view that they couldn't already open. The agent may need a little time to process a library after you apply changes, and you can watch the processing status while it works.
+Worth saying plainly, because "an AI that reorganises my library" makes people nervous: the Knowledge Agent does not move, rename or delete files. It only adds columns, metadata, rules and views. And existing permissions and access controls still apply — nobody sees a file through a new view that they couldn't already open. The agent may need a little time to process a library after you apply changes, and you can watch the processing status while it works.
 
 ---
 
@@ -134,7 +134,7 @@ Worth saying plainly, because "an AI that reorganises my library" makes people n
 
 This is the agent people usually mean when they say "the SharePoint agent," and it's a **different** thing from the Knowledge Agent.
 
-Every SharePoint site ships with a **ready-made agent** that answers questions grounded in that site's pages and documents — and it only answers based on what **you personally** have permission to see. People with edit rights can also build **custom agents** scoped to particular files or libraries, and share them into Teams chats and meetings.
+Every SharePoint site ships with a **ready-made agent** that answers questions grounded in that site's pages and documents — and it only answers based on what you personally have permission to see. People with edit rights can also build custom agents scoped to particular files or libraries, and share them into Teams chats and meetings.
 
 | | **Knowledge Agent** | **Agents in SharePoint** |
 |---|---|---|
@@ -143,13 +143,13 @@ Every SharePoint site ships with a **ready-made agent** that answers questions g
 | **Status** | Preview | Generally available |
 | **Unlocked by** | M365 Copilot + preview opt-in | M365 Copilot **or** pay-as-you-go |
 
-These question-answering agents are **generally available**, and they have a second licensing path: an admin can set up **pay-as-you-go** billing so unlicensed users can use them too (billed per query; Copilot-licensed users aren't charged).
+These question-answering agents are **generally available**, and they have a second licensing path: an admin can set up pay-as-you-go billing so unlicensed users can use them too (billed per query; Copilot-licensed users aren't charged).
 
 ---
 
 ## Turning it on {#enable}
 
-For the **Knowledge Agent** (the library organiser, in preview):
+For the Knowledge Agent (the library organiser, in preview):
 
 1. **A Microsoft 365 Copilot licence.**
 2. **Your site or tenant opted in to the AI in SharePoint public preview.** Sites that aren't opted in don't get these features — this is the step people miss (an admin opts a site, or the whole tenant, in).
@@ -165,9 +165,9 @@ For the **question-answering agents in SharePoint** (GA): no activation needed �
 
 Two questions come up the moment anyone serious looks at this: *who can use it*, and *can it leak data?*
 
-- **It's security-trimmed.** Agents in SharePoint answer the same way Copilot in other Microsoft 365 apps does: based on **what that user is already allowed to see**. So the agent won't surface a file to someone who couldn't already open it.
-- **Who gets access.** Two paths — a **Microsoft 365 Copilot** licence, or, for unlicensed users, the **pay-as-you-go** billing an admin sets up (scoped by security group).
-- **Fine-grained control.** Under the Copilot licence, an admin can turn the **"Microsoft 365 Copilot for SharePoint"** service plan on or off per user — but note it also controls Copilot in **OneDrive** and SharePoint **page authoring** for that person, so it isn't a SharePoint-agents-only switch.
+- **It's security-trimmed.** Agents in SharePoint answer the same way Copilot in other Microsoft 365 apps does: based on what that user is already allowed to see. So the agent won't surface a file to someone who couldn't already open it.
+- **Who gets access.** Two paths — a Microsoft 365 Copilot licence, or, for unlicensed users, the pay-as-you-go billing an admin sets up (scoped by security group).
+- **Fine-grained control.** Under the Copilot licence, an admin can turn the **"Microsoft 365 Copilot for SharePoint"** service plan on or off per user — but note it also controls Copilot in OneDrive and SharePoint page authoring for that person, so it isn't a SharePoint-agents-only switch.
 - **Removing the ready-made agent.** Admins can take the ready-made agent off specific sites using a **restricted content discovery** policy, from the SharePoint admin center.
 
 ---

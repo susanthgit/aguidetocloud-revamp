@@ -48,7 +48,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** The Planner Agent (formerly the **Project Manager agent**) is **generally available** in both basic and premium Planner plans. **Last verified: 23 June 2026.**
+🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** The Planner Agent (formerly the **Project Manager agent**) is generally available in both basic and premium Planner plans. Last verified: 23 June 2026.
 
 </div>
 
@@ -62,11 +62,11 @@ founder_note: |
 
 ## TL;DR
 
-- The **Planner Agent** — Microsoft's new name for the **Project Manager agent** — lives inside **Microsoft Planner** and is **generally available**.
-- It does three things: **build a task plan from a goal** (premium plans), **work tasks you assign it** and return the result in the task, and **write status reports**. You can also **chat** with it.
-- **On-switch:** a **Microsoft 365 Copilot** licence. Generating a plan from a goal additionally needs a **premium Planner plan** (Plan 1 / Project Plan 3 or 5).
-- It's **enabled by default** in shared plans; find it via the floating button and **assign a task to it** to put it to work.
-- It can use **files you add to the plan** as grounding, and it **cites** what it used.
+- The **Planner Agent** — Microsoft's new name for the Project Manager agent — lives inside Microsoft Planner and is generally available.
+- It does three things: build a task plan from a goal (premium plans), **work tasks you assign it** and return the result in the task, and write status reports. You can also chat with it.
+- **On-switch:** a **Microsoft 365 Copilot** licence. Generating a plan from a goal additionally needs a premium Planner plan (Plan 1 / Project Plan 3 or 5).
+- It's **enabled by default** in shared plans; find it via the floating button and assign a task to it to put it to work.
+- It can use files you add to the plan as grounding, and it **cites** what it used.
 - **Not in government clouds**; supports the Copilot languages **except Hebrew and Arabic**.
 
 > 🧭 **Jump to:** [What it is & the rename](#what) · [How to access it](#access) · [A plan from a goal](#goals) · [Ground it in your files](#ground) · [Chat & assign work](#chat) · [Status reports](#reports) · [Licensing](#licensing) · [Troubleshooting](#troubleshooting) · [Limits](#limits) · [Sources](#sources)
@@ -75,9 +75,9 @@ founder_note: |
 
 ## What it is — and the name change {#what}
 
-The **Planner Agent** is a teammate that lives inside a Planner plan. In Microsoft's own words, it *"works alongside your team to help you get work done faster — it can execute tasks, act on feedback, and write status reports."*
+The Planner Agent is a teammate that lives inside a Planner plan. In Microsoft's own words, it *"works alongside your team to help you get work done faster — it can execute tasks, act on feedback, and write status reports."*
 
-First, the name. You'll see this called both **"Project Manager agent"** and **"Planner Agent"** — Microsoft **renamed** it to the Planner Agent, and that's the current name, but the product still shows "Project Manager" in a few spots (like the board column above) and some older help pages haven't caught up. Same agent, two names.
+First, the name. You'll see this called both **"Project Manager agent"** and "Planner Agent" — Microsoft renamed it to the Planner Agent, and that's the current name, but the product still shows "Project Manager" in a few spots (like the board column above) and some older help pages haven't caught up. Same agent, two names.
 
 You work with it the way you'd work with a person: there's an **Assign to Project Manager** lane on the board, and moving a task there hands the agent the job.
 
@@ -90,23 +90,23 @@ Good news: there's almost nothing to "install." The Planner Agent is **on by def
 **In a basic plan** (shared with a Microsoft 365 Group):
 
 1. Create or open a basic plan shared with a group.
-2. Open the agent from the **floating button in the bottom-right** of the plan. From there you can upload files as context under **Knowledge sources**.
+2. Open the agent from the **floating button in the bottom-right** of the plan. From there you can upload files as context under Knowledge sources.
 3. **Assign a task to "Planner Agent"** to put it to work — you're added to the task too, so you can follow its progress.
-4. Once the plan has **at least 10 tasks**, open the **Reports** tab to generate a status report.
+4. Once the plan has **at least 10 tasks**, open the Reports tab to generate a status report.
 
 **In a premium plan:** it's enabled by default — open any shared premium plan and assign a task, or use the **Goals** view to turn a goal into a plan (premium only).
 
-> 📎 **Three places it shows up:** inside a **Planner** plan (the floating button), in the **Planner app in Teams**, and as the **Planner Agent in Microsoft 365 Copilot Chat** — a separate chat experience where you can ask about your tasks and plans across all your Planner work.
+> 📎 **Three places it shows up:** inside a **Planner** plan (the floating button), in the Planner app in Teams, and as the Planner Agent in Microsoft 365 Copilot Chat — a separate chat experience where you can ask about your tasks and plans across all your Planner work.
 
 ---
 
 ## Building a plan from a goal {#goals}
 
-This is the feature people come for. On the **Goals** view (a premium Planner feature), you write a high-level goal and select **Generate tasks**, and the agent breaks it into a worked task list.
+This is the feature people come for. On the Goals view (a premium Planner feature), you write a high-level goal and select **Generate tasks**, and the agent breaks it into a worked task list.
 
 <p><img src="/images/blog/microsoft-365-project-manager-agent/03-pma-generate-tasks.webp" alt="The Planner Goals view with two goals. The top goal, 'Achieve a customer satisfaction score of 90% or higher', shows Connect tasks and Generate tasks buttons. A second goal about launching AuraFit is expanded into a list of ten generated tasks." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*Write a goal, select **Generate tasks**, and the agent proposes the task breakdown.*
+*Write a goal, select Generate tasks, and the agent proposes the task breakdown.*
 
 What you get back is a real, dated task list under the goal — owners, priorities and finish dates included — that you can then edit like any other Planner tasks.
 
@@ -120,7 +120,7 @@ What you get back is a real, dated task list under the goal — owners, prioriti
 
 ## Grounding it in your files {#ground}
 
-The agent is more useful when it knows your context. Add files to the plan as **knowledge sources**, and it uses them when it generates tasks or works a job.
+The agent is more useful when it knows your context. Add files to the plan as knowledge sources, and it uses them when it generates tasks or works a job.
 
 <p><img src="/images/blog/microsoft-365-project-manager-agent/04-pma-knowledge-sources.webp" alt="The Planner Goals view with a file picker open, listing recent files to add as context — a Business Proposal grounding document, a Copilot Template, an R and D Presentation — with a note advising to select a file that isn't sensitive or confidential because it will be shared with plan members." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -136,23 +136,23 @@ When it produces a longer output, it shows the **sources** it drew on — so the
 
 ## Chatting with it and assigning work {#chat}
 
-Open the agent from the floating button and you get a chat panel with prompt starters — **create**, **understand**, **edit**, **ask** — for spinning up tasks, asking about progress, or adding subtasks.
+Open the agent from the floating button and you get a chat panel with prompt starters — **create**, understand, edit, ask — for spinning up tasks, asking about progress, or adding subtasks.
 
 <p><img src="/images/blog/microsoft-365-project-manager-agent/06-pma-chat.webp" alt="The Project Manager agent side panel, labelled Private, with prompt-starter cards for Create, Understand, Edit and Ask, a Chat history button, and suggestion chips like 'Create a goal to double social media interactions' and 'Create a task to schedule a kickoff meeting'." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *The agent's chat panel. The prompt starters are a quick way in if you're not sure what to ask.*
 
-To put it to work on a specific task, **assign that task to "Planner Agent."** It reads the task in the context of the whole plan, does the job, and returns the result inside the task — and you're added as a watcher so you see when it's done.
+To put it to work on a specific task, assign that task to "Planner Agent." It reads the task in the context of the whole plan, does the job, and returns the result inside the task — and you're added as a watcher so you see when it's done.
 
 <p><img src="/images/blog/microsoft-365-project-manager-agent/09-pma-task-output.webp" alt="A Planner task 'Conduct market research for AI-powered wellness rings' open in detail, marked Ready, with a banner noting the Project Manager agent is using the latest web content, then a 'Project Manager in Planner — Latest status' section with a Regenerate button and the agent's generated market-research report embedded inside the task." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*What you get back lands **inside the task** as a Loop page, with a **Regenerate** button — so you can give feedback and have it try again without ever leaving the task. (The banner notes the agent is using the latest web content, governed by an admin setting.)*
+*What you get back lands **inside the task** as a Loop page, with a Regenerate button — so you can give feedback and have it try again without ever leaving the task. (The banner notes the agent is using the latest web content, governed by an admin setting.)*
 
 ---
 
 ## Status reports {#reports}
 
-Writing a status update is the chore the agent quietly removes. In the **Reports** tab you set a period and what it should cover, and it drafts the report for you.
+Writing a status update is the chore the agent quietly removes. In the Reports tab you set a period and what it should cover, and it drafts the report for you.
 
 <p><img src="/images/blog/microsoft-365-project-manager-agent/08-pma-report-config.webp" alt="A panel titled 'Start creating a status report with AI' with a Report period dropdown set to Last week and an optional field for what the report should cover, set to 'Create an update on high-priority items for the team', alongside an illustration to create your first status report with AI." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -196,7 +196,7 @@ The questions that come up most, with plain answers:
 ## Limits and good-to-knows {#limits}
 
 - **Status reports need ≥10 tasks** in the plan before the agent will write one.
-- **Languages:** the Copilot language set **except Hebrew and Arabic**.
+- **Languages:** the Copilot language set except Hebrew and Arabic.
 - **Government clouds:** not available in **GCC, GCC High or DoD**.
 - **Stale docs warning:** the main Planner FAQ still says "public preview" in places — the agent is **GA**; trust the agent-specific FAQ.
 - **AI output is a draft.** Planner labels generated content as possibly incorrect — review before you rely on it.

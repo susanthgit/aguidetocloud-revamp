@@ -46,7 +46,7 @@ founder_note: |
 
 Here's a conversation I keep having. An IT admin tells me: "We've deployed Copilot. It's great. People love it." And then they pause and say: "But my CISO just asked me — how do we actually *govern* this thing?"
 
-That question — **how do we control AI safely at enterprise scale?** — is exactly what the Copilot Control System answers. And if you're also hearing about Agent 365 and wondering how the two fit together (or if one replaces the other), you're not alone. I've seen this confuse Microsoft partners, IT pros, and even some folks inside Microsoft.
+That question — how do we control AI safely at enterprise scale? — is exactly what the Copilot Control System answers. And if you're also hearing about Agent 365 and wondering how the two fit together (or if one replaces the other), you're not alone. I've seen this confuse Microsoft partners, IT pros, and even some folks inside Microsoft.
 
 Let me untangle it for you.
 
@@ -88,8 +88,8 @@ If someone stops you in the hallway and asks "what's the Copilot Control System?
 Let's start with what CCS is *not* — because that clears up most of the confusion.
 
 - ❌ It's **not** a product
-- ❌ It's **not** a new licence or SKU
-- ❌ It's **not** a single admin portal
+- ❌ It's not a new licence or SKU
+- ❌ It's not a single admin portal
 
 CCS is a **governance framework**. It's a collection of controls and capabilities that are spread across tools you probably already use — the Microsoft 365 Admin Center, Microsoft Purview, Microsoft Defender, SharePoint Admin, and the Power Platform Admin Center *(the [deployment checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) maps these to rollout work).*
 
@@ -212,7 +212,7 @@ I totally understand the confusion. Here's the simple version.
 
 ### The Mental Model
 
-Imagine your organisation as a company that has both **human employees** and **robot workers**.
+Imagine your organisation as a company that has both **human employees** and robot workers.
 
 - **CCS** is your **HR department** — it manages how humans interact with AI tools. Who gets access? What data can they reach? Are they using it appropriately?
 - **Agent 365** is your **robot workforce management system** — it manages the robots themselves. Which robots do you have? What are they allowed to do? Who built them? Are any going rogue?
@@ -348,35 +348,35 @@ These are the questions I keep hearing — from customers, partners, and fellow 
 
 <div class="blog-faq">
 
-**1. What is the Copilot Control System?**
+1. What is the Copilot Control System?
 
 The Copilot Control System (CCS) is a governance framework — not a product and not a separate licence. It's a collection of integrated controls across Microsoft 365 that help IT teams secure, manage, and measure how people use Copilot and agents. Think of it as the operations manual for AI in your organisation. The controls live inside tools you probably already own — the M365 Admin Center, Purview, Defender, SharePoint Admin, and Power Platform Admin Center.
 
-**2. Is CCS a product I need to buy?**
+2. Is CCS a product I need to buy?
 
 No — and this is the part that surprises most people. CCS is not a SKU. There's nothing to purchase separately. The capabilities are distributed across your existing Microsoft 365 licences. E3 already gives you basic DLP, eDiscovery, and admin controls. E5 significantly expands those with advanced Purview, Defender, and compliance features. Adding a Copilot licence unlocks Copilot Analytics and SharePoint Advanced Management. You're probably already paying for most of CCS without realising it.
 
-**3. How is CCS different from Agent 365?**
+3. How is CCS different from Agent 365?
 
-The simplest way to remember it: CCS governs how **people use AI** (the Copilot experience), while Agent 365 governs how **AI works for people** (agents acting autonomously). CCS is a framework built into your existing licences. Agent 365 is a product you buy separately at $15/user/month (or get included with Microsoft 365 E7). If you only use Copilot, CCS has you covered. The moment you start deploying AI agents at scale, Agent 365 becomes essential.
+The simplest way to remember it: CCS governs how **people use AI** (the Copilot experience), while Agent 365 governs how AI works for people (agents acting autonomously). CCS is a framework built into your existing licences. Agent 365 is a product you buy separately at $15/user/month (or get included with Microsoft 365 E7). If you only use Copilot, CCS has you covered. The moment you start deploying AI agents at scale, Agent 365 becomes essential.
 
-**4. Do I need both CCS and Agent 365?**
+4. Do I need both CCS and Agent 365?
 
 It depends on where you are in your AI journey. If you're only deploying Microsoft 365 Copilot today, CCS gives you everything you need — data protection, compliance, usage analytics. But if your organisation is building or deploying AI agents (through Copilot Studio, third-party tools, or custom solutions), you'll want Agent 365 for agent identity, lifecycle management, and centralised governance. They complement each other — they're not competing products.
 
-**5. What licence do I need for CCS capabilities?**
+5. What licence do I need for CCS capabilities?
 
 CCS capabilities scale with your existing licences. E3 with Copilot gives you basic admin controls, SharePoint management, baseline DLP, and standard eDiscovery. E5 with Copilot expands significantly — advanced Purview DLP (including for Copilot prompts), Defender XDR, Insider Risk Management, advanced eDiscovery, and full audit. Copilot Analytics is included with the Copilot licence itself. No separate CCS licence to buy.
 
-**6. What are the 3 pillars of CCS?**
+6. What are the 3 pillars of CCS?
 
 Security and Governance (protecting data, detecting risky AI behaviour, ensuring compliance), Management Controls (deciding who gets Copilot, managing agents, controlling rollout), and Measurement and Reporting (tracking adoption, measuring productivity impact, demonstrating ROI). Together, they answer the three questions every CISO asks: Is it safe? Who controls it? Is it working?
 
-**7. Can CCS prevent Copilot from leaking sensitive data?**
+7. Can CCS prevent Copilot from leaking sensitive data?
 
 Yes — through multiple layers. Copilot already respects your existing permissions (it can only access what a user can access). Sensitivity labels add another layer of data classification. Purview DLP policies can detect sensitive information in Copilot prompts and block responses grounded in that data. SharePoint Advanced Management helps you find overshared content before Copilot surfaces it. The key insight: most "Copilot data leakage" is actually a pre-existing oversharing problem that Copilot makes visible.
 
-**8. When does Agent 365 become available?**
+8. When does Agent 365 become available?
 
 Agent 365 reaches general availability on May 1, 2026. It will be available as a standalone add-on at $15/user/month for any Microsoft 365 plan that includes Copilot, or included in the new [Microsoft 365 E7](https://www.microsoft.com/en-us/microsoft-365/enterprise/e7) at $99/user/month.
 

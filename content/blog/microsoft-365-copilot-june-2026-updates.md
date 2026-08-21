@@ -33,9 +33,9 @@ founder_note: |
   Something small made my week: a colleague messaged to say Copilot Chat had cited last month's recap as one of its sources. That's the whole point — if a page is good enough for Copilot to quote, maybe it's good enough to save you an afternoon. June was a big one to get right: Build 2026 introduced Microsoft Scout, and Cowork reached general availability.
 ---
 
-**The short version — what's new in Microsoft 365 Copilot for June 2026:** this was a **Build** month. **Microsoft Scout** — Microsoft's first *"Autopilot"* agent — was unveiled at Build 2026, and **Copilot Cowork reached general availability**. In Copilot Chat you can now pick **Anthropic's Claude** as a model, and the **Federated Connectors** that arrived in preview last month are now **generally available**.
+**The short version — what's new in Microsoft 365 Copilot for June 2026:** this was a **Build** month. Microsoft Scout — Microsoft's first *"Autopilot"* agent — was unveiled at Build 2026, and Copilot Cowork reached general availability. In Copilot Chat you can now pick Anthropic's Claude as a model, and the Federated Connectors that arrived in preview last month are now generally available.
 
-The rest — **Copilot editing your Word document by default**, a new **FLUX.2** image model in PowerPoint, the **Work IQ APIs** reaching GA, and a wave of **admin, governance and agent** updates — is below, each in plain English with what it actually means for you.
+The rest — Copilot editing your Word document by default, a new **FLUX.2** image model in PowerPoint, the Work IQ APIs reaching GA, and a wave of admin, governance and agent updates — is below, each in plain English with what it actually means for you.
 
 📅 **2026 monthly recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · [May](/blog/microsoft-365-copilot-may-2026-updates/) · June (you are here)
 
@@ -55,11 +55,11 @@ Three to start with:
 
 Five things worth doing this month, in priority order:
 
-1. **Decide on Cowork before your users ask.** Cowork is **off by default**. Before you switch it on, review **usage-based billing** and set **spending limits** at the tenant, group and user level (Microsoft 365 admin centre → Copilot). Decide who gets it, and start with a pilot group.
-2. **Govern the new models per group.** You can enable **Anthropic (Claude) and other models for specific users or groups**, not just tenant-wide. Decide your policy in the admin centre before broad rollout.
-3. **Re-check Federated Connectors now they're GA.** They're **admin-governed** in Microsoft 365 admin centre → Copilot → Connectors, with a **7-day review window** before a connector reaches end users. Review which are enabled and stage rollout to groups.
-4. **Plan Scout access if you want early hands-on.** Microsoft Scout is **Frontier-only** and needs an **Intune policy**, **admin attestation** and **GitHub Copilot** licences. Read the deep dive before you enrol.
-5. **Brief security on the new Purview controls.** Three are worth a look: **DLP that keeps external email out of Copilot**, the **Data Security Triage Agent**, and the **new DSPM with AI observability** that now covers agents and Microsoft Agent 365.
+1. **Decide on Cowork before your users ask.** Cowork is **off by default**. Before you switch it on, review usage-based billing and set spending limits at the tenant, group and user level (Microsoft 365 admin centre → Copilot). Decide who gets it, and start with a pilot group.
+2. **Govern the new models per group.** You can enable Anthropic (Claude) and other models for specific users or groups, not just tenant-wide. Decide your policy in the admin centre before broad rollout.
+3. **Re-check Federated Connectors now they're GA.** They're **admin-governed** in Microsoft 365 admin centre → Copilot → Connectors, with a 7-day review window before a connector reaches end users. Review which are enabled and stage rollout to groups.
+4. **Plan Scout access if you want early hands-on.** Microsoft Scout is **Frontier-only** and needs an Intune policy, admin attestation and GitHub Copilot licences. Read the deep dive before you enrol.
+5. **Brief security on the new Purview controls.** Three are worth a look: DLP that keeps external email out of Copilot, the **Data Security Triage Agent**, and the new DSPM with AI observability that now covers agents and Microsoft Agent 365.
 
 ---
 
@@ -67,7 +67,7 @@ Five things worth doing this month, in priority order:
 
 *For: Frontier-program users (admin-gated) · Preview · Windows 11+ and macOS 12+*
 
-The biggest news of the month came out of **[Microsoft Build 2026](/blog/microsoft-build-2026-recap/)**: **Microsoft Scout**, which Microsoft calls its **first "Autopilot" agent**. If a Copilot waits for you to ask, an *Autopilot* is **always on** — it works in the background, on a schedule you set, under its **own identity**, and acts on your behalf.
+The biggest news of the month came out of **[Microsoft Build 2026](/blog/microsoft-build-2026-recap/)**: Microsoft Scout, which Microsoft calls its **first "Autopilot" agent**. If a Copilot waits for you to ask, an *Autopilot* is always on — it works in the background, on a schedule you set, under its own identity, and acts on your behalf.
 
 Scout is a **desktop app** (Windows 11+ and macOS 12+) that can:
 
@@ -76,7 +76,7 @@ Scout is a **desktop app** (Windows 11+ and macOS 12+) that can:
 - **drive a browser** — navigate pages and fill in forms;
 - **reach into Microsoft 365** — Teams, Outlook, OneDrive and SharePoint, plus your mail, calendar and contacts.
 
-It remembers your preferences across conversations, can run on a **heartbeat** (checking in every 15–120 minutes while you're away), and can hand work to specialised **sub-agents**. Under the hood it's built on the **OpenClaw** open-source project and grounded by **Work IQ** — and every agent runs under its **own Microsoft Entra identity**, with **Microsoft Purview** data protections enforced in the moment.
+It remembers your preferences across conversations, can run on a **heartbeat** (checking in every 15–120 minutes while you're away), and can hand work to specialised sub-agents. Under the hood it's built on the OpenClaw open-source project and grounded by Work IQ — and every agent runs under its own Microsoft Entra identity, with Microsoft Purview data protections enforced in the moment.
 
 {{< margin >}}An "Autopilot" is the always-on cousin of a Copilot — it acts without being asked each time.{{< /margin >}}
 
@@ -96,14 +96,14 @@ Scout is in the **Frontier preview** today, and needs a Microsoft 365 Copilot li
 
 *For: Microsoft 365 Copilot–licensed users (an admin enables it) · Generally available — 16 June*
 
-**Copilot Cowork** reached **general availability** on **16 June 2026**. Where Copilot Chat answers questions, **Cowork does the work** — longer, multi-step tasks that span several apps. It runs in a **secure cloud-hosted environment**, which means your **tasks keep going even when your laptop is off**, and your files aren't stored on the device.
+**Copilot Cowork** reached **general availability** on 16 June 2026. Where Copilot Chat answers questions, Cowork does the work — longer, multi-step tasks that span several apps. It runs in a secure cloud-hosted environment, which means your tasks keep going even when your laptop is off, and your files aren't stored on the device.
 
 A few things worth knowing:
 
-- It's **off by default** — an admin turns Cowork on for the tenant and decides who gets it, with **spending limits** at the tenant, group and user level.
-- Billing is **consumption-based**: pay-as-you-go at **$0.01 per [Copilot Credit](/blog/copilot-credits-explained/)**, or a **prepaid commitment** plan for a discount. The cost of each task is worked out from four things — the model it uses, how much context it pulls in, the tools it calls, and how long it runs.
-- It ships with **13 built-in skills** (Word, Excel, PowerPoint, PDF, Email, Scheduling, Calendar Management, Meetings, Daily Briefing, Enterprise Search, Communications, Deep Research and Adaptive Cards), and you can build up to **50 of your own**.
-- You'll find it in your **browser**, the **Microsoft 365 Copilot desktop apps** (Windows and Mac), the **mobile app** (iOS and Android), and in **Outlook and Teams** — you switch to it with a **toggle** next to Chat.
+- It's off by default — an admin turns Cowork on for the tenant and decides who gets it, with spending limits at the tenant, group and user level.
+- Billing is **consumption-based**: pay-as-you-go at $0.01 per [Copilot Credit](/blog/copilot-credits-explained/), or a prepaid commitment plan for a discount. The cost of each task is worked out from four things — the model it uses, how much context it pulls in, the tools it calls, and how long it runs.
+- It ships with **13 built-in skills** (Word, Excel, PowerPoint, PDF, Email, Scheduling, Calendar Management, Meetings, Daily Briefing, Enterprise Search, Communications, Deep Research and Adaptive Cards), and you can build up to 50 of your own.
+- You'll find it in your **browser**, the Microsoft 365 Copilot desktop apps (Windows and Mac), the mobile app (iOS and Android), and in Outlook and Teams — you switch to it with a toggle next to Chat.
 
 The base licence is the **Microsoft 365 Copilot** subscription.
 
@@ -127,9 +127,9 @@ The base licence is the **Microsoft 365 Copilot** subscription.
 
 *For: Copilot Chat users (where your admin allows the model) · Generally available — Android, Windows, iOS, Mac and Web*
 
-You can now choose **Anthropic's Claude** as a model inside **Copilot Chat** — useful for deep analysis, understanding long documents, and producing well-structured, multi-step output.
+You can now choose Anthropic's Claude as a model inside **Copilot Chat** — useful for deep analysis, understanding long documents, and producing well-structured, multi-step output.
 
-In the chat composer — right next to **Work IQ** — open the **model switcher** (it's labelled **"Auto"** by default). Alongside the response styles (**Auto**, **Quick Response**, **Think Deeper**) you'll now see the model families: **Opus** — that's Claude — and **GPT** (OpenAI). Pick whichever suits the task.
+In the chat composer — right next to Work IQ — open the **model switcher** (it's labelled "Auto" by default). Alongside the response styles (Auto, Quick Response, Think Deeper) you'll now see the model families: Opus — that's Claude — and GPT (OpenAI). Pick whichever suits the task.
 
 {{< margin >}}Different jobs suit different models — now the choice is yours, in the same chat box.{{< /margin >}}
 
@@ -145,9 +145,9 @@ In the chat composer — right next to **Work IQ** — open the **model switcher
 
 *For: All users (admins manage the connectors) · Generally available*
 
-Last month's headline is now official: the **federated connectors** built on the **Model Context Protocol (MCP)** are **generally available**. Instead of indexing data ahead of time, they **query the source system live, at the moment you ask** — so answers reflect what the system shows right now, every result carries a citation back to the record, and access uses your own identity and permissions.
+Last month's headline is now official: the federated connectors built on the **Model Context Protocol (MCP)** are generally available. Instead of indexing data ahead of time, they query the source system live, at the moment you ask — so answers reflect what the system shows right now, every result carries a citation back to the record, and access uses your own identity and permissions.
 
-They're available across **Copilot Chat, the [Researcher agent](/blog/microsoft-365-researcher-agent/), and Agent Mode in Excel**. Admins discover, enable, disable and govern them in the **Microsoft 365 admin centre → Copilot → Connectors**, with a **7-day review window** before a connector reaches end users.
+They're available across Copilot Chat, the [Researcher agent](/blog/microsoft-365-researcher-agent/), and Agent Mode in Excel. Admins discover, enable, disable and govern them in the Microsoft 365 admin centre → Copilot → Connectors, with a 7-day review window before a connector reaches end users.
 
 {{< margin >}}Preview last month, generally available this month — and now governed from the admin centre.{{< /margin >}}
 
@@ -165,9 +165,9 @@ We covered the first wave of connectors (Canva, HubSpot, Linear, LSEG, Moody's, 
 
 *For: Word on the web · Available now*
 
-In **Word on the web**, Copilot's default chat can now **edit your document directly** — no more switching "edit mode" on first. Ask it to rewrite a paragraph, add a section or fix formatting, and the change lands **straight in the document**. Every edit is **reviewable and reversible**, and you can switch the behaviour off if you'd rather Copilot only suggest.
+In **Word on the web**, Copilot's default chat can now edit your document directly — no more switching "edit mode" on first. Ask it to rewrite a paragraph, add a section or fix formatting, and the change lands straight in the document. Every edit is reviewable and reversible, and you can switch the behaviour off if you'd rather Copilot only suggest.
 
-In the Copilot pane you'll see an **"Allow editing"** control above the prompt; after a change, Copilot shows **"Reasoning completed in N steps,"** with an **Edit** menu and an **Add to doc** button to fold content in.
+In the Copilot pane you'll see an **"Allow editing"** control above the prompt; after a change, Copilot shows "Reasoning completed in N steps," with an Edit menu and an Add to doc button to fold content in.
 
 {{< margin >}}Less clicking, more writing — Copilot edits in place, and you stay in control.{{< /margin >}}
 
@@ -185,7 +185,7 @@ In the Copilot pane you'll see an **"Allow editing"** control above the prompt; 
 
 *For: Copilot Chat (voice) · Rolling out*
 
-**Copilot Vision** lets you **share your desktop screen** — or your phone's **camera** — during a Copilot **voice** session, so Copilot can *see* what you're looking at and answer in context, grounded in your work and the web. Start a voice chat, share your screen, and ask something like *"What am I looking at — what should I do next?"*
+**Copilot Vision** lets you **share your desktop screen** — or your phone's camera — during a Copilot voice session, so Copilot can *see* what you're looking at and answer in context, grounded in your work and the web. Start a voice chat, share your screen, and ask something like *"What am I looking at — what should I do next?"*
 
 {{< margin >}}Sometimes it's easier to show than to type. This is Copilot looking over your shoulder, on request.{{< /margin >}}
 
@@ -205,7 +205,7 @@ In the Copilot pane you'll see an **"Allow editing"** control above the prompt; 
 
 *For: Developers and admins · Generally available — 16 June*
 
-**Work IQ** — the intelligence layer that grounds Copilot (and Cowork, and Scout) in how you actually work — opened its **APIs for general availability** on 16 June. That means organisations can build the same work-aware intelligence into their **own apps and automations**. One early piece for developers is a **[Researcher agent](/blog/microsoft-365-researcher-agent/) endpoint** (in preview) that lets your own apps tap Copilot's multi-step research and synthesis across your enterprise content.
+**Work IQ** — the intelligence layer that grounds Copilot (and Cowork, and Scout) in how you actually work — opened its **APIs for general availability** on 16 June. That means organisations can build the same work-aware intelligence into their own apps and automations. One early piece for developers is a [Researcher agent](/blog/microsoft-365-researcher-agent/) endpoint (in preview) that lets your own apps tap Copilot's multi-step research and synthesis across your enterprise content.
 
 📎 We wrote a Day-1 guide: **[Microsoft Work IQ API →](/blog/microsoft-work-iq-api-day-1-ga/)**
 
@@ -219,7 +219,7 @@ In the Copilot pane you'll see an **"Allow editing"** control above the prompt; 
 
 *For: Copilot in PowerPoint · Web*
 
-When Copilot generates images in **PowerPoint**, you now get a new model option — **Black Forest Labs' FLUX.2 Flex** — which renders **text-in-images and layouts** more cleanly. Just like in chat, there's an **"Auto"** model switcher; expand it and choose **Flex**.
+When Copilot generates images in **PowerPoint**, you now get a new model option — Black Forest Labs' FLUX.2 Flex — which renders text-in-images and layouts more cleanly. Just like in chat, there's an "Auto" model switcher; expand it and choose Flex.
 
 {{< margin >}}Better text rendering matters most for posters, diagrams and title slides.{{< /margin >}}
 
@@ -235,7 +235,7 @@ When Copilot generates images in **PowerPoint**, you now get a new model option 
 
 *For: Outlook on the web · Rolling out*
 
-Drafting an email, you can now **select a section** and ask Copilot to **rewrite just that part** — change the length, tone or structure — directly in the compose window, without rewriting the whole message.
+Drafting an email, you can now **select a section** and ask Copilot to rewrite just that part — change the length, tone or structure — directly in the compose window, without rewriting the whole message.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> You rarely want to rewrite a whole email — just that one clunky paragraph. Selecting and rewriting a single passage keeps the parts you're happy with and fixes only what you're not.</p>
@@ -249,13 +249,13 @@ Drafting an email, you can now **select a section** and ask Copilot to **rewrite
 
 *For: Planner on the web · Rolling out*
 
-Planner's redesigned **My Tasks** brings your tasks together from across your plans and lists — including flagged emails and Microsoft To Do — into a single view, and **Copilot reads across them to surface what matters most**, so you start the day on the right things instead of the loudest ones.
+Planner's redesigned **My Tasks** brings your tasks together from across your plans and lists — including flagged emails and Microsoft To Do — into a single view, and Copilot reads across them to surface what matters most, so you start the day on the right things instead of the loudest ones.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> When tasks pile up across plans, the hard part isn't seeing them — it's knowing what to do first. Letting Copilot surface your top priorities turns a long list into a starting point.</p>
 </blockquote>
 
-**How to find it:** open Planner on the web and go to **My Tasks**.
+**How to find it:** open Planner on the web and go to My Tasks.
 
 📖 [M365 Roadmap 561204](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561204)
 
@@ -279,7 +279,7 @@ Model-driven apps are the form-and-table business apps makers build on Dataverse
 
 *For: OneDrive on the web · Rolling out*
 
-When you rename or upload a file in **OneDrive**, Copilot can suggest up to **three descriptive names** based on what's actually inside — supported for Word, PowerPoint, Excel, PDF, Markdown and images. A small thing that quietly kills "Document1 (final) (v3).docx."
+When you rename or upload a file in **OneDrive**, Copilot can suggest up to three descriptive names based on what's actually inside — supported for Word, PowerPoint, Excel, PDF, Markdown and images. A small thing that quietly kills "Document1 (final) (v3).docx."
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Good file names are future-you's best friend — they make things findable months later. Letting Copilot suggest a descriptive name removes the tiny friction that leads to "final-final-v2" everywhere.</p>
@@ -291,7 +291,7 @@ When you rename or upload a file in **OneDrive**, Copilot can suggest up to **th
 
 *For: Copilot in PowerPoint · Windows, Web, Mac*
 
-PowerPoint's **Explainer** has grown beyond acronyms, text and tables: **select a shape or an image, right-click**, and Copilot opens the side pane and **describes it in context**. Handy for making sense of a busy diagram, or prepping speaker notes for a slide you didn't build.
+PowerPoint's **Explainer** has grown beyond acronyms, text and tables: select a shape or an image, right-click, and Copilot opens the side pane and describes it in context. Handy for making sense of a busy diagram, or prepping speaker notes for a slide you didn't build.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> So much of the meaning in a deck lives in pictures and shapes, not text. Letting Copilot read those gives you a faster way to review, hand over, or present a deck you're seeing for the first time.</p>
@@ -307,7 +307,7 @@ PowerPoint's **Explainer** has grown beyond acronyms, text and tables: **select 
 
 *For: Copilot in PowerPoint · Windows, Web, Mac*
 
-When Copilot builds slides, it can now pull approved images from **multiple SharePoint Organizational Asset Libraries**, not just one — so it has the full set of your brand-approved visuals to work with. You'll find them under **Insert › Picture › Brand Images**. (You'll only see this if your organisation has those libraries set up.)
+When Copilot builds slides, it can now pull approved images from **multiple SharePoint Organizational Asset Libraries**, not just one — so it has the full set of your brand-approved visuals to work with. You'll find them under Insert › Picture › Brand Images. (You'll only see this if your organisation has those libraries set up.)
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Brand governance works best when it's built into the moment of creation, not bolted on afterwards. Letting Copilot reach every approved library means people use on-brand visuals because they're the easy default — not because someone policed it later.</p>
@@ -321,7 +321,7 @@ When Copilot builds slides, it can now pull approved images from **multiple Shar
 
 *For: Copilot Chat on the web*
 
-On the web, your older Copilot conversations now **load automatically as you scroll** your history — no more clicking "load more." And if you're hunting for a specific thread, the **search icon** opens a dedicated history pane where you can **search by keyword** and **rename** chats.
+On the web, your older Copilot conversations now **load automatically as you scroll** your history — no more clicking "load more." And if you're hunting for a specific thread, the search icon opens a dedicated history pane where you can search by keyword and rename chats.
 
 {{< margin >}}A small quality-of-life win that adds up if you live in Copilot all day.{{< /margin >}}
 
@@ -353,7 +353,7 @@ On the web, your older Copilot conversations now **load automatically as you scr
 
 *For: Copilot in Microsoft Edge · Web*
 
-Copilot in **Microsoft Edge** picked up a visual refresh — updated spacing, corners, fonts and default colours — so it feels consistent with Microsoft's other AI surfaces like Copilot and Bing. It's a **light touch**: if you don't remember the old look you may not notice, and nothing about how it works has changed.
+Copilot in **Microsoft Edge** picked up a visual refresh — updated spacing, corners, fonts and default colours — so it feels consistent with Microsoft's other AI surfaces like Copilot and Bing. It's a light touch: if you don't remember the old look you may not notice, and nothing about how it works has changed.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Honestly, this one's mostly cosmetic — but consistency across Copilot, Bing and Edge means one less thing to relearn when you're helping someone get started.</p>
@@ -378,11 +378,11 @@ Neither is a headline, but both cut daily friction — a voice that suits you, a
 
 June was a big month for *building* agents — if you're weighing your options, our **[Copilot vs Agents vs Copilot Studio](/blog/copilot-vs-agents-vs-copilot-studio/)** guide breaks down what to use when. The highlights:
 
-- **Copilot Studio's new agent experience** is now in **preview** — a new orchestration runtime with better reasoning — and it brings three things with it: agents that can be **grounded in your work data** (mail, calendar, files, Teams messages and people, via Work IQ), reusable **Skills** (modular instruction sets you can share and export), and **Memory** (preferences that carry across sessions). *([Copilot Studio — what's new](https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new))*
+- **Copilot Studio's new agent experience** is now in **preview** — a new orchestration runtime with better reasoning — and it brings three things with it: agents that can be grounded in your work data (mail, calendar, files, Teams messages and people, via Work IQ), reusable Skills (modular instruction sets you can share and export), and Memory (preferences that carry across sessions). *([Copilot Studio — what's new](https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new))*
 - **Dynamic Tool Discovery** *([Roadmap 561855](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561855))* — developers will be able to add, update or retire tools on an MCP server **without republishing the agent**, so users get the latest capabilities without waiting for a redeploy.
 - **SharePoint lists as a knowledge source in [Agent Builder](/blog/m365-agent-builder-explained/)** *([Roadmap 561920](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561920))* — ground an agent in up to **20,000 list items** of structured data.
-- **Sharper agent testing in Copilot Studio** — add **expected responses** to test cases and grade them (Exact, Partial, Similarity, Compare Meaning), with a flexible new **Grader Framework**. *([Microsoft Learn — agent evaluation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-create))*
-- **Agent lifecycle automation** *([Roadmap 481518](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=481518))* — admins **bulk-install first-party agents** and **auto-reassign ownerless agents** with policy-based rules, so nothing is left without an owner.
+- **Sharper agent testing in Copilot Studio** — add **expected responses** to test cases and grade them (Exact, Partial, Similarity, Compare Meaning), with a flexible new Grader Framework. *([Microsoft Learn — agent evaluation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-create))*
+- **Agent lifecycle automation** *([Roadmap 481518](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=481518))* — admins **bulk-install first-party agents** and auto-reassign ownerless agents with policy-based rules, so nothing is left without an owner.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why this matters:</strong> The pattern across all of these is the same — agents are growing up. They can be grounded in your real work, tested properly, reused, and governed at scale. That's the difference between a clever demo and something an enterprise can actually run.</p>
@@ -394,9 +394,9 @@ June was a big month for *building* agents — if you're weighing your options, 
 
 Plenty for IT and security teams this month:
 
-- **Organizational Messages** — **usage-based targeting** *([Roadmap 503563](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=503563))* and an **email channel** *([Roadmap 503562](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=503562))* both went **GA**. Reach the right people with adoption nudges based on real Copilot usage, now over email as well as the Windows and Teams surfaces. *([Microsoft Learn — organizational messages](https://learn.microsoft.com/en-us/microsoft-365/admin/misc/organizational-messages-microsoft-365))*
+- **Organizational Messages** — **usage-based targeting** *([Roadmap 503563](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=503563))* and an email channel *([Roadmap 503562](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=503562))* both went GA. Reach the right people with adoption nudges based on real Copilot usage, now over email as well as the Windows and Teams surfaces. *([Microsoft Learn — organizational messages](https://learn.microsoft.com/en-us/microsoft-365/admin/misc/organizational-messages-microsoft-365))*
 - **Cowork & Work IQ spend in Viva Insights** *([Roadmap 566302](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=566302))* — you'll be able to see Copilot credit usage for Cowork and Work IQ at a team level (where usage-based billing is enabled).
-- **A new Data Security Posture Management (DSPM)** experience in **Microsoft Purview** adds **AI observability** — one view of every AI app and agent active in the last 30 days, including **[Microsoft Agent 365](/blog/agent-365-security-governance-complete-guide/)**. *([Microsoft Learn — data security posture management](https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about))*
+- **A new Data Security Posture Management (DSPM)** experience in Microsoft Purview adds **AI observability** — one view of every AI app and agent active in the last 30 days, including **[Microsoft Agent 365](/blog/agent-365-security-governance-complete-guide/)**. *([Microsoft Learn — data security posture management](https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about))*
 - **Purview Data Security Triage Agent** *([Roadmap 564615](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=564615), preview)* — proactively finds files with sensitive data (national IDs, passwords, card numbers) that match your DLP alerts, and nudges the right person in Teams to fix them, with closed-loop tracking.
 - **AI-powered DLP Policy Optimizer** *([Roadmap 564616](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=564616), preview)* — analyses your DLP policies and flags overlapping rules, redundant conditions and noise, with prioritised fixes to cut false positives.
 - **Keep external email out of Copilot** *(preview, [Roadmap 561552](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561552))* — a new DLP control stops Copilot and Copilot Studio agents from grounding answers in emails received from external senders.

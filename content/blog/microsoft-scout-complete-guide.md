@@ -72,7 +72,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **This is a living guide.** Scout is in Frontier preview — releases ship roughly weekly, settings change, new skills land. I update this post every time Microsoft ships something new or I find something worth calling out. If you spot anything out of date, [send me feedback](/feedback/) and I'll patch it. **Last verified: 16 June 2026 · Scout version 0.23.0.20260608.1.**
+🔄 **This is a living guide.** Scout is in Frontier preview — releases ship roughly weekly, settings change, new skills land. I update this post every time Microsoft ships something new or I find something worth calling out. If you spot anything out of date, [send me feedback](/feedback/) and I'll patch it. Last verified: 16 June 2026 · Scout version 0.23.0.20260608.1.
 
 </div>
 
@@ -114,7 +114,7 @@ Scout is the opposite shape. You give it a piece of work. It goes off and does i
 
 ### The codename evolution — same app, three names
 
-When I first installed Scout — months before Build 2026 — it was called **Clawpilot**. Before that, internal Microsoft teams referred to it just as "the m repo" (you can still see the lineage today: the user skills folder is `~/.copilot/m-skills/`, the local MCP config is `m-mcp-servers.json`, the memory store is `m-memory.json`). At Microsoft Build 2026 on 2 June, Microsoft renamed it to **Microsoft Scout** for its public-facing reveal as the first Autopilot agent.
+When I first installed Scout — months before Build 2026 — it was called **Clawpilot**. Before that, internal Microsoft teams referred to it just as "the m repo" (you can still see the lineage today: the user skills folder is `~/.copilot/m-skills/`, the local MCP config is `m-mcp-servers.json`, the memory store is `m-memory.json`). At Microsoft Build 2026 on 2 June, Microsoft renamed it to Microsoft Scout for its public-facing reveal as the first Autopilot agent.
 
 Same executable lineage, same bones, much sharper enterprise story.
 
@@ -201,7 +201,7 @@ Tick all four before downloading:
 
 - ✓ My organisation is enrolled in the Microsoft Frontier program (or my admin can enrol us)
 - ✓ I have a **Microsoft 365 Copilot license** assigned to me
-- ✓ I have a **GitHub Copilot Business or Enterprise license** assigned to me
+- ✓ I have a GitHub Copilot Business or Enterprise license assigned to me
 - ✓ My device meets the OS minimum (Windows 11 or later, or macOS 12 Monterey or later)
 
 Any of these are **No**? See the [admin install spoke](/blog/microsoft-scout-admin-install-frontier-enrollment/) and walk it through with your IT admin first. Installing without the gates in place leaves you with an app that opens but won't let you sign in.
@@ -256,7 +256,7 @@ From PowerShell, no Scout window needed:
 
 ### Step 5 — How updates work
 
-**Automatic. Channel-based. You don't manage them.**
+Automatic. Channel-based. You don't manage them.
 
 Microsoft pushes new builds through the **Frontier release channel** when they're ready. Scout switches over on next launch — the in-app "Check for updates" button (in Settings → About, visible in the screenshot above) is mostly a manual channel-sync trigger; the actual rollout cadence is Microsoft's, and there's no separate updater for you to manage.
 
@@ -349,7 +349,7 @@ flowchart TD
 
 ### Honest take — Scout doesn't replace Copilot
 
-If you only take one thing from this section: **Scout is not a replacement for Microsoft 365 Copilot.** It's a different category of tool with different jobs. Most people who use Scout will keep using Copilot Chat and Copilot for Work alongside it — they cover non-overlapping needs.
+If you only take one thing from this section: Scout is not a replacement for Microsoft 365 Copilot. It's a different category of tool with different jobs. Most people who use Scout will keep using Copilot Chat and Copilot for Work alongside it — they cover non-overlapping needs.
 
 The mental shortcut I've found useful, after months of running both:
 
@@ -385,7 +385,7 @@ Microsoft is clear about this in [the official admin documentation](https://lear
 
 **Gate 1 — Frontier enrollment in the Microsoft 365 admin center.** Your admin enables Copilot Frontier for the tenant and picks who gets access: all users, specific users, or no access.
 
-**Gate 2 — Three more things in combination:**
+Gate 2 — Three more things in combination:
 
 1. **Intune policy.** Your admin deploys the Scout Intune policy on your device.
 2. **Attestation form.** Your admin signs the Microsoft attestation form opting your organisation in to Frontier data handling (Scout may route to GitHub for inference, so attestation is required).
@@ -508,7 +508,7 @@ If you're an end user whose admin has already done the gating work, your checkli
 
 ### What to read next
 
-**Stay in this series — the five spokes:**
+Stay in this series — the five spokes:
 
 - **[Admin Install & Frontier Setup](/blog/microsoft-scout-admin-install-frontier-enrollment/)** — the two-gate admin install walkthrough
 - **[All 7 Bundled Skills Explained](/blog/microsoft-scout-bundled-skills-and-features/)** — Word, Excel, PowerPoint, Loop, Web Artifacts, Excalidraw, Expense Report

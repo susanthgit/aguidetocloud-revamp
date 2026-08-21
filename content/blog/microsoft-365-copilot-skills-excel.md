@@ -30,7 +30,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-**Living walkthrough.** Microsoft documents an end-user Skills experience in Excel and a separate Office.js custom-Skills developer preview. They are not the same release. **Public sources last checked: 31 July 2026.**
+**Living walkthrough.** Microsoft documents an end-user Skills experience in Excel and a separate Office.js custom-Skills developer preview. They are not the same release. Public sources last checked: 31 July 2026.
 
 </div>
 
@@ -70,12 +70,12 @@ The end-user flow starts from the Copilot prompt box:
 
 1. Open the workbook you want to work on.
 2. Open Copilot in Excel.
-3. Select the **Add work content** menu in the prompt field.
-4. Select **All Skills**.
+3. Select the Add work content menu in the prompt field.
+4. Select All Skills.
 5. Choose the Skill you want.
 6. Add any workbook-specific detail and send the request.
 
-The **All Skills** list can include:
+The All Skills list can include:
 
 - Skills provided by Copilot in Excel; and
 - personal custom Skills from your OneDrive Skills folder.
@@ -143,7 +143,7 @@ It can style:
 - headers;
 - logos, when an official Brand Kit is available.
 
-The Skill is enabled by default and appears in the **Formatting** folder in **Manage skills**.
+The Skill is enabled by default and appears in the **Formatting** folder in Manage skills.
 
 > **Things to know**
 >
@@ -162,7 +162,7 @@ It can work across:
 - colour hierarchy;
 - colour contrast.
 
-The Skill is automatically enabled and also appears under **Formatting**.
+The Skill is automatically enabled and also appears under Formatting.
 
 <!-- Screenshot planned: Excel Manage Skills Formatting folder showing brandkit and theme-design enabled. -->
 
@@ -172,8 +172,8 @@ The Skill is automatically enabled and also appears under **Formatting**.
 
 The Excel support page documents a OneDrive-backed flow:
 
-1. In Copilot, open **Settings**.
-2. Select **Manage skills**.
+1. In Copilot, open Settings.
+2. Select Manage skills.
 3. Select **Custom skills**.
 4. Select **Create OneDrive folder**.
 5. Select **Open skills folder**.
@@ -236,7 +236,7 @@ Microsoft also lets developers create a packaged Excel Skill with JavaScript in 
 
 Microsoft's warning is direct:
 
-> **Custom Skills for Excel are in preview. Do not use them in a production Skill.**
+> Custom Skills for Excel are in preview. Do not use them in a production Skill.
 
 The developer path is for testing and learning today.
 

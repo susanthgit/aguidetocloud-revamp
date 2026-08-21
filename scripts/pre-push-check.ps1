@@ -42,17 +42,20 @@ Write-Host "`n🔍 Pre-push checks..." -ForegroundColor Cyan
 # ─── CHECK 1: cache_version bump ───
 Write-Host "`n[1/7] Checking cache_version..." -NoNewline
 
-# Get files changed since origin/main (what would be pushed).
+# Get files that would be pushed = committed-but-unpushed UNION uncommitted working tree.
 # 🔴 Whichever range produces this file list, every later `git diff` in this
 # check MUST reuse it. See the BUGFIX note at check 1b below.
-$usingWorkingTree = $false
-$changedFiles = git diff --name-only origin/main HEAD 2>$null
-if (-not $changedFiles) {
-    # Nothing committed yet (HEAD == origin/main): fall back to the working
-    # tree, staged + unstaged.
-    $usingWorkingTree = $true
-    $changedFiles = git diff --name-only HEAD 2>$null
-}
+#
+# BUGFIX 2026-08-21 (second one): the working-tree list used to be consulted ONLY
+# when the committed list was empty. So any time HEAD was ahead of origin/main —
+# a parallel session committed, or this session already made one commit — the
+# entire uncommitted working tree went invisible and checks 1, 4, 5 and 6 all
+# silently skipped. Confirmed live: 74 modified content/blog/*.md files were
+# reported as "No blog content changes (skip)". Union fixes all of them at once.
+$committedFiles = @(git diff --name-only origin/main HEAD 2>$null)
+$workingFiles   = @(git diff --name-only HEAD 2>$null)
+$changedFiles   = @($committedFiles + $workingFiles) | Sort-Object -Unique
+$usingWorkingTree = [bool]$workingFiles
 
 $cssJsChanged = $changedFiles | Where-Object { $_ -match '\.(css|js)$' -and $_ -match '^static/' }
 $configChanged = $changedFiles | Where-Object { $_ -eq 'hugo.toml' }
@@ -71,11 +74,11 @@ if ($cssJsChanged -and -not $configChanged) {
     # uncommitted (HEAD == origin/main) that range is EMPTY, so a correctly
     # bumped cache_version was invisible and the push was false-blocked every
     # time. Detection and verification must use the SAME range.
-    $tomlDiff = if ($usingWorkingTree) {
-        git diff HEAD -- hugo.toml 2>$null
-    } else {
-        git diff origin/main HEAD -- hugo.toml 2>$null
-    }
+    # Detection and verification must use the SAME range. Since $changedFiles is
+    # now the UNION of both ranges, the verification must be too — a bump made in
+    # either the committed range or the working tree counts.
+    $tomlDiff = @(git diff origin/main HEAD -- hugo.toml 2>$null) +
+                @(git diff HEAD -- hugo.toml 2>$null)
     if ($tomlDiff -match 'cache_version') {
         Write-Host " ✅ cache_version bumped" -ForegroundColor Green
     } else {

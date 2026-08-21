@@ -29,7 +29,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork reached **general availability on 16 June 2026**, with the first wave of partner plugins now live — this page tracks each release. **Last verified: 17 June 2026 · GA day.**
+🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork reached general availability on 16 June 2026, with the first wave of partner plugins now live — this page tracks each release. Last verified: 17 June 2026 · GA day.
 
 </div>
 
@@ -39,9 +39,9 @@ founder_note: |
 
 ## TL;DR
 
-- Cowork ships with **13 built-in skills, organised into 5 categories** (Communication · Documents · Calendar · Search · Automation)
-- A **skill** is a reusable recipe in your OneDrive — different from a **prompt**, which is a one-time instruction
-- Three ways to add custom skills: **OneDrive SKILL.md** (no-code), **Copilot Studio** (low-code), **Agents SDK** (pro-code)
+- Cowork ships with 13 built-in skills, organised into 5 categories (Communication · Documents · Calendar · Search · Automation)
+- A **skill** is a reusable recipe in your OneDrive — different from a prompt, which is a one-time instruction
+- Three ways to add custom skills: **OneDrive SKILL.md** (no-code), Copilot Studio (low-code), Agents SDK (pro-code)
 - Microsoft maintains four official plugin pages on Microsoft Learn for full reference — and the first wave of partner plugins (Harvey, Miro, monday.com, Moody's, and more) is **live at GA**
 - The fastest way to see what your tenant has: ask Cowork *"What skills do you have available?"* — it lists every one with a description
 
@@ -69,13 +69,13 @@ Cowork keeps all of this behind a single **Customize** door. Three clicks to get
 
 ### Step 1 — Open the attach menu
 
-From the Cowork landing, click the **`+` button** to the left of the task input. A menu opens with four options. Pick the bottom one: **Customize · Manage skills & plugins**.
+From the Cowork landing, click the **`+` button** to the left of the task input. A menu opens with four options. Pick the bottom one: Customize · Manage skills & plugins.
 
 <p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/20-cowork-customize-menu-entry.png" alt="Cowork landing page with the plus button highlighted in a red box. The attach menu is open showing four options — Add work context, Upload images and files, Attach cloud files, and Customize · Manage skills and plugins (also highlighted in red with the cursor pointer hovering on it)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 ### Step 2 — Land on the Customize page
 
-The Customize page has two tabs at the top: **Plugins** and **Skills**. Click **Skills**.
+The Customize page has two tabs at the top: **Plugins** and Skills. Click Skills.
 
 <p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/21-cowork-customize-tabs.png" alt="Customize page header showing a back arrow labelled Cowork, the page title Customize, two pill-shaped tabs labelled Plugins and Skills with Skills highlighted in a red box, and search and Add controls on the right." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -90,7 +90,7 @@ You can toggle any skill on or off here. Disabled skills won't be picked by Cowo
 
 <p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/22-cowork-skills-page-overview.png" alt="The Skills tab inside Cowork Customize. Two section headings highlighted in red boxes — Your skills and Built-in. Three custom skills are visible in Your skills (customer-session-followup, customer-session-prep, inbox-drafts) each with a toggle on the right. A Show more link sits below. The Built-in section begins underneath with the first three pre-installed skills (PDF, Word, Excel)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-The **Plugins tab** lives alongside Skills — same Customize door. Microsoft first-party Dynamics 365 plugins (Fabric IQ, Sales, ERP apps, Customer Service) show here as **Installed** and can be toggled on/off. Third-party and partner plugins (once admin-approved at the tenant level) appear here too. If your tenant hasn't approved any plugins yet, or if you haven't installed any from the Discover gallery below, this tab shows just the Microsoft first-party set.
+The **Plugins tab** lives alongside Skills — same Customize door. Microsoft first-party Dynamics 365 plugins (Fabric IQ, Sales, ERP apps, Customer Service) show here as Installed and can be toggled on/off. Third-party and partner plugins (once admin-approved at the tenant level) appear here too. If your tenant hasn't approved any plugins yet, or if you haven't installed any from the Discover gallery below, this tab shows just the Microsoft first-party set.
 
 <p><img src="/images/blog/cowork/plugins-manage.webp" alt="Cowork Customize page, Plugins tab. Shows Installed section with four Microsoft Dynamics 365 plugins — Fabric IQ, Dynamics 365 Sales, Dynamics 365 ERP apps, and Dynamics 365 Customer Service. Each plugin has a toggle switch on the right (all shown as off). The heading reads 'Specify which plugins Cowork should reference when doing a task.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -176,15 +176,15 @@ Cowork responds with a grouped list — both the built-in skills it ships with A
 
 ### Naming convention — UI labels vs skill IDs
 
-You'll notice the response uses names like `schedule-meeting`, `meeting-intel`, `pdf`, `html` — the lowercase, hyphenated **internal skill IDs**. The Customize UI shows the friendly labels (Scheduling, Meetings, PDF, html).
+You'll notice the response uses names like `schedule-meeting`, `meeting-intel`, `pdf`, `html` — the lowercase, hyphenated internal skill IDs. The Customize UI shows the friendly labels (Scheduling, Meetings, PDF, html).
 
-When you write a custom skill that references built-in skills, use the **skill IDs** — that's what Cowork's planner matches against. When you're explaining Cowork to a colleague, use the **UI labels** — they're easier to read.
+When you write a custom skill that references built-in skills, use the **skill IDs** — that's what Cowork's planner matches against. When you're explaining Cowork to a colleague, use the UI labels — they're easier to read.
 
 ---
 
 ## How plugins extend Cowork
 
-Built-in skills cover the M365 apps you live in. **Plugins** extend Cowork to systems outside M365 — your CRM, your ticketing system, your project management tool, your data warehouse.
+Built-in skills cover the M365 apps you live in. Plugins extend Cowork to systems outside M365 — your CRM, your ticketing system, your project management tool, your data warehouse.
 
 ### In plain English — connector vs plugin
 
@@ -193,7 +193,7 @@ Two words get thrown around a lot here. The simplest way to hold them:
 - A **connector** is the *bridge*. It lets Cowork safely reach into another app — Dynamics 365, Fabric, Power BI — and pull data across (and in some cases, send updates back).
 - A **plugin** is the bridge *plus the know-how*. It packages one or more connectors with the instructions Cowork needs to actually do a job with them.
 
-And one phrase worth knowing: if a plugin says **read & write**, Cowork can both *look at* data in that app and — where it's configured and you approve it — *make changes* (like creating or updating a record), not just view it. **Read** means look-only.
+And one phrase worth knowing: if a plugin says **read & write**, Cowork can both *look at* data in that app and — where it's configured and you approve it — *make changes* (like creating or updating a record), not just view it. Read means look-only.
 
 Microsoft maintains four reference pages on Microsoft Learn:
 
@@ -210,11 +210,11 @@ At GA (June 2026), Microsoft shipped the first wave of partner plugins, with mor
 
 - **Available now:** Enosix · Harvey · LSEG · Miro · monday.com · Moody's · Morningstar · S&P Global Energy · TeamsMaestro
 - **Coming soon:** Adobe · Atlassian · Box · Canva · CB Insights · Databricks · MoneyForward · Templafy
-- **Also generally available:** Microsoft **Fabric**, plus **Dynamics 365** Sales, Customer Service, and ERP apps
+- **Also generally available:** Microsoft **Fabric**, plus Dynamics 365 Sales, Customer Service, and ERP apps
 
 The catalog grows over time — check Microsoft's [Copilot Cowork docs](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) for the current list. Treat each plugin as its own governance decision (consent, connector credentials, data handling, audit) — see the [admin & governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).
 
-To browse the full GA catalog, open Cowork, click **Customize**, switch to the **Plugins** tab, then scroll down to the **Discover** section. Microsoft's official plugin gallery shows every available plugin with a one-line description and a lock icon indicating tenant admin approval is required before you can install it.
+To browse the full GA catalog, open Cowork, click Customize, switch to the Plugins tab, then scroll down to the **Discover** section. Microsoft's official plugin gallery shows every available plugin with a one-line description and a lock icon indicating tenant admin approval is required before you can install it.
 
 <p><img src="/images/blog/cowork/plugins-catalog.webp" alt="Cowork Discover gallery showing 11 partner plugins available at GA — AI Meeting Notes TeamsMaestro, Box, enosix arnold for Copilot Cowork, Flow Studio MCP Copilot Cowork, Harvey (legal AI assistant), LSEG Cowork, Miro Cowork, monday.com, Moody's Credit MCP, Morningstar, and S&P Global Energy. Each plugin card shows a logo, name, lock icon, and brief description. The page header reads 'Plugins help Cowork extend its capabilities by connecting to external tools, services, and bundled skills.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -243,7 +243,7 @@ The first wave skews toward finance, research, and visual work. Here's the quick
 | **Visual &amp; project work** | Miro · monday.com | Marketing, product, programme management |
 | **Meetings &amp; scheduling** | TeamsMaestro | Anyone living in back-to-back meetings |
 
-Generally available alongside them: Microsoft **Fabric** (your data estate) and **Dynamics 365** Sales, Customer Service, and ERP. The **coming-soon** set (Adobe, Atlassian, Box, Canva, CB Insights, Databricks, MoneyForward, Templafy — full list just above) spans documents, design, dev tooling, data, and brand templates.
+Generally available alongside them: Microsoft Fabric (your data estate) and Dynamics 365 Sales, Customer Service, and ERP. The **coming-soon** set (Adobe, Atlassian, Box, Canva, CB Insights, Databricks, MoneyForward, Templafy — full list just above) spans documents, design, dev tooling, data, and brand templates.
 
 Whatever the source, the rule holds: a plugin is a new door into your data — open the ones a team genuinely needs, and leave the rest off until reviewed. The admin checklist for that review is in the [admin &amp; governance spoke](/blog/microsoft-copilot-cowork-admin-and-governance/).
 
@@ -257,11 +257,11 @@ You're not limited to what Microsoft ships. There are three ways to add your own
 
 This is the easiest path — no admin involvement, no app installs.
 
-**Method A — Ask Cowork to create it for you (fastest):**
+Method A — Ask Cowork to create it for you (fastest):
 
 Tell Cowork in chat: *"Create a custom skill called [name] with these instructions: [your steps]"* — Cowork validates the skill, writes the SKILL.md file, and syncs it to your OneDrive automatically within ~35 seconds. Ready to use immediately.
 
-**Method B — Upload the file manually to OneDrive:**
+Method B — Upload the file manually to OneDrive:
 
 1. Open your **OneDrive** — navigate to `Documents → Cowork → Skills` (create these folders if they don't exist)
 2. Create a **subfolder** for your skill (e.g., `morning-briefing`)
@@ -467,7 +467,7 @@ What this tells you:
 
 The third example is a **meta-skill** — a skill that creates other skills. Its job is to take a one-line brief from me and produce a high-quality SKILL.md against the 8-section pattern, every time, with the quality scoring automatically run on each new skill it authors.
 
-This worked example also surfaces something interesting: **Cowork's Skill Quality Report UI is evolving rapidly.** The card shown here is materially different from the earlier two — Microsoft is iterating on this surface week to week. The signal value is unchanged, but the layout and labels are not yet stable. Treat this as a snapshot, not a contract.
+This worked example also surfaces something interesting: Cowork's Skill Quality Report UI is evolving rapidly. The card shown here is materially different from the earlier two — Microsoft is iterating on this surface week to week. The signal value is unchanged, but the layout and labels are not yet stable. Treat this as a snapshot, not a contract.
 
 ### The create prompt
 
@@ -502,7 +502,7 @@ Cowork's classifier reads the intent. A skill that *prohibits* destructive actio
 
 All three skills lost 2 points on Scope Boundaries (got 23/25 once and 25/25 once across this set). Pattern observed:
 
-- The full 25/25 was earned by `new-account-research-brief` with **explicit delegation to 4 named sibling skills** (`customer-session-prep`, `inbox-drafts`, `meeting-recap`, `customer-session-followup`)
+- The full 25/25 was earned by `new-account-research-brief` with explicit delegation to 4 named sibling skills (`customer-session-prep`, `inbox-drafts`, `meeting-recap`, `customer-session-followup`)
 - The 23/25 was earned by skills with fewer named sibling delegations (2-3) even with strong When NOT to Use sections
 
 If full marks on Scope Boundaries matters for your team's library, name at least 4 sibling skills in the When NOT to Use section.
@@ -599,9 +599,9 @@ The skill went from 95 → 97. **Not 100.** Cowork explained why.
 
 The diagnostic at the bottom is the takeaway:
 
-> *"The scorer's Robustness rubric caps at 22/25 for the current pattern mix — it's looking for a specific combination of negative-path handling, edge-case examples, and fallback instructions beyond guardrail count… 97 is effectively the ceiling the rubric can reach for this skill's structure without adding a dedicated **Edge Cases** or **Fallback Procedures** section to the SKILL.md body."*
+> *"The scorer's Robustness rubric caps at 22/25 for the current pattern mix — it's looking for a specific combination of negative-path handling, edge-case examples, and fallback instructions beyond guardrail count… 97 is effectively the ceiling the rubric can reach for this skill's structure without adding a dedicated **Edge Cases** or Fallback Procedures section to the SKILL.md body."*
 
-Translation: **the rubric has sub-patterns inside each dimension.** For Robustness to hit 25/25 on a skill like this, the scorer is looking for:
+Translation: the rubric has sub-patterns inside each dimension. For Robustness to hit 25/25 on a skill like this, the scorer is looking for:
 
 1. ✓ Lots of explicit guardrails (we had 13)
 2. ✓ Failure handling (we had it)

@@ -31,7 +31,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-**Living admin guide.** Microsoft publishes different controls for personal Office Skills, shared Cowork Skills, packaged plugins, agents, and Agent Tools. This page keeps those surfaces separate. **Public sources last checked: 31 July 2026.**
+**Living admin guide.** Microsoft publishes different controls for personal Office Skills, shared Cowork Skills, packaged plugins, agents, and Agent Tools. This page keeps those surfaces separate. Public sources last checked: 31 July 2026.
 
 </div>
 
@@ -250,7 +250,7 @@ Microsoft 365 admin center
 
 The registry supports:
 
-- **Block**
+- Block
 - **Unblock**
 - status filters;
 - publisher filters;

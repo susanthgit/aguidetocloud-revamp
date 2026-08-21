@@ -53,7 +53,7 @@ founder_note: |
   I wrapped up two Train-the-Trainer sessions and "how do I make Copilot use our brand?" came up in every single one. Then every customer session added a new question: how do we add stock images, who actually manages this, what's the difference between Designer and Adobe Express, do I really need an OAL? This guide grew to answer all of it. Brand managers and IT admins still keep landing here from opposite directions — this is the post I send to either side that catches them up to the other. The Brand Checker section is the one most people overlook and the one that does the most work, but the [PowerPoint Template](#building-a-powerpoint-template-inside-and-outside-copilot) and [Stock Images](#stock-images-and-brand-images--what-goes-where) sections are the ones that take the most weight off marketing teams.
 ---
 
-I just wrapped up two Train-the-Trainer sessions on Microsoft 365 Copilot, and one question came up more than any other: **"How do I make Copilot use our brand?"** — followed closely by "What's a Brand Kit?", "How do I create one?", and "Will Copilot actually use our PowerPoint templates?"
+I just wrapped up two Train-the-Trainer sessions on Microsoft 365 Copilot, and one question came up more than any other: "How do I make Copilot use our brand?" — followed closely by "What's a Brand Kit?", "How do I create one?", and "Will Copilot actually use our PowerPoint templates?"
 
 If you've been wondering the same thing, this guide is for you.
 
@@ -115,7 +115,7 @@ If you only have a minute, here's what you need to know:
 > - **Brand or marketing manager:** [What's Inside](#whats-inside-a-brand-kit) → [Brand Voice](#brand-voice--beyond-logos-and-colours) → [PowerPoint Template](#building-a-powerpoint-template-inside-and-outside-copilot) → [Stock Images](#stock-images-and-brand-images--what-goes-where) → [Brand Checker](#brand-checker--your-quality-inspector)
 > - **Executive sponsor:** [TL;DR](#tldr--the-60-second-summary) → [Scenarios](#real-world-scenarios) → [What Doesn't Work Yet](#what-doesnt-work-yet-current-limitations)
 
-> 🌱 **Minimum viable Brand Kit (start here if you're new):**
+> 🌱 Minimum viable Brand Kit (start here if you're new):
 >
 > - One approved logo set (primary, secondary, dark, light)
 > - Primary and secondary colours (HEX)
@@ -134,7 +134,7 @@ Think of your organisation as a hotel chain — like Hilton or Marriott.
 
 Every hotel in the chain has to follow the **brand book**: the exact shade of blue for the logo, where it sits on signage, the font on the room doors, the style of lobby furniture, even the tone of voice the reception team uses. Without that brand book, every hotel would look different, and guests wouldn't trust the brand.
 
-**Brand Kit is your hotel chain's brand book — but for Copilot.**
+Brand Kit is your hotel chain's brand book — but for Copilot.
 
 Here's how it maps:
 
@@ -278,7 +278,7 @@ flowchart TD
 **Rule of thumb:**
 > Templates teach Copilot. Brand Kit governs the rules. OAL supplies the assets. Brand Checker enforces.
 
-> 💡 **Template precedence — which one wins?** When Copilot needs a template for generation, it looks in this order: (1) **Brand Kit templates first** (highest priority), then (2) **OAL templates** as backup, then (3) **Microsoft default templates** as last resort. So if you upload a template to both your Brand Kit AND your OAL, the Brand Kit version is what Copilot uses for generation. The OAL copy still serves users opening it from File → New — that's why putting the same `.potx` in both places is a perfectly reasonable pattern.
+> 💡 **Template precedence — which one wins?** When Copilot needs a template for generation, it looks in this order: (1) **Brand Kit templates first** (highest priority), then (2) OAL templates as backup, then (3) Microsoft default templates as last resort. So if you upload a template to both your Brand Kit AND your OAL, the Brand Kit version is what Copilot uses for generation. The OAL copy still serves users opening it from File → New — that's why putting the same `.potx` in both places is a perfectly reasonable pattern.
 
 You don't need every piece on day one. Start with a Brand Kit and one good template. Add an OAL when you're ready to invest in approved imagery. Add Brand Checker as soon as your team is generating Copilot decks regularly.
 
@@ -296,7 +296,7 @@ This is the question everyone asks first. Here's the clear answer:
 | Open templates from Brand Kits | − No | Templates are accessible to everyone |
 | Use OAL templates in Office apps | − No | Standard Office licence sufficient |
 
-> ⚠️ **Key distinction:** Templates distributed through your SharePoint **Organizational Asset Library (OAL)** can be opened by any user with a standard Office licence — no Copilot needed. The **Brand Kit experiences in the Copilot Create app** (the rules, the Brand Checker, the AI-powered styling) require the paid Microsoft 365 Copilot licence. So the same `.potx` template can serve both audiences — just from two different surfaces.
+> ⚠️ **Key distinction:** Templates distributed through your SharePoint **Organizational Asset Library (OAL)** can be opened by any user with a standard Office licence — no Copilot needed. The Brand Kit experiences in the Copilot Create app (the rules, the Brand Checker, the AI-powered styling) require the paid Microsoft 365 Copilot licence. So the same `.potx` template can serve both audiences — just from two different surfaces.
 
 > 💡 **PowerPoint, Word, and Excel Agents nuance:** The agents can appear in the Copilot Chat experience for Microsoft 365 users in some configurations, but **enterprise data grounding** (using your tenant's templates, OAL, Brand Kit, and Work IQ context) requires the Microsoft 365 Copilot licence. If you want users generating real on-brand decks, plan for the licence.
 
@@ -330,11 +330,11 @@ This is where it gets practical. Brand Kit doesn't work the same way in every ap
 
 ### PowerPoint — The Star of the Show
 
-PowerPoint has the richest Brand Kit integration by far. There are two distinct approaches — a **new way** and a **traditional way**:
+PowerPoint has the richest Brand Kit integration by far. There are two distinct approaches — a **new way** and a traditional way:
 
 #### The New Way: PowerPoint Agent (in M365 Copilot Chat)
 
-This is the new agentic approach to creating presentations. Instead of opening PowerPoint first, you start in the **Microsoft 365 Copilot app** (or Copilot Chat) and use the **PowerPoint Agent** — powered by **Anthropic Claude models** — to create entire presentations end-to-end through conversation.
+This is the new agentic approach to creating presentations. Instead of opening PowerPoint first, you start in the **Microsoft 365 Copilot app** (or Copilot Chat) and use the PowerPoint Agent — powered by Anthropic Claude models — to create entire presentations end-to-end through conversation.
 
 When you give the PowerPoint Agent a prompt, it:
 
@@ -367,9 +367,9 @@ Three things the agent does that a basic text generator doesn't:
 2. **Grounding** — pulls context from your work files (Work IQ), the web, and the current presentation, not just the prompt
 3. **Brand use** — autonomously uses your Brand Kit assets, your template layouts, your colours, your fonts, and your brand voice without you having to ask for each one explicitly
 
-> 💡 **Key difference:** The PowerPoint Agent lives inside the **M365 Copilot app** — you don't need to open PowerPoint first. The agent creates the deck for you, and you can then open it in PowerPoint to refine. Similarly, there's a **Word Agent** and **Excel Agent** for creating documents and spreadsheets from Copilot Chat.
+> 💡 **Key difference:** The PowerPoint Agent lives inside the **M365 Copilot app** — you don't need to open PowerPoint first. The agent creates the deck for you, and you can then open it in PowerPoint to refine. Similarly, there's a Word Agent and Excel Agent for creating documents and spreadsheets from Copilot Chat.
 
-> ⚠️ **Availability note:** As of last verified (May 2026), the PowerPoint Agent with Brand Kit and Brand Checker (Brand Reviewer) is generally available on Windows, Mac, and Web for tenants with a Microsoft 365 Copilot licence. Specific capabilities are still rolling out across channels, so behaviour can differ between **Current Channel**, **Monthly Enterprise Channel**, and **Beta Channel**. Check the [M365 Roadmap](/m365-roadmap/) and your Message Center for your tenant's status.
+> ⚠️ **Availability note:** As of last verified (May 2026), the PowerPoint Agent with Brand Kit and Brand Checker (Brand Reviewer) is generally available on Windows, Mac, and Web for tenants with a Microsoft 365 Copilot licence. Specific capabilities are still rolling out across channels, so behaviour can differ between **Current Channel**, Monthly Enterprise Channel, and Beta Channel. Check the [M365 Roadmap](/m365-roadmap/) and your Message Center for your tenant's status.
 
 #### The Traditional Way: Narrative Builder (in the PowerPoint App)
 
@@ -394,14 +394,14 @@ There's now a fourth route — and it's the one that trips people up, because it
 
 Cowork can take its template from any of these:
 
-- A **`.potx` you attach** to the conversation (**+ → Upload images and files**)
-- A **template in the root of your OneDrive**
-- Your organisation's **templates published to the SharePoint OAL** — Cowork surfaces the `.potx` files for you to pick
-- A **specific `.pptx` you point it at**, used as the starting deck
+- A **`.potx` you attach** to the conversation (+ → Upload images and files)
+- A template in the root of your OneDrive
+- Your organisation's templates published to the SharePoint OAL — Cowork surfaces the `.potx` files for you to pick
+- A specific `.pptx` you point it at, used as the starting deck
 
-The difference from the PowerPoint Agent is *what survives*. Microsoft verifies that Cowork preserves the template's **theme palette, brand fonts, logos, every named layout and the slide master, and the slide geometry / placeholder positions** — it rewrites the text and leaves the design untouched. That's the closest thing today to "use my branded template, exactly." Full detail: [Use brand templates with Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-brand-templates).
+The difference from the PowerPoint Agent is *what survives*. Microsoft verifies that Cowork preserves the template's theme palette, brand fonts, logos, every named layout and the slide master, and the slide geometry / placeholder positions — it rewrites the text and leaves the design untouched. That's the closest thing today to "use my branded template, exactly." Full detail: [Use brand templates with Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-brand-templates).
 
-> ⚠️ **The trap that catches everyone — a link is not a template.** Paste a **SharePoint link** to your template into the PowerPoint Agent (or any chat), or upload a loose `.pptx` and expect it to rebuild your master slides, and it won't — the chat surfaces read a referenced file as **content (text)**, so you get an *approximation* of your brand, not your actual layouts. (Referencing files inside PowerPoint's own **Agent Mode** is still "coming soon" — [Microsoft's create-a-presentation doc](https://support.microsoft.com/en-us/powerpoint/copilot/create-a-new-presentation-with-copilot-in-powerpoint).) To get your real master slides, the template has to arrive through a **supported path**: published to your **Brand Kit / OAL** (PowerPoint Agent + Narrative Builder), **opened first in the PowerPoint app** ([Start from Template](#method-3-start-from-template)), or **attached / selected in Cowork**. *Verified 31 July 2026.*
+> ⚠️ **The trap that catches everyone — a link is not a template.** Paste a **SharePoint link** to your template into the PowerPoint Agent (or any chat), or upload a loose `.pptx` and expect it to rebuild your master slides, and it won't — the chat surfaces read a referenced file as content (text), so you get an *approximation* of your brand, not your actual layouts. (Referencing files inside PowerPoint's own Agent Mode is still "coming soon" — [Microsoft's create-a-presentation doc](https://support.microsoft.com/en-us/powerpoint/copilot/create-a-new-presentation-with-copilot-in-powerpoint).) To get your real master slides, the template has to arrive through a supported path: published to your Brand Kit / OAL (PowerPoint Agent + Narrative Builder), opened first in the PowerPoint app ([Start from Template](#method-3-start-from-template)), or attached / selected in Cowork. *Verified 31 July 2026.*
 
 ### Word — Templates Plus Copilot (and Word Agent)
 
@@ -420,7 +420,7 @@ Excel's Brand Kit integration is more limited than PowerPoint, but growing:
 - ✓ You **can** upload Excel templates (`.xltx`) to your Brand Kit
 - ✓ Users can start from branded Excel templates via the Create tab
 - ✓ Templates maintain brand colours, fonts, chart styles, and layouts
-- ✓ The **Excel Agent** (from Copilot Chat) can create workbooks using branded templates
+- ✓ The Excel Agent (from Copilot Chat) can create workbooks using branded templates
 - ⚠️ There is no "Brand Checker" equivalent for Excel — it's template-level, not AI-enforced
 
 > 💡 **Practical tip:** If consistent Excel branding matters to your org, invest in well-designed `.xltx` templates with pre-built chart styles, branded colour schemes, and formatted headers. Upload these to your Brand Kit so users start from a consistent base.
@@ -433,9 +433,9 @@ The Create tab at [microsoft365.com](https://microsoft365.com) is where Brand Ki
 - **All users** browse and select Brand Kits when creating content
 - Generate branded **images, banners, posters, and infographics** using your brand colours, logos, and style
 - Access **branded templates** for PowerPoint, Word, and Excel
-- Filter between **Official**, **Shared**, and personal kits
+- Filter between **Official**, Shared, and personal kits
 
-To access Brand Kits: **Microsoft 365 Copilot app → Create → More... → Brand kits**
+To access Brand Kits: Microsoft 365 Copilot app → Create → More... → Brand kits
 
 ### Designer — Visual Content
 
@@ -555,7 +555,7 @@ Add-SPOOrgAssetsLibrary `
   -OrgAssetType OfficeTemplateLibrary
 ```
 
-**Set up the image library (for brand images used by Copilot):**
+Set up the image library (for brand images used by Copilot):
 
 ```powershell
 # Register as an Image Document Library
@@ -569,7 +569,7 @@ Add-SPOOrgAssetsLibrary `
 
 > ⚠️ **Important notes:**
 >
-> - You can have up to **30 OAL libraries** per tenant, but they must all be on the **same SharePoint site**
+> - You can have up to **30 OAL libraries** per tenant, but they must all be on the same SharePoint site
 > - Allow up to **24 hours** for the OAL to appear in Office desktop apps
 > - Template files must be in the correct format: `.potx` (PowerPoint), `.dotx` (Word), `.xltx` (Excel)
 > - Users need at least **read permissions** on the root site for the OAL to appear
@@ -661,7 +661,7 @@ Insert placeholders via **Slide Master → Insert Placeholder**. Keep them reada
 
 ### Sample Slides — The Strongest Signal You Can Give Copilot
 
-This is the single most important section I've added since I first wrote this guide. After two more T3 sessions and a lot of customer questions, the same thing kept coming up: **sample slides matter more than people think**, and most enterprise templates don't have enough of them.
+This is the single most important section I've added since I first wrote this guide. After two more T3 sessions and a lot of customer questions, the same thing kept coming up: sample slides matter more than people think, and most enterprise templates don't have enough of them.
 
 Microsoft has been clear about this in their template optimisation guidance: *"Copilot primarily uses your sample slides, and secondarily your template's structure and layouts."* ([Microsoft Support — Keep your presentation on-brand with Copilot](https://support.microsoft.com/en-gb/topic/keep-your-presentation-on-brand-with-copilot-046c23d5-012e-49e0-8579-fe49302959fc))
 
@@ -774,15 +774,15 @@ This trips people up. The file extension matters:
 
 - **`.pptx`** is a regular presentation. If someone opens it from File → New, they're editing the original, not a copy.
 - **`.potx`** is a template. Opening it from File → New creates a fresh deck **based on** the template. The original stays clean.
-- For **OAL template distribution, `.potx` is required** (alongside `.dotx` for Word and `.xltx` for Excel). Brand Kit's own upload accepts `.pptx` too, but `.potx` is the right format if you want the template to show up properly in File → New.
+- For OAL template distribution, `.potx` is required (alongside `.dotx` for Word and `.xltx` for Excel). Brand Kit's own upload accepts `.pptx` too, but `.potx` is the right format if you want the template to show up properly in File → New.
 
-To save: **File → Save As → PowerPoint Template (`.potx`)**. PowerPoint will default to your local Custom Office Templates folder — change the location if needed before saving.
+To save: File → Save As → PowerPoint Template (`.potx`). PowerPoint will default to your local Custom Office Templates folder — change the location if needed before saving.
 
 > 💡 **Naming tip:** Use a clear, dated name like `Contoso-Corporate-Deck-v2-2026-05.potx`. Future-you will thank past-you when there are three versions floating around.
 
 ### How Users Open It WITHOUT Copilot
 
-This is the part that often gets missed. A `.potx` is useful even without any AI in the picture, but **where it appears depends on the platform**. Here are the four common paths:
+This is the part that often gets missed. A `.potx` is useful even without any AI in the picture, but where it appears depends on the platform. Here are the four common paths:
 
 | Path | Where users find it | Best for |
 |---|---|---|
@@ -792,16 +792,16 @@ This is the part that often gets missed. A `.potx` is useful even without any AI
 | **SharePoint document library link** | Users open the doc library and click the template | Brand or marketing site |
 | **Pinned to PowerPoint Start screen** | File → New → pin a template for easy access | Common for executive teams |
 
-> 💡 **Heads-up on the web:** OAL templates **do not surface the same way in Word for the web or Excel for the web** today. If your audience is mostly web users, plan around PowerPoint web (with E3/E5) and OneDrive/SharePoint links.
+> 💡 **Heads-up on the web:** OAL templates do not surface the same way in Word for the web or Excel for the web today. If your audience is mostly web users, plan around PowerPoint web (with E3/E5) and OneDrive/SharePoint links.
 
-The **SharePoint OAL path is still the most scalable for desktop** — one upload, every user with a desktop Office app sees it. This is also why setting up an OAL pays off even if you weren't going to use Copilot.
+The SharePoint OAL path is still the most scalable for desktop — one upload, every user with a desktop Office app sees it. This is also why setting up an OAL pays off even if you weren't going to use Copilot.
 
 ### How the Same Template Plugs Into Copilot
 
 Once you've built and saved the `.potx`, here's how Copilot uses it:
 
-1. Open the **Microsoft 365 Copilot app**
-2. Go to **Create → More... → Brand kits**
+1. Open the Microsoft 365 Copilot app
+2. Go to Create → More... → Brand kits
 3. Open your Brand Kit → **Templates**
 4. Click **Upload Template** (or pick it from your OAL)
 5. Upload your `.potx` or `.pptx` file
@@ -881,20 +881,20 @@ Add-SPOOrgAssetsLibrary `
 After registration:
 
 - Allow up to 24 hours for the library to appear in Office apps
-- Users get **Insert → Pictures → Brand Images** in PowerPoint and Word
+- Users get Insert → Pictures → Brand Images in PowerPoint and Word
 - Copilot can pull from this library when generating presentations (when the OAL is connected to Copilot)
 
-> ⚠️ **Prerequisites to confirm before running this command:**
+> ⚠️ Prerequisites to confirm before running this command:
 >
 > - Your SharePoint Online Management Shell is **version 16.0.24915.12000 or later** — earlier versions don't support newer OAL parameters
-> - The library is on the **same SharePoint site** as your other OALs (Microsoft's hard rule: all OAL libraries must be on the same site, up to 30 libraries)
+> - The library is on the same SharePoint site as your other OALs (Microsoft's hard rule: all OAL libraries must be on the same site, up to 30 libraries)
 > - `ImageDocumentLibrary` is the type required for Brand Images search inside PowerPoint — `OfficeTemplateLibrary` is the type for templates
-> - For users to see the org library in **PowerPoint for the web**, they need an **Office 365 E3 or E5** licence
+> - For users to see the org library in **PowerPoint for the web**, they need an Office 365 E3 or E5 licence
 > - Newer versions of the cmdlet also support `-OrgAssetType BrandKitLibrary` and a `-CopilotSearchable $true` switch — useful when wiring Brand Kit content explicitly. Check the [official cmdlet reference](https://learn.microsoft.com/powershell/module/microsoft.online.sharepoint.powershell/add-spoorgassetslibrary) for current syntax.
 
 ### How Big Should the Library Be?
 
-Microsoft recommends a **significant image set** — ideally **1,000+ images** — for the best Copilot retrieval results. Don't panic if you don't have that many yet.
+Microsoft recommends a **significant image set** — ideally 1,000+ images — for the best Copilot retrieval results. Don't panic if you don't have that many yet.
 
 > 💡 **Honest tip:** Start with what you have. 50 approved images is better than zero. As you grow toward 1,000+, expect more consistent image matching. The library quality matters as much as quantity — well-tagged, properly named, descriptive images beat a flood of vague ones.
 
@@ -952,7 +952,7 @@ If you're already invested in Bynder, Frontify, or AEM Assets and waiting for ti
 
 Customers ask: "we already have Designer; do we need Adobe Express? And how does Brand Kit fit?" Here's the positioning I use.
 
-> 💡 **Quick primer — what is Adobe Express?**
+> 💡 Quick primer — what is Adobe Express?
 > Adobe Express is Adobe's free creative design tool (think: Canva, from Adobe). It does posters, social posts, animated graphics, short videos, magazine-style layouts. Inside Copilot Chat you invoke it with **`@Adobe Express`** to browse Adobe templates, swap in your images, animate designs, and export the result back to Microsoft formats (PNG, JPG, MP4, PPTX). Most office workers won't reach for it daily — but marketing, comms, and design teams will.
 
 ### Decision tree — which one do I use?
@@ -989,7 +989,7 @@ In practice:
 
 - For an internal social post or email banner — start with **Designer**
 - For an animated explainer, a social campaign, or a magazine-style layout — `@Adobe Express` in Copilot Chat
-- Either way, your **Brand Kit colours, fonts, and imagery rules** help guide the output in supported surfaces
+- Either way, your Brand Kit colours, fonts, and imagery rules help guide the output in supported surfaces
 
 > ⚠️ **Honest caveat:** Brand enforcement is **tighter in Microsoft-native surfaces** (Designer, PowerPoint Brand Checker / Brand Reviewer) than in Adobe Express today. Adobe Express is adjacent to your Brand Kit, not governed by it the same way — treat brand alignment inside Express as a manual or Adobe-side step until Microsoft confirms deeper integration. If brand consistency is mission-critical for a specific asset, generate it through Designer or PowerPoint.
 
@@ -1001,7 +1001,7 @@ In practice:
 4. Pick one, refine in chat, or open in Adobe Express for deep editing
 5. Export to a Microsoft format (PNG, JPG, MP4, PPTX) and use it in your deck or email
 
-This is genuinely useful for marketing and comms teams who already think in Adobe-style workflows. For pure office workers, Designer covers most needs.
+This is useful for marketing and comms teams who already think in Adobe-style workflows. For pure office workers, Designer covers most needs.
 
 ## Brand Checker — Your Quality Inspector
 
@@ -1032,7 +1032,7 @@ Brand Checker scans your entire presentation against your Brand Kit and flags:
 
 Here's what I actually saw on my build, end to end. Three screenshots, three steps:
 
-**Step 1 — Open the Copilot pane and just ask.**
+Step 1 — Open the Copilot pane and just ask.
 
 <figure>
   <img src="/images/blog/brand-kit/brand-reviewer-01-prompt-input.webp"
@@ -1044,7 +1044,7 @@ Here's what I actually saw on my build, end to end. Three screenshots, three ste
   </figcaption>
 </figure>
 
-**Step 2 — Copilot asks which Brand Kit to compare against.**
+Step 2 — Copilot asks which Brand Kit to compare against.
 
 <figure>
   <img src="/images/blog/brand-kit/brand-reviewer-02-template-choice.webp"
@@ -1056,7 +1056,7 @@ Here's what I actually saw on my build, end to end. Three screenshots, three ste
   </figcaption>
 </figure>
 
-**Step 3 — The payoff: a detailed brand-by-brand audit.**
+Step 3 — The payoff: a detailed brand-by-brand audit.
 
 <figure>
   <img src="/images/blog/brand-kit/brand-reviewer-03-audit-output.webp"
@@ -1239,65 +1239,65 @@ Want to check if your organisation is ready for Copilot? Our [Copilot Readiness 
 
 ## FAQ
 
-**1. What is a Microsoft 365 Copilot Brand Kit?**
+1. What is a Microsoft 365 Copilot Brand Kit?
 
 A Brand Kit is a collection of your organisation's approved brand elements — logos, colour palettes, fonts, templates, icons, photography rules, brand voice, and style guidelines. When published, Copilot uses these elements to generate on-brand content automatically across PowerPoint, Word, and the Create tab.
 
-**2. Do I need a paid licence to use Brand Kit?**
+2. Do I need a paid licence to use Brand Kit?
 
 Yes. Creating, managing, and using Brand Kits requires a Microsoft 365 Copilot licence ($30/user/month). Users without a Copilot licence can only open templates from Brand Kits — they cannot create kits, use brand styling, or access the Brand Checker.
 
-**3. Where does Brand Kit work?**
+3. Where does Brand Kit work?
 
 Brand Kit has the deepest integration in PowerPoint (PowerPoint Agent, Narrative Builder, Brand Checker). It also works in Word through the Word Agent and templates, in the Create tab for images, banners, and posters, and Excel templates can be uploaded to Brand Kits for consistent spreadsheet formatting.
 
-**4. What is the Brand Checker?**
+4. What is the Brand Checker?
 
 Brand Checker scans your entire presentation against your Brand Kit and flags issues — incorrect colours or fonts, misplaced logos, off-brand imagery, and layout problems. It offers one-click fixes to bring everything back on brand automatically.
 
-**5. How do I set up Brand Kit as an IT admin?**
+5. How do I set up Brand Kit as an IT admin?
 
 Two required steps: (1) Create a mail-enabled security group with your brand managers and enable the Enterprise Brand Manager policy at [config.office.com](https://config.office.com), then (2) your brand managers create and publish the kit. Optionally, set up a SharePoint OAL for enhanced PowerPoint template integration. Allow 24 hours for the policy to take effect.
 
-**6. What is the difference between Brand Kit and the OAL?**
+6. What is the difference between Brand Kit and the OAL?
 
 The OAL is SharePoint-based storage for templates and images. Brand Kit adds richer capabilities on top — brand voice, AI guidelines extraction, Brand Checker, multiple brand support, and enforcement of your visual and verbal identity. They work together — Brand Kit references your OAL assets.
 
-**7. Can Copilot extract my brand guidelines automatically?**
+7. Can Copilot extract my brand guidelines automatically?
 
 Yes. Upload your existing brand guidelines PDF to a Brand Kit, and Copilot's AI extracts colour palettes, fonts, typography rules, photography styles, layout structures, and brand voice patterns. Review and refine before publishing — especially the voice section, where nuance often needs a human eye.
 
-**8. How do I create a PowerPoint template optimised for Copilot?**
+8. How do I create a PowerPoint template optimised for Copilot?
 
 Use Slide Master with theme colours and fonts (not manual styling), include 12+ representative slide layouts, use placeholders instead of text boxes, show different content densities and data visualisation styles, and avoid overlapping elements. Upload as `.potx` or `.pptx` to your Brand Kit. See the [PowerPoint Template section](#building-a-powerpoint-template-inside-and-outside-copilot) for the full walkthrough.
 
-**9. Can I have multiple Brand Kits?**
+9. Can I have multiple Brand Kits?
 
 Yes. You can create and maintain multiple Brand Kits — for example, Corporate, Product, and Regional brands. Users can switch between them. Each kit has its own templates, colours, fonts, and assets.
 
-**10. Are the PowerPoint, Word, and Excel Agents generally available?**
+10. Are the PowerPoint, Word, and Excel Agents generally available?
 
 As of last verified (May 2026), the PowerPoint Agent (including Brand Kit and Brand Checker / Brand Reviewer) is generally available on Windows, Mac, and Web for tenants with a Microsoft 365 Copilot licence. Specific capabilities are still rolling out across channels, and behaviour can differ between Current Channel, Monthly Enterprise Channel, and Beta Channel. These agents are powered by Anthropic Claude models. Check the [M365 Roadmap](/m365-roadmap/) and your Message Center for the latest status in your tenant.
 
-**11. How do I create a standalone PowerPoint template my team can use even without Copilot?**
+11. How do I create a standalone PowerPoint template my team can use even without Copilot?
 
 Build it in PowerPoint using the Slide Master (Theme Colours, Theme Fonts, Layouts, Placeholders), save it as a `.potx` file, then host it in a SharePoint Organizational Asset Library. After the OAL is configured, the template appears in **File → New → Office** for every user, with or without a Copilot licence. The same `.potx` can then be uploaded to your Brand Kit to power Copilot's output too — one template, two audiences. See the [PowerPoint Template section](#building-a-powerpoint-template-inside-and-outside-copilot) for step-by-step.
 
-**12. What's the difference between Brand Images and Microsoft stock images?**
+12. What's the difference between Brand Images and Microsoft stock images?
 
-Microsoft stock images are the free royalty-free library built into Office (Insert → Pictures → Stock Images). **Brand Images** are your organisation's approved photos, logos, icons, and illustrations, surfaced from your SharePoint Organizational Asset Library or Templafy under Insert → Pictures → Brand Images. Copilot prefers Brand Images when generating presentations — so they keep generated content visually on-brand, while stock images are a fallback for generic visuals.
+Microsoft stock images are the free royalty-free library built into Office (Insert → Pictures → Stock Images). Brand Images are your organisation's approved photos, logos, icons, and illustrations, surfaced from your SharePoint Organizational Asset Library or Templafy under Insert → Pictures → Brand Images. Copilot prefers Brand Images when generating presentations — so they keep generated content visually on-brand, while stock images are a fallback for generic visuals.
 
-**13. How does Brand Kit work with Adobe Express and Microsoft Designer?**
+13. How does Brand Kit work with Adobe Express and Microsoft Designer?
 
 Designer (built into Copilot Create) handles fast, good-enough visuals — banners, posters, infographics — using your Brand Kit colours, fonts, and style. Adobe Express agent (invoked via `@Adobe Express` inside Copilot Chat) offers deeper creative editing with Adobe templates, then exports back to Microsoft formats. Your Brand Kit colours, fonts, and rules help guide both — though brand enforcement is tighter in Designer than in Adobe Express today.
 
-**14. Does Brand Kit work in Outlook, Loop, Whiteboard, or Forms?**
+14. Does Brand Kit work in Outlook, Loop, Whiteboard, or Forms?
 
 Mostly no today. Copilot writing in Outlook reflects your tenant defaults, but explicit Brand Kit voice enforcement in Outlook is limited. Loop, Whiteboard, and Forms don't have documented Brand Kit support yet — they use their own themes and templates. This is an active area in Microsoft's roadmap, so check Message Center for changes.
 
 ---
 
-**Related guides you might find useful:**
+Related guides you might find useful:
 
 - [Copilot Licensed — Complete Train-the-Trainer Guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/) — deep-dive into every Copilot app
 - [Copilot Chat — Complete Guide for Trainers](/blog/microsoft-365-copilot-chat-complete-guide-for-trainers/) — foundations for all users

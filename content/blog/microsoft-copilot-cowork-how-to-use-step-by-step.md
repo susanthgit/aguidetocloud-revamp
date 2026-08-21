@@ -28,7 +28,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork is **generally available** as of 16 June 2026 — now walked through with real screenshots from my tenant. **Last verified: 13 July 2026.**
+🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork is **generally available** as of 16 June 2026 — now walked through with real screenshots from my tenant. Last verified: 13 July 2026.
 
 </div>
 
@@ -40,7 +40,7 @@ founder_note: |
 
 ## TL;DR
 
-- **Where to find Cowork** — at **m365.cloud.microsoft** (browser), the Microsoft 365 Copilot desktop/mobile app, or in **Outlook and Teams** — select **Cowork** from the **toggle next to Chat**. Some app versions show it in the **left navigation rail** instead, or under **All agents**
+- **Where to find Cowork** — at **m365.cloud.microsoft** (browser), the Microsoft 365 Copilot desktop/mobile app, or in Outlook and Teams — select Cowork from the toggle next to Chat. Some app versions show it in the left navigation rail instead, or under All agents
 - **How to start a task** — describe an outcome, not a process
 - **What to expect** — Cowork works through the steps in front of you, pausing for your approval at sensitive actions
 - **How to stay in control** — pause, redirect, or stop at any time
@@ -63,9 +63,9 @@ If all three are in place and you still can't see it, give it a few minutes afte
 
 <p><img src="/images/blog/cowork-how-to/01-task-ideas.webp" alt="The Cowork 'Task ideas' panel with suggested tasks like an OOO handover pack, newsletter brief, calendar audit and morning briefing, grouped by topic" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-Cowork lives inside Microsoft 365 Copilot — open **`m365.cloud.microsoft`** in your browser (or use the Microsoft 365 Copilot desktop or mobile app, or find it in **Outlook and Teams**) and switch from **Chat** to **Cowork** using the **toggle next to the chat box**. **Heads-up:** the Microsoft 365 app is rolling out a new layout, so on some tenants Cowork shows in the **left navigation rail** rather than the top toggle — if you don't see the toggle, check the left rail, or look under **All agents**. It opens into its own full task workspace, not just a chat box.
+Cowork lives inside Microsoft 365 Copilot — open `m365.cloud.microsoft` in your browser (or use the Microsoft 365 Copilot desktop or mobile app, or find it in Outlook and Teams) and switch from **Chat** to Cowork using the toggle next to the chat box. Heads-up: the Microsoft 365 app is rolling out a new layout, so on some tenants Cowork shows in the left navigation rail rather than the top toggle — if you don't see the toggle, check the left rail, or look under All agents. It opens into its own full task workspace, not just a chat box.
 
-The landing page is built around two things: an input box that says **"Start a task…"** (not "Send a message") and a left side rail with your task history. The core controls in the rail are **New task**, **Search**, **Scheduled**, and **Customize**.
+The landing page is built around two things: an input box that says **"Start a task…"** (not "Send a message") and a left side rail with your task history. The core controls in the rail are New task, Search, Scheduled, and Customize.
 
 Before you type anything, two helper sections sit on the landing page:
 
@@ -74,7 +74,7 @@ Before you type anything, two helper sections sit on the landing page:
 
 <p><img src="/images/blog/cowork/howto-01-home.webp" alt="Microsoft 365 Copilot Cowork home — a dedicated task workspace with a Start a task input box, a left rail (New task, My tasks, Scheduled, Customize), a Needs your input section, and Try these next suggestion cards, with the model picker set to Auto." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The Cowork home — note it says **Start a task**, not "send a message", plus the **Try these next** cards and the **Auto** model picker. (Demo capture; one internal file name is blocked.)*
+*The Cowork home — note it says **Start a task**, not "send a message", plus the Try these next cards and the Auto model picker. (Demo capture; one internal file name is blocked.)*
 
 <p><img src="/images/blog/cowork/howto-02-task-ideas.webp" alt="Cowork Task ideas gallery showing suggested tasks grouped by topic — Triage, Research, Create, Meetings, Automate — including OOO handover pack, Newsletter brief, Calendar audit, Unread email triage, Stakeholder check-in, Morning briefing, and End of day wrap-up." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -100,7 +100,7 @@ Why? Cowork's planner is good at decomposing outcomes into steps. Pre-decomposed
 
 <p><img src="/images/blog/cowork/howto-03-prompt.webp" alt="Cowork input box with an outcome-style task typed in: Help me organize my week. Please review my Outlook calendar." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*An outcome-first prompt in the **Start a task** box — describe the result you want, not the steps.*
+*An outcome-first prompt in the Start a task box — describe the result you want, not the steps.*
 
 ---
 
@@ -116,7 +116,7 @@ Why? Cowork's planner is good at decomposing outcomes into steps. Pre-decomposed
 
 *The **Steps** panel — Cowork's plan, laid out so you can follow along (and stop it if it heads the wrong way).*
 
-Cowork doesn't disappear and hand back a finished result. It **breaks your request into steps and works through them one by one**, showing each step in the conversation (and in the side panel) as it goes — so you can follow along and see exactly how it interpreted your outcome.
+Cowork doesn't disappear and hand back a finished result. It breaks your request into steps and works through them one by one, showing each step in the conversation (and in the side panel) as it goes — so you can follow along and see exactly how it interpreted your outcome.
 
 This is the part most people skim, and it's the one that keeps you in control:
 
@@ -138,7 +138,7 @@ That was one complete task, start to finish: you typed an outcome — *"help me 
 
 <p><img src="/images/blog/cowork-how-to/04-approval.webp" alt="A Cowork approval checkpoint — a 'Send email?' card with a draft and editable body, and Cancel / Send buttons, shown before the action runs" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-Cowork runs on its own for the low-risk steps, but it **pauses before any action that sends or changes something** to ask permission first. This is the safety rail that makes delegating comfortable.
+Cowork runs on its own for the low-risk steps, but it pauses before any action that sends or changes something to ask permission first. This is the safety rail that makes delegating comfortable.
 
 **What triggers a checkpoint** — the actions that send or change something:
 
@@ -153,11 +153,11 @@ Cowork tags medium- and high-risk actions with a risk indicator, and the approva
 
 <p><img src="/images/blog/cowork/howto-07-approval.webp" alt="Cowork approval card titled Send email with a To field, a Subject of Hello, a short body, a note that it was sent by Copilot Cowork, and Cancel and Send buttons. The recipient email address is redacted." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The **approval card** — Cowork shows the exact email and waits. Nothing leaves until you click **Send**. (Recipient address redacted; it was a test to myself.)*
+*The **approval card** — Cowork shows the exact email and waits. Nothing leaves until you click Send. (Recipient address redacted; it was a test to myself.)*
 
 **Your moves at a checkpoint:**
 
-- **Approve** — the button matches the action (**Send**, **Post**, **Create**).
+- **Approve** — the button matches the action (Send, **Post**, Create).
 - **Cancel** — stop the action; Cowork moves on or asks what you'd prefer.
 - **Skip future prompts** — a dropdown lets you stop being asked for *similar* actions. The narrow options (a single address, or recipients in your own domain) are reasonable; the widest one — *"always allow Send email with attachments"* — is a blanket permission to send files without asking again, so avoid it unless you really mean it, and scope to your own domain at most.
 

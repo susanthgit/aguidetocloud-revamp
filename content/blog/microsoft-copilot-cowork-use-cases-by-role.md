@@ -28,7 +28,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork is **generally available** as of 16 June 2026. Living doc — new scenarios get added as I test them or hear them from customers. **Last verified: 17 June 2026 · GA day.**
+🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork is **generally available** as of 16 June 2026. Living doc — new scenarios get added as I test them or hear them from customers. Last verified: 17 June 2026 · GA day.
 
 </div>
 
@@ -96,7 +96,7 @@ A second one I lean on for the weekly ops review:
 
 <div class="cowork-scenario">
 
-> **Cowork will:**
+> Cowork will:
 > - Search your inbox and Teams for VPN-related messages
 > - Pull relevant documents from SharePoint
 > - **Check in**, then create a Word summary with the trends and attach it to the Friday ops-review invite
@@ -129,7 +129,7 @@ A second one I lean on for the weekly ops review:
 
 <div class="cowork-scenario">
 
-> **Cowork will:**
+> Cowork will:
 > - Find all recent emails and Teams chats with Northwave contacts
 > - Pull the latest proposal and pricing documents from SharePoint
 > - Check if there were any recent support tickets
@@ -148,7 +148,7 @@ And to close the loop after the meeting:
 
 <div class="cowork-scenario">
 
-> **Cowork will:**
+> Cowork will:
 > - Find the meeting recording and transcript from today
 > - Extract the key discussion points and action items
 > - Draft a professional follow-up email
@@ -182,7 +182,7 @@ And to close the loop after the meeting:
 
 <div class="cowork-scenario">
 
-> **Cowork will:**
+> Cowork will:
 > - Check the onboarding checklist in SharePoint
 > - Verify IT equipment has been ordered (search emails)
 > - Draft a welcome email with the first-week schedule
@@ -201,7 +201,7 @@ For the sensitive, theme-finding work:
 
 <div class="cowork-scenario">
 
-> **Cowork will:**
+> Cowork will:
 > - Find performance review documents in SharePoint
 > - Analyse common themes across all reviews
 > - Create a summary document in Word with anonymised trends
@@ -235,7 +235,7 @@ For the sensitive, theme-finding work:
 
 <div class="cowork-scenario">
 
-> **Cowork will:**
+> Cowork will:
 > - Find the approved Q2 budget in SharePoint
 > - Pull actual spend data from shared Excel files
 > - Calculate variances and highlight significant items
@@ -254,7 +254,7 @@ And the monthly expense reconciliation:
 
 <div class="cowork-scenario">
 
-> **Cowork will:**
+> Cowork will:
 > - Find expense submissions in your inbox and shared folders
 > - Cross-reference with your travel policy document in SharePoint
 > - Create an Excel summary with flagged items
@@ -288,7 +288,7 @@ And the monthly expense reconciliation:
 
 <div class="cowork-scenario">
 
-> **Cowork will:**
+> Cowork will:
 > - Find the product launch brief in SharePoint
 > - Check the brand guidelines document
 > - Draft 5 social posts with different angles
@@ -307,7 +307,7 @@ For staying ahead of the market:
 
 <div class="cowork-scenario">
 
-> **Cowork will:**
+> Cowork will:
 > - Search your inbox and Teams for competitor mentions
 > - Pull any shared competitive analysis docs from SharePoint
 > - Create a summary document with key themes
@@ -342,7 +342,7 @@ For staying ahead of the market:
 
 <div class="cowork-scenario">
 
-> **Cowork will:**
+> Cowork will:
 > - Review your calendar for this afternoon
 > - Identify which meetings can be rescheduled
 > - Draft polite decline/reschedule messages
@@ -361,7 +361,7 @@ And before the big meeting:
 
 <div class="cowork-scenario">
 
-> **Cowork will:**
+> Cowork will:
 > - Find all board-related documents shared in the past month
 > - Pull action items from the last board meeting
 > - Check for any flagged items from your direct reports
@@ -398,7 +398,7 @@ This is my own role, so I'll be honest: it's the one that felt Cowork's value th
 
 <div class="cowork-scenario">
 
-> **Cowork will:**
+> Cowork will:
 > - Find recent emails and Teams chats with the account
 > - Pull the last deck, proposal, or notes we shared from SharePoint and OneDrive
 > - Check Microsoft Learn for the latest on the topic so I'm current
@@ -417,7 +417,7 @@ Then, after the session:
 
 <div class="cowork-scenario">
 
-> **Cowork will:**
+> Cowork will:
 > - Find today's meeting transcript and notes
 > - Pull out the decisions and the things I committed to
 > - Draft the recap email and a clean one-page Word doc to attach

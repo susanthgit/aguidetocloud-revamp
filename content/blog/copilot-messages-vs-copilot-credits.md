@@ -52,13 +52,13 @@ founder_note: |
 
 </div>
 
-**The short version:** On **1 September 2025**, Microsoft changed the Copilot Studio usage currency from **messages** to **Copilot Credits**. Your **prepaid packs and the pay-as-you-go rate didn't change** — a 25,000-message pack simply became a 25,000-credit pack. The practical point that trips people up: credits are metered at **feature-based rates**, so "one message = one credit" is no longer a safe assumption. The rename itself didn't create a new charge or make you re-buy anything — but feature-based rates can change how fast you use up capacity.
+**The short version:** On **1 September 2025**, Microsoft changed the Copilot Studio usage currency from messages to Copilot Credits. Your prepaid packs and the pay-as-you-go rate didn't change — a 25,000-message pack simply became a 25,000-credit pack. The practical point that trips people up: credits are metered at feature-based rates, so "one message = one credit" is no longer a safe assumption. The rename itself didn't create a new charge or make you re-buy anything — but feature-based rates can change how fast you use up capacity.
 
 <!-- 📸 Screenshot placeholder: Power Platform admin centre showing "Manage Copilot Studio credits and capacity" (note the legacy "messages" in the URL) — Sush to capture -->
 
 ---
 
-> 🧩 **Just want to know what a credit *is*?** This page is only about the **switch** from messages to credits. For what a Copilot Credit is, the full rate card, pay-as-you-go vs prepaid pricing, and what's zero-rated, read **[What Are Copilot Credits? Rates & Costs Explained](/blog/copilot-credits-explained/)**.
+> 🧩 **Just want to know what a credit *is*? This page is only about the switch from messages to credits. For what a Copilot Credit is, the full rate card, pay-as-you-go vs prepaid pricing, and what's zero-rated, read [What Are Copilot Credits? Rates & Costs Explained](/blog/copilot-credits-explained/)**.
 
 ---
 
@@ -81,7 +81,7 @@ The headline shift: usage is now measured by the **time and effort** an agent sp
 
 This is the reassuring part, and it's why most tenants didn't feel the switch:
 
-- **Your prepaid pack quantity.** Microsoft's note is explicit: *"there's no change in the quantity per prepaid pack or to the pay-as-you-go rate."* A **25,000-message** pack continued as **25,000 Copilot Credits** a month.
+- **Your prepaid pack quantity.** Microsoft's note is explicit: *"there's no change in the quantity per prepaid pack or to the pay-as-you-go rate."* A **25,000-message** pack continued as 25,000 Copilot Credits a month.
 - **The pay-as-you-go rate.** Still billed through an Azure subscription at the same rate ($0.01 per credit today).
 - **Your billing setup.** Billing policies, environment allocation and admin controls work the same way. It's a terminology-and-metering change, not a new purchase.
 - **The goal.** It's still about controlling how much agent work your tenant consumes.
@@ -96,9 +96,9 @@ This is the reassuring part, and it's why most tenants didn't feel the switch:
 
 Under the old model, a simple interaction looked roughly like one message. Under Copilot Credits, the cost depends on **what the agent does**:
 
-- A simple **classic answer** is still about **1 credit** — so simple cases feel familiar.
-- But a question that gives a **generative answer** *and* grounds on your **tenant data** can be **2 + 10 = 12 credits** on a single turn.
-- Add an **action**, **voice**, or **AI tools**, and one interaction climbs further.
+- A simple **classic answer** is still about 1 credit — so simple cases feel familiar.
+- But a question that gives a **generative answer** *and* grounds on your tenant data can be 2 + 10 = 12 credits on a single turn.
+- Add an **action**, voice, or AI tools, and one interaction climbs further.
 
 So an old estimate of "we send ~50,000 messages a month" tells you very little about credits until you know what your agents actually do.
 
@@ -114,7 +114,7 @@ The rename doesn't force any action — but it's a good prompt to tidy up:
 2. **Re-estimate in credits.** Use Microsoft's [agent usage estimator](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agent-usage-estimator), based on what your agents do — not old message volumes.
 3. **Spot the expensive features.** Some actions — grounding on tenant data, voice, AI tools — cost far more than a simple answer. The [rate card](/blog/copilot-credits-explained/#rate-card) has the amounts.
 4. **Check paid vs zero-rated.** A lot of internal, licensed Microsoft 365 Copilot usage is zero-rated; the [Credits guide](/blog/copilot-credits-explained/#not) has the boundary.
-5. **Set caps and alerts.** You can set monthly consumption limits per agent and alerts as usage approaches a threshold. (Two different thresholds apply: **custom agents are disabled at ~125%** of prepaid capacity, while **agent-flow runs block sooner — as soon as the prepaid pack is fully consumed**, leaving the rest of the agent working.)
+5. **Set caps and alerts.** You can set monthly consumption limits per agent and alerts as usage approaches a threshold. (Two different thresholds apply: custom agents are disabled at ~125% of prepaid capacity, while agent-flow runs block sooner — as soon as the prepaid pack is fully consumed, leaving the rest of the agent working.)
 6. **Update your own docs.** Swap "messages" for "Copilot Credits" in internal runbooks so your team isn't working from the old mental model.
 
 ---
@@ -123,7 +123,7 @@ The rename doesn't force any action — but it's a good prompt to tidy up:
 
 Because the older term still appears in some places, you'll still bump into "messages":
 
-- **Admin pages.** The Power Platform admin article URL still reads `.../manage-copilot-studio-messages-capacity`, but the page is now titled **"Manage Copilot Studio credits and capacity."** Same place, current term.
+- **Admin pages.** The Power Platform admin article URL still reads `.../manage-copilot-studio-messages-capacity`, but the page is now titled "Manage Copilot Studio credits and capacity." Same place, current term.
 - **Older blog posts and docs.** If it's dated before September 2025 and talks about "messages", mentally translate to Copilot Credits — and double-check rates against a current page.
 - **The rule of thumb.** If you see "messages" in a label or link, check the surrounding content and the date. Today it almost always means **Copilot Credits capacity**.
 
@@ -131,7 +131,7 @@ Because the older term still appears in some places, you'll still bump into "mes
 
 ## When you want the Credits page instead {#which-page}
 
-> 🧭 This page is **only** about the messages → credits *transition*. If you're trying to understand **what a Copilot Credit is**, **what each action costs**, **pay-as-you-go vs prepaid pricing**, **what's zero-rated**, or **how to estimate your monthly spend**, the right page is **[What Are Copilot Credits? Rates & Costs Explained](/blog/copilot-credits-explained/)**.
+> 🧭 This page is **only** about the messages → credits *transition*. If you're trying to understand what a Copilot Credit is, what each action costs, pay-as-you-go vs prepaid pricing, what's zero-rated, or how to estimate your monthly spend, the right page is **[What Are Copilot Credits? Rates & Costs Explained](/blog/copilot-credits-explained/)**.
 
 ---
 

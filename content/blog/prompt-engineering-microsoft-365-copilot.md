@@ -64,7 +64,7 @@ I had to look this up three times before it clicked. Then I taught it to a recru
 
 <div class="post-trio">
 
-📚 **Three posts on M365 Copilot prompting — pick where you are:**
+📚 Three posts on M365 Copilot prompting — pick where you are:
 
 - **🌱 Field Guide (you're reading this)** — start here. The four-block framework, per-app prompts, the mistakes everyone makes.
 - **🧑‍💼 [Persona Playbook](/blog/microsoft-365-copilot-by-persona-playbook/)** — your role's worked prompts. Recruiter · Ops · Finance · IT · Sales.
@@ -76,7 +76,7 @@ I had to look this up three times before it clicked. Then I taught it to a recru
 > - **[Copilot for Executives Field Guide](/blog/copilot-for-executives-field-guide/)** — for C-suite and board members. Board prep, decision support, governance, 10 role playbooks.
 > - **[Copilot for People Leaders Field Guide](/blog/copilot-for-people-leaders-field-guide/)** — for managers running teams. 1:1s, team meetings, performance, hiring, coaching.
 
-> ⏱ **Start in 60 seconds — actually try this before reading further**
+> ⏱ Start in 60 seconds — actually try this before reading further
 >
 > 1. Open Microsoft 365 Copilot Chat at [microsoft365.com/chat](https://microsoft365.com/chat) (or your in-tenant equivalent).
 > 2. Paste this prompt exactly:
@@ -88,7 +88,7 @@ I had to look this up three times before it clicked. Then I taught it to a recru
 
 > 🏃 **TL;DR for skimmers**
 >
-> Microsoft 365 Copilot is a **capable new colleague on day one**. Strong at language, fast at drafting, knows nothing about your company until you tell it. Your job is the brief.
+> Microsoft 365 Copilot is a capable new colleague on day one. Strong at language, fast at drafting, knows nothing about your company until you tell it. Your job is the brief.
 >
 > Microsoft's official prompt framework is four blocks: {{< hi >}}**Goal** · **Context** · **Expectations** · **Source**{{< /hi >}}. Add one habit on top: **iterate**. That's the whole skill.
 >
@@ -166,7 +166,7 @@ Now you'll get a useful structured table on the first try. Here's the same promp
 
 <p><img src="/images/blog/prompt-engineering/03-gces-color-coded.webp" alt="Prompt Engineering Skills comparison slide. Left side shows a Bad Prompt label with the prompt Summarise my emails. Below it a Good Prompt label with a colour-coded sentence. The full Good Prompt reads From my emails over the past week (in red), create a table of actions (in blue), including whose action it is, the person that assigned it and when it is due (in green), I need this to have a good structure to organize my day (in yellow-orange), Be concise (in green). Right side shows the same breakdown written out in plain English with each of Goal in blue, Context in orange, Source in red, and Expectations in green highlighted. The breakdown explains: Goal is to create a table of actions, Context is that you need this to organise your day, Source is your emails over the past week, Expectations are the table to include the person responsible for the action the person who assigned it and the due date, and the response to be concise." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-Same four blocks. Microsoft calls them **Goal**, **Context**, **Expectations**, **Source**. They don't have to be in any particular order. They don't need labels. They just need to be **all present** in the prompt — woven into one sentence is fine.
+Same four blocks. Microsoft calls them **Goal**, Context, Expectations, Source. They don't have to be in any particular order. They don't need labels. They just need to be all present in the prompt — woven into one sentence is fine.
 
 - 🔵 **Goal** — "create a table of actions"
 - 🟡 **Context** — "to organise my day"
@@ -218,7 +218,7 @@ Treat the first answer as a draft. Coach Copilot with one sentence at a time:
 | `/meeting name` | Pulls in that meeting's recap |
 | `/email subject` | Pulls in that email thread |
 
-If slash auto-complete doesn't appear, use the **file picker** / **Add files** button in the chat composer — that's the proper fallback for grounding. Pasting a filename into the prompt does **not** ground; pasting the actual content works for one-shot tasks but isn't equivalent to a real source reference.
+If slash auto-complete doesn't appear, use the **file picker** / Add files button in the chat composer — that's the proper fallback for grounding. Pasting a filename into the prompt does not ground; pasting the actual content works for one-shot tasks but isn't equivalent to a real source reference.
 
 ### App-by-app one-liner
 
@@ -344,7 +344,7 @@ Pick the one that fits your task. The blocks are interchangeable in spirit — t
 
 ### How the 4 blocks map to the deeper techniques
 
-The [Prompt Engineering Guide](/prompt-guide/) on this site teaches 8 techniques in more depth. Those techniques aren't replaced by the 4-block framework — they're **what each block looks like in practice**.
+The [Prompt Engineering Guide](/prompt-guide/) on this site teaches 8 techniques in more depth. Those techniques aren't replaced by the 4-block framework — they're what each block looks like in practice.
 
 | Deeper technique (from /prompt-guide/) | Fits inside the block |
 |---|---|
@@ -381,7 +381,7 @@ If iteration isn't getting you there, the original brief was probably under-spec
 
 ### Advanced: few-shot prompting — give Copilot examples
 
-The single biggest quality jump after the 4-block framework is **showing Copilot what good looks like before asking**. Paste 2-3 examples of the output you want, then ask for the new task in the same shape.
+The single biggest quality jump after the 4-block framework is showing Copilot what good looks like before asking. Paste 2-3 examples of the output you want, then ask for the new task in the same shape.
 
 How it looks in practice:
 
@@ -440,14 +440,14 @@ Inside the Microsoft 365 Copilot app, there's a **Copilot Prompt Gallery** with 
 **How to open it:**
 
 1. Open the **Microsoft 365 Copilot** app (web at [microsoft365.com](https://microsoft365.com) or the desktop / Teams Copilot pane).
-2. Click the **ellipsis (`…`) menu under "New chat"** in the left rail.
-3. The **Copilot Prompt Gallery** panel opens.
+2. Click the ellipsis (`…`) menu under "New chat" in the left rail.
+3. The Copilot Prompt Gallery panel opens.
 
 **What you see inside:**
 
 - A **Suggested / Your prompts** toggle at the top — start in *Suggested* to browse Microsoft's library; flip to *Your prompts* to find ones you've saved.
-- Three filters: **Task** (what you're trying to do — summarise, draft, analyse, etc.), **Job type** (role-specific filtering — HR, finance, ops, etc.), and **Copilot agent** (filter prompts by which agent they're designed for).
-- A grid of prompt cards — each card has a short title, the actual prompt text (with `[bracketed placeholders]` for you to fill in and `/slash references` to ground in your files), a "Microsoft suggested this" attribution, a **save** (bookmark) icon, and a **share** icon.
+- Three filters: **Task** (what you're trying to do — summarise, draft, analyse, etc.), Job type (role-specific filtering — HR, finance, ops, etc.), and Copilot agent (filter prompts by which agent they're designed for).
+- A grid of prompt cards — each card has a short title, the actual prompt text (with `[bracketed placeholders]` for you to fill in and `/slash references` to ground in your files), a "Microsoft suggested this" attribution, a **save** (bookmark) icon, and a share icon.
 
 <p><img src="/images/blog/prompt-engineering/01-prompt-gallery.webp" alt="Microsoft Copilot Prompt Gallery panel inside the Microsoft 365 Copilot app. Title 'Copilot Prompt Gallery' at top left, search bar at top right, Suggested toggle (selected, blue) and Your prompts toggle below the title, three filter dropdowns underneath labelled Task, Job type, and Copilot agent. Six prompt cards visible in a 3 by 2 grid: Ace your work habits (tennis-coach style improvement), Adjust message tone (empathetic and supportive rewrite), Agenda and Attendees (event meeting agenda), AI vs manual comparison, Analyze chat decisions (using slash-person grounding), and Answer questions from file. Each card has a bracketed-placeholder or slash-reference in its prompt text, a Microsoft suggested this attribution at the bottom, a bookmark save icon, and a share icon." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -471,11 +471,11 @@ In the Microsoft 365 Copilot app:
 - Click the **bookmark / save icon** on any prompt card in the Copilot Prompt Gallery — that pins it for re-use.
 - After saving, your prompts show up under the **"Your prompts"** toggle (right next to "Suggested" at the top of the gallery).
 - The "Your prompts" view adds a **"Created by"** filter alongside Task, Job type, and Copilot agent — useful when you've co-saved prompts with teammates.
-- Each saved prompt shows a **pink bookmark icon** and a **"You created this"** attribution at the bottom.
+- Each saved prompt shows a **pink bookmark icon** and a "You created this" attribution at the bottom.
 
 <p><img src="/images/blog/prompt-engineering/02-your-prompts-view.webp" alt="Copilot Prompt Gallery panel with the Your prompts toggle selected (highlighted by a hand-drawn red circle in the screenshot). Four filter dropdowns visible — Created by, Task, Job type, and Copilot agent. Six saved prompt cards in a 3 by 2 grid, each with a pink bookmark icon and a You created this attribution. The ellipsis (3-dot) menu is open on the first card showing a Remove from saved action highlighted by a box. Several cards say From my emails over the past week, plus Email Actions, Act as a strategic advisor, and Global event." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to use a saved prompt:**
+How to use a saved prompt:
 
 - **Click the prompt card** — it auto-fills the prompt into your chat composer. Review it, fill in any `[bracketed placeholder]` or `/file` reference, then click Send.
 - **Click the ellipsis (`…`) on a saved prompt card** to access the **"Remove from saved"** action (visible in the screenshot above). Useful for cleaning up prompts you no longer need.
@@ -490,7 +490,7 @@ Where saved prompts live varies by surface and tenant configuration. Most are sy
 
 For prompts that matter more than chat history alone can preserve, build an external library:
 
-- Keep a **OneNote section** or **Loop page** called *"My Copilot Prompts"*
+- Keep a **OneNote section** or Loop page called *"My Copilot Prompts"*
 - Save each working prompt with a 2-line note on context + when to use it
 - Tag by app or task ("Outlook · weekly digest", "Excel · variance commentary")
 - Review weekly — promote the best ones to a shared Loop page or Teams channel for your team
@@ -553,7 +553,7 @@ Scheduled prompts shift Copilot from "tool I open when I remember" to "AI that w
 
 ## Where you can prompt — Microsoft 365 Copilot Chat vs the apps {#where}
 
-Copilot shows up in two flavours inside Microsoft 365: a **general chat surface** and **task-specific assistants inside each app**. The same brain, different doors.
+Copilot shows up in two flavours inside Microsoft 365: a **general chat surface** and task-specific assistants inside each app. The same brain, different doors.
 
 ```mermaid
 flowchart TD
@@ -570,7 +570,7 @@ Need to understand the licensing behind these surfaces? The [Copilot Pro vs Micr
 
 ### Which Copilot surface am I in? — the matrix that explains 80% of the confusion {#surfaces}
 
-The single most useful thing to know about Microsoft 365 Copilot prompting: **the same prompt behaves differently depending on where you type it.** This is the #1 source of *"Copilot worked yesterday in Word, doesn't seem to work today in Teams"* confusion. Each surface sees a different slice of your work, supports a different set of grounding tools, and has different memory across sessions.
+The single most useful thing to know about Microsoft 365 Copilot prompting: the same prompt behaves differently depending on where you type it. This is the #1 source of *"Copilot worked yesterday in Word, doesn't seem to work today in Teams"* confusion. Each surface sees a different slice of your work, supports a different set of grounding tools, and has different memory across sessions.
 
 | Surface | What it can see | Slash commands? | Memory across sessions? |
 |---|---|---|---|
@@ -584,7 +584,7 @@ The single most useful thing to know about Microsoft 365 Copilot prompting: **th
 | **Teams chat Copilot** | The current thread, last ~30 days | ❌ | ❌ |
 | **Teams meeting Copilot** | The current meeting transcript only | ❌ | ❌ |
 
-**The mental rule:** If the task is rooted in **one document or message** you have open → use the in-app Copilot. If it **reasons across multiple sources** → use Copilot Chat or a Notebook. If it's **multi-step research or data analysis** → consider the Researcher or Analyst agent.
+**The mental rule:** If the task is rooted in **one document or message** you have open → use the in-app Copilot. If it reasons across multiple sources → use Copilot Chat or a Notebook. If it's multi-step research or data analysis → consider the Researcher or Analyst agent.
 
 > 📎 **Pin this table.** Almost every "Copilot doesn't know about my X" story I hear traces back to this matrix — wrong surface for the question being asked. Re-read it once a week for a fortnight; it sticks.
 
@@ -624,11 +624,11 @@ The biggest quality jump in your prompting is the day you stop relying on genera
 - **Sites** — SharePoint sites or site libraries
 - **Other** — additional connectors and integrations your tenant has enabled
 
-The picker has tabs at the top — **All / People / Files / Meetings / Emails / 4 More** — and the "4 More" dropdown unfolds the remaining types. There's also a search box at the right of the tabs for when you know exactly what you want.
+The picker has tabs at the top — All / People / Files / Meetings / Emails / 4 More — and the "4 More" dropdown unfolds the remaining types. There's also a search box at the right of the tabs for when you know exactly what you want.
 
 <p><img src="/images/blog/prompt-engineering/05-slash-picker.webp" alt="Microsoft 365 Copilot Chat composer with just a slash character typed. Below the composer is the slash picker panel showing tabs at the top — All (selected, highlighted blue), People, Files, Meetings, Emails, and 4 More dropdown — plus a search box and an upload arrow icon on the right. Five mixed-type results are visible: an Excel file EV Bike Financial Model 1-Year, a Word document The Importance of Prompt Engineering1, a person Sonia Rees with email address, an Email titled Meeting Notes Sprint Planning from Eka Siahaan, and a PowerPoint file Presentation 28. Each result shows a Microsoft 365 app icon, the title, and metadata such as Opened by you May 18th." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-> 💡 **Don't see what you need?** Use the **`+` (plus / upload) button** to the left of the chat input — that lets you **upload a file directly from your local machine** (Word, PDF, image, spreadsheet, etc.). The uploaded file becomes a one-shot source for that conversation. Useful when the file you want to ground in isn't in SharePoint, OneDrive, or any indexed surface — or when you just want a quick analysis without putting the document in shared storage first.
+> 💡 **Don't see what you need?** Use the **`+` (plus / upload) button** to the left of the chat input — that lets you upload a file directly from your local machine (Word, PDF, image, spreadsheet, etc.). The uploaded file becomes a one-shot source for that conversation. Useful when the file you want to ground in isn't in SharePoint, OneDrive, or any indexed surface — or when you just want a quick analysis without putting the document in shared storage first.
 
 A few example patterns that pay off:
 
@@ -640,23 +640,23 @@ A few example patterns that pay off:
 | `/Sonia Rees` | Surfaces what's known about that person from your org graph |
 | `/Sales channel` | Pulls in the channel context for cross-thread answers |
 
-If your Copilot doesn't surface slash auto-complete on a particular surface, use the **file picker** or **Add files** button in the chat composer — it does the same thing under the hood. The label might be "Add files", "Reference content", or a paperclip icon depending on which surface you're in.
+If your Copilot doesn't surface slash auto-complete on a particular surface, use the file picker or Add files button in the chat composer — it does the same thing under the hood. The label might be "Add files", "Reference content", or a paperclip icon depending on which surface you're in.
 
-> 📎 **Why this matters:** Without grounding, Copilot is writing from general knowledge plus whatever it remembers from the recent chat. That's fine for brainstorming and writing scaffolds. It is **not** fine when your answer needs to reflect a specific customer, policy, decision, or set of numbers. Most "Copilot hallucinated" stories I hear are really "Copilot wasn't given the source".
+> 📎 **Why this matters:** Without grounding, Copilot is writing from general knowledge plus whatever it remembers from the recent chat. That's fine for brainstorming and writing scaffolds. It is not fine when your answer needs to reflect a specific customer, policy, decision, or set of numbers. Most "Copilot hallucinated" stories I hear are really "Copilot wasn't given the source".
 
 A grounded prompt for the same status-update task above looks like:
 
 > *"Using /Customer migration weekly recap (the most recent three) and /Risk register, draft a 200-word status update for the steering committee. Lead with the three biggest risks, then this week's wins, then next week's asks. Plain English, no jargon."*
 
-Same four blocks. Now Copilot is reading **your** recaps and **your** risk register — not generic project-management filler.
+Same four blocks. Now Copilot is reading **your** recaps and your risk register — not generic project-management filler.
 
-> 🚨 **Heads-up — slash availability varies.** Slash-command coverage depends on which Copilot surface you're in, your tenant's connectors, the file's index status, and whether the source is supported on that surface. If `/filename` doesn't auto-complete, use the **file picker** or **Add files** button in the chat composer — that's the proper grounding fallback. Pasting a filename as plain text into the prompt does NOT ground; pasting the file's actual content works for a one-shot prompt but isn't equivalent to a real source reference.
+> 🚨 **Heads-up — slash availability varies.** Slash-command coverage depends on which Copilot surface you're in, your tenant's connectors, the file's index status, and whether the source is supported on that surface. If `/filename` doesn't auto-complete, use the file picker or Add files button in the chat composer — that's the proper grounding fallback. Pasting a filename as plain text into the prompt does NOT ground; pasting the file's actual content works for a one-shot prompt but isn't equivalent to a real source reference.
 
 ## Before you paste anything into Copilot {#privacy}
 
 A short, important section that comes BEFORE the app-by-app tips — because the cleanest way to learn is to start with the right Copilot for the right data, not patch it later.
 
-**1. Use the right Copilot for the data.** Work data → your organisation's Microsoft 365 Copilot (the licensed enterprise version). Personal data → Copilot Pro or the free consumer chat. **Never paste customer data, candidate PII, internal financials, or anything regulated into a consumer AI tool.**
+**1. Use the right Copilot for the data.** Work data → your organisation's Microsoft 365 Copilot (the licensed enterprise version). Personal data → Copilot Pro or the free consumer chat. Never paste customer data, candidate PII, internal financials, or anything regulated into a consumer AI tool.
 
 **2. Respect existing permissions.** Copilot only sees what you can already see. That includes things you can see but probably shouldn't — over-permissioned SharePoint folders, an old shared drive, a Teams channel you joined for one meeting two years ago. Before you ground Copilot in something sensitive, check who has access to the source.
 
@@ -740,7 +740,7 @@ The single biggest unlock here is the iteration habit. First reply too formal? J
 
 ### Teams — recaps, action items, meeting prep {#app-teams}
 
-Teams Copilot does two things really well: **meeting recaps after** and **meeting prep before**.
+Teams Copilot does two things really well: **meeting recaps after** and meeting prep before.
 
 Three prompts to try first:
 
@@ -804,7 +804,7 @@ These are the ones I see most often. None of them are technical. All of them are
 
 **12. Same prompt, every surface.** Slash commands, the context window, and what Copilot can see vary sharply between Copilot Chat, Word, Excel, Outlook, and Teams. The [Which Copilot surface matrix](#surfaces) above is the cheat sheet — re-read it once a week for a fortnight until the differences become muscle memory.
 
-**13. Asking Copilot about a file before it's indexed.** Files newly saved to SharePoint or OneDrive can take **minutes-to-hours** to be indexed for Copilot. If `/file` can't find a document you just created, that's almost never a Copilot bug — it's indexing lag. The fix: use the **`+` upload button** in the chat composer to attach the file directly for that conversation, or wait and retry later. While you're at it: oversharing in SharePoint (everyone has access to everything) also degrades grounding quality — Copilot returns noisier answers because the haystack is too big.
+**13. Asking Copilot about a file before it's indexed.** Files newly saved to SharePoint or OneDrive can take **minutes-to-hours** to be indexed for Copilot. If `/file` can't find a document you just created, that's almost never a Copilot bug — it's indexing lag. The fix: use the `+` upload button in the chat composer to attach the file directly for that conversation, or wait and retry later. While you're at it: oversharing in SharePoint (everyone has access to everything) also degrades grounding quality — Copilot returns noisier answers because the haystack is too big.
 
 ## The honest take — what Copilot won't do for you {#honest}
 
@@ -826,13 +826,13 @@ The framework is one thing. Watching it in action is another. Three short scenar
 
 > **Situation:** Mei is a senior recruiter at a 2,000-person company. 80 applicants for a senior data engineer role. She has two days to give the hiring manager a structured longlist.
 
-She doesn't ask Copilot to rank candidates — that decision stays with her and the hiring manager. She uses Copilot to **summarise each CV against the role criteria**, in a consistent shape. One prompt, applied to each CV individually:
+She doesn't ask Copilot to rank candidates — that decision stays with her and the hiring manager. She uses Copilot to summarise each CV against the role criteria, in a consistent shape. One prompt, applied to each CV individually:
 
 > *"Using /Senior DE Job Description, summarise this CV against the essential criteria only. Output a table: Criterion · Evidence in CV · Missing or unclear. Do not rank. Do not recommend. Flag where evidence is missing."*
 
 Now Mei has 80 consistent summaries. She reads through them faster. The decisions are still hers — but the typing isn't.
 
-She'll also use prompts for **inclusive job advert drafting**, **interview guide creation**, and **candidate communication** — covered in detail in the [Recruiters & HR section of the Persona Playbook](/blog/microsoft-365-copilot-by-persona-playbook/#the-recruiters-day-with-copilot).
+She'll also use prompts for **inclusive job advert drafting**, interview guide creation, and candidate communication — covered in detail in the [Recruiters & HR section of the Persona Playbook](/blog/microsoft-365-copilot-by-persona-playbook/#the-recruiters-day-with-copilot).
 
 ### "Priya the ops lead, weekly business review prep"
 
@@ -861,7 +861,7 @@ If you've got this far, you've got the theory. Now build the habit.
 | **3 — Excel + Teams** | Two simple Excel "what does this data say?" prompts a week + a recap after every Teams meeting. By end of week you'll feel the time savings. |
 | **4 — Copilot Chat** | Move to cross-source prompts. *"Catch me up on /project across emails, files, meetings."* This is where the real productivity unlock is. |
 
-> 💡 **Track what you save.** I genuinely recommend a one-line note at the end of each day in week 1-2: *"Today Copilot helped me on X — felt like it saved me real time."* By the end of two weeks you'll have your own evidence. Your mileage will vary, but the trend usually tells the story.
+> 💡 **Track what you save.** I recommend a one-line note at the end of each day in week 1-2: *"Today Copilot helped me on X — felt like it saved me real time."* By the end of two weeks you'll have your own evidence. Your mileage will vary, but the trend usually tells the story.
 
 ## Where to go next {#next}
 
@@ -877,7 +877,7 @@ You now have the framework, the per-app tips, the privacy guardrails, and a prac
 
 - 🧑‍💼 **[Microsoft 365 Copilot — A Plain-English Playbook for 5 Personas](/blog/microsoft-365-copilot-by-persona-playbook/)** — the role-specific companion. Recruiters & HR · Operations · Finance · IT Admin · Sales & Marketing. Day-in-the-life workflows, worked prompts, persona-specific guardrails, and the safety patterns that matter in each role.
 
-**The 2026 layer — for daily prompters who want what's new:**
+The 2026 layer — for daily prompters who want what's new:
 
 - 🆕 **[Microsoft 365 Copilot Prompt Engineering — What's New for 2026](/blog/microsoft-365-copilot-prompting-2026-whats-new/)** — Copilot Notebooks · Researcher agent · Analyst agent · Work IQ · model choice (GPT-5.5 Thinking · Instant · Claude) · Memory · multimodal · Pages. The fundamentals in this hub still apply; the upgrade brief is where the 2026 features go.
 

@@ -13,7 +13,7 @@ intro_note: "← started as a quick reply to one colleague. Then four more asked
 founder_note: |
   Microsoft Learn covers the *what* of Agent Builder really well. This post covers the *why*, the *when*, and the *here's the bit nobody tells you* — the kind of stuff you only learn after building a dozen agents and watching them break in interesting ways.
 
-  Honest take? The product is genuinely good. Most people don't know it exists. The ones who do know often confuse it with Copilot Studio (different product, different audience). The docs are spread across about eight different Learn pages. So this is the one-page version.
+  Honest take? The product is good. Most people don't know it exists. The ones who do know often confuse it with Copilot Studio (different product, different audience). The docs are spread across about eight different Learn pages. So this is the one-page version.
 
   Bookmark it. You'll want it again.
 faq:
@@ -58,7 +58,7 @@ That's the 30-second version. But before we go any further:
 
 ⚠️ **This is NOT Copilot Studio.** They're cousins — same underlying technology, same M365 governance, similar capabilities for the common stuff. But they're different products for different people.
 
-**The 5-second test:** If you opened it from `microsoft365.com/chat` (or the Copilot pane in Teams desktop), it's **Agent Builder**. If you opened it from `copilotstudio.microsoft.com`, it's **Copilot Studio**. This post is about Agent Builder.
+**The 5-second test:** If you opened it from `microsoft365.com/chat` (or the Copilot pane in Teams desktop), it's **Agent Builder**. If you opened it from `copilotstudio.microsoft.com`, it's Copilot Studio. This post is about Agent Builder.
 
 </div>
 
@@ -116,7 +116,7 @@ The licensing question trips up everyone. Here's the one-table answer.
 
 > 📌 **Admin note:** None of this requires Power Platform licensing or Dataverse storage. Agent Builder is the budget-friendly entry point. Full admin checklist is in the [Licensing](#licensing) section. For a tier-by-tier breakdown across every Copilot SKU, see the **[Licensing Simplifier](/licensing/)** tool.
 
-> ⚠️ **One honest caveat (Aug 2026):** Microsoft's own docs currently disagree in a couple of places at the *unlicensed* edge — e.g. whether you can author agents with **no** Copilot licence and **no** PayGo at all, and whether OneDrive grounding needs PayGo or the full licence. The knowledge-grounding tiers above match Microsoft's capability matrix; it's the fuzzy edges around unlicensed authoring and sharing that I'd verify in your own tenant rather than take on faith. If in doubt, treat PayGo as the real floor for any team agent. <!-- LAB-VERIFY: unlicensed authoring + free-tier sharing + OneDrive PayGo-vs-licence — Microsoft docs conflict as of Aug 2026 -->
+> ⚠️ **One honest caveat (Aug 2026):** Microsoft's own docs currently disagree in a couple of places at the *unlicensed* edge — e.g. whether you can author agents with **no** Copilot licence and no PayGo at all, and whether OneDrive grounding needs PayGo or the full licence. The knowledge-grounding tiers above match Microsoft's capability matrix; it's the fuzzy edges around unlicensed authoring and sharing that I'd verify in your own tenant rather than take on faith. If in doubt, treat PayGo as the real floor for any team agent. <!-- LAB-VERIFY: unlicensed authoring + free-tier sharing + OneDrive PayGo-vs-licence — Microsoft docs conflict as of Aug 2026 -->
 
 ## What Agent Builder feels like {#feels-like}
 
@@ -149,13 +149,13 @@ flowchart TD
     E -.->|"You can always promote later<br/>via 'Copy to Studio'"| F
 ```
 
-If you ended at **Agent Builder ✓** — keep reading. If you ended at **Copilot Studio** — skip to my [Agent Builder vs Copilot Studio vs Foundry guide](/blog/agent-builder-vs-copilot-studio-vs-foundry/) for the alternative platforms. *(For the practical governance angle, see the [security and governance guide](/blog/agent-365-security-governance-complete-guide/).)*
+If you ended at **Agent Builder ✓** — keep reading. If you ended at Copilot Studio — skip to my [Agent Builder vs Copilot Studio vs Foundry guide](/blog/agent-builder-vs-copilot-studio-vs-foundry/) for the alternative platforms. *(For the practical governance angle, see the [security and governance guide](/blog/agent-365-security-governance-complete-guide/).)*
 
 ## Your first agent in 5 minutes {#first-agent}
 
 Here's the entire workflow. Read it once, then go build something. It's quicker than reading this section.
 
-> 🛠️ **Follow along in your own tenant.** This walkthrough builds the **Daily Email Digest** agent end-to-end — you can build it alongside us as you read. Every Describe prompt and Instructions block below is **copy-paste ready**. Just swap any `[BRACKETED PLACEHOLDER]` (`[YOUR NAME]`, `[YOUR FIRST NAME]`, etc.) for your own details. Total time: ~5 minutes for the core build (Steps 1–5), +5 minutes for the schedule walkthrough (Step 6).
+> 🛠️ **Follow along in your own tenant.** This walkthrough builds the **Daily Email Digest** agent end-to-end — you can build it alongside us as you read. Every Describe prompt and Instructions block below is copy-paste ready. Just swap any `[BRACKETED PLACEHOLDER]` (`[YOUR NAME]`, `[YOUR FIRST NAME]`, etc.) for your own details. Total time: ~5 minutes for the core build (Steps 1–5), +5 minutes for the schedule walkthrough (Step 6).
 
 ### Step 1 — Open Agent Builder (30 seconds)
 
@@ -167,16 +167,16 @@ Open [microsoft365.com/chat](https://microsoft365.com/chat) in your browser, or 
 
 </div>
 
-In the **left rail**, click **New agent**.
+In the **left rail**, click New agent.
 
 <p><img src="/images/blog/m365-agent-builder/01-new-agent-button.webp" alt="Microsoft 365 Copilot interface with the left rail showing New chat, Search, Library, then an Agents section listing Researcher, Analyst, Word, Excel — and the New agent button highlighted at the bottom of that list. The main pane reads 'Build an agent to save you time' with a 'Describe the agent you want to create' input box, a Skip to configure link, and three starter templates underneath (Plan My Day, Personal News Digest, Status Update Agent)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-> 💡 **Spotted in the same view:** a **Skip to configure** link (for when you already know what you want and don't need the chat), and three **starter templates** — *Plan My Day*, *Personal News Digest*, *Status Update Agent* — which are pre-built agents you can clone and tweak instead of starting from scratch.
+> 💡 **Spotted in the same view:** a **Skip to configure** link (for when you already know what you want and don't need the chat), and three starter templates — *Plan My Day*, *Personal News Digest*, *Status Update Agent* — which are pre-built agents you can clone and tweak instead of starting from scratch.
 
 The Agent Builder workspace splits into two panes:
 
 - **Left pane — Describe:** a persistent chat where you tell Agent Builder what you want, in plain English. It writes back to the form on the right and you can keep refining as you go.
-- **Right pane — two tabs at the top:** **Configure** (the form where everything lives — name, instructions, knowledge sources, conversation starters) and **Try It** (a live chat to test the agent without leaving the build).
+- **Right pane — two tabs at the top:** **Configure** (the form where everything lives — name, instructions, knowledge sources, conversation starters) and Try It (a live chat to test the agent without leaving the build).
 
 I find the pattern *describe the rough idea → switch to Configure for surgical edits → Try It to test → back to Describe for big changes* works best.
 
@@ -193,7 +193,7 @@ Click send. Agent Builder will draft:
 - **Suggested knowledge sources** (you'll add the actual SharePoint site or files)
 - **Conversation starters** (the example prompts users see)
 
-Switch to the **Configure** tab (top right) to see and edit everything it generated. The Describe chat stays open on the left so you can ask for changes conversationally at any time.
+Switch to the Configure tab (top right) to see and edit everything it generated. The Describe chat stays open on the left so you can ask for changes conversationally at any time.
 
 <p><img src="/images/blog/m365-agent-builder/02-describe-vs-configure-tabs.webp" alt="Agent Builder workspace split into two panes — left pane shows a Describe chat with the user's request 'Summarise unread emails from the last 24 hours from my manager and direct reports. Group by sender. Highlight anything that needs a reply today.' and Agent Builder's reply outlining the agent's goal. Right pane shows the Configure tab highlighted at the top (next to a Try It tab), with the New Agent header, an Instructions field with placeholder text, and the Knowledge section starting below. A Create button sits top right." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -208,13 +208,13 @@ The **Knowledge** section is where you choose what your agent can see. The UI ha
 Here's how to wire up each kind of source:
 
 - **SharePoint / OneDrive** — click the **OneDrive cloud icon** on the right of the input, or paste a SharePoint site URL (max 2 levels deep, no query parameters), or paste a OneDrive shared link.
-- **Upload files** — drag files into the input box, or click the **upload arrow** next to the cloud icon. Up to 20 files per agent. Supported formats: `.doc`, `.docx`, `.pdf`, `.ppt`, `.pptx`, `.txt`, `.xls`, `.xlsx`. **Not in the file picker:** `.md` files (rename to `.txt` first) and `.csv` files (export to `.xlsx` first — the picker filters them out without showing why).
+- **Upload files** — drag files into the input box, or click the **upload arrow** next to the cloud icon. Up to 20 files per agent. Supported formats: `.doc`, `.docx`, `.pdf`, `.ppt`, `.pptx`, `.txt`, `.xls`, `.xlsx`. Not in the file picker: `.md` files (rename to `.txt` first) and `.csv` files (export to `.xlsx` first — the picker filters them out without showing why).
 - **Search by name** — type a SharePoint site, file name, or Teams chat name to find it.
 - **Email / Teams** — type *"My emails"* or *"My Teams chats and meetings"* to wire up those sources. Since mid-2026 you can also scope Teams to **specific meetings**, not just chats.
 - **SharePoint list** *(new — mid-2026)* — point the agent at a single SharePoint list (up to 20,000 items). Ideal for structured data: an asset register, a project tracker, a curated FAQ list. One list per agent; list attachments and lookup columns aren't supported yet.
 - **OneNote pages** *(new — mid-2026)* — add individual OneNote pages as knowledge. Whole notebooks and pasted page URLs aren't supported — pick the specific pages you want.
 - **Public websites** — paste any public URL.
-- **Other connectors** — expand **"Add other data sources"** at the bottom. **ServiceNow** is one of the built-in options; your tenant may show more depending on which connectors your admin has enabled.
+- **Other connectors** — expand **"Add other data sources"** at the bottom. ServiceNow is one of the built-in options; your tenant may show more depending on which connectors your admin has enabled.
 
 Three toggles sit below the input — they're easy to miss but they change how the agent behaves:
 
@@ -309,17 +309,17 @@ Notice the **CAPS-technique** pattern in use: `ALWAYS`, `ONLY`, `NEVER`, and the
 
 ### Step 5 — Test, then share (60 seconds)
 
-Click the **Try It** tab (top right, next to Configure) to open a live test conversation. Try the conversation starters. Ask the agent something out of scope. See how it handles it. You can flip back to Configure mid-test to tweak instructions, then jump straight back to Try It.
+Click the Try It tab (top right, next to Configure) to open a live test conversation. Try the conversation starters. Ask the agent something out of scope. See how it handles it. You can flip back to Configure mid-test to tweak instructions, then jump straight back to Try It.
 
-When you're happy, click **Create** (top right), then **Share** to open the sharing dialog. The default is **Only you** — widen access only after you've tested in *Try It*.
+When you're happy, click **Create** (top right), then Share to open the sharing dialog. The default is Only you — widen access only after you've tested in *Try It*.
 
 <p><img src="/images/blog/m365-agent-builder/04-share-dialog-options.webp" alt="Share dialog for an Agent Builder agent showing the August 2026 model — an audience selector (Only you, Specific people or groups, Anyone in your organization) plus an owners area for adding co-owners who can edit the agent, and options to copy a chat link or an edit link." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-Since **August 2026** the share experience has two layers — who can **use** the agent, and who can **edit** it:
+Since **August 2026** the share experience has two layers — who can use the agent, and who can edit it:
 
-- **Audience (who can chat with it)** — the familiar three levels: **Only you** *(default)*, **Specific people or groups**, or **Anyone in your organisation**.
+- **Audience (who can chat with it)** — the familiar three levels: Only you *(default)*, **Specific people or groups**, or Anyone in your organisation.
 - **Owners (who can edit it)** — new. You can add **co-owners** who edit the agent's instructions and knowledge alongside you. Owners must be individuals, not security groups. Add at least one co-owner to anything you'd hate to lose while you're away.
-- **Links** — you can copy a **chat link** (to use it) or an **edit link** (for co-owners) and hand them round directly.
+- **Links** — you can copy a **chat link** (to use it) or an edit link (for co-owners) and hand them round directly.
 
 > 🚨 **This replaces the old single "Only you / Specific / Anyone" radio dialog** that earlier versions of this post screenshotted. If your tenant still shows only the three-radio dialog with no owners area, the owners/roles model is still rolling out to you. <!-- LAB-VERIFY: exact labels of the Aug 2026 share dialog (owners vs "Can edit"/"Can chat" wording) — confirm against fresh screenshot -->
 
@@ -341,7 +341,7 @@ Send it. Wait for the agent to finish producing output (~10 seconds depending on
 
 #### 6b. Hover the prompt → reveal the hidden clock icon
 
-Once the output has fully generated, **move your mouse over the prompt you just sent** (not the response — the prompt above it). A tiny toolbar appears with edit / save / **clock** / bookmark icons. The clock is the schedule control. Its tooltip reads *"Schedule this prompt"*.
+Once the output has fully generated, move your mouse over the prompt you just sent (not the response — the prompt above it). A tiny toolbar appears with edit / save / **clock** / bookmark icons. The clock is the schedule control. Its tooltip reads *"Schedule this prompt"*.
 
 <p><img src="/images/blog/m365-agent-builder/05-scheduled-prompt-hover-icons.webp" alt="Close-up of a Copilot prompt 'Run the daily m...' with a small hover toolbar appearing below it containing four icons — pencil edit, bookmark, a clock icon highlighted with a teal hand cursor and tooltip reading 'Schedule this prompt', and a save bookmark. The hand cursor is pointing directly at the clock icon to show this is the hidden control for scheduling." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -371,7 +371,7 @@ At the scheduled time, two things happen:
 
 The email has a clickable link to the briefing (don't bother reading the email body — the briefing is behind the link).
 
-**2. Click the link → Copilot opens, the agent runs, the briefing renders:**
+2. Click the link → Copilot opens, the agent runs, the briefing renders:
 
 <p><img src="/images/blog/m365-agent-builder/08-scheduled-prompt-email-link-result.webp" alt="Sush's Daily Email Digest agent running inside Microsoft 365 Copilot. The user prompt 'Run the daily morning briefing' appears in the top right corner. The agent's response opens with 'Good morning Sush. Here's your 9am briefing for Tuesday, 19 May 2026.' and 'Time range covered: 18 May 2026 14:04 → 19 May 2026 14:04.' Five buckets follow — '🔥 From manager / skip-level — anything that needs a reply today' with '(nothing today)' below, '👥 From direct reports — questions, blockers, status updates' with '(nothing today)', '🤝 From peers / project teams — coordination, requests' with '(nothing today)', '🌍 From external senders — customers, partners, vendors' with a single bullet listing Alan Walker · 10:16am — [EXTERNAL] Recording for Train-the-Trainer (Part 2), and '📰 Newsletters, automated alerts, calendar updates — one-line summary only' with five bulleted items listing Cesar Abdu, Cadie Kneip, Global Benefits Communications, Neil Barnett, and Eva Etchells with their times and email subjects. Closing line: 'If you want, I can flag anything here for follow-up or open a specific email.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -381,7 +381,7 @@ Notice the agent's persona held under schedule execution — the 5-bucket struct
 
 Once you've set up a schedule, you don't have to wait for it to fire to verify it works. Microsoft has a *Manage scheduled* dialog that lets you run, edit, pause, or delete any scheduled prompt across your account — agent prompts AND Copilot Chat prompts, all in one view.
 
-To open it: click the **3-dot ellipses (…) menu** at the **top-right corner** of any Copilot pane (inside an agent or in plain chat) → select **Scheduled prompts**.
+To open it: click the **3-dot ellipses (…) menu** at the top-right corner of any Copilot pane (inside an agent or in plain chat) → select Scheduled prompts.
 
 <p><img src="/images/blog/m365-agent-builder/13-scheduled-prompts-menu-entry.webp" alt="Microsoft 365 Copilot top-right ellipses dropdown menu showing six options — Recent pages, Scheduled prompts (highlighted with a teal hand cursor pointing at it), Chat settings, Download apps, Help and tips, Send feedback. Below those is an 'Internal only' section visible with a 'Try FluxV4' toggle, Audience: Dogfood (Default), and License: Premium (Current) — internal preview features visible in this dogfood tenant." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -410,7 +410,7 @@ Each row shows the prompt text, the next run time, which agent is tied to it (if
 - Per-user only — the schedule fires for the **creator**, not for users you've shared the agent with
 - Doesn't fire on **draft / unpublished** agents — publish first
 - You can have up to **10 scheduled prompts** across your whole account (agents + plain Copilot Chat combined) — retire ones you no longer use
-- **Copilot Credits:** a run that grounds on your tenant / Graph data costs roughly **10 credits for the grounding + ~2 for the generated answer**; a run that doesn't touch tenant data is cheaper (agent generative answers without tenant-graph grounding are exempt). Watch the consumption report if you schedule broadly. <!-- LAB-VERIFY: real per-run credit cost for a scheduled agent that grounds on a live inbox -->
+- **Copilot Credits:** a run that grounds on your tenant / Graph data costs roughly 10 credits for the grounding + ~2 for the generated answer; a run that doesn't touch tenant data is cheaper (agent generative answers without tenant-graph grounding are exempt). Watch the consumption report if you schedule broadly. <!-- LAB-VERIFY: real per-run credit cost for a scheduled agent that grounds on a live inbox -->
 - Editing the agent's instructions mid-schedule keeps firing with the **updated** instructions — the next run picks them up. Confirmed 19 May 2026.
 
 ### Step 7 — Coming back to edit your agent (it's hidden too) {#edit-existing}
@@ -419,10 +419,10 @@ Once an agent is published, the obvious entry points (clicking it in the left ra
 
 To get back into edit mode:
 
-1. Click **Agents** in the left rail (the icon below *Library* / *Tasks* / *Notebooks*) — this opens the **Agent Store**.
+1. Click **Agents** in the left rail (the icon below *Library* / *Tasks* / *Notebooks*) — this opens the Agent Store.
 2. Find your agent under **Your agents** at the top of the store.
 3. **Hover the agent tile** → an ellipses menu (**…**) appears beside it.
-4. Click the menu → choose **Edit**.
+4. Click the menu → choose Edit.
 
 <p><img src="/images/blog/m365-agent-builder/11-edit-existing-agent-entry.webp" alt="Microsoft 365 Copilot Agent Store interface. The left rail shows New chat, Search, Library, Tasks, Notebooks, and Agents (highlighted with a red box and red arrow pointing to it). The main pane shows the Agent Store with a Your agents section listing tiles for Researcher, Analyst, Cowork (Frontier), Sales, Copilot & Agents Field FAQ, Agent Creation Assistant, Sush's Daily Em... (with a visible pin icon and ellipses menu next to it), A09: Email Powerhouse, Word, SharePoint list agent, PowerPoint. A context menu is open on Sush's agent showing four options — About, Share, Edit (highlighted with a red box and a teal hand cursor pointing at it), and Uninstall. A red arrow points from the Agents nav item to the agent tile, indicating the discovery path." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -432,7 +432,7 @@ The other options in the menu are also worth knowing:
 - **Share** — re-opens the share dialog from Step 5 to widen / narrow audience
 - **Uninstall** — removes the agent from **your** list only. Others you've shared it with keep using it. The agent isn't deleted.
 
-Click **Edit** → the same Configure-tab view from Step 2 opens, with all your existing settings populated. Two things have changed:
+Click Edit → the same Configure-tab view from Step 2 opens, with all your existing settings populated. Two things have changed:
 
 - **The CTA button is now "Update", not "Create"** (top right of the page)
 - **A green ✓ "Updated <date>" timestamp** appears next to the Update button, showing the last time someone saved changes
@@ -444,7 +444,7 @@ From here you can either:
 - **Use the Describe chat** (left pane) to ask Copilot to rewrite a section — *"make the tone more casual"*, *"add a rule about confidential data"*. Same conversational pattern as Step 2.
 - **Edit any field directly** — Name, Description, Instructions, Knowledge sources, Conversation starters, Capabilities.
 
-When done, click **Update** (top right) to save. **Your changes won't persist if you navigate away without clicking Update** — there's no auto-save.
+When done, click **Update** (top right) to save. Your changes won't persist if you navigate away without clicking Update — there's no auto-save.
 
 > 💡 **Schedule survival under edit:** if you have a scheduled prompt running against this agent, editing the agent doesn't break the schedule. The next fire uses the updated Instructions / Knowledge. Confirmed 19 May 2026 — but if you see different behaviour in your tenant, [tell me](/feedback/).
 
@@ -529,7 +529,7 @@ Friendly, helpful, succinct.
 
 **Minimum tier:** Free — assuming Copilot Chat and agent authoring are enabled in your tenant. No PayGo or M365 Copilot add-on required.
 
-**Copy-paste instruction:**
+Copy-paste instruction:
 
 ```
 You are Fishing Buddy — a friendly NZ fishing assistant. Help
@@ -570,7 +570,7 @@ at the boat ramp who knows the rules.
 
 **Minimum tier:** Free.
 
-**Copy-paste instruction:**
+Copy-paste instruction:
 
 ```
 You are the [Company] Brand Voice Coach. Your job is to transform
@@ -616,7 +616,7 @@ jargon-free, customer-focused.
 
 **Minimum tier:** Free Copilot Chat — no licence required.
 
-**Copy-paste instruction:**
+Copy-paste instruction:
 
 ```
 You are the NZ Policy Advisor — a helpful assistant that
@@ -652,7 +652,7 @@ Conversational but professional. Plain English, no legal jargon.
 
 **Minimum tier:** Pay-as-you-go.
 
-**Copy-paste instruction:**
+Copy-paste instruction:
 
 ```
 You are the Weekly Report Maker for the [Team/Project] team.
@@ -692,7 +692,7 @@ Executive-summary professional. No fluff.
 
 **Minimum tier:** M365 Copilot licence required (email and Teams knowledge need it).
 
-**Copy-paste instruction:**
+Copy-paste instruction:
 
 ```
 You are the New Hire Buddy for [Company]. Help new joiners get
@@ -782,7 +782,7 @@ If an answer is wrong (factually, formatted poorly, or off-style), the cause is 
 
 ### Getting support from Microsoft
 
-If something's clearly broken (not a config issue), submit feedback via the Agent Builder UI: `Help dropdown → Send Feedback`. Include the **agent ID**, **tenant ID**, **environment ID**, and **session ID** — find these in `Help → Get support`. If the issue is on the preview pane or Describe tab, type `/debug` in the chat box first and include that output.
+If something's clearly broken (not a config issue), submit feedback via the Agent Builder UI: `Help dropdown → Send Feedback`. Include the **agent ID**, tenant ID, environment ID, and session ID — find these in `Help → Get support`. If the issue is on the preview pane or Describe tab, type `/debug` in the chat box first and include that output.
 
 ## Not the same as... {#not-same}
 
@@ -805,7 +805,7 @@ Now you've seen what Agent Builder can do, built your first one, and got a sense
 
 ### ☕ Think of it like this
 
-If Microsoft 365 Copilot is a coffee shop, **Agent Builder is the self-service kiosk builder** at the counter. You can spin up a custom kiosk for any task — *"answer questions about HR policies"*, *"summarise the project channel"* — without hiring a developer.
+If Microsoft 365 Copilot is a coffee shop, Agent Builder is the self-service kiosk builder at the counter. You can spin up a custom kiosk for any task — *"answer questions about HR policies"*, *"summarise the project channel"* — without hiring a developer.
 
 Copilot Studio is the **professional kiosk manufacturer** — more powerful, more complex, more expensive. Agent Builder covers the common case.
 
@@ -817,11 +817,11 @@ Agent Builder runs inside M365 Copilot. You can open it from:
 
 - ✓ `microsoft365.com/chat` (the primary entry point)
 - ✓ `office.com/chat`
-- ✓ The Copilot pane in **Microsoft Teams desktop** and **Teams web** clients
+- ✓ The Copilot pane in **Microsoft Teams desktop** and Teams web clients
 - − **Mobile M365 apps** (not supported)
 - − Teams Chat **as an @mention** (different from the Copilot pane — see below)
 
-> ⚠️ **Small but important distinction:** Agent Builder agents work IN the Copilot pane that opens inside Teams desktop/web. They do **not** work as `@mention Copilot` calls inside regular Teams chats — Microsoft's own limitations doc still says agents created in M365 Copilot can't be used in Teams chat. You *can* now share an agent into Teams for discovery (see [What's new](#whats-new)), but that's distribution, not `@mention`. *(Re-checked Aug 2026 — still no `@mention` support in arbitrary Teams chats.)*
+> ⚠️ **Small but important distinction:** Agent Builder agents work IN the Copilot pane that opens inside Teams desktop/web. They do not work as `@mention Copilot` calls inside regular Teams chats — Microsoft's own limitations doc still says agents created in M365 Copilot can't be used in Teams chat. You *can* now share an agent into Teams for discovery (see [What's new](#whats-new)), but that's distribution, not `@mention`. *(Re-checked Aug 2026 — still no `@mention` support in arbitrary Teams chats.)*
 
 ### The key facts
 
@@ -856,7 +856,7 @@ Before Agent Builder, you had two options for a Copilot tailored to a specific j
 1. **Use plain M365 Copilot and hope** — write a long prompt every time, paste in context, accept inconsistent results.
 2. **Build it in Copilot Studio** — learn a new product, configure topics, manage credits, deploy through Power Platform, get IT involved.
 
-Neither fit the common case. Agent Builder is the **bridge between regular Copilot and Studio**. Same security, same governance, same model — but the persona, the knowledge, and the boundaries are pre-baked for one specific job. That's the leap from *"I have Copilot"* to *"I have a team of focused Copilots"* — which is what makes the licence pay for itself.
+Neither fit the common case. Agent Builder is the bridge between regular Copilot and Studio. Same security, same governance, same model — but the persona, the knowledge, and the boundaries are pre-baked for one specific job. That's the leap from *"I have Copilot"* to *"I have a team of focused Copilots"* — which is what makes the licence pay for itself.
 
 ## What's new in 2026 — test these and help me enrich this guide {#whats-new}
 
@@ -882,7 +882,7 @@ The first proactive capability inside Agent Builder. Your agent can now run prom
 
 ### 2. Tool Groups — pre-packaged actions for Outlook + SharePoint
 
-**Status:** Unconfirmed — **still not documented as an Agent Builder capability as of Aug 2026**, and not visible in the test tenant. Microsoft's current Agent Builder capability list is still just code interpreter + image generation; anything more (drafting email, creating docs, calling actions) is the Copilot Studio / pro-code track. Don't promise Tool Groups to stakeholders yet.
+**Status:** Unconfirmed — still not documented as an Agent Builder capability as of Aug 2026, and not visible in the test tenant. Microsoft's current Agent Builder capability list is still just code interpreter + image generation; anything more (drafting email, creating docs, calling actions) is the Copilot Studio / pro-code track. Don't promise Tool Groups to stakeholders yet.
 
 Tool Groups are **pre-packaged sets of M365 actions** you can add to an agent in a single click. If your tenant has them, the Outlook Tool Group lets your agent draft emails, search the inbox, and create calendar events; the SharePoint Tool Group lets it search documents, read file content, and navigate sites.
 
@@ -899,12 +899,12 @@ If available, this is the biggest capability shift since launch — Agent Builde
 The share experience got its biggest change since launch. Three parts:
 
 - **Co-owners** — you can now add other people as **owners** who edit the agent alongside you (individuals only, not security groups). This is the end of the strict single-creator model.
-- **Use vs edit** — sharing now separates who can **chat** with the agent from who can **edit** it, with a separate link for each.
+- **Use vs edit** — sharing now separates who can **chat** with the agent from who can edit it, with a separate link for each.
 - **Org-wide discovery + share into Teams** — you can surface an agent to your whole org, and share it into Teams for discovery.
 
 > ⚠️ **Still NOT `@mention` in Teams chats.** Sharing an agent into Teams is about *discovery and distribution*. Agent Builder agents still don't work as `@mention Copilot` inside arbitrary Teams chats — Microsoft's limitations doc confirms it.
 
-> 🧪 **Test in your tenant:** Open **Share** on a published agent. Add a co-owner and confirm they can edit. Copy the chat link vs the edit link and check each opens the right surface.
+> 🧪 **Test in your tenant:** Open Share on a published agent. Add a co-owner and confirm they can edit. Copy the chat link vs the edit link and check each opens the right surface.
 
 > 💬 **Findings I'd love to publish:** What exactly are the owner/role labels in your tenant? Does org-wide discovery need admin approval first? Can a co-owner delete the agent, or only edit? <!-- LAB-VERIFY: Aug 2026 owner/role labels + admin-approval for org-wide discovery -->
 
@@ -912,7 +912,7 @@ The share experience got its biggest change since launch. Three parts:
 
 **Status:** Available (submission live since April 2026; needs admin approval)
 
-Makers **submit an agent to the organisation's catalog**; a tenant admin reviews it, and once approved it's published under **Built by your org** in the Agent Store. Note the wording: the maker action is *Submit to your org catalog* — the "Agent Store" is where approved agents *land*, not where you submit them.
+Makers submit an agent to the organisation's catalog; a tenant admin reviews it, and once approved it's published under **Built by your org** in the Agent Store. Note the wording: the maker action is *Submit to your org catalog* — the "Agent Store" is where approved agents *land*, not where you submit them.
 
 This is a big distribution unlock — agents you build can be discovered by colleagues across the org without you sharing them individually.
 
@@ -924,7 +924,7 @@ This is a big distribution unlock — agents you build can be discovered by coll
 
 **Status:** Available
 
-OneDrive is now its own knowledge-source slot, with a separate **50-file cap** that doesn't count against the SharePoint 100-file allotment. So a single agent can layer up to **100 SP files + 50 OneDrive files + 1 SharePoint list + OneNote pages + 20 uploaded files + 4 web URLs + 5 Teams chats/meetings** — all at once.
+OneDrive is now its own knowledge-source slot, with a separate **50-file cap** that doesn't count against the SharePoint 100-file allotment. So a single agent can layer up to 100 SP files + 50 OneDrive files + 1 SharePoint list + OneNote pages + 20 uploaded files + 4 web URLs + 5 Teams chats/meetings — all at once.
 
 > 🧪 **Test in your tenant:** Add 50 specific OneDrive files to a single agent. Confirm whether the cap is exactly 50, and what happens when you try the 51st. Verify the OneDrive files appear separately from the SharePoint allotment in the Knowledge picker.
 
@@ -934,7 +934,7 @@ OneDrive is now its own knowledge-source slot, with a separate **50-file cap** t
 
 **Status:** Available (shipped 29 Jul 2026 · public Roadmap ID 561920)
 
-Your agent can now read a **SharePoint list** — up to **20,000 items** — as a knowledge source. This is the structured-data unlock: point an agent at an asset register, a risk log, a curated FAQ list, or a project tracker and it can answer from the rows. One list per agent for now; list attachments and lookup columns aren't supported yet.
+Your agent can now read a **SharePoint list** — up to 20,000 items — as a knowledge source. This is the structured-data unlock: point an agent at an asset register, a risk log, a curated FAQ list, or a project tracker and it can answer from the rows. One list per agent for now; list attachments and lookup columns aren't supported yet.
 
 > 🧪 **Test in your tenant:** Add a SharePoint list with a few hundred rows. Ask the agent a question that only the list can answer. Check how it handles a lookup column (expected: it can't yet).
 
@@ -948,16 +948,16 @@ Add individual **OneNote pages** as knowledge — handy for meeting notes, runbo
 
 **Status:** Available (mid-2026)
 
-Teams knowledge used to be *5 chats, or all your Teams*. You can now also scope to **specific meetings** — so a recap agent can read just the meetings that matter instead of your whole Teams history.
+Teams knowledge used to be *5 chats, or all your Teams*. You can now also scope to specific meetings — so a recap agent can read just the meetings that matter instead of your whole Teams history.
 
 ### Also shipped (smaller, but worth knowing)
 
-- **Response-mode selector** — when you build or run an agent you can pick **Auto / Quick response / Think deeper**, overriding the default reasoning depth.
+- **Response-mode selector** — when you build or run an agent you can pick Auto / Quick response / Think deeper, overriding the default reasoning depth.
 - **Microsoft Lockbox** is now supported for Agent Builder agents (it used to be on the unsupported list). **Customer Managed Keys** are still unsupported.
 - **Wider regions** — availability expanded through 2026 (e.g. Singapore, plus US Government GCC/GCCH with admin enablement; sharing isn't available in GCCH).
 - **Pay-as-you-go cost governance** — the M365 admin centre added budgets and cost monitoring for PayGo Copilot Credits (notify-not-block), with granular per-agent credit tracking and a spend cap arriving in preview (Aug 2026).
 
-> 🔍 **What about MCP Apps?** You may have heard about **MCP Apps** — the new interactive-UI capability (forms, dashboards, approval cards rendering inside Copilot chat) landing in 2026. **It's not an Agent Builder feature.** MCP Apps are built **in code**, with the **Microsoft 365 Agents Toolkit** (the SDK + VS Code extension we called out in [Not the same as...](#not-same) above). When and if the capability lands in the no-code Agent Builder UI, this guide will be updated. Until then — different track, different audience.
+> 🔍 **What about MCP Apps?** You may have heard about **MCP Apps** — the new interactive-UI capability (forms, dashboards, approval cards rendering inside Copilot chat) landing in 2026. It's not an Agent Builder feature. MCP Apps are built in code, with the Microsoft 365 Agents Toolkit (the SDK + VS Code extension we called out in [Not the same as...](#not-same) above). When and if the capability lands in the no-code Agent Builder UI, this guide will be updated. Until then — different track, different audience.
 
 ---
 
@@ -965,7 +965,7 @@ Teams knowledge used to be *5 chats, or all your Teams*. You can now also scope 
 
 ## Instruction template that works {#instructions}
 
-Across every worked example, the pattern that kept showing up is: **the quality of your agent is 80% determined by the quality of your instructions**. The other 20% is your knowledge sources.
+Across every worked example, the pattern that kept showing up is: the quality of your agent is 80% determined by the quality of your instructions. The other 20% is your knowledge sources.
 
 Most people write instructions like a friendly Slack message. *"Be helpful, answer HR questions."* That works for the first ten questions and then falls apart when someone asks something unexpected.
 
@@ -1046,18 +1046,18 @@ Adapting the template above for *your* agent is the hard part. I built the **[Ag
 
 <p><img src="/images/blog/m365-agent-builder/15-instruct-builder-empty.webp" alt="Agent Instruction Builder tool, empty state. Header reads 'Agent Instruction Builder' with a small '120 instructions generated' counter, subtitle 'Generate platform-optimised AI agent instructions in seconds'. Three tabs: Build (active), Templates, FAQ. Left side is the form — top row has a prominent indigo-outlined 'Try an example — see a finished agent in 1 click' button next to a small 'Reset' button. Below that: 'Output for which platform?' with 5 pills (M365 selected, then Studio, ChatGPT, Claude, Assistants) and a one-line helper text. Then Agent name field (placeholder 'Give it a personal touch — e.g. Luna, TechBot, HR Helper'), Purpose textarea with a Weak/Strong example tip beneath, Tone pills (Professional selected, plus Friendly, Technical, Casual, Formal), 'Or write your own tone' link, NOT-do and Knowledge-sources textareas, and four collapsible sections (Output format scaffold, Behaviour when triggered automatically, Example interactions, Additional rules) leading to a big Generate Instructions button. Right side shows an indigo callout banner reading 'Here's what a finished agent looks like. Start typing on the left, or hit Try Example to load one →' followed by a dimmed ghost preview of example output (## Role & Purpose, ## Tone, ## Knowledge & Grounding, ## Output Format sections)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to use it (60 seconds):**
+How to use it (60 seconds):
 
-1. **Pick your platform** at the top. M365 by default — switch to Copilot Studio / ChatGPT / Claude / OpenAI Assistants if you need a different format. Each platform gets its native syntax: **Markdown headings** for M365 / Studio / Assistants, **XML tags** (`<role>`, `<rules>`) for Claude, **plain text** for ChatGPT.
+1. **Pick your platform** at the top. M365 by default — switch to Copilot Studio / ChatGPT / Claude / OpenAI Assistants if you need a different format. Each platform gets its native syntax: **Markdown headings** for M365 / Studio / Assistants, XML tags (`<role>`, `<rules>`) for Claude, plain text for ChatGPT.
 2. **Describe what the agent should do** in the *What should your agent do?* field. The tip below the field shows the Weak vs Strong pattern live — *"triage unread emails by sender, flag same-day replies"* beats *"help with email"* every time.
 3. **Pick a tone** from the five presets, or click *Or write your own tone* for something distinctive (e.g. *"Crisp, scan-friendly. No flattery. Morning chief-of-staff."*).
 4. **Add boundaries and knowledge sources**. These are optional but they're what makes the output strong — the tool wraps the [CAPS technique](#caps) around your boundaries automatically with the exact-fallback-text pattern.
 5. **Open the optional sections** if you need them — *Output format scaffold* for digests / structured outputs, *Behaviour when triggered automatically* for scheduled prompts, *Example interactions* for the happy-path + refusal pair that pushes the strength badge from Moderate to Strong, and *Additional rules* for greeting, escalation, formatting, locale.
-6. **Watch the right pane update live as you type** — every change regenerates the full instructions in under 300 ms. The **Strong / Moderate / Weak** badge tells you what's missing; click any hint and it scrolls + pulses the weak field. Copy with the 📋 button or **Download .md**. The platform-specific *"Paste into ..."* CTA shows you exactly where to go next.
+6. **Watch the right pane update live as you type** — every change regenerates the full instructions in under 300 ms. The **Strong / Moderate / Weak** badge tells you what's missing; click any hint and it scrolls + pulses the weak field. Copy with the 📋 button or Download .md. The platform-specific *"Paste into ..."* CTA shows you exactly where to go next.
 
 <p><img src="/images/blog/m365-agent-builder/16-instruct-builder-loaded.webp" alt="Same tool after clicking 'Try an example' — Daily Email Digest template loaded. Form on the left is now filled in: purpose textarea contains 'A daily scan-friendly briefing of unread emails from the last 24 hours, grouped by sender relationship (manager / direct reports / peers / external / noise) with same-day reply flags. Saves [YOUR NAME] ~15 minutes every morning by triaging the inbox before Outlook opens.' Boundaries and Knowledge sources fields are filled in. Output format scaffold section is expanded showing the 5-bucket structure. Right side now shows: a green 'Strong · all five dimensions covered' badge, an indigo '✓ Uses the CAPS technique — clear CAPS keywords, exact fallback text, positive redirects →' badge, then 'M365 Agent Builder · 3,290 / 8,000 characters · ✓ Within limit — 4,710 remaining', the generated Markdown output text (## Role & Purpose · ## Tone · ## Knowledge & Grounding), a row of buttons (Copy and Download .md), and a prominent indigo 'Paste into M365 Agent Builder — Paste your generated instructions there' CTA. A floating toast at the bottom reads 'Template loaded — give your agent a name and tweak any field'." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-> 💡 **In a hurry?** Click the indigo **💡 Try an example** button at the top of the form to load a pre-built **Daily Email Digest** agent (the same one this post walks through). Tweak any field and the output regenerates instantly. The Templates tab has 12 more starting points across Support, Productivity, and Daily Routine — including 3 scheduled-aware agents marked **NEW** that mirror this post.
+> 💡 **In a hurry?** Click the indigo **💡 Try an example** button at the top of the form to load a pre-built Daily Email Digest agent (the same one this post walks through). Tweak any field and the output regenerates instantly. The Templates tab has 12 more starting points across Support, Productivity, and Daily Routine — including 3 scheduled-aware agents marked NEW that mirror this post.
 
 ## The CAPS technique: how to make boundaries stick {#caps}
 
@@ -1087,7 +1087,7 @@ You can't argue the model into compliance. You have to give it a stronger signal
 
 For every boundary rule that must hold, use this pattern:
 
-> **[CAPS keyword] + [what not to do] + [exact fallback response] + [positive redirect]**
+> [CAPS keyword] + [what not to do] + [exact fallback response] + [positive redirect]
 
 Three ingredients, in that order.
 
@@ -1165,7 +1165,7 @@ Don't use CAPS for:
 - − Format requests (*"USE bullet points"* — same)
 - − Most of the instruction body
 
-A rough rule: **at most 3–5 CAPS rules per agent**. More than that and you dilute the signal — the model starts treating CAPS as the default rather than the emphasis.
+A rough rule: at most 3–5 CAPS rules per agent. More than that and you dilute the signal — the model starts treating CAPS as the default rather than the emphasis.
 
 ### Test your boundaries
 
@@ -1180,7 +1180,7 @@ If any of those fail, strengthen the rule (more CAPS, more explicit fallback). I
 
 ## Knowledge sources: your agent's reference books {#knowledge}
 
-Knowledge sources are the **reference books your agent can read** while answering questions. The right sources transform a generic Copilot into a focused expert. The wrong sources make it a confused intern.
+Knowledge sources are the reference books your agent can read while answering questions. The right sources transform a generic Copilot into a focused expert. The wrong sources make it a confused intern.
 
 There are ten types to choose from. Here's the overview, then we'll go deeper on the trickiest three.
 
@@ -1203,13 +1203,13 @@ There are ten types to choose from. Here's the overview, then we'll go deeper on
 
 SharePoint is the source you'll use most. It's also the trickiest.
 
-**How it works:** Add a SharePoint site URL, a folder URL, or specific files. The agent respects existing permissions — if a user can't access the file normally, the agent won't show it to them either. The cap is **100 SharePoint files per agent** (and separately **50 OneDrive files**). <!-- LAB-VERIFY: 100 SP files / 50 OneDrive — try 101st SP file and 51st OneDrive file -->
+**How it works:** Add a SharePoint site URL, a folder URL, or specific files. The agent respects existing permissions — if a user can't access the file normally, the agent won't show it to them either. The cap is **100 SharePoint files per agent** (and separately 50 OneDrive files). <!-- LAB-VERIFY: 100 SP files / 50 OneDrive — try 101st SP file and 51st OneDrive file -->
 
 **Three gotchas:**
 
 1. **New SharePoint sites can take hours** to appear in the picker. If your colleague created a site this morning, it may not be searchable until afternoon.
-2. **Restricted SharePoint Search** (a SP admin setting) **blocks SharePoint as a knowledge source entirely**. If your agent can't see your SP content, ask your admin first. *(Heads-up: Restricted SharePoint Search is being retired — Microsoft blocked new enablement from 31 Jul 2026 and points admins to **Restricted Content Discovery (RCD)** instead. If your tenant already has it on it still bites; newer tenants will meet RCD.)*
-3. **Excel files:** keep the data in a **single sheet** within the workbook (confirmed — multi-sheet workbooks answer poorly). Microsoft lists Excel as a readable knowledge source *without* any extra capability, but in my testing complex sheets answered more reliably with the **'Create documents, charts, and code'** capability turned on — so treat that as an 'if answers look off, try it' tip, not a hard requirement. <!-- LAB-VERIFY: does Excel-as-knowledge actually need code-interpreter, or only the single-sheet layout? Re-test in tenant. -->
+2. **Restricted SharePoint Search** (a SP admin setting) blocks SharePoint as a knowledge source entirely. If your agent can't see your SP content, ask your admin first. *(Heads-up: Restricted SharePoint Search is being retired — Microsoft blocked new enablement from 31 Jul 2026 and points admins to **Restricted Content Discovery (RCD)** instead. If your tenant already has it on it still bites; newer tenants will meet RCD.)*
+3. **Excel files:** keep the data in a **single sheet** within the workbook (confirmed — multi-sheet workbooks answer poorly). Microsoft lists Excel as a readable knowledge source *without* any extra capability, but in my testing complex sheets answered more reliably with the 'Create documents, charts, and code' capability turned on — so treat that as an 'if answers look off, try it' tip, not a hard requirement. <!-- LAB-VERIFY: does Excel-as-knowledge actually need code-interpreter, or only the single-sheet layout? Re-test in tenant. -->
 
 > 📌 **Admin action:** If users in your tenant can't add SharePoint as knowledge, check `SharePoint Admin Centre → Search → Restricted SharePoint Search` (now retiring — new enablement blocked from 31 Jul 2026; its replacement is **Restricted Content Discovery**). If either is restricting discovery, agents can't use SP. Related: **[SharePoint Oversharing Controls for M365 Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/)** — the controls every admin should check before agents go org-wide.
 
@@ -1230,7 +1230,7 @@ This is by design (it makes agents portable) but it's the privacy point most peo
 
 > ⚠️ **Practical rule:** If you uploaded a Confidential-labelled file, anyone who wants to use your agent needs extract rights to Confidential. You'll lose testers if you're not careful. <!-- LAB-VERIFY: upload Confidential + General labelled files; confirm whole agent inherits Confidential -->
 
-**Supported formats:** `.doc`, `.docx`, `.pdf`, `.ppt`, `.pptx`, `.txt`, `.xls`, `.xlsx`. Max 512 MB for most; **30 MB for Excel**. **Filtered out of the file picker** (you won't even see them when browsing): `.md` (rename to `.txt` first) and `.csv` (export to `.xlsx` first). Lab-verified May 2026.
+**Supported formats:** `.doc`, `.docx`, `.pdf`, `.ppt`, `.pptx`, `.txt`, `.xls`, `.xlsx`. Max 512 MB for most; **30 MB for Excel**. Filtered out of the file picker (you won't even see them when browsing): `.md` (rename to `.txt` first) and `.csv` (export to `.xlsx` first). Lab-verified May 2026.
 
 ### Email — useful, but all-or-nothing
 
@@ -1252,18 +1252,18 @@ This is the section every IT person worries about and every business user undere
 
 ### The 3 rules of agent privacy
 
-1. **Connected M365 data respects each user's permissions.**
+1. Connected M365 data respects each user's permissions.
    When your agent uses SharePoint, OneDrive, email, Teams chats, or people data, each user only sees what they personally have permission to see. No new privileges are granted.
 
 2. **User-specific data stays user-specific.**
    When you share an agent that uses email or Teams knowledge, each user accesses THEIR OWN mailbox and THEIR OWN chats. Your emails and chats are never exposed.
 
-3. **Uploaded files travel with the agent.**
+3. Uploaded files travel with the agent.
    This is the exception to rules 1 and 2. Files you upload directly become embedded content. Anyone with agent access sees them — Information Barriers don't apply. If you uploaded sensitive docs, treat the agent like a shared file: only share it with people who should have that access.
 
 ### Sharing and ownership
 
-Since **August 2026** there are two layers — an **audience** (who can chat with the agent) and **owners** (who can edit it).
+Since August 2026 there are two layers — an **audience** (who can chat with the agent) and owners (who can edit it).
 
 **Audience — three levels:**
 
@@ -1271,13 +1271,13 @@ Since **August 2026** there are two layers — an **audience** (who can chat wit
 - **Specific people or groups** (named individuals or security groups)
 - **Anyone in your organisation** (everyone in your tenant)
 
-**Owners:** the creator can add **co-owners** (individuals only, not groups) who can edit the agent's instructions and knowledge. Add at least one co-owner to any agent your team depends on. You can also copy a **chat link** or an **edit link** to hand access round directly.
+**Owners:** the creator can add co-owners (individuals only, not groups) who can edit the agent's instructions and knowledge. Add at least one co-owner to any agent your team depends on. You can also copy a chat link or an edit link to hand access round directly.
 
 > 📌 **Admin gotcha:** Auto-sharing of SharePoint files attached to an agent works only when sharing with **specific security groups** — not with "everyone". If you share org-wide and your knowledge files are restricted, recipients may not be able to use the agent. Manually update file permissions to match.
 
 ### Sensitivity labels
 
-If you uploaded files with sensitivity labels, **the highest-priority label from any embedded file applies to the whole agent**. Users who don't have extract rights to that label can see the agent listing but can't use it.
+If you uploaded files with sensitivity labels, the highest-priority label from any embedded file applies to the whole agent. Users who don't have extract rights to that label can see the agent listing but can't use it.
 
 - General + General = General agent
 - General + Confidential = Confidential agent
@@ -1304,7 +1304,7 @@ Agents aren't set-and-forget. Here's what to expect after build.
 - ✓ Microsoft Purview DLP policies apply to agent interactions
 - ✓ Retention policies apply
 - ✓ Tenant admins can view all agents, manage billing, and configure sharing controls under **Agents → Settings** in the M365 admin centre
-- ✓ **Microsoft Lockbox** is now supported (as of Aug 2026); **Customer Managed Keys** are still NOT supported for Agent Builder agents
+- ✓ **Microsoft Lockbox** is now supported (as of Aug 2026); Customer Managed Keys are still NOT supported for Agent Builder agents
 - − **Information Barriers** do NOT apply to embedded uploaded file content
 
 If your org is in a regulated industry where Lockbox / CMK / IB are required, that's a *"use Copilot Studio (or Azure AI Foundry)"* signal — covered in [When to graduate](#graduate). For the full security/governance picture across all M365 Copilot agents, read **[Agent 365 Security Guide — Entra, Purview, Defender](/blog/agent-365-security-governance-complete-guide/)**. For the SharePoint-specific oversharing controls every admin should check before agents go org-wide, see **[SharePoint Oversharing Controls for M365 Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/)**.
@@ -1328,9 +1328,9 @@ Licensing changes quickly. The table below is current as of August 2026 — alwa
 The **scheduled workflows** feature (available since May 2026) lets your agent run on a cadence — hourly, daily, weekly, monthly, yearly. Two important constraints:
 
 - Scheduled prompts are **per-user only**. They don't run for other users of a shared agent.
-- They don't run for **draft / unpublished** agents.
+- They don't run for draft / unpublished agents.
 
-Automated agent runs consume **Copilot Credits** when they ground on tenant data — roughly **10 credits for the grounding + ~2 for the generated answer**, at **US$0.01 / credit** on pay-as-you-go. Runs that don't touch tenant data are cheaper, and Agent Builder generative answers without tenant-graph grounding are exempt. Watch your tenant's credit consumption if you schedule broadly. <!-- LAB-VERIFY: real per-run credit cost for a scheduled agent --> For the rest of the May 2026 wave that landed alongside scheduled workflows, see **[Microsoft 365 Copilot May 2026 Updates — 40 New Features](/blog/microsoft-365-copilot-may-2026-updates/)**.
+Automated agent runs consume **Copilot Credits** when they ground on tenant data — roughly 10 credits for the grounding + ~2 for the generated answer, at US$0.01 / credit on pay-as-you-go. Runs that don't touch tenant data are cheaper, and Agent Builder generative answers without tenant-graph grounding are exempt. Watch your tenant's credit consumption if you schedule broadly. <!-- LAB-VERIFY: real per-run credit cost for a scheduled agent --> For the rest of the May 2026 wave that landed alongside scheduled workflows, see **[Microsoft 365 Copilot May 2026 Updates — 40 New Features](/blog/microsoft-365-copilot-may-2026-updates/)**.
 
 ### Admin prerequisites checklist
 
@@ -1350,7 +1350,7 @@ For the full admin lifecycle — environment, deployment, change management — 
 
 ### The "Agent 365" question
 
-You'll hear about **Agent 365** — it went GA on **1 May 2026**. It's Microsoft's unified governance and identity control plane for agents across all three platforms (Agent Builder, Copilot Studio, Azure AI Foundry). $15 / user / month standalone, or included in **[Microsoft 365 E7 (Frontier Suite)](/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know/)**.
+You'll hear about **Agent 365** — it went GA on 1 May 2026. It's Microsoft's unified governance and identity control plane for agents across all three platforms (Agent Builder, Copilot Studio, Azure AI Foundry). $15 / user / month standalone, or included in **[Microsoft 365 E7 (Frontier Suite)](/blog/microsoft-365-e7-frontier-suite-everything-you-need-to-know/)**.
 
 You don't need Agent 365 to use Agent Builder. But if your org is starting to have lots of agents across teams, it's the governance layer that makes them manageable at scale. Use the **[Agent 365 Planner](/agent-365-planner/)** tool to size your need, **[Full Agent 365 details in my comparison guide](/blog/agent-builder-vs-copilot-studio-vs-foundry/#agent-365)**, and the **[ROI Calculator](/roi-calculator/)** to model whether the licence pays for itself.
 
@@ -1371,14 +1371,14 @@ You've outgrown Agent Builder when **any** of these are true:
 3. **You need proactive messaging.** Beyond scheduled prompts, your agent can't reach out to users unprompted.
 4. **You need customer-facing deployment.** Website chatbots, Facebook Messenger, SMS — Agent Builder agents only work inside your M365 tenant. Customer-facing = Studio.
 5. **You need branching dialog flows.** Complex multi-turn conversations with conditional logic and slot-filling. Agent Builder does Q&A; Studio does topic trees.
-6. **You need maker governance at scale.** Agent Builder now has basic **co-owners**, but Studio brings environments, maker roles, and deployment gates when many makers manage many agents.
+6. **You need maker governance at scale.** Agent Builder now has basic co-owners, but Studio brings environments, maker roles, and deployment gates when many makers manage many agents.
 7. **You need full lifecycle management (ALM).** Environments, deployment pipelines, governance gates — Studio brings the full Power Platform ALM story.
 
 ### The promotion path
 
-You don't lose your work — mostly. From the Agent Store, hover your agent, click the ellipsis menu, choose **Edit agent**, then look for the **Copy to Copilot Studio** option in the same flow. A banner appears asking which Studio environment to land the agent in; pick one and click through. Most fields populate: name, description, instructions, conversation starters, capabilities.
+You don't lose your work — mostly. From the Agent Store, hover your agent, click the ellipsis menu, choose **Edit agent**, then look for the Copy to Copilot Studio option in the same flow. A banner appears asking which Studio environment to land the agent in; pick one and click through. Most fields populate: name, description, instructions, conversation starters, capabilities.
 
-> 🚨 **One gotcha worth knowing — Knowledge sources are the exception.** When the copy lands in Studio, **open the Knowledge section and double-check it carries everything across.** In testing on 19 May 2026, the agent's name / description / instructions / starters all moved cleanly, but the Knowledge sources didn't always come with them. If you don't see your SharePoint sites / files / email connectors in the Studio version, **re-add them manually** before publishing.
+> 🚨 **One gotcha worth knowing — Knowledge sources are the exception.** When the copy lands in Studio, open the Knowledge section and double-check it carries everything across. In testing on 19 May 2026, the agent's name / description / instructions / starters all moved cleanly, but the Knowledge sources didn't always come with them. If you don't see your SharePoint sites / files / email connectors in the Studio version, **re-add them manually** before publishing.
 
 It's a small extra step. Doesn't undo the value of the Copy-to-Studio path — but it does mean you can't fully *"set it and forget it"* during the move.
 
@@ -1417,4 +1417,4 @@ You've now got the mental model, the build flow, the instruction template, the C
 
 ---
 
-🔄 *This is a living document. The Agent Builder feature set ships updates every month — UI labels, button positions, and dialog options drift week to week. If you spot anything out of date in your tenant, [send me a quick message](/feedback/) and I'll patch it the same week. **Content desk-checked against Microsoft Learn on 12 Aug 2026; screenshots are being refreshed** — a few still show the May 2026 UI while the newer flows (sharing, SharePoint-list knowledge) are re-shot. A handful of edge-case behaviours I still want to confirm live in-tenant are flagged in the source with `LAB-VERIFY`.*
+🔄 *This is a living document. The Agent Builder feature set ships updates every month — UI labels, button positions, and dialog options drift week to week. If you spot anything out of date in your tenant, [send me a quick message](/feedback/) and I'll patch it the same week. Content desk-checked against Microsoft Learn on 12 Aug 2026; screenshots are being refreshed — a few still show the May 2026 UI while the newer flows (sharing, SharePoint-list knowledge) are re-shot. A handful of edge-case behaviours I still want to confirm live in-tenant are flagged in the source with `LAB-VERIFY`.*

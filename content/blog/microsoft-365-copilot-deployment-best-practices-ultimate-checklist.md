@@ -214,7 +214,7 @@ This is the "sorting through your stuff before packing" phase — and it's the o
 
 ### 2.1 Audit SharePoint & OneDrive Permissions
 
-Here's the thing most people miss: Copilot doesn't create new permissions. It surfaces **anything a user already has access to** — even files they've never opened. Every organisation has that one SharePoint site where permissions got weird years ago and nobody fixed it. Copilot will find it.
+Here's the thing most people miss: Copilot doesn't create new permissions. It surfaces anything a user already has access to — even files they've never opened. Every organisation has that one SharePoint site where permissions got weird years ago and nobody fixed it. Copilot will find it.
 
 **What to audit:**
 
@@ -327,7 +327,7 @@ Now you're actually "moving in." The boxes are sorted (Phase 2), and it's time t
 
 Before assigning a single licence, verify:
 
-- [ ] Microsoft 365 Apps on **Current Channel** or **Monthly Enterprise Channel**
+- [ ] Microsoft 365 Apps on **Current Channel** or Monthly Enterprise Channel
 - [ ] **Outlook** updated — Copilot works with classic and new Outlook; primary mailbox must be in Exchange Online
 - [ ] **Exchange Online** mailboxes provisioned for all Copilot users
 - [ ] **OneDrive** accounts provisioned
@@ -353,7 +353,7 @@ Get-MgUser -Filter "assignedLicenses/any(x:x/skuId eq 'COPILOT_SKU_ID')" | Selec
 
 ### 3.3 Configure Copilot Settings
 
-In the **Microsoft 365 Admin Centre** → Copilot:
+In the Microsoft 365 Admin Centre → Copilot:
 
 - [ ] Review and configure **Copilot settings** (web search, plugins, agents)
 - [ ] Set **Cloud Policy** configurations at [config.office.com](https://config.office.com):
@@ -397,7 +397,7 @@ This is the "getting to know the neighbourhood" phase. You've moved in, but if n
 
 ### 4.1 Build a Champions Network
 
-Champions are your force multiplier. Identify **5-10 enthusiastic users per 100 Copilot users** who will:
+Champions are your force multiplier. Identify 5-10 enthusiastic users per 100 Copilot users who will:
 
 - Test new features early
 - Share tips and tricks with colleagues
@@ -406,7 +406,7 @@ Champions are your force multiplier. Identify **5-10 enthusiastic users per 100 
 
 ### 4.2 Scenario-Based Training
 
-Don't train on "how to use Copilot." Train on **"how to do YOUR job faster with Copilot."**
+Don't train on "how to use Copilot." Train on "how to do YOUR job faster with Copilot."
 
 | Role | Top Copilot Scenarios |
 |------|----------------------|
@@ -609,43 +609,43 @@ Before expanding beyond the pilot, all of these must be true:
 
 <div class="blog-faq">
 
-**1. What is the minimum licence needed to deploy Microsoft 365 Copilot?**
+1. What is the minimum licence needed to deploy Microsoft 365 Copilot?
 
 You need an eligible base Microsoft 365 licence (E3, E5, Business Premium, F1/F3, or other qualifying plans) plus the Microsoft 365 Copilot add-on. Copilot cannot run as a standalone licence. See the [full licensing list](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-licensing).
 
-**2. What is the biggest risk when deploying Copilot?**
+2. What is the biggest risk when deploying Copilot?
 
 Oversharing. Copilot surfaces any data a user has access to — including documents they technically can reach but have never seen. Audit and fix SharePoint and OneDrive permissions before deploying.
 
-**3. Should I deploy Copilot to all users at once?**
+3. Should I deploy Copilot to all users at once?
 
 No. Start with a pilot group of 20-50 users across different departments. Validate security controls, measure adoption, then scale in waves.
 
-**4. Do I need sensitivity labels before deploying Copilot?**
+4. Do I need sensitivity labels before deploying Copilot?
 
 Strongly recommended. Sensitivity labels add classification and protection that Copilot honours. Without them, Copilot relies only on existing permissions, which may be too broad.
 
-**5. What happens if I deploy Copilot without changing any permissions?**
+5. What happens if I deploy Copilot without changing any permissions?
 
 Copilot will respect your existing permissions — but it may surface documents that users technically have access to but have never actively sought out. This is the oversharing problem. Fix permissions first.
 
-**6. What security controls does Copilot inherit from my environment?**
+6. What security controls does Copilot inherit from my environment?
 
 All of them. SharePoint/OneDrive permissions, sensitivity labels, DLP policies, Conditional Access, retention policies, and audit logging all apply to Copilot interactions. Copilot does not bypass your existing security posture.
 
-**7. How do I measure Copilot ROI?**
+7. How do I measure Copilot ROI?
 
 Use Copilot usage reports in the M365 Admin Centre, Viva Insights Copilot dashboard, and user surveys. Track active users, feature usage per app, time savings, and satisfaction scores.
 
-**8. What changes in GCC, GCC High, and DoD environments?**
+8. What changes in GCC, GCC High, and DoD environments?
 
 Feature availability, rollout timelines, and compliance boundaries may differ from commercial tenants. Web search is off by default in GCC/DoD. Verify with your Microsoft account team and check the [Microsoft 365 service descriptions](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/office-365-us-government) for your cloud.
 
-**9. Can I audit all Copilot interactions?**
+9. Can I audit all Copilot interactions?
 
 Copilot interactions (prompts and responses) can be audited, searched, and retained via Microsoft Purview — subject to your Purview configuration and licensing. Enable Copilot audit logging before deployment.
 
-**10. What if users report Copilot is surfacing data they shouldn't see?**
+10. What if users report Copilot is surfacing data they shouldn't see?
 
 This is an oversharing issue, not a Copilot bug. Copilot respects existing permissions. Fix the root cause: review and tighten SharePoint/OneDrive permissions, use sensitivity labels, and consider SharePoint Advanced Management for site-level access policies.
 

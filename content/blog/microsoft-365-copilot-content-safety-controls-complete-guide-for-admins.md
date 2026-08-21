@@ -92,7 +92,7 @@ If your boss asks "what safety controls do we have in Copilot?" — here's your 
 
 ### The Thing Most Admins Miss
 
-Here's what makes this powerful — you can run **two different safety postures side by side** in the same tenant:
+Here's what makes this powerful — you can run two different safety postures side by side in the same tenant:
 
 - **99% of your users:** Full safety ON. Copilot won't discuss sensitive topics. Standard experience.
 - **A small group** (legal, compliance, moderation): You give them a toggle to temporarily lower the filter when their job requires it — and it resets automatically every new conversation.
@@ -269,10 +269,10 @@ If you've decided some users need the toggle, here's how to set it up. The whole
 ### Step 2: Configure the Cloud Policy
 
 1. Go to **[config.office.com](https://config.office.com)**
-2. Navigate to **Customization** → **Policy Management** → **Create**
-3. Search for: **"Adjust responsible AI protections for Microsoft 365 Copilot"**
+2. Navigate to **Customization** → Policy Management → Create
+3. Search for: "Adjust responsible AI protections for Microsoft 365 Copilot"
 4. Set to: **Enabled**
-5. Under Options: **"Provide users with the option to adjust harmful content protection"**
+5. Under Options: "Provide users with the option to adjust harmful content protection"
 6. Click **Apply**
 
 ### Step 3: Assign to the Security Group
@@ -347,13 +347,13 @@ The last layer controls whether Copilot can pull in web data when responding to 
 | **Disabled in Work mode only** | Cloud Policy | No web in Work mode; web available in Web mode |
 | **Disabled everywhere** | Cloud Policy | No web grounding at all |
 
-For **GCC and DoD tenants**, web search is **off by default**. You'd need to turn it on explicitly.
+For **GCC and DoD tenants**, web search is off by default. You'd need to turn it on explicitly.
 
 ### A Note for Regulated Organisations
 
 If you work in government, financial services, or healthcare, this matters: web search has **different privacy boundaries** than other Copilot interactions.
 
-When web search is on, Copilot sends search queries (not your full prompt) to Bing. Those queries are handled under the Microsoft Services Agreement — **not** the Data Protection Addendum. HIPAA and EU Data Boundary **don't apply** to those web queries. The queries aren't used for training, ads, or profiling — but they're not covered by your enterprise data protection commitments.
+When web search is on, Copilot sends search queries (not your full prompt) to Bing. Those queries are handled under the Microsoft Services Agreement — **not** the Data Protection Addendum. HIPAA and EU Data Boundary don't apply to those web queries. The queries aren't used for training, ads, or profiling — but they're not covered by your enterprise data protection commitments.
 
 > 📚 **Official reference:** [Data, privacy, and security for web search in Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/manage-public-web-access)
 
@@ -378,7 +378,7 @@ A trust and safety team needs Copilot to help analyse flagged user content that 
 
 Legal counsel needs Copilot to summarise complaints and witness statements that describe harassment.
 
-**What I'd set up:**
+What I'd set up:
 
 1. Add legal counsel to the security group
 2. They toggle off protection when reviewing case files
@@ -389,7 +389,7 @@ Legal counsel needs Copilot to summarise complaints and witness statements that 
 
 A compliance officer needs to analyse social media posts for hate speech as part of an investigation.
 
-**What I'd set up:**
+What I'd set up:
 
 1. Add the officer to the security group
 2. Enable web search for this officer specifically
@@ -400,7 +400,7 @@ A compliance officer needs to analyse social media posts for hate speech as part
 
 99% of your users just use Copilot for emails, meeting summaries, and document drafting.
 
-**What I'd set up:**
+What I'd set up:
 
 - ✅ Leave all defaults
 - ✅ Deploy sensitivity labels
@@ -442,9 +442,9 @@ Here's the full checklist — bookmark this and work through it:
 - [ ] **Audit your current state** — check if policies already exist in Cloud Policy
 - [ ] **Deploy sensitivity labels** via Microsoft Purview
 - [ ] **Identify who needs the toggle** — specific roles, not whole departments
-- [ ] **Create a dedicated Entra ID security group**
+- [ ] Create a dedicated Entra ID security group
 - [ ] **Configure the Cloud Policy** at config.office.com
-- [ ] **Assign the policy to the group**
+- [ ] Assign the policy to the group
 - [ ] **Test** — verify the toggle appears (allow 24 hours)
 - [ ] **Document** — who has access, why, and the review schedule
 - [ ] **Configure web search** per your data handling requirements
@@ -489,43 +489,43 @@ Content safety is one piece of a secure Copilot deployment. Here are the other c
 
 <div class="blog-faq">
 
-**1. Can I completely disable all Copilot content filters?**
+1. Can I completely disable all Copilot content filters?
 
 No. Core AI protections — prompt injection defence, copyright safeguards, biosecurity measures, and image safety — are always on. The harmful content toggle only affects text responses in Copilot Chat.
 
-**2. Does the harmful content toggle affect Copilot in Word, Excel, or Teams?**
+2. Does the harmful content toggle affect Copilot in Word, Excel, or Teams?
 
 No. It only affects Copilot Chat text responses. Copilot in Word, Excel, PowerPoint, Teams, Outlook, and every other app is unaffected. Images and agents are also unaffected.
 
-**3. What licence do users need for the toggle?**
+3. What licence do users need for the toggle?
 
 A Microsoft 365 Copilot licence. The toggle only appears if you've assigned the Cloud Policy to their security group.
 
-**4. Can a user keep it off permanently?**
+4. Can a user keep it off permanently?
 
 No. It resets every new conversation. They have to toggle it off each time they need it.
 
-**5. What's the difference between content safety and sensitivity labels?**
+5. What's the difference between content safety and sensitivity labels?
 
-Content safety controls what **topics** Copilot will discuss. Sensitivity labels control what **data** Copilot can find. Completely separate systems.
+Content safety controls what **topics** Copilot will discuss. Sensitivity labels control what data Copilot can find. Completely separate systems.
 
-**6. Is the toggle available in government clouds?**
+6. Is the toggle available in government clouds?
 
 Check with your Microsoft account team. GCC, GCC High, and DoD rollout timelines typically differ.
 
-**7. Can I audit who uses the toggle?**
+7. Can I audit who uses the toggle?
 
 You can track group membership, and all Copilot interactions are available through Purview audit logs and eDiscovery.
 
-**8. Can DLP stop Copilot from processing sensitive data?**
+8. Can DLP stop Copilot from processing sensitive data?
 
 Yes. Purview DLP can detect sensitive information in Copilot prompts and responses. This is separate from the content toggle — DLP protects data, the toggle controls topics.
 
-**9. What's the biggest security risk most admins miss?**
+9. What's the biggest security risk most admins miss?
 
 Oversharing. Copilot surfaces anything a user has access to. If SharePoint permissions are too broad, Copilot will find documents people shouldn't see. Fix permissions before you scale.
 
-**10. What happens if someone shares a conversation with the toggle off?**
+10. What happens if someone shares a conversation with the toggle off?
 
 It's stored and auditable like any other Copilot conversation — subject to your retention and DLP policies. But it may contain sensitive material, so have clear usage policies.
 

@@ -29,7 +29,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the MCP-and-custom-skills spoke. The MCP catalog and skill conventions can change between releases — this page updates as Microsoft ships. **Last verified: 12 June 2026 · Scout version 0.23.0.20260608.1.**
+🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the MCP-and-custom-skills spoke. The MCP catalog and skill conventions can change between releases — this page updates as Microsoft ships. Last verified: 12 June 2026 · Scout version 0.23.0.20260608.1.
 
 </div>
 
@@ -66,7 +66,7 @@ If you're orienting in the Scout UI for the first time, MCP discovery, installat
 
 ### 1. Find the Extensions menu
 
-Click the **ellipsis (three dots) icon** at the bottom-right of Scout's main window. A small popover surfaces Heartbeat · Activity · **Extensions** · Integrations · Settings:
+Click the **ellipsis (three dots) icon** at the bottom-right of Scout's main window. A small popover surfaces Heartbeat · Activity · Extensions · Integrations · Settings:
 
 <p><img src="/images/blog/scout-complete-guide/37a-scout-ellipsis-menu.png" alt="A small popover menu in Scout, anchored to the three-dot ellipsis icon at the bottom-right of the window. The menu shows five entries from top to bottom: Heartbeat, Activity, Extensions, Integrations, Settings. The user pill 'Susanth Sutheesh · Connected' is visible below the popover." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -74,11 +74,11 @@ Click the **ellipsis (three dots) icon** at the bottom-right of Scout's main win
 
 ### 2. Open Extensions → MCP Servers tab
 
-Click **Extensions**. The Extensions panel opens with two tabs at the top — **Skills** and **MCP Servers**. Click MCP Servers:
+Click Extensions. The Extensions panel opens with two tabs at the top — **Skills** and MCP Servers. Click MCP Servers:
 
 <p><img src="/images/blog/scout-complete-guide/37-scout-extensions-mcp-servers-tab.png" alt="Microsoft Scout's Extensions panel with the 'MCP Servers' tab selected. The panel shows two sections. 'FEATURED MCP SERVERS' lists Azure DevOps by Microsoft with the description 'Access Azure DevOps, repos, work items, builds, pipelines, and wikis directly from the agent' and a 'Use' button. 'YOUR MCP SERVERS' has a '+ Add Server' button on the right and lists one connected MCP server named 'clawpilot-seismic-bridge' with the marker 'Connected'. The local file path below the server name has been redacted with a solid dark rectangle labelled '[file path redacted for privacy]'. A search icon is in the top right of the panel." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*Extensions → MCP Servers. Two sections: **FEATURED MCP SERVERS** (Microsoft's curated catalog — Azure DevOps is the prominent featured pick today) and **YOUR MCP SERVERS** (anything you've added locally). The lone "Your" server in my install is `clawpilot-seismic-bridge` — yet another live breadcrumb of the Clawpilot lineage Scout's bones still carry.*
+*Extensions → MCP Servers. Two sections: **FEATURED MCP SERVERS** (Microsoft's curated catalog — Azure DevOps is the prominent featured pick today) and YOUR MCP SERVERS (anything you've added locally). The lone "Your" server in my install is `clawpilot-seismic-bridge` — yet another live breadcrumb of the Clawpilot lineage Scout's bones still carry.*
 
 ### 3. Add a server
 
@@ -86,11 +86,11 @@ Click **+ Add Server** in the YOUR MCP SERVERS section. The Add MCP Server dialo
 
 <p><img src="/images/blog/scout-complete-guide/64-scout-add-mcp-server-dialog.png" alt="Scout's 'Add MCP Server' modal dialog. A 'Server name' text field at the top is empty. Two type-tabs follow: 'Remote / Local URL' (selected, with a URL field showing the placeholder 'https://... or http://localhost:...' and a 'Bearer token (optional)' field) and 'Command' (unselected). An 'Advanced' section reveals a 'Tool-call timeout in seconds (optional, default ~60)' field. Cancel and Add buttons sit at the bottom right." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The Add MCP Server dialog. Two modes — **Remote / Local URL** (HTTP MCPs, with optional bearer token) or **Command** (local stdio MCPs, typically a Node/Python subprocess command). The Advanced section exposes the tool-call timeout (default about 60 seconds, useful to tune for long-running MCPs).*
+*The Add MCP Server dialog. Two modes — **Remote / Local URL** (HTTP MCPs, with optional bearer token) or Command (local stdio MCPs, typically a Node/Python subprocess command). The Advanced section exposes the tool-call timeout (default about 60 seconds, useful to tune for long-running MCPs).*
 
 ### 4. Tighten per-MCP permissions
 
-After adding a server, control which tools auto-approve and which need permission per-call from **Settings → Manage Permissions → MCP SERVERS**:
+After adding a server, control which tools auto-approve and which need permission per-call from Settings → Manage Permissions → MCP SERVERS:
 
 <p><img src="/images/blog/scout-complete-guide/65-scout-manage-permissions-per-mcp.png" alt="Scout's Manage Permissions panel, MCP SERVERS section. Three MCP servers are listed as collapsible rows. The first row is expanded: 'Browser Control' (22/23 tools enabled) with the description 'Enables Microsoft Scout to open and use a web browser on your behalf, including opening websites, clicking buttons, typing into forms, downloading files, and taking screenshots.' Its right-side toggle is on with the label 'auto-approves MCP tools'. Two sub-toggles below: 'Auto-approve without asking' (on, with description 'Runs every tool from this server without stopping to ask for your approval at each step') and 'Allow agent file uploads' (on, with description 'Attaches files from your computer to upload fields in the browser on your behalf, without asking you each time'). Two collapsed rows below: 'Azure DevOps' (0/90 tools enabled, toggle off) and 'clawpilot-seismic-bridge' (0/8 tools enabled, toggle off)." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -218,7 +218,7 @@ Drill into any one folder and you'll see the actual on-disk contract Scout reads
 
 ![File Explorer inside the docx skill folder showing four items — scripts (folder), .bundled-version (file), LICENSE.txt (file), SKILL.md (file)](/images/blog/scout-complete-guide/72-scout-skill-folder-contents.png "Inside the docx skill folder · the SKILL.md file is the contract Scout reads · scripts folder holds helpers · .bundled-version and LICENSE.txt are Microsoft-bundled-skill-only extras you don't need on your own custom skills")
 
-A skill folder is genuinely just:
+A skill folder is just:
 
 - **`SKILL.md`** — required; the frontmatter + body markdown contract Scout reads
 - **`scripts/`** — optional; helpers, shell snippets, anything the skill needs to do its job (Python, shell, executables)
@@ -232,7 +232,7 @@ A natural assumption (I had it too): "Scout uses OneDrive for memory, so my skil
 
 In Scout's Settings, the **Workspaces** section sets the default file location for *outputs* Scout produces — by default this points to `OneDrive - <your org>\Documents\Microsoft Scout\`. That's where Scout drops PNG screenshots, PPTX decks, HTML dashboards, the artefacts it builds for you. Those DO sync across devices via OneDrive.
 
-But the **skills themselves** — your `~/.copilot/skills/` folder — are **always local**. They do not sync. If you set up Scout on a second device, you have to re-clone your skills folder manually (`git clone` if you use a team repo, or simple file copy via OneDrive's `Documents` folder used as a transport).
+But the **skills themselves** — your `~/.copilot/skills/` folder — are always local. They do not sync. If you set up Scout on a second device, you have to re-clone your skills folder manually (`git clone` if you use a team repo, or simple file copy via OneDrive's `Documents` folder used as a transport).
 
 This is by design: skills can contain device-specific scripts, local credentials, or paths to local tools. Auto-syncing them would be a security and compatibility footgun. But the gap between "Scout-outputs-in-OneDrive" and "skills-only-local" surprises a lot of users, so worth knowing up front.
 

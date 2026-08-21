@@ -58,7 +58,7 @@ Here's the full picture — what's changing, what stays, what you should do befo
 
 <div class="living-doc-banner">
 
-**Last-Minute Update — April 14, 2026**
+Last-Minute Update — April 14, 2026
 
 Two things to know as we approach go-live:
 
@@ -82,7 +82,7 @@ flowchart TD
 
 ## Who Is Affected and How?
 
-This is the question I get asked most. The answer depends on one thing: **how many users are in your tenant**.
+This is the question I get asked most. The answer depends on one thing: how many users are in your tenant.
 
 ```mermaid
 flowchart TD
@@ -149,7 +149,7 @@ Here's the part that changes the whole story — and almost nobody is talking ab
 
 WXP Agents are AI agents for Word, Excel, and PowerPoint that live inside the [Copilot app](https://m365.cloud.microsoft/chat). You talk to them in chat, and they create entire documents, workbooks, or presentations for you. *(For the full plain-English explainer on what agents are and how to build your own, see the [M365 Agent Builder field guide](/blog/m365-agent-builder-explained/).)*
 
-The key thing: **they're not the same as the Copilot side panel inside Office apps.**
+The key thing: they're not the same as the Copilot side panel inside Office apps.
 
 Think of it this way — it's like losing the in-store assistant at a shop, but you still have the personal shopper who delivers to your door. Different experience, but you still get what you need.
 
@@ -176,7 +176,7 @@ So a user in a large enterprise who loses the Word side panel can still open the
 
 ## The Anthropic Dependency
 
-Here's the catch with WXP agents — and this is the part that trips people up. **They run exclusively on Anthropic's Claude models**, not OpenAI GPT. *(Why Claude matters across the wider Copilot story — model choice in Word/Excel/PowerPoint, when to pick it over GPT — is in the [licensed Copilot trainer guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/).)*
+Here's the catch with WXP agents — and this is the part that trips people up. They run exclusively on Anthropic's Claude models, not OpenAI GPT. *(Why Claude matters across the wider Copilot story — model choice in Word/Excel/PowerPoint, when to pick it over GPT — is in the [licensed Copilot trainer guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/).)*
 
 From the [official documentation](https://learn.microsoft.com/en-us/copilot/microsoft-365/wordexcelppt-agents):
 
@@ -205,8 +205,8 @@ If you're in a non-EU commercial tenant and haven't touched this setting — Ant
 ### How to Enable It
 
 1. Go to the [Microsoft 365 Admin Center](https://admin.microsoft.com)
-2. Navigate to **Copilot → Settings → Data access**
-3. Find **AI providers operating as Microsoft subprocessors**
+2. Navigate to Copilot → Settings → Data access
+3. Find AI providers operating as Microsoft subprocessors
 4. Enable Anthropic and accept the updated terms
 
 Only **Global Administrators** can do this. Full steps: [Anthropic as a subprocessor](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor)
@@ -306,7 +306,7 @@ Yes — just in fewer places. You keep [Copilot Chat on the web](https://m365.cl
 
 ### What are WXP agents?
 
-AI agents for Word, Excel, and PowerPoint that live in the [Copilot app](https://m365.cloud.microsoft/chat). They create full documents from a chat prompt. **Yes, they work for free users** — but only if [Anthropic is enabled](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor).
+AI agents for Word, Excel, and PowerPoint that live in the [Copilot app](https://m365.cloud.microsoft/chat). They create full documents from a chat prompt. Yes, they work for free users — but only if [Anthropic is enabled](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor).
 
 ### Why do WXP agents need Anthropic?
 
@@ -314,7 +314,7 @@ They [exclusively use Claude](https://learn.microsoft.com/en-us/copilot/microsof
 
 ### Is Anthropic Claude enabled by default?
 
-Non-EU commercial tenants: **yes** (since January 7, 2026). EU/EFTA/UK: **no** — admins must [opt in](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor). Government clouds: not available.
+Non-EU commercial tenants: **yes** (since January 7, 2026). EU/EFTA/UK: no — admins must [opt in](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor). Government clouds: not available.
 
 ### Does Copilot in Outlook change?
 
@@ -322,7 +322,7 @@ No. Copilot in Outlook stays for everyone — licensed and unlicensed, all tenan
 
 ### How much does a licence cost?
 
-Enterprise (>300 users): **$30/user/month**. Business (<300 users): **$21/user/month**. Annual commitment, add-on licence. See [pricing](https://www.microsoft.com/en-us/microsoft-365/copilot).
+Enterprise (>300 users): **$30/user/month**. Business (<300 users): $21/user/month. Annual commitment, add-on licence. See [pricing](https://www.microsoft.com/en-us/microsoft-365/copilot).
 
 ---
 

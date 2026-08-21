@@ -53,13 +53,13 @@ sitemap:
   priority: 0.9
 ---
 
-> 🔄 **2026 update — Copilot Pro has been retired.** Microsoft stopped selling the standalone $20/month Copilot Pro in late 2025; existing subscribers keep access until **1 August 2026**. The consumer replacement is **Microsoft 365 Premium** (~$19.99/month — Copilot in the Office apps + 1 TB). The personal-vs-work decision below is still exactly right — just read "Copilot Pro" as "the personal plan", which today means Microsoft 365 Premium. For the full tier-by-tier picture, see **[Microsoft Copilot Pricing & Tiers Explained](/blog/microsoft-copilot-pricing-tiers-explained/)**.
+> 🔄 **2026 update — Copilot Pro has been retired.** Microsoft stopped selling the standalone $20/month Copilot Pro in late 2025; existing subscribers keep access until **1 August 2026**. The consumer replacement is Microsoft 365 Premium (~$19.99/month — Copilot in the Office apps + 1 TB). The personal-vs-work decision below is still exactly right — just read "Copilot Pro" as "the personal plan", which today means Microsoft 365 Premium. For the full tier-by-tier picture, see **[Microsoft Copilot Pricing & Tiers Explained](/blog/microsoft-copilot-pricing-tiers-explained/)**.
 
-Microsoft sells **two products with almost the same name**, both called "Copilot", and the difference between them is the single most confusing $10/month decision in their entire AI lineup.
+Microsoft sells two products with almost the same name, both called "Copilot", and the difference between them is the single most confusing $10/month decision in their entire AI lineup.
 
 I'm a Copilot solution engineer at Microsoft, and this is genuinely the question I get asked most often — not by enterprise customers, by friends and family. So this is the plain-English answer.
 
-If you're reading this, you've probably been on Microsoft's pricing page going back and forth. The **personal** option (Copilot Pro until late 2025, now **Microsoft 365 Premium**) runs about **$20/month**; **Microsoft 365 Copilot** is **$30/user/month** for work. They both promise "AI in your Office apps." So what's the actual difference?
+If you're reading this, you've probably been on Microsoft's pricing page going back and forth. The **personal** option (Copilot Pro until late 2025, now Microsoft 365 Premium) runs about $20/month; Microsoft 365 Copilot is $30/user/month for work. They both promise "AI in your Office apps." So what's the actual difference?
 
 {{< margin >}}Eight friends have texted me this exact question in the last six months. Eight.{{< /margin >}}
 
@@ -80,7 +80,7 @@ If you're reading this, you've probably been on Microsoft's pricing page going b
 
 <div class="living-doc-banner">
 
-🔄 **Living document. All prices in USD, current as of June 2026.** Heads-up: Microsoft **retired the standalone Copilot Pro in late 2025** — the personal plan is now **Microsoft 365 Premium ($19.99/month)** (see the note at the top). This guide keeps the "Copilot Pro" wording because that's still how most people search — read it as "the personal plan" throughout. Microsoft tweaks pricing and features regularly, so [Microsoft's pricing pages](https://www.microsoft.com/microsoft-365) are the source of truth. Spotted something off? [Let me know](/feedback/) and I'll update.
+🔄 **Living document. All prices in USD, current as of June 2026.** Heads-up: Microsoft retired the standalone Copilot Pro in late 2025 — the personal plan is now **Microsoft 365 Premium ($19.99/month)** (see the note at the top). This guide keeps the "Copilot Pro" wording because that's still how most people search — read it as "the personal plan" throughout. Microsoft tweaks pricing and features regularly, so [Microsoft's pricing pages](https://www.microsoft.com/microsoft-365) are the source of truth. Spotted something off? [Let me know](/feedback/) and I'll update.
 
 </div>
 
@@ -100,7 +100,7 @@ If you're reading this, you've probably been on Microsoft's pricing page going b
 
 **One sentence:** {{< hi >}}Copilot Pro is the AI for your personal life. Microsoft 365 Copilot is the AI for your work life. They are not interchangeable.{{< /hi >}}
 
-> 📋 **Do these 3 things before you buy anything:**
+> 📋 Do these 3 things before you buy anything:
 >
 > 1. Open your Office apps. Are you signed in with a personal account (gmail-style) or a work account (yourcompany.com)? That answers half the question.
 > 2. Ask yourself: do I want AI to read my work emails and files? If yes, you need M365 Copilot — which means your IT admin must deploy it. You can't buy it yourself.
@@ -114,7 +114,7 @@ The clearest way I've found to explain this is three coffee shops on the same st
 
 🍵 **Copilot Pro = the indoor café where you bring your own laptop.** Same barista, same coffee, but now you've got a table, you're plugged in, your laptop is open with your own personal files. The barista can help you with anything on YOUR laptop — review your novel draft, polish your CV, fix that Excel budget you've been wrestling with — but she has no idea what your employer is paying you to do this week. {{< hi >}}Copilot Pro adds AI to YOUR Office apps — your personal Word, Excel, PowerPoint, Outlook *(for the work-account version, see the [licensed trainer guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/)).*{{< /hi >}}
 
-🏢 **Microsoft 365 Copilot = the office café in your company building.** Different shop entirely. Your employee badge gets you in. The barista has access to your work calendar, your team's shared drive, the meeting notes from last Tuesday, the project files your colleague shared yesterday. She can help you with anything on YOUR WORK account — and the bill goes to your employer. **This is a fundamentally different product**, not just "Copilot Pro for businesses."
+🏢 **Microsoft 365 Copilot = the office café in your company building.** Different shop entirely. Your employee badge gets you in. The barista has access to your work calendar, your team's shared drive, the meeting notes from last Tuesday, the project files your colleague shared yesterday. She can help you with anything on YOUR WORK account — and the bill goes to your employer. This is a fundamentally different product, not just "Copilot Pro for businesses."
 
 ```mermaid
 flowchart TD
@@ -161,7 +161,7 @@ If the coffee-shop metaphor and the decision tree above haven't fully landed it 
 
 ## What Copilot Pro Actually Is {#copilot-pro}
 
-Copilot Pro is Microsoft's **consumer** AI subscription. Until late 2025 that was **Copilot Pro ($20/month, plus a separate Microsoft 365 base)**; since then it's **Microsoft 365 Premium (~$19.99/month, all-in)**. Same idea — AI for your personal Office — just repackaged into one plan.
+Copilot Pro is Microsoft's **consumer** AI subscription. Until late 2025 that was Copilot Pro ($20/month, plus a separate Microsoft 365 base); since then it's Microsoft 365 Premium (~$19.99/month, all-in). Same idea — AI for your personal Office — just repackaged into one plan.
 
 ### What you get (~$19.99/month with Microsoft 365 Premium)
 
@@ -192,7 +192,7 @@ This is where the 2025 change actually helps you. {{< hi >}}The old Copilot Pro 
 - ❌ Build agents or use Copilot Studio
 - ❌ Use any organisation-purchased Microsoft licence — it's tied to your personal Microsoft account
 
-> 📌 **Where to buy:** The personal plan is now **Microsoft 365 Premium** — buy it direct from Microsoft at [microsoft.com/microsoft-365](https://www.microsoft.com/microsoft-365). Credit card, monthly or annual billing, cancel anytime. (Copilot Pro itself is no longer sold; existing subscribers keep it until 1 August 2026.) There's no enterprise channel for the consumer plans — by design.
+> 📌 **Where to buy:** The personal plan is now Microsoft 365 Premium — buy it direct from Microsoft at [microsoft.com/microsoft-365](https://www.microsoft.com/microsoft-365). Credit card, monthly or annual billing, cancel anytime. (Copilot Pro itself is no longer sold; existing subscribers keep it until 1 August 2026.) There's no enterprise channel for the consumer plans — by design.
 
 > 📚 [Full Copilot tier-by-tier pricing](/blog/microsoft-copilot-pricing-tiers-explained/) · [Compare plans on this site](/licensing/copilot-pro/)
 
@@ -276,7 +276,7 @@ Most comparison tables stop at "AI in Word — yes/yes" and leave you no wiser. 
 | Be paid for by you personally | ✅ | ✅ | ❌ (no consumer route) |
 | Cancel monthly with no commitment | ✅ | ✅ | Depends on contract — monthly is now available in most channels |
 
-The pattern is unmistakable: **everything that involves work data is on the M365 Copilot side**. Everything that involves personal data is on the Copilot Pro side. There is no overlap on the data dimension.
+The pattern is unmistakable: everything that involves work data is on the M365 Copilot side. Everything that involves personal data is on the Copilot Pro side. There is no overlap on the data dimension.
 
 ## Real Scenarios — Which One I'd Buy {#scenarios}
 
@@ -304,7 +304,7 @@ Five real conversations, with the names changed.
 
 > **Situation:** Sarah runs a small marketing agency. Eight staff. Everyone uses Microsoft 365 Business Standard. Half her team is asking about AI.
 
-**Microsoft 365 Copilot via M365 Business Standard** is what she wants — that's the only path that connects AI to her business email, shared SharePoint, and Teams meetings. Total per person: roughly $44/month. She'd buy that through her Microsoft partner or directly in the M365 Admin Centre. **Do not buy a consumer plan (Microsoft 365 Premium) for staff** — it's a consumer SKU, tied to personal Microsoft accounts, with no admin controls, no audit trail, and no ability to see her company's data. It would be a worse experience AND a compliance headache.
+**Microsoft 365 Copilot via M365 Business Standard** is what she wants — that's the only path that connects AI to her business email, shared SharePoint, and Teams meetings. Total per person: roughly $44/month. She'd buy that through her Microsoft partner or directly in the M365 Admin Centre. Do not buy a consumer plan (Microsoft 365 Premium) for staff — it's a consumer SKU, tied to personal Microsoft accounts, with no admin controls, no audit trail, and no ability to see her company's data. It would be a worse experience AND a compliance headache.
 
 ### "My company hasn't deployed Copilot yet, but I want it for work"
 
@@ -372,7 +372,7 @@ Both products have hidden costs the pricing pages don't lead with. Here they are
 
 **The problem:** Microsoft uses both phrasings on different pages. *"Microsoft 365 Copilot"* (capitalised, no preposition) is the actual enterprise SKU at $30/user/month. *"Copilot in Microsoft 365"* is a marketing umbrella that can mean either Pro features bolted into M365 Personal/Family OR the enterprise SKU — depending on which page you're reading.
 
-**The fix:** Always check the actual SKU name on your order confirmation or invoice. The two purchasable SKUs today are **"Microsoft 365 Premium"** (consumer, ~$19.99 — the plan that replaced Copilot Pro) and **"Microsoft 365 Copilot"** (enterprise, $30/user). If your checkout page can't tell you which one you're buying in plain words, you're probably on the wrong page — back out and start again from [the official Copilot page](https://www.microsoft.com/copilot).
+**The fix:** Always check the actual SKU name on your order confirmation or invoice. The two purchasable SKUs today are **"Microsoft 365 Premium"** (consumer, ~$19.99 — the plan that replaced Copilot Pro) and "Microsoft 365 Copilot" (enterprise, $30/user). If your checkout page can't tell you which one you're buying in plain words, you're probably on the wrong page — back out and start again from [the official Copilot page](https://www.microsoft.com/copilot).
 
 ## Your 4-Week Trial Plan {#trial-plan}
 
@@ -396,7 +396,7 @@ If you've genuinely decided which product you need, here's how to validate it ac
 | **3** | Try "What did I miss from [colleague]" and "Find the slides from [event/project]" prompts. These are the queries that prove the grounding actually works. |
 | **4** | Build one Agent Builder agent for repetitive Q&A. 10 minutes. See [Agent Builder vs Copilot Studio vs Foundry](/blog/agent-builder-vs-copilot-studio-vs-foundry/) for which one to use. |
 
-> 💡 **Track your time.** I genuinely recommend writing down what you saved per week. The proof of whether AI is worth it for *your* workflow is in how many hours you reclaimed — not what Microsoft Research says about other people.
+> 💡 **Track your time.** I recommend writing down what you saved per week. The proof of whether AI is worth it for *your* workflow is in how many hours you reclaimed — not what Microsoft Research says about other people.
 
 ## Final word
 
@@ -406,47 +406,47 @@ The [licensing simplifier](/licensing/) and [AI cost calculator](/ai-cost-calcul
 
 ## FAQ {#faq}
 
-**1. What is the difference between Copilot Pro and Microsoft 365 Copilot?**
+1. What is the difference between Copilot Pro and Microsoft 365 Copilot?
 
-Copilot Pro was the personal consumer plan ($20/month) — Microsoft retired it in late 2025 and replaced it with **Microsoft 365 Premium (~$19.99/month)**. Either way, the personal plan adds AI to your own Word, Excel, PowerPoint and Outlook. Microsoft 365 Copilot ($30/user/month) is an enterprise product your IT admin deploys — it adds AI to your work apps AND grounds it on your organisation's emails, files, meetings and Teams chats. The difference is the data Copilot can see: the personal plan sees only your files; the work version sees your work data.
+Copilot Pro was the personal consumer plan ($20/month) — Microsoft retired it in late 2025 and replaced it with Microsoft 365 Premium (~$19.99/month). Either way, the personal plan adds AI to your own Word, Excel, PowerPoint and Outlook. Microsoft 365 Copilot ($30/user/month) is an enterprise product your IT admin deploys — it adds AI to your work apps AND grounds it on your organisation's emails, files, meetings and Teams chats. The difference is the data Copilot can see: the personal plan sees only your files; the work version sees your work data.
 
-**2. How much does the personal Copilot plan cost now?**
+2. How much does the personal Copilot plan cost now?
 
 Copilot Pro used to be $20/month plus a separate Microsoft 365 base plan (~$30 all-in). It was retired in late 2025. The replacement, **Microsoft 365 Premium, is ~$19.99/month** — and it bundles the Office apps, Copilot AI, and up to 6 TB of storage in one plan, so there's no separate base subscription to add.
 
-**3. Can I use Copilot Pro for work?**
+3. Can I use Copilot Pro for work?
 
 You can technically install Copilot Pro alongside your work account, but it cannot access your organisation's data (emails, SharePoint, Teams chats, OneDrive for Business). It only works with your personal files. For work use your IT admin needs to deploy Microsoft 365 Copilot — and some organisations have policies that forbid using consumer AI subscriptions for company data.
 
-**4. Is the personal plan (Microsoft 365 Premium) worth ~$20 a month?**
+4. Is the personal plan (Microsoft 365 Premium) worth ~$20 a month?
 
 It's worth it if you spend significant time in Word, Excel, PowerPoint or Outlook for personal or freelance work — the drafting, formula generation and slide creation features can genuinely save hours per week, and Premium bundles the Office apps and storage too. It's NOT worth it if you only use Office in a browser, mainly use Outlook for personal email, or your employer has already given you Microsoft 365 Copilot.
 
-**5. Do I need a separate Microsoft 365 subscription for the personal Copilot plan?**
+5. Do I need a separate Microsoft 365 subscription for the personal Copilot plan?
 
-Not any more. The old Copilot Pro needed a separate Microsoft 365 Personal or Family subscription to get AI inside the desktop apps. Its replacement, **Microsoft 365 Premium, bundles the Office apps in** — so the ~$19.99/month is the all-in price, with no separate base plan to buy.
+Not any more. The old Copilot Pro needed a separate Microsoft 365 Personal or Family subscription to get AI inside the desktop apps. Its replacement, Microsoft 365 Premium, bundles the Office apps in — so the ~$19.99/month is the all-in price, with no separate base plan to buy.
 
-**6. Can my company buy Copilot Pro for employees?**
+6. Can my company buy Copilot Pro for employees?
 
 No. The consumer plans (Microsoft 365 Premium, or the legacy Copilot Pro) are tied to a personal Microsoft account, not a work account. They cannot be centrally managed, audited, or governed by your IT admin. For business and enterprise use, your IT admin needs to deploy Microsoft 365 Copilot ($30/user/month) which requires a qualifying base plan (Business Basic/Standard/Premium, Microsoft 365 E3/E5, Office 365 E1/E3/E5, and more).
 
-**7. Can I have both Copilot Pro and Microsoft 365 Copilot?**
+7. Can I have both Copilot Pro and Microsoft 365 Copilot?
 
 Yes, technically — they're tied to different accounts (personal vs work). But there's almost no reason to. If your work has given you Microsoft 365 Copilot, it already does everything Copilot Pro does for personal-style work, plus the enterprise data grounding. The exception is if you have a genuine personal side-business with its own files you keep separate from your employer's account.
 
-**8. Which AI models does Copilot Pro use?**
+8. Which AI models does Copilot Pro use?
 
 Copilot Pro gives you priority access to the latest OpenAI models Microsoft offers in the Copilot consumer experience, even during peak hours when free users may be queued or fall back to a lower-tier model. Microsoft updates which specific models power the experience regularly, so exact model names rotate. The durable promise is priority + latest, not a specific model number.
 
-**9. How is Copilot Pro different from the free Copilot chat?**
+9. How is Copilot Pro different from the free Copilot chat?
 
 The free Copilot Chat (formerly Bing Chat / now just "Copilot") is a web experience — AI conversation in a browser. Copilot Pro adds three things: AI inside your desktop Office apps (Word, Excel, PowerPoint, Outlook), priority access to the latest models during peak times, and higher daily image generation limits in Designer.
 
-**10. Does Copilot Pro include image generation?**
+10. Does Copilot Pro include image generation?
 
 Yes. The personal plan (now Microsoft 365 Premium) includes higher image generation limits in Designer than the free tier — a higher daily allocation of fast "boosts". Once you exceed boosts, image generation still works but runs more slowly. Microsoft adjusts the exact boost counts periodically, so check the current Microsoft 365 Premium page for today's numbers.
 
-**11. If I leave my job, what happens to my Microsoft 365 Copilot access?**
+11. If I leave my job, what happens to my Microsoft 365 Copilot access?
 
 Microsoft 365 Copilot is tied to your work account — when you leave, your IT admin disables that account and you lose Copilot along with everything else. Your prompts, chat history and any Copilot-generated content in mailboxes/files belong to the organisation, not to you. This is a key reason consumer-AI-for-work doesn't translate cleanly.
 

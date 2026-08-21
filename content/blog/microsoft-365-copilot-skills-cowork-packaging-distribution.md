@@ -31,7 +31,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-**Living developer guide.** Microsoft's public Cowork examples currently span Unified Manifest v1.28 and `devPreview`. This guide uses a safe Skills-only v1.28 starting point and marks MCP schema details for live validation. **Public sources last checked: 31 July 2026.**
+**Living developer guide.** Microsoft's public Cowork examples currently span Unified Manifest v1.28 and `devPreview`. This guide uses a safe Skills-only v1.28 starting point and marks MCP schema details for live validation. Public sources last checked: 31 July 2026.
 
 </div>
 
@@ -438,7 +438,7 @@ The `commands/` detail matters. The docs say slash commands are not supported; t
 
 For a converted connector, also add and reference the required `mcpToolDescription` file. The current conversion script does not generate that field.
 
-> **Things to know**
+> Things to know
 >
 > The conversion script is a starting point, not a store-readiness certificate. Replace placeholder auth references, verify privacy/terms fields, check the manifest version, and validate every connector.
 

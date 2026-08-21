@@ -46,7 +46,7 @@ founder_note: |
 
 If you're training people on Copilot Chat tomorrow and you're wondering "what exactly am I teaching?" — this guide is for you.
 
-I wrote this for **AI Change Leads**, **Digital Champions**, and anyone running a **Train-the-Trainer** session. It covers everything about **Copilot Chat** (the free tier included with your Microsoft 365 subscription) — not just what buttons to click, but how to explain the value, handle the tough questions, and actually get people excited about using it.
+I wrote this for **AI Change Leads**, Digital Champions, and anyone running a Train-the-Trainer session. It covers everything about Copilot Chat (the free tier included with your Microsoft 365 subscription) — not just what buttons to click, but how to explain the value, handle the tough questions, and actually get people excited about using it.
 
 > 📖 **Looking for the paid Copilot guide?** See our [Microsoft 365 Copilot (Licensed) — Complete Trainer Guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/) for everything about the full $30/month experience.
 
@@ -230,8 +230,8 @@ flowchart TD
 
 A common question your users will ask. The answer is clear:
 
-- ❌ **No data is shared with OpenAI**
-- ❌ **No data is used to train OpenAI models**
+- ❌ No data is shared with OpenAI
+- ❌ No data is used to train OpenAI models
 - ✅ Microsoft uses OpenAI models through **Azure OpenAI Service** — Microsoft controls the infrastructure
 
 > 📖 **Official reference:** [Enterprise Data Protection in Microsoft 365 Copilot and Copilot Chat](https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection)
@@ -270,7 +270,7 @@ flowchart TD
 | **Copilot in Teams** | ✅ Stays | ✅ Stays |
 | **WXP Agents** | ✅ Stays (if Anthropic enabled) | ✅ Stays |
 
-> ⚠️ **Important for trainers:** The 2,000-seat count includes **paid M365 E/B/G/O seats** and **any Academic (A) SKU**. Frontline (F) licences are **not** counted. If **any** tenant in your customer's TPID has ≥ 2,000 seats, all tenants for that customer are affected.
+> ⚠️ **Important for trainers:** The 2,000-seat count includes **paid M365 E/B/G/O seats** and any Academic (A) SKU. Frontline (F) licences are not counted. If any tenant in your customer's TPID has ≥ 2,000 seats, all tenants for that customer are affected.
 
 ### How to Position This to Your Users
 
@@ -278,7 +278,7 @@ For large organisations, frame it as:
 
 <div class="trainer-script">
 
-🗣️ **Say this to your users:**
+🗣️ Say this to your users:
 
 *"Copilot Chat continues to be your go-to secure AI assistant. You'll access it through the Copilot app, Teams, and Outlook. For AI features directly inside Word, Excel, and PowerPoint — like drafting documents or analysing data inside the app — that's where the full Microsoft 365 Copilot licence comes in."*
 
@@ -332,7 +332,7 @@ When users sign in with their work account, they'll see the **green shield 🛡�
 
 The single biggest factor in getting value from Copilot Chat is **the quality of the prompt**. As a trainer, this is your highest-impact teaching moment. *(Pair this section with the [Prompt Engineering Field Guide](/blog/prompt-engineering-microsoft-365-copilot/) for the four-block framework that makes prompts repeatable.)*
 
-**The CRAFT Framework for Better Prompts:**
+The CRAFT Framework for Better Prompts:
 
 | Element | What to Include | Example |
 |:--|:--|:--|
@@ -388,7 +388,7 @@ Need Copilot to compare two documents or synthesise information from several sou
 
 <div class="trainer-tip">
 
-💡 **Trainer tip:** This is the feature that makes Copilot Chat genuinely useful for knowledge workers — even without the paid licence. They can get AI-powered analysis of their own documents, securely and privately.
+💡 **Trainer tip:** This is the feature that makes Copilot Chat useful for knowledge workers — even without the paid licence. They can get AI-powered analysis of their own documents, securely and privately.
 
 </div>
 
@@ -436,11 +436,11 @@ Found a prompt that works brilliantly? **Save it.** Copilot Chat lets users book
 
 ### 5. Custom Instructions
 
-Custom instructions let users tell Copilot **how they want all responses to behave** — their role, preferred tone, formatting style, language, and other preferences. This is set once and applies to every conversation.
+Custom instructions let users tell Copilot how they want all responses to behave — their role, preferred tone, formatting style, language, and other preferences. This is set once and applies to every conversation.
 
 #### Where to Set Custom Instructions
 
-**Settings → Personalisation → Custom Instructions**
+Settings → Personalisation → Custom Instructions
 
 #### Example Custom Instructions
 
@@ -485,7 +485,7 @@ Copilot Memory allows Copilot to **remember key facts about you** across convers
 
 Memory data is stored securely in your **Exchange mailbox** (in a hidden folder), meaning it inherits the same security, compliance, and retention policies as your email. Your admin can manage memory settings at the tenant level.
 
-> ⚠️ **Admin note:** Memory requires the **Enhanced Personalisation** control to be enabled at the admin level. If your admin disables it, Copilot won't apply memories but won't delete existing ones. Memory is currently in **preview** — availability varies by tenant, and your users may not see it yet. If it's not available, let users know it's coming and move on to other features.
+> ⚠️ **Admin note:** Memory requires the **Enhanced Personalisation** control to be enabled at the admin level. If your admin disables it, Copilot won't apply memories but won't delete existing ones. Memory is currently in preview — availability varies by tenant, and your users may not see it yet. If it's not available, let users know it's coming and move on to other features.
 
 ---
 
@@ -511,7 +511,7 @@ Users can create custom images using natural language — describe what you want
 - Use **reference image uploads** as creative foundations for new visuals
 - Great for presentations, social media, brainstorming, and visualising ideas
 
-> 💡 **For the paid licence:** Create unlocks **AI-powered creation** (not just templates) plus **brand kit** integration — users can generate content that automatically uses your organisation's approved logos, colours, and fonts.
+> 💡 **For the paid licence:** Create unlocks **AI-powered creation** (not just templates) plus brand kit integration — users can generate content that automatically uses your organisation's approved logos, colours, and fonts.
 
 ---
 
@@ -554,7 +554,7 @@ Every conversation with Copilot Chat is automatically saved in your **chat histo
 
 For Copilot Chat (free) users, Search finds your **previous chats and web content**.
 
-For **paid M365 Copilot users**, Search transforms into an **AI-powered enterprise search** that can find:
+For **paid M365 Copilot users**, Search transforms into an AI-powered enterprise search that can find:
 - 📧 Emails from Outlook
 - 📄 Documents from SharePoint and OneDrive
 - 📅 Calendar events
@@ -598,7 +598,7 @@ Helps users improve their writing quality. Great for emails, reports, and docume
 
 #### Agent Creation — What Trainers Need to Know
 
-The ability to **create** agents depends on your organisation's decisions:
+The ability to create agents depends on your organisation's decisions:
 
 ```mermaid
 flowchart TD
@@ -614,7 +614,7 @@ flowchart TD
 
 </div>
 
-> 📖 **For the paid licence blog:** Licensed users get full agent creation with any grounding source, plus the powerful **Researcher** (deep web research with citations) and **Analyst** (data analysis with Python) agents. These are covered in our [companion guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/).
+> 📖 **For the paid licence blog:** Licensed users get full agent creation with any grounding source, plus the powerful **Researcher** (deep web research with citations) and Analyst (data analysis with Python) agents. These are covered in our [companion guide](/blog/microsoft-365-copilot-licensed-complete-guide-for-trainers/).
 
 ---
 
@@ -636,7 +636,7 @@ Look for the model selector at the **top right** of the Copilot Chat interface. 
 
 <div class="trainer-tip">
 
-💡 **Trainer tip:** For most users, **Auto mode** is the best default. Only teach "Think Deeper" to users who regularly do complex analysis or strategic work — it's slower but significantly more thorough.
+💡 **Trainer tip:** For most users, Auto mode is the best default. Only teach "Think Deeper" to users who regularly do complex analysis or strategic work — it's slower but significantly more thorough.
 
 </div>
 
@@ -674,11 +674,11 @@ Copilot Chat in Outlook remains available for all users, regardless of tenant si
 As of **April 15, 2026:**
 
 - **Large orgs (≥ 2,000 seats):** Copilot side pane in these apps is **removed** for unlicensed users
-- **Smaller orgs (< 2,000 seats):** Copilot side pane remains under **standard access**
+- **Smaller orgs (< 2,000 seats):** Copilot side pane remains under standard access
 
-When available, the side pane is **aware of the document you have open** — users can ask questions about the content without uploading it separately.
+When available, the side pane is aware of the document you have open — users can ask questions about the content without uploading it separately.
 
-> ⚠️ **Important:** Even if the side pane is removed from Office apps, the **WXP agents** (Word, Excel, PowerPoint agents) remain available through the Copilot app — **but only if Anthropic is enabled** as a subprocessor in your tenant. These agents run exclusively on Anthropic's Claude AI model. See [our detailed blog](/blog/microsoft-365-copilot-chat-april-2026-changes-what-admins-need-to-know/#the-wxp-agent-surprise-most-people-miss) for the full explanation.
+> ⚠️ **Important:** Even if the side pane is removed from Office apps, the **WXP agents** (Word, Excel, PowerPoint agents) remain available through the Copilot app — but only if Anthropic is enabled as a subprocessor in your tenant. These agents run exclusively on Anthropic's Claude AI model. See [our detailed blog](/blog/microsoft-365-copilot-chat-april-2026-changes-what-admins-need-to-know/#the-wxp-agent-surprise-most-people-miss) for the full explanation.
 
 ---
 
@@ -766,7 +766,7 @@ I build free, open tools to make Copilot adoption easier for everyone — traine
 
 ## Also Read: The Licensed Microsoft 365 Copilot Guide
 
-This guide covers **Copilot Chat** — the free tier. Our companion blog post covers **everything** about the **paid Microsoft 365 Copilot** experience:
+This guide covers Copilot Chat — the free tier. Our companion blog post covers **everything** about the paid Microsoft 365 Copilot experience:
 
 - 🔍 **Work Data Grounding** — how Copilot reads your emails, files, meetings, and chats
 - 📱 **Deep App Integration** — Copilot in Word, Excel, PowerPoint, Teams, Outlook, OneNote, and more
@@ -784,7 +784,7 @@ This guide covers **Copilot Chat** — the free tier. Our companion blog post co
 
 <div class="trainer-script">
 
-**1. What is Microsoft 365 Copilot Chat?**
+1. What is Microsoft 365 Copilot Chat?
 
 Microsoft 365 Copilot Chat is a free, secure AI chat experience included with every Microsoft 365 subscription. It's grounded in web data, protected by Enterprise Data Protection (EDP), and gives users access to features like file upload, Copilot Pages, image generation, agents, and more — all at no extra cost.
 
@@ -792,7 +792,7 @@ Microsoft 365 Copilot Chat is a free, secure AI chat experience included with ev
 
 <div class="trainer-script">
 
-**2. Is Copilot Chat really free?**
+2. Is Copilot Chat really free?
 
 Yes. It's included at no additional cost with any Microsoft 365 or Office 365 subscription. Users get standard access to AI chat, file upload, image generation, Pages, and agents. Some agents run on a metered pay-as-you-go basis.
 
@@ -800,7 +800,7 @@ Yes. It's included at no additional cost with any Microsoft 365 or Office 365 su
 
 <div class="trainer-script">
 
-**3. What is the difference between Copilot Chat and Microsoft 365 Copilot?**
+3. What is the difference between Copilot Chat and Microsoft 365 Copilot?
 
 Copilot Chat is the free tier — AI chat grounded in web data. Microsoft 365 Copilot is the paid licence ($30/user/month for enterprise) — it adds work data grounding via Microsoft Graph, deep in-app integration, advanced agents like Researcher and Analyst, Notebooks, and priority access.
 
@@ -808,7 +808,7 @@ Copilot Chat is the free tier — AI chat grounded in web data. Microsoft 365 Co
 
 <div class="trainer-script">
 
-**4. Does Copilot Chat use my data to train AI models?**
+4. Does Copilot Chat use my data to train AI models?
 
 No. Under Enterprise Data Protection, your prompts and responses are never used to train foundation models. Your data is protected by the same Microsoft enterprise terms that cover your emails and files.
 
@@ -816,7 +816,7 @@ No. Under Enterprise Data Protection, your prompts and responses are never used 
 
 <div class="trainer-script">
 
-**5. What is changing for Copilot Chat on April 15, 2026?**
+5. What is changing for Copilot Chat on April 15, 2026?
 
 For organisations with more than 2,000 paid M365 seats, Copilot Chat will be removed from Word, Excel, PowerPoint, and OneNote for unlicensed users. The web chat, Outlook, Teams, and WXP agents remain. For smaller orgs, it stays but under standard access with possible throttling.
 
@@ -824,7 +824,7 @@ For organisations with more than 2,000 paid M365 seats, Copilot Chat will be rem
 
 <div class="trainer-script">
 
-**6. Can Copilot Chat users access agents?**
+6. Can Copilot Chat users access agents?
 
 Yes. Free users can use pre-built agents like Prompt Coach and Writing Coach. They can also access pay-as-you-go agents. Creating agents with document or SharePoint grounding requires a billing plan enabled by the organisation.
 
@@ -840,7 +840,7 @@ Custom instructions let you tell Copilot how you prefer responses — your role,
 
 <div class="trainer-script">
 
-**8. What model does Copilot Chat use?**
+8. What model does Copilot Chat use?
 
 Copilot Chat uses a dynamic model router in Auto mode — GPT-5 for quick questions, deeper reasoning models for complex queries. Users can manually select Quick Response or Think Deeper mode.
 
@@ -856,7 +856,7 @@ Pages is a collaborative canvas where you turn any Copilot response into a share
 
 <div class="trainer-script">
 
-**10. What features require admin enablement?**
+10. What features require admin enablement?
 
 Memory (Enhanced Personalisation toggle), agents (admin controls visibility and creation), Anthropic/Claude (subprocessor toggle), and Copilot Chat pinning in apps. Check with your IT team if features aren't visible.
 
@@ -864,7 +864,7 @@ Memory (Enhanced Personalisation toggle), agents (admin controls visibility and 
 
 <div class="trainer-script">
 
-**11. Can admins or compliance teams see my Copilot prompts and responses?**
+11. Can admins or compliance teams see my Copilot prompts and responses?
 
 Copilot interactions are logged and can be subject to audit, eDiscovery, and retention policies depending on your organisation's Microsoft 365 subscription and compliance configuration. Metadata is always logged. Prompt and response content may be discoverable through Microsoft Purview depending on your setup. Check with your IT team for your organisation's specific policies.
 

@@ -30,13 +30,13 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-**Current-state guide.** Public Microsoft sources document Skills in PowerPoint and Excel, but no equivalent Word `SKILL.md` picker page. **Public sources last checked: 31 July 2026.**
+**Current-state guide.** Public Microsoft sources document Skills in PowerPoint and Excel, but no equivalent Word `SKILL.md` picker page. Public sources last checked: 31 July 2026.
 
 </div>
 
 *This is part of the [Microsoft 365 Copilot Skills series](/blog/microsoft-365-copilot-skills-explained/).*
 
-**The honest answer from the public sources checked for this guide: Microsoft documents Edit with Copilot and the Word Agent, but not a standalone Word `SKILL.md` Skills picker.** There is no public Word equivalent of PowerPoint's **Choose skills** or Excel's **All Skills** page in those sources.
+**The honest answer from the public sources checked for this guide: Microsoft documents Edit with Copilot and the Word Agent, but not a standalone Word `SKILL.md` Skills picker. There is no public Word equivalent of PowerPoint's Choose skills** or Excel's **All Skills** page in those sources.
 
 Word does have two useful Copilot experiences:
 
@@ -57,7 +57,7 @@ They are useful. They are not the same as a reusable `SKILL.md` picker.
 
 ## Edit with Copilot in Word
 
-Microsoft calls the current in-document editing experience **Edit with Copilot in Word**. Earlier releases called it **Agent Mode**.
+Microsoft calls the current in-document editing experience **Edit with Copilot in Word**. Earlier releases called it Agent Mode.
 
 It works as a co-creator in the open document:
 
@@ -69,7 +69,7 @@ It works as a co-creator in the open document:
 
 <!-- Screenshot planned: Current Word Copilot Tools menu showing Edit with Copilot, not the older Agent mode label. -->
 
-*Official UI reference: [Microsoft Support — Edit with Copilot in Word](https://support.microsoft.com/en-us/word/edit-with-copilot-in-word). The current public image still shows the older **Agent mode** label, so capture the live tenant wording.*
+*Official UI reference: [Microsoft Support — Edit with Copilot in Word](https://support.microsoft.com/en-us/word/edit-with-copilot-in-word). The current public image still shows the older Agent mode label, so capture the live tenant wording.*
 
 ### Open Edit with Copilot
 
@@ -177,7 +177,7 @@ Use it when you want to create a new Word file from a prompt.
 ### Where to find it
 
 1. Open Microsoft 365 Copilot on the web, desktop app, or Teams.
-2. Open **Tools** in Copilot Chat or the **Agents** menu.
+2. Open Tools in Copilot Chat or the **Agents** menu.
 3. Select **Word**.
 4. Describe the document you need.
 5. Answer any clarifying questions.
@@ -251,7 +251,7 @@ Excel publicly documents:
 
 - **All Skills**
 - `@` mention invocation
-- **Manage skills**
+- Manage skills
 - OneDrive custom Skills.
 
 Cowork publicly documents:

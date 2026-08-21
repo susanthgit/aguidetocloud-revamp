@@ -90,7 +90,7 @@ This is a living document. Bookmark this page rather than printing it — the AI
 
 ## What Does the Microsoft 365 Copilot Licence Unlock?
 
-The paid licence transforms Copilot from a **web-grounded chat tool** into an **AI assistant that understands your work** — your emails, files, meetings, chats, and organisational context *(see the [free-vs-paid decision guide](/blog/copilot-pro-vs-microsoft-365-copilot/) if you need to explain the split).*
+The paid licence transforms Copilot from a **web-grounded chat tool** into an AI assistant that understands your work — your emails, files, meetings, chats, and organisational context *(see the [free-vs-paid decision guide](/blog/copilot-pro-vs-microsoft-365-copilot/) if you need to explain the split).*
 
 {{< margin >}}This one sentence is the trainer's elevator pitch.{{< /margin >}}
 
@@ -228,7 +228,7 @@ flowchart TD
 
 ## Work Data Grounding — The Game Changer
 
-This is the **single biggest difference** between Copilot Chat and the paid licence. With work data grounding, Copilot doesn't just search the web — it reads your **organisational data** through **Microsoft Graph**.
+This is the **single biggest difference** between Copilot Chat and the paid licence. With work data grounding, Copilot doesn't just search the web — it reads your organisational data through Microsoft Graph.
 
 ```mermaid
 flowchart TD
@@ -257,13 +257,13 @@ flowchart TD
 
 <div class="trainer-tip">
 
-💡 **Critical for trainers to understand:** Copilot only accesses data that the user **already has permission to see**. It respects all existing access controls, sensitivity labels, and compliance policies. If a user can't see a document in SharePoint, Copilot can't see it either. **No data boundaries are broken.**
+💡 **Critical for trainers to understand:** Copilot only accesses data that the user **already has permission to see**. It respects all existing access controls, sensitivity labels, and compliance policies. If a user can't see a document in SharePoint, Copilot can't see it either. No data boundaries are broken.
 
 </div>
 
 <div class="trainer-script">
 
-🗣️ **Say this to your users:**
+🗣️ Say this to your users:
 
 *"Copilot can now help you with questions about your actual work — your emails, your files, your meetings. Ask it 'What did Sarah say about the budget in last week's email?' or 'Summarise the key decisions from Tuesday's project meeting.' It finds the answers from your Microsoft 365 data, so you don't have to search manually."*
 
@@ -273,7 +273,7 @@ flowchart TD
 
 ## Copilot in Word
 
-Copilot in Word transforms document creation from a blank page into an AI-assisted workflow. It can **draft, rewrite, summarise, visualise, and reference** other documents.
+Copilot in Word transforms document creation from a blank page into an AI-assisted workflow. It can draft, rewrite, summarise, visualise, and reference other documents.
 
 ### What Licensed Users Can Do
 
@@ -363,7 +363,7 @@ Copilot in PowerPoint turns ideas into presentations — from a prompt, a Word d
 
 ## Copilot in Outlook
 
-Copilot in Outlook helps users stay on top of their inbox, craft better emails, and simplify scheduling. It works with both **new Outlook** and **classic Outlook for Windows**.
+Copilot in Outlook helps users stay on top of their inbox, craft better emails, and simplify scheduling. It works with both **new Outlook** and classic Outlook for Windows.
 
 ### What Licensed Users Can Do
 
@@ -380,7 +380,7 @@ Copilot in Outlook helps users stay on top of their inbox, craft better emails, 
 
 <div class="trainer-script">
 
-🗣️ **Say this to your users:**
+🗣️ Say this to your users:
 
 *"Copilot in Outlook is like having a personal email assistant. It can summarise a 47-message thread in 10 seconds, draft a reply in your preferred tone, and even turn an email into a meeting invite with one click. The coaching feature is brilliant — it reviews your draft and tells you if the tone is right before you hit send."*
 
@@ -528,7 +528,7 @@ Analyst is a **data analysis agent** that uses Python under the hood to process,
 | **Model** | Can use Think Deeper mode for complex analysis |
 | **Best for** | Sales analysis, trend detection, forecasting, data cleaning, visual reports |
 
-**Example prompts to try:**
+Example prompts to try:
 
 <div class="prompt-example">
 
@@ -599,7 +599,7 @@ With the paid licence, users get **comprehensive agent access** — no metering,
 
 <div class="trainer-script">
 
-🗣️ **Say this to your users:**
+🗣️ Say this to your users:
 
 *"With your Copilot licence, you can create custom AI assistants — called agents — that know about specific topics. For example, you could create an agent grounded in your HR policies document so anyone in the team can ask it questions about leave, benefits, or expenses. Or an agent grounded in your product knowledge base for the sales team."*
 
@@ -611,7 +611,7 @@ With the paid licence, users get **comprehensive agent access** — no metering,
 
 <p><img src="/images/blog/licensed-trainers/04-claude.webp" alt="The Copilot model picker in Word showing Anthropic Claude options (Claude Opus 4.6 and Claude Sonnet 4.6) alongside a grounded document" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-Microsoft 365 Copilot now offers **model choice** — users can select between **OpenAI GPT** and **Anthropic Claude** models in certain apps. This is a significant advantage for users who want to compare outputs or leverage Claude's strengths in specific tasks.
+Microsoft 365 Copilot now offers **model choice** — users can select between OpenAI GPT and Anthropic Claude models in certain apps. This is a significant advantage for users who want to compare outputs or leverage Claude's strengths in specific tasks.
 
 ### Where Claude Is Available
 
@@ -638,9 +638,9 @@ flowchart TD
 ```
 
 **Step-by-step:**
-1. Go to **[Microsoft 365 Admin Center](https://admin.microsoft.com)** → select **Copilot** → **Settings** → **View All**
-2. Select **"AI providers operating as Microsoft subprocessors"**
-3. Under **Available subprocessors**, find **Anthropic** and click **Enable**
+1. Go to **[Microsoft 365 Admin Center](https://admin.microsoft.com)** → select **Copilot** → Settings → View All
+2. Select "AI providers operating as Microsoft subprocessors"
+3. Under **Available subprocessors**, find Anthropic and click Enable
 4. Changes take effect within minutes to a few hours
 
 ### Regional Defaults
@@ -651,7 +651,7 @@ flowchart TD
 | **EU / EFTA / UK** | ❌ Disabled by default | Admin must opt in |
 | **Government (GCC, GCC-H, DoD)** | 🚫 Not available | No toggle shown |
 
-> ⚠️ **Important:** Data sent to Claude is processed **outside** the Microsoft EU Data Boundary. Anthropic acts as a Microsoft subprocessor and does **not** retain or use data for its own training. The Microsoft DPA applies.
+> ⚠️ **Important:** Data sent to Claude is processed **outside** the Microsoft EU Data Boundary. Anthropic acts as a Microsoft subprocessor and does not retain or use data for its own training. The Microsoft DPA applies.
 
 ### How Users Select Models
 
@@ -688,7 +688,7 @@ This is one of those features that sounds boring until you see it in action. For
 | **📅 Calendar** | Events, meeting details |
 | **📦 Archived mailboxes** | Historic emails (append *"from my archives"*) |
 
-**Example prompts:**
+Example prompts:
 
 <div class="prompt-example">
 
@@ -710,7 +710,7 @@ This is one of those features that sounds boring until you see it in action. For
 
 <div class="trainer-script">
 
-🗣️ **Say this to your users:**
+🗣️ Say this to your users:
 
 *"Stop digging through SharePoint folders and email threads. With Copilot Search, just ask in plain English — 'Find the contract we signed with Contoso last quarter' or 'What did the marketing team share about the rebrand?' Copilot searches across your emails, files, Teams messages, and more, and gives you the answer directly."*
 
@@ -897,7 +897,7 @@ It covers everything about the free Copilot Chat experience — security, EDP, c
 
 <div class="trainer-script">
 
-**1. What is the Microsoft 365 Copilot licence?**
+1. What is the Microsoft 365 Copilot licence?
 
 It's a paid add-on ($30/user/month for enterprise, $21 for business) that unlocks the full AI experience across all M365 apps — work data grounding, deep in-app integration, Researcher & Analyst agents, Notebooks, Anthropic model choice, and priority access.
 
@@ -905,7 +905,7 @@ It's a paid add-on ($30/user/month for enterprise, $21 for business) that unlock
 
 <div class="trainer-script">
 
-**2. What does work data grounding mean?**
+2. What does work data grounding mean?
 
 Copilot can read and reason over your organisation's data through Microsoft Graph — emails, files, meetings, chats, calendar, and contacts. This means Copilot understands your work context, not just the web.
 
@@ -913,7 +913,7 @@ Copilot can read and reason over your organisation's data through Microsoft Grap
 
 <div class="trainer-script">
 
-**3. Can Copilot access files I don't have permission to see?**
+3. Can Copilot access files I don't have permission to see?
 
 No. Copilot strictly respects all existing access controls, sensitivity labels, and compliance policies. If you can't see a document in SharePoint, Copilot can't either.
 
@@ -921,7 +921,7 @@ No. Copilot strictly respects all existing access controls, sensitivity labels, 
 
 <div class="trainer-script">
 
-**4. Does Copilot use my data to train AI models?**
+4. Does Copilot use my data to train AI models?
 
 No. Under Enterprise Data Protection, prompts and responses are never used to train foundation models. This applies to both OpenAI GPT and Anthropic Claude models.
 
@@ -929,7 +929,7 @@ No. Under Enterprise Data Protection, prompts and responses are never used to tr
 
 <div class="trainer-script">
 
-**5. What about Anthropic Claude — is my data safe?**
+5. What about Anthropic Claude — is my data safe?
 
 Anthropic acts as a Microsoft subprocessor. Your data isn't used for Anthropic's training. The Microsoft DPA applies. Note: Claude processing may occur outside the EU Data Boundary. Admins in EU/EFTA/UK must explicitly opt in.
 
@@ -937,7 +937,7 @@ Anthropic acts as a Microsoft subprocessor. Your data isn't used for Anthropic's
 
 <div class="trainer-script">
 
-**6. Which apps support Anthropic Claude model choice?**
+6. Which apps support Anthropic Claude model choice?
 
 Claude is available in Copilot Chat (Researcher), Word, Excel (Agent Mode), PowerPoint, and Copilot Studio. Users see a model selector to switch between GPT and Claude. Availability varies by region and admin settings.
 
@@ -945,7 +945,7 @@ Claude is available in Copilot Chat (Researcher), Word, Excel (Agent Mode), Powe
 
 <div class="trainer-script">
 
-**7. What are the Researcher and Analyst agents?**
+7. What are the Researcher and Analyst agents?
 
 Researcher performs deep, multi-step web research with citations — ideal for market analysis and due diligence. Analyst uses Python for data analysis, visualisation, and statistical modelling. Both are exclusive to licensed users.
 
@@ -961,7 +961,7 @@ A secure AI workspace for deep thinking. Unlike chat (transactional), Notebooks 
 
 <div class="trainer-script">
 
-**9. What features require admin enablement?**
+9. What features require admin enablement?
 
 Teams meeting transcription (for recaps), Anthropic subprocessor toggle, agent creation policies, Enhanced Personalisation (for memory), and Copilot pinning in apps. Check with your IT team if features aren't visible.
 
@@ -969,7 +969,7 @@ Teams meeting transcription (for recaps), Anthropic subprocessor toggle, agent c
 
 <div class="trainer-script">
 
-**10. How much does the Copilot licence cost?**
+10. How much does the Copilot licence cost?
 
 $30 USD/user/month for Enterprise (300+ users), $21 USD/user/month for Business (under 300 users). Both require annual commitment. Education pricing is discounted.
 
@@ -977,7 +977,7 @@ $30 USD/user/month for Enterprise (300+ users), $21 USD/user/month for Business 
 
 <div class="trainer-script">
 
-**11. Can admins or compliance teams see my Copilot prompts and responses?**
+11. Can admins or compliance teams see my Copilot prompts and responses?
 
 Copilot interactions are logged and can be subject to audit, eDiscovery, and retention policies depending on your Microsoft 365 subscription and compliance configuration. Metadata (who used Copilot, when, which app) is always logged. Prompt and response content may be discoverable through Microsoft Purview depending on your setup. Check with your IT/compliance team for your organisation's specific policies.
 
@@ -985,7 +985,7 @@ Copilot interactions are logged and can be subject to audit, eDiscovery, and ret
 
 <div class="trainer-script">
 
-**12. Who should get Microsoft 365 Copilot licences first?**
+12. Who should get Microsoft 365 Copilot licences first?
 
 Start with roles that have the highest meeting load, email volume, and content creation needs — executive assistants, senior leaders, sales teams, and project managers. Then expand to analysts, HR, marketing, and finance. Use free Copilot Chat for light M365 users and frontline workers. See the [Who Should Get Licensed First?](#who-should-get-licensed-first) section for a detailed priority matrix.
 

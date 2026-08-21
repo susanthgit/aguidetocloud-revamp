@@ -47,7 +47,7 @@ founder_note: |
 
 </div>
 
-**The short version:** Yes — **Copilot Pro is no longer available to buy.** Microsoft stopped selling the standalone $20/month plan in late 2025 and replaced it for consumers with **Microsoft 365 Premium (~$19.99/month)**, which bundles the Office apps, Copilot AI (for the subscription owner), and up to 6 TB of storage in one plan. If you already subscribe to Copilot Pro, you keep it until you cancel or until **1 August 2026** — it just won't renew after that.
+**The short version:** Yes — Copilot Pro is no longer available to buy. Microsoft stopped selling the standalone $20/month plan in late 2025 and replaced it for consumers with **Microsoft 365 Premium (~$19.99/month)**, which bundles the Office apps, Copilot AI (for the subscription owner), and up to 6 TB of storage in one plan. If you already subscribe to Copilot Pro, you keep it until you cancel or until 1 August 2026 — it just won't renew after that.
 
 > 💼 If you use Copilot through **work or school**, this is a different product — Microsoft 365 Premium is the *consumer* replacement, and this change doesn't affect the Microsoft 365 Copilot your employer deploys.
 
@@ -64,7 +64,7 @@ founder_note: |
 | **A Microsoft 365 Family user** | Note: only the **subscription owner** gets the advanced Copilot AI — not every family member |
 | **Using this for work** | You probably want **[Microsoft 365 Copilot](/blog/copilot-pro-vs-microsoft-365-copilot/)** (the work product), not a consumer plan |
 
-> ⚠️ **The family catch, up front:** Microsoft 365 Premium shares like Family for the **Office apps and storage** (1 TB per person, up to 6 people) — but the **advanced Copilot features go to the subscription owner only**. If two people in your household both want Copilot, one Premium plan won't cover both.
+> ⚠️ **The family catch, up front:** Microsoft 365 Premium shares like Family for the **Office apps and storage** (1 TB per person, up to 6 people) — but the advanced Copilot features go to the subscription owner only. If two people in your household both want Copilot, one Premium plan won't cover both.
 
 ---
 
@@ -89,7 +89,7 @@ The change sounds bigger than it is. The honest scope:
 
 For about two years, the personal way to get Copilot inside your Office apps was **Copilot Pro** — a $20/month add-on that sat on top of a Microsoft 365 Personal or Family subscription (so realistically ~$30/month all-in).
 
-In **late 2025, Microsoft retired it.** It's no longer sold to new customers. Existing subscribers can keep using it until they cancel or until **support ends on 1 August 2026** — after that it simply won't renew. (Microsoft may show you a slightly different end date tied to your billing cycle, so check your own account.)
+In **late 2025, Microsoft retired it.** It's no longer sold to new customers. Existing subscribers can keep using it until they cancel or until support ends on 1 August 2026 — after that it simply won't renew. (Microsoft may show you a slightly different end date tied to your billing cycle, so check your own account.)
 
 In its place, Microsoft launched **Microsoft 365 Premium** — a single consumer plan that rolls Copilot Pro's AI features in with the Office apps and storage. For most people it's *cheaper and simpler* than the old Copilot Pro + base-plan combo.
 
@@ -110,7 +110,7 @@ Microsoft 365 Premium is Microsoft's **top consumer subscription** — think "Mi
 | **Storage** | Up to **6 TB** OneDrive (1 TB per person, up to 6 people) |
 | **Also bundled** | Microsoft Teams, Microsoft Defender, Designer, Clipchamp |
 
-The headline difference from the old Copilot Pro: **you don't bolt it onto a separate base plan.** The Office apps and storage are *in the box*.
+The headline difference from the old Copilot Pro: you don't bolt it onto a separate base plan. The Office apps and storage are *in the box*.
 
 <!-- 📸 Screenshot placeholder: Microsoft 365 Premium "what's included" / plan comparison on microsoft.com (Sush to capture) -->
 
@@ -126,11 +126,11 @@ It's **not** worth it if you only use Office in a browser, mostly use Copilot fo
 
 ## I'm an existing Copilot Pro subscriber — what should I do? {#existing-subscriber}
 
-First, don't panic — **nothing is forced on you.** Microsoft isn't moving you to Premium automatically: your Copilot Pro keeps working until support ends on **1 August 2026**, then it stops renewing, and switching is your choice. Here's the clean way to handle it:
+First, don't panic — **nothing is forced on you.** Microsoft isn't moving you to Premium automatically: your Copilot Pro keeps working until support ends on 1 August 2026, then it stops renewing, and switching is your choice. Here's the clean way to handle it:
 
 1. **Decide if you still want Copilot in your Office apps.** If you do, you'll move to Microsoft 365 Premium. If you only ever used the free web chat, you can let Pro lapse and lose nothing important.
 2. **Check your account.** Go to your [Microsoft account subscriptions page](https://account.microsoft.com/services) to see your Copilot Pro renewal/end date and what you're currently paying.
-3. **Switch when you're ready.** Subscribe to **Microsoft 365 Premium** from [microsoft.com/microsoft-365](https://www.microsoft.com/microsoft-365). If you already pay for Microsoft 365 Personal or Family, the upgrade path is linked from your account — Microsoft documents an upgrade credit for your remaining time when you switch, so check the Services & subscriptions page for your exact figure before you confirm.
+3. **Switch when you're ready.** Subscribe to Microsoft 365 Premium from [microsoft.com/microsoft-365](https://www.microsoft.com/microsoft-365). If you already pay for Microsoft 365 Personal or Family, the upgrade path is linked from your account — Microsoft documents an upgrade credit for your remaining time when you switch, so check the Services & subscriptions page for your exact figure before you confirm.
 4. **If you do nothing:** your Copilot Pro stops at its end date and you stop being charged. Any Office apps covered by your Microsoft 365 subscription keep working. You lose the *Copilot Pro* boosts inside them — but if you also have Microsoft 365 Personal or Family, those plans now include some Copilot for the owner, and the free Copilot web chat stays either way.
 
 ### Before you switch — a 6-point checklist
@@ -154,7 +154,7 @@ This page is about the **personal** plan. For the full picture, the [pricing hub
 - **Microsoft 365 Premium** — ~$19.99/mo, the personal plan (this page). Copilot in *your* Office apps; sees only *your* files.
 - **Microsoft 365 Copilot** — $30/user/mo, the **work** product your IT admin deploys; grounded on your organisation's data. Full comparison: [Copilot Pro vs Microsoft 365 Copilot](/blog/copilot-pro-vs-microsoft-365-copilot/).
 
-The deciding question is always the same: **whose data should Copilot see — yours, or your employer's?**
+The deciding question is always the same: whose data should Copilot see — yours, or your employer's?
 
 ---
 

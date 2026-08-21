@@ -52,15 +52,15 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-This is a living document. The AI landscape moves fast — features ship, names change, and what's in preview today is GA tomorrow. **Copilot Cowork reached general availability worldwide on 16 June 2026**, and this guide now reflects the official GA capabilities, pricing, and governance. If you spot anything out of date, please [send me feedback](/feedback/) and I'll update it. Last verified: 17 June 2026.
+This is a living document. The AI landscape moves fast — features ship, names change, and what's in preview today is GA tomorrow. Copilot Cowork reached general availability worldwide on 16 June 2026, and this guide now reflects the official GA capabilities, pricing, and governance. If you spot anything out of date, please [send me feedback](/feedback/) and I'll update it. Last verified: 17 June 2026.
 
 </div>
 
 <p><img src="/images/blog/cowork/hero-cowork-dashboard.png" alt="The Microsoft Copilot Cowork dashboard at general availability — a Chat and Cowork toggle, the open model picker showing Auto, GPT 5.5, Claude Opus 4.8, and Cowork 1, a Start a task box, and suggested tasks like Organize my inbox and Arrange my week" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The Copilot Cowork experience — the new Chat ⇄ Cowork toggle and the model picker. This is a Frontier-preview capture, so the picker shows **GPT 5.5** (Frontier) and the coming-soon **Cowork 1**; at general availability the models are Anthropic **Opus 4.8** and **Sonnet 4.6**. Source: [Microsoft 365 Blog — Copilot Cowork is now generally available](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/)*
+*The Copilot Cowork experience — the new Chat ⇄ Cowork toggle and the model picker. This is a Frontier-preview capture, so the picker shows **GPT 5.5** (Frontier) and the coming-soon Cowork 1; at general availability the models are Anthropic Opus 4.8 and Sonnet 4.6. Source: [Microsoft 365 Blog — Copilot Cowork is now generally available](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/)*
 
-Remember when Copilot first launched back in 2023? You could ask it to summarise an email, draft a paragraph in Word, or make a chart in Excel. It was genuinely impressive. But every time you wanted to do something across multiple apps — like "prep me for a meeting using info from my emails, Teams chats, and SharePoint files" — you had to prompt each app separately, copy-paste between them, and stitch it all together yourself.
+Remember when Copilot first launched back in 2023? You could ask it to summarise an email, draft a paragraph in Word, or make a chart in Excel. It was impressive. But every time you wanted to do something across multiple apps — like "prep me for a meeting using info from my emails, Teams chats, and SharePoint files" — you had to prompt each app separately, copy-paste between them, and stitch it all together yourself.
 
 Copilot Cowork changes that. Completely.
 
@@ -88,15 +88,15 @@ This guide explains everything — in plain language, with real scenarios, and h
 
 ## What's new at general availability (16 June 2026)
 
-Copilot Cowork went **generally available worldwide** on 16 June 2026. After three months in the Frontier preview — where **more than half of the Fortune 500** tried it — here's what landed at GA:
+Copilot Cowork went **generally available worldwide** on 16 June 2026. After three months in the Frontier preview — where more than half of the Fortune 500 tried it — here's what landed at GA:
 
-- **Model choice** — pick the model per task: Anthropic **Opus 4.8** and **Sonnet 4.6** at GA, **GPT 5.5** in Frontier, and the fine-tuned **Cowork 1** coming soon for everyday tasks at lower cost.
-- **Usage-based pricing** — a Microsoft 365 Copilot seat plus **Copilot Credits** for the work Cowork runs, with a **Cost Management dashboard** for spending limits, alerts, and reporting. ([Pricing spoke →](/blog/microsoft-copilot-cowork-pricing-cost-management/))
+- **Model choice** — pick the model per task: Anthropic Opus 4.8 and Sonnet 4.6 at GA, GPT 5.5 in Frontier, and the fine-tuned Cowork 1 coming soon for everyday tasks at lower cost.
+- **Usage-based pricing** — a Microsoft 365 Copilot seat plus Copilot Credits for the work Cowork runs, with a **Cost Management dashboard** for spending limits, alerts, and reporting. ([Pricing spoke →](/blog/microsoft-copilot-cowork-pricing-cost-management/))
 - **Plugins** — nine partner plugins available now (Enosix, Harvey, LSEG, Miro, monday.com, Moody's, Morningstar, S&P Global Energy, TeamsMaestro), more on the way, plus Microsoft Fabric and Dynamics 365 (Sales, Customer Service, ERP). ([Skills & plugins spoke →](/blog/microsoft-copilot-cowork-skills-and-plugins/))
 - **Enterprise security at GA** — Cowork runs inside your Microsoft 365 trust boundary, acting as the user with their permissions, plus an approval gate on sensitive actions. Sensitivity labels, encryption handling, and Communication Compliance are supported today; several other Purview controls (audit, eDiscovery, DSPM, Insider Risk, DLP, and more) aren't enabled for Cowork yet. ([Admin & governance spoke →](/blog/microsoft-copilot-cowork-admin-and-governance/))
 - **Lower cost than the alternative** — in Microsoft's own testing, Copilot Cowork ran **30–40% cheaper** than Claude Cowork through its Microsoft 365 connector on the same model.
 
-> 🌐 **One to watch:** **browser use via Edge** — letting Cowork browse the web through a local Edge browser under your enterprise policies — is available in the **Frontier** early-access program, not yet GA.
+> 🌐 **One to watch:** **browser use via Edge** — letting Cowork browse the web through a local Edge browser under your enterprise policies — is available in the Frontier early-access program, not yet GA.
 
 ---
 
@@ -118,7 +118,7 @@ Microsoft frames Cowork's edge as five things. They're worth knowing because the
 
 This guide is the **hub** of an 8-part Cowork series. Read it end-to-end for the full picture, or jump straight to the spoke that matches what you need — each one is its own bookmarkable deep-dive.
 
-**Start here · learn to use Cowork**
+Start here · learn to use Cowork
 
 - **[How to use it, step by step](/blog/microsoft-copilot-cowork-how-to-use-step-by-step/)** — find Cowork in your tenant, write outcome-first prompts, review the plan, approve checkpoints, and troubleshoot the first-run snags.
 - **[Prompts to try](/blog/microsoft-copilot-cowork-prompts-to-try/)** — copy-paste prompts with honest usefulness ratings, tested on a real tenant. (See also the [Cowork prompts collection](/prompts/copilot-cowork/).)
@@ -140,7 +140,7 @@ This guide is the **hub** of an 8-part Cowork series. Read it end-to-end for the
 
 Let me give you the simplest possible explanation.
 
-Think about how you work with a really good colleague. You don't say "open my inbox, find emails from Sarah about the budget, copy the numbers, open Excel, paste them in, make a chart, then open PowerPoint and insert it." You just say: **"Hey, can you put together the budget slides for Friday's meeting?"**
+Think about how you work with a really good colleague. You don't say "open my inbox, find emails from Sarah about the budget, copy the numbers, open Excel, paste them in, make a chart, then open PowerPoint and insert it." You just say: "Hey, can you put together the budget slides for Friday's meeting?"
 
 That's Copilot Cowork. You describe the outcome. It figures out the steps.
 
@@ -168,17 +168,17 @@ One prompt. Multiple apps. Real work done. And it asked before doing anything se
 
 ### What Does Cowork Actually Look Like?
 
-Cowork lives inside Microsoft 365 Copilot — open **`m365.cloud.microsoft`** in your browser (or the Microsoft 365 Copilot desktop or mobile app) and switch from **Chat** to **Cowork** using the toggle next to the chat box; if you don't see it yet, look under **All agents**. It opens into its own task workspace — the input simply says *"Start a task…"*, and that phrasing is the whole mental shift: this is a task-handler, not a chat box.
+Cowork lives inside Microsoft 365 Copilot — open **`m365.cloud.microsoft`** in your browser (or the Microsoft 365 Copilot desktop or mobile app) and switch from Chat to Cowork using the toggle next to the chat box; if you don't see it yet, look under All agents. It opens into its own task workspace — the input simply says *"Start a task…"*, and that phrasing is the whole mental shift: this is a task-handler, not a chat box.
 
-The left side rail keeps the history of every task you've handed off — persistent, searchable, with a **Scheduled** view for recurring work. **New task**, **Search**, **Scheduled**, and **Customize** are the core controls.
+The left side rail keeps the history of every task you've handed off — persistent, searchable, with a **Scheduled** view for recurring work. New task, Search, Scheduled, and Customize are the core controls.
 
-The landing page also surfaces two helper sections: **"Needs your attention"** (tasks already in flight that want your input) and **"Try these next"** (suggested workflows like *Organize my inbox*, *Arrange my week*, *Prep for a meeting*).
+The landing page also surfaces two helper sections: **"Needs your attention"** (tasks already in flight that want your input) and "Try these next" (suggested workflows like *Organize my inbox*, *Arrange my week*, *Prep for a meeting*).
 
 When you do start a task, instead of an instant reply Cowork shows you a **plan** — the list of steps it's going to take. You can review the plan, adjust it, or let it run. As it works you'll see progress updates, and it'll pause at checkpoints to ask for your input.
 
 It feels less like chatting with a bot and more like delegating to a very organised team member who keeps you in the loop.
 
-One small but genuinely useful detail: Cowork can tell you what a task cost. Type **`/cost`** in the task window and it shows the exact credits used so far — handy for working out the real price of the tasks you run most, or for making the case for your own seat. Drop that number into our free **[Cowork Cost Calculator](/cowork-cost-calculator/)** to see it in dollars (or your currency).
+One small but useful detail: Cowork can tell you what a task cost. Type **`/cost`** in the task window and it shows the exact credits used so far — handy for working out the real price of the tasks you run most, or for making the case for your own seat. Drop that number into our free **[Cowork Cost Calculator](/cowork-cost-calculator/)** to see it in dollars (or your currency).
 
 <p><img src="/images/blog/cowork/cost-command-credits.webp" alt="Microsoft Copilot Cowork showing the /cost command — a user types /cost in the task window and Cowork replies with a gauge icon and the line '379.6 credits used for this task so far'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -220,7 +220,7 @@ Now that you know what Cowork is, here's the fun part — trying it yourself. Th
 
 <div class="prompt-cards">
 
-> I have a meeting with **[customer/stakeholder name]** about **[topic, e.g. "quarterly review", "project kickoff", "budget approval"]** coming up this week. Look at my calendar to find the meeting, then search my recent emails and Teams chats for any context about **[customer/stakeholder name]** or this topic. Find the most relevant presentation or document I've used recently on this topic from my OneDrive or SharePoint. Create a 1-page Word briefing with: the meeting objective, key attendees, 3 talking points based on what I've discussed with them before, and a link to the deck. Then draft an email to the attendees confirming the session and attaching the briefing.
+> I have a meeting with **[customer/stakeholder name]** about [topic, e.g. "quarterly review", "project kickoff", "budget approval"] coming up this week. Look at my calendar to find the meeting, then search my recent emails and Teams chats for any context about [customer/stakeholder name] or this topic. Find the most relevant presentation or document I've used recently on this topic from my OneDrive or SharePoint. Create a 1-page Word briefing with: the meeting objective, key attendees, 3 talking points based on what I've discussed with them before, and a link to the deck. Then draft an email to the attendees confirming the session and attaching the briefing.
 
 </div>
 
@@ -236,7 +236,7 @@ Now that you know what Cowork is, here's the fun part — trying it yourself. Th
 
 <div class="prompt-cards">
 
-> I just finished a **[session type, e.g. "training session", "client demo", "team workshop"]**. Look at my most recent meeting that ended in the last 2 hours. Find the recording, any slides or documents that were shared during or before that meeting, and summarise the key topics covered based on the meeting transcript. Then draft a follow-up email to all attendees with:
+> I just finished a [session type, e.g. "training session", "client demo", "team workshop"]. Look at my most recent meeting that ended in the last 2 hours. Find the recording, any slides or documents that were shared during or before that meeting, and summarise the key topics covered based on the meeting transcript. Then draft a follow-up email to all attendees with:
 > - A thank you and 2-sentence summary of what we covered
 > - Links to the recording and slides
 > - A "Questions?" section inviting them to reply
@@ -264,7 +264,7 @@ Now that you know what Cowork is, here's the fun part — trying it yourself. Th
 > 4. Open follow-ups I still need to action
 > 5. What's coming next week based on my calendar
 >
-> Format it as a professional but concise Teams-friendly post, then post it to the **[team channel name, e.g. "Project Alpha", "NZ Sales Team"]** channel for my approval.
+> Format it as a professional but concise Teams-friendly post, then post it to the [team channel name, e.g. "Project Alpha", "NZ Sales Team"] channel for my approval.
 
 </div>
 
@@ -280,9 +280,9 @@ Now that you know what Cowork is, here's the fun part — trying it yourself. Th
 
 <div class="prompt-cards">
 
-> A **[recipient role, e.g. "customer CISO", "project sponsor", "new team member"]** has asked me about **[topic, e.g. "Copilot governance and security controls", "our data migration approach", "onboarding process"]**. Search my OneDrive, SharePoint, and recent emails for any documents, presentations, or materials I've shared or worked on about this topic. Also do a deep research on the latest information from Microsoft Learn about **[topic]**.
+> A [recipient role, e.g. "customer CISO", "project sponsor", "new team member"] has asked me about [topic, e.g. "Copilot governance and security controls", "our data migration approach", "onboarding process"]. Search my OneDrive, SharePoint, and recent emails for any documents, presentations, or materials I've shared or worked on about this topic. Also do a deep research on the latest information from Microsoft Learn about **[topic]**.
 >
-> Create a polished 2-page Word document titled **"[Document title, e.g. 'M365 Copilot Governance Quick Guide']"** that covers the key areas a **[recipient role]** needs to know. Then draft an email to **[recipient name]** attaching this document with a brief "here's what you asked for" message. Show me everything for review.
+> Create a polished 2-page Word document titled "[Document title, e.g. 'M365 Copilot Governance Quick Guide']" that covers the key areas a **[recipient role]** needs to know. Then draft an email to [recipient name] attaching this document with a brief "here's what you asked for" message. Show me everything for review.
 
 </div>
 
@@ -298,17 +298,17 @@ Now that you know what Cowork is, here's the fun part — trying it yourself. Th
 
 <div class="prompt-cards">
 
-> I need to prepare a **[deliverable type, e.g. "slide deck", "report", "proposal"]** for an upcoming session with **[customer/team name]**.
+> I need to prepare a [deliverable type, e.g. "slide deck", "report", "proposal"] for an upcoming session with **[customer/team name]**.
 >
-> **Step 1 — Find the brief:** Search my emails for a message from **[contact name]** at **[company name]** about **[topic, e.g. "executive training session", "quarterly review", "project kickoff"]**. Extract every topic and agenda item they listed.
+> **Step 1 — Find the brief:** Search my emails for a message from **[contact name]** at [company name] about [topic, e.g. "executive training session", "quarterly review", "project kickoff"]. Extract every topic and agenda item they listed.
 >
 > **Step 2 — Gather my materials:** Search my OneDrive and SharePoint for any existing decks, documents, or materials I've used on this topic recently.
 >
-> **Step 3 — Research:** Do a deep research on the latest information about **[topic]** from Microsoft Learn and the web.
+> **Step 3 — Research:** Do a deep research on the latest information about [topic] from Microsoft Learn and the web.
 >
-> **Step 4 — Build the deliverable:** Using the brief as the structure and my materials plus research as content, create a clean, professional PowerPoint presentation covering every item from the brief. Keep it **[audience]-friendly** — no jargon, focus on outcomes. Each slide should answer "why should a busy **[audience role]** care about this?" Make it work as both a presentation AND a standalone cheat sheet they can reference later.
+> **Step 4 — Build the deliverable:** Using the brief as the structure and my materials plus research as content, create a clean, professional PowerPoint presentation covering every item from the brief. Keep it **[audience]-friendly** — no jargon, focus on outcomes. Each slide should answer "why should a busy [audience role] care about this?" Make it work as both a presentation AND a standalone cheat sheet they can reference later.
 >
-> **Step 5 — Draft the reply:** Draft an email to **[contact name]** attaching the deck, confirming I've covered all their agenda items, and asking if there's anything to adjust. Show me everything for review before sending.
+> **Step 5 — Draft the reply:** Draft an email to [contact name] attaching the deck, confirming I've covered all their agenda items, and asking if there's anything to adjust. Show me everything for review before sending.
 
 </div>
 
@@ -369,7 +369,7 @@ By 2026 Microsoft has three distinct shapes of AI help, and the question I get a
 
 ### Same task, different tool — the right one for the job
 
-Here's the part people find most useful. A lot of these jobs *work* in more than one tool — the real question is which one is **built** for it. Read the columns left → right as a spectrum: **simpler and faster** on the left, **more autonomous** on the right.
+Here's the part people find most useful. A lot of these jobs *work* in more than one tool — the real question is which one is **built** for it. Read the columns left → right as a spectrum: simpler and faster on the left, more autonomous on the right.
 
 | The job to be done | M365 Copilot (Chat) | Cowork | Scout |
 |---|---|---|---|
@@ -381,7 +381,7 @@ Here's the part people find most useful. A lot of these jobs *work* in more than
 | Run a multi-step business process across systems | — | ★ | ✓ |
 | Always-on — manage and coordinate my day | — | — | ★ |
 
-**★** = the tool built for this job · **✓** = can also do it · **—** = not what it's for
+**★** = the tool built for this job · **✓** = can also do it · — = not what it's for
 
 > 💡 The pattern: the *simpler, in-the-moment* jobs at the top are Copilot Chat's home turf — and Cowork and Scout can do them too. The *multi-step, multi-artifact* jobs in the middle are where Cowork earns its place. The *never-stops, runs-without-me* job at the bottom is Scout's alone.
 
@@ -451,7 +451,7 @@ An **agentic harness** is the thing that makes Cowork safe and useful instead of
 
 Think about it this way. If you gave an AI full access to your email, calendar, files, and Teams — with no rules — that would be terrifying. It could send emails to your CEO, delete files, or reschedule your entire week without asking.
 
-The **agentic harness** is everything that prevents that:
+The agentic harness is everything that prevents that:
 
 | Component | What It Does | Why You Care |
 |-----------|-------------|-------------|
@@ -461,7 +461,7 @@ The **agentic harness** is everything that prevents that:
 | **Human checkpoints** | Pauses and asks before sensitive actions | You always stay in control |
 | **Multi-model** | Can use different models (Claude, GPT, and more) | Best model for each task, not one-size-fits-all |
 
-That's it. The "agentic harness" is just the **framework that keeps AI agents productive, safe, and accountable**. It's the difference between giving someone a set of power tools with safety goggles, instruction manuals, and supervision versus just handing them a chainsaw and walking away.
+That's it. The "agentic harness" is just the framework that keeps AI agents productive, safe, and accountable. It's the difference between giving someone a set of power tools with safety goggles, instruction manuals, and supervision versus just handing them a chainsaw and walking away.
 
 📖 [Manage Cowork for your organisation](https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/)
 
@@ -475,7 +475,7 @@ This is also the part that makes Cowork genuinely extensible — you're not limi
 
 ### Built-in Cowork Skills
 
-Cowork ships with **13 built-in skills, organised into 5 categories**. They cover the M365 apps you live in — no setup, no configuration. Counts and skill names are based on [Microsoft's official Cowork labs](https://github.com/microsoft/agent-academy/tree/main/docs/cowork-collective).
+Cowork ships with 13 built-in skills, organised into 5 categories. They cover the M365 apps you live in — no setup, no configuration. Counts and skill names are based on [Microsoft's official Cowork labs](https://github.com/microsoft/agent-academy/tree/main/docs/cowork-collective).
 
 | Category | What Cowork can do out of the box |
 |---|---|
@@ -491,15 +491,15 @@ Cowork ships with **13 built-in skills, organised into 5 categories**. They cove
 
 You can extend Cowork with additional skills — from Microsoft, from partners, or built by your own IT team. This is how you connect Cowork to systems outside of M365 like Dynamics 365, ServiceNow, Jira, SAP, or your own internal tools.
 
-**Option 1 — Custom skills via OneDrive (no-code, works today)**
+Option 1 — Custom skills via OneDrive (no-code, works today)
 
 This is the easiest way — no admin involvement, no app installs. Two methods that both work:
 
-**Method A — Ask Cowork to create it for you (fastest):**
+Method A — Ask Cowork to create it for you (fastest):
 
 Just tell Cowork in chat: *"Create a custom skill called [name] with these instructions: [your steps]"* — Cowork validates the skill, writes the SKILL.md file, and syncs it to your OneDrive automatically within ~35 seconds. Ready to use immediately.
 
-**Method B — Upload the file manually to OneDrive:**
+Method B — Upload the file manually to OneDrive:
 
 1. Open your **OneDrive** — go to `Documents → Cowork → Skills` (create these folders if they don't exist)
 2. Create a **subfolder** for your skill (e.g., `morning-briefing`)
@@ -524,11 +524,11 @@ Both methods produce the same result. Method A is great for quick personal skill
 
 You can create up to **50 custom skills** per user. Each file must be under 1 MB.
 
-**Option 2 — Via Copilot Studio (low-code, for admins)**
+Option 2 — Via Copilot Studio (low-code, for admins)
 
 If you're an IT admin or power user, [Copilot Studio](https://copilotstudio.microsoft.com) lets you build custom skills using Power Automate flows, API connectors, or AI-powered topics. Once published, they appear as callable actions inside Cowork.
 
-**Option 3 — Pro-code skills (for developers)**
+Option 3 — Pro-code skills (for developers)
 
 For full control, the [Microsoft 365 Agents SDK](https://github.com/microsoft/Agents) lets developers build skills in .NET, JavaScript, or Python. Register them in Copilot Studio and they become available inside Cowork — just like any built-in skill.
 
@@ -553,7 +553,7 @@ For full control, the [Microsoft 365 Agents SDK](https://github.com/microsoft/Ag
 
 Yes, you can get it now — but with a few caveats.
 
-Copilot Cowork is **generally available to Microsoft 365 Copilot customers worldwide** as of 16 June 2026 — you no longer need the Frontier early-access program to use it. Each user needs a Microsoft 365 Copilot licence, an admin turns Cowork on (it's off by default) and sets up usage-based billing, and then it's there.
+Copilot Cowork is generally available to Microsoft 365 Copilot customers worldwide as of 16 June 2026 — you no longer need the Frontier early-access program to use it. Each user needs a Microsoft 365 Copilot licence, an admin turns Cowork on (it's off by default) and sets up usage-based billing, and then it's there.
 
 ### Why Can't I See Cowork?
 
@@ -572,7 +572,7 @@ If you're an IT admin, here's how to turn it on:
 1. **Turn Cowork on:** Go to the [M365 Admin Center](https://admin.microsoft.com) → Copilot → enable Cowork (it's off by default) and choose who gets access — start with a pilot group
 2. **Set up usage-based billing:** In the Cost Management dashboard, enable billing (pay-as-you-go or prepaid), set spending limits, and add usage alerts before anyone starts running tasks
 3. **Check model availability:** Cowork runs on Anthropic models through Microsoft's multi-model system — if your tenant manages AI model providers, confirm Cowork's models are allowed
-4. **Cowork becomes available:** Licensed, enabled users open Cowork from **m365.cloud.microsoft** (or the Microsoft 365 Copilot app) — switching from Chat to Cowork — no separate deployment needed
+4. **Cowork becomes available:** Licensed, enabled users open Cowork from m365.cloud.microsoft (or the Microsoft 365 Copilot app) — switching from Chat to Cowork — no separate deployment needed
 5. **Communicate:** Let your users know it's available and what to expect
 
 > ⚠️ **Before you enable it broadly:** Review your [SharePoint permissions](https://learn.microsoft.com/en-us/sharepoint/modern-experience-sharing-permissions) and [information governance](https://learn.microsoft.com/en-us/purview/information-governance-solution). Cowork can access anything the user can access — so if your permissions are messy, Cowork will surface that mess. Start with a pilot group. *(For the full remediation playbook, see [SharePoint oversharing controls for Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/).)*
@@ -616,7 +616,7 @@ Anthropic (the company behind Claude) also launched their own "Cowork" product. 
 
 ### The Honest Take
 
-> 📊 **On cost:** In Microsoft's own June 2026 testing (125 runs across light, medium, and heavy prompts on Opus 4.8), Copilot Cowork came out **30–40% cheaper** than running Claude Cowork through its Microsoft 365 connector on the same model. Your mileage will vary with usage and configuration — but the cloud-runtime efficiency is a real cost lever. ([Microsoft's methodology](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/).)
+> 📊 **On cost:** In Microsoft's own June 2026 testing (125 runs across light, medium, and heavy prompts on Opus 4.8), Copilot Cowork came out 30–40% cheaper than running Claude Cowork through its Microsoft 365 connector on the same model. Your mileage will vary with usage and configuration — but the cloud-runtime efficiency is a real cost lever. ([Microsoft's methodology](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/).)
 
 **If your organisation is all-in on Microsoft 365** — Copilot Cowork is the clear choice. It understands your organisational context (who reports to whom, which projects are active, what meetings happened), operates within your compliance framework, and your IT team can govern it.
 
@@ -671,11 +671,11 @@ Regular Copilot is reactive — you ask, it answers, one app at a time. Cowork i
 
 ### When should I use Cowork instead of regular Copilot Chat?
 
-Quick rule: if you'll read the answer and move on, that's **Chat**. If you'd have to open three or four apps and spend half an hour stitching it together, that's **Cowork**. Chat is the assistant in the moment; Cowork is the colleague you hand a whole task to — it plans the steps, works across your apps for minutes or hours, and checks in before anything sensitive.
+Quick rule: if you'll read the answer and move on, that's Chat. If you'd have to open three or four apps and spend half an hour stitching it together, that's Cowork. Chat is the assistant in the moment; Cowork is the colleague you hand a whole task to — it plans the steps, works across your apps for minutes or hours, and checks in before anything sensitive.
 
 ### Does Cowork work on my phone?
 
-Yes. Cowork runs in the browser at **m365.cloud.microsoft**, in the Microsoft 365 Copilot desktop app (Windows and Mac), and in the Microsoft 365 Copilot mobile app on **iOS and Android**. Because it runs in the cloud, a task you kick off keeps going even after you close your laptop.
+Yes. Cowork runs in the browser at m365.cloud.microsoft, in the Microsoft 365 Copilot desktop app (Windows and Mac), and in the Microsoft 365 Copilot mobile app on **iOS and Android**. Because it runs in the cloud, a task you kick off keeps going even after you close your laptop.
 
 ### What is an agentic harness?
 
@@ -683,7 +683,7 @@ An agentic harness is the orchestration framework that makes Cowork possible. It
 
 ### How do I get Copilot Cowork?
 
-Cowork is generally available worldwide as of 16 June 2026. Each user needs a Microsoft 365 Copilot licence; an admin enables Cowork in the Microsoft 365 admin center (it's off by default), sets up usage-based billing, and confirms the tenant's model settings allow Cowork's models. Licensed, enabled users then open Cowork at **m365.cloud.microsoft** (or the Microsoft 365 Copilot app) by switching from Chat to Cowork.
+Cowork is generally available worldwide as of 16 June 2026. Each user needs a Microsoft 365 Copilot licence; an admin enables Cowork in the Microsoft 365 admin center (it's off by default), sets up usage-based billing, and confirms the tenant's model settings allow Cowork's models. Licensed, enabled users then open Cowork at m365.cloud.microsoft (or the Microsoft 365 Copilot app) by switching from Chat to Cowork.
 
 📖 [Copilot Cowork is now generally available](https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/)
 
@@ -701,7 +701,7 @@ Copilot Cowork runs in the cloud inside your M365 tenant with enterprise governa
 
 ### What AI model does Copilot Cowork use?
 
-Copilot Cowork uses Microsoft's multi-model approach. At general availability it runs on Anthropic **Opus 4.8** and **Sonnet 4.6**; in Frontier you can also pick **GPT 5.5**, and Microsoft's own fine-tuned **Cowork 1** model is coming soon. You choose per task with the model picker, and your admin controls which providers are enabled.
+Copilot Cowork uses Microsoft's multi-model approach. At general availability it runs on Anthropic Opus 4.8 and Sonnet 4.6; in Frontier you can also pick GPT 5.5, and Microsoft's own fine-tuned Cowork 1 model is coming soon. You choose per task with the model picker, and your admin controls which providers are enabled.
 
 <p><img src="/images/blog/cowork/model-picker.webp" alt="Cowork model picker dropdown menu showing five options — Auto (recommended), Claude Sonnet 4.6, Claude Opus 4.8, GPT 5.5, and Sonnet + Opus Advisor. The Auto option is selected and highlighted, showing the description 'Automatically chooses the best model for your task'." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -711,7 +711,7 @@ Yes. Cowork operates within your existing Microsoft 365 permissions. It can only
 
 ### Can I add extra capabilities to Cowork?
 
-Yes — through **Skills**. Cowork ships with **13 built-in skills**: Word, Excel, PowerPoint, PDF, Email, Scheduling, Calendar Management, Meetings, Daily Briefing, Enterprise Search, Communications, Deep Research, and Adaptive Cards. You can add custom skills by creating `SKILL.md` files in your OneDrive at `Documents/Cowork/Skills/` — no code or admin needed. For more advanced scenarios, you can also build skills in Copilot Studio (low-code) or using the [Microsoft 365 Agents SDK](https://github.com/microsoft/Agents) (pro-code).
+Yes — through Skills. Cowork ships with **13 built-in skills**: Word, Excel, PowerPoint, PDF, Email, Scheduling, Calendar Management, Meetings, Daily Briefing, Enterprise Search, Communications, Deep Research, and Adaptive Cards. You can add custom skills by creating `SKILL.md` files in your OneDrive at `Documents/Cowork/Skills/` — no code or admin needed. For more advanced scenarios, you can also build skills in Copilot Studio (low-code) or using the [Microsoft 365 Agents SDK](https://github.com/microsoft/Agents) (pro-code).
 
 ### Will Copilot Cowork replace my job?
 

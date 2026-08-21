@@ -48,7 +48,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** Facilitator's core features (notes, agenda, Q&A, recap) are **generally available**; task tracking and document drafting are in **public preview**. **Last verified: 23 June 2026.**
+🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** Facilitator's core features (notes, agenda, Q&A, recap) are **generally available**; task tracking and document drafting are in public preview. Last verified: 23 June 2026.
 
 </div>
 
@@ -63,10 +63,10 @@ founder_note: |
 ## TL;DR
 
 - **Facilitator** is a built-in agent that joins a **scheduled Teams meeting** as a *visible* teammate — its notes and answers are seen by everyone.
-- It does five things: **shared real-time notes**, **agenda + timer**, **in-meeting Q&A**, **task tracking** (preview), **document drafting** (preview), and a **recap** at the end.
+- It does five things: **shared real-time notes**, agenda + timer, in-meeting Q&A, task tracking (preview), document drafting (preview), and a recap at the end.
 - **Meetings only** — not 1:1 chats, group chats, channel meetings, "Meet now", or calls.
-- **On-switch:** a **Microsoft 365 Copilot** licence to prompt it (reading is free), plus **Loop experiences** turned on. Allowed by default; an organiser can toggle it per meeting.
-- **Notes** are saved as a **`.loop` file** in the OneDrive of whoever turned Facilitator on. **Nearly 40 languages**, one per meeting.
+- **On-switch:** a **Microsoft 365 Copilot** licence to prompt it (reading is free), plus Loop experiences turned on. Allowed by default; an organiser can toggle it per meeting.
+- **Notes** are saved as a **`.loop` file** in the OneDrive of whoever turned Facilitator on. Nearly 40 languages, one per meeting.
 - **Not in government clouds** (GCC, GCC High, DoD) yet.
 
 > 🧭 **Jump to:** [What it is](#what) · [Where it works](#where) · [Turn it on](#enable) · [The agenda & timer](#agenda) · [Ask it questions](#qa) · [Track tasks](#tasks) · [Draft a document](#draft) · [Teams Rooms](#rooms) · [The recap](#recap) · [Troubleshooting](#troubleshooting) · [Limits](#limits) · [Sources](#sources)
@@ -75,7 +75,7 @@ founder_note: |
 
 ## What Facilitator actually is {#what}
 
-Most AI in a meeting is *yours* — you ask Copilot something privately and only you see the answer. **Facilitator is the opposite: it belongs to the whole room.** Everyone sees what it's asked and what it replies, because its job isn't to assist one person — it's to run the meeting on behalf of all of you.
+Most AI in a meeting is *yours* — you ask Copilot something privately and only you see the answer. Facilitator is the opposite: it belongs to the whole room. Everyone sees what it's asked and what it replies, because its job isn't to assist one person — it's to run the meeting on behalf of all of you.
 
 That single design choice is what makes it useful. The notes are co-owned. The agenda is shared. When someone asks "what did we land on?", the answer lands in front of everyone, not in one private side-panel.
 
@@ -106,9 +106,9 @@ For an organiser, the steps are short:
 
 1. **Have a Microsoft 365 Copilot licence.** That's what lets you prompt Facilitator. (Unlicensed attendees can read its output but can't instruct it.)
 2. **Make sure Loop experiences are on.** Facilitator's notes are built on **Loop** (Microsoft's live-document feature), so the tenant needs Loop experiences in Teams switched on — an admin setting in the Teams admin center.
-3. **Allow it in the meeting.** When scheduling, under **Options → Copilot and other AI**, make sure Copilot/Facilitator is allowed. You can also flip it on or off **during** the meeting from **More actions → Turn on/off Facilitator** (organiser or presenter, desktop/web).
+3. **Allow it in the meeting.** When scheduling, under Options → Copilot and other AI, make sure Copilot/Facilitator is allowed. You can also flip it on or off **during** the meeting from More actions → Turn on/off Facilitator (organiser or presenter, desktop/web).
 
-On the admin side, Facilitator is **allowed by default**. Admins manage it in the **Teams admin center → Teams apps → Manage apps → search "Facilitator" → Allow/Block**, with app permission policies for finer control.
+On the admin side, Facilitator is **allowed by default**. Admins manage it in the Teams admin center → Teams apps → Manage apps → search "Facilitator" → Allow/Block, with app permission policies for finer control.
 
 > ✅ **Good default:** leave it allowed, make sure Loop is on, and let organisers decide per meeting. There's nothing to configure in the agent itself — Facilitator can't be customised, only allowed or blocked.
 
@@ -140,7 +140,7 @@ Because the answer appears in the shared chat, the whole meeting benefits from i
 
 ## Tracking tasks — into Planner {#tasks}
 
-This is one of the **public preview** features, and it's where Facilitator stops being just a note-taker. Tell it to create a task and it makes one **in Microsoft Planner**, ready to assign and date.
+This is one of the public preview features, and it's where Facilitator stops being just a note-taker. Tell it to create a task and it makes one **in Microsoft Planner**, ready to assign and date.
 
 <p><img src="/images/blog/microsoft-365-facilitator-agent/04-facilitator-tasks.webp" alt="The Teams meeting chat showing a recap-style list of next steps with citations, then a Facilitator message saying 'I've created a task in Planner. Would you like me to generate a draft?' with a Not started task card titled 'Create a strategy document' and an Assign to Facilitator button." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -205,8 +205,8 @@ A few honest edges to keep in mind:
 - **Meeting chat isn't its source.** You prompt Facilitator *in* the meeting chat, but per Microsoft's FAQ the chat messages themselves aren't used as grounding for its answers — it works from the meeting's notes and web content.
 - **It can't be customised.** Admins allow or block it; there's no tuning its behaviour.
 - **Encrypted / labelled meetings:** a meeting with a sensitivity label that encrypts content can stop Facilitator from reading the agenda.
-- **Notes storage:** a **`.loop`** file in a "Meetings" folder in the OneDrive of **whoever turned Facilitator on** (the initiator — who may be a presenter, not the organiser); sensitivity labels aren't inherited automatically (apply them by hand in OneDrive or Loop if you need them), and the notes aren't currently collected as cloud attachments in Purview eDiscovery.
-- **Languages:** **nearly 40**, but **one per meeting** — multilingual meetings only capture the selected language.
+- **Notes storage:** a **`.loop`** file in a "Meetings" folder in the OneDrive of whoever turned Facilitator on (the initiator — who may be a presenter, not the organiser); sensitivity labels aren't inherited automatically (apply them by hand in OneDrive or Loop if you need them), and the notes aren't currently collected as cloud attachments in Purview eDiscovery.
+- **Languages:** **nearly 40**, but one per meeting — multilingual meetings only capture the selected language.
 - **Government clouds:** not available in **GCC, GCC High or DoD** yet.
 
 ---

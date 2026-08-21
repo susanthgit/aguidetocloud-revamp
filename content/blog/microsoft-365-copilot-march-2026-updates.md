@@ -33,7 +33,7 @@ founder_note: |
   Until May 2026 I had a head start. My colleague [Shelly Blackley](https://www.linkedin.com/in/shelly-blackley-3636a57) quietly maintained the monthly "What's new in M365 Copilot" pack inside Microsoft, and her work was the foundation I built each recap on. May was her last month with us — from here I'm reading every Message Center post on my own. I'll miss her dearly and wish her every success in her next chapter outside Microsoft.
 ---
 
-March 2026 is a huge month for Microsoft 365 Copilot with **36 updates** — from **Edit with Copilot in Excel** for Copilot Chat users, to **meeting scheduling**, **PowerPoint editing**, **voice and memory improvements**, **new connectors**, and **admin controls**. Some features are available now, while others are still rolling out.
+March 2026 is a huge month for Microsoft 365 Copilot with **36 updates** — from Edit with Copilot in Excel for Copilot Chat users, to meeting scheduling, PowerPoint editing, voice and memory improvements, new connectors, and admin controls. Some features are available now, while others are still rolling out.
 
 📅 **2026 monthly recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · March (you are here) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · [May](/blog/microsoft-365-copilot-may-2026-updates/)
 
@@ -43,7 +43,7 @@ March 2026 is a huge month for Microsoft 365 Copilot with **36 updates** — fro
 
 If 36 changes feels like too much, these are the three I'd start with:
 
-1. **[Edit with Copilot (Agent Mode) in Excel](#1-edit-with-copilot-agent-mode-in-excel)** — extends one of the most practical Copilot experiences to **Chat users without a paid licence** AND to **desktop Excel on Windows and Mac** (not just web). Biggest reach unlock this month — and paid users get the bonus of choosing between OpenAI and Anthropic models.
+1. **[Edit with Copilot (Agent Mode) in Excel](#1-edit-with-copilot-agent-mode-in-excel)** — extends one of the most practical Copilot experiences to Chat users without a paid licence AND to desktop Excel on Windows and Mac (not just web). Biggest reach unlock this month — and paid users get the bonus of choosing between OpenAI and Anthropic models.
 2. **[Scheduling with Copilot](#4-scheduling-with-copilot)** — ask Copilot to find a time, book the room, draft the agenda, and send the invite, all from chat. Replaces a five-step admin chore with one request. Will save real time every day.
 3. **[Copilot Can Edit PowerPoint](#13-copilot-can-edit-powerpoint)** — natural-language editing of an *existing* deck, with brand-kit awareness. The conversational PowerPoint experience finally moves from "side panel suggestions" to "real editor that stays on-brand".
 
@@ -55,11 +55,11 @@ Five admin checks worth doing this month, in priority order:
 
 1. **Review whether your tenant allows the Anthropic model choice for eligible paid Copilot users.** Microsoft says model choice is available "where your organisation allows it" — so check your Microsoft 365 admin center Copilot settings for model-provider controls before you communicate availability to users. **Action:** Confirm the toggle/policy in your tenant, then update your Copilot training and FAQ to reflect what's actually available to your users.
 
-2. **Roll out Excel Copilot to Chat users (no licence needed).** This is the biggest no-cost-to-you adoption opportunity of the month — users without a paid licence can now use Excel Copilot on web, Windows, and Mac. **Action:** Make sure Copilot Chat is enabled tenant-wide, then announce the new capability to teams. No special admin work to enable.
+2. **Roll out Excel Copilot to Chat users (no licence needed).** This is the biggest no-cost-to-you adoption opportunity of the month — users without a paid licence can now use Excel Copilot on web, Windows, and Mac. Action: Make sure Copilot Chat is enabled tenant-wide, then announce the new capability to teams. No special admin work to enable.
 
 3. **Pilot Scheduling with Copilot with one team** before broad comms. Book one real team meeting via Copilot, including room and agenda, to validate it works for your tenant's rooms and resources.
 
-4. **Review watermark availability for AI-generated content** and decide whether to include it in your content-integrity guidance. Microsoft says this is controlled through the privacy dashboard. **Action:** Look at the watermark setting yourself, then decide what to recommend (or require) in your AI-content policy.
+4. **Review watermark availability for AI-generated content** and decide whether to include it in your content-integrity guidance. Microsoft says this is controlled through the privacy dashboard. Action: Look at the watermark setting yourself, then decide what to recommend (or require) in your AI-content policy.
 
 5. **Brief your comms / internal-comms team** about Audio Overview of Meetings (English only for now) and the AI Audio Briefing in Viva Connections. Both make work content consumable on the move — useful for organisations with field workforces or commute-heavy staff.
 
@@ -69,7 +69,7 @@ Five admin checks worth doing this month, in priority order:
 
 *For: All users*
 
-**Edit with Copilot** in Excel now reaches **Copilot Chat users without a paid licence**, and it also works in the **desktop app on Windows and Mac** — not just on the web. If you do have a paid licence, you can also choose between **OpenAI and Anthropic models** where your organisation allows it.
+**Edit with Copilot** in Excel now reaches Copilot Chat users without a paid licence, and it also works in the desktop app on Windows and Mac — not just on the web. If you do have a paid licence, you can also choose between **OpenAI and Anthropic models** where your organisation allows it.
 
 {{< margin >}}Biggest impact for unlicensed users this month — open it up to anyone with M365.{{< /margin >}}
 
@@ -79,7 +79,7 @@ Five admin checks worth doing this month, in priority order:
 
 <p><img src="/images/blog/copilot-march-2026/01-edit-with-copilot-excel-model-picker.webp" alt="Excel Copilot pane 'Edit with Copilot' with the new Model picker dropdown open showing three choices: Auto (selected, 'Automatically selects the model for you'), GPT-5.2 (OpenAI), and Claude Opus 4.5 (Anthropic) — the new model selector for licensed users" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Open a workbook in the **Excel desktop app** on Windows or Mac and look for **Edit with Copilot**.
+**How to find it:** Open a workbook in the **Excel desktop app** on Windows or Mac and look for Edit with Copilot.
 
 📖 [M365 Roadmap 542182](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=542182)
 
@@ -95,7 +95,7 @@ Copilot Chat now has an updated **Chats** experience in the left-hand menu, with
 
 <p><img src="/images/blog/copilot-march-2026/02-chat-history-update.webp" alt="M365 Copilot 'Chats' landing page with the updated search and filter UI — a 'Weather' search query filtering across past chats (weather queries, X-ray manual question, Project Falcon Summary) with a Filter button alongside" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Click **Chats** in the left-hand menu in Copilot Chat.
+**How to find it:** Click Chats in the left-hand menu in Copilot Chat.
 
 📖 [M365 Roadmap 543423](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=543423)
 
@@ -111,7 +111,7 @@ If your files are synced with OneDrive on Mac, you can now **right-click a file 
 
 <p><img src="/images/blog/copilot-march-2026/03-onedrive-macos-finder.webp" alt="macOS Finder window in a user's OneDrive folder with a right-click context menu open showing the new 'Ask Copilot' and 'Ask Microsoft 365 Copilot' entries among standard Finder actions" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** In **macOS Finder**, right-click a synced **OneDrive file** and look for the Copilot option in the context menu.
+**How to find it:** In **macOS Finder**, right-click a synced OneDrive file and look for the Copilot option in the context menu.
 
 📖 [M365 Roadmap 527839](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=527839)
 
@@ -127,7 +127,7 @@ You can now ask Copilot to **schedule meetings from chat**, including finding ti
 
 <p><img src="/images/blog/copilot-march-2026/04-scheduling-with-copilot.webp" alt="Copilot Chat scheduling response to 'Schedule a 1 hour meeting with Billie Vester' showing an Acme Account Review card with three available time slots (3/13 Friday 10:30-11:30 selected, 3/13 Friday 11:30-12:30, 3/14 Saturday 04:00-05:00) and a calendar strip" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** In Copilot Chat, ask Copilot to **schedule a meeting**, **find a time**, **book a room**, or **draft an agenda**.
+**How to find it:** In Copilot Chat, ask Copilot to **schedule a meeting**, find a time, book a room, or draft an agenda.
 
 📖 [M365 Roadmap 532735](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=532735)
 
@@ -135,7 +135,7 @@ You can now ask Copilot to **schedule meetings from chat**, including finding ti
 
 *For: All users*
 
-When you share a file, the **Copilot icon** in the share dialog can now send a summary along with it. This is available in **File Explorer** and **OneDrive Activity Center**.
+When you share a file, the **Copilot icon** in the share dialog can now send a summary along with it. This is available in File Explorer and OneDrive Activity Center.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Most people do not want just another file link — they want to know why the file matters. This adds the missing context automatically, so your recipient can understand the file before they even open it.</p>
@@ -143,7 +143,7 @@ When you share a file, the **Copilot icon** in the share dialog can now send a s
 
 <p><img src="/images/blog/copilot-march-2026/05-share-with-summary-onedrive.webp" alt="Windows File Explorer with 'Zava - FY Annual Report.pptx' selected and the Share dialog open, showing the new 'Insert file summary with Copilot' button above the recipient field" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Open the **share dialog** for a file in **File Explorer** or **OneDrive Activity Center**, then click the **Copilot icon**.
+**How to find it:** Open the **share dialog** for a file in File Explorer or OneDrive Activity Center, then click the Copilot icon.
 
 📖 [M365 Roadmap 527840](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=527840)
 
@@ -159,7 +159,7 @@ OneDrive now gets a **floating Copilot button** that gives you quick access to c
 
 <p><img src="/images/blog/copilot-march-2026/06-floating-copilot-onedrive.webp" alt="OneDrive web with the new prominent floating Copilot button visible in the bottom-right of an empty Documents view — a pink/purple gradient circle with the Copilot chat-bubble icon" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Open **OneDrive**, select a file, and look for the **floating Copilot button**.
+**How to find it:** Open **OneDrive**, select a file, and look for the floating Copilot button.
 
 📖 [M365 Roadmap 513421](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=513421)
 
@@ -167,7 +167,7 @@ OneDrive now gets a **floating Copilot button** that gives you quick access to c
 
 *For: All users*
 
-You can now scope prompts to **Loop Notebooks** from the **Files** tab in ContextIQ, making it easier to ground Copilot on the right notebook content.
+You can now scope prompts to **Loop Notebooks** from the Files tab in ContextIQ, making it easier to ground Copilot on the right notebook content.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Copilot works best when you point it at the right source. If your team captures planning, notes, and collaboration inside Loop, this update helps Copilot stay focused on that shared context instead of guessing.</p>
@@ -175,7 +175,7 @@ You can now scope prompts to **Loop Notebooks** from the **Files** tab in Contex
 
 <p><img src="/images/blog/copilot-march-2026/07-loop-notebooks-contextiq.webp" alt="Copilot composer with a 'Summarise progress on the Falcon Project using' prompt and the ContextIQ Files tab Type filter open, listing PowerPoint, Word, Excel, Loop, OneNote — Loop is the newly added scope" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** In Copilot Chat, open the **Files** tab in ContextIQ and select a **Loop Notebook** to ground your prompt.
+**How to find it:** In Copilot Chat, open the Files tab in ContextIQ and select a **Loop Notebook** to ground your prompt.
 
 📖 [M365 Roadmap 473447](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=473447)
 
@@ -183,7 +183,7 @@ You can now scope prompts to **Loop Notebooks** from the **Files** tab in Contex
 
 *For: All users*
 
-Copilot can now help you **review PDFs**, explain selected text in plain language, and let you **customise prompts** for the kind of answer you want.
+Copilot can now help you **review PDFs**, explain selected text in plain language, and let you customise prompts for the kind of answer you want.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> PDFs are where complexity goes to hide — contracts, reports, vendor documents, technical papers. This makes Copilot feel like a translator sitting beside you, turning dense language into something usable.</p>
@@ -191,7 +191,7 @@ Copilot can now help you **review PDFs**, explain selected text in plain languag
 
 <p><img src="/images/blog/copilot-march-2026/08-review-pdfs-explain-this.webp" alt="SharePoint PDF viewer for 'Zava Product Range Overview.pdf' with a selection highlighted and a floating dark 'Explain this' Copilot popup appearing — the new PDF context menu action" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Open a **PDF**, select the relevant content, and use Copilot to **review** or **explain** it.
+**How to find it:** Open a **PDF**, select the relevant content, and use Copilot to review or explain it.
 
 📖 [M365 Roadmap 536574](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=536574)
 
@@ -199,7 +199,7 @@ Copilot can now help you **review PDFs**, explain selected text in plain languag
 
 *For: Outlook users on Windows*
 
-Agents are no longer limited to New Outlook. You can now access them in **Classic Outlook** by typing `@` or selecting the **tools icon**.
+Agents are no longer limited to New Outlook. You can now access them in **Classic Outlook** by typing `@` or selecting the tools icon.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Many organisations still rely on Classic Outlook. Bringing agents there removes the awkward split where the newest AI experiences existed only in the newer client.</p>
@@ -207,7 +207,7 @@ Agents are no longer limited to New Outlook. You can now access them in **Classi
 
 <p><img src="/images/blog/copilot-march-2026/09-agents-classic-outlook.webp" alt="Outlook Copilot pane 'Try, write an email' with the agent picker showing Researcher highlighted ('With Researcher, now every employee has access to expertise...'), Analyst, and Policy Advisor — the agents experience now available in Classic Outlook for Windows" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** In **Classic Outlook**, open Copilot Chat and either type `@` or click the **tools icon**.
+**How to find it:** In Classic Outlook, open Copilot Chat and either type `@` or click the tools icon.
 
 📖 [M365 Roadmap 481559](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=481559)
 
@@ -215,7 +215,7 @@ Agents are no longer limited to New Outlook. You can now access them in **Classi
 
 *For: Teams users · English only*
 
-Copilot can now generate an **audio overview of a transcribed meeting** with one or two speakers, and you can adjust the tone and length. Microsoft says this is accessed through the **Meet app in Teams**.
+Copilot can now generate an audio overview of a transcribed meeting with one or two speakers, and you can adjust the tone and length. Microsoft says this is accessed through the **Meet app in Teams**.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Sometimes you do not need the full transcript or recording — you just need the short version while walking between meetings. Audio overviews turn meeting catch-up into something you can consume like a mini podcast.</p>
@@ -223,7 +223,7 @@ Copilot can now generate an **audio overview of a transcribed meeting** with one
 
 <p><img src="/images/blog/copilot-march-2026/10-audio-recaps-teams.webp" alt="Microsoft Teams Meet app on the new 'Audio recaps' tab with a 'Generate audio recap' card — 'Catch up on meetings from the last 30 days with an audio recap in executive style. Select up to 8 meetings.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Open the **Meet app in Teams** for a **transcribed meeting** and choose the **audio overview** option.
+**How to find it:** Open the Meet app in Teams for a **transcribed meeting** and choose the audio overview option.
 
 📖 [M365 Roadmap 490051](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=490051)
 
@@ -239,7 +239,7 @@ Microsoft Edge now lets you type a query in the **address bar** and send it dire
 
 <p><img src="/images/blog/copilot-march-2026/11-ask-copilot-edge-address-bar.webp" alt="Edge address bar with a 'What is Microsoft Agent 365?' query and the suggestion dropdown showing the new 'Ask Copilot' option at the bottom of the suggestion list alongside standard web suggestions and a 'Search Contoso for...' work-content option" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Type a query into the **Edge address bar** and send it to **Copilot**.
+**How to find it:** Type a query into the **Edge address bar** and send it to Copilot.
 
 📖 [M365 Roadmap 493287](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=493287)
 
@@ -247,7 +247,7 @@ Microsoft Edge now lets you type a query in the **address bar** and send it dire
 
 *For: Edge users*
 
-Microsoft Edge PDF Reader now adds two built-in actions: **Summarise** and **Explain**. Instead of writing your own prompt, you get one-click actions for overviews and plain-language clarification.
+Microsoft Edge PDF Reader now adds two built-in actions: **Summarise** and Explain. Instead of writing your own prompt, you get one-click actions for overviews and plain-language clarification.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> This is the fast lane for PDF comprehension. When Microsoft gives you dedicated actions inside the reader, it lowers the effort so much that people are far more likely to use Copilot in the moment.</p>
@@ -255,7 +255,7 @@ Microsoft Edge PDF Reader now adds two built-in actions: **Summarise** and **Exp
 
 <p><img src="/images/blog/copilot-march-2026/12-summarise-explain-pdf.webp" alt="Edge browser PDF reader on a Microsoft Frontier guide with the 'Ask Copilot' dropdown open showing the two new actions Summarise and Explain alongside 'Ask anything in chat'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Open a **PDF in Microsoft Edge** and use the **Summarise** or **Explain** actions in PDF Reader.
+**How to find it:** Open a **PDF in Microsoft Edge** and use the Summarise or Explain actions in PDF Reader.
 
 📖 [M365 Roadmap 498641](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=498641)
 
@@ -263,7 +263,7 @@ Microsoft Edge PDF Reader now adds two built-in actions: **Summarise** and **Exp
 
 *For: Users with a Copilot licence · Currently rolling out*
 
-Copilot can now **edit PowerPoint presentations through natural conversation** and work with your **brand kit**. This is about refining an existing presentation inside PowerPoint rather than just generating content from the side.
+Copilot can now edit PowerPoint presentations through natural conversation and work with your **brand kit**. This is about refining an existing presentation inside PowerPoint rather than just generating content from the side.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> This is where Copilot starts saving the painful middle part of presentation work — rewriting slides, tightening wording, making content fit the deck, and keeping it on-brand without endless manual polishing.</p>
@@ -271,7 +271,7 @@ Copilot can now **edit PowerPoint presentations through natural conversation** a
 
 <p><img src="/images/blog/copilot-march-2026/13-edit-with-copilot-powerpoint.webp" alt="PowerPoint Online with the 'Edit with Copilot' pane open: 'Make edits with Copilot — Copilot can edit your presentation' composer plus suggestion cards (Create a presentation about, Add a slide about, Create a branded presentation)" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Open a presentation in **PowerPoint** and ask **Copilot** to edit the deck using natural language.
+**How to find it:** Open a presentation in **PowerPoint** and ask Copilot to edit the deck using natural language.
 
 📖 [M365 Roadmap 548520](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=548520)
 
@@ -279,7 +279,7 @@ Copilot can now **edit PowerPoint presentations through natural conversation** a
 
 *For: All users*
 
-Microsoft is adding **watermarks for AI-generated video, audio, and image content**, controlled through the **privacy dashboard**.
+Microsoft is adding watermarks for AI-generated video, audio, and image content, controlled through the **privacy dashboard**.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> As AI-created media becomes more common, provenance matters more. Watermarks help organisations signal what was AI-generated, which supports trust, transparency, and safer sharing.</p>
@@ -295,7 +295,7 @@ Microsoft is adding **watermarks for AI-generated video, audio, and image conten
 
 *For: All users · Currently rolling out*
 
-Copilot Memory is being enhanced with **work data**, helping responses become more relevant and contextual over time. You manage this in **Settings > Personalisation**.
+Copilot Memory is being enhanced with **work data**, helping responses become more relevant and contextual over time. You manage this in Settings > Personalisation.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> A useful assistant should remember what matters to you at work. This update pushes Copilot closer to that ideal by making memory more grounded in your real working context instead of isolated chat history.</p>
@@ -303,7 +303,7 @@ Copilot Memory is being enhanced with **work data**, helping responses become mo
 
 <p><img src="/images/blog/copilot-march-2026/15-personalisation-chat-history-frontier.webp" alt="M365 Copilot Personalisation settings page showing four toggles: Custom instructions, Work profile, Saved memories, and the new 'Chat history (Frontier)' — 'Let Copilot use your past chats to personalise responses'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Open Copilot **Settings > Personalisation**.
+**How to find it:** Open Copilot Settings > Personalisation.
 
 📖 [M365 Roadmap 551195](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=551195)
 
@@ -311,7 +311,7 @@ Copilot Memory is being enhanced with **work data**, helping responses become mo
 
 *For: All users · Currently rolling out*
 
-The new **Word Agent** appears in the **All agents** menu and helps with **research, structure, and formatting**. Microsoft says it is available **with or without a paid licence**.
+The new **Word Agent** appears in the All agents menu and helps with research, structure, and formatting. Microsoft says it is available with or without a paid licence.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Writing a good document is usually not blocked by typing speed — it is blocked by messy thinking. A Word-focused agent helps you get from rough idea to structured draft much faster.</p>
@@ -319,7 +319,7 @@ The new **Word Agent** appears in the **All agents** menu and helps with **resea
 
 <p><img src="/images/blog/copilot-march-2026/16-word-agent-landing.webp" alt="M365 Copilot left nav with the new Word agent selected, showing the Word agent landing page with a 'Describe the document you want to create' composer and starter prompts for project status update, strategic planning document, and technical documentation" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Open Copilot Chat and look for **Word Agent** under **All agents**.
+**How to find it:** Open Copilot Chat and look for Word Agent under All agents.
 
 📖 [M365 Roadmap 543420](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=543420)
 
@@ -327,7 +327,7 @@ The new **Word Agent** appears in the **All agents** menu and helps with **resea
 
 *For: All users · Currently rolling out*
 
-The **SharePoint List Agent** helps you build lists from prompts and can generate the schema for you. Microsoft places it in the **All agents** area.
+The **SharePoint List Agent** helps you build lists from prompts and can generate the schema for you. Microsoft places it in the All agents area.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Building a useful list sounds easy until you start deciding columns, formats, and structure. This agent helps you skip the blank-canvas problem and get to a usable list much faster.</p>
@@ -335,7 +335,7 @@ The **SharePoint List Agent** helps you build lists from prompts and can generat
 
 <p><img src="/images/blog/copilot-march-2026/17-sharepoint-list-agent.webp" alt="SharePoint list agent detail page in the agent gallery: 'Transform Microsoft 365 Copilot chat context into SharePoint lists' with feature bullets (Effortless Creation, Flexible Storage Location, Seamless Integration) and an Add button" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Open Copilot Chat and go to **All agents** to find the **SharePoint List Agent**.
+**How to find it:** Open Copilot Chat and go to All agents to find the SharePoint List Agent.
 
 📖 [M365 Roadmap 534606](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=534606)
 
@@ -343,13 +343,13 @@ The **SharePoint List Agent** helps you build lists from prompts and can generat
 
 *For: All users · Currently rolling out*
 
-Voice chats can now reference your stored **Memory** so Copilot sounds more consistent and personal across interactions. Microsoft notes that you still **cannot modify Memory by voice** yet.
+Voice chats can now reference your stored **Memory** so Copilot sounds more consistent and personal across interactions. Microsoft notes that you still cannot modify Memory by voice yet.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Voice becomes much more useful when Copilot remembers context rather than treating every conversation like the first one. This makes spoken interactions feel less shallow and more genuinely assistant-like.</p>
 </blockquote>
 
-**How to find it:** Use **voice chat** after enabling and managing **Memory** in **Settings > Personalisation**.
+**How to find it:** Use **voice chat** after enabling and managing Memory in Settings > Personalisation.
 
 📖 [M365 Roadmap 523204](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=523204)
 
@@ -363,7 +363,7 @@ Copilot voice support is coming to **Word and PowerPoint**, so you can talk to C
 <p>💡 <strong>Why it matters:</strong> Many people think faster than they type, especially when shaping ideas. Bringing voice into Word and PowerPoint makes Copilot feel more like a live thinking partner during document and deck creation.</p>
 </blockquote>
 
-**How to find it:** In **Word** or **PowerPoint**, start a **voice interaction with Copilot**.
+**How to find it:** In **Word** or PowerPoint, start a voice interaction with Copilot.
 
 📖 [M365 Roadmap 516569](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516569)
 
@@ -377,7 +377,7 @@ Copilot can now use **column metadata** when querying SharePoint libraries and f
 <p>💡 <strong>Why it matters:</strong> Good metadata has always been valuable, but users often never felt the payoff. This update makes those columns finally work harder for you by improving how Copilot understands and narrows results.</p>
 </blockquote>
 
-**How to find it:** Ask Copilot about files in a **SharePoint library or folder** that uses **metadata columns**.
+**How to find it:** Ask Copilot about files in a **SharePoint library or folder** that uses metadata columns.
 
 📖 [M365 Roadmap 516044](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516044)
 
@@ -393,7 +393,7 @@ Copilot Notebooks now get an **Overview Page** that surfaces summaries and insig
 
 <p><img src="/images/blog/copilot-march-2026/21-notebooks-overview-frontier.webp" alt="Copilot Notebooks 'Zava Annual Rep...' notebook with the new Overview Frontier landing page showing Copilot-generated Summary and Key Insights across five references (Zava Product Range Overview, Briefing Document, Employee Sentiment Analysis, ZavaCore Announcement, FY Annual Report) plus an 'Ask about your content' chat pane" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Open a **Copilot Notebook** and look for the new **Overview Page** landing experience.
+**How to find it:** Open a **Copilot Notebook** and look for the new Overview Page landing experience.
 
 📖 [M365 Roadmap 512430](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=512430)
 
@@ -404,10 +404,10 @@ Copilot Notebooks now get an **Overview Page** that surfaces summaries and insig
 Outlook mobile now gives you a **single-tap** way to prepare for meetings with Copilot.
 
 <blockquote class="callout callout-tip">
-<p>💡 <strong>Why it matters:</strong> Mobile meeting prep is where Copilot can be genuinely practical. When you are walking into a meeting, you do not want ten clicks — you want one tap and a quick briefing.</p>
+<p>💡 <strong>Why it matters:</strong> Mobile meeting prep is where Copilot can be practical. When you are walking into a meeting, you do not want ten clicks — you want one tap and a quick briefing.</p>
 </blockquote>
 
-**How to find it:** In **Outlook mobile**, open an upcoming meeting and tap the **Copilot meeting prep** option.
+**How to find it:** In **Outlook mobile**, open an upcoming meeting and tap the Copilot meeting prep option.
 
 📖 [M365 Roadmap 516568](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516568)
 
@@ -415,7 +415,7 @@ Outlook mobile now gives you a **single-tap** way to prepare for meetings with C
 
 *For: All users · Currently rolling out*
 
-Copilot Chat is expanding into **Teams chats, channels, calling, and meetings**, with access to both **Microsoft 365 data and web data** even while you are in the meeting flow.
+Copilot Chat is expanding into Teams chats, channels, calling, and meetings, with access to both Microsoft 365 data and web data even while you are in the meeting flow.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> This is one of the biggest usability wins in the list. Copilot becomes more helpful when it shows up inside the work you are already doing instead of making you leave Teams and start over somewhere else.</p>
@@ -437,7 +437,7 @@ Copilot in Edge can now reference **all open tabs**, not just the active tab.
 <p>💡 <strong>Why it matters:</strong> This is brilliant for comparison work. If you are researching vendors, reading multiple articles, or jumping between source pages, Copilot can now reason across the whole set instead of the single tab in front of you.</p>
 </blockquote>
 
-**How to find it:** Open multiple tabs in **Microsoft Edge** and ask **Copilot** a question about what is open.
+**How to find it:** Open multiple tabs in **Microsoft Edge** and ask Copilot a question about what is open.
 
 📖 [M365 Roadmap 496364](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=496364)
 
@@ -453,7 +453,7 @@ Copilot in Edge can now ground responses in **open YouTube videos**, helping you
 
 <p><img src="/images/blog/copilot-march-2026/25-youtube-grounding-edge.webp" alt="Edge browser on a YouTube video ('Copilot in Teams: From Discussion to Decision Table') with the Copilot pane on the right showing a 'Short summary' of the video plus a 'What the video is demonstrating' breakdown — Copilot grounded in the open YouTube tab" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** Open a **YouTube video in Microsoft Edge** and ask **Copilot** about it.
+**How to find it:** Open a **YouTube video in Microsoft Edge** and ask Copilot about it.
 
 📖 [M365 Roadmap 499424](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=499424)
 
@@ -461,7 +461,7 @@ Copilot in Edge can now ground responses in **open YouTube videos**, helping you
 
 *For: Viva Connections users · Currently rolling out*
 
-The **Viva Connections AI audio overview** is expanding with **additional languages** and support for **site pages**, not just the original content types.
+The **Viva Connections AI audio overview** is expanding with additional languages and support for site pages, not just the original content types.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Intranet content often gets ignored because people do not have time to read it. Audio overviews make internal updates easier to consume, and broader language support means more organisations can actually use the feature at scale.</p>
@@ -469,7 +469,7 @@ The **Viva Connections AI audio overview** is expanding with **additional langua
 
 <p><img src="/images/blog/copilot-march-2026/26-sharepoint-audio-overview.webp" alt="SharePoint News landing page with the new 'Play audio overview of recent news' button and dropdown open, showing 'Play audio overview of recent news' and 'Summarize recent news' options — the Viva Connections audio overview entry point" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**How to find it:** In **Viva Connections**, look for the **AI audio overview** experience on supported content such as **site pages**.
+**How to find it:** In **Viva Connections**, look for the AI audio overview experience on supported content such as site pages.
 
 📖 [M365 Roadmap 535423](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=535423)
 
@@ -477,13 +477,13 @@ The **Viva Connections AI audio overview** is expanding with **additional langua
 
 *For: IT admins · Available now*
 
-Microsoft has introduced a new **Copilot Search Admin Experience** in the **admin center**, giving admins a central place to manage **connectors, bookmarks, and acronyms**.
+Microsoft has introduced a new **Copilot Search Admin Experience** in the admin center, giving admins a central place to manage connectors, bookmarks, and acronyms.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Search quality does not improve by accident. Giving admins a clearer control surface for Copilot search means they can shape the experience users actually get instead of hoping the defaults are good enough.</p>
 </blockquote>
 
-**How to find it:** Open the **Microsoft 365 admin center** and look for the **Copilot Search** admin experience.
+**How to find it:** Open the **Microsoft 365 admin center** and look for the Copilot Search admin experience.
 
 📖 No public M365 Roadmap ID listed for this feature.
 
@@ -503,13 +503,13 @@ Microsoft has introduced a new **Copilot Search Admin Experience** in the **admi
 
 *For: IT admins · Available now*
 
-Admins can now edit existing **ServiceNow connections** to change how **permissions** are handled, instead of rebuilding the setup from scratch.
+Admins can now edit existing **ServiceNow connections** to change how permissions are handled, instead of rebuilding the setup from scratch.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> Permission models nearly always need tuning after real-world rollout. Being able to adjust them on an existing connection saves time, reduces disruption, and makes connector governance much more practical.</p>
 </blockquote>
 
-**How to find it:** Open your existing **ServiceNow connector connection** and edit the **permissions** settings.
+**How to find it:** Open your existing **ServiceNow connector connection** and edit the permissions settings.
 
 📖 [M365 Roadmap 505438](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=505438)
 
@@ -531,19 +531,19 @@ This month brings **five new Copilot Connectors**, making Copilot more useful fo
 <p>💡 <strong>Why it matters:</strong> Every connector removes one more reason to leave Copilot. If your teams live in product tools, code review tools, or digital whiteboards, these integrations help Copilot answer questions using the systems your organisation already depends on.</p>
 </blockquote>
 
-**How to find it:** Your admin deploys connectors from the **Microsoft 365 admin center → Settings → Copilot → Connectors**. Once deployed, users can simply ask Copilot questions against the connected systems.
+**How to find it:** Your admin deploys connectors from the Microsoft 365 admin center → Settings → Copilot → Connectors. Once deployed, users can simply ask Copilot questions against the connected systems.
 
 ## 35. ServiceNow Connector Edit User Mappings & Query Filters
 
 *For: IT admins · Currently rolling out*
 
-Microsoft is also rolling out more advanced editing for the **ServiceNow connector**, including **user mappings** and **query filters**.
+Microsoft is also rolling out more advanced editing for the **ServiceNow connector**, including user mappings and query filters.
 
 <blockquote class="callout callout-tip">
 <p>💡 <strong>Why it matters:</strong> This is the tuning layer. Once a connector is live, admins need ways to improve relevance, align identities properly, and tighten the scope of what gets surfaced. That is exactly what this update enables.</p>
 </blockquote>
 
-**How to find it:** Open the **ServiceNow connector configuration** and edit the **user mappings** and **query filters**.
+**How to find it:** Open the **ServiceNow connector configuration** and edit the user mappings and query filters.
 
 📖 [M365 Roadmap 503590](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=503590)
 

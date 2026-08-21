@@ -57,7 +57,7 @@ Microsoft gives you four controls in SharePoint to handle this — an engine tha
 
 {{< margin >}}I'm a Copilot Solution Engineer at Microsoft NZ. The "wrong people now knew about a redundancy plan" story is anonymised but very real — and it's the most common Copilot rollout pause-and-restart pattern I see.{{< /margin >}}
 
-**Three patterns I keep seeing in real rollouts:**
+Three patterns I keep seeing in real rollouts:
 
 1. **The Legal Green Light.** Legal initially blocks Copilot entirely citing discovery risk. After seeing the controls in this post — particularly RCD on legal sites and audit trails for Copilot interactions — they approve a controlled pilot.
 2. **The False Sense of Safety.** *"We've had M365 for years, we're fine."* The first SAM scan shows the average employee has technical access to millions of files. Copilot becomes the trigger for the long-overdue data cleanup.
@@ -193,7 +193,7 @@ Microsoft's own documentation calls RSS a *short-term* control. It's the rope yo
 
 ### The 100-site cap
 
-There's a hard ceiling of 100 sites on the allow-list. **Hub sites count as one entry**, and their associated child sites inherit RSS without consuming additional slots — so if your information architecture is hub-aligned, 100 hub entries can cover thousands of child sites.
+There's a hard ceiling of 100 sites on the allow-list. Hub sites count as one entry, and their associated child sites inherit RSS without consuming additional slots — so if your information architecture is hub-aligned, 100 hub entries can cover thousands of child sites.
 
 If you can't fit your business in 100 hub entries, RSS isn't the right tool. Skip to RCD or RAC.
 
@@ -254,7 +254,7 @@ It's the surgical opposite of RSS. RSS is an allow-list applied to the whole ten
 - Affect users who walk into the site directly — they still see everything they always saw
 - Affect site-scoped search (searching inside the site itself still works)
 - Affect Copilot "data-in-use" scenarios — if a user opens a Word file from an RCD site, *"Summarise this document"* still works inside Word
-- Hide content from users who **own** files in the site or have **recently interacted** with them — content owners and recent visitors still see references in Copilot
+- Hide content from users who **own** files in the site or have recently interacted with them — content owners and recent visitors still see references in Copilot
 - Affect Purview features (eDiscovery, auto-labelling, retention) — content stays in the index
 - Apply to OneDrive (RCD is SharePoint sites only)
 
@@ -470,7 +470,7 @@ Goal: switch off the temporary safety net. RSS goes off once permissions are cle
 
 ## Microsoft's Official Blueprint {#blueprint}
 
-Microsoft publishes **Secure and govern Microsoft 365 Copilot: Foundational deployment guidance** — a three-pillar framework that wraps everything in this post inside a broader governance model.
+Microsoft publishes Secure and govern Microsoft 365 Copilot: Foundational deployment guidance — a three-pillar framework that wraps everything in this post inside a broader governance model.
 
 | Pillar | Activities | Where this post fits |
 |---|---|---|

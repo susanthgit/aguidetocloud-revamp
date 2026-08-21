@@ -29,7 +29,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the automations + memory + personality spoke. Scout's engine settings can change between releases. **Last verified: 12 June 2026 · Scout version 0.23.0.20260608.1.**
+🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the automations + memory + personality spoke. Scout's engine settings can change between releases. Last verified: 12 June 2026 · Scout version 0.23.0.20260608.1.
 
 </div>
 
@@ -57,7 +57,7 @@ Heartbeats can be turned off entirely via the `DisableHeartbeat` ADMX policy if 
 
 <p><img src="/images/blog/scout-complete-guide/60-scout-heartbeat-config.png" alt="Microsoft Scout's Heartbeat configuration panel. At the top a status row reads 'Inactive' with a green 'Enable' button on the right. A note below explains 'Sleep prevention settings are in Settings → Power Management.' Three configuration rows follow: 'Frequency' set to 'Every 30 min', 'Schedule' set to 'Work hours' with a sub-card showing all seven days highlighted (Sun, Mon, Tue, Wed, Thu, Fri, Sat) and the hours field 8am to 6pm. A multi-line 'What to check' text field contains the prompt 'check all my standups'. A 'Run now' button sits on the right. Below that a 'PERMISSIONS — CUSTOM' section shows '4/4 servers enabled · 52 tool rules · 1 shell pattern' with the line 'Read-only operations auto-approved' and two buttons 'Manage Permissions' and 'Reset to defaults'. At the bottom a 'Recent Activity' section reads 'No activity yet'." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The Heartbeat configuration panel in my own install. **Frequency** (here every 30 min) is the cadence dial. **Schedule** picks the time window — "Work hours" preset opens a sub-card where you mark your weekdays and the start/end hours. **What to check** is the prompt Scout runs every time the heartbeat fires (mine: "check all my standups" — pulls overnight activity across my Teams stand-up channels and surfaces anything I need to action). Notice the inline **PERMISSIONS** counter at the bottom — `52 tool rules` here, but `51` in the earlier secure-config screenshot taken a few hours before this one. That single delta is exactly the audit-drift signal the [secure-config Permissions metric callout](/blog/microsoft-scout-secure-configuration-25-settings/#reading-the-live-permissions-metric) is built around: numbers move, dig in.*
+*The Heartbeat configuration panel in my own install. **Frequency** (here every 30 min) is the cadence dial. Schedule picks the time window — "Work hours" preset opens a sub-card where you mark your weekdays and the start/end hours. What to check is the prompt Scout runs every time the heartbeat fires (mine: "check all my standups" — pulls overnight activity across my Teams stand-up channels and surfaces anything I need to action). Notice the inline PERMISSIONS counter at the bottom — `52 tool rules` here, but `51` in the earlier secure-config screenshot taken a few hours before this one. That single delta is exactly the audit-drift signal the [secure-config Permissions metric callout](/blog/microsoft-scout-secure-configuration-25-settings/#reading-the-live-permissions-metric) is built around: numbers move, dig in.*
 
 > **Sidebar — the panel also surfaces "Sleep prevention".** Heartbeats only fire while your device is awake. Scout flags this directly: if you want heartbeats to run while you're away from the keyboard, you need to disable sleep at the OS level (the link in the panel jumps to Settings → Power Management). Worth confirming for any "always-on" use case.
 
@@ -78,7 +78,7 @@ The Activity surface (ellipsis menu → Activity) is where you see what's coming
 
 <p><img src="/images/blog/scout-complete-guide/61-scout-activity-upcoming-automations.png" alt="Microsoft Scout's Activity page in dark mode. Three tabs at the top: Upcoming (selected), History, Teams bot. Four named upcoming automations are listed as rows with a refresh-style icon on the left: 'Customer Inbox Action Hub' every day at 8am, 10am, 12pm, 2pm, and 4pm — next Jun 13 08:00 AM, in 14h. 'Atlas-GW Alerts Pulse' every day at 10am — next Jun 13 10:00 AM, in 16h. 'Cosmos Standup' every weekday at 8am — next Jun 15 08:00 AM, in 3d. 'Repo Scan Standup — Mondays 9am NZT' every Monday at 9am — next Jun 15 09:00 AM, in 3d. Below those a fifth row 'Heartbeat' is shown as Disabled with 'off' on the right." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The Activity → Upcoming view in my install. Four named automations on different cadences (one every 2 hours during business hours, two daily, one weekly), plus the Heartbeat row at the bottom showing it's currently Disabled (matches the Inactive state in the [Heartbeat panel screenshot above](#heartbeats--scouts-pulse)). The countdown labels — "in 14h", "in 16h", "in 3d" — make it obvious at a glance what's next on Scout's plate. The **History** tab shows the rolling log of past runs (outcomes + what was surfaced). The **Teams bot** tab is where you'd configure how Scout surfaces in Teams — confirming the official Microsoft 365 Blog claim that "you interact with it in Teams."*
+*The Activity → Upcoming view in my install. Four named automations on different cadences (one every 2 hours during business hours, two daily, one weekly), plus the Heartbeat row at the bottom showing it's currently Disabled (matches the Inactive state in the [Heartbeat panel screenshot above](#heartbeats--scouts-pulse)). The countdown labels — "in 14h", "in 16h", "in 3d" — make it obvious at a glance what's next on Scout's plate. The **History** tab shows the rolling log of past runs (outcomes + what was surfaced). The Teams bot tab is where you'd configure how Scout surfaces in Teams — confirming the official Microsoft 365 Blog claim that "you interact with it in Teams."*
 
 I see most users land on one or two automations and grow from there. The four in my Activity panel above are:
 
@@ -87,7 +87,7 @@ I see most users land on one or two automations and grow from there. The four in
 - **Cosmos Standup** — every weekday at 8am, scans recent activity across my cosmos-atlas project and prepares the morning briefing
 - **Repo Scan Standup** — Monday 9am, a slower-cadence weekly look across all my repos for anything that drifted over the weekend
 
-The shape that's emerged: **a fast-cadence inbox watcher, a daily ops pulse, a daily project briefing, and a weekly cross-cutting scan.** Most enterprise users I've talked to settle into something similar — one urgent watcher, a few daily helpers, one weekly summariser.
+The shape that's emerged: a fast-cadence inbox watcher, a daily ops pulse, a daily project briefing, and a weekly cross-cutting scan. Most enterprise users I've talked to settle into something similar — one urgent watcher, a few daily helpers, one weekly summariser.
 
 Like heartbeats, automations can be globally disabled via the `DisableWorkflows` ADMX policy in tenants where every background action needs pre-authorisation. The trade-off is the obvious one — disable automations and you've turned Scout from an Autopilot back into a desktop assistant.
 
@@ -141,7 +141,7 @@ The categorisation is useful both for your own scanning and for Scout's own retr
 
 Scout has a built-in **persona picker** — a curated list of preset personalities that change how Scout writes to you. This is one of Scout's more distinctive touches: most enterprise AI products give you a "tone" slider or expect you to write a system prompt; Scout gives you a *list of characters*.
 
-**Where to find it:** the persona picker is NOT in Settings (I looked there first too). It lives behind the **Scout icon in the chat input area** — the little face/avatar to the left of the send arrow. Click it and the persona menu pops up:
+**Where to find it:** the persona picker is NOT in Settings (I looked there first too). It lives behind the Scout icon in the chat input area — the little face/avatar to the left of the send arrow. Click it and the persona menu pops up:
 
 ![Scout persona picker — 7 personalities visible: Default, TARS, Sarcastic Teenager, Enthusiastic Intern, David Attenborough, JARVIS, Marvin — each with a one-line tone description](/images/blog/scout-complete-guide/70-scout-personality-picker.png "Scout persona picker · click the Scout icon next to the send arrow · 7 curated personalities · Default is 'Helpful and professional' · selection persists across new chats until you change it")
 
@@ -172,7 +172,7 @@ For what it's worth, here's the rough shape of my own Scout setup after months o
 - **Heartbeat:** configured at 30 minutes within a Work-hours window (8am-6pm Sun-Sat), currently Inactive — I toggle it on when I'm in an active sprint and want Scout watching the stand-up channels for me, off otherwise. The "check all my standups" prompt is the one captured in the panel screenshot above.
 - **Automations:** four daily/weekly automations visible in the Activity panel above — a fast-cadence inbox watcher (Customer Inbox Action Hub, 5x daily), a daily ops pulse (Atlas-GW Alerts), a daily project briefing (Cosmos Standup), and a weekly repo cross-check (Repo Scan Standup, Mondays 9am NZT)
 - **Memory:** cloud sync on, full retention; semantic retrieval is the feature I use most often (typically *"what did I tell Scout about X last week?"*)
-- **Personality:** **Default** persona — the "Helpful and professional" baseline. Tried TARS for a session out of curiosity; switched back the same day because what I want from a daily tool is the polished baseline, not character — see the persona-picker screenshot above for the full cast
+- **Personality:** Default persona — the "Helpful and professional" baseline. Tried TARS for a session out of curiosity; switched back the same day because what I want from a daily tool is the polished baseline, not character — see the persona-picker screenshot above for the full cast
 
 Not prescriptive — your usage will diverge as you settle in. Most people end up with more automations than they expected and longer heartbeat intervals than they started with.
 

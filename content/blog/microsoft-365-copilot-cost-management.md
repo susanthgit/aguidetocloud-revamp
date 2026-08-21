@@ -55,7 +55,7 @@ founder_note: |
 
 </div>
 
-**The short version:** Microsoft 365 Copilot now has *two* kinds of cost — the **per-user seat** you already know, and **usage-based Copilot Credits** for the agent work it runs — today Copilot Cowork and the Work IQ API, with more services to come. This page is the admin's guide to the second one: how you're billed, how you choose a billing model, where you control it, and how to roll it out without a surprise invoice.
+**The short version:** Microsoft 365 Copilot now has *two* kinds of cost — the **per-user seat** you already know, and usage-based Copilot Credits for the agent work it runs — today Copilot Cowork and the Work IQ API, with more services to come. This page is the admin's guide to the second one: how you're billed, how you choose a billing model, where you control it, and how to roll it out without a surprise invoice.
 
 > 🧭 **Jump to:** [Setup by scenario](#setup) · [Billing models](#billing-models) · [The P1/P2/P3 myth](#p1-p2-p3) · [P3 &amp; CCCUs](#p3-cccu) · [Dashboard walkthrough](#walkthrough) · [Common mistakes](#mistakes) · [Hitting a limit](#limits) · [Where charges land](#charges) · [Admin roles](#roles) · [Procurement](#procurement) · [Rollout](#rollout) · [Sources](#sources)
 
@@ -63,11 +63,11 @@ founder_note: |
 
 ## TL;DR
 
-- Microsoft 365 Copilot has **two cost layers**: the **per-user seat** (fixed) and **Copilot Credits** for usage-based agent work (metered).
-- Credits are managed in **two admin surfaces**: the **Microsoft 365 admin center → Cost Management** (for Cowork, Work IQ API) and the **Power Platform admin center** (for Copilot Studio agents). They coexist without double-charging.
-- **Three ways to pay:** pay-as-you-go ($0.01/credit), prepaid **capacity packs** ($200 / 25,000 credits a month, no rollover), or the annual **P3 Pre-Purchase Plan** (discounted by volume).
+- Microsoft 365 Copilot has **two cost layers**: the per-user seat (fixed) and Copilot Credits for usage-based agent work (metered).
+- Credits are managed in **two admin surfaces**: the Microsoft 365 admin center → Cost Management (for Cowork, Work IQ API) and the Power Platform admin center (for Copilot Studio agents). They coexist without double-charging.
+- **Three ways to pay:** pay-as-you-go ($0.01/credit), prepaid **capacity packs** ($200 / 25,000 credits a month, no rollover), or the annual P3 Pre-Purchase Plan (discounted by volume).
 - **There is no Copilot P1 or P2.** "P3" is just the name of the Pre-Purchase Plan. The P1/P2 you remember were retired Power Apps/Power Automate plans — unrelated.
-- The new **Cost Management dashboard** lets you set **spending policies** (tenant, group, user), **hard caps**, **alerts**, and watch consumption on **Overview** and **Consumption** tabs.
+- The new **Cost Management dashboard** lets you set spending policies (tenant, group, user), hard caps, alerts, and watch consumption on Overview and Consumption tabs.
 - **Limits are hard.** Hit the cap and metered services pause until the first of the month; users can request more from inside the experience.
 - **Pilot first:** scope a Specific-groups policy, set a cap and alerts, watch the spend, then expand.
 
@@ -103,11 +103,11 @@ flowchart LR
 - **The seat** is a per-user subscription (the Microsoft 365 Copilot licence, list $30/user/month). It's the *entry point* — it unlocks the experiences. Predictable, fixed, easy to budget.
 - **Copilot Credits** are a **meter** — the unit consumed when an agent does work: a Cowork task, a Work IQ API call, a Copilot Studio agent action. Variable, usage-based, and the part that needs *controls*.
 
-The clean mental model: **seat = access · credit = usage meter · spending policy = permission to spend · Azure / Microsoft 365 invoice = where the charge lands.** Get those four straight and the rest falls into place.
+The clean mental model: seat = access · credit = usage meter · spending policy = permission to spend · Azure / Microsoft 365 invoice = where the charge lands. Get those four straight and the rest falls into place.
 
-> 🧩 **What's a credit, exactly?** A Copilot Credit is one unit on the meter; pay-as-you-go it's **$0.01**, and different actions cost different amounts. This page is about **billing and control** — for what a single credit *is* and the full per-action rate card, see **[What Are Copilot Credits? Rates & Costs](/blog/copilot-credits-explained/)**.
+> 🧩 **What's a credit, exactly?** A Copilot Credit is one unit on the meter; pay-as-you-go it's **$0.01**, and different actions cost different amounts. This page is about billing and control — for what a single credit *is* and the full per-action rate card, see **[What Are Copilot Credits? Rates & Costs](/blog/copilot-credits-explained/)**.
 
-> 🧩 **Not everything touches the meter.** A lot of internal, licensed, in-Microsoft-365 agent use is **zero-rated** within fair-use limits — employee-facing agents inside Microsoft 365 Copilot, Teams, or SharePoint. You mainly pay credits for **external or customer-facing** agents, **unlicensed** users, and runs **not tied to a licensed user's identity**. The full "is this zero-rated?" decision table lives on the credits page — see **[What Are Copilot Credits? → what's zero-rated](/blog/copilot-credits-explained/#not)**.
+> 🧩 **Not everything touches the meter.** A lot of internal, licensed, in-Microsoft-365 agent use is **zero-rated** within fair-use limits — employee-facing agents inside Microsoft 365 Copilot, Teams, or SharePoint. You mainly pay credits for external or customer-facing agents, unlicensed users, and runs not tied to a licensed user's identity. The full "is this zero-rated?" decision table lives on the credits page — see **[What Are Copilot Credits? → what's zero-rated](/blog/copilot-credits-explained/#not)**.
 
 The rest of this guide is about the credits layer: where you manage it, how you pay for it, and how you keep it under control.
 
@@ -155,14 +155,14 @@ flowchart TD
 ```
 
 - **Pilot or unpredictable usage** → **pay-as-you-go**, with tight tenant/group caps so a pilot can't surprise you.
-- **Steady, predictable usage** → **prepaid capacity packs** at ~$0.008/credit, but remember they **don't roll over**, so size them to your floor, not your peak.
-- **Large, committed rollout** → the **P3 Pre-Purchase Plan** for the volume discount (details [below](#p3-cccu)).
+- **Steady, predictable usage** → **prepaid capacity packs** at ~$0.008/credit, but remember they don't roll over, so size them to your floor, not your peak.
+- **Large, committed rollout** → the P3 Pre-Purchase Plan for the volume discount (details [below](#p3-cccu)).
 
 ### The billing order, if you have more than one
 
 If you've got capacity packs *and* a subscription with P3 credits *and* pay-as-you-go enabled, Microsoft draws them down in a fixed order to keep spend predictable ([Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits)):
 
-> **Capacity packs → P3 prepaid credits → pay-as-you-go.**
+> Capacity packs → P3 prepaid credits → pay-as-you-go.
 
 So prepaid money is always spent first, and pay-as-you-go only kicks in as overage once the prepaid is gone.
 
@@ -171,8 +171,8 @@ So prepaid money is always spent first, and pay-as-you-go only kicks in as overa
 **Example — same spend, different model.** Say a pilot burns **80,000 credits a month**:
 
 - **Pay-as-you-go:** 80,000 × $0.01 = **$800/month**, nothing wasted.
-- **Capacity packs:** 4 × $200 = **$800/month** for 100,000 credits — but the 20,000 you don't use vanish at month end.
-- **The call:** start **pay-as-you-go with caps** while usage bounces around; size **packs to the recurring floor** once it settles; commit to **P3** only when the annual number is predictable. Model your own with the **[Cowork Cost Calculator](/cowork-cost-calculator/)**.
+- **Capacity packs:** 4 × $200 = $800/month for 100,000 credits — but the 20,000 you don't use vanish at month end.
+- **The call:** start **pay-as-you-go with caps** while usage bounces around; size packs to the recurring floor once it settles; commit to P3 only when the annual number is predictable. Model your own with the **[Cowork Cost Calculator](/cowork-cost-calculator/)**.
 
 ---
 
@@ -180,11 +180,11 @@ So prepaid money is always spent first, and pay-as-you-go only kicks in as overa
 
 This is the question I get most, so let's settle it.
 
-**There is no Copilot Credit P1 or P2.** When you buy the annual prepaid plan, the admin center and the Azure reservation surface label it **"Copilot Credit Pre-Purchase Plan (P3)."** That "P3" is the **plan's name** — not the third rung of a P1 → P2 → P3 ladder. There's no smaller "P1" or "P2" Copilot plan sitting underneath it.
+**There is no Copilot Credit P1 or P2.** When you buy the annual prepaid plan, the admin center and the Azure reservation surface label it **"Copilot Credit Pre-Purchase Plan (P3)."** That "P3" is the plan's name — not the third rung of a P1 → P2 → P3 ladder. There's no smaller "P1" or "P2" Copilot plan sitting underneath it.
 
 So why do so many admins *swear* they remember a P1 and a P2?
 
-Because they're real — just for a **completely different product**. **P1 and P2 were Power Apps and Power Automate "Plan 1" and "Plan 2" licences**, withdrawn from sale at the end of 2020 ([Microsoft Learn](https://learn.microsoft.com/en-us/power-platform/admin/power-automate-licensing/deep-dive-on-specific-license)). They have **no lineage** to Copilot Credits, which didn't even exist until years later.
+Because they're real — just for a **completely different product**. P1 and P2 were Power Apps and Power Automate "Plan 1" and "Plan 2" licences, withdrawn from sale at the end of 2020 ([Microsoft Learn](https://learn.microsoft.com/en-us/power-platform/admin/power-automate-licensing/deep-dive-on-specific-license)). They have no lineage to Copilot Credits, which didn't even exist until years later.
 
 | What you might remember | What it actually was | Still around? |
 |---|---|---|
@@ -201,10 +201,10 @@ If you've decided on the annual route, here's how it actually works ([Microsoft 
 
 {{< margin >}}This is the *Copilot Credit* Pre-Purchase Plan. Microsoft also sells **Agent** and **GitHub** pre-purchase plans that share the "P3" badge — see [Copilot & GitHub Pre-Purchase Plans (P3)](/blog/microsoft-copilot-github-pre-purchase-plans-p3/) for which plan covers Copilot, Cowork or GitHub.{{< /margin >}}
 
-- **It's an Azure reservation.** You buy the **Copilot Credit Pre-Purchase Plan** in the Azure portal (Reservations), or directly from **Cost Management → Buy prepaid credits** in the Microsoft 365 admin center.
-- **The unit is the CCCU** — Copilot Credit Commit Unit. **One CCCU pays down $1 of Copilot Credit usage** (about 100 credits at $0.01). If usage generates a $100 retail cost, 100 CCCUs are consumed.
+- **It's an Azure reservation.** You buy the **Copilot Credit Pre-Purchase Plan** in the Azure portal (Reservations), or directly from Cost Management → Buy prepaid credits in the Microsoft 365 admin center.
+- **The unit is the CCCU** — Copilot Credit Commit Unit. One CCCU pays down $1 of Copilot Credit usage (about 100 credits at $0.01). If usage generates a $100 retail cost, 100 CCCUs are consumed.
 - **It's a one-year term**, drawn down as you use credits, and set to **auto-renew by default**.
-- **Bigger commitments earn bigger discounts**, chosen as **volume tiers** (not P-numbers). Microsoft's own worked example: buying **Tier 2 (15,000 commit units)** to cover 1,500,000 credits gives roughly a **6% saving** versus pay-as-you-go.
+- **Bigger commitments earn bigger discounts**, chosen as **volume tiers** (not P-numbers). Microsoft's own worked example: buying Tier 2 (15,000 commit units) to cover 1,500,000 credits gives roughly a 6% saving versus pay-as-you-go.
 - **Overage is automatic.** Once prepaid CCCUs run out, eligible usage simply continues on pay-as-you-go — no service interruption.
 - **Purchases are final.** Unlike a standard Azure reservation, Microsoft doesn't support cancelling or exchanging a Copilot Credit Pre-Purchase Plan — so size the commitment carefully.
 
@@ -212,47 +212,47 @@ If you've decided on the annual route, here's how it actually works ([Microsoft 
 
 A couple of things the public docs *don't* spell out (so don't promise them): the full tier-by-tier discount schedule, and whether the plan counts toward a broader Azure consumption commitment like MACC. Confirm both with your Microsoft licensing contact. ([More on that below.](#procurement))
 
-**Before you commit to P3, confirm with your licensing contact:** (1) your expected **annual credit burn**, (2) the **discount tier** and effective price, (3) whether **existing discounts** still apply or are displaced, (4) **MACC** treatment, (5) who **owns the invoice**, (6) who **owns auto-renewal**, (7) **overage** behaviour once credits run out.
+**Before you commit to P3, confirm with your licensing contact:** (1) your expected **annual credit burn**, (2) the discount tier and effective price, (3) whether existing discounts still apply or are displaced, (4) MACC treatment, (5) who owns the invoice, (6) who owns auto-renewal, (7) overage behaviour once credits run out.
 
 ---
 
 ## Inside the Cost Management dashboard — a walkthrough {#walkthrough}
 
-Here's the new **Microsoft 365 admin center → Copilot → Cost Management** experience, step by step. (Screens are from Microsoft's Cost Management demo environment, so the names and figures are sample data.)
+Here's the new Microsoft 365 admin center → Copilot → Cost Management experience, step by step. (Screens are from Microsoft's Cost Management demo environment, so the names and figures are sample data.)
 
 <p><img src="/images/blog/cost-management/cm-home.webp" alt="Microsoft 365 admin center Cost management page with an Unlock AI experiences enabled by usage-based billing heading, a Get started button, and two cards — Copilot Cowork (showing 9 pending requests) and Work IQ API." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The Cost Management home — **Copilot → Cost Management**. **Get started** activates usage-based billing; the cards show the services it covers today (note the "9 pending requests" signal on Cowork).*
+*The Cost Management home — **Copilot → Cost Management**. Get started activates usage-based billing; the cards show the services it covers today (note the "9 pending requests" signal on Cowork).*
 
 ### Step 1 — make it discoverable
 
-In **Copilot → Settings**, turn on **"AI experiences enabled by usage-based billing."** This controls *visibility* and is **off by default**. One nuance: **setting up usage-based billing for a user overrides this toggle** — entitled users see the experience even with discovery off ([Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/copilot/discovery-setting-ai-experiences)).
+In **Copilot → Settings**, turn on "AI experiences enabled by usage-based billing." This controls *visibility* and is off by default. One nuance: setting up usage-based billing for a user overrides this toggle — entitled users see the experience even with discovery off ([Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/copilot/discovery-setting-ai-experiences)).
 
 **Do this:** leave discovery *off* until your billing policies and caps are ready — unless you deliberately want demand to surface as requests.
 
 <p><img src="/images/blog/cost-management/02-discovery-setting.webp" alt="Microsoft 365 admin center side panel titled AI experiences enabled by usage-based billing, with a checkbox to Allow users to discover and use AI experiences enabled by usage-based billing in Microsoft 365 Copilot." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*Step 1 — the discovery setting under **Copilot → Settings**. Turning it on makes usage-based experiences visible across the tenant.*
+*Step 1 — the discovery setting under Copilot → Settings. Turning it on makes usage-based experiences visible across the tenant.*
 
 ### Step 2 — activate a default spending policy
 
-In **Cost Management**, select **Get Started**. The default policy is what *unlocks* the usage-based services. You confirm a **billing method**, choose whether to **cap monthly spend** (and optionally a **per-user cap** so one person can't drain the budget), and set **alert** recipients and a threshold (Microsoft emails the people you pick when spend crosses it, then weekly until the month resets). Then **Activate**.
+In **Cost Management**, select Get Started. The default policy is what *unlocks* the usage-based services. You confirm a billing method, choose whether to cap monthly spend (and optionally a per-user cap so one person can't drain the budget), and set alert recipients and a threshold (Microsoft emails the people you pick when spend crosses it, then weekly until the month resets). Then Activate.
 
 **Avoid:** activating an **uncapped All-users policy** unless finance has explicitly approved open-ended pay-as-you-go.
 
 <p><img src="/images/blog/cost-management/cm-default-policy.webp" alt="Activate the default spending policy panel — Limit monthly spending selected with a 50,000-credit monthly budget, an optional per-user cap of 1,000 credits, Define alerts switched on with recipients, an alert threshold, and Activate and Cancel buttons." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*Step 2 — the **Activate the default spending policy** panel: cap the policy's monthly spend (here 50,000 credits), add an optional per-user limit (1,000), switch on email alerts, then **Activate**.*
+*Step 2 — the **Activate the default spending policy** panel: cap the policy's monthly spend (here 50,000 credits), add an optional per-user limit (1,000), switch on email alerts, then Activate.*
 
 ### Step 3 — scope tighter with targeted policies
 
-Beyond the default **All users** policy, add **Specific-groups** policies (via security groups) to govern who gets which services and how much. A targeted policy takes precedence over the default for the users it covers. You also pick **which agents and services** the policy can spend on — Cowork, Work IQ API — with a toggle to **auto-include new services** as they launch.
+Beyond the default **All users** policy, add Specific-groups policies (via security groups) to govern who gets which services and how much. A targeted policy takes precedence over the default for the users it covers. You also pick which agents and services the policy can spend on — Cowork, Work IQ API — with a toggle to auto-include new services as they launch.
 
-**Do this:** make **Specific groups** your default rollout pattern — it's how you keep a pilot contained. Leave **auto-include new services** *off* for conservative tenants; turn it on only if you want future metered services covered automatically.
+**Do this:** make **Specific groups** your default rollout pattern — it's how you keep a pilot contained. Leave auto-include new services *off* for conservative tenants; turn it on only if you want future metered services covered automatically.
 
 <p><img src="/images/blog/cost-management/cm-policy-scope.webp" alt="Add spending policy wizard, Applies-to step — a Name this policy field set to Power users, and a choice of who the policy applies to: All users, Specific groups (selected), or Specific users (coming soon), above a searchable list of security groups such as All Company, Marketing, and Product Dev." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*Step 3 — scope a policy to **All users** or **Specific groups** (via security groups). The step rail on the left shows the rest of the wizard.*
+*Step 3 — scope a policy to All users or Specific groups (via security groups). The step rail on the left shows the rest of the wizard.*
 
 <p><img src="/images/blog/cost-management/cm-policy-limits.webp" alt="Add spending policy wizard, Set limits and alerts step — a choice between Don't limit monthly spending and Limit monthly spending (selected), a monthly spending limit field, an optional per-user budget toggle, and a Define alerts toggle." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -260,7 +260,7 @@ Beyond the default **All users** policy, add **Specific-groups** policies (via s
 
 <p><img src="/images/blog/cost-management/cm-policy-agents.webp" alt="Add spending policy wizard, Agents and services step, with checkboxes for Copilot Cowork (Copilot license required) and Work IQ API, and a toggle to Allow new services and agents as they become available." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*Step 3 (continued) — choose which **agents and services** the policy can spend on. Today that's **Copilot Cowork** and the **Work IQ API**, with a toggle to auto-include new ones.*
+*Step 3 (continued) — choose which **agents and services** the policy can spend on. Today that's Copilot Cowork and the Work IQ API, with a toggle to auto-include new ones.*
 
 <p><img src="/images/blog/cost-management/cm-policy-review.webp" alt="Add spending policy wizard, Review and create step, summarising the policy — Policy name Power users, Scope 3 groups selected, Services Copilot Cowork and Work IQ API, the billing-method subscription, and Limits and alerts of 50,000 credits per month and 1,000 credits per month per user." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -268,11 +268,11 @@ Beyond the default **All users** policy, add **Specific-groups** policies (via s
 
 <p><img src="/images/blog/cost-management/cm-config-active.webp" alt="Cost management Configuration tab showing a You've activated the default spending policy confirmation and a policy table listing the All Users Policy and a Power users policy, both Active, each covering Copilot Cowork and Work IQ API at 50,000 credits per month." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*Once created, every policy shows up on the **Configuration** tab — here the default **All Users Policy** and the targeted **Power users** policy, both active. Where they overlap, the most targeted policy wins.*
+*Once created, every policy shows up on the **Configuration** tab — here the default All Users Policy and the targeted Power users policy, both active. Where they overlap, the most targeted policy wins.*
 
 ### Step 4 — buy prepaid credits (optional)
 
-From **Configuration**, **Buy prepaid credits** walks you through the **P3 Pre-Purchase Plan** — pick the subscription, choose the commit amount, check out. Those credits are then drawn down first.
+From Configuration, **Buy prepaid credits** walks you through the P3 Pre-Purchase Plan — pick the subscription, choose the commit amount, check out. Those credits are then drawn down first.
 
 <p><img src="/images/blog/cost-management/cm-buy-prepaid.webp" alt="Buy credits panel in the Microsoft 365 admin center showing Buy prepaid credits and save more with a prepurchase plan (P3), a subscription selector, and credit-amount options from 300,000 up to 300,000,000 credits, with a Go to checkout button." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -280,16 +280,16 @@ From **Configuration**, **Buy prepaid credits** walks you through the **P3 Pre-P
 
 ### Step 5 — watch the spend
 
-- The **Overview** tab is your snapshot: total credits used, the **prepaid vs pay-as-you-go** split, active users, **top actions** (credit requests, who's near a limit), and the consumption trend.
-- The **Consumption** tab is the drill-down — usage by **user, group, or agent/service** over time, with each user's limit, recent activity, and session count. These are your **FinOps** views for finding the cost drivers.
+- The Overview tab is your snapshot: total credits used, the **prepaid vs pay-as-you-go** split, active users, top actions (credit requests, who's near a limit), and the consumption trend.
+- The Consumption tab is the drill-down — usage by **user, group, or agent/service** over time, with each user's limit, recent activity, and session count. These are your FinOps views for finding the cost drivers.
 
 <p><img src="/images/blog/cost-management/cm-overview.webp" alt="Cost management Overview tab with four counters — Total Copilot Credits used 85,462, Prepaid capacity pack credits used 72,000 of 100,000, Pay-as-you-go credits used 13,462, and Active users 4,684 — above a Top actions row showing users requesting credit increases and policies and users at or above 90 percent of their spending limit." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The **Overview** tab — total credits used, the prepaid-vs-pay-as-you-go split, active users, and a **Top actions** row flagging credit requests and anyone near a limit.*
+*The Overview tab — total credits used, the prepaid-vs-pay-as-you-go split, active users, and a Top actions row flagging credit requests and anyone near a limit.*
 
 <p><img src="/images/blog/cost-management/cm-consumption-users.webp" alt="Cost management Consumption tab, Users view, listing each user's monthly credit limit, total credits used, Microsoft 365 Copilot licence status, and last activity date, with pivots for Users, Groups, and Agents and services." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The **Consumption** tab — drill into usage by user (shown), group, or service, with each user's limit, spend, licence status, and last activity. (Demo data.)*
+*The Consumption tab — drill into usage by user (shown), group, or service, with each user's limit, spend, licence status, and last activity. (Demo data.)*
 
 <p><img src="/images/blog/cost-management/cm-user-drilldown.webp" alt="A single user's drill-down pane for Priya Raman — a credit-request banner, total credits spent this month of 2,400 against a 5,000 limit (48 percent used), spending-policy details, and a daily credit-usage chart for the past 30 days." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -297,11 +297,11 @@ From **Configuration**, **Buy prepaid credits** walks you through the **P3 Pre-P
 
 <p><img src="/images/blog/cost-management/cm-consumption-groups.webp" alt="Cost management Consumption tab, Groups view, listing each group's user count, total credits used, and average credits per user per day, for groups such as Marketing, Engineering, Sales, and Finance." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The same **Consumption** tab pivoted to **Groups** — total spend and average per-user-per-day for each team, so you can see which groups drive the cost. You can **export** this view for finance.*
+*The same Consumption tab pivoted to **Groups** — total spend and average per-user-per-day for each team, so you can see which groups drive the cost. You can export this view for finance.*
 
 <p><img src="/images/blog/cost-management/cm-consumption-agents.webp" alt="Cost management Consumption tab pivoted to Agents and services, listing Copilot Cowork with 32,500 credits used by 120 active users and the Work IQ API with 3,100 credits used by 9 active users." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*And pivoted to **Agents and services** — which metered service is actually burning the credits. Today that's **Copilot Cowork** and the **Work IQ API**.*
+*And pivoted to Agents and services — which metered service is actually burning the credits. Today that's Copilot Cowork and the Work IQ API.*
 
 ---
 
@@ -309,13 +309,13 @@ From **Configuration**, **Buy prepaid credits** walks you through the **P3 Pre-P
 
 When you set a spending limit, it's a **hard cap**, not a soft warning — and you can also choose not to cap a policy at all ([Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-manage-copilot-credits)):
 
-- When a user, group, or the tenant **reaches the limit**, access to the metered services **stops** for the rest of the month.
-- Access **resumes when credits reset on the first** of the next month.
-- A user who's blocked can **request access or more credits** from inside the experience. The request lands in the admin's **credit-requests** queue (surfaced under **Top Actions → View requests**), where you can add them to a policy, raise a limit, or onboard a whole group.
+- When a user, group, or the tenant **reaches the limit**, access to the metered services stops for the rest of the month.
+- Access resumes when credits reset on the first of the next month.
+- A user who's blocked can **request access or more credits** from inside the experience. The request lands in the admin's credit-requests queue (surfaced under Top Actions → View requests), where you can add them to a policy, raise a limit, or onboard a whole group.
 
 <p><img src="/images/blog/cost-management/cm-near-limit.webp" alt="Two Cost Management cards flagged Needs action — Policies at greater than or equal to 90 percent of spending limit, with progress bars for several group policies, and Users at greater than or equal to 90 percent of spending limit showing one user near their cap." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The dashboard flags **policies and users at ≥90% of their limit** so you can act before service stops — raise the limit, or let the credit-request flow handle it.*
+*The dashboard flags policies and users at ≥90% of their limit so you can act before service stops — raise the limit, or let the credit-request flow handle it.*
 
 That request-and-approve loop is the pressure valve — set caps low to stay safe, and let genuine demand surface through requests rather than guesswork.
 
@@ -323,13 +323,13 @@ That request-and-approve loop is the pressure valve — set caps low to stay saf
 
 ## Where the charges show up — and who owns the bill {#charges}
 
-A useful mental model: the **Microsoft 365 admin center is the control surface**, and **Azure is the financial surface**.
+A useful mental model: the Microsoft 365 admin center is the control surface, and **Azure is the financial surface**.
 
-- **Pay-as-you-go** runs through an **Azure subscription**, so the spend lands on that subscription's invoice and shows up in **Azure billing / Cost Management**.
-- **The P3 Pre-Purchase Plan** is bought as an **Azure reservation** and is **billed as a separate line item** — importantly, it is **not** deducted from your **Azure Prepayment** (formerly "monetary commitment") balance ([Microsoft Learn — Azure](https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/copilot-credit-p3)).
+- **Pay-as-you-go** runs through an **Azure subscription**, so the spend lands on that subscription's invoice and shows up in Azure billing / Cost Management.
+- **The P3 Pre-Purchase Plan** is bought as an **Azure reservation** and is billed as a separate line item — importantly, it is not deducted from your Azure Prepayment (formerly "monetary commitment") balance ([Microsoft Learn — Azure](https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/copilot-credit-p3)).
 - **Prepaid capacity packs** are purchased through the **Microsoft 365 admin center** as a monthly subscription.
 
-Because the money lives in Azure but the *controls* live in the Microsoft 365 admin center, the people who should be watching are usually a **small group**: the **Billing admin** or **Azure subscription owner** for the invoice, and the **AI/License admin** for the spending policies and the consumption dashboard. Agree who owns which before you switch it on.
+Because the money lives in Azure but the *controls* live in the Microsoft 365 admin center, the people who should be watching are usually a **small group**: the Billing admin or Azure subscription owner for the invoice, and the AI/License admin for the spending policies and the consumption dashboard. Agree who owns which before you switch it on.
 
 ---
 
@@ -347,8 +347,8 @@ Roles matter here, because *setting a billing method* and *creating a spending p
 A few prerequisites worth checking first:
 
 - **Pay-as-you-go needs an Azure subscription** to carry the spend. If you don't have one, a Global admin can have the system create one during setup.
-- **P3 via Enterprise Agreement** needs the **Reserved Instances** policy enabled; **CSP** customers follow the partner reservation flow.
-- **Least privilege:** Global Administrator is highly privileged — use the **AI** or **Billing** admin roles for day-to-day cost management instead.
+- **P3 via Enterprise Agreement** needs the **Reserved Instances** policy enabled; CSP customers follow the partner reservation flow.
+- **Least privilege:** Global Administrator is highly privileged — use the **AI** or Billing admin roles for day-to-day cost management instead.
 
 ---
 
@@ -356,9 +356,9 @@ A few prerequisites worth checking first:
 
 The bits enterprise buyers always ask about, with honest "confirm this" flags where the public docs stop short:
 
-- **Azure Prepayment / monetary commitment:** the P3 pre-purchase is a **separate invoice line item** and is **not** drawn from your Azure Prepayment balance (per Microsoft's Azure docs).
-- **MACC (Azure consumption commitment):** whether the P3 plan **counts toward** a MACC isn't something Microsoft states in its public docs — **confirm with your Microsoft licensing contact** before you bank on it.
-- **Currency, region & tax:** the **$0.01/credit** and **$200/25,000** figures are **US list** as of June 2026. Local currency, taxes, regional availability, and your agreement can all change the number — use Microsoft's billing portal or price sheet for the figure you'll actually pay.
+- **Azure Prepayment / monetary commitment:** the P3 pre-purchase is a **separate invoice line item** and is not drawn from your Azure Prepayment balance (per Microsoft's Azure docs).
+- **MACC (Azure consumption commitment):** whether the P3 plan **counts toward** a MACC isn't something Microsoft states in its public docs — confirm with your Microsoft licensing contact before you bank on it.
+- **Currency, region & tax:** the **$0.01/credit** and $200/25,000 figures are US list as of June 2026. Local currency, taxes, regional availability, and your agreement can all change the number — use Microsoft's billing portal or price sheet for the figure you'll actually pay.
 - **Adjacent costs bill separately:** anything an agent calls — premium connectors, Dataverse, Power Automate, Azure resources — has its **own** charges, distinct from Copilot Credits.
 
 ---
@@ -378,9 +378,9 @@ The traps that turn up most often:
 
 ## What each audience should take away {#takeaways}
 
-- **Admins:** configure **policies and caps before** you flip on discovery; start with **Specific groups**; watch the **requests** queue and near-limit users.
-- **Finance / FinOps:** choose pay-as-you-go vs prepaid on your **observed monthly floor**, not aspiration; confirm the **invoice owner, MACC treatment, currency and tax** before committing.
-- **Sellers / partners:** lead with **"seats unlock, credits meter"**; explain **P3 as annual pre-purchase**, not a missing P1/P2 ladder.
+- **Admins:** configure **policies and caps before** you flip on discovery; start with Specific groups; watch the requests queue and near-limit users.
+- **Finance / FinOps:** choose pay-as-you-go vs prepaid on your **observed monthly floor**, not aspiration; confirm the invoice owner, MACC treatment, currency and tax before committing.
+- **Sellers / partners:** lead with **"seats unlock, credits meter"**; explain P3 as annual pre-purchase, not a missing P1/P2 ladder.
 
 ---
 
@@ -394,7 +394,7 @@ The sane sequence, every time:
 4. **Expand deliberately**, raising limits or adding groups as real demand shows up through credit requests.
 5. **Estimate first.** Model your expected burn with the **[Cowork Cost Calculator](/cowork-cost-calculator/)** before you set a cap.
 
-> ✅ **A safe default to copy:** discovery off · pay-as-you-go connected · a **Specific-groups** pilot policy · a **monthly group cap** + **per-user cap** · **alerts at 80–90%** · review weekly for the first month.
+> ✅ **A safe default to copy:** discovery off · pay-as-you-go connected · a Specific-groups pilot policy · a **monthly group cap** + per-user cap · alerts at 80–90% · review weekly for the first month.
 
 > 📎 **Seeing Copilot Cowork "disappear" for users after GA?** That's usually the discovery setting + spending-policy gating, not a bug — the fix is in the [Cowork admin & governance guide](/blog/microsoft-copilot-cowork-admin-and-governance/#why-a-user-cant-see-cowork-in-microsoft-365-copilot).
 
@@ -404,7 +404,7 @@ The sane sequence, every time:
 
 A paste-able summary for a customer or stakeholder:
 
-> Microsoft 365 Copilot now bills in two layers: a **per-user seat** that unlocks the experience, and **Copilot Credits** that meter the agent work (Cowork, Work IQ API). You control credits in the Microsoft 365 admin center with **spending policies** — caps, alerts, and per-group or per-user limits — and you pay **pay-as-you-go** ($0.01/credit), via **monthly prepaid packs**, or with an annual **P3 pre-purchase** for a volume discount. There's **no P1 or P2** — "P3" is just the plan's name. Start with a capped pilot, watch the dashboard, then expand.
+> Microsoft 365 Copilot now bills in two layers: a per-user seat that unlocks the experience, and Copilot Credits that meter the agent work (Cowork, Work IQ API). You control credits in the Microsoft 365 admin center with spending policies — caps, alerts, and per-group or per-user limits — and you pay pay-as-you-go ($0.01/credit), via **monthly prepaid packs**, or with an annual P3 pre-purchase for a volume discount. There's no P1 or P2 — "P3" is just the plan's name. Start with a capped pilot, watch the dashboard, then expand.
 
 ---
 

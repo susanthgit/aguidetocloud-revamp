@@ -110,7 +110,7 @@ Think of it like ordering food at a restaurant:
 | Quality control checks the plate | Responsible AI filters the output |
 | The waiter serves your meal and logs the order | Response delivered, interaction audited |
 
-The key thing to notice: **your data is the ingredients, not the recipe.** The AI model doesn't memorise your ingredients for the next customer. It uses them, serves the dish, and moves on.
+The key thing to notice: your data is the ingredients, not the recipe. The AI model doesn't memorise your ingredients for the next customer. It uses them, serves the dish, and moves on.
 
 > 🔗 **Want to explore this interactively?** Open these alongside this blog:
 > - [Copilot Data Flow Map](/copilot-data-flow/) — clickable scenarios + Architecture explorer
@@ -150,7 +150,7 @@ When you type a prompt, it leaves your device over an encrypted HTTPS connection
 
 ## Layer 2 — Identity & Access {#layer-2--identity--access}
 
-**Before Copilot does anything, it asks: "Who are you?"**
+Before Copilot does anything, it asks: "Who are you?"
 
 Every Copilot interaction starts with authentication. Microsoft Entra ID (formerly Azure AD) checks your identity using single sign-on. If you've configured Conditional Access policies — and you should have — your device compliance, location, and sign-in risk are also evaluated.
 
@@ -170,7 +170,7 @@ flowchart TD
     G -->|"No"| H
 ```
 
-Here's what most people miss: **Copilot doesn't have its own access control system.** It rides on top of everything you've already set up. Every Conditional Access policy you've configured? Copilot honours it. Every MFA requirement? Copilot enforces it. Every location-based restriction? Copilot respects it.
+Here's what most people miss: Copilot doesn't have its own access control system. It rides on top of everything you've already set up. Every Conditional Access policy you've configured? Copilot honours it. Every MFA requirement? Copilot enforces it. Every location-based restriction? Copilot respects it.
 
 | Component | What It Does | You Already Have It If... |
 |-----------|-------------|--------------------------|
@@ -190,7 +190,7 @@ Here's what most people miss: **Copilot doesn't have its own access control syst
 
 ## Layer 3 — The Orchestrator {#layer-3--the-orchestrator}
 
-**This is the brain of Copilot. And it's the part nobody talks about.**
+This is the brain of Copilot. And it's the part nobody talks about.
 
 When your prompt arrives at the Orchestrator, something interesting happens. The Orchestrator doesn't just forward your question to an AI model and hope for the best. It *plans*.
 
@@ -234,7 +234,7 @@ The Orchestrator is invisible. You'll never see it, configure it, or interact wi
 
 ## Layer 4 — Grounding {#layer-4--grounding}
 
-**Now the Orchestrator knows what it needs. Time to go get it.**
+Now the Orchestrator knows what it needs. Time to go get it.
 
 Here's the thing about AI models: they're incredibly good at generating text. They're also incredibly bad at knowing anything about *your* organisation. An AI model doesn't know what your Q3 sales report says. It doesn't know who your CEO is. It doesn't know what project you're working on.
 
@@ -279,7 +279,7 @@ The Semantic Index is:
 
 While the Semantic Index finds meaning, Microsoft Graph provides structured access to your data. It's the API that connects Copilot to your emails, files, chats, calendar, people, and org chart.
 
-The critical thing here: **every Graph query is scoped to the signed-in user's permissions.** Copilot can't access data you can't access. Period.
+The critical thing here: every Graph query is scoped to the signed-in user's permissions. Copilot can't access data you can't access. Period.
 
 ### Web Search (Optional)
 
@@ -292,7 +292,7 @@ When enabled, Copilot can send a short, derived search query to a private Bing s
 
 <div class="living-doc-banner">
 
-🔑 **IT Admin takeaway:** Grounding is where oversharing becomes a real risk. Copilot surfaces anything the user has permission to access. If your SharePoint permissions are too broad — "Everyone except external users" on sensitive sites — Copilot will happily surface that data. **Review your sharing settings and sensitivity labels before rollout.**
+🔑 **IT Admin takeaway:** Grounding is where oversharing becomes a real risk. Copilot surfaces anything the user has permission to access. If your SharePoint permissions are too broad — "Everyone except external users" on sensitive sites — Copilot will happily surface that data. Review your sharing settings and sensitivity labels before rollout.
 
 </div>
 
@@ -302,7 +302,7 @@ When enabled, Copilot can send a short, derived search query to a private Bing s
 
 ## Layer 5 — The AI Models {#layer-5--the-ai-models}
 
-**This is where the magic happens — but it's also the part people worry about most.**
+This is where the magic happens — but it's also the part people worry about most.
 
 The grounded prompt — your question, combined with the relevant context from your tenant — is sent to a large language model (LLM) that generates the response.
 
@@ -347,7 +347,7 @@ flowchart TD
 
 ## Layer 6 — Responsible AI {#layer-6--responsible-ai}
 
-**This layer is different from the others. It doesn't sit at a single point — it wraps around the entire pipeline.**
+This layer is different from the others. It doesn't sit at a single point — it wraps around the entire pipeline.
 
 Responsible AI isn't a filter that runs once at the end. It's woven throughout the process — checking your prompt on the way in, guiding the model while it generates, and filtering the response on the way out.
 
@@ -384,7 +384,7 @@ flowchart TD
 
 ## Layer 7 — Response & Governance {#layer-7--response--governance}
 
-**The response arrives. But the story doesn't end here.**
+The response arrives. But the story doesn't end here.
 
 After the AI model generates a response and the safety filters approve it, the Orchestrator formats the output for your app and delivers it. But three more things happen that most people don't think about:
 
@@ -465,7 +465,7 @@ flowchart TD
     F --> G["7️⃣ Summary appears in Word<br/>With citations · Logged in Purview Audit"]
 ```
 
-**For a standard Copilot interaction (no web search, no Anthropic), your data never leaves the Microsoft 365 service boundary. Not once.**
+For a standard Copilot interaction (no web search, no Anthropic), your data never leaves the Microsoft 365 service boundary. Not once.
 
 ---
 
@@ -530,23 +530,23 @@ For the compliance team, M365 Copilot holds these certifications:
 
 These are the questions I get most often in customer demos and security reviews. I've collected them here so you can share this section with your team.
 
-**"Does Copilot send my data to OpenAI?"**
+"Does Copilot send my data to OpenAI?"
 
 No — and this is the most misunderstood part. Microsoft hosts OpenAI's models within their own Azure infrastructure. Your data goes to Azure OpenAI (Microsoft-operated), not to OpenAI's own servers. Microsoft controls the infrastructure, the data handling, and the contractual terms.
 
-**"What about Anthropic? That one worries me."**
+"What about Anthropic? That one worries me."
 
-Fair. When Copilot uses Anthropic Claude (for features like Cowork or custom Studio agents), your grounded prompt does cross the Microsoft boundary to Anthropic's infrastructure. But: it's covered by Microsoft's DPA, Anthropic can't train on your data, and **it's disabled by default in EU/EFTA/UK.** If your compliance team says no, just don't enable it.
+Fair. When Copilot uses Anthropic Claude (for features like Cowork or custom Studio agents), your grounded prompt does cross the Microsoft boundary to Anthropic's infrastructure. But: it's covered by Microsoft's DPA, Anthropic can't train on your data, and it's disabled by default in EU/EFTA/UK. If your compliance team says no, just don't enable it.
 
-**"What if someone asks Copilot to do something harmful?"**
+"What if someone asks Copilot to do something harmful?"
 
 The Responsible AI layer catches this. Content safety filters detect harmful content, jailbreak attempts, and prompt injection attacks in both directions — input and output. The metaprompt also instructs the model to refuse harmful requests. These controls are always on.
 
-**"Can Copilot access files I've shared with 'Everyone'?"**
+"Can Copilot access files I've shared with 'Everyone'?"
 
-Yes — and this is the biggest risk. Copilot inherits user permissions from Microsoft Graph. If a user has access to a SharePoint site shared with "Everyone except external users," Copilot will surface that data when relevant. **The fix isn't restricting Copilot — it's fixing your SharePoint permissions.** This was a problem before Copilot; Copilot just makes it visible.
+Yes — and this is the biggest risk. Copilot inherits user permissions from Microsoft Graph. If a user has access to a SharePoint site shared with "Everyone except external users," Copilot will surface that data when relevant. The fix isn't restricting Copilot — it's fixing your SharePoint permissions. This was a problem before Copilot; Copilot just makes it visible.
 
-**"Where are the official Microsoft docs on all this?"**
+"Where are the official Microsoft docs on all this?"
 
 I maintain a curated list of every official security and privacy document in the [Official Docs tab](/copilot-data-flow/) of the Data Flow Map tool. But the key ones are:
 - [Data, Privacy & Security for M365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy)

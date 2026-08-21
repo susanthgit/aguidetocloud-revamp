@@ -43,12 +43,12 @@ sitemap:
 founder_note: |
   Researcher is the one I reach for when "ask Copilot a quick question" isn't enough — when I actually need to pull a topic apart across our files and the open web and come back with something I'd put in front of a customer. It takes a couple of minutes instead of a couple of seconds, and that's the point: it's doing the reading and the reasoning for you, then showing its sources.
 
-  Here's what it does, how it's different from a normal Copilot chat, and how to get a genuinely good report out of it. — Sush
+  Here's what it does, how it's different from a normal Copilot chat, and how to get a good report out of it. — Sush
 ---
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** Researcher is **generally available** (since June 2025) to Microsoft 365 Copilot and Microsoft 365 Premium users. **Last verified: 23 June 2026.**
+🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** Researcher is **generally available** (since June 2025) to Microsoft 365 Copilot and Microsoft 365 Premium users. Last verified: 23 June 2026.
 
 </div>
 
@@ -56,18 +56,18 @@ founder_note: |
 
 <p><img src="/images/blog/microsoft-365-researcher-agent/04-researcher-home-auto.webp" alt="The Researcher agent home in the Microsoft 365 Copilot app, headed 'Researcher' with the line 'Auto: GPT responses, refined by Claude (Frontier)' beneath it, an 'Auto' model selector top-right, a 'What do you want to research?' prompt box with a Sources button, Home/History/Reports/Saved/Shared tabs, and prompt-starter cards for Create a daily briefing, Research a topic, Comparative analysis, Research brief, Competitive analysis and Create a plan. The left rail shows Researcher and Analyst under Agents." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*Researcher in the Microsoft 365 Copilot app — find it under **Agents**, next to Analyst. Note the **Auto** model selector and the **Sources** button: two of the things that make it more than a search box.*
+*Researcher in the Microsoft 365 Copilot app — find it under **Agents**, next to Analyst. Note the Auto model selector and the Sources button: two of the things that make it more than a search box.*
 
 ---
 
 ## TL;DR
 
-- **Researcher** is a built-in agent in the **Microsoft 365 Copilot app** for **deep, multi-step research** — it returns a **structured, source-cited report**, not a quick chat reply.
-- It works across **the web** and **your work content** (files, emails, meetings, chats) — but only what **you** can already see. A **Sources** button lets you scope it.
-- It **takes longer by design** — it reasons through many sources, then writes the report. It may ask **clarifying questions** first.
-- It runs **multiple models**: an **Auto** mode blends **OpenAI's GPT** and **Anthropic's Claude**, and **Critique & Council** have models check each other for accuracy.
-- A Frontier feature, **Researcher with Computer Use**, can act in a **secure virtual computer** — open gated sites, click through interfaces, run code.
-- **On-switch:** a **Microsoft 365 Copilot** licence, or a **Microsoft 365 Premium** subscription. **Not in government clouds** yet.
+- **Researcher** is a built-in agent in the **Microsoft 365 Copilot app** for deep, multi-step research — it returns a structured, source-cited report, not a quick chat reply.
+- It works across **the web** and your work content (files, emails, meetings, chats) — but only what you can already see. A Sources button lets you scope it.
+- It **takes longer by design** — it reasons through many sources, then writes the report. It may ask clarifying questions first.
+- It runs **multiple models**: an Auto mode blends OpenAI's GPT and Anthropic's Claude, and Critique & Council have models check each other for accuracy.
+- A Frontier feature, **Researcher with Computer Use**, can act in a secure virtual computer — open gated sites, click through interfaces, run code.
+- **On-switch:** a **Microsoft 365 Copilot** licence, or a Microsoft 365 Premium subscription. Not in government clouds yet.
 
 > 🧭 **Jump to:** [What it is](#what) · [Researcher vs Copilot Chat](#vs) · [How to use it](#how) · [Sources & work content](#sources-step) · [It reasons, then reports](#report) · [Auto, Critique & Council](#models) · [Computer Use](#computer-use) · [Prompt tips](#tips) · [Licensing](#licensing) · [Limits](#limits) · [Sources](#sources)
 
@@ -77,7 +77,7 @@ founder_note: |
 
 **Researcher** is a reasoning agent built for the kind of work you'd normally block out an afternoon for: *"pull together everything we know about X, from our files and the web, and give me something I can act on."* In Microsoft's words, it's *"built to tackle complex, multistep research and deliver a structured, source-cited report"* — combining **OpenAI's deep research model** with Microsoft 365 Copilot's orchestration and deep search.
 
-The key idea: it doesn't just answer, it **researches**. It gathers from multiple sources, reasons across them, and composes a **structured, source-cited report** — organised into sections, and (where the experience generates them) with visuals — then you edit it, share it, or use it to kick off a document or deck.
+The key idea: it doesn't just answer, it **researches**. It gathers from multiple sources, reasons across them, and composes a structured, source-cited report — organised into sections, and (where the experience generates them) with visuals — then you edit it, share it, or use it to kick off a document or deck.
 
 ---
 
@@ -98,7 +98,7 @@ The longer wait isn't a flaw — it's Researcher taking the time to reason so th
 
 ## How to use it {#how}
 
-1. Open the **Microsoft 365 Copilot** app and select **Researcher** under **Agents**.
+1. Open the Microsoft 365 Copilot app and select **Researcher** under Agents.
 2. **Ask a question** — type a topic, or use a prompt-starter like *Market Analysis* or *Customer Brief*.
 3. **Answer any clarifying questions.** Researcher often asks a couple to focus the work — answer them, or just say *"Go ahead."*
 4. **Let it work.** It finds and reasons across your chosen sources.
@@ -111,10 +111,10 @@ The longer wait isn't a flaw — it's Researcher taking the time to reason so th
 
 Researcher is good on the open web alone, but it gets sharper when you point it at **your own material**. Two ways to do that:
 
-- **The Sources button** under the prompt lets you scope what it draws on — your **work content**, the **web**, or both.
+- **The Sources button** under the prompt lets you scope what it draws on — your **work content**, the web, or both.
 - **Attach specifics** — type a **`/`** to add a file, or attach an email thread or document — and it focuses the analysis around exactly what you give it.
 
-At work, "your content" means the **files, emails, meetings and chats you already have access to** — Researcher only ever sees what *you* could already open, and it respects the same policies and compliance as the rest of Microsoft 365.
+At work, "your content" means the files, emails, meetings and chats you already have access to — Researcher only ever sees what *you* could already open, and it respects the same policies and compliance as the rest of Microsoft 365.
 
 <p><img src="/images/blog/microsoft-365-researcher-agent/02-researcher-references.webp" alt="The Researcher prompt box with two work documents attached — Zavacore Fiber - TechSpecs.docx and Zava Newsletter.docx — above a detailed prompt asking it to analyse competitor moves in the smart fabric industry, with the six prompt-starter cards below." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -138,15 +138,15 @@ The finished report is yours to refine. And because the report includes **cited 
 
 ## One agent, many models — Auto, Critique & Council {#models}
 
-Most chatbots run on one model. Researcher can use **several**, with an **Auto** default — and that's part of what quietly makes its reports better.
+Most chatbots run on one model. Researcher can use **several**, with an Auto default — and that's part of what quietly makes its reports better.
 
-By default the model selector sits on **Auto**. As the home screen spells out, Auto means **"GPT responses, refined by Claude"** — it uses **OpenAI's GPT** to do the work and **Anthropic's Claude** to refine it. The selector is right there in the UI, so if your tenant exposes other model options you may be able to choose one yourself.
+By default the model selector sits on Auto. As the home screen spells out, Auto means **"GPT responses, refined by Claude"** — it uses OpenAI's GPT to do the work and Anthropic's Claude to refine it. The selector is right there in the UI, so if your tenant exposes other model options you may be able to choose one yourself.
 
 <p><img src="/images/blog/microsoft-365-researcher-agent/05-researcher-auto-model.webp" alt="A close-up of the top of the Researcher agent showing the Researcher title, an 'Auto' model selector in the top-right corner, and the subtitle 'Auto: GPT responses, refined by Claude (Frontier). Learn more'." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The **Auto** model selector — Researcher's default blends OpenAI's GPT with Anthropic's Claude. The selector is in the UI if you'd rather pick a model yourself.*
+*The Auto model selector — Researcher's default blends OpenAI's GPT with Anthropic's Claude. The selector is in the UI if you'd rather pick a model yourself.*
 
-On top of that, Microsoft added **multi-model intelligence** to Researcher — Microsoft describes **Critique** and **Council** as two capabilities that raise the **accuracy, depth and confidence** of its reports. The way they've been described:
+On top of that, Microsoft added **multi-model intelligence** to Researcher — Microsoft describes Critique and Council as two capabilities that raise the accuracy, depth and confidence of its reports. The way they've been described:
 
 - **Critique** — a second model **reviews and refines** the first model's work before you see the answer (the "GPT, refined by Claude" pattern the UI shows). A second opinion, built in.
 - **Council** — for harder questions, **several models weigh in together**, like a panel comparing notes, so the report reflects more than one perspective.
@@ -157,7 +157,7 @@ On top of that, Microsoft added **multi-model intelligence** to Researcher — M
 
 ## Researcher with Computer Use {#computer-use}
 
-This is the most advanced version, available through the **Frontier program** (early access for Copilot-licensed users, switched on by an admin). Standard Researcher *reads*; **Researcher with Computer Use** can **act** — inside a **secure, cloud-hosted virtual computer** that's isolated from your device and your network.
+This is the most advanced version, available through the **Frontier program** (early access for Copilot-licensed users, switched on by an admin). Standard Researcher *reads*; Researcher with Computer Use can act — inside a secure, cloud-hosted virtual computer that's isolated from your device and your network.
 
 What that unlocks, in Microsoft's words:
 
@@ -165,7 +165,7 @@ What that unlocks, in Microsoft's words:
 - **Navigate real interfaces** — click, type and work through websites or apps, while you stay in control.
 - **Run code or scripts** — use a secure command line to crunch data as part of the research.
 
-It's built for **richer reports grounded in the real web and your work content** — the research tasks a read-only agent simply can't finish. The virtual machine runs on **Windows 365 for Agents**, the sandbox is **ephemeral** (it doesn't persist), **no credentials are stored**, and admins get granular controls — enable/disable it, scope it to a pilot group, and set allow/block lists of sites.
+It's built for richer reports grounded in the real web and your work content — the research tasks a read-only agent simply can't finish. The virtual machine runs on **Windows 365 for Agents**, the sandbox is ephemeral (it doesn't persist), no credentials are stored, and admins get granular controls — enable/disable it, scope it to a pilot group, and set allow/block lists of sites.
 
 > ⚠️ **Frontier, not GA:** Computer Use is a Frontier-program feature and admin-gated, so it won't be on in every tenant. Treat it as the powerful, opt-in tier of Researcher rather than the default.
 
@@ -183,9 +183,9 @@ Microsoft's own guidance, in plain terms:
 
 ## Licensing {#licensing}
 
-- **Licence:** a **Microsoft 365 Copilot** add-on, or a **Microsoft 365 Premium** subscription. Researcher debuted in April 2025 through the Frontier program and reached **general availability on 2 June 2025**.
+- **Licence:** a Microsoft 365 Copilot add-on, or a Microsoft 365 Premium subscription. Researcher debuted in April 2025 through the Frontier program and reached general availability on 2 June 2025.
 - **Query allowance:** included with the licence rather than sold per query — at general availability (June 2025) a Microsoft 365 Copilot licence included **25 combined** Researcher + Analyst queries a month. That figure may change, so confirm the current number in Microsoft's docs.
-- **Models & Computer Use:** the multi-model behaviour (Auto, Critique, Council) is built in; **Researcher with Computer Use** is a separate **Frontier** tier an admin enables (see [above](#computer-use)).
+- **Models & Computer Use:** the multi-model behaviour (Auto, Critique, Council) is built in; Researcher with Computer Use is a separate **Frontier** tier an admin enables (see [above](#computer-use)).
 
 ---
 

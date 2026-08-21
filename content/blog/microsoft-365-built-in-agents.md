@@ -61,10 +61,10 @@ founder_note: |
 ## TL;DR
 
 - A **built-in agent** is one Microsoft makes and ships inside Microsoft 365 — you don't build it. It just turns up in Teams, Planner, SharePoint, Viva or Copilot Chat.
-- The headline ones: **Facilitator** (Teams meetings), the **Planner Agent** (Microsoft Planner, formerly "Project Manager agent"), **agents in SharePoint** and the **Knowledge Agent**, the **Channel Agent** (Teams channels), the **Community Agent** (Viva Engage), plus **Interpreter**, **Researcher** and **Analyst**.
-- For most of them, a **Microsoft 365 Copilot licence** is the on-switch. SharePoint agents can also run on a **pay-as-you-go** path for unlicensed users.
-- You govern them from the **Microsoft 365 admin center → Agents** (Registry and Agent settings), with **Teams** and **SharePoint** admin centers for their own agents, and **Microsoft Agent 365** as the single observe-govern-secure layer.
-- **Generally available:** SharePoint agents, Interpreter, Researcher, Analyst, Planner Agent. **Preview / partial:** Facilitator (core GA, tasks + drafting in preview), Channel Agent, Knowledge Agent. **Thin docs:** Community Agent — confirm before relying on it.
+- The headline ones: **Facilitator** (Teams meetings), the Planner Agent (Microsoft Planner, formerly "Project Manager agent"), agents in SharePoint and the Knowledge Agent, the Channel Agent (Teams channels), the Community Agent (Viva Engage), plus Interpreter, Researcher and Analyst.
+- For most of them, a **Microsoft 365 Copilot licence** is the on-switch. SharePoint agents can also run on a pay-as-you-go path for unlicensed users.
+- You govern them from the Microsoft 365 admin center → Agents (Registry and Agent settings), with **Teams** and SharePoint admin centers for their own agents, and Microsoft Agent 365 as the single observe-govern-secure layer.
+- **Generally available:** SharePoint agents, Interpreter, Researcher, Analyst, Planner Agent. **Preview / partial:** Facilitator (core GA, tasks + drafting in preview), Channel Agent, Knowledge Agent. Thin docs: Community Agent — confirm before relying on it.
 - **Government-cloud availability varies by agent** — Facilitator and Planner aren't in GCC/GCCH/DoD; SharePoint agents differ.
 
 > ⚡ **In a hurry?** Skim **[the full lineup table](#lineup)**, then jump to the surface you care about — [Teams](#teams), [Planner](#planner) or [SharePoint](#sharepoint).
@@ -76,11 +76,11 @@ founder_note: |
 There are two kinds of agent in the Microsoft 365 world, and it's worth being clear which one you're looking at.
 
 - **Agents Microsoft ships (built-in / first-party).** Microsoft builds them, names them, and turns them on inside the apps. You don't design them — you allow them, licence them, and use them. That's everything on this page.
-- **Agents you build.** You create these for your own scenarios with **Agent Builder** (no-code, inside the Copilot app) or **Copilot Studio** (for richer, connected, autonomous agents). Microsoft's own words: *"Microsoft and its partners offer a variety of prebuilt agents. You can also build your own using both low-code and pro-code tools."*
+- **Agents you build.** You create these for your own scenarios with **Agent Builder** (no-code, inside the Copilot app) or Copilot Studio (for richer, connected, autonomous agents). Microsoft's own words: *"Microsoft and its partners offer a variety of prebuilt agents. You can also build your own using both low-code and pro-code tools."*
 
 > 📎 **If you're here to build your own agent**, start with [Microsoft 365 Agent Builder, explained](/blog/m365-agent-builder-explained/) and [Agent Builder vs Copilot Studio vs Foundry](/blog/agent-builder-vs-copilot-studio-vs-foundry/). And if you're not even sure whether to *build* one or just *use* one, [Copilot vs Agents vs Copilot Studio: what to use when](/blog/copilot-vs-agents-vs-copilot-studio/) is the plain-English decision guide. This guide stays on the agents Microsoft *gives* you.
 
-The Microsoft 365 admin center sorts every agent in your tenant into four buckets — **Microsoft agents**, **partner-built**, **published by your org**, and **shared by a creator**. The built-in agents in this guide are the first bucket: *"agents built and maintained by Microsoft."*
+The Microsoft 365 admin center sorts every agent in your tenant into four buckets — **Microsoft agents**, partner-built, published by your org, and shared by a creator. The built-in agents in this guide are the first bucket: *"agents built and maintained by Microsoft."*
 
 ---
 
@@ -116,19 +116,19 @@ Teams is where the most agents live, because so much work happens in meetings an
 
 **Facilitator** joins a **scheduled Teams meeting** as a visible teammate. Unlike Copilot in Teams — which is private to whoever asks it — Facilitator's prompts and answers are visible to *everyone* in the meeting. It writes shared, real-time notes, pulls the agenda out of the invite, runs a timer for each topic, answers questions in the meeting chat, and posts a tidy recap at the end.
 
-A couple of things worth knowing up front: it works in **scheduled meetings only** (not 1:1 chats, group chats, channel meetings, "Meet now", or calls), it needs **Loop experiences** turned on, and prompting it needs a **Microsoft 365 Copilot** licence — though unlicensed people can read everything it writes.
+A couple of things worth knowing up front: it works in **scheduled meetings only** (not 1:1 chats, group chats, channel meetings, "Meet now", or calls), it needs Loop experiences turned on, and prompting it needs a Microsoft 365 Copilot licence — though unlicensed people can read everything it writes.
 
 > 📎 **Full walkthrough:** [The Microsoft 365 Facilitator Agent in Teams](/blog/microsoft-365-facilitator-agent/) — turning it on, the agenda timer, in-meeting Q&A, task tracking and recaps, with screenshots of each.
 
 ### Channel Agent — a standing expert for a Teams channel *(preview)*
 
-The **Channel Agent** is a dedicated agent that lives inside one Teams channel and takes on its name and icon. It draws on the channel's **messages**, its **SharePoint files**, and **meeting transcripts** to answer questions, so a new joiner can `@mention` it and ask "what did we decide about the launch date?" instead of scrolling for an hour.
+The Channel Agent is a dedicated agent that lives inside one Teams channel and takes on its name and icon. It draws on the channel's **messages**, its SharePoint files, and meeting transcripts to answer questions, so a new joiner can `@mention` it and ask "what did we decide about the launch date?" instead of scrolling for an hour.
 
-You add and find agents from the channel's **Agents and bots** panel. Each channel can have **one** Channel Agent.
+You add and find agents from the channel's **Agents and bots** panel. Each channel can have one Channel Agent.
 
 <p><img src="/images/blog/microsoft-365-channel-agent/01-channel-agent.webp" alt="A Microsoft Teams channel called CoreFiber-Launch with the Agents and bots panel open on the right, showing a gallery of agents including the CoreFiber-Launch channel agent, Designer, Forms, Power Apps and Power BI, plus a list to add more agents and bots." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The **Agents and bots** panel inside a Teams channel. The channel's own agent (here, "CoreFiber-Launch") sits alongside other apps you can add.*
+*The Agents and bots panel inside a Teams channel. The channel's own agent (here, "CoreFiber-Launch") sits alongside other apps you can add.*
 
 Once it's there, you talk to it in the channel like any teammate. Ask it to compare notes, summarise a thread, or pull the open action items, and it answers from the channel's own content.
 
@@ -136,11 +136,11 @@ Once it's there, you talk to it in the channel like any teammate. Ask it to comp
 
 *Asking the Channel Agent for a concise market comparison. It answers from the channel's messages and files, with the response in a side panel.*
 
-The Channel Agent is in **public preview**. It's **allowed by default**, and new channels get one automatically unless an admin turns that off (Teams admin center → Teams apps → **Agent settings**). It needs a **Microsoft 365 Copilot** licence to interact with — people without one can read its answers but can't ask it questions — and it supports around two dozen languages, with English the strongest.
+The Channel Agent is in **public preview**. It's allowed by default, and new channels get one automatically unless an admin turns that off (Teams admin center → Teams apps → Agent settings). It needs a Microsoft 365 Copilot licence to interact with — people without one can read its answers but can't ask it questions — and it supports around two dozen languages, with English the strongest.
 
 ### Interpreter — real-time voice interpretation
 
-Worth a mention while we're in Teams: **Interpreter** is a generally available agent that does **real-time spoken interpretation** in meetings across nine languages (Chinese, English, French, German, Italian, Japanese, Korean, Portuguese and Spanish), included up to 20 hours per user per month with a Copilot licence. It can even match your own voice — and Microsoft says no voice samples are stored.
+Worth a mention while we're in Teams: Interpreter is a generally available agent that does **real-time spoken interpretation** in meetings across nine languages (Chinese, English, French, German, Italian, Japanese, Korean, Portuguese and Spanish), included up to 20 hours per user per month with a Copilot licence. It can even match your own voice — and Microsoft says no voice samples are stored.
 
 ---
 
@@ -148,13 +148,13 @@ Worth a mention while we're in Teams: **Interpreter** is a generally available a
 
 ### The Planner Agent *(formerly "Project Manager agent")*
 
-If you've seen this called the **Project Manager agent**, that's the same thing — Microsoft has **renamed it the Planner Agent**, and it's now **generally available** in both basic and premium Planner plans.
+If you've seen this called the **Project Manager agent**, that's the same thing — Microsoft has renamed it the Planner Agent, and it's now generally available in both basic and premium Planner plans.
 
-It does three useful jobs. It **builds a task list from a goal** (premium plans), it **works tasks you assign to it** and hands back the result in the task, and it **writes status reports** you can share. You can also just **chat with it** about a plan.
+It does three useful jobs. It builds a task list from a goal (premium plans), it works tasks you assign to it and hands back the result in the task, and it **writes status reports** you can share. You can also just chat with it about a plan.
 
 > 📎 **Full walkthrough:** [The Planner Agent (Project Manager agent), explained](/blog/microsoft-365-project-manager-agent/) — generating a plan from a goal, grounding it in your files, assigning it work, and producing a status report, step by step.
 
-The neat part is how this links back to Teams: Facilitator can **create a task during a meeting**, and it lands in Planner where the Planner Agent can pick it up — two built-in agents handing work to each other.
+The neat part is how this links back to Teams: Facilitator can create a task during a meeting, and it lands in Planner where the Planner Agent can pick it up — two built-in agents handing work to each other.
 
 ---
 
@@ -164,11 +164,11 @@ SharePoint actually has **two** agent stories, and it's easy to mix them up, so 
 
 ### Agents in SharePoint — ask your files a question *(GA)*
 
-Every SharePoint site ships with a **ready-made agent** that answers questions grounded in that site's pages and documents — and it only ever answers based on what *you* personally have permission to see. People with edit rights can also build **custom agents** scoped to specific files or libraries, and share them into Teams. These **SharePoint agents** are **generally available** and can run either on a **Microsoft 365 Copilot** licence or a **pay-as-you-go** billing path an admin sets up for unlicensed users.
+Every SharePoint site ships with a **ready-made agent** that answers questions grounded in that site's pages and documents — and it only ever answers based on what *you* personally have permission to see. People with edit rights can also build custom agents scoped to specific files or libraries, and share them into Teams. These SharePoint agents are generally available and can run either on a Microsoft 365 Copilot licence or a pay-as-you-go billing path an admin sets up for unlicensed users.
 
 ### The Knowledge Agent — tidy the library itself *(preview)*
 
-Newer, and different: the **Knowledge Agent (preview)** doesn't answer questions *about* your files — it **organises the library**. It reads your documents, suggests metadata columns and fills them in, sets up rules ("when a ZavaCore Fiber file is added, email me"), and builds grouped, curated views. Think of it as a librarian for the document library rather than a search box.
+Newer, and different: the **Knowledge Agent (preview)** doesn't answer questions *about* your files — it organises the library. It reads your documents, suggests metadata columns and fills them in, sets up rules ("when a ZavaCore Fiber file is added, email me"), and builds grouped, curated views. Think of it as a librarian for the document library rather than a search box.
 
 > 📎 **Full walkthrough:** [The SharePoint Knowledge Agent, explained](/blog/microsoft-365-knowledge-agent/) — auto-tagging metadata, setting up rules, and building curated views, with screenshots — plus how it differs from the question-answering SharePoint agents.
 
@@ -178,7 +178,7 @@ Newer, and different: the **Knowledge Agent (preview)** doesn't answer questions
 
 ### The Community Agent
 
-Viva Engage communities can have a **Community Agent** — an agent that acts like a knowledgeable community member, answering questions from the community's own discussions, files and SharePoint library, and (with the right setting) posting **verified answers** that an admin or expert has approved first.
+Viva Engage communities can have a Community Agent — an agent that acts like a knowledgeable community member, answering questions from the community's own discussions, files and SharePoint library, and (with the right setting) posting **verified answers** that an admin or expert has approved first.
 
 <p><img src="/images/blog/microsoft-365-communities-agent/01-communities-setup.webp" alt="A Set up your agent page for a Viva Engage Community agent named Product Sales Support, showing it set to Active, a Require review before posting toggle turned On, a description of what the community agent does, and a Knowledge section to add SharePoint sources." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -188,11 +188,11 @@ When someone asks a question in the community, the agent can draft an answer gro
 
 <p><img src="/images/blog/microsoft-365-communities-agent/03-communities-review-approve.webp" alt="A Viva Engage Community agent's drafted answer with an expandable Reasoning section listing the steps it took — searching the community and pulling SharePoint documentation — and Approve, Edit and dismiss buttons for a human reviewer." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The human-in-the-loop step: the agent drafts an answer (in this preview it even shows an expandable **Reasoning** trace), then a community expert **approves** or edits it before it posts.*
+*The human-in-the-loop step: the agent drafts an answer (in this preview it even shows an expandable **Reasoning** trace), then a community expert approves or edits it before it posts.*
 
 <p><img src="/images/blog/microsoft-365-communities-agent/02-communities-verified.webp" alt="A Viva Engage community called Product Sales Support with 1,516 members, showing a member's question about ZavaCore Fiber smart apparel answered by the Product Sales Support agent with a Verified answer badge, marked as verified by a named expert." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*A question in a Viva Engage community answered by the Community Agent and marked as a **verified answer** by a named expert.*
+*A question in a Viva Engage community answered by the Community Agent and marked as a verified answer by a named expert.*
 
 > ⚠️ **Honest caveat:** Microsoft's public documentation for the Community Agent is still thin — the broader [Copilot in Viva Engage](https://learn.microsoft.com/en-us/viva/engage/configure-microsoft-365-copilot-in-viva-engage) experience is well documented, but this specific community agent isn't yet. Treat its exact status and licensing as "appears to need a Microsoft 365 Copilot licence" and confirm with Microsoft before you plan around it.
 
@@ -216,7 +216,7 @@ For most of these agents, the **on-switch is the licence**: assign a Microsoft 3
 
 <p><img src="/images/blog/microsoft-365-built-in-agents/01-admin-agents-registry.webp" alt="The Microsoft 365 admin center with the Agents section open on the All agents Registry tab, showing counters for Total agents, Agents at risk, Ownerless agents and Blocked agents, and a table of agents — including Researcher from Microsoft alongside Copilot Studio and Foundry agents — with availability, risk, active-user and last-updated columns." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The **Microsoft 365 admin center → Agents → Registry** — where every agent in the tenant shows up: Microsoft's built-in ones (like Researcher) alongside the rest, with risk and usage at a glance.*
+*The Microsoft 365 admin center → Agents → Registry — where every agent in the tenant shows up: Microsoft's built-in ones (like Researcher) alongside the rest, with risk and usage at a glance.*
 
 | Control plane | What you do there |
 |---|---|
@@ -225,7 +225,7 @@ For most of these agents, the **on-switch is the licence**: assign a Microsoft 3
 | **SharePoint admin center** | SharePoint agents — access controls and the **pay-as-you-go billing** setup. |
 | **Microsoft Agent 365** | The newer single layer (GA May 2026) to **observe, govern and secure** every agent in one place, whoever built it. **Needs its own per-user licence** — it isn't bundled with M365 Copilot. |
 
-> ✅ **Two quick prerequisites people miss:** the Teams meeting agents (Facilitator, Channel Agent) need **Loop experiences in Teams** turned on; and **government-cloud availability varies by agent** — the Teams meeting agents and the Planner Agent aren't in GCC, GCC High or DoD, while SharePoint agents have their own (different) GCC/DoD status. Check the service-description row for the specific agent if that's you.
+> ✅ **Two quick prerequisites people miss:** the Teams meeting agents (Facilitator, Channel Agent) need **Loop experiences in Teams** turned on; and government-cloud availability varies by agent — the Teams meeting agents and the Planner Agent aren't in GCC, GCC High or DoD, while SharePoint agents have their own (different) GCC/DoD status. Check the service-description row for the specific agent if that's you.
 
 For the full governance picture — registry, policies, security templates and Agent 365 — see [Agent 365: the security & governance guide](/blog/agent-365-security-governance-complete-guide/).
 
@@ -233,11 +233,11 @@ For the full governance picture — registry, policies, security templates and A
 
 ## What they cost {#cost}
 
-The honest answer: for the built-in agents, **the Microsoft 365 Copilot licence is the cost**, as far as Microsoft's public documentation shows. They're included with the seat rather than metered per message. Two things to keep in your head:
+The honest answer: for the built-in agents, the Microsoft 365 Copilot licence is the cost, as far as Microsoft's public documentation shows. They're included with the seat rather than metered per message. Two things to keep in your head:
 
-- **SharePoint agents** have a separate **pay-as-you-go** path (for unlicensed users) that *is* billed per query — roughly 2 "messages" for a generative answer and 10 for a wider tenant-graph-grounded one, so a single complex prompt that does both can total around 12. Copilot-licensed users aren't charged.
-- **Premium Planner features** (turning a goal into a full plan) need a **Planner Plan 1 / Project Plan 3 or 5** on top of the Copilot licence.
-- Separately, **usage-based work like Copilot Cowork** is metered in **Copilot Credits** — that's a different billing model with its own [cost-management guide](/blog/microsoft-365-copilot-cost-management/).
+- **SharePoint agents** have a separate pay-as-you-go path (for unlicensed users) that *is* billed per query — roughly 2 "messages" for a generative answer and 10 for a wider tenant-graph-grounded one, so a single complex prompt that does both can total around 12. Copilot-licensed users aren't charged.
+- **Premium Planner features** (turning a goal into a full plan) need a Planner Plan 1 / Project Plan 3 or 5 on top of the Copilot licence.
+- Separately, **usage-based work like Copilot Cowork** is metered in Copilot Credits — that's a different billing model with its own [cost-management guide](/blog/microsoft-365-copilot-cost-management/).
 
 Where the public docs don't spell out metering for a specific agent, we've said so rather than guessed. Confirm anything billing-critical with your Microsoft licensing contact.
 
@@ -263,9 +263,9 @@ Where the public docs don't spell out metering for a specific agent, we've said 
 
 Across every built-in agent, the same five confusions come up again and again. Learn them once and most "it's not working" moments solve themselves:
 
-1. **"Why can't I see it?" — it's almost always the licence or the surface.** Most of these need a **Microsoft 365 Copilot** licence, and each only appears in *its* place — Facilitator in a *scheduled* Teams meeting, the Planner Agent inside a *shared* plan, the Channel Agent in a *standard* channel. Wrong surface, no agent.
-2. **Each agent has a dependency people forget.** Facilitator needs **Loop experiences** on and a real meeting with enough discussion; the Planner Agent needs a **premium plan** to turn a goal into a plan; SharePoint agents need their **knowledge sources scoped**. Miss the dependency and the agent looks "broken" when it's just unfed.
-3. **Permissions and sharing bite — especially Loop and SharePoint.** Facilitator's notes are a **Loop file**, so empty or invisible notes are usually a sharing/permission issue. SharePoint agents only ever answer from **what you can already see** — which is a safeguard, not a bug.
+1. **"Why can't I see it?" — it's almost always the licence or the surface.** Most of these need a Microsoft 365 Copilot licence, and each only appears in *its* place — Facilitator in a *scheduled* Teams meeting, the Planner Agent inside a *shared* plan, the Channel Agent in a *standard* channel. Wrong surface, no agent.
+2. **Each agent has a dependency people forget.** Facilitator needs Loop experiences on and a real meeting with enough discussion; the Planner Agent needs a **premium plan** to turn a goal into a plan; SharePoint agents need their knowledge sources scoped. Miss the dependency and the agent looks "broken" when it's just unfed.
+3. **Permissions and sharing bite — especially Loop and SharePoint.** Facilitator's notes are a **Loop file**, so empty or invisible notes are usually a sharing/permission issue. SharePoint agents only ever answer from what you can already see — which is a safeguard, not a bug.
 4. **Expectation vs reality — they won't magically do everything.** Each agent has a **bounded scope** — it uses the sources Microsoft documents for that surface, doesn't auto-assign owners for you, and doesn't quietly reach across your whole tenant. When one "gives instructions instead of doing the work," that's by design for a task it can't safely complete itself.
 5. **Knowing where each one actually lives.** Teams vs Planner vs SharePoint vs Viva vs Copilot Chat — the single biggest time-waster is looking for an agent in the wrong app. The [lineup table](#lineup) is your map.
 

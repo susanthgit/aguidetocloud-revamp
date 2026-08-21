@@ -30,7 +30,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-**Living hands-on guide.** This tutorial separates the open Agent Skills specification from Microsoft-specific storage, packaging, and limits. **Public sources last checked: 31 July 2026.**
+**Living hands-on guide.** This tutorial separates the open Agent Skills specification from Microsoft-specific storage, packaging, and limits. Public sources last checked: 31 July 2026.
 
 </div>
 

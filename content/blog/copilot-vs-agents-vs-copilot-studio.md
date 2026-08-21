@@ -63,7 +63,7 @@ founder_note: |
 ## TL;DR
 
 - **Just ask Copilot** — for most everyday tasks (draft, summarise, look something up, analyse a file you have open) you don't need an agent at all. It's included with your Copilot licence.
-- **Use a built-in agent** — Microsoft already ships agents for common jobs: **Facilitator** runs meetings, the **Planner Agent** builds plans, **Researcher** and **Analyst** dig into data. You switch them on; you don't build them.
+- **Use a built-in agent** — Microsoft already ships agents for common jobs: **Facilitator** runs meetings, the Planner Agent builds plans, Researcher and Analyst dig into data. You switch them on; you don't build them.
 - **Build a simple one with Agent Builder** — no code, a few minutes, for a reusable helper that answers from a chosen set of your files.
 - **Step up to Copilot Studio** — low-code, for when the agent has to *do* things: connect to other systems, run on a schedule, sit on your website.
 - **Go pro-code with Foundry** — for developers building custom AI apps with their own models.
@@ -77,7 +77,7 @@ founder_note: |
 
 Before anything else, ask yourself one thing:
 
-> **Can Copilot already do this if I just ask it, in the app I'm in right now?**
+> Can Copilot already do this if I just ask it, in the app I'm in right now?
 
 If the answer is yes — and surprisingly often it is — you're done. No agent, no building, nothing to set up. Microsoft 365 Copilot can already read your own work files and emails (only the ones *you* have permission to see) through Microsoft Graph, so a one-off "summarise this thread", "find the latest on Project Northwind", or "draft a reply" almost never needs an agent.
 
@@ -126,7 +126,7 @@ The same decision, as a lookup table. Find the row that matches what you're tryi
 
 ## Where to stop — the five options, simplest first {#options}
 
-The five options below are in order of effort. The whole game is to **stop as low as you can**. Each one says, in plain terms, *when to stop here* — and points you to the deeper guide if that's your landing spot.
+The five options below are in order of effort. The whole game is to stop as low as you can. Each one says, in plain terms, *when to stop here* — and points you to the deeper guide if that's your landing spot.
 
 > 📎 **Already sure you need to build an agent?** Skip the first two and jump to our head-to-head — [Agent Builder vs Copilot Studio vs Foundry](/blog/agent-builder-vs-copilot-studio-vs-foundry/) — which pits the three build tools against each other on features, licensing and cost. *This* page is the step before that: working out whether you need to build at all.
 
@@ -192,7 +192,7 @@ The honest trade-off: that power usually means involving IT. Connectors need per
 
 Foundry (recently renamed **Microsoft Foundry**) is the developer platform. It's where teams pick from a huge catalogue of models, fine-tune on their own data, wire up several specialist agents to work together, and ship with proper code, testing and deployment pipelines. It is not an IT-admin tool and it doesn't live inside Microsoft 365 — it's an Azure project with an Azure bill.
 
-The key reframe for most readers: **if your need still mostly lives inside Microsoft 365 and business workflows, check Copilot Studio first — you probably don't need Foundry.** Reach for it only when developers genuinely need control that the lower rungs can't give. The Foundry section of the [build-tool comparison](/blog/agent-builder-vs-copilot-studio-vs-foundry/#foundry) covers who owns it and what changes, and there's more in the [Build 2026 recap](/blog/microsoft-build-2026-recap/).
+The key reframe for most readers: if your need still mostly lives inside Microsoft 365 and business workflows, check Copilot Studio first — you probably don't need Foundry. Reach for it only when developers genuinely need control that the lower rungs can't give. The Foundry section of the [build-tool comparison](/blog/agent-builder-vs-copilot-studio-vs-foundry/#foundry) covers who owns it and what changes, and there's more in the [Build 2026 recap](/blog/microsoft-build-2026-recap/).
 
 ---
 

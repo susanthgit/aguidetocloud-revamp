@@ -29,7 +29,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the secure-config spoke. Scout settings can change between releases — this page updates as Microsoft ships. **Last verified: 12 June 2026 · Scout version 0.23.0.20260608.1.**
+🔄 **Part of the [Microsoft Scout — Complete Guide](/blog/microsoft-scout-complete-guide/) series.** This is the secure-config spoke. Scout settings can change between releases — this page updates as Microsoft ships. Last verified: 12 June 2026 · Scout version 0.23.0.20260608.1.
 
 </div>
 
@@ -121,13 +121,13 @@ Two of the rows in the table above generate the most "what does this actually lo
 
 <p><img src="/images/blog/scout-complete-guide/40-02-scout-settings-privacy-data.png" alt="A tight crop of Microsoft Scout's Settings page showing the 'PRIVACY & DATA' section. The descriptive text reads 'Microsoft Scout collects operational data (such as session and feature usage events) to help improve quality and performance. No conversation content is collected.' with a link 'Microsoft Privacy Statement' next to it. Below is the 'Enable collecting telemetry' toggle (currently switched on) and a sub-line 'Changes take effect after restarting Microsoft Scout.'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The Privacy & Data panel as it ships. Two facts worth quoting verbatim to a security reviewer: **"No conversation content is collected"** (only session/feature usage events) and **"Changes take effect after restarting Microsoft Scout"** (you need to restart the app for the toggle to actually apply, not just close-and-reopen the Settings pane).*
+*The Privacy & Data panel as it ships. Two facts worth quoting verbatim to a security reviewer: **"No conversation content is collected"** (only session/feature usage events) and "Changes take effect after restarting Microsoft Scout" (you need to restart the app for the toggle to actually apply, not just close-and-reopen the Settings pane).*
 
 ### Row 28 — the permission card non-workspace file writes hit
 
 <p><img src="/images/blog/scout-complete-guide/34c-scout-permission-card-allow-deny.png" alt="A Microsoft Scout permission card titled 'Save File · file edit · Create file'. A code block shows the file path that triggered the prompt: File: C:\Users\&lt;user&gt;\Downloads\scout-architecture.excalidraw. The body text reads 'This is outside your workspace. Always allow grants Microsoft Scout write access to everything in this folder: C:\Users\&lt;user&gt;\Do...' Four action buttons across the bottom: Allow (highlighted), Allow for session, Allow everywhere, Deny." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The card that surfaces every time Scout wants to touch a file **outside** the configured workspace. Four buttons: **Allow** (one-shot), **Allow for session** (until Scout restarts), **Allow everywhere** (permanent — Scout writes a new auto-approve rule), **Deny** (one-shot block). The combination of this card + ADMX `RestrictToWorkspace` (row 23) + ADMX `ForcePrompt` (row 24) is your three-layer file-system control surface. Username redacted in the screenshot — your install will show your actual path.*
+*The card that surfaces every time Scout wants to touch a file **outside** the configured workspace. Four buttons: Allow (one-shot), Allow for session (until Scout restarts), Allow everywhere (permanent — Scout writes a new auto-approve rule), Deny (one-shot block). The combination of this card + ADMX `RestrictToWorkspace` (row 23) + ADMX `ForcePrompt` (row 24) is your three-layer file-system control surface. Username redacted in the screenshot — your install will show your actual path.*
 
 ---
 

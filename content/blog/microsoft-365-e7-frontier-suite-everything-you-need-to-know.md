@@ -48,7 +48,7 @@ tags:
   - security
 ---
 
-Microsoft just announced its biggest licensing shakeup in years. **Microsoft 365 E7** — also called the **"Frontier Suite"** — is the new top-tier plan at $99/user/month, generally available since **1 May 2026**.
+Microsoft just announced its biggest licensing shakeup in years. **Microsoft 365 E7** — also called the "Frontier Suite" — is the new top-tier plan at $99/user/month, generally available since 1 May 2026.
 
 {{< margin >}}I sat with the EA team for an hour to confirm this. The bundle math actually checks out.{{< /margin >}}
 
@@ -159,7 +159,7 @@ Or as the internal Microsoft talk track puts it:
 
 ## Agent 365 — Why E7 Exists
 
-[Agent 365](https://www.microsoft.com/en-us/microsoft-agent-365) is the reason this plan was created. As companies build more AI agents — chatbots, automated workflows, custom Copilot agents — someone has to answer the question: **who's in charge of the bots?**
+[Agent 365](https://www.microsoft.com/en-us/microsoft-agent-365) is the reason this plan was created. As companies build more AI agents — chatbots, automated workflows, custom Copilot agents — someone has to answer the question: who's in charge of the bots?
 
 Think of it like this: you'd never let employees join your network without an identity, access policies, and monitoring. But right now, most organisations are deploying AI agents with none of that. Agent 365 fixes that gap.
 
@@ -352,7 +352,7 @@ Microsoft 365 E7, also known as the **Frontier Suite**, is Microsoft's new top-t
 
 ### When does Microsoft 365 E7 become available?
 
-Microsoft 365 E7 went **generally available on 1 May 2026**. Both E7 and standalone Agent 365 are now transactable through EA, EAS, CSP, and MCA channels worldwide. At launch, a set of pre-integrated ecosystem partner agents (ServiceNow, SAP, Workday, etc.) are deployable directly from the M365 Admin Center, and FastTrack remote guidance is available for Agent 365 enablement.
+Microsoft 365 E7 went generally available on 1 May 2026. Both E7 and standalone Agent 365 are now transactable through EA, EAS, CSP, and MCA channels worldwide. At launch, a set of pre-integrated ecosystem partner agents (ServiceNow, SAP, Workday, etc.) are deployable directly from the M365 Admin Center, and FastTrack remote guidance is available for Agent 365 enablement.
 
 ### How much does Microsoft 365 E7 cost?
 
@@ -368,7 +368,7 @@ Yes. Agent 365 is available as a **standalone add-on at $15/user/month** for org
 
 ### Do I need E7 if I already have E5 + Copilot?
 
-Not necessarily. The key differentiators in E7 beyond E5 + Copilot are **Agent 365** (AI governance) and the **full Entra Suite** (ZTNA, Private Access, full ID Governance). If you're not deploying AI agents at scale or don't need the full Entra Suite, staying on E5 + Copilot may be more cost-effective.
+Not necessarily. The key differentiators in E7 beyond E5 + Copilot are **Agent 365** (AI governance) and the full Entra Suite (ZTNA, Private Access, full ID Governance). If you're not deploying AI agents at scale or don't need the full Entra Suite, staying on E5 + Copilot may be more cost-effective.
 
 ### Is Microsoft 365 E7 available for small businesses?
 
@@ -380,7 +380,7 @@ Nothing changes. E3 and E5 continue to exist as they are today. E7 is a **new ti
 
 ### Does E7 include consumption-based Azure costs?
 
-No. The $99/user/month covers the platform, governance, and licensing. **Building and running custom AI agents** (in Copilot Studio, Azure AI Foundry, etc.) may incur additional consumption-based Azure costs depending on complexity and usage.
+No. The $99/user/month covers the platform, governance, and licensing. Building and running custom AI agents (in Copilot Studio, Azure AI Foundry, etc.) may incur additional consumption-based Azure costs depending on complexity and usage.
 
 ### What is Work IQ?
 
@@ -388,7 +388,7 @@ Work IQ is an intelligence layer built into E7 that gives Copilot and AI agents 
 
 ### What changed about multiplexing for agents?
 
-Microsoft updated the **May 2026 Product Terms** to clarify multiplexing rules: ALL users or devices that indirectly benefit from M365 — including through **agents, bots, or RPA** — still require licensing. This closes a loophole that some organisations were using to dodge user counts by routing work through an automation layer.
+Microsoft updated the **May 2026 Product Terms** to clarify multiplexing rules: ALL users or devices that indirectly benefit from M365 — including through agents, bots, or RPA — still require licensing. This closes a loophole that some organisations were using to dodge user counts by routing work through an automation layer.
 
 If you're building or scaling AI agents inside Agent 365 or E7, factor this in to your seat count modelling. The good news: agents themselves don't need separate licences — they're covered under the licensed user's Agent 365 or E7 seat.
 

@@ -47,11 +47,11 @@ faq:
 
 </div>
 
-**The short version:** "P3" isn't one plan — it's a nickname shared by **four** different pre-purchase plans, each bought as an Azure reservation, and each one only pays for its own set of products. Your existing **GitHub Copilot credits — GitHub AI Credits — can't pay for Cowork**. But there's one plan — the **Microsoft Agent Pre-Purchase Plan** — that can prepay for **both** GitHub Copilot **and** Cowork at once.
+**The short version:** "P3" isn't one plan — it's a nickname shared by **four** different pre-purchase plans, each bought as an Azure reservation, and each one only pays for its own set of products. Your existing GitHub Copilot credits — GitHub AI Credits — can't pay for Cowork. But there's one plan — the Microsoft Agent Pre-Purchase Plan — that can prepay for both GitHub Copilot and Cowork at once.
 
 ---
 
-> 🧩 **In a hurry?** Your GitHub Copilot credits → **can't** be used for Cowork. Want one prepaid plan that covers **both**? The **Microsoft Agent Pre-Purchase Plan**. Everything below is the *why*.
+> 🧩 **In a hurry?** Your GitHub Copilot credits → **can't** be used for Cowork. Want one prepaid plan that covers both? The Microsoft Agent Pre-Purchase Plan. Everything below is the *why*.
 
 ---
 
@@ -74,11 +74,11 @@ Everything below is the why.
 
 ## Wait — there isn't one "P3" {#many}
 
-If you've read our [Cost Management guide](/blog/microsoft-365-copilot-cost-management/), you'll know that in the **Copilot Credits** world, "P3" means the **Copilot Credit Pre-Purchase Plan** — and there's no "P1" or "P2" ladder beneath it. That's all still true.
+If you've read our [Cost Management guide](/blog/microsoft-365-copilot-cost-management/), you'll know that in the **Copilot Credits** world, "P3" means the Copilot Credit Pre-Purchase Plan — and there's no "P1" or "P2" ladder beneath it. That's all still true.
 
-What's changed is that Microsoft now sells **several** pre-purchase plans, across different product families, and they all wear the same "P3" / *Pre-Purchase Plan* badge because they all work the same way: commit to an amount up front as an **Azure reservation**, get a volume discount, and draw it down over a one-year term.
+What's changed is that Microsoft now sells **several** pre-purchase plans, across different product families, and they all wear the same "P3" / *Pre-Purchase Plan* badge because they all work the same way: commit to an amount up front as an Azure reservation, get a volume discount, and draw it down over a one-year term.
 
-For Copilot, Cowork and GitHub budgeting, **four** of them matter:
+For Copilot, Cowork and GitHub budgeting, four of them matter:
 
 | Pre-Purchase Plan (P3) | What it pays for |
 |---|---|
@@ -93,7 +93,7 @@ For Copilot, Cowork and GitHub budgeting, **four** of them matter:
 
 ## Which plan covers what {#coverage}
 
-Here's the same four plans against the things people actually want to fund. Notice that only the **Microsoft Agent Pre-Purchase Plan** has a "Yes" in both the Cowork column and the GitHub column:
+Here's the same four plans against the things people actually want to fund. Notice that only the Microsoft Agent Pre-Purchase Plan has a "Yes" in both the Cowork column and the GitHub column:
 
 | Plan | Cowork | GitHub Copilot | Copilot Studio | Foundry | Fabric |
 |---|---|---|---|---|---|
@@ -104,7 +104,7 @@ Here's the same four plans against the things people actually want to fund. Noti
 
 *Two notes on the table: the Agent plan's public wording is "GitHub costs" — GitHub Copilot is one of the GitHub products it covers. And the GitHub AI Credit plan covers GitHub AI Credits (the AI usage meter), not base GitHub Copilot seat licences.*
 
-The mental model: **the Copilot plans pay for Copilot work, the GitHub plans pay for GitHub work, and the Agent plan is the bridge that spans both.**
+The mental model: the Copilot plans pay for Copilot work, the GitHub plans pay for GitHub work, and the Agent plan is the bridge that spans both.
 
 ---
 
@@ -112,8 +112,8 @@ The mental model: **the Copilot plans pay for Copilot work, the GitHub plans pay
 
 No — and it helps to see why, because it's a product boundary, not a setting you can flip.
 
-- **Cowork** runs on **Copilot Credits**, set up and managed in the **Microsoft 365 admin centre**. You pay for them pay-as-you-go through an Azure subscription, or prepay them with the Copilot Credit or Agent pre-purchase plans.
-- **GitHub Copilot** is billed through **GitHub** — per-seat licences plus AI usage metered in **GitHub AI Credits** (1 AI credit = $0.01). Its pre-purchase plans (the GitHub Pre-Purchase Plan and the GitHub AI Credit Pre-Purchase Plan) only pay for GitHub usage.
+- **Cowork** runs on Copilot Credits, set up and managed in the **Microsoft 365 admin centre**. You pay for them pay-as-you-go through an Azure subscription, or prepay them with the Copilot Credit or Agent pre-purchase plans.
+- **GitHub Copilot** is billed through **GitHub** — per-seat licences plus AI usage metered in GitHub AI Credits (1 AI credit = $0.01). Its pre-purchase plans (the GitHub Pre-Purchase Plan and the GitHub AI Credit Pre-Purchase Plan) only pay for GitHub usage.
 
 So a balance of GitHub AI Credits has no path to Cowork. Different products, different meters, different admin surfaces.
 
@@ -123,9 +123,9 @@ So a balance of GitHub AI Credits has no path to Cowork. Different products, dif
 
 ## The one plan that covers both {#agent}
 
-The **Microsoft Agent Pre-Purchase Plan** is the unified option. Microsoft describes it as a single pre-purchase that covers *"select services across Microsoft Foundry, Microsoft Copilot Studio, Microsoft Fabric, and GitHub"* — and the Copilot Studio coverage explicitly includes **Copilot Credit-enabled services: Copilot Studio agents, Dynamics 365 first-party agents, and Copilot.** Since **Cowork burns Copilot Credits**, it sits inside that coverage.
+The Microsoft Agent Pre-Purchase Plan is the unified option. Microsoft describes it as a single pre-purchase that covers *"select services across Microsoft Foundry, Microsoft Copilot Studio, Microsoft Fabric, and GitHub"* — and the Copilot Studio coverage explicitly includes Copilot Credit-enabled services: Copilot Studio agents, Dynamics 365 first-party agents, and Copilot. Since **Cowork burns Copilot Credits**, it sits inside that coverage.
 
-In plain terms: if a customer wants **one** annual commitment that can pay for **GitHub Copilot, Cowork, Copilot Studio agents, Foundry and Fabric** together, the Agent plan is the one that does it. If they only ever touch Copilot and Cowork, the narrower **Copilot Credit Pre-Purchase Plan** also works.
+In plain terms: if a customer wants **one** annual commitment that can pay for GitHub Copilot, Cowork, Copilot Studio agents, Foundry and Fabric together, the Agent plan is the one that does it. If they only ever touch Copilot and Cowork, the narrower Copilot Credit Pre-Purchase Plan also works.
 
 {{< margin >}}Both the Copilot Credit plan and the Agent plan can fund Cowork. The Agent plan is just broader — it reaches the GitHub and Foundry worlds too.{{< /margin >}}
 
@@ -148,13 +148,13 @@ A quick way to choose:
 
 ## How the credits get used up {#order}
 
-If a customer holds more than one way to pay, Microsoft draws them down in a fixed order so spend stays predictable. For **Cowork and Copilot Credits in the Microsoft 365 admin centre**, Microsoft's published order is:
+If a customer holds more than one way to pay, Microsoft draws them down in a fixed order so spend stays predictable. For Cowork and Copilot Credits in the Microsoft 365 admin centre, Microsoft's published order is:
 
-> **Capacity packs → prepaid (P3) credits → pay-as-you-go.**
+> Capacity packs → prepaid (P3) credits → pay-as-you-go.
 
 Prepaid credits are always used **before** pay-as-you-go billing kicks in, which is the whole point of prepaying — you spend the committed pool first, then any overage falls through to pay-as-you-go. For the full picture of policies, caps and the Cost Management dashboard, see our [Copilot Cost Management & Billing](/blog/microsoft-365-copilot-cost-management/) guide.
 
-And if a billing subscription holds **both** an Agent P3 and a Copilot Credit P3, Microsoft applies the **Agent P3 first**, billing any overage only once those credits are used up.
+And if a billing subscription holds both an Agent P3 and a Copilot Credit P3, Microsoft applies the **Agent P3 first**, billing any overage only once those credits are used up.
 
 ---
 

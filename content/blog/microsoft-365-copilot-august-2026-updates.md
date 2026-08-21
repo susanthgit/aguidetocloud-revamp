@@ -119,18 +119,18 @@ The detail that matters: Copilot works against the underlying report data and **
 
 *For: Copilot in Excel · Windows and Mac · Rolling out August 2026*
 
-Copilot in Excel now works in more cloud-saved workbooks, **including files where AutoSave is turned off**. Previously AutoSave had to be on, which quietly locked people out of Copilot in workbooks that were otherwise supported.
+Copilot in Excel now works in more cloud-saved workbooks, including files where AutoSave is turned off. Previously AutoSave had to be on, which quietly locked people out of Copilot in workbooks that were otherwise supported.
 
 If AutoSave is off and the workbook has unsaved changes, Excel prompts you to turn it on before Copilot starts editing, to protect the work you have not saved. You can carry on without turning it on if you want to.
 
-**I tested this on 18 August 2026** and got a result worth flagging. With AutoSave off, the Copilot pane in **Allow editing** mode showed the reminder and the prompt box stayed greyed out. Dismissing the reminder did not unlock it. Switching the same pane to **Chat only** brought it straight back to life, AutoSave still off, under a different heading: *Let's analyze together*.
+**I tested this on 18 August 2026** and got a result worth flagging. With AutoSave off, the Copilot pane in **Allow editing** mode showed the reminder and the prompt box stayed greyed out. Dismissing the reminder did not unlock it. Switching the same pane to Chat only brought it straight back to life, AutoSave still off, under a different heading: *Let's analyze together*.
 
 That is not what Microsoft documents. The [Copilot in Excel tips page](https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-tips), updated 10 August 2026, says Copilot "runs in workbooks with autosave enabled or disabled", and that you should turn autosave off precisely so you can "experiment with Copilot in Excel changes without automatically saving those changes to a workbook". On paper, editing with AutoSave off is meant to work, not only chatting.
 
-I cannot tell you yet which of those is the full story. Microsoft's [Office for Mac release notes](https://learn.microsoft.com/en-us/officeupdates/release-notes-office-for-mac#august-11-2026) list this feature under Version 16.112 (Build 26081010) on 11 August 2026 and still describe it as "currently rolling out to production for Windows and Mac users", and Copilot features reach a subset of people inside a tenant before the whole tenant does. So my install may simply not have all of it yet. It could equally be a bug. Either way, if you meet a greyed-out prompt box with AutoSave off, **switching to Chat only is the workaround**, and I will retest for the September issue.
+I cannot tell you yet which of those is the full story. Microsoft's [Office for Mac release notes](https://learn.microsoft.com/en-us/officeupdates/release-notes-office-for-mac#august-11-2026) list this feature under Version 16.112 (Build 26081010) on 11 August 2026 and still describe it as "currently rolling out to production for Windows and Mac users", and Copilot features reach a subset of people inside a tenant before the whole tenant does. So my install may simply not have all of it yet. It could equally be a bug. Either way, if you meet a greyed-out prompt box with AutoSave off, switching to Chat only is the workaround, and I will retest for the September issue.
 
 <blockquote class="callout callout-tip">
-<p><strong>Why this matters:</strong> This is a small change that removes a genuinely confusing dead end. Plenty of people deliberately keep AutoSave off on financial models, and had no idea that was the reason Copilot appeared to be missing.</p>
+<p><strong>Why this matters:</strong> This is a small change that removes a confusing dead end. Plenty of people deliberately keep AutoSave off on financial models, and had no idea that was the reason Copilot appeared to be missing.</p>
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/s03-excel-autosave-off.webp" alt="Two Copilot panes from my own tenant, side by side, with a strip at the top showing the Excel AutoSave toggle switched off for both. On the left, in Allow editing mode, a banner reads that AutoSave is off with a green Turn on AutoSave button, and the prompt box is greyed out with a blocked cursor over it. On the right, in Chat only mode, the same pane is headed Let's analyze together and the Message Copilot box is active, with suggestion chips underneath." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
@@ -159,9 +159,9 @@ The **brand kit skill** lets Copilot in Excel format a workbook using your organ
 
 Excel gained **skills** for recurring analysis, modelling and reporting work. A skill packages the instructions Copilot should follow so the workflow can be called again without rebuilding the full prompt.
 
-The official interface shows skill groups such as **Custom skills**, **Finance** and **Formatting** that can be enabled when needed. Skills can hold both general working methods and specialised team instructions.
+The official interface shows skill groups such as **Custom skills**, Finance and Formatting that can be enabled when needed. Skills can hold both general working methods and specialised team instructions.
 
-Two different availability stories sit behind that one screen, and they are worth separating. **Prebuilt skills** were generally available on **Web, Windows and Mac**. **Custom skills** were still **Insiders-only on Windows and Mac** in June, with general availability planned for the following month.
+Two different availability stories sit behind that one screen, and they are worth separating. **Prebuilt skills** were generally available on Web, Windows and Mac. Custom skills were still Insiders-only on Windows and Mac in June, with general availability planned for the following month.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Repetition is where spreadsheet work becomes expensive. A reusable skill turns the trusted process into something the whole team can invoke, not a prompt only one person remembers.</p>
@@ -256,7 +256,7 @@ Microsoft's support experience shows custom skill files appearing from a user's 
 
 *For: Copilot in PowerPoint · Rolled out July 2026*
 
-Copilot in PowerPoint can now **write a new comment, reply to existing feedback, and resolve finished comment threads** from inside the presentation. Microsoft describes three distinct actions — draft a new comment, respond to existing feedback, or resolve completed threads — "without switching context".
+Copilot in PowerPoint can now write a new comment, reply to existing feedback, and resolve finished comment threads from inside the presentation. Microsoft describes three distinct actions — draft a new comment, respond to existing feedback, or resolve completed threads — "without switching context".
 
 This is the July half of a two-part story. Turning a comment into an **assigned task** with the right people notified is a *separate* feature that Microsoft says [rolls out in August](#8-powerpoint-can-assign-tasks-inside-comments). The distinction matters: this July capability is described as rolled out, the August one as still arriving.
 
@@ -285,7 +285,7 @@ Being straight about the demo: I wrote the original comment myself, so this is a
 
 *For: Copilot in PowerPoint · iOS and iPad · Rolled out July 2026*
 
-Copilot in PowerPoint on **iOS and iPad** gained the capabilities the desktop already had. It can now handle **multi-step requests** rather than one instruction at a time, ground its work in the **slide you are currently on** or a **file you attach**, and keep **working in the background** while you do something else.
+Copilot in PowerPoint on **iOS and iPad** gained the capabilities the desktop already had. It can now handle multi-step requests rather than one instruction at a time, ground its work in the slide you are currently on or a file you attach, and keep working in the background while you do something else.
 
 To be clear about what this is: Copilot was already on PowerPoint mobile. What changed in July is how much it can do there.
 
@@ -302,7 +302,7 @@ To be clear about what this is: Copilot was already on PowerPoint mobile. What c
 
 *For: Copilot in PowerPoint + organisational brand assets · Rolled out June 2026*
 
-The **Brand Kit Picker** let users choose an **admin-approved brand kit** while building a presentation with Copilot. The deck could begin with the organisation's approved visual identity instead of using a generic theme.
+The **Brand Kit Picker** let users choose an admin-approved brand kit while building a presentation with Copilot. The deck could begin with the organisation's approved visual identity instead of using a generic theme.
 
 This is the user-facing control that connects Copilot to the brand system administrators have already prepared. It gives the person creating the deck a clear choice without asking them to understand where the template is stored.
 
@@ -319,7 +319,7 @@ This is the user-facing control that connects Copilot to the brand system admini
 
 *For: Copilot in PowerPoint (Agent Mode, web) · Announced June 2026 · Roadmap still reads “In development” · Reproduced in my tenant 21 Aug 2026*
 
-When creating a presentation, Copilot can reference a **SharePoint library** or a **OneDrive folder**, not only one individual file. The deck is grounded in the whole collection of material you point it at.
+When creating a presentation, Copilot can reference a **SharePoint library** or a OneDrive folder, not only one individual file. The deck is grounded in the whole collection of material you point it at.
 
 That matters when the source is a project folder or team library rather than a carefully prepared brief. Copilot can work from the existing content set instead of making the user select and attach every file one by one.
 
@@ -333,7 +333,7 @@ That matters when the source is a project folder or team library rather than a c
 
 It works. In my lab tenant on 21 August 2026 I opened a SharePoint document library, opened the context menu on a **folder** — not a file — and chose *Copy link*. I pasted that link into Copilot in PowerPoint on the web and added one plain sentence asking it to create a presentation from this document. Copilot reasoned through ten steps, chose a navy and slate corporate style, generated its own images, and built the deck out of what was in that folder. Four slides are visible in the thumbnail rail of my capture, styled end to end.
 
-Two things are worth knowing before you go looking for it. The roadmap record scopes this to **Agent Mode** in PowerPoint on the **web** — if you have hunted for it in the desktop app with ordinary Copilot and found nothing, that scoping is the most likely reason. And the link I pasted was a folder link: it carries `:f:` in the path, which is SharePoint's own marker for a folder rather than a file. I did not test whether a plain file link behaves any differently, and I did not test a OneDrive folder link at all — only SharePoint.
+Two things are worth knowing before you go looking for it. The roadmap record scopes this to **Agent Mode** in PowerPoint on the web — if you have hunted for it in the desktop app with ordinary Copilot and found nothing, that scoping is the most likely reason. And the link I pasted was a folder link: it carries `:f:` in the path, which is SharePoint's own marker for a folder rather than a file. I did not test whether a plain file link behaves any differently, and I did not test a OneDrive folder link at all — only SharePoint.
 
 
 <img src="/images/blog/copilot-august-2026/lab-s47-ppt-sharepoint-folder-to-deck-annotated.webp" alt="A three-panel screenshot. Panel one shows a SharePoint document library called Contoso HR Policies and Guidance, with a folder named hiring selected and boxed in red and a context menu open on Copy link. Panel two shows the Copilot pane in PowerPoint holding a pasted SharePoint link, boxed in red, with the tenant name and the sharing token covered by grey redaction bars so that only the scheme and the folder path remain readable, followed by the words create a presentation from this document, and a Copilot card reading Reasoned in 10 steps. Panel three shows the resulting PowerPoint deck, with the slide thumbnail rail boxed in red around four generated slides and the open title slide reading Organization Restructure Plan beneath a Contoso HR Policies and Guidance label." loading="lazy" decoding="async">
@@ -346,7 +346,7 @@ Two things are worth knowing before you go looking for it. The roadmap record sc
 
 *For: Copilot in Word (Web) · Announced June 2026 · Generally available 11 August 2026*
 
-Word added **model choice** for document editing, including supported **Anthropic models**. Users could choose a model before asking Copilot to rewrite, summarise, restructure or refine the document.
+Word added **model choice** for document editing, including supported Anthropic models. Users could choose a model before asking Copilot to rewrite, summarise, restructure or refine the document.
 
 The feature is about control over the editing approach, not just access to another model name. If the first model is not finding the right tone or structure, the user can change the model without moving the document into another tool.
 
@@ -367,7 +367,7 @@ The feature is about control over the editing approach, not just access to anoth
 
 *For: Copilot in Word · Rolled out July 2026*
 
-Copilot in Word picked up **drafting workflows**. It can insert and update a **table of contents** so it stays right as the document grows, and it can manage **headers, footers, page numbers, dates and footnotes**.
+Copilot in Word picked up **drafting workflows**. It can insert and update a table of contents so it stays right as the document grows, and it can manage headers, footers, page numbers, dates and footnotes.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> This is the unglamorous half of document work that eats an afternoon before something goes to a customer. It is also the half people get wrong most often, because it is fiddly and manual.</p>
@@ -399,9 +399,9 @@ That is especially useful in shared documents where several people edit between 
 
 *For: Copilot in Word · Rolled out June 2026*
 
-Copilot could **generate an image for a Word document** — the official example asks for a KPI dashboard visual and shows the result placed under the matching heading.
+Copilot could generate an image for a Word document — the official example asks for a KPI dashboard visual and shows the result placed under the matching heading.
 
-The workflow has a step worth knowing about. In the walkthrough Microsoft published, image generation is not part of **Edit with Copilot**. You leave the editing flow, ask Copilot Chat for the image, then insert it into the document using the **+** control. The generation and the placement are two deliberate actions, not one.
+The workflow has a step worth knowing about. In the walkthrough Microsoft published, image generation is not part of **Edit with Copilot**. You leave the editing flow, ask Copilot Chat for the image, then insert it into the document using the + control. The generation and the placement are two deliberate actions, not one.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> An illustration is only useful when it lands in the right place. Generating it inside Word still beats a round trip through a separate image tool — just do not expect the editing pane to do it for you.</p>
@@ -435,7 +435,7 @@ Microsoft later published a Word for iPad example showing a user reviewing and a
 
 Word could preserve the **Copilot Chat conversation history** when the user moved from chat into the app. A multi-step document task could continue without losing the instructions, decisions and earlier responses that shaped it.
 
-Microsoft's June roundup described the continuity but did not publish a screenshot of it, so I reproduced it in my own tenant — and the result came with a caveat worth stating plainly. In **Word for the web**, the Copilot pane carries a **Navigation** button, and opening it shows a list headed **Chats in Word** with earlier conversations still sitting there. On the same morning, in the same tenant, on the same document, I could not find that navigation in the **Word desktop client**. Capability in this area has tended to reach the web first, so I would expect the desktop client to follow — but that is my expectation, not something Microsoft has committed to.
+Microsoft's June roundup described the continuity but did not publish a screenshot of it, so I reproduced it in my own tenant — and the result came with a caveat worth stating plainly. In **Word for the web**, the Copilot pane carries a Navigation button, and opening it shows a list headed Chats in Word with earlier conversations still sitting there. On the same morning, in the same tenant, on the same document, I could not find that navigation in the Word desktop client. Capability in this area has tended to reach the web first, so I would expect the desktop client to follow — but that is my expectation, not something Microsoft has committed to.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> The conversation often contains the real brief. Keeping it attached to the document avoids the frustrating reset where the user has to explain the task again.</p>
@@ -455,7 +455,7 @@ Copilot could reason over feedback written in **document comments** and apply th
 
 This is more specific than general Edit with Copilot. The source of the instruction is the review comment already attached to the document, which keeps the revision tied to the feedback that triggered it.
 
-It sits alongside the rest of Word's review tooling. Copilot's edits can be made with **Track Changes** on, so each one arrives as a reviewable revision rather than a silent rewrite, and it can help **manage the comments themselves** — summarising a thread, drafting a reply, or resolving a comment once the edit is made.
+It sits alongside the rest of Word's review tooling. Copilot's edits can be made with **Track Changes** on, so each one arrives as a reviewable revision rather than a silent rewrite, and it can help manage the comments themselves — summarising a thread, drafting a reply, or resolving a comment once the edit is made.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Comments are where collaborative documents slow down. Turning a clear review comment into the corresponding edit shortens the loop between feedback and the next version — and keeping it inside Track Changes means nobody has to take the result on trust.</p>
@@ -476,7 +476,7 @@ Microsoft did not publish an image that visibly proves a comment was the instruc
 
 Classic Outlook for Windows gained a direct place to find and adjust **Copilot settings**. Users no longer had to leave Outlook or depend on a separate route to manage the Copilot experience.
 
-Microsoft's June roundup described the rollout but published no screenshot of the settings surface, so I went looking for it in my own client. It is there. **File → Info** now carries a **Copilot Settings** button in the same column as Account Settings and Automatic Replies, and Microsoft's Message Center notice for this change, MC1358831, describes the same route.
+Microsoft's June roundup described the rollout but published no screenshot of the settings surface, so I went looking for it in my own client. It is there. **File → Info** now carries a Copilot Settings button in the same column as Account Settings and Automatic Replies, and Microsoft's Message Center notice for this change, MC1358831, describes the same route.
 
 The dialog behind that button has three tabs, and there is more in it than an on/off switch:
 
@@ -484,9 +484,9 @@ The dialog behind that button has three tabs, and there is more in it than an on
 - **Prioritize** — *Let Copilot prioritize my email on arrival*, an option to show AI-generated summaries in the message list for prioritised mail, an *Apply low priority label* option, and a *Customize* area where you type in what makes mail high or low priority for you.
 - **Draft instructions** — a free-text box for custom instructions, so drafted replies come out in your own tone rather than a generic one.
 
-Microsoft has an open known issue confirming that after Classic Outlook for Windows updates to **build 20026.20182 or higher**, Copilot entry points disappear from the client altogether — the button above the ribbon, the icon in the left app bar, and the entry in the navigation pane. The support note attributes this to Outlook being unable to locate a MAPI property, states that it happens on both Copilot Chat and paid Microsoft 365 Copilot licences, and lists new profiles, cache clearing, re-signing in and restarting as things that have been tried without consistently working. Microsoft's own workaround is to use new Outlook or Outlook on the web. When I checked the page on 21 August 2026 it was still marked **STATUS: INVESTIGATING**.
+Microsoft has an open known issue confirming that after Classic Outlook for Windows updates to **build 20026.20182 or higher**, Copilot entry points disappear from the client altogether — the button above the ribbon, the icon in the left app bar, and the entry in the navigation pane. The support note attributes this to Outlook being unable to locate a MAPI property, states that it happens on both Copilot Chat and paid Microsoft 365 Copilot licences, and lists new profiles, cache clearing, re-signing in and restarting as things that have been tried without consistently working. Microsoft's own workaround is to use new Outlook or Outlook on the web. When I checked the page on 21 August 2026 it was still marked STATUS: INVESTIGATING.
 
-It is worth being precise about what that note predicts, though. The client in the screenshots above is on build **16.0.20326.20100**, Current Channel (Preview) — higher than the build named in the note — and Copilot is present: the button above the ribbon is there, and the Copilot pane opens in the inbox. Microsoft's own wording is “in affected environments”, so a build number above that line is not on its own a diagnosis. If Copilot settings are missing for you there are two candidates rather than one — the known issue, or a rollout that has not reached you yet. MC1358831 gives a completion target of the end of August 2026, and roadmap 561491 still read **Rolling out** when I checked on 21 August 2026.
+It is worth being precise about what that note predicts, though. The client in the screenshots above is on build **16.0.20326.20100**, Current Channel (Preview) — higher than the build named in the note — and Copilot is present: the button above the ribbon is there, and the Copilot pane opens in the inbox. Microsoft's own wording is “in affected environments”, so a build number above that line is not on its own a diagnosis. If Copilot settings are missing for you there are two candidates rather than one — the known issue, or a rollout that has not reached you yet. MC1358831 gives a completion target of the end of August 2026, and roadmap 561491 still read Rolling out when I checked on 21 August 2026.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Classic Outlook still carries a huge amount of day-to-day work. Giving those users the same obvious settings path removes one more difference between the classic and newer clients.</p>
@@ -505,11 +505,11 @@ It is worth being precise about what that note predicts, though. The client in t
 
 There is now a **Meeting recaps app** in Teams that brings your recaps into one place, instead of you hunting back through the calendar meeting by meeting.
 
-Two limits worth knowing. It covers the **previous 30 days**, not your whole history. And it only shows meetings that were **recorded or transcribed** — a meeting with neither has no recap to list. It is on **desktop and web** first, with mobile to follow.
+Two limits worth knowing. It covers the **previous 30 days**, not your whole history. And it only shows meetings that were recorded or transcribed — a meeting with neither has no recap to list. It is on desktop and web first, with mobile to follow.
 
 One practical note that explains why nobody in your organisation has mentioned it: the app is **preinstalled but not pinned**. People can pin it themselves, or an admin can pin it for everyone through a Teams app setup policy. Until one of those happens it is sitting there unseen.
 
-The recaps also come in more than one form. Alongside the text recap there is an **audio recap**, which Microsoft describes as combining several meetings into a single podcast-style summary. Licensing splits along that line: audio and video recap need a **Microsoft Copilot licence**, intelligent text recap needs **Teams Premium or Copilot**, and someone with neither can still open transcripts they already have permission to see.
+The recaps also come in more than one form. Alongside the text recap there is an **audio recap**, which Microsoft describes as combining several meetings into a single podcast-style summary. Licensing splits along that line: audio and video recap need a Microsoft Copilot licence, intelligent text recap needs Teams Premium or Copilot, and someone with neither can still open transcripts they already have permission to see.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Recaps were already good. The problem was finding them. A single home for them turns a nice feature into something people actually use a week later.</p>
@@ -524,7 +524,7 @@ The recaps also come in more than one form. Alongside the text recap there is an
 
 *For: SharePoint app for Teams (Viva Connections) · Rolled out June 2026*
 
-SharePoint news pages can generate an **AI audio summary** you can listen to instead of reading. This is in the **SharePoint app for Teams** — the Viva Connections experience — rather than everywhere a news page appears.
+SharePoint news pages can generate an **AI audio summary** you can listen to instead of reading. This is in the SharePoint app for Teams — the Viva Connections experience — rather than everywhere a news page appears.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Internal comms compete with everything else in someone's day. Audio catches the commute and the walk between meetings, which is time reading never gets.</p>
@@ -539,7 +539,7 @@ SharePoint news pages can generate an **AI audio summary** you can listen to ins
 
 *For: Power Automate + SharePoint · Public Preview · Rolled out June 2026*
 
-A new Power Automate action, **Generate document from form (Preview)**, builds a document from a **template** by mapping form inputs to predefined fields in that template. You fill in the form, the flow produces the finished document.
+A new Power Automate action, **Generate document from form (Preview)**, builds a document from a template by mapping form inputs to predefined fields in that template. You fill in the form, the flow produces the finished document.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Most organisations have a handful of documents that are 90 per cent boilerplate and 10 per cent variables — contracts, statements of work, onboarding packs, change requests. Those are usually produced by someone copying last month's version and hoping they caught every name. Mapping the variables to a form is the unglamorous fix that removes a whole class of embarrassing errors.</p>
@@ -579,7 +579,7 @@ One thing Microsoft's note does not say is whether a Copilot licence is needed t
 
 *For: Microsoft 365 Copilot Chat + Power BI through Work IQ · Frontier · Rolled out June 2026*
 
-Microsoft's June roundup said Copilot could reason over **Power BI enterprise data** and return grounded answers from **Power BI reports and semantic models**. Eligible Frontier users with Microsoft 365 Copilot Premium and permission/licensed access to the relevant Power BI reports and semantic models could ask a natural-language question without first building a query or exporting the data.
+Microsoft's June roundup said Copilot could reason over **Power BI enterprise data** and return grounded answers from Power BI reports and semantic models. Eligible Frontier users with Microsoft 365 Copilot Premium and permission/licensed access to the relevant Power BI reports and semantic models could ask a natural-language question without first building a query or exporting the data.
 
 This keeps the answer inside Copilot while the underlying BI model remains governed. The semantic model still supplies the business definitions; Copilot gives the user a simpler way to ask the question.
 
@@ -597,7 +597,7 @@ This keeps the answer inside Copilot while the underlying BI model remains gover
 
 *For: Microsoft 365 Copilot Chat · Rolled out June 2026*
 
-The latest Copilot response gained a **Regenerate** path with simple actions such as **Try Again** and **Switch Model**. Users could explore another answer without copying the prompt into a new chat or rebuilding the context from scratch.
+The latest Copilot response gained a **Regenerate** path with simple actions such as Try Again and Switch Model. Users could explore another answer without copying the prompt into a new chat or rebuilding the context from scratch.
 
 The model switch is especially useful when the first response is structurally fine but the task needs a different kind of reasoning. The conversation stays in place while the user changes the engine behind the next attempt.
 
@@ -637,9 +637,9 @@ The roadmap entry adds one detail the roundup leaves out: the feature **taps int
 
 *For: Copilot Notebooks · TXT and RTF rolled out July 2026 · Markdown rolling out August 2026*
 
-Notebooks can now take **Markdown (.md), TXT (.txt) and RTF (.rtf)** files as references, alongside the file types they already supported. That covers software documentation, video transcripts and rich-text notes.
+Notebooks can now take Markdown (.md), TXT (.txt) and RTF (.rtf) files as references, alongside the file types they already supported. That covers software documentation, video transcripts and rich-text notes.
 
-Worth reading the timing carefully, because Microsoft split it: **TXT and RTF rolled out in July, and Markdown support rolls out in August.**
+Worth reading the timing carefully, because Microsoft split it: TXT and RTF rolled out in July, and Markdown support rolls out in August.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Markdown is where a lot of technical truth actually lives — READMEs, runbooks, exported notes. Until now that content had to be converted before Copilot could reason over it.</p>
@@ -656,7 +656,7 @@ Worth reading the timing carefully, because Microsoft split it: **TXT and RTF ro
 
 Copilot Notebooks expanded beyond people with a paid Microsoft 365 Copilot licence to **Copilot Chat users**. More people could gather project references in one place and work from the same notebook context.
 
-The June article called out tools such as **mind maps** and **study guides** alongside the shared reference workspace. This is access expansion rather than a new Notebook concept: the important change is who can use it.
+The June article called out tools such as **mind maps** and study guides alongside the shared reference workspace. This is access expansion rather than a new Notebook concept: the important change is who can use it.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Shared context only works when the wider team can reach it. Expanding Notebooks to Chat users makes the project workspace useful beyond the smaller licensed group.</p>
@@ -671,7 +671,7 @@ The June article called out tools such as **mind maps** and **study guides** alo
 
 *For: Copilot Notebooks · Rolled out July 2026*
 
-You can add **Outlook emails as references inside a Copilot Notebook**, alongside the files, pages and links you already collect there. The notebook then grounds its answers in those conversations — the decisions, the caveats, the constraint somebody mentioned once and never wrote down anywhere else.
+You can add Outlook emails as references inside a Copilot Notebook, alongside the files, pages and links you already collect there. The notebook then grounds its answers in those conversations — the decisions, the caveats, the constraint somebody mentioned once and never wrote down anywhere else.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> A lot of the reasoning behind a piece of work never reaches the document. It stays in the thread. Pulling the thread into the same notebook as the deliverable means Copilot is reading the argument, not just the conclusion.</p>
@@ -690,16 +690,16 @@ You can add **Outlook emails as references inside a Copilot Notebook**, alongsid
 
 *For: Copilot Search · Rolled out July 2026*
 
-Copilot answers inside the **Copilot Search** module now give **more concise responses**, and they show more prominently that you can carry the conversation on in Copilot Chat in the sidebar.
+Copilot answers inside the **Copilot Search** module now give more concise responses, and they show more prominently that you can carry the conversation on in Copilot Chat in the sidebar.
 
-In my own tenant on **21 August 2026**, both halves hold up. The route to Chat is a **two-step path**, though, which Microsoft's one-line description does not convey.
+In my own tenant on 21 August 2026, both halves hold up. The route to Chat is a **two-step path**, though, which Microsoft's one-line description does not convey.
 
-Asking Copilot Search what was new in Copilot during July returned a **single short paragraph with citations**, visibly cut off with a fade and a **Continue reading** button, rather than the long answer this used to produce.
+Asking Copilot Search what was new in Copilot during July returned a **single short paragraph with citations**, visibly cut off with a fade and a Continue reading button, rather than the long answer this used to produce.
 
 <p><img src="/images/blog/copilot-august-2026/s10-search-concise-answer.webp" alt="Copilot Search in my own tenant, with Search selected in the left rail. Box 1 marks the search box containing the query about what is latest in Copilot in the month of July, with a Did you mean correction beneath it. The Copilot answer card returns one short paragraph summarising July's updates with two numbered citations and an AI-generated content may be incorrect badge. Box 2 marks the Continue reading button below the faded-out end of that answer. Box 3 marks the file results underneath, two PowerPoint files each showing a sensitivity label shield." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant on 21 August 2026. <strong>1</strong> the query · <strong>2</strong> the answer stops short and offers <em>Continue reading</em> · <strong>3</strong> the file results still sit underneath the answer. File preview text redacted. UI and availability may vary by tenant and rollout.</em></p>
 
-**Continue reading** expands the answer in place. It does not take you to Chat. The handoff is a *second* control that only appears once the answer is fully expanded: an **Ask Copilot** button sitting under the finished text. That is the one that opens **Copilot Chat in the right rail**, with the original question already carried across, so you can keep going without retyping it.
+**Continue reading** expands the answer in place. It does not take you to Chat. The handoff is a *second* control that only appears once the answer is fully expanded: an **Ask Copilot** button sitting under the finished text. That is the one that opens Copilot Chat in the right rail, with the original question already carried across, so you can keep going without retyping it.
 
 <p><img src="/images/blog/copilot-august-2026/s10b-ask-copilot-chat-rail.webp" alt="The expanded Copilot Search answer on the left, now three paragraphs long. Box 1 marks an Ask Copilot button beneath the finished answer, next to thumbs up and thumbs down icons and a References row. On the right, Copilot Chat is open in the side rail: box 2 marks the original question repeated as a user message at the top, and box 3 marks the Message Copilot composer at the bottom of the rail." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant on 21 August 2026. <strong>1</strong> <em>Ask Copilot</em> appears only after the answer is expanded · <strong>2</strong> the question is carried into Chat for you · <strong>3</strong> the composer is there to keep the thread going. The source-filter column between the two panes has been removed. UI and availability may vary by tenant and rollout.</em></p>
@@ -714,9 +714,9 @@ Asking Copilot Search what was new in Copilot during July returned a **single sh
 
 *For: Microsoft 365 Copilot · Rolled out July 2026*
 
-Copilot now lets you **manage your own sources** directly, and **scope a specific prompt to a single connector**. So you can tell Copilot to answer only from, say, your ticketing system rather than everything it can reach.
+Copilot now lets you **manage your own sources** directly, and scope a specific prompt to a single connector. So you can tell Copilot to answer only from, say, your ticketing system rather than everything it can reach.
 
-One clarification, because the wording invites the wrong reading: users are not deploying arbitrary connectors. An **admin enables** the connector for the tenant; the user then **authenticates to it** and chooses when to point a prompt at it.
+One clarification, because the wording invites the wrong reading: users are not deploying arbitrary connectors. An **admin enables** the connector for the tenant; the user then authenticates to it and chooses when to point a prompt at it.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Most bad Copilot answers are not the model being wrong — they are the model reading the wrong thing. Being able to say "only look here" is the simplest quality control there is.</p>
@@ -731,9 +731,9 @@ One clarification, because the wording invites the wrong reading: users are not 
 
 *For: Microsoft 365 Copilot · DoD cloud · Rolled out June 2026*
 
-Copilot connectors — including **Atlassian Jira and Confluence** — became available for **DoD** tenants. They were already available in **GCC and GCC High**, so this closes the last gap across the US government clouds.
+Copilot connectors — including **Atlassian Jira and Confluence** — became available for DoD tenants. They were already available in GCC and GCC High, so this closes the last gap across the US government clouds.
 
-Microsoft is explicit about where the data ends up, which is the part that matters in this cloud: content is indexed into **Microsoft Graph** and stays **inside the tenant boundary**, with existing permissions, compliance policies and security controls still governing access.
+Microsoft is explicit about where the data ends up, which is the part that matters in this cloud: content is indexed into **Microsoft Graph** and stays inside the tenant boundary, with existing permissions, compliance policies and security controls still governing access.
 
 <p><img src="/images/blog/copilot-august-2026/s19-gov-cloud-connector-progression.webp" alt="A four-step diagram titled Copilot connectors across the US government clouds. Commercial, GCC and GCC High are each shown as already available in muted boxes joined by arrows. The fourth box, DoD, is outlined in red and labelled June 2026. A note underneath reads that this includes Atlassian Jira and Confluence, and that content is indexed into Microsoft Graph and stays inside the tenant boundary with existing permissions, compliance policies and security controls still governing access." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram, drawn from Microsoft's July 2026 roundup — not a screenshot. I have no DoD tenant to capture this in. The red box marks the cloud that changed.</em></p>
@@ -748,7 +748,7 @@ Microsoft is explicit about where the data ends up, which is the part that matte
 
 *For: Microsoft 365 Copilot · Copilot connectors · Rolled out July 2026*
 
-Microsoft expanded the **Copilot connectors catalogue** with a set of clearly industry-shaped sources. Grouped by the industries Microsoft itself named: **financial services** (Daloopa, FactSet, Fitch Solutions, Morningstar, PitchBook, S&P Global), **professional services** (Dice, Forrester, HG Insights), **industrial and manufacturing** (Infor Nexus, Sight Machine), **healthcare and life sciences** (Article Galaxy, Nyquist AI), and **retail and consumer goods** (Passby Pulse, Polar Analytics).
+Microsoft expanded the **Copilot connectors catalogue** with a set of clearly industry-shaped sources. Grouped by the industries Microsoft itself named: financial services (Daloopa, FactSet, Fitch Solutions, Morningstar, PitchBook, S&P Global), professional services (Dice, Forrester, HG Insights), industrial and manufacturing (Infor Nexus, Sight Machine), healthcare and life sciences (Article Galaxy, Nyquist AI), and retail and consumer goods (Passby Pulse, Polar Analytics).
 
 <p><img src="/images/blog/copilot-august-2026/s20-industry-connectors.webp" alt="A five-row chart titled Copilot connectors added in July 2026, grouped by the industries Microsoft named, with a count of 15 connectors marked in red. Financial services lists Daloopa, FactSet, Fitch Solutions, Morningstar, PitchBook and S and P Global. Professional services lists Dice, Forrester and HG Insights. Industrial and manufacturing lists Infor Nexus and Sight Machine. Healthcare and life sciences lists Article Galaxy and Nyquist AI. Retail and consumer goods lists Passby Pulse and Polar Analytics." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own chart of the July additions — not a screenshot. My tenant is not licensed for any of these, so there is nothing for me to capture.</em></p>
@@ -765,7 +765,7 @@ These are connectors, not plugins — they bring an external body of knowledge i
 
 *For: Researcher agent in Microsoft 365 Copilot · Rolled out June 2026*
 
-For eligible users, Researcher added model and mode choices directly in the Copilot conversation. Microsoft's support experience shows **Auto/Critique**, **Model Council**, **GPT** and **Claude** paths; Claude requires admin-enabled Anthropic access, and the new Auto and Model Council features require Frontier.
+For eligible users, Researcher added model and mode choices directly in the Copilot conversation. Microsoft's support experience shows **Auto/Critique**, Model Council, GPT and Claude paths; Claude requires admin-enabled Anthropic access, and the new Auto and Model Council features require Frontier.
 
 Auto uses GPT responses refined by Claude; Model Council combines GPT and Claude deep reasoning; the GPT and Claude choices let the user select one provider's deep-reasoning path directly.
 
@@ -782,7 +782,7 @@ Auto uses GPT responses refined by Claude; Model Council combines GPT and Claude
 
 *For: Planner Agent in Microsoft 365 Copilot · Rolled out June 2026*
 
-Planner Agent could return **interactive task cards** and help people prioritise work across Planner plans. From natural language, users could create or update tasks and ask the agent to build a structured plan with **goals and buckets**.
+Planner Agent could return **interactive task cards** and help people prioritise work across Planner plans. From natural language, users could create or update tasks and ask the agent to build a structured plan with goals and buckets.
 
 The official example shows a draft campaign plan with dated tasks and a **Save plan** action. The conversation is not only describing the plan; it is preparing Planner work the user can review and save.
 
@@ -805,7 +805,7 @@ The official example shows a draft campaign plan with dated tasks and a **Save p
 
 **Anthropic's Claude Fable 5** is available in Copilot Cowork, in **Preview**, as an option for longer, more complex work. Anthropic positions it for ambitious, long-running projects — sustained reasoning, deeper context handling, and the ability to plan, execute and check its own work across multi-stage tasks.
 
-Two details that are easy to miss. It is **off by default** — an admin has to turn it on in the Microsoft 365 admin centre under Copilot settings, so it will not simply appear for your users. And Fable 5 **requires data retention**: Microsoft's own change log says your prompts and responses for that model are retained by the model provider. Cowork shows a banner while the model is selected, so the person using it can see that is happening.
+Two details that are easy to miss. It is **off by default** — an admin has to turn it on in the Microsoft 365 admin centre under Copilot settings, so it will not simply appear for your users. And Fable 5 requires data retention: Microsoft's own change log says your prompts and responses for that model are retained by the model provider. Cowork shows a banner while the model is selected, so the person using it can see that is happening.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> The interesting part is not another name in the model list. It is that Cowork is being pointed at work that runs for hours rather than seconds, where the model has to keep its footing without someone supervising every step. The opt-in is not a formality — it is a decision about where your prompts go.</p>
@@ -826,7 +826,7 @@ Two details that are easy to miss. It is **off by default** — an admin has to 
 
 *For: Copilot Cowork · Frontier first, possibly broader now — see below · Rolled out July 2026*
 
-Cowork tasks used to run when you asked, or on a schedule. Now they can run when **something happens**. You describe the trigger in plain language — a message from a particular **sender**, an **@mention**, a **keyword or topic**, or a named **event** — and Cowork watches for it across **Teams chats and channels, Outlook email and meetings**.
+Cowork tasks used to run when you asked, or on a schedule. Now they can run when **something happens**. You describe the trigger in plain language — a message from a particular sender, an @mention, a keyword or topic, or a named event — and Cowork watches for it across Teams chats and channels, Outlook email and meetings.
 
 The example in Microsoft's own image is the giveaway: you write the task, and Cowork comes back with a **"Set up trigger?"** card rather than making you build the automation yourself.
 
@@ -847,7 +847,7 @@ The example in Microsoft's own image is the giveaway: you write the task, and Co
 
 *For: Copilot Cowork · Rolled out June 2026*
 
-Cowork gained **automatic model choice**. It could use **OpenAI GPT 5.5** for deeper research and citation-heavy work, or supported **Anthropic models** for visual tasks such as PowerPoint and graphics.
+Cowork gained **automatic model choice**. It could use OpenAI GPT 5.5 for deeper research and citation-heavy work, or supported Anthropic models for visual tasks such as PowerPoint and graphics.
 
 The useful part is not another model picker. Cowork can decide which model fits the task without asking the user to understand every model first. The user still defines the outcome; Cowork chooses the engine behind the work.
 
@@ -868,7 +868,7 @@ The useful part is not another model picker. Cowork can decide which model fits 
 
 *For: Copilot Cowork · Rolled out June 2026*
 
-Cowork's plugin catalogue expanded into more of the systems people already use. Microsoft's roundup named **enosix arnold for Copilot Cowork, Harvey, LSEG, Miro, monday.com, Moodys Credit MCP, Morningstar, S&P Global Energy and AI Meeting Notes TeamsMaestro**, with **Databricks** available through sideloading.
+Cowork's plugin catalogue expanded into more of the systems people already use. Microsoft's roundup named enosix arnold for Copilot Cowork, Harvey, LSEG, Miro, monday.com, Moodys Credit MCP, Morningstar, S&P Global Energy and AI Meeting Notes TeamsMaestro, with **Databricks** available through sideloading.
 
 **Fabric IQ** and named **Dynamics 365** plugins — Customer Service, ERP and Sales — were also supported. That means a Cowork task can draw on more business context without asking the user to manually gather and paste everything into the prompt.
 
@@ -885,7 +885,7 @@ Cowork's plugin catalogue expanded into more of the systems people already use. 
 
 *For: Copilot Cowork · Customize · Timing disputed, see below*
 
-The same **Customize** surface has a second tab. **Skills** is where the reusable instructions live, and it gained authoring controls: **Create new** for writing a skill in place, and **Upload skill** for bringing in a `.md`, `.zip` or `.skill` file. Each skill has an owner and can be shared, so a working method can move from one person's habit into something the whole team can call.
+The same **Customize** surface has a second tab. Skills is where the reusable instructions live, and it gained authoring controls: Create new for writing a skill in place, and Upload skill for bringing in a `.md`, `.zip` or `.skill` file. Each skill has an owner and can be shared, so a working method can move from one person's habit into something the whole team can call.
 
 <blockquote class="callout callout-warn">
 <p><strong>Timing note:</strong> Microsoft's own sources disagree on this one. The July roundup presents skill authoring as a July addition, while the current Cowork support documentation places the guided skill builder and skill uploads in June. I have flagged the conflict rather than quietly pick a date.</p>
@@ -904,7 +904,7 @@ The same **Customize** surface has a second tab. **Skills** is where the reusabl
 
 *For: Copilot Cowork · Rolled out June 2026*
 
-Cowork could create and edit **deck graphics, document illustrations and email imagery** inside the task itself. Microsoft's June article described the experience as powered by **OpenAI's ChatGPT Images 2.0**.
+Cowork could create and edit deck graphics, document illustrations and email imagery inside the task itself. Microsoft's June article described the experience as powered by **OpenAI's ChatGPT Images 2.0**.
 
 That keeps the visual step inside the same flow as the research, writing and file creation. Instead of stopping to find another tool, the user can ask Cowork to create the image the deliverable needs.
 
@@ -921,7 +921,7 @@ That keeps the visual step inside the same flow as the research, writing and fil
 
 *For: Copilot Cowork + organisational asset library · Rolled out June 2026*
 
-Cowork could use **branded PowerPoint templates from an organisation's asset library**. Generated presentations could begin with the approved colours, fonts, logos and layouts instead of needing a manual brand-clean-up pass afterward.
+Cowork could use branded PowerPoint templates from an organisation's asset library. Generated presentations could begin with the approved colours, fonts, logos and layouts instead of needing a manual brand-clean-up pass afterward.
 
 This is separate from image generation. One capability creates the visual content; the other makes sure the final deck looks like it belongs to the organisation that asked for it.
 
@@ -957,7 +957,7 @@ The official image also shows an approval boundary: when the browser needs a sig
 
 *For: Copilot Cowork on iOS and Android · Rolled out June 2026*
 
-Cowork could send push notifications when a long-running task needed **approval**, needed more **input**, or had **completed**. The user no longer had to keep the task open and watch it work.
+Cowork could send push notifications when a long-running task needed **approval**, needed more input, or had completed. The user no longer had to keep the task open and watch it work.
 
 The notification becomes the hand-off point. Cowork can continue in the background, then bring the person back only when a decision or result is ready.
 
@@ -978,9 +978,9 @@ The notification becomes the hand-off point. Cowork can continue in the backgrou
 
 Three changes landed in Cost Management, and one of them needs an admin to actually do something.
 
-- **Improved spending alerts.** Alerts got better — and Microsoft's guidance is that **admins should recreate alerts on existing spending policies** where they rely on those notifications. Microsoft does not spell out what happens to an alert you leave alone, so if a notification matters to you, recreate it rather than assume.
+- **Improved spending alerts.** Alerts got better — and Microsoft's guidance is that admins should recreate alerts on existing spending policies where they rely on those notifications. Microsoft does not spell out what happens to an alert you leave alone, so if a notification matters to you, recreate it rather than assume.
 - **Clearer policy logic.** If a user falls under more than one spending policy, they stay on the one with the **highest per-user limit**, and they are not moved to a different policy when they hit that limit.
-- **Kinder overage handling.** A user who reaches their limit part-way through a task can finish that task. Microsoft's stated intent is that the overage is **not charged**, and that it does not appear as consumed credits in the Cost Management dashboards. Read the fine print on that one: Learn describes the nonbilling as being at **Microsoft's sole discretion**, and the not-shown-as-consumed promise is scoped to those dashboards.
+- **Kinder overage handling.** A user who reaches their limit part-way through a task can finish that task. Microsoft's stated intent is that the overage is **not charged**, and that it does not appear as consumed credits in the Cost Management dashboards. Read the fine print on that one: Learn describes the nonbilling as being at Microsoft's sole discretion, and the not-shown-as-consumed promise is scoped to those dashboards.
 
 The policy logic point is the one that trips people up: a spending policy sets a limit, it does not allocate or reserve a pool of credits for those users.
 
@@ -999,9 +999,9 @@ The policy logic point is the one that trips people up: a spending policy sets a
 
 *For: Microsoft 365 admin center + usage-based Copilot experiences · Rolled out June 2026*
 
-I had covered Cowork's usage billing and spending limits, but not the complete **Cost Management Dashboard** workflow. Administrators could create group **spending policies** and limits, monitor **Copilot Credits** consumption, and work across both **prepaid credits and pay-as-you-go billing**.
+I had covered Cowork's usage billing and spending limits, but not the complete **Cost Management Dashboard** workflow. Administrators could create group spending policies and limits, monitor Copilot Credits consumption, and work across both prepaid credits and pay-as-you-go billing.
 
-Two details are easy to get wrong. A spending policy controls **who can spend and how much** — it does **not** allocate or reserve credits for that group. And prepaid and pay-as-you-go are not an either/or choice: **prepaid capacity is consumed first**, and once it is exhausted, usage continues through pay-as-you-go.
+Two details are easy to get wrong. A spending policy controls who can spend and how much — it does **not** allocate or reserve credits for that group. And prepaid and pay-as-you-go are not an either/or choice: prepaid capacity is consumed first, and once it is exhausted, usage continues through pay-as-you-go.
 
 The same surface includes reporting, budgets, alerts and hard caps. The overview shows total credits, prepaid and pay-as-you-go use, active users, requests for increases and policies nearing their limits.
 
@@ -1018,9 +1018,9 @@ The same surface includes reporting, budgets, alerts and hard caps. The overview
 
 *For: Viva Insights · Copilot Analytics · Rolled out June 2026*
 
-Copilot Analytics in **Viva Insights** gained a view of **AI spend — Copilot credit usage — at group and team level**, rather than only tenant-wide totals. The services in scope are **Cowork and the Work IQ API**, and it appears both as a dashboard and in Advanced insights.
+Copilot Analytics in **Viva Insights** gained a view of AI spend — Copilot credit usage — at group and team level, rather than only tenant-wide totals. The services in scope are Cowork and the Work IQ API, and it appears both as a dashboard and in Advanced insights.
 
-Access is narrower than "any admin": Microsoft scopes the dashboard experience to **managers with at least five direct reports**, alongside Insights Analysts and Global Administrators.
+Access is narrower than "any admin": Microsoft scopes the dashboard experience to managers with at least five direct reports, alongside Insights Analysts and Global Administrators.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> A single tenant-wide credit number tells you almost nothing useful. It cannot tell you whether spend is concentrated in one team doing something genuinely valuable or spread thinly across people experimenting once and never returning. Breaking it down by team is what turns a bill into a decision.</p>
@@ -1039,11 +1039,11 @@ Access is narrower than "any admin": Microsoft scopes the dashboard experience t
 
 *For: SharePoint and OneDrive · Agent Access Insights · Rolled out July 2026 · roadmap 565027 still reads In development*
 
-**Agent Access Insights** now includes a **heatmap** of agent activity across **SharePoint sites and OneDrive accounts**. You can see how requests are distributed, which sites are busiest, and where activity is concentrated — Microsoft documents a site-level view with up to 20 agents listed per site, not a file-by-file read list.
+**Agent Access Insights** now includes a **heatmap** of agent activity across SharePoint sites and OneDrive accounts. You can see how requests are distributed, which sites are busiest, and where activity is concentrated — Microsoft documents a site-level view with up to 20 agents listed per site, not a file-by-file read list.
 
-Getting to it needs a **SharePoint admin**, plus either **SharePoint Advanced Management** or Microsoft 365 Copilot licensing.
+Getting to it needs a **SharePoint admin**, plus either SharePoint Advanced Management or Microsoft 365 Copilot licensing.
 
-One thing to plan for before you go looking: without a SharePoint Advanced Management licence you are asked to **turn data collection on first**. Reports can be generated **24 hours later**, and they only contain data **from the point collection started** — there is no backfill of what your agents did last month. Data is kept for **28 days**, reports cover a 1, 7, 14 or 28 day window, and if nobody runs one for three months collection pauses and has to be switched back on.
+One thing to plan for before you go looking: without a SharePoint Advanced Management licence you are asked to **turn data collection on first**. Reports can be generated 24 hours later, and they only contain data from the point collection started — there is no backfill of what your agents did last month. Data is kept for 28 days, reports cover a 1, 7, 14 or 28 day window, and if nobody runs one for three months collection pauses and has to be switched back on.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> The honest question every organisation has about agents is "what are they actually touching?" This is the first view that answers it with data rather than assurances.</p>
@@ -1060,7 +1060,7 @@ One thing to plan for before you go looking: without a SharePoint Advanced Manag
 
 The **Agent 365 Dashboard** gives eligible leaders and analysts a consolidated view of agent activity across the tenant.
 
-Where to find it matters here, because the name sends people the wrong way: it is in **Copilot Analytics inside the Viva Insights web app**, not a report in the Microsoft 365 admin center. The access bar is higher than "an admin can open it" - Microsoft documents **Agent 365 licensing, at least 50 assigned Microsoft 365 Copilot licences, and actual agent activity** before the view populates.
+Where to find it matters here, because the name sends people the wrong way: it is in Copilot Analytics inside the Viva Insights web app, not a report in the Microsoft 365 admin center. The access bar is higher than "an admin can open it" - Microsoft documents Agent 365 licensing, at least 50 assigned Microsoft 365 Copilot licences, and actual agent activity before the view populates.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Agents multiply quietly. A single dashboard is how you notice that before it becomes a governance conversation you did not choose to have.</p>
@@ -1075,7 +1075,7 @@ Where to find it matters here, because the name sends people the wrong way: it i
 
 *For: Microsoft 365 admin center · Public Preview · Rolled out June 2026*
 
-A **Copilot connectors usage report** is available in **Public Preview**, showing how connectors are being used across the tenant.
+A **Copilot connectors usage report** is available in Public Preview, showing how connectors are being used across the tenant.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Connectors are easy to add and easy to forget. Usage data tells you which ones earned their place and which are just extra surface area.</p>
@@ -1090,7 +1090,7 @@ A **Copilot connectors usage report** is available in **Public Preview**, showin
 
 *For: Microsoft 365 admin center · GCC, GCC High, DoD · Rolled out July 2026 · roadmap 567121 still reads In development*
 
-The **Microsoft 365 Copilot Chat usage report** is now available in **GCC, GCC High and DoD** tenants, so government customers get the same adoption reporting commercial tenants have.
+The Microsoft 365 Copilot Chat usage report is now available in **GCC, GCC High and DoD** tenants, so government customers get the same adoption reporting commercial tenants have.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Adoption reporting is how these programmes get funded and defended. Not having it was a genuine handicap for government admins.</p>
@@ -1107,7 +1107,7 @@ The **Microsoft 365 Copilot Chat usage report** is now available in **GCC, GCC H
 
 Microsoft said **agent metrics for custom reporting** would be available to Insights Analysts. They could combine granular agent usage with organisational context and build reports beyond the predefined dashboards.
 
-The official workbench shows a custom Agent query with metrics such as **agent responses generated**, **Copilot Credits used for agents** and returning-agent-user measures over selected time periods.
+The official workbench shows a custom Agent query with metrics such as **agent responses generated**, Copilot Credits used for agents and returning-agent-user measures over selected time periods.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> A fixed dashboard answers the common question. Custom agent metrics let analysts test the question their organisation actually has: which agents are returning value, where adoption is sticking and what usage costs.</p>
@@ -1124,7 +1124,7 @@ The official workbench shows a custom Agent query with metrics such as **agent r
 
 {{< margin >}}Announced in an official roundup, withdrawn a fortnight later. Here the news is the reversal.{{< /margin >}}
 
-Microsoft announced that admins could **exclude specific domains** from web grounding, so Copilot would not use those sites when searching the web to answer a question. The announcement stated support for **up to 1,000 domains**.
+Microsoft announced that admins could **exclude specific domains** from web grounding, so Copilot would not use those sites when searching the web to answer a question. The announcement stated support for up to 1,000 domains.
 
 On **4 August 2026**, Microsoft rolled the feature back. Their update says the capability "has been rolled back at this time" and that they are "actively evaluating next steps".
 
@@ -1145,9 +1145,9 @@ On **4 August 2026**, Microsoft rolled the feature back. Their update says the c
 
 *For: Microsoft 365 Copilot admin controls · Rolled out June 2026*
 
-Admins gained control over whether users can share their **screen** or **camera** with Copilot Vision, rather than treating Vision as one all-or-nothing switch.
+Admins gained control over whether users can share their **screen** or camera with Copilot Vision, rather than treating Vision as one all-or-nothing switch.
 
-The panel in Microsoft's June article shows **All users** and **No users** choices for screens and cameras, plus guidance to use policy management when the control needs to apply to a specific group.
+The panel in Microsoft's June article shows **All users** and No users choices for screens and cameras, plus guidance to use policy management when the control needs to apply to a specific group.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Screen and camera input can expose very different kinds of context. Being able to scope Vision lets an organisation decide where it fits their data policy instead of making one blunt decision for every scenario.</p>
@@ -1202,9 +1202,9 @@ Microsoft Learn confirms that hybrid-joined devices are supported, but the publi
 
 Microsoft Purview gained a Data Loss Prevention control that stops Microsoft 365 Copilot and Copilot Chat using **emails from external senders** as grounding data. With it on, Copilot excludes those emails from grounding, summarisation and citation, and carries on using your internal Microsoft 365 content where permitted. Microsoft's June roundup adds that agents built in Copilot Studio and published into Microsoft 365 Copilot are covered too, where they use only Microsoft 365 data. The user's own access to the email is untouched — this changes only what Copilot is allowed to read.
 
-It is an ordinary DLP rule rather than a switch, so nothing happens until somebody builds it. On screen the condition reads **Email is received from → People outside my organization** and the action is **Restrict Copilot from processing content** with **Accessing knowledge sources** set to **Block**. Microsoft's documentation labels the same pair **External users** and **Prevent Copilot from processing content** — so the label in the docs is not always the label on the screen.
+It is an ordinary DLP rule rather than a switch, so nothing happens until somebody builds it. On screen the condition reads Email is received from → People outside my organization and the action is **Restrict Copilot from processing content** with Accessing knowledge sources set to Block. Microsoft's documentation labels the same pair External users and Prevent Copilot from processing content — so the label in the docs is not always the label on the screen.
 
-Two things worth knowing before you pilot it. The rule reads **metadata only**: it compares the sender's domain against your tenant's accepted domains and never inspects the body of the message. And the location is offered only in the **Custom** policy template, and selecting it switches every other location in that policy off — so this rule ends up living in a policy of its own.
+Two things worth knowing before you pilot it. The rule reads **metadata only**: it compares the sender's domain against your tenant's accepted domains and never inspects the body of the message. And the location is offered only in the Custom policy template, and selecting it switches every other location in that policy off — so this rule ends up living in a policy of its own.
 
 Microsoft's reason for building it is not the usual data-leak framing. The control, Microsoft's documentation says, "helps organizations reduce the risk of **prompt injection** and untrusted data influence."
 
@@ -1241,7 +1241,7 @@ I would rather list these as things to watch than give them a status I cannot cu
 
 Microsoft's own August roundup had not published when this went out. Rather than wait for it, this issue covers everything I could verify from Microsoft's [official July roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332), published on **31 July 2026**, and the sources it links to. Each section keeps the month Microsoft stated, so you can tell what is landing now from what landed earlier. Anything Microsoft's August roundup adds will go into the September issue.
 
-**Why some sections are older than August.** These go out in the middle of the month, which is usually before Microsoft publishes its own roundup for that month. Every issue therefore misses a few things. Rather than leave the gaps, I run a strict comparison against the previous roundup and fold whatever I missed into the next issue. For this one, comparing against Microsoft's [official June roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572) found **29 capabilities I had not materially covered**, plus **one Cost Management item I had only covered partially** and **two items I had listed only as things to watch** that have since launched — **32 items in total**. They keep the rollout date Microsoft stated and are not relabelled as August news. A few have since shipped in July or August, and where that is true the section carries the later date. The three items in the horizon section above appeared only on my watch list, so they are tracked there rather than numbered here. September will work the same way, with anything I miss this month folded in there.
+**Why some sections are older than August.** These go out in the middle of the month, which is usually before Microsoft publishes its own roundup for that month. Every issue therefore misses a few things. Rather than leave the gaps, I run a strict comparison against the previous roundup and fold whatever I missed into the next issue. For this one, comparing against Microsoft's [official June roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572) found 29 capabilities I had not materially covered, plus one Cost Management item I had only covered partially and two items I had listed only as things to watch that have since launched — **32 items in total**. They keep the rollout date Microsoft stated and are not relabelled as August news. A few have since shipped in July or August, and where that is true the section carries the later date. The three items in the horizon section above appeared only on my watch list, so they are tracked there rather than numbered here. September will work the same way, with anything I miss this month folded in there.
 
 **About the roadmap numbers.** Where I could match a section to a Microsoft 365 Roadmap entry, the number is linked at the end of that section. Treat it as a pointer to Microsoft's own record, not as proof of what is live in your tenant — roadmap status lags reality in both directions. Section 55 is the clearest example: its roadmap entry still reads *Launched* even though Microsoft withdrew the feature on 4 August 2026.
 

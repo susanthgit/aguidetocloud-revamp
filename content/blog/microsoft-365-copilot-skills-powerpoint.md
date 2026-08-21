@@ -30,7 +30,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-**Living walkthrough.** Microsoft announced that reusable PowerPoint Skills rolled out in July 2026. The public support page documents the workflow, but it does not provide a complete platform, channel, or licence matrix. **Public sources last checked: 31 July 2026.**
+**Living walkthrough.** Microsoft announced that reusable PowerPoint Skills rolled out in July 2026. The public support page documents the workflow, but it does not provide a complete platform, channel, or licence matrix. Public sources last checked: 31 July 2026.
 
 </div>
 
@@ -71,7 +71,7 @@ Microsoft's June 2026 feature update says reusable PowerPoint Skills **rolled ou
 
 > **Things to know**
 >
-> If another person can see **Choose skills** and you cannot, do not assume your app is broken. Check your licence, organisation settings, update channel, and rollout state first. The exact availability matrix is not fully documented publicly.
+> If another person can see Choose skills and you cannot, do not assume your app is broken. Check your licence, organisation settings, update channel, and rollout state first. The exact availability matrix is not fully documented publicly.
 
 ## Choose a Skill in PowerPoint
 
@@ -79,8 +79,8 @@ The quickest route starts in the Copilot prompt box.
 
 1. Open the presentation you want to work on.
 2. Open Copilot in PowerPoint.
-3. Select the **+** menu in the prompt field.
-4. Select **Choose skills**.
+3. Select the + menu in the prompt field.
+4. Select Choose skills.
 5. Pick the Skill you want Copilot to use.
 6. Add the rest of your request and send it.
 
@@ -137,11 +137,11 @@ Microsoft documents three routes. They all lead to the same basic result: a cust
 
 ### Option 1: Upload a Skill from PowerPoint
 
-1. In the Copilot prompt box, select **+**.
-2. Select **Choose skills**.
+1. In the Copilot prompt box, select +.
+2. Select Choose skills.
 3. Scroll to the end of the list.
-4. Select **Manage skills**.
-5. Select **Add skill**.
+4. Select Manage skills.
+5. Select Add skill.
 6. Upload or drag and drop the Skill files.
 
 <!-- Screenshot planned: PowerPoint Custom skills pane with Add skill menu open, showing Create manually and Upload skill. -->
@@ -152,15 +152,15 @@ Microsoft documents three routes. They all lead to the same basic result: a cust
 
 PowerPoint saves the uploaded Skill to your OneDrive Skills folder. Microsoft says it should then be available from the Skill dropdown.
 
-If it does not appear, open **Manage skills** and select **Refresh**.
+If it does not appear, open Manage skills and select **Refresh**.
 
-> **Things to know**
+> Things to know
 >
 > A custom Skill uploaded this way is for your personal use. The public PowerPoint page does not describe a tenant-wide publishing workflow for the picker. Treat organisation-published PowerPoint Skills as unconfirmed rather than borrowing Cowork's plugin deployment model.
 
 ### Option 2: Paste a Skill through Add skill
 
-The **Add skill** flow also provides a form where you can paste the Skill.
+The Add skill flow also provides a form where you can paste the Skill.
 
 After you select **Add**, PowerPoint saves it to the same OneDrive Skills location.
 
@@ -176,14 +176,14 @@ Before you paste anything, read it. A Skill is an instruction set that Copilot w
 
 You can manage the files yourself:
 
-1. In the Copilot pane, open **Settings**.
-2. Select **Manage skills**.
+1. In the Copilot pane, open Settings.
+2. Select Manage skills.
 3. Select **Custom skills**.
 4. Select **Create OneDrive folder**.
 5. Select **Open skills folder**.
 6. Add one folder per Skill.
 7. Put `SKILL.md` inside each folder.
-8. Return to PowerPoint and select **Refresh**.
+8. Return to PowerPoint and select Refresh.
 
 This is the clearest route when you want to manage the Skill folder yourself. Keep the first version simple: one folder and one `SKILL.md`. If you add references, templates, or other companion files, test that PowerPoint actually uses them before relying on them.
 
@@ -255,7 +255,7 @@ PowerPoint skips a folder when its folder name does not match the `name` in `SKI
 
 ## Edit, replace, disable, or delete a Skill
 
-Open **Manage skills**, then open **Custom skills**.
+Open Manage skills, then open Custom skills.
 
 Depending on the Skill and how it was added, the pane can show actions such as:
 
@@ -267,7 +267,7 @@ Depending on the Skill and how it was added, the pane can show actions such as:
 
 *Official UI reference: [Microsoft Support — edit or remove PowerPoint Skills](https://support.microsoft.com/en-us/powerpoint/copilot/copilot-in-powerpoint-skills#edit-or-remove-skills). Use a lab Skill name with no customer or tenant data.*
 
-Microsoft's page text documents **Edit** and **Delete**. Its public screenshot also shows **Replace** for one uploaded Skill. Which action appears can depend on the upload method; check your own tenant.
+Microsoft's page text documents Edit and Delete. Its public screenshot also shows Replace for one uploaded Skill. Which action appears can depend on the upload method; check your own tenant.
 
 Use the actions for different jobs:
 

@@ -60,7 +60,7 @@ If you haven't read the [Prompt Engineering Field Guide](/blog/prompt-engineerin
 
 <div class="post-trio">
 
-📚 **Three posts on M365 Copilot prompting — pick where you are:**
+📚 Three posts on M365 Copilot prompting — pick where you are:
 
 - **🌱 [Field Guide](/blog/prompt-engineering-microsoft-365-copilot/)** — start here if you're new. Four-block framework, per-app prompts, the mistakes everyone makes.
 - **🧑‍💼 [Persona Playbook](/blog/microsoft-365-copilot-by-persona-playbook/)** — your role's worked prompts. Recruiter · Ops · Finance · IT · Sales.
@@ -132,7 +132,7 @@ It's the difference between {{< hi >}}prompting a chat tab and prompting a proje
 - You want to **share a research context** with a teammate without rewriting every prompt.
 - You're building **a body of work** over weeks — research, planning, ongoing analysis — and want a single home for it.
 
-Stay in regular Copilot Chat when the question is **one-shot** and **doesn't need multi-source grounding**. Notebooks are workspace, not chat replacement.
+Stay in regular Copilot Chat when the question is **one-shot** and doesn't need multi-source grounding. Notebooks are workspace, not chat replacement.
 
 ### What it looks like — finding, creating, and using a Notebook
 
@@ -154,7 +154,7 @@ Notebooks is a little hidden if you've never opened it before. The five screensh
 
 <p><img src="/images/blog/prompting-2026/01a4-eight-references-attached.png" alt="The Senior DE recruitment workspace Notebook left rail with 8 References attached, all listed and circled in red as a group. Reading top to bottom the list is: 16-Candidate-escalation-case-notes, 01-Senior-Data-Engineer-JD, 03-Senior-DE-intake-meeting-notes, 05-Candidate-CV-1-Jane-Doe, 06-Candidate-CV-2-John-Smith, 07-Candidate-CV-3-Priya-Patel, 09-Draft-interview-questions-need truncated, and 10-Rejection-email-template — all Word document icons. The Suggested References panel is still visible above this list. The Notebook header reads 8 References with a sort-filter control and a + icon to add more." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**5. The full Notebook workspace — the bit most people miss the first time.** With references attached, Copilot **automatically generates an Overview** in the middle of the canvas — a summary of what the notebook contains plus key insights it has already extracted across the references. You haven't even prompted yet, and you already have a synthesis. The right-rail **Ask about your content** chat is where your prompts go (this one is mid-typing). The Quick Create chips above offer one-click outputs — Audio overview, Study guide — generated from the same references. Three suggested follow-ups appear below the input box.
+**5. The full Notebook workspace — the bit most people miss the first time.** With references attached, Copilot **automatically generates an Overview** in the middle of the canvas — a summary of what the notebook contains plus key insights it has already extracted across the references. You haven't even prompted yet, and you already have a synthesis. The right-rail Ask about your content chat is where your prompts go (this one is mid-typing). The Quick Create chips above offer one-click outputs — Audio overview, Study guide — generated from the same references. Three suggested follow-ups appear below the input box.
 
 <p><img src="/images/blog/prompting-2026/01a5-notebook-full-with-prompt.png" alt="The full Senior DE recruitment workspace Notebook view with all 8 references attached and a prompt typed into the right-rail chat composer (circled in red). Left rail shows the 8 references list under a header reading 8 References. Centre area has two columns. Left column titled Summary with auto-generated text Senior DE Hiring Artifacts and a paragraph explaining the notebook consolidates interview design and candidate communication artifacts supporting a Senior Data Engineer hiring process emphasizing compliance fairness and consistent recruiter execution it captures a draft interview question set flagged for bias review alongside an HR-approved rejection template aligned with employment law and escalation guidance. Right column titled Quick Create with two chips Audio overview and Study guide, plus a Key Insights section under the heading Recruitment Process Readiness with two bullet points — Interview Questions Need Bias Review followed by The draft interview set explicitly flags bias risks including potentially leading and inappropriate personal questions and Proceeding without review could introduce compliance exposure and inconsistent candidate experience, and Standardized Rejection Communications with two bullets The rejection template is HR-approved prescribing tone timing and limits on individualized feedback and Standardization reduces legal risk and ensures consistent candidate treatment post-decision. Right rail labeled Ask about your content. The typed prompt circled in red reads summarise their alignment with the criteria the hiring manager said were most important in the intake meeting. Output a 3-column table: Criterion · Best-matching candidate evidence · Where evidence is missing or unclear. Cite each row. Do not rank, do not recommend, do not score. Flag any criterion where the intake meeting and the JD say different things. A blue send arrow at the bottom right. Three quick prompts visible below the input — Create a status report for this notebook, Draft an abstract with 5 citations listed from my References, and Describe common themes in my notebook." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -172,13 +172,13 @@ Notebook prompts have the same four blocks underneath but lean heavily on **cros
 
 > *"Across everything pinned to this notebook, what are the three biggest disconnects between what /Board deck says our priorities are and what the project team is actually doing? Cite each disconnect from a specific source."*
 
-Notice the pattern: **gap analysis, mismatch detection, cross-source synthesis**. That's what Notebooks unlock that single-chat prompts struggle with.
+Notice the pattern: gap analysis, mismatch detection, cross-source synthesis. That's what Notebooks unlock that single-chat prompts struggle with.
 
 Here's what that first prompt actually returns — the alignment table for Jane Doe (Copilot works through each of the three candidates in turn, one structured section per CV):
 
 <p><img src="/images/blog/prompting-2026/01b-notebook-cross-source-table.png" alt="Microsoft 365 Copilot Notebook chat response showing a structured 3-column table for Jane Doe with the heading Jane Doe (from 05-Candidate-CV-1-Jane-Doe.docx) and a small file-icon attribution chip. The table columns read Criterion, Best-matching candidate evidence, and Where evidence is missing or unclear. Four visible rows. Row 1 — Production Python + SQL (must-have) — Evidence: Lists Python (advanced) and SQL (advanced), notes first production Python and SQL role and senior DE work leading warehouse rebuild with a +2 citation chip. Missing: CV doesn't explicitly say written and reviewed at this level but indicates senior responsibilities and advanced skill level with a +1 citation chip. Row 2 — Cloud data platform experience (Azure ideal; AWS/GCP acceptable) (must-have) — Evidence: Led rebuild on Azure Synapse + dbt; skills include Azure Synapse and Azure Data Factory with a +2 citation chip. Missing: None noted for cloud platform requirement; Azure experience is explicit with a +1 citation chip. Row 3 — Transformation framework (dbt) (must-have) — Evidence: Explicit quote rebuild ... on ... dbt; skills list dbt (production) with a +2 citation chip. Missing: No gaps noted with a +1 citation chip. Row 4 — Mentoring track record (not optional) (scope truncated by scroll) — Evidence partly visible: Mentored 3 mid-level engineers; two promoted to (truncated). Missing partly visible: CV describes mentoring but doesn't clearly state formal (truncated). A scroll-down arrow indicator visible at the bottom of the response signalling more rows below, and a Message Copilot input box at the very bottom of the panel." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**Three things to notice in this output that come straight from the four-block prompt:**
+Three things to notice in this output that come straight from the four-block prompt:
 
 1. **Citation chips on every cell.** Each fact has a paperclip icon linking back to the source paragraph in the CV or JD — auditable, not hand-wavy. The `+2` chip means Copilot is grounding that claim in 2 source paragraphs across the references.
 2. **Honest "Missing or unclear" column.** Where the CV doesn't say something the JD asks for, Copilot calls it out instead of inventing. That's the signal a recruiter takes into the screen call.
@@ -206,7 +206,7 @@ Researcher is a first-party Copilot agent built for **multi-step research**. You
 
 ### How Researcher's prompts differ
 
-A regular Copilot Chat prompt is **single-turn**: ask, answer, iterate. A Researcher prompt is a **task brief**: scope, sources, what good looks like. Researcher then does the steps itself — you don't iterate every one.
+A regular Copilot Chat prompt is **single-turn**: ask, answer, iterate. A Researcher prompt is a task brief: scope, sources, what good looks like. Researcher then does the steps itself — you don't iterate every one.
 
 Compare:
 
@@ -216,7 +216,7 @@ Compare:
 > ✅ **Researcher task brief:** *"Research the current competitive landscape for our cloud migration product. Use /Internal battle cards, /Our product overview, and the public web. Produce a 3-page briefing — sections: Top 5 competitors with their positioning · Where we win and where we don't · Three customer-asks we've heard repeatedly that we don't currently address · Recommended angles for our next campaign. Cite every claim. Flag anything you can't verify."*  
 > Researcher plans the steps, runs them, and returns the structured briefing — with citations.
 
-Here's what the Researcher agent actually looks like inside Microsoft 365 Copilot — note the **"Sources include"** chip strip just under the agent name: Web, Agents, Adobe Experience Manager Sites, Azure DevOps, *and 10 more sources*. The agent has access to a broader source set than regular Chat. The same task brief from above sits in the composer, ready for the **Research** button (not the usual Send arrow — Researcher uses its own action button).
+Here's what the Researcher agent actually looks like inside Microsoft 365 Copilot — note the **"Sources include"** chip strip just under the agent name: Web, Agents, Adobe Experience Manager Sites, Azure DevOps, *and 10 more sources*. The agent has access to a broader source set than regular Chat. The same task brief from above sits in the composer, ready for the Research button (not the usual Send arrow — Researcher uses its own action button).
 
 <p><img src="/images/blog/prompting-2026/02a1-researcher-agent-card.png" alt="Microsoft 365 Copilot Researcher agent card. Purple-blue Researcher icon on the left. Title Researcher in large text. Created by Microsoft with a verified-tick badge. A Sources include row listing four icons with labels — Web (globe), Agents (purple sparkle), Adobe Experience Manager Sites (red A), Azure DevOps (cloud) — followed by the text and 10 more sources with a View sources link. Below the header card sits the prompt composer with the full talent-market research brief typed in: Research the talent market for Senior Data Engineers in New Zealand and Australia in 2026. Use only public sources — LinkedIn Talent Insights public reports, public NZ/AU technology salary surveys (Hays, Robert Half, Talent.com), Stack Overflow Developer Survey 2026, and Microsoft Tech Community blog posts on Azure data skills. Produce a 1-page hiring brief — Section 1: Salary ranges (cite source for each range). Section 2: In-demand technical skills for Senior DEs in 2026 (cite each). Section 3: Top 3 hiring trends affecting time-to-hire in this region. Section 4: Two specific recommendations for our internal recruitment team. Cite every claim with a URL. Flag anything you can't verify from the listed sources. A plus button on the left of the composer, a microphone icon on the right, and a circular Up-arrow send button to the far right. Below the composer two tabs labelled Research (selected, pill-style) and Sources." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -270,7 +270,7 @@ Use Excel Copilot instead when you're already inside a workbook and want quick f
 
 > *"Using /Q1 sales export CSV and /Q2 sales export CSV, calculate (1) total revenue per region per quarter, (2) percentage growth Q1→Q2 per region, (3) the top 5 customers by revenue across both quarters combined. Output as three tables. For each calculation, briefly explain the method so I can verify. Flag any data quality issues you find — missing values, duplicates, inconsistent formatting — before doing the math."*
 
-Notice the **"flag data quality issues before doing the math"** line. That's the difference between a calculated number you trust and one you don't.
+Notice the "flag data quality issues before doing the math" line. That's the difference between a calculated number you trust and one you don't.
 
 Here's what that looks like in Microsoft 365 Copilot — Analyst as the active agent, both xlsx files attached (the funnel data and the boomerang export), and the full task brief typed and ready to go. Note the three quick-action chips below the composer (*Analyze data · Get insights · Visualize*) — Analyst is positioned as a data specialist, not a general chat.
 
@@ -296,11 +296,11 @@ Here's what that looks like in Microsoft 365 Copilot — Analyst as the active a
 
 ### What this changes about how you prompt
 
-Before Work IQ was named as a thing, the framing was simpler — *"Copilot reads what you can read"*. The framing now is more useful: **Work IQ is a context layer that's already running**. When you open Copilot Chat and ask *"what did Sarah say about the Q3 plan last week?"*, Work IQ already knows who Sarah is (org chart), already knows which chats and emails to scan (recency + permissions), already knows your Q3 plan files exist (file metadata).
+Before Work IQ was named as a thing, the framing was simpler — *"Copilot reads what you can read"*. The framing now is more useful: Work IQ is a context layer that's already running. When you open Copilot Chat and ask *"what did Sarah say about the Q3 plan last week?"*, Work IQ already knows who Sarah is (org chart), already knows which chats and emails to scan (recency + permissions), already knows your Q3 plan files exist (file metadata).
 
 You don't have to be explicit about all that. Your prompt can be shorter.
 
-> 📎 **Old prompt vs better 2026 prompt.**
+> 📎 Old prompt vs better 2026 prompt.
 > ❌ *"Summarise what Sarah said about Q3."*
 > ✅ *"What did Sarah say about the Q3 plan last week across email, Teams, and meetings? Quote the source and link me back."*
 >
@@ -319,9 +319,9 @@ Work IQ output quality depends on your **tenant's data hygiene**. Specifically:
 
 ### Slash-command grounding is still there
 
-Work IQ is **the default grounding layer**. Slash commands (`/file`, `/person`, `/meeting`) are **the explicit layer on top**. You still use slash commands when you want to be precise — *"use /this specific file, not whatever Copilot guesses"*. You skip slash commands when the question is broad enough that Work IQ's automatic grounding is enough.
+Work IQ is **the default grounding layer**. Slash commands (`/file`, `/person`, `/meeting`) are the explicit layer on top. You still use slash commands when you want to be precise — *"use /this specific file, not whatever Copilot guesses"*. You skip slash commands when the question is broad enough that Work IQ's automatic grounding is enough.
 
-The rule: **if the answer needs a specific source, slash it in. If the question is "what's going on with X?" — Work IQ will probably find what you need.**
+The rule: if the answer needs a specific source, slash it in. If the question is "what's going on with X?" — Work IQ will probably find what you need.
 
 ## Model choice — Thinking vs Instant vs Claude {#models}
 
@@ -371,7 +371,7 @@ That prompt is one line because Memory already knows who Customer A is, what ton
 
 > 📎 **Privacy note:** Memory respects the same data boundary as the rest of Microsoft 365 Copilot — your tenant. Memory is not training data. But it IS a stored representation of preferences and context, so treat it the way you'd treat any work-context store: review it, clear what doesn't belong.
 
-> 📎 **Admin / detail worth knowing.** Microsoft currently documents Copilot personalisation and memory as **preview**. Memories are stored in the user's Exchange mailbox (a hidden folder), Enhanced personalisation is on by default unless your admin turns it off, retention labels do not apply to memory, and saved memories are kept until the user deletes them. So don't treat Memory as magic short-term chat context — treat it as **managed work context** that lives where your other Exchange data lives, with admin and user controls over it.
+> 📎 **Admin / detail worth knowing.** Microsoft currently documents Copilot personalisation and memory as **preview**. Memories are stored in the user's Exchange mailbox (a hidden folder), Enhanced personalisation is on by default unless your admin turns it off, retention labels do not apply to memory, and saved memories are kept until the user deletes them. So don't treat Memory as magic short-term chat context — treat it as managed work context that lives where your other Exchange data lives, with admin and user controls over it.
 
 ### Memory gotchas
 
@@ -410,7 +410,7 @@ PowerPoint Copilot now generates images directly into your deck. Image generatio
 
 > *"Generate a simple illustration for a slide titled 'Migration journey'. Style — minimalist, flat, brand colours navy and amber, no people, no text in the image."*
 
-The "no text in the image" line is genuinely useful — image models still struggle to render text reliably. Tell them not to try.
+The "no text in the image" line is useful — image models still struggle to render text reliably. Tell them not to try.
 
 ### Copilot Pages
 
@@ -446,7 +446,7 @@ Worth saying because the marketing won't.
 - **Voice prompting can mis-transcribe.** Always glance at what was transcribed before you hit Send. Especially in noisy environments.
 - **The feature names will change again.** Notebooks may become Workspaces. Researcher may rebrand. Work IQ may absorb other names. The shapes are durable; the labels are not.
 
-None of these mean the features aren't worth using. They mean **stay sceptical, validate outputs, treat first drafts as drafts**, the same way you'd treat any junior colleague's first attempt.
+None of these mean the features aren't worth using. They mean stay sceptical, validate outputs, treat first drafts as drafts, the same way you'd treat any junior colleague's first attempt.
 
 ## Where to start this week {#start}
 
@@ -495,7 +495,7 @@ Also on this site:
 
 ---
 
-✎ **One more thought.** The feature list above will look dated in twelve months. The pattern won't. **Microsoft is moving Copilot from a single-turn chat into a stack of collaborative AI surfaces — workspaces, agents, memory, multimodal canvases.** Each one is just another way to plug in the same four blocks.
+✎ **One more thought.** The feature list above will look dated in twelve months. The pattern won't. Microsoft is moving Copilot from a single-turn chat into a stack of collaborative AI surfaces — workspaces, agents, memory, multimodal canvases. Each one is just another way to plug in the same four blocks.
 
 The skill that compounds isn't memorising the features. It's getting fluent at writing a clear brief — and recognising which surface that brief belongs on. Hub for the brief. This page for the surface. Persona Playbook for the worked role-specific examples.
 

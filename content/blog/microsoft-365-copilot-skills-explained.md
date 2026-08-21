@@ -32,7 +32,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-**Living guide.** Microsoft is rolling Skills into different Copilot surfaces at different speeds. This page separates what is generally available, what is rolling out, and what is still in preview. **Public sources last checked: 31 July 2026.**
+**Living guide.** Microsoft is rolling Skills into different Copilot surfaces at different speeds. This page separates what is generally available, what is rolling out, and what is still in preview. Public sources last checked: 31 July 2026.
 
 </div>
 
@@ -231,7 +231,7 @@ The open specification also defines optional fields:
 
 Microsoft examples commonly use `metadata` for values such as author, version, category, and tags. Those values can help a host, but they do not replace a clear `description`.
 
-> **Things to know**
+> Things to know
 >
 > The `description` is not marketing copy. It helps the agent decide whether to load the Skill. Include the real phrases a user is likely to say, but do not make the Skill so broad that it activates for unrelated work.
 
@@ -285,7 +285,7 @@ Cowork provides three personal creation routes:
 - asking Cowork to build a Skill in chat;
 - creating a `SKILL.md` folder manually in OneDrive.
 
-Cowork also accepts `.md`, `.zip`, and `.skill` uploads from its **Customize** page. Microsoft warns users to upload Skills only from trusted sources because a Skill is an instruction set the AI will follow.
+Cowork also accepts `.md`, `.zip`, and `.skill` uploads from its Customize page. Microsoft warns users to upload Skills only from trusted sources because a Skill is an instruction set the AI will follow.
 
 ### Packaged and admin-deployed Skills
 
@@ -338,7 +338,7 @@ Sensitivity labels and encryption can add another layer of protection. The [curr
 
 Do not write that every Skill simply "inherits DLP."
 
-The same Purview support matrix marks **Data loss prevention as unsupported for Cowork AI interactions** on the public page checked for this guide. Microsoft has announced other DLP controls around Copilot data and external email grounding, but that is not the same as full DLP coverage for every Cowork interaction.
+The same Purview support matrix marks Data loss prevention as unsupported for Cowork AI interactions on the public page checked for this guide. Microsoft has announced other DLP controls around Copilot data and external email grounding, but that is not the same as full DLP coverage for every Cowork interaction.
 
 ### Connectors change the review
 
@@ -393,7 +393,7 @@ The [CAT Agent Skills gallery](https://microsoft.github.io/cat-agent-skills/) is
 
 As of 31 July 2026, it lists 71 entries from 38 named authors. Downloads can include scripts, references and assets exactly as contributed.
 
-> **Trust the format, then review the content**
+> Trust the format, then review the content
 >
 > CAT validates metadata and package shape. It does not publicly claim that every community Skill is security-reviewed, functionally tested or Microsoft-certified. Read the `SKILL.md` and every bundled script before installing.
 

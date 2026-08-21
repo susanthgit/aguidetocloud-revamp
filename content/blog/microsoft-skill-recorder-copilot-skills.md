@@ -46,13 +46,13 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-**Experimental source project.** I tested the exact public **v0.3.1** release and its synthetic evals on 31 July 2026. I did **not** record my personal desktop or send a real work session for cloud analysis. Capabilities and risks below are tied to that release.
+**Experimental source project.** I tested the exact public **v0.3.1** release and its synthetic evals on 31 July 2026. I did not record my personal desktop or send a real work session for cloud analysis. Capabilities and risks below are tied to that release.
 
 </div>
 
 *This is part of the [Microsoft 365 Copilot Skills series](/blog/microsoft-365-copilot-skills-explained/).*
 
-**The idea is huge: do a task once, then let an AI turn that real workflow into a reusable Skill.**
+The idea is huge: do a task once, then let an AI turn that real workflow into a reusable Skill.
 
 The current tool is much smaller than that idea.
 
@@ -150,7 +150,7 @@ The goal is not to replay coordinates or reproduce every window switch. The buil
 
 ## What it records
 
-Skill Recorder's public documentation says recording and storage stay on the device until you select **Analyze**.
+Skill Recorder's public documentation says recording and storage stay on the device until you select Analyze.
 
 ### Local while recording
 
@@ -177,7 +177,7 @@ The raw screen video is not listed as an Analyze upload, but selected frames are
 
 > **Privacy boundary**
 >
-> A filename, browser tab, notification, copied value or background window can reveal information you did not intend to teach. Microsoft 365 Purview, DLP, retention, eDiscovery and tenant-audit coverage are **not documented for this Recorder workflow**. Do not assume the Microsoft 365 Copilot trust boundary applies to data sent to GitHub Copilot.
+> A filename, browser tab, notification, copied value or background window can reveal information you did not intend to teach. Microsoft 365 Purview, DLP, retention, eDiscovery and tenant-audit coverage are not documented for this Recorder workflow. Do not assume the Microsoft 365 Copilot trust boundary applies to data sent to GitHub Copilot.
 
 ## No automatic redaction in v0.3.1
 

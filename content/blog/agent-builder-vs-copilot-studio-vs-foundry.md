@@ -191,7 +191,7 @@ Copilot Studio is where most IT admins will spend their time. Think of it as Pow
 
 ### When to pick Studio over Agent Builder
 
-If your agent needs to **do something** (create a ticket, update a record, send an email, kick off an approval) rather than just **answer a question**, you need Copilot Studio. The moment you think "and then it should..." — that's your Studio trigger. *(For rollout and governance, the [deployment checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) is the next stop.)*
+If your agent needs to **do something** (create a ticket, update a record, send an email, kick off an approval) rather than just answer a question, you need Copilot Studio. The moment you think "and then it should..." — that's your Studio trigger. *(For rollout and governance, the [deployment checklist](/blog/microsoft-365-copilot-deployment-best-practices-ultimate-checklist/) is the next stop.)*
 
 > 📌 **Admin action:** Manage through [Power Platform Admin Centre](https://admin.powerplatform.microsoft.com). Set DLP policies to control which connectors agents can use — this prevents shadow IT agents accessing systems you haven't approved. Use the [Copilot Feature Matrix](/copilot-matrix/) to check feature availability in your licence tier.
 
@@ -225,7 +225,7 @@ This is not an IT admin tool — it's a development team tool. If your org is ex
 | **IT Admin (you)** | Governance via Agent 365, budget oversight, compliance alignment |
 | **Security Team** | VNet configuration, private endpoints, data classification |
 
-As an IT admin, your job isn't to build in Foundry — it's to **govern what comes out of it** and ensure it meets your org's compliance requirements.
+As an IT admin, your job isn't to build in Foundry — it's to govern what comes out of it and ensure it meets your org's compliance requirements.
 
 ### What changes operationally
 
@@ -260,7 +260,7 @@ For a **500-person org** with one Foundry agent handling ~1,000 queries/day (mod
 - **Model costs:** ~$150–$400/month depending on model and response length
 - **Storage:** ~$5–$20/month for vector indexes
 - **Compute:** $0 if using serverless, $500+/month if using reserved PTUs
-- **Total:** Roughly **$200–$500/month** for a moderately busy agent — but a high-volume agent with expensive models could easily reach **$2,000+/month**
+- **Total:** Roughly **$200–$500/month** for a moderately busy agent — but a high-volume agent with expensive models could easily reach $2,000+/month
 
 Compare this to Copilot Studio doing similar work: ~500–1,000 credits/day × $0.01 = **$150–$300/month**. The value of Foundry isn't cheaper — it's capability you can't get elsewhere.
 
@@ -380,7 +380,7 @@ If it works well and Sarah later says "can it also submit leave requests?" — t
 
 **This is Copilot Studio territory.** Agent Builder can answer the FAQ part, but the moment you need "and then create a ticket in ServiceNow" — you need a workflow. Copilot Studio has a ServiceNow connector out of the box. You design the flow: user describes issue → bot categorises it → if it's a known issue, answer directly → if not, collect details and create the ticket.
 
-One gotcha I've seen: admins forget to set up the DLP policy first, and suddenly the bot has access to connectors it shouldn't. **Set your DLP before building your first agent.** Seriously.
+One gotcha I've seen: admins forget to set up the DLP policy first, and suddenly the bot has access to connectors it shouldn't. Set your DLP before building your first agent. Seriously.
 
 ### "We need a document processing pipeline"
 
@@ -430,7 +430,7 @@ Use the [Licensing Simplifier](/licensing/) to compare options.
 
 ### 5. What happens if I do nothing?
 
-- **Agent Builder:** Copilot-licensed users **can already build and share agents today**. If you haven't reviewed your settings, check now — someone may have already created agents accessing sensitive SharePoint sites.
+- **Agent Builder:** Copilot-licensed users can already build and share agents today. If you haven't reviewed your settings, check now — someone may have already created agents accessing sensitive SharePoint sites.
 - **Copilot Studio:** Requires explicit credit provisioning, so organic sprawl is less likely — but if credits are enabled on a broad environment, makers can build without your knowledge.
 - **Foundry:** Requires an Azure subscription and explicit resource creation. Very low risk of accidental sprawl.
 
@@ -463,35 +463,35 @@ Regardless of which platform you use, these protections remain in place:
 
 ## FAQ {#faq}
 
-**1. Can I start with Agent Builder and move to Copilot Studio later?**
+1. Can I start with Agent Builder and move to Copilot Studio later?
 
 Yes, and this is actually the path I'd recommend. Microsoft built a one-click promotion — you copy your agent from Agent Builder into Copilot Studio and everything carries over: instructions, knowledge sources, configuration. You then layer on workflows, connectors, and governance. Think of it like drafting a letter in Notepad and then moving it to Word when you need formatting.
 
-**2. Do I need an Azure subscription for Foundry?**
+2. Do I need an Azure subscription for Foundry?
 
 Yes. Foundry is an Azure service, so billing goes against your Azure subscription — completely separate from your M365 bill. This catches some admins off guard because they're used to everything being per-user licensing. With Foundry, you're paying for compute, tokens, and storage. If you don't have an Azure subscription today, that's a whole procurement conversation on its own.
 
-**3. What is Agent 365 and do I really need it?**
+3. What is Agent 365 and do I really need it?
 
 Think of Agent 365 as the "CISO's dashboard for AI agents." It gives you a single view of every agent across Agent Builder, Copilot Studio, and Foundry — who built it, what data it accesses, how it's performing. At $15/user/month (or included in E7), it's worth it once you have more than a handful of agents in production. For one or two experimental agents? You can wait.
 
-**4. How much does each platform actually cost for a real org?**
+4. How much does each platform actually cost for a real org?
 
 For a 500-person org, roughly: Agent Builder is free (basic) or $30/user/month × your licensed users. Copilot Studio depends heavily on volume — budget $200–$600/month per active agent as a starting point, but model your specific scenario with the [AI Cost Calculator](/ai-cost-calculator/). Foundry is the wildcard — a moderate agent runs $200–$500/month, but a busy one with expensive models can hit $2,000+. Always set budget alerts.
 
-**5. Can the three platforms work together?**
+5. Can the three platforms work together?
 
 Yes, and that's the whole point. Microsoft designed them as an ecosystem, not competitors. The most common pattern I see in large orgs: business users build quick agents in Agent Builder, IT manages departmental agents in Copilot Studio, the dev team builds specialised AI in Foundry, and Agent 365 provides the governance umbrella. Copilot Studio can even call a Foundry-hosted model as its backend — best of both worlds.
 
-**6. I'm not a developer. Which should I use?**
+6. I'm not a developer. Which should I use?
 
-Agent Builder, full stop. You can build a genuinely useful agent in 10 minutes without writing a single line of code. If you outgrow it, Copilot Studio is still low-code — think drag-and-drop, not Python. I'd only send you to Foundry if you have developers on your team who are asking for it. If nobody's asking, you don't need it.
+Agent Builder, full stop. You can build a useful agent in 10 minutes without writing a single line of code. If you outgrow it, Copilot Studio is still low-code — think drag-and-drop, not Python. I'd only send you to Foundry if you have developers on your team who are asking for it. If nobody's asking, you don't need it.
 
-**7. What about data security — can I trust agents with sensitive data?**
+7. What about data security — can I trust agents with sensitive data?
 
 Each platform handles security differently, so let me be specific. Agent Builder respects your existing M365 permissions — if a user can't see a document, the agent can't surface it. But watch out for uploaded files, which have different sharing rules than M365-native content. Copilot Studio adds Power Platform DLP policies on top, which control which connectors agents can use. Foundry depends on your Azure architecture — VNet isolation, private endpoints, and your choice of model provider all matter. The honest answer: the security is as good as your configuration. Don't assume it's secure by default — validate it.
 
-**8. Are there limits on what I can build?**
+8. Are there limits on what I can build?
 
 Yes, and they're different per platform. Agent Builder: up to 100 SharePoint files, 4 web URLs, 20 uploaded files, and 5 Teams chats per agent. That's plenty for most Q&A scenarios. Copilot Studio: up to 1,000 topics and 200 triggers per agent — more than enough for even complex departmental bots. Foundry: no practical agent limits, just Azure subscription quotas and your budget.
 
@@ -501,7 +501,7 @@ Yes, and they're different per platform. Agent Builder: up to 100 SharePoint fil
 
 ---
 
-**Tools to help your agent journey:**
+Tools to help your agent journey:
 
 - [Copilot Readiness Checker](/copilot-readiness/) — assess readiness
 - [Agent 365 Planner](/agent-365-planner/) — governance assessment

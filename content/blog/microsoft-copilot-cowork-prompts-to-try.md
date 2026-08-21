@@ -28,7 +28,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork is **generally available** as of 16 June 2026. Living doc — new prompts added as I test them, usefulness ratings updated based on real demo results. **Last verified: 17 June 2026 · GA day.**
+🔄 **Part of the [Microsoft Copilot Cowork — Complete Guide](/blog/microsoft-copilot-cowork-complete-guide/) series.** Copilot Cowork is **generally available** as of 16 June 2026. Living doc — new prompts added as I test them, usefulness ratings updated based on real demo results. Last verified: 17 June 2026 · GA day.
 
 </div>
 
@@ -82,7 +82,7 @@ Copy this, run it first thing in the morning:
 
 <div class="prompt-cards">
 
-> I have a meeting with **[customer/stakeholder name]** about **[topic, e.g. "quarterly review", "project kickoff", "budget approval"]** coming up this week. Look at my calendar to find the meeting, then search my recent emails and Teams chats for any context about **[customer/stakeholder name]** or this topic. Find the most relevant presentation or document I've used recently on this topic from my OneDrive or SharePoint. Create a 1-page Word briefing with: the meeting objective, key attendees, 3 talking points based on what I've discussed with them before, and a link to the deck. Then draft an email to the attendees confirming the session and attaching the briefing.
+> I have a meeting with **[customer/stakeholder name]** about [topic, e.g. "quarterly review", "project kickoff", "budget approval"] coming up this week. Look at my calendar to find the meeting, then search my recent emails and Teams chats for any context about [customer/stakeholder name] or this topic. Find the most relevant presentation or document I've used recently on this topic from my OneDrive or SharePoint. Create a 1-page Word briefing with: the meeting objective, key attendees, 3 talking points based on what I've discussed with them before, and a link to the deck. Then draft an email to the attendees confirming the session and attaching the briefing.
 
 </div>
 
@@ -94,11 +94,11 @@ Copy this, run it first thing in the morning:
 
 ## 📬 Post-Session Follow-Up Machine
 
-*Tier: **Meal** (medium) · Tested: 🕓 pending as a standalone prompt · Best for: trainers, presenters, sales reps — anyone who runs sessions and needs to follow up afterwards*
+*Tier: Meal (medium) · Tested: 🕓 pending as a standalone prompt · Best for: trainers, presenters, sales reps — anyone who runs sessions and needs to follow up afterwards*
 
 <div class="prompt-cards">
 
-> I just finished a **[session type, e.g. "training session", "client demo", "team workshop"]**. Look at my most recent meeting that ended in the last 2 hours. Find the recording, any slides or documents that were shared during or before that meeting, and summarise the key topics covered based on the meeting transcript. Then draft a follow-up email to all attendees with:
+> I just finished a [session type, e.g. "training session", "client demo", "team workshop"]. Look at my most recent meeting that ended in the last 2 hours. Find the recording, any slides or documents that were shared during or before that meeting, and summarise the key topics covered based on the meeting transcript. Then draft a follow-up email to all attendees with:
 > - A thank you and 2-sentence summary of what we covered
 > - Links to the recording and slides
 > - A "Questions?" section inviting them to reply
@@ -115,7 +115,7 @@ Copy this, run it first thing in the morning:
 
 ## 📊 Weekly Team Update Generator
 
-*Tier: **Meal** (medium) · Tested: 🕓 pending as a standalone prompt · Best for: team leads, project managers, and anyone whose manager asks "what did you work on this week?"*
+*Tier: Meal (medium) · Tested: 🕓 pending as a standalone prompt · Best for: team leads, project managers, and anyone whose manager asks "what did you work on this week?"*
 
 <div class="prompt-cards">
 
@@ -126,7 +126,7 @@ Copy this, run it first thing in the morning:
 > 4. Open follow-ups I still need to action
 > 5. What's coming next week based on my calendar
 >
-> Format it as a professional but concise Teams-friendly post, then post it to the **[team channel name, e.g. "Project Alpha", "NZ Sales Team"]** channel for my approval.
+> Format it as a professional but concise Teams-friendly post, then post it to the [team channel name, e.g. "Project Alpha", "NZ Sales Team"] channel for my approval.
 
 </div>
 
@@ -136,13 +136,13 @@ Copy this, run it first thing in the morning:
 
 ## 📚 Knowledge Pack Builder
 
-*Tier: **Meal** (medium) · Tested: 🕓 pending as a standalone prompt · Best for: subject matter experts, consultants, presales — anyone who repeatedly answers the same complex questions*
+*Tier: Meal (medium) · Tested: 🕓 pending as a standalone prompt · Best for: subject matter experts, consultants, presales — anyone who repeatedly answers the same complex questions*
 
 <div class="prompt-cards">
 
-> A **[recipient role, e.g. "customer CISO", "project sponsor", "new team member"]** has asked me about **[topic, e.g. "Copilot governance and security controls", "our data migration approach", "onboarding process"]**. Search my OneDrive, SharePoint, and recent emails for any documents, presentations, or materials I've shared or worked on about this topic. Also do a deep research on the latest information from Microsoft Learn about **[topic]**.
+> A [recipient role, e.g. "customer CISO", "project sponsor", "new team member"] has asked me about [topic, e.g. "Copilot governance and security controls", "our data migration approach", "onboarding process"]. Search my OneDrive, SharePoint, and recent emails for any documents, presentations, or materials I've shared or worked on about this topic. Also do a deep research on the latest information from Microsoft Learn about **[topic]**.
 >
-> Create a polished 2-page Word document titled **"[Document title, e.g. 'M365 Copilot Governance Quick Guide']"** that covers the key areas a **[recipient role]** needs to know. Then draft an email to **[recipient name]** attaching this document with a brief "here's what you asked for" message. Show me everything for review.
+> Create a polished 2-page Word document titled "[Document title, e.g. 'M365 Copilot Governance Quick Guide']" that covers the key areas a **[recipient role]** needs to know. Then draft an email to [recipient name] attaching this document with a brief "here's what you asked for" message. Show me everything for review.
 
 </div>
 
@@ -158,17 +158,17 @@ This is the showcase prompt — the one I open demos with, because it shows Cowo
 
 <div class="prompt-cards">
 
-> I need to prepare a **[deliverable type, e.g. "slide deck", "report", "proposal"]** for an upcoming session with **[customer/team name]**.
+> I need to prepare a [deliverable type, e.g. "slide deck", "report", "proposal"] for an upcoming session with **[customer/team name]**.
 >
-> **Step 1 — Find the brief:** Search my emails for a message from **[contact name]** at **[company name]** about **[topic, e.g. "executive training session", "quarterly review", "project kickoff"]**. Extract every topic and agenda item they listed.
+> **Step 1 — Find the brief:** Search my emails for a message from **[contact name]** at [company name] about [topic, e.g. "executive training session", "quarterly review", "project kickoff"]. Extract every topic and agenda item they listed.
 >
 > **Step 2 — Gather my materials:** Search my OneDrive and SharePoint for any existing decks, documents, or materials I've used on this topic recently.
 >
-> **Step 3 — Research:** Do a deep research on the latest information about **[topic]** from Microsoft Learn and the web.
+> **Step 3 — Research:** Do a deep research on the latest information about [topic] from Microsoft Learn and the web.
 >
-> **Step 4 — Build the deliverable:** Using the brief as the structure and my materials plus research as content, create a clean, professional PowerPoint presentation covering every item from the brief. Keep it **[audience]-friendly** — no jargon, focus on outcomes. Each slide should answer "why should a busy **[audience role]** care about this?" Make it work as both a presentation AND a standalone cheat sheet they can reference later.
+> **Step 4 — Build the deliverable:** Using the brief as the structure and my materials plus research as content, create a clean, professional PowerPoint presentation covering every item from the brief. Keep it **[audience]-friendly** — no jargon, focus on outcomes. Each slide should answer "why should a busy [audience role] care about this?" Make it work as both a presentation AND a standalone cheat sheet they can reference later.
 >
-> **Step 5 — Draft the reply:** Draft an email to **[contact name]** attaching the deck, confirming I've covered all their agenda items, and asking if there's anything to adjust. Show me everything for review before sending.
+> **Step 5 — Draft the reply:** Draft an email to [contact name] attaching the deck, confirming I've covered all their agenda items, and asking if there's anything to adjust. Show me everything for review before sending.
 
 </div>
 
@@ -180,13 +180,13 @@ This is the showcase prompt — the one I open demos with, because it shows Cowo
 
 ## The Out-of-Office Handoff
 
-*Tier: **Feast** (heavy) · Tested: 🕓 pending as a standalone prompt · Best for: anyone taking leave who doesn't want things to stall while they're gone*
+*Tier: Feast (heavy) · Tested: 🕓 pending as a standalone prompt · Best for: anyone taking leave who doesn't want things to stall while they're gone*
 
 The idea: step away knowing nothing in flight will quietly stall while you're out. Instead of a one-line "I'm away" auto-reply, you hand the loose ends to the right people.
 
 <div class="prompt-cards">
 
-> I'm out of office from **[start date]** to **[end date]**. Help me hand off cleanly.
+> I'm out of office from **[start date]** to [end date]. Help me hand off cleanly.
 >
 > 1. Look through my calendar, recent emails, and Teams chats and find everything that's mid-flight — open questions waiting on me, decisions due while I'm away, and meetings I own.
 > 2. For each one, suggest who should cover it, and draft a short handoff note to that person with the context they'll need.
@@ -195,7 +195,7 @@ The idea: step away knowing nothing in flight will quietly stall while you're ou
 
 </div>
 
-**What Cowork does:** reads across your calendar, inbox, and chats to find the loose ends, works out who should cover what, and drafts the handoff notes plus a genuinely useful auto-reply. Skills: Daily Briefing → Search → Communications.
+**What Cowork does:** reads across your calendar, inbox, and chats to find the loose ends, works out who should cover what, and drafts the handoff notes plus a useful auto-reply. Skills: Daily Briefing → Search → Communications.
 
 Here's the shape of how it thinks it through:
 
@@ -216,13 +216,13 @@ flowchart TD
 
 ## Deep Research With a Citation Map
 
-*Tier: **Feast** (heavy) · Tested: 🕓 pending as a standalone prompt · Best for: anyone sitting on a folder of documents they keep meaning to read*
+*Tier: Feast (heavy) · Tested: 🕓 pending as a standalone prompt · Best for: anyone sitting on a folder of documents they keep meaning to read*
 
 This one moves you from "I have a pile of documents to get through" to "I have a short brief I can act on — and I can see where every point came from."
 
 <div class="prompt-cards">
 
-> I need to get on top of **[topic]**.
+> I need to get on top of [topic].
 >
 > Read the documents in **[OneDrive/SharePoint folder]**, plus anything relevant you find in my recent emails and meetings on this topic.
 >
@@ -269,13 +269,13 @@ Real test runs of the custom skills I've built. Each one was invoked against my 
 
 **What I asked it to do:** the one-line trigger above — nothing more.
 
-**What it actually did (in ~45 seconds):**
+What it actually did (in ~45 seconds):
 
 1. Scanned my calendar for the week (Mon 9 Jun → Mon 15 Jun)
 2. Scanned my Sent Items for external outbound mail in the same window
 3. Scanned my Inbox (14 days back) for the most-recent inbound per external organisation
-4. Classified every customer org as **Active this week**, **Awaiting my reply**, or **Stale (>14 days no touchpoint)**
-5. Picked the **Top 3 to action before next Monday**
+4. Classified every customer org as **Active this week**, Awaiting my reply, or Stale (>14 days no touchpoint)
+5. Picked the Top 3 to action before next Monday
 6. Saved a Word document version to `output/`
 7. Surfaced the digest in chat for immediate review
 
@@ -293,13 +293,13 @@ And the Word document version saved to `output/friday-portfolio-digest-2026-06-1
 
 **Honest read of the output (no PII):** 5 active customers this week, 3 awaiting my reply (the longest 10 days waiting), 1 stale account flagged with `[possibly noise — confirm]` because it only matched a single weak signal, and a clean Top 3 list with one-line "why this one" reasoning per item — including a colleague-returns-from-leave detection that the skill picked up from an inbound email.
 
-**Privacy note on the screenshots above:** I asked Atlas (my CLI co-author for this blog) to redact the customer-name and ask-detail columns before publishing. We used **solid-rectangle masks on the chat output** (Shots 1-3) and **heavy gaussian blur on the Word doc** (Shot 4 — my preference) so you can see what the skill produces structurally without exposing my real customer portfolio. If you're a CSE or solution engineer, this pattern is worth copying for any blog post or demo that uses a real tenant.
+**Privacy note on the screenshots above:** I asked Atlas (my CLI co-author for this blog) to redact the customer-name and ask-detail columns before publishing. We used solid-rectangle masks on the chat output (Shots 1-3) and heavy gaussian blur on the Word doc (Shot 4 — my preference) so you can see what the skill produces structurally without exposing my real customer portfolio. If you're a CSE or solution engineer, this pattern is worth copying for any blog post or demo that uses a real tenant.
 
-**Why 4 stars not 5 ⭐⭐⭐⭐:**
+Why 4 stars not 5 ⭐⭐⭐⭐:
 
 - ✅ Hit every section the SKILL.md promised. No missing tables, no fabricated customer names.
 - ✅ Honoured all guardrails — flagged a thin-signal customer with `[possibly noise — confirm]` exactly as instructed, derived org names from email domains only, kept the digest in chat + Word for my eyes only.
-- ✅ "Top 3 to action" reasoning was genuinely useful — picked out a colleague-returns-from-leave timing window I would have missed.
+- ✅ "Top 3 to action" reasoning was useful — picked out a colleague-returns-from-leave timing window I would have missed.
 - 🟡 One Active row had `[confirm]` against the org name because the skill couldn't disambiguate a parent-org / subsidiary lookup (which is exactly what the Edge Cases section in the skill flagged as a known scenario — so this is correct behaviour, just costs a star until I tweak the disambiguation rule).
 - 🟡 The Word doc rendered fine but used the default Word template — would be nicer on a custom Friday-digest template. Easy follow-up.
 
@@ -311,7 +311,7 @@ And the Word document version saved to `output/friday-portfolio-digest-2026-06-1
 
 **What I asked it to do:** the one-line trigger above.
 
-**The setup — typing the prompt:**
+The setup — typing the prompt:
 
 <p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/85-cowork-test-d-fictional-prompt.png" alt="A Cowork chat bubble in the top-right of the conversation showing the typed user input 'research Contoso Airlines NZ'. No other text or response is visible yet — the rest of the conversation area is empty." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -324,7 +324,7 @@ Two things worth pausing on here:
 1. **Cowork grounded on my Microsoft directory profile.** It knows my exact role and team — "Sr Solution Engineer in NZ Specialist Sales for Modern Work" — without me telling it. That context shapes how it interprets ambiguous requests.
 2. **Cowork reasoned about intent, not just keywords.** Even when the keyword `Contoso` strongly signals "fictional", Cowork stopped to consider whether I might be using the fictional name as a codename for a real customer. That's a much more useful reasoning style than literal-matching.
 
-**The Edge Case response — exactly as the SKILL.md designed:**
+The Edge Case response — exactly as the SKILL.md designed:
 
 <p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/87-cowork-test-d-edge-case-zero-results.png" alt="Cowork's response to the Contoso Airlines NZ research request. Headline 'Heads up, Susanth — Contoso Airlines is not a real company.' explains that Contoso is Microsoft's fictional demo / training brand (like Contoso Ltd or Blue Yonder Airlines) used in Azure and Microsoft 365 sample applications. 'Zero real signals found:' header followed by three bullets — No internal email, Teams, or calendar matches. No public web results for a real business. The only Contoso Airlines hits were Microsoft's own demo GitHub repos and training materials. 'Did you mean one of these?' header followed by a two-column table titled Real NZ airline and Notes with four rows — Air New Zealand (Flag carrier, largest NZ airline, Auckland HQ), Sounds Air (Regional carrier, Nelson / Picton), Originair (Regional, Nelson Airport), Sunair (Regional, Tauranga). Closing line: 'Or, if Contoso Airlines NZ is a codename you're using for a real customer, let me know the actual company name and I'll run the full account brief. What were you looking for?'" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -376,7 +376,7 @@ This is the most interesting finding of the entire test. The generated skill's t
 
 The **`Scheduled`** trigger row bakes the webapp-auto-refresh pattern into the skill itself. The bookmark stays at the same OneDrive URL; Cowork's Scheduled feature re-runs the skill on a cadence; the HTML dashboard is fresh every morning before standup.
 
-**This is the missing piece for "skill as a webapp":**
+This is the missing piece for "skill as a webapp":
 
 | Without Scheduled | With Scheduled |
 |---|---|
@@ -388,7 +388,7 @@ The **`Scheduled`** trigger row bakes the webapp-auto-refresh pattern into the s
 **Why 4 stars ⭐⭐⭐⭐:**
 
 - ✅ Meta-skill orchestration worked end-to-end (cowork-skill-author → Skill Management → SKILL.md written + scored + ready).
-- ✅ The generated skill is genuinely useful — bookmarkable HTML dashboard with auto-refresh hint.
+- ✅ The generated skill is useful — bookmarkable HTML dashboard with auto-refresh hint.
 - ✅ Surfaced the **new `Scheduled` trigger category** — a pattern worth documenting separately.
 - ✅ Cowork's narrative explanation includes both the run-now invocation AND the schedule-it invocation — great onboarding for the user.
 - 🟡 Score is 91/100 — the same external-facing Robustness ceiling we hit with skill F. Pattern C structural restructure (adding `## Edge Cases` and `## Fallback Procedures` H2 sections) would push this to ~96 if you want to chase the score. Logged as a follow-up.
@@ -433,7 +433,7 @@ Compared to a Word doc that I'd open, read once, and lose in my Files — this i
 
 **The make-or-break question:** would the notebook aesthetic from my blog (cream paper, ink-blue text, pen-red underlines, handwritten title font, no emoji) actually survive translation into a PowerPoint slide? That's the whole reason this skill exists.
 
-**What Cowork did (in ~3 minutes):**
+What Cowork did (in ~3 minutes):
 
 It followed its own 8-step SKILL.md workflow:
 
@@ -447,13 +447,13 @@ And the chat surfaced a per-slide summary, a ready-to-paste LinkedIn caption (18
 
 <p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/100-cowork-test-f-slide-summary.png" alt="The seven-slide carousel summary in chat. Slide 1 TITLE 'Cowork grades your skills before you do' with a subtitle about built-in quality scoring and a red underline note. Slide 2 THE QUESTION 'Have you ever built a custom skill in Cowork and wondered if it will actually trigger when you need it?' with a tilted margin note 'the moment of doubt'. Slide 3 INSIGHT 1 'Every skill gets evaluated before it goes live' with a margin note 'automatic, not manual'. Slide 4 INSIGHT 2 'Four dimensions. One honest report.' listing Clarity, Specificity, Scope, Robustness, with a margin note 'your skill's report card' and a faded source note in brackets reading confirm — source: Microsoft community. Slide 5 INSIGHT 3 'Transparency, not just a pass or fail'. Slide 6 TAKEAWAY 'Cowork tells you exactly why a skill is ready — before you have to ask.' Slide 7 RESOURCES plus CTA linking the Cowork overview on learn.microsoft.com, the complete guide on aguidetocloud.com, and the Frontier program, with footer Sush · aguidetocloud.com." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-**The payoff — the rendered title slide:**
+The payoff — the rendered title slide:
 
 <p><img src="/images/blog/microsoft-copilot-cowork-complete-guide/102-cowork-test-f-title-slide-rendered.png" alt="The rendered title slide of the LinkedIn carousel. A cream paper background. A large ink-blue handwritten-style title reading 'Cowork grades your skills before you do' across two lines. A pen-red horizontal underline sits beneath the title. Below, in a monospace typewriter font, the subtitle reads 'How built-in quality scoring makes custom automation better'. No emoji anywhere — the whole slide matches the aguidetocloud.com notebook aesthetic." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 **It worked.** Cream paper, ink-blue handwritten title, the pen-red underline, the monospace subtitle, zero emoji. The skill translated my blog's CSS notebook aesthetic into a real PowerPoint slide.
 
-**Why 5 stars ⭐⭐⭐⭐⭐:**
+Why 5 stars ⭐⭐⭐⭐⭐:
 
 - ✅ **The aesthetic survived translation** — this was the make-or-break test and it passed. Cream background, ink-blue title, pen-red underline, typewriter subtitle, no emoji.
 - ✅ Generated both .pptx (edit) and .pdf (LinkedIn upload) without being reminded.

@@ -53,7 +53,7 @@ The good news: the answer isn't a dark art. It's three questions, asked in order
 
 <div class="post-trio">
 
-📚 **Three ways to think about Copilot value — pick where you are:**
+📚 Three ways to think about Copilot value — pick where you are:
 
 - **💷 [Copilot pricing tiers explained](/blog/microsoft-copilot-pricing-tiers-explained/)** — the *cost* side of the ratio: what you actually pay.
 - **🎯 Proving Copilot ROI (you're reading this)** — the *value* side: how to prove it's worth it.
@@ -61,7 +61,7 @@ The good news: the answer isn't a dark art. It's three questions, asked in order
 
 </div>
 
-> 🏃 **TL;DR — if you have 60 seconds**
+> 🏃 TL;DR — if you have 60 seconds
 >
 > Copilot ROI is a {{< hi >}}staircase, not a light switch{{< /hi >}}. Three pillars, each built on the one below:
 >
@@ -73,7 +73,7 @@ The good news: the answer isn't a dark art. It's three questions, asked in order
 >
 > **⚡ Want your number now?** Open the [**Copilot ROI Calculator**](/roi-calculator/) — plug in your seats, average salary and plan, and get your ROI, payback period and a CFO-ready one-pager in about 60 seconds. Then come back here for the *why* behind it.
 
-**Three paths in — pick yours:**
+Three paths in — pick yours:
 
 **⏱ 5-min skim** — you want the model and nothing else.
 → [The staircase](#staircase) → [The scorecard](#scorecard). That's the whole thing on two screens.
@@ -81,7 +81,7 @@ The good news: the answer isn't a dark art. It's three questions, asked in order
 **📚 20-min build** — you want to install it, not just hear about it.
 → Read end-to-end. Pillar by pillar: install the metric, note the formula, steal the prompts.
 
-**🗂 Reference — come back when you need a specific thing**
+🗂 Reference — come back when you need a specific thing
 
 - **Pillars:** [1 Utilisation](#pillar1) · [2 Time recaptured](#pillar2) · [3 Hard dollars](#pillar3)
 - **Build tools:** [The ROI scorecard](#scorecard) · [30/60/90 plan](#plan) · [5 mistakes](#mistakes) · [Prompt pack](#prompts) · [FAQ](#faq)
@@ -124,7 +124,7 @@ Here's the mental model that makes everything else click. Copilot value isn't on
 <figcaption>The Copilot ROI staircase. Most teams measure Pillar 1, feel good, and stop. The business case lives on Pillar 3.</figcaption>
 </figure>
 
-This isn't a model invented on a whiteboard. It's the same shape as Microsoft's own business-value guidance, which measures Copilot in three tiers — **foundational** (adoption), **productive** (time and sentiment) and **strategic** (business outcomes) — and the same shape the [Copilot Dashboard](https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard) uses when it walks you from readiness → adoption → impact. Three names for the same staircase. Let's climb it.
+This isn't a model invented on a whiteboard. It's the same shape as Microsoft's own business-value guidance, which measures Copilot in three tiers — **foundational** (adoption), productive (time and sentiment) and strategic (business outcomes) — and the same shape the [Copilot Dashboard](https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard) uses when it walks you from readiness → adoption → impact. Three names for the same staircase. Let's climb it.
 
 > > ⛔ **The hard line —** "We have high usage" is not an ROI statement. It's a Pillar-1 statement. I've seen tenants with 90% active usage fail a review because nobody translated a single hour into a single dollar — and a 40%-usage tenant sail through because the team could show exactly where the saved hours went and what they now produced. {{< hi >}}Finance doesn't buy activity. It buys outcomes.{{< /hi >}}
 
@@ -156,9 +156,9 @@ You can see all of this without buying anything extra. The [Microsoft 365 Copilo
 
 ### What "good" looks like
 
-Don't chase 100%. Chase a **rising active-user rate and rising breadth**. The healthiest early tenants look like this: active-user rate climbing month-on-month, most active users touching two or more apps, and a returning-user curve that flattens into a habit rather than spiking after each training session and collapsing. A spike-then-collapse curve is the tell-tale sign of training without embedding — people learn it, then drift back to the old way.
+Don't chase 100%. Chase a rising active-user rate and rising breadth. The healthiest early tenants look like this: active-user rate climbing month-on-month, most active users touching two or more apps, and a returning-user curve that flattens into a habit rather than spiking after each training session and collapsing. A spike-then-collapse curve is the tell-tale sign of training without embedding — people learn it, then drift back to the old way.
 
-> 💡 **Tip —** Whole-tenant averages lie. Break adoption down **by group, by role and by app**. You'll almost always find a pocket of super-users quietly getting enormous value, and a long tail who never got past week one. That gap *is your roadmap* — and, as you'll see in Pillar 3, it's also the literal formula for your untapped opportunity.
+> 💡 **Tip —** Whole-tenant averages lie. Break adoption down by group, by role and by app. You'll almost always find a pocket of super-users quietly getting enormous value, and a long tail who never got past week one. That gap *is your roadmap* — and, as you'll see in Pillar 3, it's also the literal formula for your untapped opportunity.
 
 ### The Pillar-1 mistake
 
@@ -180,7 +180,7 @@ You want both. Telemetry gives you a defensible number; sentiment tells you whet
 The [Copilot Dashboard in Viva Insights](https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard) estimates **Copilot-assisted hours** from real usage, using transparent rules rather than vibes. The two you should be able to explain out loud:
 
 - **Meetings:** when Copilot summarises or recaps a meeting, the tool counts the *duration of that meeting* as assisted time — because you got the value of the meeting without sitting through it.
-- **Search & summarisation:** each qualifying action is credited with an **assistance factor of about 6 minutes** — grounded in Microsoft research (a study of 163 knowledge workers) showing people retrieved information across files, emails and calendars six minutes faster with Copilot than without. Creating something from scratch is credited the same six minutes, from a separate study.
+- **Search & summarisation:** each qualifying action is credited with an assistance factor of about 6 minutes — grounded in Microsoft research (a study of 163 knowledge workers) showing people retrieved information across files, emails and calendars six minutes faster with Copilot than without. Creating something from scratch is credited the same six minutes, from a separate study.
 
 Those rules are the engine. Microsoft explains them in plain English in [How we measure the value of AI at work](https://www.microsoft.com/en-us/worklab/how-we-measure-the-value-of-ai-at-work) — a good link to hand a sceptic. Everything else in Pillar 2 is arithmetic on top.
 
@@ -188,10 +188,10 @@ Those rules are the engine. Microsoft explains them in plain English in [How we 
 
 Once you have assisted hours, you convert them to money with one multiplication:
 
-> **Copilot-assisted value = assisted hours × average hourly rate**
+> Copilot-assisted value = assisted hours × average hourly rate
 > *Default hourly rate ≈ US$72 per person, per hour (based on U.S. Bureau of Labor Statistics data) — and editable to your own blended rate.*
 
-That US$72 default is a starting point, not a number to publish and hope nobody checks. The most persuasive thing you can do in Pillar 2 is **replace it with your own blended hourly cost** — or, better, segment it: a partner's hour and a graduate's hour aren't worth the same, and your finance team knows it. Segmented rates turn "a generic Microsoft default" into "our numbers," and that shift is worth more than any decimal place.
+That US$72 default is a starting point, not a number to publish and hope nobody checks. The most persuasive thing you can do in Pillar 2 is replace it with your own blended hourly cost — or, better, segment it: a partner's hour and a graduate's hour aren't worth the same, and your finance team knows it. Segmented rates turn "a generic Microsoft default" into "our numbers," and that shift is worth more than any decimal place.
 
 ### The external sanity check
 
@@ -202,7 +202,7 @@ You don't have to take the model on faith — the independent research points th
 - **86%** found it easier to catch up on anything they'd missed;
 - **75%** saved time finding what they needed across their files.
 
-The same research reported that **70%** of users said Copilot made them more productive, **68%** said it improved the quality of their work, and **77%** of users, once they had it, didn't want to give it up — and put a deliberately conservative floor on the time saved: an **average of around 1.2 hours per week**, calculated using the *bottom* of each time bucket.
+The same research reported that **70%** of users said Copilot made them more productive, 68% said it improved the quality of their work, and 77% of users, once they had it, didn't want to give it up — and put a deliberately conservative floor on the time saved: an average of around 1.2 hours per week, calculated using the *bottom* of each time bucket.
 
 > > ⚠️ **The honest caveat about "time saved" —** Ten minutes back on an email is real — but it's *scattered*. Saving six people ten minutes each does not automatically equal one hour of useful output; it might just equal six slightly calmer people. This is the crack sceptics push on, and they're not wrong to. The answer isn't to pretend otherwise — it's Pillar 3, where scattered minutes get *consolidated and redeployed* into something the business can see.
 
@@ -214,14 +214,14 @@ Telemetry proves the hours exist. Sentiment proves people *value* them — and s
 
 <h2 id="pillar3">Pillar 3 · Hard dollars — is it worth more than it costs?</h2>
 
-This is the top stair, and it's where business cases are won or lost. Everything below has been building to one comparison: **the value you're getting versus the money you're spending.**
+This is the top stair, and it's where business cases are won or lost. Everything below has been building to one comparison: the value you're getting versus the money you're spending.
 
-> **ROI = value of extra capacity (time saved, in $) ÷ licence cost**
+> ROI = value of extra capacity (time saved, in $) ÷ licence cost
 > *Above 1 = Copilot is returning more than it costs. Below 1 = you have an adoption problem, not a Copilot problem.*
 
 This is the ratio Microsoft's own value tooling starts with, and it's beautifully blunt: if the dollar value of the capacity you've freed up is bigger than what you paid for the licences, you're ahead. A ratio above 1 is your green light to expand; a ratio below 1 almost always means Pillar 1 is weak — people aren't using what you bought — not that Copilot doesn't work.
 
-> 💡 **Don't do this by hand.** The [**Copilot ROI Calculator**](/roi-calculator/) runs this exact sum for you — enter users, average salary and your Copilot plan, and it returns your ROI ratio, payback period and a printable, CFO-ready one-pager. It even models conservative, moderate and aggressive adoption curves, so you can pressure-test the number *before* you put it in front of anyone.
+> 💡 **Don't do this by hand.** The [Copilot ROI Calculator](/roi-calculator/) runs this exact sum for you — enter users, average salary and your Copilot plan, and it returns your ROI ratio, payback period and a printable, CFO-ready one-pager. It even models conservative, moderate and aggressive adoption curves, so you can pressure-test the number *before* you put it in front of anyone.
 
 ### The leap nobody likes to say out loud
 
@@ -231,7 +231,7 @@ If a claims officer saves five hours a month and those five hours go into cleari
 
 ### From time saved to business outcomes
 
-The move that turns a good business case into an unarguable one: **map Copilot scenarios to the KPIs your departments already report.** Not new AI metrics — the numbers they already live and die by.
+The move that turns a good business case into an unarguable one: map Copilot scenarios to the KPIs your departments already report. Not new AI metrics — the numbers they already live and die by.
 
 | Function | The KPI they already own | The Copilot connection to measure |
 |---|---|---|
@@ -247,7 +247,7 @@ This is exactly what the [Copilot Business Impact Report](https://learn.microsof
 
 Remember the usage gap from Pillar 1? Here's where it pays off. There's a clean way to quantify the value still sitting on the table:
 
-> **Opportunity = (inactive or low-usage users) × (assisted-value gap between low- and high-usage groups)**
+> Opportunity = (inactive or low-usage users) × (assisted-value gap between low- and high-usage groups)
 > *i.e. "if our quiet users behaved like our power users, here's the extra value we'd unlock."*
 
 This reframes a soft "we should drive more adoption" into a hard "there is $X of measurable value one enablement push away." It's the single most powerful slide in a renewal or expansion conversation, because it turns your weakness — the long tail — into your business case.
@@ -281,19 +281,19 @@ Notice the shape: the further down you go, the closer you get to language your f
 
 Don't try to measure everything at once. Build the staircase one stair at a time.
 
-**Days 0–30 · Baseline & foundational**
+Days 0–30 · Baseline & foundational
 
 - Turn on the [admin-centre usage report](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/microsoft-365-copilot-usage) and the [Copilot Dashboard](https://learn.microsoft.com/en-us/viva/insights/org-team-insights/copilot-dashboard). Capture your **baseline**: enabled vs active, active-user rate, app breadth.
 - Set your real blended hourly rate(s) to replace the default.
 - Pick 2–3 departments whose KPIs you'll eventually map. Record where those KPIs sit *today*, pre-Copilot.
 
-**Days 31–60 · Correlate — usage to productivity**
+Days 31–60 · Correlate — usage to productivity
 
 - Watch assisted hours and assisted value accrue in the Dashboard. Segment by group.
 - Run a short sentiment pulse; sit it next to the telemetry.
 - Identify your power-user pod and your quiet tail — you'll need both for the opportunity sizing.
 
-**Days 61–90 · Quantify — outcomes & ROI**
+Days 61–90 · Quantify — outcomes & ROI
 
 - Upload real business-outcome data into the [Business Impact Report](https://learn.microsoft.com/en-us/viva/insights/advanced/analyst/templates/copilot-business-impact) and compare high- vs low-usage groups.
 - Compute ROI = assisted value ÷ licence cost. Size the opportunity from your quiet tail.
@@ -331,7 +331,7 @@ Copilot can help you build its own business case. A few to start with:
 
 This guide is the value layer. These are the doors on either side of it:
 
-- **Run your own number** → the [**Copilot ROI Calculator**](/roi-calculator/) — the interactive companion to this guide: users, salary and plan in; ROI, payback and a CFO-ready one-pager out.
+- **Run your own number** → the [Copilot ROI Calculator](/roi-calculator/) — the interactive companion to this guide: users, salary and plan in; ROI, payback and a CFO-ready one-pager out.
 - **The cost side of the ratio** → [Copilot pricing tiers explained](/blog/microsoft-copilot-pricing-tiers-explained/) and [Copilot credits explained](/blog/copilot-credits-explained/) — the denominator in your ROI sum.
 - **Driving the adoption Pillar 1 measures** → the [Copilot for Executives Field Guide](/blog/copilot-for-executives-field-guide/) and the [Copilot for People Leaders Field Guide](/blog/copilot-for-people-leaders-field-guide/).
 - **Getting your quiet tail using it** → the [Persona Playbook](/blog/microsoft-365-copilot-by-persona-playbook/) for role-specific worked prompts they can copy today.

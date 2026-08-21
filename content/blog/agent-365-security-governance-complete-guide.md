@@ -122,7 +122,7 @@ They always give me the same list:
 5. **They have a manager.** Someone is accountable for what this person does.
 6. **When they leave, access gets revoked.** ID badge deactivated, laptop returned, permissions removed.
 
-Now ask yourself: **how many of those things apply to the AI agents in your organisation?**
+Now ask yourself: how many of those things apply to the AI agents in your organisation?
 
 For most companies, the answer is zero. Maybe one. The agent just... exists. With whatever permissions the creator gave it. No manager. No policies. No monitoring. And when the creator leaves the company? The agent keeps running.
 
@@ -139,7 +139,7 @@ flowchart TD
     E --> F["Access Revoked When They Leave"]
 ```
 
-**When a new agent is created — same process:**
+When a new agent is created — same process:
 
 ```mermaid
 flowchart TD
@@ -182,7 +182,7 @@ flowchart TD
     E --> H["SOC Teams"]
 ```
 
-And it's not just for Microsoft agents. Agent 365 connects to **Foundry** (for dev teams building custom agents) and **Copilot Studio** (for makers building no-code agents) — bringing them all under one governance umbrella.
+And it's not just for Microsoft agents. Agent 365 connects to **Foundry** (for dev teams building custom agents) and Copilot Studio (for makers building no-code agents) — bringing them all under one governance umbrella.
 
 Let me walk through each capability with real screenshots.
 
@@ -278,7 +278,7 @@ Here's what it looks like when a sponsor requests access for their agent:
 A few things to notice:
 
 - The sponsor (Chirag) is requesting a **"ServiceNow Access Package"** for the Procurement Agent
-- There's a choice between **"Sponsored agent"** and **"Service principal"** — agents get their own category
+- There's a choice between **"Sponsored agent"** and "Service principal" — agents get their own category
 - This goes through an **approval workflow** before the agent gets access
 - The access has an **expiry date** — it's not permanent
 
@@ -331,7 +331,7 @@ This is where Purview comes in. Agent activity is automatically captured for **a
 
 Imagine a procurement agent. Someone asks it to review three purchase orders and email a summary to an external supplier. Sounds harmless, right?
 
-Here's what the agent found in those POs: supplier **bank account numbers** and **tax IDs**.
+Here's what the agent found in those POs: supplier **bank account numbers** and tax IDs.
 
 And here's what Purview did when the agent tried to email that externally:
 
@@ -339,7 +339,7 @@ And here's what Purview did when the agent tried to email that externally:
 
 **Blocked.** The message was rejected because it contained sensitive information that can't be shared outside the organisation. The same DLP policy that would stop a human from sending this email? It stopped the agent too.
 
-This is the key insight and it's worth repeating: **Purview doesn't care whether a human or an agent is doing the sharing.** Your existing DLP investment **can extend to agents** — once agent instances are included in your DLP policies.
+This is the key insight and it's worth repeating: Purview doesn't care whether a human or an agent is doing the sharing. Your existing DLP investment **can extend to agents** — once agent instances are included in your DLP policies.
 
 ### The Full Picture — What Purview Now Covers
 
@@ -362,7 +362,7 @@ flowchart TD
 
 <p><img src="/images/blog/agent-365-security/purview-ai-observability.webp" alt="Purview AI Observability dashboard showing total AI apps and agents, how many are high risk, and how many are interacting with sensitive data" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-In this demo tenant: thousands of agents discovered, dozens flagged high risk, over a thousand touching sensitive data. The columns that matter most are **risk level**, **sensitive activity trend** (is the agent accessing *more* sensitive data over time?), and **policy coverage** (is this agent covered by your DLP rules?).
+In this demo tenant: thousands of agents discovered, dozens flagged high risk, over a thousand touching sensitive data. The columns that matter most are **risk level**, sensitive activity trend (is the agent accessing *more* sensitive data over time?), and policy coverage (is this agent covered by your DLP rules?).
 
 **Activity Explorer** — Drill into any agent and see exactly what it's been doing:
 
@@ -390,7 +390,7 @@ Look at what got flagged: someone asking an agent to *"rewrite this expense desc
 
 If Purview is the "rules" (what agents can and can't do with data), Defender is the "security cameras" (watching for people trying to break in or agents behaving strangely).
 
-Here's what scares me about the current landscape: **anyone can build an agent now**. It's not just developers with Azure Foundry. Your Marketing team can build agents in Copilot Studio. Your finance analyst can build one in Agent Builder. Both platforms give agents real permissions and real data access — but neither platform requires security training.
+Here's what scares me about the current landscape: anyone can build an agent now. It's not just developers with Azure Foundry. Your Marketing team can build agents in Copilot Studio. Your finance analyst can build one in Agent Builder. Both platforms give agents real permissions and real data access — but neither platform requires security training.
 
 | Who's Building Agents | Platform | Skill Level | Risk |
 |----------------------|----------|-------------|------|
@@ -425,17 +425,17 @@ Every single one of these creates agents with real permissions and real data acc
 
 ### Know What You Have — Agent Inventory
 
-First step: find out what agents actually exist in your tenant. Defender's inventory is genuinely impressive:
+First step: find out what agents actually exist in your tenant. Defender's inventory is impressive:
 
 <p><img src="/images/blog/agent-365-security/defender-ai-agents-inventory.webp" alt="Defender AI Agents inventory discovering agents across Microsoft Foundry, Copilot Studio, AWS Bedrock, and GCP Vertex AI" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-Notice the tabs: **Foundry**, **Copilot Studio**, **AWS Bedrock**, **GCP Vertex AI**. This isn't limited to Microsoft agents. If you're running a multi-cloud environment with agents on different platforms, Defender sees them all.
+Notice the tabs: Foundry, Copilot Studio, **AWS Bedrock**, GCP Vertex AI. This isn't limited to Microsoft agents. If you're running a multi-cloud environment with agents on different platforms, Defender sees them all.
 
 Click on any agent and you get the full picture:
 
 <p><img src="/images/blog/agent-365-security/defender-agent-details.webp" alt="Defender showing detailed information about a specific agent including its Agent ID, platform, model, number of attack paths, risk factors, and active alerts" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-That procurement agent has **50 attack paths**, is grounded with sensitive data, and has **6 active alerts across 4 incidents**. This is the kind of thing that makes you want to have that governance conversation with your CISO immediately.
+That procurement agent has **50 attack paths**, is grounded with sensitive data, and has 6 active alerts across 4 incidents. This is the kind of thing that makes you want to have that governance conversation with your CISO immediately.
 
 ### Find the Holes — Attack Path Analysis
 
@@ -464,7 +464,7 @@ flowchart TD
     G --> H["Agent flow cancelled"]
 ```
 
-The key thing: Defender sits **between the agent and its tools**. It can evaluate tool calls in real-time — before the tool actually runs — for supported tool invocations (this real-time protection is currently in **preview**). If the call looks malicious (like an agent trying to send data to an external endpoint after being jailbroken), Defender can block it before any damage is done.
+The key thing: Defender sits between the agent and its tools. It can evaluate tool calls in real-time — before the tool actually runs — for supported tool invocations (this real-time protection is currently in **preview**). If the call looks malicious (like an agent trying to send data to an external endpoint after being jailbroken), Defender can block it before any damage is done.
 
 Here's a real incident from the demo. An attacker tried to jailbreak a customer support agent:
 
@@ -500,7 +500,7 @@ Let me tell you the complete version of that procurement agent story from the be
 
 **The setup:** Zava Corporation builds a procurement agent in Copilot Studio. It reads purchase orders, summarises them, and can email summaries. Standard stuff.
 
-**What goes wrong — Part 1: The data leak**
+What goes wrong — Part 1: The data leak
 
 ```mermaid
 sequenceDiagram
@@ -518,7 +518,7 @@ sequenceDiagram
     Outlook-->>User: Message rejected — contains<br/>sensitive information
 ```
 
-**What goes wrong — Part 2: The jailbreak attempt**
+What goes wrong — Part 2: The jailbreak attempt
 
 ```mermaid
 sequenceDiagram
@@ -545,7 +545,7 @@ sequenceDiagram
 | All agent activity is logged and traceable | **Entra** | Agent ID in every audit entry |
 | A human is accountable for this agent | **Agent 365** | Sponsor assignment |
 
-No single tool covers everything. That's the point — **Agent 365 ties them all together as layers.**
+No single tool covers everything. That's the point — Agent 365 ties them all together as layers.
 
 ---
 
@@ -591,22 +591,22 @@ I know the question you're about to ask. Here's the straight answer:
 
 ## Questions People Ask Me {#questions-people-ask-me}
 
-**"Do I really need this if I only have a few agents?"**
+"Do I really need this if I only have a few agents?"
 Honestly? If you have 2-3 simple agents, basic Copilot Control System governance might be enough. Agent 365 becomes essential when you have 10+ agents, multiple creators, or agents accessing sensitive data. But start the governance conversation *before* you hit that number — retrofitting governance is much harder than building it in from day one.
 
-**"What's the difference between Agent 365 and the Copilot Control System?"**
-I wrote a [whole guide on this](/blog/microsoft-365-copilot-control-system-complete-guide/). The short version: CCS governs **people using AI**. Agent 365 governs **AI working for people**. Different things. You probably want both eventually.
+"What's the difference between Agent 365 and the Copilot Control System?"
+I wrote a [whole guide on this](/blog/microsoft-365-copilot-control-system-complete-guide/). The short version: CCS governs **people using AI**. Agent 365 governs AI working for people. Different things. You probably want both eventually.
 
-**"Can Defender see agents on AWS and GCP?"**
+"Can Defender see agents on AWS and GCP?"
 Yes — the screenshots in this article show it. Defender discovers agents on Foundry, Copilot Studio, AWS Bedrock, and GCP Vertex AI. The inventory is cross-platform.
 
-**"Is this just for big enterprises?"**
+"Is this just for big enterprises?"
 The features are enterprise-grade, but the problems are universal. Even a 50-person company with a few Copilot Studio agents needs to know who built them, what they access, and what happens when the builder leaves. Start simple — sponsors and basic DLP — and grow from there.
 
-**"What about agents built outside Microsoft platforms?"**
+"What about agents built outside Microsoft platforms?"
 Agent 365 is designed for interoperability. Defender already discovers non-Microsoft agents. The roadmap includes deeper third-party integration. But today, the strongest governance story is for agents built in Copilot Studio and Foundry.
 
-**"Which agents am I actually governing here?"**
+"Which agents am I actually governing here?"
 Both the ones you build and the ones Microsoft ships. For the full list of Microsoft's built-in agents — Facilitator, the Planner Agent, the SharePoint agents and the rest — and how each one is turned on, see [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/). Agent 365 governs all of them from one place.
 
 ---

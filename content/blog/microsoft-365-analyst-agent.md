@@ -48,7 +48,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** Analyst is **generally available** (since June 2025) with a Microsoft 365 Copilot licence. **Last verified: 23 June 2026.**
+🔄 **Part of the [Microsoft 365's Built-in Agents](/blog/microsoft-365-built-in-agents/) guide.** Analyst is **generally available** (since June 2025) with a Microsoft 365 Copilot licence. Last verified: 23 June 2026.
 
 </div>
 
@@ -58,16 +58,16 @@ founder_note: |
 
 *The Analyst home in the Microsoft 365 Copilot app — find it under **Agents**, next to Researcher. The three starter cards (Analyze data, Get insights, Visualize) are a quick way in. (Screenshots here use a fictional sample dataset.)*
 
-*Where to find Analyst: under **Agents** in the Microsoft 365 Copilot app, right next to Researcher.*
+*Where to find Analyst: under Agents in the Microsoft 365 Copilot app, right next to Researcher.*
 
 ---
 
 ## TL;DR
 
-- **Analyst** is a built-in agent in the **Microsoft 365 Copilot app** that **turns raw data into insights** — attach files, ask a plain-English question, get a readable report with charts and tables.
-- It's built for the **cross-file** job: consolidate **multiple spreadsheets / CSVs** and reason across them — more than Copilot can do inside one sheet.
-- Under the hood it's **OpenAI's o3-mini** reasoning model and it can **write and run code (Python)** — and you can watch the code run if you want to check its work, or just take the results.
-- **On-switch:** a **Microsoft 365 Copilot** licence. Find it under **Agents**, next to Researcher.
+- **Analyst** is a built-in agent in the **Microsoft 365 Copilot app** that turns raw data into insights — attach files, ask a plain-English question, get a readable report with charts and tables.
+- It's built for the **cross-file** job: consolidate multiple spreadsheets / CSVs and reason across them — more than Copilot can do inside one sheet.
+- Under the hood it's **OpenAI's o3-mini** reasoning model and it can write and run code (Python) — and you can watch the code run if you want to check its work, or just take the results.
+- **On-switch:** a **Microsoft 365 Copilot** licence. Find it under Agents, next to Researcher.
 - **You don't have to be a data analyst** — that's the whole point.
 - **Not in government clouds** (GCC, GCC High, DoD) yet.
 
@@ -80,7 +80,7 @@ founder_note: |
 
 The job it removes is the tedious one: looking through thousands of rows across multiple files, trying to consolidate them, and then working out what they mean. You hand Analyst the files and a question, and it calculates the statistics, identifies the trends, surfaces the outliers, and writes it up in plain language with **charts and tables**.
 
-It's built on **OpenAI's o3-mini reasoning model** and uses **chain-of-thought reasoning** — it works through a problem in steps, taking as many as it needs to refine the answer, and it can **write and run Python** to do the heavy lifting. You can **view the code it runs in real time** and check its work — or just take the insight.
+It's built on **OpenAI's o3-mini reasoning model** and uses chain-of-thought reasoning — it works through a problem in steps, taking as many as it needs to refine the answer, and it can write and run Python to do the heavy lifting. You can view the code it runs in real time and check its work — or just take the insight.
 
 ---
 
@@ -101,9 +101,9 @@ If your data lives in one sheet, Copilot in Excel is right there. If the story i
 
 ## How to use it {#how}
 
-1. Open the **Microsoft 365 Copilot** app and select **Analyst** under **Agents**.
+1. Open the Microsoft 365 Copilot app and select **Analyst** under Agents.
 2. **Type a question** about the data you want to analyse.
-3. Select the **+** icon, then **Attach content**, and supply the file(s) — upload from your device or pick from **OneDrive**.
+3. Select the **+** icon, then Attach content, and supply the file(s) — upload from your device or pick from OneDrive.
 4. Let it work — it consolidates and analyses the data, reasoning through it step by step.
 5. **Read the report** — plain-English findings with the charts and tables to back them up.
 
@@ -115,7 +115,7 @@ If your data lives in one sheet, Copilot in Excel is right there. If the story i
 
 ## Example prompts — what you can actually ask it {#prompts}
 
-The pattern that works every time: **attach your files first, then ask a specific question** — not "analyse this," but "compare X by Y and tell me the trend." Microsoft's own starter prompts, plus more in the same shape, grouped by the job you're doing:
+The pattern that works every time: attach your files first, then ask a specific question — not "analyse this," but "compare X by Y and tell me the trend." Microsoft's own starter prompts, plus more in the same shape, grouped by the job you're doing:
 
 **Sales & revenue** *(Microsoft's own example prompts)*
 
@@ -145,7 +145,7 @@ Ask it to compare and it does the maths for you — pivoting your raw rows into 
 
 > 🧩 **A good habit:** ask one clear question per run. If you need five things, that's often five sharper prompts — each gets a cleaner answer than one sprawling "tell me everything about this data."
 
-> 📎 **Tip:** because Analyst can **run code**, you can use the **code-view option** to inspect the Python it ran — so you (or a real analyst) can check the method, not just the answer.
+> 📎 **Tip:** because Analyst can **run code**, you can use the code-view option to inspect the Python it ran — so you (or a real analyst) can check the method, not just the answer.
 
 ---
 
@@ -158,14 +158,14 @@ Analyst has a sibling, the [Researcher agent](/blog/microsoft-365-researcher-age
 | A question about a topic | Deep research + a cited report | **Researcher** |
 | Spreadsheets and raw data | Consolidated data insights + charts | **Analyst** |
 
-Both are reasoning agents, both sit under **Agents** in Microsoft 365 Copilot, and they came out of the same June 2025 launch. Many people use both — Researcher to gather the picture, Analyst to crunch the numbers behind it.
+Both are reasoning agents, both sit under Agents in Microsoft 365 Copilot, and they came out of the same June 2025 launch. Many people use both — Researcher to gather the picture, Analyst to crunch the numbers behind it.
 
 ---
 
 ## Licensing {#licensing}
 
-- **Licence:** a **Microsoft 365 Copilot** licence. Analyst debuted in April 2025 through the Frontier program and reached **general availability on 2 June 2025**.
-- **Where:** the **Microsoft 365 Copilot** app, under **Agents**.
+- **Licence:** a Microsoft 365 Copilot licence. Analyst debuted in April 2025 through the Frontier program and reached general availability on 2 June 2025.
+- **Where:** the Microsoft 365 Copilot app, under Agents.
 - **Allowance:** included with the licence; at general availability a Microsoft 365 Copilot licence included **25 combined** Researcher + Analyst queries a month, and like Researcher that figure may change — confirm the current number in Microsoft's docs.
 
 ---
@@ -175,7 +175,7 @@ Both are reasoning agents, both sit under **Agents** in Microsoft 365 Copilot, a
 - **Check the output.** It's labelled as possibly incorrect — sanity-check the numbers and confirm it answered the question you meant.
 - **It needs the data attached.** Analyst works on the files you give it; point it at the right sources for a useful answer.
 - **Fewer languages than Researcher.** At general availability Analyst supported **8 languages** (Researcher supported 37), with more added since — check Microsoft's docs if you work in a non-English language.
-- **Allowance:** at GA a Microsoft 365 Copilot licence included **25 combined** Researcher + Analyst queries a month; that figure may change, so confirm the current number.
+- **Allowance:** at GA a Microsoft 365 Copilot licence included 25 combined Researcher + Analyst queries a month; that figure may change, so confirm the current number.
 - **Government clouds:** not available in **GCC, GCC High or DoD** yet.
 
 ---
