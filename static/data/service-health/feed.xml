@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 21 Aug 2026 03:13:26 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2026 04:50:17 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may experience inconsistencies with Microsoft 365 Copilot features</title>
@@ -64,9 +64,9 @@
     <item>
       <title>[Microsoft 365 suite] Some users may be unable to search for content in SharePoint Online, OneDrive, Outlook on the web, or Outlook desktop</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1456424</link>
-      <description>[Microsoft 365 suite] Users may be unable to search for content in SharePoint Online, OneDrive, Outlook on the web, or Outlook desktop.</description>
+      <description>[Microsoft 365 suite] Users may have been unable to search for content in SharePoint Online, OneDrive, Outlook on the web, or Outlook desktop.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1456424</guid>
       <pubDate>Mon, 17 Aug 2026 12:46:14 +0000</pubDate>
     </item>
