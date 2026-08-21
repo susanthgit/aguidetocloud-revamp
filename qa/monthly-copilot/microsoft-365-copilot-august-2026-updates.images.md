@@ -179,20 +179,30 @@ cursor on it) and "All skills", with "Show more" beneath.
 than its neighbours — text in the rail is soft and the ribbon is illegible.
 
 ## §13 — PowerPoint referencing SharePoint libraries and OneDrive folders
-`4f7e7c80b253a4954298547f55ab0aca86d63277eb53660b4594dc9eae92a7bd`
+`ace10fea48d13b0099061b6eaa20599c5ea31b37f6d844a5aa350fdff44d2b47`
 
-**Observed:** Three-panel composite. **1 · Copy the link to a SharePoint folder:** SharePoint
-site "Contoso HR Policies and Guidance", Documents view, context menu open with "Copy link"
-highlighted; red box around a selected folder named "hiring". **2 · Paste it into Copilot with
-one plain sentence:** red-boxed URL beginning
-`https://m365cpi52224224.sharepoint.com/:f:/s/ContosoHRPoliciesandGuidance/IgDC…` followed by
-"create a presentatation from this document"; Copilot "Reasoned in 10 steps", "1 question
-skipped". **3 · Copilot builds the deck from what is in the folder:** four red-boxed slide
-thumbnails and a title slide "CONTOSO | HR POLICIES AND GUIDANCE — Organization Restructure
-Plan, Effective April 1, 2025".
+**Observed (re-observed 21 Aug 2026 after redaction):** Three-panel composite. **1 · Copy the
+link to a SharePoint folder:** SharePoint site "Contoso HR Policies and Guidance", Documents
+view, context menu open with "Copy link" highlighted (cursor on it), items Share / Copy link /
+Copilot / Manage access / Forms / Delete; red box around a selected folder named "hiring".
+**2 · Paste it into Copilot with one plain sentence:** red-boxed URL now reading
+`https:` ▮ `sharepoint.com/:f:/s/ContosoHRPoliciesandGuidance` ▮ — four grey redaction bars
+cover the tenant subdomain, the token and the `?e=` share parameter, leaving the scheme, the
+`:f:` folder marker and the library name readable. Followed by "create a presentatation from
+this document" (Microsoft's UI shows my typo, not a rendering fault); Copilot card "Reasoned
+in 10 steps", "1 question skipped". **3 · Copilot builds the deck from what is in the folder:**
+red-boxed thumbnail rail with **exactly four** numbered slides — 1 "Organization Restructure
+Plan", 2 "Why we are restructuring", 3 "Departmental shifts", 4 "Pooling the resource bench" —
+and an open title slide "CONTOSO | HR POLICIES AND GUIDANCE — Organization Restructure Plan,
+Effective April 1, 2025".
 
-**Verdict:** ✅ MATCH on content. 🔴 **Flag raised for Sush** — the pasted URL exposes the lab
-tenant hostname *and* a full sharing token (`?e=…`). See "Flags" below.
+**Verdict:** ✅ MATCH. Both flags from the first pass are now closed:
+- 🔴 → ✅ **Live sharing URL redacted.** The first capture exposed the lab tenant hostname and
+  a complete sharing token. Grey bars now cover both. The `:f:` marker is deliberately left
+  visible because the body text teaches it as SharePoint's folder marker.
+- 🔴 → ✅ **Body/image count mismatch fixed.** The prose claimed "Five slides are visible in the
+  thumbnail rail"; the rail shows four. Corrected to "Four slides". *Lesson: an observation is
+  only half the check — it has to be read back against what the prose claims about the image.*
 
 ## §14 — Word added Anthropic model choice for editing
 `cf60d295b96129935ea28cee021ea54734e39f2c22b7cd7a709290e3d20aed77`
@@ -892,7 +902,8 @@ still block grounding conditionally).
 
 | § | Severity | Finding |
 |---|---|---|
-| 13 | 🔴 Review before publish | The pasted SharePoint URL shows the lab tenant host `m365cpi52224224.sharepoint.com` **and** a complete sharing token (`?e=b52iwA`). The folder is Contoso demo content in a disposable CDX lab tenant, so the blast radius is small — but a sharing link with a live token is still a credential in a public post. Recommend blurring the token segment. |
+| 13 | ✅ **Resolved 21 Aug 2026** | ~~The pasted SharePoint URL shows the lab tenant host and a complete sharing token (`?e=…`).~~ Grey redaction bars now cover the tenant subdomain, the token and the `?e=` parameter; the `:f:` folder marker and library name are left readable because the body text teaches them. Image re-observed under its new hash `ace10fea48d1`. |
+| 13 | ✅ **Resolved 21 Aug 2026** | ~~Body text claimed "Five slides are visible in the thumbnail rail"; the rail shows four.~~ Corrected to "Four slides", and the alt text now states the count. Found by reading the recorded observation back against the prose — the observation had said "four" all along. |
 | 16 | 🟡 Sush's call | Status bar reads `Inner Ring (Fastfood) : FUS1` — a Microsoft-internal build-ring name, legible at full size. Not confidential, but it does mark the capture as an internal build. |
 | 12 | 🟡 Cosmetic | Capture is visibly lower resolution than its neighbours. |
 | 18 | 🟡 Copy | Shot is iPad-only; heading says "iPhone and iPad". Ensure the alt text does not claim an iPhone is pictured. |
