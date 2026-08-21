@@ -42,6 +42,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 TOOL_VERSION = "1.0.0"
+# Bumped to 2 when the post hash became line-ending canonical: a schema-1
+# receipt records a byte hash that is only valid on the platform that wrote it,
+# so it must be regenerated rather than trusted.
+RECEIPT_SCHEMA = 2
 
 REPO = Path(__file__).resolve().parents[1]
 BLOG = REPO / "content" / "blog"
@@ -130,6 +134,35 @@ def sha256_file(p: Path) -> str:
 
 def sha256_text(s: str) -> str:
     return hashlib.sha256(s.encode("utf-8")).hexdigest()
+
+
+def sha256_textfile(p: Path) -> str:
+    """Hash a TEXT file with line endings normalised to LF.
+
+    core.autocrlf=true, so one commit is CRLF in this Windows working copy and
+    LF in a Linux CI checkout. Measured on the August issue: 1264 CRLF
+    sequences, byte hash 51a93af3... here against 3b62ecf8... on Ubuntu. A
+    receipt written locally would therefore be reported stale by CI on its very
+    first run - a red build for a post with nothing wrong with it.
+
+    Images keep sha256_file: they are binary, and normalising them would both
+    corrupt the hash and defeat the point of content-binding.
+    """
+    return hashlib.sha256(p.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+
+
+def frontmatter(text: str) -> str:
+    """The opening --- block only.
+
+    Draft state must never be read from the body: a `draft: true` line inside a
+    fenced code block would otherwise exempt a published post from every gate.
+    """
+    m = re.match(r"\A---\r?\n(.*?)\r?\n---(?:\r?\n|\Z)", text, re.S)
+    return m.group(1) if m else ""
+
+
+def is_draft(text: str) -> bool:
+    return bool(re.search(r"^draft:\s*true\s*$", frontmatter(text), re.M | re.I))
 
 
 # ------------------------------------------------------------------ parsing
@@ -477,13 +510,13 @@ def cmd_audit(args) -> int:
     if args.write_receipt:
         QA_DIR.mkdir(parents=True, exist_ok=True)
         receipt = {
-            "schema": 1,
+            "schema": RECEIPT_SCHEMA,
             "slug": slug,
             "tool_version": TOOL_VERSION,
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "post": {
                 "path": str(post.relative_to(REPO)).replace("\\", "/"),
-                "sha256": sha256_file(post),
+                "sha256": sha256_textfile(post),
                 "sections": len(rows),
             },
             "roadmap_snapshot": feed_provenance(data, items),
@@ -591,36 +624,164 @@ def cmd_inspect(args) -> int:
 
 # ---------------------------------------------------------- verify receipt
 
-def cmd_verify_receipt(args) -> int:
-    post = resolve_post(args.post)
+# The enforcement boundary lives in CODE, not in the editable baseline file:
+# grandfathering a new post must never be the same one-line JSON edit that moves
+# the cutoff. The seven pre-August issues carry 182 unobserved images and 34
+# unresolved sections between them; retrofitting that is not worth doing, but the
+# grandfathered list must only ever shrink.
+ENFORCEMENT_START = (2026, 8)
+
+
+def post_ym(post: Path) -> tuple[int, int]:
+    m = POST_RE.match(post.stem)
+    return (int(m.group(2)), MONTHS.index(m.group(1)) + 1) if m else (0, 0)
+
+
+def load_baseline() -> tuple[set[str], list[str]]:
+    """Grandfathered slugs, plus every reason the baseline itself is invalid."""
+    f = QA_DIR / "legacy-baseline.json"
+    if not f.exists():
+        return set(), []
+    try:
+        data = json.loads(read(f))
+    except json.JSONDecodeError as exc:
+        return set(), [f"legacy baseline is not valid JSON ({exc})"]
+    slugs = data.get("slugs") if isinstance(data, dict) else None
+    if not isinstance(slugs, list):
+        return set(), ["legacy baseline has no 'slugs' list"]
+    errs = []
+    if len(set(slugs)) != len(slugs):
+        errs.append("legacy baseline contains duplicate slugs")
+    known = {slug_of(p): p for p in discover_posts()}
+    for s in slugs:
+        p = known.get(s)
+        if p is None:
+            errs.append(f"legacy baseline lists {s!r}, which is not a post")
+        elif post_ym(p) >= ENFORCEMENT_START:
+            errs.append(
+                f"legacy baseline lists {s!r}, which is not before the enforcement "
+                f"start {ENFORCEMENT_START[0]}-{ENFORCEMENT_START[1]:02d}")
+    return set(slugs), errs
+
+
+def structured_observations(slug: str) -> dict[str, int]:
+    """sha256 -> section, for hashes backed by a real Observed block.
+
+    observation_index accepts any bare 64-hex string as proof, so a hash pasted
+    with no prose reads as reviewed. A receipt is only worth trusting if the
+    evidence behind it has the shape of an observation.
+    """
+    blocks, _ = observation_blocks(QA_DIR / f"{slug}.images.md")
+    return {b["sha256"]: b["n"] for b in blocks if b["observed"].strip()}
+
+
+def verify_receipt(post: Path) -> list[str]:
+    """Every reason this post fails its receipt check; empty list means ok."""
     slug = slug_of(post)
-    text = read(post)
-    if re.search(r"^draft:\s*true\s*$", text, re.M | re.I):
-        print(f"[receipt] {slug} is still a draft - receipt not required yet")
-        return 0
     f = QA_DIR / f"{slug}.json"
     if not f.exists():
-        print(f"  FAIL  {slug}: published post has no QA receipt at "
-              f"{f.relative_to(REPO)}")
-        print("        Run: python scripts/monthly-blog-qa.py audit "
-              f"--post {post.name} --write-receipt")
+        return [f"published post has no QA receipt at {f.relative_to(REPO)} - run: "
+                f"python scripts/monthly-blog-qa.py audit --post {post.name} "
+                "--write-receipt"]
+    try:
+        receipt = json.loads(read(f))
+    except json.JSONDecodeError as exc:
+        return [f"receipt is not valid JSON ({exc}) - re-run the audit"]
+    if not isinstance(receipt, dict):
+        return ["receipt is not a JSON object - re-run the audit"]
+    if receipt.get("schema") != RECEIPT_SCHEMA:
+        return [f"receipt schema is {receipt.get('schema')!r}, expected "
+                f"{RECEIPT_SCHEMA} - re-run the audit (schema 1 recorded a byte "
+                "hash that is only valid on the platform that wrote it)"]
+
+    fails = []
+    if receipt.get("slug") != slug:
+        fails.append(f"receipt is for slug {receipt.get('slug')!r}, not {slug!r}")
+    if receipt.get("state") != "pass":
+        fails.append(f"receipt state is {receipt.get('state')!r}, not 'pass' - a "
+                     "degraded audit cannot certify itself")
+    if receipt.get("post", {}).get("sha256") != sha256_textfile(post):
+        fails.append("receipt is stale - written for different post content; "
+                     "re-run the audit")
+    for key in ("unresolved_sections", "unobserved_images"):
+        val = receipt.get(key)
+        if not isinstance(val, list):
+            fails.append(f"receipt field {key} is missing or not a list")
+        elif val:
+            fails.append(f"{len(val)} {key.replace('_', ' ')}: {val[:5]}")
+
+    # Re-derive the evidence rather than taking the receipt's word for it. Those
+    # arrays are empty at the moment the audit ran; swapping an image afterwards
+    # leaves the markdown - and therefore the post hash - untouched, so the stale
+    # arrays still pass. Measured: appending one byte to a reviewed image kept
+    # verify-receipt green while audit on the same state reported the failure.
+    live = image_rows([s for s in parse_sections(read(post)) if s["kind"] == "heading"])
+    obs = structured_observations(slug)
+    recorded = {r.get("src"): r for r in receipt.get("images", []) if isinstance(r, dict)}
+    for r in live:
+        was = recorded.get(r["src"])
+        if was is None:
+            fails.append(f"§{r['section']} {r['src']} is not in the receipt")
+        elif not r["exists"]:
+            fails.append(f"§{r['section']} {r['src']} is missing from disk")
+        elif was.get("sha256") != r["sha256"]:
+            fails.append(f"§{r['section']} {r['src']} has changed since the receipt")
+        elif r["sha256"] not in obs:
+            fails.append(f"§{r['section']} {r['src']} has no written observation")
+    for src in sorted(set(recorded) - {r["src"] for r in live}):
+        fails.append(f"{src} is in the receipt but no longer used by the post")
+    return fails
+
+
+def cmd_verify_receipt(args) -> int:
+    baseline, errs = load_baseline()
+    if not getattr(args, "all", False):
+        post = resolve_post(args.post)
+        slug = slug_of(post)
+        if slug in baseline:
+            print(f"[receipt] {slug} predates enforcement - grandfathered")
+            return 0
+        if is_draft(read(post)):
+            print(f"[receipt] {slug} is still a draft - receipt not required yet")
+            return 0
+        fails = verify_receipt(post)
+        for m in fails:
+            print(f"  FAIL  {slug}: {m}")
+        if fails:
+            return 1
+        print(f"  ok    {slug}: receipt matches content and observed evidence")
+        return 0
+
+    posts = discover_posts()
+    if not posts:
+        print("  FAIL  no monthly posts found - the corpus check has nothing to "
+              "verify, which is a failure and not a pass")
         return 1
-    receipt = json.loads(read(f))
-    actual = sha256_file(post)
-    if receipt.get("post", {}).get("sha256") != actual:
-        print(f"  FAIL  {slug}: receipt is stale - it was written for different "
-              "post content. Re-run the audit.")
-        return 1
-    if receipt.get("unresolved_sections"):
-        print(f"  FAIL  {slug}: unresolved sections "
-              f"{receipt['unresolved_sections']}")
-        return 1
-    if receipt.get("unobserved_images"):
-        print(f"  FAIL  {slug}: {len(receipt['unobserved_images'])} image(s) "
-              "have no written observation")
-        return 1
-    print(f"  ok    {slug}: receipt matches content, no unresolved findings")
-    return 0
+    rc = 0
+    for e in errs:
+        print(f"  FAIL  {e}")
+        rc = 1
+    checked = skipped = 0
+    for p in posts:
+        slug = slug_of(p)
+        if slug in baseline:
+            skipped += 1
+            continue
+        if is_draft(read(p)):
+            print(f"  draft {slug}: receipt not required yet")
+            skipped += 1
+            continue
+        checked += 1
+        fails = verify_receipt(p)
+        # Never die() inside the loop: one bad post must not hide the rest.
+        for m in fails:
+            print(f"  FAIL  {slug}: {m}")
+            rc = 1
+        if not fails:
+            print(f"  ok    {slug}")
+    print(f"[receipt] {checked} verified, {skipped} skipped "
+          f"({len(baseline)} grandfathered) of {len(posts)} posts")
+    return rc
 
 
 # --------------------------------------------------------------------- main
@@ -872,6 +1033,8 @@ def main() -> int:
 
     p = sub.add_parser("verify-receipt")
     p.add_argument("--post")
+    p.add_argument("--all", action="store_true",
+                   help="verify every published post, not just the latest")
     p.set_defaults(fn=cmd_verify_receipt)
 
     p = sub.add_parser("links", help="check outbound links resolve (network; not a push gate)")

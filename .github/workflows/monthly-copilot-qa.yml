@@ -22,6 +22,7 @@ on:
       - 'scripts/monthly-blog-qa.py'
       - 'scripts/monthly-blog-qa.test.py'
       - 'qa/monthly-copilot/**'
+      - 'static/images/blog/**'
       - 'static/data/roadmap/latest.json'
       - '.github/workflows/monthly-copilot-qa.yml'
   pull_request:
@@ -30,6 +31,7 @@ on:
       - 'scripts/monthly-blog-qa.py'
       - 'scripts/monthly-blog-qa.test.py'
       - 'qa/monthly-copilot/**'
+      - 'static/images/blog/**'
   workflow_dispatch:
 
 permissions:
@@ -60,3 +62,16 @@ jobs:
       # roadmap feed refresh can invalidate a post nobody touched.
       - name: Lint all monthly issues
         run: python scripts/monthly-blog-qa.py lint
+
+      # Every published issue must still be backed by its QA receipt: the post
+      # unchanged since the audit, and every image it embeds still hashing to
+      # something with a written observation behind it. Feed-independent by
+      # design - the roadmap bot commits daily, and a bot must never be able to
+      # turn this red. Issues from before the tool existed are grandfathered in
+      # qa/monthly-copilot/legacy-baseline.json; the cutoff itself is in code.
+      #
+      # This is a backstop, NOT a publication gate: deploy.yml hands off to
+      # Cloudflare Pages on push, so by the time this runs the post is already
+      # live. The pre-push hook is the gate. This catches what bypassed it.
+      - name: Verify QA receipts for every published issue
+        run: python scripts/monthly-blog-qa.py verify-receipt --all

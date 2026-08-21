@@ -96,8 +96,32 @@ if ($qaChanged -and $py) {
     }
 }
 
-$blogChanged = $changed | Where-Object { $_ -match '^content/blog/.*\.md$' -or $_ -match '^static/images/og/blog/' }
+# ── monthly issue receipt gate (~0.1s) — the only PRE-publication gate there is ──
+# Cloudflare Pages deploys on push (.github/workflows/deploy.yml says so in its
+# own header), so CI runs when the post is ALREADY public. This hook is the last
+# point at which a monthly issue can be stopped. It fires on the post markdown,
+# on the images the post embeds, and on the QA artefacts themselves: swapping an
+# image changes no markdown at all, which is exactly the silent failure the
+# receipt exists to catch, and the content filter below never saw those paths.
+$monthlyChanged = $changed | Where-Object {
+    $_ -match '^content/blog/microsoft-365-copilot-.*-updates\.md$' -or
+    $_ -match '^static/images/blog/' -or
+    $_ -match '^qa/monthly-copilot/'
+}
+if ($monthlyChanged -and $py) {
+    Write-Host "[pre-push] monthly issue touched - verifying QA receipts..." -ForegroundColor Cyan
+    & python $qa verify-receipt --all
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host ""
+        Write-Host "  PUSH BLOCKED - a published monthly issue has no valid QA receipt." -ForegroundColor Red
+        Write-Host "  Cloudflare deploys on push, so this is the last gate before it is public." -ForegroundColor Yellow
+        Write-Host "  Re-observe anything that changed, then re-run:" -ForegroundColor Yellow
+        Write-Host "    python scripts/monthly-blog-qa.py audit --post <file> --write-receipt" -ForegroundColor Yellow
+        exit 1
+    }
+}
 
+$blogChanged = $changed | Where-Object { $_ -match '^content/blog/.*\.md$' -or $_ -match '^static/images/og/blog/' }
 if (-not $blogChanged) {
     try { [Console]::OutputEncoding = $prevEnc } catch { }
     exit 0   # silent: nothing to say, don't add push noise

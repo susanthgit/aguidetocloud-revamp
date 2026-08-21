@@ -15,6 +15,7 @@ from __future__ import annotations
 import importlib.util
 import contextlib
 import io
+import json
 import sys
 import tempfile
 import types
@@ -341,6 +342,193 @@ check("crosscheck exits 0 when advisory and 1 under --strict",
 _c, _out = crosscheck(_MISMATCH, "")
 check("crosscheck survives a post with no observation file",
       _c == 0 and "0 candidate" in _out, _out)
+
+# ------------------------------------------------- receipts, drafts, baseline
+#
+# cmd_audit and cmd_verify_receipt shipped with ZERO coverage, and that is
+# exactly where two real defects were living: a post hash that was only valid on
+# the platform that wrote it, and a receipt that stayed green after its images
+# were swapped. Every way the receipt can lie now has a test.
+
+def published(*sections: str) -> str:
+    """Like post(), but WITHOUT draft: true - the receipt gate only fires on
+    published issues, so a draft fixture would silently pass everything."""
+    return "---\ntitle: Test\n---\n\n## Microsoft 365 apps\n\n" + "\n".join(sections)
+
+
+OBS_BLOCK = ("## §7 — A thing shipped\n\n`<HASH>`\n\n"
+             "**Observed:** a screenshot of the thing.\n\n**Verdict:** MATCH\n")
+
+
+def receipts(*, text=None, edit=None, touch_image=False, observations=OBS_BLOCK,
+             baseline=None, write_receipt=True, extra=(), all_=False, empty=False):
+    """Drive the real verify-receipt command inside a synthetic repo root."""
+    original = (mbq.REPO, mbq.BLOG, mbq.QA_DIR)
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        blog = root / "content" / "blog"
+        qa = root / "qa"
+        fixture = root / "static" / IMG_SRC.lstrip("/")
+        for d in (blog, qa, fixture.parent):
+            d.mkdir(parents=True, exist_ok=True)
+        fixture.write_bytes(b"not a real webp, only its existence is asserted")
+        mbq.REPO, mbq.BLOG, mbq.QA_DIR = root, blog, qa
+        try:
+            p = blog / "microsoft-365-copilot-august-2026-updates.md"
+            if not empty:
+                p.write_text(text if text is not None
+                             else published(section(7, body_extra=IMG)),
+                             encoding="utf-8")
+            for name in extra:
+                (blog / name).write_text(published(section(7)), encoding="utf-8")
+            sha = mbq.sha256_file(fixture)
+            if observations:
+                (qa / f"{mbq.slug_of(p)}.images.md").write_text(
+                    observations.replace("<HASH>", sha), encoding="utf-8")
+            if baseline is not None:
+                (qa / "legacy-baseline.json").write_text(
+                    json.dumps(baseline), encoding="utf-8")
+            receipt = {
+                "schema": mbq.RECEIPT_SCHEMA,
+                "slug": mbq.slug_of(p),
+                "post": {"sha256": mbq.sha256_textfile(p) if not empty else ""},
+                "images": [{"section": 7, "src": IMG_SRC, "sha256": sha}],
+                "unresolved_sections": [],
+                "unobserved_images": [],
+                "state": "pass",
+            }
+            if edit:
+                # A returned value REPLACES the receipt, so a test can write
+                # something that is not JSON at all; returning None mutates.
+                receipt = edit(receipt) or receipt
+            if write_receipt:
+                (qa / f"{mbq.slug_of(p)}.json").write_text(
+                    receipt if isinstance(receipt, str) else json.dumps(receipt),
+                    encoding="utf-8")
+            if touch_image:
+                # A swapped image changes no markdown, so the post hash and the
+                # recorded arrays both still match. This is the whole point.
+                fixture.write_bytes(fixture.read_bytes() + b"\x00")
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                code = mbq.cmd_verify_receipt(types.SimpleNamespace(
+                    post=None if all_ else str(p), all=all_))
+            return code, buf.getvalue()
+        finally:
+            mbq.REPO, mbq.BLOG, mbq.QA_DIR = original
+
+
+# The measured defect: core.autocrlf=true means one commit is CRLF here and LF
+# in a Linux CI checkout, so a byte hash of the post differs by platform and CI
+# would call a perfectly good receipt stale on its first run.
+with tempfile.TemporaryDirectory() as _td:
+    _crlf, _lf = Path(_td) / "a.md", Path(_td) / "b.md"
+    _crlf.write_bytes(b"one\r\ntwo\r\n")
+    _lf.write_bytes(b"one\ntwo\n")
+    check("post hash is line-ending canonical, so a Windows receipt verifies in Linux CI",
+          mbq.sha256_textfile(_crlf) == mbq.sha256_textfile(_lf))
+    check("image hash stays byte-exact, so normalising never hides a swapped image",
+          mbq.sha256_file(_crlf) != mbq.sha256_file(_lf))
+
+check("draft: true inside a code block does not exempt a published post",
+      not mbq.is_draft("---\ntitle: T\n---\n\n```yaml\ndraft: true\n```\n"))
+check("draft: true in frontmatter is still honoured",
+      mbq.is_draft("---\ntitle: T\ndraft: true\n---\n\nbody"))
+
+_c, _out = receipts()
+check("a complete receipt with observed evidence verifies", _c == 0 and "ok" in _out, _out)
+
+_c, _out = receipts(touch_image=True)
+check("a swapped image fails the receipt even though the markdown is untouched",
+      _c == 1 and "has changed since the receipt" in _out, _out)
+
+_c, _out = receipts(observations="## §7 — A thing shipped\n\n`<HASH>`\n")
+check("a bare hash with no written observation is not evidence",
+      _c == 1 and "no written observation" in _out, _out)
+
+# The template pasted but never filled in. This block has a hash AND an Observed
+# heading, so it survives observation_blocks - only the emptiness check rejects
+# it. Found by mutation testing: the previous fixture failed for a different
+# reason, leaving this guard with no real coverage at all.
+_c, _out = receipts(observations="## §7 — A thing shipped\n\n`<HASH>`\n\n"
+                                 "**Observed:**\n\n**Verdict:** MATCH\n")
+check("an Observed heading with nothing written under it is not evidence",
+      _c == 1 and "no written observation" in _out, _out)
+
+_c, _out = receipts(write_receipt=False)
+check("a published post with no receipt fails",
+      _c == 1 and "no QA receipt" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r.__setitem__("schema", 1))
+check("a schema-1 receipt is rejected rather than trusted",
+      _c == 1 and "schema" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: "{ not json")
+check("a malformed receipt fails by name instead of raising",
+      _c == 1 and "not valid JSON" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r.__setitem__("state", "degraded"))
+check("a degraded audit cannot certify itself",
+      _c == 1 and "degraded" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r.__setitem__("slug", "some-other-post"))
+check("a receipt for a different slug is rejected",
+      _c == 1 and "not" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r["post"].__setitem__("sha256", "0" * 64))
+check("an edited post fails its own receipt as stale",
+      _c == 1 and "stale" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r.__setitem__("unresolved_sections", [12]))
+check("recorded unresolved sections fail the receipt",
+      _c == 1 and "unresolved sections" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r.__setitem__("unobserved_images", None))
+check("a missing or non-list evidence array is a failure, not an empty pass",
+      _c == 1 and "not a list" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r.__setitem__("images", []))
+check("an image the post embeds but the receipt never saw is caught",
+      _c == 1 and "not in the receipt" in _out, _out)
+
+_c, _out = receipts(edit=lambda r: r["images"].append(
+    {"section": 9, "src": "/images/fixture/gone.webp", "sha256": "0" * 64}))
+check("a receipt image the post no longer uses is caught",
+      _c == 1 and "no longer used" in _out, _out)
+
+# The baseline grandfathers issues written before the tool existed. It may
+# shrink, never grow, and must never be able to exempt a gated post.
+_GOOD = {"slugs": ["microsoft-365-copilot-january-2026-updates"]}
+_c, _out = receipts(all_=True, baseline=_GOOD,
+                    extra=("microsoft-365-copilot-january-2026-updates.md",))
+check("a grandfathered issue is skipped, and the gated one still verified",
+      _c == 0 and "1 verified" in _out and "1 grandfathered" in _out, _out)
+
+_c, _out = receipts(all_=True, baseline={"slugs": [
+    "microsoft-365-copilot-august-2026-updates"]})
+check("the baseline cannot grandfather a post at or after the enforcement start",
+      _c == 1 and "enforcement start" in _out, _out)
+
+_c, _out = receipts(all_=True, baseline={"slugs": ["not-a-real-post"]})
+check("the baseline cannot list a slug that is not a post",
+      _c == 1 and "not a post" in _out, _out)
+
+_c, _out = receipts(all_=True, baseline={"slugs": [
+    "microsoft-365-copilot-january-2026-updates",
+    "microsoft-365-copilot-january-2026-updates"]},
+    extra=("microsoft-365-copilot-january-2026-updates.md",))
+check("a duplicated baseline slug is reported",
+      _c == 1 and "duplicate" in _out, _out)
+
+_c, _out = receipts(all_=True, write_receipt=False,
+                    extra=("microsoft-365-copilot-january-2026-updates.md",))
+check("one failing post does not stop the corpus check reaching the others",
+      _c == 1 and _out.count("no QA receipt") == 2, _out)
+
+_c, _out = receipts(all_=True, empty=True, observations="")
+check("a corpus check that finds no posts fails instead of passing vacuously",
+      _c == 1 and "no monthly posts" in _out, _out)
+
 
 # ------------------------------------------------------------------- report
 if _failures:

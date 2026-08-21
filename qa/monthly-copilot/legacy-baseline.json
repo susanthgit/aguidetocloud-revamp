@@ -1,0 +1,21 @@
+{
+  "comment": [
+    "Monthly issues published before the QA tool existed. Between them they carry",
+    "182 unobserved images and 34 unresolved sections; retrofitting that evidence",
+    "would be invented, not observed, so they are grandfathered instead.",
+    "",
+    "This list may SHRINK - never grow. The enforcement cutoff itself lives in",
+    "scripts/monthly-blog-qa.py (ENFORCEMENT_START), so exempting a new post can",
+    "never be a single edit here: a slug at or after the cutoff fails validation.",
+    "August 2026 is the first gated issue and is deliberately absent."
+  ],
+  "slugs": [
+    "microsoft-365-copilot-january-2026-updates",
+    "microsoft-365-copilot-february-2026-updates",
+    "microsoft-365-copilot-march-2026-updates",
+    "microsoft-365-copilot-april-2026-updates",
+    "microsoft-365-copilot-may-2026-updates",
+    "microsoft-365-copilot-june-2026-updates",
+    "microsoft-365-copilot-july-2026-updates"
+  ]
+}
