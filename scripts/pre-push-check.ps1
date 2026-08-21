@@ -292,28 +292,40 @@ if ($cssJsChanged -and -not $SkipContrast) {
 }
 
 # ─── ADVISORY CHECK: Blog voice (non-blocking) ───
-# Added 2026-08-21. Two different questions, two different scripts:
-#   ai-writing-audit.mjs      SURFACE   — do the WORDS read as machine-made?
+# Added 2026-08-21. Three different questions, three different scripts:
+#   rhythm-audit.mjs           RHYTHM    — does the CADENCE read as machine-made?
+#   ai-writing-audit.mjs       SURFACE   — do the WORDS read as machine-made?
 #                                         (github.com/conorbronsdon/avoid-ai-writing)
 #   proof-of-thought-audit.mjs SUBSTANCE — is there evidence a human did the work?
 #                                         (stopsloppypasta.ai)
 #
-# Deliberately ADVISORY, never blocking. Voice is the author's call, and both
-# standards state plainly that they produce signals, not proof — they also fire
-# harder on second-language writers and on technical genres, which is exactly
+# Read rhythm FIRST. The upstream standard's own false-positive corpus
+# (corpus/README.md v3.22.0) measured which of its categories actually
+# separate human from machine text:
+#     uniformity (rhythm)  11.7x lift   <- the real signal
+#     tier1 (word list)     0.9x lift   <- barely discriminates
+#     em-dash               0.2x lift   <- INVERTED; dashes read HUMAN
+# Pooled ROC-AUC for the composite score is 0.501 — a coin flip. So the word
+# and dash counts below are writing-STYLE signals, not authorship signals, and
+# must not be read as "this looks AI-written". Rhythm is the one that is.
+#
+# Deliberately ADVISORY, never blocking. Voice is the author's call, and all
+# three standards state plainly that they produce signals, not proof — they also
+# fire harder on second-language writers and on technical genres, which is exactly
 # this blog. A blocking gate here would be a machine overruling a human about
 # his own voice. The job is to surface drift, not to enforce a style.
 if ($blogChanged) {
     Write-Host "`n[Advisory] Blog voice drift..." -ForegroundColor DarkCyan
     foreach ($voice in @(
-        @{ script = "ai-writing-audit.mjs";      label = "surface (word choice, em dash + bold density)" },
+        @{ script = "rhythm-audit.mjs";           label = "rhythm (sentence cadence — the 11.7x signal)" },
+        @{ script = "ai-writing-audit.mjs";       label = "surface (word choice, em dash + bold density)" },
         @{ script = "proof-of-thought-audit.mjs"; label = "substance (first-hand evidence, reader tax)" }
     )) {
         $vs = Join-Path $PSScriptRoot $voice.script
         if (Test-Path $vs) {
             Write-Host "  $($voice.label)" -ForegroundColor DarkGray
             & node $vs 2>&1 |
-                Where-Object { $_ -match 'em dash|bold /1k|Tier 1|WEIGHTED|zero experience|unearned authority|hollow scaffolding|first-hand experience' } |
+                Where-Object { $_ -match 'em dash|bold /1k|Tier 1|WEIGHTED|zero experience|unearned authority|hollow scaffolding|first-hand experience|Posts flagged|Median sentence-length|uniformity|burstiness' } |
                 Select-Object -First 6 |
                 ForEach-Object { Write-Host "    $_" -ForegroundColor DarkGray }
         } else {
