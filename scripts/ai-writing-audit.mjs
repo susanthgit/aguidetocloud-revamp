@@ -68,8 +68,16 @@ function strip(raw) {
   t = t.replace(/\{\{[<%][\s\S]*?[>%]\}\}/g, ' ');            // hugo shortcodes
   t = t.replace(/<(?:img|figure|figcaption|div|span|table|iframe|br|hr)[^>]*>/gi, ' ');
   t = t.replace(/<\/(?:figure|div|span|table)>/gi, ' ');
-  t = t.replace(/https?:\/\/\S+/g, ' ');                      // bare URLs
+  // ORDER MATTERS — link targets must go BEFORE bare URLs.
+  // Fixed 2026-08-21 after Gate A caught it. Previously the bare-URL regex
+  // ran first, and because \S+ is greedy it also ate the closing ")" of a
+  // markdown link, leaving a dangling "](" for the link-target regex to
+  // consume forward until the NEXT ")" anywhere in the document — swallowing
+  // visible prose. Measured cost of the old order across these 74 posts:
+  // 962 em dashes and 70,789 words silently dropped, which is why every
+  // dash count produced before this fix was too low.
   t = t.replace(/\]\([^)]*\)/g, '] ');                        // link targets
+  t = t.replace(/https?:\/\/\S+/g, ' ');                      // bare URLs
   return t;
 }
 function splitTables(t) {
@@ -215,7 +223,10 @@ console.log(`Scope: content/blog/ — ${rows.length} posts, ${agg('words').toLoc
 console.log('Excluded from prose analysis: code, tables, shortcodes, HTML, URLs');
 console.log('='.repeat(78));
 
-console.log('\n--- AUTHORSHIP-EVIDENCE SIGNALS (Tier 1A + pattern categories) ---');
+console.log('\n--- STYLE SIGNALS (Tier 1A + pattern categories) ---');
+console.log('NOT authorship evidence. The standard\'s own human-control corpus measured its');
+console.log('112-word table at 0.9x lift — it fires slightly MORE on human writing. Treat every');
+console.log('number below as writing advice. Rhythm is the authorship signal: rhythm-audit.mjs');
 console.log(`Tier 1A "AI frequency marker" words : ${agg('t1aN')}  (${(agg('t1aN')/(agg('words')/1000)).toFixed(2)} per 1k words)`);
 console.log(`Pattern-category phrase hits        : ${agg('phraseN')}`);
 console.log(`"It's not X — it's Y" constructions  : ${agg('notXbutY')}`);
@@ -226,8 +237,11 @@ console.log(`Tier 1B clarity words               : ${agg('t1bN')}`);
 console.log(`Tier 2 words (total)                : ${agg('t2N')}`);
 console.log(`Tier 3 words                        : ${agg('t3N')}  (${((agg('t3N')/agg('words'))*100).toFixed(2)}% of prose — flag threshold 3%)`);
 
-console.log('\n--- FORMATTING TELLS ---');
-console.log(`Em dashes in prose                  : ${agg('emProse')}  (${(agg('emProse')/(agg('words')/1000)).toFixed(1)} per 1k — skill target 0, hard max 1)`);
+console.log('\n--- FORMATTING (style only — see note below) ---');
+console.log(`Em dashes in prose                  : ${agg('emProse')}  (${(agg('emProse')/(agg('words')/1000)).toFixed(1)} per 1k)`);
+console.log('  ^ INVERTED SIGNAL. Measured 9.9% human vs 1.9% machine (0.2x lift) — an em dash');
+console.log('    is evidence of HUMAN authorship. Do not strip these to look less AI-written.');
+console.log('    House rule is paragraphs with 3+ dashes only. See blog-voice-guide.md Rule 2.');
 console.log(`Em dashes carved out (list items)   : ${agg('emList')}`);
 console.log(`"--" double-hyphen substitutes       : ${agg('emDoubleHyphen')}`);
 console.log(`Bold runs                           : ${agg('bold')}  (${(agg('bold')/(agg('words')/1000)).toFixed(1)} per 1k)`);
