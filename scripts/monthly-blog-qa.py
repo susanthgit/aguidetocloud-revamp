@@ -686,25 +686,38 @@ def numeric_pairs(text: str, window: int = 3) -> list[tuple[int, set, str]]:
     return out
 
 
-def observation_blocks(audit_md: Path) -> list[dict]:
+def observation_blocks(audit_md: Path) -> tuple[list[dict], dict[str, int]]:
     """Per-section observations, scoped to the Observed prose and bound to a hash.
 
     Scoping matters: the Verdict prose narrates the defect and quotes the WRONG
     number while explaining the fix, so reading a whole block flags the corrected
     post. Hash binding matters because an observation of a replaced image is not
     evidence about the image now on the page.
+
+    Headings carry qualifiers in practice - "## §32 (image 1 of 2) — ..." - so the
+    dash cannot be required immediately after the number. Demanding it silently
+    dropped the only multi-image section in the August issue, which is precisely
+    where prose and alt text describe different pictures. Everything dropped is
+    counted and returned: a coverage figure nobody can see is indistinguishable
+    from full coverage.
     """
+    drops = {"malformed_heading": 0, "no_hash_or_observed": 0}
     if not audit_md.exists():
-        return []
-    blocks = []
-    for mt in re.finditer(r"## §(\d+)\s*—.*?(?=\n## §|\Z)", read(audit_md), re.S):
+        return [], drops
+    text = read(audit_md)
+    blocks, started = [], 0
+    for mt in re.finditer(r"## §(\d+)[^\n]*?—.*?(?=\n## §|\Z)", text, re.S):
+        started += 1
         raw = mt.group(0)
         sha = re.search(r"`([0-9a-f]{64})`", raw)
         seen = re.search(r"\*\*Observed[^:]*:\*\*(.*?)(?=\n\*\*Verdict|\Z)", raw, re.S)
         if sha and seen:
             blocks.append({"n": int(mt.group(1)), "sha256": sha.group(1),
                            "observed": seen.group(1)})
-    return blocks
+        else:
+            drops["no_hash_or_observed"] += 1
+    drops["malformed_heading"] = len(re.findall(r"(?m)^## §\d+", text)) - started
+    return blocks, drops
 
 
 def cmd_crosscheck(args) -> int:
@@ -728,18 +741,23 @@ def cmd_crosscheck(args) -> int:
     for row in image_rows(list(secs.values())):
         current.setdefault(row["section"], set()).add(row["sha256"])
 
-    candidates, skipped = [], 0
-    for blk in observation_blocks(QA_DIR / f"{slug_of(post)}.images.md"):
+    blocks, drops = observation_blocks(QA_DIR / f"{slug_of(post)}.images.md")
+    drops.update(section_absent=0, image_replaced=0)
+    candidates = []
+    # Dedupe spans the whole post, not one block: a section with two observation
+    # blocks would otherwise report the same disagreement once per block.
+    seen = set()
+    for blk in blocks:
         sec = secs.get(blk["n"])
         if not sec:
+            drops["section_absent"] += 1
             continue
         if blk["sha256"] not in current.get(blk["n"], set()):
-            skipped += 1          # observation describes an image no longer here
+            drops["image_replaced"] += 1   # observation describes an image no longer here
             continue
         prose = "\n".join(s for s in re.split(r"(?<=[.!?])\s+|\n\n", sec.get("body") or "")
                           if IMAGE_CUE.search(s))
         obs_pairs = numeric_pairs(blk["observed"])
-        seen = set()
         for pv, pn, pctx in numeric_pairs(prose):
             for ov, on, octx in obs_pairs:
                 shared = pn & on
@@ -754,8 +772,12 @@ def cmd_crosscheck(args) -> int:
     for n, shared, pv, pctx, ov, octx in candidates:
         print(f"  §{n:<3} [{','.join(shared)}] prose says {pv} — {pctx!r}")
         print(f"       {'':<{len(str(n)) + 4}}observation says {ov} — {octx!r}")
-    print(f"[crosscheck] {len(candidates)} candidate(s) to eyeball"
-          + (f", {skipped} observation(s) skipped (image replaced since)" if skipped else ""))
+    compared = len(blocks) - drops["section_absent"] - drops["image_replaced"]
+    print(f"[crosscheck] {len(candidates)} candidate(s) to eyeball, "
+          f"{compared} observation(s) compared")
+    detail = ", ".join(f"{k.replace('_', ' ')} {v}" for k, v in sorted(drops.items()) if v)
+    if detail:
+        print(f"             not compared: {detail}")
     if candidates and args.strict:
         return 1
     return 0

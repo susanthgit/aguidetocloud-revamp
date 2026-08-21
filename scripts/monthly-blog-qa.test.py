@@ -13,8 +13,11 @@ check that once cried wolf will do it again the moment someone edits it.
 from __future__ import annotations
 
 import importlib.util
+import contextlib
+import io
 import sys
 import tempfile
+import types
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -223,11 +226,14 @@ check("crosscheck sees numbers wrapped in markdown emphasis",
 check("crosscheck ignores red-box annotation labels",
       not _cross("Two sheet tabs are visible.", "Red box 1 on the sheet tab named .Rules"))
 
-# "2026" must not yield 026, and "iPhone" must not yield one.
+# "2026" must not yield 026, and "iPhone" must not yield one. Both fixtures share
+# a noun with their observation and disagree on the count, so deleting either
+# lookbehind produces a hit and fails the test. An earlier version compared
+# disjoint nouns and passed either way - it guarded nothing.
 check("crosscheck does not read digits out of a year",
-      not _cross("The 2026 roundup is shown here.", "**26 items** listed"))
+      not _cross("The 2026 roundup slides are shown here.", "**4 slides** in the rail"))
 check("crosscheck does not read 'one' out of 'iPhone'",
-      not _cross("An iPhone is shown here.", "two phone screens"))
+      not _cross("An iPhone screen is shown here.", "**two screens** side by side"))
 
 # One screenshot may legitimately carry several qualified counts of one noun.
 # These are candidates a human dismisses, not errors - which is exactly why this
@@ -250,11 +256,91 @@ _obs_md.write_text(
     "**Observed:** rail with exactly four numbered slides.\n\n"
     "**Verdict:** \u2705 MATCH - prose had claimed Five slides; the rail shows four.\n",
     encoding="utf-8")
-_blocks = mbq.observation_blocks(_obs_md)
+_blocks, _drops = mbq.observation_blocks(_obs_md)
 check("observation parsing binds a section to its image hash",
       len(_blocks) == 1 and _blocks[0]["sha256"] == "a" * 64)
 check("observation parsing excludes the Verdict narrative",
       "Five slides" not in _blocks[0]["observed"])
+
+
+# ---------------------------------------------------- crosscheck, end to end
+# _cross() above only exercises the matcher. Everything else - heading parsing,
+# hash binding, the image-cue gate, dedupe, drop accounting, the exit code - was
+# reachable only by reading, and that is exactly where a defect was found: the
+# heading regex demanded the dash immediately after the section number, so the
+# only multi-image section in the August issue was silently never compared.
+
+def crosscheck(body: str, observations: str, *, n: int = 7, strict: bool = False):
+    """Drive the real command inside a synthetic repo root."""
+    original_repo, original_qa = mbq.REPO, mbq.QA_DIR
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        fixture = root / "static" / IMG_SRC.lstrip("/")
+        fixture.parent.mkdir(parents=True, exist_ok=True)
+        fixture.write_bytes(b"not a real webp, only its existence is asserted")
+        qa = root / "qa"
+        qa.mkdir(parents=True, exist_ok=True)
+        mbq.REPO, mbq.QA_DIR = root, qa
+        try:
+            p = root / "microsoft-365-copilot-testmonth-2026-updates.md"
+            p.write_text(post(section(n, body_extra=body)), encoding="utf-8")
+            sha = mbq.sha256_file(fixture)
+            if observations:
+                (qa / f"{mbq.slug_of(p)}.images.md").write_text(
+                    observations.replace("<HASH>", sha), encoding="utf-8")
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                code = mbq.cmd_crosscheck(types.SimpleNamespace(post=str(p), strict=strict))
+            return code, buf.getvalue()
+        finally:
+            mbq.REPO, mbq.QA_DIR = original_repo, original_qa
+
+
+_MISMATCH = "Five slides are visible in the thumbnail rail.\n\n" + IMG
+_OBSERVED = "**Observed:** rail with exactly four numbered slides.\n\n**Verdict:** MATCH\n"
+
+# The real §32 shape. Before the heading regex allowed a qualifier this compared
+# nothing at all, silently, while `images` still reported the section reviewed.
+_c, _out = crosscheck(_MISMATCH, "## §7 (image 1 of 2) — Deck rail\n`<HASH>`\n\n" + _OBSERVED)
+check("crosscheck compares an observation under a qualified heading",
+      "1 candidate" in _out and "§7" in _out, _out)
+
+_c, _out = crosscheck(_MISMATCH, "## §7 — Deck rail\n`<HASH>`\n\n" + _OBSERVED)
+check("crosscheck reports how many observations it actually compared",
+      "1 observation(s) compared" in _out, _out)
+
+# An observation of a replaced image is not evidence about the image now shown.
+_c, _out = crosscheck(_MISMATCH, "## §7 — Deck rail\n`" + "b" * 64 + "`\n\n" + _OBSERVED)
+check("crosscheck ignores an observation whose image was replaced",
+      "0 candidate" in _out and "image replaced 1" in _out, _out)
+
+# A heading it cannot parse must be counted, never dropped in silence.
+_c, _out = crosscheck(_MISMATCH, "## §7 Deck rail with no dash\n`<HASH>`\n\n" + _OBSERVED)
+check("crosscheck counts a heading it could not parse",
+      "malformed heading 1" in _out, _out)
+
+# Only a sentence about the picture can make a claim about the picture.
+_c, _out = crosscheck("Microsoft says five slides ship in September.\n\n" + IMG,
+                      "## §7 — Deck rail\n`<HASH>`\n\n" + _OBSERVED)
+check("crosscheck skips prose that never refers to the screenshot",
+      "0 candidate" in _out, _out)
+
+# Two blocks for one section must not report the same disagreement twice.
+_c, _out = crosscheck(_MISMATCH,
+                      "## §7 (image 1 of 2) — Deck rail\n`<HASH>`\n\n" + _OBSERVED +
+                      "\n## §7 (image 2 of 2) — Deck rail\n`<HASH>`\n\n" + _OBSERVED)
+check("crosscheck dedupes one disagreement across two blocks of a section",
+      _out.count("prose says 5") == 1, _out)
+
+check("crosscheck exits 0 when advisory and 1 under --strict",
+      crosscheck(_MISMATCH, "## §7 — Deck rail\n`<HASH>`\n\n" + _OBSERVED)[0] == 0
+      and crosscheck(_MISMATCH, "## §7 — Deck rail\n`<HASH>`\n\n" + _OBSERVED,
+                     strict=True)[0] == 1)
+
+# A post with no observation file at all must report nothing, not crash.
+_c, _out = crosscheck(_MISMATCH, "")
+check("crosscheck survives a post with no observation file",
+      _c == 0 and "0 candidate" in _out, _out)
 
 # ------------------------------------------------------------------- report
 if _failures:
