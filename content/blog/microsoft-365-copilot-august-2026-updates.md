@@ -4,7 +4,7 @@ list_title: "M365 Copilot — August Recap: 59 Updates"
 hub_id: "whats-new"
 description: "August 2026 Microsoft 365 Copilot updates: 59 changes across Excel, PowerPoint, Word, Chat, Cowork and admin, each with the date Microsoft gave it."
 date: 2026-08-21
-lastmod: 2026-08-21
+lastmod: 2026-08-22
 draft: false
 youtube_id: ""
 card_tag: "What's New"
@@ -36,11 +36,7 @@ founder_note: |
   I write these in the middle of the month, before Microsoft publishes its own roundup, so every issue misses a few things. When I catch them they go into the next issue with the real date on them, rather than quietly repackaged as this month's news. Thirty-two of the items below arrived that way, and September will work the same.
 ---
 
-**The short version — what's new in Microsoft 365 Copilot for August 2026:** Excel got a theme design skill, Power BI grounding and support for workbooks with AutoSave turned off. PowerPoint can assign tasks from comments. Copilot Notebooks accept Markdown. The Copilot mobile app was said to have started sending push notifications — though the roadmap disagrees, so check section 28 — Claude Fable 5 arrived in Cowork in Preview, Cowork tasks can now be triggered by an event rather than a schedule, and admins picked up an Agent 365 Dashboard plus three changes to Cost Management, one of which needs action. One announced admin control, domain exclusion for web grounding, was rolled back by Microsoft on 4 August.
-
-Everything is grouped by where you will actually meet it — Microsoft 365 apps first, then Copilot Chat and agents, then Cowork, then admin, analytics and governance — and numbered 1 to 59 straight through.
-
-**How this issue works.** Every issue sweeps for the Copilot changes I have not covered yet — whichever month Microsoft shipped them — and files each one under the product area where you will actually meet it. Every item keeps the real date Microsoft gave it, shown in the *For:* line. So August items sit here alongside June and July ones, and September will work the same way. That is the design rather than a gap: the point is that nothing useful gets lost just because it missed a publishing window. Seven items carry August timing — sections 1, 2, 3, 8, 9, 14 and 29 — and one, section 55, was announced in July and withdrawn on 4 August. [How this issue was put together](#how-this-issue-was-put-together) has the detail.
+**Most of what follows shipped in June or July.** Only sections 1, 2, 3, 8, 9, 14 and 29 actually landed in August, and each entry keeps the date Microsoft gave it. Section 55 is the odd one out — announced in July, then pulled on 4 August.
 
 **2026 monthly recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · [May](/blog/microsoft-365-copilot-may-2026-updates/) · [June](/blog/microsoft-365-copilot-june-2026-updates/) · [July](/blog/microsoft-365-copilot-july-2026-updates/) · August (you are here)
 
@@ -94,7 +90,7 @@ The point is that it does the whole look in one pass, rather than you formatting
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/s01-theme-design-composite.webp" alt="Two-part image. The upper half is Microsoft's official example of a themed ESG Performance Report in Excel, with a coordinated teal and green palette across the metric tables, a summary scorecard and a stacked bar chart. The lower half is a capture from my own tenant showing the Copilot prompt box with @th typed, and the filtered skill list where theme-design appears tagged Formatting." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Top: official Microsoft image from the July roundup, showing the result. Bottom: my own tenant, showing how you call the skill. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Top: official Microsoft image from the July roundup, showing the result. Bottom: my own tenant, showing how you call the skill.</em></p>
 
 📖 [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -111,13 +107,15 @@ The detail that matters: Copilot works against the underlying report data and **
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/s02-excel-powerbi-composite.webp" alt="Three panels from my own tenant. First, the Excel Copilot prompt box with a Power BI report attached as a chip and a question typed asking for a filtered table. Second, Copilot replying that the semantic-model query returned a sizeable result file and that it is checking row counts and video URLs. Third, the finished result reporting a table created with 94 sessions, and a Sources block citing the Power BI report." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, running against a real Power BI report. The report name and tenant domain are redacted. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, running against a real Power BI report. The report name and tenant domain are redacted.</em></p>
 
 📖 [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
 ### 3. Copilot in Excel works in more cloud-saved workbooks
 
 *For: Copilot in Excel · Windows and Mac · Rolling out August 2026*
+
+{{< margin >}}The docs say editing works with AutoSave off. My copy disagreed. Chat only was the way back in.{{< /margin >}}
 
 Copilot in Excel now works in more cloud-saved workbooks, including files where AutoSave is turned off. Previously AutoSave had to be on, which quietly locked people out of Copilot in workbooks that were otherwise supported.
 
@@ -134,7 +132,7 @@ I cannot tell you yet which of those is the full story. Microsoft's [Office for 
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/s03-excel-autosave-off.webp" alt="Two Copilot panes from my own tenant, side by side, with a strip at the top showing the Excel AutoSave toggle switched off for both. On the left, in Allow editing mode, a banner reads that AutoSave is off with a green Turn on AutoSave button, and the prompt box is greyed out with a blocked cursor over it. On the right, in Chat only mode, the same pane is headed Let's analyze together and the Message Copilot box is active, with suggestion chips underneath." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant on 18 August 2026. Same workbook, AutoSave off in both panels. Only the mode changes. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant on 18 August 2026. Same workbook, AutoSave off in both panels. Only the mode changes.</em></p>
 
 📖 [Office release notes, 11 August 2026](https://learn.microsoft.com/en-us/officeupdates/release-notes-office-for-mac#august-11-2026) · [Copilot in Excel tips](https://support.microsoft.com/en-us/excel/copilot/copilot-in-excel-tips) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -149,13 +147,15 @@ The **brand kit skill** lets Copilot in Excel format a workbook using your organ
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-11-excel-brand-kit-annotated.webp" alt="Official Microsoft image of an Excel workbook titled Marketing Expense Report. A red box at the top marks a dark navy header band carrying the Zava logo and an italic note reading Dummy FY2026 campaign spend analysis, Zava Brand Kit applied. A second red box at the bottom marks two charts, Monthly Budget Spend and Revenue and Actual Spend by Channel, drawn in the same navy and pale blue palette. Between them sit a key performance summary and monthly trend and channel performance tables." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the branded header · <strong>2</strong> the charts picking up the same palette — the brand kit is not just a logo drop. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the branded header · <strong>2</strong> the charts picking up the same palette — the brand kit is not just a logo drop.</em></p>
 
 📖 [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
 ### 5. Excel skills package repeatable workflows
 
 *For: Copilot in Excel · Prebuilt skills GA on Web, Windows and Mac · Custom skills Insiders-only in June*
+
+{{< margin >}}One screen, two rollout stories. Prebuilt was ready. Custom was not.{{< /margin >}}
 
 Excel gained **skills** for recurring analysis, modelling and reporting work. A skill packages the instructions Copilot should follow so the workflow can be called again without rebuilding the full prompt.
 
@@ -168,7 +168,7 @@ Two different availability stories sit behind that one screen, and they are wort
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-s48-excel-skills-annotated.webp" alt="A Manage Skills dialog in Copilot for Excel listing Custom skills, Finance and Formatting, each with a toggle switched on." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red box mine — <em>Custom skills</em>, the row that was Insiders-only in June. Finance and Formatting below it are prebuilt categories. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red box mine — <em>Custom skills</em>, the row that was Insiders-only in June. Finance and Formatting below it are prebuilt categories.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -185,7 +185,7 @@ These are personal working preferences rather than rules attached to one file. O
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-s49-excel-personalization-annotated.webp" alt="A Customize Copilot dialog in Excel containing the text Always format currency with a dollar prefix and two decimal places, and use the date format DD-MMM-YYYY." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red box mine — the standing instruction itself. That is the whole feature: preferences written once, then applied to later work. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red box mine — the standing instruction itself. That is the whole feature: preferences written once, then applied to later work.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -204,13 +204,15 @@ Unlike Personalization, these rules travel with the workbook. Everyone using Cop
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-s50-excel-rules-sheet-annotated.webp" alt="An Excel worksheet with example Copilot rules in column A and two sheet tabs at the bottom, .Rules and Fiscal Report." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> the sheet tab — the name <code>.Rules</code> is what makes it work · <strong>2</strong> Microsoft's starter examples, from a currency format to preferring XLOOKUP over VLOOKUP. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> the sheet tab — the name <code>.Rules</code> is what makes it work · <strong>2</strong> Microsoft's starter examples, from a currency format to preferring XLOOKUP over VLOOKUP.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
 ### 8. PowerPoint can assign tasks inside comments
 
 *For: Copilot in PowerPoint · Rolling out August 2026*
+
+{{< margin >}}Copilot told me what it could not do. Three times, without being asked.{{< /margin >}}
 
 Copilot in PowerPoint can read the comments on a deck, turn them into **assigned follow-ups**, and bring the right people into the thread. You ask once, in plain English, and it works through every open comment.
 
@@ -231,7 +233,7 @@ I cannot tell you yet which is the full story. Microsoft says this rolls out dur
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/s04-powerpoint-comment-tasks.webp" alt="Four panels from my own tenant. First, a PowerPoint comment reading This slide is out of date. Second, the Copilot pane with the typed prompt Turn the comments on this deck into assigned tasks and notify the right people, boxed in red. Third, a Copilot card headed Which of the two should I do, with Reply to each comment and Add an action-items slide both ticked, and the line about tagging the named people so they are notified boxed in red. Fourth, Copilot's answer after sixteen steps confirming both pieces are in, with its own limitation boxed in red: it cannot send notifications or at-mention people." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant on 18 August 2026, on a deck with three open comments. The two panels that showed colleagues' names are left out. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant on 18 August 2026, on a deck with three open comments. The two panels that showed colleagues' names are left out.</em></p>
 
 📖 [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -248,7 +250,7 @@ Microsoft's support experience shows custom skill files appearing from a user's 
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-13-ppt-custom-skills-annotated.webp" alt="The Manage skills pane in PowerPoint. A red box marks the line explaining that skill files uploaded to your Skills OneDrive folder will appear here. A second red box marks two custom skills, audience-adapter and storytelling-coach, each with an Edit and Delete link and an on toggle." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> a skill is a file in a OneDrive folder, which is a lower bar than it sounds. <strong>2</strong> each one has its own toggle, so you can leave a skill installed and switched off. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> a skill is a file in a OneDrive folder, which is a lower bar than it sounds. <strong>2</strong> each one has its own toggle, so you can leave a skill installed and switched off.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332) · [Copilot in PowerPoint skills](https://support.microsoft.com/en-us/powerpoint/copilot/copilot-in-powerpoint-skills)
 
@@ -265,7 +267,7 @@ Word got the same idea a month earlier — [applying edits requested in comments
 I tested this in my own tenant on **21 August 2026**, asking Copilot to *"resolve the comment on slide 4 and reply to it to say we can remove this slide from the pack and it's not relevant"*. It worked through five steps — including checking that the comment it had found really did belong to slide 4 — then posted the reply and marked the thread resolved. The comments pane confirmed both.
 
 <p><img src="/images/blog/copilot-august-2026/s13-powerpoint-comment-resolve.webp" alt="Three panels from PowerPoint. Before: the Comments pane showing an open thread reading This slide is out of date, with a reply logging a task, and box 1 marking the two stacked icons at the top right that switch the side panel between Comments and Copilot. Copilot does the work: the Copilot pane echoing the typed request to resolve the comment on slide 4, followed by Reasoned in 5 steps and, in box 2, Copilot's confirmation that it replied on the thread and marked it resolved. After: the Comments pane again, with box 3 marking a Resolved header and box 4 marking the newly added reply saying the slide can be removed, attributed to Susanth Sutheesh and timestamped August 21 2026 at 8:54 AM." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant on 21 August 2026. <strong>1</strong> the icons that switch the panel between Comments and Copilot · <strong>2</strong> Copilot reporting what it did · <strong>3</strong> the thread now marked resolved · <strong>4</strong> the reply Copilot wrote, carrying my name and a timestamp. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant on 21 August 2026. <strong>1</strong> the icons that switch the panel between Comments and Copilot · <strong>2</strong> Copilot reporting what it did · <strong>3</strong> the thread now marked resolved · <strong>4</strong> the reply Copilot wrote, carrying my name and a timestamp.</em></p>
 
 Two things the announcement does not mention, and both matter more than the feature itself.
 
@@ -294,7 +296,7 @@ To be clear about what this is: Copilot was already on PowerPoint mobile. What c
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-14-ppt-ipad-annotated.webp" alt="Official Microsoft image of PowerPoint on an iPad showing a title slide reading Pathways to Innovation, Charting Our Future at Arches National Park Offsite. A red box marks a mode picker offering Allow Editing, described as Edit with Copilot and currently ticked, and Chat Only, described as Ask Copilot. A second red box marks the prompt bar beneath it, labelled Edit with Copilot." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the choice that matters — <em>Allow Editing</em> lets Copilot change the deck, <em>Chat Only</em> keeps it advisory · <strong>2</strong> the prompt bar it applies to. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the choice that matters — <em>Allow Editing</em> lets Copilot change the deck, <em>Chat Only</em> keeps it advisory · <strong>2</strong> the prompt bar it applies to.</em></p>
 
 📖 [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -311,7 +313,7 @@ This is the user-facing control that connects Copilot to the brand system admini
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-s45-ppt-brand-picker-annotated.webp" alt="PowerPoint on the web with an empty title slide and the Copilot pane open, showing a plus menu with Add work content, Upload images and files, Select brands, and All skills." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red box mine — in the product the entry point reads <em>Select brands</em>, in the Copilot pane's plus menu. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red box mine — in the product the entry point reads <em>Select brands</em>, in the Copilot pane's plus menu.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -346,6 +348,8 @@ Two things are worth knowing before you go looking for it. The roadmap record sc
 
 *For: Copilot in Word (Web) · Announced June 2026 · Generally available 11 August 2026*
 
+{{< margin >}}Claude, sitting in a Word menu next to GPT. Three Microsoft pages, three different dates for it.{{< /margin >}}
+
 Word added **model choice** for document editing, including supported Anthropic models. Users could choose a model before asking Copilot to rewrite, summarise, restructure or refine the document.
 
 The feature is about control over the editing approach, not just access to another model name. If the first model is not finding the right tone or structure, the user can change the model without moving the document into another tool.
@@ -359,7 +363,7 @@ The feature is about control over the editing approach, not just access to anoth
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-s39-word-model-menu-annotated.webp" alt="A Copilot pane menu with a Model group listing Auto with a tick, Claude and GPT, each with a submenu arrow." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red box mine — the Model group, with Claude sitting alongside Auto and GPT. The specific Opus and Sonnet names live behind the Claude arrow and are not visible here. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red box mine — the Model group, with Claude sitting alongside Auto and GPT. The specific Opus and Sonnet names live behind the Claude arrow and are not visible here.</em></p>
 
 📖 [M365 Roadmap 558440](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=558440) · [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
@@ -374,7 +378,7 @@ Copilot in Word picked up **drafting workflows**. It can insert and update a tab
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-10-word-table-of-contents-annotated.webp" alt="Official Microsoft image of Word with the References ribbon open. A red box in the document marks a clickable table of contents inserted below the subtitle, listing Market and Competitive Analysis, Service Overview and Benefits of Flexible Workspaces, Launch Strategy and Conclusion with page numbers. A second red box in the Copilot pane on the right marks the prompt Insert a table of contents, the line Reasoning completed in 2 steps, and Copilot's reply saying it inserted a clickable table of contents below the subtitle covering heading levels 1 to 3, ready to refresh in Word if the headings change." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the table of contents Copilot built — real entries, real page numbers · <strong>2</strong> the one-line prompt behind it, and Copilot noting it stays refreshable. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the table of contents Copilot built — real entries, real page numbers · <strong>2</strong> the one-line prompt behind it, and Copilot noting it stays refreshable.</em></p>
 
 📖 [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -391,7 +395,7 @@ That is especially useful in shared documents where several people edit between 
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-36-word-catchup.webp" alt="A Word document with a Catch up control in the ribbon, a summary card pinned above the document, and the Copilot pane offering Catch me up on this document, Ask a question about this document and Suggest ways to improve this document." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup. The red box here is <em>Microsoft's own</em>, not mine, and it marks the Copilot pane; the Catch up button that opens it sits up in the ribbon next to Comments. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup. The red box here is <em>Microsoft's own</em>, not mine, and it marks the Copilot pane; the Catch up button that opens it sits up in the ribbon next to Comments.</em></p>
 
 📖 [M365 Roadmap 489825](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=489825) · [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -408,7 +412,7 @@ The workflow has a step worth knowing about. In the walkthrough Microsoft publis
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-s41-word-image-gen-annotated.webp" alt="A Copilot pane showing the prompt Create an image of the KPI dashboard metrics, a generated Zava KPI Dashboard Snapshot image, and a reply confirming the image was inserted under a heading." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> the ask · <strong>2</strong> the part that matters — Copilot says it created <em>and inserted</em> the image under a named heading, rather than handing back a picture to place yourself. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> the ask · <strong>2</strong> the part that matters — Copilot says it created <em>and inserted</em> the image under a named heading, rather than handing back a picture to place yourself.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572) · [Copilot in Word help](https://support.microsoft.com/en-us/copilot-word)
 
@@ -425,7 +429,7 @@ Microsoft later published a Word for iPad example showing a user reviewing and a
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-s42-word-ipad-agentic-annotated.webp" alt="Two iPads side by side showing the same Word project proposal, one with the Edit with Copilot bar and suggested prompts open, the other with a new Introduction section added and a review bar reading 1 of 2 edits." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the Word for iPad post, red boxes mine &mdash; a composed marketing image rather than a plain screenshot, so the device frames and background are Microsoft's. <strong>1</strong> the Copilot entry point and its suggested prompts · <strong>2</strong> the section Copilot added · <strong>3</strong> the review bar, reading 1 of 2 edits with accept and undo beside it. That review step is the part worth seeing: the edit is proposed on the device, not applied behind your back. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the Word for iPad post, red boxes mine &mdash; a composed marketing image rather than a plain screenshot, so the device frames and background are Microsoft's. <strong>1</strong> the Copilot entry point and its suggested prompts · <strong>2</strong> the section Copilot added · <strong>3</strong> the review bar, reading 1 of 2 edits with accept and undo beside it. That review step is the part worth seeing: the edit is proposed on the device, not applied behind your back.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572) · [Co-create documents with Copilot in Word for iPad](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/co-create-documents-with-copilot-in-word-for-ipad/4534191)
 
@@ -443,7 +447,7 @@ Microsoft's June roundup described the continuity but did not publish a screensh
 
 <img src="/images/blog/copilot-august-2026/lab-s43-word-copilot-chat-history-annotated.webp" alt="Two panels from Word for the web. Left: the Copilot pane header, with a hamburger Navigation button boxed in red and its tooltip reading Navigation. Right: the flyout that button opens, showing Current chat above a list headed Chats in Word containing two earlier conversations, boxed in red." loading="lazy" decoding="async">
 
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);">My own tenant, 21 August 2026 — <strong>Word for the web</strong>, Microsoft 365 Copilot Premium. Red boxes mine. Left: the <em>Navigation</em> button at the top of the Copilot pane. Right: what it opens — <em>Chats in Word</em>, listing two conversations from earlier in the day. The document itself is cropped out of both panels because it is internal. The same navigation was not there in the Word desktop client on the same day. UI and availability may vary by tenant and rollout.</p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);">My own tenant, 21 August 2026 — <strong>Word for the web</strong>, Microsoft 365 Copilot Premium. Red boxes mine. Left: the <em>Navigation</em> button at the top of the Copilot pane. Right: what it opens — <em>Chats in Word</em>, listing two conversations from earlier in the day. The document itself is cropped out of both panels because it is internal. The same navigation was not there in the Word desktop client on the same day.</p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -466,13 +470,15 @@ Microsoft did not publish an image that visibly proves a comment was the instruc
 
 <img src="/images/blog/copilot-august-2026/lab-s44-word-copilot-comment-to-edit-annotated.webp" alt="Three panels from Word for the web. Panel one: the Comments pane showing a single comment reading convert these items into tables, boxed in red. Panel two: the Copilot pane, where the typed prompt reads can you action the comment in this doc, above a Reasoned in 5 steps control and a plan boxed in red that ends with the words then resolve the comment. Panel three: Copilot's closing message, with the phrase and resolved the comment boxed in red." loading="lazy" decoding="async">
 
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);">My own tenant, 21 August 2026 — <strong>Word for the web</strong>, Microsoft 365 Copilot Premium. Red boxes mine. The prompt never repeats the instruction; it only points Copilot at the comment. The document body is cropped out of every panel. Track Changes was not part of this test. UI and availability may vary by tenant and rollout.</p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);">My own tenant, 21 August 2026 — <strong>Word for the web</strong>, Microsoft 365 Copilot Premium. Red boxes mine. The prompt never repeats the instruction; it only points Copilot at the comment. The document body is cropped out of every panel. Track Changes was not part of this test.</p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
 ### 21. Classic Outlook gained direct Copilot settings
 
 *For: Classic Outlook for Windows · Rolling out July 2026 · Reproduced in my own client 21 Aug 2026*
+
+{{< margin >}}Microsoft announced this one without a screenshot. It is behind File → Info, if you are hunting for it.{{< /margin >}}
 
 Classic Outlook for Windows gained a direct place to find and adjust **Copilot settings**. Users no longer had to leave Outlook or depend on a separate route to manage the Copilot experience.
 
@@ -516,7 +522,7 @@ The recaps also come in more than one form. Alongside the text recap there is an
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-16-teams-recaps-app-annotated.webp" alt="Official Microsoft image of Teams with a Meeting recap app open. A red box on the far left marks a Meeting recap entry pinned in the Teams app rail. A second red box marks the app header, showing the name Meeting recap with its own Home and Audio recaps tabs. A third red box marks a row of filter chips reading All, Favourites, Mentions, Missed and Followed. Below sits a list of meetings grouped by This week and Last week, each with a Recap button." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> it is a real app in the rail · <strong>2</strong> with its own tabs · <strong>3</strong> and its own filters — not a tab bolted onto Calendar. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> it is a real app in the rail · <strong>2</strong> with its own tabs · <strong>3</strong> and its own filters — not a tab bolted onto Calendar.</em></p>
 
 📖 [M365 Roadmap 564614](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=564614) · [Manage the Meeting Recaps app](https://learn.microsoft.com/en-us/microsoftteams/manage-meeting-recaps-app) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -531,7 +537,7 @@ SharePoint news pages can generate an **AI audio summary** you can listen to ins
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-18-sharepoint-news-audio-annotated.webp" alt="A SharePoint news page with a red box around the Play audio overview button in the top bar, and a second red box around the audio overview player that opens over the article with playback speed, skip controls and an AI-generated content may be incorrect notice." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the entry point, a Play audio overview button in the page chrome rather than anything you have to go looking for. <strong>2</strong> what it opens into, a small player with speed and skip controls and an AI-generated content warning. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the entry point, a Play audio overview button in the page chrome rather than anything you have to go looking for. <strong>2</strong> what it opens into, a small player with speed and skip controls and an AI-generated content warning.</em></p>
 
 📖 [M365 Roadmap 562018](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=562018) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -550,7 +556,7 @@ A new Power Automate action, **Generate document from form (Preview)**, builds a
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-19-docgen-form-preview-annotated.webp" alt="The Generate a document from a form (preview) action in Power Automate. A red box marks the three required parameters: Site Address, Document Library Name set to RFPs and Form Name set to RFQ Demo. A second red box marks the advanced parameters, showing 15 of 16 fields with Sales representative and Type of quote mapped from the form. The flow beside it runs When an item is created into the generate action." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the three things the action actually needs: a site, a library and a form. <strong>2</strong> the part that does the work, your form fields turned into parameters you can map. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the three things the action actually needs: a site, a library and a form. <strong>2</strong> the part that does the work, your form fields turned into parameters you can map.</em></p>
 
 📖 [M365 Roadmap 561026](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561026) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -571,7 +577,7 @@ One thing Microsoft's note does not say is whether a Copilot licence is needed t
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-02-word-agent-mention.webp" alt="Official Microsoft image of a Copilot Chat prompt where the Word agent has been added by @mentioning it." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup.</em></p>
 
 📖 [Roadmap 543420](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=543420) · [543422](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=543422) · [543421](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=543421) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -589,7 +595,7 @@ This keeps the answer inside Copilot while the underlying BI model remains gover
 
 <img src="/images/blog/copilot-august-2026/lab-s34-copilot-powerbi-grounding-annotated.webp" alt="Two panels from my own tenant. Top: the Copilot Chat source-scope row with the plus-two overflow open, listing Power BI alongside Other. Bottom: an answer reporting seventy-nine published Copilot-related sessions, with the citation tooltip showing a Power BI report and a powerbi.com address. The report name and the file name beneath it are masked." loading="lazy" decoding="async">
 
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);">My own tenant, 21 August 2026 — Frontier, Work IQ on, Microsoft 365 Copilot Premium. Red boxes mine. <strong>1</strong> the scope row hides its last two entries behind <em>+2</em>; <strong>2</strong> opening it shows <em>Power BI</em> is one of them. <strong>3</strong> hovering the citation on the answer resolves it to a Power BI report on <em>…powerbi.com</em>. The report I queried is internal, so its name is masked in all three places it appeared, the tenant subdomain is masked, and the results table — which listed named colleagues — is cropped away entirely. UI and availability may vary by tenant and rollout.</p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);">My own tenant, 21 August 2026 — Frontier, Work IQ on, Microsoft 365 Copilot Premium. Red boxes mine. <strong>1</strong> the scope row hides its last two entries behind <em>+2</em>; <strong>2</strong> opening it shows <em>Power BI</em> is one of them. <strong>3</strong> hovering the citation on the answer resolves it to a Power BI report on <em>…powerbi.com</em>. The report I queried is internal, so its name is masked in all three places it appeared, the tenant subdomain is masked, and the results table — which listed named colleagues — is cropped away entirely.</p>
 
 📖 [M365 Roadmap 567891](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=567891) · [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572) · [Microsoft Fabric IQ in Microsoft 365 Copilot](https://learn.microsoft.com/en-us/fabric/iq/connectors/microsoft-365-copilot-overview)
 
@@ -606,13 +612,15 @@ The model switch is especially useful when the first response is structurally fi
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-s35-model-switch-annotated.webp" alt="Microsoft 365 Copilot Chat showing an answer with an open menu containing Try Again and Switch model, and a model list with Auto, Quick response, Think deeper, Claude and GPT." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red box mine — the Try Again and Switch model options, and the model list they open: Auto, Quick response, Think deeper, Claude and GPT. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red box mine — the Try Again and Switch model options, and the model list they open: Auto, Quick response, Think deeper, Claude and GPT.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
 ### 28. The Copilot mobile app sends push notifications
 
 *For: Microsoft 365 Copilot mobile app · iOS and Android · Microsoft 365 Copilot licence required · Rolled out July 2026 · Timing disputed, see below*
+
+{{< margin >}}The roadmap says it draws on Copilot Memory, so the picks should be personal rather than one generic digest.{{< /margin >}}
 
 Microsoft's July roundup says the Copilot mobile app can now send **push notifications** so you can catch up without opening Outlook, Teams and everything else in turn. You get prompts like *Your Day at a Glance* and *Items waiting for you*.
 
@@ -625,7 +633,7 @@ The roadmap entry adds one detail the roundup leaves out: the feature **taps int
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-05-push-day-at-a-glance-annotated.webp" alt="Official Microsoft image in two panels. Left, a phone lock screen where a red box marks a Your Day at a Glance notification reading Tailored insights from your emails and meetings activity. Right, the Copilot app opened to a Summary of the day, where a second red box marks an Important emails heading and the line Showing top 3 emails from the last 24 hours, followed by three summarised emails tagged High priority and Need attention." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the notification on the lock screen · <strong>2</strong> what it opens into — a ranked digest, not just a nudge. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the notification on the lock screen · <strong>2</strong> what it opens into — a ranked digest, not just a nudge.</em></p>
 
 <blockquote class="callout callout-warn">
 <p><strong>Timing disputed — check before you promise this to anyone.</strong> Microsoft's July roundup states plainly that this feature <em>"rolled out in July"</em>. The matching roadmap entry disagrees: <a href="https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&amp;searchterms=560339">560339</a> still reads <em>In development</em> with general availability given as <strong>September 2026</strong>, and it was last updated on <strong>10 August 2026</strong> - after the roundup was published. My own rule for this issue is that the later Microsoft source wins, and the later source here is the roadmap. So treat September as the date to plan around, and treat any earlier sighting in your tenant as a bonus rather than the norm.</p>
@@ -646,7 +654,7 @@ Worth reading the timing carefully, because Microsoft split it: TXT and RTF roll
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-09-notebook-md-txt-rtf-annotated.webp" alt="Official Microsoft image of a Copilot Notebook References list. Pills down the left label three of the entries Markdown, TXT and RTF, and a red box groups those three rows together: Incident-report, EQQ-Meeting-Transcript and Product-briefing-notes. Below the box sit ordinary PowerPoint and Excel references." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red box mine — the three new formats sitting in the References list alongside the Office files that were always allowed. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red box mine — the three new formats sitting in the References list alongside the Office files that were always allowed.</em></p>
 
 📖 [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -663,7 +671,7 @@ The June article called out tools such as **mind maps** and study guides alongsi
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-s36-notebooks-chat-users-annotated.webp" alt="A Copilot Notebook called Marketing Launch open in OneNote on the web, with a References list in the left rail and an Ask about your content Copilot pane on the right." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> the notebook's References, the material its answers are grounded in · <strong>2</strong> the Ask about your content pane a Chat user works in. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> the notebook's References, the material its answers are grounded in · <strong>2</strong> the Ask about your content pane a Chat user works in.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -682,7 +690,7 @@ You can add Outlook emails as references inside a Copilot Notebook, alongside th
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-s37-outlook-to-notebook-annotated.webp" alt="Microsoft illustration showing labels for Teams meetings, Outlook emails and Web pages beside a Copilot Notebook References list containing Marketing Team Sync, Weekly Top of Mind and Microsoft.com." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup — a composed illustration rather than a plain screenshot, so the grey pill labels are Microsoft's. The red box is mine, and it marks the Outlook email, <em>Weekly Top of Mind</em>, sitting in the notebook's References beside a Teams meeting and a web page. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup — a composed illustration rather than a plain screenshot, so the grey pill labels are Microsoft's. The red box is mine, and it marks the Outlook email, <em>Weekly Top of Mind</em>, sitting in the notebook's References beside a Teams meeting and a web page.</em></p>
 
 📖 [M365 Roadmap 564910](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=564910) · [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -697,12 +705,12 @@ In my own tenant on 21 August 2026, both halves hold up. The route to Chat is a 
 Asking Copilot Search what was new in Copilot during July returned a **single short paragraph with citations**, visibly cut off with a fade and a Continue reading button, rather than the long answer this used to produce.
 
 <p><img src="/images/blog/copilot-august-2026/s10-search-concise-answer.webp" alt="Copilot Search in my own tenant, with Search selected in the left rail. Box 1 marks the search box containing the query about what is latest in Copilot in the month of July, with a Did you mean correction beneath it. The Copilot answer card returns one short paragraph summarising July's updates with two numbered citations and an AI-generated content may be incorrect badge. Box 2 marks the Continue reading button below the faded-out end of that answer. Box 3 marks the file results underneath, two PowerPoint files each showing a sensitivity label shield." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant on 21 August 2026. <strong>1</strong> the query · <strong>2</strong> the answer stops short and offers <em>Continue reading</em> · <strong>3</strong> the file results still sit underneath the answer. File preview text redacted. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant on 21 August 2026. <strong>1</strong> the query · <strong>2</strong> the answer stops short and offers <em>Continue reading</em> · <strong>3</strong> the file results still sit underneath the answer. File preview text redacted.</em></p>
 
 **Continue reading** expands the answer in place. It does not take you to Chat. The handoff is a *second* control that only appears once the answer is fully expanded: an **Ask Copilot** button sitting under the finished text. That is the one that opens Copilot Chat in the right rail, with the original question already carried across, so you can keep going without retyping it.
 
 <p><img src="/images/blog/copilot-august-2026/s10b-ask-copilot-chat-rail.webp" alt="The expanded Copilot Search answer on the left, now three paragraphs long. Box 1 marks an Ask Copilot button beneath the finished answer, next to thumbs up and thumbs down icons and a References row. On the right, Copilot Chat is open in the side rail: box 2 marks the original question repeated as a user message at the top, and box 3 marks the Message Copilot composer at the bottom of the rail." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant on 21 August 2026. <strong>1</strong> <em>Ask Copilot</em> appears only after the answer is expanded · <strong>2</strong> the question is carried into Chat for you · <strong>3</strong> the composer is there to keep the thread going. The source-filter column between the two panes has been removed. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant on 21 August 2026. <strong>1</strong> <em>Ask Copilot</em> appears only after the answer is expanded · <strong>2</strong> the question is carried into Chat for you · <strong>3</strong> the composer is there to keep the thread going. The source-filter column between the two panes has been removed.</em></p>
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Search answers were often too long to skim and too short to be the final word, so people bounced. Making them tighter and putting an obvious "keep going" path next to them fixes both ends of that. Worth knowing the path is two clicks, not one, if you are writing adoption guidance.</p>
@@ -723,7 +731,7 @@ One clarification, because the wording invites the wrong reading: users are not 
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-04-copilot-search-sources-annotated.webp" alt="Official Microsoft image of the Copilot sources rail, where third-party connectors appear alongside SharePoint as selectable sources for a prompt." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, with my annotation added. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, with my annotation added.</em></p>
 
 📖 [M365 Roadmap 496596](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=496596) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -774,7 +782,7 @@ Auto uses GPT responses refined by Claude; Model Council combines GPT and Claude
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-s51-researcher-model-choice-annotated.webp" alt="Two Researcher model pickers side by side, one with Auto selected and one with Model Council selected, each listing Auto, Model Council, GPT and Claude with the reasoning each one uses." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft support images, placed side by side by me, red boxes mine &mdash; the picker pill follows the choice. Both panels list the same four paths and what each one does: Auto is GPT refined by Claude, Model Council is GPT and Claude deep reasoning, and GPT and Claude are each that provider's deep reasoning on its own. Auto and Model Council need Frontier; Claude needs admin-enabled Anthropic access. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft support images, placed side by side by me, red boxes mine &mdash; the picker pill follows the choice. Both panels list the same four paths and what each one does: Auto is GPT refined by Claude, Model Council is GPT and Claude deep reasoning, and GPT and Claude are each that provider's deep reasoning on its own. Auto and Model Council need Frontier; Claude needs admin-enabled Anthropic access.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572) · [Use model choice in the Researcher agent](https://support.microsoft.com/en-us/office/use-model-choice-in-the-researcher-agent)
 
@@ -791,7 +799,7 @@ The official example shows a draft campaign plan with dated tasks and a **Save p
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-48-planner-agent-annotated.webp" alt="The Planner Agent in Microsoft 365 Copilot drafting a Contoso spring marketing campaign plan. A red box marks the Draft label and the Save plan button. A second red box marks a Remove task tooltip over a task in the drafted plan." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> nothing reaches Planner until you press Save plan, so the draft is yours to argue with first. <strong>2</strong> and you can strike tasks out inline before it commits. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> nothing reaches Planner until you press Save plan, so the draft is yours to argue with first. <strong>2</strong> and you can strike tasks out inline before it commits.</em></p>
 
 📖 [M365 Roadmap 516576](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516576) · [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -812,7 +820,7 @@ Two details that are easy to miss. It is **off by default** — an admin has to 
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-03-model-picker-annotated.webp" alt="Official Microsoft image of the Copilot Cowork model picker, open and listing Auto, GPT-5.6 Sol which is ticked, GPT-5.6 Terra, GPT-5.5 Frontier, Claude Sonnet 5, Claude Opus 4.8 and, marked with a red box at the bottom of the list, Claude Fable 5 Preview." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red box mine — the new entry at the bottom of a list that already had six models in it. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red box mine — the new entry at the bottom of a list that already had six models in it.</em></p>
 
 📎 Two of our resources go deeper: the **[Copilot Cowork complete guide →](/blog/microsoft-copilot-cowork-complete-guide/)** for how it works, and our **[Cowork cost calculator →](/cowork-cost-calculator/)** to estimate what a long-running task might cost.
 
@@ -839,7 +847,7 @@ The example in Microsoft's own image is the giveaway: you write the task, and Co
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-07-cowork-event-task-annotated.webp" alt="Cowork showing a Set up trigger card. A red box surrounds the whole trigger definition: Name set to Renewal email to account brief and what-if model, When set to I receive an email, From set to renewal, and Run in set to New conversation each time. Below the box, a Then do this instruction block spells out how to qualify the email and what to pull from the CRM." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red box mine — the whole trigger definition. The <strong>When</strong> row is the change: an arriving email, not a time of day. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red box mine — the whole trigger definition. The <strong>When</strong> row is the change: an arriving email, not a time of day.</em></p>
 
 📖 [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332) · [Cowork change log](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/whats-new)
 
@@ -860,7 +868,7 @@ The useful part is not another model picker. Cowork can decide which model fits 
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-25-cowork-model-choice-annotated.webp" alt="The Copilot Cowork model picker. A red box marks the Auto control in the top bar. A second red box marks the models listed below Auto: GPT 5.5, Claude Opus 4.8, Claude Sonnet 4.6 and Cowork 1." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> the control, sitting next to the Work IQ chip rather than buried in settings. <strong>2</strong> what is in the list, two Anthropic models and a Cowork-specific one alongside GPT. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> the control, sitting next to the Work IQ chip rather than buried in settings. <strong>2</strong> what is in the list, two Anthropic models and a Cowork-specific one alongside GPT.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -877,7 +885,7 @@ Cowork's plugin catalogue expanded into more of the systems people already use. 
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-26-cowork-plugins-annotated.webp" alt="The Customize page in Copilot Cowork. A red box marks the Upload plugin button. A second red box marks the Installed section with Dynamics 365 ERP Apps and a toggle. A third red box marks the Discover grid of third-party plugins including Adobe, Canva, Box, Miro, Harvey and monday.com." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> you can upload your own. <strong>2</strong> installed plugins have a toggle, so this is a per-plugin on/off rather than all-or-nothing. <strong>3</strong> the catalogue, and the names in it are the interesting part. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> you can upload your own. <strong>2</strong> installed plugins have a toggle, so this is a per-plugin on/off rather than all-or-nothing. <strong>3</strong> the catalogue, and the names in it are the interesting part.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -896,7 +904,7 @@ The same **Customize** surface has a second tab. Skills is where the reusable in
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-09-cowork-customize-skills-annotated.webp" alt="Cowork Customize screen on the Skills tab, with the Add menu open showing Create new and Upload skill, above a list of the user's own skills." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The Skills tab on the same Customize surface, with my annotations. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The Skills tab on the same Customize surface, with my annotations.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -913,7 +921,7 @@ That keeps the visual step inside the same flow as the research, writing and fil
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-27-cowork-visual-creation-annotated.webp" alt="A Copilot Cowork exchange. A red box marks the prompt, which reads Help me create a mockup of our new product. Below it Cowork replies with an image of coloured draped fabric labelled the Zava Prisme textile for the product launch." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red box mine. Nine words in, one image out, with no brand, format or style guidance anywhere in the prompt. Worth holding that thought until the next item. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red box mine. Nine words in, one image out, with no brand, format or style guidance anywhere in the prompt. Worth holding that thought until the next item.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -930,7 +938,7 @@ This is separate from image generation. One capability creates the visual conten
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-28-cowork-branded-template-annotated.webp" alt="A completed Copilot Cowork task. A red box marks three generated files in the left pane: Zava Customer Brief in Word, Zava Marketing in PowerPoint and Zava Customer Data in Excel. A second red box marks the Edit in PowerPoint button. A third red box marks the slide preview, which carries a Zava logo block and brand-coloured section labels." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> one task, three files, in three different apps. <strong>2</strong> the way out, straight into PowerPoint. <strong>3</strong> the slide itself, carrying a logo block and brand-coloured labels rather than the generic look of the previous image. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> one task, three files, in three different apps. <strong>2</strong> the way out, straight into PowerPoint. <strong>3</strong> the slide itself, carrying a logo block and brand-coloured labels rather than the generic look of the previous image.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -949,7 +957,7 @@ The official image also shows an approval boundary: when the browser needs a sig
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-29-cowork-edge-browser-annotated.webp" alt="A Copilot Cowork task submitting an expense report. A red box marks the line reading Navigated to MyExpense and added receipts. A second red box marks a card headed Action needed in the browser, asking the user to enter their email and password and click Continue to sign in, with Not now and Sign in buttons." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> it did drive the browser on its own. <strong>2</strong> and then handed straight back at the sign-in wall, which is the honest shape of most browser automation right now. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> it did drive the browser on its own. <strong>2</strong> and then handed straight back at the sign-in wall, which is the honest shape of most browser automation right now.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -966,7 +974,7 @@ The notification becomes the hand-off point. Cowork can continue in the backgrou
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-30-cowork-notification-annotated.webp" alt="A phone lock screen at 9:41 on Thursday, March 18. A red box marks a Copilot notification reading Task complete, your competitive analysis slides were completed successfully, tap to view the results and refine." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red box mine. The point of a long-running task is that you stop watching it, so the finish has to find you. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red box mine. The point of a long-running task is that you stop watching it, so the finish has to find you.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -975,6 +983,8 @@ The notification becomes the hand-off point. Cowork can continue in the backgrou
 ### 47. Cost Management: better alerts, clearer policy logic, kinder overages
 
 *For: Microsoft 365 admin center · Cost Management · Rolled out July 2026*
+
+{{< margin >}}The one job in Cost Management: recreate your spending alerts.{{< /margin >}}
 
 Three changes landed in Cost Management, and one of them needs an admin to actually do something.
 
@@ -989,7 +999,7 @@ The policy logic point is the one that trips people up: a spending policy sets a
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-24-cost-management-annotated.webp" alt="Official Microsoft image of the Cost Management area in the Microsoft 365 admin center showing spending policies and alerts." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, with my annotation added. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, with my annotation added.</em></p>
 
 📎 We go deeper on the numbers in our **[Copilot cost management guide →](/blog/microsoft-365-copilot-cost-management/)** and **[Copilot credits explained →](/blog/copilot-credits-explained/)**.
 
@@ -1010,7 +1020,7 @@ The same surface includes reporting, budgets, alerts and hard caps. The overview
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-49-cost-management-annotated.webp" alt="The Cost management page in the Microsoft 365 admin center. A red box marks the notice reading that this applies to Copilot Cowork and Work IQ API right now. A second red box marks four tiles: total Copilot Credits used 85,462, prepaid capacity pack credits used 72,000 of 100,000, pay-as-you-go credits used 13,462 and active users of Copilot Credits 4,684. A third red box marks the Policies at or above 90 percent of spending limit card, flagged Needs action." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> read this first, the console covers Cowork and the Work IQ API and nothing else yet. <strong>2</strong> prepaid and pay-as-you-go are counted separately. <strong>3</strong> and it will tell you which policies are about to hit their ceiling. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> read this first, the console covers Cowork and the Work IQ API and nothing else yet. <strong>2</strong> prepaid and pay-as-you-go are counted separately. <strong>3</strong> and it will tell you which policies are about to hit their ceiling.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572) · [Usage-based billing and cost management for Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits)
 
@@ -1039,6 +1049,8 @@ Access is narrower than "any admin": Microsoft scopes the dashboard experience t
 
 *For: SharePoint and OneDrive · Agent Access Insights · Rolled out July 2026 · roadmap 565027 still reads In development*
 
+{{< margin >}}There is no backfill. The clock starts the day you switch collection on, not the day you ask.{{< /margin >}}
+
 **Agent Access Insights** now includes a **heatmap** of agent activity across SharePoint sites and OneDrive accounts. You can see how requests are distributed, which sites are busiest, and where activity is concentrated — Microsoft documents a site-level view with up to 20 agents listed per site, not a file-by-file read list.
 
 Getting to it needs a **SharePoint admin**, plus either SharePoint Advanced Management or Microsoft 365 Copilot licensing.
@@ -1050,13 +1062,15 @@ One thing to plan for before you go looking: without a SharePoint Advanced Manag
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-17-sharepoint-access-heatmap-annotated.webp" alt="Agent access report in the SharePoint admin center. A red box marks the Agent Access Heat Map by Sites, a grid of agent type against business group. A second red box marks the governance actions in the side panel: Restrict site access, Restrict content discovery and View site." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the heat map itself, agent type down the side against business group across the top. <strong>2</strong> the governance actions you get once you click into a cell, including the Sensitivity column that tells you which of those sites are Highly sensitive. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the heat map itself, agent type down the side against business group across the top. <strong>2</strong> the governance actions you get once you click into a cell, including the Sensitivity column that tells you which of those sites are Highly sensitive.</em></p>
 
 📖 [M365 Roadmap 565027](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=565027) · [Monitor agent access to SharePoint and OneDrive](https://learn.microsoft.com/en-us/sharepoint/insights-on-agent-access) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
 ### 51. An Agent 365 Dashboard lands in Copilot Analytics
 
 *For: Copilot Analytics in the Viva Insights web app · Announced July 2026 · roadmap 567667 still lists it in development*
+
+{{< margin >}}The name points at the admin center. It lives in Viva Insights.{{< /margin >}}
 
 The **Agent 365 Dashboard** gives eligible leaders and analysts a consolidated view of agent activity across the tenant.
 
@@ -1067,7 +1081,7 @@ Where to find it matters here, because the name sends people the wrong way: it i
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-21-agent365-dashboard-annotated.webp" alt="The Agent 365 Dashboard in Viva Insights. A red box marks the Overview, Adoption and Impact tabs. A second red box marks the Activity rate card showing 438 available agents split 230 active and 208 inactive. A third red box marks the Creators donut showing 230 active agents built by User 206, Your org 4, Microsoft 8 and Microsoft partner 12." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> three tabs, so this is a real reporting surface rather than a single tile. <strong>2</strong> the number worth staring at, 208 of 438 agents sitting inactive. <strong>3</strong> who built them, which is the answer to the question most admins ask first. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> three tabs, so this is a real reporting surface rather than a single tile. <strong>2</strong> the number worth staring at, 208 of 438 agents sitting inactive. <strong>3</strong> who built them, which is the answer to the question most admins ask first.</em></p>
 
 📖 [M365 Roadmap 567667](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=567667) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -1082,7 +1096,7 @@ A **Copilot connectors usage report** is available in Public Preview, showing ho
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-22-connectors-usage-report.webp" alt="Official Microsoft image of the Copilot Connectors usage report in the Microsoft 365 admin center, with Microsoft's own red boxes around the Connectors entry in the Reports nav and the report title. The report shows 11 connections used by Copilot, 7 used by agents, 527 active connector users and 865 connector responses." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup. The red boxes here are <em>Microsoft's own</em>, not mine, and they point at where the report lives: Usage, then Connectors under the Copilot reports. Note the split between connections used by Copilot and connections used by agents. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup. The red boxes here are <em>Microsoft's own</em>, not mine, and they point at where the report lives: Usage, then Connectors under the Copilot reports. Note the split between connections used by Copilot and connections used by agents.</em></p>
 
 📖 [M365 Roadmap 519571](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=519571) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -1097,7 +1111,7 @@ The Microsoft 365 Copilot Chat usage report is now available in **GCC, GCC High 
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-23-chat-usage-report-annotated.webp" alt="The Microsoft 365 Copilot Chat usage report in the admin center. A red box marks the line explaining the report covers Copilot Chat users who do not have a Microsoft 365 Copilot license. A second red box marks the headline numbers: 15,535 active users, 9,788 average daily active users and 921,455 prompts submitted." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the bit worth reading twice, this report is about the people who do <em>not</em> have a Copilot licence. <strong>2</strong> the numbers you get for them, including prompt volume. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, red boxes mine. <strong>1</strong> the bit worth reading twice, this report is about the people who do <em>not</em> have a Copilot licence. <strong>2</strong> the numbers you get for them, including prompt volume.</em></p>
 
 📖 [M365 Roadmap 567121](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=567121) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332)
 
@@ -1114,7 +1128,7 @@ The official workbench shows a custom Agent query with metrics such as **agent r
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-s55-analyst-workbench-annotated.webp" alt="Microsoft Viva Insights Create analysis page showing an Agent query with a query name, description, custom time period, and selected metrics including Agent responses generated and Copilot credits used for agents." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> this is a custom <em>Agent query</em>, not a fixed dashboard · <strong>2</strong> the metrics an analyst picks — agent responses generated, Copilot credits used for agents, and two returning-agent-user measures. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> this is a custom <em>Agent query</em>, not a fixed dashboard · <strong>2</strong> the metrics an analyst picks — agent responses generated, Copilot credits used for agents, and two returning-agent-user measures.</em></p>
 
 📖 [M365 Roadmap 562412](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=562412) · [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -1158,7 +1172,7 @@ The panel in Microsoft's June article shows **All users** and No users choices f
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-s57-vision-screen-camera-annotated.webp" alt="An admin panel titled Screen and camera sharing with two separate sections, Screens and Cameras, each offering All users or No users, with No users selected in both." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> the panel carries the single combined name that Learn uses · <strong>2</strong> and <strong>3</strong> inside it, screens and cameras are chosen separately. Both descriptions turn out to be true of the same panel. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> the panel carries the single combined name that Learn uses · <strong>2</strong> and <strong>3</strong> inside it, screens and cameras are chosen separately. Both descriptions turn out to be true of the same panel.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -1175,7 +1189,7 @@ The official image shows Cowork interaction records inside **DSPM Activity Explo
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/june-s58-purview-dspm-cowork-annotated.webp" alt="Microsoft Purview DSPM Activity Explorer listing AI Interaction records with an App accessed in column showing Cowork and CoworkChat, and a details pane for a selected AI Interaction." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> <em>Cowork</em> and <em>CoworkChat</em> appearing in the App accessed in column · <strong>2</strong> the same value on the selected record, alongside the user, the timestamp and the response text itself. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the June roundup, red boxes mine. <strong>1</strong> <em>Cowork</em> and <em>CoworkChat</em> appearing in the App accessed in column · <strong>2</strong> the same value on the selected record, alongside the user, the timestamp and the response text itself.</em></p>
 
 📖 [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572)
 
@@ -1217,7 +1231,7 @@ Microsoft's reason for building it is not the usual data-leak framing. The contr
 </blockquote>
 
 <p><img src="/images/blog/copilot-august-2026/official-20-purview-dlp-external-annotated.webp" alt="Microsoft Purview Create rule page showing a condition of Email is received from People outside my organization, and an action of Restrict Copilot from processing content with Accessing knowledge sources set to Block." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, callouts mine — the condition that catches external mail, and the Block action that stops it grounding Copilot answers. UI and availability may vary by tenant and rollout.</em></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from the July roundup, callouts mine — the condition that catches external mail, and the Block action that stops it grounding Copilot answers.</em></p>
 
 📖 [M365 Roadmap 561552](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561552) · [Microsoft's June 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--june-2026/4529572) · [Microsoft's July 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--july-2026/4538332) · [Purview DLP for Microsoft 365 Copilot and Copilot Chat](https://learn.microsoft.com/en-us/purview/dlp-microsoft365-copilot-location-learn-about)
 
