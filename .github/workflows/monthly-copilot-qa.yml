@@ -21,6 +21,7 @@ on:
       - 'content/blog/microsoft-365-copilot-*-updates.md'
       - 'scripts/monthly-blog-qa.py'
       - 'scripts/monthly-blog-qa.test.py'
+      - 'scripts/monthly-blog-qa.mutate.py'
       - 'qa/monthly-copilot/**'
       - 'static/images/blog/**'
       - 'static/data/roadmap/latest.json'
@@ -30,6 +31,7 @@ on:
       - 'content/blog/microsoft-365-copilot-*-updates.md'
       - 'scripts/monthly-blog-qa.py'
       - 'scripts/monthly-blog-qa.test.py'
+      - 'scripts/monthly-blog-qa.mutate.py'
       - 'qa/monthly-copilot/**'
       - 'static/images/blog/**'
   workflow_dispatch:
@@ -57,6 +59,14 @@ jobs:
       # A check that has never been watched failing is not a check.
       - name: Self-tests
         run: python scripts/monthly-blog-qa.test.py
+
+      # And the suite itself is verified before ITS verdict is trusted. A test
+      # that would still pass with the guard deleted proves nothing; this breaks
+      # each guard in turn and requires the suite to go red. It has already
+      # caught a guard here with zero real coverage, and two rounds of review
+      # found holes that a green suite never saw. ~6s, no network.
+      - name: Mutation-test the guards
+        run: python scripts/monthly-blog-qa.mutate.py
 
       # Whole corpus, not just changed files: an exceptions.json edit or a
       # roadmap feed refresh can invalidate a post nobody touched.
