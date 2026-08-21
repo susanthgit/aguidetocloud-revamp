@@ -93,6 +93,17 @@ MUTATIONS = [
     ("audit covers every section the parser finds, not only headings",
      '    secs = sorted(parse_sections(text), key=lambda s: s["n"])',
      '    secs = [s for s in parse_sections(text) if s["kind"] == "heading"]'),
+    ("the manifest asks the same question the gate asks",
+     '        obs = structured_observations(slug_of(post))',
+     '        obs = {(r["section"], h) for r in image_rows(secs)\n'
+     '               for h in re.findall(r"\\b([0-9a-f]{64})\\b",\n'
+     '                                   read(QA_DIR / f"{slug_of(post)}.images.md"))}'),
+    ("the manifest binds an observation to its section",
+     '            mark = "ok " if (r["section"], r["sha256"]) in obs else "TODO"',
+     '            mark = "ok " if r["sha256"] in {h for _, h in obs} else "TODO"'),
+    ("the manifest observed count binds to the section too",
+     '{sum(1 for r in rows if (r[\'section\'], r[\'sha256\']) in obs)} observed',
+     '{sum(1 for r in rows if r[\'sha256\'] in {h for _, h in obs})} observed'),
     ("verify covers every section the parser finds, not only headings",
      '    secs = sorted(parse_sections(read(post)), key=lambda s: s["n"])\n\n'
      '    # The section evidence is checked too',

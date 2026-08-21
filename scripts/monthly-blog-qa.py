@@ -657,25 +657,31 @@ def image_rows(secs: list[Section]) -> list[dict]:
     return rows
 
 
-def observation_index(audit_md: Path) -> set[str]:
-    if not audit_md.exists():
-        return set()
-    return set(re.findall(r"\b([0-9a-f]{64})\b", read(audit_md)))
-
-
 def cmd_images(args) -> int:
     post = resolve_post(args.post)
-    secs = [s for s in parse_sections(read(post)) if s["kind"] == "heading"]
+    # Every entry the parser finds, matching audit and verify. A screenshot
+    # under a numbered table row is still a screenshot the gate will demand
+    # an observation for; listing only headings would hide it from the one
+    # command whose whole job is to show the author what is outstanding.
+    secs = sorted(parse_sections(read(post)), key=lambda s: s["n"])
     rows = image_rows(secs)
     if args.action == "manifest":
-        obs = observation_index(QA_DIR / f"{slug_of(post)}.images.md")
+        # The SAME question the gate asks: is there a real Observed block
+        # bound to THIS section and THIS hash? The old index accepted a
+        # bare hash anywhere in the file, so this command used to print "ok"
+        # and a full observed count for a ledger audit scored at zero -
+        # reassuring the author in the one direction that costs trust, and
+        # sending them to the gate with no idea what changed. Round 2 made
+        # audit and verify agree; this is the third component that decides
+        # the same thing and must decide it the same way.
+        obs = structured_observations(slug_of(post))
         for r in rows:
-            mark = "ok " if r["sha256"] in obs else "TODO"
+            mark = "ok " if (r["section"], r["sha256"]) in obs else "TODO"
             print(f"  {mark} §{r['section']:<3} {r['src'].split('/')[-1]:<52} "
                   f"{r['sha256'][:12]}")
         print(f"[images] {len(rows)} referenced, "
               f"{sum(1 for r in rows if not r['exists'])} missing on disk, "
-              f"{sum(1 for r in rows if r['sha256'] in obs)} observed")
+              f"{sum(1 for r in rows if (r['section'], r['sha256']) in obs)} observed")
         return 0
     if args.action == "convert":
         try:
@@ -797,7 +803,7 @@ def is_int(v) -> bool:
 def structured_observations(slug: str) -> set[tuple[int, str]]:
     """(section, sha256) pairs backed by a real Observed block.
 
-    The pair matters, not just the hash. observation_index accepts any bare
+    The pair matters, not just the hash. A hash-only index accepts any bare
     64-hex string as proof, and a hash-only index lets an observation written
     under §5 certify an image embedded in §40 - prose describing an entirely
     different feature would satisfy the gate. cmd_crosscheck already binds

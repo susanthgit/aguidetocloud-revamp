@@ -818,6 +818,58 @@ _c, _out = audits(text=_TBL_POST, dispositions_raw={
 check("a written disposition resolves the table row audit", _c == 0, _out)
 
 
+def manifest(*, text, ledger):
+    """Drive the real images manifest command inside a synthetic repo root."""
+    original = (mbq.REPO, mbq.BLOG, mbq.QA_DIR)
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td).resolve()
+        blog = root / "content" / "blog"
+        qa = root / "qa"
+        fixture = root / "static" / IMG_SRC.lstrip("/")
+        for d in (blog, qa, fixture.parent):
+            d.mkdir(parents=True, exist_ok=True)
+        fixture.write_bytes(b"not a real webp, only its existence is asserted")
+        mbq.REPO, mbq.BLOG, mbq.QA_DIR = root, blog, qa
+        try:
+            p = blog / "microsoft-365-copilot-august-2026-updates.md"
+            p.write_text(text, encoding="utf-8")
+            (qa / f"{mbq.slug_of(p)}.images.md").write_text(
+                ledger.replace("<HASH>", mbq.sha256_file(fixture)), encoding="utf-8")
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                mbq.cmd_images(types.SimpleNamespace(
+                    post=str(p), action="manifest", max_width=None))
+            return buf.getvalue()
+        finally:
+            mbq.REPO, mbq.BLOG, mbq.QA_DIR = original
+
+
+# The manifest is the screen an author works from: it is how they decide the
+# Rule #8 ledger is finished. It used to count a bare hash appearing ANYWHERE
+# in the file, so a ledger the gate scored at zero was reported as fully
+# observed - reassuring in the one direction that costs trust, and sending the
+# author to a push-time failure they had just watched pass. Round 2 made audit
+# and verify agree; this is the third component that answers the same question.
+_out = manifest(text=published(section(7, body_extra=IMG)),
+                ledger="a stray hash with no block at all: `<HASH>`\n")
+check("manifest does not count a bare hash as an observation",
+      "TODO" in _out and "1 referenced" in _out and "0 observed" in _out, _out)
+
+_out = manifest(text=published(section(7, body_extra=IMG)), ledger=OBS_BLOCK)
+check("manifest counts a real Observed block bound to its own section",
+      "ok " in _out and "1 observed" in _out, _out)
+
+# Same hash, real block, wrong section. The gate rejects this; so must the
+# screen the author reads, or the two disagree again by a different route.
+# Both the per-row mark and the total are asserted: an author reads the mark
+# first, and a mutation that broke only the mark left the count honest and the
+# screen lying.
+_out = manifest(text=published(section(7, body_extra=IMG)),
+                ledger=OBS_BLOCK.replace("§7", "§5"))
+check("manifest binds an observation to its section, not the hash alone",
+      "TODO" in _out and "ok " not in _out and "0 observed" in _out, _out)
+
+
 # ------------------------------------------------------------------- report
 if _failures:
     print(f"FAIL {len(_failures)} of {_ran} self-tests failed:")
