@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 22 Aug 2026 04:45:50 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Aug 2026 06:56:22 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Users may be unable to join shared channels using some links to messages in Microsoft Teams</title>
@@ -111,9 +111,9 @@
       <link>https://www.aguidetocloud.com/service-health/#DZ1459263</link>
       <description>[Microsoft Defender XDR] Users may see failures when querying the Microsoft Graph Attack Simulation Training API with $Select OData query.</description>
       <category>Microsoft Defender XDR</category>
-      <category>investigating</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">DZ1459263</guid>
-      <pubDate>Thu, 13 Aug 2026 18:41:00 +0000</pubDate>
+      <pubDate>Thu, 13 Aug 2026 20:14:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Some users may be intermittently unable to access Microsoft 365 Copilot Chat in Outlook on the web</title>

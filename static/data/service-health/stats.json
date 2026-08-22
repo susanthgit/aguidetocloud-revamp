@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T04:45:49.352170+00:00",
+  "generated_at": "2026-08-22T06:56:21.673088+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -81,18 +81,6 @@
       }
     },
     {
-      "service": "Microsoft Defender XDR",
-      "short_name": "Defender",
-      "icon": "🛡️",
-      "total_incidents": 3,
-      "active_incidents": 1,
-      "avg_duration_minutes": 7584,
-      "last_incident": "2026-08-13T18:41:00+00:00",
-      "classifications": {
-        "advisory": 3
-      }
-    },
-    {
       "service": "Microsoft 365 apps",
       "short_name": "M365 Apps",
       "icon": "💼",
@@ -100,6 +88,18 @@
       "active_incidents": 1,
       "avg_duration_minutes": 1450,
       "last_incident": "2026-08-19T17:00:00+00:00",
+      "classifications": {
+        "advisory": 3
+      }
+    },
+    {
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
+      "total_incidents": 3,
+      "active_incidents": 1,
+      "avg_duration_minutes": 7584,
+      "last_incident": "2026-08-13T20:14:00+00:00",
       "classifications": {
         "advisory": 3
       }
