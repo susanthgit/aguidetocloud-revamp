@@ -1,26 +1,26 @@
 ---
 title: "Power BI Premium per User — Guide & Pricing (2026)"
-description: "Power BI Premium per User — advanced analytics, AI, large datasets, and paginated reports at $20/user/month. Free guide for the Power Platform family."
+description: "Power BI Premium per User — advanced analytics, AI, large datasets, and paginated reports at $24/user/month. Free guide for the Power Platform family."
 type: "licensing"
 layout: "single"
 plan_name: "Power BI Premium per User"
 plan_id: "powerbi-ppu"
-price: 20
+price: 24
 price_note: ""
 tagline: "Advanced BI — AI features, 100GB datasets, paginated reports"
 plan_category: "Power Platform"
 badge: ""
 ms_official: "https://www.microsoft.com/en-us/power-platform/products/power-bi/pricing"
 m365maps: ""
-last_verified: "April 2026"
+last_verified: "August 2026"
 faq:
   - q: "When should I choose PPU over Pro?"
     a: "When you need datasets larger than 1 GB, paginated reports (pixel-perfect PDF/print), AI features (AutoML, cognitive services), or deployment pipelines for dev/test/prod."
 ---
 
-## Pro ($10) vs Premium per User ($20)
+## Pro ($14) vs Premium per User ($24)
 
-| Feature | Pro ($10) | Premium/User ($20) |
+| Feature | Pro ($14) | Premium/User ($24) |
 |---------|:---------:|:------------------:|
 | Reports and dashboards | ✅ | ✅ |
 | Scheduled refresh | 8x/day | 48x/day |

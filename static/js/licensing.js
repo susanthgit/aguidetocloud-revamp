@@ -635,13 +635,13 @@
       has: ['Desktop Apps', 'Exchange 100GB', 'Teams', 'Intune P1', 'Entra P1', 'Defender Endpoint P1', 'Defender O365 P1', 'Windows E3', 'DLP Basic', 'eDiscovery Standard'],
       addons: [
         { need: 'AI assistant in Office apps', addon: 'Microsoft 365 Copilot', price: 30, id: 'copilot-addon' },
-        { need: 'Teams Phone (PSTN calling)', addon: 'Teams Phone Standard', price: 8, id: 'teams-phone-standard' },
+        { need: 'Teams Phone (PSTN calling)', addon: 'Teams Phone Standard', price: 10, id: 'teams-phone-standard' },
         { need: 'Full EDR + threat hunting', addon: 'Defender for Endpoint P2', price: 5.20, id: 'defender-endpoint-p2' },
-        { need: 'PIM + risk-based identity', addon: 'Entra ID P2', price: 9, id: 'entra-p2' },
+        { need: 'PIM + risk-based identity', addon: 'Entra ID P2', price: 10, id: 'entra-p2' },
         { need: 'Insider Risk + advanced compliance', addon: 'Purview Suite', price: 12, id: 'purview-suite' },
         { need: 'Advanced endpoint management', addon: 'Intune Suite', price: 10, id: 'intune-suite' },
         { need: 'Employee experience platform', addon: 'Viva Suite', price: 12, id: 'viva-suite' },
-        { need: 'Power BI dashboards', addon: 'Power BI Pro', price: 10, id: 'powerbi-pro' },
+        { need: 'Power BI dashboards', addon: 'Power BI Pro', price: 14, id: 'powerbi-pro' },
         { need: 'AI meeting recaps + branding', addon: 'Teams Premium', price: 10, id: 'teams-premium' },
       ],
       upgrade: { plan: 'Microsoft 365 E5', price: 60, id: 'm365-e5', note: 'Includes Defender P2, Entra P2, Teams Phone, Power BI Pro, Insider Risk, and more. Often cheaper than E3 + multiple add-ons.' }
@@ -736,6 +736,8 @@
 
     data.addons.forEach(addon => {
       const detailUrl = planMap[addon.id]?.detail_url || '';
+      // plans.toml is the source of truth for price; the literal above is only a fallback
+      const price = planMap[addon.id]?.price ?? addon.price;
       html += `<div class="lic-addon-card">
         <div class="lic-addon-info">
           <div class="lic-addon-need">${addon.need}</div>
@@ -743,7 +745,7 @@
           ${addon.note ? `<div class="lic-addon-desc">${addon.note}</div>` : ''}
         </div>
         <div style="text-align:right;">
-          <div class="lic-addon-price">${addon.isUpgrade ? '' : '+'}$${addon.price}/mo</div>
+          <div class="lic-addon-price">${addon.isUpgrade ? '' : '+'}$${price}/mo</div>
           ${detailUrl ? `<a href="${detailUrl}" class="lic-btn" style="margin-top:0.4rem;font-size:0.75rem;">Details →</a>` : ''}
         </div>
       </div>`;
@@ -752,8 +754,9 @@
     // Upgrade suggestion
     if (data.upgrade) {
       const u = data.upgrade;
+      const uPrice = planMap[u.id]?.price ?? u.price;
       html += `<div class="lic-addons-upgrade">
-        <strong>Consider upgrading to ${u.plan} ($${u.price}/mo)</strong>
+        <strong>Consider upgrading to ${u.plan} ($${uPrice}/mo)</strong>
         <p>${u.note}</p>
         <a href="${planMap[u.id]?.detail_url || '/licensing/'}" class="lic-btn lic-btn-primary" style="margin-top:0.5rem;">View ${u.plan} Details →</a>
       </div>`;

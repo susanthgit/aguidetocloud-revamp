@@ -29,7 +29,7 @@ faq:
   - q: "Is E7 just E5 + Copilot repackaged?"
     a: "No. E7 adds the full Entra Suite (ZTNA, Internet Access, Verified ID) and Agent 365 — neither of which is available in E5 even with the Copilot add-on. It's a genuine upgrade with unique components."
   - q: "What if I only want Agent 365, not the full E7?"
-    a: "Agent 365 is available standalone at $15/user/month. You can add it to any E3 or E5 licence. The full Entra Suite is also available as a separate add-on."
+    a: "Agent 365 is available standalone at $15/user/month, but since 1 June 2026 it needs a qualifying base licence. For enterprises that means Microsoft 365 E5, or E3 together with the Defender and Purview suites — E3 on its own is not enough. Frontline, SMB, and education customers each have their own qualifying combination. The full Entra Suite is also available as a separate add-on."
 ---
 
 ## Who Is Microsoft 365 E7 For?
@@ -205,7 +205,7 @@ Even the top-tier plan has boundaries. Know these before you commit:
 | **PSTN Calling** | Calling Plan, Operator Connect, or Direct Routing | Varies by country |
 | **Microsoft Sentinel (SIEM)** | Consumption-based Azure service | Pay-as-you-go |
 | **Copilot Studio full entitlement** | Standalone SKU for high-volume agent messaging | $200/tenant/mo |
-| **Power BI Premium** | Power BI PPU or Premium capacity | $20/user or $4,995/capacity |
+| **Power BI Premium** | Power BI PPU or Fabric capacity | $24/user or capacity pricing |
 | **Entra Private Access infrastructure** | Connector servers in your network | IT deployment effort |
 
 > **💡 The PSTN catch:** E7 includes **Teams Phone System** (cloud PBX), but not the actual phone number or call minutes. You still need a Calling Plan, Operator Connect, or Direct Routing for making and receiving external calls.
@@ -267,5 +267,5 @@ No. E7 adds the **full Entra Suite** (ZTNA, Internet Access, Verified ID) and **
 
 **8. What if I only want Agent 365, not the full E7?**
 
-Agent 365 is available standalone at **$15/user/month**. You can add it to any E3 or E5 licence. The full Entra Suite is also available as a separate add-on.
+Agent 365 is available standalone at **$15/user/month**, but since 1 June 2026 it needs a qualifying base licence. For enterprises that means Microsoft 365 E5, or E3 together with the Defender and Purview suites — E3 on its own is not enough. Frontline, SMB, and education customers each have their own qualifying combination, set out on the [Agent 365 page](/licensing/agent-365/). The full Entra Suite is also available as a separate add-on.
 

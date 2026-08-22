@@ -88,6 +88,13 @@ category = "Identity"
 icon = "🔐"
 
 [[features]]
+id = "entra-suite"
+name = "Entra Suite"
+description = "P1 + Internet Access, Private Access (ZTNA), Verified ID premium, ID Protection and ID Governance"
+category = "Identity"
+icon = "🔐"
+
+[[features]]
 id = "intune-p1"
 name = "Intune Plan 1"
 description = "Mobile device management (MDM), mobile app management (MAM), PC management"
@@ -237,7 +244,7 @@ icon = "🤖"
 [[features]]
 id = "agent-365"
 name = "Agent 365"
-description = "AI agents that can act on your behalf — built into M365 E7"
+description = "Governance and security control plane for AI agents — agent registry, Entra Agent ID, lifecycle management, Purview DLP and Defender coverage. Licensed per user, not per agent."
 category = "AI"
 icon = "🤖"
 

@@ -1,7 +1,7 @@
 # ============================================
 # Microsoft 365 Licensing Plans Database
 # Prices in USD per user/month (list price)
-# Last verified: April 2026
+# Each plan page carries its own last_verified date — this file has no single verification date
 # ============================================
 
 # ── ENTERPRISE PLANS ─────────────────────────
@@ -87,14 +87,14 @@ detail_url = "/licensing/microsoft-365-e7/"
 name = "Microsoft 365 E7"
 category = "enterprise"
 price = 99
-price_note = "GA May 2026"
+price_note = "Now GA"
 tagline = "AI-first enterprise — Copilot + Agent 365 built in"
 description = "Everything in E5 plus Microsoft 365 Copilot, Agent 365, advanced AI governance, and enhanced identity protection. The first plan with Copilot included (not as an add-on)."
 who = "AI-forward enterprises wanting Copilot and Agent 365 bundled in"
-badge = "Coming May 2026"
+badge = "New"
 m365maps = ""
 ms_official = "https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing"
-features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "teams-phone", "sharepoint", "onedrive-unlimited", "dlp-advanced", "ediscovery-premium", "entra-p2", "intune-p1", "defender-endpoint-p2", "defender-o365-p2", "insider-risk", "power-bi-pro", "windows-e5", "information-protection", "compliance-manager", "copilot-full", "agent-365"]
+features = ["desktop-apps", "web-mobile-apps", "exchange-100gb", "teams", "teams-phone", "sharepoint", "onedrive-unlimited", "dlp-advanced", "ediscovery-premium", "entra-p2", "entra-suite", "intune-p1", "defender-endpoint-p2", "defender-o365-p2", "insider-risk", "power-bi-pro", "windows-e5", "information-protection", "compliance-manager", "copilot-full", "agent-365"]
 
 # ── BUSINESS PLANS ───────────────────────────
 
@@ -190,6 +190,21 @@ m365maps = "https://m365maps.com/files/Microsoft-365-F3.htm"
 ms_official = "https://www.microsoft.com/en-us/microsoft-365/enterprise/frontline"
 features = ["web-mobile-apps", "teams", "sharepoint", "entra-p1", "intune-p1", "exchange-2gb", "windows-e3"]
 
+[[plans]]
+detail_url = "/licensing/microsoft-365-f5-security-compliance/"
+id = "m365-f5-seccomp"
+name = "Microsoft 365 F5 Security + Compliance"
+category = "frontline"
+price = 13
+price_note = "Add-on to F1 or F3 — 2021 list price, confirm current"
+tagline = "E5-grade security and compliance for frontline workers"
+description = "Add-on that brings advanced security and compliance to F1 and F3 seats — Entra ID P2, Defender for Endpoint and Office, advanced DLP, eDiscovery, and insider risk. Also sold separately as F5 Security or F5 Compliance. There is no F5 base plan. Microsoft last published public list prices for these add-ons in February 2021, so confirm current figures with your reseller."
+who = "Regulated or high-risk frontline environments needing E5-level protection"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/licensing/news/new_f5_security_and_compliance_offer_for_frontline_workers"
+features = ["entra-p2", "defender-endpoint-p2", "defender-o365-p2", "dlp-advanced", "ediscovery-premium", "insider-risk", "information-protection"]
+
 # ── COPILOT & AI ─────────────────────────────
 
 [[plans]]
@@ -206,6 +221,21 @@ badge = ""
 m365maps = "https://m365maps.com/files/Microsoft-365-Copilot.htm"
 ms_official = "https://www.microsoft.com/en-us/microsoft-365/copilot/enterprise"
 features = ["copilot-full"]
+
+[[plans]]
+id = "agent-365"
+detail_url = "/licensing/agent-365/"
+name = "Microsoft Agent 365"
+category = "copilot"
+price = 15
+price_note = "Add-on (needs a qualifying base licence)"
+tagline = "The control plane for AI agents — govern them like employees"
+description = "Governance and security layer for AI agents: agent registry, Entra Agent ID, lifecycle and access control, Purview DLP for agents, Defender threat detection, and Admin Center usage dashboards. Licensed per user (the person who owns, sponsors, or manages agents) — one licence covers every agent that person works with. Included in M365 E7."
+who = "Organisations deploying AI agents at scale that need visibility, control, and audit"
+badge = "New"
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/microsoft-agent-365"
+features = ["agent-365"]
 
 [[plans]]
 detail_url = "/licensing/microsoft-copilot-chat/"
@@ -334,7 +364,7 @@ detail_url = "/licensing/entra-id-p2/"
 id = "entra-p2"
 name = "Microsoft Entra ID P2"
 category = "security"
-price = 9
+price = 10
 price_note = "Add-on"
 tagline = "PIM + risk-based conditional access"
 description = "Adds Privileged Identity Management (PIM), Identity Protection (risk-based sign-in policies), and access reviews on top of Entra ID P1."
@@ -343,6 +373,21 @@ badge = ""
 m365maps = "https://m365maps.com/files/Entra-ID-Paid.htm"
 ms_official = "https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing"
 features = ["entra-p2"]
+
+[[plans]]
+detail_url = "/licensing/entra-suite/"
+id = "entra-suite"
+name = "Microsoft Entra Suite"
+category = "security"
+price = 12
+price_note = "Add-on (annual commitment, requires Entra ID P1)"
+tagline = "Zero Trust identity and network access in one bundle"
+description = "Bundles Entra Internet Access and Private Access (ZTNA), Verified ID premium, ID Protection, and ID Governance. Cheaper than buying the components separately. Included in Microsoft 365 E7."
+who = "Organisations moving to Zero Trust who want identity and network access in one SKU"
+badge = ""
+m365maps = ""
+ms_official = "https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing"
+features = ["entra-suite"]
 
 # ── DYNAMICS 365 — CRM ───────────────────────
 
@@ -565,7 +610,7 @@ id = "powerbi-pro"
 detail_url = "/licensing/power-bi-pro/"
 name = "Power BI Pro"
 category = "power-platform"
-price = 10
+price = 14
 price_note = ""
 tagline = "Business intelligence for everyone"
 description = "Create, share, and collaborate on interactive dashboards and reports. Included in M365 E5 and M365 E7. Standalone licence for users on other plans."
@@ -580,7 +625,7 @@ detail_url = "/licensing/power-bi-premium-per-user/"
 id = "powerbi-ppu"
 name = "Power BI Premium per User"
 category = "power-platform"
-price = 20
+price = 24
 price_note = ""
 tagline = "Advanced analytics + larger datasets"
 description = "Everything in Pro plus paginated reports, AI features, larger dataset limits, deployment pipelines, and advanced dataflow capabilities."
@@ -704,7 +749,7 @@ detail_url = "/licensing/teams-phone-standard/"
 id = "teams-phone-standard"
 name = "Teams Phone Standard"
 category = "teams-addons"
-price = 8
+price = 10
 price_note = "Add-on"
 tagline = "Cloud PBX — make calls from Teams"
 description = "Cloud-based phone system with call queues, auto attendants, voicemail, call transfer, and music on hold. Requires a calling plan or direct routing for PSTN."

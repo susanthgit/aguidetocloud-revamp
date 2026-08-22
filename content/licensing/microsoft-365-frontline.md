@@ -12,7 +12,7 @@ plan_category: "Frontline"
 badge: ""
 ms_official: "https://www.microsoft.com/en-us/microsoft-365/enterprise/frontline"
 m365maps: "https://m365maps.com/files/Microsoft-365-Frontline-All.htm"
-last_verified: "April 2026"
+last_verified: "August 2026"
 faq:
   - q: "What is the difference between F1 and F3?"
     a: "F1 ($3) gives view-only web apps, Teams, and basic identity. F3 ($10) adds full web/mobile app editing, a larger feature set, Windows Enterprise, and Intune for device management."

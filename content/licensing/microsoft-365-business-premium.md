@@ -140,7 +140,7 @@ flowchart LR
 | Need | Add-On | Price |
 |------|--------|-------|
 | AI assistant in Office apps | [Microsoft 365 Copilot](/licensing/microsoft-365-copilot/) | +$30/user/mo |
-| PSTN calling through Teams | Teams Phone Standard | +$8/user/mo |
+| PSTN calling through Teams | Teams Phone Standard | +$10/user/mo |
 | Advanced endpoint management | Intune Suite | +$10/user/mo |
 
 ## Frequently Asked Questions

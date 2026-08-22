@@ -72,7 +72,7 @@ Yes. Only users with Premium licences get the premium features. Meetings with mi
 
 **2. Does Teams Premium replace Teams Phone?**
 
-No. Teams Premium is about **meeting features**. Teams Phone ($8/user/month) is about **making phone calls**. They're separate add-ons that complement each other.
+No. Teams Premium is about **meeting features**. Teams Phone ($10/user/month) is about **making phone calls**. They're separate add-ons that complement each other.
 
 
 

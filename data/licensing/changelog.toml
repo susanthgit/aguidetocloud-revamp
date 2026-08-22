@@ -1,8 +1,26 @@
 # ============================================
 # Licensing Changelog — What Changed?
 # Manually curated, newest first
-# Last updated: 13 May 2026
+# Last updated: 22 August 2026
 # ============================================
+
+[[entries]]
+id = "2026-08-copilot-pro-retired"
+date = "2026-08-01"
+title = "Copilot Pro Retired — Support Ends"
+severity = "major"
+description = "Microsoft 365 Premium replaces Copilot Pro for individuals. Copilot Pro was withdrawn from sale in late 2025 and support ended on 1 August 2026. Premium bundles the Office desktop apps, Copilot, and cloud storage in one consumer subscription. Nothing changes for business and enterprise customers, who license Microsoft 365 Copilot at $30/user/month."
+affected = []
+source = "https://www.microsoft.com/en-us/microsoft-365/copilot"
+
+[[entries]]
+id = "2026-06-agent365-prereq"
+date = "2026-06-01"
+title = "Agent 365 Adds a Licensing Prerequisite"
+severity = "major"
+description = "Agent 365's licensing prerequisites were formalised on 1 June 2026. The standalone add-on requires a qualifying licence, and what qualifies depends on customer type: Microsoft 365 E5 (or E3 with both the Defender and Purview suites) for enterprise, F1/F3 with the frontline Defender and Purview suites for frontline workers, Business Premium plus the Defender and Purview suites for SMB, and A5 for Faculty (or A3 for Faculty with the education Defender and Purview suites) for education. Nothing changes for Microsoft 365 E7, which already includes Agent 365."
+affected = ["m365-e7", "agent-365", "m365-e3", "m365-e5", "m365-f5-seccomp"]
+source = "https://www.microsoft.com/licensing/product-licensing/products"
 
 [[entries]]
 id = "2026-05-multiplexing"
@@ -10,7 +28,7 @@ date = "2026-05-01"
 title = "Multiplexing Rules Updated for AI Agents, Bots, and RPA"
 severity = "moderate"
 description = "Microsoft updated the May 2026 Product Terms to clarify multiplexing: ALL users or devices that indirectly benefit from M365 — including through agents, bots, or RPA — still require licensing. Closes loopholes around automation layers. Agents themselves don't need separate licences; they're covered under the licensed user's Agent 365 or E7 seat."
-affected = ["m365-e7", "m365-copilot", "agent-365", "copilot-studio"]
+affected = ["m365-e7", "copilot-addon", "agent-365", "copilot-studio"]
 source = "https://www.microsoft.com/licensing/product-licensing/products"
 
 [[entries]]
@@ -19,7 +37,7 @@ date = "2026-07-01"
 title = "Price Increases Across Most Plans"
 severity = "major"
 description = "Microsoft 365 prices increase 8–33% for most plans. Business Premium and Office 365 E1 maintain current pricing. Defender for Office 365 Plan 1 now included in M365 E3 at no extra cost."
-affected = ["m365-e3", "m365-e5", "biz-basic", "biz-standard", "o365-e3", "o365-e5"]
+affected = ["m365-e3", "m365-e5", "m365-f1", "m365-f3", "biz-basic", "biz-standard", "o365-e3", "o365-e5", "ems-e3", "teams-phone-standard"]
 source = "https://www.microsoft.com/en-us/licensing/news/2026-M365-Packaging-Pricing-Updates"
 
 [[entries]]

@@ -1,25 +1,25 @@
 ---
 title: "Power BI Pro — Complete Guide & Pricing (2026)"
-description: "Everything about Power BI Pro — interactive dashboards, reports, and data visualisation for $10/user/month. Free guide."
+description: "Everything about Power BI Pro — interactive dashboards, reports, and data visualisation for $14/user/month. Free guide."
 type: "licensing"
 layout: "single"
 plan_name: "Power BI Pro"
 plan_id: "powerbi-pro"
-price: 10
+price: 14
 price_note: "Included in M365 E5 & E7"
 tagline: "Business intelligence for everyone — dashboards, reports & data insights"
 plan_category: "Power Platform"
 badge: ""
 ms_official: "https://www.microsoft.com/en-us/power-platform/products/power-bi/pricing"
 m365maps: ""
-last_verified: "April 2026"
+last_verified: "August 2026"
 faq:
   - q: "Is Power BI Pro included in any Microsoft 365 plan?"
-    a: "Yes. Power BI Pro is included in Microsoft 365 E5 ($60) and E7 ($99). All other plans require a separate $10/user/month licence."
+    a: "Yes. Power BI Pro is included in Microsoft 365 E5 ($60) and E7 ($99). All other plans require a separate $14/user/month licence."
   - q: "What is the difference between Power BI Pro and Premium per User?"
-    a: "Pro ($10) covers standard reports and dashboards. Premium per User ($20) adds paginated reports, AI features, larger dataset limits, and deployment pipelines."
+    a: "Pro ($14) covers standard reports and dashboards. Premium per User ($24) adds paginated reports, AI features, larger dataset limits, and deployment pipelines."
   - q: "Can I use Power BI for free?"
-    a: "Power BI Desktop is free to download and use for personal analysis. To share reports with colleagues, you need Pro ($10/user) or Premium."
+    a: "Power BI Desktop is free to download and use for personal analysis. To share reports with colleagues, you need Pro ($14/user) or Premium."
 ---
 
 ## Who Is Power BI Pro For?
@@ -38,13 +38,13 @@ Power BI Pro is for **analysts and business users** who create and share interac
 ```mermaid
 flowchart LR
     FREE["Power BI Free<br/>$0<br/>Personal use only"]
-    PRO["Power BI Pro<br/>$10/mo<br/>Share + Collaborate"]
-    PPU["Premium per User<br/>$20/mo<br/>Pro + AI + Large Data"]
-    FREE -->|"+$10"| PRO
+    PRO["Power BI Pro<br/>$14/mo<br/>Share + Collaborate"]
+    PPU["Premium per User<br/>$24/mo<br/>Pro + AI + Large Data"]
+    FREE -->|"+$14"| PRO
     PRO -->|"+$10"| PPU
 ```
 
-| Feature | Free | Pro ($10) | Premium/User ($20) |
+| Feature | Free | Pro ($14) | Premium/User ($24) |
 |---------|:----:|:---------:|:------------------:|
 | Create reports in Desktop | ✅ | ✅ | ✅ |
 | **Publish to Power BI Service** | ❌ | ✅ | ✅ |
@@ -74,5 +74,5 @@ Yes. Power BI tabs in Teams channels and dashboards in Teams meetings are fully 
 
 **3. Is Pro enough for my data team?**
 
-For most business analysts, Pro is sufficient. Data engineers working with large datasets (>1 GB), needing dataflows, or paginated reports should consider Premium per User ($20).
+For most business analysts, Pro is sufficient. Data engineers working with large datasets (>1 GB), needing dataflows, or paginated reports should consider Premium per User ($24).
 

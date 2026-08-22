@@ -141,15 +141,15 @@
   "brand": {
     "@type": "Brand",
     "name": "Microsoft"
-  },
+  }{{ if ne .Params.price_status "historical" }},
   "offers": {
     "@type": "Offer",
     "price": "{{ .Params.price }}",
     "priceCurrency": "USD",
-    "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/InStock",
-    "url": "{{ .Params.ms_official }}"
-  }
+    "url": "{{ .Params.ms_official }}",
+    {{ if eq .Params.badge "Retired" }}"availability": "https://schema.org/Discontinued"{{ else }}"priceValidUntil": "2026-12-31",
+    "availability": "https://schema.org/InStock"{{ end }}
+  }{{ end }}
 }
 </script>
 

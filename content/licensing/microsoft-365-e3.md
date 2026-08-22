@@ -170,10 +170,10 @@ If E3 almost covers your needs but you need one more thing, here are the most co
 | Need | Add-On | Price |
 |------|--------|-------|
 | AI assistant in Office apps | **Microsoft 365 Copilot** | +$30/user/mo |
-| PSTN calling through Teams | **Teams Phone Standard** | +$8/user/mo |
+| PSTN calling through Teams | **Teams Phone Standard** | +$10/user/mo |
 | Advanced endpoint protection | **Defender for Endpoint P2** | +$5.20/user/mo |
 | Full compliance suite | **Purview Suite** | +$12/user/mo |
-| Advanced identity (PIM) | **Entra ID P2** | +$9/user/mo |
+| Advanced identity (PIM) | **Entra ID P2** | +$10/user/mo |
 | Employee experience | **Viva Suite** | +$12/user/mo |
 
 > **💡 Tip:** If you're adding 3+ add-ons to E3, do the maths — [E5 at $60/mo](/licensing/microsoft-365-e5/) might be cheaper than E3 ($39) plus individual add-ons. And if you want Copilot, check [E7 at $99/mo](/licensing/microsoft-365-e7/) — it includes Copilot, Agent 365, and the full Entra Suite.

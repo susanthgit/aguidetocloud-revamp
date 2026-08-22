@@ -1,18 +1,18 @@
 ---
 title: "Teams Phone Standard — Guide & Pricing (2026)"
-description: "Teams Phone Standard — cloud PBX with call queues and auto attendants at $8/user/month add-on."
+description: "Teams Phone Standard — cloud PBX with call queues and auto attendants at $10/user/month add-on."
 type: "licensing"
 layout: "single"
 plan_name: "Teams Phone Standard"
 plan_id: "teams-phone-standard"
-price: 8
+price: 10
 price_note: "Add-on (included in E5/E7)"
 tagline: "Cloud PBX — make and receive phone calls through Teams"
 plan_category: "Teams Add-ons"
 badge: ""
 ms_official: "https://www.microsoft.com/en-us/microsoft-teams/microsoft-teams-phone"
 m365maps: "https://m365maps.com/files/Microsoft-Teams.htm"
-last_verified: "April 2026"
+last_verified: "August 2026"
 faq:
   - q: "Do I need a Calling Plan with Teams Phone?"
     a: "Yes — Teams Phone provides the PBX features. You still need either a Microsoft Calling Plan, Operator Connect, or Direct Routing for actual PSTN connectivity."
@@ -37,4 +37,4 @@ Teams Phone turns Microsoft Teams into a **full cloud phone system** — replaci
 
 **1. What's the cheapest way to get Teams calling?**
 
-E3 ($39) + Teams Phone ($8) + Domestic Calling Plan ($8) = $55/user. Or just get E5 ($60) which includes Teams Phone + Audio Conferencing.
+E3 ($39) + Teams Phone ($10) + Domestic Calling Plan ($8) = $57/user. Or just get E5 ($60) which includes Teams Phone + Audio Conferencing.
