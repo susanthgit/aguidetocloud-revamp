@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T01:47:10.199644+00:00",
+  "generated_at": "2026-08-22T03:04:39.511534+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -45,12 +45,12 @@
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 9,
+      "total_incidents": 8,
       "active_incidents": 2,
-      "avg_duration_minutes": 6741,
+      "avg_duration_minutes": 7045,
       "last_incident": "2026-08-20T12:23:15+00:00",
       "classifications": {
-        "advisory": 8,
+        "advisory": 7,
         "incident": 1
       }
     },
@@ -78,6 +78,18 @@
       "classifications": {
         "incident": 1,
         "advisory": 5
+      }
+    },
+    {
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
+      "total_incidents": 3,
+      "active_incidents": 1,
+      "avg_duration_minutes": 7584,
+      "last_incident": "2026-08-22T02:36:08.287000+00:00",
+      "classifications": {
+        "advisory": 3
       }
     },
     {
@@ -142,18 +154,6 @@
       }
     },
     {
-      "service": "Microsoft Defender XDR",
-      "short_name": "Defender",
-      "icon": "🛡️",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 7584,
-      "last_incident": "2026-07-09T12:00:00+00:00",
-      "classifications": {
-        "advisory": 2
-      }
-    },
-    {
       "service": "SharePoint Online",
       "short_name": "SharePoint",
       "icon": "📄",
@@ -193,8 +193,8 @@
   "monthly": [
     {
       "month": "2026-08",
-      "incident_count": 27,
-      "services_affected": 9
+      "incident_count": 28,
+      "services_affected": 10
     },
     {
       "month": "2026-07",
@@ -203,7 +203,7 @@
     },
     {
       "month": "2026-06",
-      "incident_count": 18,
+      "incident_count": 17,
       "services_affected": 10
     },
     {

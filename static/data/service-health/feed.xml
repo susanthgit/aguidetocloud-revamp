@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 22 Aug 2026 01:47:10 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Aug 2026 03:04:39 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Defender XDR] Users see failures when querying the Microsoft Graph Attack Simulation Training API with $Select OData query</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1459263</link>
+      <description>[Microsoft Defender XDR] Users see failures when querying the Microsoft Graph Attack Simulation Training API with $Select OData query.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">DZ1459263</guid>
+      <pubDate>Sat, 22 Aug 2026 02:36:08 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Users may be unable to join shared channels using some links to messages in Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1459181</link>
@@ -448,15 +457,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1442357</guid>
       <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some admins may see inaccurate status information in the service health section in the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1438482</link>
-      <description>[Microsoft 365 suite] Admins may have seen inaccurate status information in the service health section in the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1438482</guid>
-      <pubDate>Tue, 21 Jul 2026 19:45:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
