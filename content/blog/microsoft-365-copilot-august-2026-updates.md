@@ -4,7 +4,7 @@ list_title: "M365 Copilot — August Recap: 59 Updates"
 hub_id: "whats-new"
 description: "August 2026 Microsoft 365 Copilot updates: 59 changes across Excel, PowerPoint, Word, Chat, Cowork and admin, each with the date Microsoft gave it."
 date: 2026-08-21
-lastmod: 2026-08-22
+lastmod: 2026-08-24
 draft: false
 youtube_id: ""
 card_tag: "What's New"
@@ -330,7 +330,7 @@ That matters when the source is a project folder or team library rather than a c
 </blockquote>
 
 <blockquote class="callout callout-warn">
-<p><strong>Microsoft's roadmap still calls this unreleased. It isn't.</strong> The <a href="https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&amp;searchterms=555894">roadmap entry (555894)</a> reads "You can now" and gives general availability as June 2026, while the same record still carries an <em>In development</em> status. Its two siblings do the same, and none of the three has been modified since <strong>11 February 2026</strong>. I queried Microsoft's public roadmap API directly on 21 August 2026 to confirm that — and then I stopped reading records and tried it.</p>
+<p><strong>Microsoft's roadmap still calls this unreleased. It isn't.</strong> The <a href="https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&amp;searchterms=555894">roadmap entry (555894)</a> reads "You can now" and gives general availability as June 2026, while the same record still carries an <em>In development</em> status. Its two siblings do the same. When I queried Microsoft's public roadmap API directly on 21 August 2026, 555894 had sat untouched since it was created on <strong>11 February 2026</strong> — so I stopped reading records and tried it. <em>Updated 24 August 2026: Microsoft edited all three records within hours of that check, and left every one of them still reading In development.</em></p>
 </blockquote>
 
 It works. In my lab tenant on 21 August 2026 I opened a SharePoint document library, opened the context menu on a **folder** — not a file — and chose *Copy link*. I pasted that link into Copilot in PowerPoint on the web and added one plain sentence asking it to create a presentation from this document. Copilot reasoned through ten steps, chose a navy and slate corporate style, generated its own images, and built the deck out of what was in that folder. Four slides are visible in the thumbnail rail of my capture, styled end to end.
