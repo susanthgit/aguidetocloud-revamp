@@ -5,14 +5,14 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 23 Aug 2026 14:35:37 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2026 16:39:08 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Users may be unable to join shared channels using some links to messages in Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1459181</link>
       <description>[Microsoft Teams] Users may be unable to join shared channels using some links to messages in Microsoft Teams.</description>
       <category>Microsoft Teams</category>
-      <category>investigating</category>
+      <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1459181</guid>
       <pubDate>Fri, 21 Aug 2026 23:42:31 +0000</pubDate>
     </item>
