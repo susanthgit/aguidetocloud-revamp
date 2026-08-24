@@ -33,7 +33,7 @@ Usage
     s.save(r"...\static\images\blog\FOLDER\01-thing.webp")
 
 CLI (declarative — preferred, keeps annotations reviewable in git):
-    python annotate-screenshot.py spec.json
+    python annotate_screenshot.py spec.json
 """
 
 from __future__ import annotations
@@ -307,3 +307,4 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         sys.exit(__doc__)
     run_spec(sys.argv[1])
+

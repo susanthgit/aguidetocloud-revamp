@@ -60,7 +60,7 @@ founder_note: |
 
 <div class="living-doc-banner">
 
-🔄 **This is a fast-moving area.** The GitHub Copilot harness reached general availability on 3 August 2026 ([announcement](https://techcommunity.microsoft.com/blog/copilot-studio-blog/more-powerful-agents-and-workflows-for-autonomous-business-processes-introducing/4542969)), after a production-ready preview that began in June 2026. Several capabilities *inside* it — memory, the Foundry IQ connection, and connected agents in the new experience — are still previews in their own right, and the billing detail is still settling: developer and trial environments move to usage-based billing on 1 September 2026. Always confirm on Microsoft Learn: [Choose a harness](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview), [usage-based billing overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview) and [manage harness costs](https://learn.microsoft.com/en-us/power-platform/admin/manage-usage-github-copilot-harness). **Last verified: 19 August 2026.**
+🔄 **This is a fast-moving area.** The GitHub Copilot harness reached general availability on 3 August 2026 ([announcement](https://techcommunity.microsoft.com/blog/copilot-studio-blog/more-powerful-agents-and-workflows-for-autonomous-business-processes-introducing/4542969)), after a production-ready preview that began in June 2026. Several capabilities *inside* it — memory, the Foundry IQ connection, connected agents in the new experience, and natural-language creation itself — are still previews in their own right, and the billing detail is still settling: developer and trial environments move to usage-based billing on 1 September 2026. Always confirm on Microsoft Learn: [Choose a harness](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview), [usage-based billing overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview) and [manage harness costs](https://learn.microsoft.com/en-us/power-platform/admin/manage-usage-github-copilot-harness). **Last verified: 24 August 2026.**
 
 </div>
 
@@ -110,9 +110,11 @@ Two rows there are worth pausing on. **Publishing reach** is the one people disc
 
 *The **"GitHub Copilot"** tags and the "Uses Copilot Credits" pill are the tell — this is the metered harness. The box at the top is the newer describe-it-in-plain-English route, and "Other ways to build" at the bottom is where the standard, rule-based agents and flows still live. (Lab tenant, recaptured 24 August 2026.)*
 
-Two ways in from this screen. Describe what you want in the box at the top and Copilot Studio drafts the agent or workflow for you — plain English, nothing to wire up first. Or, if you've already written your instructions somewhere else, paste them straight into the same box. Either route lands you on the same harness; it only changes how you start. What neither one gives you is a standard, rule-based agent — that's still behind **"Other ways to build"** at the bottom.
+Two ways in from this screen. If you already know what you want, pick the Agent or Workflow card and go. If you'd rather not start from a blank canvas, describe the problem in the box at the top instead — plain English, and you can type it or paste in instructions you wrote somewhere else. Copilot Studio asks a few clarifying questions, then builds what it thinks fits: a workflow, an agent, or both. Either route lands you on the same harness; it only changes how you start. What neither one gives you is a standard, rule-based agent — Microsoft's own guidance points you at **"Other ways to build"** for those.
 
-{{< margin >}}The box drafts an agent. It doesn't finish one. You still read what it wrote and fix the bits it guessed — that part hasn't been automated away.{{< /margin >}}
+One flag before you demo it: that natural-language route is still a [production-ready preview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/create-automation-natural-language), even though the harness itself went generally available in August. GA applied to the harness, not to every door into it.
+
+{{< margin >}}It drafts. It doesn't finish. What comes back is a set of cards you open and edit — you still read what it wrote and fix the bits it guessed. That part hasn't been automated away.{{< /margin >}}
 
 The one-line summary I keep in my head: standard = follows your rules, GitHub Copilot = works out the steps, Copilot chat = grounds Microsoft 365 Copilot in your knowledge.
 
@@ -157,7 +159,7 @@ Three of the constructs you'd reach for when authoring a standard-harness agent 
 
 One nuance worth keeping straight, because it can look like a contradiction: [Workflows](https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/flows-overview) run on the GitHub Copilot harness too, and the Workflow canvas has its own Variable building block. That's a different construct from the standard harness's four-scope variable model — same word, different thing.
 
-The tell is on the Learn pages themselves: all three carry the same banner, *"Features in this article are powered by the standard harness."* This is the sort of thing that moves, so check those three pages before you quote them. **Last verified: 24 August 2026.**
+The tell is on the Learn pages themselves: all three carry the same banner, *"Features in this article are powered by the standard harness."* This is the sort of thing that moves, so check those three pages before you quote them. Last verified: 24 August 2026.
 
 ---
 
@@ -198,7 +200,7 @@ One distinction worth holding onto: the new experience has **two** build types, 
 
 *A Workflow, mid-build. The palette mixes deterministic building blocks (If/Else, Loop, Function) with AI actions and a Human-review step — and every flow hangs off a **trigger** (here, Manual / on-demand). This is the "follows the path you author" half of the harness. (Lab tenant.)*
 
-> ⚠️ **"GA" doesn't mean everything inside it is finished.** General availability applies to the harness — not to every feature you'll touch. Memory, the Foundry IQ connection and connected agents in the new experience are still previews in their own right, and the billing rules are still moving (see [1 September](#sept-billing) below). If you read an earlier version of this post that called the harness a preview, this is the correction.
+> ⚠️ **"GA" doesn't mean everything inside it is finished.** General availability applies to the harness — not to every feature you'll touch. Memory, the Foundry IQ connection, connected agents in the new experience and natural-language creation are still previews in their own right, and the billing rules are still moving (see [1 September](#sept-billing) below). If you read an earlier version of this post that called the harness a preview, this is the correction.
 
 ---
 
