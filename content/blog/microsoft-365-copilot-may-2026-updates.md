@@ -916,6 +916,7 @@ Features that shipped only in May (19 of the 53) do not have a public Microsoft 
 - 📺 [Subscribe to A Guide to Cloud & AI on YouTube](https://www.youtube.com/susanthsutheesh) for new tutorials every week
 - 📰 Check out the [AI News page](/ai-news/) for the latest AI headlines
 - ☕ [Download free resources](https://ko-fi.com/aguidetocloud/shop)
+- 📥 [Monthly Copilot recaps as free PDF slide packs](https://ko-fi.com/s/bb6ef19827)
 
 ---
 
