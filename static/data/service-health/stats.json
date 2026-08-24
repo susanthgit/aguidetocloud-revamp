@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T18:55:58.061108+00:00",
+  "generated_at": "2026-08-24T20:45:05.502951+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -8,7 +8,7 @@
       "icon": "💬",
       "total_incidents": 22,
       "active_incidents": 3,
-      "avg_duration_minutes": 12382,
+      "avg_duration_minutes": 12373,
       "last_incident": "2026-08-21T23:42:31+00:00",
       "classifications": {
         "advisory": 19,
@@ -68,29 +68,29 @@
       }
     },
     {
-      "service": "Microsoft Purview",
-      "short_name": "Purview",
-      "icon": "🔍",
+      "service": "Microsoft 365 apps",
+      "short_name": "M365 Apps",
+      "icon": "💼",
       "total_incidents": 5,
-      "active_incidents": 1,
-      "avg_duration_minutes": 16853,
-      "last_incident": "2026-08-24T15:26:38.200000+00:00",
+      "active_incidents": 2,
+      "avg_duration_minutes": 1109,
+      "last_incident": "2026-08-24T13:00:00+00:00",
       "classifications": {
         "advisory": 4,
         "incident": 1
       }
     },
     {
-      "service": "Microsoft 365 apps",
-      "short_name": "M365 Apps",
-      "icon": "💼",
+      "service": "Microsoft Purview",
+      "short_name": "Purview",
+      "icon": "🔍",
       "total_incidents": 5,
-      "active_incidents": 3,
-      "avg_duration_minutes": 1450,
-      "last_incident": "2026-08-24T14:22:02.317000+00:00",
+      "active_incidents": 0,
+      "avg_duration_minutes": 16616,
+      "last_incident": "2026-08-13T21:07:00+00:00",
       "classifications": {
-        "incident": 1,
-        "advisory": 4
+        "advisory": 4,
+        "incident": 1
       }
     },
     {
@@ -139,7 +139,8 @@
       "avg_duration_minutes": 163,
       "last_incident": "2026-08-24T18:16:48.303000+00:00",
       "classifications": {
-        "advisory": 2
+        "incident": 1,
+        "advisory": 1
       }
     },
     {

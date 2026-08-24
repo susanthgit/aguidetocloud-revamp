@@ -5,34 +5,25 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 24 Aug 2026 18:55:58 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Aug 2026 20:45:06 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Viva] Some users may be unable to access Microsoft Viva Glint services</title>
       <link>https://www.aguidetocloud.com/service-health/#MV1461005</link>
-      <description>[Microsoft Viva] Users may be unable to access Viva Glint services.</description>
+      <description>[Microsoft Viva] Users may have been unable to access Viva Glint services.</description>
       <category>Microsoft Viva</category>
       <category>investigating</category>
       <guid isPermaLink="false">MV1461005</guid>
       <pubDate>Mon, 24 Aug 2026 18:16:48 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Purview] Admins may be unable to access Content Explorer or Data Explorer in Microsoft Purview</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1460870</link>
-      <description>[Microsoft Purview] Admins may be unable to access Content Explorer or Data Explorer in Microsoft Purview.</description>
-      <category>Microsoft Purview</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MP1460870</guid>
-      <pubDate>Mon, 24 Aug 2026 15:26:38 +0000</pubDate>
-    </item>
-    <item>
       <title>[Microsoft 365 apps] Some users may be unable to activate new or refresh existing Office 365 licenses</title>
       <link>https://www.aguidetocloud.com/service-health/#OP1460815</link>
-      <description>[Microsoft 365 apps] Users may be unable to activate new or refresh existing Office 365 licenses.</description>
+      <description>[Microsoft 365 apps] Users may have been unable to activate new or refresh existing Office 365 licenses.</description>
       <category>Microsoft 365 apps</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">OP1460815</guid>
-      <pubDate>Mon, 24 Aug 2026 14:22:02 +0000</pubDate>
+      <pubDate>Mon, 24 Aug 2026 13:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] Users may be unable to join shared channels using some links to messages in Microsoft Teams</title>
@@ -150,6 +141,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">OP1454727</guid>
       <pubDate>Fri, 14 Aug 2026 11:51:32 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Purview] Admins may be unable to access Content Explorer or Data Explorer in Microsoft Purview</title>
+      <link>https://www.aguidetocloud.com/service-health/#MP1460870</link>
+      <description>[Microsoft Purview] Admins may have been unable to access Content Explorer or Data Explorer in Microsoft Purview.</description>
+      <category>Microsoft Purview</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MP1460870</guid>
+      <pubDate>Thu, 13 Aug 2026 21:07:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Users may see failures when querying the Microsoft Graph Attack Simulation Training API with $Select OData query</title>
