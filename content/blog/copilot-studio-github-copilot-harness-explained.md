@@ -4,7 +4,7 @@ list_title: "Copilot Studio's GitHub Copilot Harness — Explained Simply"
 hub_id: "ai-agents"
 description: "What is the GitHub Copilot harness in Copilot Studio? A plain-English guide to the three harnesses, how to build one, and why the credit meter differs."
 date: 2026-08-11
-lastmod: 2026-08-19
+lastmod: 2026-08-24
 card_tag: "AI Agents"
 tag_class: "ai"
 layout: "notebook"
@@ -34,6 +34,8 @@ faq:
     answer: "Go to copilotstudio.microsoft.com and open the new experience (turn on the New experience toggle if you don't see it). Describe what you want in plain language, answer the clarifying questions as it builds, then refine on the Build tab, try it on the Preview tab, check quality on the Evaluate tab, and publish. One prerequisite: the natural-language creation experience uses Anthropic models, so an admin must allow Anthropic in the Microsoft 365 admin centre and enable external models for the environment first."
   - question: "When should I use the GitHub Copilot harness instead of the standard harness?"
     answer: "Use the GitHub Copilot harness when the agent needs to reason through a longer task, work across several tools, handle files, or run a real business process end to end. Use the standard harness when the scenario is well-defined and rule-based and you want consistent, predictable answers. Use the Copilot chat harness when you just want to extend Microsoft 365 Copilot Chat with your organisation's knowledge. One practical constraint that often decides it: the Copilot chat harness publishes to internal teams only, while the GitHub Copilot and standard harnesses can publish to internal teams or external customers."
+  - question: "What do you lose by moving to the GitHub Copilot harness?"
+    answer: "Three constructs you'd reach for when authoring a standard-harness agent are documented as standard-harness features, and Microsoft's own harness comparison table doesn't list them. Variables — topic, global, system and environment scopes — are one: on a GitHub Copilot harness agent there's no one-for-one equivalent, so state goes into memory, a tool or a persistent store, and memory is per-user and cleared after inactivity, so it isn't a general-purpose variable. Power Fx expressions inside a topic are another, so that logic gets rebuilt as instructions, a tool or code, which is a real shift if your makers are low-code. Adaptive Cards authored in a topic are the hardest, because if the value of your agent is the form it puts in front of people, you should validate that experience before committing. One nuance that looks like a contradiction but isn't: Workflows also run on the GitHub Copilot harness and the Workflow canvas has its own Variable building block, which is a different construct from the standard harness's four-scope variable model. The tell is on Microsoft Learn itself: the pages for variables, Power Fx and Adaptive Cards all carry the same note, 'Features in this article are powered by the standard harness.' And because you can't move an agent between harnesses later, these are worth checking before you build rather than after. Verified 24 August 2026."
   - question: "Where can I see and control credit consumption?"
     answer: "Two different places, and it trips people up. Credit consumption (units) is in the Power Platform admin centre under Licensing then Copilot Studio — by environment and agent, with a downloadable report, plus Manage Agents to set per-agent monthly limits with an optional hard stop. But because pay-as-you-go bills through Azure, the actual dollar cost lives in Azure Cost Management on the linked subscription (filter to the Power Platform account resource named after your billing plan), and on the Azure invoice. Azure budgets can alert you there but don't stop spend — the per-agent hard stop is the most precise stop you have. The Microsoft 365 admin centre is where you buy licences and prepaid capacity packs; its Cost Management dashboard currently covers Copilot Cowork and the Work IQ API rather than Copilot Studio, so it won't show your Copilot Studio pay-as-you-go spend. Worth knowing: prepaid Copilot Credit capacity is shared across those products, so Copilot Studio consumption reduces what's left for the others."
   - question: "Who can build an agent on the GitHub Copilot harness, and how do we govern it?"
@@ -134,6 +136,24 @@ flowchart TD
 ```
 
 *(Choosing between build tools — Agent Builder vs Copilot Studio vs Foundry — rather than harnesses within Copilot Studio? That's a different decision: see [Agent Builder vs Copilot Studio vs Foundry](/blog/agent-builder-vs-copilot-studio-vs-foundry/).)*
+
+### What doesn't come with you {#what-you-lose}
+
+{{< margin >}}Most harness comparisons — mine included, until I looked properly — measure the new one by what it adds. The uncomfortable half is what it takes away, and that half isn't in the table.{{< /margin >}}
+
+That tree tells you what each harness is *for*. It doesn't tell you what you give up. Microsoft's own [Choose a harness](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview) table has the same shape: a row for everything the GitHub Copilot harness adds, and no row for what it leaves behind.
+
+Three of the constructs you'd reach for when authoring a standard-harness agent are documented as standard-harness features. Because the choice is one-way, it's worth knowing whether your design leans on them:
+
+| Standard-harness authoring construct | What it means for a GitHub Copilot harness agent |
+|---|---|
+| [Variables](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables-about) — topic, global, system and environment scopes | No one-for-one equivalent in agent authoring. State goes into memory, a tool, or a persistent store — and memory is per-user and cleared after inactivity, so it isn't a general-purpose variable. |
+| [Power Fx](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-power-fx) expressions inside a topic | Not carried across. That logic gets rebuilt as instructions, a tool, or code — a real shift if your makers are low-code. |
+| [Adaptive Cards](https://learn.microsoft.com/en-us/microsoft-copilot-studio/adaptive-cards-overview) authored in a topic | The hardest one. If the value of your agent *is* the form it puts in front of people, validate that experience before you commit. |
+
+One nuance worth keeping straight, because it can look like a contradiction: [Workflows](https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/flows-overview) run on the GitHub Copilot harness too, and the Workflow canvas has its own Variable building block. That's a different construct from the standard harness's four-scope variable model — same word, different thing.
+
+The tell is on the Learn pages themselves: all three carry the same banner, *"Features in this article are powered by the standard harness."* This is the sort of thing that moves, so check those three pages before you quote them. **Last verified: 24 August 2026.**
 
 ---
 
@@ -471,6 +491,7 @@ Give the Leave & Expense Assistant the actual leave policy, and when the source 
 Building the little agent made a few of the docs' details finally click for me. The honest list:
 
 - **You can't switch harnesses later.** An agent built on the GitHub Copilot harness can't be transferred to the standard harness (or vice versa) — changing harness means **creating a new agent**. So pick the harness deliberately up front.
+- **What you gain isn't the whole story.** Microsoft Learn documents the variable model, topic-level Power Fx and topic-authored Adaptive Cards as standard-harness features, so an agent leaning on them needs rethinking rather than porting. Because the choice is one-way, check that before you build, not after: [what doesn't come with you](#what-you-lose).
 - **No Anthropic models, no describe-your-agent box.** If the "describe your agent" experience isn't there, the Anthropic-models setting is one prerequisite worth checking.
 - **Evaluations can look brutal — and that's OK.** My agent scored 20%. The general-quality check rates relevance and completeness (it doesn't compare against expected answers), and an ungrounded agent that keeps saying "I can't confirm that" scores low. Grounding usually moves it.
 - **"Honest refusal" is a feature.** Declining to invent a number was safer than guessing here. Don't mistake "I can't confirm that" for failure.
