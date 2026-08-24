@@ -1430,19 +1430,6 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
 }
 /* No ::after arrow here on purpose — the site already appends its own
    external-link "↗" to target="_blank" links. Adding one would double up. */
-.zt-reading--notebook .nb-body .nb-pack-note {
-  font-family: 'Caveat', cursive;
-  font-size: 20px;
-  line-height: 1.2;
-  /* --ink-soft, not --ink-faint: faint gives only 4.24:1 on --paper-deep in
-     light mode, under the 4.5:1 AA floor for normal-size text. The Caveat
-     handwriting face already separates this from the body copy, so the
-     hierarchy does not need low contrast to read as an aside. */
-  color: var(--ink-soft);
-  margin: 8px 0 0;
-  transform: rotate(-0.8deg);
-}
 @media (max-width: 640px) {
   .zt-reading--notebook .nb-body .nb-pack { padding: 16px 18px 14px; }
-  .zt-reading--notebook .nb-body .nb-pack-note { font-size: 18px; }
 }
