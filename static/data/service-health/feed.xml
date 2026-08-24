@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 24 Aug 2026 13:09:59 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Aug 2026 14:55:47 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 apps] Some users may be unable to sign-in or access Office 365 applications</title>
+      <link>https://www.aguidetocloud.com/service-health/#OP1460815</link>
+      <description>[Microsoft 365 apps] Users may be unable to sign-in or access Office 365 applications.</description>
+      <category>Microsoft 365 apps</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">OP1460815</guid>
+      <pubDate>Mon, 24 Aug 2026 14:22:02 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Some users may experience degraded video quality when screensharing in Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1460590</link>
@@ -448,15 +457,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1440526</guid>
       <pubDate>Thu, 23 Jul 2026 00:26:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may see outdated activity data in Microsoft Teams usage reports</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1452826</link>
-      <description>[Microsoft Teams] Users have may seen outdated activity data in Microsoft Teams usage reports.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1452826</guid>
-      <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
