@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T20:45:05.502951+00:00",
+  "generated_at": "2026-08-24T22:40:30.579001+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -135,8 +135,8 @@
       "short_name": "Viva",
       "icon": "🌱",
       "total_incidents": 2,
-      "active_incidents": 1,
-      "avg_duration_minutes": 163,
+      "active_incidents": 0,
+      "avg_duration_minutes": 150,
       "last_incident": "2026-08-24T18:16:48.303000+00:00",
       "classifications": {
         "incident": 1,
