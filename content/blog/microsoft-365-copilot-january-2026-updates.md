@@ -37,6 +37,8 @@ January 2026 opens with **30 Microsoft 365 Copilot updates** — from Writing Co
 
 📅 **2026 monthly recaps:** January (you are here) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · [May](/blog/microsoft-365-copilot-may-2026-updates/)
 
+{{< pack-download >}}
+
 ---
 
 ## If you only have 2 minutes — January's 3 picks

@@ -1,0 +1,20 @@
+{{- /* Free PDF slide-pack callout for the monthly "What's New in Copilot" recaps.
+
+       Usage — place directly under the "2026 monthly recaps:" nav line:
+         {{< pack-download >}}
+       Optional override (if the Ko-fi product URL ever changes for one post):
+         {{< pack-download url="https://ko-fi.com/s/xxxxxxxx" >}}
+
+       This is the SINGLE SOURCE OF TRUTH for the Ko-fi pack link. Change the
+       default below, not the eight monthly posts.
+
+       Styling lives in static/css/zt-notebook.css (.nb-pack*) and uses only
+       notebook tokens, so it follows light/dark automatically.
+       Added 25 Aug 2026. */ -}}
+{{- $url := .Get "url" | default "https://ko-fi.com/s/bb6ef19827" -}}
+<aside class="nb-pack" aria-label="Download this recap as a free PDF slide pack">
+  <p class="nb-pack-kicker">Free PDF slide pack</p>
+  <p class="nb-pack-body">Every monthly recap is also a slide pack you can keep, print or pass around &mdash; <strong>this issue and every back issue</strong>.</p>
+  <p class="nb-pack-cta"><a href="{{ $url }}" target="_blank" rel="noopener">Download the packs on Ko-fi</a></p>
+  <p class="nb-pack-note">no paywall, no email needed</p>
+</aside>

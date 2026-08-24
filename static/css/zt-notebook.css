@@ -1383,3 +1383,66 @@ body:has(.zt-reading--notebook) .zt-reading-progress {
   border-radius: 2px;
   transform: rotate(-0.4deg);
 }
+
+/* ═══════════════════════════════════════════════════════════
+   PACK DOWNLOAD CARD  (.nb-pack)
+   Taped-in index card offering the month's free PDF slide pack.
+   Rendered by layouts/shortcodes/pack-download.html.
+   Selectors go through .nb-body so they beat `.nb-body p` (0,2,1).
+   Tokens only — inherits light/dark from .zt-reading--notebook.
+   Added 25 Aug 2026.
+   ═══════════════════════════════════════════════════════════ */
+.zt-reading--notebook .nb-body .nb-pack {
+  margin: 26px 0 30px;
+  background: var(--paper-deep);
+  border: 1px dashed var(--ink-faint);
+  padding: 20px 24px 18px;
+  box-shadow: 4px 6px 0 rgba(27, 42, 74, 0.08);
+  transform: rotate(-0.25deg);
+}
+[data-theme="dark"] .zt-reading--notebook .nb-body .nb-pack {
+  box-shadow: 4px 6px 0 rgba(0, 0, 0, 0.4);
+}
+.zt-reading--notebook .nb-body .nb-pack-kicker {
+  display: inline-block;
+  font-family: 'Special Elite', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--sticker-yel);
+  border: 1px solid var(--ink);
+  padding: 3px 10px;
+  margin: 0 0 12px;
+  transform: rotate(-1.5deg);
+}
+.zt-reading--notebook .nb-body .nb-pack-body {
+  margin: 0 0 12px;
+  color: var(--ink-soft);
+}
+.zt-reading--notebook .nb-body .nb-pack-cta {
+  margin: 0;
+}
+.zt-reading--notebook .nb-body .nb-pack-cta a {
+  font-family: 'Special Elite', monospace;
+  font-size: 15px;
+  text-decoration-color: var(--pen);
+}
+/* No ::after arrow here on purpose — the site already appends its own
+   external-link "↗" to target="_blank" links. Adding one would double up. */
+.zt-reading--notebook .nb-body .nb-pack-note {
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  line-height: 1.2;
+  /* --ink-soft, not --ink-faint: faint gives only 4.24:1 on --paper-deep in
+     light mode, under the 4.5:1 AA floor for normal-size text. The Caveat
+     handwriting face already separates this from the body copy, so the
+     hierarchy does not need low contrast to read as an aside. */
+  color: var(--ink-soft);
+  margin: 8px 0 0;
+  transform: rotate(-0.8deg);
+}
+@media (max-width: 640px) {
+  .zt-reading--notebook .nb-body .nb-pack { padding: 16px 18px 14px; }
+  .zt-reading--notebook .nb-body .nb-pack-note { font-size: 18px; }
+}

@@ -39,6 +39,8 @@ The rest — Copilot editing your Word document by default, a new **FLUX.2** ima
 
 📅 **2026 monthly recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · [May](/blog/microsoft-365-copilot-may-2026-updates/) · June (you are here)
 
+{{< pack-download >}}
+
 ---
 
 ## If you only have 2 minutes — June's picks
@@ -436,3 +438,4 @@ A few things Microsoft lined up in June that are rolling out shortly:
 
 - 📅 **Past recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · [May](/blog/microsoft-365-copilot-may-2026-updates/)
 - 🤖 **Go deeper:** [Microsoft Scout complete guide](/blog/microsoft-scout-complete-guide/) · [Copilot Cowork complete guide](/blog/microsoft-copilot-cowork-complete-guide/) · [Work IQ API](/blog/microsoft-work-iq-api-day-1-ga/) · [Microsoft Build 2026 recap](/blog/microsoft-build-2026-recap/) · [Copilot vs Agents vs Copilot Studio](/blog/copilot-vs-agents-vs-copilot-studio/)
+- 📥 **Slide packs:** [every monthly recap as a free PDF](https://ko-fi.com/s/bb6ef19827)

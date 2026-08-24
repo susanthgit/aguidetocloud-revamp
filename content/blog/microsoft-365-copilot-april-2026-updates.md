@@ -39,6 +39,8 @@ April 2026 is a massive month for Microsoft 365 Copilot with **41 updates** — 
 
 📅 **2026 monthly recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · April (you are here) · [May](/blog/microsoft-365-copilot-may-2026-updates/)
 
+{{< pack-download >}}
+
 ---
 
 ## If you only have 2 minutes — April's 3 picks

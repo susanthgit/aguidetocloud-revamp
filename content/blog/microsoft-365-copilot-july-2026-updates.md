@@ -43,7 +43,8 @@ The rest — watermarks for AI-generated video and audio, **sensitivity labels**
 
 📅 **2026 monthly recaps:** [January](/blog/microsoft-365-copilot-january-2026-updates/) · [February](/blog/microsoft-365-copilot-february-2026-updates/) · [March](/blog/microsoft-365-copilot-march-2026-updates/) · [April](/blog/microsoft-365-copilot-april-2026-updates/) · [May](/blog/microsoft-365-copilot-may-2026-updates/) · [June](/blog/microsoft-365-copilot-june-2026-updates/) · July (you are here)
 
-📥 **Want this as a PDF?** Every issue is also a slide pack you can keep or pass around — [the monthly PDF packs are on Ko-fi](https://ko-fi.com/s/bb6ef19827). Free, no paywall, no email needed.
+{{< pack-download >}}
+
 
 <p style="font-size:0.9rem;opacity:0.8;border-left:3px solid var(--border);padding:var(--space-1) 0 var(--space-1) var(--space-3);margin:var(--space-4) 0;"><em>Screenshot note: images below come from my demo tenant or official Microsoft product imagery. Your tenant may look different because features roll out at different times and the interface changes often.</em></p>
 
