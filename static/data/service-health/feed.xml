@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 24 Aug 2026 16:52:24 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Aug 2026 18:55:58 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Viva] Some users may be unable to access Microsoft Viva Glint services</title>
+      <link>https://www.aguidetocloud.com/service-health/#MV1461005</link>
+      <description>[Microsoft Viva] Users may be unable to access Viva Glint services.</description>
+      <category>Microsoft Viva</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">MV1461005</guid>
+      <pubDate>Mon, 24 Aug 2026 18:16:48 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Purview] Admins may be unable to access Content Explorer or Data Explorer in Microsoft Purview</title>
       <link>https://www.aguidetocloud.com/service-health/#MP1460870</link>
@@ -24,15 +33,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">OP1460815</guid>
       <pubDate>Mon, 24 Aug 2026 14:22:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may experience degraded video quality when screensharing in Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1460590</link>
-      <description>[Microsoft Teams] Users may experience degraded video quality when screensharing in Microsoft Teams.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1460590</guid>
-      <pubDate>Mon, 24 Aug 2026 05:22:24 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] Users may be unable to join shared channels using some links to messages in Microsoft Teams</title>
@@ -60,6 +60,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1458983</guid>
       <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users were unable to use Microsoft 365 Copilot in Excel</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1458544</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Some users were unable to use Microsoft 365 Copilot in Excel because the Copilot pane was blank.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1458544</guid>
+      <pubDate>Thu, 20 Aug 2026 21:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Users may be unable to complete mailbox offboarding because the migration task is blocked and can’t finish</title>
@@ -177,6 +186,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1457081</guid>
       <pubDate>Thu, 13 Aug 2026 08:21:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users may experience degraded video quality when screensharing in Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1460590</link>
+      <description>[Microsoft Teams] Users may have experienced degraded video quality when screensharing in Microsoft Teams.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1460590</guid>
+      <pubDate>Thu, 13 Aug 2026 05:56:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] Admins may see incorrect Teams membership information for users in the Teams Admin Center </title>
@@ -439,24 +457,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">AZ-ZJV6-SGG</guid>
       <pubDate>Thu, 23 Jul 2026 19:41:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Issues accessing or using Microsoft 365 services routed through the North America region. </title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1437424</link>
-      <description>[Microsoft 365 suite] Users may have experienced issues accessing or using Microsoft 365 services routed through the North America region.</description>
-      <category>Microsoft 365 suite</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">MO1437424</guid>
-      <pubDate>Thu, 23 Jul 2026 14:44:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Some users may see an error when sending messages from BizChat and the BizChat side pane in Microsoft 365 apps.</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1436954</link>
-      <description>[Microsoft 365 Copilot Chat] Some users may have seen an error when sending messages from BizChat and the BizChat side pane in Microsoft 365 apps.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1436954</guid>
-      <pubDate>Thu, 23 Jul 2026 03:19:34 +0000</pubDate>
     </item>
   </channel>
 </rss>
