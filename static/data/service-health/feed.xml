@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 24 Aug 2026 07:16:53 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Aug 2026 09:00:56 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Some users may experience degraded video quality when screensharing in Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1460590</link>
+      <description>[Microsoft Teams] Users may experience degraded video quality when screensharing in Microsoft Teams.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1460590</guid>
+      <pubDate>Mon, 24 Aug 2026 05:22:24 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Users may be unable to join shared channels using some links to messages in Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1459181</link>
@@ -447,15 +456,6 @@ Impacted services included: App Service, Application Insights, Azure AD B2C, Azu
       <category>Microsoft Teams</category>
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1452826</guid>
-      <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users are experiencing license syncing issues in Microsoft Teams Rooms Pro Management Portal reports</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1456370</link>
-      <description>[Microsoft Teams] Users were experiencing license syncing issues in Microsoft Teams Rooms Pro Management Portal reports.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1456370</guid>
       <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
