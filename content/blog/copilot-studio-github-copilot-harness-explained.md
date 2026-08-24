@@ -106,9 +106,13 @@ Here's the plain-English comparison, straight from Microsoft's *Choose a harness
 
 Two rows there are worth pausing on. **Publishing reach** is the one people discover too late: the Copilot chat harness publishes to internal teams only, so if the agent ever needs to face customers, that harness is out — regardless of how well it fits otherwise. And the examples row is the fastest way I've found to place a new scenario: if it sounds like accounts payable, it's the GitHub Copilot harness; if it sounds like a help desk, standard; if it sounds like "answer from our SharePoint", Copilot chat.
 
-<p><img src="/images/blog/copilot-studio-harness/02-choose-a-harness.webp" alt="The Copilot Studio create screen showing Agent and Workflow cards both tagged 'GitHub Copilot', a 'Uses Copilot Credits' pill, and an 'Other ways to build' bar for standard agents and flows with rule-based orchestration." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-studio-harness/02-choose-a-harness.webp" alt="The Copilot Studio create screen: a natural-language box at the top for describing what you want to build, Agent and Workflow cards both tagged 'GitHub Copilot', a 'Uses Copilot Credits' pill, and an 'Other ways to build' bar for standard agents and flows with rule-based orchestration." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*The **"GitHub Copilot"** tags and the "Uses Copilot Credits" pill are the tell — this is the metered harness. "Other ways to build" at the bottom is where the standard, rule-based agents and flows still live. (Lab tenant.)*
+*The **"GitHub Copilot"** tags and the "Uses Copilot Credits" pill are the tell — this is the metered harness. The box at the top is the newer describe-it-in-plain-English route, and "Other ways to build" at the bottom is where the standard, rule-based agents and flows still live. (Lab tenant, recaptured 24 August 2026.)*
+
+Two ways in from this screen. Describe what you want in the box at the top and Copilot Studio drafts the agent or workflow for you — plain English, nothing to wire up first. Or, if you've already written your instructions somewhere else, paste them straight into the same box. Either route lands you on the same harness; it only changes how you start. What neither one gives you is a standard, rule-based agent — that's still behind **"Other ways to build"** at the bottom.
+
+{{< margin >}}The box drafts an agent. It doesn't finish one. You still read what it wrote and fix the bits it guessed — that part hasn't been automated away.{{< /margin >}}
 
 The one-line summary I keep in my head: standard = follows your rules, GitHub Copilot = works out the steps, Copilot chat = grounds Microsoft 365 Copilot in your knowledge.
 

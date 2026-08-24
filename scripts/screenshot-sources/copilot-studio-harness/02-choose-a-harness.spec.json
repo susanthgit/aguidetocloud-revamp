@@ -1,0 +1,26 @@
+{
+  "_comment": "02-choose-a-harness.webp - refreshed 24 Aug 2026. The originally published capture predates the natural-language create box, which is now on the home surface alongside the Agent/Workflow cards. Source cropped to the create surface (banner and left rail dropped for legibility; the 1 Sept billing change is covered in prose with Learn links). Three original callouts preserved verbatim; one added for the NL box.",
+  "images": [
+    {
+      "src": "scripts/screenshot-sources/copilot-studio-harness/17-nl-create-cropped.png",
+      "dest": "static/images/blog/copilot-studio-harness/02-choose-a-harness.webp",
+      "quality": 88,
+      "ops": [
+        { "_": "margin for callouts; tuned for even 42px outer margins", "kind": "pad", "left": 60, "top": 212, "right": 100, "bottom": 205, "fill": "white" },
+        { "_": "NEW - the natural-language create box", "kind": "callout",
+          "text": "New: just describe what you\nwant, in plain English",
+          "at": [42, 42], "target": [360, 462] },
+        { "_": "preserved from published version; tip on pill right edge so label stays legible", "kind": "callout",
+          "text": "The credit meter starts the\nmoment you build",
+          "at": [1080, 42], "target": [703, 372] },
+        { "_": "preserved from published version; tip on badge left edge", "kind": "callout",
+          "text": "This 'GitHub Copilot' tag =\nbilled on the new harness",
+          "at": [42, 1262], "target": [218, 911] },
+        { "_": "preserved from published version; tip in card whitespace, no text crossed", "kind": "callout",
+          "text": "Standard, rule-based\nagents & flows live in here",
+          "at": [1150, 1262], "target": [1250, 1132] }
+      ]
+    }
+  ]
+}
+
