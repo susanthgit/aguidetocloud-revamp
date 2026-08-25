@@ -145,10 +145,22 @@ if ($fbChanged) {
         $fbTmp = Join-Path ([IO.Path]::GetTempPath()) ("fbqa-" + [Guid]::NewGuid().ToString('N').Substring(0, 8))
         New-Item -ItemType Directory -Path $fbTmp -Force | Out-Null
         $extracted = $false
+        $fbExtractErr = ''
         try {
-            git archive $sha -- $fbPaths | tar -x -C $fbTmp 2>$null
+            # No tar/pipe: git's hook PATH differs from the interactive one (MSYS tar
+            # cannot take a Windows -C path and dies, closing git's pipe). cmd
+            # redirection writes git's stdout bytes verbatim - no PowerShell decoding.
+            $cmdExe = if ($env:ComSpec -and (Test-Path $env:ComSpec)) { $env:ComSpec } else { Join-Path $env:SystemRoot 'system32\cmd.exe' }
+            foreach ($f in $fbPaths) {
+                $dest = Join-Path $fbTmp ($f -replace '/', '\')
+                $destDir = Split-Path $dest -Parent
+                if (-not (Test-Path $destDir)) { New-Item -ItemType Directory -Path $destDir -Force | Out-Null }
+                & $cmdExe /c "git cat-file blob ${sha}:$f > `"$dest`"" 2>$null
+                if (-not (Test-Path $dest) -or (Get-Item $dest).Length -eq 0) { throw "empty or missing after extract: ${sha}:$f" }
+            }
             $extracted = (Test-Path (Join-Path $fbTmp 'scripts/qa-feedback-render.mjs'))
-        } catch { $extracted = $false }
+            if (-not $extracted) { $fbExtractErr = 'extract produced no QA script' }
+        } catch { $extracted = $false; $fbExtractErr = $_.Exception.Message }
 
         if ($extracted) {
             Write-Host "[pre-push] feedback surface changed - checking pushed commit $sha..." -ForegroundColor Cyan
@@ -170,6 +182,7 @@ if ($fbChanged) {
             Remove-Item $fbTmp -Recurse -Force -ErrorAction SilentlyContinue
             Write-Host ""
             Write-Host "  PUSH BLOCKED - could not extract commit $sha to verify the feedback page." -ForegroundColor Red
+            Write-Host "  Reason: $fbExtractErr" -ForegroundColor Yellow
             Write-Host "  This guard covers a live XSS fix, so it fails closed on purpose." -ForegroundColor Yellow
             Write-Host "  Genuinely need to push anyway: git push --no-verify" -ForegroundColor DarkGray
             exit 1
