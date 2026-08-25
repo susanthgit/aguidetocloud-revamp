@@ -45,10 +45,34 @@ if (Test-Path $gridScript) {
     Write-Host "[pre-push] check-mobile-grid.mjs missing - mobile layout guard skipped" -ForegroundColor Yellow
 }
 
+# ── Which commits are actually being pushed? ────────────────────────────────
+# git hands a pre-push hook one line per ref on stdin:
+#   <local-ref> <local-sha> <remote-ref> <remote-sha>
+# Reading HEAD instead is a real hole: `git push origin safe-branch:main` deploys
+# that branch's tip while HEAD points somewhere else entirely, so the gate would
+# certify bytes that are not the bytes going live — and a gate that verifies the
+# wrong commit is worse than no gate, because it prints a green line.
+# (Gate B round 5, 2026-08-26.) Deleting refs push an all-zero sha: nothing to
+# verify, so they are skipped. No stdin at all = a manual run; fall back to HEAD.
+$pushShas = @()
+if ([Console]::IsInputRedirected) {
+    foreach ($line in ([Console]::In.ReadToEnd() -split "`r?`n")) {
+        $p = @($line.Trim() -split '\s+' | Where-Object { $_ })
+        if ($p.Count -ge 4 -and $p[1] -notmatch '^0+$') { $pushShas += $p[1] }
+    }
+}
+$pushShas = @($pushShas | Select-Object -Unique)
+if (-not $pushShas) { $pushShas = @('HEAD') }
+
 # What is actually being pushed? Fall back to the working tree when there is no
 # upstream yet (first push of a branch / detached worktree).
-$changed = git diff --name-only origin/main HEAD 2>$null
-if (-not $changed) { $changed = git diff --name-only HEAD 2>$null }
+$changed = @()
+foreach ($sha in $pushShas) {
+    $d = git diff --name-only origin/main $sha 2>$null
+    if (-not $d) { $d = git diff --name-only $sha 2>$null }
+    $changed += @($d)
+}
+$changed = @($changed | Where-Object { $_ } | Select-Object -Unique)
 
 # ── Guard self-test (~2.5s) — only when the guard's own logic is in the push ──
 # Precise trigger with no blind spot: the guard's behaviour cannot change
@@ -64,6 +88,90 @@ if ($guardChanged) {
             Write-Host ""
             Write-Host "  PUSH BLOCKED - the mobile grid guard no longer detects its own regression shapes." -ForegroundColor Red
             Write-Host "  Run: node scripts/check-mobile-grid.test.mjs" -ForegroundColor Yellow
+            exit 1
+        }
+    }
+}
+
+# ── Feedback renderer gate (~6s) — only when the feedback surface is pushed ──
+# 2026-08-26: a real attribute-injection XSS was found LIVE on the public
+# /feedback/ page (esc() escapes for text context, leaves quotes intact, and was
+# interpolated into href="…"; production CSP allows 'unsafe-inline'). The guard
+# for it was first wired only into pre-push-check.ps1 — which git never invokes.
+# That is the same dead-mechanism mistake the mobile grid guard was moved here
+# to fix, so it lives here instead. --static means no browser and no Hugo build;
+# the full 46-check browser suite stays in pre-push-check.ps1.
+# Untracked files are included in the trigger on purpose: `git diff` never lists
+# them, so a brand-new unsanitised asset would otherwise skip the gate entirely.
+$fbUntracked = git ls-files --others --exclude-standard 2>$null
+$fbCandidates = @($changed) + @($fbUntracked) | Sort-Object -Unique
+$fbChanged = $fbCandidates | Where-Object {
+    $_ -match '^static/(js/feedback\.js|js/vendor/purify-|css/feedback\.css)' -or
+    $_ -match '^layouts/feedback/' -or
+    $_ -match '^functions/api/(discussions|feedback)\.js$' -or
+    $_ -match '^scripts/qa-feedback-render\.mjs$' -or
+    $_ -match '^tests/fixtures/feedback-'
+}
+if ($fbChanged) {
+    # Gate B round 4: running the checks over the working tree proves nothing
+    # about what is being pushed — a fixed file on disk makes a vulnerable commit
+    # pass. Extract the pushed commit into a temp dir and check THOSE bytes. Only
+    # --static can run there (no node_modules), which is why playwright is a lazy
+    # import. Falls back to the working tree only when the extract itself fails.
+    # list.html is in this list because it loads DOMPurify: it triggers the gate,
+    # so leaving it unarchived meant the one file that can disable the sanitizer
+    # was the one file never verified (Gate B round 5).
+    $fbPaths = @('static/js/feedback.js', 'static/css/feedback.css',
+        'static/js/vendor/purify-3.4.13.min.js', 'layouts/feedback/list.html',
+        'functions/api/discussions.js',
+        'functions/api/feedback.js', 'scripts/qa-feedback-render.mjs',
+        'tests/fixtures/feedback-discussions.json')
+
+    foreach ($sha in $pushShas) {
+        $notCommitted = @()
+        foreach ($f in $fbPaths) {
+            git cat-file -e "${sha}:$f" 2>$null
+            if ($LASTEXITCODE -ne 0) { $notCommitted += $f }
+        }
+        if ($notCommitted.Count -gt 0) {
+            Write-Host ""
+            Write-Host "  PUSH BLOCKED - the feedback page needs these, and commit $sha has none of them:" -ForegroundColor Red
+            $notCommitted | ForEach-Object { Write-Host "    $_" -ForegroundColor Yellow }
+            Write-Host "  They exist locally, so local QA passes and production breaks." -ForegroundColor Yellow
+            Write-Host "  git add them (the QA script and fixture count - a deleted guard is a dead guard)." -ForegroundColor DarkGray
+            exit 1
+        }
+
+        $fbTmp = Join-Path ([IO.Path]::GetTempPath()) ("fbqa-" + [Guid]::NewGuid().ToString('N').Substring(0, 8))
+        New-Item -ItemType Directory -Path $fbTmp -Force | Out-Null
+        $extracted = $false
+        try {
+            git archive $sha -- $fbPaths | tar -x -C $fbTmp 2>$null
+            $extracted = (Test-Path (Join-Path $fbTmp 'scripts/qa-feedback-render.mjs'))
+        } catch { $extracted = $false }
+
+        if ($extracted) {
+            Write-Host "[pre-push] feedback surface changed - checking pushed commit $sha..." -ForegroundColor Cyan
+            $env:FB_QA_ROOT = $fbTmp
+            & node (Join-Path $fbTmp 'scripts/qa-feedback-render.mjs') --static 2>&1 |
+                Out-String -Stream | Where-Object { $_ -match 'FAIL|failed|pass' } | ForEach-Object { Write-Host $_ }
+            $fbExit = $LASTEXITCODE
+            Remove-Item Env:\FB_QA_ROOT -ErrorAction SilentlyContinue
+            Remove-Item $fbTmp -Recurse -Force -ErrorAction SilentlyContinue
+            if ($fbExit -ne 0) {
+                Write-Host ""
+                Write-Host "  PUSH BLOCKED - the /feedback/ page renders untrusted public input." -ForegroundColor Red
+                Write-Host "  Checked the COMMIT, not your working tree - fix it and amend/commit." -ForegroundColor Yellow
+                Write-Host "  Reproduce: node scripts/qa-feedback-render.mjs --static" -ForegroundColor Yellow
+                Write-Host "  Full browser suite: pwsh scripts/pre-push-check.ps1" -ForegroundColor DarkGray
+                exit 1
+            }
+        } else {
+            Remove-Item $fbTmp -Recurse -Force -ErrorAction SilentlyContinue
+            Write-Host ""
+            Write-Host "  PUSH BLOCKED - could not extract commit $sha to verify the feedback page." -ForegroundColor Red
+            Write-Host "  This guard covers a live XSS fix, so it fails closed on purpose." -ForegroundColor Yellow
+            Write-Host "  Genuinely need to push anyway: git push --no-verify" -ForegroundColor DarkGray
             exit 1
         }
     }

@@ -1,0 +1,85 @@
+name: Feedback renderer invariants
+
+# The public /feedback/ page renders GitHub Discussions written by anyone on the
+# internet, and it renders them by assigning HTML into innerHTML. On 26 August
+# 2026 a LIVE attribute-injection XSS was found in that path: esc() escapes for
+# text context and leaves quotes intact, and its output was interpolated into
+# href="…". Production CSP is script-src 'self' 'unsafe-inline', so an injected
+# onmouseover= attribute executes. scripts/qa-feedback-render.mjs encodes that
+# class of defect, plus the sanitizer configuration and the server-side caps, as
+# offline invariants.
+#
+# Why this workflow exists (Gate B round 5): the local git hook is deliberately
+# FAIL-OPEN — .git/hooks/pre-push exits 0 when pwsh or the guardrail script is
+# missing, and its own comment says "CI still enforces". For this guard that
+# claim was false: nothing in CI ran it. A push from a machine without pwsh, or
+# a commit that simply deletes the hook script, bypassed every check above.
+# This is that backstop, so the claim is now true.
+#
+# It is a BACKSTOP, not a publication gate: deploy.yml hands off to Cloudflare
+# Pages on push, so by the time this runs the change is already live. The
+# pre-push hook is the gate. This catches what bypassed it.
+#
+# --static only: no browser, no Hugo build, ~1s. The full 67-check browser suite
+# needs playwright and a built site, and stays in scripts/pre-push-check.ps1.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'static/js/feedback.js'
+      - 'static/js/vendor/purify-*.min.js'
+      - 'static/css/feedback.css'
+      - 'layouts/feedback/**'
+      - 'functions/api/discussions.js'
+      - 'functions/api/feedback.js'
+      - 'scripts/qa-feedback-render.mjs'
+      - 'tests/fixtures/feedback-*.json'
+      - '.github/workflows/feedback-qa.yml'
+  pull_request:
+    paths:
+      - 'static/js/feedback.js'
+      - 'static/js/vendor/purify-*.min.js'
+      - 'static/css/feedback.css'
+      - 'layouts/feedback/**'
+      - 'functions/api/discussions.js'
+      - 'functions/api/feedback.js'
+      - 'scripts/qa-feedback-render.mjs'
+      - 'tests/fixtures/feedback-*.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  invariants:
+    name: Static invariants for the feedback renderer
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up Node
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        with:
+          node-version: '20'
+
+      # The guard must be present, not merely referenced. Deleting the QA script
+      # is exactly the bypass this workflow exists to catch, and a missing-file
+      # crash reads as an infrastructure error rather than a refusal - so say so.
+      - name: The guard itself must exist
+        run: |
+          test -f scripts/qa-feedback-render.mjs || {
+            echo "::error::scripts/qa-feedback-render.mjs is missing - the feedback XSS guard was deleted"
+            exit 1
+          }
+          test -f static/js/vendor/purify-3.4.13.min.js || {
+            echo "::error::the vendored DOMPurify is missing - the sanitizer cannot load in production"
+            exit 1
+          }
+
+      # Source invariants, the server/client contract, and the behavioural XSS
+      # checks that execute the shipped markdown sink against the real exploit.
+      - name: Feedback renderer invariants
+        run: node scripts/qa-feedback-render.mjs --static

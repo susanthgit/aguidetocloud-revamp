@@ -230,6 +230,10 @@
 }
 </script>
 
+<!-- DOMPurify sanitizes GitHub's rendered discussion HTML before it is inserted.
+     Must load BEFORE feedback.js; if it fails, feedback.js falls back to its own
+     escape-first markdown renderer rather than rendering anything unsanitized. -->
+<script src="/js/vendor/purify-3.4.13.min.js?v={{ site.Params.cache_version }}"></script>
 <script src="/js/feedback.js?v={{ site.Params.cache_version }}"></script>
 <script>
 document.querySelectorAll('.feedback-tab').forEach(function(tab) {

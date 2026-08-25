@@ -164,8 +164,30 @@
   var MY_THREADS_KEY = 'fb_my_threads';
   var repliesByNumber = {}; // discussion number -> reply count (filled when the board loads)
 
+  // Entries are read back from localStorage, which is not a trusted store: any
+  // past XSS on this origin could have written to it, and the value outlives the
+  // hole that wrote it. So validate on the way OUT, not just on the way in.
+  // Pinned to the one board we actually post to — a foreign github.com repo would
+  // otherwise render as a trusted "your submission" link, which is a phishing path.
+  var BOARD_URL_RE =
+    /^https:\/\/github\.com\/susanthgit\/aguidetocloud-feedback\/discussions\/(\d+)$/;
   function getMyThreads() {
-    try { return JSON.parse(localStorage.getItem(MY_THREADS_KEY) || '[]'); } catch (e) { return []; }
+    var raw;
+    try { raw = JSON.parse(localStorage.getItem(MY_THREADS_KEY) || '[]'); } catch (e) { return []; }
+    if (!Array.isArray(raw)) return [];
+    return raw.filter(function (t) {
+      if (!t || typeof t !== 'object') return false;
+      if (typeof t.number !== 'number' || !isFinite(t.number) || t.number <= 0 || t.number % 1 !== 0) return false;
+      if (typeof t.url !== 'string') return false;
+      var m = t.url.match(BOARD_URL_RE);
+      return !!m && parseInt(m[1], 10) === t.number;
+    }).map(function (t) {
+      return {
+        number: t.number,
+        url: t.url,
+        title: typeof t.title === 'string' ? t.title.slice(0, 140) : ('#' + t.number)
+      };
+    });
   }
   function saveMyThread(url, title) {
     var m = (url || '').match(/discussions\/(\d+)/);
@@ -182,18 +204,36 @@
     var threads = getMyThreads();
     if (!threads.length) { wrap.hidden = true; return; }
     wrap.hidden = false;
-    listEl.innerHTML = threads.map(function (t) {
+    // Built as DOM nodes rather than an HTML string: these values come from
+    // localStorage, and string concatenation is exactly how the href injection
+    // on this page happened.
+    listEl.textContent = '';
+    threads.forEach(function (t) {
       var known = Object.prototype.hasOwnProperty.call(repliesByNumber, t.number);
       var replies = known ? repliesByNumber[t.number] : -1;
       var status, cls;
       if (replies > 0) { status = '✓ Replied'; cls = 'replied'; }
       else if (replies === 0) { status = 'Awaiting reply'; cls = 'waiting'; }
       else { status = 'View thread →'; cls = 'unknown'; }
-      return '<a class="feedback-mine-item ' + cls + '" href="' + esc(t.url) + '" target="_blank" rel="noopener noreferrer">' +
-               '<span class="feedback-mine-item-title">#' + t.number + ' · ' + esc(t.title) + '</span>' +
-               '<span class="feedback-mine-item-status ' + cls + '">' + status + '</span>' +
-             '</a>';
-    }).join('');
+
+      var a = document.createElement('a');
+      a.className = 'feedback-mine-item ' + cls;
+      a.href = t.url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+
+      var titleEl = document.createElement('span');
+      titleEl.className = 'feedback-mine-item-title';
+      titleEl.textContent = '#' + t.number + ' · ' + t.title;
+
+      var statusEl = document.createElement('span');
+      statusEl.className = 'feedback-mine-item-status ' + cls;
+      statusEl.textContent = status;
+
+      a.appendChild(titleEl);
+      a.appendChild(statusEl);
+      listEl.appendChild(a);
+    });
   }
 
   // ── Load discussions ──
@@ -211,6 +251,21 @@
   };
 
   function esc(s) { var el = document.createElement('span'); el.textContent = s || ''; return el.innerHTML; }
+
+  // Attribute-context escaper. esc() alone is NOT safe inside an attribute:
+  // textContent->innerHTML encodes & < > but leaves " and ' untouched, so a
+  // quote in user data closes the attribute and injects new ones. Use escAttr()
+  // for anything interpolated between quotes in generated HTML.
+  function escAttr(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  // For values that have ALREADY been through esc(): & < > are encoded but the
+  // quotes are not, so only the quotes still need closing off. Using the full
+  // escAttr() here instead would double-encode every & in the URL.
+  function escQuotes(s) { return String(s == null ? '' : s).replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
 
   // ── Lightweight Markdown renderer ──
   // Escape-first, then transform: safe even if a reply body contains <script>.
@@ -235,9 +290,13 @@
     s = s.replace(/(^|[\s(])\*([^*\n]+?)\*(?=[\s).,!?:;]|$)/g, '$1<em>$2</em>');
     s = s.replace(/(^|[\s(])_([^_\n]+?)_(?=[\s).,!?:;]|$)/g, '$1<em>$2</em>');
     // Links — validate URL scheme (block javascript:, data:, etc.)
+    // esc() escapes & < > but NOT quotes, because textContent->innerHTML escapes
+    // for *text* context, not *attribute* context. Without the escAttr() below a
+    // raw " in the URL closes href and injects real event-handler attributes
+    // (verified exploitable against production 2026-08-25).
     s = s.replace(/\[([^\]]+?)\]\(([^)\s]+?)\)/g, function (_, text, url) {
       if (!/^(https?:|mailto:|\/)/i.test(url)) return text;
-      return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + text + '</a>';
+      return '<a href="' + escQuotes(url) + '" target="_blank" rel="noopener noreferrer">' + text + '</a>';
     });
     // Unordered lists
     s = s.replace(/(?:^|\n)((?:[-*]\s+[^\n]+\n?)+)/g, function (_, block) {
@@ -268,6 +327,232 @@
       return '<code class="feedback-code-inline">' + inlineCodes[+i] + '</code>';
     });
     return s;
+  }
+
+  // ── GitHub-rendered body (preferred) ──
+  // GitHub returns bodyHTML — its own Markdown rendering — which handles tables,
+  // headings, thematic breaks, blockquotes and entities correctly. The hand-rolled
+  // md() above cannot, and grew a real attribute-injection hole trying. We sanitize
+  // GitHub's HTML locally anyway: never trust it just because GitHub produced it.
+  //
+  // Allowlist derived from what GitHub actually emits (measured 2026-08-25):
+  //   a blockquote br code em g-emoji h2 h3 hr li markdown-accessiblity-table
+  //   ol p strong table tbody td th thead tr ul
+  // g-emoji and markdown-accessiblity-table are GitHub custom elements; they are
+  // dropped while DOMPurify keeps their children, which is what we want.
+  var PURIFY_CFG = {
+    ALLOWED_TAGS: ['a', 'blockquote', 'br', 'code', 'del', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+      'hr', 'li', 'ol', 'p', 'pre', 'strong', 'table', 'tbody', 'td', 'th', 'thead', 'tr', 'ul'],
+    ALLOWED_ATTR: ['href'],
+    ALLOW_DATA_ATTR: false,
+    ALLOW_ARIA_ATTR: false,
+    RETURN_DOM_FRAGMENT: true
+  };
+
+  function purifyReady() {
+    return typeof window.DOMPurify !== 'undefined' &&
+           typeof window.DOMPurify.sanitize === 'function';
+  }
+
+  // The submission form appends a generated metadata footer to every body:
+  //   \n\n---\n**From:** x · **Related Tool:** y · **Category:** z · *Reply contact…*
+  // Only **Category:** is always present (functions/api/feedback.js), so anchoring
+  // on "From:" missed every anonymous submission. Anchor on the whole known shape
+  // instead, at the LAST separator — a user's own "---" earlier in the body must
+  // survive, which the old split-on-first-separator behaviour silently ate.
+  //
+  // The category is a CLOSED set of seven server-side labels, so pin to those
+  // exact strings. Matching any "**Category:** …" ate a real trailing section of
+  // a hand-authored post, and using [^·]* to scan fields broke on a name that
+  // itself contained "·" — leaking the footer and showing the asker as anonymous.
+  var FOOTER_CATEGORIES = [
+    '\u2753 Question', '\uD83D\uDCA1 Feature Request', '\uD83C\uDFAC Video Request',
+    '\uD83D\uDC1B Bug Report', '\uD83D\uDD27 Tool Feedback', '\uD83D\uDCDD Content Idea',
+    '\uD83D\uDCAC General'
+  ];
+  var FOOTER_RE = new RegExp(
+    '^(?:\\*\\*From:\\*\\*\\s.*?·\\s*)?' +
+    '(?:\\*\\*Related Tool:\\*\\*\\s.*?·\\s*)?' +
+    '\\*\\*Category:\\*\\*\\s*(?:' +
+      FOOTER_CATEGORIES.map(function (c) { return c.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') +
+    ')' +
+    '(?:\\s*·\\s*\\*Reply contact provided via form\\*)?$'
+  );
+
+  function splitGeneratedFooter(bodyRaw) {
+    var text = bodyRaw || '';
+    var idx = text.lastIndexOf('\n---\n');
+    if (idx === -1) return { body: text.trim(), meta: '', hasFooter: false };
+    var tail = text.slice(idx + 5).trim();
+    if (tail.indexOf('\n') !== -1 || !FOOTER_RE.test(tail)) {
+      return { body: text.trim(), meta: '', hasFooter: false };
+    }
+    return { body: text.slice(0, idx).trim(), meta: tail, hasFooter: true };
+  }
+
+  // Removes that same footer from GitHub's rendered HTML. Only runs when the raw
+  // body actually ended in one, so a legitimate "---" followed by prose starting
+  // "From: first principles…" is left alone.
+  function stripSubmissionFooter(frag, hasFooter) {
+    if (!hasFooter) return;
+    var kids = Array.prototype.slice.call(frag.childNodes);
+    for (var i = kids.length - 1; i >= 0; i--) {
+      if (kids[i].nodeName !== 'HR') continue;
+      var tail = kids.slice(i + 1).map(function (n) { return n.textContent || ''; }).join(' ');
+      if (/Category:/.test(tail)) { for (var j = kids.length - 1; j >= i; j--) kids[j].remove(); }
+      return;
+    }
+  }
+
+  // Images are deliberately NOT on the sanitizer allowlist: an <img> starts a
+  // network request the moment it exists, even detached, so a hostile post could
+  // use one as a tracking pixel and harvest every reader's IP. But dropping them
+  // silently lost real evidence — GitHub wraps a pasted screenshot as
+  // <a href="…png"><img …></a>, which sanitized down to an EMPTY link, and a bare
+  // <img> vanished entirely (both measured 26 Aug 2026).
+  //
+  // So the images are read back out of an INERT DOMParser document. That parse
+  // runs no scripts and fetches no resources — it is the same mechanism DOMPurify
+  // itself uses — and it gives us the src/alt to rebuild a plain text link the
+  // reader can click. Nothing is ever loaded from the post.
+  function imageRefs(html) {
+    var out = [];
+    try {
+      var doc = new DOMParser().parseFromString(String(html || ''), 'text/html');
+      doc.querySelectorAll('img[src]').forEach(function (img) {
+        var src = img.getAttribute('src') || '';
+        if (!/^https:\/\//i.test(src)) return;
+        out.push({ src: src, alt: (img.getAttribute('alt') || '').trim() });
+      });
+    } catch (e) { /* no images recovered; the post still renders */ }
+    return out;
+  }
+
+  function imageLabel(ref) {
+    if (ref.alt && ref.alt.toLowerCase() !== 'image') return ref.alt;
+    var name = '';
+    try { name = decodeURIComponent(ref.src.split('?')[0].split('#')[0].split('/').pop() || ''); }
+    catch (e) { name = ''; }
+    return name && name.length < 80 ? name : 'View image';
+  }
+
+  function restoreImageLinks(frag, refs) {
+    if (!refs.length) return;
+    var linked = {};
+    frag.querySelectorAll('a[href]').forEach(function (a) {
+      linked[a.getAttribute('href')] = a;
+    });
+    refs.forEach(function (ref) {
+      var existing = linked[ref.src];
+      if (existing) {
+        // GitHub's screenshot markup: the link survived, its only child (the
+        // image) did not. Give it visible text instead of leaving a dead link.
+        if (!(existing.textContent || '').trim()) {
+          existing.textContent = imageLabel(ref);
+          existing.classList.add('feedback-img-link');
+        }
+        return;
+      }
+      // A bare <img> with no wrapping link — append one so the evidence is
+      // still reachable rather than disappearing without trace.
+      var p = document.createElement('p');
+      var a = document.createElement('a');
+      a.setAttribute('href', ref.src);
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener noreferrer');
+      a.className = 'feedback-img-link';
+      a.textContent = imageLabel(ref);
+      p.appendChild(a);
+      frag.appendChild(p);
+    });
+  }
+
+  function decorateFragment(frag) {
+    // Headings: clamp to h3 so a thread body can never outrank the page structure.
+    // GitHub renders "# Title" as <h1>, so h1 must be allowed through the
+    // sanitizer and clamped here — otherwise the tag was simply dropped and the
+    // heading arrived as ordinary paragraph text.
+    frag.querySelectorAll('h1,h2').forEach(function (h) {
+      var n = document.createElement('h3');
+      n.innerHTML = h.innerHTML;
+      h.replaceWith(n);
+    });
+    frag.querySelectorAll('h3,h4,h5,h6').forEach(function (h) { h.classList.add('feedback-h'); });
+    frag.querySelectorAll('ul').forEach(function (n) { n.classList.add('feedback-ul'); });
+    frag.querySelectorAll('ol').forEach(function (n) { n.classList.add('feedback-ol'); });
+    frag.querySelectorAll('pre').forEach(function (n) { n.classList.add('feedback-code'); });
+    frag.querySelectorAll('blockquote').forEach(function (n) { n.classList.add('feedback-quote'); });
+    frag.querySelectorAll('code').forEach(function (n) {
+      if (!n.closest('pre')) n.classList.add('feedback-code-inline');
+    });
+    frag.querySelectorAll('a[href]').forEach(function (a) {
+      if (!/^(https?:|mailto:|\/|#)/i.test(a.getAttribute('href') || '')) { a.removeAttribute('href'); return; }
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener noreferrer');
+    });
+    // Tables get a focusable scroll region so a wide table scrolls itself instead
+    // of stretching the card and forcing the whole page sideways on a phone.
+    frag.querySelectorAll('table').forEach(function (t) {
+      t.classList.add('feedback-table');
+      // A markdown table written with a blank header row renders as an empty
+      // grey bar. GitHub shows it too; we'd rather just not draw it.
+      var head = t.querySelector('thead');
+      if (head && [].every.call(head.querySelectorAll('th,td'), function (c) {
+        return !(c.textContent || '').trim();
+      })) head.remove();
+      t.querySelectorAll('th').forEach(function (th) { th.setAttribute('scope', 'col'); });
+      var wrap = document.createElement('div');
+      wrap.className = 'feedback-table-scroll';
+      wrap.setAttribute('role', 'region');
+      wrap.setAttribute('aria-label', 'Scrollable table');
+      wrap.setAttribute('tabindex', '0');
+      t.replaceWith(wrap);
+      wrap.appendChild(t);
+    });
+  }
+
+  // Fills one body slot. Prefers sanitized GitHub HTML; falls back to the local
+  // markdown renderer whenever bodyHTML is unavailable, DOMPurify is missing, or
+  // sanitizing left nothing visible (e.g. an image-only post, since images are
+  // deliberately not on the allowlist). Worst case equals the old behaviour.
+  function fillBody(el, html, markdown, hasFooter) {
+    if (!el) return;
+    if (html && purifyReady()) {
+      try {
+        var frag = window.DOMPurify.sanitize(html, PURIFY_CFG);
+        stripSubmissionFooter(frag, hasFooter);
+        decorateFragment(frag);
+        var probe = document.createElement('div');
+        probe.appendChild(frag.cloneNode(true));
+        // A surviving <table> is not proof of content: an image-only table
+        // sanitizes down to empty cells, which counted as "visible" and
+        // suppressed the fallback, leaving an empty bordered box on the page.
+        var hasText = (probe.textContent || '').trim().length > 0;
+        var visible = hasText || probe.querySelector('hr') !== null;
+        // Deliberately AFTER the visibility test, never before: a post made only
+        // of images must still fall back to Markdown exactly as it did before.
+        // Rebuilding its links first would make such a post "visible" and quietly
+        // change behaviour this suite has two checks pinning down.
+        if (visible) {
+          restoreImageLinks(frag, imageRefs(html));
+          el.textContent = '';
+          el.appendChild(frag);
+          return;
+        }
+      } catch (e) { /* fall through to markdown */ }
+    }
+    el.innerHTML = md(markdown || '');
+  }
+
+  function hydrateBodies(row, d) {
+    fillBody(row.querySelector('[data-fb-body="q"]'), d.bodyHTML,
+      row.__fbQuestionText, row.__fbHasFooter);
+    var nodes = (d.comments && d.comments.nodes) || [];
+    nodes.forEach(function (c, i) {
+      // Comments are written directly on GitHub, so they never carry the
+      // generated submission footer.
+      fillBody(row.querySelector('[data-fb-body="a' + i + '"]'), c.bodyHTML, c.body, false);
+    });
   }
 
   // ── Relative timestamp ──
@@ -304,12 +589,16 @@
     var hasReplies = d.comments && d.comments.totalCount > 0;
     var dateStr = new Date(d.createdAt).toLocaleDateString('en-NZ', { day: 'numeric', month: 'short', year: 'numeric' });
 
-    // Question body: split off the "**From:**" footer; extract asker name
-    var bodyRaw = d.body || '';
-    var bodyParts = bodyRaw.split(/\n---\n/);
-    var questionText = bodyParts[0].trim();
-    var meta = bodyParts[1] || '';
-    var fromMatch = meta.match(/\*\*From:\*\*\s*([^·\n]+)/);
+    // Question body: split off the generated metadata footer; extract asker name
+    var parsed = splitGeneratedFooter(d.body || '');
+    var questionText = parsed.body;
+    var meta = parsed.meta;
+    // The name can itself contain "·" — the field separator — so stop at a real
+    // structural boundary (the next **Field:** or end of line), never at the
+    // first dot. Stopping at the dot rendered "Jane · Doe" as "from Jane".
+    // Same defect class as the footer regex; it was fixed there and missed here.
+    var fromMatch = meta.match(
+      /\*\*From:\*\*\s*([\s\S]*?)\s*(?:·\s*\*\*(?:Related Tool|Category):\*\*|\n|$)/);
     var askerName = fromMatch ? fromMatch[1].trim() : null;
 
     // Status label badge (Shipped / Planned / In Progress / Won't Fix)
@@ -333,20 +622,20 @@
       '<span>' + esc(catLabel) + ' · from ' + (askerName ? esc(askerName) : 'anonymous') + ' · ' + dateStr + '</span>' +
     '</div>';
     var qSection = '<div class="feedback-q">' + qLabel +
-      '<div class="feedback-q-body">' + md(questionText) + '</div>' +
+      '<div class="feedback-q-body" data-fb-body="q"></div>' +
     '</div>';
 
     // Replies — each with avatar + author + relative time + markdown body
     var repliesHtml = '';
     if (hasReplies && d.comments.nodes && d.comments.nodes.length) {
-      d.comments.nodes.forEach(function (c) {
+      d.comments.nodes.forEach(function (c, ci) {
         var login = (c.author && c.author.login) || 'unknown';
         repliesHtml += '<div class="feedback-a">' +
           '<div class="feedback-a-header">' +
             renderAuthor(login) +
             '<span class="feedback-a-time">' + relTime(c.createdAt) + '</span>' +
           '</div>' +
-          '<div class="feedback-a-body">' + md(c.body || '') + '</div>' +
+          '<div class="feedback-a-body" data-fb-body="a' + ci + '"></div>' +
         '</div>';
       });
     }
@@ -359,7 +648,7 @@
       : '';
 
     // GitHub link — bigger, friendlier CTA pill
-    var ghLink = '<a href="' + d.url + '" target="_blank" rel="noopener noreferrer" class="feedback-acc-link">' +
+    var ghLink = '<a href="' + escAttr(d.url) + '" target="_blank" rel="noopener noreferrer" class="feedback-acc-link">' +
       'See the full thread on GitHub →' +
     '</a>';
 
@@ -384,6 +673,9 @@
         repliesHtml +
         ghLink +
       '</div>';
+    row.__fbQuestionText = questionText;
+    row.__fbHasFooter = parsed.hasFooter;
+    hydrateBodies(row, d);
     return row;
   }
 
