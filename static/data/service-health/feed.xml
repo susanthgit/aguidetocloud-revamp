@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 25 Aug 2026 13:08:04 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 14:59:49 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Power BI] Some Workspace Admins see outdated/incomplete information in workspace settings of Power BI or Microsoft Fabric services</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1461484</link>
+      <description>[Power BI] Workspace Admins see outdated/incomplete information in workspace settings of Power BI or Microsoft Fabric services.</description>
+      <category>Power BI</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">PB1461484</guid>
+      <pubDate>Tue, 25 Aug 2026 13:18:32 +0000</pubDate>
+    </item>
     <item>
       <title>[SharePoint Online] Guest users are unable to access SharePoint Online sites connected to Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1461217</link>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">AH1449067</guid>
       <pubDate>Fri, 24 Jul 2026 04:38:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Admins may be unable to access the Microsoft 365 admin center</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1437790</link>
-      <description>[Microsoft 365 suite] Admins may have been unable to access the Microsoft 365 admin center.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1437790</guid>
-      <pubDate>Fri, 24 Jul 2026 01:18:02 +0000</pubDate>
     </item>
   </channel>
 </rss>

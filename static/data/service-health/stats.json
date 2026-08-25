@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T13:08:03.910834+00:00",
+  "generated_at": "2026-08-25T14:59:48.367380+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -94,15 +94,15 @@
       }
     },
     {
-      "service": "SharePoint Online",
-      "short_name": "SharePoint",
-      "icon": "📄",
+      "service": "Power BI",
+      "short_name": "Power BI",
+      "icon": "📊",
       "total_incidents": 3,
       "active_incidents": 1,
-      "avg_duration_minutes": 4924,
-      "last_incident": "2026-08-25T01:58:05+00:00",
+      "avg_duration_minutes": 5648,
+      "last_incident": "2026-08-25T13:18:32.100000+00:00",
       "classifications": {
-        "incident": 3
+        "advisory": 3
       }
     },
     {
@@ -143,6 +143,18 @@
       }
     },
     {
+      "service": "SharePoint Online",
+      "short_name": "SharePoint",
+      "icon": "📄",
+      "total_incidents": 2,
+      "active_incidents": 1,
+      "avg_duration_minutes": 9758,
+      "last_incident": "2026-08-25T01:58:05+00:00",
+      "classifications": {
+        "incident": 2
+      }
+    },
+    {
       "service": "Microsoft Viva",
       "short_name": "Viva",
       "icon": "🌱",
@@ -153,18 +165,6 @@
       "classifications": {
         "incident": 1,
         "advisory": 1
-      }
-    },
-    {
-      "service": "Power BI",
-      "short_name": "Power BI",
-      "icon": "📊",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 5648,
-      "last_incident": "2026-08-02T04:00:00+00:00",
-      "classifications": {
-        "advisory": 2
       }
     },
     {
@@ -195,7 +195,7 @@
   "monthly": [
     {
       "month": "2026-08",
-      "incident_count": 36,
+      "incident_count": 37,
       "services_affected": 11
     },
     {
@@ -205,8 +205,8 @@
     },
     {
       "month": "2026-06",
-      "incident_count": 9,
-      "services_affected": 8
+      "incident_count": 8,
+      "services_affected": 7
     },
     {
       "month": "2026-05",
