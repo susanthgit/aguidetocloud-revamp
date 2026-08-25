@@ -5,17 +5,8 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 25 Aug 2026 10:46:21 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 13:08:04 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Some users may be unable to receive responses when using Microsoft 365 Copilot Chat</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1461372</link>
-      <description>[Microsoft 365 Copilot Chat] Users may be unable to receive responses when using Copilot Chat.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CW1461372</guid>
-      <pubDate>Tue, 25 Aug 2026 08:17:39 +0000</pubDate>
-    </item>
     <item>
       <title>[SharePoint Online] Guest users are unable to access SharePoint Online sites connected to Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1461217</link>
@@ -24,6 +15,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">SP1461217</guid>
       <pubDate>Tue, 25 Aug 2026 01:58:05 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Some users may be unable to receive responses when using Microsoft 365 Copilot Chat</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1461372</link>
+      <description>[Microsoft 365 Copilot Chat] Users may be unable to receive responses when using Copilot Chat.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1461372</guid>
+      <pubDate>Mon, 24 Aug 2026 22:50:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Viva] Some users may be unable to access Microsoft Viva Glint services</title>
