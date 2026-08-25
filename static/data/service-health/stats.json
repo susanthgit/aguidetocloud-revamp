@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T14:59:48.367380+00:00",
+  "generated_at": "2026-08-25T16:51:56.701641+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -94,18 +94,6 @@
       }
     },
     {
-      "service": "Power BI",
-      "short_name": "Power BI",
-      "icon": "📊",
-      "total_incidents": 3,
-      "active_incidents": 1,
-      "avg_duration_minutes": 5648,
-      "last_incident": "2026-08-25T13:18:32.100000+00:00",
-      "classifications": {
-        "advisory": 3
-      }
-    },
-    {
       "service": "Microsoft Defender XDR",
       "short_name": "Defender",
       "icon": "🛡️",
@@ -113,6 +101,18 @@
       "active_incidents": 1,
       "avg_duration_minutes": 7584,
       "last_incident": "2026-08-13T20:14:00+00:00",
+      "classifications": {
+        "advisory": 3
+      }
+    },
+    {
+      "service": "Power BI",
+      "short_name": "Power BI",
+      "icon": "📊",
+      "total_incidents": 3,
+      "active_incidents": 1,
+      "avg_duration_minutes": 5648,
+      "last_incident": "2026-08-02T04:12:00+00:00",
       "classifications": {
         "advisory": 3
       }
