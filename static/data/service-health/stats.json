@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T18:53:57.914394+00:00",
+  "generated_at": "2026-08-25T20:42:16.334174+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -72,8 +72,8 @@
       "short_name": "M365 Apps",
       "icon": "💼",
       "total_incidents": 5,
-      "active_incidents": 2,
-      "avg_duration_minutes": 1100,
+      "active_incidents": 1,
+      "avg_duration_minutes": 2915,
       "last_incident": "2026-08-24T13:00:00+00:00",
       "classifications": {
         "advisory": 4,
@@ -94,15 +94,15 @@
       }
     },
     {
-      "service": "Microsoft Defender XDR",
-      "short_name": "Defender",
-      "icon": "🛡️",
+      "service": "SharePoint Online",
+      "short_name": "SharePoint",
+      "icon": "📄",
       "total_incidents": 3,
-      "active_incidents": 1,
-      "avg_duration_minutes": 7584,
-      "last_incident": "2026-08-13T20:14:00+00:00",
+      "active_incidents": 2,
+      "avg_duration_minutes": 9758,
+      "last_incident": "2026-08-25T16:58:38.313000+00:00",
       "classifications": {
-        "advisory": 3
+        "incident": 3
       }
     },
     {
@@ -143,15 +143,15 @@
       }
     },
     {
-      "service": "SharePoint Online",
-      "short_name": "SharePoint",
-      "icon": "📄",
+      "service": "Microsoft Defender XDR",
+      "short_name": "Defender",
+      "icon": "🛡️",
       "total_incidents": 2,
       "active_incidents": 1,
-      "avg_duration_minutes": 9758,
-      "last_incident": "2026-08-25T01:58:05+00:00",
+      "avg_duration_minutes": 810,
+      "last_incident": "2026-08-13T20:14:00+00:00",
       "classifications": {
-        "incident": 2
+        "advisory": 2
       }
     },
     {
@@ -195,7 +195,7 @@
   "monthly": [
     {
       "month": "2026-08",
-      "incident_count": 37,
+      "incident_count": 38,
       "services_affected": 11
     },
     {
@@ -205,8 +205,8 @@
     },
     {
       "month": "2026-06",
-      "incident_count": 8,
-      "services_affected": 7
+      "incident_count": 7,
+      "services_affected": 6
     },
     {
       "month": "2026-05",

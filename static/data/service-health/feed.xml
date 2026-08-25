@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 25 Aug 2026 18:53:58 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 20:42:17 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[SharePoint Online] Some users may not be returned results when searching on SharePoint Online sites</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1461580</link>
+      <description>[SharePoint Online] Users may not be returned results when searching on SharePoint Online sites.</description>
+      <category>SharePoint Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">SP1461580</guid>
+      <pubDate>Tue, 25 Aug 2026 16:58:38 +0000</pubDate>
+    </item>
     <item>
       <title>[SharePoint Online] Guest users are unable to access SharePoint Online sites connected to Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1461217</link>
@@ -91,9 +100,9 @@
     <item>
       <title>[Microsoft 365 apps] Some admins may see outdated device inventory and update status information in the Microsoft 365 Apps admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#OP1459987</link>
-      <description>[Microsoft 365 apps] Admins may see outdated device inventory and update status information in the Microsoft 365 Apps admin center.</description>
+      <description>[Microsoft 365 apps] Admins may have seen outdated device inventory and update status information in the Microsoft 365 Apps admin center.</description>
       <category>Microsoft 365 apps</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">OP1459987</guid>
       <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
     </item>
@@ -447,15 +456,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1447619</guid>
       <pubDate>Fri, 24 Jul 2026 08:06:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Windows Autopatch] Admins can't manage drivers from the Windows Autopatch groups tab</title>
-      <link>https://www.aguidetocloud.com/service-health/#AH1449067</link>
-      <description>[Windows Autopatch] Admins couldn't manage drivers from the Autopatch groups tab.</description>
-      <category>Windows Autopatch</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">AH1449067</guid>
-      <pubDate>Fri, 24 Jul 2026 04:38:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
