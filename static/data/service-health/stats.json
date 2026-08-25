@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T08:55:52.746938+00:00",
+  "generated_at": "2026-08-25T10:46:20.668514+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -16,19 +16,6 @@
       }
     },
     {
-      "service": "Microsoft Copilot (Microsoft 365)",
-      "short_name": "Copilot",
-      "icon": "🤖",
-      "total_incidents": 20,
-      "active_incidents": 1,
-      "avg_duration_minutes": 5038,
-      "last_incident": "2026-08-21T06:30:00+00:00",
-      "classifications": {
-        "advisory": 12,
-        "incident": 8
-      }
-    },
-    {
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
@@ -39,6 +26,19 @@
       "classifications": {
         "advisory": 13,
         "incident": 6
+      }
+    },
+    {
+      "service": "Microsoft Copilot (Microsoft 365)",
+      "short_name": "Copilot",
+      "icon": "🤖",
+      "total_incidents": 18,
+      "active_incidents": 1,
+      "avg_duration_minutes": 3496,
+      "last_incident": "2026-08-21T06:30:00+00:00",
+      "classifications": {
+        "advisory": 11,
+        "incident": 7
       }
     },
     {
@@ -58,13 +58,13 @@
       "service": "Microsoft 365 Copilot Chat",
       "short_name": "Copilot Chat",
       "icon": "💭",
-      "total_incidents": 6,
-      "active_incidents": 0,
+      "total_incidents": 7,
+      "active_incidents": 1,
       "avg_duration_minutes": 1561,
-      "last_incident": "2026-08-13T17:26:00+00:00",
+      "last_incident": "2026-08-25T08:17:39.893000+00:00",
       "classifications": {
-        "incident": 2,
-        "advisory": 4
+        "advisory": 5,
+        "incident": 2
       }
     },
     {
@@ -91,6 +91,19 @@
       "classifications": {
         "advisory": 4,
         "incident": 1
+      }
+    },
+    {
+      "service": "SharePoint Online",
+      "short_name": "SharePoint",
+      "icon": "📄",
+      "total_incidents": 3,
+      "active_incidents": 1,
+      "avg_duration_minutes": 4924,
+      "last_incident": "2026-08-25T01:58:05.613000+00:00",
+      "classifications": {
+        "advisory": 1,
+        "incident": 2
       }
     },
     {
@@ -168,18 +181,6 @@
       }
     },
     {
-      "service": "SharePoint Online",
-      "short_name": "SharePoint",
-      "icon": "📄",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 4924,
-      "last_incident": "2026-07-09T11:12:00+00:00",
-      "classifications": {
-        "incident": 2
-      }
-    },
-    {
       "service": "Windows Autopatch",
       "short_name": "Autopatch",
       "icon": "🪟",
@@ -195,8 +196,8 @@
   "monthly": [
     {
       "month": "2026-08",
-      "incident_count": 34,
-      "services_affected": 10
+      "incident_count": 36,
+      "services_affected": 11
     },
     {
       "month": "2026-07",
@@ -205,7 +206,7 @@
     },
     {
       "month": "2026-06",
-      "incident_count": 11,
+      "incident_count": 9,
       "services_affected": 8
     },
     {

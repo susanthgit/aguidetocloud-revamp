@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 25 Aug 2026 08:55:53 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 10:46:21 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Some users may be unable to receive responses when using Microsoft 365 Copilot Chat</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1461372</link>
+      <description>[Microsoft 365 Copilot Chat] Users may be unable to receive responses when using Copilot Chat.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CW1461372</guid>
+      <pubDate>Tue, 25 Aug 2026 08:17:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Guest users are unable to access SharePoint Online sites connected to Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1461217</link>
+      <description>[SharePoint Online] Guest users are unable to access SharePoint Online sites connected to Microsoft Teams.</description>
+      <category>SharePoint Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">SP1461217</guid>
+      <pubDate>Tue, 25 Aug 2026 01:58:05 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Viva] Some users may be unable to access Microsoft Viva Glint services</title>
       <link>https://www.aguidetocloud.com/service-health/#MV1461005</link>
@@ -438,25 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1437790</guid>
       <pubDate>Fri, 24 Jul 2026 01:18:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may be unable to join or create Microsoft Teams meetings or calls</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1437780</link>
-      <description>[Microsoft Teams] Users may be unable to join or create Microsoft Teams meetings or calls.</description>
-      <category>Microsoft Teams</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">TM1437780</guid>
-      <pubDate>Fri, 24 Jul 2026 00:25:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Azure] Azure incident affecting West US</title>
-      <link>https://www.aguidetocloud.com/service-health/#AZ-ZJV6-SGG</link>
-      <description>[Azure] Between 14:44 and 19:41 UTC on 23 July 2026, a subset of customers experienced connectivity failures, increased latency, and/or difficulty accessing Azure services hosted within the West US region. Impact was limited to network traffic entering or exiting the region, traffic that remained entirely within the region was not affected.
-Impacted services included: App Service, Application Insights, Azure AD B2C, Azure AI Bot Service, Azure AI Search, Azure API Management, Azure Application Gateway, </description>
-      <category>Azure</category>
-      <category>postIncidentReviewPublished</category>
-      <guid isPermaLink="false">AZ-ZJV6-SGG</guid>
-      <pubDate>Thu, 23 Jul 2026 19:41:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
