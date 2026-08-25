@@ -5,12 +5,21 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 25 Aug 2026 20:42:17 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 22:41:31 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[SharePoint Online] Some users may not be returned results when searching on SharePoint Online sites</title>
+      <title>[SharePoint Online] Users may not see the controls in the file and media webpart for embedded PowerPoint files in SharePoint Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1461655</link>
+      <description>[SharePoint Online] Users may not see the controls in the file and media webpart for embedded PowerPoint files in SharePoint Online.</description>
+      <category>SharePoint Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">SP1461655</guid>
+      <pubDate>Tue, 25 Aug 2026 19:47:30 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Some users may not receive results when searching on SharePoint Online sites</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1461580</link>
-      <description>[SharePoint Online] Users may not be returned results when searching on SharePoint Online sites.</description>
+      <description>[SharePoint Online] Users may not receive results when searching on SharePoint Online sites.</description>
       <category>SharePoint Online</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">SP1461580</guid>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1447500</guid>
       <pubDate>Fri, 24 Jul 2026 21:06:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Users may have been unable to sign into the OneNote Web Clipper</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1447619</link>
-      <description>[Microsoft 365 suite] Users may have been unable to sign into the OneNote Web Clipper. </description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MO1447619</guid>
-      <pubDate>Fri, 24 Jul 2026 08:06:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

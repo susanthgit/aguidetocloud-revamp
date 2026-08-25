@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T20:42:16.334174+00:00",
+  "generated_at": "2026-08-25T22:41:30.518823+00:00",
   "total_incidents_tracked": 103,
   "services": [
     {
@@ -97,11 +97,12 @@
       "service": "SharePoint Online",
       "short_name": "SharePoint",
       "icon": "📄",
-      "total_incidents": 3,
-      "active_incidents": 2,
+      "total_incidents": 4,
+      "active_incidents": 3,
       "avg_duration_minutes": 9758,
-      "last_incident": "2026-08-25T16:58:38.313000+00:00",
+      "last_incident": "2026-08-25T19:47:30.973000+00:00",
       "classifications": {
+        "advisory": 1,
         "incident": 3
       }
     },
@@ -168,18 +169,6 @@
       }
     },
     {
-      "service": "Microsoft OneDrive",
-      "short_name": "OneDrive",
-      "icon": "☁️",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 38,
-      "last_incident": "2026-07-12T10:20:00+00:00",
-      "classifications": {
-        "incident": 2
-      }
-    },
-    {
       "service": "Windows Autopatch",
       "short_name": "Autopatch",
       "icon": "🪟",
@@ -190,12 +179,24 @@
       "classifications": {
         "advisory": 1
       }
+    },
+    {
+      "service": "Microsoft OneDrive",
+      "short_name": "OneDrive",
+      "icon": "☁️",
+      "total_incidents": 1,
+      "active_incidents": 0,
+      "avg_duration_minutes": 24,
+      "last_incident": "2026-07-12T10:20:00+00:00",
+      "classifications": {
+        "incident": 1
+      }
     }
   ],
   "monthly": [
     {
       "month": "2026-08",
-      "incident_count": 38,
+      "incident_count": 39,
       "services_affected": 11
     },
     {
@@ -205,8 +206,8 @@
     },
     {
       "month": "2026-06",
-      "incident_count": 7,
-      "services_affected": 6
+      "incident_count": 6,
+      "services_affected": 5
     },
     {
       "month": "2026-05",
