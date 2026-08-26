@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Aug 2026 13:12:32 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 14:58:33 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Defender XDR] Some admins may experience delays in Microsoft Defender for Endpoint detections</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1462187</link>
+      <description>[Microsoft Defender XDR] Admins may experience delays in Microsoft Defender for Endpoint detections.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">DZ1462187</guid>
+      <pubDate>Wed, 26 Aug 2026 14:10:39 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Users may be unable to use multiple Microsoft Teams features</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1461801</link>
@@ -447,15 +456,6 @@
       <category>investigationSuspended</category>
       <guid isPermaLink="false">MP1440966</guid>
       <pubDate>Mon, 27 Jul 2026 22:50:42 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Purview] We’ve detected an issue with Azure subscription required for Microsoft Purview inline data protections</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1440962</link>
-      <description>[Microsoft Purview] If action isn't taken, DLP policies targeting user data uploads to unmanaged apps in Edge might not function as expected</description>
-      <category>Microsoft Purview</category>
-      <category>investigationSuspended</category>
-      <guid isPermaLink="false">MP1440962</guid>
-      <pubDate>Mon, 27 Jul 2026 22:39:50 +0000</pubDate>
     </item>
   </channel>
 </rss>
