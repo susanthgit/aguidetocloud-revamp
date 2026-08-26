@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Aug 2026 19:58:13 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 23:27:50 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Defender XDR] Some admins may experience delays in Microsoft Defender for Endpoint detections</title>
@@ -66,7 +66,7 @@
       <link>https://www.aguidetocloud.com/service-health/#OP1460815</link>
       <description>[Microsoft 365 apps] Users may have been unable to activate new or refresh existing Office 365 licenses.</description>
       <category>Microsoft 365 apps</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">OP1460815</guid>
       <pubDate>Mon, 24 Aug 2026 13:00:00 +0000</pubDate>
     </item>
