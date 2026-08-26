@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Aug 2026 14:58:33 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 16:56:31 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Defender XDR] Some admins may experience delays in Microsoft Defender for Endpoint detections</title>
@@ -341,9 +341,9 @@
       <pubDate>Tue, 04 Aug 2026 14:47:20 +0000</pubDate>
     </item>
     <item>
-      <title>[Power BI] Some Workspace Admins see outdated/incomplete information in workspace settings of Power BI or Microsoft Fabric services</title>
+      <title>[Power BI] Some workspace admins see outdated/incomplete information in workspace settings of Power BI or Microsoft Fabric services</title>
       <link>https://www.aguidetocloud.com/service-health/#PB1461484</link>
-      <description>[Power BI] Workspace Admins see outdated/incomplete information in workspace settings of Power BI or Microsoft Fabric services.</description>
+      <description>[Power BI] Workspace admins see outdated/incomplete information in workspace settings of Power BI or Microsoft Fabric services.</description>
       <category>Power BI</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">PB1461484</guid>
