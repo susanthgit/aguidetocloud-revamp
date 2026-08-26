@@ -5,16 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Aug 2026 01:55:14 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 03:15:50 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Teams] Users may be unable to use multiple Microsoft Teams features</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1461801</link>
-      <description>[Microsoft Teams] Users may be unable to use multiple Microsoft Teams features. </description>
+      <description>[Microsoft Teams] Users may have been unable to use multiple Microsoft Teams features.</description>
       <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1461801</guid>
-      <pubDate>Wed, 26 Aug 2026 01:22:31 +0000</pubDate>
+      <pubDate>Wed, 26 Aug 2026 01:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[SharePoint Online] Users may not see the controls in the file and media webpart for embedded PowerPoint files in SharePoint Online</title>
