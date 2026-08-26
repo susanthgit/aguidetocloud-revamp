@@ -211,6 +211,21 @@
       height: 18px;
     }
 
+    .link-btn.download .link-icon {
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
+      margin: -4px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--bg-card);
+      transition: background-color 150ms ease-out;
+    }
+
+    .link-btn.download:hover .link-icon {
+      background: var(--accent-hover);
+    }
+
     .link-text {
       min-width: 0;
       flex: 1;
@@ -340,13 +355,13 @@
         <span class="link-arrow" aria-hidden="true">&rarr;</span>
       </a>
 
-      <a href="/free-tools/" class="link-btn" data-link-id="free_tools" data-link-section="priority">
-        <span class="link-icon">{{ partial "icon.html" (dict "name" "wrench" "size" 18 "stroke" 1.5) }}</span>
+      <a href="https://ko-fi.com/aguidetocloud/shop" class="link-btn download" data-link-id="kofi_shop" data-link-section="priority" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon">{{ partial "icon.html" (dict "name" "download" "size" 18 "stroke" 1.5) }}</span>
         <span class="link-text">
-          <span class="link-label">Tools</span>
-          <span class="link-meta">Free calculators, builders and Copilot helpers</span>
+          <span class="link-label">Free Downloads</span>
+          <span class="link-meta">Exam PDFs, guides and other freebies on Ko-fi</span>
         </span>
-        <span class="link-arrow" aria-hidden="true">&rarr;</span>
+        <span class="link-arrow" aria-hidden="true">&nearr;</span>
       </a>
 
       <a href="https://www.youtube.com/@SusanthSutheesh" class="link-btn" data-link-id="yt_long" data-link-section="priority" target="_blank" rel="noopener noreferrer">
@@ -383,6 +398,15 @@
           <span class="link-meta">Join IT pros learning and studying together</span>
         </span>
         <span class="link-arrow" aria-hidden="true">&nearr;</span>
+      </a>
+
+      <a href="/free-tools/" class="link-btn" data-link-id="free_tools" data-link-section="priority">
+        <span class="link-icon">{{ partial "icon.html" (dict "name" "wrench" "size" 18 "stroke" 1.5) }}</span>
+        <span class="link-text">
+          <span class="link-label">Tools</span>
+          <span class="link-meta">Free calculators, builders and Copilot helpers</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true">&rarr;</span>
       </a>
 
       <a href="/about/" class="link-btn" data-link-id="about" data-link-section="priority">
