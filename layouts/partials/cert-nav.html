@@ -41,7 +41,7 @@
 
     {{ if eq $vSlug "microsoft" }}
       {{/* Microsoft: group by exam_category */}}
-      {{ $categories := slice "Azure" "AI" "Security" "Data" "Microsoft 365" "Power Platform" "Dynamics 365" }}
+      {{ $categories := slice "Azure" "AI" "Security" "Data" "Microsoft 365" "Power Platform" "Dynamics 365" "Education" }}
       {{ range $cat := $categories }}
         {{ $catCerts := slice }}
         {{ range $certs }}

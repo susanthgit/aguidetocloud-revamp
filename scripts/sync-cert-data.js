@@ -54,6 +54,7 @@ const MS_GUIDED_CATEGORY_MAP = {
   'admin': 'Microsoft 365',
   'business': 'Power Platform',   // PL-* and some MB-*
   'devops': 'Azure',              // AZ-400
+  'education': 'Education',       // 62-193 (Microsoft Certified Educator)
 };
 
 // Fallback: map from exam code prefix when Guided category missing
