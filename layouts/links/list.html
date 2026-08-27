@@ -111,6 +111,7 @@
     }
 
     .theme-toggle:focus-visible,
+    .name-link:focus-visible,
     .link-btn:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 2px;
@@ -150,6 +151,17 @@
       font-size: 1.35rem;
       font-weight: 600;
       letter-spacing: -0.02em;
+    }
+
+    .name-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.15s ease-out;
+    }
+
+    .name-link:hover {
+      border-bottom-color: var(--accent);
     }
 
     .brand {
@@ -331,7 +343,7 @@
       <div class="avatar">
         {{ partial "picture.html" (dict "src" "/images/about/headshot.webp" "alt" "Susanth Sutheesh" "width" 64 "height" 64 "loading" "eager") }}
       </div>
-      <h1 class="name">Susanth Sutheesh</h1>
+      <h1 class="name"><a href="/about/" class="name-link" data-link-id="about" data-link-section="identity">Susanth Sutheesh</a></h1>
       <p class="brand">A Guide to Cloud &amp; AI</p>
       <p class="subtitle">I learn for myself first. What overflows lands here.</p>
     </header>
@@ -405,15 +417,6 @@
         <span class="link-text">
           <span class="link-label">Tools</span>
           <span class="link-meta">Free calculators, builders and Copilot helpers</span>
-        </span>
-        <span class="link-arrow" aria-hidden="true">&rarr;</span>
-      </a>
-
-      <a href="/about/" class="link-btn" data-link-id="about" data-link-section="priority">
-        <span class="link-icon">{{ partial "icon.html" (dict "name" "file-text" "size" 18 "stroke" 1.5) }}</span>
-        <span class="link-text">
-          <span class="link-label">About</span>
-          <span class="link-meta">The person and story behind A Guide to Cloud &amp; AI</span>
         </span>
         <span class="link-arrow" aria-hidden="true">&rarr;</span>
       </a>
