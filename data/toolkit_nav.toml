@@ -433,6 +433,21 @@ visual = "scatter"
 is_tool = true
 
 [[tools]]
+url = "/mind-maps/"
+emoji = "🧠"
+icon = "brain"
+name = "Mind Maps"
+short = "Mind Maps"
+desc = "Visual maps of Copilot, licensing, security & cert paths"
+color = "#6366F1"
+category = "certs"
+visual = "circles"
+is_tool = true
+# Content collection (67 pages), not a web app — `collection` suppresses the
+# SoftwareApplication schema in seo-jsonld.html
+collection = true
+
+[[tools]]
 url = "/world-clock/"
 emoji = "🌍"
 icon = "globe"

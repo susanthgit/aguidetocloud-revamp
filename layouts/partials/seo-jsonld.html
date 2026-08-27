@@ -114,7 +114,7 @@
 {{/* SoftwareApplication schema for tool pages — reads from toolkit_nav.toml */}}
 {{ $navTools := (index hugo.Data "toolkit_nav").tools }}
 {{ range $navTools }}
-{{ if and .is_tool (eq $.RelPermalink .url) }}
+{{ if and .is_tool (not .collection) (eq $.RelPermalink .url) }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

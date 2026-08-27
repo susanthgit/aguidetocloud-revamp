@@ -91,7 +91,7 @@
     <a href="/guided/">{{ partial "icon.html" (dict "name" "scroll" "size" 14 "stroke" 1.5) }} Practice exams</a>
     <a href="/ai-news/">{{ partial "icon.html" (dict "name" "newspaper" "size" 14 "stroke" 1.5) }} AI News</a>
     <a href="/blog/">{{ partial "icon.html" (dict "name" "edit-3" "size" 14 "stroke" 1.5) }} Blog</a>
-    <a href="/free-tools/">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} All 56 tools</a>
+    <a href="/free-tools/">{{ partial "icon.html" (dict "name" "wrench" "size" 14 "stroke" 1.5) }} All {{ len (index hugo.Data "toolkit_nav").tools }} tools</a>
     <a href="/about/">About</a>
   </div>
 

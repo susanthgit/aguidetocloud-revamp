@@ -29,7 +29,7 @@
 <div class="zt-hub-featured">
   <p class="zt-hub-featured-label">Most popular</p>
   <div class="ft-mini-grid">
-    {{ $featuredSlugs := slice "cert-tracker" "licensing" "cowork-cost-calculator" "prompts" "service-health" "prompt-polisher" }}
+    {{ $featuredSlugs := slice "cert-tracker" "mind-maps" "licensing" "cowork-cost-calculator" "prompts" "service-health" "prompt-polisher" }}
     {{ range $slug := $featuredSlugs }}
       {{ range $tools }}
         {{ if and .is_tool (eq (.url | strings.TrimSuffix "/" | strings.TrimPrefix "/") $slug) }}
