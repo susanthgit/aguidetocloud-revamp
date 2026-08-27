@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Aug 2026 23:27:50 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Aug 2026 09:36:35 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Bookings] Users may see blank pages when opening Microsoft Bookings</title>
+      <link>https://www.aguidetocloud.com/service-health/#MB1462509</link>
+      <description>[Microsoft Bookings] Users may see blank pages when opening Microsoft Bookings.</description>
+      <category>Microsoft Bookings</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MB1462509</guid>
+      <pubDate>Thu, 27 Aug 2026 00:19:45 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Defender XDR] Some admins may experience delays in Microsoft Defender for Endpoint detections</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1462187</link>
@@ -440,22 +449,13 @@
       <pubDate>Wed, 29 Jul 2026 07:10:16 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft 365 suite] Admins couldn't locate or disable the MailerLite and Miro connectors in the Microsoft 365 admin center </title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1441391</link>
-      <description>[Microsoft 365 suite] Admins couldn't locate or disable the MailerLite and Miro connectors in the Microsoft 365 admin center. </description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1441391</guid>
-      <pubDate>Tue, 28 Jul 2026 11:09:22 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Purview]  We’ve detected an issue with auto-created configs for Microsoft Purview inline data protections in Edge for Business </title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1440966</link>
-      <description>[Microsoft Purview] If action isn’t taken, collection and DLP policies for user data uploads to unmanaged apps might not work as expected. </description>
-      <category>Microsoft Purview</category>
-      <category>investigationSuspended</category>
-      <guid isPermaLink="false">MP1440966</guid>
-      <pubDate>Mon, 27 Jul 2026 22:50:42 +0000</pubDate>
+      <title>[Microsoft Teams] Some users attempting to view their Microsoft Teams contact lists may experience latency</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1462514</link>
+      <description>[Microsoft Teams] Users attempting to view their Microsoft Teams contact lists may experience latency.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1462514</guid>
+      <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
