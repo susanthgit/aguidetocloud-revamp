@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Susanth Sutheesh — A Guide to Cloud &amp; AI</title>
+  {{/* Titles come from content/links/_index.md so there is one source of truth —
+       hardcoding them here is what left the old name behind in the share cards. */}}
+  <title>{{ .Title }}</title>
   <meta name="description" content="{{ .Description }}">
-  <meta property="og:title" content="Susanth Sutheesh — A Guide to Cloud &amp; AI">
+  <meta property="og:title" content="{{ .Title }}">
   <meta property="og:description" content="{{ .Description }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ .Permalink }}">
@@ -13,7 +15,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Susanth Sutheesh — A Guide to Cloud &amp; AI">
+  <meta name="twitter:title" content="{{ .Title }}">
   <meta name="twitter:description" content="{{ .Description }}">
   <meta name="twitter:image" content="{{ .Site.BaseURL }}images/og/sections/homepage.jpg">
   <meta name="robots" content="index, follow">
@@ -111,7 +113,6 @@
     }
 
     .theme-toggle:focus-visible,
-    .name-link:focus-visible,
     .link-btn:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 2px;
@@ -144,39 +145,23 @@
       height: 100%;
       display: block;
       object-fit: cover;
-      object-position: center 10%;
-    }
-
-    .name {
-      font-size: 1.35rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
-
-    .name-link {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid var(--border);
-      transition: border-color 0.15s ease-out;
-    }
-
-    .name-link:hover {
-      border-bottom-color: var(--accent);
+      object-position: center;
     }
 
     .brand {
-      margin-top: 2px;
-      color: var(--accent);
-      font-size: 0.875rem;
+      font-size: 1.35rem;
       font-weight: 600;
+      letter-spacing: -0.02em;
     }
 
     .subtitle {
       max-width: 320px;
       margin: 6px auto 0;
       color: var(--text-muted);
-      font-size: 0.8rem;
-      line-height: 1.5;
+      /* Devanagari sits optically smaller than Latin at the same px, so this
+         runs a touch larger than the Latin subtitle it replaced */
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
 
     .link-list {
@@ -341,11 +326,11 @@
 
     <header class="identity">
       <div class="avatar">
-        {{ partial "picture.html" (dict "src" "/images/about/headshot.webp" "alt" "Susanth Sutheesh" "width" 64 "height" 64 "loading" "eager") }}
+        {{/* alt is empty on purpose: the <h1> below already says the brand name, so alt text would make a screen reader announce it twice */}}
+        {{ partial "picture.html" (dict "src" "/images/logo_agtc_dark_1.webp" "alt" "" "width" 64 "height" 64 "loading" "eager") }}
       </div>
-      <h1 class="name"><a href="/about/" class="name-link" data-link-id="about" data-link-section="identity">Susanth Sutheesh</a></h1>
-      <p class="brand">A Guide to Cloud &amp; AI</p>
-      <p class="subtitle">I learn for myself first. What overflows lands here.</p>
+      <h1 class="brand">A Guide to Cloud &amp; AI</h1>
+      <p class="subtitle" lang="sa">सर्वं श्रीकृष्णार्पणमस्तु</p>
     </header>
 
     <nav class="link-list" aria-label="Main destinations">
