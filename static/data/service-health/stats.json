@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-27T09:36:34.559070+00:00",
-  "total_incidents_tracked": 102,
+  "generated_at": "2026-08-27T20:22:23.874997+00:00",
+  "total_incidents_tracked": 101,
   "services": [
     {
       "service": "Microsoft Teams",
@@ -9,22 +9,22 @@
       "total_incidents": 23,
       "active_incidents": 4,
       "avg_duration_minutes": 9144,
-      "last_incident": "2026-08-26T01:00:00+00:00",
+      "last_incident": "2026-08-27T20:05:25.963000+00:00",
       "classifications": {
-        "advisory": 19,
-        "incident": 4
+        "incident": 5,
+        "advisory": 18
       }
     },
     {
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 19,
+      "total_incidents": 18,
       "active_incidents": 3,
-      "avg_duration_minutes": 5319,
+      "avg_duration_minutes": 5598,
       "last_incident": "2026-08-21T00:00:00+00:00",
       "classifications": {
-        "advisory": 13,
+        "advisory": 12,
         "incident": 6
       }
     },
@@ -46,9 +46,9 @@
       "short_name": "Exchange",
       "icon": "📧",
       "total_incidents": 7,
-      "active_incidents": 2,
-      "avg_duration_minutes": 7915,
-      "last_incident": "2026-08-20T12:23:15+00:00",
+      "active_incidents": 1,
+      "avg_duration_minutes": 10436,
+      "last_incident": "2026-08-17T23:38:00+00:00",
       "classifications": {
         "advisory": 6,
         "incident": 1
@@ -100,10 +100,22 @@
       "total_incidents": 4,
       "active_incidents": 2,
       "avg_duration_minutes": 8731,
-      "last_incident": "2026-08-25T19:47:30.973000+00:00",
+      "last_incident": "2026-08-25T16:58:38.313000+00:00",
       "classifications": {
-        "advisory": 1,
-        "incident": 3
+        "incident": 3,
+        "advisory": 1
+      }
+    },
+    {
+      "service": "Power BI",
+      "short_name": "Power BI",
+      "icon": "📊",
+      "total_incidents": 4,
+      "active_incidents": 1,
+      "avg_duration_minutes": 3796,
+      "last_incident": "2026-08-27T15:15:00+00:00",
+      "classifications": {
+        "advisory": 4
       }
     },
     {
@@ -114,18 +126,6 @@
       "active_incidents": 2,
       "avg_duration_minutes": 810,
       "last_incident": "2026-08-26T14:10:39.433000+00:00",
-      "classifications": {
-        "advisory": 3
-      }
-    },
-    {
-      "service": "Power BI",
-      "short_name": "Power BI",
-      "icon": "📊",
-      "total_incidents": 3,
-      "active_incidents": 1,
-      "avg_duration_minutes": 5648,
-      "last_incident": "2026-08-02T04:12:00+00:00",
       "classifications": {
         "advisory": 3
       }
@@ -157,25 +157,13 @@
       }
     },
     {
-      "service": "Azure",
-      "short_name": "Azure",
-      "icon": "☁️",
-      "total_incidents": 2,
-      "active_incidents": 0,
-      "avg_duration_minutes": 0,
-      "last_incident": "2026-07-23T19:41:00+00:00",
-      "classifications": {
-        "incident": 2
-      }
-    },
-    {
       "service": "Microsoft Bookings",
       "short_name": "Bookings",
       "icon": "📅",
       "total_incidents": 1,
-      "active_incidents": 1,
-      "avg_duration_minutes": 0,
-      "last_incident": "2026-08-27T00:19:45+00:00",
+      "active_incidents": 0,
+      "avg_duration_minutes": 1830,
+      "last_incident": "2026-08-26T04:00:00+00:00",
       "classifications": {
         "incident": 1
       }
@@ -190,6 +178,18 @@
       "last_incident": "2026-07-24T04:38:00+00:00",
       "classifications": {
         "advisory": 1
+      }
+    },
+    {
+      "service": "Azure",
+      "short_name": "Azure",
+      "icon": "☁️",
+      "total_incidents": 1,
+      "active_incidents": 0,
+      "avg_duration_minutes": 0,
+      "last_incident": "2026-07-23T19:41:00+00:00",
+      "classifications": {
+        "incident": 1
       }
     },
     {
@@ -208,23 +208,13 @@
   "monthly": [
     {
       "month": "2026-08",
-      "incident_count": 42,
+      "incident_count": 44,
       "services_affected": 12
     },
     {
       "month": "2026-07",
       "incident_count": 57,
       "services_affected": 14
-    },
-    {
-      "month": "2026-06",
-      "incident_count": 2,
-      "services_affected": 2
-    },
-    {
-      "month": "2026-05",
-      "incident_count": 1,
-      "services_affected": 1
     }
   ]
 }

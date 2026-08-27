@@ -5,16 +5,25 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 27 Aug 2026 09:36:35 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Aug 2026 20:22:24 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft Bookings] Users may see blank pages when opening Microsoft Bookings</title>
-      <link>https://www.aguidetocloud.com/service-health/#MB1462509</link>
-      <description>[Microsoft Bookings] Users may see blank pages when opening Microsoft Bookings.</description>
-      <category>Microsoft Bookings</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">MB1462509</guid>
-      <pubDate>Thu, 27 Aug 2026 00:19:45 +0000</pubDate>
+      <title>[Microsoft Teams] Users may be unable to access or manage Microsoft Teams channels</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1462874</link>
+      <description>[Microsoft Teams] Users may be unable to access or manage Microsoft Teams channels.</description>
+      <category>Microsoft Teams</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">TM1462874</guid>
+      <pubDate>Thu, 27 Aug 2026 20:05:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Power BI] Some users may experience intermittent failures or delays when accessing Microsoft Power BI or Microsoft Fabric</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1462800</link>
+      <description>[Power BI] Users may have experienced intermittent failures or delays when accessing Microsoft Power BI or Microsoft Fabric.</description>
+      <category>Power BI</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">PB1462800</guid>
+      <pubDate>Thu, 27 Aug 2026 15:15:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Some admins may experience delays in Microsoft Defender for Endpoint detections</title>
@@ -26,6 +35,15 @@
       <pubDate>Wed, 26 Aug 2026 14:10:39 +0000</pubDate>
     </item>
     <item>
+      <title>[Microsoft Bookings] Users may have seen blank pages when opening Microsoft Bookings</title>
+      <link>https://www.aguidetocloud.com/service-health/#MB1462509</link>
+      <description>[Microsoft Bookings] Users may have seen blank pages when opening Microsoft Bookings.</description>
+      <category>Microsoft Bookings</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MB1462509</guid>
+      <pubDate>Wed, 26 Aug 2026 04:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Teams] Users may be unable to use multiple Microsoft Teams features</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1461801</link>
       <description>[Microsoft Teams] Users may have been unable to use multiple Microsoft Teams features.</description>
@@ -33,15 +51,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1461801</guid>
       <pubDate>Wed, 26 Aug 2026 01:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Users may not see the controls in the file and media webpart for embedded PowerPoint files in SharePoint Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1461655</link>
-      <description>[SharePoint Online] Users may not see the controls in the file and media webpart for embedded PowerPoint files in SharePoint Online.</description>
-      <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">SP1461655</guid>
-      <pubDate>Tue, 25 Aug 2026 19:47:30 +0000</pubDate>
     </item>
     <item>
       <title>[SharePoint Online] Some users may not receive results when searching on SharePoint Online sites</title>
@@ -114,15 +123,6 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CP1458544</guid>
       <pubDate>Thu, 20 Aug 2026 21:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be unable to complete mailbox offboarding because the migration task is blocked and can’t finish</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1458145</link>
-      <description>[Exchange Online] Users may be unable to complete mailbox offboarding because the migration task is blocked and can’t finish.</description>
-      <category>Exchange Online</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">EX1458145</guid>
-      <pubDate>Thu, 20 Aug 2026 12:23:15 +0000</pubDate>
     </item>
     <item>
       <title>[SharePoint Online] Guest users were unable to access SharePoint Online sites connected to Microsoft Teams</title>
@@ -269,6 +269,15 @@
       <pubDate>Tue, 11 Aug 2026 23:14:25 +0000</pubDate>
     </item>
     <item>
+      <title>[Exchange Online] Users may be unable to complete mailbox offboarding because the migration task is blocked and can’t finish</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1458145</link>
+      <description>[Exchange Online] Users may have been unable to complete mailbox offboarding because the migration task is blocked and couldn’t finish.</description>
+      <category>Exchange Online</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">EX1458145</guid>
+      <pubDate>Tue, 11 Aug 2026 01:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft Teams] Admins may have seen that information in the Auto attendant tab wasn't populating results in the Teams Admin Center </title>
       <link>https://www.aguidetocloud.com/service-health/#TM1453882</link>
       <description>[Microsoft Teams] Admins may have seen that information in the Auto attendant tab wasn't populating results in the TAC.</description>
@@ -339,6 +348,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1448902</guid>
       <pubDate>Thu, 06 Aug 2026 07:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[SharePoint Online] Users may not see the controls in the file and media webpart for embedded PowerPoint files in SharePoint Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1461655</link>
+      <description>[SharePoint Online] Users may not see the controls in the file and media webpart for embedded PowerPoint files in SharePoint Online.</description>
+      <category>SharePoint Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">SP1461655</guid>
+      <pubDate>Wed, 05 Aug 2026 22:29:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users' Microsoft 365 Copilot Analyst and Researcher agents may open a new chat window instead of the agents</title>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1442034</guid>
       <pubDate>Wed, 29 Jul 2026 07:29:23 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may be unable to access Copilot Cowork from the Cowork toggle in Microsoft 365 Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1442025</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access Copilot Cowork from the Cowork toggle in Copilot.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1442025</guid>
-      <pubDate>Wed, 29 Jul 2026 07:10:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users attempting to view their Microsoft Teams contact lists may experience latency</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1462514</link>
-      <description>[Microsoft Teams] Users attempting to view their Microsoft Teams contact lists may experience latency.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1462514</guid>
-      <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
