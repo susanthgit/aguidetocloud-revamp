@@ -199,20 +199,6 @@
     {{ end }}
     <script>var BLOG_POSTS = {{ $postData | jsonify | safeJS }};</script>
 
-    {{/* Newsletter — readers who scrolled to the end are most likely to subscribe */}}
-    <section class="zh-newsletter" style="margin-top: 64px;">
-      <h2 class="zh-section-title">Stay in the loop</h2>
-      <p class="zh-newsletter-desc">Cloud &amp; AI insights, every Sunday — in 2 minutes. Free.</p>
-      <form class="zh-newsletter-form" id="blog-newsletter-form" aria-label="Newsletter signup">
-        <input type="email" id="blog-newsletter-email" placeholder="your@email.com" required autocomplete="email" aria-label="Email address" class="zh-newsletter-input">
-        <button type="submit" class="zh-newsletter-btn">Subscribe</button>
-      </form>
-      <div class="zh-newsletter-success" id="blog-newsletter-success" hidden>
-        <p>You're in — check your inbox to confirm.</p>
-      </div>
-      <p class="zh-newsletter-trust">No spam. Unsubscribe anytime.</p>
-    </section>
-
   </div>
 
   {{/* ── RIGHT: Companion sidebar ── */}}
@@ -364,26 +350,6 @@
       applyPopular();
     })
     .catch(function(){ /* pill is additive — silence is the correct failure */ });
-})();
-</script>
-
-{{/* Newsletter signup JS — mirrors homepage pattern */}}
-<script>
-(function() {
-  var form = document.getElementById('blog-newsletter-form');
-  if (!form) return;
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var email = document.getElementById('blog-newsletter-email').value.trim();
-    if (!email) return;
-    var btn = form.querySelector('button');
-    if (btn) { btn.disabled = true; btn.textContent = 'Subscribing...'; }
-    window.open('https://guided-weekly.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank', 'width=500,height=600');
-    setTimeout(function() {
-      form.hidden = true;
-      document.getElementById('blog-newsletter-success').hidden = false;
-    }, 1500);
-  });
 })();
 </script>
 
