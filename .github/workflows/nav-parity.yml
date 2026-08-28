@@ -50,7 +50,16 @@ on:
   # to sit off the scheduler's peak-minute stampede.
   schedule:
     - cron: '7,37 * * * *'
+  # A fire drill. An alarm that has never fired is indistinguishable from a broken
+  # one, and this repo has two documented cases of a monitor reporting success
+  # forever off a stale selector. Leave empty for a real check.
   workflow_dispatch:
+    inputs:
+      force_state:
+        description: 'Fire drill: force a state to prove the alarm actually fires'
+        type: choice
+        options: ['', 'mismatch', 'harness']
+        default: ''
 
 concurrency:
   group: nav-parity
@@ -94,7 +103,25 @@ jobs:
 
       - name: Compare rendered production navs
         id: parity
+        env:
+          # Via env, never inline ${{ }}, so the value can never be interpolated
+          # into the shell source itself.
+          FORCE_STATE: ${{ inputs.force_state }}
         run: |
+          # Fire drill: skip the live probe and assert a state, to prove the alerting
+          # path downstream actually works. Empty on every push and cron run.
+          if [ -n "${FORCE_STATE:-}" ]; then
+            echo "🧪 FIRE DRILL — forcing state=$FORCE_STATE, no live probe performed."
+            {
+              echo 'detail<<PARITY_EOF'
+              echo 'FIRE DRILL. This is a deliberate test of the alerting path.'
+              echo 'The navs were NOT compared. Close this issue.'
+              echo 'PARITY_EOF'
+            } >> "$GITHUB_OUTPUT"
+            echo "state=$FORCE_STATE" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
           # Retry across a normal deploy skew: a correctly coordinated nav change is
           # legitimately divergent while guided rebuilds (~7 min). 8 attempts ≈ 8 min
           # outlasts that, so a coordinated change should not raise an alert at all.
