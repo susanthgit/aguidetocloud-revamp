@@ -5,16 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 27 Aug 2026 20:22:24 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 06:05:09 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft Teams] Users may be unable to access or manage Microsoft Teams channels</title>
+      <title>[Microsoft Teams] Users may be unable to access or manage some Microsoft Teams channels features</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1462874</link>
-      <description>[Microsoft Teams] Users may be unable to access or manage Microsoft Teams channels.</description>
+      <description>[Microsoft Teams] Users may have been unable to access or manage some Microsoft Teams channels features.</description>
       <category>Microsoft Teams</category>
-      <category>investigating</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">TM1462874</guid>
-      <pubDate>Thu, 27 Aug 2026 20:05:25 +0000</pubDate>
+      <pubDate>Thu, 27 Aug 2026 19:22:00 +0000</pubDate>
     </item>
     <item>
       <title>[Power BI] Some users may experience intermittent failures or delays when accessing Microsoft Power BI or Microsoft Fabric</title>
@@ -24,6 +24,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1462800</guid>
       <pubDate>Thu, 27 Aug 2026 15:15:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Some users with an active Microsoft Teams license may be unable to sign in to Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1462904</link>
+      <description>[Microsoft Teams] Users with an active Microsoft Teams license may have been unable to sign in to Microsoft Teams.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1462904</guid>
+      <pubDate>Thu, 27 Aug 2026 14:41:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Some admins may experience delays in Microsoft Defender for Endpoint detections</title>
@@ -48,7 +57,7 @@
       <link>https://www.aguidetocloud.com/service-health/#TM1461801</link>
       <description>[Microsoft Teams] Users may have been unable to use multiple Microsoft Teams features.</description>
       <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">TM1461801</guid>
       <pubDate>Wed, 26 Aug 2026 01:00:00 +0000</pubDate>
     </item>
@@ -57,7 +66,7 @@
       <link>https://www.aguidetocloud.com/service-health/#SP1461580</link>
       <description>[SharePoint Online] Users may not receive results when searching on SharePoint Online sites.</description>
       <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">SP1461580</guid>
       <pubDate>Tue, 25 Aug 2026 16:58:38 +0000</pubDate>
     </item>
@@ -66,7 +75,7 @@
       <link>https://www.aguidetocloud.com/service-health/#CW1461372</link>
       <description>[Microsoft 365 Copilot Chat] Users may be unable to receive responses when using Copilot Chat.</description>
       <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">CW1461372</guid>
       <pubDate>Mon, 24 Aug 2026 22:50:00 +0000</pubDate>
     </item>
@@ -352,9 +361,9 @@
     <item>
       <title>[SharePoint Online] Users may not see the controls in the file and media webpart for embedded PowerPoint files in SharePoint Online</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1461655</link>
-      <description>[SharePoint Online] Users may not see the controls in the file and media webpart for embedded PowerPoint files in SharePoint Online.</description>
+      <description>[SharePoint Online] Users may not have seen the controls in the file and media webpart for embedded PowerPoint files in SharePoint Online.</description>
       <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">SP1461655</guid>
       <pubDate>Wed, 05 Aug 2026 22:29:00 +0000</pubDate>
     </item>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1442650</guid>
       <pubDate>Wed, 29 Jul 2026 22:45:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may be unable to create or publish Microsoft Teams town hall or webinar events that include guest users</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1442034</link>
-      <description>[Microsoft Teams] Users may have been unable to create or publish Microsoft Teams town hall or webinar events that included guest users. </description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1442034</guid>
-      <pubDate>Wed, 29 Jul 2026 07:29:23 +0000</pubDate>
     </item>
   </channel>
 </rss>
