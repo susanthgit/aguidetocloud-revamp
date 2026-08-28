@@ -1,6 +1,146 @@
 {
   "articles": [
     {
+      "id": "8522423a9e388c512b32aadb19af3780",
+      "title": "Anthropic and OpenAI are joining the AI stage at TechCrunch Disrupt 2026",
+      "url": "https://techcrunch.com/2026/08/27/anthropic-and-openai-are-joining-the-ai-stage-at-techcrunch-disrupt-2026/",
+      "source": "TechCrunch AI",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-08-27T23:16:45+00:00",
+      "snippet": "At TechCrunch Disrupt 2026, the AI Stage is back to dig into the single hottest topic in the community for the past few years, presented by Google for Startups.",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/07/techcrunch-disrupt-2026-ai-stage.jpg?w=1200",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
+      "id": "56c4d26f0befed58cdaf390050dfa8b6",
+      "title": "Build agentic creative workflows with Amazon Quick and fal",
+      "url": "https://aws.amazon.com/blogs/machine-learning/build-agentic-creative-workflows-with-amazon-quick-and-fal/",
+      "source": "AWS Machine Learning Blog",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-08-27T23:04:22+00:00",
+      "snippet": "Creative teams produce more assets than ever, but fragmented tools and manual context transfer slow production. This post shows how to build a reusable agent harness with Amazon Quick and fal, connected through the Model Context Protocol (MCP), using two hands-on workflows: an eight-panel storyboard and a music-video concept prototype.",
+      "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/08/25/ML-21711-1.png",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
+      "id": "6f8c56dd69f7225f325343a4e3f6231a",
+      "title": "Cyborg cockroaches may soon deliver life-saving drugs to disaster victims",
+      "url": "https://www.theregister.com/offbeat/2026/08/27/cyborg-cockroaches-may-soon-deliver-life-saving-drugs-to-disaster-victims/5293081",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T23:00:00+02:00",
+      "snippet": "Just what you want crawling through the rubble to rescue you: A swarm of remote-controlled cockroaches with syringe-shooting guns strapped to their backs",
+      "image": "https://image.theregister.com/?imageId=5293085&width=800",
+      "ai_summary": "",
+      "published_display": "4h ago"
+    },
+    {
+      "id": "091a5224c8385feb655c3997c7ea9d61",
+      "title": "Copilot code review: Resolution reasons and expanded capabilities",
+      "url": "https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities",
+      "source": "GitHub Changelog",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-08-27T22:46:04+00:00",
+      "snippet": "Copilot code review can now review two types of pull requests it didn&#8217;t cover before: Reviews requested automatically on pull requests authored by bots, including Copilot cloud agent Very large&#8230;\nThe post Copilot code review: Resolution reasons and expanded capabilities appeared first on The GitHub Blog.",
+      "image": "https://github.com/user-attachments/assets/cf1701c4-1565-4aff-b802-575d080718c3",
+      "ai_summary": "",
+      "published_display": "2h ago"
+    },
+    {
+      "id": "f6de618ad9ec8d1f955aedcef7fc1ead",
+      "title": "Police investigating possible forgery at AFRINIC election",
+      "url": "https://www.theregister.com/networks/2026/08/27/police-investigating-possible-forgery-at-afrinic-election/5293100",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T22:38:04+02:00",
+      "snippet": "The regional internet registry is also trying to make it easier to terminate members",
+      "image": "https://image.theregister.com/?imageId=5292279&width=800",
+      "ai_summary": "",
+      "published_display": "4h ago"
+    },
+    {
+      "id": "6c18adb71dfb52263b6f19de6646d28f",
+      "title": "Actions retention will cover checks, workflow runs, and statuses",
+      "url": "https://github.blog/changelog/2026-08-27-actions-retention-will-cover-checks-workflow-runs-and-statuses",
+      "source": "GitHub Changelog",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-08-27T21:50:39+00:00",
+      "snippet": "Starting October 1, 2026, checks, workflow runs, and statuses will be governed by the same Actions retention setting that already controls how long artifacts and logs are kept, with a&#8230;\nThe post Actions retention will cover checks, workflow runs, and statuses appeared first on The GitHub Blog.",
+      "image": "https://github.blog/wp-content/uploads/2026/08/image-16.jpg",
+      "ai_summary": "",
+      "published_display": "3h ago"
+    },
+    {
+      "id": "721b27e7c06efe6769be754f6dcf265f",
+      "title": "AI girlfriend review site's secrets were exposed to the world for three weeks",
+      "url": "https://www.theregister.com/security/2026/08/27/ai-girlfriend-review-sites-secrets-were-exposed-to-the-world-for-three-weeks/5293064",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T21:10:32+02:00",
+      "snippet": "Even testing and staging sites need protection from prying eyes",
+      "image": "https://image.theregister.com/?imageId=5293075&width=800",
+      "ai_summary": "",
+      "published_display": "6h ago"
+    },
+    {
+      "id": "e4f2f5d75207001c8cd4286364375694",
+      "title": "AI Agents Are Hacking Systems. Could That Push the US and China to Cooperate?",
+      "url": "https://www.wired.com/story/ai-agents-hacking-systems-could-push-the-us-and-china-to-cooperate/",
+      "source": "Wired AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T21:08:34+00:00",
+      "snippet": "This week on “Uncanny Valley,” senior writer Will Knight talks his recent visit to China and the future of AI collaboration.",
+      "image": "https://media.wired.com/photos/6a8f6fdecc498c3752a8bb2c/master/pass/Uncanny-Valley-China-US-AI-Race-Business-2286901730.jpg",
+      "ai_summary": "",
+      "published_display": "4h ago"
+    },
+    {
+      "id": "6b4d442c667c8fd44451a96a291d626c",
+      "title": "Google forces Android apps to use memory more wisely as RAMpocalypse rages",
+      "url": "https://www.theregister.com/software/2026/08/27/google-forces-android-apps-to-use-memory-more-wisely-as-rampocalypse-rages/5293071",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T21:07:58+02:00",
+      "snippet": "No one can afford RAM anymore, so we're requiring devs to mind memory usage",
+      "image": "https://image.theregister.com/?imageId=5293078&width=800",
+      "ai_summary": "",
+      "published_display": "6h ago"
+    },
+    {
+      "id": "979ff522d5138a515409267fe8dcb9cd",
+      "title": "Lawsuit says Oura sleep tracking has 'a coin flip's chance of being correct'",
+      "url": "https://www.zdnet.com/article/lawsuit-says-oura-sleep-tracking-has-a-coin-flips-chance-of-being-correct/",
+      "source": "ZDNet AI",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-08-27T21:06:00+00:00",
+      "snippet": "The class action lawsuit claims that Oura's sleep-tracking mechanisms sell 'faulty AI-based inference as reliable science.'",
+      "image": "https://www.zdnet.com/a/img/resize/2585e420b23dcfbe20e26f95009510d5da9b5ac3/2026/05/27/14322f9f-76e3-4684-a821-387d12dd2a3f/oura-ring-5-lifestyle-6-gold.png?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
+      "ai_summary": "",
+      "published_display": "4h ago"
+    },
+    {
       "id": "eae3b8b505d07000d2ef897f83cbb943",
       "title": "Introducing Credentio: Open Source C++ Library for C2PA Content Credentials from Google",
       "url": "https://developers.googleblog.com/introducing-credentio-open-source-c-library-for-c2pa-content-credentials-from-google/",
@@ -12,7 +152,7 @@
       "snippet": "Credentio is a newly released, open-source C++ library from Google that allows developers to integrate high-performance, local-first validation of C2PA Content Credentials into their client and server applications. By processing assets entirely locally with a highly optimized memory footprint, the library delivers instant validation verdicts for multi-gigabyte media files without incurring cloud latency, bandwidth costs, or data privacy risks. The library currently features deep manifest parsing",
       "image": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/credentio-hero-updated.2e16d0ba.fill-1200x600.png",
       "ai_summary": "",
-      "published_display": "1m ago"
+      "published_display": "4h ago"
     },
     {
       "id": "b54dc19dcdf44e9ae53d4fa7ccce7c35",
@@ -26,7 +166,7 @@
       "snippet": "HeyGen ported their 18B+ parameter Avatar IV video generation model to Google Cloud's Trillium (v6e) TPUs via torchax and XLA, utilizing FSDP and Ulysses sequence parallelism across an eight-chip mesh. To achieve a 1.86x speedup for real-time streaming, the engineering team pipelined exposed all-to-all collectives, aligned sparse attention block sizes to eliminate mask padding, and bypassed softmax serial dependencies using a precomputed Cauchy-Schwarz upper bound. These custom Pallas kernel and",
       "image": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_Generated_Image_r23vqnr23v.2e16d0ba.fill-1200x600.jpg",
       "ai_summary": "",
-      "published_display": "1m ago"
+      "published_display": "4h ago"
     },
     {
       "id": "f8ae42bde4af5b5b729a7f0547195429",
@@ -40,7 +180,7 @@
       "snippet": "Astroparticle physics sits at the exciting intersection of astrophysics and particle physics and stu...",
       "image": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image_1_l7IVARL.2e16d0ba.fill-1200x600.png",
       "ai_summary": "",
-      "published_display": "1m ago"
+      "published_display": "4h ago"
     },
     {
       "id": "d7dc8a68bcb314b7fbe2e1ead46c5bef",
@@ -54,7 +194,21 @@
       "snippet": "Zoph, who co-founded Thinking Machines Lab alongside Mira Murati and also served as the startup's CTO, led a brief stint at OpenAI and is now at Google.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/06/google-logo.jpg?resize=1200,800",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
+    },
+    {
+      "id": "ef065f60de77de5762f12e84d5155a94",
+      "title": "Barret Zoph, the Thinking Machines co-founder ousted before joining OpenAI, is now at Google",
+      "url": "https://techcrunch.com/2026/08/27/barret-zoph-the-thinking-machines-co-founder-who-defected-to-openai-is-now-at-google/",
+      "source": "TechCrunch AI",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-08-27T19:52:52+00:00",
+      "snippet": "Zoph, who co-founded Thinking Machines Lab alongside Mira Murati and also served as the startup's CTO, led a brief stint at OpenAI and is now at Google.",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/06/google-logo.jpg?resize=1200,800",
+      "ai_summary": "",
+      "published_display": "5h ago"
     },
     {
       "id": "e653c67a266c04a91713d3dcd412b75e",
@@ -68,7 +222,21 @@
       "snippet": "I knew I’d officially become a ‘longevity influencer’ this month when a company called Generation Lab reached out to offer me the chance to write about—and even receive—their new rejuvenation treatment,&#160;an injectable combination of two existing drugs which they call 1-Generation. This wasn’t just any antiaging treatment, either. A company fact sheet says that it&#8230;",
       "image": "https://wp.technologyreview.com/wp-content/uploads/2026/08/260824_youngblood_v2.jpg?resize=1200,600",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
+    },
+    {
+      "id": "09d575d422027e3ca1041f24adc56796",
+      "title": "Omarchy distro gains serious backing",
+      "url": "https://www.theregister.com/os-platforms/2026/08/27/omarchy-distro-gains-serious-backing/5293026",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T19:07:18+02:00",
+      "snippet": "Polarizing opinions while tech heavyweights put up $10M",
+      "image": "https://image.theregister.com/?imageId=5293055&width=800",
+      "ai_summary": "",
+      "published_display": "8h ago"
     },
     {
       "id": "1ef9c4698c31d3a3e95b13c685c972cd",
@@ -82,7 +250,7 @@
       "snippet": "The cameras on the Galaxy Z Fold 8 work best when they're pushed to their limits. Here are the settings I changed to get the best results.",
       "image": "https://www.zdnet.com/a/img/resize/300490d0a601e1d467d2995d48caf117e03a5e68/2026/08/07/17710a80-b8c1-4330-b80f-72d3cd3a7b94/samsung-galaxy-z-fold-8-main-camera-shots.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "a40c5b0346cf48c9cdf24afb48cb872c",
@@ -96,7 +264,35 @@
       "snippet": "Amazon Bedrock now supports the OpenAI GPT-5.6 models, Terra and Luna, in India with India geographic cross-Region inference. If you have local data processing requirements, you can now use these models at scale while Amazon Bedrock keeps inference requests and data within India.",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/08/24/ML-21755-1.png",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "6h ago"
+    },
+    {
+      "id": "21676e094221bfdb6069819077f1b5d4",
+      "title": "Introducing OpenAI models on Amazon Bedrock for in-country inferencing in India",
+      "url": "https://aws.amazon.com/blogs/machine-learning/introducing-openai-models-on-amazon-bedrock-for-in-country-inferencing-in-india/",
+      "source": "AWS Machine Learning Blog",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-08-27T18:36:08+00:00",
+      "snippet": "Amazon Bedrock now supports the OpenAI GPT-5.6 models, Terra and Luna, in India with India geographic cross-Region inference. If you have local data processing requirements, you can now use these models at scale while Amazon Bedrock keeps inference requests and data within India.",
+      "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/08/24/ML-21755-1.png",
+      "ai_summary": "",
+      "published_display": "6h ago"
+    },
+    {
+      "id": "a017c6f15ace4c10a9534b885b53dfc5",
+      "title": "Hugging Face offers $399 robot duck to help you quack the AI code",
+      "url": "https://www.theregister.com/ai-and-ml/2026/08/27/hugging-face-offers-399-robot-duck-to-help-you-quack-the-ai-code/5293011",
+      "source": "The Register AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T18:25:07+02:00",
+      "snippet": "Microduck from Pollen Robotics runs on open source software, is just 25cm tall, and is ready to play out of the box",
+      "image": "https://image.theregister.com/?imageId=5293032&width=800",
+      "ai_summary": "",
+      "published_display": "8h ago"
     },
     {
       "id": "32be97a43e195c5fd0697d623d6dd323",
@@ -110,7 +306,7 @@
       "snippet": "After an affair with a fellow police officer ended, a Georgia cop used Flock to track her movements—and those of a man whose vehicle often showed up near hers, internal investigation records show.",
       "image": "https://media.wired.com/photos/6a8d9086ba467cf540f2c239/master/pass/082526_Flock-Camera-Stalking-Police.jpg",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "74f26f1a9f34086d4507c5f395b81513",
@@ -124,7 +320,7 @@
       "snippet": "The potential for AI to automate scientific research and manufacturing must be balanced with new risks, Anthropic says.",
       "image": "https://media.wired.com/photos/6a906eb1933ab0cdef306043/master/pass/Anthropic-Releases-Tool-To-Let-AI-Agents-Loose-Business-2192443120.jpg",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "2dd07f03e5f7159ccddfcb6ea22aeedd",
@@ -138,7 +334,7 @@
       "snippet": "Some of the world's largest tech companies and AI startups have come together to decry the current state of cybersecurity and to advertise a new solution that they say can ward off a new generation of cyber threats.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/03/claude-app-centered-in-ai-apps-GettyImages-2167861906.jpg?resize=1200,801",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "f46e55e2b273e216f8fc12e6b5f6b12f",
@@ -152,7 +348,7 @@
       "snippet": "Code reviewed by WIRED reveals the company is developing a feature that enables Codex to continue working proactively until it is “put to sleep.”",
       "image": "https://media.wired.com/photos/6a905cdd60f4c0fdadcc5237/master/pass/Model-Behavior-Illo-Template.jpg",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "5ba483655d48173440720d0872433914",
@@ -166,7 +362,7 @@
       "snippet": "Snag the HP OmniBook 3 16-inch laptop for under $700, plus get a 43-inch Toshiba smart TV for just $99 when you bundle at Best Buy.",
       "image": "https://www.zdnet.com/a/img/resize/df07d0f01b056e79fe73f1656c7ffc0e44ae0123/2026/08/27/54dc028a-d310-4ab2-84f7-a4cae7df9b07/hp-omnibook-3.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "6dc480438e145fe39c2937e42b0b1784",
@@ -180,7 +376,7 @@
       "snippet": "Apple's new toxic hellstew is a battle over regulation, litigation, and keeping your data safe.",
       "image": "https://www.zdnet.com/a/img/resize/d0bf602923c8ee47a7da863d37462d1894c407a6/2026/08/27/c353ab51-4638-4cf6-bf58-ea2ab1ecaa9b/tim-cook-frame.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "5161686eb5fe2c934b4ff6a6bab5bd55",
@@ -194,7 +390,7 @@
       "snippet": "You can now automatically close all open issues, discussions, and pull requests authored by a user when you block them from your personal account or organization. To use this option,&#8230;\nThe post Close all open contributions authored by a blocked user appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/uploads/2026/08/Changelog_Improvement_Unfurl_LeftAlign_BlockedUserCloseOpenContributions-copy.jpeg",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "f9c7a349ec8e8bdd45c163c826003072",
@@ -208,7 +404,7 @@
       "snippet": "Self-hosted speech AI carries an observability trade-off: the numbers that drive capacity planning and cost management stay locked inside the vendor container. Deepgram closes that gap on Amazon SageMaker AI with two capabilities that land billing, usage, and per-GPU metrics directly in your own Amazon CloudWatch account.",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/08/21/ML-21597-1.png",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "9h ago"
     },
     {
       "id": "84d3f4dd9a4bcd4213915293a73771ea",
@@ -222,7 +418,7 @@
       "snippet": "Serving automatic speech recognition (ASR) models at scale is costly when each request uses only a fraction of a GPU. Learn how NVIDIA CUDA Multi-Process Service (MPS) with NVIDIA Triton Inference Server on Amazon EC2 GPU instances cuts GPU infrastructure by 75% while holding sub-second latency at 92.1 requests per second per GPU.",
       "image": "https://s.w.org/images/core/emoji/14.0.0/72x72/2122.png",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "9h ago"
     },
     {
       "id": "3b6560f298853b7fc898c17e48a3b4a4",
@@ -236,7 +432,7 @@
       "snippet": "Low-skill hacktivists are now 'enabled with the same tooling and sophistication as a state-sponsored group,' according to cybersecurity consultant Unit 42.",
       "image": "https://www.zdnet.com/a/img/resize/bbfaac58daeb1ef8fd5e554d4a46f4d8798bdf57/2026/08/27/a04ae3e2-7149-473c-b6a7-067e8b72ee87/glowing-keyboardgettyimages-2210577818.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "9h ago"
     },
     {
       "id": "e45da3335883eb0e7b6daeb9e59bea87",
@@ -250,7 +446,7 @@
       "snippet": "The Bravia 6 OLED TV is a new entry-level option in a variety of screen sizes.",
       "image": "https://www.zdnet.com/a/img/resize/99694c08e34ce6b4cba4e5fda513974947b785fe/2026/08/26/2f32aff2-b667-4264-9239-d082e1ab88aa/260618-bravia-6-lifestyle-4d-wm-1.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "9h ago"
     },
     {
       "id": "ae9828bf517d5fcebfef6496e328224a",
@@ -264,7 +460,7 @@
       "snippet": "The updates indicate that Google is looking to position AI Mode as an AI travel agent of sorts, as it's moving beyond simply helping users find information to actually handling parts of the trip-planning and booking process.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/01/ai-mode-google.jpg?resize=1200,800",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "9h ago"
     },
     {
       "id": "46b95847214860d2a03677c2d53fe4b9",
@@ -278,7 +474,7 @@
       "snippet": "OpenClaw is the fastest-growing project in GitHub history. Peter Steinberger and several maintainers share what they learned in the project's first six months.\nThe post OpenClaw went viral. Meet the maintainers building and securing it. appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/uploads/2026/02/header.jpg?resize=1024%2C538",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "9h ago"
     },
     {
       "id": "01973ee23ffc68329a58308f1f56e2c2",
@@ -292,7 +488,7 @@
       "snippet": "Graphic depicting new travel features for AI Mode in Search",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Search_Travel_Blog_Hero_8.27.max-600x600.format-webp.webp",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "9h ago"
     },
     {
       "id": "d4bf3ea8aca706d2724b5cd27541128d",
@@ -306,7 +502,7 @@
       "snippet": "Google's AI note-taking app, Gemini Notebook, can now pull information from the books you've purchased. The new \"Expert Intelligence\" feature allows you to bring titles from Google Play Books directly into Gemini Notebook, which means you can ask questions about the material, as well as generate plans, infographics, AI podcasts, and more based on their [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/Expert-Intelligence-Hero.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "955600c645fe9265574bea93fc0af93f",
@@ -320,7 +516,7 @@
       "snippet": "Clem Delangue, CEO of Hugging Face, said the Microduck is an “open-source robot you can teach new tricks with reinforcement learning.”",
       "image": "https://techcrunch.com/wp-content/uploads/2026/08/microduck-morning.jpg?resize=1200,750",
       "ai_summary": "",
-      "published_display": "5h ago"
+      "published_display": "10h ago"
     },
     {
       "id": "8c41f69db36c18e02a10207fb7c5d54a",
@@ -334,7 +530,7 @@
       "snippet": "Track record is merely desirable for the person tasked with shaping UK.gov's skills blueprint for 550,000 civil servants",
       "image": "https://image.theregister.com/?imageId=5240076&width=800",
       "ai_summary": "",
-      "published_display": "10h ago"
+      "published_display": "14h ago"
     },
     {
       "id": "6cb292dcfbb1b87ef14b8eb3efd15bf7",
@@ -348,7 +544,7 @@
       "snippet": "On Nvidia's earnings call Wednesday, CEO Jensen Huang casually announced the company had \"achieved AGI,\" one of the tech industry's ultimate goals some of its biggest players have spent years chasing. Almost immediately, Huang dismissed the coveted milestone as \"senseless.\" He's right. For the supposed finish line of the AI race, there is no consensus [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/STKP210_JENSEN_HUANG_D.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "9h ago"
     },
     {
       "id": "62c475bcda6299b9b6ba3e2f4c41439b",
@@ -362,7 +558,7 @@
       "snippet": "Plus: new official Amiga-branded hardware is coming",
       "image": "https://image.theregister.com/?imageId=5217992&width=800",
       "ai_summary": "",
-      "published_display": "10h ago"
+      "published_display": "15h ago"
     },
     {
       "id": "e8be7e23cc0105cce436f21392a14269",
@@ -376,7 +572,7 @@
       "snippet": "Somebody might be aware, but does anyone care?",
       "image": "https://image.theregister.com/?imageId=5292357&width=800",
       "ai_summary": "",
-      "published_display": "11h ago"
+      "published_display": "16h ago"
     },
     {
       "id": "26c6f9bcd71fca81de919be5c212d3b6",
@@ -390,7 +586,7 @@
       "snippet": "You have questions about data centers, and WIRED has answers. Join our livestream on September 10 and our panel of experts will tell you everything you need to know.",
       "image": "https://media.wired.com/photos/6a8f77afa84e455f12fd9a48/master/pass/livestream_ama_data_centers.jpg",
       "ai_summary": "",
-      "published_display": "9h ago"
+      "published_display": "14h ago"
     },
     {
       "id": "29f6bab5ecea164f80d846ef2c683dc4",
@@ -404,7 +600,7 @@
       "snippet": "F- for AI in test of reducing burden of teacher workload",
       "image": "https://image.theregister.com/?imageId=235977&width=800",
       "ai_summary": "",
-      "published_display": "12h ago"
+      "published_display": "16h ago"
     },
     {
       "id": "bbd4bd1884855af43e9ee6cfbe918c0e",
@@ -418,7 +614,49 @@
       "snippet": "The Relay Q, due next year, is the latest attempt to reposition voice as the most seamless method for human-computer interaction.",
       "image": "https://media.wired.com/photos/6a8effc5f304a7db06ecb9ee/master/pass/118.jpg",
       "ai_summary": "",
-      "published_display": "10h ago"
+      "published_display": "14h ago"
+    },
+    {
+      "id": "afd35a1080d887009f71124a21f1e006",
+      "title": "Is Slate Auto’s new electric truck the EV Americans need?",
+      "url": "https://www.technologyreview.com/2026/08/27/1142953/electric-truck-slate-auto/",
+      "source": "MIT Technology Review",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T10:00:00+00:00",
+      "snippet": "EVs account for under 10% of total new-vehicle sales in the US, and the numbers are declining. From a climate perspective, that’s pretty dismal, especially because the transportation sector is the single biggest source of greenhouse-gas emissions in the country.&#160; One thing that could help turn that around? Slate Auto’s new truck—a vehicle that seems&#8230;",
+      "image": "https://wp.technologyreview.com/wp-content/uploads/2026/08/Slate-Press-Kit-9.jpg?resize=1200,600",
+      "ai_summary": "",
+      "published_display": "15h ago"
+    },
+    {
+      "id": "8901d812957d000af919473f8c0ce1cc",
+      "title": "Hugging Face’s new robot is an adorable rollerskating duck",
+      "url": "https://www.theverge.com/gadgets/985549/hugging-face-microduck-robot",
+      "source": "The Verge AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T09:44:00-04:00",
+      "snippet": "Hugging Face's Pollen Robotics has launched its second cute AI robot, the Microduck, a one-eyed biped standing just under 10 inches tall. It's available to preorder now for $399 in cream, graphite, lavender, and sky blue, and Pollen Robotics says it plans to start shipping the little robot \"before Christmas 2026.\" Video demos of the [&#8230;]",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/microduck-kickabout.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "ai_summary": "",
+      "published_display": "11h ago"
+    },
+    {
+      "id": "d3e1622552e8bccf8d44c7a08b04f53b",
+      "title": "Plaud is launching AI earbuds",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/985500/plaud-one-earbuds-ai-recorder-price-availability",
+      "source": "The Verge AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T09:11:23-04:00",
+      "snippet": "Plaud has introduced a new AI wearable that's designed to record, transcribe, and summarize your conversations, only this time it looks like earbuds instead of a pin. The Plaud One Explorer Edition can be worn like traditional earbuds or used through its standalone charging case, and the case includes built-in 4G to upload and process [&#8230;]",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/08/Plaud-One-earbuds-hero.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "ai_summary": "",
+      "published_display": "12h ago"
     },
     {
       "id": "319e14b67b42d892037f4848d58b3e8c",
@@ -432,7 +670,7 @@
       "snippet": "The right case can take your iPad Air to the next level. These are our favorite iPad Air cases from brands like Apple, Burga, and Logitech.",
       "image": "https://www.zdnet.com/a/img/resize/fe41bef60d3b6c76fdd3e981ef57e696803404ce/2026/03/06/559606b7-9637-419c-bc7a-82c244619bea/5.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "11h ago"
+      "published_display": "16h ago"
     },
     {
       "id": "a62cc53c703a94adbc60245cfd526f62",
@@ -446,7 +684,7 @@
       "snippet": "A randomized study of more than 1,000 students examines ChatGPT, critical thinking, originality, and student performance on a real-world university assignment.",
       "image": "https://images.ctfassets.net/kftzwdyauwt9/6ZXqBy6YHRAp7pZUlmTbKY/c5520708839c4add08cde7eb2346041f/what-students-gain-chatgpt-critical-thinking--seo-clean-edges-v3.png?w=1600&amp;h=900&amp;fit=fill",
       "ai_summary": "",
-      "published_display": "11h ago"
+      "published_display": "16h ago"
     },
     {
       "id": "70ddb189ef695342575cc6c6c471487c",
@@ -460,7 +698,7 @@
       "snippet": "OpenAI is expanding its presence in Brazil, deepening engagement with developers, businesses, and communities to support AI adoption across the country.",
       "image": "https://images.ctfassets.net/kftzwdyauwt9/aTwwaL7kNgJy1xpWi5g9W/1146e375c7b1d69653ce659acfd9c409/expanding-openai-presence-in-brazil-seo.png?w=1600&amp;h=900&amp;fit=fill",
       "ai_summary": "",
-      "published_display": "17h ago"
+      "published_display": "22h ago"
     },
     {
       "id": "d98d4e4078f18c7e9149b0e2bfa2e86d",
@@ -474,7 +712,805 @@
       "snippet": "Biz describes its act of automated irresponsibility as 'a warning shot'",
       "image": "https://image.theregister.com/?imageId=255325&width=800",
       "ai_summary": "",
-      "published_display": "21h ago"
+      "published_display": "Aug 27, 01:45"
+    },
+    {
+      "id": "f04f9e14b57bf546dadbfba4359106c3",
+      "title": "grok-bot-os added to PyPI",
+      "url": "https://pypi.org/project/grok-bot-os/",
+      "source": "Pypi.org",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-08-27T01:14:30+00:00",
+      "snippet": "Operating system for Grok Bot teams: slow-burn Health A queue. Not the testing-os dogfood-swarm CLI.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 27, 01:14"
+    },
+    {
+      "id": "20c4f28ddf26f327a0b54e67e6c022f1",
+      "title": "CNBC Daily Open: Nvidia is selling more shovels than ever in the AI gold rush",
+      "url": "https://www.cnbc.com/2026/08/27/cnbc-daily-open-nvidia-ai-results.html",
+      "source": "CNBC",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-08-27T01:11:30+00:00",
+      "snippet": "Nvidia reported results that beat expectations, but it also expects revenue to grow another 70% in fiscal 2028.",
+      "image": "https://image.cnbcfm.com/api/v1/image/108354636-1787762833729-gettyimages-2291592328-2026_aug_26_nvidia_0293.jpeg?v=1787762914&w=1920&h=1080",
+      "ai_summary": "",
+      "published_display": "Aug 27, 01:11"
+    },
+    {
+      "id": "4fc3d50d4643fcee4a62e276ba94f488",
+      "title": "Xbox Disc-to-Digital Launch Confirms All-Digital Helix Console",
+      "url": "https://www.techpowerup.com/352011/xbox-disc-to-digital-launch-confirms-all-digital-helix-console",
+      "source": "Techpowerup.com",
+      "category_id": "rumours",
+      "category_name": "Rumours & Gossip",
+      "category_emoji": "🗣️",
+      "published": "2026-08-27T01:11:00+00:00",
+      "snippet": "A new disc-to-digital attestation program has long been rumored to be launching around the time of the next-gen Xbox Helix game console, but, confirming the most recent leaks, Xbox's Jason Ronald, VP of Next Generation, has announced the launch of the disc-to…",
+      "image": "https://www.techpowerup.com/img/lzvvRxFnWLsEVzjU.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 01:11"
+    },
+    {
+      "id": "68bcf583cfbbf372dc6aac69941dfbf3",
+      "title": "Xbox Launches Disc-to-Digital Program Effectively Confirming All-Digital Helix Console",
+      "url": "https://www.techpowerup.com/352011/xbox-launches-disc-to-digital-program-effectively-confirming-all-digital-helix-console",
+      "source": "Techpowerup.com",
+      "category_id": "rumours",
+      "category_name": "Rumours & Gossip",
+      "category_emoji": "🗣️",
+      "published": "2026-08-27T01:11:00+00:00",
+      "snippet": "A new disc-to-digital attestation program has long been rumored to be launching around the time of the next-gen Xbox Helix game console, but, confirming the most recent leaks, Xbox's Jason Ronald, VP of Next Generation, has announced the launch of the disc-to…",
+      "image": "https://www.techpowerup.com/img/lzvvRxFnWLsEVzjU.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 01:11"
+    },
+    {
+      "id": "8bb4a10afb168ab6333c4fd9d6ca77ea",
+      "title": "IM 885: Get on the Butter Box - Can Local AI Models Outperform Frontier Labs?",
+      "url": "https://twit.tv/shows/intelligent-machines/episodes/885",
+      "source": "Twit.tv",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-08-27T01:08:53+00:00",
+      "snippet": "With Apple and Nvidia unleashing hardware that makes powerful local AI a reality, this episode unpacks the tech arms race changing how we run models at home and in business. Are we witnessing the end of the GPU monopoly and the start of real AI independence?<…",
+      "image": "https://elroy.twit.tv/sites/default/files/images/episodes/2026/08/862739/hero/IM0885_Thumbnail.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 01:08"
+    },
+    {
+      "id": "b02afd64285e1f41d4d2dea093eff807",
+      "title": "Colin Walters: For agentic code execution, generic tools + skills and sandbox",
+      "url": "https://blog.verbum.org/2026/08/27/1936/",
+      "source": "Verbum.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-08-27T01:07:33+00:00",
+      "snippet": "If your agentic workload involves the agent being able to run arbitrary code\n(like bash or equivalent), then you should not use a “LLM as part of your\napp” framework like LangChain,\nBeeAI,\nOGX etc. Instead, run OpenCode, goose, or another general coding agent…",
+      "image": "https://s0.wp.com/i/blank.jpg?m=1383295312i",
+      "ai_summary": "",
+      "published_display": "Aug 27, 01:07"
+    },
+    {
+      "id": "cb2b41616214daa747e5087c190ea5a4",
+      "title": "China open-source AI usage hits record high as DeepSeek leads",
+      "url": "https://www.digitimes.com/news/a20260827PD201/deepseek-data-openai-development-cybersecurity.html",
+      "source": "Digitimes",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-08-27T01:03:20+00:00",
+      "snippet": "China's open-weight AI models have surged in usage and have now overtaken proprietary models for the first time. South China Morning Post (SCMP), citing data from US web development platform Vercel, reported that on August 25, Chinese open-weight AI models ac…",
+      "image": "https://img.digitimes.com/newsshow/20260827pd201_files/1_2b.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 01:03"
+    },
+    {
+      "id": "e12443efe5674064cdb63861309de547",
+      "title": "nuguard v0.9.1",
+      "url": "https://kitploit.com/en/posts/github-nuguardai-nuguard-v091",
+      "source": "Kitploit.com",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-08-27T01:02:03+00:00",
+      "snippet": "opensource repo for validating agentic AI applications: redteam, behavior, supply-chain, static analysis",
+      "image": "https://assets.kitploit.com/production/public/tools/7608/858921fdfd95c4d3446110d971699bdc7ff1b13dad985932b649e8361688b64b.png",
+      "ai_summary": "",
+      "published_display": "Aug 27, 01:02"
+    },
+    {
+      "id": "179ea7e5b2202826fc2e234665233682",
+      "title": "AWS, Nvidia expand AI partnership with plan for 2 million more GPUs",
+      "url": "https://www.digitimes.com/news/a20260827VL201/nvidia-amazon-aws-partnership-infrastructure.html",
+      "source": "Digitimes",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-08-27T01:00:31+00:00",
+      "snippet": "Amazon Web Services (AWS) and Nvidia are expanding their collaboration to add millions of GPUs and new infrastructure for agentic and physical AI. The move signals rising global demand for advanced computing, with implications for cloud customers, governments…",
+      "image": "https://img.digitimes.com/newsshow/20260827vl201_files/2_2b.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 01:00"
+    },
+    {
+      "id": "6db622aa008eae9183da265b4f9a051d",
+      "title": "株式会社NR、電話AIエージェント「BOTCHAN AICALL」導入で顧客接客から後処理までの自動対応完了率80%超えを実現",
+      "url": "https://prtimes.jp/main/html/rd/p/000000203.000015648.html",
+      "source": "Prtimes.jp",
+      "category_id": "microsoft",
+      "category_name": "Microsoft",
+      "category_emoji": "🟦",
+      "published": "2026-08-27T01:00:00+00:00",
+      "snippet": "[株式会社wevnal]\n[画像1: https://prcdn.freetls.fastly.net/release_image/15648/203/15648-203-f51f1c008abbf0d70c76407e0abf5978-1200x630.png?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&a...",
+      "image": "https://prcdn.freetls.fastly.net/release_image/15648/203/15648-203-f51f1c008abbf0d70c76407e0abf5978-1200x630.png?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+      "ai_summary": "",
+      "published_display": "Aug 27, 01:00"
+    },
+    {
+      "id": "475c200b5d7ce7439b0d3d068984d13f",
+      "title": "Georgia Power's contract with OpenAI approved; Latest approval part of portfolio of large-load contracts delivering approximately $950 million in annual savings beginning in 2029",
+      "url": "https://www.prnewswire.com/news-releases/georgia-powers-contract-with-openai-approved-latest-approval-part-of-portfolio-of-large-load-contracts-delivering-approximately-950-million-in-annual-savings-beginning-in-2029-302861080.html",
+      "source": "PRNewswire",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-08-27T01:00:00+00:00",
+      "snippet": "Large-load growth continues to provide benefits to customers with expected savings for Georgia Power customers to increase to $180 per year for the typical residential customer; Agreement builds on company's prior base rate freeze and overall reduction in rat…",
+      "image": "https://mmx.prnewswire.com/media/MS268159/Georgia-Power-v1-Logo.jpg?id=OA2915165&p=facebook",
+      "ai_summary": "",
+      "published_display": "Aug 27, 01:00"
+    },
+    {
+      "id": "53369708eb68554d878af7a80e676b06",
+      "title": "Nvidia CEO Says AI Is Already Productive, Not Just Promising",
+      "url": "https://www.pymnts.com/news/artificial-intelligence/2026/nvidia-ceo-says-ai-is-already-productive-not-just-promising/",
+      "source": "pymnts.com",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-08-27T00:56:10+00:00",
+      "snippet": "Artificial intelligence has moved past the hype stage, according to Nvidia’s CEO. Jensen Huang put it plainly on the company’s second quarter earnings call that “AI has reached its inflection point. It’s doing useful work. Its tokens are productive and profit…",
+      "image": "https://www.pymnts.com/wp-content/uploads/2026/01/Nvidia-AI-models11.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:56"
+    },
+    {
+      "id": "3cc59ff6762a28b80e5bd6af67e2db66",
+      "title": "Jensen Huang defends Nvidia's growing financial support for AI ecosystem, says 'the risk is low'",
+      "url": "https://www.cnbc.com/2026/08/26/jensen-huang-defends-nvidias-growing-financial-support-for-ai-ecosystem-says-the-risk-is-low-.html",
+      "source": "CNBC",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-08-27T00:53:55+00:00",
+      "snippet": "Nvidia CEO Jensen Huang defended the chipmaker’s growing role in financing AI companies, calling its investments a “once in a generation” opportunity.",
+      "image": "https://image.cnbcfm.com/api/v1/image/108314499-1780317997020-gettyimages-2278514699-TAIWAN_COMPUTEX.jpeg?v=1780318027&w=1920&h=1080",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:53"
+    },
+    {
+      "id": "015799a18650505e3b6a70bd346bcfa3",
+      "title": "nousergon-lib 0.124.91",
+      "url": "https://pypi.org/project/nousergon-lib/0.124.91/",
+      "source": "Pypi.org",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-08-27T00:48:36+00:00",
+      "snippet": "Shared utilities for the Nous Ergon (Crucible) modules: preflight, logging, ArcticDB, dates, decision capture, cost telemetry, Anthropic payload chokepoint, artifact freshness, windowed artifact resolution, RAG, agent schemas, SSM secrets, Telegram + SNS aler…",
+      "image": "https://pypi.org/static/images/og-card.00947198.webp",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:48"
+    },
+    {
+      "id": "d1ee86b4be01c98b974ba17b1bf10dcf",
+      "title": "Operation Bluebird Launches New Twitter",
+      "url": "https://slashdot.org/submission/17350262/operation-bluebird-launches-new-twitter",
+      "source": "Slashdot.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-08-27T00:47:38+00:00",
+      "snippet": "Operation Bluebird, the Virginia-based startup trying to revive the allegedly abandoned “Twitter” name and logo, announced Monday that it has launched its new social media network: Twitter.now. \"We are a small company, we have investors, and we have a product…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:47"
+    },
+    {
+      "id": "0ce1fd6f1f7162f1e1765c60322c4fc2",
+      "title": "Nvidia in talks to acquire Hugging Face in $13 billion deal, Business Insider reports",
+      "url": "https://www.channelnewsasia.com/business/nvidia-in-talks-acquire-hugging-face-in-13-billion-deal-business-insider-reports-6343911",
+      "source": "CNA",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-08-27T00:45:21+00:00",
+      "snippet": "Aug 26 : Nvidia has been in serious talks to acquire AI platform Hugging Face in a deal that would value the company at more than $13 billion, Business Insider reported on Wednesday, citing a person familiar with the matter. Reuters could not immediately veri…",
+      "image": "https://dam.mediacorp.sg/image/upload/s--p_O9aPK1--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-08-27T005217Z_1_LYNXMPEM7Q01K_RTROPTP_3_NVIDIA-JAPAN.JPG?itok=u8mjYonY",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:45"
+    },
+    {
+      "id": "e9534e5150e74a6c1932540645c366b6",
+      "title": "Nvidia agrees to buy Hugging Face for $12.9 billion, the Information reports",
+      "url": "https://www.channelnewsasia.com/business/nvidia-agrees-buy-hugging-face-129-billion-information-reports-6343911",
+      "source": "CNA",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-08-27T00:45:21+00:00",
+      "snippet": "Aug 26 : Nvidia has agreed to buy AI platform Hugging Face for $12.9 billion, The Information reported on Wednesday, citing a person with knowledge of the deal.Reuters could not immediately verify the report.",
+      "image": "https://dam.mediacorp.sg/image/upload/s--p_O9aPK1--/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-08-27T005217Z_1_LYNXMPEM7Q01K_RTROPTP_3_NVIDIA-JAPAN.JPG?itok=u8mjYonY",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:45"
+    },
+    {
+      "id": "9eb0c43b479ba8350d67b1c9c3a273c3",
+      "title": "Nvidia agrees to buy Hugging Face for US$12.9 billion: Report",
+      "url": "https://www.channelnewsasia.com/business/nvidia-hugging-face-buy-us129-billion-6343911",
+      "source": "CNA",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-08-27T00:45:00+00:00",
+      "snippet": "The Financial Times reported in January that Hugging Face last year rejected a US$500 million investment offer from Nvidia that would have valued it at US$7 billion.",
+      "image": "https://dam.mediacorp.sg/image/upload/s--h-8NPpqn--/c_crop,h_449,w_799,x_1,y_1/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2026-08-27T005217Z_1_LYNXMPEM7Q01K_RTROPTP_3_NVIDIA-JAPAN.JPG?itok=u8mjYonY",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:45"
+    },
+    {
+      "id": "4e58fab2db77068f8eddeb9c350641ed",
+      "title": "Anthropic Escalates Cloud Spending With $45 Billion Nscale Agreement",
+      "url": "https://biztoc.com/x/96940f50d76cdf8f",
+      "source": "Biztoc.com",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-08-27T00:39:08+00:00",
+      "snippet": "Anthropic has agreed to pay $45 billion to rent cloud computing power from neocloud company Nscale’s West Virginia data center, which is set to start operating in late 2027, Bloomberg reported Wednesday (Aug. 26), citing unnamed sources.\nThe six-year commitme…",
+      "image": "https://biztoc.com/cdn/995/og.png",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:39"
+    },
+    {
+      "id": "7a8756210e09286ce77ddefd2f0089d0",
+      "title": "Why Google's Rambler could come to every device",
+      "url": "https://biztoc.com/x/fc82df13cda77611",
+      "source": "Biztoc.com",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-08-27T00:38:42+00:00",
+      "snippet": "One of the most talked-about Google AI features from the Pixel 11 launch was Rambler, its highly effective speech-to-text feature. Now Google is spreading the tech that powers it.\nOn Wednesday, Googl...",
+      "image": "https://biztoc.com/cdn/fc82df13cda77611_s.webp",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:38"
+    },
+    {
+      "id": "8f56af93afd553a45a441d058135dfa7",
+      "title": "aicordon-langchain 0.1.1",
+      "url": "https://pypi.org/project/aicordon-langchain/0.1.1/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-08-27T00:38:41+00:00",
+      "snippet": "Check what an LLM is given for prompt injection: material at ingest, tool output, and the turn it answers",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:38"
+    },
+    {
+      "id": "5c917b6e4fc3d4f586009c75542d043e",
+      "title": "Viral AI startup Instinct has raised $350 million at a $2.5 billion valuation",
+      "url": "https://biztoc.com/x/42e186fcb61c37eb",
+      "source": "Biztoc.com",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-08-27T00:38:41+00:00",
+      "snippet": "Instinct, a startup founded only last year and helmed by a 23-year-old, has managed to ride the wave of AI enthusiasm toward a gargantuan valuation over the course of the summer.\nThe company, which offers an AI assistant that has inspired enthusiasm among its…",
+      "image": "https://biztoc.com/cdn/42e186fcb61c37eb_s.webp",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:38"
+    },
+    {
+      "id": "df8691c995fe826ffbe742f53547e61b",
+      "title": "Google Shifts AI Safety Unit out of DeepMind Lab to Global Affairs",
+      "url": "https://biztoc.com/x/80f8f2e3d4560fc6",
+      "source": "Biztoc.com",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-08-27T00:38:40+00:00",
+      "snippet": "Google is moving its “AI responsibility” unit out of Google DeepMind and into Google’s global affairs organization, the Wall Street Journal reported Wednesday (Aug. 26), citing an internal email.\nThe AI responsibility unit includes 90 people and has teams foc…",
+      "image": "https://biztoc.com/cdn/995/og.png",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:38"
+    },
+    {
+      "id": "a310b1f0f3f6badec47f4201254c29ba",
+      "title": "Nvidia has been in talks to acquire Hugging Face for more than $13 billion",
+      "url": "https://www.businessinsider.com/nvidia-in-talks-to-buy-hugging-face-13-billion-dollars-2026-8#article",
+      "source": "Business Insider",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-08-27T00:34:46+00:00",
+      "snippet": "Nvidia has held talks to acquire Hugging Face for more than $13 billion as the chip giant expands its AI dealmaking.",
+      "image": "https://i.insider.com/6a8f6dc43f7df8787cff40f7?width=1200&format=jpeg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:34"
+    },
+    {
+      "id": "9466ddf47c438168589802092e990034",
+      "title": "ET Startup Awards 2026 | Top Innovator: Deeptech startup Theranautilus’ micro robots score big win",
+      "url": "https://economictimes.indiatimes.com/tech/startups/tiny-robots-big-ambition-theranautilus-wins-top-innovator/articleshow/133546646.cms",
+      "source": "The Times of India",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-08-27T00:30:00+00:00",
+      "snippet": "Deeptech startup Theranautilus has won the Top Innovator award at the ET Startup Awards 2026 for its work on microscopic robots that can navigate the human body for targeted treatments. Founded in 2020, the Bengaluru-based startup is developing the technology…",
+      "image": "https://img.etimg.com/thumb/width-1200,height-900,imgsize-122242,resizemode-75,msid-133546646/tech/startups/tiny-robots-big-ambition-theranautilus-wins-top-innovator.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:30"
+    },
+    {
+      "id": "d3c055ff1137c5b56891722383d97b94",
+      "title": "Fifty shades of nifty growth: ETSA jury spots next giants",
+      "url": "https://economictimes.indiatimes.com/tech/startups/fifty-shades-of-nifty-growth-et-jury-spots-next-giants/articleshow/133547584.cms",
+      "source": "The Times of India",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-08-27T00:30:00+00:00",
+      "snippet": "The elite jury was chaired by one of India’s brightest next-generation leaders Rishad Premji, executive chairman, Wipro. Members of the jury included Sachin Bansal, cofounder, Flipkart and Navi; Vijay Shekhar Sharma, founder and CEO, Paytm; Mukesh Bansal, cof…",
+      "image": "https://img.etimg.com/thumb/width-1200,height-900,imgsize-514976,resizemode-75,msid-133547584/tech/startups/fifty-shades-of-nifty-growth-et-jury-spots-next-giants.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:30"
+    },
+    {
+      "id": "8b077931721ef6215e0a29caf9b8f731",
+      "title": "ET Startup Awards 2026 | Comeback Kid: Mukund Jha returns stronger with AI bet",
+      "url": "https://economictimes.indiatimes.com/tech/startups/et-startup-awards-2026-comeback-kid-returning-stronger-with-ai-bet/articleshow/133548499.cms",
+      "source": "The Times of India",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-08-27T00:30:00+00:00",
+      "snippet": "Emergent cofounder Mukund Jha has won the Comeback Kid award at the ET Startup Awards 2026, marking a return after the collapse of Dunzo. The jury recognised his second act with AI startup Emergent, which recently raised $230 million at a $1.5 billion valuati…",
+      "image": "https://img.etimg.com/thumb/width-1200,height-900,imgsize-84282,resizemode-75,msid-133548499/tech/startups/et-startup-awards-2026-comeback-kid-returning-stronger-with-ai-bet.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:30"
+    },
+    {
+      "id": "431b05796add5dabb84415619c9a3e9c",
+      "title": "Nvidia Predicts AI-Fueled Sales Surge Will Extend Into 2028",
+      "url": "https://biztoc.com/x/63581dd07e3f27f6",
+      "source": "Biztoc.com",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-08-27T00:23:40+00:00",
+      "snippet": "Nvidia, the chipmaker at the heart of the artificial intelligence boom, gave a bullish sales outlook for fiscal 2028, easing concerns that AI spending is poised to lose momentum. #nvidia #ai #business #news \nRead more: \n----------\nLike this video? Subscribe \n…",
+      "image": "https://biztoc.com/cdn/63581dd07e3f27f6_s.webp",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:23"
+    },
+    {
+      "id": "027b58ddebac1d7852096c5a6c0c287d",
+      "title": "Take Control of Siri AI and Apple Intelligence Ebook Now Out ↦",
+      "url": "https://sixcolors.com/link/2026/08/take-control-of-siri-ai-and-apple-intelligence-ebook-now-out/",
+      "source": "sixcolors.com",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-08-27T00:13:38+00:00",
+      "snippet": "Apple’s overhaul of Siri and its expansion of Apple Intelligence are extensive. Take Control publisher Joe Kissell and I looked at this mountain of changes and opted to research and write an entirely new book, Take Control of Siri AI and Apple Intelligence, t…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:13"
+    },
+    {
+      "id": "d0b92ffff6aed4e132b156499cc5a1d4",
+      "title": "Smart glasses make secret filming easier. What does NZ law actually protect you from?",
+      "url": "https://theconversation.com/smart-glasses-make-secret-filming-easier-what-does-nz-law-actually-protect-you-from-289877",
+      "source": "The Conversation Africa",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-08-27T00:13:06+00:00",
+      "snippet": "Cheap camera glasses make covert filming easier than ever. But NZ law may leave gaps when the resulting footage is sexualised or shared online.",
+      "image": "https://images.theconversation.com/files/756089/original/file-20260825-50-z6kg0y.jpg?ixlib=rb-4.1.1&rect=0%2C361%2C4782%2C2391&q=45&auto=format&w=1356&h=668&fit=crop",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:13"
+    },
+    {
+      "id": "d4010f9ba6fe29977f4b65c86980fc44",
+      "title": "LM Studio adds GLM-5.3-Flash to Bionic, with image support and 1M-token context",
+      "url": "https://9to5mac.com/2026/08/26/lm-studio-adds-glm-5-3-flash-to-bionic-with-image-support-and-1m-token-context/",
+      "source": "9to5Mac",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-08-27T00:10:19+00:00",
+      "snippet": "LM Studio has added Z.ai’s new GLM-5.3-Flash model to Bionic, its AI agent platform, bringing multimodal input, a 1 million-token context window, and significantly lower pricing than GLM-5.2. Here are the details.",
+      "image": "https://9to5mac.com/wp-content/uploads/sites/6/2026/07/lm-studio-bionic.jpg?quality=82&strip=all&resize=1200,628",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:10"
+    },
+    {
+      "id": "e18dce296c9b8d41c0f6ea756e9e9e7d",
+      "title": "pyqrack-cuda-complex128 2.18.8",
+      "url": "https://pypi.org/project/pyqrack-cuda-complex128/2.18.8/",
+      "source": "Pypi.org",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-08-27T00:03:08+00:00",
+      "snippet": "pyqrack - Pure Python vm6502q/qrack Wrapper",
+      "image": "https://pypi.org/static/images/og-card.00947198.webp",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:03"
+    },
+    {
+      "id": "90b07945b8d765e732fbfbf254e25cd1",
+      "title": "pyqrack-cuda 2.18.8",
+      "url": "https://pypi.org/project/pyqrack-cuda/2.18.8/",
+      "source": "Pypi.org",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-08-27T00:03:07+00:00",
+      "snippet": "pyqrack - Pure Python vm6502q/qrack Wrapper",
+      "image": "https://pypi.org/static/images/og-card.00947198.webp",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:03"
+    },
+    {
+      "id": "0c942e298f6aa75b2098a0e6372dbeaf",
+      "title": "From Preferences to Principles: Rubric-Based Alignment for Grounded Knowledge Answers",
+      "url": "https://machinelearning.apple.com/research/rubric-based-alignment",
+      "source": "Apple Machine Learning",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-08-27T00:00:00+00:00",
+      "snippet": "Designing effective reward signals for open-domain question answering is challenging because high-quality responses must simultaneously satisfy multiple aspects of answer quality that are difficult to capture with a holistic scalar objective. We introduce a rubric-based reward framework that generates query-specific rubrics grounded in retrieved evidence and decomposed into multiple quality dimensions, providing fine-grained supervision during post-training. Averaged across three evaluation axes",
+      "image": "https://mlr.cdn-apple.com/media/Home_1200x630_48225d82e9.png",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:00"
+    },
+    {
+      "id": "c680e58ee2346c6b2264d475b0e3412d",
+      "title": "Expanding our support for scientists",
+      "url": "https://www.anthropic.com/news/expanding-support-for-scientists",
+      "source": "Anthropic News (taobojlen)",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-08-27T00:00:00+00:00",
+      "snippet": "Expanding our support for scientists",
+      "image": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20HeadNodeThink&amp;backgroundColor=olive",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:00"
+    },
+    {
+      "id": "0734f2a63b89c0249475b5081ec167a2",
+      "title": "Previewing the Model Hardware Standard",
+      "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
+      "source": "Anthropic News (taobojlen)",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-08-27T00:00:00+00:00",
+      "snippet": "Previewing the Model Hardware Standard",
+      "image": "https://cdn.sanity.io/images/4zrzovbb/website/ebfc315e9854ada0b6bae009ffd9c63c41f9a5ab-1280x720.png",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:00"
+    },
+    {
+      "id": "9a83ac6db5826191437308aea0a45a88",
+      "title": "Machine Learning Engineer",
+      "url": "https://nlppeople.com/job/machine-learning-engineer-599/",
+      "source": "Nlppeople.com",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-08-27T00:00:00+00:00",
+      "snippet": "Who we are At Twilio, we’re shaping the future of communications, all from the comfort of our homes. We deliver innovative solutions to hundreds of thousands of businesses and empower millions of developers worldwide to craft personalized customer experiences…",
+      "image": "https://i0.wp.com/nlppeople.com/wp-content/uploads/2026/08/Twilio-1.png?fit=400%2C400&ssl=1",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:00"
+    },
+    {
+      "id": "0577a0bd8c89e6bbe2093f4c05ce7651",
+      "title": "Nvidia doubles its revenue as demand for AI chips accelerate, but bubble fears still persist",
+      "url": "https://siliconangle.com/2026/08/26/nvidia-doubles-its-revenue-as-demand-for-ai-chips-accelerate-but-bubble-fears-still-persist/",
+      "source": "SiliconANGLE News",
+      "category_id": "rumours",
+      "category_name": "Rumours & Gossip",
+      "category_emoji": "🗣️",
+      "published": "2026-08-26T23:50:08+00:00",
+      "snippet": "Shares of Nvidia Corp. moved higher in late trading today after the chipmaker reported better-than-expected second quarter earnings and revenue. It also delivered bullish guidance for the current quarter and next full year, causing its stock to increase more …",
+      "image": "https://images.siliconangle.com/blogs.dir/1/files/2026/08/Jensen.png",
+      "ai_summary": "",
+      "published_display": "Aug 26, 23:50"
+    },
+    {
+      "id": "6ad54c9136dbccf6a697ca51764e22f4",
+      "title": "SBVA Appoints Two Global Investment Veterans as Venture Partners to Strengthen Portfolio Growth Support",
+      "url": "https://www.prnewswire.com/news-releases/sbva-appoints-two-global-investment-veterans-as-venture-partners-to-strengthen-portfolio-growth-support-302860264.html",
+      "source": "PRNewswire",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-08-26T23:30:00+00:00",
+      "snippet": "- Two former SoftBank Vision Fund investment professionals join SBVA, expanding its global network across the U.S., Japan, and Southeast Asia - SBVA to deepen support for portfolio companies, from identifying promising companies globally to supporting their e…",
+      "image": "https://mmx.prnewswire.com/media/MS1973594/20260821053306EDT_image_1.jpg?id=OA2901709&p=facebook",
+      "ai_summary": "",
+      "published_display": "Aug 26, 23:30"
+    },
+    {
+      "id": "477132ec877bbb89c8b9cbbe43cf0d0a",
+      "title": "(PR) AWS and NVIDIA to Deliver 2 Million Additional GPUs",
+      "url": "https://www.techpowerup.com/352009/aws-and-nvidia-to-deliver-2-million-additional-gpus",
+      "source": "Techpowerup.com",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-08-26T23:15:07+00:00",
+      "snippet": "Amazon Web Services (AWS), an Amazon.com, Inc. company (NASDAQ: AMZN), and NVIDIA (NASDAQ: NVDA) today announced a major expansion of their strategic collaboration to meet surging global demand for AI infrastructure as demand continues to accelerate. Building…",
+      "image": "https://www.techpowerup.com/img/SLNskOvcIAf6pYNE.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 26, 23:15"
+    },
+    {
+      "id": "923a029080e08fd3e4ec9806e57724d1",
+      "title": "Nvidia predicts AI-fueled sales surge will extend into 2028 #shorts #nvidia #ai #earnings #tech",
+      "url": "https://biztoc.com/x/275609073686c69f",
+      "source": "Biztoc.com",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-08-26T23:14:11+00:00",
+      "snippet": "Nvidia, the chipmaker at the heart of the artificial intelligence boom, gave a bullish sales outlook for fiscal 2028, easing concerns ...",
+      "image": "https://biztoc.com/cdn/275609073686c69f_s.webp",
+      "ai_summary": "",
+      "published_display": "Aug 26, 23:14"
+    },
+    {
+      "id": "ec028f1ceadffdb3c0c454e1f7e07320",
+      "title": "This Holiday Shopping Season Sees Shoppers Balancing Cost and Convenience",
+      "url": "http://wwd.com/sourcing-journal/industry-news/ryder-system-2026-holiday-shopping-season-report-1239164102/",
+      "source": "WWD",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-08-26T23:11:40+00:00",
+      "snippet": "Consumer data from Ryder Systems reveals just how important AI-powered tools are going to play in the 2026 holiday shopping season.",
+      "image": "https://wwd.com/wp-content/uploads/2026/08/Ryder-1.png?w=1000&h=563&crop=1",
+      "ai_summary": "",
+      "published_display": "Aug 26, 23:11"
+    },
+    {
+      "id": "f5d001f9e172d2179775eb442845dd00",
+      "title": "cubie-numba-cuda-mlir 0.5.0.1",
+      "url": "https://pypi.org/project/cubie-numba-cuda-mlir/0.5.0.1/",
+      "source": "Pypi.org",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-08-26T23:11:35+00:00",
+      "snippet": "numba-cuda-mlir Python Compiler (CuBIE patched build)",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 26, 23:11"
+    },
+    {
+      "id": "faf62b89db82a6b86c016f26c6c7f645",
+      "title": "Rules of the Road: Engineers Have Built a Traffic Control System for the Moon",
+      "url": "https://www.cnet.com/science/space/engineers-built-traffic-control-system-for-the-moon/",
+      "source": "CNET",
+      "category_id": "rumours",
+      "category_name": "Rumours & Gossip",
+      "category_emoji": "🗣️",
+      "published": "2026-08-26T23:09:52+00:00",
+      "snippet": "The saying “cleared for takeoff” has a whole different meaning in space.",
+      "image": "https://www.cnet.com/wp-content/uploads/sites/2/NRHO.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 26, 23:09"
+    },
+    {
+      "id": "36a77beb9083b73f63816bf73271f6bd",
+      "title": "MiiHealth AI Closes Seed Round for an Undisclosed Amount to Reinvent Patient Intake and Give Providers Back Two Hours a Day",
+      "url": "https://apnews.com/press-release/business-wire/press-release-75befd68998d42728ead857efcc964e0",
+      "source": "Associated Press",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-08-26T22:54:37+00:00",
+      "snippet": "PHOENIX--(BUSINESS WIRE)--Aug 26, 2026-- MiiHealth AI, maker of the first agentic AI medical assistant purpose-built to automate patient intake, today announced the closing of a seed funding round for an undisclosed amount led by Russell Glass, former CEO of …",
+      "image": "https://dims.apnews.com/dims4/default/d81871b/2147483647/strip/true/crop/1920x1279+0+0/resize/980x653!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F50%2Fd8%2F74009d9be15fdc7a4a28a22aeed5%2Fe93d94c979a6a99a653b4d0f77dae9c5",
+      "ai_summary": "",
+      "published_display": "Aug 26, 22:54"
+    },
+    {
+      "id": "0cdac8b3115a4945a455e26e73bd71c3",
+      "title": "CEO Jensen Huang went on an AI deal spree in August. Nvidia plans to invest $18 billion more this fiscal year.",
+      "url": "https://www.businessinsider.com/nvidia-q2-2027-earnings-bets-big-ai-18-billion-investment-2026-8#article",
+      "source": "Business Insider",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-08-26T22:51:58+00:00",
+      "snippet": "Nvidia invests billions in AI, with $18 billion committed to invest in AI model makers and infrastructure the rest of the fiscal year.",
+      "image": "https://i.insider.com/6a8f59e845e6f385a51697b6?width=1200&format=jpeg",
+      "ai_summary": "",
+      "published_display": "Aug 26, 22:51"
+    },
+    {
+      "id": "7abd07cceff26ce320f80ab6bb767b22",
+      "title": "OmniCore NAS– Fast SSD Storage With Local AI",
+      "url": "https://www.newsshooter.com/2026/08/26/omnicore-nas-fast-ssd-storage-with-local-ai/",
+      "source": "Newsshooter",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-08-26T22:35:37+00:00",
+      "snippet": "OmniCore is being touted as a modular all-flash AI NAS designed for anyone who needs faster, smarter, and more private control over their files. It is made by a company called DIGIERA, a Shenzhen-based storage technology firm. It features M.2 NVMe SSDs and is…",
+      "image": "https://www.newsshooter.com/wp-content/uploads/2026/08/fd33457f3cfcf5353df6916e2b7b958c.jpeg",
+      "ai_summary": "",
+      "published_display": "Aug 26, 22:35"
+    },
+    {
+      "id": "8e25f2efec5988856ced2e2fda69764d",
+      "title": "arti-fit 3.0.8a1",
+      "url": "https://pypi.org/project/arti-fit/3.0.8a1/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-08-26T22:33:30+00:00",
+      "snippet": "AI x RT: dynamic latent tensor representation layers for PyTorch.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 26, 22:33"
+    },
+    {
+      "id": "783e85afc1f30f516cf2ed64d3e360e8",
+      "title": "Grok Bot expands to all SuperGrok and Cursor plans, adds free trial",
+      "url": "https://4sysops.com/archives/grok-bot-expands-to-all-supergrok-and-cursor-plans-adds-free-trial/",
+      "source": "4sysops.com",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-08-26T22:32:12+00:00",
+      "snippet": "Grok Bot is expanding beyond its initial beta audience: xAI now includes the autonomous AI agent with all SuperGrok, Cursor Pro, and Cursor Teams plans. Users outside those subscriptions can try it for seven days with limited usage, although a credit card is …",
+      "image": "https://4sysops.com/wp-content/uploads/2026/08/grok-bot-expands-to-all-supergrok-and-cursor-plans-adds-free-trial.webp",
+      "ai_summary": "",
+      "published_display": "Aug 26, 22:32"
+    },
+    {
+      "id": "8f6557630d547adb10fd7a40029299bd",
+      "title": "NVIDIA’s $96B Quarter Proves the Compute Landlord Thesis Is No Longer Speculative",
+      "url": "https://forkast.news/nvidias-96b-quarter-proves-the-compute-landlord-thesis-is-no-longer-speculative/",
+      "source": "Forkast.news",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-08-26T22:22:03+00:00",
+      "snippet": "NVIDIA’s Q2 FY2027 revenue reached $96.2 billion, a 106% increase year-over-year that underscores the sheer scale of the current infrastructure buildout. Within this total, the Data Center segment contributed $89.0 billion, representing 92% of the company’s t…",
+      "image": "https://forkast.news/wp-content/uploads/2026/08/nvidia-q2-fy2027-compute-landlord-1024x687.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 26, 22:22"
+    },
+    {
+      "id": "fe6d644df0ad9f40b083ad70a080330c",
+      "title": "Nvidia doubles revenue, forecasts even more AI spending",
+      "url": "https://www.digitaljournal.com/article/nvidia-doubles-revenue-forecasts-even-more-ai-spending/",
+      "source": "Digital Journal",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-08-26T22:10:09+00:00",
+      "snippet": "Nvidia is considered the bellwether for the AI spending frenzy, with its results largely determined by mega purchases from AI giants such as OpenAI, Amazon, Microsoft and xAI.\nThe post Nvidia doubles revenue, forecasts even more AI spending appeared first on …",
+      "image": "https://www.digitaljournal.com/wp-content/uploads/2026/08/849296b7a8e17acd52e1c17a1673b8c61ab65181.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 26, 22:10"
+    },
+    {
+      "id": "531d44c7f9eb843175af203e8dbf3ded",
+      "title": "Perplexity and Nvidia launch Portable Computer, a local AI agent for Nvidia GPUs",
+      "url": "https://www.techspot.com/news/113622-perplexity-latest-ai-agent-runs-entirely-local-computers.html",
+      "source": "TechSpot",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-08-26T21:55:00+00:00",
+      "snippet": "Speaking at a press conference, Perplexity's Nate Kupp said the new app carries the exact same UI as the original Computer platform and includes every feature needed for local inferencing. He added that some complex tasks may still require access to more powe…",
+      "image": "https://www.techspot.com/images2/news/bigimage/2026/08/2026-08-26-image-31.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 26, 21:55"
+    },
+    {
+      "id": "7ef23d673e38e2b7ff42450e25e12cf7",
+      "title": "tmol 0.1.49",
+      "url": "https://pypi.org/project/tmol/0.1.49/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-08-26T21:34:54+00:00",
+      "snippet": "GPU-accelerated PyTorch reimplementation of the Rosetta energy function",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 26, 21:34"
+    },
+    {
+      "id": "2f280a606873b021a1d6223ae30a3f22",
+      "title": "Nvidia CFO says non-hyperscale cloud already accounts for roughly half of data-center revenue",
+      "url": "https://cryptobriefing.com/nvidia-non-hyperscale-data-center-growth/",
+      "source": "Crypto Briefing",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-08-26T21:24:56+00:00",
+      "snippet": "Nvidia's diversification into non-hyperscale cloud markets could enhance its resilience against hyperscaler bargaining power and drive sustained growth.\nThe post Nvidia CFO says non-hyperscale cloud already accounts for roughly half of data-center revenue app…",
+      "image": "https://static.cryptobriefing.com/wp-content/uploads/2026/08/26172451/library-nvidia-cfo-says-non-hyperscale-cloud-already-accounts-fo-800x450.png",
+      "ai_summary": "",
+      "published_display": "Aug 26, 21:24"
+    },
+    {
+      "id": "67846bc175a45dc786a28f48c9da27f1",
+      "title": "NVIDIA NVLink Fusion Brings NVHBM to Next-Generation AI Infrastructure",
+      "url": "https://developer.nvidia.com/blog/nvidia-nvlink-fusion-brings-nvhbm-to-next-generation-ai-infrastructure/",
+      "source": "Nvidia.com",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-08-26T21:08:40+00:00",
+      "snippet": "AI factories must support increasingly large models and more complex reasoning workloads. To keep up with the insatiable compute demands of AI workloads,...",
+      "image": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/08/NVHBM.webp",
+      "ai_summary": "",
+      "published_display": "Aug 26, 21:08"
+    },
+    {
+      "id": "e1c2fb18b20095842a20ca09f387c861",
+      "title": "AWS and NVIDIA to Deliver 2 Million Additional GPUs and Next-Generation Infrastructure for Agentic and Physical AI",
+      "url": "https://nvidianews.nvidia.com/news/aws-and-nvidia-to-deliver-2-million-additional-gpus-and-next-generation-infrastructure-for-agentic-and-physical-ai",
+      "source": "Nvidia.com",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-08-26T21:05:00+00:00",
+      "snippet": "Amazon Web Services (AWS), an Amazon.com, Inc. company (NASDAQ: AMZN), and NVIDIA (NASDAQ: NVDA) today announced a major expansion of their strategic collaboration to meet surging global demand for AI infrastructure as demand continues to accelerate.",
+      "image": "https://iprsoftwaremedia.com/219/files/202608/b215feb0f0d6c81e22ff4307cc071a1f/6a8e37a23d633249b789b083_aws-nvidia/aws-nvidia_d9d852ce-307b-4e74-9c08-6182462f9762-prv.jpg?v=d9d852ce-307b-4e74-9c08-6182462f9762",
+      "ai_summary": "",
+      "published_display": "Aug 26, 21:05"
+    },
+    {
+      "id": "94dae754d1e09064eb317523de41e7d7",
+      "title": "Meta Doesn’t Want to Be a Social Media Company Anymore",
+      "url": "https://www.motherjones.com/politics/2026/08/meta-settlement-social-media-facebook-whatsapp-glasses/",
+      "source": "Mother Jones",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-08-26T20:57:42+00:00",
+      "snippet": "A nationwide social media addiction trial against Meta came to an abrupt end on Wednesday, with the company announcing a sweeping settlement with 52 attorneys general. As part of the proposed settlement, the company promised to pay around $18 billion to parti…",
+      "image": "https://www.motherjones.com/wp-content/uploads/2026/08/GettyImages-2173576388.jpg?w=1200&h=630&crop=1",
+      "ai_summary": "",
+      "published_display": "Aug 26, 20:57"
     },
     {
       "id": "ff519b7ae74d99d0080a7d54eb0034c6",
@@ -575,6 +1611,20 @@
       "published_display": "Aug 26, 20:40"
     },
     {
+      "id": "b7d328c3cafbc4ebfadf3a029baedd3b",
+      "title": "Show HN: Devx – Autonomous AI coding agent built for Android Termux and desktop",
+      "url": "https://github.com/apvcode/Termux-Dev",
+      "source": "Github.com",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-08-26T20:37:12+00:00",
+      "snippet": "⚡ Ultra-fast terminal AI coding agent &amp; vibe-coding assistant built for Android (Termux), Windows, macOS &amp; Linux. Features dual Plan/Agent modes, multimodal vision, live web server, diagnos...",
+      "image": "https://opengraph.githubassets.com/af2395a10d27ffa11d73eb2cdb17a49747dfbeaf1dffa085fa84594e56dcb6af/apvcode/Termux-Dev",
+      "ai_summary": "",
+      "published_display": "Aug 26, 20:37"
+    },
+    {
       "id": "aff7960960107925b61706bbf2e5525e",
       "title": "Salesforce stock surges as AI momentum drives revenue growth",
       "url": "https://cryptobriefing.com/salesforce-stock-surges-ai-revenue-growth/",
@@ -603,6 +1653,20 @@
       "published_display": "Aug 26, 20:33"
     },
     {
+      "id": "0bbcd91eae5fff4fcc8829d171e8f672",
+      "title": "Open-weight AI models now account for more token volume than closed models",
+      "url": "https://4sysops.com/archives/open-weight-ai-models-now-account-for-more-token-volume-than-closed-models/",
+      "source": "4sysops.com",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-08-26T20:33:40+00:00",
+      "snippet": "Open-weight AI models are rapidly gaining token share, led by systems such as DeepSeek and other Chinese models, while closed models from OpenAI and Anthropic still capture most spending. Matthew Berman argues that this split will make AI cheaper and more con…",
+      "image": "https://4sysops.com/wp-content/uploads/2026/08/open-weight-ai-models-now-account-for-more-token-volume-than-closed-models.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 26, 20:33"
+    },
+    {
       "id": "f0f391060eb2631ea0682c219619432e",
       "title": "GitHub Actions was down yet again",
       "url": "https://www.theregister.com/devops/2026/08/26/github-actions-was-down-yet-again/5292679",
@@ -627,6 +1691,20 @@
       "published": "2026-08-26T20:30:00+00:00",
       "snippet": "Get a jump on this semester by using Gemini in Google Workspace to organize your notes, track deadlines, prep for projects, and more.",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Student-blog-header.width-1300.png",
+      "ai_summary": "",
+      "published_display": "Aug 26, 20:30"
+    },
+    {
+      "id": "bb18848ba1c6c4720b832a0e1ad2b218",
+      "title": "AI Startup Thinking Machines Lab Takes 22K SF at 79 Fifth Avenue for First NYC Office",
+      "url": "http://commercialobserver.com/2026/08/thinking-machines-lab-79-fifth-avenue-lease/",
+      "source": "Commercial Observer",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-08-26T20:30:00+00:00",
+      "snippet": "Artificial intelligence research startup Thinking Machines Lab is coming to New York. Just a year and a half after launching in San Francisco, the company has inked a 21,500-square-foot lease at Kalimian Properties’ 79 Fifth Avenue just one block west of Unio…",
+      "image": "https://commercialobserver.com/wp-content/uploads/sites/3/2026/08/Mira-Murati-79-Fifth-Ave-credit-Propertyshark.jpg?quality=80&crop=9px%2C1px%2C1435px%2C753px&resize=1200%2C630&strip",
       "ai_summary": "",
       "published_display": "Aug 26, 20:30"
     },
@@ -1457,6 +2535,20 @@
       "published_display": "Aug 26, 16:34"
     },
     {
+      "id": "04f2231dcd1d79fb514538ad66cf8e47",
+      "title": "Leaked Images Give First Look at Apple's AI Servers",
+      "url": "https://www.macrumors.com/2026/08/26/leaked-images-of-apple-ai-servers/",
+      "source": "MacRumors",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-08-26T16:34:32+00:00",
+      "snippet": "Images claiming to show the inside of an Apple-made AI server, believed to power Private Cloud Compute, surfaced online this week, offering a first look at how the hardware is laid out.\n\n\n\n\n\nThe images were shared earlier this week by the X user @hsuchingpo, …",
+      "image": "https://images.macrumors.com/t/0StSfKuu6hA5pouO6BNP_9R01xw=/1672x/article-new/2026/08/apple-silicon-gray.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 26, 16:34"
+    },
+    {
       "id": "030da871faf7677b13d75e740fbb4def",
       "title": "Bring your own model with Amazon SageMaker AI: Script mode in SDK v3",
       "url": "https://aws.amazon.com/blogs/machine-learning/bring-your-own-model-with-amazon-sagemaker-ai-script-mode-in-sdk-v3/",
@@ -1497,6 +2589,34 @@
       "image": "https://www.zdnet.com/a/img/resize/90b7046fb539c758664b27c9851272d7edcf903e/2026/08/25/2a487090-c77a-4009-9b1e-5956c68a6fc9/img-5515.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
       "published_display": "Aug 26, 16:30"
+    },
+    {
+      "id": "fd3d3ca06bba69bb1026e88d33f0b3fa",
+      "title": "How to change the camera angle of existing photos in iOS 27",
+      "url": "https://www.idownloadblog.com/2026/08/26/reframe-photo-ios-mac/",
+      "source": "Idownloadblog.com",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-08-26T16:30:25+00:00",
+      "snippet": "Learn how to change the perspective of a photo and change the angle of the photo subject using the Reframe tool in iOS 27 and macOS 27.",
+      "image": "https://media.idownloadblog.com/wp-content/uploads/2026/08/Photo-Reframe-on-iPhone-in-iOS-27.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 26, 16:30"
+    },
+    {
+      "id": "6d6b56ce1919844935f3c828eeac9da5",
+      "title": "‘Surprise and Shine’ — Apple reveals when to tune into its September event and teases what’s coming — here’s what to expect and how we might finally meet a folding iPhone",
+      "url": "https://www.techradar.com/phones/iphone/surprise-and-shine-apple-reveals-when-to-tune-into-its-september-event-and-teases-whats-coming-heres-what-to-expect-and-how-we-might-finally-meet-a-folding-iphone",
+      "source": "TechRadar",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-08-26T16:25:07+00:00",
+      "snippet": "Mark your calendars: the next big Apple event is September 9, 2026, as Apple has just made its annual September event official by sending out invitations with the tagline \"Surprise and shine.\"",
+      "image": "https://cdn.mos.cms.futurecdn.net/qFQb6btdAY79pqL3HsSSU8-2000-80.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 26, 16:25"
     },
     {
       "id": "ba11193774f2f189de871479fdb1dafa",
@@ -1581,6 +2701,20 @@
       "image": "https://images.ctfassets.net/jdtwqhzvc2n1/1RK5pjHAxWRLsDy5iAC3Iy/4f9c39b5925645c365440e487ffe2157/Tata_hero.jpg?w=300&q=30",
       "ai_summary": "",
       "published_display": "Aug 26, 14:30"
+    },
+    {
+      "id": "2c1b28a02119a539f23876b04ef3450c",
+      "title": "Is Soaring AI CapEx Putting Microsoft Stock’s Valuation At Risk?",
+      "url": "https://www.trefis.com/articles/613008/is-soaring-ai-capex-putting-microsoft-stocks-valuation-at-risk/2026-08-26",
+      "source": "Trefis",
+      "category_id": "m365-copilot",
+      "category_name": "M365 Copilot",
+      "category_emoji": "✨",
+      "published": "2026-08-26T13:46:37+00:00",
+      "snippet": "The software franchise converts revenue to cash at a rate few broad-market peers can match, and most of that cash is going straight back into the buildout.",
+      "image": "https://s.yimg.com/lo/mysterio/api/7c5368689b077b79216fb3778e584b7c874341958415f21c2a9d89b6cba6e15d/lightyear_networkapi/resizefill_w1200%3Bquality_80%3Bformat_webp/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Ftrefis_142%2Ff5bbfd947ebcc09b4a540f522b416137.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 26, 13:46"
     },
     {
       "id": "45488a9d83b8a327beef41a40ac3d487",
@@ -31473,6 +32607,6 @@
       "published_display": "Jul 31, 15:00"
     }
   ],
-  "generated_at": "2026-08-27T20:56:47.392130+00:00",
+  "generated_at": "2026-08-28T01:16:46.627169+00:00",
   "period": "August 2026"
 }
