@@ -1,0 +1,299 @@
+name: 🧭 Nav Parity
+
+# aguidetocloud.com is ONE site rendered by TWO generators: Hugo (this repo,
+# everything except /guided/*) and Astro (susanthgit/guided, the PAID practice-exam
+# product). They must render an identical nav. They deploy independently, via
+# different systems — Cloudflare's git integration for Hugo, a GitHub Actions
+# wrangler upload for guided — so nothing coordinates them.
+#
+# 28 Aug 2026: a nav item was removed from Hugo only. For ~40 min /guided/* showed
+# 8 nav links including a dead one while the rest of the domain showed 7. The prose
+# rule requiring both platforms to change together did not fire; a human caught it.
+#
+# WHY THIS IS A SEPARATE WORKFLOW rather than more steps in guided-post-deploy-smoke:
+# that workflow sleeps 180s and POSTs to the LIVE checkout API. Running it more often
+# would create hundreds of real Stripe checkout sessions a day. This job is two GETs
+# and a parse, so it is cheap enough to also run on every nav change.
+#
+# WHY NOT A FAST CRON: this repo already measured GitHub's scheduler and found it
+# drops >90% of `*/5` ticks, with observed 1.5–4.5 hour gaps — see the header of
+# realtime-refresh.yml, which was disabled for exactly that reason. A `*/5` cron here
+# would advertise 5-minute detection and quietly deliver hours. So the PRIMARY trigger
+# is the push that causes divergence, and the cron is only a slow backstop.
+#
+# HONEST LIMIT, by direction. A nav edit HERE is push-triggered and caught in ~12 min
+# without touching the scheduler. A nav edit in the OTHER repo lands no push here, so
+# only the cron covers it — no better than the arrangement this replaced. Closing that
+# asymmetry needs guided's deploy-pages.yml to dispatch this workflow, which needs a
+# cross-repo token; not done unilaterally.
+#
+# This DETECTS; it cannot PREVENT. Two independently-deployed static sites cannot
+# publish atomically. Reviewed 28 Aug 2026: genuine prevention would require branch
+# protection on main plus a gated cross-repo release, judged too high a daily cost
+# for a change that happens ~3x a year.
+
+on:
+  # Primary signal: the nav changed here. Catches the exact 28 Aug failure mode
+  # (Hugo edited, guided forgotten) minutes after the cause rather than by luck.
+  # nav.html also reads data/toolkit_nav, but only to decide which item gets the
+  # `nav-active` class — and the guard compares labels and hrefs, never classes.
+  # If nav LINKS are ever moved into that data file, add it here or this filter
+  # will silently stop covering them.
+  push:
+    branches: [main]
+    paths:
+      - 'layouts/partials/nav.html'
+      - 'scripts/check-nav-parity.py'
+      - '.github/workflows/nav-parity.yml'
+  # Backstop, and the only thing that catches a change made in the OTHER repo.
+  # Twice hourly to match the cadence this replaced, on :07/:37 rather than :00/:30
+  # to sit off the scheduler's peak-minute stampede.
+  schedule:
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: nav-parity
+  # Queue, never cancel. A push run holds this group for ~11 min typical / ~17.7 min
+  # worst case (240 s + 7×60 s + 8×2 fetches × 25 s urlopen timeout), so with a 30 min
+  # cadence at most one backstop tick lands inside it and is DELAYED, not dropped.
+  # 🔴 If the cron is ever tightened below ~20 min, a superseded PENDING run gets
+  # cancelled instead — and a cancelled `check` notifies nothing, because
+  # `harness-broken` keys on result == 'failure', not 'cancelled'. That would be a
+  # silent-drop path. Tighten the cadence only together with a 'cancelled' branch.
+  cancel-in-progress: false
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      # parity | mismatch | harness  — 'harness' is NOT a nav problem and must
+      # never be reported as one, so it is a separate state, not a boolean.
+      state: ${{ steps.parity.outputs.state }}
+      detail: ${{ steps.parity.outputs.detail }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Self-test the guard before trusting it
+        run: |
+          # A guard that cannot fail is worse than no guard. site-health.yml has two
+          # documented cases of a stale selector silently reporting success forever.
+          python3 scripts/check-nav-parity.py --selftest \
+            || (echo "::error::nav-parity self-test failed — the GUARD is broken, not the site" && exit 1)
+
+      - name: Wait for Cloudflare Pages to publish this push
+        if: github.event_name == 'push'
+        run: |
+          # Hugo builds ~1,774 pages (~100s) and CF Pages then swaps the deployment.
+          # Checking before that lands would compare against the OLD nav.
+          sleep 240
+
+      - name: Compare rendered production navs
+        id: parity
+        run: |
+          # Retry across a normal deploy skew: a correctly coordinated nav change is
+          # legitimately divergent while guided rebuilds (~7 min). 8 attempts ≈ 8 min
+          # outlasts that, so a coordinated change should not raise an alert at all.
+          #
+          # A push run must NOT accept an early "parity": until Cloudflare Pages
+          # publishes, BOTH sides still serve the OLD nav, which compares equal. That
+          # false green is the run we rely on most, and it would also let `resolve`
+          # close a real issue. So a push run always plays the full window and is
+          # judged on its last measurement.
+          EARLY_EXIT=1
+          if [ "${GITHUB_EVENT_NAME:-}" = "push" ]; then EARLY_EXIT=0; fi
+
+          VERDICT=""   # last attempt that actually MEASURED: 0 = parity, 1 = mismatch
+          for attempt in 1 2 3 4 5 6 7 8; do
+            RC=0
+            OUT=$(python3 scripts/check-nav-parity.py 2>&1) || RC=$?
+            case "$RC" in
+              0|1) VERDICT=$RC; LAST_OUT=$OUT ;;
+              *)   : ;;
+            esac
+            echo "attempt $attempt: exit $RC"
+            if [ "$RC" -eq 0 ] && [ "$EARLY_EXIT" -eq 1 ]; then
+              echo "$OUT"
+              echo "✅ parity confirmed on attempt $attempt"
+              echo "state=parity" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            [ "$attempt" -lt 8 ] && sleep 60
+          done
+
+          # Exit 1 = the navs really differ (both pages fetched AND parsed). Exit 2 =
+          # we measured nothing, so it is ABSENCE of evidence — it must never overwrite
+          # a verdict, or seven confirmed mismatches followed by one fetch blip would be
+          # filed as "guard broken", which sends no push and can be entirely silent.
+          # Only a window in which nothing ever measured is a harness failure.
+          case "$VERDICT" in
+            0) STATE=parity ;;
+            1) STATE=mismatch ;;
+            *) STATE=harness ;;
+          esac
+          OUT=${LAST_OUT:-$OUT}
+          echo "$OUT"
+          echo "final state: $STATE (last measured verdict: ${VERDICT:-none})"
+          if [ "$STATE" != "parity" ]; then
+            {
+              echo 'detail<<PARITY_EOF'
+              echo "$OUT"
+              echo 'PARITY_EOF'
+            } >> "$GITHUB_OUTPUT"
+          fi
+          echo "state=$STATE" >> "$GITHUB_OUTPUT"
+
+  alert:
+    needs: check
+    if: needs.check.outputs.state == 'mismatch'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Open an issue (deduped, throttled) and push to phone
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          DETAIL: ${{ needs.check.outputs.detail }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh label create nav-parity --repo "$GITHUB_REPOSITORY" --color FBCA04 \
+            --description "Hugo site and /guided/* render different navs" 2>/dev/null || true
+
+          OPEN=$(gh issue list --repo "$GITHUB_REPOSITORY" --label nav-parity --state open --json number -q '.[0].number')
+          if [ -n "$OPEN" ]; then
+            # Throttle. An unbounded "still divergent" comment every run is how a
+            # watchdog on this machine fired 338 times in 4 weeks and became the fault.
+            LAST=$(gh issue view "$OPEN" --repo "$GITHUB_REPOSITORY" --json comments -q '.comments[-1].createdAt // empty')
+            if [ -n "$LAST" ]; then
+              AGE=$(( $(date -u +%s) - $(date -u -d "$LAST" +%s) ))
+              if [ "$AGE" -lt 21600 ]; then
+                echo "Issue #$OPEN open, last comment ${AGE}s ago — staying quiet."
+                exit 0
+              fi
+            fi
+            echo "Issue #$OPEN already open — commenting instead of opening a duplicate."
+            gh issue comment "$OPEN" --repo "$GITHUB_REPOSITORY" \
+              --body "Still divergent as of $(date -u '+%Y-%m-%d %H:%M UTC'). [Run]($RUN_URL)"
+            exit 0
+          fi
+
+          # Quoted heredoc: nothing in the body is expanded, so backticks and $
+          # in the markdown stay literal. Variable parts are appended after.
+          cat > /tmp/nav-body.md <<'BODY'
+          The nav rendered on the main site does not match the nav rendered on `/guided/*` (the paid product).
+
+          **If you are mid nav-change this is expected** — guided takes ~7 min to build, and the two sites deploy
+          independently. This issue closes itself automatically once parity returns.
+
+          **If you are not**, one repo was pushed without the other:
+
+          - Hugo nav: `layouts/partials/nav.html` (this repo)
+          - Astro nav: `src/components/layout/Header.astro` (susanthgit/guided)
+
+          Reproduce locally: `python scripts/check-nav-parity.py`
+          BODY
+
+          {
+            printf '\n### What the check saw\n\n```\n%s\n```\n\n' "$DETAIL"
+            printf '[Workflow run](%s)\n' "$RUN_URL"
+          } >> /tmp/nav-body.md
+
+          gh issue create --repo "$GITHUB_REPOSITORY" \
+            --title "🧭 Nav parity: main site and /guided/* disagree" \
+            --label nav-parity \
+            --body-file /tmp/nav-body.md
+
+          if [ -n "$NTFY_TOPIC" ]; then
+            # Priority 'default', NOT max: a mismatched nav is cosmetic. Max priority is
+            # reserved for the smoke test, where customers cannot purchase.
+            curl -s -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+              -H "Title: 🧭 Nav parity broken" \
+              -H "Priority: default" \
+              -H "Tags: compass" \
+              -H "Click: $RUN_URL" \
+              -d "Main site and /guided/* are rendering different navs. Cosmetic, not a purchase blocker. Auto-closes when fixed."
+          fi
+
+  # The guard itself is broken or the site is unreachable. Without this job both
+  # `alert` and `resolve` carry an implicit success() and would be SKIPPED — the
+  # self-test failing, the single outcome proving the guard is dead, would have
+  # been the one outcome with no alert at all.
+  harness-broken:
+    needs: check
+    if: always() && (needs.check.outputs.state == 'harness' || needs.check.result == 'failure')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Report a broken guard (never as a nav problem)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DETAIL: ${{ needs.check.outputs.detail }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh label create nav-parity-harness --repo "$GITHUB_REPOSITORY" --color B60205 \
+            --description "The nav-parity guard could not run — parity is UNKNOWN" 2>/dev/null || true
+
+          OPEN=$(gh issue list --repo "$GITHUB_REPOSITORY" --label nav-parity-harness --state open --json number -q '.[0].number')
+          if [ -n "$OPEN" ]; then
+            echo "Harness issue #$OPEN already open — not duplicating."
+            exit 0
+          fi
+
+          cat > /tmp/harness-body.md <<'BODY'
+          The nav-parity guard did not produce a verdict, so **nav parity is currently UNKNOWN** —
+          this is not a report that the nav is wrong.
+
+          Usual causes, in order of likelihood:
+
+          - One of the two pages could not be fetched (deploy in progress, Cloudflare 5xx, or the
+            runner being challenged by bot management).
+          - The markup changed so the guard's selectors no longer match. The guard deliberately
+            fails rather than reporting a false "parity OK" — see `MIN_LINKS` in the script.
+          - The self-test failed, meaning the guard itself is broken.
+
+          Reproduce locally:
+
+          - `python scripts/check-nav-parity.py --selftest`
+          - `python scripts/check-nav-parity.py`
+          BODY
+
+          {
+            printf '\n### What the check saw\n\n```\n%s\n```\n\n' "${DETAIL:-check job failed before producing output}"
+            printf '[Workflow run](%s)\n' "$RUN_URL"
+          } >> /tmp/harness-body.md
+
+          gh issue create --repo "$GITHUB_REPOSITORY" \
+            --title "🔧 Nav-parity guard is broken — parity UNKNOWN" \
+            --label nav-parity-harness \
+            --body-file /tmp/harness-body.md
+
+  resolve:
+    needs: check
+    # Defence in depth against my own arithmetic: a push run's verdict depends on the
+    # deploy having landed inside the window. If that assumption is ever wrong, a stale
+    # read compares OLD-vs-OLD and reports parity — so push runs are allowed to stay
+    # silent but never to CLOSE anything. The cron reconciles within ~30 min.
+    if: needs.check.outputs.state == 'parity' && github.event_name != 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Close any open nav-parity issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Self-healing: without this, a transient deploy skew would leave a stale
+          # open issue forever and the signal would rot. A clean verdict also proves
+          # the harness works again, so both labels are cleared.
+          for LABEL in nav-parity nav-parity-harness; do
+            for N in $(gh issue list --repo "$GITHUB_REPOSITORY" --label "$LABEL" --state open --json number -q '.[].number'); do
+              gh issue close "$N" --repo "$GITHUB_REPOSITORY" \
+                --comment "Parity verified — both surfaces render the same nav and the guard ran clean. Closed automatically."
+            done
+          done

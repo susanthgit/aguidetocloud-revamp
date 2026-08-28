@@ -32,9 +32,6 @@ jobs:
   wait-and-test:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Checkout (needed for scripts/check-nav-parity.py)
-        uses: actions/checkout@v4
-
       - name: ⏳ Wait for Cloudflare Pages deploy (3 min)
         run: sleep 180
 
@@ -104,31 +101,6 @@ jobs:
             echo "::error::Practice page has ?checkout=1 loop anchor (regression of 3 May bug)"
             exit 1
           fi
-
-      - name: 🧭 Nav parity — Hugo site vs /guided/* (harness self-test first)
-        run: |
-          # A guard that can't fail is worse than no guard. Prove it still
-          # detects a planted divergence BEFORE trusting a green result.
-          python3 scripts/check-nav-parity.py --selftest \
-            || (echo "::error::nav-parity self-test failed - guard is broken, not the site" && exit 1)
-
-      - name: 🧭 Nav parity — compare rendered production navs
-        run: |
-          # The two repos deploy independently (revamp ~2-5 min, guided ~7+ min),
-          # so a coordinated push has a legitimate skew window. Retry across it and
-          # only alert on sustained divergence.
-          for attempt in 1 2 3 4; do
-            if python3 scripts/check-nav-parity.py; then
-              echo "✅ Nav parity confirmed on attempt $attempt"
-              exit 0
-            fi
-            if [ "$attempt" -lt 4 ]; then
-              echo "::warning::nav parity attempt $attempt failed - may be mid-deploy, retrying in 120s"
-              sleep 120
-            fi
-          done
-          echo "::error::Nav parity still broken after 4 attempts (~6 min). /guided/* and the main site disagree."
-          exit 1
 
       - name: ✅ All smoke checks passed
         run: echo "Production smoke tests green for commit ${{ github.sha }}"
