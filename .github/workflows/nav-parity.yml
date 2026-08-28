@@ -22,10 +22,16 @@ name: 🧭 Nav Parity
 # is the push that causes divergence, and the cron is only a slow backstop.
 #
 # HONEST LIMIT, by direction. A nav edit HERE is push-triggered and caught in ~12 min
-# without touching the scheduler. A nav edit in the OTHER repo lands no push here, so
-# only the cron covers it — no better than the arrangement this replaced. Closing that
-# asymmetry needs guided's deploy-pages.yml to dispatch this workflow, which needs a
-# cross-repo token; not done unilaterally.
+# without touching the scheduler — measured twice on 28 Aug, both fired within seconds.
+# A nav edit in the OTHER repo lands no push here, so only the cron covers it, and the
+# cron is MUCH weaker than its `7,37` config suggests. Measured 28 Aug over 39
+# consecutive scheduled runs of guided-post-deploy-smoke.yml, which is configured
+# `*/30`: real gaps of 50, 95, 120, 133, 209, 359, 507 and 676 minutes — i.e. 1 to 11
+# HOURS, not 30 minutes. So do not read the cron as a 30-minute guarantee; it is a
+# best-effort sweep that may not run for half a day. Closing that asymmetry needs
+# guided's deploy-pages.yml to dispatch this workflow, which needs a cross-repo token;
+# not done unilaterally. Until then the guided->Hugo direction is genuinely weakly
+# covered, and it is weakly covered for platform reasons this repo cannot fix.
 #
 # This DETECTS; it cannot PREVENT. Two independently-deployed static sites cannot
 # publish atomically. Reviewed 28 Aug 2026: genuine prevention would require branch
@@ -46,8 +52,9 @@ on:
       - 'scripts/check-nav-parity.py'
       - '.github/workflows/nav-parity.yml'
   # Backstop, and the only thing that catches a change made in the OTHER repo.
-  # Twice hourly to match the cadence this replaced, on :07/:37 rather than :00/:30
-  # to sit off the scheduler's peak-minute stampede.
+  # Twice hourly, on :07/:37 rather than :00/:30 to sit off the scheduler's
+  # peak-minute stampede. 🔴 This is NOT a 30-minute guarantee — see HONEST LIMIT
+  # above; the same config on the smoke workflow measured 1-11 hour real gaps.
   schedule:
     - cron: '7,37 * * * *'
   # A fire drill. An alarm that has never fired is indistinguishable from a broken
