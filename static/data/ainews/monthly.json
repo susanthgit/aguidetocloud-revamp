@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "id": "ca4edf014ddc08d3bb527c35df347793",
+      "title": "GitHub Copilot in Visual Studio — August update",
+      "url": "https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2",
+      "source": "GitHub Changelog",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-08-28T20:24:20+00:00",
+      "snippet": "August 2026 brought more control over how GitHub Copilot reasons, which models you use, how teams share specialized agents, and when you ask for a code review. Highlights Here&#8217;s what&#8217;s&#8230;\nThe post GitHub Copilot in Visual Studio — August update appeared first on The GitHub Blog.",
+      "image": "https://github.blog/wp-content/themes/github-2021-child/dist/img/social-v3-new-releases.jpg",
+      "ai_summary": "",
+      "published_display": "4h ago"
+    },
+    {
       "id": "3e63b7d6eb3c51fe31f15a5339867486",
       "title": "Neocloud Lambda secures $1B in debt to buy more chips",
       "url": "https://techcrunch.com/2026/08/28/neocloud-lambda-secures-1b-in-debt-to-buy-more-chips/",
@@ -12,7 +26,21 @@
       "snippet": "Neocloud Lambda has raised $1B in private debt to buy Nvidia AI chips and lease them to Microsoft. It's the latest in a string of loans, underscoring the high cost of the AI boom.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/06/Chip-chips-dollar-signs-money.png?resize=1200,960",
       "ai_summary": "",
-      "published_display": "57m ago"
+      "published_display": "4h ago"
+    },
+    {
+      "id": "82c4436076c6804da086455efb330362",
+      "title": "GitHub Copilot weekly releases — August 24",
+      "url": "https://github.blog/changelog/2026-08-28-github-copilot-weekly-releases-august-24",
+      "source": "GitHub Changelog",
+      "category_id": "github-copilot",
+      "category_name": "GitHub Copilot",
+      "category_emoji": "🤖",
+      "published": "2026-08-28T20:13:22+00:00",
+      "snippet": "This week&#8217;s updates give you more control over how Copilot runs, from team sessions in Slack and Teams to customization across the app, CLI, and your IDE. GitHub Copilot in&#8230;\nThe post GitHub Copilot weekly releases — August 24 appeared first on The GitHub Blog.",
+      "image": "https://github.com/user-attachments/assets/a051e30f-c310-433d-8f4e-97b383f7c8d9",
+      "ai_summary": "",
+      "published_display": "4h ago"
     },
     {
       "id": "7a4f81c27e0b113f054bb8507603ace4",
@@ -26,7 +54,7 @@
       "snippet": "Amazon SageMaker Feature Store now supports two new APIs: BatchWriteRecord writes up to 25 records across multiple feature groups in a single call, and ListRecords enumerates record identifiers within a feature group. In this post, we walk through each API with code examples you can use to get started.",
       "image": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/08/27/ML-21718-1.jpg",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "2ec4ce41aeb4ed2f6b5c345284f97d6e",
@@ -40,7 +68,7 @@
       "snippet": "Given 10 benchmarks for specific misaligned behaviors, the automated systems were able to improve performance on every single one without degrading overall performance.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-2287646148.jpg?resize=1200,901",
       "ai_summary": "",
-      "published_display": "1h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "d4817fcc14f5afaa5d7a533387b5076a",
@@ -54,7 +82,7 @@
       "snippet": "Talix's USB-C cable is compact and powerful enough to charge a laptop, and it's nearly 40% off.",
       "image": "https://www.zdnet.com/a/img/resize/033792d13d69f9efa5074a66f0924f46dcfd71e4/2026/08/28/61a9df02-ddf4-4428-b807-29942504ea87/img-3071.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "2h ago"
+      "published_display": "5h ago"
     },
     {
       "id": "e96655ce15da73364e87a6d40945b6b2",
@@ -68,7 +96,7 @@
       "snippet": "There's a lot of capital pouring into the business of giving models away.",
       "image": "https://techcrunch.com/wp-content/uploads/2026/07/GettyImages-1849294862.jpg?w=1024",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "93454078b29736dfab707967f466f6ce",
@@ -82,7 +110,7 @@
       "snippet": "I've experienced first steps with countless Linux distributions over the years, but this one nails every step of the way for users of all types.",
       "image": "https://www.zdnet.com/a/img/resize/5e4b4af0884d4937fdee21a16d1a9cec7082bdab/2026/08/24/b7e3d033-5ee0-46b8-81f4-3ec261596a88/stilloshero.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "3h ago"
+      "published_display": "6h ago"
     },
     {
       "id": "f766c01d0860abae945b0340c9e8ce51",
@@ -96,7 +124,7 @@
       "snippet": "Want to organize your photos but don't know where to start? Here are my methods for tackling a massive cloud library.",
       "image": "https://www.zdnet.com/a/img/resize/42c4a3e532631d2a1967db8e6f2782b6b78d2977/2026/08/28/c0dd75c8-e90a-4076-bcb6-b6f354d8c98b/b725b653-ff8e-47c1-9300-25458f3071c5.jpg?auto=webp&amp;fit=crop&amp;height=675&amp;width=1200",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "7h ago"
     },
     {
       "id": "5993cafe6b692d79c63e9cc3e8c40d73",
@@ -110,7 +138,7 @@
       "snippet": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. A startup claims it’s found a drug to make your blood young —Antonio Regalado I knew I’d officially become a “longevity influencer” when a company called Generation Lab offered me the&#8230;",
       "image": "https://wp.technologyreview.com/wp-content/uploads/2026/04/Neanderthals_finals-top.jpg?fit=2128,1196",
       "ai_summary": "",
-      "published_display": "8h ago"
+      "published_display": "12h ago"
     },
     {
       "id": "4c3ba8c47422e6d064853a658842a025",
@@ -124,7 +152,7 @@
       "snippet": "Teams question detection bot postpones debut, will get 2-month extension to practice interrupting you",
       "image": "https://image.theregister.com/?imageId=5287779&width=800",
       "ai_summary": "",
-      "published_display": "10h ago"
+      "published_display": "14h ago"
     },
     {
       "id": "7b496355b933d49fa012537851ab8d17",
@@ -138,7 +166,7 @@
       "snippet": "Just as new data centers face growing backlash from neighboring communities, the US Environmental Protection Agency (EPA) is about to make it harder for people to weigh in on any pollution those centers create. The EPA plans to toss out a federal rule requiring public notice and an opportunity to comment when certain industrial sites [&#8230;]",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/STKS528_DATA_CENTERS2_C.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "ai_summary": "",
-      "published_display": "4h ago"
+      "published_display": "8h ago"
     },
     {
       "id": "a0aef6e10486a07a8ae8a24bad024b77",
@@ -152,7 +180,7 @@
       "snippet": "And as for getting US government to help – uncontrolled AI is not as dangerous as AI under the control of the technically clueless",
       "image": "https://image.theregister.com/?imageId=5292864&width=800",
       "ai_summary": "",
-      "published_display": "11h ago"
+      "published_display": "14h ago"
     },
     {
       "id": "edcbdc3765a966b4ab1d25a88156bb3b",
@@ -166,7 +194,7 @@
       "snippet": "The group infected more than 1,000 organizations in a relentless supply-chain attack campaign.",
       "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/08/teampcp-member-arrest-1152x648.jpg",
       "ai_summary": "",
-      "published_display": "10h ago"
+      "published_display": "13h ago"
     },
     {
       "id": "7c3c0e4ae531bddc814f97297c6e1ffc",
@@ -180,7 +208,7 @@
       "snippet": "Britain's market watchdog criticized for not creating the conditions for competition to thrive",
       "image": "https://image.theregister.com/?imageId=5282519&width=800",
       "ai_summary": "",
-      "published_display": "12h ago"
+      "published_display": "15h ago"
     },
     {
       "id": "0c6b3ebbc8b7296189bfa40c2b2d85d3",
@@ -194,7 +222,7 @@
       "snippet": "The art portfolio platform Cara, designed for creators who don’t want their work used to train AI, has been under assault by trolls seizing and publishing its data.",
       "image": "https://media.wired.com/photos/6a8f719f1780b42ea22395f3/master/pass/Anti-AI-Artists-Gathered-to-Share-Their-Handmade-Work-Culture.jpg",
       "ai_summary": "",
-      "published_display": "10h ago"
+      "published_display": "13h ago"
     },
     {
       "id": "84fadf7eed508af325a03a91eb4cc08d",
@@ -208,7 +236,7 @@
       "snippet": "The company is testing robots that can swap cables, reset servers, and take on other tasks performed by technicians, fueling concerns among some workers that their jobs could be at risk.",
       "image": "https://media.wired.com/photos/6a8778d3964ec62bf0f4c98f/master/pass/Inside-Meta-Experiments-with-Data-Center-Robots-Business.jpg",
       "ai_summary": "",
-      "published_display": "10h ago"
+      "published_display": "13h ago"
     },
     {
       "id": "0b03f42838fcdee9c2b885b32714272d",
@@ -222,7 +250,315 @@
       "snippet": "Why oh why are the accountants stricter than the IRS and HMRC put together?",
       "image": "https://image.theregister.com/?imageId=5252203&width=800",
       "ai_summary": "",
-      "published_display": "12h ago"
+      "published_display": "16h ago"
+    },
+    {
+      "id": "3c19ea3735088dad7105571f532c9292",
+      "title": "How to sign up for a virtual power plant—and decide whether you should",
+      "url": "https://www.technologyreview.com/2026/08/28/1142956/how-to-sign-up-for-a-virtual-power-plant-and-decide-whether-you-should/",
+      "source": "MIT Technology Review",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-28T09:00:00+00:00",
+      "snippet": "MIT Technology Review’s How To series helps you get things done.&#160; Your thermostat may not look like a power plant. Neither does your electric vehicle, home battery, or HVAC system. But utility and energy companies increasingly want to treat them like one. A virtual power plant, or VPP, is a collection of household devices (such&#8230;",
+      "image": "https://wp.technologyreview.com/wp-content/uploads/2026/08/thermostat2.jpg?resize=1200,600",
+      "ai_summary": "",
+      "published_display": "15h ago"
+    },
+    {
+      "id": "adbddd8751084bbf9b5e98de935eaecf",
+      "title": "scubiee 0.2.92",
+      "url": "https://pypi.org/project/scubiee/0.2.92/",
+      "source": "Pypi.org",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-08-28T00:48:37+00:00",
+      "snippet": "Scubiee — local AI code context engine: setup once, connect tools, CUDA/DirectML/MLX/CPU.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:48"
+    },
+    {
+      "id": "2e1de93ddb8a520fbd50b8795e537e72",
+      "title": "AI wearable with 4G LTE: Plaud One can automate workflows for professionals",
+      "url": "https://www.notebookcheck.net/AI-wearable-with-4G-LTE-Plaud-One-can-automate-workflows-for-professionals.1381252.0.html",
+      "source": "Notebookcheck.net",
+      "category_id": "rumours",
+      "category_name": "Rumours & Gossip",
+      "category_emoji": "🗣️",
+      "published": "2026-08-28T00:46:00+00:00",
+      "snippet": "The gadget called \"Plaud One Explorer Edition\" launches with introductory discounts and wants to help professionals process conversations, meetings and more through automation and with the help of AI. 4G LTE cellular connectivity is also supported by this new…",
+      "image": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc5/Plaud-One.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:46"
+    },
+    {
+      "id": "434ac778adf48082159132873d1a7110",
+      "title": "qlcoder",
+      "url": "https://kitploit.com/en/tools/github/neuralprogram/qlcoder/",
+      "source": "Kitploit.com",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-08-28T00:42:20+00:00",
+      "snippet": "Agentic Framework for Synthesizing CodeQL Queries",
+      "image": "https://assets.kitploit.com/production/public/tools/53257/82fc68add35640e920d5ee6df55b45e327b11d9de8384120291ab83d48ce3d49-social-v1.webp",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:42"
+    },
+    {
+      "id": "556334e538aea09a99be626beb895879",
+      "title": "hugpy 0.1.171",
+      "url": "https://pypi.org/project/hugpy/0.1.171/",
+      "source": "Pypi.org",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-08-28T00:40:55+00:00",
+      "snippet": "Self-hosted LLM console: model registry & downloads, streaming chat, OpenAI-compatible /v1 API with on-site keys, GPU worker fleet with cross-machine RPC sharding",
+      "image": "https://pypi.org/static/images/og-card.00947198.webp",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:40"
+    },
+    {
+      "id": "ecb2cfb0ab11058cc1ea419348c653cd",
+      "title": "abstract-hugpy-dev 0.1.238",
+      "url": "https://pypi.org/project/abstract-hugpy-dev/0.1.238/",
+      "source": "Pypi.org",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-08-28T00:39:57+00:00",
+      "snippet": "Self-hosted LLM console: model registry & downloads, streaming chat, OpenAI-compatible /v1 API with on-site keys, GPU worker fleet with cross-machine RPC sharding",
+      "image": "https://pypi.org/static/images/og-card.00947198.webp",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:39"
+    },
+    {
+      "id": "8c49111d4977ca3e58fec84059b40bdb",
+      "title": "Anthropic Previews Standard for AI Control of Physical Devices",
+      "url": "https://www.pymnts.com/news/artificial-intelligence/2026/anthropic-previews-standard-for-ai-control-of-physical-devices/",
+      "source": "pymnts.com",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-08-28T00:37:41+00:00",
+      "snippet": "Anthropic is opening a research preview of a shared specification for artificial intelligence agents to operate physical devices, specifically lab and manufacturing instruments, the company said in a Thursday (Aug. 27) announcement. The Model Hardware Standar…",
+      "image": "https://www.pymnts.com/wp-content/uploads/2026/05/Anthropic.jpeg",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:37"
+    },
+    {
+      "id": "968e2dfd319fe8f2b6449b66d28d94db",
+      "title": "scubiee 0.2.91",
+      "url": "https://pypi.org/project/scubiee/0.2.91/",
+      "source": "Pypi.org",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-08-28T00:33:58+00:00",
+      "snippet": "Scubiee — local AI code context engine: setup once, connect tools, CUDA/DirectML/MLX/CPU.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:33"
+    },
+    {
+      "id": "dd2354b8264f83ef5f21e9e8364c772f",
+      "title": "Google Brings E-Books to Gemini Notebook",
+      "url": "https://www.thurrott.com/a-i/google-gemini-a-i/340803/google-brings-e-books-to-gemini-notebook",
+      "source": "Thurrott.com",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-08-28T00:33:31+00:00",
+      "snippet": "Google today announced Expert Intelligence, a way to bring trusted sources into Gemini Notebook, starting with select e-books from Google Play Books.\nThe post Google Brings E-Books to Gemini Notebook appeared first on Thurrott.com.",
+      "image": "https://thurrott-assets.nyc3.digitaloceanspaces.com/web/wp-content/uploads/sites/2/2026/08/expert-intelligence.png",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:33"
+    },
+    {
+      "id": "13cfb98403f5e3015e945ea3fbc8194d",
+      "title": "qnnx-backend added to PyPI",
+      "url": "https://pypi.org/project/qnnx-backend/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-08-28T00:30:21+00:00",
+      "snippet": "A PyTorch torch.compile backend for Qualcomm QNN.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:30"
+    },
+    {
+      "id": "11e7969f2c62ffc7df1c6372210ba810",
+      "title": "qnnx-backend 0.1.0",
+      "url": "https://pypi.org/project/qnnx-backend/0.1.0/",
+      "source": "Pypi.org",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-08-28T00:30:21+00:00",
+      "snippet": "A PyTorch torch.compile backend for Qualcomm QNN.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:30"
+    },
+    {
+      "id": "d89e55b98dff522080c9df57e03668bf",
+      "title": "派早报：智谱开源 GLM-5.3-Flash 原生多模态模型等",
+      "url": "https://sspai.com/post/113922",
+      "source": "Sspai.com",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-08-28T00:29:37+00:00",
+      "snippet": "Perplexity AI 推出 Portable Computer，明基推出 Creative Pro PV50 系列专业显示器。查看全文",
+      "image": "https://rssfile.sspai.com/8/28/2026/article/955e4516-57cb-d806-22ec-b53469c5a764.png?imageMogr2/auto-orient/ignore-error/1",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:29"
+    },
+    {
+      "id": "0aa0ac1544c219ac4a0bddf045022ba5",
+      "title": "Cisco Deploys Custom AI Agent to Entire 90,000-Person Workforce",
+      "url": "https://biztoc.com/x/7ea39d64ba0a97f8",
+      "source": "Biztoc.com",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-08-28T00:25:57+00:00",
+      "snippet": "Cisco is rolling out its artificial intelligence (AI) agent, MyAgent, to 90,000 employees, Thimaya Subaiya, executive vice president, operations at Cisco, said in a Thursday (Aug. 27) blog post.\nMyAgent is built on Cisco’s secure, governed, multi-model agnost…",
+      "image": "https://biztoc.com/cdn/995/og.png",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:25"
+    },
+    {
+      "id": "a9751e9eda79fd8c29b00072de7baa14",
+      "title": "zwischen 0.49.0",
+      "url": "https://pypi.org/project/zwischen/0.49.0/",
+      "source": "Pypi.org",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-08-28T00:24:29+00:00",
+      "snippet": "Zwischen — adversary hook client for Claude Code and Codex",
+      "image": "https://pypi.org/static/images/og-card.00947198.webp",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:24"
+    },
+    {
+      "id": "c8305c01b52802abaa01efadb55cab93",
+      "title": "code-coordinator 0.5.259",
+      "url": "https://pypi.org/project/code-coordinator/0.5.259/",
+      "source": "Pypi.org",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-08-28T00:22:51+00:00",
+      "snippet": "Coordinate Claude Code workers across multiple machines and repos.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:22"
+    },
+    {
+      "id": "1bd53486d675dd505eeb62fddc900f96",
+      "title": "Gemini launches stop market orders for Active Trader platform",
+      "url": "https://cryptobriefing.com/gemini-stop-market-orders-active-trader/",
+      "source": "Crypto Briefing",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-08-28T00:22:42+00:00",
+      "snippet": "Gemini's addition of stop market orders enhances its competitive edge, appealing to high-volume traders while maintaining regulatory compliance.\nThe post Gemini launches stop market orders for Active Trader platform appeared first on Crypto Briefing.",
+      "image": "https://static.cryptobriefing.com/wp-content/uploads/2026/08/27202239/library-gemini-launches-stop-market-orders-for-active-trader-pla-800x450.png",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:22"
+    },
+    {
+      "id": "5fbe4622f2302f916e6787ad6df19233",
+      "title": "Anthropic previews MHS standard for AI agents that operate machines",
+      "url": "https://siliconangle.com/2026/08/27/anthropic-previews-mhs-standard-for-ai-agents-that-operate-machines/",
+      "source": "SiliconANGLE News",
+      "category_id": "anthropic",
+      "category_name": "Anthropic",
+      "category_emoji": "🟧",
+      "published": "2026-08-28T00:19:52+00:00",
+      "snippet": "Anthropic PBC today previewed a standard that makes it easier for artificial intelligence agents to control machines such as microscopes. The Model Hardware Standard, or MHS, is the fruit of a collaboration between the Claude developer and medical research in…",
+      "image": "https://images.siliconangle.com/blogs.dir/1/files/2026/08/Anthropic.png",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:19"
+    },
+    {
+      "id": "29b874a75c4e454ca5ccbf6c5d9c2aa8",
+      "title": "Over 100 tech firms demand ‘defensive surge’ against AI-driven cyberattacks",
+      "url": "https://cryptobriefing.com/tech-firms-defensive-surge-ai-cyberattacks/",
+      "source": "Crypto Briefing",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-08-28T00:15:03+00:00",
+      "snippet": "The call for enhanced AI defenses highlights the urgent need for proactive cybersecurity measures to protect critical infrastructure globally.\nThe post Over 100 tech firms demand ‘defensive surge’ against AI-driven cyberattacks appeared first on Crypto Briefi…",
+      "image": "https://static.cryptobriefing.com/wp-content/uploads/2026/08/27201459/library-over-100-tech-firms-demand-defensive-surge-against-ai-dr-800x450.png",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:15"
+    },
+    {
+      "id": "12b74880067c4c86074004737c8dc654",
+      "title": "Google announces ‘Expert Intelligence’ to let you add Play Books in Gemini Notebook - 9to5Google",
+      "url": "https://slashdot.org/firehose.pl?op=view&amp;id=185235440",
+      "source": "Slashdot.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-08-28T00:12:23+00:00",
+      "snippet": "Google announces ‘Expert Intelligence’ to let you add Play Books in Gemini Notebook9to5Google Expert Intelligence: a new way for you to engage with trusted contentblog.google Google’s AI note-taking app now allows you to interact with booksThe Verge Google La…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:12"
+    },
+    {
+      "id": "f75615e2d3ee91dd7d30675adf0b7801",
+      "title": "Kevin Durant Earned Over $60 Million Out Of A $250K Investment; Surpassing His 2026-27 NBA Salary",
+      "url": "https://fadeawayworld.net/nba/houston-rockets/kevin-durant-earned-over-60-million-out-of-a-250k-investment-surpassing-his-2026-27-nba-salary",
+      "source": "Fadeaway World",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-08-28T00:09:50+00:00",
+      "snippet": "Kevin Durant converted a $250,000 investment into a $60 million profit after Nvidia recently acquired Hugging Face.",
+      "image": "https://fadeawayworld.net/wp-content/uploads/2026/08/Kevin-Durant-Rockets.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:09"
+    },
+    {
+      "id": "6ae75130200eb5c94c2728ae56438ed6",
+      "title": "Terminal-Bench-Science: Evaluating AI agents on scientific research workflows",
+      "url": "https://www.terminal-bench-science.ai/announcement",
+      "source": "Terminal-bench-science.ai",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-08-28T00:06:51+00:00",
+      "snippet": "A benchmark for evaluating AI agents on research workflows across scientific domains",
+      "image": "https://terminal-bench-science.ai/terminal-bench-science-og-1200x630.png",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:06"
+    },
+    {
+      "id": "cc0b691919bcb40212678458ef672728",
+      "title": "What’s at stake in Dolly Parton’s $450 million estate — from Dollywood to her music catalog",
+      "url": "https://pagesix.com/2026/08/27/celebrity-news/whats-at-stake-in-dolly-partons-450-million-estate-from-dollywood-to-her-music-catalog/",
+      "source": "Page Six",
+      "category_id": "rumours",
+      "category_name": "Rumours & Gossip",
+      "category_emoji": "🗣️",
+      "published": "2026-08-28T00:03:40+00:00",
+      "snippet": "The country icon left behind a fortune spanning music, theme parks and real estate, but what happens to it now?",
+      "image": "https://pagesix.com/wp-content/uploads/sites/3/2026/08/138697552.jpg?quality=75&strip=all&w=1200",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:03"
     },
     {
       "id": "39ca95c8cee359274661630a3a515392",
@@ -236,7 +572,259 @@
       "snippet": "",
       "image": "https://huggingface.co/blog/assets/open-asr-leaderboard-global-south/thumbnail.png",
       "ai_summary": "",
-      "published_display": "21h ago"
+      "published_display": "Aug 28, 00:00"
+    },
+    {
+      "id": "87b006109398bcb030e6a11bcc4e03a4",
+      "title": "Managing enterprise AI at scale: Hosting, deployment patterns, and Day 2 operations",
+      "url": "https://www.redhat.com/en/blog/managing-enterprise-ai-scale-hosting-deployment-patterns-and-day-2-operations",
+      "source": "Redhat.com",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-08-28T00:00:00+00:00",
+      "snippet": "In our previous article, Enterprise AI model selection: Balancing performance, privacy, and operational fit, we described the 4 layers that make up an effective enterprise AI architecture. In this article, we'll talk about who operates each layer, where workl…",
+      "image": "https://www.redhat.com/themes/custom/rhdc/img/red-hat-social-share.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:00"
+    },
+    {
+      "id": "1505b8e1372e818ad8ad4b68b3294395",
+      "title": "Elon’s Favorite Sci-Fi Prophet Was Wrong",
+      "url": "https://niallferguson.substack.com/p/elons-favorite-sci-fi-prophet-was",
+      "source": "Substack.com",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-08-28T00:00:00+00:00",
+      "snippet": "Forget about an AI utopia of effortless abundance. Get ready for the messy, unintended consequences foreseen by science fiction’s arch-realist.",
+      "image": "https://substackcdn.com/image/fetch/$s_!ObUk!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbb29819b-9647-4b8a-9ff9-97883fe8bb69_797x1024.jpeg",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:00"
+    },
+    {
+      "id": "ee8989253b83bbcd8efa48c8aa0d829a",
+      "title": "AI/ML Software Engineer",
+      "url": "https://nlppeople.com/job/ai-ml-software-engineer-2/",
+      "source": "Nlppeople.com",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-08-28T00:00:00+00:00",
+      "snippet": "Job Family: Software Development & Support Travel Required: None Clearance Required: Ability to Obtain Public Trust What You Will Do Guidehouse Technology is seeking a highly skilled and motivated AI-focused Software Engineer to join our dynamic team. In this…",
+      "image": "https://s0.wp.com/i/blank.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:00"
+    },
+    {
+      "id": "8bf8946d41695742017c85b6c8981f5c",
+      "title": "What's New in Civics for 2026?",
+      "url": "https://www.hoover.org/events/whats-new-civics-2026",
+      "source": "Hoover.org",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-08-28T00:00:00+00:00",
+      "snippet": "",
+      "image": "https://hoover-s3-website.s3.us-west-2.amazonaws.com/s3fs-public/styles/facebook/public/2023-07/iStock-1342432804.jpg?h=f82702d4&itok=20jmV8Pq",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:00"
+    },
+    {
+      "id": "5b131b1a384ae10cd7c93b2117d7e29c",
+      "title": "Enhancing clinical reasoning and diagnostic precision through scaling laws and multi-stage supervised fine-tuning in open-weight medical large language models",
+      "url": "https://www.nature.com/articles/s41598-026-68883-y.pdf",
+      "source": "Nature.com",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-08-28T00:00:00+00:00",
+      "snippet": "Scientific Reports - Enhancing clinical reasoning and diagnostic precision through scaling laws and multi-stage supervised fine-tuning in open-weight medical large language models",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:00"
+    },
+    {
+      "id": "a3474705a7d92db550d22885580a65b8",
+      "title": "Applied AI ML – Senior Associate – Machine Learning Engineer",
+      "url": "https://nlppeople.com/job/applied-ai-ml-senior-associate-machine-learning-engineer-3/",
+      "source": "Nlppeople.com",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-08-28T00:00:00+00:00",
+      "snippet": "Join a high performing team of applied AI experts to drive innovation and new capabilities in the Commercial & Investment Bank. As an Applied AI / ML Senior Associate Machine Learning Engineer in the Applied AI ML team at JPMorgan Commercial & Investment Bank…",
+      "image": "https://s0.wp.com/i/blank.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:00"
+    },
+    {
+      "id": "5ba58c3f8607197fe378b364d2412b09",
+      "title": "AI and Machine Learning Engineer (2 Year Fixed Term Contract)",
+      "url": "https://nlppeople.com/job/ai-and-machine-learning-engineer-2-year-fixed-term-contract/",
+      "source": "Nlppeople.com",
+      "category_id": "meta",
+      "category_name": "Meta",
+      "category_emoji": "🟪",
+      "published": "2026-08-28T00:00:00+00:00",
+      "snippet": "Job DescriptionMitsubishi Power EMEA is seeking a motivated and ambitious AI and Machine Learning Engineer to join our Engineering team. This is an exciting opportunity for a recent Master’s graduate or someone completing their studies to apply artificial int…",
+      "image": "https://s0.wp.com/i/blank.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:00"
+    },
+    {
+      "id": "1978f96e8b113a4b93be057b0c02dde0",
+      "title": "Daily Hacker News for 2026-08-27",
+      "url": "https://www.daemonology.net/hn-daily/2026-08-27.html",
+      "source": "Daemonology.net",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-08-28T00:00:00+00:00",
+      "snippet": "The 10 highest-rated articles on\nHacker News\non August 27, 2026 which have not appeared on any previous\nHacker News Daily\nare:\n<ul>\n<li>\nTwitter Viewer – View Twitter Without Account\n(comments)\n</li>\n<li>\nNebula Sans\n(comments)\n</li>\n<li>\nU.S. State Departmen…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 28, 00:00"
+    },
+    {
+      "id": "f0fc6491239a7010b8d59d13cafe2353",
+      "title": "NVIDIA Quietly Freezes Its Cloud Credit Support Deals After Internal Talks Warn of Antitrust Exposure",
+      "url": "https://wccftech.com/nvidia-quietly-freezes-its-cloud-credit-support-deals-after-internal-talks-warn-of-antitrust-exposure/",
+      "source": "Wccftech",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-08-27T23:55:49+00:00",
+      "snippet": "According to a fresh report from The Wall Street Journal, chip designer NVIDIA Corporation has stopped its revenue sharing and credit support initiative to support AI growth, according to a report in The Wall Street Journal. The Journal's report comes a day a…",
+      "image": "https://cdn.wccftech.com/wp-content/uploads/2026/07/NVIDIA-CEO-Jensen-Huang.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 23:55"
+    },
+    {
+      "id": "ea85f149b4f96fad38bc861c78895193",
+      "title": "Why AI rivals are uniting to prevent cyber crisis",
+      "url": "https://biztoc.com/x/d5bbdcc5149a6105",
+      "source": "Biztoc.com",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-08-27T23:55:28+00:00",
+      "snippet": "The AI industry is sounding the alarm on a problem that it helped create.\nOn Thursday, a coalition of more than 100 tech companies, including OpenAI, Anthropic, Google, Microsoft and more, published...",
+      "image": "https://biztoc.com/cdn/d5bbdcc5149a6105_s.webp",
+      "ai_summary": "",
+      "published_display": "Aug 27, 23:55"
+    },
+    {
+      "id": "7808f126ebbe24a8f48a5539bb6e6313",
+      "title": "Op-Ed: AI has reconfigured the gig economy and the rot is spreading",
+      "url": "https://www.digitaljournal.com/article/op-ed-ai-has-reconfigured-the-gig-economy-and-the-rot-is-spreading/",
+      "source": "Digital Journal",
+      "category_id": "google",
+      "category_name": "Google",
+      "category_emoji": "🟥",
+      "published": "2026-08-27T23:50:28+00:00",
+      "snippet": "To hell with the sugary visions of billionaires fluttering through fields of AI-generated daisies. This is business.\nThe post Op-Ed: AI has reconfigured the gig economy and the rot is spreading appeared first on Digital Journal.",
+      "image": "https://www.digitaljournal.com/wp-content/uploads/2026/05/AI-Artificial-Intelligence-©AFP-768px-02.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 23:50"
+    },
+    {
+      "id": "d8ca549769787be1ca37765a4cec284f",
+      "title": "AIDebug",
+      "url": "https://kitploit.com/en/tools/github/anpa1200/aidebug/",
+      "source": "Kitploit.com",
+      "category_id": "openai",
+      "category_name": "OpenAI",
+      "category_emoji": "🟩",
+      "published": "2026-08-27T23:41:31+00:00",
+      "snippet": "Evidence-focused malware reverse engineering with deep PE/.NET inspection, Ghidra reconstruction, AI cross-checks, YARA, and ELF debugging",
+      "image": "https://assets.kitploit.com/production/public/tools/53166/4056e67054ea4f595c4cdc105c0c7f301dd3ff7a8f0733593f1284b0bef82908-social-v1.webp",
+      "ai_summary": "",
+      "published_display": "Aug 27, 23:41"
+    },
+    {
+      "id": "da76835f425b0dc7528e25906d069fce",
+      "title": "fabric-ai-meta 2.0.0",
+      "url": "https://pypi.org/project/fabric-ai-meta/2.0.0/",
+      "source": "Pypi.org",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-08-27T23:36:03+00:00",
+      "snippet": "Turn Microsoft Fabric and Power BI semantic models into AI-ready metadata from your laptop, with query guidance and an agent-readiness score so an AI agent can query them safely. Reads local .pbip/TMDL folders with no tenant or sign-in. Exports to LangChain, …",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 27, 23:36"
+    },
+    {
+      "id": "ad27a2da1fe1aab435e41b598cac9832",
+      "title": "Xbox announces 8 new day-one titles coming to Game Pass",
+      "url": "https://www.notebookcheck.net/Xbox-announces-8-new-day-one-titles-coming-to-Game-Pass.1380426.0.html",
+      "source": "Notebookcheck.net",
+      "category_id": "rumours",
+      "category_name": "Rumours & Gossip",
+      "category_emoji": "🗣️",
+      "published": "2026-08-27T23:23:00+00:00",
+      "snippet": "The two Xbox livestreams from Gamescom 2026 were packed with gameplay reveals, new trailers, and more. On top of that, several new day-one titles were also announced for Game Pass members.",
+      "image": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc5/Game-Pass-new-day-one-games39.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 23:23"
+    },
+    {
+      "id": "303749bb1284a01c93255319c5ae7282",
+      "title": "Mesh connects idle Nvidia GPUs into open AI compute network",
+      "url": "https://cryptobriefing.com/mesh-idle-nvidia-gpus-ai-compute-network/",
+      "source": "Crypto Briefing",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-08-27T23:07:12+00:00",
+      "snippet": "Mesh LLM's decentralized GPU network democratizes AI access, potentially reducing reliance on centralized cloud services and enhancing data privacy.\nThe post Mesh connects idle Nvidia GPUs into open AI compute network appeared first on Crypto Briefing.",
+      "image": "https://static.cryptobriefing.com/wp-content/uploads/2026/08/27190709/library-mesh-connects-idle-nvidia-gpus-into-open-ai-compute-netw-800x450.png",
+      "ai_summary": "",
+      "published_display": "Aug 27, 23:07"
+    },
+    {
+      "id": "c00c790a61971e88207f24e005513441",
+      "title": "Ubuntu 26.04.1 LTS is now available to download",
+      "url": "https://www.omgubuntu.co.uk/2026/08/ubuntu-26041-lts-point-release-download",
+      "source": "Omgubuntu.co.uk",
+      "category_id": "nvidia",
+      "category_name": "NVIDIA",
+      "category_emoji": "💚",
+      "published": "2026-08-27T23:06:40+00:00",
+      "snippet": "Ubuntu 26.04.1 LTS is now available to download, the first of 5 point releases scheduled for the ‘Resolute Raccoon’ in the 3 years. The release doesn’t add new features, but brings a refreshed installation image (.iso) that includes all of the bug fixes, secu…",
+      "image": "https://www.omgubuntu.co.uk/wp-content/uploads/2026/03/ubuntu-2604-hero-2.webp",
+      "ai_summary": "",
+      "published_display": "Aug 27, 23:06"
+    },
+    {
+      "id": "7cdf1403f1cabff496138805320c7564",
+      "title": "Report: Nvidia to acquire AI model repository Hugging Face for $13 billion",
+      "url": "https://biztoc.com/x/e2728bac6e85de8d",
+      "source": "Biztoc.com",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-08-27T22:56:07+00:00",
+      "snippet": "Nvidia is reportedly moving forward to acquire Hugging Face for $12.9 billion. The acquisition could help the hardware giant expand and fortify its deep integration with the wider AI industry.\nAmong other things, Hugging Face is a cloud repository for AI mode…",
+      "image": "https://biztoc.com/cdn/e2728bac6e85de8d_s.webp",
+      "ai_summary": "",
+      "published_display": "Aug 27, 22:56"
+    },
+    {
+      "id": "79d7175da375542e0f60e78b4e904e5d",
+      "title": "CrowdStrike CEO: AI exposes dangerous cyber gaps that legacy tools can’t handle",
+      "url": "https://www.cnbc.com/2026/08/27/crowdstrike-ceo-ai-exposes-dangerous-cyber-gaps.html",
+      "source": "CNBC",
+      "category_id": "opensource",
+      "category_name": "Open Source",
+      "category_emoji": "⬛",
+      "published": "2026-08-27T22:45:42+00:00",
+      "snippet": "CrowdStrike CEO said Thursday that AI is allowing attackers to find and exploit vulnerabilities faster, making the company's protection a must.",
+      "image": "https://image.cnbcfm.com/api/v1/image/108217884-1761665721330-gettyimages-2243356966-AFP_829T3E8.jpeg?v=1767895191&w=1920&h=1080",
+      "ai_summary": "",
+      "published_display": "Aug 27, 22:45"
     },
     {
       "id": "b1b67a52dd05eea225e9cf9d8c79fd5b",
@@ -250,7 +838,189 @@
       "snippet": "As of August 28, 2026, GitHub Classroom is now deprecated in favor of our selected partner solutions. The GitHub Classroom website, APIs, and related services have now been decommissioned. However,&#8230;\nThe post GitHub Classroom deprecated appeared first on The GitHub Blog.",
       "image": "https://github.blog/wp-content/themes/github-2021-child/dist/img/social-v3-deprecations.jpg",
       "ai_summary": "",
-      "published_display": "22h ago"
+      "published_display": "Aug 27, 22:42"
+    },
+    {
+      "id": "f5c1a128c7d8a1548c458f57778ea7a0",
+      "title": "Thomson Reuters Taps Decades of Content to Train AI",
+      "url": "https://www.pymnts.com/news/artificial-intelligence/2026/thomson-reuters-taps-decades-of-content-to-train-ai/",
+      "source": "pymnts.com",
+      "category_id": "ai-foundry",
+      "category_name": "AI Foundry",
+      "category_emoji": "🏭",
+      "published": "2026-08-27T22:41:45+00:00",
+      "snippet": "Thomson Reuters has launched a proprietary large language model that the company developed in-house and trained on its decades of content from Westlaw, Practical Law, Checkpoint and Reuters, the company said in a Monday (Aug. 24) press release. Dubbed “Thomso…",
+      "image": "https://www.pymnts.com/wp-content/uploads/2023/11/Thomson-Reuters.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 22:41"
+    },
+    {
+      "id": "51abf230b21b0c6b2390a31974823a45",
+      "title": "Cosmos3-Edge, Cosmos3-Nano, and Cosmos3-Super models now available on Amazon SageMaker JumpStart",
+      "url": "https://aws.amazon.com/about-aws/whats-new/2026/01/cosmos3-edge-cosmos3-nano-cosmos3-super-on-sagemaker-jumpstart/",
+      "source": "Amazon.com",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-08-27T22:41:00+00:00",
+      "snippet": "NVIDIA's Cosmos3-Edge, Cosmos3-Nano, and Cosmos3-Super models are now available on Amazon SageMaker JumpStart, expanding the portfolio of foundation models available to AWS customers. These three models form the Cosmos 3 family of open, frontier omnimodal wor…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 27, 22:41"
+    },
+    {
+      "id": "b3516e35d5c8abda88d59a1b997b98dc",
+      "title": "ALL IN 2026 brings Canada’s AI ambitions into one room",
+      "url": "https://www.digitaljournal.com/article/all-in-2026-brings-canadas-ai-ambitions-into-one-room/",
+      "source": "Digital Journal",
+      "category_id": "mistral",
+      "category_name": "Mistral",
+      "category_emoji": "🇪🇺",
+      "published": "2026-08-27T22:40:38+00:00",
+      "snippet": "The Montreal event is getting bigger and more focused on the decisions that come with putting AI to work\nThe post ALL IN 2026 brings Canada’s AI ambitions into one room appeared first on Digital Journal.",
+      "image": "https://www.digitaljournal.com/wp-content/uploads/2026/08/ALL-IN-2025-Photo-courtesy-of-ALL-IN.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 22:40"
+    },
+    {
+      "id": "dd5b6913cab32e674b6cbc815fad0eba",
+      "title": "Muse-Glimmer-30B and Qwen 3.8-27B models now available on Amazon SageMaker JumpStart",
+      "url": "https://aws.amazon.com/about-aws/whats-new/2026/01/muse-glimmer-30b-qwen-3.8-27b-on-sagemaker-jumpstart/",
+      "source": "Amazon.com",
+      "category_id": "amazon",
+      "category_name": "Amazon",
+      "category_emoji": "📦",
+      "published": "2026-08-27T22:39:00+00:00",
+      "snippet": "Meta's Muse-Glimmer-30B and Alibaba's Qwen 3.8-27B models are now available on Amazon SageMaker JumpStart, expanding the portfolio of foundation models available to AWS customers. These two models bring specialized capabilities spanning autonomous local agent…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 27, 22:39"
+    },
+    {
+      "id": "4c910cb7fc7524e811788970b7fe927d",
+      "title": "Elon Musk’s xAI used child porn to train Grok models, lawsuit says",
+      "url": "https://slashdot.org/firehose.pl?op=view&amp;id=185233642",
+      "source": "Slashdot.org",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-08-27T22:32:06+00:00",
+      "snippet": "xAI accused of training Grok on real and AI-generated child pornography.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 27, 22:32"
+    },
+    {
+      "id": "5e6c1b44439fab6e975602df72791cb8",
+      "title": "Consumer-focused AI assistant startup Instinct reportedly raising $250M",
+      "url": "https://siliconangle.com/2026/08/27/consumer-focused-ai-assistant-startup-instinct-reportedly-raising-250m/",
+      "source": "SiliconANGLE News",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-08-27T22:27:46+00:00",
+      "snippet": "Instinct, the developer of an artificial intelligence assistant popular among Silicon Valley tech workers, is reportedly raising $250 million in funding. The company told the Wall Street Journal on Wednesday that the round is being co-led by Index Ventures an…",
+      "image": "https://images.siliconangle.com/blogs.dir/1/files/2026/08/Unsplash2.png",
+      "ai_summary": "",
+      "published_display": "Aug 27, 22:27"
+    },
+    {
+      "id": "f0c047b17e52f0d55d1311f8570bd7f0",
+      "title": "Human, Beware: The Secrets We Tell AI Chatbots Aren’t Private",
+      "url": "https://www.cnet.com/tech/services-and-software/human-beware-the-secrets-we-tell-ai-chatbots-arent-private/",
+      "source": "CNET",
+      "category_id": "microsoft",
+      "category_name": "Microsoft",
+      "category_emoji": "🟦",
+      "published": "2026-08-27T22:08:21+00:00",
+      "snippet": "A recent DuckDuckGo survey finds that people are sharing intimate details with chatbots without knowing all the privacy risks.",
+      "image": "https://www.cnet.com/wp-content/uploads/sites/2/DDG-survey-16x9-1.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 22:08"
+    },
+    {
+      "id": "54772d75a15df5cfdbb096640357ec19",
+      "title": "Australia faces 'sliding doors' moment to turn AI boom into local wealth",
+      "url": "https://www.abc.net.au/news/2026-08-28/ai-companies-want-to-leverage-australian-data-centres/107086534",
+      "source": "ABC News (AU)",
+      "category_id": "industry",
+      "category_name": "Industry",
+      "category_emoji": "🔵",
+      "published": "2026-08-27T21:51:40+00:00",
+      "snippet": "Australia is in a \"sliding doors\" moment where it has a chance to negotiate for a bigger share of the AI boom in exchange for building data centres.",
+      "image": "https://live-production.wcms.abc-cdn.net.au/176938ec4f9b536625102abea96d5cc9?impolicy=wcms_watermark_news&cropH=3274&cropW=5821&xPos=0&yPos=1&width=862&height=485&imformat=generic",
+      "ai_summary": "",
+      "published_display": "Aug 27, 21:51"
+    },
+    {
+      "id": "ee046e0ad08977fd662740defb15e3ca",
+      "title": "How Inbound Marketing Is Changing in the Age of AI",
+      "url": "https://ducttapemarketing.com/how-inbound-marketing-is-changing-in-the-age-of-ai/",
+      "source": "Ducttapemarketing.com",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-08-27T21:50:52+00:00",
+      "snippet": "How Inbound Marketing Is Changing in the Age of AI written by John Jantsch read more at Duct Tape Marketing\nCatch the Full Episode:   Overview HubSpot spent over a decade teaching small businesses how to build inbound marketing funnels. Then AI-driven search …",
+      "image": "https://ducttapemarketing.com/wp-content/uploads/2026/08/Podcast-Main-Pics-5-1024x576.png",
+      "ai_summary": "",
+      "published_display": "Aug 27, 21:50"
+    },
+    {
+      "id": "fe7a8b4af5c223ea2a29c8f86e609971",
+      "title": "brigade-cli 0.27.0.dev20260827",
+      "url": "https://pypi.org/project/brigade-cli/0.27.0.dev20260827/",
+      "source": "Pypi.org",
+      "category_id": "xai",
+      "category_name": "xAI",
+      "category_emoji": "⚡",
+      "published": "2026-08-27T21:46:06+00:00",
+      "snippet": "Your agents run loops. Brigade keeps the receipts. Local control plane for multi-agent coding: share MCP/tools/memory, remember via handoffs, prove with file receipts, improve by promoting skills only on real exit codes. Claude Code, Codex, Grok, Hermes, Open…",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 27, 21:46"
+    },
+    {
+      "id": "5b51d7da9576a99147ede6119a75e167",
+      "title": "Tech giants urge global response to AI cybersecurity threats",
+      "url": "https://www.dw.com/en/ai-companies-cybersecurity-threats-open-letter/a-78538592",
+      "source": "DW (English)",
+      "category_id": "perplexity",
+      "category_name": "Perplexity",
+      "category_emoji": "🔍",
+      "published": "2026-08-27T21:44:00+00:00",
+      "snippet": "Concerns have emerged over the state of the world's cybersecurity after AI models escaped test environments and breached multiple organizations.",
+      "image": "https://static.dw.com/image/78538633_6.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 21:44"
+    },
+    {
+      "id": "5e2d1c0f26e88e2e30cc8574077605b1",
+      "title": "James Pond's creator is not happy with the series' allegedly AI-generated legacy collection",
+      "url": "https://slashdot.org/firehose.pl?op=view&amp;id=185232679",
+      "source": "Slashdot.org",
+      "category_id": "rumours",
+      "category_name": "Rumours & Gossip",
+      "category_emoji": "🗣️",
+      "published": "2026-08-27T21:32:21+00:00",
+      "snippet": "The developers don't have \"a scrap of respect\" for the series, according to Chris Sorrell.",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 27, 21:32"
+    },
+    {
+      "id": "a93d0d3c4c4693283932d3019bc239d1",
+      "title": "Azure Developer CLI 1.32 adds direct container delivery and GA extensions",
+      "url": "https://4sysops.com/archives/azure-developer-cli-1-32-adds-direct-container-delivery-and-ga-extensions/",
+      "source": "4sysops.com",
+      "category_id": "microsoft",
+      "category_name": "Microsoft",
+      "category_emoji": "🟦",
+      "published": "2026-08-27T21:32:08+00:00",
+      "snippet": "The August 2026 Azure Developer CLI release train makes two notable changes for deployment teams: the extension framework is now generally available, and Azure Functions can deploy containers from Dockerfiles, existing images, or Azure Container Registry remo…",
+      "image": "https://4sysops.com/wp-content/uploads/2026/08/azure-developer-cli-1-32-adds-direct-container-delivery-and-ga-extensions.webp",
+      "ai_summary": "",
+      "published_display": "Aug 27, 21:32"
     },
     {
       "id": "7bf859c19776aabbbed5b46953ba8769",
@@ -1037,6 +1807,20 @@
       "published_display": "Aug 27, 19:12"
     },
     {
+      "id": "d1fcbb2e721b89939083c2cccbcd0548",
+      "title": "JPMorgan Flags Big Risk Ahead of IREN Earnings",
+      "url": "https://biztoc.com/x/770d37fc3a7de9a6",
+      "source": "Biztoc.com",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T19:11:38+00:00",
+      "snippet": "This article first appeared on GuruFocus.\nIREN (NASDAQ:IREN) heads into fiscal fourth-quarter earnings Thursday with JPMorgan (NYSE:JPM) maintaining a Sell rating and $46 price target, as the former Bitcoin miner races to transform itself into a major AI infr…",
+      "image": "https://biztoc.com/cdn/770d37fc3a7de9a6_s.webp",
+      "ai_summary": "",
+      "published_display": "Aug 27, 19:11"
+    },
+    {
       "id": "8e1efc1efa76b3de7bf67d1efd944d8b",
       "title": "Nvidia posts record quarter and predicts AI-driven growth will last through 2028",
       "url": "https://www.techspot.com/news/113642-nvidia-posts-record-quarter-predicts-ai-driven-growth.html",
@@ -1047,6 +1831,20 @@
       "published": "2026-08-27T19:07:00+00:00",
       "snippet": "According to Nvidia's official filing with the SEC, quarterly revenue for the three-month period ending in July 2026 reached $96.22 billion, beating the $91.90 billion expected by Wall Street. Net income more than doubled to $53.95 billion, up from $24.76 bil…",
       "image": "https://www.techspot.com/images2/news/bigimage/2026/08/2026-08-27-image-22.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 19:07"
+    },
+    {
+      "id": "b36716e01f6fa6aaa0eeafa2db4dd71a",
+      "title": "China aims to flood the market with humanoid robots — but they’re still too dumb to replace workers",
+      "url": "https://www.notebookcheck.net/China-aims-to-flood-the-market-with-humanoid-robots-but-they-re-still-too-dumb-to-replace-workers.1381002.0.html",
+      "source": "Notebookcheck.net",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T19:07:00+00:00",
+      "snippet": "China is rapidly expanding its humanoid-robot industry, but the machines remain too slow and unreliable to replace workers in most real-world jobs. Despite massive investment and impressive demonstrations, the technology still faces major AI and training-data…",
+      "image": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc5/unitree-humanoid-robot_01.jpg",
       "ai_summary": "",
       "published_display": "Aug 27, 19:07"
     },
@@ -1247,6 +2045,20 @@
       "published_display": "Aug 27, 18:10"
     },
     {
+      "id": "d82587192c18085c2156fbf0a6f26021",
+      "title": "'We have a limited window': 116 companies, entities sign on to major AI cyber defense push",
+      "url": "https://biztoc.com/x/d5b970966227ed96",
+      "source": "Biztoc.com",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T18:06:55+00:00",
+      "snippet": "The letter also urged a coordinated government effort to make cyber defense accessible to critical infrastructure under pressure.",
+      "image": "https://biztoc.com/cdn/995/og.png",
+      "ai_summary": "",
+      "published_display": "Aug 27, 18:06"
+    },
+    {
       "id": "74f26f1a9f34086d4507c5f395b81513",
       "title": "This Is How Anthropic Thinks AI Agents Should Navigate the Physical World",
       "url": "https://www.wired.com/story/anthropic-standard-ai-agents-coming-to-the-physical-world/",
@@ -1359,6 +2171,20 @@
       "published_display": "Aug 27, 17:29"
     },
     {
+      "id": "b673419f6359298d06ba0fd0ffe972d5",
+      "title": "codex-deepseek-vision 1.2.4",
+      "url": "https://pypi.org/project/codex-deepseek-vision/1.2.4/",
+      "source": "Pypi.org",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-08-27T17:14:19+00:00",
+      "snippet": "Codex vision bridge for DeepSeek V4 Flash: give text-only models image capability in Codex via a free local image-to-text proxy (GLM-4V-Flash or any OpenAI-compatible vision API).",
+      "image": null,
+      "ai_summary": "",
+      "published_display": "Aug 27, 17:14"
+    },
+    {
       "id": "2cf64e155ff7848be83ed7d7549d1c45",
       "title": "Microsoft and Humain form long-term partnership to bring Arabic AI into enterprise software",
       "url": "https://cryptobriefing.com/microsoft-humain-ai-partnership/",
@@ -1371,6 +2197,34 @@
       "image": "https://static.cryptobriefing.com/wp-content/uploads/2026/08/27131057/library-microsoft-and-humain-form-long-term-partnership-to-bring-800x450.png",
       "ai_summary": "",
       "published_display": "Aug 27, 17:11"
+    },
+    {
+      "id": "72d943a01d0516c67f48b8f791564929",
+      "title": "Why Nvidia’s Acquisition of Hugging Face Would Reshape Open-Source AI",
+      "url": "https://decrypt.co/376725/nvidia-acquisition-hugging-reshape-open-source-ai",
+      "source": "Decrypt",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T17:09:32+00:00",
+      "snippet": "The chipmaker's reported acquisition would concentrate the open-source AI pipeline inside one company, from silicon to distribution — with consequences for builders and users alike.",
+      "image": "https://cdn.decrypt.co/resize/1024/height/512/wp-content/uploads/2025/05/nvidia-logo-decrypt-style-1-gID_7.png",
+      "ai_summary": "",
+      "published_display": "Aug 27, 17:09"
+    },
+    {
+      "id": "94a37c911b99f4077338c49d02d8d92b",
+      "title": "Chinese open-source AI is starting to win over U.S. businesses",
+      "url": "https://biztoc.com/x/1ebbec5d14b462b4",
+      "source": "Biztoc.com",
+      "category_id": "deepseek",
+      "category_name": "DeepSeek",
+      "category_emoji": "🇨🇳",
+      "published": "2026-08-27T17:05:17+00:00",
+      "snippet": "Welcome to Eye on AI. Beatrice Nolan here. In today’s issue:\nGoogle DeepMind is losing its grip on elite AI talent, new data shows\nDeepSeek seeks $7.4 billion at a $74 billion valuation.\nOpenAI data-center head leaves amid broader exodus. \nAnd OpenAI releases…",
+      "image": "https://biztoc.com/cdn/1ebbec5d14b462b4_s.webp",
+      "ai_summary": "",
+      "published_display": "Aug 27, 17:05"
     },
     {
       "id": "5c464293ee9076b7324bb5880fbdb5bf",
@@ -1441,6 +2295,34 @@
       "image": "https://media.wired.com/photos/6a905cdd60f4c0fdadcc5237/master/pass/Model-Behavior-Illo-Template.jpg",
       "ai_summary": "",
       "published_display": "Aug 27, 16:52"
+    },
+    {
+      "id": "a0e4d9a6e6ccaee371918f619937e085",
+      "title": "Is Microsoft Stock A True Safe Haven When The Market Stumbles?",
+      "url": "https://www.trefis.com/articles/613353/is-microsoft-stock-a-true-safe-haven-when-the-market-stumbles/2026-08-27",
+      "source": "Trefis",
+      "category_id": "m365-copilot",
+      "category_name": "M365 Copilot",
+      "category_emoji": "✨",
+      "published": "2026-08-27T16:52:34+00:00",
+      "snippet": "The correlation to the index is high, the five-year record shows wider swings for slightly less return, and neither of those says diversification.",
+      "image": "https://s.yimg.com/lo/mysterio/api/7c5368689b077b79216fb3778e584b7c874341958415f21c2a9d89b6cba6e15d/lightyear_networkapi/resizefill_w1200%3Bquality_80%3Bformat_webp/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Ftrefis_142%2Ff5bbfd947ebcc09b4a540f522b416137.jpg",
+      "ai_summary": "",
+      "published_display": "Aug 27, 16:52"
+    },
+    {
+      "id": "09e9b76a65d76ae3f99272fafdb2f8c7",
+      "title": "Alphabet faces talent concerns amid fears of AI edge loss",
+      "url": "https://cryptobriefing.com/alphabet-ai-talent-exodus-concerns/",
+      "source": "Crypto Briefing",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T16:44:50+00:00",
+      "snippet": "Alphabet's talent drain could weaken its AI dominance, impacting investor confidence and potentially reshaping the competitive landscape.\nThe post Alphabet faces talent concerns amid fears of AI edge loss appeared first on Crypto Briefing.",
+      "image": "https://static.cryptobriefing.com/wp-content/uploads/2026/08/27124446/library-alphabet-faces-talent-concerns-amid-fears-of-ai-edge-los-800x450.png",
+      "ai_summary": "",
+      "published_display": "Aug 27, 16:44"
     },
     {
       "id": "5ba483655d48173440720d0872433914",
@@ -1597,6 +2479,20 @@
       "published_display": "Aug 27, 15:30"
     },
     {
+      "id": "8650c931270ce1498f3bd1e7a5d9b4be",
+      "title": "Google Cloud Just Gave Rezolve AI a Major Vote of Confidence",
+      "url": "https://www.marketbeat.com/articles/google-cloud-just-gave-rezolve-ai-a-major-vote-of-confidence/?utm_source=yahoofinance&amp;utm_medium=yahoofinance",
+      "source": "MarketBeat",
+      "category_id": "microsoft",
+      "category_name": "Microsoft",
+      "category_emoji": "🟦",
+      "published": "2026-08-27T15:30:00+00:00",
+      "snippet": "Alphabet's selection of Rezolve AI for Google Cloud Web3 data pipelines sent shares up nearly 22%, fueling short covering ahead of the company's Sept. 1 earn...",
+      "image": "https://s.yimg.com/lo/mysterio/api/ae50cc0dfa5ca22e8feb16a9a9842c199a832f09c19cd1219f85014eb2a1d922/lightyear_networkapi/resizefill_w1200%3Bquality_80%3Bformat_webp/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Fmarketbeat_955%2F771e918cabb17a6397cdf48f87b908e9.png",
+      "ai_summary": "",
+      "published_display": "Aug 27, 15:30"
+    },
+    {
       "id": "10edb2258b162b17d9176980c3ccfa00",
       "title": "Apple Wallet Adds Digital Car Key Support For Xiaomi Vehicles",
       "url": "https://www.ubergizmo.com/2026/08/apple-wallet-adds-digital-car-key-support-for-xiaomi-vehicles/",
@@ -1607,6 +2503,20 @@
       "published": "2026-08-27T15:00:48+00:00",
       "snippet": "Apple is preparing to introduce digital car key support for Xiaomi electric vehicles within the Apple Wallet platform. Discovered in recent system beta software, this integration establishes an unexpected bridge between two direct global competitors in the co…",
       "image": "https://i0.wp.com/cdnbunny.ubergizmo.com/wp-content/uploads/2025/11/xiaomi-yu7.png",
+      "ai_summary": "",
+      "published_display": "Aug 27, 15:00"
+    },
+    {
+      "id": "0a09fdc3560e3c128ae39bb41e3d7319",
+      "title": "Apple Event: Six New Products to Expect on September 9",
+      "url": "https://www.macrumors.com/2026/08/27/apple-event-announced-six-new-products/",
+      "source": "MacRumors",
+      "category_id": "apple",
+      "category_name": "Apple",
+      "category_emoji": "🍎",
+      "published": "2026-08-27T15:00:00+00:00",
+      "snippet": "Apple has announced that it will be holding an event on Wednesday, September 9 at 10 a.m. Pacific Time, with the company widely expected to unveil the iPhone 18 Pro, iPhone 18 Pro Max, its first-ever foldable iPhone, and more.\n\n\n\n\n\nOther products expected to …",
+      "image": "https://images.macrumors.com/t/3KxQ1Cj5B33XoyogmjHvpHDtHDE=/2048x/article-new/2026/08/Apple-Surprise-Shine.jpeg",
       "ai_summary": "",
       "published_display": "Aug 27, 15:00"
     },
@@ -1665,6 +2575,20 @@
       "image": "https://mmx.prnewswire.com/media/MS1975530/Cloudtech-SMB-Poster.jpg?id=OA2911019&p=facebook",
       "ai_summary": "",
       "published_display": "Aug 27, 14:22"
+    },
+    {
+      "id": "2e06869271d4a01057a474ff8abb66c9",
+      "title": "Apple vs. Microsoft: One Mega-Cap Looks Like the Better Long-Term Bet",
+      "url": "https://247wallst.com/investing/2026/08/27/apple-vs-microsoft-one-mega-cap-looks-like-the-better-long-term-bet/",
+      "source": "24/7 Wall St.",
+      "category_id": "m365-copilot",
+      "category_name": "M365 Copilot",
+      "category_emoji": "✨",
+      "published": "2026-08-27T14:00:57+00:00",
+      "snippet": "Apple just posted its best June quarter ever while Microsoft locked up $678 billion in contracted backlog, but only one of these titans is making the kind of...",
+      "image": "https://s.yimg.com/lo/mysterio/api/3b238539b8dd62d91f1d3485eb26afbd162fdf3a69bb66cd6f6b983546c75a18/lightyear_networkapi/resizefill_w1200%3Bquality_80%3Bformat_webp/https%3A%2F%2Fmedia.zenfs.com%2Fen%2F24_7_wall_st__718%2F2a219050b09cc1edf0c8f23b3d892926",
+      "ai_summary": "",
+      "published_display": "Aug 27, 14:00"
     },
     {
       "id": "8c41f69db36c18e02a10207fb7c5d54a",
@@ -1847,6 +2771,20 @@
       "image": "https://image.theregister.com/?imageId=255325&width=800",
       "ai_summary": "",
       "published_display": "Aug 27, 01:45"
+    },
+    {
+      "id": "06e4ad4464c052f6b22809c7a14d65d1",
+      "title": "Viral AI startup Instinct has raised $350M at a $2.5B valuation",
+      "url": "https://techcrunch.com/2026/08/26/viral-ai-startup-instinct-has-raised-350-million-at-a-2-5-billion-valuation/",
+      "source": "TechCrunch AI",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-27T00:24:57+00:00",
+      "snippet": "The startup is only a year old but it has already generated a massive amount of hype (and money) while also spurring privacy concerns.",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-2255991416.jpg?resize=1200,795",
+      "ai_summary": "",
+      "published_display": "Aug 27, 00:24"
     },
     {
       "id": "ff519b7ae74d99d0080a7d54eb0034c6",
@@ -3011,6 +3949,20 @@
       "published_display": "Aug 26, 12:18"
     },
     {
+      "id": "b7eb4043699a71b954b96b7ee0865f3e",
+      "title": "The Download: the Kids issue arrives, and Bill Gates reveals his AI fears",
+      "url": "https://www.technologyreview.com/2026/08/26/1143000/the-download-kids-issue-launch-bill-gates-ai-fears/",
+      "source": "MIT Technology Review",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-26T12:10:00+00:00",
+      "snippet": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Introducing: the Kids issue If the desire to limit kids&#8217; use of technology was once a subcurrent, it has become a raging flood. Countries around the world are banning children from&#8230;",
+      "image": "https://wp.technologyreview.com/wp-content/uploads/2026/04/mirror-dna.webp?w=840",
+      "ai_summary": "",
+      "published_display": "Aug 26, 12:10"
+    },
+    {
       "id": "7d554e7b1a00c3023489a6bcf4b7efe4",
       "title": "Bringing ChatGPT for Teachers to more U.S. school districts",
       "url": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
@@ -3037,6 +3989,20 @@
       "image": "https://images.ctfassets.net/kftzwdyauwt9/4VpVcuK24Tb8Ty8U5QM0fc/575642acb7cf69c0420c6c38b4cce003/learning-never-stops-how-ai-makes-learning-continuous-seo.png?w=1600&amp;h=900&amp;fit=fill",
       "ai_summary": "",
       "published_display": "Aug 26, 10:00"
+    },
+    {
+      "id": "5fa7506250a73c3e9bd9bed34a003785",
+      "title": "Bill Gates says we’ve passed AI’s danger thresholds. Now what?",
+      "url": "https://www.technologyreview.com/2026/08/26/1142946/bill-gates-ai-danger-threshold/",
+      "source": "MIT Technology Review",
+      "category_id": "top-stories",
+      "category_name": "Top Stories",
+      "category_emoji": "🔥",
+      "published": "2026-08-26T07:01:00+00:00",
+      "snippet": "It’s a glorious day in Kirkland, Washington, an affluent Seattle suburb on the eastern shore of Lake Washington. The temperature is in the mid-80s, and the sky is incapable of being any more blue. The view from the Gates Ventures conference room overlooks the Carillon Point Marina, where a flotilla of expensive boats bob in&#8230;",
+      "image": "https://wp.technologyreview.com/wp-content/uploads/2026/08/MIT_07_21_2026_0057.jpg?resize=1200,600",
+      "ai_summary": "",
+      "published_display": "Aug 26, 07:01"
     },
     {
       "id": "c57f6299351c27bc3c1d10a5a354f7f9",
@@ -32845,6 +33811,6 @@
       "published_display": "Jul 31, 15:00"
     }
   ],
-  "generated_at": "2026-08-28T21:21:17.648333+00:00",
+  "generated_at": "2026-08-29T00:52:17.355704+00:00",
   "period": "August 2026"
 }
