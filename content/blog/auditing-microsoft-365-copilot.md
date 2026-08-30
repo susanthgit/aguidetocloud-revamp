@@ -77,7 +77,7 @@ Here's what I could piece together from the current Microsoft documentation — 
 
 Here's the mental model I use. A single Copilot interaction isn't just "a chat message" — it's a rich record that can surface across several Microsoft Purview tools, each answering a different question.
 
-<p><img src="/images/blog/auditing-microsoft-365-copilot/00-hero-audit-map.webp" alt="Diagram: one Copilot interaction (prompt, response, files used, web query, agent or app) flows into five Microsoft Purview surfaces — Purview Audit, DSPM for AI, eDiscovery, Communication Compliance, and Retention and holds." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/auditing-microsoft-365-copilot/00-hero-audit-map.webp" alt="Diagram: one Copilot interaction (prompt, response, files used, web query, agent or app) flows into five Microsoft Purview surfaces — Purview Audit, DSPM, eDiscovery, Communication Compliance, and Retention and holds." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 {{< margin >}}I'm a Copilot Solution Engineer at Microsoft NZ. This is the write-up I wish I'd had the first time a CISO asked me to walk them through Copilot's audit trail.{{< /margin >}}
 
@@ -161,7 +161,7 @@ Worth answering properly, because "DSPM or DSPM for AI (classic)" hides a real c
 
 **There's a new AI observability page.** It inventories every AI app and agent with activity in the last 30 days, including Microsoft Agent 365, and tells you how many are high risk and how many had sensitive interactions, then breaks that down by individual agent and the policies governing them. It's a separate page from the *Apps and agents* inventory further down, which has a couple of blind spots I'll come to.
 
-**The classic versions have an end date.** The banner running across my lab tenant says DSPM (classic) and DSPM for AI (classic) both retire on 30 September 2026, with the features and data already available in the new DSPM. Microsoft's documentation is softer — it only says most new features go to the current version — so treat the date as a plan rather than a promise, and check your own Message Center.
+**The classic versions have an end date.** The banner running across my lab tenant says DSPM (classic) and DSPM for AI (classic) both retire on 30 September 2026, with the features and data already available in the new DSPM. Microsoft's documentation is softer — it only says most new features go to the current version — so treat the date as a plan rather than a promise, and go by the banner in your own tenant.
 
 And the part people usually want to know, which hasn't changed at all: {{< hi >}}the permission gate on reading prompt and response text is identical in both versions.{{< /hi >}} Each one's permissions table carries the same row — viewing the prompts and responses inside `AI Interaction` events is unsupported for Compliance Administrator, Global Administrator and the Purview Compliance Administrator role group, and needs **Content Explorer Content Viewer** or Microsoft Purview Data Security AI Content Viewer on top. Moving to the new DSPM doesn't widen who can read prompts.
 
