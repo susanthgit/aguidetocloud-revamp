@@ -9,7 +9,7 @@
     "azure"
   ],
   "category": "AI",
-  "status": "retiring",
+  "status": "retired",
   "updated_at": "2026-06-30 23:44:00+00:00",
   "skills_date": "December 23, 2025",
   "skills_at_a_glance": [
@@ -199,21 +199,21 @@
       "code": "AI-900",
       "title": "Microsoft Azure AI Fundamentals",
       "level": "beginner",
-      "status": "retiring",
+      "status": "retired",
       "category": "AI"
     },
     {
       "code": "DP-100",
       "title": "Designing and Implementing a Data Science Solution on Azure",
       "level": "intermediate",
-      "status": "retiring",
+      "status": "retired",
       "category": "Data"
     },
     {
       "code": "AZ-204",
       "title": "Developing Solutions for Microsoft Azure",
       "level": "intermediate",
-      "status": "retiring",
+      "status": "retired",
       "category": "Azure"
     }
   ],

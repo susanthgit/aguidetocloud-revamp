@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T05:31:26Z",
+  "generated_at": "2026-08-30T03:42:48Z",
   "exam_count": 52,
   "categories": [
     "AI",
@@ -598,10 +598,10 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-07-31 18:27:00+00:00",
+      "updated_at": "2026-08-26 22:01:00+00:00",
       "skills_date": "August 14, 2026",
       "skill_areas": 5,
-      "total_objectives": 97,
+      "total_objectives": 96,
       "skills_at_a_glance": [
         {
           "area": "Implement financial management",
@@ -1321,149 +1321,6 @@
       "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-100"
     },
     {
-      "code": "AI-900",
-      "title": "Microsoft Azure AI Fundamentals",
-      "level": "beginner",
-      "roles": [
-        "ai-engineer",
-        "data-scientist"
-      ],
-      "products": [
-        "azure"
-      ],
-      "category": "AI",
-      "status": "retiring",
-      "retirement_date": "2026-06-30",
-      "replacement": "AI-901",
-      "replaces": "",
-      "beta_since": "",
-      "updated_at": "2026-06-30 23:44:00+00:00",
-      "skills_date": "May 2, 2025",
-      "skill_areas": 5,
-      "total_objectives": 40,
-      "skills_at_a_glance": [
-        {
-          "area": "Describe Artificial Intelligence workloads and considerations",
-          "weight": "15-20%"
-        },
-        {
-          "area": "Describe fundamental principles of machine learning on Azure",
-          "weight": "15-20%"
-        },
-        {
-          "area": "Describe features of computer vision workloads on Azure",
-          "weight": "15-20%"
-        },
-        {
-          "area": "Describe features of Natural Language Processing (NLP) workloads on Azure",
-          "weight": "15-20%"
-        },
-        {
-          "area": "Describe features of generative AI workloads on Azure",
-          "weight": "20-25%"
-        }
-      ],
-      "has_changes": false,
-      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-900/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ai-900"
-    },
-    {
-      "code": "AI-102",
-      "title": "Designing and Implementing a Microsoft Azure AI Solution",
-      "level": "intermediate",
-      "roles": [
-        "ai-engineer"
-      ],
-      "products": [
-        "azure"
-      ],
-      "category": "AI",
-      "status": "retiring",
-      "retirement_date": "2026-06-30",
-      "replacement": "AI-103",
-      "replaces": "",
-      "beta_since": "",
-      "updated_at": "2026-06-30 23:44:00+00:00",
-      "skills_date": "December 23, 2025",
-      "skill_areas": 6,
-      "total_objectives": 106,
-      "skills_at_a_glance": [
-        {
-          "area": "Plan and manage an Azure AI solution",
-          "weight": "20-25%"
-        },
-        {
-          "area": "Implement generative AI solutions",
-          "weight": "15-20%"
-        },
-        {
-          "area": "Implement an agentic solution",
-          "weight": "5-10%"
-        },
-        {
-          "area": "Implement computer vision solutions",
-          "weight": "10-15%"
-        },
-        {
-          "area": "Implement natural language processing solutions",
-          "weight": "15-20%"
-        },
-        {
-          "area": "Implement knowledge mining and information extraction solutions",
-          "weight": "15-20%"
-        }
-      ],
-      "has_changes": false,
-      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-102/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ai-102"
-    },
-    {
-      "code": "AZ-204",
-      "title": "Developing Solutions for Microsoft Azure",
-      "level": "intermediate",
-      "roles": [
-        "developer"
-      ],
-      "products": [
-        "azure"
-      ],
-      "category": "Azure",
-      "status": "retiring",
-      "retirement_date": "2026-07-31",
-      "replacement": "New Azure AI-enabled developer certs",
-      "replaces": "",
-      "beta_since": "",
-      "updated_at": "2026-07-31 18:27:00+00:00",
-      "skills_date": "January 14, 2026",
-      "skill_areas": 5,
-      "total_objectives": 37,
-      "skills_at_a_glance": [
-        {
-          "area": "Develop Azure compute solutions",
-          "weight": "25-30%"
-        },
-        {
-          "area": "Develop for Azure storage",
-          "weight": "15-20%"
-        },
-        {
-          "area": "Implement Azure security",
-          "weight": "15-20%"
-        },
-        {
-          "area": "Monitor, troubleshoot, and optimize Azure solutions",
-          "weight": "5-10%"
-        },
-        {
-          "area": "Connect to and consume Azure services and third-party services",
-          "weight": "20-25%"
-        }
-      ],
-      "has_changes": false,
-      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-204/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-204"
-    },
-    {
       "code": "AZ-500",
       "title": "Microsoft Azure Security Technologies",
       "level": "intermediate",
@@ -1598,174 +1455,6 @@
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-801/",
       "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-801"
-    },
-    {
-      "code": "DP-100",
-      "title": "Designing and Implementing a Data Science Solution on Azure",
-      "level": "intermediate",
-      "roles": [
-        "data-scientist"
-      ],
-      "products": [
-        "azure"
-      ],
-      "category": "Data",
-      "status": "retiring",
-      "retirement_date": "2026-06-01",
-      "replacement": "AI-300",
-      "replaces": "",
-      "beta_since": "",
-      "updated_at": "2026-06-01 20:07:00+00:00",
-      "skills_date": "April 11, 2025",
-      "skill_areas": 4,
-      "total_objectives": 64,
-      "skills_at_a_glance": [
-        {
-          "area": "Design and prepare a machine learning solution",
-          "weight": "20-25%"
-        },
-        {
-          "area": "Explore data, and run experiments",
-          "weight": "20-25%"
-        },
-        {
-          "area": "Train and deploy models",
-          "weight": "25-30%"
-        },
-        {
-          "area": "Optimize language models for AI applications",
-          "weight": "25-30%"
-        }
-      ],
-      "has_changes": false,
-      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-100/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-100"
-    },
-    {
-      "code": "MB-240",
-      "title": "Microsoft Dynamics 365 Field Service Functional Consultant",
-      "level": "intermediate",
-      "roles": [
-        "functional-consultant"
-      ],
-      "products": [
-        "dynamics-365"
-      ],
-      "category": "Dynamics 365",
-      "status": "retiring",
-      "retirement_date": "2026-06-30",
-      "replacement": "Refreshed Dynamics 365 AI certs",
-      "replaces": "",
-      "beta_since": "",
-      "updated_at": "2026-06-30 23:44:00+00:00",
-      "skills_date": "September 18, 2025",
-      "skill_areas": 6,
-      "total_objectives": 97,
-      "skills_at_a_glance": [
-        {
-          "area": "Configure field service applications",
-          "weight": "20-25%"
-        },
-        {
-          "area": "Manage work orders and customer assets",
-          "weight": "25-30%"
-        },
-        {
-          "area": "Schedule and dispatch work orders",
-          "weight": "15-20%"
-        },
-        {
-          "area": "Manage the Field Service mobile app",
-          "weight": "5-10%"
-        },
-        {
-          "area": "Manage inventory and purchasing by using the built-in inventory management system",
-          "weight": "5-10%"
-        },
-        {
-          "area": "Implement Microsoft Power Platform",
-          "weight": "5-10%"
-        }
-      ],
-      "has_changes": false,
-      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-240/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-240"
-    },
-    {
-      "code": "PL-500",
-      "title": "Microsoft Power Automate RPA Developer",
-      "level": "intermediate",
-      "roles": [
-        "developer"
-      ],
-      "products": [
-        "power-automate"
-      ],
-      "category": "Power Platform",
-      "status": "retiring",
-      "retirement_date": "2026-06-30",
-      "replacement": "New Power Platform AI/Copilot certs",
-      "replaces": "",
-      "beta_since": "",
-      "updated_at": "2026-06-30 23:44:00+00:00",
-      "skills_date": "July 8, 2024",
-      "skill_areas": 3,
-      "total_objectives": 156,
-      "skills_at_a_glance": [
-        {
-          "area": "Design automations",
-          "weight": "25-30%"
-        },
-        {
-          "area": "Develop automations",
-          "weight": "45-50%"
-        },
-        {
-          "area": "Deploy and manage automations",
-          "weight": "20-25%"
-        }
-      ],
-      "has_changes": false,
-      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-500/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-500"
-    },
-    {
-      "code": "PL-600",
-      "title": "Microsoft Power Platform Solution Architect",
-      "level": "advanced",
-      "roles": [
-        "solution-architect"
-      ],
-      "products": [
-        "power-platform"
-      ],
-      "category": "Power Platform",
-      "status": "retiring",
-      "retirement_date": "2026-06-30",
-      "replacement": "New Power Platform architect certs",
-      "replaces": "",
-      "beta_since": "",
-      "updated_at": "2026-06-30 23:44:00+00:00",
-      "skills_date": "September 23, 2024",
-      "skill_areas": 3,
-      "total_objectives": 126,
-      "skills_at_a_glance": [
-        {
-          "area": "Perform solution envisioning and requirement analysis",
-          "weight": "45-50%"
-        },
-        {
-          "area": "Architect a solution",
-          "weight": "35-40%"
-        },
-        {
-          "area": "Implement the solution",
-          "weight": "15-20%"
-        }
-      ],
-      "has_changes": false,
-      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-600/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-600"
     },
     {
       "code": "AI-901",
@@ -2000,6 +1689,191 @@
       "study_guide_url": ""
     },
     {
+      "code": "AI-900",
+      "title": "Microsoft Azure AI Fundamentals",
+      "level": "beginner",
+      "roles": [
+        "ai-engineer",
+        "data-scientist"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "AI",
+      "status": "retired",
+      "retirement_date": "2026-06-30",
+      "replacement": "AI-901",
+      "replaces": "",
+      "beta_since": "",
+      "updated_at": "2026-06-30 23:44:00+00:00",
+      "skills_date": "May 2, 2025",
+      "skill_areas": 5,
+      "total_objectives": 40,
+      "skills_at_a_glance": [
+        {
+          "area": "Describe Artificial Intelligence workloads and considerations",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Describe fundamental principles of machine learning on Azure",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Describe features of computer vision workloads on Azure",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Describe features of Natural Language Processing (NLP) workloads on Azure",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Describe features of generative AI workloads on Azure",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-900/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ai-900"
+    },
+    {
+      "code": "AI-102",
+      "title": "Designing and Implementing a Microsoft Azure AI Solution",
+      "level": "intermediate",
+      "roles": [
+        "ai-engineer"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "AI",
+      "status": "retired",
+      "retirement_date": "2026-06-30",
+      "replacement": "AI-103",
+      "replaces": "",
+      "beta_since": "",
+      "updated_at": "2026-06-30 23:44:00+00:00",
+      "skills_date": "December 23, 2025",
+      "skill_areas": 6,
+      "total_objectives": 106,
+      "skills_at_a_glance": [
+        {
+          "area": "Plan and manage an Azure AI solution",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Implement generative AI solutions",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Implement an agentic solution",
+          "weight": "5-10%"
+        },
+        {
+          "area": "Implement computer vision solutions",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Implement natural language processing solutions",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Implement knowledge mining and information extraction solutions",
+          "weight": "15-20%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-102/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ai-102"
+    },
+    {
+      "code": "AZ-204",
+      "title": "Developing Solutions for Microsoft Azure",
+      "level": "intermediate",
+      "roles": [
+        "developer"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "Azure",
+      "status": "retired",
+      "retirement_date": "2026-07-31",
+      "replacement": "New Azure AI-enabled developer certs",
+      "replaces": "",
+      "beta_since": "",
+      "updated_at": "2026-07-31 18:27:00+00:00",
+      "skills_date": "January 14, 2026",
+      "skill_areas": 5,
+      "total_objectives": 37,
+      "skills_at_a_glance": [
+        {
+          "area": "Develop Azure compute solutions",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Develop for Azure storage",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Implement Azure security",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Monitor, troubleshoot, and optimize Azure solutions",
+          "weight": "5-10%"
+        },
+        {
+          "area": "Connect to and consume Azure services and third-party services",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-204/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-204"
+    },
+    {
+      "code": "DP-100",
+      "title": "Designing and Implementing a Data Science Solution on Azure",
+      "level": "intermediate",
+      "roles": [
+        "data-scientist"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "Data",
+      "status": "retired",
+      "retirement_date": "2026-06-01",
+      "replacement": "AI-300",
+      "replaces": "",
+      "beta_since": "",
+      "updated_at": "2026-06-01 20:07:00+00:00",
+      "skills_date": "April 11, 2025",
+      "skill_areas": 4,
+      "total_objectives": 64,
+      "skills_at_a_glance": [
+        {
+          "area": "Design and prepare a machine learning solution",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Explore data, and run experiments",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Train and deploy models",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Optimize language models for AI applications",
+          "weight": "25-30%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-100/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-100"
+    },
+    {
       "code": "MB-910",
       "title": "Microsoft Dynamics 365 Fundamentals (CRM)",
       "level": "beginner",
@@ -2084,6 +1958,56 @@
       "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-920"
     },
     {
+      "code": "MB-240",
+      "title": "Microsoft Dynamics 365 Field Service Functional Consultant",
+      "level": "intermediate",
+      "roles": [
+        "functional-consultant"
+      ],
+      "products": [
+        "dynamics-365"
+      ],
+      "category": "Dynamics 365",
+      "status": "retired",
+      "retirement_date": "2026-06-30",
+      "replacement": "Refreshed Dynamics 365 AI certs",
+      "replaces": "",
+      "beta_since": "",
+      "updated_at": "2026-06-30 23:44:00+00:00",
+      "skills_date": "September 18, 2025",
+      "skill_areas": 6,
+      "total_objectives": 97,
+      "skills_at_a_glance": [
+        {
+          "area": "Configure field service applications",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Manage work orders and customer assets",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Schedule and dispatch work orders",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Manage the Field Service mobile app",
+          "weight": "5-10%"
+        },
+        {
+          "area": "Manage inventory and purchasing by using the built-in inventory management system",
+          "weight": "5-10%"
+        },
+        {
+          "area": "Implement Microsoft Power Platform",
+          "weight": "5-10%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-240/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-240"
+    },
+    {
       "code": "MS-900",
       "title": "Microsoft 365 Fundamentals",
       "level": "beginner",
@@ -2124,6 +2048,82 @@
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-900/",
       "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ms-900"
+    },
+    {
+      "code": "PL-500",
+      "title": "Microsoft Power Automate RPA Developer",
+      "level": "intermediate",
+      "roles": [
+        "developer"
+      ],
+      "products": [
+        "power-automate"
+      ],
+      "category": "Power Platform",
+      "status": "retired",
+      "retirement_date": "2026-06-30",
+      "replacement": "New Power Platform AI/Copilot certs",
+      "replaces": "",
+      "beta_since": "",
+      "updated_at": "2026-06-30 23:44:00+00:00",
+      "skills_date": "July 8, 2024",
+      "skill_areas": 3,
+      "total_objectives": 156,
+      "skills_at_a_glance": [
+        {
+          "area": "Design automations",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Develop automations",
+          "weight": "45-50%"
+        },
+        {
+          "area": "Deploy and manage automations",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-500/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-500"
+    },
+    {
+      "code": "PL-600",
+      "title": "Microsoft Power Platform Solution Architect",
+      "level": "advanced",
+      "roles": [
+        "solution-architect"
+      ],
+      "products": [
+        "power-platform"
+      ],
+      "category": "Power Platform",
+      "status": "retired",
+      "retirement_date": "2026-06-30",
+      "replacement": "New Power Platform architect certs",
+      "replaces": "",
+      "beta_since": "",
+      "updated_at": "2026-06-30 23:44:00+00:00",
+      "skills_date": "September 23, 2024",
+      "skill_areas": 3,
+      "total_objectives": 126,
+      "skills_at_a_glance": [
+        {
+          "area": "Perform solution envisioning and requirement analysis",
+          "weight": "45-50%"
+        },
+        {
+          "area": "Architect a solution",
+          "weight": "35-40%"
+        },
+        {
+          "area": "Implement the solution",
+          "weight": "15-20%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-600/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-600"
     }
   ]
 }
