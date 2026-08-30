@@ -3,7 +3,7 @@ title: "Auditing Microsoft 365 Copilot: What's Logged and Kept"
 list_title: "Auditing Microsoft 365 Copilot — A Practical Guide"
 description: "A plain-English guide to Microsoft 365 Copilot auditing: what each interaction records, where to find it in Purview, and how long it's kept."
 date: 2026-08-11
-lastmod: 2026-08-19
+lastmod: 2026-08-30
 hub_id: "it-admins"
 card_tag: "Security"
 tag_class: "security"
@@ -21,7 +21,7 @@ faq:
   - question: "Does Microsoft 365 Copilot log what users ask it?"
     answer: "Yes, when auditing is on. Supported Microsoft 365 Copilot interactions are written to the Microsoft Purview audit log as CopilotInteraction records. The record identifies who interacted, when, which app or agent was involved, the prompt and response messages, and the resources Copilot referenced (with their sensitivity labels). The actual prompt and response text is retrieved separately by authorised Purview experiences and needs additional permissions. Auditing is on by default for Microsoft 365 E3 and E5, and it lives in Microsoft Purview, not the Microsoft 365 admin center."
   - question: "Where do I find Copilot audit logs?"
-    answer: "In the Microsoft Purview portal (purview.microsoft.com), not the Microsoft 365 admin center. Three related workflows help — they aren't one shared datastore: Audit searches the audit events (filter the CopilotInteraction record type or 'Copilot activities'); DSPM for AI presents the same AI activity as a dashboard (Activity explorer → AI activities); and eDiscovery separately searches the mailbox-backed prompt and response items, and can delete them for legal cases or data-spillage cleanup."
+    answer: "In the Microsoft Purview portal (purview.microsoft.com), not the Microsoft 365 admin center. Three related workflows help — they aren't one shared datastore: Audit searches the audit events (filter the CopilotInteraction record type or 'Copilot activities'); DSPM presents the same AI activity as a dashboard (Discover → Activity explorer → AI activities in the current version; the older one is now labelled 'DSPM for AI (classic)'); and eDiscovery separately searches the mailbox-backed prompt and response items, and can delete them for legal cases or data-spillage cleanup."
   - question: "Can my manager or employer read my Copilot prompts?"
     answer: "Being a manager doesn't itself grant access. The audit trail records that an interaction happened, but viewing the actual prompt and response text requires additional, specific Microsoft Purview permissions. A manager — or anyone else — could read that content only if your organisation separately grants those permissions for authorised compliance or investigation work. It isn't open to every admin, and it isn't tied to someone's job title."
   - question: "Are Copilot agents audited too?"
@@ -62,7 +62,7 @@ Here's what I could piece together from the current Microsoft documentation — 
 - Supported Copilot interactions are logged to the **Microsoft Purview audit log** as `CopilotInteraction` records by Audit (Standard) — when auditing is on (on by default for E3/E5).
 - {{< hi >}}It lives in **Microsoft Purview** (`purview.microsoft.com`), not the Microsoft 365 admin center.{{< /hi >}}
 - The record *identifies* a lot — the **prompt and response** messages, the files and sites Copilot used (with sensitivity labels), the app and any agent, and whether it used the web. The prompt/response *text* is stored separately and needs extra permissions to read.
-- Three related Purview workflows help — not one datastore: **Audit** searches the events, DSPM for AI shows a dashboard, and eDiscovery searches — and can delete — the mailbox-backed content.
+- Three related Purview workflows help — not one datastore: **Audit** searches the events, DSPM shows a dashboard (the older DSPM for AI is now labelled classic), and eDiscovery searches — and can delete — the mailbox-backed content.
 - **Agents are audited too**, and Purview can also audit supported **non-Microsoft AI** apps (ChatGPT, Gemini) once the required collection is set up.
 - **Reading prompt/response text needs extra Purview permissions** — being a manager, or a general admin, doesn't grant it by itself.
 - Retention follows your licence: **E3 = 180 days**, E5 ≈ 1 year.
@@ -108,7 +108,7 @@ You can see the raw shape of this in the audit log itself. Here's a single recor
 
 ## Where to look in Purview
 
-Three surfaces. They can each investigate the same interaction, but they play different roles — Audit searches the audit events, DSPM for AI presents AI activity, and eDiscovery searches the stored prompt and response items (which live in user mailboxes, under their own retention).
+Three surfaces. They can each investigate the same interaction, but they play different roles — Audit searches the audit events, DSPM presents AI activity, and eDiscovery searches the stored prompt and response items (which live in user mailboxes, under their own retention).
 
 ### 1. Purview Audit — search the audit trail
 
@@ -124,29 +124,46 @@ This is the searchable Microsoft Purview audit log — the record that an intera
 
 Prefer the command line? You can pull the same records with **`Search-UnifiedAuditLog`** in Exchange Online PowerShell and export them for analysis.
 
-### 2. DSPM for AI — the friendly dashboard
+### 2. DSPM — the friendly dashboard
 
-If reading raw records isn't your idea of fun, Purview's **DSPM** gives you the same story as a dashboard. Depending on your tenant you'll open DSPM or DSPM for AI (classic) → Activity explorer → AI activities, with filters for web search, agents, app, and sensitivity.
+If reading raw records isn't your idea of fun, Purview's **DSPM** gives you the same story as a dashboard. One wrinkle: there are two of them in the portal right now, and the menu path differs.
 
-<p><img src="/images/blog/auditing-microsoft-365-copilot/dspm-01-activity-explorer.webp" alt="Microsoft Purview DSPM for AI Activity explorer on the AI activities tab, with the Web searched and Agents involved filters highlighted." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+- **DSPM** — the current one. AI activity sits at Discover → Activity explorer → AI activities.
+- **DSPM for AI (classic)** — the older one, where Activity explorer is a top-level item.
 
-*DSPM for AI → Activity explorer. Note the **Web searched** and Agents involved filters. (Lab demo data.)*
+Either way you land on the same AI activity, with filters for web search, agents, app, and sensitivity. Microsoft's documentation says most new features go to the current version only, so that's the one worth learning. The screenshots here are from it.
 
-Open a single AI interaction and you get a clean, readable view of the app, the plugins it used, the user's risk level — and, if you're permitted, the prompt and response themselves:
+<p><img src="/images/blog/auditing-microsoft-365-copilot/dspm-01-activity-explorer.webp" alt="Microsoft Purview DSPM Activity explorer on the AI activities tab, with the Web searched and Agents involved filters highlighted, and a banner announcing the retirement of the classic solutions." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-<p><img src="/images/blog/auditing-microsoft-365-copilot/dspm-03-interaction-detail.webp" alt="A single AI interaction in DSPM for AI showing activity details, user risk, app details, and the BingWebSearch plugin, with Client IP redacted." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+*DSPM → Discover → Activity explorer. Note the **Web searched** and Agents involved filters, and the retirement banner running across the top. (Lab demo data.)*
+
+Open a single AI interaction and you get a clean, readable view of the app and the plugins it used — plus, if you hold the right roles, the user's risk level and the prompt and response themselves:
+
+<p><img src="/images/blog/auditing-microsoft-365-copilot/dspm-03-interaction-detail.webp" alt="A single AI interaction in DSPM showing activity details, user risk, app details, and the BingWebSearch plugin, with Client IP redacted." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *A single interaction. The **BingWebSearch** plugin tells you this answer used the web. (Lab demo data — Client IP redacted.)*
 
-<p><img src="/images/blog/auditing-microsoft-365-copilot/dspm-04-interaction-prompt-response.webp" alt="The interaction details in DSPM for AI showing the captured prompt, the response, and the files Copilot accessed, with the SharePoint URL redacted." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/auditing-microsoft-365-copilot/dspm-04-interaction-prompt-response.webp" alt="The interaction details in DSPM showing the captured prompt, the response, and the files Copilot accessed, with the SharePoint URL redacted." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *DSPM can display the prompt, the response, and the files Copilot used to viewers who have the required permissions. Note the "permissions to view prompts and responses" link. (Lab demo data — SharePoint URL redacted.)*
 
 Open a whole app rather than a single interaction, and DSPM rolls the same data up — including the **sensitivity labels** and file types Copilot referenced over the last 30 days. It's a quick way to spot when Copilot is reaching into sensitive content.
 
-<p><img src="/images/blog/auditing-microsoft-365-copilot/dspm-06-referenced-content.webp" alt="The per-app Referenced content view in DSPM for AI, showing top referenced sensitivity labels (General/All Employees, Not labeled) and referenced file types (Word, PDF, PowerPoint, Excel) for the last 30 days." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/auditing-microsoft-365-copilot/dspm-06-referenced-content.webp" alt="The per-app Referenced content view in DSPM, showing top referenced sensitivity labels (General/All Employees, Not labeled) and referenced file types (Word, PDF, PowerPoint, Excel) for the last 30 days." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *The per-app "Referenced content" rollup — the sensitivity labels and file types Copilot touched. (Lab demo data.)*
+
+#### What's actually different in the new DSPM
+
+Worth answering properly, because "DSPM or DSPM for AI (classic)" hides a real change. Three things matter if you're using it to audit Copilot.
+
+**Objectives are a new front door.** After the initial setup tasks you get *Data security objectives* as prominent, selectable cards, also surfaced in context from the Posture page. They're goals rather than metrics — *Prevent data exposure in Microsoft 365 Copilot and Microsoft Copilot interactions*, *Prevent oversharing of sensitive data*, *Discover sensitive data in your organization*. Choose one and it pulls the relevant Purview solutions into a single workflow, each with a remediation plan, one-click policies and recommended actions. The Posture dashboard is still there; you just aren't forced to start with it.
+
+**There's a new AI observability page.** It inventories every AI app and agent with activity in the last 30 days, including Microsoft Agent 365, and tells you how many are high risk and how many had sensitive interactions, then breaks that down by individual agent and the policies governing them. It's a separate page from the *Apps and agents* inventory further down, which has a couple of blind spots I'll come to.
+
+**The classic versions have an end date.** The banner running across my lab tenant says DSPM (classic) and DSPM for AI (classic) both retire on 30 September 2026, with the features and data already available in the new DSPM. Microsoft's documentation is softer — it only says most new features go to the current version — so treat the date as a plan rather than a promise, and check your own Message Center.
+
+And the part people usually want to know, which hasn't changed at all: {{< hi >}}the permission gate on reading prompt and response text is identical in both versions.{{< /hi >}} Each one's permissions table carries the same row — viewing the prompts and responses inside `AI Interaction` events is unsupported for Compliance Administrator, Global Administrator and the Purview Compliance Administrator role group, and needs **Content Explorer Content Viewer** or Microsoft Purview Data Security AI Content Viewer on top. Moving to the new DSPM doesn't widen who can read prompts.
 
 ### 3. eDiscovery — for legal and investigations
 
@@ -156,11 +173,11 @@ For legal hold and investigations, **Purview → eDiscovery** can search Copilot
 
 One detail I found useful: it isn't only "Copilot Chat" that's logged — supported apps and agents show up too. Here's a real activity list from a lab tenant:
 
-<p><img src="/images/blog/auditing-microsoft-365-copilot/dspm-02-activity-list.webp" alt="DSPM for AI activity list of 109 items across multiple apps and agents — Bizchat, Word, Copilot Studio, and a Word Drafting Agent — with the user participant column redacted." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/auditing-microsoft-365-copilot/dspm-02-activity-list.webp" alt="DSPM activity list of 109 items across multiple apps and agents — Bizchat, Word, Copilot Studio, and a Word Drafting Agent — with the user participant column redacted." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *One list, many surfaces: Business Chat, Word, Copilot Studio — and named agents like a Word Drafting Agent. (Lab demo data — user column redacted.)*
 
-Want the bird's-eye view instead? DSPM → Discover → Apps and agents lists the AI apps and agents Purview has found, each with a protection status — first-party Copilots, the agents your team builds, *and* third-party tools, all in one place.
+Want the bird's-eye view instead? DSPM → Discover → Apps and agents lists the AI apps and agents Purview has found, each with a protection status — first-party Copilots, the agents your team builds, *and* third-party tools, all in one place. One gap to know about: this page doesn't cover Microsoft Agent 365, and its detail view goes as far as the top 20 most recently used agents. If you're running Agent 365, the [AI observability page](#whats-actually-different-in-the-new-dspm) is the one that sees it.
 
 <p><img src="/images/blog/auditing-microsoft-365-copilot/dspm-05-apps-and-agents.webp" alt="DSPM Apps and agents inventory grouped into Microsoft Copilot Studio, Copilot experiences and agents (Microsoft 365 Copilot, Copilot in Fabric, Security Copilot, several named MicrosoftAgents), and Enterprise AI apps (ChatGPT Enterprise) — all showing Monitored." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -197,7 +214,7 @@ Auditing is the front door, but Microsoft 365 Copilot interactions are supported
 | Purview capability | What it does for Copilot |
 |---|---|
 | **Audit** | Searchable audit records for supported interactions (this guide's focus) |
-| **DSPM for AI** | Dashboards, insights, and one-click policies for AI activity |
+| **DSPM** | Dashboards, objectives, insights, and one-click policies for AI activity |
 | **eDiscovery** | Search — and delete — Copilot data for legal cases and spillage cleanup |
 | **Communication Compliance** | Flag risky or non-compliant prompts and responses |
 | **Data Loss Prevention** | Evaluate prompts, responses, and grounding content against DLP policy |
@@ -304,13 +321,13 @@ If a search comes back empty, it's usually one of these:
 
 - **If only the web-query results are empty:** Copilot only writes a web query when it actually used the public web — many prompts won't have one.
 - **If the whole search is empty**, work through these: auditing may be off (common on Business plans — turn it on, then wait); the user may not have used the relevant Copilot experience in your date range; the date range may be too narrow; or the data may simply not have propagated yet.
-- **DSPM for AI needs time** — allow at least 24 hours for new DSPM policies and reports to collect data.
+- **DSPM needs time** — allow at least 24 hours for new DSPM policies and reports to collect data.
 
 ## A reply you can copy
 
 If someone asks you the short version:
 
-> Supported Copilot interactions are logged in Microsoft Purview (not the M365 admin center), as long as Purview Audit is on — which it is by default on E3/E5. The `CopilotInteraction` record identifies the prompt and response messages, the files/sites Copilot used, the app, and any agent; the actual prompt/response *text* is retrieved separately and needs extra Purview permissions. Read the records in Purview → Audit (filter `CopilotInteraction`), or in DSPM for AI → Activity explorer for a friendlier view. Agents are covered too, and supported non-Microsoft AI apps can be audited once set up. Retention is 180 days on E3, about a year on E5.
+> Supported Copilot interactions are logged in Microsoft Purview (not the M365 admin center), as long as Purview Audit is on — which it is by default on E3/E5. The `CopilotInteraction` record identifies the prompt and response messages, the files/sites Copilot used, the app, and any agent; the actual prompt/response *text* is retrieved separately and needs extra Purview permissions. Read the records in Purview → Audit (filter `CopilotInteraction`), or in DSPM → Discover → Activity explorer for a friendlier view (the older DSPM for AI is now labelled classic). Agents are covered too, and supported non-Microsoft AI apps can be audited once set up. Retention is 180 days on E3, about a year on E5.
 
 ## Common questions
 
@@ -350,7 +367,10 @@ Purview can audit connected and unmanaged third-party AI apps too (ChatGPT, Gemi
 - [Microsoft Purview data security and compliance protections for Copilot and generative AI apps](https://learn.microsoft.com/en-us/purview/ai-microsoft-purview) — the AI app categories.
 - [Use Microsoft Purview to manage data security & compliance for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/purview/ai-m365-copilot) — the capabilities-supported table.
 - [Use Microsoft Purview to manage data security & compliance for Microsoft Agent 365](https://learn.microsoft.com/en-us/purview/ai-agent-365) — auditing agents.
-- [Data Security Posture Management (DSPM) for AI](https://learn.microsoft.com/en-us/purview/dspm-for-ai)
+- [Data Security Posture Management (DSPM) for AI — classic](https://learn.microsoft.com/en-us/purview/dspm-for-ai) — the version that's now labelled classic.
+- [Learn about Data Security Posture Management](https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about) — the current version: data security objectives, AI observability, and the page-by-page walkthrough.
+- [Permissions for Data Security Posture Management](https://learn.microsoft.com/en-us/purview/data-security-posture-management-permissions) — the permissions-by-activity table, including who can read prompts and responses.
+- [Find familiar tasks that you did in DSPM for AI or in DSPM](https://learn.microsoft.com/en-us/purview/dspm-task-mapping) — the old-menu-to-new-menu map.
 - [Audit log activities — Copilot activities](https://learn.microsoft.com/en-us/purview/audit-log-activities)
 - [Search for and delete AI application data in eDiscovery](https://learn.microsoft.com/en-us/purview/edisc-search-copilot-data) — where Copilot data is stored, and how to search or delete it.
 - [Learn about retention for Microsoft Copilot](https://learn.microsoft.com/en-us/purview/retention-policies-copilot) — storage, holds, and the SubstrateHolds lifecycle.
