@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 30 Aug 2026 00:16:36 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2026 08:15:54 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Defender XDR] Users' browsers hang in Microsoft Defender for Office 365 when editing attack simulation training end user notifications</title>
+      <link>https://www.aguidetocloud.com/service-health/#DZ1463442</link>
+      <description>[Microsoft Defender XDR] Users' browsers hang when editing Microsoft Defender for Office 365 attack simulation training end user notifications.</description>
+      <category>Microsoft Defender XDR</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">DZ1463442</guid>
+      <pubDate>Fri, 28 Aug 2026 18:44:23 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may see delayed data in Microsoft 365 Copilot usage and adoption reports</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1463378</link>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1444037</guid>
       <pubDate>Fri, 31 Jul 2026 14:53:54 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Some users may be unable to access Plan artifacts and PowerTable sheets within shared reports in Microsoft Fabric</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1443105</link>
-      <description>[Power BI] Users may have been unable to access Plan artifacts and PowerTable sheets within shared reports in Microsoft Fabric.</description>
-      <category>Power BI</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PB1443105</guid>
-      <pubDate>Thu, 30 Jul 2026 14:42:45 +0000</pubDate>
     </item>
   </channel>
 </rss>
