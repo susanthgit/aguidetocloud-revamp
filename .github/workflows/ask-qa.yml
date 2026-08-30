@@ -1,0 +1,96 @@
+name: Ask page generator invariants
+
+# The /ask/ pages are built from GitHub Discussions, and the BODY of a
+# discussion is whatever a stranger typed into the public form at
+# functions/api/feedback.js. That form is unauthenticated, and it writes the
+# submitted text verbatim using the site's OWN PAT — so submissions arrive
+# owner-authored and cannot be told apart by author.
+#
+# scripts/sync-ask.mjs turns those bodies into Markdown, and hugo.toml sets
+# `unsafe = true` under [markup.goldmark.renderer]. Before harden(), raw HTML in
+# a submission therefore became LIVE markup on a Google-indexed page published
+# under Sush's byline.
+#
+# This is the same class as the attribute-injection XSS closed on the
+# /feedback/ side in e04b45aa, but that fix does NOT cover these pages:
+# /feedback/ is sanitised by DOMPurify in the browser at runtime, while /ask/
+# pages are baked by Hugo at build time and never touch it.
+#
+# Hugo shortcodes are a second, separate hazard: Hugo expands {{< >}} and {{% %}}
+# BEFORE Markdown runs, and it does so inside code fences too. An unknown
+# shortcode fails the entire site build, so a stranger could break the build from
+# a public form; a real one would run with template privileges.
+#
+# Why this workflow exists (mirrors feedback-qa.yml): the local git hook is
+# deliberately FAIL-OPEN — it exits 0 when pwsh or the guardrail is missing. A
+# push from a machine without pwsh, or a commit that simply deletes the QA
+# script, would bypass check 10 in scripts/pre-push-check.ps1 entirely. This is
+# that backstop.
+#
+# It is a BACKSTOP, not a publication gate: Cloudflare Pages deploys from its own
+# Git integration, so by the time this runs the change is already live. The
+# pre-push hook is the gate. This catches what bypassed it.
+#
+# No browser, no Hugo build, ~1s.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/sync-ask.mjs'
+      - 'scripts/qa-ask-render.mjs'
+      - 'layouts/ask/**'
+      - 'data/ask_overrides.json'
+      # The generated pages themselves. A routine sync commit touches ONLY these
+      # files, and it is the commit actually carrying stranger-supplied bytes, so
+      # omitting it would have skipped the backstop on every run that mattered.
+      - 'content/ask/**'
+      - 'hugo.toml'
+      - '.github/workflows/ask-qa.yml'
+  pull_request:
+    paths:
+      - 'scripts/sync-ask.mjs'
+      - 'scripts/qa-ask-render.mjs'
+      - 'layouts/ask/**'
+      - 'data/ask_overrides.json'
+      - 'content/ask/**'
+      - 'hugo.toml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  invariants:
+    name: Static invariants for the ask page generator
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up Node
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        with:
+          node-version: '20'
+
+      # The guard must be present, not merely referenced. Deleting the QA script
+      # is exactly the bypass this workflow exists to catch, and a missing-file
+      # crash reads as an infrastructure error rather than a refusal - so say so.
+      - name: The guard itself must exist
+        run: |
+          test -f scripts/qa-ask-render.mjs || {
+            echo "::error::scripts/qa-ask-render.mjs is missing - the /ask/ injection guard was deleted"
+            exit 1
+          }
+          test -f scripts/sync-ask.mjs || {
+            echo "::error::scripts/sync-ask.mjs is missing - the generator under test is gone"
+            exit 1
+          }
+
+      # Executes the shipped hardening functions against real exploit payloads,
+      # asserts legitimate Markdown still survives, and asserts the generator
+      # still CALLS the guards - a perfect harden() nobody invokes is the real
+      # failure mode.
+      - name: Ask generator invariants
+        run: node scripts/qa-ask-render.mjs

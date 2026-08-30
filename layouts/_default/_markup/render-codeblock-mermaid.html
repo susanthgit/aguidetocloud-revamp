@@ -1,3 +1,25 @@
+{{- /* Mermaid is a SECOND parser, and escaping only ever satisfies the first.
+
+     Mermaid reads this element's textContent — which the browser DECODES — and
+     reparses the result through innerHTML on a connected node. So the `&lt;img
+     src=x onerror=...>` that scripts/sync-ask.mjs carefully escaped comes back
+     to life client-side, and the handler fires before Mermaid's own DOMPurify
+     pass strips it. A Gate B reviewer reproduced this twice in Edge under the
+     production CSP, against content that harden() had already hardened and
+     assertInert() had already accepted.
+
+     Sections listed below carry text typed by anonymous strangers into the
+     public form at functions/api/feedback.js, so they must never reach Mermaid.
+     Their diagrams render as ordinary, escaped code instead.
+
+     `.Inner` is deliberately NOT passed through safeHTML on that path. The
+     whole lesson of this bug is that one layer must not depend on another
+     layer's escaping having worked, so Hugo escapes it again here. */ -}}
+{{- $untrusted := slice "ask" -}}
+{{- if in $untrusted .Page.Section -}}
+<pre><code class="language-mermaid">{{ .Inner }}</code></pre>
+{{- else -}}
 <pre class="mermaid">
 {{- .Inner | safeHTML }}
 </pre>
+{{- end -}}
