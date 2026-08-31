@@ -660,6 +660,48 @@ function sanitizeKey(slug) {
   return `"${slug}"`;
 }
 
+// ── Postcondition: every cert we just read must exist in the Hugo catalogue ──
+// Guards the silent half-integration: `--pages` alone leaves data/all_certs.toml
+// untouched, so a brand-new cert never reaches the /cert-tracker/ or /study-guides/
+// listings — yet the run still prints "Sync complete!" and exits 0.
+// Hard-fails ONLY on the real trap (a source cert absent from the catalogue);
+// anything else is reported as a warning so normal work is never blocked.
+function verifyCatalogueSync(certs) {
+  const cataloguePath = path.join(HUGO_DATA_DIR, 'all_certs.toml');
+
+  if (!fs.existsSync(cataloguePath)) {
+    console.error(`\n❌ CATALOGUE POSTCONDITION FAILED — missing ${cataloguePath}`);
+    console.error('   Fix: node scripts/sync-cert-data.js --data');
+    process.exit(1);
+  }
+
+  const raw = fs.readFileSync(cataloguePath, 'utf8');
+  const inArray = new Set([...raw.matchAll(/\[\[cert\]\]\s+slug\s*=\s*"([^"]+)"/g)].map(m => m[1]));
+  const inMap = new Set([...raw.matchAll(/^\s*\[cert_map\."?([^"\]]+)"?\]/gm)].map(m => m[1]));
+
+  const missingArray = certs.filter(c => !inArray.has(c.slug)).map(c => c.slug);
+  const missingMap = certs.filter(c => !inMap.has(c.slug)).map(c => c.slug);
+
+  if (missingArray.length || missingMap.length) {
+    const show = (l) => l.slice(0, 10).join(', ') + (l.length > 10 ? ` … +${l.length - 10} more` : '');
+    console.error('\n❌ CATALOGUE POSTCONDITION FAILED — data/all_certs.toml is out of sync.');
+    if (missingArray.length) console.error(`   Missing from [[cert]]   (${missingArray.length}): ${show(missingArray)}`);
+    if (missingMap.length) console.error(`   Missing from [cert_map] (${missingMap.length}): ${show(missingMap)}`);
+    console.error('   These certs exist as source TOML but not in the Hugo catalogue, so they');
+    console.error('   would never appear in the /cert-tracker/ or /study-guides/ listings.');
+    console.error('   Note: `--pages` alone does NOT write this file. Re-run with --data:');
+    console.error('       node scripts/sync-cert-data.js --data --pages');
+    process.exit(1);
+  }
+
+  const orphans = [...inArray].filter(s => !certs.some(c => c.slug === s));
+  if (orphans.length) {
+    console.warn(`⚠️  Catalogue holds ${orphans.length} entry/entries with no source TOML: ${orphans.slice(0, 5).join(', ')}`);
+  }
+
+  console.log(`✅ Catalogue postcondition: all ${certs.length} certs present in [[cert]] and [cert_map]`);
+}
+
 // ── Main ──
 function main() {
   const args = process.argv.slice(2);
@@ -701,6 +743,8 @@ function main() {
   if (doPages) {
     generateCertPages(certs);
   }
+
+  verifyCatalogueSync(certs);
 
   console.log('\n✅ Sync complete!');
 }
