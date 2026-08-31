@@ -5,351 +5,407 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Mon, 31 Aug 2026 01:04:25 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 11:12:39 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Debian votes to let contributors code with AI</title>
-      <link>https://www.theregister.com/ai-and-ml/2026/08/30/debian-votes-to-let-contributors-code-with-ai/5293421</link>
+      <title>You Know Who Really Hates AI? Insurance Claims Adjusters</title>
+      <link>https://www.wired.com/story/insurance-claims-adjusters-really-hate-ai/</link>
       <description></description>
       <category>Top Stories</category>
-      <pubDate>Sun, 30 Aug 2026 23:01:00 +0200</pubDate>
-      <guid>https://www.theregister.com/ai-and-ml/2026/08/30/debian-votes-to-let-contributors-code-with-ai/5293421</guid>
+      <pubDate>Mon, 31 Aug 2026 10:30:00 +0000</pubDate>
+      <guid>https://www.wired.com/story/insurance-claims-adjusters-really-hate-ai/</guid>
     </item>
     <item>
-      <title>Musk calls OpenAI bosses ‘untrustworthy assholes’</title>
-      <link>https://www.rt.com/news/644822-musk-cursor-openai-altman/</link>
+      <title>Energy biz SSE smacked around in court by a guy and AI</title>
+      <link>https://www.theregister.com/ai-and-ml/2026/08/31/energy-biz-sse-smacked-around-in-court-by-a-guy-and-ai/5293391</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Mon, 31 Aug 2026 09:45:00 +0200</pubDate>
+      <guid>https://www.theregister.com/ai-and-ml/2026/08/31/energy-biz-sse-smacked-around-in-court-by-a-guy-and-ai/5293391</guid>
+    </item>
+    <item>
+      <title>The balkanization of virtualization will de-throne VMware, which doesn't mind a bit</title>
+      <link>https://www.theregister.com/virtualization/2026/08/31/the-balkanization-of-virtualization-will-de-throne-vmware-which-doesnt-mind-a-bit/5292488</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Mon, 31 Aug 2026 09:01:00 +0200</pubDate>
+      <guid>https://www.theregister.com/virtualization/2026/08/31/the-balkanization-of-virtualization-will-de-throne-vmware-which-doesnt-mind-a-bit/5292488</guid>
+    </item>
+    <item>
+      <title>Who, me? Techie with three months' experience was sent in as the Cisco expert and proceeded to blow everything up</title>
+      <link>https://www.theregister.com/networks/2026/08/31/who-me-techie-with-three-months-experience-was-sent-in-as-the-cisco-expert-and-proceeded-to-blow-everything-up/5293185</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Mon, 31 Aug 2026 08:30:00 +0200</pubDate>
+      <guid>https://www.theregister.com/networks/2026/08/31/who-me-techie-with-three-months-experience-was-sent-in-as-the-cisco-expert-and-proceeded-to-blow-everything-up/5293185</guid>
+    </item>
+    <item>
+      <title>The U.S. is building barriers around drones and robots, but China has scale to get around them</title>
+      <link>https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/</link>
+      <description></description>
+      <category>Top Stories</category>
+      <pubDate>Mon, 31 Aug 2026 02:34:00 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/</guid>
+    </item>
+    <item>
+      <title>langchain-webz added to PyPI</title>
+      <link>https://pypi.org/project/langchain-webz/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Sun, 30 Aug 2026 11:07:55 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-webz/</guid>
+    </item>
+    <item>
+      <title>Evalution 0.0.16</title>
+      <link>https://pypi.org/project/evalution/0.0.16/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Sun, 30 Aug 2026 01:01:24 +0000</pubDate>
-      <guid>https://www.rt.com/news/644822-musk-cursor-openai-altman/</guid>
+      <pubDate>Sun, 30 Aug 2026 11:07:14 +0000</pubDate>
+      <guid>https://pypi.org/project/evalution/0.0.16/</guid>
     </item>
     <item>
-      <title>Grok AI Analyzed the 1967 Patterson-Gimlin Bigfoot Film — The Results Are Shocking</title>
-      <link>https://freerepublic.com/focus/f-chat/4393594/posts</link>
-      <description></description>
-      <category>xAI</category>
-      <pubDate>Sun, 30 Aug 2026 01:00:37 +0000</pubDate>
-      <guid>https://freerepublic.com/focus/f-chat/4393594/posts</guid>
-    </item>
-    <item>
-      <title>inferna 0.2.0</title>
-      <link>https://pypi.org/project/inferna/0.2.0/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Sun, 30 Aug 2026 00:57:49 +0000</pubDate>
-      <guid>https://pypi.org/project/inferna/0.2.0/</guid>
-    </item>
-    <item>
-      <title>inferna-vulkan 0.2.0</title>
-      <link>https://pypi.org/project/inferna-vulkan/0.2.0/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Sun, 30 Aug 2026 00:57:40 +0000</pubDate>
-      <guid>https://pypi.org/project/inferna-vulkan/0.2.0/</guid>
-    </item>
-    <item>
-      <title>inferna-vulkan added to PyPI</title>
-      <link>https://pypi.org/project/inferna-vulkan/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Sun, 30 Aug 2026 00:57:40 +0000</pubDate>
-      <guid>https://pypi.org/project/inferna-vulkan/</guid>
-    </item>
-    <item>
-      <title>inferna-sycl 0.2.0</title>
-      <link>https://pypi.org/project/inferna-sycl/0.2.0/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Sun, 30 Aug 2026 00:57:30 +0000</pubDate>
-      <guid>https://pypi.org/project/inferna-sycl/0.2.0/</guid>
-    </item>
-    <item>
-      <title>inferna-sycl added to PyPI</title>
-      <link>https://pypi.org/project/inferna-sycl/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Sun, 30 Aug 2026 00:57:30 +0000</pubDate>
-      <guid>https://pypi.org/project/inferna-sycl/</guid>
-    </item>
-    <item>
-      <title>code-coordinator 0.5.300</title>
-      <link>https://pypi.org/project/code-coordinator/0.5.300/</link>
+      <title>aicsync added to PyPI</title>
+      <link>https://pypi.org/project/aicsync/</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Sun, 30 Aug 2026 00:56:10 +0000</pubDate>
-      <guid>https://pypi.org/project/code-coordinator/0.5.300/</guid>
+      <pubDate>Sun, 30 Aug 2026 11:01:14 +0000</pubDate>
+      <guid>https://pypi.org/project/aicsync/</guid>
     </item>
     <item>
-      <title>compendiumscribe 0.8.0</title>
-      <link>https://pypi.org/project/compendiumscribe/0.8.0/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sun, 30 Aug 2026 00:55:37 +0000</pubDate>
-      <guid>https://pypi.org/project/compendiumscribe/0.8.0/</guid>
-    </item>
-    <item>
-      <title>local-embed 0.2.1</title>
-      <link>https://pypi.org/project/local-embed/0.2.1/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sun, 30 Aug 2026 00:54:29 +0000</pubDate>
-      <guid>https://pypi.org/project/local-embed/0.2.1/</guid>
-    </item>
-    <item>
-      <title>fusedtok 0.5.1</title>
-      <link>https://pypi.org/project/fusedtok/0.5.1/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sun, 30 Aug 2026 00:52:04 +0000</pubDate>
-      <guid>https://pypi.org/project/fusedtok/0.5.1/</guid>
-    </item>
-    <item>
-      <title>capt-hook 12.22.4</title>
-      <link>https://pypi.org/project/capt-hook/12.22.4/</link>
+      <title>aicsync 0.1.0</title>
+      <link>https://pypi.org/project/aicsync/0.1.0/</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Sun, 30 Aug 2026 00:47:02 +0000</pubDate>
-      <guid>https://pypi.org/project/capt-hook/12.22.4/</guid>
+      <pubDate>Sun, 30 Aug 2026 11:01:14 +0000</pubDate>
+      <guid>https://pypi.org/project/aicsync/0.1.0/</guid>
     </item>
     <item>
-      <title>continuity-guard 0.5.2</title>
-      <link>https://pypi.org/project/continuity-guard/0.5.2/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sun, 30 Aug 2026 00:46:16 +0000</pubDate>
-      <guid>https://pypi.org/project/continuity-guard/0.5.2/</guid>
-    </item>
-    <item>
-      <title>gemini-transcribe-wrapper 0.0.14</title>
-      <link>https://pypi.org/project/gemini-transcribe-wrapper/0.0.14/</link>
+      <title>Just get a Pixel 11? Here are the first 10 settings you need to change</title>
+      <link>https://www.androidauthority.com/pixel-11-settings-change-tips-3702992/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Sun, 30 Aug 2026 00:36:32 +0000</pubDate>
-      <guid>https://pypi.org/project/gemini-transcribe-wrapper/0.0.14/</guid>
+      <pubDate>Sun, 30 Aug 2026 11:00:52 +0000</pubDate>
+      <guid>https://www.androidauthority.com/pixel-11-settings-change-tips-3702992/</guid>
     </item>
     <item>
-      <title>'This Looks Like Dogsh*t': Disturbing DLSS 5 AI Filter Applied to Major PS5 Games After Leaking - Push Square</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=185288140</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sun, 30 Aug 2026 00:32:59 +0000</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=185288140</guid>
-    </item>
-    <item>
-      <title>Grok Bot successfully orders a Tesla Model Y for a user, marking a new era for AI commerce</title>
-      <link>https://cryptobriefing.com/grok-bot-orders-tesla-model-y/</link>
-      <description></description>
-      <category>xAI</category>
-      <pubDate>Sun, 30 Aug 2026 00:32:08 +0000</pubDate>
-      <guid>https://cryptobriefing.com/grok-bot-orders-tesla-model-y/</guid>
-    </item>
-    <item>
-      <title>local-embed 0.2.0</title>
-      <link>https://pypi.org/project/local-embed/0.2.0/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sun, 30 Aug 2026 00:27:57 +0000</pubDate>
-      <guid>https://pypi.org/project/local-embed/0.2.0/</guid>
-    </item>
-    <item>
-      <title>Show HN: Cardwall – free external A2A health check and status badge for agents</title>
-      <link>https://cardwall.ai/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 30 Aug 2026 00:17:55 +0000</pubDate>
-      <guid>https://cardwall.ai/</guid>
-    </item>
-    <item>
-      <title>gosce-llm-orchestration-agent-opentelemetry-instrumentation-fastapi 0.1.0</title>
-      <link>https://pypi.org/project/gosce-llm-orchestration-agent-opentelemetry-instrumentation-fastapi/0.1.0/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sun, 30 Aug 2026 00:13:32 +0000</pubDate>
-      <guid>https://pypi.org/project/gosce-llm-orchestration-agent-opentelemetry-instrumentation-fastapi/0.1.0/</guid>
-    </item>
-    <item>
-      <title>mooting added to PyPI</title>
-      <link>https://pypi.org/project/mooting/</link>
+      <title>abeam 0.9.0</title>
+      <link>https://pypi.org/project/abeam/0.9.0/</link>
       <description></description>
       <category>GitHub Copilot</category>
-      <pubDate>Sun, 30 Aug 2026 00:11:01 +0000</pubDate>
-      <guid>https://pypi.org/project/mooting/</guid>
+      <pubDate>Sun, 30 Aug 2026 11:00:08 +0000</pubDate>
+      <guid>https://pypi.org/project/abeam/0.9.0/</guid>
     </item>
     <item>
-      <title>Street Fighter Star Opens Up About The ‘Responsibility’ Of Playing Ryu As An Asian Actor</title>
-      <link>https://www.cinemablend.com/movies/street-fighter-andrew-koji-responsibility-playing-ryu-asian-actor</link>
+      <title>agt-agent 0.22.4</title>
+      <link>https://pypi.org/project/agt-agent/0.22.4/</link>
       <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 30 Aug 2026 00:06:00 +0000</pubDate>
-      <guid>https://www.cinemablend.com/movies/street-fighter-andrew-koji-responsibility-playing-ryu-asian-actor</guid>
+      <category>Open Source</category>
+      <pubDate>Sun, 30 Aug 2026 10:59:00 +0000</pubDate>
+      <guid>https://pypi.org/project/agt-agent/0.22.4/</guid>
     </item>
     <item>
-      <title>code-coordinator 0.5.299</title>
-      <link>https://pypi.org/project/code-coordinator/0.5.299/</link>
+      <title>deepinv 0.4.2</title>
+      <link>https://pypi.org/project/deepinv/0.4.2/</link>
       <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sun, 30 Aug 2026 00:02:57 +0000</pubDate>
-      <guid>https://pypi.org/project/code-coordinator/0.5.299/</guid>
+      <category>Meta</category>
+      <pubDate>Sun, 30 Aug 2026 10:58:54 +0000</pubDate>
+      <guid>https://pypi.org/project/deepinv/0.4.2/</guid>
     </item>
     <item>
-      <title>Fake kidnaps: Desperate relatives turn self-abductions into family nightmares</title>
-      <link>https://punchng.com/fake-kidnaps-desperate-relatives-turn-self-abductions-into-family-nightmares/</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sun, 30 Aug 2026 00:00:34 +0000</pubDate>
-      <guid>https://punchng.com/fake-kidnaps-desperate-relatives-turn-self-abductions-into-family-nightmares/</guid>
-    </item>
-    <item>
-      <title>lohra 0.0.12</title>
-      <link>https://pypi.org/project/lohra/0.0.12/</link>
+      <title>Links 8/30/2026</title>
+      <link>https://www.nakedcapitalism.com/2026/08/links-8-30-2026.html</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Sat, 29 Aug 2026 23:52:57 +0000</pubDate>
-      <guid>https://pypi.org/project/lohra/0.0.12/</guid>
+      <pubDate>Sun, 30 Aug 2026 10:55:07 +0000</pubDate>
+      <guid>https://www.nakedcapitalism.com/2026/08/links-8-30-2026.html</guid>
     </item>
     <item>
-      <title>Who Is Ashley Williams’ Husband? Meet Neal Dodson, Her ‘Much About Love’ Co-Writer</title>
-      <link>https://www.justjared.com/2026/08/29/who-is-ashley-williams-husband-meet-neal-dodson-her-much-about-love-co-writer/</link>
+      <title>Show HN: Get your free AI search visibility scan</title>
+      <link>https://www.visiscan.app</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sun, 30 Aug 2026 10:50:35 +0000</pubDate>
+      <guid>https://www.visiscan.app</guid>
+    </item>
+    <item>
+      <title>How U30 Billionaire Josh Kushner Tripled His Net Worth With Tech Investments</title>
+      <link>https://biztoc.com/x/1425b2b298dffe27</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sun, 30 Aug 2026 10:50:26 +0000</pubDate>
+      <guid>https://biztoc.com/x/1425b2b298dffe27</guid>
+    </item>
+    <item>
+      <title>claude-recents 0.1.5</title>
+      <link>https://pypi.org/project/claude-recents/0.1.5/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Sun, 30 Aug 2026 10:44:49 +0000</pubDate>
+      <guid>https://pypi.org/project/claude-recents/0.1.5/</guid>
+    </item>
+    <item>
+      <title>Show HN: Train 300M/32-Layer Model in 1.5GB RAM on Base M1 Mac</title>
+      <link>https://news.ycombinator.com/item?id=49497451</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Sun, 30 Aug 2026 10:37:59 +0000</pubDate>
+      <guid>https://news.ycombinator.com/item?id=49497451</guid>
+    </item>
+    <item>
+      <title>claude-recents 0.1.4</title>
+      <link>https://pypi.org/project/claude-recents/0.1.4/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Sun, 30 Aug 2026 10:34:17 +0000</pubDate>
+      <guid>https://pypi.org/project/claude-recents/0.1.4/</guid>
+    </item>
+    <item>
+      <title>polyclaude 0.4.0</title>
+      <link>https://pypi.org/project/polyclaude/0.4.0/</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sun, 30 Aug 2026 10:32:58 +0000</pubDate>
+      <guid>https://pypi.org/project/polyclaude/0.4.0/</guid>
+    </item>
+    <item>
+      <title>Show HN: Rose – reusable foundation embeddings for industrial 1H NMR</title>
+      <link>https://github.com/romboai/rose-1h-nmr</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Sun, 30 Aug 2026 10:31:21 +0000</pubDate>
+      <guid>https://github.com/romboai/rose-1h-nmr</guid>
+    </item>
+    <item>
+      <title>wasat 1.7.0</title>
+      <link>https://pypi.org/project/wasat/1.7.0/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Sat, 29 Aug 2026 23:23:22 +0000</pubDate>
-      <guid>https://www.justjared.com/2026/08/29/who-is-ashley-williams-husband-meet-neal-dodson-her-much-about-love-co-writer/</guid>
+      <pubDate>Sun, 30 Aug 2026 10:25:41 +0000</pubDate>
+      <guid>https://pypi.org/project/wasat/1.7.0/</guid>
     </item>
     <item>
-      <title>Show HN: VibeGuard – security linter for AI-generated code</title>
-      <link>https://github.com/zeroFhacker/vibeguard</link>
+      <title>litert-torch-nightly 0.10.0.dev20260830</title>
+      <link>https://pypi.org/project/litert-torch-nightly/0.10.0.dev20260830/</link>
       <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Sat, 29 Aug 2026 23:04:03 +0000</pubDate>
-      <guid>https://github.com/zeroFhacker/vibeguard</guid>
+      <category>Meta</category>
+      <pubDate>Sun, 30 Aug 2026 10:25:19 +0000</pubDate>
+      <guid>https://pypi.org/project/litert-torch-nightly/0.10.0.dev20260830/</guid>
     </item>
     <item>
-      <title>Show HN: Delete yourself from data brokers without a subscription</title>
-      <link>https://github.com/k7cfo/remove-your-data</link>
-      <description></description>
-      <category>xAI</category>
-      <pubDate>Sat, 29 Aug 2026 22:31:56 +0000</pubDate>
-      <guid>https://github.com/k7cfo/remove-your-data</guid>
-    </item>
-    <item>
-      <title>SJHN Daily: Sharks Sign EBUG, NBC Hires New Pregame Live Host, Makar Surpasses Celebrini AAV</title>
-      <link>https://sanjosehockeynow.com/san-jose-sharks-ebug-natalie-noury-macklin-celebrini-cale-makar/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 29 Aug 2026 22:23:58 +0000</pubDate>
-      <guid>https://sanjosehockeynow.com/san-jose-sharks-ebug-natalie-noury-macklin-celebrini-cale-makar/</guid>
-    </item>
-    <item>
-      <title>NVIDIA DLSS 5 Neural Rendering In 10 Modern Games – The Best Unofficial DLSS 5 ON vs OFF Comparisons So Far</title>
-      <link>https://wccftech.com/nvidia-dlss-5-neural-rendering-in-10-modern-games-the-best-unofficial-dlss-5-on-vs-off-comparisons-so-far/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 29 Aug 2026 22:23:51 +0000</pubDate>
-      <guid>https://wccftech.com/nvidia-dlss-5-neural-rendering-in-10-modern-games-the-best-unofficial-dlss-5-on-vs-off-comparisons-so-far/</guid>
-    </item>
-    <item>
-      <title>pytest-mockllm 0.3.1</title>
-      <link>https://pypi.org/project/pytest-mockllm/0.3.1/</link>
+      <title>Google Is Replacing the Most Reliable Voice Assistant With One That Works Half the Time</title>
+      <link>https://forkast.news/google-is-replacing-the-most-reliable-voice-assistant-with-one-that-works-half-the-time/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Sat, 29 Aug 2026 22:20:10 +0000</pubDate>
-      <guid>https://pypi.org/project/pytest-mockllm/0.3.1/</guid>
+      <pubDate>Sun, 30 Aug 2026 10:24:36 +0000</pubDate>
+      <guid>https://forkast.news/google-is-replacing-the-most-reliable-voice-assistant-with-one-that-works-half-the-time/</guid>
     </item>
     <item>
-      <title>continuity-guard added to PyPI</title>
-      <link>https://pypi.org/project/continuity-guard/</link>
+      <title>arti-fit 3.0.10a1</title>
+      <link>https://pypi.org/project/arti-fit/3.0.10a1/</link>
       <description></description>
-      <category>xAI</category>
-      <pubDate>Sat, 29 Aug 2026 22:19:05 +0000</pubDate>
-      <guid>https://pypi.org/project/continuity-guard/</guid>
+      <category>Meta</category>
+      <pubDate>Sun, 30 Aug 2026 10:22:09 +0000</pubDate>
+      <guid>https://pypi.org/project/arti-fit/3.0.10a1/</guid>
     </item>
     <item>
-      <title>continuity-guard 0.5.0</title>
-      <link>https://pypi.org/project/continuity-guard/0.5.0/</link>
+      <title>axon-agent added to PyPI</title>
+      <link>https://pypi.org/project/axon-agent/</link>
       <description></description>
-      <category>xAI</category>
-      <pubDate>Sat, 29 Aug 2026 22:19:05 +0000</pubDate>
-      <guid>https://pypi.org/project/continuity-guard/0.5.0/</guid>
+      <category>OpenAI</category>
+      <pubDate>Sun, 30 Aug 2026 10:17:10 +0000</pubDate>
+      <guid>https://pypi.org/project/axon-agent/</guid>
     </item>
     <item>
-      <title>Sony and Warner Music Sue Anthropic, Alleging Theft of Intellectual Property</title>
-      <link>https://gizmodo.com/sony-and-warner-music-sue-anthropic-alleging-theft-of-intellectual-property-2000804731</link>
+      <title>wringer 0.5.7</title>
+      <link>https://pypi.org/project/wringer/0.5.7/</link>
       <description></description>
-      <category>Perplexity</category>
-      <pubDate>Sat, 29 Aug 2026 22:12:12 +0000</pubDate>
-      <guid>https://gizmodo.com/sony-and-warner-music-sue-anthropic-alleging-theft-of-intellectual-property-2000804731</guid>
+      <category>OpenAI</category>
+      <pubDate>Sun, 30 Aug 2026 10:16:01 +0000</pubDate>
+      <guid>https://pypi.org/project/wringer/0.5.7/</guid>
     </item>
     <item>
-      <title>Final Fantasy 8 Character Officially Returns October 2026</title>
-      <link>https://screenrant.com/final-fantasy-8-legends-return-october-2026/</link>
+      <title>torch-floating-point 0.0.20</title>
+      <link>https://pypi.org/project/torch-floating-point/0.0.20/</link>
       <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Sat, 29 Aug 2026 22:00:14 +0000</pubDate>
-      <guid>https://screenrant.com/final-fantasy-8-legends-return-october-2026/</guid>
+      <category>Meta</category>
+      <pubDate>Sun, 30 Aug 2026 09:36:00 +0000</pubDate>
+      <guid>https://pypi.org/project/torch-floating-point/0.0.20/</guid>
     </item>
     <item>
-      <title>Adobe Photoshop 2026 v27.10 Win x64</title>
-      <link>https://cgpersia.com/2026/08/adobe-photoshop-2026-v27-10-win-x64-204798.html</link>
+      <title>One of Google’s weirdest Pixel features is finally dead, and I’m going to seriously miss it</title>
+      <link>https://www.androidauthority.com/google-pixel-thermometer-dead-miss-3701785/</link>
       <description></description>
       <category>Google</category>
-      <pubDate>Sat, 29 Aug 2026 21:56:45 +0000</pubDate>
-      <guid>https://cgpersia.com/2026/08/adobe-photoshop-2026-v27-10-win-x64-204798.html</guid>
+      <pubDate>Sun, 30 Aug 2026 09:30:12 +0000</pubDate>
+      <guid>https://www.androidauthority.com/google-pixel-thermometer-dead-miss-3701785/</guid>
     </item>
     <item>
-      <title>igaos added to PyPI</title>
-      <link>https://pypi.org/project/igaos/</link>
+      <title>bionexuslab added to PyPI</title>
+      <link>https://pypi.org/project/bionexuslab/</link>
       <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 29 Aug 2026 21:42:39 +0000</pubDate>
-      <guid>https://pypi.org/project/igaos/</guid>
+      <category>Google</category>
+      <pubDate>Sun, 30 Aug 2026 09:29:06 +0000</pubDate>
+      <guid>https://pypi.org/project/bionexuslab/</guid>
     </item>
     <item>
-      <title>I ditched Notion's $20 tier for a single Docker container that costs zero per month</title>
-      <link>https://www.xda-developers.com/ditched-notion-20-tier-for-single-docker-container-that-costs-zero/</link>
+      <title>Chrome and Edge won't open, machine running slow part 2</title>
+      <link>https://www.bleepingcomputer.com/forums/t/818330/chrome-and-edge-wont-open-machine-running-slow-part-2/</link>
+      <description></description>
+      <category>Microsoft</category>
+      <pubDate>Sun, 30 Aug 2026 09:23:19 +0000</pubDate>
+      <guid>https://www.bleepingcomputer.com/forums/t/818330/chrome-and-edge-wont-open-machine-running-slow-part-2/</guid>
+    </item>
+    <item>
+      <title>safetune 0.1.3</title>
+      <link>https://pypi.org/project/safetune/0.1.3/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Sun, 30 Aug 2026 09:19:47 +0000</pubDate>
+      <guid>https://pypi.org/project/safetune/0.1.3/</guid>
+    </item>
+    <item>
+      <title>gemini-transcribe-wrapper 0.0.27</title>
+      <link>https://pypi.org/project/gemini-transcribe-wrapper/0.0.27/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sun, 30 Aug 2026 09:13:53 +0000</pubDate>
+      <guid>https://pypi.org/project/gemini-transcribe-wrapper/0.0.27/</guid>
+    </item>
+    <item>
+      <title>harbor-dsh-evolution 0.8.0</title>
+      <link>https://pypi.org/project/harbor-dsh-evolution/0.8.0/</link>
       <description></description>
       <category>DeepSeek</category>
-      <pubDate>Sat, 29 Aug 2026 21:30:15 +0000</pubDate>
-      <guid>https://www.xda-developers.com/ditched-notion-20-tier-for-single-docker-container-that-costs-zero/</guid>
+      <pubDate>Sun, 30 Aug 2026 09:08:56 +0000</pubDate>
+      <guid>https://pypi.org/project/harbor-dsh-evolution/0.8.0/</guid>
     </item>
     <item>
-      <title>AI robots and drones to assist in Fukushima nuclear plant cleanup</title>
-      <link>https://asia.nikkei.com/business/technology/artificial-intelligence/ai-robots-and-drones-to-assist-in-fukushima-nuclear-plant-cleanup</link>
+      <title>ccs-langchain 0.0.2</title>
+      <link>https://pypi.org/project/ccs-langchain/0.0.2/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Sun, 30 Aug 2026 09:04:06 +0000</pubDate>
+      <guid>https://pypi.org/project/ccs-langchain/0.0.2/</guid>
+    </item>
+    <item>
+      <title>I use Google Chrome every day, and these are my 10 favorite tips and tricks</title>
+      <link>https://www.androidauthority.com/google-chrome-tips-tricks-2026-3703259/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sun, 30 Aug 2026 09:00:51 +0000</pubDate>
+      <guid>https://www.androidauthority.com/google-chrome-tips-tricks-2026-3703259/</guid>
+    </item>
+    <item>
+      <title>Daily Tech News 30 August 2026</title>
+      <link>https://acecomments.mu.nu/?post=421174</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Sun, 30 Aug 2026 08:40:00 +0000</pubDate>
+      <guid>https://acecomments.mu.nu/?post=421174</guid>
+    </item>
+    <item>
+      <title>Security Affairs newsletter Round 592 by Pierluigi Paganini – INTERNATIONAL EDITION</title>
+      <link>https://securityaffairs.com/198124/security/security-affairs-newsletter-round-592-by-pierluigi-paganini-international-edition.html</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Sun, 30 Aug 2026 08:38:01 +0000</pubDate>
+      <guid>https://securityaffairs.com/198124/security/security-affairs-newsletter-round-592-by-pierluigi-paganini-international-edition.html</guid>
+    </item>
+    <item>
+      <title>Apple's foldable iPhone repair could cost more than half its price, expert warns</title>
+      <link>https://www.notebookcheck.net/Apple-s-foldable-iPhone-repair-could-cost-more-than-half-its-price-expert-warns.1382946.0.html</link>
       <description></description>
       <category>Rumours &amp; Gossip</category>
-      <pubDate>Sat, 29 Aug 2026 21:11:17 +0000</pubDate>
-      <guid>https://asia.nikkei.com/business/technology/artificial-intelligence/ai-robots-and-drones-to-assist-in-fukushima-nuclear-plant-cleanup</guid>
+      <pubDate>Sun, 30 Aug 2026 08:36:00 +0000</pubDate>
+      <guid>https://www.notebookcheck.net/Apple-s-foldable-iPhone-repair-could-cost-more-than-half-its-price-expert-warns.1382946.0.html</guid>
     </item>
     <item>
-      <title>prema-agentshield added to PyPI</title>
-      <link>https://pypi.org/project/prema-agentshield/</link>
+      <title>Apple's first foldable phone could cost over $1,000 just to repair</title>
+      <link>https://www.notebookcheck.net/Apple-s-first-foldable-phone-could-cost-over-1-000-just-to-repair.1382946.0.html</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Sat, 29 Aug 2026 20:55:53 +0000</pubDate>
-      <guid>https://pypi.org/project/prema-agentshield/</guid>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>Sun, 30 Aug 2026 08:36:00 +0000</pubDate>
+      <guid>https://www.notebookcheck.net/Apple-s-first-foldable-phone-could-cost-over-1-000-just-to-repair.1382946.0.html</guid>
     </item>
     <item>
-      <title>Billionaire Stanley Druckenmiller Sold Broadcom and Bought These Artificial Intelligence (AI) Giants Instead</title>
-      <link>https://biztoc.com/x/21142fa434603552</link>
+      <title>adaptorch added to PyPI</title>
+      <link>https://pypi.org/project/adaptorch/</link>
       <description></description>
-      <category>Top Stories</category>
-      <pubDate>Sat, 29 Aug 2026 20:41:35 +0000</pubDate>
-      <guid>https://biztoc.com/x/21142fa434603552</guid>
+      <category>Meta</category>
+      <pubDate>Sun, 30 Aug 2026 08:35:36 +0000</pubDate>
+      <guid>https://pypi.org/project/adaptorch/</guid>
     </item>
     <item>
-      <title>Apple Was Always 1 Step Behind in AI. In Chipmaking, It’s Now 1 Step Ahead.</title>
-      <link>https://www.barchart.com/story/news/4340050/apple-was-always-1-step-behind-in-ai-in-chipmaking-its-now-1-step-ahead</link>
+      <title>wikiskill added to PyPI</title>
+      <link>https://pypi.org/project/wikiskill/</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Sat, 29 Aug 2026 20:30:02 +0000</pubDate>
-      <guid>https://www.barchart.com/story/news/4340050/apple-was-always-1-step-behind-in-ai-in-chipmaking-its-now-1-step-ahead</guid>
+      <category>DeepSeek</category>
+      <pubDate>Sun, 30 Aug 2026 08:10:22 +0000</pubDate>
+      <guid>https://pypi.org/project/wikiskill/</guid>
     </item>
     <item>
-      <title>scitrera-messaging-spec 1.3.0</title>
-      <link>https://pypi.org/project/scitrera-messaging-spec/1.3.0/</link>
+      <title>Xcena and Samsung's Near Memory Compute CXL Device</title>
+      <link>https://chipsandcheese.com/p/hot-chips-2026-xcena-and-samsungs</link>
       <description></description>
-      <category>AI Foundry</category>
-      <pubDate>Sat, 29 Aug 2026 20:29:18 +0000</pubDate>
-      <guid>https://pypi.org/project/scitrera-messaging-spec/1.3.0/</guid>
+      <category>NVIDIA</category>
+      <pubDate>Sun, 30 Aug 2026 07:35:41 +0000</pubDate>
+      <guid>https://chipsandcheese.com/p/hot-chips-2026-xcena-and-samsungs</guid>
+    </item>
+    <item>
+      <title>Elon Musk and Yuval Noah Harari's views on AI diverge but converge on a common question</title>
+      <link>https://www.livemint.com/opinion/online-views/elon-musk-yuval-noah-harari-views-on-ai-diverge-but-converge-on-a-common-question-11787820932718.html</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Sun, 30 Aug 2026 07:30:16 +0000</pubDate>
+      <guid>https://www.livemint.com/opinion/online-views/elon-musk-yuval-noah-harari-views-on-ai-diverge-but-converge-on-a-common-question-11787820932718.html</guid>
+    </item>
+    <item>
+      <title>Albanese Establishes AI Office to Protect Australian Creatives fr</title>
+      <link>https://grandgoldman.com/blogs/business/albanese-establishes-ai-office-to-protect-australian-creatives-fr</link>
+      <description></description>
+      <category>Industry</category>
+      <pubDate>Sun, 30 Aug 2026 07:29:29 +0000</pubDate>
+      <guid>https://grandgoldman.com/blogs/business/albanese-establishes-ai-office-to-protect-australian-creatives-fr</guid>
+    </item>
+    <item>
+      <title>mxfp6-sm120 added to PyPI</title>
+      <link>https://pypi.org/project/mxfp6-sm120/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Sun, 30 Aug 2026 07:17:20 +0000</pubDate>
+      <guid>https://pypi.org/project/mxfp6-sm120/</guid>
+    </item>
+    <item>
+      <title>sagui added to PyPI</title>
+      <link>https://pypi.org/project/sagui/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Sun, 30 Aug 2026 06:23:19 +0000</pubDate>
+      <guid>https://pypi.org/project/sagui/</guid>
+    </item>
+    <item>
+      <title>ggmlc added to PyPI</title>
+      <link>https://pypi.org/project/ggmlc/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Sun, 30 Aug 2026 06:23:09 +0000</pubDate>
+      <guid>https://pypi.org/project/ggmlc/</guid>
+    </item>
+    <item>
+      <title>Report: U.S. Shifts from Military Strikes to Economic Warfare Against Iran</title>
+      <link>https://www.naturalnews.com/2026-08-30-us-shifts-military-strikes-economic-warfare-iran.html</link>
+      <description></description>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>Sun, 30 Aug 2026 06:00:00 +0000</pubDate>
+      <guid>https://www.naturalnews.com/2026-08-30-us-shifts-military-strikes-economic-warfare-iran.html</guid>
+    </item>
+    <item>
+      <title>Data center backlash scrambles US midterm politics</title>
+      <link>https://www.digitaljournal.com/article/data-center-backlash-scrambles-us-midterm-politics/</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Sun, 30 Aug 2026 05:43:53 +0000</pubDate>
+      <guid>https://www.digitaljournal.com/article/data-center-backlash-scrambles-us-midterm-politics/</guid>
     </item>
   </channel>
 </rss>
