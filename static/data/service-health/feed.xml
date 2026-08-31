@@ -5,8 +5,35 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 31 Aug 2026 13:38:06 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 20:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Exchange Online] Users may be unable to connect to, or experience degraded functionality with Exchange Online</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1464935</link>
+      <description>[Exchange Online] Users may be unable to connect to, or experience degraded functionality with Exchange Online.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1464935</guid>
+      <pubDate>Mon, 31 Aug 2026 15:08:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Users may experience issues when utilizing multiple Microsoft 365 services</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1465074</link>
+      <description>[Microsoft 365 suite] Users may experience issues when utilizing multiple Microsoft 365 services.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1465074</guid>
+      <pubDate>Mon, 31 Aug 2026 15:08:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Intune] Some admins may be unable to view device information in the Microsoft Intune admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#IT1464731</link>
+      <description>[Microsoft Intune] Admins may be unable to view device information in the Microsoft Intune admin center.</description>
+      <category>Microsoft Intune</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">IT1464731</guid>
+      <pubDate>Mon, 31 Aug 2026 09:09:53 +0000</pubDate>
+    </item>
     <item>
       <title>[Power BI] Some users were unable to access the Power BI Data Agent or Microsoft Fabric Environment extensions</title>
       <link>https://www.aguidetocloud.com/service-health/#PB1464659</link>
@@ -15,6 +42,15 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1464659</guid>
       <pubDate>Mon, 31 Aug 2026 04:15:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may see delayed data in Microsoft 365 Copilot usage and adoption reports</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1463378</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have seen delayed data in Microsoft 365 Copilot usage and adoption reports.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1463378</guid>
+      <pubDate>Fri, 28 Aug 2026 23:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Defender XDR] Users' browsers hang in Microsoft Defender for Office 365 when editing attack simulation training end user notifications</title>
@@ -26,13 +62,13 @@
       <pubDate>Fri, 28 Aug 2026 18:44:23 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may see delayed data in Microsoft 365 Copilot usage and adoption reports</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1463378</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may see delayed data in Microsoft 365 Copilot usage and adoption reports.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
+      <title>[SharePoint Online] Some users may be unable to access SharePoint Online sites configured with Authentication Context</title>
+      <link>https://www.aguidetocloud.com/service-health/#SP1464785</link>
+      <description>[SharePoint Online] Users may be unable to access SharePoint Online sites configured with Authentication Context.</description>
+      <category>SharePoint Online</category>
       <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1463378</guid>
-      <pubDate>Fri, 28 Aug 2026 15:47:37 +0000</pubDate>
+      <guid isPermaLink="false">SP1464785</guid>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Teams] Users may be unable to access or manage some Microsoft Teams channels features</title>
@@ -62,13 +98,13 @@
       <pubDate>Thu, 27 Aug 2026 14:41:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Defender XDR] Some admins may experience delays in Microsoft Defender for Endpoint detections</title>
+      <title>[Microsoft Defender XDR] Some admins may experience 30-minute delays on average in Microsoft Defender for Endpoint detections</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1462187</link>
-      <description>[Microsoft Defender XDR] Admins may experience delays in Microsoft Defender for Endpoint detections.</description>
+      <description>[Microsoft Defender XDR] Admins may have experienced 30-minute delays on average in Microsoft Defender for Endpoint detections.</description>
       <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1462187</guid>
-      <pubDate>Wed, 26 Aug 2026 14:10:39 +0000</pubDate>
+      <pubDate>Wed, 26 Aug 2026 12:50:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Bookings] Users may have seen blank pages when opening Microsoft Bookings</title>
@@ -145,7 +181,7 @@
     <item>
       <title>[Microsoft 365 suite] Admins may encounter reporting delays across multiple Microsoft 365 admin centers and Viva Insights</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1458983</link>
-      <description>[Microsoft 365 suite] Admins may encounter reporting delays across multiple Microsoft 365 admin centers and Viva Insights.</description>
+      <description>[Microsoft 365 suite] Admins may have encountered reporting delays across multiple Microsoft 365 admin centers and Viva Insights.</description>
       <category>Microsoft 365 suite</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1458983</guid>
@@ -420,42 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">PB1451187</guid>
       <pubDate>Sun, 02 Aug 2026 04:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Viva] Some users may have experienced access issues or transient errors when accessing the Microsoft Viva Insight web app</title>
-      <link>https://www.aguidetocloud.com/service-health/#MV1444510</link>
-      <description>[Microsoft Viva] Users may have experienced access issues or transient errors when accessing the Microsoft Viva Insights web app.</description>
-      <category>Microsoft Viva</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MV1444510</guid>
-      <pubDate>Sat, 01 Aug 2026 02:43:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may receive failures when creating channels or adding members to shared channels in Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1446653</link>
-      <description>[Microsoft Teams] Users may have received failures when creating channels or adding members to shared channels in Microsoft Teams.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1446653</guid>
-      <pubDate>Sat, 01 Aug 2026 01:35:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Users may be unable to access Microsoft 365 Copilot in the browser and may encounter a 400 Request Header error</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1447620</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access Copilot in the browser and may have encountered a 400 Request Header error.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1447620</guid>
-      <pubDate>Fri, 31 Jul 2026 20:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Users may be unable to access Microsoft Copilot Chat in the browser and may encounter a 400 Request Header error</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1447067</link>
-      <description>[Microsoft 365 Copilot Chat] Users may have been unable to access Copilot Chat in the browser and may have encountered a 400 Request Header error.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1447067</guid>
-      <pubDate>Fri, 31 Jul 2026 20:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
