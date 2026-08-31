@@ -1,12 +1,12 @@
 {
-  "generated": "2026-08-30T10:33:02.982476+00:00",
+  "generated": "2026-08-31T11:41:52.373159+00:00",
   "total": 52,
   "active": 26,
   "passed": 26,
   "action_required": 25,
   "urgency": {
-    "critical": 5,
-    "warning": 20,
+    "critical": 10,
+    "warning": 15,
     "watch": 1
   },
   "categories": {
@@ -23,7 +23,7 @@
   "next_deadline": {
     "title": "Azure AI Document Intelligence v2.0 API Retirement",
     "deadline": "2026-08-31",
-    "days_remaining": 1,
+    "days_remaining": 0,
     "urgency": "critical"
   },
   "category_meta": {
