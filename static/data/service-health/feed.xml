@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 31 Aug 2026 05:26:33 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 13:38:06 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Power BI] Some users were unable to access the Power BI Data Agent or Microsoft Fabric Environment extensions</title>
+      <link>https://www.aguidetocloud.com/service-health/#PB1464659</link>
+      <description>[Power BI] Users were unable to access the Power BI Data Agent or Microsoft Fabric Environment extensions.</description>
+      <category>Power BI</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">PB1464659</guid>
+      <pubDate>Mon, 31 Aug 2026 04:15:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Defender XDR] Users' browsers hang in Microsoft Defender for Office 365 when editing attack simulation training end user notifications</title>
       <link>https://www.aguidetocloud.com/service-health/#DZ1463442</link>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1447067</guid>
       <pubDate>Fri, 31 Jul 2026 20:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users may see a banner in the Microsoft Teams desktop app mistakenly stating they are on an old version</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1444037</link>
-      <description>[Microsoft Teams] Users may have seen a banner in the Microsoft Teams desktop app mistakenly stating they are on an old version.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1444037</guid>
-      <pubDate>Fri, 31 Jul 2026 14:53:54 +0000</pubDate>
     </item>
   </channel>
 </rss>
