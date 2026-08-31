@@ -1,0 +1,186 @@
+name: 💬 Sync /ask/ answer pages
+
+# Mirrors ANSWERED GitHub Discussions into content/ask/*.md so each answer gets
+# its own static, indexable URL. Without this the answers only exist inside the
+# client-rendered list on /feedback/, which search engines never see.
+#
+# WHY THIS RUNS UNATTENDED
+#   Sush works entirely from /feedback/, which reads GitHub live. The /ask/
+#   pages are a separate Google-facing copy he never opens, so when this step
+#   is manual it falls behind invisibly — it sat stale from 13 Aug to 30 Aug
+#   2026 with five answered questions having no page at all. A job nobody can
+#   see falling behind is exactly the kind that must not depend on memory.
+#
+# WHY PUSHING STRAIGHT TO main IS SAFE HERE
+#   Question text comes from an unauthenticated public form, so it is hostile
+#   input, and Hugo renders /ask/ with `unsafe = true`. Three things stand
+#   between that and a published page, all added in ea52b6ca:
+#     - harden() escapes the untrusted text in scripts/sync-ask.mjs
+#     - assertInert() is a fail-closed backstop that QUARANTINES a page it
+#       cannot prove inert, rather than publishing it
+#     - scripts/qa-ask-render.mjs runs below, BEFORE the commit, and fails the
+#       job on bad output
+#
+#   An earlier draft of this workflow was blocked in review because it leaned
+#   on the push to trigger QA. That objection was correct: a push made with
+#   GITHUB_TOKEN does NOT trigger push-triggered workflows, so .github/workflows
+#   /ask-qa.yml would never have run, while Cloudflare Pages deployed anyway
+#   through its own Git integration. This version does not depend on a push
+#   trigger at all — QA is a step in this job, so it cannot be skipped.
+#
+# GITHUB_FEEDBACK_PAT is required. It is what lets the script page through
+# every discussion. The public /api/discussions fallback is unsuitable for
+# unattended use: functions/api/discussions.js:142 requests `discussions(first:
+# 50)` with no pagination and only 5 comments per discussion, so it silently
+# truncates once the archive outgrows that window.
+#
+# NOTE on the secret name: GitHub reserves the `GITHUB_` prefix for secret
+# names, so the Actions secret cannot be called GITHUB_FEEDBACK_PAT. We read
+# FEEDBACK_PAT if a narrowly-scoped one exists, else PERSONAL_PAT, which other
+# workflows here already use. Either is mapped into the env var the script wants.
+
+on:
+  schedule:
+    - cron: '23 17 * * *'   # daily 17:23 UTC (05:23 NZST) — off the hour on purpose
+  workflow_dispatch:
+
+concurrency:
+  group: sync-ask
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GITHUB_FEEDBACK_PAT: ${{ secrets.FEEDBACK_PAT || secrets.PERSONAL_PAT }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: "20"
+
+      - name: Guard — PAT must be present
+        run: |
+          if [ -z "$GITHUB_FEEDBACK_PAT" ]; then
+            echo "::error::Neither FEEDBACK_PAT nor PERSONAL_PAT is set. Without one the"
+            echo "::error::script falls back to the public API (50 most recent, unpaginated)"
+            echo "::error::and would silently truncate the archive. Add a secret at:"
+            echo "::error::  https://github.com/${{ github.repository }}/settings/secrets/actions"
+            exit 1
+          fi
+
+      - name: Sync answered discussions → content/ask/
+        run: node scripts/sync-ask.mjs 2>&1 | tee /tmp/sync.log
+
+      # Gate. Runs on the files just generated, before anything is committed.
+      # A failure here leaves the bad output in the runner and never publishes it.
+      - name: QA — untrusted content must render inert
+        run: node scripts/qa-ask-render.mjs
+
+      - name: Check for changes
+        id: check
+        run: |
+          if [ -n "$(git status --porcelain content/ask/)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            git status --short content/ask/
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No new or updated answers."
+          fi
+          # Brand-new pages are the ones worth telling Sush about: they become
+          # permanent, Google-indexable URLs under his byline. Updates to an
+          # existing page are not announced, or the alert becomes noise.
+          NEW=$(git status --porcelain content/ask/ | sed -n 's|^?? content/ask/\(.*\)\.md$|\1|p' | paste -sd', ' -)
+          echo "new_pages=$NEW" >> $GITHUB_OUTPUT
+          # Quarantine and comment-window truncation are deliberately non-fatal —
+          # one hostile submission must not stop every other page from updating —
+          # so they would otherwise pass completely silently.
+          echo "warnings=$(grep -c '⚠' /tmp/sync.log || true)" >> $GITHUB_OUTPUT
+
+      - name: Commit updated answer pages
+        if: steps.check.outputs.has_changes == 'true'
+        run: |
+          git config user.name "Ask Sync Bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/ask/
+          # Two -m flags, not one multi-line string: `git commit -m` preserves the
+          # YAML block's leading indentation on continuation lines, and an indented
+          # trailer is not parsed as a trailer at all (verified with
+          # `git interpret-trailers --parse`, which returned nothing).
+          git commit \
+            -m "feat(ask): sync answered discussions to /ask/ pages" \
+            -m "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
+          # Other bots push to main on their own schedules, so a race is possible
+          # even off the hour. Rebase and retry rather than failing the run.
+          for i in 1 2 3; do
+            git push origin HEAD:main && exit 0
+            echo "push rejected (attempt $i) — rebasing on origin/main"
+            git pull --rebase origin main
+          done
+          echo "::error::push failed after 3 attempts"
+          exit 1
+
+      # Answering a question on /feedback/ is not the same decision as publishing
+      # it as a permanent indexed page. data/ask_overrides.json holds 4 answered
+      # discussions suppressed by hand — for naming a customer, private
+      # correspondence, and a negative search result against a paid product.
+      # Nothing detects that class automatically, so the safeguard is speed: tell
+      # Sush what went public the moment it does, so a veto is minutes not months.
+      - name: 📣 Tell Sush what went public
+        if: steps.check.outputs.new_pages != '' || steps.check.outputs.warnings != '0'
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NEW_PAGES: ${{ steps.check.outputs.new_pages }}
+          WARNINGS: ${{ steps.check.outputs.warnings }}
+        run: |
+          if [ -z "$NTFY_TOPIC" ]; then
+            echo "::warning::NTFY_TOPIC not set — skipping push"
+            exit 0
+          fi
+          BODY="New /ask/ pages: ${NEW_PAGES:-none}"
+          if [ "$WARNINGS" != "0" ]; then
+            BODY="$BODY | $WARNINGS warning(s) — a discussion was quarantined or truncated"
+          fi
+          BODY="$BODY | Veto any of these and I will add an override. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          curl -fS --retry 3 --max-time 20 -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+            -H "Title: /ask/ published new answer pages" \
+            -H "Priority: default" \
+            -H "Tags: memo" \
+            -d "$BODY"
+
+  # Sush does not read GitHub, so a silent failure here would reproduce the exact
+  # problem this workflow exists to fix. Push to his phone instead.
+  #
+  # This is a separate job on purpose. `always() && result != 'success'` also
+  # catches cancellation and the 10-minute timeout, which a bare `failure()`
+  # step would miss.
+  notify-on-failure:
+    runs-on: ubuntu-latest
+    needs: sync
+    if: always() && needs.sync.result != 'success'
+    steps:
+      - name: 📣 Push to phone
+        # `env.NTFY_TOPIC` in if: is evaluated before the step's env: applies, so
+        # a step-level `if: env.NTFY_TOPIC != ''` never fires. Do the secret check
+        # inside the shell. Documented in guided-payment-health.yml (rubber-duck
+        # 2026-05-26); the first draft of this workflow fell into it again on
+        # 2026-08-31 and was caught in review.
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          if [ -z "$NTFY_TOPIC" ]; then
+            echo "::warning::NTFY_TOPIC not set — skipping push"
+            exit 0
+          fi
+          curl -fS --retry 3 --max-time 20 -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+            -H "Title: /ask/ sync did not complete" \
+            -H "Priority: default" \
+            -H "Tags: warning" \
+            -d "Result: ${{ needs.sync.result }}. Nothing was published and the live site is unchanged. Answers on /feedback/ are unaffected; this only delays the public /ask/ copies. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

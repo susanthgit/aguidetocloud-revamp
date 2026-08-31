@@ -51,7 +51,7 @@ async function loadHarden() {
      top-level code (which would run main() and hit the network). Each is
      matched as a top-level `function name(...) { … }` closing at column 0. */
   const NAMES = ['redact', 'neutraliseCharRefs', 'neutraliseRawHtml',
-    'neutraliseLinkSchemes', 'neutraliseShortcodes', 'harden', 'assertInert'];
+    'neutraliseLinkSchemes', 'neutraliseImages', 'neutraliseShortcodes', 'harden', 'assertInert'];
   const parts = [];
   for (const n of NAMES) {
     const re = new RegExp(`^function ${n}\\([\\s\\S]*?^\\}`, 'm');
@@ -72,6 +72,12 @@ async function loadHarden() {
    browser would execute or that Hugo would expand. */
 const PAYLOADS = [
   ['script tag',            '<script>alert(1)</script>'],
+  // Markdown image, NOT a raw tag: Hugo's render-image hook turns this into a
+  // live <img src>, which loads on view and hands the attacker every reader's
+  // IP. /feedback/ already refuses to render post images for this exact reason
+  // (static/js/feedback.js:405-417). Found by adversarial review 31 Aug 2026.
+  ['markdown tracking pixel', '![Microsoft Learn screenshot](https://attacker.example/pixel.png)'],
+  ['markdown image no alt',   '![](https://attacker.example/p.png)'],
   ['img onerror',           '<img src=x onerror=alert(1)>'],
   ['svg onload',            '<svg/onload=alert(1)>'],
   ['iframe',                '<iframe src="https://evil.test"></iframe>'],

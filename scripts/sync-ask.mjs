@@ -32,7 +32,9 @@
  *   GITHUB_FEEDBACK_PAT — GitHub PAT with read access to Discussions.
  *     With it: every discussion, paginated.
  *     Without it: falls back to the public /api/discussions endpoint, which
- *     returns only the 15 most recent. Fine for local dev, NOT for CI.
+ *     asks for discussions(first: 50) with no pagination and only 5 comments
+ *     each. That is complete today (37 discussions) and will silently truncate
+ *     at 51. Fine for local dev, NOT for CI.
  */
 
 import { writeFile, readFile, readdir, unlink, mkdir } from 'node:fs/promises';
@@ -180,6 +182,25 @@ function neutraliseShortcodes(s) {
   return s.replace(/\{\{([<%])/g, '&#123;&#123;$1');
 }
 
+/* Markdown images are legitimate Markdown, so neutraliseRawHtml leaves them
+   alone and `https:` is not a dangerous scheme — yet Hugo's render-image hook
+   turns `![alt](https://…)` into a live `<img src>`
+   (layouts/_default/_markup/render-image.html:18-21).
+
+   An <img> starts a network request the moment it exists, so a hostile
+   submission harvests the IP of every reader of the published page, and the
+   attacker can swap that file for something worse later, served under Sush's
+   own domain. /feedback/ already refuses to do this and rebuilds images as
+   plain text links because "an <img> starts a network request the moment it
+   exists, even detached" (static/js/feedback.js:405-417, measured 26 Aug 2026).
+   /ask/ is the same untrusted text on a permanent indexed URL, so it gets the
+   same answer: the destination stays visible and clickable, nothing loads.
+   Measured 31 Aug 2026: no generated page currently contains an image, so this
+   closes a latent hole rather than changing what is live. */
+function neutraliseImages(s) {
+  return s.replace(/(^|[^\\])!(\[)/g, (_, pre, br) => `${pre}Image: ${br}`);
+}
+
 /* Full treatment for any text that reaches the renderer. Order matters:
    character references are neutralised first, then the guards that emit them. */
 function harden(text) {
@@ -187,6 +208,7 @@ function harden(text) {
   s = neutraliseCharRefs(s);
   s = neutraliseRawHtml(s);
   s = neutraliseLinkSchemes(s);
+  s = neutraliseImages(s);
   return neutraliseShortcodes(s);
 }
 
@@ -202,6 +224,7 @@ function assertInert(text, label) {
   const tag = s.match(/<[a-zA-Z/!?][^\n]{0,40}/);
   if (tag) problems.push(`raw HTML tag ${JSON.stringify(tag[0])}`);
   if (/\{\{[<%]/.test(s)) problems.push('unescaped Hugo shortcode');
+  if (/(^|[^\\])!\[/.test(s)) problems.push('markdown image (renders as a live <img>, leaking reader IPs)');
 
   /* Decode what a Markdown parser may decode in a link destination — numeric
      AND named references — then strip the whitespace a browser strips from a
@@ -469,7 +492,7 @@ async function main() {
     raw = await fetchViaGraphql(pat);
   } else {
     console.warn('⚠ GITHUB_FEEDBACK_PAT not set — falling back to the public API');
-    console.warn('  (only the 15 most recent discussions; do NOT rely on this in CI)');
+    console.warn('  (50 most recent, unpaginated, 5 comments each; do NOT rely on this in CI)');
     raw = await fetchViaPublicApi();
   }
   console.log(`  ${raw.length} discussion(s) fetched`);
@@ -543,7 +566,15 @@ async function main() {
   const wanted = new Set(pages.map(p => `${p.slug}.md`));
   let written = 0;
   for (const p of pages) {
-    await writeFile(path.join(OUT_DIR, `${p.slug}.md`), renderMarkdown(p), 'utf8');
+    // Normalise to LF before writing. GitHub returns CRLF inside discussion
+    // bodies, so the raw output otherwise depends on where the generator ran:
+    // a Windows checkout with core.autocrlf=true silently rewrites it to LF on
+    // commit, while the Linux runner commits the CRLF as-is. Measured 31 Aug
+    // 2026: that made 22 of 32 files differ byte-for-byte between the two, so
+    // an unattended daily run and a local run would churn the same files back
+    // and forth forever.
+    const md = renderMarkdown(p).replace(/\r\n/g, '\n');
+    await writeFile(path.join(OUT_DIR, `${p.slug}.md`), md, 'utf8');
     written++;
   }
 
@@ -552,9 +583,24 @@ async function main() {
   // everything older would look "deleted" and get wiped.
   let pruned = 0;
   if (pat) {
-    const stale = (await readdir(OUT_DIR)).filter(
-      f => f !== '_index.md' && f.endsWith('.md') && !wanted.has(f)
-    );
+    /* A quarantined discussion never reaches `pages`, so it is absent from
+       `wanted` and its existing file would look stale and be DELETED. That
+       hands anyone a takedown: edit your own already-published discussion to
+       include something the guards reject, and the live answer disappears on
+       the next unattended run. Hold the last-known-good file instead — the
+       quarantine warning above is the signal that it needs a human. */
+    const held = new Set(quarantined.map(q => q.number));
+    const stale = [];
+    for (const f of await readdir(OUT_DIR)) {
+      if (f === '_index.md' || !f.endsWith('.md') || wanted.has(f)) continue;
+      const existing = await readFile(path.join(OUT_DIR, f), 'utf8').catch(() => '');
+      const num = Number((existing.match(/^ask_number:\s*(\d+)/m) || [])[1]);
+      if (held.has(num)) {
+        console.warn(`  ⚠ keeping ${f} — discussion #${num} is quarantined, not deleted`);
+        continue;
+      }
+      stale.push(f);
+    }
     /* Deletion was previously unbounded: any bug that shrank `wanted` — an API
        hiccup returning few discussions, a filter regression, a bad override
        file — would delete the entire archive and commit that. A real removal is
