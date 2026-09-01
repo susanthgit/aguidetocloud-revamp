@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-01T16:34:18.261016+00:00",
+  "generated_at": "2026-09-01T20:58:57.623055+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 23,
-      "active_incidents": 3,
+      "total_incidents": 22,
+      "active_incidents": 2,
       "avg_duration_minutes": 8390,
       "last_incident": "2026-08-27T19:22:00+00:00",
       "classifications": {
-        "advisory": 17,
+        "advisory": 16,
         "incident": 6
       }
     },
@@ -20,12 +20,12 @@
       "short_name": "Copilot",
       "icon": "🤖",
       "total_incidents": 17,
-      "active_incidents": 2,
-      "avg_duration_minutes": 1758,
-      "last_incident": "2026-09-01T14:37:48.293000+00:00",
+      "active_incidents": 1,
+      "avg_duration_minutes": 1665,
+      "last_incident": "2026-09-01T13:23:00+00:00",
       "classifications": {
-        "incident": 7,
-        "advisory": 10
+        "advisory": 10,
+        "incident": 7
       }
     },
     {
@@ -106,28 +106,29 @@
       }
     },
     {
+      "service": "Microsoft Intune",
+      "short_name": "Intune",
+      "icon": "📱",
+      "total_incidents": 4,
+      "active_incidents": 1,
+      "avg_duration_minutes": 15013,
+      "last_incident": "2026-08-31T09:09:53.290000+00:00",
+      "classifications": {
+        "advisory": 3,
+        "incident": 1
+      }
+    },
+    {
       "service": "SharePoint Online",
       "short_name": "SharePoint",
       "icon": "📄",
       "total_incidents": 4,
       "active_incidents": 1,
       "avg_duration_minutes": 14099,
-      "last_incident": "2026-08-28T00:00:00+00:00",
+      "last_incident": "2026-08-25T16:58:38.313000+00:00",
       "classifications": {
         "incident": 3,
         "advisory": 1
-      }
-    },
-    {
-      "service": "Microsoft Intune",
-      "short_name": "Intune",
-      "icon": "📱",
-      "total_incidents": 3,
-      "active_incidents": 1,
-      "avg_duration_minutes": 4374,
-      "last_incident": "2026-08-31T09:09:53.290000+00:00",
-      "classifications": {
-        "advisory": 3
       }
     },
     {
@@ -212,12 +213,12 @@
     },
     {
       "month": "2026-08",
-      "incident_count": 53,
+      "incident_count": 52,
       "services_affected": 13
     },
     {
       "month": "2026-07",
-      "incident_count": 45,
+      "incident_count": 46,
       "services_affected": 12
     }
   ]
