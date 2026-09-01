@@ -1,29 +1,29 @@
 {
-  "generated": "2026-08-31T11:41:52.373159+00:00",
+  "generated": "2026-09-01T10:15:59.255471+00:00",
   "total": 52,
-  "active": 26,
-  "passed": 26,
-  "action_required": 25,
+  "active": 25,
+  "passed": 27,
+  "action_required": 24,
   "urgency": {
-    "critical": 10,
-    "warning": 15,
+    "critical": 14,
+    "warning": 10,
     "watch": 1
   },
   "categories": {
-    "azure": 15,
+    "azure": 14,
     "office-apps": 3,
     "exchange": 2,
     "entra": 1,
     "windows": 5
   },
   "types": {
-    "retirement": 16,
+    "retirement": 15,
     "end-of-support": 10
   },
   "next_deadline": {
-    "title": "Azure AI Document Intelligence v2.0 API Retirement",
-    "deadline": "2026-08-31",
-    "days_remaining": 0,
+    "title": "Computer Vision API v1.0-v3.1 Retirement",
+    "deadline": "2026-09-13",
+    "days_remaining": 12,
     "urgency": "critical"
   },
   "category_meta": {
