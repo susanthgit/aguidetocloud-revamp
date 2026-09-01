@@ -5852,6 +5852,27 @@ guided_url = "/guided/fortinet-nse7-efw/"
 # for single-page lookups (replaces guided_certs.toml)
 # ═══════════════════════════════════════════════════
 
+[[cert]]
+slug = "oracle-db-azure-architect-professional"
+vendor = "oracle"
+code = "ORACLE-DB-AZURE-ARCHITECT-PROFESSIONAL"
+name = "Oracle AI Database@Azure Architect Professional"
+tagline = "Master the Oracle AI Database@Azure Architect Professional exam (1Z0-1147) — the multicloud model behind Oracle Database@Azure and how Oracle-managed infrastructure sits inside an Azure region; purchasing through Azure Marketplace, onboarding a subscription and linking an OCI tenancy; identity federation between Microsoft Entra ID and OCI IAM; delegated subnets, network attachments, NSGs, user-defined routes and the default versus advanced networking feature sets; provisioning and operating Exadata Database Service on Dedicated Infrastructure and Autonomous Database Serverless; migrating with Zero Downtime Migration, Data Pump, RMAN and Data Guard; high availability and disaster recovery across availability zones and regions; and securing the service with TDE, customer-managed keys, Azure Monitor and OCI audit."
+exam_category = "Oracle"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 1012
+featured = false
+price_practice = 9
+exam_url = "https://mylearn.oracle.com/ou/exam/oracle-ai-databaseazure-architect-professional-1z0-1147/163295/161775/271331"
+exam_cost = "$245 USD (verify at Oracle University registration)"
+exam_duration = 90
+exam_passing_score = "68%"
+guided_url = "/guided/oracle-db-azure-architect-professional/"
+
 [cert_map."gh-900"]
 vendor = "github"
 code = "GH-900"
@@ -13305,3 +13326,29 @@ exam_prerequisites = "None (hands-on MySQL 8.0 database administration experienc
 exam_question_types = ["Multiple choice"]
 guided_url = "/guided/mysql-8-database-administrator/"
 practice_url = "/guided/mysql-8-database-administrator/practice/"
+
+[cert_map."oracle-db-azure-architect-professional"]
+vendor = "oracle"
+code = "ORACLE-DB-AZURE-ARCHITECT-PROFESSIONAL"
+name = "Oracle AI Database@Azure Architect Professional"
+tagline = "Master the Oracle AI Database@Azure Architect Professional exam (1Z0-1147) — the multicloud model behind Oracle Database@Azure and how Oracle-managed infrastructure sits inside an Azure region; purchasing through Azure Marketplace, onboarding a subscription and linking an OCI tenancy; identity federation between Microsoft Entra ID and OCI IAM; delegated subnets, network attachments, NSGs, user-defined routes and the default versus advanced networking feature sets; provisioning and operating Exadata Database Service on Dedicated Infrastructure and Autonomous Database Serverless; migrating with Zero Downtime Migration, Data Pump, RMAN and Data Guard; high availability and disaster recovery across availability zones and regions; and securing the service with TDE, customer-managed keys, Azure Monitor and OCI audit."
+exam_category = "Oracle"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 1012
+featured = false
+price_practice = 9
+exam_url = "https://mylearn.oracle.com/ou/exam/oracle-ai-databaseazure-architect-professional-1z0-1147/163295/161775/271331"
+exam_cost = "$245 USD (verify at Oracle University registration)"
+exam_duration = 90
+exam_passing_score = "68%"
+exam_questions_real = "50"
+exam_provider = "Oracle University (online proctored)"
+exam_validity = "Verify the current Oracle Recertification policy for this track"
+exam_prerequisites = "None (hands-on Oracle Database@Azure and Azure architecture experience recommended)"
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/oracle-db-azure-architect-professional/"
+practice_url = "/guided/oracle-db-azure-architect-professional/practice/"
