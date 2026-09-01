@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Sep 2026 11:34:24 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 16:34:18 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may experience delays or failures when receiving responses from Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1465608</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may experience delays or failures when receiving responses from Microsoft 365 Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1465608</guid>
+      <pubDate>Tue, 01 Sep 2026 14:37:48 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may have experienced delays or failures when receiving responses from Microsoft 365 Copilot </title>
       <link>https://www.aguidetocloud.com/service-health/#CP1465477</link>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1448902</guid>
       <pubDate>Thu, 06 Aug 2026 07:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Users may not see the controls in the file and media webpart for embedded PowerPoint files in SharePoint Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1461655</link>
-      <description>[SharePoint Online] Users may not have seen the controls in the file and media webpart for embedded PowerPoint files in SharePoint Online.</description>
-      <category>SharePoint Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">SP1461655</guid>
-      <pubDate>Wed, 05 Aug 2026 22:29:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
