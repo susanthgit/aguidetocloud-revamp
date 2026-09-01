@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Mon, 31 Aug 2026 23:48:10 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 05:00:53 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Admins' may see delays in Copilot usage report data in a Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1465286</link>
+      <description>[Microsoft 365 suite] Admins' may see delays in Copilot usage report data in a Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1465286</guid>
+      <pubDate>Tue, 01 Sep 2026 00:25:42 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Viva] Some users may be unable to perform searches in Microsoft Viva Engage</title>
+      <link>https://www.aguidetocloud.com/service-health/#MV1465260</link>
+      <description>[Microsoft Viva] Users may have been unable to perform searches in Microsoft Viva Engage.</description>
+      <category>Microsoft Viva</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MV1465260</guid>
+      <pubDate>Mon, 31 Aug 2026 21:45:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Users may be unable to connect to, or experience degraded functionality with Exchange Online</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1464935</link>
@@ -438,24 +456,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1447275</guid>
       <pubDate>Tue, 04 Aug 2026 14:47:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Some workspace admins see outdated/incomplete information in workspace settings of Power BI or Microsoft Fabric services</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1461484</link>
-      <description>[Power BI] Workspace admins see outdated/incomplete information in workspace settings of Power BI or Microsoft Fabric services.</description>
-      <category>Power BI</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">PB1461484</guid>
-      <pubDate>Sun, 02 Aug 2026 04:12:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Power BI] Users may be unable to refresh some Power BI dataflows</title>
-      <link>https://www.aguidetocloud.com/service-health/#PB1451187</link>
-      <description>[Power BI] Users may be unable to refresh some Power BI dataflows.</description>
-      <category>Power BI</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">PB1451187</guid>
-      <pubDate>Sun, 02 Aug 2026 04:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
