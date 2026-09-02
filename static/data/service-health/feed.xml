@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Sep 2026 16:30:58 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 20:59:03 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Users can't edit virtual invites in Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1466224</link>
+      <description>[Microsoft Teams] Users can't edit virtual invites in Microsoft Teams. </description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1466224</guid>
+      <pubDate>Wed, 02 Sep 2026 18:31:23 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may be unable to view additional sync statistics for some Microsoft Graph Connectors</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1465967</link>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MP1452564</guid>
       <pubDate>Fri, 07 Aug 2026 14:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may encounter intermittent failures with an error when sending prompts in Microsoft 365 Copilot</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1449264</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may have encountered intermittent failures with an error when sending prompts in Copilot Chat in Web mode.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CP1449264</guid>
-      <pubDate>Fri, 07 Aug 2026 01:40:43 +0000</pubDate>
     </item>
   </channel>
 </rss>
