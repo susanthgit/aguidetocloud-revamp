@@ -5,8 +5,26 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Sep 2026 04:23:55 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 11:12:08 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Admins may be unable to view additional sync statistics for some Microsoft Graph Connectors</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1465967</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Admins may be unable to view additional sync statistics for some Microsoft Graph Connectors.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CP1465967</guid>
+      <pubDate>Wed, 02 Sep 2026 08:42:38 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 suite] Some users may be unable to open Google search links from email and Microsoft Teams messages</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1465962</link>
+      <description>[Microsoft 365 suite] Users may be unable to open Google search links from email and Microsoft Teams messages.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1465962</guid>
+      <pubDate>Wed, 02 Sep 2026 02:53:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may experience delays or failures when receiving responses from Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1465608</link>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CP1449264</guid>
       <pubDate>Fri, 07 Aug 2026 01:40:43 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Admins may be unable to assign Microsoft Teams numbers to resource accounts using multiple methods</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1448902</link>
-      <description>[Microsoft Teams] Admins may have been unable to assign Microsoft Teams numbers to resource accounts using multiple methods.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1448902</guid>
-      <pubDate>Thu, 06 Aug 2026 07:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[SharePoint Online] Users may not see the controls in the file and media webpart for embedded PowerPoint files in SharePoint Online</title>
-      <link>https://www.aguidetocloud.com/service-health/#SP1461655</link>
-      <description>[SharePoint Online] Users may not have seen the controls in the file and media webpart for embedded PowerPoint files in SharePoint Online.</description>
-      <category>SharePoint Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">SP1461655</guid>
-      <pubDate>Wed, 05 Aug 2026 22:29:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
