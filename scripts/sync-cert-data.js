@@ -143,6 +143,7 @@ function getExamCategory(cert) {
     'confluent': 'Confluent',
     'nutanix': 'Nutanix',
     'nvidia': 'NVIDIA',
+    'salesforce': 'Salesforce',
   };
   return vendorCategoryMap[cert.vendor] || cert.vendor;
 }

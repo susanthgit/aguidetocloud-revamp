@@ -222,3 +222,13 @@ logo_emoji = "🟩"
 official_url = "https://www.nvidia.com/en-us/learn/certification/"
 cert_path_note = "Start with the NVIDIA-Certified Associate: AI Infrastructure and Operations (NCA-AIIO) - essential AI knowledge, GPU and datacenter infrastructure, and the day-2 operations that keep an AI cluster healthy."
 order = 22
+
+[[vendor]]
+slug = "salesforce"
+name = "Salesforce"
+short_name = "Salesforce"
+accent = "#00A1E0"
+logo_emoji = "☁️"
+official_url = "https://trailhead.salesforce.com/credentials"
+cert_path_note = "Start with the Salesforce Certified Platform Administrator (renamed from Salesforce Certified Administrator in the December 2025 refresh) - org configuration and security, the data model and Lightning App Builder, reports and dashboards, Flow automation, and Agentforce."
+order = 23
