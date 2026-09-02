@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Sep 2026 00:06:30 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 04:23:55 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may experience delays or failures when receiving responses from Microsoft 365 Copilot</title>
@@ -64,9 +64,9 @@
     <item>
       <title>[Microsoft Intune] Some admins may be unable to view device information in the Microsoft Intune admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#IT1464731</link>
-      <description>[Microsoft Intune] Admins may be unable to view device information in the Microsoft Intune admin center.</description>
+      <description>[Microsoft Intune] Admins may have been unable to view device information in the Microsoft Intune admin center.</description>
       <category>Microsoft Intune</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">IT1464731</guid>
       <pubDate>Mon, 31 Aug 2026 09:09:53 +0000</pubDate>
     </item>

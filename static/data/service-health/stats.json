@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T00:06:30.046783+00:00",
+  "generated_at": "2026-09-02T04:23:54.458933+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
@@ -106,19 +106,6 @@
       }
     },
     {
-      "service": "Microsoft Intune",
-      "short_name": "Intune",
-      "icon": "📱",
-      "total_incidents": 4,
-      "active_incidents": 1,
-      "avg_duration_minutes": 15013,
-      "last_incident": "2026-08-31T09:09:53.290000+00:00",
-      "classifications": {
-        "advisory": 3,
-        "incident": 1
-      }
-    },
-    {
       "service": "SharePoint Online",
       "short_name": "SharePoint",
       "icon": "📄",
@@ -129,6 +116,19 @@
       "classifications": {
         "incident": 3,
         "advisory": 1
+      }
+    },
+    {
+      "service": "Microsoft Intune",
+      "short_name": "Intune",
+      "icon": "📱",
+      "total_incidents": 4,
+      "active_incidents": 0,
+      "avg_duration_minutes": 11873,
+      "last_incident": "2026-08-31T09:09:53.290000+00:00",
+      "classifications": {
+        "advisory": 3,
+        "incident": 1
       }
     },
     {
