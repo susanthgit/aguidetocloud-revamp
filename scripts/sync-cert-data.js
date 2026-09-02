@@ -298,6 +298,30 @@ function generateAllCertsToml(certs) {
   const outputPath = path.join(HUGO_DATA_DIR, 'all_certs.toml');
   fs.writeFileSync(outputPath, output, 'utf8');
   console.log(`✅ Generated ${outputPath} (${certs.length} certs)`);
+  printCatalogueRepairRecipe(outputPath);
+}
+
+// Playbook lesson 694/705. This file is regenerated WHOLESALE: every cert block is
+// rewritten, not only the one being added, and the damage (taglines genericised,
+// codes truncated, order scrambled) is same-line value churn that a `--numstat`
+// cannot see. The remedy already exists as a fleet tool, but it was documented in
+// the playbook's P8 section while the hazard bites at P5 — so a build reads the
+// warning, believes it must solve it, and hand-rolls a second, weaker tool.
+// Printing the recipe here puts it on the unavoidable execution path: you cannot
+// reach this hazard without running this generator. Advisory only -- no exit code
+// and no control flow depends on it.
+function printCatalogueRepairRecipe(outputPath) {
+  const rel = path.relative(process.cwd(), outputPath).replace(/\\/g, '/') || outputPath;
+  console.log('');
+  console.log('   ⚠️  REGENERATED WHOLESALE — every cert block was rewritten, not just yours.');
+  console.log('       Line counts are blind to this; only a structural TOML diff sees it.');
+  console.log('       Do NOT hand-roll a repair — use the fleet tool (guided/files/_p5_catalogue.py):');
+  console.log(`         cp ${rel} /tmp/gen.toml`);
+  console.log(`         git checkout -- ${rel} data/study_modules.toml`);
+  console.log('         python <guided>/files/_p5_catalogue.py append --slug <slug> --gen /tmp/gen.toml --apply');
+  console.log('         python <guided>/files/_p5_catalogue.py verify --slug <slug> --base origin/main');
+  console.log('       `verify` must report added=[<slug>], removed=[], changed=[] on BOTH');
+  console.log('       the `cert` array AND the `cert_map` table, pinned to origin/main (never HEAD).');
 }
 
 // ── Generate data/study_modules.toml — interactive study guide curriculum ──
