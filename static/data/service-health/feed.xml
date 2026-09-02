@@ -5,7 +5,7 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Sep 2026 11:12:08 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 16:30:58 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may be unable to view additional sync statistics for some Microsoft Graph Connectors</title>
@@ -17,11 +17,11 @@
       <pubDate>Wed, 02 Sep 2026 08:42:38 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft 365 suite] Some users may be unable to open Google search links from email and Microsoft Teams messages</title>
+      <title>[Microsoft 365 suite] Some users may have been unable to open Google search links from email and Microsoft Teams messages</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1465962</link>
-      <description>[Microsoft 365 suite] Users may be unable to open Google search links from email and Microsoft Teams messages.</description>
+      <description>[Microsoft 365 suite] Users may have been unable to open Google search links from email and Microsoft Teams messages.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1465962</guid>
       <pubDate>Wed, 02 Sep 2026 02:53:00 +0000</pubDate>
     </item>
