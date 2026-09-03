@@ -5,25 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Sep 2026 11:08:13 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 16:22:04 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft Teams] Users may be unable to access tabs beyond the Conversation tab in certain Microsoft Teams channels</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1466441</link>
-      <description>[Microsoft Teams] Users may be unable to access tabs beyond the Conversation tab in certain Microsoft Teams channels.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1466441</guid>
-      <pubDate>Thu, 03 Sep 2026 08:43:30 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users may be unable to edit virtual invites in Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1466224</link>
-      <description>[Microsoft Teams] Users may be unable to edit virtual invites in Microsoft Teams. </description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1466224</guid>
-      <pubDate>Wed, 02 Sep 2026 18:31:23 +0000</pubDate>
+      <title>[Windows 365] Admins' Microsoft 365 Cloud PC components may not be updating</title>
+      <link>https://www.aguidetocloud.com/service-health/#WP1466588</link>
+      <description>[Windows 365] Admins' Cloud PC components may not be updating.</description>
+      <category>Windows 365</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">WP1466588</guid>
+      <pubDate>Thu, 03 Sep 2026 15:56:10 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may be unable to view additional sync statistics for some Microsoft Graph Connectors</title>
@@ -312,6 +303,15 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">MO1457636</guid>
       <pubDate>Wed, 19 Aug 2026 14:15:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Users may be unable to access tabs beyond the Conversation tab in certain Microsoft Teams channels</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1466441</link>
+      <description>[Microsoft Teams] Users may have been unable to access tabs beyond the Conversation tab in certain Microsoft Teams channels.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1466441</guid>
+      <pubDate>Tue, 18 Aug 2026 13:30:00 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Some users may be unable to send or receive new Exchange Online email through the native iOS mail app</title>
