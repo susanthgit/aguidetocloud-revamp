@@ -5,12 +5,12 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Sep 2026 20:59:03 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 00:10:38 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Microsoft Teams] Users can't edit virtual invites in Microsoft Teams</title>
+      <title>[Microsoft Teams] Users may be unable to edit virtual invites in Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1466224</link>
-      <description>[Microsoft Teams] Users can't edit virtual invites in Microsoft Teams. </description>
+      <description>[Microsoft Teams] Users may be unable to edit virtual invites in Microsoft Teams. </description>
       <category>Microsoft Teams</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">TM1466224</guid>
