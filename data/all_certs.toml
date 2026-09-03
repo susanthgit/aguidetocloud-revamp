@@ -13445,3 +13445,50 @@ exam_prerequisites = "None. Salesforce recommends six months or more of hands-on
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/salesforce-administrator/"
 practice_url = "/guided/salesforce-administrator/practice/"
+
+[[cert]]
+slug = "salesforce-mulesoft-developer"
+vendor = "salesforce"
+code = "SALESFORCE-MULESOFT-DEVELOPER"
+name = "Salesforce Certified MuleSoft Developer"
+tagline = "Master the Salesforce Certified MuleSoft Developer exam: read a Mule 4 flow and predict exactly what it does, tell payload from attributes from variables, choose between a For Each scope and a Batch Job, write DataWeave that coerces, filters and orders data correctly, know why on-error continue and on-error propagate give the caller different answers, and deploy and govern the finished API on CloudHub and API Manager."
+exam_category = "Salesforce"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 1013
+featured = false
+price_practice = 9
+exam_url = "https://help.salesforce.com/s/articleView?id=005298959&type=1"
+exam_cost = "$200 USD, retake $100 USD"
+exam_duration = 120
+exam_passing_score = "70%"
+guided_url = "/guided/salesforce-mulesoft-developer/"
+
+[cert_map."salesforce-mulesoft-developer"]
+vendor = "salesforce"
+code = "SALESFORCE-MULESOFT-DEVELOPER"
+name = "Salesforce Certified MuleSoft Developer"
+tagline = "Master the Salesforce Certified MuleSoft Developer exam: read a Mule 4 flow and predict exactly what it does, tell payload from attributes from variables, choose between a For Each scope and a Batch Job, write DataWeave that coerces, filters and orders data correctly, know why on-error continue and on-error propagate give the caller different answers, and deploy and govern the finished API on CloudHub and API Manager."
+exam_category = "Salesforce"
+level = "intermediate"
+status = "active"
+modules = 0
+questions = 250
+domains = 8
+order = 1013
+featured = false
+price_practice = 9
+exam_url = "https://help.salesforce.com/s/articleView?id=005298959&type=1"
+exam_cost = "$200 USD, retake $100 USD"
+exam_duration = 120
+exam_passing_score = "70%"
+exam_questions_real = "60 multiple choice plus up to 5 unscored"
+exam_provider = "Proctored onsite at a testing centre or online"
+exam_validity = "Maintained with an annual maintenance badge on Trailhead"
+exam_prerequisites = "None. Salesforce recommends three to six months of hands-on Mule 4 project experience. This credential is itself the prerequisite for MuleSoft Developer II."
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/salesforce-mulesoft-developer/"
+practice_url = "/guided/salesforce-mulesoft-developer/practice/"
