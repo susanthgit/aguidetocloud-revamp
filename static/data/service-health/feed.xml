@@ -5,16 +5,25 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Sep 2026 16:22:04 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 20:57:59 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>[Windows 365] Admins' Microsoft 365 Cloud PC components may not be updating</title>
-      <link>https://www.aguidetocloud.com/service-health/#WP1466588</link>
-      <description>[Windows 365] Admins' Cloud PC components may not be updating.</description>
-      <category>Windows 365</category>
+      <title>[Microsoft Teams] Users may be unable to join calls or meetings in Microsoft Teams for Mac</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1466659</link>
+      <description>[Microsoft Teams] Users may be unable to join calls or meetings in Microsoft Teams for Mac. </description>
+      <category>Microsoft Teams</category>
       <category>investigating</category>
-      <guid isPermaLink="false">WP1466588</guid>
-      <pubDate>Thu, 03 Sep 2026 15:56:10 +0000</pubDate>
+      <guid isPermaLink="false">TM1466659</guid>
+      <pubDate>Thu, 03 Sep 2026 18:57:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users' queries to Microsoft 365 Copilot Chat may return no response, and users receive an error</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1466621</link>
+      <description>[Microsoft 365 Copilot Chat] Users' queries to Copilot Chat may have returned no response, and users received an error.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">CW1466621</guid>
+      <pubDate>Thu, 03 Sep 2026 17:12:29 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Admins may be unable to view additional sync statistics for some Microsoft Graph Connectors</title>
@@ -62,9 +71,9 @@
       <pubDate>Tue, 01 Sep 2026 07:50:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft 365 suite] Admins' may see delays in Copilot usage report data in a Microsoft 365 admin center</title>
+      <title>[Microsoft 365 suite] Admins' may see delays in Copilot usage report data in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1465286</link>
-      <description>[Microsoft 365 suite] Admins' may see delays in Copilot usage report data in a Microsoft 365 admin center.</description>
+      <description>[Microsoft 365 suite] Admins' may see delays in Copilot usage report data in the Microsoft 365 admin center.</description>
       <category>Microsoft 365 suite</category>
       <category>serviceDegradation</category>
       <guid isPermaLink="false">MO1465286</guid>
@@ -82,18 +91,18 @@
     <item>
       <title>[Exchange Online] Users may be unable to connect to, or experience degraded functionality with Exchange Online</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1464935</link>
-      <description>[Exchange Online] Users may be unable to connect to, or experience degraded functionality with Exchange Online.</description>
+      <description>[Exchange Online] Users may have been unable to connect to, or experienced degraded functionality with Exchange Online.</description>
       <category>Exchange Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">EX1464935</guid>
       <pubDate>Mon, 31 Aug 2026 15:08:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Users may experience issues when utilizing multiple Microsoft 365 services</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1465074</link>
-      <description>[Microsoft 365 suite] Users may experience issues when utilizing multiple Microsoft 365 services.</description>
+      <description>[Microsoft 365 suite] Users may have experienced issues when utilizing multiple Microsoft 365 services.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1465074</guid>
       <pubDate>Mon, 31 Aug 2026 15:08:00 +0000</pubDate>
     </item>
@@ -332,6 +341,15 @@
       <pubDate>Mon, 17 Aug 2026 19:30:00 +0000</pubDate>
     </item>
     <item>
+      <title>[Windows 365] Admins may notice that Cloud PC service components aren't updating</title>
+      <link>https://www.aguidetocloud.com/service-health/#WP1466588</link>
+      <description>[Windows 365] Admins may have noticed that Cloud PC service components weren't updating.</description>
+      <category>Windows 365</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">WP1466588</guid>
+      <pubDate>Mon, 17 Aug 2026 16:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>[Microsoft 365 suite] Some users may be unable to search for content in SharePoint Online, OneDrive, Outlook on the web, or Outlook desktop</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1456424</link>
       <description>[Microsoft 365 suite] Users may have been unable to search for content in SharePoint Online, OneDrive, Outlook on the web, or Outlook desktop.</description>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1452695</guid>
       <pubDate>Mon, 10 Aug 2026 17:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may be unable to generate Microsoft Teams meeting attendance reports</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1452993</link>
-      <description>[Microsoft Teams] Users may have been unable to generate Microsoft Teams meeting attendance reports.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1452993</guid>
-      <pubDate>Mon, 10 Aug 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Users' browsers hang in Microsoft Defender for Office 365 when editing attack simulation training end user notifications</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1463442</link>
-      <description>[Microsoft Defender XDR] Users' browsers hung when editing Microsoft Defender for Office 365 attack simulation training end user notifications.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">DZ1463442</guid>
-      <pubDate>Mon, 10 Aug 2026 10:42:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

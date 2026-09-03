@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-03T16:22:03.509516+00:00",
+  "generated_at": "2026-09-03T20:57:58.362624+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
       "service": "Microsoft Teams",
       "short_name": "Teams",
       "icon": "💬",
-      "total_incidents": 23,
-      "active_incidents": 2,
-      "avg_duration_minutes": 9094,
-      "last_incident": "2026-08-27T19:22:00+00:00",
+      "total_incidents": 24,
+      "active_incidents": 3,
+      "avg_duration_minutes": 9089,
+      "last_incident": "2026-09-03T18:57:00.007000+00:00",
       "classifications": {
-        "advisory": 17,
+        "advisory": 18,
         "incident": 6
       }
     },
@@ -33,8 +33,8 @@
       "short_name": "M365 Suite",
       "icon": "📦",
       "total_incidents": 17,
-      "active_incidents": 5,
-      "avg_duration_minutes": 6780,
+      "active_incidents": 4,
+      "avg_duration_minutes": 6595,
       "last_incident": "2026-09-02T02:53:00+00:00",
       "classifications": {
         "advisory": 13,
@@ -42,15 +42,28 @@
       }
     },
     {
+      "service": "Microsoft 365 Copilot Chat",
+      "short_name": "Copilot Chat",
+      "icon": "💭",
+      "total_incidents": 6,
+      "active_incidents": 1,
+      "avg_duration_minutes": 1841,
+      "last_incident": "2026-09-03T17:12:29.117000+00:00",
+      "classifications": {
+        "incident": 4,
+        "advisory": 2
+      }
+    },
+    {
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 7,
-      "active_incidents": 3,
-      "avg_duration_minutes": 11235,
+      "total_incidents": 6,
+      "active_incidents": 2,
+      "avg_duration_minutes": 11857,
       "last_incident": "2026-09-02T06:01:52+00:00",
       "classifications": {
-        "advisory": 5,
+        "advisory": 4,
         "incident": 2
       }
     },
@@ -77,19 +90,6 @@
       "last_incident": "2026-08-31T04:15:00+00:00",
       "classifications": {
         "advisory": 5
-      }
-    },
-    {
-      "service": "Microsoft 365 Copilot Chat",
-      "short_name": "Copilot Chat",
-      "icon": "💭",
-      "total_incidents": 5,
-      "active_incidents": 0,
-      "avg_duration_minutes": 1841,
-      "last_incident": "2026-08-24T22:50:00+00:00",
-      "classifications": {
-        "incident": 3,
-        "advisory": 2
       }
     },
     {
@@ -147,24 +147,12 @@
       "service": "Microsoft Intune",
       "short_name": "Intune",
       "icon": "📱",
-      "total_incidents": 3,
+      "total_incidents": 2,
       "active_incidents": 0,
-      "avg_duration_minutes": 3734,
+      "avg_duration_minutes": 1340,
       "last_incident": "2026-08-31T09:09:53.290000+00:00",
       "classifications": {
-        "advisory": 3
-      }
-    },
-    {
-      "service": "Windows 365",
-      "short_name": "Windows 365",
-      "icon": "⚙️",
-      "total_incidents": 1,
-      "active_incidents": 1,
-      "avg_duration_minutes": 0,
-      "last_incident": "2026-09-03T15:56:10.470000+00:00",
-      "classifications": {
-        "advisory": 1
+        "advisory": 2
       }
     },
     {
@@ -177,6 +165,18 @@
       "last_incident": "2026-08-26T04:00:00+00:00",
       "classifications": {
         "incident": 1
+      }
+    },
+    {
+      "service": "Windows 365",
+      "short_name": "Windows 365",
+      "icon": "⚙️",
+      "total_incidents": 1,
+      "active_incidents": 0,
+      "avg_duration_minutes": 24565,
+      "last_incident": "2026-08-17T16:00:00+00:00",
+      "classifications": {
+        "advisory": 1
       }
     },
     {
@@ -207,17 +207,17 @@
   "monthly": [
     {
       "month": "2026-09",
-      "incident_count": 7,
-      "services_affected": 4
+      "incident_count": 8,
+      "services_affected": 5
     },
     {
       "month": "2026-08",
-      "incident_count": 53,
-      "services_affected": 13
+      "incident_count": 54,
+      "services_affected": 14
     },
     {
       "month": "2026-07",
-      "incident_count": 41,
+      "incident_count": 39,
       "services_affected": 11
     }
   ]
