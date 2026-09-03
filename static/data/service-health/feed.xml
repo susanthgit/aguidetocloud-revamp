@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Sep 2026 04:17:54 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 11:08:13 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Teams] Users may be unable to access tabs beyond the Conversation tab in certain Microsoft Teams channels</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1466441</link>
+      <description>[Microsoft Teams] Users may be unable to access tabs beyond the Conversation tab in certain Microsoft Teams channels.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">TM1466441</guid>
+      <pubDate>Thu, 03 Sep 2026 08:43:30 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Teams] Users may be unable to edit virtual invites in Microsoft Teams</title>
       <link>https://www.aguidetocloud.com/service-health/#TM1466224</link>
@@ -24,6 +33,15 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1465967</guid>
       <pubDate>Wed, 02 Sep 2026 08:42:38 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Exchange Online] Users may be unable to load themes in Outlook on the web</title>
+      <link>https://www.aguidetocloud.com/service-health/#EX1465910</link>
+      <description>[Exchange Online] Users may be unable to load themes in Outlook on the web.</description>
+      <category>Exchange Online</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">EX1465910</guid>
+      <pubDate>Wed, 02 Sep 2026 06:01:52 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 suite] Some users may have been unable to open Google search links from email and Microsoft Teams messages</title>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">DZ1463442</guid>
       <pubDate>Mon, 10 Aug 2026 10:42:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 suite] Some admins may see Copilot Adoption and Copilot Readiness report delays in multiple Microsoft 365 services</title>
-      <link>https://www.aguidetocloud.com/service-health/#MO1452280</link>
-      <description>[Microsoft 365 suite] Admins may have seen Copilot Adoption and Copilot Readiness report delays in multiple Microsoft 365 services.</description>
-      <category>Microsoft 365 suite</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MO1452280</guid>
-      <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Purview] Admins see communication compliance delays regarding alerts for policies configured to capture specific classifiers</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1452564</link>
-      <description>[Microsoft Purview] Admins saw communication compliance delays regarding alerts for policies configured to capture specific classifiers.</description>
-      <category>Microsoft Purview</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MP1452564</guid>
-      <pubDate>Fri, 07 Aug 2026 14:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
