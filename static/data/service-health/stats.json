@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T11:11:48.845892+00:00",
+  "generated_at": "2026-09-04T16:17:50.247938+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
@@ -7,12 +7,12 @@
       "short_name": "Teams",
       "icon": "💬",
       "total_incidents": 24,
-      "active_incidents": 3,
-      "avg_duration_minutes": 9089,
-      "last_incident": "2026-09-03T18:57:00+00:00",
+      "active_incidents": 2,
+      "avg_duration_minutes": 8884,
+      "last_incident": "2026-08-27T19:22:00+00:00",
       "classifications": {
-        "incident": 7,
-        "advisory": 17
+        "advisory": 17,
+        "incident": 7
       }
     },
     {
@@ -46,12 +46,12 @@
       "short_name": "Exchange",
       "icon": "📧",
       "total_incidents": 6,
-      "active_incidents": 3,
-      "avg_duration_minutes": 9170,
-      "last_incident": "2026-09-04T10:19:12.070000+00:00",
+      "active_incidents": 2,
+      "avg_duration_minutes": 6971,
+      "last_incident": "2026-09-04T09:00:00+00:00",
       "classifications": {
-        "incident": 3,
-        "advisory": 3
+        "advisory": 3,
+        "incident": 3
       }
     },
     {
@@ -207,12 +207,12 @@
   "monthly": [
     {
       "month": "2026-09",
-      "incident_count": 10,
-      "services_affected": 5
+      "incident_count": 9,
+      "services_affected": 4
     },
     {
       "month": "2026-08",
-      "incident_count": 54,
+      "incident_count": 55,
       "services_affected": 14
     },
     {

@@ -5,16 +5,16 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 04 Sep 2026 11:11:49 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 16:17:51 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Exchange Online] Users may experience delays sending and receiving email messages from external domains in Exchange Online</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1467029</link>
-      <description>[Exchange Online] Users may experience a delay in sending and receiving email messages from external domains in Exchange Online.</description>
+      <description>[Exchange Online] Users may have experienced a delay in sending and receiving email messages from external domains in Exchange Online.</description>
       <category>Exchange Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">EX1467029</guid>
-      <pubDate>Fri, 04 Sep 2026 10:19:12 +0000</pubDate>
+      <pubDate>Fri, 04 Sep 2026 09:00:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Some users may see various issue with sharing of Agent Builders in Microsoft 365 Copilot Studio</title>
@@ -24,15 +24,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">CP1466822</guid>
       <pubDate>Fri, 04 Sep 2026 00:23:39 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Users may be unable to join calls or meetings in Microsoft Teams for Mac</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1466659</link>
-      <description>[Microsoft Teams] Users may be unable to join calls or meetings in Microsoft Teams for Mac. </description>
-      <category>Microsoft Teams</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">TM1466659</guid>
-      <pubDate>Thu, 03 Sep 2026 18:57:00 +0000</pubDate>
     </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users' queries to Microsoft 365 Copilot Chat may return no response, and users receive an error</title>
@@ -240,6 +231,15 @@
       <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">OP1460815</guid>
       <pubDate>Mon, 24 Aug 2026 13:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Teams] Users may have been unable to join calls or meetings in Microsoft Teams for Mac</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1466659</link>
+      <description>[Microsoft Teams] Users may have been unable to join calls or meetings in Microsoft Teams for Mac. </description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1466659</guid>
+      <pubDate>Sun, 23 Aug 2026 16:32:00 +0000</pubDate>
     </item>
     <item>
       <title>[SharePoint Online] Some users may be unable to access SharePoint Online sites configured with Authentication Context</title>
