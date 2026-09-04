@@ -1,6 +1,6 @@
 ---
 title: "SnowPro Specialty: Gen AI (GES-C02) — Study Guide & Practice Exam"
-description: "SnowPro Specialty: Gen AI study guide and 250-question practice exam. Snowflake SnowPro Specialty: Gen AI certification (GES-C02) — exam objectives, domains and weights, and exam simulation covering Snowflake Cortex, the AI_ SQL functions, Cortex Search and Cortex Analyst, Cortex Agents, RAG and vector embeddings, model governance and cost control, Cortex Guard and AI_REDACT, AI observability, and document processing with AI_PARSE_DOCUMENT and AI_EXTRACT."
+description: "Free GES-C02 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. SnowPro Specialty: Gen AI."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SNOWPRO-SPECIALTY-GEN-AI"

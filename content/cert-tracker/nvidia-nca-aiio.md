@@ -1,6 +1,6 @@
 ---
 title: "NVIDIA NCA-AIIO - Study Guide & Practice Exam"
-description: "NVIDIA NCA-AIIO study guide and 250-question practice exam covering essential AI knowledge, GPU infrastructure, and AI datacenter operations."
+description: "Free NCA-AIIO study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NVIDIA-NCA-AIIO"

@@ -1,6 +1,6 @@
 ---
 title: "NVIDIA NCA-ADS - Study Guide & Practice Exam"
-description: "NVIDIA NCA-ADS study guide and 250-question practice exam covering cuDF data preparation, RAPIDS and Dask ETL, cuML and XGBoost modelling, and reproducible GPU pipelines."
+description: "Free NVIDIA-NCA-ADS study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NVIDIA-NCA-ADS"

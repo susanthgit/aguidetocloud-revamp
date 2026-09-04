@@ -1,6 +1,6 @@
 ---
 title: "SnowPro Advanced Data Engineer (DEA-C02) — Study Guide & Practice Exam"
-description: "SnowPro Advanced Data Engineer study guide and 250-question practice exam. Snowflake SnowPro Advanced: Data Engineer certification (DEA-C02) — exam objectives, domains and weights, and exam simulation covering data movement and ingestion pipelines, performance optimization, storage and data protection, data governance, and data transformation."
+description: "Free DEA-C02 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. SnowPro Advanced: Data Engineer."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SNOWPRO-ADVANCED-DATA-ENGINEER"

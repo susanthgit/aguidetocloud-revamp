@@ -1,6 +1,6 @@
 ---
 title: "Nutanix NCP-BC (7.5) - Study Guide & Practice Exam"
-description: "Nutanix NCP-BC 7.5 study guide and 250-question practice exam for Nutanix Disaster Recovery pc.7.5 and Prism Central pc.7.5 business continuity."
+description: "Free NUTANIX-NCP-BC study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NUTANIX-NCP-BC"

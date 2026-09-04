@@ -1,6 +1,6 @@
 ---
 title: "Databricks Certified Machine Learning Professional — Study Guide & Practice Exam"
-description: "Databricks Certified Machine Learning Professional study guide and 250-question practice exam. Exam objectives, domains and weights, study resources, and exam simulation covering distributed model development with Spark ML, scaling and tuning with the pandas Function API, Optuna and Ray, advanced MLflow, the FeatureEngineering Client, MLOps with Databricks Asset Bundles, Lakehouse Monitoring, and model deployment on Databricks Model Serving."
+description: "Free Databricks Certified Machine Learning Professional study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DATABRICKS-ML-PROFESSIONAL"

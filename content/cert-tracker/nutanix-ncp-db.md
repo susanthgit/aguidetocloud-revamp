@@ -1,6 +1,6 @@
 ---
 title: "Nutanix NCP-DB (6.10) — Study Guide & Practice Exam"
-description: "Nutanix Certified Professional - Database Automation (NCP-DB 6.10) study guide and 250-question practice exam. Exam domains, Nutanix Database Service (NDB), provisioning, patching, Time Machine protection, and administration — with a full exam simulation."
+description: "Free NUTANIX-NCP-DB study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NUTANIX-NCP-DB"

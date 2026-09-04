@@ -1,6 +1,6 @@
 ---
 title: "Palo Alto Cybersecurity Practitioner — Free Study Guide"
-description: "Palo Alto Cybersecurity Practitioner study guide and 250-question practice exam covering cybersecurity, network security, secure access, cloud, endpoint, and security operations."
+description: "Free CYBERSEC-PRACTITIONER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Palo Alto Networks Cybersecurity Practitioner."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CYBERSEC-PRACTITIONER"

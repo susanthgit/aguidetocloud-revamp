@@ -1,6 +1,6 @@
 ---
 title: "Databricks Certified Generative AI Engineer Associate — Study Guide & Practice Exam"
-description: "Databricks Certified Generative AI Engineer Associate study guide and 250-question practice exam. Exam objectives, domains and weights, and exam simulation covering RAG, Mosaic AI Vector Search, Foundation Model APIs, the Mosaic AI Agent Framework and Agent Bricks, Model Serving, the AI Gateway, MLflow 3, Unity Catalog governance, and GenAI evaluation and monitoring on Databricks."
+description: "Free Databricks Certified Generative AI Engineer Associate study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DATABRICKS-GENAI-ENGINEER-ASSOCIATE"

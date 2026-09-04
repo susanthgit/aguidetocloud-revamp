@@ -1,6 +1,6 @@
 ---
 title: "OCI Cloud Operations Professional (1Z0-1067-26) — Study Guide & Practice Exam"
-description: "Free OCI-CLOUD-OPERATIONS-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. OCI Cloud Operations Professional."
+description: "Free 1Z0-1067 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. OCI Cloud Operations Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-CLOUD-OPERATIONS-PROFESSIONAL"

@@ -17,6 +17,8 @@ const TOML = require('@iarna/toml');
 const {
   buildCertDescription,
   claimsFreePracticeExam,
+  claimsUnpricedQuantity,
+  pickExamCode,
   MAX_DESCRIPTION,
 } = require('./cert-description');
 
@@ -99,6 +101,59 @@ ok(!/Free \$\{[^}]*\}-question practice exam|Free \$\{c\.questions\}/.test(sync)
   'sync-cert-data.js has no inline free-practice-exam template');
 ok(/Never overwrite existing files/.test(sync),
   'sync-cert-data.js still refuses to overwrite existing pages');
+
+console.log('\n8. Placeholder exam codes must never reach a SERP');
+{
+  // cert_map carries no `slug` field (0 of 289) and 90 records store the slug
+  // upper-cased as `code`. An earlier pass shipped 8 pages reading
+  // "Free ORACLE-DB-AZURE-ARCHITECT-PROFESSIONAL study guide", destroying the
+  // real code (1Z0-1147) that buyers actually search for.
+  const oracle = {
+    name: 'Oracle AI Database@Azure Architect Professional',
+    code: 'ORACLE-DB-AZURE-ARCHITECT-PROFESSIONAL',
+    vendor: 'oracle', price_practice: 9,
+  };
+  const slug = 'oracle-db-azure-architect-professional';
+  const prior = 'Oracle AI Database@Azure Architect Professional (1Z0-1147) study guide and 250-question practice exam.';
+  ok(pickExamCode(oracle, slug.toUpperCase(), { slug, existingDescription: prior }) === '1Z0-1147',
+    'recovers the real exam code from the pre-existing description');
+
+  const genuine = { name: 'GitHub Foundations', code: 'GH-900', vendor: 'github', price_practice: 9 };
+  ok(pickExamCode(genuine, 'GH-900', { slug: 'gh-900', existingDescription: '' }) === 'GH-900',
+    'keeps a short genuine code that happens to equal the slug');
+
+  const noCode = {
+    name: 'Certified Data Analyst Associate',
+    code: 'DATABRICKS-DATA-ANALYST-ASSOCIATE',
+    vendor: 'databricks', price_practice: 9,
+  };
+  const built = buildCertDescription(noCode, 'DATABRICKS-DATA-ANALYST-ASSOCIATE', {
+    slug: 'databricks-data-analyst-associate',
+    existingDescription: 'Certified Data Analyst Associate study guide and 250-question practice exam.',
+  });
+  ok(!/DATABRICKS-DATA-ANALYST-ASSOCIATE/.test(built), 'never shouts the slug when no real code exists');
+  ok(/Databricks Certified Data Analyst Associate/.test(built), 'prefixes the vendor when the name omits it');
+
+  const longName = {
+    name: 'Salesforce Certified Agentforce Field Service and Operations Consultant',
+    code: 'SALESFORCE-FIELD-SERVICE-CONSULTANT', vendor: 'salesforce', price_practice: 9,
+  };
+  const shortened = buildCertDescription(longName, 'SALESFORCE-FIELD-SERVICE-CONSULTANT', {
+    slug: 'salesforce-field-service-consultant', existingDescription: 'x 250-question practice exam.',
+  });
+  ok(shortened.length <= MAX_DESCRIPTION, 'shortens rather than overflow on very long names');
+  ok(/US\$9/.test(shortened), 'the price survives shortening — stating it is the whole point');
+}
+
+console.log('\n9. Unpriced question-count pitches are also a claim');
+{
+  ok(claimsUnpricedQuantity('X study guide and 250-question practice exam.', { pricePractice: 9 }),
+    'fires on "250-question practice exam" with no price');
+  ok(!claimsUnpricedQuantity('Free AIF-C01 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year.', { pricePractice: 9 }),
+    'does not fire on our own priced wording');
+  ok(!claimsUnpricedQuantity('Free 250-question practice exam.', { pricePractice: 0 }),
+    'does not fire when the exam really is free (az-900)');
+}
 
 console.log(failed === 0 ? '\nALL PASS\n' : `\n${failed} FAILURE(S)\n`);
 process.exit(failed === 0 ? 0 : 1);

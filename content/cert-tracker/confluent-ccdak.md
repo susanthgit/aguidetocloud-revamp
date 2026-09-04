@@ -1,6 +1,6 @@
 ---
 title: "Confluent Certified Developer for Apache Kafka (CCDAK) — Free Study Guide"
-description: "Free CONFLUENT-CCDAK study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
+description: "Free Confluent Certified Developer for Apache Kafka (CCDAK) study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CCDAK"

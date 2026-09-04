@@ -1,6 +1,6 @@
 ---
 title: "Databricks Certified Data Analyst Associate — Study Guide & Practice Exam"
-description: "Databricks Certified Data Analyst Associate study guide and 250-question practice exam. Exam objectives, domains and weights, and exam simulation covering Databricks SQL and SQL Warehouses, Unity Catalog and Catalog Explorer, AI/BI Dashboards and visualizations, AI/BI Genie spaces, Delta Lake time travel and Liquid Clustering, dimensional data modeling, and securing data."
+description: "Free Databricks Certified Data Analyst Associate study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DATABRICKS-DATA-ANALYST-ASSOCIATE"

@@ -1,6 +1,6 @@
 ---
 title: "Splunk Core Certified User (SPLK-1001) — Study Guide & Practice Exam"
-description: "Free SPLUNK-CORE-USER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Splunk Core Certified User."
+description: "Free SPLK-1001 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Splunk Core Certified User."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SPLUNK-CORE-USER"

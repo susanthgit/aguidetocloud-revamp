@@ -1,6 +1,6 @@
 ---
 title: "Splunk Cloud Certified Admin (SPLK-1005) — Study Guide & Practice Exam"
-description: "Free SPLUNK-CLOUD-ADMIN study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Splunk Cloud Certified Admin."
+description: "Free SPLK-1005 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Splunk Cloud Certified Admin."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SPLUNK-CLOUD-ADMIN"

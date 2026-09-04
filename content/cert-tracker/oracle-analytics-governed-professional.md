@@ -1,6 +1,6 @@
 ---
 title: "Governed Analytics Professional with Oracle Analytics Cloud (1Z0-1177-26) — Study Guide & Practice Exam"
-description: "Free ORACLE-ANALYTICS-GOVERNED-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
+description: "Free 1Z0-1177 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ORACLE-ANALYTICS-GOVERNED-PROFESSIONAL"

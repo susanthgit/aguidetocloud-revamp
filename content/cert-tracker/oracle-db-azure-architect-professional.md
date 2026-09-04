@@ -1,6 +1,6 @@
 ---
 title: "Oracle AI Database@Azure Architect Professional (1Z0-1147) — Study Guide & Practice Exam"
-description: "Free ORACLE-DB-AZURE-ARCHITECT-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
+description: "Free 1Z0-1147 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Oracle AI Database@Azure Architect Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ORACLE-DB-AZURE-ARCHITECT-PROFESSIONAL"

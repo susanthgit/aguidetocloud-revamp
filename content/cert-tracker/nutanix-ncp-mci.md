@@ -1,6 +1,6 @@
 ---
 title: "Nutanix NCP-MCI (7.5) — Study Guide & Practice Exam"
-description: "Nutanix Certified Professional - Multicloud Infrastructure (NCP-MCI 7.5) study guide and 250-question practice exam. Exam domains, AOS and AHV architecture, Prism Element and Prism Central, storage and data efficiency, data protection and DR, and cluster operations — with a full exam simulation."
+description: "Free NCP-MCI study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NUTANIX-NCP-MCI"

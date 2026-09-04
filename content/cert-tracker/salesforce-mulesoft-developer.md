@@ -1,6 +1,6 @@
 ---
 title: "Salesforce Certified MuleSoft Developer — Study Guide & Practice Exam"
-description: "Free SALESFORCE-MULESOFT-DEVELOPER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Salesforce Certified MuleSoft Developer."
+description: "Free Salesforce Certified MuleSoft Developer study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SALESFORCE-MULESOFT-DEVELOPER"

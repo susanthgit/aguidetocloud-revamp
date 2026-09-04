@@ -1,6 +1,6 @@
 ---
 title: "OCI 2026 Architect Professional (1Z0-997-26) — Study Guide & Practice Exam"
-description: "Free OCI-ARCHITECT-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
+description: "Free 1Z0-997 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Cloud Infrastructure 2026 Architect Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-ARCHITECT-PROFESSIONAL"

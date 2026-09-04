@@ -1,6 +1,6 @@
 ---
 title: "Splunk Certified Cybersecurity Defense Analyst — Study Guide & Practice Exam"
-description: "Splunk Certified Cybersecurity Defense Analyst (SPLK-5001) study guide and 250-question practice exam. Master SOC operations, MITRE ATT&CK and the NIST Cybersecurity Framework, threat and attack types, the Common Information Model (CIM), Splunk Enterprise Security notable events, Risk-Based Alerting, SPL for security investigations, and threat hunting."
+description: "Free SPLK-5001 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Splunk Certified Cybersecurity Defense Analyst."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SPLUNK-CYBERSECURITY-DEFENSE-ANALYST"

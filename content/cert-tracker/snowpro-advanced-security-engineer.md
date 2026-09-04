@@ -1,6 +1,6 @@
 ---
 title: "SnowPro Advanced Security Engineer (SEA-C01) — Study Guide & Practice Exam"
-description: "SnowPro Advanced Security Engineer study guide and 250-question practice exam. Snowflake SnowPro Advanced: Security Engineer certification (SEA-C01) — exam objectives, domains and weights, and exam simulation covering access control and identity, data protection and governance, auditing and compliance, threats and incident response, and securing AI/ML and applications."
+description: "Free SEA-C01 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. SnowPro Advanced: Security Engineer."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SNOWPRO-ADVANCED-SECURITY-ENGINEER"

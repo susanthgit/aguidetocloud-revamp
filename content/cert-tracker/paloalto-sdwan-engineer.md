@@ -1,6 +1,6 @@
 ---
 title: "Palo Alto SD-WAN Engineer — Free Study Guide"
-description: "Palo Alto SD-WAN Engineer study guide and 250-question practice exam covering ION design, deployment, Unified SASE, monitoring, and troubleshooting."
+description: "Free SDWAN-ENGINEER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Palo Alto Networks Certified SD-WAN Engineer."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SD-WAN-ENGINEER"

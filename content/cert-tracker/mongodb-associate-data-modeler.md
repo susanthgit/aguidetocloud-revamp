@@ -1,6 +1,6 @@
 ---
 title: "MongoDB Associate Data Modeler (C100DM) — Study Guide & Practice Exam"
-description: "MongoDB Associate Data Modeler study guide and 250-question practice exam. MongoDB Associate Data Modeler certification (C100DM) — exam objectives, domains and weights, study resources, and exam simulation covering workload-driven schema design, embedding vs referencing, relationships, schema design patterns and anti-patterns, schema evolution and versioning, and indexing, CRUD and consistency."
+description: "Free MongoDB Associate Data Modeler study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "MONGODB-ASSOCIATE-DATA-MODELER"

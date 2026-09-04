@@ -1,6 +1,6 @@
 ---
 title: "SnowPro Advanced Data Analyst (DAA-C01) — Study Guide & Practice Exam"
-description: "SnowPro Advanced Data Analyst study guide and 250-question practice exam. Snowflake SnowPro Advanced: Data Analyst certification (DAA-C01) — exam objectives, domains and weights, and exam simulation covering data ingestion and preparation, transformation and modeling, advanced analysis, and presentation and visualization with Snowsight, dashboards, and Streamlit."
+description: "Free DAA-C01 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. SnowPro Advanced: Data Analyst."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SNOWPRO-ADVANCED-DATA-ANALYST"

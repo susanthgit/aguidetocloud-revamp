@@ -1,6 +1,6 @@
 ---
 title: "Splunk Core Certified Power User — Study Guide & Practice Exam"
-description: "Free SPLUNK-CORE-POWER-USER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Splunk Core Certified Power User."
+description: "Free Splunk Core Certified Power User study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SPLUNK-CORE-POWER-USER"

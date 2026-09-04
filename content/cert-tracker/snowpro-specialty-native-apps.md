@@ -1,6 +1,6 @@
 ---
 title: "SnowPro Specialty: Native Apps (NAS-C02) — Study Guide & Practice Exam"
-description: "SnowPro Specialty: Native Apps study guide and 250-question practice exam. Snowflake SnowPro Specialty: Native Apps certification (NAS-C02) — exam objectives, domains and weights, and exam simulation covering designing, building, deploying, and managing Snowflake Native Applications with the Native App Framework: application packages, manifests, setup scripts, application logic, release channels, versions and patches, upgrades, Marketplace listings, and telemetry."
+description: "Free NAS-C02 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. SnowPro Specialty: Native Apps."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SNOWPRO-SPECIALTY-NATIVE-APPS"

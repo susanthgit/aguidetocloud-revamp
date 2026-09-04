@@ -1,6 +1,6 @@
 ---
 title: "Nutanix NCP-CI-AWS — Study Guide & Practice Exam"
-description: "Nutanix Certified Professional - Cloud Integration - AWS (NCP-CI-AWS) study guide and 250-question practice exam. Exam domains, Nutanix Cloud Clusters (NC2) on AWS, cloud-account onboarding, EC2 bare-metal deployment, VPC and Flow Virtual Networking, hibernate/resume, and disaster recovery — with a full exam simulation."
+description: "Free NCP-CI study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NUTANIX-NCP-CI-AWS"

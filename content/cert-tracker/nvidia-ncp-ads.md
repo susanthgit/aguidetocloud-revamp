@@ -1,6 +1,6 @@
 ---
 title: "NVIDIA NCP-ADS - Study Guide & Practice Exam"
-description: "NVIDIA NCP-ADS study guide and 250-question practice exam covering time-series anomaly detection, graph analytics with cuGraph, accelerated ETL and shuffle reduction, multi-GPU scaling with Dask, DLProf profiling, device-memory sizing, and Triton deployment."
+description: "Free NVIDIA-NCP-ADS study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NVIDIA-NCP-ADS"

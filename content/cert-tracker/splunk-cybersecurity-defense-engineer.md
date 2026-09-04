@@ -1,6 +1,6 @@
 ---
 title: "Splunk Certified Cybersecurity Defense Engineer — Study Guide & Practice Exam"
-description: "Splunk Certified Cybersecurity Defense Engineer (SPLK-5002) study guide and 250-question practice exam. Master detection engineering in Splunk Enterprise Security, correlation searches and ES 8 detections, Risk-Based Alerting, CIM data normalization, notable-event and finding generation, the detection lifecycle, threat-intelligence management, REST APIs, and Splunk SOAR playbook automation."
+description: "Free SPLK-5002 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Splunk Certified Cybersecurity Defense Engineer."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SPLUNK-CYBERSECURITY-DEFENSE-ENGINEER"

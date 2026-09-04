@@ -1,6 +1,6 @@
 ---
 title: "Oracle AI Database Administration Professional (1Z0-183) — Study Guide & Practice Exam"
-description: "Free ORACLE-AI-DATABASE-ADMIN-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
+description: "Free 1Z0-183 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. AI Database Administration Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ORACLE-AI-DATABASE-ADMIN-PROFESSIONAL"

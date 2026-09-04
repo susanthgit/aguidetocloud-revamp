@@ -1,6 +1,6 @@
 ---
 title: "Databricks Certified Context Engineer Associate — Study Guide & Practice Exam"
-description: "Databricks Certified Context Engineer Associate study guide and 250-question practice exam. Exam objectives, domains and weights, and exam simulation covering the four context failure modes (poisoning, distraction, confusion, clash), Databricks AI Search retrieval, AI/BI Genie spaces, durable cross-session memory on Lakebase, MCP tool design, compaction and trimming, multi-agent shared context, MLflow 3 measurement, and Unity Catalog governance."
+description: "Free Databricks Certified Context Engineer Associate study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DATABRICKS-CONTEXT-ENGINEER-ASSOCIATE"

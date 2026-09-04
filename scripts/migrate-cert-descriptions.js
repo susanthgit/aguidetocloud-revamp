@@ -29,6 +29,7 @@ const TOML = require('@iarna/toml');
 const {
   buildCertDescription,
   claimsFreePracticeExam,
+  claimsUnpricedQuantity,
   MAX_DESCRIPTION,
 } = require('./lib/cert-description');
 
@@ -39,6 +40,27 @@ const CERTS_TOML = path.join(REPO, 'data', 'all_certs.toml');
 const APPLY = process.argv.includes('--apply');
 const limitIdx = process.argv.indexOf('--limit');
 const LIMIT = limitIdx !== -1 ? parseInt(process.argv[limitIdx + 1], 10) : Infinity;
+
+// A git revision holding the PRE-migration descriptions. Needed because an
+// earlier pass replaced 8 real exam codes (1Z0-1147, SPLK-1005 ...) with the
+// slug shouted back, destroying the only copy of the code on the page. Judging
+// and rebuilding from the baseline makes this pass idempotent and recoverable.
+const baseIdx = process.argv.indexOf('--baseline');
+const BASELINE = baseIdx !== -1 ? process.argv[baseIdx + 1] : null;
+
+function baselineDescription(file) {
+  if (!BASELINE) return null;
+  try {
+    const raw = require('child_process').execSync(
+      `git show ${BASELINE}:content/cert-tracker/${file}`,
+      { cwd: REPO, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }
+    );
+    const m = raw.match(/^description:[ \t]*"((?:[^"\\]|\\.)*)"[ \t]*$/m);
+    return m ? m[1] : null;
+  } catch (e) {
+    return null; // new page that did not exist at the baseline
+  }
+}
 
 const sha = (s) => crypto.createHash('sha256').update(s, 'utf8').digest('hex');
 
@@ -89,10 +111,15 @@ function main() {
     const current = matches[0][1];
     const cert = certs[slug];
 
-    // Only touch pages that actually make the false claim, judged against the
-    // real price. With no cert record the check runs conservatively (assumes
-    // the bank is paid) rather than guessing a price.
-    if (!claimsFreePracticeExam(current, cert ? { pricePractice: cert.price_practice } : undefined)) {
+    // Only touch pages that actually make a claim worth correcting, judged
+    // against the real price: either "free" when it is paid, or an unpriced
+    // question-count pitch. With no cert record the check runs conservatively
+    // (assumes the bank is paid) rather than guessing a price.
+    // Judge against the baseline when given, so an already-migrated page is
+    // still re-evaluated and its lost exam code can be recovered.
+    const original = baselineDescription(file) || current;
+    const priceOpts = cert ? { pricePractice: cert.price_practice } : undefined;
+    if (!claimsFreePracticeExam(original, priceOpts) && !claimsUnpricedQuantity(original, priceOpts)) {
       skipped.push(`${file}: already truthful`);
       continue;
     }
@@ -101,7 +128,7 @@ function main() {
     // record is a genuine blocker: we cannot state a price we do not know.
     if (!cert) { errors.push(`${file}: claims a free exam but slug not in cert_map`); continue; }
 
-    const next = buildCertDescription(cert, slug.toUpperCase());
+    const next = buildCertDescription(cert, slug.toUpperCase(), { existingDescription: original, slug });
     if (next.length > MAX_DESCRIPTION) overLength++;
     if (next === current) { skipped.push(`${file}: unchanged`); continue; }
 

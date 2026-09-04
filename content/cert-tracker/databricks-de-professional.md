@@ -1,6 +1,6 @@
 ---
 title: "Databricks Certified Data Engineer Professional — Study Guide & Practice Exam"
-description: "Databricks Certified Data Engineer Professional study guide and 250-question practice exam. Exam objectives, domains and weights, and exam simulation covering Lakeflow Spark Declarative Pipelines, Databricks Asset Bundles, advanced Spark SQL and PySpark, Liquid Clustering and deletion vectors, Unity Catalog governance, Delta Sharing and Lakehouse Federation, and CI/CD deployment."
+description: "Free Databricks Certified Data Engineer Professional study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DATABRICKS-DE-PROFESSIONAL"

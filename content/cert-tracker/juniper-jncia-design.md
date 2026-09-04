@@ -1,6 +1,6 @@
 ---
 title: "JNCIA-Design: Juniper associate network design exam — Free Study Guide"
-description: "JNCIA-Design (JN0-1103): the Juniper Networks Certified Associate - Design exam. 250-question practice exam + complete study guide covering network design requirements and Juniper product roles, zero trust and SASE, HA and redundancy, campus LAN and wireless design, WAN and SD-WAN, and data center EVPN-VXLAN IP fabric design."
+description: "Free JNCIA-DESIGN study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "JNCIA-DESIGN"

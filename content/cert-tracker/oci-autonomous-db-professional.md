@@ -1,6 +1,6 @@
 ---
 title: "Oracle Autonomous AI Database Professional (1Z0-931-26) — Study Guide & Practice Exam"
-description: "Free OCI-AUTONOMOUS-DB-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Autonomous AI Database Professional."
+description: "Free 1Z0-931 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Autonomous AI Database Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-AUTONOMOUS-DB-PROFESSIONAL"

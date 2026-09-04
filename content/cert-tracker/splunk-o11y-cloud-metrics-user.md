@@ -1,6 +1,6 @@
 ---
 title: "Splunk O11y Cloud Certified Metrics User — Study Guide & Practice Exam"
-description: "Free SPLUNK-O11Y-CLOUD-METRICS-USER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
+description: "Free SPLK-4001 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Splunk O11y Cloud Certified Metrics User."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SPLUNK-O11Y-CLOUD-METRICS-USER"

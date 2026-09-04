@@ -1,6 +1,6 @@
 ---
 title: "NVIDIA NCP-AII - Study Guide & Practice Exam"
-description: "NVIDIA NCP-AII study guide and 194-question practice exam covering server bring-up, BlueField, MIG, Base Command Manager, and cluster validation."
+description: "Free NVIDIA-NCP-AII study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NVIDIA-NCP-AII"

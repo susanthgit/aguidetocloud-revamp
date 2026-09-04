@@ -1,6 +1,6 @@
 ---
 title: "Databricks Certified Data Engineer Associate — Study Guide & Practice Exam"
-description: "Free DATABRICKS-DE-ASSOCIATE study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Certified Data Engineer Associate."
+description: "Free Databricks Certified Data Engineer Associate study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DATABRICKS-DE-ASSOCIATE"

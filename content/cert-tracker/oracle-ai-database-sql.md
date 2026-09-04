@@ -1,6 +1,6 @@
 ---
 title: "Oracle AI Database SQL Associate (1Z0-171) — Study Guide & Practice Exam"
-description: "Free ORACLE-AI-DATABASE-SQL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. AI Database SQL Associate."
+description: "Free 1Z0-171 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. AI Database SQL Associate."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ORACLE-AI-DATABASE-SQL"

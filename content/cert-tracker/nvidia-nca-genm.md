@@ -1,6 +1,6 @@
 ---
 title: "NVIDIA NCA-GENM - Study Guide & Practice Exam"
-description: "NVIDIA NCA-GENM study guide and 250-question practice exam covering multimodal fusion, CLIP and diffusion, speech and audio pipelines, multimodal experimentation and evaluation, performance optimization, and trustworthy AI."
+description: "Free NCA-GENM study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NVIDIA-NCA-GENM"

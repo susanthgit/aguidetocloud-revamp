@@ -1,6 +1,6 @@
 ---
 title: "JNCIA-MistAI: Juniper Mist AI associate exam — Free Study Guide"
-description: "JNCIA-MistAI (JN0-253): the Juniper Networks Certified Associate - Mist AI exam. 250-question practice exam + complete study guide covering Juniper Mist cloud architecture, device onboarding, the Assurance portfolio, SLEs, Marvis, and vBLE location services."
+description: "Free JNCIA-MISTAI study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "JNCIA-MISTAI"

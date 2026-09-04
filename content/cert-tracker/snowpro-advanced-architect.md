@@ -1,6 +1,6 @@
 ---
 title: "SnowPro Advanced Architect (ARA-C01) — Study Guide & Practice Exam"
-description: "SnowPro Advanced Architect study guide and 250-question practice exam. Snowflake SnowPro Advanced: Architect certification (ARA-C01) — exam objectives, domains and weights, and exam simulation covering account and security architecture, the Snowflake architecture and business continuity, data engineering pipeline design, and performance and cost optimization."
+description: "Free ARA-C01 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. SnowPro Advanced: Architect."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SNOWPRO-ADVANCED-ARCHITECT"

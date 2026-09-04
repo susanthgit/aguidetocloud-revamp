@@ -1,6 +1,6 @@
 ---
 title: "SnowPro Advanced Administrator (ADA-C02) — Study Guide & Practice Exam"
-description: "SnowPro Advanced Administrator study guide and 250-question practice exam. Snowflake SnowPro Advanced: Administrator certification (ADA-C02) — exam objectives, domains and weights, and exam simulation covering security, RBAC and user administration, account management and governance, data and object management, performance monitoring and tuning, data sharing, and disaster recovery."
+description: "Free ADA-C02 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. SnowPro Advanced: Administrator."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SNOWPRO-ADVANCED-ADMINISTRATOR"

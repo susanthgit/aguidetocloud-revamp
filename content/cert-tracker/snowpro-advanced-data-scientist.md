@@ -1,6 +1,6 @@
 ---
 title: "SnowPro Advanced Data Scientist (DSA-C03) — Study Guide & Practice Exam"
-description: "SnowPro Advanced Data Scientist study guide and 250-question practice exam. Snowflake SnowPro Advanced: Data Scientist certification (DSA-C03) — exam objectives, domains and weights, and exam simulation covering data science concepts, data preparation and feature engineering, model development with Snowpark ML and Cortex, and model deployment with the Model Registry."
+description: "Free DSA-C03 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. SnowPro Advanced: Data Scientist."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SNOWPRO-ADVANCED-DATA-SCIENTIST"

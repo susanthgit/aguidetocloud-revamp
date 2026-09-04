@@ -1,6 +1,6 @@
 ---
 title: "Nutanix NCA (7.5) — Study Guide & Practice Exam"
-description: "Nutanix Certified Associate (NCA 7.5) study guide and 250-question practice exam. Exam sections, Nutanix Cloud Infrastructure and portfolio awareness, Prism platform administration, cluster configuration and maintenance, and platform health and monitoring — with a full exam simulation."
+description: "Free NUTANIX-NCA study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Nutanix Certified Associate (NCA)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NUTANIX-NCA"

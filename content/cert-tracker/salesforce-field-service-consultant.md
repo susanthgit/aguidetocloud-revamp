@@ -1,6 +1,6 @@
 ---
 title: "Salesforce Certified Agentforce Field Service and Operations Consultant — Study Guide & Practice Exam"
-description: "Free SALESFORCE-FIELD-SERVICE-CONSULTANT study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
+description: "Free Salesforce Certified Agentforce Field Service and Operations Consultant study guide. Practice exam: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SALESFORCE-FIELD-SERVICE-CONSULTANT"

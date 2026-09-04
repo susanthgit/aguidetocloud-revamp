@@ -1,6 +1,6 @@
 ---
 title: "OCI Observability Professional (1Z0-1111-26) — Study Guide & Practice Exam"
-description: "Free OCI-OBSERVABILITY-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. OCI Observability Professional."
+description: "Free 1Z0-1111 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. OCI Observability Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-OBSERVABILITY-PROFESSIONAL"

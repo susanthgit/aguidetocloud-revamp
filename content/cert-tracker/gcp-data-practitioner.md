@@ -1,6 +1,6 @@
 ---
 title: "Google Cloud Associate Data Practitioner: Practice Exam & Study Guide"
-description: "Master the Google Cloud Associate Data Practitioner certification - an entry-level data exam covering BigQuery, Dataflow, Dataproc, Looker, Cloud Storage, IAM, and encryption. 250-question practice exam with detailed explanations, plus a complete study guide, exam domains, and tips."
+description: "Free DATA-PRACTITIONER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Google Cloud Associate Data Practitioner."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DATA-PRACTITIONER"

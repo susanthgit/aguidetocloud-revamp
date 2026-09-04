@@ -1,6 +1,6 @@
 ---
 title: "MySQL 8.0 Database Administrator (1Z0-908) — Study Guide & Practice Exam"
-description: "Free MYSQL-8-DATABASE-ADMINISTRATOR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. MySQL 8.0 Database Administrator."
+description: "Free 1Z0-908 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. MySQL 8.0 Database Administrator."
 type: "cert-tracker"
 layout: "single"
 exam_code: "MYSQL-8-DATABASE-ADMINISTRATOR"

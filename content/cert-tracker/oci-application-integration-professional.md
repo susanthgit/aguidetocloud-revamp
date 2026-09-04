@@ -1,6 +1,6 @@
 ---
 title: "OCI Application Integration Professional (1Z0-1042-26) — Study Guide & Practice Exam"
-description: "Free OCI-APPLICATION-INTEGRATION-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
+description: "Free 1Z0-1042 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. OCI Application Integration Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-APPLICATION-INTEGRATION-PROFESSIONAL"

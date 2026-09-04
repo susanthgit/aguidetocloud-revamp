@@ -1,6 +1,6 @@
 ---
 title: "NVIDIA-Certified Professional: OpenUSD Development (NCP-OUSD) — Study Guide & Practice Exam"
-description: "Free NVIDIA-NCP-OUSD study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
+description: "Free NCP-OUSD study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NVIDIA-NCP-OUSD"

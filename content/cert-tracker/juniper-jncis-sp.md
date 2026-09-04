@@ -1,6 +1,6 @@
 ---
 title: "JNCIS-SP: Juniper service provider routing & switching exam — Free Study Guide"
-description: "JNCIS-SP (JN0-364): the Juniper Networks Certified Specialist Service Provider Routing and Switching exam. 250-question practice exam + complete study guide covering OSPF, IS-IS, BGP, MPLS (RSVP/LDP/segment routing), Layer 2 bridging & VLANs, spanning tree, IPv6, GRE tunnels, and high availability on Junos OS."
+description: "Free JNCIS-SP study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "JNCIS-SP"

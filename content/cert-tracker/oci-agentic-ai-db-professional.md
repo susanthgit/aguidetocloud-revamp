@@ -1,6 +1,6 @@
 ---
 title: "Agentic AI for Oracle AI Database Professional (1Z0-1159-26) — Study Guide & Practice Exam"
-description: "Free OCI-AGENTIC-AI-DB-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
+description: "Free 1Z0-1159 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Agentic AI for Oracle AI Database Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-AGENTIC-AI-DB-PROFESSIONAL"

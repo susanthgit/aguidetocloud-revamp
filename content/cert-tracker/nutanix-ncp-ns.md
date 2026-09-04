@@ -1,6 +1,6 @@
 ---
 title: "Nutanix NCP-NS (7.5) - Study Guide & Practice Exam"
-description: "Nutanix NCP-NS 7.5 study guide and 250-question practice exam for Flow Virtual Networking 6.0, Flow Network Security 5.2, and Prism Central 7.3."
+description: "Free NUTANIX-NCP-NS study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NUTANIX-NCP-NS"

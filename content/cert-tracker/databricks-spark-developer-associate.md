@@ -1,6 +1,6 @@
 ---
 title: "Databricks Certified Associate Developer for Apache Spark — Study Guide & Practice Exam"
-description: "Databricks Certified Associate Developer for Apache Spark study guide and 250-question practice exam. Exam objectives, domains and weights, and a full exam simulation covering Spark architecture and the execution model, the PySpark DataFrame/DataSet API, Spark SQL, performance troubleshooting and tuning, Structured Streaming, Spark Connect, and the Pandas API on Spark."
+description: "Free Databricks Certified Associate Developer for Apache Spark study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DATABRICKS-SPARK-DEVELOPER-ASSOCIATE"

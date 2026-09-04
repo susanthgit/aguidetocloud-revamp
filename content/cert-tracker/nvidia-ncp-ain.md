@@ -1,6 +1,6 @@
 ---
 title: "NVIDIA NCP-AIN - Study Guide & Practice Exam"
-description: "NVIDIA NCP-AIN study guide and 250-question practice exam covering Spectrum Ethernet, InfiniBand, Kubernetes integration, troubleshooting, and network automation."
+description: "Free NVIDIA-NCP-AIN study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. NVIDIA-Certified Professional: AI Networking (NCP-AIN)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NVIDIA-NCP-AIN"

@@ -1,6 +1,6 @@
 ---
 title: "JNCIA-DevOps: Juniper associate automation & DevOps exam — Free Study Guide"
-description: "JNCIA-DevOps (JN0-224): the Juniper Networks Certified Associate - Automation and DevOps exam. 250-question practice exam + complete study guide covering the Junos automation stack and DevOps concepts, NETCONF and the XML API, data serialization (YAML and JSON), Python and PyEZ (JSNAPy, Jinja2, RPCs), and the Junos REST API."
+description: "Free JNCIA-DEVOPS study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "JNCIA-DEVOPS"

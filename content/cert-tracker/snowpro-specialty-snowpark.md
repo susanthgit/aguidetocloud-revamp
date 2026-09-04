@@ -1,6 +1,6 @@
 ---
 title: "SNOWPRO-SPECIALTY-SNOWPARK: SnowPro Specialty: Snowpark — Study Guide & Practice Exam"
-description: "Free SNOWPRO-SPECIALTY-SNOWPARK study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. SnowPro Specialty: Snowpark."
+description: "Free Snowflake SnowPro Specialty: Snowpark study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SNOWPRO-SPECIALTY-SNOWPARK"

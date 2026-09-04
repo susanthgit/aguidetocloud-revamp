@@ -1,6 +1,6 @@
 ---
 title: "Splunk Enterprise Certified Admin — Study Guide & Practice Exam"
-description: "Free SPLUNK-ENTERPRISE-ADMIN study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Splunk Enterprise Certified Admin."
+description: "Free SPLK-1003 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Splunk Enterprise Certified Admin."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SPLUNK-ENTERPRISE-ADMIN"

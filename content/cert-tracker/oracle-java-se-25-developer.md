@@ -1,6 +1,6 @@
 ---
 title: "Oracle Java SE 25 Developer (1Z0-831) — Study Guide & Practice Exam"
-description: "Free ORACLE-JAVA-SE-25-DEVELOPER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Java SE 25 Developer Professional."
+description: "Free 1Z0-831 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Java SE 25 Developer Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ORACLE-JAVA-SE-25-DEVELOPER"

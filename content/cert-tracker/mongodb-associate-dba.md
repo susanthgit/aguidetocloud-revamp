@@ -1,6 +1,6 @@
 ---
 title: "MongoDB Associate DBA (C100DBA) — Study Guide & Practice Exam"
-description: "Free MONGODB-ASSOCIATE-DBA study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. MongoDB Associate Database Administrator."
+description: "Free MongoDB Associate Database Administrator study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "MONGODB-ASSOCIATE-DBA"

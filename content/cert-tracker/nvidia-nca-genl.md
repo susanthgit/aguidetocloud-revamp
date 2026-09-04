@@ -1,6 +1,6 @@
 ---
 title: "NVIDIA NCA-GENL - Study Guide & Practice Exam"
-description: "NVIDIA NCA-GENL study guide and 250-question practice exam covering transformer and LLM foundations, prompt engineering, RAG and embeddings, experimentation and evaluation, and trustworthy AI."
+description: "Free NCA-GENL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. NVIDIA-Certified Associate: Generative AI LLMs (NCA-GENL)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NVIDIA-NCA-GENL"

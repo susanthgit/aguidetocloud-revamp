@@ -1,6 +1,6 @@
 ---
 title: "Nutanix NCP-AI — Study Guide & Practice Exam"
-description: "Nutanix Certified Professional - Artificial Intelligence (NCP-AI 6.10) study guide and 250-question practice exam. Exam domains, deploying and operating Nutanix Enterprise AI (NAI 2.3) on Kubernetes, importing LLMs, creating GPU-backed inference endpoints, day-2 operations, and troubleshooting — with a full exam simulation."
+description: "Free NUTANIX-NCP-AI study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NUTANIX-NCP-AI"

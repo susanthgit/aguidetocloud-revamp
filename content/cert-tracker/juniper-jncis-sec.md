@@ -1,6 +1,6 @@
 ---
 title: "JNCIS-SEC: Juniper specialist security exam — Free Study Guide"
-description: "JNCIS-SEC (JN0-336): the Juniper Networks Certified Specialist Security exam. 250-question practice exam + complete study guide covering IDP, IPsec VPNs, Juniper ATP Cloud, chassis-cluster HA, identity-aware policies, SSL proxy, and Security Director."
+description: "Free JNCIS-SEC study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Juniper Networks Certified Specialist Security (JNCIS-SEC)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "JNCIS-SEC"

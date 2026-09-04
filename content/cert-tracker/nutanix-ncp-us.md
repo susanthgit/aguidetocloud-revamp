@@ -1,6 +1,6 @@
 ---
 title: "Nutanix NCP-US (6.10) — Study Guide & Practice Exam"
-description: "Nutanix Certified Professional - Unified Storage (NCP-US 6.10) study guide and 250-question practice exam. Exam domains, Nutanix Files, Objects, and Volumes, File Analytics and Data Lens, data protection, and troubleshooting — with a full exam simulation."
+description: "Free NUTANIX-NCP-US study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NUTANIX-NCP-US"

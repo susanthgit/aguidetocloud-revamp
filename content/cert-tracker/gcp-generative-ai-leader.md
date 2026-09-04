@@ -1,6 +1,6 @@
 ---
 title: "Google Cloud Generative AI Leader: Practice Exam & Study Guide"
-description: "Master the Google Cloud Generative AI Leader certification — a foundational, business-focused exam covering Gemini, Vertex AI, RAG, prompt engineering, and responsible AI. 250-question practice exam with detailed explanations, plus a complete study guide, exam domains, and tips."
+description: "Free GENERATIVE-AI-LEADER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Google Cloud Generative AI Leader."
 type: "cert-tracker"
 layout: "single"
 exam_code: "GENERATIVE-AI-LEADER"

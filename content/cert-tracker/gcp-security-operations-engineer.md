@@ -1,6 +1,6 @@
 ---
 title: "Google Cloud Professional Security Operations Engineer: Practice Exam & Study Guide"
-description: "Master the Google Cloud Professional Security Operations Engineer (PSOE) certification — Google Security Operations (SecOps SIEM + SOAR), UDM log ingestion, YARA-L 2.0 detection engineering, curated detections and Applied Threat Intelligence, threat hunting with UDM search and retrohunt, SOAR playbooks and case management, and Security Command Center. 250-question practice exam with detailed explanations, plus a complete study guide, exam domains, and tips."
+description: "Free SECURITY-OPERATIONS-ENGINEER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "GCP-SECURITY-OPERATIONS-ENGINEER"
