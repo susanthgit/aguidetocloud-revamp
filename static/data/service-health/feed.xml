@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 04 Sep 2026 16:17:51 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 20:43:13 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Users may not be able to open support central in Microsoft Intune and Microsoft Defender portals</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1467282</link>
+      <description>[Microsoft 365 suite] Users may not be able to open support central in Microsoft Intune and Microsoft Defender portals.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1467282</guid>
+      <pubDate>Fri, 04 Sep 2026 18:44:09 +0000</pubDate>
+    </item>
     <item>
       <title>[Exchange Online] Users may experience delays sending and receiving email messages from external domains in Exchange Online</title>
       <link>https://www.aguidetocloud.com/service-health/#EX1467029</link>
@@ -17,11 +26,20 @@
       <pubDate>Fri, 04 Sep 2026 09:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Some users may see various issue with sharing of Agent Builders in Microsoft 365 Copilot Studio</title>
+      <title>[Microsoft Teams] Users may be unable to access some third-party apps within Microsoft Teams</title>
+      <link>https://www.aguidetocloud.com/service-health/#TM1467148</link>
+      <description>[Microsoft Teams] Users may have been unable to access some third-party apps within Microsoft Teams.</description>
+      <category>Microsoft Teams</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">TM1467148</guid>
+      <pubDate>Fri, 04 Sep 2026 02:53:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Some users may see various issues with sharing of Agent Builders in Microsoft 365 Copilot Studio</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1466822</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Users may see various issue with sharing of Agent Builders in Copilot Studio.</description>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have seen various issues with sharing of Agent Builders in Copilot Studio.</description>
       <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">CP1466822</guid>
       <pubDate>Fri, 04 Sep 2026 00:23:39 +0000</pubDate>
     </item>
@@ -244,9 +262,9 @@
     <item>
       <title>[SharePoint Online] Some users may be unable to access SharePoint Online sites configured with Authentication Context</title>
       <link>https://www.aguidetocloud.com/service-health/#SP1464785</link>
-      <description>[SharePoint Online] Users may be unable to access SharePoint Online sites configured with Authentication Context.</description>
+      <description>[SharePoint Online] Users may have been unable to access SharePoint Online sites configured with Authentication Context.</description>
       <category>SharePoint Online</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">SP1464785</guid>
       <pubDate>Sun, 23 Aug 2026 02:38:00 +0000</pubDate>
     </item>
@@ -438,24 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1460590</guid>
       <pubDate>Thu, 13 Aug 2026 05:56:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Admins may see incorrect Teams membership information for users in the Teams Admin Center </title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1453149</link>
-      <description>[Microsoft Teams] Admins may have seen incorrect Teams membership information for users in the Teams Admin Center.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1453149</guid>
-      <pubDate>Tue, 11 Aug 2026 23:14:25 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Exchange Online] Users may be unable to complete mailbox offboarding because the migration task is blocked and can’t finish</title>
-      <link>https://www.aguidetocloud.com/service-health/#EX1458145</link>
-      <description>[Exchange Online] Users may have been unable to complete mailbox offboarding because the migration task is blocked and couldn’t finish.</description>
-      <category>Exchange Online</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">EX1458145</guid>
-      <pubDate>Tue, 11 Aug 2026 01:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

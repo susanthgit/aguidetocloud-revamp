@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T16:17:50.247938+00:00",
+  "generated_at": "2026-09-04T20:43:13.347034+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
@@ -8,37 +8,37 @@
       "icon": "💬",
       "total_incidents": 24,
       "active_incidents": 2,
-      "avg_duration_minutes": 8884,
-      "last_incident": "2026-08-27T19:22:00+00:00",
+      "avg_duration_minutes": 8402,
+      "last_incident": "2026-09-04T02:53:00+00:00",
       "classifications": {
         "advisory": 17,
         "incident": 7
       }
     },
     {
-      "service": "Microsoft Copilot (Microsoft 365)",
-      "short_name": "Copilot",
-      "icon": "🤖",
-      "total_incidents": 17,
-      "active_incidents": 3,
-      "avg_duration_minutes": 1525,
-      "last_incident": "2026-09-04T00:23:39.287000+00:00",
-      "classifications": {
-        "advisory": 11,
-        "incident": 6
-      }
-    },
-    {
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 17,
-      "active_incidents": 3,
+      "total_incidents": 18,
+      "active_incidents": 4,
       "avg_duration_minutes": 6435,
-      "last_incident": "2026-09-02T02:53:00+00:00",
+      "last_incident": "2026-09-04T18:44:09.070000+00:00",
       "classifications": {
-        "advisory": 13,
+        "advisory": 14,
         "incident": 4
+      }
+    },
+    {
+      "service": "Microsoft Copilot (Microsoft 365)",
+      "short_name": "Copilot",
+      "icon": "🤖",
+      "total_incidents": 16,
+      "active_incidents": 2,
+      "avg_duration_minutes": 1474,
+      "last_incident": "2026-09-04T00:23:39.287000+00:00",
+      "classifications": {
+        "advisory": 10,
+        "incident": 6
       }
     },
     {
@@ -110,8 +110,8 @@
       "short_name": "SharePoint",
       "icon": "📄",
       "total_incidents": 4,
-      "active_incidents": 1,
-      "avg_duration_minutes": 14099,
+      "active_incidents": 0,
+      "avg_duration_minutes": 15115,
       "last_incident": "2026-08-25T16:58:38.313000+00:00",
       "classifications": {
         "incident": 3,
@@ -207,8 +207,8 @@
   "monthly": [
     {
       "month": "2026-09",
-      "incident_count": 9,
-      "services_affected": 4
+      "incident_count": 11,
+      "services_affected": 5
     },
     {
       "month": "2026-08",
@@ -217,7 +217,7 @@
     },
     {
       "month": "2026-07",
-      "incident_count": 37,
+      "incident_count": 35,
       "services_affected": 11
     }
   ]
