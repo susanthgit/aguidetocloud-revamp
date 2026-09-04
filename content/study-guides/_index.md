@@ -1,6 +1,6 @@
 ---
-title: "Certification Study Guides — Free Exam Prep for 149+"
-description: "Free study guides for Microsoft Azure, AWS, Google Cloud, CompTIA, Cisco, ISC², and more. Every exam objective linked to official resources."
+title: "Certification Study Guides — Free Forever"
+description: "Free study guides for Microsoft Azure, AWS, Google Cloud, CompTIA, Cisco, ISC² and more — free forever, no signup. Optional practice exams are US$9."
 type: "study-guides"
 layout: "list"
 sitemap:

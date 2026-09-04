@@ -11,6 +11,10 @@
   {{ $titleFits := le (add (len .Title) $suffixLen) 60 }}
   <title>{{ if .IsHome }}{{ .Site.Title }} — Free Practice Exams & IT Tools{{ else if $titleFits }}{{ .Title }} | {{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  {{/* Per-page robots directive. Only emitted when a page sets `robots:` in front matter
+       (e.g. content/cc/_index.md = "noindex, nofollow"). Before this existed the param was
+       declared but never consumed, so the admin Command Centre at /cc/ was fully indexable. */}}
+  {{ with .Params.robots }}<meta name="robots" content="{{ . }}">{{ end }}
   <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else if $titleFits }}{{ .Title }} | {{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
   <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
