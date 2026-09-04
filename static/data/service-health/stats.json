@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T04:24:23.477632+00:00",
+  "generated_at": "2026-09-04T11:11:48.845892+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
@@ -9,22 +9,22 @@
       "total_incidents": 24,
       "active_incidents": 3,
       "avg_duration_minutes": 9089,
-      "last_incident": "2026-09-03T18:57:00.007000+00:00",
+      "last_incident": "2026-09-03T18:57:00+00:00",
       "classifications": {
-        "advisory": 18,
-        "incident": 6
+        "incident": 7,
+        "advisory": 17
       }
     },
     {
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 18,
+      "total_incidents": 17,
       "active_incidents": 3,
-      "avg_duration_minutes": 1430,
+      "avg_duration_minutes": 1525,
       "last_incident": "2026-09-04T00:23:39.287000+00:00",
       "classifications": {
-        "advisory": 12,
+        "advisory": 11,
         "incident": 6
       }
     },
@@ -42,6 +42,19 @@
       }
     },
     {
+      "service": "Exchange Online",
+      "short_name": "Exchange",
+      "icon": "📧",
+      "total_incidents": 6,
+      "active_incidents": 3,
+      "avg_duration_minutes": 9170,
+      "last_incident": "2026-09-04T10:19:12.070000+00:00",
+      "classifications": {
+        "incident": 3,
+        "advisory": 3
+      }
+    },
+    {
       "service": "Microsoft 365 Copilot Chat",
       "short_name": "Copilot Chat",
       "icon": "💭",
@@ -52,19 +65,6 @@
       "classifications": {
         "incident": 4,
         "advisory": 2
-      }
-    },
-    {
-      "service": "Exchange Online",
-      "short_name": "Exchange",
-      "icon": "📧",
-      "total_incidents": 5,
-      "active_incidents": 2,
-      "avg_duration_minutes": 9170,
-      "last_incident": "2026-09-02T06:01:52+00:00",
-      "classifications": {
-        "advisory": 3,
-        "incident": 2
       }
     },
     {
@@ -207,7 +207,7 @@
   "monthly": [
     {
       "month": "2026-09",
-      "incident_count": 9,
+      "incident_count": 10,
       "services_affected": 5
     },
     {
@@ -217,7 +217,7 @@
     },
     {
       "month": "2026-07",
-      "incident_count": 38,
+      "incident_count": 37,
       "services_affected": 11
     }
   ]
