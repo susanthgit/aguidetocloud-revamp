@@ -144,6 +144,7 @@ function getExamCategory(cert) {
     'nutanix': 'Nutanix',
     'nvidia': 'NVIDIA',
     'salesforce': 'Salesforce',
+  'servicenow': 'ServiceNow',
   };
   return vendorCategoryMap[cert.vendor] || cert.vendor;
 }

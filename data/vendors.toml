@@ -232,3 +232,13 @@ logo_emoji = "☁️"
 official_url = "https://trailhead.salesforce.com/credentials"
 cert_path_note = "Start with the Salesforce Certified Platform Administrator (renamed from Salesforce Certified Administrator in the December 2025 refresh) - org configuration and security, the data model and Lightning App Builder, reports and dashboards, Flow automation, and Agentforce."
 order = 23
+
+[[vendor]]
+slug = "servicenow"
+name = "ServiceNow"
+short_name = "ServiceNow"
+accent = "#62D84E"
+logo_emoji = "🟢"
+official_url = "https://www.servicenow.com/services/training-and-certification.html"
+cert_path_note = "Start with the ServiceNow Certified System Administrator (CSA) - platform navigation and instance configuration, lists and forms, the data schema and access control, Service Catalog and Workflow Studio, the CMDB, and update sets."
+order = 24
