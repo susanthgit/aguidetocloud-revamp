@@ -1,6 +1,6 @@
 ---
 title: "Splunk Core Certified User (SPLK-1001) — Study Guide & Practice Exam"
-description: "Free Splunk Core Certified User (SPLK-1001) study guide and 250-question practice exam. Master Splunk fundamentals — components and apps, running and refining searches with the time-range picker and timeline, using fields and the fields sidebar, the search pipeline (table, rename, fields, dedup, sort), transforming commands (top, rare, stats), reports and dashboards, CSV lookups, and scheduled reports and alerts."
+description: "Free SPLUNK-CORE-USER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Splunk Core Certified User."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SPLUNK-CORE-USER"

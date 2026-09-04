@@ -1,6 +1,6 @@
 ---
 title: "Oracle Autonomous AI Database Professional (1Z0-931-26) — Study Guide & Practice Exam"
-description: "Oracle Autonomous AI Database Professional (1Z0-931-26) study guide and 250-question practice exam. The nine exam domains — Autonomous Database Fundamentals; Serverless Architectures; Dedicated Deployments; Managing, Monitoring and Optimizing Performance; Autonomous Database Tools; Select AI; MCP Server Integration; Unified Data Management and AI Analytics; and Migration and Data Integration — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free OCI-AUTONOMOUS-DB-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Autonomous AI Database Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-AUTONOMOUS-DB-PROFESSIONAL"

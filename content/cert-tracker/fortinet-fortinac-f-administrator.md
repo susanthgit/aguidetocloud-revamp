@@ -1,6 +1,6 @@
 ---
 title: "Fortinet NSE 6 - FortiNAC-F 7.6 Administrator - Free Study Guide"
-description: "Fortinet NSE 6 - FortiNAC-F 7.6 Administrator: free study guide and 250-question practice exam covering infrastructure modeling, isolation networks, access enforcement, security automation, HA, FortiNAC Manager, FortiGate integration, device profiling, guests, and troubleshooting."
+description: "Free FORTINAC-F-ADMINISTRATOR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "FORTINET-FORTINAC-F-ADMINISTRATOR"

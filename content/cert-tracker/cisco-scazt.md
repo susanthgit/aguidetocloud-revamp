@@ -1,6 +1,6 @@
 ---
 title: "SCAZT: Designing and Implementing Secure Cloud Access (300-740) — Free Study Guide"
-description: "SCAZT 300-740: Designing and Implementing Secure Cloud Access for Users and Endpoints. Free 250-question practice exam + study guide covering the Cisco Secure Access SSE/SASE platform — Zero Trust Network Access (ZTNA), Secure Internet and Private Access, identity and device trust with Duo and Cisco Secure Client, web/DNS/firewall/DLP/threat-protection policy, resource connectors and tunnels, and cloud-delivered operations."
+description: "Free SCAZT study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Designing and Implementing Secure Cloud Access (SCAZT 300-740)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SCAZT"

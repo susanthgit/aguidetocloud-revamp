@@ -1,6 +1,6 @@
 ---
 title: "DY0-001: CompTIA DataAI — Study Guide & Practice Exam"
-description: "Free DY0-001 study guide and 200-question practice exam. CompTIA DataAI — exam objectives, study resources, and exam simulation."
+description: "Free DY0-001 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CompTIA DataAI."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DY0-001"

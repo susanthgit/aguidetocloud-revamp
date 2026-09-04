@@ -1,6 +1,6 @@
 ---
 title: "MLS-C01: AWS Machine Learning Specialty — Free Study Guide"
-description: "MLS-C01: AWS Machine Learning Specialty. Free 200-question practice exam + study guide covering ML pipelines, model deployment, MLOps, and AI services."
+description: "Free MLS-C01 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. AWS Machine Learning Specialty."
 type: "cert-tracker"
 layout: "single"
 exam_code: "MLS-C01"

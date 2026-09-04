@@ -1,6 +1,6 @@
 ---
 title: "Fortinet NSE 7 - Public Cloud Security 7.6.4 Architect (NSE7_CDS_AR-7.6) — Free Study Guide"
-description: "Fortinet NSE 7 - Public Cloud Security 7.6.4 Architect (NSE7_CDS_AR-7.6): free 250-question practice exam + study guide covering deploying FortiGate-VM, FortiWeb and FortiCNAPP to protect AWS and Azure, HA and autoscaling, infrastructure-as-code with Terraform, Ansible, Azure Bicep and AWS CloudFormation, cloud network monitoring, SDN connectors, and multi-cloud connectivity troubleshooting on FortiOS 7.6."
+description: "Free NSE7-PUBLIC-CLOUD-SECURITY study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NSE7_CDS_AR-7.6"

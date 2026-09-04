@@ -1,6 +1,6 @@
 ---
 title: "Salesforce Certified MuleSoft Developer — Study Guide & Practice Exam"
-description: "Salesforce Certified MuleSoft Developer study guide and 250-question practice exam. The eight exam domains and Salesforce's published weights — Structuring Mule Applications and API Implementation Interfaces at 17%; Routing Events and Handling Errors at 16%; API-Led Connectivity and API Design at 15%; Debugging, Deploying and Managing APIs at 12%; and Accessing and Modifying Mule Events, Using Connectors, Processing Records and Transforming Data with DataWeave at 10% each — plus exam objectives, study resources, and a timed exam simulation. Mule 4 and Spring '24. Free 20-question preview."
+description: "Free SALESFORCE-MULESOFT-DEVELOPER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Salesforce Certified MuleSoft Developer."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SALESFORCE-MULESOFT-DEVELOPER"

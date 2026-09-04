@@ -1,6 +1,6 @@
 ---
 title: "WLSD: Cisco CCNP Wireless Design (300-110) — Free Study Guide"
-description: "WLSD 300-110 (v1.2): the design concentration of the new standalone Cisco CCNP Wireless track. Free 250-question practice exam + study guide covering wireless site surveys (collecting design requirements and evaluating constraints, material attenuation, Layer 1 / pre-deployment / post-deployment / predictive surveys, and planning tools like Ekahau, Hamina, and Chanalyzer), wired and wireless infrastructure design (AP power, cabling, switch port capacity, mounting and grounding, WLC/AP licensing by architecture, radio management with RRM and Catalyst Center AI-Enhanced RRM, RF profiles and RxSOP, design requirements by network type, high-density design, and wireless bridging and mesh), mobility (mobility groups, client roaming optimization, mobility tunneling, and Site Tags), and WLAN high availability (controller HA with LAG, SSO, and anchor redundancy, and AP HA with prioritization, primary/secondary/tertiary fall-back, and the Embedded Wireless Controller)."
+description: "Free WLSD study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Designing Cisco Wireless Networks (WLSD 300-110)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "WLSD"

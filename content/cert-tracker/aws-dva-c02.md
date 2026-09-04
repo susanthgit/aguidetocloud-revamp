@@ -1,6 +1,6 @@
 ---
 title: "DVA-C02: AWS Developer Associate — Free Study Guide"
-description: "DVA-C02: the AWS Developer Associate exam. Free 200-question practice exam + study guide covering SDKs, deployment patterns, and application development."
+description: "Free DVA-C02 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. AWS Developer Associate."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DVA-C02"

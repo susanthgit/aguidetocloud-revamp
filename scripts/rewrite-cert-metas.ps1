@@ -42,10 +42,37 @@ param(
   [switch]$DryRun,
   [string]$ContentDir,
   [string]$ReviewOut,
-  [int]$SkipIfScoreOver = 85
+  [int]$SkipIfScoreOver = 85,
+  [switch]$IUnderstandThisCanReintroduceFalsePricingClaims
 )
 
 $ErrorActionPreference = 'Stop'
+
+# ---------------------------------------------------------------------------
+# RETIRED as a description writer (2026-09-05).
+#
+# Every $descVariants template below composes "Free <N>-question practice exam".
+# That is FALSE: practice banks give 20 free questions and then cost US$9 for a
+# year. Those templates put the claim on 197 live cert pages, in the exact meta
+# description Google shows to buyers.
+#
+# Descriptions are now owned by scripts/lib/cert-description.js, which is the
+# single source of truth shared with sync-cert-data.js. This script is kept for
+# its TITLE rewriting and scoring logic only, and refuses to run unattended so
+# it cannot silently re-infect the content.
+#
+# scripts/lib/cert-description.test.js fails the build if the claim returns.
+# ---------------------------------------------------------------------------
+if (-not $IUnderstandThisCanReintroduceFalsePricingClaims) {
+  Write-Host ""
+  Write-Host "REFUSING TO RUN — this script's description templates are false." -ForegroundColor Red
+  Write-Host "  They emit 'Free <N>-question practice exam'; the bank costs US`$9 after 20 free questions."
+  Write-Host "  Descriptions are owned by scripts/lib/cert-description.js."
+  Write-Host "  To run anyway (titles only), pass -IUnderstandThisCanReintroduceFalsePricingClaims"
+  Write-Host "  and then run: node scripts/lib/cert-description.test.js" -ForegroundColor Yellow
+  Write-Host ""
+  exit 1
+}
 
 $TitleMax = 60
 $DescMin  = 120

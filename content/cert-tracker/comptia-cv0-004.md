@@ -1,6 +1,6 @@
 ---
 title: "CV0-004: CompTIA Cloud+ — Study Guide & Practice Exam"
-description: "Free CV0-004 study guide and 200-question practice exam. CompTIA Cloud+ — exam objectives, study resources, and exam simulation."
+description: "Free CV0-004 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CompTIA Cloud+."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CV0-004"

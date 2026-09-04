@@ -1,6 +1,6 @@
 ---
 title: "Governed Analytics Professional with Oracle Analytics Cloud (1Z0-1177-26) — Study Guide & Practice Exam"
-description: "Governed Analytics Professional with Oracle Analytics Cloud (1Z0-1177-26) study guide and 250-question practice exam. All ten scored domains and weights — understanding Oracle Analytics Cloud; analyses, views and content; formatting, filters, selection steps and variables; dashboards; data connectivity and artifact migration; administration, security and performance; plus the four Oracle Analytics Publisher domains covering reports and data models, Layout Editor and Template Builder, scheduling, bursting, data sources and translations, and secure Publisher reporting — with exam objectives, study resources and a timed exam simulation. Free 20-question preview."
+description: "Free ORACLE-ANALYTICS-GOVERNED-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ORACLE-ANALYTICS-GOVERNED-PROFESSIONAL"

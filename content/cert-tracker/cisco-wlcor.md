@@ -1,6 +1,6 @@
 ---
 title: "WLCOR: Cisco CCNP Wireless Core (350-101) — Free Study Guide"
-description: "WLCOR 350-101 (v1.0): the core exam of the new standalone Cisco CCNP Wireless track (and a CCIE Wireless qualifying exam). Free 250-question practice exam + study guide covering RF fundamentals (propagation, RSSI/SNR signal measurements, RF math and EIRP, and antennas), 802.11 technology fundamentals (Wi-Fi governance, channels and power, modulation, MIMO/MU-MIMO/MLO, and frame types), wireless network implementation (Cisco architectures, physical infrastructure, and management access), wireless network operation (Catalyst 9800 setup, CAPWAP AP join, AP modes, WLANs, and client policy), client connectivity (WPA2/WPA3 and 802.1X/EAP auth, multi-OS supplicants, roaming, and guest), monitoring and management (maintenance, client monitoring, troubleshooting, and integrations), and automation and AI (Python, NETCONF/YANG, wireless APIs, and Catalyst Center AI Analytics, AI Operations, and AI-RRM)."
+description: "Free WLCOR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "WLCOR"

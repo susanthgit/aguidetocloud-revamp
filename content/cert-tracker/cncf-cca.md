@@ -1,6 +1,6 @@
 ---
 title: "CCA: Certified Cilium Associate exam — Free Study Guide"
-description: "CCA: the CNCF Certified Cilium Associate exam. 250-question practice exam (20 free) plus a complete study guide covering Cilium's eBPF architecture, identity-based network policy, the sidecarless service mesh, Hubble observability, installation, Cluster Mesh, eBPF, and BGP, with exam tips."
+description: "Free CCA study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CNCF CCA (Certified Cilium Associate)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CCA"

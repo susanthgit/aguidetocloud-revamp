@@ -1,6 +1,6 @@
 ---
 title: "Agentic AI for Oracle AI Database Professional (1Z0-1159-26) — Study Guide & Practice Exam"
-description: "Agentic AI for Oracle AI Database Professional (1Z0-1159-26) study guide and 250-question practice exam. The six exam domains — Oracle AI Vector Search Foundations; Vector Distance and Indexing; Retrieval-Augmented Generation (RAG); Select AI Agent Solutions; Agentic Interfaces and Tool Access (MCP); and Private Agent Factory Governance — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free OCI-AGENTIC-AI-DB-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-AGENTIC-AI-DB-PROFESSIONAL"

@@ -1,6 +1,6 @@
 ---
 title: "Fortinet NSE 5 - FortiWeb 8.0 Administrator (NSE5_FWB_AD-8.0) — Free Study Guide"
-description: "Fortinet NSE 5 - FortiWeb 8.0 Administrator (NSE5_FWB_AD-8.0): free 250-question practice exam + study guide covering FortiWeb deployment and operation modes, server policies and SSL/TLS, web application and API security with machine learning and bot mitigation, application delivery and FortiAI, and compliance and troubleshooting."
+description: "Free FORTIWEB-ADMINISTRATOR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NSE5_FWB_AD-8.0"

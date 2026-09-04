@@ -1,6 +1,6 @@
 ---
 title: "CISM: ISACA Information Security Manager — Free Study Guide"
-description: "CISM: the ISACA Information Security Manager exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free CISM study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. ISACA Certified Information Security Manager."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CISM"

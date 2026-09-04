@@ -1,6 +1,6 @@
 ---
 title: "WLSI: Cisco CCNP Wireless Advanced Solutions (300-120) — Free Study Guide"
-description: "WLSI 300-120 (v1.2): the implementation concentration of the new standalone Cisco CCNP Wireless track. Free 250-question practice exam + study guide covering FlexConnect (switching and operating modes, groups and roaming, split tunneling, VLAN-based central switching and Flex ACL, Smart AP image upgrade, and OfficeExtend), QoS on a wireless network (wired-to-wireless mapping, metal profiles, per-client rate limiting, and AVC), multicast (delivery modes, IGMP snooping, mDNS/Bonjour, and Multicast Direct), location services (CMX and Cisco Spaces deployment, client and RFID tracking), advanced location services (detect and locate, analytics, presence, captive portals, connectors, and wIPS), security for wireless client connectivity (client profiling, BYOD and guest with CWA/LWA, native supplicant and certificate provisioning, and Identity-Based Networking), monitoring (Catalyst Center reports, alarms and rogues, RF interferers, and troubleshooting across WLC/ISE/Catalyst Center), and device hardening (RADIUS/TACACS+, 802.1X AP authentication, and Control Plane ACLs)."
+description: "Free WLSI study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Implementing Cisco Wireless Advanced Solutions (WLSI 300-120)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "WLSI"

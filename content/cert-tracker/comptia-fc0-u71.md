@@ -1,6 +1,6 @@
 ---
 title: "FC0-U71: CompTIA Tech+ — Study Guide & Practice Exam"
-description: "Free FC0-U71 study guide and 200-question practice exam. CompTIA Tech+ — exam objectives, study resources, and exam simulation."
+description: "Free FC0-U71 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CompTIA Tech+."
 type: "cert-tracker"
 layout: "single"
 exam_code: "FC0-U71"

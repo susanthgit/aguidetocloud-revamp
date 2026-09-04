@@ -1,6 +1,6 @@
 ---
 title: "NVIDIA-Certified Professional: OpenUSD Development (NCP-OUSD) — Study Guide & Practice Exam"
-description: "NVIDIA-Certified Professional: OpenUSD Development (NCP-OUSD) study guide and 250-question practice exam. The eight exam domains and NVIDIA's published weights — Composition at 23%; Data Exchange at 15%; Pipeline Development at 14%; Data Modeling at 13%; Debugging and Troubleshooting at 11%; Content Aggregation at 10%; Visualization at 8%; and Customizing USD at 6% — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free NVIDIA-NCP-OUSD study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NVIDIA-NCP-OUSD"

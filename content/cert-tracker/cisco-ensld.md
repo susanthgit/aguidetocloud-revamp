@@ -1,6 +1,6 @@
 ---
 title: "ENSLD: Cisco CCNP ENSLD (300-420) — Free Study Guide"
-description: "ENSLD 300-420 (v1.1): the Cisco CCNP Enterprise concentration for designing enterprise networks. Free 250-question practice exam + study guide covering advanced addressing and routing design (structured IPv4/IPv6 plans, scalable IS-IS/EIGRP/OSPF/BGP designs, and IPv6 migration), advanced enterprise campus (FHRP/BFD high availability, Layer 2 STP/loop-free/security, multicampus Layer 3, and SD-Access architecture and fabric design), WAN (MPLS L3VPN/Metro Ethernet/DWDM connectivity, DMVPN/GET VPN site-to-site design, WAN high availability, and Cisco SD-WAN architecture), network services (DiffServ/IntServ QoS design, network management, and multicast with PIM/SSM/MSDP), and automation and AI (YANG models, NETCONF/RESTCONF, model-driven telemetry, gRPC/gNMI, and cloud connectivity)."
+description: "Free ENSLD study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Designing Cisco Enterprise Networks (ENSLD 300-420)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ENSLD"

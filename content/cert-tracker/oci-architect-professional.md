@@ -1,6 +1,6 @@
 ---
 title: "OCI 2026 Architect Professional (1Z0-997-26) — Study Guide & Practice Exam"
-description: "OCI 2026 Architect Professional (1Z0-997-26) study guide and 250-question practice exam. The eight exam domains — Architect High Availability and Disaster Recovery; Architect Cloud-Native Solutions; Implement Infrastructure as Code; Implement and Operate Databases in OCI; Architect Security Solutions; Design for Hybrid and Multicloud Architectures; Migrate Workloads, Databases, and Data to OCI; and Implement Observability Solutions — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free OCI-ARCHITECT-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-ARCHITECT-PROFESSIONAL"

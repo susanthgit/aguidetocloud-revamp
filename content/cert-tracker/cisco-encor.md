@@ -1,6 +1,6 @@
 ---
 title: "ENCOR: Cisco CCNP ENCOR (350-401) — Free Study Guide"
-description: "ENCOR: Cisco CCNP ENCOR (350-401). Free 200-question practice exam + study guide covering all skills measured domains, exam tips, and study resources."
+description: "Free ENCOR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Cisco CCNP ENCOR (350-401)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ENCOR"

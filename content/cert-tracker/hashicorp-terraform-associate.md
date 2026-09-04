@@ -1,6 +1,6 @@
 ---
 title: "TERRAFORM-ASSOCIATE: HashiCorp associate — Free Study Guide"
-description: "TERRAFORM-ASSOCIATE: the HashiCorp Terraform Associate (004) exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free TERRAFORM-ASSOCIATE study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. HashiCorp Certified: Terraform Associate (004)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "TERRAFORM-ASSOCIATE"

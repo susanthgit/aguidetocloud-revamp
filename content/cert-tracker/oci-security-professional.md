@@ -1,6 +1,6 @@
 ---
 title: "OCI 2026 Security Professional (1Z0-1104-26) — Study Guide & Practice Exam"
-description: "OCI 2026 Security Professional (1Z0-1104-26) study guide and 250-question practice exam. The six exam domains — Understanding OCI Security Services; Managing Identity and Access; Implementing Network, Platform and Infrastructure Security; Securing Applications and Data; Improving Cloud Security Posture; and Managing Security Operations — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free OCI-SECURITY-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-SECURITY-PROFESSIONAL"

@@ -1,6 +1,6 @@
 ---
 title: "SK0-005: CompTIA Server+ — Study Guide & Practice Exam"
-description: "Free SK0-005 study guide and 200-question practice exam. CompTIA Server+ — exam objectives, study resources, and exam simulation."
+description: "Free SK0-005 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CompTIA Server+."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SK0-005"

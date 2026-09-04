@@ -1,6 +1,6 @@
 ---
 title: "SCOR: Cisco CCNP SCOR (350-701) — Free Study Guide"
-description: "SCOR: Cisco CCNP SCOR (350-701). Free 200-question practice exam + study guide covering all skills measured domains, exam tips, and study resources."
+description: "Free SCOR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Cisco CCNP SCOR (350-701)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SCOR"

@@ -1,6 +1,6 @@
 ---
 title: "Oracle AI Database Administration Professional (1Z0-183) — Study Guide & Practice Exam"
-description: "Oracle AI Database Administration Professional (1Z0-183) study guide and 250-question practice exam. The five exam domains — Managing Multitenant Architecture; Performing Backup and Recovery; Managing and Tuning Performance; Deploying, Patching and Upgrades; and New Feature in Oracle AI Database — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free ORACLE-AI-DATABASE-ADMIN-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ORACLE-AI-DATABASE-ADMIN-PROFESSIONAL"

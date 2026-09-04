@@ -1,6 +1,6 @@
 ---
 title: "JNCIP-SEC: Juniper professional exam — Free Study Guide"
-description: "JNCIP-SEC: the Juniper Professional, Security (JNCIP-SEC) exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free JNCIP-SEC study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "JNCIP-SEC"

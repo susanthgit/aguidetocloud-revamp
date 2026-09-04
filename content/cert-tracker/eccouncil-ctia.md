@@ -1,6 +1,6 @@
 ---
 title: "EC-Council CTIA (312-85) — Free Study Guide"
-description: "EC-Council Certified Threat Intelligence Analyst (CTIA v2, exam 312-85): the cyber threat intelligence lifecycle, frameworks, collection, analysis, and dissemination. 250-question practice exam (20 free) plus a complete study guide covering the intelligence lifecycle, Cyber Kill Chain, MITRE ATT&CK and the Diamond Model, data collection and processing, analysis, reporting with STIX/TAXII, threat hunting, and SOC/IR integration."
+description: "Free CTIA study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. EC-Council Certified Threat Intelligence Analyst (CTIA)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "312-85"

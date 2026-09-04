@@ -1,6 +1,6 @@
 ---
 title: "PAS-C01: AWS SAP on AWS Specialty — Free Study Guide"
-description: "PAS-C01: AWS SAP on AWS Specialty. Free 200-question practice exam + study guide covering all skills measured domains, exam tips, and study resources."
+description: "Free PAS-C01 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. AWS SAP on AWS Specialty."
 type: "cert-tracker"
 layout: "single"
 exam_code: "PAS-C01"

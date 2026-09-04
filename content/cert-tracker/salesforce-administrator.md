@@ -1,6 +1,6 @@
 ---
 title: "Salesforce Certified Platform Administrator — Study Guide & Practice Exam"
-description: "Salesforce Certified Platform Administrator study guide and 250-question practice exam. The eight exam domains and Salesforce's published weights — Data and Analytics Management at 17%; Configuration and Setup at 15%; Object Manager and Lightning App Builder at 15%; Automation at 15%; Sales and Marketing Applications at 10%; Service and Support Applications at 10%; Productivity and Collaboration at 10%; and Agentforce at 8% — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free SALESFORCE-ADMINISTRATOR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Salesforce Certified Platform Administrator."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SALESFORCE-ADMINISTRATOR"

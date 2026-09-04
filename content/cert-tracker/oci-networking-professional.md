@@ -1,6 +1,6 @@
 ---
 title: "OCI 2026 Networking Professional (1Z0-1124-26) — Study Guide & Practice Exam"
-description: "OCI 2026 Networking Professional (1Z0-1124-26) study guide and 250-question practice exam. The seven exam domains — Design and Deploy OCI Virtual Cloud Networks; Plan and Design OCI Networking Solutions and App Services; Design for Hybrid Networking Architectures; Transitive Routing; Implement and Operate Secure OCI Networking and Connectivity Solutions; Migrate Workloads to OCI; and Troubleshoot OCI Networking and Connectivity Issues — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free OCI-NETWORKING-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-NETWORKING-PROFESSIONAL"

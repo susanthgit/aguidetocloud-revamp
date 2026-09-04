@@ -1,6 +1,6 @@
 ---
 title: "Salesforce Certified Marketing Cloud Engagement Specialist — Study Guide & Practice Exam"
-description: "Salesforce Certified Marketing Cloud Engagement Specialist study guide and 250-question practice exam. The five exam sections and Salesforce's published weights — Marketing Automation and Subscriber and Data Management at 26% each, Content Creation and Delivery at 24%, Insights and Analytics at 14%, and Email Marketing Best Practices at 10% — plus exam objectives, study resources, and a timed exam simulation. Renamed from Marketing Cloud Email Specialist in July 2026; questions target the Summer '23 release. Free 20-question preview."
+description: "Free SALESFORCE-MC-ENGAGEMENT-SPECIALIST study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SALESFORCE-MC-ENGAGEMENT-SPECIALIST"

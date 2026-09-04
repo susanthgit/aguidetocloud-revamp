@@ -1,6 +1,6 @@
 ---
 title: "Palo Alto SSE Engineer (SSE-Engineer) — Free Study Guide"
-description: "Palo Alto Networks Certified Security Service Edge (SSE) Engineer: the Prisma Access / Prisma SASE exam. 250-question practice exam (20 free) plus a complete study guide covering Prisma Access planning and deployment, services, administration and operation, and troubleshooting."
+description: "Free SSE-ENGINEER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SSE-ENGINEER"

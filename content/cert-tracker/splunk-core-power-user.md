@@ -1,6 +1,6 @@
 ---
 title: "Splunk Core Certified Power User — Study Guide & Practice Exam"
-description: "Free Splunk Core Certified Power User study guide and 250-question practice exam. Master the Search Processing Language (SPL) — transforming commands, eval and filtering, correlating events with transactions, field extractions, aliases and calculated fields, tags and event types, macros, workflow actions, data models and Pivot, and the Common Information Model (CIM)."
+description: "Free SPLUNK-CORE-POWER-USER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Splunk Core Certified Power User."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SPLUNK-CORE-POWER-USER"

@@ -1,6 +1,6 @@
 ---
 title: "CBRCOR: Performing Cybersecurity Using Cisco Security Technologies (350-201) — Free Study Guide"
-description: "CBRCOR 350-201: Performing Cybersecurity Using Cisco Security Technologies. Free 250-question practice exam + study guide covering playbooks and incident response, compliance and risk, cloud SecOps, hardening and control-gap diagnosis, patch prioritisation, TIP/SIEM/SOAR, DLP and UEBA, packet and log analysis, threat modelling, malware analysis, vulnerability triage, and SOAR automation with Python, REST APIs and CI/CD."
+description: "Free CBRCOR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CBRCOR"

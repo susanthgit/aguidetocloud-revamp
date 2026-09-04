@@ -1,6 +1,6 @@
 ---
 title: "DS0-001: CompTIA DataSys+ — Study Guide & Practice Exam"
-description: "Free DS0-001 study guide and 200-question practice exam. CompTIA DataSys+ — exam objectives, study resources, and exam simulation."
+description: "Free DS0-001 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CompTIA DataSys+."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DS0-001"

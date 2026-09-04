@@ -1,6 +1,6 @@
 ---
 title: "DCACI: Implementing Cisco Application Centric Infrastructure (300-620) — Free Study Guide"
-description: "DCACI 300-620 (v1.2): the Cisco CCNP Data Center concentration for implementing Cisco ACI. Free 250-question practice exam + study guide covering ACI fabric infrastructure (APIC cluster, object model, access/fabric policies, tenants/VRFs/bridge domains/EPGs/ESGs/contracts); packet forwarding (endpoint learning, COOP, bridge-domain settings); external connectivity (EPG static bindings, MCP, L2Out, L3Out with OSPF/BGP/EIGRP); integrations (VMware vCenter and Nutanix VMM, resolution/deployment immediacy, L4-7 service graphs with PBR); ACI management (in-band/out-of-band, Nexus Dashboard Insights, snapshots, AAA/RBAC, upgrades); and ACI Anywhere with Multi-Pod, Multi-Site, and Remote Leaf."
+description: "Free DCACI study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DCACI"

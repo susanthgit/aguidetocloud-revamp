@@ -1,6 +1,6 @@
 ---
 title: "Fortinet NSE 6 - FortiCNAPP 26 Analyst (FCNAPP-ANA-26) — Free Study Guide"
-description: "Fortinet NSE 6 - FortiCNAPP 26 Analyst (FCNAPP-ANA-26): free 250-question practice exam + study guide covering FortiCNAPP fundamentals and the Polygraph Data Platform, cloud-account onboarding and deployment models, CSPM and non-compliant assets, host and container vulnerability management, code security and shift-left (IaC, SAST, DAST), attack-path analysis and CIEM, compliance reporting, and threat detection, investigation with LQL, and response."
+description: "Free FORTICNAPP-ANALYST study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "FCNAPP-ANA-26"

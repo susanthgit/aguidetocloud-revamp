@@ -1,6 +1,6 @@
 ---
 title: "DCNAUTO: Automating Cisco Data Center Networking Solutions (300-635) — Free Study Guide"
-description: "DCNAUTO 300-635 (v2.0): the Cisco CCNP Data Center / CCNP Automation concentration for data center network automation. Free 250-question practice exam + study guide covering YANG/NETCONF/gNMI/gRPC foundations and the ACI object model; Infrastructure as Code with Jinja2, Ansible (cisco.nxos, cisco.aci, cisco.dcnm) and Terraform (CiscoDevNet aci/nxos/ndfc providers) under GitOps; network element programmability with Python ncclient, Day-0 POAP, on-box NX-OS Bash/Python/Guest Shell, Nexus Dashboard/NDFC templates and NX-API; operations with Cisco Modeling Labs, pyATS, model-driven telemetry and Linux container packet-flow troubleshooting; and AI in automation."
+description: "Free DCNAUTO study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DCNAUTO"

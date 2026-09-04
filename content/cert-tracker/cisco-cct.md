@@ -1,6 +1,6 @@
 ---
 title: "CCT: Cisco CCT (100-490) — Study Guide & Practice Exam"
-description: "Free CCT study guide and 200-question practice exam. Cisco CCT (100-490) — exam objectives, study resources, and exam simulation."
+description: "Free CCT study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Cisco CCT (100-490)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CCT"

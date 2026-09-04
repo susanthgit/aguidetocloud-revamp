@@ -1,6 +1,6 @@
 ---
 title: "Splunk Cloud Certified Admin (SPLK-1005) — Study Guide & Practice Exam"
-description: "Free Splunk Cloud Certified Admin (SPLK-1005) study guide and 250-question practice exam. Master Splunk Cloud administration — the Cloud Platform topology and admin-vs-Splunk responsibility split, index management and configuration-file precedence with btool, roles and LDAP/AD/SAML authentication, Cloud-vetted and private apps, getting data in with forwarders and the Deployment Server, monitor/network/scripted/HEC inputs, the parsing phase with line breaking and timestamps, and index-time data transformation with props.conf, transforms.conf, and SEDCMD."
+description: "Free SPLUNK-CLOUD-ADMIN study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Splunk Cloud Certified Admin."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SPLUNK-CLOUD-ADMIN"

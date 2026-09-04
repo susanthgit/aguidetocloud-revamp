@@ -1,6 +1,6 @@
 ---
 title: "ECES: EC-Council Certified Encryption Specialist 212-81 — Free Study Guide"
-description: "ECES 212-81: the EC-Council Certified Encryption Specialist exam. Free study guide + 250-question practice exam covering applied cryptography — symmetric and asymmetric algorithms, cipher modes, hash functions, number theory, PKI and digital signatures, SSL/TLS and IPsec, disk and email encryption, and cryptanalysis, grounded in the NIST and FIPS standards."
+description: "Free ECES study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. EC-Council Certified Encryption Specialist (ECES 212-81)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ECES"

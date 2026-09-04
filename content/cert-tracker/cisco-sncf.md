@@ -1,6 +1,6 @@
 ---
 title: "SNCF: Securing Networks with Cisco Firewalls (300-710) — Free Study Guide"
-description: "SNCF 300-710: Securing Networks with Cisco Firewalls (formerly Cisco Firepower). Free 250-question practice exam + study guide covering Secure Firewall Threat Defense deployment, FMC policy configuration, Snort, NAT and VPN, high availability and clustering, troubleshooting, and integrations with Secure Endpoint, Threat Intelligence Director, Cisco XDR, and ISE."
+description: "Free SNCF study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Securing Networks with Cisco Firewalls (SNCF 300-710)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SNCF"

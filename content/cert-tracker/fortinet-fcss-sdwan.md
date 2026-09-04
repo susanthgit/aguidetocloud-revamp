@@ -1,6 +1,6 @@
 ---
 title: "FCSS SD-WAN 7.6 Architect (FCSS_SDW-7.6-AR) — Free Study Guide"
-description: "Fortinet FCSS - SD-WAN 7.6 Architect (FCSS_SDW-7.6-AR): free 250-question practice exam + study guide covering SD-WAN members and zones, performance SLAs, SD-WAN rules and routing, FortiManager centralized deployment, SD-WAN Manager and overlay orchestration, hub-and-spoke IPsec, ADVPN, and SD-WAN troubleshooting on FortiOS 7.6."
+description: "Free FCSS-SDWAN study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Fortinet FCSS - SD-WAN 7.6 Architect (FCSS_SDW-7.6-AR)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "FCSS_SDW-7.6-AR"

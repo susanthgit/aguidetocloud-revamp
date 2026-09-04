@@ -1,6 +1,6 @@
 ---
 title: "ENARSI: Cisco CCNP ENARSI (300-410) — Free Study Guide"
-description: "ENARSI 300-410 (v1.1): the Cisco CCNP Enterprise concentration for advanced routing and services. Free 250-question practice exam + study guide covering Layer 3 (administrative distance, route-maps, redistribution, summarization, policy-based routing, VRF-Lite, BFD, and EIGRP/OSPF/BGP troubleshooting), VPN technologies (MPLS operations, MPLS Layer 3 VPN, and DMVPN with GRE/mGRE, NHRP, IPsec, and spoke-to-spoke), infrastructure security (IOS AAA, ACLs, uRPF, CoPP, and IPv6 first-hop security), and infrastructure services (device management, SNMP, logging, DHCP, IP SLA, NetFlow, and Cisco DNA Center Assurance)."
+description: "Free ENARSI study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ENARSI"

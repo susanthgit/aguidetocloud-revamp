@@ -1,6 +1,6 @@
 ---
 title: "KCA: Kyverno Certified Associate exam — Free Study Guide"
-description: "KCA: the CNCF Kyverno Certified Associate exam. 250-question practice exam (20 free) plus a complete study guide covering Kyverno policy-as-code — validate, mutate, generate, and verifyImages rules, installation and RBAC, the Kyverno CLI, applying policies, CEL, policy reports, and exceptions, with exam tips."
+description: "Free KCA study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CNCF KCA (Kyverno Certified Associate)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "KCA"

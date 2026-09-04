@@ -1,6 +1,6 @@
 ---
 title: "Salesforce Certified Agentforce Field Service and Operations Consultant — Study Guide & Practice Exam"
-description: "Salesforce Certified Agentforce Field Service and Operations Consultant study guide and 250-question practice exam. The eight exam sections and Salesforce's published weights — Managing Scheduling and Optimization at 28%, Managing Work Orders at 23%, Managing Resources at 16%, Configuring Mobility at 10%, Managing Inventory at 8%, and Managing Assets, Configuring Maintenance Plans and Permissions and Sharing at 5% each — plus exam objectives, study resources and a timed exam simulation. Renamed from Salesforce Certified Field Service Consultant; the product is now Agentforce Field Service and Operations. Free 20-question preview."
+description: "Free SALESFORCE-FIELD-SERVICE-CONSULTANT study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SALESFORCE-FIELD-SERVICE-CONSULTANT"

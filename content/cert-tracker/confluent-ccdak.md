@@ -1,6 +1,6 @@
 ---
 title: "Confluent Certified Developer for Apache Kafka (CCDAK) — Free Study Guide"
-description: "Confluent Certified Developer for Apache Kafka (CCDAK): free 250-question practice exam + study guide covering Kafka fundamentals (topics, partitions, offsets, replication, ISR, acks, retention, and compaction), producer and consumer development, delivery semantics and transactional exactly-once, serialization and Schema Registry compatibility, Kafka Streams, Kafka Connect, application testing with the TopologyTestDriver, and observability with JMX metrics and consumer lag."
+description: "Free CONFLUENT-CCDAK study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CCDAK"

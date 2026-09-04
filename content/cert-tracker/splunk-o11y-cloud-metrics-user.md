@@ -1,6 +1,6 @@
 ---
 title: "Splunk O11y Cloud Certified Metrics User — Study Guide & Practice Exam"
-description: "Free Splunk O11y Cloud Certified Metrics User (SPLK-4001) study guide and 250-question practice exam. Master Splunk Observability Cloud metrics — getting data in with the OpenTelemetry Collector, the Infrastructure Monitoring data model (metrics, MTS, datapoints, dimensions vs properties), rollups and analytic functions, charts and dashboards, detectors and alerting, and troubleshooting Kubernetes with the Navigator and Cluster Analyzer."
+description: "Free SPLUNK-O11Y-CLOUD-METRICS-USER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SPLUNK-O11Y-CLOUD-METRICS-USER"

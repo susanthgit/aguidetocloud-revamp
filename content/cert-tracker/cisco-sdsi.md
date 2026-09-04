@@ -1,6 +1,6 @@
 ---
 title: "SDSI: Designing Cisco Security Infrastructure (300-745) — Free Study Guide"
-description: "SDSI 300-745: Designing Cisco Security Infrastructure. Free 250-question practice exam + study guide covering security-architecture design — threat protection, VPN and firewall selection, application and cloud-native security, emerging tech (AI/ML and post-quantum crypto), SOC incident response, security frameworks (MITRE ATT&CK/CAPEC, NIST RMF and CSF 2.0, Cisco SAFE), compliance mapping, and AI/automation/DevSecOps."
+description: "Free SDSI study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Designing Cisco Security Infrastructure (SDSI 300-745)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SDSI"

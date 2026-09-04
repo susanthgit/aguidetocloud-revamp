@@ -1,6 +1,6 @@
 ---
 title: "DCIT: Troubleshooting Cisco Data Center Infrastructure (300-615) — Free Study Guide"
-description: "DCIT 300-615 (v1.2): the Cisco CCNP Data Center concentration for troubleshooting data center infrastructure. Free 250-question practice exam + study guide covering the network (routing OSPF/BGP/PIM/FHRP, switching RSTP+/LACP/vPC, VXLAN BGP EVPN, and Cisco ACI packet forwarding); compute platforms (Cisco UCS discovery, firmware and interoperability, Fabric Interconnect modes, VLAN/VSAN/vNIC/vHBA connectivity, pools, policies, templates, and service-profile association); the storage network (Fibre Channel physical links, FLOGI/FCNS, port types, NPV/NPIV, VSAN, zoning, FCoE); automation (EEM, Scheduler, Guest Shell, Python, NX-API, NETCONF/RESTCONF, Ansible, Terraform, Intersight); and management and operations (Nexus Dashboard/NDFC, Cisco Intersight, firmware upgrades, ACI security domains and RBAC, first-hop security)."
+description: "Free DCIT study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Troubleshooting Cisco Data Center Infrastructure (DCIT 300-615)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DCIT"

@@ -1,6 +1,6 @@
 ---
 title: "Palo Alto Cloud Security Professional (CloudSec-Pro) — Free Study Guide"
-description: "Palo Alto Networks Certified Cloud Security Professional (CloudSec-Pro): the Cortex Cloud CNAPP exam. 250-question practice exam (20 free) plus a complete study guide covering cloud posture, cloud runtime, application security, Cortex and SOC fundamentals."
+description: "Free CLOUD-SECURITY-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CLOUD-SECURITY-PROFESSIONAL"

@@ -1,6 +1,6 @@
 ---
 title: "DEVASC: Cisco DevNet Associate (200-901) — Free Study Guide"
-description: "DEVASC: the Cisco DevNet Associate (200-901) exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free DEVASC study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Cisco DevNet Associate (200-901)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DEVASC"

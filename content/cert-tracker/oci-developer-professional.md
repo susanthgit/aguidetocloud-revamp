@@ -1,6 +1,6 @@
 ---
 title: "OCI 2026 Developer Professional (1Z0-1084-26) — Study Guide & Practice Exam"
-description: "OCI 2026 Developer Professional (1Z0-1084-26) study guide and 250-question practice exam. The five exam domains and weights — Cloud Native Fundamentals; Containerization with Docker, OCIR and OKE; Serverless with Oracle Functions, API Gateway, Streaming, Events and Queue; Testing and Securing with OCI Vault; and Monitoring and Troubleshooting — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free OCI-DEVELOPER-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-DEVELOPER-PROFESSIONAL"

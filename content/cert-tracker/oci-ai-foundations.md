@@ -1,6 +1,6 @@
 ---
 title: "OCI 2026 AI Foundations Associate (1Z0-1122-26) — Study Guide & Practice Exam"
-description: "Free OCI 2026 AI Foundations Associate (1Z0-1122-26) study guide and 250-question practice exam. The six domains — AI Foundations, Machine Learning, Deep Learning, Generative AI and Large Language Models, the OCI AI Portfolio, and the OCI Generative AI Service with Oracle Database 23ai — plus exam objectives, study resources, and a timed exam simulation for the current Oracle Cloud Infrastructure AI Foundations certification."
+description: "Free OCI-AI-FOUNDATIONS study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Cloud Infrastructure 2026 AI Foundations Associate."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-AI-FOUNDATIONS"

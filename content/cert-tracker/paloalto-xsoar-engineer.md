@@ -1,6 +1,6 @@
 ---
 title: "Palo Alto XSOAR Engineer Exam (XSOAR-Engineer): Study Guide & Practice Questions"
-description: "Free study guide for the Palo Alto Networks Certified XSOAR Engineer exam (XSOAR-Engineer). Covers building Cortex XSOAR: engines and content lifecycle, Marketplace packs and integrations, classifiers and mappers, incident layouts and SLAs, playbook development, automation scripting, War Room, and threat intelligence management — with a 250-question practice exam."
+description: "Free XSOAR-ENGINEER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "XSOAR-Engineer"

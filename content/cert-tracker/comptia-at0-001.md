@@ -1,6 +1,6 @@
 ---
 title: "AT0-001: CompTIA AutoOps+ — Study Guide & Practice Exam"
-description: "Free AT0-001 study guide and 250-question practice exam. CompTIA AutoOps+ — exam objectives, study resources, and exam simulation."
+description: "Free AT0-001 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CompTIA AutoOps+."
 type: "cert-tracker"
 layout: "single"
 exam_code: "AT0-001"

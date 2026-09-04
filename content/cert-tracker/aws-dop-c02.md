@@ -1,6 +1,6 @@
 ---
 title: "DOP-C02: AWS DevOps Engineer Professional — Free Study Guide"
-description: "DOP-C02: the AWS DevOps Engineer Professional exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free DOP-C02 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. AWS DevOps Engineer Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DOP-C02"

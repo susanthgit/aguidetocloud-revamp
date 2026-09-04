@@ -1,6 +1,6 @@
 ---
 title: "CCIE-EI: Cisco CCIE Enterprise Infrastructure — Free Guide"
-description: "CCIE-EI: the Cisco CCIE Enterprise Infrastructure exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free CCIE-EI study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CCIE Enterprise Infrastructure."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CCIE-EI"

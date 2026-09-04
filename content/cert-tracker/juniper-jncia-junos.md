@@ -1,6 +1,6 @@
 ---
 title: "JNCIA-JUNOS: Juniper associate exam — Free Study Guide"
-description: "JNCIA-JUNOS: the Juniper Associate, Junos (JNCIA-Junos) exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free JNCIA-JUNOS study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Juniper Networks Certified Associate, Junos (JNCIA-Junos)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "JNCIA-JUNOS"

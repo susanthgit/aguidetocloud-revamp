@@ -1,6 +1,6 @@
 ---
 title: "EC-Council CSA (312-39) — Free Study Guide"
-description: "EC-Council Certified SOC Analyst (CSA v2, exam 312-39): the full SOC-analyst workflow across security operations and management, cyber threats and IoCs, log management, incident detection and triage with SIEM, proactive threat detection and threat hunting, incident response, forensics and malware analysis, and SOC for cloud environments. 250-question practice exam (20 free) plus a complete study guide covering the Cyber Kill Chain and MITRE ATT&CK, SIEM correlation and SIGMA rules, cyber threat intelligence, and cloud SOC on Azure Sentinel, AWS Security Hub, and GCP Security Command Center."
+description: "Free CSA study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. EC-Council Certified SOC Analyst (CSA)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "312-39"

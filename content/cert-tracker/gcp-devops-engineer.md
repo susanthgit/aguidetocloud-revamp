@@ -1,6 +1,6 @@
 ---
 title: "DEVOPS-ENGINEER: Google Cloud DevOps Engineer — Free Guide"
-description: "DEVOPS-ENGINEER: the Google Cloud DevOps Engineer exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free DEVOPS-ENGINEER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Google Cloud Professional Cloud DevOps Engineer."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DEVOPS-ENGINEER"

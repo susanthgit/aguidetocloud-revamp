@@ -1,6 +1,6 @@
 ---
 title: "Splunk Enterprise Certified Admin — Study Guide & Practice Exam"
-description: "Free Splunk Enterprise Certified Admin (SPLK-1003) study guide and 250-question practice exam. Master Splunk administration — components and licensing, configuration-file layering and precedence with btool, indexes and bucket lifecycle and retention, users and roles and LDAP/SAML/MFA authentication, forwarders and outputs.conf, the deployment server and Forwarder Management, distributed search, monitor/network/scripted/HEC inputs, and index-time parsing with props.conf, transforms.conf, and SEDCMD."
+description: "Free SPLUNK-ENTERPRISE-ADMIN study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Splunk Enterprise Certified Admin."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SPLUNK-ENTERPRISE-ADMIN"

@@ -1,6 +1,6 @@
 ---
 title: "OCI Cloud Operations Professional (1Z0-1067-26) — Study Guide & Practice Exam"
-description: "Oracle Cloud Infrastructure 2026 Cloud Operations Professional (1Z0-1067-26) study guide and 250-question practice exam. The six exam domains — deploying and managing resources with the OCI CLI and Resource Manager IaC; configuration management with Ansible and cloud-init; cost and performance optimization with Budgets, Compartment Quotas, Cloud Advisor and Resource Scheduler; reliability and business continuity with autoscaling and Full Stack Disaster Recovery; identity and security with IAM policies, OCI Vault and dynamic groups; and observability with alarms, logging, OS Management Hub and troubleshooting — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free OCI-CLOUD-OPERATIONS-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. OCI Cloud Operations Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-CLOUD-OPERATIONS-PROFESSIONAL"

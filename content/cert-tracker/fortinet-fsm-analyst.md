@@ -1,6 +1,6 @@
 ---
 title: "Fortinet NSE 6 - FortiSIEM 7.4 Analyst (NSE6_FSM_AN-7.4) — Free Study Guide"
-description: "Fortinet NSE 6 - FortiSIEM 7.4 Analyst (NSE6_FSM_AN-7.4): free 250-question practice exam + study guide covering FortiSIEM Analytics search queries, CMDB and lookup-table queries, FortiEDR security settings and playbooks, FortiSIEM rules and subpatterns, incidents, notifications and remediation, and ML, UEBA and ZTNA integration."
+description: "Free FSM-ANALYST study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Fortinet NSE 6 - FortiSIEM 7.4 Analyst (NSE6_FSM_AN-7.4)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NSE6_FSM_AN-7.4"

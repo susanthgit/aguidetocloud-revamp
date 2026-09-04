@@ -1,6 +1,6 @@
 ---
 title: "CCNA: Cisco CCNA (200-301) — Study Guide & Practice Exam"
-description: "Free CCNA study guide and 200-question practice exam. Cisco CCNA (200-301) — exam objectives, study resources, and exam simulation."
+description: "Free CCNA study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Cisco CCNA (200-301)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CCNA"

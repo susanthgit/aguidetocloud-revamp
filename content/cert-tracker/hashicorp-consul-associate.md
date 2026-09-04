@@ -1,6 +1,6 @@
 ---
 title: "CONSUL-ASSOCIATE: HashiCorp associate — Free Study Guide"
-description: "CONSUL-ASSOCIATE: the HashiCorp Consul Associate (003) exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free CONSUL-ASSOCIATE study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. HashiCorp Certified: Consul Associate (003)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CONSUL-ASSOCIATE"

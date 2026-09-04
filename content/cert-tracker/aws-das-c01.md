@@ -1,6 +1,6 @@
 ---
 title: "DAS-C01: AWS Data Analytics Specialty — Free Study Guide"
-description: "DAS-C01: the AWS Data Analytics Specialty exam. Free 200-question practice exam + study guide covering data services, modeling, pipelines, and analytics."
+description: "Free DAS-C01 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. AWS Data Analytics Specialty."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DAS-C01"

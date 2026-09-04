@@ -1,6 +1,6 @@
 ---
 title: "DA0-002: CompTIA Data+ — Study Guide & Practice Exam"
-description: "Free DA0-002 study guide and 200-question practice exam. CompTIA Data+ — exam objectives, study resources, and exam simulation."
+description: "Free DA0-002 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CompTIA Data+."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DA0-002"

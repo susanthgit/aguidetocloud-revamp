@@ -1,6 +1,6 @@
 ---
 title: "Oracle AI Database SQL Associate (1Z0-171) — Study Guide & Practice Exam"
-description: "Oracle AI Database SQL Associate (1Z0-171, Oracle Database 23ai SQL) study guide and 250-question practice exam. The six exam areas — relational concepts and retrieving, restricting and sorting data; single-row, conversion and aggregate functions; joins; subqueries and the SET operators; DML and DDL; and schema objects, user access, the data dictionary and time zones — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free ORACLE-AI-DATABASE-SQL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. AI Database SQL Associate."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ORACLE-AI-DATABASE-SQL"

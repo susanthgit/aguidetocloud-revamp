@@ -1,6 +1,6 @@
 ---
 title: "ML-ENGINEER: Google Cloud professional — Free Study Guide"
-description: "ML-ENGINEER: the Google Cloud Machine Learning Engineer exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free ML-ENGINEER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Google Cloud Professional Machine Learning Engineer."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ML-ENGINEER"

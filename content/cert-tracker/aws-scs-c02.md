@@ -1,6 +1,6 @@
 ---
 title: "SCS-C02: AWS Security Specialty — Free Study Guide"
-description: "SCS-C02: AWS Security Specialty. Free 200-question practice exam + study guide covering identity, threat protection, compliance, and security operations."
+description: "Free SCS-C02 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. AWS Security Specialty."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SCS-C02"

@@ -1,6 +1,6 @@
 ---
 title: "CDPSE: ISACA Data Privacy Solutions Engineer — Free Guide"
-description: "CDPSE: the ISACA Data Privacy Solutions Engineer exam. Free 200-question practice exam + study guide covering data privacy, GDPR, and privacy engineering."
+description: "Free CDPSE study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. ISACA Certified Data Privacy Solutions Engineer."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CDPSE"

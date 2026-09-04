@@ -1,6 +1,6 @@
 ---
 title: "AIF-C01: AWS AI Practitioner — Study Guide & Practice Exam"
-description: "Free AIF-C01 study guide and 200-question practice exam. AWS AI Practitioner — exam objectives, study resources, and exam simulation."
+description: "Free AIF-C01 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. AWS AI Practitioner."
 type: "cert-tracker"
 layout: "single"
 exam_code: "AIF-C01"

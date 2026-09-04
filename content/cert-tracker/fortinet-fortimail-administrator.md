@@ -1,6 +1,6 @@
 ---
 title: "Fortinet NSE 6 - FortiMail 7.4 Administrator (NSE6_FML_AD-7.4) — Free Study Guide"
-description: "Fortinet NSE 6 - FortiMail 7.4 Administrator (NSE6_FML_AD-7.4): free 250-question practice exam + study guide covering FortiMail operation modes (Gateway, Transparent, Server), the built-in MTA and mail-processing order, protected domains and high availability, access control rules, IP and recipient policies, SPF/DKIM/DMARC, session profiles and greylisting, FortiGuard AntiSpam, antivirus and FortiSandbox APT mitigation, content filtering and archiving, TLS, S/MIME, and Identity-Based Encryption (IBE)."
+description: "Free FORTIMAIL-ADMINISTRATOR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NSE6_FML_AD-7.4"

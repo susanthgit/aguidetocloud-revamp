@@ -1,6 +1,6 @@
 ---
 title: "AAISM: ISACA Advanced in AI Security Management — Free Study Guide"
-description: "AAISM: the ISACA Advanced in AI Security Management exam. Free 250-question practice exam + complete study guide covering AI governance, AI risk, and AI security controls (NIST AI RMF, ISO 42001, OWASP LLM Top 10)."
+description: "Free AAISM study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. ISACA Advanced in AI Security Management (AAISM)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "AAISM"

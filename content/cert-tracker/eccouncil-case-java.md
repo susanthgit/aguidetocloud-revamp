@@ -1,6 +1,6 @@
 ---
 title: "CASE Java: EC-Council Certified Application Security Engineer (Java) 312-96 — Free Study Guide"
-description: "CASE Java 312-96: the EC-Council Certified Application Security Engineer (Java) exam. Free study guide + 250-question practice exam covering secure Java coding — input validation and output encoding, injection defense, authentication and authorization, applied cryptography (JCA/JCE), session management, error handling and logging, SAST/DAST/SCA testing, and secure deployment, mapped to the OWASP Top 10 and CWE."
+description: "Free CASE-JAVA study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CASE-JAVA"

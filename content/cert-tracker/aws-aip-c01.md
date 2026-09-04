@@ -1,6 +1,6 @@
 ---
 title: "AWS Certified Generative AI Developer - Professional (AIP-C01) — Study Guide & Practice Exam"
-description: "AWS Certified Generative AI Developer - Professional (AIP-C01) study guide and 250-question practice exam. The five exam domains — Foundation Model Integration, Data Management and Compliance; Implementation and Integration; AI Safety, Security and Governance; Operational Efficiency and Optimization; and Testing, Validation and Troubleshooting — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free AIP-C01 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. AWS Generative AI Developer Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "AWS-AIP-C01"

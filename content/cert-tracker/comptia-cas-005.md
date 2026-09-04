@@ -1,6 +1,6 @@
 ---
 title: "CAS-005: CompTIA SecurityX — Study Guide & Practice Exam"
-description: "Free CAS-005 study guide and 200-question practice exam. CompTIA SecurityX — exam objectives, study resources, and exam simulation."
+description: "Free CAS-005 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CompTIA SecurityX."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CAS-005"

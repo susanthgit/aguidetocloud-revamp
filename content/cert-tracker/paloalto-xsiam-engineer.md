@@ -1,6 +1,6 @@
 ---
 title: "Palo Alto XSIAM Engineer Exam (XSIAM-Engineer): Study Guide & Practice Questions"
-description: "Free study guide for the Palo Alto Networks Certified XSIAM Engineer exam (XSIAM-Engineer). Covers Cortex XSIAM planning, installation, data-source integration, automation, detection content, and troubleshooting — plus a 250-question practice exam."
+description: "Free XSIAM-ENGINEER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "XSIAM-Engineer"

@@ -1,6 +1,6 @@
 ---
 title: "ORACLE-APEX-CLOUD-DEVELOPER-PROFESSIONAL: APEX Cloud Developer Professional — Study Guide & Practice Exam"
-description: "Free ORACLE-APEX-CLOUD-DEVELOPER-PROFESSIONAL study guide and 250-question practice exam. APEX Cloud Developer Professional — exam objectives, study resources, and exam simulation."
+description: "Free ORACLE-APEX-CLOUD-DEVELOPER-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ORACLE-APEX-CLOUD-DEVELOPER-PROFESSIONAL"

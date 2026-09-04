@@ -1,6 +1,6 @@
 ---
 title: "OCI 2026 DevOps Professional (1Z0-1109-26) — Study Guide & Practice Exam"
-description: "OCI 2026 DevOps Professional (1Z0-1109-26) study guide and 250-question practice exam. The six exam domains and weights — DevOps principles and containerization with Docker, OCIR and Container Instances; Infrastructure as Code with Terraform and OCI Resource Manager; CI/CD with the OCI DevOps service, Code Repositories, Build and Deployment Pipelines and deployment strategies; Oracle Kubernetes Engine (OKE); DevSecOps with OCI Vault and image signing; and Monitoring and Observability — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free OCI-DEVOPS-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Cloud Infrastructure 2026 DevOps Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-DEVOPS-PROFESSIONAL"

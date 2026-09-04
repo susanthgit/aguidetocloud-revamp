@@ -1,6 +1,6 @@
 ---
 title: "SnowPro Core (COF-C03) — Study Guide & Practice Exam"
-description: "Free SnowPro Core study guide and 250-question practice exam. Snowflake SnowPro Core Certification (COF-C03) — exam objectives, domains and weights, study resources, and exam simulation covering the AI Data Cloud architecture, data loading, performance, governance, and Secure Data Sharing."
+description: "Free SNOWPRO-CORE study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. SnowPro Core Certification."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SNOWPRO-CORE"

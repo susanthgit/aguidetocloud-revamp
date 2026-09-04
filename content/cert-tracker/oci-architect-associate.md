@@ -1,6 +1,6 @@
 ---
 title: "OCI 2026 Architect Associate (1Z0-1072-26) — Study Guide & Practice Exam"
-description: "Free OCI 2026 Architect Associate (1Z0-1072-26) study guide and 250-question practice exam. The six domains and weights — Identity and Access Management, Networking, Compute, Storage, Database, and Observability and Management — plus exam objectives, study resources, and timed exam simulation for the current Oracle Cloud Infrastructure Architect Associate certification."
+description: "Free OCI-ARCHITECT-ASSOCIATE study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Cloud Infrastructure 2026 Architect Associate."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-ARCHITECT-ASSOCIATE"

@@ -1,6 +1,6 @@
 ---
 title: "CGEIT: ISACA in the Governance of Enterprise IT — Free Guide"
-description: "CGEIT: the ISACA in the Governance of Enterprise IT exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free CGEIT study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. ISACA Certified in the Governance of Enterprise IT."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CGEIT"

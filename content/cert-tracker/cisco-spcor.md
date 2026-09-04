@@ -1,6 +1,6 @@
 ---
 title: "SPCOR: Cisco CCNP SPCOR (350-501) — Free Study Guide"
-description: "SPCOR: Cisco CCNP SPCOR (350-501). Free 200-question practice exam + study guide covering all skills measured domains, exam tips, and study resources."
+description: "Free SPCOR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Cisco CCNP SPCOR (350-501)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SPCOR"

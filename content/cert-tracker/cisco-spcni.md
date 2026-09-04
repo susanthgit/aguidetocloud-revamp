@@ -1,6 +1,6 @@
 ---
 title: "SPCNI: Cisco Service Provider Cloud Network Infrastructure (300-540) — Free Study Guide"
-description: "SPCNI 300-540: Designing and Implementing Cisco Service Provider Cloud Network Infrastructure. Free 250-question practice exam + study guide covering virtualized architecture, carrier-neutral and cloud interconnect, NFVI high availability, security, service assurance, and VNF optimization."
+description: "Free SPCNI study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SPCNI"

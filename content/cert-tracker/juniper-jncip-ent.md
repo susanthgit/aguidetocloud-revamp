@@ -1,6 +1,6 @@
 ---
 title: "JNCIP-ENT: Juniper professional exam — Free Study Guide"
-description: "JNCIP-ENT (JN0-650): the Juniper Networks Certified Professional, Enterprise Routing and Switching exam. Free 250-question practice exam plus a complete study guide covering advanced OSPF, BGP, IP multicast, spanning tree, Class of Service, and EVPN-VXLAN."
+description: "Free JNCIP-ENT study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "JNCIP-ENT"

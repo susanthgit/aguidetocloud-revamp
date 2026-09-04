@@ -1,6 +1,6 @@
 ---
 title: "Oracle Analytics Semantic Modeling Professional (1Z0-1175-26) — Study Guide & Practice Exam"
-description: "Oracle Analytics Semantic Modeling Professional (1Z0-1175-26) study guide and 250-question practice exam. The nine exam domains and weights — semantic models, self-service visualization, applying AI, machine learning, advanced analytics, security and performance, data preparation, data modeling concepts and data visualization — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free ORACLE-ANALYTICS-SEMANTIC-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ORACLE-ANALYTICS-SEMANTIC-PROFESSIONAL"

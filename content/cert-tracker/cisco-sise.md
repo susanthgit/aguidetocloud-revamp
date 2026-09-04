@@ -1,6 +1,6 @@
 ---
 title: "SISE: Implementing and Configuring Cisco ISE (300-715) — Free Study Guide"
-description: "SISE 300-715: Implementing and Configuring Cisco Identity Services Engine (ISE). Free 250-question practice exam + study guide covering ISE architecture and deployment, 802.1X and MAB policy enforcement, TrustSec, web auth and guest services, profiling, BYOD, endpoint posture and compliance, and TACACS+ device administration."
+description: "Free SISE study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Implementing and Configuring Cisco ISE (SISE 300-715)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SISE"

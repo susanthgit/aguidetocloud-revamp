@@ -4,9 +4,12 @@
 {{ $certPages = where $certPages "Layout" "ne" "roadmap" }}
 {{ $certCount := len $certPages }}
 {{ $vendorCount := len site.Data.vendors.vendor }}
+{{/* Derived so it cannot go stale: practice exams range from free to the dearest cert. */}}
+{{ $maxPrice := 0 }}
+{{ range $k, $v := site.Data.all_certs.cert_map }}{{ with $v.price_practice }}{{ if gt . $maxPrice }}{{ $maxPrice = . }}{{ end }}{{ end }}{{ end }}
 <div data-pagefind-body style="display:none" aria-hidden="true">
   <h2>Certification Study Guides & Practice Exams — {{ $certCount }} Certs, {{ $vendorCount }} Vendors</h2>
-  <p>Free study guides and practice exams for {{ $certCount }} certification exams across {{ $vendorCount }} vendors. Microsoft, AWS, CompTIA, Cisco, Google Cloud, ISC², ISACA, CNCF, HashiCorp, Juniper, Palo Alto, EC-Council, and Fortinet.</p>
+  <p>Free study guides for {{ $certCount }} certification exams across {{ $vendorCount }} vendors, plus practice exams — 20 free questions, then US$9 per cert for a year. Microsoft, AWS, CompTIA, Cisco, Google Cloud, ISC², ISACA, CNCF, HashiCorp, Juniper, Palo Alto, EC-Council, and Fortinet.</p>
   <p>Features: study progress tracking, retirement countdown, print checklist, prep time estimate, study plan generator, related exams cross-links, exam simulation, spaced repetition.</p>
 </div>
 <link rel="stylesheet" href="/css/cert-tracker.css?v={{ site.Params.cache_version }}">
@@ -127,10 +130,10 @@
   "@type": "WebApplication",
   "name": "Certification Study Guides & Practice Exams",
   "url": "https://www.aguidetocloud.com/cert-tracker/",
-  "description": "Free study guides and practice exams for {{ $certCount }} certification exams across {{ $vendorCount }} vendors. Microsoft, AWS, CompTIA, Cisco, Google Cloud, and more.",
+  "description": "Free study guides for {{ $certCount }} certification exams across {{ $vendorCount }} vendors, plus practice exams — 20 free questions, then US$9 per cert for a year. Microsoft, AWS, CompTIA, Cisco, Google Cloud, and more.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Any",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "offers": { "@type": "AggregateOffer", "lowPrice": "0", "highPrice": "{{ $maxPrice }}", "priceCurrency": "USD" },
   "author": { "@type": "Person", "name": "Susanth Sutheesh", "url": "https://www.aguidetocloud.com/about/" },
   "publisher": { "@type": "Organization", "name": "A Guide to Cloud & AI", "url": "https://www.aguidetocloud.com" },
   "datePublished": "{{ .Date.Format "2006-01-02" }}",

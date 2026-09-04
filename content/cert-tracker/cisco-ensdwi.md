@@ -1,6 +1,6 @@
 ---
 title: "ENSDWI: Implementing Cisco Catalyst SD-WAN Solutions (300-415) — Free Study Guide"
-description: "ENSDWI 300-415: Implementing Cisco Catalyst SD-WAN Solutions. Free 250-question practice exam + study guide covering SD-WAN architecture, controller and WAN Edge deployment, OMP and TLOCs, centralized and localized policies, segmentation, security, QoS, and operations."
+description: "Free ENSDWI study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ENSDWI"

@@ -1,6 +1,6 @@
 ---
 title: "Databricks Certified Machine Learning Associate — Study Guide & Practice Exam"
-description: "Free Databricks Certified Machine Learning Associate study guide and 250-question practice exam. Exam objectives, domains and weights, study resources, and exam simulation covering the Databricks Machine Learning platform, AutoML, Feature Engineering in Unity Catalog, MLflow, model development with Spark ML and Hyperopt, and model deployment."
+description: "Free DATABRICKS-ML-ASSOCIATE study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Certified Machine Learning Associate."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DATABRICKS-ML-ASSOCIATE"

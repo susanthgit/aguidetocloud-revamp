@@ -1,6 +1,6 @@
 ---
 title: "ENAUTO: Implementing Cisco Enterprise Network Automation Solutions (300-435) — Free Study Guide"
-description: "ENAUTO 300-435 (v2.0): the Cisco CCNP Enterprise / CCNP Automation concentration for enterprise network automation. Free 250-question practice exam + study guide covering YANG/NETCONF/RESTCONF foundations; device-level automation with Python (Netmiko, ncclient, napalm), Ansible, Day-0 ZTP/PnP and on-box EEM/Guest Shell; controller automation of Catalyst Center, Catalyst SD-WAN Manager and the Meraki Dashboard API with advanced Jinja2; operations with pyATS, Cisco Modeling Labs, telemetry and AIOps; and AI in automation including FastMCP."
+description: "Free ENAUTO study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ENAUTO"

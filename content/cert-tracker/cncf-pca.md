@@ -1,6 +1,6 @@
 ---
 title: "PCA: Prometheus Certified Associate exam — Free Study Guide"
-description: "PCA: the CNCF Prometheus Certified Associate exam. 250-question practice exam (20 free) plus a complete study guide covering PromQL, exporters, and Alertmanager, with exam tips."
+description: "Free PCA study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CNCF PCA (Prometheus Certified Associate)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "PCA"

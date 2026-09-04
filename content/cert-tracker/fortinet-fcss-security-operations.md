@@ -1,6 +1,6 @@
 ---
 title: "Fortinet NSE 7 - Security Operations 7.6 Architect (NSE7_SOC_AR-7.6) — Free Study Guide"
-description: "Fortinet NSE 7 - Security Operations 7.6 Architect (NSE7_SOC_AR-7.6): free 250-question practice exam + study guide covering SOC concepts and MITRE ATT&CK, Fortinet SOC architecture, FortiSIEM 7.3 incident rules and event queries, threat hunting, FortiSOAR 7.6 incident handling with queues, shifts and war rooms, and FortiSOAR playbook and connector development with Jinja."
+description: "Free FCSS-SECURITY-OPERATIONS study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NSE7_SOC_AR-7.6"

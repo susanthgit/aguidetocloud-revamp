@@ -1,6 +1,6 @@
 ---
 title: "SAA-C03: AWS Solutions Architect Associate — Free Guide"
-description: "SAA-C03: the AWS Solutions Architect Associate exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free SAA-C03 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. AWS Solutions Architect Associate."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SAA-C03"

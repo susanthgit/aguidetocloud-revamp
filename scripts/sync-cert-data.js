@@ -17,6 +17,7 @@
 const fs = require('fs');
 const path = require('path');
 const TOML = require('@iarna/toml');
+const { buildCertDescription } = require('./lib/cert-description');
 
 // ── Paths ──
 const GUIDED_CERTS_DIR = path.resolve(__dirname, '../../guided/src/content/certs');
@@ -474,7 +475,7 @@ function generateCertPages(certs) {
     const fm = [
       '---',
       `title: "${displayCode}: ${escapeTOML(c.name)} — Study Guide & Practice Exam"`,
-      `description: "Free ${displayCode} study guide and ${c.questions}-question practice exam. ${escapeTOML(c.name)} — exam objectives, study resources, and exam simulation."`,
+      `description: "${escapeTOML(buildCertDescription(c, displayCode))}"`,
       `type: "cert-tracker"`,
       `layout: "single"`,
       `exam_code: "${displayCode}"`,

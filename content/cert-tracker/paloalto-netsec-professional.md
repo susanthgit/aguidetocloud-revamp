@@ -1,6 +1,6 @@
 ---
 title: "NETSEC-PROFESSIONAL: Palo Alto exam — Free Study Guide"
-description: "NETSEC-PROFESSIONAL: the Palo Alto Network Security Professional exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free NETSEC-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NETSEC-PROFESSIONAL"

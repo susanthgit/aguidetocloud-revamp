@@ -1,6 +1,6 @@
 ---
 title: "SAP-C02: AWS Solutions Architect Professional — Free Guide"
-description: "SAP-C02: the AWS Solutions Architect Professional exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free SAP-C02 study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. AWS Solutions Architect Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SAP-C02"

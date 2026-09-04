@@ -1,6 +1,6 @@
 ---
 title: "HCISPP: (ISC)² HCISPP — Free Study Guide"
-description: "HCISPP: the (ISC)² HCISPP exam. Free 200-question practice exam + study guide covering healthcare information security, HIPAA, and patient data protection."
+description: "Free HCISPP study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. (ISC)² HCISPP."
 type: "cert-tracker"
 layout: "single"
 exam_code: "HCISPP"

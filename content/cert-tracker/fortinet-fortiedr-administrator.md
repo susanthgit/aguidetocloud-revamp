@@ -1,6 +1,6 @@
 ---
 title: "Fortinet NSE 6 - FortiEDR 7.0 Administrator (NSE6_EDR_AD-7.0) — Free Study Guide"
-description: "Fortinet NSE 6 - FortiEDR 7.0 Administrator (NSE6_EDR_AD-7.0): free 250-question practice exam + study guide covering FortiEDR architecture (Central Manager, Core, Aggregator, Collectors, and the Fortinet Cloud Service), deployment and collector groups, the Execution, Exfiltration, Ransomware, and Device Control security policies, Simulation vs Prevention mode, Communication Control, automated-response Playbooks, event classification and incident handling, Forensics and Threat Hunting, Security Fabric and FortiXDR integration, and troubleshooting."
+description: "Free FORTIEDR-ADMINISTRATOR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NSE6_EDR_AD-7.0"

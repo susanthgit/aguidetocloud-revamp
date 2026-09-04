@@ -1,6 +1,6 @@
 ---
 title: "Oracle AI Database@Azure Architect Professional (1Z0-1147) — Study Guide & Practice Exam"
-description: "Oracle AI Database@Azure Architect Professional (1Z0-1147) study guide and 250-question practice exam. The seven exam domains and weights — Introduction to Multicloud; Architecture and Onboarding; Networking; Provision and Operate Resources; Migration; HA and DR; and Security — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free ORACLE-DB-AZURE-ARCHITECT-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ORACLE-DB-AZURE-ARCHITECT-PROFESSIONAL"

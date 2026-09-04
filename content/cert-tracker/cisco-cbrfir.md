@@ -1,6 +1,6 @@
 ---
 title: "CBRFIR: Conducting Forensic Analysis and Incident Response (300-215) — Free Study Guide"
-description: "CBRFIR 300-215: Conducting Forensic Analysis and Incident Response Using Cisco Technologies for Cybersecurity. Free 250-question practice exam + study guide covering digital forensics fundamentals, YARA rules and deobfuscation, memory and host artifact analysis, MITRE ATT&CK fileless malware techniques, alert triage and correlation, threat intelligence and IOC/IOA analysis, NetFlow and Wireshark traffic analysis, and incident response playbooks."
+description: "Free CBRFIR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CBRFIR"

@@ -1,6 +1,6 @@
 ---
 title: "CBA: Certified Backstage Associate exam — Free Study Guide"
-description: "CBA: the CNCF Certified Backstage Associate exam. 250-question practice exam (20 free) plus a complete study guide covering the Backstage development workflow, infrastructure and architecture, the software catalog, and customizing Backstage with plugins, with exam tips."
+description: "Free CBA study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CNCF CBA (Certified Backstage Associate)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CBA"

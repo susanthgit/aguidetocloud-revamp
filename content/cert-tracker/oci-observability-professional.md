@@ -1,6 +1,6 @@
 ---
 title: "OCI Observability Professional (1Z0-1111-26) — Study Guide & Practice Exam"
-description: "Oracle Cloud Infrastructure 2026 Observability Professional (1Z0-1111-26) study guide and 250-question practice exam. The seven exam domains — Observability pillars; Monitoring metrics and alarms with MQL; real-time response with OCI Events; Logging and Connector Hub; Logging Analytics with Cluster and Link analysis; APM distributed tracing, RUM and Availability Monitoring; and Stack Monitoring — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free OCI-OBSERVABILITY-PROFESSIONAL study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. OCI Observability Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OCI-OBSERVABILITY-PROFESSIONAL"

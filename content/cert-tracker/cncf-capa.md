@@ -1,6 +1,6 @@
 ---
 title: "CAPA: Certified Argo Project Associate exam — Free Study Guide"
-description: "CAPA: the CNCF Certified Argo Project Associate exam. 250-question practice exam (20 free) plus a complete study guide covering Argo Workflows, Argo CD, Argo Rollouts, and Argo Events, with exam tips."
+description: "Free CAPA study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CNCF CAPA (Certified Argo Project Associate)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CAPA"

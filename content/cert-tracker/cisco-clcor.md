@@ -1,6 +1,6 @@
 ---
 title: "CLCOR: Cisco CCNP CLCOR (350-801) — Free Study Guide"
-description: "CLCOR: Cisco CCNP CLCOR (350-801). Free 200-question practice exam + study guide covering all skills measured domains, exam tips, and study resources."
+description: "Free CLCOR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Cisco CCNP CLCOR (350-801)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CLCOR"

@@ -1,6 +1,6 @@
 ---
 title: "DCID: Designing Cisco Data Center Infrastructure (300-610) — Free Study Guide"
-description: "DCID 300-610 (v1.2): the Cisco CCNP Data Center concentration for designing data center infrastructure for traditional and AI/ML workloads. Free 250-question practice exam + study guide covering network design (AI/ML networking, RoCEv2 vs InfiniBand, lossless Ethernet with PFC/ECN/DCQCN, vPC, VXLAN BGP EVPN, VRF-lite, DCI, Nexus Dashboard); compute design (Cisco UCS B/C/X-Series, Fabric Interconnect switch vs end-host mode, VIC adapters and service profiles); storage network design (Fibre Channel port types and oversubscription, VSAN, FCoE, iSCSI multipathing); and automation design (Cisco Intersight, NX-API, model-driven programmability, Ansible, Python, Terraform, service-profile templates, Intersight Cloud Orchestrator)."
+description: "Free DCID study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Designing Cisco Data Center Infrastructure (DCID 300-610)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DCID"

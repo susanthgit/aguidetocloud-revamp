@@ -1,6 +1,6 @@
 ---
 title: "Confluent Certified Cloud Operator (CCAC) — Free Study Guide"
-description: "Confluent Certified Cloud Operator (CCAC): free 250-question practice exam + study guide covering the Confluent Cloud resource model and cluster types (Basic, Standard, Enterprise, Dedicated, Freight; CKUs vs eCKUs), RBAC and scoped API keys, networking (PrivateLink, peering, Transit Gateway), Cluster Linking and disaster recovery, Stream Governance and Schema Registry, managed connectors and serverless Flink, and observability, client quotas, and cost with the Metrics API."
+description: "Free CONFLUENT-CCAC study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Confluent Certified Cloud Operator (CCAC)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CCAC"

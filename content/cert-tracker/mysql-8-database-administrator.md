@@ -1,6 +1,6 @@
 ---
 title: "MySQL 8.0 Database Administrator (1Z0-908) — Study Guide & Practice Exam"
-description: "MySQL 8.0 Database Administrator (1Z0-908) study guide and 250-question practice exam. The seven exam domains and weights — Architecture; Server Installation and Configuration; Security; Monitoring and Maintenance; Query Optimization; Backups and Recovery; and High Availability Techniques — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free MYSQL-8-DATABASE-ADMINISTRATOR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. MySQL 8.0 Database Administrator."
 type: "cert-tracker"
 layout: "single"
 exam_code: "MYSQL-8-DATABASE-ADMINISTRATOR"

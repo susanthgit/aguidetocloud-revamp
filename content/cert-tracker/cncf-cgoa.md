@@ -1,6 +1,6 @@
 ---
 title: "CGOA: Certified GitOps Associate exam — Free Study Guide"
-description: "CGOA: the CNCF Certified GitOps Associate exam. 250-question practice exam (20 free) plus a complete study guide covering GitOps terminology, the four OpenGitOps principles, related practices, GitOps patterns, and tooling, with exam tips."
+description: "Free CGOA study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CNCF CGOA (Certified GitOps Associate)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CGOA"

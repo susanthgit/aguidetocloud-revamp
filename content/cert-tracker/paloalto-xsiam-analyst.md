@@ -1,6 +1,6 @@
 ---
 title: "Palo Alto XSIAM Analyst Exam (XSIAM-Analyst): Study Guide & Practice Questions"
-description: "Free study guide for the Palo Alto Networks Certified XSIAM Analyst exam (XSIAM-Analyst). Covers Cortex XSIAM alert triage, incident investigation, XQL threat hunting, playbooks, endpoint response, and threat intelligence plus attack surface management — with a 250-question practice exam."
+description: "Free XSIAM-ANALYST study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "XSIAM-Analyst"

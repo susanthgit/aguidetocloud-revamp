@@ -1,6 +1,6 @@
 ---
 title: "Oracle Java SE 25 Developer (1Z0-831) — Study Guide & Practice Exam"
-description: "Oracle Certified Professional: Java SE 25 Developer (exam 1Z0-831) study guide and 250-question practice exam. Object-oriented programming with records and sealed types, streams and lambdas, virtual threads and concurrency, the module system, and Java 25 features such as flexible constructor bodies and instance main methods — plus exam objectives, study resources, and a timed exam simulation. Free 20-question preview."
+description: "Free ORACLE-JAVA-SE-25-DEVELOPER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Java SE 25 Developer Professional."
 type: "cert-tracker"
 layout: "single"
 exam_code: "ORACLE-JAVA-SE-25-DEVELOPER"

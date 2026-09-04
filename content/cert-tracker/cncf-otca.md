@@ -1,6 +1,6 @@
 ---
 title: "OTCA: OpenTelemetry Certified Associate exam — Free Study Guide"
-description: "OTCA: the CNCF OpenTelemetry Certified Associate exam. 250-question practice exam (20 free) plus a complete study guide covering OpenTelemetry — the three signals (traces, metrics, logs), the API and SDK, instrumentation, context propagation and OTLP, the Collector's receivers, processors, exporters, and connectors, and debugging observability pipelines, with exam tips."
+description: "Free OTCA study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. CNCF OTCA (OpenTelemetry Certified Associate)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "OTCA"

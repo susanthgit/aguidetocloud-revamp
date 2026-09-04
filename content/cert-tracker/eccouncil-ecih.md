@@ -1,6 +1,6 @@
 ---
 title: "EC-Council E|CIH (212-89) — Free Study Guide"
-description: "EC-Council Certified Incident Handler (E|CIH v3, exam 212-89): the full incident handling and response (IH&R) lifecycle across malware, email, network, web-application, cloud, insider-threat, and endpoint incidents. 250-question practice exam (20 free) plus a complete study guide covering the IH&R process, forensic readiness and first response, the order of volatility and chain of custody, cloud incident response on AWS, Azure, and GCP, and alignment to NIST SP 800-61, ISO/IEC 27035, SANS PICERL, and MITRE ATT&CK."
+description: "Free ECIH study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. EC-Council Certified Incident Handler (E|CIH)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "212-89"

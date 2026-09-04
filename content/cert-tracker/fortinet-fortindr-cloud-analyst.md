@@ -1,6 +1,6 @@
 ---
 title: "Fortinet NSE 6 - FortiNDR Cloud 26 Analyst (NSE6_NDR_AN-26) — Free Study Guide"
-description: "Fortinet NSE 6 - FortiNDR Cloud 26 Analyst (NSE6_NDR_AN-26): free 250-question practice exam + study guide covering FortiNDR Cloud architecture and sensors, protocol events and IQL (Intelligence Query Language) searches, detection analysis and tuning, and investigations, integrations and TTP-based threat hunting."
+description: "Free FORTINDR-CLOUD-ANALYST study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NSE6_NDR_AN-26"

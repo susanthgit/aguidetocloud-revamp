@@ -1,6 +1,6 @@
 ---
 title: "WORKSPACE-ADMIN: Google Cloud professional — Free Guide"
-description: "WORKSPACE-ADMIN: the Google Cloud Google Workspace Administrator exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free WORKSPACE-ADMIN study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "WORKSPACE-ADMIN"

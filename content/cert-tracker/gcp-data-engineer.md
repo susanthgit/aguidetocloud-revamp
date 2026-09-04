@@ -1,6 +1,6 @@
 ---
 title: "DATA-ENGINEER: Google Cloud Data Engineer — Free Study Guide"
-description: "DATA-ENGINEER: the Google Cloud Data Engineer exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free DATA-ENGINEER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Google Cloud Professional Data Engineer."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DATA-ENGINEER"

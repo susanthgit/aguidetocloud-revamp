@@ -1,6 +1,6 @@
 ---
 title: "DATABASE-ENGINEER: Google Cloud professional — Free Guide"
-description: "DATABASE-ENGINEER: the Google Cloud Database Engineer exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free DATABASE-ENGINEER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Google Cloud Professional Cloud Database Engineer."
 type: "cert-tracker"
 layout: "single"
 exam_code: "DATABASE-ENGINEER"

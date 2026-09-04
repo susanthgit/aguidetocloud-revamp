@@ -419,6 +419,9 @@ category = "certs"
 visual = "blocks"
 is_tool = true
 popular = true
+# Study guides are free, but practice exams are paid — so this tool must NOT
+# inherit the generic free-tool schema (price 0). See layouts/partials/seo-jsonld.html.
+has_paid = true
 
 [[tools]]
 url = "/cert-compass/"

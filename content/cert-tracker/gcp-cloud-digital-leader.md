@@ -1,6 +1,6 @@
 ---
 title: "CLOUD-DIGITAL-LEADER: Google Cloud fundamentals — Free Guide"
-description: "CLOUD-DIGITAL-LEADER: the Google Cloud Digital Leader exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free CLOUD-DIGITAL-LEADER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Google Cloud Digital Leader."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CLOUD-DIGITAL-LEADER"

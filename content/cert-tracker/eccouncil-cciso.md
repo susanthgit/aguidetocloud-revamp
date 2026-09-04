@@ -1,6 +1,6 @@
 ---
 title: "EC-Council CCISO (712-50) — Free Study Guide"
-description: "EC-Council Certified Chief Information Security Officer (CCISO, exam 712-50): the executive-level information-security leadership certification built to the current v4 blueprint. Covers governance, risk, compliance and audit management; organizational executive leadership; information security controls, program management and operations; core security competencies at the program level; and strategic planning, finance, procurement, and third-party management. 250-question practice exam (20 free) plus a complete study guide covering ISO 27001/31000, NIST CSF and RMF, board reporting and risk registers, security budgeting and ROI, the cloud shared-responsibility model, and third-party risk management."
+description: "Free CCISO study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. EC-Council Certified Chief Information Security Officer (CCISO)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "712-50"

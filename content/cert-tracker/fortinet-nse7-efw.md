@@ -1,6 +1,6 @@
 ---
 title: "NSE7-EFW: Fortinet professional exam — Free Study Guide"
-description: "NSE7-EFW: the Fortinet NSE 7 - Enterprise Firewall 7.6 exam. Free 200-question practice exam + complete study guide and exam tips."
+description: "Free NSE7-EFW study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Fortinet NSE 7 - Enterprise Firewall 7.6."
 type: "cert-tracker"
 layout: "single"
 exam_code: "NSE7-EFW"

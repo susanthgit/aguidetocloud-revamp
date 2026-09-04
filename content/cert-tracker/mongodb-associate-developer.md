@@ -1,6 +1,6 @@
 ---
 title: "MongoDB Associate Developer (C100DEV) — Study Guide & Practice Exam"
-description: "Free MongoDB Associate Developer study guide and 250-question practice exam. MongoDB Associate Developer certification (C100DEV) — exam objectives, domains and weights, study resources, and exam simulation covering the document model and BSON, CRUD and the MongoDB Query Language, the aggregation framework, indexes, data modeling, developer tooling, and the official language drivers."
+description: "Free MONGODB-ASSOCIATE-DEVELOPER study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. MongoDB Associate Developer."
 type: "cert-tracker"
 layout: "single"
 exam_code: "MONGODB-ASSOCIATE-DEVELOPER"

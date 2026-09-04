@@ -1,6 +1,6 @@
 ---
 title: "JNCIP-DC: Juniper professional exam — Free Study Guide"
-description: "JNCIP-DC (JN0-683): the Juniper Networks Certified Professional, Data Center exam. Free 250-question practice exam plus a complete study guide covering EVPN-VXLAN IP fabrics, VXLAN, EVPN signaling, Data Center Interconnect, and multitenancy on Junos."
+description: "Free JNCIP-DC study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "JNCIP-DC"

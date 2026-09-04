@@ -1,6 +1,6 @@
 ---
 title: "AUTOCOR: Designing, Deploying and Managing Network Automation Systems (350-901) — Free Study Guide"
-description: "AUTOCOR 350-901: the Cisco Certified Automation core exam (v2.0). Free 250-question practice exam + study guide covering network automation with Ansible, Terraform, RESTCONF/YANG and Python; infrastructure as code with Git, GitLab CE CI/CD, Cisco Modeling Labs and Docker; operations with model-driven telemetry, logging, pyATS validation and secure coding; and AI in automation with MCP servers, FastMCP and LLM-driven agents."
+description: "Free AUTOCOR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year."
 type: "cert-tracker"
 layout: "single"
 exam_code: "AUTOCOR"

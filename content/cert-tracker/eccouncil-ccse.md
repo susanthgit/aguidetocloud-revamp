@@ -1,6 +1,6 @@
 ---
 title: "EC-Council C|CSE (312-40) — Free Study Guide"
-description: "EC-Council Certified Cloud Security Engineer (C|CSE v2, exam 312-40): securing AWS, Azure, and GCP across platform, application, data, operations, penetration testing, incident response, forensics, BCDR, and governance. 250-question practice exam (20 free) plus a complete study guide covering the shared responsibility model, cloud-native security controls, key management, cloud pen testing, SOAR-driven incident response, cloud forensics, disaster recovery, and compliance with ISO/IEC 27017, PCI DSS, and HIPAA."
+description: "Free CCSE study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. EC-Council Certified Cloud Security Engineer (C|CSE)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "312-40"

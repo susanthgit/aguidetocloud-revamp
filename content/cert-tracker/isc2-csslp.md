@@ -1,6 +1,6 @@
 ---
 title: "CSSLP: (ISC)² CSSLP — Free Study Guide"
-description: "CSSLP: the (ISC)² CSSLP exam. Free 200-question practice exam + study guide covering identity, threat protection, compliance, and security operations."
+description: "Free CSSLP study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. (ISC)² CSSLP."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CSSLP"
