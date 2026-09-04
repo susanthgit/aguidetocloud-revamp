@@ -45,6 +45,11 @@ const LIMIT = limitIdx !== -1 ? parseInt(process.argv[limitIdx + 1], 10) : Infin
 // earlier pass replaced 8 real exam codes (1Z0-1147, SPLK-1005 ...) with the
 // slug shouted back, destroying the only copy of the code on the page. Judging
 // and rebuilding from the baseline makes this pass idempotent and recoverable.
+//
+// WARNING: --baseline judges the description as it was AT THAT REVISION, not the
+// one on disk (see `original` below). It is a recovery mode, NOT a current-state
+// audit -- a false claim sitting on disk right now is invisible to it. To ask
+// "is anything still wrong today?", run with no --baseline.
 const baseIdx = process.argv.indexOf('--baseline');
 const BASELINE = baseIdx !== -1 ? process.argv[baseIdx + 1] : null;
 
@@ -147,6 +152,10 @@ function main() {
   }
 
   console.log(`\n${APPLY ? 'APPLIED' : 'DRY RUN'} — cert description migration\n`);
+  if (BASELINE) {
+    console.log(`  NOTE: judging descriptions as of ${BASELINE}, not as they are on disk.`);
+    console.log(`        This is recovery mode. For a current-state audit, drop --baseline.\n`);
+  }
   console.log(`  scanned            : ${files.length}`);
   console.log(`  would change       : ${changed.length}`);
   console.log(`  skipped (truthful) : ${skipped.length}`);
