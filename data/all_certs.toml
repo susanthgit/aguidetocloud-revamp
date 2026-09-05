@@ -13633,3 +13633,50 @@ exam_prerequisites = "None required. ServiceNow recommends completing the Servic
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/servicenow-csa/"
 practice_url = "/guided/servicenow-csa/practice/"
+
+[[cert]]
+slug = "servicenow-cis-discovery"
+vendor = "servicenow"
+code = "SERVICENOW-CIS-DISCOVERY"
+name = "ServiceNow Certified Implementation Specialist – Discovery"
+tagline = "Master the ServiceNow Certified Implementation Specialist – Discovery exam: tell a pattern apart from a classify-and-identify probe when a device refuses to come back as the right class, work out why a credential that tests green still fails on one MID Server and not another, read an ECC queue record back to the Discovery phase that produced it, decide whether a duplicate configuration item is an identification rule problem or a reconciliation one, and size and place a MID Server before the schedule runs rather than after it. Before you buy: this bank covers eleven of the blueprint's twelve objectives. Objective 1.2 - Match, Parse Variable, Parse File and parsing strategies - is not included, because ServiceNow does not publish enough documentation on those operations to ground exam-quality questions."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 1017
+featured = false
+price_practice = 9
+exam_url = "https://learning.servicenow.com/lxp/en/credentials/certified-implementation-specialist-discovery-mainline-exam?id=kb_article_view&sysparm_article=KB0011545"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = "Not published — ServiceNow uses a predetermined cut score that it states is not always 70%"
+guided_url = "/guided/servicenow-cis-discovery/"
+
+[cert_map."servicenow-cis-discovery"]
+vendor = "servicenow"
+code = "SERVICENOW-CIS-DISCOVERY"
+name = "ServiceNow Certified Implementation Specialist – Discovery"
+tagline = "Master the ServiceNow Certified Implementation Specialist – Discovery exam: tell a pattern apart from a classify-and-identify probe when a device refuses to come back as the right class, work out why a credential that tests green still fails on one MID Server and not another, read an ECC queue record back to the Discovery phase that produced it, decide whether a duplicate configuration item is an identification rule problem or a reconciliation one, and size and place a MID Server before the schedule runs rather than after it. Before you buy: this bank covers eleven of the blueprint's twelve objectives. Objective 1.2 - Match, Parse Variable, Parse File and parsing strategies - is not included, because ServiceNow does not publish enough documentation on those operations to ground exam-quality questions."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 1017
+featured = false
+price_practice = 9
+exam_url = "https://learning.servicenow.com/lxp/en/credentials/certified-implementation-specialist-discovery-mainline-exam?id=kb_article_view&sysparm_article=KB0011545"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = "Not published — ServiceNow uses a predetermined cut score that it states is not always 70%"
+exam_questions_real = "45"
+exam_provider = "Pearson VUE (onsite test centre or OnVUE online proctored)"
+exam_validity = "Maintained through annual delta maintenance exams plus the yearly Certification Maintenance Program (CMP) fee"
+exam_prerequisites = "Certified Implementation Specialist – Data Foundations (CMDB and CSDM) certification is required before registering"
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/servicenow-cis-discovery/"
+practice_url = "/guided/servicenow-cis-discovery/practice/"
