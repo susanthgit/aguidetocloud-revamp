@@ -5,14 +5,23 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sat, 05 Sep 2026 00:00:22 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 04:19:54 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users may be unable to query Microsoft 365 Copilot Chat and receive an error</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1467407</link>
+      <description>[Microsoft 365 Copilot Chat] Users may be unable to query Copilot Chat and receive an error.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1467407</guid>
+      <pubDate>Sat, 05 Sep 2026 01:45:26 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Users may not be able to open support central in Microsoft Intune and Microsoft Defender portals</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1467282</link>
-      <description>[Microsoft 365 suite] Users may not be able to open support central in Microsoft Intune and Microsoft Defender portals.</description>
+      <description>[Microsoft 365 suite] Users may have not been able to open support central in Microsoft Intune and Microsoft Defender portals.</description>
       <category>Microsoft 365 suite</category>
-      <category>serviceDegradation</category>
+      <category>serviceRestored</category>
       <guid isPermaLink="false">MO1467282</guid>
       <pubDate>Fri, 04 Sep 2026 18:44:09 +0000</pubDate>
     </item>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">TM1457081</guid>
       <pubDate>Thu, 13 Aug 2026 08:21:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Teams] Some users may experience degraded video quality when screensharing in Microsoft Teams</title>
-      <link>https://www.aguidetocloud.com/service-health/#TM1460590</link>
-      <description>[Microsoft Teams] Users may have experienced degraded video quality when screensharing in Microsoft Teams.</description>
-      <category>Microsoft Teams</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">TM1460590</guid>
-      <pubDate>Thu, 13 Aug 2026 05:56:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
