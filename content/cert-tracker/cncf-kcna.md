@@ -71,10 +71,10 @@ Start with KCNA (Kubernetes & Cloud Native Associate) for fundamentals, then CKA
 
 If you're studying for the KCNA, you might also be interested in these CNCF certifications:
 
-- **[CKA: CNCF CKA (Certified Kubernetes Administrator)](/cert-tracker/cncf-cka/)** — 200 practice questions
-- **[KCSA: CNCF KCSA (Kubernetes and Cloud Native Security Associate)](/cert-tracker/cncf-kcsa/)** — 200 practice questions
-- **[CKAD: CNCF CKAD (Certified Kubernetes Application Developer)](/cert-tracker/cncf-ckad/)** — 200 practice questions
-- **[CKS: Certified Kubernetes Security Specialist](/cert-tracker/cncf-cks/)** — 200 practice questions
+- **[CKA: CNCF CKA (Certified Kubernetes Administrator)](/cert-tracker/cncf-cka/)** — 250 practice questions
+- **[KCSA: CNCF KCSA (Kubernetes and Cloud Native Security Associate)](/cert-tracker/cncf-kcsa/)** — 250 practice questions
+- **[CKAD: CNCF CKAD (Certified Kubernetes Application Developer)](/cert-tracker/cncf-ckad/)** — 250 practice questions
+- **[CKS: Certified Kubernetes Security Specialist](/cert-tracker/cncf-cks/)** — 250 practice questions
 
 ## Study Tips
 

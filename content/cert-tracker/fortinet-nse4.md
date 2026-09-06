@@ -85,8 +85,8 @@ Fortinet NSE follows levels 1-8. NSE 4 (FortiGate) is the standard starting poin
 
 If you're studying for the NSE4, you might also be interested in these Fortinet certifications:
 
-- **[NSE5-FMG: FCP - FortiManager 7.4 Administrator](/cert-tracker/fortinet-nse5-fmg/)** — 200 practice questions
-- **[NSE7-EFW: Fortinet NSE 7 - Enterprise Firewall 7.6](/cert-tracker/fortinet-nse7-efw/)** — 200 practice questions
+- **[NSE5-FMG: FCP - FortiManager 7.4 Administrator](/cert-tracker/fortinet-nse5-fmg/)** — 250 practice questions
+- **[NSE7-EFW: Fortinet NSE 7 - Enterprise Firewall 7.6](/cert-tracker/fortinet-nse7-efw/)** — 250 practice questions
 
 ## Study Tips
 

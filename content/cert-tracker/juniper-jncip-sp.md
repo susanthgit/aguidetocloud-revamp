@@ -81,7 +81,7 @@ If you're studying for the JNCIP-SP, you might also be interested in these Junip
 - **[JNCIP-ENT: Juniper Networks Certified Professional, Enterprise Routing and Switching (JNCIP-ENT)](/cert-tracker/juniper-jncip-ent/)** — 250 practice questions
 - **[JNCIP-DC: Juniper Networks Certified Professional Data Center (JNCIP-DC)](/cert-tracker/juniper-jncip-dc/)** — 250 practice questions
 - **[JNCIA-JUNOS: Juniper Networks Certified Associate, Junos (JNCIA-Junos)](/cert-tracker/juniper-jncia-junos/)** — 250 practice questions
-- **[JNCIS-ENT: Juniper Networks Certified Specialist, Enterprise Routing and Switching (JNCIS-ENT)](/cert-tracker/juniper-jncis-ent/)** — 250 practice questions
+- **[JNCIS-ENT: Juniper Networks Certified Specialist, Enterprise Routing and Switching (JNCIS-ENT)](/cert-tracker/juniper-jncis-ent/)** — 249 practice questions
 
 ## Study Tips
 

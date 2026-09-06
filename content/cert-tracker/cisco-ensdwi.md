@@ -74,9 +74,9 @@ Cisco certs follow: Entry (CCT) → Associate (CCNA) → Professional (CCNP) →
 If you're studying for the ENSDWI, you might also be interested in these Cisco certifications:
 
 - **[ENCOR: Cisco CCNP ENCOR (350-401)](/cert-tracker/cisco-encor/)** — the CCNP Enterprise core that pairs with ENSDWI — 250 practice questions
-- **[SCOR: Cisco CCNP SCOR (350-701)](/cert-tracker/cisco-scor/)** — 200 practice questions
-- **[DEVCOR: Cisco DevNet Professional (350-901)](/cert-tracker/cisco-devcor/)** — 200 practice questions
-- **[DCCOR: Cisco CCNP DCCOR (350-601)](/cert-tracker/cisco-dccor/)** — 200 practice questions
+- **[SCOR: Cisco CCNP SCOR (350-701)](/cert-tracker/cisco-scor/)** — 300 practice questions
+- **[DEVCOR: Cisco DevNet Professional (350-901)](/cert-tracker/cisco-devcor/)** — 250 practice questions
+- **[DCCOR: Cisco CCNP DCCOR (350-601)](/cert-tracker/cisco-dccor/)** — 250 practice questions
 - **[CCNA: Cisco Certified Network Associate (200-301)](/cert-tracker/cisco-ccna/)** — 250 practice questions
 
 ## Study Tips

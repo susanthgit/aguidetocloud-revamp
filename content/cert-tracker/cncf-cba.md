@@ -72,7 +72,7 @@ Start with KCNA (Kubernetes and Cloud Native Associate) for cloud native fundame
 If you're studying for the CBA, you might also be interested in these CNCF certifications:
 
 - **[CGOA: CNCF Certified GitOps Associate](/cert-tracker/cncf-cgoa/)** — 250 practice questions
-- **[KCNA: CNCF Kubernetes and Cloud Native Associate](/cert-tracker/cncf-kcna/)** — 250 practice questions
+- **[KCNA: CNCF Kubernetes and Cloud Native Associate](/cert-tracker/cncf-kcna/)** — 200 practice questions
 - **[CKAD: CNCF CKAD (Certified Kubernetes Application Developer)](/cert-tracker/cncf-ckad/)** — 250 practice questions
 - **[CAPA: CNCF Certified Argo Project Associate](/cert-tracker/cncf-capa/)** — 250 practice questions
 

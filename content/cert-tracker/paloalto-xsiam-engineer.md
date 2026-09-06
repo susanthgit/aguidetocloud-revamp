@@ -73,7 +73,7 @@ If you're studying for the XSIAM-Engineer, you might also be interested in these
 
 - **[Cloud Security Professional (CloudSec-Pro)](/cert-tracker/paloalto-cloud-security-professional/)** — 250 practice questions
 - **[SSE Engineer (SSE-Engineer)](/cert-tracker/paloalto-sse-engineer/)** — 250 practice questions
-- **[Network Security Professional (NetSec-Professional)](/cert-tracker/paloalto-netsec-professional/)** — 200 practice questions
+- **[Network Security Professional (NetSec-Professional)](/cert-tracker/paloalto-netsec-professional/)** — 250 practice questions
 
 ## Study Tips
 

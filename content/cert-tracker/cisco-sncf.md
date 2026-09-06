@@ -71,8 +71,8 @@ Cisco certs follow: Entry (CCT) → Associate (CCNA) → Professional (CCNP) →
 
 If you're studying for the SNCF, you might also be interested in these Cisco certifications:
 
-- **[SCOR: Cisco CCNP SCOR (350-701)](/cert-tracker/cisco-scor/)** — the CCNP Security core that pairs with SNCF — 200 practice questions
-- **[CyberOps: Cisco Certified CyberOps Associate (200-201)](/cert-tracker/cisco-cyberops/)** — 200 practice questions
+- **[SCOR: Cisco CCNP SCOR (350-701)](/cert-tracker/cisco-scor/)** — the CCNP Security core that pairs with SNCF — 300 practice questions
+- **[CyberOps: Cisco Certified CyberOps Associate (200-201)](/cert-tracker/cisco-cyberops/)** — 250 practice questions
 - **[ENCOR: Cisco CCNP ENCOR (350-401)](/cert-tracker/cisco-encor/)** — 250 practice questions
 - **[ENSDWI: Implementing Cisco Catalyst SD-WAN Solutions (300-415)](/cert-tracker/cisco-ensdwi/)** — 250 practice questions
 - **[CCNA: Cisco Certified Network Associate (200-301)](/cert-tracker/cisco-ccna/)** — 250 practice questions

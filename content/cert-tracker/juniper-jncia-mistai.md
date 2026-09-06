@@ -89,7 +89,7 @@ If you're studying for the JNCIA-MistAI, you might also be interested in these J
 
 - **[JNCIA-Cloud: Juniper Networks Certified Associate, Cloud (JNCIA-Cloud)](/cert-tracker/juniper-jncia-cloud/)** — 250 practice questions
 - **[JNCIA-Junos: Juniper Networks Certified Associate, Junos (JNCIA-Junos)](/cert-tracker/juniper-jncia-junos/)** — 250 practice questions
-- **[JNCIS-ENT: Juniper Networks Certified Specialist, Enterprise Routing and Switching (JNCIS-ENT)](/cert-tracker/juniper-jncis-ent/)** — 250 practice questions
+- **[JNCIS-ENT: Juniper Networks Certified Specialist, Enterprise Routing and Switching (JNCIS-ENT)](/cert-tracker/juniper-jncis-ent/)** — 249 practice questions
 
 ## Study Tips
 

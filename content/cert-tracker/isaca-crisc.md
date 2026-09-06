@@ -72,10 +72,10 @@ ISACA certs are role-based, not hierarchical. CISA for auditors, CISM for securi
 
 If you're studying for the CRISC, you might also be interested in these ISACA certifications:
 
-- **[CDPSE: ISACA Certified Data Privacy Solutions Engineer](/cert-tracker/isaca-cdpse/)** — 200 practice questions
-- **[CGEIT: ISACA Certified in the Governance of Enterprise IT](/cert-tracker/isaca-cgeit/)** — 200 practice questions
-- **[CISA: ISACA Certified Information Systems Auditor](/cert-tracker/isaca-cisa/)** — 200 practice questions
-- **[CISM: ISACA Certified Information Security Manager](/cert-tracker/isaca-cism/)** — 200 practice questions
+- **[CDPSE: ISACA Certified Data Privacy Solutions Engineer](/cert-tracker/isaca-cdpse/)** — 250 practice questions
+- **[CGEIT: ISACA Certified in the Governance of Enterprise IT](/cert-tracker/isaca-cgeit/)** — 250 practice questions
+- **[CISA: ISACA Certified Information Systems Auditor](/cert-tracker/isaca-cisa/)** — 250 practice questions
+- **[CISM: ISACA Certified Information Security Manager](/cert-tracker/isaca-cism/)** — 250 practice questions
 
 ## Study Tips
 

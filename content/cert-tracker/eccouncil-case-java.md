@@ -75,9 +75,9 @@ EC-Council's application-security track centers on **CASE (Certified Application
 
 If you're studying for CASE Java, you might also be interested in these EC-Council certifications:
 
-- **[CEH v13: EC-Council Certified Ethical Hacker (312-50)](/cert-tracker/eccouncil-ceh-v13/)** — the offensive side: find the flaws CASE teaches you to prevent — 200 practice questions
+- **[CEH v13: EC-Council Certified Ethical Hacker (312-50)](/cert-tracker/eccouncil-ceh-v13/)** — the offensive side: find the flaws CASE teaches you to prevent — 250 practice questions
 - **[CCSE: EC-Council Certified Cloud Security Engineer](/cert-tracker/eccouncil-ccse/)** — cloud application and platform security — 250 practice questions
-- **[CND v3: EC-Council Certified Network Defender](/cert-tracker/eccouncil-cnd-v3/)** — defensive security fundamentals — 200 practice questions
+- **[CND v3: EC-Council Certified Network Defender](/cert-tracker/eccouncil-cnd-v3/)** — defensive security fundamentals — 250 practice questions
 - **[CTIA: EC-Council Certified Threat Intelligence Analyst](/cert-tracker/eccouncil-ctia/)** — threat intelligence for AppSec context — 250 practice questions
 
 ## Study Tips

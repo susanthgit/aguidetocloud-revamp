@@ -75,7 +75,7 @@ Start with KCNA (Kubernetes and Cloud Native Associate) for cloud native fundame
 
 If you're studying for the CCA, you might also be interested in these CNCF certifications:
 
-- **[KCNA: CNCF Kubernetes and Cloud Native Associate](/cert-tracker/cncf-kcna/)** — 250 practice questions
+- **[KCNA: CNCF Kubernetes and Cloud Native Associate](/cert-tracker/cncf-kcna/)** — 200 practice questions
 - **[CKS: CNCF Certified Kubernetes Security Specialist](/cert-tracker/cncf-cks/)** — 250 practice questions
 - **[PCA: CNCF Prometheus Certified Associate](/cert-tracker/cncf-pca/)** — 250 practice questions
 - **[CAPA: CNCF Certified Argo Project Associate](/cert-tracker/cncf-capa/)** — 250 practice questions

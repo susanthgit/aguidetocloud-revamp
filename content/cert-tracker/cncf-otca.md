@@ -72,7 +72,7 @@ Start with KCNA (Kubernetes and Cloud Native Associate) for cloud native fundame
 If you're studying for the OTCA, you might also be interested in these CNCF certifications:
 
 - **[PCA: CNCF Prometheus Certified Associate](/cert-tracker/cncf-pca/)** — 250 practice questions
-- **[KCNA: CNCF Kubernetes and Cloud Native Associate](/cert-tracker/cncf-kcna/)** — 250 practice questions
+- **[KCNA: CNCF Kubernetes and Cloud Native Associate](/cert-tracker/cncf-kcna/)** — 200 practice questions
 - **[CGOA: CNCF Certified GitOps Associate](/cert-tracker/cncf-cgoa/)** — 250 practice questions
 - **[CCA: CNCF Certified Cilium Associate](/cert-tracker/cncf-cca/)** — 250 practice questions
 

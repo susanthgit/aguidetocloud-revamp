@@ -71,8 +71,8 @@ Palo Alto follows: Apprentice → Analyst → Professional. Cybersecurity Appren
 
 If you're studying for the NETSEC-ANALYST, you might also be interested in these Palo Alto certifications:
 
-- **[CYBERSEC-APPRENTICE: Palo Alto Networks Certified Cybersecurity Apprentice](/cert-tracker/paloalto-cybersec-apprentice/)** — 200 practice questions
-- **[NETSEC-PROFESSIONAL: Palo Alto Networks Certified Network Security Professional](/cert-tracker/paloalto-netsec-professional/)** — 200 practice questions
+- **[CYBERSEC-APPRENTICE: Palo Alto Networks Certified Cybersecurity Apprentice](/cert-tracker/paloalto-cybersec-apprentice/)** — 250 practice questions
+- **[NETSEC-PROFESSIONAL: Palo Alto Networks Certified Network Security Professional](/cert-tracker/paloalto-netsec-professional/)** — 250 practice questions
 
 ## Study Tips
 

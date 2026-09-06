@@ -75,7 +75,7 @@ If you're studying for the ENARSI, you might also be interested in these Cisco c
 - **[ENSDWI: Cisco CCNP ENSDWI (300-415)](/cert-tracker/cisco-ensdwi/)** — 250 practice questions
 - **[ENAUTO: Implementing Cisco Enterprise Network Automation (300-435)](/cert-tracker/cisco-enauto/)** — 250 practice questions
 - **[CCNA: Cisco Certified Network Associate (200-301)](/cert-tracker/cisco-ccna/)** — 250 practice questions
-- **[SCOR: Cisco CCNP SCOR (350-701)](/cert-tracker/cisco-scor/)** — 250 practice questions
+- **[SCOR: Cisco CCNP SCOR (350-701)](/cert-tracker/cisco-scor/)** — 300 practice questions
 
 ## Study Tips
 

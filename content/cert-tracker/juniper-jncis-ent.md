@@ -75,8 +75,8 @@ Juniper follows: Associate (JNCIA) → Specialist (JNCIS) → Professional (JNCI
 
 If you're studying for the JNCIS-ENT, you might also be interested in these Juniper certifications:
 
-- **[JNCIA-JUNOS: Juniper Networks Certified Associate, Junos (JNCIA-Junos)](/cert-tracker/juniper-jncia-junos/)** — 200 practice questions
-- **[JNCIP-SEC: Juniper Networks Certified Professional, Security (JNCIP-SEC)](/cert-tracker/juniper-jncip-sec/)** — 200 practice questions
+- **[JNCIA-JUNOS: Juniper Networks Certified Associate, Junos (JNCIA-Junos)](/cert-tracker/juniper-jncia-junos/)** — 250 practice questions
+- **[JNCIP-SEC: Juniper Networks Certified Professional, Security (JNCIP-SEC)](/cert-tracker/juniper-jncip-sec/)** — 250 practice questions
 
 ## Study Tips
 

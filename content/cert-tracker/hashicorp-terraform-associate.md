@@ -76,8 +76,8 @@ Each HashiCorp cert is standalone at Associate level. Terraform Associate is the
 
 If you're studying for the TERRAFORM-ASSOCIATE, you might also be interested in these HashiCorp certifications:
 
-- **[CONSUL-ASSOCIATE: HashiCorp Certified: Consul Associate (003)](/cert-tracker/hashicorp-consul-associate/)** — 200 practice questions
-- **[VAULT-ASSOCIATE: HashiCorp Certified: Vault Associate (003)](/cert-tracker/hashicorp-vault-associate/)** — 200 practice questions
+- **[CONSUL-ASSOCIATE: HashiCorp Certified: Consul Associate (003)](/cert-tracker/hashicorp-consul-associate/)** — 250 practice questions
+- **[VAULT-ASSOCIATE: HashiCorp Certified: Vault Associate (003)](/cert-tracker/hashicorp-vault-associate/)** — 250 practice questions
 
 ## Study Tips
 

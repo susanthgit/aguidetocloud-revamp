@@ -81,8 +81,8 @@ If you're studying for the C|CSE exam, you might also be interested in these EC-
 
 - **[CTIA: EC-Council Certified Threat Intelligence Analyst](/cert-tracker/eccouncil-ctia/)** — 250 practice questions
 - **[CEH-V13: EC-Council Certified Ethical Hacker (CEH) v13](/cert-tracker/eccouncil-ceh-v13/)** — 250 practice questions
-- **[CHFI-V11: EC-Council Certified Hacking Forensic Investigator v11](/cert-tracker/eccouncil-chfi-v11/)** — 200 practice questions
-- **[CND-V3: EC-Council Certified Network Defender v3](/cert-tracker/eccouncil-cnd-v3/)** — 200 practice questions
+- **[CHFI-V11: EC-Council Certified Hacking Forensic Investigator v11](/cert-tracker/eccouncil-chfi-v11/)** — 250 practice questions
+- **[CND-V3: EC-Council Certified Network Defender v3](/cert-tracker/eccouncil-cnd-v3/)** — 250 practice questions
 
 ## Study Tips
 

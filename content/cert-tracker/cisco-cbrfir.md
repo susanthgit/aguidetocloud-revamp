@@ -75,7 +75,7 @@ If you're studying for the CBRFIR, you might also be interested in these Cisco c
 
 - **[CBRCOR: Performing Cybersecurity Using Cisco Security Technologies (350-201)](/cert-tracker/cisco-cbrcor/)** — the CCNP Cybersecurity CORE exam; you need this plus CBRFIR to earn the full CCNP — 250 practice questions
 - **[CyberOps: Cisco CyberOps Associate (200-201)](/cert-tracker/cisco-cyberops/)** — the associate-level SOC monitoring exam that feeds naturally into CBRFIR — 250 practice questions
-- **[SCOR: Cisco CCNP SCOR (350-701)](/cert-tracker/cisco-scor/)** — the CCNP Security core, covering the Cisco security portfolio end to end — 250 practice questions
+- **[SCOR: Cisco CCNP SCOR (350-701)](/cert-tracker/cisco-scor/)** — the CCNP Security core, covering the Cisco security portfolio end to end — 300 practice questions
 - **[SDSI: Designing Cisco Security Infrastructure (300-745)](/cert-tracker/cisco-sdsi/)** — the security-architecture DESIGN concentration — 250 practice questions
 - **[SNCF: Securing Networks with Cisco Firewalls (300-710)](/cert-tracker/cisco-sncf/)** — Secure Firewall and NGIPS, a common source of the alerts you triage — 250 practice questions
 - **[SCAZT: Designing and Implementing Secure Cloud Access (300-740)](/cert-tracker/cisco-scazt/)** — SSE, SASE and ZTNA — 250 practice questions

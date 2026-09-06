@@ -71,7 +71,7 @@ Start with KCNA (Kubernetes and Cloud Native Associate) for cloud native fundame
 
 If you're studying for the CAPA, you might also be interested in these CNCF certifications:
 
-- **[KCNA: CNCF Kubernetes and Cloud Native Associate](/cert-tracker/cncf-kcna/)** — 250 practice questions
+- **[KCNA: CNCF Kubernetes and Cloud Native Associate](/cert-tracker/cncf-kcna/)** — 200 practice questions
 - **[CKAD: CNCF CKAD (Certified Kubernetes Application Developer)](/cert-tracker/cncf-ckad/)** — 250 practice questions
 - **[PCA: CNCF Prometheus Certified Associate](/cert-tracker/cncf-pca/)** — 250 practice questions
 - **[CKA: CNCF CKA (Certified Kubernetes Administrator)](/cert-tracker/cncf-cka/)** — 250 practice questions

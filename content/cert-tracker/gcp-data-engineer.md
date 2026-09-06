@@ -73,10 +73,10 @@ GCP certs follow: Foundational (Cloud Digital Leader) → Associate (Cloud Engin
 If you're studying for the DATA-ENGINEER, you might also be interested in these GCP certifications:
 
 - **[CLOUD-DIGITAL-LEADER: Google Cloud Digital Leader](/cert-tracker/gcp-cloud-digital-leader/)** — 200 practice questions
-- **[CLOUD-ARCHITECT: Google Cloud Professional Cloud Architect](/cert-tracker/gcp-cloud-architect/)** — 200 practice questions
-- **[CLOUD-ENGINEER: Google Cloud Associate Cloud Engineer](/cert-tracker/gcp-cloud-engineer/)** — 200 practice questions
-- **[SECURITY-ENGINEER: Google Cloud Professional Cloud Security Engineer](/cert-tracker/gcp-security-engineer/)** — 200 practice questions
-- **[CLOUD-DEVELOPER: Google Cloud Professional Cloud Developer](/cert-tracker/gcp-cloud-developer/)** — 200 practice questions
+- **[CLOUD-ARCHITECT: Google Cloud Professional Cloud Architect](/cert-tracker/gcp-cloud-architect/)** — 250 practice questions
+- **[CLOUD-ENGINEER: Google Cloud Associate Cloud Engineer](/cert-tracker/gcp-cloud-engineer/)** — 250 practice questions
+- **[SECURITY-ENGINEER: Google Cloud Professional Cloud Security Engineer](/cert-tracker/gcp-security-engineer/)** — 250 practice questions
+- **[CLOUD-DEVELOPER: Google Cloud Professional Cloud Developer](/cert-tracker/gcp-cloud-developer/)** — 250 practice questions
 
 ## Study Tips
 

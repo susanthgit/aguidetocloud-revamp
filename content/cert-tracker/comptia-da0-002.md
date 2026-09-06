@@ -73,10 +73,10 @@ CompTIA certs are vendor-neutral and don't have a strict hierarchy. Common paths
 If you're studying for the DA0-002, you might also be interested in these CompTIA certifications:
 
 - **[FC0-U71: CompTIA Tech+](/cert-tracker/comptia-fc0-u71/)** — 200 practice questions
-- **[220-1202: CompTIA A+ Core 2](/cert-tracker/comptia-220-1202/)** — 200 practice questions
-- **[220-1201: CompTIA A+ Core 1](/cert-tracker/comptia-220-1201/)** — 200 practice questions
-- **[CAS-005: CompTIA SecurityX](/cert-tracker/comptia-cas-005/)** — 200 practice questions
-- **[CNX-001: CompTIA CloudNetX](/cert-tracker/comptia-cnx-001/)** — 200 practice questions
+- **[220-1202: CompTIA A+ Core 2](/cert-tracker/comptia-220-1202/)** — 250 practice questions
+- **[220-1201: CompTIA A+ Core 1](/cert-tracker/comptia-220-1201/)** — 250 practice questions
+- **[CAS-005: CompTIA SecurityX](/cert-tracker/comptia-cas-005/)** — 250 practice questions
+- **[CNX-001: CompTIA CloudNetX](/cert-tracker/comptia-cnx-001/)** — 250 practice questions
 
 ## Study Tips
 

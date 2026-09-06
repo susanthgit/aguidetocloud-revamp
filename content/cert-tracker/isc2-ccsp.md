@@ -74,11 +74,11 @@ Start with CC (Certified in Cybersecurity) for entry-level, then SSCP for techni
 
 If you're studying for the CCSP, you might also be interested in these ISC² certifications:
 
-- **[CC: (ISC)² Certified in Cybersecurity](/cert-tracker/isc2-cc/)** — 200 practice questions
-- **[CGRC: (ISC)² CGRC](/cert-tracker/isc2-cgrc/)** — 200 practice questions
-- **[CISSP-ISSAP: (ISC)² CISSP-ISSAP](/cert-tracker/isc2-cissp-issap/)** — 200 practice questions
-- **[CISSP-ISSEP: (ISC)² CISSP-ISSEP](/cert-tracker/isc2-cissp-issep/)** — 200 practice questions
-- **[CISSP-ISSMP: (ISC)² CISSP-ISSMP](/cert-tracker/isc2-cissp-issmp/)** — 200 practice questions
+- **[CC: (ISC)² Certified in Cybersecurity](/cert-tracker/isc2-cc/)** — 250 practice questions
+- **[CGRC: (ISC)² CGRC](/cert-tracker/isc2-cgrc/)** — 250 practice questions
+- **[CISSP-ISSAP: (ISC)² CISSP-ISSAP](/cert-tracker/isc2-cissp-issap/)** — 250 practice questions
+- **[CISSP-ISSEP: (ISC)² CISSP-ISSEP](/cert-tracker/isc2-cissp-issep/)** — 250 practice questions
+- **[CISSP-ISSMP: (ISC)² CISSP-ISSMP](/cert-tracker/isc2-cissp-issmp/)** — 250 practice questions
 
 ## Study Tips
 

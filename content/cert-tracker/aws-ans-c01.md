@@ -71,11 +71,11 @@ AWS certs follow: Foundational → Associate → Professional, plus Specialty tr
 
 If you're studying for the ANS-C01, you might also be interested in these AWS certifications:
 
-- **[AIF-C01: AWS AI Practitioner](/cert-tracker/aws-aif-c01/)** — 200 practice questions
-- **[DAS-C01: AWS Data Analytics Specialty](/cert-tracker/aws-das-c01/)** — 200 practice questions
-- **[DBS-C01: AWS Database Specialty](/cert-tracker/aws-dbs-c01/)** — 200 practice questions
-- **[DEA-C01: AWS Data Engineer Associate](/cert-tracker/aws-dea-c01/)** — 200 practice questions
-- **[DVA-C02: AWS Developer Associate](/cert-tracker/aws-dva-c02/)** — 200 practice questions
+- **[AIF-C01: AWS AI Practitioner](/cert-tracker/aws-aif-c01/)** — 250 practice questions
+- **[DAS-C01: AWS Data Analytics Specialty](/cert-tracker/aws-das-c01/)** — 250 practice questions
+- **[DBS-C01: AWS Database Specialty](/cert-tracker/aws-dbs-c01/)** — 250 practice questions
+- **[DEA-C01: AWS Data Engineer Associate](/cert-tracker/aws-dea-c01/)** — 250 practice questions
+- **[DVA-C02: AWS Developer Associate](/cert-tracker/aws-dva-c02/)** — 250 practice questions
 
 ## Study Tips
 

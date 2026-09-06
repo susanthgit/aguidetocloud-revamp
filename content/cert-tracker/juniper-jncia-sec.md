@@ -87,7 +87,7 @@ Juniper follows: Associate (JNCIA) → Specialist (JNCIS) → Professional (JNCI
 If you're studying for the JNCIA-SEC, you might also be interested in these Juniper certifications:
 
 - **[JNCIS-SEC: Juniper Networks Certified Specialist Security (JNCIS-SEC)](/cert-tracker/juniper-jncis-sec/)** — 250 practice questions
-- **[JNCIA-Junos: Juniper Networks Certified Associate, Junos (JNCIA-Junos)](/cert-tracker/juniper-jncia-junos/)** — 200 practice questions
+- **[JNCIA-Junos: Juniper Networks Certified Associate, Junos (JNCIA-Junos)](/cert-tracker/juniper-jncia-junos/)** — 250 practice questions
 - **[JNCIA-Cloud: Juniper Networks Certified Associate - Cloud (JNCIA-Cloud)](/cert-tracker/juniper-jncia-cloud/)** — 250 practice questions
 
 ## Study Tips

@@ -76,7 +76,7 @@ If you're studying for the KCA, you might also be interested in these CNCF certi
 - **[KCSA: CNCF Kubernetes and Cloud Native Security Associate](/cert-tracker/cncf-kcsa/)** — 250 practice questions
 - **[CKS: CNCF Certified Kubernetes Security Specialist](/cert-tracker/cncf-cks/)** — 250 practice questions
 - **[CCA: CNCF Certified Cilium Associate](/cert-tracker/cncf-cca/)** — 250 practice questions
-- **[KCNA: CNCF Kubernetes and Cloud Native Associate](/cert-tracker/cncf-kcna/)** — 250 practice questions
+- **[KCNA: CNCF Kubernetes and Cloud Native Associate](/cert-tracker/cncf-kcna/)** — 200 practice questions
 
 ## Study Tips
 

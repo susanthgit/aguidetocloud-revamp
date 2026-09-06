@@ -72,10 +72,10 @@ Cisco certs follow: Entry (CCT) → Associate (CCNA) → Professional (CCNP) →
 
 If you're studying for the SCAZT, you might also be interested in these Cisco certifications:
 
-- **[SCOR: Cisco CCNP SCOR (350-701)](/cert-tracker/cisco-scor/)** — the CCNP Security core that pairs with SCAZT — 200 practice questions
+- **[SCOR: Cisco CCNP SCOR (350-701)](/cert-tracker/cisco-scor/)** — the CCNP Security core that pairs with SCAZT — 300 practice questions
 - **[SNCF: Securing Networks with Cisco Firewalls (300-710)](/cert-tracker/cisco-sncf/)** — the Secure Firewall concentration — 250 practice questions
 - **[SISE: Implementing and Configuring Cisco ISE (300-715)](/cert-tracker/cisco-sise/)** — identity, posture, and access control — 250 practice questions
-- **[CyberOps: Cisco Certified CyberOps Associate (200-201)](/cert-tracker/cisco-cyberops/)** — 200 practice questions
+- **[CyberOps: Cisco Certified CyberOps Associate (200-201)](/cert-tracker/cisco-cyberops/)** — 250 practice questions
 - **[ENCOR: Cisco CCNP ENCOR (350-401)](/cert-tracker/cisco-encor/)** — 250 practice questions
 
 ## Study Tips

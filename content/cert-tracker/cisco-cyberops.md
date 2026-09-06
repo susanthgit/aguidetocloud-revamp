@@ -71,11 +71,11 @@ Cisco certs follow: Entry (CCT) → Associate (CCNA) → Professional (CCNP) →
 
 If you're studying for the CYBEROPS, you might also be interested in these Cisco certifications:
 
-- **[CLCOR: Cisco CCNP CLCOR (350-801)](/cert-tracker/cisco-clcor/)** — 200 practice questions
-- **[DEVASC: Cisco DevNet Associate (200-901)](/cert-tracker/cisco-devasc/)** — 200 practice questions
-- **[ENCOR: Cisco CCNP ENCOR (350-401)](/cert-tracker/cisco-encor/)** — 200 practice questions
-- **[SCOR: Cisco CCNP SCOR (350-701)](/cert-tracker/cisco-scor/)** — 200 practice questions
-- **[DEVCOR: Cisco DevNet Professional (350-901)](/cert-tracker/cisco-devcor/)** — 200 practice questions
+- **[CLCOR: Cisco CCNP CLCOR (350-801)](/cert-tracker/cisco-clcor/)** — 250 practice questions
+- **[DEVASC: Cisco DevNet Associate (200-901)](/cert-tracker/cisco-devasc/)** — 250 practice questions
+- **[ENCOR: Cisco CCNP ENCOR (350-401)](/cert-tracker/cisco-encor/)** — 250 practice questions
+- **[SCOR: Cisco CCNP SCOR (350-701)](/cert-tracker/cisco-scor/)** — 300 practice questions
+- **[DEVCOR: Cisco DevNet Professional (350-901)](/cert-tracker/cisco-devcor/)** — 250 practice questions
 
 ## Study Tips
 

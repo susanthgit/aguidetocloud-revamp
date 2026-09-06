@@ -73,8 +73,8 @@ If you're studying for the SSE Engineer exam, you might also be interested in th
 
 - **[CLOUD-SECURITY-PROFESSIONAL: Palo Alto Networks Certified Cloud Security Professional](/cert-tracker/paloalto-cloud-security-professional/)** — 250 practice questions
 - **[NETSEC-PROFESSIONAL: Palo Alto Networks Certified Network Security Professional](/cert-tracker/paloalto-netsec-professional/)** — 250 practice questions
-- **[NETSEC-ANALYST: Palo Alto Networks Certified Network Security Analyst](/cert-tracker/paloalto-netsec-analyst/)** — 200 practice questions
-- **[CYBERSEC-APPRENTICE: Palo Alto Networks Certified Cybersecurity Apprentice](/cert-tracker/paloalto-cybersec-apprentice/)** — 200 practice questions
+- **[NETSEC-ANALYST: Palo Alto Networks Certified Network Security Analyst](/cert-tracker/paloalto-netsec-analyst/)** — 250 practice questions
+- **[CYBERSEC-APPRENTICE: Palo Alto Networks Certified Cybersecurity Apprentice](/cert-tracker/paloalto-cybersec-apprentice/)** — 250 practice questions
 
 ## Study Tips
 

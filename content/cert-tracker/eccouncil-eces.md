@@ -72,10 +72,10 @@ EC-Council's portfolio spans offensive, defensive, and specialist tracks. **ECES
 
 If you're studying for ECES, you might also be interested in these EC-Council certifications:
 
-- **[CEH v13: EC-Council Certified Ethical Hacker (312-50)](/cert-tracker/eccouncil-ceh-v13/)** — the offensive side, including attacks on weak cryptography — 200 practice questions
+- **[CEH v13: EC-Council Certified Ethical Hacker (312-50)](/cert-tracker/eccouncil-ceh-v13/)** — the offensive side, including attacks on weak cryptography — 250 practice questions
 - **[CASE Java: Certified Application Security Engineer (312-96)](/cert-tracker/eccouncil-case-java/)** — secure coding, including applied cryptography in Java (JCA/JCE) — 250 practice questions
 - **[CCSE: EC-Council Certified Cloud Security Engineer](/cert-tracker/eccouncil-ccse/)** — cloud platform and data security — 250 practice questions
-- **[CND v3: EC-Council Certified Network Defender](/cert-tracker/eccouncil-cnd-v3/)** — defensive security including cryptographic controls — 200 practice questions
+- **[CND v3: EC-Council Certified Network Defender](/cert-tracker/eccouncil-cnd-v3/)** — defensive security including cryptographic controls — 250 practice questions
 
 ## Study Tips
 

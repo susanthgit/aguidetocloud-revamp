@@ -77,8 +77,8 @@ CTIA sits in EC-Council's blue-team / defensive track alongside CND (network def
 If you're studying for the CTIA exam, you might also be interested in these EC-Council certifications:
 
 - **[CEH-V13: EC-Council Certified Ethical Hacker (CEH) v13](/cert-tracker/eccouncil-ceh-v13/)** — 250 practice questions
-- **[CHFI-V11: EC-Council Certified Hacking Forensic Investigator v11](/cert-tracker/eccouncil-chfi-v11/)** — 200 practice questions
-- **[CND-V3: EC-Council Certified Network Defender v3](/cert-tracker/eccouncil-cnd-v3/)** — 200 practice questions
+- **[CHFI-V11: EC-Council Certified Hacking Forensic Investigator v11](/cert-tracker/eccouncil-chfi-v11/)** — 250 practice questions
+- **[CND-V3: EC-Council Certified Network Defender v3](/cert-tracker/eccouncil-cnd-v3/)** — 250 practice questions
 
 ## Study Tips
 

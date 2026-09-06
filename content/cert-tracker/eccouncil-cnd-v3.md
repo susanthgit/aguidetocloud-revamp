@@ -73,8 +73,8 @@ CEH (Certified Ethical Hacker) is the flagship cert. CND for network defence, CH
 
 If you're studying for the CND-V3, you might also be interested in these EC-Council certifications:
 
-- **[CEH-V13: EC-Council Certified Ethical Hacker (CEH) v13](/cert-tracker/eccouncil-ceh-v13/)** — 200 practice questions
-- **[CHFI-V11: EC-Council Certified Hacking Forensic Investigator v11](/cert-tracker/eccouncil-chfi-v11/)** — 200 practice questions
+- **[CEH-V13: EC-Council Certified Ethical Hacker (CEH) v13](/cert-tracker/eccouncil-ceh-v13/)** — 250 practice questions
+- **[CHFI-V11: EC-Council Certified Hacking Forensic Investigator v11](/cert-tracker/eccouncil-chfi-v11/)** — 250 practice questions
 
 ## Study Tips
 
