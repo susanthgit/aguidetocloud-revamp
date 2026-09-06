@@ -13680,3 +13680,50 @@ exam_prerequisites = "Certified Implementation Specialist – Data Foundations (
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/servicenow-cis-discovery/"
 practice_url = "/guided/servicenow-cis-discovery/practice/"
+
+[[cert]]
+slug = "servicenow-cis-sir"
+vendor = "servicenow"
+code = "SERVICENOW-CIS-SIR"
+name = "ServiceNow Certified Implementation Specialist – Security Incident Response"
+tagline = "Master the ServiceNow Certified Implementation Specialist – Security Incident Response exam: decide whether an inbound alert should open a security incident or attach to one that already exists, work out why a calculator group leaves two similar incidents at different risk scores, tell a playbook apart from a runbook when a response task needs to run the same way every time, read a security tag back to the record it protects and the people it hides that record from, and follow a user-reported phish from the mailbox through parsing and observable lookup to the threat intelligence match that closes it."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "planned"
+modules = 0
+questions = 250
+domains = 6
+order = 1018
+featured = false
+price_practice = 9
+exam_url = "https://learning.servicenow.com/lxp/en/credentials/certified-implementation-specialist-security-incidence-response?id=kb_article_view&sysparm_article=KB0011559"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = "Not published — ServiceNow uses a predetermined cut score that it states is not always 70%"
+guided_url = "/guided/servicenow-cis-sir/"
+
+[cert_map."servicenow-cis-sir"]
+vendor = "servicenow"
+code = "SERVICENOW-CIS-SIR"
+name = "ServiceNow Certified Implementation Specialist – Security Incident Response"
+tagline = "Master the ServiceNow Certified Implementation Specialist – Security Incident Response exam: decide whether an inbound alert should open a security incident or attach to one that already exists, work out why a calculator group leaves two similar incidents at different risk scores, tell a playbook apart from a runbook when a response task needs to run the same way every time, read a security tag back to the record it protects and the people it hides that record from, and follow a user-reported phish from the mailbox through parsing and observable lookup to the threat intelligence match that closes it."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "planned"
+modules = 0
+questions = 250
+domains = 6
+order = 1018
+featured = false
+price_practice = 9
+exam_url = "https://learning.servicenow.com/lxp/en/credentials/certified-implementation-specialist-security-incidence-response?id=kb_article_view&sysparm_article=KB0011559"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = "Not published — ServiceNow uses a predetermined cut score that it states is not always 70%"
+exam_questions_real = "60"
+exam_provider = "Pearson VUE (onsite test centre or OnVUE online proctored)"
+exam_validity = "Maintained through annual delta maintenance exams plus the yearly Certification Maintenance Program (CMP) fee"
+exam_prerequisites = "Certified Implementation Specialist – Data Foundations (CMDB and CSDM) certification is required before registering"
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/servicenow-cis-sir/"
+practice_url = "/guided/servicenow-cis-sir/practice/"
