@@ -1,6 +1,6 @@
 ---
 title: "SCOR: Cisco CCNP SCOR (350-701) — Free Study Guide"
-description: "Free SCOR study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. Cisco CCNP SCOR (350-701)."
+description: "Free SCOR study guide, updated for the 350-701 v2.0 exam. Try 20 questions free. Full practice exam access: US$9 for 1 year. Cisco CCNP SCOR (350-701)."
 type: "cert-tracker"
 layout: "single"
 exam_code: "SCOR"
@@ -14,9 +14,9 @@ guided_slug: "cisco-scor"
 ---
 ## About the SCOR Exam
 
-> Master Cisco network security — firewalls, VPN, identity, cloud, and endpoint protection
+> Master Cisco security core technologies: firewalls, VPN, identity, cloud, secure service edge, and endpoint protection
 
-200 original practice questions for the Cisco CCNP SCOR 350-701 exam covering security concepts, network security, cloud security, content security, endpoint protection, and secure network access. Original practice questions. Not affiliated with, endorsed by, or sourced from Cisco Systems certification exams.
+300 original practice questions for the Cisco CCNP SCOR 350-701 **v2.0** exam, covering security concepts, network security, cloud security, secure service edge, endpoint protection and detection, and network access, visibility and enforcement. Updated for the v2.0 blueprint that became testable on 27 August 2026, including the new Secure Service Edge domain. Original practice questions. Not affiliated with, endorsed by, or sourced from Cisco Systems certification exams.
 
 ## Who Should Take This Exam?
 
@@ -39,23 +39,27 @@ The SCOR is designed for **experienced professionals seeking advanced validation
 
 ## Exam Domains & Weights
 
-The SCOR exam covers **6 domains**. Focus your study time based on the weights below — higher-weighted domains have more exam questions.
+Cisco moved SCOR from v1.1 to v2.0 on 27 August 2026. The v2.0 exam covers **6 domains**. Focus your study time based on the weights below, because higher-weighted domains carry more exam questions.
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Security Concepts | 25% | 50 |
-| Network Security | 20% | 40 |
-| Securing the Cloud | 15% | 30 |
-| Content Security | 15% | 30 |
-| Endpoint Protection and Detection | 10% | 20 |
-| Secure Network Access, Visibility, and Enforcement | 15% | 30 |
-| **Total** | **100%** | **200** |
+| Security Concepts | 20% | 59 |
+| Network Security | 25% | 64 |
+| Cloud Security | 15% | 38 |
+| Secure Service Edge **(new in v2.0)** | 10% | 25 |
+| Endpoint Protection and Detection | 15% | 38 |
+| Network Access, Visibility, and Enforcement | 15% | 38 |
+| **Total, v2.0 exam domains** | **100%** | **262** |
+| Content Security *(v1.1 only, removed from the v2.0 exam)* | not tested | 38 |
+| **Total practice questions** | | **300** |
 
-> 💡 **Study tip:** **Security Concepts** carries the most weight (25%) — start there. **Endpoint Protection and Detection** has the least (10%), but don't skip it — exam questions can come from any domain.
+> 💡 **Study tip:** **Network Security** carries the most weight (25%), so start there. **Secure Service Edge** is brand new in v2.0 and covers Cisco Secure Access, so do not skip it just because it is only 10%.
 
-## Practice Exam — 200 Questions
+> ℹ️ **On the Content Security questions.** Cisco removed that domain in v2.0, so those 38 questions are not on the current exam. We have kept them rather than deleting them, because the material is still useful background and much of it now lives inside Secure Service Edge and email threat defence. They are clearly marked in the practice exam.
 
-Prepare for the SCOR with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+## Practice Exam — 300 Questions
+
+Prepare for the SCOR with our **300-question practice exam** covering all 6 v2.0 exam domains, plus 38 retained questions from the retired v1.1 Content Security domain. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer
