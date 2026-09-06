@@ -45,17 +45,17 @@ The DVA-C02 exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Development with AWS Services | 32% | 64 |
-| Security | 26% | 52 |
-| Deployment | 24% | 48 |
-| Troubleshooting and Optimization | 18% | 36 |
-| **Total** | **100%** | **200** |
+| Development with AWS Services | 32% | 77 |
+| Security | 26% | 65 |
+| Deployment | 24% | 60 |
+| Troubleshooting and Optimization | 18% | 48 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Development with AWS Services** carries the most weight (32%) — start there. **Troubleshooting and Optimization** has the least (18%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the DVA-C02 with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the DVA-C02 with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

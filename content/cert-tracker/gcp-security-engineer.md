@@ -44,18 +44,18 @@ The SECURITY-ENGINEER exam covers **5 domains**. Focus your study time based on 
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Configuring Access Within a Cloud Solution Environment | 26% | 52 |
-| Securing Communications and Establishing Boundary Protection | 23% | 46 |
-| Ensuring Data Protection | 23% | 46 |
-| Managing Operations Within a Cloud Solution Environment | 16% | 32 |
-| Ensuring Compliance | 12% | 24 |
-| **Total** | **100%** | **200** |
+| Configuring Access Within a Cloud Solution Environment | 26% | 62 |
+| Securing Communications and Establishing Boundary Protection | 23% | 56 |
+| Ensuring Data Protection | 23% | 56 |
+| Managing Operations Within a Cloud Solution Environment | 16% | 42 |
+| Ensuring Compliance | 12% | 34 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Configuring Access Within a Cloud Solution Environment** carries the most weight (26%) — start there. **Ensuring Compliance** has the least (12%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the SECURITY-ENGINEER with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the SECURITY-ENGINEER with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

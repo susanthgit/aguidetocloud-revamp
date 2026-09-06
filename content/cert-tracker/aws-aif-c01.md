@@ -45,18 +45,18 @@ The AIF-C01 exam covers **5 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Fundamentals of AI and ML | 20% | 40 |
-| Fundamentals of Generative AI | 24% | 48 |
-| Applications of Foundation Models | 28% | 56 |
-| Guidelines for Responsible AI | 14% | 28 |
-| Security, Compliance, and Governance for AI Solutions | 14% | 28 |
-| **Total** | **100%** | **200** |
+| Fundamentals of AI and ML | 20% | 50 |
+| Fundamentals of Generative AI | 24% | 58 |
+| Applications of Foundation Models | 28% | 66 |
+| Guidelines for Responsible AI | 14% | 38 |
+| Security, Compliance, and Governance for AI Solutions | 14% | 38 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Applications of Foundation Models** carries the most weight (28%) — start there. **Guidelines for Responsible AI** has the least (14%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the AIF-C01 with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the AIF-C01 with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

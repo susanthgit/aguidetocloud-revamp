@@ -16,7 +16,7 @@ guided_slug: "comptia-cas-005"
 
 > Expert-level security — architecture, engineering, operations, governance
 
-200 original practice questions for the CompTIA SecurityX certification. Every question includes detailed explanations, scenario-based context, and exam tips.
+250 original practice questions for the CompTIA SecurityX certification. Every question includes detailed explanations, scenario-based context, and exam tips.
 
 ## Who Should Take This Exam?
 
@@ -45,17 +45,17 @@ The CAS-005 exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Governance, Risk, and Compliance | 20% | 40 |
-| Security Architecture | 27% | 54 |
-| Security Engineering | 31% | 62 |
-| Security Operations | 22% | 44 |
-| **Total** | **100%** | **200** |
+| Governance, Risk, and Compliance | 20% | 53 |
+| Security Architecture | 27% | 67 |
+| Security Engineering | 31% | 74 |
+| Security Operations | 22% | 56 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Security Engineering** carries the most weight (31%) — start there. **Governance, Risk, and Compliance** has the least (20%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CAS-005 with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CAS-005 with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

@@ -16,7 +16,7 @@ guided_slug: "isaca-cisa"
 
 > Master IS auditing, governance, and information asset protection
 
-200 original practice questions for the ISACA CISA exam. Every question includes detailed explanations, scenario-based context, and exam tips. Covers all 5 domains: Auditing Process, Governance & Management, Acquisition & Development, Operations & Resilience, and Protection of Assets.
+250 original practice questions for the ISACA CISA exam. Every question includes detailed explanations, scenario-based context, and exam tips. Covers all 5 domains: Auditing Process, Governance & Management, Acquisition & Development, Operations & Resilience, and Protection of Assets.
 
 ## Who Should Take This Exam?
 
@@ -45,18 +45,18 @@ The CISA exam covers **5 domains**. Focus your study time based on the weights b
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Information Systems Auditing Process | 18% | 36 |
-| Governance and Management of IT | 18% | 36 |
-| Information Systems Acquisition, Development, and Implementation | 12% | 24 |
-| Information Systems Operations and Business Resilience | 26% | 52 |
-| Protection of Information Assets | 26% | 52 |
-| **Total** | **100%** | **200** |
+| Information Systems Auditing Process | 18% | 46 |
+| Governance and Management of IT | 18% | 46 |
+| Information Systems Acquisition, Development, and Implementation | 12% | 34 |
+| Information Systems Operations and Business Resilience | 26% | 62 |
+| Protection of Information Assets | 26% | 62 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Information Systems Operations and Business Resilience** carries the most weight (26%) — start there. **Information Systems Acquisition, Development, and Implementation** has the least (12%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CISA with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CISA with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

@@ -16,7 +16,7 @@ guided_slug: "comptia-cs0-003"
 
 > Intermediate cybersecurity analyst — threat detection, vulnerability management, incident response
 
-200 original practice questions for the CompTIA CySA+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
+250 original practice questions for the CompTIA CySA+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
 
 ## Who Should Take This Exam?
 
@@ -45,17 +45,17 @@ The CS0-003 exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Security Operations | 33% | 66 |
-| Vulnerability Management | 30% | 60 |
-| Incident Response and Management | 20% | 40 |
-| Reporting and Communication | 17% | 34 |
-| **Total** | **100%** | **200** |
+| Security Operations | 33% | 79 |
+| Vulnerability Management | 30% | 73 |
+| Incident Response and Management | 20% | 52 |
+| Reporting and Communication | 17% | 46 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Security Operations** carries the most weight (33%) — start there. **Reporting and Communication** has the least (17%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CS0-003 with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CS0-003 with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

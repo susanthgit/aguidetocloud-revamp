@@ -44,20 +44,20 @@ The HCISPP exam covers **7 domains**. Focus your study time based on the weights
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Healthcare Industry | 12% | 24 |
-| Information Governance in Healthcare | 5% | 10 |
-| Information Technologies in Healthcare | 8% | 16 |
-| Regulatory and Standards Environment | 15% | 30 |
-| Privacy and Security in Healthcare | 25% | 50 |
-| Risk Management and Risk Assessment | 20% | 40 |
-| Third-Party Risk Management | 15% | 30 |
-| **Total** | **100%** | **200** |
+| Healthcare Industry | 12% | 32 |
+| Information Governance in Healthcare | 5% | 17 |
+| Information Technologies in Healthcare | 8% | 23 |
+| Regulatory and Standards Environment | 15% | 37 |
+| Privacy and Security in Healthcare | 25% | 57 |
+| Risk Management and Risk Assessment | 20% | 47 |
+| Third-Party Risk Management | 15% | 37 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Privacy and Security in Healthcare** carries the most weight (25%) — start there. **Information Governance in Healthcare** has the least (5%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the HCISPP with our **200-question practice exam** covering all 7 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the HCISPP with our **250-question practice exam** covering all 7 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

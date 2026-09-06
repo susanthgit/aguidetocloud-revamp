@@ -16,7 +16,7 @@ guided_slug: "comptia-pt0-003"
 
 > Penetration testing — planning, reconnaissance, exploitation, reporting
 
-200 original practice questions for the CompTIA PenTest+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
+250 original practice questions for the CompTIA PenTest+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
 
 ## Who Should Take This Exam?
 
@@ -45,18 +45,18 @@ The PT0-003 exam covers **5 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Planning and Scoping | 14% | 28 |
-| Information Gathering and Vulnerability Scanning | 22% | 44 |
-| Attacks and Exploits | 30% | 60 |
-| Reporting and Communication | 18% | 36 |
-| Tools and Code Analysis | 16% | 32 |
-| **Total** | **100%** | **200** |
+| Planning and Scoping | 14% | 38 |
+| Information Gathering and Vulnerability Scanning | 22% | 54 |
+| Attacks and Exploits | 30% | 70 |
+| Reporting and Communication | 18% | 46 |
+| Tools and Code Analysis | 16% | 42 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Attacks and Exploits** carries the most weight (30%) — start there. **Planning and Scoping** has the least (14%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the PT0-003 with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the PT0-003 with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

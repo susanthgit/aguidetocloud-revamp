@@ -43,18 +43,18 @@ The SPCOR exam covers **5 domains**. Focus your study time based on the weights 
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Architecture | 15% | 30 |
-| Networking | 30% | 60 |
-| MPLS and Segment Routing | 20% | 40 |
-| Services | 20% | 40 |
-| Automation and Assurance | 15% | 30 |
-| **Total** | **100%** | **200** |
+| Architecture | 15% | 40 |
+| Networking | 30% | 70 |
+| MPLS and Segment Routing | 20% | 50 |
+| Services | 20% | 50 |
+| Automation and Assurance | 15% | 40 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Networking** carries the most weight (30%) — start there. **Architecture** has the least (15%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the SPCOR with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the SPCOR with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

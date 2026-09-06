@@ -16,7 +16,7 @@ guided_slug: "comptia-n10-009"
 
 > Foundational networking skills — routing, switching, troubleshooting, security
 
-200 original practice questions for the CompTIA Network+ certification. Every question includes detailed explanations, scenario-based context, and exam tips. Not affiliated with, endorsed by, or sourced from CompTIA certification exams.
+250 original practice questions for the CompTIA Network+ certification. Every question includes detailed explanations, scenario-based context, and exam tips. Not affiliated with, endorsed by, or sourced from CompTIA certification exams.
 
 ## Who Should Take This Exam?
 
@@ -48,18 +48,18 @@ The N10-009 exam covers **5 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Networking Concepts | 23% | 46 |
-| Network Implementation | 20% | 40 |
-| Network Operations | 19% | 38 |
-| Network Security | 14% | 28 |
-| Network Troubleshooting | 24% | 48 |
-| **Total** | **100%** | **200** |
+| Networking Concepts | 23% | 56 |
+| Network Implementation | 20% | 50 |
+| Network Operations | 19% | 48 |
+| Network Security | 14% | 38 |
+| Network Troubleshooting | 24% | 58 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Network Troubleshooting** carries the most weight (24%) — start there. **Network Security** has the least (14%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the N10-009 with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the N10-009 with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

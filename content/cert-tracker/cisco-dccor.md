@@ -16,7 +16,7 @@ guided_slug: "cisco-dccor"
 
 > Master data centre networking — Nexus, ACI, UCS, storage, and automation
 
-Conquer the CCNP Data Center core exam with 200 original practice questions covering network (VXLAN EVPN, ACI, vPC, OSPF/BGP), compute (UCS service profiles, Intersight, firmware), storage networking (Fibre Channel, zoning, VSANs, FCoE, NPV/NPIV), automation & AI (Ansible, NX-API, telemetry, RoCE/RDMA), and security (RBAC, AAA, MACsec, microsegmentation). Updated for DCCOR v1.2. Original practice questions.
+Conquer the CCNP Data Center core exam with 250 original practice questions covering network (VXLAN EVPN, ACI, vPC, OSPF/BGP), compute (UCS service profiles, Intersight, firmware), storage networking (Fibre Channel, zoning, VSANs, FCoE, NPV/NPIV), automation & AI (Ansible, NX-API, telemetry, RoCE/RDMA), and security (RBAC, AAA, MACsec, microsegmentation). Updated for DCCOR v1.2. Original practice questions.
 
 ## Who Should Take This Exam?
 
@@ -43,18 +43,18 @@ The DCCOR exam covers **5 domains**. Focus your study time based on the weights 
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Network | 25% | 50 |
-| Compute | 25% | 50 |
-| Storage Network | 20% | 40 |
-| Automation and Artificial Intelligence | 15% | 30 |
-| Security | 15% | 30 |
-| **Total** | **100%** | **200** |
+| Network | 25% | 60 |
+| Compute | 25% | 60 |
+| Storage Network | 20% | 50 |
+| Automation and Artificial Intelligence | 15% | 40 |
+| Security | 15% | 40 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Network** carries the most weight (25%) — start there. **Automation and Artificial Intelligence** has the least (15%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the DCCOR with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the DCCOR with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

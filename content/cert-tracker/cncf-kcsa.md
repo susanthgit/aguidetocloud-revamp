@@ -44,19 +44,19 @@ The KCSA exam covers **6 domains**. Focus your study time based on the weights b
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Overview of Cloud Native Security | 14% | 28 |
-| Kubernetes Cluster Component Security | 22% | 44 |
-| Kubernetes Security Fundamentals | 22% | 44 |
-| Kubernetes Threat Model | 16% | 32 |
-| Platform Security | 16% | 32 |
-| Compliance and Security Frameworks | 10% | 20 |
-| **Total** | **100%** | **200** |
+| Overview of Cloud Native Security | 14% | 37 |
+| Kubernetes Cluster Component Security | 22% | 53 |
+| Kubernetes Security Fundamentals | 22% | 52 |
+| Kubernetes Threat Model | 16% | 40 |
+| Platform Security | 16% | 40 |
+| Compliance and Security Frameworks | 10% | 28 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Kubernetes Cluster Component Security** carries the most weight (22%) — start there. **Compliance and Security Frameworks** has the least (10%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the KCSA with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the KCSA with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

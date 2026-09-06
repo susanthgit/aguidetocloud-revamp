@@ -45,17 +45,17 @@ The MLA-C01 exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Data Preparation for ML | 28% | 56 |
-| ML Model Development | 26% | 52 |
-| Deployment and Orchestration of ML Workflows | 22% | 44 |
-| ML Solution Monitoring, Maintenance, and Security | 24% | 48 |
-| **Total** | **100%** | **200** |
+| Data Preparation for ML | 28% | 69 |
+| ML Model Development | 26% | 65 |
+| Deployment and Orchestration of ML Workflows | 22% | 56 |
+| ML Solution Monitoring, Maintenance, and Security | 24% | 60 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Data Preparation for ML** carries the most weight (28%) — start there. **Deployment and Orchestration of ML Workflows** has the least (22%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the MLA-C01 with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the MLA-C01 with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

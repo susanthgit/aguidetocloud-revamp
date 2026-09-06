@@ -16,7 +16,7 @@ guided_slug: "isaca-cgeit"
 
 > Master enterprise IT governance, value delivery, and strategic alignment
 
-200 original practice questions for the ISACA CGEIT exam. Every question includes detailed explanations, scenario-based context, and exam tips. Covers all 4 domains: Governance of Enterprise IT, IT Resources, Benefits Realization, and Risk Optimization.
+250 original practice questions for the ISACA CGEIT exam. Every question includes detailed explanations, scenario-based context, and exam tips. Covers all 4 domains: Governance of Enterprise IT, IT Resources, Benefits Realization, and Risk Optimization.
 
 ## Who Should Take This Exam?
 
@@ -44,17 +44,17 @@ The CGEIT exam covers **4 domains**. Focus your study time based on the weights 
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Governance of Enterprise IT | 40% | 80 |
-| IT Resources | 15% | 30 |
-| Benefits Realization | 26% | 52 |
-| Risk Optimization | 19% | 38 |
-| **Total** | **100%** | **200** |
+| Governance of Enterprise IT | 40% | 93 |
+| IT Resources | 15% | 43 |
+| Benefits Realization | 26% | 64 |
+| Risk Optimization | 19% | 50 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Governance of Enterprise IT** carries the most weight (40%) — start there. **IT Resources** has the least (15%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CGEIT with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CGEIT with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

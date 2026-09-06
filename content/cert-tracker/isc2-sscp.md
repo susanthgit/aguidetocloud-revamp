@@ -45,20 +45,20 @@ The SSCP exam covers **7 domains**. Focus your study time based on the weights b
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Security Concepts and Practices | 16% | 32 |
-| Access Controls | 15% | 30 |
-| Risk Identification, Monitoring, and Analysis | 15% | 30 |
-| Incident Response and Recovery | 14% | 28 |
-| Cryptography | 9% | 18 |
-| Network and Communications Security | 16% | 32 |
-| Systems and Application Security | 15% | 30 |
-| **Total** | **100%** | **200** |
+| Security Concepts and Practices | 16% | 40 |
+| Access Controls | 15% | 37 |
+| Risk Identification, Monitoring, and Analysis | 15% | 37 |
+| Incident Response and Recovery | 14% | 35 |
+| Cryptography | 9% | 25 |
+| Network and Communications Security | 16% | 39 |
+| Systems and Application Security | 15% | 37 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Security Concepts and Practices** carries the most weight (16%) — start there. **Cryptography** has the least (9%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the SSCP with our **200-question practice exam** covering all 7 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the SSCP with our **250-question practice exam** covering all 7 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

@@ -48,17 +48,17 @@ The SAA-C03 exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Design Secure Architectures | 30% | 60 |
-| Design Resilient Architectures | 26% | 52 |
-| Design High-Performing Architectures | 24% | 48 |
-| Design Cost-Optimized Architectures | 20% | 40 |
-| **Total** | **100%** | **200** |
+| Design Secure Architectures | 30% | 73 |
+| Design Resilient Architectures | 26% | 65 |
+| Design High-Performing Architectures | 24% | 60 |
+| Design Cost-Optimized Architectures | 20% | 52 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Design Secure Architectures** carries the most weight (30%) — start there. **Design Cost-Optimized Architectures** has the least (20%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the SAA-C03 with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the SAA-C03 with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

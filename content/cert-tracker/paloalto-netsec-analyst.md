@@ -44,17 +44,17 @@ The NETSEC-ANALYST exam covers **4 domains**. Focus your study time based on the
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Object Configuration | 30% | 60 |
-| Policy Creation and Management | 35% | 70 |
-| Strata Cloud Manager Administration | 25% | 50 |
-| Security Subscriptions and Services | 10% | 20 |
-| **Total** | **100%** | **200** |
+| Object Configuration | 30% | 73 |
+| Policy Creation and Management | 35% | 83 |
+| Strata Cloud Manager Administration | 25% | 62 |
+| Security Subscriptions and Services | 10% | 32 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Policy Creation and Management** carries the most weight (35%) — start there. **Security Subscriptions and Services** has the least (10%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the NETSEC-ANALYST with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the NETSEC-ANALYST with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

@@ -45,18 +45,18 @@ The CKA exam covers **5 domains**. Focus your study time based on the weights be
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Cluster Architecture, Installation & Configuration | 25% | 50 |
-| Workloads & Scheduling | 15% | 30 |
-| Services & Networking | 20% | 40 |
-| Storage | 10% | 20 |
-| Troubleshooting | 30% | 60 |
-| **Total** | **100%** | **200** |
+| Cluster Architecture, Installation & Configuration | 25% | 60 |
+| Workloads & Scheduling | 15% | 40 |
+| Services & Networking | 20% | 50 |
+| Storage | 10% | 30 |
+| Troubleshooting | 30% | 70 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Troubleshooting** carries the most weight (30%) — start there. **Storage** has the least (10%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CKA with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CKA with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

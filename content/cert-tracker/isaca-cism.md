@@ -16,7 +16,7 @@ guided_slug: "isaca-cism"
 
 > Master information security governance, risk management, and program leadership
 
-200 original practice questions for the ISACA CISM exam. Every question includes detailed explanations, scenario-based context, and exam tips. Covers all 4 domains: Information Security Governance, Risk Management, Security Program, and Incident Management.
+250 original practice questions for the ISACA CISM exam. Every question includes detailed explanations, scenario-based context, and exam tips. Covers all 4 domains: Information Security Governance, Risk Management, Security Program, and Incident Management.
 
 ## Who Should Take This Exam?
 
@@ -45,17 +45,17 @@ The CISM exam covers **4 domains**. Focus your study time based on the weights b
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Information Security Governance | 17% | 34 |
-| Information Security Risk Management | 20% | 40 |
-| Information Security Program | 33% | 66 |
-| Incident Management | 30% | 60 |
-| **Total** | **100%** | **200** |
+| Information Security Governance | 17% | 47 |
+| Information Security Risk Management | 20% | 53 |
+| Information Security Program | 33% | 78 |
+| Incident Management | 30% | 72 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Information Security Program** carries the most weight (33%) — start there. **Information Security Governance** has the least (17%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CISM with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CISM with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

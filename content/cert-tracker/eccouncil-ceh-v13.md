@@ -20,7 +20,7 @@ faq:
   - question: "What's new in CEH v13 vs v12?"
     answer: "CEH v13 (released 2024) added AI-assisted ethical hacking as a major theme — using AI to accelerate reconnaissance, vulnerability triage, social-engineering payload generation, and defensive automation. The 5-domain structure stayed similar but the AI lens runs through every domain. If your study material is for v12 or earlier, the AI content will be the biggest gap to close."
   - question: "How long does it take to prepare for CEH v13?"
-    answer: "Eight to twelve weeks for most candidates with two years of security experience. Longer if you're new to penetration testing or only know defensive security. Block hands-on lab time — CEH is multiple-choice but the questions assume you've actually used the tools (Nmap, Metasploit, Burp Suite, Wireshark, Hashcat). Our [200-question practice exam](/cert-tracker/eccouncil-ceh-v13/) covers all 5 domains with realistic pentest scenarios."
+    answer: "Eight to twelve weeks for most candidates with two years of security experience. Longer if you're new to penetration testing or only know defensive security. Block hands-on lab time — CEH is multiple-choice but the questions assume you've actually used the tools (Nmap, Metasploit, Burp Suite, Wireshark, Hashcat). Our [250-question practice exam](/cert-tracker/eccouncil-ceh-v13/) covers all 5 domains with realistic pentest scenarios."
   - question: "Do I need EC-Council official training to take CEH v13?"
     answer: "Not if you have two years of documented information security work experience — you can self-study and sit the exam directly. You'll submit an eligibility application with employment proof and pay a non-refundable application fee. Without two years of experience, you must complete official EC-Council training (online or via an Accredited Training Centre) — which makes up most of the total cost. Self-study + exam-only is the cheaper path if you qualify."
 ---
@@ -28,7 +28,7 @@ faq:
 
 > Industry-leading offensive security certification — ethical hacking methodology, tools, and techniques
 
-200 original practice questions for the EC-Council Certified Ethical Hacker (CEH) v13 certification (312-50). Covers reconnaissance, scanning, gaining access, social engineering, web attacks, wireless networks, cloud security, cryptography, and AI-driven ethical hacking. Each question includes realistic penetration testing scenarios with character-driven narratives.
+250 original practice questions for the EC-Council Certified Ethical Hacker (CEH) v13 certification (312-50). Covers reconnaissance, scanning, gaining access, social engineering, web attacks, wireless networks, cloud security, cryptography, and AI-driven ethical hacking. Each question includes realistic penetration testing scenarios with character-driven narratives.
 
 ## Who Should Take This Exam?
 
@@ -57,18 +57,18 @@ The CEH-V13 exam covers **5 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Reconnaissance & Scanning | 18% | 36 |
-| Gaining Access | 20% | 40 |
-| Social Engineering & Attack Techniques | 20% | 40 |
-| Web & Application Attacks | 17% | 34 |
-| Advanced Topics — Wireless, Mobile, IoT, Cloud & Cryptography | 25% | 50 |
-| **Total** | **100%** | **200** |
+| Reconnaissance & Scanning | 18% | 46 |
+| Gaining Access | 20% | 50 |
+| Social Engineering & Attack Techniques | 20% | 50 |
+| Web & Application Attacks | 17% | 44 |
+| Advanced Topics — Wireless, Mobile, IoT, Cloud & Cryptography | 25% | 60 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Advanced Topics — Wireless, Mobile, IoT, Cloud & Cryptography** carries the most weight (25%) — start there. **Web & Application Attacks** has the least (17%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CEH-V13 with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CEH-V13 with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

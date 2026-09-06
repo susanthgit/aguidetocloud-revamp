@@ -43,19 +43,19 @@ The DEVASC exam covers **6 domains**. Focus your study time based on the weights
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Software Development and Design | 15% | 30 |
-| Understanding and Using APIs | 20% | 40 |
-| Cisco Platforms and Development | 15% | 30 |
-| Application Deployment and Security | 15% | 30 |
-| Infrastructure and Automation | 20% | 40 |
-| Network Fundamentals | 15% | 30 |
-| **Total** | **100%** | **200** |
+| Software Development and Design | 15% | 39 |
+| Understanding and Using APIs | 20% | 49 |
+| Cisco Platforms and Development | 15% | 38 |
+| Application Deployment and Security | 15% | 38 |
+| Infrastructure and Automation | 20% | 48 |
+| Network Fundamentals | 15% | 38 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Understanding and Using APIs** carries the most weight (20%) — start there. **Software Development and Design** has the least (15%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the DEVASC with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the DEVASC with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

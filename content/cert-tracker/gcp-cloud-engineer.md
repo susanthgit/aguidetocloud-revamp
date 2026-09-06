@@ -44,18 +44,18 @@ The CLOUD-ENGINEER exam covers **5 domains**. Focus your study time based on the
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Setting Up a Cloud Solution Environment | 20% | 40 |
-| Planning and Configuring a Cloud Solution | 28% | 56 |
-| Deploying and Implementing a Cloud Solution | 24% | 48 |
-| Ensuring Successful Operation of a Cloud Solution | 16% | 32 |
-| Configuring Access and Security | 12% | 24 |
-| **Total** | **100%** | **200** |
+| Setting Up a Cloud Solution Environment | 20% | 50 |
+| Planning and Configuring a Cloud Solution | 28% | 66 |
+| Deploying and Implementing a Cloud Solution | 24% | 58 |
+| Ensuring Successful Operation of a Cloud Solution | 16% | 42 |
+| Configuring Access and Security | 12% | 34 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Planning and Configuring a Cloud Solution** carries the most weight (28%) — start there. **Configuring Access and Security** has the least (12%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CLOUD-ENGINEER with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CLOUD-ENGINEER with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

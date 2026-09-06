@@ -43,17 +43,17 @@ The CCT exam covers **4 domains**. Focus your study time based on the weights be
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Cisco Equipment and Related Hardware | 25% | 50 |
-| Describe Cisco IOS Software Operation | 20% | 40 |
-| Cisco Equipment Maintenance and Basic Troubleshooting | 30% | 60 |
-| Cisco Service and Support | 25% | 50 |
-| **Total** | **100%** | **200** |
+| Cisco Equipment and Related Hardware | 25% | 63 |
+| Describe Cisco IOS Software Operation | 20% | 53 |
+| Cisco Equipment Maintenance and Basic Troubleshooting | 30% | 72 |
+| Cisco Service and Support | 25% | 62 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Cisco Equipment Maintenance and Basic Troubleshooting** carries the most weight (30%) — start there. **Describe Cisco IOS Software Operation** has the least (20%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CCT with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CCT with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

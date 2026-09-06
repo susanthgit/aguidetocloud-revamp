@@ -48,21 +48,21 @@ The CISSP exam covers **8 domains**. Focus your study time based on the weights 
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Security and Risk Management | 16% | 32 |
-| Asset Security | 10% | 20 |
-| Security Architecture and Engineering | 13% | 26 |
-| Communication and Network Security | 13% | 26 |
-| Identity and Access Management (IAM) | 13% | 26 |
-| Security Assessment and Testing | 12% | 24 |
-| Security Operations | 13% | 26 |
-| Software Development Security | 10% | 20 |
-| **Total** | **100%** | **200** |
+| Security and Risk Management | 16% | 39 |
+| Asset Security | 10% | 27 |
+| Security Architecture and Engineering | 13% | 32 |
+| Communication and Network Security | 13% | 32 |
+| Identity and Access Management (IAM) | 13% | 32 |
+| Security Assessment and Testing | 12% | 30 |
+| Security Operations | 13% | 32 |
+| Software Development Security | 10% | 26 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Security and Risk Management** carries the most weight (16%) — start there. **Asset Security** has the least (10%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CISSP with our **200-question practice exam** covering all 8 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CISSP with our **250-question practice exam** covering all 8 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

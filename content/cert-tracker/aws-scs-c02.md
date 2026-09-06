@@ -45,19 +45,19 @@ The SCS-C02 exam covers **6 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Threat Detection and Incident Response | 14% | 28 |
-| Security Logging and Monitoring | 18% | 36 |
-| Infrastructure Security | 20% | 40 |
-| Identity and Access Management | 16% | 32 |
-| Data Protection | 18% | 36 |
-| Management and Security Governance | 14% | 28 |
-| **Total** | **100%** | **200** |
+| Threat Detection and Incident Response | 14% | 37 |
+| Security Logging and Monitoring | 18% | 45 |
+| Infrastructure Security | 20% | 48 |
+| Identity and Access Management | 16% | 40 |
+| Data Protection | 18% | 44 |
+| Management and Security Governance | 14% | 36 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Infrastructure Security** carries the most weight (20%) — start there. **Threat Detection and Incident Response** has the least (14%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the SCS-C02 with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the SCS-C02 with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

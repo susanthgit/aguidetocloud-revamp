@@ -16,7 +16,7 @@ guided_slug: "cisco-clcor"
 
 > Master unified communications — CUCM, SIP, voice gateways, Webex Calling, and hybrid collaboration.
 
-200 original practice questions for the Cisco 350-801 CLCOR v2.0 exam — covering on-premises call control, voice gateways, cloud and hybrid services, QoS, and collaboration infrastructure.
+250 original practice questions for the Cisco 350-801 CLCOR v2.0 exam — covering on-premises call control, voice gateways, cloud and hybrid services, QoS, and collaboration infrastructure.
 
 ## Who Should Take This Exam?
 
@@ -43,19 +43,19 @@ The CLCOR exam covers **6 domains**. Focus your study time based on the weights 
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Infrastructure and Design | 15% | 30 |
-| Protocols and Endpoints | 10% | 20 |
-| On-Premises Call Control | 30% | 60 |
-| Voice Gateways and Session Border Controllers | 10% | 20 |
-| Cloud and Hybrid Services | 25% | 50 |
-| Media and QoS | 10% | 20 |
-| **Total** | **100%** | **200** |
+| Infrastructure and Design | 15% | 39 |
+| Protocols and Endpoints | 10% | 29 |
+| On-Premises Call Control | 30% | 68 |
+| Voice Gateways and Session Border Controllers | 10% | 28 |
+| Cloud and Hybrid Services | 25% | 58 |
+| Media and QoS | 10% | 28 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **On-Premises Call Control** carries the most weight (30%) — start there. **Protocols and Endpoints** has the least (10%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CLCOR with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CLCOR with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

@@ -40,19 +40,19 @@ The CISSP-ISSAP exam covers **6 domains**. Focus your study time based on the we
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Architect for Governance, Compliance, and Risk Management | 20% | 40 |
-| Security Architecture Modelling | 16% | 32 |
-| Infrastructure Security Architecture | 19% | 38 |
-| Identity and Access Management (IAM) Architecture | 16% | 32 |
-| Architect for Application Security | 15% | 30 |
-| Security Operations Architecture | 14% | 28 |
-| **Total** | **100%** | **200** |
+| Architect for Governance, Compliance, and Risk Management | 20% | 49 |
+| Security Architecture Modelling | 16% | 41 |
+| Infrastructure Security Architecture | 19% | 46 |
+| Identity and Access Management (IAM) Architecture | 16% | 40 |
+| Architect for Application Security | 15% | 38 |
+| Security Operations Architecture | 14% | 36 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Architect for Governance, Compliance, and Risk Management** carries the most weight (20%) — start there. **Security Operations Architecture** has the least (14%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CISSP-ISSAP with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CISSP-ISSAP with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

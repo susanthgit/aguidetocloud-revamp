@@ -45,19 +45,19 @@ The CCSP exam covers **6 domains**. Focus your study time based on the weights b
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Cloud Concepts, Architecture and Design | 17% | 34 |
-| Cloud Data Security | 20% | 40 |
-| Cloud Platform and Infrastructure Security | 17% | 34 |
-| Cloud Application Security | 17% | 34 |
-| Cloud Security Operations | 16% | 32 |
-| Legal, Risk and Compliance | 13% | 26 |
-| **Total** | **100%** | **200** |
+| Cloud Concepts, Architecture and Design | 17% | 43 |
+| Cloud Data Security | 20% | 49 |
+| Cloud Platform and Infrastructure Security | 17% | 42 |
+| Cloud Application Security | 17% | 42 |
+| Cloud Security Operations | 16% | 40 |
+| Legal, Risk and Compliance | 13% | 34 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Cloud Data Security** carries the most weight (20%) — start there. **Legal, Risk and Compliance** has the least (13%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CCSP with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CCSP with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

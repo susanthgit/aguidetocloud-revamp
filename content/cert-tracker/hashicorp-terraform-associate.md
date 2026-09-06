@@ -16,7 +16,7 @@ guided_slug: "hashicorp-terraform-associate"
 
 > Infrastructure as Code — build, change, and version infrastructure safely and efficiently
 
-200 original practice questions for the HashiCorp Certified: Terraform Associate (004) certification. Every question includes detailed explanations, scenario-based context, and exam tips.
+250 original practice questions for the HashiCorp Certified: Terraform Associate (004) certification. Every question includes detailed explanations, scenario-based context, and exam tips.
 
 ## Who Should Take This Exam?
 
@@ -45,21 +45,21 @@ The TERRAFORM-ASSOCIATE exam covers **8 domains**. Focus your study time based o
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Infrastructure as Code (IaC) with Terraform | 8% | 16 |
-| Terraform Fundamentals | 10% | 20 |
-| Core Terraform Workflow | 15% | 30 |
-| Terraform Configuration | 20% | 40 |
-| Terraform Modules | 12% | 24 |
-| Terraform State Management | 12% | 24 |
-| Maintain Infrastructure with Terraform | 10% | 20 |
-| HCP Terraform | 13% | 26 |
-| **Total** | **100%** | **200** |
+| Infrastructure as Code (IaC) with Terraform | 8% | 23 |
+| Terraform Fundamentals | 10% | 27 |
+| Core Terraform Workflow | 15% | 36 |
+| Terraform Configuration | 20% | 46 |
+| Terraform Modules | 12% | 30 |
+| Terraform State Management | 12% | 30 |
+| Maintain Infrastructure with Terraform | 10% | 26 |
+| HCP Terraform | 13% | 32 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Terraform Configuration** carries the most weight (20%) — start there. **Infrastructure as Code (IaC) with Terraform** has the least (8%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the TERRAFORM-ASSOCIATE with our **200-question practice exam** covering all 8 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the TERRAFORM-ASSOCIATE with our **250-question practice exam** covering all 8 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

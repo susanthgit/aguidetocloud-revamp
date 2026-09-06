@@ -44,17 +44,17 @@ The ANS-C01 exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Network Design | 30% | 60 |
-| Network Implementation | 26% | 52 |
-| Network Management and Operation | 20% | 40 |
-| Network Security, Compliance, and Governance | 24% | 48 |
-| **Total** | **100%** | **200** |
+| Network Design | 30% | 73 |
+| Network Implementation | 26% | 65 |
+| Network Management and Operation | 20% | 52 |
+| Network Security, Compliance, and Governance | 24% | 60 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Network Design** carries the most weight (30%) — start there. **Network Management and Operation** has the least (20%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the ANS-C01 with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the ANS-C01 with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

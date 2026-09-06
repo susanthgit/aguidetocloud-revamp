@@ -44,18 +44,18 @@ The NETWORK-ENGINEER exam covers **5 domains**. Focus your study time based on t
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Designing, Planning, and Prototyping a Google Cloud Network | 26% | 52 |
-| Implementing Virtual Private Cloud (VPC) Networks | 21% | 42 |
-| Configuring Managed Network Services | 23% | 46 |
-| Implementing Hybrid and Multi-Cloud Interconnectivity | 14% | 28 |
-| Managing, Monitoring, and Optimizing Network Operations | 16% | 32 |
-| **Total** | **100%** | **200** |
+| Designing, Planning, and Prototyping a Google Cloud Network | 26% | 62 |
+| Implementing Virtual Private Cloud (VPC) Networks | 21% | 52 |
+| Configuring Managed Network Services | 23% | 56 |
+| Implementing Hybrid and Multi-Cloud Interconnectivity | 14% | 38 |
+| Managing, Monitoring, and Optimizing Network Operations | 16% | 42 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Designing, Planning, and Prototyping a Google Cloud Network** carries the most weight (26%) — start there. **Implementing Hybrid and Multi-Cloud Interconnectivity** has the least (14%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the NETWORK-ENGINEER with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the NETWORK-ENGINEER with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

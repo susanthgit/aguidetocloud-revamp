@@ -40,18 +40,18 @@ The CISSP-ISSEP exam covers **5 domains**. Focus your study time based on the we
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Systems Security Engineering Foundations | 24% | 48 |
-| Risk Management | 20% | 40 |
-| Security Planning and Engineering | 22% | 44 |
-| Systems Implementation, Verification, and Validation | 20% | 40 |
-| Secure Operations, Change Management, and Disposal | 14% | 28 |
-| **Total** | **100%** | **200** |
+| Systems Security Engineering Foundations | 24% | 58 |
+| Risk Management | 20% | 50 |
+| Security Planning and Engineering | 22% | 54 |
+| Systems Implementation, Verification, and Validation | 20% | 50 |
+| Secure Operations, Change Management, and Disposal | 14% | 38 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Systems Security Engineering Foundations** carries the most weight (24%) — start there. **Secure Operations, Change Management, and Disposal** has the least (14%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CISSP-ISSEP with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CISSP-ISSEP with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

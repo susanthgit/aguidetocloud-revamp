@@ -43,22 +43,22 @@ The JNCIS-ENT exam covers **9 domains**. Focus your study time based on the weig
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Layer 2 Switching & VLANs | 15% | 30 |
-| Spanning Tree Protocol | 10% | 20 |
-| Layer 2 Security | 10% | 20 |
-| Protocol-Independent Routing | 10% | 20 |
-| OSPF | 15% | 30 |
-| IS-IS | 10% | 20 |
-| BGP | 15% | 30 |
-| Tunnels | 5% | 10 |
-| High Availability | 10% | 20 |
-| **Total** | **100%** | **200** |
+| Layer 2 Switching & VLANs | 15% | 36 |
+| Spanning Tree Protocol | 10% | 25 |
+| Layer 2 Security | 10% | 26 |
+| Protocol-Independent Routing | 10% | 26 |
+| OSPF | 15% | 36 |
+| IS-IS | 10% | 25 |
+| BGP | 15% | 35 |
+| Tunnels | 5% | 15 |
+| High Availability | 10% | 25 |
+| **Total** | **100%** | **249** |
 
 > 💡 **Study tip:** **Layer 2 Switching & VLANs** carries the most weight (15%) — start there. **Tunnels** has the least (5%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 249 Questions
 
-Prepare for the JNCIS-ENT with our **200-question practice exam** covering all 9 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the JNCIS-ENT with our **249-question practice exam** covering all 9 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

@@ -43,18 +43,18 @@ The CYBEROPS exam covers **5 domains**. Focus your study time based on the weigh
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Security Concepts | 20% | 40 |
-| Security Monitoring | 25% | 50 |
-| Host-Based Analysis | 20% | 40 |
-| Network Intrusion Analysis | 20% | 40 |
-| Security Policies and Procedures | 15% | 30 |
-| **Total** | **100%** | **200** |
+| Security Concepts | 20% | 50 |
+| Security Monitoring | 25% | 60 |
+| Host-Based Analysis | 20% | 50 |
+| Network Intrusion Analysis | 20% | 50 |
+| Security Policies and Procedures | 15% | 40 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Security Monitoring** carries the most weight (25%) — start there. **Security Policies and Procedures** has the least (15%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CYBEROPS with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CYBEROPS with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

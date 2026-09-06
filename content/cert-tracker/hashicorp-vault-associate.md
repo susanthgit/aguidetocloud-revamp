@@ -45,22 +45,22 @@ The VAULT-ASSOCIATE exam covers **9 domains**. Focus your study time based on th
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Authentication Methods | 14% | 28 |
-| Vault Policies | 12% | 24 |
-| Vault Tokens | 12% | 24 |
-| Vault Leases | 8% | 16 |
-| Secrets Engines | 16% | 32 |
-| Encryption as a Service | 6% | 12 |
-| Vault Architecture Fundamentals | 10% | 20 |
-| Vault Deployment Architecture | 12% | 24 |
-| Access Management Architecture | 10% | 20 |
-| **Total** | **100%** | **200** |
+| Authentication Methods | 14% | 34 |
+| Vault Policies | 12% | 30 |
+| Vault Tokens | 12% | 30 |
+| Vault Leases | 8% | 22 |
+| Secrets Engines | 16% | 38 |
+| Encryption as a Service | 6% | 17 |
+| Vault Architecture Fundamentals | 10% | 25 |
+| Vault Deployment Architecture | 12% | 29 |
+| Access Management Architecture | 10% | 25 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Secrets Engines** carries the most weight (16%) — start there. **Encryption as a Service** has the least (6%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the VAULT-ASSOCIATE with our **200-question practice exam** covering all 9 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the VAULT-ASSOCIATE with our **250-question practice exam** covering all 9 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

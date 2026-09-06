@@ -45,19 +45,19 @@ The SOA-C02 exam covers **6 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Monitoring, Logging, and Remediation | 20% | 40 |
-| Reliability and Business Continuity | 16% | 32 |
-| Deployment, Provisioning, and Automation | 18% | 36 |
-| Security and Compliance | 16% | 32 |
-| Networking and Content Delivery | 18% | 36 |
-| Cost and Performance Optimization | 12% | 24 |
-| **Total** | **100%** | **200** |
+| Monitoring, Logging, and Remediation | 20% | 49 |
+| Reliability and Business Continuity | 16% | 41 |
+| Deployment, Provisioning, and Automation | 18% | 44 |
+| Security and Compliance | 16% | 40 |
+| Networking and Content Delivery | 18% | 44 |
+| Cost and Performance Optimization | 12% | 32 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Monitoring, Logging, and Remediation** carries the most weight (20%) — start there. **Cost and Performance Optimization** has the least (12%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the SOA-C02 with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the SOA-C02 with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

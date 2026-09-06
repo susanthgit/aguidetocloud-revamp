@@ -16,7 +16,7 @@ guided_slug: "comptia-sy0-701"
 
 > Entry-level cybersecurity — DoD 8570/8140 approved, #1 security cert globally
 
-200 original practice questions for the CompTIA Security+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
+250 original practice questions for the CompTIA Security+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
 
 ## Who Should Take This Exam?
 
@@ -48,18 +48,18 @@ The SY0-701 exam covers **5 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| General Security Concepts | 12% | 24 |
-| Threats, Vulnerabilities, and Mitigations | 22% | 44 |
-| Security Architecture | 18% | 36 |
-| Security Operations | 28% | 56 |
-| Security Program Management and Oversight | 20% | 40 |
-| **Total** | **100%** | **200** |
+| General Security Concepts | 12% | 34 |
+| Threats, Vulnerabilities, and Mitigations | 22% | 54 |
+| Security Architecture | 18% | 46 |
+| Security Operations | 28% | 66 |
+| Security Program Management and Oversight | 20% | 50 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Security Operations** carries the most weight (28%) — start there. **General Security Concepts** has the least (12%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the SY0-701 with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the SY0-701 with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

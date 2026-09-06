@@ -16,7 +16,7 @@ guided_slug: "comptia-cv0-004"
 
 > Vendor-neutral cloud skills — architecture, security, deployment, operations, DevOps
 
-200 original practice questions for the CompTIA Cloud+ (CV0-004) certification. Covers all 6 domains: Cloud Architecture, Deployment, Operations, Security, DevOps Fundamentals, and Troubleshooting. Every question includes detailed explanations, scenario-based context, and exam tips.
+250 original practice questions for the CompTIA Cloud+ (CV0-004) certification. Covers all 6 domains: Cloud Architecture, Deployment, Operations, Security, DevOps Fundamentals, and Troubleshooting. Every question includes detailed explanations, scenario-based context, and exam tips.
 
 ## Who Should Take This Exam?
 
@@ -38,9 +38,9 @@ The CV0-004 is designed for **IT professionals with some hands-on experience**. 
 | **Validity** | 3 years (renewable via CE) |
 | **Official Page** | [View on CompTIA →](https://www.comptia.org/certifications/cloud) |
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CV0-004 with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CV0-004 with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

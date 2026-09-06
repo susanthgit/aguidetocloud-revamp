@@ -44,18 +44,18 @@ The DAS-C01 exam covers **5 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Collection | 18% | 36 |
-| Storage and Data Management | 22% | 44 |
-| Processing | 24% | 48 |
-| Analysis and Visualization | 18% | 36 |
-| Security | 18% | 36 |
-| **Total** | **100%** | **200** |
+| Collection | 18% | 46 |
+| Storage and Data Management | 22% | 54 |
+| Processing | 24% | 58 |
+| Analysis and Visualization | 18% | 46 |
+| Security | 18% | 46 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Processing** carries the most weight (24%) — start there. **Collection** has the least (18%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the DAS-C01 with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the DAS-C01 with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

@@ -44,18 +44,18 @@ The DBS-C01 exam covers **5 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Workload-Specific Database Design | 26% | 52 |
-| Deployment and Migration | 20% | 40 |
-| Management and Operations | 18% | 36 |
-| Monitoring and Troubleshooting | 18% | 36 |
-| Database Security | 18% | 36 |
-| **Total** | **100%** | **200** |
+| Workload-Specific Database Design | 26% | 70 |
+| Deployment and Migration | 20% | 48 |
+| Management and Operations | 18% | 44 |
+| Monitoring and Troubleshooting | 18% | 44 |
+| Database Security | 18% | 44 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Workload-Specific Database Design** carries the most weight (26%) — start there. **Management and Operations** has the least (18%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the DBS-C01 with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the DBS-C01 with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

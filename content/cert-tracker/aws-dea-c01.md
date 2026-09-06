@@ -44,17 +44,17 @@ The DEA-C01 exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Data Ingestion and Transformation | 34% | 68 |
-| Data Store Management | 26% | 52 |
-| Data Operations and Support | 22% | 44 |
-| Data Security and Governance | 18% | 36 |
-| **Total** | **100%** | **200** |
+| Data Ingestion and Transformation | 34% | 81 |
+| Data Store Management | 26% | 65 |
+| Data Operations and Support | 22% | 56 |
+| Data Security and Governance | 18% | 48 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Data Ingestion and Transformation** carries the most weight (34%) — start there. **Data Security and Governance** has the least (18%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the DEA-C01 with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the DEA-C01 with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

@@ -16,7 +16,7 @@ guided_slug: "comptia-pk0-005"
 
 > Vendor-neutral project management — Agile, Waterfall, hybrid methodologies
 
-200 original practice questions for the CompTIA Project+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
+250 original practice questions for the CompTIA Project+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
 
 ## Who Should Take This Exam?
 
@@ -44,17 +44,17 @@ The PK0-005 exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Project Management Concepts | 33% | 66 |
-| Project Life Cycle Phases | 30% | 60 |
-| Tools and Documentation | 19% | 38 |
-| Basics of IT and Governance | 18% | 36 |
-| **Total** | **100%** | **200** |
+| Project Management Concepts | 33% | 79 |
+| Project Life Cycle Phases | 30% | 73 |
+| Tools and Documentation | 19% | 50 |
+| Basics of IT and Governance | 18% | 48 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Project Management Concepts** carries the most weight (33%) — start there. **Basics of IT and Governance** has the least (18%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the PK0-005 with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the PK0-005 with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

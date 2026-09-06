@@ -16,7 +16,7 @@ guided_slug: "fortinet-nse7-efw"
 
 > Expert-level FortiGate enterprise deployment — HA, VDOM, ADVPN, BGP/OSPF, and Security Fabric
 
-200 original practice questions for the Fortinet NSE 7 Enterprise Firewall 7.6 (FCSS_EFW_AD-7.6) certification. Covers advanced HA clustering, VDOMs, hardware acceleration, FortiManager/FortiAnalyzer, SSL inspection, IPS, OSPF/BGP routing, SD-WAN, ADVPN 2.0, and complex VPN topologies. Expert-level scenarios with FortiOS 7.6 CLI commands.
+250 original practice questions for the Fortinet NSE 7 Enterprise Firewall 7.6 (FCSS_EFW_AD-7.6) certification. Covers advanced HA clustering, VDOMs, hardware acceleration, FortiManager/FortiAnalyzer, SSL inspection, IPS, OSPF/BGP routing, SD-WAN, ADVPN 2.0, and complex VPN topologies. Expert-level scenarios with FortiOS 7.6 CLI commands.
 
 ## Who Should Take This Exam?
 
@@ -44,18 +44,18 @@ The NSE7-EFW exam covers **5 domains**. Focus your study time based on the weigh
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| System Configuration | 25% | 50 |
-| Central Management | 15% | 30 |
-| Security Profiles | 20% | 40 |
-| Routing | 20% | 40 |
-| VPN | 20% | 40 |
-| **Total** | **100%** | **200** |
+| System Configuration | 25% | 60 |
+| Central Management | 15% | 40 |
+| Security Profiles | 20% | 50 |
+| Routing | 20% | 50 |
+| VPN | 20% | 50 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **System Configuration** carries the most weight (25%) — start there. **Central Management** has the least (15%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the NSE7-EFW with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the NSE7-EFW with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

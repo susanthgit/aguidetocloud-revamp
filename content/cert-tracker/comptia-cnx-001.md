@@ -16,7 +16,7 @@ guided_slug: "comptia-cnx-001"
 
 > Expert-level cloud network architecture — hybrid design, zero trust, operations
 
-200 original practice questions for the CompTIA CloudNetX certification. Every question includes detailed explanations, scenario-based context, and exam tips. Covers Network Architecture Design, Network Security, Operations & Monitoring, and Troubleshooting at an expert architect level.
+250 original practice questions for the CompTIA CloudNetX certification. Every question includes detailed explanations, scenario-based context, and exam tips. Covers Network Architecture Design, Network Security, Operations & Monitoring, and Troubleshooting at an expert architect level.
 
 ## Who Should Take This Exam?
 
@@ -44,17 +44,17 @@ The CNX-001 exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Network Architecture Design | 31% | 62 |
-| Network Security | 28% | 56 |
-| Network Operations, Monitoring, and Performance | 16% | 32 |
-| Network Troubleshooting | 25% | 50 |
-| **Total** | **100%** | **200** |
+| Network Architecture Design | 31% | 75 |
+| Network Security | 28% | 69 |
+| Network Operations, Monitoring, and Performance | 16% | 44 |
+| Network Troubleshooting | 25% | 62 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Network Architecture Design** carries the most weight (31%) — start there. **Network Operations, Monitoring, and Performance** has the least (16%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CNX-001 with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CNX-001 with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

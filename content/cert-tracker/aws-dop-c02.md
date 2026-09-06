@@ -45,19 +45,19 @@ The DOP-C02 exam covers **6 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| SDLC Automation | 22% | 44 |
-| Configuration Management and IaC | 17% | 34 |
-| Monitoring and Logging | 15% | 30 |
-| Incident and Event Response | 14% | 28 |
-| Security and Compliance | 12% | 24 |
-| High Availability, Fault Tolerance, and Disaster Recovery | 20% | 40 |
-| **Total** | **100%** | **200** |
+| SDLC Automation | 22% | 53 |
+| Configuration Management and IaC | 17% | 43 |
+| Monitoring and Logging | 15% | 38 |
+| Incident and Event Response | 14% | 36 |
+| Security and Compliance | 12% | 32 |
+| High Availability, Fault Tolerance, and Disaster Recovery | 20% | 48 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **SDLC Automation** carries the most weight (22%) — start there. **Security and Compliance** has the least (12%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the DOP-C02 with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the DOP-C02 with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

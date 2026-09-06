@@ -16,7 +16,7 @@ guided_slug: "comptia-sk0-005"
 
 > Server administration — hardware, management, security, troubleshooting
 
-200 original practice questions for the CompTIA Server+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
+250 original practice questions for the CompTIA Server+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
 
 ## Who Should Take This Exam?
 
@@ -44,17 +44,17 @@ The SK0-005 exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Server Hardware Installation and Management | 18% | 36 |
-| Server Administration | 30% | 60 |
-| Security and Disaster Recovery | 24% | 48 |
-| Troubleshooting | 28% | 56 |
-| **Total** | **100%** | **200** |
+| Server Hardware Installation and Management | 18% | 49 |
+| Server Administration | 30% | 73 |
+| Security and Disaster Recovery | 24% | 60 |
+| Troubleshooting | 28% | 68 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Server Administration** carries the most weight (30%) — start there. **Server Hardware Installation and Management** has the least (18%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the SK0-005 with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the SK0-005 with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

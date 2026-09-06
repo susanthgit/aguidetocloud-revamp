@@ -16,7 +16,7 @@ guided_slug: "cncf-cks"
 
 > Kubernetes security — hardening, supply chain, runtime defence
 
-200 original practice questions for the CNCF Certified Kubernetes Security Specialist (CKS) exam. Covers cluster hardening, system security, microservice vulnerabilities, supply chain security, and runtime threat detection with Falco, Trivy, and OPA/Gatekeeper.
+250 original practice questions for the CNCF Certified Kubernetes Security Specialist (CKS) exam. Covers cluster hardening, system security, microservice vulnerabilities, supply chain security, and runtime threat detection with Falco, Trivy, and OPA/Gatekeeper.
 
 ## Who Should Take This Exam?
 
@@ -45,19 +45,19 @@ The CKS exam covers **6 domains**. Focus your study time based on the weights be
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Cluster Setup | 15% | 30 |
-| Cluster Hardening | 15% | 30 |
-| System Hardening | 10% | 20 |
-| Minimize Microservice Vulnerabilities | 20% | 40 |
-| Supply Chain Security | 20% | 40 |
-| Monitoring, Logging, and Runtime Security | 20% | 40 |
-| **Total** | **100%** | **200** |
+| Cluster Setup | 15% | 39 |
+| Cluster Hardening | 15% | 39 |
+| System Hardening | 10% | 28 |
+| Minimize Microservice Vulnerabilities | 20% | 48 |
+| Supply Chain Security | 20% | 48 |
+| Monitoring, Logging, and Runtime Security | 20% | 48 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Minimize Microservice Vulnerabilities** carries the most weight (20%) — start there. **System Hardening** has the least (10%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CKS with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CKS with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

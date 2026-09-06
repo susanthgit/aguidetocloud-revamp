@@ -44,18 +44,18 @@ The DEVOPS-ENGINEER exam covers **5 domains**. Focus your study time based on th
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Bootstrapping and Maintaining a Google Cloud Organization | 17% | 34 |
-| Building and Implementing CI/CD Pipelines | 25% | 50 |
-| Applying Site Reliability Engineering (SRE) Practices | 23% | 46 |
-| Implementing Service Monitoring Strategies | 20% | 40 |
-| Optimizing Service Performance and Cost | 15% | 30 |
-| **Total** | **100%** | **200** |
+| Bootstrapping and Maintaining a Google Cloud Organization | 17% | 44 |
+| Building and Implementing CI/CD Pipelines | 25% | 60 |
+| Applying Site Reliability Engineering (SRE) Practices | 23% | 56 |
+| Implementing Service Monitoring Strategies | 20% | 50 |
+| Optimizing Service Performance and Cost | 15% | 40 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Building and Implementing CI/CD Pipelines** carries the most weight (25%) — start there. **Optimizing Service Performance and Cost** has the least (15%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the DEVOPS-ENGINEER with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the DEVOPS-ENGINEER with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

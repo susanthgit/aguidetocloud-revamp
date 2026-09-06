@@ -16,7 +16,7 @@ guided_slug: "comptia-dy0-001"
 
 > Expert-level data science and ML — statistics, modeling, MLOps, AI applications
 
-200 original practice questions for the CompTIA DataAI certification. Every question includes detailed explanations, scenario-based context, and exam tips.
+250 original practice questions for the CompTIA DataAI certification. Every question includes detailed explanations, scenario-based context, and exam tips.
 
 ## Who Should Take This Exam?
 
@@ -44,18 +44,18 @@ The DY0-001 exam covers **5 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Mathematics and Statistics | 17% | 34 |
-| Modeling, Analysis, and Outcomes | 24% | 48 |
-| Machine Learning | 24% | 48 |
-| Operations and Processes | 22% | 44 |
-| Trends and Specialized Applications | 13% | 26 |
-| **Total** | **100%** | **200** |
+| Mathematics and Statistics | 17% | 44 |
+| Modeling, Analysis, and Outcomes | 24% | 58 |
+| Machine Learning | 24% | 58 |
+| Operations and Processes | 22% | 54 |
+| Trends and Specialized Applications | 13% | 36 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Modeling, Analysis, and Outcomes** carries the most weight (24%) — start there. **Trends and Specialized Applications** has the least (13%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the DY0-001 with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the DY0-001 with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

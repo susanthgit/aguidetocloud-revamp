@@ -43,17 +43,17 @@ The CYBERSEC-APPRENTICE exam covers **4 domains**. Focus your study time based o
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Networking Fundamentals | 30% | 60 |
-| Cybersecurity Fundamentals | 30% | 60 |
-| Security Technologies and Concepts | 25% | 50 |
-| Cybersecurity Operations and Awareness | 15% | 30 |
-| **Total** | **100%** | **200** |
+| Networking Fundamentals | 30% | 73 |
+| Cybersecurity Fundamentals | 30% | 73 |
+| Security Technologies and Concepts | 25% | 62 |
+| Cybersecurity Operations and Awareness | 15% | 42 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Networking Fundamentals** carries the most weight (30%) — start there. **Cybersecurity Operations and Awareness** has the least (15%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CYBERSEC-APPRENTICE with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CYBERSEC-APPRENTICE with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

@@ -45,18 +45,18 @@ The CKAD exam covers **5 domains**. Focus your study time based on the weights b
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Application Design and Build | 20% | 40 |
-| Application Deployment | 20% | 40 |
-| Application Observability and Maintenance | 15% | 30 |
-| Application Environment, Configuration, and Security | 25% | 50 |
-| Services and Networking | 20% | 40 |
-| **Total** | **100%** | **200** |
+| Application Design and Build | 20% | 50 |
+| Application Deployment | 20% | 50 |
+| Application Observability and Maintenance | 15% | 40 |
+| Application Environment, Configuration, and Security | 25% | 60 |
+| Services and Networking | 20% | 50 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Application Environment, Configuration, and Security** carries the most weight (25%) — start there. **Application Observability and Maintenance** has the least (15%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CKAD with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CKAD with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

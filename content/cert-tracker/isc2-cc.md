@@ -18,7 +18,7 @@ faq:
   - question: "Is the CC certification worth it for getting into cybersecurity?"
     answer: "Yes — for absolute beginners. CC gives you an ISC² credential on your CV without years of work history (unlike CISSP, which needs 5 years). It signals you've taken cybersecurity seriously and passed a vendor-neutral foundational exam. The next step from CC is usually [SSCP](https://www.isc2.org/certifications/sscp) (technical) or CompTIA Security+, then eventually CISSP. CC by itself rarely lands the job — it gets your CV past the keyword filter."
   - question: "How long does it take to prepare for CC?"
-    answer: "Two to four weeks of part-time study for most beginners. If you've done CompTIA Security+ or have an IT background, you might pass cold or with a week's review. The exam is 100 questions over 2 hours covering 5 domains — Security Principles (26%) carries the most weight, so start there. Our [200-question practice exam](/cert-tracker/isc2-cc/) maps to the latest exam objectives."
+    answer: "Two to four weeks of part-time study for most beginners. If you've done CompTIA Security+ or have an IT background, you might pass cold or with a week's review. The exam is 100 questions over 2 hours covering 5 domains — Security Principles (26%) carries the most weight, so start there. Our [250-question practice exam](/cert-tracker/isc2-cc/) maps to the latest exam objectives."
   - question: "CC vs CompTIA Security+ — which should I take first?"
     answer: "Honest answer: take whichever your target job posting asks for. Security+ has wider US and UK enterprise and government recognition. CC has growing international recognition and a cleaner ISC² upgrade path to SSCP and CISSP. Cost-wise CC is cheaper ($199 vs around $392). Most career changers do CC first (cheaper, easier, faster) then Security+ within 6 months once they've landed an entry role."
   - question: "What does the CC cert require for renewal?"
@@ -60,18 +60,18 @@ The CC exam covers **5 domains**. Focus your study time based on the weights bel
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Security Principles | 26% | 52 |
-| Business Continuity, Disaster Recovery & Incident Response | 10% | 20 |
-| Access Controls Concepts | 22% | 44 |
-| Network Security | 24% | 48 |
-| Security Operations | 18% | 36 |
-| **Total** | **100%** | **200** |
+| Security Principles | 26% | 62 |
+| Business Continuity, Disaster Recovery & Incident Response | 10% | 30 |
+| Access Controls Concepts | 22% | 54 |
+| Network Security | 24% | 58 |
+| Security Operations | 18% | 46 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Security Principles** carries the most weight (26%) — start there. **Business Continuity, Disaster Recovery & Incident Response** has the least (10%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CC with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CC with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

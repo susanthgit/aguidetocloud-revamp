@@ -16,7 +16,7 @@ guided_slug: "fortinet-nse5-fmg"
 
 > Master centralized FortiGate management — 200 questions for the FCP_FMG_AD-7.4 exam
 
-200 original practice questions for the Fortinet NSE 5 FortiManager 7.4 certification exam. Covers system administration, device manager, policy and objects, advanced configuration (HA, FortiGuard, FortiAnalyzer), and troubleshooting. Scenario-based questions with detailed explanations and exam tips.
+250 original practice questions for the Fortinet NSE 5 FortiManager 7.4 certification exam. Covers system administration, device manager, policy and objects, advanced configuration (HA, FortiGuard, FortiAnalyzer), and troubleshooting. Scenario-based questions with detailed explanations and exam tips.
 
 ## Who Should Take This Exam?
 
@@ -37,18 +37,18 @@ The NSE5-FMG exam covers **5 domains**. Focus your study time based on the weigh
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Administration | 20% | 40 |
-| Device Manager | 20% | 40 |
-| Policy & Objects | 20% | 40 |
-| Advanced Configuration | 20% | 40 |
-| Troubleshooting | 20% | 40 |
-| **Total** | **100%** | **200** |
+| Administration | 20% | 50 |
+| Device Manager | 20% | 50 |
+| Policy & Objects | 20% | 50 |
+| Advanced Configuration | 20% | 50 |
+| Troubleshooting | 20% | 50 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Administration** carries the most weight (20%) — start there. **Administration** has the least (20%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the NSE5-FMG with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the NSE5-FMG with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

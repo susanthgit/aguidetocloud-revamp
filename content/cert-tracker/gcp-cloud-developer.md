@@ -44,17 +44,17 @@ The CLOUD-DEVELOPER exam covers **4 domains**. Focus your study time based on th
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Designing Highly Scalable, Available, and Reliable Cloud-Native Applications | 25% | 50 |
-| Building and Testing Applications | 25% | 50 |
-| Deploying Applications | 25% | 50 |
-| Integrating Google Cloud Services | 25% | 50 |
-| **Total** | **100%** | **200** |
+| Designing Highly Scalable, Available, and Reliable Cloud-Native Applications | 25% | 63 |
+| Building and Testing Applications | 25% | 63 |
+| Deploying Applications | 25% | 62 |
+| Integrating Google Cloud Services | 25% | 62 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Designing Highly Scalable, Available, and Reliable Cloud-Native Applications** carries the most weight (25%) — start there. **Designing Highly Scalable, Available, and Reliable Cloud-Native Applications** has the least (25%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CLOUD-DEVELOPER with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CLOUD-DEVELOPER with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

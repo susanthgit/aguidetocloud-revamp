@@ -16,7 +16,7 @@ guided_slug: "isaca-crisc"
 
 > Master IT risk identification, assessment, response, and control monitoring
 
-200 original practice questions for the ISACA CRISC exam. Every question includes detailed explanations, scenario-based context, and exam tips. Covers all 4 domains: Governance, IT Risk Assessment, Risk Response & Reporting, and Technology & Security.
+250 original practice questions for the ISACA CRISC exam. Every question includes detailed explanations, scenario-based context, and exam tips. Covers all 4 domains: Governance, IT Risk Assessment, Risk Response & Reporting, and Technology & Security.
 
 ## Who Should Take This Exam?
 
@@ -45,17 +45,17 @@ The CRISC exam covers **4 domains**. Focus your study time based on the weights 
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Governance | 26% | 52 |
-| IT Risk Assessment | 22% | 44 |
-| Risk Response and Reporting | 32% | 64 |
-| Technology and Security | 20% | 40 |
-| **Total** | **100%** | **200** |
+| Governance | 26% | 65 |
+| IT Risk Assessment | 22% | 57 |
+| Risk Response and Reporting | 32% | 76 |
+| Technology and Security | 20% | 52 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Risk Response and Reporting** carries the most weight (32%) — start there. **Technology and Security** has the least (20%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CRISC with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CRISC with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

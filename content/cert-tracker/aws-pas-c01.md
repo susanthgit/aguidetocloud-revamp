@@ -44,17 +44,17 @@ The PAS-C01 exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Design of SAP Workloads on AWS | 30% | 60 |
-| Implementation of SAP Workloads on AWS | 24% | 48 |
-| Migration of SAP Workloads to AWS | 26% | 52 |
-| Operation and Maintenance of SAP on AWS | 20% | 40 |
-| **Total** | **100%** | **200** |
+| Design of SAP Workloads on AWS | 30% | 73 |
+| Implementation of SAP Workloads on AWS | 24% | 61 |
+| Migration of SAP Workloads to AWS | 26% | 64 |
+| Operation and Maintenance of SAP on AWS | 20% | 52 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Design of SAP Workloads on AWS** carries the most weight (30%) — start there. **Operation and Maintenance of SAP on AWS** has the least (20%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the PAS-C01 with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the PAS-C01 with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

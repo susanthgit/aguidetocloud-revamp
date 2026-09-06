@@ -16,7 +16,7 @@ guided_slug: "eccouncil-chfi-v11"
 
 > Digital forensics expert — evidence acquisition, analysis, and court testimony
 
-200 original practice questions for the EC-Council Certified Hacking Forensic Investigator (CHFI) v11 certification (312-49). Covers forensic investigation methodology, evidence handling, file system forensics, OS artifact analysis, network forensics, and cloud/mobile forensics with realistic investigation scenarios.
+250 original practice questions for the EC-Council Certified Hacking Forensic Investigator (CHFI) v11 certification (312-49). Covers forensic investigation methodology, evidence handling, file system forensics, OS artifact analysis, network forensics, and cloud/mobile forensics with realistic investigation scenarios.
 
 ## Who Should Take This Exam?
 
@@ -44,19 +44,19 @@ The CHFI-V11 exam covers **6 domains**. Focus your study time based on the weigh
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Forensic Science & Investigation Process | 18% | 36 |
-| Regulations, Policies & Digital Evidence | 14% | 28 |
-| Data Acquisition & File System Forensics | 18% | 36 |
-| Operating System Forensics (Windows, Linux, Mac) | 18% | 36 |
-| Network, Web, Email & Malware Forensics | 18% | 36 |
-| Cloud, Mobile, IoT Forensics & Reporting | 14% | 28 |
-| **Total** | **100%** | **200** |
+| Forensic Science & Investigation Process | 18% | 45 |
+| Regulations, Policies & Digital Evidence | 14% | 37 |
+| Data Acquisition & File System Forensics | 18% | 44 |
+| Operating System Forensics (Windows, Linux, Mac) | 18% | 44 |
+| Network, Web, Email & Malware Forensics | 18% | 44 |
+| Cloud, Mobile, IoT Forensics & Reporting | 14% | 36 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Forensic Science & Investigation Process** carries the most weight (18%) — start there. **Regulations, Policies & Digital Evidence** has the least (14%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CHFI-V11 with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CHFI-V11 with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

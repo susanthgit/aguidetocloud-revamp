@@ -45,17 +45,17 @@ The SAP-C02 exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Design Solutions for Organizational Complexity | 26% | 52 |
-| Design for New Solutions | 29% | 58 |
-| Continuously Improve Existing Solutions | 25% | 50 |
-| Accelerate Workload Migration and Modernization | 20% | 40 |
-| **Total** | **100%** | **200** |
+| Design Solutions for Organizational Complexity | 26% | 65 |
+| Design for New Solutions | 29% | 71 |
+| Continuously Improve Existing Solutions | 25% | 62 |
+| Accelerate Workload Migration and Modernization | 20% | 52 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Design for New Solutions** carries the most weight (29%) — start there. **Accelerate Workload Migration and Modernization** has the least (20%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the SAP-C02 with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the SAP-C02 with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

@@ -16,7 +16,7 @@ guided_slug: "cisco-encor"
 
 > Master enterprise networking — routing, switching, security, and automation
 
-Conquer the CCNP Enterprise core exam with 200 original practice questions covering architecture, virtualization, infrastructure (OSPF, EIGRP, BGP, STP), network assurance, security (AAA, 802.1X, Zero Trust), and automation (Python, RESTCONF, Ansible). Updated for ENCOR v1.2 (March 2026). Original practice questions.
+Conquer the CCNP Enterprise core exam with 250 original practice questions covering architecture, virtualization, infrastructure (OSPF, EIGRP, BGP, STP), network assurance, security (AAA, 802.1X, Zero Trust), and automation (Python, RESTCONF, Ansible). Updated for ENCOR v1.2 (March 2026). Original practice questions.
 
 ## Who Should Take This Exam?
 
@@ -44,19 +44,19 @@ The ENCOR exam covers **6 domains**. Focus your study time based on the weights 
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Architecture | 15% | 30 |
-| Virtualization | 10% | 20 |
-| Infrastructure | 30% | 60 |
-| Network Assurance | 10% | 20 |
-| Security | 20% | 40 |
-| Automation | 15% | 30 |
-| **Total** | **100%** | **200** |
+| Architecture | 15% | 39 |
+| Virtualization | 10% | 29 |
+| Infrastructure | 30% | 68 |
+| Network Assurance | 10% | 28 |
+| Security | 20% | 48 |
+| Automation | 15% | 38 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Infrastructure** carries the most weight (30%) — start there. **Virtualization** has the least (10%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the ENCOR with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the ENCOR with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

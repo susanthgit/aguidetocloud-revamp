@@ -45,19 +45,19 @@ The CCNA exam covers **6 domains**. Focus your study time based on the weights b
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Network Fundamentals | 20% | 40 |
-| Network Access | 20% | 40 |
-| IP Connectivity | 25% | 50 |
-| IP Services | 10% | 20 |
-| Security Fundamentals | 15% | 30 |
-| Automation and Programmability | 10% | 20 |
-| **Total** | **100%** | **200** |
+| Network Fundamentals | 20% | 49 |
+| Network Access | 20% | 49 |
+| IP Connectivity | 25% | 58 |
+| IP Services | 10% | 28 |
+| Security Fundamentals | 15% | 38 |
+| Automation and Programmability | 10% | 28 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **IP Connectivity** carries the most weight (25%) — start there. **IP Services** has the least (10%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CCNA with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CCNA with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

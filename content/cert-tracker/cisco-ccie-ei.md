@@ -55,17 +55,17 @@ The CCIE-EI exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Network Infrastructure | 25% | 50 |
-| Software Defined Infrastructure | 25% | 50 |
-| Transport Technologies and Solutions | 25% | 50 |
-| Infrastructure Security and Services | 25% | 50 |
-| **Total** | **100%** | **200** |
+| Network Infrastructure | 25% | 63 |
+| Software Defined Infrastructure | 25% | 63 |
+| Transport Technologies and Solutions | 25% | 62 |
+| Infrastructure Security and Services | 25% | 62 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Network Infrastructure** carries the most weight (25%) — start there. **Network Infrastructure** has the least (25%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CCIE-EI with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CCIE-EI with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

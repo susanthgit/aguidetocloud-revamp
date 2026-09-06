@@ -44,17 +44,17 @@ The WORKSPACE-ADMIN exam covers **4 domains**. Focus your study time based on th
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Managing Google Workspace Organizations | 25% | 50 |
-| Managing User and Group Lifecycle | 25% | 50 |
-| Configuring Google Workspace Services | 30% | 60 |
-| Security and Compliance | 20% | 40 |
-| **Total** | **100%** | **200** |
+| Managing Google Workspace Organizations | 25% | 63 |
+| Managing User and Group Lifecycle | 25% | 63 |
+| Configuring Google Workspace Services | 30% | 72 |
+| Security and Compliance | 20% | 52 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Configuring Google Workspace Services** carries the most weight (30%) — start there. **Security and Compliance** has the least (20%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the WORKSPACE-ADMIN with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the WORKSPACE-ADMIN with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

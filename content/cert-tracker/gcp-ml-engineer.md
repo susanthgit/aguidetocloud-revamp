@@ -44,20 +44,20 @@ The ML-ENGINEER exam covers **7 domains**. Focus your study time based on the we
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Architecting Low-Code AI Solutions | 13% | 26 |
-| Collaborating Across Teams to Manage Data and Models | 15% | 30 |
-| Scaling Prototypes into ML/AI Models | 14% | 28 |
-| Serving and Scaling Models | 15% | 30 |
-| Automating and Orchestrating ML Pipelines | 18% | 36 |
-| Monitoring AI Solutions | 15% | 30 |
-| Designing Responsible, Secure, and Compliant AI | 10% | 20 |
-| **Total** | **100%** | **200** |
+| Architecting Low-Code AI Solutions | 13% | 34 |
+| Collaborating Across Teams to Manage Data and Models | 15% | 37 |
+| Scaling Prototypes into ML/AI Models | 14% | 35 |
+| Serving and Scaling Models | 15% | 37 |
+| Automating and Orchestrating ML Pipelines | 18% | 43 |
+| Monitoring AI Solutions | 15% | 37 |
+| Designing Responsible, Secure, and Compliant AI | 10% | 27 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Automating and Orchestrating ML Pipelines** carries the most weight (18%) — start there. **Designing Responsible, Secure, and Compliant AI** has the least (10%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the ML-ENGINEER with our **200-question practice exam** covering all 7 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the ML-ENGINEER with our **250-question practice exam** covering all 7 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

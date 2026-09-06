@@ -16,7 +16,7 @@ guided_slug: "comptia-ds0-001"
 
 > Database administration — fundamentals, deployment, management, security, continuity
 
-200 original practice questions for the CompTIA DataSys+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
+250 original practice questions for the CompTIA DataSys+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
 
 ## Who Should Take This Exam?
 
@@ -44,18 +44,18 @@ The DS0-001 exam covers **5 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Database Fundamentals | 24% | 48 |
-| Database Deployment | 16% | 32 |
-| Database Management and Maintenance | 25% | 50 |
-| Data and Database Security | 23% | 46 |
-| Business Continuity | 12% | 24 |
-| **Total** | **100%** | **200** |
+| Database Fundamentals | 24% | 58 |
+| Database Deployment | 16% | 42 |
+| Database Management and Maintenance | 25% | 60 |
+| Data and Database Security | 23% | 56 |
+| Business Continuity | 12% | 34 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Database Management and Maintenance** carries the most weight (25%) — start there. **Business Continuity** has the least (12%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the DS0-001 with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the DS0-001 with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

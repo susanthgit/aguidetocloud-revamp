@@ -44,19 +44,19 @@ The CLOUD-ARCHITECT exam covers **6 domains**. Focus your study time based on th
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Designing and Planning a Cloud Solution Architecture | 24% | 48 |
-| Managing and Provisioning Solution Infrastructure | 15% | 30 |
-| Designing for Security and Compliance | 19% | 38 |
-| Analyzing and Optimizing Technical and Business Processes | 20% | 40 |
-| Managing Implementations of Cloud Architecture | 12% | 24 |
-| Ensuring Solution and Operations Reliability | 10% | 20 |
-| **Total** | **100%** | **200** |
+| Designing and Planning a Cloud Solution Architecture | 24% | 57 |
+| Managing and Provisioning Solution Infrastructure | 15% | 39 |
+| Designing for Security and Compliance | 19% | 46 |
+| Analyzing and Optimizing Technical and Business Processes | 20% | 48 |
+| Managing Implementations of Cloud Architecture | 12% | 32 |
+| Ensuring Solution and Operations Reliability | 10% | 28 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Designing and Planning a Cloud Solution Architecture** carries the most weight (24%) — start there. **Ensuring Solution and Operations Reliability** has the least (10%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CLOUD-ARCHITECT with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CLOUD-ARCHITECT with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

@@ -40,19 +40,19 @@ The CISSP-ISSMP exam covers **6 domains**. Focus your study time based on the we
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Leadership and Business Management | 22% | 44 |
-| Systems Lifecycle Management | 19% | 38 |
-| Risk Management | 18% | 36 |
-| Threat Intelligence and Incident Management | 17% | 34 |
-| Contingency Management | 12% | 24 |
-| Law, Ethics, and Security Compliance Management | 12% | 24 |
-| **Total** | **100%** | **200** |
+| Leadership and Business Management | 22% | 53 |
+| Systems Lifecycle Management | 19% | 47 |
+| Risk Management | 18% | 44 |
+| Threat Intelligence and Incident Management | 17% | 42 |
+| Contingency Management | 12% | 32 |
+| Law, Ethics, and Security Compliance Management | 12% | 32 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Leadership and Business Management** carries the most weight (22%) — start there. **Contingency Management** has the least (12%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CISSP-ISSMP with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CISSP-ISSMP with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

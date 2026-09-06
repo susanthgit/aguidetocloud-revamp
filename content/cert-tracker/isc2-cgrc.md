@@ -56,20 +56,20 @@ The CGRC exam covers **7 domains**. Focus your study time based on the weights b
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Security and Privacy Governance, Risk Management, and Compliance Program | 16% | 32 |
-| Scope of the System | 10% | 20 |
-| Selection and Approval of Framework, Security, and Privacy Controls | 14% | 28 |
-| Implementation of Security and Privacy Controls | 17% | 34 |
-| Assessment/Audit of Security and Privacy Controls | 16% | 32 |
-| System Compliance | 14% | 28 |
-| Compliance Maintenance | 13% | 26 |
-| **Total** | **100%** | **200** |
+| Security and Privacy Governance, Risk Management, and Compliance Program | 16% | 40 |
+| Scope of the System | 10% | 27 |
+| Selection and Approval of Framework, Security, and Privacy Controls | 14% | 35 |
+| Implementation of Security and Privacy Controls | 17% | 41 |
+| Assessment/Audit of Security and Privacy Controls | 16% | 39 |
+| System Compliance | 14% | 35 |
+| Compliance Maintenance | 13% | 33 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Implementation of Security and Privacy Controls** carries the most weight (17%) — start there. **Scope of the System** has the least (10%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CGRC with our **200-question practice exam** covering all 7 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CGRC with our **250-question practice exam** covering all 7 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

@@ -16,7 +16,7 @@ guided_slug: "eccouncil-cnd-v3"
 
 > Blue team network defense — protect, detect, respond across enterprise networks
 
-200 original practice questions for the EC-Council Certified Network Defender (CND) v3 certification. Covers network perimeter security, endpoint hardening, incident response, cloud/wireless security, and threat intelligence with realistic blue team scenarios.
+250 original practice questions for the EC-Council Certified Network Defender (CND) v3 certification. Covers network perimeter security, endpoint hardening, incident response, cloud/wireless security, and threat intelligence with realistic blue team scenarios.
 
 ## Who Should Take This Exam?
 
@@ -44,19 +44,19 @@ The CND-V3 exam covers **6 domains**. Focus your study time based on the weights
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Network Defense Fundamentals & Strategies | 14% | 28 |
-| Network Perimeter Security | 18% | 36 |
-| Endpoint Security — Windows, Linux, Mobile, IoT | 20% | 40 |
-| Application & Data Security | 14% | 28 |
-| Enterprise Virtual, Cloud & Wireless Security | 14% | 28 |
-| Incident Detection, Response & Threat Intelligence | 20% | 40 |
-| **Total** | **100%** | **200** |
+| Network Defense Fundamentals & Strategies | 14% | 37 |
+| Network Perimeter Security | 18% | 45 |
+| Endpoint Security — Windows, Linux, Mobile, IoT | 20% | 48 |
+| Application & Data Security | 14% | 36 |
+| Enterprise Virtual, Cloud & Wireless Security | 14% | 36 |
+| Incident Detection, Response & Threat Intelligence | 20% | 48 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Endpoint Security — Windows, Linux, Mobile, IoT** carries the most weight (20%) — start there. **Network Defense Fundamentals & Strategies** has the least (14%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CND-V3 with our **200-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CND-V3 with our **250-question practice exam** covering all 6 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

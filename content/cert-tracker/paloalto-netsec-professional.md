@@ -16,7 +16,7 @@ guided_slug: "paloalto-netsec-professional"
 
 > Master NGFW administration, SASE deployment, and network security operations with Palo Alto Networks
 
-200 original practice questions for the Palo Alto Networks Certified Network Security Professional exam (formerly PCNSA). Covers all 4 domains: NGFW Fundamentals, Network Security Configuration & Administration, SASE & Security Services, and Monitoring, Logging & Troubleshooting. Every question includes detailed explanations, PAN-OS CLI commands, GUI navigation paths, and exam tips.
+250 original practice questions for the Palo Alto Networks Certified Network Security Professional exam (formerly PCNSA). Covers all 4 domains: NGFW Fundamentals, Network Security Configuration & Administration, SASE & Security Services, and Monitoring, Logging & Troubleshooting. Every question includes detailed explanations, PAN-OS CLI commands, GUI navigation paths, and exam tips.
 
 ## Who Should Take This Exam?
 
@@ -44,17 +44,17 @@ The NETSEC-PROFESSIONAL exam covers **4 domains**. Focus your study time based o
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Next-Generation Firewall Fundamentals | 30% | 60 |
-| Network Security Configuration and Administration | 25% | 50 |
-| SASE and Security Services | 25% | 50 |
-| Monitoring, Logging, and Troubleshooting | 20% | 40 |
-| **Total** | **100%** | **200** |
+| Next-Generation Firewall Fundamentals | 30% | 73 |
+| Network Security Configuration and Administration | 25% | 63 |
+| SASE and Security Services | 25% | 62 |
+| Monitoring, Logging, and Troubleshooting | 20% | 52 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Next-Generation Firewall Fundamentals** carries the most weight (30%) — start there. **Monitoring, Logging, and Troubleshooting** has the least (20%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the NETSEC-PROFESSIONAL with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the NETSEC-PROFESSIONAL with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

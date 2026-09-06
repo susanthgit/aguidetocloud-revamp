@@ -44,21 +44,21 @@ The CSSLP exam covers **8 domains**. Focus your study time based on the weights 
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Secure Software Concepts | 12% | 24 |
-| Secure Software Lifecycle Management | 11% | 22 |
-| Secure Software Requirements | 13% | 26 |
-| Secure Software Architecture and Design | 15% | 30 |
-| Secure Software Implementation | 14% | 28 |
-| Secure Software Testing | 14% | 28 |
-| Secure Software Deployment, Operations, and Maintenance | 11% | 22 |
-| Secure Software Supply Chain | 10% | 20 |
-| **Total** | **100%** | **200** |
+| Secure Software Concepts | 12% | 31 |
+| Secure Software Lifecycle Management | 11% | 29 |
+| Secure Software Requirements | 13% | 32 |
+| Secure Software Architecture and Design | 15% | 36 |
+| Secure Software Implementation | 14% | 34 |
+| Secure Software Testing | 14% | 34 |
+| Secure Software Deployment, Operations, and Maintenance | 11% | 28 |
+| Secure Software Supply Chain | 10% | 26 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Secure Software Architecture and Design** carries the most weight (15%) — start there. **Secure Software Supply Chain** has the least (10%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CSSLP with our **200-question practice exam** covering all 8 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CSSLP with our **250-question practice exam** covering all 8 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

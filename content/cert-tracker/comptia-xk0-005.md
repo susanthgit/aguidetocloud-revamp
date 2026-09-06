@@ -16,7 +16,7 @@ guided_slug: "comptia-xk0-005"
 
 > Linux system administration — management, security, scripting, troubleshooting
 
-200 original practice questions for the CompTIA Linux+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
+250 original practice questions for the CompTIA Linux+ certification. Every question includes detailed explanations, scenario-based context, and exam tips.
 
 ## Who Should Take This Exam?
 
@@ -44,17 +44,17 @@ The XK0-005 exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| System Management | 32% | 64 |
-| Security | 21% | 42 |
-| Scripting, Containers, and Automation | 19% | 38 |
-| Troubleshooting | 28% | 56 |
-| **Total** | **100%** | **200** |
+| System Management | 32% | 77 |
+| Security | 21% | 55 |
+| Scripting, Containers, and Automation | 19% | 50 |
+| Troubleshooting | 28% | 68 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **System Management** carries the most weight (32%) — start there. **Scripting, Containers, and Automation** has the least (19%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the XK0-005 with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the XK0-005 with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

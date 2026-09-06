@@ -44,17 +44,17 @@ The MLS-C01 exam covers **4 domains**. Focus your study time based on the weight
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Data Engineering | 20% | 40 |
-| Exploratory Data Analysis | 24% | 48 |
-| Modeling | 36% | 72 |
-| Machine Learning Implementation and Operations | 20% | 40 |
-| **Total** | **100%** | **200** |
+| Data Engineering | 20% | 53 |
+| Exploratory Data Analysis | 24% | 61 |
+| Modeling | 36% | 84 |
+| Machine Learning Implementation and Operations | 20% | 52 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Modeling** carries the most weight (36%) — start there. **Data Engineering** has the least (20%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the MLS-C01 with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the MLS-C01 with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

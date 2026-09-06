@@ -43,18 +43,18 @@ The DEVCOR exam covers **5 domains**. Focus your study time based on the weights
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Software Development and Design | 20% | 40 |
-| Using APIs | 20% | 40 |
-| Cisco Platforms | 20% | 40 |
-| Application Deployment and Security | 20% | 40 |
-| Infrastructure and Automation | 20% | 40 |
-| **Total** | **100%** | **200** |
+| Software Development and Design | 20% | 50 |
+| Using APIs | 20% | 50 |
+| Cisco Platforms | 20% | 50 |
+| Application Deployment and Security | 20% | 50 |
+| Infrastructure and Automation | 20% | 50 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Software Development and Design** carries the most weight (20%) — start there. **Software Development and Design** has the least (20%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the DEVCOR with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the DEVCOR with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

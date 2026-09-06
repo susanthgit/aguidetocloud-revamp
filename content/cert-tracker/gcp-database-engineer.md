@@ -44,17 +44,17 @@ The DATABASE-ENGINEER exam covers **4 domains**. Focus your study time based on 
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Design Scalable and Highly Available Cloud Database Solutions | 30% | 60 |
-| Manage a Solution That Can Span Multiple Database Solutions | 24% | 48 |
-| Migrate Data Solutions | 24% | 48 |
-| Deploy Scalable and Highly Available Cloud Database Solutions | 22% | 44 |
-| **Total** | **100%** | **200** |
+| Design Scalable and Highly Available Cloud Database Solutions | 30% | 73 |
+| Manage a Solution That Can Span Multiple Database Solutions | 24% | 60 |
+| Migrate Data Solutions | 24% | 60 |
+| Deploy Scalable and Highly Available Cloud Database Solutions | 22% | 55 |
+| **Total** | **100%** | **248** |
 
 > 💡 **Study tip:** **Design Scalable and Highly Available Cloud Database Solutions** carries the most weight (30%) — start there. **Deploy Scalable and Highly Available Cloud Database Solutions** has the least (22%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 248 Questions
 
-Prepare for the DATABASE-ENGINEER with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the DATABASE-ENGINEER with our **248-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

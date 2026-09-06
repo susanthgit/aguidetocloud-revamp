@@ -16,7 +16,7 @@ guided_slug: "isaca-cdpse"
 
 > Master privacy engineering, data lifecycle management, and privacy-enhancing technologies
 
-200 original practice questions for the ISACA CDPSE exam. Every question includes detailed explanations, scenario-based context, and exam tips. Covers all 4 domains: Privacy Governance, Risk Management & Compliance, Data Lifecycle Management, and Privacy Engineering.
+250 original practice questions for the ISACA CDPSE exam. Every question includes detailed explanations, scenario-based context, and exam tips. Covers all 4 domains: Privacy Governance, Risk Management & Compliance, Data Lifecycle Management, and Privacy Engineering.
 
 ## Who Should Take This Exam?
 
@@ -44,17 +44,17 @@ The CDPSE exam covers **4 domains**. Focus your study time based on the weights 
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Privacy Governance | 20% | 40 |
-| Privacy Risk Management and Compliance | 18% | 36 |
-| Data Lifecycle Management | 23% | 46 |
-| Privacy Engineering | 39% | 78 |
-| **Total** | **100%** | **200** |
+| Privacy Governance | 20% | 53 |
+| Privacy Risk Management and Compliance | 18% | 49 |
+| Data Lifecycle Management | 23% | 58 |
+| Privacy Engineering | 39% | 90 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Privacy Engineering** carries the most weight (39%) — start there. **Privacy Risk Management and Compliance** has the least (18%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CDPSE with our **200-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the CDPSE with our **250-question practice exam** covering all 4 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

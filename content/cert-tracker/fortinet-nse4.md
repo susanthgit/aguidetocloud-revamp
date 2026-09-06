@@ -28,7 +28,7 @@ faq:
 
 > FortiGate firewall administration — the core Fortinet certification for network security engineers
 
-200 original practice questions for the Fortinet NSE 4 certification. Covers FortiOS 7.6 firewall policies, NAT, VPN, security profiles, routing, and SD-WAN. Every question includes detailed explanations, FortiOS CLI commands, and exam tips.
+250 original practice questions for the Fortinet NSE 4 certification. Covers FortiOS 7.6 firewall policies, NAT, VPN, security profiles, routing, and SD-WAN. Every question includes detailed explanations, FortiOS CLI commands, and exam tips.
 
 ## Who Should Take This Exam?
 
@@ -57,18 +57,18 @@ The NSE4 exam covers **5 domains**. Focus your study time based on the weights b
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Deployment & System Configuration | 22% | 44 |
-| Firewall Policies & Authentication | 28% | 56 |
-| Content Inspection | 22% | 44 |
-| Routing | 14% | 28 |
-| VPN | 14% | 28 |
-| **Total** | **100%** | **200** |
+| Deployment & System Configuration | 22% | 54 |
+| Firewall Policies & Authentication | 28% | 66 |
+| Content Inspection | 22% | 54 |
+| Routing | 14% | 38 |
+| VPN | 14% | 38 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Firewall Policies & Authentication** carries the most weight (28%) — start there. **Routing** has the least (14%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the NSE4 with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the NSE4 with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

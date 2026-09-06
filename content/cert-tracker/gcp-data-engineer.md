@@ -44,18 +44,18 @@ The DATA-ENGINEER exam covers **5 domains**. Focus your study time based on the 
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Design Data Processing Systems | 22% | 44 |
-| Ingest and Process Data | 25% | 50 |
-| Store Data | 20% | 40 |
-| Prepare and Use Data for Analysis | 18% | 36 |
-| Maintain and Automate Data Workloads | 15% | 30 |
-| **Total** | **100%** | **200** |
+| Design Data Processing Systems | 22% | 54 |
+| Ingest and Process Data | 25% | 60 |
+| Store Data | 20% | 50 |
+| Prepare and Use Data for Analysis | 18% | 46 |
+| Maintain and Automate Data Workloads | 15% | 40 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Ingest and Process Data** carries the most weight (25%) — start there. **Maintain and Automate Data Workloads** has the least (15%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the DATA-ENGINEER with our **200-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the DATA-ENGINEER with our **250-question practice exam** covering all 5 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

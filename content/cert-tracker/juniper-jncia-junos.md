@@ -56,20 +56,20 @@ The JNCIA-JUNOS exam covers **7 domains**. Focus your study time based on the we
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Networking Fundamentals | 12% | 24 |
-| Junos OS Fundamentals | 12% | 24 |
-| User Interfaces | 14% | 28 |
-| Configuration Basics | 18% | 36 |
-| Operational Monitoring & Maintenance | 14% | 28 |
-| Routing Fundamentals | 16% | 32 |
-| Routing Policy & Firewall Filters | 14% | 28 |
-| **Total** | **100%** | **200** |
+| Networking Fundamentals | 12% | 32 |
+| Junos OS Fundamentals | 12% | 31 |
+| User Interfaces | 14% | 35 |
+| Configuration Basics | 18% | 43 |
+| Operational Monitoring & Maintenance | 14% | 35 |
+| Routing Fundamentals | 16% | 39 |
+| Routing Policy & Firewall Filters | 14% | 35 |
+| **Total** | **100%** | **250** |
 
 > 💡 **Study tip:** **Configuration Basics** carries the most weight (18%) — start there. **Networking Fundamentals** has the least (12%), but don't skip it — exam questions can come from any domain.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the JNCIA-JUNOS with our **200-question practice exam** covering all 7 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the JNCIA-JUNOS with our **250-question practice exam** covering all 7 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer
