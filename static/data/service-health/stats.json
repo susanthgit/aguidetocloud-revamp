@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T23:51:13.530529+00:00",
+  "generated_at": "2026-09-06T04:31:03.590781+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
@@ -19,12 +19,12 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 18,
-      "active_incidents": 3,
+      "total_incidents": 19,
+      "active_incidents": 4,
       "avg_duration_minutes": 6086,
-      "last_incident": "2026-09-04T18:44:09.070000+00:00",
+      "last_incident": "2026-09-05T00:00:00+00:00",
       "classifications": {
-        "advisory": 14,
+        "advisory": 15,
         "incident": 4
       }
     },
@@ -58,12 +58,12 @@
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
-      "total_incidents": 6,
-      "active_incidents": 2,
+      "total_incidents": 5,
+      "active_incidents": 1,
       "avg_duration_minutes": 6974,
       "last_incident": "2026-09-04T09:00:00+00:00",
       "classifications": {
-        "advisory": 3,
+        "advisory": 2,
         "incident": 3
       }
     },
@@ -207,7 +207,7 @@
   "monthly": [
     {
       "month": "2026-09",
-      "incident_count": 12,
+      "incident_count": 13,
       "services_affected": 5
     },
     {
@@ -217,8 +217,8 @@
     },
     {
       "month": "2026-07",
-      "incident_count": 34,
-      "services_affected": 11
+      "incident_count": 33,
+      "services_affected": 10
     }
   ]
 }
