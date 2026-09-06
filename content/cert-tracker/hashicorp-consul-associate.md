@@ -1,12 +1,12 @@
 ---
 title: "CONSUL-ASSOCIATE: HashiCorp associate — Free Study Guide"
-description: "Free CONSUL-ASSOCIATE study guide. Try 20 questions free. Full practice exam access: US$9 for 1 year. HashiCorp Certified: Consul Associate (003)."
+description: "Free CONSUL-ASSOCIATE study guide, now free in full. HashiCorp retired this exam on 15 July 2026 and will not replace it. 250 practice questions, no payment."
 type: "cert-tracker"
 layout: "single"
 exam_code: "CONSUL-ASSOCIATE"
 exam_title: "HashiCorp Certified: Consul Associate (003)"
 exam_level: "intermediate"
-exam_status: "active"
+exam_status: "retired"
 exam_category: "HashiCorp"
 vendor: "hashicorp"
 manual: false
@@ -14,9 +14,22 @@ guided_slug: "hashicorp-consul-associate"
 ---
 ## About the CONSUL-ASSOCIATE Exam
 
-> Service Networking and Mesh — deploy, secure, and operate Consul for service-to-service communication
+> Service networking and mesh: deploy, secure, and operate Consul for service-to-service communication
 
-200 original practice questions for the HashiCorp Certified: Consul Associate (003) certification. Every question includes detailed explanations, scenario-based context, and exam tips. Covers service discovery, service mesh, security, monitoring, and operations.
+> ⚠️ **This exam was retired on 15 July 2026 and you can no longer sit it.** HashiCorp has
+> confirmed it **will not be replaced with a new version** ([retirement
+> notice](https://hashicorp-certifications.zendesk.com/hc/en-us/articles/46488759177741-The-Consul-Associate-exam-will-be-retired-on-July-15-2026)).
+> Their reasoning was that Consul is used across too broad a range of use cases for a single
+> certification to validate fairly. If you already hold the credential, it stays valid until it
+> expires.
+>
+> **We have made this pack free.** There is no exam to pass any more, but the material is still
+> a good way to learn Consul, so all 250 questions are open to everyone with no payment and no
+> licence key.
+
+250 original practice questions for the HashiCorp Certified: Consul Associate (003)
+certification. Every question includes detailed explanations, scenario-based context, and
+exam tips. Covers service discovery, service mesh, security, monitoring, and operations.
 
 ## Who Should Take This Exam?
 
@@ -41,27 +54,27 @@ The CONSUL-ASSOCIATE is designed for **IT professionals with some hands-on exper
 
 ## Exam Domains & Weights
 
-The CONSUL-ASSOCIATE exam covers **10 domains**. Focus your study time based on the weights below — higher-weighted domains have more exam questions.
+The CONSUL-ASSOCIATE exam covered **10 domains**. HashiCorp published the ten objective areas but never published a percentage weight for each one, so the table below shows how our 250 practice questions are distributed rather than an official exam weighting.
 
-| Domain | Weight | Practice Qs |
-|--------|--------|-------------|
-| Understand the Pillars of Service Networking | 16% | 16 |
-| Operate and Maintain Consul | 24% | 24 |
-| Describe Consul Architecture | 20% | 20 |
-| Deploy a Single Datacenter | 20% | 20 |
-| Register Services and Use Service Discovery | 28% | 28 |
-| Use Consul Service Mesh | 20% | 20 |
-| Secure Agent Communication | 20% | 20 |
-| Secure Services with Basic Access Control Lists (ACLs) | 20% | 20 |
-| Secure and Connect Service Mesh Applications | 16% | 16 |
-| Monitor Consul | 16% | 16 |
-| **Total** | **100%** | **200** |
+| Domain | Practice Qs |
+|--------|-------------|
+| Understand the Pillars of Service Networking | 21 |
+| Describe Consul Architecture | 25 |
+| Deploy a Single Datacenter | 25 |
+| Register Services and Use Service Discovery | 33 |
+| Use Consul Service Mesh | 25 |
+| Secure Agent Communication | 25 |
+| Secure Services with Basic Access Control Lists (ACLs) | 25 |
+| Secure and Connect Service Mesh Applications | 21 |
+| Monitor Consul | 21 |
+| Operate and Maintain Consul | 29 |
+| **Total** | **250** |
 
-> 💡 **Study tip:** **Register Services and Use Service Discovery** carries the most weight (28%) — start there. **Understand the Pillars of Service Networking** has the least (16%), but don't skip it — exam questions can come from any domain.
+> 💡 **Study tip:** Register Services and Use Service Discovery is the largest area here, so it is a sensible place to start. Since the exam is retired, treat this as a learning path through Consul rather than a scoring guide.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the CONSUL-ASSOCIATE with our **200-question practice exam** covering all 10 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+All 250 questions are free. Prepare with our **250-question practice exam** covering all 10 objective areas. Every question includes detailed explanations and maps to the published exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer

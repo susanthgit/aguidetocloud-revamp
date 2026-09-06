@@ -16,7 +16,7 @@ guided_slug: "juniper-jncip-sec"
 
 > Master advanced SRX security architecture and threat mitigation
 
-Original 200 practice questions covering 8 JNCIP-SEC exam domains: Troubleshooting Security Policies & Zones, Logical Systems & Tenant Systems, Layer 2 Security, Advanced NAT, Advanced IPsec VPNs, Advanced Policy-Based Routing, Multinode High Availability, and Automated Threat Mitigation. Junos OS 22.2 verified. Character-driven scenarios.
+Original 250 practice questions covering 8 JNCIP-SEC exam domains: Troubleshooting Security Policies & Zones, Logical Systems & Tenant Systems, Layer 2 Security, Advanced NAT, Advanced IPsec VPNs, Advanced Policy-Based Routing, Multinode High Availability, and Automated Threat Mitigation. Junos OS 22.2 verified. Character-driven scenarios.
 
 ## Who Should Take This Exam?
 
@@ -39,20 +39,25 @@ The JNCIP-SEC is designed for **experienced professionals seeking advanced valid
 
 ## Exam Domains & Weights
 
-The JNCIP-SEC exam covers **3 domains**. Focus your study time based on the weights below — higher-weighted domains have more exam questions.
+The JNCIP-SEC exam covers **8 domains**. Juniper publishes the objective areas but does not publish a percentage for each one, so the weights below are our own estimates. Use the practice-question counts as the more concrete guide.
 
 | Domain | Weight | Practice Qs |
 |--------|--------|-------------|
-| Troubleshooting Security Policies & Zones | 15% | 30 |
-| Logical Systems & Tenant Systems | 10% | 20 |
-| Layer 2 Security | 10% | 20 |
-| **Total** | **100%** | **70** |
+| Troubleshooting Security Policies & Zones | 15% | 37 |
+| Logical Systems & Tenant Systems | 10% | 27 |
+| Layer 2 Security | 10% | 26 |
+| Advanced NAT | 10% | 36 |
+| Advanced IPsec VPNs | 15% | 36 |
+| Advanced Policy-Based Routing | 10% | 26 |
+| Multinode High Availability | 15% | 32 |
+| Automated Threat Mitigation | 15% | 30 |
+| **Total** | **100%** | **250** |
 
-> 💡 **Study tip:** **Troubleshooting Security Policies & Zones** carries the most weight (15%) — start there. **Logical Systems & Tenant Systems** has the least (10%), but don't skip it — exam questions can come from any domain.
+> 💡 **Study tip:** Troubleshooting Security Policies & Zones is both the heaviest area and the one with the most practice questions, so start there. Advanced NAT and Advanced IPsec VPNs are close behind on question count and are where most people lose marks.
 
-## Practice Exam — 200 Questions
+## Practice Exam — 250 Questions
 
-Prepare for the JNCIP-SEC with our **200-question practice exam** covering all 8 exam domains. Every question includes detailed explanations and maps to official exam objectives.
+Prepare for the JNCIP-SEC with our **250-question practice exam** covering all 8 exam domains. Every question includes detailed explanations and maps to official exam objectives.
 
 **What you get:**
 - ✅ Exam simulation mode with timer
