@@ -5,407 +5,391 @@
     <link>https://www.aguidetocloud.com/ai-news/</link>
     <description>Daily AI news digest — curated headlines, summaries and trends</description>
     <language>en</language>
-    <lastBuildDate>Sun, 06 Sep 2026 18:50:39 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 00:40:00 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/ainews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Travis Kalanick’s Atoms might be getting into the robotaxi business</title>
-      <link>https://techcrunch.com/2026/09/06/travis-kalanicks-atoms-might-be-getting-into-the-robotaxi-business/</link>
+      <title>Model routing with Google Cloud API Gateway</title>
+      <link>https://developers.googleblog.com/a-unified-api-for-ai-model-routing/</link>
       <description></description>
-      <category>Top Stories</category>
-      <pubDate>Sun, 06 Sep 2026 16:45:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/09/06/travis-kalanicks-atoms-might-be-getting-into-the-robotaxi-business/</guid>
+      <category>Google</category>
+      <pubDate>Mon, 07 Sep 2026 00:39:04 +0000</pubDate>
+      <guid>https://developers.googleblog.com/a-unified-api-for-ai-model-routing/</guid>
     </item>
     <item>
-      <title>An Alien Mind</title>
-      <link>https://openai.com/index/an-alien-mind</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0000</pubDate>
-      <guid>https://openai.com/index/an-alien-mind</guid>
-    </item>
-    <item>
-      <title>Research acceleration: The view inside OpenAI</title>
-      <link>https://openai.com/index/research-acceleration-view-inside-openai</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sun, 06 Sep 2026 08:00:00 +0000</pubDate>
-      <guid>https://openai.com/index/research-acceleration-view-inside-openai</guid>
-    </item>
-    <item>
-      <title>OpenAI confirms the wiki incident and promises a disclosure framework within weeks</title>
-      <link>https://thenextweb.com/news/openai-confirms-wiki-incident-misalignment-disclosure-framework-reuters-kept-hidden-gpai-code-of-practice-gap-ai-office</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 05 Sep 2026 18:48:35 +0000</pubDate>
-      <guid>https://thenextweb.com/news/openai-confirms-wiki-incident-misalignment-disclosure-framework-reuters-kept-hidden-gpai-code-of-practice-gap-ai-office</guid>
-    </item>
-    <item>
-      <title>node9-proxy v2.8.3</title>
-      <link>https://kitploit.com/en/posts/github-node9-ai-node9-proxy-v283</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Sat, 05 Sep 2026 18:34:50 +0000</pubDate>
-      <guid>https://kitploit.com/en/posts/github-node9-ai-node9-proxy-v283</guid>
-    </item>
-    <item>
-      <title>California is deciding who may verify AI, and one investigation already cost $400,000 in tokens</title>
-      <link>https://thenextweb.com/news/california-sb-813-independent-verification-organisations-metr-400000-tokens-openai-paid-eu-ai-act-scientific-panel-article-68</link>
-      <description></description>
-      <category>OpenAI</category>
-      <pubDate>Sat, 05 Sep 2026 18:32:54 +0000</pubDate>
-      <guid>https://thenextweb.com/news/california-sb-813-independent-verification-organisations-metr-400000-tokens-openai-paid-eu-ai-act-scientific-panel-article-68</guid>
-    </item>
-    <item>
-      <title>ue-bridge added to PyPI</title>
-      <link>https://pypi.org/project/ue-bridge/</link>
+      <title>Authors push back as publishers and agents make claims on Anthropic settlement</title>
+      <link>https://techcrunch.com/2026/09/06/authors-push-back-as-publishers-and-agents-seek-share-of-anthropic-settlement/</link>
       <description></description>
       <category>Anthropic</category>
-      <pubDate>Sat, 05 Sep 2026 18:31:08 +0000</pubDate>
-      <guid>https://pypi.org/project/ue-bridge/</guid>
+      <pubDate>Sun, 06 Sep 2026 20:47:37 +0000</pubDate>
+      <guid>https://techcrunch.com/2026/09/06/authors-push-back-as-publishers-and-agents-seek-share-of-anthropic-settlement/</guid>
     </item>
     <item>
-      <title>claude-lite-llm added to PyPI</title>
-      <link>https://pypi.org/project/claude-lite-llm/</link>
+      <title>Seattle Times and Newsday sue OpenAI and Microsoft for infringement</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/990932/seattle-times-newsday-lawsuit-openai-microsoft</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Sat, 05 Sep 2026 18:30:52 +0000</pubDate>
-      <guid>https://pypi.org/project/claude-lite-llm/</guid>
+      <pubDate>Sun, 06 Sep 2026 19:36:04 -0400</pubDate>
+      <guid>https://www.theverge.com/ai-artificial-intelligence/990932/seattle-times-newsday-lawsuit-openai-microsoft</guid>
     </item>
     <item>
-      <title>Show HN: Openrobots</title>
-      <link>https://openrobots.vercel.app</link>
+      <title>kitchensink4xl added to PyPI</title>
+      <link>https://pypi.org/project/kitchensink4xl/</link>
       <description></description>
-      <category>Google</category>
-      <pubDate>Sat, 05 Sep 2026 18:30:08 +0000</pubDate>
-      <guid>https://openrobots.vercel.app</guid>
+      <category>Anthropic</category>
+      <pubDate>Sun, 06 Sep 2026 00:36:36 +0000</pubDate>
+      <guid>https://pypi.org/project/kitchensink4xl/</guid>
     </item>
     <item>
-      <title>This Week’s Awesome Tech Stories From Around the Web (Through September 5)</title>
-      <link>https://singularityhub.com/2026/09/05/this-weeks-awesome-tech-stories-from-around-the-web-through-september-5-2/#article</link>
+      <title>woollama 0.17.0</title>
+      <link>https://pypi.org/project/woollama/0.17.0/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Sat, 05 Sep 2026 18:27:05 +0000</pubDate>
-      <guid>https://singularityhub.com/2026/09/05/this-weeks-awesome-tech-stories-from-around-the-web-through-september-5-2/#article</guid>
+      <pubDate>Sun, 06 Sep 2026 00:31:36 +0000</pubDate>
+      <guid>https://pypi.org/project/woollama/0.17.0/</guid>
     </item>
     <item>
-      <title>OpenAI’s GPT-6 Astra tops Code Arena: WebDev with 1,797 points</title>
-      <link>https://cryptobriefing.com/openai-gpt6-astra-tops-code-arena/</link>
+      <title>wringer 0.9.10</title>
+      <link>https://pypi.org/project/wringer/0.9.10/</link>
       <description></description>
       <category>OpenAI</category>
-      <pubDate>Sat, 05 Sep 2026 18:26:38 +0000</pubDate>
-      <guid>https://cryptobriefing.com/openai-gpt6-astra-tops-code-arena/</guid>
+      <pubDate>Sun, 06 Sep 2026 00:31:19 +0000</pubDate>
+      <guid>https://pypi.org/project/wringer/0.9.10/</guid>
     </item>
     <item>
-      <title>llama-index-graph-stores-coordinode 2.1.1</title>
-      <link>https://pypi.org/project/llama-index-graph-stores-coordinode/2.1.1/</link>
+      <title>pytorch-ignite 0.6.0.dev20260906</title>
+      <link>https://pypi.org/project/pytorch-ignite/0.6.0.dev20260906/</link>
       <description></description>
       <category>Meta</category>
-      <pubDate>Sat, 05 Sep 2026 18:24:15 +0000</pubDate>
-      <guid>https://pypi.org/project/llama-index-graph-stores-coordinode/2.1.1/</guid>
+      <pubDate>Sun, 06 Sep 2026 00:29:52 +0000</pubDate>
+      <guid>https://pypi.org/project/pytorch-ignite/0.6.0.dev20260906/</guid>
     </item>
     <item>
-      <title>code-coordinator 0.5.385</title>
-      <link>https://pypi.org/project/code-coordinator/0.5.385/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 05 Sep 2026 18:21:11 +0000</pubDate>
-      <guid>https://pypi.org/project/code-coordinator/0.5.385/</guid>
-    </item>
-    <item>
-      <title>antigravity-drawio-mcp 1.1.4</title>
-      <link>https://pypi.org/project/antigravity-drawio-mcp/1.1.4/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 05 Sep 2026 18:21:02 +0000</pubDate>
-      <guid>https://pypi.org/project/antigravity-drawio-mcp/1.1.4/</guid>
-    </item>
-    <item>
-      <title>remagent 1.0.0</title>
-      <link>https://pypi.org/project/remagent/1.0.0/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sat, 05 Sep 2026 18:14:19 +0000</pubDate>
-      <guid>https://pypi.org/project/remagent/1.0.0/</guid>
-    </item>
-    <item>
-      <title>oknoll-providers 0.4.0a1</title>
-      <link>https://pypi.org/project/oknoll-providers/0.4.0a1/</link>
-      <description></description>
-      <category>Anthropic</category>
-      <pubDate>Sat, 05 Sep 2026 18:06:55 +0000</pubDate>
-      <guid>https://pypi.org/project/oknoll-providers/0.4.0a1/</guid>
-    </item>
-    <item>
-      <title>The best Google Pixel phone for the next six years isn't the newest one</title>
-      <link>https://www.makeuseof.com/the-best-google-pixel-phone-for-the-next-five-years-isnt-the-newest-one/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sat, 05 Sep 2026 18:00:13 +0000</pubDate>
-      <guid>https://www.makeuseof.com/the-best-google-pixel-phone-for-the-next-five-years-isnt-the-newest-one/</guid>
-    </item>
-    <item>
-      <title>New AA and AAA lithium-ion batteries with USB-C unveiled</title>
-      <link>https://www.notebookcheck.net/New-AA-and-AAA-lithium-ion-batteries-with-USB-C-unveiled.1390050.0.html</link>
-      <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Sat, 05 Sep 2026 17:49:00 +0000</pubDate>
-      <guid>https://www.notebookcheck.net/New-AA-and-AAA-lithium-ion-batteries-with-USB-C-unveiled.1390050.0.html</guid>
-    </item>
-    <item>
-      <title>‘Coyote Vs. Acme’ Distributor Ketchup Entertainment Takes U.S. On Norwegian Animated Pic ‘ViQueens’</title>
-      <link>http://deadline.com/2026/09/coyote-vs-acme-ketchup-viqueens-1237069008/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sat, 05 Sep 2026 17:47:53 +0000</pubDate>
-      <guid>http://deadline.com/2026/09/coyote-vs-acme-ketchup-viqueens-1237069008/</guid>
-    </item>
-    <item>
-      <title>purra-sqlite added to PyPI</title>
-      <link>https://pypi.org/project/purra-sqlite/</link>
-      <description></description>
-      <category>DeepSeek</category>
-      <pubDate>Sat, 05 Sep 2026 17:46:41 +0000</pubDate>
-      <guid>https://pypi.org/project/purra-sqlite/</guid>
-    </item>
-    <item>
-      <title>Stripped-down Windows 11 for AI developers demands 64GB RAM and insane 250 GB/s bandwidth — Project Zenith will debut on AMD's flagship Ryzen AI Halo pla</title>
-      <link>https://slashdot.org/firehose.pl?op=view&amp;amp;id=185448323</link>
-      <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Sat, 05 Sep 2026 17:32:27 +0000</pubDate>
-      <guid>https://slashdot.org/firehose.pl?op=view&amp;amp;id=185448323</guid>
-    </item>
-    <item>
-      <title>Show HN: We Beat MLPerf: Modern Storage for KV Offload and LLM Training</title>
-      <link>https://www.theopenlake.com/blog/openlake-leads-mlperf-storage-v3-0</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Sat, 05 Sep 2026 17:32:20 +0000</pubDate>
-      <guid>https://www.theopenlake.com/blog/openlake-leads-mlperf-storage-v3-0</guid>
-    </item>
-    <item>
-      <title>pymimir-rgnn 0.3.0b3</title>
-      <link>https://pypi.org/project/pymimir-rgnn/0.3.0b3/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Sat, 05 Sep 2026 17:30:13 +0000</pubDate>
-      <guid>https://pypi.org/project/pymimir-rgnn/0.3.0b3/</guid>
-    </item>
-    <item>
-      <title>torchsolve 0.0.1</title>
-      <link>https://pypi.org/project/torchsolve/0.0.1/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Sat, 05 Sep 2026 17:29:32 +0000</pubDate>
-      <guid>https://pypi.org/project/torchsolve/0.0.1/</guid>
-    </item>
-    <item>
-      <title>torchsolve added to PyPI</title>
-      <link>https://pypi.org/project/torchsolve/</link>
-      <description></description>
-      <category>Meta</category>
-      <pubDate>Sat, 05 Sep 2026 17:29:25 +0000</pubDate>
-      <guid>https://pypi.org/project/torchsolve/</guid>
-    </item>
-    <item>
-      <title>Select New/Existing Verizon Customers: 6-Months Google AI Pro Subscription Free</title>
-      <link>https://slickdeals.net/f/19974765-select-new-existing-verizon-customers-6-months-google-ai-pro-subscription-free</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sat, 05 Sep 2026 17:21:47 +0000</pubDate>
-      <guid>https://slickdeals.net/f/19974765-select-new-existing-verizon-customers-6-months-google-ai-pro-subscription-free</guid>
-    </item>
-    <item>
-      <title>The Pros And Cons Of Android Auto</title>
-      <link>https://www.bgr.com/2249368/android-auto-pros-cons/</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sat, 05 Sep 2026 17:17:00 +0000</pubDate>
-      <guid>https://www.bgr.com/2249368/android-auto-pros-cons/</guid>
-    </item>
-    <item>
-      <title>Minnesota 'nudification' law survives xAI's request for a legal injunction</title>
-      <link>https://sea.mashable.com/tech/54600/minnesota-nudification-law-survives-xais-request-for-a-legal-injunction</link>
-      <description></description>
-      <category>xAI</category>
-      <pubDate>Sat, 05 Sep 2026 17:15:52 +0000</pubDate>
-      <guid>https://sea.mashable.com/tech/54600/minnesota-nudification-law-survives-xais-request-for-a-legal-injunction</guid>
-    </item>
-    <item>
-      <title>OpenAI GPT-6 Astra Hits GA in Microsoft Foundry: Computer Use, Agentic Execution, and $10 to $75 per Million Tokens</title>
-      <link>https://www.storagereview.com/news/openai-gpt-6-astra-launches-in-microsoft-foundry-with-agentic-execution-and-computer-use</link>
-      <description></description>
-      <category>Microsoft</category>
-      <pubDate>Sat, 05 Sep 2026 17:09:34 +0000</pubDate>
-      <guid>https://www.storagereview.com/news/openai-gpt-6-astra-launches-in-microsoft-foundry-with-agentic-execution-and-computer-use</guid>
-    </item>
-    <item>
-      <title>viaim Rise Receives Two 2026 IFA Innovation Awards; Indiegogo Campaign Launches September 8</title>
-      <link>https://www.prnewswire.com/news-releases/viaim-rise-receives-two-2026-ifa-innovation-awards-indiegogo-campaign-launches-september-8-302870702.html</link>
-      <description></description>
-      <category>Google</category>
-      <pubDate>Sat, 05 Sep 2026 17:04:00 +0000</pubDate>
-      <guid>https://www.prnewswire.com/news-releases/viaim-rise-receives-two-2026-ifa-innovation-awards-indiegogo-campaign-launches-september-8-302870702.html</guid>
-    </item>
-    <item>
-      <title>longguard 0.1.3</title>
-      <link>https://pypi.org/project/longguard/0.1.3/</link>
+      <title>Sapient open-sources HRM-Text model, advancing recurrent reasoning on a $1,500 budget</title>
+      <link>https://cryptobriefing.com/sapient-open-sources-hrm-text-recurrent-reasoning/</link>
       <description></description>
       <category>Open Source</category>
-      <pubDate>Sat, 05 Sep 2026 16:53:56 +0000</pubDate>
-      <guid>https://pypi.org/project/longguard/0.1.3/</guid>
+      <pubDate>Sun, 06 Sep 2026 00:29:19 +0000</pubDate>
+      <guid>https://cryptobriefing.com/sapient-open-sources-hrm-text-recurrent-reasoning/</guid>
     </item>
     <item>
-      <title>A reminder why the AI race is worth winning, and why America must prevail</title>
-      <link>https://www.wnd.com/2026/09/reminder-why-ai-race-is-worth-winning-why/</link>
+      <title>amesa-inference-dev 0.38.1.dev2</title>
+      <link>https://pypi.org/project/amesa-inference-dev/0.38.1.dev2/</link>
       <description></description>
-      <category>DeepSeek</category>
-      <pubDate>Sat, 05 Sep 2026 16:48:19 +0000</pubDate>
-      <guid>https://www.wnd.com/2026/09/reminder-why-ai-race-is-worth-winning-why/</guid>
+      <category>Meta</category>
+      <pubDate>Sun, 06 Sep 2026 00:26:51 +0000</pubDate>
+      <guid>https://pypi.org/project/amesa-inference-dev/0.38.1.dev2/</guid>
     </item>
     <item>
-      <title>diffusers-workflow 0.4.0b1</title>
-      <link>https://pypi.org/project/diffusers-workflow/0.4.0b1/</link>
+      <title>peclet-dem-cu13 0.5.1</title>
+      <link>https://pypi.org/project/peclet-dem-cu13/0.5.1/</link>
       <description></description>
-      <category>Open Source</category>
-      <pubDate>Sat, 05 Sep 2026 16:48:09 +0000</pubDate>
-      <guid>https://pypi.org/project/diffusers-workflow/0.4.0b1/</guid>
+      <category>NVIDIA</category>
+      <pubDate>Sun, 06 Sep 2026 00:15:56 +0000</pubDate>
+      <guid>https://pypi.org/project/peclet-dem-cu13/0.5.1/</guid>
     </item>
     <item>
-      <title>traceforge-instrumentation added to PyPI</title>
-      <link>https://pypi.org/project/traceforge-instrumentation/</link>
+      <title>gopher-mcp 0.10.0</title>
+      <link>https://pypi.org/project/gopher-mcp/0.10.0/</link>
       <description></description>
-      <category>DeepSeek</category>
-      <pubDate>Sat, 05 Sep 2026 16:34:15 +0000</pubDate>
-      <guid>https://pypi.org/project/traceforge-instrumentation/</guid>
+      <category>Google</category>
+      <pubDate>Sun, 06 Sep 2026 00:06:49 +0000</pubDate>
+      <guid>https://pypi.org/project/gopher-mcp/0.10.0/</guid>
     </item>
     <item>
-      <title>Apple Wants to Wrap Your Room in Sound with New HomePods, Says Leak</title>
-      <link>https://uk.pcmag.com/smart-home/167112/apple-wants-to-wrap-your-room-in-sound-with-new-homepods-says-leak</link>
+      <title>Show HN: OpenMonitor – vendor neutral web monitoring cloud agent</title>
+      <link>https://www.openmonitor.website/</link>
       <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Sat, 05 Sep 2026 16:26:33 +0000</pubDate>
-      <guid>https://uk.pcmag.com/smart-home/167112/apple-wants-to-wrap-your-room-in-sound-with-new-homepods-says-leak</guid>
+      <category>Anthropic</category>
+      <pubDate>Sun, 06 Sep 2026 00:03:18 +0000</pubDate>
+      <guid>https://www.openmonitor.website/</guid>
     </item>
     <item>
-      <title>Trump’s White House Website Published Some Video Games as a Low-Effort Provocation</title>
-      <link>https://gizmodo.com/trumps-white-house-website-published-some-video-games-as-a-low-effort-provocation-2000807842</link>
+      <title>2026 Creative Arts Emmys Winners List Night One</title>
+      <link>http://www.hollywoodreporter.com/tv/tv-news/2026-creative-arts-emmys-winners-list-night-one-1236683725/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sun, 06 Sep 2026 00:01:49 +0000</pubDate>
+      <guid>http://www.hollywoodreporter.com/tv/tv-news/2026-creative-arts-emmys-winners-list-night-one-1236683725/</guid>
+    </item>
+    <item>
+      <title>Transforming Health — How to Navigate Reductive Stress and the Metabolic Impact of Dietary Fats</title>
+      <link>https://articles.mercola.com/sites/articles/archive/2026/09/06/monounsaturated-fats.aspx</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://articles.mercola.com/sites/articles/archive/2026/09/06/monounsaturated-fats.aspx</guid>
+    </item>
+    <item>
+      <title>Evaluating parameter-efficient fine-tuning of large language models for sentiment analysis with bayesian optimization</title>
+      <link>https://www.nature.com/articles/s41598-026-69503-5.pdf</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.nature.com/articles/s41598-026-69503-5.pdf</guid>
+    </item>
+    <item>
+      <title>ASEAN can still hedge between America and China on AI. It needs to get its act together first</title>
+      <link>https://fortune.com/2026/09/05/asean-can-still-hedge-between-america-and-china-on-ai-it-needs-to-get-its-act-together-first/</link>
+      <description></description>
+      <category>Anthropic</category>
+      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://fortune.com/2026/09/05/asean-can-still-hedge-between-america-and-china-on-ai-it-needs-to-get-its-act-together-first/</guid>
+    </item>
+    <item>
+      <title>Cerebras Has a $25.4 Billion Backlog, and One OpenAI Agreement Is Behind Much of It</title>
+      <link>https://biztoc.com/x/d56dab798456715a</link>
+      <description></description>
+      <category>OpenAI</category>
+      <pubDate>Sat, 05 Sep 2026 23:58:35 +0000</pubDate>
+      <guid>https://biztoc.com/x/d56dab798456715a</guid>
+    </item>
+    <item>
+      <title>peclet-pnm-cu13 0.1.2</title>
+      <link>https://pypi.org/project/peclet-pnm-cu13/0.1.2/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 05 Sep 2026 23:57:13 +0000</pubDate>
+      <guid>https://pypi.org/project/peclet-pnm-cu13/0.1.2/</guid>
+    </item>
+    <item>
+      <title>learnergy 2.0.1</title>
+      <link>https://pypi.org/project/learnergy/2.0.1/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Sat, 05 Sep 2026 23:55:13 +0000</pubDate>
+      <guid>https://pypi.org/project/learnergy/2.0.1/</guid>
+    </item>
+    <item>
+      <title>sofi-tabular added to PyPI</title>
+      <link>https://pypi.org/project/sofi-tabular/</link>
       <description></description>
       <category>xAI</category>
-      <pubDate>Sat, 05 Sep 2026 16:13:52 +0000</pubDate>
-      <guid>https://gizmodo.com/trumps-white-house-website-published-some-video-games-as-a-low-effort-provocation-2000807842</guid>
+      <pubDate>Sat, 05 Sep 2026 23:49:22 +0000</pubDate>
+      <guid>https://pypi.org/project/sofi-tabular/</guid>
     </item>
     <item>
-      <title>llmai 0.3.12</title>
-      <link>https://pypi.org/project/llmai/0.3.12/</link>
+      <title>Sam Altman wants OpenAI to build the computer that comes after the smartphone</title>
+      <link>https://cryptobriefing.com/openai-altman-consumer-devices-ai-hardware/</link>
       <description></description>
-      <category>Microsoft</category>
-      <pubDate>Sat, 05 Sep 2026 16:01:58 +0000</pubDate>
-      <guid>https://pypi.org/project/llmai/0.3.12/</guid>
+      <category>OpenAI</category>
+      <pubDate>Sat, 05 Sep 2026 23:41:00 +0000</pubDate>
+      <guid>https://cryptobriefing.com/openai-altman-consumer-devices-ai-hardware/</guid>
     </item>
     <item>
-      <title>airllm 4.0.0</title>
-      <link>https://pypi.org/project/airllm/4.0.0/</link>
+      <title>Creative Arts Emmy Awards: Winners List (Updating Live)</title>
+      <link>https://variety.com/2026/artisans/news/creative-arts-emmy-awards-winners-list-night-one-1236849746/</link>
       <description></description>
-      <category>DeepSeek</category>
-      <pubDate>Sat, 05 Sep 2026 16:00:15 +0000</pubDate>
-      <guid>https://pypi.org/project/airllm/4.0.0/</guid>
+      <category>Google</category>
+      <pubDate>Sat, 05 Sep 2026 23:40:00 +0000</pubDate>
+      <guid>https://variety.com/2026/artisans/news/creative-arts-emmy-awards-winners-list-night-one-1236849746/</guid>
     </item>
     <item>
-      <title>iPhone 18 Pro: Everything M6 Tells Us About the A20 Chip</title>
-      <link>https://www.macrumors.com/2026/09/05/what-m6-tells-us-about-a20/</link>
+      <title>agentic-django 0.3.0</title>
+      <link>https://pypi.org/project/agentic-django/0.3.0/</link>
       <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 05 Sep 2026 16:00:13 +0000</pubDate>
-      <guid>https://www.macrumors.com/2026/09/05/what-m6-tells-us-about-a20/</guid>
+      <category>OpenAI</category>
+      <pubDate>Sat, 05 Sep 2026 23:39:55 +0000</pubDate>
+      <guid>https://pypi.org/project/agentic-django/0.3.0/</guid>
     </item>
     <item>
-      <title>pyside6-mcp added to PyPI</title>
-      <link>https://pypi.org/project/pyside6-mcp/</link>
+      <title>Nvidia-backed AI company Nscale reveals staggering $103B contracted revenue ahead of IPO</title>
+      <link>https://cryptobriefing.com/nscale-103-billion-contracted-revenue-ipo/</link>
       <description></description>
-      <category>GitHub Copilot</category>
-      <pubDate>Sat, 05 Sep 2026 15:51:39 +0000</pubDate>
-      <guid>https://pypi.org/project/pyside6-mcp/</guid>
+      <category>Anthropic</category>
+      <pubDate>Sat, 05 Sep 2026 23:35:31 +0000</pubDate>
+      <guid>https://cryptobriefing.com/nscale-103-billion-contracted-revenue-ipo/</guid>
     </item>
     <item>
-      <title>Starlink is offering half-price internet near xAI data centers, but critics want the pollution fixed</title>
-      <link>https://www.techspot.com/news/113749-spacexai-half-price-starlink-deal-memphis-has-signed.html</link>
+      <title>Nadine Dorries says she is 'mortified' that people she knows could see vile 'deepfake' pornographic clips of former politician as police make arrest</title>
+      <link>https://www.dailymail.com/news/article-16108185/Nadine-Dorries-mortified-people-vile-deepfake-pornographic-clips.html</link>
       <description></description>
       <category>xAI</category>
-      <pubDate>Sat, 05 Sep 2026 15:38:00 +0000</pubDate>
-      <guid>https://www.techspot.com/news/113749-spacexai-half-price-starlink-deal-memphis-has-signed.html</guid>
+      <pubDate>Sat, 05 Sep 2026 23:23:56 +0000</pubDate>
+      <guid>https://www.dailymail.com/news/article-16108185/Nadine-Dorries-mortified-people-vile-deepfake-pornographic-clips.html</guid>
     </item>
     <item>
-      <title>polyphon-ai added to PyPI</title>
-      <link>https://pypi.org/project/polyphon-ai/</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 05 Sep 2026 15:37:18 +0000</pubDate>
-      <guid>https://pypi.org/project/polyphon-ai/</guid>
-    </item>
-    <item>
-      <title>langchaint 0.21.1</title>
-      <link>https://pypi.org/project/langchaint/0.21.1/</link>
-      <description></description>
-      <category>Open Source</category>
-      <pubDate>Sat, 05 Sep 2026 15:36:07 +0000</pubDate>
-      <guid>https://pypi.org/project/langchaint/0.21.1/</guid>
-    </item>
-    <item>
-      <title>Giveaway: Win an MSI GeForce RTX 5070 World of Warcraft: Midnight GPU and MAESTRO 500 Wireless Headset</title>
-      <link>https://www.tweaktown.com/news/113414/giveaway-win-an-msi-geforce-rtx-5070-world-of-warcraft-midnight-gpu-and-maestro-500-wireless-headset/index.html</link>
-      <description></description>
-      <category>NVIDIA</category>
-      <pubDate>Sat, 05 Sep 2026 15:20:10 +0000</pubDate>
-      <guid>https://www.tweaktown.com/news/113414/giveaway-win-an-msi-geforce-rtx-5070-world-of-warcraft-midnight-gpu-and-maestro-500-wireless-headset/index.html</guid>
-    </item>
-    <item>
-      <title>‘AI Laggard’ Apple Is Sitting Pretty, But AAPL Stock Might Be Running Out of Room to Outperform</title>
-      <link>https://www.barchart.com/story/news/4461863/ai-laggard-apple-is-sitting-pretty-but-aapl-stock-might-be-running-out-of-room-to-outperform</link>
+      <title>An Apple Watch Ultra 4 Could Outshine the Series 12 This Year, but at What Price?</title>
+      <link>https://www.cnet.com/tech/mobile/apple-watch-ultra-4-could-outshine-series-12-but-at-what-price/</link>
       <description></description>
       <category>Apple</category>
-      <pubDate>Sat, 05 Sep 2026 15:02:14 +0000</pubDate>
-      <guid>https://www.barchart.com/story/news/4461863/ai-laggard-apple-is-sitting-pretty-but-aapl-stock-might-be-running-out-of-room-to-outperform</guid>
+      <pubDate>Sat, 05 Sep 2026 23:17:09 +0000</pubDate>
+      <guid>https://www.cnet.com/tech/mobile/apple-watch-ultra-4-could-outshine-series-12-but-at-what-price/</guid>
     </item>
     <item>
-      <title>GEEKOM's A9 Mega Mini PCs Form Local Inference Cluster at IFA 2026</title>
-      <link>https://www.techpowerup.com/352383/geekoms-a9-mega-mini-pcs-form-local-inference-cluster-at-ifa-2026</link>
-      <description></description>
-      <category>DeepSeek</category>
-      <pubDate>Sat, 05 Sep 2026 15:01:00 +0000</pubDate>
-      <guid>https://www.techpowerup.com/352383/geekoms-a9-mega-mini-pcs-form-local-inference-cluster-at-ifa-2026</guid>
-    </item>
-    <item>
-      <title>Oura is going public, but these smart ring companies are coming for its crown | TechCrunch</title>
-      <link>https://techcrunch.com/2026/09/05/oura-is-going-public-but-these-smart-ring-companies-are-coming-for-its-crown/</link>
-      <description></description>
-      <category>Rumours &amp; Gossip</category>
-      <pubDate>Sat, 05 Sep 2026 15:00:00 +0000</pubDate>
-      <guid>https://techcrunch.com/2026/09/05/oura-is-going-public-but-these-smart-ring-companies-are-coming-for-its-crown/</guid>
-    </item>
-    <item>
-      <title>idempotent-hopfield added to PyPI</title>
-      <link>https://pypi.org/project/idempotent-hopfield/</link>
+      <title>fat-llama 1.4.0</title>
+      <link>https://pypi.org/project/fat-llama/1.4.0/</link>
       <description></description>
       <category>NVIDIA</category>
-      <pubDate>Sat, 05 Sep 2026 14:57:32 +0000</pubDate>
-      <guid>https://pypi.org/project/idempotent-hopfield/</guid>
+      <pubDate>Sat, 05 Sep 2026 23:15:40 +0000</pubDate>
+      <guid>https://pypi.org/project/fat-llama/1.4.0/</guid>
     </item>
     <item>
-      <title>Bringing Local AI Home: UGREEN Introduces Privacy-First HomeAgent for Smarter Living</title>
-      <link>https://www.prnewswire.com/news-releases/bringing-local-ai-home-ugreen-introduces-privacy-first-homeagent-for-smarter-living-302870674.html</link>
+      <title>Arch Manning and Marcel Reed’s Latest NIL Valuations Bring Surprise Twist</title>
+      <link>https://heavy.com/sports/college-football/texas-longhorns/arch-manning-marcel-reed-nil-valuation/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sat, 05 Sep 2026 23:06:08 +0000</pubDate>
+      <guid>https://heavy.com/sports/college-football/texas-longhorns/arch-manning-marcel-reed-nil-valuation/</guid>
+    </item>
+    <item>
+      <title>peclet-cu13 0.7.1</title>
+      <link>https://pypi.org/project/peclet-cu13/0.7.1/</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 05 Sep 2026 22:58:00 +0000</pubDate>
+      <guid>https://pypi.org/project/peclet-cu13/0.7.1/</guid>
+    </item>
+    <item>
+      <title>Acer's tiny RTX Spark PC takes aim at Mac Studio with Blackwell and 128GB unified memory</title>
+      <link>https://www.tweaktown.com/news/113423/acers-tiny-rtx-spark-pc-takes-aim-at-mac-studio-with-blackwell-and-128gb-unified-memory/index.html</link>
+      <description></description>
+      <category>NVIDIA</category>
+      <pubDate>Sat, 05 Sep 2026 22:36:12 +0000</pubDate>
+      <guid>https://www.tweaktown.com/news/113423/acers-tiny-rtx-spark-pc-takes-aim-at-mac-studio-with-blackwell-and-128gb-unified-memory/index.html</guid>
+    </item>
+    <item>
+      <title>geo-check added to PyPI</title>
+      <link>https://pypi.org/project/geo-check/</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Sat, 05 Sep 2026 22:22:48 +0000</pubDate>
+      <guid>https://pypi.org/project/geo-check/</guid>
+    </item>
+    <item>
+      <title>psann 2.0.0</title>
+      <link>https://pypi.org/project/psann/2.0.0/</link>
+      <description></description>
+      <category>Meta</category>
+      <pubDate>Sat, 05 Sep 2026 22:19:57 +0000</pubDate>
+      <guid>https://pypi.org/project/psann/2.0.0/</guid>
+    </item>
+    <item>
+      <title>draughtsman-nn added to PyPI</title>
+      <link>https://pypi.org/project/draughtsman-nn/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sat, 05 Sep 2026 22:11:28 +0000</pubDate>
+      <guid>https://pypi.org/project/draughtsman-nn/</guid>
+    </item>
+    <item>
+      <title>Google’s Gemini Business adds support for custom MCP server connections</title>
+      <link>https://cryptobriefing.com/google-gemini-business-mcp-server-support/</link>
       <description></description>
       <category>AI Foundry</category>
-      <pubDate>Sat, 05 Sep 2026 14:39:00 +0000</pubDate>
-      <guid>https://www.prnewswire.com/news-releases/bringing-local-ai-home-ugreen-introduces-privacy-first-homeagent-for-smarter-living-302870674.html</guid>
+      <pubDate>Sat, 05 Sep 2026 22:05:04 +0000</pubDate>
+      <guid>https://cryptobriefing.com/google-gemini-business-mcp-server-support/</guid>
     </item>
     <item>
-      <title>brigade-cli 0.27.0.dev20260905</title>
-      <link>https://pypi.org/project/brigade-cli/0.27.0.dev20260905/</link>
+      <title>Three Years Later, A Beloved Fantasy Movie May Finally Get a Sequel After All</title>
+      <link>http://comicbook.com/movies/news/three-years-later-a-beloved-fantasy-movie-may-finally-get-a-sequel-after-all/</link>
+      <description></description>
+      <category>Google</category>
+      <pubDate>Sat, 05 Sep 2026 21:37:26 +0000</pubDate>
+      <guid>http://comicbook.com/movies/news/three-years-later-a-beloved-fantasy-movie-may-finally-get-a-sequel-after-all/</guid>
+    </item>
+    <item>
+      <title>tfc-t0-mlx 0.1.0a1</title>
+      <link>https://pypi.org/project/tfc-t0-mlx/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Sat, 05 Sep 2026 21:31:07 +0000</pubDate>
+      <guid>https://pypi.org/project/tfc-t0-mlx/</guid>
+    </item>
+    <item>
+      <title>AMD’s Threadripper Halo Station &amp; Ryzen AI MAX PCs Take The Spotlight at IFA, As They Bring Powerful &amp; Local AI Capabilities Close To Everyone</title>
+      <link>https://wccftech.com/amd-threadripper-halo-station-ryzen-ai-max-pcs-bring-powerful-local-ai-capabilities/</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Sat, 05 Sep 2026 21:10:15 +0000</pubDate>
+      <guid>https://wccftech.com/amd-threadripper-halo-station-ryzen-ai-max-pcs-bring-powerful-local-ai-capabilities/</guid>
+    </item>
+    <item>
+      <title>DeepSeek's 160,000 Huawei Order Is A Real Threat To Nvidia In 2027</title>
+      <link>https://biztoc.com/x/a010c76c7e760569</link>
+      <description></description>
+      <category>DeepSeek</category>
+      <pubDate>Sat, 05 Sep 2026 21:09:39 +0000</pubDate>
+      <guid>https://biztoc.com/x/a010c76c7e760569</guid>
+    </item>
+    <item>
+      <title>langchain-anyapi 0.2.0</title>
+      <link>https://pypi.org/project/langchain-anyapi/0.2.0/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Sat, 05 Sep 2026 21:08:11 +0000</pubDate>
+      <guid>https://pypi.org/project/langchain-anyapi/0.2.0/</guid>
+    </item>
+    <item>
+      <title>The Marketing Advice I Wish Every Event-Related Business Owner Knew</title>
+      <link>https://www.linkedin.com/pulse/marketing-advice-i-wish-every-event-related-business-owner-mridha-sm3ic</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Sat, 05 Sep 2026 20:29:22 +0000</pubDate>
+      <guid>https://www.linkedin.com/pulse/marketing-advice-i-wish-every-event-related-business-owner-mridha-sm3ic</guid>
+    </item>
+    <item>
+      <title>agt-agent 0.25.0</title>
+      <link>https://pypi.org/project/agt-agent/0.25.0/</link>
+      <description></description>
+      <category>Open Source</category>
+      <pubDate>Sat, 05 Sep 2026 20:14:28 +0000</pubDate>
+      <guid>https://pypi.org/project/agt-agent/0.25.0/</guid>
+    </item>
+    <item>
+      <title>hybrid-forge added to PyPI</title>
+      <link>https://pypi.org/project/hybrid-forge/</link>
+      <description></description>
+      <category>DeepSeek</category>
+      <pubDate>Sat, 05 Sep 2026 19:50:17 +0000</pubDate>
+      <guid>https://pypi.org/project/hybrid-forge/</guid>
+    </item>
+    <item>
+      <title>sk4n added to PyPI</title>
+      <link>https://pypi.org/project/sk4n/</link>
+      <description></description>
+      <category>GitHub Copilot</category>
+      <pubDate>Sat, 05 Sep 2026 19:44:52 +0000</pubDate>
+      <guid>https://pypi.org/project/sk4n/</guid>
+    </item>
+    <item>
+      <title>Chinese banks and carriers have turned AI tokens into rewards, monthly plans and collateral</title>
+      <link>https://thenextweb.com/news/china-ai-tokens-consumer-products-kimi-credit-card-china-telecom-plans-haizhu-token-loan-european-tokeniser-tax</link>
+      <description></description>
+      <category>DeepSeek</category>
+      <pubDate>Sat, 05 Sep 2026 19:24:37 +0000</pubDate>
+      <guid>https://thenextweb.com/news/china-ai-tokens-consumer-products-kimi-credit-card-china-telecom-plans-haizhu-token-loan-european-tokeniser-tax</guid>
+    </item>
+    <item>
+      <title>Jim Thornton Was Reading a Google AI Answer About Chatroom Traceability After a Passenger Reported a Tor Session on His Laptop</title>
+      <link>https://thoughtcatalog.com/jeremy-london/2026/09/jim-thornton-was-reading-a-google-ai-answer-about-chatroom-traceability-after-a-passenger-reported-a-tor-session-on-his-laptop/</link>
+      <description></description>
+      <category>Perplexity</category>
+      <pubDate>Sat, 05 Sep 2026 19:21:15 +0000</pubDate>
+      <guid>https://thoughtcatalog.com/jeremy-london/2026/09/jim-thornton-was-reading-a-google-ai-answer-about-chatroom-traceability-after-a-passenger-reported-a-tor-session-on-his-laptop/</guid>
+    </item>
+    <item>
+      <title>Arduview: World’s first fully transparent video game console weighs just 50 g</title>
+      <link>https://www.notebookcheck.net/Arduview-World-s-first-fully-transparent-video-game-console-weighs-just-50-g.1389612.0.html</link>
+      <description></description>
+      <category>Rumours &amp; Gossip</category>
+      <pubDate>Sat, 05 Sep 2026 18:54:00 +0000</pubDate>
+      <guid>https://www.notebookcheck.net/Arduview-World-s-first-fully-transparent-video-game-console-weighs-just-50-g.1389612.0.html</guid>
+    </item>
+    <item>
+      <title>mima-ai-prompt added to PyPI</title>
+      <link>https://pypi.org/project/mima-ai-prompt/</link>
       <description></description>
       <category>xAI</category>
-      <pubDate>Sat, 05 Sep 2026 14:35:51 +0000</pubDate>
-      <guid>https://pypi.org/project/brigade-cli/0.27.0.dev20260905/</guid>
+      <pubDate>Sat, 05 Sep 2026 18:50:28 +0000</pubDate>
+      <guid>https://pypi.org/project/mima-ai-prompt/</guid>
+    </item>
+    <item>
+      <title>pygpt-net 2.8.9</title>
+      <link>https://pypi.org/project/pygpt-net/2.8.9/</link>
+      <description></description>
+      <category>xAI</category>
+      <pubDate>Sat, 05 Sep 2026 14:21:33 +0000</pubDate>
+      <guid>https://pypi.org/project/pygpt-net/2.8.9/</guid>
     </item>
   </channel>
 </rss>
