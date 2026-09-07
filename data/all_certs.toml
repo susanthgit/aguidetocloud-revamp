@@ -13727,3 +13727,50 @@ exam_prerequisites = "Certified Implementation Specialist – Data Foundations (
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/servicenow-cis-sir/"
 practice_url = "/guided/servicenow-cis-sir/practice/"
+
+[[cert]]
+slug = "servicenow-cis-hr"
+vendor = "servicenow"
+code = "SERVICENOW-CIS-HR"
+name = "ServiceNow Certified Implementation Specialist – Human Resources"
+tagline = "Master the ServiceNow Certified Implementation Specialist – Human Resources exam: work out which application scope an HR table actually lives in before you try to write to it, tell an HR Service apart from the HR Catalog Item and the Record Producer that opens it, follow an HR case from the Employee Center request through the assignment rule that routes it to the right COE, decide whether a user sees a knowledge article because of User Criteria or because of an ACL, and know exactly how far the Delegated Developer role lets someone go before contextual security stops them reading HR data they should never see."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 235
+domains = 3
+order = 1019
+featured = false
+price_practice = 9
+exam_url = "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0011654"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = "Not published — ServiceNow uses a predetermined cut score that it states is not publicly shared and is not always 70%"
+guided_url = "/guided/servicenow-cis-hr/"
+
+[cert_map."servicenow-cis-hr"]
+vendor = "servicenow"
+code = "SERVICENOW-CIS-HR"
+name = "ServiceNow Certified Implementation Specialist – Human Resources"
+tagline = "Master the ServiceNow Certified Implementation Specialist – Human Resources exam: work out which application scope an HR table actually lives in before you try to write to it, tell an HR Service apart from the HR Catalog Item and the Record Producer that opens it, follow an HR case from the Employee Center request through the assignment rule that routes it to the right COE, decide whether a user sees a knowledge article because of User Criteria or because of an ACL, and know exactly how far the Delegated Developer role lets someone go before contextual security stops them reading HR data they should never see."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 235
+domains = 3
+order = 1019
+featured = false
+price_practice = 9
+exam_url = "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0011654"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = "Not published — ServiceNow uses a predetermined cut score that it states is not publicly shared and is not always 70%"
+exam_questions_real = "60"
+exam_provider = "Pearson VUE (onsite test centre or OnVUE online proctored)"
+exam_validity = "Maintained through annual delta maintenance exams plus the yearly Certification Maintenance Program (CMP) fee"
+exam_prerequisites = "None required — ServiceNow publishes only recommended experience (three to six months of ServiceNow deployment or instance-maintenance experience, plus participation in at least one ServiceNow HR deployment project)"
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/servicenow-cis-hr/"
+practice_url = "/guided/servicenow-cis-hr/practice/"
