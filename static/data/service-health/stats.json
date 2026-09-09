@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T16:34:20.283624+00:00",
+  "generated_at": "2026-09-09T20:53:43.511871+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
@@ -19,12 +19,12 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 20,
-      "active_incidents": 3,
+      "total_incidents": 21,
+      "active_incidents": 4,
       "avg_duration_minutes": 5580,
-      "last_incident": "2026-09-08T15:23:28.773000+00:00",
+      "last_incident": "2026-09-09T17:57:58.157000+00:00",
       "classifications": {
-        "advisory": 16,
+        "advisory": 17,
         "incident": 4
       }
     },
@@ -147,12 +147,12 @@
       "service": "Microsoft Intune",
       "short_name": "Intune",
       "icon": "📱",
-      "total_incidents": 2,
+      "total_incidents": 1,
       "active_incidents": 0,
-      "avg_duration_minutes": 1340,
+      "avg_duration_minutes": 2454,
       "last_incident": "2026-08-31T09:09:53.290000+00:00",
       "classifications": {
-        "advisory": 2
+        "advisory": 1
       }
     },
     {
@@ -207,7 +207,7 @@
   "monthly": [
     {
       "month": "2026-09",
-      "incident_count": 14,
+      "incident_count": 15,
       "services_affected": 5
     },
     {
@@ -217,8 +217,8 @@
     },
     {
       "month": "2026-07",
-      "incident_count": 33,
-      "services_affected": 10
+      "incident_count": 32,
+      "services_affected": 9
     }
   ]
 }

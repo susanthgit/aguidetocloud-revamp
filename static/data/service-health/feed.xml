@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 09 Sep 2026 16:34:20 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 20:53:44 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Some admins may see Microsoft Teams usage report data discrepancies in the Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1469836</link>
+      <description>[Microsoft 365 suite] Admins may see Microsoft Teams usage report data discrepancies in the Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceDegradation</category>
+      <guid isPermaLink="false">MO1469836</guid>
+      <pubDate>Wed, 09 Sep 2026 17:57:58 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Some users may be unable to access https://m365.cloud.microsoft and receive an error</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1469271</link>
@@ -447,15 +456,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">DZ1459263</guid>
       <pubDate>Thu, 13 Aug 2026 20:14:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 Copilot Chat] Some users may be intermittently unable to access Microsoft 365 Copilot Chat in Outlook on the web</title>
-      <link>https://www.aguidetocloud.com/service-health/#CW1454295</link>
-      <description>[Microsoft 365 Copilot Chat] Users may have intermittently been unable to access Copilot Chat in Outlook on the web.</description>
-      <category>Microsoft 365 Copilot Chat</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">CW1454295</guid>
-      <pubDate>Thu, 13 Aug 2026 17:26:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
