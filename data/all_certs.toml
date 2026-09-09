@@ -13821,3 +13821,50 @@ exam_prerequisites = "Recommended CSM training and hands-on implementation exper
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/servicenow-cis-csm/"
 practice_url = "/guided/servicenow-cis-csm/practice/"
+
+[[cert]]
+slug = "servicenow-cis-fsm"
+vendor = "servicenow"
+code = "SERVICENOW-CIS-FSM"
+name = "ServiceNow Certified Implementation Specialist - Field Service Management"
+tagline = "Prepare for CIS-FSM with original scenarios about work order lifecycles, qualification and dispatch, agent skills and schedules, scheduling and route optimization, parts and stockrooms, preventive maintenance, appointment booking and the Now Agent mobile app."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 1021
+featured = false
+price_practice = 9
+exam_url = "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0011546"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = "Not published - ServiceNow uses a predetermined cut score and explicitly says it is not always 70%."
+guided_url = "/guided/servicenow-cis-fsm/"
+
+[cert_map."servicenow-cis-fsm"]
+vendor = "servicenow"
+code = "SERVICENOW-CIS-FSM"
+name = "ServiceNow Certified Implementation Specialist - Field Service Management"
+tagline = "Prepare for CIS-FSM with original scenarios about work order lifecycles, qualification and dispatch, agent skills and schedules, scheduling and route optimization, parts and stockrooms, preventive maintenance, appointment booking and the Now Agent mobile app."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 4
+order = 1021
+featured = false
+price_practice = 9
+exam_url = "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0011546"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = "Not published - ServiceNow uses a predetermined cut score and explicitly says it is not always 70%."
+exam_questions_real = "60"
+exam_provider = "Pearson VUE test centre or OnVUE online proctored"
+exam_validity = "Maintained through annual delta exams and the Certification Maintenance Program fee."
+exam_prerequisites = "Recommended Field Service Management training and hands-on implementation experience; consult the current ServiceNow registration requirements."
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/servicenow-cis-fsm/"
+practice_url = "/guided/servicenow-cis-fsm/practice/"
