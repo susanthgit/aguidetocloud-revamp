@@ -13868,3 +13868,50 @@ exam_prerequisites = "Recommended Field Service Management training and hands-on
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/servicenow-cis-fsm/"
 practice_url = "/guided/servicenow-cis-fsm/practice/"
+
+[[cert]]
+slug = "servicenow-cis-sam"
+vendor = "servicenow"
+code = "SERVICENOW-CIS-SAM"
+name = "ServiceNow Certified Implementation Specialist - Software Asset Management"
+tagline = "Prepare for CIS-SAM with original scenarios about software discovery and normalization, content services, software models and products, license metrics, entitlements and allocations, software reconciliation and compliance, contracts, catalog and procurement, remediation and reclamation, and software model lifecycle, retirement and installation optimization."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 1022
+featured = false
+price_practice = 9
+exam_url = "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0011570"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = "Not published - ServiceNow uses a predetermined cut score and explicitly says it is not always 70%."
+guided_url = "/guided/servicenow-cis-sam/"
+
+[cert_map."servicenow-cis-sam"]
+vendor = "servicenow"
+code = "SERVICENOW-CIS-SAM"
+name = "ServiceNow Certified Implementation Specialist - Software Asset Management"
+tagline = "Prepare for CIS-SAM with original scenarios about software discovery and normalization, content services, software models and products, license metrics, entitlements and allocations, software reconciliation and compliance, contracts, catalog and procurement, remediation and reclamation, and software model lifecycle, retirement and installation optimization."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 5
+order = 1022
+featured = false
+price_practice = 9
+exam_url = "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0011570"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = "Not published - ServiceNow uses a predetermined cut score and explicitly says it is not always 70%."
+exam_questions_real = "60"
+exam_provider = "Pearson VUE test centre or OnVUE online proctored"
+exam_validity = "Maintained through annual delta exams and the Certification Maintenance Program fee."
+exam_prerequisites = "Required: CIS - Data Foundations (CMDB and CSDM) must be held before sitting CIS-SAM. ServiceNow also recommends Software Asset Management Fundamentals training and hands-on implementation experience; consult the current ServiceNow registration requirements."
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/servicenow-cis-sam/"
+practice_url = "/guided/servicenow-cis-sam/practice/"
