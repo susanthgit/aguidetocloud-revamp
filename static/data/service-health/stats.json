@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T11:12:37.334067+00:00",
+  "generated_at": "2026-09-10T16:20:43.931872+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
@@ -21,11 +21,11 @@
       "icon": "📦",
       "total_incidents": 21,
       "active_incidents": 4,
-      "avg_duration_minutes": 5580,
-      "last_incident": "2026-09-09T17:57:58.157000+00:00",
+      "avg_duration_minutes": 5489,
+      "last_incident": "2026-09-10T07:13:00+00:00",
       "classifications": {
-        "advisory": 17,
-        "incident": 4
+        "advisory": 16,
+        "incident": 5
       }
     },
     {
@@ -33,8 +33,8 @@
       "short_name": "Copilot",
       "icon": "🤖",
       "total_incidents": 13,
-      "active_incidents": 1,
-      "avg_duration_minutes": 1568,
+      "active_incidents": 0,
+      "avg_duration_minutes": 4472,
       "last_incident": "2026-09-04T00:23:39.287000+00:00",
       "classifications": {
         "advisory": 7,
@@ -212,12 +212,12 @@
     },
     {
       "month": "2026-08",
-      "incident_count": 54,
+      "incident_count": 55,
       "services_affected": 14
     },
     {
       "month": "2026-07",
-      "incident_count": 31,
+      "incident_count": 30,
       "services_affected": 9
     }
   ]

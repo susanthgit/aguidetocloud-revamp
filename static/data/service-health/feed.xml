@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Thu, 10 Sep 2026 11:12:37 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 16:20:44 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Some users in the United Kingdom may have been unable to access multiple Microsoft 365 services</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1470143</link>
+      <description>[Microsoft 365 suite] Users in the United Kingdom may have been unable to access multiple Microsoft 365 services.</description>
+      <category>Microsoft 365 suite</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">MO1470143</guid>
+      <pubDate>Thu, 10 Sep 2026 07:13:00 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 Copilot Chat] Users may be unable to see the suggestions pills after receiving a bot response in Microsoft 365 Copilot Chat</title>
       <link>https://www.aguidetocloud.com/service-health/#CW1469885</link>
@@ -66,7 +75,7 @@
       <link>https://www.aguidetocloud.com/service-health/#EX1467029</link>
       <description>[Exchange Online] Users may have experienced a delay in sending and receiving email messages from external domains in Exchange Online.</description>
       <category>Exchange Online</category>
-      <category>serviceRestored</category>
+      <category>postIncidentReviewPublished</category>
       <guid isPermaLink="false">EX1467029</guid>
       <pubDate>Fri, 04 Sep 2026 09:00:00 +0000</pubDate>
     </item>
@@ -96,15 +105,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">CW1466621</guid>
       <pubDate>Thu, 03 Sep 2026 06:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Copilot (Microsoft 365)] Admins may be unable to view additional sync statistics for some Microsoft Graph Connectors</title>
-      <link>https://www.aguidetocloud.com/service-health/#CP1465967</link>
-      <description>[Microsoft Copilot (Microsoft 365)] Admins may be unable to view additional sync statistics for some Microsoft Graph Connectors.</description>
-      <category>Microsoft Copilot (Microsoft 365)</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">CP1465967</guid>
-      <pubDate>Wed, 02 Sep 2026 08:42:38 +0000</pubDate>
     </item>
     <item>
       <title>[Exchange Online] Users may be unable to load themes in Outlook on the web</title>
