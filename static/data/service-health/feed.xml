@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Wed, 09 Sep 2026 20:53:44 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 00:10:28 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 Copilot Chat] Users may be unable to see the suggestions pills after receiving a bot response in Microsoft 365 Copilot Chat</title>
+      <link>https://www.aguidetocloud.com/service-health/#CW1469885</link>
+      <description>[Microsoft 365 Copilot Chat] Users may have been unable to see the suggestion pills after receiving a bot response in Copilot Chat.</description>
+      <category>Microsoft 365 Copilot Chat</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CW1469885</guid>
+      <pubDate>Wed, 09 Sep 2026 20:49:34 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Some admins may see Microsoft Teams usage report data discrepancies in the Microsoft 365 admin center</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1469836</link>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MP1460870</guid>
       <pubDate>Thu, 13 Aug 2026 21:07:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Defender XDR] Users may see failures when querying the Microsoft Graph Attack Simulation Training API with $Select OData query</title>
-      <link>https://www.aguidetocloud.com/service-health/#DZ1459263</link>
-      <description>[Microsoft Defender XDR] Users may see failures when querying the Microsoft Graph Attack Simulation Training API with $Select OData query.</description>
-      <category>Microsoft Defender XDR</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">DZ1459263</guid>
-      <pubDate>Thu, 13 Aug 2026 20:14:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
