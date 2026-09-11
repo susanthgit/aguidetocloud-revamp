@@ -13915,3 +13915,50 @@ exam_prerequisites = "Required: CIS - Data Foundations (CMDB and CSDM) must be h
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/servicenow-cis-sam/"
 practice_url = "/guided/servicenow-cis-sam/practice/"
+
+[[cert]]
+slug = "servicenow-cis-rc"
+vendor = "servicenow"
+code = "SERVICENOW-CIS-RC"
+name = "ServiceNow Certified Implementation Specialist - Risk and Compliance"
+tagline = "Prepare for CIS-RC with original scenarios about the GRC and Integrated Risk Management platform, implementation planning, the entity framework and scoping, policy and compliance management, risk and advanced risk, continuous monitoring and regulatory change, and the audit and advanced audit lifecycle."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 1023
+featured = false
+price_practice = 9
+exam_url = "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0011655"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = "Not published - ServiceNow uses a predetermined cut score and explicitly says it is not always 70%."
+guided_url = "/guided/servicenow-cis-rc/"
+
+[cert_map."servicenow-cis-rc"]
+vendor = "servicenow"
+code = "SERVICENOW-CIS-RC"
+name = "ServiceNow Certified Implementation Specialist - Risk and Compliance"
+tagline = "Prepare for CIS-RC with original scenarios about the GRC and Integrated Risk Management platform, implementation planning, the entity framework and scoping, policy and compliance management, risk and advanced risk, continuous monitoring and regulatory change, and the audit and advanced audit lifecycle."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 1023
+featured = false
+price_practice = 9
+exam_url = "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0011655"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = "Not published - ServiceNow uses a predetermined cut score and explicitly says it is not always 70%."
+exam_questions_real = "60"
+exam_provider = "Pearson VUE test centre or OnVUE online proctored"
+exam_validity = "Maintained through annual delta exams and the Certification Maintenance Program fee."
+exam_prerequisites = "No prerequisite certification is required for CIS-RC. ServiceNow recommends the Risk and Compliance implementation training and hands-on implementation experience; consult the current ServiceNow registration requirements."
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/servicenow-cis-rc/"
+practice_url = "/guided/servicenow-cis-rc/practice/"
