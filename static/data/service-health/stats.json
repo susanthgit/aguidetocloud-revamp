@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T04:31:51.199890+00:00",
+  "generated_at": "2026-09-11T11:13:42.085890+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
@@ -32,13 +32,13 @@
       "service": "Microsoft Copilot (Microsoft 365)",
       "short_name": "Copilot",
       "icon": "🤖",
-      "total_incidents": 13,
+      "total_incidents": 14,
       "active_incidents": 0,
-      "avg_duration_minutes": 4472,
-      "last_incident": "2026-09-04T00:23:39.287000+00:00",
+      "avg_duration_minutes": 4171,
+      "last_incident": "2026-09-11T05:57:48+00:00",
       "classifications": {
-        "advisory": 7,
-        "incident": 6
+        "incident": 7,
+        "advisory": 7
       }
     },
     {
@@ -68,19 +68,6 @@
       }
     },
     {
-      "service": "Microsoft 365 apps",
-      "short_name": "M365 Apps",
-      "icon": "💼",
-      "total_incidents": 5,
-      "active_incidents": 1,
-      "avg_duration_minutes": 2915,
-      "last_incident": "2026-08-24T13:00:00+00:00",
-      "classifications": {
-        "advisory": 4,
-        "incident": 1
-      }
-    },
-    {
       "service": "Power BI",
       "short_name": "Power BI",
       "icon": "📊",
@@ -102,6 +89,19 @@
       "last_incident": "2026-08-13T21:07:00+00:00",
       "classifications": {
         "advisory": 4,
+        "incident": 1
+      }
+    },
+    {
+      "service": "Microsoft 365 apps",
+      "short_name": "M365 Apps",
+      "icon": "💼",
+      "total_incidents": 4,
+      "active_incidents": 1,
+      "avg_duration_minutes": 2984,
+      "last_incident": "2026-08-24T13:00:00+00:00",
+      "classifications": {
+        "advisory": 3,
         "incident": 1
       }
     },
@@ -207,7 +207,7 @@
   "monthly": [
     {
       "month": "2026-09",
-      "incident_count": 16,
+      "incident_count": 17,
       "services_affected": 5
     },
     {
@@ -217,8 +217,8 @@
     },
     {
       "month": "2026-07",
-      "incident_count": 30,
-      "services_affected": 9
+      "incident_count": 29,
+      "services_affected": 8
     }
   ]
 }

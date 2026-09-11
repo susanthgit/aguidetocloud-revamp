@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Fri, 11 Sep 2026 04:31:51 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 11:13:42 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access or may have encountered issues when interacting with Microsoft 365 Copilot</title>
+      <link>https://www.aguidetocloud.com/service-health/#CP1470554</link>
+      <description>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access or may have encountered issues when interacting with Microsoft 365 Copilot.</description>
+      <category>Microsoft Copilot (Microsoft 365)</category>
+      <category>serviceRestored</category>
+      <guid isPermaLink="false">CP1470554</guid>
+      <pubDate>Fri, 11 Sep 2026 05:57:48 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft 365 suite] Some users in the United Kingdom may have been unable to access multiple Microsoft 365 services</title>
       <link>https://www.aguidetocloud.com/service-health/#MO1470143</link>
@@ -447,15 +456,6 @@
       <category>serviceDegradation</category>
       <guid isPermaLink="false">OP1454727</guid>
       <pubDate>Fri, 14 Aug 2026 11:51:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft Purview] Admins may be unable to access Content Explorer or Data Explorer in Microsoft Purview</title>
-      <link>https://www.aguidetocloud.com/service-health/#MP1460870</link>
-      <description>[Microsoft Purview] Admins may have been unable to access Content Explorer or Data Explorer in Microsoft Purview.</description>
-      <category>Microsoft Purview</category>
-      <category>serviceRestored</category>
-      <guid isPermaLink="false">MP1460870</guid>
-      <pubDate>Thu, 13 Aug 2026 21:07:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
