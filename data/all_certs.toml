@@ -13962,3 +13962,50 @@ exam_prerequisites = "No prerequisite certification is required for CIS-RC. Serv
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/servicenow-cis-rc/"
 practice_url = "/guided/servicenow-cis-rc/practice/"
+
+[[cert]]
+slug = "servicenow-cis-em"
+vendor = "servicenow"
+code = "SERVICENOW-CIS-EM"
+name = "ServiceNow Certified Implementation Specialist - Event Management"
+tagline = "Prepare for CIS-EM with original scenarios on event processing, alerts and response, monitoring sources, MID Server architecture, service impact and Metric Intelligence."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 1024
+featured = false
+price_practice = 9
+exam_url = "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0011604"
+exam_cost = ""
+exam_duration = 60
+exam_passing_score = "Not published - ServiceNow uses a predetermined cut score and explicitly says it is not always 70%."
+guided_url = "/guided/servicenow-cis-em/"
+
+[cert_map."servicenow-cis-em"]
+vendor = "servicenow"
+code = "SERVICENOW-CIS-EM"
+name = "ServiceNow Certified Implementation Specialist - Event Management"
+tagline = "Prepare for CIS-EM with original scenarios on event processing, alerts and response, monitoring sources, MID Server architecture, service impact and Metric Intelligence."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 1024
+featured = false
+price_practice = 9
+exam_url = "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0011604"
+exam_cost = ""
+exam_duration = 60
+exam_passing_score = "Not published - ServiceNow uses a predetermined cut score and explicitly says it is not always 70%."
+exam_questions_real = "30"
+exam_provider = "Pearson VUE test centre or OnVUE online proctored"
+exam_validity = "Maintained through annual delta exams and the Certification Maintenance Program fee."
+exam_prerequisites = "The current registration page says course completion is not required. ServiceNow recommends relevant training, six months of field experience and participation in at least two Event Management deployments; check the current registration requirements."
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/servicenow-cis-em/"
+practice_url = "/guided/servicenow-cis-em/practice/"
