@@ -1,12 +1,12 @@
 {
-  "generated": "2026-09-12T09:28:04.736469+00:00",
+  "generated": "2026-09-13T10:24:15.310263+00:00",
   "total": 52,
   "active": 25,
   "passed": 27,
   "action_required": 24,
   "urgency": {
-    "critical": 14,
-    "warning": 10,
+    "critical": 20,
+    "warning": 4,
     "watch": 1
   },
   "categories": {
@@ -23,7 +23,7 @@
   "next_deadline": {
     "title": "Computer Vision API v1.0-v3.1 Retirement",
     "deadline": "2026-09-13",
-    "days_remaining": 1,
+    "days_remaining": 0,
     "urgency": "critical"
   },
   "category_meta": {
