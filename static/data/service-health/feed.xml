@@ -5,8 +5,17 @@
     <link>https://www.aguidetocloud.com/service-health/</link>
     <description>Microsoft 365 service health incidents — tracked and searchable</description>
     <language>en</language>
-    <lastBuildDate>Sun, 13 Sep 2026 04:40:43 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 11:44:22 +0000</lastBuildDate>
     <atom:link href="https://www.aguidetocloud.com/data/service-health/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Microsoft 365 suite] Some admins' Usage reports may contain stale data in Microsoft 365 admin center</title>
+      <link>https://www.aguidetocloud.com/service-health/#MO1471241</link>
+      <description>[Microsoft 365 suite] Admins' Usage reports may contain stale data in Microsoft 365 admin center.</description>
+      <category>Microsoft 365 suite</category>
+      <category>investigating</category>
+      <guid isPermaLink="false">MO1471241</guid>
+      <pubDate>Sun, 13 Sep 2026 04:56:15 +0000</pubDate>
+    </item>
     <item>
       <title>[Microsoft Copilot (Microsoft 365)] Users may have been unable to access or may have encountered issues when interacting with Microsoft 365 Copilot</title>
       <link>https://www.aguidetocloud.com/service-health/#CP1470554</link>
@@ -447,15 +456,6 @@
       <category>serviceRestored</category>
       <guid isPermaLink="false">MO1456424</guid>
       <pubDate>Mon, 17 Aug 2026 12:46:14 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Microsoft 365 apps] Users may be unable to sign in to OneNote using iOS devices</title>
-      <link>https://www.aguidetocloud.com/service-health/#OP1454727</link>
-      <description>[Microsoft 365 apps] Users may be unable to sign in to OneNote using iOS devices.</description>
-      <category>Microsoft 365 apps</category>
-      <category>serviceDegradation</category>
-      <guid isPermaLink="false">OP1454727</guid>
-      <pubDate>Fri, 14 Aug 2026 11:51:32 +0000</pubDate>
     </item>
   </channel>
 </rss>
