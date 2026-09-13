@@ -10,28 +10,20 @@
   ],
   "category": "Power Platform",
   "status": "active",
-  "updated_at": "2026-03-02 19:59:00+00:00",
-  "skills_date": "March 19, 2026",
+  "updated_at": "2026-09-09 21:48:00+00:00",
+  "skills_date": "October 16, 2026",
   "skills_at_a_glance": [
     {
-      "area": "Create a technical design",
-      "weight": "10-15%"
-    },
-    {
-      "area": "Build Power Platform solutions",
-      "weight": "10-15%"
-    },
-    {
-      "area": "Implement Power Apps improvements",
-      "weight": "10-15%"
+      "area": "Build Microsoft Power Platform solutions",
+      "weight": "15-20%"
     },
     {
       "area": "Extend the user experience",
-      "weight": "10-15%"
+      "weight": "25-30%"
     },
     {
-      "area": "Extend the platform",
-      "weight": "30-35%"
+      "area": "Extend Microsoft Power Platform",
+      "weight": "35-40%"
     },
     {
       "area": "Develop integrations",
@@ -39,109 +31,108 @@
     }
   ],
   "skills_detailed": {
-    "Create a technical design (10–15%)": {
-      "Design technical architecture": [
+    "Build Microsoft Power Platform solutions (15–20%)": {
+      "Design the technical architecture": [
         "Analyze the technical architecture to identify solution components and their implementation approach",
-        "Design the authentication and authorization strategy for solution components",
+        "Design authentication and authorization for solution components",
         "Determine whether requirements can be met with out-of-the-box functionality",
-        "Determine where to implement business logic including cloud computing, client-side processing, business rules, plug-ins, and Power Automate",
+        "Determine where to implement business logic including cloud services, client-side processing, business rules, plug-ins, and automation",
         "Determine when to use standard tables, virtual tables, elastic tables, or connectors",
-        "Assess the impact of Microsoft Power Platform security features on solution components including data loss prevention (DLP) policies, security roles, teams, business units, and row sharing"
+        "Assess the impact of Microsoft Power Platform security features on solution components, including managed environments, data policies, security roles, teams, business units, and row sharing",
+        "Determine when to use deterministic or non-deterministic methods to implement business logic",
+        "Determine when to use code apps, generative pages, Power Apps component frameworks (PCFs), web resources, interactive agents, and Model Context Protocol (MCP) app widgets to implement the user experience",
+        "Determine when to use Microsoft Foundry or Microsoft Copilot Studio to build agents"
       ],
       "Design solution components": [
-        "Design Power Apps reusable components including canvas components, code components (Power Apps component framework), and client scripting",
-        "Design custom connectors",
-        "Design Dataverse code components including Power Fx functions, plug-ins, and custom APIs",
-        "Design automations including Power Automate cloud flows",
-        "Design inbound and outbound integrations using Dataverse and Azure"
-      ]
-    },
-    "Build Power Platform Solutions (10–15%)": {
-      "Configure and troubleshoot Microsoft Power Platform": [
-        "Troubleshoot operational security issues",
-        "Configure Dataverse security roles to support code components including the principle of least privilege",
-        "Manage Microsoft Power Platform environments for development"
+        "Design Power Apps reusable components including generative pages, code components (PCF), and client scripting",
+        "Design custom connectors and MCP servers for use with Microsoft Power Platform solutions",
+        "Design Dataverse code components, including plug-ins and custom APIs",
+        "Design automations, including Power Automate cloud flows and Copilot Studio workflows",
+        "Design inbound and outbound integrations using Dataverse and Microsoft Azure",
+        "Design custom interfaces by using Power Apps code apps",
+        "Design custom agents that integrate with Microsoft Power Platform",
+        "Design monitoring and alerting, including Azure Monitor Application Insights and Microsoft Power Platform monitor alerts"
       ],
       "Implement application lifecycle management (ALM)": [
         "Manage solution dependencies",
         "Create and use environment variables",
         "Manage solution layers",
-        "Implement and extend Power Platform Pipelines",
-        "Create Continuous Integration/Continuous Deployment (CI/CD) automations using Power Platform Build Tools"
+        "Implement and extend Microsoft Power Platform Pipelines",
+        "Create Continuous Integration/Continuous Deployment (CI/CD) automations using Microsoft Power Platform Build Tools"
       ]
     },
-    "Implement Power Apps improvements (10–15%)": {
-      "Implement advanced canvas apps features": [
-        "Implement complex Power Fx formulas and functions",
-        "Build reusable component libraries",
-        "Utilize Power Automate cloud flows to implement business logic from a canvas app"
-      ],
-      "Optimize and troubleshoot apps": [
-        "Troubleshoot canvas and model-driven app issues by using Monitor and other browser-based debugging tools",
-        "Optimize canvas app performance including pre-loading data and query delegation",
-        "Optimize model-driven app performance including forms and views"
-      ]
-    },
-    "Extend the user experience (10–15%)": {
-      "Apply business logic in model-driven apps using client scripting": [
-        "Build JavaScript code that targets the Client API object model",
-        "Determine event handler registration approach",
+    "Extend the user experience (25–30%)": {
+      "Apply business logic in model-driven apps by using client scripting": [
+        "Build code that targets the Client API object model",
+        "Determine an event handler registration approach",
         "Create client scripting that targets the Dataverse Web API",
-        "Configure commands and buttons using Power Fx and JavaScript",
-        "Implement navigation to custom pages using the Client API"
+        "Configure commands and buttons by using Power Fx and JavaScript",
+        "Implement navigation, dialogs, and notifications by using the Client API"
       ],
-      "Create a Power Apps component framework (PCF) code component": [
+      "Create PCF code components": [
         "Demonstrate the use of the different lifecycle events",
         "Configure a code component manifest",
         "Implement component interfaces",
         "Package, deploy, and consume a component",
         "Configure and use Device, Utility, and Web API features in component logic"
+      ],
+      "Build Power Apps code apps": [
+        "Configure code apps to use Microsoft Power Platform connections",
+        "Configure code apps to use Dataverse tables",
+        "Perform table and metadata operations on Dataverse data",
+        "Perform Dataverse actions and functions",
+        "Configure code apps to use Power Automate cloud flows",
+        "Configure code apps to use agents built in Copilot Studio",
+        "Configure code apps to use environment variables"
+      ],
+      "Deploy and manage Power Apps code apps": [
+        "Configure Content Security Policy (CSP) settings",
+        "Implement monitoring by using Azure Application Insights",
+        "Package, deploy, and share code apps",
+        "Troubleshoot code apps by using Monitor and other browser-based debugging tools",
+        "Optimize code app performance and resource usage"
       ]
     },
-    "Extend the platform (30–35%)": {
+    "Extend Microsoft Power Platform (35–40%)": {
       "Create a Dataverse plug-in": [
         "Demonstrate the use of the different event execution pipeline stages",
         "Develop a plug-in that uses the execution context",
         "Develop a plug-in that implements business logic",
-        "Implement Pre Images and Post Images to support plug-in logic",
+        "Implement images to support plug-in logic",
         "Perform operations in plug-ins by using the Organization service",
         "Optimize plug-in performance",
         "Configure a Dataverse custom API message",
         "Register plug-in components by using the Plug-in Registration Tool",
         "Develop a plug-in that implements a custom API",
-        "Configure Dataverse business events"
+        "Configure Dataverse business events",
+        "Configure Microsoft Power Platform managed identity for plug-ins"
       ],
-      "Create custom connectors": [
-        "Create an Open API definition for an existing REST API",
-        "Implement authentication for custom connectors",
-        "Configure policy templates to modify connector behavior at runtime",
-        "Import definitions from existing APIs including Open API definitions, Azure services, and GitHub",
-        "Create a custom connector for an Azure service",
-        "Develop an Azure Function to be used in a custom connector",
-        "Extend the Open API definition for a custom connector",
-        "Develop code for a custom connector to transform data"
-      ],
-      "Use platform APIs": [
-        "Perform operations with the Dataverse Web API",
-        "Perform operations with the Organization service",
+      "Perform operations by using platform APIs": [
+        "Perform operations by using the Dataverse Web API",
+        "Perform operations by using the Organization service",
         "Implement API limit retry policies",
-        "Optimize for performance, concurrency, transactions, and bulk operations",
-        "Perform authentication by using OAuth"
+        "Optimize solution components for performance, concurrency, transactions, and bulk operations",
+        "Implement and troubleshoot authentication by using OAuth",
+        "Perform asynchronous logic by using background operations",
+        "Perform operations by using Dataverse SDKs for .NET and Python"
       ],
-      "Process workloads by using Azure Functions": [
+      "Process workloads by using Microsoft Azure Functions": [
         "Process long-running operations by using Azure Functions for Microsoft Power Platform solutions",
         "Implement scheduled and event-driven triggers in Azure Functions for Microsoft Power Platform solutions",
         "Authenticate to Microsoft Power Platform by using managed identities"
       ],
-      "Configure Power Automate cloud flows": [
-        "Configure Dataverse connector actions and triggers",
+      "Configure Power Automate cloud flows and Copilot Studio workflows": [
         "Implement complex expressions in flow steps",
-        "Manage sensitive input and output parameters",
-        "Utilize Azure Key Vault",
         "Implement flow control actions including error handling",
         "Configure trigger filter and retry policies",
         "Develop reuseable logic by using child flows",
-        "Implement Microsoft Entra ID service principles"
+        "Implement authentication for the Dataverse connector by using service principals"
+      ],
+      "Build Microsoft Foundry agents by using code that integrates with the Microsoft Power Platform": [
+        "Integrate custom agents by using Microsoft Power Platform MCP servers",
+        "Connect custom agents to Copilot Studio agents",
+        "Integrate custom agents with Dataverse data by using Work IQ",
+        "Consume Copilot Studio agents by using the Copilot Studio client library"
       ]
     },
     "Develop integrations (10–15%)": {
@@ -151,10 +142,19 @@
         "Register service endpoints including webhooks, Azure Service Bus, and Azure Event Hub",
         "Recommend options for listening to Dataverse events"
       ],
-      "Implement data synchronization with Dataverse": [
+      "Implement synchronization for Dataverse data": [
         "Perform data synchronization by using change tracking",
-        "Develop code that utilizes alternate keys",
-        "Utilize the UpsertRequest message to synchronize data"
+        "Develop code that uses alternate keys",
+        "Synchronize data by using the UpsertRequest message"
+      ],
+      "Create custom connectors": [
+        "Implement authentication for custom connectors",
+        "Configure policy templates to modify connector behavior at runtime",
+        "Import definitions from existing APIs including Open API definitions, Azure services, and GitHub",
+        "Create a custom connector for an Azure service",
+        "Develop an Azure Function to be used in a custom connector",
+        "Extend the Open API definition for a custom connector",
+        "Develop code for a custom connector to transform data"
       ]
     }
   },

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T09:12:22Z",
+  "generated_at": "2026-09-13T10:03:16Z",
   "exam_count": 52,
   "categories": [
     "AI",
@@ -426,30 +426,22 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-07-21 17:15:00+00:00",
-      "skills_date": "July 21, 2026",
-      "skill_areas": 5,
-      "total_objectives": 132,
+      "updated_at": "2026-09-09 21:48:00+00:00",
+      "skills_date": "October 6, 2026",
+      "skill_areas": 3,
+      "total_objectives": 56,
       "skills_at_a_glance": [
         {
-          "area": "Design and implement data models",
-          "weight": "35-40%"
+          "area": "Design and develop database solutions",
+          "weight": "40-45%"
         },
         {
-          "area": "Design and implement data distribution",
-          "weight": "5-10%"
+          "area": "Secure, optimize, and deploy database solutions",
+          "weight": "30-35%"
         },
         {
-          "area": "Integrate an Azure Cosmos DB solution",
-          "weight": "5-10%"
-        },
-        {
-          "area": "Optimize an Azure Cosmos DB solution",
-          "weight": "15-20%"
-        },
-        {
-          "area": "Maintain an Azure Cosmos DB solution",
-          "weight": "25-30%"
+          "area": "Implement AI and Analytics capabilities in database solutions",
+          "weight": "20-25%"
         }
       ],
       "has_changes": false,
@@ -1091,30 +1083,22 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "",
-      "updated_at": "2026-03-02 19:59:00+00:00",
-      "skills_date": "March 19, 2026",
-      "skill_areas": 6,
-      "total_objectives": 76,
+      "updated_at": "2026-09-09 21:48:00+00:00",
+      "skills_date": "October 16, 2026",
+      "skill_areas": 4,
+      "total_objectives": 88,
       "skills_at_a_glance": [
         {
-          "area": "Create a technical design",
-          "weight": "10-15%"
-        },
-        {
-          "area": "Build Power Platform solutions",
-          "weight": "10-15%"
-        },
-        {
-          "area": "Implement Power Apps improvements",
-          "weight": "10-15%"
+          "area": "Build Microsoft Power Platform solutions",
+          "weight": "15-20%"
         },
         {
           "area": "Extend the user experience",
-          "weight": "10-15%"
+          "weight": "25-30%"
         },
         {
-          "area": "Extend the platform",
-          "weight": "30-35%"
+          "area": "Extend Microsoft Power Platform",
+          "weight": "35-40%"
         },
         {
           "area": "Develop integrations",
