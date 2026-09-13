@@ -14009,3 +14009,50 @@ exam_prerequisites = "The current registration page says course completion is no
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/servicenow-cis-em/"
 practice_url = "/guided/servicenow-cis-em/practice/"
+
+[[cert]]
+slug = "servicenow-cis-spm"
+vendor = "servicenow"
+code = "SERVICENOW-CIS-SPM"
+name = "ServiceNow Certified Implementation Specialist - Strategic Portfolio Management"
+tagline = "Prepare for CIS-SPM with original scenarios on resource management, cost and benefit planning, idea and demand intake, project and timecard management, and the Portfolio Planning Workspace."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 1025
+featured = false
+price_practice = 9
+exam_url = "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0011561"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = "Not published - ServiceNow uses a predetermined cut score and explicitly says it is not always 70%."
+guided_url = "/guided/servicenow-cis-spm/"
+
+[cert_map."servicenow-cis-spm"]
+vendor = "servicenow"
+code = "SERVICENOW-CIS-SPM"
+name = "ServiceNow Certified Implementation Specialist - Strategic Portfolio Management"
+tagline = "Prepare for CIS-SPM with original scenarios on resource management, cost and benefit planning, idea and demand intake, project and timecard management, and the Portfolio Planning Workspace."
+exam_category = "ServiceNow"
+level = "advanced"
+status = "active"
+modules = 0
+questions = 250
+domains = 6
+order = 1025
+featured = false
+price_practice = 9
+exam_url = "https://nowlearning.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0011561"
+exam_cost = ""
+exam_duration = 90
+exam_passing_score = "Not published - ServiceNow uses a predetermined cut score and explicitly says it is not always 70%."
+exam_questions_real = "60"
+exam_provider = "Pearson VUE test centre or OnVUE online proctored"
+exam_validity = "Maintained through annual delta exams and the Certification Maintenance Program fee."
+exam_prerequisites = "The current registration page says course completion is not required. ServiceNow recommends relevant training and field experience with Strategic Portfolio Management deployments; check the current registration requirements."
+exam_question_types = ["Multiple choice", "Multiple select"]
+guided_url = "/guided/servicenow-cis-spm/"
+practice_url = "/guided/servicenow-cis-spm/practice/"
