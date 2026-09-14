@@ -150,7 +150,7 @@ window.__vendors = {{ site.Data.vendors.vendor | jsonify | safeJS }};
 <script>
 // Roadmap Kanban (embedded from roadmap.html)
 (function(){
-  var fundExams = ["AZ-900","AI-900","DP-900","SC-900","MS-900","PL-900","MB-910","MB-920"];
+  var fundExams = ["AZ-900","AI-900","AI-901","DP-900","SC-900","MS-900","PL-900","MB-910","MB-920"];
   var expertExams = ["AZ-305","AZ-400","AZ-802","SC-100","MS-102","PL-600","SC-500","SC-730"];
   var rows = [
     { key: "azure", label: "{{ partial "icon.html" (dict "name" "cloud" "size" 14 "stroke" 1.5) }} Azure", color: "#3B82F6", css: "kanban-row-azure", cats: ["Azure"] },

@@ -9,5 +9,8 @@ tags: ["a guide to cloud and ai", "ai for beginners", "ai tutorial", "ai--900", 
 featured: false
 views: 176925
 likes: 2705
+lastmod: 2026-09-14
 ---
+**⚠️ Heads up — AI-900 retired on 30 June 2026.** It's been replaced by **AI-901**, which puts 55-60% of the exam on implementing solutions with Microsoft Foundry. The course below is still a solid grounding in AI concepts, and that half of the syllabus carried over — but for the current exam, start with the free [AI-901 study guide and practice questions](/cert-tracker/ai-901/).
+
 Watch bonus video on exam prep: https://youtu.be/OxwcKJcIE40 Download content: https://ko-fi.com/aguidetocloud/shop Learn the basics of artificial intelligence and Azure AI services with this AI-900 exam prep. Covers machine learning, vision, and language services. Beginner-friendly with clear explanations Great for non-tech and tech learners Explore the future of AI in the cloud.

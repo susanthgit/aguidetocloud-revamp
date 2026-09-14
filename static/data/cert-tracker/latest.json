@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-13T10:03:16Z",
-  "exam_count": 52,
+  "generated_at": "2026-09-14T00:10:05Z",
+  "exam_count": 55,
   "categories": [
     "AI",
     "Azure",
@@ -10,9 +10,44 @@
     "Power Platform",
     "Security"
   ],
-  "last_change_detected": "2026-04-11T03:50:58Z",
-  "total_changes": 0,
+  "last_change_detected": "2026-09-14T00:10:05Z",
+  "total_changes": 24,
   "exams": [
+    {
+      "code": "AI-901",
+      "title": "Microsoft Azure AI Fundamentals (Updated)",
+      "level": "beginner",
+      "roles": [
+        "ai-engineer",
+        "data-scientist"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "AI",
+      "status": "active",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "AI-900",
+      "beta_since": "",
+      "updated_at": "2026-07-14 21:04:00+00:00",
+      "skills_date": "April 15, 2026",
+      "skill_areas": 2,
+      "total_objectives": 29,
+      "skills_at_a_glance": [
+        {
+          "area": "Identify AI concepts and capabilities",
+          "weight": "40-45%"
+        },
+        {
+          "area": "Implement AI solutions by using Microsoft Foundry",
+          "weight": "55-60%"
+        }
+      ],
+      "has_changes": true,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-901/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-901"
+    },
     {
       "code": "AZ-900",
       "title": "Microsoft Azure Fundamentals",
@@ -49,9 +84,9 @@
           "weight": "30-35%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-900/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-900"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-900"
     },
     {
       "code": "AZ-104",
@@ -97,7 +132,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-104/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-104"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104"
     },
     {
       "code": "AZ-140",
@@ -138,9 +173,9 @@
           "weight": "10-15%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-140/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-140"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-140"
     },
     {
       "code": "AZ-700",
@@ -184,9 +219,9 @@
           "weight": "15-20%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-700/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-700"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-700"
     },
     {
       "code": "AZ-120",
@@ -229,7 +264,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-120/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-120"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-120"
     },
     {
       "code": "AZ-305",
@@ -271,7 +306,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-305/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-305"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-305"
     },
     {
       "code": "AZ-400",
@@ -316,9 +351,9 @@
           "weight": "5-10%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-400/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-400"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-400"
     },
     {
       "code": "DP-900",
@@ -359,9 +394,9 @@
           "weight": "25-30%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-900/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-900"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-900"
     },
     {
       "code": "DP-300",
@@ -407,7 +442,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-300/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-300"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-300"
     },
     {
       "code": "DP-420",
@@ -444,9 +479,86 @@
           "weight": "20-25%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-420/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-420"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-420"
+    },
+    {
+      "code": "DP-600",
+      "title": "Implementing Analytics Solutions Using Microsoft Fabric",
+      "level": "intermediate",
+      "roles": [
+        "data-analyst",
+        "data-engineer"
+      ],
+      "products": [
+        "fabric"
+      ],
+      "category": "Data",
+      "status": "active",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "",
+      "beta_since": "",
+      "updated_at": "2026-06-22 23:35:00+00:00",
+      "skills_date": "July 21, 2026",
+      "skill_areas": 3,
+      "total_objectives": 41,
+      "skills_at_a_glance": [
+        {
+          "area": "Maintain a data analytics solution",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Prepare data",
+          "weight": "45-50%"
+        },
+        {
+          "area": "Implement and manage semantic models",
+          "weight": "25-30%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-600/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-600"
+    },
+    {
+      "code": "DP-700",
+      "title": "Implementing Data Engineering Solutions Using Microsoft Fabric",
+      "level": "intermediate",
+      "roles": [
+        "data-engineer"
+      ],
+      "products": [
+        "fabric"
+      ],
+      "category": "Data",
+      "status": "active",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "",
+      "beta_since": "",
+      "updated_at": "2026-06-23 18:41:00+00:00",
+      "skills_date": "July 21, 2026",
+      "skill_areas": 3,
+      "total_objectives": 54,
+      "skills_at_a_glance": [
+        {
+          "area": "Implement and manage an analytics solution",
+          "weight": "30-35%"
+        },
+        {
+          "area": "Ingest and transform data",
+          "weight": "30-35%"
+        },
+        {
+          "area": "Monitor and optimize an analytics solution",
+          "weight": "30-35%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-700/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-700"
     },
     {
       "code": "MB-210",
@@ -484,7 +596,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-210/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-210"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-210"
     },
     {
       "code": "MB-220",
@@ -534,7 +646,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-220/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-220"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-220"
     },
     {
       "code": "MB-230",
@@ -572,7 +684,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-230/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-230"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-230"
     },
     {
       "code": "MB-310",
@@ -616,9 +728,9 @@
           "weight": "10-15%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-310/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-310"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-310"
     },
     {
       "code": "MB-330",
@@ -664,7 +776,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-330/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-330"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-330"
     },
     {
       "code": "MB-500",
@@ -718,7 +830,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-500/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-500"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-500"
     },
     {
       "code": "MB-800",
@@ -758,9 +870,59 @@
           "weight": "30-35%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-800/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-800"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-800"
+    },
+    {
+      "code": "MB-820",
+      "title": "Microsoft Dynamics 365 Business Central Developer",
+      "level": "intermediate",
+      "roles": [
+        "developer"
+      ],
+      "products": [
+        "dynamics-365"
+      ],
+      "category": "Dynamics 365",
+      "status": "active",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "",
+      "beta_since": "",
+      "updated_at": "2025-12-05 03:46:00+00:00",
+      "skills_date": "June 10, 2025",
+      "skill_areas": 6,
+      "total_objectives": 75,
+      "skills_at_a_glance": [
+        {
+          "area": "Describe Business Central",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Install, develop, and deploy for Business Central",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Develop by using AL objects",
+          "weight": "35-40%"
+        },
+        {
+          "area": "Develop by using AL",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Work with development tools",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Integrate Business Central with other applications",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-820/",
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-820"
     },
     {
       "code": "MD-102",
@@ -805,9 +967,9 @@
           "weight": "10-15%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/md-102/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/md-102"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/md-102"
     },
     {
       "code": "MS-102",
@@ -849,7 +1011,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-102/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ms-102"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ms-102"
     },
     {
       "code": "MS-700",
@@ -890,9 +1052,9 @@
           "weight": "15-20%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-700/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ms-700"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ms-700"
     },
     {
       "code": "MS-721",
@@ -935,7 +1097,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-721/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ms-721"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ms-721"
     },
     {
       "code": "PL-900",
@@ -979,9 +1141,9 @@
           "weight": "20-25%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-900/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-900"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/pl-900"
     },
     {
       "code": "PL-200",
@@ -1023,7 +1185,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-200/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-200"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/pl-200"
     },
     {
       "code": "PL-300",
@@ -1065,7 +1227,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-300/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-300"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/pl-300"
     },
     {
       "code": "PL-400",
@@ -1105,9 +1267,9 @@
           "weight": "10-15%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-400/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-400"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/pl-400"
     },
     {
       "code": "SC-900",
@@ -1149,9 +1311,9 @@
           "weight": "20-25%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-900/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-900"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-900"
     },
     {
       "code": "SC-200",
@@ -1188,9 +1350,9 @@
           "weight": "20-25%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-200/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-200"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-200"
     },
     {
       "code": "SC-300",
@@ -1233,7 +1395,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-300/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-300"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-300"
     },
     {
       "code": "SC-400",
@@ -1258,7 +1420,7 @@
       "skills_at_a_glance": [],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-400/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-400"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-400"
     },
     {
       "code": "SC-100",
@@ -1300,9 +1462,9 @@
           "weight": "20-25%"
         }
       ],
-      "has_changes": false,
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-100/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/sc-100"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-100"
     },
     {
       "code": "AZ-500",
@@ -1344,7 +1506,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-500/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-500"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-500"
     },
     {
       "code": "AZ-800",
@@ -1391,7 +1553,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-800/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-800"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-800"
     },
     {
       "code": "AZ-801",
@@ -1438,33 +1600,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-801/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-801"
-    },
-    {
-      "code": "AI-901",
-      "title": "Microsoft Azure AI Fundamentals (Updated)",
-      "level": "beginner",
-      "roles": [
-        "ai-engineer",
-        "data-scientist"
-      ],
-      "products": [
-        "azure"
-      ],
-      "category": "AI",
-      "status": "beta",
-      "retirement_date": "",
-      "replacement": "",
-      "replaces": "AI-900",
-      "beta_since": "2026-04",
-      "updated_at": "",
-      "skills_date": null,
-      "skill_areas": 0,
-      "total_objectives": 0,
-      "skills_at_a_glance": [],
-      "has_changes": false,
-      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-901/",
-      "study_guide_url": ""
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-801"
     },
     {
       "code": "AI-103",
@@ -1483,14 +1619,35 @@
       "replacement": "",
       "replaces": "AI-102",
       "beta_since": "2026-04",
-      "updated_at": "",
-      "skills_date": null,
-      "skill_areas": 0,
-      "total_objectives": 0,
-      "skills_at_a_glance": [],
-      "has_changes": false,
+      "updated_at": "2026-07-07 18:58:00+00:00",
+      "skills_date": "April 16, 2026",
+      "skill_areas": 5,
+      "total_objectives": 64,
+      "skills_at_a_glance": [
+        {
+          "area": "Plan and manage an Azure AI solution",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Implement generative AI and agentic solutions",
+          "weight": "30-35%"
+        },
+        {
+          "area": "Implement computer vision solutions",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Implement text analysis solutions",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Implement information extraction solutions",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-103/",
-      "study_guide_url": ""
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103"
     },
     {
       "code": "AI-200",
@@ -1509,14 +1666,31 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "2026-05",
-      "updated_at": "",
+      "updated_at": "2026-05-05 15:02:00+00:00",
       "skills_date": null,
-      "skill_areas": 0,
-      "total_objectives": 0,
-      "skills_at_a_glance": [],
-      "has_changes": false,
+      "skill_areas": 4,
+      "total_objectives": 27,
+      "skills_at_a_glance": [
+        {
+          "area": "Develop containerized solutions on Azure",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Develop AI solutions by using Azure data management services",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Connect to and consume Azure services",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Secure, monitor, troubleshoot Azure solutions",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-200/",
-      "study_guide_url": ""
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-200"
     },
     {
       "code": "AI-300",
@@ -1535,14 +1709,35 @@
       "replacement": "",
       "replaces": "DP-100",
       "beta_since": "2026-03",
-      "updated_at": "",
+      "updated_at": "2026-03-05 17:45:00+00:00",
       "skills_date": null,
-      "skill_areas": 0,
-      "total_objectives": 0,
-      "skills_at_a_glance": [],
-      "has_changes": false,
+      "skill_areas": 5,
+      "total_objectives": 58,
+      "skills_at_a_glance": [
+        {
+          "area": "Design and implement an MLOps infrastructure",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Implement machine learning model lifecycle and operations",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Design and implement a GenAIOps infrastructure",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Implement generative AI quality assurance and observability",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Optimize generative AI systems and model performance",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-300/",
-      "study_guide_url": ""
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-300"
     },
     {
       "code": "AZ-802",
@@ -1561,14 +1756,43 @@
       "replacement": "",
       "replaces": "AZ-800 + AZ-801",
       "beta_since": "2026-06",
-      "updated_at": "",
+      "updated_at": "2026-07-06 21:43:00+00:00",
       "skills_date": null,
-      "skill_areas": 0,
-      "total_objectives": 0,
-      "skills_at_a_glance": [],
-      "has_changes": false,
+      "skill_areas": 7,
+      "total_objectives": 115,
+      "skills_at_a_glance": [
+        {
+          "area": "Deploy and manage AD DS",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Manage Windows Server instances and workloads in a hybrid environment",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Manage virtual machines",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Implement and manage an on-premises and hybrid networking infrastructure",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Manage storage and file services",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Secure Windows Server infrastructure",
+          "weight": "10-15%"
+        },
+        {
+          "area": "Monitor and troubleshoot Windows Server environments",
+          "weight": "15-20%"
+        }
+      ],
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-802/",
-      "study_guide_url": ""
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-802"
     },
     {
       "code": "DP-750",
@@ -1586,14 +1810,31 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "2026-03",
-      "updated_at": "",
-      "skills_date": null,
-      "skill_areas": 0,
-      "total_objectives": 0,
-      "skills_at_a_glance": [],
-      "has_changes": false,
+      "updated_at": "2026-07-14 21:04:00+00:00",
+      "skills_date": "March 11, 2026",
+      "skill_areas": 4,
+      "total_objectives": 77,
+      "skills_at_a_glance": [
+        {
+          "area": "Set up and configure an Azure Databricks environment",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Secure and govern Unity Catalog objects",
+          "weight": "15-20%"
+        },
+        {
+          "area": "Prepare and process data",
+          "weight": "30-35%"
+        },
+        {
+          "area": "Deploy and maintain data pipelines and workloads",
+          "weight": "30-35%"
+        }
+      ],
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-750/",
-      "study_guide_url": ""
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-750"
     },
     {
       "code": "DP-800",
@@ -1612,14 +1853,27 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "2026-03",
-      "updated_at": "",
-      "skills_date": null,
-      "skill_areas": 0,
-      "total_objectives": 0,
-      "skills_at_a_glance": [],
-      "has_changes": false,
+      "updated_at": "2026-08-20 22:22:00+00:00",
+      "skills_date": "March 12, 2026",
+      "skill_areas": 3,
+      "total_objectives": 73,
+      "skills_at_a_glance": [
+        {
+          "area": "Design and develop database solutions",
+          "weight": "35-40%"
+        },
+        {
+          "area": "Secure, optimize, and deploy database solutions",
+          "weight": "35-40%"
+        },
+        {
+          "area": "Implement AI capabilities in database solutions",
+          "weight": "25-30%"
+        }
+      ],
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-800/",
-      "study_guide_url": ""
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-800"
     },
     {
       "code": "SC-730",
@@ -1637,14 +1891,31 @@
       "replacement": "",
       "replaces": "",
       "beta_since": "2026-04",
-      "updated_at": "",
+      "updated_at": "2026-07-09 18:04:00+00:00",
       "skills_date": null,
-      "skill_areas": 0,
-      "total_objectives": 0,
-      "skills_at_a_glance": [],
-      "has_changes": false,
+      "skill_areas": 4,
+      "total_objectives": 36,
+      "skills_at_a_glance": [
+        {
+          "area": "Understand cybersecurity concepts",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Understand cybersecurity risks and threats",
+          "weight": "30-35%"
+        },
+        {
+          "area": "Apply basic security policies to protect the organization",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Report and respond to security incidents",
+          "weight": "10-15%"
+        }
+      ],
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-730/",
-      "study_guide_url": ""
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-730"
     },
     {
       "code": "SC-500",
@@ -1663,14 +1934,31 @@
       "replacement": "",
       "replaces": "AZ-500",
       "beta_since": "2026-05",
-      "updated_at": "",
+      "updated_at": "2026-07-31 19:59:00+00:00",
       "skills_date": null,
-      "skill_areas": 0,
-      "total_objectives": 0,
-      "skills_at_a_glance": [],
-      "has_changes": false,
+      "skill_areas": 4,
+      "total_objectives": 87,
+      "skills_at_a_glance": [
+        {
+          "area": "Manage identity, access, and governance",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Secure storage, databases, and networking",
+          "weight": "25-30%"
+        },
+        {
+          "area": "Secure compute",
+          "weight": "20-25%"
+        },
+        {
+          "area": "Manage and monitor security posture",
+          "weight": "20-25%"
+        }
+      ],
+      "has_changes": true,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/sc-500/",
-      "study_guide_url": ""
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-500"
     },
     {
       "code": "AI-900",
@@ -1717,7 +2005,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-900/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ai-900"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-900"
     },
     {
       "code": "AI-102",
@@ -1767,7 +2055,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-102/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ai-102"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-102"
     },
     {
       "code": "AZ-204",
@@ -1813,7 +2101,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/az-204/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/az-204"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-204"
     },
     {
       "code": "DP-100",
@@ -1855,7 +2143,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/dp-100/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/dp-100"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-100"
     },
     {
       "code": "MB-910",
@@ -1901,7 +2189,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-910/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-910"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-910"
     },
     {
       "code": "MB-920",
@@ -1939,7 +2227,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-920/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-920"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-920"
     },
     {
       "code": "MB-240",
@@ -1989,7 +2277,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/mb-240/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/mb-240"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/mb-240"
     },
     {
       "code": "MS-900",
@@ -2031,7 +2319,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ms-900/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/ms-900"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ms-900"
     },
     {
       "code": "PL-500",
@@ -2069,7 +2357,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-500/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-500"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/pl-500"
     },
     {
       "code": "PL-600",
@@ -2107,7 +2395,7 @@
       ],
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-600/",
-      "study_guide_url": "https://learn.microsoft.com/en-us/certifications/resources/study-guides/pl-600"
+      "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/pl-600"
     }
   ]
 }
