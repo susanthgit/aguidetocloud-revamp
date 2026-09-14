@@ -1944,3 +1944,134 @@ confirms no selection had been made. All meeting names and attendees are fiction
 (Caldova), not real customer data.
 
 ---
+
+## §29 — OneDrive can take you from files to finished work in chat *(image 2 of 2)*
+
+**File:** `lab-s29-onedrive-starters.webp` (367×522, 15.3 KB) — native size, no crop
+**SHA256:** `5435a014906eca3ee896f0406f614e9a1084b527d544c70d865f6161c0cdeabb`
+**Source:** My own Caldova tenant, 14 September 2026. Copilot panel in OneDrive.
+
+**Observed while viewing:** A floating panel headed **Copilot** with the Copilot glyph, a pin control and a
+close control at the top right. Beneath, a greeting addressed to the signed-in demo-lab persona by first name,
+then *"Here are some ideas to get you started."* Six stacked suggestion buttons, each with its variable part
+rendered in blue brackets:
+• *Give me the latest on [project]*
+• *Find files on [topic]*
+• *Find the file shared with me by [person]*
+• *Find a file that was shared in a [meeting....]*
+• *Find a file I recently edited about [topic]*
+• *What can Copilot do in OneDrive?*
+A message box at the foot reads *"Ask a question about your files"* with a send arrow. The OneDrive file list
+is partly visible behind the panel at the left edge.
+
+**Verdict:** ✅ MATCH — supports every claim made from it. The count is right (six suggestions, five of them
+retrieval), the meeting-based suggestion is present and legible, and none of the six offers to draft or
+summarise, which is the basis for the section's observation that the front door is retrieval-first. The
+section is explicit that this does not test whether drafting works.
+
+**Notes:** Display scale is 1.96×, the largest in this issue, but the capture was already tight to the panel
+so there is nothing to crop and no upscaling has been applied — the file is stored at its native 367×522 and
+simply renders large. The greeting name is a Caldova demo-lab persona, not a real person, and the alt text
+avoids repeating it.
+
+---
+
+## §34 — Web and work chat merged, with a Work IQ button
+
+**File:** `lab-s34-work-iq-button.webp` (655×180, 6.1 KB) — native size, no crop
+**SHA256:** `e860eecb3146448255876eb67d4561072e44ff170e941de8784acd517ce5a729`
+**Source:** My own Caldova tenant, 14 September 2026. Top strip of Microsoft 365 Copilot Chat.
+
+**Observed while viewing:** Left portion shows the **Copilot** wordmark with three small icons beside it (an
+app-grid glyph carrying a ring, a new-item glyph with a dot, and a pane-toggle glyph). Below them a two-part
+pill switch reads **Chat | Cowork** with *Chat* selected as the filled white segment, and beneath that a
+**+ New chat** link. On the right-hand side, at the top of the chat pane, sit exactly two controls: a rounded
+grey button labelled **Work IQ**, and a model picker reading **Auto** with a downward chevron. No Web or Work
+toggle appears anywhere in the frame.
+
+**Verdict:** ✅ MATCH — the absence of the Web/Work toggle and the presence of a discrete **Work IQ** control
+are both directly visible, which is exactly what the section claims. The section explicitly declines to state
+whether the button was in an on or off state, which the still image genuinely cannot establish.
+
+**Notes:** Display scale 1.10×, near native. Cropped tightly by the capturer to the header strip; no plan or
+message content is present, so nothing to mask.
+
+---
+
+## §37 — Individual responses can be shared on their own *(image 1 of 2)*
+
+**File:** `lab-s37-share-response-menu-annotated.webp` (334×381, 9.5 KB) — native size, annotated by the capturer
+**SHA256:** `d1cb0671319f01754b2ef789054de31fe9f38654f678f658fa1afa105f72e38a`
+**Source:** My own Caldova tenant, 14 September 2026. Per-response overflow menu in Copilot Chat.
+
+**Observed while viewing:** A dropdown menu with five items, top to bottom: **Share response (Frontier)** —
+enclosed in a hand-drawn black rounded rectangle added by the capturer — then **Edit in Pages** with a
+submenu chevron, **Export to** with a submenu chevron, **Read aloud**, and **Schedule this prompt**. Below the
+menu sits the response's own control row: thumbs up, thumbs down, a retry glyph, and a highlighted ellipsis
+indicating the menu's origin.
+
+**Verdict:** ✅ MATCH — the *(Frontier)* suffix is legible and is the basis for the section's statement that
+this reaches early-access tenants first. The four sibling menu items named in the prose are all present and
+readable.
+
+**Notes:** Display scale 2.16×, the largest in this issue. The source is a small native menu capture, so
+nothing has been upscaled on disk; the browser renders it large. Legibility checked at view time and the item
+labels are clear. The black circle is the capturer's own annotation, which is why the filename carries the
+`-annotated` suffix.
+
+---
+
+## §37 — Individual responses can be shared on their own *(image 2 of 2)*
+
+**File:** `lab-s37-share-response-dialog.webp` (748×648, 40.4 KB) — native size, no crop
+**SHA256:** `a7ccbed2d8ca79bf68144c1e36a5a5c3c1d6076a92547a4c8d504408fbd7c67c`
+**Source:** My own Caldova tenant, 14 September 2026. The Share Response dialog.
+
+**Observed while viewing:** Dialog titled **Share Response** with a close control at the top right. A preview
+card contains one exchange: a grey prompt bubble asking for a follow-up to a colleague about overdue Q3
+numbers, then the answer offering versions in different tones, with a bold sub-heading **Option 1:
+Professional and Direct** and the first lines of a draft. The preview fades out at the card's foot. Beneath
+the card, in bold: *"Anyone in your company with a link can access a copy of this chat."* followed by
+*"The shared version won't update as the conversation changes. Make sure you're comfortable sharing the
+contents before sharing."* and a **Learn more** link. A single dark **Copy link** button with a link glyph
+sits at the bottom right. No per-person picker and no expiry control are present.
+
+**Verdict:** ✅ MATCH — every quoted phrase in the section is legible verbatim in the image, including the
+*chat* versus *response* wording mismatch the section flags. The absence of a recipient picker and an expiry
+option is visible rather than assumed. The section states plainly that it could not establish which of the two
+descriptions is accurate without opening a shared link, which this image indeed cannot settle.
+
+**Notes:** Display scale 0.96×, essentially native. The preview content is synthetic Caldova demo-lab data;
+the colleague's first name appears in the preview and is retained in the alt text for accuracy, being a lab
+persona rather than a real contact.
+
+---
+
+## §27 — The Planner Agent works in group-based basic plans
+
+**File:** `lab-s27-planner-agent-priority.webp` (372×772, 51.8 KB) — native size, no crop
+**SHA256:** `c5bd2c3734a7bd5c12a6015b89c48546319cabf259cf5de651286650f1e89709`
+**Source:** My own Caldova tenant, 14 September 2026. Planner Agent chat pane inside a basic plan.
+
+**Observed while viewing:** A toolbar strip across the top, then a **Today** divider. A right-aligned prompt
+bubble reads *"what are my highest priority tasks?"*. The reply is headed **Planner Agent** with a
+purple/magenta agent glyph, preceded by a collapsed disclosure line reading **Reasoning completed in 1 step**
+with a chevron. The answer body states that in the open *Onvexa Launch Tracker* plan it found **four open
+tasks assigned to you**, all marked **Medium priority**, *"so there isn't a single higher-priority task among
+them"*, and offers to break the tie by due date. A numbered list of four tasks follows, each with a bold task
+name, a due date of **Aug 4**, **Aug 5**, **Aug 6** and **Aug 9** respectively, and a bucket name; one carries
+*"also assigned to"* a second person, another is marked *(At Risk)*. Small task-citation chips sit beneath
+several lines, some reading *"+3"*. The closing line reads: *"All four are still Not started, and all of those
+due dates have already passed as of September 14."* A composer at the foot reads *"Describe what you'd like
+help with"*.
+
+**Verdict:** ✅ MATCH — the refusal to invent a priority ranking, the due-date fallback, the date awareness,
+the expandable reasoning line and the citation chips are each directly visible and are each what the section
+claims. The section is explicit that the documented plan-view AI filter pill is **not** visible here, because
+only the chat pane was captured.
+
+**Notes:** Display scale 1.94×; tall portrait pane, legible at that size, nothing upscaled on disk. All names
+and data are synthetic Caldova demo-lab content. A sliver of an unrelated element is clipped at the very top
+edge of the capture; it carries no text and sits above the conversation.
+
+---

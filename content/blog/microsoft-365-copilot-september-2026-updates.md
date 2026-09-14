@@ -843,15 +843,44 @@ list for the next issue.
 
 ### 27. The Planner Agent works in group-based basic plans
 
-*For: Planner Agent · Generally available 11 August 2026*
+*For: Planner Agent · Generally available 11 August 2026 · Tested in my tenant 14 September 2026*
 
 The Planner Agent is available in **group-based basic plans**, widening it beyond the premium plan types.
+
+**Where it is.** This one is easy to walk past. Open a basic plan in Planner, then look at the **bottom right
+corner of the plan** for the Copilot button. It is a floating button over the plan, not an item in the
+toolbar, which is why I could not find it the first time I looked.
+
+**What I found on 14 September 2026.** I opened a plan belonging to a team and asked it the most obvious
+question I could think of.
+
+<img src="/images/blog/copilot-september-2026/lab-s27-planner-agent-priority.webp" alt="The Planner Agent chat pane open in my own tenant. My prompt reads: what are my highest priority tasks? The agent replies under the heading Planner Agent, preceded by a collapsed line reading Reasoning completed in 1 step. The answer says: In your open Onvexa Launch Tracker plan, I found four open tasks assigned to you. They are all marked Medium priority, so there isn't a single higher-priority task among them. It then offers to break the tie by due date and lists four tasks with their due dates of August 4, 5, 6 and 9, their bucket, and notes on one being assigned to a second person and another being At Risk. Small task chips sit under several lines as citations. The closing line reads: All four are still Not started, and all of those due dates have already passed as of September 14. A composer at the foot reads: Describe what you'd like help with." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. The Planner Agent answering a question it could have faked.</em></p>
+
+I asked for my highest priority tasks, and the honest answer was that there were not any. All four were marked
+medium, so there was no top of the list to give me. It said so, and then it did the useful thing instead: it
+offered to break the tie by due date and ranked them that way. It also noticed, without being asked, that
+every one of those dates had already gone past.
+
+That is a small moment and I think it is the most encouraging thing I saw this month. The easy behaviour would
+have been to pick one and call it the highest priority. A ranked list looks like a better answer than "they
+are all the same". It did not do that.
+
+A few other things worth noticing in that reply. There is a **Reasoning completed in 1 step** line you can
+expand, so you can see how it got there. Every claim carries a small task chip underneath, so you can click
+through to the task rather than take its word for it. And it picked up detail from the tasks themselves, like
+one being shared with someone else and another being flagged at risk.
+
+Microsoft's documentation says the agent will also **filter your plan view** while it answers, adding an AI
+filter pill you can toggle off, and that the filter changes only your view rather than the plan. I captured
+the chat pane rather than the whole window, so I cannot confirm that part from what I have in front of me.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Most teams live in basic plans. A feature limited to premium project plans reaches the project managers, not the people doing the work.</p>
 </blockquote>
 
-📖 [AI at Work Roadmap 511820](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=511820) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+📖 [AI at Work Roadmap 511820](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=511820) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · [Chat with Planner Agent in basic plans](https://support.microsoft.com/en-us/planner/copilot/chat-with-planner-agent-basic-plans)
 
 ### 28. Teams meetings can be added to a Copilot Notebook
 
@@ -883,9 +912,29 @@ for the next issue.
 
 ### 29. OneDrive can take you from files to finished work in chat
 
-*For: Copilot in OneDrive · Public Preview August 2026 · Worldwide December 2026*
+*For: Copilot in OneDrive · Public Preview August 2026 · Worldwide December 2026 · Tested in my tenant 14 September 2026*
 
 From a chat in OneDrive you can **find content, analyse files and data, and create summaries and drafts** without leaving the file view.
+
+**What I found on 14 September 2026.** I opened the Copilot panel in OneDrive to see where it starts you off,
+because the suggestions a product offers on an empty screen tell you where its makers think the value is.
+
+<img src="/images/blog/copilot-september-2026/lab-s29-onedrive-starters.webp" alt="The Copilot panel open in OneDrive in my own tenant. It is headed Copilot with a pin and close control, greets the signed-in user by name and says: Here are some ideas to get you started. Six suggestion buttons follow: Give me the latest on, project; Find files on, topic; Find the file shared with me by, person; Find a file that was shared in a, meeting; Find a file I recently edited about, topic; and What can Copilot do in OneDrive? A message box at the bottom reads: Ask a question about your files." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. The front door to Copilot in OneDrive.</em></p>
+
+Six suggestions, and five of them are about finding something. Give me the latest on a project. Find files on
+a topic. Find the file shared with me by a person. Find a file that was shared in a meeting. Find a file I
+recently edited. The box underneath asks you to ask a question about your files.
+
+The meeting one is the interesting one. Looking for a document by the meeting it turned up in is much closer
+to how people actually remember things than trying to recall a file name, and I had not seen it offered
+anywhere else.
+
+But it is worth saying plainly that the headline for this feature is about getting from files to finished
+work, and the front door is almost entirely about retrieval. None of the six suggestions offer to write
+anything. That does not mean it cannot draft, and I have not tested that half. It does tell you what Microsoft
+expects most people to do with it on day one.
 
 Note the two dates. This is in Public Preview now and does not reach worldwide availability until December.
 
@@ -1078,9 +1127,24 @@ The detail that matters for anyone who read the August issue: Microsoft Learn st
 
 ### 34. Web and work chat merged, with a Work IQ button
 
-*For: Microsoft 365 Copilot Chat · Generally available 25 August 2026*
+*For: Microsoft 365 Copilot Chat · Generally available 25 August 2026 · Tested in my tenant 14 September 2026*
 
 Copilot Chat brought web and work into **one chat experience**, with a dedicated **Work IQ button** to bring your organisation's content into the answer rather than switching to a separate mode.
+
+**What I found on 14 September 2026.** The toggle is gone.
+
+<img src="/images/blog/copilot-september-2026/lab-s34-work-iq-button.webp" alt="The top of Microsoft 365 Copilot Chat in my own tenant. On the left is the Copilot wordmark with an app-grid icon, a new-item icon and a pane-toggle icon, below which a pill switch offers Chat and Cowork with Chat selected, and a plus New chat link. On the right of the chat pane sit two controls: a rounded grey button labelled Work IQ, and a model picker reading Auto with a chevron. There is no Web or Work toggle anywhere." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. One chat, a Work IQ button, and a model picker set to Auto.</em></p>
+
+There is no web or work switch left in the interface. In its place, at the top of the chat pane, there is a
+single button marked **Work IQ** with the model picker sitting next to it on *Auto*. The left rail has changed
+shape too: Chat and Cowork are now two tabs of one thing rather than two separate places to go.
+
+I cannot tell from a still image whether that button was on or off at the moment I took it, and that is worth
+saying rather than guessing. What I can say is that the thing people got wrong for two years, which was not
+knowing which mode they were typing into, is no longer something you can get wrong by accident. There is one
+box, and one clearly named control that decides whether your own organisation's content is in scope.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> The web/work toggle was the single most confusing thing about Copilot Chat for new users. People did not know which mode they were in, so they did not know why the answer was wrong. One box with an explicit control is a much easier thing to teach.</p>
@@ -1120,9 +1184,39 @@ You can share a **full chat session via a link**, and the recipient opens their 
 
 ### 37. Individual responses can be shared on their own
 
-*For: Microsoft 365 Copilot Chat · Rolled out August 2026*
+*For: Microsoft 365 Copilot Chat · Rolled out August 2026 · Tested in my tenant 14 September 2026*
 
 A single response can be shared by link from the **More options** menu, without sending the whole conversation.
+
+**What I found on 14 September 2026.** It is there, and it carries a label worth noticing.
+
+<img src="/images/blog/copilot-september-2026/lab-s37-share-response-menu-annotated.webp" alt="The More options menu opened under a single Copilot response in my own tenant, with the first item circled in black. The items read: Share response, followed by the word Frontier in brackets; Edit in Pages with a submenu arrow; Export to with a submenu arrow; Read aloud; and Schedule this prompt. Below the menu are the thumbs up, thumbs down, retry and more options controls that belong to the response itself." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. The per-response menu, with the share item circled.</em></p>
+
+Hover a single answer, open the three dots beneath it, and the first item reads **Share response (Frontier)**.
+That bracket matters. Frontier is the early access programme tenants opt into, so this arrives there first
+rather than everywhere at once. If you cannot see it, that is the likeliest reason. The rest of the menu is
+worth a look on its own: edit in Pages, export, read aloud, and schedule this prompt.
+
+<img src="/images/blog/copilot-september-2026/lab-s37-share-response-dialog.webp" alt="The Share Response dialog in my own tenant. A preview card shows one exchange: a grey prompt bubble asking for a follow-up to Karin about overdue Q3 numbers, then the answer offering versions in different tones, with the heading Option 1: Professional and Direct and a draft beginning Hi Karin. The preview fades out at the foot of the card. Below it, bold text reads: Anyone in your company with a link can access a copy of this chat. It continues: The shared version won't update as the conversation changes. Make sure you're comfortable sharing the contents before sharing, followed by a Learn more link. A dark Copy link button sits at the bottom right." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. The share dialog, showing you exactly what the other person will get.</em></p>
+
+The dialog previews what you are about to hand over, which I liked. In my case it showed the prompt and the
+one answer it produced, and nothing else from the thread.
+
+Then the line underneath, which is worth reading twice:
+
+> Anyone in your company with a link can access a copy of this chat. The shared version won't update as the
+> conversation changes.
+
+Three things follow from that. The link is company wide, so this is not a share with one named person and
+there is no expiry offered. What the other side gets is a copy frozen at the moment you shared it, so if you
+keep talking to Copilot afterwards they will not see it. And the wording says *chat* even though the menu said
+*response* and the preview showed a single exchange. I could not settle which of the two is the accurate
+description without opening a shared link and reading it as the recipient, so I am reporting both rather than
+picking one.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Conversations wander. Usually it is one answer in a long thread that is worth sending to someone, and sharing the whole lot makes them read everything else first.</p>
