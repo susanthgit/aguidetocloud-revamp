@@ -12,21 +12,27 @@
 
   const { plans, features, categories, combos, addons, scenarios } = D;
 
-  // ── V4: Currency system ─────────────────────
-  const currencySymbols = { usd: '$', aud: 'A$', nzd: 'NZ$', gbp: '£', eur: '€' };
-  let currency = 'nzd';
+  // ── Pricing: USD only, by design ────────────
+  // Microsoft's regional prices are NOT a flat FX multiple of the USD price, so a
+  // converted figure would be fabricated. We publish indicative USD list prices and
+  // link out to Microsoft for authoritative regional pricing. Do not reintroduce a
+  // currency selector without a real per-region price source.
 
+  // Fallback target whenever we cannot name a specific plan's Microsoft page.
+  const MS_PRICING_URL = 'https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing';
+
+  // Returns NaN (never null/0) when a price is missing, so the gap propagates
+  // through every total and renders as an em-dash instead of a made-up number.
   function getPrice(item) {
-    var key = 'price_' + currency;
-    return (typeof item[key] === 'number') ? item[key] : item.price_usd;
+    return (item && Number.isFinite(item.price_usd)) ? item.price_usd : NaN;
   }
 
   function formatPrice(amount) {
-    return currencySymbols[currency] + (amount || 0).toFixed(2);
+    return Number.isFinite(amount) ? 'US$' + amount.toFixed(2) : '—';
   }
 
   function getCurrencyLabel() {
-    return currency.toUpperCase();
+    return 'USD';
   }
 
   // ── Build lookup maps ────────────────────────
@@ -308,6 +314,8 @@
       document.getElementById('licpick-rec-name').textContent = 'No plan found';
       document.getElementById('licpick-rec-price').textContent = '—';
       document.getElementById('licpick-rec-nzd').textContent = '';
+      var msUrlNoRes = document.getElementById('licpick-rec-msurl');
+      if (msUrlNoRes) msUrlNoRes.href = MS_PRICING_URL;
       var annualNoRes = document.getElementById('licpick-rec-annual');
       if (annualNoRes) annualNoRes.innerHTML = '';
       document.getElementById('licpick-rec-breakdown').innerHTML = msg;
@@ -419,7 +427,13 @@
     document.getElementById('licpick-rec-price').textContent = formatPrice(rec.total);
     document.getElementById('licpick-rec-nzd').textContent = formatPrice(rec.total) + '/user/month (' + getCurrencyLabel() + ')';
 
-    // V4: Annual + team cost (all in selected currency)
+    // Point at Microsoft's own page for this plan — they are the pricing source of truth.
+    // Always reassign: a stale href from the previous recommendation would send the
+    // reader to the wrong plan's pricing page.
+    var msUrlEl = document.getElementById('licpick-rec-msurl');
+    if (msUrlEl) msUrlEl.href = rec.plan.ms_url || MS_PRICING_URL;
+
+    // V4: Annual + team cost (USD)
     var annualEl = document.getElementById('licpick-rec-annual');
     if (annualEl) {
       var annual = rec.total * 12;
@@ -816,7 +830,6 @@
       const params = new URLSearchParams();
       params.set('f', [...selected].join(','));
       if (seatCount > 0) params.set('seats', seatCount);
-      if (currency !== 'nzd') params.set('cur', currency);
       const url = location.origin + '/licence-picker/?' + params.toString();
       navigator.clipboard.writeText(url).then(() => {
         shareBtn.textContent = 'Link copied!';
@@ -830,12 +843,7 @@
     const params = new URLSearchParams(location.search);
     const f = params.get('f');
     const seats = params.get('seats');
-    const cur = params.get('cur');
-    if (cur && currencySymbols[cur]) {
-      currency = cur;
-      var curSel = document.getElementById('licpick-currency');
-      if (curSel) curSel.value = currency;
-    }
+    // Legacy ?cur= share links (pre USD-only) are deliberately ignored.
     if (seats) {
       seatCount = parseInt(seats, 10) || 0;
       const seatInput = document.getElementById('licpick-seats');
@@ -901,8 +909,7 @@
       var data = {
         features: [...selected],
         seats: seatCount,
-        preview: includePreview,
-        currency: currency
+        preview: includePreview
       };
       localStorage.setItem(LS_KEY, JSON.stringify(data));
     } catch (e) { /* quota exceeded or private browsing */ }
@@ -929,10 +936,10 @@
         var pt = document.getElementById('licpick-preview-toggle');
         if (pt) pt.checked = includePreview;
       }
-      if (data.currency && currencySymbols[data.currency]) {
-        currency = data.currency;
-        var curSel = document.getElementById('licpick-currency');
-        if (curSel) curSel.value = currency;
+      // Purge any currency saved by the pre USD-only build instead of applying it.
+      if (data.currency) {
+        delete data.currency;
+        try { localStorage.setItem(LS_KEY, JSON.stringify(data)); } catch (e) { /* ignore */ }
       }
       updateTileStates();
       updateResults();
@@ -1010,13 +1017,25 @@
     if (!emailBtn || !modal) return;
 
     emailBtn.addEventListener('click', function() {
-      var planName = document.getElementById('licpick-rec-name').textContent || 'TBD';
-      var recPrice = document.getElementById('licpick-rec-price').textContent || formatPrice(0);
       var needed = [...selected];
       var results = findBestCombos(needed);
       var best = results[0];
-      var total = best ? best.total : 0;
-      var annual = (total * 12).toFixed(2);
+
+      // No covering combination means there is no price to quote. Never put an
+      // invented figure in a document addressed to a procurement team.
+      if (!best) {
+        bodyEl.value = 'No plan combination covers the features selected, so there is no price ' +
+          'to take to procurement yet.\n\n' +
+          'Adjust the selection, or check current pricing directly with Microsoft:\n' +
+          MS_PRICING_URL + '\n';
+        modal.style.display = '';
+        if (mailtoBtn) mailtoBtn.style.display = 'none';
+        return;
+      }
+      if (mailtoBtn) mailtoBtn.style.display = '';
+
+      var planName = document.getElementById('licpick-rec-name').textContent || 'TBD';
+      var total = best.total;
       var feats = [...selected].map(function(f) { return featureMap[f] ? featureMap[f].name : f; });
       var skuText = best && best.plan.sku ? ' (SKU: ' + best.plan.sku + ')' : '';
 
@@ -1079,36 +1098,9 @@
   // V4 FEATURES
   // ══════════════════════════════════════════════
 
-  // ── V4: Currency dropdown init ──────────────
-  function initCurrency() {
-    var curSel = document.getElementById('licpick-currency');
-    if (!curSel) return;
-    curSel.addEventListener('change', function() {
-      currency = curSel.value;
-      refreshAllPrices();
-      saveToLocalStorage();
-    });
-  }
-
-  function refreshAllPrices() {
-    // Re-render feature grid tooltips
-    buildFeatureGrid();
-    updateTileStates();
-    // Re-render results if active
-    if (selected.size) updateResults();
-    // Re-render comparison table
-    var cf = document.getElementById('licpick-cat-filter');
-    buildComparisonTable(cf ? cf.value : 'all');
-    // Re-render add-on calculator
-    if (addonBasePlan) {
-      renderAddonCards();
-      updateAddonTotal();
-    } else {
-      buildAddonCalculator();
-    }
-    // Re-render segments
-    renderSegments();
-  }
+  // ── V4: Currency dropdown init ── removed (USD-only, see getPrice/formatPrice) ──
+  // refreshAllPrices() was removed with it — it existed only to re-render on
+  // currency change. Prices are now static USD, so nothing needs re-rendering.
 
   // ── V4: Cost Chart ──────────────────────────
   function renderCostChart(results) {
@@ -1196,14 +1188,21 @@
     }
 
     var orgMonthly = 0;
+    var uncoveredSegments = 0;
     list.innerHTML = segments.map(function(seg) {
       var isActive = seg.id === activeSegmentId;
       var needed = [...seg.features];
       var results = needed.length ? findBestCombos(needed) : [];
       var best = results[0];
-      var perUser = best ? best.total : 0;
+      // NaN, not 0 — an uncovered segment has no price, and adding 0 would silently
+      // understate the organisation total rather than showing the gap.
+      var perUser = best ? best.total : NaN;
       var segTotal = perUser * (seg.count || 0);
-      orgMonthly += segTotal;
+      if (Number.isFinite(segTotal)) {
+        orgMonthly += segTotal;
+      } else if (seg.count > 0) {
+        uncoveredSegments++;
+      }
       var price = formatPrice(perUser);
 
       return '<div class="licpick-segment-card' + (isActive ? ' active' : '') + '" data-segment="' + seg.id + '">' +
@@ -1229,7 +1228,12 @@
     // Total org cost
     if (totalEl && segments.some(function(s) { return s.count > 0; })) {
       totalEl.style.display = '';
-      totalEl.innerHTML = '<strong>Total Organisation Cost:</strong> ' + formatPrice(orgMonthly) + '/month · ' + formatPrice(orgMonthly * 12) + '/year';
+      var totalHtml = '<strong>Total Organisation Cost:</strong> ' + formatPrice(orgMonthly) + '/month · ' + formatPrice(orgMonthly * 12) + '/year';
+      if (uncoveredSegments > 0) {
+        totalHtml += '<div class="licpick-segment-warning">Excludes ' + uncoveredSegments +
+          ' segment' + (uncoveredSegments === 1 ? '' : 's') + ' with no covering plan — your real total will be higher.</div>';
+      }
+      totalEl.innerHTML = totalHtml;
     } else if (totalEl) {
       totalEl.style.display = 'none';
     }
@@ -1295,7 +1299,6 @@
   initCompareRefresh();
 
   // V4: Init new features
-  initCurrency();
   initPrint();
   initSegments();
 

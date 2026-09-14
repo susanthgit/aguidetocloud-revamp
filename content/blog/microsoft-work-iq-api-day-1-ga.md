@@ -3,7 +3,7 @@ title: "Microsoft Work IQ API — Day-1 Hands-On Walkthrough"
 list_title: "Microsoft Work IQ API — The Complete Guide"
 description: "Microsoft Work IQ API goes GA on 16 June 2026 — plain-English guide: 10 verbs, admin consent, Copilot Credits pricing, and 3 use cases on a lab tenant."
 date: 2026-06-16
-lastmod: 2026-06-17
+lastmod: 2026-09-14
 draft: false
 card_tag: "Work IQ"
 tag_class: "ai"
@@ -12,19 +12,19 @@ faq:
   - question: "What is the Work IQ API?"
     answer: "Work IQ is Microsoft's workplace-intelligence layer for agents. Instead of agents calling raw Microsoft Graph and stitching together emails, calendar items, files, and chats themselves, they call Work IQ — and Work IQ hands back the pre-digested, permission-trimmed context your agent actually needs. It became generally available on 16 June 2026, after a public preview on GitHub."
   - question: "How is Work IQ different from Microsoft Graph?"
-    answer: "Microsoft Graph is the raw data plumbing — it gives you the messages, events, files, and members. Work IQ sits on top of Graph and gives you the *understanding*: who collaborates with whom, what 'the Q3 deck' actually means in this tenant, which meeting was the one where the customer pushed back. Microsoft says Work IQ uses up to 80% fewer tokens and is 2× faster than equivalent raw-Graph calls on agent workloads. Those are Microsoft's internal numbers — worth verifying directionally, but the architectural reason is sound: the orchestration work happens server-side before the answer comes back."
+    answer: "Microsoft Graph is the raw data plumbing — it gives you the messages, events, files, and members. Work IQ sits on top of Graph and gives you the *understanding*: who collaborates with whom, what 'the Q3 deck' actually means in this tenant, which meeting was the one where the customer pushed back. Microsoft says Work IQ uses up to 80% fewer tokens and is 2× faster than traditional APIs in coding harnesses. Those are Microsoft's own numbers — worth verifying directionally, but the architectural reason is sound: the orchestration work happens server-side before the answer comes back."
   - question: "Do users still need a Microsoft 365 Copilot licence if Work IQ is consumption-based?"
     answer: |
-      The cleanest Day-1 answer is: **Work IQ API usage is consumption-billed, but some Work IQ surfaces still require a Microsoft 365 Copilot add-on licence for the signed-in user.**
+      The cleanest answer today is: **Work IQ API usage is consumption-billed, and reaching it over A2A, REST or MCP doesn't carry connector licensing.**
 
-      Microsoft Licensing says there is **no separate Work IQ API subscription, SKU, or per-user licence**; API calls draw down Copilot Credits. But the REST API Learn page says REST currently supports users **with a Microsoft 365 Copilot add-on licence**, and the CLI / GitHub admin docs still describe Copilot licensing as a prerequisite for CLI users. So don't read "consumption-based" as "any M365 user can use every Work IQ surface with no Copilot entitlement."
+      Microsoft Licensing says there is **no separate Work IQ API subscription, SKU, or per-user licence**; API calls draw down Copilot Credits. Since GA, Learn has firmed this up — the A2A / REST / MCP path is usage-billed and explicitly doesn't use connector licensing. The entitlement question has moved off the protocol and onto what your agent actually touches: connector-backed Microsoft 365 tools are where a per-user entitlement still matters.
 
-      My practical read: budget for **Copilot Credits for API usage**, and check the exact licence requirement for the protocol you are using (CLI, MCP, A2A, or REST) before you promise rollout to unlicensed users.
+      My practical read: budget for **Copilot Credits for API usage**, and check the entitlement on the specific tools your agent calls rather than assuming one applies to the protocol itself.
   - question: "If my agent helps 500 employees, do all 500 need a Copilot licence?"
     answer: |
-      For the CLI and REST experiences Microsoft documents today, plan as if those 500 users need Microsoft 365 Copilot assigned. Work IQ still runs as a signed-in human — there's no "just the agent" mode (no application-only auth, in Microsoft-speak). So if your agent helps 500 people, those 500 are the delegated identities the agent acts under.
+      Not necessarily — and this is the bit worth slowing down on. Work IQ still runs as a signed-in human; there's no "just the agent" mode (no application-only auth, in Microsoft-speak). So if your agent helps 500 people, those 500 are the delegated identities the agent acts under. What they each need depends on the tools your agent calls, not on the protocol you call them over.
 
-      The maths gets real fast if Copilot licences are required for your chosen surface: 500 Copilot licences = $15,000/month baseline, on top of the Copilot Credits your API calls rack up. Pilot with 30-50 users first, watch the consumption dashboard, then scale.
+      Where Copilot entitlements do apply, the maths gets real fast — check Microsoft's pricing page for current list prices, since they move and vary by region, tax and agreement. Either way: pilot with 30-50 users first, watch the consumption dashboard, then scale.
   - question: "Who needs to do what — admin vs end user?"
     answer: "Two distinct journeys. The admin does the one-time tenant work: confirm the licensing requirement for the surface you plan to use, click the admin-consent URL, and (if hit by AADSTS650052) run the Enable-WorkIQToolsForTenant.ps1 script from the GitHub repo. That's the whole admin side, maybe 15 minutes once. End users then install the CLI (Copilot CLI plugin / VS Code one-click / npm global / npx / or just open Microsoft Scout if they already use it), run workiq accept-eula, sign in once via the browser pop-up, and start querying. Five to ten minutes per user, one time only."
   - question: "Can I just use Microsoft Scout instead of installing anything separately?"
@@ -38,7 +38,7 @@ faq:
   - question: "What are the 10 verbs and why only 10?"
     answer: "Six entity tools (fetch, create_entity, update_entity, delete_entity, do_action, call_function), two Copilot tools (ask, list_agents), and two schema tools (get_schema, search_paths). Microsoft's design principle is *fewer tools, more paths*. Instead of growing the tool surface every time a new workload ships, new workloads just expose new resource paths — fetch /me/messages, fetch /me/events, fetch /me/chats — and the same 10 verbs continue to cover them. Agents discover available paths at runtime via search_paths and get_schema instead of pre-loading thousands of type definitions."
   - question: "Which protocols does Work IQ support?"
-    answer: "Three. Agent-to-Agent (A2A — JSON-RPC over HTTPS, for one agent delegating to another). Model Context Protocol (MCP — local stdio via the workiq CLI, or remote via the hosted Work IQ MCP server, for AI assistants like Copilot CLI, VS Code, Claude Desktop). REST is now documented in preview for multiturn conversations grounded in Microsoft 365 Copilot. Pick whichever fits your agent or app architecture — Microsoft considers them peers, not a layered stack."
+    answer: "Three. Agent-to-Agent (A2A — JSON-RPC over HTTPS, for one agent delegating to another). Model Context Protocol (MCP — local stdio via the workiq CLI, or remote via the hosted Work IQ MCP server, for AI assistants like Copilot CLI, VS Code, Claude Desktop). REST is now documented for multiturn conversations grounded in Microsoft 365 Copilot. Pick whichever fits your agent or app architecture — Microsoft considers them peers, not a layered stack."
   - question: "What should I watch out for?"
     answer: "Three things to plan around. (1) Delegated-only auth means no batch / no app-only scenarios — your agent always runs as a user. (2) REST is documented now, but it has its own limits: text responses only, no actions like sending mail or creating meetings, no long-running tasks. (3) Pricing is scenario-based for Chat / Context and fixed for Tools; verify against the Microsoft licensing page and your tenant's cost dashboard before committing to budgets."
   - question: "If I already use Microsoft Graph today, should I switch?"
@@ -139,8 +139,8 @@ Microsoft's pitch comes with four quantitative claims, all from their own intern
 | Claim | What Microsoft says |
 |---|---|
 | Data footprint | Average Fortune 500 tenant has 600+ TB of data Work IQ continuously understands |
-| Speed | 2× faster than equivalent raw-Graph operations for agent workloads (Microsoft's benchmark phrasing: "run time per second" — roughly throughput / tokens-per-second) |
-| Efficiency | 80% fewer tokens used vs raw-Graph approaches in coding harnesses |
+| Speed | 2× faster than traditional APIs in coding harnesses (Microsoft's benchmark phrasing: "run time per second" — roughly throughput / tokens-per-second) |
+| Efficiency | 80% fewer tokens used vs traditional APIs in coding harnesses |
 | Scale | Architected for the high-frequency continuous traffic agents generate, not human-app patterns |
 
 These are Microsoft's published numbers. I'm planning to measure them directionally on my own tenant — the same question asked via `workiq ask` versus the equivalent raw-Graph chain, with token counts captured on both sides — and update this post with what I see. The *architectural reason* the gains are plausible is solid: server-side context packaging beats client-side stitching every time, and that's exactly what Work IQ does.
@@ -238,7 +238,7 @@ This is the part that changed most between preview and GA.
 
 Microsoft's GA licensing page says there is no separate Work IQ API subscription, SKU, or per-user licence for the API charge itself. Work IQ API calls consume Copilot Credits.
 
-But Microsoft Learn and the GitHub admin guide still tie specific surfaces to Microsoft 365 Copilot users: the REST page says users with a Microsoft 365 Copilot add-on licence can use REST, and the CLI docs list a Microsoft 365 subscription with a Copilot licence as a prerequisite. So your admin check is not "buy a Work IQ licence"; it is "confirm whether the protocol we are rolling out still requires Microsoft 365 Copilot for these users."
+But Microsoft has since firmed this up, and it simplifies the admin check. Learn now describes reaching Work IQ over A2A, REST or MCP as usage-billed, and says that path doesn't use connector licensing. So the question to answer before rollout isn't "does our protocol need Copilot licences" — it's "which of the tools our agent actually calls are connector-backed, and what do those need." Check the entitlement on the tools, not on the transport.
 
 If your rollout does require Copilot licences, assign them first and allow for propagation. Some tenants can take up to 24 hours before the entitlement is visible everywhere.
 
@@ -588,7 +588,7 @@ Both samples authenticate via **MSAL device-code flow** and call the Work IQ A2A
 
 The A2A endpoint lives at `https://workiq.svc.cloud.microsoft/a2a/`. It speaks JSON-RPC 2.0 with an `A2A-Version: 1.0` header. You POST a `SendMessage` method with a question in the `parts[].text`, get back a `task` object with `artifacts[].parts[].text` containing the answer.
 
-Microsoft Learn now documents a **Work IQ REST API preview** as well. Treat it as a related conversational surface, not a drop-in replacement for everything above: the REST page is focused on multiturn prompts grounded in Microsoft 365 Copilot, while the A2A sample here uses the agent-to-agent JSON-RPC endpoint directly.
+Microsoft Learn now documents a **Work IQ REST API** as well — and since this post first ran, the REST overview has quietly dropped its preview label. Treat it as a related conversational surface, not a drop-in replacement for everything above: the REST page is focused on multiturn prompts grounded in Microsoft 365 Copilot, while the A2A sample here uses the agent-to-agent JSON-RPC endpoint directly.
 
 ### Open invitation
 
@@ -601,6 +601,8 @@ If you build something interesting on top of these, [send me a link](/feedback/)
 Work IQ API usage is billed through **Copilot Credits**, a consumption model. Microsoft's GA licensing page is explicit: there is no separate Work IQ API subscription, SKU, or per-user licence for the API charge itself.
 
 The licence nuance is by surface. Microsoft Learn's REST page currently says REST users need a Microsoft 365 Copilot add-on licence, and the CLI / GitHub admin docs still describe Copilot licensing as a prerequisite for CLI users. So the safe customer wording is: Work IQ API has no separate Work IQ SKU, but your chosen protocol may still require the signed-in user to have Microsoft 365 Copilot.
+
+**Update, September 2026 —** this has firmed up since Day 1, and in a helpful direction. Learn now describes reaching Work IQ through A2A, REST or MCP as usage-billed, and says plainly that this path *doesn't* use connector licensing. The entitlement question has moved off the protocol and onto what your agent actually touches: connector-backed Microsoft 365 tools are where a per-user entitlement still matters. The wording I'd use with a customer today is *"the API itself is billed by consumption and has no Work IQ SKU — check entitlements for the specific tools your agent calls, not for the protocol you call them over."*
 
 **The unit:** 1 Copilot Credit = **$0.01 USD** ([source — Microsoft Copilot Studio estimator](https://microsoft.github.io/copilot-studio-estimator/)).
 
@@ -641,13 +643,13 @@ Let's make the abstract concrete. Imagine a 50-user pilot — say, your customer
 | **Tools** (fixed 0.1 cr / call) | 50 users × 1 brief × 2 tool calls × 22 working days × 0.1 cr × $0.01 | **$2.20 / month** |
 | **Chat + Context** (Light scenario) | 50 × 1 brief × 22 working days × $0.20-$0.40 | **$220-$440 / month** |
 | **Subtotal Work IQ consumption** | Tools + Light Chat / Context | **~$222-$442 / month** |
-| **Microsoft 365 Copilot licences** (if required for your protocol / users) | 50 × $30 | **$1,500 / month** |
-| **Total planning range** | Consumption + possible Copilot licences | **~$1,722-$1,942 / month** |
+| **Microsoft 365 Copilot licences** (only if the tools you call need them) | 50 × current list price | [check Microsoft pricing](https://www.microsoft.com/en-us/microsoft-365/enterprise/copilot-for-microsoft-365) |
+| **Total planning range** | Work IQ consumption, plus any Copilot licences you actually need | **~$222-$442 / month** + licences |
 
 A few honest reads on these numbers:
 - **The fixed Tool API charge is tiny.** The old pre-GA estimate of 5 credits per tool call was too high; the GA licensing page says 0.1 credits.
 - **Chat / Context is the lever.** Keep prompts tight, ask for concise outputs, and avoid multi-turn loops unless the workflow needs them.
-- **Copilot licences can still dominate.** If your protocol requires Microsoft 365 Copilot for each user, that baseline is larger than the Work IQ consumption on a small pilot.
+- **Licences can still dominate — but check before you assume them.** If the tools your agent calls need Microsoft 365 Copilot per user, that baseline dwarfs the Work IQ consumption on a small pilot. Microsoft's own pricing page is the number to quote; list prices move, and they vary by region, tax and agreement.
 - **Cap before you scale.** Set a per-user daily Work IQ spending limit at $1 or $2 the first two weeks of the pilot. The admin-centre dashboard will tell you whether to relax or tighten before you roll out to the wider org.
 
 {{< margin >}}These figures are illustrative, but they now use Microsoft's GA pricing shape: fixed Tools at 0.1 credits per call, variable Chat / Context by scenario range. Your tenant dashboard remains the source of truth.{{< /margin >}}
@@ -669,10 +671,10 @@ Work IQ being a *layer* — not a product end-users open — means the visible c
 In the spirit of *honest > charming*, here's what surprised me on Day 1.
 
 1. **Delegated-only auth is a real constraint.** If your existing architecture relies on app-only / unattended-agent / service-principal auth (most batch jobs, most scheduled imports), Work IQ is not for you yet. Microsoft has been clear they don't support it. This rules out a lot of analytics, reporting, and back-office automation patterns. Use Graph for those.
-2. **Licensing wording is still easy to misread.** The API has no separate Work IQ SKU, but REST and CLI docs still tie supported users to Microsoft 365 Copilot. Be precise with customers: consumption billing does not automatically mean "no Copilot licence needed anywhere."
+2. **Licensing wording is still easy to misread.** The API has no separate Work IQ SKU, and Microsoft has since clarified that reaching Work IQ over A2A, REST or MCP doesn't use connector licensing. Be precise with customers: consumption billing doesn't mean "no entitlement needed anywhere" — it means the entitlement question follows the *tools* your agent calls, not the protocol you call them over.
 3. **The first call is slower than subsequent ones.** Semantic-index warmup matters. Build for the warm-path numbers, but flag the cold-path latency to users in any UX where the first query is "instant" expectations.
 4. **Agents need to be taught to use the resource-path style.** The shift from `sendMail`-as-tool to `do_action /me/sendMail`-as-resource-path is genuinely different. Your prompts and your agent system messages need updating. Don't expect a one-line swap to work out of the box.
-5. **REST is documented now, but narrower than the full Work IQ tool surface.** The REST preview focuses on multiturn conversational answers grounded in work and web data. It does not support actions like sending emails, scheduling meetings, content generation skills, long-running tasks, or non-text responses.
+5. **REST is documented now, but narrower than the full Work IQ tool surface.** REST focuses on multiturn conversational answers grounded in work and web data. It does not support actions like sending emails, scheduling meetings, content generation skills, long-running tasks, or non-text responses.
 
 ## Top 5 Errors You'll Hit (And What To Do)
 

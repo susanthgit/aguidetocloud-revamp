@@ -1,11 +1,15 @@
 # ============================================
 # M365 Licence Picker — Plans Database
-# Prices in USD per user/month (list price)
-# Last verified: April 2026
+# Indicative USD list prices, per user/month.
+# Last checked: September 2026
 # ============================================
+# USD ONLY — BY DESIGN. Do not add price_aud / price_nzd / price_gbp / price_eur.
+# Microsoft's regional prices are NOT a flat FX multiple of the USD price, so any
+# converted figure is fabricated. 92 such values were removed on 2026-09-14.
+# The ms_url on each entry is the authoritative source for regional pricing.
+# Enforced by: scripts/check-licence-picker.mjs (runs in pre-push).
 # NOTE: Feature IDs must match features.toml IDs exactly.
 # Plans are the source of truth for feature inclusion.
-# Quarterly review: check Microsoft pricing pages for updates.
 # ============================================
 
 # ── BUSINESS PLANS (≤300 seats) ──────────────────
@@ -15,10 +19,6 @@ id = "bb"
 name = "Microsoft 365 Business Basic"
 short = "Business Basic"
 price_usd = 7
-price_aud = 10
-price_nzd = 11.20
-price_gbp = 5.60
-price_eur = 6.70
 sku = "AAD_BASIC"
 category = "Business"
 seat_max = 300
@@ -37,10 +37,6 @@ id = "bs"
 name = "Microsoft 365 Business Standard"
 short = "Business Standard"
 price_usd = 14
-price_aud = 20.40
-price_nzd = 22.40
-price_gbp = 11.20
-price_eur = 13.40
 sku = "O365_BUSINESS_PREMIUM"
 category = "Business"
 seat_max = 300
@@ -59,10 +55,6 @@ id = "bp"
 name = "Microsoft 365 Business Premium"
 short = "Business Premium"
 price_usd = 22
-price_aud = 32
-price_nzd = 35.20
-price_gbp = 17.60
-price_eur = 21
 sku = "SPB"
 category = "Business"
 seat_max = 300
@@ -87,10 +79,6 @@ id = "o365-e1"
 name = "Office 365 E1"
 short = "O365 E1"
 price_usd = 10
-price_aud = 14.50
-price_nzd = 16
-price_gbp = 8
-price_eur = 9.60
 sku = "STANDARDPACK"
 category = "Enterprise"
 seat_max = 0
@@ -109,10 +97,6 @@ id = "o365-e3"
 name = "Office 365 E3"
 short = "O365 E3"
 price_usd = 26
-price_aud = 38
-price_nzd = 41.60
-price_gbp = 20.80
-price_eur = 24.90
 sku = "ENTERPRISEPACK"
 category = "Enterprise"
 seat_max = 0
@@ -132,10 +116,6 @@ id = "o365-e5"
 name = "Office 365 E5"
 short = "O365 E5"
 price_usd = 41
-price_aud = 60
-price_nzd = 65.60
-price_gbp = 32.80
-price_eur = 39.30
 sku = "ENTERPRISEPREMIUM"
 category = "Enterprise"
 seat_max = 0
@@ -159,10 +139,6 @@ id = "m365-e3"
 name = "Microsoft 365 E3"
 short = "M365 E3"
 price_usd = 39
-price_aud = 57
-price_nzd = 62.40
-price_gbp = 31.20
-price_eur = 37.40
 sku = "SPE_E3"
 category = "Enterprise"
 seat_max = 0
@@ -186,10 +162,6 @@ id = "m365-e5"
 name = "Microsoft 365 E5"
 short = "M365 E5"
 price_usd = 60
-price_aud = 87
-price_nzd = 96
-price_gbp = 48
-price_eur = 57.50
 sku = "SPE_E5"
 category = "Enterprise"
 seat_max = 0
@@ -218,10 +190,6 @@ id = "m365-e7"
 name = "Microsoft 365 E7"
 short = "M365 E7"
 price_usd = 99
-price_aud = 144
-price_nzd = 158.40
-price_gbp = 79.20
-price_eur = 94.90
 sku = "SPE_E7"
 category = "Enterprise"
 seat_max = 0
@@ -254,10 +222,6 @@ id = "f1"
 name = "Microsoft 365 F1"
 short = "M365 F1"
 price_usd = 3
-price_aud = 4.30
-price_nzd = 4.80
-price_gbp = 2.40
-price_eur = 2.90
 sku = "SPE_F1"
 category = "Frontline"
 seat_max = 0
@@ -277,10 +241,6 @@ id = "f3"
 name = "Microsoft 365 F3"
 short = "M365 F3"
 price_usd = 10
-price_aud = 14.50
-price_nzd = 16
-price_gbp = 8
-price_eur = 9.60
 sku = "SPE_F3"
 category = "Frontline"
 seat_max = 0

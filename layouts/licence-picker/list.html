@@ -63,22 +63,22 @@
   <div class="licpick-picker-layout">
     {{/* Left: Feature Grid */}}
     <div class="licpick-features-col">
-      {{/* Compact toolbar: search + currency + users + count */}}
+      {{/* Compact toolbar: search + users + count */}}
       <div class="licpick-toolbar-compact">
         <input type="search" id="licpick-search" class="licpick-search" placeholder="Search features..." aria-label="Search features">
-        <select id="licpick-currency" class="licpick-currency-inline" aria-label="Currency">
-          <option value="usd">USD</option>
-          <option value="aud">AUD</option>
-          <option value="nzd" selected>NZD</option>
-          <option value="gbp">GBP</option>
-          <option value="eur">EUR</option>
-        </select>
         <div class="licpick-seat-input" id="licpick-seat-wrap">
           <label for="licpick-seats" class="licpick-sr-only">Users</label>
           <input type="number" id="licpick-seats" min="0" max="100000" placeholder="Users" aria-label="Number of users">
         </div>
         <div class="licpick-selected-count"><span id="licpick-count">0</span> selected</div>
       </div>
+
+      {{/* Pricing disclosure — USD only, Microsoft is the authoritative source */}}
+      <p class="licpick-price-note">
+        Prices are <strong>indicative USD list prices</strong> (per user/month), last checked September 2026 &mdash;
+        for comparison only, not a quote. What you actually pay varies by region, tax, billing term and agreement.
+        <a href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing" target="_blank" rel="noopener">Check current Microsoft pricing &#8599;</a>
+      </p>
 
       {{/* Quick Start: merged outcomes + presets in one row */}}
       <div class="licpick-quickstart" aria-label="Quick start presets">
@@ -142,6 +142,9 @@
           </div>
           <div class="licpick-rec-nzd" id="licpick-rec-nzd"></div>
           <div class="licpick-rec-annual" id="licpick-rec-annual"></div>
+          <a class="licpick-rec-msurl" id="licpick-rec-msurl"
+             href="https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing"
+             target="_blank" rel="noopener">Verify current price on Microsoft &#8599;</a>
           <div class="licpick-rec-breakdown" id="licpick-rec-breakdown"></div>
           <div class="licpick-rec-coverage" id="licpick-rec-coverage"></div>
         </div>
