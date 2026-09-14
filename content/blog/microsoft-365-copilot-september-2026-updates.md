@@ -1142,7 +1142,10 @@ single button marked **Work IQ** with the model picker sitting next to it on *Au
 shape too: Chat and Cowork are now two tabs of one thing rather than two separate places to go.
 
 I cannot tell from a still image whether that button was on or off at the moment I took it, and that is worth
-saying rather than guessing. What I can say is that the thing people got wrong for two years, which was not
+saying rather than guessing. Microsoft does answer it in the release notes, though: **work data is on by
+default.** So the starting position is that your organisation's content is already in scope, and the button is
+there to take it *out* of scope rather than to opt in — which is the opposite of how the old work toggle felt.
+What I can say is that the thing people got wrong for two years, which was not
 knowing which mode they were typing into, is no longer something you can get wrong by accident. There is one
 box, and one clearly named control that decides whether your own organisation's content is in scope.
 
