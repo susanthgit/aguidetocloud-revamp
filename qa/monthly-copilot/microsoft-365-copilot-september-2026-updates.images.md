@@ -1874,3 +1874,73 @@ or from below the fold, so nothing rests on text that is not fully legible here.
 fictional demo-lab content (Caldova), not real customer data.
 
 ---
+
+## §26 — You can create and query Planner tasks from Copilot *(image 1 of 2)*
+
+**File:** `lab-s26-task-created.webp` (900×450, 20.4 KB) — cropped from a 1030×550 capture
+**SHA256:** `0af90f943a6e505f5d73eb72cb7e156ca7256a3c5ab61312c118a875693b5e45`
+**Source:** My own Caldova tenant, 14 September 2026. Copilot chat.
+
+**Observed while viewing:** The sent prompt reads *"Create a Planner task to review the Caldenza pack, due
+Friday."* Copilot's reply opens *"I've created the private task:"* followed by the task name in bold,
+**Review the Caldenza pack**, and three indented details:
+• *Status: Not Started*
+• *Priority: Important*
+• *Due: **18 September 2026** (Friday)* — followed by a small citation icon
+A closing line reads *"The task has been saved as a private task in your Planner tasks."*, also with a
+citation icon, and a **Sources** control sits beneath the answer.
+
+**Verdict:** ✅ MATCH — supports all three claims drawn from this image: the relative word "Friday" was
+resolved to an explicit date and shown back; a priority of *Important* appears although the prompt never
+asked for one; and Copilot itself describes the destination as a **private** task. The absence of any
+confirmation control here is what the section's Outlook contrast rests on, and it is correctly visible — the
+task is reported as already created, not offered for approval.
+
+---
+
+## §26 — You can create and query Planner tasks from Copilot *(image 2 of 2)*
+
+**File:** `lab-s26-task-verified.webp` (1022×523, 16.3 KB) — cropped from a 1123×876 capture
+**SHA256:** `10fb412bccd4046989454e7d3ddbea743491f82e33abfda31bd6c314f1a7eb2a`
+**Source:** My own Caldova tenant, 14 September 2026. Microsoft Planner, task detail.
+
+**Observed while viewing:** A task pane headed **Private tasks** with a close control. The task title reads
+**Review the Caldenza pack**. Below it an information banner: *"Some task fields may not appear because this
+task is private, was created in Microsoft To Do, or with a flagged Outlook email."* A **Task details** tab is
+selected, and the fields read: **Status** — *Not started*; **Priority** — *Important*, with a red exclamation
+glyph; **Start date** — empty, showing a *Set start date* prompt; **Due date** — **09/18/2026**; **Repeat** —
+*Does not repeat*. The crop ends below Repeat; the empty Checklist and Notes areas are outside it.
+
+**Verdict:** ✅ MATCH — this is the independent verification the section is built on, taken in Planner rather
+than in chat. Title, due date and priority each match what Copilot claimed in image 1, and the *Private tasks*
+heading plus the banner corroborate the "private task" wording. Display scale is 0.70×, below life size, but
+the field labels and values are large and every one reads cleanly.
+
+---
+
+## §28 — Teams meetings can be added to a Copilot Notebook *(image 1 of 1)*
+
+**File:** `lab-s28-meetings-tab.webp` (784×661, 33.3 KB)
+**SHA256:** `cac667df3d81042e4a61fc1a99ae0e4ac7125d7a019137c5814460adb8272a0c`
+**Source:** My own Caldova tenant, 14 September 2026. Copilot Notebook, Add references dialog.
+
+**Observed while viewing:** A dialog headed **Add references** with a close control and a **Search** box. A tab
+row reads **All · Chats · Files · Meetings · Emails · Sites**, with **Meetings** selected as a filled black
+pill — so Meetings sits between Files and Emails. Three icons at the right of that row: an upload arrow, a
+link glyph and a OneDrive cloud. Beneath is a scrollable list, each row carrying a calendar icon, a meeting
+name at the left and a date and time range at the right:
+• *1:1 with Mauricio August* — Mon, 9/14/2026, 2:30 – 3:00 PM
+• *1:1 with Kadji Bell* — Mon, 9/14/2026, 2:00 – 2:30 PM
+• the same two 1:1s repeated for Sun 9/13 and Sat 9/12 at the same times
+• *Supplier Strategy & Dual-Sourcing Workshop* — Sat, 9/12/2026, 7:00 – 8:30 AM (row highlighted)
+• *Logistics & Freight Rate Review* — Sat, 9/12/2026, 6:00 – 6:30 AM
+A further row is clipped at the bottom of the list. **Add** (greyed out) and **Cancel** close the dialog.
+
+**Verdict:** ✅ MATCH — supports each claim: Meetings is a first-class tab rather than a link or file workaround;
+a search box sits above the list; entries are named with date and time, newest first; and the repeated 1:1
+entries on three consecutive dates evidence that recurring meetings appear as separate occurrences rather than
+as a series. The section is explicit that nothing was actually added, and the greyed-out **Add** button
+confirms no selection had been made. All meeting names and attendees are fictional demo-lab content
+(Caldova), not real customer data.
+
+---

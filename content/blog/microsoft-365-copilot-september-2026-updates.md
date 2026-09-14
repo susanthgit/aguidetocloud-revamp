@@ -801,9 +801,39 @@ Microsoft's roundup says plainly that *"This feature rolled out to Frontier in A
 
 ### 26. You can create and query Planner tasks from Copilot
 
-*For: Copilot + Planner · Rolling out September 2026*
+*For: Copilot + Planner · Rolling out September 2026 · Tested in my tenant 14 September 2026*
 
 Copilot can **create Planner tasks and answer questions about them** without you opening Planner.
+
+**What I found on 14 September 2026.** I asked for it the way you would say it out loud: *"Create a Planner
+task to review the Caldenza pack, due Friday."*
+
+<img src="/images/blog/copilot-september-2026/lab-s26-task-created.webp" alt="Copilot chat in my own tenant. The prompt reads: Create a Planner task to review the Caldenza pack, due Friday. Copilot replies, I've created the private task, followed by a bold task name, Review the Caldenza pack, and three details: Status, Not Started; Priority, Important; and Due, 18 September 2026 in brackets Friday, with a small citation icon. A closing line reads: The task has been saved as a private task in your Planner tasks, also with a citation icon. A Sources control sits underneath." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. "Friday" resolved to a date, and shown to me.</em></p>
+
+Two small things are worth noticing. It turned **Friday** into **18 September 2026** and showed me the date
+it had settled on — which is the only way you would ever catch it getting that wrong. And it gave the task a
+priority of **Important**, which I never asked for.
+
+It also said where the task had gone: a **private** task, not something dropped into a shared plan.
+
+Then I did the thing worth doing whenever an assistant tells you it has saved something. I went and looked.
+
+<img src="/images/blog/copilot-september-2026/lab-s26-task-verified.webp" alt="The Planner task detail pane in my own tenant, headed Private tasks. The task title reads Review the Caldenza pack. An information banner says some task fields may not appear because this task is private, was created in Microsoft To Do, or with a flagged Outlook email. Under a Task details tab the fields read Status, Not started; Priority, Important with a red exclamation mark; Start date, empty with a Set start date prompt; Due date, 09/18/2026; and Repeat, Does not repeat." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>The same task, opened in Planner. The chat's account of itself matched the record.</em></p>
+
+It was really there — right title, due **09/18/2026**, priority **Important**, with a banner explaining that
+some fields stay hidden because the task is private.
+
+One contrast is worth drawing. Earlier in Outlook, Copilot would not move an email until I pressed
+**Confirm**, and would not send a meeting invite until I pressed **Send**. Here it simply made the task. That
+feels about right — a private task nobody else can see is a far smaller thing to get wrong than an invite
+landing in someone else's calendar — but it is worth knowing that the manners change with the stakes.
+
+I tested the **create** half. The **query** half — asking Copilot what is already on your plate — is on the
+list for the next issue.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Tasks get lost in the gap between where they are agreed and where they are tracked. Closing that gap — capture the task in the conversation where it came up — is worth more than any feature inside the planning tool itself.</p>
@@ -825,9 +855,25 @@ The Planner Agent is available in **group-based basic plans**, widening it beyon
 
 ### 28. Teams meetings can be added to a Copilot Notebook
 
-*For: Copilot Notebooks + OneNote · Generally available 25 August 2026*
+*For: Copilot Notebooks + OneNote · Generally available 25 August 2026 · Tested in my tenant 14 September 2026*
 
 **Teams meetings** can be added as a source in a Copilot Notebook, alongside the files, pages, links and Outlook emails already supported.
+
+**What I found on 14 September 2026.** Inside a Copilot Notebook, **Add references** opens a picker — and
+**Meetings** is a tab of its own, sitting between **Files** and **Emails**.
+
+<img src="/images/blog/copilot-september-2026/lab-s28-meetings-tab.webp" alt="A dialog in my own tenant headed Add references, with a search box beneath it. A row of tabs reads All, Chats, Files, Meetings, Emails and Sites, with Meetings selected as a filled black pill. Icons for upload, link and OneDrive sit at the right of that row. Below is a scrollable list of meetings, each with a calendar icon, a name on the left and a date and time range on the right: repeated one-to-one meetings with two colleagues across 14, 13 and 12 September 2026, a Supplier Strategy and Dual-Sourcing Workshop on Saturday 12 September from 7:00 to 8:30 AM, and a Logistics and Freight Rate Review the same morning. An Add button, greyed out, and a Cancel button sit at the bottom." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. Meetings as a source type, not a workaround.</em></p>
+
+That is the detail worth having. Meetings are not bolted on through a pasted link or an exported transcript
+file — they are a reference type in their own right, with a search box over the top of them. The list names
+each sitting and gives its date and time, newest first, and recurring meetings appear as **separate
+occurrences**, so you are choosing *that Saturday's supplier workshop* rather than a series.
+
+What I have not tested is what actually crosses over when you add one — the transcript, the recap, or only
+the invite. That changes how much the notebook can really do with it, and it is the first thing I will check
+for the next issue.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Notebooks work best when everything about a piece of work sits in one place. Meetings were the obvious missing input — most decisions get made in one and written down in none.</p>
