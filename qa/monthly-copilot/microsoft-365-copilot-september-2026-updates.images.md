@@ -19,6 +19,45 @@ the post says the same thing again in plain words. None of them depicts a user i
 
 Verdicts: ✅ MATCH · ⚠️ PARTIAL · ❌ MISMATCH
 
+## Annotation pass — batch 1 of 8, 15 September 2026 (11 SHAs changed)
+
+Rule #8 as written only ever asked *"does this image match its section?"*. It never asked
+*"is it annotated to house style?"*, so all 129 images passed the September gate while the
+entire annotation layer was skipped — September shipped at 6/132 annotated (4.5%) against
+August's 47/109 (43%). This block adds the missing dimension, and the same check is being added
+to `monthly-blog-qa.py` so it stops depending on anyone remembering.
+
+Every row below was written **while viewing the rendered output**, not the spec. That matters:
+the first render of this batch put **5 of 11** images' callouts in the wrong place — a dot on
+the "e" of the word *Response* it was naming, a leader dragged through body text, and one box
+sitting on top of the forecast strip it was describing. None of those were visible from the
+JSON. Coordinates are planned, then **proven by looking**.
+
+House style applied (per `scripts/screenshot-annotator/README.md`, locked): opaque white rounded
+box · red `#CE2626` border · bold red text · hard black shadow · thin red leader ending in a
+filled dot **on** the target · callouts placed in whitespace, canvas padded where there is none.
+Small captures are upscaled with LANCZOS **before** annotating so callout text is drawn crisp
+rather than enlarged after the fact — this is the fix for August's soft-text images (14 of 45
+were under 900px wide).
+
+| # | Image (SHA-256 head) | Callout text | Where the dot lands | Verdict |
+|---|---|---|---|---|
+| 1 | `official-01…` `37ad56ff34713ee3` | "Pick your model before you type" · "GPT-6 Astra is the new top choice" | On the model chip in the composer; on the GPT-6 Astra row in the open list. Canvas padded top so both boxes sit above the UI. | ✅ MATCH |
+| 2 | `official-02…` `265f8faf741f6216` | "Fable 5.1 replaces Fable 5" | On the Fable 5.1 chip, in the gap between "Fable" and "5.1" — covers no glyph. Box moved to the empty top-right on pass 2 because the first leader cut through the "Start a task" placeholder. | ✅ MATCH |
+| 3 | `lab-s03…` `7e14e2e99f3ad09e` | "Work IQ grounds the answer in your work data" | On the Work IQ toggle. Source was 655px wide — upscaled 2× before annotating, so the text is sharp rather than enlarged. | ✅ MATCH |
+| 4 | `official-04…` `a67abb645f8c6811` | "Highlight any part of an answer" · "It becomes a quote in your prompt" | On the blue highlighted passage itself; on the left edge of the resulting quote pill. Pass 1 dragged the first leader through the Bond-markets bullet and put the second dot on top of the pill's label — both retargeted. | ✅ MATCH |
+| 5 | `official-05…` `fb41455ebbba0c5c` | "Anyone with the link gets a copy" · "Copy link shares the whole chat" | On the bold "Anyone in your company with a link…" warning; on the Copy link button. Both leaders short, crossing only grey. Correct first time. | ✅ MATCH |
+| 6 | `lab-s06-…dialog` `bb2d17cbf8389222` | "Just this answer, not the whole chat" | Immediately right of the "Share Response" title, clearing the text. Pass 1 put it on the "e" of *Response* — i.e. obscuring the very word the callout names. | ✅ MATCH |
+| 7 | `official-07…` `093ca7d09c901724` | "Answers come back as a card" · "A seven-day forecast, inline" | On the card's top border under "Seattle, Washington"; on the left edge of the forecast strip. Took **two** corrections: pass 1 covered the word "Sunny" and recoloured the Tue weather icon, pass 2 moved a box onto the card and hid Fri/Sat. Both callouts now sit in the left margin. | ✅ MATCH |
+| 8 | `lab-s08…` `4398b0977ba46045` | "Ask for an email in plain words" · "Copy or edit the draft right here" | On the prompt bubble's edge; on the edit pencil. Dark-mode mobile capture padded **white** on the right, matching the August composite treatment. No email address visible; first name only. | ✅ MATCH |
+| 9 | `lab-s09…` `b2778f8964ecd50b` | "Copilot cites the email inline" · "Click a citation → the email opens beside the answer" | On the inline citation marker; on the opened email pane. Pass 1 had the second dot covering a letter in a person's name — moved. Name visible, no email address. | ✅ MATCH |
+| 10 | `lab-s12-search-answer` `006ee859ea08f0bb` | "Search opens with a Copilot answer" · "Ask Copilot carries it into Chat" | On the Copilot answer card header; on the Ask Copilot button. Canvas padded left 360px so both boxes sit outside the UI rather than over it. | ✅ MATCH |
+| 11 | `lab-s12-chat-pane` `d1d1e32fab67efa4` | "Your search question carries into Chat" | On the right edge of the carried-over prompt bubble. ⚠️ Note: the right-hand pad sampled the capture's own dark-green desktop background rather than white. It is seamless against the source and the white callout reads clearly, so it is **kept deliberately** — forcing white here would create a visible seam against the green border already baked into the capture. Flagged for Sush. | ✅ MATCH |
+
+Not yet annotated: batches 2–8 (sections 13 onward). The 29 `created-*` figures are excluded by
+design — they are self-labelled diagrams, not screenshots, and carry *illustrative, not a
+screenshot* in their own subtitle.
+
 ## Resolution upgrade — 14 September 2026 (47 SHAs changed)
 
 A reader complaint about the August issue said images were hard to *read*. Investigation found
@@ -377,7 +416,7 @@ section title. Checked the alt text at full size: it describes only what is visi
 OneDrive claim, so the image is not asked to prove something it does not show. Correct as-is.
 
 ## §1 — GPT-6 Astra arrived in Cowork and Copilot Studio
-`78ece1db30f05f4fd57cac1919154a5c2f67e2c72deef4534e8927486b8d03b7`
+`37ad56ff34713ee3373975a7e977786266a2c36664b11b8a5039acf527b9b2ef`
 
 **Observed:** The Cowork home screen, headed **"What's next on your list?"** above a "Start a
 task…" compose box. The box carries two chips: a model chip reading **"GPT-6 Astra ⌄"** and an
@@ -392,6 +431,8 @@ two task cards (one "Completed 3 hours ago") and a "Try these next" row offers "
 spreadsheet", "Triage and organize my inbox" and "Compress and resize images for the web". A narrow
 icon rail runs down the left with a user avatar at the bottom; a green shield icon sits top right.
 
+
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts added — “Pick your model before you type” pointing at the model chip in the composer, and “GPT-6 Astra is the new top choice” pointing at that row in the open list. Canvas padded at the top so neither box covers the UI.
 **Verdict:** ✅ MATCH — GPT-6 Astra is visibly present and selected in the Cowork model picker.
 **Scope note:** the image shows **Cowork only**, not Copilot Studio; the Studio half of the section
 title is carried by the text and its sources, not by this screenshot.
@@ -403,10 +444,12 @@ for common asks"; the UI reads **"Balanced effort for common asks"**. Corrected.
 unreadable. §33's render caught it and this full-size re-view confirmed it independently.)
 
 ## §2 — Claude Fable 5.1 replaced Fable 5
-`f01292c7c944cd9f3b997ada05b5675feaf5918f6288e1477d956cec34ac9393`
+`265f8faf741f621641ae76ddeee68b99bcef45541e7aa63c2e0b176bf73964ad`
 
 **Observed:** A crop of Microsoft's screenshot, enlarged so the menu is legible at the width this blog renders. It shows the Cowork compose area — a **"Start a task"** box with the text cursor in it, a **+** button beneath, a model chip reading **"Fable 5.1 ∨"** and an effort chip reading **"Medium ∨"** — with the model menu open below. The menu lists, in order, each with a one-line description: **Auto** "Best model for the task"; **Fable 5.1** "For your toughest challenge", ticked and on a highlighted row; **GPT 5.6 Sol** "Intelligent and efficient for hard work"; **GPT 5.6 Terra** "Balanced effort for common asks"; **GPT 5.5** "Capable model for medium effort work"; **Opus 5** "For complex, high stakes work"; **Sonnet 5** "Efficient for everyday tasks". A "Try these" suggestion row is partly visible behind the menu. The full desktop screenshot — browser, left rail, greeting and clock — remains available in Microsoft's original post, linked from the source line under this section.
 
+
+**Annotated 15 September 2026 (house style, verified on the render):** One callout added — “Fable 5.1 replaces Fable 5”, dot landing in the gap between “Fable” and “5.1” so no glyph is covered. The box sits in the empty top-right; the first attempt placed it left and dragged the leader through the “Start a task” placeholder, so it was moved.
 **Verdict:** ✅ MATCH — §33 is "Claude Fable 5.1 replaced Fable 5"; the crop shows Fable 5.1 selected and ticked in the live model list, with no Fable 5 entry present.
 which is exactly the "replaced" claim.
 **🔴 Two alt-text errors found and fixed at full size** (both were written from the downscaled
@@ -417,7 +460,7 @@ contact sheet in the harvest pass, where the sub-labels were unreadable):
    tasks"**. Corrected.
 
 ## §4 — You can select part of a Copilot answer
-`6c98a2497f6dc5fe9f438a94c71a8b622f8b69ba264ba5ea5b4ff11db5668054`
+`a67abb645f8c6811c3080365ad3b3abc46e16dd8a581dbf4e629e12660ed5214`
 
 **Observed:** A Copilot answer rendered as markdown, with a "Work IQ" chip and an "Auto ⌄" model
 selector in the top bar and a green shield, share and "…" icons at the top right. The answer is a
@@ -432,6 +475,8 @@ blue send arrow. Footer: "AI-generated content may be incorrect". Other visible 
 answer include "Marvell Technology surged nearly 10%", "Moderna surged more than 170%", and Brent
 crude "trading around the low-$90s per barrel range".
 
+
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts added — “Highlight any part of an answer” with its dot on the blue highlighted passage itself, and “It becomes a quote in your prompt” with its dot on the left edge of the resulting quote pill. The first render ran the upper leader straight through the Bond-markets bullet and put the lower dot on top of the pill’s own label; both were retargeted and re-checked.
 **Verdict:** ✅ MATCH — a partial selection inside an answer, the "Ask Copilot" affordance, and the
 selection carried into the compose box as a removable quote chip is exactly this section.
 **Note (Microsoft's typo, not mine):** their demo text reads "about this **an** its impact" —
@@ -439,7 +484,7 @@ missing a "d". My alt text paraphrases the follow-up rather than quoting it, so 
 reproduced and nothing needs fixing.
 
 ## §5 — You can share a whole chat, and the other person can continue it
-`781d0572fd565f9b543fe29e1df4d506fa008b5488f9093f068509688a52d45f`
+`fb41455ebbba0c5c3702f6caa40fe8b910e92549e64e469af7bc93a8b160b1db`
 
 **Observed:** A Copilot chat ("Work IQ" chip and "Auto ⌄" top left) with a share dialog open over
 it. The dialog is headed **"Understanding Cowork in Copilot"** with a ✕ close button, and contains a
@@ -456,6 +501,8 @@ link"** button sits bottom right. Behind the dialog the underlying chat is visib
 bullets "Post in Teams", "Search across organizational content", "Prepare briefings and research
 reports" above a "Message Copilot" compose box.
 
+
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts added — “Anyone with the link gets a copy” on the bold warning sentence, and “Copy link shares the whole chat” on the Copy link button. Both leaders are short and cross only grey. Correct on the first render.
 **Verdict:** ✅ MATCH — this is the whole-chat share flow, including the link-scope warning.
 **Scope + caveat note:** the dialog proves the *sharing* half of the section title. It does not show
 the recipient continuing the chat; that half comes from the text and its source. The dialog also
@@ -470,7 +517,7 @@ recipient opens their own copy and that the copy is a snapshot. Flagged in the m
 because it adjusts a sourced characterisation.
 
 ## §7 — Copilot answers common questions with cards
-`932bfc770277c91e7230f268c28b56735094ff51addf6fced7177ed1b7371dc8`
+`093ca7d09c9017248e43f0b262e3c0b68cfab21269cf81b7febfd69df2ae01d9`
 
 **Observed:** A Copilot window ("Work IQ" chip, "Auto ⌄", green shield / share / "…" at the right).
 User bubble: **"weather today in seattle"**. Copilot shows "Reasoning completed in 1 step ›" then
@@ -485,6 +532,8 @@ citation chip. **Today's outlook** begins "A pleasant summer day with a high aro
 a low near 16°C (60°F)" before clipping, with a ↓ scroll button. Compose box reads "Message
 Copilot"; footer "AI-generated content may be incorrect".
 
+
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts added — “Answers come back as a card” on the card’s top border under “Seattle, Washington”, and “A seven-day forecast, inline” on the left edge of the day strip. This one needed two corrections: the first render covered the word “Sunny” and put a red dot on the Tuesday weather icon (recolouring it), and the second put a box on top of the card hiding Friday and Saturday. Both boxes now sit in the left margin and cover nothing.
 **Verdict:** ✅ MATCH — a common question answered with a purpose-built card rather than prose is
 exactly the section. The msn attribution chips are visible, which supports the sourcing point too.
 
@@ -1986,8 +2035,8 @@ avoids repeating it.
 
 ## §3 — Web and work chat merged, with a Work IQ button
 
-**File:** `lab-s03-work-iq-button.webp` (655×180, 6.1 KB) — native size, no crop
-**SHA256:** `e860eecb3146448255876eb67d4561072e44ff170e941de8784acd517ce5a729`
+**File:** `lab-s03-work-iq-button.webp` (1310×360, 22.2 KB) — native size, no crop
+**SHA256:** `7e14e2e99f3ad09e331a73fdedec7d62357025ed412f577eece38ad1c7efca54`
 **Source:** My own Caldova tenant, 14 September 2026. Top strip of Microsoft 365 Copilot Chat.
 
 **Observed while viewing:** Left portion shows the **Copilot** wordmark with three small icons beside it (an
@@ -1997,6 +2046,8 @@ pill switch reads **Chat | Cowork** with *Chat* selected as the filled white seg
 grey button labelled **Work IQ**, and a model picker reading **Auto** with a downward chevron. No Web or Work
 toggle appears anywhere in the frame.
 
+
+**Annotated 15 September 2026 (house style, verified on the render):** One callout added — “Work IQ grounds the answer in your work data”, dot on the toggle. This source was only 655px wide, so it was upscaled 2× with LANCZOS *before* annotating; the callout text is therefore drawn at full size rather than enlarged afterwards, which is the fix for the soft text on several August images.
 **Verdict:** ✅ MATCH — the absence of the Web/Work toggle and the presence of a discrete **Work IQ** control
 are both directly visible, which is exactly what the section claims. The section explicitly declines to state
 whether the button was in an on or off state, which the still image genuinely cannot establish.
@@ -2031,8 +2082,8 @@ labels are clear. The black circle is the capturer's own annotation, which is wh
 
 ## §6 — Individual responses can be shared on their own *(image 2 of 2)*
 
-**File:** `lab-s06-share-response-dialog.webp` (748×648, 40.4 KB) — native size, no crop
-**SHA256:** `a7ccbed2d8ca79bf68144c1e36a5a5c3c1d6076a92547a4c8d504408fbd7c67c`
+**File:** `lab-s06-share-response-dialog.webp` (1196×1206, 81.0 KB) — native size, no crop
+**SHA256:** `bb2d17cbf83892225a7e94e5efde9e16e7c7cfcd7748dc036d949dd542525c8b`
 **Source:** My own Caldova tenant, 14 September 2026. The Share Response dialog.
 
 **Observed while viewing:** Dialog titled **Share Response** with a close control at the top right. A preview
@@ -2044,6 +2095,8 @@ the card, in bold: *"Anyone in your company with a link can access a copy of thi
 contents before sharing."* and a **Learn more** link. A single dark **Copy link** button with a link glyph
 sits at the bottom right. No per-person picker and no expiry control are present.
 
+
+**Annotated 15 September 2026 (house style, verified on the render):** One callout added — “Just this answer, not the whole chat”, with a clean vertical leader dropping to just right of the “Share Response” title. The first render put the dot on the “e” of *Response*, i.e. obscuring the very word the callout names; it was moved clear.
 **Verdict:** ✅ MATCH — every quoted phrase in the section is legible verbatim in the image, including the
 *chat* versus *response* wording mismatch the section flags. The absence of a recipient picker and an expiry
 option is visible rather than assumed. The section states plainly that it could not establish which of the two
@@ -2086,8 +2139,8 @@ edge of the capture; it carries no text and sits above the conversation.
 
 ## §9 — Outlook emails open inside Copilot Chat
 
-**File:** `lab-s09-email-in-chat.webp` (1786×838, 102.3 KB) — native size, no crop
-**SHA256:** `71febfa39028977b1053711b5393a7381d13635067f2bfe974bbc818cb565f16`
+**File:** `lab-s09-email-in-chat.webp` (1786×1038, 121.9 KB) — native size, no crop
+**SHA256:** `b2778f8964ecd50bc2298bd00310f5598a2c12db539b282b788af58dadbd3ada`
 **Source:** My own Caldova tenant, 14 September 2026. Copilot Chat with an email opened in the right pane.
 
 **Observed while viewing:** Two-pane layout. **Left pane** — a right-aligned prompt reading *"whats the latest
@@ -2100,6 +2153,8 @@ reference chip with a removal cross. **Right pane** — the email itself rendere
 sender avatar, sender name, a To line naming the recipient, a Sunday date with a time, and several paragraphs
 of body text organised by market. No Outlook chrome is present anywhere in the frame.
 
+
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts added — “Copilot cites the email inline” on the citation marker, and “Click a citation → the email opens beside the answer” on the opened pane. The first render put the second dot over a letter in a person’s name, so it was moved. Names are visible; no email addresses are.
 **Verdict:** ✅ MATCH — the email is demonstrably rendered inside Copilot rather than in Outlook, which is the
 section's claim. The pinned composer chip, which the section treats as the more interesting finding, is
 visible at the foot of the left pane.
@@ -2190,8 +2245,8 @@ not. Verified by viewing the cropped output file, not the source. Synthetic Cald
 
 ## §8 — Copilot mobile can draft an email inside the chat
 
-**File:** `lab-s08-mobile-email-draft.webp` (1179×1945, 101.0 KB) — cropped from a 1179×2556 iPhone capture, box (0,130)-(1179,2075)
-**SHA256:** `31955ccc60226b912cbf382a303974d5bec5f9c5e3b365c8bfa9541f96f3e0fb`
+**File:** `lab-s08-mobile-email-draft.webp` (1699×1945, 137.8 KB) — cropped from a 1179×2556 iPhone capture, box (0,130)-(1179,2075)
+**SHA256:** `4398b0977ba4604551122414a6821f6acce8b87e0f4f218c6f9329ea3f467031`
 **Source:** Sush's own phone, 14 September 2026. Microsoft 365 Copilot mobile app, dark mode.
 
 **Observed while viewing:** A phone screen in dark mode. Top bar: hamburger at left, a centred model picker
@@ -2205,6 +2260,8 @@ highlighting for customer conversations or upcoming demos, a paragraph asking fo
 resources, and the sign off *"Thanks, Susanth"*. A circular down chevron scroll button overlaps the lower
 edge. **No "open in Outlook" control appears on the card.** No email address appears anywhere in the frame.
 
+
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts added — “Ask for an email in plain words” on the prompt bubble, and “Copy or edit the draft right here” on the edit pencil. This is a dark-mode phone capture, so the canvas was padded **white** on the right to match the August composite treatment rather than extending the dark UI. A first name is visible; no email address is.
 **Verdict:** ⚠️ PARTIAL — and the gap is disclosed in the section itself. The image proves the first half of
 the claim outright: the draft is rendered as a discrete, labelled **Message** object inside the chat, not as
 plain reply text, and it carries its own copy and edit affordances. It does **not** evidence the second half,
@@ -2227,18 +2284,20 @@ uncropped screenshot and confirmed.
 
 ## §12 — lab-s12-search-answer.webp
 
-- **File:** `lab-s12-search-answer.webp` (1476×854, 60.9 KB)
-- **SHA-256:** `4b41fdecba42acb9950221d5255a04177b60910ea40c87cf25db04f230c46d6b`
+- **File:** `lab-s12-search-answer.webp` (1836×854, 87.0 KB)
+- **SHA-256:** `006ee859ea08f0bb05a09555a9bee0bb2a7c25cb6c051bac6f2beb5097f1412e`
 - **Observed while viewing (14 September 2026):** Copilot Search results page. Search box reads 'what did Kayo send about Saudi registration'. Filter chips Person / Type / Modified / Filter by Source. A Copilot answer card with shield + 'AI-generated content may be incorrect', answer text with a citation chip, and buttons Ask Copilot, thumbs up, thumbs down, Sources. Right panel headed Sources: All Results 5, Copilot Chats 0, Outlook Mail 2, SharePoint 3. Two results below.
 - **Cross-reference:** Section claims chat sits beside Search. This proves the results surface and the 'Ask Copilot' entry point, plus the source breakdown quoted in the prose.
+- **Annotated 15 September 2026 (house style, verified on the render):** Two callouts added — “Search opens with a Copilot answer” on the answer card header, and “Ask Copilot carries it into Chat” on that button. The canvas was padded 360px on the left so both boxes sit beside the UI instead of over it, which is why the width below changed.
 - **Verdict:** ✅ MATCH
 
 ## §12 — lab-s12-chat-pane.webp
 
-- **File:** `lab-s12-chat-pane.webp` (488×910, 37.2 KB)
-- **SHA-256:** `3bb76b9b70daac0ab73c98763d48e08063ff9e0af7fad655f518bc69a37ada1d`
+- **File:** `lab-s12-chat-pane.webp` (1218×1638, 90.9 KB)
+- **SHA-256:** `d1d1e32fab67efa4f251046c785c283086865f2dd7386b51dc501673f381bab8`
 - **Observed while viewing (14 September 2026):** Chat pane. Top bar: shield, green shield, briefcase/globe toggle pair with briefcase selected, share, new-chat, ellipsis, close. 'Today' divider. User message 'what did Kayo send about Saudi registration'. Copilot reply naming Kayo Miwa as a link. Citation chip. Card: envelope, 'Saudi registration status - KSA cannot be in wave 1', 'Sent on Sep 6, 11:10 AM', 'Kayo Miwa to: You', Ask button. Copy / thumbs / ellipsis. Sources. Composer 'Message Copilot'.
 - **Cross-reference:** This is the side pane the section claims, open beside the results, with the search query carried across as the first message. Upgrades section 43 from partial to confirmed.
+- **Annotated 15 September 2026 (house style, verified on the render):** One callout added — “Your search question carries into Chat”, dot on the right edge of the carried-over prompt bubble. The pane was upscaled 1.8× before annotating and padded on the right. Note: that pad sampled the capture’s own dark-green desktop background rather than white. It is seamless against the source and the white callout still reads clearly, so it is kept deliberately — forcing white would leave a visible seam against the green already baked into this capture.
 - **Verdict:** ✅ MATCH
 
 ## §57 — lab-s57-app-skill-slash.webp
