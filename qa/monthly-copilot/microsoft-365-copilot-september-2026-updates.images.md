@@ -775,7 +775,7 @@ concrete, quotable details visible in Microsoft's own screenshot.
    work"; the UI reads "**Collaborate** across agents to complete work". Corrected.
 
 ## §24 — Domain exclusion is back
-`f67154692668ad86ef94e45e76a9f9f99784174544cda545210463d7d097eed4`
+`ed49e5c279fbf5dc4496e5a920f997b65a07ec4b5765b5ff4f1bc8717004b0ef`
 
 **Observed:** A Copilot conversation under a **"Yesterday"** divider. Grey user bubble: "Can you help
 me with some information about continents? A short report or an overview, please." Below it a
@@ -797,6 +797,8 @@ retention line supports the transparency framing.
 sits **beneath** it". At full size the Sources label and its icons are **inline on the toolbar**, to
 the right of the ⓘ, not on a separate row below — and they read as **application** icons rather than
 website favicons. Alt corrected on both points.
+
+**Annotated 15 September 2026 (house style, batch 3):** upscaled **1.6× with LANCZOS before annotating** (an 864 px source is below the legibility floor this issue is trying to hold), then 480 px of white canvas added on the **right**. One callout quoting the tooltip verbatim — **“Admin policy may restrict certain sources”** — leading to a red dot on the tooltip's right border, level with its “Learn more” row. That row height was chosen deliberately: it is the one band where the leader can reach the pad without crossing either of the two answer-body lines above it. The callout is the section's practical point made visible — this single sentence is the only thing a user ever sees to indicate that domain exclusion is in force. Verified by viewing the render.
 
 ## §26 — Measuring Cowork in hours of work, not prompts *(image 1 of 3)*
 `ae53c6285e2aea7aa081a2d994ab681605f30028a6c6af4ede0d26184920311a`
@@ -856,7 +858,7 @@ which the footnote explains as a **sum across the activities making up a task**.
 these numbers must carry that definition or they will read as a contradiction.
 
 ## §26 — Measuring Cowork in hours of work, not prompts *(image 3 of 3)*
-`18ecd196c79ed638ae761f12b85b8298288684206f2cd864ab4af81342ceac97`
+`e59a703ba4d1a45c9a2bc53dc2bdb5d05ccc7377d9701ff6bf69246d31baa85e`
 
 **Observed:** A modal dialog titled **"Hours and value calculator"** with a selected radio button
 **"Hours calculator"**. Below: *"Estimated time Cowork assisted employees during the selected
@@ -885,8 +887,12 @@ Total. These are Microsoft's placeholder numbers in a product screenshot, not a 
 **The alt text is correct precisely because it names the columns and categories and asserts no
 numbers at all** — that was the right call and must not be "improved" by adding the figures later.
 
+**Annotated 15 September 2026 (house style, batch 3):** upscaled **1.5×**, then 520 px of white canvas added on the **right**. Two callouts. **“Microsoft publishes its method”** points at the **About this estimation** link — the section's argument is that the transparency is the notable part, and that link is where it lives. **“Hours, not prompt counts”** points at the **Total** figure, which is the unit change the section is reporting. Both dots needed correcting after the first render: one had landed on the final **“n” of “estimation”** and the other sat roughly 10 px from **“5,000”**; both were moved right into clear space and re-verified by viewing the render.
+
+**Note on the other two §26 images:** `official-26-metrics-to-task-value.webp` and `official-26-task-category-time-values.webp` were reviewed for annotation and deliberately **left untouched**. Both are Microsoft **infographics** rather than UI screenshots — each already carries its own title, numbered stages or column headers and footnotes, so a callout would restate what the artwork states. Same rule applied to the `created-*` figures.
+
 ## §27 — Exporting Copilot and agent metrics *(image 1 of 4)*
-`176e045fce9b50132ce6f67debcbdab420e4b991b7c594a3a226452a78d9ea59`
+`260a80bfbda29b270366d32827e373fde39bc0d134ae842f03dc1a9c12e67a6c`
 
 **Observed:** The **Microsoft Copilot Dashboard** with tabs **Readiness / Adoption (selected) /
 Impact / Learning**, and top-right controls **View glossary**, **Export data**, **Share**. Behind the
@@ -913,8 +919,10 @@ sits on "Export by day" ONLY**, not on the export feature as a whole — while t
 a page-level preview note. Per playbook §5 that reconcile is Sush's editorial call, so the body was
 deliberately left unchanged; this observation is the pixel evidence behind the flag.
 
+**Annotated 15 September 2026 (house style, batch 3):** 460 px of white canvas added on **both** sides — the only image in this batch padded symmetrically, because the subject is a centred modal offering two choices and the honest annotation is one callout per choice. **“Week level, six months back”** and **“Day level, 28 days, preview”** lead outward to the modal's left and right borders. Both leaders run at the card-title height, which is the one horizontal band where the dashboard behind the modal is empty on both flanks (the KPI cards sit above it, the *Adoption by group* heading below). Verified by viewing the render: correct first time, nothing covered.
+
 ## §27 — Exporting Copilot and agent metrics *(image 2 of 4)*
-`ef0b4741eaede740d7f5bdb77fa0972d6e867cc9dfd89b0fce7dbb7ad4b8785e`
+`7e4fdc8c104a8a57029da5866009972d08be9dc755de30ffcc799121366a4179`
 
 **Observed:** A dialog titled **"Export Agent 365 Dashboard data"**, subtitled *"Export day-level or
 week-level data for Agent 365 dashboard to analyze both short-term and long-term usage trends."*
@@ -949,8 +957,10 @@ Beneath, a grey banner with a **shield** icon reads **"Includes user identifiers
 identifiers"*, implying a control. There is no visible checkbox or toggle — it is a notice. Changed
 to *"a shield-icon notice reading Includes user identifiers"*.
 
+**Annotated 15 September 2026 (house style, batch 3):** 460 px of white canvas added on the **right**; a single callout, **“User identifiers: off by default”**, leading to a red dot in the empty part of the **Includes user identifiers** band, clear of both the shield glyph and the ⓘ. Deliberately only one callout: of everything in this dialog, the `IdentifiableExport` default is the one detail an admin can get wrong, and the section says so. Verified by viewing the render: correct first time.
+
 ## §27 — Exporting Copilot and agent metrics *(image 3 of 4)*
-`7bcd39074e85492a7d20939fb1f2597359cede0f4c2ba23d0f5a9a046904fa38`
+`033093acf7bd6d0794711f2b925694390204d2a785cb16cb2f1ddda3a6f4c0fa`
 
 **Observed:** The **Agent 365 Dashboard** header with the subtitle *"View insights across all agents
 in your organization that are m…"* (the rest of the line is hidden behind the callout). Tabs
@@ -973,8 +983,10 @@ Agent 365"*, but the sentence is **cut off at "that are m"** by the callout. Pla
 not an observation — trimmed to the visible portion. This is exactly the failure mode Rule #8 exists
 to catch: filling in what you expect to be there.
 
+**Annotated 15 September 2026 (house style, batch 3):** 260 px of white canvas added on **top** — both elements of interest are in the command bar of this wide, 418 px strip. A single callout, **“Export only runs with All agents on”**, leading to a red dot in the gap immediately left of the **All agents** label. Only one callout because Microsoft's own teaching popup in the frame already explains the export button; the toggle prerequisite is the thing the popup does **not** mention and the section does. First render put the dot **on the blue toggle itself**, recolouring part of the control it was meant to draw attention to; moved to the label gap and re-verified by viewing the render.
+
 ## §27 — Exporting Copilot and agent metrics *(image 4 of 4)*
-`508bfba871fa5de3c5c07fba09ca361bbbc0dd5e7283be25838080676917bb1e`
+`5a57d6ce461d01a7ba5928617f16bd6e37c16e318b39f54076e8fadacd0180db`
 
 **Observed:** A spreadsheet extract, header row then eight data rows. Columns: **PersonId**,
 **MetricDate**, **Add content to presentation actions taken**, **Chat (Copilot in Excel) prompts
@@ -1001,6 +1013,8 @@ rather than listed interaction by interaction."
 **Deliberate, correct alt simplification:** the headers carry parentheses — *"Chat (Copilot in
 Excel) prompts submitted"* — which the alt renders without them. That reads better aloud and changes
 no meaning; leaving it.
+
+**Annotated 15 September 2026 (house style, batch 3):** 300 px of white canvas added at the **bottom**. This one needed a different technique from every other image in the batch: at 193 px tall with a ~24 px row pitch, there is no gap a 7 px dot can occupy without touching a value, and the first render proved it by putting both dots on data. Reworked to outline each **column** with a red box and land the callout dots on the pad below. **“Hashed IDs, not names”** boxes the `PersonId` column (header plus all eight anonymised IDs); **“Totals for the period, not single prompts”** boxes the first metric column's values. Both are the section's precision points — de-identification by default, and rows of period metrics rather than an interaction log. Four render passes were needed: the first column box clipped the IDs, the second box was placed in the *gap between* two metric columns and outlined header text with no values in it, then its right edge sliced through every number and its top edge cut the word “taken” in the header above. Final coordinates were measured off the render rather than estimated from the source. Verified by viewing the render.
 
 ## §28 — The AI Cost Dashboard *(image 1 of 3)*
 `b15ddc52a0701f5013f7aaeb270314bd86464fcc8675299b8ead630687139322`
