@@ -1616,21 +1616,27 @@ and would not need Undo.
 
 
 ## §78 — Claude Sonnet 5 appears in Word's model menu *(image 1 of 1)*
-`8c35fe4af71f881780f787517cc3d46821ba9e75a1b1881a93d86ed4ce62de07`
+`4f042b46f2ef96b493c2935589e2bda4a7bdf017431ca065eac50cb6b95297a8`
 
 **Observed:** The Copilot pane in Word on the web with its overflow menu open. A section heading reads "Model". The first item is "Auto" with a tick to its left and a submenu arrow to its right; the second is "Claude" with a submenu arrow. An open flyout submenu lists exactly two entries: "Claude Opus 5" and "Claude Sonnet 5", the latter carrying a focus outline. Below the Model section the menu lists Recent pages, Scheduled prompts, Send feedback, Settings and Quick Help. Behind the menu the pane shows an "Allow editing" dropdown, a prompt box reading "Describe what you want", and three suggestion chips.
 
 **Verdict:** ✅ MATCH — placed in §15. The image confirms Claude Sonnet 5 is present and additionally shows Claude Opus 5, which is the specific point the body copy makes. Menu location, the ticked Auto default and the nested submenu are all visible as described.
 
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts. "Auto is still the default" points at the tick beside **Auto** at the top of the model list, reached from a left pad because a leader from the right would have to cross the word Auto and its chevron. "Two Claude models, not one" points past the end of **Claude Opus 5** inside the open submenu, naming the count that the section is about. Verified on the render: both dots sit clear of the labels they name and neither leader crosses a menu item.
+
+
 ## §79 — Excel can use Python when editing with Copilot *(image 1 of 1)*
-`8c4d2b03337815c63ea9e9c19e21484ab0db17ce926a9ce1b91846a95c05fe1d`
+`39c08411af4b08957b02f067dce6e848de6cdbe30e899f4ceb33364e6a8411c7`
 
 **Observed:** A fragment of a Copilot reply in Excel. A bold bullet reads "15:43 local time: Added the standard-deviation outlier audit in" followed by a highlighted range token "Risk Chart!A18:F23". Two sub-bullets read "Added mean, sample standard deviation, z-score, and ±3σ outlier formulas." and "Formatted the audit table; all four results are “No”." Below sits a bordered monospaced code block containing three Excel formulas: =COUNTIF('01-sales-accounts'!$E$2:$E$9,"*Risk:"&A4&"*"), =STDEV.S($B$4:$B$7), and =IF(ABS(E20)>3,"Yes","No"). No Python code and no Python label appears anywhere in frame.
 
 **Verdict:** ✅ MATCH — placed in §16 (Python in Excel edits) as evidence for the stated result: a statistical task answered in native Excel formulas rather than Python. The absence of Python in this frame is the finding; the prose bounds it to my tenant on 14 September 2026 and offers the likely benign explanation.
 
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts, both reached from a right pad because every target is flush-left text. "Mean, z-score, outliers" points past the bullet where Copilot lists the statistics it added, and names only what that bullet literally says. "All in Excel formulas, no Python" points at the `=STDEV.S($B$4:$B$7)` line — the clearest single proof that the answer was built from native Excel formulas, with no Python anywhere in the reply. Verified on the render.
+
+
 ## §80 — Excel can explain what changed, and who changed it
-`e51d14c47506ef39ed79b0d6b2d3c74b8088f3e7f7199b065cc0c441cf2d4289`
+`e9f09da667b56c8dbc6930d6a07158f6651336099b6cc791ad8c8bb1fba70d85`
 
 **Observed:** Excel with the ribbon partly visible (Number, Styles, Cells, Editing, Sensitivity,
 Add-ins, Data Types, Commands Group) and a pane docked right headed **Edit with Copilot** with an
@@ -1663,26 +1669,38 @@ exactly that claim. ⚠️ The section also says Copilot can distinguish **human
 
 ---
 
+**Annotated 15 September 2026 (house style, verified on the render):** One outline and two callouts. "Numbered, named, dated" points past entry 1's attribution. Entry 2 has no gap at the end of its line — its attribution runs to the panel edge and is clipped by the frame — so the entry is outlined instead and "Two people and a time range" lands in the panel white beside it, naming what makes that entry different from the first. The canvas was extended at the bottom on a second pass so the outline closes below the clipped text rather than cutting across it. Verified on the render.
+
+
 ## §80 — Excel can explain what changed, and who changed it *(image 2 of 3)*
-`6a1c16ee7b06b23f298629f5370897f0d19a18251120fd611dc58413c5640e33`
+`39f4126d514f548109109877be3129184c5b4970f73dd266ddd4ee1e6e8663f0`
 
 **Observed:** The Copilot pane in Excel. A user prompt chip reads "what changed in this workbook, and who changed it". Below, a collapsed status bar reads "Retrieving the audit trail". A reasoning card shows two steps: a ticked step headed "Auditing recent workbook activity" reading "I'm reviewing the recorded change history to identify the edits, authors, timestamps, and affected ranges."; and an in-progress step headed "Retrieving the audit trail" reading "I'm pulling the available recent history now, then I'll group it by author and sheet and note any changes the history cannot track." An Edit dropdown and a prompt box sit beneath.
 
 **Verdict:** ✅ MATCH — placed in §17. Both phrases quoted in the body copy — "the audit trail", and the note about changes the history cannot track — are transcribed directly from this image.
 
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts. "Its own words: audit trail" points past the step heading **Retrieving the audit trail** — Copilot reached for the phrase itself; it is not my label. "It flags its own blind spot" points past *…note any changes the history cannot track*, where the second step declares its own limit before it has finished running. Verified on the render: both leaders travel through empty whitespace between rows inside the card.
+
+
 ## §80 — Excel can explain what changed, and who changed it *(image 3 of 3)*
-`048244d4189b3561d4a73b473205b0064ca87b02ed6d73cba935ca00a627eb23`
+`c1f33ccdcd1ea6707ae16fddb050d6170357e9f00180c30e7770ef105ff40256`
 
 **Observed:** A Copilot reply in Excel headed "Change summary — last 30 days". Opening line: "All recorded changes were made by Colin Ballinger with Copilot assistance on September 14, 2026. No recorded edits affected 01-sales-accounts." A tag reads "Risk Chart". Timeline entries: "15:32 local time: Created and formatted the Risk Chart sheet." with sub-bullets about a risk summary in Risk Chart!A1:B7 and live COUNTIF formulas calculating Critical 1, Elevated 1, Moderate 2 and Low 4; then "15:43 local time: Added the standard-deviation outlier audit in Risk Chart!A18:F23." with sub-bullets on mean, sample standard deviation, z-score and ±3σ formulas. A code block lists three formulas. Closing line: "The history does not track chart or conditional-formatting changes, so those cannot be attributed separately."
 
 **Verdict:** ✅ MATCH — placed in §17. Evidences both claims made in the prose: the combined human-plus-AI attribution phrase, and the self-declared coverage gap. Colin Ballinger is a fictional demo persona in a lab tenant, not a real colleague.
 
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts. "The person and the AI, together" points at the attribution line crediting the edits to a named person **with Copilot assistance** — one line naming both. "Charts are not tracked" points past the closing sentence, which states what the history cannot attribute. Deliberately worded differently from the reasoning-card callout in the same section so the two do not read as a repeat. Verified on the render.
+
+
 ## §81 — Excel keeps your Copilot chat history *(image 1 of 1)*
-`027866dd5007b10e154d0d892a5e6a19c2839f189a7dc80ce33ba2d792c57cc8`
+`07fab1f8ba784085bdd992d5e7641f974365383173abe4682f711bae45f9eb1f`
 
 **Observed:** Excel on the web with the Copilot chat history panel open. The panel shows a list icon, then "New Chat" beside the Copilot icon, then a heading "Chats in Excel". Two saved conversations are listed: "create a chat of this sheet" timestamped "3:32 PM", and beneath it "Calculate the weighted total for each partner usin" dated "9/7". The Excel command bar above shows Comments, Catch up, Editing and Share.
 
 **Verdict:** ✅ MATCH — placed in §18. Confirms the menu location, the panel heading, recency ordering, and the specific point made in the prose that a week-old conversation was still present.
+
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts. "History now lives in Excel" points past the **Chats in Excel** section label, which is the structural point — the list belongs to Excel, not to a pane session. "A week-old chat, still here" points at the **9/7** date stamp on the second row, the one piece of evidence in the frame for the claim made in the prose. Verified on the render: the date is reached from the right, because approaching from the left would mean crossing the prompt text on the same row.
+
 
 ## §11 — The rename, the new address, and the October deadline
 `73c157e217c4d445145dea71acfb3aa0dfa0d39c7f6f2c9bdf99dacac588dd0c`
