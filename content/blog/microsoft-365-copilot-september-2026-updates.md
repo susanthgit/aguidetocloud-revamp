@@ -689,9 +689,39 @@ something Copilot said out loud.
 
 ### 22. Outlook coaches your writing as you draft
 
-*For: Copilot in Outlook · Generally available 11 August 2026*
+*For: Copilot in Outlook · Generally available 11 August 2026 · Tested in my tenant 14 September 2026*
 
 Copilot offers **coaching feedback in chat** while you draft, edit and format an email — tone, clarity and structure, as you write rather than after you send.
+
+**What I found on 14 September 2026.** I pasted a deliberately graceless draft into Copilot chat in Outlook
+— *"Hi — need the Q3 numbers by tomorrow. This has been late twice already and it's holding everyone up.
+Please sort it."* — and attached **no instruction at all**. No *fix this*, no *coach me*. Just the draft.
+
+It worked out what I was doing on its own: *"It looks like you want to send a follow-up to Karin about
+overdue Q3 numbers."* Then it offered the same message at three settings — **Professional and Direct**,
+**Firm but Collaborative**, and a third further down the pane.
+
+<img src="/images/blog/copilot-september-2026/lab-s22-tone-options.webp" alt="The Copilot pane in Outlook in my own tenant, with a Work and Web toggle at the top and Work selected. The pasted draft appears as the sent message. Copilot's reply reads: It looks like you want to send a follow-up to Karin about overdue Q3 numbers. Below are a few versions with different tones, depending on how firm you want to be. Two rewritten versions follow, headed Option 1, Professional and Direct, and Option 2, Firm but Collaborative, each with a full email body. A third option is partly visible at the bottom edge of the pane." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. Three tones from a draft, with no instruction attached to it.</em></p>
+
+Rewriting an email is not new. This is the part that is.
+
+<img src="/images/blog/copilot-september-2026/lab-s22-writing-improvements.webp" alt="A table in the Copilot pane headed Writing Improvements, with two columns, Area and Improvement. Four rows. Tone: made the message firm and professional rather than sounding frustrated. Clarity: specified the impact of the delay on the wider team and downstream activities. Action: included a clear request for delivery and, where appropriate, confirmation of timing or blockers. Professionalism: maintained accountability while avoiding language that could be perceived as confrontational." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>The coaching, unasked for: what changed, and why.</em></p>
+
+Underneath the rewrites it produced a **Writing Improvements** table, unprompted, naming what it changed and
+why. *Tone*: firm rather than frustrated. *Clarity*: spell out the impact of the delay. *Action*: add a clear
+request. *Professionalism*: keep the accountability, drop anything that reads as confrontational.
+
+That is the difference between a rewrite and coaching. A rewrite hands you better words. This hands you the
+reasoning, which is the only version you learn anything from. It also reached past its own release note,
+which promises tone, clarity and structure — *Action* and *Professionalism* were not on that list.
+
+One honest limit. I handed the draft **to the chat pane** rather than typing it into the compose box, so I
+have not tested the *as you write* half of the claim — whether this surfaces mid-email without you going to
+Copilot at all. What I can say is that I never asked for coaching, and got it anyway.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Coaching existed before as a thing you asked for once the email was written, which is exactly when nobody wants to hear it. Moving it into the drafting flow makes it advice rather than criticism.</p>
@@ -701,9 +731,35 @@ Copilot offers **coaching feedback in chat** while you draft, edit and format an
 
 ### 23. Meeting preparation reached classic Outlook for Windows
 
-*For: Copilot in classic Outlook for Windows · Generally available 11 August 2026*
+*For: Copilot in classic Outlook for Windows · Generally available 11 August 2026 · Tested in my tenant 14 September 2026*
 
 **Prepare for meetings** — the summary of relevant files, emails and context ahead of a meeting — is available in classic Outlook for Windows.
+
+**What I found on 14 September 2026.** Classic Outlook again — same *Try the new Outlook · Off* toggle in the
+corner. I opened a meeting and asked it plainly: *"help me prepare for this meeting."*
+
+It said what it was about to do before doing it — *"I'll pull the full calendar item and any related emails,
+files, chats, and meeting context, then turn it into a concise prep brief with talking points and questions"*
+— and showed a **Reasoned for 9s** line you can expand to see the working.
+
+<img src="/images/blog/copilot-september-2026/lab-s23-prep-brief-classic.webp" alt="The Copilot pane in classic Outlook for Windows in my own tenant, with the Try the new Outlook toggle set to Off at the top and part of the classic ribbon visible below it. A reference chip reads FW: Caldenza Relief. The prompt reads: help me prepare for this meeting. Copilot replies that it will pull the full calendar item and any related emails, files, chats and meeting context, then turn it into a concise prep brief with talking points and questions. An expandable line reads Reasoned for 9s. The next paragraph reads: I found the meeting invite and related conversation. The available material is limited, so this brief separates confirmed facts from suggested preparation. A Meeting snapshot heading follows with bullets stating the meeting was scheduled for Monday 14 September 2026 at 3:00 to 3:30 pm in Microsoft Teams and that the time has now passed; that the invite was sent by Colin Ballinger to three named people; that the invitation contains no agenda, background or attachments beyond the Teams joining details; and that the associated chat contains only the facilitator's opening message. Each bullet carries a small envelope citation icon." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. A prep brief that admits there was very little to prepare from.</em></p>
+
+Here is the part I did not expect. The meeting I picked was a thin one — an invite with nothing hanging off
+it. Copilot went and checked anyway, found the chat as well as the invite, and then said so out loud:
+
+> *"The available material is limited, so this brief separates confirmed facts from suggested preparation."*
+
+It then named the gaps rather than papering over them. The invitation contains **no agenda, background or
+attachments** beyond the joining details. The associated chat holds only the facilitator's opening message.
+It also noticed, without being asked, that the meeting time had already passed. Every claim carries a small
+envelope icon back to the message it came from.
+
+The worry with automated meeting prep is that a feature rewarded for producing a brief will produce one
+whether or not there is anything to say. On this run it did the opposite — it looked, came back with
+little, and told me plainly rather than inventing context to fill the space. One run is not a guarantee.
+It is the behaviour you would hope for.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> The five minutes before a meeting is when preparation actually happens. Having the material gathered in the client where the invite already lives removes the step where you go looking and run out of time.</p>

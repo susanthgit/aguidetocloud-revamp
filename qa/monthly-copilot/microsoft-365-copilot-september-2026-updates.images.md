@@ -1793,3 +1793,84 @@ it. The **8:00 – 8:25** row is the source of the 25-minute observation, and th
 image supports, since no explanation appears anywhere in the pane.
 
 ---
+
+## §22 — Outlook coaches your writing as you draft *(image 1 of 2)*
+
+**File:** `lab-s22-tone-options.webp` (543×703, 55.3 KB)
+**SHA256:** `60f4288666fe2bc6fbb73058fcf42b0323373c703a7eb9adf21e4df2d8363d82`
+**Source:** My own Caldova tenant, 14 September 2026. Outlook, Copilot pane.
+
+**Observed while viewing:** The Copilot side pane with a **Work / Web** toggle at the top, **Work** selected.
+The sent message is the pasted draft, beginning *"hi karin Hi — need the Q3 numbers by tomorrow…"*. Copilot's
+reply opens *"It looks like you want to send a follow-up to Karin about overdue Q3 numbers. Below are a few
+versions with different tones, depending on how firm you want to be."* Two complete rewritten emails follow,
+headed **Option 1: Professional and Direct** and **Option 2: Firm but Collaborative**. A third option heading
+is partly visible at the bottom edge where the pane is cut off by the capture.
+
+**Verdict:** ✅ MATCH — supports the section's claims that no instruction was attached (the sent bubble is the
+raw draft text with nothing appended), that Copilot inferred the intent itself, and that it returned multiple
+tone settings. The section describes the third option as "further down the pane", which matches the partial
+heading visible here rather than overstating what was captured.
+
+---
+
+## §22 — Outlook coaches your writing as you draft *(image 2 of 2)*
+
+**File:** `lab-s22-writing-improvements.webp` (760×288, 25.2 KB) — cropped from an 838×484 capture
+**SHA256:** `45acdd0c50a8072a20fc2021c8158c43c88208194f0e7f0d2c268cc3ca9dc38a`
+**Source:** My own Caldova tenant, 14 September 2026. Outlook, Copilot pane.
+
+**Observed while viewing:** A heading reading **Writing Improvements**, followed by a two-column table with
+the column headers **Area** and **Improvement**, and four rows:
+• **Tone** — *"Made the message firm and professional rather than sounding frustrated."*
+• **Clarity** — *"Specified the impact of the delay on the wider team and downstream activities."*
+• **Action** — *"Included a clear request for delivery and, where appropriate, confirmation of timing or
+blockers."*
+• **Professionalism** — *"Maintained accountability while avoiding language that could be perceived as
+confrontational."*
+All four rows are complete; nothing is clipped at any edge.
+
+**Verdict:** ✅ MATCH — this is the image the section's central argument rests on. All four dimension names are
+quoted accurately in the body, and the claim that the output reached past the release note's "tone, clarity
+and structure" is directly visible, since **Action** and **Professionalism** appear here and are absent from
+that list. Display scale is 0.95×, slightly under life size, but the table's type is large and every row
+reads cleanly. "Karin" is fictional demo-lab content, not a real correspondent.
+
+---
+
+## §23 — Meeting preparation reached classic Outlook *(image 1 of 1)*
+
+**File:** `lab-s23-prep-brief-classic.webp` (417×750, 41.7 KB) — cropped from a 417×925 capture
+**SHA256:** `7bc29254f5488f36f463f43b9b1aa10e8bed522bddcd29c80f1bbb3da980db17`
+**Source:** My own Caldova tenant, 14 September 2026. Classic Outlook for Windows.
+
+**Observed while viewing:** Top strip carries the **"Try the new Outlook"** toggle set to **Off** and a
+**Copilot** button, with a slice of the classic ribbon beneath (Recurrence, a categorise control, a lock, a
+red importance mark). The Copilot pane shows an **Auto** model selector, a shield icon, a plus button and an
+overflow menu. A grey reference chip reads **"FW: Caldenza Relief – r…"**, and the sent prompt is
+*"help me prepare for this meeting"*.
+
+Copilot's reply opens with its plan: *"I'll pull the full calendar item and any related emails, files, chats,
+and meeting context, then turn it into a concise prep brief with talking points and questions."* Below it an
+expandable line reads **"Reasoned for 9s ›"**. The next paragraph reads *"I found the meeting invite and
+related conversation. The available material is limited, so this brief separates confirmed facts from
+suggested preparation."*
+
+A heading **Meeting snapshot** follows, with four bullets, each ending in a small envelope citation icon:
+• *"Caldenza Relief - range and pack was scheduled for **Monday, 14 September 2026, 3:00–3:30 pm**, in
+Microsoft Teams. That time has now passed."*
+• *"The invite was sent by Colin Ballinger to you, Kadji Bell, and Karin Blair."*
+• *"The invitation contains **no agenda, background, or attachments** beyond the Teams joining details."*
+• *"The associated Caldenza Relief - range and pack chat only contains the Facilitator's opening message. No
+substantive…"* — this final bullet is cut off by the bottom of the pane, and a circular scroll-down button
+overlays part of it.
+
+**Verdict:** ✅ MATCH — supports every claim in the section. The **Off** toggle establishes the classic client.
+The plan line and the reference to finding "related conversation" support "it went and checked anyway". The
+limited-material sentence is quoted verbatim in the body and is visible here. The no-agenda bullet supports
+"named the gaps", and "That time has now passed" supports the unprompted observation about timing. The
+envelope icons support the citation claim. The section does not quote anything from the clipped final bullet
+or from below the fold, so nothing rests on text that is not fully legible here. Names and the meeting are
+fictional demo-lab content (Caldova), not real customer data.
+
+---
