@@ -87,7 +87,7 @@ elements defined in your template when creating or editing presentations.", butt
 image shows exactly that control and its confirmation dialog.
 
 ## §2 — Slide notes can steer Copilot slide by slide *(image 1 of 2)*
-`c6b25fca61f23e3367f1170eedaa3b011ac28c393f3480420e73021d5f7d0cb0`
+`b570ef9246ea13dd74fa10bec5b3fea5dd670f541cc295dfb90009adbe07601e`
 
 **Observed:** A Brand Kit page for "Adventure Works Cycle" (breadcrumb "‹ Manage Brand Kits",
 a Share button top right), with the same Logos / Templates / Fonts / Colors / Images cards behind
@@ -102,6 +102,8 @@ launch plan to executives and internal stakeholders." with a 164/250 counter. Be
 how Copilot updates and creates content." Save and Cancel buttons at the bottom right. A template
 thumbnail reading "MTB LINE EXPANSION" over a mountain-biking photograph sits **to the left of**
 the dialog on a purple-green gradient.
+
+**Annotation (14 September 2026):** renamed to `official-02-brand-kit-note-instructions-annotated.webp`. A red rounded box (222,45,38, 3px, radius 8) drawn by me at source coords (691,609)-(1026,661) outlines the ticked **Allow note instructions** checkbox, its label and its sub-text. Placement verified by viewing a 2× zoom crop of the annotated file before conversion to webp. Nothing else in the image was altered.
 
 **Verdict:** ✅ MATCH — "Allow note instructions / use slide notes to control how Copilot updates
 and creates content" is precisely the capability this section describes.
@@ -249,9 +251,11 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Verdict:** ✅ MATCH — shows the trigger control the prose describes appearing after a drag-selection. The button label is legible at the rendered size and the surrounding slide gives it context.
 
 ## §7 — Copilot can explain the slide you are looking at during PowerPoint Live *(image 3 of 3)*
-`c4a5dc7b23f2fcc6bb9e5abb49c7a810537a25d2b24112f22fb7653fe5f88b14`
+`1ac6f0565f838f4b7a6a03d5d139a5bccb86425750e7ee6e2bb983b46444c021`
 
 **Observed:** A full Teams meeting window. Top toolbar shows Take control, Chat, People 4, Raise, React, View, Notes, Copilot (underlined as active), More, Camera, Mic, Share and Leave. Three participant tiles sit below. The stage shows a PowerPoint Live slide titled "Four SKUs confirmed for the Gulf range" with the "Explain selected text" button visible, and a Caldova logo bottom-left. On the right, a Copilot pane contains an automatically composed prompt: "In 1-3 sentences, explain the selected text: Four SKUs confirmed for the Gulf range" followed by the four selected bullets, then a Copilot reply explaining that the range is built around four product formats targeting different shopper needs and price points.
+
+**Annotation (14 September 2026):** renamed to `lab-s07-teams-live-explain-annotated.webp`. A red rounded box (222,45,38, 3px, radius 8) drawn by me at source coords (12,287)-(214,337) outlines the floating **Explain selected text** pill on the PowerPoint Live stage. It is a dark button on a dark background at the far left, while the eye is drawn to the Copilot pane on the right, so it is easy to miss without the box. Placement verified by viewing the annotated file at full size before conversion. Nothing else was altered.
 
 **Verdict:** ✅ MATCH — this carries the full claim in one frame: a live meeting, an attendee selection, an auto-composed prompt, and an answer in a side pane rather than on the shared stage. The prose claims Copilot wrote the prompt and imposed the one-to-three-sentence limit, and both are visible verbatim in the pane. Participant tiles are demo-tenant lab profiles, confirmed with Sush on 14 September 2026.
 
@@ -1750,7 +1754,7 @@ fictional demo-lab content (Caldova), not real customer data.
 ## §21 — Scheduling with Copilot chat reached classic Outlook *(image 1 of 2)*
 
 **File:** `lab-s21-classic-prompt.webp` (445×454, 10.5 KB)
-**SHA256:** `e28feaa16ac79bedda55ebb21e82dab5d799f82d76dfc8576af5165b38cd5d88`
+**SHA256:** `321623b42e18bb9b6b90eb0e1172ea9aff1d1dd49c260d4ed12c767a40a4b9a3`
 **Source:** My own Caldova tenant, 14 September 2026. Classic Outlook for Windows.
 
 **Observed while viewing:** Top right of the classic Outlook window shows a labelled toggle reading **"Try
@@ -1759,6 +1763,8 @@ visible underneath carrying **Viva Insights** and **Report Message**. The Copilo
 the frame, with an **Auto** model selector, a shield icon, a plus button and an overflow menu across its
 toolbar. The sent prompt reads *"Schedule a catch-up with @Nic Bishop before Friday"*, and beneath it Copilot
 displays a working status line, **"Queuing things up…"**.
+
+**Annotation (14 September 2026):** renamed to `lab-s21-classic-prompt-annotated.webp`. A red rounded box (222,45,38, 3px, radius 8) drawn by me at source coords (149,48)-(337,76) outlines the **Try the new Outlook** toggle, which is switched to **Off**. That toggle is the evidence that this is the classic Outlook desktop client rather than the new one, and it sits in the title bar where it is easy to overlook. Placement verified by viewing the annotated file at full size before conversion and adjusted once so the box no longer clipped the word Try. Nothing else was altered.
 
 **Verdict:** ✅ MATCH — this is the image the section rests its central claim on. The *"Try the new Outlook —
 Off"* toggle exists only in the classic client, so it establishes the client identity more decisively than the
