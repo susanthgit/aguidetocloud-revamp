@@ -354,7 +354,7 @@ Copilot in PowerPoint can use **enterprise assets hosted in Adobe Experience Man
 <p><strong>Why this matters:</strong> Most large organisations already pay for a digital asset manager, and it tends to sit outside the tools where the work actually happens. Wiring it into the app where the deck is made is how those assets finally get used.</p>
 </blockquote>
 
-📖 [AI at Work Roadmap 516038](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516038) (Web) · [516039](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516039) (Windows) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+📖 [AI at Work Roadmap 516038](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516038) (Web) · [516039](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516039) (Desktop) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
 ### 9. You can create a presentation from the PowerPoint web app
 
