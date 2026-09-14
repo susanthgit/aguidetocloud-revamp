@@ -1241,9 +1241,32 @@ Copilot gained **model-driven answer cards** for weather, sports, finance, image
 
 ### 39. Copilot mobile can draft an email inside the chat
 
-*For: Microsoft 365 Copilot Chat (mobile) · Rolled out August 2026*
+*For: Microsoft 365 Copilot Chat (mobile) · Rolled out August 2026 · Tested on my phone 14 September 2026*
 
 On mobile you can describe a message and Copilot creates an **embedded Outlook draft inside the chat**, which you can then open in Outlook.
+
+**What I found on 14 September 2026.** The draft does arrive as a distinct object in the thread rather
+than as a wall of text inside the reply, which is the genuinely useful half of this. The handoff to
+Outlook is the half I could not reproduce.
+
+<img src="/images/blog/copilot-september-2026/lab-s39-mobile-email-draft.webp" alt="Copilot on my phone, in dark mode. The header shows a model picker reading Auto with a Work IQ label beneath it, a green shield with a tick, and a more menu. My typed prompt reads: Draft an email to Nic asking about if there are any major copilot studio updates in the month of September. Copilot replies, Here is a concise draft you can send to Nic, and then renders the draft inside a card of its own. The card is labelled Message and carries a copy icon and a pencil icon in its top right corner. Inside it is a complete four paragraph email, opening Hi Nic, asking whether there have been any major Copilot Studio updates released so far in September worth highlighting for customer conversations or upcoming demos, asking for a quick summary or resources, and signed off Thanks, Susanth." loading="lazy" decoding="async" style="max-width:480px;" />
+
+<p class="img-caption"><em>My own phone, 14 September 2026. The draft arrives as a card of its own, labelled Message, with copy and edit controls attached to it.</em></p>
+
+I asked for a short email to a colleague about Copilot Studio updates. Copilot wrote a one line preamble,
+then put the message into **its own card, labelled “Message”**, with a copy icon and a pencil icon in the
+corner. The body was a complete four paragraph email, and it signed off in my name without being asked to.
+Below the card the reply carried on in ordinary prose.
+
+**On the handoff to Outlook.** The card offered copy and edit, and nothing else. There was no *open in
+Outlook* control on it, not in the part shown above and not in the rest of the screenshot below it. That
+could mean it sits behind the pencil, or that it is still rolling out, or that the handoff lives in Copilot
+inside Outlook mobile rather than in the Copilot app. One test on one phone cannot tell me which, so I am
+recording what I saw rather than guessing, and I will retest for October.
+
+Two smaller things from the same screenshot. The model picker reads **Auto**, with **Work IQ** underneath
+it, which is the same pairing the desktop app now shows, so that change is not a desktop only one. And
+below the crop, the bottom bar carries **Cowork** as a full tab alongside Chat, Search and More.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> On a phone, switching apps is the whole cost. Drafting in place and handing the finished thing to Outlook is one of those flows that only makes sense on mobile, which is a good sign somebody designed it for mobile rather than shrinking the desktop version.</p>

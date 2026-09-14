@@ -2179,3 +2179,40 @@ the same source capture as §44 to make the button labels readable, since at the
 not. Verified by viewing the cropped output file, not the source. Synthetic Caldova demo-lab content.
 
 ---
+
+## §39 — Copilot mobile can draft an email inside the chat
+
+**File:** `lab-s39-mobile-email-draft.webp` (1179×1945, 101.0 KB) — cropped from a 1179×2556 iPhone capture, box (0,130)-(1179,2075)
+**SHA256:** `31955ccc60226b912cbf382a303974d5bec5f9c5e3b365c8bfa9541f96f3e0fb`
+**Source:** Sush's own phone, 14 September 2026. Microsoft 365 Copilot mobile app, dark mode.
+
+**Observed while viewing:** A phone screen in dark mode. Top bar: hamburger at left, a centred model picker
+reading **Auto** with a chevron and **Work IQ** beneath it, then a green shield bearing a tick and a three dot
+more menu. A right aligned prompt bubble reads *"Draft  an email to Nic asking about if there are any major
+copilot studio updates in the month of September"*. Copilot's reply begins *"Here's a concise draft you can
+send to Nic:"*. Beneath it sits a rounded card whose top row reads **Message** at the left, with a **copy
+icon** and a **pencil icon** at the right. The card holds a four paragraph email: *"Hi Nic,"*, *"Hope you're
+doing well."*, a paragraph asking about major Copilot Studio updates released so far in September worth
+highlighting for customer conversations or upcoming demos, a paragraph asking for a quick summary or
+resources, and the sign off *"Thanks, Susanth"*. A circular down chevron scroll button overlaps the lower
+edge. **No "open in Outlook" control appears on the card.** No email address appears anywhere in the frame.
+
+**Verdict:** ⚠️ PARTIAL — and the gap is disclosed in the section itself. The image proves the first half of
+the claim outright: the draft is rendered as a discrete, labelled **Message** object inside the chat, not as
+plain reply text, and it carries its own copy and edit affordances. It does **not** evidence the second half,
+the handoff into Outlook. The bottom of the card and the thread continuing below it were both checked in the
+uncropped screenshot before this crop was chosen, and no such control was present there either, so the
+absence is an observation rather than a cropping artefact. The section states plainly that it could not
+determine whether the control is behind the pencil, still rolling out, or reached through Copilot inside
+Outlook mobile, and commits to a retest.
+
+**Notes:** Display constrained to `max-width:480px` (0.41×), which renders it about 792 px tall, in line with
+the other portrait captures in this issue. Left unresized on disk at 1179 px wide so it stays crisp on
+high density screens. Verified by viewing the cropped output file, not the source.
+⚠️ **Provenance differs from every other lab capture in this issue:** this is Sush's real work account, not
+the Caldova demo lab, so the content is genuine rather than synthetic. It names a colleague by **first name
+only** — no surname, no email address, no other identifier. Cleared for publication by Sush on 14 September
+2026 on the explicit condition that no email addresses are exposed, which was checked against the full
+uncropped screenshot and confirmed.
+
+---
