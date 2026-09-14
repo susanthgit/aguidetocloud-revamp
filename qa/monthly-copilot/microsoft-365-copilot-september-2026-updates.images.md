@@ -612,7 +612,7 @@ before/after here. The "was Scheduled" half of the claim rests on the cited sour
 text describes only the visible rail.
 
 ## §29 — The GitHub Copilot harness in Copilot Studio is generally available
-`2cb2ea0f5f0514f531d6bb16ed83891ffa1179b28d3e50b6041ff954b688ec79`
+`f6283166fce81a6df052b894688f790f26f05c55dcad227544e2fb3b07c7e5d9`
 
 **Observed:** A browser at **`https://copilotstudio.com`** showing a banner: "**Welcome to the new
 Copilot Studio** — Build smarter processes with credit-powered capabilities. **Learn more**". At the
@@ -635,8 +635,10 @@ on, which is the GA surface this section describes.
 credit-metered rows visually corroborates §64's point that the *new* harness is credit-billed while
 older/standard-orchestration agents can be licence-included. Worth keeping in mind if §64 is edited.
 
+**Annotated 15 September 2026 (house style, verified on the render):** Padded on the right, where the margin is clear from the toggle row down, so all three leaders run horizontally through white space. Three callouts rather than the usual two, because this single screenshot carries the three things the Copilot Studio chapter is built on: “Credits are on the front door” (the Uses Copilot Credits chip beside Optimize your business processes), “Harness is now a build choice” (the GitHub Copilot tag on the build cards) and “Licence or credits, per agent” (the Last opened list, where one agent shows a credit count and another shows Incl. in license). **Correction made before acceptance:** all three dots were first placed on the right edge of the element as measured from a downscaled view, and all three clipped the last letter of the label they named — the chip read “Uses Copilot Credi”, the tag “GitHub Copilo” and the row “Incl. in licen”. Re-measured off the render and moved into the whitespace beyond each label; every one is now fully legible.
+
 ## §30 — Three harnesses now, and a white paper on choosing between them *(image 1 of 2)*
-`f92d974b79ed01b5733acb5bbd1518c76afa5ccfb4734cfc6a46c40b06d8e423`
+`bfd5d06df9259be7ab413701c8e6f0a20b04514c7482269a799ab6e1f6ba1586`
 
 **Observed:** Two build cards side by side on a soft peach-to-blue gradient. The **left** card has a
 gradient illustration of pink, purple and cream ribbons converging rightward into a dark purple
@@ -652,6 +654,8 @@ illustrates the *agent-build choice* a maker actually sees, which is between **S
 **GitHub Copilot**; the Copilot Chat harness is a different surface and is not a build card here.
 So the image does not contradict the "three" claim, it simply shows the two it can show. Alt text
 must therefore describe two cards and must not imply the image shows three.
+
+**Annotated 15 September 2026 (house style, verified on the render):** Downscaled to 0.52× (the source is 4255 px wide) and padded at the bottom. This one could not use plain dots: every path into the harness pills from above crosses the cards' artwork panels, and every path from below crosses the description text. Instead each pill is outlined with a red box and the leader dots land in the cards' empty lower strip. The two callouts read as one sentence across the pair — “Both say ‘Agent’” and “The pill is the difference” — which is the point of the image: the harness is the only visible distinction at creation time. Passed on the first render.
 
 ## §30 — Three harnesses now, and a white paper on choosing between them *(image 2 of 2)*
 `5e2f12f7e08c61417e3be9fbdc81027cf311fb15c064d4a061ff273b987d40dc`
@@ -715,7 +719,7 @@ graphic, and it carries a title the alt omitted. Alt now reads "a three column g
 Copilot harness in Copilot Studio". No factual claim changed.
 
 ## §32 — Credits are consumed while makers build, not just when agents run
-`7ebf940a8dcf30f950d4a97617d84c1b22d8dcdbb432e34bbf27b35357a6aa0b`
+`1d31bb9169c7c4e553a2d6430a7efdf63a413f9a878e91d64fce473c7585c28f`
 
 **Observed:** A single bordered in-product card. Its header row shows a small multicoloured
 agent icon, the bold title **"Onboarding experience process"**, a small shield-style badge and an ⓘ
@@ -730,6 +734,8 @@ section makes: building consumes credits, not only running.
 **🔴 Alt-text error found and fixed at full size:** my alt framed "you need credits to continue" as
 the message heading and omitted the card's actual header. The header is the **agent name**,
 "Onboarding experience process". Alt rewritten to name it.
+
+**Annotated 15 September 2026 (house style, verified on the render):** Upscaled 2.2× (the source is 733×159) and padded on the left. Rather than a dot, a red box outlines the phrase “the AI creation experience” inside Microsoft's own blocking message, with the callout “Building spends credits too” — that phrase is the evidence for this section's claim that credits are consumed while makers build, not only when agents run. **Correction made before acceptance:** the box's right edge first clipped the “a” of the following word “and”; pulled back to close just after “experience”.
 
 ## §38 — New designers for agents and workflows
 `6d8cfd54ef3009baffebbe96886b0bdc6e9e18bc9c356a9e5fbdef0e7fe40707`
@@ -1017,7 +1023,7 @@ no meaning; leaving it.
 **Annotated 15 September 2026 (house style, batch 3):** 300 px of white canvas added at the **bottom**. This one needed a different technique from every other image in the batch: at 193 px tall with a ~24 px row pitch, there is no gap a 7 px dot can occupy without touching a value, and the first render proved it by putting both dots on data. Reworked to outline each **column** with a red box and land the callout dots on the pad below. **“Hashed IDs, not names”** boxes the `PersonId` column (header plus all eight anonymised IDs); **“Totals for the period, not single prompts”** boxes the first metric column's values. Both are the section's precision points — de-identification by default, and rows of period metrics rather than an interaction log. Four render passes were needed: the first column box clipped the IDs, the second box was placed in the *gap between* two metric columns and outlined header text with no values in it, then its right edge sliced through every number and its top edge cut the word “taken” in the header above. Final coordinates were measured off the render rather than estimated from the source. Verified by viewing the render.
 
 ## §28 — The AI Cost Dashboard *(image 1 of 3)*
-`b15ddc52a0701f5013f7aaeb270314bd86464fcc8675299b8ead630687139322`
+`f239b9746b11407d10fc05773c9928507f2ab801062276340090e4cd26992a72`
 
 **Observed:** The **AI Cost Dashboard**. A top banner reads: *"AI Cost Dashboard data is only
 available for Copilot Cowork and WorkIQ API. More agents and services are coming soon."* Filter row:
@@ -1045,8 +1051,10 @@ figures" was also replaced with the actual column names.
 **111,436** against All-users **9,501**. Placeholder data again — the alt quotes only the cards and
 makes no claim that the two agree.
 
+**Annotated 15 September 2026 (house style, verified on the render):** Upscaled 1.4× and padded on the left. Two callouts — “Coverage is still limited” on the blue banner that names Cowork and the Work IQ API as the only services reporting yet, and “Credits, users and sessions in one row” on the All-users row of the breakdown table. Both dots sit in clear left-hand margins, so no label, icon or value is covered. Passed on the first render.
+
 ## §28 — The AI Cost Dashboard *(image 2 of 3)*
-`7e2764f6338324b96697357e7369f169e3fd8fac848a85312305124fd5cd1690`
+`c2defb3d1d8e67b45388160e3988c4a25b8b4172320b9a8c2b97f2dfea05cbb4`
 
 **Observed:** Breadcrumb **"AI Cost Dashboard › GitHub usage"**, page title **GitHub usage**.
 Top-right: **View as — Aadi Kapoor ▾**, glossary, download and share icons. Filters **Scope: Your
@@ -1072,8 +1080,10 @@ a four-digit number transcribed from a contact sheet. It is also self-consistent
 45% of 10,902 = 4,905.9, so 4,905 is the figure Microsoft renders. A one-digit error nobody would
 ever have noticed, in a number the post presents as fact.
 
+**Annotated 15 September 2026 (house style, verified on the render):** Upscaled 2× (the source is only 705 px wide) and padded at the top. Two callouts — “Developer agent adoption, measured” on the Agent adoption card and “Which models the spend goes to” on the Most used card, whose Model row names the specific model developers picked. **Correction made before acceptance:** the second dot first landed on the Most used card's extreme left corner, where it read as pointing at the gap between the two cards; moved right so it is unambiguously over that card, while still clearing the Time period filter pill the leader passes.
+
 ## §28 — The AI Cost Dashboard *(image 3 of 3)*
-`4559fa9e055d0231fef2802ef28195acb4599ec7828dab6cd131493a01c68df0`
+`01fae0b0adb2f1a30112688c44202c15a0c882880189a0c2d12fb28e50aa903a`
 
 **Observed:** A card headed **"Usage intensity"** / *"How is credit usage distributed across our
 users?"* A key-insight banner reads: *"The top 1% of users use **65% of all credits**, averaging
@@ -1109,6 +1119,8 @@ surrounding caveat would do more harm than good, and alt text is not required to
 Recorded here so the omission is a documented decision rather than an oversight.
 
 <!-- NEXT -->
+
+**Annotated 15 September 2026 (house style, verified on the render):** Upscaled 1.2× and padded at the bottom, because the only clear leader corridors run vertically — just right of the percentage labels and just left of the Active users column. Two callouts carrying the concentration finding: “Top 1% burn 65% of all credits” and “That is 100 people”. Row pitch here is wide enough for dots, unlike the §27 CSV strip. Passed on the first render.
 
 ## §16 — Power BI grounding went worldwide
 `7dce932015dbf097c1b85b2dd8c486de103af084e827db9b93cb3007641696d9`
