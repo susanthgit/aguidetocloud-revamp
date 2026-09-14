@@ -359,19 +359,25 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Verdict:** ✅ MATCH — supports the prose claim that this run asked about audience and depth rather than look and feel, and that each option carried a slide count. The option text is specific to Copilot Notebooks, which is the source material used in this test, supporting the claim that the questions are generated rather than fixed.
 
 ## §73 — Presentations can be grounded in web sources *(image 3 of 3)*
-`369969dad5eb9abd562473fcfb28a474c16f68f9b65e4aeeccc6c9279e9a5684`
+`ab5a1bfeaa248f71bd111e46dc9dbfe325b67269cb365b714588163b5d8c606f`
 
 **Observed:** A finished presentation slide on a white background. A large teal double quotation mark sits at top left. Below it, italic dark-navy serif text reads "Copilot Notebooks are AI-powered workspaces where you bring together your content and sources so Copilot can understand the full picture." Beneath the quote, in small grey bold capitals, is the attribution "— Microsoft Support". No other UI chrome is in frame — this is the rendered slide only.
 
-**Verdict:** ✅ MATCH — placed in §10 (web-grounded presentations) to evidence the claim that the generated deck credits its web source on the slide. The alt text and caption describe exactly these elements and claim nothing beyond them.
+**Verdict:** ✅ MATCH — placed in §10 (web-grounded presentations) to evidence the claim that the generated deck credits its web source on the slide. The alt text and caption describe exactly these elements and claim nothing beyond them
+**Annotated 15 September 2026 (house style, verified on the render):** One callout, "Credited on the slide", with the dot just past the end of the small grey attribution line under the quote. Padded right, because the attribution is flush-left and every other route to it crosses the quote itself.
+.
+
 
 ## §74 — Word can add hyperlinks for you
-`b3d65d6c012008d233d91cf6e454a083d15505c8e80f384cb0da48a0b512c4cd`
+`e51054f8e43906e24484077c74343da7f0a77cd2569e9fe05a55a87b6f6ba88a`
 
 **Observed:** Two crops taken from the same Microsoft screenshot and stacked, so the detail is legible at the width this blog renders. **Top:** the document body in Word, showing a blue heading **"How to access Word Copilot"** with a selection bracket at its left, then a numbered list — "Open a document in Word and sign in with a Copilot-enabled account." / "Select the **Copilot** button in the corner of the document. Copilot opens in the chat pane." / "Type a prompt, choose a suggested action, or ask a question about the document." — followed by "For details, see Welcome to Copilot in Word.", where *Welcome to Copilot in Word* is a blue underlined hyperlink with the text cursor sitting after the full stop. **Bottom:** the docked Copilot pane, showing the Copilot wordmark, a collapsed "Reasoning completed in 3 steps ›" row, and the reply "I added a **“How to access Word Copilot”** section with three simple steps and a link to the official *Welcome to Copilot in Word* support page." with that phrase again rendered as a blue underlined link and a grey **microsoft** citation chip. The full, uncropped screenshot (ribbon, status bar, whole window) remains available in Microsoft's original post, linked from the source line under this section.
 
 **Verdict:** ✅ MATCH — §11 is "Word can add hyperlinks for you"; the crop shows the inserted section containing a real, live hyperlink and Copilot's own statement that it added that link.
-says it added "a link to the official … support page", which is exactly the capability described.
+says it added "a link to the official … support page", which is exactly the capability described
+**Annotated 15 September 2026 (house style, verified on the render):** One callout, "It inserted the link", with the dot past the full stop that follows the blue underlined link text in the document body. The band to the right of that line is empty white, so the leader touches nothing.
+.
+
 
 ## §87 — Teams can translate a meeting recap after the fact
 `32266c10be67e1660ab8200175df50e59be02f3413e3c4963165cf28f1940db1`
@@ -1369,7 +1375,7 @@ Recorded here so the omission is a documented decision rather than an oversight.
 ---
 
 ## §75 — Word reads the pictures in your reference documents
-`c9bb716f0f4738842d1f4fedde1a7a3a30a75a32427b95ac310ca758c992edad`
+`9acac8599bcdba22330bb9d12e95c1991706f39046b80e90f1c36b9cae8f8076`
 
 **Observed:** A Word window, file name **Bee Management A Practical Guide to Healthy.docx**, with a
 **Confidential** sensitivity chip and “Saved” in the title bar. The page shows a heading
@@ -1396,7 +1402,10 @@ document**, and the infographic that lands in the target document is tagged in t
 with **that reference document’s name**. The image is being taken out of the referenced file and
 re-used — which is what this section describes.
 
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts, one per side. "The infographic it placed" reaches the graphic through the page's left margin, the only route that does not cross the bullet list beneath it. "It names the source file" points at the source chip under the pane thumbnail, at a height clear of both the thumbnail above and the suggestion chips below.
+
 ---
+
 
 ## §13 — Notebooks split into two connected experiences
 `bd15fd170af55f0c39f4d22f03e9d175a525c8c9771233bee197279962ae4ea2`
@@ -1547,21 +1556,27 @@ against their section bodies before placement.
 
 
 ## §75 — Word reads the pictures in your reference documents *(image 2 of 3)*
-`da884ad7e945b7584f631a971a6ea13bfb20dce33f7173aa45125552299dd440`
+`2eab2d2d5131b6ddeb459afe550800bd1b214b8c49f6fb91c2c663f14c6cecbb`
 
 **Observed:** An embedded Excel worksheet object shown in edit mode: spreadsheet column letters A through L across the top, row numbers 1 to 21 down the left. Cell A1 contains a white-on-blue heading reading "Account Risk". Beneath it a small table with headers "Risk level" and "Accounts" lists Critical 1, Elevated 1, Moderate 2, Low 4. To the right, inside round selection handles, is a bar chart titled "Accounts by Risk Level" with a vertical axis labelled "Number of accounts" scaled 0 to 5, four blue columns labelled Critical, Elevated, Moderate and Low, and data labels 1, 1, 2 and 4 above them.
 
-**Verdict:** ✅ MATCH — placed in §12 as evidence that the chart's labels are fully legible to a human reader, which is exactly the point the surrounding prose makes. The alt text enumerates these elements and claims nothing more.
+**Verdict:** ✅ MATCH — placed in §12 as evidence that the chart's labels are fully legible to a human reader, which is exactly the point the surrounding prose makes. The alt text enumerates these elements and claims nothing more
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts naming two classes of label that are visibly printed: "Values printed on every bar" beside the data label above the Low column, and "Every category is named" beside the Low category label. Both dots sit in plot white space rather than on a bar, so neither recolours a chart element.
+.
+
 
 ## §75 — Word reads the pictures in your reference documents *(image 3 of 3)*
-`518ea16871dcaf238fffe1279ad8133d3556f40c1657f9d65576e8d17d71d0e1`
+`a43ec938b8ec5f60fe739b4f7de8107b33d743d0b6a8957fb4efb07b29b8a201`
 
 **Observed:** The Copilot pane in Word. Copilot's reply states that the chart appears at the end of the document but that it can only see it as an embedded image without readable chart labels, legends, or data values "in the document view I received", and that it cannot reliably explain the chart's message without the visible axis titles, legend and data labels. It then offers to give a clear explanation if the chart is zoomed into, cropped, or its data pasted, followed by a two-column table previewing that explanation.
 
-**Verdict:** ✅ MATCH — placed in §12 directly beneath the chart it refers to. The phrase quoted in the body copy is transcribed from this image. Surrounding prose bounds the result to my tenant on 14 September 2026 and states plainly that this is not a clean test of the announced reference-document path.
+**Verdict:** ✅ MATCH — placed in §12 directly beneath the chart it refers to. The phrase quoted in the body copy is transcribed from this image. Surrounding prose bounds the result to my tenant on 14 September 2026 and states plainly that this is not a clean test of the announced reference-document path
+**Annotated 15 September 2026 (house style, verified on the render):** One callout, "It says it could not see the labels", with the dot past the end of "legend, and data labels." — the shortest line in the reply, which leaves a clear white run out to the pane edge. Only one, because the pane already states Copilot's own wording at full size.
+.
+
 
 ## §76 — Word highlights the exact words Copilot changed
-`fda072935ae9c3a2b1eb70495adbf835e49d22d394da2c2bd702ef64abd0b2d4`
+`5cef1db4456776da24daf1712df5e2a102892b962611f9587798f35aae1e0dab`
 
 **Observed:** A Word window on the **Home** tab — Aptos (Body) 12, a Styles gallery showing
 **Normal / No Spacing / Heading**, Editing (Find, Replace, Select), Create a PDF, Dictate,
@@ -1595,7 +1610,10 @@ stops **mid-sentence**, around the specific words that were rewritten, and it is
 Done/Undo control — accept or revert. A selection highlight would cover the whole paragraph evenly
 and would not need Undo.
 
+**Annotated 15 September 2026 (house style, verified on the render):** A single dot cannot show an interleave, so the rewritten paragraph is outlined and one callout names the colour: "Blue words are the ones it changed". The leader drops through the one vertical corridor that clears both the floating Done and Undo pill and the page edge.
+
 ---
+
 
 ## §78 — Claude Sonnet 5 appears in Word's model menu *(image 1 of 1)*
 `8c35fe4af71f881780f787517cc3d46821ba9e75a1b1881a93d86ed4ce62de07`
