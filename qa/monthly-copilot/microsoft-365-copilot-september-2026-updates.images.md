@@ -538,7 +538,7 @@ Copilot"; footer "AI-generated content may be incorrect".
 exactly the section. The msn attribution chips are visible, which supports the sourcing point too.
 
 ## §14 — Notebooks suggest what to make next
-`38070500718b0fc7cf5d4ef8850593f42653f87ecabb8fe6cb2b10dd0e573e91`
+`ddbb8f0ff602c6ca303ec913b7f401f349b32d945a2298b14a4b3a5d9a4f12d5`
 
 **Observed:** A Copilot Notebook "Overview" page dated **August 18, 2026** with a refresh icon and a
 shield icon top right. The left column is headed "Summary" over the title **"Global
@@ -561,6 +561,8 @@ a "›" right.
 
 **Verdict:** ✅ MATCH — the **"Suggested content" → "Suggested document"** card is literally the
 notebook proposing what to make next, and the Quick Create row shows the formats it can produce.
+
+**Annotated 15 September 2026 (house style, batch 2):** 420 px of white canvas added on the **left**; one callout, **“Copilot suggests what to make next”**, leading to a red dot on the top-left border of the **Suggested content** card — the single element the section is about. First render put the dot on the **“S” of “Suggested content”**, obscuring the very label it names; corrected by moving it down onto the card border and re-verified by viewing the render. The callout deliberately states only what is visible and does **not** repeat the section's “one more than Microsoft shows” comparison — counting this image, Microsoft's own screenshot also carries **seven** pills (two of them labelled Document). The difference between the two tenants is *composition*, not count.
 
 ## §58 — You can choose how hard Cowork thinks
 `9e3bf829911b0b73897700446cb18bdcebcabc078e85fc32c81f6f8a6af7d3c8`
@@ -1323,7 +1325,7 @@ re-used — which is what this section describes.
 ---
 
 ## §13 — Notebooks split into two connected experiences
-`8076400d931f1030e155d3e3c2a099c53f636b32fcc3ac44b10dc04a7a8c4b95`
+`bd15fd170af55f0c39f4d22f03e9d175a525c8c9771233bee197279962ae4ea2`
 
 **Observed:** A browser tab titled **Notebooks | Microsoft Copilot** at a
 `m365.cloud.microsoft/projects/…` address, with a **Chat** button top right and a zoom control
@@ -1350,6 +1352,9 @@ became *“a lightweight one inside the Copilot app, and a full workspace in One
 sync”*. This frame is the **lightweight one inside the Copilot app**, and the tile reading **More in
 OneNote** is the visible bridge to the second half. That tile is the load-bearing detail; without
 it this would be a generic Notebook screenshot.
+
+
+**Annotated 15 September 2026 (house style, batch 2):** 480 px of white canvas added on the **right**; two white callout boxes with red border and bold red text. **“The full workspace opens in OneNote”** leads to a red dot on the right edge of the **More in OneNote** tile — the bridge between the two halves, which is the section's actual headline. **“Source files stay in the notebook”** leads to a red dot on a row of the **References** list. Verified by viewing the render: both leaders travel entirely through the new pad, neither box covers page content, and neither dot sits on a word.
 
 ---
 
@@ -2191,8 +2196,8 @@ at view time. The black circle is the capturer's annotation, hence the `-annotat
 
 ## §13 — Notebooks split into two connected experiences *(image 2 of 2)*
 
-**File:** `lab-s13-notebook-anatomy.webp` (1513×935, 122.3 KB) — cropped from 1513×960 to remove the Windows taskbar
-**SHA256:** `d7f1f69cae922340670d6784ebaaf7585c636acf9f3cd070af6d1ac6f0dedd3d`
+**File:** `lab-s13-notebook-anatomy.webp` (1973×935, 132.5 KB) — cropped from 1513×960 to remove the Windows taskbar
+**SHA256:** `45954a68bb7fd2d4fc71a37b5da5d7c5cd2dd39b38ab8d0020b584517f46ecac`
 **Source:** My own Caldova tenant, 14 September 2026. A Copilot Notebook titled *Retail Partner Decision*.
 
 **Observed while viewing:** A narrow left rail with three entries — **Overview**, **Create**, **Reference** —
@@ -2214,12 +2219,15 @@ which is itself the point being made, so the wide frame is retained rather than 
 the foot to remove the Windows taskbar; no other alteration. Synthetic Caldova demo-lab content throughout;
 the colleague name in the tooltip is a lab persona and is not repeated in the alt text.
 
+
+**Annotated 15 September 2026 (house style, batch 2):** 460 px of white canvas added on the **left** — the same side as both targets, so the leaders stay short and stay off the UI. **“Nine study guides, audio and a mind map”** leads to a red dot on the **Created content** list; **“Alongside the six source files”** leads to a red dot on the **References** list. Together they make the six-in / eleven-out ratio the prose describes readable without counting. Verified by viewing the render: dots land on the row icons, clear of every filename.
+
 ---
 
 ## §14 — Notebooks suggest what to make next *(image 2 of 2)*
 
-**File:** `lab-s14-quick-create.webp` (720×710, 64.4 KB) — cropped from a 1513×960 capture, box (780,130)-(1500,840)
-**SHA256:** `45bbd4e055e88b469fed931f82ab02cb11c8f23bd429d93df14bb631ba0d03f2`
+**File:** `lab-s14-quick-create.webp` (1900×1420, 142.3 KB) — cropped from a 1513×960 capture, box (780,130)-(1500,840)
+**SHA256:** `3f93a8b5d496dc48b8e69da7f8bd947a4ff9a6c02652185eb55a3aea5a45f0be`
 **Source:** My own Caldova tenant, 14 September 2026. Quick Create row and Key Insights of a Copilot Notebook.
 
 **Observed while viewing:** A **Quick Create** label above seven pill buttons, each with a distinct coloured
@@ -2240,6 +2248,9 @@ my tenant" and "this notebook did not warrant one".
 **Notes:** Display scale 1.00×, exactly native — the crop was sized to the blog's content width. Cropped from
 the same source capture as §44 to make the button labels readable, since at the full frame's 0.48× they are
 not. Verified by viewing the cropped output file, not the source. Synthetic Caldova demo-lab content.
+
+
+**Annotated 15 September 2026 (house style, batch 2):** upscaled **2× with LANCZOS before annotating** (the 720 px source was the smallest in this batch and its pill labels were marginal at blog width), then 460 px of white canvas added on the **left**. One callout, **“Seven quick-create options, including Workbook”**, leads to a red dot on the left edge of the **Workbook** pill — the one option absent from Microsoft's own screenshot in the same section. Verified by viewing the render: labels are now crisp and the dot sits on the pill border, not on the word.
 
 ---
 
