@@ -2075,3 +2075,107 @@ and data are synthetic Caldova demo-lab content. A sliver of an unrelated elemen
 edge of the capture; it carries no text and sits above the conversation.
 
 ---
+
+## §40 — Outlook emails open inside Copilot Chat
+
+**File:** `lab-s40-email-in-chat.webp` (1786×838, 102.3 KB) — native size, no crop
+**SHA256:** `71febfa39028977b1053711b5393a7381d13635067f2bfe974bbc818cb565f16`
+**Source:** My own Caldova tenant, 14 September 2026. Copilot Chat with an email opened in the right pane.
+
+**Observed while viewing:** Two-pane layout. **Left pane** — a right-aligned prompt reading *"whats the latest
+on Saudi registration status"*; a reply stating it found several relevant references across emails, documents
+and meeting transcripts, with a bolded sentence confirming registration approval has not yet been granted for
+the product; an envelope citation chip marked *+1*; then a table with the column headers **Item**, **Latest
+Status** and a third column clipped at the pane edge, whose rows cover the registration decision and expected
+timing, the latter naming a colleague and a month. At the pane foot, a composer holding a pinned envelope
+reference chip with a removal cross. **Right pane** — the email itself rendered inside Copilot: circular
+sender avatar, sender name, a To line naming the recipient, a Sunday date with a time, and several paragraphs
+of body text organised by market. No Outlook chrome is present anywhere in the frame.
+
+**Verdict:** ✅ MATCH — the email is demonstrably rendered inside Copilot rather than in Outlook, which is the
+section's claim. The pinned composer chip, which the section treats as the more interesting finding, is
+visible at the foot of the left pane.
+
+**Notes:** Display scale 0.40×, the smallest in this issue, because the capture is a wide split-screen and the
+split **is** the point — cropping to either pane would destroy the claim being illustrated. The section says
+so plainly and quotes the text that matters, so no claim rests on reading the image. All content is synthetic
+Caldova demo-lab data; the alt text names no individual.
+
+---
+
+## §43 — Copilot Chat sits beside Copilot Search
+
+**File:** `lab-s43-search-in-rail-annotated.webp` (337×301, 7.4 KB) — native size, annotated by the capturer
+**SHA256:** `972a73bd81d938dea354d1a009716a225034022226c2688f09f647df6e0af9e4`
+**Source:** My own Caldova tenant, 14 September 2026. Expanded left rail of Microsoft 365 Copilot.
+
+**Observed while viewing:** The **Copilot** wordmark at the top left, with three icons to its right — an
+app-grid glyph, a checkbox-style glyph, and a pane-toggle glyph enclosed in a hand-drawn black circle added by
+the capturer. Below, a two-part pill switch reads **Chat | Cowork** with *Chat* selected. Beneath that, four
+rail entries stacked vertically, each with a leading icon: **New chat**, **Search**, **Library**,
+**Notebooks**.
+
+**Verdict:** ⚠️ PARTIAL — and the section states this limitation itself, in its own words. The image proves
+**Search is a first-class rail entry one click from chat**, which is what the prose claims from it. It does
+**not** show Microsoft's headline behaviour, chat available in a side pane *while search results are open*,
+because a live search was never captured. The section says explicitly that it cannot confirm that half and
+defers it to the next issue, so nothing is claimed beyond what is visible.
+
+**Notes:** Display scale 2.14×. Small native rail capture, nothing upscaled on disk; labels checked as legible
+at view time. The black circle is the capturer's annotation, hence the `-annotated` suffix.
+
+---
+
+## §44 — Notebooks split into two connected experiences *(image 2 of 2)*
+
+**File:** `lab-s44-notebook-anatomy.webp` (1513×935, 122.3 KB) — cropped from 1513×960 to remove the Windows taskbar
+**SHA256:** `d7f1f69cae922340670d6784ebaaf7585c636acf9f3cd070af6d1ac6f0dedd3d`
+**Source:** My own Caldova tenant, 14 September 2026. A Copilot Notebook titled *Retail Partner Decision*.
+
+**Observed while viewing:** A narrow left rail with three entries — **Overview**, **Create**, **Reference** —
+*Create* highlighted. Under a **Created content** heading, nine study-guide items (including ones named Quiz,
+Summary, Flashcards and Matching), one **.mp3** file carrying a headphone icon, and one mind-map item. Under a
+**References** heading, six source files: five Word-style icons and one Excel-style icon. The main pane is
+headed **Overview** with the date **September 7, 2026** and a refresh control, and contains a **Summary**
+block with body text and numbered citation chips plus thumb controls, a **Quick Create** row of seven coloured
+buttons, and a **Key Insights** block. A hover tooltip over one study guide reads *"Created and added by"*
+followed by a name and avatar. A footer reads *"AI-generated content may be incorrect"*.
+
+**Verdict:** ⚠️ PARTIAL — disclosed in the section. The image fully supports what the prose draws from it: the
+Overview/Create/Reference structure, the six-in / eleven-out ratio, and per-item attribution. It does **not**
+show the OneNote half or the sync between the two, which is the section's actual headline; the prose states
+that it only captured the Copilot side and has not watched the sync work.
+
+**Notes:** Display scale 0.48×. The layout differs materially from Microsoft's own image in the same section,
+which is itself the point being made, so the wide frame is retained rather than cropped. 25 px trimmed from
+the foot to remove the Windows taskbar; no other alteration. Synthetic Caldova demo-lab content throughout;
+the colleague name in the tooltip is a lab persona and is not repeated in the alt text.
+
+---
+
+## §45 — Notebooks suggest what to make next *(image 2 of 2)*
+
+**File:** `lab-s45-quick-create.webp` (720×710, 64.4 KB) — cropped from a 1513×960 capture, box (780,130)-(1500,840)
+**SHA256:** `45bbd4e055e88b469fed931f82ab02cb11c8f23bd429d93df14bb631ba0d03f2`
+**Source:** My own Caldova tenant, 14 September 2026. Quick Create row and Key Insights of a Copilot Notebook.
+
+**Observed while viewing:** A **Quick Create** label above seven pill buttons, each with a distinct coloured
+circular icon, reading left to right and top to bottom: **Audio overview**, **Mind map**, **Study guide**,
+**Infographic**, then **Workbook**, **Document**, **Presentation**. Below a horizontal divider, a **Key
+Insights** label and the bold heading **Partner Selection Tradeoffs**, followed by three bold sub-headings —
+*Coverage Versus Capability*, *Commercial Framework Tension*, *Meridian Capability Advantage* — each with two
+bullets. Every bullet terminates in one or two small numbered citation chips (values 1, 3, 4 and 5 observed).
+The final bullet is clipped by the crop boundary mid-sentence. **No Suggested content card is present
+anywhere in the frame.**
+
+**Verdict:** ⚠️ PARTIAL — and the partiality is the section's main finding rather than a defect. The image
+directly proves the seven-option palette including **Workbook**, which Microsoft's own screenshot in the same
+section omits, and proves citations on every insight. It also proves the **absence** of the proactive
+Suggested content card at capture time, which the section reports honestly as unresolved between "not yet in
+my tenant" and "this notebook did not warrant one".
+
+**Notes:** Display scale 1.00×, exactly native — the crop was sized to the blog's content width. Cropped from
+the same source capture as §44 to make the button labels readable, since at the full frame's 0.48× they are
+not. Verified by viewing the cropped output file, not the source. Synthetic Caldova demo-lab content.
+
+---

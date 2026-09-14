@@ -1253,9 +1253,27 @@ On mobile you can describe a message and Copilot creates an **embedded Outlook d
 
 ### 40. Outlook emails open inside Copilot Chat
 
-*For: Microsoft 365 Copilot Chat · Generally available 25 August 2026*
+*For: Microsoft 365 Copilot Chat · Generally available 25 August 2026 · Tested in my tenant 14 September 2026*
 
 You can **open an Outlook email within Copilot Chat**, rather than following a link out to Outlook and losing the thread of the conversation.
+
+**What I found on 14 September 2026.** This works, and it does slightly more than the description suggests.
+
+<img src="/images/blog/copilot-september-2026/lab-s40-email-in-chat.webp" alt="Copilot Chat in my own tenant, split into two panes. On the left, my question reads: whats the latest on Saudi registration status. Copilot answers that it found several relevant references across emails, documents and meeting transcripts and that the status is consistent across all of them, with a bolded conclusion that the market has not yet received registration approval. A small envelope citation chip sits beside the answer. Below is a two-column table of item and latest status, covering the registration decision and the expected timing. At the foot of the left pane the composer holds a pinned envelope chip naming the email, with a small cross to remove it. The right pane shows the email itself opened inside Copilot: sender avatar and name, the recipient, a Sunday date and time, and the full body text laid out by market." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. The cited email, opened beside the answer rather than in Outlook.</em></p>
+
+I asked a question, Copilot answered from a mix of emails, documents and meeting transcripts, and cited an
+email. Clicking that citation opened the message in a pane on the right, inside Copilot, with the sender,
+recipient, timestamp and full body all present. Outlook never opened.
+
+The part I did not expect is at the bottom of the left pane. The email stayed **pinned into the composer** as
+a reference chip, with a small cross to take it back out. So opening a citation does not just show you the
+source, it adds it to the conversation, and your next question is grounded in it whether you meant that or
+not. That is useful most of the time and worth knowing about the rest of the time.
+
+One honest caveat on this image: it is a wide split-screen, so the fine text sits small on the page. The
+things worth reading are quoted above.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Copilot cites emails constantly. Every citation used to be a trapdoor out of the conversation, and people did not come back.</p>
@@ -1307,9 +1325,25 @@ Microsoft states that *"security, compliance, privacy, and enterprise controls r
 
 ### 43. Copilot Chat sits beside Copilot Search
 
-*For: Microsoft 365 Copilot Search · Generally available 25 August 2026*
+*For: Microsoft 365 Copilot Search · Generally available 25 August 2026 · Tested in my tenant 14 September 2026*
 
 Copilot Chat is available in the **side pane while you use Copilot Search**, so you can ask a follow-up without abandoning the search results.
+
+**What I found on 14 September 2026.** Search has a permanent home in the left rail, one click from the chat
+you are already in.
+
+<img src="/images/blog/copilot-september-2026/lab-s43-search-in-rail-annotated.webp" alt="The expanded left rail of Microsoft 365 Copilot in my own tenant. At the top is the Copilot wordmark with three small icons to its right, the last of which is circled in black. Below is a two-part pill switch reading Chat and Cowork with Chat selected. Beneath that, four rail entries are listed vertically with icons: New chat, Search, Library and Notebooks." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. Search sitting in the rail beside Library and Notebooks. The circled icon expands the rail so the labels appear.</em></p>
+
+The rail lists **New chat, Search, Library and Notebooks**, with Chat and Cowork as two tabs above them. If
+you cannot see those words, press the circled icon at the top right of the rail, which expands it from icons
+to labels. That caught me out.
+
+What this shows is the entry point, and I want to be precise about what it does not show. Microsoft's claim is
+that chat is available **in a side pane while you are using Search**, so you can ask a follow-up without
+leaving your results. I captured the rail rather than a live search with the pane open, so I cannot confirm
+that half from what I have here. I will pick it up for the next issue.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Search finds the document; chat explains it. Splitting those across two screens meant doing one and forgetting the other.</p>
@@ -1319,9 +1353,28 @@ Copilot Chat is available in the **side pane while you use Copilot Search**, so 
 
 ### 44. Notebooks split into two connected experiences
 
-*For: Copilot Notebooks + OneNote · Rolled out August 2026*
+*For: Copilot Notebooks + OneNote · Rolled out August 2026 · Tested in my tenant 14 September 2026*
 
 Copilot Notebooks became **two connected experiences**: a lightweight one inside the Copilot app, and a full workspace in OneNote, kept in sync.
+
+**What I found on 14 September 2026.** The notebook in my tenant does not look much like the one in
+Microsoft's screenshot above, which is worth showing rather than glossing over.
+
+<img src="/images/blog/copilot-september-2026/lab-s44-notebook-anatomy.webp" alt="A Copilot Notebook open in my own tenant, titled Retail Partner Decision. A narrow left rail lists three sections, Overview, Create and Reference, with Create highlighted. Below it a Created content list holds nine study guides with names such as Quiz, Summary, Flashcards and Matching, an MP3 file marked with a headphone icon, and a mind map. Under that, a References list holds six source files, a mix of Word documents and an Excel workbook. The main pane is headed Overview with a date of September 7, 2026 and a refresh control. It contains a Summary section with body text and numbered citation chips, a Quick Create row of seven coloured buttons, and a Key Insights section. A hover tooltip over one study guide reads Created and added by, followed by a colleague name. A footer note reads AI-generated content may be incorrect." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. A notebook with nine generated study guides, an audio overview and a mind map sitting alongside six source files.</em></p>
+
+Mine has a three-part rail down the left, **Overview, Create and Reference**, with everything the notebook has
+produced listed separately from everything it was fed. Microsoft's image shows a different arrangement, with
+reference tiles on the right. Both are current, which tells you this is still moving.
+
+The thing that struck me is the ratio. Six source files went in. Nine study guides, an audio overview and a
+mind map came out, each one attributed to the person who made it. A notebook stops being a folder at that
+point and starts being somewhere work accumulates.
+
+What I cannot show you is the half this section is actually about. The claim is that there are now **two
+connected experiences kept in sync**, the light one in Copilot and the full one in OneNote. I only captured
+the Copilot side, so the sync is not something I have watched work.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Notebooks were caught between being a quick scratchpad and a real workspace, and did neither well. Splitting the job while keeping one set of content is the sensible resolution — as long as the sync holds.</p>
@@ -1333,9 +1386,32 @@ Copilot Notebooks became **two connected experiences**: a lightweight one inside
 
 ### 45. Notebooks suggest what to make next
 
-*For: Copilot Notebooks · Rolled out August 2026*
+*For: Copilot Notebooks · Rolled out August 2026 · Tested in my tenant 14 September 2026*
 
 Notebooks gained **proactive artifact recommendations**. Drawing on Work IQ and what is already in the notebook, Copilot suggests generating a Word document, an Excel workbook or a PowerPoint deck from the material you have collected.
+
+**What I found on 14 September 2026.** The palette in my tenant has **seven** options, one more than
+Microsoft's own screenshot shows.
+
+<img src="/images/blog/copilot-september-2026/lab-s45-quick-create.webp" alt="A close crop of a Copilot Notebook in my own tenant. A Quick Create row offers seven buttons, each with a coloured icon: Audio overview, Mind map, Study guide, Infographic, Workbook, Document and Presentation. Below a divider, a Key Insights section is headed Partner Selection Tradeoffs and contains three sub-headings. Coverage Versus Capability notes that 310 stores give one partner the broadest reach but that coverage is offset by weaker category management, logistics and reporting. Commercial Framework Tension notes an exclusivity request for twelve months on the core product and that granting it could materially affect launch economics. Meridian Capability Advantage notes an existing relationship and operational readiness, and integrated logistics with live EDI connectivity and cold-chain support. Every bullet ends with one or two small numbered citation chips." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. Quick Create, with Workbook present between Infographic and Document.</em></p>
+
+Microsoft's image shows six: audio overview, mind map, study guide, infographic, document and presentation.
+Mine also has **Workbook**, which is the Excel one the description promises but the official screenshot leaves
+out. Small thing, but it is the difference between "we said spreadsheets" and "there is a button".
+
+Now the honest half. The headline here is *proactive* recommendations, and Microsoft's image shows that
+properly: a Suggested content card putting forward a specific artifact, named and reasoned, with citations.
+There was no card like that in my notebook when I looked. What I had was the fixed palette above, which is a
+menu rather than a suggestion.
+
+I cannot tell from one notebook on one day whether the suggestions had not arrived in my tenant, or whether
+this particular notebook did not warrant one. Either is plausible. It is worth flagging because a permanent
+row of seven buttons and a system that tells you *this specific thing is worth making next* are different
+products, and only the second one solves the problem the section describes.
+
+Worth noticing regardless: every bullet in Key Insights carries a numbered citation back to a source file.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Research collapses at the point where notes have to become a deliverable. A prompt at that exact moment — here is what this could become — is well placed, though it will live or die on whether the suggestions are any good.</p>
