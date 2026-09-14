@@ -1615,6 +1615,8 @@ In the August issue I covered proactive push notifications in the Copilot mobile
 
 So the honest position is: I reported it as announced, with a caveat about the date, and the feature is not coming in that form. If it made it into a communications plan or an adoption deck, take it out.
 
+**One detail I missed in August, and should not have.** The roadmap entry is tagged for **GCC, GCC High and DoD** — and for nothing else. There is no worldwide multi-tenant tag on it. On the roadmap's own record, then, this was a US government cloud item for Android and iOS, which changes who the cancellation actually affects: if you are a commercial tenant, this entry was never describing your tenant to begin with. I am adding that here rather than quietly fixing it, because the August issue did not make the distinction either, and the correction is more useful to you than the original item was.
+
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> This is the first time in this series that something I covered has been cancelled outright. It is a useful reminder that a roadmap entry is a statement of intent, not a commitment — and that the gap between "announced" and "available" sometimes closes in the wrong direction.</p>
 </blockquote>
