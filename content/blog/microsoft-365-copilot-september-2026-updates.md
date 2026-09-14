@@ -916,15 +916,47 @@ The storage choice is worth noticing. A skill is a text file you own, not a hidd
 
 ### 31. Admins can mark SharePoint sites as authoritative
 
-*For: SharePoint + Microsoft 365 Copilot · Admin · Generally available 11 August 2026*
+*For: SharePoint + Microsoft 365 Copilot · Admin · Generally available 11 August 2026 · Checked in my tenant 14 September 2026*
 
 **Authoritative Sites** lets an admin designate sites as official and trusted, and Copilot prioritises them when grounding answers.
+
+**Where it actually lives.** I went looking for this in the SharePoint admin centre on 14 September 2026 and
+could not find it. That turns out to be the story, not a failure of searching. Microsoft's own page, updated
+26 August 2026, says it plainly:
+
+> *"In the current release, configure authoritative sites through PowerShell and CSOM APIs."*
+
+So a capability announced as something an administrator does is, today, a cmdlet:
+
+```powershell
+Set-SPOSite -Identity "https://<tenant>.sharepoint.com/sites/<siteName>" -IsAuthoritative $true
+```
+
+That gap is worth naming, because "admins can mark sites as authoritative" reads like a toggle sitting in a
+settings page, and a fair number of people will go hunting for it the way I did.
+
+**The licensing is better news than you would expect.** This sits under SharePoint Advanced Management, which
+usually implies a paid add-on. It does not here. Microsoft's prerequisites page says the capability is
+unlocked when **at least one person in the tenant has a Copilot licence**, and that person does not have to be
+the administrator. If you are already running Copilot, you already have this.
+
+The rest of the shape is worth knowing before you plan around it:
+
+| | |
+|---|---|
+| **Cap** | 100 sites per tenant |
+| **Delay** | Up to **72 hours** before it shows up |
+| **Scope** | Whole sites only, and never personal sites or OneDrive |
+| **What users see** | A **"From your organization"** label on results in Copilot Search |
+
+That 72-hour wait is the one to plan around. It rules this out as a fix you apply the morning of a launch, and
+it means testing it is a two-sitting job rather than a two-minute one.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Most tenants contain several versions of the same policy, and the newest one is not always the one Copilot finds. This is the cheapest available fix for the single most common complaint about Copilot answers — that it quoted something out of date.</p>
 </blockquote>
 
-📖 [AI at Work Roadmap 561323](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561323) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+📖 [AI at Work Roadmap 561323](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561323) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · [SharePoint authoritative sites in Copilot Search](https://learn.microsoft.com/en-us/sharepoint/sharepoint-authoritative-sites) · [Prerequisites for SharePoint Advanced Management](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-prerequisites)
 
 ---
 
