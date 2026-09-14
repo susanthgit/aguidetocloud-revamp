@@ -92,7 +92,7 @@ not a loss on our side.
 ---
 
 ## §64 — PowerPoint can be locked to your approved template *(image 1 of 2)*
-`3072c5cf061f3ec1d764aefb54f7bcafbf6b28adbf505b3e40adbff34493dedb`
+`89f090c2d8201949a2128ce74f0a02cd1da5cc70e527f0c6b0fb3753528813a6`
 
 **Observed 14 September 2026 (my own tenant):** The Copilot app&rsquo;s **Create** page. A large
 heading reads “What do you want to create?”. Beneath it a row of pill buttons runs off the left
@@ -105,10 +105,13 @@ and finally **About Create**. No Brand Kit contents are visible — this image s
 to them.
 
 **Verdict:** ✅ MATCH — the section describes a setting that does not live in PowerPoint, and the
-image shows the exact path named in the text: Create → More… → Brand kits.
+image shows the exact path named in the text: Create → More… → Brand kits
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts tracing the route the section describes: "Hidden behind More..." beside the More pill, and "The switch lives here" on the highlighted Brand kits entry under Manage brand kits. The first dot sits to the right of the pill rather than on it, so the label stays readable.
+.
+
 
 ## §64 — PowerPoint can be locked to your approved template *(image 2 of 2)*
-`fde67c57ce4bbef2e985244515137702907c543901940daabc93824c49600285`
+`f931282029cff1d55891172df855c4e4b6af454fad168db31ed5ca5cc78f548c`
 
 **Observed:** A settings page of stacked cards: **Logos** ("Ensure correct logo usage across
 scenarios"), **Templates** ("Add branded PowerPoint, Word, Excel and Designer templates to ensure
@@ -123,7 +126,10 @@ elements defined in your template when creating or editing presentations.", butt
 (filled blue) and **Cancel**.
 
 **Verdict:** ✅ MATCH — the section is about locking PowerPoint to an approved template, and the
-image shows exactly that control and its confirmation dialog.
+image shows exactly that control and its confirmation dialog
+**Annotated 15 September 2026 (house style, verified on the render):** The Strict brand adherence toggle is outlined in red rather than dotted, because every leader route into it crosses something — the toggle and the word Off from the right, the full description from the left, the "Strict mode: Off" summary from above. One callout, "Off until you turn it on", sits in the page's own empty area beside the dialog. The dialog itself already carries Microsoft's wording at full size, so it is left unmarked.
+.
+
 
 ## §65 — Slide notes can steer Copilot slide by slide *(image 1 of 2)*
 `b570ef9246ea13dd74fa10bec5b3fea5dd670f541cc295dfb90009adbe07601e`
@@ -150,11 +156,14 @@ and creates content" is precisely the capability this section describes.
 clearly on the left. Alt text amended to "beside the dialog".
 
 ## §65 — Slide notes can steer Copilot slide by slide *(image 2 of 2)*
-`3d642b9bd92c6e403a0802a4ee542aedeadb80a4f258e4a965b37adda3aa6574`
+`44dfa783a5262813f176dd61171b7486e15f3668d3ace7a03e5a03f12e663a9e`
 
 **Observed:** My own tenant. The **Edit details** form for a Brand Kit template, cropped to the form itself so the whole dialog is in shot. **Template Name** "Caldova Brand Template"; **Brand Kit** "Caldova Brand Kit" (greyed dropdown); a **Tags** box with nine chips — PowerPoint, Internal Memo, Strategy Deck, Internal, Executive, Product Management, Engineering, English, Minimalist; a **Description** box reading "A minimalist corporate template for internal communication and strategy, providing structure for presenting research, statistics, and product development updates." with a 162/250 counter; then **Save** (greyed) and **Cancel**. Between the description box and the buttons there is **nothing** — no checkbox, no "Allow note instructions" label, no sub-text.
 
-**Verdict:** ✅ MATCH — the section states that on 14 September 2026 the Allow note instructions checkbox was not present in my tenant. This is that exact dialog, cropped to include the full form top to bottom precisely so the absence cannot be read as a crop artefact. Paired with the official image above it, the comparison is the point.
+**Verdict:** ✅ MATCH — the section states that on 14 September 2026 the Allow note instructions checkbox was not present in my tenant. This is that exact dialog, cropped to include the full form top to bottom precisely so the absence cannot be read as a crop artefact. Paired with the official image above it, the comparison is the point
+**Annotated 15 September 2026 (house style, verified on the render):** One callout, "No note checkbox here on 14 September 2026", with the dot in the empty strip between the Description box and the Save row — where Microsoft's documented note-instructions checkbox would sit. This marks an absence, so the date and tenant bound is carried in the callout text itself rather than left to the prose.
+.
+
 
 ## §66 — You can now author your own PowerPoint skills *(image 1 of 7)*
 `52119ae4170e4cc6156d0b681b3265f69890c06e5d889fa8e93e96b645bb2209`
@@ -185,25 +194,34 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Verdict:** ✅ MATCH — the section says the button made a skills folder at Documents › Copilot › Microsoft PowerPoint › skills and seeded it with a readme and a worked example. The breadcrumb and the two filenames show precisely that, and the timestamps corroborate that it had just been created.
 
 ## §66 — You can now author your own PowerPoint skills *(image 5 of 7)*
-`d9ebd5a6fa1311b95e4170b00765379eb44c0b80a897166b3a3208e6ea70da20`
+`2609404857e9b474d590afc3f1dba943a7092850137d68cc36961d70622365d3`
 
 **Observed:** My own tenant. Back arrow beside "Skills & plugins", close X. Heading **Upload skill**. A line "Already have a skill file?" with an information icon. Body: "Add your own skill files to extend what Copilot can do for you. Files are saved directly to your **OneDrive Skills folder.**" (that phrase underlined as a link). Below, a dashed drag-and-drop area with an upload icon reading "Drag & Drop your files or **Browse**".
 
-**Verdict:** ✅ MATCH — the section says upload writes into the same OneDrive folder. The pane states that itself, which is why it is shown.
+**Verdict:** ✅ MATCH — the section says upload writes into the same OneDrive folder. The pane states that itself, which is why it is shown
+**Annotated 15 September 2026 (house style, verified on the render):** One callout, "Upload just writes to that folder", on the OneDrive Skills folder link — the sentence that shows the upload route and the folder route end up in the same place.
+.
+
 
 ## §66 — You can now author your own PowerPoint skills *(image 6 of 7)*
-`b88d134e9f264a1800467379f37db3720782c3a6eaee25944483b60bc8c2a827`
+`23ec8c1e8b47d4ab99e5ae237211311d5d3b417d03b7182f7e3e4c0ee44ce6c0`
 
 **Observed:** My own tenant. A PowerPoint slide titled **"Copilot Agents vs. Copilot Studio Agents"**, body set as two columns of plain black bullet text with no graphics, no cards and no colour. The right-hand column runs past the bottom edge of the slide area.
 
-**Verdict:** ✅ MATCH — captioned as the "before" state for the visualize-this-slide skill. It is a text-heavy slide that overflows, which is the problem the skill is meant to solve.
+**Verdict:** ✅ MATCH — captioned as the "before" state for the visualize-this-slide skill. It is a text-heavy slide that overflows, which is the problem the skill is meant to solve
+**Annotated 15 September 2026 (house style, verified on the render):** One callout, "Too much text, and it overflows", with the dot just past the right column's last line, where it has run beyond the slide's white boundary. That overflow is the problem the skill is being asked to solve.
+.
+
 
 ## §66 — You can now author your own PowerPoint skills *(image 7 of 7)*
-`5c89949d5908d1d2ac512dd867e6b9778503319cc40883c0de82b64a8e9e6705`
+`996e449edb7490c083cf799c2e344e8bacbf482a9b8b96e828133f8140415061`
 
 **Observed:** My own tenant. The same subject rebuilt: a navy header band carrying "Copilot Agents vs. Copilot Studio Agents", then two white rounded cards each with an icon — left card headed **COPILOT AGENT** in blue, right card headed **COPILOT STUDIO AGENT** in teal — each holding five short lines. A single line runs beneath both cards: "Start in Copilot, graduate to Studio when the work needs custom logic and systems."
 
-**Verdict:** ✅ MATCH — captioned as the "after". Same content as image 6, restructured into a designed two-card layout, which is what the skill claims to do. The closing line is genuinely new, and the caption says so.
+**Verdict:** ✅ MATCH — captioned as the "after". Same content as image 6, restructured into a designed two-card layout, which is what the skill claims to do. The closing line is genuinely new, and the caption says so
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts: "Bullets became cards" on the left card, and "A closing line to land it" on the summary line beneath the two columns. Both describe what the before-and-after pair actually proves, rather than claiming what the model decided on its own.
+.
+
 
 ## §67 — Translation moved into Copilot, and resizes the text for you *(image 1 of 2)*
 `6bf6c3e946e7a08e724d0e70bb5cc4845f7a81528c6c665f31c5fc27fb9a35d6`
@@ -2374,10 +2392,13 @@ H
 ## §62 — lab-s62-add-plugin.webp
 
 - **File:** `lab-s62-add-plugin.webp` (1353×1002, 41.0 KB)
-- **SHA-256:** `c2b04f4b76236ab1f3ad861f05c6c3e7242a153cf07677c3ef32b95bf13de35f`
+- **SHA-256:** `a457adeb5d411465b3efaa6514429a73df3cb61c528adbd94136a776afcca5f5`
 - **Observed while viewing (14 September 2026):** Dialog 'Add a plugin' over the Customize page. Upload area: 'Drag & drop, choose a file, or choose a folder', note '.ZIP or a folder'. Shield warning: 'Plugins can run skills and connect Cowork to external services. Only add plugins from sources you trust.' Line: 'New to plugins? Learn more'. Customize page with Add plugin button visible behind.
 - **Cross-reference:** Directly relevant: side-loading your own .ZIP or folder is who the base64 file parameter is for. Also carries the trust warning quoted in the prose.
-- **Verdict:** ✅ MATCH
+- **Verdict:** ✅ MATC
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts: "Sideload a .ZIP or a folder" on the drop zone's file-type line, and "Only add plugins you trust" on the shield warning — the caution that matters most once a plugin can take files straight out of your session.
+H
+
 
 ## §63 — lab-s63-plugins-mobile.webp
 
