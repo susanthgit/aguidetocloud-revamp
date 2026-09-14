@@ -59,8 +59,9 @@
     </div>
     {{ else if eq .Params.exam_status "beta" }}
     <div class="zt-cert-status zt-cert-status--beta">
-      <strong>Beta{{ with .Params.beta_since }} (since {{ . }}){{ end }}</strong> — typically offered at 80% discount.
+      <strong>Beta{{ with .Params.beta_since }} (since {{ . }}){{ end }}</strong> — beta exams are not scored immediately; results follow once the beta review period closes.
       {{ with .Params.replaces }}Replaces: <strong>{{ . }}</strong>{{ end }}
+      {{ with .Params.status_note }}<div class="zt-cert-status-note">{{ . | markdownify }}</div>{{ end }}
     </div>
     {{ else if eq .Params.exam_status "upcoming" }}
     <div class="zt-cert-status zt-cert-status--upcoming">
@@ -226,18 +227,9 @@
       <p class="cert-compass-link">Compare {{ .Params.exam_code }} across AWS & Google Cloud → <a href="/cert-compass/?tab=matches">Cert Compass</a></p>
       {{ end }}
 
-      {{/* FAQ */}}
-      {{ if .Params.faq }}
-      <div class="zt-cert-faq">
-        <h2>Frequently Asked Questions</h2>
-        {{ range $i, $q := .Params.faq }}
-        <details{{ if eq $i 0 }} open{{ end }} class="zt-cert-faq-item">
-          <summary>{{ add $i 1 }}. {{ $q.question }}</summary>
-          <p>{{ $q.answer }}</p>
-        </details>
-        {{ end }}
-      </div>
-      {{ end }}
+      {{/* FAQ renders once via the shared faq-section partial above (see line ~182).
+           The legacy inline block that used to live here was a duplicate: it emitted the
+           same questions a second time, without markdownify, and was removed 2026-09-14. */}}
 
     </div>{{/* end section 2 reading-body */}}
 
