@@ -940,6 +940,52 @@ usually implies a paid add-on. It does not here. Microsoft's prerequisites page 
 unlocked when **at least one person in the tenant has a Copilot licence**, and that person does not have to be
 the administrator. If you are already running Copilot, you already have this.
 
+**How to actually do it.** I have not run this in my own tenant, so treat what follows as the documented path
+rather than something I have watched work. The steps come from Microsoft's page. I have written them out in
+full because the documentation hands you the one line in the middle and assumes you can supply the rest.
+
+Start by installing the module and signing in. The admin URL is your tenant name with `-admin` on the end,
+which is the same address you see in the browser when you open the SharePoint admin centre.
+
+```powershell
+Install-Module -Name Microsoft.Online.SharePoint.PowerShell -Scope CurrentUser -Force
+Import-Module -Name Microsoft.Online.SharePoint.PowerShell
+
+Connect-SPOService -Url "https://<tenant>-admin.sharepoint.com"
+```
+
+Then find the site you want. Worth listing them rather than typing a URL from memory, because the cmdlet needs
+the exact address and will not guess.
+
+```powershell
+Get-SPOSite -Limit 25 | Select-Object Title, Url
+```
+
+Now check where the site stands before you change anything, set it, then check again. Doing it in that order
+means you get to see the change rather than assume it.
+
+```powershell
+$site = "https://<tenant>.sharepoint.com/sites/<siteName>"
+
+Get-SPOSite -Identity $site | Select-Object Url, IsAuthoritative   # expect False
+Set-SPOSite -Identity $site -IsAuthoritative $true
+Get-SPOSite -Identity $site | Select-Object Url, IsAuthoritative   # expect True
+```
+
+And to undo it:
+
+```powershell
+Set-SPOSite -Identity $site -IsAuthoritative $false
+```
+
+One thing to watch for. If PowerShell says it cannot find a parameter named `IsAuthoritative`, that is far
+more likely to be an old copy of the module than a problem with your tenant. Run `Update-Module
+Microsoft.Online.SharePoint.PowerShell` and try again.
+
+If you are doing this for more than a handful of sites, Microsoft documents a heavier CSOM route with bulk
+commands for adding and removing several at once, plus a `GetAuthoritativeResources()` call that lists
+everything currently marked. It needs an app registration to set up, so it only earns its keep at volume.
+
 The rest of the shape is worth knowing before you plan around it:
 
 | | |
