@@ -132,7 +132,7 @@ image shows exactly that control and its confirmation dialog
 
 
 ## §65 — Slide notes can steer Copilot slide by slide *(image 1 of 2)*
-`b570ef9246ea13dd74fa10bec5b3fea5dd670f541cc295dfb90009adbe07601e`
+`054b8a41391f5d3b2a1cf7083b8e5eac8e027234aa763a1dbab3c3bb09f5a645`
 
 **Observed:** A Brand Kit page for "Adventure Works Cycle" (breadcrumb "‹ Manage Brand Kits",
 a Share button top right), with the same Logos / Templates / Fonts / Colors / Images cards behind
@@ -154,6 +154,9 @@ the dialog on a purple-green gradient.
 and creates content" is precisely the capability this section describes.
 **Alt-text correction made:** I had written the thumbnail was "on the right"; at full size it is
 clearly on the left. Alt text amended to "beside the dialog".
+
+**Annotated 15 September 2026 (house style, verified on the render):** one callout added in a white right margin — “Slide notes now steer Copilot” — pointing at the red box Microsoft already drew around the “Allow note instructions” toggle. No second box was drawn over it. Microsoft’s border is thin enough that an automated red-coverage scan scored it at only 24 pixels after downscaling and read as unannotated; a direct pixel count on the full-size file measured 2,254 red pixels spanning x691–1026, y609–661, confirming the existing box.
+
 
 ## §65 — Slide notes can steer Copilot slide by slide *(image 2 of 2)*
 `44dfa783a5262813f176dd61171b7486e15f3668d3ace7a03e5a03f12e663a9e`
@@ -187,11 +190,14 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Verdict:** ✅ MATCH — the section quotes this sentence verbatim and describes this button as the mechanism. Both are in the image.
 
 ## §66 — You can now author your own PowerPoint skills *(image 4 of 7)*
-`acbe40e8b310f2b06b52cde39edcf8b79fcfc4869acec06518fc371d0cdfa0e4`
+`35eaf1ec2e35bec9e3140cf0ea3ff9510d68d788120990bd7c4d3a2931c40d29`
 
 **Observed:** My own tenant, OneDrive on the web, cropped to the breadcrumb and file list (browser chrome, left navigation, and the tenant host name in the address bar all removed). Breadcrumb: **My files › Documents › Copilot › Microsoft PowerP… › skills**. A file-type filter row (Word, Excel, PowerPoint, OneNote icons). Columns Name / Modified / Modified By. Two rows: a **folder** "create-infographic-summary.example" and a file **"README.md"**, both "A few seconds ago", both by Colin Ballinger.
 
 **Verdict:** ✅ MATCH — the section says the button made a skills folder at Documents › Copilot › Microsoft PowerPoint › skills and seeded it with a readme and a worked example. The breadcrumb and the two filenames show precisely that, and the timestamps corroborate that it had just been created.
+
+**Annotated 15 September 2026 (house style, verified on the render):** two callouts added into white top and bottom margins. “The path is the trick” points at the breadcrumb, which reads Documents > Copilot > skills. “One folder per skill” points at the create-infographic-summary.example row in the file list. The two-way pad was used because this frame has no usable whitespace on either side.
+
 
 ## §66 — You can now author your own PowerPoint skills *(image 5 of 7)*
 `2609404857e9b474d590afc3f1dba943a7092850137d68cc36961d70622365d3`
@@ -224,11 +230,14 @@ clearly on the left. Alt text amended to "beside the dialog".
 
 
 ## §67 — Translation moved into Copilot, and resizes the text for you *(image 1 of 2)*
-`6bf6c3e946e7a08e724d0e70bb5cc4845f7a81528c6c665f31c5fc27fb9a35d6`
+`4a9805d96b96f9fd59c19c14dbcac694e9ea455ea0aee6cff0de6bcba4c3dab9`
 
 **Observed:** The Copilot pane in PowerPoint, portrait. My prompt bubble reads "Translate this presentation into German". Below it, a "Reasoned in 5 steps" block is expanded and shows: "Thinking it through", "Mapping it out", "I'm checking whether slides 1, 3, and 4 are empty by looking at their contents", "I'm translating the editable text on the one slide that contains it and noting that the image-based slides can't be changed", and "I'm reducing the text size or turning on automatic fitting for the two body areas on slide 2 so the content stays inside the box". The reply below is in German: "Die Textinhalte sind jetzt auf Deutsch, mit angepasster Schriftgröße, damit alles sauber in die Platzhalter passt. Produktnamen (Copilot, Copilot Studio, Teams) blieben unverändert." A second German paragraph notes that slide 1 contains no text and slides 3 and 4 are each a single full-screen image whose burned-in text cannot be translated directly.
 
 **Verdict:** ✅ MATCH — the section's claim is that translation moved into Copilot and that it resizes text to fit. The image carries both: the prompt shows translation invoked from the Copilot pane with no menu, and the fourth reasoning step states the resize behaviour in Copilot's own words. The German reply is quoted and translated in the surrounding prose, and the limitation about image-based slides is reported rather than omitted.
+
+**Annotated 15 September 2026 (house style, verified on the render):** two callouts in a white right margin; the black box already baked into this capture around “Reasoned in 5 steps” is left untouched. “Image slides can’t be translated” points at the end of the reasoning line saying image-based slides can’t be changed; “It resizes text so it still fits” points at the line about keeping content inside the box on slide 2. Both dots were moved after a first pass put them inside the text: profiling each row at 6px steps found the two shortest lines in the reasoning block ending at x283 and x292, and the dots were placed past those.
+
 
 ## §67 — Translation moved into Copilot, and resizes the text for you *(image 2 of 2)*
 `2d3b4346b351926a7b3ccb7af5ba7988571e52dc409fb07fab5c9ccfee015066`
@@ -241,11 +250,14 @@ clearly on the left. Alt text amended to "beside the dialog".
 
 
 ## §68 — Copilot can edit SmartArt on the canvas *(image 1 of 5)*
-`9566e1d829387564b4f3fe0a24125074b520883a6c79450dcfcd261b2bcd3023`
+`1004e72d33cd45b9668f656f77e4fbc9c1a9ec1f961c1d3f534be79b0319d8f4`
 
 **Observed:** The Copilot pane in PowerPoint, portrait. An expanded reasoning list shows three steps: "I am checking slide 3 now to see its current content and layout"; "I'm replacing the bullet list with a clean two-column card diagram using simple shapes and styled headers for a SmartArt-like look"; and "I'm building a SmartArt-style two-column layout with colored headers and five rows under each, keeping the title and placing the new elements precisely".
 
 **Verdict:** ✅ MATCH — this is the evidence for the section's central distinction. The words "simple shapes", "SmartArt-like" and "SmartArt-style" are Copilot's own, and the prose quotes the middle step verbatim rather than paraphrasing it. Nothing in the image contradicts the claim that this is not PowerPoint's SmartArt engine.
+
+**Annotated 15 September 2026 (house style, verified on the render):** two callouts in a white right margin. “Shapes, not real SmartArt” points at the end of the reasoning line describing styled headers for a SmartArt-like look — the distinction the section is making. “It places each element itself” points at the line about placing new elements precisely.
+
 
 ## §68 — Copilot can edit SmartArt on the canvas *(image 2 of 5)*
 `8c5f688244a6ba2da66a1bb5007e8645f30d37977ced99c757ab231839717f5a`
@@ -258,11 +270,14 @@ clearly on the left. Alt text amended to "beside the dialog".
 
 
 ## §68 — Copilot can edit SmartArt on the canvas *(image 3 of 5)*
-`5ad38229f3fe8cf0629b6ee4d99a3c6c7206afd7feaac0627b9dae342b022364`
+`7961f76414b1c70312e466d64a79b03778e713d5ffe5b8ef35208aeef9b36367`
 
 **Observed:** A close crop of the Copilot prompt box in PowerPoint. A dropdown labelled "Edit" sits above the typed prompt "match the flow left to right and match my brand colors".
 
 **Verdict:** ✅ MATCH — the surrounding prose says the layout change was requested in one short line, and the image shows exactly that line. The "Edit" dropdown is visible but not claimed about in the prose beyond noting the mode exists.
+
+**Annotated 15 September 2026 (house style, verified on the render):** one callout only — “One plain-English follow-up” — pointing at the end of the typed prompt about brand colours. A second callout was deliberately not added: this is a short, nearly empty strip, and two long parallel leaders across it would read as clutter.
+
 
 ## §68 — Copilot can edit SmartArt on the canvas *(image 4 of 5)*
 `cc0a1e942a69e80f248f6b90d94dad650dec3060afc5fbdc7f29a48cc4173d75`
@@ -285,18 +300,24 @@ clearly on the left. Alt text amended to "beside the dialog".
 
 
 ## §69 — PowerPoint can build a deck from an email *(image 1 of 3)*
-`0000311628d906e5c6068439fe344c37b35949b41e1fefee82331ce8563bba3b`
+`eb41c6b9d56e1eb8af5a1e4703ddc7ac4074db177be3620b018afac0e8af37de`
 
 **Observed:** The Copilot pane in PowerPoint, portrait. The prompt bubble reads "Create a presentation about Caldenza Relief - range and pack format email from Miguel Garcia". Below it an expanded reasoning list shows four steps: "Mapping it out", "Looking at the details", "I'm locating Miguel Garcia's email so I can build the deck", and "Exploring approaches".
 
 **Verdict:** ✅ MATCH — the section claims an email can be used as source material, and that in practice it is reached by description rather than attachment. The image shows exactly that: a plain-language prompt naming the sender and topic, and a reasoning step confirming Copilot went looking for the email. No attachment control or file chip appears anywhere in the prompt, which is consistent with the prose saying there is no picker.
 
+**Annotated 15 September 2026 (house style, verified on the render):** two callouts in a white right margin. “Just name the email in the ask” points at the end of the prompt naming the sender; “It finds the email itself” points at the end of the instruction to build the deck. A third callout naming the Auto model pill was dropped after measurement: the only clear gap beside it is 19 source pixels wide and runs hard against the orange edit button, so the dot would have recoloured a coloured control.
+
+
 ## §69 — PowerPoint can build a deck from an email *(image 2 of 3)*
-`5ee3ce8d7d0afdf2a9c06cf3bf9ad40dc02b39f246d788c8f3eada1ed94df98a`
+`6920f044b4f42d55d3201857e772a86ccc948d96603ab09bd03a175e7a3517a2`
 
 **Observed:** A Copilot prompt card in PowerPoint headed "How should your presentation look and feel?" with radio options. First, marked Recommended: "Your organization's templates - Use templates from my organization's brand kits." Then three styles with one-line descriptions: "Clinical Navy & White", "Warm Sand & Deep Teal", "Bold Charcoal Data Focus". A final option reads "Enter another option". Confirm and Skip all buttons sit at the bottom.
 
 **Verdict:** ✅ MATCH — this is the evidence for the section's cross-reference to §5. The brand kits wording is legible and verbatim, and the three named styles match the prose. The prose claims only that brand kits appear on the create path; it does not claim the option was selected or that it worked, and the image is not asked to prove more than it shows.
+
+**Annotated 15 September 2026 (house style, verified on the render):** three callouts in a white right margin. “It asks before it builds” runs on a shallow diagonal to the end of the question asking how the deck should look and feel; “Your brand kit is the default” points at the Recommended pill on the organisation’s templates option; “Three looks, or write your own” points into the “Enter another option” field below the three named styles (Clinical Navy & White, Warm Sand & Deep Teal, Bold Charcoal Data Focus).
+
 
 ## §69 — PowerPoint can build a deck from an email *(image 3 of 3)*
 `8b861abba3bf928ebaca116ed53ad70d4fe1c35e34b8ff37874dd370b36bd89a`
@@ -345,11 +366,14 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Verdict:** ✅ MATCH — the section claims Copilot-based creation works in the PowerPoint web app. The image is unmistakably the web app rather than the desktop client, and it supports the stronger point the prose actually makes: the entry point leads the page rather than hiding in a menu.
 
 ## §73 — Presentations can be grounded in web sources *(image 1 of 2)*
-`215af01dd9456157396dd2193539c573e48e7ff4c6abc24df5fdf3e993e3143f`
+`d8c398fcc895fa53cc8c1538cd0801f6621ba9e1309c19966b0f8731f675d58a`
 
 **Observed:** The Copilot create prompt box in the PowerPoint web app. At the top of the box sits a source chip with a document icon reading "support.microsoft.com/en-" (truncated), with a control to its right. Below it the typed prompt reads "Create a presentation about How copilot notebooks work, use this web link as the only source" followed by the pasted URL rendered as a link.
 
 **Verdict:** ✅ MATCH — this is the evidence for the section's contrast with §6. A chip is present and attached to the prompt, which is what the prose claims a pasted URL becomes, and it visibly differs from §6 where no attachment appeared. The chip text is truncated by the UI itself, not by the crop.
+
+**Annotated 15 September 2026 (house style, verified on the render):** two callouts in a white right margin. “Paste the link in the ask” points at the end of the pasted support.microsoft.com URL in the prompt; “The link becomes a source chip” runs on a diagonal down to the resulting source chip below, the diagonal chosen so the leader clears the chip’s expand button rather than crossing it.
+
 
 ## §73 — Presentations can be grounded in web sources *(image 2 of 2)*
 `8960c57b859c3491eb60d15a1fedecf306f449241f1ec5f41103543a66ca77f8`
@@ -804,7 +828,7 @@ the message heading and omitted the card's actual header. The header is the **ag
 **Annotated 15 September 2026 (house style, verified on the render):** Upscaled 2.2× (the source is 733×159) and padded on the left. Rather than a dot, a red box outlines the phrase “the AI creation experience” inside Microsoft's own blocking message, with the callout “Building spends credits too” — that phrase is the evidence for this section's claim that credits are consumed while makers build, not only when agents run. **Correction made before acceptance:** the box's right edge first clipped the “a” of the following word “and”; pulled back to close just after “experience”.
 
 ## §38 — New designers for agents and workflows
-`6d8cfd54ef3009baffebbe96886b0bdc6e9e18bc9c356a9e5fbdef0e7fe40707`
+`50c67f9d0f7e39be9f9b58592db9a4b2b5f0208d04de4b891cd9ad4e70ebdaee`
 
 **Observed:** An agent editing surface titled **"Northwind Investment Advisor"** with tabs **Build**
 (selected), **Preview**, **Evaluate**, **Monitor** and a blue **Publish** split-button at the top
@@ -845,6 +869,9 @@ concrete, quotable details visible in Microsoft's own screenshot.
    fixing it, because it is exactly the confirmation-bias failure Rule #8 exists to catch.
 2. **The alt text was wrong** — it said Connected agents "**delegate** across agents to complete
    work"; the UI reads "**Collaborate** across agents to complete work". Corrected.
+
+**Annotated 15 September 2026 (house style, verified on the render):** three red callouts added into a white top and right margin. “Build, preview, evaluate, monitor” drops to a dot just past the tab row, which reads Overview / Knowledge / Tools / Agents / Topics with Build, Preview, Evaluate and Monitor along the top. “Work IQ, in Copilot Studio” points at the Work IQ chip in the Knowledge row. “Tools where you build” points at the Update record chip in the Tools row. The dot after the tab row was moved from x556 to x575 in source space after OCR measured the word “Monitor” ending at x548, and the Work IQ dot from x799 to x770 after the chip measured x710–746; both labels were widened on a second render so no word is orphaned onto its own line.
+
 
 ## §24 — Domain exclusion is back
 `ed49e5c279fbf5dc4496e5a920f997b65a07ec4b5765b5ff4f1bc8717004b0ef`
@@ -1454,7 +1481,7 @@ it this would be a generic Notebook screenshot.
 ---
 
 ## §39 — An Agent Review Tool for checking agents before release
-`984d94ef69ffae3f24d6a09d50853b1a81cb2854d6f08c03fe656d1c983ed54d`
+`ae6b7626ef7efafa993810593acfdcd75b1360e63e35e05cc86c0e5b010f3857`
 
 **Observed:** A breadcrumb reading **Agent Review Tool › ZAVA Visual Merchandiser** with a green
 **Live** pill, and top-right buttons **Export PDF** (with a dropdown caret) and a blue **Re-run
@@ -1498,6 +1525,9 @@ before-release checking the section is about: a named agent, deterministic rule 
 pass/fail count, and each finding linked to an official Microsoft Learn reference.
 
 ---
+
+**Annotated 15 September 2026 (house style, verified on the render):** a red box plus two callouts. The box encloses the caveat line inside Review summary — “Deterministic rule outcomes + evaluation coverage; not a measure of answer quality” — which is the sentence the section turns on, and “A config score, not answer quality” points straight at it. “Review, map, and cost” drops from the top margin to the tab row (Review / Agent map / Cost & efficiency). A third planned callout on “every finding is grounded in parsed agent data” was dropped: OCR showed that line actually ends at x857, not x507, so every approach path crossed either the Review summary card, the Review tab or the learn.microsoft.com reference URL, and a leader over body text is worse than no callout.
+
 
 ## §34 — Four enforcement rules per environment
 `23c7676420f2730bc9754f085e4437f7f55d32a28099ea1c129a469f1993a472`
@@ -2507,8 +2537,11 @@ H
 
 ## §63 — lab-s63-plugins-mobile.webp
 
-- **File:** `lab-s63-plugins-mobile.webp` (590×1246, 38.6 KB)
-- **SHA-256:** `5731bdd63dc0ad07376b60be1e152aa880f58106211ab6b2b601402c7993963c`
+- **File:** `lab-s63-plugins-mobile.webp` (1882×2242, 126.8 KB)
+- **SHA-256:** `822633be4842a10acc34c2d26f9574e4fd5a3d1d15fc1dbd41883afb8f715215`
 - **Observed while viewing (14 September 2026):** Phone sheet headed Customise. Tabs 'Plug-ins' and 'Skills', Plug-ins selected. Installed: three Dynamics 365 entries, all toggles Off. Discover: Memoket, Descrybe Legal Engine, DiligenceSquared, DeepL, Wolfram Research, each with an Add button. Search plug-ins box at the bottom.
 - **Cross-reference:** Proves plugins are configurable on mobile, not just visible. Supports the Plugins/Plug-ins naming split and the Discover ordering difference stated in the prose.
 - **Verdict:** ✅ MATCH
+
+**Annotated 15 September 2026 (house style, verified on the render):** three callouts in a white right margin against this dark-mode phone capture. “Plug-ins and Skills, now on mobile” points at the Skills pill beside Plug-ins; “Dynamics plug-ins ship off” points at the Off control on the Dynamics 365 Sales row; “Third-party MCP connectors” points at the Add button on the Descrybe Legal Engine row. The first clearance scan flagged all three dots as collisions because the harness counts dark pixels as ink — on a dark-mode capture the background itself is dark. Re-scanning for light ink instead showed zero text at all three positions.
+
