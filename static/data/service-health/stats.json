@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T12:37:44.471976+00:00",
+  "generated_at": "2026-09-14T19:18:33.276314+00:00",
   "total_incidents_tracked": 101,
   "services": [
     {
@@ -19,12 +19,12 @@
       "service": "Microsoft 365 suite",
       "short_name": "M365 Suite",
       "icon": "📦",
-      "total_incidents": 22,
+      "total_incidents": 21,
       "active_incidents": 5,
-      "avg_duration_minutes": 5489,
+      "avg_duration_minutes": 5142,
       "last_incident": "2026-09-13T04:56:15.767000+00:00",
       "classifications": {
-        "advisory": 17,
+        "advisory": 16,
         "incident": 5
       }
     },
@@ -55,6 +55,32 @@
       }
     },
     {
+      "service": "Microsoft Purview",
+      "short_name": "Purview",
+      "icon": "🔍",
+      "total_incidents": 5,
+      "active_incidents": 1,
+      "avg_duration_minutes": 18542,
+      "last_incident": "2026-09-14T16:41:47.403000+00:00",
+      "classifications": {
+        "incident": 2,
+        "advisory": 3
+      }
+    },
+    {
+      "service": "Microsoft 365 apps",
+      "short_name": "M365 Apps",
+      "icon": "💼",
+      "total_incidents": 5,
+      "active_incidents": 2,
+      "avg_duration_minutes": 2984,
+      "last_incident": "2026-09-11T12:36:11.263000+00:00",
+      "classifications": {
+        "advisory": 4,
+        "incident": 1
+      }
+    },
+    {
       "service": "Exchange Online",
       "short_name": "Exchange",
       "icon": "📧",
@@ -77,32 +103,6 @@
       "last_incident": "2026-08-31T04:15:00+00:00",
       "classifications": {
         "advisory": 5
-      }
-    },
-    {
-      "service": "Microsoft Purview",
-      "short_name": "Purview",
-      "icon": "🔍",
-      "total_incidents": 5,
-      "active_incidents": 0,
-      "avg_duration_minutes": 16616,
-      "last_incident": "2026-08-13T21:07:00+00:00",
-      "classifications": {
-        "advisory": 4,
-        "incident": 1
-      }
-    },
-    {
-      "service": "Microsoft 365 apps",
-      "short_name": "M365 Apps",
-      "icon": "💼",
-      "total_incidents": 4,
-      "active_incidents": 1,
-      "avg_duration_minutes": 2984,
-      "last_incident": "2026-08-24T13:00:00+00:00",
-      "classifications": {
-        "advisory": 3,
-        "incident": 1
       }
     },
     {
@@ -207,8 +207,8 @@
   "monthly": [
     {
       "month": "2026-09",
-      "incident_count": 18,
-      "services_affected": 5
+      "incident_count": 20,
+      "services_affected": 7
     },
     {
       "month": "2026-08",
@@ -217,7 +217,7 @@
     },
     {
       "month": "2026-07",
-      "incident_count": 28,
+      "incident_count": 26,
       "services_affected": 8
     }
   ]
