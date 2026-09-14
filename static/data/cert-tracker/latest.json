@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-09-14T00:10:05Z",
-  "exam_count": 55,
+  "exam_count": 59,
   "categories": [
     "AI",
     "Azure",
@@ -1614,11 +1614,10 @@
         "azure"
       ],
       "category": "AI",
-      "status": "beta",
+      "status": "active",
       "retirement_date": "",
       "replacement": "",
       "replaces": "AI-102",
-      "beta_since": "2026-04",
       "updated_at": "2026-07-07 18:58:00+00:00",
       "skills_date": "April 16, 2026",
       "skill_areas": 5,
@@ -1661,11 +1660,10 @@
         "azure"
       ],
       "category": "AI",
-      "status": "beta",
+      "status": "active",
       "retirement_date": "",
       "replacement": "",
       "replaces": "",
-      "beta_since": "2026-05",
       "updated_at": "2026-05-05 15:02:00+00:00",
       "skills_date": null,
       "skill_areas": 4,
@@ -1704,11 +1702,10 @@
         "azure"
       ],
       "category": "AI",
-      "status": "beta",
+      "status": "active",
       "retirement_date": "",
       "replacement": "",
       "replaces": "DP-100",
-      "beta_since": "2026-03",
       "updated_at": "2026-03-05 17:45:00+00:00",
       "skills_date": null,
       "skill_areas": 5,
@@ -1751,11 +1748,10 @@
         "windows-server"
       ],
       "category": "Azure",
-      "status": "beta",
+      "status": "active",
       "retirement_date": "",
       "replacement": "",
       "replaces": "AZ-800 + AZ-801",
-      "beta_since": "2026-06",
       "updated_at": "2026-07-06 21:43:00+00:00",
       "skills_date": null,
       "skill_areas": 7,
@@ -1886,9 +1882,9 @@
         "m365"
       ],
       "category": "Security",
-      "status": "beta",
+      "status": "retired",
       "retirement_date": "",
-      "replacement": "",
+      "replacement": "SC-900",
       "replaces": "",
       "beta_since": "2026-04",
       "updated_at": "2026-07-09 18:04:00+00:00",
@@ -2396,6 +2392,76 @@
       "has_changes": false,
       "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/pl-600/",
       "study_guide_url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/pl-600"
+    },
+    {
+      "code": "AI-500",
+      "title": "Designing and Implementing Multi-Agent AI Solutions",
+      "level": "expert",
+      "roles": [
+        "ai-engineer"
+      ],
+      "products": [
+        "azure"
+      ],
+      "category": "AI",
+      "status": "beta",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "",
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-500/",
+      "beta_since": ""
+    },
+    {
+      "code": "AB-210",
+      "title": "Dynamics 365 Sales AI Consultant Associate",
+      "level": "intermediate",
+      "roles": [
+        "functional-consultant"
+      ],
+      "products": [
+        "dynamics-365"
+      ],
+      "category": "Dynamics 365",
+      "status": "beta",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "",
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-210/",
+      "beta_since": ""
+    },
+    {
+      "code": "AB-650",
+      "title": "Administering Microsoft 365 and AI Services",
+      "level": "intermediate",
+      "roles": [
+        "administrator"
+      ],
+      "products": [
+        "m365"
+      ],
+      "category": "AI",
+      "status": "beta",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "",
+      "beta_since": "2026-08",
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-650/"
+    },
+    {
+      "code": "AB-620",
+      "title": "Designing and Building Integrated AI Solutions in Copilot Studio",
+      "level": "intermediate",
+      "category": "AI",
+      "status": "beta",
+      "retirement_date": "",
+      "replacement": "",
+      "replaces": "",
+      "beta_since": "2026-04",
+      "has_changes": false,
+      "exam_url": "https://learn.microsoft.com/en-us/credentials/certifications/exams/ab-620/"
     }
   ]
 }

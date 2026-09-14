@@ -56,10 +56,11 @@
     <div class="zt-cert-status zt-cert-status--retired">
       <strong>This exam was retired{{ with .Params.retirement_date }} on {{ . }}{{ end }}</strong>
       {{ with .Params.replacement }}— Replacement: <strong>{{ . }}</strong>{{ end }}
+      {{ with .Params.status_note }}<div class="zt-cert-status-note">{{ . | markdownify }}</div>{{ end }}
     </div>
     {{ else if eq .Params.exam_status "beta" }}
     <div class="zt-cert-status zt-cert-status--beta">
-      <strong>Beta{{ with .Params.beta_since }} (since {{ . }}){{ end }}</strong> — beta exams are not scored immediately; results follow once the beta review period closes.
+      <strong>Beta{{ with .Params.beta_since }} (since {{ . }}){{ end }}</strong>{{ if not .Params.status_note }} — beta exams are not scored immediately; results follow once the beta review period closes.{{ end }}
       {{ with .Params.replaces }}Replaces: <strong>{{ . }}</strong>{{ end }}
       {{ with .Params.status_note }}<div class="zt-cert-status-note">{{ . | markdownify }}</div>{{ end }}
     </div>

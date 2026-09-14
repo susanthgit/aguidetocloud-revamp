@@ -2375,6 +2375,18 @@ html[data-theme="dark"] .zt-blog-cluster-label {
   border: 1px solid rgba(6,182,212,0.2);
 }
 
+/* Extra note inside a status banner (e.g. a cancelled certification). */
+.zt-cert-status-note {
+  margin-top: var(--space-2, 8px);
+  padding-top: var(--space-2, 8px);
+  border-top: 1px solid currentColor;
+  opacity: 0.92;
+}
+
+.zt-cert-status-note p:last-child {
+  margin-bottom: 0;
+}
+
 /* Intro text helper */
 .zt-cert-intro {
   color: var(--text-muted, #737373);

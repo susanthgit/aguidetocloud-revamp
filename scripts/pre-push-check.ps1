@@ -40,7 +40,7 @@ $failed = $false
 Write-Host "`n🔍 Pre-push checks..." -ForegroundColor Cyan
 
 # ─── CHECK 1: cache_version bump ───
-Write-Host "`n[1/11] Checking cache_version..." -NoNewline
+Write-Host "`n[1/12] Checking cache_version..." -NoNewline
 
 # Get files that would be pushed = committed-but-unpushed UNION uncommitted working tree.
 # 🔴 Whichever range produces this file list, every later `git diff` in this
@@ -92,7 +92,7 @@ if ($cssJsChanged -and -not $configChanged) {
 
 # ─── CHECK 2: Hugo build ───
 if (-not $SkipBuild) {
-    Write-Host "`n[2/11] Hugo build..." -NoNewline
+    Write-Host "`n[2/12] Hugo build..." -NoNewline
     $buildOutput = & hugo --quiet 2>&1
     if ($LASTEXITCODE -ne 0) {
         Write-Host " ❌ BLOCKED" -ForegroundColor Red
@@ -103,11 +103,11 @@ if (-not $SkipBuild) {
         Write-Host " ✅ Build succeeded" -ForegroundColor Green
     }
 } else {
-    Write-Host "`n[2/11] Hugo build... ⏭ skipped (-SkipBuild)" -ForegroundColor DarkGray
+    Write-Host "`n[2/12] Hugo build... ⏭ skipped (-SkipBuild)" -ForegroundColor DarkGray
 }
 
 # ─── CHECK 3: Template markers ───
-Write-Host "`n[3/11] Checking for template errors in output..." -NoNewline
+Write-Host "`n[3/12] Checking for template errors in output..." -NoNewline
 $publicDir = Join-Path $repoRoot "public"
 if (Test-Path $publicDir) {
     $badFiles = Get-ChildItem -Path $publicDir -Recurse -Include "*.html" |
@@ -126,7 +126,7 @@ if (Test-Path $publicDir) {
 }
 
 # ─── CHECK 4: Blog SEO + OG image guardrail (content/blog/ changes only) ───
-Write-Host "`n[4/11] Blog SEO + OG image..." -NoNewline
+Write-Host "`n[4/12] Blog SEO + OG image..." -NoNewline
 $blogChanged = $changedFiles | Where-Object { $_ -match '^content/blog/.*\.md$' }
 if (-not $blogChanged) {
     Write-Host " ⏭ No blog content changes (skip)" -ForegroundColor DarkGray
@@ -152,7 +152,7 @@ if (-not $blogChanged) {
 # Hugo's HTML minifier silently "fixes" alt="A "thing"" by swapping to single quotes,
 # which masks the source bug. This check parses the source markdown directly.
 # Also catches hardcoded counts in og_headline (decay bug) and broken Quick Jump anchors.
-Write-Host "`n[5/11] Blog HTML hygiene..." -NoNewline
+Write-Host "`n[5/12] Blog HTML hygiene..." -NoNewline
 if (-not $blogChanged) {
     Write-Host " ⏭ No blog content changes (skip)" -ForegroundColor DarkGray
 } else {
@@ -179,7 +179,7 @@ if (-not $blogChanged) {
 #              § Microsoft posture (MANDATORY)
 # Fires when ANY content/*.md changes (not just blog) — catches licensing,
 # cert-tracker, AI Hub edits too. Fast scan (~2-3s over ~1,100 files).
-Write-Host "`n[6/11] Microsoft posture..." -NoNewline
+Write-Host "`n[6/12] Microsoft posture..." -NoNewline
 $contentChanged = $changedFiles | Where-Object { $_ -match '^content/.*\.md$' }
 if (-not $contentChanged) {
     Write-Host " ⏭ No content changes (skip)" -ForegroundColor DarkGray
@@ -209,7 +209,7 @@ if (-not $contentChanged) {
 # squeezed content into a 250px track on a 390px screen with a dead track
 # beside it. Shipped silently, live-broken ~2 months, found only by user report.
 # Static parse — no browser, no dev server, runs in milliseconds.
-Write-Host "`n[7/11] Mobile grid invariant..." -NoNewline
+Write-Host "`n[7/12] Mobile grid invariant..." -NoNewline
 # Runs unconditionally: it is a millisecond static parse, and a change-file
 # trigger is exactly how this class of bug hides (the trigger never fires for
 # the file you forgot to list — including the guard itself).
@@ -241,7 +241,7 @@ if (-not (Test-Path $gridScript)) {
 # Static parse of zt-notebook.css — milliseconds, no browser, no dev server —
 # so it runs unconditionally rather than on a change trigger. Per Rule #14b, a
 # guard that depends on someone remembering to run it is already dead.
-Write-Host "`n[8/11] Blog reading invariants..." -NoNewline
+Write-Host "`n[8/12] Blog reading invariants..." -NoNewline
 $readingScript = Join-Path $PSScriptRoot "check-blog-reading.mjs"
 if (-not (Test-Path $readingScript)) {
     Write-Host " ❌ BLOCKED" -ForegroundColor Red
@@ -271,7 +271,7 @@ if (-not (Test-Path $readingScript)) {
 # run unconditionally. The trigger list therefore includes the guard, the
 # fixture and the vendored sanitizer — the files someone would touch while
 # breaking it.
-Write-Host "`n[9/11] Feedback renderer..." -NoNewline
+Write-Host "`n[9/12] Feedback renderer..." -NoNewline
 # $changedFiles comes from `git diff`, which NEVER lists untracked files. A new
 # untracked asset in this set would therefore skip the gate entirely — the same
 # blind spot that let the vendored sanitizer nearly ship missing. Widen the
@@ -340,7 +340,7 @@ if (-not $fbTouched) {
 # they are baked at build time and never touch it.
 # Also guards the build itself: Hugo expands {{< >}} BEFORE Markdown, so an
 # unknown shortcode in a submission fails the whole site build.
-Write-Host "`n[10/11] Ask page generator..." -NoNewline
+Write-Host "`n[10/12] Ask page generator..." -NoNewline
 $askCandidates = @($changedFiles) + @(git ls-files --others --exclude-standard 2>$null) |
     Sort-Object -Unique
 $askTouched = $askCandidates | Where-Object {
@@ -389,7 +389,7 @@ if (-not $askTouched) {
 # claim on a paid product, sitting in the exact metadata Google shows buyers.
 # Three writers composed that sentence independently and drifted. Descriptions
 # are now owned by scripts/lib/cert-description.js; this check keeps it that way.
-Write-Host "`n[11/11] Cert pricing truthfulness..." -NoNewline
+Write-Host "`n[11/12] Cert pricing truthfulness..." -NoNewline
 $certChanged = $changedFiles | Where-Object { $_ -match '^(content/cert-tracker/|scripts/lib/cert-description|scripts/sync-cert-data|scripts/rewrite-cert-metas|layouts/cert-tracker/)' }
 if (-not $certChanged) {
     Write-Host " ⏭ No cert-tracker changes (skip)" -ForegroundColor DarkGray
@@ -406,7 +406,41 @@ if (-not $certChanged) {
             Write-Host " ✅ No page advertises a paid practice exam as free" -ForegroundColor Green
         }
     } else {
-        Write-Host " ⏭ cert-description.test.js not found" -ForegroundColor DarkGray
+        Write-Host " ❌ BLOCKED" -ForegroundColor Red
+        Write-Host "  scripts/lib/cert-description.test.js is missing — the pricing-truthfulness gate cannot run." -ForegroundColor Yellow
+        Write-Host "  Restore it before pushing cert-tracker changes." -ForegroundColor Yellow
+        $failed = $true
+    }
+}
+
+# ─── CHECK 12: Cert lifecycle truthfulness ───
+# Added 2026-09-14. Five exams had gone GA months earlier but their pages still
+# said "in beta" and promised an 80% beta discount, and three genuinely-beta
+# exams rendered as "Active" because they were missing from latest.json.
+# A reader trusted that copy enough to ask about it. This check fails a push when
+# an active page still carries present-tense beta/discount language, or when a
+# page's status disagrees with the data the index renders from.
+Write-Host "`n[12/12] Cert lifecycle truthfulness..." -NoNewline
+$lifecycleChanged = $changedFiles | Where-Object { $_ -match '^(content/cert-tracker/|static/data/cert-tracker/|layouts/cert-tracker/|data/all_certs\.toml|static/js/cert-tracker\.js)' }
+if (-not $lifecycleChanged) {
+    Write-Host " ⏭ No cert-tracker changes (skip)" -ForegroundColor DarkGray
+} else {
+    $lifecycleScript = Join-Path $PSScriptRoot "check-cert-lifecycle.mjs"
+    if (Test-Path $lifecycleScript) {
+        $lifecycleOutput = & node $lifecycleScript 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host " ❌ BLOCKED" -ForegroundColor Red
+            $lifecycleOutput | Where-Object { $_ -match '✗|problem' } | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
+            Write-Host "  An exam that has gone GA must not still be advertised as beta." -ForegroundColor Yellow
+            $failed = $true
+        } else {
+            Write-Host " ✅ Cert statuses agree with page copy" -ForegroundColor Green
+        }
+    } else {
+        Write-Host " ❌ BLOCKED" -ForegroundColor Red
+        Write-Host "  scripts/check-cert-lifecycle.mjs is missing — the cert lifecycle gate cannot run." -ForegroundColor Yellow
+        Write-Host "  Restore it (or stage it) before pushing cert-tracker changes." -ForegroundColor Yellow
+        $failed = $true
     }
 }
 
