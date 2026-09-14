@@ -565,7 +565,7 @@ const SPECS = [
     data: {
       quote: { lbl: 'What appeared', text: 'New connectors and plugins, aimed at specific professions rather than general business software.' },
       cols: [
-        { lbl: 'The six named', accent: 'navy', text: '<strong>Mercury</strong> &middot; <strong>Xero</strong> &middot; <strong>iManage Work</strong> &middot; <strong>Boardwise</strong> &middot; <strong>Harvey</strong> &middot; <strong>Descrybe Legal</strong>' },
+        { lbl: 'The six named', accent: 'navy', text: '<strong>Mercury</strong> &middot; <strong>Xero</strong> &middot; <strong>iManage Work</strong> &middot; <strong>Boardwise</strong> &middot; <strong>Harvey</strong> &middot; <strong>Descrybe Legal Engine</strong>' },
         { lbl: 'The pattern', accent: 'brass', text: 'Accounting, legal and board software &mdash; the systems where the answer people actually need lives, and where Copilot previously had nothing to say.' },
       ],
       note: { lbl: 'No date attached', text: 'Microsoft gave this list no rollout date, so treat availability as something to check in your own tenant.' },

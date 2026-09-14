@@ -1557,15 +1557,17 @@ single Microsoft screen shows them together, so an illustration is the honest fo
 ---
 
 ## §49 — More Copilot connectors, several industry-specific
-`664b6663ae0f1b77c7c6589821ab12a9c631496932d9d2b924feac1f835a7518`
+`428e8491b07ea65b641214b911326648a6352cb251333138340d0d1561983fd0`
 
 **Observed:** My own illustration. Lead card “WHAT APPEARED”: new connectors and plugins aimed at specific
 professions rather than general business software. Two panels: **THE SIX NAMED** (navy rule) listing
-**Mercury · Xero · iManage Work · Boardwise · Harvey · Descrybe Legal** (the last name wraps to a
+**Mercury · Xero · iManage Work · Boardwise · Harvey · Descrybe Legal Engine** (the last name wraps to a
 second line but is complete); **THE PATTERN** (brass rule) — accounting, legal and board software.
 Footer bar **NO DATE ATTACHED**.
 
 All six names are present and spelled as the section spells them. Nothing clipped.
+
+**Regenerated (14 September 2026):** a fact-check found Microsoft's own list names this connector **Descrybe Legal Engine**, not *Descrybe Legal*. The label was corrected in `scripts/make-illustrations.mjs` and the diagram rebuilt with `--only 49`. Re-viewed at full size after regeneration: the THE SIX NAMED panel now reads *Mercury · Xero · iManage Work · Boardwise · Harvey · Descrybe Legal Engine*, the *illustrative, not a screenshot* label is still present, and nothing else changed. Alt text and the section prose were updated to match. The observation above describes the regenerated image.
 
 **Verdict:** ✅ MATCH — the six names and the accounting/legal/board framing both come straight from the section.
 

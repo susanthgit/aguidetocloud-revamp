@@ -91,9 +91,9 @@ More admin-facing changes are grouped together from [section 90](#90-domain-excl
 
 *For: Copilot in PowerPoint · Rolled out August 2026*
 
-Copilot in PowerPoint gained **strict brand adherence**. When it is on, Copilot is restricted to the approved template and slide master rather than generating its own layouts, and it will decline a request that would break the brand.
+Copilot in PowerPoint gained **strict brand adherence**. Microsoft's wording is that it *"restricts Copilot to your approved template and slide master layouts"*, and that when it is on *"Copilot won't add or remove placeholders or invent new layouts"*. The switch itself reads *"Use only approved template layouts, Copilot will not create new layouts."*
 
-That last part is the interesting bit. Most brand controls are a suggestion that a rushed person can ignore. This one is a refusal.
+That is a constraint on what Copilot can produce, rather than a warning shown to you afterwards. Most brand controls are a suggestion a rushed person can ignore. This one narrows what Copilot is able to generate in the first place. Microsoft does not describe it as refusing a request, and I have not been able to test what happens if you ask for something the template cannot express — so I would not promise anyone a polite "no".
 
 It is worth knowing where this lives, because it is not in PowerPoint. The setting sits in the Copilot app, under **Create → More… → Brand kits**.
 
@@ -107,7 +107,7 @@ It is worth knowing where this lives, because it is not in PowerPoint. The setti
 <p><img src="/images/blog/copilot-september-2026/official-01-brand-kit-restrictions.webp" alt="Official Microsoft image of a Brand Kit settings page. Sections run down the page for Logos, Templates, Fonts, Colors, Images and Icons. The Templates section reads Add branded PowerPoint, Word, Excel and Designer templates to ensure brand adherence, and shows Strict mode set to Off with one template. A toggle labelled Strict brand adherence carries the description Use only approved template layouts, Copilot will not create new layouts. An open dialog titled Turn on brand restrictions reads Copilot uses only layouts and design elements defined in your template when creating or editing presentations, with Turn on and Cancel buttons." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft&rsquo;s August 2026 Copilot roundup.</em></p>
 
-📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
+📖 [Manage brand kit template settings in PowerPoint](https://support.microsoft.com/en-us/powerpoint/copilot/manage-brand-kit-template-settings-in-powerpoint) · [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
 ### 2. Slide notes can steer Copilot slide by slide
 
@@ -115,18 +115,18 @@ It is worth knowing where this lives, because it is not in PowerPoint. The setti
 
 **Note steering** lets you write plain-language instructions into a slide's notes field, and Copilot follows them for that slide. Instead of one instruction for the whole deck, you get governance at the level of the individual slide.
 
-In practice this turns the notes field into a brief. Microsoft's example is writing something like *"keep this to three bullets, no chart"* under slide four and having Copilot treat it as an instruction for that slide.
+In practice this turns the notes field into a brief. Microsoft's own documented examples are instructions like *"Always include this cover slide"*, *"Don't modify this slide"*, *"Keep the text minimal"*, *"Always include this slide last"*, *"Do not change the logo, colors, or layout on this slide"*, *"Always use a bar chart, not a pie chart"* and *"This slide is for an executive audience - keep it high-level"*. Each one applies to the single slide it sits under.
 
 **Where the switch lives.** This is the part that catches people out. It is not in PowerPoint at all — it sits with the template, over in the Copilot app.
 
 1. Copilot app → **Create → More… → Brand kits**
 2. Open the template you want
-3. **Edit details**
+3. **More options (…) → Edit details**
 4. Tick **Allow note instructions** — *"Use slide notes to control how Copilot updates and creates content"*
 
-After that the notes field does the work: type the instruction under the slide, then ask Copilot to rewrite that slide.
+Microsoft also sets this checkbox at the point you **upload** a template, so a template added before the feature arrived may simply never have been offered it. After that the notes field does the work: type the instruction under the slide, then ask Copilot to rewrite that slide.
 
-I went looking on **14 September 2026** and that checkbox was not in my tenant yet — the Edit details dialog had no such option. Microsoft published it in the August roundup, so it is either still rolling out or not switched on for my tenancy. Which means the interesting question, how closely Copilot actually follows an instruction written in the notes, stays open. I will retest for the next issue.
+I went looking on **14 September 2026** and that checkbox was not in my tenant yet — the Edit details dialog had no such option. Microsoft published it in the August roundup, so it is either still rolling out, not switched on for my tenancy, or only offered on templates uploaded since it shipped — my template predates it. Which means the interesting question, how closely Copilot actually follows an instruction written in the notes, stays open. I will retest for the next issue.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Long prompts try to describe a whole deck at once, and the detail gets lost. Putting the instruction next to the slide it applies to is a much more natural way to work, and it survives into the next revision because it lives in the file.</p>
@@ -138,7 +138,7 @@ I went looking on **14 September 2026** and that checkbox was not in my tenant y
 <p><img src="/images/blog/copilot-september-2026/lab-s02-edit-details-no-checkbox.webp" alt="A capture from my own tenant showing the same Edit details dialog for a Brand Kit template. Template Name reads Caldova Brand Template and Brand Kit reads Caldova Brand Kit. A Tags field holds removable chips for PowerPoint, Internal Memo, Strategy Deck, Internal, Executive, Product Management, Engineering, English and Minimalist. Below that sits a Description box reading A minimalist corporate template for internal communication and strategy, providing structure for presenting research, statistics, and product development updates, with a character count of 162 of 250. The form ends with Save and Cancel buttons. There is no Allow note instructions checkbox anywhere in it." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The same dialog in my own lab tenant on 14 September 2026. The form runs from Template Name straight through to Save and Cancel &mdash; there is no <strong>Allow note instructions</strong> checkbox in it. In Microsoft&rsquo;s image above, it sits directly under the description box.</em></p>
 
-📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
+📖 [Manage brand kit template settings in PowerPoint](https://support.microsoft.com/en-us/powerpoint/copilot/manage-brand-kit-template-settings-in-powerpoint) · [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
 ### 3. You can now author your own PowerPoint skills
 
@@ -354,7 +354,7 @@ Copilot in PowerPoint can use **enterprise assets hosted in Adobe Experience Man
 <p><strong>Why this matters:</strong> Most large organisations already pay for a digital asset manager, and it tends to sit outside the tools where the work actually happens. Wiring it into the app where the deck is made is how those assets finally get used.</p>
 </blockquote>
 
-📖 [AI at Work Roadmap 516038](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516038) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+📖 [AI at Work Roadmap 516038](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516038) (Web) · [516039](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=516039) (Windows) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
 ### 9. You can create a presentation from the PowerPoint web app
 
@@ -999,7 +999,7 @@ chains together things Copilot can do anyway. It does not grant anything new.
 
 *For: SharePoint + Microsoft 365 Copilot · Admin · Generally available 11 August 2026 · Checked in my tenant 14 September 2026*
 
-**Authoritative Sites** lets an admin designate sites as official and trusted, and Copilot prioritises them when grounding answers.
+**Authoritative Sites** lets an admin designate sites as official and trusted. Microsoft scopes the effect to **Copilot Search** experiences, which *"recognize its content as trusted"* — so read this as improving what Search surfaces rather than as a global reranking of every Copilot answer.
 
 **Where it actually lives.** I went looking for this in the SharePoint admin centre on 14 September 2026 and
 could not find it. That turns out to be the story, not a failure of searching. Microsoft's own page, updated
@@ -1019,7 +1019,9 @@ settings page, and a fair number of people will go hunting for it the way I did.
 **The licensing is better news than you would expect.** This sits under SharePoint Advanced Management, which
 usually implies a paid add-on. It does not here. Microsoft's prerequisites page says the capability is
 unlocked when **at least one person in the tenant has a Copilot licence**, and that person does not have to be
-the administrator. If you are already running Copilot, you already have this.
+the administrator. There is a base subscription requirement sitting under that — Office 365 E3/E5/A5,
+Microsoft 365 E1/E3/E5/A5, or the GCC, GCC High and DoD equivalents — but in practice almost every tenant
+running Copilot already meets it.
 
 **How to actually do it.** I have not run this in my own tenant, so treat what follows as the documented path
 rather than something I have watched work. The steps come from Microsoft's page. I have written them out in
@@ -1337,9 +1339,9 @@ of it rather than mine. I will pick it up next month.
 
 *For: Microsoft 365 Copilot app · **Admin action required** · Rolling out August–October 2026*
 
-This one is filed under "simplified design" in the release notes, which undersells it. Microsoft is moving Copilot to a single app experience across personal and work accounts, and three separate things follow from that.
+Microsoft is moving Copilot to a single app experience across personal and work accounts, and three separate things follow from that. One housekeeping note first: the roadmap item usually cited next to this, **561488**, is actually a *different* piece of work — a simplified chat home screen, response layout and navigation pane, which shipped in June. The rename and the address change are documented separately, on Microsoft Learn.
 
-**The app is renamed.** The Microsoft 365 Copilot app *"will adopt a simpler name ('Microsoft Copilot app') and icon."* Users also get clearer visual cues for which account they are in — a different background colour per account type, and a **Work** label under the profile in the navigation pane.
+**The app is renamed.** Microsoft Learn now states it flatly: *"The Microsoft 365 Copilot app is now called Microsoft Copilot."* The app *"will adopt a simpler name and icon."* Users also get clearer visual cues for which account they are in — a different background colour per account type, and a **Work** label under the profile in the navigation pane.
 
 **The web address changes.** *"If using the web app, the browser URL will transition from m365.cloud.microsoft to copilot.cloud.microsoft, and users will be automatically redirected."* The redirect began in **early September** for organisations that can already reach the new domain.
 
@@ -1349,7 +1351,9 @@ Microsoft's guidance is to allow the whole domain, not just the one host: *"Micr
 
 **One more easily-missed item.** If you filter Copilot out of Windows Recall snapshots, that policy does not follow the rename: *"If you applied a group policy that filters the former Microsoft Copilot app from being saved in snapshots for Recall, this policy will not automatically carry over to the new Microsoft Copilot app."* Microsoft links its [Recall app and website filtering instructions](https://learn.microsoft.com/en-us/windows/client-management/manage-recall#app-and-website-filtering-policies) for re-creating it.
 
-Microsoft states that *"security, compliance, privacy, and enterprise controls remain unchanged"*, and that the new URL stays inside `*.cloud.microsoft` and keeps its existing allow-listing properties.
+**A note on where the last two details come from.** The October date and the Recall policy point both come from Message Center posts, which are only visible from inside a tenant — I cannot link you to a public page for either. Microsoft's public [deployment guidance](https://learn.microsoft.com/en-us/windows/client-management/deploy-unified-copilot-app) confirms the broad rollout began in September and asks you to make sure `copilot.cloud.microsoft` is not blocked, but it does not name an October cut-off. Treat the date as directional and check your own Message Center rather than taking mine.
+
+Microsoft states that *"Security, compliance, and governance controls remain unchanged"*, and that the new URL stays inside `*.cloud.microsoft` and keeps its existing allow-listing properties.
 
 <blockquote class="callout callout-warn">
 <p><strong>Three things to check before October.</strong> Confirm the <code>*.cloud.microsoft</code> domain is reachable from your managed devices, <code>copilot.cloud.microsoft</code> included — Microsoft asks for the whole domain rather than the single host. Re-create any Windows Recall filter against the renamed app. Then update the internal training, help pages and bookmarks that still say <em>Microsoft 365 Copilot</em> or point at <code>m365.cloud.microsoft</code> — that last one is not urgent, but it is the one that quietly generates helpdesk tickets.</p>
@@ -1361,7 +1365,7 @@ Microsoft states that *"security, compliance, privacy, and enterprise controls r
 
 <p><img src="/images/blog/copilot-september-2026/created-s42-copilot-app-rename-and-url.webp" alt="Diagram: the Microsoft Copilot app rename, the move from m365.cloud.microsoft to copilot.cloud.microsoft, and the early-October 2026 forced redirect." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the three changes bundled into one release note &mdash; not a screenshot. The rename, the address move and the October deadline never appear together on a single screen.</em></p>
-📖 [MC1454108 — Simpler Copilot access](https://mc.merill.net/message/MC1454108) · [MC1462915 — Allow connections to copilot.cloud.microsoft](https://mc.merill.net/message/MC1462915) · [AI at Work Roadmap 561488](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=561488) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+📖 [Deploy the unified Copilot app](https://learn.microsoft.com/en-us/windows/client-management/deploy-unified-copilot-app) · [Partner Center announcements, August 2026](https://learn.microsoft.com/partner-center/announcements/2026-august) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes) · Message Center MC1454108 and MC1462915 (tenant sign-in required)
 
 ### 43. Copilot Chat sits beside Copilot Search
 
@@ -1487,10 +1491,12 @@ Worth noticing regardless: every bullet in Key Insights carries a numbered citat
 
 **Multimodal capture** brings audio, images and notes into one experience, automatically structured into notes and summaries.
 
+One detail decides whether this is new for you at all: Microsoft scopes this month's rollout to **Android**, and notes that multimodal capture is already available in the OneNote app on **iPhone and iPad**. So this is a phone feature, and on iOS it is not new.
+
 **What I found on 14 September 2026.** Not yet in my tenant, and the gap is a specific one. Adding a
 **meeting** as a source worked. Adding an **.mp3** or a **.jpg** did not — the picker would not take them.
-Given this is listed as rolling out during September, a tenant sitting halfway through the month without it
-is what a staged rollout looks like rather than evidence of a problem. I will retest for October.
+That may well be the wrong place to have looked, though — if the rollout is the Android OneNote app, a
+notebook on the desktop was never going to be in scope for it. I will retest for October.
 
 One thing worth pulling apart, because the words are so nearly the same. A notebook can already *produce*
 audio — that is the audio overview in section 45, and it works. Taking audio *in* as a source is the new
@@ -1500,7 +1506,7 @@ half, and that is the half I could not reproduce.
 <p><strong>Why this matters:</strong> This is the closest Microsoft has come to the way people actually capture things — a photo of a whiteboard, a voice memo walking to the car, three lines typed in a meeting. Making that one input rather than three is the useful part.</p>
 </blockquote>
 
-📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960) · [AI at Work Roadmap 559095](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559095)
+📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960) · [AI at Work Roadmap 559095](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=559095) — note this is the **iPhone** entry, which shipped in May 2026; I could not find a separate roadmap item covering the Android rollout
 
 ### 47. Power BI grounding went worldwide
 
@@ -1547,7 +1553,7 @@ tested one.
 
 *For: Copilot connectors · Admin · No date stated by Microsoft*
 
-New connectors and plugins appeared, including **Mercury, Xero, iManage Work, Boardwise, Harvey and Descrybe Legal**. Several are aimed at specific professions rather than general business software.
+New connectors and plugins appeared, including **Mercury, Xero, iManage Work, Boardwise, Harvey and Descrybe Legal Engine**. Several are aimed at specific professions rather than general business software.
 
 Microsoft did not attach a rollout date to this list, so treat availability as something to check in your own tenant.
 
@@ -1555,7 +1561,7 @@ Microsoft did not attach a rollout date to this list, so treat availability as s
 <p><strong>Why this matters:</strong> The pattern is more interesting than any single connector. Accounting, legal and board software are the systems where the answer people actually need lives — and where, until now, Copilot had nothing to say.</p>
 </blockquote>
 
-<p><img src="/images/blog/copilot-september-2026/created-s49-industry-connectors.webp" alt="Diagram listing the six new Copilot connectors: Mercury, Xero, iManage Work, Boardwise, Harvey and Descrybe Legal." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p><img src="/images/blog/copilot-september-2026/created-s49-industry-connectors.webp" alt="Diagram listing the six new Copilot connectors: Mercury, Xero, iManage Work, Boardwise, Harvey and Descrybe Legal Engine." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own diagram of the six named connectors &mdash; not a screenshot. Microsoft published this as a list, with no date and no image.</em></p>
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
@@ -1723,7 +1729,7 @@ Cowork's **local browser use** moved from the Frontier Program to **general avai
 
 The August issue covered this as a Frontier capability. The change is who has it, which is now everyone.
 
-Worth being precise here, because Microsoft's own sources read differently: the August roundup describes local browser automation as having rolled out in July, while the Cowork release notes put the move from Frontier to general availability in August. Read together, the Frontier release came first and the general availability came in August, and I have used the release-notes date.
+For the record on dates, because this one has a history: the Cowork release notes list local browser use as a **Frontier** capability under **June 2026**, and the move from Frontier to **general availability** under **August 2026**. So the capability itself is not new this month — what changed in August is that it stopped being limited to Frontier tenants.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> This is the most consequential availability change in the issue. "Uses your existing sign-ins" means Cowork acts inside sessions you have already authenticated — so alongside "does it work well enough", there is a second question worth asking early: which internal sites are you comfortable with it reaching.</p>
