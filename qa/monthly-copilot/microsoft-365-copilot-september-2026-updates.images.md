@@ -2216,3 +2216,51 @@ only** — no surname, no email address, no other identifier. Cleared for public
 uncropped screenshot and confirmed.
 
 ---
+
+## §43 — lab-s43-search-answer.webp
+
+- **File:** `lab-s43-search-answer.webp` (1476×854, 60.9 KB)
+- **SHA-256:** `4b41fdecba42acb9950221d5255a04177b60910ea40c87cf25db04f230c46d6b`
+- **Observed while viewing (14 September 2026):** Copilot Search results page. Search box reads 'what did Kayo send about Saudi registration'. Filter chips Person / Type / Modified / Filter by Source. A Copilot answer card with shield + 'AI-generated content may be incorrect', answer text with a citation chip, and buttons Ask Copilot, thumbs up, thumbs down, Sources. Right panel headed Sources: All Results 5, Copilot Chats 0, Outlook Mail 2, SharePoint 3. Two results below.
+- **Cross-reference:** Section claims chat sits beside Search. This proves the results surface and the 'Ask Copilot' entry point, plus the source breakdown quoted in the prose.
+- **Verdict:** ✅ MATCH
+
+## §43 — lab-s43-chat-pane.webp
+
+- **File:** `lab-s43-chat-pane.webp` (488×910, 37.2 KB)
+- **SHA-256:** `3bb76b9b70daac0ab73c98763d48e08063ff9e0af7fad655f518bc69a37ada1d`
+- **Observed while viewing (14 September 2026):** Chat pane. Top bar: shield, green shield, briefcase/globe toggle pair with briefcase selected, share, new-chat, ellipsis, close. 'Today' divider. User message 'what did Kayo send about Saudi registration'. Copilot reply naming Kayo Miwa as a link. Citation chip. Card: envelope, 'Saudi registration status - KSA cannot be in wave 1', 'Sent on Sep 6, 11:10 AM', 'Kayo Miwa to: You', Ask button. Copy / thumbs / ellipsis. Sources. Composer 'Message Copilot'.
+- **Cross-reference:** This is the side pane the section claims, open beside the results, with the search query carried across as the first message. Upgrades section 43 from partial to confirmed.
+- **Verdict:** ✅ MATCH
+
+## §55 — lab-s55-app-skill-slash.webp
+
+- **File:** `lab-s55-app-skill-slash.webp` (1154×460, 16.4 KB)
+- **SHA-256:** `52af254d6d7eae0a67940537b61dd3f6b592f659f5f962076068cb1711f98e25`
+- **Observed while viewing (14 September 2026):** Cowork home. Heading 'What should we finish today?'. Composer contains '/app'. Picker above with tabs All, Skills, People, Files, Meetings, Emails, Chats, Channels, Sites, highlighting an entry described as a skill that creates and edits apps that can connect to data.
+- **Cross-reference:** Proves the App skill exists and that the entry point is the slash command /app. Prose is explicit that building/publishing an app is NOT evidenced here.
+- **Verdict:** ✅ MATCH
+
+## §60 — lab-s60-cowork-plugins.webp
+
+- **File:** `lab-s60-cowork-plugins.webp` (1417×1386, 57.3 KB)
+- **SHA-256:** `def79455fe757ff68c4b40692be416a7445687afdef9db7d8b8e88106cd3f6a6`
+- **Observed while viewing (14 September 2026):** Cowork Customize page. Tabs Plugins / Skills / Preferences. Installed: Fabric IQ, Dynamics 365 Sales, Dynamics 365 ERP apps, all toggles off, Show more. Discover: Adobe Journey Optimizer, Ahrefs, an AI meeting notes plugin, Aiwyn Tax, AllTrails, Apify, each with a padlock.
+- **Cross-reference:** Context only. Shows where plugins are managed; does NOT show a file being passed to a plugin, which is developer-facing and has no UI. The prose says this in plain terms.
+- **Verdict:** ⚠️ PARTIAL
+
+## §60 — lab-s60-add-plugin.webp
+
+- **File:** `lab-s60-add-plugin.webp` (1353×1002, 41.0 KB)
+- **SHA-256:** `c2b04f4b76236ab1f3ad861f05c6c3e7242a153cf07677c3ef32b95bf13de35f`
+- **Observed while viewing (14 September 2026):** Dialog 'Add a plugin' over the Customize page. Upload area: 'Drag & drop, choose a file, or choose a folder', note '.ZIP or a folder'. Shield warning: 'Plugins can run skills and connect Cowork to external services. Only add plugins from sources you trust.' Line: 'New to plugins? Learn more'. Customize page with Add plugin button visible behind.
+- **Cross-reference:** Directly relevant: side-loading your own .ZIP or folder is who the base64 file parameter is for. Also carries the trust warning quoted in the prose.
+- **Verdict:** ✅ MATCH
+
+## §61 — lab-s61-plugins-mobile.webp
+
+- **File:** `lab-s61-plugins-mobile.webp` (590×1246, 38.6 KB)
+- **SHA-256:** `5731bdd63dc0ad07376b60be1e152aa880f58106211ab6b2b601402c7993963c`
+- **Observed while viewing (14 September 2026):** Phone sheet headed Customise. Tabs 'Plug-ins' and 'Skills', Plug-ins selected. Installed: three Dynamics 365 entries, all toggles Off. Discover: Memoket, Descrybe Legal Engine, DiligenceSquared, DeepL, Wolfram Research, each with an Add button. Search plug-ins box at the bottom.
+- **Cross-reference:** Proves plugins are configurable on mobile, not just visible. Supports the Plugins/Plug-ins naming split and the Discover ordering difference stated in the prose.
+- **Verdict:** ✅ MATCH

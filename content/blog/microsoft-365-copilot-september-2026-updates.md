@@ -1304,17 +1304,31 @@ things worth reading are quoted above.
 
 📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
-### 41. Pages can steer and open themselves on mobile
+### 41. On mobile, Copilot can reshape a Page or create one for you
 
-*For: Microsoft 365 Copilot app (mobile) · Generally available 25 August 2026*
+*For: Microsoft 365 Copilot app · Android and iOS · Generally available 25 August 2026*
 
-The Copilot app on mobile gained **page steering and auto-triggering of pages**, so a Page can open at the right moment rather than waiting to be found.
+The Copilot app on mobile gained **page steering and auto-triggering of pages**. That phrase covers two
+separate things, and they are worth pulling apart.
+
+The first is editing by instruction. Microsoft's example is telling Copilot “Shorten this page” and
+having it rework the page, rather than you doing that by hand on a phone screen. The second is creation
+from chat: ask for something like “Create a new page for XYZ” in an ordinary conversation and a Page gets
+made, without you going to Pages first.
+
+That second half is the one the name obscures. Auto-triggering here means Copilot can *create* a Page off
+the back of a prompt. It does not mean an existing Page will surface itself at a convenient moment, which
+is what the phrase sounds like it might mean.
+
+**I was not able to reproduce this one in time for this issue**, so everything above is Microsoft's account
+of it rather than mine. I will pick it up next month.
 
 <blockquote class="callout callout-tip">
-<p><strong>Why this matters:</strong> Pages are one of the better ideas in Copilot and one of the least discovered. Surfacing them at the moment they are relevant is more likely to work than expecting people to go looking.</p>
+<p><strong>Why this matters:</strong> Editing anything structured on a phone is awkward, so handing the fiddly part to an instruction is a sensible trade. The creation half is the more interesting one, because it lets a Page start life as a sentence in a chat rather than as a decision to go and make a Page.</p>
 </blockquote>
 
 📖 [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+
 
 ### 42. The Copilot app is being renamed, and its web address is changing
 
@@ -1363,10 +1377,29 @@ The rail lists **New chat, Search, Library and Notebooks**, with Chat and Cowork
 you cannot see those words, press the circled icon at the top right of the rail, which expands it from icons
 to labels. That caught me out.
 
-What this shows is the entry point, and I want to be precise about what it does not show. Microsoft's claim is
-that chat is available **in a side pane while you are using Search**, so you can ask a follow-up without
-leaving your results. I captured the rail rather than a live search with the pane open, so I cannot confirm
-that half from what I have here. I will pick it up for the next issue.
+Then I ran a search, and the results page turned out to carry rather more than results.
+
+<img src="/images/blog/copilot-september-2026/lab-s43-search-answer.webp" alt="The Copilot Search results page in my own tenant. The search box reads &quot;what did Kayo send about Saudi registration&quot;. Below it are filter dropdowns for Person, Type and Modified. A Copilot answer card carries a shield icon and the line &quot;AI-generated content may be incorrect&quot;, a paragraph of answer text with a citation chip, and buttons reading Ask Copilot, thumbs up, thumbs down and Sources. A panel on the right headed Sources lists All Results 5, Copilot Chats 0, Outlook Mail 2 and SharePoint 3. Two search results appear underneath." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. Copilot Search answers the question above the results, and shows where the answer came from.</em></p>
+
+I asked *"what did Kayo send about Saudi registration"*. Above the results, Copilot had already written an
+answer with a citation attached, and a **Sources** panel on the right broke down where it had looked: five
+results in all, three from SharePoint, two from Outlook mail, none from chat. Underneath the answer sat an
+**Ask Copilot** button, which turned out to be the door.
+
+<img src="/images/blog/copilot-september-2026/lab-s43-chat-pane.webp" alt="A chat pane in my own tenant. At the top are a briefcase and a globe as a two-part toggle with the briefcase selected, a share icon, a new chat button and a close cross. Under a divider reading Today, a user message reads &quot;what did Kayo send about Saudi registration&quot;. Copilot's reply names Kayo Miwa as a link and says Saudi Arabia was not approved. Below the reply is a card with an envelope icon, the subject &quot;Saudi registration status - KSA cannot be in wave 1&quot;, the line &quot;Sent on Sep 6, 11:10 AM&quot;, the line &quot;Kayo Miwa to: You&quot; and an Ask button. At the bottom is a message box reading Message Copilot." loading="lazy" decoding="async" style="max-width:380px;" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. The pane that opens beside the results, with my search already asked for me.</em></p>
+
+Pressing it opened the pane on the right, and the results stayed exactly where they were on the left. Two
+details I had not expected. **My search was already sitting in the pane as the first message**, so the
+conversation starts from the question I typed into the search box rather than from an empty chat. And the
+source under the answer is a card rather than a footnote — it named the email, who sent it, that it was sent
+to me, and when, with its own **Ask** button for questioning that one message.
+
+One thing to know before anyone goes looking. Microsoft's release note says this is for users **with the AI
+SKU**, so it is not something every licensed user will find.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Search finds the document; chat explains it. Splitting those across two screens meant doing one and forgetting the other.</p>
@@ -1451,6 +1484,15 @@ Worth noticing regardless: every bullet in Key Insights carries a numbered citat
 
 **Multimodal capture** brings audio, images and notes into one experience, automatically structured into notes and summaries.
 
+**What I found on 14 September 2026.** Not yet in my tenant, and the gap is a specific one. Adding a
+**meeting** as a source worked. Adding an **.mp3** or a **.jpg** did not — the picker would not take them.
+Given this is listed as rolling out during September, a tenant sitting halfway through the month without it
+is what a staged rollout looks like rather than evidence of a problem. I will retest for October.
+
+One thing worth pulling apart, because the words are so nearly the same. A notebook can already *produce*
+audio — that is the audio overview in section 45, and it works. Taking audio *in* as a source is the new
+half, and that is the half I could not reproduce.
+
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> This is the closest Microsoft has come to the way people actually capture things — a photo of a whiteboard, a voice memo walking to the car, three lines typed in a meeting. Making that one input rather than three is the useful part.</p>
 </blockquote>
@@ -1473,9 +1515,24 @@ Reasoning over **Power BI reports and semantic models** in natural language roll
 
 ### 48. Viva Engage private communities can ground Copilot
 
-*For: Microsoft 365 Copilot + Viva Engage · Generally available 25 August 2026*
+*For: Microsoft 365 Copilot + Viva Engage · Web · Generally available 25 August 2026*
 
-Copilot can use **private community and event content in Viva Engage** as grounding material.
+Copilot can use **private community and event content in Viva Engage** as grounding material. Microsoft's
+wording here is careful, and worth quoting rather than paraphrasing: private Engage content “will be used
+as grounding source for Microsoft 365 Copilot”, and “when a user queries in Microsoft 365 Copilot, they
+will only be able to see content they are privileged to access.”
+
+So the permission model is not being relaxed. What changes is the size of the pool Copilot is allowed to
+draw from for each person, bounded by what that person could already have opened by hand.
+
+Two details that are easy to miss. The release notes list this as **web only** for now, so it is not yet a
+uniform change across every Copilot surface. And roadmap entry 515144 still shows a general availability
+month of May 2026, while the release notes list the feature in the 25 August batch. Where those two
+disagree I go with the release notes, but it is a useful reminder that a roadmap date is a plan rather than
+a record.
+
+I do not have Viva Engage set up in my demo tenant, so this is Microsoft's account of it rather than a
+tested one.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Worth an admin conversation rather than a cheer. Private communities are private for a reason, and people post in them with an expectation about who is reading. Permissions are respected, but the set of places an answer can come from just got wider.</p>
@@ -1587,6 +1644,23 @@ So on Microsoft's description it is not a mockup — they say the result can be 
 
 This is a Frontier Program capability, which means it reaches Frontier tenants first.
 
+**What I found on 14 September 2026.** The skill is there, and it describes itself in rather bigger terms
+than the release note does.
+
+<img src="/images/blog/copilot-september-2026/lab-s55-app-skill-slash.webp" alt="The Cowork home screen in my own tenant. A heading reads &quot;What should we finish today?&quot;. The message box below contains a forward slash followed by the letters app. A picker above the box has tabs reading All, Skills, People, Files, Meetings, Emails, Chats, Channels and Sites, and highlights an entry described as a skill that creates and edits apps that can connect to data." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. Typing a slash in Cowork brings up the picker, with the App skill describing itself.</em></p>
+
+You call it by typing **`/app`** in the Cowork box, and the picker that appears describes it as *"Create and
+edit apps that can connect to data"*. That last phrase is doing a lot of work, and it is not in the sentence
+Microsoft used above. The same picker carries tabs for Skills, People, Files, Meetings, Emails, Chats,
+Channels and Sites, so the slash is the general way of pointing Cowork at something rather than a special
+case for apps.
+
+What I have confirmed is that the skill exists and how you reach it. I have not built an app with it, so the
+part I flagged above — refine, open, publish, share — is still the part worth testing before you promise
+anybody anything.
+
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> The step that usually kills a small internal tool is not building it — it is publishing and sharing it. All four steps in one chat is the claim that would make this different from the many things that have generated code and left you holding it, and it is the claim I would test first.</p>
 </blockquote>
@@ -1660,6 +1734,31 @@ Worth being precise here, because Microsoft's own sources read differently: the 
 
 Plugin connector tools can accept **files from your Cowork session as input**. A plugin author declares a tool parameter with `contentEncoding: base64`, and Cowork resolves the workspace file into content before calling the tool — so a plugin can convert a document, analyse an image or push a file into another system.
 
+**Where this lives, on 14 September 2026.** The file handover itself happens inside a tool call and has no
+screen of its own, so I cannot show you that. What I can show is the surface it plugs into, which turned out
+to be more interesting than I expected.
+
+<img src="/images/blog/copilot-september-2026/lab-s60-cowork-plugins.webp" alt="The Customize page in Cowork in my own tenant, with tabs for Plugins, Skills and Preferences. An Installed heading lists Fabric IQ, Dynamics 365 Sales and Dynamics 365 ERP apps, each with a toggle switched off, followed by a Show more link. A Discover heading below lists Adobe Journey Optimizer, Ahrefs, an AI meeting notes plugin, Aiwyn Tax, AllTrails and Apify, each with a padlock icon." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. Cowork's plugin page: what is installed above, a catalogue below.</em></p>
+
+**Customize → Plugins** lists what is installed with a toggle each — Fabric IQ, Dynamics 365 Sales and the
+Dynamics 365 ERP apps, all switched off in my tenant — above a **Discover** catalogue that is mostly other
+people's software. Adobe Journey Optimizer, Ahrefs, Aiwyn Tax, AllTrails and Apify were on the first screen
+alone.
+
+<img src="/images/blog/copilot-september-2026/lab-s60-add-plugin.webp" alt="A dialog headed Add a plugin sits over the Cowork Customize page. It contains an upload area reading &quot;Drag &amp; drop, choose a file, or choose a folder&quot; with the note &quot;.ZIP or a folder&quot;. Below it a shield icon sits beside the text &quot;Plugins can run skills and connect Cowork to external services. Only add plugins from sources you trust&quot;, and a line reads &quot;New to plugins? Learn more&quot;." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. Adding a plugin of your own, and the warning that comes with it.</em></p>
+
+The **Add plugin** button is the part that matters for this section. It takes **a .ZIP or a folder**, dragged
+in or chosen — which is to say you can side-load a plugin you have written yourself, and that is exactly who
+the base64 file parameter above is for. Microsoft puts a warning beside it, and it is a fair one: *"Plugins
+can run skills and connect Cowork to external services. Only add plugins from sources you trust."*
+
+To be plain about the evidence: these two images show where plugins are managed and how one gets added. They
+do not show a file being handed to one.
+
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Plugins that could only exchange text were limited to fetching and returning facts. Handing a real file across is what lets an integration do the actual job — sign it, convert it, file it — instead of describing it.</p>
 </blockquote>
@@ -1671,6 +1770,23 @@ Plugin connector tools can accept **files from your Cowork session as input**. A
 *For: Copilot Cowork (mobile) · September 2026*
 
 Plugins are **discoverable and configurable on the mobile app**. You find them through the attach menu (**+**) then **Skills**.
+
+**What I found on 14 September 2026.** It is a genuine peer of the desktop page rather than a read-only view
+of it.
+
+<img src="/images/blog/copilot-september-2026/lab-s61-plugins-mobile.webp" alt="A sheet on my phone headed Customise, with two tabs reading Plug-ins and Skills, and Plug-ins selected. An Installed heading lists three Dynamics 365 entries, each with a toggle switched off. A Discover heading below lists Memoket, Descrybe Legal Engine, DiligenceSquared, DeepL and Wolfram Research, each with an Add button, above a box reading Search plug-ins." loading="lazy" decoding="async" style="max-width:400px;" />
+
+<p class="img-caption"><em>My own phone, 14 September 2026. The Customise sheet, with Plug-ins and Skills sitting side by side.</em></p>
+
+The sheet has the same two halves as the desktop page. **Installed** carries a toggle each, and **Discover**
+gives every plugin its own **Add** button with a search box above it. So this is configuration, not a
+catalogue you can only look at. Skills sit on the tab beside it, which is worth knowing if you go hunting for
+plugins and land on skills first.
+
+Two small inconsistencies, noted mainly because they are the sort of thing that tells you two teams built two
+screens. The desktop page calls them **Plugins**; the phone calls them **Plug-ins**. And the Discover list is
+not in the same order on the two — desktop opened alphabetically at Adobe and Ahrefs, while the phone opened
+on Memoket, Descrybe Legal Engine, DiligenceSquared, DeepL and Wolfram Research.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Cowork is built around handing work over and coming back later, which is exactly the shape of work people check on their phone. Plugins being desktop-only quietly meant the useful version of Cowork was desktop-only too.</p>
