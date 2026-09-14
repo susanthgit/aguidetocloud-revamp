@@ -900,10 +900,42 @@ Note the two dates. This is in Public Preview now and does not reach worldwide a
 
 ### 30. SharePoint personal skills are saved to OneDrive and reused everywhere
 
-*For: Copilot in SharePoint · Public Preview August 2026 · Worldwide December 2026*
+*For: Copilot in SharePoint · Public Preview August 2026 · Worldwide December 2026 · Checked in my tenant 14 September 2026*
 
 A personal skill in SharePoint is **saved as a markdown file in your OneDrive**, and works across all SharePoint sites rather than the one where you made it.
 The storage choice is worth noticing. A skill is a text file you own, not a hidden setting.
+
+**What I could check on 14 September 2026.** Not much, and that is the first thing to report. I went looking
+for skills in my own tenant and they are not there yet. That is unsurprising for something in public preview
+with a worldwide date of December 2026, and it is the reason this section leans on documentation rather than
+screenshots. I will come back to it in the October issue.
+
+**What the documentation does and does not say.** Microsoft has a page for this, [Extend Copilot in SharePoint
+with skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills), updated 26 August
+2026. It is clear about where a **site** skill goes:
+
+> `/Agent Assets/Skills/<skill-name>/SKILL.md`
+
+That library is created by the product, cannot be deleted, and takes ordinary SharePoint governance on top of
+it, so permissions, retention, sensitivity labels and auditing all apply to a skill the same way they apply to
+a contract or a spreadsheet.
+
+What that page does not do is mention personal skills, or OneDrive, anywhere. The claim in this section comes
+from the roundup and the message centre entry. So the exact folder your personal skill lands in is, as far as
+I can find, undocumented. If you get there before I do, I would genuinely like to know the path.
+
+**Three things in that page worth carrying off.**
+
+Typing `/skills` into the Copilot chat on a site lists the built-in skills Microsoft ships. Those exist to help
+you create, check and improve your own, and they do not appear in the Agent Assets library.
+
+There are no admin controls for skills. Nothing to turn on, nothing to turn off. Anyone with **Edit** on the
+site can create one and anyone with **View** can run it. If that is too open, the lever is to break permission
+inheritance on the Agent Assets library and lock it down like any other library.
+
+And a skill cannot reach outside SharePoint. Microsoft is explicit that skills cannot connect to external
+systems or run custom code, and that a skill can only do what the person running it could already do. It
+chains together things Copilot can do anyway. It does not grant anything new.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Skills stored as plain files can be read, edited, copied and shared like any other document. That is a much healthier foundation than a setting buried in a product, and it means a good skill can spread through a team by being sent to someone.</p>
@@ -912,7 +944,7 @@ The storage choice is worth noticing. A skill is a text file you own, not a hidd
 <p><img src="/images/blog/copilot-september-2026/official-30-create-personal-skill.webp" alt="Official Microsoft image of a Copilot conversation creating a personal skill. The user asks for a personal skill that creates a TODO tracker from meetings and emails as a Word document. Copilot shows a card labelled create-skill, described as a Copilot in SharePoint skill, and asks the user to confirm details: Name personal-todo-tracker, Does builds and updates a Word-based TODO tracker from your meetings and emails, Triggers create my TODO tracker, update my TODO tracker and what is on my TODO list, Output a Word document with tasks, owners, dates, sources and status, and Verifiable yes, tasks should cite the meeting or email source. The user replies yes and a second card appears headed personal-todo-tracker and labelled Your skill." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft&rsquo;s August 2026 Copilot roundup.</em></p>
 
-📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960) · [AI at Work Roadmap 567668](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=567668)
+📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960) · [AI at Work Roadmap 567668](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=567668) · [Extend Copilot in SharePoint with skills](https://learn.microsoft.com/en-us/sharepoint/copilot-in-sharepoint-skills)
 
 ### 31. Admins can mark SharePoint sites as authoritative
 
