@@ -1853,8 +1853,8 @@ states it.
 
 ## §83 — Copilot can tidy your mailbox from a sentence *(image 1 of 2)*
 
-**File:** `lab-s83-confirm-list.webp` (553×760, 84.0 KB)
-**SHA256:** `d7d2b3a39db5809f20e1677bc84e2d4cfe94e96f1b282909b16bc5ed6d22f917`
+**File:** `lab-s83-confirm-list.webp` (1836×1672, 221.6 KB)
+**SHA256:** `e3cc1423a6f532213d52750cff751f3c9c4d18415943253395a44bf860fbfeb2`
 **Source:** My own Caldova tenant, 14 September 2026. Outlook web, Copilot pane.
 
 **Observed while viewing:** The Copilot side pane in Outlook. Most of the pane is a bordered list of
@@ -1869,10 +1869,13 @@ and the absence of any "done" wording confirms nothing had yet been moved.
 
 ---
 
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts, both with horizontal leaders from a right pad. "Every affected message, named" points past the first subject line in the list. "Nothing moved until I confirmed" points into the empty band beside the **Cancel** button, naming the gate rather than either button individually. Verified on the render. Noted while checking: the list rows carry plain bullets and the list has no border, which does not match the current alt text — raised separately for a wording fix.
+
+
 ## §83 — Copilot can tidy your mailbox from a sentence *(image 2 of 2)*
 
-**File:** `lab-s83-done-result.webp` (547×274, 23.0 KB) — cropped from a 1887×726 capture to the pane only
-**SHA256:** `d963af89a2ff71fd92cf75fb9e899ec20da4c3bdea03c5199bae2b180d4a9e46`
+**File:** `lab-s83-done-result.webp` (2241×822, 97.6 KB) — cropped from a 1887×726 capture to the pane only
+**SHA256:** `e8a80cb2913c676175947d8b1bb7f1099a80c33f8571252f97dece9ea7354fcf`
 **Source:** My own Caldova tenant, 14 September 2026. Outlook web, Copilot pane.
 
 **Observed while viewing:** The prompt bubble at the top reads *"move everything from Microsoft Copilot
@@ -1894,10 +1897,13 @@ the section records that question as unresolved rather than answering it.
 
 ---
 
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts. "It created the folder" points past the bullet recording that the *Scheduled* folder was created, and "And counted what it moved" points past the message chip on the bullet reporting twenty-five messages. The third finding in the prose — that Copilot scoped itself to the inbox — sits barely twenty source pixels from the count bullet, so annotating it would have collided; it is left to the body copy. Verified on the render.
+
+
 ## §82 — Custom engine agents work directly in Outlook *(image 1 of 1)*
 
-**File:** `lab-s82-agent-picker.webp` (555×623, 20.6 KB) — cropped from a 604×807 capture
-**SHA256:** `b979f606bbd62f667009a4b7e77858f3f8c885c8f4bdf3b7ae01804ad502e61f`
+**File:** `lab-s82-agent-picker.webp` (1841×1370, 78.2 KB) — cropped from a 604×807 capture
+**SHA256:** `b21d941a9a36c9641ad01457e6fa49419af0802853419ea4869308c693993d38`
 **Source:** My own Caldova tenant, 14 September 2026. Outlook on the web, Copilot pane.
 
 **Observed while viewing:** The Copilot side pane, headed **Copilot** with expand and close buttons. Below
@@ -1923,6 +1929,9 @@ fictional demo-lab content (Caldova), not real customer data.
 
 ---
 
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts. "One character opens them" points at the single **@** typed into the composer, which is the whole mechanic of this section; its leader comes in diagonally from above so it clears both the mic and the send button. "Name and description on every row" points past the first agent's name, at the row whose one-line description sits directly beneath it — the thing that makes a long list usable. Verified on the render.
+
+
 ## §84 — Scheduling with Copilot chat reached classic Outlook *(image 1 of 2)*
 
 **File:** `lab-s84-classic-prompt.webp` (445×454, 10.5 KB)
@@ -1947,8 +1956,8 @@ ribbon does. It also captures the exact prompt quoted in the body, confirming th
 
 ## §84 — Scheduling with Copilot chat reached classic Outlook *(image 2 of 2)*
 
-**File:** `lab-s84-invite-proposed.webp` (411×784, 34.7 KB) — cropped from a 411×958 capture
-**SHA256:** `9896b20dcfd738944e70b4e9f8a6ada2e4712a5cde6fc1053ca000aab100c927`
+**File:** `lab-s84-invite-proposed.webp` (1853×2612, 159.4 KB) — cropped from a 411×958 capture
+**SHA256:** `e890e54087c16d408596995d81bfcfdd2b00593bf0d3d72844d1aeb93781e244`
 **Source:** My own Caldova tenant, 14 September 2026. Classic Outlook for Windows.
 
 **Observed while viewing:** The **"Try the new Outlook — Off"** toggle remains visible at the top, so client
@@ -1972,10 +1981,13 @@ image supports, since no explanation appears anywhere in the pane.
 
 ---
 
+**Annotated 15 September 2026 (house style, verified on the render):** One outline and three callouts. The **Send** button is the headline finding and sits in the bottom-left corner with no usable gap on any side, so it is outlined and its callout placed in a bottom pad with the dot dropped into the sliver of white beneath it. "It checked working locations" points past one of the availability lines, and "Both attendees ticked" points past the two green-ticked avatars on the event card. Verified on the render: all three leaders cross nothing.
+
+
 ## §85 — Outlook coaches your writing as you draft *(image 1 of 2)*
 
-**File:** `lab-s85-tone-options.webp` (543×703, 55.3 KB)
-**SHA256:** `60f4288666fe2bc6fbb73058fcf42b0323373c703a7eb9adf21e4df2d8363d82`
+**File:** `lab-s85-tone-options.webp` (1923×1687, 172.1 KB)
+**SHA256:** `50f8d42a46cfd4ee0bb07e4fe497060681f29439159f0bbd4f209c769d6344a9`
 **Source:** My own Caldova tenant, 14 September 2026. Outlook, Copilot pane.
 
 **Observed while viewing:** The Copilot side pane with a **Work / Web** toggle at the top, **Work** selected.
@@ -1992,10 +2004,13 @@ heading visible here rather than overstating what was captured.
 
 ---
 
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts. "No instruction, just the draft" points into the user bubble's own empty space, so it reads as naming that bubble — the point of the section being that nothing was attached to the pasted draft. "Each rewrite labelled by tone" points past the *Option 1* heading. No callout claims a count, because the third option is only partly visible at the bottom edge of the frame. Verified on the render.
+
+
 ## §85 — Outlook coaches your writing as you draft *(image 2 of 2)*
 
-**File:** `lab-s85-writing-improvements.webp` (760×288, 25.2 KB) — cropped from an 838×484 capture
-**SHA256:** `45acdd0c50a8072a20fc2021c8158c43c88208194f0e7f0d2c268cc3ca9dc38a`
+**File:** `lab-s85-writing-improvements.webp` (2292×633, 80.2 KB) — cropped from an 838×484 capture
+**SHA256:** `8032f2b8debc231320fc6fe450ee2bdfad819afbc19ecbdb50bc1b87ca43f870`
 **Source:** My own Caldova tenant, 14 September 2026. Outlook, Copilot pane.
 
 **Observed while viewing:** A heading reading **Writing Improvements**, followed by a two-column table with
@@ -2016,10 +2031,13 @@ reads cleanly. "Karin" is fictional demo-lab content, not a real correspondent.
 
 ---
 
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts. "Coaching I did not ask for" points past the **Writing Improvements** heading. "Each change explained" points past the short second line of the *Clarity* row — the only row whose text ends far enough left to leave a clear run to the table edge — and the callout is placed so its leader stays inside that row's band instead of cutting diagonally through the row beneath. Verified on the render.
+
+
 ## §86 — Meeting preparation reached classic Outlook *(image 1 of 1)*
 
-**File:** `lab-s86-prep-brief-classic.webp` (417×750, 41.7 KB) — cropped from a 417×925 capture
-**SHA256:** `7bc29254f5488f36f463f43b9b1aa10e8bed522bddcd29c80f1bbb3da980db17`
+**File:** `lab-s86-prep-brief-classic.webp` (1871×2250, 179.1 KB) — cropped from a 417×925 capture
+**SHA256:** `fc1adc4fea6fd02b59f10258df738c18001b79890b480e5751c80534c2f8ae1e`
 **Source:** My own Caldova tenant, 14 September 2026. Classic Outlook for Windows.
 
 **Observed while viewing:** Top strip carries the **"Try the new Outlook"** toggle set to **Off** and a
@@ -2052,6 +2070,9 @@ or from below the fold, so nothing rests on text that is not fully legible here.
 fictional demo-lab content (Caldova), not real customer data.
 
 ---
+
+**Annotated 15 September 2026 (house style, verified on the render):** Three callouts, all with horizontal leaders from a right pad. "It shows its working" points past the expandable **Reasoned for 9s** line. "It says the material was thin" points past the sentence in which Copilot states that the available material is limited. "Every claim cites its source" points past one of the small envelope citation icons that follow each bullet. Verified on the render: every target line ends well short of the pane edge, so none of the three leaders crosses text, and the download affordance overlaying the lower text is avoided.
+
 
 ## §89 — You can create and query Planner tasks from Copilot *(image 1 of 2)*
 
