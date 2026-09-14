@@ -16,6 +16,9 @@
 //     an explicit self-reference test. Pronoun self-reference still escapes:
 //     "Unlike AI-102, it is currently in beta" reads as a claim about AI-102.
 //     Deliberately biased toward false negatives — a noisy gate teaches --no-verify.
+//  4. Check 4 reads data/all_certs.toml, but only claims that name an exam code
+//     outright ("Microsoft's beta cert AB-250") or a beta-priced exam_cost. A
+//     tagline that implies beta without naming a code is not detected.
 
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname, basename } from 'node:path';
@@ -24,6 +27,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const PAGES_DIR = join(ROOT, 'content', 'cert-tracker');
 const DATA_FILE = join(ROOT, 'static', 'data', 'cert-tracker', 'latest.json');
+const REGISTRY_FILE = join(ROOT, 'data', 'all_certs.toml');
 
 // Present-tense claims only — these are false once an exam is GA.
 const STALE_CLAIMS = [
@@ -145,10 +149,53 @@ if (existsSync(DATA_FILE)) {
   failures.push(`missing data file: ${DATA_FILE}`);
 }
 
+// --- Check 4: the registry the index renders from must not describe a non-beta
+// exam as beta. Pages and latest.json were both corrected for AB-250 while
+// data/all_certs.toml still called it "Microsoft's beta cert AB-250" and priced
+// it at the beta rate, so the index kept publishing the stale claim. Only claims
+// that name a code outright are checked, which makes attribution unambiguous.
+if (existsSync(REGISTRY_FILE)) {
+  const betaCodes = new Set();
+  for (const [code, status] of pageStatus) if (status === 'beta') betaCodes.add(code);
+  if (existsSync(DATA_FILE)) {
+    for (const exam of JSON.parse(readFileSync(DATA_FILE, 'utf8')).exams || []) {
+      if (exam.status === 'beta') betaCodes.add(String(exam.code).toUpperCase());
+    }
+  }
+
+  const NAMED_BETA = /\bbeta (?:cert(?:ification)?|exam) ((?:AZ|AI|DP|SC|MS|MB|PL|AB|GH|MD|MO)-\d{3})\b/gi;
+  const lines = readFileSync(REGISTRY_FILE, 'utf8').split(/\r?\n/);
+  const seen = new Set();
+  let blockCode = null;
+
+  lines.forEach((line, i) => {
+    const codeDecl = line.match(/^\s*code\s*=\s*"([^"]+)"/);
+    if (codeDecl) blockCode = codeDecl[1].toUpperCase();
+
+    for (const m of line.matchAll(NAMED_BETA)) {
+      const code = m[1].toUpperCase();
+      if (betaCodes.has(code)) continue;
+      const key = `named:${code}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      failures.push(`${code}  data/all_certs.toml:${i + 1} calls it a beta exam, but it is not beta`);
+    }
+
+    if (/^\s*exam_cost\s*=\s*"\s*Beta\b/i.test(line) && blockCode && !betaCodes.has(blockCode)) {
+      const key = `cost:${blockCode}`;
+      if (seen.has(key)) return;
+      seen.add(key);
+      failures.push(`${blockCode}  data/all_certs.toml:${i + 1} still quotes beta pricing, but it is not beta`);
+    }
+  });
+} else {
+  failures.push(`missing registry file: ${REGISTRY_FILE}`);
+}
+
 if (failures.length) {
   console.error(`\n[cert-lifecycle] ${failures.length} problem(s) found:\n`);
   for (const f of failures) console.error('  ✗ ' + f);
   console.error('\nFix the page copy or the status data before pushing.\n');
   process.exit(1);
 }
-console.log(`[cert-lifecycle] OK — ${files.length} cert pages consistent with latest.json`);
+console.log(`[cert-lifecycle] OK — ${files.length} cert pages consistent with latest.json and all_certs.toml`);
