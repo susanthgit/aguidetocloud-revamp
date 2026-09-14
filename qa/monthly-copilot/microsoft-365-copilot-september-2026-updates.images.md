@@ -52,7 +52,23 @@ not a loss on our side.
 
 ---
 
-## §1 — PowerPoint can be locked to your approved template
+## §1 — PowerPoint can be locked to your approved template *(image 1 of 2)*
+`3072c5cf061f3ec1d764aefb54f7bcafbf6b28adbf505b3e40adbff34493dedb`
+
+**Observed 14 September 2026 (my own tenant):** The Copilot app&rsquo;s **Create** page. A large
+heading reads “What do you want to create?”. Beneath it a row of pill buttons runs off the left
+edge of the capture — a clipped “…ate an image”, then **PowerPoint**, then **Browse brand
+templates** (filled dark, selected), then **More…**. The **More…** menu is open beneath it as a
+white card listing, each with an icon: **Story**, **Poster**, **Edit an image**, **Form**,
+**Banner**, **Draft**; then a group label **Start from a template** containing **All templates**;
+then a group label **Manage brand kits** containing **Brand kits**, drawn with a focus outline;
+and finally **About Create**. No Brand Kit contents are visible — this image shows only the route
+to them.
+
+**Verdict:** ✅ MATCH — the section describes a setting that does not live in PowerPoint, and the
+image shows the exact path named in the text: Create → More… → Brand kits.
+
+## §1 — PowerPoint can be locked to your approved template *(image 2 of 2)*
 `fde67c57ce4bbef2e985244515137702907c543901940daabc93824c49600285`
 
 **Observed:** A settings page of stacked cards: **Logos** ("Ensure correct logo usage across
@@ -70,7 +86,7 @@ elements defined in your template when creating or editing presentations.", butt
 **Verdict:** ✅ MATCH — the section is about locking PowerPoint to an approved template, and the
 image shows exactly that control and its confirmation dialog.
 
-## §2 — Slide notes can steer Copilot slide by slide
+## §2 — Slide notes can steer Copilot slide by slide *(image 1 of 2)*
 `c6b25fca61f23e3367f1170eedaa3b011ac28c393f3480420e73021d5f7d0cb0`
 
 **Observed:** A Brand Kit page for "Adventure Works Cycle" (breadcrumb "‹ Manage Brand Kits",
@@ -91,6 +107,174 @@ the dialog on a purple-green gradient.
 and creates content" is precisely the capability this section describes.
 **Alt-text correction made:** I had written the thumbnail was "on the right"; at full size it is
 clearly on the left. Alt text amended to "beside the dialog".
+
+## §2 — Slide notes can steer Copilot slide by slide *(image 2 of 2)*
+`3d642b9bd92c6e403a0802a4ee542aedeadb80a4f258e4a965b37adda3aa6574`
+
+**Observed:** My own tenant. The **Edit details** form for a Brand Kit template, cropped to the form itself so the whole dialog is in shot. **Template Name** "Caldova Brand Template"; **Brand Kit** "Caldova Brand Kit" (greyed dropdown); a **Tags** box with nine chips — PowerPoint, Internal Memo, Strategy Deck, Internal, Executive, Product Management, Engineering, English, Minimalist; a **Description** box reading "A minimalist corporate template for internal communication and strategy, providing structure for presenting research, statistics, and product development updates." with a 162/250 counter; then **Save** (greyed) and **Cancel**. Between the description box and the buttons there is **nothing** — no checkbox, no "Allow note instructions" label, no sub-text.
+
+**Verdict:** ✅ MATCH — the section states that on 14 September 2026 the Allow note instructions checkbox was not present in my tenant. This is that exact dialog, cropped to include the full form top to bottom precisely so the absence cannot be read as a crop artefact. Paired with the official image above it, the comparison is the point.
+
+## §3 — You can now author your own PowerPoint skills *(image 1 of 7)*
+`52119ae4170e4cc6156d0b681b3265f69890c06e5d889fa8e93e96b645bb2209`
+
+**Observed:** My own tenant. The Copilot pane in PowerPoint. Header "Let's edit your presentation", sub-line "Copilot can edit your presentation directly.", an **Allow editing** dropdown, and a prompt box reading "Create a presentation about" with **+**, microphone and send icons. An open menu sits above the prompt box listing: Add work content (focused), Upload images and files, Designer, Select brand, **Choose skills**, Change data sources.
+
+**Verdict:** ✅ MATCH — the section's new navigation steps say the way in is PowerPoint → Copilot pane → + → Choose skills. This image shows that menu open with Choose skills in it.
+
+## §3 — You can now author your own PowerPoint skills *(image 2 of 7)*
+`e6bde20e34e52ab7ffa916c77277ddbd00193a9490fd75c426884fea3bb9f9bf`
+
+**Observed:** My own tenant. A pane headed **Skills**, then **Skills & plugins** — "Control which skills Copilot can use automatically, and manage their access to external data." First row: **Custom skills**, toggle **off** (grey), with a right chevron. Below it five rows each with a toggle **on** (red/accent): Visualize this slide, Review this presentation, Prepare for questions, Explain this presentation, Sharpen slide titles.
+
+**Verdict:** ✅ MATCH — the text claims Custom skills sat above the built-ins and was switched off while the five built-ins were on. That is exactly what is pictured, and the toggle states are legible.
+
+## §3 — You can now author your own PowerPoint skills *(image 3 of 7)*
+`9d5413e0aa1b1d12a0ef3cfc8239fdf42988bd6db8d58b81cc2d8c7749eb5ff8`
+
+**Observed:** My own tenant. A back arrow beside "Skills & plugins" and a close X. Heading **Custom skills** with its toggle **off**. Body text: "Custom skills let you extend Copilot with your own skill files. To get started, create a skills folder in your OneDrive." Then an underlined link "Read detailed instructions." and a filled button reading **+ Create skills folder**.
+
+**Verdict:** ✅ MATCH — the section quotes this sentence verbatim and describes this button as the mechanism. Both are in the image.
+
+## §3 — You can now author your own PowerPoint skills *(image 4 of 7)*
+`acbe40e8b310f2b06b52cde39edcf8b79fcfc4869acec06518fc371d0cdfa0e4`
+
+**Observed:** My own tenant, OneDrive on the web, cropped to the breadcrumb and file list (browser chrome, left navigation, and the tenant host name in the address bar all removed). Breadcrumb: **My files › Documents › Copilot › Microsoft PowerP… › skills**. A file-type filter row (Word, Excel, PowerPoint, OneNote icons). Columns Name / Modified / Modified By. Two rows: a **folder** "create-infographic-summary.example" and a file **"README.md"**, both "A few seconds ago", both by Colin Ballinger.
+
+**Verdict:** ✅ MATCH — the section says the button made a skills folder at Documents › Copilot › Microsoft PowerPoint › skills and seeded it with a readme and a worked example. The breadcrumb and the two filenames show precisely that, and the timestamps corroborate that it had just been created.
+
+## §3 — You can now author your own PowerPoint skills *(image 5 of 7)*
+`d9ebd5a6fa1311b95e4170b00765379eb44c0b80a897166b3a3208e6ea70da20`
+
+**Observed:** My own tenant. Back arrow beside "Skills & plugins", close X. Heading **Upload skill**. A line "Already have a skill file?" with an information icon. Body: "Add your own skill files to extend what Copilot can do for you. Files are saved directly to your **OneDrive Skills folder.**" (that phrase underlined as a link). Below, a dashed drag-and-drop area with an upload icon reading "Drag & Drop your files or **Browse**".
+
+**Verdict:** ✅ MATCH — the section says upload writes into the same OneDrive folder. The pane states that itself, which is why it is shown.
+
+## §3 — You can now author your own PowerPoint skills *(image 6 of 7)*
+`b88d134e9f264a1800467379f37db3720782c3a6eaee25944483b60bc8c2a827`
+
+**Observed:** My own tenant. A PowerPoint slide titled **"Copilot Agents vs. Copilot Studio Agents"**, body set as two columns of plain black bullet text with no graphics, no cards and no colour. The right-hand column runs past the bottom edge of the slide area.
+
+**Verdict:** ✅ MATCH — captioned as the "before" state for the visualize-this-slide skill. It is a text-heavy slide that overflows, which is the problem the skill is meant to solve.
+
+## §3 — You can now author your own PowerPoint skills *(image 7 of 7)*
+`5c89949d5908d1d2ac512dd867e6b9778503319cc40883c0de82b64a8e9e6705`
+
+**Observed:** My own tenant. The same subject rebuilt: a navy header band carrying "Copilot Agents vs. Copilot Studio Agents", then two white rounded cards each with an icon — left card headed **COPILOT AGENT** in blue, right card headed **COPILOT STUDIO AGENT** in teal — each holding five short lines. A single line runs beneath both cards: "Start in Copilot, graduate to Studio when the work needs custom logic and systems."
+
+**Verdict:** ✅ MATCH — captioned as the "after". Same content as image 6, restructured into a designed two-card layout, which is what the skill claims to do. The closing line is genuinely new, and the caption says so.
+
+## §4 — Translation moved into Copilot, and resizes the text for you *(image 1 of 2)*
+`6bf6c3e946e7a08e724d0e70bb5cc4845f7a81528c6c665f31c5fc27fb9a35d6`
+
+**Observed:** The Copilot pane in PowerPoint, portrait. My prompt bubble reads "Translate this presentation into German". Below it, a "Reasoned in 5 steps" block is expanded and shows: "Thinking it through", "Mapping it out", "I'm checking whether slides 1, 3, and 4 are empty by looking at their contents", "I'm translating the editable text on the one slide that contains it and noting that the image-based slides can't be changed", and "I'm reducing the text size or turning on automatic fitting for the two body areas on slide 2 so the content stays inside the box". The reply below is in German: "Die Textinhalte sind jetzt auf Deutsch, mit angepasster Schriftgröße, damit alles sauber in die Platzhalter passt. Produktnamen (Copilot, Copilot Studio, Teams) blieben unverändert." A second German paragraph notes that slide 1 contains no text and slides 3 and 4 are each a single full-screen image whose burned-in text cannot be translated directly.
+
+**Verdict:** ✅ MATCH — the section's claim is that translation moved into Copilot and that it resizes text to fit. The image carries both: the prompt shows translation invoked from the Copilot pane with no menu, and the fourth reasoning step states the resize behaviour in Copilot's own words. The German reply is quoted and translated in the surrounding prose, and the limitation about image-based slides is reported rather than omitted.
+
+## §4 — Translation moved into Copilot, and resizes the text for you *(image 2 of 2)*
+`9187a7ca00225e2953b661898e21d827d1ae3106ea072a047994a5300767c667`
+
+**Observed:** A PowerPoint slide, landscape, white background. Title "Copilot Agents vs. Copilot Studio Agents" in black. Two columns beneath: left headed "Copilot Agent" with five German bullets beginning "Schlanker Assistent, direkt in Microsoft 365 Copilot integriert"; right headed "Copilot Studio Agent" with five German bullets beginning "Vollständige Authoring-Umgebung für individuelle, erweiterbare Agents". Red wavy spell-check underlines appear beneath many German words. Both columns end well above the bottom edge, leaving roughly a fifth of the slide empty.
+
+**Verdict:** ✅ MATCH — this is the same slide shown untranslated in §3's "before" image, where the right-hand column overran the bottom edge. Here, in a longer language, all text sits inside the slide with clear space below. That is the resize claim demonstrated, and the caption names the red underlines as an English spell-checker so they are not mistaken for errors in the feature.
+
+## §5 — Copilot can edit SmartArt on the canvas *(image 1 of 5)*
+`9566e1d829387564b4f3fe0a24125074b520883a6c79450dcfcd261b2bcd3023`
+
+**Observed:** The Copilot pane in PowerPoint, portrait. An expanded reasoning list shows three steps: "I am checking slide 3 now to see its current content and layout"; "I'm replacing the bullet list with a clean two-column card diagram using simple shapes and styled headers for a SmartArt-like look"; and "I'm building a SmartArt-style two-column layout with colored headers and five rows under each, keeping the title and placing the new elements precisely".
+
+**Verdict:** ✅ MATCH — this is the evidence for the section's central distinction. The words "simple shapes", "SmartArt-like" and "SmartArt-style" are Copilot's own, and the prose quotes the middle step verbatim rather than paraphrasing it. Nothing in the image contradicts the claim that this is not PowerPoint's SmartArt engine.
+
+## §5 — Copilot can edit SmartArt on the canvas *(image 2 of 5)*
+`e247fcedad9997ea9d86a3fea22d3eae69382ce7350c681029145d65c0950134`
+
+**Observed:** A PowerPoint slide titled "Copilot Agents vs. Copilot Studio Agents". Beneath it, two columns of rounded cards. Left column: a dark navy header bar reading "Copilot Agent" above five pale blue cards. Right column: an orange header bar reading "Copilot Studio Agent" above five pale peach cards. The top-left card carries a dotted selection border.
+
+**Verdict:** ✅ MATCH — this is the output of the "convert this slide to a smart art" prompt described immediately above it. The dotted border on a single card supports the caption's claim that each card is a separate selectable shape rather than one flat picture or one SmartArt object.
+
+## §5 — Copilot can edit SmartArt on the canvas *(image 3 of 5)*
+`5ad38229f3fe8cf0629b6ee4d99a3c6c7206afd7feaac0627b9dae342b022364`
+
+**Observed:** A close crop of the Copilot prompt box in PowerPoint. A dropdown labelled "Edit" sits above the typed prompt "match the flow left to right and match my brand colors".
+
+**Verdict:** ✅ MATCH — the surrounding prose says the layout change was requested in one short line, and the image shows exactly that line. The "Edit" dropdown is visible but not claimed about in the prose beyond noting the mode exists.
+
+## §5 — Copilot can edit SmartArt on the canvas *(image 4 of 5)*
+`780f499ed2b0509394b828c297eb68c24a01f0b78640b61b2a7ce0933ff6254b`
+
+**Observed:** A PowerPoint slide showing two horizontal chevron process flows. Top row: a navy anchor box labelled "Copilot Agent" followed by five chevrons deepening in blue, reading "Inside M365 Copilot", "Built in minutes", "Grounded in your data", "Chat, Teams, Word", "Quick task help". Bottom row: an orange anchor box labelled "Copilot Studio Agent" followed by five chevrons deepening in orange, reading "Custom agent studio", "Topics and triggers", "Connectors and APIs", "Publish anywhere", "Automated workflows". One chevron carries a dotted selection border.
+
+**Verdict:** ✅ MATCH — this is the on-canvas edit the section is really about. The image confirms all three things the prose claims: the flow now runs left to right, the text was condensed to short phrases to fit inside the chevrons, and the colour deepens along each row.
+
+## §5 — Copilot can edit SmartArt on the canvas *(image 5 of 5)*
+`ef1ecb7de57bb7eb5ff59ef36310885ba848e63b64c53f6f975930015c8a526e`
+
+**Observed:** The Copilot reply panel in PowerPoint. It shows the prompt "match the flow left to right and match my brand colors", a "Reasoned in 7 steps" link, and a reply stating the slide now reads as two left-to-right process flows with a labeled anchor for each agent type and five chevron steps deepening in the theme's blue and orange, with step text condensed to short phrases. A second paragraph reads: "I kept your theme's own palette since no separate brand kit was available — say the word if you want specific hex colors applied instead."
+
+**Verdict:** ✅ MATCH — this is the proof for the section's most load-bearing claim, that Copilot in PowerPoint reported finding no brand kit despite one existing in the same tenant. The sentence is quoted verbatim in the prose and the image shows it in full, in context, with the prompt above it. The prose does not assert a cause for the miss, and the image does not supply one.
+
+## §6 — PowerPoint can build a deck from an email *(image 1 of 3)*
+`0000311628d906e5c6068439fe344c37b35949b41e1fefee82331ce8563bba3b`
+
+**Observed:** The Copilot pane in PowerPoint, portrait. The prompt bubble reads "Create a presentation about Caldenza Relief - range and pack format email from Miguel Garcia". Below it an expanded reasoning list shows four steps: "Mapping it out", "Looking at the details", "I'm locating Miguel Garcia's email so I can build the deck", and "Exploring approaches".
+
+**Verdict:** ✅ MATCH — the section claims an email can be used as source material, and that in practice it is reached by description rather than attachment. The image shows exactly that: a plain-language prompt naming the sender and topic, and a reasoning step confirming Copilot went looking for the email. No attachment control or file chip appears anywhere in the prompt, which is consistent with the prose saying there is no picker.
+
+## §6 — PowerPoint can build a deck from an email *(image 2 of 3)*
+`5ee3ce8d7d0afdf2a9c06cf3bf9ad40dc02b39f246d788c8f3eada1ed94df98a`
+
+**Observed:** A Copilot prompt card in PowerPoint headed "How should your presentation look and feel?" with radio options. First, marked Recommended: "Your organization's templates - Use templates from my organization's brand kits." Then three styles with one-line descriptions: "Clinical Navy & White", "Warm Sand & Deep Teal", "Bold Charcoal Data Focus". A final option reads "Enter another option". Confirm and Skip all buttons sit at the bottom.
+
+**Verdict:** ✅ MATCH — this is the evidence for the section's cross-reference to §5. The brand kits wording is legible and verbatim, and the three named styles match the prose. The prose claims only that brand kits appear on the create path; it does not claim the option was selected or that it worked, and the image is not asked to prove more than it shows.
+
+## §6 — PowerPoint can build a deck from an email *(image 3 of 3)*
+`22cb1454b80ba88148c68af7c692f48722f32d235629b3a847d9fa1e48bc2b8b`
+
+**Observed:** A single generated slide, landscape, white background. Title in dark navy serif: "Our framework position and what to verify". Two columns below: a navy header bar "Framework position" over four bullets (trade margin no more than 30 percent; incremental-only rebates; payment terms of 60 days or shorter; no category exclusivity), and a teal header bar "Verify in negotiation" over four bullets (store-level storage capability for Rapid; any exclusivity ask on the 400mg 24s; registration status by presentation; anything outside the envelope needs Pricing sign-off).
+
+**Verdict:** ✅ MATCH — this is output from the run described above, and the navy-and-teal treatment matches the "Clinical Navy & White" option shown in image 2, which the caption states. Content is fictional demo-tenant data and the caption says so, so no real commercial terms are implied.
+
+## §7 — Copilot can explain the slide you are looking at during PowerPoint Live *(image 1 of 3)*
+`86f3f7da9ba9617aaf6923bced5a53b6e893da21a4e94e34fc413249cf1a9526`
+
+**Observed:** A dark teaching callout over a PowerPoint Live slide, headed "Get explanations from Copilot". Body text: "Not sure what something means, but don't want to interrupt the presentation? Select and drag over any part of a slide and Copilot will explain it in a private chat pane." A "Got it" button sits at the bottom right. A page indicator reading 1 of 7 is visible beneath the slide.
+
+**Verdict:** ✅ MATCH — the section claims an attendee can select part of a slide and ask Copilot to explain it without interrupting the presenter. This is Microsoft's own in-product description of that exact gesture, and it is the source of the "private chat pane" phrase quoted in the caption.
+
+## §7 — Copilot can explain the slide you are looking at during PowerPoint Live *(image 2 of 3)*
+`7ed0670b361b9089921225227c79c7eb1024bb133cb76fb8b30cfc6a7298a5f0`
+
+**Observed:** A PowerPoint Live slide titled "Four SKUs confirmed for the Gulf range" with four bullets describing pack formats. A dark rounded floating button labelled "Explain selected text", with a sparkle icon, floats above the slide.
+
+**Verdict:** ✅ MATCH — shows the trigger control the prose describes appearing after a drag-selection. The button label is legible at the rendered size and the surrounding slide gives it context.
+
+## §7 — Copilot can explain the slide you are looking at during PowerPoint Live *(image 3 of 3)*
+`c4a5dc7b23f2fcc6bb9e5abb49c7a810537a25d2b24112f22fb7653fe5f88b14`
+
+**Observed:** A full Teams meeting window. Top toolbar shows Take control, Chat, People 4, Raise, React, View, Notes, Copilot (underlined as active), More, Camera, Mic, Share and Leave. Three participant tiles sit below. The stage shows a PowerPoint Live slide titled "Four SKUs confirmed for the Gulf range" with the "Explain selected text" button visible, and a Caldova logo bottom-left. On the right, a Copilot pane contains an automatically composed prompt: "In 1-3 sentences, explain the selected text: Four SKUs confirmed for the Gulf range" followed by the four selected bullets, then a Copilot reply explaining that the range is built around four product formats targeting different shopper needs and price points.
+
+**Verdict:** ✅ MATCH — this carries the full claim in one frame: a live meeting, an attendee selection, an auto-composed prompt, and an answer in a side pane rather than on the shared stage. The prose claims Copilot wrote the prompt and imposed the one-to-three-sentence limit, and both are visible verbatim in the pane. Participant tiles are demo-tenant lab profiles, confirmed with Sush on 14 September 2026.
+
+## §9 — You can create a presentation from the PowerPoint web app *(image 1 of 1)*
+`27499e5d4506e371dee8d2bb62e0c4538b185217b2072ec5aa33ecac2402bc39`
+
+**Observed:** The PowerPoint start page in the web app. A welcome heading sits above three buttons in a row: "Create with Copilot" first and visually primary, then "Create blank presentation", then "Upload a file". A "Jump back in" row of recent presentation thumbnails appears below, and left navigation runs down the side.
+
+**Verdict:** ✅ MATCH — the section claims Copilot-based creation works in the PowerPoint web app. The image is unmistakably the web app rather than the desktop client, and it supports the stronger point the prose actually makes: the entry point leads the page rather than hiding in a menu.
+
+## §10 — Presentations can be grounded in web sources *(image 1 of 2)*
+`215af01dd9456157396dd2193539c573e48e7ff4c6abc24df5fdf3e993e3143f`
+
+**Observed:** The Copilot create prompt box in the PowerPoint web app. At the top of the box sits a source chip with a document icon reading "support.microsoft.com/en-" (truncated), with a control to its right. Below it the typed prompt reads "Create a presentation about How copilot notebooks work, use this web link as the only source" followed by the pasted URL rendered as a link.
+
+**Verdict:** ✅ MATCH — this is the evidence for the section's contrast with §6. A chip is present and attached to the prompt, which is what the prose claims a pasted URL becomes, and it visibly differs from §6 where no attachment appeared. The chip text is truncated by the UI itself, not by the crop.
+
+## §10 — Presentations can be grounded in web sources *(image 2 of 2)*
+`8960c57b859c3491eb60d15a1fedecf306f449241f1ec5f41103543a66ca77f8`
+
+**Observed:** A Copilot prompt card headed "Who is this deck for, and how deep should it go?" with radio options: "Team enablement" marked Recommended, described as practical how-to for colleagues adopting Copilot Notebooks, roughly 8-10 slides; "Exec overview", short value-focused briefing, roughly 5-6 slides; "Hands-on deep dive", detailed walkthrough of sources, limits and workflows, roughly 10-12 slides; and "Enter another option". Confirm and Skip all buttons sit at the bottom.
+
+**Verdict:** ✅ MATCH — supports the prose claim that this run asked about audience and depth rather than look and feel, and that each option carried a slide count. The option text is specific to Copilot Notebooks, which is the source material used in this test, supporting the claim that the questions are generated rather than fixed.
 
 ## §11 — Word can add hyperlinks for you
 `b3d65d6c012008d233d91cf6e454a083d15505c8e80f384cb0da48a0b512c4cd`

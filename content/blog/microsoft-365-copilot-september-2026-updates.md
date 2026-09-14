@@ -95,6 +95,11 @@ Copilot in PowerPoint gained **strict brand adherence**. When it is on, Copilot 
 
 That last part is the interesting bit. Most brand controls are a suggestion that a rushed person can ignore. This one is a refusal.
 
+It is worth knowing where this lives, because it is not in PowerPoint. The setting sits in the Copilot app, under **Create → More… → Brand kits**.
+
+<p><img src="/images/blog/copilot-september-2026/lab-s01-brand-kit-nav.webp" alt="A capture from my own tenant showing the Microsoft 365 Copilot app&rsquo;s Create page. The heading reads What do you want to create? A row of buttons beneath it shows Create an image, PowerPoint, Browse brand templates and More. The More menu is open, listing Story, Poster, Edit an image, Form, Banner and Draft, followed by a Start from a template group containing All templates, then a Manage brand kits group whose Brand kits entry is highlighted, and finally About Create." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026 &mdash; the setting is not in PowerPoint. It lives in the Copilot app under Create &rarr; More&hellip; &rarr; Brand kits.</em></p>
+
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Every organisation has a deck template, and every organisation has decks that ignore it. If Copilot is the thing building the slides, the template stops being a guideline and starts being a boundary.</p>
 </blockquote>
@@ -110,7 +115,18 @@ That last part is the interesting bit. Most brand controls are a suggestion that
 
 **Note steering** lets you write plain-language instructions into a slide's notes field, and Copilot follows them for that slide. Instead of one instruction for the whole deck, you get governance at the level of the individual slide.
 
-In practice this turns the notes field into a brief. Microsoft's example is writing something like *"keep this to three bullets, no chart"* under slide four and having Copilot treat it as an instruction for that slide. I have not tested how closely it follows a given instruction, and that is the part worth checking against your own decks.
+In practice this turns the notes field into a brief. Microsoft's example is writing something like *"keep this to three bullets, no chart"* under slide four and having Copilot treat it as an instruction for that slide.
+
+**Where the switch lives.** This is the part that catches people out. It is not in PowerPoint at all — it sits with the template, over in the Copilot app.
+
+1. Copilot app → **Create → More… → Brand kits**
+2. Open the template you want
+3. **Edit details**
+4. Tick **Allow note instructions** — *"Use slide notes to control how Copilot updates and creates content"*
+
+After that the notes field does the work: type the instruction under the slide, then ask Copilot to rewrite that slide.
+
+I went looking on **14 September 2026** and that checkbox was not in my tenant yet — the Edit details dialog had no such option. Microsoft published it in the August roundup, so it is either still rolling out or not switched on for my tenancy. Which means the interesting question, how closely Copilot actually follows an instruction written in the notes, stays open. I will retest for the next issue.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Long prompts try to describe a whole deck at once, and the detail gets lost. Putting the instruction next to the slide it applies to is a much more natural way to work, and it survives into the next revision because it lives in the file.</p>
@@ -119,67 +135,208 @@ In practice this turns the notes field into a brief. Microsoft's example is writ
 <p><img src="/images/blog/copilot-september-2026/official-02-brand-kit-note-instructions.webp" alt="Official Microsoft image of a Brand Kit template settings dialog titled Edit details, reading Make this template easier to find by editing tags or description. The template name is Adventure Works MTB Line Expansion and the Brand Kit is Adventure Works Cycle. A Tags field holds removable chips for PowerPoint, Product Launch, Executive, Internal, Marketing, Product Management, Sales, Finance, English and Corporate. Below the description box sits a ticked checkbox labelled Allow note instructions, with the explanation Use slide notes to control how Copilot updates and creates content. A thumbnail beside the dialog shows a slide reading MTB Line Expansion over a mountain biking photograph." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 <p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Official Microsoft image from Microsoft&rsquo;s August 2026 Copilot roundup.</em></p>
 
+<p><img src="/images/blog/copilot-september-2026/lab-s02-edit-details-no-checkbox.webp" alt="A capture from my own tenant showing the same Edit details dialog for a Brand Kit template. Template Name reads Caldova Brand Template and Brand Kit reads Caldova Brand Kit. A Tags field holds removable chips for PowerPoint, Internal Memo, Strategy Deck, Internal, Executive, Product Management, Engineering, English and Minimalist. Below that sits a Description box reading A minimalist corporate template for internal communication and strategy, providing structure for presenting research, statistics, and product development updates, with a character count of 162 of 250. The form ends with Save and Cancel buttons. There is no Allow note instructions checkbox anywhere in it." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The same dialog in my own lab tenant on 14 September 2026. The form runs from Template Name straight through to Save and Cancel &mdash; there is no <strong>Allow note instructions</strong> checkbox in it. In Microsoft&rsquo;s image above, it sits directly under the description box.</em></p>
+
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
 ### 3. You can now author your own PowerPoint skills
 
-*For: Copilot in PowerPoint · Rolled out August 2026*
+*For: Copilot in PowerPoint · Rolled out August 2026 · Walked through in my tenant 14 September 2026*
 
 The August issue covered PowerPoint skills arriving, with custom skill files appearing from a OneDrive folder. What changed is the authoring: you can now **upload, create, edit and delete your own skills** rather than only using what is already there.
 
 That closes the loop. A skill stops being something handed to you and becomes something you write, test and fix.
 
+**Where to find it.** The way in is behind a **+** in the Copilot prompt box, which is easy to walk straight past.
+
+1. PowerPoint → open the **Copilot** pane
+2. In the prompt box, click **+**
+3. **Choose skills**
+4. **Manage skills**, at the bottom of that list
+
+<p><img src="/images/blog/copilot-september-2026/lab-s03-choose-skills-menu.webp" alt="A capture from my own tenant showing the Copilot pane in PowerPoint. The heading reads Let us edit your presentation, with a note saying Copilot can edit your presentation directly and an Allow editing dropdown. An open menu above the prompt box lists Add work content, Upload images and files, Designer, Select brand, Choose skills and Change data sources." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>My own tenant, 14 September 2026. <strong>Choose skills</strong> is the entry point, and it lives behind the plus button rather than anywhere obvious.</em></p>
+
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> The gap between "there are skills" and "I can write a skill" is the gap between a feature and a habit. Teams that build their own get a shared way of working; teams that only consume get whatever Microsoft shipped.</p>
 </blockquote>
+
+**What I found on 14 September 2026.** The pane opens as *Skills &amp; plugins*. The five built-in skills were all switched on, and **Custom skills** sat above them as its own entry — switched **off**.
+
+<p><img src="/images/blog/copilot-september-2026/lab-s03-custom-skills-off.webp" alt="The Skills and plugins pane in my own tenant. The description reads Control which skills Copilot can use automatically, and manage their access to external data. A Custom skills entry sits at the top with its toggle switched off and a chevron to open it. Below it five built-in skills are each switched on: Visualize this slide, Review this presentation, Prepare for questions, Explain this presentation and Sharpen slide titles." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Custom skills ships <strong>off</strong>. Worth knowing before you go hunting for a folder that has not been made yet.</em></p>
+
+Turning it on explains the whole model in one sentence: *&ldquo;Custom skills let you extend Copilot with your own skill files. To get started, create a skills folder in your OneDrive.&rdquo;*
+
+<p><img src="/images/blog/copilot-september-2026/lab-s03-create-skills-folder.webp" alt="The Custom skills panel in my own tenant, opened from the Skills and plugins pane. Its toggle is off. The text reads Custom skills let you extend Copilot with your own skill files. To get started, create a skills folder in your OneDrive, followed by a link reading Read detailed instructions and a button reading Create skills folder." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>One button, and it is the whole mechanism.</em></p>
+
+That button does what it says. It made a **skills** folder in my OneDrive at *Documents › Copilot › Microsoft PowerPoint › skills*, and seeded it with a readme and a worked example rather than leaving it empty.
+
+<p><img src="/images/blog/copilot-september-2026/lab-s03-onedrive-skills-folder.webp" alt="A OneDrive folder listing in my own tenant. The breadcrumb reads My files, Documents, Copilot, Microsoft PowerPoint, skills. The folder holds two items, both modified a few seconds ago by Colin Ballinger: a folder called create-infographic-summary.example and a file called README.md." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>The part nobody shows you. A skill is a file in a folder &mdash; and Microsoft leaves you a readme and a working example to copy.</em></p>
+
+So the bar is lower than &ldquo;author a skill&rdquo; makes it sound. It also explains how upload works: drop a file in and it lands in that same folder.
+
+<p><img src="/images/blog/copilot-september-2026/lab-s03-upload-skill.webp" alt="The Upload skill panel in my own tenant. A line reads Already have a skill file, with an information icon. Below it the text reads Add your own skill files to extend what Copilot can do for you. Files are saved directly to your OneDrive Skills folder. Beneath that is a drag and drop area reading Drag and Drop your files or Browse." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Upload writes to the same OneDrive folder, so the two routes end up in the same place.</em></p>
+
+I have not written one of my own yet, so I cannot tell you how a custom skill performs — that is for the next issue. What I can show you is what a skill does when it runs. This is the built-in **visualize-this-slide** skill, on a text-heavy slide I had just made.
+
+<p><img src="/images/blog/copilot-september-2026/lab-s03-visualize-before.webp" alt="A slide in my own tenant titled Copilot Agents versus Copilot Studio Agents. The content is two columns of plain bullet points, and the right-hand column runs past the bottom edge of the slide." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>Before. Two columns of bullets, with the right-hand column spilling off the bottom of the slide.</em></p>
+
+<p><img src="/images/blog/copilot-september-2026/lab-s03-visualize-after.webp" alt="The same slide after running the visualize this slide skill. The title now sits in a navy banner. The content is laid out as two white cards with icons, the left headed Copilot Agent in blue and the right headed Copilot Studio Agent in teal, each holding five short lines. A closing line beneath reads Start in Copilot, graduate to Studio when the work needs custom logic and systems." loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
+<p style="font-size:0.88rem;opacity:0.78;margin-top:calc(var(--space-3) * -1);"><em>After. One instruction, one slide, and the rework is done &mdash; including a closing line the original never had.</em></p>
 
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
 ### 4. Translation moved into Copilot, and resizes the text for you
 
-*For: Copilot in PowerPoint · Rolled out August 2026*
+*For: Copilot in PowerPoint · Rolled out August 2026 · Tested in my tenant 14 September 2026*
 
 Translation moved out of the ribbon and into Copilot. It also **dynamically resizes text boxes** to fit the translated text.
 
 Anyone who has translated a deck into German knows why that second sentence matters more than the first.
 
+There is no menu item to hunt for. You just ask.
+
+**What I found on 14 September 2026.** I typed *"Translate this presentation into German"* into the Copilot pane on a deck I had just built. It reasoned through five steps, and the fourth one is the whole feature in Copilot's own words: *"I'm reducing the text size or turning on automatic fitting for the two body areas on slide 2 so the content stays inside the box."*
+
+That is worth reading twice, because it is a slightly different thing from what the release note says. Microsoft describes this as resizing the text box. What Copilot reported doing was shrinking the text and switching on autofit. Same outcome on screen, different mechanism underneath.
+
+It replied to me in German, which I did not ask for but rather liked. And it was straight with me about what it could not do: two of my slides were single full-screen images, so the text baked into them stayed in English.
+
+<img src="/images/blog/copilot-september-2026/lab-s04-translate-reasoning.webp" alt="A capture from my own tenant showing the Copilot pane in PowerPoint. My prompt reads Translate this presentation into German. Below it Copilot shows an expanded Reasoned in 5 steps list, including lines about checking whether slides 1, 3 and 4 are empty, translating the editable text on the one slide that contains it, noting that image-based slides cannot be changed, and reducing the text size or turning on automatic fitting for the two body areas on slide 2 so the content stays inside the box. The reply beneath is written in German and says the text is now in German with adjusted font size so everything fits neatly into the placeholders, that the product names Copilot, Copilot Studio and Teams were left unchanged, and that slide 1 contains no text while slides 3 and 4 are each a single full-screen image whose burned-in text cannot be translated directly." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. The fourth reasoning step is the feature describing itself — and note that it talks about shrinking the text and turning on autofit, rather than resizing the box.</em></p>
+
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Translation was never the hard part. The hard part was the hour afterwards spent fixing every slide where the new text no longer fitted. Handing the reflow to Copilot removes the bit that made people avoid translating decks at all.</p>
 </blockquote>
+
+The result holds up in the hardest direction. In the English original the right-hand column ran off the bottom of the slide. German runs roughly a third longer than English, and it still fits, with clear space underneath.
+
+<img src="/images/blog/copilot-september-2026/lab-s04-translated-slide.webp" alt="A slide in my own tenant titled Copilot Agents vs. Copilot Studio Agents, with the body text now in German. Two columns headed Copilot Agent and Copilot Studio Agent each hold five German bullet points. Red spell-check underlines run beneath many of the German words. All of the text sits inside the slide, with clear space below the final bullet." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>The same slide, translated. In English the right-hand column overran the bottom edge; in German — the longer language — it fits. The red underlines are my spell-checker, still set to English.</em></p>
 
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
 ### 5. Copilot can edit SmartArt on the canvas
 
-*For: Copilot in PowerPoint · Frontier Program · Rolled out August 2026*
+*For: Copilot in PowerPoint · Frontier Program · Rolled out August 2026 · Tested in my tenant 14 September 2026*
 
 Copilot can **edit SmartArt, diagrams and shapes directly on the canvas**, on brand, instead of leaving you to align things by hand.
 
-This is a Frontier Program capability, so it reaches Frontier tenants first rather than everyone.
+This is a Frontier Program capability, so it reaches Frontier tenants first rather than everyone. I could reproduce it in my own tenant on 14 September 2026, so if you had written it off as not-for-me, it is worth ten seconds to check.
+
+**What actually happens when you ask for SmartArt.** I took a plain two-column bullet slide and typed *"convert this slide to a smart art"*. The reasoning is the interesting part:
+
+> *"I'm replacing the bullet list with a clean two-column card diagram using simple shapes and styled headers for a SmartArt-like look."*
+
+SmartArt-**like**. Built from **simple shapes**. This is not PowerPoint's SmartArt engine. It is Copilot drawing a diagram that resembles one.
+
+<img src="/images/blog/copilot-september-2026/lab-s05-shapes-reasoning.webp" alt="A capture from my own tenant showing the Copilot pane in PowerPoint. An expanded reasoning list reads: I am checking slide 3 now to see its current content and layout; I am replacing the bullet list with a clean two-column card diagram using simple shapes and styled headers for a SmartArt-like look; I am building a SmartArt-style two-column layout with colored headers and five rows under each, keeping the title and placing the new elements precisely." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. SmartArt-<em>like</em>, built from simple shapes — Copilot saying plainly that this is not PowerPoint's SmartArt engine.</em></p>
+
+That sounds like a downgrade until you see it.
+
+<img src="/images/blog/copilot-september-2026/lab-s05-smartart-result.webp" alt="A PowerPoint slide in my own tenant titled Copilot Agents vs. Copilot Studio Agents. Two columns of rounded cards sit beneath the title. The left column has a dark navy header reading Copilot Agent above five pale blue cards. The right column has an orange header reading Copilot Studio Agent above five pale peach cards. The top left card carries a dotted selection border, showing it is a separate selectable shape." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>The result. Cleaner than the bullet list it replaced, and each card is a separate shape you can select and move.</em></p>
+
+It is worth knowing what the distinction costs you. Because this is not a real SmartArt object, there is no **SmartArt Design** tab, so you cannot flick between built-in layouts or type into the text pane. What you get instead is a diagram that is not boxed in by SmartArt's templates — and in my case, one that looked rather better than SmartArt would have.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Diagrams are where deck work quietly loses an afternoon. Nudging boxes into alignment is not thinking, it is admin — and it is exactly the kind of fiddly, rule-based work a model is good at.</p>
 </blockquote>
 
+**Then the actual claim — editing it on the canvas.** This is what the release note is really about. I asked for a layout change in one short line.
+
+<img src="/images/blog/copilot-september-2026/lab-s05-prompt-left-right.webp" alt="A close-up of the Copilot prompt box in PowerPoint from my own tenant, showing a dropdown labelled Edit above the typed prompt: match the flow left to right and match my brand colors." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>One line was all the instruction it needed.</em></p>
+
+It rebuilt the whole thing as two chevron process flows, condensed the text so it sits inside the arrows, and deepened the colour of each step as the flow progresses.
+
+<img src="/images/blog/copilot-september-2026/lab-s05-chevron-result.webp" alt="A PowerPoint slide in my own tenant showing two horizontal chevron process flows. The top row begins with a navy anchor box labelled Copilot Agent, followed by five chevrons that deepen in blue reading Inside M365 Copilot, Built in minutes, Grounded in your data, Chat Teams Word, and Quick task help. The bottom row begins with an orange anchor box labelled Copilot Studio Agent, followed by five chevrons that deepen in orange reading Custom agent studio, Topics and triggers, Connectors and APIs, Publish anywhere, and Automated workflows. One chevron carries a dotted selection border." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>The same content rebuilt as two process flows, with the text condensed to fit inside the chevrons.</em></p>
+
+**And then one line in the reply that was worth the whole test.**
+
+> *"I kept your theme's own palette since no separate brand kit was available — say the word if you want specific hex colors applied instead."*
+
+I had built a Brand Kit earlier that same day — it is section 1 of this very post. Copilot in PowerPoint could not see it. I cannot yet tell you why: brand kits may only apply to the Create surface in the Copilot app, the deck may need to start from a brand kit template, or this may simply still be rolling out. What I can tell you is that "on brand" quietly fell back to the deck's theme colours, and that Copilot said so rather than guessing silently. I will chase this one down for the next issue.
+
+<img src="/images/blog/copilot-september-2026/lab-s05-chevron-reply.webp" alt="A capture of the Copilot reply panel in PowerPoint from my own tenant. It shows my prompt, match the flow left to right and match my brand colors, a Reasoned in 7 steps link, and a reply explaining that the slide now reads as two left-to-right process flows, with a labeled anchor for each agent type and five chevron steps that deepen in the theme's blue and orange, and that the step text is condensed to short phrases. A second paragraph reads: I kept your theme's own palette since no separate brand kit was available, say the word if you want specific hex colors applied instead." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>The line that matters. A Brand Kit existed in my tenant; Copilot in PowerPoint did not find one.</em></p>
+
 📖 [Microsoft's August 2026 Copilot roundup](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--august-2026/4551960)
 
 ### 6. PowerPoint can build a deck from an email
 
-*For: Copilot in PowerPoint · Generally available 25 August 2026*
+*For: Copilot in PowerPoint · Generally available 25 August 2026 · Tested in my tenant 14 September 2026*
 
 You can **reference an email** when asking Copilot to create a presentation. The thread becomes the source material for the deck.
+
+**What I found on 14 September 2026.** The word "reference" set my expectations wrong. I could not attach an email as grounding the way you attach a Word document or a PDF — there is no picker for it, and nothing to drag in. What worked was simply describing it: *"Create a presentation about Caldenza Relief — range and pack format email from Miguel Garcia"*. Copilot went and found the thread on its own.
+
+> *"I'm locating Miguel Garcia's email so I can build the deck."*
+
+<img src="/images/blog/copilot-september-2026/lab-s06-prompt-locating-email.webp" alt="A capture from my own tenant showing the Copilot pane in PowerPoint. The prompt reads: Create a presentation about Caldenza Relief, range and pack format email from Miguel Garcia. Beneath it an expanded reasoning list shows the steps Mapping it out, Looking at the details, I am locating Miguel Garcia's email so I can build the deck, and Exploring approaches." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. No attachment and no picker — Copilot searched my mailbox from the description in the prompt.</em></p>
+
+**Then it did something I was not expecting.** Before generating anything, it stopped and asked how the deck should look, offering three styles it had written for this particular deck — "Clinical Navy & White", "Warm Sand & Deep Teal", "Bold Charcoal Data Focus" — along with a free-text box and a Skip all button.
+
+Look at the option sitting at the top of that list.
+
+<img src="/images/blog/copilot-september-2026/lab-s06-style-options.webp" alt="A capture from my own tenant showing a Copilot prompt in PowerPoint headed How should your presentation look and feel? The first option, marked Recommended, reads Your organization's templates, described as Use templates from my organization's brand kits. Below it are three suggested styles: Clinical Navy and White, described as crisp white background with deep navy headers and teal accent rules; Warm Sand and Deep Teal, described as sand backgrounds with deep teal panels and amber highlights; and Bold Charcoal Data Focus, described as charcoal slides with oversized figures in lime. A final option reads Enter another option, and there are Confirm and Skip all buttons." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>"Your organization's templates — use templates from my organization's brand kits." This is where brand kits surface in PowerPoint.</em></p>
+
+That is worth pausing on. In section 5, Copilot in PowerPoint told me no brand kit was available. Here, on the create path, brand kits are the *recommended* option. So they are not absent from PowerPoint at all — they show up when you are **making** a deck, and not when you are **editing** one. That distinction took me two tests to find and I have not seen it written down anywhere.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> A surprising number of decks start life as an email that got too long. Pointing Copilot at the thread skips the step where someone copies the argument into a blank slide and loses half of it.</p>
 </blockquote>
 
+The deck it produced held up. This is one slide from it, in the navy-and-teal treatment it had proposed a minute earlier.
+
+<img src="/images/blog/copilot-september-2026/lab-s06-generated-slide.webp" alt="A slide from the deck Copilot generated in my own tenant, titled Our framework position and what to verify. Two columns sit beneath the title: a dark navy header reading Framework position above four bullets covering trade margin no more than 30 percent, incremental-only rebates, payment terms of 60 days or shorter, and no category exclusivity; and a teal header reading Verify in negotiation above four bullets covering store-level storage capability, any exclusivity ask, registration status by presentation, and anything outside the envelope needing pricing sign-off." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>One slide from the generated deck, built from an email thread it found by itself. The content is fictional demo-tenant data.</em></p>
+
 📖 [AI at Work Roadmap 555888](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=555888) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
 ### 7. Copilot can explain the slide you are looking at during PowerPoint Live
 
-*For: Copilot in PowerPoint Live · Generally available 25 August 2026*
+*For: Copilot in PowerPoint Live · Generally available 25 August 2026 · Tested in my tenant 14 September 2026*
 
 During a PowerPoint Live session, an attendee can **select part of a slide and ask Copilot to explain it**, without interrupting the presenter.
+
+**What I found on 14 September 2026.** I ran a real meeting to test this one. PowerPoint Live tells attendees about it directly, with a coach mark that explains the gesture.
+
+<img src="/images/blog/copilot-september-2026/lab-s07-coach-mark.webp" alt="A teaching callout shown to attendees in PowerPoint Live in my own tenant. It is headed Get explanations from Copilot and reads: Not sure what something means, but don't want to interrupt the presentation? Select and drag over any part of a slide and Copilot will explain it in a private chat pane. A Got it button sits below." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>PowerPoint Live introduces the feature itself. Note the phrase “private chat pane” — the presenter never sees this.</em></p>
+
+Drag across anything on the slide and a small **Explain selected text** button appears where you released.
+
+<img src="/images/blog/copilot-september-2026/lab-s07-explain-button.webp" alt="A slide viewed in PowerPoint Live in my own tenant, titled Four SKUs confirmed for the Gulf range, with four bullets about product pack formats. A dark floating button labelled Explain selected text sits above the slide where the selection was made." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>The trigger. Select, release, and the button comes to you.</em></p>
+
+What happens next is the part I liked. Copilot writes the prompt for you — including the text you selected, and a length limit you did not have to think about — and answers in your own pane, inside the meeting, while the presenter keeps talking.
+
+<img src="/images/blog/copilot-september-2026/lab-s07-teams-live-explain.webp" alt="A Teams meeting window in my own tenant. The meeting toolbar runs along the top with Copilot highlighted, three participant tiles sit beneath it, and a PowerPoint Live slide titled Four SKUs confirmed for the Gulf range fills the stage with the Explain selected text button visible. On the right, a Copilot pane shows an automatically composed prompt reading In 1-3 sentences, explain the selected text, followed by the four selected bullets, and beneath it Copilot's explanation of how the four product formats target different shopper needs and price points." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. Copilot composed the prompt, capped it at one to three sentences, and answered privately mid-meeting.</em></p>
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> In any large presentation there is someone who lost the thread three slides ago and will not put their hand up. This gives them a way back in that costs the room nothing.</p>
@@ -201,9 +358,17 @@ Copilot in PowerPoint can use **enterprise assets hosted in Adobe Experience Man
 
 ### 9. You can create a presentation from the PowerPoint web app
 
-*For: Copilot in PowerPoint (Web) · Generally available 11 August 2026*
+*For: Copilot in PowerPoint (Web) · Generally available 11 August 2026 · Tested in my tenant 14 September 2026*
 
 Creating a presentation with Copilot works **directly in the PowerPoint web app**, not only the desktop client.
+
+**What I found on 14 September 2026.** It is not tucked away either. On the PowerPoint start page on the web, **Create with Copilot** is the first button, sitting ahead of Create blank presentation.
+
+<img src="/images/blog/copilot-september-2026/lab-s09-web-create-with-copilot.webp" alt="The PowerPoint start page in the web app in my own tenant. Three buttons sit under a welcome heading: Create with Copilot as the first and visually primary option, then Create blank presentation, then Upload a file. A Jump back in row of recent presentations appears below." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>The PowerPoint web app in my own tenant. Create with Copilot leads, rather than sitting in a menu.</em></p>
+
+Everything in the next section was built here, in the browser, which is the other half of the proof.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Plenty of people are on the web app because of their device, their licence or their employer's policy. Features that only exist on desktop quietly split an organisation into two classes of user.</p>
@@ -213,9 +378,23 @@ Creating a presentation with Copilot works **directly in the PowerPoint web app*
 
 ### 10. Presentations can be grounded in web sources
 
-*For: Copilot in PowerPoint · Generally available 11 August 2026*
+*For: Copilot in PowerPoint · Generally available 11 August 2026 · Tested in my tenant 14 September 2026*
 
 You can **reference web sources** when asking Copilot to create a presentation, so the deck can draw on material outside your tenant.
+
+**What I found on 14 September 2026.** This one behaves differently from the email in [section 6](#6-powerpoint-can-build-a-deck-from-an-email), and the difference is worth knowing. Paste a URL into the prompt and it becomes a **source chip**, attached the way a document would be. An email could not be attached at all; a web link can.
+
+<img src="/images/blog/copilot-september-2026/lab-s10-web-source-chip.webp" alt="The Copilot create prompt in the PowerPoint web app in my own tenant. A source chip at the top of the prompt box reads support.microsoft.com/en-, with a document icon beside it. The prompt below reads: Create a presentation about How copilot notebooks work, use this web link as the only source, followed by the pasted URL rendered as a link." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. The pasted link became an attached source, not just words in the prompt.</em></p>
+
+Then it interviewed me again — but about something different this time. In section 6 the question was how the deck should look. Here it asked **who it was for and how deep to go**, and each option came with a slide count.
+
+<img src="/images/blog/copilot-september-2026/lab-s10-audience-depth.webp" alt="A Copilot prompt card in the PowerPoint web app in my own tenant, headed Who is this deck for, and how deep should it go? Options are: Team enablement, marked Recommended, described as practical how-to for colleagues adopting Copilot Notebooks at roughly 8 to 10 slides; Exec overview, a short value-focused briefing at roughly 5 to 6 slides; Hands-on deep dive, a detailed walkthrough of sources, limits and workflows at roughly 10 to 12 slides; and Enter another option. Confirm and Skip all buttons sit at the bottom." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>Audience and depth, with slide counts attached. Both questions were written for this specific deck, not picked from a fixed list.</em></p>
+
+Two different runs, two different questions, both generated from the source material. Copilot is not filling in a form any more — it is asking the questions a colleague would ask before starting.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Useful, and worth a moment's thought. A deck grounded in the open web inherits whatever that page says, so this is a feature to pair with the domain exclusion control in [section 90](#90-domain-exclusion-is-back) rather than to enable and forget.</p>
