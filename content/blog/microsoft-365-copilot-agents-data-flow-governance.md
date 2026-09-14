@@ -2,9 +2,9 @@
 title: "Microsoft 365 Copilot Agents: Data-Flow Governance"
 list_title: "Copilot Agents & Studio — Data-Flow Governance"
 hub_id: "it-admins"
-description: "Where Microsoft 365 Copilot agent data goes — declarative vs Copilot Studio vs custom engine — and how to govern permissions, residency, DLP and identity."
+description: "Trace Copilot agent data by architecture, channel, credentials and storage. Review Studio transcripts, sharing, DLP, audit and residency limits."
 date: 2026-06-24
-lastmod: 2026-06-24
+lastmod: 2026-09-15
 card_tag: "Security"
 tag_class: "security"
 images: ["images/og/blog/microsoft-365-copilot-agents-data-flow-governance.jpg"]
@@ -13,27 +13,27 @@ og_glyph: "compare"
 faq_render: false
 faq:
   - question: "Do Copilot agents keep data inside the Microsoft 365 service boundary?"
-    answer: "It depends on the kind of agent. Declarative agents — built with Agent Builder, the Agents Toolkit, SharePoint, or Copilot Studio and published into Microsoft 365 Copilot — run on the Microsoft 365 Copilot stack and inherit its boundary, residency, permissions and no-training commitments. Copilot Studio standalone agents run on the Power Platform stack with their own data location, and custom engine agents run on whatever orchestrator and models you bring. So the honest answer is 'declarative agents do; the other kinds follow a different stack — check which one you've got.'"
+    answer: "Check the architecture, runtime and each data connection. Declarative agents use Microsoft 365 Copilot orchestration, but Agent Builder also involves Copilot Studio processing and tools can send data elsewhere. Custom-engine agents can run inside Microsoft 365 Copilot too, including agents built in Copilot Studio. The chat window alone does not determine the data boundary."
   - question: "Where is a Copilot Studio agent's data stored?"
-    answer: "In two different places. The agent's configuration, topics and flows live in the Power Platform environment's region (its Dataverse), which an admin chooses at environment creation. But the conversation and activity logs are stored in the geographic region of each end user's Exchange mailbox — regardless of the environment region — and are governed by Microsoft 365 terms. If a tenant's location isn't supported, data defaults to the United States."
+    answer: "There are several stores. Environment data and supported Dataverse ConversationTranscript records follow Power Platform storage rules. Microsoft 365-powered historical activity follows the end user's Exchange mailbox geography, independent of the environment. Studio also documents temporary storage up to 28 days. Dataverse transcript coverage has exclusions, and audit and external tool logs are separate."
   - question: "Do agents respect a user's existing permissions?"
-    answer: "Declarative agents and Copilot Studio agents using generative answers run on the signed-in user's identity, so they only surface content that user can already access — an agent doesn't add a permissions layer, it inherits your SharePoint and Graph permissions. The big exception is autonomous, event-triggered agents: their triggers and authenticated actions run with the agent maker's connections, so a recipient, channel or downstream system from that run can end up with data the maker can reach — not just what the caller can. Govern those deliberately."
+    answer: "User-authenticated retrieval respects that user's source access, but check each tool's credentials. Copilot Studio tools default to end-user authentication and can instead use maker-provided credentials, even during chat. Event-triggered runs use configured maker connections. Agent sharing can also grant selected source permissions, and uploaded copies have different access rules from live SharePoint sources."
   - question: "What's the biggest oversharing risk with agents?"
-    answer: "Two things. First, your existing SharePoint oversharing becomes the agent's oversharing — fix permissions before you scale. Second, autonomous event-triggered Copilot Studio agents authenticate with the maker's credentials (there's no service-account option today), so they can expose data the maker can reach to anyone who can invoke the agent. Microsoft shows a warning at publish time; block event triggers with Power Platform DLP if that risk isn't acceptable."
+    answer: "Review broad source permissions, maker-provided tool credentials, embedded files and downstream recipients. Maker connections can give an agent access beyond a chat user's own permissions. That is not limited to autonomous triggers. Restrict tools and endpoints, review output destinations, and use explicit approval for high-impact actions."
   - question: "How do we control which agents people can build and use?"
-    answer: "For Microsoft 365 Copilot agents, the Microsoft 365 admin center's Integrated Apps and agent settings let you allow agents by source (Microsoft, your organisation, external publishers), restrict sharing, and control who can use each agent — and you can see the permissions, data access and privacy statement each agent declares. For Copilot Studio agents, governance is in the Power Platform admin center, primarily through data loss prevention policies and environment routing."
+    answer: "Use the Microsoft 365 admin center's agent registry, settings and applicable Integrated Apps controls for agent access and publication. Copilot Studio also needs Power Platform environment and DLP governance. Check existing agent shares separately: Agent Builder sharing-policy changes do not revoke previously granted access or underlying source permissions."
   - question: "How does DLP work for Copilot Studio agents?"
-    answer: "Power Platform DLP classifies connectors into Business, Non-Business and Blocked groups — connectors in different groups can't share data — and it's enforced in real time. Microsoft also provides virtual connectors that switch agent features on or off: you can require Entra authentication, block SharePoint or public-web knowledge, block the HTTP node, block event triggers, or block specific publish channels. Purview DLP coverage for Copilot Studio is more limited and mostly applies to SharePoint-sourced knowledge."
+    answer: "Power Platform DLP separates Business and Non-business connectors and prevents use of Blocked connectors. Non-business does not mean blocked. Policies can restrict authentication modes, knowledge, HTTP, triggers and channels. Separately, a Purview policy at the Microsoft 365 Copilot location can restrict labelled SharePoint knowledge for supported Studio agents in Teams, SharePoint and Microsoft 365 Copilot."
   - question: "What is Microsoft Agent 365?"
-    answer: "Agent 365 is the control plane for AI agents — not an agent type. Generally available since 1 May 2026, it gives admins an agent registry, an agent map of interactions, lifecycle management, and the ability to reassign ownerless agents, working across the Microsoft 365 admin center, Microsoft Entra and Microsoft Purview. It's designed to govern agents across the Microsoft and supported third-party ecosystems once they're registered or integrated — confirm coverage per agent source."
+    answer: "Agent 365 is a management and security service, not an agent architecture. It became generally available for the Commercial segment on 1 May 2026, with per-user licensing. It provides registry, interaction-map and lifecycle capabilities across supported integrations. Check inventory coverage and ownership-management options for each agent source."
   - question: "Do agents get their own identity?"
-    answer: "Yes — Microsoft Entra Agent ID gives agents a purpose-built identity with enforced human sponsorship and lifecycle governance from provisioning through deactivation, rather than borrowing a user or a generic managed identity. The full agent security controls (Conditional Access, Identity Protection and governance for agents) require Microsoft 365 E7, or E5 plus an Agent 365 licence, or standalone Entra P1/P2 add-ons that each also require a Microsoft Agent 365 licence."
+    answer: "Microsoft Entra Agent ID provides purpose-built agent identities and blueprints for integrated agents. It does not automatically replace every tool's existing connection credentials. The identity platform is available to Entra customers; extending Entra security features to agents requires Agent 365 and the applicable plan prerequisites."
   - question: "Can we control where a Copilot Studio agent processes and stores data?"
-    answer: "Yes. You set the Power Platform environment region at creation, you can disable cross-geo data movement for Copilot Studio generative-AI features outside the United States, and you can enable Customer Managed Keys for Copilot Studio environments. Note that Customer Managed Keys and Customer Lockbox aren't currently supported for agents created with Agent Builder inside Microsoft 365 Copilot."
+    answer: "Review the environment region, cross-region processing settings, Microsoft 365-powered activity storage and every external destination separately. An environment setting does not relocate mailbox-backed history or third-party logs. Key-management support also varies by feature; Agent Builder currently does not support Customer Managed Keys."
   - question: "Can we audit and discover agent activity?"
-    answer: "Yes. Agent prompts and responses are captured in the Microsoft Purview unified audit log and surfaced in DSPM for AI, and agent interaction data stored in user mailboxes is discoverable through eDiscovery using the Copilot activity condition. Agent 365 instances are automatically enabled for audit, data classification and the AI assessments in Compliance Manager — though note that content newly created by Agent 365 doesn't inherit sensitivity labels from its source."
+    answer: "Supported agent audit events contain metadata and message or thread IDs, not full prompt and response text. Content can be available separately through eDiscovery, DSPM or Studio transcripts, depending on the product and channel. Agent 365 instances have automatic audit and classification coverage; other policies need appropriate scope. Copilot audit defaults to 180 days even on E5 unless an eligible custom policy applies."
   - question: "Does the EU Data Boundary cover Copilot Studio agents?"
-    answer: "Only if you keep all your environments inside it. A tenant with an EU/EFTA billing address is in scope for the EU Data Boundary for Copilot Studio if — and only if — every one of its environments is created within an EU Data Boundary region. That's a stricter, admin-driven condition than Microsoft 365 Copilot's boundary, which is one more reason agents need their own governance review."
+    answer: "Copilot Studio's documentation requires an EU/EFTA tenant billing address and every environment in an EU Data Boundary region. Review the documented service exceptions, model processing and external connectors too. That condition is not a guarantee that every connected system stores data inside the boundary."
 tags:
   - microsoft-365
   - copilot
@@ -45,25 +45,23 @@ layout: "notebook"
 stamp: "governance"
 intro_note: "↗ for the team being asked to let agents loose on company data"
 founder_note: |
-  Agents are where the security conversation is heading — and they don't all behave the same way. A declarative agent inside Microsoft 365 Copilot inherits everything you've already assured; a Copilot Studio agent runs on a different stack with a different data location; an autonomous agent can act on someone else's credentials. I kept getting asked "is an agent safe with our data?" and realising the honest answer is "which kind of agent?" So I wrote down where each one's data actually goes, and how you govern it.
+  Agents don't all behave the same way. The useful questions are which architecture runs them, whose credentials each tool uses, and where each copy of the data goes. Even a chat inside Microsoft 365 Copilot can host a custom-engine agent. I kept getting asked "is an agent safe with our data?" So I wrote down the checks needed before answering.
 ---
 
-If you've answered the Copilot security questions and the data-residency questions, there's a third wave coming: **agents**. And the first thing to know is that *"is an agent safe with our data?"* has no single answer — {{< hi >}}it depends entirely on which **kind** of agent you're talking about.{{< /hi >}}
+If you've answered the Copilot security and residency questions, agents need a further review. {{< hi >}}The agent's type matters, but so do its channel, tool credentials, knowledge sources and storage settings.{{< /hi >}}
 
-A declarative agent inside Microsoft 365 Copilot inherits everything you've already assured. A Copilot Studio agent runs on a different stack, in a different data location. A custom engine agent runs on whatever you bring. And an *autonomous* agent can act on someone else's credentials. So this guide does the one thing the marketing slides don't: it tells you where each kind of agent's data actually goes, and how you govern it — with the honest caveats.
+A declarative agent uses Microsoft 365 Copilot orchestration. A custom-engine agent uses separate orchestration, which can be managed by Copilot Studio or hosted elsewhere. Either category can be available inside Microsoft 365 Copilot. A familiar chat window does not settle the security review.
 
 {{< margin >}}This is the agent companion to the [data residency guide](/blog/microsoft-365-copilot-data-residency-anz-government/), which flagged that Copilot Studio agents have their own residency rules. Here's the detail.{{< /margin >}}
 
-<p><img src="/images/blog/copilot-security-qa/hero-agent-data-flow.webp" alt="Diagram titled 'Where does your agent's data go?' with three cards: a Declarative agent runs inside Microsoft 365 Copilot on the M365 stack and inherits residency, permissions and labels; a Copilot Studio standalone agent runs on the Power Platform stack with config in the environment region and conversation logs in the user's mailbox geo; a custom engine agent runs on your own stack wherever you host it — with a footer noting autonomous agents act on the maker's credentials and Agent 365 is the control plane over all of them" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
-
-*An agent's data flow depends on its type: declarative agents run on the Microsoft 365 stack; Copilot Studio standalone agents on the Power Platform stack; custom engine agents on your own — with Agent 365 as the control plane over all.*
+The diagram below separates architecture from hosting. It replaces the earlier illustration, which incorrectly implied that Copilot Studio and custom-engine agents were separate categories and that all Studio logs followed mailbox geography.
 
 **Quick links:**
 
 - [The 30-second answer](#the-30-second-answer)
-- [First: the four things people call an "agent"](#first-the-four-things-people-call-an-agent)
-- [Where the data lives: two different stacks](#where-the-data-lives-two-different-stacks)
-- [Do agents respect permissions? (mostly — with one big exception)](#do-agents-respect-permissions-mostly--with-one-big-exception)
+- [Architecture, platform and management are different](#first-the-four-things-people-call-an-agent)
+- [Where the data lives: several stores](#where-the-data-lives-two-different-stacks)
+- [Permissions: check every credential and source](#do-agents-respect-permissions-mostly--with-one-big-exception)
 - [Agent identity: Entra Agent ID & Agent 365](#agent-identity-entra-agent-id--agent-365)
 - [Governing who can build and use agents](#governing-who-can-build-and-use-agents)
 - [DLP and channels for Copilot Studio](#dlp-and-channels-for-copilot-studio)
@@ -76,11 +74,11 @@ A declarative agent inside Microsoft 365 Copilot inherits everything you've alre
 
 <div class="living-doc-banner">
 
-This is a living document. The agent landscape is moving fast — products, names and controls change monthly. If you spot anything out of date, please [send me feedback](/feedback/) and I'll update it. Last verified: June 2026.
+**Documentation reviewed: 15 September 2026.** This update checks public Microsoft sources, not tenant behaviour. No agents, policies or retention settings were tested. Existing demo screenshots illustrate the interfaces, not verified coverage in your tenant. Please [send me feedback](/feedback/) if something changes.
 
 </div>
 
-> ⚠️ **The one-line caveat to lead with:** an agent doesn't add a security layer — it **inherits** your existing permissions and surfaces whatever the caller (or, for autonomous agents, the *maker*) can already reach. Fix oversharing first; the agent will faithfully expose whatever you left open.
+> **Start with the acting identity.** End-user sign-in and a tool's connection identity are separate. A signed-in chat can still call a maker-authenticated tool. Review the source permissions and where the result is sent.
 
 ---
 
@@ -88,92 +86,105 @@ This is a living document. The agent landscape is moving fast — products, name
 
 | The question | The short answer |
 |---|---|
-| **Does agent data stay in the M365 boundary?** | Declarative agents: the core interaction, yes — but actions/connectors can send data out. Copilot Studio & custom engine: a different stack. |
-| **Where's a Copilot Studio agent's data?** | Config in the Power Platform **environment region**; conversation logs in each user's **Exchange mailbox geo**. |
-| **Do agents respect permissions?** | Yes for user-facing agents — **except autonomous ones**, which run on the **maker's** credentials. |
+| **Does agent data stay in the M365 boundary?** | Trace each flow. Agent Builder involves Studio processing; custom-engine agents can also appear inside Copilot. |
+| **Where's a Copilot Studio agent's data?** | Environment data, supported Dataverse transcripts, M365-powered mailbox history, temporary storage and external logs have separate rules. |
+| **Do agents respect permissions?** | User-authenticated retrieval respects source access; maker-provided tools can use broader credentials even during chat. |
 | **Who controls which agents run?** | M365 admin center (M365 Copilot agents) + Power Platform admin center DLP (Copilot Studio). |
-| **Can we audit them?** | Yes — Purview audit log, DSPM for AI, and eDiscovery. |
-| **What governs it all at scale?** | **Agent 365** — the control plane (registry, map, lifecycle), GA since May 2026. |
+| **Can we audit them?** | Supported metadata is in Purview Audit; content retrieval and coverage must be checked separately. |
+| **What helps govern agents at scale?** | **Agent 365** provides registry, map and lifecycle capabilities for supported integrations; Commercial GA since 1 May 2026. |
 
 ### The three caveats worth knowing up front
 
-1. **"Agent" means four different things** — and they don't share a data stack. Always ask *which kind*.
-2. **Autonomous agents run on the maker's credentials.** There's no service-account option today, so an event-triggered agent can expose data the maker can reach.
-3. **DLP for Copilot Studio lives in the Power Platform admin center**, not Purview — and Purview's DLP coverage for Copilot Studio is limited. Don't assume your M365 Copilot DLP policy covers a Copilot Studio agent.
+1. **Architecture is not the chat channel.** Declarative and custom-engine agents can both be hosted inside Microsoft 365 Copilot.
+2. **Maker credentials are not just an autonomous-agent issue.** Studio tools can use them in an interactive conversation too.
+3. **DLP has more than one policy surface.** Power Platform connector policies and Purview content policies cover different risks.
 
 ---
 
-## First: the four things people call an "agent"
+## Architecture, Platform and Management Are Different {#first-the-four-things-people-call-an-agent}
 
-Get this taxonomy right and every other answer falls into place.
+Microsoft documents two architectural categories. Copilot Studio is a platform that can build agents; Agent 365 is a management service, not a third architecture.
 
-| Kind | Built with | Runs on | Data stack |
+| Term | What it means | Runtime | Review focus |
 |---|---|---|---|
-| **Declarative agent** | Agent Builder, Agents Toolkit, SharePoint, or Copilot Studio (published to M365 Copilot) | The **Microsoft 365 Copilot** orchestrator, models and trusted AI services | M365 — inherits Copilot residency, permissions, labels, no-training |
-| **Custom engine agent** | M365 Agents SDK, Teams SDK, Copilot Studio, or Microsoft Foundry | **Your** orchestration and AI models | Wherever you host them |
-| **Copilot Studio standalone agent** | Copilot Studio, published to web/Teams/WhatsApp etc. | The **Power Platform** stack | Power Platform environment + Dataverse |
-| **Agent 365** | — | It's the **control plane**, not an agent | Governs registered/integrated agents |
+| **Declarative agent** | Instructions, knowledge and capabilities using Copilot orchestration | Microsoft 365 Copilot, with connected services as configured | Sources, permissions, processing and tools |
+| **Custom-engine agent** | Separate orchestration, built with Studio, SDKs or other platforms | Studio-managed or independently hosted; can be surfaced in M365 Copilot | Runtime, credentials, stores and egress |
+| **Copilot Studio** | A builder and managed platform, not a mutually exclusive agent type | Depends on the agent and publication path | Environment, authentication, transcripts and policies |
+| **Agent 365** | Management and security for registered/integrated agents | Not an agent runtime category | Inventory coverage, identity, ownership and policy scope |
 
-> **A note on Microsoft's official taxonomy:** Microsoft's documentation describes **two** categories — *declarative* and *custom engine*. This guide splits out "Copilot Studio standalone" as its own row because a Copilot Studio agent published to non-Copilot channels carries meaningfully different data-residency obligations — even though, in Microsoft's classification, it's technically a *custom engine* agent. The quick test: **if the agent is available inside Microsoft 365 Copilot chat, it's declarative (M365 stack); if it's published to standalone channels via Copilot Studio, treat it as the Power Platform stack** regardless of label.
+> **Do not classify by the window.** Microsoft's [custom-engine overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-custom-engine-agent) explicitly includes Copilot Studio agents operating inside Microsoft 365 Copilot. Inspect the agent's architecture and deployment, not just where the user opens it.
 
-> **The detail that catches people:** even a declarative agent built with **Agent Builder** (the simplest, in-Copilot tool) has its capabilities *processed by Copilot Studio* — data can flow to and from both Microsoft 365 and Copilot Studio, governed by the product terms for each. The core interaction stays in the Microsoft 365 boundary; agent *actions and plugins* can reach beyond it. So "declarative = fully inside M365" is true for the conversation, with an asterisk for what its actions call.
+Agent Builder creates declarative agents, but its capabilities are processed by Copilot Studio. Microsoft's documentation says data can flow between Microsoft 365 and Studio under the respective product terms. Tools and connectors add further destinations. "Declarative" does not mean every part of the data flow stays in one service.
 
 ```mermaid
 flowchart TD
-    Q["Which kind of agent?"] --> D["Declarative<br/>(Agent Builder / Toolkit / SharePoint / Studio→M365)"]
-    Q --> S["Copilot Studio standalone<br/>(published to web / Teams / WhatsApp)"]
-    Q --> C["Custom engine<br/>(your orchestrator + models)"]
-    D --> DM["Runs on the M365 Copilot stack<br/>inherits residency · permissions · labels · no-training"]
-    S --> SM["Runs on the Power Platform stack<br/>config in environment region · logs in mailbox geo"]
-    C --> CM["Runs on your stack<br/>residency = wherever you host it"]
+    Q["Identify the architecture"] --> D["Declarative<br/>Copilot orchestration"]
+    Q --> C["Custom engine<br/>separate orchestration"]
+    C --> S["Studio-managed runtime"]
+    C --> H["Other hosted runtime"]
+    D --> U["Can appear inside M365 Copilot"]
+    S --> U
+    H --> U
+    D --> R["Review sources, tool credentials,<br/>storage, channels and egress"]
+    S --> R
+    H --> R
 ```
 
 *Sources: [Declarative agents](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-declarative-agent) · [Custom engine agents](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-custom-engine-agent) · [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder) · [Agent 365](https://learn.microsoft.com/en-us/microsoft-agent-365/overview).*
 
 ---
 
-## Where the data lives: two different stacks
+## Where the Data Lives: Several Stores {#where-the-data-lives-two-different-stacks}
 
-This is the question the residency guide pointed here for. **Declarative agents** follow Microsoft 365 Copilot's residency exactly — home geo, with Advanced Data Residency or Multi-Geo to pin it (see the [residency guide](/blog/microsoft-365-copilot-data-residency-anz-government/)). Copilot Studio agents are different, and in a way that surprises people:
+Start with the Microsoft 365 service commitments for the core Copilot experience, then trace the connected processing and storage. For Studio, distinguish these records:
 
-- **Configuration** (the agent definition, topics, flows, in Dataverse) is stored in the **Power Platform environment's region**, which an admin chooses when the environment is created. If your tenant's location isn't supported, it defaults to the United States.
-- **Conversation and activity logs** are stored in the geographic region of each end user's Exchange mailbox — *regardless of the environment region* — and are governed by **Microsoft 365 terms**, not Azure compliance.
-
-| Aspect | M365 Copilot (declarative agents) | Copilot Studio agents (Power Platform) |
+| Store or flow | Documented location or behaviour | Governance consequence |
 |---|---|---|
-| Config / definition | M365 stack | **Power Platform environment region** (defaults to US if unsupported) |
-| Conversation & activity logs | M365 home geo (ADR / Multi-Geo to pin) | **End user's Exchange mailbox geo** (M365 terms) |
-| How you control the geo | ADR or Multi-Geo add-on | Choose the **environment region** at creation |
-| EU Data Boundary | M365 EU Data Boundary service | In scope **only if every environment** is in an EUDB region |
-| Governed by | Product Terms + DPA | Power Platform terms **+** Microsoft Product Terms |
+| **Environment data** | Power Platform environment geography, with documented service exceptions | Review the chosen region, configuration and connected services |
+| **Agent Builder embedded files** | Tenant default geography, not the user's preferred data location | Review agent sharing and embedded-content protection separately from live source permissions |
+| **M365-powered historical activity** | End user's Exchange mailbox geography, regardless of environment geography | This specific history uses M365 retention; the trigger invoker can be the maker |
+| **Dataverse ConversationTranscript** | Operational transcripts in supported environments | Default bulk deletion after 30 days is configurable; this is not the audit retention period |
+| **Studio temporary/session storage** | Separately documented temporary storage for up to 28 days | Changing Dataverse retention does not change this store |
+| **Purview audit** | Activity metadata and correlation identifiers | Separate permissions, retention and channel coverage |
+| **Tools and external logs** | The connected service's storage and terms | Review payloads, logs, exports and deletion separately |
 
-> ⚠️ **The practical upshot for ANZ:** an Australian user's Copilot Studio conversation logs land in Australia (their mailbox geo) even if the environment was created elsewhere — but a colleague with a non-AU mailbox interacting with the same agent has *their* logs stored in *their* mailbox geo. And the agent's Dataverse configuration follows the environment region, not the mailbox. Two different storage stories in one agent.
+**Dataverse coverage is not universal.** Microsoft's transcript documentation excludes Dataverse for Teams environments and "Microsoft 365 Copilot agents". Because the Copilot UI can also host custom-engine agents, confirm the documented product and publication path instead of inferring transcript coverage from the window. SharePoint-grounded responses are redacted in supported Dataverse transcripts, but questions and source `search_results` can remain.
 
-You also get two extra controls on the Copilot Studio side: **disable cross-geo data movement** for generative-AI features outside the US, and Customer Managed Keys for Copilot Studio environments (though not for Agent Builder agents).
+**Access and switches differ.** Environment Maker alone does not grant transcript access; the Bot Transcript Viewer role is relevant for Power Apps access. Disabling transcript writing or M365-powered historical activity affects future records, not existing data. Turning off a store also reduces evidence available for investigation. Review that trade-off with compliance before changing it.
+
+For ANZ reviews, use the actual mailbox geography, not the user's physical country, for the M365-powered history calculation. Do not extend that rule to all logs. Check cross-region processing settings and key-management support per feature; Agent Builder currently does not support Customer Managed Keys.
 
 *Sources: [Copilot Studio data location](https://learn.microsoft.com/en-us/microsoft-copilot-studio/data-location) · [Manage activity data in M365](https://learn.microsoft.com/en-us/microsoft-copilot-studio/manage-activity-data-m365) · [Geo & data residency](https://learn.microsoft.com/en-us/microsoft-copilot-studio/geo-data-residency) · [Power Platform data storage](https://learn.microsoft.com/en-us/power-platform/admin/security/data-storage).*
 
+Transcript details: [Control transcript storage and access](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-transcript-controls) and [work with conversation transcripts](https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-transcripts-powerapps).
+
 ---
 
-## Do agents respect permissions? (mostly — with one big exception)
+## Permissions: Check Every Credential and Source {#do-agents-respect-permissions-mostly--with-one-big-exception}
 
-**The good news:** user-facing agents run on the **signed-in user's identity**. A declarative agent only surfaces what the user can already access — the semantic index honours the user's identity-based access boundary — and a Copilot Studio agent using generative answers over SharePoint queries SharePoint as the end user, scoped to what they're allowed to see. An agent doesn't add permissions; it inherits yours. So your oversharing problem is the agent's oversharing problem — fix SharePoint and OneDrive permissions before you scale.
+User-authenticated retrieval of live SharePoint content respects the user's source permissions. But that is one flow, not a guarantee about every tool in the agent.
 
-The big exception — say it plainly:
+**Interactive tools can use maker credentials.** Copilot Studio tools default to **End user authentication**, but makers can select **Maker-provided credentials**. This applies during user chat as well as autonomous use. Signing into the agent does not force every downstream call to use that user's identity.
 
-> ⚠️ **Autonomous, event-triggered agents run on the *maker's* credentials.** When a Copilot Studio agent acts automatically on an event (a SharePoint item created, a file added, a task completed) rather than in response to a user, *"all triggers and actions that require authentication must use the maker's credentials."* There is **no service-account or system-identity option** today. That means a user who can invoke such an agent may reach data and systems the maker can access — not just what they themselves can. Microsoft shows a warning at publish time. If that risk isn't acceptable, block event triggers with Power Platform DLP.
+**Event triggers use configured maker connections.** Microsoft documents that authenticated triggers and autonomous actions need maker credentials that work without user input. Their output can reach recipients or systems with less access than the connection owner. Review the connection principal, permissions and recipients; do not generalise this into a claim that no agent platform or connector supports service identities.
+
+**Agent sharing and source sharing are different.** Agent Builder can offer to share selected SharePoint files/folders when the owner has sharing permission. Removing access to the agent does **not** remove those source grants. Admin restrictions on new agent sharing also do not revoke existing shares. Review both permission sets.
+
+**A copy is not a live source.** Embedded uploaded files and live SharePoint references have different sharing and protection behaviour. Do not assume that changing the original file's ACL removes a copy embedded in an agent.
+
+Agent Builder documents that **Information Barriers are not supported on embedded files**. People with access to the agent can receive answers grounded in that content, subject to the embedded-content label and EXTRACT-rights requirements. Embedded files are stored in the tenant's default geography, not the user's preferred data location. Review those rules before uploading sensitive knowledge.
 
 And one more: a Copilot Studio agent published with **"No authentication"** lets anyone with the link chat with it. That's fine for a public FAQ bot; it's a data-exposure incident waiting to happen if the agent has access to anything sensitive. Require Entra authentication (and you can enforce that tenant-wide with DLP).
 
-*Sources: [Microsoft 365 Copilot privacy](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy) · [About triggers (maker credentials)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers-about) · [End-user authentication](https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-end-user-authentication).*
+Sources: [Tool authentication](https://learn.microsoft.com/en-us/microsoft-copilot-studio/add-tools-custom-agent#authentication-considerations-for-tools), [event triggers](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers-about), [end-user authentication](https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-end-user-authentication), [Agent Builder sharing](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents) and [knowledge sources](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge).
 
 ---
 
 ## Prompt injection and tool misuse
 
-The risk that's unique to agents — versus a static app — is that an agent reads untrusted content and acts on it. A malicious instruction hidden in a web page, an email or a document an agent ingests can try to make it call a tool, leak data, or take an action it shouldn't — an *indirect prompt injection* (XPIA). Microsoft 365 Copilot's always-on jailbreak/XPIA classifiers cover declarative agents, but the moment an agent has **tools, connectors and autonomous triggers**, the blast radius grows. Govern it:
+An agent can read untrusted content and act on it. A malicious instruction in a page, email or document can try to make it misuse a tool or disclose data: an indirect prompt injection. Microsoft's documented Copilot protections help, but are not a guarantee that every tool or custom runtime is protected. Useful safeguards include:
 
-- **Least-privilege tools** — give an agent only the connectors and actions it needs; default-deny the rest with DLP.
+- **Least-privilege tools:** allow only needed connectors and actions; use DLP where supported, plus runtime and API permissions.
 - **Human-in-the-loop for high-impact actions** — don't let an agent send mail, write to a system of record, or move money without a confirmation step.
 - **Allowlist endpoints** — use endpoint filtering so the HTTP node and web/SharePoint knowledge can only reach approved destinations.
 - **Trust the source, not just the agent** — treat any knowledge source containing user-generated or external content as a potential injection vector.
@@ -185,22 +196,22 @@ The risk that's unique to agents — versus a static app — is that an agent re
 
 ## Agent identity: Entra Agent ID & Agent 365
 
-Agents are a new class of identity — they make dynamic decisions and act on their own, so they need stronger identity governance than a static service principal.
+Agent identities need an accountable owner, reviewed permissions and a lifecycle plan.
 
-**Microsoft Entra Agent ID** gives each agent a purpose-built identity with **enforced human sponsorship** (every agent has an owner), lifecycle governance from provisioning to deactivation, identity *blueprints* for consistent policy at scale, and standard protocols (OAuth 2.0, MCP, agent-to-agent). It can even bring non-Microsoft agents (AWS Bedrock, n8n) under a governed Entra identity. The full agent-security controls — Conditional Access, Identity Protection and governance *for agents* — require Microsoft 365 E7, or E5 plus an Agent 365 licence, or standalone Entra P1/P2 add-ons that each also require a Microsoft Agent 365 licence (so don't budget Entra P1/P2 alone).
+**Microsoft Entra Agent ID** provides purpose-built identities and blueprints for integrated agents, including supported third-party platforms. It does not automatically replace each tool's configured connection. The platform is available to Entra customers; extending Entra security features to agents requires Agent 365 and the applicable prerequisites. Current guidance lists E7 inclusion and eligible add-on combinations. Check the linked terms rather than assuming Entra P1/P2 alone covers the full agent controls.
 
-**Microsoft Agent 365** is the **control plane** (generally available since 1 May 2026) that sits on top:
+**Microsoft Agent 365** became generally available for the **Commercial segment on 1 May 2026**, with per-user licensing. Its management capabilities include:
 
-- **Agent Registry** — every agent in the tenant, with adoption, activity and health.
+- **Agent Registry:** inventory and status for agents within its supported discovery and integration coverage.
 - **Agent Map** — a visual map of how agents interact across the enterprise.
 - **Lifecycle management** — access, compliance and reviews across the M365 admin center, Entra and Purview.
-- **Ownerless-agent reassignment** — bulk-reassign orphaned agents to the previous owner's manager via the Entra hierarchy (currently limited to **Agent Builder–created** agents).
+- **Ownership management:** review ownerless agents and the reassignment options supported for their source.
 
 <p><img src="/images/blog/microsoft-365-built-in-agents/01-admin-agents-registry.webp" alt="The Microsoft 365 admin center 'All agents' page under Agent 365, showing the agent registry with totals — 21,762 total agents, 4 at risk, 8 ownerless and 23 blocked — and a table of agents from Foundry, Copilot Studio, Microsoft and external publishers with availability, risk, active-users and last-updated columns" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*Agent 365's registry in the Microsoft 365 admin center — every agent in the tenant, with at-risk, ownerless and blocked counts. (Microsoft demo environment.)*
+*Agent 365's registry showing at-risk, ownerless and blocked counts. Reconcile the inventory with your agent sources; this demo is not evidence of complete tenant coverage.*
 
-> **Why this matters:** the failure mode for agents isn't one rogue bot — it's *sprawl*: hundreds of agents, unknown owners, unclear access. Entra Agent ID + Agent 365 are how you keep an inventory and an owner for every one.
+> **Use the inventory as a review input.** Reconcile it with environments, app registrations and approved external runtimes. Investigate missing or ownerless entries rather than assuming every agent was discovered.
 
 *Sources: [Microsoft Entra Agent ID](https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id) · [Agent 365 overview](https://learn.microsoft.com/en-us/microsoft-agent-365/overview).*
 
@@ -210,11 +221,13 @@ Agents are a new class of identity — they make dynamic decisions and act on th
 
 **For Microsoft 365 Copilot agents**, the controls are in the **Microsoft 365 admin center**:
 
-- **Integrated Apps** — view the permissions, data access, terms of use and privacy statement each agent declares, and allow, block or disable it. *"A user can only access the agents that their admin allows."*
+- **Agent registry and applicable Integrated Apps controls:** review publication, availability, declared permissions, data access and publisher terms. Check the controls supported for each source.
 - **Allowed agent types** — selectively permit agents built **by Microsoft**, by your organisation, or by external publishers.
 - **Sharing & user-access controls** — restrict who can share and who can use agents (all / none / specific users or groups).
 
-**For Copilot Studio agents**, governance is in the **Power Platform admin center** — primarily DLP (below) plus environment routing, which automatically steers makers into a controlled environment instead of the permissive default.
+**For Copilot Studio agents**, use Power Platform DLP and environment governance as well. Environment routing must be configured; do not assume every maker has already been routed away from the default environment.
+
+Restricting future Agent Builder sharing does not revoke old shares. Review existing agent access and any source permissions granted during sharing separately.
 
 > **A note on the "Copilot Control System":** you'll hear that term for the overall framework that manages how people use Copilot and agents. In practice it's not a single screen — the controls are split between the Microsoft 365 admin center (for M365 Copilot agents) and the Power Platform admin center (for Copilot Studio agents). [Here's the deeper guide to the Copilot Control System](/blog/microsoft-365-copilot-control-system-complete-guide/).
 
@@ -224,7 +237,7 @@ Agents are a new class of identity — they make dynamic decisions and act on th
 
 ## DLP and channels for Copilot Studio
 
-Data Loss Prevention for Copilot Studio lives in the Power Platform admin center, and it's more capable than people expect.
+Copilot Studio uses Power Platform data policies for connector and feature restrictions. Purview content policies cover separate, documented scenarios.
 
 **Connector groups** — every connector sits in one of three groups, and connectors in different groups can't share data:
 
@@ -234,28 +247,28 @@ Data Loss Prevention for Copilot Studio lives in the Power Platform admin center
 | **Non-Business** | Shares data only with other Non-Business connectors |
 | **Blocked** | Can't be used at all |
 
-Enforcement is **real-time** — makers and users see an error on any violation — and policy changes can take up to 24 hours to fully propagate.
+Microsoft documents real-time policy enforcement. After changing a policy, verify the affected agent paths before relying on it; this review did not measure propagation.
 
-**Virtual connectors** are the powerful bit: they're on/off switches for agent *features*, not data sources. With DLP you can:
+**Virtual connectors** represent capabilities such as knowledge, authentication and channels. With DLP you can:
 
 - **Require Entra authentication** (block "Chat without Microsoft Entra ID authentication")
-- **Block knowledge sources** — SharePoint/OneDrive, public web, or uploaded documents
+- **Restrict knowledge sources:** use the specific connectors for public web, local uploads and SharePoint/OneDrive uploads. Blocking local document upload does not block the separate SharePoint/OneDrive upload connector.
 - **Block the HTTP node** (arbitrary egress — see below)
-- **Block event triggers** (the autonomous-agent risk above)
+- **Block event triggers:** the Microsoft Copilot Studio connector controls these and authenticated automated evaluations.
 - **Block publish channels** — Teams/M365, Direct Line/custom website, and others
 
 You can also use **endpoint filtering** to allow specific SharePoint sites, websites or HTTP endpoints instead of blocking a whole connector type.
 
-> **A useful default to know:** connectors introduced after 2019 — including the no-auth chat connector and Direct Line channels — usually land in the **Non-Business** group, which many organisations block by default. So these riskier channels may already be off in your tenant. Confirm, don't assume.
+> **Non-business does not mean blocked.** It is a data-separation group. Use the Blocked group for prohibited connectors, and inspect the actual policy rather than assuming a default group prevents use.
 
 **Channels and authentication** — where you publish changes the exposure:
 
-| Channel | Authentication | Exposure |
+| Channel or setting | What to verify | Exposure |
 |---|---|---|
-| **Teams + M365 Copilot** | Entra SSO (automatic) | Highest control — user always authenticated |
-| **SharePoint** | Entra (Microsoft) | Scoped to the site |
-| **Custom website / Direct Line** | No-auth / Entra / manual | ⚠️ No-auth = public access |
-| **Facebook / WhatsApp** | External OAuth | Data transits the external platform |
+| **Teams / M365 Copilot** | User sign-in, deployment scope and each tool's credentials | SSO does not make maker-authenticated tools user-scoped |
+| **SharePoint** | Agent access, source grants and tool credentials | Being on a site does not limit every connected data source to that site |
+| **Custom website / Direct Line** | No authentication, Microsoft authentication or manual configuration | No authentication permits anyone with the link to chat |
+| **External messaging channels** | Supported authentication and platform terms | The external platform can be a separate data destination |
 
 *Sources: [Copilot Studio DLP](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-data-loss-prevention) · [Power Platform DLP](https://learn.microsoft.com/en-us/power-platform/admin/wp-data-loss-prevention) · [Security & governance](https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance).*
 
@@ -263,11 +276,11 @@ You can also use **endpoint filtering** to allow specific SharePoint sites, webs
 
 ## Connectors and data egress
 
-An agent's **actions** are where data leaves the tenant. When an agent calls an external connector (Salesforce, SAP, anything), conversation and context data is sent to that system — and for non-Microsoft connectors, *"the responsibility belongs to the agent maker."*
+An agent's tools and channels can send data to external systems. Review the actual payload rather than assuming every call sends the whole conversation, or that a read-only tool sends nothing. The connected service can retain requests and results under its own terms.
 
 The sharpest edge is the **HTTP request node** in Copilot Studio: it can call any endpoint, which is arbitrary data egress. Block the HTTP connector with DLP if you don't want makers reaching the open internet, or use endpoint filtering to allow only specific URLs. Note too that blocking a Power Platform connector also blocks the tools in any MCP server that relies on it — useful as agents increasingly use MCP.
 
-> **The governance principle:** treat every connector and the HTTP node as a potential exfiltration path, and default-deny the ones you haven't reviewed. DLP connector groups are how you make "default-deny" real.
+> **The governance principle:** review endpoints, credentials, payloads and logs. Block unapproved connectors where supported, and use API permissions and runtime controls for paths DLP does not cover. Merely placing a connector in Non-business is not default-deny.
 
 *Sources: [Power Platform DLP](https://learn.microsoft.com/en-us/power-platform/admin/wp-data-loss-prevention) · [Copilot Studio DLP](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-data-loss-prevention) · [Geo & data residency (connectors)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/geo-data-residency).*
 
@@ -275,31 +288,32 @@ The sharpest edge is the **HTTP request node** in Copilot Studio: it can call an
 
 ## Purview for agents
 
-Microsoft Purview extends across all three agent surfaces — but **not evenly**, and the gaps matter.
+A product-level tick does not establish coverage for a particular source or channel:
 
-| Capability | M365 Copilot (declarative) | Copilot Studio | Agent 365 |
-|---|---|---|---|
-| DSPM for AI · Audit · eDiscovery | ✅ | ✅ | ✅ |
-| Data classification | ✅ | ✅ | ✅ |
-| Sensitivity labels | ✅ | ✅ (SharePoint/OneDrive + Dataverse sources) | ✅ |
-| **Encryption without sensitivity labels** | ✅ | ❌ | ❌ |
-| **DLP** | ✅ | ⚠️ **Endpoint DLP only** (SharePoint knowledge; broader DLP via the Power Platform admin center) | ✅ |
-| Insider Risk · Comms Compliance · Retention | ✅ | ✅ | ✅ |
+| Area | What the current documentation supports | What to check |
+|---|---|---|
+| **Audit** | Supported interaction and administration metadata | Channel exclusions, integration, role and event arrival |
+| **Content investigation** | Supported mailbox content through eDiscovery; other stores have separate access | Case scope, item classes, transcript exclusions and licences |
+| **Studio SharePoint knowledge DLP** | Label-based processing restrictions at the Microsoft 365 Copilot location for supported Teams, SharePoint and Copilot channels | Correct source, channel, label, policy scope and propagation |
+| **Agent 365 file protection** | Explicit file sharing and, for encrypted files, explicit VIEW and EXTRACT rights for the instance | Do not assume an "all users" encryption grant includes the instance |
+| **Retention and risk policies** | Capabilities vary by product and captured data | Configure policy scope and retain each required store separately |
 
 The honest gaps to flag in a review:
 
-- **DLP for Copilot Studio is limited.** Purview's Endpoint DLP only restricts Copilot Studio agents from processing sensitive content when the **knowledge source is SharePoint** and the policy is scoped to the Microsoft 365 Copilot location. For everything else, your DLP is the Power Platform admin center, not Purview.
+- **Name the actual DLP control.** The Studio-specific Purview page places its SharePoint knowledge restriction under an "Endpoint DLP" heading, but describes a policy scoped to the **Microsoft 365 Copilot location**. Do not present it as only a device/browser control. Its documented scope is labelled SharePoint knowledge for Studio agents in Teams, SharePoint and Microsoft 365 Copilot, not every source or external channel. Endpoint DLP protection for browser uploads is a separate scenario.
 - **Agent 365 content doesn't inherit labels.** *"Newly created content from Agent 365 doesn't inherit sensitivity labels from the source items"* — so an agent can generate an output that isn't labelled like its inputs.
-- **Lockbox and CMK gaps.** Customer Lockbox **and Customer Managed Keys** don't cover the data sent from Copilot Studio as part of Agent 365 security audit logging — and neither Lockbox nor CMK is supported for agents built with Agent Builder.
+- **Key and access-control support varies.** Agent Builder does not currently support Customer Managed Keys. Check each store and logging path before asserting that Customer Key or Lockbox covers the entire agent.
 - **Agent 365 files must be explicitly shared.** *"For agent instances to access files, the files must be explicitly shared with them"* — a deliberate, tighter model than user-identity inheritance.
 
-On the positive side, the current **Data Security Posture Management (DSPM)** gives you a single dashboard for agent usage with one-click policies (detect risky AI usage, sensitive info shared with AI), agent prompts and responses land in the unified audit log, and Agent 365 instances are automatically enabled for audit, data classification and the AI assessments in Compliance Manager.
+Purview audit records contain metadata and message or thread IDs, **not full prompt and response text**. Supported content is retrieved separately through authorised workflows. Agent 365 instances are automatically enabled for audit, classification and AI Compliance Manager assessments; other policies must include the relevant instances. Copilot workload audit defaults to **180 days even on E5**, unless an eligible custom audit policy applies. Content retention is separate.
+
+Viewing DSPM content requires a content-viewer role, such as Content Explorer Content Viewer or Microsoft Purview Data Security AI Content Viewer; a broad admin role alone is not sufficient. eDiscovery needs its own roles and case access. See the [audit guide](/blog/auditing-microsoft-365-copilot/) for those distinctions.
 
 <p><img src="/images/blog/agent-365-security/purview-ai-observability.webp" alt="Microsoft Purview DSPM AI observability page showing a centralized view of agent activity — 3,843 total AI apps and agents, 89 high-risk agents, and 1.2K agents with sensitive interactions such as oversharing and exfiltration — with a table of agents listing their status, risk level and risk types" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *DSPM's AI observability gives one view of agent risk — oversharing, exfiltration — across the estate. (This is the current DSPM, not the classic "DSPM for AI". Microsoft demo environment.)*
 
-> ⚠️ **DSPM version matters.** Agent 365 activity surfaces in the **current** Data Security Posture Management (via its *AI observability* page) — not in the first-generation *"DSPM for AI (classic)."* If your compliance team is still on the classic console, they have no visibility into Agent 365 activity. Confirm you're on the current DSPM before you rely on it for agent governance.
+> **Use the documented Agent 365 view.** Its specific Purview guidance points to the current DSPM **AI observability** page. Do not confuse this with the older *Apps and agents* page, which excludes Agent 365. Dashboard availability is separate from whether audit or eDiscovery evidence exists.
 
 *Sources: [Purview for AI](https://learn.microsoft.com/en-us/purview/ai-microsoft-purview) · [Purview & Copilot Studio](https://learn.microsoft.com/en-us/purview/ai-copilot-studio) · [Purview & Agent 365](https://learn.microsoft.com/en-us/purview/ai-agent-365).*
 
@@ -309,11 +323,12 @@ On the positive side, the current **Data Security Posture Management (DSPM)** gi
 
 Pulling the residency thread together, because it's the single most-asked agent governance question for regulated ANZ customers:
 
-- **Declarative agents** = Microsoft 365 Copilot residency. Australia is committed automatically via the Product Terms; New Zealand needs **ADR or Multi-Geo**. (Full detail in the [residency guide](/blog/microsoft-365-copilot-data-residency-anz-government/).)
-- **Copilot Studio agents** = Power Platform residency. The **environment region** (chosen at creation) holds the config and Dataverse; the end user's Exchange mailbox geo holds the conversation logs; unsupported locations default to the US; and the EU Data Boundary applies only if every environment is in an EUDB region.
-- **Controls you have:** pick the right environment region up front, disable cross-geo data movement outside the US, and use Customer Managed Keys for Copilot Studio environments.
+- **Core Copilot processing and storage:** check the applicable Microsoft 365 service commitments, tenant eligibility and residency settings. Do not extend an at-rest commitment to all processing, models or connectors.
+- **Studio:** map environment data, supported Dataverse transcripts, M365-powered mailbox history and temporary storage separately. The data-location page lists geography defaults and exceptions; external services add their own destinations.
+- **EU Data Boundary:** Studio's documented condition includes an **EU/EFTA tenant billing address and every environment in an EUDB region**. Review service and model exceptions too.
+- **Controls:** select the environment region, review cross-region processing and historical-activity settings, and check key-management coverage for each feature. Disabling history affects evidence collection and does not relocate or delete existing records.
 
-> **The assurance-team takeaway:** you can't answer "where does our agent's data live?" with one sentence. You answer it per agent *type*, and for Copilot Studio you answer it twice — once for the environment (config) and once for the mailbox geo (logs).
+> **The review needs one row per data flow**, not just one country per agent. Include configuration, live retrieval, embedded copies, conversation stores, audit and external tool logs.
 
 *Sources: [Copilot Studio data location](https://learn.microsoft.com/en-us/microsoft-copilot-studio/data-location) · [Data residency for M365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/enterprise/m365-dr-workload-copilot).*
 
@@ -321,18 +336,18 @@ Pulling the residency thread together, because it's the single most-asked agent 
 
 ## The agent data-flow review worksheet
 
-Before you approve any agent, walk its data flow end to end. One row per agent — this is the artifact to keep on file:
+Before approving an agent, record these details and expand the sources, credentials and stores into one row per data flow:
 
 | Field | What to capture |
 |---|---|
-| **Agent type** | Declarative (M365 stack) · Copilot Studio standalone (Power Platform) · custom engine |
+| **Architecture and runtime** | Declarative or custom engine; Studio-managed or another runtime |
 | **Channel & auth** | Where it's published, and whether it requires Entra auth (or runs no-auth) |
-| **Acting identity** | The signed-in user — or, for autonomous triggers, the **maker's** connections |
-| **Knowledge sources** | SharePoint/OneDrive · Graph · uploaded files · public web · Dataverse |
+| **Acting identity** | End-user or maker-provided credentials per tool; trigger principal; any agent identity |
+| **Knowledge sources** | Live SharePoint/OneDrive, Graph, embedded copies, public web or Dataverse; source-sharing grants |
 | **Actions / connectors / MCP** | Every connector, HTTP endpoint and MCP tool it can call (each is an egress path) |
 | **External endpoints** | Any non-Microsoft system data is sent to (Salesforce, SAP, HTTP, social channels) |
-| **Storage** | Config region (Power Platform environment) · conversation-log geo (user mailbox) |
-| **Audit / eDiscovery** | Where interactions are logged, and how you'd discover them |
+| **Storage** | Environment data, Dataverse transcripts, M365-powered history, temporary storage and external logs |
+| **Audit / eDiscovery** | Metadata versus content, coverage, roles, licences, retention and holds |
 | **Owner & kill switch** | The human owner, and exactly how you'd disable or unpublish it fast |
 
 > Treat MCP tools and agent-to-agent calls like connectors: inventory the endpoint, the auth, the data passed, the logging, and whether a downstream agent or tool can persist or forward your content. Indirect access paths are where audits get interesting.
@@ -351,24 +366,25 @@ Day 0 — close the obvious holes
 
 Day 30 — build the guardrails
 5. **Route makers into a controlled environment**, and set tenant-wide DLP with endpoint filtering for what you do allow.
-6. **Choose the environment region** at creation; disable cross-geo data movement (and M365-powered activity logging) if residency demands it.
-7. **Confirm your DSPM, audit, eDiscovery and retention** actually cover agent interactions — on the *current* DSPM, not the classic one.
+6. **Review each storage and processing setting** with security and compliance. If disabling history is required, document the evidence gap and treatment of existing records.
+7. **Confirm DSPM, audit, eDiscovery and retention coverage** for the actual architecture and channel, including authorised content access.
 8. **Vet external / ISV agents** before allowing them: publisher trust, the permissions and data destinations they declare, retention/deletion, tenant consent, support access, and the disable path.
 
 **Scale — govern the estate**
-9. **Stand up Agent 365 + Entra Agent ID** so every agent has an owner, an identity and a registry entry — before sprawl sets in.
+9. **Evaluate Agent 365 and Entra Agent ID** for supported integrations, then reconcile the inventory and owners with your approved agent estate.
 10. **Keep an incident-response runbook for agents:** identify the owner, disable/unpublish the agent, block the connector/channel, revoke the maker's connections, preserve audit/eDiscovery evidence, rotate any exposed secrets, and notify your data/security teams.
 
 ---
 
 ## Common misconceptions (the agent gotchas)
 
-- **"An agent is safe because it's Microsoft Copilot."** Only declarative agents inherit the M365 stack. Copilot Studio and custom engine agents are different.
-- **"Agents only see what the user can see."** True for user-facing agents — but autonomous agents run on the maker's credentials.
-- **"Our M365 Copilot DLP covers our agents."** Copilot Studio DLP is mostly in the Power Platform admin center; Purview DLP coverage for Studio is limited.
-- **"The agent's data is wherever we set the environment."** The **config** is; the conversation logs follow each user's mailbox geo.
-- **"Sensitivity labels always carry through."** Agent 365 output **doesn't inherit** labels from its sources, and labels only apply to SharePoint/Dataverse knowledge in Copilot Studio.
-- **"Customer Key and Lockbox protect every agent."** Not Agent Builder agents — CMK and Lockbox aren't supported there.
+- **"Inside Copilot means declarative."** Custom-engine Studio agents can appear there too.
+- **"Chat tools always use my permissions."** A tool can use maker-provided credentials even during chat.
+- **"Non-business means blocked."** It is a connector separation group, not a prohibition.
+- **"All Studio logs follow the mailbox."** That describes M365-powered history, not Dataverse transcripts, temporary storage or external logs.
+- **"Revoking the agent revokes its sources."** Source grants made during sharing remain until separately removed.
+- **"Sensitivity labels always carry through."** Newly created Agent 365 output does not inherit source labels.
+- **"Customer Key and Lockbox protect every flow."** Check feature-specific support; Agent Builder excludes CMK.
 - **"No-auth is fine, it's just a chatbot."** No-auth means anyone with the link. Fine for public FAQs; dangerous with sensitive access.
 
 ---
@@ -376,34 +392,34 @@ Day 30 — build the guardrails
 ## Frequently asked questions
 
 Do Copilot agents keep data in the Microsoft 365 boundary?
-Declarative agents do (they run on the M365 Copilot stack). Copilot Studio standalone agents run on Power Platform, and custom engine agents on whatever you bring — check which kind you have.
+Check architecture, runtime and connections. Declarative agents use Copilot orchestration, but Agent Builder also involves Studio processing and tools can send data elsewhere. Custom-engine agents can run inside Microsoft 365 Copilot too.
 
 Where is a Copilot Studio agent's data stored?
-Config in the Power Platform environment region; conversation logs in each user's Exchange mailbox geo (M365 terms). Unsupported locations default to the US.
+Environment data, supported Dataverse transcripts, M365-powered mailbox history, temporary storage and external logs have separate rules. Only the M365-powered historical-activity rule follows the end user's mailbox geography.
 
 **Do agents respect permissions?**
-User-facing agents run on the signed-in user's identity. Autonomous event-triggered agents run on the maker's credentials — a real oversharing risk to govern.
+User-authenticated retrieval respects source permissions, but each tool can use end-user or maker-provided credentials. Event triggers use configured maker connections. Source sharing and embedded copies need separate review.
 
 **Who controls which agents run?**
-M365 admin center (Integrated Apps, allowed agent types, sharing/user access) for M365 Copilot agents; Power Platform admin center DLP + environment routing for Copilot Studio.
+Use Microsoft 365 agent publication and access controls plus Power Platform environment and DLP controls where relevant. Changes restricting future agent sharing do not revoke existing agent shares or source grants.
 
 How does DLP work for Copilot Studio?
-Power Platform DLP classifies connectors (Business / Non-Business / Blocked), enforced in real time, with virtual connectors to switch features (auth, knowledge, HTTP, triggers, channels) on or off.
+Power Platform DLP separates Business and Non-business connectors and prevents use of Blocked connectors. Purview separately supports label-based SharePoint knowledge restrictions at the Copilot location for documented Studio channels. Check both policy surfaces.
 
 **What is Agent 365?**
-The control plane for agents (GA May 2026) — registry, map, lifecycle, ownerless-agent reassignment — across the M365 admin center, Entra and Purview. Not an agent type.
+A management and security service, not an agent architecture. Commercial GA began on 1 May 2026, with per-user licensing. Registry, map, lifecycle and ownership-management coverage depend on the supported agent source and integration.
 
 Do agents get their own identity?
-Yes — Microsoft Entra Agent ID, with enforced human sponsorship and lifecycle governance. Full agent security controls need E7, or E5 + Agent 365.
+Entra Agent ID supports purpose-built identities for integrated agents. It does not replace every connection credential automatically. Agent security features require Agent 365 and the applicable plan prerequisites.
 
 **Can we audit agent activity?**
-Yes — Purview unified audit log, DSPM for AI, and eDiscovery (Copilot activity condition). Agent 365 instances are auto-enabled for audit and classification.
+Supported metadata is audited; full conversation content is separate. Check channel coverage, transcript stores, roles and case access. Copilot audit defaults to 180 days even on E5 unless an eligible custom policy applies. Content retention and holds are independent.
 
 Does the EU Data Boundary cover Copilot Studio?
-Only if every environment is created in an EUDB region — a stricter, admin-driven condition than M365 Copilot's boundary.
+Studio documentation requires an EU/EFTA tenant billing address and every environment in an EUDB region. Service exceptions, models and external destinations still need review.
 
 What's the single biggest agent risk?
-Oversharing — your existing SharePoint permissions, plus autonomous agents running on the maker's credentials. Fix permissions and govern triggers before you scale.
+Review broad permissions, maker-provided tools, embedded copies and downstream recipients. The credential risk is not limited to autonomous agents.
 
 ---
 

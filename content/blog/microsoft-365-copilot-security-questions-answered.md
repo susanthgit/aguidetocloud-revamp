@@ -4,7 +4,7 @@ list_title: "Copilot Security Questions — Answered (IT Admin FAQ)"
 hub_id: "it-admins"
 description: "Plain answers to the top Microsoft 365 Copilot security questions — web grounding, data privacy, Outlook access, audit, retention and AI governance."
 date: 2026-06-24
-lastmod: 2026-06-25
+lastmod: 2026-09-15
 card_tag: "Security"
 tag_class: "security"
 images: ["images/og/blog/microsoft-365-copilot-security-questions-answered.jpg"]
@@ -13,39 +13,39 @@ og_glyph: "list"
 faq_render: false  # manual rich FAQ exists in body — frontmatter block below drives schema
 faq:
   - question: "Can we access users' Copilot prompts with our existing E3 licence?"
-    answer: "Yes — with a Microsoft 365 Copilot licence on top of E3. Prompts and responses are stored in the user's Exchange mailbox and logged in the Purview audit log with per-user attribution, and you can search them with eDiscovery (Standard) and place legal holds — all at E3. The catch is that E3 returns each prompt and response as separate items you reconstruct into a conversation by hand. E5 / Purview adds the clean conversation view (Activity Explorer, eDiscovery Premium), longer audit retention, and content-aware policy scanning. Note: E5 Security is not the same as E5 Compliance/Purview."
+    answer: "Audit metadata and conversation content are separate. Supported Copilot Chat activity can exist without a paid Copilot licence. Microsoft's service description lists E3 plus Copilot for basic interaction search, hold and export, with eligible E5/Purview plans for premium search. Check the exact workload, user licences, roles and case scope before promising content access."
   - question: "Can we audit prompts staff enter into ChatGPT or other non-Microsoft AI tools?"
-    answer: "Not through the native Microsoft 365 audit log, which only covers Microsoft Copilot. You can govern other AI tools with Microsoft Purview: Endpoint DLP can warn or block staff pasting sensitive data into generative-AI websites, and Purview can audit non-Microsoft AI interactions — but that uses pay-as-you-go billing (not included in E3 or E5) and requires onboarded devices plus the Purview browser extension."
+    answer: "Purview Audit supports configured non-Microsoft AI scenarios using AIAppInteraction and ConnectedAIAppInteraction records. This auditing uses pay-as-you-go billing and 180-day retention. Required browser, network or connector collection varies; discovering an app is not proof its prompts were captured. Endpoint DLP provides separate controls for supported browser uploads and pastes."
   - question: "Does the physical location of the servers affect who can access our data?"
-    answer: "No. Microsoft 365 Copilot data stays within the Microsoft 365 service boundary and access is governed by your tenant's identity and permissions — not by which data centre region holds the data. Knowing the region matters for data-residency commitments, but it does not give any external party access to your information."
+    answer: "A data-centre region does not itself grant another customer access; identity, permissions and service controls govern logical access. Location still matters for residency, processing commitments and legal jurisdiction. Assess those separately, including web search, model providers and agent destinations."
   - question: "Is our data at risk if staff use the free Microsoft 365 Copilot Chat without a licence?"
-    answer: "No — as long as they are signed in with their work or school account, Copilot Chat provides Enterprise Data Protection at no extra cost and their prompts and responses aren't used to train the foundation models. The visible signal is the green shield in the chat. The risk is consumer Copilot (a personal Microsoft account, or not signed in), which runs under consumer terms outside your tenant's protection. Use Conditional Access to require the work-account sign-in."
+    answer: "Work-account Copilot Chat has Enterprise Data Protection without a paid Copilot add-on, but that is not a zero-risk guarantee. Consumer Copilot uses different terms. Conditional Access protects work sign-ins and resources; it does not by itself prevent personal-account AI use. Review separate endpoint, browser or network controls for consumer AI."
   - question: "What compliance certifications does Microsoft 365 Copilot have?"
-    answer: "Copilot inherits the Microsoft 365 compliance posture — including ISO/IEC 27001, ISO/IEC 27018, SOC, HIPAA and GDPR — plus ISO/IEC 42001 for AI management systems, and IRAP at the platform level for Australian and New Zealand government. HIPAA does not extend to web search queries, and an IRAP assessment is an input to your own authorisation rather than an automatic authority to operate. Confirm the current scope for your cloud in the Microsoft Service Trust Portal."
+    answer: "Microsoft documents relevant ISO certifications, SOC reports and regulatory commitments for scoped services. HIPAA and GDPR are not blanket product certifications or guarantees of customer compliance. IRAP is an Australian assessment, not automatic Australian or New Zealand authorisation. Obtain current scope and reports from the Service Trust Portal; web queries have separate exclusions."
   - question: "How do we handle a Privacy Act or GDPR data subject request involving Copilot data?"
-    answer: "Run a Microsoft Purview eDiscovery search scoped to that individual's mailbox using the 'Copilot activity' condition, then export the results. Because Copilot interactions are stored in the user's Exchange mailbox, they are retrievable the same way as the user's email."
+    answer: "Use authorised eDiscovery searches for supported mailbox-backed Copilot content, with appropriate scope and export permissions. The individual's mailbox is a starting point, not necessarily the full request: consider other custodians, memories, uploaded files, agents and external stores. Have privacy/legal staff review the result and any preservation or disclosure obligations."
   - question: "Is web grounding enabled by default in Microsoft 365 Copilot?"
-    answer: "On a commercial tenant, yes — web search is on by default if the admin hasn't configured the policy (unless optional connected experiences are turned off). US Government clouds (GCC, GCC High, DoD) are the exception: web search is available but off by default. Admins control it with the 'Allow web search in Copilot' policy in the Microsoft 365 Apps Cloud Policy service."
+    answer: "On commercial tenants, web search is available by default unless policy or optional-connected-experience settings disable it. The current page documents off-by-default behaviour for GCC and DoD; verify other sovereign-cloud availability separately. Admins use Allow web search in Copilot in the Microsoft 365 Apps Cloud Policy service."
   - question: "What does Microsoft 365 Copilot send to the web when it does a search?"
-    answer: "Not your prompt. Copilot generates a short search query of a few words from your prompt and sends that to the Bing search service with all user and tenant identifiers removed. It never sends your full prompt (unless it's very short), your files or emails, or any identifying information from your Microsoft Entra ID."
+    answer: "Copilot usually sends a short derived query to Bing, not an entire file or email. A very short prompt can be sent in full. The query excludes Entra-derived user and tenant identifiers but can contain names or sensitive terms from the prompt or referenced content. That is not a guarantee of anonymisation."
   - question: "Is my data used to train the AI models?"
     answer: "No. Your prompts, Copilot's responses, and the data accessed through Microsoft Graph are not used to train the foundation large language models. The web search queries sent to Bing are also not used to train models, not used to improve Bing, and not used for advertising."
   - question: "Can administrators restrict Copilot's access to Outlook mail?"
-    answer: "There is no single 'turn Outlook off for Copilot' switch, but admins can meaningfully restrict mailbox access through layered controls: not assigning a Copilot licence, Microsoft Purview DLP policies, sensitivity-label encryption with the EXTRACT usage right, and the connected-experiences privacy control. Copilot only ever reads mail a user can already open."
+    answer: "Review paid-feature licensing, the documented app privacy controls, label-based Copilot DLP and item encryption. They have different scopes; withholding a paid licence is not a universal Copilot Chat block. Label-based email DLP has date and item-type limits, and encrypted-content processing depends on encryption usage rights. Rights Management ownership is different from SharePoint ownership."
   - question: "Can we audit and search Copilot activity across all users?"
-    answer: "Yes. Every Copilot prompt and response is captured in the Microsoft Purview unified audit log, and eDiscovery's 'Copilot activity' condition collects all Copilot interactions across selected mailboxes in a single query — no need to review individual user histories. This works for both the licensed product and the free Copilot Chat."
+    answer: "Yes, within supported and configured coverage. Purview Audit contains metadata and message IDs, not the full text. eDiscovery can search captured content across selected mailboxes using Copilot activity conditions. Copilot Chat is covered too, but app hosts, roles, licences, case scope and collection affect what you find."
   - question: "How long is Copilot data retained?"
-    answer: "By default, prompts and responses are not auto-deleted — they sit in a hidden folder in the user's Exchange mailbox until the user deletes them or a retention policy acts. You govern them with a Microsoft Purview retention policy on the 'Microsoft Copilot experiences' location. Audit records default to 180 days (Standard) or one year (Audit Premium), up to ten years with the add-on."
+    answer: "Mailbox-backed Copilot content follows its own user-deletion, retention and hold rules. Copilot audit records default to 180 days, including on E5. Audit Premium's automatic year covers other named workloads, not Copilot. Longer Copilot audit retention needs a matching custom policy and eligible user licences; content retention is separate."
   - question: "Does Copilot respect existing permissions and sensitivity labels?"
-    answer: "Yes. Copilot only surfaces content a user already has at least view access to, and it honours Microsoft Purview sensitivity labels and the usage rights they grant. If a label encrypts content and the user lacks the EXTRACT right, Copilot won't summarise it."
+    answer: "Core user-scoped retrieval respects permissions. A label name alone is not a block: supported encrypted-content summarisation needs VIEW and EXTRACT. The Rights Management owner and recipients granted the encryption usage right Full control (OWNER) have EXTRACT. Do not infer those rights from SharePoint site ownership or SharePoint Full Control. The documented Edge active-tab exception matters. A site or Team label does not automatically label or encrypt its files; its configured workspace access and sharing protections still apply. Item-level classification and encryption require item-level protection. Agents' tool credentials need a separate review."
   - question: "Where is our Copilot data processed and stored?"
-    answer: "Prompts, responses and Graph data stay within the Microsoft 365 service boundary and are covered by the Data Protection Addendum with Microsoft as your data processor. Data-residency commitments apply via the Product Terms, Advanced Data Residency and Multi-Geo. Web search queries are the exception — they go to the separately operated Bing service and are out of scope for the EU Data Boundary."
+    answer: "Check the core Microsoft 365 commitments and your tenant's residency eligibility separately from processing location. Web queries use the separate Bing service; model-provider exceptions, agent runtimes and external tools can add other flows. At-rest residency is not a guarantee that every connected operation runs in the same country."
   - question: "How do we keep track of new AI features as Microsoft ships them?"
-    answer: "Use three things: Microsoft Purview Data Security Posture Management (DSPM) for AI to discover and monitor AI usage, the Microsoft 365 Message center for advance notice of changes (the 'Major update' tag gives at least 30 days' notice when action is needed), and staged rollout controls so new Copilot features can be held for 30 days after general availability while you validate them."
+    answer: "Monitor collected usage in DSPM, review Message center and use available release controls. Thirty-day notice applies to qualifying major updates requiring action, not every change. Deferred release delays only Copilot major updates explicitly marked deferred-capable, not all features. Targeted Release is not a universal feature hold."
   - question: "Is the free Copilot Chat as auditable as the paid Microsoft 365 Copilot?"
-    answer: "For capture and discovery, yes — free Copilot Chat activity is logged in the audit log (identified by AppHost = BizChat) and is collectable through eDiscovery the same way. The depth of premium features — longer audit retention, Premium eDiscovery, Communication Compliance — depends on your Microsoft Purview or E5 licensing."
+    answer: "Supported Copilot Chat interactions are audited and have discoverable compliance content. Do not filter only BizChat: the audit schema includes multiple app hosts. Premium investigation features require their own licences and roles. Copilot audit defaults to 180 days even on E5 without an eligible custom policy."
   - question: "Does Copilot protect against prompt injection and harmful content?"
-    answer: "Yes. Core protections — prompt-injection (jailbreak) defence, protected-material detection for copyright, and image safety — are always on and cannot be turned off. Harmful-content filtering for text categories like violence and hate speech is also enforced, with a limited per-user toggle available only to admins who assign it."
+    answer: "Microsoft documents layered safeguards for harmful content and prompt injection, but their coverage varies by scenario and model. The current privacy guidance explicitly says protected-material detection and jailbreak classifiers may not be available in every scenario. Review the specific experience and controls; these protections are not a guarantee that every attack or harmful response is prevented."
 tags:
   - microsoft-365
   - copilot
@@ -95,11 +95,11 @@ So here are the answers — in plain English, with the **official Microsoft docu
 
 <div class="living-doc-banner">
 
-This is a living document. The AI world changes every day — features ship, settings move, and guidance evolves. If you spot anything out of date, please [send me feedback](/feedback/) and I'll update it. Last verified: June 2026.
+**Documentation reviewed: 15 September 2026.** This update reconciles the audit, SharePoint and agent guidance and checks related governance claims against public Microsoft sources. No tenant policies were tested. Existing screenshots are illustrative. Please [send me feedback](/feedback/) if something changes.
 
 </div>
 
-> ⚠️ **Government cloud note:** This guide covers commercial tenants — which is where most organisations, including most public-sector ones, actually sit. GCC, GCC High and DoD clouds differ on some defaults (web search is off by default, and some staged-rollout controls aren't available). If you're in a sovereign or US Government cloud, confirm specifics with your Microsoft account team.
+> **Government cloud note:** This guide focuses on commercial tenants. The current web-search documentation specifies off-by-default behaviour for GCC and DoD. Other sovereign-cloud availability and release controls need a cloud-specific check.
 
 ---
 
@@ -110,11 +110,11 @@ If your CISO leans over and asks *"give me the short version"* — here it is.
 | The question | The short answer |
 |---|---|
 | **Is our data used to train the models?** | No. Prompts, responses, Graph data — and even the web queries — are not used to train the foundation models. |
-| **Does Copilot see things people shouldn't?** | Only what each user already has permission to open. Your oversharing problem becomes Copilot's oversharing problem — so fix permissions first. |
-| **Can we control web grounding?** | Yes — one policy, on or off, tenant-wide or per group. |
-| **Can we audit it?** | Yes — every prompt and response is in the Purview audit log, searchable across everyone at once with eDiscovery. |
-| **How long is it kept?** | Until a user deletes it or a retention policy acts. You set the policy. |
-| **Can we keep up with new AI features?** | Yes — DSPM for AI to watch, Message center for 30-day notice, staged rollout to hold features back. |
+| **Does Copilot see things people shouldn't?** | Core user-scoped retrieval respects permissions, which may already be too broad. Agent tools and embedded sources require separate checks. |
+| **Can we control web grounding?** | Yes: Allow web search in Copilot has tenant/group policy choices; scoped DLP controls are separate. |
+| **Can we audit it?** | Supported audit metadata is in Purview Audit. Full conversation content is retrieved separately, including through eDiscovery. |
+| **How long is it kept?** | Copilot audit defaults to 180 days even on E5. Conversation content follows separate retention and holds. |
+| **Can we keep up with new AI features?** | DSPM, Message center and scoped release controls help; none guarantees notice or a hold for every change. |
 
 The longer answers — with the exact settings and the official links — are below.
 
@@ -125,8 +125,8 @@ Good security teams find the edges anyway, so here they are in one place — eac
 1. **Web grounding crosses a boundary.** For the few-word web query, Microsoft acts as an independent *data controller* (not your processor), and the DPA / EU Data Boundary don't apply to it. Turn web search off if that matters.
 2. **There's no single "turn Outlook off for Copilot" switch.** You restrict mailbox access with layered controls (licence, DLP, label encryption), not one toggle.
 3. **Audit content isn't "full text in the audit log."** The audit event is discoverable proof an interaction happened; the actual prompt/response text is retrieved via eDiscovery from the mailbox.
-4. **Copilot audit records default to 180 days** — even on E5 — unless you set a custom audit retention policy.
-5. **Third-party and preview models have different terms.** Anthropic's standard models run under Microsoft's terms, but "Preview models with Data Retention" run under Anthropic's own terms and are default-off.
+4. **Copilot audit records default to 180 days**, even on E5, unless a matching custom policy and eligible user licence apply.
+5. **Some models have separate retention terms.** Standard Anthropic models use Microsoft's terms. Models labelled "Anthropic models with Data Retention" have separate terms and require explicit enablement.
 
 ---
 
@@ -150,16 +150,16 @@ The one line worth memorising: both run under the same enterprise terms — the 
 
 This is one of the most important — and most missed — questions a security team can ask: does the protection depend on how a user signs in? Yes, and it's worth getting exactly right.
 
-When staff use Copilot Chat signed in with their work or school (Microsoft Entra) account, they're in the **enterprise** experience: Enterprise Data Protection applies, prompts and responses aren't used to train the foundation models, interactions are logged for audit and eDiscovery, and your DLP and policies apply. The visible signal is the green shield at the top of the chat — that shield means EDP is on. Crucially, this doesn't need a Copilot licence: even unlicensed staff get enterprise data protection in Copilot Chat, as long as they're signed in with the work account.
+When staff use Copilot Chat with their work or school (Microsoft Entra) account, Enterprise Data Protection applies without a paid Copilot add-on. The green shield indicates that enterprise protection. Prompts and responses aren't used to train foundation models. Audit, content investigation and DLP have the supported-experience, configuration, role and licensing requirements described below; the shield does not certify every policy or connected data flow.
 
-The risk is the *other* door — **consumer Copilot**. If a user opens Copilot with a personal Microsoft account, or not signed in at all, that's outside your tenant. It runs under the consumer Microsoft Services Agreement, not your enterprise terms — so your EDP, DLP and audit don't reach it.
+**Consumer Copilot is a separate experience.** Personal-account or signed-out use is not covered by your tenant's enterprise terms. That does not mean every organisational control stops at sign-out: supported endpoint, browser and network controls can still govern consumer AI use.
 
 The two questions customers actually ask, answered plainly:
 
 - *"If someone uses the free version without a Copilot licence, is their data used to train the model?"* → **No** — provided they're signed in with their work account (look for the green shield). EDP covers the free Copilot Chat too.
-- *"What happens if a user isn't authenticated / signed in?"* → They're not in your protected experience. EDP and DLP apply to the signed-in enterprise experience; they don't extend to consumer Copilot.
+- *"What happens without work-account sign-in?"* They are not in the tenant's enterprise Copilot experience. Assess consumer use and device/browser controls separately.
 
-**What to do about it:** use **Conditional Access** to require the work-account sign-in so users land in the protected experience, tell people to look for the green shield, and treat consumer AI like any other shadow-AI tool — govern it with Endpoint DLP (see [other AI tools](#the-other-questions-security-teams-always-ask) below).
+**What to do about it:** direct staff to the approved work-account experience and protect work resources with Conditional Access. A work sign-in policy does **not** itself prevent personal-account AI use. For that, review supported endpoint, browser, network and app controls, plus staff guidance.
 
 *Sources: [Privacy and protections in Copilot Chat](https://learn.microsoft.com/en-us/copilot/privacy-and-protections) · [Microsoft Copilot overview](https://learn.microsoft.com/en-us/copilot/overview).*
 
@@ -169,7 +169,7 @@ The two questions customers actually ask, answered plainly:
 
 **The questions:** Is web grounding on by default? Can we turn it off? What breaks if we do?
 
-**Is it on by default?** On a commercial tenant, **yes** — if you haven't configured the policy, web search is available in both Copilot and Copilot Chat (unless you've separately turned off optional connected experiences). US Government clouds are the exception: it's off by default there.
+**Is it on by default?** In commercial tenants, web search is available unless policy or optional-connected-experience settings disable it. The current page documents off-by-default behaviour for GCC and DoD; check other sovereign clouds separately.
 
 **Can admins control it?** Yes — with one clean lever:
 
@@ -186,7 +186,7 @@ When you enable the policy you get three choices:
 | Disabled in both | Web grounding off everywhere |
 | Work mode off, Web mode + Chat on | Disables web grounding in Copilot work chat, keeps it in web mode and Copilot Chat |
 
-There's also a **user-level "Web content" toggle** — but only in Microsoft 365 Copilot work chat, and only if the admin has allowed web search. If the admin turns web search off, the toggle greys out and users can't switch it back on.
+A user-level web-search toggle is available for both Copilot and Copilot Chat where supported, if the admin permits it. If policy disables web search, users cannot turn it back on. Current guidance says preferences persist across supported clients and sessions; the older screenshots below show one interface.
 
 <p><img src="/images/blog/copilot-security-qa/webtoggle-on.webp" alt="Microsoft 365 Copilot Chat menu showing a 'Copilot response includes: Web search' toggle switched on" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -200,9 +200,9 @@ There's also a **user-level "Web content" toggle** — but only in Microsoft 365
 
 *And the admin-side view: the Copilot controls in the Microsoft 365 admin center — web search sits at the top. The tenant on/off policy itself lives in the Microsoft 365 Apps Cloud Policy service. (Microsoft demo environment.)*
 
-**What breaks if you disable it?** You lose real-time web answers (the "From the web" part of responses), and if you pick the "work mode off" option, web search in **Researcher and Analyst** goes too. What still works: everyday prompts and responses, answers grounded in your own organisational data (for licensed Copilot), Copilot inside the Office apps, and Microsoft 365 Copilot Search.
+**What changes if you disable it?** Answers no longer use that web-search grounding. The current policy documentation says the "Work mode off" option also disables web search in **Researcher and Cowork**. These agents do not require web search to operate, although their answers may be less current. This policy is not a general switch for every agent's external tools.
 
-**Who actually turns web grounding off?** It's not a government-only move. Regulated, security-conscious organisations — financial services, healthcare, legal, and government — sometimes disable web grounding (or scope it with Purview DLP) because the few-word web query leaves the Microsoft 365 Data Protection Addendum perimeter (see [what gets sent to the web](#what-actually-gets-sent-to-the-web)). **No regulator mandates this** — it's a documented risk decision you make under your own AI usage policy. US Government clouds are the one place it's off by default.
+**When should it be off?** Decide with your privacy and security teams based on the information involved, applicable obligations and the separate Bing terms. There is no safe universal answer for every regulator, contract or organisation.
 
 *Source: [Manage web search for Microsoft 365 Copilot and Copilot Chat](https://learn.microsoft.com/en-us/copilot/microsoft-365/manage-public-web-access).*
 
@@ -217,8 +217,8 @@ This is the question every privacy-minded reviewer asks, and the answer is reass
 **What is NOT sent:**
 
 - Your full prompt (the exception is a very short prompt like "local weather")
-- Entire files, emails, or anything you upload into Copilot
-- Web pages or PDFs Copilot summarised for you
+- Entire files, emails or uploaded files; derived terms from them can still inform the query
+- Entire pages or PDFs summarised in the documented Edge Copilot Chat scenario
 - Any identifying information from your Microsoft Entra ID — username, domain, or tenant ID
 
 The query goes to the Bing search service with user and tenant identifiers removed, over a secure connection.
@@ -227,7 +227,7 @@ The query goes to the Bing search service with user and tenant identifiers remov
 
 *Copilot Chat is explicit with users that web queries carry their own terms and privacy statement. (Microsoft demo environment.)*
 
-> **A neat transparency detail:** in **Copilot Chat**, the response's linked-citation section shows users the exact web search queries that were sent to Bing (visible in the thread for 24 hours). It's a small link in the citations, so it's easy to miss — but it means a user can always see precisely what left for the web. ([Microsoft's documentation has a sample.](https://learn.microsoft.com/en-us/copilot/microsoft-365/manage-public-web-access#web-search-query-citations))
+> **Check query citations where available.** Microsoft documents them in Copilot Chat for 24 hours, not in the Copilot pane inside Word or PowerPoint. They are useful evidence, not a promise that every client always exposes the query.
 
 **Is any of it used for training or ads?** No. Per the Product Terms, the generated queries are **not** used to train foundation models, not used to improve Bing, not used to build advertising profiles or track behaviour, and not shared with advertisers. They're treated as customer confidential information.
 
@@ -239,9 +239,11 @@ The query goes to the Bing search service with user and tenant identifiers remov
 
 In other words, the processor-to-controller line moves at the Bing boundary. For a regulated organisation that's a real distinction — and the clean control is simply to disable web grounding (above) or block sensitive information types in prompts with Purview DLP (below).
 
-> **Tip —** If a reviewer asks "can you guarantee our confidential email never reaches Bing?" — the precise answer is: Copilot only sends a de-identified few-word query, never the email, but a derived keyword *could* appear. The hard guarantee is to turn web search off, and/or block the relevant sensitivity labels and information types with DLP.
+> **Do not equate identifier removal with anonymisation.** A derived query can contain a person's name, project name or sensitive term. Disable web search where that risk is unacceptable. DLP reduces risk within its documented scope; it is not an unconditional guarantee against every disclosure path.
 
-**Where you can review what went to the web.** Beyond the user-visible citation above, admins have three places to check the actual generated keywords: the **Purview Audit log** (the durable compliance record — search the Copilot activities), eDiscovery (search and legal hold, using the Item class → "Copilot activity" condition), and DSPM for AI → Activity explorer, which shows the web search terms next to the original prompt and response — the richest single view for a governance audit.
+**Where to review web use.** Audit metadata can identify a web plugin, but `AISystemPlugin` is not the query text. Microsoft's web-search guidance points to supported eDiscovery and DSPM activity views for the generated terms alongside conversation content. Use authorised content retrieval and check the actual record, rather than assuming every raw audit event contains the keywords.
+
+**DLP scope matters.** Label-based file/email processing exclusions are distinct from prompt sensitive-information-type controls. Prompt blocking is documented as preview and rolling out, scans typed text rather than uploaded-file contents, and changes can take up to four hours. A separate **Performing Web Searches** action can block web grounding while allowing an internal response. Prompt DLP is listed for all Copilot/Chat users; file/email restrictions require eligible E5/Purview entitlements.
 
 *Sources: [How Microsoft handles generated search queries](https://learn.microsoft.com/en-us/copilot/microsoft-365/manage-public-web-access#how-microsoft-handles-generated-search-queries) · [Enterprise data protection — web queries](https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection).*
 
@@ -249,17 +251,17 @@ In other words, the processor-to-controller line moves at the Bing boundary. For
 
 ## Can we restrict Copilot access to Outlook?
 
-**The honest headline:** there's no single "turn Outlook off for Copilot" switch. But yes — you can meaningfully restrict mailbox access, through several layered controls. And remember the starting point: Copilot only ever reads mail the user can already open.
+**The starting point:** core user-scoped mail retrieval respects the user's permissions. Licensing, app privacy settings, DLP and encryption can restrict different features or content, but none should be treated as a universal mailbox switch for every Copilot or agent path.
 
 Here are the real levers:
 
 | Lever | What it does to mail | The catch |
 |---|---|---|
-| **Don't assign a Copilot licence** | Removes the paid, Graph-grounded Outlook experience (inbox summary, Draft with Copilot) | Doesn't by itself remove the free Copilot Chat |
+| **Review paid-feature licensing** | Removes features that require the paid Copilot entitlement | Not a universal block on Copilot Chat or all in-app assistance |
 | **Purview DLP — block by sensitivity label** | Copilot won't summarise or use emails carrying chosen labels | Applies to emails sent on/after 1 Jan 2025; calendar invites unsupported |
 | **Purview DLP — block external email** *(preview)* | Excludes external mail from grounding and summaries (good anti-prompt-injection move) | Preview; judges by sender domain only |
-| **Sensitivity-label encryption + the EXTRACT right** | No EXTRACT right → Copilot can't summarise the message, only link to it. "Do Not Forward" mail isn't summarised; "Encrypt-Only" can be; S/MIME is never returned; Double Key Encryption is fully off-limits | Works per item/label, not as a blanket switch |
-| **Connected-experiences privacy control** | Turns Copilot off *inside* Outlook | But it's app-wide — also removes Copilot from Word, Excel, PowerPoint and OneNote |
+| **Sensitivity-label encryption and usage rights** | Supported encrypted content needs VIEW and EXTRACT for summarisation; a link may remain | The Rights Management owner and recipients granted the encryption usage right Full control (OWNER) have EXTRACT. SharePoint ownership or SharePoint Full Control does not establish those rights. Check the item and application exceptions |
+| **Disable connected experiences that analyse content** | Removes Copilot features in the documented current Outlook apps on Windows, Mac, iOS and Android | Also affects Word, Excel, PowerPoint and OneNote on those platforms; not a universal web-client or agent block |
 
 <p><img src="/images/blog/copilot-security-qa/demo-dlp-remediation-copilot.webp" alt="Microsoft Purview DSPM remediation plan titled 'Prevent data exposure in Microsoft 365 Copilot interactions', listing default protections and a created DLP policy that restricts labelled content from Copilot" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -269,26 +271,26 @@ Here are the real levers:
 
 **What you lose** when you restrict mail access: inbox summarisation ("what did I miss?"), draft-and-reply inside Outlook, and meeting prep or catch-up that pulls email context — all degraded or gone, depending on which lever you pull.
 
-*Sources: [Data Loss Prevention for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/purview/dlp-microsoft365-copilot-location-learn-about) · [Copilot data-protection considerations (labels, EXTRACT, S/MIME, DKE)](https://learn.microsoft.com/en-us/purview/ai-m365-copilot-considerations).*
+*Sources: [Data Loss Prevention for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/purview/dlp-microsoft365-copilot-location-learn-about) · [Encryption usage rights](https://learn.microsoft.com/en-us/purview/ai-m365-copilot-considerations#copilot-honors-existing-protection-with-the-extract-usage-right) · [App privacy controls](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy#privacy-control-for-connected-experiences-that-analyze-your-content).*
 
 ---
 
 ## Stopping Copilot surfacing the wrong file: SharePoint & oversharing controls
 
-The uncomfortable truth most security reviews land on: Copilot's biggest real-world risk isn't the model — it's oversharing. Copilot only surfaces what a user can already open, so years of "Anyone with the link" sharing and broad "Everyone except external users" permissions suddenly become searchable in plain English.
+Existing oversharing is an important risk: core Copilot retrieval respects user permissions, which may already be too broad. Review EEEU grants and sharing links. The existence of an anonymous link alone does not mean Copilot indexes the file for everyone.
 
-SharePoint gives you a dedicated set of controls for exactly this — an engine to *find* oversharing, and three "fences" to contain it:
+SharePoint's controls have different purposes:
 
 | Control | What it does |
 |---|---|
-| **SharePoint Advanced Management (SAM) + Data Access Governance** | Reports that *find* your oversharing (broad "everyone" access, anonymous links, overshared sites) — included if you have Copilot |
-| **Restricted SharePoint Search (RSS)** | Tenant-wide allow-list (≤100 sites) — a temporary safety net while you remediate |
-| **Restricted Content Discovery (RCD)** | Hides a specific site from Copilot + org-wide search (permissions unchanged) |
-| **Restricted Access Control (RAC)** | Locks a site to a named security group — actually changes access |
+| **SAM + Data Access Governance** | Assessment and remediation features. Copilot inclusion requires an eligible base subscription and at least one assigned qualifying Copilot licence; not every SAM feature is included |
+| **RSS** | Retiring; new enablement blocked since 31 July 2026. Existing allow-lists have exceptions. The current public Microsoft Learn overview does not specify a full-removal date |
+| **RCD** | Reduces discovery without changing permissions. Current docs conflict on owned/recently used content; direct access and already-open-file summarisation remain |
+| **RAC** | Requires existing permission and allowed-group membership. Current SharePoint search/Copilot honour it after indexing; external shared-channel participants are an exception |
 
 This is a deep topic in its own right, so rather than repeat it all here: → [SharePoint Oversharing Controls for Microsoft 365 Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/) walks through each control, when to use it, and the rollout sequence that works. The one-line takeaway: **fix oversharing *before* you scale Copilot, not after.**
 
-*Source: [Restricted Content Discovery](https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery).*
+Sources: [RSS retirement](https://learn.microsoft.com/en-us/sharepoint/restricted-sharepoint-search), [RCD](https://learn.microsoft.com/en-us/sharepoint/restricted-content-discovery), [RAC](https://learn.microsoft.com/en-us/sharepoint/restricted-access-control) and [SAM inclusion](https://learn.microsoft.com/en-us/sharepoint/sharepoint-advanced-management-features-copilot-license).
 
 ---
 
@@ -296,11 +298,11 @@ This is a deep topic in its own right, so rather than repeat it all here: → [S
 
 Meeting content is one of the most sensitive surfaces Copilot touches — HR, legal, procurement, investigations. A few things a security team should know:
 
-- **Meeting Copilot depends on transcription.** No transcript (or a recording with transcription) means no meeting Copilot and no recap to govern. Controlling *who can transcribe* is your first lever.
-- **The recap and its AI summary follow the meeting's access** — people who could access the meeting or its recording can generally access the recap. Scope sensitive meetings accordingly.
-- **Sensitivity labels apply to meetings** (through the meeting's label and Teams Premium controls), and transcripts and recordings are themselves subject to your retention and eDiscovery — so meeting Copilot content is auditable like the rest.
+- **No saved transcript does not mean no meeting Copilot.** The "Only during the meeting" mode can use temporary speech-to-text data without saving a transcript. During-and-after use depends on a saved transcript. Review both the organiser's policy and the meeting option.
+- **Review artefact access separately.** Attendance, access to a recording/transcript and access to recap features are not interchangeable. Check sharing for the actual meeting artefacts.
+- **Meeting labels can enforce supported Teams settings**, but that does not mean Copilot recognises meeting/chat labels for every summary or inherits them into every output. Saved transcripts, recordings and Copilot interactions have distinct compliance handling.
 
-The practical move: decide *which* meetings should allow transcription and recap at all, and use meeting sensitivity labels to lock down the sensitive ones.
+Decide which meetings may use Copilot and which may save transcripts or recordings. A policy that changes a default is not necessarily an enforced prohibition. See [Copilot and transcription policies](https://learn.microsoft.com/en-us/microsoftteams/copilot-teams-transcription) and [label considerations](https://learn.microsoft.com/en-us/purview/ai-m365-copilot-considerations).
 
 ---
 
@@ -320,36 +322,38 @@ None of this is Copilot-specific — but a security reviewer *will* ask "what st
 
 **The questions:** What can we audit? Can we search everyone at once instead of trawling individual histories? Does it support discovery and legal hold?
 
-**What's captured:** every Copilot interaction generates an event in the Microsoft Purview **unified audit log** — activity `CopilotInteraction`, with the user, the app, the time, and the resources (files, emails) the interaction referenced, including available sensitivity-label metadata. Free Copilot Chat is logged too — you'll see `AppHost = BizChat` (one nuance worth capturing for an audit query: Copilot Chat opened from the Edge sidebar, Windows Copilot or copilot.cloud.microsoft.com logs as `AppHost = Bing`, not `BizChat` — so include both values when you search, or you'll miss a whole surface). This is part of Audit (Standard), with no extra step and no extra charge for Microsoft's own Copilots. Important nuance: the audit event records *that* an interaction happened and what it referenced — the actual prompt and response text lives in the user's mailbox and is retrieved through eDiscovery (more on that just below).
+**What's captured:** supported Copilot interactions generate `CopilotInteraction` metadata when auditing is enabled. This can include the user, app, time, message IDs and resource references, but **not full prompt/response text** or a guaranteed record of every downstream tool call. Copilot Chat is included in Audit Standard too. Do not filter only `BizChat`: Microsoft's schema lists `Bing`, app-specific and other hosts, with overlapping client descriptions. Use the current schema and investigate the actual records. Content is retrieved separately.
 
 Searching at scale — without per-user trawling:
 
 | Tool | What it gives you |
 |---|---|
-| **eDiscovery** (Standard/Premium) | The condition **"Copilot activity"** collects *all* Copilot and AI-app prompts/responses across selected mailboxes **in one query**. This is your "search everyone at once" button. |
-| **DSPM for AI → Activity explorer** | A tenant-wide view that shows the **actual prompt and response text**, plus sensitive-info-type and label hits. |
+| **eDiscovery** (Standard/Premium) | Searches captured content across selected mailboxes with the **Copilot activity** condition; coverage depends on collection, item classes and case scope |
+| **DSPM Activity explorer** | Collected AI activity with available content and classification details, subject to content-viewer permissions |
 | **Purview Audit search** | The familiar audit-log search, plus a programmatic pull via the Office 365 Management Activity API. |
 | **Communication Compliance** | The "Detect Microsoft Copilot interactions" policy template flags risky prompts and responses. |
 
 <p><img src="/images/blog/copilot-security-qa/ediscovery-copilot-interaction.webp" alt="Microsoft Purview eDiscovery review set showing a Copilot interaction, with metadata including the Copilot item class, a retention label and a Confidential sensitivity label" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*An eDiscovery review set opened on a Copilot interaction — item class, labels and the full transcript are all discoverable. (Microsoft demo environment.)*
+*An eDiscovery review set showing one captured Copilot interaction and its metadata. A sample result is not proof of complete collection. (Microsoft demo environment.)*
 
-**One important reality for teams on E3:** the audit record itself only holds **metadata + message IDs**, not the actual prompt and response text. To read the words a user typed, you run an eDiscovery (Standard) search against their mailbox — and at E3 each prompt and each response come back as separate items, so you stitch the conversation back together by hand. It works, but it's manual. The richer Purview tooling that presents Copilot interactions as a clean, readable conversation (Activity Explorer, eDiscovery Premium review sets, Communication Compliance) is an E5 / Purview capability. The next section breaks down exactly what you get at each licence level.
+**Separate licences from roles.** Audit search needs Audit Logs or View-Only Audit Logs. eDiscovery needs the appropriate roles and case access. Reading DSPM prompt content additionally requires Content Explorer Content Viewer or Microsoft Purview Data Security AI Content Viewer; a broad admin role alone is not enough. Prompt and response items may need reconstruction outside richer review views, but do not treat that UI difference as the full E3/E5 licensing rule.
+
+Purview is not the only authorised content-access route. The [interaction export API](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/ai-services/interaction-export/aiinteractionhistory-getallenterpriseinteractions#permissions) supports applications with `AiEnterpriseInteraction.Read.All`. It requires a valid Microsoft 365 Copilot licence with the **Microsoft Copilot with Graph-grounded chat** service plan. Coverage depends on which experiences write to the history service and excludes agents created by Copilot Studio. Being a manager alone grants neither Purview content access nor this application authorisation.
 
 **How to actually run a Copilot audit** (the short runbook a GRC team can follow):
 
-1. **Confirm it's being captured** — in the Microsoft Purview portal, run an **Audit** search filtered to the `CopilotInteraction` activity (and the user, if you're scoping to one person).
-2. **Pull the content** — create an eDiscovery search using the **"Copilot activity"** condition against the relevant mailbox(es); this collects the prompts and responses themselves.
-3. **Read it** — on E5 / Purview, review it as a clean conversation in DSPM for AI → Activity explorer or an eDiscovery Premium review set. On **E3**, export the items and reconstruct the prompt/response pairs manually.
-4. **Preserve if needed** — apply a hold (eDiscovery or retention) so nothing is purged mid-investigation, then **export** for the record.
+1. **Agree scope and preservation first.** Confirm roles, legal authority and any hold needed before content expires.
+2. **Find metadata.** Search `CopilotInteraction` by relevant users, dates and hosts, allowing for ingestion latency.
+3. **Retrieve supported content.** Search the relevant mailboxes with Copilot activity conditions; check whether memories, agents or other stores need separate searches.
+4. **Review and export as authorised.** Use the tools licensed for the investigators and data subjects, and record any coverage gaps. This documentation update did not run this workflow.
 
 **Discovery, hold and access requests** (the part records and legal teams care about):
 
-- **Legal hold / preservation** — a Litigation Hold, eDiscovery hold or retention policy **suspends deletion**; items stay searchable.
+- **Legal hold / preservation**: applicable Litigation Hold, eDiscovery hold or retention requirements can suspend permanent deletion. A delete-only policy is not a preservation hold.
 - **Departed staff** — retained Copilot data moves to an **inactive mailbox** and is still discoverable, so an information request doesn't fall through the cracks when someone leaves.
 - **Targeted retrieval** for an individual's access request — an eDiscovery search scoped to that user's mailbox, then export.
-- **Spillage clean-up** — eDiscovery purge for targeted deletion (with the right roles).
+- **Spillage cleanup:** authorised targeted deletion after evidence and preservation requirements are reviewed. The [Copilot guide](https://learn.microsoft.com/en-us/purview/edisc-search-copilot-data) says 10 items per mailbox, while the [Graph purge reference](https://learn.microsoft.com/en-us/graph/api/security-ediscoverysearch-purgedata?view=graph-rest-1.0) says 100 per location. Confirm the applicable limit; this review did not test a purge.
 
 > ⚠️ **Licensing reality check:** Audit Premium (custom retention beyond 180 days), Premium eDiscovery and Communication Compliance need E5 or the Microsoft Purview suite — and note that **E5 *Security* is not the same as E5 *Compliance*/Purview.** The capability exists in the product; whether it's *active in your tenant* depends on your licensing. The next section breaks this down.
 
@@ -363,31 +367,26 @@ Searching at scale — without per-user trawling:
 
 First, two things that catch people out:
 
-- **"E3 is enough" always means "E3 *plus the Microsoft 365 Copilot licence*."** Bare E3 with no Copilot licence produces no Copilot prompts to audit in the first place — there's nothing to find.
+- **No paid Copilot add-on does not mean no Copilot activity.** Included work-account Copilot Chat can generate audit metadata and compliance content.
 - **E5 *Security* ≠ E5 *Compliance*. A tenant with "E3 + E5 Security" has Defender and the security stack, but not the Purview compliance features (Premium eDiscovery, Endpoint DLP, Records Management, custom audit retention). Those live in E5 Compliance / the Microsoft Purview suite**. This is the single most common licensing mix-up in Copilot security reviews.
 
-| Capability | E3 (+ Copilot) | + E5 Security | + E5 Compliance / Purview |
-|---|---|---|---|
-| Prompts & responses stored in the user's mailbox | ✅ automatic | ✅ | ✅ |
-| Audit log captures every interaction (`CopilotInteraction`), per-user | ✅ Audit Standard | ✅ | ✅ |
-| See *who* submitted *which* prompt (UPN attribution) | ✅ | ✅ | ✅ |
-| Read the actual prompt/response **text** | ⚠️ via eDiscovery Standard — **manual** reconstruction | ⚠️ same | ✅ Activity Explorer & eDiscovery Premium show it cleanly |
-| Search everyone at once ("Copilot activity" condition) | ✅ eDiscovery Standard | ✅ | ✅ |
-| Conversation auto-reconstructed (prompt+response threaded) | ❌ stitch it yourself | ❌ | ✅ eDiscovery Premium / Activity Explorer |
-| Legal hold / preservation on Copilot data | ✅ | ✅ | ✅ |
-| Set a retention/deletion policy (e.g. delete after 30 days) | ✅ basic retain/delete | ✅ | ✅ |
-| Records Management (disposition review, event-based, declare as record) | ❌ | ❌ | ✅ |
-| Keep Copilot **audit** records beyond 180 days | ❌ | ❌ | ✅ custom audit policy (Audit Premium) |
-| Policy-scan prompts for risky content (Communication Compliance) | ❌ | ❌ | ✅ |
-| Block paste of sensitive data into ChatGPT etc. (Endpoint DLP) | ❌ | ❌ | ✅ |
+| Requirement | What to check in the current service description |
+|---|---|
+| **Copilot audit metadata** | Audit Standard supports listed Copilot and Copilot Chat experiences when auditing is enabled |
+| **Content search, hold and export** | E3 + Copilot is listed for basic Copilot interaction discovery; match the exact workload and licence combination |
+| **Premium eDiscovery** | Eligible E5/Purview entitlements for both the user whose data is analysed and the investigator |
+| **Copilot audit beyond 180 days** | Matching custom audit policy and eligible licences on users generating events; extra retention add-ons for longer periods |
+| **Prompt DLP** | Listed for all Copilot and Copilot Chat users; prompt blocking remains preview/rollout |
+| **Label-based file/email DLP** | Eligible E5/Purview entitlements, plus supported content and policy scope |
+| **Endpoint DLP, Communication Compliance and records features** | Separate feature-specific entitlements and setup; not implied by a security-only bundle |
 
-**The plain-English summary:** on E3 + Copilot you can already meet the core asks — access prompts, attribute them to a user, place a legal hold, and apply a 30-day delete policy. What you're really buying with E5 / Purview is the *ease and depth*: the prompt/response text presented as a clean conversation instead of hand-reconstructed, longer audit retention, records management, content-aware policy scanning, and controls over non-Microsoft AI tools.
+**The practical summary:** establish the data source and required workflow first, then check licensing and roles. A generic E3/E5 tick table cannot establish every retention, records or agent capability.
 
 > ⚠️ **The 180-day catch (don't miss this one):** Copilot *audit* records default to 180 days at every licence tier — including E5. The one-year default in Audit Premium only covers Exchange, SharePoint, OneDrive and Entra records, and Copilot is its own workload. To keep Copilot audit records longer, you need a **custom audit retention policy** (an Audit Premium / E5 feature). Note this is separate from *content* retention (the prompts/responses in the mailbox), which you govern with the retention policy in the next section.
 
 <p><img src="/images/blog/copilot-security-qa/purview-activity-explorer-ai.webp" alt="Microsoft Purview DSPM for AI Activity explorer showing AI interactions in a table with activity type, app, risk level and where the interaction was accessed, including Microsoft 365 Copilot and Copilot chat" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*With E5 / Purview, DSPM for AI Activity explorer shows interactions — and the prompt/response text — as a clean view, instead of the manual mailbox reconstruction you do on E3. (Microsoft demo environment.)*
+*DSPM Activity explorer can present captured interaction content to an appropriately licensed and authorised reviewer. Content-viewer permissions are separate from basic audit access. (Microsoft demo environment.)*
 
 *Sources: [Microsoft Purview service description (licensing)](https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-purview-service-description) · [Audit logs for Copilot](https://learn.microsoft.com/en-us/purview/audit-copilot) · [Audit log retention policies](https://learn.microsoft.com/en-us/purview/audit-log-retention-policies) · [Search & reconstruct Copilot data in eDiscovery](https://learn.microsoft.com/en-us/purview/edisc-search-copilot-data).*
 
@@ -404,9 +403,9 @@ First, two things that catch people out:
 
 **Governing it with Purview:**
 
-- The retention location is labelled **"Microsoft Copilot experiences"** (it covers Microsoft 365 Copilot, Security Copilot, Copilot in Fabric and Copilot Studio). Older policies used the combined "Teams chats and Copilot interactions" location — Copilot is now separate.
+- The **Microsoft Copilot experiences** retention location covers supported captured AI content, separately from Teams chats. It is not a policy for every Copilot Studio store: Dataverse transcripts, temporary storage and external logs have separate handling.
 - You can **retain only**, retain and then delete, or delete only.
-- The data physically lives in the Exchange mailbox; expired items pass through a hidden holds folder before permanent deletion.
+- The compliance content copy lives in Exchange. Deletion is asynchronous and can involve multiple timer jobs; applicable retention and holds suspend permanent deletion. Retain-only policy expiry does not itself delete every remaining item.
 
 <p><img src="/images/blog/copilot-security-qa/retention-copilot-experiences.webp" alt="Microsoft Purview Data Lifecycle Management new retention policy wizard on the Choose where to apply step, with the 'Microsoft Copilot experiences' location toggled On for built-in and custom Copilot experiences" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
@@ -417,11 +416,11 @@ First, two things that catch people out:
 What I'd recommend for a records-conscious organisation:
 
 - Apply a Data Lifecycle Management retention policy on the "Microsoft Copilot experiences" location, set to your records schedule.
-- Use retention labels plus the "cloud attachments" option to preserve the versions of files **users reference in their prompts** — note that files Copilot itself *surfaces* in a response aren't captured this way, so rely on the mailbox retention policy and eDiscovery for those.
+- Decide whether referenced source files and versions also need preservation. Retaining a conversation or citation is not proof that the underlying file version has been preserved.
 - Treat eDiscovery as your system of record for verification.
 - Map the controls to your obligations with Compliance Manager's AI assessment templates.
 
-One honest gap: Microsoft doesn't publish country-specific records guidance, so mapping Copilot retention to your local records/disposal rules is your call — but the tooling above gives you everything you need to do it.
+Map the documented retention behaviour to your own records and disposal obligations with the appropriate specialists. A configured policy is not, by itself, proof of legal compliance.
 
 *Sources: [Retention for Copilot & AI apps](https://learn.microsoft.com/en-us/purview/retention-policies-copilot) · [Audit log retention policies](https://learn.microsoft.com/en-us/purview/audit-log-retention-policies).*
 
@@ -433,17 +432,17 @@ One honest gap: Microsoft doesn't publish country-specific records guidance, so 
 
 Three things working together:
 
-1. **Watch — DSPM for AI.** Microsoft Purview Data Security Posture Management for AI is the "front door" for discovering and monitoring AI use across Copilot, agents and other AI apps. It keeps an inventory of every AI app and agent active in the last 30 days and runs weekly data-risk assessments (run automatically across your top 100 SharePoint sites by usage, with broader custom assessments available).
+1. **Watch collected usage in DSPM.** The current AI observability page reports apps and agents with collected activity in the last 30 days. Coverage depends on configuration and integration. The older Apps and agents page has different scope and excludes Agent 365.
 
 2. **Get notice — the Message center.** The Microsoft 365 **Message center** is where upcoming changes land. The "Major update" tag gives you at least 30 days' notice when something needs action, it explicitly covers "a new service or app deployed with default settings turned on," and you can get a weekly digest.
 
-3. **Hold the line — staged rollout.** Copilot supports release rings (Frontier / Standard / **Deferred**). Deferred holds major Copilot features for 30 days after general availability so you can validate them first. You set it in the Microsoft 365 admin center under Copilot → Settings → Copilot release preferences (with room for a small set of exceptions).
+3. **Use release controls within their scope.** Frontier, Standard and Deferred serve different audiences. Deferred delays only Copilot major updates explicitly marked **deferred-capable** in Message center, for 30 days after Standard rollout begins. It is not a hold on every feature. Existing Targeted Release for other services is not a universal delay either.
 
 <p><img src="/images/blog/copilot-security-qa/demo-dspm-apps-and-agents.webp" alt="Microsoft Purview DSPM 'Apps and agents' inventory listing Microsoft 365 Copilot, Copilot BizChat and WebChat, Security Copilot and Azure AI Foundry models, each marked Monitored with policy counts" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*DSPM for AI inventories every AI app and agent active in the last 30 days — including Microsoft 365 Copilot and the free Copilot Chat (BizChat) — so new AI usage never appears unseen. (Microsoft demo environment.)*
+*This demo shows the Apps and agents page, not a complete inventory guarantee. Use current AI observability for documented Agent 365 visibility, and verify collection coverage separately.*
 
-**And for agents specifically:** governance is layered, not a single switch. Admins can control which agents are *available*, who can access or share them, the connectors and actions an agent may use, and — for Copilot Studio agents — the environment and who's allowed to build. The exact approval path depends on whether the agent comes from Microsoft, a third-party app, Copilot Studio, SharePoint, or a custom line-of-business integration. The common thread: admins can see the permissions and data an agent wants before allowing it, and users only get the agents you permit. For governing this at scale, that's **Agent 365**.
+**For agents, reconcile the available controls with each source.** Review publication, sharing, tool credentials, connectors, environments and existing access. The approval path differs for Microsoft, third-party, Studio, SharePoint and custom agents. Registry visibility is not proof that every agent was reviewed, and restricting future sharing does not revoke old shares or source permissions. See the [agent governance review](/blog/microsoft-365-copilot-agents-data-flow-governance/) for those boundaries.
 
 *Sources: [DSPM for AI](https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about) · [Message center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/message-center) · [Configure Copilot release options](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/configure-release-options).*
 
@@ -451,7 +450,7 @@ Three things working together:
 
 ## Compliance certifications: the RFP answer
 
-Every security questionnaire and RFP asks the same thing: *"what's it certified against?"* Copilot is built on Microsoft 365 and inherits that compliance posture, plus AI-specific attestations:
+For an RFP, distinguish certifications, assurance reports, regulatory obligations and assessments. Obtain current evidence for the specific service and cloud rather than treating the whole Microsoft 365 portfolio as one certificate:
 
 | Standard | Covers |
 |---|---|
@@ -459,11 +458,11 @@ Every security questionnaire and RFP asks the same thing: *"what's it certified 
 | **ISO/IEC 27001** | Information security management |
 | **ISO/IEC 27018** | Protection of personal data in the cloud |
 | **SOC 1 / 2 / 3** | Service-organisation controls (via the Microsoft 365 platform) |
-| **HIPAA** | US healthcare — the **core product is in scope; web search queries are NOT covered** |
-| **GDPR** | EU data protection — Microsoft as processor |
-| **IRAP** | Australian/NZ government — assessed at the Microsoft 365 platform level |
+| **HIPAA** | US healthcare obligations and applicable contractual coverage, not a blanket certification; web queries are excluded |
+| **GDPR** | Legal obligations for the deployment, not a product certification or automatic customer compliance |
+| **IRAP** | Australian security assessment evidence; not automatic Australian or New Zealand authority to operate |
 
-**The honest framing for an RFP:** Copilot rides on Microsoft 365's certifications, with **ISO 42001** as the standout AI-management attestation. Two caveats a good reviewer will want stated: HIPAA doesn't extend to web queries, and an IRAP assessment is an input to your own authorisation, not an automatic authority-to-operate — each agency still runs its own security assessment. For the current, authoritative list and the exact scope for *your* cloud, send reviewers to the Microsoft Service Trust Portal ([servicetrust.microsoft.com](https://servicetrust.microsoft.com)) — that's the source of record an auditor will accept.
+**The RFP answer should state scope and date.** Cite the applicable certificate, report or contractual commitment from the [Service Trust Portal](https://servicetrust.microsoft.com), then explain your configuration and responsibilities. ISO 42001 concerns AI management systems; it does not certify each output as correct. Web queries and connected services can have separate exclusions. No service certification makes a customer automatically GDPR- or HIPAA-compliant.
 
 *Sources: [Data, privacy & security for M365 Copilot — regulatory compliance](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy#meeting-regulatory-compliance-requirements) · [Microsoft Service Trust Portal](https://servicetrust.microsoft.com).*
 
@@ -474,50 +473,52 @@ Every security questionnaire and RFP asks the same thing: *"what's it certified 
 The six above are the deep ones. Here are the rapid-fire questions that come up just as often — with the short, honest answer and where to go deeper.
 
 "Does Copilot respect our existing permissions?"
-Yes — it only surfaces what a user can already access. Which means your oversharing problem is your biggest real risk. Fix SharePoint and OneDrive permissions and deploy sensitivity labels *before* you scale Copilot. → [SharePoint oversharing controls for Copilot](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/).
+Core user-scoped retrieval respects existing access, so broad SharePoint and OneDrive permissions deserve review before rollout. Agent tools can use maker-provided credentials, and embedded sources have separate rules. Review those alongside [SharePoint oversharing controls](/blog/sharepoint-oversharing-controls-microsoft-365-copilot/).
 
 <p><img src="/images/blog/copilot-security-qa/demo-dspm-data-risk-assessments.webp" alt="Microsoft Purview DSPM data risk assessments page showing an oversharing assessment of 11.4 thousand items, 9.9 thousand with sensitive data, and zero sharing links accessed by anonymous or external users" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
 *DSPM data risk assessments put a number on oversharing before you scale Copilot — here, 11.4K items assessed with zero anonymous/external sharing. (Microsoft demo environment.)*
 
 "Can we audit prompts staff type into ChatGPT, Claude or other AI tools?"
-Not through the native Microsoft 365 audit log — that only captures Microsoft Copilot. You *can* still govern other AI tools with Purview, two ways: **Endpoint DLP** can warn or block staff from pasting sensitive data into generative-AI websites (e.g. stop a credit-card number going into ChatGPT), and Purview can audit non-Microsoft AI interactions — but that runs on pay-as-you-go billing (it's not part of your E3 or E5 subscription) and needs devices onboarded plus the Purview browser extension. So: Microsoft Copilot = audited in the box; everything else = an E5/Purview + pay-as-you-go add-on.
+Purview Audit supports configured third-party AI scenarios through `AIAppInteraction` and `ConnectedAIAppInteraction`. Non-Microsoft AI auditing uses pay-as-you-go billing and 180-day retention. Connector, browser or network collection requirements depend on the scenario; a website visit is not proof that its prompt text was captured. Endpoint DLP separately supports warnings or blocks for certain browser activities. See the [audit guide](/blog/auditing-microsoft-365-copilot/).
 
-**"Can we tell when a third-party app quietly adds new AI features?"** Partly — and the gap is worth being honest about. **Defender for Cloud Apps** (Cloud Discovery) spots staff using generative-AI apps that aren't on your approved list — "shadow AI" — scored against 31,000+ apps with a dedicated Generative AI category, and it works best fed by your firewall/proxy logs or Defender for Endpoint on managed devices. App Governance (inside Defender for Cloud Apps) watches OAuth-connected apps in Entra ID and flags when one requests *new* permissions — the closest thing to an automatic "this app now wants more access for an AI feature" alert. Purview DSPM for AI, with the browser extension deployed, spots staff using 400+ known third-party AI sites and can apply DLP to them. And the Message center covers new AI features in Microsoft's own services. The honest gap: if a SaaS vendor you already trust switches on an AI feature that uses the access it *already* has — no new permission, no new network destination — none of these alert you automatically. That one needs a process control: ask vendors to disclose AI features in your contracts, and add "does this now use AI?" to your annual application review. → [Defender for Cloud Apps risk scoring](https://learn.microsoft.com/en-us/defender-cloud-apps/risk-score) · [Purview DSPM](https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about).
+**"Can we tell when a third-party app quietly adds AI?"** Usage discovery, OAuth-app monitoring and configured DSPM collection help, but they do not guarantee detection of every vendor change. A vendor may reuse permissions and destinations it already has. Include AI processing, subprocessors and change notification in vendor reviews and contracts. See [Defender for Cloud Apps](https://learn.microsoft.com/en-us/defender-cloud-apps/risk-score) and [DSPM](https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about) for the signals each actually collects.
 
 <p><img src="/images/blog/copilot-security-qa/dspm-ai-thirdparty-agents.webp" alt="Microsoft Purview DSPM AI observability dashboard showing 3,843 AI apps and agents across the organisation, with third-party Salesforce agents listed alongside Microsoft agents, each with a risk level and sensitive-interaction summary" loading="lazy" style="max-width:100%;border:1px solid var(--border);border-radius:var(--radius-md);margin:var(--space-4) 0;" /></p>
 
-*Purview DSPM for AI inventories every AI app and agent in use — including third-party agents from platforms like Salesforce — with risk levels and sensitive-interaction counts. (Microsoft demo environment.)*
+*Current DSPM AI observability showing collected Microsoft and third-party agent activity. Inventory and content coverage depend on integration and collection. (Microsoft demo environment.)*
 
 **"Where does our data live?"**
-Prompts, responses and Graph data stay inside the Microsoft 365 service boundary, with data-residency commitments via the Product Terms, Advanced Data Residency and Multi-Geo (Microsoft 365 Copilot has been a covered data-residency workload since 1 March 2024). The exception, again, is web queries (separate Bing service, outside the EU Data Boundary). Knowing the region your data sits in doesn't change who can access it — access is still governed by your tenant's identity and permissions, not the data-centre location. → [Copilot data residency & sovereignty for ANZ and government](/blog/microsoft-365-copilot-data-residency-anz-government/).
+Check Microsoft's core service commitments and your tenant's residency eligibility, then review web queries, model-provider exceptions, agent runtimes and external tools separately. Data-centre location does not grant another customer logical access, but still matters for processing, residency and jurisdiction. At-rest location is not the same as a guarantee of in-country processing. See the [residency guide](/blog/microsoft-365-copilot-data-residency-anz-government/) and the [agent data-flow review](/blog/microsoft-365-copilot-agents-data-flow-governance/).
 
 "Is it isolated from other Microsoft customers?"
 Yes — logical tenant isolation through Microsoft Entra authorisation and role-based access control, with encryption at rest and in transit.
 
 "What about prompt injection and harmful content?"
-Core protections — prompt-injection (jailbreak) defence, protected-material detection for copyright, and image safety — are always on and can't be disabled. Harmful-content text filtering is enforced too, with a limited admin-assigned toggle for specific roles. → [Copilot content safety controls for admins](/blog/microsoft-365-copilot-content-safety-controls-complete-guide-for-admins/).
+Microsoft documents layered safeguards, but the [current privacy guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy#how-does-copilot-block-harmful-content) says coverage varies by scenario and model. Protected-material detection and jailbreak classifiers are not available in every scenario. Check the specific experience rather than assuming one always-on protection stack covers every model, agent and tool.
 
 "Who owns the content Copilot creates, and are we protected on copyright?"
-You own the content, and Microsoft's **Customer Copyright Commitment** backs you on copyright claims for outputs, with protected-material detection built in.
+Microsoft does not claim ownership of the output, but does not guarantee that it is copyright-protected or exclusive to you. The **Customer Copyright Commitment** is subject to its terms, including use of required guardrails and filters. It is not unconditional indemnity for every use. See the [privacy and output guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy).
 
 "You use Anthropic models now — is our data safe with them?"
-For the standard Anthropic models, Anthropic operates as a **Microsoft subprocessor** under the same Product Terms and Data Protection Addendum — your data isn't stored by, or used to train, Anthropic's models, and the Customer Copyright Commitment still applies. Two things a security team should know:
-- **They're on by default** for most commercial tenants (EU/EFTA and the UK are off by default; they're not available in US Government or sovereign clouds). There's an admin toggle in the Microsoft 365 admin center to restrict them to specific users or turn them off.
-- There's a separate, **default-off** category called "Preview models with Data Retention." For *those* specific preview models, Anthropic acts as an independent data processor under its own terms and Anthropic does retain your data — so they stay off unless an admin explicitly opts in. Don't confuse the two.
+For standard Anthropic models, Anthropic acts as a **Microsoft subprocessor** under Microsoft's Product Terms and DPA, with the documented no-training and no-retention commitments. The Customer Copyright Commitment remains subject to its terms. Check these distinctions:
+- **Default availability varies.** Most commercial tenants have standard models enabled; EU/EFTA and UK tenants are default-off. Current guidance also documents an opt-in for non-federal GCC customers. Check other government and sovereign-cloud exclusions rather than assuming one rule covers them all.
+- **"Anthropic models with Data Retention" is a separate category.** These models require explicit enablement and use separate Anthropic terms, including retention. Do not apply standard-model assurances to them.
 - Anthropic models are out of scope for the EU Data Boundary.
 
+Check the [current subprocessor guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor) for the exact model, retention category and cloud. It also excludes Anthropic models from applicable in-country processing commitments. Do not generalise a standard-model assurance to an optional model with separate terms.
+
 "How do we handle a Privacy Act / GDPR data subject request that involves Copilot data?"
-The documented path is an eDiscovery search scoped to that individual's mailbox (the "Copilot activity" condition), then export. Because Copilot interactions live in the user's mailbox, they're retrievable the same way as their mail. (If you use Microsoft Priva for subject-rights requests, confirm its current Copilot coverage with your account team — eDiscovery is the confirmed route.)
+Use authorised eDiscovery searches for supported mailbox-backed content, with appropriate export and case permissions. The individual's mailbox is a starting point, not necessarily the whole request: consider other custodians, memories, uploaded files, agent stores and downstream copies. Privacy/legal staff should decide relevance, disclosure and preservation obligations.
 
 **"Does Copilot honour Information Barriers?"**
-Copilot only ever surfaces content a user can already access — so where an Information Barrier blocks a user's access to someone else's content, that content isn't available to *their* Copilot either. Validate against your specific IB configuration before relying on it.
+For live user-scoped retrieval, an effective source-access restriction still matters. Do not extend that to all agent knowledge: Agent Builder explicitly says Information Barriers are **not supported on embedded files**. Review the [embedded-content rules](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge#embedded-file-content), agent access and tool credentials separately.
 
 "What about Microsoft support access — Customer Lockbox?"
 Customer Lockbox lets you approve or reject the rare cases where a Microsoft support engineer needs access to content to resolve a ticket. It's an **E5** capability and is opt-in — off by default, so turn it on (admin centre → Org settings → Security & privacy) if you want that approval gate.
 
 "What do we do if someone pastes secrets or regulated data into Copilot?"
-Treat it as a data-spillage incident: run an eDiscovery search to find the interaction, **purge** the items (eDiscovery purge, with the right roles), rotate any exposed secrets, and review your DLP/label policies so the same paste is blocked next time.
+Treat it as an incident: contain access, rotate exposed secrets promptly, preserve required evidence and identify the interaction and downstream copies. Involve security, privacy and legal staff before targeted deletion. Purge requires separate authority and roles, may be constrained by holds, and is not proof that every copy is gone. Review DLP within its supported scope; prompt scanning does not inspect uploaded-file contents.
 
 "How do we govern this at the platform level?"
 That's the Copilot Control System — the built-in framework for managing how people use Copilot. → [The Copilot Control System explained](/blog/microsoft-365-copilot-control-system-complete-guide/). For agents at scale, that's Agent 365. → [Agent 365 security guide](/blog/agent-365-security-governance-complete-guide/).
@@ -528,13 +529,13 @@ That's the Copilot Control System — the built-in framework for managing how pe
 
 A few things that surprise even experienced admins — worth knowing before they bite:
 
-- **A label on a *site* or *Team* doesn't protect the *files* inside it.** Container labels (SharePoint site, Team, Microsoft 365 Group) aren't inherited by items — each file needs its own label for Copilot to honour it.
+- **A site or Team label does not automatically label or encrypt its files.** Its configured workspace access and sharing protections still apply; item-level classification and encryption require item-level protection. See the [container-label guidance](https://learn.microsoft.com/en-us/purview/sensitivity-labels-teams-groups-sites).
 - **"Deleted from the Copilot app" ≠ deleted.** What a user sees in the UI isn't the source of truth for retention — verify through eDiscovery.
-- **Restricted SharePoint Search isn't a security boundary.** It reduces discoverability while you remediate; users can still reach files they own or were shared. Fix permissions for real control.
-- **Copilot only reads the *primary* mailbox.** Archive, shared, group and delegate mailboxes are out of scope.
+- **RSS is retiring, not a new-rollout step.** New enablement has been blocked since 31 July 2026. Existing configurations have discovery exceptions and do not change permissions.
+- **Mailbox support is feature-specific.** Verify the current Outlook feature and mailbox type; do not assume one statement covers primary, shared, delegated and archive scenarios.
 - **Teams meeting-chat labels aren't recognised by Copilot** (yet) — meeting *invites* and calendar events are, but meeting and channel chat summaries don't carry the label.
-- **Files encrypted with user-defined permissions block agents** — even for read/summarise — unless the file is open in the app.
-- **Auditing non-Microsoft AI isn't free or automatic** — it needs pay-as-you-go billing plus device onboarding, separate from the included Copilot audit.
+- **User-defined encryption has exceptions.** Current guidance permits some directly referenced or SharePoint-permission-linked files when the user has EXTRACT, as well as documented open-file scenarios. Do not use the older blanket "unopened files always blocked" rule.
+- **Auditing non-Microsoft AI is not automatic.** It uses pay-as-you-go billing and scenario-specific collection, separate from included Microsoft application audit.
 
 *Sources: [Copilot data-protection considerations](https://learn.microsoft.com/en-us/purview/ai-m365-copilot-considerations) · [Restricted SharePoint Search](https://learn.microsoft.com/en-us/sharepoint/restricted-sharepoint-search).*
 
@@ -549,7 +550,7 @@ If you do nothing else, do these — in roughly this order:
 3. **Decide your web grounding posture** and set the "Allow web search in Copilot" policy to match.
 4. **Set a retention policy** on the "Microsoft Copilot experiences" location to match your records schedule.
 5. **Confirm your audit and eDiscovery readiness** — check your licensing actually activates the retention and discovery depth you need.
-6. **Turn on DSPM for AI** and subscribe the right people to Message center, so new features never surprise you.
+6. **Configure DSPM collection and review Message center**, while keeping a separate change-review process for features those signals do not cover.
 7. **Set agent governance** — approve only the agents you want, and review what each one can access.
 
 ---
@@ -557,46 +558,46 @@ If you do nothing else, do these — in roughly this order:
 ## Frequently asked questions
 
 Is web grounding enabled by default?
-On a commercial tenant, yes (unless you've turned off optional connected experiences). US Government clouds are off by default. Control it with the "Allow web search in Copilot" policy in the Microsoft 365 Apps Cloud Policy service.
+On commercial tenants, it is available unless policy or optional-connected-experience settings disable it. Current guidance documents off-by-default behaviour for GCC and DoD; check other sovereign clouds separately.
 
 What does Copilot send to the web?
-A short generated query of a few words — never your full prompt, files or emails, and with all user and tenant identifiers removed.
+Usually a short derived query, not an entire file or email. A very short prompt can be sent in full. Entra-derived identifiers are excluded, but names or sensitive terms can still appear.
 
 Is our data used to train the models?
 No — not your prompts, responses, Graph data, or the web queries.
 
 Can we stop Copilot reading Outlook?
-There's no single switch, but you can restrict it with licensing, Purview DLP, sensitivity-label encryption (the EXTRACT right), and the connected-experiences control. Copilot only reads mail the user can already open.
+Review paid-feature licensing, app privacy controls, label-based email DLP and encryption rights separately. Withholding the paid add-on is not a universal Copilot Chat block. Policy scope and Rights Management usage rights matter; do not infer them from SharePoint ownership.
 
 Can we audit Copilot across all users at once?
-Yes — eDiscovery's "Copilot activity" condition collects everything across selected mailboxes in one query, covering both the licensed product and free Copilot Chat.
+eDiscovery can search captured content across selected mailboxes. Purview Audit contains metadata and IDs, not full conversation text. Coverage, roles, licences and case scope determine what is found.
 
 Can we access prompts with our existing E3 licence?
-Yes, with a Microsoft 365 Copilot licence on top of E3 — audit, per-user attribution, eDiscovery Standard and legal hold are all there. E3 just makes you reconstruct the prompt/response conversation by hand; E5 / Purview presents it cleanly and adds longer audit retention and content-aware scanning. (E5 Security ≠ E5 Compliance/Purview.)
+The service description lists E3 + Copilot for basic interaction search, hold and export, with eligible E5/Purview combinations for premium search. Check the exact workload and roles. Included Copilot Chat can also generate activity without the paid add-on.
 
 Can we audit prompts in ChatGPT or other AI tools?
-Not in the native M365 audit log (Microsoft Copilot only). Purview Endpoint DLP can block/warn on pasting sensitive data into AI sites, and non-Microsoft AI auditing is available on pay-as-you-go billing (E5/Purview, onboarded devices + browser extension).
+Purview supports configured third-party AI auditing with pay-as-you-go billing and 180-day retention. Collection prerequisites vary by scenario. Endpoint DLP is a separate control for supported browser activities.
 
 How long is Copilot data kept by default?
-Prompts and responses aren't auto-deleted — they live in the user's mailbox until deleted or a retention policy acts. Audit records: 180 days (Standard) or up to one year (Audit Premium — but note Copilot interaction records stay at 180 days unless you set a custom retention policy), up to ten years with the add-on.
+Mailbox-backed content follows user deletion, retention and holds. Copilot audit defaults to 180 days, including on E5. Longer audit retention needs an eligible custom policy and user licences; it is separate from content retention.
 
 Is the free Copilot Chat as governable as the paid one?
-For audit and discovery, yes (it's logged as BizChat and is collectable). Premium retention and discovery depth depend on your Purview/E5 licensing.
+Supported Copilot Chat activity is audited and has discoverable compliance content. Do not filter only BizChat. Premium features need appropriate licences and roles; Copilot audit still defaults to 180 days without an eligible custom policy.
 
 How do we keep up with new AI features?
-DSPM for AI to monitor, Message center for 30-day notice, and Deferred release to hold features for 30 days while you validate.
+Monitor collected activity, review Message center and use scoped release controls. Thirty-day notice is not universal, and Deferred release covers only major Copilot updates explicitly marked deferred-capable.
 
 Is our data at risk if staff use the free Copilot Chat without a licence?
-No — as long as they're signed in with their work account (look for the green shield), they get Enterprise Data Protection and their data isn't used to train models, no licence required. The risk is consumer Copilot (personal account or not signed in), which is outside your tenant's protection. Require work-account sign-in with Conditional Access.
+Work-account Copilot Chat has Enterprise Data Protection without a paid add-on, but no service is risk-free. Conditional Access protects work resources; it does not itself prevent consumer AI sign-in. Review endpoint, browser and network controls separately.
 
 What compliance certifications does Copilot have?
-It inherits Microsoft 365's posture — ISO 27001, ISO 27018, SOC, HIPAA, GDPR — plus ISO 42001 for AI management systems, and IRAP at the platform level for ANZ government. Confirm exact scope for your cloud in the Microsoft Service Trust Portal.
+Check current ISO certificates, SOC reports and scoped regulatory commitments in the Service Trust Portal. GDPR and HIPAA are not blanket product certifications. IRAP is Australian assessment evidence, not automatic Australian or New Zealand authorisation.
 
 How do we handle a Privacy Act or GDPR data subject request involving Copilot?
-Run an eDiscovery search scoped to that user's mailbox using the "Copilot activity" condition, then export — Copilot interactions are retrievable the same way as the user's mail.
+Start with authorised eDiscovery searches for supported mailbox content, then assess other custodians, memories, files and agent stores. Privacy/legal staff should review scope, disclosure and preservation obligations.
 
 Where is our Copilot data stored?
-Inside the Microsoft 365 service boundary, with data-residency commitments via Advanced Data Residency and Multi-Geo. The region doesn't change who can access it — that's still governed by your identity and permissions. (Web queries are the exception — separate Bing service.)
+Check core service residency eligibility and settings, then web search, model-provider exceptions, agent runtimes and external tools separately. At-rest location, processing location and legal jurisdiction are different questions.
 
 ---
 
