@@ -565,7 +565,7 @@ notebook proposing what to make next, and the Quick Create row shows the formats
 **Annotated 15 September 2026 (house style, batch 2):** 420 px of white canvas added on the **left**; one callout, **“Copilot suggests what to make next”**, leading to a red dot on the top-left border of the **Suggested content** card — the single element the section is about. First render put the dot on the **“S” of “Suggested content”**, obscuring the very label it names; corrected by moving it down onto the card border and re-verified by viewing the render. The callout deliberately states only what is visible and does **not** repeat the section's “one more than Microsoft shows” comparison — counting this image, Microsoft's own screenshot also carries **seven** pills (two of them labelled Document). The difference between the two tenants is *composition*, not count.
 
 ## §58 — You can choose how hard Cowork thinks
-`9e3bf829911b0b73897700446cb18bdcebcabc078e85fc32c81f6f8a6af7d3c8`
+`a703c51cee3668533a5db5765671587378d96f35e09ea5a0126456ed64587574`
 
 **Observed:** A small popover card headed **"Effort Max"** ("Effort" in regular weight, "**Max**" in
 bold). Under it, the labels **"Faster"** (left) and **"Smarter"** (right) sit above a horizontal
@@ -581,10 +581,13 @@ Footer: "AI-generated content may be incorrect".
 thinks", and the helper text ties effort to credit consumption, which is the point the section makes.
 **Deliberate imprecision:** I can see three intermediate tick dots plus the handle, but the discrete
 level count is not unambiguously readable, so neither the observation nor the alt text asserts a
-number of levels.
+number of levels
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts: "Five levels, Light to Max" on the effort track (five stops are visible — both ends plus three mid dots), and "Model and effort, two dials" on the composer's model and effort chips. The first callout names what this frame actually shows rather than the default, because Microsoft's screenshot has the slider at Max.
+.
+
 
 ## §59 — The cost skill shows where you are for the month
-`7dc77caa814737a0a2605110d25fcc2169a2b2eda7c0b05d48e7f3116616c3e9`
+`7cfffcc60c206bbf528d8f7d78f510c1c6c9ce60b8f1fcb33ab685264945582c`
 
 **Observed:** A narrow crop of a Cowork conversation. A grey user pill at the top right reads
 **"/cost"**. Below it, a rounded bordered card with a **stopwatch icon** on the left states, in
@@ -594,10 +597,13 @@ in frame — no rail, no compose box.
 
 **Verdict:** ✅ MATCH — the `/cost` command returning per-task credits plus month-to-date position
 and the reset date is exactly this section. All four figures (128, 10%, 900, August 1) were read at
-full size and are unambiguous.
+full size and are unambiguous
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts on the two halves of what the skill returns: "What this task cost" on the credits-used line, and "Can you afford the next one" on the remaining monthly-limit line.
+.
+
 
 ## §60 — The Scheduled tab became Automations
-`792682aa9a861e0379f3b811409d78962204124870d6b80aa6cb50af8ac66074`
+`72a0ec4d6fca7113bc7ab99bb0266baf0889b58cd5bd186748d3b8597dc45977`
 
 **Observed:** A tight crop of the Copilot left rail. At the top, the "Copilot" wordmark beside a
 nine-dot waffle icon, a task/checkbox icon carrying a notification dot, and a panel-toggle icon.
@@ -609,7 +615,10 @@ Customize"**. No content pane is in frame.
 **Verdict:** ✅ MATCH — the rail entry reads "Automations" in the position the section is about.
 **Scope note:** a single screenshot of the new name cannot itself evidence a *rename*; there is no
 before/after here. The "was Scheduled" half of the claim rests on the cited source, and the alt
-text describes only the visible rail.
+text describes only the visible rail
+**Annotated 15 September 2026 (house style, verified on the render):** One callout, "This tab was called Scheduled", on the renamed Automations item in the Cowork rail. Nothing else in the frame needs marking.
+.
+
 
 ## §29 — The GitHub Copilot harness in Copilot Studio is generally available
 `f6283166fce81a6df052b894688f790f26f05c55dcad227544e2fb3b07c7e5d9`
@@ -1431,7 +1440,7 @@ pass/fail count, and each finding linked to an official Microsoft Learn referenc
 ---
 
 ## §34 — Four enforcement rules per environment
-`be4ebef8ec1135d9f50d92d9cfc2a0af616cb75d0b83eee51236c1d8f3647cac`
+`23c7676420f2730bc9754f085e4437f7f55d32a28099ea1c129a469f1993a472`
 
 **Observed:** A panel headed **Manage capacity** with a back arrow and a close X. Beneath it the
 environment is named **LB - FRE (Sandbox-US)** with **Environment type: Sandbox**.
@@ -1461,10 +1470,13 @@ this pane is the per-environment enforcement surface, and it carries exactly the
 section 67 describes — allocate an amount, draw from the tenant pool, bill to pay-as-you-go, and
 notify at a threshold.
 
+**Annotated 15 September 2026 (house style, verified on the render):** Four red callouts in the right pad name the API values the prose lists: "Allocation, not a rule" on the environment's allocated-capacity box, "TenantPool" on the tenant-pool consumption option, "PayGo" on the pay-as-you-go option, and "Alert" on the notification threshold. Deny is the absence of the other two, so it has no control of its own to point at and is left to the prose.
+
 ---
 
+
 ## §36 — Limits can be set on a single agent
-`7d3bd2394a98b4b82ef73729354a3901cccd006724b49554dbf3b5a666a2a342`
+`53cc2d7262851a89193f2d5fc301bf3fa42b54e7be8db8abee66be031e33240c`
 
 **Observed:** A panel with a back arrow, the title **Zava Studios Makers Assistant** and a close X.
 The subtitle reads **“Adjust usage limits and notification threshold for this agent running in
@@ -1490,7 +1502,10 @@ precisely what separates it from the per-environment pane used at section 67. Th
 the same 50-100% threshold rule, which is why they were easy to confuse and why both were checked
 against their section bodies before placement.
 
+**Annotated 15 September 2026 (house style, verified on the render):** Three callouts. The first two read as one sentence across the pane — "Says 'message limit'" on the field label, "but the field is credits" on the 25000 input — because that mismatch is exactly what the section is about. The third, "The per-agent hard stop", marks the enforcement note beneath it.
+
 ---
+
 
 ## §75 — Word reads the pictures in your reference documents *(image 2 of 3)*
 `da884ad7e945b7584f631a971a6ea13bfb20dce33f7173aa45125552299dd440`
@@ -2340,10 +2355,13 @@ uncropped screenshot and confirmed.
 ## §57 — lab-s57-app-skill-slash.webp
 
 - **File:** `lab-s57-app-skill-slash.webp` (1154×460, 16.4 KB)
-- **SHA-256:** `52af254d6d7eae0a67940537b61dd3f6b592f659f5f962076068cb1711f98e25`
+- **SHA-256:** `2bd37a86a1b4fdca38c0c9865dae377cff788283429b0c5d216f24cf6be9c4cd`
 - **Observed while viewing (14 September 2026):** Cowork home. Heading 'What should we finish today?'. Composer contains '/app'. Picker above with tabs All, Skills, People, Files, Meetings, Emails, Chats, Channels, Sites, highlighting an entry described as a skill that creates and edits apps that can connect to data.
 - **Cross-reference:** Proves the App skill exists and that the entry point is the slash command /app. Prose is explicit that building/publishing an app is NOT evidenced here.
-- **Verdict:** ✅ MATCH
+- **Verdict:** ✅ MATC
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts: "Type /app, then tab" on the /app token in the composer, and "It claims it connects to data" on the skill's own one-line description in the picker row — the claim the section then tests.
+H
+
 
 ## §62 — lab-s62-cowork-plugins.webp
 
