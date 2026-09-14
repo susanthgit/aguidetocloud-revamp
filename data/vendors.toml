@@ -242,3 +242,13 @@ logo_emoji = "🟢"
 official_url = "https://www.servicenow.com/services/training-and-certification.html"
 cert_path_note = "Start with the ServiceNow Certified System Administrator (CSA) - platform navigation and instance configuration, lists and forms, the data schema and access control, Service Catalog and Workflow Studio, the CMDB, and update sets."
 order = 24
+
+[[vendor]]
+slug = "peoplecert"
+name = "PeopleCert"
+short_name = "PeopleCert"
+accent = "#202A3B"
+logo_emoji = "🎓"
+official_url = "https://www.peoplecert.org/"
+cert_path_note = "Start with ITIL Foundation (Version 5) - PeopleCert states it has no prerequisites and is itself the prerequisite for the higher-level ITIL Version 5 qualifications, so it is the foundation the rest of the ITIL track builds on."
+order = 25

@@ -14103,3 +14103,56 @@ exam_prerequisites = "The blueprint lists recommended experience rather than har
 exam_question_types = ["Multiple choice", "Multiple select"]
 guided_url = "/guided/servicenow-cis-df/"
 practice_url = "/guided/servicenow-cis-df/practice/"
+
+[[cert]]
+slug = "itil-5-foundation"
+vendor = "peoplecert"
+code = "ITIL-5-FOUNDATION"
+name = "ITIL Foundation (Version 5)"
+tagline = "Prepare for ITIL Foundation (Version 5) with original scenarios on the ITIL Value System, the four dimensions, the eight product and service lifecycle activities, value streams, ITIL and AI, and ITIL alongside other frameworks."
+exam_category = "peoplecert"
+level = "beginner"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 1027
+featured = false
+price_practice = 9
+exam_url = "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-5-foundation-version-50-4154"
+exam_cost = "US$690 incl. VAT for the self-study Exam bundle (official eBook, exam voucher and learning resource kit). PeopleCert does not publish a standalone exam-only fee on this page; eLearning and training bundles are priced higher."
+exam_duration = 60
+exam_passing_score = "65%"
+guided_url = "/guided/itil-5-foundation/"
+
+
+# ═══════════════════════════════════════════════════
+# Keyed map — use (index site.Data.all_certs.cert_map "slug")
+# for single-page lookups (replaces guided_certs.toml)
+# ═══════════════════════════════════════════════════
+
+[cert_map."itil-5-foundation"]
+vendor = "peoplecert"
+code = "ITIL-5-FOUNDATION"
+name = "ITIL Foundation (Version 5)"
+tagline = "Prepare for ITIL Foundation (Version 5) with original scenarios on the ITIL Value System, the four dimensions, the eight product and service lifecycle activities, value streams, ITIL and AI, and ITIL alongside other frameworks."
+exam_category = "peoplecert"
+level = "beginner"
+status = "active"
+modules = 0
+questions = 250
+domains = 7
+order = 1027
+featured = false
+price_practice = 9
+exam_url = "https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-5-foundation-version-50-4154"
+exam_cost = "US$690 incl. VAT for the self-study Exam bundle (official eBook, exam voucher and learning resource kit). PeopleCert does not publish a standalone exam-only fee on this page; eLearning and training bundles are priced higher."
+exam_duration = 60
+exam_passing_score = "65%"
+exam_questions_real = "40"
+exam_provider = "PeopleCert online proctored or an accredited training organisation"
+exam_validity = "Renewal every 3 years, or 60 CPD points through PeopleCert Plus."
+exam_prerequisites = "None. ITIL Foundation (Version 5) is the entry qualification. Existing ITIL 4 Foundation holders can instead take the shorter ITIL Foundation Bridge (Version 5) module to reach the same certification."
+exam_question_types = ["Multiple choice"]
+guided_url = "/guided/itil-5-foundation/"
+practice_url = "/guided/itil-5-foundation/practice/"

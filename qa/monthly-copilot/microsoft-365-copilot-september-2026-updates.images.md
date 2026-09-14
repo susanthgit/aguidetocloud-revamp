@@ -231,11 +231,14 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Verdict:** ✅ MATCH — the section's claim is that translation moved into Copilot and that it resizes text to fit. The image carries both: the prompt shows translation invoked from the Copilot pane with no menu, and the fourth reasoning step states the resize behaviour in Copilot's own words. The German reply is quoted and translated in the surrounding prose, and the limitation about image-based slides is reported rather than omitted.
 
 ## §67 — Translation moved into Copilot, and resizes the text for you *(image 2 of 2)*
-`9187a7ca00225e2953b661898e21d827d1ae3106ea072a047994a5300767c667`
+`2d3b4346b351926a7b3ccb7af5ba7988571e52dc409fb07fab5c9ccfee015066`
 
 **Observed:** A PowerPoint slide, landscape, white background. Title "Copilot Agents vs. Copilot Studio Agents" in black. Two columns beneath: left headed "Copilot Agent" with five German bullets beginning "Schlanker Assistent, direkt in Microsoft 365 Copilot integriert"; right headed "Copilot Studio Agent" with five German bullets beginning "Vollständige Authoring-Umgebung für individuelle, erweiterbare Agents". Red wavy spell-check underlines appear beneath many German words. Both columns end well above the bottom edge, leaving roughly a fifth of the slide empty.
 
-**Verdict:** ✅ MATCH — this is the same slide shown untranslated in §3's "before" image, where the right-hand column overran the bottom edge. Here, in a longer language, all text sits inside the slide with clear space below. That is the resize claim demonstrated, and the caption names the red underlines as an English spell-checker so they are not mistaken for errors in the feature.
+**Verdict:** ✅ MATCH — this is the same slide shown untranslated in §3's "before" image, where the right-hand column overran the bottom edge. Here, in a longer language, all text sits inside the slide with clear space below. That is the resize claim demonstrated, and the caption names the red underlines as an English spell-checker so they are not mistaken for errors in the feature
+**Annotated 15 September 2026 (house style, verified on the render):** One callout, "German runs longer, and it still fits", with the dot in the clear space below the right column's last German line. The English original overflowed at exactly this point, so the empty space is itself the finding.
+.
+
 
 ## §68 — Copilot can edit SmartArt on the canvas *(image 1 of 5)*
 `9566e1d829387564b4f3fe0a24125074b520883a6c79450dcfcd261b2bcd3023`
@@ -245,11 +248,14 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Verdict:** ✅ MATCH — this is the evidence for the section's central distinction. The words "simple shapes", "SmartArt-like" and "SmartArt-style" are Copilot's own, and the prose quotes the middle step verbatim rather than paraphrasing it. Nothing in the image contradicts the claim that this is not PowerPoint's SmartArt engine.
 
 ## §68 — Copilot can edit SmartArt on the canvas *(image 2 of 5)*
-`e247fcedad9997ea9d86a3fea22d3eae69382ce7350c681029145d65c0950134`
+`8c5f688244a6ba2da66a1bb5007e8645f30d37977ced99c757ab231839717f5a`
 
 **Observed:** A PowerPoint slide titled "Copilot Agents vs. Copilot Studio Agents". Beneath it, two columns of rounded cards. Left column: a dark navy header bar reading "Copilot Agent" above five pale blue cards. Right column: an orange header bar reading "Copilot Studio Agent" above five pale peach cards. The top-left card carries a dotted selection border.
 
-**Verdict:** ✅ MATCH — this is the output of the "convert this slide to a smart art" prompt described immediately above it. The dotted border on a single card supports the caption's claim that each card is a separate selectable shape rather than one flat picture or one SmartArt object.
+**Verdict:** ✅ MATCH — this is the output of the "convert this slide to a smart art" prompt described immediately above it. The dotted border on a single card supports the caption's claim that each card is a separate selectable shape rather than one flat picture or one SmartArt object
+**Annotated 15 September 2026 (house style, verified on the render):** One callout, "Plain shapes, not SmartArt". The dot sits in the empty right half of the bottom-left card, so it points at a card without covering any text — every other approach crosses either the title or the opposite column.
+.
+
 
 ## §68 — Copilot can edit SmartArt on the canvas *(image 3 of 5)*
 `5ad38229f3fe8cf0629b6ee4d99a3c6c7206afd7feaac0627b9dae342b022364`
@@ -259,18 +265,24 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Verdict:** ✅ MATCH — the surrounding prose says the layout change was requested in one short line, and the image shows exactly that line. The "Edit" dropdown is visible but not claimed about in the prose beyond noting the mode exists.
 
 ## §68 — Copilot can edit SmartArt on the canvas *(image 4 of 5)*
-`780f499ed2b0509394b828c297eb68c24a01f0b78640b61b2a7ce0933ff6254b`
+`cc0a1e942a69e80f248f6b90d94dad650dec3060afc5fbdc7f29a48cc4173d75`
 
 **Observed:** A PowerPoint slide showing two horizontal chevron process flows. Top row: a navy anchor box labelled "Copilot Agent" followed by five chevrons deepening in blue, reading "Inside M365 Copilot", "Built in minutes", "Grounded in your data", "Chat, Teams, Word", "Quick task help". Bottom row: an orange anchor box labelled "Copilot Studio Agent" followed by five chevrons deepening in orange, reading "Custom agent studio", "Topics and triggers", "Connectors and APIs", "Publish anywhere", "Automated workflows". One chevron carries a dotted selection border.
 
-**Verdict:** ✅ MATCH — this is the on-canvas edit the section is really about. The image confirms all three things the prose claims: the flow now runs left to right, the text was condensed to short phrases to fit inside the chevrons, and the colour deepens along each row.
+**Verdict:** ✅ MATCH — this is the on-canvas edit the section is really about. The image confirms all three things the prose claims: the flow now runs left to right, the text was condensed to short phrases to fit inside the chevrons, and the colour deepens along each row
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts at opposite ends of the top row: "An anchor, then five steps" on the navy anchor box, and "Colour deepens left to right" on the darkest chevron. Symmetric pads, because a leader from below would cross the orange row's labels. Both dots sit under their shape's text line.
+.
+
 
 ## §68 — Copilot can edit SmartArt on the canvas *(image 5 of 5)*
-`ef1ecb7de57bb7eb5ff59ef36310885ba848e63b64c53f6f975930015c8a526e`
+`5fc4802a3ed76b1f7ee75ea5538fbc1a0f23c25354a40ae0babd8feabb0d422d`
 
 **Observed:** The Copilot reply panel in PowerPoint. It shows the prompt "match the flow left to right and match my brand colors", a "Reasoned in 7 steps" link, and a reply stating the slide now reads as two left-to-right process flows with a labeled anchor for each agent type and five chevron steps deepening in the theme's blue and orange, with step text condensed to short phrases. A second paragraph reads: "I kept your theme's own palette since no separate brand kit was available — say the word if you want specific hex colors applied instead."
 
-**Verdict:** ✅ MATCH — this is the proof for the section's most load-bearing claim, that Copilot in PowerPoint reported finding no brand kit despite one existing in the same tenant. The sentence is quoted verbatim in the prose and the image shows it in full, in context, with the prompt above it. The prose does not assert a cause for the miss, and the image does not supply one.
+**Verdict:** ✅ MATCH — this is the proof for the section's most load-bearing claim, that Copilot in PowerPoint reported finding no brand kit despite one existing in the same tenant. The sentence is quoted verbatim in the prose and the image shows it in full, in context, with the prompt above it. The prose does not assert a cause for the miss, and the image does not supply one
+**Annotated 15 September 2026 (house style, verified on the render):** One callout, "It says it fell back to the theme", with the dot past the end of the closing paragraph — the place where Copilot states it used the deck's own theme colours because no separate brand kit was available.
+.
+
 
 ## §69 — PowerPoint can build a deck from an email *(image 1 of 3)*
 `0000311628d906e5c6068439fe344c37b35949b41e1fefee82331ce8563bba3b`
@@ -287,25 +299,34 @@ clearly on the left. Alt text amended to "beside the dialog".
 **Verdict:** ✅ MATCH — this is the evidence for the section's cross-reference to §5. The brand kits wording is legible and verbatim, and the three named styles match the prose. The prose claims only that brand kits appear on the create path; it does not claim the option was selected or that it worked, and the image is not asked to prove more than it shows.
 
 ## §69 — PowerPoint can build a deck from an email *(image 3 of 3)*
-`22cb1454b80ba88148c68af7c692f48722f32d235629b3a847d9fa1e48bc2b8b`
+`8b861abba3bf928ebaca116ed53ad70d4fe1c35e34b8ff37874dd370b36bd89a`
 
 **Observed:** A single generated slide, landscape, white background. Title in dark navy serif: "Our framework position and what to verify". Two columns below: a navy header bar "Framework position" over four bullets (trade margin no more than 30 percent; incremental-only rebates; payment terms of 60 days or shorter; no category exclusivity), and a teal header bar "Verify in negotiation" over four bullets (store-level storage capability for Rapid; any exclusivity ask on the 400mg 24s; registration status by presentation; anything outside the envelope needs Pricing sign-off).
 
-**Verdict:** ✅ MATCH — this is output from the run described above, and the navy-and-teal treatment matches the "Clinical Navy & White" option shown in image 2, which the caption states. Content is fictional demo-tenant data and the caption says so, so no real commercial terms are implied.
+**Verdict:** ✅ MATCH — this is output from the run described above, and the navy-and-teal treatment matches the "Clinical Navy & White" option shown in image 2, which the caption states. Content is fictional demo-tenant data and the caption says so, so no real commercial terms are implied
+**Annotated 15 September 2026 (house style, verified on the render):** Two callouts: "The palette it proposed earlier" on the teal column header, and "Specific, not filler" on the last bullet of the verify column. Both dots sit in the column's empty right margin, clear of the header pill and the bullet text.
+.
+
 
 ## §70 — Copilot can explain the slide you are looking at during PowerPoint Live *(image 1 of 3)*
-`86f3f7da9ba9617aaf6923bced5a53b6e893da21a4e94e34fc413249cf1a9526`
+`f8b238b5192d9ae8683eb92deec266f488b0f7907ccf816102a50e35909ccfd1`
 
 **Observed:** A dark teaching callout over a PowerPoint Live slide, headed "Get explanations from Copilot". Body text: "Not sure what something means, but don't want to interrupt the presentation? Select and drag over any part of a slide and Copilot will explain it in a private chat pane." A "Got it" button sits at the bottom right. A page indicator reading 1 of 7 is visible beneath the slide.
 
-**Verdict:** ✅ MATCH — the section claims an attendee can select part of a slide and ask Copilot to explain it without interrupting the presenter. This is Microsoft's own in-product description of that exact gesture, and it is the source of the "private chat pane" phrase quoted in the caption.
+**Verdict:** ✅ MATCH — the section claims an attendee can select part of a slide and ask Copilot to explain it without interrupting the presenter. This is Microsoft's own in-product description of that exact gesture, and it is the source of the "private chat pane" phrase quoted in the caption
+**Annotated 15 September 2026 (house style, verified on the render):** One callout, "The presenter never sees this", with the dot just past "private chat pane." — the phrase the section singles out. The leader runs through the dark card's empty right side.
+.
+
 
 ## §70 — Copilot can explain the slide you are looking at during PowerPoint Live *(image 2 of 3)*
-`7ed0670b361b9089921225227c79c7eb1024bb133cb76fb8b30cfc6a7298a5f0`
+`f8468243d307f19fa8eb40f6df80f05ded7a6c2a203eadfb0ba0b2bfe4bb81f6`
 
 **Observed:** A PowerPoint Live slide titled "Four SKUs confirmed for the Gulf range" with four bullets describing pack formats. A dark rounded floating button labelled "Explain selected text", with a sparkle icon, floats above the slide.
 
-**Verdict:** ✅ MATCH — shows the trigger control the prose describes appearing after a drag-selection. The button label is legible at the rendered size and the surrounding slide gives it context.
+**Verdict:** ✅ MATCH — shows the trigger control the prose describes appearing after a drag-selection. The button label is legible at the rendered size and the surrounding slide gives it context
+**Annotated 15 September 2026 (house style, verified on the render):** One callout, "It appears where you released", with the dot beside the floating Explain selected text button. It lands in the black area rather than on the button, where house red reads cleanly and nothing is covered.
+.
+
 
 ## §70 — Copilot can explain the slide you are looking at during PowerPoint Live *(image 3 of 3)*
 `1ac6f0565f838f4b7a6a03d5d139a5bccb86425750e7ee6e2bb983b46444c021`
