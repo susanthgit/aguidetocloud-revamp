@@ -276,6 +276,13 @@ clearly on the left. Alt text amended to "beside the dialog".
 
 **Verdict:** ✅ MATCH — supports the prose claim that this run asked about audience and depth rather than look and feel, and that each option carried a slide count. The option text is specific to Copilot Notebooks, which is the source material used in this test, supporting the claim that the questions are generated rather than fixed.
 
+## §10 — Presentations can be grounded in web sources *(image 3 of 3)*
+`369969dad5eb9abd562473fcfb28a474c16f68f9b65e4aeeccc6c9279e9a5684`
+
+**Observed:** A finished presentation slide on a white background. A large teal double quotation mark sits at top left. Below it, italic dark-navy serif text reads "Copilot Notebooks are AI-powered workspaces where you bring together your content and sources so Copilot can understand the full picture." Beneath the quote, in small grey bold capitals, is the attribution "— Microsoft Support". No other UI chrome is in frame — this is the rendered slide only.
+
+**Verdict:** ✅ MATCH — placed in §10 (web-grounded presentations) to evidence the claim that the generated deck credits its web source on the slide. The alt text and caption describe exactly these elements and claim nothing beyond them.
+
 ## §11 — Word can add hyperlinks for you
 `b3d65d6c012008d233d91cf6e454a083d15505c8e80f384cb0da48a0b512c4cd`
 
@@ -1401,6 +1408,20 @@ against their section bodies before placement.
 
 ---
 
+## §12 — Word reads the pictures in your reference documents *(image 2 of 3)*
+`da884ad7e945b7584f631a971a6ea13bfb20dce33f7173aa45125552299dd440`
+
+**Observed:** An embedded Excel worksheet object shown in edit mode: spreadsheet column letters A through L across the top, row numbers 1 to 21 down the left. Cell A1 contains a white-on-blue heading reading "Account Risk". Beneath it a small table with headers "Risk level" and "Accounts" lists Critical 1, Elevated 1, Moderate 2, Low 4. To the right, inside round selection handles, is a bar chart titled "Accounts by Risk Level" with a vertical axis labelled "Number of accounts" scaled 0 to 5, four blue columns labelled Critical, Elevated, Moderate and Low, and data labels 1, 1, 2 and 4 above them.
+
+**Verdict:** ✅ MATCH — placed in §12 as evidence that the chart's labels are fully legible to a human reader, which is exactly the point the surrounding prose makes. The alt text enumerates these elements and claims nothing more.
+
+## §12 — Word reads the pictures in your reference documents *(image 3 of 3)*
+`518ea16871dcaf238fffe1279ad8133d3556f40c1657f9d65576e8d17d71d0e1`
+
+**Observed:** The Copilot pane in Word. Copilot's reply states that the chart appears at the end of the document but that it can only see it as an embedded image without readable chart labels, legends, or data values "in the document view I received", and that it cannot reliably explain the chart's message without the visible axis titles, legend and data labels. It then offers to give a clear explanation if the chart is zoomed into, cropped, or its data pasted, followed by a two-column table previewing that explanation.
+
+**Verdict:** ✅ MATCH — placed in §12 directly beneath the chart it refers to. The phrase quoted in the body copy is transcribed from this image. Surrounding prose bounds the result to my tenant on 14 September 2026 and states plainly that this is not a clean test of the announced reference-document path.
+
 ## §13 — Word highlights the exact words Copilot changed
 `fda072935ae9c3a2b1eb70495adbf835e49d22d394da2c2bd702ef64abd0b2d4`
 
@@ -1438,6 +1459,20 @@ and would not need Undo.
 
 ---
 
+## §15 — Claude Sonnet 5 appears in Word's model menu *(image 1 of 1)*
+`8c35fe4af71f881780f787517cc3d46821ba9e75a1b1881a93d86ed4ce62de07`
+
+**Observed:** The Copilot pane in Word on the web with its overflow menu open. A section heading reads "Model". The first item is "Auto" with a tick to its left and a submenu arrow to its right; the second is "Claude" with a submenu arrow. An open flyout submenu lists exactly two entries: "Claude Opus 5" and "Claude Sonnet 5", the latter carrying a focus outline. Below the Model section the menu lists Recent pages, Scheduled prompts, Send feedback, Settings and Quick Help. Behind the menu the pane shows an "Allow editing" dropdown, a prompt box reading "Describe what you want", and three suggestion chips.
+
+**Verdict:** ✅ MATCH — placed in §15. The image confirms Claude Sonnet 5 is present and additionally shows Claude Opus 5, which is the specific point the body copy makes. Menu location, the ticked Auto default and the nested submenu are all visible as described.
+
+## §16 — Excel can use Python when editing with Copilot *(image 1 of 1)*
+`8c4d2b03337815c63ea9e9c19e21484ab0db17ce926a9ce1b91846a95c05fe1d`
+
+**Observed:** A fragment of a Copilot reply in Excel. A bold bullet reads "15:43 local time: Added the standard-deviation outlier audit in" followed by a highlighted range token "Risk Chart!A18:F23". Two sub-bullets read "Added mean, sample standard deviation, z-score, and ±3σ outlier formulas." and "Formatted the audit table; all four results are “No”." Below sits a bordered monospaced code block containing three Excel formulas: =COUNTIF('01-sales-accounts'!$E$2:$E$9,"*Risk:"&A4&"*"), =STDEV.S($B$4:$B$7), and =IF(ABS(E20)>3,"Yes","No"). No Python code and no Python label appears anywhere in frame.
+
+**Verdict:** ✅ MATCH — placed in §16 (Python in Excel edits) as evidence for the stated result: a statistical task answered in native Excel formulas rather than Python. The absence of Python in this frame is the finding; the prose bounds it to my tenant on 14 September 2026 and offers the likely benign explanation.
+
 ## §17 — Excel can explain what changed, and who changed it
 `e51d14c47506ef39ed79b0d6b2d3c74b8088f3e7f7199b065cc0c441cf2d4289`
 
@@ -1471,6 +1506,27 @@ exactly that claim. ⚠️ The section also says Copilot can distinguish **human
 **that is not visible in this frame**, so neither the alt text nor the caption asserts it.
 
 ---
+
+## §17 — Excel can explain what changed, and who changed it *(image 2 of 3)*
+`6a1c16ee7b06b23f298629f5370897f0d19a18251120fd611dc58413c5640e33`
+
+**Observed:** The Copilot pane in Excel. A user prompt chip reads "what changed in this workbook, and who changed it". Below, a collapsed status bar reads "Retrieving the audit trail". A reasoning card shows two steps: a ticked step headed "Auditing recent workbook activity" reading "I'm reviewing the recorded change history to identify the edits, authors, timestamps, and affected ranges."; and an in-progress step headed "Retrieving the audit trail" reading "I'm pulling the available recent history now, then I'll group it by author and sheet and note any changes the history cannot track." An Edit dropdown and a prompt box sit beneath.
+
+**Verdict:** ✅ MATCH — placed in §17. Both phrases quoted in the body copy — "the audit trail", and the note about changes the history cannot track — are transcribed directly from this image.
+
+## §17 — Excel can explain what changed, and who changed it *(image 3 of 3)*
+`048244d4189b3561d4a73b473205b0064ca87b02ed6d73cba935ca00a627eb23`
+
+**Observed:** A Copilot reply in Excel headed "Change summary — last 30 days". Opening line: "All recorded changes were made by Colin Ballinger with Copilot assistance on September 14, 2026. No recorded edits affected 01-sales-accounts." A tag reads "Risk Chart". Timeline entries: "15:32 local time: Created and formatted the Risk Chart sheet." with sub-bullets about a risk summary in Risk Chart!A1:B7 and live COUNTIF formulas calculating Critical 1, Elevated 1, Moderate 2 and Low 4; then "15:43 local time: Added the standard-deviation outlier audit in Risk Chart!A18:F23." with sub-bullets on mean, sample standard deviation, z-score and ±3σ formulas. A code block lists three formulas. Closing line: "The history does not track chart or conditional-formatting changes, so those cannot be attributed separately."
+
+**Verdict:** ✅ MATCH — placed in §17. Evidences both claims made in the prose: the combined human-plus-AI attribution phrase, and the self-declared coverage gap. Colin Ballinger is a fictional demo persona in a lab tenant, not a real colleague.
+
+## §18 — Excel keeps your Copilot chat history *(image 1 of 1)*
+`027866dd5007b10e154d0d892a5e6a19c2839f189a7dc80ce33ba2d792c57cc8`
+
+**Observed:** Excel on the web with the Copilot chat history panel open. The panel shows a list icon, then "New Chat" beside the Copilot icon, then a heading "Chats in Excel". Two saved conversations are listed: "create a chat of this sheet" timestamped "3:32 PM", and beneath it "Calculate the weighted total for each partner usin" dated "9/7". The Excel command bar above shows Comments, Catch up, Editing and Share.
+
+**Verdict:** ✅ MATCH — placed in §18. Confirms the menu location, the panel heading, recency ordering, and the specific point made in the prose that a week-old conversation was still present.
 
 ## §42 — The rename, the new address, and the October deadline
 `73c157e217c4d445145dea71acfb3aa0dfa0d39c7f6f2c9bdf99dacac588dd0c`
@@ -1616,5 +1672,124 @@ Nothing clipped; the widest panel wraps cleanly across six lines.
 quotes Microsoft’s own documentation. The section’s argument is that the contractual position matters
 more than the model, and that position is text rather than interface — there is no screen that
 states it.
+
+---
+
+## §20 — Copilot can tidy your mailbox from a sentence *(image 1 of 2)*
+
+**File:** `lab-s20-confirm-list.webp` (553×760, 84.0 KB)
+**SHA256:** `d7d2b3a39db5809f20e1677bc84e2d4cfe94e96f1b282909b16bc5ed6d22f917`
+**Source:** My own Caldova tenant, 14 September 2026. Outlook web, Copilot pane.
+
+**Observed while viewing:** The Copilot side pane in Outlook. Most of the pane is a bordered list of
+individual email messages, each row carrying a small envelope icon and a subject line that begins
+**"Your scheduled prompt is complete"** followed by a different topic on each row. Roughly twenty rows
+are visible. Beneath the list sit two buttons, **Confirm** and **Cancel**. Nothing has been moved at
+this point — this is a proposal awaiting approval.
+
+**Verdict:** ✅ MATCH — the section's claim is that Copilot enumerated every affected message and waited
+for confirmation rather than acting immediately. The list and the Confirm/Cancel pair are exactly that,
+and the absence of any "done" wording confirms nothing had yet been moved.
+
+---
+
+## §20 — Copilot can tidy your mailbox from a sentence *(image 2 of 2)*
+
+**File:** `lab-s20-done-result.webp` (547×274, 23.0 KB) — cropped from a 1887×726 capture to the pane only
+**SHA256:** `d963af89a2ff71fd92cf75fb9e899ec20da4c3bdea03c5199bae2b180d4a9e46`
+**Source:** My own Caldova tenant, 14 September 2026. Outlook web, Copilot pane.
+
+**Observed while viewing:** The prompt bubble at the top reads *"move everything from Microsoft Copilot
+Your scheduled prompt is complete into a folder called Scheduled"*. Below it the Copilot header, then
+the reply, which opens with **"Done."** and three bullets:
+• *Created Outlook folder "Scheduled".*
+• *Moved the scheduled prompt completion emails from **Microsoft Copilot** that were found in your inbox
+into that folder* — with a small grey message chip reading "Your scheduled pr… +1" beside it.
+• *25 matching emails were successfully moved.*
+A closing line reads *"The **Scheduled** folder now contains those Copilot-generated notifications."*
+All text is fully legible at 1.32× display scale.
+
+**Verdict:** ✅ MATCH — supports all three claims made in the section: the folder was created rather than
+required to exist, the action was scoped to the inbox in Copilot's own wording, and the count was
+reported back. The wider original capture also showed a **Scheduled** folder present in the left
+navigation, which is consistent with the reply but is outside this crop; the section rests only on the
+reply text, which is inside it. Note that nothing in the reply mentions a standing rule, which is why
+the section records that question as unresolved rather than answering it.
+
+---
+
+## §19 — Custom engine agents work directly in Outlook *(image 1 of 1)*
+
+**File:** `lab-s19-agent-picker.webp` (555×623, 20.6 KB) — cropped from a 604×807 capture
+**SHA256:** `b979f606bbd62f667009a4b7e77858f3f8c885c8f4bdf3b7ae01804ad502e61f`
+**Source:** My own Caldova tenant, 14 September 2026. Outlook on the web, Copilot pane.
+
+**Observed while viewing:** The Copilot side pane, headed **Copilot** with expand and close buttons. Below
+that a **Work / Web** toggle with **Work** selected, a chat-history icon and a shield icon on the left, and
+a blue new-chat button plus an overflow menu on the right. The centre of the pane shows the empty-state
+heading **"Get a quick summary"**. In the composer a single **@** has been typed, and a picker has opened
+directly beneath it listing custom agents, each as a coloured icon, a bold name and a truncated one-line
+description:
+• **Retail Supplier Signal Tracker** — *"Reads my supplier and partner correspondence across email and Teams,
+and tells me what I hav…"*
+• **Retail Partner Terms Screener** — *"Screens any retail partner or supplier proposal against Caldova's trade
+terms envelope, flags ev…"*
+• **Gulf Retail Market Watch** — *"Checks our Gulf retail launch plan against what is actually happening in the
+UAE and Saudi phar…"*
+A scrollbar and small chevrons on the right edge show the list continues above and below the three visible
+rows. A partial row is clipped at the very top of the picker.
+
+**Verdict:** ✅ MATCH — supports the section's three claims: the agents appear inside Outlook rather than only
+in Copilot Chat, **@** is the invocation, and each entry carries a description used to tell them apart. The
+scroll affordance supports "not capped at a handful". The section is explicit that no agent was actually
+run, and this image correctly shows only the picker, never a result. Agent names and descriptions are
+fictional demo-lab content (Caldova), not real customer data.
+
+---
+
+## §21 — Scheduling with Copilot chat reached classic Outlook *(image 1 of 2)*
+
+**File:** `lab-s21-classic-prompt.webp` (445×454, 10.5 KB)
+**SHA256:** `e28feaa16ac79bedda55ebb21e82dab5d799f82d76dfc8576af5165b38cd5d88`
+**Source:** My own Caldova tenant, 14 September 2026. Classic Outlook for Windows.
+
+**Observed while viewing:** Top right of the classic Outlook window shows a labelled toggle reading **"Try
+the new Outlook"** switched to **Off**, with a **Copilot** button beside it. A strip of the classic ribbon is
+visible underneath carrying **Viva Insights** and **Report Message**. The Copilot pane occupies the right of
+the frame, with an **Auto** model selector, a shield icon, a plus button and an overflow menu across its
+toolbar. The sent prompt reads *"Schedule a catch-up with @Nic Bishop before Friday"*, and beneath it Copilot
+displays a working status line, **"Queuing things up…"**.
+
+**Verdict:** ✅ MATCH — this is the image the section rests its central claim on. The *"Try the new Outlook —
+Off"* toggle exists only in the classic client, so it establishes the client identity more decisively than the
+ribbon does. It also captures the exact prompt quoted in the body, confirming that no duration was specified
+— which is what makes the later 30-versus-25-minute observation meaningful.
+
+---
+
+## §21 — Scheduling with Copilot chat reached classic Outlook *(image 2 of 2)*
+
+**File:** `lab-s21-invite-proposed.webp` (411×784, 34.7 KB) — cropped from a 411×958 capture
+**SHA256:** `9896b20dcfd738944e70b4e9f8a6ada2e4712a5cde6fc1053ca000aab100c927`
+**Source:** My own Caldova tenant, 14 September 2026. Classic Outlook for Windows.
+
+**Observed while viewing:** The **"Try the new Outlook — Off"** toggle remains visible at the top, so client
+identity is preserved in this frame too, along with the **Auto** model selector. Copilot's reply opens
+*"For a 30-minute catch-up with Nic Bishop before Friday, I found these available morning options:"* — the
+top edge of this first line is slightly clipped **in the original capture**, where the pane had scrolled under
+the sticky toolbar; it remains legible and was not clipped by the crop. Three bullets follow for **Tue**,
+**Wed** and **Thu at 8:00 AM**, each reading *"both you and Nic are marked as available (working elsewhere),
+and the slot is open."* A closing line offers to send the invite with a title and agenda. Below sits a card
+labelled **Event** titled **"Catch-up with Nic Bishop"**, with two attendee avatars each carrying a green tick
+and three selectable rows: **9/15 Tuesday 8:00 AM – 8:25 AM** highlighted as selected, then 9/16 Wednesday and
+9/17 Thursday at the same times, each with an information icon. Two buttons close the card: **Send** and
+**Open in Outlook**.
+
+**Verdict:** ✅ MATCH — supports every claim in the section. The **Send** button (not a confirmation of a sent
+meeting) evidences "it drafted rather than created"; the repeated *"both you and Nic"* wording evidences that
+two calendars and two working locations were checked; the auto-written title evidences that Copilot supplied
+it. The **8:00 – 8:25** row is the source of the 25-minute observation, and the section is careful to label the
+"shorten meetings" explanation as the author's inference rather than something Copilot stated — which this
+image supports, since no explanation appears anywhere in the pane.
 
 ---

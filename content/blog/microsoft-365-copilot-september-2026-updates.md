@@ -396,8 +396,14 @@ Then it interviewed me again — but about something different this time. In sec
 
 Two different runs, two different questions, both generated from the source material. Copilot is not filling in a form any more — it is asking the questions a colleague would ask before starting.
 
+And the finished deck answered the provenance question on its own. Where it lifted a line straight from the page, it put the attribution underneath — **"— Microsoft Support"** — so a reader can see where the sentence came from without being told.
+
+<img src="/images/blog/copilot-september-2026/lab-s10-deck-quote-attributed.webp" alt="A finished slide from the deck Copilot generated in my own tenant. A large teal quotation mark sits top left. The quote, set in italic serif type, reads: Copilot Notebooks are AI-powered workspaces where you bring together your content and sources so Copilot can understand the full picture. Underneath, in small grey capitals, is the attribution: em dash Microsoft Support." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. The quote is credited on the slide itself.</em></p>
+
 <blockquote class="callout callout-tip">
-<p><strong>Why this matters:</strong> Useful, and worth a moment's thought. A deck grounded in the open web inherits whatever that page says, so this is a feature to pair with the domain exclusion control in [section 90](#90-domain-exclusion-is-back) rather than to enable and forget.</p>
+<p><strong>Why this matters:</strong> Useful, and worth a moment's thought. A deck grounded in the open web inherits whatever that page says, so this is a feature to pair with the domain exclusion control in [section 90](#90-domain-exclusion-is-back) rather than to enable and forget. My one deck did credit its source on the slide, which helps — but that is a single run, not a promise.</p>
 </blockquote>
 
 📖 [AI at Work Roadmap 555898](https://www.microsoft.com/en-us/microsoft-365/roadmap?filters=&searchterms=555898) · [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
@@ -419,9 +425,27 @@ You can ask Copilot to **add a hyperlink**, and it inserts the link and formats 
 
 ### 12. Word reads the pictures in your reference documents
 
-*For: Copilot in Word · Rolled out August 2026*
+*For: Copilot in Word · Rolled out August 2026 · Tested in my tenant 14 September 2026*
 
 When you point Copilot in Word at a reference document, it now uses **both the text and the visuals** in that file — charts, diagrams and images, not just the words around them.
+
+**What I found on 14 September 2026.** I tried this the obvious way and got a more interesting answer than I was expecting.
+
+I put a chart in a document — an embedded Excel object with a title, an axis label, named categories and a data label sitting on every bar — and asked Copilot to explain it.
+
+<img src="/images/blog/copilot-september-2026/lab-s12-embedded-chart.webp" alt="An embedded Excel worksheet object inside a Word document in my own tenant, opened in edit mode so the spreadsheet column letters A to L and row numbers are visible. Cell A1 holds a heading reading Account Risk. A small table below lists Risk level against Accounts: Critical 1, Elevated 1, Moderate 2, Low 4. To the right sits a bar chart titled Accounts by Risk Level, with a vertical axis labelled Number of accounts running from 0 to 5, four blue columns labelled Critical, Elevated, Moderate and Low along the bottom, and a data label above each column reading 1, 1, 2 and 4. Round selection handles surround the chart." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. Every label a reader needs is right there.</em></p>
+
+It declined. The reply said it could see the chart <em>"only as an embedded image without readable chart labels, legends, or data values in the document view I received"</em>, and that it could not reliably explain the chart without them. Then it offered a way round: zoom in, crop the chart, or paste the underlying data.
+
+<img src="/images/blog/copilot-september-2026/lab-s12-chart-not-readable.webp" alt="The Copilot pane in Word in my own tenant. Copilot's reply says the chart appears at the end of the document but that it can only see it as an embedded image without readable chart labels, legends or data values in the document view it received, and that it cannot reliably explain the chart's message without the visible axis titles, legend and data labels. Below, it offers to give a clear explanation if the chart is zoomed into, cropped, or its data pasted, followed by a two-column table previewing the explanation it would give." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>Copilot saying, in its own words, what it could and could not see.</em></p>
+
+Two things are worth saying plainly. First, this is **not a clean test of the feature as announced** — the release note describes reference documents you point Copilot at, and my chart was sitting in the document I already had open, as an embedded Excel object rather than a picture. Second, that phrase — <em>"the document view I received"</em> — is a rare glimpse of the plumbing. Whatever reached the model did not carry the chart's internals, even though every label is perfectly readable to a human eye in the screenshot above.
+
+So I am recording this as a question rather than a verdict, and I will test the reference-document path properly for the next issue.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> In a lot of documents the chart <em>is</em> the argument and the text is the caption. A model that only read the words was reading the less important half.</p>
@@ -447,9 +471,11 @@ Edit highlighting got **more granular**. Instead of marking a whole paragraph as
 
 ### 14. You can talk to Word during Read Aloud
 
-*For: Copilot in Word · Generally available 25 August 2026*
+*For: Copilot in Word · Generally available 25 August 2026 · Looked for it in my tenant 14 September 2026*
 
 Read Aloud gained **voice questions and answers**. You can interrupt the reading to ask about what you just heard, by voice, and carry on.
+
+**What I found on 14 September 2026.** I went looking for this in my own tenant and could not find it. Microsoft lists it as generally available from 25 August 2026, so the likeliest explanation is the ordinary one — a staged rollout that has not reached my tenant yet, or has reached only some users inside it. I am recording that rather than guessing, and I will look again for the next issue.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Read Aloud is an accessibility feature that a lot of people use simply because they are walking, driving or tired. Being able to ask a question without stopping to type keeps the document usable in those moments.</p>
@@ -459,11 +485,19 @@ Read Aloud gained **voice questions and answers**. You can interrupt the reading
 
 ### 15. Claude Sonnet 5 appears in Word's model menu
 
-*For: Copilot in Word (Web) · Generally available 25 August 2026*
+*For: Copilot in Word (Web) · Generally available 25 August 2026 · Tested in my tenant 14 September 2026*
 
 Word's model menu on the web can be set to **Claude Sonnet 5**. The August issue covered Anthropic model choice arriving in Word in general terms; this is the specific model showing up in the list.
 
 Anthropic models need admin-enabled Anthropic access, so the menu only offers what your tenant allows.
+
+**What I found on 14 September 2026.** The picker is not on the toolbar. It lives in the **... menu at the top of the Copilot pane**, under a heading reading *Model*. **Auto** is the default and was the ticked option in my tenant, and the Anthropic models sit behind a **Claude** submenu rather than in one flat list.
+
+There were also two of them, not one. Alongside Claude Sonnet 5 my tenant offered **Claude Opus 5** — a model the release note for this change does not name. Worth opening your own menu rather than assuming it matches the announcement.
+
+<img src="/images/blog/copilot-september-2026/lab-s15-model-menu-claude.webp" alt="The Copilot pane in Word on the web in my own tenant with its overflow menu open. Under a heading reading Model, the first entry is Auto with a tick beside it, and below it an entry reading Claude with a submenu arrow. The open submenu lists two models: Claude Opus 5 and Claude Sonnet 5. Further down the main menu are Recent pages, Scheduled prompts, Send feedback, Settings and Quick Help. Behind the menu the Copilot pane shows an Allow editing dropdown, a prompt box reading Describe what you want, and suggestion chips." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. Two Claude models, nested under a submenu, with Auto still the default.</em></p>
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Model choice inside the app is becoming normal rather than notable. The thing worth tracking is not which model was added, but that the list changes often enough that a written standard about "which model we use" goes stale fast.</p>
@@ -473,9 +507,21 @@ Anthropic models need admin-enabled Anthropic access, so the menu only offers wh
 
 ### 16. Excel can use Python when editing with Copilot
 
-*For: Copilot in Excel · Generally available 25 August 2026*
+*For: Copilot in Excel · Generally available 25 August 2026 · Tested in my tenant 14 September 2026*
 
 Copilot in Excel can **use Python** as part of an edit, rather than being limited to formulas and built-in functions.
+
+**What I found on 14 September 2026.** I went looking for Python and could not make it appear.
+
+The test was deliberately chosen to be the kind of thing formulas struggle with: find the outliers in a column using standard deviation. Copilot did the work — mean, sample standard deviation, z-scores, a ±3σ test — but it did all of it in **native Excel formulas**. No Python, no code block, no Python label anywhere in the reply. Other prompts did not surface it either.
+
+<img src="/images/blog/copilot-september-2026/lab-s16-formulas-not-python.webp" alt="Part of a Copilot reply in Excel in my own tenant. A bullet reads: 15:43 local time, Added the standard-deviation outlier audit in Risk Chart exclamation A18 colon F23. Sub-bullets read: Added mean, sample standard deviation, z-score, and plus or minus 3 sigma outlier formulas; and Formatted the audit table, all four results are No. Below sits a monospaced code block containing three Excel formulas: a COUNTIF against the sales accounts sheet, STDEV.S over B4 to B7, and IF ABS of E20 greater than 3 returning Yes or No." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. A textbook Python job, answered entirely in formulas.</em></p>
+
+I would not call that a failure, and it is worth saying why. Standard deviation is something Excel does perfectly well on its own, and `STDEV.S` is a faster, cheaper and more auditable answer than a script that does the same thing. Copilot reaching for formulas when formulas are enough is arguably the right call rather than a missing feature. Where Python earns its place is the work formulas genuinely cannot reach — and I did not get far enough to find that edge.
+
+So: announced as available from 25 August, but not something I could trigger on demand in my tenant on 14 September. I will push on harder problems for the next issue.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> This is the quiet ceiling-raiser. Formula-only analysis hits a wall on anything statistical; Python does not. It also means the person asking the question no longer needs to know Python to get a Python answer.</p>
@@ -485,11 +531,29 @@ Copilot in Excel can **use Python** as part of an edit, rather than being limite
 
 ### 17. Excel can explain what changed, and who changed it
 
-*For: Copilot in Excel · Rolled out August 2026*
+*For: Copilot in Excel · Rolled out August 2026 · Tested in my tenant 14 September 2026*
 
 A **change history skill** lets Copilot summarise what changed in a workbook, identify who edited what, and distinguish edits made by a person from edits made by AI.
 
 That last distinction is new, and it is the one that will matter in a year.
+
+**What I found on 14 September 2026.** This one delivered, and then some.
+
+I asked it plainly: *what changed in this workbook, and who changed it.* Before answering, Copilot narrated what it was about to do — and reached for the phrase itself. It calls this **the audit trail**.
+
+<img src="/images/blog/copilot-september-2026/lab-s17-audit-trail-reasoning.webp" alt="The Copilot pane in Excel in my own tenant. The user prompt above reads: what changed in this workbook, and who changed it. Copilot's reasoning card shows two steps. The first, ticked, is headed Auditing recent workbook activity and reads: I'm reviewing the recorded change history to identify the edits, authors, timestamps, and affected ranges. The second, still running, is headed Retrieving the audit trail and reads: I'm pulling the available recent history now, then I'll group it by author and sheet and note any changes the history cannot track." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>Copilot describing the job before doing it — including that it will flag what the history cannot see.</em></p>
+
+The answer came back as a dated change summary scoped to the last 30 days, with times to the minute, the exact ranges touched, and the formulas that had been added.
+
+<img src="/images/blog/copilot-september-2026/lab-s17-change-summary.webp" alt="A Copilot reply in Excel in my own tenant headed Change summary, last 30 days. It states that all recorded changes were made by Colin Ballinger with Copilot assistance on September 14 2026, and that no recorded edits affected the sales accounts sheet. A timeline follows: at 15:32 local time, created and formatted the Risk Chart sheet, added the risk summary and live COUNTIF formulas calculating Critical 1, Elevated 1, Moderate 2 and Low 4 accounts; at 15:43 local time, added a standard-deviation outlier audit with mean, sample standard deviation, z-score and plus or minus 3 sigma formulas. A code block shows the three formulas. A closing line reads that the history does not track chart or conditional-formatting changes, so those cannot be attributed separately." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. Times, ranges, formulas — and an honest note about what is missing.</em></p>
+
+Two details stand out. The attribution reads **"made by Colin Ballinger with Copilot assistance"** — one phrase carrying both the person and the AI, which is exactly the distinction this feature promises. And at the end, unprompted, it names its own blind spot: *"The history does not track chart or conditional-formatting changes, so those cannot be attributed separately."*
+
+The second is the more valuable of the two. A log that tells you what it cannot see is a log you can actually lean on.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Shared workbooks accumulate changes that nobody can explain by Friday. Being able to ask "what happened to this sheet" — and get an answer that separates human edits from AI edits — is the beginning of an audit trail for AI-assisted work.</p>
@@ -502,9 +566,17 @@ That last distinction is new, and it is the one that will matter in a year.
 
 ### 18. Excel keeps your Copilot chat history
 
-*For: Copilot in Excel · Rolled out August 2026*
+*For: Copilot in Excel · Rolled out August 2026 · Tested in my tenant 14 September 2026*
 
 Past Copilot conversations are **preserved in Excel**, reachable from a menu icon in the upper left and sorted by recency.
+
+**What I found on 14 September 2026.** It is exactly where the release note says. A list icon at the top of the Copilot pane opens a panel headed **Chats in Excel**, with **New Chat** sitting above the list.
+
+The part worth knowing is that the history is not just this session. My list still held a conversation from the previous week, sitting underneath one from a few minutes earlier.
+
+<img src="/images/blog/copilot-september-2026/lab-s18-chat-history.webp" alt="The Copilot chat history panel open in Excel on the web in my own tenant. A New Chat entry sits at the top with the Copilot icon beside it. Below, a heading reads Chats in Excel, followed by two saved conversations: one titled create a chat of this sheet timestamped 3:32 PM, and below it one beginning Calculate the weighted total for each partner, dated 9 slash 7. The Excel toolbar with Comments, Catch up, Editing and Share buttons is visible above the panel." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. A week-old conversation still sitting in the list.</em></p>
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Word got this in August, Excel gets it now. Losing the conversation meant losing the reasoning behind a change, which made people redo work they had already done once.</p>
@@ -514,9 +586,28 @@ Past Copilot conversations are **preserved in Excel**, reachable from a menu ico
 
 ### 19. Custom engine agents work directly in Outlook
 
-*For: Copilot in Outlook · Rolled out August 2026*
+*For: Copilot in Outlook · Rolled out August 2026 · Tested in my tenant 14 September 2026*
 
 **Custom engine agents** — the ones your organisation builds — are available directly in Outlook, rather than only in Copilot Chat.
+
+**What I found on 14 September 2026.** The mechanic turns out to be a single character. Type **@** into the
+Copilot composer in Outlook and the agents your organisation has built appear right there in the pane.
+
+<img src="/images/blog/copilot-september-2026/lab-s19-agent-picker.webp" alt="The Copilot pane in Outlook on the web in my own tenant. A Work and Web toggle sits at the top with Work selected, alongside a shield icon, a chat history icon and a new chat button. The centre reads Get a quick summary. In the composer below, a single at sign has been typed, and a picker has opened underneath listing three custom agents, each with a coloured icon, a name and a one-line description: Retail Supplier Signal Tracker, which reads supplier and partner correspondence across email and Teams; Retail Partner Terms Screener, which screens retail partner or supplier proposals against Caldova's trade terms envelope; and Gulf Retail Market Watch, which checks the Gulf retail launch plan against what is happening in the UAE and Saudi Arabia. A scrollbar on the right shows the list continues above and below." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. One character, and the organisation's agents are in the inbox.</em></p>
+
+Each one carries its description underneath, which matters more than it sounds. Once you have half a dozen
+agents with similar-sounding names, that one-line summary is how you pick the right one without leaving
+your mail. The list scrolls too, so it is not capped at a handful.
+
+Worth noticing across two of these tests: **@** is quietly becoming the single gesture for *bring something
+into this conversation*. Here it pulls in an agent. Two sections further on, in a different Outlook client,
+the same character pulled in a colleague.
+
+What I have not tested is the part that actually counts — whether calling one of these from the inbox gives
+you the same answer it would give in Copilot Chat. The picker appearing is the plumbing, not the payoff.
+I will push on the result for the next issue.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> An agent that lives somewhere other than where the work happens gets used twice and forgotten. Email is where a lot of people spend their day, so putting the agent in the inbox is the difference between built and used.</p>
@@ -526,9 +617,27 @@ Past Copilot conversations are **preserved in Excel**, reachable from a menu ico
 
 ### 20. Outlook takes plain-English instructions for mail and calendar
 
-*For: Copilot in Outlook · Rolled out August 2026*
+*For: Copilot in Outlook · Rolled out August 2026 · Tested in my tenant 14 September 2026*
 
 Copilot can **organise messages, apply categories and manage calendar entries** from a plain-language instruction, instead of you clicking through the rules interface.
+
+**What I found on 14 September 2026.** I gave it a deliberately compound instruction — move everything from a particular sender into a folder called *Scheduled* — where the folder did not exist yet.
+
+What happened next is the part worth knowing. It did not act. It listed **every single message** it proposed to move, and put **Confirm** and **Cancel** underneath.
+
+<img src="/images/blog/copilot-september-2026/lab-s20-confirm-list.webp" alt="The Copilot pane in Outlook in my own tenant, showing a confirmation step. A bordered list fills most of the pane, each row carrying an envelope icon and a subject line beginning Your scheduled prompt is complete, followed by a different topic on each row. Confirm and Cancel buttons sit below the list." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. Every affected message named, before anything moved.</em></p>
+
+Only once I confirmed did it run — and it did two jobs from the one sentence.
+
+<img src="/images/blog/copilot-september-2026/lab-s20-done-result.webp" alt="The Copilot pane in Outlook in my own tenant. The prompt above reads: move everything from Microsoft Copilot Your scheduled prompt is complete into a folder called Scheduled. Copilot's reply begins Done, followed by three bullets: Created Outlook folder Scheduled; Moved the scheduled prompt completion emails from Microsoft Copilot that were found in your inbox into that folder, with a small message chip beside it; and 25 matching emails were successfully moved. A closing line reads: The Scheduled folder now contains those Copilot-generated notifications." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>One sentence, two jobs: the folder created, then filled.</em></p>
+
+Three things stand out. It **created a folder that did not exist** rather than asking me to make one first. It **scoped itself** — *"that were found in your inbox"* — and left the other folders alone. And it **reported the count**, twenty-five, instead of saying it was done and leaving me to go and check.
+
+One thing this run did not settle: whether the instruction left a **standing rule** behind, or was a one-off tidy-up. The reply describes a completed action and says nothing about a rule, and the release note's framing — an alternative to the rules interface — can be read either way. Outlook's own rules list would answer it, and that is on my list for the next issue.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> Outlook rules are powerful, and in my experience they are one of the most under-used things in the product, because the interface asks you to think like a database. Describing what you want in a sentence is a much lower bar.</p>
@@ -538,9 +647,39 @@ Copilot can **organise messages, apply categories and manage calendar entries** 
 
 ### 21. Scheduling with Copilot chat reached classic Outlook for Windows
 
-*For: Copilot in classic Outlook for Windows · Generally available 25 August 2026*
+*For: Copilot in classic Outlook for Windows · Generally available 25 August 2026 · Tested in my tenant 14 September 2026*
 
 Scheduling through Copilot chat is available in **classic Outlook for Windows**, not only the new client.
+
+**What I found on 14 September 2026.** I opened classic Outlook — the *Try the new Outlook* toggle sitting at
+**Off** in the corner is the giveaway — and typed one sentence into Copilot chat: *"Schedule a catch-up with
+@Nic Bishop before Friday."* No duration, no times, no agenda.
+
+<img src="/images/blog/copilot-september-2026/lab-s21-classic-prompt.webp" alt="Classic Outlook for Windows in my own tenant. A toggle in the top right reads Try the new Outlook, set to Off, with a Copilot button beside it. Part of the classic ribbon is visible below, showing Viva Insights and Report Message. The Copilot pane is open on the right with an Auto model selector, a shield icon, a plus button and an overflow menu. The sent prompt reads: Schedule a catch-up with at-mention Nic Bishop before Friday. Underneath, Copilot shows a status line reading Queuing things up." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>My own tenant, 14 September 2026. The "Try the new Outlook — Off" toggle is the proof this is the classic client.</em></p>
+
+It came back with three morning options, and the wording is worth reading closely: *"both you and Nic are
+marked as available (working elsewhere), and the slot is open."* It had checked two calendars **and** two
+working locations, not just the gaps in mine.
+
+<img src="/images/blog/copilot-september-2026/lab-s21-invite-proposed.webp" alt="The Copilot pane in classic Outlook in my own tenant, with the Try the new Outlook Off toggle still visible at the top. Copilot's reply offers three options, each reading that both you and Nic are marked as available, working elsewhere, and the slot is open, for Tuesday, Wednesday and Thursday at 8:00 AM. Below it a card headed Event carries the title Catch-up with Nic Bishop, two attendee avatars each with a green tick, and three selectable times: 9/15 Tuesday 8:00 AM to 8:25 AM, highlighted as selected, 9/16 Wednesday and 9/17 Thursday at the same times. A Send button and an Open in Outlook button sit at the bottom." loading="lazy" decoding="async" />
+
+<p class="img-caption"><em>A complete invite, drafted and waiting — with a Send button rather than a sent meeting.</em></p>
+
+Then it did the thing I have come to expect from Outlook this month. **It did not create the meeting.** It
+drafted one — title written for me, both attendees ticked green, three dates to pick from with Tuesday
+already selected — and put a **Send** button in front of it, with **Open in Outlook** beside it if I wanted
+to change something first.
+
+That is the same shape as the mailbox tidy-up in the section above: do the work, then stop and ask. Two
+different features, the same manners.
+
+One detail I cannot fully explain. I never said how long the meeting should be. Copilot settled on thirty
+minutes on its own — its summary line says *"a 30-minute catch-up"* — and then offered **8:00 to 8:25**,
+which is twenty-five. My guess is the tenant's "shorten meetings" setting quietly taking five minutes off
+the end, which is exactly what you would want it to do. But that is me inferring from a single run, not
+something Copilot said out loud.
 
 <blockquote class="callout callout-tip">
 <p><strong>Why this matters:</strong> A lot of large organisations are still on classic Outlook and will be for a while. Every feature that crosses over is one fewer reason for those users to feel like they are on the wrong side of a migration.</p>
