@@ -44,8 +44,13 @@ import sys
 
 from PIL import Image, ImageDraw, ImageFont
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from house_style import HOUSE_RED  # noqa: E402  (after the path insert above)
+
 # ---------------------------------------------------------------- palette ---
-RED = (207, 38, 38)
+# The red is imported, never re-declared here: a second copy of this constant
+# is how annotate_lib.py came to draw #CE2626 while this file drew #CF2626.
+RED = HOUSE_RED
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 INK_NAVY = (24, 36, 57)

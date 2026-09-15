@@ -85,3 +85,18 @@ jobs:
       # live. The pre-push hook is the gate. This catches what bypassed it.
       - name: Verify QA receipts for every published issue
         run: python scripts/monthly-blog-qa.py verify-receipt --all
+
+      # Every image in an issue is classified, and every 'annotated' record
+      # still hashes to the file actually on disk. Separate from the receipt on
+      # purpose: a receipt is written once and hashed, so a PASS recorded before
+      # this gate existed would satisfy it forever. This re-derives the answer.
+      #
+      # Deterministic only - set membership, hashes and alt text. It does NOT
+      # look at pixels. Proving "is it annotated?" by counting red pixels was
+      # built and rejected: on a correctly annotated 337x301 image the rule
+      # found 93 red pixels whose largest component was 40 and FAILED it, while
+      # a nine-unit tolerance change swung the count to 171 and passed it. A
+      # gate that blocks correct work teaches --no-verify, and that one switch
+      # disables every other check in the pre-push hook too.
+      - name: Verify every image is classified and still matches its record
+        run: python scripts/monthly-blog-qa.py annotations --all

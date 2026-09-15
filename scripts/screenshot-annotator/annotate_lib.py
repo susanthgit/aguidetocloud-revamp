@@ -5,10 +5,19 @@ border and big red handwriting (Inkfree). A thin red leader line + dot connects
 the box to the exact target pixel. Never paint raw text onto the screenshot.
 """
 import math
+import os
+import sys
+
 from PIL import Image, ImageDraw, ImageFont
 
-RED  = (206, 38, 38)
-INK  = (23, 37, 60)
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from house_style import HOUSE_RED, HOUSE_INK  # noqa: E402
+
+# Imported, never re-declared. This file used to hold its own (206, 38, 38),
+# one unit off the #CF2626 that annotate_screenshot.py draws - invisible to a
+# person, permanent in the file, and reported by nothing.
+RED  = HOUSE_RED
+INK  = HOUSE_INK
 FONT = r"C:\Windows\Fonts\seguisb.ttf"        # Segoe UI Semibold — crisp & readable
 
 def font(sz): return ImageFont.truetype(FONT, sz)

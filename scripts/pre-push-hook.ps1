@@ -240,6 +240,29 @@ if ($monthlyChanged -and $py) {
         Write-Host "    python scripts/monthly-blog-qa.py audit --post <file> --write-receipt" -ForegroundColor Yellow
         exit 1
     }
+
+    # Annotation sidecar gate (~0.2s). Deliberately run here rather than folded
+    # into the receipt: a receipt is a hashed artefact recorded at audit time,
+    # so a PASS written before this gate existed would otherwise satisfy it
+    # forever. Running it fresh on every push means there is no stale evidence
+    # to trust.
+    #
+    # It is entirely deterministic - set membership, hashes and alt text. It
+    # does NOT look at pixels. The first design proved a red annotation by
+    # counting red pixels and was rejected by two independent reviewers, then
+    # by measurement: on the real lab-s12 image that rule rejected a correctly
+    # annotated screenshot. A gate that fails on correct work teaches people
+    # --no-verify, and that switch disables every check in this file at once.
+    & python $qa annotations --all
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host ""
+        Write-Host "  PUSH BLOCKED - an image is unclassified, or its alt text contradicts its annotation." -ForegroundColor Red
+        Write-Host "  Every image in an issue must be classified, and a recoloured or swapped" -ForegroundColor Yellow
+        Write-Host "  image stops matching the record that describes it until it is re-recorded." -ForegroundColor Yellow
+        Write-Host "  Inspect with:" -ForegroundColor Yellow
+        Write-Host "    python scripts/monthly-blog-qa.py annotations --post <file> --pixels" -ForegroundColor Yellow
+        exit 1
+    }
 }
 
 $blogChanged = $changed | Where-Object { $_ -match '^content/blog/.*\.md$' -or $_ -match '^static/images/og/blog/' }

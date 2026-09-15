@@ -16,6 +16,7 @@ import importlib.util
 import contextlib
 import io
 import json
+import re
 import sys
 import tempfile
 import types
@@ -1209,7 +1210,290 @@ check("the receipt is round-trippable json with no machine paths",
       _r["receipt"][:400])
 
 
-# ------------------------------------------------------------------- report
+# ---------------------------------------- round 6: the annotation sidecar gate
+#
+# This gate exists because on 15 September 2026 two images were recoloured from
+# black to the house red and their alt text still said "circled in black" until
+# a human happened to read it. Nothing mechanical noticed.
+#
+# Its FIRST design tried to prove the red by counting red pixels, and two
+# independent Gate A reviewers rejected it. The measurement settled the
+# argument: on the real lab-s12-search-in-rail-annotated.webp (337x301), the
+# proposed rule - within 46 of the house red per channel, largest connected
+# component >= 60 - finds 93 matching pixels in a largest component of 40, so
+# it REJECTS a correctly annotated image, and widening the tolerance to 55
+# returns 171. A gate that fails on correct work teaches --no-verify, which
+# disables every other check in the hook too. Pixels also cannot answer the
+# question: 21 of the 29 authored diagrams in that issue carry a red component
+# above the threshold, so "there is red in the file" certifies nothing.
+#
+# So everything below is decided from text and set membership. The tests are
+# written as mutations: each one proves the gate turns RED when a specific
+# defect is introduced, because a gate that only ever says "ok" is worth
+# nothing.
+
+ANNOT_HASHLESS = {"disposition": "annotated_at_capture",
+                  "reason": "Arrived annotated at capture; do not re-annotate."}
+
+
+def annots(*, alt="A red callout points to the Share response button",
+           record=None, date="2026-09-21", sidecar=True, extra=None,
+           post_image=True, second_src=None, filename=None, date_line=None,
+           orphan=False, src=None):
+    """Drive the real annotation gate inside a synthetic repo root.
+
+    The date matters and is deliberately explicit: the gate grandfathers any
+    issue predating its adoption cutoff, so a fixture with no date at all
+    would be skipped and every assertion below would pass vacuously.
+    """
+    original = (mbq.REPO, mbq.BLOG, mbq.QA_DIR)
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td).resolve()
+        blog, qa = root / "content" / "blog", root / "qa"
+        fixture = root / "static" / IMG_SRC.lstrip("/")
+        for d in (blog, qa, fixture.parent):
+            d.mkdir(parents=True, exist_ok=True)
+        fixture.write_bytes(b"pretend webp; only its hash is asserted")
+        mbq.REPO, mbq.BLOG, mbq.QA_DIR = root, blog, qa
+        try:
+            sha = mbq.sha256_file(fixture)
+            ref = src or IMG_SRC
+            body = (f'<img src="{ref}" alt="{alt}">' if post_image else "")
+            if second_src:
+                dupe = root / "static" / second_src.lstrip("/")
+                dupe.parent.mkdir(parents=True, exist_ok=True)
+                dupe.write_bytes(b"a different file that shares a name")
+                body += f'\n\n<img src="{second_src}" alt="{alt}">'
+            p = blog / (filename
+                        or "microsoft-365-copilot-september-2026-updates.md")
+            # An image ABOVE the first numbered heading belongs to no section,
+            # which is how it used to escape the gate entirely. It needs its
+            # own name, or it resolves to the section image's sidecar key and
+            # the assertion passes for the wrong reason.
+            stray = ""
+            if orphan:
+                o = fixture.parent / "orphan.webp"
+                o.write_bytes(b"a hero shot above section one")
+                stray = (f'<img src="{IMG_SRC.rsplit("/", 1)[0]}/orphan.webp" '
+                         f'alt="{alt}">\n\n')
+            p.write_text(f"---\ntitle: Test\n{date_line or f'date: {date}'}\n---\n\n"
+                         f"{stray}"
+                         f"## Microsoft 365 apps\n\n"
+                         f"### 7. A thing shipped\n\n*For: Copilot*\n\n"
+                         f"{body}\n\nSome prose.\n", encoding="utf-8")
+            if sidecar:
+                rec = record if record is not None else {
+                    "disposition": "annotated",
+                    "source_sha256": "a" * 64,
+                    "output_sha256": sha,
+                    "spec": "annot-b1", "scale": 2.0, "callouts": 1, "boxes": 0}
+                imgs = {} if rec is False else {"example.webp": rec}
+                imgs.update(extra or {})
+                (qa / f"{mbq.slug_of(p)}.annotations.json").write_text(
+                    json.dumps({"slug": mbq.slug_of(p), "images": imgs}),
+                    encoding="utf-8")
+            secs = sorted(mbq.parse_sections(mbq.read(p)), key=lambda s: s["n"])
+            return mbq.annotation_findings(p, mbq.all_image_rows(p, secs))
+        finally:
+            mbq.REPO, mbq.BLOG, mbq.QA_DIR = original
+
+
+_e, _s = annots()
+check("a complete annotation record with matching bytes passes",
+      _e == [] and "annotated 1" in _s, f"{_e} / {_s}")
+
+# Adoption boundary, asserted in BOTH directions. Silently skipping a missing
+# sidecar is how an entirely unclassified future issue escapes; blocking every
+# historical issue is how the gate gets switched off in week one.
+_e, _s = annots(sidecar=False)
+check("an issue from the policy month onward must carry a sidecar",
+      has(_e, "is missing"), f"{_e}")
+_e, _s = annots(sidecar=False, date="2026-08-14")
+check("an issue predating the policy is grandfathered, and says so",
+      _e == [] and "grandfathered" in _s, f"{_e} / {_s}")
+
+# F2. The grandfather branch is the gate's own off switch, so every way of
+# reaching it accidentally is asserted. `date:` is not reliable on its own -
+# Hugo accepts all of these, and each one used to return None, which was then
+# read as "older than the policy": a brand-new unclassified issue reported
+# "grandfathered (0000-00)" and exited 0.
+for _label, _dl in [("unpadded month", "date: 2026-9-21"),
+                    ("space before the colon", "date : 2026-09-21"),
+                    ("TOML assignment", "date = 2026-09-21"),
+                    ("lastmod only, no date", "lastmod: 2026-09-21")]:
+    _e, _s = annots(sidecar=False, date_line=_dl)
+    check(f"a September issue written with {_label} is not grandfathered",
+          has(_e, "is missing") and "grandfathered" not in _s, f"{_e} / {_s}")
+
+_e, _s = annots(sidecar=False, date_line="title2: nothing", filename="a-post.md")
+check("a post with no usable month fails closed rather than grandfathering",
+      has(_e, "cannot determine the issue month") and _s == "UNKNOWN MONTH",
+      f"{_e} / {_s}")
+
+# F7. An image above the first numbered heading belongs to no section. lint
+# catches it, but lint sits below the $blogChanged early exit in the push
+# hook, so an image-only push never reaches it.
+_e, _s = annots(orphan=True)
+check("an image outside every numbered section is still demanded",
+      has(_e, "no entry in"), f"{_e}")
+
+# F4. ?v= is URL syntax, not part of a file name. Keying on a raw split made
+# one image look like two, reported as both missing and unused at once.
+_e, _s = annots(src=IMG_SRC + "?v=2")
+check("a cache-busted src resolves to one sidecar key, not two",
+      _e == [], f"{_e}")
+
+# F6. image_rows leaves sha256 empty for anything it cannot read, and lint
+# deliberately permits remote <img>. Skipping the hash check there let a
+# record claim to be annotated while carrying invented hashes.
+_e, _s = annots(src="https://example.com/example.webp")
+check("an 'annotated' record whose file cannot be read is refused",
+      has(_e, "cannot be read from disk"), f"{_e}")
+
+# F1. The rule that decides whether alt text describes the annotation. The
+# first version rejected 9 of these 10, which would have blocked correct work
+# on first use - and a blocked push teaches --no-verify, which disables the
+# receipt, SEO and internal-content gates in the same hook.
+for _alt in ["A red outline around the Insert tab in the Word ribbon.",
+             "Annotated screenshot of the Copilot pane and the Agents button.",
+             "A red label reads Agent Store beside the left rail.",
+             "A red ellipse surrounds the Send button.",
+             "A leader line runs from the caption to the Share icon.",
+             "The Draft with Copilot entry framed in red.",
+             "A red rectangle sits around the Summarise command.",
+             "An annotation indicates the new Prompt Gallery tile.",
+             "A red bracket spans the three new toolbar buttons.",
+             "A callout points at the Share response button."]:
+    check(f"alt describing an annotation is accepted: {_alt[:34]}...",
+          bool(mbq.CALLOUT_ALT_RE.search(_alt)), _alt)
+
+# F3. The black-annotation matcher must not fire on the product's own black.
+for _alt in ["A diagram showing the model is not a black box.",
+             "Word shows the selected text highlighted in black.",
+             "A black arrow in the Windows taskbar opens the overflow.",
+             "The theme preview uses a black outline on the tiles.",
+             "The selected cell is outlined in black."]:
+    check(f"product black is not read as our annotation: {_alt[:34]}...",
+          not mbq.BLACK_ANNOTATION_RE.search(_alt), _alt)
+for _alt in ["The Share button is circled in black.",
+             "The new tab is boxed in black.",
+             "A black callout points to the toggle."]:
+    check(f"a stale black caption is still caught: {_alt[:34]}...",
+          bool(mbq.BLACK_ANNOTATION_RE.search(_alt)), _alt)
+
+# The gate's own first bug, now a permanent test. Every one of the 92 real
+# 'annotated' records was reported as missing a written reason, because the
+# check demanded prose of a kind that is evidenced by hashes instead. A
+# generated annotation has machine provenance; an EXEMPTION is the thing that
+# needs a sentence.
+_e, _s = annots(record={"disposition": "annotated",
+                        "reason": "we drew a box on it"})
+check("an 'annotated' record without hashes fails, prose or not",
+      has(_e, "source_sha256") and has(_e, "output_sha256"), f"{_e}")
+_e, _s = annots(record=ANNOT_HASHLESS)
+check("an exemption is evidenced by a reason, not by hashes",
+      _e == [], f"{_e}")
+_e, _s = annots(record={"disposition": "created_asset", "reason": "   "})
+check("an exemption with a blank reason fails",
+      has(_e, "needs a written reason"), f"{_e}")
+_e, _s = annots(record={"disposition": "annotated_by_hand", "reason": "x"})
+check("an invented disposition fails instead of being trusted",
+      has(_e, "unrecognised disposition"), f"{_e}")
+
+# An annotator that ran and drew nothing leaves input and output identical.
+_e, _s = annots(record={"disposition": "annotated", "source_sha256": "b" * 64,
+                        "output_sha256": "b" * 64, "spec": "annot-b1"})
+check("an annotation that changed no bytes is not an annotation",
+      has(_e, "changed nothing"), f"{_e}")
+
+# The one hard, content-bound proof available: the file on disk is the file the
+# record describes. This is what makes recolouring or swapping an image reopen
+# its claim, exactly as a changed hash reopens a Rule #8 observation.
+_e, _s = annots(record={"disposition": "annotated", "source_sha256": "a" * 64,
+                        "output_sha256": "c" * 64, "spec": "annot-b1"})
+check("a record describing bytes that are no longer on disk fails",
+      has(_e, "not the file this record describes"), f"{_e}")
+
+# Coverage, both ways. Completeness is the whole reason the sidecar exists.
+_e, _s = annots(record=False)
+check("an image in the post with no sidecar entry fails",
+      has(_e, "no entry in"), f"{_e}")
+_e, _s = annots(extra={"ghost.webp": {"disposition": "created_asset",
+                                      "reason": "a diagram we made"}})
+check("a sidecar entry the post does not use fails",
+      has(_e, "which the post does not use"), f"{_e}")
+
+# The sidecar is keyed by file name, so two images that share a name in
+# different folders would collapse onto one record - and the record would
+# silently certify whichever the parser happened to see first. Refused rather
+# than resolved, because there is no correct way to guess which one it meant.
+_e, _s = annots(second_src="/images/other/example.webp")
+check("two images sharing a file name cannot share one record",
+      has(_e, "different paths"), f"{_e}")
+
+# A sidecar that failed validation must stop the run, not be half-read. If it
+# is allowed through, every record the validator dropped reappears downstream
+# as a bogus "not in the sidecar" error, burying the real cause in noise - so
+# this asserts the status AND the absence of that noise.
+_e, _s = annots(record={"disposition": "created_asset", "reason": ""})
+check("an invalid sidecar stops the run instead of being half-read",
+      _s == "INVALID SIDECAR" and not has(_e, "no entry in"), f"{_e} / {_s}")
+
+# The defect that started all of this.
+_e, _s = annots(alt="The Share response item, circled in black")
+check("alt describing our annotation as black fails",
+      has(_e, "calls an annotation black"), f"{_e}")
+
+# ...but contextually. Two real alts in the September issue legitimately say
+# "black" about the PRODUCT, and a blanket matcher would have rejected both.
+_e, _s = annots(alt="Black words on a white page, with a callout on Rewrite")
+check("alt calling a PRODUCT element black still passes",
+      _e == [], f"{_e}")
+
+# Colour vocabulary is deliberately NOT required. WCAG 1.1.1 asks for
+# equivalent information, so naming the target is the accessible thing to do;
+# demanding the word "red" produces alt text written for a linter.
+_e, _s = annots(alt="A callout points to the Share response button")
+check("alt that names the target without a colour word passes",
+      _e == [], f"{_e}")
+_e, _s = annots(alt="Screenshot of the Copilot pane")
+check("an annotated image whose alt describes no annotation fails",
+      has(_e, "never says what the annotation points at"), f"{_e}")
+
+# ---- the house red is declared once -----------------------------------------
+# Not a blog check at all, but it belongs to the same defect: the annotators
+# disagreed on the house red by one unit (#CF2626 vs #CE2626) for as long as
+# both existed, and nothing reported it because one unit is invisible to a
+# person and permanent in the file. Correcting both numbers would have fixed
+# today and guaranteed tomorrow; removing the second declaration is what
+# actually holds, so this asserts the declaration count rather than the value.
+_HOUSE = HERE / "house_style.py"
+_hs: dict = {}
+exec(compile(_HOUSE.read_text(encoding="utf-8"), str(_HOUSE), "exec"), _hs)
+check("the canonical house red is #CF2626",
+      _hs["HOUSE_RED"] == (207, 38, 38) and _hs["HOUSE_RED_HEX"] == "#CF2626",
+      f"{_hs.get('HOUSE_RED')}")
+
+_RED_LITERAL = re.compile(r"\(\s*2[01][0-9]\s*,\s*3[0-9]\s*,\s*3[0-9]\s*\)")
+for _f in (HERE / "annotate_screenshot.py",
+           HERE / "screenshot-annotator" / "annotate_lib.py"):
+    _src = _f.read_text(encoding="utf-8", errors="replace")
+    # Only executable lines: the docstrings legitimately quote the measured
+    # value, and rewriting documentation to satisfy a regex is the wrong fix.
+    _code = "\n".join(l for l in _src.splitlines()
+                      if not l.lstrip().startswith("#"))
+    _code = re.sub(r'""".*?"""', "", _code, flags=re.S)
+    _hit = _RED_LITERAL.search(_code)
+    check(f"{_f.name} imports the house red instead of re-declaring it",
+          "from house_style import" in _src and not _hit,
+          f"re-declares {_hit.group(0)}" if _hit else "")
+
+# A naive check for the substring "red" matches inside hovered, credit,
+# required and predicted. This asserts the gate is not doing that: the alt
+# below is full of such words and still has to fail.
+_e, _s = annots(alt="We hovered over the required credit, as predicted")
+check("words merely CONTAINING 'red' do not satisfy the gate",
+      has(_e, "never says what the annotation points at"), f"{_e}")
 if _failures:
     print(f"FAIL {len(_failures)} of {_ran} self-tests failed:")
     for f in _failures:

@@ -822,6 +822,14 @@ def cmd_audit(args) -> int:
         r["observed"] = bool(r["sha256"]) and (r["section"], r["sha256"]) in observed
     unobserved = [r["src"] for r in imgs if not r["observed"]]
 
+    # Reported here because this is the screen an author reads, but deliberately
+    # NOT folded into `state`. A receipt is a hashed, committed artefact; making
+    # a new gate retroactively invalidate every receipt written before it
+    # existed turns one added check into a repo-wide failure. Enforcement lives
+    # in the push hook, which runs `annotations --all` fresh on every push - so
+    # a previously recorded PASS can never satisfy it either.
+    ann_errs, ann_status = annotation_findings(post, imgs)
+
     state = "pass"
     if unresolved or unobserved:
         state = "degraded" if args.allow_degraded else "fail"
@@ -834,6 +842,8 @@ def cmd_audit(args) -> int:
             print(f"  {k:<16}: {c}")
     print(f"images      : {len(imgs)}  observed {len(imgs) - len(unobserved)}"
           f"  outstanding {len(unobserved)}")
+    print(f"annotations : {ann_status}"
+          + (f"  ({len(ann_errs)} finding(s) - run `annotations`)" if ann_errs else ""))
     if unresolved:
         print(f"UNRESOLVED  : sections {unresolved}")
     print(f"state       : {state.upper()}")
@@ -915,6 +925,368 @@ def load_dispositions(slug: str) -> tuple[dict, list[str]]:
     return out, errs
 
 
+# -------------------------------------------------------------- annotations
+
+# Adoption cutoff. Earlier issues have no annotation sidecar and were reviewed
+# under the old by-hand process; applying this gate to them would either block
+# a push for history nobody is going to re-audit, or - worse - be silently
+# skipped, which is how a future issue with no sidecar at all escapes. So the
+# boundary is written down, in code, and reported either way.
+ANNOTATION_POLICY_FROM = (2026, 9)
+
+HEX64_RE = re.compile(r"[0-9a-f]{64}")
+
+ANNOTATION_KINDS = {
+    "annotated":            "screenshot we drew callouts on after capture",
+    "annotated_at_capture": "callout was baked in by the capture tool",
+    "created_asset":        "diagram we authored; there is nothing to call out",
+    "microsoft_artwork":    "Microsoft's own artwork, reproduced unmodified",
+}
+
+# The two kinds that carry an annotation WE are responsible for describing.
+ANNOTATED_KINDS = {"annotated", "annotated_at_capture"}
+
+# The vocabulary of an annotation, written ONCE and used by both checks below.
+#
+# The first version of this gate had two independently written word lists, and
+# they contradicted each other: BLACK_ANNOTATION_RE treated "framed" and
+# "outline" as annotation words while CALLOUT_ALT_RE did not, so "framed in
+# black" was a violation and "framed in red" was not even recognised as an
+# annotation. Measured on 15 September 2026, the old CALLOUT_ALT_RE rejected
+# 9 of 10 realistic annotated alt texts. A gate that fails on correct work
+# teaches --no-verify, and that switch disables the receipt, SEO,
+# internal-content and mobile-layout gates in the same hook.
+_ANNOT_NOUN = (
+    r"callouts?|annotations?|leader lines?|pointers?|"
+    r"boxes|box|rings?|circles?|ellipses?|"
+    r"rectangles?|squares?|brackets?|outlines?|arrows?|"
+    r"highlights?|underlines?|labels?|markers?"
+)
+_ANNOT_VERB = (
+    r"called out|calls out|calling out|"
+    r"points? (?:to|at)|pointing (?:to|at)|"
+    r"circled|circles|circling|outlined|outlines|outlining|"
+    r"boxed|framed|frames|framing|ringed|"
+    r"highlighted|highlights|highlighting|"
+    r"marked|marks|marking|underlined|underlines|"
+    r"annotated|annotates|annotating|"
+    r"surrounds?|surrounding|indicates?|indicating|"
+    r"spans?|spanning|labell?ed|labels|"
+    r"masked|redacted|blurred out|painted out"
+)
+
+# An annotation described as black - the defect found on 15 September 2026,
+# when two images were recoloured to the house red and their alt text still
+# said "circled in black" until someone happened to read it.
+#
+# This is deliberately NARROW, and narrower than it first looks like it should
+# be. Every phrase here can only describe a mark somebody drew. The obvious
+# additions were tested and rejected because the product supplies them:
+# "outlined in black" is how Excel describes a selected cell, "highlighted in
+# black" is a Word highlight, "black arrow" is a real toolbar glyph, "black
+# outline" is a theme preview, and "a black box" is ordinary AI-writing idiom
+# ("the model is not a black box"). Each would have blocked a correct push.
+# The cost is asymmetric: a missed stale caption costs one image, a false
+# positive costs the whole hook. Detection gap accepted and recorded.
+BLACK_ANNOTATION_RE = re.compile(
+    r"\b(?:circled|boxed|ringed|called out|annotated)\s+in\s+black\b"
+    r"|\bblack\s+(?:callouts?|annotations?|leader lines?)\b"
+    r"|\bin\s+(?:a|an|the)\s+black\s+(?:box|ring|circle|ellipse|rectangle)\b",
+    re.I,
+)
+
+# What an annotated image's alt has to DO: say that something is being pointed
+# at, and what. Note what is NOT required - the word "red".
+#
+# Requiring a colour word was the original design, and two independent Gate A
+# reviewers rejected it for the same reason: WCAG 1.1.1 asks for equivalent
+# information, not mandatory colour vocabulary, so "A callout points to Share
+# response" is better alt text than "a red box is shown" and would have been
+# the thing rejected. It also fails in the other direction - "screenshot with
+# red" satisfies a keyword check while conveying nothing. A colour-word rule
+# does not measure accessibility; it measures whether someone wrote alt text
+# for the linter.
+#
+# Word boundaries matter here for a reason worth writing down: a naive search
+# for "red" matches inside "covered", "credit", "numbered", "blurred" and
+# "hovered", so a colour check built that way would have passed on alt text
+# that never mentions a colour at all.
+CALLOUT_ALT_RE = re.compile(rf"\b(?:{_ANNOT_NOUN})\b|\b(?:{_ANNOT_VERB})\b", re.I)
+
+# Known and accepted: this still admits generic English - "Outlook marks the
+# email as read", "two text boxes appear" - so an annotated image whose alt
+# happens to contain one of those passes without describing the mark. That is
+# a missed detection on one image. The alternative, a tighter list, is what
+# rejected 9 of 10 correct alts. Permissive on purpose.
+
+_POST_DATE_RE = re.compile(r"^date\s*[:=]\s*[\"']?(\d{4})-(\d{1,2})\b", re.M)
+
+
+def post_month(post: Path) -> tuple[int, int] | None:
+    """(year, month) from the post's own front matter, or None."""
+    m = _POST_DATE_RE.search(read(post))
+    return (int(m.group(1)), int(m.group(2))) if m else None
+
+
+def load_annotations(slug: str) -> tuple[dict, list[str]]:
+    """The annotation sidecar, validated. Returns (records, errors).
+
+    Same contract as load_dispositions: this file is author-controlled and
+    decides whether an image is exempt from annotation, so an invented key or
+    a blank reason is a named failure rather than an AttributeError.
+    """
+    f = QA_DIR / f"{slug}.annotations.json"
+    if not f.exists():
+        return {}, []
+    try:
+        raw = json.loads(read(f))
+    except json.JSONDecodeError as e:
+        return {}, [f"{f.name} is not valid JSON: {e}"]
+    if not isinstance(raw, dict):
+        return {}, [f"{f.name} must be an object, not {type(raw).__name__}"]
+    imgs = raw.get("images")
+    if not isinstance(imgs, dict):
+        return {}, [f"{f.name} needs an 'images' object keyed by file name"]
+    out, errs = {}, []
+    for k, v in imgs.items():
+        if not isinstance(v, dict):
+            errs.append(f"{f.name}: {k} must be an object")
+            continue
+        d = v.get("disposition")
+        if d not in ANNOTATION_KINDS:
+            errs.append(f"{f.name}: {k} has an unrecognised disposition {d!r} "
+                        f"- allowed: {', '.join(sorted(ANNOTATION_KINDS))}")
+            continue
+        bad = False
+
+        def fail(msg: str) -> None:
+            nonlocal bad
+            bad = True
+            errs.append(f"{f.name}: {k} {msg}")
+
+        # The two kinds are evidenced differently, and demanding the same
+        # fields of both was this gate's own first bug: every one of the 92
+        # 'annotated' records was reported as missing a written reason, when
+        # in fact a generated annotation does not HAVE a prose reason - it has
+        # machine provenance, which is stronger. A reason is what an EXEMPTION
+        # needs, because "we chose not to annotate this" is a judgement call
+        # that only a sentence can carry.
+        if d == "annotated":
+            src, out_sha = v.get("source_sha256"), v.get("output_sha256")
+            for label, val in (("source_sha256", src), ("output_sha256", out_sha)):
+                if not (isinstance(val, str) and HEX64_RE.fullmatch(val)):
+                    fail(f"needs a 64-character hex {label} - the record has "
+                         "to name the bytes it is describing")
+            if blank_text(v.get("spec")):
+                fail("needs a 'spec' naming the annotation recipe that "
+                     "produced it")
+            # If the annotator ran and drew nothing, input and output are the
+            # same file. Recording that as 'annotated' certifies an untouched
+            # screenshot.
+            if isinstance(src, str) and src == out_sha:
+                fail("has source_sha256 == output_sha256, so the annotation "
+                     "pass changed nothing - it is not annotated")
+        elif blank_text(v.get("reason")):
+            fail(f"is '{d}' and needs a written reason saying why it carries "
+                 "no callouts of ours")
+        if not bad:
+            out[k] = dict(v)
+    return out, errs
+
+
+def annotation_key(src: str) -> str:
+    """The sidecar key for an image src: its file name, resolved the way lint
+    resolves it.
+
+    Going through static_path matters because it strips ?query and #fragment
+    at :166. Keying on a raw split would let one cache-busted image appear as
+    two different keys - reported as both "in the post with no entry" and
+    "records a file the post does not use", neither of which names the cause.
+    """
+    disk, _ = static_path(src)
+    if disk is not None:
+        return disk.name
+    raw = (src or "").split("#", 1)[0].split("?", 1)[0].rstrip("/")
+    return raw.split("/")[-1]
+
+
+def annotation_findings(post: Path, imgs: list[dict]) -> tuple[list[str], str]:
+    """Deterministic annotation checks. Returns (errors, status_line).
+
+    Everything here is decided from text and set membership. No image is
+    decoded and no pixel is inspected, deliberately.
+
+    The first design of this gate proved a red annotation by looking for red
+    pixels. Two independent Gate A reviewers rejected it, and the measurement
+    settled it: on `lab-s12-search-in-rail-annotated.webp` (337x301) the
+    proposed rule - within 46 of the house red per channel, largest connected
+    component of at least 60 pixels - finds 93 matching pixels whose largest
+    component is 40. It REJECTS a correctly annotated image. Widening the
+    tolerance to 55 returns 171, so a nine-unit change swings the answer by
+    four times. A gate that fails on correct work teaches people to push with
+    --no-verify, and that switch does not disable one check - it disables the
+    receipt, SEO, internal-content and mobile-layout gates with it.
+
+    Pixels also cannot answer the question being asked. Product UI supplies
+    red of its own: 21 of the 29 authored diagrams in this issue carry a red
+    component larger than the threshold, so "there is red in the file" would
+    have certified them, and an unrelated red Delete button can certify a
+    black annotation sitting next to it.
+
+    What IS checkable without guessing: that every image is accounted for,
+    that its classification is a real one with a written reason, and that its
+    alt text does not contradict the annotation or fail to describe it.
+    """
+    slug = slug_of(post)
+    # Two independent sources, because the front matter alone is not reliable
+    # enough to decide whether the policy applies. post_month reads `date:`,
+    # which Hugo accepts as `2026-9-21`, `date : ...`, `date = ...` (TOML) or
+    # omits entirely in favour of lastmod. Every one of those returned None,
+    # and None was then read as "older than the policy" - so a NEW issue with
+    # NO sidecar reported "grandfathered (0000-00)" and exited 0. The gate
+    # silently disabled itself in exactly the case it was built for.
+    ym = post_month(post) or post_ym(post)
+    ann, errs = load_annotations(slug)
+    f = QA_DIR / f"{slug}.annotations.json"
+
+    if not f.exists():
+        if ym == (0, 0):
+            return ([f"cannot determine the issue month for {post.name} - "
+                     "add a `date:` to the front matter or name the file "
+                     "microsoft-365-copilot-<month>-<year>-updates.md; "
+                     "refusing to guess whether the annotation policy "
+                     "applies"], "UNKNOWN MONTH")
+        if ym < ANNOTATION_POLICY_FROM:
+            return [], (f"grandfathered ({ym[0]:04d}-{ym[1]:02d} predates "
+                        f"{ANNOTATION_POLICY_FROM[0]}-{ANNOTATION_POLICY_FROM[1]:02d})")
+        return ([f"{f.name} is missing - every issue from "
+                 f"{ANNOTATION_POLICY_FROM[0]}-{ANNOTATION_POLICY_FROM[1]:02d} "
+                 f"must classify each image"], "MISSING SIDECAR")
+    if errs:
+        return errs, "INVALID SIDECAR"
+
+    # Identity is the file name, because that is what the sidecar is keyed by.
+    # Two different paths ending in the same name would make a key ambiguous,
+    # so that is caught rather than silently resolved to whichever came first.
+    by_name: dict[str, set[str]] = {}
+    for r in imgs:
+        by_name.setdefault(annotation_key(r["src"]), set()).add(r["src"])
+    for name, srcs in sorted(by_name.items()):
+        if len(srcs) > 1:
+            errs.append(f"{name} is used by {len(srcs)} different paths "
+                        f"({', '.join(sorted(srcs))}) - one sidecar entry "
+                        "cannot describe both")
+
+    used, recorded = set(by_name), set(ann)
+    for name in sorted(used - recorded):
+        errs.append(f"{name} is in the post with no entry in {f.name}")
+    for name in sorted(recorded - used):
+        errs.append(f"{f.name} records {name}, which the post does not use")
+
+    for r in imgs:
+        name = annotation_key(r["src"])
+        rec = ann.get(name)
+        if rec is None:
+            continue
+        alt, kind = r["alt"] or "", rec["disposition"]
+
+        # The one hard, content-bound proof available here: the bytes on disk
+        # are the bytes the annotator said it produced. Free, because audit has
+        # already hashed every image. This is what makes the record mean
+        # something - replace or recolour an image and its claim to be
+        # annotated stops being true until someone re-records it, exactly as a
+        # changed hash reopens a Rule #8 observation.
+        if kind == "annotated":
+            if not r["sha256"]:
+                # image_rows leaves sha256 empty for anything not readable on
+                # disk, which includes remote <img> that lint deliberately
+                # allows. Skipping the check there meant a record could claim
+                # to be annotated, carry invented hashes, and never be tested.
+                errs.append(f"§{r['section']} {name}: classified 'annotated' "
+                            "but the file cannot be read from disk, so its "
+                            "recorded hash cannot be checked - annotated "
+                            "images must be local files")
+            elif rec.get("output_sha256") != r["sha256"]:
+                errs.append(f"§{r['section']} {name}: the file on disk is not "
+                            "the file this record describes "
+                            f"(records {str(rec.get('output_sha256'))[:12]}, "
+                            f"found {r['sha256'][:12]}) - re-run the "
+                            "annotator or re-record it")
+
+        hit = BLACK_ANNOTATION_RE.search(alt)
+        if hit:
+            errs.append(f"§{r['section']} {name}: alt calls an annotation black "
+                        f"({hit.group(0)!r}) - our callouts are drawn in the "
+                        "house red")
+        if kind in ANNOTATED_KINDS and not CALLOUT_ALT_RE.search(alt):
+            errs.append(f"§{r['section']} {name}: classified '{kind}' but its "
+                        "alt never says what the annotation points at")
+
+    kinds = Counter(ann[n]["disposition"] for n in sorted(recorded & used))
+    status = "  ".join(f"{k} {kinds.get(k, 0)}" for k in sorted(ANNOTATION_KINDS))
+    return errs, status
+
+
+def cmd_annotations(args) -> int:
+    posts = discover_posts() if args.all else [resolve_post(args.post)]
+    rc = 0
+    for post in posts:
+        secs = sorted(parse_sections(read(post)), key=lambda s: s["n"])
+        imgs = all_image_rows(post, secs)
+        errs, status = annotation_findings(post, imgs)
+        slug = slug_of(post)
+        if errs:
+            rc = 1
+            print(f"  FAIL  {slug}")
+            for e in errs:
+                print(f"        {e}")
+        else:
+            print(f"  ok    {slug}: {len(imgs)} image(s) - {status}")
+        if args.pixels:
+            annotation_pixel_report(post, imgs)
+    return rc
+
+
+def annotation_pixel_report(post: Path, imgs: list[dict]) -> None:
+    """Advisory only. Prints red-pixel measurements; never changes exit code.
+
+    Kept as a diagnostic because the numbers are genuinely useful when an
+    annotation pass looks wrong, and deliberately kept OUT of the gate for
+    the reasons in annotation_findings. Read it, do not automate on it.
+    """
+    try:
+        from PIL import Image
+    except ImportError:
+        print("        [pixels] Pillow not installed - skipping advisory scan")
+        return
+    ann, _ = load_annotations(slug_of(post))
+    tally: dict[str, list[int]] = {}
+    skipped: list[str] = []
+    for r in imgs:
+        rec = ann.get(annotation_key(r["src"]))
+        disk = row_path(r)
+        if rec is None or disk is None:
+            continue
+        # Pillow here reports avif: False, and this is the exact command the
+        # push-failure message tells people to run - so an unreadable format
+        # must degrade to a note, never a traceback on top of a failure.
+        try:
+            im = Image.open(disk).convert("RGB")
+        except Exception as e:
+            skipped.append(f"{disk.name} ({type(e).__name__})")
+            continue
+        n = sum(1 for px in im.getdata()
+                if px[0] > 150 and px[1] < 90 and px[2] < 90
+                and px[0] - px[1] > 60 and px[0] - px[2] > 60)
+        tally.setdefault(rec["disposition"], []).append(n)
+    for kind in sorted(tally):
+        v = sorted(tally[kind])
+        print(f"        [pixels] {kind:<20} n={len(v):<4} "
+              f"red px min {v[0]} median {v[len(v) // 2]} max {v[-1]}")
+    if skipped:
+        print(f"        [pixels] unreadable, not scanned: {', '.join(skipped)}")
+
+
 # ------------------------------------------------------------------- images
 
 def row_path(row: dict) -> Path | None:
@@ -933,23 +1305,37 @@ def row_path(row: dict) -> Path | None:
     return disk
 
 
+def image_row(section: int, img: dict) -> dict:
+    # One resolver, shared with lint, so the two can never disagree
+    # about whether a file will actually be served at this URL.
+    disk, err = static_path(img["src"])
+    ok = err is None and disk is not None and exists_exact(disk)
+    return {
+        "section": section,
+        "src": img["src"],
+        "alt": img["alt"],
+        "exists": ok,
+        # Identity is the CONTENT hash, not the filename. Replacing an
+        # image under the same name must lose its reviewed status.
+        "sha256": sha256_file(disk) if ok else "",
+    }
+
+
 def image_rows(secs: list[Section]) -> list[dict]:
-    rows = []
-    for s in secs:
-        for img in s["images"]:
-            # One resolver, shared with lint, so the two can never disagree
-            # about whether a file will actually be served at this URL.
-            disk, err = static_path(img["src"])
-            ok = err is None and disk is not None and exists_exact(disk)
-            rows.append({
-                "section": s["n"],
-                "src": img["src"],
-                "alt": img["alt"],
-                "exists": ok,
-                # Identity is the CONTENT hash, not the filename. Replacing an
-                # image under the same name must lose its reviewed status.
-                "sha256": sha256_file(disk) if ok else "",
-            })
+    return [image_row(s["n"], img) for s in secs for img in s["images"]]
+
+
+def all_image_rows(post: Path, secs: list[Section]) -> list[dict]:
+    """Every image in the document, including those outside numbered sections.
+
+    Orphans are given section 0. Without them the annotation gate demanded a
+    record for section images only, so a hero shot above section 1 could carry
+    a black annotation, or no classification at all, and still pass. lint
+    catches orphans, but lint sits below the $blogChanged early exit in the
+    push hook, so an image-only or sidecar-only push never reaches it.
+    """
+    rows = image_rows(secs)
+    rows += [image_row(0, o) for o in orphan_images(read(post), secs)]
     return rows
 
 
@@ -1620,6 +2006,15 @@ def main() -> int:
     p.add_argument("--all", action="store_true",
                    help="verify every published post, not just the latest")
     p.set_defaults(fn=cmd_verify_receipt)
+
+    p = sub.add_parser("annotations",
+                       help="annotation sidecar gate (push gate; deterministic, no pixels)")
+    p.add_argument("--post")
+    p.add_argument("--all", action="store_true",
+                   help="every published post, not just the latest")
+    p.add_argument("--pixels", action="store_true",
+                   help="advisory red-pixel measurements; never affects exit code")
+    p.set_defaults(fn=cmd_annotations)
 
     p = sub.add_parser("links", help="check outbound links resolve (network; not a push gate)")
     p.add_argument("--post")

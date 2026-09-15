@@ -131,7 +131,10 @@ MUTATIONS = [
      '        # cannot assert that by hand; it is derived or it is not true.\n'
      '        if False:'),
     ("the dispositions file must be an object",
-     '    if not isinstance(raw, dict):', '    if False:'),
+     '    if not isinstance(raw, dict):\n'
+     '        return {}, [f"{f.name} must be an object keyed by section number, "',
+     '    if False:\n'
+     '        return {}, [f"{f.name} must be an object keyed by section number, "'),
     ("a manual disposition needs a written reason",
      '            continue\n        if blank_text(reason):',
      '            continue\n        if False:'),
@@ -162,8 +165,45 @@ MUTATIONS = [
     # not JSON serialisable, and rows are written into the committed receipt.
     # A green suite saw nothing - only running a whole fresh month did.
     ("no live filesystem object is placed on an image row",
-     '                "exists": ok,',
-     '                "exists": ok,\n                "path": disk,'),
+     '        "exists": ok,',
+     '        "exists": ok,\n        "path": disk,'),
+
+    # ---- round 5: the annotation sidecar. Every guard below must be visible
+    # to the suite, because the whole point of this gate is that it is
+    # deterministic - if it cannot be seen to fail, it is decoration.
+    ("an image in the post with no sidecar entry is reported",
+     '    for name in sorted(used - recorded):', '    for name in []:'),
+    ("a sidecar entry the post no longer uses is reported",
+     '    for name in sorted(recorded - used):', '    for name in []:'),
+    ("two images sharing a file name cannot share one record",
+     '        if len(srcs) > 1:', '        if False:'),
+    ("an annotated record must match the bytes on disk",
+     '            elif rec.get("output_sha256") != r["sha256"]:',
+     '            elif False:'),
+    ("alt text may not call our callouts black",
+     '        hit = BLACK_ANNOTATION_RE.search(alt)', '        hit = None'),
+    ("an annotated image must say in alt what the callout points at",
+     '        if kind in ANNOTATED_KINDS and not CALLOUT_ALT_RE.search(alt):',
+     '        if False:'),
+    ("an invalid sidecar stops the run instead of being half-read",
+     '    if errs:\n        return errs, "INVALID SIDECAR"',
+     '    if False:\n        return errs, "INVALID SIDECAR"'),
+    ("a missing sidecar blocks once the policy month is reached",
+     '        if ym < ANNOTATION_POLICY_FROM:',
+     '        if True:'),
+    ("an undateable post fails closed instead of grandfathering itself",
+     '        if ym == (0, 0):',
+     '        if False:'),
+    ("an unrecognised disposition is refused",
+     '        if d not in ANNOTATION_KINDS:', '        if False:'),
+    ("an annotated record needs real 64-character hashes",
+     '                if not (isinstance(val, str) and HEX64_RE.fullmatch(val)):',
+     '                if False:'),
+    ("an annotation that changed nothing is not an annotation",
+     '            if isinstance(src, str) and src == out_sha:',
+     '            if False:'),
+    ("an exempt image needs a written reason",
+     '        elif blank_text(v.get("reason")):', '        elif False:'),
 ]
 
 
