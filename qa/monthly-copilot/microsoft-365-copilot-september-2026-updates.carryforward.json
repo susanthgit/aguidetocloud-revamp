@@ -1,0 +1,359 @@
+{
+ "_comment": "Carry-forward queue generated from the September 2026 issue. Feeds the October build. Skill rule #2: nothing is dropped, only deferred.",
+ "source_issue": "microsoft-365-copilot-september-2026-updates",
+ "generated": "2026-09-15",
+ "roadmap_checked_on": "2026-09-14",
+ "retest_queue": [
+  {
+   "section": 8,
+   "title": "Copilot mobile can draft an email inside the chat",
+   "threads": [
+    {
+     "kind": "RETEST",
+     "quote": "I will retest for October."
+    },
+    {
+     "kind": "OPEN",
+     "quote": "could not reproduce."
+    },
+    {
+     "kind": "OPEN",
+     "quote": "cannot tell me which, so I am recording what I saw rather than guessing, and I will retest for October."
+    }
+   ]
+  },
+  {
+   "section": 12,
+   "title": "Copilot Chat sits beside Copilot Search",
+   "threads": [
+    {
+     "kind": "UNTESTED",
+     "quote": "I had not expected."
+    }
+   ]
+  },
+  {
+   "section": 14,
+   "title": "Notebooks suggest what to make next",
+   "threads": [
+    {
+     "kind": "OPEN",
+     "quote": "cannot tell whether Microsoft's screenshot predates the fix or whether the label varies by tenant."
+    }
+   ]
+  },
+  {
+   "section": 15,
+   "title": "Notebooks take audio, images and notes together",
+   "threads": [
+    {
+     "kind": "RETEST",
+     "quote": "I will retest for October."
+    },
+    {
+     "kind": "OPEN",
+     "quote": "could not reproduce."
+    },
+    {
+     "kind": "NOT-IN-TENANT",
+     "quote": "Not yet in my tenant, and the gap is a specific one."
+    }
+   ]
+  },
+  {
+   "section": 32,
+   "title": "Slide notes can steer Copilot slide by slide",
+   "threads": [
+    {
+     "kind": "RETEST",
+     "quote": "I will retest for the next issue."
+    },
+    {
+     "kind": "OPEN",
+     "quote": "stays open."
+    },
+    {
+     "kind": "NOT-IN-TENANT",
+     "quote": "not in my tenant yet — the Edit details dialog had no such option."
+    }
+   ]
+  },
+  {
+   "section": 33,
+   "title": "You can now author your own PowerPoint skills",
+   "threads": [
+    {
+     "kind": "UNTESTED",
+     "quote": "I have not written one of my own yet, so I cannot tell you how a custom skill performs — that is for the next issue."
+    },
+    {
+     "kind": "OPEN",
+     "quote": "cannot tell you how a custom skill performs — that is for the next issue."
+    }
+   ]
+  },
+  {
+   "section": 36,
+   "title": "PowerPoint can build a deck from an email",
+   "threads": [
+    {
+     "kind": "UNTESTED",
+     "quote": "I have not seen it written down anywhere."
+    }
+   ]
+  },
+  {
+   "section": 44,
+   "title": "You can talk to Word during Read Aloud",
+   "threads": [
+    {
+     "kind": "OPEN",
+     "quote": "could not find it."
+    }
+   ]
+  },
+  {
+   "section": 52,
+   "title": "Outlook coaches your writing as you draft",
+   "threads": [
+    {
+     "kind": "UNTESTED",
+     "quote": "I have not tested the *as you write* half of the claim — whether this surfaces mid-email without you going to Copilot at all."
+    }
+   ]
+  },
+  {
+   "section": 57,
+   "title": "The Planner Agent works in group-based basic plans",
+   "threads": [
+    {
+     "kind": "OPEN",
+     "quote": "could not find it the first time I looked."
+    }
+   ]
+  },
+  {
+   "section": 58,
+   "title": "Teams meetings can be added to a Copilot Notebook",
+   "threads": [
+    {
+     "kind": "RETEST",
+     "quote": "I will check for the next issue."
+    },
+    {
+     "kind": "UNTESTED",
+     "quote": "What I have not tested is what actually crosses over when you add one — the transcript, the recap, or only the invite."
+    }
+   ]
+  },
+  {
+   "section": 59,
+   "title": "OneDrive can take you from files to finished work in chat",
+   "threads": [
+    {
+     "kind": "UNTESTED",
+     "quote": "I had not seen it offered anywhere else."
+    },
+    {
+     "kind": "UNTESTED",
+     "quote": "I have not tested that half."
+    }
+   ]
+  },
+  {
+   "section": 61,
+   "title": "Admins can mark SharePoint sites as authoritative",
+   "threads": [
+    {
+     "kind": "UNTESTED",
+     "quote": "I have not run this in my own tenant, so treat what follows as the documented path rather than something I have watched work."
+    },
+    {
+     "kind": "OPEN",
+     "quote": "could not find it."
+    }
+   ]
+  },
+  {
+   "section": 70,
+   "title": "A tenant-wide view of where credits are going",
+   "threads": [
+    {
+     "kind": "UNTESTED",
+     "quote": "I have not built this report, so I am not showing you a different product&rsquo;s dashboard in its place."
+    }
+   ]
+  },
+  {
+   "section": 89,
+   "title": "Dataverse data in Microsoft 365 Copilot",
+   "threads": [
+    {
+     "kind": "UNTESTED",
+     "quote": "I have not tested it."
+    }
+   ]
+  },
+  {
+   "section": 94,
+   "title": "GitHub Copilot credit usage in the consumption dashboard",
+   "threads": [
+    {
+     "kind": "UNTESTED",
+     "quote": "I have noted where it applies."
+    }
+   ]
+  }
+ ],
+ "roadmap_overdue_recheck": [
+  {
+   "id": "562351",
+   "title": "Suggested edits in Copilot Pages",
+   "status": "In development",
+   "published_ga": "2026-08"
+  },
+  {
+   "id": "566997",
+   "title": "Copilot Studio: block maker-provided credentials",
+   "status": "In development",
+   "published_ga": "2026-08"
+  },
+  {
+   "id": "500872",
+   "title": "Export Copilot metrics in the Copilot Dashboard",
+   "status": "In development",
+   "published_ga": "2026-09"
+  },
+  {
+   "id": "503144",
+   "title": "Domain exclusion for web grounding",
+   "status": "Rolling out",
+   "published_ga": "2026-09"
+  },
+  {
+   "id": "523223",
+   "title": "Deep citations in Copilot",
+   "status": "In development",
+   "published_ga": "2026-09"
+  },
+  {
+   "id": "560539",
+   "title": "Dataverse data connected to M365 Copilot",
+   "status": "In development",
+   "published_ga": "2026-09"
+  },
+  {
+   "id": "562222",
+   "title": "Copilot Studio: agent node in workflows",
+   "status": "In development",
+   "published_ga": "2026-09"
+  },
+  {
+   "id": "566859",
+   "title": "Copilot Studio: SharePoint lists as knowledge source",
+   "status": "In development",
+   "published_ga": "2026-09"
+  },
+  {
+   "id": "566873",
+   "title": "Copilot Studio: detect credential oversharing",
+   "status": "In development",
+   "published_ga": "2026-09"
+  },
+  {
+   "id": "567886",
+   "title": "Planner: AI-generated Status Reports",
+   "status": "In development",
+   "published_ga": "2026-09"
+  },
+  {
+   "id": "568762",
+   "title": "Copilot Studio: Agent Readiness",
+   "status": "In development",
+   "published_ga": "2026-09"
+  },
+  {
+   "id": "568929",
+   "title": "Copilot Studio: Dataverse integration",
+   "status": "In development",
+   "published_ga": "2026-09"
+  },
+  {
+   "id": "568930",
+   "title": "Copilot Studio: SQL Server support",
+   "status": "In development",
+   "published_ga": "2026-09"
+  },
+  {
+   "id": "569607",
+   "title": "Copilot Studio: agent evaluations improvements",
+   "status": "In development",
+   "published_ga": "2026-09"
+  },
+  {
+   "id": "569930",
+   "title": "Copilot Studio: conversational connector config",
+   "status": "In development",
+   "published_ga": "2026-09"
+  },
+  {
+   "id": "570434",
+   "title": "Copilot Studio: require human approval for tool calls",
+   "status": "In development",
+   "published_ga": "2026-09"
+  }
+ ],
+ "roadmap_future_ga": [
+  {
+   "id": "562220",
+   "title": "Copilot Studio: computer use in workflows",
+   "status": "In development",
+   "published_ga": "2026-10"
+  },
+  {
+   "id": "570433",
+   "title": "Copilot Studio: MCP Apps rich interactive UI",
+   "status": "In development",
+   "published_ga": "2026-11"
+  },
+  {
+   "id": "567668",
+   "title": "SharePoint: Personal Skills in Copilot",
+   "status": "In development",
+   "published_ga": "2026-12"
+  },
+  {
+   "id": "567894",
+   "title": "Copilot Studio: Share Autonomous Agents (Run-Only)",
+   "status": "In development",
+   "published_ga": "2027-01"
+  }
+ ],
+ "explicit_deferrals": [
+  {
+   "section": 60,
+   "title": "SharePoint personal skills are saved to OneDrive and reused everywhere",
+   "who": "Sush",
+   "reason": "no skills in SharePoint yet - too early, validate next month",
+   "evidence": "Roadmap 567668 published GA is 2026-12, so this is not due until December. The deferral was correct."
+  }
+ ],
+ "awaiting_sush": [
+  {
+   "topic": "alt text vs red callouts",
+   "detail": "92 images carry red callout annotations the alt text does not describe. The 3 rewritten on 15 Sep do describe theirs, so the post is currently inconsistent. Accessibility decision."
+  },
+  {
+   "topic": "callouts dropped",
+   "detail": "5 annotations dropped for lack of a clean leader path. Needs remap to post-reorder section numbers before raising."
+  },
+  {
+   "topic": "baked-in black boxes",
+   "detail": "lab-s06-share-response-menu-annotated and lab-s12-search-in-rail-annotated have redaction boxes baked in at capture time."
+  },
+  {
+   "topic": "annotation gate",
+   "detail": "annot-gate todo: build the corrected annotation gate now or defer to October."
+  }
+ ]
+}
